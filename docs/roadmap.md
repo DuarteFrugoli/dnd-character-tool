@@ -18,7 +18,28 @@
 
 ---
 
-## v1.5 — Qualidade de vida
+## v1.5 — Ferramenta de Mestre
+
+A mesma base de modelos e modos de criação reutilizada para geração de NPCs.
+
+### Home com navegação por abas
+- [ ] Bottom navigation bar: **Personagens** | **NPCs**
+- [ ] Aba "Personagens": lista atual de PCs com FAB de criação
+- [ ] Aba "NPCs": lista de NPCs salvos com FAB para o gerador
+
+### Gerador de NPCs
+- [ ] **Geração rápida**: 1 botão "Gerar NPC" → ficha completa aleatória (nome, raça, classe, background, atributos sorteados)
+- [ ] **Geração com filtros**: mestre escolhe raça, classe e nível; o resto é sorteado
+- [ ] **Nível de importância**: toggle *Figurante / Secundário / Importante*
+  - Figurante: nome, raça, AC e HP — gerado e usado sem salvar
+  - Secundário: ficha completa sem equipamento e magias detalhadas
+  - Importante: ficha completa salva na lista de NPCs
+- [ ] Flag `isNpc: bool` no modelo `Character` para distinguir PCs de NPCs internamente
+- [ ] NPCs figurantes têm opção de "Salvar" ou "Descartar" após geração
+
+---
+
+## v2 — Qualidade de vida
 
 - [ ] Export completo como `.zip` (JSON + imagem do personagem juntos)
 - [ ] Imagens de exemplo bundadas para NPCs e equipamentos base
@@ -29,7 +50,7 @@
 
 ---
 
-## v2 — Backend e social
+## v3 — Backend e social
 
 - [ ] Backend com Supabase (conta de usuário, sync em nuvem)
 - [ ] Compartilhar personagem via link

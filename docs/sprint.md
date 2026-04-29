@@ -53,36 +53,63 @@ Objetivo: permitir criar um personagem completo do zero usando o modo guiado (pa
 
 ## Tarefas
 
-### Fluxo de criação — modo guiado (`guided`)
-O usuário avança por etapas obrigatórias, sendo guiado com as opções do SRD. Ao final, o personagem é salvo localmente.
-
+### Provider de rascunho
+- [ ] `CharacterDraftNotifier` — estado mutável do personagem em construção, limpo ao cancelar
 - [ ] Rota `/create` com parâmetro de modo (`?mode=guided`)
-- [ ] Provider `CharacterDraftNotifier` — estado mutável do personagem em construção
-- [ ] **Etapa 1 — Nome e jogador**: campos de texto livres
-- [ ] **Etapa 2 — Raça**: lista das 9 raças SRD; se houver subraça, segundo passo de seleção
-- [ ] **Etapa 3 — Classe**: lista das 12 classes com hit die e resumo de proficiências
-- [ ] **Etapa 4 — Antecedente (Background)**: lista dos 13 antecedentes com descrição da feature
-- [ ] **Etapa 5 — Atributos (Standard Array)**: distribuição fixa `[15, 14, 13, 12, 10, 8]` nos 6 atributos com drag-and-drop ou dropdowns
-- [ ] **Etapa 6 — Revisão**: resumo de todas as escolhas com botão "Criar Personagem"
-- [ ] Ao confirmar: salvar via `CharacterRepository.save()` e navegar para a lista
+
+### Fluxo de criação — modo guiado (7 etapas)
+
+**Etapa 1 — Classe**
+- [ ] Lista das 12 classes com hit die, saving throws e resumo de proficiências
+- [ ] Seleção persiste no draft
+
+**Etapa 2 — Raça**
+- [ ] Lista das 9 raças SRD com bônus de atributo e traits
+- [ ] Se a raça tiver subraça, exibir segundo passo de seleção na mesma tela
+
+**Etapa 3 — Antecedente (Background)**
+- [ ] Lista dos 13 antecedentes com descrição da feature
+- [ ] Perícias fixas do background aplicadas automaticamente ao draft
+
+**Etapa 4 — Perícias**
+- [ ] Exibir perícias fixas do background (somente leitura)
+- [ ] Perícias fixas da raça (ex: Elfo → Percepção) aplicadas automaticamente
+- [ ] Escolhas da classe: N perícias dentro da lista permitida por classe
+- [ ] Escolhas extras da raça (ex: Meio-Elfo escolhe 2 quaisquer)
+
+**Etapa 5 — Atributos**
+- [ ] Usuário escolhe o método: **Standard Array** `[15,14,13,12,10,8]` ou **Point Buy** (27 pts, base 8)
+- [ ] Interface de distribuição dos valores nos 6 atributos
+- [ ] Toggle: "Aplicar bônus raciais automaticamente (PHB)" vs "Distribuir livremente (Tasha's / BG3)"
+- [ ] Cálculo automático dos modificadores em tempo real
+
+**Etapa 6 — Nome**
+- [ ] Campos: nome do personagem e nome do jogador
+- [ ] Botão "Definir depois" — preenche com placeholder e segue para revisão
+
+**Etapa 7 — Revisão**
+- [ ] Resumo de todas as escolhas (classe, raça, background, perícias, atributos, nome)
+- [ ] Exibir HP máximo calculado: `hitDie + mod CON`
+- [ ] Botão "Criar Personagem" → salva via `CharacterRepository.save()` e navega para a lista
 
 ### Navegação e UX
-- [ ] Widget de barra de progresso por etapa (`StepIndicator`)
+- [ ] Widget `StepIndicator` com barra de progresso por etapa
 - [ ] Botões "Voltar" e "Continuar" com validação por etapa
-- [ ] Botão "Cancelar" com confirmação antes de descartar o rascunho
+- [ ] Botão "Cancelar" com diálogo de confirmação antes de descartar o rascunho
 
-### Ajustes derivados de raça/classe
-- [ ] Aplicar bônus de atributo da raça automaticamente na revisão
-- [ ] Calcular `proficiencyBonus` (sempre 2 no nível 1)
-- [ ] Calcular `hitPoints` máximo no nível 1: `hitDie + modificador CON`
-- [ ] Popular `savingThrowProficiencies` e `skillProficiencies` padrão da classe e antecedente
+### Cálculos automáticos ao salvar
+- [ ] `proficiencyBonus` = 2 (nível 1, fixo)
+- [ ] `hitPoints.maximum` = hitDie + mod CON
+- [ ] `savingThrowProficiencies` da classe
+- [ ] `skillProficiencies` consolidadas (background + raça + escolhas da classe)
+- [ ] `armorClass` base = 10 + mod DEX
 
 ---
 
 ## Fora do escopo desta sprint
 - Modo aleatório, semi-aleatório e manual (Sprint 3)
 - Ficha detalhada / edição de personagem existente
-- Seleção de equipamento e magias iniciais (simplificado: listas vazias por ora)
+- Seleção de equipamento e magias iniciais (listas vazias por ora)
 - Foto do personagem
 - Export / import
 

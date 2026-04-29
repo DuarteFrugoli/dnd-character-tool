@@ -1,0 +1,150 @@
+[
+  {
+    "name": "Acolyte",
+    "skillProficiencies": ["insight", "religion"],
+    "toolProficiencies": [],
+    "languages": 2,
+    "startingEquipment": ["Holy symbol", "Prayer book or prayer wheel", "5 sticks of incense", "Vestments", "Common clothes", "15 gp"],
+    "feature": {
+      "name": "Shelter of the Faithful",
+      "description": "You and your companions can receive free healing and care at temples of your faith, and you can call upon priests for help."
+    }
+  },
+  {
+    "name": "Charlatan",
+    "skillProficiencies": ["deception", "sleight of hand"],
+    "toolProficiencies": ["Disguise kit", "Forgery kit"],
+    "languages": 0,
+    "startingEquipment": ["Fine clothes", "Disguise kit", "Tools of the con of your choice", "15 gp"],
+    "feature": {
+      "name": "False Identity",
+      "description": "You have created a second identity, including documentation, established acquaintances, and disguises."
+    }
+  },
+  {
+    "name": "Criminal",
+    "skillProficiencies": ["deception", "stealth"],
+    "toolProficiencies": ["One type of gaming set", "Thieves' tools"],
+    "languages": 0,
+    "startingEquipment": ["Crowbar", "Dark common clothes with hood", "15 gp"],
+    "feature": {
+      "name": "Criminal Contact",
+      "description": "You have a reliable contact who acts as a liaison to a network of criminals."
+    },
+    "variants": ["Spy"]
+  },
+  {
+    "name": "Entertainer",
+    "skillProficiencies": ["acrobatics", "performance"],
+    "toolProficiencies": ["Disguise kit", "One type of musical instrument"],
+    "languages": 0,
+    "startingEquipment": ["Musical instrument", "The favor of an admirer", "Costume", "15 gp"],
+    "feature": {
+      "name": "By Popular Demand",
+      "description": "You can always find a place to perform and receive free lodging and food of modest quality."
+    },
+    "variants": ["Gladiator"]
+  },
+  {
+    "name": "Folk Hero",
+    "skillProficiencies": ["animal handling", "survival"],
+    "toolProficiencies": ["One type of artisan's tools", "Vehicles (land)"],
+    "languages": 0,
+    "startingEquipment": ["Artisan's tools", "Shovel", "Iron pot", "Common clothes", "10 gp"],
+    "feature": {
+      "name": "Rustic Hospitality",
+      "description": "Common folk will shelter you and your companions, hide you, and won't betray you."
+    }
+  },
+  {
+    "name": "Guild Artisan",
+    "skillProficiencies": ["insight", "persuasion"],
+    "toolProficiencies": ["One type of artisan's tools"],
+    "languages": 1,
+    "startingEquipment": ["Artisan's tools", "Letter of introduction from your guild", "Traveler's clothes", "15 gp"],
+    "feature": {
+      "name": "Guild Membership",
+      "description": "Your guild offers lodging, legal aid, and assistance — and expects dues and loyalty in return."
+    },
+    "variants": ["Guild Merchant"]
+  },
+  {
+    "name": "Hermit",
+    "skillProficiencies": ["medicine", "religion"],
+    "toolProficiencies": ["Herbalism kit"],
+    "languages": 1,
+    "startingEquipment": ["Scroll case with notes", "Winter blanket", "Common clothes", "Herbalism kit", "5 gp"],
+    "feature": {
+      "name": "Discovery",
+      "description": "Your solitude yielded a unique discovery — a great truth, a secret, or a hidden location."
+    }
+  },
+  {
+    "name": "Noble",
+    "skillProficiencies": ["history", "persuasion"],
+    "toolProficiencies": ["One type of gaming set"],
+    "languages": 1,
+    "startingEquipment": ["Fine clothes", "Signet ring", "Scroll of pedigree", "25 gp"],
+    "feature": {
+      "name": "Position of Privilege",
+      "description": "People assume the best of you. You are welcome in high society and can secure an audience with a local noble."
+    },
+    "variants": ["Knight"]
+  },
+  {
+    "name": "Outlander",
+    "skillProficiencies": ["athletics", "survival"],
+    "toolProficiencies": ["One type of musical instrument"],
+    "languages": 1,
+    "startingEquipment": ["Staff", "Hunting trap", "Trophy from an animal", "Traveler's clothes", "10 gp"],
+    "feature": {
+      "name": "Wanderer",
+      "description": "You can find food and fresh water for yourself and up to 5 others each day, and recall the general layout of terrain."
+    }
+  },
+  {
+    "name": "Sage",
+    "skillProficiencies": ["arcana", "history"],
+    "toolProficiencies": [],
+    "languages": 2,
+    "startingEquipment": ["Bottle of black ink", "Quill", "Small knife", "Letter from a dead colleague", "Common clothes", "10 gp"],
+    "feature": {
+      "name": "Researcher",
+      "description": "You know where to find obscure information. If you don't know it, you know who does."
+    }
+  },
+  {
+    "name": "Sailor",
+    "skillProficiencies": ["athletics", "perception"],
+    "toolProficiencies": ["Navigator's tools", "Vehicles (water)"],
+    "languages": 0,
+    "startingEquipment": ["Belaying pin (club)", "50 feet of silk rope", "Lucky charm", "Common clothes", "10 gp"],
+    "feature": {
+      "name": "Ship's Passage",
+      "description": "You can secure free passage on sailing ships for yourself and companions in exchange for labor."
+    },
+    "variants": ["Pirate"]
+  },
+  {
+    "name": "Soldier",
+    "skillProficiencies": ["athletics", "intimidation"],
+    "toolProficiencies": ["One type of gaming set", "Vehicles (land)"],
+    "languages": 0,
+    "startingEquipment": ["Insignia of rank", "Trophy from a fallen enemy", "Deck of cards or dice", "Common clothes", "10 gp"],
+    "feature": {
+      "name": "Military Rank",
+      "description": "Soldiers loyal to your former faction recognize your rank. You can invoke your rank for influence and access to military camps."
+    }
+  },
+  {
+    "name": "Urchin",
+    "skillProficiencies": ["sleight of hand", "stealth"],
+    "toolProficiencies": ["Disguise kit", "Thieves' tools"],
+    "languages": 0,
+    "startingEquipment": ["Small knife", "Map of your home city", "Pet mouse", "Token from your parents", "Common clothes", "10 gp"],
+    "feature": {
+      "name": "City Secrets",
+      "description": "You know the secret patterns of cities and can find passages through urban areas twice as fast as normal."
+    }
+  }
+]

@@ -1,0 +1,51 @@
+name: dnd_character_tool
+description: "D&D 5e character creation and management tool."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Navigation
+  go_router: ^15.1.2
+
+  # Storage
+  path_provider: ^2.1.5
+
+  # Serialization
+  json_annotation: ^4.9.0
+
+  # File operations (export/import)
+  file_picker: ^9.2.1
+  share_plus: ^10.1.4
+
+  # Utilities
+  uuid: ^4.5.1
+  collection: ^1.19.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+  # Code generation
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/data/srd/races.json
+    - assets/data/srd/classes.json
+    - assets/data/srd/backgrounds.json
+    - assets/data/srd/skills.json
+    - assets/data/srd/spells.json
+    - assets/data/srd/equipment.json

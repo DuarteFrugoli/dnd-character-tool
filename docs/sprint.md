@@ -1,4 +1,4 @@
-# Sprint 1 — Fundação (em andamento)
+# Sprint 1 — Fundação (concluída)
 
 Objetivo: ter o app rodando com persistência local funcional e dados do SRD disponíveis.
 
@@ -42,3 +42,47 @@ Objetivo: ter o app rodando com persistência local funcional e dados do SRD dis
 - Ficha detalhada do personagem
 - Export / import
 - UI visual final (tema, cores)
+
+---
+
+# Sprint 2 — Criação de personagem (planejada)
+
+Objetivo: permitir criar um personagem completo do zero usando o modo guiado (passo a passo). Os demais modos (aleatório, semi-aleatório e manual) virão em seguida, reaproveitando a mesma estrutura.
+
+---
+
+## Tarefas
+
+### Fluxo de criação — modo guiado (`guided`)
+O usuário avança por etapas obrigatórias, sendo guiado com as opções do SRD. Ao final, o personagem é salvo localmente.
+
+- [ ] Rota `/create` com parâmetro de modo (`?mode=guided`)
+- [ ] Provider `CharacterDraftNotifier` — estado mutável do personagem em construção
+- [ ] **Etapa 1 — Nome e jogador**: campos de texto livres
+- [ ] **Etapa 2 — Raça**: lista das 9 raças SRD; se houver subraça, segundo passo de seleção
+- [ ] **Etapa 3 — Classe**: lista das 12 classes com hit die e resumo de proficiências
+- [ ] **Etapa 4 — Antecedente (Background)**: lista dos 13 antecedentes com descrição da feature
+- [ ] **Etapa 5 — Atributos (Standard Array)**: distribuição fixa `[15, 14, 13, 12, 10, 8]` nos 6 atributos com drag-and-drop ou dropdowns
+- [ ] **Etapa 6 — Revisão**: resumo de todas as escolhas com botão "Criar Personagem"
+- [ ] Ao confirmar: salvar via `CharacterRepository.save()` e navegar para a lista
+
+### Navegação e UX
+- [ ] Widget de barra de progresso por etapa (`StepIndicator`)
+- [ ] Botões "Voltar" e "Continuar" com validação por etapa
+- [ ] Botão "Cancelar" com confirmação antes de descartar o rascunho
+
+### Ajustes derivados de raça/classe
+- [ ] Aplicar bônus de atributo da raça automaticamente na revisão
+- [ ] Calcular `proficiencyBonus` (sempre 2 no nível 1)
+- [ ] Calcular `hitPoints` máximo no nível 1: `hitDie + modificador CON`
+- [ ] Popular `savingThrowProficiencies` e `skillProficiencies` padrão da classe e antecedente
+
+---
+
+## Fora do escopo desta sprint
+- Modo aleatório, semi-aleatório e manual (Sprint 3)
+- Ficha detalhada / edição de personagem existente
+- Seleção de equipamento e magias iniciais (simplificado: listas vazias por ora)
+- Foto do personagem
+- Export / import
+

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'storage_backend_stub.dart' show StorageBackend;
+export 'storage_backend_stub.dart' show StorageBackend;
 
 StorageBackend createStorageBackend() => WebStorageBackend();
 

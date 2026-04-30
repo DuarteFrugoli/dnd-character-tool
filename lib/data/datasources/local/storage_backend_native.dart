@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 
 import 'storage_backend_stub.dart' show StorageBackend;
+export 'storage_backend_stub.dart' show StorageBackend;
 
 StorageBackend createStorageBackend() => NativeStorageBackend();
 

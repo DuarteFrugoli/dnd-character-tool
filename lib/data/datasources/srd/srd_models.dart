@@ -359,3 +359,51 @@ class SrdArmor {
         cost: json['cost'] as String,
       );
 }
+
+class SrdGearItem {
+  final String name;
+  final String category;
+  final double weight;
+  final String cost;
+  final String description;
+
+  const SrdGearItem({
+    required this.name,
+    required this.category,
+    required this.weight,
+    required this.cost,
+    required this.description,
+  });
+
+  factory SrdGearItem.fromJson(Map<String, dynamic> json) => SrdGearItem(
+        name: json['name'] as String,
+        category: json['category'] as String,
+        weight: (json['weight'] as num).toDouble(),
+        cost: json['cost'] as String,
+        description: json['description'] as String? ?? '',
+      );
+}
+
+class SrdMagicItem {
+  final String name;
+  final String type;
+  final String rarity;
+  final bool requiresAttunement;
+  final String description;
+
+  const SrdMagicItem({
+    required this.name,
+    required this.type,
+    required this.rarity,
+    required this.requiresAttunement,
+    required this.description,
+  });
+
+  factory SrdMagicItem.fromJson(Map<String, dynamic> json) => SrdMagicItem(
+        name: json['name'] as String,
+        type: json['type'] as String,
+        rarity: json['rarity'] as String,
+        requiresAttunement: json['requiresAttunement'] as bool? ?? false,
+        description: json['description'] as String? ?? '',
+      );
+}

@@ -18,6 +18,8 @@ class SrdDataSource {
   List<SrdSpell>? _spells;
   List<SrdWeapon>? _weapons;
   List<SrdArmor>? _armors;
+  List<SrdGearItem>? _gear;
+  List<SrdMagicItem>? _magicItems;
 
   Future<List<SrdSkill>> getSkills() async {
     _skills ??= await _loadList(
@@ -114,8 +116,21 @@ class SrdDataSource {
     return _armors!;
   }
 
+  Future<List<SrdGearItem>> getGear() async {
+    await _loadEquipment();
+    return _gear!;
+  }
+
+  Future<List<SrdMagicItem>> getMagicItems() async {
+    _magicItems ??= await _loadList(
+      'assets/data/srd/magic_items.json',
+      SrdMagicItem.fromJson,
+    );
+    return _magicItems!;
+  }
+
   Future<void> _loadEquipment() async {
-    if (_weapons != null && _armors != null) return;
+    if (_weapons != null && _armors != null && _gear != null) return;
     final raw = await rootBundle.loadString('assets/data/srd/equipment.json');
     final json = jsonDecode(raw) as Map<String, dynamic>;
     _weapons = (json['weapons'] as List<dynamic>)
@@ -123,6 +138,9 @@ class SrdDataSource {
         .toList();
     _armors = (json['armor'] as List<dynamic>)
         .map((e) => SrdArmor.fromJson(e as Map<String, dynamic>))
+        .toList();
+    _gear = (json['gear'] as List<dynamic>)
+        .map((e) => SrdGearItem.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -144,5 +162,7 @@ class SrdDataSource {
     _spells = null;
     _weapons = null;
     _armors = null;
+    _gear = null;
+    _magicItems = null;
   }
 }

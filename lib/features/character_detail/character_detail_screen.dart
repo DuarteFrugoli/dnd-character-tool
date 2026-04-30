@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../data/datasources/srd/srd_data_source.dart';
+import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
+import '../../shared/providers/providers.dart';
 import 'character_detail_provider.dart';
 
 // ── Skill → Ability mapping ───────────────────────────────────────────────────
@@ -794,74 +797,12 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
         .updateCurrency(map);
   }
 
-  void _showAddItemDialog() {
-    final nameCtrl = TextEditingController();
-    final categoryCtrl = TextEditingController(text: 'adventuring gear');
-    final qtyCtrl = TextEditingController(text: '1');
-    final descCtrl = TextEditingController();
-
-    showDialog(
+  void _showAddItemSheet() {
+    showModalBottomSheet(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Add Item'),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: nameCtrl,
-                autofocus: true,
-                decoration: const InputDecoration(labelText: 'Name'),
-              ),
-              const SizedBox(height: 8),
-              TextField(
-                controller: categoryCtrl,
-                decoration: const InputDecoration(labelText: 'Category'),
-              ),
-              const SizedBox(height: 8),
-              TextField(
-                controller: qtyCtrl,
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                decoration: const InputDecoration(labelText: 'Quantity'),
-              ),
-              const SizedBox(height: 8),
-              TextField(
-                controller: descCtrl,
-                decoration:
-                    const InputDecoration(labelText: 'Description (optional)'),
-                maxLines: 2,
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel'),
-          ),
-          FilledButton(
-            onPressed: () {
-              final name = nameCtrl.text.trim();
-              if (name.isEmpty) return;
-              Navigator.pop(ctx);
-              ref
-                  .read(characterDetailProvider(widget.characterId).notifier)
-                  .addEquipmentItem(EquipmentItem(
-                    name: name,
-                    category: categoryCtrl.text.trim().isEmpty
-                        ? 'adventuring gear'
-                        : categoryCtrl.text.trim(),
-                    quantity: int.tryParse(qtyCtrl.text) ?? 1,
-                    description: descCtrl.text.trim().isEmpty
-                        ? null
-                        : descCtrl.text.trim(),
-                  ));
-            },
-            child: const Text('Add'),
-          ),
-        ],
-      ),
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (_) => _AddItemSheet(characterId: widget.characterId),
     );
   }
 
@@ -965,13 +906,379 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _showAddItemDialog,
+        onPressed: _showAddItemSheet,
         tooltip: 'Add item',
         child: const Icon(Icons.add),
       ),
     );
   }
 }
+
+// ── Add Item Bottom Sheet ─────────────────────────────────────────────────────
+
+class _AddItemSheet extends ConsumerStatefulWidget {
+  const _AddItemSheet({required this.characterId});
+  final String characterId;
+
+  @override
+  ConsumerState<_AddItemSheet> createState() => _AddItemSheetState();
+}
+
+class _AddItemSheetState extends ConsumerState<_AddItemSheet>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabs;
+  final _search = TextEditingController();
+
+  List<SrdWeapon>? _weapons;
+  List<SrdArmor>? _armors;
+  List<SrdGearItem>? _gear;
+  List<SrdMagicItem>? _magic;
+
+  static const _tabLabels = ['Weapons', 'Armor', 'Gear', 'Magic', 'Custom'];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabs = TabController(length: 5, vsync: this);
+    _tabs.addListener(() {
+      if (!_tabs.indexIsChanging) {
+        _search.clear();
+        setState(() {});
+      }
+    });
+    _search.addListener(() => setState(() {}));
+    _loadData();
+  }
+
+  @override
+  void dispose() {
+    _tabs.dispose();
+    _search.dispose();
+    super.dispose();
+  }
+
+  Future<void> _loadData() async {
+    final srd = ref.read(srdDataSourceProvider);
+    final results = await Future.wait([
+      srd.getWeapons(),
+      srd.getArmors(),
+      srd.getGear(),
+      srd.getMagicItems(),
+    ]);
+    if (mounted) {
+      setState(() {
+        _weapons = results[0] as List<SrdWeapon>;
+        _armors = results[1] as List<SrdArmor>;
+        _gear = results[2] as List<SrdGearItem>;
+        _magic = results[3] as List<SrdMagicItem>;
+      });
+    }
+  }
+
+  void _addItem(EquipmentItem item) {
+    ref
+        .read(characterDetailProvider(widget.characterId).notifier)
+        .addEquipmentItem(item);
+    Navigator.pop(context);
+  }
+
+  // Mostra dialog de confirmação com quantidade antes de adicionar
+  Future<void> _confirmAdd({
+    required String name,
+    required String category,
+    required String? description,
+  }) async {
+    final qtyCtrl = TextEditingController(text: '1');
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(name),
+        content: Row(
+          children: [
+            const Text('Quantity:'),
+            const SizedBox(width: 12),
+            SizedBox(
+              width: 64,
+              child: TextField(
+                controller: qtyCtrl,
+                autofocus: true,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                textAlign: TextAlign.center,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                ),
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Add'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true && mounted) {
+      _addItem(EquipmentItem(
+        name: name,
+        category: category,
+        quantity: int.tryParse(qtyCtrl.text) ?? 1,
+        description: description,
+      ));
+    }
+    qtyCtrl.dispose();
+  }
+
+  Widget _buildSrdList<T>({
+    required List<T>? items,
+    required String Function(T) getName,
+    required String Function(T) getSubtitle,
+    required String Function(T) getCategory,
+    required String? Function(T) getDescription,
+  }) {
+    if (items == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    final q = _search.text.toLowerCase();
+    final filtered = q.isEmpty
+        ? items
+        : items.where((e) => getName(e).toLowerCase().contains(q)).toList();
+
+    if (filtered.isEmpty) {
+      return Center(
+        child: Text(
+          'No results for "$q"',
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.onSurfaceVariant),
+        ),
+      );
+    }
+
+    return ListView.builder(
+      itemCount: filtered.length,
+      itemBuilder: (_, i) {
+        final item = filtered[i];
+        return ListTile(
+          title: Text(getName(item), style: const TextStyle(fontSize: 14)),
+          subtitle: Text(
+            getSubtitle(item),
+            style: TextStyle(
+                fontSize: 12,
+                color: Theme.of(context).colorScheme.onSurfaceVariant),
+          ),
+          trailing: IconButton(
+            icon: const Icon(Icons.add_circle_outline),
+            color: Theme.of(context).colorScheme.primary,
+            onPressed: () => _confirmAdd(
+              name: getName(item),
+              category: getCategory(item),
+              description: getDescription(item),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildCustomTab() {
+    final nameCtrl = TextEditingController();
+    final categoryCtrl = TextEditingController(text: 'adventuring gear');
+    final qtyCtrl = TextEditingController(text: '1');
+    final descCtrl = TextEditingController();
+    final scheme = Theme.of(context).colorScheme;
+
+    return StatefulBuilder(
+      builder: (ctx, setState) => SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: nameCtrl,
+              autofocus: false,
+              decoration: const InputDecoration(
+                  labelText: 'Name *', border: OutlineInputBorder()),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: categoryCtrl,
+              decoration: const InputDecoration(
+                  labelText: 'Category', border: OutlineInputBorder()),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: qtyCtrl,
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              decoration: const InputDecoration(
+                  labelText: 'Quantity', border: OutlineInputBorder()),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: descCtrl,
+              maxLines: 3,
+              decoration: const InputDecoration(
+                  labelText: 'Description (optional)',
+                  border: OutlineInputBorder()),
+            ),
+            const SizedBox(height: 16),
+            FilledButton(
+              onPressed: () {
+                final name = nameCtrl.text.trim();
+                if (name.isEmpty) return;
+                _addItem(EquipmentItem(
+                  name: name,
+                  category: categoryCtrl.text.trim().isEmpty
+                      ? 'adventuring gear'
+                      : categoryCtrl.text.trim(),
+                  quantity: int.tryParse(qtyCtrl.text) ?? 1,
+                  description: descCtrl.text.trim().isEmpty
+                      ? null
+                      : descCtrl.text.trim(),
+                ));
+              },
+              style: FilledButton.styleFrom(
+                backgroundColor: scheme.primary,
+                foregroundColor: scheme.onPrimary,
+              ),
+              child: const Text('Add Custom Item'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isCustomTab = _tabs.index == 4;
+
+    return DraggableScrollableSheet(
+      initialChildSize: 0.87,
+      minChildSize: 0.4,
+      maxChildSize: 0.95,
+      expand: false,
+      builder: (ctx, scrollCtrl) => Column(
+        children: [
+          // Handle
+          Center(
+            child: Container(
+              margin: const EdgeInsets.only(top: 12, bottom: 8),
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.4),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                Text('Add Item',
+                    style: Theme.of(context).textTheme.titleMedium),
+                const Spacer(),
+                IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ],
+            ),
+          ),
+          // Barra de busca (oculta na aba Custom)
+          if (!isCustomTab)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              child: TextField(
+                controller: _search,
+                decoration: InputDecoration(
+                  hintText: 'Search ${_tabLabels[_tabs.index]}...',
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: _search.text.isNotEmpty
+                      ? IconButton(
+                          icon: const Icon(Icons.clear),
+                          onPressed: () => _search.clear(),
+                        )
+                      : null,
+                  border: const OutlineInputBorder(),
+                  isDense: true,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8),
+                ),
+              ),
+            ),
+          TabBar(
+            controller: _tabs,
+            isScrollable: true,
+            tabAlignment: TabAlignment.start,
+            tabs: _tabLabels.map((l) => Tab(text: l)).toList(),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabs,
+              children: [
+                // Weapons
+                _buildSrdList<SrdWeapon>(
+                  items: _weapons,
+                  getName: (w) => w.name,
+                  getSubtitle: (w) =>
+                      '${w.category}  ·  ${w.damage} ${w.damageType}  ·  ${w.cost}',
+                  getCategory: (w) => w.category,
+                  getDescription: (w) => w.properties.isNotEmpty
+                      ? w.properties.join(', ')
+                      : null,
+                ),
+                // Armor
+                _buildSrdList<SrdArmor>(
+                  items: _armors,
+                  getName: (a) => a.name,
+                  getSubtitle: (a) => a.isShield
+                      ? 'Shield  ·  +${a.acBonus} AC  ·  ${a.cost}'
+                      : '${a.type}  ·  AC ${a.baseAC}${a.addDexModifier ? " + DEX" : ""}${a.maxDexBonus != null ? " (max +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
+                  getCategory: (_) => 'armor',
+                  getDescription: (a) => a.stealthDisadvantage
+                      ? 'Stealth disadvantage'
+                      : null,
+                ),
+                // Gear
+                _buildSrdList<SrdGearItem>(
+                  items: _gear,
+                  getName: (g) => g.name,
+                  getSubtitle: (g) => '${g.category}  ·  ${g.cost}',
+                  getCategory: (g) => g.category,
+                  getDescription: (g) =>
+                      g.description.isNotEmpty ? g.description : null,
+                ),
+                // Magic Items
+                _buildSrdList<SrdMagicItem>(
+                  items: _magic,
+                  getName: (m) => m.name,
+                  getSubtitle: (m) =>
+                      '${m.type}  ·  ${m.rarity}${m.requiresAttunement ? "  ·  attunement" : ""}',
+                  getCategory: (m) => m.type,
+                  getDescription: (m) => m.description,
+                ),
+                // Custom
+                _buildCustomTab(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Item Tile ─────────────────────────────────────────────────────────────────
 
 class _ItemTile extends ConsumerWidget {
   const _ItemTile({required this.item, required this.characterId});

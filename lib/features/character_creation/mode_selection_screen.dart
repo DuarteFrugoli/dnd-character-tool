@@ -8,7 +8,10 @@ class ModeSelectionScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text('New Character')),
+      appBar: AppBar(
+        title: const Text('New Character'),
+        leading: BackButton(onPressed: () => context.pop()),
+      ),
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [

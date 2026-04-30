@@ -810,10 +810,13 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
   Widget build(BuildContext context) {
     final character = widget.character;
     final scheme = Theme.of(context).colorScheme;
-    final equipped =
-        character.equipment.where((e) => e.isEquipped).toList();
-    final carried =
-        character.equipment.where((e) => !e.isEquipped).toList();
+    final ammo = character.equipment
+        .where((e) => e.itemType == ItemType.ammunition)
+        .toList();
+    final nonAmmo =
+        character.equipment.where((e) => e.itemType != ItemType.ammunition);
+    final equipped = nonAmmo.where((e) => e.isEquipped).toList();
+    final carried = nonAmmo.where((e) => !e.isEquipped).toList();
 
     return Scaffold(
       body: ListView(
@@ -864,6 +867,15 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
           ),
           const SizedBox(height: 12),
 
+          // ── Ammunition ──────────────────────────────────────────────────
+          if (ammo.isNotEmpty) ...[
+            _AmmunitionSection(
+              items: ammo,
+              characterId: widget.characterId,
+            ),
+            const SizedBox(height: 12),
+          ],
+
           // ── Equipped ────────────────────────────────────────────────────
           if (equipped.isNotEmpty) ...
             [
@@ -883,7 +895,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
 
           // ── Carried ─────────────────────────────────────────────────────
           _Section(
-            title: carried.isEmpty && equipped.isEmpty
+            title: carried.isEmpty && equipped.isEmpty && ammo.isEmpty
                 ? 'Inventory'
                 : 'Carried (${carried.length})',
             child: carried.isEmpty
@@ -914,6 +926,94 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
   }
 }
 
+// ── Ammunition Section ────────────────────────────────────────────────────────
+
+class _AmmunitionSection extends ConsumerWidget {
+  const _AmmunitionSection(
+      {required this.items, required this.characterId});
+  final List<EquipmentItem> items;
+  final String characterId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final notifier =
+        ref.read(characterDetailProvider(characterId).notifier);
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Ammunition',
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge
+                  ?.copyWith(color: scheme.primary),
+            ),
+            const SizedBox(height: 8),
+            ...items.map((item) => Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.arrow_upward, size: 16),
+                      const SizedBox(width: 6),
+                      Expanded(
+                        child: Text(item.name,
+                            style: const TextStyle(fontSize: 14)),
+                      ),
+                      // Diminuir
+                      IconButton(
+                        icon: const Icon(Icons.remove, size: 18),
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(
+                            minWidth: 32, minHeight: 32),
+                        onPressed: () =>
+                            notifier.adjustItemQuantity(item.id, -1),
+                      ),
+                      // Quantidade
+                      SizedBox(
+                        width: 40,
+                        child: Text(
+                          '${item.quantity}',
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      // Aumentar
+                      IconButton(
+                        icon: const Icon(Icons.add, size: 18),
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(
+                            minWidth: 32, minHeight: 32),
+                        onPressed: () =>
+                            notifier.adjustItemQuantity(item.id, 1),
+                      ),
+                      // Remover
+                      IconButton(
+                        icon: const Icon(Icons.delete_outline, size: 18),
+                        color: scheme.error,
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(
+                            minWidth: 32, minHeight: 32),
+                        onPressed: () =>
+                            notifier.removeEquipmentItem(item.id),
+                      ),
+                    ],
+                  ),
+                )),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 // ── Add Item Bottom Sheet ─────────────────────────────────────────────────────
 
 class _AddItemSheet extends ConsumerStatefulWidget {
@@ -935,6 +1035,10 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   List<SrdMagicItem>? _magic;
 
   static const _tabLabels = ['Weapons', 'Armor', 'Gear', 'Magic', 'Custom'];
+
+  /// Remove notação de pacote do nome: "Arrows (20)" → "Arrows"
+  static String _stripPackNotation(String name) =>
+      name.replaceAll(RegExp(r'\s*\(\d+\)\s*$'), '').trim();
 
   @override
   void initState() {
@@ -1279,7 +1383,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                 // Armor
                 _buildSrdList<SrdArmor>(
                   items: _armors,
-                  getName: (a) => a.name,
+                  getName: (a) => a.isShield ? a.name : '${a.name} Armor',
                   getSubtitle: (a) => a.isShield
                       ? 'Shield  ·  +${a.acBonus} AC  ·  ${a.cost}'
                       : '${a.type}  ·  AC ${a.baseAC}${a.addDexModifier ? " + DEX" : ""}${a.maxDexBonus != null ? " (max +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
@@ -1299,12 +1403,14 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                 // Gear
                 _buildSrdList<SrdGearItem>(
                   items: _gear,
-                  getName: (g) => g.name,
+                  getName: (g) => _stripPackNotation(g.name),
                   getSubtitle: (g) => '${g.category}  ·  ${g.cost}',
                   getCategory: (g) => g.category,
                   getDescription: (g) =>
                       g.description.isNotEmpty ? g.description : null,
-                  getItemType: (_) => ItemType.gear,
+                  getItemType: (g) => g.category == 'ammunition'
+                      ? ItemType.ammunition
+                      : ItemType.gear,
                 ),
                 // Magic Items
                 _buildSrdList<SrdMagicItem>(

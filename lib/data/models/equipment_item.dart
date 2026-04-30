@@ -10,6 +10,7 @@ enum ItemType {
   weapon,
   armor,
   consumable,
+  ammunition,
   gear,
 }
 

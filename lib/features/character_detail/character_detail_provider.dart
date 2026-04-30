@@ -166,6 +166,20 @@ class CharacterDetailNotifier
     return base + shieldBonus;
   }
 
+  Future<void> adjustItemQuantity(String id, int delta) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final updated = c.equipment.map((e) {
+      if (e.id != id) return e;
+      final newQty = (e.quantity + delta).clamp(0, 9999);
+      return e.copyWith(quantity: newQty);
+    }).toList();
+    // Remove se chegou a zero
+    await _save(c.copyWith(
+      equipment: updated.where((e) => e.quantity > 0).toList(),
+    ));
+  }
+
   Future<void> updateCurrency(Map<String, int> currency) async {
     final c = state.valueOrNull;
     if (c == null) return;

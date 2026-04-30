@@ -2,6 +2,7 @@
   {
     "name": "Potion of Healing",
     "type": "potion",
+    "itemType": "consumable",
     "rarity": "common",
     "requiresAttunement": false,
     "weight": 0.5,
@@ -12,6 +13,7 @@
   {
     "name": "Potion of Greater Healing",
     "type": "potion",
+    "itemType": "consumable",
     "rarity": "uncommon",
     "requiresAttunement": false,
     "weight": 0.5,
@@ -22,6 +24,7 @@
   {
     "name": "Potion of Superior Healing",
     "type": "potion",
+    "itemType": "consumable",
     "rarity": "rare",
     "requiresAttunement": false,
     "weight": 0.5,
@@ -32,6 +35,7 @@
   {
     "name": "Potion of Supreme Healing",
     "type": "potion",
+    "itemType": "consumable",
     "rarity": "very rare",
     "requiresAttunement": false,
     "weight": 0.5,
@@ -42,6 +46,7 @@
   {
     "name": "Bag of Holding",
     "type": "wondrous item",
+    "itemType": "gear",
     "rarity": "uncommon",
     "requiresAttunement": false,
     "weight": 15,
@@ -54,6 +59,7 @@
   {
     "name": "+1 Weapon",
     "type": "weapon",
+    "itemType": "weapon",
     "rarity": "uncommon",
     "requiresAttunement": false,
     "weight": null,
@@ -66,6 +72,7 @@
   {
     "name": "+2 Weapon",
     "type": "weapon",
+    "itemType": "weapon",
     "rarity": "rare",
     "requiresAttunement": false,
     "weight": null,
@@ -78,6 +85,7 @@
   {
     "name": "+3 Weapon",
     "type": "weapon",
+    "itemType": "weapon",
     "rarity": "very rare",
     "requiresAttunement": false,
     "weight": null,
@@ -90,6 +98,7 @@
   {
     "name": "+1 Armor",
     "type": "armor",
+    "itemType": "armor",
     "rarity": "rare",
     "requiresAttunement": false,
     "weight": null,
@@ -102,6 +111,7 @@
   {
     "name": "Cloak of Protection",
     "type": "wondrous item",
+    "itemType": "armor",
     "rarity": "uncommon",
     "requiresAttunement": true,
     "weight": 1,
@@ -114,6 +124,7 @@
   {
     "name": "Ring of Protection",
     "type": "ring",
+    "itemType": "armor",
     "rarity": "rare",
     "requiresAttunement": true,
     "weight": 0,
@@ -126,7 +137,7 @@
   {
     "name": "Boots of Speed",
     "type": "wondrous item",
-    "rarity": "rare",
+    "itemType": "armor",
     "requiresAttunement": true,
     "weight": 1,
     "cost": "—",
@@ -138,6 +149,7 @@
   {
     "name": "Gauntlets of Ogre Power",
     "type": "wondrous item",
+    "itemType": "armor",
     "rarity": "uncommon",
     "requiresAttunement": true,
     "weight": 1,
@@ -150,6 +162,7 @@
   {
     "name": "Headband of Intellect",
     "type": "wondrous item",
+    "itemType": "armor",
     "rarity": "uncommon",
     "requiresAttunement": true,
     "weight": 0,
@@ -162,6 +175,7 @@
   {
     "name": "Amulet of Health",
     "type": "wondrous item",
+    "itemType": "armor",
     "rarity": "rare",
     "requiresAttunement": true,
     "weight": 0,
@@ -174,6 +188,7 @@
   {
     "name": "Wand of Magic Missiles",
     "type": "wand",
+    "itemType": "weapon",
     "rarity": "uncommon",
     "requiresAttunement": false,
     "weight": 1,
@@ -186,6 +201,7 @@
   {
     "name": "Rope of Climbing",
     "type": "wondrous item",
+    "itemType": "gear",
     "rarity": "uncommon",
     "requiresAttunement": false,
     "weight": 3,

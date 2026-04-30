@@ -936,26 +936,6 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
 
   static const _tabLabels = ['Weapons', 'Armor', 'Gear', 'Magic', 'Custom'];
 
-  /// Mapeia itens mágicos do SRD para ItemType com base no nome/tipo.
-  static ItemType _magicItemType(SrdMagicItem m) {
-    final name = m.name.toLowerCase();
-    if (name.contains('potion') || name.contains('elixir')) {
-      return ItemType.consumable;
-    }
-    final type = m.type.toLowerCase();
-    if (type.contains('armor') || type.contains('shield') ||
-        type.contains('ring') || type.contains('cloak') ||
-        type.contains('boots') || type.contains('gauntlets') ||
-        type.contains('headband') || type.contains('amulet')) {
-      return ItemType.armor;
-    }
-    if (type.contains('weapon') || type.contains('wand') ||
-        type.contains('staff') || type.contains('rod')) {
-      return ItemType.weapon;
-    }
-    return ItemType.gear;
-  }
-
   @override
   void initState() {
     super.initState();
@@ -1334,7 +1314,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                       '${m.type}  ·  ${m.rarity}${m.requiresAttunement ? "  ·  attunement" : ""}',
                   getCategory: (m) => m.type,
                   getDescription: (m) => m.description,
-                  getItemType: (m) => _magicItemType(m),
+                  getItemType: (m) => m.itemType,
                 ),
                 // Custom
                 _buildCustomTab(),

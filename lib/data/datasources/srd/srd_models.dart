@@ -2,6 +2,8 @@
 /// serialização reversa, portanto usam fromJson manual sem build_runner.
 library;
 
+import '../../models/equipment_item.dart';
+
 /// Capitalizes the first letter of a string (e.g. "dexterity" → "Dexterity").
 String _titleCase(String s) =>
     s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
@@ -390,6 +392,7 @@ class SrdMagicItem {
   final String rarity;
   final bool requiresAttunement;
   final String description;
+  final ItemType itemType;
 
   const SrdMagicItem({
     required this.name,
@@ -397,6 +400,7 @@ class SrdMagicItem {
     required this.rarity,
     required this.requiresAttunement,
     required this.description,
+    this.itemType = ItemType.gear,
   });
 
   factory SrdMagicItem.fromJson(Map<String, dynamic> json) => SrdMagicItem(
@@ -405,5 +409,9 @@ class SrdMagicItem {
         rarity: json['rarity'] as String,
         requiresAttunement: json['requiresAttunement'] as bool? ?? false,
         description: json['description'] as String? ?? '',
+        itemType: ItemType.values.firstWhere(
+          (e) => e.name == (json['itemType'] as String? ?? ''),
+          orElse: () => ItemType.gear,
+        ),
       );
 }

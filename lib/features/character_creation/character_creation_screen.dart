@@ -71,8 +71,7 @@ class _CharacterCreationScreenState
     }
   }
 
-  bool _isStepValid() {
-    final draft = ref.read(characterDraftProvider);
+  bool _isStepValid(CharacterDraft draft) {
     return switch (_currentStep) {
       0 => draft.selectedClass != null,
       1 => draft.selectedRace != null &&
@@ -95,6 +94,7 @@ class _CharacterCreationScreenState
 
   @override
   Widget build(BuildContext context) {
+    final draft = ref.watch(characterDraftProvider);
     final steps = [
       const StepClass(),
       const StepRace(),
@@ -135,7 +135,7 @@ class _CharacterCreationScreenState
                 ),
               const Spacer(),
               FilledButton(
-                onPressed: _isStepValid() ? _next : null,
+                onPressed: _isStepValid(draft) ? _next : null,
                 child: Text(
                   _currentStep == _stepTitles.length - 1
                       ? 'Create Character'
@@ -150,7 +150,7 @@ class _CharacterCreationScreenState
   }
 
   Future<void> _finishCreation() async {
-    if (!_isStepValid()) return;
+    if (!_isStepValid(ref.read(characterDraftProvider))) return;
     await ref.read(characterDraftProvider.notifier).buildAndSave(ref);
     ref.read(characterDraftProvider.notifier).reset();
     if (mounted) context.go('/');

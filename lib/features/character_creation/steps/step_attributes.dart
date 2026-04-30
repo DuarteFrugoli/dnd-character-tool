@@ -125,7 +125,16 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
             onChanged: _onPointBuyChanged,
           ),
 
-        // ── Free ASI distribution ────────────────────────────────────────
+        // ── Free picks da raça (ex: Half-Elf twoOthers) ──────────────────
+        if (!freeAsi && (draft.selectedRace?.freeAsiPoints ?? 0) > 0) ...[
+          const Divider(height: 24),
+          _FreePicksSection(
+            totalPoints: draft.selectedRace!.freeAsiPoints,
+            fixedAsi: raceAsi,
+          ),
+        ],
+
+        // ── Free ASI distribution (Tasha's) ──────────────────────────────
         if (freeAsi && raceAsi.isNotEmpty) ...[
           const Divider(height: 24),
           _FreeAsiSection(raceAsi: raceAsi),
@@ -410,6 +419,78 @@ class _FreeAsiSection extends ConsumerWidget {
                     ? () => ref
                         .read(characterDraftProvider.notifier)
                         .setFreeAsiDistribution({...dist, attr: current + 1})
+                    : null,
+              ),
+            ],
+          );
+        }),
+      ],
+    );
+  }
+}
+
+// ── Free Picks da Raça (twoOthers, etc.) ─────────────────────────────────────
+
+/// Seletor para pontos ASI livres específicos da raça (ex: Half-Elf +1/+1).
+/// Independente do toggle de Tasha's — é parte da regra base da raça.
+class _FreePicksSection extends ConsumerWidget {
+  const _FreePicksSection({
+    required this.totalPoints,
+    required this.fixedAsi,
+  });
+
+  /// Quantidade total de pontos +1 a distribuir (ex: Half-Elf = 2).
+  final int totalPoints;
+
+  /// Bônus fixos da raça (para exibição apenas — não afeta este seletor).
+  final Map<String, int> fixedAsi;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final dist = ref.watch(characterDraftProvider).freePicksDistribution;
+    final assigned = dist.values.fold(0, (a, b) => a + b);
+    final remaining = totalPoints - assigned;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Racial free ASI: assign +1 to $totalPoints attributes ($remaining remaining):',
+          style: Theme.of(context).textTheme.labelLarge,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          'Cannot assign to attributes already receiving a racial bonus.',
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
+        const SizedBox(height: 8),
+        ..._attributes.map((attr) {
+          final current = dist[attr] ?? 0;
+          final hasFixedBonus = (fixedAsi[attr] ?? 0) > 0;
+          return Row(
+            children: [
+              SizedBox(
+                  width: 110,
+                  child: Text(attr,
+                      style: Theme.of(context).textTheme.bodyMedium)),
+              IconButton(
+                icon: const Icon(Icons.remove, size: 18),
+                onPressed: current > 0
+                    ? () => ref
+                        .read(characterDraftProvider.notifier)
+                        .setFreePicksDistribution({...dist, attr: current - 1})
+                    : null,
+              ),
+              Text('+$current',
+                  style: Theme.of(context).textTheme.bodyMedium),
+              IconButton(
+                icon: const Icon(Icons.add, size: 18),
+                // Não pode colocar em atributo com bônus fixo da raça,
+                // não pode passar de 1 por atributo, e precisa ter ponto disponível.
+                onPressed: remaining > 0 && current < 1 && !hasFixedBonus
+                    ? () => ref
+                        .read(characterDraftProvider.notifier)
+                        .setFreePicksDistribution({...dist, attr: current + 1})
                     : null,
               ),
             ],

@@ -155,3 +155,59 @@ Objetivo: após criar um personagem, o jogador consegue ver e editar sua ficha c
 - Export / import
 - i18n
 
+---
+
+# Sprint 4 — Inventário & Equipamentos (planejada)
+
+Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do personagem na ficha. O equipamento inicial do background é aplicado automaticamente ao criar.
+
+---
+
+## Tarefas
+
+### Aba Equipment na ficha
+- [ ] Nova aba **Equipment** no `CharacterDetailScreen` (entre Spells e Notes)
+- [ ] Listar itens com nome, tipo (weapon/armor/gear), peso e propriedades
+- [ ] Ícone de status: equipado (✓) ou no inventário
+- [ ] Toggle para equipar/desequipar item
+- [ ] Remover item com confirmação (swipe ou botão)
+
+### Adicionar itens
+- [ ] Botão "Add Item" abre bottom sheet
+- [ ] Aba "SRD": busca/filtra itens de `equipment.json` (armas simples/marciais + armaduras)
+- [ ] Aba "Custom": formulário livre (nome, tipo, peso, propriedades, notas)
+- [ ] Adiciona item à lista do personagem e salva
+
+### Cálculo de AC com armadura
+- [ ] Quando armadura é equipada, recalcular AC automaticamente:
+  - Couro: 11 + DEX mod
+  - Cota de malha: 13 + DEX mod (max +2)
+  - Meia-placa: 15 + DEX mod (max +2)
+  - Placa completa: 18 (sem DEX)
+  - Sem armadura: 10 + DEX mod
+- [ ] Provider atualiza `character.armorClass` ao equipar/desequipar armadura
+- [ ] Exibir na aba Stats qual armadura está sendo usada
+
+### Moedas
+- [ ] Campo de moedas na aba Equipment: CP / SP / EP / GP / PP
+- [ ] Campos editáveis inline (tap para editar)
+- [ ] Persistido no modelo `Character` (novo campo `currency: Map<String, int>`)
+
+### Equipamento inicial do background
+- [ ] Campo `startingEquipment: List<String>` em `SrdBackground` (parsear do JSON)
+- [ ] Ao finalizar criação (buildAndSave), adicionar itens do background como `EquipmentItem` na lista do personagem
+
+### Provider
+- [ ] `addEquipmentItem(EquipmentItem)` em `CharacterDetailNotifier`
+- [ ] `removeEquipmentItem(String itemId)` em `CharacterDetailNotifier`
+- [ ] `toggleEquipped(String itemId)` em `CharacterDetailNotifier`
+- [ ] `updateCurrency(Map<String, int>)` em `CharacterDetailNotifier`
+
+---
+
+## Fora do escopo desta sprint
+- Peso total / capacidade de carga (strength × 15)
+- Economia de loja / compra e venda
+- Conjuração de itens mágicos
+- i18n
+

@@ -56,11 +56,18 @@ class SrdSubrace {
       );
 }
 
+// Atributos reais que podem receber bônus diretos.
+const _realAttributes = {
+  'strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma',
+};
+
 class SrdRace {
   final String name;
   final int speed;
   final String size;
   final Map<String, int> abilityScoreIncreases;
+  /// Pontos de ASI livres (ex: Half-Elf "twoOthers": 1 = 2 pontos de +1 livres).
+  final int freeAsiPoints;
   final List<String> traits;
   final List<String> languages;
   final List<SrdSubrace> subraces;
@@ -70,24 +77,40 @@ class SrdRace {
     required this.speed,
     required this.size,
     required this.abilityScoreIncreases,
+    this.freeAsiPoints = 0,
     required this.traits,
     required this.languages,
     required this.subraces,
   });
 
-  factory SrdRace.fromJson(Map<String, dynamic> json) => SrdRace(
-        name: json['name'] as String,
-        speed: json['speed'] as int,
-        size: json['size'] as String,
-        abilityScoreIncreases:
-            (json['abilityScoreIncreases'] as Map<String, dynamic>? ?? {})
-                .map((k, v) => MapEntry(_titleCase(k), v as int)),
-        traits: List<String>.from(json['traits'] ?? []),
-        languages: List<String>.from(json['languages'] ?? []),
-        subraces: (json['subraces'] as List<dynamic>? ?? [])
-            .map((e) => SrdSubrace.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      );
+  factory SrdRace.fromJson(Map<String, dynamic> json) {
+    final raw = json['abilityScoreIncreases'] as Map<String, dynamic>? ?? {};
+    final asi = <String, int>{};
+    int freePoints = 0;
+    raw.forEach((k, v) {
+      final lower = k.toLowerCase();
+      if (_realAttributes.contains(lower)) {
+        asi[_titleCase(k)] = v as int;
+      } else if (lower == 'twoothers') {
+        // "twoOthers": 1 → 2 atributos ganham +1 à escolha do jogador
+        freePoints += 2 * (v as int);
+      } else if (lower == 'oneother') {
+        freePoints += 1 * (v as int);
+      }
+    });
+    return SrdRace(
+      name: json['name'] as String,
+      speed: json['speed'] as int,
+      size: json['size'] as String,
+      abilityScoreIncreases: asi,
+      freeAsiPoints: freePoints,
+      traits: List<String>.from(json['traits'] ?? []),
+      languages: List<String>.from(json['languages'] ?? []),
+      subraces: (json['subraces'] as List<dynamic>? ?? [])
+          .map((e) => SrdSubrace.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+  }
 }
 
 class SrdSkillChoice {

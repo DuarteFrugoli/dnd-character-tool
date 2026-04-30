@@ -24,6 +24,8 @@ class CharacterDraft {
   final bool freeAsi; // true = Tasha's (distribuir ASI livremente)
   // Se freeAsi, mapa de distribuição manual dos ASI points
   final Map<String, int> freeAsiDistribution;
+  // Pontos ASI livres da raça (ex: Half-Elf twoOthers) — sempre obrigatório
+  final Map<String, int> freePicksDistribution;
   final String name;
   final String playerName;
 
@@ -39,6 +41,7 @@ class CharacterDraft {
     this.attributeMethod = AttributeMethod.standardArray,
     this.freeAsi = false,
     this.freeAsiDistribution = const {},
+    this.freePicksDistribution = const {},
     this.name = '',
     this.playerName = '',
   });
@@ -54,6 +57,7 @@ class CharacterDraft {
     AttributeMethod? attributeMethod,
     bool? freeAsi,
     Map<String, int>? freeAsiDistribution,
+    Map<String, int>? freePicksDistribution,
     String? name,
     String? playerName,
   }) {
@@ -73,6 +77,7 @@ class CharacterDraft {
       attributeMethod: attributeMethod ?? this.attributeMethod,
       freeAsi: freeAsi ?? this.freeAsi,
       freeAsiDistribution: freeAsiDistribution ?? this.freeAsiDistribution,
+      freePicksDistribution: freePicksDistribution ?? this.freePicksDistribution,
       name: name ?? this.name,
       playerName: playerName ?? this.playerName,
     );
@@ -98,6 +103,10 @@ class CharacterDraft {
         result[attr] = (result[attr] ?? 8) + bonus;
       });
     }
+    // Pontos livres da raça (twoOthers, etc.) — sempre aplicados
+    freePicksDistribution.forEach((attr, bonus) {
+      result[attr] = (result[attr] ?? 8) + bonus;
+    });
     return result;
   }
 
@@ -113,11 +122,17 @@ class CharacterDraft {
   }
 
   // Verifica se o rascunho tem o mínimo para ser salvo
-  bool get isComplete =>
-      selectedClass != null &&
-      selectedRace != null &&
-      selectedBackground != null &&
-      baseAttributes.length == 6;
+  bool get isComplete {
+    if (selectedClass == null || selectedRace == null ||
+        selectedBackground == null || baseAttributes.length != 6) return false;
+    // Se a raça tem pontos livres (ex: Half-Elf), todos precisam ser distribuídos
+    final freeNeeded = selectedRace!.freeAsiPoints;
+    if (freeNeeded > 0) {
+      final assigned = freePicksDistribution.values.fold(0, (a, b) => a + b);
+      if (assigned != freeNeeded) return false;
+    }
+    return true;
+  }
 }
 
 // Sentinel para distinguir null intencional de "não passado"
@@ -142,6 +157,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setRace(SrdRace r) => state = state.copyWith(
         selectedRace: r,
         selectedSubrace: null,
+        freePicksDistribution: {},
       );
 
   void setSubrace(SrdSubrace? s) =>
@@ -163,6 +179,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
   void setFreeAsiDistribution(Map<String, int> dist) =>
       state = state.copyWith(freeAsiDistribution: dist);
+
+  void setFreePicksDistribution(Map<String, int> dist) =>
+      state = state.copyWith(freePicksDistribution: dist);
 
   void setName(String n) => state = state.copyWith(name: n);
   void setPlayerName(String n) => state = state.copyWith(playerName: n);

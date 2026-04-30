@@ -34,7 +34,9 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
           return const Center(child: CircularProgressIndicator());
         }
         final allSkills = snap.data ?? [];
-        final granted = draft.grantedSkills;
+        final grantedRaw = draft.grantedSkills;
+        // Normalize to lowercase for case-insensitive comparison with skills.json
+        final grantedLower = grantedRaw.map((s) => s.toLowerCase()).toSet();
         final needed = cls.skillChoices.count;
         final allowedPool = cls.skillChoices.isAny
             ? allSkills.map((s) => s.name).toList()
@@ -49,13 +51,13 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 8),
-            if (granted.isNotEmpty) ...[
+            if (grantedRaw.isNotEmpty) ...[
               Text('Granted by background:',
                   style: Theme.of(context).textTheme.labelSmall),
               const SizedBox(height: 4),
               Wrap(
                 spacing: 8,
-                children: granted
+                children: grantedRaw
                     .map((s) => Chip(
                           label: Text(s),
                           avatar: const Icon(Icons.lock, size: 14),
@@ -68,7 +70,7 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
                 style: Theme.of(context).textTheme.labelSmall),
             const SizedBox(height: 4),
             ...allowedPool.map((skillName) {
-              final isGranted = granted.contains(skillName);
+              final isGranted = grantedLower.contains(skillName.toLowerCase());
               final isChosen = chosen.contains(skillName);
               final canAdd = !isGranted &&
                   (!isChosen

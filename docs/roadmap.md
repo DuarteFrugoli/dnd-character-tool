@@ -15,6 +15,7 @@
 - [ ] Export / import via JSON (imagem não incluída no export)
 - [ ] Imagem do personagem: upload de `.png`, `.jpg` ou `.webp`, salva localmente separada do JSON
 - [ ] Imagem placeholder padrão para personagens sem foto
+- [ ] Internacionalização (i18n): suporte a Português e Inglês na UI (strings da interface; termos do SRD como nomes de raças/classes permanecem em inglês)
 
 ---
 

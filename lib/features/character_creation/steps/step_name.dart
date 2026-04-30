@@ -69,17 +69,6 @@ class _StepNameState extends ConsumerState<StepName> {
             onChanged: (v) =>
                 ref.read(characterDraftProvider.notifier).setPlayerName(v),
           ),
-          const SizedBox(height: 24),
-          OutlinedButton.icon(
-            onPressed: () {
-              _nameCtrl.clear();
-              ref
-                  .read(characterDraftProvider.notifier)
-                  .setName('');
-            },
-            icon: const Icon(Icons.skip_next),
-            label: const Text('Decide later'),
-          ),
         ],
       ),
     );

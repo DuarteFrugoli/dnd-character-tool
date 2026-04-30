@@ -27,14 +27,27 @@ class StepAttributes extends ConsumerStatefulWidget {
 
 class _StepAttributesState extends ConsumerState<StepAttributes> {
   // Standard Array: índice em _standardArray por atributo
-  final Map<String, int?> _arrayAssignment = {
-    for (final a in _attributes) a: null,
-  };
+  late final Map<String, int?> _arrayAssignment;
 
   // Point Buy: valor por atributo
-  final Map<String, int> _pointBuyValues = {
-    for (final a in _attributes) a: 8,
-  };
+  late final Map<String, int> _pointBuyValues;
+
+  @override
+  void initState() {
+    super.initState();
+    final existing = ref.read(characterDraftProvider).baseAttributes;
+    // Inicializa Point Buy a partir do draft (ou 8 como padrão)
+    _pointBuyValues = {
+      for (final a in _attributes) a: existing[a] ?? 8,
+    };
+    // Reconstrói a atribuição de índices do Standard Array a partir dos valores salvos
+    _arrayAssignment = {
+      for (final a in _attributes)
+        a: existing.containsKey(a)
+            ? _standardArray.indexOf(existing[a]!)
+            : null,
+    };
+  }
 
   @override
   Widget build(BuildContext context) {

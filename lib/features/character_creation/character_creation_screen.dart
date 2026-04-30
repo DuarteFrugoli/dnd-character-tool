@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'character_draft_provider.dart';
+import '../character_list/character_list_provider.dart';
 import 'steps/step_class.dart';
 import 'steps/step_race.dart';
 import 'steps/step_background.dart';
@@ -157,6 +158,7 @@ class _CharacterCreationScreenState
     if (!_isStepValid(ref.read(characterDraftProvider))) return;
     await ref.read(characterDraftProvider.notifier).buildAndSave(ref);
     ref.read(characterDraftProvider.notifier).reset();
+    ref.invalidate(characterListProvider);
     if (mounted) context.go('/');
   }
 }

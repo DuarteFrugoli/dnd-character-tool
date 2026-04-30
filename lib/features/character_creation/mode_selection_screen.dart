@@ -10,7 +10,13 @@ class ModeSelectionScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('New Character'),
-        leading: BackButton(onPressed: () => context.pop()),
+        leading: BackButton(onPressed: () {
+          if (context.canPop()) {
+            context.pop();
+          } else {
+            context.go('/');
+          }
+        }),
       ),
       body: ListView(
         padding: const EdgeInsets.all(24),

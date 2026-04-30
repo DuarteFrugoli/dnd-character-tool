@@ -256,6 +256,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             children: [
               if (character.background.isNotEmpty)
                 _InfoRow('Background', character.background),
+              if (character.subclass != null)
+                _InfoRow('Subclass', character.subclass!),
               if (character.alignment.isNotEmpty)
                 _InfoRow('Alignment', character.alignment),
               if (character.playerName.isNotEmpty)

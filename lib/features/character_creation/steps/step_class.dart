@@ -38,11 +38,25 @@ class _StepClassState extends ConsumerState<StepClass> {
           itemBuilder: (context, i) {
             final cls = classes[i];
             final isSelected = selected?.name == cls.name;
-            return _ClassCard(
-              cls: cls,
-              isSelected: isSelected,
-              onTap: () =>
-                  ref.read(characterDraftProvider.notifier).setClass(cls),
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _ClassCard(
+                  cls: cls,
+                  isSelected: isSelected,
+                  onTap: () =>
+                      ref.read(characterDraftProvider.notifier).setClass(cls),
+                ),
+                if (isSelected && cls.subclasses.isNotEmpty)
+                  _SubclassSelector(
+                    cls: cls,
+                    selectedSubclass:
+                        ref.watch(characterDraftProvider).selectedSubclass,
+                    onSelect: (s) => ref
+                        .read(characterDraftProvider.notifier)
+                        .setSubclass(s),
+                  ),
+              ],
             );
           },
         );
@@ -112,6 +126,18 @@ class _ClassCard extends StatelessWidget {
                               ),
                         ),
                       ),
+                    if (cls.subclasses.isNotEmpty)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(
+                          '${cls.subclasses.length} ${cls.subclassFeatureName} options',
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                color: isSelected
+                                    ? scheme.onPrimaryContainer
+                                    : scheme.secondary,
+                              ),
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -120,6 +146,79 @@ class _ClassCard extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _SubclassSelector extends StatelessWidget {
+  const _SubclassSelector({
+    required this.cls,
+    required this.selectedSubclass,
+    required this.onSelect,
+  });
+
+  final SrdClass cls;
+  final SrdSubclass? selectedSubclass;
+  final ValueChanged<SrdSubclass?> onSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(left: 16, bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Text(
+              'Choose a ${cls.subclassFeatureName} (Lv ${cls.subclassLevel}):',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+          ...cls.subclasses.map((sub) {
+            final isSelected = selectedSubclass?.name == sub.name;
+            return Card(
+              margin: const EdgeInsets.only(bottom: 6),
+              color: isSelected ? scheme.secondaryContainer : scheme.surface,
+              child: InkWell(
+                onTap: () => onSelect(isSelected ? null : sub),
+                borderRadius: BorderRadius.circular(12),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16, vertical: 12),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              sub.name,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              sub.description,
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (isSelected)
+                        Icon(Icons.check_circle,
+                            color: scheme.secondary, size: 20),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }),
+        ],
       ),
     );
   }

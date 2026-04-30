@@ -6,6 +6,18 @@ library;
 String _titleCase(String s) =>
     s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
 
+class SrdSubclass {
+  final String name;
+  final String description;
+
+  const SrdSubclass({required this.name, required this.description});
+
+  factory SrdSubclass.fromJson(Map<String, dynamic> json) => SrdSubclass(
+        name: json['name'] as String,
+        description: json['description'] as String,
+      );
+}
+
 class SrdSkill {
   final String name;
   final String ability;
@@ -107,6 +119,7 @@ class SrdClass {
   final int subclassLevel;
   final String subclassFeatureName;
   final String startingGoldDice;
+  final List<SrdSubclass> subclasses;
 
   const SrdClass({
     required this.name,
@@ -122,6 +135,7 @@ class SrdClass {
     required this.subclassLevel,
     required this.subclassFeatureName,
     required this.startingGoldDice,
+    this.subclasses = const [],
   });
 
   bool get isSpellcaster => spellcastingAbility != null;
@@ -141,6 +155,9 @@ class SrdClass {
         subclassLevel: json['subclassLevel'] as int,
         subclassFeatureName: json['subclassFeatureName'] as String,
         startingGoldDice: json['startingGoldDice'] as String,
+        subclasses: (json['subclasses'] as List<dynamic>? ?? [])
+            .map((e) => SrdSubclass.fromJson(e as Map<String, dynamic>))
+            .toList(),
       );
 }
 

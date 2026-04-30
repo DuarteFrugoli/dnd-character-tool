@@ -36,10 +36,38 @@ class SrdDataSource {
   }
 
   Future<List<SrdClass>> getClasses() async {
-    _classes ??= await _loadList(
-      'assets/data/srd/classes.json',
-      SrdClass.fromJson,
-    );
+    if (_classes == null) {
+      final classes = await _loadList(
+        'assets/data/srd/classes.json',
+        SrdClass.fromJson,
+      );
+      final subclassRaw = await rootBundle.loadString(
+        'assets/data/srd/subclasses.json',
+      );
+      final subclassMap =
+          jsonDecode(subclassRaw) as Map<String, dynamic>;
+      _classes = classes.map((cls) {
+        final subs = (subclassMap[cls.name] as List<dynamic>? ?? [])
+            .map((e) => SrdSubclass.fromJson(e as Map<String, dynamic>))
+            .toList();
+        return SrdClass(
+          name: cls.name,
+          hitDie: cls.hitDie,
+          primaryAbility: cls.primaryAbility,
+          savingThrows: cls.savingThrows,
+          armorProficiencies: cls.armorProficiencies,
+          weaponProficiencies: cls.weaponProficiencies,
+          toolProficiencies: cls.toolProficiencies,
+          skillChoices: cls.skillChoices,
+          spellcastingAbility: cls.spellcastingAbility,
+          spellcastingType: cls.spellcastingType,
+          subclassLevel: cls.subclassLevel,
+          subclassFeatureName: cls.subclassFeatureName,
+          startingGoldDice: cls.startingGoldDice,
+          subclasses: subs,
+        );
+      }).toList();
+    }
     return _classes!;
   }
 

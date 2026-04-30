@@ -27,6 +27,11 @@ class StepReview extends ConsumerWidget {
         ]),
         _ReviewSection(title: 'Class', children: [
           _Row('Class', draft.selectedClass?.name ?? '—'),
+          if (draft.selectedSubclass != null)
+            _Row(
+              draft.selectedClass?.subclassFeatureName ?? 'Subclass',
+              draft.selectedSubclass!.name,
+            ),
           _Row('Hit Die', 'd${draft.selectedClass?.hitDie ?? '—'}'),
           _Row(
             'Saving Throws',

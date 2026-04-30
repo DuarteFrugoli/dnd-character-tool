@@ -46,6 +46,7 @@ flutter:
   assets:
     - assets/data/srd/races.json
     - assets/data/srd/classes.json
+    - assets/data/srd/subclasses.json
     - assets/data/srd/backgrounds.json
     - assets/data/srd/skills.json
     - assets/data/srd/spells.json

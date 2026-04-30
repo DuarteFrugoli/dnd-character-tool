@@ -12,6 +12,7 @@ enum AttributeMethod { standardArray, pointBuy }
 class CharacterDraft {
   final String id;
   final SrdClass? selectedClass;
+  final SrdSubclass? selectedSubclass;
   final SrdRace? selectedRace;
   final SrdSubrace? selectedSubrace;
   final SrdBackground? selectedBackground;
@@ -29,6 +30,7 @@ class CharacterDraft {
   const CharacterDraft({
     required this.id,
     this.selectedClass,
+    this.selectedSubclass,
     this.selectedRace,
     this.selectedSubrace,
     this.selectedBackground,
@@ -43,6 +45,7 @@ class CharacterDraft {
 
   CharacterDraft copyWith({
     SrdClass? selectedClass,
+    Object? selectedSubclass = _sentinel,
     SrdRace? selectedRace,
     Object? selectedSubrace = _sentinel,
     SrdBackground? selectedBackground,
@@ -57,6 +60,9 @@ class CharacterDraft {
     return CharacterDraft(
       id: id,
       selectedClass: selectedClass ?? this.selectedClass,
+      selectedSubclass: selectedSubclass == _sentinel
+          ? this.selectedSubclass
+          : selectedSubclass as SrdSubclass?,
       selectedRace: selectedRace ?? this.selectedRace,
       selectedSubrace: selectedSubrace == _sentinel
           ? this.selectedSubrace
@@ -125,7 +131,13 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
   void reset() => state = CharacterDraft(id: const Uuid().v4());
 
-  void setClass(SrdClass c) => state = state.copyWith(selectedClass: c);
+  void setClass(SrdClass c) => state = state.copyWith(
+        selectedClass: c,
+        selectedSubclass: null,
+      );
+
+  void setSubclass(SrdSubclass? s) =>
+      state = state.copyWith(selectedSubclass: s);
 
   void setRace(SrdRace r) => state = state.copyWith(
         selectedRace: r,
@@ -171,6 +183,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       race: draft.selectedRace!.name,
       subrace: draft.selectedSubrace?.name,
       characterClass: draft.selectedClass!.name,
+      subclass: draft.selectedSubclass?.name,
       level: 1,
       experiencePoints: 0,
       background: draft.selectedBackground!.name,

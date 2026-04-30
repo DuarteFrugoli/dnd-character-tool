@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'storage_backend_stub.dart'
     if (dart.library.io) 'storage_backend_native.dart'
-    if (dart.library.html) 'storage_backend_web.dart';
+    if (dart.library.js_interop) 'storage_backend_web.dart';
 
 import '../../models/models.dart';
 

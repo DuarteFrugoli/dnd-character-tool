@@ -1,73 +1,47 @@
 import 'dart:convert';
-import 'dart:io';
 
-import 'package:path_provider/path_provider.dart';
+import 'storage_backend_stub.dart'
+    if (dart.library.io) 'storage_backend_native.dart'
+    if (dart.library.html) 'storage_backend_web.dart';
 
 import '../../models/models.dart';
 
-/// Persiste personagens como arquivos JSON individuais no disco.
-///
-/// Estrutura de diretórios:
-/// ```
-/// documents/dnd_character_tool/
-/// ├── characters/
-/// │   └── {uuid}.json
-/// └── images/
-///     └── {uuid}.jpg   (arquivo de imagem separado)
-/// ```
+/// Fachada de persistência de personagens.
+/// Delega ao backend correto para cada plataforma:
+/// - nativo (Android/iOS/Windows/macOS/Linux): arquivos JSON no disco
+/// - web: shared_preferences (localStorage)
 class CharacterLocalDataSource {
-  CharacterLocalDataSource._();
+  CharacterLocalDataSource._() : _backend = createStorageBackend();
 
   static final CharacterLocalDataSource instance =
       CharacterLocalDataSource._();
 
-  static const _appFolder = 'dnd_character_tool';
-  static const _charactersFolder = 'characters';
-  static const _imagesFolder = 'images';
-
-  Future<Directory> get _charactersDir async {
-    final base = await getApplicationDocumentsDirectory();
-    final dir = Directory('${base.path}/$_appFolder/$_charactersFolder');
-    if (!await dir.exists()) await dir.create(recursive: true);
-    return dir;
-  }
-
-  Future<Directory> get _imagesDir async {
-    final base = await getApplicationDocumentsDirectory();
-    final dir = Directory('${base.path}/$_appFolder/$_imagesFolder');
-    if (!await dir.exists()) await dir.create(recursive: true);
-    return dir;
-  }
+  final StorageBackend _backend;
 
   // ---------------------------------------------------------------------------
   // Personagens
   // ---------------------------------------------------------------------------
 
   Future<List<Character>> loadAll() async {
-    final dir = await _charactersDir;
-    final files = dir.listSync().whereType<File>().where(
-          (f) => f.path.endsWith('.json'),
-        );
-
-    final characters = <Character>[];
-    for (final file in files) {
-      try {
-        final json = jsonDecode(await file.readAsString()) as Map<String, dynamic>;
-        characters.add(Character.fromJson(json));
-      } catch (_) {
-        // arquivo corrompido — ignora e continua
-      }
-    }
-
+    final jsons = await _backend.loadAllCharacters();
+    final characters = jsons
+        .map((j) {
+          try {
+            return Character.fromJson(j);
+          } catch (_) {
+            return null;
+          }
+        })
+        .whereType<Character>()
+        .toList();
     characters.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
     return characters;
   }
 
   Future<Character?> loadById(String id) async {
-    final file = await _fileForId(id);
-    if (!await file.exists()) return null;
+    final json = await _backend.loadCharacter(id);
+    if (json == null) return null;
     try {
-      final json = jsonDecode(await file.readAsString()) as Map<String, dynamic>;
       return Character.fromJson(json);
     } catch (_) {
       return null;
@@ -75,62 +49,37 @@ class CharacterLocalDataSource {
   }
 
   Future<void> save(Character character) async {
-    final file = await _fileForId(character.id);
-    await file.writeAsString(jsonEncode(character.toJson()));
+    await _backend.saveCharacter(character.id, character.toJson());
   }
 
   Future<void> delete(String id) async {
-    final file = await _fileForId(id);
-    if (await file.exists()) await file.delete();
+    await _backend.deleteCharacter(id);
   }
 
   Future<bool> exists(String id) async {
-    final file = await _fileForId(id);
-    return file.exists();
-  }
-
-  Future<File> _fileForId(String id) async {
-    final dir = await _charactersDir;
-    return File('${dir.path}/$id.json');
+    return _backend.characterExists(id);
   }
 
   // ---------------------------------------------------------------------------
   // Imagens
   // ---------------------------------------------------------------------------
 
-  /// Copia a imagem de [sourcePath] para o diretório de imagens do app.
-  /// Retorna o nome do arquivo salvo (não o caminho completo).
-  Future<String> saveImage(String characterId, String sourcePath) async {
-    final dir = await _imagesDir;
-    final ext = sourcePath.contains('.')
-        ? sourcePath.split('.').last.toLowerCase()
-        : 'jpg';
-    final fileName = '$characterId.$ext';
-    final dest = File('${dir.path}/$fileName');
-    await File(sourcePath).copy(dest.path);
-    return fileName;
+  Future<String?> saveImage(String characterId, String sourcePath) async {
+    return _backend.saveImage(characterId, sourcePath);
   }
 
-  /// Retorna o caminho absoluto da imagem a partir do nome do arquivo.
   Future<String?> resolveImagePath(String? fileName) async {
-    if (fileName == null) return null;
-    final dir = await _imagesDir;
-    final file = File('${dir.path}/$fileName');
-    return await file.exists() ? file.path : null;
+    return _backend.resolveImagePath(fileName);
   }
 
   Future<void> deleteImage(String? fileName) async {
-    if (fileName == null) return;
-    final dir = await _imagesDir;
-    final file = File('${dir.path}/$fileName');
-    if (await file.exists()) await file.delete();
+    await _backend.deleteImage(fileName);
   }
 
   // ---------------------------------------------------------------------------
   // Export / Import JSON
   // ---------------------------------------------------------------------------
 
-  /// Exporta o personagem como string JSON (sem imagem).
   Future<String> exportToJson(Character character) async {
     final payload = {
       'version': '1.0',
@@ -140,10 +89,10 @@ class CharacterLocalDataSource {
     return const JsonEncoder.withIndent('  ').convert(payload);
   }
 
-  /// Parseia um JSON exportado e retorna o Character.
   Character importFromJson(String jsonString) {
     final payload = jsonDecode(jsonString) as Map<String, dynamic>;
     final characterJson = payload['character'] as Map<String, dynamic>;
     return Character.fromJson(characterJson);
   }
 }
+

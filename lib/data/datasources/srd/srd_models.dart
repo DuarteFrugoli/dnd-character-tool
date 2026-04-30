@@ -2,6 +2,10 @@
 /// serialização reversa, portanto usam fromJson manual sem build_runner.
 library;
 
+/// Capitalizes the first letter of a string (e.g. "dexterity" → "Dexterity").
+String _titleCase(String s) =>
+    s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
+
 class SrdSkill {
   final String name;
   final String ability;
@@ -33,7 +37,7 @@ class SrdSubrace {
         name: json['name'] as String,
         abilityScoreIncreases:
             (json['abilityScoreIncreases'] as Map<String, dynamic>? ?? {})
-                .map((k, v) => MapEntry(k, v as int)),
+                .map((k, v) => MapEntry(_titleCase(k), v as int)),
         traits: List<String>.from(json['traits'] ?? []),
         speed: json['speed'] as int?,
         damageType: json['damageType'] as String?,
@@ -65,7 +69,7 @@ class SrdRace {
         size: json['size'] as String,
         abilityScoreIncreases:
             (json['abilityScoreIncreases'] as Map<String, dynamic>? ?? {})
-                .map((k, v) => MapEntry(k, v as int)),
+                .map((k, v) => MapEntry(_titleCase(k), v as int)),
         traits: List<String>.from(json['traits'] ?? []),
         languages: List<String>.from(json['languages'] ?? []),
         subraces: (json['subraces'] as List<dynamic>? ?? [])

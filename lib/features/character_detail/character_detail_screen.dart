@@ -936,6 +936,26 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
 
   static const _tabLabels = ['Weapons', 'Armor', 'Gear', 'Magic', 'Custom'];
 
+  /// Mapeia itens mágicos do SRD para ItemType com base no nome/tipo.
+  static ItemType _magicItemType(SrdMagicItem m) {
+    final name = m.name.toLowerCase();
+    if (name.contains('potion') || name.contains('elixir')) {
+      return ItemType.consumable;
+    }
+    final type = m.type.toLowerCase();
+    if (type.contains('armor') || type.contains('shield') ||
+        type.contains('ring') || type.contains('cloak') ||
+        type.contains('boots') || type.contains('gauntlets') ||
+        type.contains('headband') || type.contains('amulet')) {
+      return ItemType.armor;
+    }
+    if (type.contains('weapon') || type.contains('wand') ||
+        type.contains('staff') || type.contains('rod')) {
+      return ItemType.weapon;
+    }
+    return ItemType.gear;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -986,7 +1006,9 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   Future<void> _confirmAdd({
     required String name,
     required String category,
+    required ItemType itemType,
     required String? description,
+    Map<String, dynamic>? properties,
   }) async {
     final qtyCtrl = TextEditingController(text: '1');
     final confirmed = await showDialog<bool>(
@@ -1030,8 +1052,10 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
       _addItem(EquipmentItem(
         name: name,
         category: category,
+        itemType: itemType,
         quantity: int.tryParse(qtyCtrl.text) ?? 1,
         description: description,
+        properties: properties,
       ));
     }
     // qtyCtrl é variável local — não precisa de dispose manual
@@ -1043,6 +1067,8 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     required String Function(T) getSubtitle,
     required String Function(T) getCategory,
     required String? Function(T) getDescription,
+    required ItemType Function(T) getItemType,
+    Map<String, dynamic>? Function(T)? getProperties,
   }) {
     if (items == null) {
       return const Center(child: CircularProgressIndicator());
@@ -1080,7 +1106,9 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
             onPressed: () => _confirmAdd(
               name: getName(item),
               category: getCategory(item),
+              itemType: getItemType(item),
               description: getDescription(item),
+              properties: getProperties?.call(item),
             ),
           ),
         );
@@ -1096,64 +1124,90 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final scheme = Theme.of(context).colorScheme;
 
     return StatefulBuilder(
-      builder: (ctx, setState) => SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TextField(
-              controller: nameCtrl,
-              autofocus: false,
-              decoration: const InputDecoration(
-                  labelText: 'Name *', border: OutlineInputBorder()),
+      builder: (ctx, setInner) {
+        var selectedType = ItemType.gear;
+
+        return StatefulBuilder(
+          builder: (ctx2, setType) => SingleChildScrollView(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                TextField(
+                  controller: nameCtrl,
+                  autofocus: false,
+                  decoration: const InputDecoration(
+                      labelText: 'Name *', border: OutlineInputBorder()),
+                ),
+                const SizedBox(height: 12),
+                DropdownButtonFormField<ItemType>(
+                  value: selectedType,
+                  decoration: const InputDecoration(
+                      labelText: 'Type', border: OutlineInputBorder()),
+                  items: const [
+                    DropdownMenuItem(
+                        value: ItemType.weapon, child: Text('Weapon')),
+                    DropdownMenuItem(
+                        value: ItemType.armor, child: Text('Armor')),
+                    DropdownMenuItem(
+                        value: ItemType.consumable, child: Text('Consumable')),
+                    DropdownMenuItem(
+                        value: ItemType.gear, child: Text('Gear')),
+                  ],
+                  onChanged: (v) {
+                    if (v != null) setType(() => selectedType = v);
+                  },
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: categoryCtrl,
+                  decoration: const InputDecoration(
+                      labelText: 'Category', border: OutlineInputBorder()),
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: qtyCtrl,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  decoration: const InputDecoration(
+                      labelText: 'Quantity', border: OutlineInputBorder()),
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: descCtrl,
+                  maxLines: 3,
+                  decoration: const InputDecoration(
+                      labelText: 'Description (optional)',
+                      border: OutlineInputBorder()),
+                ),
+                const SizedBox(height: 16),
+                FilledButton(
+                  onPressed: () {
+                    final name = nameCtrl.text.trim();
+                    if (name.isEmpty) return;
+                    _addItem(EquipmentItem(
+                      name: name,
+                      category: categoryCtrl.text.trim().isEmpty
+                          ? 'adventuring gear'
+                          : categoryCtrl.text.trim(),
+                      itemType: selectedType,
+                      quantity: int.tryParse(qtyCtrl.text) ?? 1,
+                      description: descCtrl.text.trim().isEmpty
+                          ? null
+                          : descCtrl.text.trim(),
+                    ));
+                  },
+                  style: FilledButton.styleFrom(
+                    backgroundColor: scheme.primary,
+                    foregroundColor: scheme.onPrimary,
+                  ),
+                  child: const Text('Add Custom Item'),
+                ),
+              ],
             ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: categoryCtrl,
-              decoration: const InputDecoration(
-                  labelText: 'Category', border: OutlineInputBorder()),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: qtyCtrl,
-              keyboardType: TextInputType.number,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: const InputDecoration(
-                  labelText: 'Quantity', border: OutlineInputBorder()),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: descCtrl,
-              maxLines: 3,
-              decoration: const InputDecoration(
-                  labelText: 'Description (optional)',
-                  border: OutlineInputBorder()),
-            ),
-            const SizedBox(height: 16),
-            FilledButton(
-              onPressed: () {
-                final name = nameCtrl.text.trim();
-                if (name.isEmpty) return;
-                _addItem(EquipmentItem(
-                  name: name,
-                  category: categoryCtrl.text.trim().isEmpty
-                      ? 'adventuring gear'
-                      : categoryCtrl.text.trim(),
-                  quantity: int.tryParse(qtyCtrl.text) ?? 1,
-                  description: descCtrl.text.trim().isEmpty
-                      ? null
-                      : descCtrl.text.trim(),
-                ));
-              },
-              style: FilledButton.styleFrom(
-                backgroundColor: scheme.primary,
-                foregroundColor: scheme.onPrimary,
-              ),
-              child: const Text('Add Custom Item'),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -1236,6 +1290,11 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getDescription: (w) => w.properties.isNotEmpty
                       ? w.properties.join(', ')
                       : null,
+                  getItemType: (_) => ItemType.weapon,
+                  getProperties: (w) => {
+                    'damageDice': w.damage,
+                    'damageType': w.damageType,
+                  },
                 ),
                 // Armor
                 _buildSrdList<SrdArmor>(
@@ -1248,6 +1307,14 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getDescription: (a) => a.stealthDisadvantage
                       ? 'Stealth disadvantage'
                       : null,
+                  getItemType: (_) => ItemType.armor,
+                  getProperties: (a) => {
+                    'baseAC': a.baseAC,
+                    'addDexModifier': a.addDexModifier,
+                    'maxDexBonus': a.maxDexBonus,
+                    'isShield': a.isShield,
+                    'acBonus': a.acBonus,
+                  },
                 ),
                 // Gear
                 _buildSrdList<SrdGearItem>(
@@ -1257,6 +1324,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getCategory: (g) => g.category,
                   getDescription: (g) =>
                       g.description.isNotEmpty ? g.description : null,
+                  getItemType: (_) => ItemType.gear,
                 ),
                 // Magic Items
                 _buildSrdList<SrdMagicItem>(
@@ -1266,6 +1334,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                       '${m.type}  ·  ${m.rarity}${m.requiresAttunement ? "  ·  attunement" : ""}',
                   getCategory: (m) => m.type,
                   getDescription: (m) => m.description,
+                  getItemType: (m) => _magicItemType(m),
                 ),
                 // Custom
                 _buildCustomTab(),
@@ -1285,32 +1354,57 @@ class _ItemTile extends ConsumerWidget {
   final EquipmentItem item;
   final String characterId;
 
+  static IconData _leadingIcon(ItemType type, bool equipped) {
+    switch (type) {
+      case ItemType.weapon:
+        return equipped ? Icons.sports_kabaddi : Icons.sports_kabaddi_outlined;
+      case ItemType.armor:
+        return equipped ? Icons.shield : Icons.shield_outlined;
+      case ItemType.consumable:
+        return Icons.local_drink_outlined;
+      case ItemType.gear:
+        return Icons.backpack_outlined;
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final notifier =
-        ref.read(characterDetailProvider(characterId).notifier);
+    final notifier = ref.read(characterDetailProvider(characterId).notifier);
+    final canEquip =
+        item.itemType == ItemType.weapon || item.itemType == ItemType.armor;
 
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading: GestureDetector(
-        onTap: () => notifier.toggleEquipped(item.name),
-        child: Tooltip(
-          message: item.isEquipped ? 'Unequip' : 'Equip',
-          child: CircleAvatar(
-            radius: 16,
-            backgroundColor:
-                item.isEquipped ? scheme.primary : scheme.surfaceContainerHighest,
-            child: Icon(
-              item.isEquipped ? Icons.shield : Icons.backpack_outlined,
-              size: 16,
-              color: item.isEquipped
-                  ? scheme.onPrimary
-                  : scheme.onSurfaceVariant,
+      leading: canEquip
+          ? GestureDetector(
+              onTap: () => notifier.toggleEquipped(item.id),
+              child: Tooltip(
+                message: item.isEquipped ? 'Unequip' : 'Equip',
+                child: CircleAvatar(
+                  radius: 16,
+                  backgroundColor: item.isEquipped
+                      ? scheme.primary
+                      : scheme.surfaceContainerHighest,
+                  child: Icon(
+                    _leadingIcon(item.itemType, item.isEquipped),
+                    size: 16,
+                    color: item.isEquipped
+                        ? scheme.onPrimary
+                        : scheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
+            )
+          : CircleAvatar(
+              radius: 16,
+              backgroundColor: scheme.surfaceContainerHighest,
+              child: Icon(
+                _leadingIcon(item.itemType, false),
+                size: 16,
+                color: scheme.onSurfaceVariant,
+              ),
             ),
-          ),
-        ),
-      ),
       title: Text(
         item.quantity > 1 ? '${item.name} ×${item.quantity}' : item.name,
         style: const TextStyle(fontSize: 14),
@@ -1328,7 +1422,7 @@ class _ItemTile extends ConsumerWidget {
         icon: const Icon(Icons.delete_outline, size: 18),
         color: scheme.error,
         tooltip: 'Remove',
-        onPressed: () => notifier.removeEquipmentItem(item.name),
+        onPressed: () => notifier.removeEquipmentItem(item.id),
       ),
     );
   }

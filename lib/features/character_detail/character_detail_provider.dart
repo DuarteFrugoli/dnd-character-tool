@@ -97,24 +97,73 @@ class CharacterDetailNotifier
   Future<void> addEquipmentItem(EquipmentItem item) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(equipment: [...c.equipment, item]));
+    // Stack se já existe item com mesmo nome e tipo
+    final idx = c.equipment.indexWhere(
+      (e) => e.name == item.name && e.itemType == item.itemType,
+    );
+    if (idx >= 0) {
+      final updated = List<EquipmentItem>.from(c.equipment);
+      updated[idx] = updated[idx].copyWith(
+        quantity: updated[idx].quantity + item.quantity,
+      );
+      await _save(c.copyWith(equipment: updated));
+    } else {
+      await _save(c.copyWith(equipment: [...c.equipment, item]));
+    }
   }
 
-  Future<void> removeEquipmentItem(String itemName) async {
+  Future<void> removeEquipmentItem(String id) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final updated = c.equipment.where((e) => e.name != itemName).toList();
+    final updated = c.equipment.where((e) => e.id != id).toList();
     await _save(c.copyWith(equipment: updated));
   }
 
-  Future<void> toggleEquipped(String itemName) async {
+  Future<void> toggleEquipped(String id) async {
     final c = state.valueOrNull;
     if (c == null) return;
     final updated = c.equipment.map((e) {
-      if (e.name != itemName) return e;
+      if (e.id != id) return e;
       return e.copyWith(isEquipped: !e.isEquipped);
     }).toList();
-    await _save(c.copyWith(equipment: updated));
+    final newC = c.copyWith(equipment: updated);
+    // Recalcula CA se o item afetado for armadura
+    final affected = updated.firstWhere((e) => e.id == id);
+    if (affected.itemType == ItemType.armor) {
+      await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
+    } else {
+      await _save(newC);
+    }
+  }
+
+  /// Calcula CA com base nos itens de armadura equipados.
+  /// Regra: a CA base vem de UMA armadura (não-shield). Shields somam bônus.
+  /// Sem armadura equipada: 10 + mod DEX.
+  int _calcArmorClass(Character c) {
+    final dexMod = c.abilityScores.dexterityModifier;
+    int base = 10 + dexMod; // sem armadura
+    int shieldBonus = 0;
+
+    for (final item in c.equipment) {
+      if (!item.isEquipped || item.itemType != ItemType.armor) continue;
+      final props = item.properties;
+      if (props == null) continue;
+
+      if (props['isShield'] == true) {
+        shieldBonus = (props['acBonus'] as num?)?.toInt() ?? 2;
+      } else {
+        final baseAC = (props['baseAC'] as num?)?.toInt() ?? 10;
+        final addDex = props['addDexModifier'] as bool? ?? true;
+        final maxDex = (props['maxDexBonus'] as num?)?.toInt();
+        int armorAC = baseAC;
+        if (addDex) {
+          armorAC += maxDex != null ? dexMod.clamp(-99, maxDex) : dexMod;
+        }
+        base = armorAC;
+      }
+    }
+
+    return base + shieldBonus;
   }
 
   Future<void> updateCurrency(Map<String, int> currency) async {

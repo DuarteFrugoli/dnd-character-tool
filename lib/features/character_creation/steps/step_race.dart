@@ -5,15 +5,28 @@ import '../../../data/datasources/srd/srd_data_source.dart';
 import '../../../data/datasources/srd/srd_models.dart';
 import '../character_draft_provider.dart';
 
-class StepRace extends ConsumerWidget {
+class StepRace extends ConsumerStatefulWidget {
   const StepRace({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<StepRace> createState() => _StepRaceState();
+}
+
+class _StepRaceState extends ConsumerState<StepRace> {
+  late final Future<List<SrdRace>> _racesFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _racesFuture = SrdDataSource.instance.getRaces();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final draft = ref.watch(characterDraftProvider);
 
     return FutureBuilder<List<SrdRace>>(
-      future: SrdDataSource.instance.getRaces(),
+      future: _racesFuture,
       builder: (context, snap) {
         if (snap.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

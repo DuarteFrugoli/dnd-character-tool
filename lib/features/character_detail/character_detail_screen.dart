@@ -56,7 +56,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 4, vsync: this);
+    _tabs = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -122,10 +122,13 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         ],
         bottom: TabBar(
           controller: _tabs,
+          isScrollable: true,
+          tabAlignment: TabAlignment.start,
           tabs: const [
             Tab(text: 'Stats'),
             Tab(text: 'Skills'),
             Tab(text: 'Spells'),
+            Tab(text: 'Inventory'),
             Tab(text: 'Notes'),
           ],
         ),
@@ -136,6 +139,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           _StatsTab(character: character, characterId: widget.characterId),
           _SkillsTab(character: character),
           _SpellsTab(character: character, characterId: widget.characterId),
+          _InventoryTab(character: character, characterId: widget.characterId),
           _NotesTab(character: character),
         ],
       ),
@@ -721,6 +725,304 @@ class _NotesTab extends StatelessWidget {
           ),
         ],
       ],
+    );
+  }
+}
+
+// ── Inventory Tab ────────────────────────────────────────────────────────────
+
+class _InventoryTab extends ConsumerStatefulWidget {
+  const _InventoryTab({required this.character, required this.characterId});
+  final Character character;
+  final String characterId;
+
+  @override
+  ConsumerState<_InventoryTab> createState() => _InventoryTabState();
+}
+
+class _InventoryTabState extends ConsumerState<_InventoryTab> {
+  // Moedas — controladores locais sincronizados com o modelo
+  late final Map<String, TextEditingController> _currencyCtrl;
+
+  static const _coins = ['cp', 'sp', 'ep', 'gp', 'pp'];
+  static const _coinLabels = {
+    'cp': 'Copper',
+    'sp': 'Silver',
+    'ep': 'Electrum',
+    'gp': 'Gold',
+    'pp': 'Platinum',
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    final currency = widget.character.currency;
+    _currencyCtrl = {
+      for (final c in _coins)
+        c: TextEditingController(text: '${currency[c] ?? 0}')
+    };
+  }
+
+  @override
+  void didUpdateWidget(_InventoryTab old) {
+    super.didUpdateWidget(old);
+    // Atualiza controladores se os valores mudaram externamente
+    final currency = widget.character.currency;
+    for (final c in _coins) {
+      final val = '${currency[c] ?? 0}';
+      if (_currencyCtrl[c]!.text != val) {
+        _currencyCtrl[c]!.text = val;
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    for (final ctrl in _currencyCtrl.values) {
+      ctrl.dispose();
+    }
+    super.dispose();
+  }
+
+  void _saveCurrency() {
+    final map = <String, int>{
+      for (final c in _coins)
+        c: int.tryParse(_currencyCtrl[c]!.text) ?? 0,
+    };
+    ref
+        .read(characterDetailProvider(widget.characterId).notifier)
+        .updateCurrency(map);
+  }
+
+  void _showAddItemDialog() {
+    final nameCtrl = TextEditingController();
+    final categoryCtrl = TextEditingController(text: 'adventuring gear');
+    final qtyCtrl = TextEditingController(text: '1');
+    final descCtrl = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Add Item'),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameCtrl,
+                autofocus: true,
+                decoration: const InputDecoration(labelText: 'Name'),
+              ),
+              const SizedBox(height: 8),
+              TextField(
+                controller: categoryCtrl,
+                decoration: const InputDecoration(labelText: 'Category'),
+              ),
+              const SizedBox(height: 8),
+              TextField(
+                controller: qtyCtrl,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                decoration: const InputDecoration(labelText: 'Quantity'),
+              ),
+              const SizedBox(height: 8),
+              TextField(
+                controller: descCtrl,
+                decoration:
+                    const InputDecoration(labelText: 'Description (optional)'),
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () {
+              final name = nameCtrl.text.trim();
+              if (name.isEmpty) return;
+              Navigator.pop(ctx);
+              ref
+                  .read(characterDetailProvider(widget.characterId).notifier)
+                  .addEquipmentItem(EquipmentItem(
+                    name: name,
+                    category: categoryCtrl.text.trim().isEmpty
+                        ? 'adventuring gear'
+                        : categoryCtrl.text.trim(),
+                    quantity: int.tryParse(qtyCtrl.text) ?? 1,
+                    description: descCtrl.text.trim().isEmpty
+                        ? null
+                        : descCtrl.text.trim(),
+                  ));
+            },
+            child: const Text('Add'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final character = widget.character;
+    final scheme = Theme.of(context).colorScheme;
+    final equipped =
+        character.equipment.where((e) => e.isEquipped).toList();
+    final carried =
+        character.equipment.where((e) => !e.isEquipped).toList();
+
+    return Scaffold(
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          // ── Currency ────────────────────────────────────────────────────
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Currency',
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                          color: scheme.primary,
+                        ),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: _coins.map((c) {
+                      return Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 3),
+                          child: TextField(
+                            controller: _currencyCtrl[c],
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly
+                            ],
+                            textAlign: TextAlign.center,
+                            decoration: InputDecoration(
+                              labelText: _coinLabels[c],
+                              border: const OutlineInputBorder(),
+                              contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 4, vertical: 8),
+                            ),
+                            onEditingComplete: _saveCurrency,
+                            onTapOutside: (_) => _saveCurrency(),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+
+          // ── Equipped ────────────────────────────────────────────────────
+          if (equipped.isNotEmpty) ...
+            [
+              _Section(
+                title: 'Equipped (${equipped.length})',
+                child: Column(
+                  children: equipped
+                      .map((item) => _ItemTile(
+                            item: item,
+                            characterId: widget.characterId,
+                          ))
+                      .toList(),
+                ),
+              ),
+              const SizedBox(height: 12),
+            ],
+
+          // ── Carried ─────────────────────────────────────────────────────
+          _Section(
+            title: carried.isEmpty && equipped.isEmpty
+                ? 'Inventory'
+                : 'Carried (${carried.length})',
+            child: carried.isEmpty
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Text(
+                      'No items yet. Tap + to add.',
+                      style: TextStyle(color: scheme.onSurfaceVariant),
+                    ),
+                  )
+                : Column(
+                    children: carried
+                        .map((item) => _ItemTile(
+                              item: item,
+                              characterId: widget.characterId,
+                            ))
+                        .toList(),
+                  ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _showAddItemDialog,
+        tooltip: 'Add item',
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class _ItemTile extends ConsumerWidget {
+  const _ItemTile({required this.item, required this.characterId});
+  final EquipmentItem item;
+  final String characterId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final notifier =
+        ref.read(characterDetailProvider(characterId).notifier);
+
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: GestureDetector(
+        onTap: () => notifier.toggleEquipped(item.name),
+        child: Tooltip(
+          message: item.isEquipped ? 'Unequip' : 'Equip',
+          child: CircleAvatar(
+            radius: 16,
+            backgroundColor:
+                item.isEquipped ? scheme.primary : scheme.surfaceContainerHighest,
+            child: Icon(
+              item.isEquipped ? Icons.shield : Icons.backpack_outlined,
+              size: 16,
+              color: item.isEquipped
+                  ? scheme.onPrimary
+                  : scheme.onSurfaceVariant,
+            ),
+          ),
+        ),
+      ),
+      title: Text(
+        item.quantity > 1 ? '${item.name} ×${item.quantity}' : item.name,
+        style: const TextStyle(fontSize: 14),
+      ),
+      subtitle: item.description != null
+          ? Text(
+              item.description!,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                  fontSize: 12, color: scheme.onSurfaceVariant),
+            )
+          : null,
+      trailing: IconButton(
+        icon: const Icon(Icons.delete_outline, size: 18),
+        color: scheme.error,
+        tooltip: 'Remove',
+        onPressed: () => notifier.removeEquipmentItem(item.name),
+      ),
     );
   }
 }

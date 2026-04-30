@@ -124,7 +124,9 @@ class CharacterDraft {
   // Verifica se o rascunho tem o mínimo para ser salvo
   bool get isComplete {
     if (selectedClass == null || selectedRace == null ||
-        selectedBackground == null || baseAttributes.length != 6) return false;
+        selectedBackground == null || baseAttributes.length != 6) {
+      return false;
+    }
     // Se a raça tem pontos livres (ex: Half-Elf), todos precisam ser distribuídos
     final freeNeeded = selectedRace!.freeAsiPoints;
     if (freeNeeded > 0) {

@@ -45,6 +45,11 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
           ?.map((e) => EquipmentItem.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
+  currency:
+      (json['currency'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, (e as num).toInt()),
+      ) ??
+      const {'cp': 0, 'sp': 0, 'ep': 0, 'gp': 0, 'pp': 0},
   spells:
       (json['spells'] as List<dynamic>?)
           ?.map((e) => KnownSpell.fromJson(e as Map<String, dynamic>))
@@ -99,6 +104,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'skillProficiencies': instance.skillProficiencies,
   'skillExpertises': instance.skillExpertises,
   'equipment': instance.equipment.map((e) => e.toJson()).toList(),
+  'currency': instance.currency,
   'spells': instance.spells.map((e) => e.toJson()).toList(),
   'spellSlots': instance.spellSlots.toJson(),
   'features': instance.features,

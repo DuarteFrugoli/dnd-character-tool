@@ -33,6 +33,7 @@ class Character {
   final List<String> skillProficiencies;
   final List<String> skillExpertises;
   final List<EquipmentItem> equipment;
+  final Map<String, int> currency;
   final List<KnownSpell> spells;
   final SpellSlots spellSlots;
   final List<String> features;
@@ -66,6 +67,7 @@ class Character {
     this.skillProficiencies = const [],
     this.skillExpertises = const [],
     this.equipment = const [],
+    this.currency = const {'cp': 0, 'sp': 0, 'ep': 0, 'gp': 0, 'pp': 0},
     this.spells = const [],
     this.spellSlots = const SpellSlots(),
     this.features = const [],
@@ -113,6 +115,7 @@ class Character {
     List<String>? skillProficiencies,
     List<String>? skillExpertises,
     List<EquipmentItem>? equipment,
+    Map<String, int>? currency,
     List<KnownSpell>? spells,
     SpellSlots? spellSlots,
     List<String>? features,
@@ -147,6 +150,7 @@ class Character {
       skillProficiencies: skillProficiencies ?? this.skillProficiencies,
       skillExpertises: skillExpertises ?? this.skillExpertises,
       equipment: equipment ?? this.equipment,
+      currency: currency ?? this.currency,
       spells: spells ?? this.spells,
       spellSlots: spellSlots ?? this.spellSlots,
       features: features ?? this.features,

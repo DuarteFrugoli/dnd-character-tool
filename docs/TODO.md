@@ -24,6 +24,4 @@
 
 ## bugs / infra
 
-- consertar nome do arquivo no android
 - consertar regra sem atributo por raça
-- arrumar objectivec usando caminho com espaço em pastas de usuários

@@ -91,4 +91,35 @@ class CharacterDetailNotifier
     if (level <= 16) return 5;
     return 6;
   }
+
+  // ── Inventário ─────────────────────────────────────────────────────────────
+
+  Future<void> addEquipmentItem(EquipmentItem item) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(equipment: [...c.equipment, item]));
+  }
+
+  Future<void> removeEquipmentItem(String itemName) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final updated = c.equipment.where((e) => e.name != itemName).toList();
+    await _save(c.copyWith(equipment: updated));
+  }
+
+  Future<void> toggleEquipped(String itemName) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final updated = c.equipment.map((e) {
+      if (e.name != itemName) return e;
+      return e.copyWith(isEquipped: !e.isEquipped);
+    }).toList();
+    await _save(c.copyWith(equipment: updated));
+  }
+
+  Future<void> updateCurrency(Map<String, int> currency) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(currency: currency));
+  }
 }

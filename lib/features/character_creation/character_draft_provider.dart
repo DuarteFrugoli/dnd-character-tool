@@ -188,7 +188,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         current: hitDie + conMod,
         temporary: 0,
       ),
-      armorClass: 10 + ((attrs['Dexterity'] ?? 10 - 10) / 2).floor(),
+      armorClass: 10 + (((attrs['Dexterity'] ?? 10) - 10) / 2).floor(),
       speed: draft.selectedRace!.speed,
       proficiencyBonus: 2,
       savingThrowProficiencies: draft.selectedClass!.savingThrows,

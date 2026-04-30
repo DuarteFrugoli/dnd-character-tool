@@ -1034,7 +1034,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
         description: description,
       ));
     }
-    qtyCtrl.dispose();
+    // qtyCtrl é variável local — não precisa de dispose manual
   }
 
   Widget _buildSrdList<T>({

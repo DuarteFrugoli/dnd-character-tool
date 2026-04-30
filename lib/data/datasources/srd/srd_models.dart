@@ -80,6 +80,9 @@ class SrdSkillChoice {
 
   const SrdSkillChoice({required this.count, required this.from});
 
+  /// True when the class allows choosing from any skill (e.g. Bard).
+  bool get isAny => from.isEmpty || from.contains('any');
+
   factory SrdSkillChoice.fromJson(Map<String, dynamic> json) => SrdSkillChoice(
         count: json['count'] as int,
         from: List<String>.from(json['from']),

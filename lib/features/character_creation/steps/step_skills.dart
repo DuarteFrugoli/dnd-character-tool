@@ -36,7 +36,7 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
         final allSkills = snap.data ?? [];
         final granted = draft.grantedSkills;
         final needed = cls.skillChoices.count;
-        final allowedPool = cls.skillChoices.from.isEmpty
+        final allowedPool = cls.skillChoices.isAny
             ? allSkills.map((s) => s.name).toList()
             : cls.skillChoices.from;
         final chosen = List<String>.from(draft.chosenSkills);

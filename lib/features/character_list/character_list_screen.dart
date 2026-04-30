@@ -132,9 +132,7 @@ class _CharacterCard extends ConsumerWidget {
             PopupMenuItem(value: 'delete', child: Text('Delete')),
           ],
         ),
-        onTap: () {
-          // TODO: navegar para ficha do personagem
-        },
+        onTap: () => context.push('/character/${character.id}'),
       ),
     );
   }

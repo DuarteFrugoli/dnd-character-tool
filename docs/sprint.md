@@ -122,32 +122,30 @@ Objetivo: após criar um personagem, o jogador consegue ver e editar sua ficha c
 ## Tarefas
 
 ### Navegação
-- [ ] Rota `/character/:id` no router
-- [ ] `onTap` do card na lista navega para `/character/:id`
+- [x] Rota `/character/:id` no router
+- [x] `onTap` do card na lista navega para `/character/:id`
 
 ### Tela de ficha (`CharacterDetailScreen`)
-- [ ] Carrega o personagem por ID via `CharacterRepository`
-- [ ] Layout com abas ou seções roláveis:
-  - **Identidade** — nome, jogador, raça, classe, nível, antecedente, alinhamento
-  - **Atributos** — 6 atributos com modificadores, HP, AC, iniciativa, velocidade, bônus de proficiência
-  - **Perícias** — lista das 18 perícias com indicação de proficiência e valor final
-  - **Magias** — spell slots por nível, lista de magias conhecidas (vazio se não for spellcaster)
-  - **Equipamento** — lista de itens equipados e carregados
-  - **Notas** — backstory e traits de personalidade
+- [x] Carrega o personagem por ID via `CharacterRepository`
+- [x] Layout com abas:
+  - [x] **Stats** — Identidade, HP tracker, Combat (AC, speed, iniciativa, prof bonus, passive perc), Atributos, Saving throws
+  - [x] **Skills** — lista das 18 perícias com ícone de proficiência/expertise e valor final
+  - [x] **Spells** — spell slots por nível com círculos clicáveis, lista de magias conhecidas
+  - [x] **Notes** — personality traits, ideals, bonds, flaws, backstory, features
 
 ### Rastreador de HP (sessão)
-- [ ] Botões `+` e `−` para aplicar cura/dano ao HP atual
-- [ ] Campo de HP temporário
-- [ ] Indicador visual de morte (HP ≤ 0)
+- [x] Botões `Damage` e `Heal` com campo de quantidade
+- [x] HP temporário exibido como chip
+- [x] Indicador visual de morte (HP ≤ 0 → "Unconscious / Dying")
 
 ### Rastreador de spell slots (sessão)
-- [ ] Marcar/desmarcar slots usados por nível
-- [ ] Botão "Descanso Longo" — restaura todos os slots e HP máximo
+- [x] Círculos clicáveis por nível (tap para usar, tap novamente para restaurar)
+- [x] Botão "Long Rest" — restaura HP máximo e todos os slots
 
 ### Edição básica
-- [ ] Editar nome do personagem (inline ou modal)
-- [ ] Editar nível (recalcula proficiency bonus automaticamente)
-- [ ] Salvar alterações via `CharacterRepository.save()`
+- [x] Editar nome do personagem (modal)
+- [x] Editar nível (recalcula proficiency bonus automaticamente)
+- [x] Salvar alterações via `CharacterRepository.save()`
 
 ---
 

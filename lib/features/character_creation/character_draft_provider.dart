@@ -81,11 +81,14 @@ class CharacterDraft {
         result[attr] = (result[attr] ?? 8) + bonus;
       });
     } else {
-      // Aplica bônus automáticos da raça/subraça
-      final asi = selectedSubrace?.abilityScoreIncreases ??
-          selectedRace?.abilityScoreIncreases ??
-          {};
-      asi.forEach((attr, bonus) {
+      // Combina bônus da raça base + subraça
+      final raceAsi = selectedRace?.abilityScoreIncreases ?? {};
+      final subraceAsi = selectedSubrace?.abilityScoreIncreases ?? {};
+      final mergedAsi = <String, int>{...raceAsi};
+      subraceAsi.forEach((attr, bonus) {
+        mergedAsi[attr] = (mergedAsi[attr] ?? 0) + bonus;
+      });
+      mergedAsi.forEach((attr, bonus) {
         result[attr] = (result[attr] ?? 8) + bonus;
       });
     }

@@ -55,10 +55,13 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
     final method = draft.attributeMethod;
     final freeAsi = draft.freeAsi;
 
-    // Determina os ASI da raça para exibição
-    final raceAsi = draft.selectedSubrace?.abilityScoreIncreases ??
-        draft.selectedRace?.abilityScoreIncreases ??
-        {};
+    // Combina bônus de raça base + subraça para exibição
+    final raceAsi = <String, int>{
+      ...?draft.selectedRace?.abilityScoreIncreases,
+    };
+    draft.selectedSubrace?.abilityScoreIncreases.forEach((attr, bonus) {
+      raceAsi[attr] = (raceAsi[attr] ?? 0) + bonus;
+    });
 
     return ListView(
       padding: const EdgeInsets.all(16),

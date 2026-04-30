@@ -59,11 +59,6 @@ class StepReview extends ConsumerWidget {
           _Row('Proficiency Bonus', '+2'),
         ]),
         const SizedBox(height: 16),
-        FilledButton.icon(
-          onPressed: onFinish,
-          icon: const Icon(Icons.check),
-          label: const Text('Create Character'),
-        ),
       ],
     );
   }

@@ -135,7 +135,11 @@ class _CharacterCreationScreenState
                 ),
               const Spacer(),
               FilledButton(
-                onPressed: _isStepValid(draft) ? _next : null,
+                onPressed: _isStepValid(draft)
+                    ? (_currentStep == _stepTitles.length - 1
+                        ? _finishCreation
+                        : _next)
+                    : null,
                 child: Text(
                   _currentStep == _stepTitles.length - 1
                       ? 'Create Character'

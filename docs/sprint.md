@@ -111,3 +111,49 @@ Objetivo: permitir criar um personagem completo do zero usando o modo guiado (pa
 - Foto do personagem
 - Export / import
 
+---
+
+# Sprint 3 — Ficha do personagem (planejada)
+
+Objetivo: após criar um personagem, o jogador consegue ver e editar sua ficha completa. Inclui navegação da lista para a ficha e rastreamento de HP/spell slots em sessão.
+
+---
+
+## Tarefas
+
+### Navegação
+- [ ] Rota `/character/:id` no router
+- [ ] `onTap` do card na lista navega para `/character/:id`
+
+### Tela de ficha (`CharacterDetailScreen`)
+- [ ] Carrega o personagem por ID via `CharacterRepository`
+- [ ] Layout com abas ou seções roláveis:
+  - **Identidade** — nome, jogador, raça, classe, nível, antecedente, alinhamento
+  - **Atributos** — 6 atributos com modificadores, HP, AC, iniciativa, velocidade, bônus de proficiência
+  - **Perícias** — lista das 18 perícias com indicação de proficiência e valor final
+  - **Magias** — spell slots por nível, lista de magias conhecidas (vazio se não for spellcaster)
+  - **Equipamento** — lista de itens equipados e carregados
+  - **Notas** — backstory e traits de personalidade
+
+### Rastreador de HP (sessão)
+- [ ] Botões `+` e `−` para aplicar cura/dano ao HP atual
+- [ ] Campo de HP temporário
+- [ ] Indicador visual de morte (HP ≤ 0)
+
+### Rastreador de spell slots (sessão)
+- [ ] Marcar/desmarcar slots usados por nível
+- [ ] Botão "Descanso Longo" — restaura todos os slots e HP máximo
+
+### Edição básica
+- [ ] Editar nome do personagem (inline ou modal)
+- [ ] Editar nível (recalcula proficiency bonus automaticamente)
+- [ ] Salvar alterações via `CharacterRepository.save()`
+
+---
+
+## Fora do escopo desta sprint
+- Edição completa da ficha (atributos, raça, classe, etc.)
+- Foto do personagem
+- Export / import
+- i18n
+

@@ -67,7 +67,7 @@ class _CharacterCreationScreenState
     );
     if (confirm == true && mounted) {
       ref.read(characterDraftProvider.notifier).reset();
-      context.go('/');
+      context.go('/create');
     }
   }
 

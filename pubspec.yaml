@@ -51,3 +51,5 @@ flutter:
     - assets/data/srd/skills.json
     - assets/data/srd/spells.json
     - assets/data/srd/equipment.json
+    - assets/data/srd/class_features.json
+    - assets/data/srd/magic_items.json

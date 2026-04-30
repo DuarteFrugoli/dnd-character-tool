@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Potion of Healing",
+    "type": "potion",
+    "rarity": "common",
+    "requiresAttunement": false,
+    "weight": 0.5,
+    "cost": "50 gp",
+    "description": "You regain 2d4 + 2 hit points when you drink this potion.",
+    "effect": "heal_2d4p2"
+  },
+  {
+    "name": "Potion of Greater Healing",
+    "type": "potion",
+    "rarity": "uncommon",
+    "requiresAttunement": false,
+    "weight": 0.5,
+    "cost": "150 gp",
+    "description": "You regain 4d4 + 4 hit points when you drink this potion.",
+    "effect": "heal_4d4p4"
+  },
+  {
+    "name": "Potion of Superior Healing",
+    "type": "potion",
+    "rarity": "rare",
+    "requiresAttunement": false,
+    "weight": 0.5,
+    "cost": "450 gp",
+    "description": "You regain 8d4 + 8 hit points when you drink this potion.",
+    "effect": "heal_8d4p8"
+  },
+  {
+    "name": "Potion of Supreme Healing",
+    "type": "potion",
+    "rarity": "very rare",
+    "requiresAttunement": false,
+    "weight": 0.5,
+    "cost": "1350 gp",
+    "description": "You regain 10d4 + 20 hit points when you drink this potion.",
+    "effect": "heal_10d4p20"
+  },
+  {
+    "name": "Bag of Holding",
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "requiresAttunement": false,
+    "weight": 15,
+    "cost": "—",
+    "description": "This bag has an interior space considerably larger than its outside dimensions. The bag can hold up to 500 pounds, not exceeding a volume of 64 cubic feet. The bag weighs 15 pounds, regardless of its contents.",
+    "features": [
+      { "name": "Extradimensional Space", "description": "Holds up to 500 lbs / 64 cubic feet regardless of bag weight." }
+    ]
+  },
+  {
+    "name": "+1 Weapon",
+    "type": "weapon",
+    "rarity": "uncommon",
+    "requiresAttunement": false,
+    "weight": null,
+    "cost": "—",
+    "description": "You have a +1 bonus to attack and damage rolls made with this magic weapon.",
+    "features": [
+      { "name": "Magic Bonus", "description": "+1 to attack rolls and damage rolls." }
+    ]
+  },
+  {
+    "name": "+2 Weapon",
+    "type": "weapon",
+    "rarity": "rare",
+    "requiresAttunement": false,
+    "weight": null,
+    "cost": "—",
+    "description": "You have a +2 bonus to attack and damage rolls made with this magic weapon.",
+    "features": [
+      { "name": "Magic Bonus", "description": "+2 to attack rolls and damage rolls." }
+    ]
+  },
+  {
+    "name": "+3 Weapon",
+    "type": "weapon",
+    "rarity": "very rare",
+    "requiresAttunement": false,
+    "weight": null,
+    "cost": "—",
+    "description": "You have a +3 bonus to attack and damage rolls made with this magic weapon.",
+    "features": [
+      { "name": "Magic Bonus", "description": "+3 to attack rolls and damage rolls." }
+    ]
+  },
+  {
+    "name": "+1 Armor",
+    "type": "armor",
+    "rarity": "rare",
+    "requiresAttunement": false,
+    "weight": null,
+    "cost": "—",
+    "description": "You have a +1 bonus to AC while wearing this armor.",
+    "features": [
+      { "name": "Magic Bonus", "description": "+1 to Armor Class." }
+    ]
+  },
+  {
+    "name": "Cloak of Protection",
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "requiresAttunement": true,
+    "weight": 1,
+    "cost": "—",
+    "description": "You gain a +1 bonus to AC and saving throws while you wear this cloak.",
+    "features": [
+      { "name": "Protection", "description": "+1 bonus to AC and all saving throws." }
+    ]
+  },
+  {
+    "name": "Ring of Protection",
+    "type": "ring",
+    "rarity": "rare",
+    "requiresAttunement": true,
+    "weight": 0,
+    "cost": "—",
+    "description": "You gain a +1 bonus to AC and saving throws while wearing this ring.",
+    "features": [
+      { "name": "Protection", "description": "+1 bonus to AC and all saving throws." }
+    ]
+  },
+  {
+    "name": "Boots of Speed",
+    "type": "wondrous item",
+    "rarity": "rare",
+    "requiresAttunement": true,
+    "weight": 1,
+    "cost": "—",
+    "description": "While you wear these boots, you can use a bonus action and click the boots' heels together to double your walking speed. In addition, difficult terrain doesn't cost you extra movement. The effect ends if you use a bonus action to click your heels again or if you are no longer wearing the boots.",
+    "features": [
+      { "name": "Haste", "description": "Bonus action: double walking speed and ignore difficult terrain until deactivated.", "uses": { "amount": null, "rechargeOn": null } }
+    ]
+  },
+  {
+    "name": "Gauntlets of Ogre Power",
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "requiresAttunement": true,
+    "weight": 1,
+    "cost": "—",
+    "description": "Your Strength score is 19 while you wear these gauntlets. They have no effect on you if your Strength is already 19 or higher.",
+    "features": [
+      { "name": "Ogre Strength", "description": "Sets Strength score to 19 (if lower)." }
+    ]
+  },
+  {
+    "name": "Headband of Intellect",
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "requiresAttunement": true,
+    "weight": 0,
+    "cost": "—",
+    "description": "Your Intelligence score is 19 while you wear this headband. It has no effect on you if your Intelligence is already 19 or higher.",
+    "features": [
+      { "name": "Enhanced Intellect", "description": "Sets Intelligence score to 19 (if lower)." }
+    ]
+  },
+  {
+    "name": "Amulet of Health",
+    "type": "wondrous item",
+    "rarity": "rare",
+    "requiresAttunement": true,
+    "weight": 0,
+    "cost": "—",
+    "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution is already 19 or higher.",
+    "features": [
+      { "name": "Enhanced Constitution", "description": "Sets Constitution score to 19 (if lower)." }
+    ]
+  },
+  {
+    "name": "Wand of Magic Missiles",
+    "type": "wand",
+    "rarity": "uncommon",
+    "requiresAttunement": false,
+    "weight": 1,
+    "cost": "—",
+    "description": "This wand has 7 charges. While holding it, you can use an action to expend 1 or more of its charges to cast the magic missile spell from it. For 1 charge, you cast the 1st-level version of the spell. You can increase the spell slot level by one for each additional charge you expend. The wand regains 1d6 + 1 expended charges daily at dawn.",
+    "features": [
+      { "name": "Magic Missiles", "description": "7 charges. Expend 1+ charges to cast Magic Missile (1st level + 1 per extra charge). Regain 1d6+1 charges at dawn.", "uses": { "amount": 7, "rechargeOn": "dawn" } }
+    ]
+  },
+  {
+    "name": "Rope of Climbing",
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "requiresAttunement": false,
+    "weight": 3,
+    "cost": "—",
+    "description": "This 60-foot length of silk rope weighs 3 pounds and can hold up to 3,000 pounds. If you hold one end of the rope and use an action to speak the command word, the rope animates. As a bonus action, you can command the other end to move toward a destination you choose.",
+    "features": [
+      { "name": "Animate", "description": "Command word animates the rope. Bonus action to direct it. Holds 3,000 lbs." }
+    ]
+  }
+]

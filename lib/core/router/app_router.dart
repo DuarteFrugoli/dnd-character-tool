@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../../features/character_list/character_list_screen.dart';
+import '../../features/character_creation/character_creation_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
@@ -8,6 +9,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => const CharacterListScreen(),
+    ),
+    GoRoute(
+      path: '/create',
+      builder: (context, state) => const CharacterCreationScreen(),
     ),
   ],
 );

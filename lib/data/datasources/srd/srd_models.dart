@@ -1,5 +1,6 @@
 /// Modelos de leitura dos assets SRD. São somente-leitura, sem necessidade de
 /// serialização reversa, portanto usam fromJson manual sem build_runner.
+library;
 
 class SrdSkill {
   final String name;

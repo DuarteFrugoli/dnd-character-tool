@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'character_list_provider.dart';
 import '../../data/models/models.dart';
@@ -23,9 +24,7 @@ class CharacterListScreen extends ConsumerWidget {
             : _CharacterList(characters: characters),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // TODO: navegar para criação de personagem
-        },
+        onPressed: () => context.push('/create'),
         icon: const Icon(Icons.add),
         label: const Text('New Character'),
       ),

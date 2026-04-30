@@ -1,0 +1,203 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../data/datasources/srd/srd_data_source.dart';
+import '../../../data/datasources/srd/srd_models.dart';
+import '../character_draft_provider.dart';
+
+class StepRace extends ConsumerWidget {
+  const StepRace({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final draft = ref.watch(characterDraftProvider);
+
+    return FutureBuilder<List<SrdRace>>(
+      future: SrdDataSource.instance.getRaces(),
+      builder: (context, snap) {
+        if (snap.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        final races = snap.data ?? [];
+        return ListView.builder(
+          padding: const EdgeInsets.all(16),
+          itemCount: races.length,
+          itemBuilder: (context, i) {
+            final race = races[i];
+            final isSelected = draft.selectedRace?.name == race.name;
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _RaceCard(
+                  race: race,
+                  isSelected: isSelected,
+                  onTap: () {
+                    ref.read(characterDraftProvider.notifier).setRace(race);
+                  },
+                ),
+                if (isSelected && race.subraces.isNotEmpty)
+                  _SubraceSelector(
+                    race: race,
+                    selectedSubrace: draft.selectedSubrace,
+                    onSelect: (s) => ref
+                        .read(characterDraftProvider.notifier)
+                        .setSubrace(s),
+                  ),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
+}
+
+class _RaceCard extends StatelessWidget {
+  const _RaceCard({
+    required this.race,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  final SrdRace race;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  String _asiText() {
+    return race.abilityScoreIncreases.entries
+        .map((e) => '+${e.value} ${e.key}')
+        .join(', ');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      color: isSelected ? scheme.primaryContainer : null,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(race.name,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(
+                              color: isSelected
+                                  ? scheme.onPrimaryContainer
+                                  : null,
+                            )),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Speed: ${race.speed}ft  ·  ASI: ${_asiText()}',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: isSelected
+                                ? scheme.onPrimaryContainer
+                                : scheme.onSurfaceVariant,
+                          ),
+                    ),
+                    if (race.subraces.isNotEmpty)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(
+                          '${race.subraces.length} subraces available',
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: isSelected
+                                        ? scheme.onPrimaryContainer
+                                        : scheme.primary,
+                                  ),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+              if (isSelected)
+                Icon(Icons.check_circle, color: scheme.primary),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SubraceSelector extends StatelessWidget {
+  const _SubraceSelector({
+    required this.race,
+    required this.selectedSubrace,
+    required this.onSelect,
+  });
+
+  final SrdRace race;
+  final SrdSubrace? selectedSubrace;
+  final ValueChanged<SrdSubrace?> onSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(left: 16, bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Text('Choose a subrace:',
+                style: Theme.of(context).textTheme.labelLarge),
+          ),
+          ...race.subraces.map((sub) {
+            final isSelected = selectedSubrace?.name == sub.name;
+            final asiText = sub.abilityScoreIncreases.entries
+                .map((e) => '+${e.value} ${e.key}')
+                .join(', ');
+            return Card(
+              margin: const EdgeInsets.only(bottom: 6),
+              color: isSelected ? scheme.secondaryContainer : scheme.surface,
+              child: InkWell(
+                onTap: () => onSelect(isSelected ? null : sub),
+                borderRadius: BorderRadius.circular(12),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16, vertical: 12),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(sub.name,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold)),
+                            if (asiText.isNotEmpty)
+                              Text(
+                                'ASI: $asiText',
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                          ],
+                        ),
+                      ),
+                      if (isSelected)
+                        Icon(Icons.check_circle,
+                            color: scheme.secondary, size: 20),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+}

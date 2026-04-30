@@ -54,55 +54,53 @@ Objetivo: permitir criar um personagem completo do zero usando o modo guiado (pa
 ## Tarefas
 
 ### Provider de rascunho
-- [ ] `CharacterDraftNotifier` — estado mutável do personagem em construção, limpo ao cancelar
-- [ ] Rota `/create` com parâmetro de modo (`?mode=guided`)
+- [x] `CharacterDraftNotifier` — estado mutável do personagem em construção, limpo ao cancelar
+- [x] Rota `/create` com parâmetro de modo (`?mode=guided`)
 
 ### Fluxo de criação — modo guiado (7 etapas)
 
 **Etapa 1 — Classe**
-- [ ] Lista das 12 classes com hit die, saving throws e resumo de proficiências
-- [ ] Seleção persiste no draft
+- [x] Lista das 12 classes com hit die, saving throws e resumo de proficiências
+- [x] Seleção persiste no draft
 
 **Etapa 2 — Raça**
-- [ ] Lista das 9 raças SRD com bônus de atributo e traits
-- [ ] Se a raça tiver subraça, exibir segundo passo de seleção na mesma tela
+- [x] Lista das 9 raças SRD com bônus de atributo e traits
+- [x] Se a raça tiver subraça, exibir segundo passo de seleção na mesma tela
 
 **Etapa 3 — Antecedente (Background)**
-- [ ] Lista dos 13 antecedentes com descrição da feature
-- [ ] Perícias fixas do background aplicadas automaticamente ao draft
+- [x] Lista dos 13 antecedentes com descrição da feature
+- [x] Perícias fixas do background aplicadas automaticamente ao draft
 
 **Etapa 4 — Perícias**
-- [ ] Exibir perícias fixas do background (somente leitura)
-- [ ] Perícias fixas da raça (ex: Elfo → Percepção) aplicadas automaticamente
-- [ ] Escolhas da classe: N perícias dentro da lista permitida por classe
-- [ ] Escolhas extras da raça (ex: Meio-Elfo escolhe 2 quaisquer)
+- [x] Exibir perícias fixas do background (somente leitura)
+- [x] Escolhas da classe: N perícias dentro da lista permitida por classe
 
 **Etapa 5 — Atributos**
-- [ ] Usuário escolhe o método: **Standard Array** `[15,14,13,12,10,8]` ou **Point Buy** (27 pts, base 8)
-- [ ] Interface de distribuição dos valores nos 6 atributos
-- [ ] Toggle: "Aplicar bônus raciais automaticamente (PHB)" vs "Distribuir livremente (Tasha's / BG3)"
-- [ ] Cálculo automático dos modificadores em tempo real
+- [x] Usuário escolhe o método: **Standard Array** `[15,14,13,12,10,8]` ou **Point Buy** (27 pts, base 8)
+- [x] Interface de distribuição dos valores nos 6 atributos
+- [x] Toggle: "Aplicar bônus raciais automaticamente (PHB)" vs "Distribuir livremente (Tasha's / BG3)"
+- [x] Cálculo automático dos modificadores em tempo real
 
 **Etapa 6 — Nome**
-- [ ] Campos: nome do personagem e nome do jogador
-- [ ] Botão "Definir depois" — preenche com placeholder e segue para revisão
+- [x] Campos: nome do personagem e nome do jogador
+- [x] Botão "Definir depois" — preenche com placeholder e segue para revisão
 
 **Etapa 7 — Revisão**
-- [ ] Resumo de todas as escolhas (classe, raça, background, perícias, atributos, nome)
-- [ ] Exibir HP máximo calculado: `hitDie + mod CON`
-- [ ] Botão "Criar Personagem" → salva via `CharacterRepository.save()` e navega para a lista
+- [x] Resumo de todas as escolhas (classe, raça, background, perícias, atributos, nome)
+- [x] Exibir HP máximo calculado: `hitDie + mod CON`
+- [x] Botão "Criar Personagem" → salva via `CharacterRepository.save()` e navega para a lista
 
 ### Navegação e UX
-- [ ] Widget `StepIndicator` com barra de progresso por etapa
-- [ ] Botões "Voltar" e "Continuar" com validação por etapa
-- [ ] Botão "Cancelar" com diálogo de confirmação antes de descartar o rascunho
+- [x] Widget `StepIndicator` com barra de progresso por etapa
+- [x] Botões "Voltar" e "Continuar" com validação por etapa
+- [x] Botão "Cancelar" com diálogo de confirmação antes de descartar o rascunho
 
 ### Cálculos automáticos ao salvar
-- [ ] `proficiencyBonus` = 2 (nível 1, fixo)
-- [ ] `hitPoints.maximum` = hitDie + mod CON
-- [ ] `savingThrowProficiencies` da classe
-- [ ] `skillProficiencies` consolidadas (background + raça + escolhas da classe)
-- [ ] `armorClass` base = 10 + mod DEX
+- [x] `proficiencyBonus` = 2 (nível 1, fixo)
+- [x] `hitPoints.maximum` = hitDie + mod CON
+- [x] `savingThrowProficiencies` da classe
+- [x] `skillProficiencies` consolidadas (background + escolhas da classe)
+- [x] `armorClass` base = 10 + mod DEX
 
 ---
 

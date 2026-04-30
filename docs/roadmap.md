@@ -2,20 +2,23 @@
 
 ## v1 — MVP (atual)
 
-- [ ] Modelos de dados completos (Character, AbilityScores, HitPoints, etc.)
-- [ ] Persistência local em JSON via `path_provider`
-- [ ] Assets SRD bundados (raças, classes, antecedentes, habilidades, magias, equipamentos)
-- [ ] 4 modos de criação de personagem:
-  - [ ] Aleatório (tudo sorteado)
-  - [ ] Semi-aleatório (usuário escolhe alguns, resto é sorteado)
-  - [ ] Guiado / Wizard (passo a passo com explicações, para iniciantes)
-  - [ ] Manual (campos livres, para experientes)
-- [ ] Ficha completa do personagem (visualização e edição)
-- [ ] Lista de personagens
-- [ ] Export / import via JSON (imagem não incluída no export)
-- [ ] Imagem do personagem: upload de `.png`, `.jpg` ou `.webp`, salva localmente separada do JSON
-- [ ] Imagem placeholder padrão para personagens sem foto
-- [ ] Internacionalização (i18n): suporte a Português e Inglês na UI (strings da interface; termos do SRD como nomes de raças/classes permanecem em inglês)
+- [x] Modelos de dados completos (Character, AbilityScores, HitPoints, EquipmentItem, SpellSlots, etc.)
+- [x] Persistência local em JSON via `path_provider` (nativo) e `shared_preferences` (web)
+- [x] Assets SRD bundados (raças, classes, subclasses, antecedentes, habilidades, magias, equipamentos, class features, itens mágicos)
+- [x] Modo de criação guiado (passo a passo, 7 etapas)
+- [ ] Modo aleatório (tudo sorteado)
+- [ ] Modo semi-aleatório (usuário escolhe alguns, resto é sorteado)
+- [ ] Modo manual (campos livres, para experientes)
+- [x] Ficha do personagem — visualização (Stats, Skills, Spells, Inventory, Notes)
+- [x] Rastreador de HP e spell slots em sessão
+- [x] Inventário com moedas (CP/SP/EP/GP/PP), equipar/desequipar, adicionar/remover itens
+- [ ] Cálculo automático de AC ao equipar armadura
+- [ ] Equipamento inicial do background aplicado na criação
+- [ ] Edição completa da ficha (atributos, raça, classe, etc.)
+- [x] Lista de personagens
+- [ ] Export / import via JSON
+- [ ] Imagem do personagem
+- [ ] Internacionalização (i18n): Português e Inglês
 
 ---
 

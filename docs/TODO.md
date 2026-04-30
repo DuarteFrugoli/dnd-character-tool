@@ -1,7 +1,7 @@
 ## v1 — essencial (fazer agora)
 
 1. ter certeza de que a ficha está sendo criada corretamente em todos os modos.
-2. colocar local para história, inventário, armas, armaduras, etc na ficha.
+2. [parcial] inventário na ficha: aba Inventory com moedas e itens já funciona. Falta: cálculo de AC ao equipar armadura, browse de itens SRD no dialog, equipamento inicial do background aplicado na criação.
 3. fazer a edição de personagem ser totalmente livre, talvez com toggle para liberar mudanças ou zona "other" para somar valores extras.
 4. fazer o export e import do personagem.
 

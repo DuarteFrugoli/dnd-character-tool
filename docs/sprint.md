@@ -165,18 +165,16 @@ Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do perso
 
 ## Tarefas
 
-### Aba Equipment na ficha
-- [ ] Nova aba **Equipment** no `CharacterDetailScreen` (entre Spells e Notes)
-- [ ] Listar itens com nome, tipo (weapon/armor/gear), peso e propriedades
-- [ ] Ícone de status: equipado (✓) ou no inventário
-- [ ] Toggle para equipar/desequipar item
-- [ ] Remover item com confirmação (swipe ou botão)
+### Aba Inventory na ficha
+- [x] Nova aba **Inventory** no `CharacterDetailScreen` (entre Spells e Notes)
+- [x] Listar itens separados em seções **Equipped** e **Carried**
+- [x] Ícone de status: equipado (escudo preenchido) ou carregado (backpack)
+- [x] Toggle para equipar/desequipar item (tap no ícone)
+- [x] Remover item (botão lixeira)
 
 ### Adicionar itens
-- [ ] Botão "Add Item" abre bottom sheet
-- [ ] Aba "SRD": busca/filtra itens de `equipment.json` (armas simples/marciais + armaduras)
-- [ ] Aba "Custom": formulário livre (nome, tipo, peso, propriedades, notas)
-- [ ] Adiciona item à lista do personagem e salva
+- [x] Botão FAB "+" abre dialog de item custom (nome, categoria, quantidade, descrição)
+- [ ] Aba "SRD" no dialog: busca/filtra itens de `equipment.json` e `magic_items.json`
 
 ### Cálculo de AC com armadura
 - [ ] Quando armadura é equipada, recalcular AC automaticamente:
@@ -189,19 +187,25 @@ Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do perso
 - [ ] Exibir na aba Stats qual armadura está sendo usada
 
 ### Moedas
-- [ ] Campo de moedas na aba Equipment: CP / SP / EP / GP / PP
-- [ ] Campos editáveis inline (tap para editar)
-- [ ] Persistido no modelo `Character` (novo campo `currency: Map<String, int>`)
+- [x] Campo de moedas na aba Inventory: CP / SP / EP / GP / PP
+- [x] Campos editáveis inline (salva ao perder foco)
+- [x] Persistido no modelo `Character` (novo campo `currency: Map<String, int>`)
 
 ### Equipamento inicial do background
 - [ ] Campo `startingEquipment: List<String>` em `SrdBackground` (parsear do JSON)
 - [ ] Ao finalizar criação (buildAndSave), adicionar itens do background como `EquipmentItem` na lista do personagem
 
+### Dados SRD de suporte
+- [x] `class_features.json` — features por nível para todas as 12 classes
+- [x] `magic_items.json` — itens mágicos SRD (poções, wondrous items, armas/armaduras +1/+2/+3)
+- [x] Seção `gear` adicionada a `equipment.json` (~65 itens: adventuring gear, containers, kits, munição, etc.)
+- [x] Assets registrados no `pubspec.yaml`
+
 ### Provider
-- [ ] `addEquipmentItem(EquipmentItem)` em `CharacterDetailNotifier`
-- [ ] `removeEquipmentItem(String itemId)` em `CharacterDetailNotifier`
-- [ ] `toggleEquipped(String itemId)` em `CharacterDetailNotifier`
-- [ ] `updateCurrency(Map<String, int>)` em `CharacterDetailNotifier`
+- [x] `addEquipmentItem(EquipmentItem)` em `CharacterDetailNotifier`
+- [x] `removeEquipmentItem(String itemName)` em `CharacterDetailNotifier`
+- [x] `toggleEquipped(String itemName)` em `CharacterDetailNotifier`
+- [x] `updateCurrency(Map<String, int>)` em `CharacterDetailNotifier`
 
 ---
 

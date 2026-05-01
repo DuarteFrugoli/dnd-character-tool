@@ -1,0 +1,186 @@
+{
+  "Barbarian": [
+    {
+      "name": "Path of the Berserker",
+      "description": "Channel your rage into savage fury. When you rage, you can enter a frenzy — making an extra melee attack each turn as a bonus action, at the cost of exhaustion afterward."
+    },
+    {
+      "name": "Path of the Totem Warrior",
+      "description": "Bond with an animal spirit as your guide and gain magical powers. Choose from Bear (resistance to all damage), Eagle (disengage as bonus action), or Wolf (allies gain advantage on melee attacks against enemies near you)."
+    }
+  ],
+  "Bard": [
+    {
+      "name": "College of Lore",
+      "description": "A master of knowledge and secrets. Gain proficiency in three extra skills, cutting words to hinder enemies, and the ability to steal magical secrets from other classes."
+    },
+    {
+      "name": "College of Valor",
+      "description": "A battle-ready performer who inspires allies in combat. Gain proficiency with medium armor, shields, and martial weapons, and eventually grant allies an extra attack with your Bardic Inspiration."
+    }
+  ],
+  "Cleric": [
+    {
+      "name": "Knowledge Domain",
+      "description": "Scholar of secrets and divine wisdom. Gain proficiency in two extra skills and two extra languages, read memories from objects, and know the thoughts of others."
+    },
+    {
+      "name": "Life Domain",
+      "description": "Healer and protector blessed by gods of life. Heavy armor proficiency, improved healing, and the ability to preserve life at the brink of death."
+    },
+    {
+      "name": "Light Domain",
+      "description": "Channel the divine flame against darkness. Bonus fire cantrip, Warding Flare to impede attackers, and a brilliant Corona of Light at high levels."
+    },
+    {
+      "name": "Nature Domain",
+      "description": "Guardian of wild places and growing things. Heavy armor proficiency, a bonus druid cantrip, and the ability to charm animals and plants."
+    },
+    {
+      "name": "Tempest Domain",
+      "description": "Wrath of storm and sea. Heavy armor and martial weapon proficiency, Wrath of the Storm to punish attackers, and destructive wind and lightning magic."
+    },
+    {
+      "name": "Trickery Domain",
+      "description": "Deity of deception and illusion. Invoke Duplicity to create an illusory copy of yourself, and access a suite of spells for misdirection and stealth."
+    },
+    {
+      "name": "War Domain",
+      "description": "Warrior of the gods. Heavy armor and martial weapon proficiency, War Priest extra attacks as a bonus action, and powerful combat spells."
+    }
+  ],
+  "Druid": [
+    {
+      "name": "Circle of the Land",
+      "description": "Keeper of ancient traditions and natural secrets. Recover spell slots on a short rest, resist charm and fear from fey and elementals, and gain extra spells based on your chosen terrain."
+    },
+    {
+      "name": "Circle of the Moon",
+      "description": "Powerful shapeshifter. Wild Shape into combat-ready beasts starting at CR 1 (scaling to CR 6 at higher levels), and eventually shift into elemental forms."
+    }
+  ],
+  "Fighter": [
+    {
+      "name": "Champion",
+      "description": "The perfected warrior. Improved Critical (19–20), Remarkable Athlete for physical challenges, and eventually a second fighting style — the simplest and most powerful martial archetype."
+    },
+    {
+      "name": "Battle Master",
+      "description": "Tactical genius. Use superiority dice to perform a variety of combat maneuvers — tripping, disarming, parrying, and directing allies — and recover them on a short rest."
+    },
+    {
+      "name": "Eldritch Knight",
+      "description": "A spellblade who merges martial training with arcane power. Learn abjuration and evocation spells, bind weapons to your hand, and eventually cast spells as a bonus action."
+    }
+  ],
+  "Monk": [
+    {
+      "name": "Way of the Open Hand",
+      "description": "Master of unarmed combat. Open Hand Technique lets you knock down, push, or prevent reactions; Quivering Palm eventually deals massive damage with a single touch."
+    },
+    {
+      "name": "Way of Shadow",
+      "description": "A ninja-like warrior who blends martial arts with shadow magic. Spend ki to cast darkness, silence, and pass without trace, then teleport between shadows."
+    },
+    {
+      "name": "Way of the Four Elements",
+      "description": "Channel the elements themselves. Spend ki to cast elemental disciplines — hurling fire, controlling water, creating stone walls, and riding the wind."
+    }
+  ],
+  "Paladin": [
+    {
+      "name": "Oath of Devotion",
+      "description": "The classic knight of justice and order. Sacred Weapon to empower attacks, Holy Nimbus to damage fiends and undead, and powerful protection and smite spells."
+    },
+    {
+      "name": "Oath of the Ancients",
+      "description": "Guardian of light and the natural world. Nature's Wrath to restrain enemies, Elder Champion transformation, and protection from elemental and magical damage."
+    },
+    {
+      "name": "Oath of Vengeance",
+      "description": "A relentless punisher of great evil. Vow of Enmity for advantage on attacks, Avenging Angel transformation, and pursuit spells to hunt down the wicked."
+    }
+  ],
+  "Ranger": [
+    {
+      "name": "Hunter",
+      "description": "Master tracker and predator. Choose from Hunter's Prey options (Colossus Slayer, Giant Killer, Horde Breaker) and Defensive Tactics to handle any threat."
+    },
+    {
+      "name": "Beast Master",
+      "description": "Bond deeply with an animal companion that fights alongside you. The beast acts on your turn and grows in power as you level up."
+    }
+  ],
+  "Rogue": [
+    {
+      "name": "Thief",
+      "description": "Master burglar and opportunist. Fast Hands for quick item use as a bonus action, Second-Story Work for superior climbing speed, and Use Magic Device at higher levels."
+    },
+    {
+      "name": "Assassin",
+      "description": "Deadly ambusher. Advantage and bonus damage against surprised targets, a new disguise identity each day, and the ability to mimic any creature's speech."
+    },
+    {
+      "name": "Arcane Trickster",
+      "description": "A spellcasting rogue who weaves magic into trickery. Learn illusion and enchantment spells, use Mage Hand Legerdemain, and eventually steal spell effects from other casters."
+    }
+  ],
+  "Sorcerer": [
+    {
+      "name": "Draconic Bloodline",
+      "description": "Power from draconic ancestry. Extra hit points, natural armor (AC 13 + DEX without armor), an elemental affinity for damage, and growing draconic wings at high levels."
+    },
+    {
+      "name": "Wild Magic",
+      "description": "Chaotic surges of unpredictable power. Tides of Chaos for advantage on a roll, random Wild Magic Surge effects, and the ability to help allies recover sorcery points in a pinch."
+    }
+  ],
+  "Warlock": [
+    {
+      "name": "The Archfey",
+      "description": "A fey lord of emotion and glamour. Fey Presence to charm or frighten nearby creatures, Misty Escape to vanish when hit, and enchantment-focused magic."
+    },
+    {
+      "name": "The Fiend",
+      "description": "A powerful devil or demon. Dark One's Blessing grants temporary hit points when you kill, and a suite of fire and necrotic spells ending in Hurl Through Hell."
+    },
+    {
+      "name": "The Great Old One",
+      "description": "An alien cosmic entity beyond comprehension. Telepathic communication, Awakened Mind to speak mind-to-mind, and eventually master mind-warping and reality-bending magic."
+    }
+  ],
+  "Wizard": [
+    {
+      "name": "School of Abjuration",
+      "description": "Master of protective magic. Arcane Ward absorbs damage for you, Projected Ward extends protection to allies, and your abjurations are maximally effective."
+    },
+    {
+      "name": "School of Conjuration",
+      "description": "Master of summoning and transportation. Benign Transposition to teleport or swap a summon, Focused Conjuration for unbroken concentration, and durable summoned creatures."
+    },
+    {
+      "name": "School of Divination",
+      "description": "Seer and oracle. Portent lets you roll two d20s at dawn and replace any roll in the game with them — potentially changing the outcome of critical moments."
+    },
+    {
+      "name": "School of Enchantment",
+      "description": "Master of mind and emotion. Hypnotic Gaze to stun a creature each turn, Instill Doubt to impose disadvantage, and eventually Alter Memories to erase what enemies experienced."
+    },
+    {
+      "name": "School of Evocation",
+      "description": "The arcane blaster. Sculpt Spells to exclude allies from your area effects, Potent Cantrip for half damage on saves, and Empowered Evocation to maximize a damage roll."
+    },
+    {
+      "name": "School of Illusion",
+      "description": "Master of deception and false realities. Improved Minor Illusion, Malleable Illusions to reshape them in real time, and Illusory Self as a shield against attacks."
+    },
+    {
+      "name": "School of Necromancy",
+      "description": "Master of death magic. Grim Harvest to regain hit points when you kill with spells, Undead Thralls for more powerful undead servants, and Command Undead at high levels."
+    },
+    {
+      "name": "School of Transmutation",
+      "description": "Master of transformation. Transmuter's Stone for ongoing buffs, Shapechanger to polymorph yourself, and Master Transmuter to achieve miraculous effects by expending your stone."
+    }
+  ]
+}

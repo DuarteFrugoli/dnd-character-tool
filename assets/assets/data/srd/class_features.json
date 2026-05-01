@@ -1,0 +1,178 @@
+[
+  {
+    "class": "Barbarian",
+    "features": [
+      { "name": "Rage", "level": 1, "type": "active", "description": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you have advantage on Strength checks and saving throws, gain a bonus to melee damage rolls using Strength, and have resistance to bludgeoning, piercing, and slashing damage. Your rage lasts 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then.", "uses": { "amount": 2, "rechargeOn": "long_rest" } },
+      { "name": "Unarmored Defense", "level": 1, "type": "passive", "description": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit." },
+      { "name": "Reckless Attack", "level": 2, "type": "active", "description": "When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn." },
+      { "name": "Danger Sense", "level": 2, "type": "passive", "description": "You have an uncanny sense of when things nearby aren't as they should be. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated." },
+      { "name": "Primal Path", "level": 3, "type": "subclass", "description": "You choose a path that shapes the nature of your rage." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Extra Attack", "level": 5, "type": "passive", "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn." },
+      { "name": "Fast Movement", "level": 5, "type": "passive", "description": "Your speed increases by 10 feet while you aren't wearing heavy armor." },
+      { "name": "Feral Instinct", "level": 7, "type": "passive", "description": "Your instincts are so honed that you have advantage on initiative rolls. Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn." },
+      { "name": "Brutal Critical", "level": 9, "type": "passive", "description": "You can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack. This increases to two additional dice at 13th level and three additional dice at 17th level." },
+      { "name": "Relentless Rage", "level": 11, "type": "passive", "description": "Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10." },
+      { "name": "Persistent Rage", "level": 15, "type": "passive", "description": "Your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it." },
+      { "name": "Indomitable Might", "level": 18, "type": "passive", "description": "If your total for a Strength check is less than your Strength score, you can use that score in place of the total." },
+      { "name": "Primal Champion", "level": 20, "type": "passive", "description": "You embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24." }
+    ]
+  },
+  {
+    "class": "Bard",
+    "features": [
+      { "name": "Spellcasting", "level": 1, "type": "passive", "description": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Charisma is your spellcasting ability." },
+      { "name": "Bardic Inspiration", "level": 1, "type": "active", "description": "You can inspire others through stirring words or music. As a bonus action, you can give one creature other than yourself a Bardic Inspiration die (d6). Once in the next 10 minutes, the creature can roll that die and add the number to one ability check, attack roll, or saving throw it makes.", "uses": { "amount": "charisma_modifier", "rechargeOn": "long_rest" } },
+      { "name": "Jack of All Trades", "level": 2, "type": "passive", "description": "You can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus." },
+      { "name": "Song of Rest", "level": 2, "type": "passive", "description": "You can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points." },
+      { "name": "Bard College", "level": 3, "type": "subclass", "description": "You delve into the advanced techniques of a bard college of your choice." },
+      { "name": "Expertise", "level": 3, "type": "passive", "description": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Font of Inspiration", "level": 5, "type": "passive", "description": "You regain all of your expended uses of Bardic Inspiration when you finish a short or long rest." },
+      { "name": "Countercharm", "level": 6, "type": "active", "description": "You gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed." },
+      { "name": "Magical Secrets", "level": 10, "type": "passive", "description": "You have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any classes, including this one. A spell you choose must be of a level you can cast. The chosen spells count as bard spells for you." },
+      { "name": "Superior Inspiration", "level": 20, "type": "passive", "description": "When you roll initiative and have no uses of Bardic Inspiration left, you regain one use." }
+    ]
+  },
+  {
+    "class": "Cleric",
+    "features": [
+      { "name": "Spellcasting", "level": 1, "type": "passive", "description": "As a conduit for divine power, you can cast cleric spells. Wisdom is your spellcasting ability." },
+      { "name": "Divine Domain", "level": 1, "type": "subclass", "description": "Choose one domain related to your deity. Your choice grants you domain spells and other features." },
+      { "name": "Channel Divinity", "level": 2, "type": "active", "description": "You gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. When you use your Channel Divinity, you choose which effect to create.", "uses": { "amount": 1, "rechargeOn": "short_rest" } },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Destroy Undead", "level": 5, "type": "passive", "description": "When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold (CR 1/2 at level 5, scaling up at higher levels)." },
+      { "name": "Divine Intervention", "level": 10, "type": "active", "description": "You can call on your deity to intervene on your behalf when your need is great. Implore your deity's aid as an action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes.", "uses": { "amount": 1, "rechargeOn": "long_rest" } }
+    ]
+  },
+  {
+    "class": "Druid",
+    "features": [
+      { "name": "Druidic", "level": 1, "type": "passive", "description": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages." },
+      { "name": "Spellcasting", "level": 1, "type": "passive", "description": "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will. Wisdom is your spellcasting ability." },
+      { "name": "Wild Shape", "level": 2, "type": "active", "description": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.", "uses": { "amount": 2, "rechargeOn": "short_rest" } },
+      { "name": "Druid Circle", "level": 2, "type": "subclass", "description": "You choose to identify with a circle of druids." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Timeless Body", "level": 18, "type": "passive", "description": "The primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year." },
+      { "name": "Beast Spells", "level": 18, "type": "passive", "description": "You can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components." },
+      { "name": "Archdruid", "level": 20, "type": "passive", "description": "You can use your Wild Shape an unlimited number of times. Additionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell." }
+    ]
+  },
+  {
+    "class": "Fighter",
+    "features": [
+      { "name": "Fighting Style", "level": 1, "type": "passive", "description": "You adopt a particular style of fighting as your specialty. Choose a Fighting Style: Archery, Defense, Dueling, Great Weapon Fighting, Protection, or Two-Weapon Fighting." },
+      { "name": "Second Wind", "level": 1, "type": "active", "description": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.", "uses": { "amount": 1, "rechargeOn": "short_rest" } },
+      { "name": "Action Surge", "level": 2, "type": "active", "description": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.", "uses": { "amount": 1, "rechargeOn": "short_rest" } },
+      { "name": "Martial Archetype", "level": 3, "type": "subclass", "description": "You choose an archetype that you strive to emulate in your combat styles and techniques." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Extra Attack", "level": 5, "type": "passive", "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn." },
+      { "name": "Indomitable", "level": 9, "type": "active", "description": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.", "uses": { "amount": 1, "rechargeOn": "long_rest" } }
+    ]
+  },
+  {
+    "class": "Monk",
+    "features": [
+      { "name": "Unarmored Defense", "level": 1, "type": "passive", "description": "While you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier." },
+      { "name": "Martial Arts", "level": 1, "type": "passive", "description": "Your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons. You can use Dexterity instead of Strength for attack and damage rolls. You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. When you use the Attack action with an unarmed strike or a monk weapon, you can make one unarmed strike as a bonus action." },
+      { "name": "Ki", "level": 2, "type": "active", "description": "Your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points equal to your monk level. You can spend ki points to fuel ki features: Flurry of Blows, Patient Defense, Step of the Wind.", "uses": { "amount": "monk_level", "rechargeOn": "short_rest" } },
+      { "name": "Unarmored Movement", "level": 2, "type": "passive", "description": "Your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels." },
+      { "name": "Monastic Tradition", "level": 3, "type": "subclass", "description": "You commit yourself to a monastic tradition." },
+      { "name": "Deflect Missiles", "level": 3, "type": "active", "description": "You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Slow Fall", "level": 4, "type": "active", "description": "You can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level." },
+      { "name": "Extra Attack", "level": 5, "type": "passive", "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn." },
+      { "name": "Stunning Strike", "level": 5, "type": "active", "description": "You can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn." },
+      { "name": "Stillness of Mind", "level": 7, "type": "active", "description": "You can use your action to end one effect on yourself that is causing you to be charmed or frightened." },
+      { "name": "Timeless Body", "level": 15, "type": "passive", "description": "Your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You still die of old age, however. In addition, you no longer need food or water." },
+      { "name": "Empty Body", "level": 18, "type": "active", "description": "You can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage." },
+      { "name": "Perfect Self", "level": 20, "type": "passive", "description": "When you roll for initiative and have no ki points remaining, you regain 4 ki points." }
+    ]
+  },
+  {
+    "class": "Paladin",
+    "features": [
+      { "name": "Divine Sense", "level": 1, "type": "active", "description": "The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover.", "uses": { "amount": "1 + charisma_modifier", "rechargeOn": "long_rest" } },
+      { "name": "Lay on Hands", "level": 1, "type": "active", "description": "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level × 5.", "uses": { "amount": "paladin_level_x5", "rechargeOn": "long_rest" } },
+      { "name": "Fighting Style", "level": 2, "type": "passive", "description": "Adopt a particular style of fighting as your specialty. Choose from: Defense, Dueling, Great Weapon Fighting, or Protection." },
+      { "name": "Spellcasting", "level": 2, "type": "passive", "description": "You have learned to draw on divine magic through meditation and prayer to cast spells. Charisma is your spellcasting ability." },
+      { "name": "Divine Smite", "level": 2, "type": "active", "description": "When you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8." },
+      { "name": "Sacred Oath", "level": 3, "type": "subclass", "description": "You swear the oath that binds you as a paladin forever. Up to this time you have been in a preparatory stage, committed to the path but not yet sworn to it." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Extra Attack", "level": 5, "type": "passive", "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn." },
+      { "name": "Aura of Protection", "level": 6, "type": "passive", "description": "Whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus." },
+      { "name": "Aura of Courage", "level": 10, "type": "passive", "description": "You and friendly creatures within 10 feet of you can't be frightened while you are conscious." },
+      { "name": "Cleansing Touch", "level": 14, "type": "active", "description": "You can use your action to end one spell on yourself or on one willing creature that you touch.", "uses": { "amount": "charisma_modifier", "rechargeOn": "long_rest" } }
+    ]
+  },
+  {
+    "class": "Ranger",
+    "features": [
+      { "name": "Favored Enemy", "level": 1, "type": "passive", "description": "You have significant experience studying, tracking, hunting, and even talking to a certain type of enemy. Choose a type of favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. You have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them." },
+      { "name": "Natural Explorer", "level": 1, "type": "passive", "description": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, swamp, or the Underdark." },
+      { "name": "Fighting Style", "level": 2, "type": "passive", "description": "Adopt a particular style of fighting as your specialty. Choose from: Archery, Defense, Dueling, or Two-Weapon Fighting." },
+      { "name": "Spellcasting", "level": 2, "type": "passive", "description": "You have learned to use the magical essence of nature to cast spells. Wisdom is your spellcasting ability." },
+      { "name": "Ranger Archetype", "level": 3, "type": "subclass", "description": "You choose an archetype that you strive to emulate." },
+      { "name": "Primeval Awareness", "level": 3, "type": "active", "description": "You can use your action and expend one ranger spell slot to focus your awareness on the region around you. For 1 minute per level of the spell slot you expend, you can sense whether certain types of creatures are present within 1 mile of you." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Extra Attack", "level": 5, "type": "passive", "description": "You can attack twice, instead of once, whenever you take the Attack action on your turn." },
+      { "name": "Land's Stride", "level": 8, "type": "passive", "description": "Moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard." },
+      { "name": "Hide in Plain Sight", "level": 10, "type": "active", "description": "You can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt, plants, soot, and other naturally occurring materials with which to create your camouflage. Once you are camouflaged in this way, you can try to hide by pressing yourself up against a solid surface, such as a tree or wall, that is at least as tall and wide as you are. You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain there without moving or taking actions." },
+      { "name": "Vanish", "level": 14, "type": "passive", "description": "You can use the Hide action as a bonus action on your turn. Also, you can't be tracked by nonmagical means, unless you choose to leave a trail." },
+      { "name": "Feral Senses", "level": 18, "type": "passive", "description": "You gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it." },
+      { "name": "Foe Slayer", "level": 20, "type": "passive", "description": "You become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies." }
+    ]
+  },
+  {
+    "class": "Rogue",
+    "features": [
+      { "name": "Expertise", "level": 1, "type": "passive", "description": "Choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies." },
+      { "name": "Sneak Attack", "level": 1, "type": "passive", "description": "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. You don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll. The amount of the extra damage increases as you gain levels in this class." },
+      { "name": "Thieves' Cant", "level": 1, "type": "passive", "description": "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation." },
+      { "name": "Cunning Action", "level": 2, "type": "active", "description": "Your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action." },
+      { "name": "Roguish Archetype", "level": 3, "type": "subclass", "description": "You choose an archetype that you emulate in the exercise of your rogue abilities." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Uncanny Dodge", "level": 5, "type": "active", "description": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you." },
+      { "name": "Evasion", "level": 7, "type": "passive", "description": "When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail." },
+      { "name": "Reliable Talent", "level": 11, "type": "passive", "description": "You have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10." },
+      { "name": "Blindsense", "level": 14, "type": "passive", "description": "If you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you." },
+      { "name": "Slippery Mind", "level": 15, "type": "passive", "description": "You have acquired greater mental strength. You gain proficiency in Wisdom saving throws." },
+      { "name": "Elusive", "level": 18, "type": "passive", "description": "You are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated." },
+      { "name": "Stroke of Luck", "level": 20, "type": "active", "description": "You have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.", "uses": { "amount": 1, "rechargeOn": "short_rest" } }
+    ]
+  },
+  {
+    "class": "Sorcerer",
+    "features": [
+      { "name": "Spellcasting", "level": 1, "type": "passive", "description": "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. Charisma is your spellcasting ability." },
+      { "name": "Sorcerous Origin", "level": 1, "type": "subclass", "description": "Choose a sorcerous origin, which describes the source of your innate magical power." },
+      { "name": "Font of Magic", "level": 2, "type": "passive", "description": "You tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects. You have 2 sorcery points at 2nd level and gain 1 additional point for each level beyond 2nd." },
+      { "name": "Metamagic", "level": 3, "type": "passive", "description": "You gain the ability to twist your spells to suit your needs. You gain two Metamagic options of your choice from: Careful Spell, Distant Spell, Empowered Spell, Extended Spell, Heightened Spell, Quickened Spell, Subtle Spell, Twinned Spell." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Sorcerous Restoration", "level": 20, "type": "passive", "description": "You regain 4 expended sorcery points whenever you finish a short rest." }
+    ]
+  },
+  {
+    "class": "Warlock",
+    "features": [
+      { "name": "Otherworldly Patron", "level": 1, "type": "subclass", "description": "You have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description." },
+      { "name": "Pact Magic", "level": 1, "type": "passive", "description": "Your arcane research and the magic bestowed on you by your patron have given you facility with spells. Charisma is your spellcasting ability. Unlike other spellcasters, all expended spell slots are restored on a short or long rest." },
+      { "name": "Eldritch Invocations", "level": 2, "type": "passive", "description": "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability. You gain two eldritch invocations of your choice." },
+      { "name": "Pact Boon", "level": 3, "type": "passive", "description": "Your otherworldly patron bestows a gift upon you for your loyal service. You gain one of the following features of your choice: Pact of the Chain, Pact of the Blade, or Pact of the Tome." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Mystic Arcanum", "level": 11, "type": "active", "description": "Your patron bestows upon you a magical secret called an arcanum. Choose one 6th-level spell from the warlock spell list as this arcanum. You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you do so again.", "uses": { "amount": 1, "rechargeOn": "long_rest" } },
+      { "name": "Eldritch Master", "level": 20, "type": "active", "description": "You can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.", "uses": { "amount": 1, "rechargeOn": "long_rest" } }
+    ]
+  },
+  {
+    "class": "Wizard",
+    "features": [
+      { "name": "Spellcasting", "level": 1, "type": "passive", "description": "As a student of arcane magic, you have a spellbook containing 6 spells of 1st level of your choice. Intelligence is your spellcasting ability." },
+      { "name": "Arcane Recovery", "level": 1, "type": "active", "description": "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.", "uses": { "amount": 1, "rechargeOn": "long_rest" } },
+      { "name": "Arcane Tradition", "level": 2, "type": "subclass", "description": "You choose an arcane tradition, shaping your practice of magic through one of the following schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation." },
+      { "name": "Ability Score Improvement", "level": 4, "type": "asi", "description": "Increase one ability score by 2, or two ability scores by 1. Cannot exceed 20." },
+      { "name": "Spell Mastery", "level": 18, "type": "passive", "description": "You have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared." },
+      { "name": "Signature Spells", "level": 20, "type": "passive", "description": "You gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest.", "uses": { "amount": 2, "rechargeOn": "short_rest" } }
+    ]
+  }
+]

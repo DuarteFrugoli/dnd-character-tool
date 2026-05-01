@@ -1,0 +1,147 @@
+[
+  {
+    "name": "Dwarf",
+    "speed": 25,
+    "size": "Medium",
+    "abilityScoreIncreases": { "constitution": 2 },
+    "traits": ["Darkvision", "Dwarven Resilience", "Dwarven Combat Training", "Stonecunning", "Tool Proficiency"],
+    "languages": ["Common", "Dwarvish"],
+    "subraces": [
+      {
+        "name": "Hill Dwarf",
+        "abilityScoreIncreases": { "wisdom": 1 },
+        "traits": ["Dwarven Toughness"]
+      },
+      {
+        "name": "Mountain Dwarf",
+        "abilityScoreIncreases": { "strength": 2 },
+        "traits": ["Dwarven Armor Training"]
+      }
+    ]
+  },
+  {
+    "name": "Elf",
+    "speed": 30,
+    "size": "Medium",
+    "abilityScoreIncreases": { "dexterity": 2 },
+    "traits": ["Darkvision", "Keen Senses", "Fey Ancestry", "Trance"],
+    "languages": ["Common", "Elvish"],
+    "subraces": [
+      {
+        "name": "High Elf",
+        "abilityScoreIncreases": { "intelligence": 1 },
+        "traits": ["Elf Weapon Training", "Cantrip", "Extra Language"]
+      },
+      {
+        "name": "Wood Elf",
+        "abilityScoreIncreases": { "wisdom": 1 },
+        "traits": ["Elf Weapon Training", "Fleet of Foot", "Mask of the Wild"],
+        "speed": 35
+      },
+      {
+        "name": "Dark Elf (Drow)",
+        "abilityScoreIncreases": { "charisma": 1 },
+        "traits": ["Superior Darkvision", "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"]
+      }
+    ]
+  },
+  {
+    "name": "Halfling",
+    "speed": 25,
+    "size": "Small",
+    "abilityScoreIncreases": { "dexterity": 2 },
+    "traits": ["Lucky", "Brave", "Halfling Nimbleness"],
+    "languages": ["Common", "Halfling"],
+    "subraces": [
+      {
+        "name": "Lightfoot",
+        "abilityScoreIncreases": { "charisma": 1 },
+        "traits": ["Naturally Stealthy"]
+      },
+      {
+        "name": "Stout",
+        "abilityScoreIncreases": { "constitution": 1 },
+        "traits": ["Stout Resilience"]
+      }
+    ]
+  },
+  {
+    "name": "Human",
+    "speed": 30,
+    "size": "Medium",
+    "abilityScoreIncreases": {
+      "strength": 1, "dexterity": 1, "constitution": 1,
+      "intelligence": 1, "wisdom": 1, "charisma": 1
+    },
+    "traits": ["Extra Language"],
+    "languages": ["Common", "one extra of your choice"],
+    "subraces": []
+  },
+  {
+    "name": "Dragonborn",
+    "speed": 30,
+    "size": "Medium",
+    "abilityScoreIncreases": { "strength": 2, "charisma": 1 },
+    "traits": ["Draconic Ancestry", "Breath Weapon", "Damage Resistance"],
+    "languages": ["Common", "Draconic"],
+    "subraces": [
+      { "name": "Black (Acid)",      "damageType": "acid",      "breathShape": "5x30 ft. line" },
+      { "name": "Blue (Lightning)",  "damageType": "lightning", "breathShape": "5x30 ft. line" },
+      { "name": "Brass (Fire)",      "damageType": "fire",      "breathShape": "5x30 ft. line" },
+      { "name": "Bronze (Lightning)","damageType": "lightning", "breathShape": "5x30 ft. line" },
+      { "name": "Copper (Acid)",     "damageType": "acid",      "breathShape": "5x30 ft. line" },
+      { "name": "Gold (Fire)",       "damageType": "fire",      "breathShape": "15 ft. cone"   },
+      { "name": "Green (Poison)",    "damageType": "poison",    "breathShape": "15 ft. cone"   },
+      { "name": "Red (Fire)",        "damageType": "fire",      "breathShape": "15 ft. cone"   },
+      { "name": "Silver (Cold)",     "damageType": "cold",      "breathShape": "15 ft. cone"   },
+      { "name": "White (Cold)",      "damageType": "cold",      "breathShape": "15 ft. cone"   }
+    ]
+  },
+  {
+    "name": "Gnome",
+    "speed": 25,
+    "size": "Small",
+    "abilityScoreIncreases": { "intelligence": 2 },
+    "traits": ["Darkvision", "Gnome Cunning"],
+    "languages": ["Common", "Gnomish"],
+    "subraces": [
+      {
+        "name": "Forest Gnome",
+        "abilityScoreIncreases": { "dexterity": 1 },
+        "traits": ["Natural Illusionist", "Speak with Small Beasts"]
+      },
+      {
+        "name": "Rock Gnome",
+        "abilityScoreIncreases": { "constitution": 1 },
+        "traits": ["Artificer's Lore", "Tinker"]
+      }
+    ]
+  },
+  {
+    "name": "Half-Elf",
+    "speed": 30,
+    "size": "Medium",
+    "abilityScoreIncreases": { "charisma": 2, "twoOthers": 1 },
+    "traits": ["Darkvision", "Fey Ancestry", "Skill Versatility", "Extra Language"],
+    "languages": ["Common", "Elvish", "one extra of your choice"],
+    "subraces": []
+  },
+  {
+    "name": "Half-Orc",
+    "speed": 30,
+    "size": "Medium",
+    "abilityScoreIncreases": { "strength": 2, "constitution": 1 },
+    "traits": ["Darkvision", "Menacing", "Relentless Endurance", "Savage Attacks"],
+    "languages": ["Common", "Orc"],
+    "subraces": []
+  },
+  {
+    "name": "Tiefling",
+    "speed": 30,
+    "size": "Medium",
+    "abilityScoreIncreases": { "intelligence": 1, "charisma": 2 },
+    "traits": ["Darkvision", "Hellish Resistance", "Infernal Legacy"],
+    "languages": ["Common", "Infernal"],
+    "subraces": []
+  }
+]

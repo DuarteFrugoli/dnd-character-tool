@@ -28,6 +28,8 @@ class CharacterDraft {
   final Map<String, int> freePicksDistribution;
   final String name;
   final String playerName;
+  // Itens do background que o usuário quer adicionar ao inventário
+  final List<String> selectedStartingEquipment;
 
   const CharacterDraft({
     required this.id,
@@ -44,6 +46,7 @@ class CharacterDraft {
     this.freePicksDistribution = const {},
     this.name = '',
     this.playerName = '',
+    this.selectedStartingEquipment = const [],
   });
 
   CharacterDraft copyWith({
@@ -60,6 +63,7 @@ class CharacterDraft {
     Map<String, int>? freePicksDistribution,
     String? name,
     String? playerName,
+    List<String>? selectedStartingEquipment,
   }) {
     return CharacterDraft(
       id: id,
@@ -80,6 +84,8 @@ class CharacterDraft {
       freePicksDistribution: freePicksDistribution ?? this.freePicksDistribution,
       name: name ?? this.name,
       playerName: playerName ?? this.playerName,
+      selectedStartingEquipment:
+          selectedStartingEquipment ?? this.selectedStartingEquipment,
     );
   }
 
@@ -165,8 +171,21 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setSubrace(SrdSubrace? s) =>
       state = state.copyWith(selectedSubrace: s);
 
-  void setBackground(SrdBackground b) =>
-      state = state.copyWith(selectedBackground: b);
+  void setBackground(SrdBackground b) => state = state.copyWith(
+        selectedBackground: b,
+        // Pré-seleciona todos os itens do background (usuário pode desmarcar)
+        selectedStartingEquipment: List<String>.from(b.startingEquipment),
+      );
+
+  void toggleStartingItem(String item) {
+    final current = List<String>.from(state.selectedStartingEquipment);
+    if (current.contains(item)) {
+      current.remove(item);
+    } else {
+      current.add(item);
+    }
+    state = state.copyWith(selectedStartingEquipment: current);
+  }
 
   void setChosenSkills(List<String> skills) =>
       state = state.copyWith(chosenSkills: skills);
@@ -196,6 +215,25 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     final con = attrs['Constitution'] ?? 10;
     final conMod = ((con - 10) / 2).floor();
     final hitDie = draft.selectedClass!.hitDie;
+
+    // Converte itens de background selecionados em EquipmentItems
+    // Itens no formato "X gp" viram currency, os outros viram gear
+    final gpPattern = RegExp(r'^(\d+)\s*gp$', caseSensitive: false);
+    final startingEquipment = <EquipmentItem>[];
+    int startingGp = 0;
+    for (final itemName in draft.selectedStartingEquipment) {
+      final gpMatch = gpPattern.firstMatch(itemName.trim());
+      if (gpMatch != null) {
+        startingGp += int.parse(gpMatch.group(1)!);
+      } else {
+        startingEquipment.add(EquipmentItem(
+          name: itemName,
+          category: 'adventuring gear',
+          itemType: ItemType.gear,
+          quantity: 1,
+        ));
+      }
+    }
 
     final character = Character(
       id: draft.id,
@@ -231,7 +269,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         ...draft.chosenSkills,
       ],
       skillExpertises: [],
-      equipment: [],
+      equipment: startingEquipment,
+      currency: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': startingGp, 'pp': 0},
       spells: [],
       spellSlots: SpellSlots(
         total: List.filled(9, 0),

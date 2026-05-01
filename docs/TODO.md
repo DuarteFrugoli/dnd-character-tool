@@ -25,3 +25,6 @@
 ## bugs / infra
 
 - consertar regra sem atributo por raça
+
+extras:
+- colocar no github pages automático sempre que atualizar a main usando github actions.

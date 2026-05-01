@@ -307,12 +307,12 @@ class SrdWeapon {
   });
 
   factory SrdWeapon.fromJson(Map<String, dynamic> json) => SrdWeapon(
-        name: json['name'] as String,
-        category: json['category'] as String,
-        damage: json['damage'] as String,
-        damageType: json['damageType'] as String,
-        weight: (json['weight'] as num).toDouble(),
-        cost: json['cost'] as String,
+        name: (json['name'] as String?) ?? '',
+        category: (json['category'] as String?) ?? '',
+        damage: (json['damage'] as String?) ?? '0',
+        damageType: (json['damageType'] as String?) ?? '',
+        weight: (json['weight'] as num? ?? 0).toDouble(),
+        cost: (json['cost'] as String?) ?? '',
         properties: List<String>.from(json['properties']),
         versatileDamage: json['versatileDamage'] as String?,
         range: json['range'] != null
@@ -349,16 +349,16 @@ class SrdArmor {
   bool get isShield => type == 'shield';
 
   factory SrdArmor.fromJson(Map<String, dynamic> json) => SrdArmor(
-        name: json['name'] as String,
-        type: json['type'] as String,
+        name: (json['name'] as String?) ?? '',
+        type: (json['type'] as String?) ?? '',
         baseAC: json['baseAC'] as int?,
         acBonus: json['acBonus'] as int?,
         addDexModifier: json['addDexModifier'] as bool? ?? false,
         maxDexBonus: json['maxDexBonus'] as int?,
         stealthDisadvantage: json['stealthDisadvantage'] as bool? ?? false,
         strengthRequired: json['strengthRequired'] as int?,
-        weight: (json['weight'] as num).toDouble(),
-        cost: json['cost'] as String,
+        weight: (json['weight'] as num? ?? 0).toDouble(),
+        cost: (json['cost'] as String?) ?? '',
       );
 }
 
@@ -378,11 +378,11 @@ class SrdGearItem {
   });
 
   factory SrdGearItem.fromJson(Map<String, dynamic> json) => SrdGearItem(
-        name: json['name'] as String,
-        category: json['category'] as String,
-        weight: (json['weight'] as num).toDouble(),
-        cost: json['cost'] as String,
-        description: json['description'] as String? ?? '',
+        name: (json['name'] as String?) ?? '',
+        category: (json['category'] as String?) ?? '',
+        weight: (json['weight'] as num? ?? 0).toDouble(),
+        cost: (json['cost'] as String?) ?? '',
+        description: (json['description'] as String?) ?? '',
       );
 }
 
@@ -404,9 +404,9 @@ class SrdMagicItem {
   });
 
   factory SrdMagicItem.fromJson(Map<String, dynamic> json) => SrdMagicItem(
-        name: json['name'] as String,
-        type: json['type'] as String,
-        rarity: json['rarity'] as String,
+        name: (json['name'] as String?) ?? '',
+        type: (json['type'] as String?) ?? '',
+        rarity: (json['rarity'] as String?) ?? '',
         requiresAttunement: json['requiresAttunement'] as bool? ?? false,
         description: json['description'] as String? ?? '',
         itemType: ItemType.values.firstWhere(

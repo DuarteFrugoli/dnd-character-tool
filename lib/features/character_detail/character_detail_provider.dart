@@ -115,8 +115,16 @@ class CharacterDetailNotifier
   Future<void> removeEquipmentItem(String id) async {
     final c = state.valueOrNull;
     if (c == null) return;
+    final removed = c.equipment.firstWhere((e) => e.id == id,
+        orElse: () => c.equipment.first);
     final updated = c.equipment.where((e) => e.id != id).toList();
-    await _save(c.copyWith(equipment: updated));
+    final newC = c.copyWith(equipment: updated);
+    // Recalcula CA se a armadura removida estava equipada
+    if (removed.itemType == ItemType.armor && removed.isEquipped) {
+      await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
+    } else {
+      await _save(newC);
+    }
   }
 
   Future<void> toggleEquipped(String id) async {

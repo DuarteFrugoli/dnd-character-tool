@@ -63,6 +63,35 @@ class StepReview extends ConsumerWidget {
           _Row('AC', '${10 + ((attrs['Dexterity'] ?? 10) - 10) ~/ 2}'),
           _Row('Proficiency Bonus', '+2'),
         ]),
+        // ── Starting Equipment ────────────────────────────────────────────────
+        if (draft.selectedBackground != null &&
+            draft.selectedBackground!.startingEquipment.isNotEmpty)
+          _StartingEquipmentSection(
+            allItems: draft.selectedBackground!.startingEquipment,
+            selectedItems: draft.selectedStartingEquipment,
+            onToggle: (item) => ref
+                .read(characterDraftProvider.notifier)
+                .toggleStartingItem(item),
+            onToggleAll: (selectAll) {
+              final notifier =
+                  ref.read(characterDraftProvider.notifier);
+              if (selectAll) {
+                for (final item
+                    in draft.selectedBackground!.startingEquipment) {
+                  if (!draft.selectedStartingEquipment.contains(item)) {
+                    notifier.toggleStartingItem(item);
+                  }
+                }
+              } else {
+                for (final item
+                    in draft.selectedBackground!.startingEquipment) {
+                  if (draft.selectedStartingEquipment.contains(item)) {
+                    notifier.toggleStartingItem(item);
+                  }
+                }
+              }
+            },
+          ),
         const SizedBox(height: 16),
       ],
     );
@@ -127,6 +156,90 @@ class _Row extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _StartingEquipmentSection extends StatelessWidget {
+  const _StartingEquipmentSection({
+    required this.allItems,
+    required this.selectedItems,
+    required this.onToggle,
+    required this.onToggleAll,
+  });
+
+  final List<String> allItems;
+  final List<String> selectedItems;
+  final void Function(String item) onToggle;
+  final void Function(bool selectAll) onToggleAll;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final allSelected = allItems.every(selectedItems.contains);
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                  'Starting Equipment',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge
+                      ?.copyWith(color: scheme.primary),
+                ),
+                const Spacer(),
+                TextButton(
+                  onPressed: () => onToggleAll(!allSelected),
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    allSelected ? 'Deselect all' : 'Select all',
+                    style: TextStyle(fontSize: 12, color: scheme.primary),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Uncheck items you don\'t want to add to your inventory.',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+            ),
+            const SizedBox(height: 8),
+            ...allItems.map((item) {
+              final isSelected = selectedItems.contains(item);
+              final isGold =
+                  RegExp(r'^\d+\s*gp$', caseSensitive: false).hasMatch(item.trim());
+              return CheckboxListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                controlAffinity: ListTileControlAffinity.leading,
+                value: isSelected,
+                onChanged: (_) => onToggle(item),
+                title: Text(
+                  item,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                secondary: isGold
+                    ? Icon(Icons.monetization_on_outlined,
+                        size: 16, color: scheme.tertiary)
+                    : null,
+              );
+            }),
+          ],
+        ),
       ),
     );
   }

@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
@@ -1033,6 +1032,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   List<SrdArmor>? _armors;
   List<SrdGearItem>? _gear;
   List<SrdMagicItem>? _magic;
+  String? _loadError;
 
   static const _tabLabels = ['Weapons', 'Armor', 'Gear', 'Magic', 'Custom'];
 
@@ -1062,20 +1062,25 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   }
 
   Future<void> _loadData() async {
-    final srd = ref.read(srdDataSourceProvider);
-    final results = await Future.wait([
-      srd.getWeapons(),
-      srd.getArmors(),
-      srd.getGear(),
-      srd.getMagicItems(),
-    ]);
-    if (mounted) {
-      setState(() {
-        _weapons = results[0] as List<SrdWeapon>;
-        _armors = results[1] as List<SrdArmor>;
-        _gear = results[2] as List<SrdGearItem>;
-        _magic = results[3] as List<SrdMagicItem>;
-      });
+    try {
+      final srd = ref.read(srdDataSourceProvider);
+      final results = await Future.wait([
+        srd.getWeapons(),
+        srd.getArmors(),
+        srd.getGear(),
+        srd.getMagicItems(),
+      ]);
+      if (mounted) {
+        setState(() {
+          _weapons = results[0] as List<SrdWeapon>;
+          _armors = results[1] as List<SrdArmor>;
+          _gear = results[2] as List<SrdGearItem>;
+          _magic = results[3] as List<SrdMagicItem>;
+        });
+      }
+    } catch (e, st) {
+      debugPrint('_loadData error: $e\n$st');
+      if (mounted) setState(() => _loadError = e.toString());
     }
   }
 
@@ -1154,6 +1159,18 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     required ItemType Function(T) getItemType,
     Map<String, dynamic>? Function(T)? getProperties,
   }) {
+    if (_loadError != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            'Error loading items:\n$_loadError',
+            style: TextStyle(color: Theme.of(context).colorScheme.error),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      );
+    }
     if (items == null) {
       return const Center(child: CircularProgressIndicator());
     }
@@ -1225,7 +1242,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                 ),
                 const SizedBox(height: 12),
                 DropdownButtonFormField<ItemType>(
-                  value: selectedType,
+                  initialValue: selectedType,
                   decoration: const InputDecoration(
                       labelText: 'Type', border: OutlineInputBorder()),
                   items: const [

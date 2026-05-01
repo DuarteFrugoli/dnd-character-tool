@@ -1448,6 +1448,8 @@ class _ItemTile extends ConsumerWidget {
         return equipped ? Icons.shield : Icons.shield_outlined;
       case ItemType.consumable:
         return Icons.local_drink_outlined;
+      case ItemType.ammunition:
+        return Icons.arrow_upward;
       case ItemType.gear:
         return Icons.backpack_outlined;
     }

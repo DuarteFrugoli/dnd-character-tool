@@ -264,7 +264,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
       : '${bodyArmor.first.name}${usingShield ? ' + Shield' : ''}';
 
     return ListView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
       children: [
         // ── Identity ──────────────────────────────────────────────────────
         _Section(
@@ -476,7 +476,7 @@ class _SkillsTab extends StatelessWidget {
         character.skillExpertises.map((s) => s.toLowerCase()).toSet();
 
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 192),
       itemCount: _skillAbility.length,
       itemBuilder: (context, i) {
         final skillName = _skillAbility.keys.elementAt(i);
@@ -568,7 +568,7 @@ class _SpellsTab extends ConsumerWidget {
     }
 
     return ListView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
       children: [
         if (hasSlots) ...[
           Text('Spell Slots', style: Theme.of(context).textTheme.titleMedium),
@@ -703,7 +703,7 @@ class _NotesTab extends StatelessWidget {
     }
 
     return ListView(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
       children: [
         if (p.traits.isNotEmpty)
           _Section(title: 'Personality Traits', child: Text(p.traits)),
@@ -831,7 +831,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
 
     return Scaffold(
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
         children: [
           // ── Currency ────────────────────────────────────────────────────
           Card(
@@ -941,6 +941,28 @@ Future<int?> _showRemoveQuantityDialog(
   BuildContext context,
   EquipmentItem item,
 ) async {
+  if (item.quantity <= 1) {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Remove item?'),
+        content: Text('Remove ${item.name} from inventory?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Remove'),
+          ),
+        ],
+      ),
+    );
+
+    return confirm == true ? 1 : null;
+  }
+
   int selected = 1;
   final qtyCtrl = TextEditingController(text: '1');
 
@@ -1315,6 +1337,92 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     );
   }
 
+  // Lista agrupada por categoria, com cabeçalhos. Ao pesquisar, exibe lista plana.
+  Widget _buildGroupedSrdList<T>({
+    required List<T>? items,
+    required String Function(T) getName,
+    required String Function(T) getSubtitle,
+    required String Function(T) getCategory,
+    required String Function(T) getGroup,
+    required String? Function(T) getDescription,
+    required ItemType Function(T) getItemType,
+    Map<String, dynamic>? Function(T)? getProperties,
+    required List<String> groupOrder,
+    required Map<String, String> groupLabels,
+  }) {
+    if (_loadError != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            'Error loading items:\n$_loadError',
+            style: TextStyle(color: Theme.of(context).colorScheme.error),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      );
+    }
+    if (items == null) return const Center(child: CircularProgressIndicator());
+
+    final q = _search.text.toLowerCase();
+    final filtered = q.isEmpty
+        ? items
+        : items.where((e) => getName(e).toLowerCase().contains(q)).toList();
+
+    if (filtered.isEmpty) {
+      return Center(
+        child: Text(
+          'No results for "$q"',
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.onSurfaceVariant),
+        ),
+      );
+    }
+
+    Widget buildTile(T item) => ListTile(
+          title: Text(getName(item), style: const TextStyle(fontSize: 14)),
+          subtitle: Text(
+            getSubtitle(item),
+            style: TextStyle(
+                fontSize: 12,
+                color: Theme.of(context).colorScheme.onSurfaceVariant),
+          ),
+          trailing: IconButton(
+            icon: const Icon(Icons.add_circle_outline),
+            color: Theme.of(context).colorScheme.primary,
+            onPressed: () => _confirmAdd(
+              name: getName(item),
+              category: getCategory(item),
+              itemType: getItemType(item),
+              description: getDescription(item),
+              properties: getProperties?.call(item),
+            ),
+          ),
+        );
+
+    // Com busca activa: lista plana sem cabeçalhos.
+    if (q.isNotEmpty) {
+      return ListView(children: filtered.map(buildTile).toList());
+    }
+
+    // Sem busca: agrupa por categoria na ordem definida.
+    final grouped = <String, List<T>>{for (final key in groupOrder) key: []};
+    for (final item in filtered) {
+      final g = getGroup(item);
+      (grouped[g] ??= []).add(item);
+    }
+
+    final rows = <Widget>[];
+    for (final key in groupOrder) {
+      final group = grouped[key];
+      if (group == null || group.isEmpty) continue;
+      rows.add(_GroupHeader(label: groupLabels[key] ?? key));
+      rows.addAll(group.map(buildTile));
+    }
+
+    return ListView(children: rows);
+  }
+
   Widget _buildCustomTab() {
     final nameCtrl = TextEditingController();
     final categoryCtrl = TextEditingController(text: 'adventuring gear');
@@ -1480,12 +1588,13 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
               controller: _tabs,
               children: [
                 // Weapons
-                _buildSrdList<SrdWeapon>(
+                _buildGroupedSrdList<SrdWeapon>(
                   items: _weapons,
                   getName: (w) => w.name,
                   getSubtitle: (w) =>
-                      '${w.category}  ·  ${w.damage} ${w.damageType}  ·  ${w.cost}',
+                      '${w.damage} ${w.damageType}  ·  ${w.cost}',
                   getCategory: (w) => w.category,
+                  getGroup: (w) => w.category,
                   getDescription: (w) => w.properties.isNotEmpty
                       ? w.properties.join(', ')
                       : null,
@@ -1493,6 +1602,18 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getProperties: (w) => {
                     'damageDice': w.damage,
                     'damageType': w.damageType,
+                  },
+                  groupOrder: const [
+                    'simple melee',
+                    'simple ranged',
+                    'martial melee',
+                    'martial ranged',
+                  ],
+                  groupLabels: const {
+                    'simple melee': 'Simple Melee',
+                    'simple ranged': 'Simple Ranged',
+                    'martial melee': 'Martial Melee',
+                    'martial ranged': 'Martial Ranged',
                   },
                 ),
                 // Armor
@@ -1516,16 +1637,33 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   },
                 ),
                 // Gear
-                _buildSrdList<SrdGearItem>(
+                _buildGroupedSrdList<SrdGearItem>(
                   items: _gear,
                   getName: (g) => _stripPackNotation(g.name),
-                  getSubtitle: (g) => '${g.category}  ·  ${g.cost}',
+                  getSubtitle: (g) => g.cost,
                   getCategory: (g) => g.category,
+                  getGroup: (g) => g.category,
                   getDescription: (g) =>
                       g.description.isNotEmpty ? g.description : null,
                   getItemType: (g) => g.category == 'ammunition'
                       ? ItemType.ammunition
                       : ItemType.gear,
+                  groupOrder: const [
+                    'adventuring gear',
+                    'ammunition',
+                    'arcane focus',
+                    'clothing',
+                    'container',
+                    'poison',
+                  ],
+                  groupLabels: const {
+                    'adventuring gear': 'Adventuring Gear',
+                    'ammunition': 'Ammunition',
+                    'arcane focus': 'Arcane Focus',
+                    'clothing': 'Clothing',
+                    'container': 'Container',
+                    'poison': 'Poison',
+                  },
                 ),
                 // Magic Items
                 _buildSrdList<SrdMagicItem>(
@@ -1775,6 +1913,30 @@ class _ItemTile extends ConsumerWidget {
 }
 
 // ── Shared widgets ────────────────────────────────────────────────────────────
+
+// ── Group Header ──────────────────────────────────────────────────────────────
+
+class _GroupHeader extends StatelessWidget {
+  const _GroupHeader({required this.label});
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+      child: Text(
+        label,
+        style: Theme.of(context).textTheme.labelMedium?.copyWith(
+              color: scheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
+      ),
+    );
+  }
+}
+
+// ── Section ───────────────────────────────────────────────────────────────────
 
 class _Section extends StatelessWidget {
   const _Section({required this.title, required this.child});

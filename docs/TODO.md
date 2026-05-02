@@ -10,6 +10,9 @@
 - [x] stats, skills, magias, inventário, anotações
 - [x] HP temporário (drena temp antes do real, dialog com escudo)
 - [x] escolha de idiomas na criação guiada
+- [x] escolha de proficiências em ferramentas na criação guiada (raça / background / classe)
+- [x] aba Features: racial traits, background feature, class features, extra features (multiclasse)
+- [x] browser de features de todas as 12 classes com busca e sticky headers
 - [ ] edição de ficha existente (atributos, raça, classe, etc.)
 
 ## v1.1 — após feedback inicial

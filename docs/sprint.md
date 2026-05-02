@@ -210,9 +210,9 @@ Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do perso
 
 ---
 
-# Sprint 5 — Export/Import & Edição (em andamento)
+# Sprint 5 — Export/Import, Edição & Features (concluída)
 
-Objetivo: facilitar compartilhamento/backup dos personagens e começar a abrir edição pós-criação.
+Objetivo: facilitar compartilhamento/backup dos personagens, abrir edição pós-criação, e implementar a aba de Features completa.
 
 ---
 
@@ -223,22 +223,48 @@ Objetivo: facilitar compartilhamento/backup dos personagens e começar a abrir e
 - [x] Diálogo com JSON exportado + botão para copiar para clipboard
 - [x] Ação global de **Import JSON** na tela de lista
 - [x] Importação com persistência e refresh automático da lista
+- [x] Validar JSON de importação com mensagens de erro específicas em português
+- [x] Correção de async gap no `character_list_screen` (context check após await)
 
 ### Edição livre pós-criação
 - [x] Toggle de modo de edição no detail (ícone lápis no AppBar, `_editMode`)
 - [x] Editar atributos com botões +/- (`_AbilityCardEdit`) — zona "other" descartada por desnecessária
 - [~] Editar raça/classe/background — **descartado para v1** (custo alto, caso raro; workaround: export → edita JSON → import)
 
-### Qualidade e UX
-- [x] Padronizar mensagens de erro/sucesso de importação
-- [x] Validar JSON de importação com mensagens amigáveis
+### Aba Features na ficha
+- [x] Nova aba **Features** entre Skills e Spells (6 abas no total)
+- [x] Seção **Racial Traits** — chips por trait de raça + subraça
+- [x] Seção **Background Feature** — `ExpansionTile` com nome e descrição completa
+- [x] Seção **Class Features** — cards expandíveis com badge de tipo (Active/Passive/Subclass/ASI) e info de uso (short rest / long rest)
+- [x] Seção **Extra Features** — features adicionadas manualmente (multiclasse), com botão de remoção por card
+- [x] Modelo `CharacterExtraFeature` — `{ sourceClass, name, level, type, description }` com `fromJson`/`toJson` manual
+- [x] Serialização em `character.g.dart` atualizada manualmente para `extraFeatures`
+- [x] Métodos `addExtraFeature` e `removeExtraFeature` no `CharacterDetailNotifier`
+
+### Browser de features (Add Feature Sheet)
+- [x] `_AddFeatureSheet` — `DraggableScrollableSheet` com campo de busca
+- [x] Sem busca: lista agrupada por classe com sticky headers (12 classes, ordem alfabética)
+- [x] Com busca: lista plana filtrando por nome e descrição em todas as classes
+- [x] Tap no tile mostra descrição completa em `SnackBar`
+- [x] Botão `+` adiciona feature; ícone ✓ indica feature já adicionada
+
+### Proficiências em Ferramentas na criação guiada
+- [x] Seção `_ToolProficiencySection` no review final (etapa 7)
+- [x] Ferramentas fixas exibidas com ícone (ex: Charlatan → Disguise kit, Forgery kit)
+- [x] Ferramentas com escolha exibem `DropdownButtonFormField` por slot:
+  - Dwarf (raça) → 1 artisan's tool
+  - Backgrounds (ex: Folk Hero → artisan's tool, Entertainer → instrumento)
+  - Bard (classe) → 3 instrumentos musicais
+  - Monk (classe) → artisan's tool ou instrumento
+- [x] Seção invisível quando não há nenhuma tool proficiency
+- [x] `chosenToolProficiencies: List<String>` no `CharacterDraft` — reseta ao trocar raça/background/classe
+- [x] Salvo em `character.features` como `"Tool Proficiency: Smith's tools"` no `buildAndSave`
 
 ---
 
 ## Fora do escopo desta sprint
 - Peso total / capacidade de carga (strength × 15)
 - Economia de loja / compra e venda
-- Conjuração de itens mágicos
 - i18n
 
 ---

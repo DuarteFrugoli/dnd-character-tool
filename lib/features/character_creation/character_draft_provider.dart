@@ -30,6 +30,8 @@ class CharacterDraft {
   final String playerName;
   // Itens do background que o usuário quer adicionar ao inventário
   final List<String> selectedStartingEquipment;
+  // Idiomas escolhidos livremente pelo usuário (raça "any" + background)
+  final List<String> chosenLanguages;
 
   const CharacterDraft({
     required this.id,
@@ -47,6 +49,7 @@ class CharacterDraft {
     this.name = '',
     this.playerName = '',
     this.selectedStartingEquipment = const [],
+    this.chosenLanguages = const [],
   });
 
   CharacterDraft copyWith({
@@ -64,6 +67,7 @@ class CharacterDraft {
     String? name,
     String? playerName,
     List<String>? selectedStartingEquipment,
+    List<String>? chosenLanguages,
   }) {
     return CharacterDraft(
       id: id,
@@ -86,6 +90,7 @@ class CharacterDraft {
       playerName: playerName ?? this.playerName,
       selectedStartingEquipment:
           selectedStartingEquipment ?? this.selectedStartingEquipment,
+      chosenLanguages: chosenLanguages ?? this.chosenLanguages,
     );
   }
 
@@ -127,6 +132,23 @@ class CharacterDraft {
     return skills;
   }
 
+  /// Idiomas fixos da raça (exclui entradas "one extra of your choice").
+  List<String> get fixedRaceLanguages =>
+      selectedRace?.languages
+          .where((l) => !l.toLowerCase().contains('of your choice'))
+          .toList() ??
+      [];
+
+  /// Quantidade total de idiomas que o jogador precisa escolher livremente.
+  int get languageChoicesNeeded {
+    final raceChoices = selectedRace?.languages
+            .where((l) => l.toLowerCase().contains('of your choice'))
+            .length ??
+        0;
+    final bgChoices = selectedBackground?.languages ?? 0;
+    return raceChoices + bgChoices;
+  }
+
   // Verifica se o rascunho tem o mínimo para ser salvo
   bool get isComplete {
     if (selectedClass == null || selectedRace == null ||
@@ -139,6 +161,8 @@ class CharacterDraft {
       final assigned = freePicksDistribution.values.fold(0, (a, b) => a + b);
       if (assigned != freeNeeded) return false;
     }
+    // Idiomas livres precisam ser escolhidos
+    if (chosenLanguages.length < languageChoicesNeeded) return false;
     return true;
   }
 }
@@ -166,6 +190,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         selectedRace: r,
         selectedSubrace: null,
         freePicksDistribution: {},
+        chosenLanguages: [],
       );
 
   void setSubrace(SrdSubrace? s) =>
@@ -175,6 +200,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         selectedBackground: b,
         // Pré-seleciona todos os itens do background (usuário pode desmarcar)
         selectedStartingEquipment: List<String>.from(b.startingEquipment),
+        // Reseta idiomas livres ao trocar de background
+        chosenLanguages: [],
       );
 
   void toggleStartingItem(String item) {
@@ -206,6 +233,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
   void setName(String n) => state = state.copyWith(name: n);
   void setPlayerName(String n) => state = state.copyWith(playerName: n);
+  void setChosenLanguages(List<String> langs) =>
+      state = state.copyWith(chosenLanguages: langs);
 
   Future<Character> buildAndSave(WidgetRef ref) async {
     final draft = state;
@@ -277,7 +306,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         used: List.filled(9, 0),
       ),
       features: [],
-      languages: draft.selectedRace!.languages,
+      languages: [...draft.fixedRaceLanguages, ...draft.chosenLanguages],
       personality: const CharacterPersonality(
         traits: '',
         ideals: '',

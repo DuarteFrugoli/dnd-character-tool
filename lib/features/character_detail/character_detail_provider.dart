@@ -28,8 +28,23 @@ class CharacterDetailNotifier
     final c = state.valueOrNull;
     if (c == null) return;
     final hp = c.hitPoints;
-    final newCurrent = (hp.current + delta).clamp(0, hp.maximum);
-    await _save(c.copyWith(hitPoints: hp.copyWith(current: newCurrent)));
+    int newTemp = hp.temporary;
+    int newCurrent = hp.current;
+    if (delta < 0) {
+      // Damage: drain temp HP first
+      final damage = -delta;
+      if (newTemp >= damage) {
+        newTemp -= damage;
+      } else {
+        newCurrent = (newCurrent - (damage - newTemp)).clamp(0, hp.maximum);
+        newTemp = 0;
+      }
+    } else {
+      // Heal: only affects real HP
+      newCurrent = (newCurrent + delta).clamp(0, hp.maximum);
+    }
+    await _save(
+        c.copyWith(hitPoints: hp.copyWith(current: newCurrent, temporary: newTemp)));
   }
 
   Future<void> setTemporaryHp(int temp) async {

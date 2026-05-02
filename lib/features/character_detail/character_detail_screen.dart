@@ -300,6 +300,93 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     super.dispose();
   }
 
+  Future<void> _showSetTempHpDialog(BuildContext context) async {
+    final currentTemp = widget.character.hitPoints.temporary;
+    final ctrl = TextEditingController(
+      text: currentTemp > 0 ? '$currentTemp' : '',
+    );
+    final result = await showDialog<int>(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setLocal) {
+          final parsed = int.tryParse(ctrl.text);
+          final isValid = parsed != null &&
+              parsed > 0 &&
+              (currentTemp == 0 || parsed > currentTemp);
+          return AlertDialog(
+            title: Text(currentTemp > 0 ? 'Temporary HP' : 'Add Temporary HP'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (currentTemp > 0)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(
+                      'Current: +$currentTemp temp HP',
+                      style: TextStyle(
+                        color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+                TextField(
+                  controller: ctrl,
+                  autofocus: true,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  textAlign: TextAlign.center,
+                  decoration: const InputDecoration(
+                    labelText: 'Temp HP',
+                    border: OutlineInputBorder(),
+                  ),
+                  onChanged: (_) => setLocal(() {}),
+                  onSubmitted: (_) {
+                    final n = int.tryParse(ctrl.text);
+                    if (n != null && n > 0 && (currentTemp == 0 || n > currentTemp)) {
+                      Navigator.pop(ctx, n);
+                    }
+                  },
+                ),
+                if (currentTemp > 0)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                      'Temp HP doesn\'t stack — only higher values replace the current.',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            actions: [
+              if (currentTemp > 0)
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, 0),
+                  child: const Text('Remove'),
+                ),
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: const Text('Cancel'),
+              ),
+              FilledButton(
+                onPressed: isValid ? () => Navigator.pop(ctx, parsed!) : null,
+                child: Text(currentTemp > 0 ? 'Replace' : 'Add'),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+    // ctrl é variável local — não precisa de dispose manual
+    if (result != null && context.mounted) {
+      ref
+          .read(characterDetailProvider(widget.characterId).notifier)
+          .setTemporaryHp(result);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final character = widget.character;
@@ -537,8 +624,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     '${hp.current}',
@@ -555,15 +641,35 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     ' / ${hp.maximum}',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
+                  const SizedBox(width: 8),
                   if (hp.temporary > 0) ...[
-                    const SizedBox(width: 8),
                     Chip(
                       label: Text('+${hp.temporary} temp'),
                       backgroundColor: scheme.tertiaryContainer,
-                      labelStyle:
-                          TextStyle(color: scheme.onTertiaryContainer),
+                      labelStyle: TextStyle(color: scheme.onTertiaryContainer),
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
                     ),
+                    const SizedBox(width: 4),
                   ],
+                  SizedBox(
+                    width: 32,
+                    height: 32,
+                    child: IconButton.filledTonal(
+                      icon: const Icon(Icons.shield_outlined, size: 16),
+                      style: IconButton.styleFrom(
+                        backgroundColor: scheme.tertiaryContainer,
+                        foregroundColor: scheme.onTertiaryContainer,
+                        padding: EdgeInsets.zero,
+                        minimumSize: const Size(32, 32),
+                        fixedSize: const Size(32, 32),
+                      ),
+                      tooltip: hp.temporary > 0
+                          ? 'Change temp HP'
+                          : 'Add temp HP',
+                      onPressed: () => _showSetTempHpDialog(context),
+                    ),
+                  ),
                 ],
               ),
               if (isDead)

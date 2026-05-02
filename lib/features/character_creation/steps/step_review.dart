@@ -43,6 +43,8 @@ class StepReview extends ConsumerWidget {
           if (draft.selectedSubrace != null)
             _Row('Subrace', draft.selectedSubrace!.name),
           _Row('Speed', '${draft.selectedRace?.speed ?? 0} ft'),
+          if (draft.fixedRaceLanguages.isNotEmpty)
+            _Row('Languages', draft.fixedRaceLanguages.join(', ')),
         ]),
         _ReviewSection(title: 'Background', children: [
           _Row('Background', draft.selectedBackground?.name ?? '—'),
@@ -63,7 +65,10 @@ class StepReview extends ConsumerWidget {
           _Row('AC', '${10 + ((attrs['Dexterity'] ?? 10) - 10) ~/ 2}'),
           _Row('Proficiency Bonus', '+2'),
         ]),
-        // ── Starting Equipment ────────────────────────────────────────────────
+        // ── Language Choices ────────────────────────────────────────────────────────
+        if (draft.languageChoicesNeeded > 0)
+          const _LanguageChoiceSection(),
+        // ── Starting Equipment ─────────────────────────────────────────────────────
         if (draft.selectedBackground != null &&
             draft.selectedBackground!.startingEquipment.isNotEmpty)
           _StartingEquipmentSection(
@@ -238,6 +243,158 @@ class _StartingEquipmentSection extends StatelessWidget {
                     : null,
               );
             }),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── Language Choice Section ───────────────────────────────────────────────────
+
+const _kDndLanguages = [
+  'Abyssal', 'Celestial', 'Common', 'Deep Speech', 'Draconic',
+  'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin',
+  'Halfling', 'Infernal', 'Orc', 'Primordial', 'Sylvan', 'Undercommon',
+];
+
+class _LanguageChoiceSection extends ConsumerStatefulWidget {
+  const _LanguageChoiceSection();
+
+  @override
+  ConsumerState<_LanguageChoiceSection> createState() =>
+      _LanguageChoiceSectionState();
+}
+
+class _LanguageChoiceSectionState
+    extends ConsumerState<_LanguageChoiceSection> {
+  final _ctrl = TextEditingController();
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final draft = ref.watch(characterDraftProvider);
+    final scheme = Theme.of(context).colorScheme;
+    final needed = draft.languageChoicesNeeded;
+    final chosen = draft.chosenLanguages;
+    final canAdd = chosen.length < needed;
+
+    void addLanguage(String lang) {
+      final trimmed = lang.trim();
+      if (trimmed.isEmpty || chosen.contains(trimmed)) return;
+      if (chosen.length >= needed) return;
+      ref
+          .read(characterDraftProvider.notifier)
+          .setChosenLanguages([...chosen, trimmed]);
+    }
+
+    void removeLanguage(String lang) {
+      ref.read(characterDraftProvider.notifier).setChosenLanguages(
+            chosen.where((l) => l != lang).toList(),
+          );
+    }
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                  'Language Choices',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge
+                      ?.copyWith(color: scheme.primary),
+                ),
+                const Spacer(),
+                Text(
+                  '${chosen.length} / $needed',
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        color: chosen.length >= needed
+                            ? scheme.primary
+                            : scheme.error,
+                      ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Choose $needed language(s) granted by your race or background.',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall
+                  ?.copyWith(color: scheme.onSurfaceVariant),
+            ),
+            if (chosen.isNotEmpty) ...[const SizedBox(height: 8), Wrap(
+              spacing: 4,
+              runSpacing: 4,
+              children: chosen
+                  .map((lang) => Chip(
+                        label: Text(lang),
+                        labelStyle: const TextStyle(fontSize: 12),
+                        materialTapTargetSize:
+                            MaterialTapTargetSize.shrinkWrap,
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 4),
+                        onDeleted: () => removeLanguage(lang),
+                      ))
+                  .toList(),
+            )],
+            if (canAdd) ...[const SizedBox(height: 8), Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _ctrl,
+                    textCapitalization: TextCapitalization.words,
+                    decoration: const InputDecoration(
+                      isDense: true,
+                      hintText: 'Type a language…',
+                      border: OutlineInputBorder(),
+                      contentPadding: EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 8),
+                    ),
+                    onSubmitted: (v) {
+                      addLanguage(v);
+                      _ctrl.clear();
+                    },
+                  ),
+                ),
+                const SizedBox(width: 4),
+                IconButton.filled(
+                  icon: const Icon(Icons.add, size: 18),
+                  onPressed: () {
+                    addLanguage(_ctrl.text);
+                    _ctrl.clear();
+                  },
+                ),
+              ],
+            ), const SizedBox(height: 8), Wrap(
+              spacing: 4,
+              runSpacing: 4,
+              children: _kDndLanguages
+                  .where((l) =>
+                      !chosen.contains(l) &&
+                      !draft.fixedRaceLanguages.contains(l))
+                  .map((lang) => ActionChip(
+                        label: Text(lang),
+                        labelStyle: const TextStyle(fontSize: 11),
+                        materialTapTargetSize:
+                            MaterialTapTargetSize.shrinkWrap,
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 2),
+                        onPressed: () => addLanguage(lang),
+                      ))
+                  .toList(),
+            )],
           ],
         ),
       ),

@@ -682,127 +682,23 @@ class _NotesTab extends ConsumerWidget {
   final Character character;
   final String characterId;
 
-  Future<void> _openNoteSheet(
+  void _openNoteSheet(
     BuildContext context,
     WidgetRef ref, {
     CharacterNote? existing,
-  }) async {
-    final titleCtrl =
-        TextEditingController(text: existing?.title ?? '');
-    final contentCtrl =
-        TextEditingController(text: existing?.content ?? '');
+  }) {
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
 
-    await showModalBottomSheet(
+    showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
-      builder: (ctx) => Padding(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.of(ctx).viewInsets.bottom,
-        ),
-        child: DraggableScrollableSheet(
-          initialChildSize: 0.6,
-          minChildSize: 0.4,
-          maxChildSize: 0.95,
-          expand: false,
-          builder: (_, scrollCtrl) => Column(
-            children: [
-              // Handle
-              Center(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 12, bottom: 8),
-                  width: 40,
-                  height: 4,
-                  decoration: BoxDecoration(
-                    color: Theme.of(ctx)
-                        .colorScheme
-                        .onSurfaceVariant
-                        .withValues(alpha: 0.4),
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                child: Row(
-                  children: [
-                    Text(
-                      existing == null ? 'New Note' : 'Edit Note',
-                      style: Theme.of(ctx).textTheme.titleMedium,
-                    ),
-                    const Spacer(),
-                    IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () => Navigator.pop(ctx),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: ListView(
-                  controller: scrollCtrl,
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
-                  children: [
-                    TextField(
-                      controller: titleCtrl,
-                      autofocus: existing == null,
-                      textCapitalization: TextCapitalization.sentences,
-                      decoration: const InputDecoration(
-                        labelText: 'Title',
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    TextField(
-                      controller: contentCtrl,
-                      autofocus: existing != null,
-                      maxLines: 10,
-                      minLines: 4,
-                      textCapitalization: TextCapitalization.sentences,
-                      decoration: const InputDecoration(
-                        labelText: 'Content',
-                        alignLabelWithHint: true,
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    FilledButton(
-                      onPressed: () {
-                        final title = titleCtrl.text.trim();
-                        final content = contentCtrl.text.trim();
-                        if (title.isEmpty && content.isEmpty) {
-                          Navigator.pop(ctx);
-                          return;
-                        }
-                        if (existing == null) {
-                          notifier.addNote(CharacterNote(
-                            title: title.isEmpty ? 'Untitled' : title,
-                            content: content,
-                          ));
-                        } else {
-                          notifier.updateNote(existing.copyWith(
-                            title: title.isEmpty ? 'Untitled' : title,
-                            content: content,
-                          ));
-                        }
-                        Navigator.pop(ctx);
-                      },
-                      child: Text(existing == null ? 'Add Note' : 'Save'),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+      builder: (ctx) => _NoteEditorSheet(
+        existing: existing,
+        notifier: notifier,
       ),
     );
-
-    titleCtrl.dispose();
-    contentCtrl.dispose();
   }
 
   @override
@@ -904,6 +800,145 @@ class _NotesTab extends ConsumerWidget {
         onPressed: () => _openNoteSheet(context, ref),
         tooltip: 'Add note',
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+// ── Note Editor Sheet ─────────────────────────────────────────────────────────
+
+class _NoteEditorSheet extends StatefulWidget {
+  const _NoteEditorSheet({required this.notifier, this.existing});
+  final CharacterDetailNotifier notifier;
+  final CharacterNote? existing;
+
+  @override
+  State<_NoteEditorSheet> createState() => _NoteEditorSheetState();
+}
+
+class _NoteEditorSheetState extends State<_NoteEditorSheet> {
+  late final TextEditingController _titleCtrl;
+  late final TextEditingController _contentCtrl;
+
+  @override
+  void initState() {
+    super.initState();
+    _titleCtrl = TextEditingController(text: widget.existing?.title ?? '');
+    _contentCtrl =
+        TextEditingController(text: widget.existing?.content ?? '');
+  }
+
+  @override
+  void dispose() {
+    _titleCtrl.dispose();
+    _contentCtrl.dispose();
+    super.dispose();
+  }
+
+  void _save() {
+    final title = _titleCtrl.text.trim();
+    final content = _contentCtrl.text.trim();
+    if (title.isEmpty && content.isEmpty) {
+      Navigator.pop(context);
+      return;
+    }
+    if (widget.existing == null) {
+      widget.notifier.addNote(CharacterNote(
+        title: title.isEmpty ? 'Untitled' : title,
+        content: content,
+      ));
+    } else {
+      widget.notifier.updateNote(widget.existing!.copyWith(
+        title: title.isEmpty ? 'Untitled' : title,
+        content: content,
+      ));
+    }
+    Navigator.pop(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      child: DraggableScrollableSheet(
+        initialChildSize: 0.6,
+        minChildSize: 0.4,
+        maxChildSize: 0.95,
+        expand: false,
+        builder: (_, scrollCtrl) => Column(
+          children: [
+            Center(
+              child: Container(
+                margin: const EdgeInsets.only(top: 12, bottom: 8),
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurfaceVariant
+                      .withValues(alpha: 0.4),
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              child: Row(
+                children: [
+                  Text(
+                    widget.existing == null ? 'New Note' : 'Edit Note',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const Spacer(),
+                  IconButton(
+                    icon: const Icon(Icons.close),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                controller: scrollCtrl,
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                children: [
+                  TextField(
+                    controller: _titleCtrl,
+                    autofocus: widget.existing == null,
+                    textCapitalization: TextCapitalization.sentences,
+                    decoration: const InputDecoration(
+                      labelText: 'Title',
+                      border: OutlineInputBorder(),
+                    ),
+                    onSubmitted: (_) => FocusScope.of(context).nextFocus(),
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: _contentCtrl,
+                    autofocus: widget.existing != null,
+                    maxLines: 10,
+                    minLines: 4,
+                    textCapitalization: TextCapitalization.sentences,
+                    decoration: const InputDecoration(
+                      labelText: 'Content',
+                      alignLabelWithHint: true,
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  FilledButton(
+                    onPressed: _save,
+                    child: Text(
+                        widget.existing == null ? 'Add Note' : 'Save'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

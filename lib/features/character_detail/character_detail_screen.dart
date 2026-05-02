@@ -1613,9 +1613,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
     for (final cls in _classOrder) {
       final features = _allFeatures![cls] ?? [];
       if (features.isEmpty) continue;
-      slivers.add(SliverPersistentHeader(
-        pinned: true,
-        delegate: _StickyHeaderDelegate(label: cls),
+      slivers.add(SliverToBoxAdapter(
+        child: _GroupHeader(label: cls),
       ));
       slivers.add(SliverList(
         delegate: SliverChildBuilderDelegate(
@@ -2895,9 +2894,8 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     for (final key in groupOrder) {
       final group = grouped[key];
       if (group == null || group.isEmpty) continue;
-      slivers.add(SliverPersistentHeader(
-        pinned: true,
-        delegate: _StickyHeaderDelegate(label: groupLabels[key] ?? key),
+      slivers.add(SliverToBoxAdapter(
+        child: _GroupHeader(label: groupLabels[key] ?? key),
       ));
       slivers.add(SliverList(
         delegate: SliverChildBuilderDelegate(
@@ -3426,7 +3424,33 @@ class _ItemTile extends ConsumerWidget {
 
 // ── Shared widgets ────────────────────────────────────────────────────────────
 
-// ── Sticky Group Header ──────────────────────────────────────────────────────
+// ── Group Header (non-sticky) ────────────────────────────────────────────────
+
+class _GroupHeader extends StatelessWidget {
+  const _GroupHeader({required this.label});
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      height: 36,
+      color: scheme.surfaceContainerLow,
+      alignment: Alignment.centerLeft,
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+      child: Text(
+        label,
+        style: Theme.of(context).textTheme.labelMedium?.copyWith(
+              color: scheme.primary,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 0.5,
+            ),
+      ),
+    );
+  }
+}
+
+// ── Sticky Group Header (legacy — kept for reference, not currently used) ────
 
 class _StickyHeaderDelegate extends SliverPersistentHeaderDelegate {
   const _StickyHeaderDelegate({required this.label});

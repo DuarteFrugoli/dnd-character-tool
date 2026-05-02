@@ -297,4 +297,29 @@ class CharacterDetailNotifier
     if (c == null) return;
     await _save(c.copyWith(currency: currency));
   }
+
+  // ── Notes ───────────────────────────────────────────────────────────────────
+
+  Future<void> addNote(CharacterNote note) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(notes: [note, ...c.notes]));
+  }
+
+  Future<void> updateNote(CharacterNote updated) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final notes = c.notes
+        .map((n) => n.id == updated.id ? updated : n)
+        .toList();
+    await _save(c.copyWith(notes: notes));
+  }
+
+  Future<void> deleteNote(String id) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(
+      notes: c.notes.where((n) => n.id != id).toList(),
+    ));
+  }
 }

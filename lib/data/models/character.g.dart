@@ -75,6 +75,10 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
           json['appearance'] as Map<String, dynamic>,
         ),
   backstory: json['backstory'] as String? ?? '',
+  notes: (json['notes'] as List<dynamic>?)
+      ?.map((e) => CharacterNote.fromJson(e as Map<String, dynamic>))
+      .toList() ??
+      const [],
   imagePath: json['imagePath'] as String?,
   creationMode:
       $enumDecodeNullable(_$CreationModeEnumMap, json['creationMode']) ??
@@ -112,6 +116,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'personality': instance.personality.toJson(),
   'appearance': instance.appearance.toJson(),
   'backstory': instance.backstory,
+  'notes': instance.notes.map((e) => e.toJson()).toList(),
   'imagePath': instance.imagePath,
   'creationMode': _$CreationModeEnumMap[instance.creationMode]!,
   'createdAt': instance.createdAt.toIso8601String(),

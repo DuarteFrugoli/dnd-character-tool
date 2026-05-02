@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'ability_scores.dart';
 import 'character_appearance.dart';
+import 'character_note.dart';
 import 'character_personality.dart';
 import 'equipment_item.dart';
 import 'hit_points.dart';
@@ -41,6 +42,7 @@ class Character {
   final CharacterPersonality personality;
   final CharacterAppearance appearance;
   final String backstory;
+  final List<CharacterNote> notes;
   final String? imagePath;
   final CreationMode creationMode;
   final DateTime createdAt;
@@ -75,6 +77,7 @@ class Character {
     this.personality = const CharacterPersonality(),
     this.appearance = const CharacterAppearance(),
     this.backstory = '',
+    this.notes = const [],
     this.imagePath,
     this.creationMode = CreationMode.manual,
     required this.createdAt,
@@ -123,6 +126,7 @@ class Character {
     CharacterPersonality? personality,
     CharacterAppearance? appearance,
     String? backstory,
+    List<CharacterNote>? notes,
     String? imagePath,
     CreationMode? creationMode,
     DateTime? createdAt,
@@ -158,6 +162,7 @@ class Character {
       personality: personality ?? this.personality,
       appearance: appearance ?? this.appearance,
       backstory: backstory ?? this.backstory,
+      notes: notes ?? this.notes,
       imagePath: imagePath ?? this.imagePath,
       creationMode: creationMode ?? this.creationMode,
       createdAt: createdAt ?? this.createdAt,

@@ -142,7 +142,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           _SkillsTab(character: character),
           _SpellsTab(character: character, characterId: widget.characterId),
           _InventoryTab(character: character, characterId: widget.characterId),
-          _NotesTab(character: character),
+          _NotesTab(character: character, characterId: widget.characterId),
         ],
       ),
     );
@@ -677,68 +677,315 @@ class _SpellSlotRow extends StatelessWidget {
 
 // ── Notes Tab ─────────────────────────────────────────────────────────────────
 
-class _NotesTab extends StatelessWidget {
-  const _NotesTab({required this.character});
+class _NotesTab extends ConsumerWidget {
+  const _NotesTab({required this.character, required this.characterId});
   final Character character;
+  final String characterId;
+
+  Future<void> _openNoteSheet(
+    BuildContext context,
+    WidgetRef ref, {
+    CharacterNote? existing,
+  }) async {
+    final titleCtrl =
+        TextEditingController(text: existing?.title ?? '');
+    final contentCtrl =
+        TextEditingController(text: existing?.content ?? '');
+    final notifier =
+        ref.read(characterDetailProvider(characterId).notifier);
+
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (ctx) => Padding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(ctx).viewInsets.bottom,
+        ),
+        child: DraggableScrollableSheet(
+          initialChildSize: 0.6,
+          minChildSize: 0.4,
+          maxChildSize: 0.95,
+          expand: false,
+          builder: (_, scrollCtrl) => Column(
+            children: [
+              // Handle
+              Center(
+                child: Container(
+                  margin: const EdgeInsets.only(top: 12, bottom: 8),
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Theme.of(ctx)
+                        .colorScheme
+                        .onSurfaceVariant
+                        .withValues(alpha: 0.4),
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                child: Row(
+                  children: [
+                    Text(
+                      existing == null ? 'New Note' : 'Edit Note',
+                      style: Theme.of(ctx).textTheme.titleMedium,
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () => Navigator.pop(ctx),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: ListView(
+                  controller: scrollCtrl,
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                  children: [
+                    TextField(
+                      controller: titleCtrl,
+                      autofocus: existing == null,
+                      textCapitalization: TextCapitalization.sentences,
+                      decoration: const InputDecoration(
+                        labelText: 'Title',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    TextField(
+                      controller: contentCtrl,
+                      autofocus: existing != null,
+                      maxLines: 10,
+                      minLines: 4,
+                      textCapitalization: TextCapitalization.sentences,
+                      decoration: const InputDecoration(
+                        labelText: 'Content',
+                        alignLabelWithHint: true,
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    FilledButton(
+                      onPressed: () {
+                        final title = titleCtrl.text.trim();
+                        final content = contentCtrl.text.trim();
+                        if (title.isEmpty && content.isEmpty) {
+                          Navigator.pop(ctx);
+                          return;
+                        }
+                        if (existing == null) {
+                          notifier.addNote(CharacterNote(
+                            title: title.isEmpty ? 'Untitled' : title,
+                            content: content,
+                          ));
+                        } else {
+                          notifier.updateNote(existing.copyWith(
+                            title: title.isEmpty ? 'Untitled' : title,
+                            content: content,
+                          ));
+                        }
+                        Navigator.pop(ctx);
+                      },
+                      child: Text(existing == null ? 'Add Note' : 'Save'),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    titleCtrl.dispose();
+    contentCtrl.dispose();
+  }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final notifier =
+        ref.read(characterDetailProvider(characterId).notifier);
+    final notes = character.notes;
+
+    // Dados de personagem da criação (personality, backstory, features)
     final p = character.personality;
-    final hasContent = p.traits.isNotEmpty ||
+    final hasLegacy = p.traits.isNotEmpty ||
         p.ideals.isNotEmpty ||
         p.bonds.isNotEmpty ||
         p.flaws.isNotEmpty ||
         character.backstory.isNotEmpty ||
         character.features.isNotEmpty;
 
-    if (!hasContent) {
-      return Center(
-        child: Text(
-          'No notes yet',
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Theme.of(context).colorScheme.outline,
+    return Scaffold(
+      body: notes.isEmpty && !hasLegacy
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.note_outlined,
+                      size: 64, color: scheme.outlineVariant),
+                  const SizedBox(height: 16),
+                  Text(
+                    'No notes yet',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Tap + to create your first note.',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium
+                        ?.copyWith(color: scheme.outline),
+                  ),
+                ],
               ),
-        ),
-      );
-    }
+            )
+          : ListView(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
+              children: [
+                // ── User notes ─────────────────────────────────────────
+                ...notes.map((note) => _NoteCard(
+                      note: note,
+                      onEdit: () => _openNoteSheet(context, ref,
+                          existing: note),
+                      onDelete: () => notifier.deleteNote(note.id),
+                    )),
 
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
-      children: [
-        if (p.traits.isNotEmpty)
-          _Section(title: 'Personality Traits', child: Text(p.traits)),
-        if (p.ideals.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          _Section(title: 'Ideals', child: Text(p.ideals)),
-        ],
-        if (p.bonds.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          _Section(title: 'Bonds', child: Text(p.bonds)),
-        ],
-        if (p.flaws.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          _Section(title: 'Flaws', child: Text(p.flaws)),
-        ],
-        if (character.backstory.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          _Section(title: 'Backstory', child: Text(character.backstory)),
-        ],
-        if (character.features.isNotEmpty) ...[
-          const SizedBox(height: 12),
-          _Section(
-            title: 'Features & Traits',
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: character.features
-                  .map((f) => Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: Text('• $f'),
-                      ))
-                  .toList(),
+                // ── Legacy data from character creation ────────────────
+                if (hasLegacy) ...[
+                  if (notes.isNotEmpty) const SizedBox(height: 8),
+                  if (p.traits.isNotEmpty)
+                    _Section(
+                        title: 'Personality Traits',
+                        child: Text(p.traits)),
+                  if (p.ideals.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    _Section(title: 'Ideals', child: Text(p.ideals)),
+                  ],
+                  if (p.bonds.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    _Section(title: 'Bonds', child: Text(p.bonds)),
+                  ],
+                  if (p.flaws.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    _Section(title: 'Flaws', child: Text(p.flaws)),
+                  ],
+                  if (character.backstory.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    _Section(
+                        title: 'Backstory',
+                        child: Text(character.backstory)),
+                  ],
+                  if (character.features.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    _Section(
+                      title: 'Features & Traits',
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: character.features
+                            .map((f) => Padding(
+                                  padding:
+                                      const EdgeInsets.only(bottom: 4),
+                                  child: Text('• $f'),
+                                ))
+                            .toList(),
+                      ),
+                    ),
+                  ],
+                ],
+              ],
             ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _openNoteSheet(context, ref),
+        tooltip: 'Add note',
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+// ── Note Card ─────────────────────────────────────────────────────────────────
+
+class _NoteCard extends StatelessWidget {
+  const _NoteCard({
+    required this.note,
+    required this.onEdit,
+    required this.onDelete,
+  });
+
+  final CharacterNote note;
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final dateStr =
+        '${note.createdAt.day.toString().padLeft(2, '0')}/'
+        '${note.createdAt.month.toString().padLeft(2, '0')}/'
+        '${note.createdAt.year}';
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: onEdit,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 8, 12),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (note.title.isNotEmpty)
+                      Text(
+                        note.title,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall
+                            ?.copyWith(fontWeight: FontWeight.w600),
+                      ),
+                    if (note.content.isNotEmpty) ...[
+                      if (note.title.isNotEmpty)
+                        const SizedBox(height: 4),
+                      Text(
+                        note.content,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(color: scheme.onSurfaceVariant),
+                      ),
+                    ],
+                    const SizedBox(height: 6),
+                    Text(
+                      dateStr,
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall
+                          ?.copyWith(color: scheme.outline),
+                    ),
+                  ],
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.delete_outline, size: 18),
+                color: scheme.error,
+                tooltip: 'Delete note',
+                onPressed: onDelete,
+              ),
+            ],
           ),
-        ],
-      ],
+        ),
+      ),
     );
   }
 }

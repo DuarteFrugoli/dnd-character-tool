@@ -865,8 +865,14 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                               contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 4, vertical: 8),
                             ),
-                            onEditingComplete: _saveCurrency,
-                            onTapOutside: (_) => _saveCurrency(),
+                            onEditingComplete: () {
+                              _saveCurrency();
+                              FocusScope.of(context).unfocus();
+                            },
+                            onTapOutside: (_) {
+                              _saveCurrency();
+                              FocusScope.of(context).unfocus();
+                            },
                           ),
                         ),
                       );
@@ -1268,73 +1274,6 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
       ));
     }
     // qtyCtrl é variável local — não precisa de dispose manual
-  }
-
-  Widget _buildSrdList<T>({
-    required List<T>? items,
-    required String Function(T) getName,
-    required String Function(T) getSubtitle,
-    required String Function(T) getCategory,
-    required String? Function(T) getDescription,
-    required ItemType Function(T) getItemType,
-    Map<String, dynamic>? Function(T)? getProperties,
-  }) {
-    if (_loadError != null) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Text(
-            'Error loading items:\n$_loadError',
-            style: TextStyle(color: Theme.of(context).colorScheme.error),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      );
-    }
-    if (items == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-    final q = _search.text.toLowerCase();
-    final filtered = q.isEmpty
-        ? items
-        : items.where((e) => getName(e).toLowerCase().contains(q)).toList();
-
-    if (filtered.isEmpty) {
-      return Center(
-        child: Text(
-          'No results for "$q"',
-          style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurfaceVariant),
-        ),
-      );
-    }
-
-    return ListView.builder(
-      itemCount: filtered.length,
-      itemBuilder: (_, i) {
-        final item = filtered[i];
-        return ListTile(
-          title: Text(getName(item), style: const TextStyle(fontSize: 14)),
-          subtitle: Text(
-            getSubtitle(item),
-            style: TextStyle(
-                fontSize: 12,
-                color: Theme.of(context).colorScheme.onSurfaceVariant),
-          ),
-          trailing: IconButton(
-            icon: const Icon(Icons.add_circle_outline),
-            color: Theme.of(context).colorScheme.primary,
-            onPressed: () => _confirmAdd(
-              name: getName(item),
-              category: getCategory(item),
-              itemType: getItemType(item),
-              description: getDescription(item),
-              properties: getProperties?.call(item),
-            ),
-          ),
-        );
-      },
-    );
   }
 
   // Lista agrupada por categoria, com cabeçalhos. Ao pesquisar, exibe lista plana.

@@ -12,11 +12,11 @@
 - [x] Ficha do personagem — visualização (Stats, Skills, Spells, Inventory, Notes)
 - [x] Rastreador de HP e spell slots em sessão
 - [x] Inventário com moedas (CP/SP/EP/GP/PP), equipar/desequipar, adicionar/remover itens
-- [ ] Cálculo automático de AC ao equipar armadura
-- [ ] Equipamento inicial do background aplicado na criação
+- [x] Cálculo automático de AC ao equipar armadura
+- [x] Equipamento inicial do background aplicado na criação
 - [ ] Edição completa da ficha (atributos, raça, classe, etc.)
 - [x] Lista de personagens
-- [ ] Export / import via JSON
+- [x] Export / import via JSON
 - [ ] Imagem do personagem
 - [ ] Internacionalização (i18n): Português e Inglês
 

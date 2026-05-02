@@ -891,7 +891,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
           if (equipped.isNotEmpty) ...
             [
               _Section(
-                title: 'Equipped (${equipped.length})',
+                title: 'Equipped (${equipped.length})  ·  AC ${character.armorClass}',
                 child: Column(
                   children: equipped
                       .map((item) => _ItemTile(
@@ -937,6 +937,81 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
   }
 }
 
+Future<int?> _showRemoveQuantityDialog(
+  BuildContext context,
+  EquipmentItem item,
+) async {
+  int selected = 1;
+  final qtyCtrl = TextEditingController(text: '1');
+
+  final result = await showDialog<int>(
+    context: context,
+    builder: (ctx) => StatefulBuilder(
+      builder: (ctx, setState) => AlertDialog(
+        title: const Text('Remove item?'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(item.name),
+            const SizedBox(height: 10),
+            Text('Will remove: $selected of ${item.quantity}'),
+            const SizedBox(height: 12),
+            Slider(
+              value: selected.toDouble(),
+              min: 1,
+              max: item.quantity.toDouble(),
+              divisions: item.quantity > 1 ? item.quantity - 1 : null,
+              label: '$selected',
+              onChanged: (v) {
+                final next = v.round().clamp(1, item.quantity);
+                setState(() {
+                  selected = next;
+                  qtyCtrl.text = '$selected';
+                });
+              },
+            ),
+            const SizedBox(height: 6),
+            TextField(
+              controller: qtyCtrl,
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              textAlign: TextAlign.center,
+              decoration: const InputDecoration(
+                labelText: 'Quantity to remove',
+                border: OutlineInputBorder(),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              ),
+              onChanged: (text) {
+                final parsed = int.tryParse(text);
+                if (parsed == null) return;
+                final clamped = parsed.clamp(1, item.quantity);
+                if (clamped != selected) {
+                  setState(() => selected = clamped);
+                }
+              },
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, selected),
+            child: const Text('Remove'),
+          ),
+        ],
+      ),
+    ),
+  );
+
+  qtyCtrl.dispose();
+  return result;
+}
+
 // ── Ammunition Section ────────────────────────────────────────────────────────
 
 class _AmmunitionSection extends ConsumerWidget {
@@ -944,6 +1019,17 @@ class _AmmunitionSection extends ConsumerWidget {
       {required this.items, required this.characterId});
   final List<EquipmentItem> items;
   final String characterId;
+
+  Future<void> _confirmRemoveAmmo(
+    BuildContext context,
+    CharacterDetailNotifier notifier,
+    EquipmentItem item,
+  ) async {
+    final amount = await _showRemoveQuantityDialog(context, item);
+    if (amount != null) {
+      await notifier.removeEquipmentQuantity(item.id, amount);
+    }
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -1013,7 +1099,7 @@ class _AmmunitionSection extends ConsumerWidget {
                         constraints: const BoxConstraints(
                             minWidth: 32, minHeight: 32),
                         onPressed: () =>
-                            notifier.removeEquipmentItem(item.id),
+                          _confirmRemoveAmmo(context, notifier, item),
                       ),
                     ],
                   ),
@@ -1469,6 +1555,48 @@ class _ItemTile extends ConsumerWidget {
   final EquipmentItem item;
   final String characterId;
 
+  Future<void> _confirmRemoveItem(
+    BuildContext context,
+    CharacterDetailNotifier notifier,
+  ) async {
+    final amount = await _showRemoveQuantityDialog(context, item);
+    if (amount != null) {
+      await notifier.removeEquipmentQuantity(item.id, amount);
+    }
+  }
+
+  static String? _itemMeta(EquipmentItem item) {
+    final props = item.properties;
+
+    if (item.itemType == ItemType.weapon && props != null) {
+      final dice = props['damageDice']?.toString();
+      final type = props['damageType']?.toString();
+      if (dice != null && dice.isNotEmpty && type != null && type.isNotEmpty) {
+        return '$dice $type';
+      }
+      if (dice != null && dice.isNotEmpty) return dice;
+    }
+
+    if (item.itemType == ItemType.armor && props != null) {
+      final isShield = props['isShield'] == true;
+      if (isShield) {
+        final bonus = (props['acBonus'] as num?)?.toInt() ?? 2;
+        return 'Shield  ·  +$bonus AC';
+      }
+
+      final baseAc = (props['baseAC'] as num?)?.toInt();
+      if (baseAc != null) {
+        final addDex = props['addDexModifier'] as bool? ?? true;
+        final maxDex = (props['maxDexBonus'] as num?)?.toInt();
+        if (!addDex) return 'AC $baseAc';
+        if (maxDex != null) return 'AC $baseAc + DEX (max +$maxDex)';
+        return 'AC $baseAc + DEX';
+      }
+    }
+
+    return null;
+  }
+
   static IconData _leadingIcon(ItemType type, bool equipped) {
     switch (type) {
       case ItemType.weapon:
@@ -1583,6 +1711,14 @@ class _ItemTile extends ConsumerWidget {
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
     final canEquip =
         item.itemType == ItemType.weapon || item.itemType == ItemType.armor;
+    final meta = _itemMeta(item);
+
+    String? subtitleText;
+    if (meta != null && item.description != null && item.description!.isNotEmpty) {
+      subtitleText = '$meta  ·  ${item.description!}';
+    } else {
+      subtitleText = meta ?? item.description;
+    }
 
     return ListTile(
       contentPadding: EdgeInsets.zero,
@@ -1619,10 +1755,10 @@ class _ItemTile extends ConsumerWidget {
         item.quantity > 1 ? '${item.name} ×${item.quantity}' : item.name,
         style: const TextStyle(fontSize: 14),
       ),
-      subtitle: item.description != null
+      subtitle: subtitleText != null
           ? Text(
-              item.description!,
-              maxLines: 1,
+              subtitleText,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                   fontSize: 12, color: scheme.onSurfaceVariant),
@@ -1632,7 +1768,7 @@ class _ItemTile extends ConsumerWidget {
         icon: const Icon(Icons.delete_outline, size: 18),
         color: scheme.error,
         tooltip: 'Remove',
-        onPressed: () => notifier.removeEquipmentItem(item.id),
+        onPressed: () => _confirmRemoveItem(context, notifier),
       ),
     );
   }

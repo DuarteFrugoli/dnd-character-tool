@@ -97,9 +97,12 @@ class CharacterDetailNotifier
   Future<void> addEquipmentItem(EquipmentItem item) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    // Stack se já existe item com mesmo nome e tipo
+    // Sempre adiciona em item não equipado; nunca empilha item novo em equipado.
     final idx = c.equipment.indexWhere(
-      (e) => e.name == item.name && e.itemType == item.itemType,
+      (e) =>
+          !e.isEquipped &&
+          e.name == item.name &&
+          e.itemType == item.itemType,
     );
     if (idx >= 0) {
       final updated = List<EquipmentItem>.from(c.equipment);
@@ -113,13 +116,30 @@ class CharacterDetailNotifier
   }
 
   Future<void> removeEquipmentItem(String id) async {
+    await removeEquipmentQuantity(id, 1);
+  }
+
+  Future<void> removeEquipmentQuantity(String id, int amount) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final removed = c.equipment.firstWhere((e) => e.id == id,
-        orElse: () => c.equipment.first);
-    final updated = c.equipment.where((e) => e.id != id).toList();
+    final updated = List<EquipmentItem>.from(c.equipment);
+    final idx = updated.indexWhere((e) => e.id == id);
+    if (idx < 0) return;
+
+    final removed = updated[idx];
+    final removeAmount = amount.clamp(1, removed.quantity);
+
+    // Em stacks, remove apenas a quantidade selecionada.
+    if (removeAmount < removed.quantity) {
+      updated[idx] = removed.copyWith(quantity: removed.quantity - removeAmount);
+      await _save(c.copyWith(equipment: updated));
+      return;
+    }
+
+    updated.removeAt(idx);
     final newC = c.copyWith(equipment: updated);
-    // Recalcula CA se a armadura removida estava equipada
+
+    // Recalcula CA se a armadura removida estava equipada.
     if (removed.itemType == ItemType.armor && removed.isEquipped) {
       await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
     } else {
@@ -132,16 +152,21 @@ class CharacterDetailNotifier
     if (c == null) return;
 
     final updated = List<EquipmentItem>.from(c.equipment);
-    final idx = updated.indexWhere((e) => e.id == id);
+    int idx = updated.indexWhere((e) => e.id == id);
     if (idx < 0) return;
 
-    final target = updated[idx];
+    EquipmentItem target = updated[idx];
     final isBodyArmor = _isBodyArmor(target);
 
     if (!target.isEquipped) {
       // Se for armadura corporal, só pode haver uma equipada por vez.
       if (isBodyArmor && forceArmorSwap) {
         _unequipOtherBodyArmors(updated, exceptId: target.id);
+
+        // O merge da armadura antiga pode alterar quantidade/posição do item alvo.
+        idx = updated.indexWhere((e) => e.id == id);
+        if (idx < 0) return;
+        target = updated[idx];
       }
 
       // Equipar 1 unidade de um stack: separa em entrada equipada + entrada carregada.

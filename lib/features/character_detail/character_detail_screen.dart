@@ -764,7 +764,31 @@ class _NotesTab extends ConsumerWidget {
                 ...notes.map((note) => _NoteCard(
                       note: note,
                       onView: () => _showNoteView(context, ref, note),
-                      onDelete: () => notifier.deleteNote(note.id),
+                      onDelete: () async {
+                        final confirm = await showDialog<bool>(
+                          context: context,
+                          builder: (ctx) => AlertDialog(
+                            title: const Text('Delete note?'),
+                            content: note.title.isNotEmpty
+                                ? Text('"${note.title}" will be permanently deleted.')
+                                : const Text('This note will be permanently deleted.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(ctx, false),
+                                child: const Text('Cancel'),
+                              ),
+                              FilledButton(
+                                onPressed: () => Navigator.pop(ctx, true),
+                                style: FilledButton.styleFrom(
+                                  backgroundColor: Theme.of(context).colorScheme.error,
+                                ),
+                                child: const Text('Delete'),
+                              ),
+                            ],
+                          ),
+                        );
+                        if (confirm == true) notifier.deleteNote(note.id);
+                      },
                     )),
 
                 // ── Legacy data from character creation ────────────────
@@ -933,7 +957,7 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
                   const SizedBox(height: 12),
                   TextField(
                     controller: _contentCtrl,
-                    autofocus: widget.existing != null,
+                    autofocus: false,
                     maxLines: 10,
                     minLines: 4,
                     textCapitalization: TextCapitalization.sentences,

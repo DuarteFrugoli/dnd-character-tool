@@ -1625,13 +1625,14 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   },
                 ),
                 // Armor
-                _buildSrdList<SrdArmor>(
+                _buildGroupedSrdList<SrdArmor>(
                   items: _armors,
                   getName: (a) => a.isShield ? a.name : '${a.name} Armor',
                   getSubtitle: (a) => a.isShield
-                      ? 'Shield  ·  +${a.acBonus} AC  ·  ${a.cost}'
-                      : '${a.type}  ·  AC ${a.baseAC}${a.addDexModifier ? " + DEX" : ""}${a.maxDexBonus != null ? " (max +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
+                      ? '+${a.acBonus} AC  ·  ${a.cost}'
+                      : 'AC ${a.baseAC}${a.addDexModifier ? " + DEX" : ""}${a.maxDexBonus != null ? " (max +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
                   getCategory: (_) => 'armor',
+                  getGroup: (a) => a.type,
                   getDescription: (a) => a.stealthDisadvantage
                       ? 'Stealth disadvantage'
                       : null,
@@ -1642,6 +1643,13 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'maxDexBonus': a.maxDexBonus,
                     'isShield': a.isShield,
                     'acBonus': a.acBonus,
+                  },
+                  groupOrder: const ['light', 'medium', 'heavy', 'shield'],
+                  groupLabels: const {
+                    'light': 'Light Armor',
+                    'medium': 'Medium Armor',
+                    'heavy': 'Heavy Armor',
+                    'shield': 'Shields',
                   },
                 ),
                 // Gear
@@ -1674,14 +1682,31 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   },
                 ),
                 // Magic Items
-                _buildSrdList<SrdMagicItem>(
+                _buildGroupedSrdList<SrdMagicItem>(
                   items: _magic,
                   getName: (m) => m.name,
                   getSubtitle: (m) =>
-                      '${m.type}  ·  ${m.rarity}${m.requiresAttunement ? "  ·  attunement" : ""}',
+                      '${m.rarity}${m.requiresAttunement ? "  ·  attunement" : ""}',
                   getCategory: (m) => m.type,
+                  getGroup: (m) => m.type,
                   getDescription: (m) => m.description,
                   getItemType: (m) => m.itemType,
+                  groupOrder: const [
+                    'potion',
+                    'ring',
+                    'wand',
+                    'weapon',
+                    'armor',
+                    'wondrous item',
+                  ],
+                  groupLabels: const {
+                    'potion': 'Potions',
+                    'ring': 'Rings',
+                    'wand': 'Wands',
+                    'weapon': 'Weapons',
+                    'armor': 'Armor',
+                    'wondrous item': 'Wondrous Items',
+                  },
                 ),
                 // Custom
                 _buildCustomTab(),

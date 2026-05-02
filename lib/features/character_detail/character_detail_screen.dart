@@ -54,6 +54,7 @@ class CharacterDetailScreen extends ConsumerStatefulWidget {
 class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
+  bool _editMode = false;
 
   @override
   void initState() {
@@ -98,12 +99,16 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           children: [
             Text(
               character.name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             ),
             Text(
               '${character.characterClass}  ·  ${character.race}'
               '${character.subrace != null ? ' (${character.subrace})' : ''}'
               '  ·  Lv ${character.level}',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
@@ -117,9 +122,18 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             onPressed: () => _confirmLongRest(),
           ),
           IconButton(
-            icon: const Icon(Icons.edit_outlined),
-            tooltip: 'Edit',
-            onPressed: () => _showEditDialog(character),
+            icon: Icon(_editMode
+                ? Icons.check_circle_outlined
+                : Icons.edit_outlined),
+            tooltip: _editMode ? 'Done editing' : 'Edit character',
+            color: _editMode
+                ? Theme.of(context).colorScheme.primary
+                : null,
+            onPressed: () {
+              final entering = !_editMode;
+              setState(() => _editMode = entering);
+              if (entering) _tabs.animateTo(0);
+            },
           ),
         ],
         bottom: TabBar(
@@ -138,7 +152,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       body: TabBarView(
         controller: _tabs,
         children: [
-          _StatsTab(character: character, characterId: widget.characterId),
+          _StatsTab(character: character, characterId: widget.characterId, isEditing: _editMode),
           _SkillsTab(character: character),
           _SpellsTab(character: character, characterId: widget.characterId),
           _InventoryTab(character: character, characterId: widget.characterId),
@@ -174,94 +188,137 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     }
   }
 
-  void _showEditDialog(Character character) {
-    final nameCtrl = TextEditingController(text: character.name);
-    final levelCtrl = TextEditingController(text: character.level.toString());
-
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Edit Character'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: nameCtrl,
-              autofocus: true,
-              decoration: const InputDecoration(labelText: 'Name'),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: levelCtrl,
-              keyboardType: TextInputType.number,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: const InputDecoration(
-                labelText: 'Level',
-                helperText: '1 – 20',
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel'),
-          ),
-          FilledButton(
-            onPressed: () {
-              Navigator.pop(ctx);
-              final notifier = ref
-                  .read(characterDetailProvider(widget.characterId).notifier);
-              notifier.updateName(nameCtrl.text);
-              final lvl = int.tryParse(levelCtrl.text);
-              if (lvl != null) notifier.updateLevel(lvl);
-            },
-            child: const Text('Save'),
-          ),
-        ],
-      ),
-    );
-  }
 }
 
 // ── Stats Tab ─────────────────────────────────────────────────────────────────
 
 class _StatsTab extends ConsumerStatefulWidget {
-  const _StatsTab({required this.character, required this.characterId});
+  const _StatsTab({
+    required this.character,
+    required this.characterId,
+    required this.isEditing,
+  });
   final Character character;
   final String characterId;
+  final bool isEditing;
 
   @override
   ConsumerState<_StatsTab> createState() => _StatsTabState();
 }
 
 class _StatsTabState extends ConsumerState<_StatsTab> {
+  // HP tracker
   final _amountCtrl = TextEditingController(text: '1');
+
+  // Edit mode controllers
+  late final TextEditingController _nameCtrl;
+  late final TextEditingController _bgCtrl;
+  late final TextEditingController _alignCtrl;
+  late final TextEditingController _playerCtrl;
+  late final TextEditingController _hpMaxCtrl;
+  late final TextEditingController _speedCtrl;
+  final TextEditingController _langCtrl = TextEditingController();
+
+  // Focus nodes
+  final _nameFocus = FocusNode();
+  final _bgFocus = FocusNode();
+  final _alignFocus = FocusNode();
+  final _playerFocus = FocusNode();
+  final _hpMaxFocus = FocusNode();
+  final _speedFocus = FocusNode();
+  final _langFocus = FocusNode();
+
+  CharacterDetailNotifier get _notifier =>
+      ref.read(characterDetailProvider(widget.characterId).notifier);
+
+  @override
+  void initState() {
+    super.initState();
+    final c = widget.character;
+    _nameCtrl = TextEditingController(text: c.name);
+    _bgCtrl = TextEditingController(text: c.background);
+    _alignCtrl = TextEditingController(text: c.alignment);
+    _playerCtrl = TextEditingController(text: c.playerName);
+    _hpMaxCtrl = TextEditingController(text: '${c.hitPoints.maximum}');
+    _speedCtrl = TextEditingController(text: '${c.speed}');
+
+    _nameFocus.addListener(() {
+      if (!_nameFocus.hasFocus) _notifier.updateName(_nameCtrl.text);
+    });
+    _bgFocus.addListener(() {
+      if (!_bgFocus.hasFocus) _notifier.updateBackground(_bgCtrl.text);
+    });
+    _alignFocus.addListener(() {
+      if (!_alignFocus.hasFocus) _notifier.updateAlignment(_alignCtrl.text);
+    });
+    _playerFocus.addListener(() {
+      if (!_playerFocus.hasFocus) _notifier.updatePlayerName(_playerCtrl.text);
+    });
+    _hpMaxFocus.addListener(() {
+      if (!_hpMaxFocus.hasFocus) {
+        final v = int.tryParse(_hpMaxCtrl.text);
+        if (v != null) _notifier.updateHpMax(v);
+      }
+    });
+    _speedFocus.addListener(() {
+      if (!_speedFocus.hasFocus) {
+        final v = int.tryParse(_speedCtrl.text);
+        if (v != null) _notifier.updateSpeed(v);
+      }
+    });
+  }
+
+  @override
+  void didUpdateWidget(_StatsTab old) {
+    super.didUpdateWidget(old);
+    final c = widget.character;
+    if (!_nameFocus.hasFocus) _nameCtrl.text = c.name;
+    if (!_bgFocus.hasFocus) _bgCtrl.text = c.background;
+    if (!_alignFocus.hasFocus) _alignCtrl.text = c.alignment;
+    if (!_playerFocus.hasFocus) _playerCtrl.text = c.playerName;
+    if (!_hpMaxFocus.hasFocus) _hpMaxCtrl.text = '${c.hitPoints.maximum}';
+    if (!_speedFocus.hasFocus) _speedCtrl.text = '${c.speed}';
+  }
 
   @override
   void dispose() {
     _amountCtrl.dispose();
+    _nameCtrl.dispose();
+    _bgCtrl.dispose();
+    _alignCtrl.dispose();
+    _playerCtrl.dispose();
+    _hpMaxCtrl.dispose();
+    _speedCtrl.dispose();
+    _langCtrl.dispose();
+    _nameFocus.dispose();
+    _bgFocus.dispose();
+    _alignFocus.dispose();
+    _playerFocus.dispose();
+    _hpMaxFocus.dispose();
+    _speedFocus.dispose();
+    _langFocus.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final character = widget.character;
+    final isEditing = widget.isEditing;
     final hp = character.hitPoints;
     final isDead = hp.isDead;
     final isFull = hp.current >= hp.maximum;
     final scheme = Theme.of(context).colorScheme;
+    final notifier = _notifier;
     final equippedArmor = character.equipment
-      .where((e) => e.itemType == ItemType.armor && e.isEquipped)
-      .toList();
-    final bodyArmor = equippedArmor
-      .where((e) => e.properties?['isShield'] != true)
-      .toList();
+        .where((e) => e.itemType == ItemType.armor && e.isEquipped)
+        .toList();
+    final bodyArmor =
+        equippedArmor.where((e) => e.properties?['isShield'] != true).toList();
     final usingShield =
-      equippedArmor.any((e) => e.properties?['isShield'] == true);
+        equippedArmor.any((e) => e.properties?['isShield'] == true);
     final armorSummary = bodyArmor.isEmpty
-      ? (usingShield ? 'No armor + Shield' : 'No armor')
-      : '${bodyArmor.first.name}${usingShield ? ' + Shield' : ''}';
+        ? (usingShield ? 'No armor + Shield' : 'No armor')
+        : '${bodyArmor.first.name}${usingShield ? ' + Shield' : ''}';
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
@@ -269,24 +326,205 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         // ── Identity ──────────────────────────────────────────────────────
         _Section(
           title: 'Identity',
-          child: Column(
-            children: [
-              if (character.background.isNotEmpty)
-                _InfoRow('Background', character.background),
-              if (character.subclass != null)
-                _InfoRow('Subclass', character.subclass!),
-              if (character.alignment.isNotEmpty)
-                _InfoRow('Alignment', character.alignment),
-              if (character.playerName.isNotEmpty)
-                _InfoRow('Player', character.playerName),
-              _InfoRow(
-                'Languages',
-                character.languages.isEmpty
-                    ? '—'
-                    : character.languages.join(', '),
-              ),
-            ],
-          ),
+          child: isEditing
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _InlineField(
+                        label: 'Name',
+                        controller: _nameCtrl,
+                        focusNode: _nameFocus),
+                    _InlineField(
+                        label: 'Background',
+                        controller: _bgCtrl,
+                        focusNode: _bgFocus),
+                    _InlineField(
+                        label: 'Alignment',
+                        controller: _alignCtrl,
+                        focusNode: _alignFocus),
+                    _InlineField(
+                        label: 'Player',
+                        controller: _playerCtrl,
+                        focusNode: _playerFocus),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 96,
+                            child: Text(
+                              'Level',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(color: scheme.onSurfaceVariant),
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.remove, size: 18),
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(
+                                minWidth: 32, minHeight: 32),
+                            onPressed: character.level > 1
+                                ? () => notifier
+                                    .updateLevel(character.level - 1)
+                                : null,
+                          ),
+                          SizedBox(
+                            width: 40,
+                            child: Text(
+                              '${character.level}',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleSmall
+                                  ?.copyWith(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.add, size: 18),
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(
+                                minWidth: 32, minHeight: 32),
+                            onPressed: character.level < 20
+                                ? () => notifier
+                                    .updateLevel(character.level + 1)
+                                : null,
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Languages chips
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 96,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 6),
+                              child: Text(
+                                'Languages',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(
+                                        color: scheme.onSurfaceVariant),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (character.languages.isNotEmpty)
+                                  Wrap(
+                                    spacing: 4,
+                                    runSpacing: 4,
+                                    children: character.languages
+                                        .map((lang) => Chip(
+                                              label: Text(lang),
+                                              labelStyle: const TextStyle(
+                                                  fontSize: 12),
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 4),
+                                              onDeleted: () {
+                                                final updated = List<
+                                                    String>.from(
+                                                  character.languages,
+                                                )..remove(lang);
+                                                notifier
+                                                    .updateLanguages(updated);
+                                              },
+                                            ))
+                                        .toList(),
+                                  ),
+                                const SizedBox(height: 4),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: TextField(
+                                        controller: _langCtrl,
+                                        focusNode: _langFocus,
+                                        textCapitalization:
+                                            TextCapitalization.words,
+                                        decoration: const InputDecoration(
+                                          isDense: true,
+                                          hintText: 'Add language…',
+                                          border: OutlineInputBorder(),
+                                          contentPadding:
+                                              EdgeInsets.symmetric(
+                                                  horizontal: 10,
+                                                  vertical: 8),
+                                        ),
+                                        onSubmitted: (v) {
+                                          final s = v.trim();
+                                          if (s.isNotEmpty &&
+                                              !character.languages.contains(
+                                                  s)) {
+                                            notifier.updateLanguages([
+                                              ...character.languages,
+                                              s,
+                                            ]);
+                                          }
+                                          _langCtrl.clear();
+                                          _langFocus.requestFocus();
+                                        },
+                                      ),
+                                    ),
+                                    const SizedBox(width: 4),
+                                    IconButton.filled(
+                                      icon: const Icon(Icons.add, size: 18),
+                                      tooltip: 'Add',
+                                      onPressed: () {
+                                        final s = _langCtrl.text.trim();
+                                        if (s.isNotEmpty &&
+                                            !character.languages
+                                                .contains(s)) {
+                                          notifier.updateLanguages([
+                                            ...character.languages,
+                                            s,
+                                          ]);
+                                        }
+                                        _langCtrl.clear();
+                                        _langFocus.requestFocus();
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    if (character.subclass != null)
+                      _InfoRow('Subclass', character.subclass!),
+                  ],
+                )
+              : Column(
+                  children: [
+                    if (character.background.isNotEmpty)
+                      _InfoRow('Background', character.background),
+                    if (character.subclass != null)
+                      _InfoRow('Subclass', character.subclass!),
+                    if (character.alignment.isNotEmpty)
+                      _InfoRow('Alignment', character.alignment),
+                    if (character.playerName.isNotEmpty)
+                      _InfoRow('Player', character.playerName),
+                    _InfoRow(
+                      'Languages',
+                      character.languages.isEmpty
+                          ? '—'
+                          : character.languages.join(', '),
+                    ),
+                  ],
+                ),
         ),
         const SizedBox(height: 12),
 
@@ -295,7 +533,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           title: 'Hit Points',
           child: Column(
             children: [
-              // HP numbers
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -336,8 +573,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   ),
                 ),
               const SizedBox(height: 12),
-
-              // Amount + buttons
               Row(
                 children: [
                   Expanded(
@@ -399,6 +634,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   ),
                 ],
               ),
+              if (isEditing) ...[
+                const SizedBox(height: 12),
+                _InlineField(
+                  label: 'Max HP',
+                  controller: _hpMaxCtrl,
+                  focusNode: _hpMaxFocus,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                ),
+              ],
             ],
           ),
         ),
@@ -407,18 +652,50 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         // ── Combat Stats ──────────────────────────────────────────────────
         _Section(
           title: 'Combat',
-          child: Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              _StatChip('AC', '${character.armorClass}'),
-              _StatChip('Armor', armorSummary),
-              _StatChip('Speed', '${character.speed} ft'),
-              _StatChip('Initiative', _sign(character.initiative)),
-              _StatChip('Prof Bonus', _sign(character.proficiencyBonus)),
-              _StatChip('Passive Perc', '${character.passivePerception}'),
-            ],
-          ),
+          child: isEditing
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _InlineField(
+                      label: 'Speed (ft)',
+                      controller: _speedCtrl,
+                      focusNode: _speedFocus,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: [
+                        _StatChip('AC', '${character.armorClass}'),
+                        _StatChip('Armor', armorSummary),
+                        _StatChip(
+                            'Initiative', _sign(character.initiative)),
+                        _StatChip('Prof Bonus',
+                            _sign(character.proficiencyBonus)),
+                        _StatChip('Passive Perc',
+                            '${character.passivePerception}'),
+                      ],
+                    ),
+                  ],
+                )
+              : Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    _StatChip('AC', '${character.armorClass}'),
+                    _StatChip('Armor', armorSummary),
+                    _StatChip('Speed', '${character.speed} ft'),
+                    _StatChip('Initiative', _sign(character.initiative)),
+                    _StatChip(
+                        'Prof Bonus', _sign(character.proficiencyBonus)),
+                    _StatChip(
+                        'Passive Perc', '${character.passivePerception}'),
+                  ],
+                ),
         ),
         const SizedBox(height: 12),
 
@@ -429,16 +706,22 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             crossAxisCount: 3,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            childAspectRatio: 1.2,
+            childAspectRatio: isEditing ? 0.9 : 1.2,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
             children: [
-              _AbilityCard('STR', character.abilityScores.strength),
-              _AbilityCard('DEX', character.abilityScores.dexterity),
-              _AbilityCard('CON', character.abilityScores.constitution),
-              _AbilityCard('INT', character.abilityScores.intelligence),
-              _AbilityCard('WIS', character.abilityScores.wisdom),
-              _AbilityCard('CHA', character.abilityScores.charisma),
+              _AbilityCardEdit('STR', character.abilityScores.strength,
+                  'strength', notifier: notifier, isEditing: isEditing),
+              _AbilityCardEdit('DEX', character.abilityScores.dexterity,
+                  'dexterity', notifier: notifier, isEditing: isEditing),
+              _AbilityCardEdit('CON', character.abilityScores.constitution,
+                  'constitution', notifier: notifier, isEditing: isEditing),
+              _AbilityCardEdit('INT', character.abilityScores.intelligence,
+                  'intelligence', notifier: notifier, isEditing: isEditing),
+              _AbilityCardEdit('WIS', character.abilityScores.wisdom,
+                  'wisdom', notifier: notifier, isEditing: isEditing),
+              _AbilityCardEdit('CHA', character.abilityScores.charisma,
+                  'charisma', notifier: notifier, isEditing: isEditing),
             ],
           ),
         ),
@@ -2447,6 +2730,125 @@ class _StatChip extends StatelessWidget {
                 ?.copyWith(fontWeight: FontWeight.bold),
           ),
           Text(label, style: Theme.of(context).textTheme.labelSmall),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Inline Edit Field ─────────────────────────────────────────────────────────
+
+class _InlineField extends StatelessWidget {
+  const _InlineField({
+    required this.label,
+    required this.controller,
+    required this.focusNode,
+    this.keyboardType = TextInputType.text,
+    this.inputFormatters,
+  });
+
+  final String label;
+  final TextEditingController controller;
+  final FocusNode focusNode;
+  final TextInputType keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 96,
+            child: Text(
+              label,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+            ),
+          ),
+          Expanded(
+            child: TextField(
+              controller: controller,
+              focusNode: focusNode,
+              keyboardType: keyboardType,
+              inputFormatters: inputFormatters,
+              textCapitalization: TextCapitalization.sentences,
+              decoration: const InputDecoration(
+                isDense: true,
+                border: OutlineInputBorder(),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Ability Card Edit ─────────────────────────────────────────────────────────
+
+class _AbilityCardEdit extends StatelessWidget {
+  const _AbilityCardEdit(this.abbr, this.score, this.key_,
+      {required this.notifier, required this.isEditing});
+
+  final String abbr;
+  final int score;
+  final String key_;
+  final CharacterDetailNotifier notifier;
+  final bool isEditing;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+            color: isEditing ? scheme.primary : scheme.outlineVariant),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (isEditing)
+            SizedBox(
+              height: 28,
+              child: IconButton(
+                icon: const Icon(Icons.add, size: 14),
+                padding: EdgeInsets.zero,
+                onPressed:
+                    score < 30 ? () => notifier.updateAbilityScore(key_, score + 1) : null,
+              ),
+            ),
+          Text(
+            _mod(score),
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge
+                ?.copyWith(fontWeight: FontWeight.bold),
+          ),
+          Text('$score', style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            abbr,
+            style: Theme.of(context)
+                .textTheme
+                .labelSmall
+                ?.copyWith(color: scheme.primary),
+          ),
+          if (isEditing)
+            SizedBox(
+              height: 28,
+              child: IconButton(
+                icon: const Icon(Icons.remove, size: 14),
+                padding: EdgeInsets.zero,
+                onPressed:
+                    score > 1 ? () => notifier.updateAbilityScore(key_, score - 1) : null,
+              ),
+            ),
         ],
       ),
     );

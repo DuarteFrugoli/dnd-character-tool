@@ -84,6 +84,65 @@ class CharacterDetailNotifier
     await _save(c.copyWith(level: clamped, proficiencyBonus: _profBonus(clamped)));
   }
 
+  Future<void> updateBackground(String v) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(background: v.trim()));
+  }
+
+  Future<void> updateAlignment(String v) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(alignment: v.trim()));
+  }
+
+  Future<void> updatePlayerName(String v) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(playerName: v.trim()));
+  }
+
+  Future<void> updateLanguages(List<String> languages) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(languages: languages));
+  }
+
+  Future<void> updateHpMax(int max) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final clamped = max.clamp(1, 9999);
+    await _save(c.copyWith(
+      hitPoints: c.hitPoints.copyWith(
+        maximum: clamped,
+        current: c.hitPoints.current.clamp(0, clamped),
+      ),
+    ));
+  }
+
+  Future<void> updateSpeed(int speed) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(speed: speed.clamp(0, 999)));
+  }
+
+  Future<void> updateAbilityScore(String key, int value) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final clamped = value.clamp(1, 30);
+    final updated = switch (key) {
+      'strength' => c.abilityScores.copyWith(strength: clamped),
+      'dexterity' => c.abilityScores.copyWith(dexterity: clamped),
+      'constitution' => c.abilityScores.copyWith(constitution: clamped),
+      'intelligence' => c.abilityScores.copyWith(intelligence: clamped),
+      'wisdom' => c.abilityScores.copyWith(wisdom: clamped),
+      'charisma' => c.abilityScores.copyWith(charisma: clamped),
+      _ => c.abilityScores,
+    };
+    final newC = c.copyWith(abilityScores: updated);
+    await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
+  }
+
   static int _profBonus(int level) {
     if (level <= 4) return 2;
     if (level <= 8) return 3;

@@ -944,10 +944,12 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
       srd.getClassFeatures(widget.character.characterClass),
       srd.getRaces(),
       srd.getBackgrounds(),
+      srd.getRaceTraits(),
     ]);
     final classFeatures = results[0] as List<SrdClassFeature>;
     final races = results[1] as List<SrdRace>;
     final backgrounds = results[2] as List<SrdBackground>;
+    final traitDescriptions = results[3] as Map<String, String>;
 
     final race =
         races.where((r) => r.name == widget.character.race).firstOrNull;
@@ -964,6 +966,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           .toList(),
       raceTraits: race?.traits ?? [],
       subraceTraits: subrace?.traits ?? [],
+      traitDescriptions: traitDescriptions,
       backgroundFeatureName: bg?.feature.name,
       backgroundFeatureDescription: bg?.feature.description,
     );
@@ -1000,6 +1003,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 subraceName: widget.character.subrace,
                 raceTraits: data.raceTraits,
                 subraceTraits: data.subraceTraits,
+                traitDescriptions: data.traitDescriptions,
               ),
               if (data.backgroundFeatureName != null) ...[
                 const SizedBox(height: 24),
@@ -1038,6 +1042,7 @@ class _FeaturesData {
   final List<SrdClassFeature> classFeatures;
   final List<String> raceTraits;
   final List<String> subraceTraits;
+  final Map<String, String> traitDescriptions;
   final String? backgroundFeatureName;
   final String? backgroundFeatureDescription;
 
@@ -1045,6 +1050,7 @@ class _FeaturesData {
     required this.classFeatures,
     required this.raceTraits,
     required this.subraceTraits,
+    required this.traitDescriptions,
     this.backgroundFeatureName,
     this.backgroundFeatureDescription,
   });
@@ -1056,12 +1062,14 @@ class _RacialTraitsSection extends StatelessWidget {
     required this.subraceName,
     required this.raceTraits,
     required this.subraceTraits,
+    required this.traitDescriptions,
   });
 
   final String raceName;
   final String? subraceName;
   final List<String> raceTraits;
   final List<String> subraceTraits;
+  final Map<String, String> traitDescriptions;
 
   @override
   Widget build(BuildContext context) {
@@ -1082,18 +1090,48 @@ class _RacialTraitsSection extends StatelessWidget {
               .titleMedium
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 10),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: allTraits
-              .map((t) => Chip(
-                    label: Text(t),
-                    backgroundColor: scheme.surfaceContainerHighest,
-                    side: BorderSide.none,
-                  ))
-              .toList(),
-        ),
+        const SizedBox(height: 8),
+        ...allTraits.map((trait) {
+          final desc = traitDescriptions[trait];
+          if (desc == null || desc.isEmpty) {
+            return Card(
+              margin: const EdgeInsets.only(bottom: 6),
+              child: ListTile(
+                dense: true,
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                title: Text(
+                  trait,
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                ),
+                trailing: Icon(Icons.info_outline,
+                    size: 16, color: scheme.onSurfaceVariant),
+              ),
+            );
+          }
+          return Card(
+            margin: const EdgeInsets.only(bottom: 6),
+            clipBehavior: Clip.antiAlias,
+            child: ExpansionTile(
+              tilePadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+              childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+              title: Text(
+                trait,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+              children: [
+                Text(
+                  desc,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                        height: 1.5,
+                      ),
+                ),
+              ],
+            ),
+          );
+        }),
       ],
     );
   }

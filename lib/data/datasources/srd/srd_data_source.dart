@@ -21,6 +21,7 @@ class SrdDataSource {
   List<SrdGearItem>? _gear;
   List<SrdMagicItem>? _magicItems;
   Map<String, List<SrdClassFeature>>? _classFeatures;
+  Map<String, String>? _raceTraits;
 
   Future<List<SrdSkill>> getSkills() async {
     _skills ??= await _loadList(
@@ -130,6 +131,15 @@ class SrdDataSource {
     return _magicItems!;
   }
 
+  Future<Map<String, String>> getRaceTraits() async {
+    if (_raceTraits == null) {
+      final raw = await rootBundle.loadString('assets/data/srd/race_traits.json');
+      final map = jsonDecode(raw) as Map<String, dynamic>;
+      _raceTraits = map.map((k, v) => MapEntry(k, v as String));
+    }
+    return _raceTraits!;
+  }
+
   Future<List<SrdClassFeature>> getClassFeatures(String className) async {
     if (_classFeatures == null) {
       final raw = await rootBundle.loadString(
@@ -186,5 +196,6 @@ class SrdDataSource {
     _gear = null;
     _magicItems = null;
     _classFeatures = null;
+    _raceTraits = null;
   }
 }

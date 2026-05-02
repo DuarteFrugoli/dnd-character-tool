@@ -320,11 +320,11 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         ? (usingShield ? 'No armor + Shield' : 'No armor')
         : '${bodyArmor.first.name}${usingShield ? ' + Shield' : ''}';
 
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
-      children: [
-        // ── Identity ──────────────────────────────────────────────────────
-        _Section(
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: ListView(
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
+        children: [
           title: 'Identity',
           child: isEditing
               ? Column(
@@ -706,7 +706,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             crossAxisCount: 3,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            childAspectRatio: isEditing ? 0.9 : 1.2,
+            childAspectRatio: isEditing ? 0.75 : 1.2,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
             children: [
@@ -740,6 +740,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             ),
           ),
       ],
+      ),
     );
   }
 }

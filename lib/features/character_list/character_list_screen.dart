@@ -49,12 +49,26 @@ class CharacterListScreen extends ConsumerWidget {
             await ref.read(characterListProvider.notifier).importCharacter(result);
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Imported: ${character.name}')),
+          SnackBar(
+            content: Text('${character.name} importado com sucesso!'),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+          ),
+        );
+      } on FormatException catch (e) {
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.message),
+            backgroundColor: Theme.of(context).colorScheme.error,
+          ),
         );
       } catch (e) {
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Invalid JSON: $e')),
+          SnackBar(
+            content: const Text('Erro inesperado ao importar. Tente novamente.'),
+            backgroundColor: Theme.of(context).colorScheme.error,
+          ),
         );
       }
     }
@@ -196,6 +210,7 @@ class _CharacterCard extends ConsumerWidget {
               await exportCharacter();
             }
             if (value == 'delete') {
+              if (!context.mounted) return;
               final confirm = await showDialog<bool>(
                 context: context,
                 builder: (ctx) => AlertDialog(

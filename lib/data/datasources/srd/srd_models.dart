@@ -415,3 +415,55 @@ class SrdMagicItem {
         ),
       );
 }
+
+// ── Class Features ────────────────────────────────────────────────────────────
+
+class SrdFeatureUses {
+  final String amount; // e.g. "2" or "charisma_modifier"
+  final String rechargeOn; // "short_rest" | "long_rest"
+
+  const SrdFeatureUses({required this.amount, required this.rechargeOn});
+
+  factory SrdFeatureUses.fromJson(Map<String, dynamic> json) => SrdFeatureUses(
+        amount: json['amount'].toString(),
+        rechargeOn: (json['rechargeOn'] as String?) ?? '',
+      );
+
+  String get rechargeLabel {
+    switch (rechargeOn) {
+      case 'short_rest':
+        return 'Short Rest';
+      case 'long_rest':
+        return 'Long Rest';
+      default:
+        return rechargeOn;
+    }
+  }
+}
+
+class SrdClassFeature {
+  final String name;
+  final int level;
+  final String type; // "active" | "passive" | "subclass" | "asi"
+  final String description;
+  final SrdFeatureUses? uses;
+
+  const SrdClassFeature({
+    required this.name,
+    required this.level,
+    required this.type,
+    required this.description,
+    this.uses,
+  });
+
+  factory SrdClassFeature.fromJson(Map<String, dynamic> json) =>
+      SrdClassFeature(
+        name: (json['name'] as String?) ?? '',
+        level: (json['level'] as int?) ?? 1,
+        type: (json['type'] as String?) ?? 'passive',
+        description: (json['description'] as String?) ?? '',
+        uses: json['uses'] != null
+            ? SrdFeatureUses.fromJson(json['uses'] as Map<String, dynamic>)
+            : null,
+      );
+}

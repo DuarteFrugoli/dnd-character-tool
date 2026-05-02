@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
@@ -59,7 +60,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 5, vsync: this);
+    _tabs = TabController(length: 6, vsync: this);
   }
 
   @override
@@ -143,6 +144,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           tabs: const [
             Tab(text: 'Stats'),
             Tab(text: 'Skills'),
+            Tab(text: 'Features'),
             Tab(text: 'Spells'),
             Tab(text: 'Inventory'),
             Tab(text: 'Notes'),
@@ -154,6 +156,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         children: [
           _StatsTab(character: character, characterId: widget.characterId, isEditing: _editMode),
           _SkillsTab(character: character),
+          _FeaturesTab(character: character, characterId: widget.characterId),
           _SpellsTab(character: character, characterId: widget.characterId),
           _InventoryTab(character: character, characterId: widget.characterId),
           _NotesTab(character: character, characterId: widget.characterId),
@@ -371,7 +374,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                 child: const Text('Cancel'),
               ),
               FilledButton(
-                onPressed: isValid ? () => Navigator.pop(ctx, parsed!) : null,
+                onPressed: isValid ? () => Navigator.pop(ctx, parsed) : null,
                 child: Text(currentTemp > 0 ? 'Replace' : 'Add'),
               ),
             ],
@@ -912,6 +915,678 @@ class _SkillsTab extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+// ── Features Tab ──────────────────────────────────────────────────────────────
+
+class _FeaturesTab extends ConsumerStatefulWidget {
+  const _FeaturesTab({required this.character, required this.characterId});
+  final Character character;
+  final String characterId;
+
+  @override
+  ConsumerState<_FeaturesTab> createState() => _FeaturesTabState();
+}
+
+class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
+  late Future<_FeaturesData> _future;
+
+  @override
+  void initState() {
+    super.initState();
+    _future = _load();
+  }
+
+  Future<_FeaturesData> _load() async {
+    final srd = SrdDataSource.instance;
+    final results = await Future.wait([
+      srd.getClassFeatures(widget.character.characterClass),
+      srd.getRaces(),
+      srd.getBackgrounds(),
+    ]);
+    final classFeatures = results[0] as List<SrdClassFeature>;
+    final races = results[1] as List<SrdRace>;
+    final backgrounds = results[2] as List<SrdBackground>;
+
+    final race =
+        races.where((r) => r.name == widget.character.race).firstOrNull;
+    final subrace = race?.subraces
+        .where((s) => s.name == widget.character.subrace)
+        .firstOrNull;
+    final bg = backgrounds
+        .where((b) => b.name == widget.character.background)
+        .firstOrNull;
+
+    return _FeaturesData(
+      classFeatures: classFeatures
+          .where((f) => f.level <= widget.character.level)
+          .toList(),
+      raceTraits: race?.traits ?? [],
+      subraceTraits: subrace?.traits ?? [],
+      backgroundFeatureName: bg?.feature.name,
+      backgroundFeatureDescription: bg?.feature.description,
+    );
+  }
+
+  void _openAddSheet() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (_) => _AddFeatureSheet(characterId: widget.characterId),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final extraFeatures = widget.character.extraFeatures;
+    return FutureBuilder<_FeaturesData>(
+      future: _future,
+      builder: (context, snap) {
+        if (snap.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (snap.hasError || !snap.hasData) {
+          return const Center(child: Text('Erro ao carregar features.'));
+        }
+        final data = snap.data!;
+        return Scaffold(
+          body: ListView(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
+            children: [
+              _RacialTraitsSection(
+                raceName: widget.character.race,
+                subraceName: widget.character.subrace,
+                raceTraits: data.raceTraits,
+                subraceTraits: data.subraceTraits,
+              ),
+              if (data.backgroundFeatureName != null) ...[
+                const SizedBox(height: 24),
+                _BackgroundFeatureSection(
+                  backgroundName: widget.character.background,
+                  featureName: data.backgroundFeatureName!,
+                  featureDescription: data.backgroundFeatureDescription ?? '',
+                ),
+              ],
+              const SizedBox(height: 24),
+              _ClassFeaturesSection(
+                className: widget.character.characterClass,
+                features: data.classFeatures,
+              ),
+              if (extraFeatures.isNotEmpty) ...[
+                const SizedBox(height: 24),
+                _ExtraFeaturesSection(
+                  features: extraFeatures,
+                  characterId: widget.characterId,
+                ),
+              ],
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: _openAddSheet,
+            tooltip: 'Adicionar feature',
+            child: const Icon(Icons.add),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _FeaturesData {
+  final List<SrdClassFeature> classFeatures;
+  final List<String> raceTraits;
+  final List<String> subraceTraits;
+  final String? backgroundFeatureName;
+  final String? backgroundFeatureDescription;
+
+  const _FeaturesData({
+    required this.classFeatures,
+    required this.raceTraits,
+    required this.subraceTraits,
+    this.backgroundFeatureName,
+    this.backgroundFeatureDescription,
+  });
+}
+
+class _RacialTraitsSection extends StatelessWidget {
+  const _RacialTraitsSection({
+    required this.raceName,
+    required this.subraceName,
+    required this.raceTraits,
+    required this.subraceTraits,
+  });
+
+  final String raceName;
+  final String? subraceName;
+  final List<String> raceTraits;
+  final List<String> subraceTraits;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final allTraits = [...raceTraits, ...subraceTraits];
+    if (allTraits.isEmpty) return const SizedBox.shrink();
+
+    final title =
+        subraceName != null && subraceName!.isNotEmpty ? subraceName! : raceName;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Racial Traits — $title',
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 10),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: allTraits
+              .map((t) => Chip(
+                    label: Text(t),
+                    backgroundColor: scheme.surfaceContainerHighest,
+                    side: BorderSide.none,
+                  ))
+              .toList(),
+        ),
+      ],
+    );
+  }
+}
+
+class _BackgroundFeatureSection extends StatelessWidget {
+  const _BackgroundFeatureSection({
+    required this.backgroundName,
+    required this.featureName,
+    required this.featureDescription,
+  });
+
+  final String backgroundName;
+  final String featureName;
+  final String featureDescription;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Background Feature — $backgroundName',
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        Card(
+          child: ExpansionTile(
+            title: Text(
+              featureName,
+              style: const TextStyle(fontWeight: FontWeight.w600),
+            ),
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                child: Text(
+                  featureDescription,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _ExtraFeaturesSection extends ConsumerWidget {
+  const _ExtraFeaturesSection({
+    required this.features,
+    required this.characterId,
+  });
+
+  final List<CharacterExtraFeature> features;
+  final String characterId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final notifier =
+        ref.read(characterDetailProvider(characterId).notifier);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Extra Features',
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        ...features.map((f) => Card(
+              margin: const EdgeInsets.only(bottom: 10),
+              child: ExpansionTile(
+                title: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        f.name,
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      f.sourceClass,
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: scheme.tertiary,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ],
+                ),
+                subtitle: Text(
+                  'Nível ${f.level}',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                trailing: IconButton(
+                  icon: const Icon(Icons.delete_outline, size: 18),
+                  color: scheme.error,
+                  tooltip: 'Remover',
+                  onPressed: () =>
+                      notifier.removeExtraFeature(f.name, f.sourceClass),
+                ),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                    child: Text(
+                      f.description,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                  ),
+                ],
+              ),
+            )),
+      ],
+    );
+  }
+}
+
+class _ClassFeaturesSection extends StatelessWidget {
+  const _ClassFeaturesSection({
+    required this.className,
+    required this.features,
+  });
+
+  final String className;
+  final List<SrdClassFeature> features;
+
+  Color _typeColor(String type, ColorScheme scheme) {
+    switch (type) {
+      case 'active':
+        return scheme.primary;
+      case 'subclass':
+        return scheme.tertiary;
+      case 'asi':
+        return scheme.secondary;
+      default:
+        return scheme.outline;
+    }
+  }
+
+  String _typeLabel(String type) {
+    switch (type) {
+      case 'active':
+        return 'Active';
+      case 'passive':
+        return 'Passive';
+      case 'subclass':
+        return 'Subclass';
+      case 'asi':
+        return 'ASI';
+      default:
+        return type;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    if (features.isEmpty) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Class Features — $className',
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium
+                ?.copyWith(fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          const Text('Nenhuma feature disponível.'),
+        ],
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Class Features — $className',
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        ...features.map((f) {
+          final typeColor = _typeColor(f.type, scheme);
+          return Card(
+            margin: const EdgeInsets.only(bottom: 10),
+            child: ExpansionTile(
+              title: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      f.name,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: typeColor.withAlpha(30),
+                      border: Border.all(color: typeColor.withAlpha(100)),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      _typeLabel(f.type),
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: typeColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+              subtitle: Row(
+                children: [
+                  Text(
+                    'Nível ${f.level}',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  if (f.uses != null) ...[
+                    const SizedBox(width: 8),
+                    Text(
+                      '${f.uses!.amount}× / ${f.uses!.rechargeLabel}',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(color: scheme.primary),
+                    ),
+                  ],
+                ],
+              ),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: Text(
+                    f.description,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }),
+      ],
+    );
+  }
+}
+
+// ── Add Feature Sheet ─────────────────────────────────────────────────────────
+
+class _AddFeatureSheet extends ConsumerStatefulWidget {
+  const _AddFeatureSheet({required this.characterId});
+  final String characterId;
+
+  @override
+  ConsumerState<_AddFeatureSheet> createState() => _AddFeatureSheetState();
+}
+
+class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
+  final _search = TextEditingController();
+  Map<String, List<SrdClassFeature>>? _allFeatures;
+  String? _loadError;
+
+  static const _classOrder = [
+    'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
+    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard',
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _search.addListener(() => setState(() {}));
+    _loadData();
+  }
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
+
+  Future<void> _loadData() async {
+    try {
+      final srd = ref.read(srdDataSourceProvider);
+      final map = <String, List<SrdClassFeature>>{};
+      await Future.wait(_classOrder.map((cls) async {
+        map[cls] = await srd.getClassFeatures(cls);
+      }));
+      if (mounted) setState(() => _allFeatures = map);
+    } catch (e) {
+      if (mounted) setState(() => _loadError = e.toString());
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final notifier =
+        ref.read(characterDetailProvider(widget.characterId).notifier);
+    final character =
+        ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
+    final existingNames = {
+      ...?character?.extraFeatures.map((f) => '${f.sourceClass}:${f.name}'),
+    };
+
+    final q = _search.text.toLowerCase();
+
+    return DraggableScrollableSheet(
+      initialChildSize: 0.87,
+      minChildSize: 0.4,
+      maxChildSize: 0.95,
+      expand: false,
+      builder: (ctx, scrollCtrl) => Column(
+        children: [
+          // Handle
+          Center(
+            child: Container(
+              margin: const EdgeInsets.only(top: 12, bottom: 8),
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: scheme.onSurfaceVariant.withAlpha(100),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                Text('Add Feature',
+                    style: Theme.of(context).textTheme.titleMedium),
+                const Spacer(),
+                IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            child: TextField(
+              controller: _search,
+              decoration: InputDecoration(
+                hintText: 'Search features...',
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: _search.text.isNotEmpty
+                    ? IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: () => _search.clear(),
+                      )
+                    : null,
+                border: const OutlineInputBorder(),
+                isDense: true,
+                contentPadding: const EdgeInsets.symmetric(vertical: 8),
+              ),
+            ),
+          ),
+          Expanded(
+            child: _loadError != null
+                ? Center(
+                    child: Text(
+                      'Erro: $_loadError',
+                      style: TextStyle(color: scheme.error),
+                    ),
+                  )
+                : _allFeatures == null
+                    ? const Center(child: CircularProgressIndicator())
+                    : _buildList(
+                        q: q,
+                        existingNames: existingNames,
+                        notifier: notifier,
+                        scheme: scheme,
+                      ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildList({
+    required String q,
+    required Set<String> existingNames,
+    required CharacterDetailNotifier notifier,
+    required ColorScheme scheme,
+  }) {
+    Widget buildTile(SrdClassFeature f, String className) {
+      final key = '$className:${f.name}';
+      final alreadyAdded = existingNames.contains(key);
+      return ListTile(
+        title: Text(f.name, style: const TextStyle(fontSize: 14)),
+        subtitle: Text(
+          'Nível ${f.level} · ${f.type}',
+          style: TextStyle(
+            fontSize: 12,
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+        ),
+        trailing: alreadyAdded
+            ? Icon(Icons.check_circle, color: scheme.primary, size: 20)
+            : IconButton(
+                icon: const Icon(Icons.add_circle_outline),
+                color: scheme.primary,
+                onPressed: () async {
+                  await notifier.addExtraFeature(f, className);
+                  if (mounted) setState(() {});
+                },
+              ),
+        onTap: () {
+          // Mostra descrição em snackbar
+          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(f.name,
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 4),
+                  Text(
+                    f.description,
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+              duration: const Duration(seconds: 5),
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+        },
+      );
+    }
+
+    if (q.isNotEmpty) {
+      // Busca plana: todas as classes
+      final results = <(String, SrdClassFeature)>[];
+      for (final cls in _classOrder) {
+        for (final f in _allFeatures![cls] ?? <SrdClassFeature>[]) {
+          if (f.name.toLowerCase().contains(q) ||
+              f.description.toLowerCase().contains(q)) {
+            results.add((cls, f));
+          }
+        }
+      }
+      if (results.isEmpty) {
+        return Center(
+          child: Text(
+            'Nenhuma feature encontrada para "$q"',
+            style:
+                TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
+          ),
+        );
+      }
+      return ListView(
+        children: results
+            .map((r) => buildTile(r.$2, r.$1))
+            .toList(),
+      );
+    }
+
+    // Lista agrupada por classe com sticky headers
+    final slivers = <Widget>[];
+    for (final cls in _classOrder) {
+      final features = _allFeatures![cls] ?? [];
+      if (features.isEmpty) continue;
+      slivers.add(SliverPersistentHeader(
+        pinned: true,
+        delegate: _StickyHeaderDelegate(label: cls),
+      ));
+      slivers.add(SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (_, i) => buildTile(features[i], cls),
+          childCount: features.length,
+        ),
+      ));
+    }
+    return CustomScrollView(slivers: slivers);
   }
 }
 

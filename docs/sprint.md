@@ -225,13 +225,13 @@ Objetivo: facilitar compartilhamento/backup dos personagens e começar a abrir e
 - [x] Importação com persistência e refresh automático da lista
 
 ### Edição livre pós-criação
-- [ ] Definir modo de edição livre (toggle no detail)
-- [ ] Permitir editar atributos com ajustes manuais (zona "other")
-- [ ] Permitir editar raça/classe/background com confirmação de impacto
+- [x] Toggle de modo de edição no detail (ícone lápis no AppBar, `_editMode`)
+- [x] Editar atributos com botões +/- (`_AbilityCardEdit`) — zona "other" descartada por desnecessária
+- [~] Editar raça/classe/background — **descartado para v1** (custo alto, caso raro; workaround: export → edita JSON → import)
 
 ### Qualidade e UX
-- [ ] Padronizar mensagens de erro/sucesso de importação
-- [ ] Validar JSON de importação com mensagens amigáveis
+- [x] Padronizar mensagens de erro/sucesso de importação
+- [x] Validar JSON de importação com mensagens amigáveis
 
 ---
 
@@ -240,4 +240,46 @@ Objetivo: facilitar compartilhamento/backup dos personagens e começar a abrir e
 - Economia de loja / compra e venda
 - Conjuração de itens mágicos
 - i18n
+
+---
+
+# Sprint 6 — Modos de criação restantes (planejada)
+
+Objetivo: implementar os modos aleatório, semi-aleatório e manual reaproveitando `CharacterDraftNotifier` e `buildAndSave`.
+
+---
+
+## Pré-requisito: corrigir bug de raça sem atributo
+
+- [ ] Algumas raças têm ASI configurado sem atributo associado, causando cálculo incorreto de atributos finais — corrigir antes de implementar modo aleatório (que roda sem revisão humana).
+
+## Modo aleatório
+
+Decisões criativas tomadas:
+
+- **Nível:** fixo em 1 — é decisão de campanha, não de personagem
+- **Raça:** sorteada aleatoriamente (incluindo subrace se houver)
+- **Classe:** sorteada aleatoriamente (sem subclasse, pois subclasses só aparecem a partir do nível 3)
+- **Background:** sorteado aleatoriamente
+- **Atributos:** 4d6 drop lowest (4 dados, descarta o menor), distribuído automaticamente — maior valor vai ao atributo primário da classe
+- **Idiomas:** fixos de raça + background + os "de escolha" também sorteados da lista padrão de 16 idiomas D&D
+- **Equipamento:** apenas o fixo do background — não sortear itens extras
+- **Subclasses spellcaster** (ex: Eldritch Knight, Arcane Trickster): irrelevante em nível 1; a tratar quando houver levelup
+- **UX:** uma tela com botão "Gerar personagem" → resultado aparece na própria tela para revisão antes de salvar
+
+## Sobre magias na criação
+
+Decisão: **magias não fazem parte de nenhum modo de criação**. Justificativa:
+- Um mago de nível 1 já tem ~80 opções de 1º círculo — impossível listar num wizard sem ficar horrível
+- O jogador muda spell loadout entre sessões — precisa ser acessível depois, não travado na criação
+- O correto é registrar na criação que a classe é spellcaster (já feito via `spellSlots`) e o jogador adiciona magias depois na aba Spells da ficha
+- Referência de UX: D&D Spell / D&D Beyond — browser dedicado com filtros
+
+## Modo semi-aleatório (a definir)
+
+A definir em sessão futura. Ideia inicial: usuário escolhe raça e classe, o resto é sorteado.
+
+## Modo manual (a definir)
+
+A definir em sessão futura. Campos livres, sem cálculos automáticos, para jogadores experientes.
 

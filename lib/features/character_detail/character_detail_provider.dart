@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../character_list/character_list_provider.dart';
@@ -164,6 +165,35 @@ class CharacterDetailNotifier
     if (level <= 12) return 4;
     if (level <= 16) return 5;
     return 6;
+  }
+
+  // ── Extra Features (multiclasse / manual) ──────────────────────────────────
+
+  Future<void> addExtraFeature(SrdClassFeature feature, String sourceClass) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    // Evita duplicatas
+    final already = c.extraFeatures.any(
+      (f) => f.name == feature.name && f.sourceClass == sourceClass,
+    );
+    if (already) return;
+    final extra = CharacterExtraFeature(
+      sourceClass: sourceClass,
+      name: feature.name,
+      level: feature.level,
+      type: feature.type,
+      description: feature.description,
+    );
+    await _save(c.copyWith(extraFeatures: [...c.extraFeatures, extra]));
+  }
+
+  Future<void> removeExtraFeature(String name, String sourceClass) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final updated = c.extraFeatures
+        .where((f) => !(f.name == name && f.sourceClass == sourceClass))
+        .toList();
+    await _save(c.copyWith(extraFeatures: updated));
   }
 
   // ── Inventário ─────────────────────────────────────────────────────────────

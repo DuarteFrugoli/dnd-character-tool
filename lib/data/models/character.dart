@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'ability_scores.dart';
 import 'character_appearance.dart';
+import 'character_extra_feature.dart';
 import 'character_note.dart';
 import 'character_personality.dart';
 import 'equipment_item.dart';
@@ -38,6 +39,7 @@ class Character {
   final List<KnownSpell> spells;
   final SpellSlots spellSlots;
   final List<String> features;
+  final List<CharacterExtraFeature> extraFeatures;
   final List<String> languages;
   final CharacterPersonality personality;
   final CharacterAppearance appearance;
@@ -73,6 +75,7 @@ class Character {
     this.spells = const [],
     this.spellSlots = const SpellSlots(),
     this.features = const [],
+    this.extraFeatures = const [],
     this.languages = const [],
     this.personality = const CharacterPersonality(),
     this.appearance = const CharacterAppearance(),
@@ -122,6 +125,7 @@ class Character {
     List<KnownSpell>? spells,
     SpellSlots? spellSlots,
     List<String>? features,
+    List<CharacterExtraFeature>? extraFeatures,
     List<String>? languages,
     CharacterPersonality? personality,
     CharacterAppearance? appearance,
@@ -158,6 +162,7 @@ class Character {
       spells: spells ?? this.spells,
       spellSlots: spellSlots ?? this.spellSlots,
       features: features ?? this.features,
+      extraFeatures: extraFeatures ?? this.extraFeatures,
       languages: languages ?? this.languages,
       personality: personality ?? this.personality,
       appearance: appearance ?? this.appearance,

@@ -1,30 +1,35 @@
 ## v1 — essencial (fazer agora)
 
-1. ter certeza de que a ficha está sendo criada corretamente em todos os modos.
-2. [parcial] inventário na ficha: aba Inventory com moedas e itens já funciona. Falta: cálculo de AC ao equipar armadura, browse de itens SRD no dialog, equipamento inicial do background aplicado na criação.
-3. fazer a edição de personagem ser totalmente livre, talvez com toggle para liberar mudanças ou zona "other" para somar valores extras.
-4. fazer o export e import do personagem.
+### modos de criação
+- [x] modo guiado (wizard passo a passo completo)
+- [ ] **modo aleatório** ← próximo passo
+- [ ] modo semi-aleatório (usuário escolhe raça/classe, resto é sorteado)
+- [ ] modo manual (campos livres, sem cálculos automáticos)
+
+### ficha
+- [x] stats, skills, magias, inventário, anotações
+- [x] HP temporário (drena temp antes do real, dialog com escudo)
+- [x] escolha de idiomas na criação guiada
+- [ ] edição de ficha existente (atributos, raça, classe, etc.)
 
 ## v1.1 — após feedback inicial
 
-5. perguntar para possíveis usuários se eles gostaram do produto.
-6. colocar imagens nos personagens.
+- [ ] perguntar para possíveis usuários se gostaram do produto
+- [ ] colocar imagens nos personagens (model já tem `imagePath`)
 
 ## médio prazo
 
-7. fazer a geração de npcs para mestres.
-8. melhorar o levelup do modo guiado para iniciantes.
-9. permitir levelup removendo ou adicionando características únicas. por exemplo removendo uma habilidade que uma pessoa normalmente ganharia e adicionando uma customizada.
-10. criar uma classe com subclasses customizadas, raças customizadas, itens customizados, etc.
+- [ ] geração de NPCs para mestres (flag `isNpc` no model)
+- [ ] melhorar o levelup no modo guiado para iniciantes
+- [ ] permitir levelup com características customizadas
+- [ ] criar classe/subclasse/raça/itens customizados
 
 ## longo prazo / dependem de orçamento
 
-11. ver se é possível salvar na nuvem e ver orçamento para isso.
-12. ver se é possível conectar api do dall-e e alguma outra que permita criar imagens direto pelo app e ver orçamento para isso.
+- [ ] salvar na nuvem (Supabase)
+- [ ] integração DALL-E para gerar imagem do personagem pelo app
 
 ## bugs / infra
 
-- consertar regra sem atributo por raça
-
-extras:
-- colocar no github pages automático sempre que atualizar a main usando github actions.
+- [ ] consertar regra sem atributo por raça (ex: resistências sem ability score)
+- [ ] GitHub Actions: deploy automático no GitHub Pages ao atualizar main

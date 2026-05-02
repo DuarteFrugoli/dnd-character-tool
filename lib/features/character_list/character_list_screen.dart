@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,9 +13,62 @@ class CharacterListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(characterListProvider);
 
+    Future<void> importCharacter() async {
+      final ctrl = TextEditingController();
+      final result = await showDialog<String>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Import Character JSON'),
+          content: SizedBox(
+            width: 520,
+            child: TextField(
+              controller: ctrl,
+              maxLines: 14,
+              decoration: const InputDecoration(
+                hintText: 'Paste exported JSON here',
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Cancel'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, ctrl.text.trim()),
+              child: const Text('Import'),
+            ),
+          ],
+        ),
+      );
+
+      if (result == null || result.isEmpty || !context.mounted) return;
+      try {
+        final character =
+            await ref.read(characterListProvider.notifier).importCharacter(result);
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Imported: ${character.name}')),
+        );
+      } catch (e) {
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Invalid JSON: $e')),
+        );
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('D&D Characters'),
+        actions: [
+          IconButton(
+            tooltip: 'Import JSON',
+            onPressed: importCharacter,
+            icon: const Icon(Icons.file_download_outlined),
+          ),
+        ],
       ),
       body: state.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -90,6 +144,43 @@ class _CharacterCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    Future<void> exportCharacter() async {
+      final json =
+          await ref.read(characterListProvider.notifier).exportCharacter(character);
+      if (!context.mounted) return;
+      await showDialog<void>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text('Export ${character.name}'),
+          content: SizedBox(
+            width: 560,
+            child: SingleChildScrollView(
+              child: SelectableText(json),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Close'),
+            ),
+            FilledButton.icon(
+              onPressed: () async {
+                await Clipboard.setData(ClipboardData(text: json));
+                if (!ctx.mounted) return;
+                Navigator.pop(ctx);
+                if (!context.mounted) return;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('JSON copied to clipboard')),
+                );
+              },
+              icon: const Icon(Icons.copy),
+              label: const Text('Copy JSON'),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Card(
       child: ListTile(
         leading: CircleAvatar(
@@ -101,6 +192,9 @@ class _CharacterCard extends ConsumerWidget {
         ),
         trailing: PopupMenuButton<String>(
           onSelected: (value) async {
+            if (value == 'export') {
+              await exportCharacter();
+            }
             if (value == 'delete') {
               final confirm = await showDialog<bool>(
                 context: context,
@@ -129,6 +223,7 @@ class _CharacterCard extends ConsumerWidget {
             }
           },
           itemBuilder: (_) => const [
+            PopupMenuItem(value: 'export', child: Text('Export JSON')),
             PopupMenuItem(value: 'delete', child: Text('Delete')),
           ],
         ),

@@ -157,7 +157,7 @@ Objetivo: após criar um personagem, o jogador consegue ver e editar sua ficha c
 
 ---
 
-# Sprint 4 — Inventário & Equipamentos (planejada)
+# Sprint 4 — Inventário & Equipamentos (concluída)
 
 Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do personagem na ficha. O equipamento inicial do background é aplicado automaticamente ao criar.
 
@@ -174,17 +174,17 @@ Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do perso
 
 ### Adicionar itens
 - [x] Botão FAB "+" abre dialog de item custom (nome, categoria, quantidade, descrição)
-- [ ] Aba "SRD" no dialog: busca/filtra itens de `equipment.json` e `magic_items.json`
+- [x] Aba "SRD" no dialog: busca/filtra itens de `equipment.json` e `magic_items.json`
 
 ### Cálculo de AC com armadura
-- [ ] Quando armadura é equipada, recalcular AC automaticamente:
+- [x] Quando armadura é equipada, recalcular AC automaticamente:
   - Couro: 11 + DEX mod
   - Cota de malha: 13 + DEX mod (max +2)
   - Meia-placa: 15 + DEX mod (max +2)
   - Placa completa: 18 (sem DEX)
   - Sem armadura: 10 + DEX mod
-- [ ] Provider atualiza `character.armorClass` ao equipar/desequipar armadura
-- [ ] Exibir na aba Stats qual armadura está sendo usada
+- [x] Provider atualiza `character.armorClass` ao equipar/desequipar armadura
+- [x] Exibir na aba Stats qual armadura está sendo usada
 
 ### Moedas
 - [x] Campo de moedas na aba Inventory: CP / SP / EP / GP / PP
@@ -192,8 +192,9 @@ Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do perso
 - [x] Persistido no modelo `Character` (novo campo `currency: Map<String, int>`)
 
 ### Equipamento inicial do background
-- [ ] Campo `startingEquipment: List<String>` em `SrdBackground` (parsear do JSON)
-- [ ] Ao finalizar criação (buildAndSave), adicionar itens do background como `EquipmentItem` na lista do personagem
+- [x] Campo `startingEquipment: List<String>` em `SrdBackground` (parsear do JSON)
+- [x] Ao finalizar criação (buildAndSave), adicionar itens do background como `EquipmentItem` na lista do personagem
+- [x] Opção de incluir/excluir itens do background na etapa de revisão
 
 ### Dados SRD de suporte
 - [x] `class_features.json` — features por nível para todas as 12 classes
@@ -203,9 +204,34 @@ Objetivo: o jogador consegue gerenciar itens, armas, armaduras e moedas do perso
 
 ### Provider
 - [x] `addEquipmentItem(EquipmentItem)` em `CharacterDetailNotifier`
-- [x] `removeEquipmentItem(String itemName)` em `CharacterDetailNotifier`
-- [x] `toggleEquipped(String itemName)` em `CharacterDetailNotifier`
+- [x] `removeEquipmentItem(String itemId)` em `CharacterDetailNotifier`
+- [x] `toggleEquipped(String itemId)` em `CharacterDetailNotifier`
 - [x] `updateCurrency(Map<String, int>)` em `CharacterDetailNotifier`
+
+---
+
+# Sprint 5 — Export/Import & Edição (em andamento)
+
+Objetivo: facilitar compartilhamento/backup dos personagens e começar a abrir edição pós-criação.
+
+---
+
+## Tarefas
+
+### Export / Import
+- [x] Ação de **Export JSON** por personagem na lista
+- [x] Diálogo com JSON exportado + botão para copiar para clipboard
+- [x] Ação global de **Import JSON** na tela de lista
+- [x] Importação com persistência e refresh automático da lista
+
+### Edição livre pós-criação
+- [ ] Definir modo de edição livre (toggle no detail)
+- [ ] Permitir editar atributos com ajustes manuais (zona "other")
+- [ ] Permitir editar raça/classe/background com confirmação de impacto
+
+### Qualidade e UX
+- [ ] Padronizar mensagens de erro/sucesso de importação
+- [ ] Validar JSON de importação com mensagens amigáveis
 
 ---
 

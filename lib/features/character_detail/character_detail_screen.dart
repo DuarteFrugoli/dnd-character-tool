@@ -251,6 +251,17 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     final isDead = hp.isDead;
     final isFull = hp.current >= hp.maximum;
     final scheme = Theme.of(context).colorScheme;
+    final equippedArmor = character.equipment
+      .where((e) => e.itemType == ItemType.armor && e.isEquipped)
+      .toList();
+    final bodyArmor = equippedArmor
+      .where((e) => e.properties?['isShield'] != true)
+      .toList();
+    final usingShield =
+      equippedArmor.any((e) => e.properties?['isShield'] == true);
+    final armorSummary = bodyArmor.isEmpty
+      ? (usingShield ? 'No armor + Shield' : 'No armor')
+      : '${bodyArmor.first.name}${usingShield ? ' + Shield' : ''}';
 
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -401,6 +412,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             runSpacing: 8,
             children: [
               _StatChip('AC', '${character.armorClass}'),
+              _StatChip('Armor', armorSummary),
               _StatChip('Speed', '${character.speed} ft'),
               _StatChip('Initiative', _sign(character.initiative)),
               _StatChip('Prof Bonus', _sign(character.proficiencyBonus)),
@@ -1472,6 +1484,99 @@ class _ItemTile extends ConsumerWidget {
     }
   }
 
+  static bool _isBodyArmor(EquipmentItem item) {
+    if (item.itemType != ItemType.armor) return false;
+    final props = item.properties;
+    if (props == null) return false;
+    if (props['isShield'] == true) return false;
+    return props.containsKey('baseAC');
+  }
+
+  static int _calcArmorClass(Character c, List<EquipmentItem> equipment) {
+    final dexMod = c.abilityScores.dexterityModifier;
+    int base = 10 + dexMod;
+    int shieldBonus = 0;
+
+    for (final it in equipment) {
+      if (!it.isEquipped || it.itemType != ItemType.armor) continue;
+      final props = it.properties;
+      if (props == null) continue;
+
+      if (props['isShield'] == true) {
+        shieldBonus = (props['acBonus'] as num?)?.toInt() ?? 2;
+      } else {
+        final baseAC = (props['baseAC'] as num?)?.toInt() ?? 10;
+        final addDex = props['addDexModifier'] as bool? ?? true;
+        final maxDex = (props['maxDexBonus'] as num?)?.toInt();
+        int armorAC = baseAC;
+        if (addDex) {
+          armorAC += maxDex != null ? dexMod.clamp(-99, maxDex) : dexMod;
+        }
+        base = armorAC;
+      }
+    }
+
+    return base + shieldBonus;
+  }
+
+  Future<void> _onEquipTap(
+    BuildContext context,
+    WidgetRef ref,
+    CharacterDetailNotifier notifier,
+  ) async {
+    final character = ref.read(characterDetailProvider(characterId)).valueOrNull;
+
+    // Troca de armadura corporal exige confirmação, mostrando CA atual e prevista.
+    if (character != null && _isBodyArmor(item) && !item.isEquipped) {
+      final equippedBodyArmors = character.equipment
+          .where((e) => e.id != item.id && e.isEquipped && _isBodyArmor(e))
+          .toList();
+
+      if (equippedBodyArmors.isNotEmpty) {
+        final equippedBodyArmor = equippedBodyArmors.first;
+        final simulated = character.equipment.map((e) {
+          if (e.id == equippedBodyArmor.id) return e.copyWith(isEquipped: false);
+          if (e.id == item.id) return e.copyWith(isEquipped: true);
+          return e;
+        }).toList();
+        final nextAc = _calcArmorClass(character, simulated);
+
+        final confirm = await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: const Text('Replace equipped armor?'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Current: ${equippedBodyArmor.name}'),
+                const SizedBox(height: 8),
+                Text('AC now: ${character.armorClass}'),
+                Text('AC after: $nextAc'),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: const Text('Cancel'),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                child: const Text('Swap armor'),
+              ),
+            ],
+          ),
+        );
+
+        if (confirm != true) return;
+        await notifier.toggleEquipped(item.id, forceArmorSwap: true);
+        return;
+      }
+    }
+
+    await notifier.toggleEquipped(item.id);
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
@@ -1483,7 +1588,7 @@ class _ItemTile extends ConsumerWidget {
       contentPadding: EdgeInsets.zero,
       leading: canEquip
           ? GestureDetector(
-              onTap: () => notifier.toggleEquipped(item.id),
+              onTap: () => _onEquipTap(context, ref, notifier),
               child: Tooltip(
                 message: item.isEquipped ? 'Unequip' : 'Equip',
                 child: CircleAvatar(

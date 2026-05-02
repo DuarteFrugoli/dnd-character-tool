@@ -25,4 +25,15 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     await ref.read(characterRepositoryProvider).delete(id);
     await refresh();
   }
+
+  Future<String> exportCharacter(Character character) {
+    return ref.read(characterRepositoryProvider).exportToJson(character);
+  }
+
+  Future<Character> importCharacter(String jsonString) async {
+    final character =
+        await ref.read(characterRepositoryProvider).importFromJson(jsonString);
+    await refresh();
+    return character;
+  }
 }

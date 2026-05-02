@@ -127,20 +127,99 @@ class CharacterDetailNotifier
     }
   }
 
-  Future<void> toggleEquipped(String id) async {
+  Future<void> toggleEquipped(String id, {bool forceArmorSwap = false}) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final updated = c.equipment.map((e) {
-      if (e.id != id) return e;
-      return e.copyWith(isEquipped: !e.isEquipped);
-    }).toList();
+
+    final updated = List<EquipmentItem>.from(c.equipment);
+    final idx = updated.indexWhere((e) => e.id == id);
+    if (idx < 0) return;
+
+    final target = updated[idx];
+    final isBodyArmor = _isBodyArmor(target);
+
+    if (!target.isEquipped) {
+      // Se for armadura corporal, só pode haver uma equipada por vez.
+      if (isBodyArmor && forceArmorSwap) {
+        _unequipOtherBodyArmors(updated, exceptId: target.id);
+      }
+
+      // Equipar 1 unidade de um stack: separa em entrada equipada + entrada carregada.
+      if (target.quantity > 1) {
+        updated[idx] = target.copyWith(quantity: target.quantity - 1);
+        updated.add(
+          EquipmentItem(
+            name: target.name,
+            category: target.category,
+            itemType: target.itemType,
+            quantity: 1,
+            description: target.description,
+            isEquipped: true,
+            properties: target.properties,
+          ),
+        );
+      } else {
+        updated[idx] = target.copyWith(isEquipped: true);
+      }
+    } else {
+      // Desequipar: remove a entrada equipada e devolve ao stack carregado.
+      updated.removeAt(idx);
+      _mergeIntoCarried(
+        updated,
+        target.copyWith(isEquipped: false),
+      );
+    }
+
     final newC = c.copyWith(equipment: updated);
-    // Recalcula CA se o item afetado for armadura
-    final affected = updated.firstWhere((e) => e.id == id);
-    if (affected.itemType == ItemType.armor) {
+
+    // Recalcula CA quando há mudança relacionada a armadura.
+    if (target.itemType == ItemType.armor || isBodyArmor) {
       await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
     } else {
       await _save(newC);
+    }
+  }
+
+  bool _isBodyArmor(EquipmentItem item) {
+    if (item.itemType != ItemType.armor) return false;
+    final props = item.properties;
+    if (props == null) return false;
+    if (props['isShield'] == true) return false;
+    return props.containsKey('baseAC');
+  }
+
+  void _unequipOtherBodyArmors(List<EquipmentItem> items,
+      {required String exceptId}) {
+    final toUnequip = items
+        .where((e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e))
+        .toList();
+    items.removeWhere((e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e));
+    for (final armor in toUnequip) {
+      _mergeIntoCarried(items, armor.copyWith(isEquipped: false));
+    }
+  }
+
+  void _mergeIntoCarried(List<EquipmentItem> items, EquipmentItem item) {
+    final carryIdx = items.indexWhere(
+      (e) =>
+          !e.isEquipped && e.name == item.name && e.itemType == item.itemType,
+    );
+    if (carryIdx >= 0) {
+      items[carryIdx] = items[carryIdx].copyWith(
+        quantity: items[carryIdx].quantity + item.quantity,
+      );
+    } else {
+      items.add(
+        EquipmentItem(
+          name: item.name,
+          category: item.category,
+          itemType: item.itemType,
+          quantity: item.quantity,
+          description: item.description,
+          isEquipped: false,
+          properties: item.properties,
+        ),
+      );
     }
   }
 

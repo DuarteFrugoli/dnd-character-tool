@@ -68,6 +68,8 @@ class StepReview extends ConsumerWidget {
         // ── Language Choices ────────────────────────────────────────────────────────
         if (draft.languageChoicesNeeded > 0)
           const _LanguageChoiceSection(),
+        // ── Tool Proficiency Choices ─────────────────────────────────────────────────
+        const _ToolProficiencySection(),
         // ── Starting Equipment ─────────────────────────────────────────────────────
         if (draft.selectedBackground != null &&
             draft.selectedBackground!.startingEquipment.isNotEmpty)
@@ -257,6 +259,252 @@ const _kDndLanguages = [
   'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin',
   'Halfling', 'Infernal', 'Orc', 'Primordial', 'Sylvan', 'Undercommon',
 ];
+
+// ── Tool Proficiency constants ────────────────────────────────────────────────
+
+const _kArtisanTools = [
+  "Alchemist's supplies", "Brewer's supplies", "Calligrapher's supplies",
+  "Carpenter's tools", "Cartographer's tools", "Cobbler's tools",
+  "Cook's utensils", "Glassblower's tools", "Jeweler's tools",
+  "Leatherworker's tools", "Mason's tools", "Painter's supplies",
+  "Potter's tools", "Smith's tools", "Tinker's tools",
+  "Weaver's tools", "Woodcarver's tools",
+];
+
+const _kGamingSets = [
+  'Dice set', 'Dragonchess set', 'Playing card set', 'Three-Dragon Ante set',
+];
+
+const _kInstruments = [
+  'Bagpipes', 'Drum', 'Dulcimer', 'Flute', 'Lute', 'Lyre',
+  'Horn', 'Pan flute', 'Shawm', 'Viol',
+];
+
+const _kWordToInt = {
+  'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+};
+
+class _ToolSlot {
+  final String source;
+  final String label;
+  final List<String> options;
+  const _ToolSlot({required this.source, required this.label, required this.options});
+}
+
+List<String> _toolOptionsForEntry(String lower) {
+  if (lower.contains('artisan') && lower.contains('musical')) {
+    return [..._kArtisanTools, ..._kInstruments];
+  } else if (lower.contains('artisan')) {
+    return _kArtisanTools;
+  } else if (lower.contains('gaming')) {
+    return _kGamingSets;
+  } else if (lower.contains('musical')) {
+    return _kInstruments;
+  }
+  return [..._kArtisanTools, ..._kGamingSets, ..._kInstruments];
+}
+
+bool _isToolChoice(String tool) {
+  final lower = tool.toLowerCase();
+  return lower.contains('one type of') || lower.contains('of your choice');
+}
+
+List<_ToolSlot> _buildToolSlots(CharacterDraft draft) {
+  final slots = <_ToolSlot>[];
+
+  // Race: "Tool Proficiency" trait → one artisan's tool
+  final race = draft.selectedRace;
+  if (race != null && race.traits.contains('Tool Proficiency')) {
+    slots.add(_ToolSlot(
+      source: race.name,
+      label: "Artisan's tool",
+      options: _kArtisanTools,
+    ));
+  }
+
+  // Background tool choices
+  final bg = draft.selectedBackground;
+  if (bg != null) {
+    for (final tool in bg.toolProficiencies) {
+      if (_isToolChoice(tool)) {
+        final lower = tool.toLowerCase();
+        slots.add(_ToolSlot(
+          source: bg.name,
+          label: lower.contains('gaming')
+              ? 'Gaming set'
+              : lower.contains('musical')
+                  ? 'Musical instrument'
+                  : "Artisan's tool",
+          options: _toolOptionsForEntry(lower),
+        ));
+      }
+    }
+  }
+
+  // Class tool choices
+  final cls = draft.selectedClass;
+  if (cls != null) {
+    for (final tool in cls.toolProficiencies) {
+      if (_isToolChoice(tool)) {
+        final lower = tool.toLowerCase();
+        // Detect count word (e.g., "three musical instruments of your choice")
+        final match = RegExp(r'(\w+) musical instrument').firstMatch(lower);
+        final countWord = match?.group(1);
+        final count = _kWordToInt[countWord] ?? 1;
+        final options = _toolOptionsForEntry(lower);
+        final label = lower.contains('artisan') && lower.contains('musical')
+            ? "Artisan's tool or instrument"
+            : 'Musical instrument';
+        for (int i = 0; i < count; i++) {
+          slots.add(_ToolSlot(source: cls.name, label: label, options: options));
+        }
+      }
+    }
+  }
+
+  return slots;
+}
+
+List<String> _buildFixedTools(CharacterDraft draft) {
+  final fixed = <String>[];
+
+  final bg = draft.selectedBackground;
+  if (bg != null) {
+    for (final tool in bg.toolProficiencies) {
+      if (!_isToolChoice(tool)) fixed.add('${bg.name}: $tool');
+    }
+  }
+
+  final cls = draft.selectedClass;
+  if (cls != null) {
+    for (final tool in cls.toolProficiencies) {
+      if (!_isToolChoice(tool)) fixed.add('${cls.name}: $tool');
+    }
+  }
+
+  return fixed;
+}
+
+// ── Tool Proficiency Section ──────────────────────────────────────────────────
+
+class _ToolProficiencySection extends ConsumerWidget {
+  const _ToolProficiencySection();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final draft = ref.watch(characterDraftProvider);
+    final scheme = Theme.of(context).colorScheme;
+
+    final slots = _buildToolSlots(draft);
+    final fixed = _buildFixedTools(draft);
+
+    if (slots.isEmpty && fixed.isEmpty) return const SizedBox.shrink();
+
+    final chosen = draft.chosenToolProficiencies;
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Tool Proficiencies',
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge
+                  ?.copyWith(color: scheme.primary),
+            ),
+            if (fixed.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              ...fixed.map(
+                (t) => Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(Icons.handyman_outlined,
+                          size: 14, color: scheme.onSurfaceVariant),
+                      const SizedBox(width: 6),
+                      Expanded(
+                        child: Text(t,
+                            style: Theme.of(context).textTheme.bodySmall),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+            if (slots.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Text(
+                'Choose your tool proficiency:',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(color: scheme.onSurfaceVariant),
+              ),
+              const SizedBox(height: 6),
+              ...slots.asMap().entries.map((entry) {
+                final i = entry.key;
+                final slot = entry.value;
+                final currentVal =
+                    i < chosen.length && chosen[i].isNotEmpty ? chosen[i] : null;
+
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '${slot.source} — ${slot.label}',
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                      ),
+                      const SizedBox(height: 4),
+                      DropdownButtonFormField<String>(
+                        value: currentVal,
+                        isExpanded: true,
+                        decoration: const InputDecoration(
+                          isDense: true,
+                          border: OutlineInputBorder(),
+                          contentPadding:
+                              EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        ),
+                        hint: const Text('Select a tool…',
+                            style: TextStyle(fontSize: 13)),
+                        items: slot.options
+                            .map((tool) => DropdownMenuItem(
+                                  value: tool,
+                                  child: Text(tool,
+                                      style: const TextStyle(fontSize: 13)),
+                                ))
+                            .toList(),
+                        onChanged: (val) {
+                          if (val == null) return;
+                          final updated = List<String>.from(chosen);
+                          while (updated.length <= i) {
+                            updated.add('');
+                          }
+                          updated[i] = val;
+                          ref
+                              .read(characterDraftProvider.notifier)
+                              .setChosenToolProficiencies(updated);
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class _LanguageChoiceSection extends ConsumerStatefulWidget {
   const _LanguageChoiceSection();

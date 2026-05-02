@@ -32,6 +32,8 @@ class CharacterDraft {
   final List<String> selectedStartingEquipment;
   // Idiomas escolhidos livremente pelo usuário (raça "any" + background)
   final List<String> chosenLanguages;
+  // Ferramentas escolhidas livremente (raça + background + classe)
+  final List<String> chosenToolProficiencies;
 
   const CharacterDraft({
     required this.id,
@@ -50,6 +52,7 @@ class CharacterDraft {
     this.playerName = '',
     this.selectedStartingEquipment = const [],
     this.chosenLanguages = const [],
+    this.chosenToolProficiencies = const [],
   });
 
   CharacterDraft copyWith({
@@ -68,6 +71,7 @@ class CharacterDraft {
     String? playerName,
     List<String>? selectedStartingEquipment,
     List<String>? chosenLanguages,
+    List<String>? chosenToolProficiencies,
   }) {
     return CharacterDraft(
       id: id,
@@ -91,6 +95,8 @@ class CharacterDraft {
       selectedStartingEquipment:
           selectedStartingEquipment ?? this.selectedStartingEquipment,
       chosenLanguages: chosenLanguages ?? this.chosenLanguages,
+      chosenToolProficiencies:
+          chosenToolProficiencies ?? this.chosenToolProficiencies,
     );
   }
 
@@ -181,6 +187,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setClass(SrdClass c) => state = state.copyWith(
         selectedClass: c,
         selectedSubclass: null,
+        chosenToolProficiencies: [],
       );
 
   void setSubclass(SrdSubclass? s) =>
@@ -191,6 +198,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         selectedSubrace: null,
         freePicksDistribution: {},
         chosenLanguages: [],
+        chosenToolProficiencies: [],
       );
 
   void setSubrace(SrdSubrace? s) =>
@@ -200,8 +208,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         selectedBackground: b,
         // Pré-seleciona todos os itens do background (usuário pode desmarcar)
         selectedStartingEquipment: List<String>.from(b.startingEquipment),
-        // Reseta idiomas livres ao trocar de background
+        // Reseta idiomas e ferramentas livres ao trocar de background
         chosenLanguages: [],
+        chosenToolProficiencies: [],
       );
 
   void toggleStartingItem(String item) {
@@ -235,6 +244,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setPlayerName(String n) => state = state.copyWith(playerName: n);
   void setChosenLanguages(List<String> langs) =>
       state = state.copyWith(chosenLanguages: langs);
+
+  void setChosenToolProficiencies(List<String> tools) =>
+      state = state.copyWith(chosenToolProficiencies: tools);
 
   Future<Character> buildAndSave(WidgetRef ref) async {
     final draft = state;
@@ -305,7 +317,10 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         total: List.filled(9, 0),
         used: List.filled(9, 0),
       ),
-      features: [],
+      features: draft.chosenToolProficiencies
+          .where((t) => t.isNotEmpty)
+          .map((t) => 'Tool Proficiency: $t')
+          .toList(),
       languages: [...draft.fixedRaceLanguages, ...draft.chosenLanguages],
       personality: const CharacterPersonality(
         traits: '',

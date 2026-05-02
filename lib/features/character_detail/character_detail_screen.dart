@@ -682,6 +682,22 @@ class _NotesTab extends ConsumerWidget {
   final Character character;
   final String characterId;
 
+  Future<void> _showNoteView(
+    BuildContext context,
+    WidgetRef ref,
+    CharacterNote note,
+  ) async {
+    final shouldEdit = await showModalBottomSheet<bool>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (ctx) => _NoteViewSheet(note: note),
+    );
+    if (shouldEdit == true && context.mounted) {
+      _openNoteSheet(context, ref, existing: note);
+    }
+  }
+
   void _openNoteSheet(
     BuildContext context,
     WidgetRef ref, {
@@ -747,8 +763,7 @@ class _NotesTab extends ConsumerWidget {
                 // ── User notes ─────────────────────────────────────────
                 ...notes.map((note) => _NoteCard(
                       note: note,
-                      onEdit: () => _openNoteSheet(context, ref,
-                          existing: note),
+                      onView: () => _showNoteView(context, ref, note),
                       onDelete: () => notifier.deleteNote(note.id),
                     )),
 
@@ -944,18 +959,11 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
   }
 }
 
-// ── Note Card ─────────────────────────────────────────────────────────────────
+// ── Note View Sheet ───────────────────────────────────────────────────────────
 
-class _NoteCard extends StatelessWidget {
-  const _NoteCard({
-    required this.note,
-    required this.onEdit,
-    required this.onDelete,
-  });
-
+class _NoteViewSheet extends StatelessWidget {
+  const _NoteViewSheet({required this.note});
   final CharacterNote note;
-  final VoidCallback onEdit;
-  final VoidCallback onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -965,11 +973,110 @@ class _NoteCard extends StatelessWidget {
         '${note.createdAt.month.toString().padLeft(2, '0')}/'
         '${note.createdAt.year}';
 
+    return DraggableScrollableSheet(
+      initialChildSize: 0.6,
+      minChildSize: 0.4,
+      maxChildSize: 0.95,
+      expand: false,
+      builder: (_, scrollCtrl) => Column(
+        children: [
+          Center(
+            child: Container(
+              margin: const EdgeInsets.only(top: 12, bottom: 8),
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.4),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            child: Row(
+              children: [
+                Expanded(
+                  child: note.title.isNotEmpty
+                      ? Text(
+                          note.title,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(fontWeight: FontWeight.w600),
+                        )
+                      : const SizedBox.shrink(),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.edit_outlined),
+                  tooltip: 'Edit note',
+                  onPressed: () => Navigator.pop(context, true),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () => Navigator.pop(context, false),
+                ),
+              ],
+            ),
+          ),
+          const Divider(height: 1),
+          Expanded(
+            child: ListView(
+              controller: scrollCtrl,
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+              children: [
+                if (note.content.isNotEmpty)
+                  Text(
+                    note.content,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                const SizedBox(height: 12),
+                Text(
+                  dateStr,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelSmall
+                      ?.copyWith(color: scheme.outline),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Note Card ─────────────────────────────────────────────────────────────────
+
+class _NoteCard extends StatelessWidget {
+  const _NoteCard({
+    required this.note,
+    required this.onView,
+    required this.onDelete,
+  });
+
+  final CharacterNote note;
+  final VoidCallback onView;
+  final VoidCallback onDelete;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final contentStyle = Theme.of(context)
+        .textTheme
+        .bodyMedium
+        ?.copyWith(color: scheme.onSurfaceVariant);
+    final dateStr =
+        '${note.createdAt.day.toString().padLeft(2, '0')}/'
+        '${note.createdAt.month.toString().padLeft(2, '0')}/'
+        '${note.createdAt.year}';
+
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: onEdit,
+        onTap: onView,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 8, 12),
           child: Row(
@@ -987,17 +1094,39 @@ class _NoteCard extends StatelessWidget {
                             .titleSmall
                             ?.copyWith(fontWeight: FontWeight.w600),
                       ),
-                    if (note.content.isNotEmpty) ...[
-                      if (note.title.isNotEmpty)
-                        const SizedBox(height: 4),
-                      Text(
-                        note.content,
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium
-                            ?.copyWith(color: scheme.onSurfaceVariant),
+                    if (note.content.isNotEmpty) ...[if (note.title.isNotEmpty) const SizedBox(height: 4),
+                      LayoutBuilder(
+                        builder: (ctx, constraints) {
+                          const maxLines = 3;
+                          final tp = TextPainter(
+                            text:
+                                TextSpan(text: note.content, style: contentStyle),
+                            maxLines: maxLines,
+                            textDirection: TextDirection.ltr,
+                          )..layout(maxWidth: constraints.maxWidth);
+                          final isOverflow = tp.didExceedMaxLines;
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                note.content,
+                                maxLines: maxLines,
+                                overflow: TextOverflow.ellipsis,
+                                style: contentStyle,
+                              ),
+                              if (isOverflow) ...[const SizedBox(height: 2),
+                                Text(
+                                  'Read more',
+                                  style: Theme.of(ctx).textTheme.labelSmall
+                                      ?.copyWith(
+                                    color: scheme.primary,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ],
+                          );
+                        },
                       ),
                     ],
                     const SizedBox(height: 6),

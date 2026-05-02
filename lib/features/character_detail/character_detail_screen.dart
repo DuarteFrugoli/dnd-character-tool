@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/datasources/srd/srd_data_source.dart';
@@ -1613,13 +1614,13 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
     for (final cls in _classOrder) {
       final features = _allFeatures![cls] ?? [];
       if (features.isEmpty) continue;
-      slivers.add(SliverToBoxAdapter(
-        child: _GroupHeader(label: cls),
-      ));
-      slivers.add(SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (_, i) => buildTile(features[i], cls),
-          childCount: features.length,
+      slivers.add(SliverStickyHeader(
+        header: _GroupHeader(label: cls),
+        sliver: SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (_, i) => buildTile(features[i], cls),
+            childCount: features.length,
+          ),
         ),
       ));
     }
@@ -2894,13 +2895,13 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     for (final key in groupOrder) {
       final group = grouped[key];
       if (group == null || group.isEmpty) continue;
-      slivers.add(SliverToBoxAdapter(
-        child: _GroupHeader(label: groupLabels[key] ?? key),
-      ));
-      slivers.add(SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (_, i) => buildTile(group[i]),
-          childCount: group.length,
+      slivers.add(SliverStickyHeader(
+        header: _GroupHeader(label: groupLabels[key] ?? key),
+        sliver: SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (_, i) => buildTile(group[i]),
+            childCount: group.length,
+          ),
         ),
       ));
     }
@@ -3448,50 +3449,6 @@ class _GroupHeader extends StatelessWidget {
       ),
     );
   }
-}
-
-// ── Sticky Group Header (legacy — kept for reference, not currently used) ────
-
-class _StickyHeaderDelegate extends SliverPersistentHeaderDelegate {
-  const _StickyHeaderDelegate({required this.label});
-  final String label;
-
-  @override
-  double get minExtent => 36;
-  @override
-  double get maxExtent => 36;
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    final scheme = Theme.of(context).colorScheme;
-    return Container(
-      decoration: BoxDecoration(
-        color: scheme.surfaceContainerLow,
-        border: overlapsContent
-            ? Border(
-                bottom: BorderSide(
-                  color: scheme.outlineVariant,
-                  width: 0.5,
-                ),
-              )
-            : null,
-      ),
-      alignment: Alignment.centerLeft,
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-      child: Text(
-        label,
-        style: Theme.of(context).textTheme.labelMedium?.copyWith(
-              color: scheme.primary,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 0.5,
-            ),
-      ),
-    );
-  }
-
-  @override
-  bool shouldRebuild(_StickyHeaderDelegate old) => old.label != label;
 }
 
 // ── Section ───────────────────────────────────────────────────────────────────

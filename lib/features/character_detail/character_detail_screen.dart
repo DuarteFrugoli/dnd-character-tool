@@ -1405,22 +1405,30 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
       return ListView(children: filtered.map(buildTile).toList());
     }
 
-    // Sem busca: agrupa por categoria na ordem definida.
+    // Sem busca: agrupa por categoria com cabeçalhos fixos (sticky).
     final grouped = <String, List<T>>{for (final key in groupOrder) key: []};
     for (final item in filtered) {
       final g = getGroup(item);
       (grouped[g] ??= []).add(item);
     }
 
-    final rows = <Widget>[];
+    final slivers = <Widget>[];
     for (final key in groupOrder) {
       final group = grouped[key];
       if (group == null || group.isEmpty) continue;
-      rows.add(_GroupHeader(label: groupLabels[key] ?? key));
-      rows.addAll(group.map(buildTile));
+      slivers.add(SliverPersistentHeader(
+        pinned: true,
+        delegate: _StickyHeaderDelegate(label: groupLabels[key] ?? key),
+      ));
+      slivers.add(SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (_, i) => buildTile(group[i]),
+          childCount: group.length,
+        ),
+      ));
     }
 
-    return ListView(children: rows);
+    return CustomScrollView(slivers: slivers);
   }
 
   Widget _buildCustomTab() {
@@ -1914,26 +1922,48 @@ class _ItemTile extends ConsumerWidget {
 
 // ── Shared widgets ────────────────────────────────────────────────────────────
 
-// ── Group Header ──────────────────────────────────────────────────────────────
+// ── Sticky Group Header ──────────────────────────────────────────────────────
 
-class _GroupHeader extends StatelessWidget {
-  const _GroupHeader({required this.label});
+class _StickyHeaderDelegate extends SliverPersistentHeaderDelegate {
+  const _StickyHeaderDelegate({required this.label});
   final String label;
 
   @override
-  Widget build(BuildContext context) {
+  double get minExtent => 36;
+  @override
+  double get maxExtent => 36;
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     final scheme = Theme.of(context).colorScheme;
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+    return Container(
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        border: overlapsContent
+            ? Border(
+                bottom: BorderSide(
+                  color: scheme.outlineVariant,
+                  width: 0.5,
+                ),
+              )
+            : null,
+      ),
+      alignment: Alignment.centerLeft,
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
       child: Text(
         label,
         style: Theme.of(context).textTheme.labelMedium?.copyWith(
               color: scheme.primary,
               fontWeight: FontWeight.bold,
+              letterSpacing: 0.5,
             ),
       ),
     );
   }
+
+  @override
+  bool shouldRebuild(_StickyHeaderDelegate old) => old.label != label;
 }
 
 // ── Section ───────────────────────────────────────────────────────────────────

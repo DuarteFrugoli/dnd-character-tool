@@ -325,6 +325,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
       child: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
         children: [
+          // ── Identity ──────────────────────────────────────────────────────
+          _Section(
           title: 'Identity',
           child: isEditing
               ? Column(

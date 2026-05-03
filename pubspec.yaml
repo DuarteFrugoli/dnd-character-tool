@@ -69,3 +69,4 @@ flutter:
     - assets/data/srd/class_features.json
     - assets/data/srd/magic_items.json
     - assets/data/srd/race_traits.json
+    - assets/data/srd/subclass_features.json

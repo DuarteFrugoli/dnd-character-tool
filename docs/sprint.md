@@ -264,7 +264,6 @@ Objetivo: facilitar compartilhamento/backup dos personagens, abrir edição pós
 
 ## Fora do escopo desta sprint
 - Peso total / capacidade de carga (strength × 15)
-- Economia de loja / compra e venda
 - i18n
 
 ---

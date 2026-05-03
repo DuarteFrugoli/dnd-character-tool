@@ -465,7 +465,7 @@ class _ToolProficiencySection extends ConsumerWidget {
                       ),
                       const SizedBox(height: 4),
                       DropdownButtonFormField<String>(
-                        value: currentVal,
+                        initialValue: currentVal,
                         isExpanded: true,
                         decoration: const InputDecoration(
                           isDense: true,

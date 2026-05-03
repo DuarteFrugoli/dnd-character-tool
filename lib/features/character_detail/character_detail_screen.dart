@@ -941,16 +941,19 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
 
   Future<_FeaturesData> _load() async {
     final srd = SrdDataSource.instance;
+    final subclassName = widget.character.subclass ?? '';
     final results = await Future.wait([
       srd.getClassFeatures(widget.character.characterClass),
       srd.getRaces(),
       srd.getBackgrounds(),
       srd.getRaceTraits(),
+      srd.getSubclassFeatures(widget.character.characterClass, subclassName),
     ]);
     final classFeatures = results[0] as List<SrdClassFeature>;
     final races = results[1] as List<SrdRace>;
     final backgrounds = results[2] as List<SrdBackground>;
     final traitDescriptions = results[3] as Map<String, String>;
+    final subclassFeatures = results[4] as List<SrdClassFeature>;
 
     final race =
         races.where((r) => r.name == widget.character.race).firstOrNull;
@@ -970,6 +973,10 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
       traitDescriptions: traitDescriptions,
       backgroundFeatureName: bg?.feature.name,
       backgroundFeatureDescription: bg?.feature.description,
+      subclassName: subclassName,
+      subclassFeatures: subclassFeatures
+          .where((f) => f.level <= widget.character.level)
+          .toList(),
     );
   }
 
@@ -1019,6 +1026,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 className: widget.character.characterClass,
                 features: data.classFeatures,
               ),
+              if (data.subclassFeatures.isNotEmpty) ...[const SizedBox(height: 24), _SubclassFeaturesSection(subclassName: data.subclassName, features: data.subclassFeatures)],
               if (extraFeatures.isNotEmpty) ...[
                 const SizedBox(height: 24),
                 _ExtraFeaturesSection(
@@ -1046,6 +1054,8 @@ class _FeaturesData {
   final Map<String, String> traitDescriptions;
   final String? backgroundFeatureName;
   final String? backgroundFeatureDescription;
+  final String subclassName;
+  final List<SrdClassFeature> subclassFeatures;
 
   const _FeaturesData({
     required this.classFeatures,
@@ -1054,6 +1064,8 @@ class _FeaturesData {
     required this.traitDescriptions,
     this.backgroundFeatureName,
     this.backgroundFeatureDescription,
+    required this.subclassName,
+    required this.subclassFeatures,
   });
 }
 
@@ -1239,8 +1251,32 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                   icon: const Icon(Icons.delete_outline, size: 18),
                   color: scheme.error,
                   tooltip: 'Remover',
-                  onPressed: () =>
-                      notifier.removeExtraFeature(f.name, f.sourceClass),
+                  onPressed: () async {
+                    final confirm = await showDialog<bool>(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        title: const Text('Remove feature?'),
+                        content: Text('"${f.name}" will be removed.'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(ctx, false),
+                            child: const Text('Cancel'),
+                          ),
+                          FilledButton(
+                            onPressed: () => Navigator.pop(ctx, true),
+                            style: FilledButton.styleFrom(
+                              backgroundColor: scheme.error,
+                              foregroundColor: scheme.onError,
+                            ),
+                            child: const Text('Remove'),
+                          ),
+                        ],
+                      ),
+                    );
+                    if (confirm == true) {
+                      notifier.removeExtraFeature(f.name, f.sourceClass);
+                    }
+                  },
                 ),
                 children: [
                   Padding(
@@ -1376,6 +1412,85 @@ class _ClassFeaturesSection extends StatelessWidget {
                     ),
                   ],
                 ],
+              ),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: Text(
+                    f.description,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }),
+      ],
+    );
+  }
+}
+
+// ── Subclass Features Section ─────────────────────────────────────────────────
+
+class _SubclassFeaturesSection extends StatelessWidget {
+  const _SubclassFeaturesSection({
+    required this.subclassName,
+    required this.features,
+  });
+
+  final String subclassName;
+  final List<SrdClassFeature> features;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Subclass Features — $subclassName',
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        ...features.map((f) {
+          final typeColor =
+              f.type == 'active' ? scheme.primary : scheme.outline;
+          return Card(
+            margin: const EdgeInsets.only(bottom: 10),
+            child: ExpansionTile(
+              title: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      f.name,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: typeColor.withAlpha(30),
+                      border: Border.all(color: typeColor.withAlpha(100)),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      f.type == 'active' ? 'Active' : 'Passive',
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: typeColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+              subtitle: Text(
+                'Nível ${f.level}',
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               children: [
                 Padding(
@@ -1546,7 +1661,14 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
           ),
         ),
         trailing: alreadyAdded
-            ? Icon(Icons.check_circle, color: scheme.primary, size: 20)
+            ? SizedBox(
+                width: 48,
+                height: 48,
+                child: Center(
+                  child: Icon(Icons.check_circle,
+                      color: scheme.primary, size: 24),
+                ),
+              )
             : IconButton(
                 icon: const Icon(Icons.add_circle_outline),
                 color: scheme.primary,

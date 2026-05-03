@@ -1511,6 +1511,8 @@ class _SubclassFeaturesSection extends StatelessWidget {
 
 // ── Add Feature Sheet ─────────────────────────────────────────────────────────
 
+enum _FeatureCategory { classe, subclasse, racial, custom }
+
 class _AddFeatureSheet extends ConsumerStatefulWidget {
   const _AddFeatureSheet({required this.characterId});
   final String characterId;
@@ -1521,7 +1523,16 @@ class _AddFeatureSheet extends ConsumerStatefulWidget {
 
 class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
   final _search = TextEditingController();
-  Map<String, List<SrdClassFeature>>? _allFeatures;
+  final _customNameCtrl = TextEditingController();
+  final _customDescCtrl = TextEditingController();
+  bool _customTypeActive = false;
+
+  _FeatureCategory _category = _FeatureCategory.classe;
+
+  Map<String, List<SrdClassFeature>>? _allClassFeatures;
+  Map<String, Map<String, List<SrdClassFeature>>>? _allSubclassFeatures;
+  List<SrdRace>? _races;
+  Map<String, String>? _raceTraits;
   String? _loadError;
 
   static const _classOrder = [
@@ -1539,21 +1550,46 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
   @override
   void dispose() {
     _search.dispose();
+    _customNameCtrl.dispose();
+    _customDescCtrl.dispose();
     super.dispose();
   }
 
   Future<void> _loadData() async {
     try {
       final srd = ref.read(srdDataSourceProvider);
-      final map = <String, List<SrdClassFeature>>{};
-      await Future.wait(_classOrder.map((cls) async {
-        map[cls] = await srd.getClassFeatures(cls);
-      }));
-      if (mounted) setState(() => _allFeatures = map);
+      final results = await Future.wait([
+        Future(() async {
+          final map = <String, List<SrdClassFeature>>{};
+          await Future.wait(_classOrder.map((cls) async {
+            map[cls] = await srd.getClassFeatures(cls);
+          }));
+          return map;
+        }),
+        srd.getAllSubclassFeatures(),
+        srd.getRaces(),
+        srd.getRaceTraits(),
+      ]);
+      if (mounted) {
+        setState(() {
+          _allClassFeatures =
+              results[0] as Map<String, List<SrdClassFeature>>;
+          _allSubclassFeatures =
+              results[1] as Map<String, Map<String, List<SrdClassFeature>>>;
+          _races = results[2] as List<SrdRace>;
+          _raceTraits = results[3] as Map<String, String>;
+        });
+      }
     } catch (e) {
       if (mounted) setState(() => _loadError = e.toString());
     }
   }
+
+  bool get _isLoaded =>
+      _allClassFeatures != null &&
+      _allSubclassFeatures != null &&
+      _races != null &&
+      _raceTraits != null;
 
   @override
   Widget build(BuildContext context) {
@@ -1562,11 +1598,9 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
         ref.read(characterDetailProvider(widget.characterId).notifier);
     final character =
         ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
-    final existingNames = {
+    final existingKeys = {
       ...?character?.extraFeatures.map((f) => '${f.sourceClass}:${f.name}'),
     };
-
-    final q = _search.text.toLowerCase();
 
     return DraggableScrollableSheet(
       initialChildSize: 0.87,
@@ -1587,6 +1621,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
               ),
             ),
           ),
+          // Title row
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
@@ -1601,40 +1636,69 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-            child: TextField(
-              controller: _search,
-              decoration: InputDecoration(
-                hintText: 'Search features...',
-                prefixIcon: const Icon(Icons.search),
-                suffixIcon: _search.text.isNotEmpty
-                    ? IconButton(
-                        icon: const Icon(Icons.clear),
-                        onPressed: () => _search.clear(),
-                      )
-                    : null,
-                border: const OutlineInputBorder(),
-                isDense: true,
-                contentPadding: const EdgeInsets.symmetric(vertical: 8),
-              ),
+          // Category chips
+          SizedBox(
+            height: 40,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              children: _FeatureCategory.values.map((cat) {
+                final labels = {
+                  _FeatureCategory.classe: 'Classe',
+                  _FeatureCategory.subclasse: 'Subclasse',
+                  _FeatureCategory.racial: 'Racial',
+                  _FeatureCategory.custom: 'Custom',
+                };
+                return Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: ChoiceChip(
+                    label: Text(labels[cat]!),
+                    selected: _category == cat,
+                    onSelected: (_) => setState(() {
+                      _category = cat;
+                      _search.clear();
+                    }),
+                  ),
+                );
+              }).toList(),
             ),
           ),
+          const SizedBox(height: 4),
+          // Search field (not shown for custom)
+          if (_category != _FeatureCategory.custom)
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              child: TextField(
+                controller: _search,
+                decoration: InputDecoration(
+                  hintText: 'Search...',
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: _search.text.isNotEmpty
+                      ? IconButton(
+                          icon: const Icon(Icons.clear),
+                          onPressed: () => _search.clear(),
+                        )
+                      : null,
+                  border: const OutlineInputBorder(),
+                  isDense: true,
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8),
+                ),
+              ),
+            ),
+          // Body
           Expanded(
             child: _loadError != null
                 ? Center(
-                    child: Text(
-                      'Erro: $_loadError',
-                      style: TextStyle(color: scheme.error),
-                    ),
-                  )
-                : _allFeatures == null
+                    child: Text('Erro: $_loadError',
+                        style: TextStyle(color: scheme.error)))
+                : !_isLoaded && _category != _FeatureCategory.custom
                     ? const Center(child: CircularProgressIndicator())
-                    : _buildList(
-                        q: q,
-                        existingNames: existingNames,
+                    : _buildBody(
+                        existingKeys: existingKeys,
                         notifier: notifier,
                         scheme: scheme,
+                        scrollCtrl: scrollCtrl,
                       ),
           ),
         ],
@@ -1642,73 +1706,102 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
     );
   }
 
-  Widget _buildList({
-    required String q,
-    required Set<String> existingNames,
+  Widget _buildBody({
+    required Set<String> existingKeys,
     required CharacterDetailNotifier notifier,
     required ColorScheme scheme,
+    required ScrollController scrollCtrl,
   }) {
-    Widget buildTile(SrdClassFeature f, String className) {
-      final key = '$className:${f.name}';
-      final alreadyAdded = existingNames.contains(key);
-      return ListTile(
-        title: Text(f.name, style: const TextStyle(fontSize: 14)),
-        subtitle: Text(
-          'Nível ${f.level} · ${f.type}',
-          style: TextStyle(
-            fontSize: 12,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-        ),
-        trailing: alreadyAdded
-            ? SizedBox(
-                width: 48,
-                height: 48,
-                child: Center(
-                  child: Icon(Icons.check_circle,
-                      color: scheme.primary, size: 24),
-                ),
-              )
-            : IconButton(
-                icon: const Icon(Icons.add_circle_outline),
-                color: scheme.primary,
-                onPressed: () async {
-                  await notifier.addExtraFeature(f, className);
-                  if (mounted) setState(() {});
-                },
-              ),
-        onTap: () {
-          // Mostra descrição em snackbar
-          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(f.name,
-                      style: const TextStyle(fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 4),
-                  Text(
-                    f.description,
-                    maxLines: 4,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-              duration: const Duration(seconds: 5),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
-      );
+    switch (_category) {
+      case _FeatureCategory.classe:
+        return _buildClassList(existingKeys, notifier, scheme);
+      case _FeatureCategory.subclasse:
+        return _buildSubclassList(existingKeys, notifier, scheme);
+      case _FeatureCategory.racial:
+        return _buildRacialList(existingKeys, notifier, scheme);
+      case _FeatureCategory.custom:
+        return _buildCustomForm(notifier, scheme, scrollCtrl);
     }
+  }
+
+  // ── Shared tile builder ───────────────────────────────────────────────────
+
+  Widget _buildTile({
+    required SrdClassFeature feature,
+    required String sourceLabel,
+    required String sourceKey,
+    required Set<String> existingKeys,
+    required CharacterDetailNotifier notifier,
+    required ColorScheme scheme,
+    String? subtitle,
+  }) {
+    final key = '$sourceKey:${feature.name}';
+    final alreadyAdded = existingKeys.contains(key);
+    return ListTile(
+      title: Text(feature.name, style: const TextStyle(fontSize: 14)),
+      subtitle: Text(
+        subtitle ?? 'Nível ${feature.level} · ${feature.type}',
+        style: TextStyle(
+          fontSize: 12,
+          color: Theme.of(context).colorScheme.onSurfaceVariant,
+        ),
+      ),
+      trailing: alreadyAdded
+          ? SizedBox(
+              width: 48,
+              height: 48,
+              child: Center(
+                child:
+                    Icon(Icons.check_circle, color: scheme.primary, size: 24),
+              ),
+            )
+          : IconButton(
+              icon: const Icon(Icons.add_circle_outline),
+              color: scheme.primary,
+              onPressed: () async {
+                await notifier.addExtraFeature(feature, sourceKey);
+                if (mounted) setState(() {});
+              },
+            ),
+      onTap: () {
+        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(feature.name,
+                    style: const TextStyle(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 4),
+                Text(
+                  feature.description,
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+            duration: const Duration(seconds: 5),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      },
+    );
+  }
+
+  // ── Classe tab ────────────────────────────────────────────────────────────
+
+  Widget _buildClassList(
+    Set<String> existingKeys,
+    CharacterDetailNotifier notifier,
+    ColorScheme scheme,
+  ) {
+    final q = _search.text.toLowerCase();
 
     if (q.isNotEmpty) {
-      // Busca plana: todas as classes
       final results = <(String, SrdClassFeature)>[];
       for (final cls in _classOrder) {
-        for (final f in _allFeatures![cls] ?? <SrdClassFeature>[]) {
+        for (final f in _allClassFeatures![cls] ?? <SrdClassFeature>[]) {
           if (f.name.toLowerCase().contains(q) ||
               f.description.toLowerCase().contains(q)) {
             results.add((cls, f));
@@ -1716,31 +1809,38 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
         }
       }
       if (results.isEmpty) {
-        return Center(
-          child: Text(
-            'Nenhuma feature encontrada para "$q"',
-            style:
-                TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
-          ),
-        );
+        return _emptySearch(q);
       }
       return ListView(
         children: results
-            .map((r) => buildTile(r.$2, r.$1))
+            .map((r) => _buildTile(
+                  feature: r.$2,
+                  sourceLabel: r.$1,
+                  sourceKey: r.$1,
+                  existingKeys: existingKeys,
+                  notifier: notifier,
+                  scheme: scheme,
+                ))
             .toList(),
       );
     }
 
-    // Lista agrupada por classe com sticky headers
     final slivers = <Widget>[];
     for (final cls in _classOrder) {
-      final features = _allFeatures![cls] ?? [];
+      final features = _allClassFeatures![cls] ?? [];
       if (features.isEmpty) continue;
       slivers.add(SliverStickyHeader(
         header: _GroupHeader(label: cls),
         sliver: SliverList(
           delegate: SliverChildBuilderDelegate(
-            (_, i) => buildTile(features[i], cls),
+            (_, i) => _buildTile(
+              feature: features[i],
+              sourceLabel: cls,
+              sourceKey: cls,
+              existingKeys: existingKeys,
+              notifier: notifier,
+              scheme: scheme,
+            ),
             childCount: features.length,
           ),
         ),
@@ -1748,7 +1848,254 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
     }
     return CustomScrollView(slivers: slivers);
   }
+
+  // ── Subclasse tab ─────────────────────────────────────────────────────────
+
+  Widget _buildSubclassList(
+    Set<String> existingKeys,
+    CharacterDetailNotifier notifier,
+    ColorScheme scheme,
+  ) {
+    final q = _search.text.toLowerCase();
+    final allSub = _allSubclassFeatures!;
+
+    if (q.isNotEmpty) {
+      final results = <(String, SrdClassFeature)>[];
+      for (final cls in _classOrder) {
+        final subMap = allSub[cls] ?? {};
+        for (final subName in subMap.keys) {
+          for (final f in subMap[subName]!) {
+            if (f.name.toLowerCase().contains(q) ||
+                f.description.toLowerCase().contains(q) ||
+                subName.toLowerCase().contains(q)) {
+              results.add((subName, f));
+            }
+          }
+        }
+      }
+      if (results.isEmpty) return _emptySearch(q);
+      return ListView(
+        children: results
+            .map((r) => _buildTile(
+                  feature: r.$2,
+                  sourceLabel: r.$1,
+                  sourceKey: r.$1,
+                  existingKeys: existingKeys,
+                  notifier: notifier,
+                  scheme: scheme,
+                ))
+            .toList(),
+      );
+    }
+
+    final slivers = <Widget>[];
+    for (final cls in _classOrder) {
+      final subMap = allSub[cls];
+      if (subMap == null || subMap.isEmpty) continue;
+      for (final subName in subMap.keys) {
+        final features = subMap[subName]!;
+        if (features.isEmpty) continue;
+        slivers.add(SliverStickyHeader(
+          header: _GroupHeader(label: '$cls — $subName'),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (_, i) => _buildTile(
+                feature: features[i],
+                sourceLabel: subName,
+                sourceKey: subName,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+              ),
+              childCount: features.length,
+            ),
+          ),
+        ));
+      }
+    }
+    return CustomScrollView(slivers: slivers);
+  }
+
+  // ── Racial tab ────────────────────────────────────────────────────────────
+
+  Widget _buildRacialList(
+    Set<String> existingKeys,
+    CharacterDetailNotifier notifier,
+    ColorScheme scheme,
+  ) {
+    final q = _search.text.toLowerCase();
+    final traitMap = _raceTraits!;
+
+    SrdClassFeature traitToFeature(String traitName) => SrdClassFeature(
+          name: traitName,
+          level: 1,
+          type: 'passive',
+          description: traitMap[traitName] ?? '',
+        );
+
+    if (q.isNotEmpty) {
+      final results = <(String, SrdClassFeature)>[];
+      for (final race in _races!) {
+        for (final t in race.traits) {
+          final f = traitToFeature(t);
+          if (t.toLowerCase().contains(q) ||
+              f.description.toLowerCase().contains(q)) {
+            results.add((race.name, f));
+          }
+        }
+        for (final sub in race.subraces) {
+          for (final t in sub.traits) {
+            final f = traitToFeature(t);
+            if (t.toLowerCase().contains(q) ||
+                f.description.toLowerCase().contains(q)) {
+              results.add((sub.name, f));
+            }
+          }
+        }
+      }
+      if (results.isEmpty) return _emptySearch(q);
+      return ListView(
+        children: results
+            .map((r) => _buildTile(
+                  feature: r.$2,
+                  sourceLabel: r.$1,
+                  sourceKey: r.$1,
+                  existingKeys: existingKeys,
+                  notifier: notifier,
+                  scheme: scheme,
+                  subtitle: r.$1,
+                ))
+            .toList(),
+      );
+    }
+
+    final slivers = <Widget>[];
+    for (final race in _races!) {
+      final allEntries = <(String sourceKey, SrdClassFeature)>[];
+      for (final t in race.traits) {
+        allEntries.add((race.name, traitToFeature(t)));
+      }
+      for (final sub in race.subraces) {
+        for (final t in sub.traits) {
+          allEntries.add((sub.name, traitToFeature(t)));
+        }
+      }
+      if (allEntries.isEmpty) continue;
+
+      slivers.add(SliverStickyHeader(
+        header: _GroupHeader(label: race.name),
+        sliver: SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (_, i) {
+              final (key, f) = allEntries[i];
+              return _buildTile(
+                feature: f,
+                sourceLabel: key,
+                sourceKey: key,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+                subtitle: key == race.name ? race.name : '${race.name} — $key',
+              );
+            },
+            childCount: allEntries.length,
+          ),
+        ),
+      ));
+    }
+    return CustomScrollView(slivers: slivers);
+  }
+
+  // ── Custom tab ────────────────────────────────────────────────────────────
+
+  Widget _buildCustomForm(
+    CharacterDetailNotifier notifier,
+    ColorScheme scheme,
+    ScrollController scrollCtrl,
+  ) {
+    return SingleChildScrollView(
+      controller: scrollCtrl,
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextField(
+            controller: _customNameCtrl,
+            decoration: const InputDecoration(
+              labelText: 'Nome',
+              border: OutlineInputBorder(),
+            ),
+            onChanged: (_) => setState(() {}),
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            controller: _customDescCtrl,
+            decoration: const InputDecoration(
+              labelText: 'Descrição (opcional)',
+              border: OutlineInputBorder(),
+            ),
+            maxLines: 4,
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              const Text('Tipo:'),
+              const SizedBox(width: 12),
+              ChoiceChip(
+                label: const Text('Passive'),
+                selected: !_customTypeActive,
+                onSelected: (_) => setState(() => _customTypeActive = false),
+              ),
+              const SizedBox(width: 8),
+              ChoiceChip(
+                label: const Text('Active'),
+                selected: _customTypeActive,
+                onSelected: (_) => setState(() => _customTypeActive = true),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          FilledButton.icon(
+            onPressed: _customNameCtrl.text.trim().isEmpty
+                ? null
+                : () async {
+                    final f = SrdClassFeature(
+                      name: _customNameCtrl.text.trim(),
+                      level: 1,
+                      type: _customTypeActive ? 'active' : 'passive',
+                      description: _customDescCtrl.text.trim(),
+                    );
+                    await notifier.addExtraFeature(f, 'Custom');
+                    _customNameCtrl.clear();
+                    _customDescCtrl.clear();
+                    if (mounted) {
+                      setState(() {});
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                              '${f.name} adicionada!'),
+                          behavior: SnackBarBehavior.floating,
+                        ),
+                      );
+                    }
+                  },
+            icon: const Icon(Icons.add),
+            label: const Text('Adicionar Feature'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _emptySearch(String q) => Center(
+        child: Text(
+          'Nenhuma feature encontrada para "$q"',
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.onSurfaceVariant),
+        ),
+      );
 }
+
 
 // ── Spells Tab ────────────────────────────────────────────────────────────────
 

@@ -161,10 +161,8 @@ class SrdDataSource {
     return _classFeatures![className] ?? [];
   }
 
-  Future<List<SrdClassFeature>> getSubclassFeatures(
-    String className,
-    String subclassName,
-  ) async {
+  Future<Map<String, Map<String, List<SrdClassFeature>>>>
+      getAllSubclassFeatures() async {
     if (_subclassFeatures == null) {
       final raw = await rootBundle.loadString(
         'assets/data/srd/subclass_features.json',
@@ -181,7 +179,15 @@ class SrdDataSource {
         (_subclassFeatures![cls] ??= {})[sub] = features;
       }
     }
-    return _subclassFeatures![className]?[subclassName] ?? [];
+    return _subclassFeatures!;
+  }
+
+  Future<List<SrdClassFeature>> getSubclassFeatures(
+    String className,
+    String subclassName,
+  ) async {
+    final all = await getAllSubclassFeatures();
+    return all[className]?[subclassName] ?? [];
   }
 
   Future<void> _loadEquipment() async {

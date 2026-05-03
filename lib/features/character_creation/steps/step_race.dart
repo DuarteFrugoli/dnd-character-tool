@@ -45,7 +45,15 @@ class _StepRaceState extends ConsumerState<StepRace> {
                   race: race,
                   isSelected: isSelected,
                   onTap: () {
-                    ref.read(characterDraftProvider.notifier).setRace(race);
+                    if (isSelected) {
+                      ref
+                          .read(characterDraftProvider.notifier)
+                          .clearRace();
+                    } else {
+                      ref
+                          .read(characterDraftProvider.notifier)
+                          .setRace(race);
+                    }
                   },
                 ),
                 if (isSelected && race.subraces.isNotEmpty)

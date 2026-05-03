@@ -56,9 +56,9 @@ class CharacterDraft {
   });
 
   CharacterDraft copyWith({
-    SrdClass? selectedClass,
+    Object? selectedClass = _sentinel,
     Object? selectedSubclass = _sentinel,
-    SrdRace? selectedRace,
+    Object? selectedRace = _sentinel,
     Object? selectedSubrace = _sentinel,
     SrdBackground? selectedBackground,
     List<String>? chosenSkills,
@@ -75,11 +75,15 @@ class CharacterDraft {
   }) {
     return CharacterDraft(
       id: id,
-      selectedClass: selectedClass ?? this.selectedClass,
+      selectedClass: selectedClass == _sentinel
+          ? this.selectedClass
+          : selectedClass as SrdClass?,
       selectedSubclass: selectedSubclass == _sentinel
           ? this.selectedSubclass
           : selectedSubclass as SrdSubclass?,
-      selectedRace: selectedRace ?? this.selectedRace,
+      selectedRace: selectedRace == _sentinel
+          ? this.selectedRace
+          : selectedRace as SrdRace?,
       selectedSubrace: selectedSubrace == _sentinel
           ? this.selectedSubrace
           : selectedSubrace as SrdSubrace?,
@@ -225,11 +229,25 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         chosenToolProficiencies: [],
       );
 
+  void clearClass() => state = state.copyWith(
+        selectedClass: null,
+        selectedSubclass: null,
+        chosenToolProficiencies: [],
+      );
+
   void setSubclass(SrdSubclass? s) =>
       state = state.copyWith(selectedSubclass: s);
 
   void setRace(SrdRace r) => state = state.copyWith(
         selectedRace: r,
+        selectedSubrace: null,
+        freePicksDistribution: {},
+        chosenLanguages: [],
+        chosenToolProficiencies: [],
+      );
+
+  void clearRace() => state = state.copyWith(
+        selectedRace: null,
         selectedSubrace: null,
         freePicksDistribution: {},
         chosenLanguages: [],

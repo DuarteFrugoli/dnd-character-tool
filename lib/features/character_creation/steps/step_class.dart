@@ -44,8 +44,17 @@ class _StepClassState extends ConsumerState<StepClass> {
                 _ClassCard(
                   cls: cls,
                   isSelected: isSelected,
-                  onTap: () =>
-                      ref.read(characterDraftProvider.notifier).setClass(cls),
+                  onTap: () {
+                    if (isSelected) {
+                      ref
+                          .read(characterDraftProvider.notifier)
+                          .clearClass();
+                    } else {
+                      ref
+                          .read(characterDraftProvider.notifier)
+                          .setClass(cls);
+                    }
+                  },
                 ),
                 if (isSelected && cls.subclasses.isNotEmpty)
                   _SubclassSelector(

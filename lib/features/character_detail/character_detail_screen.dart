@@ -2111,7 +2111,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         header: _GroupHeader(label: bg.name),
         sliver: SliverList(
           delegate: SliverChildBuilderDelegate(
-            (_, __) => _buildTile(
+            (_, _) => _buildTile(
               feature: f,
               sourceLabel: bg.name,
               sourceKey: bg.name,
@@ -4168,39 +4168,4 @@ class _AbilityCardEdit extends StatelessWidget {
   }
 }
 
-class _AbilityCard extends StatelessWidget {
-  const _AbilityCard(this.abbr, this.score);
-  final String abbr;
-  final int score;
 
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: scheme.outlineVariant),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            _mod(score),
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge
-                ?.copyWith(fontWeight: FontWeight.bold),
-          ),
-          Text('$score', style: Theme.of(context).textTheme.bodySmall),
-          Text(
-            abbr,
-            style: Theme.of(context)
-                .textTheme
-                .labelSmall
-                ?.copyWith(color: scheme.primary),
-          ),
-        ],
-      ),
-    );
-  }
-}

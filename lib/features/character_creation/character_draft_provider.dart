@@ -155,6 +155,41 @@ class CharacterDraft {
     return raceChoices + bgChoices;
   }
 
+  int get toolChoicesNeeded {
+    int count = 0;
+    bool isChoice(String tool) {
+      final lower = tool.toLowerCase();
+      return lower.contains('one type of') || lower.contains('of your choice');
+    }
+    // Race: Tool Proficiency trait -> one artisan's tool
+    if (selectedRace != null &&
+        selectedRace!.traits.contains('Tool Proficiency')) {
+      count += 1;
+    }
+    // Background tool choices
+    if (selectedBackground != null) {
+      for (final tool in selectedBackground!.toolProficiencies) {
+        if (isChoice(tool)) count++;
+      }
+    }
+    // Class tool choices
+    if (selectedClass != null) {
+      for (final tool in selectedClass!.toolProficiencies) {
+        if (isChoice(tool)) {
+          final lower = tool.toLowerCase();
+          final match =
+              RegExp(r'(\w+) musical instrument').firstMatch(lower);
+          final countWord = match?.group(1);
+          count += const {
+                'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+              }[countWord] ??
+              1;
+        }
+      }
+    }
+    return count;
+  }
+
   // Verifica se o rascunho tem o mínimo para ser salvo
   bool get isComplete {
     if (selectedClass == null || selectedRace == null ||

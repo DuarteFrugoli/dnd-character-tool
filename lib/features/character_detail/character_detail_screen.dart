@@ -1511,8 +1511,6 @@ class _SubclassFeaturesSection extends StatelessWidget {
 
 // ── Add Feature Sheet ─────────────────────────────────────────────────────────
 
-enum _FeatureCategory { classe, subclasse, racial, custom }
-
 class _AddFeatureSheet extends ConsumerStatefulWidget {
   const _AddFeatureSheet({required this.characterId});
   final String characterId;
@@ -1521,18 +1519,24 @@ class _AddFeatureSheet extends ConsumerStatefulWidget {
   ConsumerState<_AddFeatureSheet> createState() => _AddFeatureSheetState();
 }
 
-class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
+class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
+    with SingleTickerProviderStateMixin {
   final _search = TextEditingController();
   final _customNameCtrl = TextEditingController();
   final _customDescCtrl = TextEditingController();
   bool _customTypeActive = false;
 
-  _FeatureCategory _category = _FeatureCategory.classe;
+  late final TabController _tabs;
+
+  static const _tabLabels = [
+    'Classe', 'Subclasse', 'Racial', 'Background', 'Custom',
+  ];
 
   Map<String, List<SrdClassFeature>>? _allClassFeatures;
   Map<String, Map<String, List<SrdClassFeature>>>? _allSubclassFeatures;
   List<SrdRace>? _races;
   Map<String, String>? _raceTraits;
+  List<SrdBackground>? _backgrounds;
   String? _loadError;
 
   static const _classOrder = [
@@ -1543,12 +1547,20 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
   @override
   void initState() {
     super.initState();
+    _tabs = TabController(length: _tabLabels.length, vsync: this);
+    _tabs.addListener(() {
+      if (!_tabs.indexIsChanging) {
+        _search.clear();
+        setState(() {});
+      }
+    });
     _search.addListener(() => setState(() {}));
     _loadData();
   }
 
   @override
   void dispose() {
+    _tabs.dispose();
     _search.dispose();
     _customNameCtrl.dispose();
     _customDescCtrl.dispose();
@@ -1569,6 +1581,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
         srd.getAllSubclassFeatures(),
         srd.getRaces(),
         srd.getRaceTraits(),
+        srd.getBackgrounds(),
       ]);
       if (mounted) {
         setState(() {
@@ -1578,18 +1591,13 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
               results[1] as Map<String, Map<String, List<SrdClassFeature>>>;
           _races = results[2] as List<SrdRace>;
           _raceTraits = results[3] as Map<String, String>;
+          _backgrounds = results[4] as List<SrdBackground>;
         });
       }
     } catch (e) {
       if (mounted) setState(() => _loadError = e.toString());
     }
   }
-
-  bool get _isLoaded =>
-      _allClassFeatures != null &&
-      _allSubclassFeatures != null &&
-      _races != null &&
-      _raceTraits != null;
 
   @override
   Widget build(BuildContext context) {
@@ -1636,36 +1644,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
               ],
             ),
           ),
-          // Category chips
-          SizedBox(
-            height: 40,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              children: _FeatureCategory.values.map((cat) {
-                final labels = {
-                  _FeatureCategory.classe: 'Classe',
-                  _FeatureCategory.subclasse: 'Subclasse',
-                  _FeatureCategory.racial: 'Racial',
-                  _FeatureCategory.custom: 'Custom',
-                };
-                return Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: ChoiceChip(
-                    label: Text(labels[cat]!),
-                    selected: _category == cat,
-                    onSelected: (_) => setState(() {
-                      _category = cat;
-                      _search.clear();
-                    }),
-                  ),
-                );
-              }).toList(),
-            ),
-          ),
-          const SizedBox(height: 4),
-          // Search field (not shown for custom)
-          if (_category != _FeatureCategory.custom)
+          // Search field (hidden on Custom tab, index 4)
+          if (_tabs.index != 4)
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -1686,42 +1666,33 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
                 ),
               ),
             ),
+          // TabBar
+          TabBar(
+            controller: _tabs,
+            isScrollable: true,
+            tabAlignment: TabAlignment.start,
+            tabs: _tabLabels.map((l) => Tab(text: l)).toList(),
+          ),
           // Body
           Expanded(
             child: _loadError != null
                 ? Center(
                     child: Text('Erro: $_loadError',
                         style: TextStyle(color: scheme.error)))
-                : !_isLoaded && _category != _FeatureCategory.custom
-                    ? const Center(child: CircularProgressIndicator())
-                    : _buildBody(
-                        existingKeys: existingKeys,
-                        notifier: notifier,
-                        scheme: scheme,
-                        scrollCtrl: scrollCtrl,
-                      ),
+                : TabBarView(
+                    controller: _tabs,
+                    children: [
+                      _buildClassList(existingKeys, notifier, scheme),
+                      _buildSubclassList(existingKeys, notifier, scheme),
+                      _buildRacialList(existingKeys, notifier, scheme),
+                      _buildBackgroundList(existingKeys, notifier, scheme),
+                      _buildCustomForm(notifier, scheme, scrollCtrl),
+                    ],
+                  ),
           ),
         ],
       ),
     );
-  }
-
-  Widget _buildBody({
-    required Set<String> existingKeys,
-    required CharacterDetailNotifier notifier,
-    required ColorScheme scheme,
-    required ScrollController scrollCtrl,
-  }) {
-    switch (_category) {
-      case _FeatureCategory.classe:
-        return _buildClassList(existingKeys, notifier, scheme);
-      case _FeatureCategory.subclasse:
-        return _buildSubclassList(existingKeys, notifier, scheme);
-      case _FeatureCategory.racial:
-        return _buildRacialList(existingKeys, notifier, scheme);
-      case _FeatureCategory.custom:
-        return _buildCustomForm(notifier, scheme, scrollCtrl);
-    }
   }
 
   // ── Shared tile builder ───────────────────────────────────────────────────
@@ -1796,6 +1767,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
     CharacterDetailNotifier notifier,
     ColorScheme scheme,
   ) {
+    if (_allClassFeatures == null) return const Center(child: CircularProgressIndicator());
     final q = _search.text.toLowerCase();
 
     if (q.isNotEmpty) {
@@ -1856,6 +1828,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
     CharacterDetailNotifier notifier,
     ColorScheme scheme,
   ) {
+    if (_allSubclassFeatures == null) return const Center(child: CircularProgressIndicator());
     final q = _search.text.toLowerCase();
     final allSub = _allSubclassFeatures!;
 
@@ -1923,6 +1896,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
     CharacterDetailNotifier notifier,
     ColorScheme scheme,
   ) {
+    if (_races == null || _raceTraits == null) return const Center(child: CircularProgressIndicator());
     final q = _search.text.toLowerCase();
     final traitMap = _raceTraits!;
 
@@ -2085,6 +2059,73 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet> {
         ],
       ),
     );
+  }
+
+  // ── Background tab ───────────────────────────────────────────────────────
+
+  Widget _buildBackgroundList(
+    Set<String> existingKeys,
+    CharacterDetailNotifier notifier,
+    ColorScheme scheme,
+  ) {
+    if (_backgrounds == null) return const Center(child: CircularProgressIndicator());
+    final q = _search.text.toLowerCase();
+
+    SrdClassFeature bgToFeature(SrdBackground bg) => SrdClassFeature(
+          name: bg.feature.name,
+          level: 1,
+          type: 'passive',
+          description: bg.feature.description,
+        );
+
+    if (q.isNotEmpty) {
+      final results = <(String, SrdClassFeature)>[];
+      for (final bg in _backgrounds!) {
+        final f = bgToFeature(bg);
+        if (bg.name.toLowerCase().contains(q) ||
+            f.name.toLowerCase().contains(q) ||
+            f.description.toLowerCase().contains(q)) {
+          results.add((bg.name, f));
+        }
+      }
+      if (results.isEmpty) return _emptySearch(q);
+      return ListView(
+        children: results
+            .map((r) => _buildTile(
+                  feature: r.$2,
+                  sourceLabel: r.$1,
+                  sourceKey: r.$1,
+                  existingKeys: existingKeys,
+                  notifier: notifier,
+                  scheme: scheme,
+                  subtitle: r.$1,
+                ))
+            .toList(),
+      );
+    }
+
+    final slivers = <Widget>[];
+    for (final bg in _backgrounds!) {
+      final f = bgToFeature(bg);
+      slivers.add(SliverStickyHeader(
+        header: _GroupHeader(label: bg.name),
+        sliver: SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (_, __) => _buildTile(
+              feature: f,
+              sourceLabel: bg.name,
+              sourceKey: bg.name,
+              existingKeys: existingKeys,
+              notifier: notifier,
+              scheme: scheme,
+              subtitle: bg.name,
+            ),
+            childCount: 1,
+          ),
+        ),
+      ));
+    }
+    return CustomScrollView(slivers: slivers);
   }
 
   Widget _emptySearch(String q) => Center(

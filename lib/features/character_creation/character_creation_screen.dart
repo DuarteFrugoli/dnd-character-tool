@@ -82,8 +82,14 @@ class _CharacterCreationScreenState
       3 => _skillsComplete(draft),
       4 => draft.baseAttributes.length == 6,
       5 => true, // nome é opcional
-      6 => draft.languageChoicesNeeded == 0 ||
-          draft.chosenLanguages.length >= draft.languageChoicesNeeded,
+      6 => (draft.languageChoicesNeeded == 0 ||
+              draft.chosenLanguages.length >= draft.languageChoicesNeeded) &&
+          (draft.toolChoicesNeeded == 0 ||
+              (draft.chosenToolProficiencies.length >=
+                      draft.toolChoicesNeeded &&
+                  !draft.chosenToolProficiencies
+                      .take(draft.toolChoicesNeeded)
+                      .any((s) => s.isEmpty))),
       _ => false,
     };
   }

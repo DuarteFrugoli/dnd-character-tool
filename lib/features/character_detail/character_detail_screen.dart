@@ -1,3 +1,15 @@
+// TODO(refactor): Este arquivo tem ~5400 linhas e contém todas as abas do
+// character detail (Stats, Skills, Features, Spells, Inventory, Notes) em um
+// único arquivo. Deve ser dividido futuramente em:
+//   features/character_detail/tabs/stats_tab.dart
+//   features/character_detail/tabs/skills_tab.dart
+//   features/character_detail/tabs/features_tab.dart
+//   features/character_detail/tabs/spells_tab.dart
+//   features/character_detail/tabs/inventory_tab.dart
+//   features/character_detail/tabs/notes_tab.dart
+//   features/character_detail/widgets/detail_widgets.dart  (shared widgets)
+// Usar `part`/`part of` para manter os prefixos `_` sem expor as classes.
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -2969,6 +2981,13 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                             builder: (_) => SpellDetailSheet(
                               spell: srd,
                               isKnown: true,
+                              onRemove: spell.isAlwaysPrepared
+                                  ? null
+                                  : () => ref
+                                      .read(characterDetailProvider(
+                                              widget.characterId)
+                                          .notifier)
+                                      .removeSpell(spell.name),
                             ),
                           );
                         },
@@ -3015,6 +3034,10 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                           level: srdSpell.level,
                         ),
                       ),
+                  onRemoveSpell: (name) => ref
+                      .read(characterDetailProvider(widget.characterId)
+                          .notifier)
+                      .removeSpell(name),
                 ),
               ),
               tooltip: 'Add spell',

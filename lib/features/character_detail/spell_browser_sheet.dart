@@ -17,6 +17,7 @@ class SpellBrowserSheet extends StatefulWidget {
     required this.maxSpellLevel,
     required this.knownSpells,
     required this.onAddSpell,
+    this.onRemoveSpell,
   });
 
   final String characterClass;
@@ -30,6 +31,9 @@ class SpellBrowserSheet extends StatefulWidget {
   /// Called when the user adds a spell. The parent is responsible for
   /// persisting the change via the provider.
   final void Function(SrdSpell) onAddSpell;
+
+  /// Called when the user removes a spell from within the browser.
+  final void Function(String spellName)? onRemoveSpell;
 
   @override
   State<SpellBrowserSheet> createState() => _SpellBrowserSheetState();
@@ -161,6 +165,11 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
     setState(() => _knownNames.add(spell.name.toLowerCase()));
   }
 
+  void _removeSpell(SrdSpell spell) {
+    widget.onRemoveSpell?.call(spell.name);
+    setState(() => _knownNames.remove(spell.name.toLowerCase()));
+  }
+
   void _openDetail(SrdSpell spell) {
     final isKnown = _knownNames.contains(spell.name.toLowerCase());
     showModalBottomSheet<void>(
@@ -176,6 +185,9 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                 _addSpell(spell);
                 Navigator.pop(context);
               },
+        onRemove: (isKnown && widget.onRemoveSpell != null)
+            ? () => _removeSpell(spell)
+            : null,
       ),
     );
   }
@@ -769,6 +781,7 @@ class SpellDetailSheet extends StatelessWidget {
     required this.spell,
     required this.isKnown,
     this.onAdd,
+    this.onRemove,
   });
 
   final SrdSpell spell;
@@ -776,6 +789,37 @@ class SpellDetailSheet extends StatelessWidget {
 
   /// Null when the spell is already on the character.
   final VoidCallback? onAdd;
+
+  /// When provided, a discrete "Remove from spell list" button is shown.
+  final VoidCallback? onRemove;
+
+  Future<void> _confirmRemove(BuildContext context) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Remove spell'),
+        content: Text('Remove "${spell.name}" from your spell list?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(
+              'Remove',
+              style: TextStyle(
+                  color: Theme.of(ctx).colorScheme.error),
+            ),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true && context.mounted) {
+      onRemove!();
+      Navigator.pop(context);
+    }
+  }
 
   static String _ordinal(int n) {
     if (n == 1) return '1st';
@@ -924,12 +968,16 @@ class SpellDetailSheet extends StatelessWidget {
               label: const Text('Add to character'),
               onPressed: onAdd,
             )
-          else
+          else ...[  
             OutlinedButton.icon(
               icon: const Icon(Icons.check),
-              label: const Text('Already in your spell list'),
-              onPressed: null,
+              label: Text(onRemove != null
+                  ? 'In your spell list — tap to remove'
+                  : 'Already in your spell list'),
+              onPressed:
+                  onRemove != null ? () => _confirmRemove(context) : null,
             ),
+          ],
         ],
       ),
     );

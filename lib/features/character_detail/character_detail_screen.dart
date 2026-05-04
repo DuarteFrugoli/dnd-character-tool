@@ -254,7 +254,9 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
                   _editMode = true;
                   _snapshot = character; // capture state before any edits
                 });
-                _tabs.animateTo(0);
+                // Se estiver numa aba sem suporte a edição (Spells/Inventory/Notes),
+                // volta para Features (última aba editável). Caso contrário, fica onde está.
+                if (_tabs.index > 2) _tabs.animateTo(2);
                 return;
               }
               // Flush any focused text field before showing dialog

@@ -2959,6 +2959,19 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                             .read(characterDetailProvider(widget.characterId)
                                 .notifier)
                             .togglePrepared(spell.name),
+                        onTap: () {
+                          final srd = _spellIndex![spell.name.toLowerCase()];
+                          if (srd == null) return;
+                          showModalBottomSheet<void>(
+                            context: context,
+                            isScrollControlled: true,
+                            useSafeArea: true,
+                            builder: (_) => SpellDetailSheet(
+                              spell: srd,
+                              isKnown: true,
+                            ),
+                          );
+                        },
                         onRemove: spell.isAlwaysPrepared
                             ? null
                             : () => ref
@@ -3141,6 +3154,7 @@ class _SpellRow extends StatelessWidget {
     required this.srdSpell,
     required this.showPrepareToggle,
     required this.onTogglePrepared,
+    required this.onTap,
     this.onRemove,
   });
 
@@ -3148,6 +3162,7 @@ class _SpellRow extends StatelessWidget {
   final SrdSpell? srdSpell;
   final bool showPrepareToggle;
   final VoidCallback onTogglePrepared;
+  final VoidCallback onTap;
   final VoidCallback? onRemove;
 
   static Color _schoolColor(String school) {
@@ -3200,7 +3215,7 @@ class _SpellRow extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 4),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: () {}, // Phase B: open detail sheet
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           child: Row(

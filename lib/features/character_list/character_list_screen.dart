@@ -142,9 +142,11 @@ class _CharacterCard extends ConsumerWidget {
     Future<void> exportCharacter() async {
       final json =
           await ref.read(characterListProvider.notifier).exportCharacter(character);
-      // Generate token: base64url( gzip( utf8(json) ) ) — smaller than plain base64
-      final token = base64Url.encode(
-          GZipCodec().encode(utf8.encode(json)));
+      // Token: base64url(gzip(json)) — para copiar/colar
+      final gzipBytes = GZipCodec().encode(utf8.encode(json));
+      final token = base64Url.encode(gzipBytes);
+      // QR usa os bytes gzip diretamente (sem base64) — 25% menor
+      final qrData = String.fromCharCodes(gzipBytes);
       if (!context.mounted) return;
       await showDialog<void>(
         context: context,
@@ -152,6 +154,7 @@ class _CharacterCard extends ConsumerWidget {
           characterName: character.name,
           token: token,
           json: json,
+          qrData: qrData,
         ),
       );
     }
@@ -216,11 +219,13 @@ class _ExportDialog extends StatefulWidget {
     required this.characterName,
     required this.token,
     required this.json,
+    required this.qrData,
   });
 
   final String characterName;
   final String token;
   final String json;
+  final String qrData;
 
   @override
   State<_ExportDialog> createState() => _ExportDialogState();
@@ -286,20 +291,46 @@ class _ExportDialogState extends State<_ExportDialog> {
                   const SizedBox(height: 12),
                   Builder(builder: (context) {
                     final validation = QrValidator.validate(
-                      data: widget.token,
+                      data: widget.qrData,
                       version: QrVersions.auto,
                       errorCorrectionLevel: QrErrorCorrectLevel.L,
                     );
                     if (validation.isValid) {
+                      final qrWidget = Container(
+                        color: Colors.white,
+                        padding: const EdgeInsets.all(12),
+                        child: QrImageView(
+                          data: widget.qrData,
+                          version: QrVersions.auto,
+                          size: 200,
+                          errorCorrectionLevel: QrErrorCorrectLevel.L,
+                        ),
+                      );
                       return Center(
-                        child: Container(
-                          color: Colors.white,
-                          padding: const EdgeInsets.all(12),
-                          child: QrImageView(
-                            data: widget.token,
-                            version: QrVersions.auto,
-                            size: 200,
-                            errorCorrectionLevel: QrErrorCorrectLevel.L,
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => _QrFullscreenScreen(
+                                  characterName: widget.characterName,
+                                  qrData: widget.qrData),
+                            ),
+                          ),
+                          child: Stack(
+                            alignment: Alignment.bottomRight,
+                            children: [
+                              qrWidget,
+                              Container(
+                                margin: const EdgeInsets.all(4),
+                                padding: const EdgeInsets.all(4),
+                                decoration: BoxDecoration(
+                                  color: Colors.black54,
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: const Icon(Icons.fullscreen,
+                                    color: Colors.white, size: 16),
+                              ),
+                            ],
                           ),
                         ),
                       );
@@ -548,12 +579,60 @@ class _QrScannerScreenState extends State<_QrScannerScreen> {
         onDetect: (capture) {
           if (_scanned) return;
           final barcode = capture.barcodes.firstOrNull;
-          final value = barcode?.rawValue;
+          if (barcode == null) return;
+          // Prefer rawBytes (binary QR — gzip bytes) and re-encode as token
+          final rawBytes = barcode.rawBytes;
+          if (rawBytes != null && rawBytes.isNotEmpty) {
+            // Verify it decompresses before accepting
+            try {
+              GZipCodec().decode(rawBytes); // validate
+              _scanned = true;
+              Navigator.pop(context, base64Url.encode(rawBytes));
+              return;
+            } catch (_) {}
+          }
+          // Fallback: rawValue (old base64 token or plain JSON)
+          final value = barcode.rawValue;
           if (value != null && value.isNotEmpty) {
             _scanned = true;
             Navigator.pop(context, value);
           }
         },
+      ),
+    );
+  }
+}
+
+// ── QR Fullscreen Screen ──────────────────────────────────────────────────────
+
+class _QrFullscreenScreen extends StatelessWidget {
+  const _QrFullscreenScreen({
+    required this.characterName,
+    required this.qrData,
+  });
+
+  final String characterName;
+  final String qrData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(characterName),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: QrImageView(
+            data: qrData,
+            version: QrVersions.auto,
+            size: double.infinity,
+            errorCorrectionLevel: QrErrorCorrectLevel.L,
+          ),
+        ),
       ),
     );
   }

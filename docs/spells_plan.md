@@ -217,7 +217,7 @@ class KnownSpell {
 │  Conhecidas: 8/10                    │ ← só para classes "known"
 ├──────────────────────────────────────┤
 │ SPELL SLOTS                          │
-│  ○○○  ○○  ○  [Long Rest]             │ ← visual atual, mantido
+│  ○○○  ○○  ○                          │ ← visual atual, mantido
 ├──────────────────────────────────────┤
 │ CANTRIPS (3)                         │
 │  • Fire Bolt       Evoc  ⚡ 120ft    │

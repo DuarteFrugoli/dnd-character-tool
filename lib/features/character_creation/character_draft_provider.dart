@@ -67,22 +67,22 @@ Map<String, dynamic>? _propertiesForItem(String name) {
   // Shield
   if (lower.contains('shield')) return {'isShield': true, 'acBonus': 2};
 
-  // Armor table (baseAC, addDexModifier bool, maxDexBonus: null=unlimited)
-  const armorTable = <String, (int, bool, int?)>[
-    ('half plate', (15, true, 2)),
-    ('studded leather', (12, true, null)),
-    ('chain mail', (16, false, null)),
-    ('ring mail', (14, false, null)),
-    ('scale mail', (14, true, 2)),
-    ('chain shirt', (13, true, 2)),
-    ('plate', (18, false, null)),
-    ('splint', (17, false, null)),
-    ('breastplate', (14, true, 2)),
-    ('hide', (12, true, 2)),
-    ('leather', (11, true, null)),
-    ('padded', (11, true, null)),
+  // Armor table: (pattern, baseAC, addDexModifier, maxDexBonus or null=unlimited)
+  const armorTable = <(String, int, bool, int?)>[
+    ('half plate',      15, true,  2),
+    ('studded leather', 12, true,  null),
+    ('chain mail',      16, false, null),
+    ('ring mail',       14, false, null),
+    ('scale mail',      14, true,  2),
+    ('chain shirt',     13, true,  2),
+    ('plate',           18, false, null),
+    ('splint',          17, false, null),
+    ('breastplate',     14, true,  2),
+    ('hide',            12, true,  2),
+    ('leather',         11, true,  null),
+    ('padded',          11, true,  null),
   ];
-  for (final (pattern, (base, addDex, maxDex)) in armorTable) {
+  for (final (pattern, base, addDex, maxDex) in armorTable) {
     if (lower.contains(pattern)) {
       return {
         'baseAC': base,
@@ -501,8 +501,21 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     final startingEquipment = <EquipmentItem>[];
     int startingGp = 0;
 
+    // Load the SRD items lookup table for accurate type/category/properties.
+    // Falls back to keyword heuristic for unknown items.
+    final itemsDb = await ref.read(srdItemsProvider.future);
+
+    SrdItemData? _lookupItem(String name) {
+      final lower = name.toLowerCase();
+      // Try exact match first, then try without trailing 's' for plurals
+      return itemsDb[lower] ??
+          (lower.endsWith('s')
+              ? itemsDb[lower.substring(0, lower.length - 1)]
+              : null);
+    }
+
     void addItem(String raw) {
-      // Handle "N x Item" or "Item x N" patterns (e.g. "20 arrows", "4 javelins")
+      // Handle "N x Item" patterns (e.g. "20 arrows", "4 javelins")
       final match = RegExp(r'^(\d+)\s+(.+)$').firstMatch(raw.trim());
       final qty = match != null ? int.parse(match.group(1)!) : 1;
       final itemName = match != null ? match.group(2)! : raw.trim();
@@ -512,12 +525,14 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         startingGp += qty * int.parse(gpMatch.group(1)!);
         return;
       }
+
+      final data = _lookupItem(itemName);
       startingEquipment.add(EquipmentItem(
         name: itemName,
-        category: _categoryForItem(itemName),
-        itemType: _itemTypeForItem(itemName),
+        category: data?.category ?? _categoryForItem(itemName),
+        itemType: data?.asItemType ?? _itemTypeForItem(itemName),
         quantity: qty,
-        properties: _propertiesForItem(itemName),
+        properties: data?.properties ?? _propertiesForItem(itemName),
       ));
     }
 

@@ -23,6 +23,7 @@ class SrdDataSource {
   Map<String, List<SrdClassFeature>>? _classFeatures;
   Map<String, String>? _raceTraits;
   Map<String, Map<String, List<SrdClassFeature>>>? _subclassFeatures;
+  Map<String, SrdItemData>? _items;
 
   Future<List<SrdSkill>> getSkills() async {
     _skills ??= await _loadList(
@@ -133,6 +134,87 @@ class SrdDataSource {
     return _magicItems!;
   }
 
+  Future<Map<String, SrdItemData>> getItems() async {
+    if (_items == null) {
+      final raw =
+          await rootBundle.loadString('assets/data/srd/equipment.json');
+      final json = jsonDecode(raw) as Map<String, dynamic>;
+      final result = <String, SrdItemData>{};
+
+      // ── Weapons ──────────────────────────────────────────────────────
+      for (final entry in (json['weapons'] as List<dynamic>)) {
+        final w = entry as Map<String, dynamic>;
+        final rawName = (w['name'] as String).toLowerCase();
+        final category = w['category'] as String;
+        final props = <String, dynamic>{
+          'damage': w['damage'],
+          'damageType': w['damageType'],
+          if (w['properties'] != null) 'weaponProperties': w['properties'],
+          if (w['range'] != null) 'range': w['range'],
+          if (w['versatileDamage'] != null)
+            'versatileDamage': w['versatileDamage'],
+        };
+        final data =
+            SrdItemData(itemType: 'weapon', category: category, properties: props);
+        result[rawName] = data;
+        // Alias "Crossbow, X" → "x crossbow" to match startingEquipment strings
+        final alias = _crossbowAlias(rawName);
+        if (alias != null) result[alias] = data;
+      }
+
+      // ── Armor ────────────────────────────────────────────────────────
+      for (final entry in (json['armor'] as List<dynamic>)) {
+        final a = entry as Map<String, dynamic>;
+        final rawName = (a['name'] as String).toLowerCase();
+        final isShield = (a['type'] as String?) == 'shield';
+        final Map<String, dynamic> props;
+        if (isShield) {
+          props = {'isShield': true, 'acBonus': a['acBonus']};
+        } else {
+          final maxDex = a['maxDexBonus'];
+          props = {
+            'baseAC': a['baseAC'],
+            'addDexModifier': a['addDexModifier'],
+            if (maxDex != null && (maxDex as num).toInt() > 0)
+              'maxDexBonus': maxDex,
+            if (a['stealthDisadvantage'] == true) 'stealthDisadvantage': true,
+            if (a['strengthRequired'] != null)
+              'strengthRequirement': a['strengthRequired'],
+          };
+        }
+        final data =
+            SrdItemData(itemType: 'armor', category: 'armor', properties: props);
+        result[rawName] = data;
+        // Aliases: "leather" → "leather armor", "shield" → "wooden shield", etc.
+        for (final alias in _armorAliases(rawName)) {
+          result[alias] = data;
+        }
+      }
+
+      // ── Gear / Ammunition ────────────────────────────────────────────
+      for (final entry in (json['gear'] as List<dynamic>)) {
+        final g = entry as Map<String, dynamic>;
+        final rawName = (g['name'] as String).toLowerCase();
+        final category = g['category'] as String;
+        final itemType = category == 'ammunition' ? 'ammunition' : 'gear';
+        result[rawName] = SrdItemData(itemType: itemType, category: category);
+        // Alias stripped names for ammo bundles:
+        // "arrows (20)" → "arrows", "crossbow bolts (20)" → "bolts", etc.
+        final parenIdx = rawName.indexOf(' (');
+        if (parenIdx > 0) {
+          final stripped = rawName.substring(0, parenIdx);
+          result[stripped] = result[rawName]!;
+          // Also add the last word as a short alias ("bolts", "arrows", "needles")
+          final lastWord = stripped.split(' ').last;
+          result[lastWord] = result[rawName]!;
+        }
+      }
+
+      _items = result;
+    }
+    return _items!;
+  }
+
   Future<Map<String, String>> getRaceTraits() async {
     if (_raceTraits == null) {
       final raw = await rootBundle.loadString('assets/data/srd/race_traits.json');
@@ -229,5 +311,33 @@ class SrdDataSource {
     _classFeatures = null;
     _raceTraits = null;
     _subclassFeatures = null;
+    _items = null;
+  }
+}
+
+// ── Equipment indexing helpers ────────────────────────────────────────────────
+
+/// Maps "crossbow, x" name variants from equipment.json to the canonical
+/// starting-equipment strings used in classes.json (e.g. "light crossbow").
+String? _crossbowAlias(String lower) {
+  if (lower == 'crossbow, light') return 'light crossbow';
+  if (lower == 'crossbow, hand') return 'hand crossbow';
+  if (lower == 'crossbow, heavy') return 'heavy crossbow';
+  return null;
+}
+
+/// Returns extra index keys for armor names so that strings like
+/// "Leather armor" or "Wooden shield" hit the right entry.
+List<String> _armorAliases(String lower) {
+  switch (lower) {
+    case 'leather':      return ['leather armor'];
+    case 'studded leather': return ['studded leather armor'];
+    case 'hide':         return ['hide armor'];
+    case 'padded':       return ['padded armor'];
+    case 'half plate':   return ['half plate armor'];
+    case 'splint':       return ['splint armor'];
+    case 'plate':        return ['plate armor', 'plate mail'];
+    case 'shield':       return ['wooden shield'];
+    default:             return [];
   }
 }

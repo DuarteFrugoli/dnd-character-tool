@@ -8,6 +8,43 @@ import '../../models/equipment_item.dart';
 String _titleCase(String s) =>
     s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
 
+// ── Item lookup data ─────────────────────────────────────────────────────────
+
+/// Metadata for a single SRD item loaded from assets/data/srd/items.json.
+class SrdItemData {
+  final String itemType; // "weapon", "armor", "ammunition", "gear"
+  final String category;
+  final Map<String, dynamic>? properties;
+
+  const SrdItemData({
+    required this.itemType,
+    required this.category,
+    this.properties,
+  });
+
+  factory SrdItemData.fromJson(Map<String, dynamic> json) => SrdItemData(
+        itemType: json['itemType'] as String,
+        category: json['category'] as String,
+        properties: json['properties'] as Map<String, dynamic>?,
+      );
+
+  /// Converts the string [itemType] from JSON to the [ItemType] enum.
+  ItemType get asItemType {
+    switch (itemType) {
+      case 'weapon':
+        return ItemType.weapon;
+      case 'armor':
+        return ItemType.armor;
+      case 'ammunition':
+        return ItemType.ammunition;
+      case 'consumable':
+        return ItemType.consumable;
+      default:
+        return ItemType.gear;
+    }
+  }
+}
+
 class SrdSubclass {
   final String name;
   final String description;

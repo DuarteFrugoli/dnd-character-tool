@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
 import '../../data/datasources/srd/srd_data_source.dart';
+import 'spell_browser_sheet.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
@@ -2984,9 +2985,24 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
             ),
       floatingActionButton: isCaster
           ? FloatingActionButton(
-              onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                    content: Text('Spell browser — coming in Phase B')),
+              onPressed: () => showModalBottomSheet<void>(
+                context: context,
+                isScrollControlled: true,
+                useSafeArea: true,
+                builder: (_) => SpellBrowserSheet(
+                  characterClass: character.characterClass,
+                  maxSpellLevel: engine!.maxSpellLevel,
+                  knownSpells: character.spells,
+                  onAddSpell: (srdSpell) => ref
+                      .read(characterDetailProvider(widget.characterId)
+                          .notifier)
+                      .addSpell(
+                        KnownSpell(
+                          name: srdSpell.name,
+                          level: srdSpell.level,
+                        ),
+                      ),
+                ),
               ),
               tooltip: 'Add spell',
               child: const Icon(Icons.add),

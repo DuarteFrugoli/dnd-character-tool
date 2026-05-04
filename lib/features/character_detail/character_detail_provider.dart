@@ -100,6 +100,12 @@ class CharacterDetailNotifier
     await _save(c.copyWith(level: clamped, proficiencyBonus: _profBonus(clamped)));
   }
 
+  Future<void> updateSubclass(String subclassName) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(subclass: subclassName));
+  }
+
   Future<void> updateBackground(String v) async {
     final c = state.valueOrNull;
     if (c == null) return;

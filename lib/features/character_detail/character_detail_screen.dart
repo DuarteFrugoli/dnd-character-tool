@@ -235,6 +235,126 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
 
+  Future<void> _onLevelUp(Character character) async {
+    final newLevel = character.level + 1;
+
+    // Load class data to check subclass threshold
+    final srd = ref.read(srdDataSourceProvider);
+    final classes = await srd.getClasses();
+    final srdClass = classes.where((c) => c.name == character.characterClass).firstOrNull;
+
+    // No subclasses or not crossing the threshold — just level up
+    if (srdClass == null ||
+        srdClass.subclasses.isEmpty ||
+        newLevel != srdClass.subclassLevel) {
+      await _notifier.updateLevel(newLevel);
+      return;
+    }
+
+    if (!mounted) return;
+
+    // Already has a subclass → confirm + option to change
+    if (character.subclass != null && character.subclass!.isNotEmpty) {
+      final picked = await _showSubclassDialog(
+        context: context,
+        srdClass: srdClass,
+        current: character.subclass,
+        isConfirm: true,
+      );
+      if (!mounted) return;
+      if (picked != null) await _notifier.updateSubclass(picked);
+      await _notifier.updateLevel(newLevel);
+      return;
+    }
+
+    // No subclass yet → must pick one
+    final picked = await _showSubclassDialog(
+      context: context,
+      srdClass: srdClass,
+      current: null,
+      isConfirm: false,
+    );
+    if (!mounted) return;
+    if (picked != null) await _notifier.updateSubclass(picked);
+    await _notifier.updateLevel(newLevel);
+  }
+
+  Future<String?> _showSubclassDialog({
+    required BuildContext context,
+    required SrdClass srdClass,
+    required String? current,
+    required bool isConfirm,
+  }) {
+    String? selected = current;
+    return showDialog<String>(
+      context: context,
+      barrierDismissible: isConfirm,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setDialogState) {
+          return AlertDialog(
+            title: Text(isConfirm
+                ? 'Confirmar ${srdClass.subclassFeatureName}'
+                : 'Escolher ${srdClass.subclassFeatureName}'),
+            content: SizedBox(
+              width: double.maxFinite,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (isConfirm)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Text(
+                        'Você chegou ao nível ${srdClass.subclassLevel}. '
+                        'Confirme ou altere sua ${srdClass.subclassFeatureName}.',
+                        style: Theme.of(ctx).textTheme.bodySmall,
+                      ),
+                    )
+                  else
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Text(
+                        'Você chegou ao nível ${srdClass.subclassLevel}! '
+                        'Escolha sua ${srdClass.subclassFeatureName}.',
+                        style: Theme.of(ctx).textTheme.bodySmall,
+                      ),
+                    ),
+                  ...srdClass.subclasses.map((sub) => RadioListTile<String>(
+                        title: Text(sub.name),
+                        subtitle: sub.description.isNotEmpty
+                            ? Text(sub.description,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(ctx).textTheme.bodySmall)
+                            : null,
+                        value: sub.name,
+                        groupValue: selected,
+                        onChanged: (v) => setDialogState(() => selected = v),
+                        contentPadding: EdgeInsets.zero,
+                        dense: true,
+                      )),
+                ],
+              ),
+            ),
+            actions: [
+              if (isConfirm)
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, current),
+                  child: const Text('Manter atual'),
+                ),
+              FilledButton(
+                onPressed: selected != null
+                    ? () => Navigator.pop(ctx, selected)
+                    : null,
+                child: const Text('Confirmar'),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+
   @override
   void initState() {
     super.initState();
@@ -480,8 +600,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                             constraints: const BoxConstraints(
                                 minWidth: 32, minHeight: 32),
                             onPressed: character.level < 20
-                                ? () => notifier
-                                    .updateLevel(character.level + 1)
+                                ? () => _onLevelUp(character)
                                 : null,
                           ),
                         ],

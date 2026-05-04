@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 import 'character_list_provider.dart';
 import '../../data/models/models.dart';
@@ -224,6 +226,7 @@ class _ExportDialog extends StatefulWidget {
 
 class _ExportDialogState extends State<_ExportDialog> {
   bool _jsonExpanded = false;
+  bool _qrExpanded = false;
 
   Future<void> _copy(BuildContext ctx, String text, String label) async {
     await Clipboard.setData(ClipboardData(text: text));
@@ -247,41 +250,47 @@ class _ExportDialogState extends State<_ExportDialog> {
               // ── Token (primary) ──────────────────────────────────────────
               Text('Token', style: Theme.of(context).textTheme.labelLarge),
               const SizedBox(height: 6),
+              // Fixed-height scrollable box, same pattern as JSON
               Container(
-                padding: const EdgeInsets.all(12),
+                height: 40,
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: scheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: SelectableText(
-                  widget.token,
-                  style: const TextStyle(
-                      fontFamily: 'monospace', fontSize: 12),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: SelectableText(
+                    widget.token,
+                    style: const TextStyle(
+                        fontFamily: 'monospace', fontSize: 12),
+                  ),
                 ),
               ),
               const SizedBox(height: 8),
-              Row(
-                children: [
-                  FilledButton.icon(
-                    icon: const Icon(Icons.copy, size: 16),
-                    label: const Text('Copiar token'),
-                    onPressed: () =>
-                        _copy(context, widget.token, 'Token'),
-                  ),
-                  const SizedBox(width: 8),
-                  // QR code placeholder
-                  OutlinedButton.icon(
-                    icon: const Icon(Icons.qr_code, size: 16),
-                    label: const Text('QR Code'),
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('QR Code — em breve!')),
-                      );
-                    },
+              FilledButton.icon(
+                icon: const Icon(Icons.copy, size: 16),
+                label: const Text('Copiar token'),
+                onPressed: () => _copy(context, widget.token, 'Token'),
+              ),
+              const SizedBox(height: 6),
+              OutlinedButton.icon(
+                icon: Icon(_qrExpanded ? Icons.qr_code_2 : Icons.qr_code, size: 16),
+                label: Text(_qrExpanded ? 'Ocultar QR Code' : 'Ver QR Code'),
+                onPressed: () => setState(() => _qrExpanded = !_qrExpanded),
+              ),
+              if (_qrExpanded) ...
+                [
+                  const SizedBox(height: 12),
+                  Center(
+                    child: QrImageView(
+                      data: widget.token,
+                      version: QrVersions.auto,
+                      size: 200,
+                      backgroundColor: Colors.white,
+                    ),
                   ),
                 ],
-              ),
               const SizedBox(height: 16),
               // ── JSON (secondary, expandable) ─────────────────────────────
               InkWell(
@@ -329,7 +338,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                   ),
                 ),
                 const SizedBox(height: 6),
-                TextButton.icon(
+                FilledButton.icon(
                   icon: const Icon(Icons.copy, size: 16),
                   label: const Text('Copiar JSON'),
                   onPressed: () =>
@@ -378,7 +387,9 @@ class _ImportDialogState extends State<_ImportDialog> {
       try {
         return utf8.decode(base64Url.decode(base64Url.normalize(token)));
       } catch (_) {
-        return null; // invalid token
+        // Token inválido → tenta o JSON como fallback
+        if (json.isNotEmpty) return json;
+        return null;
       }
     }
     if (json.isNotEmpty) return json;
@@ -411,14 +422,20 @@ class _ImportDialogState extends State<_ImportDialog> {
                 onChanged: (_) => setState(() {}),
               ),
               const SizedBox(height: 6),
-              // QR code placeholder
+              // QR code scanner
               OutlinedButton.icon(
                 icon: const Icon(Icons.qr_code_scanner, size: 16),
                 label: const Text('Escanear QR Code'),
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('QR Code — em breve!')),
+                onPressed: () async {
+                  final scanned = await Navigator.push<String>(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const _QrScannerScreen()),
                   );
+                  if (scanned != null) {
+                    _tokenCtrl.text = scanned;
+                    setState(() {});
+                  }
                 },
               ),
               const SizedBox(height: 16),
@@ -477,6 +494,37 @@ class _ImportDialogState extends State<_ImportDialog> {
           child: const Text('Importar'),
         ),
       ],
+    );
+  }
+}
+
+// ── QR Scanner Screen ─────────────────────────────────────────────────────────
+
+class _QrScannerScreen extends StatefulWidget {
+  const _QrScannerScreen();
+
+  @override
+  State<_QrScannerScreen> createState() => _QrScannerScreenState();
+}
+
+class _QrScannerScreenState extends State<_QrScannerScreen> {
+  bool _scanned = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Escanear QR Code')),
+      body: MobileScanner(
+        onDetect: (capture) {
+          if (_scanned) return;
+          final barcode = capture.barcodes.firstOrNull;
+          final value = barcode?.rawValue;
+          if (value != null && value.isNotEmpty) {
+            _scanned = true;
+            Navigator.pop(context, value);
+          }
+        },
+      ),
     );
   }
 }

@@ -32,6 +32,10 @@ dependencies:
   collection: ^1.19.1
   flutter_sticky_header: ^0.8.0
 
+  # QR code generation and scanning
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^6.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

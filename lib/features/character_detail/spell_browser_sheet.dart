@@ -42,6 +42,8 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
   int? _levelFilter;
   String? _schoolFilter;
   String? _castingFilter; // 'action' | 'bonus_action' | 'reaction' | 'longer'
+  bool _concentrationFilter = false;
+  bool _ritualFilter = false;
   bool _myClassOnly = true;
 
   /// Tracks added spells locally so the UI updates instantly without waiting
@@ -111,6 +113,8 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
           if (s.castingTimeType != _castingFilter) return false;
         }
       }
+      if (_concentrationFilter && !s.concentration) return false;
+      if (_ritualFilter && !s.ritual) return false;
       if (query.isNotEmpty && !s.name.toLowerCase().contains(query)) {
         return false;
       }
@@ -246,19 +250,6 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                   ),
                 const VerticalDivider(width: 1),
                 const SizedBox(width: 6),
-                // School chips
-                for (final school in _schools)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 6),
-                    child: ChoiceChip(
-                      label: Text(school),
-                      selected: _schoolFilter == school,
-                      onSelected: (v) =>
-                          setState(() => _schoolFilter = v ? school : null),
-                    ),
-                  ),
-                const VerticalDivider(width: 1),
-                const SizedBox(width: 6),
                 // Casting time chips
                 for (final opt in _castingOptions)
                   Padding(
@@ -268,6 +259,39 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                       selected: _castingFilter == opt.$1,
                       onSelected: (v) =>
                           setState(() => _castingFilter = v ? opt.$1 : null),
+                    ),
+                  ),
+                const VerticalDivider(width: 1),
+                const SizedBox(width: 6),
+                // Concentration & ritual chips
+                Padding(
+                  padding: const EdgeInsets.only(right: 6),
+                  child: FilterChip(
+                    label: const Text('Conc.'),
+                    selected: _concentrationFilter,
+                    onSelected: (v) =>
+                        setState(() => _concentrationFilter = v),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 6),
+                  child: FilterChip(
+                    label: const Text('Ritual'),
+                    selected: _ritualFilter,
+                    onSelected: (v) => setState(() => _ritualFilter = v),
+                  ),
+                ),
+                const VerticalDivider(width: 1),
+                const SizedBox(width: 6),
+                // School chips
+                for (final school in _schools)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 6),
+                    child: ChoiceChip(
+                      label: Text(school),
+                      selected: _schoolFilter == school,
+                      onSelected: (v) =>
+                          setState(() => _schoolFilter = v ? school : null),
                     ),
                   ),
               ],
@@ -390,14 +414,14 @@ class _SpellBrowserTile extends StatelessWidget {
             ?.copyWith(color: scheme.onSurfaceVariant),
       ),
       onTap: onTap,
-      trailing: isKnown
-          ? Icon(Icons.check_circle, color: scheme.primary, size: 22)
-          : IconButton(
-              icon: const Icon(Icons.add_circle_outline),
-              color: scheme.primary,
-              tooltip: 'Add to character',
-              onPressed: onAdd,
-            ),
+      trailing: IconButton(
+        icon: Icon(
+          isKnown ? Icons.check_circle : Icons.add_circle_outline,
+          color: scheme.primary,
+        ),
+        tooltip: isKnown ? null : 'Add to character',
+        onPressed: isKnown ? null : onAdd,
+      ),
     );
   }
 }

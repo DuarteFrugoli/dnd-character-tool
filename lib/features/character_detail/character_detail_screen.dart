@@ -3004,7 +3004,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                 useSafeArea: true,
                 builder: (_) => SpellBrowserSheet(
                   characterClass: character.characterClass,
-                  maxSpellLevel: engine!.maxSpellLevel,
+                  maxSpellLevel: engine.maxSpellLevel,
                   knownSpells: character.spells,
                   onAddSpell: (srdSpell) => ref
                       .read(characterDetailProvider(widget.characterId)

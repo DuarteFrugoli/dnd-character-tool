@@ -73,17 +73,64 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
 
   void _goBack() => context.canPop() ? context.pop() : context.go('/');
 
+  Future<bool> _confirmDiscardEdit() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Sair sem salvar?'),
+        content: const Text(
+            'As alterações serão descartadas. Para salvar, use o botão ✓ no canto superior direito.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Continuar editando'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: FilledButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.error,
+              foregroundColor: Theme.of(context).colorScheme.onError,
+            ),
+            child: const Text('Sair e descartar'),
+          ),
+        ],
+      ),
+    );
+    return confirm == true;
+  }
+
+  Future<void> _handleBack() async {
+    if (!_editMode) {
+      _goBack();
+      return;
+    }
+    final discard = await _confirmDiscardEdit();
+    if (!discard || !mounted) return;
+    final snap = _snapshot;
+    if (snap != null) {
+      await ref
+          .read(characterDetailProvider(widget.characterId).notifier)
+          .revertTo(snap);
+    }
+    if (!mounted) return;
+    setState(() {
+      _editMode = false;
+      _snapshot = null;
+    });
+    _goBack();
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(characterDetailProvider(widget.characterId));
     return state.when(
       loading: () => Scaffold(
-        appBar: AppBar(leading: BackButton(onPressed: _goBack)),
+        appBar: AppBar(leading: BackButton(onPressed: _handleBack)),
         body: const Center(child: CircularProgressIndicator()),
       ),
       error: (e, _) => Scaffold(
         appBar: AppBar(
-          leading: BackButton(onPressed: _goBack),
+          leading: BackButton(onPressed: _handleBack),
           title: const Text('Character'),
         ),
         body: Center(child: Text('Error loading character: $e')),
@@ -93,10 +140,32 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   }
 
   Widget _buildLoaded(Character character) {
-    return Scaffold(
+    return PopScope(
+      canPop: !_editMode,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
+          if (!mounted) return;
+          final discard = await _confirmDiscardEdit();
+          if (!discard || !mounted) return;
+          final snap = _snapshot;
+          if (snap != null) {
+            await ref
+                .read(characterDetailProvider(widget.characterId).notifier)
+                .revertTo(snap);
+          }
+          if (!mounted) return;
+          setState(() {
+            _editMode = false;
+            _snapshot = null;
+          });
+          _goBack();
+        });
+      },
+      child: Scaffold(
       appBar: AppBar(
         toolbarHeight: 72,
-        leading: BackButton(onPressed: _goBack),
+        leading: BackButton(onPressed: _handleBack),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -243,6 +312,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           _NotesTab(character: character, characterId: widget.characterId),
         ],
       ),
+      ), // PopScope child
     );
   }
 
@@ -4711,10 +4781,23 @@ class _SavingThrowsEditor extends StatefulWidget {
 class _SavingThrowsEditorState extends State<_SavingThrowsEditor> {
   late Set<String> _selected;
 
+  // Normalize stored values (may be lowercase) against canonical title-case list.
+  Set<String> _normalize(List<String> current) => _kAllAbilities
+      .where((a) => current.any((c) => c.toLowerCase() == a.toLowerCase()))
+      .toSet();
+
   @override
   void initState() {
     super.initState();
-    _selected = widget.current.toSet();
+    _selected = _normalize(widget.current);
+  }
+
+  @override
+  void didUpdateWidget(_SavingThrowsEditor old) {
+    super.didUpdateWidget(old);
+    if (old.current != widget.current) {
+      _selected = _normalize(widget.current);
+    }
   }
 
   void _toggle(String ability) {

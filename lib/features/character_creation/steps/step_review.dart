@@ -233,15 +233,14 @@ class _StartingGoldRowState extends ConsumerState<_StartingGoldRow> {
                   ),
           ),
           const SizedBox(width: 8),
-          FilledButton.tonalIcon(
-            icon: const Icon(Icons.casino_outlined, size: 16),
-            label: Text(rolled != null ? 'Rolar de novo' : 'Rolar'),
+          FilledButton.tonal(
             style: FilledButton.styleFrom(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              padding: const EdgeInsets.all(10),
               visualDensity: VisualDensity.compact,
+              minimumSize: const Size(40, 40),
             ),
             onPressed: _roll,
+            child: const Icon(Icons.casino_outlined, size: 18),
           ),
         ],
       ),

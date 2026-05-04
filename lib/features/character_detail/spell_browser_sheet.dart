@@ -44,13 +44,21 @@ class _SpellFilters {
   bool concentration = false;
   bool ritual = false;
 
-  /// Number of active non-class filters (used for badge).
+  /// Selected class names. Empty = all classes shown.
+  Set<String> classes = {};
+
+  /// When true, spells above the character's current max slot level are shown.
+  bool showAllLevels = false;
+
+  /// Number of active filters for the badge (classes counts as 1 if non-empty).
   int get activeCount =>
       (level != null ? 1 : 0) +
       (school != null ? 1 : 0) +
       (castingType != null ? 1 : 0) +
       (concentration ? 1 : 0) +
-      (ritual ? 1 : 0);
+      (ritual ? 1 : 0) +
+      (classes.isNotEmpty ? 1 : 0) +
+      (showAllLevels ? 1 : 0);
 
   void reset() {
     level = null;
@@ -58,6 +66,8 @@ class _SpellFilters {
     castingType = null;
     concentration = false;
     ritual = false;
+    classes = {};
+    showAllLevels = false;
   }
 
   _SpellFilters clone() => _SpellFilters()
@@ -65,7 +75,9 @@ class _SpellFilters {
     ..school = school
     ..castingType = castingType
     ..concentration = concentration
-    ..ritual = ritual;
+    ..ritual = ritual
+    ..classes = Set.of(classes)
+    ..showAllLevels = showAllLevels;
 }
 
 // ── State ─────────────────────────────────────────────────────────────────────
@@ -74,8 +86,13 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
   List<SrdSpell>? _allSpells;
   final _searchCtrl = TextEditingController();
   String _search = '';
-  bool _myClassOnly = true;
   final _filters = _SpellFilters();
+
+  /// True when the header chip is showing "my class only" (shortcut).
+  bool get _myClassOnly =>
+      _filters.classes.length == 1 &&
+      _filters.classes.first.toLowerCase() ==
+          widget.characterClass.toLowerCase();
 
   late Set<String> _knownNames;
 
@@ -83,6 +100,8 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
   void initState() {
     super.initState();
     _knownNames = {for (final s in widget.knownSpells) s.name.toLowerCase()};
+    // Pre-select the character's class as default filter.
+    _filters.classes = {widget.characterClass.toLowerCase()};
     _searchCtrl.addListener(
       () => setState(() => _search = _searchCtrl.text.trim()),
     );
@@ -102,14 +121,15 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
 
   List<SrdSpell> get _filtered {
     if (_allSpells == null) return const [];
-    final className = widget.characterClass.toLowerCase();
     final query = _search.toLowerCase();
     final longer = {'minute', 'hour', 'special'};
 
     return _allSpells!.where((s) {
-      if (s.level > widget.maxSpellLevel) return false;
-      if (_myClassOnly &&
-          !s.classes.any((c) => c.toLowerCase() == className)) {
+      if (!_filters.showAllLevels && s.level > widget.maxSpellLevel) {
+        return false;
+      }
+      if (_filters.classes.isNotEmpty &&
+          !s.classes.any((c) => _filters.classes.contains(c.toLowerCase()))) {
         return false;
       }
       if (_filters.level != null && s.level != _filters.level) return false;
@@ -170,6 +190,7 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
       builder: (_) => _FilterPanelSheet(
         filters: draft,
         maxSpellLevel: widget.maxSpellLevel,
+        characterClass: widget.characterClass,
       ),
     );
     if (confirmed == true && mounted) {
@@ -179,6 +200,8 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
         _filters.castingType = draft.castingType;
         _filters.concentration = draft.concentration;
         _filters.ritual = draft.ritual;
+        _filters.classes = draft.classes;
+        _filters.showAllLevels = draft.showAllLevels;
       });
     }
   }
@@ -297,7 +320,13 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                 FilterChip(
                   label: Text(_capitalize(widget.characterClass)),
                   selected: _myClassOnly,
-                  onSelected: (v) => setState(() => _myClassOnly = v),
+                  onSelected: (v) => setState(() {
+                    if (v) {
+                      _filters.classes = {widget.characterClass.toLowerCase()};
+                    } else {
+                      _filters.classes = {};
+                    }
+                  }),
                 ),
               ],
             ),
@@ -408,6 +437,12 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
     }
     if (_filters.concentration) parts.add('Concentration');
     if (_filters.ritual) parts.add('Ritual');
+    if (_filters.showAllLevels) parts.add('All levels');
+    if (_filters.classes.isNotEmpty) {
+      parts.add(_filters.classes
+          .map((c) => c[0].toUpperCase() + c.substring(1))
+          .join(', '));
+    }
     return parts.join(' · ');
   }
 }
@@ -419,10 +454,12 @@ class _FilterPanelSheet extends StatefulWidget {
   const _FilterPanelSheet({
     required this.filters,
     required this.maxSpellLevel,
+    required this.characterClass,
   });
 
   final _SpellFilters filters;
   final int maxSpellLevel;
+  final String characterClass;
 
   @override
   State<_FilterPanelSheet> createState() => _FilterPanelSheetState();
@@ -440,6 +477,13 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
     ('reaction', 'Reaction'),
     ('longer', 'Longer cast (1 min+)'),
   ];
+
+  static const _allClasses = [
+    'bard', 'cleric', 'druid', 'paladin', 'ranger',
+    'sorcerer', 'warlock', 'wizard', 'artificer',
+  ];
+
+  String _cap(String s) => s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
 
   @override
   Widget build(BuildContext context) {
@@ -493,13 +537,56 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                 controller: scrollCtrl,
                 padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
                 children: [
-                  // ── Level ────────────────────────────────────────────────
-                  _SectionLabel('Spell Level'),
+                  // ── Classes ──────────────────────────────────────────────
+                  _SectionLabel('Classes'),
                   Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: [
-                      for (int lvl = 0; lvl <= widget.maxSpellLevel; lvl++)
+                      for (final cls in _allClasses)
+                        FilterChip(
+                          label: Text(_cap(cls)),
+                          selected: f.classes.contains(cls),
+                          onSelected: (v) => setState(() {
+                            if (v) {
+                              f.classes = {...f.classes, cls};
+                            } else {
+                              f.classes = f.classes
+                                  .where((c) => c != cls)
+                                  .toSet();
+                            }
+                          }),
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'No class selected = show all classes',
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // ── Level ────────────────────────────────────────────────
+                  _SectionLabel('Spell Level'),
+                  SwitchListTile(
+                    title: const Text('Show all spell levels'),
+                    subtitle: Text(
+                      'Include spells above your current max '
+                      '(Lvl ${widget.maxSpellLevel})',
+                    ),
+                    value: f.showAllLevels,
+                    onChanged: (v) => setState(() => f.showAllLevels = v),
+                    dense: true,
+                    contentPadding: EdgeInsets.zero,
+                  ),
+                  const SizedBox(height: 8),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    children: [
+                      for (int lvl = 0; lvl <= (f.showAllLevels ? 9 : widget.maxSpellLevel); lvl++)
                         ChoiceChip(
                           label: Text(lvl == 0 ? 'Cantrip' : 'Lvl $lvl'),
                           selected: f.level == lvl,

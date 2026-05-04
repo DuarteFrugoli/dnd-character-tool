@@ -14,8 +14,12 @@ class StepReview extends ConsumerWidget {
     final attrs = draft.finalAttributes;
     final con = attrs['Constitution'] ?? 10;
     final conMod = ((con - 10) / 2).floor();
+    final dex = attrs['Dexterity'] ?? 10;
+    final dexMod = ((dex - 10) / 2).floor();
     final hitDie = draft.selectedClass?.hitDie ?? 8;
     final maxHp = hitDie + conMod;
+    final allItems = _resolveEquipmentItems(draft);
+    final armorInfo = _findArmorAC(allItems, dexMod);
 
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -37,6 +41,9 @@ class StepReview extends ConsumerWidget {
             'Saving Throws',
             draft.selectedClass?.savingThrows.join(', ') ?? '—',
           ),
+          if (draft.selectedClass != null)
+            _Row('Starting Gold',
+                _formatStartingGold(draft.selectedClass!.startingGoldDice)),
         ]),
         _ReviewSection(title: 'Race', children: [
           _Row('Race', draft.selectedRace?.name ?? '—'),
@@ -62,7 +69,9 @@ class StepReview extends ConsumerWidget {
           ...attrs.entries
               .map((e) => _Row(e.key, '${e.value} (${_mod(e.value)})')),
           _Row('Max HP', '$maxHp  (d$hitDie + $conMod CON)'),
-          _Row('AC', '${10 + ((attrs['Dexterity'] ?? 10) - 10) ~/ 2}'),
+          _Row('AC (Unarmored)', '${10 + dexMod}'),
+          if (armorInfo != null)
+            _Row('AC with ${armorInfo.$2}', '${armorInfo.$1}'),
           _Row('Proficiency Bonus', '+2'),
         ]),
         // ── Language Choices ────────────────────────────────────────────────────────
@@ -73,33 +82,9 @@ class StepReview extends ConsumerWidget {
         // ── Starting Equipment ─────────────────────────────────────────────────────
         if (draft.selectedBackground != null &&
             draft.selectedBackground!.startingEquipment.isNotEmpty)
-          _StartingEquipmentSection(
-            allItems: draft.selectedBackground!.startingEquipment,
-            selectedItems: draft.selectedStartingEquipment,
-            onToggle: (item) => ref
-                .read(characterDraftProvider.notifier)
-                .toggleStartingItem(item),
-            onToggleAll: (selectAll) {
-              final notifier =
-                  ref.read(characterDraftProvider.notifier);
-              if (selectAll) {
-                for (final item
-                    in draft.selectedBackground!.startingEquipment) {
-                  if (!draft.selectedStartingEquipment.contains(item)) {
-                    notifier.toggleStartingItem(item);
-                  }
-                }
-              } else {
-                for (final item
-                    in draft.selectedBackground!.startingEquipment) {
-                  if (draft.selectedStartingEquipment.contains(item)) {
-                    notifier.toggleStartingItem(item);
-                  }
-                }
-              }
-            },
-          ),
-        const SizedBox(height: 16),
+          const _StartingEquipmentSection(),        // ── Class Equipment ────────────────────────────────────────────────────
+        if (draft.selectedClass?.startingEquipment != null)
+          const _ClassEquipmentSection(),        const SizedBox(height: 16),
       ],
     );
   }
@@ -168,23 +153,23 @@ class _Row extends StatelessWidget {
   }
 }
 
-class _StartingEquipmentSection extends StatelessWidget {
-  const _StartingEquipmentSection({
-    required this.allItems,
-    required this.selectedItems,
-    required this.onToggle,
-    required this.onToggleAll,
-  });
-
-  final List<String> allItems;
-  final List<String> selectedItems;
-  final void Function(String item) onToggle;
-  final void Function(bool selectAll) onToggleAll;
+class _StartingEquipmentSection extends ConsumerWidget {
+  const _StartingEquipmentSection();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final draft = ref.watch(characterDraftProvider);
+    final notifier = ref.read(characterDraftProvider.notifier);
     final scheme = Theme.of(context).colorScheme;
-    final allSelected = allItems.every(selectedItems.contains);
+    final bg = draft.selectedBackground!;
+
+    final fixedItems =
+        bg.startingEquipment.where((i) => !isEquipmentChoiceItem(i)).toList();
+    final choiceItems =
+        bg.startingEquipment.where(isEquipmentChoiceItem).toList();
+    final selectedItems = draft.selectedStartingEquipment;
+    final resolvedChoices = draft.resolvedEquipmentChoices;
+    final allFixedSelected = fixedItems.every(selectedItems.contains);
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
@@ -203,48 +188,107 @@ class _StartingEquipmentSection extends StatelessWidget {
                       ?.copyWith(color: scheme.primary),
                 ),
                 const Spacer(),
-                TextButton(
-                  onPressed: () => onToggleAll(!allSelected),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                if (fixedItems.isNotEmpty)
+                  TextButton(
+                    onPressed: () {
+                      if (allFixedSelected) {
+                        for (final item in fixedItems) {
+                          if (selectedItems.contains(item)) {
+                            notifier.toggleStartingItem(item);
+                          }
+                        }
+                      } else {
+                        for (final item in fixedItems) {
+                          if (!selectedItems.contains(item)) {
+                            notifier.toggleStartingItem(item);
+                          }
+                        }
+                      }
+                    },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    child: Text(
+                      allFixedSelected ? 'Deselect all' : 'Select all',
+                      style: TextStyle(fontSize: 12, color: scheme.primary),
+                    ),
                   ),
-                  child: Text(
-                    allSelected ? 'Deselect all' : 'Select all',
-                    style: TextStyle(fontSize: 12, color: scheme.primary),
-                  ),
-                ),
               ],
             ),
-            const SizedBox(height: 4),
-            Text(
-              'Uncheck items you don\'t want to add to your inventory.',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: scheme.onSurfaceVariant,
+            if (fixedItems.isNotEmpty) ...[  
+              const SizedBox(height: 4),
+              Text(
+                "Uncheck items you don't want to add to your inventory.",
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+              ),
+              const SizedBox(height: 8),
+              ...fixedItems.map((item) {
+                final isSelected = selectedItems.contains(item);
+                final isGold = RegExp(r'^\d+\s*gp$', caseSensitive: false)
+                    .hasMatch(item.trim());
+                return CheckboxListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.zero,
+                  controlAffinity: ListTileControlAffinity.leading,
+                  value: isSelected,
+                  onChanged: (_) => notifier.toggleStartingItem(item),
+                  title: Text(
+                    item,
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
-            ),
-            const SizedBox(height: 8),
-            ...allItems.map((item) {
-              final isSelected = selectedItems.contains(item);
-              final isGold =
-                  RegExp(r'^\d+\s*gp$', caseSensitive: false).hasMatch(item.trim());
-              return CheckboxListTile(
-                dense: true,
-                contentPadding: EdgeInsets.zero,
-                controlAffinity: ListTileControlAffinity.leading,
-                value: isSelected,
-                onChanged: (_) => onToggle(item),
-                title: Text(
-                  item,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                secondary: isGold
-                    ? Icon(Icons.monetization_on_outlined,
-                        size: 16, color: scheme.tertiary)
-                    : null,
-              );
-            }),
+                  secondary: isGold
+                      ? Icon(Icons.monetization_on_outlined,
+                          size: 16, color: scheme.tertiary)
+                      : null,
+                );
+              }),
+            ],
+            // ── Equipment choices (e.g. "Musical instrument") ───────────
+            if (choiceItems.isNotEmpty) ...[  
+              if (fixedItems.isNotEmpty) const Divider(height: 20),
+              Text(
+                'Equipment Choices',
+                style: Theme.of(context)
+                    .textTheme
+                    .labelMedium
+                    ?.copyWith(color: scheme.secondary),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                'Pick the specific item for each slot.',
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+              ),
+              const SizedBox(height: 8),
+              ...choiceItems.map((item) {
+                final options = _equipmentChoiceOptions(item) ?? [];
+                final current = resolvedChoices[item];
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: DropdownButtonFormField<String>(
+                    initialValue: current,
+                    decoration: InputDecoration(
+                      labelText: item,
+                      border: const OutlineInputBorder(),
+                      isDense: true,
+                    ),
+                    hint: const Text('Choose one'),
+                    items: options
+                        .map((o) =>
+                            DropdownMenuItem(value: o, child: Text(o)))
+                        .toList(),
+                    onChanged: (v) {
+                      if (v != null) notifier.setEquipmentChoice(item, v);
+                    },
+                  ),
+                );
+              }),
+            ],
           ],
         ),
       ),
@@ -261,7 +305,35 @@ const _kDndLanguages = [
 ];
 
 // ── Tool Proficiency constants ────────────────────────────────────────────────
+// ── Weapon constants (used for "any X weapon" sub-choices) ─────────────────
+const _kSimpleMeleeWeapons = [
+  'Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin',
+  'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear',
+];
+const _kSimpleRangedWeapons = ['Dart', 'Light crossbow', 'Shortbow', 'Sling'];
+const _kMartialMeleeWeapons = [
+  'Battleaxe', 'Flail', 'Glaive', 'Greataxe', 'Greatsword', 'Halberd',
+  'Lance', 'Longsword', 'Maul', 'Morningstar', 'Pike', 'Rapier',
+  'Scimitar', 'Shortsword', 'Trident', 'War pick', 'Warhammer', 'Whip',
+];
+const _kMartialRangedWeapons = [
+  'Blowgun', 'Hand crossbow', 'Heavy crossbow', 'Longbow', 'Net',
+];
 
+/// Returns the selectable list for an "any X" item, or null if not applicable.
+List<String>? _anyItemOptions(String item) {
+  final lower = item.toLowerCase();
+  if (lower == 'any simple weapon') {
+    return [..._kSimpleMeleeWeapons, ..._kSimpleRangedWeapons];
+  }
+  if (lower == 'any simple melee weapon') return _kSimpleMeleeWeapons;
+  if (lower == 'any martial weapon') {
+    return [..._kMartialMeleeWeapons, ..._kMartialRangedWeapons];
+  }
+  if (lower == 'any martial melee weapon') return _kMartialMeleeWeapons;
+  if (lower == 'any musical instrument') return _kInstruments;
+  return null;
+}
 const _kArtisanTools = [
   "Alchemist's supplies", "Brewer's supplies", "Calligrapher's supplies",
   "Carpenter's tools", "Cartographer's tools", "Cobbler's tools",
@@ -307,6 +379,124 @@ List<String> _toolOptionsForEntry(String lower) {
 bool _isToolChoice(String tool) {
   final lower = tool.toLowerCase();
   return lower.contains('one type of') || lower.contains('of your choice');
+}
+
+/// Returns the list of options for a starting-equipment choice item,
+/// or null if the item is not a choice item.
+List<String>? _equipmentChoiceOptions(String item) {
+  final lower = item.toLowerCase();
+  if (lower.contains('musical instrument')) return _kInstruments;
+  if (lower.contains("artisan's tools")) return _kArtisanTools;
+  if (lower.contains('gaming set')) return _kGamingSets;
+  if (lower.contains('tools of the con')) {
+    return ["Disguise kit", "Forgery kit", "Poisoner's kit", "Thieves' tools"];
+  }
+  return null;
+}
+
+// ── Armor / AC helpers ────────────────────────────────────────────────────────
+
+/// (pattern in item name, base AC, max dex bonus: -1=unlimited, 0=none, N=capped)
+/// Ordered so more-specific patterns come before generic substrings.
+const _kArmorPatterns = <(String, int, int)>[
+  ('half plate', 15, 2),
+  ('studded leather', 12, -1),
+  ('chain mail', 16, 0),
+  ('ring mail', 14, 0),
+  ('scale mail', 14, 2),
+  ('chain shirt', 13, 2),
+  ('plate', 18, 0),
+  ('splint', 17, 0),
+  ('breastplate', 14, 2),
+  ('hide', 12, 2),
+  ('leather', 11, -1),
+  ('padded', 11, -1),
+];
+
+/// Returns the AC an item provides given the character's Dex modifier,
+/// or null if the item is not armor.
+int? _calcArmorAC(String item, int dexMod) {
+  final lower = item.toLowerCase();
+  for (final (pattern, base, maxDex) in _kArmorPatterns) {
+    if (lower.contains(pattern)) {
+      if (maxDex == 0) return base;
+      if (maxDex == -1) return base + dexMod;
+      return base + (dexMod > maxDex ? maxDex : dexMod);
+    }
+  }
+  return null;
+}
+
+/// Finds the highest-AC armor+shield combo in [items].
+/// Returns (finalAC, displayLabel) or null if no armor or shield found.
+(int, String)? _findArmorAC(List<String> items, int dexMod) {
+  final hasShield =
+      items.any((i) => i.toLowerCase().contains('shield'));
+
+  String? bestName;
+  int? bestAC;
+
+  for (final item in items) {
+    final ac = _calcArmorAC(item, dexMod);
+    if (ac != null && (bestAC == null || ac > bestAC)) {
+      bestAC = ac;
+      bestName = item;
+    }
+  }
+
+  if (bestAC == null && !hasShield) return null;
+  if (bestAC == null) return (10 + dexMod + 2, 'Shield (Unarmored)');
+
+  final totalAC = bestAC + (hasShield ? 2 : 0);
+  final label = hasShield ? '$bestName + Shield' : bestName!;
+  return (totalAC, label);
+}
+
+/// Resolves all equipment item names from background + class selections.
+List<String> _resolveEquipmentItems(CharacterDraft draft) {
+  final items = <String>[];
+
+  // Background: checked fixed items + resolved generic choices
+  items.addAll(draft.selectedStartingEquipment);
+  items.addAll(draft.resolvedEquipmentChoices.values);
+
+  // Class fixed items + chosen option items (with "any X" resolved)
+  final equip = draft.selectedClass?.startingEquipment;
+  if (equip != null) {
+    items.addAll(equip.fixed);
+    for (int g = 0; g < equip.choices.length; g++) {
+      final optIdx = g < draft.classEquipmentChoices.length
+          ? draft.classEquipmentChoices[g]
+          : null;
+      if (optIdx == null) continue;
+      final option = equip.choices[g].options[optIdx];
+      for (int i = 0; i < option.length; i++) {
+        final item = option[i];
+        if (item.toLowerCase().startsWith('any ')) {
+          final specific = draft.classEquipmentSpecifics['$g:$i'];
+          if (specific != null) items.add(specific);
+        } else {
+          items.add(item);
+        }
+      }
+    }
+  }
+
+  return items;
+}
+
+/// Parses a starting-gold dice string like "5d4x10" or "5d4" into a display string.
+String _formatStartingGold(String dice) {
+  if (dice.isEmpty) return '—';
+  final match =
+      RegExp(r'^(\d+)d(\d+)(?:[xX×](\d+))?$').firstMatch(dice);
+  if (match == null) return '$dice gp';
+  final n = int.parse(match.group(1)!);
+  final s = int.parse(match.group(2)!);
+  final mult = match.group(3) != null ? int.parse(match.group(3)!) : 1;
+  final avg = (n * (s + 1) / 2 * mult).round();
+  final notation = mult > 1 ? '${n}d$s×$mult' : '${n}d$s';
+  return '$notation gp  (avg. ~$avg gp)';
 }
 
 List<_ToolSlot> _buildToolSlots(CharacterDraft draft) {
@@ -499,6 +689,159 @@ class _ToolProficiencySection extends ConsumerWidget {
                 );
               }),
             ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── Class Equipment Section ───────────────────────────────────────────────────
+
+class _ClassEquipmentSection extends ConsumerWidget {
+  const _ClassEquipmentSection();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final draft = ref.watch(characterDraftProvider);
+    final notifier = ref.read(characterDraftProvider.notifier);
+    final scheme = Theme.of(context).colorScheme;
+    final cls = draft.selectedClass!;
+    final equip = cls.startingEquipment!;
+
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Class Equipment — ${cls.name}',
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge
+                  ?.copyWith(color: scheme.primary),
+            ),
+            // ── Fixed items ──────────────────────────────────────────────
+            if (equip.fixed.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Text(
+                'Included:',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(color: scheme.onSurfaceVariant),
+              ),
+              const SizedBox(height: 4),
+              Wrap(
+                spacing: 6,
+                runSpacing: 4,
+                children: equip.fixed
+                    .map((item) => Chip(
+                          label: Text(item,
+                              style: Theme.of(context).textTheme.bodySmall),
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          padding:
+                              const EdgeInsets.symmetric(horizontal: 4),
+                        ))
+                    .toList(),
+              ),
+            ],
+            // ── Choice groups ─────────────────────────────────────────────
+            ...equip.choices.asMap().entries.map((groupEntry) {
+              final g = groupEntry.key;
+              final group = groupEntry.value;
+              final selectedOptionIdx =
+                  g < draft.classEquipmentChoices.length
+                      ? draft.classEquipmentChoices[g]
+                      : null;
+
+              // Label for a package: items joined by " + "
+              String optionLabel(List<String> items) =>
+                  items.map((i) => i.startsWith('any ') ? i : i).join(' + ');
+
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 12),
+                  Text(
+                    'Choose one:',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(color: scheme.onSurfaceVariant),
+                  ),
+                  const SizedBox(height: 4),
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
+                    children: group.options.asMap().entries.map((optEntry) {
+                      final optIdx = optEntry.key;
+                      final option = optEntry.value;
+                      final isSelected = selectedOptionIdx == optIdx;
+                      return ChoiceChip(
+                        label: Text(
+                          optionLabel(option),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: isSelected
+                                ? scheme.onSecondaryContainer
+                                : null,
+                          ),
+                        ),
+                        selected: isSelected,
+                        onSelected: (_) =>
+                            notifier.setClassEquipmentChoice(g, optIdx),
+                      );
+                    }).toList(),
+                  ),
+                  // Sub-dropdowns for "any X" items in the selected option
+                  if (selectedOptionIdx != null)
+                    ...group.options[selectedOptionIdx]
+                        .asMap()
+                        .entries
+                        .where((e) =>
+                            e.value.toLowerCase().startsWith('any '))
+                        .map((e) {
+                      final i = e.key;
+                      final anyItem = e.value;
+                      final opts = _anyItemOptions(anyItem) ?? [];
+                      final current =
+                          draft.classEquipmentSpecifics['$g:$i'];
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: DropdownButtonFormField<String>(
+                          initialValue: current,
+                          isExpanded: true,
+                          decoration: InputDecoration(
+                            labelText: anyItem,
+                            border: const OutlineInputBorder(),
+                            isDense: true,
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 8),
+                          ),
+                          hint: const Text('Choose one',
+                              style: TextStyle(fontSize: 13)),
+                          items: opts
+                              .map((o) => DropdownMenuItem(
+                                    value: o,
+                                    child: Text(o,
+                                        style: const TextStyle(fontSize: 13)),
+                                  ))
+                              .toList(),
+                          onChanged: (v) {
+                            if (v != null) {
+                              notifier.setClassEquipmentSpecific('$g:$i', v);
+                            }
+                          },
+                        ),
+                      );
+                    }),
+                ],
+              );
+            }),
           ],
         ),
       ),

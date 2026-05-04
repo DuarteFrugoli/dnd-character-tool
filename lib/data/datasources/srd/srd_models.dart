@@ -130,6 +130,37 @@ class SrdSkillChoice {
       );
 }
 
+// ── Class starting equipment ─────────────────────────────────────────────────
+
+/// One choice group: player picks exactly one option from the list.
+/// Each option is a list of items (a "package").
+/// Items that start with "any " (e.g. "any martial weapon") require a
+/// further sub-selection in the UI.
+class SrdEquipmentChoiceGroup {
+  final List<List<String>> options;
+  const SrdEquipmentChoiceGroup({required this.options});
+  factory SrdEquipmentChoiceGroup.fromJson(Map<String, dynamic> json) =>
+      SrdEquipmentChoiceGroup(
+        options: (json['options'] as List<dynamic>)
+            .map((opt) => List<String>.from(opt as List<dynamic>))
+            .toList(),
+      );
+}
+
+class SrdClassStartingEquipment {
+  final List<String> fixed;
+  final List<SrdEquipmentChoiceGroup> choices;
+  const SrdClassStartingEquipment({required this.fixed, required this.choices});
+  factory SrdClassStartingEquipment.fromJson(Map<String, dynamic> json) =>
+      SrdClassStartingEquipment(
+        fixed: List<String>.from(json['fixed'] as List<dynamic>? ?? []),
+        choices: (json['choices'] as List<dynamic>? ?? [])
+            .map((c) => SrdEquipmentChoiceGroup
+                .fromJson(c as Map<String, dynamic>))
+            .toList(),
+      );
+}
+
 class SrdClass {
   final String name;
   final int hitDie;
@@ -144,6 +175,7 @@ class SrdClass {
   final int subclassLevel;
   final String subclassFeatureName;
   final String startingGoldDice;
+  final SrdClassStartingEquipment? startingEquipment;
   final List<SrdSubclass> subclasses;
 
   const SrdClass({
@@ -160,6 +192,7 @@ class SrdClass {
     required this.subclassLevel,
     required this.subclassFeatureName,
     required this.startingGoldDice,
+    this.startingEquipment,
     this.subclasses = const [],
   });
 
@@ -180,6 +213,10 @@ class SrdClass {
         subclassLevel: json['subclassLevel'] as int,
         subclassFeatureName: json['subclassFeatureName'] as String,
         startingGoldDice: json['startingGoldDice'] as String,
+        startingEquipment: json['startingEquipment'] != null
+            ? SrdClassStartingEquipment.fromJson(
+                json['startingEquipment'] as Map<String, dynamic>)
+            : null,
         subclasses: (json['subclasses'] as List<dynamic>? ?? [])
             .map((e) => SrdSubclass.fromJson(e as Map<String, dynamic>))
             .toList(),

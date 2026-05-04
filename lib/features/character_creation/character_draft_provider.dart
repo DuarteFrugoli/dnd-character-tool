@@ -9,6 +9,16 @@ import '../../shared/providers/providers.dart';
 
 enum AttributeMethod { standardArray, pointBuy, rolledDice }
 
+/// Returns true when the equipment string represents a player choice
+/// rather than a fixed item (e.g. "Musical instrument", "Artisan's tools").
+bool isEquipmentChoiceItem(String item) {
+  final lower = item.toLowerCase();
+  return lower.contains('musical instrument') ||
+      lower.contains("artisan's tools") ||
+      lower.contains('gaming set') ||
+      lower.contains('tools of the con');
+}
+
 class CharacterDraft {
   final String id;
   final SrdClass? selectedClass;
@@ -36,6 +46,15 @@ class CharacterDraft {
   final List<String> chosenToolProficiencies;
   // Valores rolados no modo 4d6 drop lowest (6 valores)
   final List<int> rolledValues;
+  // Escolhas de equipamento inicial de classe:
+  // índice da opção escolhida em cada grupo de escolha
+  final List<int?> classEquipmentChoices;
+  // Sub-escolhas para itens "any X" dentro da opção escolhida
+  // chave: "$grupoIdx:$itemIdx" → nome específico do item
+  final Map<String, String> classEquipmentSpecifics;
+  // Itens de equipamento com escolha: chave = nome genérico, valor = item escolhido
+  // Ex: "Musical instrument" → "Flute"
+  final Map<String, String> resolvedEquipmentChoices;
 
   const CharacterDraft({
     required this.id,
@@ -56,6 +75,9 @@ class CharacterDraft {
     this.chosenLanguages = const [],
     this.chosenToolProficiencies = const [],
     this.rolledValues = const [],
+    this.resolvedEquipmentChoices = const {},
+    this.classEquipmentChoices = const [],
+    this.classEquipmentSpecifics = const {},
   });
 
   CharacterDraft copyWith({
@@ -76,6 +98,9 @@ class CharacterDraft {
     List<String>? chosenLanguages,
     List<String>? chosenToolProficiencies,
     List<int>? rolledValues,
+    Map<String, String>? resolvedEquipmentChoices,
+    List<int?>? classEquipmentChoices,
+    Map<String, String>? classEquipmentSpecifics,
   }) {
     return CharacterDraft(
       id: id,
@@ -106,7 +131,11 @@ class CharacterDraft {
       chosenToolProficiencies:
           chosenToolProficiencies ?? this.chosenToolProficiencies,
       rolledValues: rolledValues ?? this.rolledValues,
-    );
+      resolvedEquipmentChoices:
+          resolvedEquipmentChoices ?? this.resolvedEquipmentChoices,      classEquipmentChoices:
+          classEquipmentChoices ?? this.classEquipmentChoices,
+      classEquipmentSpecifics:
+          classEquipmentSpecifics ?? this.classEquipmentSpecifics,    );
   }
 
   // Retorna os atributos finais com bônus raciais aplicados
@@ -162,6 +191,32 @@ class CharacterDraft {
         0;
     final bgChoices = selectedBackground?.languages ?? 0;
     return raceChoices + bgChoices;
+  }
+
+  int get equipmentChoicesNeeded =>
+      selectedBackground?.startingEquipment
+          .where(isEquipmentChoiceItem)
+          .length ??
+      0;
+
+  /// True when every class equipment choice group has a selection
+  /// and all "any X" sub-picks within the selected options are filled.
+  bool get classEquipmentComplete {
+    final equip = selectedClass?.startingEquipment;
+    if (equip == null) return true;
+    for (int g = 0; g < equip.choices.length; g++) {
+      if (g >= classEquipmentChoices.length) return false;
+      final optIdx = classEquipmentChoices[g];
+      if (optIdx == null) return false;
+      final option = equip.choices[g].options[optIdx];
+      for (int i = 0; i < option.length; i++) {
+        if (option[i].toLowerCase().startsWith('any ') &&
+            classEquipmentSpecifics['$g:$i'] == null) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   int get toolChoicesNeeded {
@@ -232,12 +287,16 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         selectedClass: c,
         selectedSubclass: null,
         chosenToolProficiencies: [],
+        classEquipmentChoices: [],
+        classEquipmentSpecifics: {},
       );
 
   void clearClass() => state = state.copyWith(
         selectedClass: null,
         selectedSubclass: null,
         chosenToolProficiencies: [],
+        classEquipmentChoices: [],
+        classEquipmentSpecifics: {},
       );
 
   void setSubclass(SrdSubclass? s) =>
@@ -264,11 +323,14 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
   void setBackground(SrdBackground b) => state = state.copyWith(
         selectedBackground: b,
-        // Pré-seleciona todos os itens do background (usuário pode desmarcar)
-        selectedStartingEquipment: List<String>.from(b.startingEquipment),
-        // Reseta idiomas e ferramentas livres ao trocar de background
+        // Pré-seleciona apenas itens fixos (escolhas ficam no resolvedEquipmentChoices)
+        selectedStartingEquipment: b.startingEquipment
+            .where((i) => !isEquipmentChoiceItem(i))
+            .toList(),
+        // Reseta idiomas, ferramentas e escolhas de equipamento ao trocar background
         chosenLanguages: [],
         chosenToolProficiencies: [],
+        resolvedEquipmentChoices: {},
       );
 
   void toggleStartingItem(String item) {
@@ -309,6 +371,32 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setChosenToolProficiencies(List<String> tools) =>
       state = state.copyWith(chosenToolProficiencies: tools);
 
+  void setEquipmentChoice(String generic, String specific) {
+    final updated = Map<String, String>.from(state.resolvedEquipmentChoices)
+      ..[generic] = specific;
+    state = state.copyWith(resolvedEquipmentChoices: updated);
+  }
+
+  void setClassEquipmentChoice(int groupIdx, int optionIdx) {
+    final choices = List<int?>.from(state.classEquipmentChoices);
+    while (choices.length <= groupIdx) choices.add(null);
+    choices[groupIdx] = optionIdx;
+    // Clear sub-picks for this group since option changed
+    final specifics =
+        Map<String, String>.from(state.classEquipmentSpecifics)
+          ..removeWhere((k, _) => k.startsWith('$groupIdx:'));
+    state = state.copyWith(
+      classEquipmentChoices: choices,
+      classEquipmentSpecifics: specifics,
+    );
+  }
+
+  void setClassEquipmentSpecific(String key, String value) {
+    final specifics =
+        Map<String, String>.from(state.classEquipmentSpecifics)..[key] = value;
+    state = state.copyWith(classEquipmentSpecifics: specifics);
+  }
+
   Future<Character> buildAndSave(WidgetRef ref) async {
     final draft = state;
     final repo = ref.read(characterRepositoryProvider);
@@ -323,6 +411,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     final gpPattern = RegExp(r'^(\d+)\s*gp$', caseSensitive: false);
     final startingEquipment = <EquipmentItem>[];
     int startingGp = 0;
+    // Fixed items
     for (final itemName in draft.selectedStartingEquipment) {
       final gpMatch = gpPattern.firstMatch(itemName.trim());
       if (gpMatch != null) {
@@ -334,6 +423,58 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
           itemType: ItemType.gear,
           quantity: 1,
         ));
+      }
+    }
+    // Resolved background equipment choices (e.g. chosen instrument)
+    for (final itemName in draft.resolvedEquipmentChoices.values) {
+      startingEquipment.add(EquipmentItem(
+        name: itemName,
+        category: 'adventuring gear',
+        itemType: ItemType.gear,
+        quantity: 1,
+      ));
+    }
+    // Class starting equipment
+    final classEquip = draft.selectedClass?.startingEquipment;
+    if (classEquip != null) {
+      // Fixed class items
+      for (final item in classEquip.fixed) {
+        if (!item.toLowerCase().startsWith('any ')) {
+          startingEquipment.add(EquipmentItem(
+            name: item,
+            category: 'adventuring gear',
+            itemType: ItemType.gear,
+            quantity: 1,
+          ));
+        }
+      }
+      // Chosen option items
+      for (int g = 0; g < classEquip.choices.length; g++) {
+        if (g >= draft.classEquipmentChoices.length) continue;
+        final optIdx = draft.classEquipmentChoices[g];
+        if (optIdx == null) continue;
+        final option = classEquip.choices[g].options[optIdx];
+        for (int i = 0; i < option.length; i++) {
+          final item = option[i];
+          if (item.toLowerCase().startsWith('any ')) {
+            final specific = draft.classEquipmentSpecifics['$g:$i'];
+            if (specific != null) {
+              startingEquipment.add(EquipmentItem(
+                name: specific,
+                category: 'adventuring gear',
+                itemType: ItemType.gear,
+                quantity: 1,
+              ));
+            }
+          } else {
+            startingEquipment.add(EquipmentItem(
+              name: item,
+              category: 'adventuring gear',
+              itemType: ItemType.gear,
+              quantity: 1,
+            ));
+          }
+        }
       }
     }
 

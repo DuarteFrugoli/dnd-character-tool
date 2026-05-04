@@ -15,7 +15,14 @@
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Primal Path",
-    "startingGoldDice": "2d4x10"
+    "startingGoldDice": "2d4x10",
+    "startingEquipment": {
+      "fixed": ["Explorer's pack", "4 javelins"],
+      "choices": [
+        {"options": [["Greataxe"], ["any martial melee weapon"]]},
+        {"options": [["Handaxe", "Handaxe"], ["any simple weapon"]]}
+      ]
+    }
   },
   {
     "name": "Bard",
@@ -33,7 +40,15 @@
     "spellcastingType": "full",
     "subclassLevel": 3,
     "subclassFeatureName": "Bard College",
-    "startingGoldDice": "5d4x10"
+    "startingGoldDice": "5d4x10",
+    "startingEquipment": {
+      "fixed": ["Leather armor", "Dagger"],
+      "choices": [
+        {"options": [["Rapier"], ["Longsword"], ["any simple weapon"]]},
+        {"options": [["Diplomat's pack"], ["Entertainer's pack"]]},
+        {"options": [["Lute"], ["any musical instrument"]]}
+      ]
+    }
   },
   {
     "name": "Cleric",
@@ -51,7 +66,16 @@
     "spellcastingType": "full",
     "subclassLevel": 1,
     "subclassFeatureName": "Divine Domain",
-    "startingGoldDice": "5d4x10"
+    "startingGoldDice": "5d4x10",
+    "startingEquipment": {
+      "fixed": ["Shield", "Holy symbol"],
+      "choices": [
+        {"options": [["Mace"], ["Warhammer"]]},
+        {"options": [["Scale mail"], ["Leather armor"], ["Chain mail"]]},
+        {"options": [["Light crossbow", "20 bolts"], ["any simple weapon"]]},
+        {"options": [["Priest's pack"], ["Explorer's pack"]]}
+      ]
+    }
   },
   {
     "name": "Druid",
@@ -69,7 +93,14 @@
     "spellcastingType": "full",
     "subclassLevel": 2,
     "subclassFeatureName": "Druid Circle",
-    "startingGoldDice": "2d4x10"
+    "startingGoldDice": "2d4x10",
+    "startingEquipment": {
+      "fixed": ["Leather armor", "Explorer's pack", "Druidic focus"],
+      "choices": [
+        {"options": [["Wooden shield"], ["any simple weapon"]]},
+        {"options": [["Scimitar"], ["any simple melee weapon"]]}
+      ]
+    }
   },
   {
     "name": "Fighter",
@@ -87,7 +118,16 @@
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Martial Archetype",
-    "startingGoldDice": "5d4x10"
+    "startingGoldDice": "5d4x10",
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {"options": [["Chain mail"], ["Leather armor", "Longbow", "20 arrows"]]},
+        {"options": [["any martial weapon", "Shield"], ["any martial weapon", "any martial weapon"]]},
+        {"options": [["Light crossbow", "20 bolts"], ["Handaxe", "Handaxe"]]},
+        {"options": [["Dungeoneer's pack"], ["Explorer's pack"]]}
+      ]
+    }
   },
   {
     "name": "Monk",
@@ -105,7 +145,14 @@
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Monastic Tradition",
-    "startingGoldDice": "5d4"
+    "startingGoldDice": "5d4",
+    "startingEquipment": {
+      "fixed": ["10 darts"],
+      "choices": [
+        {"options": [["Shortsword"], ["any simple weapon"]]},
+        {"options": [["Dungeoneer's pack"], ["Explorer's pack"]]}
+      ]
+    }
   },
   {
     "name": "Paladin",
@@ -123,7 +170,15 @@
     "spellcastingType": "half",
     "subclassLevel": 3,
     "subclassFeatureName": "Sacred Oath",
-    "startingGoldDice": "5d4x10"
+    "startingGoldDice": "5d4x10",
+    "startingEquipment": {
+      "fixed": ["Chain mail", "Holy symbol"],
+      "choices": [
+        {"options": [["any martial weapon", "Shield"], ["any martial weapon", "any martial weapon"]]},
+        {"options": [["5 javelins"], ["any simple melee weapon"]]},
+        {"options": [["Priest's pack"], ["Explorer's pack"]]}
+      ]
+    }
   },
   {
     "name": "Ranger",
@@ -141,7 +196,15 @@
     "spellcastingType": "half",
     "subclassLevel": 3,
     "subclassFeatureName": "Ranger Archetype",
-    "startingGoldDice": "5d4x10"
+    "startingGoldDice": "5d4x10",
+    "startingEquipment": {
+      "fixed": ["Longbow", "Quiver with 20 arrows"],
+      "choices": [
+        {"options": [["Scale mail"], ["Leather armor"]]},
+        {"options": [["Shortsword", "Shortsword"], ["any simple melee weapon", "any simple melee weapon"]]},
+        {"options": [["Dungeoneer's pack"], ["Explorer's pack"]]}
+      ]
+    }
   },
   {
     "name": "Rogue",
@@ -159,7 +222,15 @@
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Roguish Archetype",
-    "startingGoldDice": "4d4x10"
+    "startingGoldDice": "4d4x10",
+    "startingEquipment": {
+      "fixed": ["Leather armor", "Dagger", "Dagger", "Thieves' tools"],
+      "choices": [
+        {"options": [["Rapier"], ["Shortsword"]]},
+        {"options": [["Shortbow", "Quiver with 20 arrows"], ["Shortsword"]]},
+        {"options": [["Burglar's pack"], ["Dungeoneer's pack"], ["Explorer's pack"]]}
+      ]
+    }
   },
   {
     "name": "Sorcerer",
@@ -177,7 +248,15 @@
     "spellcastingType": "full",
     "subclassLevel": 1,
     "subclassFeatureName": "Sorcerous Origin",
-    "startingGoldDice": "3d4x10"
+    "startingGoldDice": "3d4x10",
+    "startingEquipment": {
+      "fixed": ["Dagger", "Dagger"],
+      "choices": [
+        {"options": [["Light crossbow", "20 bolts"], ["any simple weapon"]]},
+        {"options": [["Component pouch"], ["Arcane focus"]]},
+        {"options": [["Dungeoneer's pack"], ["Explorer's pack"]]}
+      ]
+    }
   },
   {
     "name": "Warlock",
@@ -195,7 +274,16 @@
     "spellcastingType": "warlock",
     "subclassLevel": 1,
     "subclassFeatureName": "Otherworldly Patron",
-    "startingGoldDice": "4d4x10"
+    "startingGoldDice": "4d4x10",
+    "startingEquipment": {
+      "fixed": ["Leather armor", "Dagger", "Dagger"],
+      "choices": [
+        {"options": [["Light crossbow", "20 bolts"], ["any simple weapon"]]},
+        {"options": [["Component pouch"], ["Arcane focus"]]},
+        {"options": [["Scholar's pack"], ["Dungeoneer's pack"]]},
+        {"options": [["any simple weapon"]]}
+      ]
+    }
   },
   {
     "name": "Wizard",
@@ -213,6 +301,14 @@
     "spellcastingType": "full",
     "subclassLevel": 2,
     "subclassFeatureName": "Arcane Tradition",
-    "startingGoldDice": "4d4x10"
+    "startingGoldDice": "4d4x10",
+    "startingEquipment": {
+      "fixed": ["Spellbook"],
+      "choices": [
+        {"options": [["Quarterstaff"], ["Dagger"]]},
+        {"options": [["Component pouch"], ["Arcane focus"]]},
+        {"options": [["Scholar's pack"], ["Explorer's pack"]]}
+      ]
+    }
   }
 ]

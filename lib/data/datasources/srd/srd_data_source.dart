@@ -69,6 +69,7 @@ class SrdDataSource {
           subclassLevel: cls.subclassLevel,
           subclassFeatureName: cls.subclassFeatureName,
           startingGoldDice: cls.startingGoldDice,
+          startingEquipment: cls.startingEquipment,
           subclasses: subs,
         );
       }).toList();

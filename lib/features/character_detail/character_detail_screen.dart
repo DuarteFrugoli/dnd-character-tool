@@ -319,20 +319,26 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         style: Theme.of(ctx).textTheme.bodySmall,
                       ),
                     ),
-                  ...srdClass.subclasses.map((sub) => RadioListTile<String>(
-                        title: Text(sub.name),
-                        subtitle: sub.description.isNotEmpty
-                            ? Text(sub.description,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(ctx).textTheme.bodySmall)
-                            : null,
-                        value: sub.name,
-                        groupValue: selected,
-                        onChanged: (v) => setDialogState(() => selected = v),
-                        contentPadding: EdgeInsets.zero,
-                        dense: true,
-                      )),
+                  RadioGroup<String>(
+                    groupValue: selected,
+                    onChanged: (v) => setDialogState(() => selected = v),
+                    child: Column(
+                      children: srdClass.subclasses
+                          .map((sub) => RadioListTile<String>(
+                                title: Text(sub.name),
+                                subtitle: sub.description.isNotEmpty
+                                    ? Text(sub.description,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: Theme.of(ctx).textTheme.bodySmall)
+                                    : null,
+                                value: sub.name,
+                                contentPadding: EdgeInsets.zero,
+                                dense: true,
+                              ))
+                          .toList(),
+                    ),
+                  ),
                 ],
               ),
             ),

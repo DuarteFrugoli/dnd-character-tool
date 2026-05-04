@@ -68,7 +68,7 @@ class _CharacterCreationScreenState
     );
     if (confirm == true && mounted) {
       ref.read(characterDraftProvider.notifier).reset();
-      context.go('/create');
+      context.go('/');
     }
   }
 
@@ -89,7 +89,11 @@ class _CharacterCreationScreenState
                       draft.toolChoicesNeeded &&
                   !draft.chosenToolProficiencies
                       .take(draft.toolChoicesNeeded)
-                      .any((s) => s.isEmpty))),
+                      .any((s) => s.isEmpty))) &&
+          (draft.equipmentChoicesNeeded == 0 ||
+              draft.resolvedEquipmentChoices.length >=
+                  draft.equipmentChoicesNeeded) &&
+          draft.classEquipmentComplete,
       _ => false,
     };
   }

@@ -97,6 +97,17 @@ class _BackgroundCard extends StatelessWidget {
                                 : scheme.onSurfaceVariant,
                           ),
                     ),
+                    if (bg.toolProficiencies.isNotEmpty) ...[
+                      const SizedBox(height: 2),
+                      Text(
+                        'Tools: ${bg.toolProficiencies.join(', ')}',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: isSelected
+                                  ? scheme.onPrimaryContainer
+                                  : scheme.tertiary,
+                            ),
+                      ),
+                    ],
                     const SizedBox(height: 4),
                     Text(
                       'Feature: ${bg.feature.name}',

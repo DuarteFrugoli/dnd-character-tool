@@ -292,12 +292,15 @@ class _ExportDialogState extends State<_ExportDialog> {
                     );
                     if (validation.isValid) {
                       return Center(
-                        child: QrImageView(
-                          data: widget.token,
-                          version: QrVersions.auto,
-                          size: 200,
-                          backgroundColor: Colors.white,
-                          errorCorrectionLevel: QrErrorCorrectLevel.L,
+                        child: Container(
+                          color: Colors.white,
+                          padding: const EdgeInsets.all(12),
+                          child: QrImageView(
+                            data: widget.token,
+                            version: QrVersions.auto,
+                            size: 200,
+                            errorCorrectionLevel: QrErrorCorrectLevel.L,
+                          ),
                         ),
                       );
                     }

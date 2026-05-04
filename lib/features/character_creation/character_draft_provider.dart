@@ -9,6 +9,91 @@ import '../../shared/providers/providers.dart';
 
 enum AttributeMethod { standardArray, pointBuy, rolledDice }
 
+// ── Equipment type detection ──────────────────────────────────────────────────
+
+const _kWeaponKeywords = [
+  'sword', 'axe', 'bow', 'crossbow', 'dagger', 'mace', 'hammer', 'spear',
+  'javelin', 'lance', 'rapier', 'scimitar', 'halberd', 'glaive', 'pike',
+  'flail', 'maul', 'quarterstaff', 'staff', 'sickle', 'club', 'trident',
+  'handaxe', 'greataxe', 'warhammer', 'morningstar', 'war pick', 'whip',
+  'blowgun', 'sling', 'dart', 'net',
+];
+
+const _kArmorKeywords = [
+  'chain mail', 'chain shirt', 'scale mail', 'ring mail', 'leather armor',
+  'studded leather', 'padded armor', 'hide armor', 'breastplate',
+  'half plate', 'plate armor', 'splint', 'leather', 'padded',
+  'hide', 'plate',
+];
+
+const _kAmmoKeywords = ['arrows', 'bolts', 'darts', 'needles'];
+
+/// Returns the appropriate [ItemType] for an equipment item name.
+ItemType _itemTypeForItem(String name) {
+  final lower = name.toLowerCase();
+  // Check shield first — it IS armor
+  if (lower.contains('shield')) return ItemType.armor;
+  for (final kw in _kArmorKeywords) {
+    if (lower.contains(kw)) return ItemType.armor;
+  }
+  for (final kw in _kAmmoKeywords) {
+    if (lower.contains(kw)) return ItemType.ammunition;
+  }
+  for (final kw in _kWeaponKeywords) {
+    if (lower.contains(kw)) return ItemType.weapon;
+  }
+  return ItemType.gear;
+}
+
+/// Returns a human-readable category string for the character sheet.
+String _categoryForItem(String name) {
+  switch (_itemTypeForItem(name)) {
+    case ItemType.weapon:
+      return 'weapon';
+    case ItemType.armor:
+      return 'armor';
+    case ItemType.ammunition:
+      return 'ammunition';
+    default:
+      return 'adventuring gear';
+  }
+}
+
+/// Returns extra [EquipmentItem.properties] for armor/shield items.
+Map<String, dynamic>? _propertiesForItem(String name) {
+  final lower = name.toLowerCase();
+  if (_itemTypeForItem(name) != ItemType.armor) return null;
+
+  // Shield
+  if (lower.contains('shield')) return {'isShield': true, 'acBonus': 2};
+
+  // Armor table (baseAC, addDexModifier bool, maxDexBonus: null=unlimited)
+  const armorTable = <String, (int, bool, int?)>[
+    ('half plate', (15, true, 2)),
+    ('studded leather', (12, true, null)),
+    ('chain mail', (16, false, null)),
+    ('ring mail', (14, false, null)),
+    ('scale mail', (14, true, 2)),
+    ('chain shirt', (13, true, 2)),
+    ('plate', (18, false, null)),
+    ('splint', (17, false, null)),
+    ('breastplate', (14, true, 2)),
+    ('hide', (12, true, 2)),
+    ('leather', (11, true, null)),
+    ('padded', (11, true, null)),
+  ];
+  for (final (pattern, (base, addDex, maxDex)) in armorTable) {
+    if (lower.contains(pattern)) {
+      return {
+        'baseAC': base,
+        'addDexModifier': addDex,
+        if (maxDex != null) 'maxDexBonus': maxDex,
+      };
+    }
+  }
+  return null;
+}
+
 /// Returns true when the equipment string represents a player choice
 /// rather than a fixed item (e.g. "Musical instrument", "Artisan's tools").
 bool isEquipmentChoiceItem(String item) {
@@ -286,6 +371,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setClass(SrdClass c) => state = state.copyWith(
         selectedClass: c,
         selectedSubclass: null,
+        chosenSkills: [],
         chosenToolProficiencies: [],
         classEquipmentChoices: [],
         classEquipmentSpecifics: {},
@@ -294,6 +380,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void clearClass() => state = state.copyWith(
         selectedClass: null,
         selectedSubclass: null,
+        chosenSkills: [],
         chosenToolProficiencies: [],
         classEquipmentChoices: [],
         classEquipmentSpecifics: {},
@@ -379,7 +466,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
   void setClassEquipmentChoice(int groupIdx, int optionIdx) {
     final choices = List<int?>.from(state.classEquipmentChoices);
-    while (choices.length <= groupIdx) choices.add(null);
+    while (choices.length <= groupIdx) {
+      choices.add(null);
+    }
     choices[groupIdx] = optionIdx;
     // Clear sub-picks for this group since option changed
     final specifics =
@@ -407,46 +496,45 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     final hitDie = draft.selectedClass!.hitDie;
 
     // Converte itens de background selecionados em EquipmentItems
-    // Itens no formato "X gp" viram currency, os outros viram gear
+    // Itens no formato "X gp" viram currency, os outros recebem o tipo correto
     final gpPattern = RegExp(r'^(\d+)\s*gp$', caseSensitive: false);
     final startingEquipment = <EquipmentItem>[];
     int startingGp = 0;
+
+    void addItem(String raw) {
+      // Handle "N x Item" or "Item x N" patterns (e.g. "20 arrows", "4 javelins")
+      final match = RegExp(r'^(\d+)\s+(.+)$').firstMatch(raw.trim());
+      final qty = match != null ? int.parse(match.group(1)!) : 1;
+      final itemName = match != null ? match.group(2)! : raw.trim();
+
+      final gpMatch = gpPattern.firstMatch(itemName);
+      if (gpMatch != null) {
+        startingGp += qty * int.parse(gpMatch.group(1)!);
+        return;
+      }
+      startingEquipment.add(EquipmentItem(
+        name: itemName,
+        category: _categoryForItem(itemName),
+        itemType: _itemTypeForItem(itemName),
+        quantity: qty,
+        properties: _propertiesForItem(itemName),
+      ));
+    }
+
     // Fixed items
     for (final itemName in draft.selectedStartingEquipment) {
-      final gpMatch = gpPattern.firstMatch(itemName.trim());
-      if (gpMatch != null) {
-        startingGp += int.parse(gpMatch.group(1)!);
-      } else {
-        startingEquipment.add(EquipmentItem(
-          name: itemName,
-          category: 'adventuring gear',
-          itemType: ItemType.gear,
-          quantity: 1,
-        ));
-      }
+      addItem(itemName);
     }
     // Resolved background equipment choices (e.g. chosen instrument)
     for (final itemName in draft.resolvedEquipmentChoices.values) {
-      startingEquipment.add(EquipmentItem(
-        name: itemName,
-        category: 'adventuring gear',
-        itemType: ItemType.gear,
-        quantity: 1,
-      ));
+      addItem(itemName);
     }
     // Class starting equipment
     final classEquip = draft.selectedClass?.startingEquipment;
     if (classEquip != null) {
       // Fixed class items
       for (final item in classEquip.fixed) {
-        if (!item.toLowerCase().startsWith('any ')) {
-          startingEquipment.add(EquipmentItem(
-            name: item,
-            category: 'adventuring gear',
-            itemType: ItemType.gear,
-            quantity: 1,
-          ));
-        }
+        if (!item.toLowerCase().startsWith('any ')) addItem(item);
       }
       // Chosen option items
       for (int g = 0; g < classEquip.choices.length; g++) {
@@ -457,22 +545,10 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         for (int i = 0; i < option.length; i++) {
           final item = option[i];
           if (item.toLowerCase().startsWith('any ')) {
-            final specific = draft.classEquipmentSpecifics['$g:$i'];
-            if (specific != null) {
-              startingEquipment.add(EquipmentItem(
-                name: specific,
-                category: 'adventuring gear',
-                itemType: ItemType.gear,
-                quantity: 1,
-              ));
-            }
+            final specific = draft.classEquipmentSpecifics['\$g:\$i'];
+            if (specific != null) addItem(specific);
           } else {
-            startingEquipment.add(EquipmentItem(
-              name: item,
-              category: 'adventuring gear',
-              itemType: ItemType.gear,
-              quantity: 1,
-            ));
+            addItem(item);
           }
         }
       }

@@ -40,6 +40,7 @@ class Character {
   final SpellSlots spellSlots;
   final List<String> features;
   final List<CharacterExtraFeature> extraFeatures;
+  final List<String> disabledFeatures;
   final List<String> languages;
   final CharacterPersonality personality;
   final CharacterAppearance appearance;
@@ -76,6 +77,7 @@ class Character {
     this.spellSlots = const SpellSlots(),
     this.features = const [],
     this.extraFeatures = const [],
+    this.disabledFeatures = const [],
     this.languages = const [],
     this.personality = const CharacterPersonality(),
     this.appearance = const CharacterAppearance(),
@@ -126,6 +128,7 @@ class Character {
     SpellSlots? spellSlots,
     List<String>? features,
     List<CharacterExtraFeature>? extraFeatures,
+    List<String>? disabledFeatures,
     List<String>? languages,
     CharacterPersonality? personality,
     CharacterAppearance? appearance,
@@ -163,6 +166,7 @@ class Character {
       spellSlots: spellSlots ?? this.spellSlots,
       features: features ?? this.features,
       extraFeatures: extraFeatures ?? this.extraFeatures,
+      disabledFeatures: disabledFeatures ?? this.disabledFeatures,
       languages: languages ?? this.languages,
       personality: personality ?? this.personality,
       appearance: appearance ?? this.appearance,

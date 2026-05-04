@@ -57,6 +57,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
   bool _editMode = false;
+  Character? _snapshot; // character state captured when entering edit mode
 
   @override
   void initState() {
@@ -120,11 +121,56 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           ],
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.bedtime_outlined),
-            tooltip: 'Long Rest',
-            onPressed: () => _confirmLongRest(),
-          ),
+          if (!_editMode)
+            IconButton(
+              icon: const Icon(Icons.bedtime_outlined),
+              tooltip: 'Long Rest',
+              onPressed: () => _confirmLongRest(),
+            ),
+          if (_editMode)
+            IconButton(
+              icon: const Icon(Icons.close),
+              tooltip: 'Cancelar edição',
+              onPressed: () async {
+                final confirm = await showDialog<bool>(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: const Text('Cancelar edição?'),
+                    content: const Text(
+                        'Todas as alterações serão descartadas.'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(ctx, false),
+                        child: const Text('Continuar editando'),
+                      ),
+                      FilledButton(
+                        onPressed: () => Navigator.pop(ctx, true),
+                        style: FilledButton.styleFrom(
+                          backgroundColor:
+                              Theme.of(context).colorScheme.error,
+                          foregroundColor:
+                              Theme.of(context).colorScheme.onError,
+                        ),
+                        child: const Text('Descartar'),
+                      ),
+                    ],
+                  ),
+                );
+                if (confirm == true && mounted) {
+                  final snap = _snapshot;
+                  if (snap != null) {
+                    await ref
+                        .read(characterDetailProvider(widget.characterId)
+                            .notifier)
+                        .revertTo(snap);
+                  }
+                  setState(() {
+                    _editMode = false;
+                    _snapshot = null;
+                  });
+                }
+              },
+            ),
           IconButton(
             icon: Icon(_editMode
                 ? Icons.check_circle_outlined
@@ -133,10 +179,42 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             color: _editMode
                 ? Theme.of(context).colorScheme.primary
                 : null,
-            onPressed: () {
-              final entering = !_editMode;
-              setState(() => _editMode = entering);
-              if (entering) _tabs.animateTo(0);
+            onPressed: () async {
+              if (!_editMode) {
+                setState(() {
+                  _editMode = true;
+                  _snapshot = character; // capture state before any edits
+                });
+                _tabs.animateTo(0);
+                return;
+              }
+              // Flush any focused text field before showing dialog
+              FocusScope.of(context).unfocus();
+              await Future.delayed(Duration.zero);
+              if (!mounted) return;
+              final confirm = await showDialog<bool>(
+                context: context,
+                builder: (ctx) => AlertDialog(
+                  title: const Text('Finalizar edição?'),
+                  content: const Text('As alterações serão salvas.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(ctx, false),
+                      child: const Text('Continuar editando'),
+                    ),
+                    FilledButton(
+                      onPressed: () => Navigator.pop(ctx, true),
+                      child: const Text('Confirmar'),
+                    ),
+                  ],
+                ),
+              );
+              if (confirm == true && mounted) {
+                setState(() {
+                  _editMode = false;
+                  _snapshot = null;
+                });
+              }
             },
           ),
         ],
@@ -158,8 +236,8 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         controller: _tabs,
         children: [
           _StatsTab(character: character, characterId: widget.characterId, isEditing: _editMode),
-          _SkillsTab(character: character),
-          _FeaturesTab(character: character, characterId: widget.characterId),
+          _SkillsTab(character: character, characterId: widget.characterId, isEditing: _editMode),
+          _FeaturesTab(character: character, characterId: widget.characterId, isEditing: _editMode),
           _SpellsTab(character: character, characterId: widget.characterId),
           _InventoryTab(character: character, characterId: widget.characterId),
           _NotesTab(character: character, characterId: widget.characterId),
@@ -218,7 +296,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
   // Edit mode controllers
   late final TextEditingController _nameCtrl;
-  late final TextEditingController _bgCtrl;
   late final TextEditingController _alignCtrl;
   late final TextEditingController _playerCtrl;
   late final TextEditingController _hpMaxCtrl;
@@ -227,7 +304,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
   // Focus nodes
   final _nameFocus = FocusNode();
-  final _bgFocus = FocusNode();
   final _alignFocus = FocusNode();
   final _playerFocus = FocusNode();
   final _hpMaxFocus = FocusNode();
@@ -411,7 +487,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     super.initState();
     final c = widget.character;
     _nameCtrl = TextEditingController(text: c.name);
-    _bgCtrl = TextEditingController(text: c.background);
     _alignCtrl = TextEditingController(text: c.alignment);
     _playerCtrl = TextEditingController(text: c.playerName);
     _hpMaxCtrl = TextEditingController(text: '${c.hitPoints.maximum}');
@@ -419,9 +494,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
     _nameFocus.addListener(() {
       if (!_nameFocus.hasFocus) _notifier.updateName(_nameCtrl.text);
-    });
-    _bgFocus.addListener(() {
-      if (!_bgFocus.hasFocus) _notifier.updateBackground(_bgCtrl.text);
     });
     _alignFocus.addListener(() {
       if (!_alignFocus.hasFocus) _notifier.updateAlignment(_alignCtrl.text);
@@ -448,7 +520,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     super.didUpdateWidget(old);
     final c = widget.character;
     if (!_nameFocus.hasFocus) _nameCtrl.text = c.name;
-    if (!_bgFocus.hasFocus) _bgCtrl.text = c.background;
     if (!_alignFocus.hasFocus) _alignCtrl.text = c.alignment;
     if (!_playerFocus.hasFocus) _playerCtrl.text = c.playerName;
     if (!_hpMaxFocus.hasFocus) _hpMaxCtrl.text = '${c.hitPoints.maximum}';
@@ -459,20 +530,63 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   void dispose() {
     _amountCtrl.dispose();
     _nameCtrl.dispose();
-    _bgCtrl.dispose();
     _alignCtrl.dispose();
     _playerCtrl.dispose();
     _hpMaxCtrl.dispose();
     _speedCtrl.dispose();
     _langCtrl.dispose();
     _nameFocus.dispose();
-    _bgFocus.dispose();
     _alignFocus.dispose();
     _playerFocus.dispose();
     _hpMaxFocus.dispose();
     _speedFocus.dispose();
     _langFocus.dispose();
     super.dispose();
+  }
+
+  Future<void> _showBackgroundDialog(Character character) async {
+    final backgrounds = await SrdDataSource.instance.getBackgrounds();
+    if (!mounted) return;
+    String? selected = character.background;
+    final picked = await showDialog<String>(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setDialogState) => AlertDialog(
+          title: const Text('Escolher Background'),
+          content: SizedBox(
+            width: double.maxFinite,
+            height: 400,
+            child: ListView(
+              children: backgrounds
+                  .map((bg) => RadioListTile<String>(
+                        title: Text(bg.name),
+                        value: bg.name,
+                        groupValue: selected,
+                        onChanged: (v) => setDialogState(() => selected = v),
+                        dense: true,
+                        contentPadding: EdgeInsets.zero,
+                      ))
+                  .toList(),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Cancelar'),
+            ),
+            FilledButton(
+              onPressed: selected != null
+                  ? () => Navigator.pop(ctx, selected)
+                  : null,
+              child: const Text('Confirmar'),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (picked != null && picked != character.background) {
+      _notifier.updateBackground(picked);
+    }
   }
 
   Future<void> _showSetTempHpDialog(BuildContext context) async {
@@ -598,10 +712,40 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         label: 'Name',
                         controller: _nameCtrl,
                         focusNode: _nameFocus),
-                    _InlineField(
-                        label: 'Background',
-                        controller: _bgCtrl,
-                        focusNode: _bgFocus),
+                    // Background — picker, not free text
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 96,
+                            child: Text(
+                              'Background',
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: scheme.onSurfaceVariant),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              character.background.isNotEmpty
+                                  ? character.background
+                                  : '—',
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ),
+                          OutlinedButton.icon(
+                            icon: const Icon(Icons.swap_horiz, size: 16),
+                            label: const Text('Alterar'),
+                            style: OutlinedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              visualDensity: VisualDensity.compact,
+                            ),
+                            onPressed: () => _showBackgroundDialog(character),
+                          ),
+                        ],
+                      ),
+                    ),
                     _InlineField(
                         label: 'Alignment',
                         controller: _alignCtrl,
@@ -1069,62 +1213,122 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
 // ── Skills Tab ────────────────────────────────────────────────────────────────
 
-class _SkillsTab extends StatelessWidget {
-  const _SkillsTab({required this.character});
+class _SkillsTab extends ConsumerWidget {
+  const _SkillsTab({
+    required this.character,
+    required this.characterId,
+    required this.isEditing,
+  });
   final Character character;
+  final String characterId;
+  final bool isEditing;
+
+  void _cycleSkill(String skillName, WidgetRef ref) {
+    final c = ref.read(characterDetailProvider(characterId)).valueOrNull;
+    if (c == null) return;
+    final lower = skillName.toLowerCase();
+    final profs = List<String>.from(c.skillProficiencies);
+    final experts = List<String>.from(c.skillExpertises);
+
+    final isExpert = experts.contains(lower);
+    final isProf = profs.contains(lower);
+
+    if (isExpert) {
+      // expert → none
+      experts.remove(lower);
+      profs.remove(lower);
+    } else if (isProf) {
+      // proficient → expert
+      experts.add(lower);
+    } else {
+      // none → proficient
+      profs.add(lower);
+    }
+    ref
+        .read(characterDetailProvider(characterId).notifier)
+        .updateSkillProficiencies(profs, experts);
+  }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final profSet =
         character.skillProficiencies.map((s) => s.toLowerCase()).toSet();
     final expertSet =
         character.skillExpertises.map((s) => s.toLowerCase()).toSet();
 
-    return ListView.builder(
-      padding: const EdgeInsets.fromLTRB(0, 8, 0, 192),
-      itemCount: _skillAbility.length,
-      itemBuilder: (context, i) {
-        final skillName = _skillAbility.keys.elementAt(i);
-        final ability = _skillAbility[skillName]!;
-        final lower = skillName.toLowerCase();
-        final isExpert = expertSet.contains(lower);
-        final isProf = isExpert || profSet.contains(lower);
+    return Column(
+      children: [
+        if (isEditing)
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            color: scheme.primaryContainer.withAlpha(80),
+            child: Row(children: [
+              Icon(Icons.touch_app_outlined, size: 14, color: scheme.primary),
+              const SizedBox(width: 6),
+              Expanded(
+                child: Text(
+                  'Toque para alternar: nenhum → proficiente → experiente',
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        color: scheme.primary,
+                      ),
+                ),
+              ),
+            ]),
+          ),
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.fromLTRB(0, 8, 0, 192),
+            itemCount: _skillAbility.length,
+            itemBuilder: (context, i) {
+              final skillName = _skillAbility.keys.elementAt(i);
+              final ability = _skillAbility[skillName]!;
+              final lower = skillName.toLowerCase();
+              final isExpert = expertSet.contains(lower);
+              final isProf = isExpert || profSet.contains(lower);
 
-        final score = character.abilityScores[ability];
-        final abilityMod = ((score - 10) / 2).floor();
-        final bonus = abilityMod +
-            (isExpert
-                ? character.proficiencyBonus * 2
-                : isProf
-                    ? character.proficiencyBonus
-                    : 0);
+              final score = character.abilityScores[ability];
+              final abilityMod = ((score - 10) / 2).floor();
+              final bonus = abilityMod +
+                  (isExpert
+                      ? character.proficiencyBonus * 2
+                      : isProf
+                          ? character.proficiencyBonus
+                          : 0);
 
-        return ListTile(
-          dense: true,
-          leading: Icon(
-            isExpert
-                ? Icons.star_rounded
-                : isProf
-                    ? Icons.circle
-                    : Icons.circle_outlined,
-            size: 16,
-            color: isProf ? scheme.primary : scheme.outlineVariant,
+              return ListTile(
+                dense: true,
+                onTap: isEditing ? () => _cycleSkill(skillName, ref) : null,
+                leading: Icon(
+                  isExpert
+                      ? Icons.star_rounded
+                      : isProf
+                          ? Icons.circle
+                          : Icons.circle_outlined,
+                  size: 16,
+                  color: isProf ? scheme.primary : scheme.outlineVariant,
+                ),
+                title: Text(skillName),
+                subtitle: Text(
+                  ability.substring(0, 3).toUpperCase(),
+                  style: Theme.of(context).textTheme.labelSmall,
+                ),
+                trailing: isEditing
+                    ? Icon(Icons.swap_vert, size: 16, color: scheme.outline)
+                    : Text(
+                        _sign(bonus),
+                        style: TextStyle(
+                          fontWeight:
+                              isProf ? FontWeight.bold : FontWeight.normal,
+                          color: isProf ? scheme.primary : null,
+                        ),
+                      ),
+              );
+            },
           ),
-          title: Text(skillName),
-          subtitle: Text(
-            ability.substring(0, 3).toUpperCase(),
-            style: Theme.of(context).textTheme.labelSmall,
-          ),
-          trailing: Text(
-            _sign(bonus),
-            style: TextStyle(
-              fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
-              color: isProf ? scheme.primary : null,
-            ),
-          ),
-        );
-      },
+        ),
+      ],
     );
   }
 }
@@ -1132,9 +1336,14 @@ class _SkillsTab extends StatelessWidget {
 // ── Features Tab ──────────────────────────────────────────────────────────────
 
 class _FeaturesTab extends ConsumerStatefulWidget {
-  const _FeaturesTab({required this.character, required this.characterId});
+  const _FeaturesTab({
+    required this.character,
+    required this.characterId,
+    required this.isEditing,
+  });
   final Character character;
   final String characterId;
+  final bool isEditing;
 
   @override
   ConsumerState<_FeaturesTab> createState() => _FeaturesTabState();
@@ -1212,6 +1421,20 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           return const Center(child: Text('Erro ao carregar features.'));
         }
         final data = snap.data!;
+        final isEditing = widget.isEditing;
+        final disabledSet = widget.character.disabledFeatures.toSet();
+        void toggle(String name) {
+          final list = List<String>.from(widget.character.disabledFeatures);
+          if (list.contains(name)) {
+            list.remove(name);
+          } else {
+            list.add(name);
+          }
+          ref
+              .read(characterDetailProvider(widget.characterId).notifier)
+              .updateDisabledFeatures(list);
+        }
+
         return Scaffold(
           body: ListView(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
@@ -1222,6 +1445,9 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 raceTraits: data.raceTraits,
                 subraceTraits: data.subraceTraits,
                 traitDescriptions: data.traitDescriptions,
+                isEditing: isEditing,
+                disabledFeatures: disabledSet,
+                onToggle: toggle,
               ),
               if (data.backgroundFeatureName != null) ...[
                 const SizedBox(height: 24),
@@ -1229,14 +1455,29 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                   backgroundName: widget.character.background,
                   featureName: data.backgroundFeatureName!,
                   featureDescription: data.backgroundFeatureDescription ?? '',
+                  isEditing: isEditing,
+                  disabledFeatures: disabledSet,
+                  onToggle: toggle,
                 ),
               ],
               const SizedBox(height: 24),
               _ClassFeaturesSection(
                 className: widget.character.characterClass,
                 features: data.classFeatures,
+                isEditing: isEditing,
+                disabledFeatures: disabledSet,
+                onToggle: toggle,
               ),
-              if (data.subclassFeatures.isNotEmpty) ...[const SizedBox(height: 24), _SubclassFeaturesSection(subclassName: data.subclassName, features: data.subclassFeatures)],
+              if (data.subclassFeatures.isNotEmpty) ...[
+                const SizedBox(height: 24),
+                _SubclassFeaturesSection(
+                  subclassName: data.subclassName,
+                  features: data.subclassFeatures,
+                  isEditing: isEditing,
+                  disabledFeatures: disabledSet,
+                  onToggle: toggle,
+                ),
+              ],
               if (widget.character.features.isNotEmpty) ...[
                 const SizedBox(height: 24),
                 _ToolProficienciesSection(
@@ -1285,6 +1526,35 @@ class _FeaturesData {
   });
 }
 
+// ── Feature toggle button (shown in edit mode) ────────────────────────────────
+
+class _FeatureToggleButton extends StatelessWidget {
+  const _FeatureToggleButton({
+    required this.featureName,
+    required this.isDisabled,
+    required this.onToggle,
+  });
+  final String featureName;
+  final bool isDisabled;
+  final void Function(String) onToggle;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return IconButton(
+      icon: Icon(
+        isDisabled ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+        size: 18,
+      ),
+      color: isDisabled ? scheme.outline : scheme.primary,
+      tooltip: isDisabled ? 'Habilitar' : 'Desabilitar',
+      padding: EdgeInsets.zero,
+      constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
+      onPressed: () => onToggle(featureName),
+    );
+  }
+}
+
 class _RacialTraitsSection extends StatelessWidget {
   const _RacialTraitsSection({
     required this.raceName,
@@ -1292,6 +1562,9 @@ class _RacialTraitsSection extends StatelessWidget {
     required this.raceTraits,
     required this.subraceTraits,
     required this.traitDescriptions,
+    required this.isEditing,
+    required this.disabledFeatures,
+    required this.onToggle,
   });
 
   final String raceName;
@@ -1299,6 +1572,9 @@ class _RacialTraitsSection extends StatelessWidget {
   final List<String> raceTraits;
   final List<String> subraceTraits;
   final Map<String, String> traitDescriptions;
+  final bool isEditing;
+  final Set<String> disabledFeatures;
+  final void Function(String) onToggle;
 
   @override
   Widget build(BuildContext context) {
@@ -1321,9 +1597,11 @@ class _RacialTraitsSection extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         ...allTraits.map((trait) {
+          final isDisabled = disabledFeatures.contains(trait);
           final desc = traitDescriptions[trait];
+          Widget card;
           if (desc == null || desc.isEmpty) {
-            return Card(
+            card = Card(
               margin: const EdgeInsets.only(bottom: 6),
               child: ListTile(
                 dense: true,
@@ -1333,33 +1611,55 @@ class _RacialTraitsSection extends StatelessWidget {
                   trait,
                   style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
-                trailing: Icon(Icons.info_outline,
-                    size: 16, color: scheme.onSurfaceVariant),
+                trailing: isEditing
+                    ? _FeatureToggleButton(
+                        featureName: trait,
+                        isDisabled: isDisabled,
+                        onToggle: onToggle,
+                      )
+                    : Icon(Icons.info_outline,
+                        size: 16, color: scheme.onSurfaceVariant),
+              ),
+            );
+          } else {
+            card = Card(
+              margin: const EdgeInsets.only(bottom: 6),
+              clipBehavior: Clip.antiAlias,
+              child: ExpansionTile(
+                tilePadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+                childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                title: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        trait,
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    if (isEditing) ...[
+                      const SizedBox(width: 4),
+                      _FeatureToggleButton(
+                        featureName: trait,
+                        isDisabled: isDisabled,
+                        onToggle: onToggle,
+                      ),
+                    ],
+                  ],
+                ),
+                children: [
+                  Text(
+                    desc,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: scheme.onSurfaceVariant,
+                          height: 1.5,
+                        ),
+                  ),
+                ],
               ),
             );
           }
-          return Card(
-            margin: const EdgeInsets.only(bottom: 6),
-            clipBehavior: Clip.antiAlias,
-            child: ExpansionTile(
-              tilePadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
-              childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-              title: Text(
-                trait,
-                style: const TextStyle(fontWeight: FontWeight.w600),
-              ),
-              children: [
-                Text(
-                  desc,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.onSurfaceVariant,
-                        height: 1.5,
-                      ),
-                ),
-              ],
-            ),
-          );
+          return isDisabled ? Opacity(opacity: 0.35, child: card) : card;
         }),
       ],
     );
@@ -1371,14 +1671,52 @@ class _BackgroundFeatureSection extends StatelessWidget {
     required this.backgroundName,
     required this.featureName,
     required this.featureDescription,
+    required this.isEditing,
+    required this.disabledFeatures,
+    required this.onToggle,
   });
 
   final String backgroundName;
   final String featureName;
   final String featureDescription;
+  final bool isEditing;
+  final Set<String> disabledFeatures;
+  final void Function(String) onToggle;
 
   @override
   Widget build(BuildContext context) {
+    final isDisabled = disabledFeatures.contains(featureName);
+    final card = Card(
+      child: ExpansionTile(
+        title: Row(
+          children: [
+            Expanded(
+              child: Text(
+                featureName,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            ),
+            if (isEditing) ...[
+              const SizedBox(width: 4),
+              _FeatureToggleButton(
+                featureName: featureName,
+                isDisabled: isDisabled,
+                onToggle: onToggle,
+              ),
+            ],
+          ],
+        ),
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+            child: Text(
+              featureDescription,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
+        ],
+      ),
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -1390,23 +1728,7 @@ class _BackgroundFeatureSection extends StatelessWidget {
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
-        Card(
-          child: ExpansionTile(
-            title: Text(
-              featureName,
-              style: const TextStyle(fontWeight: FontWeight.w600),
-            ),
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                child: Text(
-                  featureDescription,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-              ),
-            ],
-          ),
-        ),
+        isDisabled ? Opacity(opacity: 0.35, child: card) : card,
       ],
     );
   }
@@ -1557,10 +1879,16 @@ class _ClassFeaturesSection extends StatelessWidget {
   const _ClassFeaturesSection({
     required this.className,
     required this.features,
+    required this.isEditing,
+    required this.disabledFeatures,
+    required this.onToggle,
   });
 
   final String className;
   final List<SrdClassFeature> features;
+  final bool isEditing;
+  final Set<String> disabledFeatures;
+  final void Function(String) onToggle;
 
   Color _typeColor(String type, ColorScheme scheme) {
     switch (type) {
@@ -1624,7 +1952,8 @@ class _ClassFeaturesSection extends StatelessWidget {
         const SizedBox(height: 8),
         ...features.map((f) {
           final typeColor = _typeColor(f.type, scheme);
-          return Card(
+          final isDisabled = disabledFeatures.contains(f.name);
+          final card = Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
               title: Row(
@@ -1652,6 +1981,7 @@ class _ClassFeaturesSection extends StatelessWidget {
                           ),
                     ),
                   ),
+                  if (isEditing) ...[const SizedBox(width: 4), _FeatureToggleButton(featureName: f.name, isDisabled: isDisabled, onToggle: onToggle)],
                 ],
               ),
               subtitle: Row(
@@ -1683,6 +2013,7 @@ class _ClassFeaturesSection extends StatelessWidget {
               ],
             ),
           );
+          return isDisabled ? Opacity(opacity: 0.35, child: card) : card;
         }),
       ],
     );
@@ -1695,10 +2026,16 @@ class _SubclassFeaturesSection extends StatelessWidget {
   const _SubclassFeaturesSection({
     required this.subclassName,
     required this.features,
+    required this.isEditing,
+    required this.disabledFeatures,
+    required this.onToggle,
   });
 
   final String subclassName;
   final List<SrdClassFeature> features;
+  final bool isEditing;
+  final Set<String> disabledFeatures;
+  final void Function(String) onToggle;
 
   @override
   Widget build(BuildContext context) {
@@ -1717,7 +2054,8 @@ class _SubclassFeaturesSection extends StatelessWidget {
         ...features.map((f) {
           final typeColor =
               f.type == 'active' ? scheme.primary : scheme.outline;
-          return Card(
+          final isDisabled = disabledFeatures.contains(f.name);
+          final card = Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
               title: Row(
@@ -1745,6 +2083,7 @@ class _SubclassFeaturesSection extends StatelessWidget {
                           ),
                     ),
                   ),
+                  if (isEditing) ...[const SizedBox(width: 4), _FeatureToggleButton(featureName: f.name, isDisabled: isDisabled, onToggle: onToggle)],
                 ],
               ),
               subtitle: Text(
@@ -1762,6 +2101,7 @@ class _SubclassFeaturesSection extends StatelessWidget {
               ],
             ),
           );
+          return isDisabled ? Opacity(opacity: 0.35, child: card) : card;
         }),
       ],
     );

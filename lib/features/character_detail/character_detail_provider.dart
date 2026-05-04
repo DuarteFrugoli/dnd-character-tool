@@ -25,6 +25,9 @@ class CharacterDetailNotifier
     ref.invalidate(characterListProvider);
   }
 
+  /// Restore a previously snapshotted character, discarding all edit changes.
+  Future<void> revertTo(Character snapshot) => _save(snapshot);
+
   Future<void> adjustHp(int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
@@ -152,6 +155,24 @@ class CharacterDetailNotifier
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(c.copyWith(savingThrowProficiencies: proficiencies));
+  }
+
+  Future<void> updateSkillProficiencies(
+    List<String> profs,
+    List<String> expertises,
+  ) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(
+      skillProficiencies: profs,
+      skillExpertises: expertises,
+    ));
+  }
+
+  Future<void> updateDisabledFeatures(List<String> disabled) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(disabledFeatures: disabled));
   }
 
   Future<void> updateAbilityScore(String key, int value) async {

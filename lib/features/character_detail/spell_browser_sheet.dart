@@ -35,43 +35,73 @@ class SpellBrowserSheet extends StatefulWidget {
   State<SpellBrowserSheet> createState() => _SpellBrowserSheetState();
 }
 
+// ── Filter state (extracted so the panel sheet can mutate it) ────────────────
+
+class _SpellFilters {
+  int? level;
+  String? school;
+  String? castingType; // 'action' | 'bonus_action' | 'reaction' | 'longer'
+  bool concentration = false;
+  bool ritual = false;
+
+  /// Selected class names. Empty = all classes shown.
+  Set<String> classes = {};
+
+  /// When true, spells above the character's current max slot level are shown.
+  bool showAllLevels = false;
+
+  /// Number of active filters for the badge (classes counts as 1 if non-empty).
+  int get activeCount =>
+      (level != null ? 1 : 0) +
+      (school != null ? 1 : 0) +
+      (castingType != null ? 1 : 0) +
+      (concentration ? 1 : 0) +
+      (ritual ? 1 : 0) +
+      (classes.isNotEmpty ? 1 : 0) +
+      (showAllLevels ? 1 : 0);
+
+  void reset() {
+    level = null;
+    school = null;
+    castingType = null;
+    concentration = false;
+    ritual = false;
+    classes = {};
+    showAllLevels = false;
+  }
+
+  _SpellFilters clone() => _SpellFilters()
+    ..level = level
+    ..school = school
+    ..castingType = castingType
+    ..concentration = concentration
+    ..ritual = ritual
+    ..classes = Set.of(classes)
+    ..showAllLevels = showAllLevels;
+}
+
+// ── State ─────────────────────────────────────────────────────────────────────
+
 class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
   List<SrdSpell>? _allSpells;
   final _searchCtrl = TextEditingController();
   String _search = '';
-  int? _levelFilter;
-  String? _schoolFilter;
-  String? _castingFilter; // 'action' | 'bonus_action' | 'reaction' | 'longer'
-  bool _concentrationFilter = false;
-  bool _ritualFilter = false;
-  bool _myClassOnly = true;
+  final _filters = _SpellFilters();
 
-  /// Tracks added spells locally so the UI updates instantly without waiting
-  /// for the parent's provider rebuild.
+  /// True when the header chip is showing "my class only" (shortcut).
+  bool get _myClassOnly =>
+      _filters.classes.length == 1 &&
+      _filters.classes.first.toLowerCase() ==
+          widget.characterClass.toLowerCase();
+
   late Set<String> _knownNames;
-
-  static const _schools = [
-    'Evocation',
-    'Abjuration',
-    'Conjuration',
-    'Divination',
-    'Enchantment',
-    'Illusion',
-    'Necromancy',
-    'Transmutation',
-  ];
-
-  static const _castingOptions = <(String, String)>[
-    ('action', 'Action'),
-    ('bonus_action', 'Bonus'),
-    ('reaction', 'Reaction'),
-    ('longer', 'Longer'),
-  ];
 
   @override
   void initState() {
     super.initState();
     _knownNames = {for (final s in widget.knownSpells) s.name.toLowerCase()};
+    // Pre-select the character's class as default filter.
+    _filters.classes = {widget.characterClass.toLowerCase()};
     _searchCtrl.addListener(
       () => setState(() => _search = _searchCtrl.text.trim()),
     );
@@ -91,30 +121,31 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
 
   List<SrdSpell> get _filtered {
     if (_allSpells == null) return const [];
-    final className = widget.characterClass.toLowerCase();
     final query = _search.toLowerCase();
     final longer = {'minute', 'hour', 'special'};
 
     return _allSpells!.where((s) {
-      if (s.level > widget.maxSpellLevel) return false;
-      if (_myClassOnly &&
-          !s.classes.any((c) => c.toLowerCase() == className)) {
+      if (!_filters.showAllLevels && s.level > widget.maxSpellLevel) {
         return false;
       }
-      if (_levelFilter != null && s.level != _levelFilter) return false;
-      if (_schoolFilter != null &&
-          s.school.toLowerCase() != _schoolFilter!.toLowerCase()) {
+      if (_filters.classes.isNotEmpty &&
+          !s.classes.any((c) => _filters.classes.contains(c.toLowerCase()))) {
         return false;
       }
-      if (_castingFilter != null) {
-        if (_castingFilter == 'longer') {
+      if (_filters.level != null && s.level != _filters.level) return false;
+      if (_filters.school != null &&
+          s.school.toLowerCase() != _filters.school!.toLowerCase()) {
+        return false;
+      }
+      if (_filters.castingType != null) {
+        if (_filters.castingType == 'longer') {
           if (!longer.contains(s.castingTimeType)) return false;
         } else {
-          if (s.castingTimeType != _castingFilter) return false;
+          if (s.castingTimeType != _filters.castingType) return false;
         }
       }
-      if (_concentrationFilter && !s.concentration) return false;
-      if (_ritualFilter && !s.ritual) return false;
+      if (_filters.concentration && !s.concentration) return false;
+      if (_filters.ritual && !s.ritual) return false;
       if (query.isNotEmpty && !s.name.toLowerCase().contains(query)) {
         return false;
       }
@@ -149,6 +180,32 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
     );
   }
 
+  Future<void> _openFilterPanel() async {
+    // Pass a clone so the panel can Cancel without mutating state.
+    final draft = _filters.clone();
+    final confirmed = await showModalBottomSheet<bool>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (_) => _FilterPanelSheet(
+        filters: draft,
+        maxSpellLevel: widget.maxSpellLevel,
+        characterClass: widget.characterClass,
+      ),
+    );
+    if (confirmed == true && mounted) {
+      setState(() {
+        _filters.level = draft.level;
+        _filters.school = draft.school;
+        _filters.castingType = draft.castingType;
+        _filters.concentration = draft.concentration;
+        _filters.ritual = draft.ritual;
+        _filters.classes = draft.classes;
+        _filters.showAllLevels = draft.showAllLevels;
+      });
+    }
+  }
+
   String _capitalize(String s) =>
       s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
 
@@ -157,7 +214,7 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
     final scheme = Theme.of(context).colorScheme;
     final filtered = _filtered;
     final isLoading = _allSpells == null;
-    final maxLvl = widget.maxSpellLevel;
+    final activeFilters = _filters.activeCount;
 
     return DraggableScrollableSheet(
       expand: false,
@@ -181,7 +238,7 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
 
           // ── Title row ──────────────────────────────────────────────────────
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+            padding: const EdgeInsets.fromLTRB(16, 0, 4, 0),
             child: Row(
               children: [
                 Text(
@@ -189,6 +246,43 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const Spacer(),
+                // Filter button with badge
+                Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        Icons.tune,
+                        color: activeFilters > 0 ? scheme.primary : null,
+                      ),
+                      tooltip: 'Filters',
+                      onPressed: _openFilterPanel,
+                    ),
+                    if (activeFilters > 0)
+                      Positioned(
+                        top: 6,
+                        right: 6,
+                        child: Container(
+                          width: 16,
+                          height: 16,
+                          decoration: BoxDecoration(
+                            color: scheme.primary,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Text(
+                              '$activeFilters',
+                              style: TextStyle(
+                                color: scheme.onPrimary,
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
                 IconButton(
                   icon: const Icon(Icons.close),
                   onPressed: () => Navigator.pop(context),
@@ -197,110 +291,80 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
             ),
           ),
 
-          // ── Search bar ─────────────────────────────────────────────────────
+          // ── Search + class chip ────────────────────────────────────────────
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
-            child: TextField(
-              controller: _searchCtrl,
-              textInputAction: TextInputAction.search,
-              decoration: InputDecoration(
-                hintText: 'Search spells...',
-                prefixIcon: const Icon(Icons.search),
-                suffixIcon: _search.isNotEmpty
-                    ? IconButton(
-                        icon: const Icon(Icons.clear),
-                        onPressed: _searchCtrl.clear,
-                      )
-                    : null,
-                isDense: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-
-          // ── Filter chips ───────────────────────────────────────────────────
-          SizedBox(
-            height: 38,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
               children: [
-                // "My class" toggle
+                Expanded(
+                  child: TextField(
+                    controller: _searchCtrl,
+                    textInputAction: TextInputAction.search,
+                    decoration: InputDecoration(
+                      hintText: 'Search spells...',
+                      prefixIcon: const Icon(Icons.search),
+                      suffixIcon: _search.isNotEmpty
+                          ? IconButton(
+                              icon: const Icon(Icons.clear),
+                              onPressed: _searchCtrl.clear,
+                            )
+                          : null,
+                      isDense: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
                 FilterChip(
                   label: Text(_capitalize(widget.characterClass)),
                   selected: _myClassOnly,
-                  onSelected: (v) => setState(() => _myClassOnly = v),
+                  onSelected: (v) => setState(() {
+                    if (v) {
+                      _filters.classes = {widget.characterClass.toLowerCase()};
+                    } else {
+                      _filters.classes = {};
+                    }
+                  }),
                 ),
-                const SizedBox(width: 6),
-                const VerticalDivider(width: 1),
-                const SizedBox(width: 6),
-                // Level chips
-                for (int lvl = 0; lvl <= maxLvl; lvl++)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 6),
-                    child: ChoiceChip(
-                      label: Text(lvl == 0 ? 'Cantrip' : 'Lvl $lvl'),
-                      selected: _levelFilter == lvl,
-                      onSelected: (v) =>
-                          setState(() => _levelFilter = v ? lvl : null),
-                    ),
-                  ),
-                const VerticalDivider(width: 1),
-                const SizedBox(width: 6),
-                // Casting time chips
-                for (final opt in _castingOptions)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 6),
-                    child: ChoiceChip(
-                      label: Text(opt.$2),
-                      selected: _castingFilter == opt.$1,
-                      onSelected: (v) =>
-                          setState(() => _castingFilter = v ? opt.$1 : null),
-                    ),
-                  ),
-                const VerticalDivider(width: 1),
-                const SizedBox(width: 6),
-                // Concentration & ritual chips
-                Padding(
-                  padding: const EdgeInsets.only(right: 6),
-                  child: FilterChip(
-                    label: const Text('Conc.'),
-                    selected: _concentrationFilter,
-                    onSelected: (v) =>
-                        setState(() => _concentrationFilter = v),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 6),
-                  child: FilterChip(
-                    label: const Text('Ritual'),
-                    selected: _ritualFilter,
-                    onSelected: (v) => setState(() => _ritualFilter = v),
-                  ),
-                ),
-                const VerticalDivider(width: 1),
-                const SizedBox(width: 6),
-                // School chips
-                for (final school in _schools)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 6),
-                    child: ChoiceChip(
-                      label: Text(school),
-                      selected: _schoolFilter == school,
-                      onSelected: (v) =>
-                          setState(() => _schoolFilter = v ? school : null),
-                    ),
-                  ),
               ],
             ),
           ),
+          const SizedBox(height: 6),
+
+          // ── Active filter summary ──────────────────────────────────────────
+          if (activeFilters > 0)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      _filterSummary(),
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: scheme.primary,
+                          ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () => setState(() => _filters.reset()),
+                    child: Text(
+                      'Clear all',
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: scheme.error,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
           // ── Result count ───────────────────────────────────────────────────
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -340,8 +404,8 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                         padding: const EdgeInsets.fromLTRB(8, 0, 8, 32),
                         itemBuilder: (_, i) {
                           final spell = filtered[i];
-                          final isKnown = _knownNames
-                              .contains(spell.name.toLowerCase());
+                          final isKnown =
+                              _knownNames.contains(spell.name.toLowerCase());
                           return _SpellBrowserTile(
                             spell: spell,
                             isKnown: isKnown,
@@ -355,6 +419,276 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
       ),
     );
   }
+
+  String _filterSummary() {
+    final parts = <String>[];
+    if (_filters.level != null) {
+      parts.add(_filters.level == 0 ? 'Cantrip' : 'Lvl ${_filters.level}');
+    }
+    if (_filters.school != null) parts.add(_filters.school!);
+    if (_filters.castingType != null) {
+      const labels = {
+        'action': 'Action',
+        'bonus_action': 'Bonus action',
+        'reaction': 'Reaction',
+        'longer': 'Longer cast',
+      };
+      parts.add(labels[_filters.castingType] ?? _filters.castingType!);
+    }
+    if (_filters.concentration) parts.add('Concentration');
+    if (_filters.ritual) parts.add('Ritual');
+    if (_filters.showAllLevels) parts.add('All levels');
+    if (_filters.classes.isNotEmpty) {
+      parts.add(_filters.classes
+          .map((c) => c[0].toUpperCase() + c.substring(1))
+          .join(', '));
+    }
+    return parts.join(' · ');
+  }
+}
+
+// ── Filter Panel Sheet ────────────────────────────────────────────────────────
+
+/// Editable filter panel. Mutates [filters] in-place; returns true on Apply.
+class _FilterPanelSheet extends StatefulWidget {
+  const _FilterPanelSheet({
+    required this.filters,
+    required this.maxSpellLevel,
+    required this.characterClass,
+  });
+
+  final _SpellFilters filters;
+  final int maxSpellLevel;
+  final String characterClass;
+
+  @override
+  State<_FilterPanelSheet> createState() => _FilterPanelSheetState();
+}
+
+class _FilterPanelSheetState extends State<_FilterPanelSheet> {
+  static const _schools = [
+    'Evocation', 'Abjuration', 'Conjuration', 'Divination',
+    'Enchantment', 'Illusion', 'Necromancy', 'Transmutation',
+  ];
+
+  static const _castingOptions = <(String, String)>[
+    ('action', 'Action'),
+    ('bonus_action', 'Bonus action'),
+    ('reaction', 'Reaction'),
+    ('longer', 'Longer cast (1 min+)'),
+  ];
+
+  static const _allClasses = [
+    'bard', 'cleric', 'druid', 'paladin', 'ranger',
+    'sorcerer', 'warlock', 'wizard', 'artificer',
+  ];
+
+  String _cap(String s) => s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final f = widget.filters;
+
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      child: DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.75,
+        minChildSize: 0.4,
+        maxChildSize: 0.95,
+        builder: (_, scrollCtrl) => Column(
+          children: [
+            // Handle
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: scheme.outlineVariant,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+
+            // Title
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 8, 8),
+              child: Row(
+                children: [
+                  Text('Filters',
+                      style: Theme.of(context).textTheme.titleLarge),
+                  const Spacer(),
+                  TextButton(
+                    onPressed: () => setState(() => f.reset()),
+                    child: const Text('Reset'),
+                  ),
+                ],
+              ),
+            ),
+            const Divider(height: 1),
+
+            // Scrollable body
+            Expanded(
+              child: ListView(
+                controller: scrollCtrl,
+                padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+                children: [
+                  // ── Classes ──────────────────────────────────────────────
+                  _SectionLabel('Classes'),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    children: [
+                      for (final cls in _allClasses)
+                        FilterChip(
+                          label: Text(_cap(cls)),
+                          selected: f.classes.contains(cls),
+                          onSelected: (v) => setState(() {
+                            if (v) {
+                              f.classes = {...f.classes, cls};
+                            } else {
+                              f.classes = f.classes
+                                  .where((c) => c != cls)
+                                  .toSet();
+                            }
+                          }),
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'No class selected = show all classes',
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // ── Level ────────────────────────────────────────────────
+                  _SectionLabel('Spell Level'),
+                  SwitchListTile(
+                    title: const Text('Show all spell levels'),
+                    subtitle: Text(
+                      'Include spells above your current max '
+                      '(Lvl ${widget.maxSpellLevel})',
+                    ),
+                    value: f.showAllLevels,
+                    onChanged: (v) => setState(() => f.showAllLevels = v),
+                    dense: true,
+                    contentPadding: EdgeInsets.zero,
+                  ),
+                  const SizedBox(height: 8),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    children: [
+                      for (int lvl = 0; lvl <= (f.showAllLevels ? 9 : widget.maxSpellLevel); lvl++)
+                        ChoiceChip(
+                          label: Text(lvl == 0 ? 'Cantrip' : 'Lvl $lvl'),
+                          selected: f.level == lvl,
+                          onSelected: (v) =>
+                              setState(() => f.level = v ? lvl : null),
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // ── Casting time ─────────────────────────────────────────
+                  _SectionLabel('Casting Time'),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    children: [
+                      for (final opt in _castingOptions)
+                        ChoiceChip(
+                          label: Text(opt.$2),
+                          selected: f.castingType == opt.$1,
+                          onSelected: (v) => setState(
+                              () => f.castingType = v ? opt.$1 : null),
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // ── Properties ───────────────────────────────────────────
+                  _SectionLabel('Properties'),
+                  CheckboxListTile(
+                    title: const Text('Concentration'),
+                    subtitle: const Text(
+                        'Only spells that require concentration'),
+                    value: f.concentration,
+                    onChanged: (v) =>
+                        setState(() => f.concentration = v ?? false),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    dense: true,
+                  ),
+                  CheckboxListTile(
+                    title: const Text('Ritual'),
+                    subtitle:
+                        const Text('Only spells that can be cast as rituals'),
+                    value: f.ritual,
+                    onChanged: (v) => setState(() => f.ritual = v ?? false),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    dense: true,
+                  ),
+                  const SizedBox(height: 16),
+
+                  // ── School ───────────────────────────────────────────────
+                  _SectionLabel('School of Magic'),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    children: [
+                      for (final school in _schools)
+                        ChoiceChip(
+                          label: Text(school),
+                          selected: f.school == school,
+                          onSelected: (v) =>
+                              setState(() => f.school = v ? school : null),
+                        ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
+            // Apply button
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+              child: SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: () => Navigator.pop(context, true),
+                  child: const Text('Apply Filters'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SectionLabel extends StatelessWidget {
+  const _SectionLabel(this.text);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: Text(
+          text,
+          style: Theme.of(context)
+              .textTheme
+              .titleSmall
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+      );
 }
 
 // ── Spell Browser Tile ────────────────────────────────────────────────────────

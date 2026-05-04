@@ -2473,6 +2473,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         return _emptySearch(q);
       }
       return ListView(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
         children: results
             .map((r) => _buildTile(
                   feature: r.$2,
@@ -2507,6 +2508,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         ),
       ));
     }
+    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
     return CustomScrollView(slivers: slivers);
   }
 
@@ -2537,6 +2539,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       }
       if (results.isEmpty) return _emptySearch(q);
       return ListView(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
         children: results
             .map((r) => _buildTile(
                   feature: r.$2,
@@ -2575,6 +2578,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         ));
       }
     }
+    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
     return CustomScrollView(slivers: slivers);
   }
 
@@ -2618,6 +2622,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       }
       if (results.isEmpty) return _emptySearch(q);
       return ListView(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
         children: results
             .map((r) => _buildTile(
                   feature: r.$2,
@@ -2666,6 +2671,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         ),
       ));
     }
+    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
     return CustomScrollView(slivers: slivers);
   }
 
@@ -2678,7 +2684,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   ) {
     return SingleChildScrollView(
       controller: scrollCtrl,
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+      padding: EdgeInsets.fromLTRB(16, 8, 16, 32 + MediaQuery.of(context).viewPadding.bottom),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -2779,6 +2785,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       }
       if (results.isEmpty) return _emptySearch(q);
       return ListView(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
         children: results
             .map((r) => _buildTile(
                   feature: r.$2,
@@ -2814,6 +2821,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         ),
       ));
     }
+    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
     return CustomScrollView(slivers: slivers);
   }
 
@@ -2910,7 +2918,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
     final prepares =
         isCaster && KnownSpellCasting.classPrepares(character.characterClass);
     final preparedCount = character.spells
-        .where((s) => s.isPrepared || s.isAlwaysPrepared)
+        .where((s) => s.level > 0 && (s.isPrepared || s.isAlwaysPrepared))
         .length;
     final nonCantrips = character.spells.where((s) => s.level > 0).toList();
 
@@ -2966,7 +2974,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                       _SpellRow(
                         spell: spell,
                         srdSpell: _spellIndex![spell.name.toLowerCase()],
-                        showPrepareToggle: prepares && !spell.isAlwaysPrepared,
+                        showPrepareToggle: prepares && spell.level > 0 && !spell.isAlwaysPrepared,
                         onTogglePrepared: () => ref
                             .read(characterDetailProvider(widget.characterId)
                                 .notifier)
@@ -3324,6 +3332,25 @@ class _SpellRow extends StatelessWidget {
           ),
           child: Icon(Icons.delete_outline, color: scheme.onErrorContainer),
         ),
+        confirmDismiss: (_) async {
+          return await showDialog<bool>(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: const Text('Remove spell?'),
+              content: Text('Remove "${spell.name}" from your spell list?'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, false),
+                  child: const Text('Cancel'),
+                ),
+                FilledButton(
+                  onPressed: () => Navigator.pop(ctx, true),
+                  child: const Text('Remove'),
+                ),
+              ],
+            ),
+          ) ?? false;
+        },
         onDismissed: (_) => onRemove!(),
         child: card,
       );
@@ -3697,7 +3724,7 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
             Expanded(
               child: ListView(
                 controller: scrollCtrl,
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                padding: EdgeInsets.fromLTRB(16, 0, 16, 32 + MediaQuery.of(context).viewPadding.bottom),
                 children: [
                   TextField(
                     controller: _titleCtrl,
@@ -3802,7 +3829,7 @@ class _NoteViewSheet extends StatelessWidget {
           Expanded(
             child: ListView(
               controller: scrollCtrl,
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+              padding: EdgeInsets.fromLTRB(16, 16, 16, 32 + MediaQuery.of(context).viewPadding.bottom),
               children: [
                 if (note.content.isNotEmpty)
                   Text(
@@ -4531,7 +4558,10 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
 
     // Com busca activa: lista plana sem cabeçalhos.
     if (q.isNotEmpty) {
-      return ListView(children: filtered.map(buildTile).toList());
+      return ListView(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
+        children: filtered.map(buildTile).toList(),
+      );
     }
 
     // Sem busca: agrupa por categoria com cabeçalhos fixos (sticky).
@@ -4555,7 +4585,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
         ),
       ));
     }
-
+    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
     return CustomScrollView(slivers: slivers);
   }
 

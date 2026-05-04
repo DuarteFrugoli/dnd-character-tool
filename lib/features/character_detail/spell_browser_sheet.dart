@@ -413,7 +413,7 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                     : ListView.builder(
                         controller: scrollCtrl,
                         itemCount: filtered.length,
-                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 32),
+                        padding: EdgeInsets.fromLTRB(8, 0, 8, MediaQuery.of(context).viewPadding.bottom),
                         itemBuilder: (_, i) {
                           final spell = filtered[i];
                           final isKnown =
@@ -547,7 +547,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
             Expanded(
               child: ListView(
                 controller: scrollCtrl,
-                padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+                padding: EdgeInsets.fromLTRB(20, 12, 20, MediaQuery.of(context).viewPadding.bottom),
                 children: [
                   // ── Classes ──────────────────────────────────────────────
                   _SectionLabel('Classes'),
@@ -845,7 +845,7 @@ class SpellDetailSheet extends StatelessWidget {
       maxChildSize: 1.0,
       builder: (_, scrollCtrl) => ListView(
         controller: scrollCtrl,
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 40),
+        padding: EdgeInsets.fromLTRB(20, 0, 20, 16 + MediaQuery.of(context).viewPadding.bottom),
         children: [
           // ── Drag handle ──────────────────────────────────────────────────
           Center(

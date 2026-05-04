@@ -1,1 +1,1 @@
-## lembrar
+- refatorar sheet de personagem, arquivo mt grande, separar em abas

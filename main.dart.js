@@ -51623,7 +51623,7 @@ for(;;)switch(s){case 0:n=p.a
 if(!n.x){n.O(new A.axe(n,p.b))
 n=n.w
 n===$&&A.a()
-n.a0S(0)
+if(n.d>2)n.a0S(2)
 s=1
 break}o=n.c
 o.toString

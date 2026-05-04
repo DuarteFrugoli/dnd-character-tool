@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/datasources/srd/srd_models.dart';
 import '../character_draft_provider.dart';
 
 const _attributes = [
@@ -31,6 +34,11 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
 
   // Point Buy: valor por atributo
   late final Map<String, int> _pointBuyValues;
+
+  // Rolled Dice: qual valor (por índice em rolledValues) está em cada atributo
+  final Map<String, int?> _rollAssignment = {
+    for (final a in _attributes) a: null,
+  };
 
   @override
   void initState() {
@@ -66,6 +74,10 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        // ── Lembrete de classe ───────────────────────────────────────────────
+        if (draft.selectedClass != null) ...
+          [_ClassReminder(cls: draft.selectedClass!), const SizedBox(height: 16)],
+
         // ── Método ────────────────────────────────────────────────────────
         Text('Choose your method:',
             style: Theme.of(context).textTheme.labelLarge),
@@ -79,6 +91,10 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
             ButtonSegment(
               value: AttributeMethod.pointBuy,
               label: Text('Point Buy'),
+            ),
+            ButtonSegment(
+              value: AttributeMethod.rolledDice,
+              label: Text('Roll 4d6'),
             ),
           ],
           selected: {method},
@@ -118,11 +134,19 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
             raceAsi: freeAsi ? {} : raceAsi,
             onChanged: _onArrayChanged,
           )
-        else
+        else if (method == AttributeMethod.pointBuy)
           _PointBuySection(
             values: _pointBuyValues,
             raceAsi: freeAsi ? {} : raceAsi,
             onChanged: _onPointBuyChanged,
+          )
+        else
+          _RolledDiceSection(
+            rolledValues: draft.rolledValues,
+            assignment: _rollAssignment,
+            raceAsi: freeAsi ? {} : raceAsi,
+            onRoll: _onReroll,
+            onChanged: _onRollAssignmentChanged,
           ),
 
         // ── Free picks da raça (ex: Half-Elf twoOthers) ──────────────────
@@ -147,6 +171,7 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
     for (final a in _attributes) {
       _arrayAssignment[a] = null;
       _pointBuyValues[a] = 8;
+      _rollAssignment[a] = null;
     }
     ref
         .read(characterDraftProvider.notifier)
@@ -174,6 +199,238 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
     ref.read(characterDraftProvider.notifier).setBaseAttributes(
           Map<String, int>.from(_pointBuyValues),
         );
+  }
+
+  void _onReroll() {
+    final rng = Random();
+    int roll4d6DropLowest() {
+      final dice = List.generate(4, (_) => rng.nextInt(6) + 1);
+      dice.sort();
+      return dice.skip(1).fold(0, (a, b) => a + b);
+    }
+
+    final values = List.generate(6, (_) => roll4d6DropLowest());
+    ref.read(characterDraftProvider.notifier).setRolledValues(values);
+    // Clear roll assignment on reroll
+    setState(() {
+      for (final a in _attributes) {
+        _rollAssignment[a] = null;
+      }
+    });
+    ref.read(characterDraftProvider.notifier).setBaseAttributes({});
+  }
+
+  void _onRollAssignmentChanged(Map<String, int?> assignment) {
+    setState(() => _rollAssignment.addAll(assignment));
+    final rolled = ref.read(characterDraftProvider).rolledValues;
+    final complete = _rollAssignment.values.every((v) => v != null) &&
+        _rollAssignment.values.whereType<int>().toSet().length ==
+            _attributes.length;
+    if (complete) {
+      ref.read(characterDraftProvider.notifier).setBaseAttributes({
+        for (final e in _rollAssignment.entries) e.key: rolled[e.value!],
+      });
+    } else {
+      ref.read(characterDraftProvider.notifier).setBaseAttributes({});
+    }
+  }
+}
+
+// ── Class Reminder ────────────────────────────────────────────────────────────
+
+class _ClassReminder extends StatelessWidget {
+  const _ClassReminder({required this.cls});
+  final SrdClass cls;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      decoration: BoxDecoration(
+        color: scheme.primaryContainer.withAlpha(80),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: scheme.primary.withAlpha(60)),
+      ),
+      child: Row(
+        children: [
+          Icon(Icons.info_outline, size: 16, color: scheme.primary),
+          const SizedBox(width: 8),
+          Expanded(
+            child: RichText(
+              text: TextSpan(
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(color: scheme.onSurface),
+                children: [
+                  TextSpan(
+                    text: '${cls.name} ',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const TextSpan(text: '— primary abilities: '),
+                  TextSpan(
+                    text: cls.primaryAbility.join(', '),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: scheme.primary),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Rolled Dice ───────────────────────────────────────────────────────────────
+
+class _RolledDiceSection extends StatelessWidget {
+  const _RolledDiceSection({
+    required this.rolledValues,
+    required this.assignment,
+    required this.raceAsi,
+    required this.onRoll,
+    required this.onChanged,
+  });
+
+  final List<int> rolledValues;
+  final Map<String, int?> assignment;
+  final Map<String, int> raceAsi;
+  final VoidCallback onRoll;
+  final ValueChanged<Map<String, int?>> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final usedIndices = assignment.values.whereType<int>().toSet();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Roll button + current rolled values
+        Row(
+          children: [
+            FilledButton.icon(
+              onPressed: onRoll,
+              icon: const Icon(Icons.casino_outlined, size: 18),
+              label: Text(rolledValues.isEmpty ? 'Roll dice' : 'Reroll'),
+            ),
+            if (rolledValues.isNotEmpty) ...[
+              const SizedBox(width: 12),
+              Expanded(
+                child: Wrap(
+                  spacing: 6,
+                  runSpacing: 4,
+                  children: rolledValues.asMap().entries.map((e) {
+                    final taken = usedIndices.contains(e.key);
+                    return Chip(
+                      label: Text('${e.value}',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: taken
+                                ? scheme.onSurface.withAlpha(80)
+                                : scheme.onPrimaryContainer,
+                          )),
+                      backgroundColor: taken
+                          ? scheme.surfaceContainerHighest
+                          : scheme.primaryContainer,
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ],
+          ],
+        ),
+        if (rolledValues.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(top: 6),
+            child: Text(
+              'Roll to generate 6 values (4d6, drop lowest)',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall
+                  ?.copyWith(color: scheme.onSurfaceVariant),
+            ),
+          )
+        else ...[
+          const SizedBox(height: 12),
+          Text('Assign each roll to an attribute:',
+              style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(height: 8),
+          ..._attributes.map((attr) {
+            final currentIdx = assignment[attr];
+            final asi = raceAsi[attr] ?? 0;
+            final baseVal =
+                currentIdx != null ? rolledValues[currentIdx] : null;
+            final finalVal = baseVal != null ? baseVal + asi : null;
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 110,
+                    child: Text(attr,
+                        style: Theme.of(context).textTheme.bodyMedium),
+                  ),
+                  Expanded(
+                    child: DropdownButton<int?>(
+                      isExpanded: true,
+                      value: currentIdx,
+                      hint: const Text('—'),
+                      items: [
+                        const DropdownMenuItem(value: null, child: Text('—')),
+                        ...rolledValues.asMap().entries.map((e) {
+                          final taken =
+                              usedIndices.contains(e.key) && e.key != currentIdx;
+                          return DropdownMenuItem(
+                            value: e.key,
+                            enabled: !taken,
+                            child: Text(
+                              '${e.value}',
+                              style: taken
+                                  ? TextStyle(
+                                      color: scheme.onSurface.withAlpha(97))
+                                  : null,
+                            ),
+                          );
+                        }),
+                      ],
+                      onChanged: (v) => onChanged({...assignment, attr: v}),
+                    ),
+                  ),
+                  if (asi != 0)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text('+$asi race',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall
+                              ?.copyWith(color: scheme.primary)),
+                    ),
+                  if (finalVal != null)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: SizedBox(
+                        width: 36,
+                        child: Text('= $finalVal',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                ],
+              ),
+            );
+          }),
+        ],
+      ],
+    );
   }
 }
 

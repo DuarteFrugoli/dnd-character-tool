@@ -7,7 +7,7 @@ import '../../shared/providers/providers.dart';
 
 // ── Estado do rascunho ────────────────────────────────────────────────────────
 
-enum AttributeMethod { standardArray, pointBuy }
+enum AttributeMethod { standardArray, pointBuy, rolledDice }
 
 class CharacterDraft {
   final String id;
@@ -34,6 +34,8 @@ class CharacterDraft {
   final List<String> chosenLanguages;
   // Ferramentas escolhidas livremente (raça + background + classe)
   final List<String> chosenToolProficiencies;
+  // Valores rolados no modo 4d6 drop lowest (6 valores)
+  final List<int> rolledValues;
 
   const CharacterDraft({
     required this.id,
@@ -53,6 +55,7 @@ class CharacterDraft {
     this.selectedStartingEquipment = const [],
     this.chosenLanguages = const [],
     this.chosenToolProficiencies = const [],
+    this.rolledValues = const [],
   });
 
   CharacterDraft copyWith({
@@ -72,6 +75,7 @@ class CharacterDraft {
     List<String>? selectedStartingEquipment,
     List<String>? chosenLanguages,
     List<String>? chosenToolProficiencies,
+    List<int>? rolledValues,
   }) {
     return CharacterDraft(
       id: id,
@@ -101,6 +105,7 @@ class CharacterDraft {
       chosenLanguages: chosenLanguages ?? this.chosenLanguages,
       chosenToolProficiencies:
           chosenToolProficiencies ?? this.chosenToolProficiencies,
+      rolledValues: rolledValues ?? this.rolledValues,
     );
   }
 
@@ -284,6 +289,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
   void setAttributeMethod(AttributeMethod m) =>
       state = state.copyWith(attributeMethod: m);
+
+  void setRolledValues(List<int> values) =>
+      state = state.copyWith(rolledValues: values);
 
   void setFreeAsi(bool v) => state = state.copyWith(freeAsi: v);
 

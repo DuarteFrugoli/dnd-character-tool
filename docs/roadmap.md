@@ -16,7 +16,9 @@
 - [x] Equipamento inicial do background aplicado na criação
 - [ ] Edição completa da ficha (atributos, raça, classe, etc.)
 - [x] Lista de personagens
-- [x] Export / import via JSON
+- [x] Export / import via JSON e token (gzip + base64url)
+- [x] Export / import via QR Code (geração + scanner com câmera)
+- [x] Notas livres por personagem (aba Notes com CRUD)
 - [ ] Imagem do personagem
 - [ ] Internacionalização (i18n): Português e Inglês
 

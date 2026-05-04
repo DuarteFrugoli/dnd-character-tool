@@ -268,6 +268,53 @@ Objetivo: facilitar compartilhamento/backup dos personagens, abrir edição pós
 
 ---
 
+# Sprint 5.5 — Correções, Polimento & QR Code (concluída)
+
+Objetivo: corrigir bugs acumulados das sprints anteriores, melhorar a UX do export/import e adicionar suporte a QR code.
+
+---
+
+## Correções de bugs
+
+### Export / Import
+- [x] **Token comprimido com gzip** — token agora é `base64url(gzip(json))`, reduzindo significativamente o tamanho para QR e clipboard
+- [x] **ImportDialog crash no cancelamento** — controllers (`_tokenCtrl`, `_jsonCtrl`) movidos para o `State` e descartados no `dispose()`, evitando o erro `dependents.isEmpty is not true`
+- [x] **`_resolveInput()` com fallback** — se o token for inválido, tenta usar o campo JSON diretamente; se o token não tiver gzip, aceita base64 puro como fallback
+
+### Ficha do personagem
+- [x] **Botão voltar em modo de edição** — adicionado `PopScope` + `_handleBack()` com diálogo "Sair sem salvar?"; ao confirmar, reverte o personagem para o snapshot anterior e sai do modo edição
+- [x] **Saving Throws não apareciam marcados** — normalização case-insensitive em `_SavingThrowsEditorState._normalize()`: compara os valores salvos com `_kAllAbilities` sem distinção de maiúsculas/minúsculas
+- [x] **`RadioListTile` deprecated** — removidas as propriedades `groupValue` e `onChanged` deprecated do diálogo de background; substituídas pelo padrão `RadioGroup<String>` ancestor correto
+
+### Criação de personagem
+- [x] **Botão de rolar ouro no review** — alterado de `FilledButton.tonal` com texto para ícone-only (`Icons.casino_outlined`), liberando espaço horizontal na linha de ouro inicial
+
+---
+
+## QR Code no Export
+
+- [x] **Geração de QR** — `qr_flutter ^4.1.0` adicionado; diálogo de export exibe QR code do token quando o botão "Mostrar QR Code" é ativado
+- [x] **Validação de tamanho** — `QrValidator.validate` verifica se o token cabe no QR antes de renderizar; exibe mensagem de erro se for grande demais
+- [x] **Quiet zone correta** — `padding` passado diretamente ao `QrImageView` (não ao `Container` externo) para bordas brancas simétricas
+- [x] **QR adaptativo** — usa `LayoutBuilder` para o QR preencher toda a largura disponível no diálogo em vez de tamanho fixo
+- [x] **Tap para fullscreen** — tocar no QR abre `_QrFullscreenScreen` com fundo branco e QR em tamanho máximo, facilitando leitura por outro dispositivo
+
+## QR Code no Import (Scanner)
+
+- [x] **`mobile_scanner ^6.0.0`** adicionado; botão no ImportDialog abre `_QrScannerScreen` com câmera ao vivo
+- [x] **Permissão de câmera** — `CAMERA` adicionado ao `AndroidManifest.xml`; `NSCameraUsageDescription` adicionado ao `ios/Runner/Info.plist`
+- [x] **Resultado do scan preenchido no campo token** — após leitura bem-sucedida, o valor é colocado em `_tokenCtrl` e o `_resolveInput()` processa normalmente
+
+---
+
+## Documentação
+
+- [x] `docs/notes.md` criado — notas técnicas sobre decisões de arquitetura (ex: base45 vs base64url)
+- [x] `docs/models.md` atualizado — campos `currency`, `extraFeatures`, `disabledFeatures`, `notes` adicionados ao `Character`; novos modelos `CharacterExtraFeature` e `CharacterNote` documentados
+- [x] `docs/sprint.md` e `docs/roadmap.md` atualizados
+
+---
+
 # Sprint 6 — Modos de criação restantes (planejada)
 
 Objetivo: implementar os modos aleatório, semi-aleatório e manual reaproveitando `CharacterDraftNotifier` e `buildAndSave`.

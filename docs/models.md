@@ -108,6 +108,33 @@ Uma magia conhecida ou preparada pelo personagem.
 
 ---
 
+## `CharacterExtraFeature`
+
+Feature adicionada manualmente (ex: multiclasse). Serialização manual — não usa `json_serializable`.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `sourceClass` | `String` | Classe de origem da feature |
+| `name` | `String` | Nome da feature |
+| `level` | `int` | Nível em que foi obtida |
+| `type` | `String` | `"active"`, `"passive"`, `"subclass"` ou `"asi"` |
+| `description` | `String` | Descrição completa |
+
+---
+
+## `CharacterNote`
+
+Nota livre criada pelo jogador na aba Notes. Usa `json_serializable`.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id` | `String` (UUID) | Gerado automaticamente |
+| `title` | `String` | Título (padrão: `'Untitled'` se vazio) |
+| `content` | `String` | Corpo da nota |
+| `createdAt` | `DateTime` | Data de criação |
+
+---
+
 ## `Character`
 
 Modelo principal. Compõe todos os modelos acima.
@@ -134,13 +161,17 @@ Modelo principal. Compõe todos os modelos acima.
 | `skillProficiencies` | `List<String>` |
 | `skillExpertises` | `List<String>` |
 | `equipment` | `List<EquipmentItem>` |
+| `currency` | `Map<String, int>` | Moedas: CP, SP, EP, GP, PP |
 | `spells` | `List<KnownSpell>` |
 | `spellSlots` | `SpellSlots` |
-| `features` | `List<String>` |
+| `features` | `List<String>` | Features de classe/raça/background como strings |
+| `extraFeatures` | `List<CharacterExtraFeature>` | Features adicionadas manualmente |
+| `disabledFeatures` | `List<String>` | Nomes de features desabilitadas (ocultas na UI) |
 | `languages` | `List<String>` |
 | `personality` | `CharacterPersonality` |
 | `appearance` | `CharacterAppearance` |
 | `backstory` | `String` |
+| `notes` | `List<CharacterNote>` | Notas livres do jogador |
 | `imagePath` | `String?` |
 | `creationMode` | `CreationMode` |
 | `createdAt` | `DateTime` |

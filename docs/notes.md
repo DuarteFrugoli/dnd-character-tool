@@ -1,0 +1,1 @@
+1. base45 pode fazer os qrcodes ficarem mais eficientes em 22% de espaço.

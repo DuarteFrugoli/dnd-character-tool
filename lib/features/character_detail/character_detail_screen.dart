@@ -1227,8 +1227,10 @@ class _SkillsTab extends ConsumerWidget {
     final c = ref.read(characterDetailProvider(characterId)).valueOrNull;
     if (c == null) return;
     final lower = skillName.toLowerCase();
-    final profs = List<String>.from(c.skillProficiencies);
-    final experts = List<String>.from(c.skillExpertises);
+    // Normalize to lowercase so contains/remove always match regardless of
+    // how the values were originally stored (e.g. "Perception" vs "perception")
+    final profs = c.skillProficiencies.map((s) => s.toLowerCase()).toList();
+    final experts = c.skillExpertises.map((s) => s.toLowerCase()).toList();
 
     final isExpert = experts.contains(lower);
     final isProf = profs.contains(lower);

@@ -358,3 +358,88 @@ Para classes "known" (Bard, Sorcerer, etc.):
 - [ ] **Spellbook do Wizard:** guardar magias "no livro" separado das "preparadas do dia"? Ou usar `isAlwaysPrepared=false, isPrepared=false` para "no livro mas não preparada"? **Decisão recomendada:** terceiro estado via campo `isInSpellbook: bool` no `KnownSpell`.
 - [ ] **Escalonamento de cantrips:** mostrar na UI qual versão do cantrip está ativa com base no nível do personagem.
 - [ ] **Magias de subclasse:** como o personagem indica qual subclasse tem? Já existe `character.subclass` — usar isso para filtrar `subclassSpells` do JSON.
+
+---
+
+## 12. Magias de Subclasse, Raça e Subclasses Conjuradoras
+
+Os três casos têm mecanismos muito diferentes e devem ser implementados por ordem de prioridade.
+
+---
+
+### Caso 1 — Subclass always-prepared (domínios, juramentos, pactos) · Prioridade Alta
+
+**Exemplos:** Oath of Devotion (Paladin), Life Domain (Cleric), The Fiend (Warlock).
+
+**Regra D&D 5e:** as magias de subclasse ficam **sempre preparadas** e **não contam** contra o limite de magias preparadas do dia.
+
+**Implementação:**
+- Os campos `subclassSpells` no `spells.json` já existem no schema. Precisam ser preenchidos (ver seção 10).
+- Ao carregar a ficha, o provider itera `spells.json`, filtra magias onde `subclassSpells` contém a subclasse do personagem (`character.subclass`) e as injeta com `isAlwaysPrepared = true` na lista exibida — sem salvar no JSON do personagem (são derivadas).
+- Na UI: aparecem sem toggle de preparar e sem botão remover (comportamento já suportado por `isAlwaysPrepared`).
+
+**Dados necessários:** preencher `subclassSpells` no JSON para:
+- Cleric domains (Life, Light, Trickery, Knowledge, Nature, Tempest, War)
+- Paladin oaths (Devotion, Ancients, Vengeance)
+- Warlock patrons (The Fiend, The Archfey, The Great Old One)
+- Druid circles que expandem lista (Circle of the Land)
+
+---
+
+### Caso 2 — Subclasses conjuradoras (Eldritch Knight, Arcane Trickster) · Prioridade Média
+
+**Regra D&D 5e:** Fighter e Rogue base não são conjuradores. Certas subclasses adicionam progressão de **1/3 caster** a partir do nível 3 da classe.
+
+| Subclasse | Classe base | Atributo | Progressão |
+|---|---|---|---|
+| Eldritch Knight | Fighter | INT | 1/3 caster (slots a partir do nível 3) |
+| Arcane Trickster | Rogue | INT | 1/3 caster (slots a partir do nível 3) |
+
+**Tabela de slots (1/3 caster — slots equivalentes ao nível de conjurador = floor(class_level / 3)):**
+
+| Nível da classe | Slots nív. 1 | Slots nív. 2 | Slots nív. 3 | Slots nív. 4 |
+|---|---|---|---|---|
+| 1–2 | — | — | — | — |
+| 3–4 | 2 | — | — | — |
+| 5–6 | 3 | — | — | — |
+| 7–8 | 3 | 2 | — | — |
+| 9–10 | 3 | 2 | — | — |
+| 11–12 | 3 | 3 | — | — |
+| 13–14 | 3 | 3 | 1 | — |
+| 15–16 | 3 | 3 | 2 | — |
+| 17–18 | 3 | 3 | 3 | 1 |
+| 19–20 | 3 | 3 | 3 | 1 |
+
+**Implementação:**
+- Adicionar `SpellProgressionType.third` ao enum no `SpellcastingEngine`.
+- Adicionar tabela `_thirdCasterSlots` e `_thirdCasterMaxSlot`.
+- Expandir `SpellcastingEngine.forClass()` para aceitar `subclass` opcional e retornar engine para Fighter/Rogue quando a subclasse for Eldritch Knight ou Arcane Trickster.
+- Eldritch Knight conhece apenas magias de Abjuration e Evocation (exceto os 3 escolhidos livremente). Arcane Trickster conhece apenas Enchantment e Illusion (exceto os 3 escolhidos livremente). Isso é uma restrição de browser, não de dados.
+
+---
+
+### Caso 3 — Magias inatas raciais (Tiefling, Drow, etc.) · Prioridade Baixa
+
+**Regra D&D 5e:** magias inatas têm mecanismo completamente diferente da magia de classe:
+- Geralmente usam **Charisma** como atributo (independente da classe).
+- Algumas são usadas **1×/dia** sem gastar slot; outras podem ser lançadas gastando slots.
+- Não aparecem na lista de spell slots da classe.
+- Não contam contra o limite de magias conhecidas/preparadas.
+
+**Exemplos:**
+| Raça/Sub-raça | Magia | Limitação |
+|---|---|---|
+| Tiefling | *Thaumaturgy* | À vontade |
+| Tiefling | *Hellish Rebuke* | 1×/dia com slot |
+| Tiefling | *Darkness* | 1×/dia com slot |
+| Drow | *Dancing Lights* | À vontade |
+| Drow | *Faerie Fire* | 1×/dia |
+| Drow (nível 5+) | *Darkness* | 1×/dia |
+| Forest Gnome | *Minor Illusion* | À vontade |
+
+**Implementação (mais complexa):**
+- Requer novo campo `innateSpells` no modelo `Character` (ou seção dedicada na aba Spells).
+- Precisa de campo `usesPerDay` e `usedToday` por magia inata para rastrear o cooldown.
+- `raceSpells` no `spells.json` já existe no schema mas está vazio — preencher como parte desta fase.
+- UI: seção separada "Racial Spells" acima ou abaixo dos cantrips, com indicador de usos restantes quando limitado.
+- **Não implementar na mesma sprint que os casos 1 e 2.**

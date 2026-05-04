@@ -2921,6 +2921,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
         .where((s) => s.level > 0 && (s.isPrepared || s.isAlwaysPrepared))
         .length;
     final nonCantrips = character.spells.where((s) => s.level > 0).toList();
+    final cantripCount = character.spells.where((s) => s.level == 0).length;
 
     return Scaffold(
       body: _spellIndex == null
@@ -2936,6 +2937,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                     maxPrepared: prepares ? engine.maxPrepared : null,
                     knownCount: !prepares ? nonCantrips.length : null,
                     maxKnown: !prepares ? engine.maxKnown : null,
+                    cantripCount: cantripCount,
                   ),
                   const SizedBox(height: 12),
                 ],
@@ -3065,6 +3067,7 @@ class _SpellcastingBanner extends StatelessWidget {
     this.maxPrepared,
     this.knownCount,
     this.maxKnown,
+    required this.cantripCount,
   });
 
   final SpellcastingEngine engine;
@@ -3072,6 +3075,7 @@ class _SpellcastingBanner extends StatelessWidget {
   final int? maxPrepared;
   final int? knownCount;
   final int? maxKnown;
+  final int cantripCount;
 
   @override
   Widget build(BuildContext context) {
@@ -3102,6 +3106,12 @@ class _SpellcastingBanner extends StatelessWidget {
               children: [
                 _BannerStat('Attack', engine.spellAttackFormatted),
                 _BannerStat('Save DC', '${engine.saveDC}'),
+                if (engine.maxCantrips > 0)
+                  _BannerStat(
+                    'Cantrips',
+                    '$cantripCount / ${engine.maxCantrips}',
+                    warning: cantripCount > engine.maxCantrips,
+                  ),
                 if (preparedCount != null && maxPrepared != null)
                   _BannerStat(
                     'Prepared',

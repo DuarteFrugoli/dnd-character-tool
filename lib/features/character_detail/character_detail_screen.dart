@@ -94,6 +94,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   Widget _buildLoaded(Character character) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 72,
         leading: BackButton(onPressed: _goBack),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,11 +107,12 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             ),
             Text(
-              '${character.characterClass}  ·  ${character.race}'
+              '${character.characterClass}${character.subclass != null ? ' (${character.subclass})' : ''}  ·  ${character.race}'
               '${character.subrace != null ? ' (${character.subrace})' : ''}'
               '  ·  Lv ${character.level}',
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              overflow: TextOverflow.visible,
+              softWrap: true,
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
@@ -359,6 +361,49 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         },
       ),
     );
+  }
+
+  Future<void> _onChangeSubclass(Character character) async {
+    final srd = ref.read(srdDataSourceProvider);
+    final classes = await srd.getClasses();
+    final srdClass =
+        classes.where((c) => c.name == character.characterClass).firstOrNull;
+    if (srdClass == null || srdClass.subclasses.isEmpty || !mounted) return;
+
+    // Warn user if they already have a subclass
+    if (character.subclass != null && character.subclass!.isNotEmpty) {
+      final confirm = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Trocar subclasse'),
+          content: const Text(
+            'Atenção: spells e proficiências concedidas pela subclasse anterior '
+            'não são removidas automaticamente. Você precisará ajustá-las manualmente.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Cancelar'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Continuar'),
+            ),
+          ],
+        ),
+      );
+      if (confirm != true || !mounted) return;
+    }
+
+    final picked = await _showSubclassDialog(
+      context: context,
+      srdClass: srdClass,
+      current: character.subclass,
+      isConfirm: character.subclass != null,
+    );
+    if (picked != null && picked != character.subclass) {
+      await _notifier.updateSubclass(picked);
+    }
   }
 
   @override
@@ -612,6 +657,44 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         ],
                       ),
                     ),
+                    // Subclass row
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 96,
+                            child: Text(
+                              'Subclass',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(color: scheme.onSurfaceVariant),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              character.subclass?.isNotEmpty == true
+                                  ? character.subclass!
+                                  : '—',
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ),
+                          OutlinedButton.icon(
+                            icon: const Icon(Icons.swap_horiz, size: 16),
+                            label: Text(character.subclass?.isNotEmpty == true
+                                ? 'Trocar'
+                                : 'Escolher'),
+                            style: OutlinedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              visualDensity: VisualDensity.compact,
+                            ),
+                            onPressed: () => _onChangeSubclass(character),
+                          ),
+                        ],
+                      ),
+                    ),
                     // Languages chips
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 4),
@@ -721,16 +804,12 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         ],
                       ),
                     ),
-                    if (character.subclass != null)
-                      _InfoRow('Subclass', character.subclass!),
                   ],
                 )
               : Column(
                   children: [
                     if (character.background.isNotEmpty)
                       _InfoRow('Background', character.background),
-                    if (character.subclass != null)
-                      _InfoRow('Subclass', character.subclass!),
                     if (character.alignment.isNotEmpty)
                       _InfoRow('Alignment', character.alignment),
                     if (character.playerName.isNotEmpty)
@@ -965,17 +1044,23 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         const SizedBox(height: 12),
 
         // ── Saving Throws ─────────────────────────────────────────────────
-        if (character.savingThrowProficiencies.isNotEmpty)
-          _Section(
-            title: 'Saving Throw Proficiencies',
-            child: Wrap(
-              spacing: 8,
-              runSpacing: 4,
-              children: character.savingThrowProficiencies
-                  .map((s) => Chip(label: Text(s)))
-                  .toList(),
-            ),
-          ),
+        _Section(
+          title: 'Saving Throw Proficiencies',
+          child: isEditing
+              ? _SavingThrowsEditor(
+                  current: character.savingThrowProficiencies,
+                  notifier: notifier,
+                )
+              : character.savingThrowProficiencies.isEmpty
+                  ? const Text('None')
+                  : Wrap(
+                      spacing: 8,
+                      runSpacing: 4,
+                      children: character.savingThrowProficiencies
+                          .map((s) => Chip(label: Text(s)))
+                          .toList(),
+                    ),
+        ),
       ],
       ),
     );
@@ -1152,6 +1237,12 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 features: data.classFeatures,
               ),
               if (data.subclassFeatures.isNotEmpty) ...[const SizedBox(height: 24), _SubclassFeaturesSection(subclassName: data.subclassName, features: data.subclassFeatures)],
+              if (widget.character.features.isNotEmpty) ...[
+                const SizedBox(height: 24),
+                _ToolProficienciesSection(
+                  features: widget.character.features,
+                ),
+              ],
               if (extraFeatures.isNotEmpty) ...[
                 const SizedBox(height: 24),
                 _ExtraFeaturesSection(
@@ -1316,6 +1407,49 @@ class _BackgroundFeatureSection extends StatelessWidget {
             ],
           ),
         ),
+      ],
+    );
+  }
+}
+
+// ── Tool Proficiencies Section ────────────────────────────────────────────────
+
+class _ToolProficienciesSection extends StatelessWidget {
+  const _ToolProficienciesSection({required this.features});
+  final List<String> features;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Tool Proficiencies',
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        ...features.map((f) {
+          // Strip the "Tool Proficiency: " prefix if present for display
+          final label = f.startsWith('Tool Proficiency: ')
+              ? f.substring('Tool Proficiency: '.length)
+              : f;
+          return Card(
+            margin: const EdgeInsets.only(bottom: 6),
+            child: ListTile(
+              dense: true,
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              leading: const Icon(Icons.handyman_outlined, size: 20),
+              title: Text(
+                label,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+            ),
+          );
+        }),
       ],
     );
   }
@@ -2470,8 +2604,7 @@ class _NotesTab extends ConsumerWidget {
         p.ideals.isNotEmpty ||
         p.bonds.isNotEmpty ||
         p.flaws.isNotEmpty ||
-        character.backstory.isNotEmpty ||
-        character.features.isNotEmpty;
+        character.backstory.isNotEmpty;
 
     return Scaffold(
       body: notes.isEmpty && !hasLegacy
@@ -2555,22 +2688,6 @@ class _NotesTab extends ConsumerWidget {
                     _Section(
                         title: 'Backstory',
                         child: Text(character.backstory)),
-                  ],
-                  if (character.features.isNotEmpty) ...[
-                    const SizedBox(height: 12),
-                    _Section(
-                      title: 'Features & Traits',
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: character.features
-                            .map((f) => Padding(
-                                  padding:
-                                      const EdgeInsets.only(bottom: 4),
-                                  child: Text('• $f'),
-                                ))
-                            .toList(),
-                      ),
-                    ),
                   ],
                 ],
               ],
@@ -4224,6 +4341,64 @@ class _InlineField extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+// ── Saving Throws Editor ──────────────────────────────────────────────────────
+
+const _kAllAbilities = [
+  'Strength', 'Dexterity', 'Constitution',
+  'Intelligence', 'Wisdom', 'Charisma',
+];
+
+class _SavingThrowsEditor extends StatefulWidget {
+  const _SavingThrowsEditor({
+    required this.current,
+    required this.notifier,
+  });
+  final List<String> current;
+  final CharacterDetailNotifier notifier;
+
+  @override
+  State<_SavingThrowsEditor> createState() => _SavingThrowsEditorState();
+}
+
+class _SavingThrowsEditorState extends State<_SavingThrowsEditor> {
+  late Set<String> _selected;
+
+  @override
+  void initState() {
+    super.initState();
+    _selected = widget.current.toSet();
+  }
+
+  void _toggle(String ability) {
+    setState(() {
+      if (_selected.contains(ability)) {
+        _selected.remove(ability);
+      } else {
+        _selected.add(ability);
+      }
+    });
+    // Preserve the canonical order (STR → CHA)
+    final ordered = _kAllAbilities.where(_selected.contains).toList();
+    widget.notifier.updateSavingThrows(ordered);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 8,
+      runSpacing: 4,
+      children: _kAllAbilities.map((ability) {
+        final on = _selected.contains(ability);
+        return FilterChip(
+          label: Text(ability.substring(0, 3)),
+          selected: on,
+          onSelected: (_) => _toggle(ability),
+        );
+      }).toList(),
     );
   }
 }

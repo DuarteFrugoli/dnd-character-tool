@@ -87,7 +87,7 @@ Map<String, dynamic>? _propertiesForItem(String name) {
       return {
         'baseAC': base,
         'addDexModifier': addDex,
-        if (maxDex != null) 'maxDexBonus': maxDex,
+        'maxDexBonus': ?maxDex,
       };
     }
   }
@@ -140,6 +140,8 @@ class CharacterDraft {
   // Itens de equipamento com escolha: chave = nome genérico, valor = item escolhido
   // Ex: "Musical instrument" → "Flute"
   final Map<String, String> resolvedEquipmentChoices;
+  // Resultado da rolagem de ouro inicial (null = não rolado ainda)
+  final int? rolledStartingGold;
 
   const CharacterDraft({
     required this.id,
@@ -163,6 +165,7 @@ class CharacterDraft {
     this.resolvedEquipmentChoices = const {},
     this.classEquipmentChoices = const [],
     this.classEquipmentSpecifics = const {},
+    this.rolledStartingGold,
   });
 
   CharacterDraft copyWith({
@@ -186,6 +189,7 @@ class CharacterDraft {
     Map<String, String>? resolvedEquipmentChoices,
     List<int?>? classEquipmentChoices,
     Map<String, String>? classEquipmentSpecifics,
+    Object? rolledStartingGold = _sentinel,
   }) {
     return CharacterDraft(
       id: id,
@@ -220,7 +224,11 @@ class CharacterDraft {
           resolvedEquipmentChoices ?? this.resolvedEquipmentChoices,      classEquipmentChoices:
           classEquipmentChoices ?? this.classEquipmentChoices,
       classEquipmentSpecifics:
-          classEquipmentSpecifics ?? this.classEquipmentSpecifics,    );
+          classEquipmentSpecifics ?? this.classEquipmentSpecifics,
+      rolledStartingGold: rolledStartingGold == _sentinel
+          ? this.rolledStartingGold
+          : rolledStartingGold as int?,
+    );
   }
 
   // Retorna os atributos finais com bônus raciais aplicados
@@ -458,6 +466,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setChosenToolProficiencies(List<String> tools) =>
       state = state.copyWith(chosenToolProficiencies: tools);
 
+  void setRolledStartingGold(int? gp) =>
+      state = state.copyWith(rolledStartingGold: gp ?? _sentinel);
+
   void setEquipmentChoice(String generic, String specific) {
     final updated = Map<String, String>.from(state.resolvedEquipmentChoices)
       ..[generic] = specific;
@@ -499,13 +510,14 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     // Itens no formato "X gp" viram currency, os outros recebem o tipo correto
     final gpPattern = RegExp(r'^(\d+)\s*gp$', caseSensitive: false);
     final startingEquipment = <EquipmentItem>[];
-    int startingGp = 0;
+    // Start with the rolled class gold (if the player rolled)
+    int startingGp = draft.rolledStartingGold ?? 0;
 
     // Load the SRD items lookup table for accurate type/category/properties.
     // Falls back to keyword heuristic for unknown items.
     final itemsDb = await ref.read(srdItemsProvider.future);
 
-    SrdItemData? _lookupItem(String name) {
+    SrdItemData? lookupItem(String name) {
       final lower = name.toLowerCase();
       // Try exact match first, then try without trailing 's' for plurals
       return itemsDb[lower] ??
@@ -515,10 +527,20 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     }
 
     void addItem(String raw) {
+      final trimmed = raw.trim();
+
+      // Check if the full string is a gold amount (e.g. "15 gp") before
+      // attempting quantity parsing, otherwise "15 gp" → qty=15, name="gp".
+      final rawGpMatch = gpPattern.firstMatch(trimmed);
+      if (rawGpMatch != null) {
+        startingGp += int.parse(rawGpMatch.group(1)!);
+        return;
+      }
+
       // Handle "N x Item" patterns (e.g. "20 arrows", "4 javelins")
-      final match = RegExp(r'^(\d+)\s+(.+)$').firstMatch(raw.trim());
+      final match = RegExp(r'^(\d+)\s+(.+)$').firstMatch(trimmed);
       final qty = match != null ? int.parse(match.group(1)!) : 1;
-      final itemName = match != null ? match.group(2)! : raw.trim();
+      final itemName = match != null ? match.group(2)! : trimmed;
 
       final gpMatch = gpPattern.firstMatch(itemName);
       if (gpMatch != null) {
@@ -526,7 +548,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         return;
       }
 
-      final data = _lookupItem(itemName);
+      final data = lookupItem(itemName);
       startingEquipment.add(EquipmentItem(
         name: itemName,
         category: data?.category ?? _categoryForItem(itemName),

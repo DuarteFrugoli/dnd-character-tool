@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -42,8 +44,7 @@ class StepReview extends ConsumerWidget {
             draft.selectedClass?.savingThrows.join(', ') ?? '—',
           ),
           if (draft.selectedClass != null)
-            _Row('Starting Gold',
-                _formatStartingGold(draft.selectedClass!.startingGoldDice)),
+            const _StartingGoldRow(),
         ]),
         _ReviewSection(title: 'Race', children: [
           _Row('Race', draft.selectedRace?.name ?? '—'),
@@ -146,6 +147,101 @@ class _Row extends StatelessWidget {
           Expanded(
             child: Text(value,
                 style: Theme.of(context).textTheme.bodyMedium),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Starting Gold Roll ────────────────────────────────────────────────────────
+
+/// Parses "NdSxM" and rolls N dice of S sides, multiplied by M.
+/// Returns the total gp result.
+int _rollGoldDice(String dice) {
+  final match =
+      RegExp(r'^(\d+)d(\d+)(?:[xX\u00d7](\d+))?$').firstMatch(dice);
+  if (match == null) return 0;
+  final n = int.parse(match.group(1)!);
+  final s = int.parse(match.group(2)!);
+  final mult = match.group(3) != null ? int.parse(match.group(3)!) : 1;
+  final rng = Random();
+  int total = 0;
+  for (int i = 0; i < n; i++) {
+    total += rng.nextInt(s) + 1;
+  }
+  return total * mult;
+}
+
+class _StartingGoldRow extends ConsumerStatefulWidget {
+  const _StartingGoldRow();
+
+  @override
+  ConsumerState<_StartingGoldRow> createState() => _StartingGoldRowState();
+}
+
+class _StartingGoldRowState extends ConsumerState<_StartingGoldRow> {
+  void _roll() {
+    final dice = ref.read(characterDraftProvider).selectedClass!.startingGoldDice;
+    final result = _rollGoldDice(dice);
+    ref.read(characterDraftProvider.notifier).setRolledStartingGold(result);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final draft = ref.watch(characterDraftProvider);
+    final dice = draft.selectedClass!.startingGoldDice;
+    final rolled = draft.rolledStartingGold;
+    final scheme = Theme.of(context).colorScheme;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 140,
+            child: Text(
+              'Starting Gold',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+            ),
+          ),
+          Expanded(
+            child: rolled != null
+                ? Text.rich(
+                    TextSpan(children: [
+                      TextSpan(
+                        text: '$rolled gp',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: scheme.primary,
+                            ),
+                      ),
+                      TextSpan(
+                        text: '  (${_formatStartingGold(dice)})',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                      ),
+                    ]),
+                  )
+                : Text(
+                    _formatStartingGold(dice),
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+          ),
+          const SizedBox(width: 8),
+          FilledButton.tonalIcon(
+            icon: const Icon(Icons.casino_outlined, size: 16),
+            label: Text(rolled != null ? 'Rolar de novo' : 'Rolar'),
+            style: FilledButton.styleFrom(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              visualDensity: VisualDensity.compact,
+            ),
+            onPressed: _roll,
           ),
         ],
       ),

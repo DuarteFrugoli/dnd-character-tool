@@ -148,6 +148,12 @@ class CharacterDetailNotifier
     await _save(c.copyWith(speed: speed.clamp(0, 999)));
   }
 
+  Future<void> updateSavingThrows(List<String> proficiencies) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(savingThrowProficiencies: proficiencies));
+  }
+
   Future<void> updateAbilityScore(String key, int value) async {
     final c = state.valueOrNull;
     if (c == null) return;

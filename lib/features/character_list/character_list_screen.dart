@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,34 +16,17 @@ class CharacterListScreen extends ConsumerWidget {
     final state = ref.watch(characterListProvider);
 
     Future<void> importCharacter() async {
-      final ctrl = TextEditingController();
+      final tokenCtrl = TextEditingController();
+      final jsonCtrl = TextEditingController();
       final result = await showDialog<String>(
         context: context,
-        builder: (ctx) => AlertDialog(
-          title: const Text('Import Character JSON'),
-          content: SizedBox(
-            width: 520,
-            child: TextField(
-              controller: ctrl,
-              maxLines: 14,
-              decoration: const InputDecoration(
-                hintText: 'Paste exported JSON here',
-                border: OutlineInputBorder(),
-              ),
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('Cancel'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(ctx, ctrl.text.trim()),
-              child: const Text('Import'),
-            ),
-          ],
+        builder: (ctx) => _ImportDialog(
+          tokenCtrl: tokenCtrl,
+          jsonCtrl: jsonCtrl,
         ),
       );
+      tokenCtrl.dispose();
+      jsonCtrl.dispose();
 
       if (result == null || result.isEmpty || !context.mounted) return;
       try {
@@ -161,36 +146,15 @@ class _CharacterCard extends ConsumerWidget {
     Future<void> exportCharacter() async {
       final json =
           await ref.read(characterListProvider.notifier).exportCharacter(character);
+      // Generate token: base64url-encoded UTF-8 JSON
+      final token = base64Url.encode(utf8.encode(json));
       if (!context.mounted) return;
       await showDialog<void>(
         context: context,
-        builder: (ctx) => AlertDialog(
-          title: Text('Export ${character.name}'),
-          content: SizedBox(
-            width: 560,
-            child: SingleChildScrollView(
-              child: SelectableText(json),
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('Close'),
-            ),
-            FilledButton.icon(
-              onPressed: () async {
-                await Clipboard.setData(ClipboardData(text: json));
-                if (!ctx.mounted) return;
-                Navigator.pop(ctx);
-                if (!context.mounted) return;
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('JSON copied to clipboard')),
-                );
-              },
-              icon: const Icon(Icons.copy),
-              label: const Text('Copy JSON'),
-            ),
-          ],
+        builder: (ctx) => _ExportDialog(
+          characterName: character.name,
+          token: token,
+          json: json,
         ),
       );
     }
@@ -238,12 +202,287 @@ class _CharacterCard extends ConsumerWidget {
             }
           },
           itemBuilder: (_) => const [
-            PopupMenuItem(value: 'export', child: Text('Export JSON')),
+            PopupMenuItem(value: 'export', child: Text('Export')),
             PopupMenuItem(value: 'delete', child: Text('Delete')),
           ],
         ),
         onTap: () => context.push('/character/${character.id}'),
       ),
+    );
+  }
+}
+
+// ── Export Dialog ─────────────────────────────────────────────────────────────
+
+class _ExportDialog extends StatefulWidget {
+  const _ExportDialog({
+    required this.characterName,
+    required this.token,
+    required this.json,
+  });
+
+  final String characterName;
+  final String token;
+  final String json;
+
+  @override
+  State<_ExportDialog> createState() => _ExportDialogState();
+}
+
+class _ExportDialogState extends State<_ExportDialog> {
+  bool _jsonExpanded = false;
+
+  Future<void> _copy(BuildContext ctx, String text, String label) async {
+    await Clipboard.setData(ClipboardData(text: text));
+    if (!ctx.mounted) return;
+    ScaffoldMessenger.of(ctx)
+        .showSnackBar(SnackBar(content: Text('$label copiado!')));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return AlertDialog(
+      title: Text('Exportar ${widget.characterName}'),
+      content: SizedBox(
+        width: 520,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // ── Token (primary) ──────────────────────────────────────────
+              Text('Token', style: Theme.of(context).textTheme.labelLarge),
+              const SizedBox(height: 6),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: scheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: SelectableText(
+                  widget.token,
+                  style: const TextStyle(
+                      fontFamily: 'monospace', fontSize: 12),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  FilledButton.icon(
+                    icon: const Icon(Icons.copy, size: 16),
+                    label: const Text('Copiar token'),
+                    onPressed: () =>
+                        _copy(context, widget.token, 'Token'),
+                  ),
+                  const SizedBox(width: 8),
+                  // QR code placeholder
+                  OutlinedButton.icon(
+                    icon: const Icon(Icons.qr_code, size: 16),
+                    label: const Text('QR Code'),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text('QR Code — em breve!')),
+                      );
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              // ── JSON (secondary, expandable) ─────────────────────────────
+              InkWell(
+                onTap: () =>
+                    setState(() => _jsonExpanded = !_jsonExpanded),
+                borderRadius: BorderRadius.circular(6),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    children: [
+                      Icon(
+                        _jsonExpanded
+                            ? Icons.keyboard_arrow_up
+                            : Icons.keyboard_arrow_down,
+                        size: 18,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        'Ver JSON',
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelMedium
+                            ?.copyWith(color: scheme.onSurfaceVariant),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              if (_jsonExpanded) ...[
+                const SizedBox(height: 6),
+                Container(
+                  height: 180,
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: scheme.surfaceContainerHighest,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: SingleChildScrollView(
+                    child: SelectableText(
+                      widget.json,
+                      style: const TextStyle(
+                          fontFamily: 'monospace', fontSize: 11),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 6),
+                TextButton.icon(
+                  icon: const Icon(Icons.copy, size: 16),
+                  label: const Text('Copiar JSON'),
+                  onPressed: () =>
+                      _copy(context, widget.json, 'JSON'),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Fechar'),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Import Dialog ─────────────────────────────────────────────────────────────
+
+class _ImportDialog extends StatefulWidget {
+  const _ImportDialog({
+    required this.tokenCtrl,
+    required this.jsonCtrl,
+  });
+
+  final TextEditingController tokenCtrl;
+  final TextEditingController jsonCtrl;
+
+  @override
+  State<_ImportDialog> createState() => _ImportDialogState();
+}
+
+class _ImportDialogState extends State<_ImportDialog> {
+  bool _jsonExpanded = false;
+
+  String? _resolveInput() {
+    final token = widget.tokenCtrl.text.trim();
+    final json = widget.jsonCtrl.text.trim();
+    if (token.isNotEmpty) {
+      // Decode Base64 token → JSON string
+      try {
+        return utf8.decode(base64Url.decode(base64Url.normalize(token)));
+      } catch (_) {
+        return null; // invalid token
+      }
+    }
+    if (json.isNotEmpty) return json;
+    return null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return AlertDialog(
+      title: const Text('Importar Personagem'),
+      content: SizedBox(
+        width: 520,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // ── Token (primary) ──────────────────────────────────────────
+              Text('Token', style: Theme.of(context).textTheme.labelLarge),
+              const SizedBox(height: 6),
+              TextField(
+                controller: widget.tokenCtrl,
+                autofocus: true,
+                decoration: const InputDecoration(
+                  hintText: 'Cole o token aqui…',
+                  border: OutlineInputBorder(),
+                  isDense: true,
+                ),
+                onChanged: (_) => setState(() {}),
+              ),
+              const SizedBox(height: 6),
+              // QR code placeholder
+              OutlinedButton.icon(
+                icon: const Icon(Icons.qr_code_scanner, size: 16),
+                label: const Text('Escanear QR Code'),
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('QR Code — em breve!')),
+                  );
+                },
+              ),
+              const SizedBox(height: 16),
+              // ── JSON (secondary, expandable) ─────────────────────────────
+              InkWell(
+                onTap: () =>
+                    setState(() => _jsonExpanded = !_jsonExpanded),
+                borderRadius: BorderRadius.circular(6),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    children: [
+                      Icon(
+                        _jsonExpanded
+                            ? Icons.keyboard_arrow_up
+                            : Icons.keyboard_arrow_down,
+                        size: 18,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        'Usar JSON diretamente',
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelMedium
+                            ?.copyWith(color: scheme.onSurfaceVariant),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              if (_jsonExpanded) ...[
+                const SizedBox(height: 6),
+                TextField(
+                  controller: widget.jsonCtrl,
+                  maxLines: 8,
+                  decoration: const InputDecoration(
+                    hintText: 'Cole o JSON aqui…',
+                    border: OutlineInputBorder(),
+                  ),
+                  onChanged: (_) => setState(() {}),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Cancelar'),
+        ),
+        FilledButton(
+          onPressed: _resolveInput() != null
+              ? () => Navigator.pop(context, _resolveInput())
+              : null,
+          child: const Text('Importar'),
+        ),
+      ],
     );
   }
 }

@@ -556,17 +556,19 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           content: SizedBox(
             width: double.maxFinite,
             height: 400,
-            child: ListView(
-              children: backgrounds
-                  .map((bg) => RadioListTile<String>(
-                        title: Text(bg.name),
-                        value: bg.name,
-                        groupValue: selected,
-                        onChanged: (v) => setDialogState(() => selected = v),
-                        dense: true,
-                        contentPadding: EdgeInsets.zero,
-                      ))
-                  .toList(),
+            child: RadioGroup<String>(
+              groupValue: selected,
+              onChanged: (v) => setDialogState(() => selected = v),
+              child: ListView(
+                children: backgrounds
+                    .map((bg) => RadioListTile<String>(
+                          title: Text(bg.name),
+                          value: bg.name,
+                          dense: true,
+                          contentPadding: EdgeInsets.zero,
+                        ))
+                    .toList(),
+              ),
             ),
           ),
           actions: [

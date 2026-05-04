@@ -16,17 +16,10 @@ class CharacterListScreen extends ConsumerWidget {
     final state = ref.watch(characterListProvider);
 
     Future<void> importCharacter() async {
-      final tokenCtrl = TextEditingController();
-      final jsonCtrl = TextEditingController();
       final result = await showDialog<String>(
         context: context,
-        builder: (ctx) => _ImportDialog(
-          tokenCtrl: tokenCtrl,
-          jsonCtrl: jsonCtrl,
-        ),
+        builder: (ctx) => const _ImportDialog(),
       );
-      tokenCtrl.dispose();
-      jsonCtrl.dispose();
 
       if (result == null || result.isEmpty || !context.mounted) return;
       try {
@@ -360,26 +353,28 @@ class _ExportDialogState extends State<_ExportDialog> {
 // ── Import Dialog ─────────────────────────────────────────────────────────────
 
 class _ImportDialog extends StatefulWidget {
-  const _ImportDialog({
-    required this.tokenCtrl,
-    required this.jsonCtrl,
-  });
-
-  final TextEditingController tokenCtrl;
-  final TextEditingController jsonCtrl;
+  const _ImportDialog();
 
   @override
   State<_ImportDialog> createState() => _ImportDialogState();
 }
 
 class _ImportDialogState extends State<_ImportDialog> {
+  final _tokenCtrl = TextEditingController();
+  final _jsonCtrl = TextEditingController();
   bool _jsonExpanded = false;
 
+  @override
+  void dispose() {
+    _tokenCtrl.dispose();
+    _jsonCtrl.dispose();
+    super.dispose();
+  }
+
   String? _resolveInput() {
-    final token = widget.tokenCtrl.text.trim();
-    final json = widget.jsonCtrl.text.trim();
+    final token = _tokenCtrl.text.trim();
+    final json = _jsonCtrl.text.trim();
     if (token.isNotEmpty) {
-      // Decode Base64 token → JSON string
       try {
         return utf8.decode(base64Url.decode(base64Url.normalize(token)));
       } catch (_) {
@@ -406,7 +401,7 @@ class _ImportDialogState extends State<_ImportDialog> {
               Text('Token', style: Theme.of(context).textTheme.labelLarge),
               const SizedBox(height: 6),
               TextField(
-                controller: widget.tokenCtrl,
+                controller: _tokenCtrl,
                 autofocus: true,
                 decoration: const InputDecoration(
                   hintText: 'Cole o token aqui…',
@@ -429,8 +424,7 @@ class _ImportDialogState extends State<_ImportDialog> {
               const SizedBox(height: 16),
               // ── JSON (secondary, expandable) ─────────────────────────────
               InkWell(
-                onTap: () =>
-                    setState(() => _jsonExpanded = !_jsonExpanded),
+                onTap: () => setState(() => _jsonExpanded = !_jsonExpanded),
                 borderRadius: BorderRadius.circular(6),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
@@ -458,7 +452,7 @@ class _ImportDialogState extends State<_ImportDialog> {
               if (_jsonExpanded) ...[
                 const SizedBox(height: 6),
                 TextField(
-                  controller: widget.jsonCtrl,
+                  controller: _jsonCtrl,
                   maxLines: 8,
                   decoration: const InputDecoration(
                     hintText: 'Cole o JSON aqui…',

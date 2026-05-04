@@ -2848,6 +2848,7 @@ class _SpellsTab extends ConsumerStatefulWidget {
 
 class _SpellsTabState extends ConsumerState<_SpellsTab> {
   Map<String, SrdSpell>? _spellIndex;
+  List<SrdSpell>? _classAllSpells;
 
   @override
   void initState() {
@@ -2857,11 +2858,17 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
 
   Future<void> _loadSpells() async {
     final all = await SrdDataSource.instance.getSpells();
-    if (mounted) {
-      setState(() {
-        _spellIndex = {for (final s in all) s.name.toLowerCase(): s};
-      });
-    }
+    if (!mounted) return;
+    final cls = widget.character.characterClass.toLowerCase();
+    final isPrepareAll = KnownSpellCasting.classPrepares(cls);
+    setState(() {
+      _spellIndex = {for (final s in all) s.name.toLowerCase(): s};
+      if (isPrepareAll) {
+        _classAllSpells = all
+            .where((s) => s.classes.contains(cls))
+            .toList();
+      }
+    });
   }
 
   @override
@@ -2908,18 +2915,43 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
       );
     }
 
+    // Detect prepare-all class (Cleric, Druid, Paladin, Artificer, Wizard)
+    final isPrepareAll =
+        isCaster && KnownSpellCasting.classPrepares(character.characterClass);
+
+    // Build display list: full class list for prepare-all, character.spells for known
+    List<KnownSpell> displaySpells;
+    if (isPrepareAll && _classAllSpells != null) {
+      final preparedNames = {for (final s in character.spells) s.name};
+      final maxLevel = engine.maxSpellLevel;
+      final classSpells = _classAllSpells!
+          .where((srd) => srd.level > 0 && srd.level <= maxLevel)
+          .map((srd) => KnownSpell(
+                name: srd.name,
+                level: srd.level,
+                isPrepared: preparedNames.contains(srd.name),
+              ))
+          .toList();
+      // Cantrips are still managed manually via browser for all classes
+      final cantrips = character.spells.where((s) => s.level == 0).toList();
+      displaySpells = [...cantrips, ...classSpells];
+    } else {
+      displaySpells = character.spells;
+    }
+
     // Group spells by level
     final byLevel = <int, List<KnownSpell>>{};
-    for (final s in character.spells) {
+    for (final s in displaySpells) {
       (byLevel[s.level] ??= []).add(s);
     }
     final levels = byLevel.keys.toList()..sort();
 
-    final prepares =
-        isCaster && KnownSpellCasting.classPrepares(character.characterClass);
-    final preparedCount = character.spells
-        .where((s) => s.level > 0 && (s.isPrepared || s.isAlwaysPrepared))
-        .length;
+    final prepares = isPrepareAll;
+    final preparedCount = isPrepareAll
+        ? character.spells.where((s) => s.level > 0).length
+        : character.spells
+            .where((s) => s.level > 0 && (s.isPrepared || s.isAlwaysPrepared))
+            .length;
     final nonCantrips = character.spells.where((s) => s.level > 0).toList();
     final cantripCount = character.spells.where((s) => s.level == 0).length;
 
@@ -2968,19 +3000,65 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                 ],
 
                 // ── Spell list grouped by level ─────────────────────────────
-                if (hasSpells)
+                if (displaySpells.isNotEmpty)
                   for (final lvl in levels) ...[
                     _SpellLevelHeader(level: lvl),
                     const SizedBox(height: 4),
-                    for (final spell in byLevel[lvl]!)
-                      _SpellRow(
+                    for (final spell in byLevel[lvl]!) Builder(builder: (context) {
+                      final isDisabled = character.disabledSpells.contains(spell.name);
+                      final canDisable = isPrepareAll && spell.level > 0 && !spell.isAlwaysPrepared;
+                      return _SpellRow(
                         spell: spell,
                         srdSpell: _spellIndex![spell.name.toLowerCase()],
-                        showPrepareToggle: prepares && spell.level > 0 && !spell.isAlwaysPrepared,
-                        onTogglePrepared: () => ref
-                            .read(characterDetailProvider(widget.characterId)
-                                .notifier)
-                            .togglePrepared(spell.name),
+                        showPrepareToggle: prepares && spell.level > 0 && !spell.isAlwaysPrepared && !isDisabled,
+                        onTogglePrepared: () {
+                          final notifier = ref.read(
+                              characterDetailProvider(widget.characterId).notifier);
+                          if (isPrepareAll) {
+                            if (character.spells.any((s) => s.name == spell.name)) {
+                              notifier.removeSpell(spell.name);
+                            } else {
+                              notifier.addSpell(KnownSpell(
+                                name: spell.name,
+                                level: spell.level,
+                                isPrepared: true,
+                              ));
+                            }
+                          } else {
+                            notifier.togglePrepared(spell.name);
+                          }
+                        },
+                        isDisabled: isDisabled,
+                        onLongPress: canDisable
+                            ? () async {
+                                final confirmed = await showDialog<bool>(
+                                  context: context,
+                                  builder: (ctx) => AlertDialog(
+                                    title: Text(isDisabled ? 'Reativar magia?' : 'Desativar magia?'),
+                                    content: Text(
+                                      isDisabled
+                                          ? 'Reativar "${spell.name}"? Ela voltará a aparecer normalmente.'
+                                          : 'Desativar "${spell.name}"? Ela ficará esmaecida e não poderá ser preparada.',
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(ctx, false),
+                                        child: const Text('Cancelar'),
+                                      ),
+                                      FilledButton(
+                                        onPressed: () => Navigator.pop(ctx, true),
+                                        child: Text(isDisabled ? 'Reativar' : 'Desativar'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                                if (confirmed == true && context.mounted) {
+                                  ref
+                                      .read(characterDetailProvider(widget.characterId).notifier)
+                                      .toggleDisabledSpell(spell.name);
+                                }
+                              }
+                            : null,
                         onTap: () {
                           final srd = _spellIndex![spell.name.toLowerCase()];
                           if (srd == null) return;
@@ -2990,8 +3068,10 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                             useSafeArea: true,
                             builder: (_) => SpellDetailSheet(
                               spell: srd,
-                              isKnown: true,
-                              onRemove: spell.isAlwaysPrepared
+                              isKnown: isPrepareAll
+                                  ? character.spells.any((s) => s.name == spell.name)
+                                  : true,
+                              onRemove: (isPrepareAll || spell.isAlwaysPrepared)
                                   ? null
                                   : () => ref
                                       .read(characterDetailProvider(
@@ -3001,17 +3081,18 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                             ),
                           );
                         },
-                        onRemove: spell.isAlwaysPrepared
+                        onRemove: (isPrepareAll || spell.isAlwaysPrepared)
                             ? null
                             : () => ref
                                 .read(characterDetailProvider(
                                         widget.characterId)
                                     .notifier)
                                 .removeSpell(spell.name),
-                      ),
+                      );
+                    }),
                     const SizedBox(height: 8),
                   ]
-                else if (isCaster) ...[
+                else if (isCaster && !isPrepareAll) ...[
                   const SizedBox(height: 24),
                   Center(
                     child: Text(
@@ -3042,6 +3123,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                         KnownSpell(
                           name: srdSpell.name,
                           level: srdSpell.level,
+                          isPrepared: isPrepareAll,
                         ),
                       ),
                   onRemoveSpell: (name) => ref
@@ -3197,6 +3279,8 @@ class _SpellRow extends StatelessWidget {
     required this.onTogglePrepared,
     required this.onTap,
     this.onRemove,
+    this.isDisabled = false,
+    this.onLongPress,
   });
 
   final KnownSpell spell;
@@ -3205,6 +3289,8 @@ class _SpellRow extends StatelessWidget {
   final VoidCallback onTogglePrepared;
   final VoidCallback onTap;
   final VoidCallback? onRemove;
+  final bool isDisabled;
+  final VoidCallback? onLongPress;
 
   static Color _schoolColor(String school) {
     switch (school.toLowerCase()) {
@@ -3250,13 +3336,15 @@ class _SpellRow extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final srd = srdSpell;
     final isPrepared = spell.isPrepared || spell.isAlwaysPrepared;
-    final dimmed = showPrepareToggle && !isPrepared;
+    // Dimmed: DM-disabled always, or not-prepared in a prepare class
+    final dimmed = isDisabled || (showPrepareToggle && !isPrepared);
 
     Widget card = Card(
       margin: const EdgeInsets.only(bottom: 4),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
         onTap: onTap,
+        onLongPress: onLongPress,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           child: Row(
@@ -3364,6 +3452,10 @@ class _SpellRow extends StatelessWidget {
         onDismissed: (_) => onRemove!(),
         child: card,
       );
+    }
+
+    if (isDisabled) {
+      card = Opacity(opacity: 0.35, child: card);
     }
 
     return card;

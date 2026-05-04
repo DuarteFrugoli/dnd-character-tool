@@ -41,6 +41,7 @@ class Character {
   final List<String> features;
   final List<CharacterExtraFeature> extraFeatures;
   final List<String> disabledFeatures;
+  final List<String> disabledSpells;
   final List<String> languages;
   final CharacterPersonality personality;
   final CharacterAppearance appearance;
@@ -78,6 +79,7 @@ class Character {
     this.features = const [],
     this.extraFeatures = const [],
     this.disabledFeatures = const [],
+    this.disabledSpells = const [],
     this.languages = const [],
     this.personality = const CharacterPersonality(),
     this.appearance = const CharacterAppearance(),
@@ -129,6 +131,7 @@ class Character {
     List<String>? features,
     List<CharacterExtraFeature>? extraFeatures,
     List<String>? disabledFeatures,
+    List<String>? disabledSpells,
     List<String>? languages,
     CharacterPersonality? personality,
     CharacterAppearance? appearance,
@@ -167,6 +170,7 @@ class Character {
       features: features ?? this.features,
       extraFeatures: extraFeatures ?? this.extraFeatures,
       disabledFeatures: disabledFeatures ?? this.disabledFeatures,
+      disabledSpells: disabledSpells ?? this.disabledSpells,
       languages: languages ?? this.languages,
       personality: personality ?? this.personality,
       appearance: appearance ?? this.appearance,

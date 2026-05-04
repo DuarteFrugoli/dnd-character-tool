@@ -315,7 +315,7 @@ Objetivo: corrigir bugs acumulados das sprints anteriores, melhorar a UX do expo
 
 ---
 
-# Sprint 6 — Imagem, Magias, i18n & Temas (planejada)
+# Sprint 6 — Imagem, Magias, i18n & Temas (em andamento)
 
 Objetivo: completar os itens restantes do v1 — imagem do personagem, browser de magias na ficha, internacionalização PT-BR/EN e seletor de tema.
 
@@ -332,21 +332,63 @@ Objetivo: completar os itens restantes do v1 — imagem do personagem, browser d
 
 ## Browser de magias (aba Spells)
 
-- [ ] Botão "+" na aba Spells abre `_SpellBrowserSheet` (`DraggableScrollableSheet`)
-- [ ] Filtros: classe do personagem (padrão), nível de magia, escola de magia
-- [ ] Campo de busca por nome e descrição
-- [ ] Tap no tile exibe detalhes completos da magia
-- [ ] Botão "+" adiciona à lista `character.spells`; ícone ✓ indica já adicionada
-- [ ] Remover magia da lista (swipe ou botão na ficha)
+- [x] `SpellcastingEngine` — attack bonus, save DC, maxPrepared, maxKnown, maxCantrips, maxSpellLevel por classe e nível
+- [x] Aba Spells: banner com Attack, Save DC, Cantrips (atual/máx), Prepared ou Known por classe
+- [x] Tracker de spell slots com botões usar/restaurar por nível
+- [x] Lista de magias agrupada por nível com badges (escola, casting time, concentração, ritual)
+- [x] Toggle de preparar por magia (apenas classes prepare, apenas level > 0)
+- [x] Cantrips excluídos do contador de prepared/known e sem toggle de preparar
+- [x] `SpellBrowserSheet` — busca, filtros (nível, escola, casting time, ritual, concentração, só da classe), add/remove
+- [x] `SpellDetailSheet` — informações completas da magia, botão add/remove com confirmação
+- [x] Swipe esquerda com `confirmDismiss` (AlertDialog antes de remover) para classes known
+- [x] Remover magia pelo detail sheet com confirmação — acessível da ficha e do browser
+- [x] Browser atualiza ícone de ✓ instantaneamente ao remover
+- [x] Padding de `viewPadding.bottom` em todos os scrollables dentro de modal sheets
 
-## Internacionalização (i18n)
+---
 
-- [ ] Configurar `flutter_localizations` + `intl`
-- [ ] Arquivos `arb`: `app_pt.arb` e `app_en.arb`
-- [ ] Traduzir todas as strings da UI (labels, botões, mensagens de erro, diálogos)
-- [ ] Seletor de idioma nas configurações (Português / English)
-- [ ] Persistência da escolha via `shared_preferences`
-- [ ] Padrão: idioma do sistema
+# Sprint 7 — Sistema de Magias Completo (branch: feature/spells-prepare-all)
+
+Objetivo: implementar o comportamento correto para classes que conhecem todas as magias da classe (Cleric, Druid, Paladin, Artificer, Wizard), magias de subclasse always-prepared, e subclasses que adicionam magia a classes não-conjuradoras.
+
+> Ver `docs/spells_plan.md` para detalhes de arquitetura e decisões de design.
+
+---
+
+## Prepare-all classes (Cleric, Druid, Paladin, Artificer, Wizard)
+
+- [ ] `disabledSpells: List<String>` no modelo `Character` + `fromJson`/`toJson`
+- [ ] `updateDisabledSpells()` no `CharacterDetailNotifier`
+- [ ] Lista da aba Spells construída dinamicamente a partir do SRD para classes prepare-all
+- [ ] `character.spells` guarda apenas as magias preparadas para essas classes
+- [ ] Long-press numa magia → AlertDialog "Desativar / Reativar" → `disabledSpells`
+- [ ] Magias desativadas aparecem com `Opacity(0.35)` — sem toggle visível, sem modo de edição
+- [ ] FAB `+` para prepare-all abre browser reduzido (só magias extras: subclasse, custom)
+- [ ] Swipe desabilitado para prepare-all (a magia sempre está na lista)
+
+## Subclass always-prepared
+
+- [ ] Preencher `subclassSpells` em `spells.json` para domínios de Cleric, juramentos de Paladin e pactos de Warlock
+- [ ] Provider injeta magias de subclasse com `isAlwaysPrepared = true` ao construir a lista (derivado, não salvo no personagem)
+- [ ] UI: sem toggle, sem swipe, sem long-press — badge visual diferenciado
+
+## Subclasses conjuradoras (Eldritch Knight, Arcane Trickster)
+
+- [ ] `SpellProgressionType.third` no enum do `SpellcastingEngine`
+- [ ] Tabela `_thirdCasterSlots` (1/3 caster, a partir do nível 3)
+- [ ] `SpellcastingEngine.forClass()` aceita `subclass` opcional; retorna engine para Fighter/Rogue com Eldritch Knight / Arcane Trickster
+- [ ] Browser filtra por escola (Abjuration/Evocation para EK; Enchantment/Illusion para AT) exceto as 3 escolhas livres
+
+## Magias inatas raciais *(fase posterior — não implementar nesta sprint)*
+
+- [ ] `innateSpells: List<InnateSpell>` no modelo `Character`
+- [ ] `InnateSpell`: `name`, `usesPerDay` (null = à vontade), `usedToday`
+- [ ] Preencher `raceSpells` no `spells.json`
+- [ ] Seção "Racial Spells" na aba Spells com tracker de usos
+
+---
+
+# Sprint 8 — Visual
 
 ## Temas visuais
 
@@ -355,3 +397,18 @@ Objetivo: completar os itens restantes do v1 — imagem do personagem, browser d
 - [ ] Persistência da escolha via `shared_preferences`
 - [ ] `ThemeMode` controlado por provider global
 
+## imagens
+
+- [ ] Imagens para representar os personagens, escolhido pelo usuário
+- [ ] Imagens fixas para melhorar a visualização criativa do app
+
+# Sprint 9 — internacionalização
+
+## i18n
+
+- [ ] Configurar `flutter_localizations` + `intl`
+- [ ] Arquivos `arb`: `app_pt.arb` e `app_en.arb`
+- [ ] Traduzir todas as strings da UI (labels, botões, mensagens de erro, diálogos)
+- [ ] Seletor de idioma nas configurações (Português / English)
+- [ ] Persistência da escolha via `shared_preferences`
+- [ ] Padrão: idioma do sistema

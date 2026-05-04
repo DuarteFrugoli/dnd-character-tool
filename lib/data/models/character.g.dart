@@ -69,6 +69,9 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   disabledFeatures:
       (json['disabledFeatures'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
+  disabledSpells:
+      (json['disabledSpells'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      const [],
   languages:
       (json['languages'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
@@ -122,6 +125,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'features': instance.features,
   'extraFeatures': instance.extraFeatures.map((e) => e.toJson()).toList(),
   'disabledFeatures': instance.disabledFeatures,
+  'disabledSpells': instance.disabledSpells,
   'languages': instance.languages,
   'personality': instance.personality.toJson(),
   'appearance': instance.appearance.toJson(),

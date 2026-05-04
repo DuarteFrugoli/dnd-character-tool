@@ -202,6 +202,18 @@ class CharacterDetailNotifier
     await _save(c.copyWith(disabledFeatures: disabled));
   }
 
+  Future<void> toggleDisabledSpell(String name) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final current = List<String>.from(c.disabledSpells);
+    if (current.contains(name)) {
+      current.remove(name);
+    } else {
+      current.add(name);
+    }
+    await _save(c.copyWith(disabledSpells: current));
+  }
+
   Future<void> updateAbilityScore(String key, int value) async {
     final c = state.valueOrNull;
     if (c == null) return;

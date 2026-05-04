@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -141,8 +142,9 @@ class _CharacterCard extends ConsumerWidget {
     Future<void> exportCharacter() async {
       final json =
           await ref.read(characterListProvider.notifier).exportCharacter(character);
-      // Generate token: base64url-encoded UTF-8 JSON
-      final token = base64Url.encode(utf8.encode(json));
+      // Generate token: base64url( gzip( utf8(json) ) ) — smaller than plain base64
+      final token = base64Url.encode(
+          GZipCodec().encode(utf8.encode(json)));
       if (!context.mounted) return;
       await showDialog<void>(
         context: context,
@@ -282,14 +284,33 @@ class _ExportDialogState extends State<_ExportDialog> {
               if (_qrExpanded) ...
                 [
                   const SizedBox(height: 12),
-                  Center(
-                    child: QrImageView(
+                  Builder(builder: (context) {
+                    final validation = QrValidator.validate(
                       data: widget.token,
                       version: QrVersions.auto,
-                      size: 200,
-                      backgroundColor: Colors.white,
-                    ),
-                  ),
+                      errorCorrectionLevel: QrErrorCorrectLevel.L,
+                    );
+                    if (validation.isValid) {
+                      return Center(
+                        child: QrImageView(
+                          data: widget.token,
+                          version: QrVersions.auto,
+                          size: 200,
+                          backgroundColor: Colors.white,
+                          errorCorrectionLevel: QrErrorCorrectLevel.L,
+                        ),
+                      );
+                    }
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: Text(
+                        'Personagem muito grande para QR code.\nUse o token ou JSON para compartilhar.',
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.error),
+                        textAlign: TextAlign.center,
+                      ),
+                    );
+                  }),
                 ],
               const SizedBox(height: 16),
               // ── JSON (secondary, expandable) ─────────────────────────────
@@ -385,7 +406,13 @@ class _ImportDialogState extends State<_ImportDialog> {
     final json = _jsonCtrl.text.trim();
     if (token.isNotEmpty) {
       try {
-        return utf8.decode(base64Url.decode(base64Url.normalize(token)));
+        final bytes = base64Url.decode(base64Url.normalize(token));
+        // Try gzip decompress (new format), fall back to raw UTF-8 (old format)
+        try {
+          return utf8.decode(GZipCodec().decode(bytes));
+        } catch (_) {
+          return utf8.decode(bytes);
+        }
       } catch (_) {
         // Token inválido → tenta o JSON como fallback
         if (json.isNotEmpty) return json;

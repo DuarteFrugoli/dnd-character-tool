@@ -80,6 +80,33 @@ class CharacterDetailNotifier
     await _save(c.copyWith(spellSlots: slots.copyWith(used: newUsed)));
   }
 
+  Future<void> addSpell(KnownSpell spell) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    if (c.spells.any((s) => s.name == spell.name)) return;
+    await _save(c.copyWith(spells: [...c.spells, spell]));
+  }
+
+  Future<void> removeSpell(String name) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(
+      spells: c.spells.where((s) => s.name != name).toList(),
+    ));
+  }
+
+  Future<void> togglePrepared(String name) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final updated = c.spells.map((s) {
+      if (s.name == name && !s.isAlwaysPrepared) {
+        return s.copyWith(isPrepared: !s.isPrepared);
+      }
+      return s;
+    }).toList();
+    await _save(c.copyWith(spells: updated));
+  }
+
   Future<void> longRest() async {
     final c = state.valueOrNull;
     if (c == null) return;

@@ -27,7 +27,7 @@ KnownSpell _$KnownSpellFromJson(Map<String, dynamic> json) => KnownSpell(
   level: (json['level'] as num).toInt(),
   isPrepared: json['isPrepared'] as bool? ?? false,
   isAlwaysPrepared: json['isAlwaysPrepared'] as bool? ?? false,
-  school: json['school'] as String?,
+  // 'school' field removed — old saved characters with school in JSON load fine
 );
 
 Map<String, dynamic> _$KnownSpellToJson(KnownSpell instance) =>
@@ -36,5 +36,4 @@ Map<String, dynamic> _$KnownSpellToJson(KnownSpell instance) =>
       'level': instance.level,
       'isPrepared': instance.isPrepared,
       'isAlwaysPrepared': instance.isAlwaysPrepared,
-      'school': instance.school,
     };

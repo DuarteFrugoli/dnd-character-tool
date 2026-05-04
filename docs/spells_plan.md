@@ -79,19 +79,19 @@ Cada magia terá os seguintes campos:
 
 | Nível | SRD estimado | Atual |
 |---|---|---|
-| 0 (cantrip) | ~25 | 20 ✓ |
-| 1 | ~40 | 18 ✗ |
-| 2 | ~35 | 13 ✗ |
-| 3 | ~30 | 8 ✗ |
-| 4 | ~25 | 0 ✗ |
-| 5 | ~20 | 0 ✗ |
-| 6 | ~15 | 0 ✗ |
-| 7 | ~15 | 0 ✗ |
-| 8 | ~10 | 0 ✗ |
-| 9 | ~10 | 0 ✗ |
-| **Total** | **~225** | **59** |
+| 0 (cantrip) | ~25 | 26 ✓ |
+| 1 | ~40 | 49 ✓ |
+| 2 | ~35 | 51 ✓ |
+| 3 | ~30 | 38 ✓ |
+| 4 | ~25 | 31 ✓ |
+| 5 | ~20 | 35 ✓ |
+| 6 | ~15 | 31 ✓ |
+| 7 | ~15 | 21 ✓ |
+| 8 | ~10 | 17 ✓ |
+| 9 | ~10 | 16 ✓ |
+| **Total** | **~225** | **315 ✓** |
 
-**Estratégia:** expandir o JSON para cobrir todos os níveis do SRD (OGL 5.1). Para v1 do browser, focar nos níveis 0–5 que cobrem a esmagadora maioria do uso real. Níveis 6–9 em seguida.
+**Status:** `spells.json` completo com todos os níveis do SRD (OGL 5.1). Campos `subclassSpells` e `raceSpells` estão presentes no schema mas com arrays vazios — preenchimento pendente para fase futura.
 
 ---
 
@@ -126,19 +126,20 @@ class SrdSpell {
 }
 ```
 
-### `KnownSpell` (refatorado — só referência + flags)
+### `KnownSpell` (refatorado — remover apenas `school`)
 
-Remover `level` e `school` do modelo (buscar em `SrdSpell` pelo nome):
+Manter `level` no modelo — necessário para agrupar a lista por nível de forma síncrona sem `FutureBuilder` em cada linha. Remover apenas `school` (nunca usado na ficha).
 
 ```dart
 class KnownSpell {
-  final String name;          // chave para lookup em SrdSpell
-  final bool isPrepared;      // preparada neste dia (classes que preparam)
+  final String name;           // chave para lookup em SrdSpell
+  final int level;             // mantido para agrupamento síncrono
+  final bool isPrepared;       // preparada neste dia (classes que preparam)
   final bool isAlwaysPrepared; // de subclasse/domínio/juramento
 }
 ```
 
-> **Migração:** ao carregar um personagem antigo, `KnownSpell` com `level` e `school` ainda funciona — os campos extras são ignorados no `fromJson`. Os novos objetos simplesmente não os incluem.
+> **Migração:** personagens com `school` salvo no JSON continuam funcionando — o campo é ignorado no `fromJson` ao carregar.
 
 ---
 
@@ -204,7 +205,12 @@ class KnownSpell {
 
 ---
 
-## 6. UI — Aba Spells
+## 6. UI — Aba Spells (Fase A e B)
+
+### Fase A (banner + lista + provider) — implementar agora
+### Fase B (Spell Browser + Detail sheet) — implementar depois
+
+**Empty state:** usar `SpellcastingEngine.forClass()` para detectar se a classe é conjuradora. Se for, mostrar aba completa com FAB mesmo sem magias. Se não for (Fighter base, Barbarian, etc.), mostrar o empty state atual.
 
 ### Layout geral
 
@@ -332,16 +338,16 @@ Para classes "known" (Bard, Sorcerer, etc.):
 
 ## 10. Ordem de implementação
 
-1. **Expandir `spells.json`** — adicionar campos faltantes (ritual, higherLevels, saveAttribute, attackType, damageTypes, material, areaOfEffect) nas 59 magias existentes
-2. **Adicionar magias níveis 4–5** do SRD (~45 magias) — cobre personagens até nível ~9
-3. **Criar `SrdSpell` model** + `SrdSpellDataSource` (lê/indexa o JSON por nome)
-4. **Atualizar `classes.json`** com campos de spellcasting
-5. **Criar `SpellcastingEngine`** — calcula attack, DC, slots, número known/prepared
-6. **Refatorar `KnownSpell`** — remover `level` e `school` (buscar do `SrdSpell`)
-7. **Redesenhar Spells Tab** — banner de stats + lista por nível + toggle prepared
-8. **Implementar Spell Browser** — search + filtros + add/remove
-9. **Implementar Spell Detail Sheet** — detalhe completo
-10. **Adicionar magias níveis 6–9** (pode ser pós-launch v1)
+- [x] 1. **Expandir `spells.json`** — schema completo com todos os campos
+- [x] 2. **Adicionar magias níveis 0–9** — 315 magias SRD 5.1
+- [x] 3. **Expandir `SrdSpell` model** + índice por nome em `SrdDataSource`
+- [x] 4. **Criar `SpellcastingEngine`** — attack, DC, slots, known/prepared por classe
+- [ ] 5. **Refatorar `KnownSpell`** — remover `school`, manter `level`
+- [ ] 6. **Adicionar provider actions** — `addSpell`, `removeSpell`, `togglePrepared`
+- [ ] 7. **Fase A UI** — banner de stats + spell slots + lista agrupada por nível + toggle prepared + swipe remove
+- [ ] 8. **Fase B UI** — Spell Browser (FAB +) com search + filtros + add/remove
+- [ ] 9. **Fase B UI** — Spell Detail sheet
+- [ ] 10. **Preencher `subclassSpells` / `raceSpells`** no JSON (fase futura)
 
 ---
 

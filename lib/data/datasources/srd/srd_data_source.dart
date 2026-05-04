@@ -16,6 +16,7 @@ class SrdDataSource {
   List<SrdClass>? _classes;
   List<SrdBackground>? _backgrounds;
   List<SrdSpell>? _spells;
+  Map<String, SrdSpell>? _spellIndex;
   List<SrdWeapon>? _weapons;
   List<SrdArmor>? _armors;
   List<SrdGearItem>? _gear;
@@ -92,6 +93,16 @@ class SrdDataSource {
       SrdSpell.fromJson,
     );
     return _spells!;
+  }
+
+  /// Returns a spell by exact name (case-insensitive), or null if not found.
+  /// Uses a lazy-built index for O(1) lookups after first call.
+  Future<SrdSpell?> getSpellByName(String name) async {
+    if (_spellIndex == null) {
+      final all = await getSpells();
+      _spellIndex = {for (final s in all) s.name.toLowerCase(): s};
+    }
+    return _spellIndex![name.toLowerCase()];
   }
 
   Future<List<SrdSpell>> getSpellsForClass(String className) async {

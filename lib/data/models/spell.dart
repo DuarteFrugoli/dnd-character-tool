@@ -34,14 +34,12 @@ class KnownSpell {
   final int level;
   final bool isPrepared;
   final bool isAlwaysPrepared;
-  final String? school;
 
   const KnownSpell({
     required this.name,
     required this.level,
     this.isPrepared = false,
     this.isAlwaysPrepared = false,
-    this.school,
   });
 
   KnownSpell copyWith({
@@ -49,14 +47,12 @@ class KnownSpell {
     int? level,
     bool? isPrepared,
     bool? isAlwaysPrepared,
-    String? school,
   }) {
     return KnownSpell(
       name: name ?? this.name,
       level: level ?? this.level,
       isPrepared: isPrepared ?? this.isPrepared,
       isAlwaysPrepared: isAlwaysPrepared ?? this.isAlwaysPrepared,
-      school: school ?? this.school,
     );
   }
 

@@ -304,44 +304,161 @@ class SrdBackground {
       );
 }
 
+// ── Spell helper types ────────────────────────────────────────────────────────
+
+class SpellAreaOfEffect {
+  /// sphere | cone | cube | cylinder | line | wall | circle
+  final String type;
+
+  /// Size in feet (radius for sphere/cylinder, length for cone/line/wall, etc.)
+  final int size;
+
+  const SpellAreaOfEffect({required this.type, required this.size});
+
+  factory SpellAreaOfEffect.fromJson(Map<String, dynamic> json) =>
+      SpellAreaOfEffect(
+        type: json['type'] as String,
+        size: json['size'] as int,
+      );
+}
+
+class SubclassSpellRef {
+  final String className;
+  final String subclass;
+
+  const SubclassSpellRef({required this.className, required this.subclass});
+
+  factory SubclassSpellRef.fromJson(Map<String, dynamic> json) =>
+      SubclassSpellRef(
+        className: json['class'] as String,
+        subclass: json['subclass'] as String,
+      );
+}
+
+class RaceSpellRef {
+  final String race;
+  final String? subrace;
+
+  const RaceSpellRef({required this.race, this.subrace});
+
+  factory RaceSpellRef.fromJson(Map<String, dynamic> json) => RaceSpellRef(
+        race: json['race'] as String,
+        subrace: json['subrace'] as String?,
+      );
+}
+
+// ── SrdSpell ─────────────────────────────────────────────────────────────────
+
 class SrdSpell {
   final String name;
   final int level;
   final String school;
+
+  /// Human-readable casting time string (e.g. "1 action", "10 minutes").
   final String castingTime;
+
+  /// Machine-readable casting time type for filtering/icons.
+  /// Values: action | bonus_action | reaction | minute | hour | special
+  final String castingTimeType;
+
+  final bool ritual;
   final String range;
   final List<String> components;
+
+  /// Material component description (null if no M component or no description).
+  final String? material;
+
+  /// Material cost in GP (null if no cost).
+  final int? materialCost;
+
+  /// Whether the material is consumed when the spell is cast.
+  final bool materialConsumed;
+
   final String duration;
   final bool concentration;
-  final List<String> classes;
+  final SpellAreaOfEffect? areaOfEffect;
+
+  /// null for save-based spells; "melee" or "ranged" for attack roll spells.
+  final String? attackType;
+
+  /// Saving throw attribute (STR/DEX/CON/INT/WIS/CHA), null if no save.
+  final String? saveAttribute;
+
+  final List<String> damageTypes;
   final String description;
+
+  /// Text describing upcast behaviour; null if the spell doesn't scale.
+  final String? higherLevels;
+
+  final List<String> classes;
+
+  /// Subclass expanded spell lists (e.g. Cleric domains, Paladin oaths).
+  /// Currently empty — to be populated in a future pass.
+  final List<SubclassSpellRef> subclassSpells;
+
+  /// Racial spell grants (e.g. Tiefling, Drow).
+  /// Currently empty — to be populated in a future pass.
+  final List<RaceSpellRef> raceSpells;
 
   const SrdSpell({
     required this.name,
     required this.level,
     required this.school,
     required this.castingTime,
+    required this.castingTimeType,
+    required this.ritual,
     required this.range,
     required this.components,
+    this.material,
+    this.materialCost,
+    required this.materialConsumed,
     required this.duration,
     required this.concentration,
-    required this.classes,
+    this.areaOfEffect,
+    this.attackType,
+    this.saveAttribute,
+    required this.damageTypes,
     required this.description,
+    this.higherLevels,
+    required this.classes,
+    required this.subclassSpells,
+    required this.raceSpells,
   });
 
   bool get isCantrip => level == 0;
+
+  bool get requiresMaterial => components.contains('M') && material != null;
 
   factory SrdSpell.fromJson(Map<String, dynamic> json) => SrdSpell(
         name: json['name'] as String,
         level: json['level'] as int,
         school: json['school'] as String,
         castingTime: json['castingTime'] as String,
+        castingTimeType: json['castingTimeType'] as String? ?? 'action',
+        ritual: json['ritual'] as bool? ?? false,
         range: json['range'] as String,
         components: List<String>.from(json['components']),
+        material: json['material'] as String?,
+        materialCost: json['materialCost'] as int?,
+        materialConsumed: json['materialConsumed'] as bool? ?? false,
         duration: json['duration'] as String,
         concentration: json['concentration'] as bool,
-        classes: List<String>.from(json['classes']),
+        areaOfEffect: json['areaOfEffect'] != null
+            ? SpellAreaOfEffect.fromJson(
+                json['areaOfEffect'] as Map<String, dynamic>)
+            : null,
+        attackType: json['attackType'] as String?,
+        saveAttribute: json['saveAttribute'] as String?,
+        damageTypes: List<String>.from(json['damageTypes'] ?? []),
         description: json['description'] as String,
+        higherLevels: json['higherLevels'] as String?,
+        classes: List<String>.from(json['classes']),
+        subclassSpells: (json['subclassSpells'] as List<dynamic>? ?? [])
+            .map((e) => SubclassSpellRef.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        raceSpells: (json['raceSpells'] as List<dynamic>? ?? [])
+            .map((e) => RaceSpellRef.fromJson(e as Map<String, dynamic>))
+            .toList(),
       );
 }
 

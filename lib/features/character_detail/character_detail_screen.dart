@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/utils/spellcasting_engine.dart';
 import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
@@ -2815,18 +2816,47 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
 
 // ── Spells Tab ────────────────────────────────────────────────────────────────
 
-class _SpellsTab extends ConsumerWidget {
+class _SpellsTab extends ConsumerStatefulWidget {
   const _SpellsTab({required this.character, required this.characterId});
   final Character character;
   final String characterId;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final slots = character.spellSlots;
-    final hasSlots = slots.total.any((t) => t > 0);
-    final hasSpells = character.spells.isNotEmpty;
+  ConsumerState<_SpellsTab> createState() => _SpellsTabState();
+}
 
-    if (!hasSlots && !hasSpells) {
+class _SpellsTabState extends ConsumerState<_SpellsTab> {
+  Map<String, SrdSpell>? _spellIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSpells();
+  }
+
+  Future<void> _loadSpells() async {
+    final all = await SrdDataSource.instance.getSpells();
+    if (mounted) {
+      setState(() {
+        _spellIndex = {for (final s in all) s.name.toLowerCase(): s};
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final character = widget.character;
+    final engine = SpellcastingEngine.forClass(
+      className: character.characterClass,
+      classLevel: character.level,
+      abilityScores: character.abilityScores,
+      proficiencyBonus: character.proficiencyBonus,
+    );
+    final isCaster = engine != null;
+    final hasSpells = character.spells.isNotEmpty;
+    final hasSlots = character.spellSlots.total.any((t) => t > 0);
+
+    if (!isCaster && !hasSlots && !hasSpells) {
       return Center(
         child: Padding(
           padding: const EdgeInsets.all(32),
@@ -2840,12 +2870,12 @@ class _SpellsTab extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                'No spells or spell slots',
+                'No Spellcasting',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 8),
               Text(
-                'Spell slots are not assigned for this character.',
+                'This class has no spellcasting features.',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Theme.of(context).colorScheme.outline,
@@ -2857,48 +2887,446 @@ class _SpellsTab extends ConsumerWidget {
       );
     }
 
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
-      children: [
-        if (hasSlots) ...[
-          Text('Spell Slots', style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(height: 8),
-          for (int lvl = 1; lvl <= 9; lvl++)
-            if (slots.total[lvl - 1] > 0)
-              _SpellSlotRow(
-                level: lvl,
-                total: slots.total[lvl - 1],
-                used: slots.used[lvl - 1],
-                onUse: () => ref
-                    .read(characterDetailProvider(characterId).notifier)
-                    .useSpellSlot(lvl),
-                onRestore: () => ref
-                    .read(characterDetailProvider(characterId).notifier)
-                    .restoreSpellSlot(lvl),
-              ),
-          const SizedBox(height: 16),
-        ],
-        if (hasSpells) ...[
-          Text('Known Spells', style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(height: 8),
-          ...character.spells.map(
-            (spell) => ListTile(
-              title: Text(spell.name),
-              subtitle: Text(
-                spell.level == 0
-                    ? 'Cantrip'
-                    : 'Level ${spell.level}'
-                        '${spell.school != null ? '  ·  ${spell.school}' : ''}',
-              ),
-              trailing: spell.isPrepared
-                  ? const Icon(Icons.check_circle_outline)
-                  : null,
+    // Group spells by level
+    final byLevel = <int, List<KnownSpell>>{};
+    for (final s in character.spells) {
+      (byLevel[s.level] ??= []).add(s);
+    }
+    final levels = byLevel.keys.toList()..sort();
+
+    final prepares =
+        isCaster && KnownSpellCasting.classPrepares(character.characterClass);
+    final preparedCount = character.spells
+        .where((s) => s.isPrepared || s.isAlwaysPrepared)
+        .length;
+    final nonCantrips = character.spells.where((s) => s.level > 0).toList();
+
+    return Scaffold(
+      body: _spellIndex == null
+          ? const Center(child: CircularProgressIndicator())
+          : ListView(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
+              children: [
+                // ── Spellcasting Banner ─────────────────────────────────────
+                if (engine != null) ...[
+                  _SpellcastingBanner(
+                    engine: engine,
+                    preparedCount: prepares ? preparedCount : null,
+                    maxPrepared: prepares ? engine.maxPrepared : null,
+                    knownCount: !prepares ? nonCantrips.length : null,
+                    maxKnown: !prepares ? engine.maxKnown : null,
+                  ),
+                  const SizedBox(height: 12),
+                ],
+
+                // ── Spell Slots ─────────────────────────────────────────────
+                if (hasSlots) ...[
+                  Text(
+                    'Spell Slots',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 8),
+                  for (int lvl = 1; lvl <= 9; lvl++)
+                    if (character.spellSlots.total[lvl - 1] > 0)
+                      _SpellSlotRow(
+                        level: lvl,
+                        total: character.spellSlots.total[lvl - 1],
+                        used: character.spellSlots.used[lvl - 1],
+                        onUse: () => ref
+                            .read(characterDetailProvider(widget.characterId)
+                                .notifier)
+                            .useSpellSlot(lvl),
+                        onRestore: () => ref
+                            .read(characterDetailProvider(widget.characterId)
+                                .notifier)
+                            .restoreSpellSlot(lvl),
+                      ),
+                  const SizedBox(height: 16),
+                ],
+
+                // ── Spell list grouped by level ─────────────────────────────
+                if (hasSpells)
+                  for (final lvl in levels) ...[
+                    _SpellLevelHeader(level: lvl),
+                    const SizedBox(height: 4),
+                    for (final spell in byLevel[lvl]!)
+                      _SpellRow(
+                        spell: spell,
+                        srdSpell: _spellIndex![spell.name.toLowerCase()],
+                        showPrepareToggle: prepares && !spell.isAlwaysPrepared,
+                        onTogglePrepared: () => ref
+                            .read(characterDetailProvider(widget.characterId)
+                                .notifier)
+                            .togglePrepared(spell.name),
+                        onRemove: spell.isAlwaysPrepared
+                            ? null
+                            : () => ref
+                                .read(characterDetailProvider(
+                                        widget.characterId)
+                                    .notifier)
+                                .removeSpell(spell.name),
+                      ),
+                    const SizedBox(height: 8),
+                  ]
+                else if (isCaster) ...[
+                  const SizedBox(height: 24),
+                  Center(
+                    child: Text(
+                      'No spells added yet.\nTap + to browse spells.',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.outline,
+                          ),
+                    ),
+                  ),
+                ],
+              ],
             ),
-          ),
-        ],
+      floatingActionButton: isCaster
+          ? FloatingActionButton(
+              onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                    content: Text('Spell browser — coming in Phase B')),
+              ),
+              tooltip: 'Add spell',
+              child: const Icon(Icons.add),
+            )
+          : null,
+    );
+  }
+}
+
+// ── Spellcasting Banner ───────────────────────────────────────────────────────
+
+class _SpellcastingBanner extends StatelessWidget {
+  const _SpellcastingBanner({
+    required this.engine,
+    this.preparedCount,
+    this.maxPrepared,
+    this.knownCount,
+    this.maxKnown,
+  });
+
+  final SpellcastingEngine engine;
+  final int? preparedCount;
+  final int? maxPrepared;
+  final int? knownCount;
+  final int? maxKnown;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final ability = engine.spellcastingAbility.toUpperCase();
+    final modStr = engine.abilityModifier >= 0
+        ? '+${engine.abilityModifier}'
+        : '${engine.abilityModifier}';
+
+    return Card(
+      color: scheme.primaryContainer.withAlpha(80),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Spellcasting · $ability ($modStr)',
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: scheme.primary,
+                  ),
+            ),
+            const SizedBox(height: 8),
+            Wrap(
+              spacing: 24,
+              runSpacing: 8,
+              children: [
+                _BannerStat('Attack', engine.spellAttackFormatted),
+                _BannerStat('Save DC', '${engine.saveDC}'),
+                if (preparedCount != null && maxPrepared != null)
+                  _BannerStat(
+                    'Prepared',
+                    '$preparedCount / $maxPrepared',
+                    warning: preparedCount! > maxPrepared!,
+                  )
+                else if (knownCount != null)
+                  _BannerStat(
+                    'Known',
+                    maxKnown != null
+                        ? '$knownCount / $maxKnown'
+                        : '$knownCount',
+                    warning: maxKnown != null && knownCount! > maxKnown!,
+                  ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _BannerStat extends StatelessWidget {
+  const _BannerStat(this.label, this.value, {this.warning = false});
+  final String label;
+  final String value;
+  final bool warning;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: Theme.of(context)
+              .textTheme
+              .labelSmall
+              ?.copyWith(color: scheme.onSurfaceVariant),
+        ),
+        Text(
+          value,
+          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: warning ? scheme.error : null,
+              ),
+        ),
       ],
     );
   }
+}
+
+// ── Spell Level Header ────────────────────────────────────────────────────────
+
+class _SpellLevelHeader extends StatelessWidget {
+  const _SpellLevelHeader({required this.level});
+  final int level;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 4, bottom: 2),
+      child: Text(
+        level == 0 ? 'Cantrips' : 'Level $level',
+        style: Theme.of(context)
+            .textTheme
+            .titleSmall
+            ?.copyWith(fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+}
+
+// ── Spell Row ─────────────────────────────────────────────────────────────────
+
+class _SpellRow extends StatelessWidget {
+  const _SpellRow({
+    required this.spell,
+    required this.srdSpell,
+    required this.showPrepareToggle,
+    required this.onTogglePrepared,
+    this.onRemove,
+  });
+
+  final KnownSpell spell;
+  final SrdSpell? srdSpell;
+  final bool showPrepareToggle;
+  final VoidCallback onTogglePrepared;
+  final VoidCallback? onRemove;
+
+  static Color _schoolColor(String school) {
+    switch (school.toLowerCase()) {
+      case 'evocation':     return Colors.deepOrange;
+      case 'abjuration':    return Colors.blue;
+      case 'conjuration':   return Colors.amber;
+      case 'divination':    return Colors.cyan;
+      case 'enchantment':   return Colors.purple;
+      case 'illusion':      return Colors.indigo;
+      case 'necromancy':    return Colors.green;
+      case 'transmutation': return Colors.teal;
+      default:              return Colors.grey;
+    }
+  }
+
+  static String _schoolAbbr(String school) {
+    switch (school.toLowerCase()) {
+      case 'evocation':     return 'Evoc';
+      case 'abjuration':    return 'Abj';
+      case 'conjuration':   return 'Conj';
+      case 'divination':    return 'Div';
+      case 'enchantment':   return 'Ench';
+      case 'illusion':      return 'Illu';
+      case 'necromancy':    return 'Necro';
+      case 'transmutation': return 'Trans';
+      default:              return school;
+    }
+  }
+
+  static IconData _castingTimeIcon(String type) {
+    switch (type) {
+      case 'bonus_action': return Icons.flash_on;
+      case 'reaction':     return Icons.rotate_left;
+      case 'minute':
+      case 'hour':
+      case 'special':      return Icons.timer_outlined;
+      default:             return Icons.bolt;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final srd = srdSpell;
+    final isPrepared = spell.isPrepared || spell.isAlwaysPrepared;
+    final dimmed = showPrepareToggle && !isPrepared;
+
+    Widget card = Card(
+      margin: const EdgeInsets.only(bottom: 4),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: () {}, // Phase B: open detail sheet
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Row(
+            children: [
+              // Prepare toggle or always-prepared icon
+              if (showPrepareToggle) ...[
+                GestureDetector(
+                  onTap: onTogglePrepared,
+                  child: Icon(
+                    spell.isPrepared
+                        ? Icons.check_box
+                        : Icons.check_box_outline_blank,
+                    size: 20,
+                    color: spell.isPrepared
+                        ? scheme.primary
+                        : scheme.outlineVariant,
+                  ),
+                ),
+                const SizedBox(width: 8),
+              ] else if (spell.isAlwaysPrepared) ...[
+                Icon(Icons.auto_fix_high, size: 18, color: scheme.tertiary),
+                const SizedBox(width: 8),
+              ],
+
+              // Name
+              Expanded(
+                child: Text(
+                  spell.name,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w500,
+                        color: dimmed ? scheme.onSurfaceVariant : null,
+                      ),
+                ),
+              ),
+
+              // School badge
+              if (srd != null) ...[
+                const SizedBox(width: 4),
+                _SchoolBadge(
+                  label: _schoolAbbr(srd.school),
+                  color: _schoolColor(srd.school),
+                ),
+              ],
+
+              // Casting time icon
+              if (srd != null) ...[
+                const SizedBox(width: 6),
+                Icon(
+                  _castingTimeIcon(srd.castingTimeType),
+                  size: 14,
+                  color: scheme.onSurfaceVariant,
+                ),
+              ],
+
+              // Concentration badge
+              if (srd?.concentration == true) ...[
+                const SizedBox(width: 4),
+                _SmallBadge('C', scheme.secondary),
+              ],
+
+              // Ritual badge
+              if (srd?.ritual == true) ...[
+                const SizedBox(width: 4),
+                _SmallBadge('R', scheme.tertiary),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+
+    if (onRemove != null) {
+      card = Dismissible(
+        key: Key('spell_row_${spell.name}'),
+        direction: DismissDirection.endToStart,
+        background: Container(
+          alignment: Alignment.centerRight,
+          padding: const EdgeInsets.only(right: 16),
+          margin: const EdgeInsets.only(bottom: 4),
+          decoration: BoxDecoration(
+            color: scheme.errorContainer,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(Icons.delete_outline, color: scheme.onErrorContainer),
+        ),
+        onDismissed: (_) => onRemove!(),
+        child: card,
+      );
+    }
+
+    return card;
+  }
+}
+
+class _SchoolBadge extends StatelessWidget {
+  const _SchoolBadge({required this.label, required this.color});
+  final String label;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+        decoration: BoxDecoration(
+          color: color.withAlpha(30),
+          border: Border.all(color: color.withAlpha(100)),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          label,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: color,
+                fontWeight: FontWeight.bold,
+              ),
+        ),
+      );
+}
+
+class _SmallBadge extends StatelessWidget {
+  const _SmallBadge(this.label, this.color);
+  final String label;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => Container(
+        width: 16,
+        height: 16,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color.withAlpha(40),
+          border: Border.all(color: color.withAlpha(150)),
+        ),
+        child: Center(
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 9,
+              fontWeight: FontWeight.bold,
+              color: color,
+            ),
+          ),
+        ),
+      );
 }
 
 class _SpellSlotRow extends StatelessWidget {

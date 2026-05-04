@@ -1,1 +1,2 @@
-1. base45 pode fazer os qrcodes ficarem mais eficientes em 22% de espaço.
+1. base45 pode fazer os qrcodes ficarem mais eficientes em 22% de espaço — mas não há pacote confiável no pub.dev e o gzip + base64url já cobre a grande maioria dos personagens dentro do limite do QR v40.
+2. Modo aleatório descartado para v1: o wizard guiado é rápido o suficiente. A questão em aberto é definir o quão aleatório o personagem deve ser para ainda ser jogável (atributos ruins, combinações desequilibradas, etc.).

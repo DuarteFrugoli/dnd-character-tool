@@ -315,43 +315,43 @@ Objetivo: corrigir bugs acumulados das sprints anteriores, melhorar a UX do expo
 
 ---
 
-# Sprint 6 — Modos de criação restantes (planejada)
+# Sprint 6 — Imagem, Magias, i18n & Temas (planejada)
 
-Objetivo: implementar os modos aleatório, semi-aleatório e manual reaproveitando `CharacterDraftNotifier` e `buildAndSave`.
+Objetivo: completar os itens restantes do v1 — imagem do personagem, browser de magias na ficha, internacionalização PT-BR/EN e seletor de tema.
+
+> **Modos aleatório, semi-aleatório e manual descartados.** O wizard guiado é rápido o suficiente e a edição pós-criação cobre o caso de uso do modo manual. O modo aleatório pode ser revisitado no futuro — a questão em aberto é definir o quão aleatório o personagem deve ser para continuar jogável.
 
 ---
 
-## Pré-requisito: corrigir bug de raça sem atributo
+## Imagem do personagem
 
-- [ ] Algumas raças têm ASI configurado sem atributo associado, causando cálculo incorreto de atributos finais — corrigir antes de implementar modo aleatório (que roda sem revisão humana).
+- [ ] Botão para escolher imagem da galeria (`image_picker`)
+- [ ] Salvar cópia local do arquivo no diretório do app (`path_provider`)
+- [ ] Exibir imagem no card da lista e no topo da ficha
+- [ ] Botão para remover imagem
 
-## Modo aleatório
+## Browser de magias (aba Spells)
 
-Decisões criativas tomadas:
+- [ ] Botão "+" na aba Spells abre `_SpellBrowserSheet` (`DraggableScrollableSheet`)
+- [ ] Filtros: classe do personagem (padrão), nível de magia, escola de magia
+- [ ] Campo de busca por nome e descrição
+- [ ] Tap no tile exibe detalhes completos da magia
+- [ ] Botão "+" adiciona à lista `character.spells`; ícone ✓ indica já adicionada
+- [ ] Remover magia da lista (swipe ou botão na ficha)
 
-- **Nível:** fixo em 1 — é decisão de campanha, não de personagem
-- **Raça:** sorteada aleatoriamente (incluindo subrace se houver)
-- **Classe:** sorteada aleatoriamente (sem subclasse, pois subclasses só aparecem a partir do nível 3)
-- **Background:** sorteado aleatoriamente
-- **Atributos:** 4d6 drop lowest (4 dados, descarta o menor), distribuído automaticamente — maior valor vai ao atributo primário da classe
-- **Idiomas:** fixos de raça + background + os "de escolha" também sorteados da lista padrão de 16 idiomas D&D
-- **Equipamento:** apenas o fixo do background — não sortear itens extras
-- **Subclasses spellcaster** (ex: Eldritch Knight, Arcane Trickster): irrelevante em nível 1; a tratar quando houver levelup
-- **UX:** uma tela com botão "Gerar personagem" → resultado aparece na própria tela para revisão antes de salvar
+## Internacionalização (i18n)
 
-## Sobre magias na criação
+- [ ] Configurar `flutter_localizations` + `intl`
+- [ ] Arquivos `arb`: `app_pt.arb` e `app_en.arb`
+- [ ] Traduzir todas as strings da UI (labels, botões, mensagens de erro, diálogos)
+- [ ] Seletor de idioma nas configurações (Português / English)
+- [ ] Persistência da escolha via `shared_preferences`
+- [ ] Padrão: idioma do sistema
 
-Decisão: **magias não fazem parte de nenhum modo de criação**. Justificativa:
-- Um mago de nível 1 já tem ~80 opções de 1º círculo — impossível listar num wizard sem ficar horrível
-- O jogador muda spell loadout entre sessões — precisa ser acessível depois, não travado na criação
-- O correto é registrar na criação que a classe é spellcaster (já feito via `spellSlots`) e o jogador adiciona magias depois na aba Spells da ficha
-- Referência de UX: D&D Spell / D&D Beyond — browser dedicado com filtros
+## Temas visuais
 
-## Modo semi-aleatório (a definir)
-
-A definir em sessão futura. Ideia inicial: usuário escolhe raça e classe, o resto é sorteado.
-
-## Modo manual (a definir)
-
-A definir em sessão futura. Campos livres, sem cálculos automáticos, para jogadores experientes.
+- [ ] Tela de configurações acessível pela lista de personagens
+- [ ] Opções: **Sistema** (padrão), **Claro**, **Escuro**, **Alto Contraste**
+- [ ] Persistência da escolha via `shared_preferences`
+- [ ] `ThemeMode` controlado por provider global
 

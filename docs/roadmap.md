@@ -6,15 +6,11 @@
 - [x] Persistência local em JSON via `path_provider` (nativo) e `shared_preferences` (web)
 - [x] Assets SRD bundados (raças, classes, subclasses, antecedentes, habilidades, magias, equipamentos, class features, itens mágicos)
 - [x] Modo de criação guiado (passo a passo, 7 etapas)
-- [ ] Modo aleatório (tudo sorteado)
-- [ ] Modo semi-aleatório (usuário escolhe alguns, resto é sorteado)
-- [ ] Modo manual (campos livres, para experientes)
 - [x] Ficha do personagem — visualização (Stats, Skills, Spells, Inventory, Notes)
 - [x] Rastreador de HP e spell slots em sessão
 - [x] Inventário com moedas (CP/SP/EP/GP/PP), equipar/desequipar, adicionar/remover itens
 - [x] Cálculo automático de AC ao equipar armadura
 - [x] Equipamento inicial do background aplicado na criação
-- [ ] Edição completa da ficha (atributos, raça, classe, etc.)
 - [x] Lista de personagens
 - [x] Export / import via JSON e token (gzip + base64url)
 - [x] Export / import via QR Code (geração + scanner com câmera)
@@ -51,8 +47,8 @@ A mesma base de modelos e modos de criação reutilizada para geração de NPCs.
 - [ ] Imagens de exemplo bundadas para NPCs e equipamentos base
 - [ ] Tema visual customizado (cores, tipografia inspirada em D&D)
 - [ ] Rolar dados diretamente na ficha (animação de dado)
-- [ ] Rastreador de HP em sessão (aplicar dano/cura rapidamente)
-- [ ] Rastreador de spell slots em sessão
+- [ ] **Modo aleatório de criação** — revisitar quando definida a questão de granularidade (o quão aleatório = ainda jogável?)
+- [ ] Edição completa da ficha (raça, subraça e classe)
 
 ---
 

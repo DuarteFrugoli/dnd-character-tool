@@ -2426,6 +2426,24 @@ Copyright 2024 The Flutter Authors
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file 
 --------------------------------------------------------------------------------
+dnd_character_tool
+
+Copyright (c) 2026 Pedro Frugoli. All rights reserved.
+
+This software and its source code are proprietary and confidential.
+Unauthorized copying, distribution, modification, or use of this software,
+in whole or in part, via any medium, is strictly prohibited without the
+express written permission of the copyright holder.
+
+---
+
+THIRD-PARTY CONTENT NOTICE
+
+Game content and rules from the Dungeons & Dragons System Reference Document (SRD)
+are used under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+© Wizards of the Coast LLC. See https://creativecommons.org/licenses/by/4.0/
+
+--------------------------------------------------------------------------------
 double-conversion
 
 Copyright 2006-2011, the V8 project authors. All rights reserved.

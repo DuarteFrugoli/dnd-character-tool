@@ -56,6 +56,7 @@ Future<void> showCharacterPhotoPicker(
     return;
   }
   if (picked == null) return;
+  if (!context.mounted) return;
 
   final CroppedFile? cropped;
   try {

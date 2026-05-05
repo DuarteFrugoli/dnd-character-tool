@@ -38,6 +38,7 @@ class Character {
   final Map<String, int> currency;
   final List<KnownSpell> spells;
   final SpellSlots spellSlots;
+  final List<InnateSpell> innateSpells;
   final List<String> features;
   final List<CharacterExtraFeature> extraFeatures;
   final List<String> disabledFeatures;
@@ -76,6 +77,7 @@ class Character {
     this.currency = const {'cp': 0, 'sp': 0, 'ep': 0, 'gp': 0, 'pp': 0},
     this.spells = const [],
     this.spellSlots = const SpellSlots(),
+    this.innateSpells = const [],
     this.features = const [],
     this.extraFeatures = const [],
     this.disabledFeatures = const [],
@@ -128,6 +130,7 @@ class Character {
     Map<String, int>? currency,
     List<KnownSpell>? spells,
     SpellSlots? spellSlots,
+    List<InnateSpell>? innateSpells,
     List<String>? features,
     List<CharacterExtraFeature>? extraFeatures,
     List<String>? disabledFeatures,
@@ -167,6 +170,7 @@ class Character {
       currency: currency ?? this.currency,
       spells: spells ?? this.spells,
       spellSlots: spellSlots ?? this.spellSlots,
+      innateSpells: innateSpells ?? this.innateSpells,
       features: features ?? this.features,
       extraFeatures: extraFeatures ?? this.extraFeatures,
       disabledFeatures: disabledFeatures ?? this.disabledFeatures,

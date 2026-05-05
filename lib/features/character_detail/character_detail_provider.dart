@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
+import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
@@ -114,7 +115,45 @@ class CharacterDetailNotifier
     await _save(c.copyWith(
       hitPoints: c.hitPoints.copyWith(current: c.hitPoints.maximum, temporary: 0),
       spellSlots: c.spellSlots.copyWith(used: List.filled(9, 0)),
+      innateSpells: c.innateSpells.map((s) => s.copyWith(usedToday: 0)).toList(),
     ));
+  }
+
+  /// Auto-populates [innateSpells] from the SRD race data if the character has
+  /// racial innate spells but none are stored yet.
+  Future<void> syncInnateSpells() async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    if (c.innateSpells.isNotEmpty) return;
+    final races = await SrdDataSource.instance.getRaces();
+    // Check main race
+    final srdRace = races.where((r) => r.name == c.race).firstOrNull;
+    final raceDefs = srdRace?.innateSpells ?? [];
+    // Check subrace
+    final srdSubrace = srdRace?.subraces
+        .where((s) => s.name == c.subrace)
+        .firstOrNull;
+    final subraceDefs = srdSubrace?.innateSpells ?? [];
+    final allDefs = [...raceDefs, ...subraceDefs];
+    if (allDefs.isEmpty) return;
+    await _save(c.copyWith(
+      innateSpells: allDefs
+          .map((d) => InnateSpell(name: d.name, usesPerDay: d.usesPerDay))
+          .toList(),
+    ));
+  }
+
+  /// Uses one charge of an innate spell (no-op if at-will or already exhausted).
+  Future<void> useInnateSpell(String name) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final updated = c.innateSpells.map((s) {
+      if (s.name == name && s.canUse && !s.isAtWill) {
+        return s.copyWith(usedToday: s.usedToday + 1);
+      }
+      return s;
+    }).toList();
+    await _save(c.copyWith(innateSpells: updated));
   }
 
   Future<void> updateName(String name) async {
@@ -140,6 +179,7 @@ class CharacterDetailNotifier
       classLevel: c.level,
       abilityScores: c.abilityScores,
       proficiencyBonus: c.proficiencyBonus,
+      subclass: c.subclass,
     );
     if (engine == null) return c;
     final newTotal = engine.slotsPerLevel;

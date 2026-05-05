@@ -2865,12 +2865,14 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
     _loadSpells();
     // Sync spell slots on first load for characters that predate auto-sync
     // (characters created before updateLevel() started calling _applySlotSync).
+    // Also auto-populate racial innate spells on first load.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       final c = ref.read(characterDetailProvider(widget.characterId)).valueOrNull;
       if (c != null && c.spellSlots.total.every((t) => t == 0)) {
         ref.read(characterDetailProvider(widget.characterId).notifier).syncSpellSlots();
       }
+      ref.read(characterDetailProvider(widget.characterId).notifier).syncInnateSpells();
     });
   }
 
@@ -2904,12 +2906,14 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
       classLevel: character.level,
       abilityScores: character.abilityScores,
       proficiencyBonus: character.proficiencyBonus,
+      subclass: character.subclass,
     );
     final isCaster = engine != null;
     final hasSpells = character.spells.isNotEmpty;
     final hasSlots = character.spellSlots.total.any((t) => t > 0);
+    final hasInnate = character.innateSpells.isNotEmpty;
 
-    if (!isCaster && !hasSlots && !hasSpells) {
+    if (!isCaster && !hasSlots && !hasSpells && !hasInnate) {
       return Center(
         child: Padding(
           padding: const EdgeInsets.all(32),
@@ -3057,6 +3061,37 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                                 .notifier)
                             .restoreSpellSlot(lvl),
                       ),
+                  const SizedBox(height: 16),
+                ],
+
+                // ── Racial / Innate Spells ──────────────────────────────────
+                if (character.innateSpells.isNotEmpty) ...[
+                  Text(
+                    'Magias Raciais',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 4),
+                  for (final innate in character.innateSpells)
+                    _InnateSpellRow(
+                      spell: innate,
+                      onUse: innate.canUse && !innate.isAtWill
+                          ? () => ref
+                              .read(characterDetailProvider(widget.characterId)
+                                  .notifier)
+                              .useInnateSpell(innate.name)
+                          : null,
+                      onTap: () {
+                        final srd = _spellIndex?[innate.name.toLowerCase()];
+                        if (srd == null) return;
+                        showModalBottomSheet<void>(
+                          context: context,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          builder: (_) =>
+                              SpellDetailSheet(spell: srd, isKnown: true),
+                        );
+                      },
+                    ),
                   const SizedBox(height: 16),
                 ],
 
@@ -3647,6 +3682,84 @@ class _SmallBadge extends StatelessWidget {
         ),
       );
 }
+
+// ── Innate Spell Row ──────────────────────────────────────────────────────────
+
+class _InnateSpellRow extends StatelessWidget {
+  const _InnateSpellRow({
+    required this.spell,
+    required this.onUse,
+    this.onTap,
+  });
+
+  final InnateSpell spell;
+  final VoidCallback? onUse;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 6),
+        child: Row(
+          children: [
+            const Icon(Icons.auto_fix_high_outlined, size: 20),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                spell.name,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
+            if (spell.isAtWill)
+              Chip(
+                label: const Text('à vontade'),
+                side: BorderSide.none,
+                backgroundColor: scheme.secondaryContainer,
+                labelStyle: TextStyle(
+                  color: scheme.onSecondaryContainer,
+                  fontSize: 11,
+                ),
+                padding: EdgeInsets.zero,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              )
+            else ...[
+              Text(
+                '${spell.remaining}/${spell.usesPerDay}/dia',
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
+              const SizedBox(width: 6),
+              ...List.generate(spell.usesPerDay!, (i) {
+                final isUsed = i >= spell.remaining;
+                return GestureDetector(
+                  onTap: isUsed ? null : onUse,
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    margin: const EdgeInsets.symmetric(horizontal: 2),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: isUsed ? null : scheme.primaryContainer,
+                      border: Border.all(
+                        color: isUsed ? scheme.outlineVariant : scheme.primary,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                );
+              }),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── Spell Slot Row ────────────────────────────────────────────────────────────
 
 class _SpellSlotRow extends StatelessWidget {
   const _SpellSlotRow({

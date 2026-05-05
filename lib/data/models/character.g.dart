@@ -58,6 +58,11 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   spellSlots: json['spellSlots'] == null
       ? const SpellSlots()
       : SpellSlots.fromJson(json['spellSlots'] as Map<String, dynamic>),
+  innateSpells:
+      (json['innateSpells'] as List<dynamic>?)
+          ?.map((e) => InnateSpell.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
   features:
       (json['features'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
@@ -122,6 +127,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'currency': instance.currency,
   'spells': instance.spells.map((e) => e.toJson()).toList(),
   'spellSlots': instance.spellSlots.toJson(),
+  'innateSpells': instance.innateSpells.map((e) => e.toJson()).toList(),
   'features': instance.features,
   'extraFeatures': instance.extraFeatures.map((e) => e.toJson()).toList(),
   'disabledFeatures': instance.disabledFeatures,

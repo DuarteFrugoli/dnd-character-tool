@@ -383,17 +383,17 @@ Objetivo: implementar o comportamento correto para classes que conhecem todas as
 
 ## Subclasses conjuradoras (Eldritch Knight, Arcane Trickster)
 
-- [ ] `SpellProgressionType.third` no enum do `SpellcastingEngine`
-- [ ] Tabela `_thirdCasterSlots` (1/3 caster, a partir do nível 3)
-- [ ] `SpellcastingEngine.forClass()` aceita `subclass` opcional; retorna engine para Fighter/Rogue com Eldritch Knight / Arcane Trickster
-- [ ] Browser filtra por escola (Abjuration/Evocation para EK; Enchantment/Illusion para AT) exceto as 3 escolhas livres
+- [x] `SpellProgressionType.third` no enum do `SpellcastingEngine`
+- [x] Tabela `_thirdSlotTable` (1/3 caster, 20 níveis, começa no nível 3)
+- [x] `_thirdCasterKnown` e `_thirdCasterCantrips` — tabelas de magias conhecidas e cantrips
+- [x] `SpellcastingEngine.forClass()` aceita `subclass` opcional; retorna engine para Fighter/Rogue com Eldritch Knight / Arcane Trickster
 
-## Magias inatas raciais *(fase posterior — não implementar nesta sprint)*
+## Magias inatas raciais
 
-- [ ] `innateSpells: List<InnateSpell>` no modelo `Character`
-- [ ] `InnateSpell`: `name`, `usesPerDay` (null = à vontade), `usedToday`
-- [ ] Preencher `raceSpells` no `spells.json`
-- [ ] Seção "Racial Spells" na aba Spells com tracker de usos
+- [x] `innateSpells: List<InnateSpell>` no modelo `Character`
+- [x] `InnateSpell`: `name`, `usesPerDay` (null = à vontade), `usedToday`
+- [x] Preencher `raceSpells` no `spells.json`
+- [x] Seção "Racial Spells" na aba Spells com tracker de usos
 
 ---
 

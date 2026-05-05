@@ -46,13 +46,31 @@ class SpellcastingEngine {
 
   /// Returns a [SpellcastingEngine] for [className], or null if the class is
   /// not a spellcaster in the SRD (e.g. Fighter base, Rogue base).
+  /// Pass [subclass] to enable spellcasting for Eldritch Knight and Arcane Trickster.
   static SpellcastingEngine? forClass({
     required String className,
     required int classLevel,
     required AbilityScores abilityScores,
     required int proficiencyBonus,
+    String? subclass,
   }) {
-    final info = _classInfo[className.toLowerCase()];
+    final key = className.toLowerCase();
+    // Check for 1/3-caster subclasses of Fighter and Rogue
+    if ((key == 'fighter' || key == 'rogue') && subclass != null) {
+      final sub = subclass.toLowerCase();
+      if (sub == 'eldritch knight' || sub == 'arcane trickster') {
+        return SpellcastingEngine._(
+          className: className,
+          classLevel: classLevel,
+          abilityScores: abilityScores,
+          proficiencyBonus: proficiencyBonus,
+          spellcastingAbility: 'INT',
+          mechanism: SpellcastingMechanism.known,
+          progressionType: SpellProgressionType.third,
+        );
+      }
+    }
+    final info = _classInfo[key];
     if (info == null) return null;
     return SpellcastingEngine._(
       className: className,
@@ -121,8 +139,12 @@ class SpellcastingEngine {
   int? get maxKnown {
     switch (mechanism) {
       case SpellcastingMechanism.known:
-        return _knownSpellsTable[className.toLowerCase()]
-            ?[classLevel.clamp(1, 20) - 1];
+        final idx = classLevel.clamp(1, 20) - 1;
+        // 1/3 casters (EK, AT) use their own table
+        if (progressionType == SpellProgressionType.third) {
+          return _thirdCasterKnown[idx];
+        }
+        return _knownSpellsTable[className.toLowerCase()]?[idx];
       case SpellcastingMechanism.pact:
         return _warlockKnown[classLevel.clamp(1, 20) - 1];
       default:
@@ -135,7 +157,7 @@ class SpellcastingEngine {
   int get maxCantrips =>
       _cantripsTable[className.toLowerCase()]
           ?[classLevel.clamp(1, 20) - 1] ??
-      0;
+      _thirdCasterCantrips[classLevel.clamp(1, 20) - 1];
 
   /// Highest spell slot level available, or 0 for non-casters.
   int get maxSpellLevel {
@@ -147,6 +169,8 @@ class SpellcastingEngine {
         return _halfCasterMaxSlot[idx];
       case SpellProgressionType.pact:
         return _pactMagicSlotLevel[idx];
+      case SpellProgressionType.third:
+        return _thirdCasterMaxSlot[idx];
     }
   }
 
@@ -169,6 +193,45 @@ class SpellcastingEngine {
 
   static const List<int> _halfCasterMaxSlot = [
     0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5,
+  ];
+
+  /// 1/3 caster max spell slot level (Eldritch Knight, Arcane Trickster).
+  static const List<int> _thirdCasterMaxSlot = [
+    0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
+  ];
+
+  /// 1/3 caster slot table (levels 1-20 of the base class, 9 spell levels).
+  static const List<List<int>> _thirdSlotTable = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0], // level 1
+    [0, 0, 0, 0, 0, 0, 0, 0, 0], // level 2
+    [2, 0, 0, 0, 0, 0, 0, 0, 0], // level 3
+    [3, 0, 0, 0, 0, 0, 0, 0, 0], // level 4
+    [3, 0, 0, 0, 0, 0, 0, 0, 0], // level 5
+    [3, 0, 0, 0, 0, 0, 0, 0, 0], // level 6
+    [4, 2, 0, 0, 0, 0, 0, 0, 0], // level 7
+    [4, 2, 0, 0, 0, 0, 0, 0, 0], // level 8
+    [4, 2, 0, 0, 0, 0, 0, 0, 0], // level 9
+    [4, 3, 0, 0, 0, 0, 0, 0, 0], // level 10
+    [4, 3, 0, 0, 0, 0, 0, 0, 0], // level 11
+    [4, 3, 0, 0, 0, 0, 0, 0, 0], // level 12
+    [4, 3, 2, 0, 0, 0, 0, 0, 0], // level 13
+    [4, 3, 2, 0, 0, 0, 0, 0, 0], // level 14
+    [4, 3, 2, 0, 0, 0, 0, 0, 0], // level 15
+    [4, 3, 3, 0, 0, 0, 0, 0, 0], // level 16
+    [4, 3, 3, 0, 0, 0, 0, 0, 0], // level 17
+    [4, 3, 3, 0, 0, 0, 0, 0, 0], // level 18
+    [4, 3, 3, 1, 0, 0, 0, 0, 0], // level 19
+    [4, 3, 3, 1, 0, 0, 0, 0, 0], // level 20
+  ];
+
+  /// Known spells for Eldritch Knight / Arcane Trickster (index = class level - 1).
+  static const List<int> _thirdCasterKnown = [
+    0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12, 13,
+  ];
+
+  /// Cantrips for Eldritch Knight / Arcane Trickster.
+  static const List<int> _thirdCasterCantrips = [
+    0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
   ];
 
   /// Warlock Pact Magic slot level (all slots are this level).
@@ -244,6 +307,8 @@ class SpellcastingEngine {
         final slotLvl = _pactMagicSlotLevel[idx];
         slots[slotLvl - 1] = _pactMagicSlotCount[idx];
         return slots;
+      case SpellProgressionType.third:
+        return List.from(_thirdSlotTable[idx]);
     }
   }
 }
@@ -279,6 +344,9 @@ enum SpellProgressionType {
 
   /// Warlock Pact Magic.
   pact,
+
+  /// 1/3 casters: Eldritch Knight (Fighter), Arcane Trickster (Rogue).
+  third,
 }
 
 // ── Class info table ──────────────────────────────────────────────────────────

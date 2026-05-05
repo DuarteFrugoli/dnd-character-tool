@@ -61,3 +61,40 @@ class KnownSpell {
 
   Map<String, dynamic> toJson() => _$KnownSpellToJson(this);
 }
+
+/// A racial innate spell (e.g. Tiefling Hellish Rebuke, Drow Dancing Lights).
+/// [usesPerDay] == null means the spell is at-will.
+class InnateSpell {
+  final String name;
+  final int? usesPerDay;
+  final int usedToday;
+
+  const InnateSpell({
+    required this.name,
+    this.usesPerDay,
+    this.usedToday = 0,
+  });
+
+  bool get isAtWill => usesPerDay == null;
+  bool get canUse => isAtWill || usedToday < usesPerDay!;
+  int get remaining =>
+      usesPerDay == null ? -1 : (usesPerDay! - usedToday).clamp(0, usesPerDay!);
+
+  InnateSpell copyWith({int? usedToday}) => InnateSpell(
+        name: name,
+        usesPerDay: usesPerDay,
+        usedToday: usedToday ?? this.usedToday,
+      );
+
+  factory InnateSpell.fromJson(Map<String, dynamic> json) => InnateSpell(
+        name: json['name'] as String,
+        usesPerDay: (json['usesPerDay'] as num?)?.toInt(),
+        usedToday: (json['usedToday'] as num?)?.toInt() ?? 0,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        if (usesPerDay != null) 'usesPerDay': usesPerDay,
+        'usedToday': usedToday,
+      };
+}

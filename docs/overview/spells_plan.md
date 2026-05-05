@@ -206,5 +206,5 @@ Magias inatas (Tiefling, Drow, Gnome, etc.) têm mecanismo completamente diferen
 - [x] FAB com prepare-all awareness (browser mostra checkbox p/ magias da classe, add p/ extras)
 - [x] Preencher `subclassSpells` no JSON (85 magias) + injeção de always-prepared no provider
 - [x] Tabelas de progressão de slots (full / half / pact) + auto-sync ao mudar nível / abrir aba Spells
-- [ ] **Eldritch Knight / Arcane Trickster** — `SpellProgressionType.third` no engine
-- [ ] **Magias inatas raciais** — `innateSpells` no modelo + seção na UI
+- [x] **Eldritch Knight / Arcane Trickster** — `SpellProgressionType.third` no engine, tabelas de slots/known/cantrips, `forClass()` com `subclass` opcional
+- [x] **Magias inatas raciais** — `innateSpells` no modelo + seção na UI

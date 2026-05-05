@@ -7,18 +7,80 @@ import '../../core/theme/theme_provider.dart';
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
+  void _openThemePicker(BuildContext context, WidgetRef ref, AppTheme current) {
+    showModalBottomSheet<void>(
+      context: context,
+      useSafeArea: true,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) => DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.6,
+        minChildSize: 0.4,
+        maxChildSize: 0.92,
+        builder: (_, controller) => Column(
+          children: [
+            const SizedBox(height: 12),
+            Container(
+              width: 36,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Theme.of(ctx).colorScheme.outlineVariant,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Choose a Theme',
+                  style: Theme.of(ctx).textTheme.titleMedium,
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                controller: controller,
+                itemCount: appThemes.length,
+                itemBuilder: (_, i) {
+                  final theme = appThemes[i];
+                  return _ThemeTile(
+                    theme: theme,
+                    isSelected: theme.id == current.id,
+                    onTap: () {
+                      ref.read(themeProvider.notifier).setTheme(theme);
+                      Navigator.pop(ctx);
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final current = ref.watch(themeProvider);
     final cs = Theme.of(context).colorScheme;
     final bottomPadding = MediaQuery.of(context).padding.bottom;
 
+    final currentScheme = ColorScheme.fromSeed(
+      seedColor: current.seedColor,
+      brightness: current.brightness,
+    );
+
     return Scaffold(
       appBar: AppBar(title: const Text('Settings')),
       body: ListView(
         padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 16),
         children: [
-          // ── Tema Visual ───────────────────────────────────────────────────
+          // ── Visual Theme ──────────────────────────────────────────────────
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
             child: Text(
@@ -29,15 +91,23 @@ class SettingsScreen extends ConsumerWidget {
                   ?.copyWith(color: cs.primary),
             ),
           ),
-          ...appThemes.map((theme) => _ThemeTile(
-                theme: theme,
-                isSelected: theme.id == current.id,
-                onTap: () => ref.read(themeProvider.notifier).setTheme(theme),
-              )),
+          ListTile(
+            leading: _ColorSwatch(scheme: currentScheme),
+            title: Text(current.name),
+            subtitle: Text(
+              current.brightness == Brightness.dark ? 'Dark' : 'Light',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall
+                  ?.copyWith(color: cs.onSurfaceVariant),
+            ),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => _openThemePicker(context, ref, current),
+          ),
 
           const Divider(height: 32),
 
-          // ── Idioma ────────────────────────────────────────────────────────
+          // ── Language ──────────────────────────────────────────────────────
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Text(

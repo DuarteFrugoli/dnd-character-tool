@@ -401,10 +401,10 @@ Objetivo: implementar o comportamento correto para classes que conhecem todas as
 
 ## Temas visuais
 
-- [ ] Tela de configurações acessível pela lista de personagens
-- [ ] Opções: **Sistema** (padrão), **Claro**, **Escuro**, **Alto Contraste**
-- [ ] Persistência da escolha via `shared_preferences`
-- [ ] `ThemeMode` controlado por provider global
+- [x] Tela de configurações acessível pela lista de personagens
+- [x] Opções: **Sistema** (padrão), **Claro**, **Escuro**, **Alto Contraste**
+- [x] Persistência da escolha via `shared_preferences`
+- [x] `ThemeMode` controlado por provider global
 
 ## imagens
 

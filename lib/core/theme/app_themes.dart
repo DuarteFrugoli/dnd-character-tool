@@ -108,12 +108,4 @@ const List<AppTheme> appThemes = [
     surfaceColor: Color(0xFFF5E6C8), // bege pergaminho
   ),
 
-  // ── Acessibilidade ─────────────────────────────────────────────────────────
-  AppTheme(
-    id: 'high_contrast',
-    name: 'High Contrast',
-    seedColor: Color(0xFFFFFFFF),
-    brightness: Brightness.dark,
-    contrastLevel: 1.0,
-  ),
 ];

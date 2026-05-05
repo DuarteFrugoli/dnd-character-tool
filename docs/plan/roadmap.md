@@ -19,6 +19,7 @@
 - [x] Export / import via JSON e token (gzip + base64url)
 - [x] Export / import via QR Code (geração + scanner com câmera)
 - [x] Notas livres por personagem (aba Notes com CRUD)
+- [x] Temas de cores
 - [ ] Imagem do personagem
 - [ ] Internacionalização (i18n): Português e Inglês
 

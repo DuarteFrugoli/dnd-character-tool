@@ -63,19 +63,19 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
       return; // cross-section drag — ignore
     }
 
-    final repo = ref.read(characterRepositoryProvider);
-    final allUpdated = <Character>[];
-    for (var i = 0; i < pinned.length; i++) {
-      final updated = pinned[i].copyWith(sortOrder: i);
-      allUpdated.add(updated);
-      await repo.save(updated);
-    }
-    for (var i = 0; i < unpinned.length; i++) {
-      final updated = unpinned[i].copyWith(sortOrder: i);
-      allUpdated.add(updated);
-      await repo.save(updated);
-    }
+    final allUpdated = [
+      for (var i = 0; i < pinned.length; i++) pinned[i].copyWith(sortOrder: i),
+      for (var i = 0; i < unpinned.length; i++) unpinned[i].copyWith(sortOrder: i),
+    ];
+
+    // Update UI immediately — no flash
     state = AsyncData(allUpdated);
+
+    // Persist in the background
+    final repo = ref.read(characterRepositoryProvider);
+    for (final c in allUpdated) {
+      await repo.save(c);
+    }
   }
 
   Future<void> delete(String id) async {

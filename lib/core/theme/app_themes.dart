@@ -7,17 +7,20 @@ class AppTheme {
     required this.name,
     required this.seedColor,
     this.brightness = Brightness.dark,
+    this.contrastLevel = 0.0,
   });
 
   final String id;
   final String name;
   final Color seedColor;
   final Brightness brightness;
+  final double contrastLevel;
 
   ThemeData toThemeData() => ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: seedColor,
           brightness: brightness,
+          contrastLevel: contrastLevel,
         ),
         useMaterial3: true,
       );
@@ -59,12 +62,6 @@ const List<AppTheme> appThemes = [
     brightness: Brightness.light,
   ),
   AppTheme(
-    id: 'shadows',
-    name: 'Shadows',
-    seedColor: Color(0xFF1A0A2E), // roxo quase preto
-    brightness: Brightness.dark,
-  ),
-  AppTheme(
     id: 'sea',
     name: 'Sea',
     seedColor: Color(0xFF006994), // azul profundo
@@ -79,15 +76,18 @@ const List<AppTheme> appThemes = [
     brightness: Brightness.dark,
   ),
   AppTheme(
-    id: 'inferno',
-    name: 'Inferno',
-    seedColor: Color(0xFFFF1A00), // vermelho vivo
-    brightness: Brightness.dark,
-  ),
-  AppTheme(
     id: 'celestial',
     name: 'Celestial',
     seedColor: Color(0xFF4169E1), // azul real
     brightness: Brightness.light,
+  ),
+
+  // ── Acessibilidade ─────────────────────────────────────────────────────────
+  AppTheme(
+    id: 'high_contrast',
+    name: 'High Contrast',
+    seedColor: Color(0xFFFFFFFF),
+    brightness: Brightness.dark,
+    contrastLevel: 1.0,
   ),
 ];

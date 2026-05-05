@@ -73,6 +73,7 @@ class SettingsScreen extends ConsumerWidget {
     final currentScheme = ColorScheme.fromSeed(
       seedColor: current.seedColor,
       brightness: current.brightness,
+      contrastLevel: current.contrastLevel,
     );
 
     return Scaffold(
@@ -149,6 +150,7 @@ class _ThemeTile extends StatelessWidget {
     final previewScheme = ColorScheme.fromSeed(
       seedColor: theme.seedColor,
       brightness: theme.brightness,
+      contrastLevel: theme.contrastLevel,
     );
 
     return ListTile(
@@ -178,29 +180,24 @@ class _ColorSwatch extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
-      child: SizedBox(
-        width: 44,
-        height: 44,
-        child: Column(
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(child: ColoredBox(color: scheme.primary)),
-                  Expanded(child: ColoredBox(color: scheme.secondary)),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(child: ColoredBox(color: scheme.tertiary)),
-                  Expanded(child: ColoredBox(color: scheme.surface)),
-                ],
-              ),
-            ),
-          ],
-        ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(width: 22, height: 22, color: scheme.primary),
+              Container(width: 22, height: 22, color: scheme.secondary),
+            ],
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(width: 22, height: 22, color: scheme.tertiary),
+              Container(width: 22, height: 22, color: scheme.surface),
+            ],
+          ),
+        ],
       ),
     );
   }

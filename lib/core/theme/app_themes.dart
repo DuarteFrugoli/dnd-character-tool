@@ -61,13 +61,7 @@ const List<AppTheme> appThemes = [
   AppTheme(
     id: 'sombras',
     name: 'Sombras',
-    seedColor: Color(0xFF8B0000), // vermelho escuro
-    brightness: Brightness.dark,
-  ),
-  AppTheme(
-    id: 'ferreiro',
-    name: 'Ferreiro',
-    seedColor: Color(0xFFBF5700), // laranja ferrugem
+    seedColor: Color(0xFF1A0A2E), // roxo quase preto
     brightness: Brightness.dark,
   ),
   AppTheme(
@@ -79,12 +73,6 @@ const List<AppTheme> appThemes = [
 
   // ── Por ambiente ───────────────────────────────────────────────────────────
   AppTheme(
-    id: 'dungeon',
-    name: 'Dungeon',
-    seedColor: Color(0xFF4A3728), // pedra marrom
-    brightness: Brightness.dark,
-  ),
-  AppTheme(
     id: 'floresta_elfica',
     name: 'Floresta Élfica',
     seedColor: Color(0xFF228B22), // verde esmeralda
@@ -93,7 +81,7 @@ const List<AppTheme> appThemes = [
   AppTheme(
     id: 'inferno',
     name: 'Inferno',
-    seedColor: Color(0xFFCC2200), // vermelho brasa
+    seedColor: Color(0xFFFF1A00), // vermelho vivo
     brightness: Brightness.dark,
   ),
   AppTheme(

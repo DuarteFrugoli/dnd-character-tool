@@ -86,6 +86,57 @@ class CharacterListScreen extends ConsumerWidget {
   }
 }
 
+class _RenameDialog extends StatefulWidget {
+  const _RenameDialog({required this.currentName});
+  final String currentName;
+
+  @override
+  State<_RenameDialog> createState() => _RenameDialogState();
+}
+
+class _RenameDialogState extends State<_RenameDialog> {
+  late final TextEditingController _ctrl;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = TextEditingController(text: widget.currentName);
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Renomear personagem'),
+      content: TextField(
+        controller: _ctrl,
+        autofocus: true,
+        textCapitalization: TextCapitalization.words,
+        decoration: const InputDecoration(
+          labelText: 'Nome',
+          border: OutlineInputBorder(),
+        ),
+        onSubmitted: (v) => Navigator.pop(context, v),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Cancelar'),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.pop(context, _ctrl.text),
+          child: const Text('Salvar'),
+        ),
+      ],
+    );
+  }
+}
+
 class _EmptyState extends StatelessWidget {
   const _EmptyState();
 
@@ -176,34 +227,10 @@ class _CharacterCard extends ConsumerWidget {
             }
             if (value == 'rename') {
               if (!context.mounted) return;
-              final ctrl = TextEditingController(text: character.name);
               final newName = await showDialog<String>(
                 context: context,
-                builder: (ctx) => AlertDialog(
-                  title: const Text('Renomear personagem'),
-                  content: TextField(
-                    controller: ctrl,
-                    autofocus: true,
-                    textCapitalization: TextCapitalization.words,
-                    decoration: const InputDecoration(
-                      labelText: 'Nome',
-                      border: OutlineInputBorder(),
-                    ),
-                    onSubmitted: (v) => Navigator.pop(ctx, v),
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(ctx),
-                      child: const Text('Cancelar'),
-                    ),
-                    FilledButton(
-                      onPressed: () => Navigator.pop(ctx, ctrl.text),
-                      child: const Text('Salvar'),
-                    ),
-                  ],
-                ),
+                builder: (ctx) => _RenameDialog(currentName: character.name),
               );
-              ctrl.dispose();
               if (newName != null && newName.trim().isNotEmpty && context.mounted) {
                 await ref
                     .read(characterListProvider.notifier)

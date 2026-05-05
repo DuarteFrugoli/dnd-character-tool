@@ -11,12 +11,14 @@ class SettingsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final current = ref.watch(themeProvider);
     final cs = Theme.of(context).colorScheme;
+    final bottomPadding = MediaQuery.of(context).padding.bottom;
 
     return Scaffold(
       appBar: AppBar(title: const Text('Configurações')),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 16),
         children: [
+          // ── Tema Visual ───────────────────────────────────────────────────
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
             child: Text(
@@ -32,6 +34,26 @@ class SettingsScreen extends ConsumerWidget {
                 isSelected: theme.id == current.id,
                 onTap: () => ref.read(themeProvider.notifier).setTheme(theme),
               )),
+
+          const Divider(height: 32),
+
+          // ── Idioma ────────────────────────────────────────────────────────
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+            child: Text(
+              'Idioma',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(color: cs.primary),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.language_outlined),
+            title: const Text('Idioma do app'),
+            subtitle: const Text('Em breve — Português e English'),
+            enabled: false,
+          ),
         ],
       ),
     );

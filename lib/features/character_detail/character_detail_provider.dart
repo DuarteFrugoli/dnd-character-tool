@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/utils/spellcasting_engine.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
@@ -127,7 +128,36 @@ class CharacterDetailNotifier
     final c = state.valueOrNull;
     if (c == null) return;
     final clamped = level.clamp(1, 20);
-    await _save(c.copyWith(level: clamped, proficiencyBonus: _profBonus(clamped)));
+    final updated = c.copyWith(level: clamped, proficiencyBonus: _profBonus(clamped));
+    await _save(_applySlotSync(updated));
+  }
+
+  /// Syncs `spellSlots.total` to match the class progression for the given
+  /// character's class and level. Preserves `used` counts (clamped to new totals).
+  Character _applySlotSync(Character c) {
+    final engine = SpellcastingEngine.forClass(
+      className: c.characterClass,
+      classLevel: c.level,
+      abilityScores: c.abilityScores,
+      proficiencyBonus: c.proficiencyBonus,
+    );
+    if (engine == null) return c;
+    final newTotal = engine.slotsPerLevel;
+    final newUsed = List<int>.generate(
+      9,
+      (i) => c.spellSlots.used[i].clamp(0, newTotal[i]),
+    );
+    return c.copyWith(
+      spellSlots: c.spellSlots.copyWith(total: newTotal, used: newUsed),
+    );
+  }
+
+  /// Manually sync spell slots to current class/level. Exposed so the UI
+  /// can call it once for characters created before auto-sync existed.
+  Future<void> syncSpellSlots() async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(_applySlotSync(c));
   }
 
   Future<void> updateSubclass(String subclassName) async {

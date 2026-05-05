@@ -175,6 +175,77 @@ class SpellcastingEngine {
   static const List<int> _pactMagicSlotLevel = [
     1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
   ];
+
+  /// Warlock Pact Magic number of slots per level.
+  static const List<int> _pactMagicSlotCount = [
+    1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
+  ];
+
+  /// Full caster slot counts per spell level, per class level.
+  /// Outer index: class level - 1 (0-19). Inner index: spell level - 1 (0-8).
+  static const List<List<int>> _fullSlotTable = [
+    [2, 0, 0, 0, 0, 0, 0, 0, 0], // level 1
+    [3, 0, 0, 0, 0, 0, 0, 0, 0], // level 2
+    [4, 2, 0, 0, 0, 0, 0, 0, 0], // level 3
+    [4, 3, 0, 0, 0, 0, 0, 0, 0], // level 4
+    [4, 3, 2, 0, 0, 0, 0, 0, 0], // level 5
+    [4, 3, 3, 0, 0, 0, 0, 0, 0], // level 6
+    [4, 3, 3, 1, 0, 0, 0, 0, 0], // level 7
+    [4, 3, 3, 2, 0, 0, 0, 0, 0], // level 8
+    [4, 3, 3, 3, 1, 0, 0, 0, 0], // level 9
+    [4, 3, 3, 3, 2, 0, 0, 0, 0], // level 10
+    [4, 3, 3, 3, 2, 1, 0, 0, 0], // level 11
+    [4, 3, 3, 3, 2, 1, 0, 0, 0], // level 12
+    [4, 3, 3, 3, 2, 1, 1, 0, 0], // level 13
+    [4, 3, 3, 3, 2, 1, 1, 0, 0], // level 14
+    [4, 3, 3, 3, 2, 1, 1, 1, 0], // level 15
+    [4, 3, 3, 3, 2, 1, 1, 1, 0], // level 16
+    [4, 3, 3, 3, 2, 1, 1, 1, 1], // level 17
+    [4, 3, 3, 3, 3, 1, 1, 1, 1], // level 18
+    [4, 3, 3, 3, 3, 2, 1, 1, 1], // level 19
+    [4, 3, 3, 3, 3, 2, 2, 1, 1], // level 20
+  ];
+
+  /// Half caster slot counts per spell level, per class level.
+  static const List<List<int>> _halfSlotTable = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0], // level 1
+    [2, 0, 0, 0, 0, 0, 0, 0, 0], // level 2
+    [3, 0, 0, 0, 0, 0, 0, 0, 0], // level 3
+    [3, 0, 0, 0, 0, 0, 0, 0, 0], // level 4
+    [4, 2, 0, 0, 0, 0, 0, 0, 0], // level 5
+    [4, 2, 0, 0, 0, 0, 0, 0, 0], // level 6
+    [4, 3, 0, 0, 0, 0, 0, 0, 0], // level 7
+    [4, 3, 0, 0, 0, 0, 0, 0, 0], // level 8
+    [4, 3, 2, 0, 0, 0, 0, 0, 0], // level 9
+    [4, 3, 2, 0, 0, 0, 0, 0, 0], // level 10
+    [4, 3, 3, 0, 0, 0, 0, 0, 0], // level 11
+    [4, 3, 3, 0, 0, 0, 0, 0, 0], // level 12
+    [4, 3, 3, 1, 0, 0, 0, 0, 0], // level 13
+    [4, 3, 3, 1, 0, 0, 0, 0, 0], // level 14
+    [4, 3, 3, 2, 0, 0, 0, 0, 0], // level 15
+    [4, 3, 3, 2, 0, 0, 0, 0, 0], // level 16
+    [4, 3, 3, 2, 0, 0, 0, 0, 0], // level 17
+    [4, 3, 3, 3, 1, 0, 0, 0, 0], // level 18
+    [4, 3, 3, 3, 1, 0, 0, 0, 0], // level 19
+    [4, 3, 3, 3, 2, 0, 0, 0, 0], // level 20
+  ];
+
+  /// Returns the spell slot totals [lvl1..lvl9] for the current class/level.
+  List<int> get slotsPerLevel {
+    final idx = classLevel.clamp(1, 20) - 1;
+    switch (progressionType) {
+      case SpellProgressionType.full:
+        return List.from(_fullSlotTable[idx]);
+      case SpellProgressionType.half:
+        return List.from(_halfSlotTable[idx]);
+      case SpellProgressionType.pact:
+        // Warlock: only the pact slot level has slots, rest are 0
+        final slots = List.filled(9, 0);
+        final slotLvl = _pactMagicSlotLevel[idx];
+        slots[slotLvl - 1] = _pactMagicSlotCount[idx];
+        return slots;
+    }
+  }
 }
 
 // ── Enums ─────────────────────────────────────────────────────────────────────

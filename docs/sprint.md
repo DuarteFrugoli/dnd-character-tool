@@ -357,20 +357,29 @@ Objetivo: implementar o comportamento correto para classes que conhecem todas as
 
 ## Prepare-all classes (Cleric, Druid, Paladin, Artificer, Wizard)
 
-- [ ] `disabledSpells: List<String>` no modelo `Character` + `fromJson`/`toJson`
-- [ ] `updateDisabledSpells()` no `CharacterDetailNotifier`
-- [ ] Lista da aba Spells construída dinamicamente a partir do SRD para classes prepare-all
-- [ ] `character.spells` guarda apenas as magias preparadas para essas classes
-- [ ] Long-press numa magia → AlertDialog "Desativar / Reativar" → `disabledSpells`
-- [ ] Magias desativadas aparecem com `Opacity(0.35)` — sem toggle visível, sem modo de edição
-- [ ] FAB `+` para prepare-all abre browser reduzido (só magias extras: subclasse, custom)
-- [ ] Swipe desabilitado para prepare-all (a magia sempre está na lista)
+- [x] `disabledSpells: List<String>` no modelo `Character` + `fromJson`/`toJson`
+- [x] `toggleDisabledSpell()` no `CharacterDetailNotifier`
+- [x] Lista da aba Spells construída dinamicamente a partir do SRD para classes prepare-all
+- [x] `character.spells` guarda apenas as magias preparadas para essas classes
+- [x] Long-press numa magia ativa → AlertDialog "Desativar esta magia?" → entra em `disabledSpells`
+- [x] Long-press numa magia desativada → AlertDialog "Reativar esta magia?" → sai de `disabledSpells`
+- [x] Magias desativadas aparecem com `Opacity(0.35)` — sem toggle visível, sem modo de edição
+- [x] FAB `+` para prepare-all — browser com prepare-all awareness: magias da classe mostram checkbox de preparar; magias fora da classe mantêm botão add
+- [x] Swipe desabilitado para prepare-all (a magia sempre está na lista da classe)
+- [x] Seção "Magias Extras" separada para magias fora da lista da classe (subclasse custom, etc.)
+- [x] Tabelas de progressão de slots (full / half / pact) adicionadas ao `SpellcastingEngine` + getter `slotsPerLevel`
+- [x] `_applySlotSync()` no provider — auto-sincroniza totais de slots ao atualizar nível do personagem
+- [x] Auto-sync de slots ao abrir a aba Spells pela primeira vez (personagens antigos com totais zerados)
 
 ## Subclass always-prepared
 
-- [ ] Preencher `subclassSpells` em `spells.json` para domínios de Cleric, juramentos de Paladin e pactos de Warlock
-- [ ] Provider injeta magias de subclasse com `isAlwaysPrepared = true` ao construir a lista (derivado, não salvo no personagem)
-- [ ] UI: sem toggle, sem swipe, sem long-press — badge visual diferenciado
+- [x] Preencher `subclassSpells` em `spells.json` — 85 magias (7 domínios de Cleric, 3 juramentos de Paladin, 3 patronos de Warlock)
+- [x] Provider injeta magias de subclasse com `isAlwaysPrepared = true` ao construir a lista (derivado, não salvo no personagem)
+- [x] Magias always-prepared: sem toggle, sem swipe, sem long-press de desativar
+
+## Extras implementados nesta sprint
+
+- [x] "Renomear" personagem pelos 3 pontinhos na lista inicial — AlertDialog com TextField pré-preenchido com o nome atual
 
 ## Subclasses conjuradoras (Eldritch Knight, Arcane Trickster)
 

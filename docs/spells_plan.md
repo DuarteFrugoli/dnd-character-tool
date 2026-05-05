@@ -201,9 +201,10 @@ Magias inatas (Tiefling, Drow, Gnome, etc.) têm mecanismo completamente diferen
 - [x] Spell Detail sheet: info completa, add/remove com confirmação
 - [x] Cantrips excluídos de prepared/known, contador no banner
 - [x] Swipe com `confirmDismiss` (AlertDialog antes de remover)
-- [ ] **`disabledSpells` no modelo** + long-press para desativar/ativar (prepare-all)
-- [ ] **Lista dinâmica da classe** para prepare-all (Cleric, Druid, Paladin, Artificer, Wizard)
-- [ ] **FAB reduzido** para prepare-all (só magias extras)
-- [ ] **Preencher `subclassSpells`** no JSON + injeção de always-prepared no provider
+- [x] `disabledSpells` no modelo + long-press para desativar/ativar (prepare-all)
+- [x] Lista dinâmica da classe para prepare-all (Cleric, Druid, Paladin, Artificer, Wizard)
+- [x] FAB com prepare-all awareness (browser mostra checkbox p/ magias da classe, add p/ extras)
+- [x] Preencher `subclassSpells` no JSON (85 magias) + injeção de always-prepared no provider
+- [x] Tabelas de progressão de slots (full / half / pact) + auto-sync ao mudar nível / abrir aba Spells
 - [ ] **Eldritch Knight / Arcane Trickster** — `SpellProgressionType.third` no engine
 - [ ] **Magias inatas raciais** — `innateSpells` no modelo + seção na UI

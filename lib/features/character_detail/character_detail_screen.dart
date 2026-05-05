@@ -2837,6 +2837,13 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
 
 // ── Spells Tab ────────────────────────────────────────────────────────────────
 
+/// Classes that have access to their full class spell list and prepare daily.
+/// Wizard is NOT included: it uses a spellbook (player adds spells manually).
+bool _isPrepareAllClass(String className) {
+  const prepareAll = {'cleric', 'druid', 'paladin', 'artificer'};
+  return prepareAll.contains(className.toLowerCase());
+}
+
 class _SpellsTab extends ConsumerStatefulWidget {
   const _SpellsTab({required this.character, required this.characterId});
   final Character character;
@@ -2849,24 +2856,42 @@ class _SpellsTab extends ConsumerStatefulWidget {
 class _SpellsTabState extends ConsumerState<_SpellsTab> {
   Map<String, SrdSpell>? _spellIndex;
   List<SrdSpell>? _classAllSpells;
+  /// Spells that are always prepared due to the character's subclass feature.
+  List<SrdSpell>? _subclassAlwaysSpells;
 
   @override
   void initState() {
     super.initState();
     _loadSpells();
+    // Sync spell slots on first load for characters that predate auto-sync
+    // (characters created before updateLevel() started calling _applySlotSync).
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final c = ref.read(characterDetailProvider(widget.characterId)).valueOrNull;
+      if (c != null && c.spellSlots.total.every((t) => t == 0)) {
+        ref.read(characterDetailProvider(widget.characterId).notifier).syncSpellSlots();
+      }
+    });
   }
 
   Future<void> _loadSpells() async {
     final all = await SrdDataSource.instance.getSpells();
     if (!mounted) return;
-    final cls = widget.character.characterClass.toLowerCase();
-    final isPrepareAll = KnownSpellCasting.classPrepares(cls);
+    final character = widget.character;
+    final cls = character.characterClass.toLowerCase();
+    final subclass = character.subclass;
+    final isPrepareAll = _isPrepareAllClass(cls);
     setState(() {
       _spellIndex = {for (final s in all) s.name.toLowerCase(): s};
       if (isPrepareAll) {
-        _classAllSpells = all
-            .where((s) => s.classes.contains(cls))
-            .toList();
+        _classAllSpells = all.where((s) => s.classes.contains(cls)).toList();
+        if (subclass != null && subclass.isNotEmpty) {
+          _subclassAlwaysSpells = all
+              .where((s) => s.level > 0 &&
+                  s.subclassSpells.any((ref) =>
+                      ref.className == cls && ref.subclass == subclass))
+              .toList();
+        }
       }
     });
   }
@@ -2915,26 +2940,54 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
       );
     }
 
-    // Detect prepare-all class (Cleric, Druid, Paladin, Artificer, Wizard)
+    // Detect prepare-all class: only Cleric, Druid, Paladin, Artificer
+    // Wizard (spellbook) is NOT prepare-all — player adds spells manually
     final isPrepareAll =
-        isCaster && KnownSpellCasting.classPrepares(character.characterClass);
+        isCaster && _isPrepareAllClass(character.characterClass);
 
     // Build display list: full class list for prepare-all, character.spells for known
     List<KnownSpell> displaySpells;
+    List<KnownSpell> extraSpells = []; // non-class spells added manually to prepare-all
     if (isPrepareAll && _classAllSpells != null) {
+      final classSpellNamesSet = {for (final s in _classAllSpells!) s.name.toLowerCase()};
       final preparedNames = {for (final s in character.spells) s.name};
       final maxLevel = engine.maxSpellLevel;
+      // Names that are always prepared due to subclass
+      final alwaysNames = _subclassAlwaysSpells != null
+          ? {for (final s in _subclassAlwaysSpells!) s.name.toLowerCase()}
+          : <String>{};
       final classSpells = _classAllSpells!
           .where((srd) => srd.level > 0 && srd.level <= maxLevel)
-          .map((srd) => KnownSpell(
-                name: srd.name,
-                level: srd.level,
-                isPrepared: preparedNames.contains(srd.name),
-              ))
+          .map((srd) {
+            final isAlways = alwaysNames.contains(srd.name.toLowerCase());
+            return KnownSpell(
+              name: srd.name,
+              level: srd.level,
+              isPrepared: isAlways || preparedNames.contains(srd.name),
+              isAlwaysPrepared: isAlways,
+            );
+          })
           .toList();
+      // Subclass spells not already in the class list (e.g. Burning Hands for Light Domain)
+      final extraSubclassSpells = _subclassAlwaysSpells
+              ?.where((srd) =>
+                  srd.level <= maxLevel &&
+                  !classSpellNamesSet.contains(srd.name.toLowerCase()))
+              .map((srd) => KnownSpell(
+                    name: srd.name,
+                    level: srd.level,
+                    isPrepared: true,
+                    isAlwaysPrepared: true,
+                  ))
+              .toList() ??
+          [];
       // Cantrips are still managed manually via browser for all classes
       final cantrips = character.spells.where((s) => s.level == 0).toList();
-      displaySpells = [...cantrips, ...classSpells];
+      displaySpells = [...cantrips, ...classSpells, ...extraSubclassSpells];
+      // Extra spells: in character.spells but NOT in the class list and not subclass
+      extraSpells = character.spells
+          .where((s) => s.level > 0 && !classSpellNamesSet.contains(s.name.toLowerCase()))
+          .toList();
     } else {
       displaySpells = character.spells;
     }
@@ -2946,12 +2999,20 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
     }
     final levels = byLevel.keys.toList()..sort();
 
-    final prepares = isPrepareAll;
-    final preparedCount = isPrepareAll
-        ? character.spells.where((s) => s.level > 0).length
-        : character.spells
-            .where((s) => s.level > 0 && (s.isPrepared || s.isAlwaysPrepared))
-            .length;
+    // Group extra spells by level
+    final extraByLevel = <int, List<KnownSpell>>{};
+    for (final s in extraSpells) {
+      (extraByLevel[s.level] ??= []).add(s);
+    }
+
+    // "prepares" = shows Prepared counter in banner (includes Wizard/spellbook)
+    final prepares =
+        isCaster && KnownSpellCasting.classPrepares(character.characterClass);
+    // Unified: count spells with isPrepared=true in character.spells
+    // (class-list spells for prepare-all are stored with isPrepared:true when toggled on)
+    final preparedCount = character.spells
+        .where((s) => s.level > 0 && (s.isPrepared || s.isAlwaysPrepared))
+        .length;
     final nonCantrips = character.spells.where((s) => s.level > 0).toList();
     final cantripCount = character.spells.where((s) => s.level == 0).length;
 
@@ -3104,6 +3165,64 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                     ),
                   ),
                 ],
+
+                // ── Extra spells (non-class spells added to prepare-all) ────
+                if (extraSpells.isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      const Expanded(child: Divider()),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          'Magias Extras',
+                          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                                color: Theme.of(context).colorScheme.outline,
+                              ),
+                        ),
+                      ),
+                      const Expanded(child: Divider()),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  for (final lvl in extraByLevel.keys.toList()..sort()) ...[
+                    _SpellLevelHeader(level: lvl),
+                    const SizedBox(height: 4),
+                    for (final spell in extraByLevel[lvl]!)
+                      _SpellRow(
+                        spell: spell,
+                        srdSpell: _spellIndex![spell.name.toLowerCase()],
+                        showPrepareToggle: prepares && !spell.isAlwaysPrepared,
+                        onTogglePrepared: () => ref
+                            .read(characterDetailProvider(widget.characterId).notifier)
+                            .togglePrepared(spell.name),
+                        onTap: () {
+                          final srd = _spellIndex![spell.name.toLowerCase()];
+                          if (srd == null) return;
+                          showModalBottomSheet<void>(
+                            context: context,
+                            isScrollControlled: true,
+                            useSafeArea: true,
+                            builder: (_) => SpellDetailSheet(
+                              spell: srd,
+                              isKnown: true,
+                              onRemove: spell.isAlwaysPrepared
+                                  ? null
+                                  : () => ref
+                                      .read(characterDetailProvider(widget.characterId).notifier)
+                                      .removeSpell(spell.name),
+                            ),
+                          );
+                        },
+                        onRemove: spell.isAlwaysPrepared
+                            ? null
+                            : () => ref
+                                .read(characterDetailProvider(widget.characterId).notifier)
+                                .removeSpell(spell.name),
+                      ),
+                    const SizedBox(height: 8),
+                  ],
+                ],
               ],
             ),
       floatingActionButton: isCaster
@@ -3116,6 +3235,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                   characterClass: character.characterClass,
                   maxSpellLevel: engine.maxSpellLevel,
                   knownSpells: character.spells,
+                  isPrepareAll: isPrepareAll,
                   onAddSpell: (srdSpell) => ref
                       .read(characterDetailProvider(widget.characterId)
                           .notifier)
@@ -3123,13 +3243,29 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                         KnownSpell(
                           name: srdSpell.name,
                           level: srdSpell.level,
-                          isPrepared: isPrepareAll,
+                          isPrepared: false,
                         ),
                       ),
                   onRemoveSpell: (name) => ref
                       .read(characterDetailProvider(widget.characterId)
                           .notifier)
                       .removeSpell(name),
+                  onTogglePrepared: isPrepareAll
+                      ? (name, prepare) {
+                          final notifier = ref.read(
+                              characterDetailProvider(widget.characterId).notifier);
+                          if (prepare) {
+                            final level = _spellIndex![name.toLowerCase()]?.level ?? 1;
+                            notifier.addSpell(KnownSpell(
+                              name: name,
+                              level: level,
+                              isPrepared: true,
+                            ));
+                          } else {
+                            notifier.removeSpell(name);
+                          }
+                        }
+                      : null,
                 ),
               ),
               tooltip: 'Add spell',

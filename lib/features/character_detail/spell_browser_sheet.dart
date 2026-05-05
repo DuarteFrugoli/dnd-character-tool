@@ -18,6 +18,8 @@ class SpellBrowserSheet extends StatefulWidget {
     required this.knownSpells,
     required this.onAddSpell,
     this.onRemoveSpell,
+    this.isPrepareAll = false,
+    this.onTogglePrepared,
   });
 
   final String characterClass;
@@ -34,6 +36,13 @@ class SpellBrowserSheet extends StatefulWidget {
 
   /// Called when the user removes a spell from within the browser.
   final void Function(String spellName)? onRemoveSpell;
+
+  /// True for Cleric, Druid, Paladin, Artificer — the class spell list is shown
+  /// dynamically; the browser is used for extras only.
+  final bool isPrepareAll;
+
+  /// For prepare-all: toggles prepared state for a class-list spell.
+  final void Function(String spellName, bool prepare)? onTogglePrepared;
 
   @override
   State<SpellBrowserSheet> createState() => _SpellBrowserSheetState();
@@ -100,10 +109,20 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
 
   late Set<String> _knownNames;
 
+  /// For prepare-all: all spell names in the class list (already "known" by rule).
+  Set<String> _classSpellNames = {};
+
+  /// For prepare-all: names of spells currently prepared.
+  late Set<String> _preparedNames;
+
   @override
   void initState() {
     super.initState();
     _knownNames = {for (final s in widget.knownSpells) s.name.toLowerCase()};
+    _preparedNames = {
+      for (final s in widget.knownSpells)
+        if (s.isPrepared) s.name.toLowerCase()
+    };
     // Pre-select the character's class as default filter.
     _filters.classes = {widget.characterClass.toLowerCase()};
     _searchCtrl.addListener(
@@ -120,7 +139,18 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
 
   Future<void> _loadSpells() async {
     final all = await SrdDataSource.instance.getSpells();
-    if (mounted) setState(() => _allSpells = all);
+    if (mounted) {
+      setState(() {
+        _allSpells = all;
+        if (widget.isPrepareAll) {
+          final cls = widget.characterClass.toLowerCase();
+          _classSpellNames = {
+            for (final s in all)
+              if (s.classes.contains(cls) && s.level > 0) s.name.toLowerCase()
+          };
+        }
+      });
+    }
   }
 
   List<SrdSpell> get _filtered {
@@ -170,8 +200,22 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
     setState(() => _knownNames.remove(spell.name.toLowerCase()));
   }
 
+  void _togglePrepared(SrdSpell spell, bool prepare) {
+    widget.onTogglePrepared?.call(spell.name, prepare);
+    setState(() {
+      if (prepare) {
+        _preparedNames.add(spell.name.toLowerCase());
+      } else {
+        _preparedNames.remove(spell.name.toLowerCase());
+      }
+    });
+  }
+
   void _openDetail(SrdSpell spell) {
-    final isKnown = _knownNames.contains(spell.name.toLowerCase());
+    final nameLower = spell.name.toLowerCase();
+    final isClassSpell = widget.isPrepareAll && _classSpellNames.contains(nameLower);
+    final isPrepared = _preparedNames.contains(nameLower);
+    final isKnown = isClassSpell || _knownNames.contains(nameLower);
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
@@ -179,14 +223,19 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
       builder: (_) => SpellDetailSheet(
         spell: spell,
         isKnown: isKnown,
+        isClassSpell: isClassSpell,
+        isPrepared: isPrepared,
         onAdd: isKnown
             ? null
             : () {
                 _addSpell(spell);
                 Navigator.pop(context);
               },
-        onRemove: (isKnown && widget.onRemoveSpell != null)
+        onRemove: (!isClassSpell && isKnown && widget.onRemoveSpell != null)
             ? () => _removeSpell(spell)
+            : null,
+        onTogglePrepared: isClassSpell
+            ? () => _togglePrepared(spell, !isPrepared)
             : null,
       ),
     );
@@ -416,13 +465,22 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                         padding: EdgeInsets.fromLTRB(8, 0, 8, MediaQuery.of(context).viewPadding.bottom),
                         itemBuilder: (_, i) {
                           final spell = filtered[i];
-                          final isKnown =
-                              _knownNames.contains(spell.name.toLowerCase());
+                          final nameLower = spell.name.toLowerCase();
+                          final isClassSpell = widget.isPrepareAll &&
+                              _classSpellNames.contains(nameLower);
+                          final isPrepared = _preparedNames.contains(nameLower);
+                          final isKnown = isClassSpell ||
+                              _knownNames.contains(nameLower);
                           return _SpellBrowserTile(
                             spell: spell,
                             isKnown: isKnown,
+                            isClassSpell: isClassSpell,
+                            isPrepared: isPrepared,
                             onTap: () => _openDetail(spell),
                             onAdd: isKnown ? null : () => _addSpell(spell),
+                            onTogglePrepared: isClassSpell
+                                ? () => _togglePrepared(spell, !isPrepared)
+                                : null,
                           );
                         },
                       ),
@@ -670,7 +728,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
 
             // Apply button
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+              padding: EdgeInsets.fromLTRB(20, 8, 20, 20 + MediaQuery.of(context).viewPadding.bottom),
               child: SizedBox(
                 width: double.infinity,
                 child: FilledButton(
@@ -710,13 +768,19 @@ class _SpellBrowserTile extends StatelessWidget {
     required this.spell,
     required this.isKnown,
     required this.onTap,
+    this.isClassSpell = false,
+    this.isPrepared = false,
     this.onAdd,
+    this.onTogglePrepared,
   });
 
   final SrdSpell spell;
   final bool isKnown;
+  final bool isClassSpell;
+  final bool isPrepared;
   final VoidCallback onTap;
   final VoidCallback? onAdd;
+  final VoidCallback? onTogglePrepared;
 
   static String _castingLabel(String type) {
     switch (type) {
@@ -760,14 +824,23 @@ class _SpellBrowserTile extends StatelessWidget {
             ?.copyWith(color: scheme.onSurfaceVariant),
       ),
       onTap: onTap,
-      trailing: IconButton(
-        icon: Icon(
-          isKnown ? Icons.check_circle : Icons.add_circle_outline,
-          color: scheme.primary,
-        ),
-        tooltip: isKnown ? null : 'Add to character',
-        onPressed: isKnown ? null : onAdd,
-      ),
+      trailing: isClassSpell
+          ? IconButton(
+              icon: Icon(
+                isPrepared ? Icons.check_box : Icons.check_box_outline_blank,
+                color: isPrepared ? scheme.primary : scheme.outlineVariant,
+              ),
+              tooltip: isPrepared ? 'Unprepare' : 'Prepare',
+              onPressed: onTogglePrepared,
+            )
+          : IconButton(
+              icon: Icon(
+                isKnown ? Icons.check_circle : Icons.add_circle_outline,
+                color: scheme.primary,
+              ),
+              tooltip: isKnown ? null : 'Add to character',
+              onPressed: isKnown ? null : onAdd,
+            ),
     );
   }
 }
@@ -780,18 +853,30 @@ class SpellDetailSheet extends StatelessWidget {
     super.key,
     required this.spell,
     required this.isKnown,
+    this.isClassSpell = false,
+    this.isPrepared = false,
     this.onAdd,
     this.onRemove,
+    this.onTogglePrepared,
   });
 
   final SrdSpell spell;
   final bool isKnown;
+
+  /// True when this spell is already in the class list (prepare-all class).
+  final bool isClassSpell;
+
+  /// True when the spell is currently prepared.
+  final bool isPrepared;
 
   /// Null when the spell is already on the character.
   final VoidCallback? onAdd;
 
   /// When provided, a discrete "Remove from spell list" button is shown.
   final VoidCallback? onRemove;
+
+  /// For prepare-all class spells: toggles prepared state.
+  final VoidCallback? onTogglePrepared;
 
   Future<void> _confirmRemove(BuildContext context) async {
     final confirmed = await showDialog<bool>(
@@ -962,13 +1047,51 @@ class SpellDetailSheet extends StatelessWidget {
 
           // ── Action button ─────────────────────────────────────────────────
           const SizedBox(height: 24),
-          if (!isKnown && onAdd != null)
+          if (isClassSpell) ...[
+            // Prepare-all class: show info + prepare/unprepare toggle
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.info_outline,
+                      size: 16,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'Esta magia já faz parte da lista da sua classe e não precisa ser aprendida.',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            if (onTogglePrepared != null)
+              isPrepared
+                  ? OutlinedButton.icon(
+                      icon: const Icon(Icons.check_box),
+                      label: const Text('Preparada — toque para despreparar'),
+                      onPressed: onTogglePrepared,
+                    )
+                  : FilledButton.icon(
+                      icon: const Icon(Icons.check_box_outline_blank),
+                      label: const Text('Preparar para hoje'),
+                      onPressed: onTogglePrepared,
+                    ),
+          ] else if (!isKnown && onAdd != null)
             FilledButton.icon(
               icon: const Icon(Icons.add),
               label: const Text('Add to character'),
               onPressed: onAdd,
             )
-          else ...[  
+          else ...[
             OutlinedButton.icon(
               icon: const Icon(Icons.check),
               label: Text(onRemove != null

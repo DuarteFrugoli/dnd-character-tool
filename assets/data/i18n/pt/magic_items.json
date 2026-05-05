@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Poção de Cura",
+    "original": "Potion of Healing",
+    "description": "Você recupera 2d4 + 2 pontos de vida ao beber esta poção."
+  },
+  {
+    "name": "Poção de Cura Maior",
+    "original": "Potion of Greater Healing",
+    "description": "Você recupera 4d4 + 4 pontos de vida ao beber esta poção."
+  },
+  {
+    "name": "Poção de Cura Superior",
+    "original": "Potion of Superior Healing",
+    "description": "Você recupera 8d4 + 8 pontos de vida ao beber esta poção."
+  },
+  {
+    "name": "Poção de Cura Suprema",
+    "original": "Potion of Supreme Healing",
+    "description": "Você recupera 10d4 + 20 pontos de vida ao beber esta poção."
+  },
+  {
+    "name": "Bolsa de Carga",
+    "original": "Bag of Holding",
+    "description": "Esta bolsa possui um espaço interno consideravelmente maior que suas dimensões externas. A bolsa pode carregar até 250 quilos, sem exceder um volume de 64 pés cúbicos. A bolsa pesa 15 libras, independentemente de seu conteúdo."
+  },
+  {
+    "name": "Arma +1",
+    "original": "+1 Weapon",
+    "description": "Você recebe um bônus de +1 nas jogadas de ataque e dano feitas com esta arma mágica."
+  },
+  {
+    "name": "Arma +2",
+    "original": "+2 Weapon",
+    "description": "Você recebe um bônus de +2 nas jogadas de ataque e dano feitas com esta arma mágica."
+  },
+  {
+    "name": "Arma +3",
+    "original": "+3 Weapon",
+    "description": "Você recebe um bônus de +3 nas jogadas de ataque e dano feitas com esta arma mágica."
+  },
+  {
+    "name": "Armadura +1",
+    "original": "+1 Armor",
+    "description": "Você recebe um bônus de +1 na Classe de Armadura enquanto estiver usando esta armadura."
+  },
+  {
+    "name": "Manto de Proteção",
+    "original": "Cloak of Protection",
+    "description": "Você recebe um bônus de +1 na Classe de Armadura e em testes de resistência enquanto estiver usando este manto."
+  },
+  {
+    "name": "Anel de Proteção",
+    "original": "Ring of Protection",
+    "description": "Você recebe um bônus de +1 na Classe de Armadura e em testes de resistência enquanto estiver usando este anel."
+  },
+  {
+    "name": "Botas de Velocidade",
+    "original": "Boots of Speed",
+    "description": "Enquanto estiver usando estas botas, você pode usar uma ação bônus e bater os calcanhares das botas para dobrar seu deslocamento de caminhada. Além disso, terreno difícil não custa movimento extra. O efeito termina se você usar uma ação bônus para bater os calcanhares novamente ou se não estiver mais usando as botas."
+  },
+  {
+    "name": "Manoplas de Poder do Ogro",
+    "original": "Gauntlets of Ogre Power",
+    "description": "Seu valor de Força é 19 enquanto estiver usando estas manoplas. Elas não têm efeito se sua Força já for 19 ou maior."
+  },
+  {
+    "name": "Tiara do Intelecto",
+    "original": "Headband of Intellect",
+    "description": "Seu valor de Inteligência é 19 enquanto estiver usando esta tiara. Ela não tem efeito se sua Inteligência já for 19 ou maior."
+  },
+  {
+    "name": "Amuleto da Saúde",
+    "original": "Amulet of Health",
+    "description": "Seu valor de Constituição é 19 enquanto estiver usando este amuleto. Ele não tem efeito se sua Constituição já for 19 ou maior."
+  },
+  {
+    "name": "Varinha de Mísseis Mágicos",
+    "original": "Wand of Magic Missiles",
+    "description": "Esta varinha possui 7 cargas. Enquanto a segura, você pode usar uma ação para gastar 1 ou mais de suas cargas e conjurar a magia mísseis mágicos a partir dela. Com 1 carga, você conjura a versão de 1º nível da magia. Você pode aumentar o nível do espaço de magia em um para cada carga adicional gasta. A varinha recupera 1d6 + 1 cargas gastas diariamente ao amanhecer."
+  },
+  {
+    "name": "Corda de Escalada",
+    "original": "Rope of Climbing",
+    "description": "Este comprimento de 18 metros de corda de seda pesa 3 libras e pode suportar até 1.360 quilos. Se você segurar uma extremidade da corda e usar uma ação para dizer a palavra de comando, a corda se anima. Como ação bônus, você pode comandar a outra extremidade para se mover em direção a um destino escolhido."
+  }
+]

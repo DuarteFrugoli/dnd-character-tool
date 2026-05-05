@@ -1,0 +1,106 @@
+{
+  "Acolyte": {
+    "name": "Acólito",
+    "startingEquipment": ["Símbolo sagrado", "Livro ou roda de orações", "5 varetas de incenso", "Vestes", "Roupas comuns", "15 po"],
+    "feature": {
+      "name": "Abrigo dos Fiéis",
+      "description": "Você e seus companheiros podem receber cura e cuidados gratuitos em templos da sua fé, e pode pedir ajuda a sacerdotes."
+    }
+  },
+  "Charlatan": {
+    "name": "Charlatão",
+    "startingEquipment": ["Roupas finas", "Kit de disfarce", "Ferramentas de golpe à sua escolha", "15 po"],
+    "feature": {
+      "name": "Identidade Falsa",
+      "description": "Você criou uma segunda identidade, com documentação, conhecidos estabelecidos e disfarces."
+    }
+  },
+  "Criminal": {
+    "name": "Criminoso",
+    "startingEquipment": ["Pé de cabra", "Roupas comuns escuras com capuz", "15 po"],
+    "feature": {
+      "name": "Contato Criminal",
+      "description": "Você tem um contato confiável que atua como intermediário com uma rede de criminosos."
+    }
+  },
+  "Entertainer": {
+    "name": "Artista",
+    "startingEquipment": ["Instrumento musical", "Favor de um admirador", "Fantasia", "15 po"],
+    "feature": {
+      "name": "Pela Demanda Popular",
+      "description": "Você sempre consegue encontrar um lugar para se apresentar e receber hospedagem e comida gratuitas de qualidade modesta."
+    }
+  },
+  "Folk Hero": {
+    "name": "Herói do Povo",
+    "startingEquipment": ["Ferramentas de artesão", "Pá", "Panela de ferro", "Roupas comuns", "10 po"],
+    "feature": {
+      "name": "Hospitalidade Rústica",
+      "description": "O povo comum irá abrigar você e seus companheiros, escondê-los, e não irá traí-los."
+    }
+  },
+  "Guild Artisan": {
+    "name": "Artesão de Guilda",
+    "startingEquipment": ["Ferramentas de artesão", "Carta de apresentação da sua guilda", "Roupas de viajante", "15 po"],
+    "feature": {
+      "name": "Associação à Guilda",
+      "description": "Sua guilda oferece hospedagem, ajuda legal e assistência — e espera contribuições e lealdade em troca."
+    }
+  },
+  "Hermit": {
+    "name": "Eremita",
+    "startingEquipment": ["Estojo de pergaminho com anotações", "Cobertor de inverno", "Roupas comuns", "Kit de herbalismo", "5 po"],
+    "feature": {
+      "name": "Descoberta",
+      "description": "Seu isolamento revelou uma descoberta única — uma grande verdade, um segredo ou um local oculto."
+    }
+  },
+  "Noble": {
+    "name": "Nobre",
+    "startingEquipment": ["Roupas finas", "Anel de sinete", "Pergaminho de linhagem", "25 po"],
+    "feature": {
+      "name": "Posição de Privilégio",
+      "description": "As pessoas presumem o melhor de você. Você é bem-vindo na alta sociedade e consegue uma audiência com um nobre local."
+    }
+  },
+  "Outlander": {
+    "name": "Forasteiro",
+    "startingEquipment": ["Cajado", "Armadilha de caça", "Troféu de um animal", "Roupas de viajante", "10 po"],
+    "feature": {
+      "name": "Andarilho",
+      "description": "Você consegue encontrar comida e água fresca para si mesmo e até mais 5 pessoas por dia, além de se lembrar da disposição geral do terreno."
+    }
+  },
+  "Sage": {
+    "name": "Sábio",
+    "startingEquipment": ["Frasco de tinta preta", "Pena", "Faca pequena", "Carta de um colega falecido", "Roupas comuns", "10 po"],
+    "feature": {
+      "name": "Pesquisador",
+      "description": "Você sabe onde encontrar informações obscuras. Se você não souber algo, sabe quem sabe."
+    }
+  },
+  "Sailor": {
+    "name": "Marinheiro",
+    "startingEquipment": ["Cavilha de amarração (clava)", "15 metros de corda de seda", "Amuleto da sorte", "Roupas comuns", "10 po"],
+    "feature": {
+      "name": "Passagem de Navio",
+      "description": "Você consegue garantir passagem gratuita em navios para si mesmo e seus companheiros em troca de trabalho."
+    }
+  },
+  "Soldier": {
+    "name": "Soldado",
+    "startingEquipment": ["Insígnia de patente", "Troféu de um inimigo derrotado", "Baralho ou dados", "Roupas comuns", "10 po"],
+    "feature": {
+      "name": "Patente Militar",
+      "description": "Soldados leais à sua antiga facção reconhecem sua patente. Você pode invocar sua patente para obter influência e acesso a acampamentos militares."
+    }
+  },
+  "Urchin": {
+    "name": "Órfão",
+    "startingEquipment": ["Faca pequena", "Mapa da sua cidade natal", "Rato de estimação", "Lembrança dos seus pais", "Roupas comuns", "10 po"],
+    "feature": {
+      "name": "Segredos da Cidade",
+      "description": "Você conhece os padrões secretos das cidades e consegue encontrar passagens por áreas urbanas duas vezes mais rápido que o normal."
+    }
+  }
+}

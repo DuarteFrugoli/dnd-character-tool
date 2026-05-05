@@ -15,7 +15,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - First official release
 - 7-step character creation wizard: class, race, background, skills, attributes, name and review
 - Attribute methods: Standard Array and Point Buy
-- Automatic racial bonuses (PHB) or free distribution (Tasha's / BG3 style)
+- Automatic racial bonuses (PHB) or free distribution (Tasha's)
 - Full character sheet with tabs: Stats, Skills, Features, Spells, Inventory, Notes
 - HP tracker, spell slot tracker and feature use tracker
 - Full SRD spell list with filters

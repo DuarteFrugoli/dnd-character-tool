@@ -74,6 +74,8 @@ flutter run
 Unauthorized copying, distribution or use of this software is strictly prohibited.
 See [LICENSE](LICENSE) for details.
 
+**Translation contributions** (`assets/data/i18n/`) are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — contributions are welcome! By submitting a translation you agree to license it under CC BY 4.0.
+
 > D&D 5e SRD content used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.
 
 ---
@@ -153,5 +155,7 @@ flutter run
 
 É proibida a cópia, distribuição ou uso não autorizado deste software.
 Veja [LICENSE](LICENSE) para mais detalhes.
+
+**Contribuições de tradução** (`assets/data/i18n/`) são licenciadas sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — contribuições são bem-vindas! Ao enviar uma tradução você concorda em licenciá-la sob CC BY 4.0.
 
 > Conteúdo SRD de D&D 5e utilizado sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.

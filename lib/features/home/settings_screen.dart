@@ -14,7 +14,7 @@ class SettingsScreen extends ConsumerWidget {
     final bottomPadding = MediaQuery.of(context).padding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Configurações')),
+      appBar: AppBar(title: const Text('Settings')),
       body: ListView(
         padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 16),
         children: [
@@ -22,7 +22,7 @@ class SettingsScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
             child: Text(
-              'Tema Visual',
+              'Visual Theme',
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
@@ -41,7 +41,7 @@ class SettingsScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Text(
-              'Idioma',
+              'Language',
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
@@ -50,8 +50,8 @@ class SettingsScreen extends ConsumerWidget {
           ),
           ListTile(
             leading: const Icon(Icons.language_outlined),
-            title: const Text('Idioma do app'),
-            subtitle: const Text('Em breve — Português e English'),
+            title: const Text('App language'),
+            subtitle: const Text('Coming soon — Portuguese and English'),
             enabled: false,
           ),
         ],
@@ -86,7 +86,7 @@ class _ThemeTile extends StatelessWidget {
       leading: _ColorSwatch(scheme: previewScheme),
       title: Text(theme.name),
       subtitle: Text(
-        theme.brightness == Brightness.dark ? 'Escuro' : 'Claro',
+        theme.brightness == Brightness.dark ? 'Dark' : 'Light',
         style: Theme.of(context)
             .textTheme
             .bodySmall

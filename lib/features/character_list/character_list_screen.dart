@@ -31,7 +31,7 @@ class CharacterListScreen extends ConsumerWidget {
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('${character.name} importado com sucesso!'),
+            content: Text('${character.name} imported successfully!'),
             backgroundColor: Theme.of(context).colorScheme.primary,
           ),
         );
@@ -47,7 +47,7 @@ class CharacterListScreen extends ConsumerWidget {
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Erro inesperado ao importar. Tente novamente.'),
+            content: const Text('Unexpected error while importing. Please try again.'),
             backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
@@ -112,13 +112,13 @@ class _RenameDialogState extends State<_RenameDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Renomear personagem'),
+      title: const Text('Rename character'),
       content: TextField(
         controller: _ctrl,
         autofocus: true,
         textCapitalization: TextCapitalization.words,
         decoration: const InputDecoration(
-          labelText: 'Nome',
+          labelText: 'Name',
           border: OutlineInputBorder(),
         ),
         onSubmitted: (v) => Navigator.pop(context, v),
@@ -126,11 +126,11 @@ class _RenameDialogState extends State<_RenameDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancelar'),
+          child: const Text('Cancel'),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(context, _ctrl.text),
-          child: const Text('Salvar'),
+          child: const Text('Save'),
         ),
       ],
     );
@@ -176,13 +176,18 @@ class _CharacterList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ListView.separated(
+    return ReorderableListView.builder(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
       itemCount: characters.length,
-      separatorBuilder: (_, _) => const SizedBox(height: 8),
+      onReorder: (oldIndex, newIndex) =>
+          ref.read(characterListProvider.notifier).reorder(oldIndex, newIndex),
       itemBuilder: (context, index) {
         final character = characters[index];
-        return _CharacterCard(character: character);
+        return Padding(
+          key: ValueKey(character.id),
+          padding: const EdgeInsets.only(bottom: 8),
+          child: _CharacterCard(character: character),
+        );
       },
     );
   }
@@ -211,10 +216,29 @@ class _CharacterCard extends ConsumerWidget {
       );
     }
 
+    final cs = Theme.of(context).colorScheme;
     return Card(
       child: ListTile(
-        leading: CircleAvatar(
-          child: Text(character.name.isNotEmpty ? character.name[0] : '?'),
+        leading: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            CircleAvatar(
+              child: Text(character.name.isNotEmpty ? character.name[0] : '?'),
+            ),
+            if (character.isPinned)
+              Positioned(
+                right: -4,
+                top: -4,
+                child: Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: cs.primary,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(Icons.push_pin, size: 10, color: cs.onPrimary),
+                ),
+              ),
+          ],
         ),
         title: Text(character.name),
         subtitle: Text(
@@ -222,6 +246,11 @@ class _CharacterCard extends ConsumerWidget {
         ),
         trailing: PopupMenuButton<String>(
           onSelected: (value) async {
+            if (value == 'pin') {
+              await ref
+                  .read(characterListProvider.notifier)
+                  .togglePin(character.id);
+            }
             if (value == 'export') {
               await exportCharacter();
             }
@@ -265,10 +294,14 @@ class _CharacterCard extends ConsumerWidget {
               }
             }
           },
-          itemBuilder: (_) => const [
-            PopupMenuItem(value: 'rename', child: Text('Renomear')),
-            PopupMenuItem(value: 'export', child: Text('Export')),
-            PopupMenuItem(value: 'delete', child: Text('Delete')),
+          itemBuilder: (_) => [
+            PopupMenuItem(
+              value: 'pin',
+              child: Text(character.isPinned ? 'Unpin' : 'Pin to top'),
+            ),
+            const PopupMenuItem(value: 'rename', child: Text('Rename')),
+            const PopupMenuItem(value: 'export', child: Text('Export')),
+            const PopupMenuItem(value: 'delete', child: Text('Delete')),
           ],
         ),
         onTap: () => context.push('/character/${character.id}'),
@@ -302,14 +335,14 @@ class _ExportDialogState extends State<_ExportDialog> {
     await Clipboard.setData(ClipboardData(text: text));
     if (!ctx.mounted) return;
     ScaffoldMessenger.of(ctx)
-        .showSnackBar(SnackBar(content: Text('$label copiado!')));
+        .showSnackBar(SnackBar(content: Text('$label copied!')));
   }
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return AlertDialog(
-      title: Text('Exportar ${widget.characterName}'),
+      title: Text('Export ${widget.characterName}'),
       content: SizedBox(
         width: 520,
         child: SingleChildScrollView(
@@ -340,13 +373,13 @@ class _ExportDialogState extends State<_ExportDialog> {
               const SizedBox(height: 8),
               FilledButton.icon(
                 icon: const Icon(Icons.copy, size: 16),
-                label: const Text('Copiar token'),
+                label: const Text('Copy token'),
                 onPressed: () => _copy(context, widget.token, 'Token'),
               ),
               const SizedBox(height: 6),
               OutlinedButton.icon(
                 icon: Icon(_qrExpanded ? Icons.qr_code_2 : Icons.qr_code, size: 16),
-                label: Text(_qrExpanded ? 'Ocultar QR Code' : 'Ver QR Code'),
+                label: Text(_qrExpanded ? 'Hide QR Code' : 'Show QR Code'),
                 onPressed: () => setState(() => _qrExpanded = !_qrExpanded),
               ),
               if (_qrExpanded) ...
@@ -388,7 +421,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Text(
-                        'Personagem muito grande para QR code.\nUse o token ou JSON para compartilhar.',
+                        'Character too large for QR code.\nUse the token or JSON to share.',
                         style: TextStyle(
                             color: Theme.of(context).colorScheme.error),
                         textAlign: TextAlign.center,
@@ -415,7 +448,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Ver JSON',
+                        'Show JSON',
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
@@ -445,7 +478,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                 const SizedBox(height: 6),
                 FilledButton.icon(
                   icon: const Icon(Icons.copy, size: 16),
-                  label: const Text('Copiar JSON'),
+                  label: const Text('Copy JSON'),
                   onPressed: () =>
                       _copy(context, widget.json, 'JSON'),
                 ),
@@ -457,7 +490,7 @@ class _ExportDialogState extends State<_ExportDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Fechar'),
+          child: const Text('Close'),
         ),
       ],
     );
@@ -511,7 +544,7 @@ class _ImportDialogState extends State<_ImportDialog> {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return AlertDialog(
-      title: const Text('Importar Personagem'),
+      title: const Text('Import Character'),
       content: SizedBox(
         width: 520,
         child: SingleChildScrollView(
@@ -526,7 +559,7 @@ class _ImportDialogState extends State<_ImportDialog> {
                 controller: _tokenCtrl,
                 autofocus: true,
                 decoration: const InputDecoration(
-                  hintText: 'Cole o token aqui…',
+                  hintText: 'Paste token here…',
                   border: OutlineInputBorder(),
                   isDense: true,
                 ),
@@ -536,7 +569,7 @@ class _ImportDialogState extends State<_ImportDialog> {
               // QR code scanner
               OutlinedButton.icon(
                 icon: const Icon(Icons.qr_code_scanner, size: 16),
-                label: const Text('Escanear QR Code'),
+                label: const Text('Scan QR Code'),
                 onPressed: () async {
                   final scanned = await Navigator.push<String>(
                     context,
@@ -567,7 +600,7 @@ class _ImportDialogState extends State<_ImportDialog> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Usar JSON diretamente',
+                        'Use JSON directly',
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
@@ -583,7 +616,7 @@ class _ImportDialogState extends State<_ImportDialog> {
                   controller: _jsonCtrl,
                   maxLines: 8,
                   decoration: const InputDecoration(
-                    hintText: 'Cole o JSON aqui…',
+                    hintText: 'Paste JSON here…',
                     border: OutlineInputBorder(),
                   ),
                   onChanged: (_) => setState(() {}),
@@ -596,13 +629,13 @@ class _ImportDialogState extends State<_ImportDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancelar'),
+          child: const Text('Cancel'),
         ),
         FilledButton(
           onPressed: _resolveInput() != null
               ? () => Navigator.pop(context, _resolveInput())
               : null,
-          child: const Text('Importar'),
+          child: const Text('Import'),
         ),
       ],
     );
@@ -624,7 +657,7 @@ class _QrScannerScreenState extends State<_QrScannerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Escanear QR Code')),
+      appBar: AppBar(title: const Text('Scan QR Code')),
       body: MobileScanner(
         onDetect: (capture) {
           if (_scanned) return;

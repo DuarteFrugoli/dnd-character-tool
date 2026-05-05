@@ -52,6 +52,8 @@ class Character {
   final CreationMode creationMode;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final bool isPinned;
+  final int sortOrder;
 
   const Character({
     required this.id,
@@ -91,6 +93,8 @@ class Character {
     this.creationMode = CreationMode.manual,
     required this.createdAt,
     required this.updatedAt,
+    this.isPinned = false,
+    this.sortOrder = 0,
   });
 
   /// Passive perception = 10 + perception modifier
@@ -144,6 +148,8 @@ class Character {
     CreationMode? creationMode,
     DateTime? createdAt,
     DateTime? updatedAt,
+    bool? isPinned,
+    int? sortOrder,
   }) {
     return Character(
       id: id ?? this.id,
@@ -184,6 +190,8 @@ class Character {
       creationMode: creationMode ?? this.creationMode,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
+      isPinned: isPinned ?? this.isPinned,
+      sortOrder: sortOrder ?? this.sortOrder,
     );
   }
 

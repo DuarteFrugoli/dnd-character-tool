@@ -10,6 +10,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 import 'character_list_provider.dart';
 import '../../data/models/models.dart';
+import '../../shared/widgets/character_avatar.dart';
 
 class CharacterListScreen extends ConsumerWidget {
   const CharacterListScreen({super.key});
@@ -222,8 +223,13 @@ class _CharacterCard extends ConsumerWidget {
         leading: Stack(
           clipBehavior: Clip.none,
           children: [
-            CircleAvatar(
-              child: Text(character.name.isNotEmpty ? character.name[0] : '?'),
+            CharacterAvatar(
+              name: character.name,
+              imagePath: character.imagePath,
+              radius: 22,
+              onImageChanged: (path) => ref
+                  .read(characterListProvider.notifier)
+                  .updateImage(character.id, path),
             ),
             if (character.isPinned)
               Positioned(

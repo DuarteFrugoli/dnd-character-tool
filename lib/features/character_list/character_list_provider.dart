@@ -102,4 +102,13 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     await ref.read(characterRepositoryProvider).save(character.copyWith(name: trimmed));
     await refresh();
   }
+
+  Future<void> updateImage(String id, String? imagePath) async {
+    final character = await ref.read(characterRepositoryProvider).getById(id);
+    if (character == null) return;
+    await ref
+        .read(characterRepositoryProvider)
+        .save(character.copyWith(imagePath: imagePath));
+    await refresh();
+  }
 }

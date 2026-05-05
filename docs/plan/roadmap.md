@@ -8,6 +8,10 @@
 - [x] Modo de criação guiado (passo a passo, 7 etapas)
 - [x] Ficha do personagem — visualização (Stats, Skills, Spells, Inventory, Notes)
 - [x] Rastreador de HP e spell slots em sessão
+- [x] Browser de magias (busca, filtros, add/remove com confirmação, detail sheet)
+- [x] Sistema de prepare-all (Cleric, Druid, Paladin, Artificer, Wizard) — lista dinâmica do SRD, long-press para desativar
+- [x] Magias de subclasse always-prepared (domínios, juramentos, patronos) — `subclassSpells` no JSON + injeção no provider
+- [x] Eldritch Knight / Arcane Trickster — `SpellProgressionType.third` no engine
 - [x] Inventário com moedas (CP/SP/EP/GP/PP), equipar/desequipar, adicionar/remover itens
 - [x] Cálculo automático de AC ao equipar armadura
 - [x] Equipamento inicial do background aplicado na criação

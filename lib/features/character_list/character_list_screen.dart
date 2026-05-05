@@ -169,6 +169,42 @@ class _CharacterCard extends ConsumerWidget {
             if (value == 'export') {
               await exportCharacter();
             }
+            if (value == 'rename') {
+              if (!context.mounted) return;
+              final ctrl = TextEditingController(text: character.name);
+              final newName = await showDialog<String>(
+                context: context,
+                builder: (ctx) => AlertDialog(
+                  title: const Text('Renomear personagem'),
+                  content: TextField(
+                    controller: ctrl,
+                    autofocus: true,
+                    textCapitalization: TextCapitalization.words,
+                    decoration: const InputDecoration(
+                      labelText: 'Nome',
+                      border: OutlineInputBorder(),
+                    ),
+                    onSubmitted: (v) => Navigator.pop(ctx, v),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(ctx),
+                      child: const Text('Cancelar'),
+                    ),
+                    FilledButton(
+                      onPressed: () => Navigator.pop(ctx, ctrl.text),
+                      child: const Text('Salvar'),
+                    ),
+                  ],
+                ),
+              );
+              ctrl.dispose();
+              if (newName != null && newName.trim().isNotEmpty && context.mounted) {
+                await ref
+                    .read(characterListProvider.notifier)
+                    .rename(character.id, newName);
+              }
+            }
             if (value == 'delete') {
               if (!context.mounted) return;
               final confirm = await showDialog<bool>(
@@ -198,6 +234,7 @@ class _CharacterCard extends ConsumerWidget {
             }
           },
           itemBuilder: (_) => const [
+            PopupMenuItem(value: 'rename', child: Text('Renomear')),
             PopupMenuItem(value: 'export', child: Text('Export')),
             PopupMenuItem(value: 'delete', child: Text('Delete')),
           ],

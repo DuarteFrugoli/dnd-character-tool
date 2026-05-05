@@ -75,6 +75,7 @@ class SrdSubrace {
   final List<String> traits;
   final int? speed;
   final String? damageType;
+  final List<SrdInnateSpellDef> innateSpells;
 
   const SrdSubrace({
     required this.name,
@@ -82,6 +83,7 @@ class SrdSubrace {
     required this.traits,
     this.speed,
     this.damageType,
+    this.innateSpells = const [],
   });
 
   factory SrdSubrace.fromJson(Map<String, dynamic> json) => SrdSubrace(
@@ -92,6 +94,9 @@ class SrdSubrace {
         traits: List<String>.from(json['traits'] ?? []),
         speed: json['speed'] as int?,
         damageType: json['damageType'] as String?,
+        innateSpells: (json['innateSpells'] as List<dynamic>? ?? [])
+            .map((e) => SrdInnateSpellDef.fromJson(e as Map<String, dynamic>))
+            .toList(),
       );
 }
 
@@ -110,6 +115,7 @@ class SrdRace {
   final List<String> traits;
   final List<String> languages;
   final List<SrdSubrace> subraces;
+  final List<SrdInnateSpellDef> innateSpells;
 
   const SrdRace({
     required this.name,
@@ -120,6 +126,7 @@ class SrdRace {
     required this.traits,
     required this.languages,
     required this.subraces,
+    this.innateSpells = const [],
   });
 
   factory SrdRace.fromJson(Map<String, dynamic> json) {
@@ -147,6 +154,9 @@ class SrdRace {
       languages: List<String>.from(json['languages'] ?? []),
       subraces: (json['subraces'] as List<dynamic>? ?? [])
           .map((e) => SrdSubrace.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      innateSpells: (json['innateSpells'] as List<dynamic>? ?? [])
+          .map((e) => SrdInnateSpellDef.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
   }
@@ -344,6 +354,21 @@ class RaceSpellRef {
   factory RaceSpellRef.fromJson(Map<String, dynamic> json) => RaceSpellRef(
         race: json['race'] as String,
         subrace: json['subrace'] as String?,
+      );
+}
+
+/// Racial innate spell definition as stored in races.json.
+/// [usesPerDay] == null means the spell is at-will.
+class SrdInnateSpellDef {
+  final String name;
+  final int? usesPerDay;
+
+  const SrdInnateSpellDef({required this.name, this.usesPerDay});
+
+  factory SrdInnateSpellDef.fromJson(Map<String, dynamic> json) =>
+      SrdInnateSpellDef(
+        name: json['name'] as String,
+        usesPerDay: (json['usesPerDay'] as num?)?.toInt(),
       );
 }
 

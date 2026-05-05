@@ -36,4 +36,13 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     await refresh();
     return character;
   }
+
+  Future<void> rename(String id, String newName) async {
+    final trimmed = newName.trim();
+    if (trimmed.isEmpty) return;
+    final character = await ref.read(characterRepositoryProvider).getById(id);
+    if (character == null) return;
+    await ref.read(characterRepositoryProvider).save(character.copyWith(name: trimmed));
+    await refresh();
+  }
 }

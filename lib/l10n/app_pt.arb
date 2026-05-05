@@ -1,4 +1,25 @@
 {
   "@@locale": "pt",
-  "appTitle": "D&D Character Tool"
+  "appTitle": "D&D Character Tool",
+  "charListTitle": "Personagens D&D",
+  "charListImportTooltip": "Importar JSON",
+  "charListSettingsTooltip": "Configurações",
+  "charListNewCharacter": "Novo Personagem",
+  "charListEmpty": "Nenhum personagem ainda",
+  "charListEmptyHint": "Toque em + para criar seu primeiro personagem",
+  "charListImportedSuccess": "{name} importado com sucesso!",
+  "charListImportError": "Erro inesperado ao importar. Tente novamente.",
+  "charCardLevel": "Nível {level}",
+  "charCardPin": "Fixar no topo",
+  "charCardUnpin": "Desafixar",
+  "charCardChangePhoto": "Alterar foto",
+  "charCardRename": "Renomear",
+  "charCardExport": "Exportar",
+  "charCardDelete": "Excluir",
+  "renameDialogTitle": "Renomear personagem",
+  "renameDialogLabel": "Nome",
+  "dialogCancel": "Cancelar",
+  "dialogSave": "Salvar",
+  "deleteDialogTitle": "Excluir personagem?",
+  "deleteDialogContent": "Tem certeza que deseja excluir {name}? Esta ação não pode ser desfeita."
 }

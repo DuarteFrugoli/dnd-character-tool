@@ -103,6 +103,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'D&D Character Tool'**
   String get appTitle;
+
+  /// AppBar title on the character list screen.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D Characters'**
+  String get charListTitle;
+
+  /// Tooltip for import button.
+  ///
+  /// In en, this message translates to:
+  /// **'Import JSON'**
+  String get charListImportTooltip;
+
+  /// Tooltip for settings button.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get charListSettingsTooltip;
+
+  /// FAB label.
+  ///
+  /// In en, this message translates to:
+  /// **'New Character'**
+  String get charListNewCharacter;
+
+  /// Empty state headline.
+  ///
+  /// In en, this message translates to:
+  /// **'No characters yet'**
+  String get charListEmpty;
+
+  /// Empty state subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap + to create your first character'**
+  String get charListEmptyHint;
+
+  /// Snackbar after successful import.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} imported successfully!'**
+  String charListImportedSuccess(String name);
+
+  /// Generic import error snackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Unexpected error while importing. Please try again.'**
+  String get charListImportError;
+
+  /// Level label on character card subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}'**
+  String charCardLevel(int level);
+
+  /// Popup menu item.
+  ///
+  /// In en, this message translates to:
+  /// **'Pin to top'**
+  String get charCardPin;
+
+  /// Popup menu item.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpin'**
+  String get charCardUnpin;
+
+  /// Popup menu item.
+  ///
+  /// In en, this message translates to:
+  /// **'Change photo'**
+  String get charCardChangePhoto;
+
+  /// Popup menu item.
+  ///
+  /// In en, this message translates to:
+  /// **'Rename'**
+  String get charCardRename;
+
+  /// Popup menu item.
+  ///
+  /// In en, this message translates to:
+  /// **'Export'**
+  String get charCardExport;
+
+  /// Popup menu item.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get charCardDelete;
+
+  /// Rename dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Rename character'**
+  String get renameDialogTitle;
+
+  /// Text field label in rename dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get renameDialogLabel;
+
+  /// Generic cancel button.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get dialogCancel;
+
+  /// Generic save button.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get dialogSave;
+
+  /// Delete confirmation dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete character?'**
+  String get deleteDialogTitle;
+
+  /// Delete confirmation dialog body.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete {name}? This cannot be undone.'**
+  String deleteDialogContent(String name);
 }
 
 class _AppLocalizationsDelegate

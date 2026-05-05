@@ -1,7 +1,77 @@
 {
   "@@locale": "en",
   "appTitle": "D&D Character Tool",
-  "@appTitle": {
-    "description": "The application title."
+  "@appTitle": { "description": "The application title." },
+
+  "charListTitle": "D&D Characters",
+  "@charListTitle": { "description": "AppBar title on the character list screen." },
+
+  "charListImportTooltip": "Import JSON",
+  "@charListImportTooltip": { "description": "Tooltip for import button." },
+
+  "charListSettingsTooltip": "Settings",
+  "@charListSettingsTooltip": { "description": "Tooltip for settings button." },
+
+  "charListNewCharacter": "New Character",
+  "@charListNewCharacter": { "description": "FAB label." },
+
+  "charListEmpty": "No characters yet",
+  "@charListEmpty": { "description": "Empty state headline." },
+
+  "charListEmptyHint": "Tap + to create your first character",
+  "@charListEmptyHint": { "description": "Empty state subtitle." },
+
+  "charListImportedSuccess": "{name} imported successfully!",
+  "@charListImportedSuccess": {
+    "description": "Snackbar after successful import.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "charListImportError": "Unexpected error while importing. Please try again.",
+  "@charListImportError": { "description": "Generic import error snackbar." },
+
+  "charCardLevel": "Level {level}",
+  "@charCardLevel": {
+    "description": "Level label on character card subtitle.",
+    "placeholders": { "level": { "type": "int" } }
+  },
+
+  "charCardPin": "Pin to top",
+  "@charCardPin": { "description": "Popup menu item." },
+
+  "charCardUnpin": "Unpin",
+  "@charCardUnpin": { "description": "Popup menu item." },
+
+  "charCardChangePhoto": "Change photo",
+  "@charCardChangePhoto": { "description": "Popup menu item." },
+
+  "charCardRename": "Rename",
+  "@charCardRename": { "description": "Popup menu item." },
+
+  "charCardExport": "Export",
+  "@charCardExport": { "description": "Popup menu item." },
+
+  "charCardDelete": "Delete",
+  "@charCardDelete": { "description": "Popup menu item." },
+
+  "renameDialogTitle": "Rename character",
+  "@renameDialogTitle": { "description": "Rename dialog title." },
+
+  "renameDialogLabel": "Name",
+  "@renameDialogLabel": { "description": "Text field label in rename dialog." },
+
+  "dialogCancel": "Cancel",
+  "@dialogCancel": { "description": "Generic cancel button." },
+
+  "dialogSave": "Save",
+  "@dialogSave": { "description": "Generic save button." },
+
+  "deleteDialogTitle": "Delete character?",
+  "@deleteDialogTitle": { "description": "Delete confirmation dialog title." },
+
+  "deleteDialogContent": "Are you sure you want to delete {name}? This cannot be undone.",
+  "@deleteDialogContent": {
+    "description": "Delete confirmation dialog body.",
+    "placeholders": { "name": { "type": "String" } }
   }
 }

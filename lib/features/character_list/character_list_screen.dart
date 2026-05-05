@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
@@ -18,6 +19,7 @@ class CharacterListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(characterListProvider);
+    final l10n = AppLocalizations.of(context)!;
 
     Future<void> importCharacter() async {
       final result = await showDialog<String>(
@@ -32,7 +34,7 @@ class CharacterListScreen extends ConsumerWidget {
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('${character.name} imported successfully!'),
+            content: Text(l10n.charListImportedSuccess(character.name)),
             backgroundColor: Theme.of(context).colorScheme.primary,
           ),
         );
@@ -48,7 +50,7 @@ class CharacterListScreen extends ConsumerWidget {
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Unexpected error while importing. Please try again.'),
+            content: Text(l10n.charListImportError),
             backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
@@ -57,15 +59,15 @@ class CharacterListScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('D&D Characters'),
+        title: Text(l10n.charListTitle),
         actions: [
           IconButton(
-            tooltip: 'Import JSON',
+            tooltip: l10n.charListImportTooltip,
             onPressed: importCharacter,
             icon: const Icon(Icons.file_download_outlined),
           ),
           IconButton(
-            tooltip: 'Configurações',
+            tooltip: l10n.charListSettingsTooltip,
             onPressed: () => context.push('/settings'),
             icon: const Icon(Icons.settings_outlined),
           ),
@@ -81,7 +83,7 @@ class CharacterListScreen extends ConsumerWidget {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => context.push('/create'),
         icon: const Icon(Icons.add),
-        label: const Text('New Character'),
+        label: Text(l10n.charListNewCharacter),
       ),
     );
   }
@@ -112,26 +114,27 @@ class _RenameDialogState extends State<_RenameDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
-      title: const Text('Rename character'),
+      title: Text(l10n.renameDialogTitle),
       content: TextField(
         controller: _ctrl,
         autofocus: true,
         textCapitalization: TextCapitalization.words,
-        decoration: const InputDecoration(
-          labelText: 'Name',
-          border: OutlineInputBorder(),
+        decoration: InputDecoration(
+          labelText: l10n.renameDialogLabel,
+          border: const OutlineInputBorder(),
         ),
         onSubmitted: (v) => Navigator.pop(context, v),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          child: Text(l10n.dialogCancel),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(context, _ctrl.text),
-          child: const Text('Save'),
+          child: Text(l10n.dialogSave),
         ),
       ],
     );
@@ -143,6 +146,7 @@ class _EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -154,12 +158,12 @@ class _EmptyState extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'No characters yet',
+            l10n.charListEmpty,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 8),
           Text(
-            'Tap + to create your first character',
+            l10n.charListEmptyHint,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).colorScheme.outline,
                 ),
@@ -201,6 +205,7 @@ class _CharacterCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     Future<void> exportCharacter() async {
       final json =
           await ref.read(characterListProvider.notifier).exportCharacter(character);
@@ -248,7 +253,7 @@ class _CharacterCard extends ConsumerWidget {
         ),
         title: Text(character.name),
         subtitle: Text(
-          '${character.race} · ${character.characterClass} · Level ${character.level}',
+          '${character.race} · ${character.characterClass} · ${l10n.charCardLevel(character.level)}',
         ),
         trailing: PopupMenuButton<String>(
           onSelected: (value) async {
@@ -287,18 +292,16 @@ class _CharacterCard extends ConsumerWidget {
               final confirm = await showDialog<bool>(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: const Text('Delete character?'),
-                  content: Text(
-                    'Are you sure you want to delete ${character.name}? This cannot be undone.',
-                  ),
+                  title: Text(l10n.deleteDialogTitle),
+                  content: Text(l10n.deleteDialogContent(character.name)),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(ctx, false),
-                      child: const Text('Cancel'),
+                      child: Text(l10n.dialogCancel),
                     ),
                     TextButton(
                       onPressed: () => Navigator.pop(ctx, true),
-                      child: const Text('Delete'),
+                      child: Text(l10n.charCardDelete),
                     ),
                   ],
                 ),
@@ -313,12 +316,12 @@ class _CharacterCard extends ConsumerWidget {
           itemBuilder: (_) => [
             PopupMenuItem(
               value: 'pin',
-              child: Text(character.isPinned ? 'Unpin' : 'Pin to top'),
+              child: Text(character.isPinned ? l10n.charCardUnpin : l10n.charCardPin),
             ),
-            const PopupMenuItem(value: 'photo', child: Text('Change photo')),
-            const PopupMenuItem(value: 'rename', child: Text('Rename')),
-            const PopupMenuItem(value: 'export', child: Text('Export')),
-            const PopupMenuItem(value: 'delete', child: Text('Delete')),
+            PopupMenuItem(value: 'photo', child: Text(l10n.charCardChangePhoto)),
+            PopupMenuItem(value: 'rename', child: Text(l10n.charCardRename)),
+            PopupMenuItem(value: 'export', child: Text(l10n.charCardExport)),
+            PopupMenuItem(value: 'delete', child: Text(l10n.charCardDelete)),
           ],
         ),
         onTap: () => context.push('/character/${character.id}'),

@@ -63,6 +63,11 @@ class CharacterListScreen extends ConsumerWidget {
             onPressed: importCharacter,
             icon: const Icon(Icons.file_download_outlined),
           ),
+          IconButton(
+            tooltip: 'Configurações',
+            onPressed: () => context.push('/settings'),
+            icon: const Icon(Icons.settings_outlined),
+          ),
         ],
       ),
       body: state.when(

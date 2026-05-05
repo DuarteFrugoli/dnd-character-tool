@@ -325,10 +325,10 @@ Objetivo: completar os itens restantes do v1 — imagem do personagem, browser d
 
 ## Imagem do personagem
 
-- [ ] Botão para escolher imagem da galeria (`image_picker`)
-- [ ] Salvar cópia local do arquivo no diretório do app (`path_provider`)
-- [ ] Exibir imagem no card da lista e no topo da ficha
-- [ ] Botão para remover imagem
+- [x] Botão para escolher imagem da galeria (`image_picker`)
+- [x] Salvar cópia local do arquivo no diretório do app (`path_provider`)
+- [x] Exibir imagem no card da lista e no topo da ficha
+- [x] Botão para remover imagem
 
 ## Browser de magias (aba Spells)
 
@@ -436,24 +436,30 @@ Objetivo: implementar o comportamento correto para classes que conhecem todas as
 
 ---
 
-# Sprint 9 — Internacionalização (planejada)
+# Sprint 9 — Internacionalização (em andamento)
 
 Objetivo: suporte completo a Português (pt-BR) e Inglês (en), com idioma persistido e padrão seguindo o sistema.
 
 ## Infraestrutura
 
-- [ ] Adicionar `flutter_localizations` e `intl` ao `pubspec.yaml`
-- [ ] Criar `l10n.yaml` na raiz (aponta para `lib/l10n/`, classe `AppLocalizations`)
-- [ ] Ativar `generate: true` no `pubspec.yaml`
-- [ ] Criar `lib/l10n/app_en.arb` (strings em inglês — source of truth)
-- [ ] Criar `lib/l10n/app_pt.arb` (tradução pt-BR)
-- [ ] Registrar `localizationsDelegates` e `supportedLocales` no `MaterialApp`
+- [x] Adicionar `flutter_localizations` e `intl` ao `pubspec.yaml`
+- [x] Criar `l10n.yaml` na raiz (aponta para `lib/l10n/`, classe `AppLocalizations`)
+- [x] Ativar `generate: true` no `pubspec.yaml`
+- [x] Criar `lib/l10n/app_en.arb` (strings em inglês — source of truth)
+- [x] Criar `lib/l10n/app_pt.arb` (tradução pt-BR)
+- [x] Registrar `localizationsDelegates` e `supportedLocales` no `MaterialApp`
 
 ## Provider de locale
 
-- [ ] `LocaleNotifier extends Notifier<Locale?>` + `localeProvider` (padrão: `null` = sistema)
-- [ ] Salvar/carregar `'selected_locale'` via `shared_preferences` (valores: `'en'`, `'pt'`, ou ausente)
-- [ ] Passar `locale: ref.watch(localeProvider)` no `MaterialApp`
+- [x] `LocaleNotifier extends Notifier<Locale?>` + `localeProvider` (padrão: `null` = sistema)
+- [x] Salvar/carregar `'selected_locale'` via `shared_preferences` (valores: `'en'`, `'pt'`, ou ausente)
+- [x] Passar `locale: ref.watch(localeProvider)` no `MaterialApp`
+
+## Configurações
+
+- [x] Seção "Language" nas configurações com opções: System default / English / Português
+- [x] Bottom sheet com ícone de check na opção atual
+- [x] Persistência via `shared_preferences`
 
 ## Strings a extrair (~6 arquivos principais)
 
@@ -463,11 +469,6 @@ Objetivo: suporte completo a Português (pt-BR) e Inglês (en), com idioma persi
 - [ ] `character_creation/` — labels de etapas, botões, validações
 - [ ] `spell_browser_sheet.dart` — filtros, badges de escola/casting time
 - [ ] Diálogos globais — Export, Import, QR scanner
-
-## Configurações
-
-- [ ] Seção "Language" nas configurações com opções: System / English / Português
-- [ ] Persistência via `shared_preferences`
 
 ---
 

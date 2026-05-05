@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/locale/locale_provider.dart';
 import '../../core/theme/app_themes.dart';
 import '../../core/theme/theme_provider.dart';
 
@@ -115,13 +116,78 @@ class SettingsScreen extends ConsumerWidget {
                   ?.copyWith(color: cs.primary),
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.language_outlined),
-            title: const Text('App language'),
-            subtitle: const Text('Coming soon — Portuguese and English'),
-            enabled: false,
-          ),
+          _LanguageTile(),
         ],
+      ),
+    );
+  }
+}
+
+class _LanguageTile extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final locale = ref.watch(localeProvider);
+
+    String label;
+    if (locale == null) {
+      label = 'System default';
+    } else if (locale.languageCode == 'en') {
+      label = 'English';
+    } else {
+      label = 'Português';
+    }
+
+    return ListTile(
+      leading: const Icon(Icons.language_outlined),
+      title: const Text('App language'),
+      subtitle: Text(label),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => _openLanguagePicker(context, ref, locale),
+    );
+  }
+
+  void _openLanguagePicker(BuildContext context, WidgetRef ref, Locale? current) {
+    final options = [
+      (label: 'System default', locale: null),
+      (label: 'English', locale: const Locale('en')),
+      (label: 'Português', locale: const Locale('pt')),
+    ];
+
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (ctx) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Choose a Language',
+                  style: Theme.of(ctx).textTheme.titleMedium,
+                ),
+              ),
+            ),
+            for (final opt in options)
+              ListTile(
+                title: Text(opt.label),
+                trailing: opt.locale?.languageCode == current?.languageCode &&
+                        !(opt.locale == null && current != null)
+                    ? Icon(Icons.check_circle,
+                        color: Theme.of(ctx).colorScheme.primary)
+                    : const SizedBox.shrink(),
+                selected: opt.locale?.languageCode == current?.languageCode &&
+                    !(opt.locale == null && current != null),
+                onTap: () {
+                  ref.read(localeProvider.notifier).setLocale(opt.locale);
+                  Navigator.pop(ctx);
+                },
+              ),
+            const SizedBox(height: 8),
+          ],
+        ),
       ),
     );
   }

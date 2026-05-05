@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "appTitle": "D&D Character Tool",
+  "@appTitle": {
+    "description": "The application title."
+  }
+}

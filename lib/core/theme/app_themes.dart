@@ -52,8 +52,8 @@ const List<AppTheme> appThemes = [
   AppTheme(
     id: 'nature',
     name: 'Nature',
-    seedColor: Color(0xFF2D6A4F), // verde musgo
-    brightness: Brightness.dark,
+    seedColor: Color(0xFF388E3C), // verde vivo
+    brightness: Brightness.light,
   ),
   AppTheme(
     id: 'sacred',
@@ -79,6 +79,12 @@ const List<AppTheme> appThemes = [
     id: 'celestial',
     name: 'Celestial',
     seedColor: Color(0xFF4169E1), // azul real
+    brightness: Brightness.light,
+  ),
+  AppTheme(
+    id: 'parchment',
+    name: 'Parchment',
+    seedColor: Color(0xFFC19A6B), // bege/couro
     brightness: Brightness.light,
   ),
 

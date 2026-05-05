@@ -70,11 +70,7 @@ class SettingsScreen extends ConsumerWidget {
     final cs = Theme.of(context).colorScheme;
     final bottomPadding = MediaQuery.of(context).padding.bottom;
 
-    final currentScheme = ColorScheme.fromSeed(
-      seedColor: current.seedColor,
-      brightness: current.brightness,
-      contrastLevel: current.contrastLevel,
-    );
+    final currentScheme = current.toThemeData().colorScheme;
 
     return Scaffold(
       appBar: AppBar(title: const Text('Settings')),
@@ -146,12 +142,8 @@ class _ThemeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    // Preview swatch using a small ColorScheme
-    final previewScheme = ColorScheme.fromSeed(
-      seedColor: theme.seedColor,
-      brightness: theme.brightness,
-      contrastLevel: theme.contrastLevel,
-    );
+    // Preview swatch — use the real generated scheme so overrides (e.g. surfaceColor) are reflected
+    final previewScheme = theme.toThemeData().colorScheme;
 
     return ListTile(
       onTap: onTap,

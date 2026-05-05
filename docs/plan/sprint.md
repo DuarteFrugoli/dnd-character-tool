@@ -397,27 +397,97 @@ Objetivo: implementar o comportamento correto para classes que conhecem todas as
 
 ---
 
-# Sprint 8 — Visual
+# Sprint 8 — Visual & Polimento (concluída)
 
 ## Temas visuais
 
 - [x] Tela de configurações acessível pela lista de personagens
-- [x] Opções: **Sistema** (padrão), **Claro**, **Escuro**, **Alto Contraste**
+- [x] Seletor de tema como bottom sheet (`DraggableScrollableSheet`) com preview de swatches 2×2
+- [x] Swatch corrigido: `Container` fixo 22×22 px por célula (primary / secondary / tertiary / surface)
+- [x] 8 temas: `system_dark`, `system_light`, `arcane`, `nature` (light), `sacred`, `sea`, `elven_forest`, `celestial`, `parchment`
+- [x] Parchment: `surfaceColor` override via `colorScheme.copyWith()` para fundo bege real
+- [x] IDs de tema todos em inglês (migração automática para usuários com IDs antigos)
 - [x] Persistência da escolha via `shared_preferences`
-- [x] `ThemeMode` controlado por provider global
+- [x] `ThemeNotifier` controlado por provider global
 
-## imagens
+## Imagem do personagem
 
-- [ ] Imagens para representar os personagens, escolhido pelo usuário
-- [ ] Imagens fixas para melhorar a visualização criativa do app
+- [x] `CharacterAvatar` widget reutilizável (`lib/shared/widgets/character_avatar.dart`)
+- [x] Exibe foto (`FileImage`) se `imagePath` definido, senão exibe letra inicial
+- [x] Tap no avatar abre bottom sheet: "Choose photo" / "Remove photo" / "Cancel"
+- [x] Pick da galeria via `image_picker`; crop 1:1 via `image_cropper` (JPEG 85%)
+- [x] Opção "Change photo" também nos 3 pontinhos do card (popup menu)
+- [x] `updateImage(id, path?)` no `CharacterListNotifier` persiste no JSON
+- [x] `UCropActivity` declarada no `AndroidManifest.xml`; permissões `READ_MEDIA_IMAGES` / `READ_EXTERNAL_STORAGE` adicionadas
+- [x] try-catch no pick e no crop — falha silenciosa, sem crash
 
-# Sprint 9 — internacionalização
+## Pin e reordenação
 
-## i18n
+- [x] `isPinned: bool` e `sortOrder: int` no modelo `Character` (serialização com fallback `false`/`0`)
+- [x] `togglePin()` e `reorder()` (otimista — sem flash) no `CharacterListNotifier`
+- [x] `ReorderableListView.builder` na lista de personagens
+- [x] Pin badge no avatar; opções "Pin to top" / "Unpin" nos 3 pontinhos
+- [x] Ordem: pinados primeiro → sortOrder → createdAt
 
-- [ ] Configurar `flutter_localizations` + `intl`
-- [ ] Arquivos `arb`: `app_pt.arb` e `app_en.arb`
-- [ ] Traduzir todas as strings da UI (labels, botões, mensagens de erro, diálogos)
-- [ ] Seletor de idioma nas configurações (Português / English)
-- [ ] Persistência da escolha via `shared_preferences`
-- [ ] Padrão: idioma do sistema
+## Android
+
+- [x] Ícone adaptativo com foreground transparente (`ic_launcher_foreground.png`) e background preto
+- [x] `values-v31/styles.xml` com `windowSplashScreenBackground`, `windowSplashScreenAnimatedIcon` e `windowSplashScreenIconBackgroundColor` (elimina retângulo branco no splash)
+
+---
+
+# Sprint 9 — Internacionalização (planejada)
+
+Objetivo: suporte completo a Português (pt-BR) e Inglês (en), com idioma persistido e padrão seguindo o sistema.
+
+## Infraestrutura
+
+- [ ] Adicionar `flutter_localizations` e `intl` ao `pubspec.yaml`
+- [ ] Criar `l10n.yaml` na raiz (aponta para `lib/l10n/`, classe `AppLocalizations`)
+- [ ] Ativar `generate: true` no `pubspec.yaml`
+- [ ] Criar `lib/l10n/app_en.arb` (strings em inglês — source of truth)
+- [ ] Criar `lib/l10n/app_pt.arb` (tradução pt-BR)
+- [ ] Registrar `localizationsDelegates` e `supportedLocales` no `MaterialApp`
+
+## Provider de locale
+
+- [ ] `LocaleNotifier extends Notifier<Locale?>` + `localeProvider` (padrão: `null` = sistema)
+- [ ] Salvar/carregar `'selected_locale'` via `shared_preferences` (valores: `'en'`, `'pt'`, ou ausente)
+- [ ] Passar `locale: ref.watch(localeProvider)` no `MaterialApp`
+
+## Strings a extrair (~6 arquivos principais)
+
+- [ ] `character_list_screen.dart` — labels do popup menu, diálogos rename/delete, snackbars
+- [ ] `settings_screen.dart` — títulos, label do tema, nomes dos temas no picker
+- [ ] `character_detail_screen.dart` — títulos de abas, botões HP/slots, Long Rest
+- [ ] `character_creation/` — labels de etapas, botões, validações
+- [ ] `spell_browser_sheet.dart` — filtros, badges de escola/casting time
+- [ ] Diálogos globais — Export, Import, QR scanner
+
+## Configurações
+
+- [ ] Seção "Language" nas configurações com opções: System / English / Português
+- [ ] Persistência via `shared_preferences`
+
+---
+
+# Sprint 10 — Beta Testing
+
+Objetivo: distribuir o app para testadores externos e corrigir os bugs encontrados antes do lançamento.
+
+## Build & distribuição
+
+- [ ] Build de release Android (`.apk` ou `.aab`)
+- [ ] Distribuição via Firebase App Distribution ou arquivo direto
+- [ ] Checklist de smoke test para os testadores (criação, ficha, magias, export/import, tema, foto, pin)
+
+## Bugs e feedback
+
+- [ ] Canal de reporte (formulário / grupo)
+- [ ] Triagem e priorização dos bugs reportados
+- [ ] Ciclo de correção + nova build até estabilidade
+
+## Critérios de saída
+
+- [ ] Nenhum crash reproduzível nos fluxos principais
+- [ ] Feedback de UX incorporado ou documentado para versões futuras

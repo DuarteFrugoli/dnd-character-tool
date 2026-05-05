@@ -20,7 +20,8 @@
 - [x] Export / import via QR Code (geração + scanner com câmera)
 - [x] Notas livres por personagem (aba Notes com CRUD)
 - [x] Temas de cores
-- [ ] Imagem do personagem
+- [x] Imagem do personagem (galeria, crop 1:1, avatar na lista)
+- [x] Pin e reordenação de personagens
 - [ ] Internacionalização (i18n): Português e Inglês
 
 ---

@@ -257,6 +257,16 @@ class _CharacterCard extends ConsumerWidget {
                   .read(characterListProvider.notifier)
                   .togglePin(character.id);
             }
+            if (value == 'photo') {
+              if (!context.mounted) return;
+              await showCharacterPhotoPicker(
+                context,
+                currentImagePath: character.imagePath,
+                onImageChanged: (path) => ref
+                    .read(characterListProvider.notifier)
+                    .updateImage(character.id, path),
+              );
+            }
             if (value == 'export') {
               await exportCharacter();
             }
@@ -305,6 +315,7 @@ class _CharacterCard extends ConsumerWidget {
               value: 'pin',
               child: Text(character.isPinned ? 'Unpin' : 'Pin to top'),
             ),
+            const PopupMenuItem(value: 'photo', child: Text('Change photo')),
             const PopupMenuItem(value: 'rename', child: Text('Rename')),
             const PopupMenuItem(value: 'export', child: Text('Export')),
             const PopupMenuItem(value: 'delete', child: Text('Delete')),

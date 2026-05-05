@@ -41,7 +41,12 @@
       {
         "name": "Dark Elf (Drow)",
         "abilityScoreIncreases": { "charisma": 1 },
-        "traits": ["Superior Darkvision", "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"]
+        "traits": ["Superior Darkvision", "Sunlight Sensitivity", "Drow Magic", "Drow Weapon Training"],
+        "innateSpells": [
+          { "name": "Dancing Lights", "usesPerDay": null },
+          { "name": "Faerie Fire", "usesPerDay": 1 },
+          { "name": "Darkness", "usesPerDay": 1 }
+        ]
       }
     ]
   },
@@ -108,7 +113,10 @@
       {
         "name": "Forest Gnome",
         "abilityScoreIncreases": { "dexterity": 1 },
-        "traits": ["Natural Illusionist", "Speak with Small Beasts"]
+        "traits": ["Natural Illusionist", "Speak with Small Beasts"],
+        "innateSpells": [
+          { "name": "Minor Illusion", "usesPerDay": null }
+        ]
       },
       {
         "name": "Rock Gnome",
@@ -142,6 +150,11 @@
     "abilityScoreIncreases": { "intelligence": 1, "charisma": 2 },
     "traits": ["Darkvision", "Hellish Resistance", "Infernal Legacy"],
     "languages": ["Common", "Infernal"],
+    "innateSpells": [
+      { "name": "Thaumaturgy", "usesPerDay": null },
+      { "name": "Hellish Rebuke", "usesPerDay": 1 },
+      { "name": "Darkness", "usesPerDay": 1 }
+    ],
     "subraces": []
   }
 ]

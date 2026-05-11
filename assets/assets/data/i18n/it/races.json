@@ -1,0 +1,137 @@
+{
+  "Dwarf": {
+    "name": "Nano",
+    "languages": [
+      "Comune",
+      "Nanesco"
+    ],
+    "subraces": [
+      {
+        "name": "Nano delle colline"
+      },
+      {
+        "name": "Nano di montagna"
+      }
+    ]
+  },
+  "Elf": {
+    "name": "Elfo",
+    "languages": [
+      "Comune",
+      "Elfico"
+    ],
+    "subraces": [
+      {
+        "name": "Alto Elfo"
+      },
+      {
+        "name": "Elfo dei boschi"
+      },
+      {
+        "name": "Elfo Oscuro (Drow)"
+      }
+    ]
+  },
+  "Halfling": {
+    "name": "Mezzuomo",
+    "languages": [
+      "Comune",
+      "Mezzuomo"
+    ],
+    "subraces": [
+      {
+        "name": "Piede leggero"
+      },
+      {
+        "name": "Robusto"
+      }
+    ]
+  },
+  "Human": {
+    "name": "Umano",
+    "languages": [
+      "Comune",
+      "uno in più a tua scelta"
+    ],
+    "subraces": []
+  },
+  "Dragonborn": {
+    "name": "Sangue di Drago",
+    "languages": [
+      "Comune",
+      "Draconico"
+    ],
+    "subraces": [
+      {
+        "name": "Nero (acido)"
+      },
+      {
+        "name": "Blu (fulmine)"
+      },
+      {
+        "name": "Ottone (Fuoco)"
+      },
+      {
+        "name": "Bronzo (Fulmine)"
+      },
+      {
+        "name": "Rame (acido)"
+      },
+      {
+        "name": "Oro (Fuoco)"
+      },
+      {
+        "name": "Verde (veleno)"
+      },
+      {
+        "name": "Rosso (Fuoco)"
+      },
+      {
+        "name": "Argento (freddo)"
+      },
+      {
+        "name": "Bianco (freddo)"
+      }
+    ]
+  },
+  "Gnome": {
+    "name": "Gnomo",
+    "languages": [
+      "Comune",
+      "Gnomesco"
+    ],
+    "subraces": [
+      {
+        "name": "Gnomo della foresta"
+      },
+      {
+        "name": "Gnomo delle rocce"
+      }
+    ]
+  },
+  "Half-Elf": {
+    "name": "Mezzelfo",
+    "languages": [
+      "Comune",
+      "Elfico",
+      "uno in più a tua scelta"
+    ],
+    "subraces": []
+  },
+  "Half-Orc": {
+    "name": "Mezzorco",
+    "languages": [
+      "Comune",
+      "Orco"
+    ],
+    "subraces": []
+  },
+  "Tiefling": {
+    "name": "Tiefling",
+    "languages": [
+      "Comune",
+      "Infernale"
+    ],
+    "subraces": []
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "Potion of Healing": {
+    "name": "Pozione di guarigione",
+    "description": "Recuperi 2d4 + 2 punti ferita quando bevi questa pozione."
+  },
+  "Potion of Greater Healing": {
+    "name": "Pozione di Guarigione Maggiore",
+    "description": "Recuperi 4d4 + 4 punti ferita quando bevi questa pozione."
+  },
+  "Potion of Superior Healing": {
+    "name": "Pozione di guarigione superiore",
+    "description": "Recuperi 8d4 + 8 punti ferita quando bevi questa pozione."
+  },
+  "Potion of Supreme Healing": {
+    "name": "Pozione della Guarigione Suprema",
+    "description": "Recuperi 10d4 + 20 punti ferita quando bevi questa pozione."
+  },
+  "Bag of Holding": {
+    "name": "Borsa conservante",
+    "description": "Questa borsa ha uno spazio interno notevolmente più grande delle sue dimensioni esterne. La borsa può contenere fino a 500 libbre, non superando il volume di 64 piedi cubi. La borsa pesa 15 libbre, indipendentemente dal suo contenuto."
+  },
+  "+1 Weapon": {
+    "name": "+1 Arma",
+    "description": "Hai un bonus di +1 ai tiri per colpire e per i danni effettuati con quest'arma magica."
+  },
+  "+2 Weapon": {
+    "name": "+2 Arma",
+    "description": "Hai un bonus di +2 ai tiri per colpire e per i danni effettuati con quest'arma magica."
+  },
+  "+3 Weapon": {
+    "name": "+3 Arma",
+    "description": "Hai un bonus di +3 ai tiri per colpire e per i danni effettuati con quest'arma magica."
+  },
+  "+1 Armor": {
+    "name": "+1 Armatura",
+    "description": "Hai un bonus di +1 alla CA mentre indossi questa armatura."
+  },
+  "Cloak of Protection": {
+    "name": "Mantello di protezione",
+    "description": "Ottieni un bonus di +1 alla CA e ai tiri salvezza mentre indossi questo mantello."
+  },
+  "Ring of Protection": {
+    "name": "Anello di protezione",
+    "description": "Ottieni un bonus di +1 alla CA e ai tiri salvezza mentre indossi questo anello."
+  },
+  "Boots of Speed": {
+    "name": "Stivali di velocità",
+    "description": "Mentre indossi questi stivali, puoi utilizzare un'azione bonus e unire i talloni degli stivali per raddoppiare la velocità di camminata. Inoltre, il terreno difficile non ti costa movimento extra. L'effetto termina se usi un'azione bonus per battere nuovamente i talloni o se non indossi più gli stivali."
+  },
+  "Gauntlets of Ogre Power": {
+    "name": "Guanti del Potere degli Ogre",
+    "description": "Il tuo punteggio di Forza è 19 mentre indossi questi guanti. Non hanno alcun effetto su di te se la tua Forza è già pari o superiore a 19."
+  },
+  "Headband of Intellect": {
+    "name": "Fascia dell'Intelletto",
+    "description": "Il tuo punteggio di Intelligenza è 19 mentre indossi questa fascia. Non ha alcun effetto su di te se la tua Intelligenza è già 19 o superiore."
+  },
+  "Amulet of Health": {
+    "name": "Amuleto della Salute",
+    "description": "Il tuo punteggio di Costituzione è 19 mentre indossi questo amuleto. Non ha alcun effetto su di te se la tua Costituzione è già 19 o superiore."
+  },
+  "Wand of Magic Missiles": {
+    "name": "Bacchetta di missili magici",
+    "description": "Questa bacchetta ha 7 cariche. Mentre lo impugni, puoi usare un'azione per spendere 1 o più delle sue cariche per lanciare da esso l'incantesimo dardo incantato. Per 1 carica, lanci la versione di 1° livello dell'incantesimo. Puoi aumentare il livello dello slot incantesimo di uno per ogni carica aggiuntiva che spendi. La bacchetta recupera 1d6 + 1 cariche spese ogni giorno all'alba."
+  },
+  "Rope of Climbing": {
+    "name": "Corda da arrampicata",
+    "description": "Questa corda di seta lunga 18 metri pesa 1,4 kg e può sostenere fino a 1,5 kg. Se tieni un'estremità della corda e usi un'azione per pronunciare la parola di comando, la corda si anima. Come azione bonus, puoi comandare all'altra estremità di muoversi verso una destinazione a tua scelta."
+  }
+}

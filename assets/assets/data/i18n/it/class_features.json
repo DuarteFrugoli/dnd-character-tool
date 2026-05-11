@@ -1,0 +1,490 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Rabbia",
+      "description": "In battaglia combatti con ferocia primordiale. Durante il tuo turno, puoi entrare in ira come azione bonus. Mentre sei in ira, hai vantaggio alle prove di Forza e ai tiri salvezza, ottieni un bonus ai tiri per i danni in mischia usando Forza e hai resistenza ai danni contundenti, perforanti e taglienti. La tua rabbia dura 1 minuto. Termina presto se perdi i sensi o se il tuo turno termina e non hai attaccato una creatura ostile dal tuo ultimo turno o non hai subito danni da allora."
+    },
+    "Unarmored Defense": {
+      "name": "Difesa senza armatura",
+      "description": "Mentre non indossi alcuna armatura, la tua Classe Armatura è pari a 10 + il tuo modificatore di Destrezza + il tuo modificatore di Costituzione. Puoi usare uno scudo e ottenere comunque questo beneficio."
+    },
+    "Reckless Attack": {
+      "name": "Attacco spericolato",
+      "description": "Quando effettui il tuo primo attacco nel tuo turno, puoi decidere di attaccare in modo avventato. Ciò ti dà vantaggio sui tiri per colpire con armi da mischia usando la Forza durante questo turno, ma i tiri per colpire contro di te hanno vantaggio fino al tuo turno successivo."
+    },
+    "Danger Sense": {
+      "name": "Senso del pericolo",
+      "description": "Hai una strana sensazione di quando le cose nelle vicinanze non sono come dovrebbero essere. Hai vantaggio sui tiri salvezza di Destrezza contro gli effetti che puoi vedere, come trappole e incantesimi. Per ottenere questo beneficio non è possibile essere accecati, assordati o incapacitati."
+    },
+    "Primal Path": {
+      "name": "Sentiero Primordiale",
+      "description": "Scegli un percorso che modella la natura della tua rabbia."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Extra Attack": {
+      "name": "Attacco extra",
+      "description": "Puoi attaccare due volte, anziché una, ogni volta che esegui l'azione Attacco nel tuo turno."
+    },
+    "Fast Movement": {
+      "name": "Movimento veloce",
+      "description": "La tua velocità aumenta di 3 metri mentre non indossi un'armatura pesante."
+    },
+    "Feral Instinct": {
+      "name": "Istinto Ferale",
+      "description": "Il tuo istinto è così affinato che hai un vantaggio sui tiri di iniziativa. Inoltre, se sei sorpreso all'inizio del combattimento e non sei inabile, puoi agire normalmente nel tuo primo turno, ma solo se entri in ira prima di fare qualsiasi altra cosa in quel turno."
+    },
+    "Brutal Critical": {
+      "name": "Critico brutale",
+      "description": "Puoi lanciare un dado aggiuntivo per i danni dell'arma quando determini il danno extra per un colpo critico con un attacco in mischia. Ciò aumenta a due dadi aggiuntivi al 13° livello e tre dadi aggiuntivi al 17° livello."
+    },
+    "Relentless Rage": {
+      "name": "Rabbia implacabile",
+      "description": "La tua rabbia può farti continuare a combattere nonostante le ferite gravi. Se scendi a 0 punti ferita mentre sei in ira e non muori sul colpo, puoi effettuare un tiro salvezza su Costituzione con CD 10. Se ci riesci, scendi invece a 1 punto ferita. Ogni volta che usi questo privilegio dopo il primo, la CD aumenta di 5. Quando termini un riposo breve o lungo, la CD viene ripristinata a 10."
+    },
+    "Persistent Rage": {
+      "name": "Rabbia persistente",
+      "description": "La tua rabbia è così feroce che finisce presto solo se perdi i sensi o se scegli di porvi fine."
+    },
+    "Indomitable Might": {
+      "name": "Potenza indomabile",
+      "description": "Se il totale di una prova di Forza è inferiore al tuo punteggio di Forza, puoi usare quel punteggio al posto del totale."
+    },
+    "Primal Champion": {
+      "name": "Campione Primordiale",
+      "description": "Incarni il potere della natura selvaggia. I tuoi punteggi di Forza e Costituzione aumentano di 4. Il tuo massimo per questi punteggi è ora 24."
+    }
+  },
+  "Bard": {
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Hai imparato a districare e rimodellare il tessuto della realtà in armonia con i tuoi desideri e la tua musica. Il carisma è la tua abilità da incantatore."
+    },
+    "Bardic Inspiration": {
+      "name": "Ispirazione bardica",
+      "description": "Puoi ispirare gli altri attraverso parole o musica emozionanti. Come azione bonus, puoi dare a una creatura diversa da te un dado di Ispirazione Bardica (d6). Una volta nei successivi 10 minuti, la creatura può lanciare quel dado e aggiungere il numero a una prova di caratteristica, tiro per colpire o tiro salvezza effettuato."
+    },
+    "Jack of All Trades": {
+      "name": "Tuttofare",
+      "description": "Puoi aggiungere metà del tuo bonus di competenza, arrotondato per difetto, a qualsiasi prova di caratteristica effettuata che non includa già il tuo bonus di competenza."
+    },
+    "Song of Rest": {
+      "name": "Canto di riposo",
+      "description": "Puoi usare musica rilassante o orazioni per rivitalizzare i tuoi alleati feriti durante un breve riposo. Se tu o qualsiasi creatura amica che può sentire la tua esibizione recuperate punti ferita alla fine del riposo breve spendendo uno o più Dadi Vita, ciascuna di quelle creature recupera 1d6 punti ferita extra."
+    },
+    "Bard College": {
+      "name": "Collegio Bardo",
+      "description": "Approfondi le tecniche avanzate di un college per bardi di tua scelta."
+    },
+    "Expertise": {
+      "name": "Competenza",
+      "description": "Scegli due delle tue competenze. Il tuo bonus di competenza viene raddoppiato per qualsiasi prova di caratteristica effettuata che utilizzi una delle competenze scelte."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Font of Inspiration": {
+      "name": "Fonte di ispirazione",
+      "description": "Recuperi tutti gli usi spesi di Ispirazione Bardica quando termini un riposo breve o lungo."
+    },
+    "Countercharm": {
+      "name": "Controfascino",
+      "description": "Ottieni la capacità di usare note musicali o parole di potere per interrompere gli effetti di influenza mentale. Con un'azione, puoi iniziare un'esibizione che dura fino alla fine del tuo turno successivo. Durante questo periodo, tu e qualsiasi creatura amica entro 9 metri da te avete vantaggio ai tiri salvezza contro l'essere spaventati o affascinati."
+    },
+    "Magical Secrets": {
+      "name": "Segreti magici",
+      "description": "Hai saccheggiato la conoscenza magica da un ampio spettro di discipline. Scegli due incantesimi da qualsiasi classe, incluso questo. Un incantesimo che scegli deve essere di un livello che puoi lanciare. Gli incantesimi scelti contano come incantesimi da bardo per te."
+    },
+    "Superior Inspiration": {
+      "name": "Ispirazione superiore",
+      "description": "Quando tiri l'iniziativa e non hai più usi dell'Ispirazione Bardica, ne recuperi un uso."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Come canale del potere divino, puoi lanciare incantesimi da chierico. La saggezza è la tua abilità da incantatore."
+    },
+    "Divine Domain": {
+      "name": "Dominio Divino",
+      "description": "Scegli un dominio correlato alla tua divinità. La tua scelta ti garantisce incantesimi di dominio e altre funzionalità."
+    },
+    "Channel Divinity": {
+      "name": "Divinità del canale",
+      "description": "Ottieni la capacità di incanalare l'energia divina direttamente dalla tua divinità, usando quell'energia per alimentare effetti magici. Inizi con due di questi effetti: Scaccia Non Morti e un effetto determinato dal tuo dominio. Quando usi Channel Divinity, scegli quale effetto creare."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Destroy Undead": {
+      "name": "Distruggi i non morti",
+      "description": "Quando un non morto fallisce il suo tiro salvezza contro la tua capacità Scacciare Non Morti, la creatura viene immediatamente distrutta se il suo grado di sfida è pari o inferiore a una certa soglia (GS 1/2 al livello 5, che aumenta ai livelli più alti)."
+    },
+    "Divine Intervention": {
+      "name": "Intervento Divino",
+      "description": "Puoi invocare la tua divinità affinché intervenga a tuo favore quando il tuo bisogno è grande. Implorare l'aiuto della propria divinità come azione. Descrivi l'assistenza che cerchi e lancia i dadi percentili. Se ottieni un numero pari o inferiore al tuo livello da chierico, la tua divinità interviene."
+    }
+  },
+  "Druid": {
+    "Druidic": {
+      "name": "Druidico",
+      "description": "Conosci il druidico, il linguaggio segreto dei druidi. Puoi parlare la lingua e usarla per lasciare messaggi nascosti."
+    },
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Attingendo all'essenza divina della natura stessa, puoi lanciare incantesimi per modellare quell'essenza secondo la tua volontà. La saggezza è la tua abilità da incantatore."
+    },
+    "Wild Shape": {
+      "name": "Forma selvaggia",
+      "description": "A partire dal 2° livello, puoi usare la tua azione per assumere magicamente la forma di una bestia che hai già visto in precedenza. Puoi utilizzare questa funzione due volte. Recuperi gli usi spesi quando termini un riposo breve o lungo."
+    },
+    "Druid Circle": {
+      "name": "Circolo dei Druidi",
+      "description": "Scegli di identificarti con una cerchia di druidi."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Timeless Body": {
+      "name": "Corpo senza tempo",
+      "description": "La magia primordiale che eserciti ti fa invecchiare più lentamente. Per ogni 10 anni che passano, il tuo corpo invecchia solo 1 anno."
+    },
+    "Beast Spells": {
+      "name": "Incantesimi della Bestia",
+      "description": "Puoi lanciare molti dei tuoi incantesimi da druido in qualsiasi forma tu assuma usando Forma selvatica. Puoi eseguire le componenti somatiche e verbali di un incantesimo da druido mentre sei in forma bestiale, ma non sei in grado di fornire componenti materiali."
+    },
+    "Archdruid": {
+      "name": "Arcidruido",
+      "description": "Puoi utilizzare la tua forma selvatica un numero illimitato di volte. Inoltre, puoi ignorare le componenti verbali e somatiche dei tuoi incantesimi da druido, così come qualsiasi componente materiale che non abbia un costo e non venga consumato da un incantesimo."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Stile di combattimento",
+      "description": "Adotti uno stile particolare di combattimento come tua specialità. Scegli uno stile di combattimento: tiro con l'arco, difesa, duello, combattimento con grandi armi, protezione o combattimento con due armi."
+    },
+    "Second Wind": {
+      "name": "Secondo vento",
+      "description": "Hai una riserva limitata di resistenza a cui puoi attingere per proteggerti dai danni. Durante il tuo turno, puoi utilizzare un'azione bonus per recuperare punti ferita pari a 1d10 + il tuo livello da guerriero."
+    },
+    "Action Surge": {
+      "name": "Aumento d'azione",
+      "description": "A partire dal 2° livello, puoi spingerti oltre i tuoi normali limiti per un momento. Durante il tuo turno, puoi eseguire un'azione aggiuntiva oltre alla tua azione normale e a un'eventuale azione bonus."
+    },
+    "Martial Archetype": {
+      "name": "Archetipo marziale",
+      "description": "Scegli un archetipo che cerchi di emulare nei tuoi stili e tecniche di combattimento."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Extra Attack": {
+      "name": "Attacco extra",
+      "description": "Puoi attaccare due volte, anziché una, ogni volta che esegui l'azione Attacco nel tuo turno."
+    },
+    "Indomitable": {
+      "name": "Indomabile",
+      "description": "Puoi ripetere un tiro salvezza che fallisci. Se lo fai, devi utilizzare il nuovo tiro e non potrai utilizzare nuovamente questo privilegio finché non avrai terminato un riposo lungo."
+    }
+  },
+  "Monk": {
+    "Unarmored Defense": {
+      "name": "Difesa senza armatura",
+      "description": "Mentre non indossi alcuna armatura e non impugni uno scudo, la tua CA è pari a 10 + il tuo modificatore di Destrezza + il tuo modificatore di Saggezza."
+    },
+    "Martial Arts": {
+      "name": "Arti Marziali",
+      "description": "La pratica delle arti marziali ti conferisce la padronanza degli stili di combattimento che utilizzano colpi senz'armi e armi da monaco. Puoi usare Destrezza invece di Forza per i tiri per colpire e per i danni. Puoi tirare un d4 al posto del normale danno del tuo colpo senz'armi o della tua arma da monaco. Quando usi l'azione Attacco con un colpo senz'armi o un'arma da monaco, puoi effettuare un colpo senz'armi come azione bonus."
+    },
+    "Ki": {
+      "name": "Ki",
+      "description": "Il tuo allenamento ti consente di sfruttare l'energia mistica del ki. Il tuo accesso a questa energia è rappresentato da un numero di punti ki pari al tuo livello da monaco. Puoi spendere punti ki per alimentare le funzioni ki: Raffica di colpi, Difesa paziente, Passo del vento."
+    },
+    "Unarmored Movement": {
+      "name": "Movimento senza armatura",
+      "description": "La tua velocità aumenta di 3 metri mentre non indossi un'armatura o non impugni uno scudo. Questo bonus aumenta quando raggiungi determinati livelli da monaco."
+    },
+    "Monastic Tradition": {
+      "name": "Tradizione monastica",
+      "description": "Ti impegni in una tradizione monastica."
+    },
+    "Deflect Missiles": {
+      "name": "Deviare i missili",
+      "description": "Puoi usare la tua reazione per deviare o catturare il missile quando vieni colpito da un attacco con arma a distanza. Quando lo fai, il danno che subisci dall'attacco viene ridotto di 1d10 + il tuo modificatore di Destrezza + il tuo livello da monaco."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Slow Fall": {
+      "name": "Caduta lenta",
+      "description": "Puoi usare la tua reazione quando cadi per ridurre qualsiasi danno da caduta che subisci di un ammontare pari a cinque volte il tuo livello da monaco."
+    },
+    "Extra Attack": {
+      "name": "Attacco extra",
+      "description": "Puoi attaccare due volte, anziché una, ogni volta che esegui l'azione Attacco nel tuo turno."
+    },
+    "Stunning Strike": {
+      "name": "Colpo sorprendente",
+      "description": "Puoi interferire con il flusso del ki nel corpo di un avversario. Quando colpisci un'altra creatura con un attacco con arma da mischia, puoi spendere 1 punto ki per tentare un colpo stordente. Il bersaglio deve riuscire in un tiro salvezza su Costituzione o rimanere stordito fino alla fine del tuo turno successivo."
+    },
+    "Stillness of Mind": {
+      "name": "Quiete della mente",
+      "description": "Puoi usare la tua azione per porre fine a un effetto su te stesso che ti rende affascinato o spaventato."
+    },
+    "Timeless Body": {
+      "name": "Corpo senza tempo",
+      "description": "Il tuo ki ti sostiene in modo che tu non soffra della fragilità della vecchiaia e non puoi invecchiare magicamente. Si muore comunque di vecchiaia, però. Inoltre, non hai più bisogno di cibo o acqua."
+    },
+    "Empty Body": {
+      "name": "Corpo vuoto",
+      "description": "Puoi usare la tua azione per spendere 4 punti ki per diventare invisibile per 1 minuto. Durante questo periodo, hai anche resistenza a tutti i danni tranne quelli di forza."
+    },
+    "Perfect Self": {
+      "name": "Sé perfetto",
+      "description": "Quando tiri per l'iniziativa e non hai punti ki rimanenti, recuperi 4 punti ki."
+    }
+  },
+  "Paladin": {
+    "Divine Sense": {
+      "name": "Senso Divino",
+      "description": "La presenza di un forte male si registra nei tuoi sensi come un odore nocivo e un bene potente risuona nelle tue orecchie come una musica celestiale. Con un’azione, puoi aprire la tua consapevolezza per individuare tali forze. Fino alla fine del tuo turno successivo, conosci la posizione di qualsiasi celestiale, immondo o non morto entro 18 metri da te che non sia coperto da copertura totale."
+    },
+    "Lay on Hands": {
+      "name": "Imporre le mani",
+      "description": "Il tuo tocco benedetto può guarire le ferite. Possiedi una riserva di potere curativo che si rigenera quando fai un riposo lungo. Con quella riserva, puoi ripristinare un numero totale di punti ferita pari al tuo livello da paladino × 5."
+    },
+    "Fighting Style": {
+      "name": "Stile di combattimento",
+      "description": "Adotta uno stile di combattimento particolare come tua specialità. Scegli tra: Difesa, Duello, Combattimento con armi grandi o Protezione."
+    },
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Hai imparato ad attingere alla magia divina attraverso la meditazione e la preghiera per lanciare incantesimi. Il carisma è la tua abilità da incantatore."
+    },
+    "Divine Smite": {
+      "name": "Punizione Divina",
+      "description": "Quando colpisci una creatura con un attacco con un'arma da mischia, puoi spendere uno slot incantesimo per infliggere danni radiosi al bersaglio, oltre al danno dell'arma. Il danno extra è 2d8 per uno slot incantesimo di 1° livello, più 1d8 per ogni livello di incantesimo superiore al 1°, fino a un massimo di 5d8."
+    },
+    "Sacred Oath": {
+      "name": "Giuramento sacro",
+      "description": "Giura per sempre il giuramento che ti vincola come paladino. Fino a questo momento sei stato in una fase preparatoria, impegnato nel percorso ma non ancora giurato di seguirlo."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Extra Attack": {
+      "name": "Attacco extra",
+      "description": "Puoi attaccare due volte, anziché una, ogni volta che esegui l'azione Attacco nel tuo turno."
+    },
+    "Aura of Protection": {
+      "name": "Aura di protezione",
+      "description": "Ogni volta che tu o una creatura amica entro 3 metri da te dovete effettuare un Tiro Salvezza, la creatura ottiene un bonus al Tiro Salvezza pari al tuo modificatore di Carisma (con un bonus minimo di +1). Devi essere consapevole per concedere questo bonus."
+    },
+    "Aura of Courage": {
+      "name": "Aura di coraggio",
+      "description": "Tu e le creature amiche entro 3 metri da te non potete essere spaventati mentre sei cosciente."
+    },
+    "Cleansing Touch": {
+      "name": "Tocco purificatore",
+      "description": "Puoi usare la tua azione per terminare un incantesimo su te stesso o su una creatura consenziente che tocchi."
+    }
+  },
+  "Ranger": {
+    "Favored Enemy": {
+      "name": "Nemico favorito",
+      "description": "Hai una significativa esperienza nello studio, nel monitoraggio, nella caccia e persino nel parlare con un certo tipo di nemico. Scegli un tipo di nemico prescelto: aberrazioni, bestie, celestiali, costrutti, draghi, elementali, fate, immondi, giganti, mostruosità, melme, piante o non morti. Hai vantaggio sulle prove di Saggezza (Sopravvivenza) per rintracciare i tuoi nemici preferiti, così come sulle prove di Intelligenza per richiamare informazioni su di loro."
+    },
+    "Natural Explorer": {
+      "name": "Esploratore naturale",
+      "description": "Hai particolare familiarità con un tipo di ambiente naturale e sei abile nel viaggiare e sopravvivere in tali regioni. Scegli un tipo di terreno preferito: artico, costa, deserto, foresta, prateria, montagna, palude o Sottosuolo."
+    },
+    "Fighting Style": {
+      "name": "Stile di combattimento",
+      "description": "Adotta uno stile di combattimento particolare come tua specialità. Scegli tra: Tiro con l'arco, Difesa, Duello o Combattimento con due armi."
+    },
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Hai imparato a usare l'essenza magica della natura per lanciare incantesimi. La saggezza è la tua abilità da incantatore."
+    },
+    "Ranger Archetype": {
+      "name": "Archetipo del Ranger",
+      "description": "Scegli un archetipo che ti sforzi di emulare."
+    },
+    "Primeval Awareness": {
+      "name": "Consapevolezza primordiale",
+      "description": "Puoi usare la tua azione e spendere uno slot incantesimo da ranger per focalizzare la tua consapevolezza sulla regione intorno a te. Per 1 minuto per livello dello slot incantesimo speso, puoi percepire se determinati tipi di creature sono presenti entro 1 miglio da te."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Extra Attack": {
+      "name": "Attacco extra",
+      "description": "Puoi attaccare due volte, anziché una, ogni volta che esegui l'azione Attacco nel tuo turno."
+    },
+    "Land's Stride": {
+      "name": "Il passo della terra",
+      "description": "Muoversi attraverso terreni difficili non magici non costa movimento extra. Puoi anche passare attraverso le piante non magiche senza esserne rallentato e senza subire danni se hanno spine, aculei o pericoli simili."
+    },
+    "Hide in Plain Sight": {
+      "name": "Nasconditi in piena vista",
+      "description": "Puoi spendere 1 minuto per creare mimetizzazione per te stesso. Devi avere accesso a fango fresco, terra, piante, fuliggine e altri materiali naturali con cui creare il tuo camuffamento. Una volta mimetizzato in questo modo, puoi provare a nasconderti premendoti contro una superficie solida, come un albero o un muro, che sia alta e larga almeno quanto te. Ottieni un bonus di +10 alle prove di Destrezza (Furtività) fintanto che rimani lì senza muoverti o intraprendere azioni."
+    },
+    "Vanish": {
+      "name": "Svanire",
+      "description": "Puoi utilizzare l'azione Nascondersi come azione bonus durante il tuo turno. Inoltre, non puoi essere rintracciato con mezzi non magici, a meno che tu non scelga di lasciare una traccia."
+    },
+    "Feral Senses": {
+      "name": "Sensi selvaggi",
+      "description": "Ottieni sensi soprannaturali che ti aiutano a combattere le creature che non puoi vedere. Quando attacchi una creatura che non puoi vedere, la tua incapacità di vederla non impone svantaggio ai tuoi tiri per colpire contro di essa."
+    },
+    "Foe Slayer": {
+      "name": "Uccisore di nemici",
+      "description": "Diventi un impareggiabile cacciatore dei tuoi nemici. Una volta per ciascuno dei tuoi turni, puoi aggiungere il tuo modificatore di Saggezza al tiro per colpire o al tiro per i danni di un attacco che effettui contro uno dei tuoi nemici preferiti."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Competenza",
+      "description": "Scegli due delle tue competenze in Abilità, oppure una delle tue competenze in Abilità e la tua competenza con gli strumenti da ladro. Il tuo bonus di competenza viene raddoppiato per qualsiasi prova di caratteristica effettuata che utilizzi una delle competenze scelte."
+    },
+    "Sneak Attack": {
+      "name": "Attacco furtivo",
+      "description": "Sai come colpire in modo sottile e sfruttare la distrazione del nemico. Una volta per turno, puoi infliggere 1d6 danni extra a una creatura colpita con un attacco se hai vantaggio sul tiro per colpire. L'attacco deve utilizzare un'arma fine o a distanza. Non hai bisogno di vantaggio al tiro per colpire se un altro nemico del bersaglio si trova entro 1,5 metri da esso, quel nemico non è incapacitato e non hai svantaggio al tiro per colpire. L'ammontare del danno extra aumenta man mano che sali di livello in questa classe."
+    },
+    "Thieves' Cant": {
+      "name": "Canzone dei ladri",
+      "description": "Durante il tuo addestramento da ladro hai imparato il gergo dei ladri, un mix segreto di dialetto, gergo e codice che ti consente di nascondere messaggi in conversazioni apparentemente normali."
+    },
+    "Cunning Action": {
+      "name": "Azione astuta",
+      "description": "La tua rapidità di pensiero e la tua agilità ti consentono di muoverti e agire rapidamente. Puoi effettuare un'azione bonus in ciascuno dei tuoi turni di combattimento. Questa azione può essere utilizzata solo per eseguire l'azione Scattare, Disingaggiarsi o Nascondersi."
+    },
+    "Roguish Archetype": {
+      "name": "Archetipo Ladro",
+      "description": "Scegli un archetipo che emuli nell'esercizio delle tue abilità da ladro."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Uncanny Dodge": {
+      "name": "Schivata inquietante",
+      "description": "Quando un attaccante che puoi vedere ti colpisce con un attacco, puoi usare la tua reazione per dimezzare il danno dell'attacco contro di te."
+    },
+    "Evasion": {
+      "name": "Evasione",
+      "description": "Quando sei soggetto a un effetto che ti consente di effettuare un tiro salvezza su Destrezza per subire solo la metà dei danni, non subisci invece alcun danno se riesci nel tiro salvezza e solo la metà dei danni se fallisci."
+    },
+    "Reliable Talent": {
+      "name": "Talento affidabile",
+      "description": "Hai affinato le abilità che hai scelto finché non si avvicinano alla perfezione. Ogni volta che effettui una prova di caratteristica che ti consente di aggiungere il tuo bonus di competenza, puoi considerare un tiro del d20 pari a 9 o inferiore come un 10."
+    },
+    "Blindsense": {
+      "name": "Senso cieco",
+      "description": "Se sei in grado di udire, sei consapevole della posizione di qualsiasi creatura nascosta o invisibile entro 3 metri da te."
+    },
+    "Slippery Mind": {
+      "name": "Mente sfuggente",
+      "description": "Hai acquisito una maggiore forza mentale. Ottieni competenza nei tiri salvezza su Saggezza."
+    },
+    "Elusive": {
+      "name": "Inafferrabile",
+      "description": "Sei così evasivo che gli aggressori raramente prendono il sopravvento contro di te. Nessun tiro per colpire ha vantaggio contro di te finché non sei incapace."
+    },
+    "Stroke of Luck": {
+      "name": "Colpo di fortuna",
+      "description": "Hai un talento straordinario per avere successo quando è necessario. Se il tuo attacco manca un bersaglio nel raggio d'azione, puoi trasformare il mancato attacco in un colpo a segno. In alternativa, se fallisci una prova di abilità, puoi considerare il tiro del d20 come un 20."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Un evento nel tuo passato, o nella vita di un genitore o antenato, ha lasciato un segno indelebile in te, infondendoti di magia arcana. Il carisma è la tua abilità da incantatore."
+    },
+    "Sorcerous Origin": {
+      "name": "Origine stregonesca",
+      "description": "Scegli un'origine stregonesca, che descriva la fonte del tuo potere magico innato."
+    },
+    "Font of Magic": {
+      "name": "Fonte della magia",
+      "description": "Attingi a una profonda fonte di magia dentro di te. Questa fonte è rappresentata da punti stregoneria, che ti consentono di creare una varietà di effetti magici. Hai 2 punti stregoneria al 2° livello e guadagni 1 punto aggiuntivo per ogni livello oltre il 2°."
+    },
+    "Metamagic": {
+      "name": "Metamagia",
+      "description": "Ottieni la capacità di distorcere i tuoi incantesimi per adattarli alle tue esigenze. Ottieni due opzioni di metamagia a tua scelta tra: Incantesimo attento, Incantesimo distante, Incantesimo potenziato, Incantesimo esteso, Incantesimo intensificato, Incantesimo rapido, Incantesimo sottile, Incantesimo gemellato."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Sorcerous Restoration": {
+      "name": "Restaurazione stregonesca",
+      "description": "Recuperi 4 punti stregoneria spesi ogni volta che termini un riposo breve."
+    }
+  },
+  "Warlock": {
+    "Otherworldly Patron": {
+      "name": "Patrono ultraterreno",
+      "description": "Hai stretto un patto con un essere ultraterreno di tua scelta: l'Arcifey, il Demone o il Grande Antico, ognuno dei quali è dettagliato alla fine della descrizione della classe."
+    },
+    "Pact Magic": {
+      "name": "La magia del patto",
+      "description": "La tua ricerca arcana e la magia conferitati dal tuo mecenate ti hanno dato facilità con gli incantesimi. Il carisma è la tua abilità da incantatore. A differenza degli altri incantatori, tutti gli slot incantesimo consumati vengono ripristinati con un riposo breve o lungo."
+    },
+    "Eldritch Invocations": {
+      "name": "Invocazioni misteriose",
+      "description": "Nel tuo studio della conoscenza occulta, hai portato alla luce invocazioni misteriose, frammenti di conoscenza proibita che ti conferiscono un'abilità magica duratura. Ottieni due invocazioni mistiche a tua scelta."
+    },
+    "Pact Boon": {
+      "name": "Patto di Bene",
+      "description": "Il tuo patrono ultraterreno ti concede un dono per il tuo servizio leale. Ottieni uno dei seguenti privilegi a tua scelta: Patto della Catena, Patto della Lama o Patto del Tomo."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Mystic Arcanum": {
+      "name": "Arcano mistico",
+      "description": "Il tuo protettore ti concede un segreto magico chiamato arcano. Scegli un incantesimo di 6° livello dalla lista degli incantesimi dello stregone come questo arcano. Puoi lanciare il tuo incantesimo arcano una volta senza spendere uno slot incantesimo. Devi terminare un riposo lungo prima di farlo di nuovo."
+    },
+    "Eldritch Master": {
+      "name": "Maestro Eldritch",
+      "description": "Puoi attingere alla tua riserva interiore di potere mistico mentre supplichi il tuo patrono di riguadagnare gli slot incantesimo esauriti. Puoi spendere 1 minuto supplicando il tuo patrono di chiedere aiuto per recuperare tutti gli slot incantesimo spesi dalla tua funzione Patto Magico. Una volta riacquistati gli slot incantesimo con questo privilegio, è necessario terminare un riposo lungo prima di poterlo fare di nuovo."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Come studente di magia arcana, possiedi un libro degli incantesimi contenente 6 incantesimi di 1° livello a tua scelta. L'intelligenza è la tua abilità da incantatore."
+    },
+    "Arcane Recovery": {
+      "name": "Recupero Arcano",
+      "description": "Hai imparato a riacquistare parte della tua energia magica studiando il tuo libro degli incantesimi. Una volta al giorno, quando termini un riposo breve, puoi scegliere gli slot incantesimo spesi da recuperare. Gli slot incantesimo possono avere un livello combinato pari o inferiore alla metà del tuo livello da mago (arrotondato per eccesso) e nessuno degli slot può essere di 6° livello o superiore."
+    },
+    "Arcane Tradition": {
+      "name": "Tradizione Arcana",
+      "description": "Scegli una tradizione arcana, modellando la tua pratica della magia attraverso una delle seguenti scuole: Abiurazione, Evocazione, Divinazione, Ammaliamento, Evocazione, Illusione, Necromanzia o Trasmutazione."
+    },
+    "Ability Score Improvement": {
+      "name": "Miglioramento del punteggio di abilità",
+      "description": "Aumenta un punteggio di caratteristica di 2, o due punteggi di caratteristica di 1. Non può superare 20."
+    },
+    "Spell Mastery": {
+      "name": "Padronanza degli incantesimi",
+      "description": "Hai raggiunto una tale padronanza su alcuni incantesimi che puoi lanciarli a piacimento. Scegli un incantesimo da mago di 1° livello e un incantesimo da mago di 2° livello presenti nel tuo libro degli incantesimi. Puoi lanciare quegli incantesimi al loro livello più basso senza spendere uno slot incantesimo quando li hai preparati."
+    },
+    "Signature Spells": {
+      "name": "Incantesimi caratteristici",
+      "description": "Ottieni la padronanza di due potenti incantesimi e puoi lanciarli con poco sforzo. Scegli due incantesimi da mago di 3° livello nel tuo libro degli incantesimi come incantesimi distintivi. Hai sempre questi incantesimi preparati, non contano nel numero di incantesimi che hai preparato e puoi lanciarli ciascuno una volta al 3° livello senza spendere uno slot incantesimo. Quando lo fai, non puoi farlo di nuovo finché non finisci un riposo breve o lungo."
+    }
+  }
+}

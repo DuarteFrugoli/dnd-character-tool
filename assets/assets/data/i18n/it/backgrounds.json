@@ -1,0 +1,181 @@
+{
+  "Acolyte": {
+    "name": "Accolito",
+    "startingEquipment": [
+      "Simbolo sacro",
+      "Libro di preghiere o ruota di preghiera",
+      "5 bastoncini di incenso",
+      "Paramenti",
+      "Abiti comuni",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "Il rifugio dei fedeli",
+      "description": "Tu e i tuoi compagni potete ricevere cure e cure gratuite nei templi della vostra fede e potete chiedere aiuto ai sacerdoti."
+    }
+  },
+  "Charlatan": {
+    "name": "Ciarlatano",
+    "startingEquipment": [
+      "Bei vestiti",
+      "Kit di travestimento",
+      "Strumenti del truffatore di tua scelta",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "Falsa identità",
+      "description": "Hai creato una seconda identità, inclusa documentazione, conoscenze consolidate e travestimenti."
+    }
+  },
+  "Criminal": {
+    "name": "Penale",
+    "startingEquipment": [
+      "Piede di porco",
+      "Abiti comuni scuri con cappuccio",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "Contatto criminale",
+      "description": "Hai un contatto affidabile che funge da collegamento con una rete di criminali."
+    }
+  },
+  "Entertainer": {
+    "name": "Intrattenitore",
+    "startingEquipment": [
+      "Strumento musicale",
+      "Il favore di un ammiratore",
+      "Costume",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "A grande richiesta",
+      "description": "Puoi sempre trovare un posto dove esibirti e ricevere alloggio gratuito e cibo di modesta qualità."
+    }
+  },
+  "Folk Hero": {
+    "name": "Eroe popolare",
+    "startingEquipment": [
+      "Gli strumenti dell'artigiano",
+      "Pala",
+      "Pentola in ferro",
+      "Abiti comuni",
+      "10 mo"
+    ],
+    "feature": {
+      "name": "Ospitalità rustica",
+      "description": "La gente comune proteggerà te e i tuoi compagni, ti nasconderà e non ti tradirà."
+    }
+  },
+  "Guild Artisan": {
+    "name": "Artigiano della Gilda",
+    "startingEquipment": [
+      "Gli strumenti dell'artigiano",
+      "Lettera di presentazione della tua gilda",
+      "Abiti da viaggiatore",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "Iscrizione alla gilda",
+      "description": "La tua gilda offre alloggio, assistenza legale e assistenza e si aspetta in cambio quote e lealtà."
+    }
+  },
+  "Hermit": {
+    "name": "Eremita",
+    "startingEquipment": [
+      "Custodia a scorrimento con note",
+      "Coperta invernale",
+      "Abiti comuni",
+      "Kit di erboristeria",
+      "5 mo"
+    ],
+    "feature": {
+      "name": "Scoperta",
+      "description": "La tua solitudine ha prodotto una scoperta unica: una grande verità, un segreto o un luogo nascosto."
+    }
+  },
+  "Noble": {
+    "name": "Nobile",
+    "startingEquipment": [
+      "Bei vestiti",
+      "Anello con sigillo",
+      "Pergamena dell'albero genealogico",
+      "25 mo"
+    ],
+    "feature": {
+      "name": "Posizione di privilegio",
+      "description": "Le persone danno per scontato il meglio di te. Sei il benvenuto nell'alta società e puoi assicurarti un'udienza con un nobile locale."
+    }
+  },
+  "Outlander": {
+    "name": "Straniero",
+    "startingEquipment": [
+      "Personale",
+      "Trappola da caccia",
+      "Trofeo di un animale",
+      "Abiti da viaggiatore",
+      "10 mo"
+    ],
+    "feature": {
+      "name": "Vagabondo",
+      "description": "Puoi trovare cibo e acqua fresca per te e per un massimo di altri 5 ogni giorno e ricordare la disposizione generale del terreno."
+    }
+  },
+  "Sage": {
+    "name": "Saggio",
+    "startingEquipment": [
+      "Flacone di inchiostro nero",
+      "Penna d'oca",
+      "Piccolo coltello",
+      "Lettera di un collega morto",
+      "Abiti comuni",
+      "10 mo"
+    ],
+    "feature": {
+      "name": "Ricercatore",
+      "description": "Sai dove trovare informazioni oscure. Se non lo sai, sai chi lo sa."
+    }
+  },
+  "Sailor": {
+    "name": "Marinaio",
+    "startingEquipment": [
+      "Perno di assicurazione (mazza)",
+      "50 piedi di corda di seta",
+      "Fascino fortunato",
+      "Abiti comuni",
+      "10 mo"
+    ],
+    "feature": {
+      "name": "Passaggio della nave",
+      "description": "Puoi garantire il passaggio gratuito sulle navi a vela per te e i tuoi compagni in cambio di manodopera."
+    }
+  },
+  "Soldier": {
+    "name": "Soldato",
+    "startingEquipment": [
+      "Insegne di rango",
+      "Trofeo di un nemico caduto",
+      "Mazzo di carte o dadi",
+      "Abiti comuni",
+      "10 mo"
+    ],
+    "feature": {
+      "name": "Grado militare",
+      "description": "I soldati fedeli alla tua precedente fazione riconoscono il tuo grado. Puoi invocare il tuo grado per ottenere influenza e accesso ai campi militari."
+    }
+  },
+  "Urchin": {
+    "name": "Monello",
+    "startingEquipment": [
+      "Piccolo coltello",
+      "Mappa della tua città natale",
+      "Topo domestico",
+      "Segno dei tuoi genitori",
+      "Abiti comuni",
+      "10 mo"
+    ],
+    "feature": {
+      "name": "Segreti della città",
+      "description": "Conosci gli schemi segreti delle città e puoi trovare passaggi attraverso le aree urbane due volte più velocemente del normale."
+    }
+  }
+}

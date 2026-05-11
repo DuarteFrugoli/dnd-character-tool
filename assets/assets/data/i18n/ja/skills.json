@@ -1,0 +1,56 @@
+{
+  "Acrobatics": {
+    "name": "アクロバット"
+  },
+  "Animal Handling": {
+    "name": "動物の取り扱い"
+  },
+  "Arcana": {
+    "name": "アルカナ"
+  },
+  "Athletics": {
+    "name": "陸上競技"
+  },
+  "Deception": {
+    "name": "欺瞞"
+  },
+  "History": {
+    "name": "歴史"
+  },
+  "Insight": {
+    "name": "洞察力"
+  },
+  "Intimidation": {
+    "name": "脅迫"
+  },
+  "Investigation": {
+    "name": "調査"
+  },
+  "Medicine": {
+    "name": "薬"
+  },
+  "Nature": {
+    "name": "自然"
+  },
+  "Perception": {
+    "name": "感知"
+  },
+  "Performance": {
+    "name": "パフォーマンス"
+  },
+  "Persuasion": {
+    "name": "説得"
+  },
+  "Religion": {
+    "name": "宗教"
+  },
+  "Sleight of Hand": {
+    "name": "スライハンド"
+  },
+  "Stealth": {
+    "name": "ステルス"
+  },
+  "Survival": {
+    "name": "サバイバル"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "Acolyte": {
+    "name": "Acolyte",
+    "startingEquipment": [
+      "Symbole sacré",
+      "Livre de prières ou moulin à prières",
+      "5 bâtons d'encens",
+      "Vêtements",
+      "Vêtements communs",
+      "15 pièces d'or"
+    ],
+    "feature": {
+      "name": "Refuge des fidèles",
+      "description": "Vous et vos compagnons pouvez recevoir une guérison et des soins gratuits dans les temples de votre foi, et vous pouvez faire appel à l’aide des prêtres."
+    }
+  },
+  "Charlatan": {
+    "name": "Charlatan",
+    "startingEquipment": [
+      "Beaux vêtements",
+      "Trousse de déguisement",
+      "Outils du con de votre choix",
+      "15 pièces d'or"
+    ],
+    "feature": {
+      "name": "Fausse identité",
+      "description": "Vous avez créé une deuxième identité, comprenant des documents, des connaissances établies et des déguisements."
+    }
+  },
+  "Criminal": {
+    "name": "Criminel",
+    "startingEquipment": [
+      "Pied de biche",
+      "Vêtements communs sombres avec capuche",
+      "15 pièces d'or"
+    ],
+    "feature": {
+      "name": "Contact criminel",
+      "description": "Vous disposez d’un contact fiable qui agit comme agent de liaison avec un réseau de criminels."
+    }
+  },
+  "Entertainer": {
+    "name": "Artiste",
+    "startingEquipment": [
+      "Instrument de musique",
+      "La faveur d'un admirateur",
+      "Costume",
+      "15 pièces d'or"
+    ],
+    "feature": {
+      "name": "À la demande générale",
+      "description": "Vous pouvez toujours trouver un endroit pour vous produire et recevoir un hébergement gratuit et de la nourriture de qualité modeste."
+    }
+  },
+  "Folk Hero": {
+    "name": "Héros populaire",
+    "startingEquipment": [
+      "Les outils de l'artisan",
+      "Pelle",
+      "Pot en fer",
+      "Vêtements communs",
+      "10 pièces d'or"
+    ],
+    "feature": {
+      "name": "Hospitalité rustique",
+      "description": "Les gens ordinaires vous abriteront, vous et vos compagnons, vous cacheront et ne vous trahiront pas."
+    }
+  },
+  "Guild Artisan": {
+    "name": "Artisan de guilde",
+    "startingEquipment": [
+      "Les outils de l'artisan",
+      "Lettre d'introduction de votre guilde",
+      "Vêtements du voyageur",
+      "15 pièces d'or"
+    ],
+    "feature": {
+      "name": "Adhésion à une guilde",
+      "description": "Votre guilde propose un hébergement, une aide juridique et une assistance – et attend en retour des cotisations et de la loyauté."
+    }
+  },
+  "Hermit": {
+    "name": "Ermite",
+    "startingEquipment": [
+      "Étui à défilement avec notes",
+      "Couverture d'hiver",
+      "Vêtements communs",
+      "Kit d'herboristerie",
+      "5 po"
+    ],
+    "feature": {
+      "name": "Découverte",
+      "description": "Votre solitude a donné lieu à une découverte unique : une grande vérité, un secret ou un lieu caché."
+    }
+  },
+  "Noble": {
+    "name": "Noble",
+    "startingEquipment": [
+      "Beaux vêtements",
+      "Chevalière",
+      "Parchemin de pedigree",
+      "25 pièces d'or"
+    ],
+    "feature": {
+      "name": "Position privilégiée",
+      "description": "Les gens prennent le meilleur de vous. Vous êtes le bienvenu dans la haute société et pouvez obtenir une audience avec un noble local."
+    }
+  },
+  "Outlander": {
+    "name": "Étranger",
+    "startingEquipment": [
+      "Personnel",
+      "Piège de chasse",
+      "Trophée d'un animal",
+      "Vêtements du voyageur",
+      "10 pièces d'or"
+    ],
+    "feature": {
+      "name": "Vagabond",
+      "description": "Vous pouvez trouver de la nourriture et de l'eau fraîche pour vous et jusqu'à 5 autres personnes chaque jour, et rappeler la disposition générale du terrain."
+    }
+  },
+  "Sage": {
+    "name": "Sage",
+    "startingEquipment": [
+      "Bouteille d'encre noire",
+      "Penne",
+      "Petit couteau",
+      "Lettre d'un collègue décédé",
+      "Vêtements communs",
+      "10 pièces d'or"
+    ],
+    "feature": {
+      "name": "Chercheur",
+      "description": "Vous savez où trouver des informations obscures. Si vous ne le savez pas, vous savez qui le sait."
+    }
+  },
+  "Sailor": {
+    "name": "Marin",
+    "startingEquipment": [
+      "Goupille d'assurage (club)",
+      "50 pieds de corde de soie",
+      "Porte-bonheur",
+      "Vêtements communs",
+      "10 pièces d'or"
+    ],
+    "feature": {
+      "name": "Passage du navire",
+      "description": "Vous pouvez obtenir un passage gratuit sur des voiliers pour vous-même et vos compagnons en échange de main d'œuvre."
+    }
+  },
+  "Soldier": {
+    "name": "Soldat",
+    "startingEquipment": [
+      "Insigne de grade",
+      "Trophée d'un ennemi tombé au combat",
+      "Jeu de cartes ou de dés",
+      "Vêtements communs",
+      "10 pièces d'or"
+    ],
+    "feature": {
+      "name": "Grade militaire",
+      "description": "Les soldats fidèles à votre ancienne faction reconnaissent votre rang. Vous pouvez invoquer votre rang pour influencer et accéder aux camps militaires."
+    }
+  },
+  "Urchin": {
+    "name": "Oursin",
+    "startingEquipment": [
+      "Petit couteau",
+      "Carte de votre ville de résidence",
+      "Souris de compagnie",
+      "Jeton de tes parents",
+      "Vêtements communs",
+      "10 pièces d'or"
+    ],
+    "feature": {
+      "name": "Secrets de la ville",
+      "description": "Vous connaissez les schémas secrets des villes et pouvez trouver des passages à travers les zones urbaines deux fois plus vite que d'habitude."
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "Potion of Healing": {
+    "name": "Potion de guérison",
+    "description": "Vous récupérez 2d4 + 2 points de vie lorsque vous buvez cette potion."
+  },
+  "Potion of Greater Healing": {
+    "name": "Potion de guérison supérieure",
+    "description": "Vous regagnez 4d4 + 4 points de vie lorsque vous buvez cette potion."
+  },
+  "Potion of Superior Healing": {
+    "name": "Potion de guérison supérieure",
+    "description": "Vous récupérez 8d4 + 8 points de vie lorsque vous buvez cette potion."
+  },
+  "Potion of Supreme Healing": {
+    "name": "Potion de guérison suprême",
+    "description": "Vous récupérez 10d4 + 20 points de vie lorsque vous buvez cette potion."
+  },
+  "Bag of Holding": {
+    "name": "Sac de tenue",
+    "description": "Ce sac possède un espace intérieur considérablement plus grand que ses dimensions extérieures. Le sac peut contenir jusqu'à 500 livres, sans dépasser un volume de 64 pieds cubes. Le sac pèse 15 livres, quel que soit son contenu."
+  },
+  "+1 Weapon": {
+    "name": "+1 Arme",
+    "description": "Vous disposez d'un bonus de +1 aux jets d'attaque et de dégâts effectués avec cette arme magique."
+  },
+  "+2 Weapon": {
+    "name": "+2 Arme",
+    "description": "Vous disposez d'un bonus de +2 aux jets d'attaque et de dégâts effectués avec cette arme magique."
+  },
+  "+3 Weapon": {
+    "name": "Arme +3",
+    "description": "Vous disposez d'un bonus de +3 aux jets d'attaque et de dégâts effectués avec cette arme magique."
+  },
+  "+1 Armor": {
+    "name": "+1 Armure",
+    "description": "Vous bénéficiez d'un bonus de +1 à la CA lorsque vous portez cette armure."
+  },
+  "Cloak of Protection": {
+    "name": "Cape de protection",
+    "description": "Vous gagnez un bonus de +1 à la CA et aux jets de sauvegarde tant que vous portez cette cape."
+  },
+  "Ring of Protection": {
+    "name": "Anneau de protection",
+    "description": "Vous gagnez un bonus de +1 à la CA et aux jets de sauvegarde lorsque vous portez cette bague."
+  },
+  "Boots of Speed": {
+    "name": "Bottes de vitesse",
+    "description": "Pendant que vous portez ces bottes, vous pouvez utiliser une action bonus et cliquer les talons des bottes ensemble pour doubler votre vitesse de marche. De plus, les terrains difficiles ne vous coûtent pas de mouvement supplémentaire. L'effet prend fin si vous utilisez une action bonus pour cliquer à nouveau sur vos talons ou si vous ne portez plus les bottes."
+  },
+  "Gauntlets of Ogre Power": {
+    "name": "Gantelets du pouvoir ogre",
+    "description": "Votre score de Force est de 19 lorsque vous portez ces gants. Ils n'ont aucun effet sur vous si votre Force est déjà de 19 ou plus."
+  },
+  "Headband of Intellect": {
+    "name": "Bandeau d'intelligence",
+    "description": "Votre score d'Intelligence est de 19 lorsque vous portez ce bandeau. Cela n'a aucun effet sur vous si votre Intelligence est déjà de 19 ou plus."
+  },
+  "Amulet of Health": {
+    "name": "Amulette de santé",
+    "description": "Votre score de Constitution est de 19 tant que vous portez cette amulette. Cela n'a aucun effet sur vous si votre Constitution est déjà de 19 ou plus."
+  },
+  "Wand of Magic Missiles": {
+    "name": "Baguette de missiles magiques",
+    "description": "Cette baguette a 7 charges. Tout en le tenant, vous pouvez utiliser une action pour dépenser 1 ou plusieurs de ses charges afin de lancer le sort de missile magique depuis lui. Pour 1 charge, vous lancez la version 1er niveau du sort. Vous pouvez augmenter le niveau d'emplacement de sort de un pour chaque charge supplémentaire que vous dépensez. La baguette récupère 1d6 + 1 charges dépensées quotidiennement à l'aube."
+  },
+  "Rope of Climbing": {
+    "name": "Corde d'escalade",
+    "description": "Cette longueur de corde en soie de 60 pieds pèse 3 livres et peut supporter jusqu'à 3 000 livres. Si vous tenez une extrémité de la corde et utilisez une action pour prononcer le mot de commande, la corde s'anime. Par une action bonus, vous pouvez ordonner à l’autre extrémité de se déplacer vers une destination de votre choix."
+  }
+}

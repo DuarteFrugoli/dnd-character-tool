@@ -1,0 +1,1577 @@
+{
+  "Acid Splash": {
+    "name": "Säurespritzer",
+    "description": "Du schleuderst eine Säureblase. Wähle eine Kreatur in Reichweite oder wähle zwei Kreaturen in Reichweite, die nicht weiter als 1,5 m voneinander entfernt sind. Einem Ziel muss ein Geschicklichkeitsrettungswurf gelingen, sonst erleidet es 1W6 Säureschaden. Der Schaden dieses Zaubers erhöht sich um 1W6, wenn Sie die 5. Stufe (2W6), die 11. Stufe (3W6) und die 17. Stufe (4W6) erreichen.",
+    "higherLevels": null
+  },
+  "Blade Ward": {
+    "name": "Klingenschutz",
+    "description": "Sie strecken Ihre Hand aus und zeichnen ein Siegel der Abwehr in die Luft. Bis zum Ende Ihres nächsten Zuges haben Sie Widerstand gegen Wucht-, Stich- und Hiebschaden, der durch Waffenangriffe verursacht wird.",
+    "higherLevels": null
+  },
+  "Chill Touch": {
+    "name": "Chill Touch",
+    "description": "Du erschaffst eine geisterhafte Skeletthand im Raum einer Kreatur in Reichweite. Führen Sie einen Fernkampfangriff gegen die Kreatur durch. Bei einem Treffer erleidet das Ziel 1W8 nekrotischen Schaden und kann bis zum Beginn Ihres nächsten Zuges keine Trefferpunkte wiedererlangen. Bis dahin klammert sich die Hand an das Ziel. Wenn du ein untotes Ziel triffst, hat es bis zum Ende deines nächsten Zuges auch einen Nachteil bei Angriffswürfen gegen dich. Der Schaden dieses Zaubers erhöht sich um 1W8, wenn Sie die 5. Stufe (2W8), die 11. Stufe (3W8) und die 17. Stufe (4W8) erreichen.",
+    "higherLevels": null
+  },
+  "Dancing Lights": {
+    "name": "Tanzende Lichter",
+    "description": "Sie erzeugen bis zu vier fackelgroße Lichter in Reichweite, sodass diese als Fackeln, Laternen oder leuchtende Kugeln erscheinen, die für die Dauer in der Luft schweben. Sie können die vier Lichter auch zu einer leuchtenden, annähernd humanoiden Form mittlerer Größe kombinieren. Als Bonusaktion können Sie die Lichter bis zu 60 Fuß weit an einen neuen Ort in Reichweite bewegen.",
+    "higherLevels": null
+  },
+  "Druidcraft": {
+    "name": "Druidenkunst",
+    "description": "Indem Sie den Geistern der Natur zuflüstern, erzeugen Sie in Reichweite einen der folgenden Effekte: einen winzigen, harmlosen Sinneseffekt, der vorhersagt, wie das Wetter in den nächsten 24 Stunden sein wird; a flower blooms, a bud blossoms, or a leaf unfurls; you create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal; or you light or snuff out a candle, a torch, or a small campfire.",
+    "higherLevels": null
+  },
+  "Eldritch Blast": {
+    "name": "Unheimliche Explosion",
+    "description": "Ein Strahl knisternder Energie schießt auf eine Kreatur in Reichweite. Führen Sie einen Fernkampfangriff gegen das Ziel durch. Bei einem Treffer erleidet das Ziel 1W10 Kraftschaden. Der Zauber erzeugt mehr als einen Strahl, wenn Sie höhere Stufen erreichen: zwei Strahlen auf der 5. Stufe, drei Strahlen auf der 11. Stufe und vier Strahlen auf der 17. Stufe. Sie können die Strahlen auf dasselbe Ziel oder auf verschiedene richten.",
+    "higherLevels": null
+  },
+  "Fire Bolt": {
+    "name": "Feuerblitz",
+    "description": "Du schleuderst einen Feuerstrahl auf eine Kreatur oder einen Gegenstand in Reichweite. Führen Sie einen Fernkampfangriff gegen das Ziel durch. Bei einem Treffer erleidet das Ziel 1W10 Feuerschaden. Ein brennbarer Gegenstand, der von diesem Zauber getroffen wird, entzündet sich, wenn er nicht getragen oder getragen wird. Der Schaden dieses Zaubers erhöht sich um 1W10, wenn Sie die 5. Stufe (2W10), die 11. Stufe (3W10) und die 17. Stufe (4W10) erreichen.",
+    "higherLevels": null
+  },
+  "Friends": {
+    "name": "Freunde",
+    "description": "Für die Dauer hast du einen Vorteil bei allen Charisma-Würfen, die auf eine Kreatur deiner Wahl gerichtet sind, die dir nicht feindlich gesinnt ist. Wenn der Zauber endet, erkennt die Kreatur, dass Sie Magie eingesetzt haben, um ihre Stimmung zu beeinflussen, und wird Ihnen gegenüber feindselig. Eine Kreatur, die zu Gewalt neigt, könnte Sie angreifen. Eine andere Kreatur könnte auf andere Weise Vergeltung suchen (nach Ermessen des Spielleiters), abhängig von der Art Ihrer Interaktion mit ihr.",
+    "higherLevels": null
+  },
+  "Guidance": {
+    "name": "Anleitung",
+    "description": "Du berührst ein williges Geschöpf. Bevor der Zauber endet, kann das Ziel einen W4 würfeln und die gewürfelte Zahl zu einem Fähigkeitswurf seiner Wahl hinzufügen. Es kann vor oder nach der Fähigkeitsüberprüfung würfeln. Der Zauber endet dann.",
+    "higherLevels": null
+  },
+  "Light": {
+    "name": "Licht",
+    "description": "Sie berühren ein Objekt, das in keiner Dimension größer als 10 Fuß ist. Bis der Zauber endet, strahlt das Objekt helles Licht in einem Radius von 20 Fuß aus und schwaches Licht für weitere 20 Fuß. Das Licht kann nach Belieben gefärbt werden. Das vollständige Abdecken des Objekts mit etwas Undurchsichtigem blockiert das Licht. Der Zauber endet, wenn Sie ihn erneut wirken oder ihn als Aktion abtun. Wenn Sie auf einen Gegenstand zielen, der von einer feindlichen Kreatur gehalten oder getragen wird, muss dieser Kreatur ein Geschicklichkeitsrettungswurf gelingen, um dem Zauber zu entgehen.",
+    "higherLevels": null
+  },
+  "Mage Hand": {
+    "name": "Magierhand",
+    "description": "Eine spektrale, schwebende Hand erscheint an einem von Ihnen gewählten Punkt innerhalb der Reichweite. Die Hand bleibt für die Dauer bestehen oder bis Sie sie als Aktion verwerfen. Die Hand verschwindet, wenn sie jemals mehr als 30 Fuß von dir entfernt ist oder wenn du diesen Zauber erneut wirkst. Mit der Hand können Sie einen Gegenstand manipulieren, eine unverschlossene Tür oder einen unverschlossenen Behälter öffnen, einen Gegenstand aus einem offenen Behälter verstauen oder daraus entnehmen oder den Inhalt aus einer Phiole ausgießen. Es kann nicht angreifen, keine magischen Gegenstände aktivieren oder mehr als 10 Pfund tragen.",
+    "higherLevels": null
+  },
+  "Mending": {
+    "name": "Ausbessern",
+    "description": "Dieser Zauber repariert einen einzelnen Bruch oder Riss in einem Objekt, das Sie berühren, beispielsweise ein zerbrochenes Kettenglied, zwei Hälften eines zerbrochenen Schlüssels, einen zerrissenen Umhang oder einen undichten Weinschlauch. Solange der Bruch oder Riss in keiner Dimension größer als 1 Fuß ist, reparieren Sie ihn, ohne dass Spuren des früheren Schadens zurückbleiben. Dieser Zauber kann einen magischen Gegenstand oder ein magisches Konstrukt physisch reparieren, aber der Zauber kann die Magie eines solchen Objekts nicht wiederherstellen.",
+    "higherLevels": null
+  },
+  "Message": {
+    "name": "Nachricht",
+    "description": "Du zeigst mit dem Finger auf eine Kreatur in Reichweite und flüsterst eine Nachricht. Das Ziel (und nur das Ziel) hört die Nachricht und kann flüsternd antworten, das nur Sie hören können. Sie können diesen Zauber durch feste Objekte wirken, wenn Sie mit dem Ziel vertraut sind und wissen, dass es sich jenseits der Barriere befindet. Magische Stille, 1 Fuß Stein, 1 Zoll unedles Metall, eine dünne Bleiplatte oder 3 Fuß Holz blockieren den Zauber.",
+    "higherLevels": null
+  },
+  "Minor Illusion": {
+    "name": "Kleinere Illusion",
+    "description": "Sie erzeugen einen Ton oder ein Bild eines Objekts in Reichweite, das für die Dauer anhält. Die Illusion endet, wenn Sie sie als Aktion abtun oder diesen Zauber erneut wirken. Wenn Sie einen Ton erzeugen, kann seine Lautstärke von einem Flüstern bis zu einem Schrei reichen. Wenn Sie ein Bild eines Objekts erstellen, darf dieses nicht größer als ein 5-Fuß-Würfel sein. Eine Kreatur, die ihre Aktion nutzt, um den Ton oder das Bild zu untersuchen, kann mit einer erfolgreichen Intelligenzprüfung (Untersuchung) anhand Ihres Zauberwurf-SG feststellen, dass es sich um eine Illusion handelt.",
+    "higherLevels": null
+  },
+  "Poison Spray": {
+    "name": "Giftspray",
+    "description": "Sie strecken Ihre Hand in Richtung einer Kreatur, die Sie in Reichweite sehen können, und stoßen einen schädlichen Gasstoß aus Ihrer Handfläche aus. Der Kreatur muss ein konstitutionsrettender Wurf gelingen, sonst erleidet sie 1W12 Giftschaden. Der Schaden dieses Zaubers erhöht sich um 1W12, wenn Sie die 5. Stufe (2W12), die 11. Stufe (3W12) und die 17. Stufe (4W12) erreichen.",
+    "higherLevels": null
+  },
+  "Prestidigitation": {
+    "name": "Fingerfertigkeit",
+    "description": "Dieser Zauber ist ein kleiner Zaubertrick, den unerfahrene Zauberer zum Üben verwenden. Du erzeugst in Reichweite einen der folgenden magischen Effekte: einen sofortigen, harmlosen Sinneseffekt; eine Kerze, eine Fackel oder ein kleines Lagerfeuer anzünden oder auslöschen; einen Gegenstand reinigen oder verschmutzen; bis zu 1 Kubikfuß unbelebtes Material kühlen, erwärmen oder aromatisieren; 1 Stunde lang eine Farbe, eine kleine Markierung oder ein Symbol auf einem Gegenstand oder einer Oberfläche erscheinen lassen; oder erstellen Sie ein nichtmagisches Schmuckstück oder ein illusorisches Bild, das in Ihre Hand passt.",
+    "higherLevels": null
+  },
+  "Produce Flame": {
+    "name": "Flamme erzeugen",
+    "description": "In deiner Hand erscheint eine flackernde Flamme. Die Flamme bleibt für die Dauer dort und schadet weder Ihnen noch Ihrer Ausrüstung. Die Flamme spendet helles Licht in einem Radius von 10 Fuß und schwaches Licht für weitere 10 Fuß. Der Zauber endet, wenn Sie ihn als Aktion abtun oder ihn erneut wirken. Sie können auch mit der Flamme angreifen, allerdings wird dadurch der Zauber beendet. Wenn du diesen Zauber wirkst, oder als Aktion in einem späteren Zug, kannst du die Flamme auf eine Kreatur in einem Umkreis von 30 Fuß um dich schleudern. Führen Sie einen Fernkampfangriff durch. Bei einem Treffer erleidet das Ziel 1W8 Feuerschaden. Der Schaden dieses Zaubers erhöht sich um 1W8, wenn Sie die 5. Stufe (2W8), die 11. Stufe (3W8) und die 17. Stufe (4W8) erreichen.",
+    "higherLevels": null
+  },
+  "Ray of Frost": {
+    "name": "Froststrahl",
+    "description": "Ein eisiger Strahl aus blau-weißem Licht schießt auf eine Kreatur in Reichweite. Führen Sie einen Fernkampfangriff gegen das Ziel durch. Bei einem Treffer erleidet es 1W8 Kälteschaden und seine Geschwindigkeit wird bis zum Beginn Ihres nächsten Zuges um 10 Fuß verringert. Der Schaden dieses Zaubers erhöht sich um 1W8, wenn Sie die 5. Stufe (2W8), die 11. Stufe (3W8) und die 17. Stufe (4W8) erreichen.",
+    "higherLevels": null
+  },
+  "Resistance": {
+    "name": "Widerstand",
+    "description": "Du berührst ein williges Geschöpf. Bevor der Zauber endet, kann das Ziel einen W4 würfeln und die gewürfelte Zahl zu einem Rettungswurf seiner Wahl addieren. Es kann vor oder nach dem Rettungswurf würfeln. Der Zauber endet dann.",
+    "higherLevels": null
+  },
+  "Sacred Flame": {
+    "name": "Heilige Flamme",
+    "description": "Flammenähnlicher Glanz fällt auf eine Kreatur, die Sie in Reichweite sehen können. Dem Ziel muss ein Geschicklichkeitsrettungswurf gelingen, sonst erleidet es 1W8 Strahlungsschaden. Das Ziel profitiert bei diesem Rettungswurf nicht von der Deckung. Der Schaden dieses Zaubers erhöht sich um 1W8, wenn Sie die 5. Stufe (2W8), die 11. Stufe (3W8) und die 17. Stufe (4W8) erreichen.",
+    "higherLevels": null
+  },
+  "Shillelagh": {
+    "name": "Shillelagh",
+    "description": "Das Holz einer Keule oder eines Stabes, den Sie halten, ist von der Kraft der Natur durchdrungen. Für die Dauer können Sie Ihre Zauberfähigkeit anstelle von Stärke für die Angriffs- und Schadenswürfe von Nahkampfangriffen mit dieser Waffe verwenden, und der Schadenswürfel der Waffe wird zu einem W8. Die Waffe wird auch magisch, sofern dies nicht bereits geschehen ist. Der Zauber endet, wenn Sie ihn erneut wirken oder die Waffe loslassen.",
+    "higherLevels": null
+  },
+  "Shocking Grasp": {
+    "name": "Schockierender Griff",
+    "description": "Ein Blitz entspringt deiner Hand und versetzt einer Kreatur, die du zu berühren versuchst, einen Schock. Führen Sie einen Nahkampfangriff gegen das Ziel durch. Beim Angriffswurf ist man im Vorteil, wenn das Ziel eine Rüstung aus Metall trägt. Bei einem Treffer erleidet das Ziel 1W8 Blitzschaden und kann bis zum Beginn seines nächsten Zuges keine Reaktionen einstecken. Der Schaden dieses Zaubers erhöht sich um 1W8, wenn Sie die 5. Stufe (2W8), die 11. Stufe (3W8) und die 17. Stufe (4W8) erreichen.",
+    "higherLevels": null
+  },
+  "Spare the Dying": {
+    "name": "Verschone die Sterbenden",
+    "description": "Du berührst ein Lebewesen, das 0 Trefferpunkte hat. Die Kreatur wird stabil. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": null
+  },
+  "Thaumaturgy": {
+    "name": "Thaumaturgie",
+    "description": "Du manifestierst in Reichweite ein kleines Wunder, ein Zeichen übernatürlicher Macht. Du erzeugst einen der folgenden magischen Effekte: Deine Stimme dröhnt 1 Minute lang bis zu dreimal so laut wie normal; Sie lassen Flammen 1 Minute lang flackern, aufhellen, schwächer werden oder ihre Farbe ändern; Sie verursachen 1 Minute lang harmlose Erschütterungen im Boden; Sie erzeugen einen sofortigen Ton, der von einem Punkt Ihrer Wahl in Reichweite ausgeht; Sie verursachen augenblicklich, dass eine unverschlossene Tür oder ein unverschlossenes Fenster auffliegt oder zuschlägt; oder Sie verändern das Aussehen Ihrer Augen für 1 Minute.",
+    "higherLevels": null
+  },
+  "True Strike": {
+    "name": "Wahrer Schlag",
+    "description": "Sie strecken Ihre Hand aus und zeigen mit dem Finger auf ein Ziel in Reichweite. Deine Magie gewährt dir einen kurzen Einblick in die Verteidigung des Ziels. In deinem nächsten Zug erhältst du einen Vorteil bei deinem ersten Angriffswurf gegen das Ziel, vorausgesetzt, dieser Zauber ist noch nicht beendet.",
+    "higherLevels": null
+  },
+  "Vicious Mockery": {
+    "name": "Bösartiger Spott",
+    "description": "Sie entfesseln eine Reihe von Beleidigungen, gespickt mit subtilen Verzauberungen, auf eine Kreatur, die Sie in Reichweite sehen können. Wenn das Ziel dich hören kann (obwohl es dich nicht verstehen muss), muss ihm ein Weisheitsrettungswurf gelingen, sonst erleidet es 1W4 psychischen Schaden und hat beim nächsten Angriffswurf, den es vor dem Ende seines nächsten Zuges durchführt, einen Nachteil. Der Schaden dieses Zaubers erhöht sich um 1W4, wenn Sie die 5. Stufe (2W4), die 11. Stufe (3W4) und die 17. Stufe (4W4) erreichen.",
+    "higherLevels": null
+  },
+  "Alarm": {
+    "name": "Alarm",
+    "description": "Sie stellen einen Alarm gegen unerwünschtes Eindringen ein. Wählen Sie eine Tür, ein Fenster oder einen Bereich in Reichweite, der nicht größer als ein 20-Fuß-Würfel ist. Bis zum Ende des Zaubers warnt Sie ein Alarm, wenn eine kleine oder größere Kreatur den geschützten Bereich berührt oder betritt. Wenn du den Zauber wirkst, wählst du, ob der Alarm mental oder hörbar ist.",
+    "higherLevels": null
+  },
+  "Animal Friendship": {
+    "name": "Tierfreundschaft",
+    "description": "Mit diesem Zauber können Sie ein Tier davon überzeugen, dass Sie es nicht böse gemeint haben. Wählen Sie ein Tier, das Sie in Reichweite sehen können. Es muss dich sehen und hören. Wenn die Intelligenz des Tieres 4 oder höher ist, schlägt der Zauber fehl. Andernfalls muss dem Biest ein Weisheitsrettungswurf gelingen oder es wird für die Dauer des Zaubers von dir verzaubert.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, können Sie für jede Slotstufe über der 1. Stufe ein zusätzliches Tier beeinflussen."
+  },
+  "Bane": {
+    "name": "Fluch",
+    "description": "Bis zu drei Kreaturen deiner Wahl, die du in Reichweite sehen kannst, müssen Charisma-Rettungswürfe machen. Immer wenn ein Ziel, dem dieser Rettungswurf misslingt, einen Angriffswurf oder einen Rettungswurf ausführt, bevor der Zauber endet, muss das Ziel einen W4 würfeln und die gewürfelte Zahl vom Angriffswurf oder Rettungswurf abziehen.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 1. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Bless": {
+    "name": "Segnen",
+    "description": "Du segnest bis zu drei Kreaturen deiner Wahl in Reichweite. Immer wenn ein Ziel einen Angriffswurf oder einen Rettungswurf ausführt, bevor der Zauber endet, kann das Ziel einen W4 würfeln und die gewürfelte Zahl zum Angriffswurf oder Rettungswurf hinzufügen.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 1. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Burning Hands": {
+    "name": "Brennende Hände",
+    "description": "Während Sie Ihre Hände mit berührenden Daumen und gespreizten Fingern halten, schießt eine dünne Flammenschicht aus Ihren ausgestreckten Fingerspitzen. Jede Kreatur in einem 15-Fuß-Kegel muss einen Geschicklichkeitsrettungswurf ausführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 3W6 Feuerschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich der Schaden um 1W6 für jede Slotstufe über der 1. Stufe."
+  },
+  "Charm Person": {
+    "name": "Charmante Person",
+    "description": "Sie versuchen, einen Humanoiden zu bezaubern, den Sie in Reichweite sehen können. Es muss einen Weisheitsrettungswurf durchführen und tut dies mit Vorteil, wenn Sie oder Ihre Gefährten gegen es kämpfen. Wenn ihm der Rettungswurf misslingt, wird er von dir verzaubert, bis der Zauber endet oder bis du oder deine Gefährten ihm Schaden zufügen.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 1. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Color Spray": {
+    "name": "Farbspray",
+    "description": "Eine schillernde Vielfalt an blinkendem, farbigem Licht entspringt Ihrer Hand. Wirf 6W10; Die Summe gibt an, wie viele Trefferpunkte der Kreaturen dieser Zauber beeinflussen kann. Beginnend mit der Kreatur, die derzeit die niedrigsten Trefferpunkte hat, ist jede von diesem Zauber betroffene Kreatur geblendet, bis der Zauber endet.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, würfeln Sie zusätzlich 2W10 für jede Slotstufe über der 1. Stufe."
+  },
+  "Command": {
+    "name": "Befehl",
+    "description": "Du sprichst einen Ein-Wort-Befehl zu einer Kreatur, die du in Reichweite sehen kannst. Dem Ziel muss ein Weisheitsrettungswurf gelingen oder in seinem nächsten Zug dem Befehl folgen. Der Zauber hat keine Wirkung, wenn das Ziel untot ist, deine Sprache nicht versteht oder dein Befehl ihm direkt schadet.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 1. Stufe eine zusätzliche Kreatur beeinflussen."
+  },
+  "Comprehend Languages": {
+    "name": "Sprachen verstehen",
+    "description": "Für die Dauer verstehen Sie die wörtliche Bedeutung jeder gesprochenen Sprache, die Sie hören. Sie verstehen auch jede geschriebene Sprache, die Sie sehen, aber Sie müssen die Oberfläche berühren, auf der die Wörter geschrieben sind.",
+    "higherLevels": null
+  },
+  "Create or Destroy Water": {
+    "name": "Wasser erschaffen oder zerstören",
+    "description": "Entweder erschafft oder zerstört man Wasser. Wasser erzeugen: Sie erzeugen in einem offenen Behälter bis zu 10 Gallonen sauberes Wasser in Reichweite. Wasser zerstören: Sie zerstören bis zu 10 Gallonen Wasser in einem offenen Behälter in Reichweite.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirkst, erzeugst oder zerstörst du 10 zusätzliche Gallonen Wasser für jede Slotstufe über der 1. Stufe."
+  },
+  "Cure Wounds": {
+    "name": "Wunden heilen",
+    "description": "Eine Kreatur, die du berührst, erhält eine Anzahl an Trefferpunkten zurück, die 1W8 + deinem Zauberfähigkeitsmodifikator entspricht. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich die Heilung um 1W8 für jede Slotstufe über der 1. Stufe."
+  },
+  "Detect Evil and Good": {
+    "name": "Erkenne Böses und Gutes",
+    "description": "Für die Dauer wissen Sie, ob sich innerhalb von 30 Fuß um Sie herum eine Aberration, ein Himmlischer, ein Elementarwesen, eine Fee, ein Unhold oder ein Untoter befindet und wo sich die Kreatur befindet. Sie wissen auch, ob sich im Umkreis von 30 Fuß ein Ort oder Gegenstand befindet, der magisch geweiht oder entweiht wurde.",
+    "higherLevels": null
+  },
+  "Detect Magic": {
+    "name": "Magie entdecken",
+    "description": "Für die Dauer spüren Sie die Präsenz von Magie in einem Umkreis von 30 Fuß um Sie. Wenn Sie Magie auf diese Weise spüren, können Sie Ihre Aktion nutzen, um eine schwache Aura um jedes sichtbare Lebewesen oder Objekt in der Umgebung zu sehen, das Magie in sich trägt, und Sie lernen die Magieschule kennen, falls vorhanden.",
+    "higherLevels": null
+  },
+  "Detect Poison and Disease": {
+    "name": "Erkennen Sie Gifte und Krankheiten",
+    "description": "Für die Dauer können Sie die Anwesenheit und den Standort von Giften, giftigen Kreaturen und Krankheiten in einem Umkreis von 30 Fuß um Sie spüren. Sie identifizieren jeweils auch die Art des Giftes, der giftigen Kreatur oder der Krankheit.",
+    "higherLevels": null
+  },
+  "Disguise Self": {
+    "name": "Sich selbst verkleiden",
+    "description": "Du lässt dich selbst – einschließlich deiner Kleidung, Rüstung, Waffen und anderen Gegenständen an deiner Person – anders aussehen, bis der Zauber endet oder du ihn mit deiner Aktion aufhebst. Sie können 1 Fuß kleiner oder größer erscheinen und können dünn, dick oder dazwischen erscheinen.",
+    "higherLevels": null
+  },
+  "Divine Favor": {
+    "name": "Göttliche Gunst",
+    "description": "Ihr Gebet verleiht Ihnen göttliche Strahlkraft. Bis der Zauber endet, verursachen Ihre Waffenangriffe bei einem Treffer zusätzlich 1W4 Strahlungsschaden.",
+    "higherLevels": null
+  },
+  "Entangle": {
+    "name": "Verwickeln",
+    "description": "Greifendes Unkraut und Ranken sprießen aus dem Boden in einem 20-Fuß-Quadrat, beginnend an einem Punkt in Reichweite. Für die Dauer verwandeln diese Pflanzen den Boden in der Umgebung in schwieriges Gelände. Einer Kreatur, die sich in der Gegend aufhält, in der du den Zauber wirkst, muss ein kraftsparender Wurf gelingen oder sie wird von den umschlingenden Pflanzen zurückgehalten, bis der Zauber endet.",
+    "higherLevels": null
+  },
+  "Expeditious Retreat": {
+    "name": "Schneller Rückzug",
+    "description": "Mit diesem Zauber können Sie sich mit unglaublicher Geschwindigkeit bewegen. Wenn du diesen Zauberspruch wirkst, kannst du als Bonusaktion in jedem deiner Züge bis zum Ende des Zauberspruchs die Sprint-Aktion ausführen.",
+    "higherLevels": null
+  },
+  "Faerie Fire": {
+    "name": "Feenfeuer",
+    "description": "Jedes Objekt in einem 20-Fuß-Würfel in Reichweite wird in blauem, grünem oder violettem Licht umrandet. Jede Kreatur, die sich beim Wirken des Zaubers im Wirkungsbereich aufhält, wird ebenfalls hell umrandet, wenn ihr ein Geschicklichkeitsrettungswurf misslingt. Jeder Angriffswurf gegen eine betroffene Kreatur oder ein betroffenes Objekt hat einen Vorteil, wenn der Angreifer es sehen kann.",
+    "higherLevels": null
+  },
+  "False Life": {
+    "name": "Falsches Leben",
+    "description": "Indem du dich mit einem nekromantischen Faksimile des Lebens stärkst, erhältst du für die Dauer 1W4 + 4 temporäre Trefferpunkte.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhalten Sie 5 zusätzliche temporäre Trefferpunkte für jede Slotstufe über der 1. Stufe."
+  },
+  "Feather Fall": {
+    "name": "Federfall",
+    "description": "Wähle bis zu fünf fallende Kreaturen in Reichweite. Die Sinkgeschwindigkeit einer fallenden Kreatur verlangsamt sich auf 60 Fuß pro Runde, bis der Zauber endet. Wenn die Kreatur landet, bevor der Zauber endet, erleidet sie keinen Fallschaden und kann auf ihren Füßen landen.",
+    "higherLevels": null
+  },
+  "Find Familiar": {
+    "name": "Vertrautes finden",
+    "description": "Sie erhalten die Dienste eines Vertrauten, eines Geistes, der eine von Ihnen gewählte Tiergestalt annimmt: Fledermaus, Katze, Krabbe, Frosch, Falke, Eidechse, Oktopus, Eule, Giftschlange, Fisch, Ratte, Rabe, Seepferdchen, Spinne oder Wiesel. Der Vertraute erscheint an einem unbesetzten Ort in Reichweite und verfügt über die Werte der gewählten Form.",
+    "higherLevels": null
+  },
+  "Fog Cloud": {
+    "name": "Nebelwolke",
+    "description": "Sie erzeugen eine Nebelkugel mit einem Radius von 20 Fuß, die auf einem Punkt in Reichweite zentriert ist. Die Kugel breitet sich über Ecken aus und ihr Bereich ist stark verdeckt. Es dauert so lange oder bis ein Wind mittlerer oder höherer Geschwindigkeit (mindestens 10 Meilen pro Stunde) es zerstreut.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, vergrößert sich der Nebelradius für jede Slotstufe über der 1. Stufe um 20 Fuß."
+  },
+  "Goodberry": {
+    "name": "Goodberry",
+    "description": "Bis zu zehn Beeren erscheinen in Ihrer Hand und werden für die Dauer mit Magie erfüllt. Eine Kreatur kann mit ihrer Aktion eine Beere essen. Das Essen einer Beere stellt 1 Trefferpunkt wieder her und die Beere liefert genug Nahrung, um eine Kreatur einen Tag lang zu ernähren. Die Beeren verlieren ihre Wirksamkeit, wenn sie nicht innerhalb von 24 Stunden verzehrt werden.",
+    "higherLevels": null
+  },
+  "Grease": {
+    "name": "Fett",
+    "description": "Glattes Fett bedeckt den Boden in einem Quadrat von 10 Fuß, zentriert um einen Punkt innerhalb der Reichweite, und verwandelt ihn für die Dauer in schwieriges Gelände. Wenn das Fett erscheint, muss jede Kreatur, die sich in ihrem Bereich befindet, einen Geschicklichkeitsrettungswurf bestehen oder hinfallen.",
+    "higherLevels": null
+  },
+  "Guiding Bolt": {
+    "name": "Führungsbolzen",
+    "description": "Ein Lichtblitz schießt auf eine Kreatur deiner Wahl in Reichweite. Führen Sie einen Fernkampfangriff gegen das Ziel durch. Bei einem Treffer erleidet das Ziel 4W6 Strahlungsschaden und der nächste Angriffswurf gegen dieses Ziel vor dem Ende Ihres nächsten Zuges hat einen Vorteil.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich der Schaden um 1W6 für jede Slotstufe über der 1. Stufe."
+  },
+  "Healing Word": {
+    "name": "Heilendes Wort",
+    "description": "Eine Kreatur deiner Wahl, die du in Reichweite sehen kannst, erhält Trefferpunkte in Höhe von 1W4 + deinem Zauberfähigkeitsmodifikator zurück. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich die Heilung um 1W4 für jede Slotstufe über der 1. Stufe."
+  },
+  "Hellish Rebuke": {
+    "name": "Höllische Zurechtweisung",
+    "description": "Du zeigst mit dem Finger und die Kreatur, die dir Schaden zugefügt hat, ist für einen Moment von höllischen Flammen umgeben. Die Kreatur muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 2W10 Feuerschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich der Schaden um 1W10 für jede Slotstufe über der 1. Stufe."
+  },
+  "Heroism": {
+    "name": "Heldentum",
+    "description": "Eine willige Kreatur, die man berührt, ist voller Tapferkeit. Bis zum Ende des Zaubers ist die Kreatur immun gegen Angst und erhält zu Beginn jeder ihrer Runden vorübergehende Trefferpunkte in Höhe Ihres Zauberfähigkeitsmodifikators.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 1. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Hex": {
+    "name": "Verhexen",
+    "description": "Du verfluchst eine Kreatur, die du in Reichweite sehen kannst. Bis der Zauber endet, fügst du dem Ziel zusätzlich 1W6 nekrotischen Schaden zu, wenn du es mit einem Angriff triffst. Wähle außerdem eine Fähigkeit, wenn du den Zauber wirkst. Das Ziel hat einen Nachteil bei Fähigkeitsüberprüfungen, die mit der gewählten Fähigkeit durchgeführt werden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. oder 4. Stufe wirken, können Sie sich bis zu 8 Stunden lang auf den Zauber konzentrieren. Wenn Sie einen Zauberslot der 5. Stufe oder höher verwenden, können Sie die Konzentration bis zu 24 Stunden lang aufrechterhalten."
+  },
+  "Hunter's Mark": {
+    "name": "Jägerzeichen",
+    "description": "Du wählst eine Kreatur, die du in Reichweite sehen kannst, und markierst sie auf mystische Weise als deine Beute. Bis der Zauber endet, fügst du dem Ziel jedes Mal, wenn du es mit einem Waffenangriff triffst, 1W6 zusätzlichen Schaden zu, und du hast einen Vorteil bei jedem Wurf auf Weisheit (Wahrnehmung) oder Weisheit (Überleben), den du durchführst, um es zu finden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. oder 4. Stufe wirken, können Sie sich bis zu 8 Stunden lang auf den Zauber konzentrieren. Wenn Sie einen Zauberslot der 5. Stufe oder höher verwenden, können Sie die Konzentration bis zu 24 Stunden lang aufrechterhalten."
+  },
+  "Identify": {
+    "name": "Identifizieren",
+    "description": "Sie wählen ein Objekt aus, das Sie während des Wirkens des Zaubers berühren müssen. Wenn es sich um einen magischen Gegenstand oder ein anderes magiedurchdrungenes Objekt handelt, erfahren Sie, welche Eigenschaften es hat und wie Sie es verwenden, ob für die Verwendung eine Einstimmung erforderlich ist und wie viele Ladungen es gegebenenfalls hat.",
+    "higherLevels": null
+  },
+  "Illusory Script": {
+    "name": "Illusionsskript",
+    "description": "Sie schreiben auf Pergament, Papier oder ein anderes geeignetes Schreibmaterial und verleihen ihm eine starke Illusion, die für die Dauer anhält. Für Sie und alle Kreaturen, die Sie beim Wirken des Zaubers bestimmen, erscheint die Schrift normal. Für alle anderen Lebewesen erscheint die Schrift so, als wäre sie in einer unbekannten oder magischen Schrift geschrieben.",
+    "higherLevels": null
+  },
+  "Inflict Wounds": {
+    "name": "Verursache Wunden",
+    "description": "Führe einen Nahkampfangriff gegen eine Kreatur durch, die du erreichen kannst. Bei einem Treffer erleidet das Ziel 3W10 nekrotischen Schaden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich der Schaden um 1W10 für jede Slotstufe über der 1. Stufe."
+  },
+  "Jump": {
+    "name": "Springen",
+    "description": "Du berührst eine Kreatur. Die Sprungweite der Kreatur wird verdreifacht, bis der Zauber endet.",
+    "higherLevels": null
+  },
+  "Longstrider": {
+    "name": "Langläufer",
+    "description": "Du berührst eine Kreatur. Die Geschwindigkeit des Ziels erhöht sich um 10 Fuß, bis der Zauber endet.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 1. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Mage Armor": {
+    "name": "Magierrüstung",
+    "description": "Du berührst eine willige Kreatur, die keine Rüstung trägt, und eine schützende magische Kraft umgibt sie, bis der Zauber endet. Die Basis-AC des Ziels beträgt 13 + sein Geschicklichkeitsmodifikator. Der Zauber endet, wenn das Ziel eine Rüstung anlegt oder wenn Sie den Zauber als Aktion abtun.",
+    "higherLevels": null
+  },
+  "Magic Missile": {
+    "name": "Magische Rakete",
+    "description": "Du erschaffst drei leuchtende Pfeile mit magischer Kraft. Jeder Pfeil trifft eine Kreatur deiner Wahl, die du in Reichweite sehen kannst. Ein Pfeil fügt seinem Ziel 1W4 + 1 Kraftschaden zu. Die Pfeile treffen alle gleichzeitig und Sie können sie so steuern, dass sie eine oder mehrere Kreaturen treffen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erzeugt der Zauber einen weiteren Pfeil für jede Slotstufe über der 1. Stufe."
+  },
+  "Protection from Evil and Good": {
+    "name": "Schutz vor Bösem und Gutem",
+    "description": "Bis zum Ende des Zaubers ist eine bereitwillige Kreatur, die du berührst, vor bestimmten Arten von Kreaturen geschützt: Aberrationen, Himmlische, Elementarwesen, Feenwesen, Unholde und Untote. Der Schutz bietet mehrere Vorteile: Diese Kreaturen haben einen Nachteil bei Angriffswürfen gegen das Ziel und das Ziel kann von ihnen nicht verzaubert, verängstigt oder besessen werden.",
+    "higherLevels": null
+  },
+  "Sanctuary": {
+    "name": "Zuflucht",
+    "description": "Sie schützen eine Kreatur in Reichweite vor Angriffen. Bis zum Ende des Zaubers muss jede Kreatur, die die beschützte Kreatur mit einem Angriff oder einem schädlichen Zauber angreift, zunächst einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf muss die Kreatur ein neues Ziel wählen, sonst verliert sie den Angriff oder Zauber.",
+    "higherLevels": null
+  },
+  "Shield": {
+    "name": "Schild",
+    "description": "Eine unsichtbare Barriere aus magischer Kraft erscheint und schützt Sie. Bis zum Beginn Ihres nächsten Zuges haben Sie einen Bonus von +5 auf Ihre RK, auch gegen den auslösenden Angriff, und Sie erleiden keinen Schaden durch magische Geschosse.",
+    "higherLevels": null
+  },
+  "Shield of Faith": {
+    "name": "Schild des Glaubens",
+    "description": "Ein schimmerndes Feld erscheint und umgibt eine Kreatur deiner Wahl in Reichweite und gewährt ihr für die Dauer einen Bonus von +2 auf ihre RK.",
+    "higherLevels": null
+  },
+  "Silent Image": {
+    "name": "Stilles Bild",
+    "description": "Sie erstellen das Bild eines Objekts, einer Kreatur oder eines anderen sichtbaren Phänomens, das nicht größer als ein 15-Fuß-Würfel ist. Das Bild erscheint an einer Stelle innerhalb der Reichweite und bleibt für die Dauer bestehen. Das Bild ist rein visuell; es wird nicht von Geräuschen, Gerüchen oder anderen sensorischen Effekten begleitet.",
+    "higherLevels": null
+  },
+  "Sleep": {
+    "name": "Schlafen",
+    "description": "Dieser Zauber versetzt Kreaturen in einen magischen Schlaf. Wirf 5W8; Die Summe gibt an, wie viele Trefferpunkte der Kreaturen dieser Zauber beeinflussen kann. Beginnend mit der Kreatur mit den niedrigsten aktuellen Trefferpunkten wird jede von diesem Zauber betroffene Kreatur bewusstlos, bis der Zauber endet, der Schläfer Schaden erleidet oder jemand eine Aktion ausführt, um den Schläfer aufzurütteln oder wachzuschlagen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, würfeln Sie zusätzlich 2W8 für jede Slotstufe über der 1. Stufe."
+  },
+  "Speak with Animals": {
+    "name": "Sprich mit Tieren",
+    "description": "Du erhältst für die Dauer die Fähigkeit, Tiere zu verstehen und verbal mit ihnen zu kommunizieren. Das Wissen und Bewusstsein vieler Bestien wird durch ihre Intelligenz begrenzt, aber zumindest können Bestien Ihnen Informationen über Orte und Monster in der Nähe geben, einschließlich allem, was sie wahrnehmen können oder am vergangenen Tag wahrgenommen haben.",
+    "higherLevels": null
+  },
+  "Thunderwave": {
+    "name": "Donnerwelle",
+    "description": "Eine Welle donnernder Kraft geht von dir aus. Jede Kreatur in einem von dir stammenden 15-Fuß-Würfel muss einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 2W8 Donnerschaden und wird 10 Fuß von dir weggeschleudert. Bei einem erfolgreichen Rettungswurf erleidet die Kreatur halb so viel Schaden und wird nicht geschubst.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 1. Stufe."
+  },
+  "Unseen Servant": {
+    "name": "Unsichtbarer Diener",
+    "description": "Dieser Zauber erschafft eine unsichtbare, gedankenlose, formlose, mittlere Kraft, die auf Ihren Befehl hin einfache Aufgaben ausführt, bis der Zauber endet. Der Diener entsteht in einem unbesetzten Bereich auf dem Boden in Reichweite. Es hat RK 10, 1 Trefferpunkt und eine Stärke von 2 und kann nicht angreifen.",
+    "higherLevels": null
+  },
+  "Witch Bolt": {
+    "name": "Hexenblitz",
+    "description": "Ein Strahl knisternder, blauer Energie schießt auf eine Kreatur in Reichweite und bildet einen anhaltenden Blitzbogen zwischen Ihnen und dem Ziel. Führe einen Fernkampfangriff gegen diese Kreatur durch. Bei einem Treffer erleidet das Ziel 1W12 Blitzschaden und in jedem deiner Züge kannst du für die Dauer deiner Aktion deine Aktion nutzen, um dem Ziel automatisch 1W12 Blitzschaden zuzufügen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 2. Stufe oder höher wirken, erhöht sich der anfängliche Schaden eines Treffers um 1W12 für jede Slotstufe über der 1. Stufe."
+  },
+  "Wrathful Smite": {
+    "name": "Zorniger Schlag",
+    "description": "Wenn Sie während der Dauer dieses Zaubers das nächste Mal mit einer Nahkampfwaffe zuschlagen, verursacht Ihr Angriff zusätzlich 1W6 psychischen Schaden. Wenn das Ziel außerdem eine Kreatur ist, muss es einen Weisheitsrettungswurf machen oder Angst vor dir haben, bis der Zauber endet.",
+    "higherLevels": null
+  },
+  "Acid Arrow": {
+    "name": "Säurepfeil",
+    "description": "Ein schimmernder grüner Pfeil rast auf ein Ziel in Reichweite zu und zerplatzt in einem Säurestrahl. Führen Sie einen Fernkampfangriff gegen das Ziel durch. Bei einem Treffer erleidet das Ziel sofort 4W4 Säureschaden und am Ende seines nächsten Zuges 2W4 Säureschaden. Bei einem Fehlschlag bespritzt der Pfeil das Ziel mit Säure, was die Hälfte des anfänglichen Schadens verursacht und am Ende seines nächsten Zuges keinen Schaden mehr verursacht.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich der Schaden (sowohl anfänglich als auch später) um 1W4 für jede Slotstufe über der 2. Stufe."
+  },
+  "Alter Self": {
+    "name": "Alter Self",
+    "description": "Du nimmst eine andere Form an. Wenn Sie den Zauber wirken, wählen Sie eine der folgenden Optionen, deren Wirkung für die Dauer anhält: Wasseranpassung, Aussehen ändern oder Natürliche Waffen (Ihre unbewaffneten Schläge verursachen 1W6 Knüppel-, Stich- oder Hiebschaden).",
+    "higherLevels": null
+  },
+  "Animal Messenger": {
+    "name": "Tierbote",
+    "description": "Mit diesem Zauber überbringen Sie mithilfe eines Tieres eine Nachricht. Wählen Sie ein kleines Tier, das Sie in Reichweite sehen können, beispielsweise ein Eichhörnchen, einen Blauhäher oder eine Fledermaus. Sie geben einen Ort an, den Sie besucht haben müssen, und einen Empfänger, der einer allgemeinen Beschreibung entspricht, beispielsweise „ein Mann oder eine Frau in der Uniform der Stadtwache“ oder „ein rothaariger Zwerg mit spitzem Hut“. Sie sprechen auch eine Nachricht mit bis zu 25 Wörtern. Das Zieltier bewegt sich für die Dauer des Zaubers zum angegebenen Ort.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich die Dauer des Zaubers für jede Slotstufe über der 2. Stufe um 48 Stunden."
+  },
+  "Arcane Lock": {
+    "name": "Arkanes Schloss",
+    "description": "Wenn Sie eine geschlossene Tür, ein Fenster, ein Tor, eine Truhe oder einen anderen Eingang berühren, wird dieser für die Dauer verriegelt. Sie und die Kreaturen, die Sie beim Wirken dieses Zaubers bestimmen, können das Objekt normal öffnen. Sie können auch ein Passwort festlegen, das diesen Zauber 1 Minute lang unterdrückt, wenn es innerhalb von 5 Fuß um das Objekt ausgesprochen wird. Andernfalls ist es unpassierbar, bis es gebrochen oder der Zauber gebannt oder unterdrückt wird.",
+    "higherLevels": null
+  },
+  "Augury": {
+    "name": "Augury",
+    "description": "Indem Sie mit Edelsteinen besetzte Stöcke werfen, Drachenknochen rollen, verzierte Karten auslegen oder ein anderes Wahrsagungswerkzeug verwenden, erhalten Sie von einem jenseitigen Wesen ein Omen über die Ergebnisse einer bestimmten Vorgehensweise, die Sie innerhalb der nächsten 30 Minuten durchführen möchten. Der DM wählt aus den folgenden möglichen Vorzeichen: Wohl (gute Ergebnisse), Wehe (schlechte Ergebnisse), Wohl und Wehe (gute und schlechte Ergebnisse) oder Nichts (Ergebnisse, die nicht besonders gut oder schlecht sind).",
+    "higherLevels": null
+  },
+  "Barkskin": {
+    "name": "Rindenhaut",
+    "description": "Du berührst eine willige Kreatur. Bis zum Ende des Zaubers hat die Haut des Ziels ein raues, rindenartiges Aussehen und die RK des Ziels darf nicht weniger als 16 betragen, unabhängig davon, welche Art von Rüstung es trägt.",
+    "higherLevels": null
+  },
+  "Blindness/Deafness": {
+    "name": "Blindheit/Taubheit",
+    "description": "Sie können einen Feind blenden oder taub machen. Wählen Sie eine Kreatur aus, die Sie in Reichweite sehen können, um einen Konstitutionsrettungswurf durchzuführen. Wenn dies fehlschlägt, ist das Ziel für die Dauer entweder geblendet oder taub (Ihre Wahl). Am Ende jedes Zuges kann das Ziel einen Konstitutionsrettungswurf durchführen. Bei einem Erfolg endet der Zauber.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 2. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Blur": {
+    "name": "Verwischen",
+    "description": "Ihr Körper wird für alle, die Sie sehen können, verschwommen, verschiebt sich und schwankt. Für diese Dauer hat jede Kreatur einen Nachteil bei Angriffswürfen gegen dich. Ein Angreifer ist gegen diesen Effekt immun, wenn er sich nicht auf sein Sehen verlässt, wie beim Blindblick, oder Illusionen durchschauen kann, wie beim Wahrblick.",
+    "higherLevels": null
+  },
+  "Calm Emotions": {
+    "name": "Ruhige Gefühle",
+    "description": "Sie versuchen, starke Emotionen in einer Gruppe von Menschen zu unterdrücken. Jeder Humanoide in einer Kugel mit einem Radius von 20 Fuß, die auf einem von Ihnen gewählten Punkt in Reichweite zentriert ist, muss einen Charisma-Rettungswurf ausführen; Eine Kreatur kann diesen Rettungswurf scheitern lassen, wenn sie möchte. Wenn einer Kreatur der Rettungswurf misslingt, wählen Sie einen der beiden folgenden Effekte: Unterdrücken Sie jeden Effekt, der ein Ziel verzaubert oder verängstigt, oder machen Sie das Ziel gleichgültig gegenüber Kreaturen Ihrer Wahl, denen es feindlich gegenübersteht.",
+    "higherLevels": null
+  },
+  "Cloud of Daggers": {
+    "name": "Wolke aus Dolchen",
+    "description": "Sie füllen die Luft in einem 5-Fuß-Würfel, der an einem von Ihnen gewählten Punkt in Reichweite zentriert ist, mit rotierenden Dolchen. Eine Kreatur erleidet 4W4 Hiebschaden, wenn sie zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder dort ihren Zug beginnt.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich der Schaden um 2W4 für jede Slotstufe über der 2. Stufe."
+  },
+  "Continual Flame": {
+    "name": "Kontinuierliche Flamme",
+    "description": "Aus einem Gegenstand, den man berührt, entspringt eine Flamme, deren Helligkeit einer Fackel entspricht. Der Effekt sieht aus wie eine normale Flamme, erzeugt jedoch keine Hitze und verbraucht keinen Sauerstoff. Eine kontinuierliche Flamme kann abgedeckt oder verborgen, aber nicht erstickt oder gelöscht werden.",
+    "higherLevels": null
+  },
+  "Crown of Madness": {
+    "name": "Krone des Wahnsinns",
+    "description": "Ein Humanoid Ihrer Wahl, den Sie in Reichweite sehen können, muss einen Weisheitsrettungswurf bestehen oder für die Dauer von Ihnen verzaubert werden. Während das Ziel auf diese Weise verzaubert wird, erscheint auf seinem Kopf eine gedrehte Krone aus gezacktem Eisen und in seinen Augen leuchtet Wahnsinn. Das verzauberte Ziel muss seine Aktion nutzen, bevor es sich in jedem seiner Züge bewegt, um einen Nahkampfangriff gegen eine andere Kreatur als sich selbst durchzuführen, die du im Geiste wählst.",
+    "higherLevels": null
+  },
+  "Darkness": {
+    "name": "Dunkelheit",
+    "description": "Magische Dunkelheit breitet sich von einem von Ihnen gewählten Punkt in Reichweite aus und füllt für die Dauer eine Kugel mit einem Radius von 15 Fuß. Die Dunkelheit breitet sich um die Ecken aus. Eine Kreatur mit Dunkelsicht kann diese Dunkelheit nicht durchschauen und nichtmagisches Licht kann sie nicht erhellen. Wenn sich der von Ihnen gewählte Punkt auf einem Gegenstand befindet, den Sie halten oder der nicht getragen oder getragen wird, geht die Dunkelheit von dem Gegenstand aus und bewegt sich mit ihm.",
+    "higherLevels": null
+  },
+  "Darkvision": {
+    "name": "Dunkelsicht",
+    "description": "Du berührst eine willige Kreatur, um ihr die Fähigkeit zu verleihen, im Dunkeln zu sehen. Für die Dauer verfügt diese Kreatur über Dunkelsicht bis zu einer Reichweite von 60 Fuß.",
+    "higherLevels": null
+  },
+  "Detect Thoughts": {
+    "name": "Gedanken erkennen",
+    "description": "Während der Dauer können Sie die Gedanken bestimmter Kreaturen lesen. Wenn du den Zauber wirkst und als deine Aktion in jeder Runde, bis der Zauber endet, kannst du deinen Geist auf jede Kreatur konzentrieren, die du in einem Umkreis von 30 Fuß um dich sehen kannst. Wenn die von Ihnen gewählte Kreatur eine Intelligenz von 3 oder weniger hat oder keine Sprache spricht, bleibt die Kreatur davon unberührt.",
+    "higherLevels": null
+  },
+  "Enhance Ability": {
+    "name": "Fähigkeiten verbessern",
+    "description": "Du berührst eine Kreatur und verleihst ihr eine magische Verstärkung. Wählen Sie einen der folgenden Effekte; Das Ziel erhält diesen Effekt, bis der Zauber endet: Ausdauer des Bären (Vorteil bei CON-Prüfungen, 2W6 temporäre HP), Stärke des Bullen (Vorteil bei STR-Prüfungen, doppelte Tragfähigkeit), Anmut der Katze (Vorteil bei DEX-Prüfungen, kein Fallschaden bis zu 20 Fuß), Pracht des Adlers (Vorteil bei CHA-Prüfungen), List des Fuchses (Vorteil bei INT-Prüfungen) oder Weisheit der Eule (Vorteil). auf WIS-Kontrollen).",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 2. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Enlarge/Reduce": {
+    "name": "Vergrößern/Verkleinern",
+    "description": "Du lässt eine Kreatur oder ein Objekt, das du in Reichweite sehen kannst, für die Dauer größer oder kleiner werden. Wähle entweder eine Kreatur oder einen Gegenstand, der weder getragen noch getragen wird. Wenn das Ziel nicht bereit ist, kann es einen Konstitutionsrettungswurf durchführen. Bei einem Erfolg hat der Zauber keine Wirkung. Vergrößern: Die Größe des Ziels verdoppelt sich, Waffenangriffe verursachen 1W4 zusätzlichen Schaden. Reduzieren: Die Größe des Ziels halbiert sich, Waffenangriffe verursachen 1W4 weniger Schaden.",
+    "higherLevels": null
+  },
+  "Find Steed": {
+    "name": "Finde Ross",
+    "description": "Sie beschwören einen Geist, der die Form eines ungewöhnlich intelligenten, starken und treuen Rosses annimmt und eine dauerhafte Bindung zu ihm eingeht. Das Ross erscheint an einem unbesetzten Feld in Reichweite und nimmt eine von Ihnen gewählte Form an: ein Schlachtross, ein Pony, ein Kamel, ein Elch oder eine Dogge. Das Ross verfügt über die Werte der gewählten Form, ist jedoch statt seines normalen Typs ein himmlischer, feenhafter oder teuflischer Feind (Ihrer Wahl).",
+    "higherLevels": null
+  },
+  "Find Traps": {
+    "name": "Finden Sie Fallen",
+    "description": "Sie spüren das Vorhandensein einer Falle in Reichweite, die sich innerhalb der Sichtlinie befindet. Eine Falle im Sinne dieses Zaubers umfasst alles, was einen plötzlichen oder unerwarteten Effekt hervorrufen würde, den Sie für schädlich oder unerwünscht halten und der von seinem Ersteller ausdrücklich als solcher beabsichtigt wurde. Sie lernen die allgemeine Natur der Gefahr kennen, die von einer Falle ausgeht, die Sie spüren.",
+    "higherLevels": null
+  },
+  "Flame Blade": {
+    "name": "Flammenklinge",
+    "description": "Du beschwörst eine feurige Klinge in deiner freien Hand. Die Klinge ähnelt in Größe und Form einem Krummsäbel und hält lange. Wenn Sie die Klinge loslassen, verschwindet sie, Sie können die Klinge jedoch als Bonusaktion erneut beschwören. Du kannst deine Aktion nutzen, um einen Nahkampf-Zauberangriff mit der feurigen Klinge durchzuführen. Bei einem Treffer erleidet das Ziel 3W6 Feuerschaden. Die Flammenklinge wirft helles Licht in einem Radius von 10 Fuß und schwaches Licht für weitere 10 Fuß.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich der Schaden um 1W6 für alle zwei Slotstufen über der 2. Stufe."
+  },
+  "Flaming Sphere": {
+    "name": "Flammende Kugel",
+    "description": "Eine Feuerkugel mit einem Durchmesser von 5 Fuß erscheint an einem unbesetzten Ort Ihrer Wahl in Reichweite und bleibt für die Dauer bestehen. Jede Kreatur, die ihren Zug innerhalb von 5 Fuß um die Kugel beendet, muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet die Kreatur 2W6 Feuerschaden, bei einem erfolgreichen Rettungswurf halb so viel. Als Bonusaktion können Sie die Kugel bis zu 30 Fuß weit bewegen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich der Schaden um 1W6 für jede Slotstufe über der 2. Stufe."
+  },
+  "Gentle Repose": {
+    "name": "Sanfte Ruhe",
+    "description": "Sie berühren eine Leiche oder andere Überreste. Für diese Dauer ist das Ziel vor Verfall geschützt und kann nicht zu Untoten werden. Der Zauber verlängert auch effektiv das Zeitlimit für die Auferweckung des Ziels von den Toten, da Tage, die unter dem Einfluss dieses Zaubers verbracht werden, nicht auf das Zeitlimit von Zaubern wie „Tote auferwecken“ angerechnet werden.",
+    "higherLevels": null
+  },
+  "Gust of Wind": {
+    "name": "Windstoß",
+    "description": "Eine starke Windlinie von 60 Fuß Länge und 10 Fuß Breite weht von dir aus in eine Richtung, die du für die Dauer des Zaubers wählst. Jede Kreatur, die ihren Zug in der Linie beginnt, muss einen kraftsparenden Wurf erfolgreich absolvieren oder wird 15 Fuß von dir weg in eine Richtung gestoßen, die der Linie folgt. Jede Kreatur in der Reihe muss für jeden Fuß, den sie sich bewegt, 2 Fuß Bewegung aufwenden, wenn sie sich dir nähert.",
+    "higherLevels": null
+  },
+  "Heat Metal": {
+    "name": "Metall erhitzen",
+    "description": "Wählen Sie einen hergestellten Metallgegenstand, z. B. eine Metallwaffe oder eine schwere oder mittlere Metallrüstung, den Sie in Reichweite sehen können. Sie bringen das Objekt dazu, glühend rot zu glühen. Jede Kreatur, die physischen Kontakt mit dem Objekt hat, erleidet 2W8 Feuerschaden, wenn Sie den Zauber wirken. Bis der Zauber endet, kannst du in jedem deiner folgenden Züge eine Bonusaktion nutzen, um diesen Schaden erneut zu verursachen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 2. Stufe."
+  },
+  "Hold Person": {
+    "name": "Person festhalten",
+    "description": "Wählen Sie einen Humanoiden, den Sie in Reichweite sehen können. Dem Ziel muss ein Weisheitsrettungswurf gelingen, sonst ist es für die Dauer gelähmt. Am Ende jedes Zuges kann das Ziel einen weiteren Weisheitsrettungswurf durchführen. Bei einem Erfolg endet der Zauber beim Ziel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, können Sie für jede Slotstufe über der 2. Stufe einen zusätzlichen Humanoiden als Ziel wählen."
+  },
+  "Invisibility": {
+    "name": "Unsichtbarkeit",
+    "description": "Eine Kreatur, die du berührst, wird unsichtbar, bis der Zauber endet. Alles, was das Ziel trägt oder trägt, ist unsichtbar, solange es sich am Körper des Ziels befindet. Der Zauber endet für ein Ziel, das angreift oder einen Zauber wirkt.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 2. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Knock": {
+    "name": "Klopfen",
+    "description": "Wählen Sie ein Objekt aus, das Sie in Reichweite sehen können. Bei dem Objekt kann es sich um eine verschlossene Tür, eine Kiste, eine Truhe, ein Paar Handschellen, ein Vorhängeschloss oder ein anderes Objekt handeln, das ein alltägliches oder magisches Mittel enthält, das den Zugang verhindert. Ein Ziel, das durch ein gewöhnliches Schloss festgehalten wird oder festsitzt oder verriegelt ist, wird entriegelt, entriegelt oder entriegelt. Wenn Sie den Zauber wirken, ertönt vom Zielobjekt ein lautes Klopfen, das aus einer Entfernung von bis zu 90 Metern hörbar ist.",
+    "higherLevels": null
+  },
+  "Lesser Restoration": {
+    "name": "Kleinere Restaurierung",
+    "description": "Du berührst eine Kreatur und kannst entweder eine Krankheit oder einen Zustand beenden, von dem sie betroffen ist. Der Zustand kann blind, taub, gelähmt oder vergiftet sein.",
+    "higherLevels": null
+  },
+  "Levitate": {
+    "name": "Schweben",
+    "description": "Eine Kreatur oder ein Objekt Ihrer Wahl, die Sie in Reichweite sehen können, steigt vertikal bis zu 20 Fuß hoch und bleibt dort für die Dauer schweben. Der Zauber kann ein Ziel schweben lassen, das bis zu 500 Pfund wiegt. Eine unwillige Kreatur, der ein Konstitutionsrettungswurf gelingt, bleibt davon unberührt. Das Ziel kann sich nur bewegen, indem es gegen einen festen Gegenstand oder eine feste Oberfläche in Reichweite drückt oder zieht.",
+    "higherLevels": null
+  },
+  "Locate Animals or Plants": {
+    "name": "Suchen Sie Tiere oder Pflanzen",
+    "description": "Beschreiben oder benennen Sie eine bestimmte Tier- oder Pflanzenart. Indem Sie sich auf die Stimme der Natur in Ihrer Umgebung konzentrieren, erfahren Sie die Richtung und Entfernung zum nächstgelegenen Lebewesen oder zur nächstgelegenen Pflanze dieser Art im Umkreis von 5 Meilen, sofern vorhanden.",
+    "higherLevels": null
+  },
+  "Locate Object": {
+    "name": "Objekt suchen",
+    "description": "Beschreiben oder benennen Sie einen Gegenstand, der Ihnen bekannt ist. Sie erkennen die Richtung zum Standort des Objekts, solange sich dieses Objekt in einem Umkreis von 1.000 Fuß um Sie befindet. Wenn sich das Objekt bewegt, kennen Sie die Richtung seiner Bewegung. Der Zauber kann ein bestimmtes, Ihnen bekanntes Objekt lokalisieren, sofern Sie es mindestens einmal aus der Nähe gesehen haben – im Umkreis von 30 Fuß.",
+    "higherLevels": null
+  },
+  "Magic Mouth": {
+    "name": "Magischer Mund",
+    "description": "Sie implantieren eine Nachricht in ein Objekt in Reichweite, eine Nachricht, die ausgegeben wird, wenn eine Auslösebedingung erfüllt ist. Wählen Sie einen Gegenstand, den Sie sehen können und der nicht von einer anderen Kreatur getragen oder getragen wird. Sprechen Sie dann die Nachricht, die höchstens 25 Wörter lang sein darf, obwohl sie auch über eine Länge von 10 Minuten übermittelt werden kann. Bestimmen Sie abschließend den Umstand, der den Zauber zur Übermittlung Ihrer Nachricht auslöst.",
+    "higherLevels": null
+  },
+  "Magic Weapon": {
+    "name": "Magische Waffe",
+    "description": "Du berührst eine nichtmagische Waffe. Bis zum Ende des Zaubers wird diese Waffe zu einer magischen Waffe mit einem Bonus von +1 auf Angriffs- und Schadenswürfe.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich der Bonus auf +2. Wenn Sie einen Zauberslot der 6. Stufe oder höher verwenden, erhöht sich der Bonus auf +3."
+  },
+  "Mirror Image": {
+    "name": "Spiegelbild",
+    "description": "In Ihrem Raum erscheinen drei illusorische Duplikate Ihrer selbst. Bis der Zauber endet, bewegen sich die Duplikate mit Ihnen und ahmen Ihre Aktionen nach, wobei sie ihre Position ändern, sodass es unmöglich ist, zu verfolgen, welches Bild echt ist. Mit Ihrer Klage können Sie die Scheinduplikate abtun. Jedes Mal, wenn eine Kreatur dich während der Wirkungsdauer des Zaubers mit einem Angriff angreift, wirf einen W20, um zu bestimmen, ob der Angriff stattdessen eines deiner Duplikate zum Ziel hat.",
+    "higherLevels": null
+  },
+  "Misty Step": {
+    "name": "Misty Step",
+    "description": "Kurzzeitig von silbrigem Nebel umgeben, teleportieren Sie sich bis zu 30 Fuß weit zu einem unbesetzten Raum, den Sie sehen können.",
+    "higherLevels": null
+  },
+  "Moonbeam": {
+    "name": "Mondstrahl",
+    "description": "Ein silbriger Strahl aus blassem Licht scheint in einem 12 Meter hohen Zylinder mit einem Radius von 1,50 Meter herab, der auf einen Punkt in Reichweite zentriert ist. Bis der Zauber endet, erfüllt schwaches Licht den Zylinder. Wenn eine Kreatur zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder dort ihren Zug beginnt, wird sie von geisterhaften Flammen umhüllt, die sengende Schmerzen verursachen, und sie muss einen konstitutionsrettenden Wurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 2W10 Strahlungsschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich der Schaden um 1W10 für jede Slotstufe über der 2. Stufe."
+  },
+  "Nystul's Magic Aura": {
+    "name": "Nystuls magische Aura",
+    "description": "Sie platzieren eine Illusion auf einer Kreatur oder einem Objekt, das Sie berühren, sodass Wahrsagungszauber falsche Informationen darüber preisgeben. Das Ziel kann eine willige Kreatur oder ein Gegenstand sein, der nicht von einer anderen Kreatur getragen oder getragen wird. Wenn du den Zauber wirkst, wähle einen oder beide der folgenden Effekte: Falsche Aura oder Maske.",
+    "higherLevels": null
+  },
+  "Pass without Trace": {
+    "name": "Pass ohne Spur",
+    "description": "Ein Schleier aus Schatten und Stille geht von Ihnen aus und schützt Sie und Ihre Gefährten vor der Entdeckung. Für die Dauer hat jede Kreatur, die du im Umkreis von 30 Fuß um dich auswählst (einschließlich dir selbst), einen Bonus von +10 auf Geschicklichkeitswürfe (Heimlichkeit) und kann nur mit magischen Mitteln aufgespürt werden. Eine Kreatur, die diesen Bonus erhält, hinterlässt keine Spuren oder andere Spuren ihrer Reise.",
+    "higherLevels": null
+  },
+  "Prayer of Healing": {
+    "name": "Gebet der Heilung",
+    "description": "Bis zu sechs Kreaturen deiner Wahl, die du in Reichweite sehen kannst, erhalten jeweils Trefferpunkte in Höhe von 2W8 + deinem Zauberfähigkeitsmodifikator zurück. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich die Heilung um 1W8 für jede Slotstufe über der 2. Stufe."
+  },
+  "Protection from Poison": {
+    "name": "Schutz vor Gift",
+    "description": "Du berührst eine Kreatur. Wenn es vergiftet ist, neutralisieren Sie das Gift. Wenn mehr als ein Gift das Ziel befällt, neutralisieren Sie ein Gift, von dem Sie wissen, dass es vorhanden ist, oder Sie neutralisieren zufällig eines. Für die Dauer hat das Ziel einen Vorteil bei Rettungswürfen gegen eine Vergiftung und ist resistent gegen Giftschaden.",
+    "higherLevels": null
+  },
+  "Ray of Enfeeblement": {
+    "name": "Strahl der Schwächung",
+    "description": "Ein schwarzer Strahl entnervender Energie springt von Ihrem Finger auf eine Kreatur in Reichweite. Führen Sie einen Fernkampfangriff gegen die Kreatur durch. Bei einem Treffer verursacht das Ziel mit Waffenangriffen, die Stärke nutzen, nur den halben Schaden, bis der Zauber endet. Am Ende jedes Zuges des Ziels kann es einen Konstitutionsrettungswurf gegen den Zauber durchführen. Bei einem Erfolg endet der Zauber.",
+    "higherLevels": null
+  },
+  "Rope Trick": {
+    "name": "Seiltrick",
+    "description": "Sie berühren ein bis zu 60 Fuß langes Seil. Dann steigt ein Ende des Seils in die Luft, bis das gesamte Seil senkrecht zum Boden hängt. Am oberen Ende des Seils öffnet sich ein unsichtbarer Eingang zu einem extradimensionalen Raum, der bis zum Ende des Zaubers bestehen bleibt. Der extradimensionale Raum kann erreicht werden, indem man auf die Spitze des Seils klettert. Bis zu acht mittelgroße oder kleinere Kreaturen können in den extradimensionalen Raum passen.",
+    "higherLevels": null
+  },
+  "Scorching Ray": {
+    "name": "Sengender Strahl",
+    "description": "Sie erzeugen drei Feuerstrahlen und schleudern sie auf Ziele in Reichweite. Sie können sie auf ein oder mehrere Ziele schleudern. Führen Sie für jeden Strahl einen Fernkampfangriff aus. Bei einem Treffer erleidet das Ziel 2W6 Feuerschaden.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirkst, erzeugst du einen zusätzlichen Strahl für jede Slotstufe über der 2. Stufe."
+  },
+  "See Invisibility": {
+    "name": "Siehe Unsichtbarkeit",
+    "description": "Für die Dauer sehen Sie unsichtbare Kreaturen und Objekte, als wären sie sichtbar, und Sie können in einer Entfernung von 60 Fuß in die Ätherebene blicken. Ätherische Kreaturen und Objekte erscheinen geisterhaft und durchscheinend.",
+    "higherLevels": null
+  },
+  "Shatter": {
+    "name": "Zerschmettern",
+    "description": "Ein plötzliches, lautes, schmerzhaft intensives Klingeln ertönt an einem Punkt Ihrer Wahl in Reichweite. Jede Kreatur in einer Kugel mit einem Radius von 10 Fuß, die auf diesem Punkt zentriert ist, muss einen Konstitutionsrettungswurf durchführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 3W8 Donnerschaden, bei einem erfolgreichen Rettungswurf halb so viel. Eine Kreatur aus anorganischem Material wie Stein, Kristall oder Metall ist bei diesem Rettungswurf im Nachteil.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 2. Stufe."
+  },
+  "Silence": {
+    "name": "Schweigen",
+    "description": "Während dieser Dauer kann kein Ton innerhalb einer Kugel mit einem Radius von 20 Fuß erzeugt werden oder durch diese dringen, die auf einem von Ihnen gewählten Punkt innerhalb der Reichweite zentriert ist. Alle Kreaturen oder Objekte, die sich vollständig in der Kugel befinden, sind immun gegen Donnerschaden und Kreaturen sind taub, solange sie sich vollständig darin befinden. Es ist dort unmöglich, einen Zauber zu wirken, der eine verbale Komponente enthält.",
+    "higherLevels": null
+  },
+  "Spider Climb": {
+    "name": "Spinnenaufstieg",
+    "description": "Bis zum Ende des Zaubers erhält eine willige Kreatur, die du berührst, die Fähigkeit, sich nach oben, unten und über vertikale Flächen sowie kopfüber entlang der Decke zu bewegen, während sie ihre Hände frei lässt. Das Ziel erhält außerdem eine Steiggeschwindigkeit, die seiner Gehgeschwindigkeit entspricht.",
+    "higherLevels": null
+  },
+  "Spiritual Weapon": {
+    "name": "Spirituelle Waffe",
+    "description": "Du erschaffst eine schwebende Spektralwaffe in Reichweite, die für die Dauer oder bis du diesen Zauber erneut wirkst, bestehen bleibt. Wenn Sie den Zauber wirken, können Sie einen Nahkampfangriff gegen eine Kreatur im Umkreis von 5 Fuß um die Waffe ausführen. Bei einem Treffer erleidet das Ziel Kraftschaden in Höhe von 1W8 + Modifikator Ihrer Zauberfähigkeit. Als Bonusaktion in Ihrem Zug können Sie die Waffe bis zu 20 Fuß weit bewegen und den Angriff gegen eine Kreatur im Umkreis von 5 Fuß wiederholen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 3. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für alle zwei Slotstufen über der 2. Stufe."
+  },
+  "Suggestion": {
+    "name": "Anregung",
+    "description": "Sie schlagen einen Aktivitätsablauf vor (begrenzt auf ein oder zwei Sätze) und beeinflussen auf magische Weise eine Kreatur, die Sie in Reichweite sehen und die Sie hören und verstehen kann. Der Vorschlag muss so formuliert sein, dass die Vorgehensweise vernünftig erscheint. Der Zauber endet, wenn die Aktivität abgeschlossen ist oder nach 8 Stunden, je nachdem, was zuerst eintritt.",
+    "higherLevels": null
+  },
+  "Web": {
+    "name": "Web",
+    "description": "Sie beschwören eine Masse dicken, klebrigen Gewebes an einem Punkt Ihrer Wahl in Reichweite. Die Netze füllen ab diesem Punkt einen 20-Fuß-Würfel und bleiben für die Dauer bestehen. Die Netze sind schwieriges Gelände und jede Kreatur, die ihren Zug in den Netzen beginnt oder sie während ihres Zuges betritt, muss einen Geschicklichkeitsrettungswurf durchführen oder so lange zurückgehalten werden, wie sie in den Netzen bleibt oder bis sie sich befreit.",
+    "higherLevels": null
+  },
+  "Zone of Truth": {
+    "name": "Zone der Wahrheit",
+    "description": "Sie erschaffen eine magische Zone, die vor Täuschung schützt, in einer Kugel mit einem Radius von 15 Fuß, die auf einem Punkt Ihrer Wahl in Reichweite zentriert ist. Bis zum Ende des Zaubers muss eine Kreatur, die zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder dort ihren Zug beginnt, einen Charisma-Rettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf kann eine Kreatur im Radius keine absichtliche Lüge aussprechen.",
+    "higherLevels": null
+  },
+  "Animate Dead": {
+    "name": "Tote beleben",
+    "description": "Dieser Zauber erschafft einen untoten Diener. Wählen Sie einen Knochenhaufen oder die Leiche eines mittelgroßen oder kleinen Humanoiden in Reichweite. Dein Zauber erfüllt das Ziel mit einer widerlichen Nachahmung des Lebens und erweckt es zu einer untoten Kreatur. In jedem deiner Züge kannst du eine Bonusaktion verwenden, um jede Kreatur, die du mit diesem Zauber erschaffen hast, mental zu befehlen, wenn sich die Kreatur in einem Umkreis von 60 Fuß um dich befindet.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirkst, animierst du für jede Slotstufe über der 3. Stufe zwei zusätzliche untote Kreaturen oder erlangst die Kontrolle über sie zurück."
+  },
+  "Bestow Curse": {
+    "name": "Verleihe einen Fluch",
+    "description": "Du berührst eine Kreatur und dieser Kreatur muss ein Weisheitsrettungswurf gelingen, sonst wird sie für die Dauer des Zaubers verflucht. Wenn Sie diesen Zauberspruch wirken, wählen Sie die Art des Fluchs aus den folgenden Optionen: Nachteil bei Fähigkeitsüberprüfungen und Rettungswürfen mit einem gewählten Fähigkeitswert; Nachteil bei Angriffswürfen gegen dich; muss in jeder Runde einen WIS-Rettungswurf machen, sonst wird seine Aktion verschwendet; Deine Angriffe fügen dem Ziel +1d8 nekrotischen Schaden zu.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, beträgt die Dauer 10 Minuten (keine Konzentration). Bei Verwendung eines Slots der 5. oder 6. Ebene 8 Stunden. Bei Verwendung eines Slots der 7. Stufe oder höher: 24 Stunden."
+  },
+  "Call Lightning": {
+    "name": "Rufen Sie Lightning an",
+    "description": "Eine Gewitterwolke erscheint in Form eines 10 Fuß hohen Zylinders mit einem Radius von 60 Fuß, zentriert auf einem Punkt, den Sie in Reichweite direkt über Ihnen sehen können. Wenn Sie den Zauber wirken, wählen Sie einen Punkt aus, den Sie unter der Wolke sehen können. Ein Blitz zuckt bis zu diesem Punkt hinab. Jede Kreatur innerhalb von 5 Fuß um diesen Punkt muss einen Geschicklichkeitsrettungswurf ausführen und erleidet dabei 3W10 Blitzschaden bei einem fehlgeschlagenen Rettungswurf oder die Hälfte bei einem Erfolg.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. oder höheren Stufe wirken, erhöht sich der Schaden um 1W10 für jede Slotstufe über der 3. Stufe."
+  },
+  "Clairvoyance": {
+    "name": "Hellsehen",
+    "description": "Sie erstellen einen unsichtbaren Sensor in Reichweite an einem Ort, der Ihnen bekannt ist (ein Ort, den Sie bereits besucht oder gesehen haben) oder an einem offensichtlichen Ort, der Ihnen unbekannt ist (z. B. hinter einer Tür, um eine Ecke oder in einem Baumhain). Der Sensor bleibt für die Dauer an Ort und Stelle und kann nicht angegriffen oder anderweitig mit ihm interagiert werden. Wenn du den Zauber wirkst, entscheidest du dich für Sehen oder Hören. Sie können den gewählten Sinn durch den Sensor nutzen, als ob Sie sich in seinem Raum befänden.",
+    "higherLevels": null
+  },
+  "Conjure Animals": {
+    "name": "Tiere beschwören",
+    "description": "Sie beschwören Feengeister, die die Form von Bestien annehmen und in unbesetzten Räumen erscheinen, die Sie in Reichweite sehen können. Wählen Sie eine der folgenden Optionen für das, was erscheint: ein Biest der Herausforderungsstufe 2 oder niedriger; zwei herausfordernde Bestien der Stufe 1 oder niedriger; vier herausfordernde Bestien mit einem Wert von 1/2 oder niedriger; acht herausfordernde Bestien mit einem Wert von 1/4 oder niedriger. Jedes Tier gilt auch als Fee und verschwindet, wenn seine Trefferpunkte auf 0 fallen oder der Zauber endet.",
+    "higherLevels": "Wenn du diesen Zauber mit bestimmten Zauberplätzen höherer Stufen wirkst, wählst du eine der oben genannten Beschwörungsoptionen und es erscheinen mehr Kreaturen: doppelt so viele mit einem Steckplatz der 5. Stufe, dreimal so viele mit einem Steckplatz der 7. Stufe und viermal so viele mit einem Steckplatz der 9. Stufe."
+  },
+  "Counterspell": {
+    "name": "Gegenzauber",
+    "description": "Sie versuchen, eine Kreatur beim Wirken eines Zaubers zu unterbrechen. Wenn die Kreatur einen Zauber der 3. Stufe oder niedriger wirkt, schlägt der Zauber fehl und hat keine Wirkung. Wenn es sich um einen Zauber der 4. Stufe oder höher handelt, führen Sie eine Fähigkeitsüberprüfung mit Ihrer Zauberfähigkeit durch. Der SG beträgt 10 + Grad des Zaubers. Bei Erfolg schlägt der Zauber der Kreatur fehl und hat keine Wirkung.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, hat der unterbrochene Zauber keine Wirkung, wenn seine Stufe kleiner oder gleich der Stufe des von Ihnen verwendeten Zauberslots ist."
+  },
+  "Create Food and Water": {
+    "name": "Schaffen Sie Nahrung und Wasser",
+    "description": "Sie erzeugen 45 Pfund Nahrung und 30 Gallonen Wasser auf dem Boden oder in Behältern in Reichweite, genug, um bis zu fünfzehn Humanoiden oder fünf Rosse 24 Stunden lang zu ernähren. Das Essen ist langweilig, aber nahrhaft und verdirbt, wenn es nach 24 Stunden nicht gegessen wird. Das Wasser ist sauber und verdirbt nicht.",
+    "higherLevels": null
+  },
+  "Daylight": {
+    "name": "Tageslicht",
+    "description": "Eine Lichtkugel mit einem Radius von 60 Fuß breitet sich von einem von Ihnen gewählten Punkt in Reichweite aus. Die Kugel spendet helles Licht und spendet schwaches Licht für weitere 60 Fuß. Wenn Sie einen Punkt auf einem Gegenstand auswählen, den Sie halten oder der nicht getragen oder getragen wird, strahlt das Licht von dem Gegenstand aus und bewegt sich mit ihm. Das vollständige Abdecken des betroffenen Objekts mit einem undurchsichtigen Gegenstand, beispielsweise einer Schüssel oder einem Helm, blockiert das Licht.",
+    "higherLevels": null
+  },
+  "Dispel Magic": {
+    "name": "Magie bannen",
+    "description": "Wähle eine Kreatur, ein Objekt oder einen magischen Effekt in Reichweite. Jeder Zauber der 3. Stufe oder niedriger auf dem Ziel endet. Führen Sie für jeden Zauber der 4. Stufe oder höher auf dem Ziel eine Fähigkeitsüberprüfung durch, indem Sie Ihre Zauberfähigkeit verwenden. Der SG beträgt 10 + Grad des Zaubers. Bei einer erfolgreichen Prüfung endet der Zauber.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, beenden Sie automatisch die Wirkung eines Zaubers auf das Ziel, wenn die Stufe des Zaubers gleich oder niedriger als die Stufe des von Ihnen verwendeten Zauberslots ist."
+  },
+  "Fear": {
+    "name": "Furcht",
+    "description": "Sie projizieren ein Phantombild der schlimmsten Ängste einer Kreatur. Jeder Kreatur in einem 30-Fuß-Kegel muss ein weisheitsrettender Wurf gelingen oder sie lässt alles fallen, was sie in der Hand hält, und verängstigt sich für die Dauer. Während eine Kreatur durch diesen Zauber verängstigt wird, muss sie die Aktion „Sprint“ ausführen und sich in jedem ihrer Züge auf dem sichersten verfügbaren Weg von dir entfernen, es sei denn, es gibt keinen Ort, an dem sie sich bewegen kann.",
+    "higherLevels": null
+  },
+  "Feign Death": {
+    "name": "Den Tod vortäuschen",
+    "description": "Man berührt ein williges Lebewesen und versetzt es in einen kataleptischen Zustand, der nicht vom Tod zu unterscheiden ist. Für die Dauer des Zaubers oder bis Sie eine Aktion ausführen, um das Ziel zu berühren und den Zauber aufzuheben, erscheint das Ziel für jede äußere Betrachtung und für Zauber, die zur Bestimmung des Status des Ziels verwendet werden, tot. Das Ziel ist geblendet und handlungsunfähig und seine Geschwindigkeit sinkt auf 0. Das Ziel hat Widerstand gegen jeglichen Schaden außer psychischem Schaden.",
+    "higherLevels": null
+  },
+  "Fireball": {
+    "name": "Feuerball",
+    "description": "Ein heller Streifen blitzt von Ihrem Zeigefinger zu einem von Ihnen gewählten Punkt in Reichweite und erblüht dann mit leisem Brüllen zu einer Flammenexplosion. Jede Kreatur in einer Kugel mit einem Radius von 20 Fuß, die auf diesem Punkt zentriert ist, muss einen Geschicklichkeitsrettungswurf durchführen. Ein Ziel erleidet bei einem fehlgeschlagenen Rettungswurf 8W6 Feuerschaden, bei einem erfolgreichen Rettungswurf halb so viel. Das Feuer breitet sich um die Ecke aus.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich der Schaden um 1W6 für jede Slotstufe über der 3. Stufe."
+  },
+  "Fly": {
+    "name": "Fliegen",
+    "description": "Du berührst eine willige Kreatur. Das Ziel erhält für die Dauer eine Fluggeschwindigkeit von 60 Fuß. Wenn der Zauber endet, fällt das Ziel, sofern es sich noch in der Luft befindet, es sei denn, es kann den Fall stoppen.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 3. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Gaseous Form": {
+    "name": "Gasförmige Form",
+    "description": "Du verwandelst eine willige Kreatur, die du berührst, zusammen mit allem, was sie trägt und trägt, für die Dauer in eine neblige Wolke. Der Zauber endet, wenn die Trefferpunkte der Kreatur auf 0 sinken. Eine körperlose Kreatur ist nicht betroffen. In dieser Form kann sich das Ziel nur mit einer Fluggeschwindigkeit von 10 Fuß bewegen. Das Ziel kann den Raum einer anderen Kreatur betreten und besetzen. Das Ziel ist resistent gegen nichtmagischen Schaden und hat einen Vorteil bei Rettungswürfen in Bezug auf Stärke, Geschicklichkeit und Konstitution.",
+    "higherLevels": null
+  },
+  "Glyph of Warding": {
+    "name": "Glyphe der Abwehr",
+    "description": "Wenn Sie diesen Zauber wirken, schreiben Sie eine Glyphe, die anderen Kreaturen Schaden zufügt, entweder auf eine Oberfläche (z. B. einen Tisch oder einen Teil des Bodens oder der Wand) oder in einen Gegenstand, der geschlossen werden kann (z. B. ein Buch, eine Schriftrolle oder eine Schatzkiste), um die Glyphe zu verbergen. Bei Auslösung explodiert die Glyphe mit magischer Energie in einer Kugel mit einem Radius von 20 Fuß. Jede Kreatur im Bereich muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem misslungenen Rettungswurf erleidet eine Kreatur 5W8 Schaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich der Schaden einer explosiven Runenglyphe um 1W8 für jede Slotstufe über der 3. Stufe."
+  },
+  "Haste": {
+    "name": "Eile",
+    "description": "Wähle eine willige Kreatur, die du in Reichweite sehen kannst. Bis zum Ende des Zaubers wird die Geschwindigkeit des Ziels verdoppelt, es erhält einen Bonus von +2 auf seine RK, es hat einen Vorteil bei Geschicklichkeitsrettungswürfen und es erhält in jedem seiner Züge eine zusätzliche Aktion. Diese Aktion kann nur verwendet werden, um die Aktionen „Angreifen“ (nur ein Waffenangriff), „Sprinten“, „Entfernen“, „Verstecken“ oder „Ein Objekt verwenden“ auszuführen. Wenn der Zauber endet, kann sich das Ziel erst nach seinem nächsten Zug bewegen oder Aktionen ausführen.",
+    "higherLevels": null
+  },
+  "Hypnotic Pattern": {
+    "name": "Hypnotisches Muster",
+    "description": "Sie erzeugen ein verdrehtes Farbmuster, das in einem 30-Fuß-Würfel in Reichweite durch die Luft webt. Das Muster erscheint für einen Moment und verschwindet dann. Jede Kreatur in der Umgebung, die das Muster sieht, muss einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf wird die Kreatur für die Dauer verzaubert. Während die Kreatur von diesem Zauber bezaubert wird, ist sie außer Gefecht gesetzt und hat eine Geschwindigkeit von 0.",
+    "higherLevels": null
+  },
+  "Leomund's Tiny Hut": {
+    "name": "Leomunds kleine Hütte",
+    "description": "Eine unbewegliche Kraftkuppel mit einem Radius von 10 Fuß entsteht um und über Ihnen und bleibt für die Dauer stationär. Der Zauber endet, wenn Sie seinen Wirkungsbereich verlassen. Neun mittelgroße oder kleinere Kreaturen passen mit in die Kuppel. Die Atmosphäre im Raum ist angenehm und trocken, unabhängig vom Wetter draußen. Bis der Zauber endet, können Sie befehlen, dass der Innenraum schwach beleuchtet oder dunkel wird. Die Kuppel ist von außen undurchsichtig und hat eine beliebige Farbe, von innen ist sie jedoch transparent.",
+    "higherLevels": null
+  },
+  "Lightning Bolt": {
+    "name": "Blitz",
+    "description": "Ein Blitzschlag, der eine Linie von 100 Fuß Länge und 5 Fuß Breite bildet, schießt von Ihnen in eine von Ihnen gewählte Richtung. Jede Kreatur in der Reihe muss einen Geschicklichkeitsrettungswurf durchführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 8W6 Blitzschaden, bei einem erfolgreichen Rettungswurf halb so viel. Der Blitz entzündet brennbare Gegenstände in der Umgebung, die nicht getragen oder getragen werden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich der Schaden um 1W6 für jede Slotstufe über der 3. Stufe."
+  },
+  "Mass Healing Word": {
+    "name": "Massenheilungswort",
+    "description": "Wenn du Worte der Wiederherstellung ausrufst, erhalten bis zu sechs Kreaturen deiner Wahl, die du in Reichweite sehen kannst, Trefferpunkte in Höhe von 1W4 + deinem Zauberfähigkeitsmodifikator zurück. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich die Heilung um 1W4 für jede Slotstufe über der 3. Stufe."
+  },
+  "Meld into Stone": {
+    "name": "Mit Stein verschmelzen",
+    "description": "Sie betreten einen Steingegenstand oder eine Oberfläche, die groß genug ist, um Ihren Körper vollständig aufzunehmen, und verschmelzen Sie und die gesamte Ausrüstung, die Sie tragen, für die Dauer mit dem Stein. Durch Ihre Bewegung betreten Sie den Stein an einer Stelle, die Sie berühren können. Nichts von Ihrer Anwesenheit bleibt für nichtmagische Sinne sichtbar oder auf andere Weise wahrnehmbar.",
+    "higherLevels": null
+  },
+  "Nondetection": {
+    "name": "Nichterkennung",
+    "description": "Für die Dauer versteckst du ein Ziel, das du berührst, vor Wahrsagungsmagie. Das Ziel kann eine willige Kreatur oder ein Ort oder ein Objekt sein, das in keiner Dimension größer als 10 Fuß ist. Das Ziel kann nicht durch Wahrsagungsmagie anvisiert oder durch magische Wahrsagesensoren wahrgenommen werden.",
+    "higherLevels": null
+  },
+  "Plant Growth": {
+    "name": "Pflanzenwachstum",
+    "description": "Dieser Zauber kanalisiert Pflanzen in einem bestimmten Bereich Vitalität. Es gibt zwei mögliche Verwendungsmöglichkeiten für den Zauber, die entweder sofortige oder langfristige Vorteile gewähren. Wenn Sie diesen Zauber mit 1 Aktion wirken, wählen Sie einen Punkt in Reichweite. Alle normalen Pflanzen in einem Umkreis von 100 Fuß um diesen Punkt werden dick und überwachsen. Eine Kreatur, die sich durch das Gebiet bewegt, muss für jeden Fuß, den sie bewegt, 4 Fuß Bewegung aufwenden. Sie können einen oder mehrere Bereiche beliebiger Größe innerhalb des Wirkungsbereichs des Zaubers von der Wirkung ausschließen.",
+    "higherLevels": null
+  },
+  "Protection from Energy": {
+    "name": "Schutz vor Energie",
+    "description": "Für die Dauer hat die willige Kreatur, die du berührst, Widerstand gegen eine Schadensart deiner Wahl: Säure, Kälte, Feuer, Blitz oder Donner.",
+    "higherLevels": null
+  },
+  "Remove Curse": {
+    "name": "Fluch entfernen",
+    "description": "Bei deiner Berührung enden alle Flüche, die eine Kreatur oder ein Objekt betreffen. Wenn es sich bei dem Objekt um einen verfluchten magischen Gegenstand handelt, bleibt sein Fluch bestehen, aber der Zauber bricht die Einstimmung seines Besitzers auf das Objekt, sodass es entfernt oder weggeworfen werden kann.",
+    "higherLevels": null
+  },
+  "Revivify": {
+    "name": "Wiederbeleben",
+    "description": "Du berührst eine Kreatur, die innerhalb der letzten Minute gestorben ist. Diese Kreatur erwacht mit 1 Trefferpunkt wieder zum Leben. Dieser Zauber kann eine Kreatur, die an Altersschwäche gestorben ist, nicht wieder zum Leben erwecken und auch keine fehlenden Körperteile wiederherstellen.",
+    "higherLevels": null
+  },
+  "Sending": {
+    "name": "Senden",
+    "description": "Sie senden eine kurze Nachricht mit maximal fünfundzwanzig Wörtern an eine Kreatur, mit der Sie vertraut sind. Das Wesen hört die Nachricht in seinem Kopf, erkennt Sie als Absender, wenn es Sie kennt, und kann sofort in ähnlicher Weise antworten. Der Zauber ermöglicht es Kreaturen mit einem Intelligenzwert von mindestens 1, die Bedeutung Ihrer Nachricht zu verstehen.",
+    "higherLevels": null
+  },
+  "Sleet Storm": {
+    "name": "Graupelsturm",
+    "description": "Bis der Zauber endet, fallen Eisregen und Schneeregen in einen 20 Fuß hohen Zylinder mit einem Radius von 40 Fuß, der auf einem von Ihnen gewählten Punkt in Reichweite zentriert ist. Der Bereich ist stark abgedunkelt und offene Flammen im Bereich werden gelöscht. Der Boden in der Gegend ist mit glattem Eis bedeckt, was das Gelände schwierig macht. Wenn eine Kreatur zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder ihren Zug dort beginnt, muss sie einen Geschicklichkeitsrettungswurf ausführen, sonst fällt sie in die Bauchlage.",
+    "higherLevels": null
+  },
+  "Slow": {
+    "name": "Langsam",
+    "description": "Sie verändern die Zeit um bis zu sechs Kreaturen Ihrer Wahl in einem 40-Fuß-Würfel in Reichweite. Jedes Ziel muss bei einem Weisheitsrettungswurf erfolgreich sein, sonst ist es für die Dauer betroffen. Die Geschwindigkeit eines betroffenen Ziels wird halbiert, es erleidet einen Malus von -2 auf AC- und Geschicklichkeitsrettungswürfe und es kann keine Reaktionen einsetzen. In seinem Zug kann er entweder eine Aktion oder eine Bonusaktion ausführen, nicht beides. Unabhängig von den Fähigkeiten oder magischen Gegenständen der Kreatur kann sie während ihres Zuges nicht mehr als einen Nah- oder Fernkampfangriff ausführen.",
+    "higherLevels": null
+  },
+  "Speak with Dead": {
+    "name": "Sprich mit Toten",
+    "description": "Sie verleihen einer Leiche Ihrer Wahl in Reichweite den Anschein von Leben und Intelligenz und ermöglichen ihr so, die von Ihnen gestellten Fragen zu beantworten. Die Leiche muss noch einen Mund haben und darf nicht untot sein. Der Zauber kann mit einer Leiche kommunizieren, die nicht länger als 10 Tage tot ist. Sie können der Leiche bis zu fünf Fragen stellen. Die Leiche weiß nur, was sie im Leben wusste, und ist nicht gezwungen, eine wahrheitsgemäße Antwort zu geben.",
+    "higherLevels": null
+  },
+  "Speak with Plants": {
+    "name": "Sprich mit Pflanzen",
+    "description": "Sie verleihen Pflanzen im Umkreis von 30 Fuß um Sie herum begrenzte Empfindungs- und Animationsfähigkeiten und geben ihnen so die Möglichkeit, mit Ihnen zu kommunizieren und Ihren einfachen Befehlen zu folgen. Sie können Pflanzen zu Ereignissen im Wirkungsbereich des Zaubers am vergangenen Tag befragen und so Informationen über vergangene Kreaturen, das Wetter und andere Umstände erhalten. Sie können schwieriges Gelände, das durch Pflanzenwachstum verursacht wird, auch in normales Gelände umwandeln, das für die Dauer bestehen bleibt. Pflanzen können möglicherweise andere Aufgaben in Ihrem Namen ausführen.",
+    "higherLevels": null
+  },
+  "Spirit Guardians": {
+    "name": "Geisterwächter",
+    "description": "Du rufst Geister herbei, um dich zu beschützen. Sie huschen für die Dauer in einer Entfernung von 15 Fuß um Sie herum. Wenn Sie gut oder neutral sind, erscheint ihre Spektralform engelhaft oder feenhaft (Sie haben die Wahl). Wenn Sie böse sind, erscheinen sie teuflisch. Wenn du diesen Zauber wirkst, kannst du eine beliebige Anzahl von Kreaturen bestimmen, die du sehen kannst, von ihm nicht betroffen zu sein. Die Geschwindigkeit einer betroffenen Kreatur wird in dem Bereich halbiert, und wenn die Kreatur den Bereich zum ersten Mal in einem Zug betritt oder ihren Zug dort beginnt, muss sie einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet die Kreatur 3W8 Strahlungsschaden (wenn Sie gut oder neutral sind) oder 3W8 nekrotischen Schaden (wenn Sie böse sind). Bei einem erfolgreichen Rettungswurf erleidet die Kreatur halb so viel Schaden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 3. Stufe."
+  },
+  "Stinking Cloud": {
+    "name": "Stinkende Wolke",
+    "description": "Sie erschaffen eine Kugel aus gelbem, ekelerregendem Gas mit einem Radius von 20 Fuß, die auf einem Punkt in Reichweite zentriert ist. Die Wolke breitet sich über Ecken aus und ihr Bereich ist stark verdeckt. Die Wolke verweilt für die Dauer in der Luft. Jede Kreatur, die sich zu Beginn ihres Zuges vollständig in der Wolke befindet, muss einen Konstitutionsrettungswurf gegen Gift durchführen. Bei einem fehlgeschlagenen Rettungswurf verbringt die Kreatur ihre Aktion damit, zu würgen und zu taumeln.",
+    "higherLevels": null
+  },
+  "Tongues": {
+    "name": "Zungen",
+    "description": "Dieser Zauber verleiht der Kreatur, die du berührst, die Fähigkeit, jede gesprochene Sprache zu verstehen, die sie hört. Wenn das Ziel spricht, versteht darüber hinaus jede Kreatur, die mindestens eine Sprache beherrscht und das Ziel hören kann, was es sagt.",
+    "higherLevels": null
+  },
+  "Vampiric Touch": {
+    "name": "Vampirische Berührung",
+    "description": "Die Berührung Ihrer schattenumrankten Hand kann anderen Lebenskraft entziehen, um Ihre Wunden zu heilen. Führe einen Nahkampfangriff gegen eine Kreatur in deiner Reichweite durch. Bei einem Treffer erleidet das Ziel 3W6 nekrotischen Schaden und Sie erhalten Trefferpunkte in Höhe der Hälfte des verursachten nekrotischen Schadens zurück. Bis zum Ende des Zaubers kannst du den Angriff in jedem deiner Züge als Aktion wiederholen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 4. Stufe oder höher wirken, erhöht sich der Schaden um 1W6 für jede Slotstufe über der 3. Stufe."
+  },
+  "Water Breathing": {
+    "name": "Wasseratmung",
+    "description": "Dieser Zauber verleiht bis zu zehn willigen Kreaturen, die Sie in Reichweite sehen können, die Fähigkeit, unter Wasser zu atmen, bis der Zauber endet. Die betroffenen Lebewesen behalten auch ihre normale Atmungsweise bei.",
+    "higherLevels": null
+  },
+  "Water Walk": {
+    "name": "Wasserspaziergang",
+    "description": "Dieser Zauber verleiht bis zu zehn willigen Kreaturen, die Sie für die Dauer in Reichweite sehen können, die Fähigkeit, sich über jede flüssige Oberfläche – wie Wasser, Säure, Schlamm, Schnee, Treibsand oder Lava – zu bewegen, als wäre es harmloser fester Boden (Kreaturen, die geschmolzene Lava überqueren, können immer noch Schaden durch die Hitze erleiden).",
+    "higherLevels": null
+  },
+  "Wind Wall": {
+    "name": "Windwand",
+    "description": "An einem von Ihnen gewählten Punkt in Reichweite erhebt sich eine Wand aus starkem Wind vom Boden. Sie können die Mauer bis zu 15 Meter lang, 4,5 Meter hoch und bis zu 3 Meter dick machen. Sie können die Wand nach Belieben formen, solange sie einen durchgehenden Weg entlang des Bodens bildet. Die Mauer bleibt für die Dauer bestehen. Wenn die Mauer erscheint, muss jede Kreatur in ihrem Bereich einen Kraftrettungswurf durchführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 3W8 Wuchtschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": null
+  },
+  "Arcane Eye": {
+    "name": "Arkanes Auge",
+    "description": "Du erschaffst in Reichweite ein unsichtbares, magisches Auge, das für die Dauer in der Luft schwebt. Sie erhalten mental visuelle Informationen vom Auge, das bis zu einer Entfernung von 30 Fuß normal und dunkel sehen kann. Das Auge kann in jede Richtung blicken. Als Aktion können Sie das Auge bis zu 30 Fuß in jede Richtung bewegen. Es gibt keine Begrenzung dafür, wie weit sich das Auge von Ihnen entfernen kann, aber es kann nicht in eine andere Existenzebene eindringen.",
+    "higherLevels": null
+  },
+  "Banishment": {
+    "name": "Verbannung",
+    "description": "Sie versuchen, eine Kreatur, die Sie in Reichweite sehen können, auf eine andere Existenzebene zu schicken. Dem Ziel muss ein Charisma-Rettungswurf gelingen, sonst wird es verbannt. Wenn das Ziel auf der Existenzebene heimisch ist, auf der Sie sich befinden, verbannen Sie das Ziel auf eine harmlose Halbebene. Dort ist das Ziel außer Gefecht gesetzt. Das Ziel bleibt dort, bis der Zauber endet. Anschließend erscheint das Ziel wieder auf dem Feld, das es verlassen hat, oder auf dem nächstgelegenen unbesetzten Feld, falls dieses Feld besetzt ist.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 5. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 4. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Blight": {
+    "name": "Seuche",
+    "description": "Nekromantische Energie überschwemmt eine Kreatur Ihrer Wahl, die Sie in Reichweite sehen können, und entzieht ihr Feuchtigkeit und Vitalität. Das Ziel muss einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet das Ziel 8W8 nekrotischen Schaden, bei einem erfolgreichen Rettungswurf halb so viel. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte. Wenn Sie eine Pflanzenkreatur oder eine magische Pflanze als Ziel wählen, führt diese den Rettungswurf mit Nachteil durch und der Zauber fügt ihr maximalen Schaden zu.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 5. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 4. Stufe."
+  },
+  "Compulsion": {
+    "name": "Zwang",
+    "description": "Kreaturen deiner Wahl, die du in Reichweite sehen und die du hören kannst, müssen einen Weisheitsrettungswurf machen. Einem Ziel gelingt dieser Rettungswurf automatisch, wenn es nicht verzaubert werden kann. Bei einem fehlgeschlagenen Rettungswurf ist ein Ziel von diesem Zauber betroffen. Bis der Zauber endet, kannst du in jedem deiner Züge eine Bonusaktion nutzen, um eine Richtung festzulegen, die horizontal zu dir verläuft. Jedes betroffene Ziel muss in seinem nächsten Zug so viel seiner Bewegung wie möglich nutzen, um sich in diese Richtung zu bewegen.",
+    "higherLevels": null
+  },
+  "Confusion": {
+    "name": "Verwirrung",
+    "description": "Dieser Zauber greift den Geist der Kreaturen an und verdreht ihn, erzeugt Wahnvorstellungen und provoziert unkontrolliertes Handeln. Jede Kreatur in einer Kugel mit einem Radius von 10 Fuß, die auf einem von Ihnen gewählten Punkt in Reichweite zentriert ist, muss einen Weisheitsrettungswurf bestehen, wenn Sie diesen Zauber wirken, sonst wird sie davon betroffen. Ein betroffenes Ziel kann keine Reaktionen einstecken und muss zu Beginn jedes seiner Züge einen W10 würfeln, um sein Verhalten für diesen Zug zu bestimmen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 5. Stufe oder höher wirken, erhöht sich der Radius der Kugel für jede Slotstufe über der 4. Stufe um 5 Fuß."
+  },
+  "Conjure Minor Elementals": {
+    "name": "Beschwöre kleinere Elementare",
+    "description": "Sie beschwören Elementare, die in freien Räumen erscheinen, die Sie in Reichweite sehen können. Sie wählen eine der folgenden Optionen für das, was erscheint: ein Elementar der Herausforderungsstufe 2 oder niedriger; zwei Elementare der Herausforderungsstufe 1 oder niedriger; vier Elementare der Herausforderungsstufe 1/2 oder niedriger; acht Elementare mit einer Herausforderungsbewertung von 1/4 oder niedriger. Ein durch diesen Zauber beschworener Elementar verschwindet, wenn seine Trefferpunkte auf 0 fallen oder der Zauber endet.",
+    "higherLevels": "Wenn Sie diesen Zauber mithilfe bestimmter Zauberslots höherer Stufen wirken, wählen Sie eine der oben genannten Beschwörungsoptionen und es erscheinen mehr Kreaturen: doppelt so viele bei einem Slot der 6. Stufe und dreimal so viele bei einem Slot der 8. Stufe."
+  },
+  "Conjure Woodland Beings": {
+    "name": "Beschwöre Waldwesen",
+    "description": "Sie beschwören Feenwesen, die in unbesetzten Feldern erscheinen, die Sie in Reichweite sehen können. Wähle eine der folgenden Optionen für das, was erscheint: ein Feenwesen mit Herausforderungsstufe 2 oder niedriger; zwei Feenwesen der Herausforderungsstufe 1 oder niedriger; vier Feenwesen mit einem Herausforderungswert von 1/2 oder niedriger; acht Feenwesen mit einem Herausforderungswert von 1/4 oder niedriger.",
+    "higherLevels": "Wenn Sie diesen Zauber mithilfe bestimmter Zauberslots höherer Stufen wirken, wählen Sie eine der oben genannten Beschwörungsoptionen und es erscheinen mehr Kreaturen: doppelt so viele bei einem Slot der 6. Stufe und dreimal so viele bei einem Slot der 8. Stufe."
+  },
+  "Control Water": {
+    "name": "Wasser kontrollieren",
+    "description": "Bis der Zauber endet, kontrollierst du jedes freistehende Wasser in einem von dir gewählten Bereich, der ein Würfel mit einer Seitenlänge von bis zu 100 Fuß ist. Wenn du diesen Zauber wirkst, kannst du aus einem der folgenden Effekte oder einer beliebigen Kombination wählen: Überschwemmung, Teilwasser, Umleitungsfluss oder Strudel.",
+    "higherLevels": null
+  },
+  "Death Ward": {
+    "name": "Todesstation",
+    "description": "Sie berühren eine Kreatur und gewähren ihr einen gewissen Schutz vor dem Tod. Wenn das Ziel zum ersten Mal aufgrund des erlittenen Schadens auf 0 Trefferpunkte sinkt, sinkt das Ziel stattdessen auf 1 Trefferpunkt und der Zauber endet. Wenn der Zauber noch wirksam ist, wenn das Ziel einem Effekt ausgesetzt ist, der es sofort töten würde, ohne Schaden zuzufügen, wird dieser Effekt stattdessen beim Ziel annulliert und der Zauber endet.",
+    "higherLevels": null
+  },
+  "Dimension Door": {
+    "name": "Dimensionstür",
+    "description": "Sie teleportieren sich von Ihrem aktuellen Standort zu jedem anderen Ort in Reichweite. Sie kommen genau an der gewünschten Stelle an. Es kann sich um einen Ort handeln, den Sie sehen können, um einen, den Sie sich vorstellen können, oder um einen, den Sie durch Angabe von Entfernung und Richtung beschreiben können. Sie können Gegenstände mitbringen, solange deren Gewicht Ihre Tragfähigkeit nicht überschreitet. Sie können auch eine willige Kreatur Ihrer Größe oder kleiner mitbringen, die Ausrüstung bis zu ihrer Tragfähigkeit trägt.",
+    "higherLevels": null
+  },
+  "Divination": {
+    "name": "Weissagung",
+    "description": "Deine Magie und ein Opfer bringen dich in Kontakt mit einem Gott oder dessen Dienern. Sie stellen eine einzelne Frage zu einem bestimmten Ziel, Ereignis oder einer Aktivität, die innerhalb von 7 Tagen stattfinden soll. Der DM bietet eine wahrheitsgemäße Antwort. Die Antwort könnte ein kurzer Satz, ein kryptischer Reim oder ein Omen sein. Der Zauber berücksichtigt keine möglichen Umstände, die das Ergebnis verändern könnten, wie etwa das Wirken zusätzlicher Zauber oder der Verlust oder Gewinn eines Gefährten.",
+    "higherLevels": null
+  },
+  "Dominate Beast": {
+    "name": "Beherrsche das Biest",
+    "description": "Sie versuchen, ein Tier zu verführen, das Sie in Reichweite sehen können. Es muss ein Weisheitsrettungswurf bestehen oder für die Dauer von dir verzaubert werden. Wenn du oder eine Kreatur, die dir freundlich gesinnt ist, gegen ihn kämpfst, hat er einen Vorteil beim Rettungswurf. Während das Biest verzaubert ist, haben Sie eine telepathische Verbindung mit ihm, solange Sie sich beide auf derselben Existenzebene befinden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 9. Stufe wirken, beträgt die Dauer Konzentration bis zu 8 Stunden."
+  },
+  "Evard's Black Tentacles": {
+    "name": "Evards schwarze Tentakel",
+    "description": "Sich windende, ebenholzfarbene Tentakel füllen ein 20 Fuß großes Quadrat auf dem Boden, das Sie in Reichweite sehen können. Für die Dauer verwandeln diese Tentakel den Boden in der Umgebung in schwieriges Gelände. Wenn eine Kreatur den betroffenen Bereich zum ersten Mal in einem Zug betritt oder ihren Zug dort beginnt, muss der Kreatur ein Geschicklichkeitsrettungswurf gelingen oder sie erleidet 3W6 Wuchtschaden und wird von den Tentakeln zurückgehalten, bis der Zauber endet.",
+    "higherLevels": null
+  },
+  "Fabricate": {
+    "name": "Fabrizieren",
+    "description": "Sie wandeln Rohstoffe in Produkte aus demselben Material um. Sie können beispielsweise eine Holzbrücke aus einer Baumgruppe, ein Seil aus einem Hanfstück und Kleidung aus Flachs oder Wolle herstellen. Wählen Sie Rohstoffe, die Sie in Reichweite sehen können. Sie können ein großes oder kleineres Objekt herstellen (enthalten in einem 10-Fuß-Würfel oder in acht verbundenen 5-Fuß-Würfeln), vorausgesetzt, Sie verfügen über eine ausreichende Menge an Rohmaterial.",
+    "higherLevels": null
+  },
+  "Fire Shield": {
+    "name": "Feuerschild",
+    "description": "Dünne und zarte Flammen umhüllen Ihren Körper für die Dauer und spenden helles Licht in einem Radius von 10 Fuß und schwaches Licht für weitere 10 Fuß. Die Flammen bieten Ihnen je nach Wahl einen Wärmeschutz oder einen Kälteschutz. Der Wärmeschild gewährt Ihnen Widerstand gegen Kälteschaden und der Kälteschild gewährt Ihnen Widerstand gegen Feuerschaden. Darüber hinaus explodiert der Schild mit Flammen, wenn eine Kreatur in einem Umkreis von 1,5 m um Sie herum Sie mit einem Nahkampfangriff trifft. Der Angreifer erleidet 2W8 Feuerschaden durch einen Wärmeschild oder 2W8 Kälteschaden durch einen Kälteschild.",
+    "higherLevels": null
+  },
+  "Freedom of Movement": {
+    "name": "Bewegungsfreiheit",
+    "description": "Du berührst eine willige Kreatur. Für die Dauer bleibt die Bewegung des Ziels durch schwieriges Gelände unbeeinflusst, und Zauber und andere magische Effekte können weder die Geschwindigkeit des Ziels verringern noch dazu führen, dass das Ziel gelähmt oder zurückgehalten wird. Das Ziel kann sich auch 1,50 m weit bewegen, um automatisch nichtmagischen Fesseln zu entkommen, etwa Fesseln oder einer Kreatur, die es festhält.",
+    "higherLevels": null
+  },
+  "Giant Insect": {
+    "name": "Riesiges Insekt",
+    "description": "Sie verwandeln für die Dauer bis zu zehn Tausendfüßler, drei Wespen, fünf Hornissen oder einen Skorpion in Reichweite in riesige Versionen ihrer natürlichen Formen. Aus einem Tausendfüßler wird ein Riesentausendfüßler, aus einer Wespe wird eine Riesenwespe, aus einer Hornisse wird eine Riesenwespe und aus einem Skorpion wird ein Riesenskorpion. Jede Kreatur gehorcht Ihren verbalen Befehlen und im Kampf handelt sie in jeder Runde, wenn Sie an der Reihe sind.",
+    "higherLevels": null
+  },
+  "Greater Invisibility": {
+    "name": "Größere Unsichtbarkeit",
+    "description": "Du oder eine Kreatur, die du berührst, wird unsichtbar, bis der Zauber endet. Alles, was das Ziel trägt oder trägt, ist unsichtbar, solange es sich am Körper des Ziels befindet. Im Gegensatz zur Unsichtbarkeit endet dieser Zauber nicht, wenn das Ziel angreift oder einen Zauber wirkt.",
+    "higherLevels": null
+  },
+  "Guardian of Faith": {
+    "name": "Hüter des Glaubens",
+    "description": "Ein großer Spektralwächter erscheint und schwebt für die Dauer in einem unbesetzten Raum Ihrer Wahl, den Sie in Reichweite sehen können. Der Wächter nimmt diesen Raum ein und ist bis auf ein glänzendes Schwert und einen Schild, auf denen das Symbol Ihrer Gottheit prangt, nicht zu erkennen. Jede dir feindlich gesinnte Kreatur, die sich zum ersten Mal in einer Runde auf ein Feld im Umkreis von 10 Fuß um den Wächter bewegt, muss einen Geschicklichkeitsrettungswurf bestehen. Bei einem fehlgeschlagenen Rettungswurf erleidet die Kreatur 20 Strahlenschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": null
+  },
+  "Hallucinatory Terrain": {
+    "name": "Halluzinatorisches Gelände",
+    "description": "Sie lassen natürliches Gelände in einem 150-Fuß-Würfel in der Reichweite wie eine andere Art von natürlichem Gelände aussehen, klingen und riechen. So können offene Felder oder eine Straße einem Sumpf, einem Hügel, einer Gletscherspalte oder einem anderen schwierigen oder unpassierbaren Gelände ähneln. Ein Teich kann wie eine grasbewachsene Wiese, ein Abgrund wie ein sanfter Hang oder eine mit Steinen übersäte Schlucht wie eine breite und glatte Straße aussehen. Hergestellte Strukturen, Ausrüstung und Kreaturen in der Umgebung werden im Aussehen nicht verändert.",
+    "higherLevels": null
+  },
+  "Ice Storm": {
+    "name": "Eissturm",
+    "description": "Ein Hagel aus steinhartem Eis prasselt in einem Zylinder mit einem Radius von 20 Fuß und einer Höhe von 40 Fuß auf den Boden, der auf einen Punkt in Reichweite zentriert ist. Jede Kreatur im Zylinder muss einen Geschicklichkeitsrettungswurf durchführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 2W8 Wuchtschaden und 4W6 Kälteschaden, bei einem erfolgreichen Rettungswurf halb so viel. Hagelkörner verwandeln den Wirkungsbereich des Sturms bis zum Ende Ihres nächsten Zuges in schwieriges Gelände.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 5. Stufe oder höher wirken, erhöht sich der Wuchtschaden um 1W8 für jede Slotstufe über der 4. Stufe."
+  },
+  "Locate Creature": {
+    "name": "Finde die Kreatur",
+    "description": "Beschreiben oder benennen Sie ein Lebewesen, das Ihnen bekannt ist. Sie erkennen die Richtung zum Standort der Kreatur, solange sich diese Kreatur in einem Umkreis von 1.000 Fuß um Sie befindet. Wenn sich die Kreatur bewegt, kennen Sie die Richtung ihrer Bewegung. Der Zauber kann eine bestimmte, Ihnen bekannte Kreatur oder die nächstgelegene Kreatur einer bestimmten Art (z. B. einen Menschen oder ein Einhorn) lokalisieren, sofern Sie eine solche Kreatur mindestens einmal im Umkreis von 30 Fuß aus der Nähe gesehen haben.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Faithful Hound": {
+    "name": "Mordenkainens treuer Hund",
+    "description": "Sie beschwören einen Phantomwächter in einem unbesetzten Raum, den Sie in Reichweite sehen können, wo er für die Dauer verbleibt, bis Sie ihn als Aktion abtun oder bis Sie sich mehr als 100 Fuß von ihm entfernen. Der Hund ist für alle Kreaturen außer dir unsichtbar und kann nicht verletzt werden. Wenn eine kleine oder größere Kreatur sich ihr auf 30 Fuß nähert, ohne zuvor das Passwort auszusprechen, das Sie beim Wirken dieses Zaubers angegeben haben, beginnt der Hund laut zu bellen. Der Hund sieht unsichtbare Kreaturen und kann sie in einem Umkreis von 1,5 m um sich entdecken. Als Bonusaktion kannst du in deinem Zug den Hund anweisen, eine Kreatur in einem Umkreis von 5 Fuß um ihn anzugreifen. Bei einem Treffer verursacht es 4W8 Stichschaden.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Private Sanctum": {
+    "name": "Mordenkainens Privatheiligtum",
+    "description": "Sie machen einen Bereich in Reichweite auf magische Weise sicher. Die Fläche ist ein Würfel, der auf jeder Seite nur 5 Fuß bis 100 Fuß groß sein kann. Der Zauber hält so lange an oder bis du ihn mit einer Aktion aufhebst. Wenn du den Zauber wirkst, entscheidest du, welche Art von Sicherheit der Zauber bietet, indem du eine oder alle der folgenden Eigenschaften wählst: Schall kann die Barriere nicht durchdringen, die Barriere wird undurchsichtig, Wahrsagungszauber können nicht innerhalb des Bereichs zielen, Kreaturen im Bereich können nicht von Wahrsagungsmagie angegriffen werden, nichts kann sich in den geschützten Bereich hinein oder aus ihm heraus teleportieren, Ebenenreisen sind innerhalb des geschützten Bereichs blockiert.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 5. Stufe oder höher wirken, können Sie die Größe des Würfels für jede Slot-Stufe über die 4. Stufe hinaus um 100 Fuß erhöhen. So könnte man einen Würfel schützen, der auf einer Seite bis zu 200 Fuß lang sein kann, indem man einen Zauberslot der 5. Stufe nutzt."
+  },
+  "Otiluke's Resilient Sphere": {
+    "name": "Otilukes widerstandsfähige Sphäre",
+    "description": "Eine Kugel aus schimmernder Kraft umschließt eine Kreatur oder ein Objekt von großer oder kleinerer Größe in Reichweite. Eine unwillige Kreatur muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf ist die Kreatur für die Dauer eingeschlossen. Nichts – keine physischen Objekte, Energie oder andere Zaubereffekte – kann die Barriere durchdringen, weder hinein noch hinaus, obwohl eine Kreatur in der Kugel dort atmen kann. Die Kugel ist immun gegen jeglichen Schaden und eine Kreatur oder ein Objekt im Inneren kann nicht durch Angriffe oder Effekte von außen beschädigt werden.",
+    "higherLevels": null
+  },
+  "Phantasmal Killer": {
+    "name": "Phantasmaler Killer",
+    "description": "Sie nutzen die Albträume einer Kreatur, die Sie in Reichweite sehen können, und erschaffen eine illusorische Manifestation ihrer tiefsten Ängste, die nur für diese Kreatur sichtbar ist. Das Ziel muss einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf wird das Ziel für die Dauer verängstigt. Am Ende jedes Zuges des Ziels, bevor der Zauber endet, muss dem Ziel ein Weisheitsrettungswurf gelingen, sonst erleidet es 4W10 psychischen Schaden. Bei einem erfolgreichen Rettungswurf endet der Zauber.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 5. Stufe oder höher wirken, erhöht sich der Schaden um 1W10 für jede Slotstufe über der 4. Stufe."
+  },
+  "Polymorph": {
+    "name": "Polymorph",
+    "description": "Dieser Zauber verwandelt eine Kreatur, die Sie in Reichweite sehen können, in eine neue Form. Eine unwillige Kreatur muss einen Weisheitsrettungswurf durchführen, um den Effekt zu vermeiden. Der Zauber hat keine Wirkung auf einen Gestaltwandler oder eine Kreatur mit 0 Trefferpunkten. Die Transformation hält für die Dauer an oder bis das Ziel auf 0 Trefferpunkte fällt oder stirbt. Die neue Form kann jedes Tier sein, dessen Herausforderungswert gleich oder kleiner als der des Ziels ist (oder der Stufe des Ziels, wenn es keinen Herausforderungswert hat).",
+    "higherLevels": null
+  },
+  "Secret Chest": {
+    "name": "Geheime Truhe",
+    "description": "Sie verstecken eine Truhe und ihren gesamten Inhalt auf der ätherischen Ebene. Sie müssen die Truhe und die Miniaturreplik berühren, die als Materialkomponente für den Zauber dient. Die Truhe kann bis zu 12 Kubikfuß unbelebtes Material (3 Fuß mal 2 Fuß mal 2 Fuß) enthalten. Während die Truhe auf der ätherischen Ebene bleibt, können Sie eine Aktion ausführen und die Replik berühren, um die Truhe zurückzurufen. Es erscheint in einem offenen Raum auf dem Boden im Umkreis von 5 Fuß um Sie herum. Sie können die Truhe zurück zur ätherischen Ebene schicken, indem Sie eine Aktion ausführen und sowohl die Truhe als auch die Replik berühren.",
+    "higherLevels": null
+  },
+  "Stone Shape": {
+    "name": "Steinform",
+    "description": "Sie berühren ein Steinobjekt mittlerer oder kleinerer Größe oder einen Steinabschnitt von höchstens 1,5 m Länge in einer beliebigen Abmessung und formen es in jede Form, die Ihrem Zweck entspricht. So könnten Sie zum Beispiel einen großen Stein zu einer Waffe, einem Idol oder einer Truhe formen oder einen kleinen Durchgang durch eine Mauer bauen, solange die Mauer weniger als 1,5 Meter dick ist. Sie können auch eine Steintür oder deren Rahmen so formen, dass die Tür verschlossen wird.",
+    "higherLevels": null
+  },
+  "Stoneskin": {
+    "name": "Steinhaut",
+    "description": "Dieser Zauber verwandelt das Fleisch einer willigen Kreatur, die du berührst, so hart wie Stein. Bis zum Ende des Zaubers verfügt das Ziel über Widerstand gegen nichtmagischen Hieb-, Stich- und Hiebschaden.",
+    "higherLevels": null
+  },
+  "Wall of Fire": {
+    "name": "Feuerwand",
+    "description": "Du erschaffst eine Feuerwand auf einer festen Oberfläche in Reichweite. Die Mauer kann bis zu 60 Fuß lang, 20 Fuß hoch und 1 Fuß dick sein, oder eine Ringmauer mit einem Durchmesser von bis zu 20 Fuß, 20 Fuß Höhe und 1 Fuß Dicke. Die Wand ist undurchsichtig und hält für die gesamte Dauer. Wenn die Mauer erscheint, muss jede Kreatur in ihrem Bereich einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 5W8 Feuerschaden, bei einem erfolgreichen Rettungswurf halb so viel. Eine Seite der Mauer (Ihre Wahl) fügt jeder Kreatur, die ihren Zug innerhalb von 10 Fuß von dieser Seite beendet, 5W8 Feuerschaden zu.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 5. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 4. Stufe."
+  },
+  "Animate Objects": {
+    "name": "Objekte animieren",
+    "description": "Objekte werden auf Ihren Befehl zum Leben erweckt. Wählen Sie bis zu zehn nichtmagische Objekte in Reichweite aus, die nicht getragen oder getragen werden. Mittlere Ziele zählen als zwei Objekte, große Ziele zählen als vier Objekte, große Ziele zählen als acht Objekte. Sie können kein Objekt animieren, das größer als Huge ist. Jedes Ziel wird animiert und wird zu einer Kreatur unter deiner Kontrolle, bis der Zauber endet oder auf 0 Trefferpunkte reduziert wird.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, können Sie für jede Slotstufe über der 5. Stufe zwei zusätzliche Objekte animieren."
+  },
+  "Antilife Shell": {
+    "name": "Antilife-Shell",
+    "description": "Eine schimmernde Barriere erstreckt sich in einem Radius von 10 Fuß von Ihnen und bewegt sich mit Ihnen, bleibt auf Sie konzentriert und schützt andere Kreaturen als Untote und Konstrukte. Die Barriere bleibt für die Dauer bestehen. Die Barriere verhindert, dass eine betroffene Kreatur hindurchgeht oder hindurchgreift. Eine betroffene Kreatur kann durch die Barriere Zauber wirken oder Angriffe mit Fern- oder Reichweitenwaffen ausführen.",
+    "higherLevels": null
+  },
+  "Bigby's Hand": {
+    "name": "Bigbys Hand",
+    "description": "Sie erschaffen eine große Hand aus schimmernder, durchscheinender Kraft in einem unbesetzten Raum, den Sie in Reichweite sehen können. Die Hand bleibt für die Dauer des Zaubers bestehen und bewegt sich auf Ihren Befehl hin, wobei sie die Bewegungen Ihrer eigenen Hand nachahmt. Die Hand ist ein Objekt mit RK 20 und Trefferpunkten, die deinem maximalen Trefferpunkt entsprechen. Sinkt der Wert auf 0 Trefferpunkte, endet der Zauber. Es hat eine Stärke von 26 (+8) und eine Geschicklichkeit von 10 (+0). Es kann eine Vielzahl von Aktionen ausführen: Geballte Faust (2W8 Kraft), Kraftvolle Hand (Stoßen), Greifende Hand (Zurückhalten), Eingreifende Hand (Blockieren).",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, erhöht sich der Schaden durch die Option „Geballte Faust“ um 2W8 und der Schaden durch die greifende Hand um 2W6 für jede Slotstufe über der 5. Stufe."
+  },
+  "Cloudkill": {
+    "name": "Cloudkill",
+    "description": "Sie erschaffen eine Kugel aus giftigem, gelbgrünem Nebel mit einem Radius von 20 Fuß, die auf einem von Ihnen gewählten Punkt in Reichweite zentriert ist. Der Nebel breitet sich um die Ecken aus. Es dauert so lange oder bis ein starker Wind den Nebel zerstreut und den Zauber beendet. Sein Bereich ist stark verdeckt. Wenn eine Kreatur zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder ihren Zug dort beginnt, muss diese Kreatur einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet die Kreatur 5W8 Giftschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 5. Stufe."
+  },
+  "Commune": {
+    "name": "Kommune",
+    "description": "Sie kontaktieren Ihre Gottheit oder einen göttlichen Stellvertreter und stellen bis zu drei Fragen, die mit Ja oder Nein beantwortet werden können. Sie müssen Ihre Fragen stellen, bevor der Zauber endet. Sie erhalten für jede gestellte Frage eine richtige Antwort. Göttliche Wesen sind nicht unbedingt allwissend, daher erhalten Sie möglicherweise „unklar“ als Antwort, wenn sich eine Frage auf Informationen bezieht, die außerhalb des Wissens der Gottheit liegen.",
+    "higherLevels": null
+  },
+  "Commune with Nature": {
+    "name": "Kommunizieren Sie mit der Natur",
+    "description": "Sie werden für kurze Zeit eins mit der Natur und lernen das umliegende Gebiet kennen. Im Freien liefert Ihnen der Zauber sachliche Informationen über das Land im Umkreis von 5 Kilometern um Sie herum. In Höhlen und anderen natürlichen unterirdischen Umgebungen ist der Radius auf 300 Fuß begrenzt. Der Zauber funktioniert nicht dort, wo die Natur durch Bauwerke ersetzt wurde, beispielsweise in Kerkern und Städten. Sie erhalten sofort Wissen über bis zu drei Fakten Ihrer Wahl zu einem der folgenden Themen in Bezug auf das Gebiet: Gelände und Gewässer, vorherrschende Pflanzen, Mineralien, Tiere oder Völker, mächtige Himmelskörper, Feenwesen, Unholde, Elementarwesen oder Untote, Einfluss von anderen Existenzebenen, Gebäude.",
+    "higherLevels": null
+  },
+  "Cone of Cold": {
+    "name": "Kältekegel",
+    "description": "Ein Schwall kalter Luft strömt aus Ihren Händen. Jede Kreatur in einem 60-Fuß-Kegel muss einen konstitutionsrettenden Wurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 8W8 Kälteschaden, bei einem erfolgreichen Rettungswurf halb so viel. Eine durch diesen Zauber getötete Kreatur wird zu einer gefrorenen Statue, bis sie auftaut.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 5. Stufe."
+  },
+  "Conjure Elemental": {
+    "name": "Elementar beschwören",
+    "description": "Du rufst einen Elementardiener herbei. Wählen Sie einen Bereich aus Luft, Erde, Feuer oder Wasser, der einen 10 Fuß großen Würfel in Reichweite ausfüllt. Ein Elementar mit der Herausforderungsstufe 5 oder niedriger, der dem von Ihnen gewählten Bereich entspricht, erscheint in einem unbesetzten Bereich im Umkreis von 10 Fuß um ihn herum. Beispielsweise entsteht ein Feuerelementar aus einem Lagerfeuer und ein Erdelementar erhebt sich aus dem Boden. Wenn Sie die Konzentration verlieren, verschwindet das Elementar nicht. Stattdessen verlierst du die Kontrolle über das Elementarwesen, es wird dir und deinen Gefährten gegenüber feindselig und könnte angreifen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, erhöht sich der Herausforderungswert für jede Slotstufe über der 5. Stufe um 1."
+  },
+  "Contact Other Plane": {
+    "name": "Kontaktieren Sie ein anderes Flugzeug",
+    "description": "Du nimmst mental Kontakt zu einem Halbgott, dem Geist eines längst verstorbenen Weisen oder einem anderen mysteriösen Wesen von einer anderen Ebene auf. Der Kontakt mit dieser extraplanaren Intelligenz kann Ihren Geist belasten oder sogar brechen. Wenn Sie diesen Zauber wirken, führen Sie einen Intelligenzrettungswurf von DC 15 durch. Bei einem Fehlschlag erleidest du 6W6 psychischen Schaden und bist wahnsinnig, bis du eine lange Pause eingelegt hast. Während du verrückt bist, kannst du keine Maßnahmen ergreifen, kannst nicht verstehen, was andere Kreaturen sagen, kannst nicht lesen und sprichst nur Kauderwelsch. Bei erfolgreicher Speicherung können Sie der Entität bis zu fünf Fragen stellen.",
+    "higherLevels": null
+  },
+  "Contagion": {
+    "name": "Ansteckung",
+    "description": "Deine Berührung verursacht Krankheiten. Führe einen Nahkampfangriff gegen eine Kreatur in deiner Reichweite durch. Bei einem Treffer befallen Sie die Kreatur mit einer der unten aufgeführten Krankheiten Ihrer Wahl. Das Ziel muss am Ende jedes seiner Züge einen Konstitutionsrettungswurf durchführen. Nachdem drei dieser Rettungswürfe fehlgeschlagen sind, bleiben die Auswirkungen der Krankheit für die Dauer bestehen und die Kreatur führt diese Rettungswürfe nicht mehr aus. Nachdem drei dieser Rettungswürfe erfolgreich waren, erholt sich die Kreatur von der Krankheit und der Zauber endet. Krankheiten: Blendende Krankheit, Schmutzfieber, Fleischfäule, Geistesfeuer, Anfall, schleimiger Untergang.",
+    "higherLevels": null
+  },
+  "Creation": {
+    "name": "Schaffung",
+    "description": "Sie ziehen Schattenmaterialfetzen aus dem Shadowfell, um in Reichweite ein nicht lebendes Objekt aus pflanzlicher Materie zu erschaffen: weiche Waren, Seile, Holz oder etwas Ähnliches. Sie können diesen Zauber auch verwenden, um mineralische Objekte wie Stein, Kristall oder Metall zu erschaffen. Das erstellte Objekt darf nicht größer als ein 5-Fuß-Würfel sein und das Objekt muss eine Form und ein Material haben, die Sie zuvor gesehen haben. Die Dauer hängt vom Material des Objekts ab.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, vergrößert sich der Würfel für jede Slot-Stufe über der 5. Stufe um 5 Fuß."
+  },
+  "Dispel Evil and Good": {
+    "name": "Vertreibe Böses und Gutes",
+    "description": "Schimmernde Energie umgibt und schützt Sie vor Feenwesen, Untoten und Kreaturen, die von jenseits der materiellen Ebene stammen. Für die Dauer haben Himmlische, Elementarwesen, Feenwesen, Unholde und Untote einen Nachteil bei Angriffswürfen gegen dich. Sie können den Zauber vorzeitig beenden, indem Sie eine der folgenden Sonderfunktionen verwenden: Verzauberung brechen oder Entlassung.",
+    "higherLevels": null
+  },
+  "Dominate Person": {
+    "name": "Person dominieren",
+    "description": "Sie versuchen, einen Humanoiden zu verführen, den Sie in Reichweite sehen können. Es muss ein Weisheitsrettungswurf bestehen oder für die Dauer von dir verzaubert werden. Wenn du oder eine Kreatur, die dir freundlich gesinnt ist, gegen ihn kämpfst, hat er einen Vorteil beim Rettungswurf. Während das Ziel verzaubert ist, haben Sie eine telepathische Verbindung mit ihm, solange Sie sich beide auf derselben Existenzebene befinden. Sie können diese telepathische Verbindung verwenden, um der Kreatur Befehle zu erteilen, während Sie bei Bewusstsein sind (keine Aktion erforderlich), die sie nach besten Kräften befolgt.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe wirken, beträgt die Dauer Konzentration bis zu 10 Minuten. Wenn Sie einen Zauberslot der 7. Stufe verwenden, beträgt die Dauer Konzentration bis zu 1 Stunde. Wenn Sie einen Zauberslot der 8. Stufe oder höher verwenden, beträgt die Konzentrationsdauer bis zu 8 Stunden."
+  },
+  "Dream": {
+    "name": "Traum",
+    "description": "Dieser Zauber formt die Träume einer Kreatur. Wählen Sie eine Ihnen bekannte Kreatur als Ziel dieses Zaubers. Das Ziel muss sich auf derselben Existenzebene wie Sie befinden. Kreaturen, die nicht schlafen, wie etwa Elfen, können von diesem Zauber nicht kontaktiert werden. Sie oder eine willige Kreatur, die Sie berühren, gelangen in einen Trancezustand und fungieren als Bote. Während der Trance nimmt der Bote seine Umgebung wahr, kann jedoch keine Maßnahmen ergreifen oder sich bewegen.",
+    "higherLevels": null
+  },
+  "Flame Strike": {
+    "name": "Flammenschlag",
+    "description": "Eine vertikale Säule göttlichen Feuers brüllt an einem von Ihnen angegebenen Ort vom Himmel herab. Jede Kreatur in einem Zylinder mit einem Radius von 10 Fuß und einer Höhe von 10 Fuß, der auf einem Punkt innerhalb der Reichweite zentriert ist, muss einen Geschicklichkeitsrettungswurf ausführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 4W6 Feuerschaden und 4W6 Strahlungsschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirkst, erhöht sich der Feuerschaden oder der Strahlungsschaden (nach deiner Wahl) für jede Slotstufe über der 5. Stufe um 1W6."
+  },
+  "Geas": {
+    "name": "Geas",
+    "description": "Du gibst einer Kreatur, die du in Reichweite sehen kannst, einen magischen Befehl und zwingst sie, einen Dienst zu leisten oder eine Aktion oder Aktivität zu unterlassen, je nachdem, was du beschließt. Wenn die Kreatur dich verstehen kann, muss ihr ein Weisheitsrettungswurf gelingen, sonst wird sie für die Dauer von dir verzaubert. Während die Kreatur von Ihnen verzaubert wird, erleidet sie jedes Mal 5W10 psychischen Schaden, wenn sie Ihren Anweisungen direkt zuwider handelt.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. oder 8. Stufe wirken, beträgt die Dauer 1 Jahr. Wenn Sie diesen Zauber mit einem Zauberslot der 9. Stufe wirken, bleibt der Zauber bestehen, bis er durch einen der Zauber beendet wird, die Flüche beenden können."
+  },
+  "Greater Restoration": {
+    "name": "Größere Wiederherstellung",
+    "description": "Du erfüllst eine Kreatur, die du berührst, mit positiver Energie, um einen schwächenden Effekt rückgängig zu machen. Sie können die Erschöpfungsstufe des Ziels um eins reduzieren oder einen der folgenden Effekte auf das Ziel beenden: einen Effekt, der das Ziel verzaubert oder versteinert hat; ein Fluch, einschließlich der Einstimmung des Ziels auf einen verfluchten magischen Gegenstand; jede Reduzierung auf einen der Fähigkeitswerte des Ziels; Ein Effekt verringert den maximalen Trefferpunkt des Ziels.",
+    "higherLevels": null
+  },
+  "Hold Monster": {
+    "name": "Halten Sie Monster",
+    "description": "Wähle eine Kreatur, die du in Reichweite sehen kannst. Dem Ziel muss ein Weisheitsrettungswurf gelingen, sonst ist es für die Dauer gelähmt. Dieser Zauber hat keine Wirkung auf Untote. Am Ende jedes Zuges kann das Ziel einen weiteren Weisheitsrettungswurf durchführen. Bei einem Erfolg endet der Zauber beim Ziel.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirkst, kannst du für jede Slotstufe über der 5. Stufe eine zusätzliche Kreatur als Ziel wählen."
+  },
+  "Insect Plague": {
+    "name": "Insektenplage",
+    "description": "Schwärmende, beißende Heuschrecken füllen eine Kugel mit einem Radius von 20 Fuß, die an einem von Ihnen gewählten Punkt in Reichweite zentriert ist. Die Kugel breitet sich um Ecken aus. Die Kugel bleibt für die Dauer bestehen und ihr Bereich wird leicht verdeckt. Der Bereich der Kugel ist schwieriges Gelände. Wenn das Gebiet erscheint, muss jede Kreatur darin einen Konstitutionsrettungswurf durchführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 4W10 Stichschaden, bei einem erfolgreichen Rettungswurf halb so viel. Eine Kreatur muss diesen Rettungswurf auch ausführen, wenn sie zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder ihren Zug dort beendet.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, erhöht sich der Schaden um 1W10 für jede Slotstufe über der 5. Stufe."
+  },
+  "Legend Lore": {
+    "name": "Legendenkunde",
+    "description": "Benennen oder beschreiben Sie eine Person, einen Ort oder ein Objekt. Der Zauber erinnert Sie an eine kurze Zusammenfassung der wichtigen Überlieferungen über das von Ihnen benannte Ding. Die Überlieferung kann aus aktuellen Erzählungen, vergessenen Geschichten oder sogar geheimen Überlieferungen bestehen, die nie allgemein bekannt waren. Wenn das von Ihnen genannte Ding nicht von legendärer Bedeutung ist, erhalten Sie keine Informationen.",
+    "higherLevels": null
+  },
+  "Mass Cure Wounds": {
+    "name": "Massenheilung von Wunden",
+    "description": "Eine Welle heilender Energie geht von einem Punkt Ihrer Wahl in Reichweite aus. Wählen Sie bis zu sechs Kreaturen in einer Kugel mit einem Radius von 30 Fuß, die auf diesem Punkt zentriert ist. Jedes Ziel erhält Trefferpunkte in Höhe von 3W8 + Ihrem Zauberfähigkeitsmodifikator zurück. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, erhöht sich die Heilung um 1W8 für jede Slotstufe über der 5. Stufe."
+  },
+  "Mislead": {
+    "name": "Irreführen",
+    "description": "Du wirst unsichtbar, während ein illusorisches Doppel von dir an der Stelle erscheint, an der du stehst. Die Verdoppelung hält für die Dauer an, aber die Unsichtbarkeit endet, wenn du angreifst oder einen Zauber wirkst. Mit Ihrer Aktion können Sie Ihren illusorischen Doppelgänger bis zur doppelten Geschwindigkeit bewegen und ihn auf die von Ihnen gewünschte Weise gestikulieren, sprechen und verhalten lassen. Sie können durch seine Augen sehen und durch seine Ohren hören, als wären Sie dort, wo es ist.",
+    "higherLevels": null
+  },
+  "Modify Memory": {
+    "name": "Speicher ändern",
+    "description": "Sie versuchen, die Erinnerungen einer anderen Kreatur umzugestalten. Eine Kreatur, die du sehen kannst, muss einen Weisheitsrettungswurf machen. Wenn Sie gegen die Kreatur kämpfen, hat sie beim Rettungswurf einen Vorteil. Bei einem fehlgeschlagenen Rettungswurf wird das Ziel für die Dauer von dir verzaubert. Das verzauberte Ziel ist handlungsunfähig und nimmt seine Umgebung nicht wahr, obwohl es Sie immer noch hören kann. Solange dieser Zauber anhält, können Sie die Erinnerung des Ziels an ein Ereignis beeinflussen, das es in den letzten 24 Stunden erlebt hat und das nicht länger als 10 Minuten gedauert hat.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirkst, kannst du die Erinnerungen des Ziels an ein Ereignis ändern, das bis zu 7 Tage zurückliegt (6. Stufe), vor 30 Tagen (7. Stufe), vor einem Jahr (8. Stufe) oder zu einem beliebigen Zeitpunkt in der Vergangenheit der Kreatur (9. Stufe)."
+  },
+  "Passwall": {
+    "name": "Passwall",
+    "description": "Ein Durchgang erscheint an einem Punkt Ihrer Wahl, den Sie auf einer Holz-, Gips- oder Steinoberfläche (z. B. einer Wand, einer Decke oder einem Boden) in Reichweite sehen können, und dauert für die Dauer an. Sie wählen die Abmessungen der Öffnung: bis zu 5 Fuß breit, 8 Fuß hoch und 20 Fuß tief. Der Durchgang erzeugt keine Instabilität in einer ihn umgebenden Struktur.",
+    "higherLevels": null
+  },
+  "Planar Binding": {
+    "name": "Planare Bindung",
+    "description": "Mit diesem Zauber versuchen Sie, einen Himmlischen, einen Elementarkörper, eine Fee oder einen Unhold in Ihren Dienst zu binden. Die Kreatur muss sich während des gesamten Wirkens des Zaubers in Reichweite befinden. (Normalerweise wird die Kreatur zunächst in die Mitte eines umgekehrten magischen Kreises beschworen, um sie gefangen zu halten, während dieser Zauber gewirkt wird.) Nach Abschluss des Zaubers muss das Ziel einen Charisma-Rettungswurf durchführen. Bei einem fehlgeschlagenen Speichervorgang ist es für die Dauer verpflichtet, Ihnen zu dienen.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot einer höheren Stufe wirken, erhöht sich die Dauer auf 10 Tage (6. Stufe), 30 Tage (7. Stufe), 180 Tage (8. Stufe) oder ein Jahr und einen Tag (9. Stufe)."
+  },
+  "Raise Dead": {
+    "name": "Tote auferwecken",
+    "description": "Du erweckst eine tote Kreatur, die du berührst, zum Leben, sofern sie nicht länger als 10 Tage tot ist. Wenn die Seele der Kreatur bereit und frei ist, sich wieder mit dem Körper zu verbinden, kehrt die Kreatur mit 1 Trefferpunkt ins Leben zurück. Dieser Zauber neutralisiert außerdem alle Gifte und heilt nichtmagische Krankheiten, die die Kreatur zum Zeitpunkt ihres Todes befallen hatten. Dieser Zauber entfernt jedoch keine magischen Krankheiten, Flüche oder ähnliche Effekte. Der Zauber kann eine untote Kreatur nicht zum Leben erwecken.",
+    "higherLevels": null
+  },
+  "Reincarnate": {
+    "name": "Reinkarnieren",
+    "description": "Du berührst einen toten Humanoiden oder ein Stück eines toten Humanoiden. Vorausgesetzt, dass die Kreatur nicht länger als 10 Tage tot ist, bildet der Zauber einen neuen erwachsenen Körper für sie und ruft dann die Seele dazu auf, in diesen Körper einzutreten. Wenn die Seele des Ziels nicht frei oder dazu nicht bereit ist, schlägt der Zauber fehl. Die Magie formt einen neuen Körper, in dem die Kreatur leben kann, was wahrscheinlich dazu führt, dass sich die Rasse der Kreatur ändert.",
+    "higherLevels": null
+  },
+  "Rary's Telepathic Bond": {
+    "name": "Rarys telepathische Bindung",
+    "description": "Sie stellen eine telepathische Verbindung zwischen bis zu acht willigen Kreaturen Ihrer Wahl in Reichweite her und verbinden jede Kreatur für die Dauer psychisch mit allen anderen. Kreaturen mit einem Intelligenzwert von 2 oder weniger sind von diesem Zauber nicht betroffen. Bis zum Ende des Zaubers können die Ziele über die Verbindung telepathisch kommunizieren, unabhängig davon, ob sie eine gemeinsame Sprache sprechen oder nicht.",
+    "higherLevels": null
+  },
+  "Scrying": {
+    "name": "Wahrsagerei",
+    "description": "Sie können eine bestimmte Kreatur Ihrer Wahl sehen und hören, die sich auf derselben Existenzebene wie Sie befindet. Das Ziel muss einen Weisheitsrettungswurf durchführen, der davon abhängt, wie gut Sie das Ziel kennen und welche Art von physischer Verbindung Sie zu ihm haben. Bei einem erfolgreichen Rettungswurf ist das Ziel nicht betroffen und Sie können diesen Zauber 24 Stunden lang nicht erneut gegen es anwenden.",
+    "higherLevels": null
+  },
+  "Seeming": {
+    "name": "Scheinbar",
+    "description": "Mit diesem Zauber können Sie das Aussehen einer beliebigen Anzahl von Kreaturen ändern, die Sie in Reichweite sehen können. Du gibst jedem Ziel, das du wählst, ein neues, illusorisches Aussehen. Ein unwilliges Ziel kann einen Charisma-Rettungswurf durchführen, und wenn dieser gelingt, ist es von diesem Zauber nicht betroffen. Der Zauber verschleiert das äußere Erscheinungsbild sowie Kleidung, Rüstung, Waffen und Ausrüstung.",
+    "higherLevels": null
+  },
+  "Telekinesis": {
+    "name": "Telekinese",
+    "description": "Du erhältst die Fähigkeit, Kreaturen oder Objekte durch Gedanken zu bewegen oder zu manipulieren. Wenn du den Zauber wirkst, kannst du als Aktion in jeder Runde für die gesamte Wirkungsdauer deinen Willen auf eine Kreatur oder ein Objekt ausüben, das bzw. das du in Reichweite sehen kannst, und so den unten aufgeführten entsprechenden Effekt hervorrufen. Sie können Runde für Runde dasselbe Ziel beeinflussen oder jederzeit ein neues auswählen. Wenn Sie das Ziel wechseln, ist das vorherige Ziel nicht mehr von dem Zauber betroffen.",
+    "higherLevels": null
+  },
+  "Teleportation Circle": {
+    "name": "Teleportationskreis",
+    "description": "Während Sie den Zauber wirken, zeichnen Sie einen Kreis mit einem Durchmesser von 10 Fuß auf dem Boden, der mit Siegeln beschriftet ist, die Ihren Standort mit einem permanenten Teleportationskreis Ihrer Wahl verbinden, dessen Siegelfolge Sie kennen und der sich auf derselben Existenzebene wie Sie befindet. Innerhalb des von Ihnen gezeichneten Kreises öffnet sich ein schimmerndes Portal, das bis zum Ende Ihres nächsten Zuges geöffnet bleibt. Jede Kreatur, die das Portal betritt, erscheint sofort innerhalb von 5 Fuß vom Zielkreis oder im nächsten unbesetzten Feld, wenn dieses Feld besetzt ist.",
+    "higherLevels": null
+  },
+  "Tree Stride": {
+    "name": "Baumschritt",
+    "description": "Sie erhalten die Fähigkeit, einen Baum zu betreten und sich von dort in einen anderen Baum der gleichen Art im Umkreis von 500 Fuß zu bewegen. Beide Bäume müssen lebend sein und mindestens die gleiche Größe wie Sie haben. Um einen Baum zu betreten, müssen Sie sich 1,50 m weit bewegen. Sie wissen sofort, wo sich alle anderen Bäume der gleichen Art im Umkreis von 500 Fuß befinden, und können im Zuge der Bewegung, mit der Sie den Baum betreten, entweder in einen dieser Bäume hineingehen oder aus dem Baum heraustreten, in dem Sie sich befinden.",
+    "higherLevels": null
+  },
+  "Wall of Force": {
+    "name": "Mauer der Macht",
+    "description": "An einem von Ihnen gewählten Punkt in Reichweite entsteht eine unsichtbare Wand aus Kraft. Die Wand erscheint in jeder von Ihnen gewählten Ausrichtung, als horizontale oder vertikale Barriere oder in einem Winkel. Es kann frei schweben oder auf einer festen Oberfläche ruhen. Sie können daraus eine halbkugelförmige Kuppel oder eine Kugel mit einem Radius von bis zu 10 Fuß formen, oder Sie können eine flache Oberfläche aus zehn 10 Fuß mal 10 Fuß großen Platten formen. Jedes Panel muss an ein anderes Panel angrenzen. In jeder Form ist die Wand 1/4 Zoll dick. Es hält für die Dauer an.",
+    "higherLevels": null
+  },
+  "Wall of Stone": {
+    "name": "Mauer aus Stein",
+    "description": "An einem von Ihnen gewählten Punkt in Reichweite entsteht eine nichtmagische Mauer aus massivem Stein. Die Wand ist 6 Zoll dick und besteht aus zehn 10 Fuß mal 10 Fuß großen Platten. Jedes Panel muss an mindestens ein anderes Panel angrenzen. Alternativ können Sie 10 x 20 Fuß große Platten erstellen, die nur 3 Zoll dick sind. Wenn die Wand den Raum einer Kreatur durchschneidet, wenn sie erscheint, wird die Kreatur auf eine Seite der Wand geschoben (Ihre Wahl). Wenn eine Kreatur von allen Seiten von der Wand (oder der Wand und einer anderen festen Oberfläche) umgeben wäre, kann diese Kreatur einen Geschicklichkeitsrettungswurf ausführen.",
+    "higherLevels": null
+  },
+  "Arcane Gate": {
+    "name": "Arkanes Tor",
+    "description": "Sie erstellen verbundene Teleportationsportale, die für die Dauer geöffnet bleiben. Wählen Sie zwei Punkte auf dem Boden aus, die Sie sehen können, einen Punkt innerhalb von 10 Fuß von Ihnen und einen Punkt innerhalb von 500 Fuß von Ihnen. Über jedem Punkt öffnet sich ein kreisförmiges Portal mit einem Durchmesser von 10 Fuß. Jede Kreatur oder jedes Objekt, das durch ein Portal gelangt, verlässt das andere Portal, als ob die beiden nebeneinander wären; Das Durchqueren eines Portals von der Nicht-Portal-Seite aus hat keine Auswirkung.",
+    "higherLevels": null
+  },
+  "Blade Barrier": {
+    "name": "Klingenbarriere",
+    "description": "Du erschaffst eine vertikale Wand aus wirbelnden, messerscharfen Klingen aus magischer Energie. Die Wand erscheint in Reichweite und bleibt für die Dauer bestehen. Sie können eine gerade Wand mit einer Länge von bis zu 100 Fuß, einer Höhe von 20 Fuß und einer Dicke von 5 Fuß oder eine Ringwand mit einem Durchmesser von bis zu 60 Fuß, einer Höhe von 20 Fuß und einer Dicke von 5 Fuß erstellen. Die Mauer bietet den Kreaturen dahinter dreiviertel Schutz und ihr Raum ist schwieriges Gelände. Wenn eine Kreatur in einem Zug zum ersten Mal den Bereich der Mauer betritt oder ihren Zug dort beginnt, muss die Kreatur einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet die Kreatur 6W10 Hiebschaden. Bei einem erfolgreichen Rettungswurf erleidet die Kreatur halb so viel Schaden.",
+    "higherLevels": null
+  },
+  "Chain Lightning": {
+    "name": "Kettenblitz",
+    "description": "Sie erzeugen einen Blitz, der auf ein Ziel Ihrer Wahl zufliegt, das Sie in Reichweite sehen können. Drei Blitze springen dann von diesem Ziel auf bis zu drei weitere Ziele, von denen jedes innerhalb von 30 Fuß vom ersten Ziel entfernt sein muss. Ein Ziel kann eine Kreatur oder ein Objekt sein und kann nur von einem der Bolzen angegriffen werden. Ein Ziel muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet das Ziel 10W8 Blitzschaden, bei einem erfolgreichen Rettungswurf halb so viel Schaden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, springt für jede Slotstufe über der 6. Stufe ein zusätzlicher Bolzen vom ersten Ziel zu einem anderen Ziel."
+  },
+  "Circle of Death": {
+    "name": "Kreis des Todes",
+    "description": "Eine Kugel negativer Energie breitet sich von einem Punkt in Reichweite in einem Kugelradius von 60 Fuß aus. Jedes Lebewesen in diesem Bereich muss einen Konstitutionsrettungswurf durchführen. Ein Ziel erleidet bei einem fehlgeschlagenen Rettungswurf 8W6 nekrotischen Schaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, erhöht sich der Schaden um 2W6 für jede Slotstufe über der 6. Stufe."
+  },
+  "Conjure Fey": {
+    "name": "Beschwöre Fey",
+    "description": "Du beschwörst eine Feenkreatur mit der Herausforderungsstufe 6 oder niedriger oder einen Feengeist, der die Gestalt eines Tieres mit der Herausforderungsstufe 6 oder niedriger annimmt. Es erscheint in einem freien Raum, den Sie in Reichweite sehen können. Die Feenkreatur verschwindet, wenn ihre Trefferpunkte auf 0 fallen oder der Zauber endet. Die Feenkreatur ist für die Dauer freundlich zu dir und deinen Gefährten. Würfeln Sie die Initiative für die Kreatur, die ihre eigenen Züge hat.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, erhöht sich der Herausforderungswert für jede Slotstufe über der 6. Stufe um 1."
+  },
+  "Contingency": {
+    "name": "Kontingenz",
+    "description": "Wählen Sie einen Zauber der 5. Stufe oder niedriger, den Sie wirken können, der eine Zauberzeit von 1 Aktion hat und der Sie als Ziel haben kann. Sie wirken diesen Zauber, den sogenannten Kontingentzauber, als Teil des Kontingenzzaubers und verbrauchen Zauberslots für beide, aber der Kontingentzauber tritt nicht in Kraft. Stattdessen wird es wirksam, wenn ein bestimmter Umstand eintritt. Sie beschreiben diesen Umstand, wenn Sie die beiden Zauber wirken. Wenn dieser Umstand zum ersten Mal eintritt, tritt der kontingente Zauber in Kraft. Die Kontingenz endet, wenn Sie sie erneut wirken, wenn die Statuette mehr als 10 Fuß von Ihnen entfernt wird oder wenn Sie sterben.",
+    "higherLevels": null
+  },
+  "Create Undead": {
+    "name": "Erschaffe Untote",
+    "description": "Du kannst diesen Zauber nur nachts wirken. Wählen Sie bis zu drei Leichen mittlerer oder kleiner Humanoiden in Reichweite. Jede Leiche wird zu einem Ghul unter deiner Kontrolle. (Der DM hat Spielstatistiken für diese Kreaturen.) Als Bonusaktion in jedem deiner Züge kannst du jede Kreatur, die du mit diesem Zauber animiert hast, mental befehlen, wenn sich die Kreatur in einem Umkreis von 120 Fuß um dich befindet (wenn du mehrere Kreaturen kontrollierst, kannst du eine oder alle gleichzeitig befehlen und dabei jedem den gleichen Befehl erteilen).",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe wirken, können Sie vier Ghule animieren oder die Kontrolle über sie zurückgewinnen. Wenn Sie diesen Zauber mit einem Zauberslot der 8. Stufe wirken, können Sie fünf Ghasts oder Wights beleben oder die Kontrolle über sie zurückgewinnen. Wenn Sie diesen Zauber mit einem Zauberslot der 9. Stufe wirken, können Sie sechs Ghasts oder Wights oder drei Mumien beleben oder die Kontrolle über sie zurückgewinnen."
+  },
+  "Disintegrate": {
+    "name": "Zerfallen",
+    "description": "Ein dünner grüner Strahl entspringt von Ihrem Zeigefinger zu einem Ziel, das Sie in Reichweite sehen können. Das Ziel kann eine Kreatur, ein Objekt oder eine Schöpfung magischer Kraft sein, wie zum Beispiel die durch eine Wand der Macht geschaffene Mauer. Eine von diesem Zauber angegriffene Kreatur muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet das Ziel 10W6 + 40 Kraftschaden. Das Ziel wird aufgelöst, wenn es aufgrund dieses Schadens keine Trefferpunkte mehr hat. Eine zerfallene Kreatur und alles, was sie trägt und trägt, außer magischen Gegenständen, wird zu einem Haufen feinen grauen Staubs reduziert.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, erhöht sich der Schaden um 3W6 für jede Slotstufe über der 6. Stufe."
+  },
+  "Drawmij's Instant Summons": {
+    "name": "Drawmijs Sofortbeschwörung",
+    "description": "Sie berühren einen Gegenstand mit einem Gewicht von 10 Pfund oder weniger, dessen längste Länge 6 Fuß oder weniger beträgt. Der Zauber hinterlässt eine unsichtbare Markierung auf seiner Oberfläche und schreibt den Namen des Gegenstands unsichtbar in den Saphir ein, den Sie als Materialkomponente verwenden. Jedes Mal, wenn Sie diesen Zauber wirken, müssen Sie einen anderen Saphir verwenden. Anschließend können Sie Ihre Aktion jederzeit nutzen, um den Namen des Gegenstands auszusprechen und den Saphir zu zerschlagen. Der Gegenstand erscheint sofort in Ihrer Hand, unabhängig von der physischen oder planaren Entfernung, und der Zauber endet.",
+    "higherLevels": null
+  },
+  "Eyebite": {
+    "name": "Augenbiss",
+    "description": "Für die Dauer des Zaubers werden Ihre Augen zu einer tintenschwarzen Leere, die von Schreckenskraft erfüllt ist. Einer Kreatur deiner Wahl im Umkreis von 60 Fuß um dich herum, die du sehen kannst, muss ein Weisheitsrettungswurf gelingen oder sie wird für die Dauer von einem der folgenden Effekte deiner Wahl betroffen sein: Schlafend, Panisch oder Krank. In jedem deiner Züge bis zum Ende des Zaubers kannst du mit deiner Aktion eine andere Kreatur als Ziel anvisieren, kannst aber keine weitere Kreatur als Ziel anvisieren, wenn ihr ein Rettungswurf gegen diesen Augenbiss gelungen ist.",
+    "higherLevels": null
+  },
+  "Find the Path": {
+    "name": "Finde den Weg",
+    "description": "Mit diesem Zauber können Sie den kürzesten und direktesten physischen Weg zu einem bestimmten festen Ort finden, der Ihnen auf derselben Existenzebene bekannt ist. Wenn Sie ein Ziel auf einer anderen Existenzebene, ein Ziel, das sich bewegt (z. B. eine mobile Festung), oder ein Ziel, das nicht spezifisch ist (z. B. „das Versteck eines grünen Drachen“), benennen, schlägt der Zauber fehl. Solange Sie sich auf derselben Existenzebene wie das Ziel befinden, wissen Sie für die Dauer, wie weit es entfernt ist und in welcher Richtung es liegt.",
+    "higherLevels": null
+  },
+  "Flesh to Stone": {
+    "name": "Von Fleisch zu Stein",
+    "description": "Sie versuchen, eine Kreatur, die Sie in Reichweite sehen können, in Stein zu verwandeln. Wenn der Körper des Ziels aus Fleisch besteht, muss die Kreatur einen konstitutionsrettenden Wurf durchführen. Bei einem fehlgeschlagenen Rettungswurf wird es zurückgehalten, da sein Fleisch zu verhärten beginnt. Bei einem erfolgreichen Rettungswurf ist die Kreatur nicht betroffen. Eine durch diesen Zauber gefesselte Kreatur muss am Ende jedes Zuges einen weiteren Konstitutionsrettungswurf durchführen. Wenn der Rettungswurf gegen diesen Zauber dreimal erfolgreich ist, endet der Zauber. Wenn der Rettungswurf dreimal misslingt, wird er zu Stein und unterliegt für die Dauer der Versteinerung.",
+    "higherLevels": null
+  },
+  "Forbiddance": {
+    "name": "Verbot",
+    "description": "Sie schaffen einen Schutzwall gegen magische Reisen, der bis zu 40.000 Quadratmeter Grundfläche bis zu einer Höhe von 30 Fuß über dem Boden schützt. Für diese Dauer können sich Kreaturen nicht in den Bereich teleportieren oder Portale, wie sie beispielsweise durch den Torzauber erstellt werden, nutzen, um den Bereich zu betreten. Der Schutz verhindert auch, dass Kreaturen eines bestimmten Typs (Ihre Wahl beim Wirken des Zaubers) eindringen: Himmlische, Elementare, Feenwesen, Unholde oder Untote. Wenn eine solche Kreatur zum ersten Mal in einer Runde versucht, den geschützten Bereich zu betreten, erleidet sie 5W10 Strahlungs- oder Nekrotikschaden (Ihre Wahl, wenn Sie den Zauber wirken).",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberplatz der 7. Stufe oder höher wirken, können Sie den Schutzzauber bis zu 2 Tage lang mit einem Zauberplatz der 7. Stufe, 10 Tagen mit einem 8. Grad oder 30 Tagen mit einem 9. Grad aufrechterhalten."
+  },
+  "Globe of Invulnerability": {
+    "name": "Globus der Unverwundbarkeit",
+    "description": "Eine unbewegliche, schwach schimmernde Barriere entsteht in einem Radius von 10 Fuß um Sie herum und bleibt für die Dauer bestehen. Jeder Zauber der 5. Stufe oder niedriger, der von außerhalb der Barriere gewirkt wird, kann keine Auswirkungen auf Kreaturen oder Objekte darin haben, selbst wenn der Zauber über einen Zauberplatz höherer Stufe gewirkt wird. Ein solcher Zauber kann auf Kreaturen und Objekte innerhalb der Barriere abzielen, aber der Zauber hat keine Wirkung auf sie.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, blockiert die Barriere Zaubersprüche einer Stufe höher für jede Slot-Stufe über der 6. Stufe."
+  },
+  "Guards and Wards": {
+    "name": "Wachen und Schutzzauber",
+    "description": "Sie errichten einen Schutzwall, der eine Grundfläche von bis zu 2.500 Quadratfuß schützt (eine Fläche von 50 Quadratfuß oder einhundert Quadratfuß von 5 Fuß oder fünfundzwanzig Quadratfuß von 10 Fuß). Der geschützte Bereich kann bis zu 20 Fuß hoch sein und die Form haben, die Sie wünschen. Sie können mehrere Stockwerke einer Festung schützen, indem Sie den Bereich unter ihnen aufteilen, solange Sie jeden angrenzenden Bereich betreten können, während Sie den Zauber wirken. Wenn Sie diesen Zauber wirken, können Sie Personen angeben, die von einem oder allen der von Ihnen gewählten Effekte nicht betroffen sind. Sie können auch ein Passwort festlegen, das den Sprecher bei lauter Aussprache gegen diese Effekte immun macht.",
+    "higherLevels": null
+  },
+  "Harm": {
+    "name": "Schaden",
+    "description": "Sie entfesseln eine bösartige Krankheit auf eine Kreatur, die Sie in Reichweite sehen können. Das Ziel muss einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 14W6 nekrotischen Schaden, bei einem erfolgreichen Rettungswurf halb so viel. Der Schaden kann die Trefferpunkte des Ziels nicht unter 1 senken. Wenn dem Ziel der Rettungswurf misslingt, wird sein maximales Trefferpunktpotenzial für 1 Stunde um einen Betrag reduziert, der dem nekrotischen Schaden entspricht, den es erlitten hat.",
+    "higherLevels": null
+  },
+  "Heal": {
+    "name": "Heilen",
+    "description": "Wähle eine Kreatur, die du in Reichweite sehen kannst. Eine Welle positiver Energie durchströmt die Kreatur und sorgt dafür, dass sie 70 Trefferpunkte zurückgewinnt. Dieser Zauber beendet auch Blindheit, Taubheit und alle Krankheiten, die das Ziel betreffen. Dieser Zauber hat keine Wirkung auf Konstrukte oder Untote.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, erhöht sich die Heilungsmenge für jede Slotstufe über der 6. Stufe um 10."
+  },
+  "Heroes' Feast": {
+    "name": "Heldenfest",
+    "description": "Sie sorgen für ein großartiges Festmahl mit herrlichem Essen und Trinken. Der Verzehr des Festmahls dauert 1 Stunde und verschwindet am Ende dieser Zeit, und die wohltuende Wirkung setzt erst ein, wenn diese Stunde vorüber ist. Bis zu zwölf Kreaturen können an dem Festmahl teilnehmen. Eine Kreatur, die an dem Festmahl teilnimmt, erhält 24 Stunden lang mehrere Vorteile: Immunität gegen Gift und Krankheit; Vorteil bei Weisheitsrettungswürfen; eine Erhöhung des Trefferpunktmaximums von 2W10 Trefferpunkten für 24 Stunden.",
+    "higherLevels": null
+  },
+  "Irresistible Dance": {
+    "name": "Unwiderstehlicher Tanz",
+    "description": "Wähle eine Kreatur, die du in Reichweite sehen kannst. Das Ziel beginnt einen komischen Tanz auf der Stelle: es schlurft, wimmelt mit den Füßen und macht die ganze Zeit über Kapriolen. Kreaturen, die nicht verzaubert werden können, sind gegen diesen Zauber immun. Eine tanzende Kreatur muss ihre ganze Bewegung nutzen, um zu tanzen, ohne ihren Raum zu verlassen, und hat einen Nachteil bei Geschicklichkeitsrettungswürfen und Angriffswürfen. Während das Ziel von diesem Zauber betroffen ist, haben andere Kreaturen einen Vorteil bei Angriffswürfen gegen es. Als Aktion führt eine tanzende Kreatur einen Weisheitsrettungswurf durch, um die Kontrolle über sich selbst zurückzugewinnen. Bei einem erfolgreichen Rettungswurf endet der Zauber.",
+    "higherLevels": null
+  },
+  "Magic Jar": {
+    "name": "Zauberglas",
+    "description": "Ihr Körper gerät in einen katatonischen Zustand, wenn Ihre Seele ihn verlässt und in den Behälter gelangt, den Sie für die materielle Komponente des Zaubers verwendet haben. Während Ihre Seele den Behälter bewohnt, nehmen Sie Ihre Umgebung wahr, als ob Sie sich im Raum des Behälters befänden. Sie können sich nicht bewegen oder Reaktionen verwenden. Die einzige Maßnahme, die Sie ergreifen können, besteht darin, Ihre Seele bis zu 100 Fuß aus dem Behälter herauszuschleudern und entweder zu Ihrem lebenden Körper zurückzukehren (und den Zauber zu beenden) oder zu versuchen, den Körper eines Humanoiden in Besitz zu nehmen.",
+    "higherLevels": null
+  },
+  "Mass Suggestion": {
+    "name": "Massenvorschlag",
+    "description": "Sie schlagen eine Aktivität vor (begrenzt auf ein oder zwei Sätze) und beeinflussen auf magische Weise bis zu zwölf Kreaturen Ihrer Wahl, die Sie in Reichweite sehen und die Sie hören und verstehen können. Kreaturen, die nicht verzaubert werden können, sind gegen diesen Effekt immun. Der Vorschlag muss so formuliert sein, dass die Vorgehensweise vernünftig erscheint. Jedes Ziel muss einen Weisheitsrettungswurf machen. Bei einem fehlgeschlagenen Speichervorgang führt es für die Dauer die von Ihnen beschriebene Vorgehensweise nach besten Kräften aus.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe wirken, beträgt die Dauer 10 Tage. Wenn Sie einen Zauberslot der 8. Stufe verwenden, beträgt die Dauer 30 Tage. Wenn Sie einen Zauberslot der 9. Stufe verwenden, beträgt die Dauer ein Jahr und einen Tag."
+  },
+  "Move Earth": {
+    "name": "Erde bewegen",
+    "description": "Wählen Sie einen Geländebereich, der auf einer Seite in Reichweite nicht größer als 40 Fuß ist. Sie können Schmutz, Sand oder Lehm in dem Bereich für die Dauer beliebig umformen. Sie können die Höhe des Gebiets erhöhen oder senken, einen Graben erstellen oder auffüllen, eine Mauer errichten oder abflachen oder eine Säule formen. Das Ausmaß solcher Änderungen darf die Hälfte der größten Fläche des Gebiets nicht überschreiten. Wenn Sie also ein 40-Fuß-Quadrat beeinflussen, können Sie eine bis zu 20 Fuß hohe Säule errichten, die Höhe des Quadrats um bis zu 20 Fuß anheben oder senken, einen bis zu 20 Fuß tiefen Graben ausheben und so weiter.",
+    "higherLevels": null
+  },
+  "Planar Ally": {
+    "name": "Planarer Verbündeter",
+    "description": "Sie bitten ein jenseitiges Wesen um Hilfe. Das Wesen muss Ihnen bekannt sein: ein Gott, ein Urwesen, ein Dämonenfürst oder ein anderes Wesen mit kosmischer Macht. Dieses Wesen schickt einen Himmlischen, einen Elementarwesen oder einen ihm treuen Unterweltler, um Ihnen zu helfen, und lässt die Kreatur an einem unbesetzten Ort in Reichweite erscheinen. Wenn du den Namen einer bestimmten Kreatur kennst, kannst du diesen Namen aussprechen, wenn du diesen Zauber wirkst, um diese Kreatur anzufordern, auch wenn du trotzdem eine andere Kreatur bekommen könntest (DMs Wahl). Wenn die Kreatur erscheint, besteht für sie kein Zwang, Ihnen zu helfen.",
+    "higherLevels": null
+  },
+  "Programmed Illusion": {
+    "name": "Programmierte Illusion",
+    "description": "Sie erzeugen eine Illusion eines Objekts, einer Kreatur oder eines anderen sichtbaren Phänomens in Reichweite, die aktiviert wird, wenn ein bestimmter Zustand eintritt. Bis dahin ist die Illusion nicht wahrnehmbar. Es darf nicht größer als ein 30-Fuß-Würfel sein, und Sie entscheiden beim Wirken des Zaubers, wie sich die Illusion verhält und welche Geräusche sie macht. Diese geskriptete Aufführung kann bis zu 5 Minuten dauern. Wenn die von Ihnen angegebene Bedingung eintritt, entsteht die Illusion und wirkt sich auf die von Ihnen beschriebene Weise aus.",
+    "higherLevels": null
+  },
+  "Sunbeam": {
+    "name": "Sonnenstrahl",
+    "description": "Ein strahlender Lichtstrahl blitzt in einer 5 Fuß breiten und 60 Fuß langen Linie aus Ihrer Hand. Jede Kreatur in der Reihe muss einen konstitutionsrettenden Wurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 6W8 Strahlungsschaden und ist bis zu deinem nächsten Zug blind. Bei einem erfolgreichen Rettungswurf erleidet es halb so viel Schaden und wird durch diesen Zauber nicht geblendet. Untote und Schleime sind bei diesem Rettungswurf im Nachteil. Du kannst als deine Aktion in jeder Runde eine neue Strahllinie erschaffen, bis der Zauber endet.",
+    "higherLevels": null
+  },
+  "Transport via Plants": {
+    "name": "Transport über Pflanzen",
+    "description": "Dieser Zauber stellt eine magische Verbindung zwischen einer großen oder größeren unbelebten Pflanze in Reichweite und einer anderen Pflanze in beliebiger Entfernung auf derselben Existenzebene her. Sie müssen die Zielpflanze zuvor mindestens einmal gesehen oder berührt haben. Für die Dauer kann jede Kreatur die Zielpflanze betreten und mit einer Bewegungsweite von 1,5 m wieder verlassen.",
+    "higherLevels": null
+  },
+  "True Seeing": {
+    "name": "Wahres Sehen",
+    "description": "Du gibst der willigen Kreatur, die du berührst, die Fähigkeit, die Dinge so zu sehen, wie sie tatsächlich sind. Für die Dauer verfügt die Kreatur über Wahrsicht, bemerkt durch Magie verborgene Geheimtüren und kann bis zu einer Reichweite von 120 Fuß in die Ätherebene sehen.",
+    "higherLevels": null
+  },
+  "Wall of Ice": {
+    "name": "Wand aus Eis",
+    "description": "Du erschaffst eine Eiswand auf einer festen Oberfläche in Reichweite. Die Wand ist 1 Fuß dick und bis zu 30 Fuß lang und 10 Fuß hoch, oder es handelt sich um eine halbkugelförmige Kuppel mit einem Durchmesser von bis zu 20 Fuß. Die Mauer bleibt für die Dauer an Ort und Stelle. Jeder 10-Fuß-Abschnitt der Mauer hat AC 5 und 30 Trefferpunkte. Wenn ein Abschnitt zerstört wird, hinterlässt er eine Schicht eiskalter Luft in dem Raum, den die Wand einnahm. Eine Kreatur, die sich zum ersten Mal in einer Runde durch die eiskalte Luftschicht bewegt, muss einen konstitutionsrettenden Wurf durchführen oder 5W6 Kälteschaden erleiden.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, erhöht sich der Schaden, den die Mauer beim Erscheinen verursacht, um 2W6 und der Schaden durch das Durchdringen der eiskalten Luftschicht erhöht sich um 1W6 für jede Slot-Stufe über der 6. Stufe."
+  },
+  "Wall of Thorns": {
+    "name": "Dornenwand",
+    "description": "Sie erschaffen eine Wand aus zähem, biegsamem, verfilztem Gestrüpp voller nadelspitzer Dornen. Die Wand erscheint in Reichweite auf einer festen Oberfläche und bleibt für die Dauer bestehen. Sie können wählen, ob die Wand bis zu 60 Fuß lang, 10 Fuß hoch und 5 Fuß dick sein soll oder ob Sie einen Kreis mit einem Durchmesser von 20 Fuß und einer Höhe von bis zu 20 Fuß und einer Dicke von 5 Fuß erstellen möchten. Die Wand blockiert die Sichtlinie. Wenn die Mauer erscheint, muss jede Kreatur in ihrem Bereich einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 7W8 Stichschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 7. Stufe oder höher wirken, erhöhen sich beide Schadensarten für jede Slotstufe über der 6. Stufe um 1W8."
+  },
+  "Wind Walk": {
+    "name": "Windspaziergang",
+    "description": "Sie und bis zu zehn willige Kreaturen, die Sie in Reichweite sehen können, nehmen für die Dauer eine gasförmige Form an und erscheinen als Wolkenfetzen. In dieser Wolkenform hat eine Kreatur eine Fluggeschwindigkeit von 90 m und ist resistent gegen Schaden durch nichtmagische Waffen. Die einzigen Aktionen, die eine Kreatur in dieser Form ausführen kann, sind die Dash-Aktion oder die Rückkehr zu ihrer normalen Form. Das Zurücksetzen dauert 1 Minute. Während dieser Zeit ist die Kreatur handlungsunfähig und kann sich nicht bewegen.",
+    "higherLevels": null
+  },
+  "Word of Recall": {
+    "name": "Wort der Erinnerung",
+    "description": "Sie und bis zu fünf willige Kreaturen im Umkreis von 5 Fuß um Sie teleportieren sich sofort zu einem zuvor festgelegten Zufluchtsort. Sie und alle Kreaturen, die sich mit Ihnen teleportieren, erscheinen am nächstgelegenen unbesetzten Feld zu dem Ort, den Sie bei der Vorbereitung Ihres Zufluchtsorts angegeben haben (siehe unten). Wenn Sie diesen Zauber wirken, ohne zuvor ein Heiligtum vorzubereiten, hat der Zauber keine Wirkung. Sie müssen ein Heiligtum bestimmen, indem Sie diesen Zauber an einem Ort wirken, beispielsweise einem Tempel, der Ihrer Gottheit gewidmet ist oder eng mit ihr verbunden ist.",
+    "higherLevels": null
+  },
+  "Conjure Celestial": {
+    "name": "Himmlisch beschwören",
+    "description": "Du beschwörst einen Himmlischen mit der Herausforderungsstufe 4 oder niedriger, der an einem unbesetzten Ort erscheint, den du in Reichweite sehen kannst. Der Himmlische verschwindet, wenn er auf 0 Trefferpunkte fällt oder der Zauber endet. Der Himmlische ist für die Dauer freundlich zu Ihnen und Ihren Gefährten. Würfeln Sie die Initiative für das Himmlische, das seine eigenen Züge hat. Es gehorcht allen verbalen Befehlen, die Sie ihm geben (es ist keine Aktion Ihrerseits erforderlich), solange diese seine Gesinnung nicht verletzen.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 9. Stufe wirkst, beschwörst du einen Himmlischen mit der Herausforderungsstufe 5 oder niedriger."
+  },
+  "Delayed Blast Fireball": {
+    "name": "Feuerball mit verzögerter Explosion",
+    "description": "Ein gelber Lichtstrahl blitzt von Ihrem Zeigefinger auf, verdichtet sich dann und verweilt für die Dauer an einem ausgewählten Punkt in Reichweite als leuchtende Perle. Wenn der Zauber endet, weil entweder Ihre Konzentration nachlässt oder Sie sich entscheiden, ihn zu beenden, erblüht die Perle mit leisem Brüllen zu einer Flammenexplosion, die sich um die Ecken ausbreitet. Jede Kreatur in einer Kugel mit einem Radius von 20 Fuß, die auf diesem Punkt zentriert ist, muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur Feuerschaden in Höhe des insgesamt angesammelten Schadens, bei einem erfolgreichen Rettungswurf halb so viel. Der Grundschaden des Zaubers beträgt 12W6.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 8. Stufe oder höher wirken, erhöht sich der Grundschaden um 1W6 für jede Slotstufe über der 7. Stufe."
+  },
+  "Divine Word": {
+    "name": "Göttliches Wort",
+    "description": "Du sprichst ein göttliches Wort aus, das von der Kraft durchdrungen ist, die die Welt zu Beginn der Schöpfung geformt hat. Wähle eine beliebige Anzahl an Kreaturen, die du in Reichweite sehen kannst. Jede Kreatur, die dich hören kann, muss einen Charisma-Rettungswurf machen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur einen Effekt basierend auf ihren aktuellen Trefferpunkten: 50 HP oder weniger – 1 Minute lang taub; 40 HP oder weniger – taub und blind für 10 Minuten; 30 HP oder weniger – blind, taub und betäubt für 1 Stunde; 20 HP oder weniger – sofort getötet. Unabhängig von seinen aktuellen Trefferpunkten wird ein Himmlischer, ein Elementarwesen, eine Fee oder ein Unhold, dem der Rettungswurf misslingt, auf seine Ursprungsebene zurückgedrängt.",
+    "higherLevels": null
+  },
+  "Etherealness": {
+    "name": "Ätherisch",
+    "description": "Sie betreten die Grenzregionen der ätherischen Ebene, in dem Bereich, in dem sie sich mit Ihrer aktuellen Ebene überschneidet. Du bleibst für die Dauer oder bis du deine Aktion verwendest, um den Zauber aufzuheben, im Border Ethereal. Während dieser Zeit können Sie sich in jede Richtung bewegen. Wenn Sie sich nach oben oder unten bewegen, kostet jeder Fuß Bewegung einen zusätzlichen Fuß. Sie können das Flugzeug, aus dem Sie gekommen sind, sehen und hören, aber alles dort sieht grau aus und Sie können nichts weiter als 60 Fuß entfernt sehen.",
+    "higherLevels": "Wenn du diesen Zauber mit einem Zauberslot der 8. Stufe oder höher wirkst, kannst du bis zu drei willige Kreaturen (einschließlich dir) für jede Slotstufe über der 7. Stufe als Ziel wählen."
+  },
+  "Finger of Death": {
+    "name": "Finger des Todes",
+    "description": "Sie senden negative Energie durch eine Kreatur, die Sie in Reichweite sehen können, und verursachen so stechende Schmerzen. Das Ziel muss einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 7W8 + 30 nekrotischen Schaden, bei einem erfolgreichen Rettungswurf halb so viel. Ein durch diesen Zauber getöteter Humanoid erhebt sich zu Beginn Ihres nächsten Zuges zu einem Zombie, der dauerhaft unter Ihrem Kommando steht und Ihren verbalen Befehlen nach besten Kräften folgt.",
+    "higherLevels": null
+  },
+  "Fire Storm": {
+    "name": "Feuersturm",
+    "description": "An einem von Ihnen gewählten Ort in Reichweite erscheint ein Sturm aus tosenden Flammen. Die Fläche des Sturms besteht aus bis zu zehn 10-Fuß-Würfeln, die Sie nach Ihren Wünschen anordnen können. Jeder Würfel muss mindestens eine Seite haben, die an die Seite eines anderen Würfels angrenzt. Jede Kreatur im Bereich muss einen Geschicklichkeitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 7W10 Feuerschaden, bei einem erfolgreichen Rettungswurf halb so viel. Das Feuer beschädigt Gegenstände in der Umgebung und entzündet brennbare Gegenstände, die nicht getragen oder getragen werden.",
+    "higherLevels": null
+  },
+  "Forcecage": {
+    "name": "Zwangskäfig",
+    "description": "Ein unbewegliches, unsichtbares, würfelförmiges Gefängnis aus magischer Kraft entsteht um einen von Ihnen gewählten Bereich in Reichweite. Das Gefängnis kann ein Käfig (20-Fuß-Würfel mit 1/2-Zoll-Durchmesser-Stangen im Abstand von 1/2-Zoll) oder eine Kiste (10-Fuß-Würfel, der an allen Seiten stabil ist) sein. Eine Kreatur im Käfig ist gefangen. Zauber können durch den Käfig gewirkt werden, aber die Kreatur kann ihn auf keinen Fall verlassen. Der Zauber endet, wenn du ihn erneut wirkst oder eine Aktion verwendest, um ihn aufzuheben.",
+    "higherLevels": null
+  },
+  "Mirage Arcane": {
+    "name": "Arkanes Mirage",
+    "description": "Sie lassen Gelände in einer Fläche von bis zu 1 Meile im Quadrat wie eine andere Art von Gelände aussehen, klingen, riechen und sich sogar so anfühlen. Die allgemeine Form des Geländes bleibt jedoch gleich. Offene Felder oder eine Straße könnten einem Sumpf, einem Hügel, einer Gletscherspalte oder einem anderen schwierigen oder unpassierbaren Gelände ähneln. Ein Teich kann wie eine grasbewachsene Wiese, ein Abgrund wie ein sanfter Hang oder eine mit Steinen übersäte Schlucht wie eine breite und glatte Straße aussehen. Ebenso können Sie das Erscheinungsbild von Strukturen ändern oder sie dort hinzufügen, wo keine vorhanden sind.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Magnificent Mansion": {
+    "name": "Mordenkainens prächtiges Herrenhaus",
+    "description": "Du beschwörst eine extradimensionale Behausung in Reichweite, die für die Dauer bestehen bleibt. Sie entscheiden, wo sich der einzige Eingang befindet. Der Eingang schimmert schwach und ist 5 Fuß breit und 10 Fuß hoch. Sie und jede Kreatur, die Sie beim Wirken des Zaubers bestimmen, können die extradimensionale Behausung betreten, solange das Portal offen bleibt. Sie können das Portal öffnen oder schließen, wenn Sie sich in einem Umkreis von 30 Fuß davon befinden.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Sword": {
+    "name": "Mordenkainens Schwert",
+    "description": "Du erschaffst eine schwertförmige Kraftebene, die in Reichweite schwebt. Es hält für die Dauer an. Wenn das Schwert erscheint, führen Sie einen Nahkampfangriff gegen ein Ziel Ihrer Wahl innerhalb von 5 Fuß um das Schwert aus. Bei einem Treffer erleidet das Ziel 3W10 Kraftschaden. Bis der Zauber endet, können Sie in jedem Ihrer Züge eine Bonusaktion verwenden, um das Schwert bis zu 20 Fuß weit an eine Stelle zu bewegen, die Sie sehen können, und diesen Angriff gegen dasselbe oder ein anderes Ziel zu wiederholen.",
+    "higherLevels": null
+  },
+  "Plane Shift": {
+    "name": "Flugzeugverschiebung",
+    "description": "Sie und bis zu acht willige Kreaturen, die sich im Kreis die Hände reichen, werden auf eine andere Ebene der Existenz versetzt. Sie können allgemein ein Ziel angeben, beispielsweise die Stadt aus Messing auf der Elementarebene des Feuers oder den Palast von Dispater auf der zweiten Ebene der Neun Höllen, und Sie erscheinen an oder in der Nähe dieses Ziels. Wenn Sie alternativ die Siegelsequenz eines Teleportationskreises auf einer anderen Existenzebene kennen, können Sie diesen Kreis als Ziel verwenden.",
+    "higherLevels": null
+  },
+  "Prismatic Spray": {
+    "name": "Prismatisches Spray",
+    "description": "Acht bunte Lichtstrahlen blitzen aus Ihrer Hand. Jeder Strahl hat eine andere Farbe und hat eine andere Kraft und einen anderen Zweck. Jede Kreatur in einem 60-Fuß-Kegel muss einen Geschicklichkeitsrettungswurf ausführen. Wirf für jedes Ziel einen W8, um zu bestimmen, welche Strahlfarbe es beeinflusst: 1 Rot (10W6 Feuer), 2 Orange (10W6 Säure), 3 Gelb (10W6 Blitz), 4 Grün (Gift, Tod), 5 Blau (10W6 Kälte), 6 Indigo (beherrscht, dann versteinert), 7 Violett (blind, dann transportiert), 8 Spezial (zwei Strahlen).",
+    "higherLevels": null
+  },
+  "Project Image": {
+    "name": "Projektbild",
+    "description": "Sie erstellen eine illusorische Kopie von sich selbst, die für die Dauer bestehen bleibt. Die Kopie kann an jedem Ort innerhalb der Reichweite erscheinen, den Sie zuvor gesehen haben, unabhängig von dazwischen liegenden Hindernissen. Die Illusion sieht aus und klingt wie du, ist aber nicht greifbar. Wenn die Illusion Schaden erleidet, verschwindet sie und der Zauber endet. Sie können diese Illusion mit Ihrer Aktion bis zur doppelten Geschwindigkeit bewegen und sie auf die von Ihnen gewünschte Weise gestikulieren, sprechen und verhalten lassen.",
+    "higherLevels": null
+  },
+  "Regenerate": {
+    "name": "Regenerieren",
+    "description": "Sie berühren eine Kreatur und stimulieren ihre natürliche Heilfähigkeit. Das Ziel erhält 4W8 + 15 Trefferpunkte zurück. Für die Dauer des Zaubers erhält das Ziel zu Beginn jedes seiner Züge 1 Trefferpunkt zurück (10 Trefferpunkte pro Minute). Die abgetrennten Körperteile des Ziels (Finger, Beine, Schwanz usw.) werden nach 2 Minuten wiederhergestellt. Wenn Sie den abgetrennten Teil haben und ihn an den Stumpf halten, bewirkt der Zauber, dass sich das Glied sofort mit dem Stumpf verbindet.",
+    "higherLevels": null
+  },
+  "Resurrection": {
+    "name": "Auferstehung",
+    "description": "Man berührt ein totes Wesen, das nicht länger als ein Jahrhundert tot ist, das nicht an Altersschwäche gestorben ist und das keine Untoten ist. Wenn seine Seele frei und willig ist, kehrt das Ziel mit all seinen Trefferpunkten zum Leben zurück. Dieser Zauber neutralisiert alle Gifte und heilt normale Krankheiten, von denen die Kreatur beim Tod betroffen war. Es entfernt jedoch keine magischen Krankheiten, Flüche und dergleichen. Der Zauber kann sogar einen neuen Körper erzeugen, wenn der ursprüngliche Körper nicht mehr existiert. In diesem Fall müssen Sie den Namen der Kreatur aussprechen.",
+    "higherLevels": null
+  },
+  "Reverse Gravity": {
+    "name": "Umgekehrte Schwerkraft",
+    "description": "Dieser Zauber kehrt die Schwerkraft in einem 100 Fuß hohen Zylinder mit einem Radius von 50 Fuß um, der auf einem Punkt in Reichweite zentriert ist. Alle Kreaturen und Gegenstände, die in dem Bereich nicht irgendwie am Boden verankert sind, fallen nach oben und erreichen die Oberseite des Bereichs. Eine Kreatur kann einen geschicklichkeitssparenden Wurf ausführen, um sich an einem festen Gegenstand festzuhalten, den sie erreichen kann, und so den Sturz zu vermeiden. Wenn der Fall auf ein festes Objekt (z. B. eine Decke) stößt, treffen herabfallende Kreaturen und Objekte genauso darauf, wie es bei einem normalen Fall nach unten der Fall wäre.",
+    "higherLevels": null
+  },
+  "Sequester": {
+    "name": "Sequestrieren",
+    "description": "Mit diesem Zauber kann eine willige Kreatur oder ein Objekt für die Dauer der Entdeckung verborgen und geschützt werden. Wenn du den Zauber wirkst und das Ziel berührst, wird es unsichtbar und kann weder von Wahrsagungszaubern anvisiert noch von Wahrsagungssensoren wahrgenommen werden, die von Wahrsagungszaubern erzeugt werden. Wenn das Ziel eine Kreatur ist, verfällt es in einen Zustand der angehaltenen Animation. Die Zeit hört für ihn auf zu fließen, und er wird nicht älter.",
+    "higherLevels": null
+  },
+  "Simulacrum": {
+    "name": "Simulakrum",
+    "description": "Du formst ein illusorisches Duplikat einer Bestie oder eines Humanoiden, das sich für die gesamte Wirkzeit des Zaubers in Reichweite befindet. Das Duplikat ist eine Kreatur, teilweise real und aus Eis oder Schnee geformt, und kann wie eine normale Kreatur Aktionen ausführen und anderweitig beeinflusst werden. Es scheint das gleiche wie das Original zu sein, verfügt aber über die Hälfte der maximalen Trefferpunkte der Kreatur und wird ohne jegliche Ausrüstung geformt. Andernfalls verwendet die Illusion alle Werte der Kreatur, die sie dupliziert, mit der Ausnahme, dass es sich um ein Konstrukt handelt.",
+    "higherLevels": null
+  },
+  "Symbol": {
+    "name": "Symbol",
+    "description": "Wenn Sie diesen Zauber wirken, schreiben Sie eine schädliche Glyphe entweder auf eine Oberfläche (z. B. einen Abschnitt des Bodens, eine Wand oder einen Tisch) oder in einen Gegenstand, der geschlossen werden kann, um die Glyphe zu verbergen (z. B. ein Buch, eine Schriftrolle oder eine Schatztruhe). Die Glyphe kann einen Bereich mit einem Durchmesser von maximal 10 Fuß abdecken. Du entscheidest, was die Glyphe auslöst, wenn du den Zauber wirkst. Bei auf einer Oberfläche eingravierten Glyphen gehören zu den häufigsten Auslösern das Berühren oder Treten der Glyphe, das Entfernen eines anderen Objekts, das sie bedeckt, oder die Annäherung auf eine bestimmte Distanz. Bei Auslösung explodiert die Glyphe mit magischer Energie in einer Kugel mit einem Radius von 60 Fuß, die auf der Glyphe zentriert ist. Die Kugel breitet sich um Ecken aus. Jede Kreatur im Wirkungsbereich muss einen Rettungswurf ausführen (der Typ hängt vom gewählten Effekt ab: Tod, Zwietracht, Angst, Hoffnungslosigkeit, Wahnsinn, Schmerz, Schlaf oder Betäubung).",
+    "higherLevels": null
+  },
+  "Teleport": {
+    "name": "Teleportieren",
+    "description": "Dieser Zauber transportiert Sie und bis zu acht willige Kreaturen Ihrer Wahl, die Sie in Reichweite sehen können, oder ein einzelnes Objekt, das Sie in Reichweite sehen können, sofort zu einem von Ihnen gewählten Ziel. Wenn Sie auf ein Objekt zielen, muss es vollständig in einen 10-Fuß-Würfel passen und darf nicht von einer unwilligen Kreatur gehalten oder getragen werden. Das von Ihnen gewählte Ziel muss Ihnen bekannt sein und auf derselben Existenzebene wie Sie liegen. Ihre Vertrautheit mit dem Ziel entscheidet darüber, ob Sie dort erfolgreich ankommen.",
+    "higherLevels": null
+  },
+  "Whirlwind": {
+    "name": "Wirbelwind",
+    "description": "Ein Wirbelwind heult bis zu einem von Ihnen angegebenen Punkt auf dem Boden. Der Wirbelwind ist ein 30 Fuß hoher Zylinder mit einem Radius von 10 Fuß, der auf diesem Punkt zentriert ist. Bis zum Ende des Zaubers können Sie den Wirbelwind mit Ihrer Aktion bis zu 9 m weit in jede Richtung über den Boden bewegen. Der Wirbelwind saugt alle mittelgroßen oder kleineren Gegenstände auf, die an nichts befestigt sind und die nicht getragen oder getragen werden. Eine Kreatur muss zum ersten Mal in einer Runde, in der sie in den Wirbelwind eintritt oder in der der Wirbelwind ihr Feld betritt, einen Geschicklichkeitsrettungswurf durchführen.",
+    "higherLevels": null
+  },
+  "Antimagic Field": {
+    "name": "Antimagisches Feld",
+    "description": "Eine unsichtbare Sphäre aus Antimagie mit einem Radius von 10 Fuß umgibt Sie. Dieser Bereich ist von der magischen Energie getrennt, die das Multiversum durchdringt. Innerhalb der Sphäre können keine Zauber gewirkt werden, beschworene Kreaturen verschwinden und sogar magische Gegenstände werden alltäglich. Bis der Zauber endet, bewegt sich die Kugel mit dir und ist auf dich zentriert. Zauber und andere magische Effekte, mit Ausnahme derjenigen, die von einem Artefakt oder einer Gottheit erzeugt werden, werden in der Sphäre unterdrückt und können nicht in sie eindringen.",
+    "higherLevels": null
+  },
+  "Antipathy/Sympathy": {
+    "name": "Antipathie/Sympathie",
+    "description": "Dieser Zauber zieht Kreaturen deiner Wahl an oder stößt sie ab. Sie zielen auf etwas in Reichweite, entweder ein riesiges oder kleineres Objekt oder eine Kreatur oder einen Bereich, der nicht größer als ein 200-Fuß-Würfel ist. Geben Sie dann eine Art intelligentes Wesen an, beispielsweise rote Drachen, Kobolde oder Vampire. Sie verleihen dem Ziel eine Aura, die die angegebenen Kreaturen für die Dauer entweder anzieht oder abstößt. Wählen Sie als Wirkung der Aura Antipathie oder Sympathie. Jede Kreatur der von Ihnen gewählten Art, die sich dem Ziel nähert als 60 Fuß, muss einen Weisheitsrettungswurf durchführen.",
+    "higherLevels": null
+  },
+  "Clone": {
+    "name": "Klon",
+    "description": "Dieser Zauber lässt ein lebloses Duplikat eines Lebewesens wachsen, um es vor dem Tod zu schützen. Dieser Klon bildet sich in einem verschlossenen Gefäß und erreicht nach 120 Tagen seine volle Größe und Reife; Sie können sich auch dafür entscheiden, dass der Klon eine jüngere Version derselben Kreatur ist. Es bleibt träge und bleibt unbegrenzt bestehen, solange sein Gefäß ungestört bleibt. Wenn die ursprüngliche Kreatur zu irgendeinem Zeitpunkt nach der Reifung des Klons stirbt, wird ihre Seele auf den Klon übertragen, vorausgesetzt, die Seele ist frei und zur Rückkehr bereit.",
+    "higherLevels": null
+  },
+  "Control Weather": {
+    "name": "Kontrollieren Sie das Wetter",
+    "description": "Sie übernehmen für die Dauer die Kontrolle über das Wetter im Umkreis von 5 Meilen um Sie herum. Sie müssen sich im Freien befinden, um diesen Zauber wirken zu können. Wenn Sie sich an einen Ort begeben, an dem Sie keinen freien Weg zum Himmel haben, endet der Zauber vorzeitig. Wenn Sie den Zauber wirken, ändern Sie die aktuellen Wetterbedingungen, die vom DM anhand des Klimas und der Jahreszeit bestimmt werden. Sie können Niederschlag, Temperatur und Wind ändern. Es dauert 1W4 × 10 Minuten, bis die neuen Bedingungen wirksam werden.",
+    "higherLevels": null
+  },
+  "Demiplane": {
+    "name": "Halbflugzeug",
+    "description": "Sie erstellen eine schattige Tür auf einer flachen, festen Oberfläche, die Sie in Reichweite sehen können. Die Tür ist groß genug, um mittelgroßen Kreaturen den ungehinderten Durchgang zu ermöglichen. Beim Öffnen führt die Tür zu einer Halbebene, die wie ein leerer Raum von 30 Fuß in jeder Dimension aussieht und aus Holz oder Stein besteht. Wenn der Zauber endet, verschwindet die Tür und alle Kreaturen oder Gegenstände in der Halbebene bleiben dort gefangen, da die Tür der einzige Ein- und Ausgang ist.",
+    "higherLevels": null
+  },
+  "Dominate Monster": {
+    "name": "Beherrsche das Monster",
+    "description": "Sie versuchen, eine Kreatur zu verführen, die Sie in Reichweite sehen können. Es muss ein Weisheitsrettungswurf bestehen oder für die Dauer von dir verzaubert werden. Wenn du oder eine Kreatur, die dir freundlich gesinnt ist, gegen ihn kämpfst, hat er einen Vorteil beim Rettungswurf. Während die Kreatur verzaubert ist, haben Sie eine telepathische Verbindung mit ihr, solange Sie sich beide auf derselben Existenzebene befinden. Sie können diese telepathische Verbindung verwenden, um der Kreatur Befehle zu erteilen, während Sie bei Bewusstsein sind (keine Aktion erforderlich), die sie nach besten Kräften befolgt.",
+    "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 9. Stufe wirken, beträgt die Dauer Konzentration bis zu 8 Stunden."
+  },
+  "Earthquake": {
+    "name": "Erdbeben",
+    "description": "Sie erzeugen eine seismische Störung an einem Punkt auf dem Boden, den Sie in Reichweite sehen können. Während dieser Zeit erschüttert ein heftiges Beben den Boden in einem Kreis mit einem Radius von 100 Fuß, der um diesen Punkt herum zentriert ist. Jede Kreatur auf dem Boden in diesem Bereich muss einen Geschicklichkeitsrettungswurf ausführen. Bei einem fehlgeschlagenen Rettungswurf wird die Kreatur zu Boden geworfen. Das Gebiet wird zu schwierigem Gelände. Jede Kreatur auf dem Boden, die sich konzentriert, muss einen konstitutionsrettenden Wurf durchführen. Bei einem fehlgeschlagenen Rettungswurf wird die Konzentration der Kreatur beeinträchtigt.",
+    "higherLevels": null
+  },
+  "Feeblemind": {
+    "name": "Schwachsinn",
+    "description": "Sie sprengen den Geist einer Kreatur, die Sie in Reichweite sehen können, und versuchen, ihren Intellekt und ihre Persönlichkeit zu zerstören. Das Ziel erleidet 4W6 psychischen Schaden und muss einen Intelligenzrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf betragen die Intelligenz- und Charismawerte der Kreatur 1. Die Kreatur kann keine Zauber wirken, keine magischen Gegenstände aktivieren, keine Sprache verstehen oder auf irgendeine verständliche Weise kommunizieren. Die Kreatur kann jedoch ihre Freunde identifizieren, ihnen folgen und sie sogar beschützen.",
+    "higherLevels": null
+  },
+  "Glibness": {
+    "name": "Zungenfertigkeit",
+    "description": "Bis zum Ende des Zaubers können Sie bei einer Charisma-Prüfung die Zahl, die Sie würfeln, durch eine 15 ersetzen. Darüber hinaus zeigt Magie, die feststellt, ob Sie die Wahrheit sagen, unabhängig davon, was Sie sagen, an, dass Sie ehrlich sind.",
+    "higherLevels": null
+  },
+  "Holy Aura": {
+    "name": "Heilige Aura",
+    "description": "Göttliches Licht strömt von Ihnen aus und verschmilzt in einem sanften Glanz in einem Radius von 30 Fuß um Sie herum. Kreaturen deiner Wahl in diesem Radius, wenn du diesen Zauber wirkst, werfen schwaches Licht in einem Radius von 5 Fuß ab und haben bei allen Rettungswürfen einen Vorteil, während andere Kreaturen bei Angriffswürfen gegen sie im Nachteil sind, bis der Zauber endet. Wenn außerdem ein Untoter oder ein Untoter eine betroffene Kreatur mit einem Nahkampfangriff trifft, blinkt die Aura in strahlendem Licht. Dem Angreifer muss ein konstitutionsrettender Wurf gelingen, sonst bleibt er geblendet, bis der Zauber endet.",
+    "higherLevels": null
+  },
+  "Incendiary Cloud": {
+    "name": "Brandwolke",
+    "description": "Eine wirbelnde Rauchwolke, durchdrungen von weißglühender Glut, erscheint in einer Kugel mit einem Radius von 20 Fuß, die auf einem Punkt in Reichweite zentriert ist. Die Wolke breitet sich um die Ecken aus und wird stark verdeckt. Es dauert so lange oder bis ein Wind mittlerer oder höherer Geschwindigkeit (mindestens 10 Meilen pro Stunde) es zerstreut. Wenn die Wolke erscheint, muss jede Kreatur darin einen Geschicklichkeitsrettungswurf ausführen. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 10W8 Feuerschaden, bei einem erfolgreichen Rettungswurf halb so viel. Eine Kreatur muss diesen Rettungswurf auch ausführen, wenn sie zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder ihren Zug dort beendet.",
+    "higherLevels": null
+  },
+  "Maze": {
+    "name": "Labyrinth",
+    "description": "Du verbannst eine Kreatur, die du in Reichweite sehen kannst, in eine labyrinthische Halbebene. Das Ziel bleibt dort für die Dauer oder bis es das Labyrinth verlässt. Das Ziel kann seine Aktion nutzen, um einen Fluchtversuch zu unternehmen. Wenn es dies tut, führt es einen Intelligenzwurf gegen SG 20 durch. Wenn es gelingt, entkommt es und der Zauber endet. Ein Minotaurus oder Goristro-Dämon ist automatisch erfolgreich.",
+    "higherLevels": null
+  },
+  "Mind Blank": {
+    "name": "Geist leer",
+    "description": "Bis zum Ende des Zaubers ist eine willige Kreatur, die du berührst, immun gegen psychischen Schaden, jeden Effekt, der ihre Gefühle wahrnimmt oder ihre Gedanken liest, Wahrsagungszauber und den Zustand „Verzaubert“. Der Zauber vereitelt sogar Wunschzauber und Zauber oder Effekte ähnlicher Macht, die dazu dienen, den Geist des Ziels zu beeinflussen oder Informationen über das Ziel zu erhalten.",
+    "higherLevels": null
+  },
+  "Power Word Stun": {
+    "name": "Machtwortbetäubung",
+    "description": "Du überwältigst den Geist einer Kreatur, die du in Reichweite sehen kannst, und lässt sie sprachlos zurück. Wenn das Ziel 150 Trefferpunkte oder weniger hat, ist es betäubt. Andernfalls hat der Zauber keine Wirkung. Das betäubte Ziel muss am Ende jedes seiner Züge einen Konstitutionsrettungswurf durchführen. Bei einem erfolgreichen Speichervorgang endet der Betäubungseffekt.",
+    "higherLevels": null
+  },
+  "Sunburst": {
+    "name": "Sonnendurchbruch",
+    "description": "Strahlendes Sonnenlicht blitzt in einem Radius von 60 Fuß, zentriert auf einen von Ihnen gewählten Punkt in Reichweite. Jede Kreatur in diesem Licht muss einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 12W6 Strahlungsschaden und ist 1 Minute lang blind. Bei einem erfolgreichen Rettungswurf erleidet es halb so viel Schaden und wird durch diesen Zauber nicht geblendet. Untote und Schleime sind bei diesem Rettungswurf im Nachteil. Eine durch diesen Zauber geblendete Kreatur führt am Ende jedes Zuges einen weiteren Konstitutionsrettungswurf durch.",
+    "higherLevels": null
+  },
+  "Telepathy": {
+    "name": "Telepathie",
+    "description": "Sie stellen eine telepathische Verbindung zwischen Ihnen und einem willigen Wesen her, mit dem Sie vertraut sind. Die Kreatur kann sich überall auf derselben Existenzebene wie Sie befinden. Der Zauber endet, wenn Sie oder das Ziel sich nicht mehr auf derselben Ebene befinden. Bis zum Ende des Zaubers können Sie und das Ziel über die Verbindung sofort Wörter, Bilder, Töne und andere Sinnesbotschaften miteinander teilen, und das Ziel erkennt Sie als die Kreatur, mit der es kommuniziert.",
+    "higherLevels": null
+  },
+  "Tsunami": {
+    "name": "Tsunami",
+    "description": "An einem von Ihnen gewählten Punkt in Reichweite entsteht eine Wasserwand. Sie können die Mauer bis zu 300 Fuß lang, 300 Fuß hoch und 50 Fuß dick machen. Die Mauer bleibt für die Dauer bestehen. Wenn die Mauer erscheint, muss jede Kreatur in ihrem Bereich einen Kraftrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 6W10 Wuchtschaden, bei einem erfolgreichen Rettungswurf halb so viel. Zu Beginn jedes deiner Züge, nachdem die Wand erscheint, bewegt sich die Wand zusammen mit allen darin befindlichen Kreaturen 50 Fuß von dir weg.",
+    "higherLevels": null
+  },
+  "Astral Projection": {
+    "name": "Astralprojektion",
+    "description": "Sie und bis zu acht willige Kreaturen in Reichweite projizieren Ihre Astralkörper in die Astralebene (der Zauber schlägt fehl und der Zauber ist verschwendet, wenn Sie sich bereits auf dieser Ebene befinden). Der materielle Körper, den Sie zurücklassen, ist bewusstlos und in einem Zustand schwebender Animation; Es braucht weder Nahrung noch Luft und altert nicht. Ihr Astralkörper ähnelt in fast jeder Hinsicht Ihrer sterblichen Gestalt und spiegelt Ihre Spielstatistiken und Besitztümer wider.",
+    "higherLevels": null
+  },
+  "Foresight": {
+    "name": "Voraussicht",
+    "description": "Du berührst eine willige Kreatur und verleihst ihr eine begrenzte Fähigkeit, in die unmittelbare Zukunft zu blicken. Für die Dauer kann das Ziel nicht überrascht werden und hat einen Vorteil bei Angriffswürfen, Fähigkeitsüberprüfungen und Rettungswürfen. Darüber hinaus haben andere Kreaturen für die Dauer einen Nachteil bei Angriffswürfen gegen das Ziel. Dieser Zauber endet sofort, wenn Sie ihn vor Ablauf seiner Dauer erneut wirken.",
+    "higherLevels": null
+  },
+  "Gate": {
+    "name": "Tor",
+    "description": "Sie beschwören ein Portal, das einen unbesetzten Raum, den Sie in Reichweite sehen können, mit einem genauen Ort auf einer anderen Existenzebene verbindet. Das Portal ist eine kreisförmige Öffnung, die Sie mit einem Durchmesser von 5 bis 20 Fuß herstellen können. Sie können das Portal in jede beliebige Richtung ausrichten. Das Portal bleibt für die Dauer bestehen. Das Portal hat auf jeder Ebene, auf der es erscheint, eine Vorder- und eine Rückseite. Das Durchqueren des Portals ist nur möglich, indem man sich durch die Vorderseite bewegt. Alles, was dazu führt, wird sofort auf die andere Ebene transportiert.",
+    "higherLevels": null
+  },
+  "Imprisonment": {
+    "name": "Haft",
+    "description": "Du erschaffst eine magische Fessel, um eine Kreatur, die du sehen kannst, in Reichweite zu halten. Dem Ziel muss ein Weisheitsrettungswurf gelingen, sonst ist es an den Zauber gebunden. Wenn es gelingt, ist es immun gegen diesen Zauber, wenn du ihn erneut wirkst. Während die Kreatur von diesem Zauber betroffen ist, muss sie nicht atmen, essen oder trinken und altert nicht. Wahrsagungszauber können das Ziel nicht lokalisieren oder wahrnehmen. Sie wählen eine der folgenden Formen der Inhaftierung: Beerdigung, Kettenhaft, Abgesichertes Gefängnis, Minimus-Eindämmung oder Schlummer.",
+    "higherLevels": null
+  },
+  "Mass Heal": {
+    "name": "Massenheilung",
+    "description": "Eine Flut heilender Energie fließt von dir in die verletzten Kreaturen um dich herum. Du stellst bis zu 700 Trefferpunkte wieder her, aufgeteilt nach Belieben auf eine beliebige Anzahl von Kreaturen, die du in Reichweite sehen kannst. Durch diesen Zauber geheilte Kreaturen werden auch von allen Krankheiten und allen Effekten geheilt, die sie blind oder taub machen. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": null
+  },
+  "Meteor Swarm": {
+    "name": "Meteorschwarm",
+    "description": "Flammende Feuerkugeln stürzen an vier verschiedenen Punkten, die Sie in Reichweite sehen können, auf den Boden. Jede Kreatur in einer Kugel mit einem Radius von 40 Fuß, die auf jedem von Ihnen gewählten Punkt zentriert ist, muss einen Geschicklichkeitsrettungswurf ausführen. Die Kugel breitet sich um Ecken aus. Eine Kreatur erleidet bei einem fehlgeschlagenen Rettungswurf 20W6 Feuerschaden und 20W6 Wuchtschaden, bei einem erfolgreichen Rettungswurf halb so viel. Eine Kreatur im Bereich von mehr als einem Feuerstoß ist nur einmal betroffen.",
+    "higherLevels": null
+  },
+  "Power Word Heal": {
+    "name": "Kraftwort Heilung",
+    "description": "Eine Welle heilender Energie überschwemmt die Kreatur, die Sie berühren. Das Ziel erhält alle seine Trefferpunkte zurück. Wenn die Kreatur verzaubert, verängstigt, gelähmt oder betäubt ist, endet der Zustand. Liegt die Kreatur in Bauchlage, kann sie ihre Reaktion nutzen, um aufzustehen. Dieser Zauber hat keine Wirkung auf Untote oder Konstrukte.",
+    "higherLevels": null
+  },
+  "Power Word Kill": {
+    "name": "Machtwort töten",
+    "description": "Du sprichst ein Machtwort aus, das eine Kreatur, die du in Reichweite sehen kannst, dazu zwingen kann, sofort zu sterben. Wenn die von Ihnen gewählte Kreatur 100 Trefferpunkte oder weniger hat, stirbt sie. Andernfalls hat der Zauber keine Wirkung.",
+    "higherLevels": null
+  },
+  "Prismatic Wall": {
+    "name": "Prismatische Wand",
+    "description": "Eine schimmernde, mehrfarbige Lichtebene bildet eine vertikale, undurchsichtige Wand – bis zu 90 Fuß lang, 30 Fuß hoch und 1 Zoll dick – zentriert auf einem Punkt, den Sie in Reichweite sehen können. Alternativ können Sie die Wand in eine Kugel mit einem Durchmesser von bis zu 30 Fuß formen, die auf einem von Ihnen gewählten Punkt in Reichweite zentriert ist. Die Mauer bleibt für die Dauer an Ort und Stelle. Wenn Sie die Wand so positionieren, dass sie durch ein von einer Kreatur besetztes Feld verläuft, schlägt der Zauber fehl und Ihre Aktion und der Zauberslot sind verschwendet.",
+    "higherLevels": null
+  },
+  "Shapechange": {
+    "name": "Gestaltwandel",
+    "description": "Du nimmst für die Dauer die Gestalt einer anderen Kreatur an. Die neue Form kann eine beliebige Kreatur sein, deren Herausforderungsbewertung Ihrer Stufe entspricht oder niedriger ist. Bei der Kreatur kann es sich nicht um ein Konstrukt oder einen Untoten handeln, und Sie müssen eine solche Kreatur mindestens einmal gesehen haben. Du verwandelst dich in ein durchschnittliches Beispiel dieser Kreatur, eines ohne Klassenstufen oder das Merkmal Zauber. Deine Spielstatistiken werden durch die Statistiken der gewählten Kreatur ersetzt.",
+    "higherLevels": null
+  },
+  "Storm of Vengeance": {
+    "name": "Sturm der Rache",
+    "description": "Eine aufgewühlte Gewitterwolke bildet sich, zentriert auf einen Punkt, den Sie sehen können, und breitet sich über einen Radius von 360 Fuß aus. Blitze zucken in der Gegend, donnernde Donnerschläge und starke Winde heulen. Jede Kreatur unter der Wolke (nicht mehr als 5.000 Fuß unter der Wolke), wenn sie erscheint, muss einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet eine Kreatur 2W6 Donnerschaden und wird 5 Minuten lang taub. In jeder Runde, in der Sie sich auf diesen Zauber konzentrieren, erzeugt der Sturm in Ihrem Zug unterschiedliche Effekte.",
+    "higherLevels": null
+  },
+  "Time Stop": {
+    "name": "Zeitstopp",
+    "description": "Du unterbrichst kurzzeitig den Fluss der Zeit für alle außer dir selbst. Für andere Kreaturen vergeht keine Zeit, während du 1W4 + 1 Runden hintereinander absolvierst, in denen du wie gewohnt Aktionen ausführen und dich bewegen kannst. Dieser Effekt endet, wenn eine der Aktionen, die Sie während dieses Zeitraums verwenden, oder ein Effekt, den Sie während dieses Zeitraums erzeugen, eine andere Kreatur als Sie oder einen Gegenstand betrifft, der von jemand anderem als Ihnen getragen oder getragen wird.",
+    "higherLevels": null
+  },
+  "True Polymorph": {
+    "name": "Echter Polymorph",
+    "description": "Wähle eine Kreatur oder ein nichtmagisches Objekt, das/den du in Reichweite sehen kannst. Du verwandelst die Kreatur in eine andere Kreatur, die Kreatur in einen nichtmagischen Gegenstand oder den Gegenstand in eine Kreatur (der Gegenstand darf weder von einer anderen Kreatur getragen noch getragen werden). Die Transformation hält für die Dauer an oder bis das Ziel auf 0 Trefferpunkte fällt oder stirbt. Wenn Sie sich über die gesamte Dauer auf diesen Zauber konzentrieren, wird die Transformation dauerhaft.",
+    "higherLevels": null
+  },
+  "True Resurrection": {
+    "name": "Wahre Auferstehung",
+    "description": "Sie berühren ein Lebewesen, das nicht länger als 200 Jahre tot ist und aus irgendeinem Grund außer dem Alter gestorben ist. Wenn die Seele der Kreatur frei und willig ist, wird die Kreatur mit all ihren Trefferpunkten wieder zum Leben erweckt. Dieser Zauber schließt alle Wunden, neutralisiert jegliches Gift, heilt alle Krankheiten und hebt alle Flüche auf, die auf die Kreatur einwirkten, als sie starb. Der Zauber ersetzt beschädigte oder fehlende Organe und Gliedmaßen. Wenn die Kreatur untot war, wird sie in ihre nicht-untote Form zurückversetzt.",
+    "higherLevels": null
+  },
+  "Weird": {
+    "name": "Seltsam",
+    "description": "Ausgehend von den tiefsten Ängsten einer Gruppe von Kreaturen erschaffst du in ihren Köpfen illusorische Kreaturen, die nur für sie sichtbar sind. Jede Kreatur in einer Kugel mit einem Radius von 30 Fuß, die auf einem Punkt Ihrer Wahl in Reichweite zentriert ist, muss einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf wird eine Kreatur für die Dauer verängstigt. Die Illusion ruft die tiefsten Ängste der Kreatur hervor und manifestiert ihre schlimmsten Albträume als unerbittliche Bedrohung. Am Ende jedes Zuges der verängstigten Kreatur muss ihr ein Weisheitsrettungswurf gelingen, sonst erleidet sie 4W10 psychischen Schaden.",
+    "higherLevels": null
+  },
+  "Wish": {
+    "name": "Wunsch",
+    "description": "Wunsch ist der mächtigste Zauber, den eine sterbliche Kreatur wirken kann. Durch einfaches lautes Sprechen können Sie die Grundlagen der Realität entsprechend Ihren Wünschen verändern. Die grundlegende Verwendung dieses Zaubers besteht darin, jeden anderen Zauber der 8. Stufe oder niedriger zu duplizieren. Sie müssen in diesem Zauber keine Anforderungen erfüllen, auch keine kostspieligen Komponenten. Der Zauber tritt einfach in Kraft. Alternativ können Sie einen der folgenden Effekte Ihrer Wahl erstellen: Erstellen Sie einen beliebigen Gegenstand im Wert von bis zu 25.000 GM; Gewährt bis zu zehn Kreaturen 8 Stunden lang Immunität gegen einen einzelnen Zauber oder einen anderen magischen Effekt. Machen Sie ein einzelnes aktuelles Ereignis rückgängig, indem Sie einen erneuten Wurf eines in der letzten Runde gemachten Wurfs erzwingen.",
+    "higherLevels": null
+  }
+}

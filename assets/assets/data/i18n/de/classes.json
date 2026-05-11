@@ -1,0 +1,592 @@
+{
+  "Barbarian": {
+    "name": "Barbar",
+    "subclassFeatureName": "Urpfad",
+    "weaponProficiencies": [
+      "einfach",
+      "kriegerisch"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Explorer-Paket",
+        "4 Speere"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Großaxt"
+            ],
+            [
+              "jede kriegerische Nahkampfwaffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Handaxt",
+              "Handaxt"
+            ],
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Bard": {
+    "name": "Barde",
+    "subclassFeatureName": "Bard College",
+    "weaponProficiencies": [
+      "einfach",
+      "Handarmbrust",
+      "Langschwert",
+      "Rapier",
+      "Kurzschwert"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Lederrüstung",
+        "Dolch"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Rapier"
+            ],
+            [
+              "Langschwert"
+            ],
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Diplomatenpaket"
+            ],
+            [
+              "Entertainer-Paket"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Laute"
+            ],
+            [
+              "irgendein Musikinstrument"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "Kleriker",
+    "subclassFeatureName": "Göttliche Domäne",
+    "weaponProficiencies": [
+      "einfach"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Schild",
+        "Heiliges Symbol"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Keule"
+            ],
+            [
+              "Warhammer"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Skalenpost"
+            ],
+            [
+              "Lederrüstung"
+            ],
+            [
+              "Kettenhemd"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Leichte Armbrust",
+              "20 Schrauben"
+            ],
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Priesterrucksack"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Druid": {
+    "name": "Druide",
+    "subclassFeatureName": "Druidenkreis",
+    "weaponProficiencies": [
+      "Vereine",
+      "Dolche",
+      "Darts",
+      "Speere",
+      "Streitkolben",
+      "Quartierstäbe",
+      "Krummsäbel",
+      "Sicheln",
+      "Schlingen",
+      "Speere"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Lederrüstung",
+        "Explorer-Paket",
+        "Druidischer Fokus"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Holzschild"
+            ],
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Krummsäbel"
+            ],
+            [
+              "jede einfache Nahkampfwaffe"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "Kämpfer",
+    "subclassFeatureName": "Martialischer Archetyp",
+    "weaponProficiencies": [
+      "einfach",
+      "kriegerisch"
+    ],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {
+          "options": [
+            [
+              "Kettenhemd"
+            ],
+            [
+              "Lederrüstung",
+              "Langbogen",
+              "20 Pfeile"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "jede Kampfwaffe",
+              "Schild"
+            ],
+            [
+              "jede Kampfwaffe",
+              "jede Kampfwaffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Leichte Armbrust",
+              "20 Schrauben"
+            ],
+            [
+              "Handaxt",
+              "Handaxt"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Rudel des Kerkermeisters"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Monk": {
+    "name": "Mönch",
+    "subclassFeatureName": "Klostertradition",
+    "weaponProficiencies": [
+      "einfach",
+      "Kurzschwerter"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "10 Darts"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Kurzschwert"
+            ],
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Rudel des Kerkermeisters"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "Paladin",
+    "subclassFeatureName": "Heiliger Eid",
+    "weaponProficiencies": [
+      "einfach",
+      "kriegerisch"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Kettenhemd",
+        "Heiliges Symbol"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "jede Kampfwaffe",
+              "Schild"
+            ],
+            [
+              "jede Kampfwaffe",
+              "jede Kampfwaffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "5 Speere"
+            ],
+            [
+              "jede einfache Nahkampfwaffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Priesterrucksack"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "Ranger",
+    "subclassFeatureName": "Ranger-Archetyp",
+    "weaponProficiencies": [
+      "einfach",
+      "kriegerisch"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Langbogen",
+        "Köcher mit 20 Pfeilen"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Skalenpost"
+            ],
+            [
+              "Lederrüstung"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Kurzschwert",
+              "Kurzschwert"
+            ],
+            [
+              "jede einfache Nahkampfwaffe",
+              "jede einfache Nahkampfwaffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Rudel des Kerkermeisters"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "Schurke",
+    "subclassFeatureName": "Schelmischer Archetyp",
+    "weaponProficiencies": [
+      "einfach",
+      "Handarmbrust",
+      "Langschwert",
+      "Rapier",
+      "Kurzschwert"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Lederrüstung",
+        "Dolch",
+        "Dolch",
+        "Werkzeuge der Diebe"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Rapier"
+            ],
+            [
+              "Kurzschwert"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Kurzbogen",
+              "Köcher mit 20 Pfeilen"
+            ],
+            [
+              "Kurzschwert"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Einbrecherpaket"
+            ],
+            [
+              "Rudel des Kerkermeisters"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "Zauberer",
+    "subclassFeatureName": "Zauberhafter Ursprung",
+    "weaponProficiencies": [
+      "Dolche",
+      "Darts",
+      "Schlingen",
+      "Quartierstäbe",
+      "leichte Armbrüste"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Dolch",
+        "Dolch"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Leichte Armbrust",
+              "20 Schrauben"
+            ],
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Komponententasche"
+            ],
+            [
+              "Arkaner Fokus"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Rudel des Kerkermeisters"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "Hexenmeister",
+    "subclassFeatureName": "Jenseitiger Gönner",
+    "weaponProficiencies": [
+      "einfach"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Lederrüstung",
+        "Dolch",
+        "Dolch"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Leichte Armbrust",
+              "20 Schrauben"
+            ],
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Komponententasche"
+            ],
+            [
+              "Arkaner Fokus"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Gelehrtenpaket"
+            ],
+            [
+              "Rudel des Kerkermeisters"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "jede einfache Waffe"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "Zauberer",
+    "subclassFeatureName": "Arkane Tradition",
+    "weaponProficiencies": [
+      "Dolche",
+      "Darts",
+      "Schlingen",
+      "Quartierstäbe",
+      "leichte Armbrüste"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Zauberbuch"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Quartierstab"
+            ],
+            [
+              "Dolch"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Komponententasche"
+            ],
+            [
+              "Arkaner Fokus"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Gelehrtenpaket"
+            ],
+            [
+              "Explorer-Paket"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

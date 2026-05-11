@@ -1,0 +1,878 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Raserei",
+        "description": "Wenn Sie diesen Pfad ab der 3. Stufe wählen, können Sie in Raserei geraten, wenn Sie wütend sind. Wenn Sie dies tun, können Sie für die Dauer Ihrer Wut in jedem Ihrer folgenden Züge einen einzelnen Nahkampfwaffenangriff als Bonusaktion ausführen. Wenn Ihre Wut endet, erleiden Sie eine Stufe der Erschöpfung."
+      },
+      "Mindless Rage": {
+        "name": "Geisteslose Wut",
+        "description": "Ab der 6. Stufe können Sie beim Toben weder verzaubert noch verängstigt werden. Wenn Sie zu Beginn Ihrer Wut verzaubert oder verängstigt sind, wird der Effekt für die Dauer der Wut ausgesetzt."
+      },
+      "Intimidating Presence": {
+        "name": "Einschüchternde Präsenz",
+        "description": "Ab der 10. Stufe können Sie Ihre Aktion nutzen, um jemanden mit Ihrer bedrohlichen Präsenz zu erschrecken. Wählen Sie eine Kreatur aus, die Sie in einem Umkreis von 30 Fuß um Sie sehen können. Wenn die Kreatur dich sehen oder hören kann, muss ihr ein Weisheitsrettungswurf gelingen (SG = 8 + dein Fähigkeitsbonus + dein Charisma-Modifikator), sonst hat sie bis zum Ende deines nächsten Zuges Angst vor dir. In den folgenden Zügen können Sie Ihre Aktion nutzen, um die Dauer bis zum Ende Ihres nächsten Zuges zu verlängern. Der Effekt endet, wenn die Kreatur ihren Zug außerhalb der Sichtlinie oder mehr als 60 Fuß von Ihnen entfernt beendet."
+      },
+      "Retaliation": {
+        "name": "Vergeltung",
+        "description": "Wenn Sie ab der 14. Stufe Schaden von einer Kreatur erleiden, die sich in einem Umkreis von 5 Fuß um Sie befindet, können Sie Ihre Reaktion nutzen, um einen Angriff mit einer Nahkampfwaffe gegen diese Kreatur durchzuführen."
+      }
+    },
+    "Path of the Totem Warrior": {
+      "Spirit Seeker": {
+        "name": "Geistersucher",
+        "description": "Ihr Weg ist ein Weg, der die Harmonie mit der natürlichen Welt anstrebt. Auf der 3. Stufe erhältst du die Fähigkeit, die Zauber „Tiersinn“ und „Mit Tieren sprechen“ zu wirken, allerdings nur als Rituale."
+      },
+      "Totem Spirit": {
+        "name": "Totemgeist",
+        "description": "Wählen Sie auf der 3. Stufe einen Totemgeist und erhalten Sie dessen Funktion. Bär: Während du tobst, hast du Widerstand gegen jeglichen Schaden außer psychischem Schaden. Adler: Während du tobst, haben andere Kreaturen einen Nachteil bei Gelegenheitsangriffswürfen gegen dich, und du kannst Sprinten als Bonusaktion verwenden. Wolf: Während du wütest, haben deine Freunde einen Vorteil bei Nahkampfangriffswürfen gegen alle Kreaturen im Umkreis von 5 Fuß um dich, die dir feindlich gesinnt sind."
+      },
+      "Aspect of the Beast": {
+        "name": "Aspekt des Tieres",
+        "description": "Abhängig vom gewählten Totemtier erhältst du einen magischen Vorteil. Bär: Deine Tragfähigkeit wird verdoppelt und du hast einen Vorteil bei Kraftproben, um Dinge zu schieben, zu ziehen, zu heben oder zu zerbrechen. Adler: Du kannst problemlos bis zu einer Meile weit sehen, und schwaches Licht stellt keinen Nachteil für deine Wahrnehmungswürfe dar. Wolf: Sie können andere Kreaturen verfolgen, während Sie sich schnell bewegen, und Sie können sich heimlich bewegen, während Sie sich normal bewegen."
+      },
+      "Spirit Walker": {
+        "name": "Geisterwanderer",
+        "description": "Sie können die Kommune mit einem Naturzauber wirken, aber nur als Ritual. Wenn Sie dies tun, erscheint eine spirituelle Version eines Ihrer Totemtiere, um die von Ihnen gesuchten Informationen zu übermitteln."
+      },
+      "Totemic Attunement": {
+        "name": "Totem-Einstimmung",
+        "description": "Du erhältst einen magischen Vorteil basierend auf einem Totemtier deiner Wahl. Bär: Während er tobt, hat jede feindliche Kreatur im Umkreis von 5 Fuß um dich einen Nachteil bei Angriffswürfen gegen andere Ziele als dich. Adler: Während du tobst, hast du eine Fluggeschwindigkeit, die deiner Gehgeschwindigkeit entspricht, aber du fällst, wenn du deinen Zug in der Luft beendest. Wolf: Während du tobst, kannst du eine Bonusaktion nutzen, um eine große oder kleinere Kreatur zu Boden zu werfen, wenn du sie mit einem Nahkampfwaffenangriff triffst."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Bonuskenntnisse",
+        "description": "Wenn Sie dem College of Lore auf der 3. Stufe beitreten, erwerben Sie Kenntnisse in drei Fertigkeiten Ihrer Wahl."
+      },
+      "Cutting Words": {
+        "name": "Wörter schneiden",
+        "description": "Wenn eine Kreatur, die du im Umkreis von 60 Fuß sehen kannst, auf der 3. Stufe einen Angriffswurf, eine Fähigkeitsprüfung oder einen Schadenswurf durchführt, kannst du deine Reaktion nutzen, um eine Anwendung von Bardischer Inspiration zu verbrauchen, indem du den Würfel würfelst und die Zahl vom Würfelwurf der Kreatur abziehst. Die Kreatur ist immun, wenn sie dich nicht hören kann oder immun gegen Verzauberung ist."
+      },
+      "Additional Magical Secrets": {
+        "name": "Zusätzliche magische Geheimnisse",
+        "description": "Auf der 6. Stufe lernst du von einer beliebigen Klasse zwei Zaubersprüche deiner Wahl. Ein von Ihnen gewählter Zauber muss eine Stufe haben, die Sie wirken können. Die gewählten Zaubersprüche zählen für dich als Bardenzauber, zählen aber nicht zu der Anzahl der Bardenzauber, die du kennst."
+      },
+      "Peerless Skill": {
+        "name": "Unvergleichliche Fähigkeiten",
+        "description": "Ab der 14. Stufe können Sie bei einer Fähigkeitsüberprüfung eine Anwendung von Bardeninspiration verbrauchen. Wirf einen bardischen Inspirationswürfel und füge die gewürfelte Zahl zu deinem Fähigkeitstest hinzu. Sie können dies tun, nachdem Sie gewürfelt haben, aber bevor der DM Ihnen mitteilt, ob Sie erfolgreich sind oder scheitern."
+      }
+    },
+    "College of Valor": {
+      "Bonus Proficiencies": {
+        "name": "Bonuskenntnisse",
+        "description": "Wenn Sie dem College of Valor auf der 3. Stufe beitreten, erwerben Sie Kenntnisse im Umgang mit mittleren Rüstungen, Schilden und Kampfwaffen."
+      },
+      "Combat Inspiration": {
+        "name": "Kampfinspiration",
+        "description": "Ebenfalls auf der 3. Stufe kann eine Kreatur mit einem bardischen Inspirationswürfel von dir diesen Würfel würfeln und die Zahl zu einem Waffenschadenswurf addieren, den sie gerade gemacht hat. Wenn alternativ ein Angriffswurf gegen die Kreatur durchgeführt wird, kann sie ihre Reaktion nutzen, um den Würfel zu werfen und die Zahl zu ihrer AC gegen diesen Angriff hinzuzufügen, nachdem sie den Wurf gesehen hat, aber bevor sie weiß, ob sie trifft."
+      },
+      "Extra Attack": {
+        "name": "Zusätzlicher Angriff",
+        "description": "Ab der 6. Stufe können Sie jedes Mal, wenn Sie in Ihrem Zug die Angriffsaktion ausführen, zweimal statt einmal angreifen."
+      },
+      "Battle Magic": {
+        "name": "Kampfmagie",
+        "description": "Wenn Sie auf der 14. Stufe Ihre Aktion nutzen, um einen Bardenzauber zu wirken, können Sie einen Waffenangriff als Bonusaktion durchführen."
+      }
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "Blessings of Knowledge": {
+        "name": "Segen des Wissens",
+        "description": "Auf der 1. Stufe lernen Sie zwei Sprachen Ihrer Wahl. Sie beherrschen außerdem zwei der folgenden Fertigkeiten: Arkana, Geschichte, Natur oder Religion. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine dieser Fähigkeiten zum Einsatz kommt."
+      },
+      "Channel Divinity: Knowledge of the Ages": {
+        "name": "Channel Divinity: Wissen der Zeitalter",
+        "description": "Ab der 2. Stufe können Sie Ihren Göttlichkeitskanal nutzen, um auf eine göttliche Wissensquelle zuzugreifen. Als Aktion wählt man eine Fertigkeit oder ein Werkzeug. Für 10 Minuten verfügen Sie über Kenntnisse im Umgang mit der gewählten Fertigkeit oder dem gewählten Werkzeug."
+      },
+      "Channel Divinity: Read Thoughts": {
+        "name": "Kanalgöttlichkeit: Gedanken lesen",
+        "description": "Auf der 6. Stufe können Sie Ihre Göttlichkeit kanalisieren, um die Gedanken einer Kreatur zu lesen. Du wirkst „Gedanken erkennen“ (SG des Rettungswurfs entspricht dem SG deines Zauberwurfs durch den Geistlichen), ohne dass ein Zauberslot oder Komponenten erforderlich sind. Das Ziel, dessen Rettungswurf fehlschlägt, wird dann 1 Minute lang von dir verzaubert oder bis du ihm Schaden zufügst."
+      },
+      "Potent Spellcasting": {
+        "name": "Kraftvolle Zauberei",
+        "description": "Ab der 8. Stufe addieren Sie Ihren Weisheitsmodifikator zum Schaden, den Sie mit einem beliebigen Kleriker-Cantrip verursachen."
+      },
+      "Visions of the Past": {
+        "name": "Visionen der Vergangenheit",
+        "description": "Ab der 17. Stufe können Sie Visionen aus der Vergangenheit abrufen, die sich auf einen von Ihnen gehaltenen Gegenstand oder Ihre unmittelbare Umgebung beziehen. Sie verbringen mindestens eine Minute mit Meditation und Gebet und erhalten dann traumhafte, verschwommene Visionen der jüngsten Ereignisse. Sie können auf diese Weise eine Anzahl von Minuten lang meditieren, die Ihrem Weisheitswert entspricht, und müssen während dieser Zeit die Konzentration aufrechterhalten."
+      }
+    },
+    "Life Domain": {
+      "Bonus Proficiency": {
+        "name": "Bonuskompetenz",
+        "description": "Wenn Sie diese Domäne auf der 1. Stufe wählen, erwerben Sie Kenntnisse im Umgang mit schwerer Rüstung."
+      },
+      "Disciple of Life": {
+        "name": "Schüler des Lebens",
+        "description": "Auch ab der 1. Stufe sind Ihre Heilzauber wirksamer. Immer wenn du einen Zauber der 1. Stufe oder höher verwendest, um die Trefferpunkte einer Kreatur wiederherzustellen, erhält die Kreatur zusätzliche Trefferpunkte in Höhe von 2 + der Stufe des Zaubers zurück."
+      },
+      "Channel Divinity: Preserve Life": {
+        "name": "Channel Divinity: Leben bewahren",
+        "description": "Ab der 2. Stufe präsentieren Sie als Aktion Ihr heiliges Symbol und rufen Heilenergie hervor, die eine Anzahl an Trefferpunkten wiederherstellen kann, die dem Fünffachen Ihrer Klerikerstufe entspricht. Wählen Sie beliebige Kreaturen in einem Umkreis von 30 Fuß um Sie aus und teilen Sie diese Trefferpunkte unter ihnen auf. Mit dieser Funktion kann eine Kreatur höchstens die Hälfte ihrer maximalen Trefferpunkte wiederherstellen."
+      },
+      "Blessed Healer": {
+        "name": "Gesegneter Heiler",
+        "description": "Ab der 6. Stufe heilen die Heilzauber, die du auf andere wirkst, auch dich. Wenn du einen Zauber der 1. Stufe oder höher wirkst, der einer anderen Kreatur als dir Trefferpunkte wiederherstellt, erhältst du Trefferpunkte in Höhe von 2 + der Stufe des Zaubers zurück."
+      },
+      "Divine Strike": {
+        "name": "Göttlicher Schlag",
+        "description": "Auf der 8. Stufe kannst du einmal in jedem deiner Züge, wenn du eine Kreatur mit einem Waffenangriff triffst, bewirken, dass der Angriff dem Ziel zusätzlich 1W8 Strahlungsschaden zufügt. Wenn Sie die 14. Stufe erreichen, erhöht sich der zusätzliche Schaden auf 2W8."
+      },
+      "Supreme Healing": {
+        "name": "Höchste Heilung",
+        "description": "Wenn Sie ab der 17. Stufe normalerweise einen oder mehrere Würfel werfen würden, um die Trefferpunkte eines Zaubers wiederherzustellen, verwenden Sie stattdessen für jeden Würfel die höchstmögliche Zahl. Anstatt beispielsweise 2W6 Trefferpunkte wiederherzustellen, stellen Sie 12 wieder her."
+      }
+    },
+    "Light Domain": {
+      "Bonus Cantrip": {
+        "name": "Bonus-Cantrip",
+        "description": "Wenn Sie diese Domain auf der 1. Ebene auswählen, erhalten Sie den leichten Cantrip, sofern Sie ihn noch nicht kennen."
+      },
+      "Warding Flare": {
+        "name": "Abwehrsignal",
+        "description": "Wenn Sie auf der 1. Stufe außerdem von einer Kreatur in einem Umkreis von 30 Fuß um Sie angegriffen werden, die Sie sehen können, können Sie Ihre Reaktion nutzen, um den Angriffswurf zu benachteiligen, sodass Licht vor dem Angreifer aufflackert. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Anwendungen wiedererlangen."
+      },
+      "Channel Divinity: Radiance of the Dawn": {
+        "name": "Channel Divinity: Radiance of the Dawn",
+        "description": "Ab der 2. Stufe präsentierst du als Aktion dein heiliges Symbol und jegliche magische Dunkelheit im Umkreis von 30 Fuß um dich wird vertrieben. Darüber hinaus muss jede feindliche Kreatur im Umkreis von 30 Fuß einen Konstitutionsrettungswurf durchführen und bei einem fehlgeschlagenen Rettungswurf 2W10 + Strahlungsschaden Ihrer Klerikerstufe oder halb so viel bei einem Erfolg erleiden."
+      },
+      "Improved Flare": {
+        "name": "Verbessertes Leuchtsignal",
+        "description": "Ab der 6. Stufe können Sie Ihre Funktion „Warding Flare“ auch verwenden, wenn eine Kreatur, die Sie in einem Umkreis von 30 Fuß um Sie sehen können, eine andere Kreatur als Sie angreift."
+      },
+      "Potent Spellcasting": {
+        "name": "Kraftvolle Zauberei",
+        "description": "Ab der 8. Stufe addieren Sie Ihren Weisheitsmodifikator zum Schaden, den Sie mit einem beliebigen Kleriker-Cantrip verursachen."
+      },
+      "Corona of Light": {
+        "name": "Korona des Lichts",
+        "description": "Ab der 17. Stufe können Sie mit Ihrer Aktion eine Aura aus Sonnenlicht aktivieren, die 1 Minute lang anhält oder bis Sie sie aufheben. Sie geben helles Licht in einem Radius von 60 Fuß ab und gedämpftes Licht in einem Umkreis von 30 Fuß darüber hinaus. Deine Feinde im hellen Licht haben bei Rettungswürfen gegen alle Zauber, die Feuer- oder Strahlungsschaden verursachen, einen Nachteil."
+      }
+    },
+    "Nature Domain": {
+      "Acolyte of Nature": {
+        "name": "Akolyth der Natur",
+        "description": "Auf der 1. Stufe lernst du einen Druiden-Cantrip deiner Wahl. Sie erwerben außerdem Kenntnisse in einer der folgenden Fertigkeiten: Umgang mit Tieren, Natur oder Überleben."
+      },
+      "Bonus Proficiency": {
+        "name": "Bonuskompetenz",
+        "description": "Außerdem erwerben Sie auf der 1. Stufe Kenntnisse im Umgang mit schwerer Rüstung."
+      },
+      "Channel Divinity: Charm Animals and Plants": {
+        "name": "Channel Divinity: Bezaubere Tiere und Pflanzen",
+        "description": "Ab der 2. Ebene präsentieren Sie als Aktion Ihr heiliges Symbol und rufen den Namen Ihrer Gottheit an. Jedes Tier oder jede Pflanzenkreatur, die dich im Umkreis von 30 Fuß sehen kann, muss einen Weisheitsrettungswurf machen. Wenn dies fehlschlägt, wird es 1 Minute lang oder bis es Schaden erleidet, von Ihnen verzaubert."
+      },
+      "Dampen Elements": {
+        "name": "Elemente dämpfen",
+        "description": "Ab der 6. Stufe können Sie, wenn Sie oder eine Kreatur im Umkreis von 30 Fuß um Sie Säure-, Kälte-, Feuer-, Blitz- oder Donnerschaden erleiden, Ihre Reaktion nutzen, um der Kreatur Widerstand gegen diesen Schadensfall zu verleihen."
+      },
+      "Divine Strike": {
+        "name": "Göttlicher Schlag",
+        "description": "Auf der 8. Stufe kannst du einmal in jedem deiner Züge, wenn du eine Kreatur mit einem Waffenangriff triffst, bewirken, dass der Angriff dem Ziel zusätzlich 1W8 Kälte-, Feuer- oder Blitzschaden (nach deiner Wahl) zufügt. Wenn Sie die 14. Stufe erreichen, erhöht sich der zusätzliche Schaden auf 2W8."
+      },
+      "Master of Nature": {
+        "name": "Meister der Natur",
+        "description": "Mit der 17. Stufe erlangen Sie die Fähigkeit, Tiere und Pflanzen zu befehligen. Während Kreaturen durch Ihre Funktion „Tiere und Pflanzen bezaubern“ verzaubert werden, können Sie in Ihrem Zug eine Bonusaktion ausführen, um verbal zu befehlen, was jede dieser Kreaturen in ihrem nächsten Zug tun wird."
+      }
+    },
+    "Tempest Domain": {
+      "Bonus Proficiencies": {
+        "name": "Bonuskenntnisse",
+        "description": "Auf der 1. Stufe erwerben Sie Kenntnisse im Umgang mit Kampfwaffen und schwerer Rüstung."
+      },
+      "Wrath of the Storm": {
+        "name": "Zorn des Sturms",
+        "description": "Auch auf der 1. Stufe können Sie, wenn eine Kreatur in einem Umkreis von 5 Fuß um Sie herum, die Sie sehen können, Sie mit einem Angriff trifft, Ihre Reaktion nutzen, um die Kreatur zu einem Geschicklichkeitsrettungswurf zu veranlassen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 2W8 Blitz- oder Donnerschaden (Ihrer Wahl), bei einem Erfolg halb so viel. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Nutzungsmöglichkeiten wiedererlangen."
+      },
+      "Channel Divinity: Destructive Wrath": {
+        "name": "Channel Divinity: Zerstörerischer Zorn",
+        "description": "Ab der 2. Stufe können Sie beim Würfeln von Blitz- oder Donnerschaden Ihre Kanalgöttlichkeit verwenden, um maximalen Schaden zu verursachen, anstatt zu würfeln."
+      },
+      "Thunderbolt Strike": {
+        "name": "Donnerschlag",
+        "description": "Wenn du auf der 6. Stufe einer großen oder kleineren Kreatur Blitzschaden zufügst, kannst du sie auch bis zu 10 Fuß von dir wegschieben."
+      },
+      "Divine Strike": {
+        "name": "Göttlicher Schlag",
+        "description": "Auf der 8. Stufe kannst du einmal in jedem deiner Züge, wenn du eine Kreatur mit einem Waffenangriff triffst, bewirken, dass der Angriff dem Ziel zusätzlich 1W8 Donnerschaden zufügt. Wenn Sie die 14. Stufe erreichen, erhöht sich der zusätzliche Schaden auf 2W8."
+      },
+      "Stormborn": {
+        "name": "Sturmgeboren",
+        "description": "Auf der 17. Stufe haben Sie eine Fluggeschwindigkeit, die Ihrer aktuellen Gehgeschwindigkeit entspricht, wenn Sie sich nicht unter der Erde oder in Innenräumen befinden."
+      }
+    },
+    "Trickery Domain": {
+      "Blessing of the Trickster": {
+        "name": "Segen des Tricksters",
+        "description": "Wenn du diese Domäne auf der 1. Stufe wählst, kannst du mit deiner Aktion eine andere willige Kreatur als dich selbst berühren, um ihr einen Vorteil bei Geschicklichkeitswürfen (Heimlichkeit) zu verschaffen. Dieser Segen dauert 1 Stunde oder bis Sie diese Funktion erneut nutzen."
+      },
+      "Channel Divinity: Invoke Duplicity": {
+        "name": "Göttlichkeit kanalisieren: Duplizität hervorrufen",
+        "description": "Ab der 2. Stufe erstellen Sie als Aktion ein perfektes illusorisches Duplikat Ihrer selbst, das 1 Minute lang anhält. Die Illusion erscheint in einem unbesetzten Raum, den Sie in einem Umkreis von 30 Fuß um Sie sehen können. Als Bonusaktion in Ihrem Zug können Sie die Illusion bis zu 30 Fuß weit bewegen. Sie können Zauber wirken, als wären Sie im Raum der Illusion, müssen aber Ihre eigenen Sinne nutzen."
+      },
+      "Channel Divinity: Cloak of Shadows": {
+        "name": "Channel Divinity: Umhang der Schatten",
+        "description": "Ab der 6. Stufe werden Sie als Aktion bis zum Ende Ihres nächsten Zuges unsichtbar. Du wirst sichtbar, wenn du angreifst oder einen Zauber wirkst."
+      },
+      "Divine Strike": {
+        "name": "Göttlicher Schlag",
+        "description": "Auf der 8. Stufe kannst du einmal in jedem deiner Züge, wenn du eine Kreatur mit einem Waffenangriff triffst, bewirken, dass der Angriff dem Ziel zusätzlich 1W8 Giftschaden zufügt. Wenn Sie die 14. Stufe erreichen, erhöht sich der zusätzliche Schaden auf 2W8."
+      },
+      "Improved Duplicity": {
+        "name": "Verbesserte Duplizität",
+        "description": "Auf der 17. Stufe können Sie mit „Invoke Duplicity“ bis zu vier Duplikate von sich selbst anstelle von einem erstellen. Als Bonusaktion in Ihrem Zug können Sie eine beliebige Anzahl von ihnen bis zu 30 Fuß weit bewegen, bis zu einer maximalen Reichweite von 120 Fuß."
+      }
+    },
+    "War Domain": {
+      "Bonus Proficiencies": {
+        "name": "Bonuskenntnisse",
+        "description": "Auf der 1. Stufe erwerben Sie Kenntnisse im Umgang mit Kampfwaffen und schwerer Rüstung."
+      },
+      "War Priest": {
+        "name": "Kriegspriester",
+        "description": "Ab der 1. Stufe können Sie bei Verwendung der Angriffsaktion einen Waffenangriff als Bonusaktion durchführen. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Nutzungsmöglichkeiten wiedererlangen."
+      },
+      "Channel Divinity: Guided Strike": {
+        "name": "Channel Divinity: Geführter Schlag",
+        "description": "Ab der 2. Stufe können Sie bei einem Angriffswurf Ihre Kanalgöttlichkeit nutzen, um einen Bonus von +10 auf den Wurf zu erhalten. Sie treffen diese Wahl, bevor oder nachdem Sie den Wurf gesehen haben, aber bevor irgendwelche Effekte angewendet werden."
+      },
+      "Channel Divinity: War God's Blessing": {
+        "name": "Channel Divinity: War God's Blessing",
+        "description": "Wenn auf der 6. Stufe eine Kreatur in einem Umkreis von 30 Fuß um dich einen Angriffswurf ausführt, kannst du mithilfe deiner Reaktion dieser Kreatur mithilfe deiner Kanalgöttlichkeit einen Bonus von +10 auf den Wurf gewähren."
+      },
+      "Divine Strike": {
+        "name": "Göttlicher Schlag",
+        "description": "Auf der 8. Stufe kannst du einmal in jedem deiner Züge, wenn du eine Kreatur mit einem Waffenangriff triffst, bewirken, dass der Angriff zusätzlich 1W8 Schaden derselben Art verursacht, die die Waffe verursacht. Wenn Sie die 14. Stufe erreichen, erhöht sich der zusätzliche Schaden auf 2W8."
+      },
+      "Avatar of Battle": {
+        "name": "Avatar der Schlacht",
+        "description": "Mit der 17. Stufe erlangst du Widerstand gegen Wucht-, Stich- und Hiebschaden durch nichtmagische Waffen."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Bonus Cantrip": {
+        "name": "Bonus-Cantrip",
+        "description": "Wenn Sie diesen Kreis auf der 2. Stufe wählen, lernen Sie einen zusätzlichen Druiden-Cantrip Ihrer Wahl."
+      },
+      "Natural Recovery": {
+        "name": "Natürliche Erholung",
+        "description": "Ab der 2. Stufe können Sie während einer kurzen Pause verbrauchte Zauberslots auswählen, um sie wiederherzustellen. Die Zauberslots können zusammen eine Stufe haben, die gleich oder kleiner als die Hälfte Ihrer Druidenstufe ist (aufgerundet), und keiner der Zauberplätze darf der 6. Stufe oder höher angehören. Sie können diese Funktion erst wieder verwenden, wenn Sie eine lange Pause beendet haben."
+      },
+      "Land's Stride": {
+        "name": "Lands Schritt",
+        "description": "Ab der 6. Stufe kostet dich das Bewegen durch nichtmagisches schwieriges Gelände keine zusätzliche Bewegung. Sie können auch durch nichtmagische Pflanzen hindurchgehen, ohne von ihnen verlangsamt zu werden und ohne Schaden durch sie zu erleiden, wenn sie Dornen, Stacheln oder eine ähnliche Gefahr haben."
+      },
+      "Nature's Ward": {
+        "name": "Schutz der Natur",
+        "description": "Wenn Sie die 10. Stufe erreichen, können Sie weder von Elementaren noch von Feen bezaubert oder erschreckt werden, und Sie sind immun gegen Gift und Krankheiten."
+      },
+      "Nature's Sanctuary": {
+        "name": "Naturschutzgebiet",
+        "description": "Wenn Sie die 14. Stufe erreichen und ein Tier oder eine Pflanzenkreatur Sie angreift, muss diese Kreatur einen Weisheitsrettungswurf gegen Ihren Druiden-Zauberwurf-SG durchführen. Bei einem fehlgeschlagenen Rettungswurf muss die Kreatur ein anderes Ziel wählen, sonst schlägt der Angriff automatisch fehl."
+      }
+    },
+    "Circle of the Moon": {
+      "Combat Wild Shape": {
+        "name": "Bekämpfe wilde Formen",
+        "description": "Wenn Sie diesen Kreis auf der 2. Ebene wählen, erhalten Sie die Möglichkeit, Wild Shape in Ihrem Zug als Bonusaktion und nicht als Aktion zu verwenden. Darüber hinaus können Sie, während Sie durch Wild Shape verwandelt werden, eine Bonusaktion verwenden, um einen Zauberslot auszugeben, um 1W8 Trefferpunkte pro Stufe des aufgewendeten Zauberslots zurückzugewinnen."
+      },
+      "Circle Forms": {
+        "name": "Kreisformen",
+        "description": "Die Riten Ihres Kreises verleihen Ihnen die Fähigkeit, sich in gefährlichere Tierformen zu verwandeln. Ab der 2. Stufe kannst du dich mit Wild Shape in ein Biest mit einem Herausforderungswert von bis zu 1 verwandeln. Ab dem 6. Level kannst du dich in ein Biest mit einem Herausforderungswert verwandeln, der so hoch ist, wie dein Druidenlevel geteilt durch 3, abgerundet."
+      },
+      "Primal Strike": {
+        "name": "Urschlag",
+        "description": "Ab der 6. Stufe gelten Ihre Angriffe in Tiergestalt als magisch, um Widerstand und Immunität gegenüber nichtmagischen Angriffen und Schaden zu überwinden."
+      },
+      "Elemental Wild Shape": {
+        "name": "Elementare Wildform",
+        "description": "Auf der 10. Stufe können Sie zwei Anwendungen von Wild Shape gleichzeitig nutzen, um sich in einen Luftelementar, einen Erdelementar, einen Feuerelementar oder einen Wasserelementar zu verwandeln."
+      },
+      "Thousand Forms": {
+        "name": "Tausend Formen",
+        "description": "Mit der 14. Stufe haben Sie gelernt, Ihre physische Form mithilfe von Magie auf subtilere Weise zu verändern. Sie können den Zauber „Selbst verändern“ nach Belieben wirken."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Verbesserter kritischer Wert",
+        "description": "Ab der 3. Stufe, wenn Sie diesen Archetyp wählen, erzielen Ihre Waffenangriffe einen kritischen Treffer bei einem Ergebnis von 19 oder 20."
+      },
+      "Remarkable Athlete": {
+        "name": "Bemerkenswerter Athlet",
+        "description": "Ab der 7. Stufe können Sie die Hälfte Ihres Fähigkeitsbonus (aufgerundet) zu jeder Stärke-, Geschicklichkeits- oder Konstitutionsprüfung hinzufügen, die Sie durchführen und die Ihren Fähigkeitsbonus nicht bereits verwendet. Darüber hinaus erhöht sich die Entfernung, die Sie zurücklegen können, um einen Fuß, der Ihrem Stärkemodifikator entspricht, wenn Sie einen weiten Laufsprung machen."
+      },
+      "Additional Fighting Style": {
+        "name": "Zusätzlicher Kampfstil",
+        "description": "Auf der 10. Stufe können Sie eine zweite Option aus der Klassenfunktion „Kampfstil“ wählen."
+      },
+      "Superior Critical": {
+        "name": "Überragend kritisch",
+        "description": "Ab der 15. Stufe erzielen Ihre Waffenangriffe einen kritischen Treffer bei einem Ergebnis von 18, 19 oder 20."
+      },
+      "Survivor": {
+        "name": "Überlebende",
+        "description": "Auf der 18. Stufe erhalten Sie zu Beginn jedes Ihrer Züge Trefferpunkte in Höhe von 5 + Ihrem Konstitutionsmodifikator zurück, wenn Sie nicht mehr als die Hälfte Ihrer Trefferpunkte übrig haben. Du erhältst diesen Vorteil nicht, wenn du 0 Trefferpunkte hast."
+      }
+    },
+    "Battle Master": {
+      "Combat Superiority": {
+        "name": "Kampfüberlegenheit",
+        "description": "Wenn Sie diesen Archetyp auf der 3. Stufe wählen, lernen Sie Manöver, die durch spezielle Überlegenheitswürfel (W8) angetrieben werden. Du lernst drei Manöver deiner Wahl und hast vier Überlegenheitswürfel. Nach einer kurzen oder langen Pause erhältst du alle verbrauchten Überlegenheitswürfel zurück. Save DC = 8 + Fähigkeitsbonus + Stärke- oder Geschicklichkeitsmodifikator (nach Wahl). Zwei zusätzliche Manöver erlernen Sie auf der 7., 10. und 15. Stufe."
+      },
+      "Student of War": {
+        "name": "Student des Krieges",
+        "description": "Auf der 3. Stufe erwerben Sie Kenntnisse im Umgang mit einer Art von Handwerkswerkzeugen Ihrer Wahl."
+      },
+      "Know Your Enemy": {
+        "name": "Kennen Sie Ihren Feind",
+        "description": "Wenn du ab der 7. Stufe mindestens 1 Minute damit verbringst, eine andere Kreatur außerhalb des Kampfes zu beobachten oder mit ihr zu interagieren, sagt dir der DM, ob die Kreatur dir in Bezug auf zwei der folgenden Eigenschaften deiner Wahl gleichwertig, überlegen oder unterlegen ist: Stärke, Geschicklichkeit, Konstitution, Rüstungsklasse, aktuelle Trefferpunkte, Gesamtklassenstufen, Kämpferklassenstufen."
+      },
+      "Improved Combat Superiority": {
+        "name": "Verbesserte Kampfüberlegenheit",
+        "description": "Auf der 10. Stufe verwandeln sich Ihre Überlegenheitswürfel in W10. Auf der 18. Ebene werden sie zu d12s."
+      },
+      "Relentless": {
+        "name": "Unerbittlich",
+        "description": "Ab der 15. Stufe erhalten Sie 1 Überlegenheitswürfel zurück, wenn Sie Initiative würfeln und keine Überlegenheitswürfel mehr übrig haben."
+      }
+    },
+    "Eldritch Knight": {
+      "Spellcasting": {
+        "name": "Zauberei",
+        "description": "Wenn Sie die 3. Stufe erreichen, erweitern Sie Ihre Kampffähigkeiten durch die Fähigkeit, Zauber zu wirken. Intelligenz ist Ihre Zauberfähigkeit für Ihre Zaubersprüche. Sie kennen drei Zaubertricks und vier Zaubersprüche der ersten Stufe, von denen mindestens zwei aus der Abschwörungs- oder Beschwörungsschule stammen müssen."
+      },
+      "Weapon Bond": {
+        "name": "Waffenbindung",
+        "description": "Außerdem erlernen Sie auf der 3. Stufe ein Ritual, das eine magische Verbindung zwischen Ihnen und einer Waffe herstellt. Sie führen das Ritual über eine Stunde lang durch. Danach kann Ihnen diese Waffe nicht mehr entwaffnet werden, es sei denn, Sie sind handlungsunfähig. Wenn sie sich auf derselben Existenzebene befindet, können Sie diese Waffe als Bonusaktion in Ihrem Zug beschwören, wodurch sie sofort auf Ihre Hand teleportiert wird."
+      },
+      "War Magic": {
+        "name": "Kriegsmagie",
+        "description": "Ab der 7. Stufe können Sie, wenn Sie Ihre Aktion zum Wirken eines Cantrips verwenden, einen Waffenangriff als Bonusaktion ausführen."
+      },
+      "Eldritch Strike": {
+        "name": "Unheimlicher Schlag",
+        "description": "Wenn du auf der 10. Stufe eine Kreatur mit einem Waffenangriff triffst, hat diese Kreatur beim nächsten Rettungswurf, den sie ausführt, einen Nachteil gegenüber einem Zauber, den du vor dem Ende deines nächsten Zuges wirkst."
+      },
+      "Arcane Charge": {
+        "name": "Arkane Ladung",
+        "description": "Mit der 15. Stufe erhältst du die Fähigkeit, dich bis zu 30 Fuß weit zu einem unbesetzten Raum zu teleportieren, den du sehen kannst, wenn du deinen Action Surge verwendest. Sie können sich vor oder nach der Zusatzaktion teleportieren."
+      },
+      "Improved War Magic": {
+        "name": "Verbesserte Kriegsmagie",
+        "description": "Ab der 18. Stufe können Sie, wenn Sie Ihre Aktion zum Wirken eines Zaubers verwenden, einen Waffenangriff als Bonusaktion ausführen."
+      }
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Technik der offenen Hand",
+        "description": "Ab der 3. Stufe, wenn du diese Tradition wählst, kannst du jedes Mal, wenn du eine Kreatur mit einem der durch deinen Schlaghagel gewährten Angriffe triffst, einen der folgenden Effekte auferlegen: Die Kreatur muss einen Geschicklichkeitsrettungswurf bestehen, sonst wird sie zu Boden geworfen. Es muss einen kraftsparenden Wurf ausführen – wenn es fehlschlägt, können Sie es bis zu 15 Fuß weit wegschieben; oder es kann bis zum Ende deines nächsten Zuges keine Reaktionen annehmen."
+      },
+      "Wholeness of Body": {
+        "name": "Ganzheit des Körpers",
+        "description": "Mit der 6. Stufe erhältst du die Fähigkeit, dich selbst zu heilen. Als Aktion kannst du Trefferpunkte in Höhe des Dreifachen deiner Mönchsstufe zurückgewinnen. Sie müssen eine lange Pause einlegen, bevor Sie diese Funktion wieder verwenden können."
+      },
+      "Tranquility": {
+        "name": "Ruhe",
+        "description": "Ab der 11. Stufe erhalten Sie am Ende einer langen Pause die Wirkung eines Zufluchtszaubers, der bis zum Beginn Ihrer nächsten langen Pause anhält. Der SG des Rettungswurfs beträgt 8 + Ihr Weisheitsmodifikator + Ihr Fähigkeitsbonus."
+      },
+      "Quivering Palm": {
+        "name": "Zitternde Palme",
+        "description": "Wenn du auf der 17. Stufe eine Kreatur mit einem unbewaffneten Schlag triffst, kannst du 3 Ki-Punkte ausgeben, um unmerkliche Vibrationen in ihrem Körper auszulösen, die für eine Anzahl von Tagen anhalten, die deiner Mönchsstufe entspricht. Mit Ihrer Aktion können Sie sie beenden. Die Kreatur muss einen Konstitutionsrettungswurf durchführen – bei einem Fehlschlag werden die Trefferpunkte auf 0 reduziert; Bei einem Erfolg erleidet es 10W10 nekrotischen Schaden."
+      }
+    },
+    "Way of Shadow": {
+      "Shadow Arts": {
+        "name": "Schattenkünste",
+        "description": "Wenn Sie diese Tradition auf der 3. Stufe wählen, können Sie Ihr Ki verwenden, um die Effekte bestimmter Zaubersprüche zu duplizieren. Als Aktion kannst du 2 Ki-Punkte ausgeben, um Dunkelheit, Dunkelsicht, Spurloses Passieren oder Stille zu wirken, ohne Materialkomponenten bereitzustellen. Darüber hinaus erhalten Sie den kleinen Illusions-Cantrip, falls Sie ihn noch nicht kennen."
+      },
+      "Shadow Step": {
+        "name": "Schattenschritt",
+        "description": "Auf der 6. Stufe, wenn Sie sich in schwachem Licht oder Dunkelheit befinden, können Sie als Bonusaktion bis zu 60 Fuß weit zu einem freien Raum teleportieren, den Sie sehen können und der sich ebenfalls in schwachem Licht oder Dunkelheit befindet. Sie haben dann einen Vorteil beim ersten Nahkampfangriff, den Sie vor dem Ende der Runde ausführen."
+      },
+      "Cloak of Shadows": {
+        "name": "Umhang der Schatten",
+        "description": "Wenn Sie sich ab der 11. Stufe in einem Bereich mit schwachem Licht oder Dunkelheit befinden, können Sie Ihre Aktion nutzen, um unsichtbar zu werden. Sie bleiben unsichtbar, bis Sie einen Angriff ausführen, einen Zauber wirken oder sich in einem Bereich mit hellem Licht befinden."
+      },
+      "Opportunist": {
+        "name": "Opportunist",
+        "description": "Auf der 17. Stufe kannst du immer dann, wenn eine Kreatur in einem Umkreis von 5 Fuß um dich von einem Angriff einer anderen Kreatur als dir getroffen wird, deine Reaktion nutzen, um einen Nahkampfangriff gegen diese Kreatur durchzuführen."
+      }
+    },
+    "Way of the Four Elements": {
+      "Disciple of the Elements": {
+        "name": "Schüler der Elemente",
+        "description": "Wenn Sie sich auf der 3. Stufe für diese Tradition entscheiden, erlernen Sie magische Disziplinen, die die Kraft der vier Elemente nutzen. Sie kennen die Disziplin „Elementare Einstimmung“ und eine weitere elementare Disziplin Ihrer Wahl. Auf der 6., 11. und 17. Stufe erlernen Sie eine zusätzliche Disziplin. Wenn Sie eine neue Disziplin erlernen, können Sie auch eine bereits bekannte Disziplin durch eine andere ersetzen. Für jede Disziplin müssen Sie jedes Mal Ki-Punkte ausgeben, wenn Sie sie verwenden."
+      },
+      "Additional Elemental Disciplines": {
+        "name": "Zusätzliche Elementardisziplinen",
+        "description": "Auf der 17. Stufe erlernen Sie eine weitere elementare Disziplin. Die mächtigsten Disziplinen wie Avatar of the Elements und Wave of Rolling Earth werden verfügbar."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Channel Divinity: Sacred Weapon": {
+        "name": "Channel Divinity: Heilige Waffe",
+        "description": "Als Aktion kannst du eine Waffe, die du in der Hand hältst, mithilfe deiner Channel-Göttlichkeit mit positiver Energie erfüllen. 1 Minute lang addierst du deinen Charisma-Modifikator zu Angriffswürfen mit dieser Waffe (mindestens +1). Die Waffe strahlt außerdem helles Licht in einem Radius von 20 Fuß und gedämpftes Licht in einem Radius von 20 Fuß darüber hinaus aus. Wenn die Waffe nicht bereits magisch ist, wird sie für die Dauer magisch."
+      },
+      "Channel Divinity: Turn the Unholy": {
+        "name": "Channel Divinity: Verwandle das Unheilige",
+        "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Gebet, in dem Sie Untote und Untote tadeln, indem Sie Ihre Kanalgöttlichkeit nutzen. Jeder Untote oder Untote, der dich im Umkreis von 30 Fuß sehen oder hören kann, muss einen Weisheitsrettungswurf machen. Bei einem Fehlschlag wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, gedreht."
+      },
+      "Aura of Devotion": {
+        "name": "Aura der Hingabe",
+        "description": "Ab der 7. Stufe können Sie und befreundete Kreaturen im Umkreis von 10 Fuß um Sie herum nicht mehr verzaubert werden, solange Sie bei Bewusstsein sind. Mit der 18. Stufe erhöht sich die Reichweite dieser Aura auf 30 Fuß."
+      },
+      "Purity of Spirit": {
+        "name": "Reinheit des Geistes",
+        "description": "Ab der 15. Stufe stehen Sie immer unter der Wirkung eines Schutzzaubers vor Bösem und Gutem."
+      },
+      "Holy Nimbus": {
+        "name": "Heiliger Nimbus",
+        "description": "Ab der 20. Stufe kannst du als Aktion eine Aura aus Sonnenlicht ausstrahlen. Eine Minute lang strahlt helles Licht in einem Radius von 30 Fuß von Ihnen aus, und schwaches Licht strahlt in einem Umkreis von 30 Fuß darüber hinaus. Immer wenn eine gegnerische Kreatur ihren Zug im hellen Licht beginnt, erleidet die Kreatur 10 Strahlungsschaden. Darüber hinaus haben Sie einen Vorteil bei Rettungswürfen gegen Zauber, die von Untoten oder Untoten gewirkt werden. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine lange Pause beendet haben."
+      }
+    },
+    "Oath of the Ancients": {
+      "Channel Divinity: Nature's Wrath": {
+        "name": "Channel Divinity: Der Zorn der Natur",
+        "description": "Als Aktion kannst du Spektralranken aufsteigen lassen und nach einer Kreatur in einem Umkreis von 10 Fuß um dich greifen, die du sehen kannst. Der Kreatur muss ein Kraft- oder Geschicklichkeitsrettungswurf (nach Wahl) gelingen oder sie wird zurückgehalten. Während die Kreatur von den Ranken zurückgehalten wird, wiederholt sie den Rettungswurf am Ende jedes ihrer Züge. Bei Erfolg befreit es sich und die Ranken verschwinden."
+      },
+      "Channel Divinity: Turn the Faithless": {
+        "name": "Channel Divinity: Verwandle die Ungläubigen",
+        "description": "Als Aktion präsentierst du dein heiliges Symbol und jeder Fee oder Unhold im Umkreis von 30 Fuß um dich, der dich hören kann, muss einen Weisheitsrettungswurf machen. Bei einem fehlgeschlagenen Rettungswurf wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, umgedreht."
+      },
+      "Aura of Warding": {
+        "name": "Aura der Abwehr",
+        "description": "Ab der 7. Stufe lastet die uralte Magie so stark auf dir, dass sie einen unheimlichen Schutzzauber bildet. Du und befreundete Kreaturen im Umkreis von 10 Fuß um dich herum sind resistent gegen Schaden durch Zauber. Mit der 18. Stufe erhöht sich die Reichweite dieser Aura auf 30 Fuß."
+      },
+      "Undying Sentinel": {
+        "name": "Unsterblicher Wächter",
+        "description": "Wenn Sie ab der 15. Stufe auf 0 Trefferpunkte reduziert werden und nicht sofort getötet werden, können Sie sich dafür entscheiden, stattdessen auf 1 Trefferpunkt zu sinken. Sobald Sie diese Fähigkeit nutzen, können Sie sie erst dann erneut nutzen, wenn Sie eine lange Pause beendet haben. Darüber hinaus leiden Sie nicht unter den Nachteilen des Alters und können nicht auf magische Weise gealtert werden."
+      },
+      "Elder Champion": {
+        "name": "Älterer Champion",
+        "description": "Auf der 20. Stufe nimmst du als Aktion für 1 Minute die Gestalt einer uralten Naturgewalt an. Du erhältst folgende Vorteile: Zu Beginn jedes deiner Züge erhältst du 10 Trefferpunkte zurück; Immer wenn du einen Paladin-Zauber mit einer Zauberzeit von 1 Aktion wirkst, kannst du ihn stattdessen mit einer Bonusaktion wirken; Feindliche Kreaturen im Umkreis von 10 Fuß um dich herum haben einen Nachteil bei Rettungswürfen gegen deine Paladin-Zauber und Channel Divinity-Optionen."
+      }
+    },
+    "Oath of Vengeance": {
+      "Channel Divinity: Abjure Enemy": {
+        "name": "Channel Divinity: Feind abschwören",
+        "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Denunziationsgebet, indem Sie Ihre Kanalgöttlichkeit nutzen. Wählen Sie eine Kreatur im Umkreis von 60 Fuß um Sie aus, die Sie sehen können. Diese Kreatur muss einen Weisheitsrettungswurf machen. Unterweltler und Untote sind bei diesem Rettungswurf im Nachteil. Bei einem fehlgeschlagenen Rettungswurf ist die Kreatur 1 Minute lang oder bis sie Schaden erleidet, verängstigt. Während die Kreatur verängstigt ist, ist ihre Geschwindigkeit 0 und sie kann von keinem Geschwindigkeitsbonus profitieren."
+      },
+      "Channel Divinity: Vow of Enmity": {
+        "name": "Channel Divinity: Gelübde der Feindschaft",
+        "description": "Als Bonusaktion kannst du mithilfe deiner Kanalgöttlichkeit einen Feindschaftsschwur gegen eine Kreatur ablegen, die du in einem Umkreis von 10 Fuß um dich herum sehen kannst. Du erhältst einen Vorteil bei Angriffswürfen gegen die Kreatur für 1 Minute oder bis sie auf 0 Trefferpunkte sinkt oder bewusstlos wird."
+      },
+      "Relentless Avenger": {
+        "name": "Unerbittlicher Rächer",
+        "description": "Wenn du ab der 7. Stufe eine Kreatur mit einem Gelegenheitsangriff triffst, kannst du dich unmittelbar nach dem Angriff und als Teil derselben Reaktion bis zur Hälfte deiner Geschwindigkeit bewegen. Diese Bewegung provoziert keine Gelegenheitsangriffe."
+      },
+      "Soul of Vengeance": {
+        "name": "Seele der Rache",
+        "description": "Ab der 15. Stufe können Sie, wenn eine Kreatur, die unter dem Einfluss Ihres Feindschaftsschwurs steht, einen Angriff ausführt, Ihre Reaktion nutzen, um einen Nahkampfwaffenangriff gegen diese Kreatur durchzuführen, sofern sie sich in Reichweite befindet."
+      },
+      "Avenging Angel": {
+        "name": "Racheengel",
+        "description": "Auf der 20. Stufe nimmst du als Aktion 1 Minute lang die Gestalt eines engelhaften Rächers an. Flügel sprießen aus deinem Rücken und verleihen dir eine Fluggeschwindigkeit von 60 Fuß. Du strahlst eine Aura der Bedrohung in einem Radius von 30 Fuß aus – wenn eine gegnerische Kreatur zum ersten Mal die Aura betritt oder dort ihren Zug beginnt, muss ihr ein Weisheitsrettungswurf gelingen, sonst verspürt sie 1 Minute lang oder bis sie Schaden erleidet, Angst vor dir."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Prey": {
+        "name": "Jägerbeute",
+        "description": "Auf der 3. Stufe erhalten Sie eine der folgenden Funktionen Ihrer Wahl. Kolosstöter: Wenn du eine Kreatur mit einem Waffenangriff triffst, erleidet die Kreatur zusätzlich 1W8 Schaden, wenn sie unter ihrem maximalen Trefferpunkt liegt. Du kannst diesen zusätzlichen Schaden nur einmal pro Spielzug verursachen. Riesenkiller: Wenn eine große oder größere Kreatur in einem Umkreis von 1,5 m um Sie herum Sie mit einem Angriff trifft oder verfehlt, können Sie Ihre Reaktion nutzen, um diese Kreatur unmittelbar danach anzugreifen. Hordenbrecher: Einmal in jedem deiner Züge, wenn du einen Waffenangriff ausführst, kannst du einen weiteren Angriff mit derselben Waffe gegen eine andere Kreatur durchführen, die sich in einem Umkreis von 5 Fuß um das ursprüngliche Ziel befindet."
+      },
+      "Defensive Tactics": {
+        "name": "Verteidigungstaktiken",
+        "description": "Auf der 7. Stufe erhalten Sie eine der folgenden Funktionen. Entkomme der Horde: Gelegenheitsangriffe gegen dich erfolgen mit Nachteil. Mehrfachangriffsverteidigung: Wenn eine Kreatur dich mit einem Angriff trifft, erhältst du für den Rest des Zuges einen Bonus von +4 auf deine RK gegen alle nachfolgenden Angriffe dieser Kreatur. Stählerer Wille: Du hast einen Vorteil bei Rettungswürfen gegenüber Angst."
+      },
+      "Multiattack": {
+        "name": "Multiattacke",
+        "description": "Mit der 11. Stufe erhalten Sie eine der folgenden Funktionen. Salve: Mit Ihrer Aktion können Sie einen Fernangriff gegen eine beliebige Anzahl von Kreaturen innerhalb von 10 Fuß um einen Punkt ausführen, den Sie in der Reichweite Ihrer Waffe sehen können, wobei Sie für jedes Ziel einen separaten Angriffswurf ausführen. Wirbelwind-Angriff: Du kannst deine Aktion nutzen, um einen Nahkampfangriff gegen eine beliebige Anzahl von Kreaturen in einem Umkreis von 5 Fuß um dich herum durchzuführen, mit einem separaten Angriffswurf für jedes Ziel."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Überlegene Jägerverteidigung",
+        "description": "Mit der 15. Stufe erhalten Sie eine der folgenden Funktionen. Ausweichen: Wenn Sie einen Geschicklichkeitsrettungswurf ausführen, um nur die Hälfte des Schadens zu erleiden, erleiden Sie stattdessen keinen Schaden, wenn Sie erfolgreich sind, und nur die Hälfte des Schadens, wenn Sie scheitern. Gegen den Strom stehen: Wenn eine feindliche Kreatur Sie mit einem Nahkampfangriff verfehlt, können Sie Ihre Reaktion nutzen, um diese Kreatur zu zwingen, denselben Angriff gegen eine andere Kreatur Ihrer Wahl zu wiederholen. Unheimliches Ausweichen: Wenn ein Angreifer, den Sie sehen können, Sie mit einem Angriff trifft, können Sie Ihre Reaktion nutzen, um den Schaden des Angriffs gegen Sie zu halbieren."
+      }
+    },
+    "Beast Master": {
+      "Ranger's Companion": {
+        "name": "Begleiter des Waldläufers",
+        "description": "Auf der 3. Stufe erhältst du einen Tiergefährten, der dich auf deinen Abenteuern begleitet und darauf trainiert ist, an deiner Seite zu kämpfen. Wählen Sie ein Tier, das nicht größer als mittel ist und eine Herausforderungsbewertung von 1/4 oder niedriger hat. Addiere deinen Fähigkeitsbonus zur RK, den Angriffs- und Schadenswürfen des Biests sowie zu allen Rettungswürfen und Fertigkeiten, die es beherrscht. Der maximale Trefferpunkt entspricht dem Vierfachen deiner Ranger-Stufe."
+      },
+      "Exceptional Training": {
+        "name": "Außergewöhnliche Ausbildung",
+        "description": "Ab der 7. Stufe können Sie in jedem Ihrer Züge, in dem Ihr Tiergefährte nicht angreift, eine Bonusaktion verwenden, um dem Tier zu befehlen, in seinem Zug die Aktion „Sprinten“, „Entfernen“, „Ausweichen“ oder „Hilfe“ auszuführen. Die Angriffe des Biests gelten auch als magisch, um Widerstand und Immunität zu überwinden."
+      },
+      "Bestial Fury": {
+        "name": "Bestialische Wut",
+        "description": "Ab der 11. Stufe kann Ihr Tiergefährte zwei Angriffe ausführen, wenn Sie ihm die Angriffsaktion befehlen."
+      },
+      "Share Spells": {
+        "name": "Zauber teilen",
+        "description": "Ab der 15. Stufe kannst du, wenn du einen Zauber gegen dich selbst wirkst, auch deinen Tiergefährten mit dem Zauber beeinflussen, wenn sich das Tier in einem Umkreis von 30 Fuß um dich befindet."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Schnelle Hände",
+        "description": "Ab der 3. Stufe können Sie die durch Ihre List-Aktion gewährte Bonusaktion nutzen, um eine Geschicklichkeitsprüfung (Taschenspielertrick) durchzuführen, die Werkzeuge Ihrer Diebe zu verwenden, um eine Falle zu entschärfen oder ein Schloss zu öffnen, oder die Aktion „Ein Objekt verwenden“ ausführen."
+      },
+      "Second-Story Work": {
+        "name": "Arbeit im zweiten Stock",
+        "description": "Wenn Sie diesen Archetyp auf der 3. Stufe wählen, kostet Sie das Klettern keine zusätzliche Bewegung mehr. Wenn Sie mit Anlauf springen, erhöht sich außerdem die zurückgelegte Distanz um eine Anzahl Fuß, die Ihrem Geschicklichkeitsmodifikator entspricht."
+      },
+      "Supreme Sneak": {
+        "name": "Höchster Sneak",
+        "description": "Ab der 9. Stufe haben Sie einen Vorteil bei einer Geschicklichkeitsprüfung (Stealth), wenn Sie sich in derselben Runde nicht mehr als halb so schnell bewegen."
+      },
+      "Use Magic Device": {
+        "name": "Benutze ein magisches Gerät",
+        "description": "Mit der 13. Stufe haben Sie genug über die Funktionsweise der Magie gelernt, sodass Sie die Verwendung von Gegenständen improvisieren können, auch wenn diese nicht für Sie bestimmt sind. Sie ignorieren alle Klassen-, Rassen- und Levelanforderungen für die Verwendung magischer Gegenstände."
+      },
+      "Thief's Reflexes": {
+        "name": "Reflexe des Diebes",
+        "description": "Wenn Sie die 17. Stufe erreichen, können Sie in der ersten Runde eines jeden Kampfes zwei Runden absolvieren. Du machst deinen ersten Zug mit deiner normalen Initiative und deinen zweiten Zug mit deiner Initiative minus 10."
+      }
+    },
+    "Assassin": {
+      "Bonus Proficiencies": {
+        "name": "Bonuskenntnisse",
+        "description": "Wenn Sie diesen Archetyp auf der 3. Stufe wählen, erlangen Sie Kenntnisse im Umgang mit dem Verkleidungsset und dem Giftset."
+      },
+      "Assassinate": {
+        "name": "Ermorden",
+        "description": "Ab der 3. Stufe sind Sie am tödlichsten, wenn Sie Ihre Feinde überwältigen. Du hast einen Vorteil bei Angriffswürfen gegen alle Kreaturen, die noch keinen Kampf absolviert haben. Darüber hinaus ist jeder Treffer, den du gegen eine überraschte Kreatur erzielst, ein kritischer Treffer."
+      },
+      "Infiltration Expertise": {
+        "name": "Infiltrationsexpertise",
+        "description": "Ab der 9. Stufe können Sie sich stets falsche Identitäten aneignen. Sie müssen sieben Tage und 25 GM aufwenden, um die Geschichte, den Beruf und die Zugehörigkeit einer Identität festzustellen. Wenn Sie danach die neue Identität als Tarnung annehmen, glauben andere Kreaturen, dass Sie diese Person sind, bis ihnen ein offensichtlicher Grund gegeben wird, dies nicht zu tun."
+      },
+      "Impostor": {
+        "name": "Hochstapler",
+        "description": "Auf der 13. Stufe erlangen Sie die Fähigkeit, die Sprache, das Schreiben und das Verhalten einer anderen Person zielsicher nachzuahmen. Sie müssen mindestens drei Stunden damit verbringen, diese drei Verhaltenskomponenten der Person zu studieren. Wenn eine vorsichtige Kreatur vermutet, dass etwas nicht stimmt, haben Sie bei jeder Charisma-Prüfung (Täuschung) einen Vorteil, um einer Entdeckung zu entgehen."
+      },
+      "Death Strike": {
+        "name": "Todesstoß",
+        "description": "Wenn du ab der 17. Stufe eine überraschte Kreatur angreifst und triffst, muss sie einen konstitutionsrettenden Wurf durchführen (SG 8 + dein Geschicklichkeitsmodifikator + dein Fähigkeitsbonus). Bei einem fehlgeschlagenen Rettungswurf verdoppeln Sie den Schaden Ihres Angriffs gegen die Kreatur."
+      }
+    },
+    "Arcane Trickster": {
+      "Spellcasting": {
+        "name": "Zauberei",
+        "description": "Wenn Sie die 3. Stufe erreichen, erweitern Sie Ihre schurkischen Fähigkeiten durch magische. Intelligenz ist Ihre Zauberfähigkeit für Ihre Zaubersprüche. Sie kennen drei Zaubertricks (Magierhand plus zwei weitere Ihrer Wahl) und drei Zaubersprüche der ersten Stufe, von denen mindestens zwei aus den Schulen der Verzauberung und Illusion stammen müssen."
+      },
+      "Mage Hand Legerdemain": {
+        "name": "Magierhand-Legerdemain",
+        "description": "Ab der 3. Stufe können Sie, wenn Sie die Magierhand wirken, die Spektralhand unsichtbar machen und zusätzliche Aufgaben damit ausführen: Gegenstände verstauen oder aus Behältern holen, die von einer anderen Kreatur getragen werden, oder Diebeswerkzeuge verwenden, um Schlösser zu knacken und Fallen aus der Ferne zu entschärfen. Sie können dies unbemerkt tun, wenn Ihnen ein Fertigkeitswurf für Fingerfertigkeit gelingt, der durch den Wahrnehmungswurf der Kreatur angefochten wird."
+      },
+      "Magical Ambush": {
+        "name": "Magischer Hinterhalt",
+        "description": "Wenn du ab der 9. Stufe vor einer Kreatur verborgen bist, während du einen Zauber auf sie wirkst, hat die Kreatur bei jedem Rettungswurf, den sie in diesem Zug gegen den Zauber durchführt, einen Nachteil."
+      },
+      "Versatile Trickster": {
+        "name": "Vielseitiger Trickster",
+        "description": "Auf der 13. Stufe kannst du als Bonusaktion in deinem Zug eine Kreatur im Umkreis von 5 Fuß um die von der Magierhand geschaffene Spektralhand bestimmen. Dies verschafft dir bis zum Ende des Zuges einen Vorteil bei Angriffswürfen gegen diese Kreatur."
+      },
+      "Spell Thief": {
+        "name": "Zauberdieb",
+        "description": "Auf der 17. Stufe kannst du unmittelbar nachdem eine Kreatur einen Zauber gewirkt hat, der dich als Ziel hat oder dich in ihren Wirkungsbereich einbezieht, deine Reaktion nutzen, um die Kreatur mit ihrer Zauberfähigkeit zu einem Rettungswurf zu zwingen. Der DC entspricht deinem Zauberwurf-DC. Bei einem fehlgeschlagenen Rettungswurf annullieren Sie die Wirkung des Zaubers gegen Sie und stehlen das Wissen über den Zauber, wenn er mindestens die 1. Stufe hat und eine Stufe hat, die Sie wirken können. Du kennst den Zauber 8 Stunden lang."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "Dragon Ancestor": {
+        "name": "Drachenvorfahre",
+        "description": "Auf der 1. Stufe wählen Sie eine Drachenart als Ihren Vorfahren. Sie können drakonisch sprechen, lesen und schreiben. Immer wenn Sie im Umgang mit Drachen eine Charisma-Prüfung durchführen, wird Ihr Fähigkeitsbonus verdoppelt, wenn er für die Prüfung gilt."
+      },
+      "Draconic Resilience": {
+        "name": "Drakonische Widerstandsfähigkeit",
+        "description": "Wenn Magie durch deinen Körper fließt, entstehen körperliche Merkmale deiner Drachenvorfahren. Dein Trefferpunktmaximum erhöht sich um 1 und erhöht sich erneut um 1, wenn du in dieser Klasse eine Stufe aufsteigst. Wenn Sie keine Rüstung tragen, beträgt Ihre AC außerdem 13 + Ihren Geschicklichkeitsmodifikator."
+      },
+      "Elemental Affinity": {
+        "name": "Elementare Affinität",
+        "description": "Wenn Sie ab der 6. Stufe einen Zauber wirken, der Schaden der Art verursacht, die mit Ihrer drakonischen Abstammung verbunden ist, addieren Sie Ihren Charisma-Modifikator zu diesem Schaden. Gleichzeitig können Sie 1 Zauberpunkt ausgeben, um 1 Stunde lang Widerstand gegen diese Schadensart zu erlangen."
+      },
+      "Dragon Wings": {
+        "name": "Drachenflügel",
+        "description": "Mit der 14. Stufe erhältst du die Fähigkeit, ein Paar Drachenflügel aus deinem Rücken wachsen zu lassen und so eine Fluggeschwindigkeit zu erreichen, die deiner aktuellen Geschwindigkeit entspricht. Du kannst diese Flügel als Bonusaktion in deinem Zug herstellen. Sie bleiben so lange bestehen, bis Sie sie in Ihrem Zug als Bonusaktion abtun."
+      },
+      "Draconic Presence": {
+        "name": "Drakonische Präsenz",
+        "description": "Ab der 18. Stufe können Sie als Aktion 5 Zauberpunkte ausgeben, um eine Aura der Ehrfurcht oder Angst (Ihrer Wahl) über eine Entfernung von 60 Fuß auszustrahlen. Für 1 Minute oder bis Sie Ihre Konzentration verlieren, muss jede feindliche Kreatur, die ihren Zug in dieser Aura beginnt, einen Weisheitsrettungswurf bestehen oder verzaubert (wenn Sie Ehrfurcht gewählt haben) oder verängstigt (wenn Sie Angst gewählt haben) sein, bis die Aura endet."
+      }
+    },
+    "Wild Magic": {
+      "Wild Magic Surge": {
+        "name": "Wilde magische Welle",
+        "description": "Sobald Sie diesen Ursprung auf der 1. Stufe wählen, kann Ihr Zauberspruch Wellen ungezähmter Magie freisetzen. Unmittelbar nachdem Sie einen Zauberspruch der 1. Stufe oder höher gewirkt haben, kann der DM Sie einen W20 würfeln lassen. Wenn Sie eine 1 würfeln, würfeln Sie auf dem Wild Magic Surge-Tisch, um einen zufälligen magischen Effekt zu erzeugen."
+      },
+      "Tides of Chaos": {
+        "name": "Fluten des Chaos",
+        "description": "Ab der 1. Stufe können Sie die Kräfte des Zufalls und des Chaos manipulieren, um sich bei einem Angriffswurf, einer Fähigkeitsüberprüfung oder einem Rettungswurf einen Vorteil zu verschaffen. Sobald Sie dies getan haben, müssen Sie eine lange Pause einlegen, bevor Sie diese Funktion erneut verwenden können. Bevor Sie diese Funktion wieder nutzen können, kann der DM Sie jederzeit auf den Wild Magic Surge-Tisch werfen lassen, unmittelbar nachdem Sie einen Zauberspruch der 1. Stufe oder höher gewirkt haben."
+      },
+      "Bend Luck": {
+        "name": "Biegen Sie Glück",
+        "description": "Ab der 6. Stufe können Sie, wenn eine andere Kreatur, die Sie sehen können, einen Angriffswurf, eine Fähigkeitsprüfung oder einen Rettungswurf ausführt, Ihre Reaktion nutzen und 2 Zauberpunkte ausgeben, um 1W4 zu würfeln und die gewürfelte Zahl als Bonus oder Malus (nach Ihrer Wahl) auf den Wurf der Kreatur anzuwenden. Sie können dies tun, nachdem die Kreatur gewürfelt hat, aber bevor die Auswirkungen des Wurfs abgehandelt wurden."
+      },
+      "Controlled Chaos": {
+        "name": "Kontrolliertes Chaos",
+        "description": "Ab der 14. Stufe können Sie jedes Mal, wenn Sie am Wild Magic Surge-Tisch würfeln, zweimal würfeln und eine der beiden Zahlen verwenden."
+      },
+      "Spell Bombardment": {
+        "name": "Zauberbombardierung",
+        "description": "Wenn Sie ab der 18. Stufe Schaden für einen Zauber würfeln und die höchstmögliche Zahl auf einem der Würfel würfeln, wählen Sie einen dieser Würfel aus, würfeln Sie ihn erneut und addieren Sie diesen Wurf zum Schaden. Sie können die Funktion nur einmal pro Spielzug nutzen."
+      }
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "Fey Presence": {
+        "name": "Feenpräsenz",
+        "description": "Ab der 1. Stufe können Sie als Aktion jede Kreatur in einem von Ihnen stammenden 10-Fuß-Würfel veranlassen, einen Weisheitsrettungswurf gegen Ihren Hexenmeister-Zauberwurf-SG durchzuführen. Die Kreaturen, die scheitern, werden alle bis zum Ende deines nächsten Zuges von dir verzaubert oder erschreckt (nach deiner Wahl). Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+      },
+      "Misty Escape": {
+        "name": "Neblige Flucht",
+        "description": "Ab der 6. Stufe können Sie, wenn Sie Schaden erleiden, Ihre Reaktion nutzen, um unsichtbar zu werden und sich bis zu 60 Fuß weit an einen unbesetzten Ort zu teleportieren, den Sie sehen können. Du bleibst unsichtbar bis zum Beginn deines nächsten Zuges oder bis du angreifst oder einen Zauber wirkst. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+      },
+      "Beguiling Defenses": {
+        "name": "Betörende Verteidigungen",
+        "description": "Ab der 10. Stufe sind Sie immun gegen Verzauberungen. Wenn eine andere Kreatur versucht, dich zu bezaubern, kannst du deine Reaktion nutzen, um zu versuchen, den Zauber auf diese Kreatur zurückzudrehen. Der Kreatur muss ein Weisheitsrettungswurf gegen den SG deines Hexenmeisterzaubers gelingen, sonst wird sie für 1 Minute oder bis die Kreatur Schaden erleidet, von dir verzaubert."
+      },
+      "Dark Delirium": {
+        "name": "Dunkles Delirium",
+        "description": "Ab der 14. Stufe wählen Sie als Aktion eine Kreatur aus, die Sie im Umkreis von 60 Fuß sehen können. Es muss einen Weisheitsrettungswurf machen oder von dir (nach deiner Wahl) für 1 Minute oder bis deine Konzentration unterbrochen wird, verzaubert oder erschreckt werden. Dieser Effekt endet vorzeitig, wenn die Kreatur Schaden erleidet. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+      }
+    },
+    "The Fiend": {
+      "Dark One's Blessing": {
+        "name": "Segen des Dunklen",
+        "description": "Wenn Sie ab der 1. Stufe eine feindliche Kreatur auf 0 Trefferpunkte reduzieren, erhalten Sie vorübergehende Trefferpunkte in Höhe Ihres Charisma-Modifikators + Ihrer Hexenmeisterstufe (mindestens 1)."
+      },
+      "Dark One's Own Luck": {
+        "name": "Das eigene Glück des Dunklen",
+        "description": "Ab der 6. Stufe können Sie bei einer Fähigkeitsüberprüfung oder einem Rettungswurf diese Funktion nutzen, um Ihrem Wurf einen W10 hinzuzufügen. Sie können dies tun, nachdem Sie den ersten Wurf gesehen haben, aber bevor die Auswirkungen des Wurfs auftreten. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+      },
+      "Fiendish Resilience": {
+        "name": "Teuflische Widerstandsfähigkeit",
+        "description": "Ab der 10. Stufe können Sie nach einer kurzen oder langen Pause eine Schadensart auswählen. Du erhältst Widerstand gegen diese Schadensart, bis du mit dieser Funktion eine andere wählst. Schaden durch magische Waffen oder Silberwaffen ignoriert diesen Widerstand."
+      },
+      "Hurl Through Hell": {
+        "name": "Durch die Hölle schleudern",
+        "description": "Wenn Sie ab der 14. Stufe eine Kreatur mit einem Angriff treffen, können Sie diese Funktion nutzen, um das Ziel sofort durch die unteren Ebenen zu transportieren. Die Kreatur verschwindet und rast durch eine Albtraumlandschaft. Am Ende Ihres nächsten Zuges kehrt das Ziel auf das Feld zurück, das es zuvor besetzt hatte, oder auf das nächstgelegene freie Feld. Wenn das Ziel kein Unhold ist, erleidet es 10W10 psychischen Schaden, während es von seiner schrecklichen Erfahrung taumelt. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine lange Pause beendet haben."
+      }
+    },
+    "The Great Old One": {
+      "Awakened Mind": {
+        "name": "Erwachter Geist",
+        "description": "Ab der 1. Stufe verleiht Ihnen Ihr Wissen über Außerirdische die Fähigkeit, die Gedanken anderer Kreaturen zu berühren. Sie können telepathisch mit jeder Kreatur kommunizieren, die Sie in einem Umkreis von 30 Fuß um Sie sehen können. Sie müssen mit der Kreatur keine Sprache teilen, damit sie Ihre telepathischen Äußerungen versteht, aber die Kreatur muss mindestens eine Sprache verstehen können."
+      },
+      "Entropic Ward": {
+        "name": "Entropischer Bezirk",
+        "description": "Wenn eine Kreatur auf der 6. Stufe einen Angriffswurf gegen dich ausführt, kannst du deine Reaktion nutzen, um diesen Wurf zu benachteiligen. Wenn der Angriff dich verfehlt, hat dein nächster Angriffswurf gegen die Kreatur einen Vorteil, wenn du ihn vor dem Ende deines nächsten Zuges schaffst. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+      },
+      "Thought Shield": {
+        "name": "Gedankenschild",
+        "description": "Ab der 10. Stufe können Ihre Gedanken nicht mehr telepathisch oder auf andere Weise gelesen werden, es sei denn, Sie erlauben dies. Wenn dir außerdem eine Kreatur psychischen Schaden zufügt, erleidet diese Kreatur den gleichen Schaden wie du."
+      },
+      "Create Thrall": {
+        "name": "Erstelle Thrall",
+        "description": "Mit der 14. Stufe erhältst du die Fähigkeit, den Geist eines Humanoiden mit der außerirdischen Magie deines Gönners zu infizieren. Mit Ihrer Aktion können Sie einen handlungsunfähigen Humanoiden berühren. Diese Kreatur wird dann von dir verzaubert, bis ein Fluch aufheben-Zauber auf sie gewirkt wird, der Verzauberungszustand entfernt wird oder du diese Funktion erneut verwendest. Sie können telepathisch mit der verzauberten Kreatur kommunizieren, solange Sie sich beide auf derselben Existenzebene befinden."
+      }
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "Abjuration Savant": {
+        "name": "Gelehrter der Abschwörung",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Abschwörungszauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Arcane Ward": {
+        "name": "Arkaner Schutz",
+        "description": "Wenn Sie ab der 2. Stufe einen Abschwörungszauber der 1. Stufe oder höher wirken, können Sie gleichzeitig einen magischen Schutz gegen sich selbst erschaffen, der anhält, bis Sie eine lange Pause beendet haben. Der Schutzzauber hat Trefferpunkte in Höhe des Doppelten Ihrer Zaubererstufe + Ihres Intelligenzmodifikators. Immer wenn du Schaden erleidest, erleidet stattdessen der Schutzzauber den Schaden. Wenn dieser Schaden den Schutz auf 0 Trefferpunkte reduziert, erleidest du den verbleibenden Schaden."
+      },
+      "Projected Ward": {
+        "name": "Geplante Gemeinde",
+        "description": "Ab der 6. Stufe können Sie, wenn eine Kreatur, die Sie in einem Umkreis von 30 Fuß um Sie sehen können, Schaden erleidet, Ihre Reaktion nutzen, um Ihren Arkanen Schutz dazu zu bringen, diesen Schaden zu absorbieren. Wenn dieser Schaden den Schutz auf 0 Trefferpunkte reduziert, erleidet die geschützte Kreatur den verbleibenden Schaden."
+      },
+      "Improved Abjuration": {
+        "name": "Verbesserte Abschwörung",
+        "description": "Ab der 10. Stufe addieren Sie, wenn Sie einen Abschwörungszauber wirken, der eine Fähigkeitsüberprüfung als Teil des Wirkens dieses Zaubers erfordert (wie bei Gegenzaubern und Bannen von Magie), Ihren Fähigkeitsbonus zu dieser Fähigkeitsüberprüfung."
+      },
+      "Spell Resistance": {
+        "name": "Zauberresistenz",
+        "description": "Ab der 14. Stufe haben Sie einen Vorteil bei Rettungswürfen gegen Zauber. Darüber hinaus verfügen Sie über Resistenz gegen den Schaden von Zaubersprüchen."
+      }
+    },
+    "School of Conjuration": {
+      "Conjuration Savant": {
+        "name": "Beschwörungsgelehrter",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Beschwörungszauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Minor Conjuration": {
+        "name": "Kleinere Beschwörung",
+        "description": "Ab der 2. Stufe können Sie mit Ihrer Aktion ein lebloses Objekt in Ihrer Hand oder auf dem Boden an einem unbesetzten Ort im Umkreis von 10 Fuß um Sie herum heraufbeschwören. Dieses Objekt darf nicht größer als 3 Fuß auf einer Seite sein und nicht mehr als 10 Pfund wiegen, und seine Form muss die eines nichtmagischen Objekts sein, das Sie gesehen haben. Das Objekt ist sichtlich magisch. Das Objekt verschwindet nach 1 Stunde, wenn Sie diese Funktion erneut verwenden oder wenn es Schaden erleidet oder verursacht."
+      },
+      "Benign Transposition": {
+        "name": "Gutartige Umsetzung",
+        "description": "Ab der 6. Stufe können Sie Ihre Aktion nutzen, um bis zu 30 Fuß weit zu einem unbesetzten Feld zu teleportieren, das Sie sehen können oder von dem Sie sehen können, dass es von einer kleinen oder mittelgroßen Kreatur besetzt ist, die teleportiert werden möchte. Nachdem Sie diese Funktion verwendet haben, können Sie sie nicht erneut verwenden, bis Sie eine lange Pause beendet haben oder einen Beschwörungszauber der 1. Stufe oder höher gewirkt haben."
+      },
+      "Focused Conjuration": {
+        "name": "Fokussierte Beschwörung",
+        "description": "Ab der 10. Stufe kann Ihre Konzentration nicht durch erlittenen Schaden beeinträchtigt werden, während Sie sich auf einen Beschwörungszauber konzentrieren."
+      },
+      "Durable Summons": {
+        "name": "Dauerhafte Beschwörung",
+        "description": "Ab der 14. Stufe hat jede Kreatur, die du beschwörst oder mit einem Beschwörungszauber erschaffst, 30 temporäre Trefferpunkte."
+      }
+    },
+    "School of Divination": {
+      "Divination Savant": {
+        "name": "Weissagungsgelehrter",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Wahrsagungszauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Portent": {
+        "name": "Zeichen",
+        "description": "Ab der 2. Stufe würfeln Sie nach einer langen Pause zwei W20 und notieren die gewürfelten Zahlen. Du kannst jeden Angriffswurf, Rettungswurf oder Fähigkeitswurf, den du oder eine Kreatur, die du sehen kannst, durchführst, durch einen dieser Vorhersagewürfe ersetzen. Sie müssen sich dafür entscheiden, dies vor dem Wurf zu tun, und Sie können einen Wurf auf diese Weise nur einmal pro Spielzug ersetzen. Jeder Vorhersagewurf kann nur einmal verwendet werden. Wenn Sie eine lange Pause beendet haben, verlieren Sie alle ungenutzten Vorhersagewürfe."
+      },
+      "Expert Divination": {
+        "name": "Experten-Wahrsagerei",
+        "description": "Ab der 6. Stufe erhalten Sie einen verbrauchten Zauberplatz zurück, wenn Sie einen Weissagungszauber der 2. Stufe oder höher unter Verwendung eines Zauberslots wirken. Der Slot, den Sie zurückgewinnen, muss eine niedrigere Stufe als der von Ihnen gewirkte Zauber haben und darf nicht höher als die 5. Stufe sein."
+      },
+      "The Third Eye": {
+        "name": "Das Dritte Auge",
+        "description": "Ab der 10. Stufe können Sie durch Ihre Aktion Ihre Wahrnehmungsfähigkeit steigern. Wenn Sie dies tun, wählen Sie einen der folgenden Vorteile, der anhält, bis Sie handlungsunfähig werden oder eine kurze oder lange Pause einlegen: Dunkelsicht (60 Fuß), Ätherische Sicht (in die Ätherebene sehen), Größeres Verständnis (lesen Sie eine beliebige Sprache) oder Unsichtbarkeit sehen."
+      },
+      "Greater Portent": {
+        "name": "Größeres Vorzeichen",
+        "description": "Ab der 14. Stufe würfeln Sie für Ihr Vorzeichen-Feature drei W20 statt zwei."
+      }
+    },
+    "School of Enchantment": {
+      "Enchantment Savant": {
+        "name": "Verzauberungsgelehrter",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Verzauberungszauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Hypnotic Gaze": {
+        "name": "Hypnotischer Blick",
+        "description": "Ab der 2. Stufe wählen Sie als Aktion eine Kreatur aus, die Sie im Umkreis von 5 Fuß um sich herum sehen können. Wenn das Ziel Sie sehen oder hören kann, muss ihm ein Weisheitsrettungswurf gegen den SG Ihres Zaubererzaubers gelingen, sonst wird es bis zum Ende Ihres nächsten Zuges von Ihnen verzaubert. Die Geschwindigkeit der verzauberten Kreatur sinkt auf 0 und sie ist handlungsunfähig und sichtlich benommen. In den folgenden Zügen können Sie Ihre Aktion nutzen, um diesen Effekt bis zum Ende Ihres nächsten Zuges aufrechtzuerhalten. Der Effekt endet, wenn du dich weiter als 1,50 m entfernst, wenn die Kreatur dich weder sehen noch hören kann oder wenn die Kreatur Schaden erleidet."
+      },
+      "Instinctive Charm": {
+        "name": "Instinktiver Charme",
+        "description": "Ab der 6. Stufe können Sie Ihre Reaktion nutzen, um den Angriff abzulenken, wenn eine Kreatur, die Sie in einem Umkreis von 30 Fuß um Sie sehen können, einen Angriffswurf gegen Sie durchführt. Der Angreifer muss einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf muss der Angreifer die Kreatur anvisieren, die ihm am nächsten ist, dich selbst oder sich selbst nicht mitzählend. Sobald Sie diese Funktion verwendet haben, können Sie sie nicht mehr verwenden, bis Sie eine lange Pause beendet haben, es sei denn, Sie verbrauchen einen Zauberslot einer beliebigen Stufe, um sie erneut zu verwenden."
+      },
+      "Split Enchantment": {
+        "name": "Geteilte Verzauberung",
+        "description": "Wenn Sie ab der 10. Stufe einen Verzauberungszauber der 1. Stufe oder höher wirken, der nur eine Kreatur als Ziel hat, können Sie ihn als Ziel für eine zweite Kreatur festlegen."
+      },
+      "Alter Memories": {
+        "name": "Erinnerungen verändern",
+        "description": "Wenn du auf der 14. Stufe einen Verzauberungszauber wirkst, um eine oder mehrere Kreaturen zu bezaubern, kannst du das Verständnis einer Kreatur so ändern, dass sie nichts davon mitbekommt, dass sie verzaubert wird. Darüber hinaus können Sie einmal vor Ablauf des Zaubers mit Ihrer Aktion versuchen, die ausgewählte Kreatur einen Teil der Zeit vergessen zu lassen, die sie verzaubert verbracht hat. Der Kreatur muss ein Intelligenzrettungswurf gegen den SG deines Zaubererzaubers gelingen, sonst verliert sie eine Anzahl von Stunden ihrer Erinnerungen, die 1 + deinem Charisma-Modifikator (mindestens 1) entspricht."
+      }
+    },
+    "School of Evocation": {
+      "Evocation Savant": {
+        "name": "Evokations-Savant",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Evokationszauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Sculpt Spells": {
+        "name": "Bildhauerzauber",
+        "description": "Ab der 2. Stufe können Sie beim Wirken eines Hervorrufungszaubers, der sich auf andere Kreaturen auswirkt, die Sie sehen können, eine Anzahl von ihnen auswählen, die 1 + der Stufe des Zaubers entspricht. Die ausgewählten Kreaturen sind bei ihren Rettungswürfen gegen den Zauber automatisch erfolgreich und erleiden keinen Schaden, wenn sie bei einem erfolgreichen Rettungswurf normalerweise nur den halben Schaden erleiden würden."
+      },
+      "Potent Cantrip": {
+        "name": "Starker Cantrip",
+        "description": "Wenn einer Kreatur ab der 6. Stufe ein Rettungswurf gegen deinen Cantrip gelingt, erleidet die Kreatur die Hälfte des Schadens des Cantrips (falls vorhanden), erleidet jedoch keinen zusätzlichen Effekt des Cantrips."
+      },
+      "Empowered Evocation": {
+        "name": "Kraftvolle Evokation",
+        "description": "Ab der 10. Stufe können Sie Ihren Intelligenzmodifikator zu einem Schadenswurf eines beliebigen von Ihnen gewirkten Zaubererbeschwörungszaubers hinzufügen."
+      },
+      "Overchannel": {
+        "name": "Überkanal",
+        "description": "Wenn Sie ab der 14. Stufe einen Zaubererzauber der 1. bis 5. Stufe wirken, der Schaden verursacht, können Sie mit diesem Zauber maximalen Schaden verursachen. Wenn Sie dies zum ersten Mal tun, treten keine negativen Auswirkungen auf Sie auf. Wenn Sie diese Funktion erneut verwenden, bevor Sie eine lange Pause beendet haben, erleiden Sie unmittelbar nach dem Wirken 2W12 nekrotischen Schaden für jede Stufe des Zaubers. Dieser Schaden ignoriert Widerstand und Immunität."
+      }
+    },
+    "School of Illusion": {
+      "Illusion Savant": {
+        "name": "Illusionsgelehrter",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Illusionszauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Improved Minor Illusion": {
+        "name": "Verbesserte kleine Illusion",
+        "description": "Wenn Sie diese Schule auf der 2. Stufe wählen, lernen Sie den kleinen Illusions-Cantrip. Wenn Sie diesen Cantrip bereits kennen, lernen Sie einen anderen Zauberer-Cantrip Ihrer Wahl. Wenn Sie eine kleine Illusion wirken, können Sie mit einem einzigen Zauber sowohl einen Ton als auch ein Bild erzeugen."
+      },
+      "Malleable Illusions": {
+        "name": "Formbare Illusionen",
+        "description": "Ab der 6. Stufe können Sie beim Wirken eines Illusionszaubers mit einer Dauer von 1 Minute oder länger mit Ihrer Aktion die Art dieser Illusion ändern (unter Verwendung der normalen Parameter des Zaubers für die Illusion), vorausgesetzt, Sie können die Illusion sehen."
+      },
+      "Illusory Self": {
+        "name": "Illusionäres Selbst",
+        "description": "Ab der 10. Stufe können Sie, wenn eine Kreatur einen Angriffswurf gegen Sie durchführt, Ihre Reaktion nutzen, um ein illusorisches Duplikat Ihrer selbst zwischen den Angreifer und sich selbst zu stellen. Der Angriff verfehlt Sie automatisch, dann löst sich die Illusion auf. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+      },
+      "Illusory Reality": {
+        "name": "Illusionäre Realität",
+        "description": "Wenn Sie ab der 14. Stufe einen Illusionszauber der 1. Stufe oder höher wirken, können Sie ein unbelebtes, nicht magisches Objekt auswählen, das Teil der Illusion ist, und dieses Objekt real machen. Du kannst dies in deinem Zug als Bonusaktion tun, während der Zauber aktiv ist. Das Objekt bleibt 1 Minute lang real. Es kann niemandem Schaden zufügen oder auf andere Weise direkt schaden."
+      }
+    },
+    "School of Necromancy": {
+      "Necromancy Savant": {
+        "name": "Nekromantie-Experte",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Nekromantiezauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Grim Harvest": {
+        "name": "Grimmige Ernte",
+        "description": "Wenn du auf der 2. Stufe einmal pro Spielzug eine oder mehrere Kreaturen mit einem Zauber der 1. Stufe oder höher tötest, erhältst du Trefferpunkte zurück, die der doppelten Stufe des Zaubers entsprechen, bzw. der dreifachen Stufe, wenn der Zauber zur Schule der Nekromantie gehört. Du erhältst diesen Vorteil nicht für das Töten von Konstrukten oder Untoten."
+      },
+      "Undead Thralls": {
+        "name": "Untote Leibeigene",
+        "description": "Mit der 6. Stufe fügst du den Zauber „Toten beleben“ zu deinem Zauberbuch hinzu, falls er noch nicht vorhanden ist. Wenn Sie „Tote beleben“ wirken, können Sie eine weitere Leiche oder einen weiteren Knochenhaufen anvisieren und so je nach Bedarf einen weiteren Zombie oder ein weiteres Skelett erschaffen. Wann immer Sie einen Untoten mithilfe eines Nekromantiezaubers erschaffen, hat dieser zusätzliche Vorteile: Sein Trefferpunktmaximum wird um einen Betrag erhöht, der Ihrer Zaubererstufe entspricht, und er fügt Ihren Fähigkeitsbonus zu seinen Waffenschadenswürfen hinzu."
+      },
+      "Inured to Undeath": {
+        "name": "An den Untod gewöhnt",
+        "description": "Ab der 10. Stufe verfügen Sie über Resistenz gegen nekrotischen Schaden und Ihr Trefferpunktmaximum kann nicht verringert werden. Sie haben so viel Zeit damit verbracht, sich mit Untoten und den Kräften, die sie beleben, auseinanderzusetzen, dass Sie sich an einige ihrer schlimmsten Auswirkungen gewöhnt haben."
+      },
+      "Command Undead": {
+        "name": "Kommandiere die Untoten",
+        "description": "Ab der 14. Stufe können Sie als Aktion einen Untoten auswählen, den Sie im Umkreis von 60 Fuß um sich herum sehen können. Diese Kreatur muss einen Charisma-Rettungswurf gegen deinen Zauberer-Zauberwurf-SG absolvieren. Wenn dies erfolgreich ist, können Sie diese Funktion nicht erneut verwenden. Wenn dies fehlschlägt, wird es freundlich zu Ihnen und gehorcht Ihren Befehlen, bis Sie diese Funktion erneut verwenden. Intelligente Untote sind schwerer zu kontrollieren und haben beim Rettungswurf einen Vorteil."
+      }
+    },
+    "School of Transmutation": {
+      "Transmutation Savant": {
+        "name": "Transmutationsgelehrter",
+        "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Transmutationszauber in Ihr Zauberbuch zu kopieren, halbiert."
+      },
+      "Minor Alchemy": {
+        "name": "Kleinere Alchemie",
+        "description": "Ab der 2. Stufe können Sie die physikalischen Eigenschaften eines nichtmagischen Objekts vorübergehend ändern und es von einer Substanz in eine andere umwandeln. Sie führen eine besondere alchemistische Prozedur an einem Objekt durch, das vollständig aus Holz, Stein (aber keinem Edelstein), Eisen, Kupfer oder Silber besteht. Pro 10 Minuten, die Sie mit der Durchführung des Verfahrens verbringen, können Sie bis zu 1 Kubikfuß Material umwandeln. Nach einer Stunde oder bis Sie die Konzentration verlieren, nimmt das Material wieder seine ursprüngliche Substanz an."
+      },
+      "Transmuter's Stone": {
+        "name": "Stein des Transmuters",
+        "description": "Ab der 6. Stufe können Sie 8 Stunden damit verbringen, einen Transmutationsstein herzustellen, der Transmutationsmagie speichert. Eine Kreatur erhält einen Vorteil Ihrer Wahl, solange sich der Stein in ihrem Besitz befindet: Dunkelsicht (60 Fuß), um 10 Fuß erhöhte Geschwindigkeit, Fertigkeit in konstitutionsrettenden Würfen oder Widerstand gegen Säure-, Kälte-, Feuer-, Blitz- oder Donnerschaden."
+      },
+      "Shapechanger": {
+        "name": "Gestaltwandler",
+        "description": "Mit der 10. Stufe fügst du den Verwandlungszauber deinem Zauberbuch hinzu. Du kannst „Polymorph“ wirken, ohne einen Zauberslot zu verbrauchen, aber du kannst nur dich selbst als Ziel haben und dich in ein Biest verwandeln, dessen Herausforderungswert 1 oder niedriger ist. Sobald Sie „Verwandlung“ auf diese Weise gewirkt haben, können Sie dies nicht erneut tun, bis Sie eine kurze oder lange Pause beendet haben."
+      },
+      "Master Transmuter": {
+        "name": "Meistertransmuter",
+        "description": "Ab der 14. Stufe können Sie Ihre Aktion nutzen, um den Vorrat an Transmutationsmagie zu verbrauchen, der im Stein Ihres Transmuters gespeichert ist. Wenn Sie dies tun, wählen Sie einen der folgenden Effekte: Große Transformation (Verwandlung ohne Zauberslot wirken, 1 Stunde anhaltend), Allheilmittel (alle Flüche, Krankheiten und Gifte entfernen; alle Trefferpunkte wiederherstellen), Leben wiederherstellen (Tote erwecken ohne Zauberslot wirken) oder Jugend wiederherstellen (eine berührte Kreatur um bis zu 3W10 Jahre jünger erscheinen lassen)."
+      }
+    }
+  }
+}

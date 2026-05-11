@@ -1,0 +1,878 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Frénésie",
+        "description": "À partir du moment où vous choisissez cette voie au niveau 3, vous pouvez entrer dans une frénésie lorsque vous êtes en colère. Si vous le faites, pendant toute la durée de votre rage, vous pouvez effectuer une seule attaque avec une arme de mêlée comme une action bonus à chacun de vos tours suivants celui-ci. Lorsque votre rage prend fin, vous souffrez d’un niveau d’épuisement."
+      },
+      "Mindless Rage": {
+        "name": "Rage insensée",
+        "description": "À partir du niveau 6, vous ne pouvez plus être charmé ou effrayé lorsque vous êtes en colère. Si vous êtes charmé ou effrayé lorsque vous entrez dans votre rage, l'effet est suspendu pour la durée de la rage."
+      },
+      "Intimidating Presence": {
+        "name": "Présence intimidante",
+        "description": "À partir du niveau 10, vous pouvez utiliser votre action pour effrayer quelqu'un avec votre présence menaçante. Choisissez une créature que vous pouvez voir à moins de 9 mètres de vous. Si la créature peut vous voir ou vous entendre, elle doit réussir un jet de sauvegarde de Sagesse (DD = 8 + votre bonus de maîtrise + votre modificateur de Charisme) ou avoir peur de vous jusqu'à la fin de votre prochain tour. Aux tours suivants, vous pouvez utiliser votre action pour prolonger la durée jusqu'à la fin de votre prochain tour. L'effet prend fin si la créature termine son tour hors de votre champ de vision ou à plus de 20 mètres de vous."
+      },
+      "Retaliation": {
+        "name": "Représailles",
+        "description": "À partir du niveau 14, lorsque vous subissez des dégâts d'une créature située à moins de 1,50 mètre de vous, vous pouvez utiliser votre réaction pour lancer une attaque au corps à corps avec une arme contre cette créature."
+      }
+    },
+    "Path of the Totem Warrior": {
+      "Spirit Seeker": {
+        "name": "Chercheur d'esprit",
+        "description": "Votre chemin est celui de la recherche de l’harmonisation avec le monde naturel. Au niveau 3, vous gagnez la capacité de lancer des sorts de sens de la bête et de parler avec les animaux, mais uniquement sous forme de rituels."
+      },
+      "Totem Spirit": {
+        "name": "Esprit totémique",
+        "description": "Au niveau 3, choisissez un esprit totem et obtenez sa fonctionnalité. Ours : En rage, vous avez une résistance à tous les dégâts sauf les dégâts psychiques. Aigle : En rage, les autres créatures ont un désavantage aux jets d'attaque d'opportunité contre vous, et vous pouvez utiliser Dash comme action bonus. Loup : Lorsqu'ils sont en colère, vos amis ont un avantage aux jets d'attaque au corps à corps contre toute créature à moins de 1,50 mètre de vous qui vous est hostile."
+      },
+      "Aspect of the Beast": {
+        "name": "Aspect de la bête",
+        "description": "Vous bénéficiez d'un avantage magique en fonction de l'animal totem que vous avez choisi. Ours : Votre capacité de transport est doublée et vous avez un avantage aux tests de Force pour pousser, tirer, soulever ou casser des objets. Aigle : Vous pouvez voir jusqu'à 1,6 km sans difficulté, et une faible lumière n'impose pas de désavantage à vos tests de Perception. Loup : Vous pouvez suivre d'autres créatures tout en voyageant à un rythme rapide, et vous pouvez vous déplacer furtivement tout en voyageant à un rythme normal."
+      },
+      "Spirit Walker": {
+        "name": "Marcheur spirituel",
+        "description": "Vous pouvez lancer le sort Communion avec la nature, mais uniquement sous forme de rituel. Lorsque vous faites cela, une version spirituelle de l’un de vos animaux totems apparaît pour transmettre l’information que vous recherchez."
+      },
+      "Totemic Attunement": {
+        "name": "Harmonisation totémique",
+        "description": "Vous gagnez un avantage magique basé sur un animal totem de votre choix. Ours : Lorsqu'elle est en rage, toute créature hostile à moins de 1,50 mètre de vous a un désavantage aux jets d'attaque contre des cibles autres que vous. Aigle : En rage, vous avez une vitesse de vol égale à votre vitesse de marche, mais vous tombez si vous terminez votre tour dans les airs. Loup : En rage, vous pouvez utiliser une action bonus pour mettre à terre une créature de taille L ou inférieure lorsque vous la touchez avec une attaque au corps à corps avec une arme."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Compétences bonus",
+        "description": "Lorsque vous rejoignez le Collège du savoir au niveau 3, vous maîtrisez trois compétences de votre choix."
+      },
+      "Cutting Words": {
+        "name": "Couper les mots",
+        "description": "Également au niveau 3, lorsqu'une créature que vous pouvez voir dans un rayon de 60 pieds effectue un jet d'attaque, un test de caractéristique ou un jet de dégâts, vous pouvez utiliser votre réaction pour dépenser une utilisation d'Inspiration bardique, en lançant le dé et en soustrayant le nombre du jet de la créature. La créature est immunisée si elle ne peut pas vous entendre ou si elle est immunisée contre les charmes."
+      },
+      "Additional Magical Secrets": {
+        "name": "Secrets magiques supplémentaires",
+        "description": "Au niveau 6, vous apprenez deux sorts de votre choix dans n'importe quelle classe. Un sort que vous choisissez doit être d'un niveau que vous pouvez lancer. Les sorts choisis comptent pour vous comme des sorts de barde mais ne comptent pas dans le nombre de sorts de barde que vous connaissez."
+      },
+      "Peerless Skill": {
+        "name": "Compétence inégalée",
+        "description": "À partir du niveau 14, lorsque vous effectuez un test de caractéristique, vous pouvez dépenser une utilisation d'Inspiration bardique. Lancez un dé d’Inspiration bardique et ajoutez le nombre obtenu à votre test de capacité. Vous pouvez choisir de le faire après avoir lancé le dé, mais avant que le DM ne vous dise si vous réussissez ou échouez."
+      }
+    },
+    "College of Valor": {
+      "Bonus Proficiencies": {
+        "name": "Compétences bonus",
+        "description": "Lorsque vous rejoignez le Collège de la Valeur au niveau 3, vous maîtrisez les armures moyennes, les boucliers et les armes martiales."
+      },
+      "Combat Inspiration": {
+        "name": "Inspiration de combat",
+        "description": "Également au niveau 3, une créature avec un dé d'inspiration bardique de votre part peut lancer ce dé et ajouter le nombre à un jet de dégâts d'arme qu'elle vient de faire. Alternativement, lorsqu'un jet d'attaque est effectué contre la créature, elle peut utiliser sa réaction pour lancer le dé et ajouter le nombre à sa CA contre cette attaque, après avoir vu le jet mais avant de savoir si elle touche."
+      },
+      "Extra Attack": {
+        "name": "Attaque supplémentaire",
+        "description": "À partir du niveau 6, vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous effectuez l'action Attaque pendant votre tour."
+      },
+      "Battle Magic": {
+        "name": "Magie de combat",
+        "description": "Au niveau 14, lorsque vous utilisez votre action pour lancer un sort de barde, vous pouvez effectuer une attaque avec une arme en tant qu'action bonus."
+      }
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "Blessings of Knowledge": {
+        "name": "Bénédictions de la connaissance",
+        "description": "Au 1er niveau, vous apprenez deux langues de votre choix. Vous maîtrisez également deux des compétences suivantes : Arcanes, Histoire, Nature ou Religion. Votre bonus de maîtrise est doublé pour tout test de capacité que vous effectuez et qui utilise l'une de ces compétences."
+      },
+      "Channel Divinity: Knowledge of the Ages": {
+        "name": "Channel Divinity : Connaissance des âges",
+        "description": "À partir du niveau 2, vous pouvez utiliser votre canal divinité pour puiser dans un puits divin de connaissances. En tant qu'action, vous choisissez une compétence ou un outil. Pendant 10 minutes, vous maîtrisez la compétence ou l’outil choisi."
+      },
+      "Channel Divinity: Read Thoughts": {
+        "name": "Channel Divinity : lire les pensées",
+        "description": "Au niveau 6, vous pouvez utiliser votre canal divinité pour lire les pensées d'une créature. Vous lancez la détection des pensées (le DD de sauvegarde est égal à votre DD de sauvegarde de lancement de sorts de clerc) sans aucun emplacement de sort ni composant requis. La cible qui rate son jet de sauvegarde est alors charmée par vous pendant 1 minute ou jusqu'à ce que vous lui infligiez des dégâts."
+      },
+      "Potent Spellcasting": {
+        "name": "Lancement de sorts puissant",
+        "description": "À partir du niveau 8, vous ajoutez votre modificateur de Sagesse aux dégâts que vous infligez avec n'importe quel cantrip de clerc."
+      },
+      "Visions of the Past": {
+        "name": "Visions du passé",
+        "description": "À partir du niveau 17, vous pouvez évoquer des visions du passé liées à un objet que vous tenez ou à votre environnement immédiat. Vous passez au moins 1 minute en méditation et en prière, puis recevez des visions oniriques et brumeuses des événements récents. Vous pouvez méditer de cette manière pendant un nombre de minutes égal à votre score de Sagesse et devez maintenir votre concentration pendant ce temps."
+      }
+    },
+    "Life Domain": {
+      "Bonus Proficiency": {
+        "name": "Compétence bonus",
+        "description": "Lorsque vous choisissez ce domaine au niveau 1, vous gagnez la maîtrise des armures lourdes."
+      },
+      "Disciple of Life": {
+        "name": "Disciple de Vie",
+        "description": "Dès le niveau 1 également, vos sorts de soins sont plus efficaces. À chaque fois que vous utilisez un sort de niveau 1 ou supérieur pour redonner des points de vie à une créature, la créature récupère des points de vie supplémentaires égaux à 2 + le niveau du sort."
+      },
+      "Channel Divinity: Preserve Life": {
+        "name": "Channel Divinity : Préserver la vie",
+        "description": "À partir du niveau 2, par une action, vous présentez votre symbole sacré et évoquez une énergie de guérison qui peut restaurer un nombre de points de vie égal à cinq fois votre niveau de clerc. Choisissez n'importe quelle créature à moins de 9 mètres de vous et répartissez ces points de vie entre elles. Cette fonctionnalité ne peut restaurer une créature qu'à la moitié de son maximum de points de vie."
+      },
+      "Blessed Healer": {
+        "name": "Guérisseur béni",
+        "description": "À partir du niveau 6, les sorts de guérison que vous lancez sur les autres vous soignent également. Lorsque vous lancez un sort de niveau 1 ou supérieur qui redonne des points de vie à une créature autre que vous, vous récupérez des points de vie égaux à 2 + le niveau du sort."
+      },
+      "Divine Strike": {
+        "name": "Frappe divine",
+        "description": "Au niveau 8, une fois à chacun de vos tours, lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez faire en sorte que l'attaque inflige 1d8 dégâts radiants supplémentaires à la cible. Lorsque vous atteignez le niveau 14, les dégâts supplémentaires passent à 2d8."
+      },
+      "Supreme Healing": {
+        "name": "Guérison Suprême",
+        "description": "À partir du niveau 17, alors que vous lanceriez normalement un ou plusieurs dés pour restaurer des points de vie avec un sort, vous utilisez à la place le nombre le plus élevé possible pour chaque dé. Par exemple, au lieu de restaurer 2d6 points de vie, vous en restaurez 12."
+      }
+    },
+    "Light Domain": {
+      "Bonus Cantrip": {
+        "name": "Cantrip bonus",
+        "description": "Lorsque vous choisissez ce domaine au niveau 1, vous gagnez le sort mineur de lumière si vous ne le connaissez pas déjà."
+      },
+      "Warding Flare": {
+        "name": "Fusée de protection",
+        "description": "Également au 1er niveau, lorsque vous êtes attaqué par une créature que vous pouvez voir à moins de 9 mètres de vous, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque, provoquant un éclat de lumière devant l'attaquant. Vous pouvez utiliser cette fonctionnalité un nombre de fois égal à votre modificateur de Sagesse (au minimum une fois), et retrouver toutes les utilisations lors d'un repos long."
+      },
+      "Channel Divinity: Radiance of the Dawn": {
+        "name": "Channel Divinity : Radiance de l'aube",
+        "description": "À partir du niveau 2, par une action, vous présentez votre symbole sacré et toute obscurité magique dans un rayon de 9 mètres autour de vous est dissipée. De plus, chaque créature hostile dans un rayon de 9 mètres doit effectuer un jet de sauvegarde de Constitution, subissant 2d10 + votre niveau de prêtre en dégâts radiants en cas d'échec, ou la moitié en cas de réussite."
+      },
+      "Improved Flare": {
+        "name": "Flare améliorée",
+        "description": "À partir du niveau 6, vous pouvez également utiliser votre fonction Warding Flare lorsqu'une créature que vous pouvez voir à moins de 9 mètres de vous attaque une créature autre que vous."
+      },
+      "Potent Spellcasting": {
+        "name": "Lancement de sorts puissant",
+        "description": "À partir du niveau 8, vous ajoutez votre modificateur de Sagesse aux dégâts que vous infligez avec n'importe quel cantrip de clerc."
+      },
+      "Corona of Light": {
+        "name": "Couronne de Lumière",
+        "description": "À partir du niveau 17, vous pouvez utiliser votre action pour activer une aura de soleil qui dure 1 minute ou jusqu'à ce que vous la dissipiez. Vous émettez une lumière vive dans un rayon de 60 pieds et une lumière tamisée 30 pieds au-delà. Vos ennemis dans la lumière vive ont un désavantage aux jets de sauvegarde contre tout sort qui inflige des dégâts de feu ou de rayonnement."
+      }
+    },
+    "Nature Domain": {
+      "Acolyte of Nature": {
+        "name": "Acolyte de la Nature",
+        "description": "Au niveau 1, vous apprenez un cantrip druide de votre choix. Vous acquérez également la maîtrise de l'une des compétences suivantes : manipulation des animaux, nature ou survie."
+      },
+      "Bonus Proficiency": {
+        "name": "Compétence bonus",
+        "description": "Au niveau 1 également, vous maîtrisez le maniement des armures lourdes."
+      },
+      "Channel Divinity: Charm Animals and Plants": {
+        "name": "Channel Divinity : Charmer les animaux et les plantes",
+        "description": "À partir du niveau 2, par une action, vous présentez votre symbole sacré et invoquez le nom de votre divinité. Chaque bête ou créature végétale qui peut vous voir dans un rayon de 9 mètres doit effectuer un jet de sauvegarde de Sagesse. S'il échoue, vous le charmez pendant 1 minute ou jusqu'à ce qu'il subisse des dégâts."
+      },
+      "Dampen Elements": {
+        "name": "Éléments amortissants",
+        "description": "À partir du niveau 6, lorsque vous ou une créature à moins de 9 mètres de vous subissez des dégâts d'acide, de froid, de feu, de foudre ou de tonnerre, vous pouvez utiliser votre réaction pour accorder une résistance à la créature contre cette instance de dégâts."
+      },
+      "Divine Strike": {
+        "name": "Frappe divine",
+        "description": "Au niveau 8, une fois à chacun de vos tours, lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez faire en sorte que l'attaque inflige 1d8 dégâts supplémentaires de froid, de feu ou de foudre (au choix) à la cible. Lorsque vous atteignez le niveau 14, les dégâts supplémentaires passent à 2d8."
+      },
+      "Master of Nature": {
+        "name": "Maître de la nature",
+        "description": "Au niveau 17, vous acquérez la capacité de commander des animaux et des créatures végétales. Pendant que les créatures sont charmées par votre fonction Charmer les animaux et les plantes, vous pouvez effectuer une action bonus pendant votre tour pour ordonner verbalement ce que chacune de ces créatures fera lors de son prochain tour."
+      }
+    },
+    "Tempest Domain": {
+      "Bonus Proficiencies": {
+        "name": "Compétences bonus",
+        "description": "Au niveau 1, vous maîtrisez le maniement des armes martiales et des armures lourdes."
+      },
+      "Wrath of the Storm": {
+        "name": "Colère de la tempête",
+        "description": "Également au 1er niveau, lorsqu'une créature à moins de 1,50 mètre de vous et que vous pouvez voir vous frappe avec une attaque, vous pouvez utiliser votre réaction pour amener la créature à effectuer un jet de sauvegarde de Dextérité. Il subit 2d8 dégâts de foudre ou de tonnerre (au choix) en cas d'échec, ou la moitié en cas de réussite. Vous pouvez utiliser cette fonctionnalité un nombre de fois égal à votre modificateur de Sagesse (au minimum une fois) et retrouver toutes les utilisations lors d'un repos long."
+      },
+      "Channel Divinity: Destructive Wrath": {
+        "name": "Channel Divinity : Colère Destructrice",
+        "description": "À partir du niveau 2, lorsque vous lancez des dégâts de foudre ou de tonnerre, vous pouvez utiliser votre canal divinité pour infliger un maximum de dégâts au lieu de lancer."
+      },
+      "Thunderbolt Strike": {
+        "name": "Coup de foudre",
+        "description": "Au niveau 6, lorsque vous infligez des dégâts de foudre à une créature de taille G ou inférieure, vous pouvez également la pousser jusqu'à 3 mètres de vous."
+      },
+      "Divine Strike": {
+        "name": "Frappe divine",
+        "description": "Au niveau 8, une fois à chacun de vos tours, lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez faire en sorte que l'attaque inflige 1d8 dégâts de tonnerre supplémentaires à la cible. Lorsque vous atteignez le niveau 14, les dégâts supplémentaires passent à 2d8."
+      },
+      "Stormborn": {
+        "name": "Né de la tempête",
+        "description": "Au niveau 17, vous avez une vitesse de vol égale à votre vitesse de marche actuelle lorsque vous n'êtes pas sous terre ou à l'intérieur."
+      }
+    },
+    "Trickery Domain": {
+      "Blessing of the Trickster": {
+        "name": "Bénédiction du filou",
+        "description": "À partir du choix de ce domaine au niveau 1, vous pouvez utiliser votre action pour toucher une créature volontaire autre que vous afin de lui donner un avantage aux tests de Dextérité (Discrétion). Cette bénédiction dure 1 heure ou jusqu'à ce que vous utilisiez à nouveau cette fonctionnalité."
+      },
+      "Channel Divinity: Invoke Duplicity": {
+        "name": "Channel Divinity : Invoquer la duplicité",
+        "description": "À partir du niveau 2, par une action, vous créez une copie illusoire parfaite de vous-même qui dure 1 minute. L'illusion apparaît dans un espace inoccupé que vous pouvez voir à moins de 9 mètres de vous. Par une action bonus pendant votre tour, vous pouvez déplacer l'illusion jusqu'à 9 mètres. Vous pouvez lancer des sorts comme si vous étiez dans l'espace de l'illusion, mais vous devez utiliser vos propres sens."
+      },
+      "Channel Divinity: Cloak of Shadows": {
+        "name": "Channel Divinity : Cape des ombres",
+        "description": "À partir du niveau 6, par une action, vous devenez invisible jusqu'à la fin de votre prochain tour. Vous devenez visible si vous attaquez ou lancez un sort."
+      },
+      "Divine Strike": {
+        "name": "Frappe divine",
+        "description": "Au niveau 8, une fois à chacun de vos tours, lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez faire en sorte que l'attaque inflige 1d8 dégâts de poison supplémentaires à la cible. Lorsque vous atteignez le niveau 14, les dégâts supplémentaires passent à 2d8."
+      },
+      "Improved Duplicity": {
+        "name": "Duplicité améliorée",
+        "description": "Au niveau 17, vous pouvez créer jusqu'à quatre doubles de vous-même, au lieu d'un, lorsque vous utilisez Invoquer la duplicité. Par une action bonus pendant votre tour, vous pouvez déplacer n'importe quel nombre d'entre eux jusqu'à 9 mètres, pour une portée maximale de 120 pieds."
+      }
+    },
+    "War Domain": {
+      "Bonus Proficiencies": {
+        "name": "Compétences bonus",
+        "description": "Au niveau 1, vous maîtrisez le maniement des armes martiales et des armures lourdes."
+      },
+      "War Priest": {
+        "name": "Prêtre de guerre",
+        "description": "Dès le niveau 1, lorsque vous utilisez l'action Attaque, vous pouvez effectuer une attaque avec une arme en guise d'action bonus. Vous pouvez utiliser cette fonctionnalité un nombre de fois égal à votre modificateur de Sagesse (au minimum une fois) et retrouver toutes les utilisations lors d'un repos long."
+      },
+      "Channel Divinity: Guided Strike": {
+        "name": "Channel Divinity : Frappe guidée",
+        "description": "À partir du niveau 2, lorsque vous effectuez un jet d'attaque, vous pouvez utiliser votre Canal Divinité pour gagner un bonus de +10 au jet. Vous faites ce choix avant ou après avoir vu le jet, mais avant que les effets ne soient appliqués."
+      },
+      "Channel Divinity: War God's Blessing": {
+        "name": "Channel Divinity : La bénédiction de Dieu de la guerre",
+        "description": "Au niveau 6, lorsqu'une créature à moins de 9 mètres de vous effectue un jet d'attaque, vous pouvez utiliser votre réaction pour accorder à cette créature un bonus de +10 au jet en utilisant votre Canal Divinité."
+      },
+      "Divine Strike": {
+        "name": "Frappe divine",
+        "description": "Au niveau 8, une fois à chacun de vos tours, lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez faire en sorte que l'attaque inflige 1d8 dégâts supplémentaires du même type infligé par l'arme. Lorsque vous atteignez le niveau 14, les dégâts supplémentaires passent à 2d8."
+      },
+      "Avatar of Battle": {
+        "name": "Avatar de bataille",
+        "description": "Au niveau 17, vous gagnez la résistance aux dégâts contondants, perçants et tranchants des armes non magiques."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Bonus Cantrip": {
+        "name": "Cantrip bonus",
+        "description": "Lorsque vous choisissez ce cercle au niveau 2, vous apprenez un cantrip de druide supplémentaire de votre choix."
+      },
+      "Natural Recovery": {
+        "name": "Récupération naturelle",
+        "description": "À partir du niveau 2, lors d'un court repos, vous pouvez choisir des emplacements de sorts dépensés à récupérer. Les emplacements de sorts peuvent avoir un niveau combiné égal ou inférieur à la moitié de votre niveau de druide (arrondi au supérieur), et aucun des emplacements ne peut être de niveau 6 ou supérieur. Vous ne pouvez plus utiliser cette fonctionnalité tant que vous n'avez pas terminé un repos long."
+      },
+      "Land's Stride": {
+        "name": "La foulée de la terre",
+        "description": "À partir du niveau 6, se déplacer sur un terrain difficile non magique ne vous coûte aucun mouvement supplémentaire. Vous pouvez également traverser des plantes non magiques sans être ralenti par elles et sans subir de dégâts si elles ont des épines, des épines ou un danger similaire."
+      },
+      "Nature's Ward": {
+        "name": "Le quartier de la nature",
+        "description": "Lorsque vous atteignez le niveau 10, vous ne pouvez plus être charmé ou effrayé par les élémentaires ou les fées, et vous êtes immunisé contre le poison et la maladie."
+      },
+      "Nature's Sanctuary": {
+        "name": "Sanctuaire de la nature",
+        "description": "Lorsque vous atteignez le niveau 14, lorsqu'une créature bête ou végétale vous attaque, cette créature doit effectuer un jet de sauvegarde de Sagesse contre le DD de sauvegarde de vos sorts de druide. En cas d'échec, la créature doit choisir une cible différente, sinon l'attaque rate automatiquement."
+      }
+    },
+    "Circle of the Moon": {
+      "Combat Wild Shape": {
+        "name": "Combattre la forme sauvage",
+        "description": "Lorsque vous choisissez ce cercle au niveau 2, vous gagnez la possibilité d'utiliser Forme Sauvage à votre tour comme une action bonus plutôt que comme une action. De plus, pendant que vous êtes transformé par Wild Shape, vous pouvez utiliser une action bonus pour dépenser un emplacement de sort afin de regagner 1d8 points de vie par niveau d'emplacement de sort dépensé."
+      },
+      "Circle Forms": {
+        "name": "Formes de cercle",
+        "description": "Les rites de votre cercle vous confèrent la capacité de vous transformer en formes animales plus dangereuses. À partir du niveau 2, vous pouvez utiliser Forme sauvage pour vous transformer en une bête avec un indice de défi allant jusqu'à 1. À partir du niveau 6, vous pouvez vous transformer en une bête avec un indice de défi aussi élevé que votre niveau de druide divisé par 3, arrondi à l'inférieur."
+      },
+      "Primal Strike": {
+        "name": "Frappe primordiale",
+        "description": "À partir du niveau 6, vos attaques sous forme de bête sont considérées comme magiques dans le but de vaincre la résistance et l'immunité aux attaques et dégâts non magiques."
+      },
+      "Elemental Wild Shape": {
+        "name": "Forme sauvage élémentaire",
+        "description": "Au niveau 10, vous pouvez dépenser deux utilisations de Forme sauvage en même temps pour vous transformer en élémentaire d'air, en élémentaire de terre, en élémentaire de feu ou en élémentaire d'eau."
+      },
+      "Thousand Forms": {
+        "name": "Mille formes",
+        "description": "Au niveau 14, vous avez appris à utiliser la magie pour modifier votre forme physique de manière plus subtile. Vous pouvez lancer le sort de modification de soi à volonté."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Critique amélioré",
+        "description": "À partir du moment où vous choisissez cet archétype au niveau 3, vos attaques avec votre arme infligent un coup critique sur un résultat de 19 ou 20."
+      },
+      "Remarkable Athlete": {
+        "name": "Athlète remarquable",
+        "description": "À partir du niveau 7, vous pouvez ajouter la moitié de votre bonus de maîtrise (arrondi au supérieur) à tout test de Force, de Dextérité ou de Constitution que vous effectuez et qui n'utilise pas déjà votre bonus de maîtrise. De plus, lorsque vous effectuez un saut en longueur en courant, la distance que vous pouvez parcourir augmente d'un nombre de pieds égal à votre modificateur de Force."
+      },
+      "Additional Fighting Style": {
+        "name": "Style de combat supplémentaire",
+        "description": "Au niveau 10, vous pouvez choisir une deuxième option dans la fonctionnalité de classe Style de combat."
+      },
+      "Superior Critical": {
+        "name": "Critique supérieur",
+        "description": "À partir du niveau 15, vos attaques avec des armes infligent un coup critique sur un résultat de 18, 19 ou 20."
+      },
+      "Survivor": {
+        "name": "Survivant",
+        "description": "Au niveau 18, au début de chacun de vos tours, vous récupérez des points de vie égaux à 5 + votre modificateur de Constitution s'il ne vous reste plus que la moitié de vos points de vie. Vous ne bénéficiez pas de cet avantage si vous avez 0 point de vie."
+      }
+    },
+    "Battle Master": {
+      "Combat Superiority": {
+        "name": "Supériorité au combat",
+        "description": "Lorsque vous choisissez cet archétype au niveau 3, vous apprenez des manœuvres alimentées par des dés de supériorité spéciaux (d8). Vous apprenez trois manœuvres de votre choix et disposez de quatre dés de supériorité. Vous récupérez tous les dés de supériorité dépensés lorsque vous terminez un repos court ou long. DD de sauvegarde = 8 + bonus de maîtrise + modificateur de Force ou de Dextérité (au choix). Vous apprenez deux manœuvres supplémentaires aux niveaux 7, 10 et 15."
+      },
+      "Student of War": {
+        "name": "Étudiant en guerre",
+        "description": "Au niveau 3, vous maîtrisez un type d'outils d'artisan de votre choix."
+      },
+      "Know Your Enemy": {
+        "name": "Connaissez votre ennemi",
+        "description": "À partir du niveau 7, si vous passez au moins 1 minute à observer ou à interagir avec une autre créature en dehors du combat, le MD vous indique si la créature est votre égale, supérieure ou inférieure en ce qui concerne deux des caractéristiques suivantes de votre choix : Force, Dextérité, Constitution, Classe d'armure, points de vie actuels, niveaux de classe totaux, niveaux de classe de combattant."
+      },
+      "Improved Combat Superiority": {
+        "name": "Supériorité de combat améliorée",
+        "description": "Au niveau 10, vos dés de supériorité se transforment en d10. Au niveau 18, ils se transforment en d12."
+      },
+      "Relentless": {
+        "name": "Sans relâche",
+        "description": "À partir du niveau 15, lorsque vous lancez un jet d’initiative et qu’il ne vous reste plus de dé de supériorité, vous récupérez 1 dé de supériorité."
+      }
+    },
+    "Eldritch Knight": {
+      "Spellcasting": {
+        "name": "Lancement de sorts",
+        "description": "Lorsque vous atteignez le niveau 3, vous augmentez vos prouesses martiales grâce à la capacité de lancer des sorts. L'intelligence est votre capacité à lancer des sorts pour vos sorts de sorcier. Vous connaissez trois sorts mineurs de sorcier et quatre sorts de sorcier de niveau 1, dont au moins deux doivent provenir des écoles d'abjuration ou d'évocation."
+      },
+      "Weapon Bond": {
+        "name": "Lien d'arme",
+        "description": "Au niveau 3 également, vous apprenez un rituel qui crée un lien magique entre vous et une arme. Vous effectuez le rituel pendant 1 heure, après quoi vous ne pouvez pas être désarmé de cette arme à moins d'être frappé d'incapacité. Si elle se trouve sur le même plan d'existence, vous pouvez invoquer cette arme comme une action bonus pendant votre tour, la faisant se téléporter instantanément dans votre main."
+      },
+      "War Magic": {
+        "name": "Magie de guerre",
+        "description": "À partir du niveau 7, lorsque vous utilisez votre action pour lancer un sort mineur, vous pouvez effectuer une attaque avec une arme en tant qu'action bonus."
+      },
+      "Eldritch Strike": {
+        "name": "Frappe surnaturelle",
+        "description": "Au niveau 10, lorsque vous touchez une créature avec une attaque avec une arme, cette créature est désavantagée lors de son prochain jet de sauvegarde contre un sort que vous avez lancé avant la fin de votre prochain tour."
+      },
+      "Arcane Charge": {
+        "name": "Charge arcanique",
+        "description": "Au niveau 15, vous obtenez la possibilité de vous téléporter jusqu'à 9 mètres vers un espace inoccupé que vous pouvez voir lorsque vous utilisez votre Action Surge. Vous pouvez vous téléporter avant ou après l'action supplémentaire."
+      },
+      "Improved War Magic": {
+        "name": "Magie de guerre améliorée",
+        "description": "À partir du niveau 18, lorsque vous utilisez votre action pour lancer un sort, vous pouvez effectuer une attaque avec une arme en tant qu'action bonus."
+      }
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Technique de la main ouverte",
+        "description": "À partir du choix de cette tradition au niveau 3, chaque fois que vous touchez une créature avec l'une des attaques accordées par votre Déluge de coups, vous pouvez lui imposer l'un des effets suivants : elle doit réussir un jet de sauvegarde de Dextérité sous peine d'être mise à terre ; il doit effectuer un jet de sauvegarde de Force – s'il échoue, vous pouvez le pousser jusqu'à 15 pieds ; ou il ne peut pas réagir avant la fin de votre prochain tour."
+      },
+      "Wholeness of Body": {
+        "name": "Intégrité du corps",
+        "description": "Au niveau 6, vous gagnez la capacité de vous soigner. Par une action, vous pouvez récupérer des points de vie égaux à trois fois votre niveau de moine. Vous devez terminer un long repos avant de pouvoir utiliser à nouveau cette fonctionnalité."
+      },
+      "Tranquility": {
+        "name": "Tranquillité",
+        "description": "À partir du niveau 11, à la fin d'un repos long, vous bénéficiez de l'effet d'un sort de sanctuaire qui dure jusqu'au début de votre prochain repos long. Le DD du jet de sauvegarde est égal à 8 + votre modificateur de Sagesse + votre bonus de maîtrise."
+      },
+      "Quivering Palm": {
+        "name": "Paume frémissante",
+        "description": "Au niveau 17, lorsque vous frappez une créature avec une frappe à mains nues, vous pouvez dépenser 3 points de ki pour déclencher des vibrations imperceptibles dans son corps qui durent un nombre de jours égal à votre niveau de moine. Vous pouvez utiliser votre action pour y mettre fin. La créature doit effectuer un jet de sauvegarde de Constitution : en cas d'échec, elle est réduite à 0 point de vie ; en cas de réussite, il subit 10d10 dégâts nécrotiques."
+      }
+    },
+    "Way of Shadow": {
+      "Shadow Arts": {
+        "name": "Arts de l'Ombre",
+        "description": "Dès que vous choisissez cette tradition au niveau 3, vous pouvez utiliser votre ki pour dupliquer les effets de certains sorts. En tant qu'action, vous pouvez dépenser 2 points de ki pour lancer l'obscurité, la vision dans le noir, passer sans laisser de trace ou faire silence, sans fournir de composants matériels. De plus, vous gagnez le sort mineur d'illusion mineure si vous ne le connaissez pas déjà."
+      },
+      "Shadow Step": {
+        "name": "Étape de l'ombre",
+        "description": "Au niveau 6, lorsque vous êtes dans une faible lumière ou dans l'obscurité, par une action bonus, vous pouvez vous téléporter jusqu'à 60 pieds dans un espace inoccupé que vous pouvez voir et qui est également dans une faible lumière ou dans l'obscurité. Vous avez alors l'avantage sur la première attaque de mêlée que vous effectuez avant la fin du tour."
+      },
+      "Cloak of Shadows": {
+        "name": "Cape des ombres",
+        "description": "Au niveau 11, lorsque vous vous trouvez dans une zone de faible lumière ou d'obscurité, vous pouvez utiliser votre action pour devenir invisible. Vous restez invisible jusqu'à ce que vous effectuiez une attaque, que vous lanciez un sort ou que vous soyez dans une zone de lumière vive."
+      },
+      "Opportunist": {
+        "name": "Opportuniste",
+        "description": "Au niveau 17, chaque fois qu'une créature à moins de 1,50 mètre de vous est touchée par une attaque effectuée par une créature autre que vous, vous pouvez utiliser votre réaction pour lancer une attaque au corps à corps contre cette créature."
+      }
+    },
+    "Way of the Four Elements": {
+      "Disciple of the Elements": {
+        "name": "Disciple des éléments",
+        "description": "Lorsque vous choisissez cette tradition au niveau 3, vous apprenez des disciplines magiques qui exploitent la puissance des quatre éléments. Vous connaissez la discipline d'harmonisation élémentaire et une autre discipline élémentaire de votre choix. Vous apprenez une discipline supplémentaire aux niveaux 6e, 11e et 17e. Chaque fois que vous apprenez une nouvelle discipline, vous pouvez également remplacer une discipline que vous connaissez déjà par une autre. Chaque discipline vous demande de dépenser des points de ki à chaque fois que vous l'utilisez."
+      },
+      "Additional Elemental Disciplines": {
+        "name": "Disciplines élémentaires supplémentaires",
+        "description": "Au niveau 17, vous apprenez une discipline élémentaire supplémentaire. Les disciplines les plus puissantes comme Avatar of the Elements et Wave of Rolling Earth deviennent disponibles."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Channel Divinity: Sacred Weapon": {
+        "name": "Channel Divinity : Arme sacrée",
+        "description": "Par une action, vous pouvez imprégner une arme que vous tenez d’énergie positive, en utilisant votre Channel Divinity. Pendant 1 minute, vous ajoutez votre modificateur de Charisme aux jets d'attaque effectués avec cette arme (minimum +1). L'arme émet également une lumière vive dans un rayon de 20 pieds et une lumière faible 20 pieds au-delà. Si l’arme n’est pas déjà magique, elle le devient pour la durée."
+      },
+      "Channel Divinity: Turn the Unholy": {
+        "name": "Channel Divinity : Transformez l'Impie",
+        "description": "En guise d'action, vous présentez votre symbole sacré et prononcez une prière censurant les démons et les morts-vivants, en utilisant votre canal divinité. Chaque démon ou mort-vivant qui peut vous voir ou vous entendre dans un rayon de 9 mètres doit effectuer un jet de sauvegarde de Sagesse. En cas d'échec, la créature est retournée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts."
+      },
+      "Aura of Devotion": {
+        "name": "Aura de dévotion",
+        "description": "À partir du niveau 7, vous et les créatures amies situées à moins de 3 mètres de vous ne pouvez plus être charmés tant que vous êtes conscient. Au niveau 18, la portée de cette aura passe à 9 mètres."
+      },
+      "Purity of Spirit": {
+        "name": "Pureté de l'Esprit",
+        "description": "À partir du niveau 15, vous êtes toujours sous l'effet d'un sort de protection contre le mal et le bien."
+      },
+      "Holy Nimbus": {
+        "name": "Nimbus sacré",
+        "description": "Au niveau 20, par une action, vous pouvez émettre une aura de soleil. Pendant 1 minute, une lumière vive brille autour de vous dans un rayon de 9 mètres, et une lumière faible brille 9 mètres au-delà. Chaque fois qu'une créature ennemie commence son tour sous une lumière vive, elle subit 10 dégâts radiants. De plus, vous avez un avantage aux jets de sauvegarde contre les sorts lancés par des démons ou des morts-vivants. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un long repos."
+      }
+    },
+    "Oath of the Ancients": {
+      "Channel Divinity: Nature's Wrath": {
+        "name": "Channel Divinity : la colère de la nature",
+        "description": "Par une action, vous pouvez faire surgir des vignes spectrales et atteindre une créature à moins de 3 mètres de vous que vous pouvez voir. La créature doit réussir un jet de sauvegarde de Force ou de Dextérité (au choix) ou être retenue. Bien qu'elle soit retenue par les vignes, la créature répète le jet de sauvegarde à la fin de chacun de ses tours. En cas de succès, il se libère et les vignes disparaissent."
+      },
+      "Channel Divinity: Turn the Faithless": {
+        "name": "Channel Divinity : Transformez les infidèles",
+        "description": "Par une action, vous présentez votre symbole sacré, et chaque fée ou démon à moins de 9 mètres de vous et qui peut vous entendre doit effectuer un jet de sauvegarde de Sagesse. En cas d'échec de la sauvegarde, la créature est retournée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts."
+      },
+      "Aura of Warding": {
+        "name": "Aura de protection",
+        "description": "À partir du niveau 7, la magie ancienne pèse si lourdement sur vous qu'elle forme une protection surnaturelle. Vous et les créatures amies situées à moins de 3 mètres de vous avez une résistance aux dégâts des sorts. Au niveau 18, la portée de cette aura passe à 9 mètres."
+      },
+      "Undying Sentinel": {
+        "name": "Sentinelle éternelle",
+        "description": "À partir du niveau 15, lorsque vous êtes réduit à 0 point de vie et que vous n'êtes pas tué sur le coup, vous pouvez choisir de descendre à 1 point de vie à la place. Une fois que vous avez utilisé cette capacité, vous ne pouvez plus l'utiliser avant d'avoir terminé un long repos. De plus, vous ne souffrez d’aucun des inconvénients de la vieillesse et vous ne pouvez pas vieillir comme par magie."
+      },
+      "Elder Champion": {
+        "name": "Champion aîné",
+        "description": "Au niveau 20, par une action, vous prenez la forme d’une ancienne force de la nature pendant 1 minute. Vous bénéficiez des avantages suivants : au début de chacun de vos tours, vous récupérez 10 points de vie ; chaque fois que vous lancez un sort de paladin avec un temps d'incantation de 1 action, vous pouvez le lancer en utilisant une action bonus à la place ; Les créatures ennemies à moins de 3 mètres de vous ont un désavantage aux jets de sauvegarde contre vos sorts de paladin et vos options de canalisation de la divinité."
+      }
+    },
+    "Oath of Vengeance": {
+      "Channel Divinity: Abjure Enemy": {
+        "name": "Channel Divinity : abjurer l'ennemi",
+        "description": "En guise d'action, vous présentez votre symbole sacré et prononcez une prière de dénonciation, en utilisant votre Divinité Canal. Choisissez une créature à moins de 60 pieds de vous et que vous pouvez voir. Cette créature doit réussir un jet de sauvegarde de Sagesse. Les démons et les morts-vivants sont désavantagés lors de ce jet de sauvegarde. En cas d'échec, la créature est effrayée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts. Tant qu'elle est effrayée, la vitesse de la créature est de 0 et elle ne peut bénéficier d'aucun bonus à sa vitesse."
+      },
+      "Channel Divinity: Vow of Enmity": {
+        "name": "Channel Divinity : Vœu d'inimitié",
+        "description": "Par une action bonus, vous pouvez prononcer un vœu d'inimitié contre une créature que vous pouvez voir à moins de 3 mètres de vous, en utilisant votre Canal Divinité. Vous bénéficiez d'un avantage aux jets d'attaque contre la créature pendant 1 minute ou jusqu'à ce qu'elle tombe à 0 point de vie ou tombe inconsciente."
+      },
+      "Relentless Avenger": {
+        "name": "Vengeur implacable",
+        "description": "Au niveau 7, lorsque vous touchez une créature avec une attaque d'opportunité, vous pouvez vous déplacer jusqu'à la moitié de votre vitesse immédiatement après l'attaque et dans le cadre de la même réaction. Ce mouvement ne provoque pas d'attaques d'opportunité."
+      },
+      "Soul of Vengeance": {
+        "name": "Âme de vengeance",
+        "description": "À partir du niveau 15, lorsqu'une créature sous l'effet de votre Vœu d'inimitié effectue une attaque, vous pouvez utiliser votre réaction pour lancer une attaque au corps à corps avec une arme contre cette créature si elle est à portée."
+      },
+      "Avenging Angel": {
+        "name": "Ange vengeur",
+        "description": "Au niveau 20, par une action, vous prenez la forme d'un vengeur angélique pendant 1 minute. Des ailes poussent dans votre dos et vous confèrent une vitesse de vol de 60 pieds. Vous dégagez une aura de menace dans un rayon de 9 mètres. La première fois qu'une créature ennemie entre dans l'aura ou y commence son tour, elle doit réussir un jet de sauvegarde de Sagesse ou avoir peur de vous pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Prey": {
+        "name": "La proie du chasseur",
+        "description": "Au niveau 3, vous gagnez l'une des fonctionnalités suivantes de votre choix. Tueur de colosses : lorsque vous touchez une créature avec une attaque avec une arme, la créature subit 1d8 dégâts supplémentaires si elle est inférieure à son maximum de points de vie. Vous ne pouvez infliger ces dégâts supplémentaires qu’une seule fois par tour. Tueur de géant : lorsqu'une créature de grande taille ou plus à moins de 1,50 mètre de vous vous frappe ou vous manque avec une attaque, vous pouvez utiliser votre réaction pour attaquer cette créature immédiatement après. Horde Breaker : Une fois à chacun de vos tours, lorsque vous effectuez une attaque avec une arme, vous pouvez effectuer une autre attaque avec la même arme contre une créature différente qui se trouve à moins de 1,50 mètre de la cible d'origine."
+      },
+      "Defensive Tactics": {
+        "name": "Tactiques défensives",
+        "description": "Au niveau 7, vous bénéficiez de l'une des fonctionnalités suivantes. Échapper à la Horde : les attaques d'opportunité contre vous sont effectuées avec un désavantage. Défense multi-attaques : lorsqu'une créature vous frappe avec une attaque, vous gagnez un bonus de +4 à la CA contre toutes les attaques ultérieures effectuées par cette créature pour le reste du tour. Volonté d'Acier : Vous avez un avantage aux jets de sauvegarde contre la peur."
+      },
+      "Multiattack": {
+        "name": "Multi-attaque",
+        "description": "Au niveau 11, vous bénéficiez de l'une des fonctionnalités suivantes. Volée : vous pouvez utiliser votre action pour effectuer une attaque à distance contre n'importe quel nombre de créatures à moins de 10 pieds d'un point que vous pouvez voir à portée de votre arme, en effectuant un jet d'attaque distinct pour chaque cible. Attaque tourbillonnante : vous pouvez utiliser votre action pour effectuer une attaque au corps à corps contre n'importe quel nombre de créatures à moins de 1,50 mètre de vous, avec un jet d'attaque distinct pour chaque cible."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Défense supérieure du chasseur",
+        "description": "Au niveau 15, vous bénéficiez de l'une des fonctionnalités suivantes. Évasion : Lorsque vous effectuez un jet de sauvegarde de Dextérité pour ne subir que la moitié des dégâts, vous ne subissez aucun dégât si vous réussissez, et seulement la moitié des dégâts si vous échouez. Tenez-vous à contre-courant : lorsqu'une créature hostile vous manque avec une attaque de mêlée, vous pouvez utiliser votre réaction pour forcer cette créature à répéter la même attaque contre une autre créature de votre choix. Esquive étrange : lorsqu'un attaquant que vous pouvez voir vous frappe avec une attaque, vous pouvez utiliser votre réaction pour réduire de moitié les dégâts de l'attaque contre vous."
+      }
+    },
+    "Beast Master": {
+      "Ranger's Companion": {
+        "name": "Compagnon du Ranger",
+        "description": "Au niveau 3, vous gagnez un compagnon bête qui vous accompagne dans vos aventures et est entraîné à combattre à vos côtés. Choisissez une bête qui n’est pas plus grande que Medium et qui a un indice de défi de 1/4 ou moins. Ajoutez votre bonus de maîtrise à la CA, aux jets d'attaque et de dégâts de la bête, ainsi qu'à tous les jets de sauvegarde et compétences qu'elle maîtrise. Son maximum de points de vie est égal à quatre fois votre niveau de rôdeur."
+      },
+      "Exceptional Training": {
+        "name": "Formation exceptionnelle",
+        "description": "À partir du niveau 7, à n'importe lequel de vos tours où votre compagnon bête n'attaque pas, vous pouvez utiliser une action bonus pour ordonner à la bête d'effectuer l'action Dash, Se désengager, Esquiver ou Aider à son tour. Les attaques de la bête sont également considérées comme magiques dans le but de vaincre la résistance et l'immunité."
+      },
+      "Bestial Fury": {
+        "name": "Fureur bestiale",
+        "description": "À partir du niveau 11, votre compagnon bête peut effectuer deux attaques lorsque vous lui ordonnez d'utiliser l'action Attaque."
+      },
+      "Share Spells": {
+        "name": "Partager des sorts",
+        "description": "À partir du niveau 15, lorsque vous lancez un sort vous ciblant, vous pouvez également affecter votre compagnon bête avec le sort si la bête se trouve à moins de 9 mètres de vous."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Des mains rapides",
+        "description": "À partir du niveau 3, vous pouvez utiliser l'action bonus accordée par votre action de ruse pour effectuer un test de Dextérité (tour de passe-passe), utiliser les outils de vos voleurs pour désamorcer un piège ou ouvrir une serrure, ou encore effectuer l'action Utiliser un objet."
+      },
+      "Second-Story Work": {
+        "name": "Travail au deuxième étage",
+        "description": "Lorsque vous choisissez cet archétype au niveau 3, l'escalade ne vous coûte plus de mouvement supplémentaire. De plus, lorsque vous effectuez un saut en courant, la distance que vous parcourez augmente d'un nombre de pieds égal à votre modificateur de Dextérité."
+      },
+      "Supreme Sneak": {
+        "name": "Furtivité suprême",
+        "description": "À partir du niveau 9, vous avez un avantage lors d'un test de Dextérité (Furtivité) si vous ne vous déplacez pas à plus de la moitié de votre vitesse au cours du même tour."
+      },
+      "Use Magic Device": {
+        "name": "Utiliser un appareil magique",
+        "description": "Au niveau 13, vous en savez suffisamment sur le fonctionnement de la magie pour pouvoir improviser l'utilisation d'objets même lorsqu'ils ne vous sont pas destinés. Vous ignorez toutes les exigences de classe, de race et de niveau concernant l’utilisation des objets magiques."
+      },
+      "Thief's Reflexes": {
+        "name": "Les réflexes du voleur",
+        "description": "Lorsque vous atteignez le niveau 17, vous pouvez jouer deux tours lors du premier round de n'importe quel combat. Vous prenez votre premier tour à votre initiative normale et votre deuxième tour à votre initiative moins 10."
+      }
+    },
+    "Assassin": {
+      "Bonus Proficiencies": {
+        "name": "Compétences bonus",
+        "description": "Lorsque vous choisissez cet archétype au niveau 3, vous gagnez la maîtrise du kit de déguisement et du kit de l'empoisonneur."
+      },
+      "Assassinate": {
+        "name": "Assassiner",
+        "description": "À partir du niveau 3, vous êtes le plus meurtrier lorsque vous faites tomber vos ennemis. Vous avez un avantage aux jets d'attaque contre toute créature qui n'a pas encore pris son tour dans le combat. De plus, tout coup porté contre une créature surprise est un coup critique."
+      },
+      "Infiltration Expertise": {
+        "name": "Expertise en infiltration",
+        "description": "À partir du niveau 9, vous pouvez infailliblement vous créer de fausses identités. Vous devez passer sept jours et 25 po pour établir l’histoire, la profession et les affiliations d’une identité. Par la suite, si vous adoptez la nouvelle identité comme déguisement, d’autres créatures croient que vous êtes cette personne jusqu’à ce qu’on leur donne une raison évidente de ne pas le faire."
+      },
+      "Impostor": {
+        "name": "Imposteur",
+        "description": "Au niveau 13, vous acquérez la capacité d’imiter de manière infaillible le discours, l’écriture et le comportement d’une autre personne. Vous devez consacrer au moins trois heures à étudier ces trois composantes du comportement de la personne. Si une créature méfiante soupçonne que quelque chose ne va pas, vous avez l'avantage à n'importe quel test de Charisme (Tromperie) pour éviter d'être détecté."
+      },
+      "Death Strike": {
+        "name": "Frappe mortelle",
+        "description": "À partir du niveau 17, lorsque vous attaquez et touchez une créature surprise, elle doit effectuer un jet de sauvegarde de Constitution (DD 8 + votre modificateur de Dextérité + votre bonus de maîtrise). En cas d'échec, doublez les dégâts de votre attaque contre la créature."
+      }
+    },
+    "Arcane Trickster": {
+      "Spellcasting": {
+        "name": "Lancement de sorts",
+        "description": "Lorsque vous atteignez le niveau 3, vous augmentez vos capacités espiègles avec des capacités magiques. L'intelligence est votre capacité à lancer des sorts pour vos sorts de sorcier. Vous connaissez trois sorts de sorcier (main de mage plus deux autres de votre choix) et trois sorts de sorcier de 1er niveau, dont au moins deux doivent provenir des écoles d'enchantement et d'illusion."
+      },
+      "Mage Hand Legerdemain": {
+        "name": "Legerdemain de la main du mage",
+        "description": "À partir du niveau 3, lorsque vous lancez Main de mage, vous pouvez rendre la main spectrale invisible et effectuer des tâches supplémentaires avec elle : ranger ou récupérer des objets dans des conteneurs portés par une autre créature, ou utiliser des outils de voleur pour crocheter des serrures et désamorcer des pièges à distance. Vous pouvez le faire sans vous faire remarquer si vous réussissez un test de prestidigitation contesté par le test de perception de la créature."
+      },
+      "Magical Ambush": {
+        "name": "Embuscade magique",
+        "description": "À partir du niveau 9, si vous êtes caché d'une créature lorsque vous lancez un sort sur elle, la créature est désavantagée à tous les jets de sauvegarde qu'elle effectue contre le sort ce tour-ci."
+      },
+      "Versatile Trickster": {
+        "name": "Filou polyvalent",
+        "description": "Au niveau 13, par une action bonus lors de votre tour, vous pouvez désigner une créature à moins de 1,50 mètre de la main spectrale créée par la main du mage. Cela vous donne un avantage aux jets d'attaque contre cette créature jusqu'à la fin du tour."
+      },
+      "Spell Thief": {
+        "name": "Voleur de sorts",
+        "description": "Au niveau 17, immédiatement après qu'une créature a lancé un sort qui vous cible ou vous inclut dans sa zone d'effet, vous pouvez utiliser votre réaction pour forcer la créature à effectuer un jet de sauvegarde avec sa capacité de lancement de sorts. Le DD est égal à votre DD de sauvegarde de sorts. En cas d'échec, vous annulez l'effet du sort contre vous et volez la connaissance du sort s'il est au moins de niveau 1 et d'un niveau que vous pouvez lancer. Vous connaissez le sort pendant 8 heures."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "Dragon Ancestor": {
+        "name": "Ancêtre Dragon",
+        "description": "Au niveau 1, vous choisissez un type de dragon comme ancêtre. Vous pouvez parler, lire et écrire le draconique. Chaque fois que vous effectuez un test de Charisme lorsque vous interagissez avec des dragons, votre bonus de maîtrise est doublé s'il s'applique au test."
+      },
+      "Draconic Resilience": {
+        "name": "Résilience draconique",
+        "description": "À mesure que la magie circule dans votre corps, elle fait émerger les traits physiques de vos ancêtres dragons. Votre maximum de points de vie augmente de 1 et augmente à nouveau de 1 chaque fois que vous gagnez un niveau dans cette classe. De plus, lorsque vous ne portez pas d'armure, votre CA est égale à 13 + votre modificateur de Dextérité."
+      },
+      "Elemental Affinity": {
+        "name": "Affinité élémentaire",
+        "description": "À partir du niveau 6, lorsque vous lancez un sort qui inflige des dégâts du type associé à votre ascendance draconique, ajoutez votre modificateur de Charisme à ces dégâts. En même temps, vous pouvez dépenser 1 point de sorcellerie pour gagner en résistance à ce type de dégâts pendant 1 heure."
+      },
+      "Dragon Wings": {
+        "name": "Ailes de dragon",
+        "description": "Au niveau 14, vous obtenez la capacité de faire pousser une paire d'ailes de dragon depuis votre dos, gagnant ainsi une vitesse de vol égale à votre vitesse actuelle. Vous pouvez créer ces ailes comme une action bonus pendant votre tour. Ils durent jusqu'à ce que vous les rejetiez comme une action bonus à votre tour."
+      },
+      "Draconic Presence": {
+        "name": "Présence draconique",
+        "description": "À partir du niveau 18, par une action, vous pouvez dépenser 5 points de sorcellerie pour dégager une aura de crainte ou de peur (au choix) jusqu'à une distance de 60 pieds. Pendant 1 minute ou jusqu'à ce que vous perdiez votre concentration, chaque créature hostile qui commence son tour dans cette aura doit réussir un jet de sauvegarde de Sagesse ou être charmée (si vous avez choisi la crainte) ou effrayée (si vous avez choisi la peur) jusqu'à la fin de l'aura."
+      }
+    },
+    "Wild Magic": {
+      "Wild Magic Surge": {
+        "name": "Déferlement de magie sauvage",
+        "description": "À partir du moment où vous choisissez cette origine au niveau 1, votre lancement de sorts peut déclencher des vagues de magie indomptée. Immédiatement après avoir lancé un sort de sorcier de niveau 1 ou supérieur, le MD peut vous faire lancer un d20. Si vous obtenez un 1, lancez un jet sur la table Wild Magic Surge pour créer un effet magique aléatoire."
+      },
+      "Tides of Chaos": {
+        "name": "Marées du chaos",
+        "description": "À partir du niveau 1, vous pouvez manipuler les forces du hasard et du chaos pour obtenir l’avantage lors d’un jet d’attaque, d’un test de caractéristique ou d’un jet de sauvegarde. Une fois cela fait, vous devez terminer un long repos avant de pouvoir utiliser à nouveau cette fonctionnalité. À tout moment avant que vous réutilisiez cette fonctionnalité, le DM peut vous demander de lancer un jet sur la table Wild Magic Surge immédiatement après avoir lancé un sort de sorcier de niveau 1 ou supérieur."
+      },
+      "Bend Luck": {
+        "name": "Pliez la chance",
+        "description": "À partir du niveau 6, lorsqu'une autre créature que vous pouvez voir effectue un jet d'attaque, un test de caractéristique ou un jet de sauvegarde, vous pouvez utiliser votre réaction et dépenser 2 points de sorcellerie pour lancer 1d4 et appliquer le nombre obtenu comme bonus ou malus (votre choix) au jet de la créature. Vous pouvez le faire après que la créature ait lancé le jet mais avant que les effets du jet ne soient résolus."
+      },
+      "Controlled Chaos": {
+        "name": "Chaos contrôlé",
+        "description": "Au niveau 14, chaque fois que vous lancez un jet sur la table Wild Magic Surge, vous pouvez lancer deux fois et utiliser l'un ou l'autre nombre."
+      },
+      "Spell Bombardment": {
+        "name": "Bombardement de sorts",
+        "description": "À partir du niveau 18, lorsque vous lancez des dégâts pour un sort et que vous lancez le plus grand nombre possible sur l'un des dés, choisissez l'un de ces dés, lancez-le à nouveau et ajoutez ce jet aux dégâts. Vous ne pouvez utiliser cette fonctionnalité qu’une seule fois par tour."
+      }
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "Fey Presence": {
+        "name": "Présence féerique",
+        "description": "À partir du niveau 1, par une action, vous pouvez amener chaque créature d'un cube de 10 pieds provenant de vous à effectuer un jet de sauvegarde de Sagesse contre le DD de sauvegarde de vos sorts de démoniste. Les créatures qui échouent sont toutes charmées ou effrayées par vous (votre choix) jusqu'à la fin de votre prochain tour. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+      },
+      "Misty Escape": {
+        "name": "Évasion brumeuse",
+        "description": "À partir du niveau 6, lorsque vous subissez des dégâts, vous pouvez utiliser votre réaction pour devenir invisible et vous téléporter jusqu'à 60 pieds dans un espace inoccupé que vous pouvez voir. Vous restez invisible jusqu'au début de votre prochain tour ou jusqu'à ce que vous attaquiez ou lanciez un sort. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+      },
+      "Beguiling Defenses": {
+        "name": "Défenses séduisantes",
+        "description": "À partir du niveau 10, vous êtes immunisé contre les charmes. Lorsqu'une autre créature tente de vous charmer, vous pouvez utiliser votre réaction pour tenter de renvoyer le charme sur cette créature. La créature doit réussir un jet de sauvegarde de Sagesse contre le DD de sauvegarde de votre sort de démoniste ou être charmée par vous pendant 1 minute ou jusqu'à ce que la créature subisse des dégâts."
+      },
+      "Dark Delirium": {
+        "name": "Délire sombre",
+        "description": "À partir du niveau 14, par une action, choisissez une créature que vous pouvez voir dans un rayon de 60 pieds. Il doit réussir un jet de sauvegarde de Sagesse ou être charmé ou effrayé par vous (au choix) pendant 1 minute ou jusqu'à ce que votre concentration soit brisée. Cet effet se termine plus tôt si la créature subit des dégâts. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+      }
+    },
+    "The Fiend": {
+      "Dark One's Blessing": {
+        "name": "Bénédiction du Ténébreux",
+        "description": "À partir du niveau 1, lorsque vous réduisez une créature hostile à 0 point de vie, vous gagnez des points de vie temporaires égaux à votre modificateur de Charisme + votre niveau de démoniste (minimum de 1)."
+      },
+      "Dark One's Own Luck": {
+        "name": "La chance du Ténébreux",
+        "description": "À partir du niveau 6, lorsque vous effectuez un test de caractéristique ou un jet de sauvegarde, vous pouvez utiliser cette fonctionnalité pour ajouter un d10 à votre jet. Vous pouvez le faire après avoir vu le jet initial mais avant que l'un des effets du jet ne se produise. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+      },
+      "Fiendish Resilience": {
+        "name": "Résilience diabolique",
+        "description": "À partir du niveau 10, vous pouvez choisir un type de dégâts lorsque vous terminez un repos court ou long. Vous gagnez en résistance à ce type de dégâts jusqu'à ce que vous en choisissiez un autre avec cette fonctionnalité. Les dégâts causés par les armes magiques ou les armes en argent ignorent cette résistance."
+      },
+      "Hurl Through Hell": {
+        "name": "Traversez l'enfer",
+        "description": "À partir du niveau 14, lorsque vous touchez une créature avec une attaque, vous pouvez utiliser cette fonctionnalité pour transporter instantanément la cible à travers les plans inférieurs. La créature disparaît et se précipite dans un paysage cauchemardesque. À la fin de votre prochain tour, la cible retourne dans la case qu'elle occupait précédemment, ou dans la case inoccupée la plus proche. Si la cible n’est pas un démon, elle subit 10d10 dégâts psychiques lorsqu’elle se remet de son horrible expérience. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un long repos."
+      }
+    },
+    "The Great Old One": {
+      "Awakened Mind": {
+        "name": "Esprit éveillé",
+        "description": "Dès le niveau 1, vos connaissances extraterrestres vous donnent la possibilité de toucher l'esprit d'autres créatures. Vous pouvez communiquer par télépathie avec toute créature que vous pouvez voir à moins de 9 mètres de vous. Vous n'avez pas besoin de partager une langue avec la créature pour qu'elle comprenne vos paroles télépathiques, mais la créature doit être capable de comprendre au moins une langue."
+      },
+      "Entropic Ward": {
+        "name": "Salle entropique",
+        "description": "Au niveau 6, lorsqu'une créature effectue un jet d'attaque contre vous, vous pouvez utiliser votre réaction pour imposer un désavantage sur ce jet. Si l'attaque vous manque, votre prochain jet d'attaque contre la créature a un avantage si vous le faites avant la fin de votre prochain tour. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+      },
+      "Thought Shield": {
+        "name": "Bouclier de pensée",
+        "description": "À partir du niveau 10, vos pensées ne peuvent plus être lues par télépathie ou par d'autres moyens, sauf si vous l'autorisez. De plus, chaque fois qu'une créature vous inflige des dégâts psychiques, cette créature subit le même nombre de dégâts que vous."
+      },
+      "Create Thrall": {
+        "name": "Créer un esclave",
+        "description": "Au niveau 14, vous obtenez la capacité d'infecter l'esprit d'un humanoïde avec la magie extraterrestre de votre patron. Vous pouvez utiliser votre action pour toucher un humanoïde incapable. Cette créature est ensuite charmée par vous jusqu'à ce qu'un sort de suppression de malédiction soit lancé sur elle, que la condition charmée soit supprimée ou que vous utilisiez à nouveau cette fonctionnalité. Vous pouvez communiquer par télépathie avec la créature charmée tant que vous êtes tous les deux sur le même plan d'existence."
+      }
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "Abjuration Savant": {
+        "name": "Savant de l'abjuration",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort d'abjuration dans votre grimoire sont réduits de moitié."
+      },
+      "Arcane Ward": {
+        "name": "Protection arcanique",
+        "description": "À partir du niveau 2, lorsque vous lancez un sort d'abjuration de niveau 1 ou supérieur, vous pouvez simultanément créer une protection magique sur vous-même qui dure jusqu'à la fin d'un repos long. La balise a des points de vie égaux à deux fois votre niveau de sorcier + votre modificateur d'Intelligence. Chaque fois que vous subissez des dégâts, la balise subit les dégâts à la place. Si ces dégâts réduisent la protection à 0 point de vie, vous subissez les dégâts restants."
+      },
+      "Projected Ward": {
+        "name": "Quartier projeté",
+        "description": "À partir du niveau 6, lorsqu'une créature que vous pouvez voir à moins de 9 mètres de vous subit des dégâts, vous pouvez utiliser votre réaction pour que votre protection arcanique absorbe ces dégâts. Si ces dégâts réduisent la protection à 0 point de vie, la créature protégée subit les dégâts restants."
+      },
+      "Improved Abjuration": {
+        "name": "Abjuration améliorée",
+        "description": "À partir du niveau 10, lorsque vous lancez un sort d'abjuration qui nécessite que vous effectuiez un test de capacité dans le cadre du lancement de ce sort (comme dans le cas du contresort et de la dissipation de la magie), vous ajoutez votre bonus de compétence à ce test de capacité."
+      },
+      "Spell Resistance": {
+        "name": "Résistance aux sorts",
+        "description": "À partir du niveau 14, vous bénéficiez d'un avantage aux jets de sauvegarde contre les sorts. De plus, vous disposez d'une résistance aux dégâts des sorts."
+      }
+    },
+    "School of Conjuration": {
+      "Conjuration Savant": {
+        "name": "Savant de conjuration",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort d'invocation dans votre grimoire sont réduits de moitié."
+      },
+      "Minor Conjuration": {
+        "name": "Conjuration mineure",
+        "description": "À partir du niveau 2, vous pouvez utiliser votre action pour invoquer un objet inanimé dans votre main ou au sol dans un espace inoccupé à moins de 3 mètres de vous. Cet objet ne peut pas mesurer plus de 3 pieds de côté et peser pas plus de 10 livres, et sa forme doit être celle d'un objet non magique que vous avez vu. L'objet est visiblement magique. L'objet disparaît après 1 heure, lorsque vous utilisez à nouveau cette fonctionnalité, ou s'il subit ou inflige des dégâts."
+      },
+      "Benign Transposition": {
+        "name": "Transposition bénigne",
+        "description": "À partir du niveau 6, vous pouvez utiliser votre action pour vous téléporter jusqu'à 9 mètres dans un espace inoccupé que vous pouvez voir, ou que vous pouvez voir occupé par une créature de taille Petite ou Moyenne désireuse d'être téléportée. Après avoir utilisé cette fonctionnalité, vous ne pouvez plus l'utiliser avant d'avoir terminé un repos long ou d'avoir lancé un sort de conjuration de niveau 1 ou supérieur."
+      },
+      "Focused Conjuration": {
+        "name": "Conjuration ciblée",
+        "description": "À partir du niveau 10, lorsque vous vous concentrez sur un sort de conjuration, votre concentration ne peut pas être interrompue suite à des dégâts subis."
+      },
+      "Durable Summons": {
+        "name": "Invocation durable",
+        "description": "À partir du niveau 14, toute créature que vous invoquez ou créez avec un sort de conjuration possède 30 points de vie temporaires."
+      }
+    },
+    "School of Divination": {
+      "Divination Savant": {
+        "name": "Savant divinatoire",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort de divination dans votre grimoire sont réduits de moitié."
+      },
+      "Portent": {
+        "name": "Présage",
+        "description": "À partir du niveau 2, lorsque vous terminez un repos long, lancez deux d20 et notez les nombres obtenus. Vous pouvez remplacer n'importe quel jet d'attaque, jet de sauvegarde ou test de capacité effectué par vous ou par une créature que vous pouvez voir par l'un de ces jets de prédiction. Vous devez choisir de le faire avant le jet, et vous ne pouvez remplacer un jet de cette manière qu'une seule fois par tour. Chaque jet de prédiction ne peut être utilisé qu’une seule fois. Lorsque vous terminez un repos long, vous perdez tous les jets de prédiction inutilisés."
+      },
+      "Expert Divination": {
+        "name": "Divination experte",
+        "description": "À partir du niveau 6, lorsque vous lancez un sort de divination de niveau 2 ou supérieur en utilisant un emplacement de sort, vous récupérez un emplacement de sort dépensé. L'emplacement que vous récupérez doit être d'un niveau inférieur au sort que vous avez lancé et ne peut pas être supérieur au 5ème niveau."
+      },
+      "The Third Eye": {
+        "name": "Le troisième œil",
+        "description": "À partir du niveau 10, vous pouvez utiliser votre action pour augmenter vos pouvoirs de perception. Ce faisant, choisissez l'un des avantages suivants, qui perdurent jusqu'à ce que vous soyez frappé d'incapacité ou que vous preniez un repos court ou long : Vision dans le noir (60 pieds), Vue éthérée (voir dans le plan éthéré), Grande compréhension (lire n'importe quelle langue) ou Voir l'invisibilité."
+      },
+      "Greater Portent": {
+        "name": "Un plus grand présage",
+        "description": "À partir du niveau 14, vous lancez trois d20 pour votre fonction Présage, au lieu de deux."
+      }
+    },
+    "School of Enchantment": {
+      "Enchantment Savant": {
+        "name": "Savant de l'enchantement",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort d'enchantement dans votre grimoire sont réduits de moitié."
+      },
+      "Hypnotic Gaze": {
+        "name": "Regard hypnotique",
+        "description": "À partir du niveau 2, par une action, choisissez une créature que vous pouvez voir à moins de 1,50 mètre de vous. Si la cible peut vous voir ou vous entendre, elle doit réussir un jet de sauvegarde de Sagesse contre votre DD de sauvegarde de sort de sorcier ou être charmée par vous jusqu'à la fin de votre prochain tour. La vitesse de la créature charmée tombe à 0 et elle est incapable d'agir et visiblement étourdie. Lors des tours suivants, vous pourrez utiliser votre action pour maintenir cet effet jusqu'à la fin de votre prochain tour. L'effet prend fin si vous vous éloignez de plus de 1,50 mètre, si la créature ne peut ni vous voir ni vous entendre, ou si elle subit des dégâts."
+      },
+      "Instinctive Charm": {
+        "name": "Charme instinctif",
+        "description": "À partir du niveau 6, lorsqu'une créature que vous pouvez voir à moins de 9 mètres de vous effectue un jet d'attaque contre vous, vous pouvez utiliser votre réaction pour détourner l'attaque. L'attaquant doit effectuer un jet de sauvegarde de Sagesse. En cas d'échec, l'attaquant doit cibler la créature la plus proche de lui, sans compter vous ni lui-même. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez pas l'utiliser avant d'avoir terminé un repos long, à moins que vous ne dépensiez un emplacement de sort de n'importe quel niveau pour l'utiliser à nouveau."
+      },
+      "Split Enchantment": {
+        "name": "Enchantement divisé",
+        "description": "À partir du niveau 10, lorsque vous lancez un sort d'enchantement de niveau 1 ou supérieur qui cible une seule créature, vous pouvez lui faire cibler une deuxième créature."
+      },
+      "Alter Memories": {
+        "name": "Modifier les souvenirs",
+        "description": "Au niveau 14, lorsque vous lancez un sort d'enchantement pour charmer une ou plusieurs créatures, vous pouvez modifier la compréhension d'une créature afin qu'elle ne se rende pas compte qu'elle est charmée. De plus, une fois avant l'expiration du sort, vous pouvez utiliser votre action pour tenter de faire oublier à la créature choisie une partie du temps qu'elle a passé sous charme. La créature doit réussir un jet de sauvegarde d'Intelligence contre votre DD de sauvegarde de sort de sorcier ou perdre un nombre d'heures de mémoire égal à 1 + votre modificateur de Charisme (minimum 1)."
+      }
+    },
+    "School of Evocation": {
+      "Evocation Savant": {
+        "name": "Savant d'évocation",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort d'évocation dans votre grimoire sont réduits de moitié."
+      },
+      "Sculpt Spells": {
+        "name": "Sorts de sculpture",
+        "description": "À partir du niveau 2, lorsque vous lancez un sort d'évocation qui affecte d'autres créatures que vous voyez, vous pouvez en choisir un nombre égal à 1 + le niveau du sort. Les créatures choisies réussissent automatiquement leurs jets de sauvegarde contre le sort, et elles ne subissent aucun dégât si elles devraient normalement subir la moitié des dégâts en cas de sauvegarde réussie."
+      },
+      "Potent Cantrip": {
+        "name": "Cantrip puissant",
+        "description": "À partir du niveau 6, lorsqu'une créature réussit un jet de sauvegarde contre votre cantrip, la créature subit la moitié des dégâts du cantrip (le cas échéant) mais ne subit aucun effet supplémentaire du cantrip."
+      },
+      "Empowered Evocation": {
+        "name": "Évocation puissante",
+        "description": "À partir du niveau 10, vous pouvez ajouter votre modificateur d'Intelligence à un jet de dégâts de n'importe quel sort d'évocation de sorcier que vous lancez."
+      },
+      "Overchannel": {
+        "name": "Overcanal",
+        "description": "À partir du niveau 14, lorsque vous lancez un sort de sorcier du niveau 1 au niveau 5 qui inflige des dégâts, vous pouvez infliger un maximum de dégâts avec ce sort. La première fois que vous le faites, vous ne subissez aucun effet indésirable. Si vous utilisez à nouveau cette fonctionnalité avant de terminer un repos long, vous subissez 2d12 dégâts nécrotiques pour chaque niveau du sort, immédiatement après l'avoir lancé. Ces dégâts ignorent la résistance et l’immunité."
+      }
+    },
+    "School of Illusion": {
+      "Illusion Savant": {
+        "name": "Savant des illusions",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort d'illusion dans votre grimoire sont réduits de moitié."
+      },
+      "Improved Minor Illusion": {
+        "name": "Illusion mineure améliorée",
+        "description": "Lorsque vous choisissez cette école au niveau 2, vous apprenez le sort mineur d'illusion. Si vous connaissez déjà ce cantrip, vous apprenez un autre cantrip de sorcier de votre choix. Lorsque vous lancez une illusion mineure, vous pouvez créer à la fois un son et une image en un seul lancement du sort."
+      },
+      "Malleable Illusions": {
+        "name": "Illusions malléables",
+        "description": "À partir du niveau 6, lorsque vous lancez un sort d'illusion d'une durée de 1 minute ou plus, vous pouvez utiliser votre action pour changer la nature de cette illusion (en utilisant les paramètres normaux du sort pour l'illusion), à condition que vous puissiez voir l'illusion."
+      },
+      "Illusory Self": {
+        "name": "Soi illusoire",
+        "description": "À partir du niveau 10, lorsqu'une créature effectue un jet d'attaque contre vous, vous pouvez utiliser votre réaction pour interposer une copie illusoire de vous-même entre l'attaquant et vous-même. L'attaque vous manque automatiquement, puis l'illusion se dissipe. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+      },
+      "Illusory Reality": {
+        "name": "Réalité illusoire",
+        "description": "Au niveau 14, lorsque vous lancez un sort d'illusion de niveau 1 ou supérieur, vous pouvez choisir un objet inanimé et non magique qui fait partie de l'illusion et rendre cet objet réel. Vous pouvez le faire à votre tour comme une action bonus pendant que le sort est en cours. L'objet reste réel pendant 1 minute. Il ne peut pas infliger de dégâts ni nuire directement à qui que ce soit."
+      }
+    },
+    "School of Necromancy": {
+      "Necromancy Savant": {
+        "name": "Savant en nécromancie",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort de nécromancie dans votre grimoire sont réduits de moitié."
+      },
+      "Grim Harvest": {
+        "name": "Mauvaise récolte",
+        "description": "Au niveau 2, une fois par tour lorsque vous tuez une ou plusieurs créatures avec un sort de niveau 1 ou supérieur, vous récupérez des points de vie égaux à deux fois le niveau du sort, ou à trois fois son niveau si le sort appartient à l'Ecole de Nécromancie. Vous ne bénéficiez pas de cet avantage en tuant des créatures artificielles ou des morts-vivants."
+      },
+      "Undead Thralls": {
+        "name": "Serviteurs morts-vivants",
+        "description": "Au niveau 6, vous ajoutez le sort d'animation morte à votre grimoire s'il n'y est pas déjà. Lorsque vous lancez un mort animé, vous pouvez cibler un cadavre ou un tas d'os supplémentaire, créant ainsi un autre zombie ou squelette, selon le cas. Chaque fois que vous créez un mort-vivant à l'aide d'un sort de nécromancie, il présente des avantages supplémentaires : son maximum de points de vie est augmenté d'un montant égal à votre niveau de sorcier et il ajoute votre bonus de maîtrise à ses jets de dégâts d'arme."
+      },
+      "Inured to Undeath": {
+        "name": "Assuré à la non-vie",
+        "description": "À partir du niveau 10, vous bénéficiez d'une résistance aux dégâts nécrotiques et votre maximum de points de vie ne peut pas être réduit. Vous avez passé tellement de temps à vous occuper des morts-vivants et des forces qui les animent que vous êtes devenu habitué à certains de leurs pires effets."
+      },
+      "Command Undead": {
+        "name": "Commandement des morts-vivants",
+        "description": "À partir du niveau 14, par une action, vous pouvez choisir un mort-vivant que vous pouvez voir à moins de 20 mètres de vous. Cette créature doit effectuer un jet de sauvegarde de Charisme contre le DD de sauvegarde de vos sorts de sorcier. Si cela réussit, vous ne pourrez plus utiliser cette fonctionnalité. En cas d'échec, il devient amical avec vous et obéit à vos commandes jusqu'à ce que vous utilisiez à nouveau cette fonctionnalité. Les morts-vivants intelligents sont plus difficiles à contrôler et ont un avantage au jet de sauvegarde."
+      }
+    },
+    "School of Transmutation": {
+      "Transmutation Savant": {
+        "name": "Savant de la transmutation",
+        "description": "À partir du moment où vous sélectionnez cette école au niveau 2, l'or et le temps que vous devez consacrer à la copie d'un sort de transmutation dans votre grimoire sont réduits de moitié."
+      },
+      "Minor Alchemy": {
+        "name": "Alchimie mineure",
+        "description": "À partir du niveau 2, vous pouvez modifier temporairement les propriétés physiques d'un objet non magique, en le transformant d'une substance en une autre. Vous effectuez une procédure alchimique spéciale sur un objet entièrement composé de bois, de pierre (mais pas de pierre précieuse), de fer, de cuivre ou d'argent. Pour chaque tranche de 10 minutes que vous passez à effectuer la procédure, vous pouvez transformer jusqu'à 1 pied cube de matériau. Après 1 heure, ou jusqu'à ce que vous perdiez votre concentration, le matériau retrouve sa substance d'origine."
+      },
+      "Transmuter's Stone": {
+        "name": "Pierre du Transmutateur",
+        "description": "À partir du niveau 6, vous pouvez passer 8 heures à créer une pierre de transmutation qui stocke la magie de transmutation. Une créature bénéficie d'un avantage de votre choix tant que la pierre est en sa possession : vision dans le noir (60 pieds), vitesse augmentée de 10 pieds, maîtrise des jets de sauvegarde de Constitution ou résistance aux dégâts de l'acide, du froid, du feu, de la foudre ou du tonnerre."
+      },
+      "Shapechanger": {
+        "name": "Changeur de forme",
+        "description": "Au niveau 10, vous ajoutez le sort de métamorphose à votre grimoire. Vous pouvez lancer une métamorphose sans dépenser un emplacement de sort, mais vous ne pouvez cibler que vous-même et vous transformer en une bête dont le niveau de défi est de 1 ou moins. Une fois que vous avez lancé la métamorphose de cette manière, vous ne pouvez plus le faire avant d'avoir terminé un repos court ou long."
+      },
+      "Master Transmuter": {
+        "name": "Maître Transmutateur",
+        "description": "À partir du niveau 14, vous pouvez utiliser votre action pour consommer la réserve de magie de transmutation stockée dans votre pierre de transmutateur. Ce faisant, choisissez l'un des effets suivants : Transformation majeure (lancer une métamorphose sans emplacement de sort, d'une durée d'une heure), Panacée (supprimer toutes les malédictions, maladies et poisons ; restaurer tous les points de vie), Restaurer la vie (lancer ressusciter les morts sans emplacement de sort) ou Restaurer la jeunesse (faire paraître une créature touchée jusqu'à 3d10 ans plus jeune)."
+      }
+    }
+  }
+}

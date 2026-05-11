@@ -1,0 +1,154 @@
+{
+  "Darkvision": {
+    "name": "Vision dans le noir",
+    "description": "Habitué à la vie sous terre, vous disposez d’une vision supérieure dans l’obscurité et dans la pénombre. Vous pouvez voir dans une faible lumière à moins de 60 pieds de vous comme s’il s’agissait d’une lumière vive, et dans l’obscurité comme s’il s’agissait d’une faible lumière. Vous ne pouvez pas discerner les couleurs dans l’obscurité, seulement les nuances de gris."
+  },
+  "Superior Darkvision": {
+    "name": "Vision dans le noir supérieure",
+    "description": "Votre vision dans le noir a un rayon de 120 pieds."
+  },
+  "Dwarven Resilience": {
+    "name": "Résilience naine",
+    "description": "Vous avez un avantage aux jets de sauvegarde contre le poison et vous avez une résistance aux dégâts de poison."
+  },
+  "Dwarven Combat Training": {
+    "name": "Entraînement au combat des nains",
+    "description": "Vous maîtrisez la hache de combat, la hache à main, le marteau léger et le marteau de guerre."
+  },
+  "Stonecunning": {
+    "name": "Ruse de pierre",
+    "description": "Chaque fois que vous effectuez un test d'Intelligence (Histoire) lié à l'origine de la pierre, vous êtes considéré comme maîtrisant la compétence Histoire et ajoutez le double de votre bonus de maîtrise au test."
+  },
+  "Tool Proficiency": {
+    "name": "Maîtrise des outils",
+    "description": "Vous maîtrisez les outils d'artisan de votre choix : outils de forgeron, fournitures de brasseur ou outils de maçon."
+  },
+  "Dwarven Toughness": {
+    "name": "Robustesse naine",
+    "description": "Votre maximum de points de vie augmente de 1, et il augmente de 1 à chaque fois que vous gagnez un niveau."
+  },
+  "Dwarven Armor Training": {
+    "name": "Entraînement en armure naine",
+    "description": "Vous maîtrisez les armures légères et moyennes."
+  },
+  "Keen Senses": {
+    "name": "Sens aiguisés",
+    "description": "Vous maîtrisez la compétence Perception."
+  },
+  "Fey Ancestry": {
+    "name": "Ascendance féerique",
+    "description": "Vous avez un avantage aux jets de sauvegarde contre le charme, et la magie ne peut pas vous endormir."
+  },
+  "Trance": {
+    "name": "Transe",
+    "description": "Les elfes n'ont pas besoin de dormir. Au lieu de cela, ils méditent profondément, en restant semi-conscients, 4 heures par jour. En méditant, vous pouvez rêver d’une manière ou d’une autre ; de tels rêves sont en fait des exercices mentaux devenus réflexifs au fil des années de pratique. Après vous être reposé de cette manière, vous bénéficiez du même bénéfice qu’un humain après 8 heures de sommeil."
+  },
+  "Elf Weapon Training": {
+    "name": "Entraînement aux armes des elfes",
+    "description": "Vous maîtrisez l’épée longue, l’épée courte, l’arc court et l’arc long."
+  },
+  "Cantrip": {
+    "name": "Cantrip",
+    "description": "Vous connaissez un sort mineur de votre choix dans la liste des sorts du sorcier. L'intelligence est votre capacité à lancer des sorts."
+  },
+  "Extra Language": {
+    "name": "Langue supplémentaire",
+    "description": "Vous pouvez parler, lire et écrire une langue supplémentaire de votre choix."
+  },
+  "Fleet of Foot": {
+    "name": "Flotte de pied",
+    "description": "Votre vitesse de marche de base augmente à 35 pieds."
+  },
+  "Mask of the Wild": {
+    "name": "Masque de la nature",
+    "description": "Vous pouvez tenter de vous cacher même lorsque vous n'êtes que légèrement obscurci par le feuillage, les fortes pluies, les chutes de neige, la brume et d'autres phénomènes naturels."
+  },
+  "Sunlight Sensitivity": {
+    "name": "Sensibilité à la lumière du soleil",
+    "description": "Vous êtes désavantagé aux jets d'attaque et aux tests de Sagesse (Perception) qui reposent sur la vue lorsque vous, la cible de votre attaque, ou tout ce que vous essayez de percevoir, êtes en plein soleil."
+  },
+  "Drow Magic": {
+    "name": "Magie des Drows",
+    "description": "Vous connaissez le cantrip des lumières dansantes. Lorsque vous atteignez le niveau 3, vous pouvez lancer le sort de feu féerique une fois par jour. Lorsque vous atteignez le niveau 5, vous pouvez également lancer le sort des ténèbres une fois par jour. Le charisme est votre capacité à lancer des sorts pour ces sorts."
+  },
+  "Drow Weapon Training": {
+    "name": "Entraînement aux armes drows",
+    "description": "Vous maîtrisez les rapières, les épées courtes et les arbalètes à main."
+  },
+  "Lucky": {
+    "name": "Chanceux",
+    "description": "Lorsque vous obtenez un 1 sur le d20 pour un jet d'attaque, un test de caractéristique ou un jet de sauvegarde, vous pouvez relancer le dé et devez utiliser le nouveau jet."
+  },
+  "Brave": {
+    "name": "Courageux",
+    "description": "Vous avez un avantage aux jets de sauvegarde contre la peur."
+  },
+  "Halfling Nimbleness": {
+    "name": "Agilité halfelin",
+    "description": "Vous pouvez vous déplacer dans l’espace de n’importe quelle créature d’une taille supérieure à la vôtre."
+  },
+  "Naturally Stealthy": {
+    "name": "Naturellement furtif",
+    "description": "Vous pouvez tenter de vous cacher même si vous êtes obscurci uniquement par une créature d'au moins une taille plus grande que vous."
+  },
+  "Stout Resilience": {
+    "name": "Solide résilience",
+    "description": "Vous avez un avantage aux jets de sauvegarde contre le poison et vous avez une résistance aux dégâts de poison."
+  },
+  "Draconic Ancestry": {
+    "name": "Ascendance draconique",
+    "description": "Vous possédez l’héritage draconique d’un type de dragon spécifique. Choisissez un type de dragon dans le tableau Draconic Ancestry. Votre souffle et votre résistance aux dégâts sont déterminés par le type de dragon choisi."
+  },
+  "Breath Weapon": {
+    "name": "Souffle",
+    "description": "Vous pouvez utiliser votre action pour expirer une énergie destructrice. Sa taille, sa forme et le type de dégâts sont déterminés par votre ascendance draconique. Lorsque vous utilisez votre souffle, chaque créature dans la zone d'expiration doit effectuer un jet de sauvegarde (DD = 8 + votre modificateur de Constitution + votre bonus de maîtrise). En cas d'échec, la créature subit 2d6 dégâts. En cas de sauvegarde réussie, les dégâts sont réduits de moitié. Vous pouvez utiliser votre souffle une fois par repos court ou long."
+  },
+  "Damage Resistance": {
+    "name": "Résistance aux dégâts",
+    "description": "Vous avez une résistance au type de dégâts associé à votre ascendance draconique."
+  },
+  "Gnome Cunning": {
+    "name": "Gnome rusé",
+    "description": "Vous avez un avantage sur tous les jets de sauvegarde d'Intelligence, de Sagesse et de Charisme contre la magie."
+  },
+  "Natural Illusionist": {
+    "name": "Illusionniste naturel",
+    "description": "Vous connaissez le sort mineur de l'illusion mineure. L'intelligence est votre capacité à lancer des sorts."
+  },
+  "Speak with Small Beasts": {
+    "name": "Parler avec les petites bêtes",
+    "description": "Grâce aux sons et aux gestes, vous pouvez communiquer des idées simples avec des bêtes petites ou plus petites. Les gnomes des forêts aiment les animaux et gardent souvent des écureuils, des blaireaux, des lapins, des taupes, des pics et d'autres créatures comme animaux de compagnie bien-aimés."
+  },
+  "Artificer's Lore": {
+    "name": "Connaissance de l'artificier",
+    "description": "Chaque fois que vous effectuez un test d'Intelligence (Histoire) lié à des objets magiques, des objets alchimiques ou des appareils technologiques, vous pouvez ajouter deux fois votre bonus de maîtrise, au lieu de tout bonus de maîtrise que vous appliquez normalement."
+  },
+  "Tinker": {
+    "name": "Bricoler",
+    "description": "Vous maîtrisez les outils d'artisan (outils de bricoleur). En utilisant ces outils, vous pouvez dépenser 1 heure et 10 po de matériaux pour construire un petit appareil mécanique (CA 5, 1 hp). L'appareil cesse de fonctionner après 24 heures, à moins que vous ne consacriez 1 heure à le réparer. Vous pouvez avoir jusqu’à trois appareils de ce type actifs à la fois."
+  },
+  "Skill Versatility": {
+    "name": "Polyvalence des compétences",
+    "description": "Vous maîtrisez deux compétences de votre choix."
+  },
+  "Menacing": {
+    "name": "Menaçant",
+    "description": "Vous maîtrisez la compétence Intimidation."
+  },
+  "Relentless Endurance": {
+    "name": "Endurance implacable",
+    "description": "Lorsque vous êtes réduit à 0 point de vie mais que vous n'êtes pas complètement tué, vous pouvez tomber à 1 point de vie à la place. Vous ne pouvez plus utiliser cette fonctionnalité tant que vous n'avez pas terminé un repos long."
+  },
+  "Savage Attacks": {
+    "name": "Attaques sauvages",
+    "description": "Lorsque vous obtenez un coup critique avec une attaque au corps à corps avec une arme, vous pouvez lancer une fois de plus l'un des dés de dégâts de l'arme et l'ajouter aux dégâts supplémentaires du coup critique."
+  },
+  "Hellish Resistance": {
+    "name": "Résistance infernale",
+    "description": "Vous avez une résistance aux dégâts de feu."
+  },
+  "Infernal Legacy": {
+    "name": "Héritage infernal",
+    "description": "Vous connaissez le sort magique de la thaumaturgie. Lorsque vous atteignez le niveau 3, vous pouvez lancer une fois le sort de réprimande infernale comme un sort de niveau 2 avec ce trait et retrouver la capacité de le faire lorsque vous terminez un repos long. Lorsque vous atteignez le niveau 5, vous pouvez lancer le sort d'obscurité une fois avec ce trait et retrouver la capacité de le faire lorsque vous terminez un repos long. Le charisme est votre capacité à lancer des sorts pour ces sorts."
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "Club": {
+    "name": "Verein"
+  },
+  "Dagger": {
+    "name": "Dolch"
+  },
+  "Greatclub": {
+    "name": "Toller Club"
+  },
+  "Handaxe": {
+    "name": "Handaxt"
+  },
+  "Javelin": {
+    "name": "Speer"
+  },
+  "Light Hammer": {
+    "name": "Leichter Hammer"
+  },
+  "Mace": {
+    "name": "Keule"
+  },
+  "Quarterstaff": {
+    "name": "Quartierstab"
+  },
+  "Sickle": {
+    "name": "Sichel"
+  },
+  "Spear": {
+    "name": "Speer"
+  },
+  "Crossbow, Light": {
+    "name": "Armbrust, Licht"
+  },
+  "Dart": {
+    "name": "Pfeil"
+  },
+  "Shortbow": {
+    "name": "Kurzbogen"
+  },
+  "Sling": {
+    "name": "Schlinge"
+  },
+  "Battleaxe": {
+    "name": "Streitaxt"
+  },
+  "Flail": {
+    "name": "Dreschflegel"
+  },
+  "Glaive": {
+    "name": "Glaive"
+  },
+  "Greataxe": {
+    "name": "Großaxt"
+  },
+  "Greatsword": {
+    "name": "Großschwert"
+  },
+  "Halberd": {
+    "name": "Hellebarde"
+  },
+  "Lance": {
+    "name": "Lanze"
+  },
+  "Longsword": {
+    "name": "Langschwert"
+  },
+  "Maul": {
+    "name": "Maul"
+  },
+  "Morningstar": {
+    "name": "Morgenstern"
+  },
+  "Pike": {
+    "name": "Pike"
+  },
+  "Rapier": {
+    "name": "Rapier"
+  },
+  "Scimitar": {
+    "name": "Krummsäbel"
+  },
+  "Shortsword": {
+    "name": "Kurzschwert"
+  },
+  "Trident": {
+    "name": "Dreizack"
+  },
+  "War Pick": {
+    "name": "Kriegsauswahl"
+  },
+  "Warhammer": {
+    "name": "Warhammer"
+  },
+  "Whip": {
+    "name": "Peitsche"
+  },
+  "Blowgun": {
+    "name": "Blasrohr"
+  },
+  "Crossbow, Hand": {
+    "name": "Armbrust, Hand"
+  },
+  "Crossbow, Heavy": {
+    "name": "Armbrust, schwer"
+  },
+  "Longbow": {
+    "name": "Langbogen"
+  },
+  "Net": {
+    "name": "Netto"
+  },
+  "Padded": {
+    "name": "Gepolstert"
+  },
+  "Leather": {
+    "name": "Leder"
+  },
+  "Studded Leather": {
+    "name": "Nietenbesetztes Leder"
+  },
+  "Hide": {
+    "name": "Verstecken"
+  },
+  "Chain Shirt": {
+    "name": "Kettenhemd"
+  },
+  "Scale Mail": {
+    "name": "Schuppenpanzer"
+  },
+  "Breastplate": {
+    "name": "Brustplatte"
+  },
+  "Half Plate": {
+    "name": "Halber Teller"
+  },
+  "Ring Mail": {
+    "name": "Ringmail"
+  },
+  "Chain Mail": {
+    "name": "Kettenhemd"
+  },
+  "Splint": {
+    "name": "Schiene"
+  },
+  "Plate": {
+    "name": "Platte"
+  },
+  "Shield": {
+    "name": "Schild"
+  },
+  "Abacus": {
+    "name": "Abakus"
+  },
+  "Acid (vial)": {
+    "name": "Säure (Fläschchen)"
+  },
+  "Alchemist's Fire": {
+    "name": "Feuer des Alchemisten"
+  },
+  "Arrows (20)": {
+    "name": "Pfeile (20)"
+  },
+  "Blowgun Needles (50)": {
+    "name": "Blasrohrnadeln (50)"
+  },
+  "Crossbow Bolts (20)": {
+    "name": "Armbrustbolzen (20)"
+  },
+  "Sling Bullets (20)": {
+    "name": "Schleudergeschosse (20)"
+  },
+  "Antitoxin (vial)": {
+    "name": "Antitoxin (Fläschchen)"
+  },
+  "Backpack": {
+    "name": "Rucksack"
+  },
+  "Ball Bearings (bag of 1000)": {
+    "name": "Kugellager (Beutel mit 1000 Stück)"
+  },
+  "Barrel": {
+    "name": "Fass"
+  },
+  "Basket": {
+    "name": "Korb"
+  },
+  "Bedroll": {
+    "name": "Bettzeug"
+  },
+  "Bell": {
+    "name": "Glocke"
+  },
+  "Blanket": {
+    "name": "Decke"
+  },
+  "Block and Tackle": {
+    "name": "Block und Tackle"
+  },
+  "Book": {
+    "name": "Buch"
+  },
+  "Bottle, glass": {
+    "name": "Flasche, Glas"
+  },
+  "Bucket": {
+    "name": "Eimer"
+  },
+  "Caltrops (bag of 20)": {
+    "name": "Caltrops (Beutel mit 20 Stück)"
+  },
+  "Candle": {
+    "name": "Kerze"
+  },
+  "Case, crossbow bolt": {
+    "name": "Koffer, Armbrustbolzen"
+  },
+  "Case, map or scroll": {
+    "name": "Fall, Karte oder Schriftrolle"
+  },
+  "Chain (10 feet)": {
+    "name": "Kette (10 Fuß)"
+  },
+  "Chalk (1 piece)": {
+    "name": "Kreide (1 Stück)"
+  },
+  "Chest": {
+    "name": "Brust"
+  },
+  "Climber's Kit": {
+    "name": "Kletterausrüstung"
+  },
+  "Clothes, common": {
+    "name": "Kleidung, üblich"
+  },
+  "Clothes, costume": {
+    "name": "Kleidung, Kostüm"
+  },
+  "Clothes, fine": {
+    "name": "Kleidung, gut"
+  },
+  "Clothes, traveler's": {
+    "name": "Kleidung, Reisekleidung"
+  },
+  "Component Pouch": {
+    "name": "Komponententasche"
+  },
+  "Crowbar": {
+    "name": "Brecheisen"
+  },
+  "Druidic Focus": {
+    "name": "Druidischer Fokus"
+  },
+  "Flask or tankard": {
+    "name": "Flasche oder Humpen"
+  },
+  "Grappling Hook": {
+    "name": "Enterhaken"
+  },
+  "Hammer": {
+    "name": "Hammer"
+  },
+  "Hammer, sledge": {
+    "name": "Hammer, Vorschlag"
+  },
+  "Healer's Kit": {
+    "name": "Heiler-Kit"
+  },
+  "Holy Symbol": {
+    "name": "Heiliges Symbol"
+  },
+  "Holy Water (flask)": {
+    "name": "Weihwasser (Flasche)"
+  },
+  "Hourglass": {
+    "name": "Sanduhr"
+  },
+  "Hunting Trap": {
+    "name": "Jagdfalle"
+  },
+  "Ink (1 ounce bottle)": {
+    "name": "Tinte (1-Unzen-Flasche)"
+  },
+  "Ink Pen": {
+    "name": "Tintenstift"
+  },
+  "Jug or Pitcher": {
+    "name": "Krug oder Krug"
+  },
+  "Ladder (10-foot)": {
+    "name": "Leiter (10 Fuß)"
+  },
+  "Lamp": {
+    "name": "Lampe"
+  },
+  "Lantern, bullseye": {
+    "name": "Laterne, Volltreffer"
+  },
+  "Lantern, hooded": {
+    "name": "Laterne, mit Kapuze"
+  },
+  "Lock": {
+    "name": "Sperren"
+  },
+  "Magnifying Glass": {
+    "name": "Lupe"
+  },
+  "Manacles": {
+    "name": "Handschellen"
+  },
+  "Mess Kit": {
+    "name": "Essgeschirr"
+  },
+  "Mirror, steel": {
+    "name": "Spiegel, Stahl"
+  },
+  "Oil (flask)": {
+    "name": "Öl (Flasche)"
+  },
+  "Paper (one sheet)": {
+    "name": "Papier (ein Blatt)"
+  },
+  "Parchment (one sheet)": {
+    "name": "Pergament (ein Blatt)"
+  },
+  "Perfume (vial)": {
+    "name": "Parfüm (Fläschchen)"
+  },
+  "Pick, miner's": {
+    "name": "Pick, Bergmann"
+  },
+  "Piton": {
+    "name": "Felshaken"
+  },
+  "Poison, basic (vial)": {
+    "name": "Gift, basisch (Fläschchen)"
+  },
+  "Pole (10-foot)": {
+    "name": "Stange (10 Fuß)"
+  },
+  "Pot, iron": {
+    "name": "Topf, Eisen"
+  },
+  "Pouch": {
+    "name": "Beutel"
+  },
+  "Quiver": {
+    "name": "Köcher"
+  },
+  "Ram, portable": {
+    "name": "Ram, tragbar"
+  },
+  "Rations (1 day)": {
+    "name": "Rationen (1 Tag)"
+  },
+  "Rope, hempen (50 feet)": {
+    "name": "Seil, Hanf (50 Fuß)"
+  },
+  "Rope, silk (50 feet)": {
+    "name": "Seil, Seide (50 Fuß)"
+  },
+  "Sack": {
+    "name": "Sack"
+  },
+  "Scale, merchant's": {
+    "name": "Waage, Händler"
+  },
+  "Sealing Wax": {
+    "name": "Siegellack"
+  },
+  "Shovel": {
+    "name": "Schaufel"
+  },
+  "Signal Whistle": {
+    "name": "Signalpfeife"
+  },
+  "Signet Ring": {
+    "name": "Siegelring"
+  },
+  "Soap": {
+    "name": "Seife"
+  },
+  "Spellbook": {
+    "name": "Zauberbuch"
+  },
+  "Spikes, iron (10)": {
+    "name": "Spikes, Eisen (10)"
+  },
+  "Spyglass": {
+    "name": "Fernglas"
+  },
+  "Tent, two-person": {
+    "name": "Zelt, zwei Personen"
+  },
+  "Tinderbox": {
+    "name": "Zunderbüchse"
+  },
+  "Torch": {
+    "name": "Fackel"
+  },
+  "Vial": {
+    "name": "Phiole"
+  },
+  "Waterskin": {
+    "name": "Wasserschlauch"
+  },
+  "Whetstone": {
+    "name": "Wetzstein"
+  }
+}

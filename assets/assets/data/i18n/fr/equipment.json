@@ -1,0 +1,410 @@
+{
+  "Club": {
+    "name": "Club"
+  },
+  "Dagger": {
+    "name": "Poignard"
+  },
+  "Greatclub": {
+    "name": "Grand club"
+  },
+  "Handaxe": {
+    "name": "Hachette"
+  },
+  "Javelin": {
+    "name": "Javelot"
+  },
+  "Light Hammer": {
+    "name": "Marteau léger"
+  },
+  "Mace": {
+    "name": "Masse"
+  },
+  "Quarterstaff": {
+    "name": "Bâton"
+  },
+  "Sickle": {
+    "name": "Faucille"
+  },
+  "Spear": {
+    "name": "Lance"
+  },
+  "Crossbow, Light": {
+    "name": "Arbalète légère"
+  },
+  "Dart": {
+    "name": "Dard"
+  },
+  "Shortbow": {
+    "name": "Arc court"
+  },
+  "Sling": {
+    "name": "Fronde"
+  },
+  "Battleaxe": {
+    "name": "Hache de combat"
+  },
+  "Flail": {
+    "name": "Fléau"
+  },
+  "Glaive": {
+    "name": "Glaive"
+  },
+  "Greataxe": {
+    "name": "Grande hache"
+  },
+  "Greatsword": {
+    "name": "Espadon"
+  },
+  "Halberd": {
+    "name": "Hallebarde"
+  },
+  "Lance": {
+    "name": "Lance"
+  },
+  "Longsword": {
+    "name": "Épée longue"
+  },
+  "Maul": {
+    "name": "Malmener"
+  },
+  "Morningstar": {
+    "name": "Étoile du matin"
+  },
+  "Pike": {
+    "name": "Brochet"
+  },
+  "Rapier": {
+    "name": "Rapière"
+  },
+  "Scimitar": {
+    "name": "Cimeterre"
+  },
+  "Shortsword": {
+    "name": "Épée courte"
+  },
+  "Trident": {
+    "name": "Trident"
+  },
+  "War Pick": {
+    "name": "Choix de guerre"
+  },
+  "Warhammer": {
+    "name": "Marteau de guerre"
+  },
+  "Whip": {
+    "name": "Fouet"
+  },
+  "Blowgun": {
+    "name": "Sarbacane"
+  },
+  "Crossbow, Hand": {
+    "name": "Arbalète, à main"
+  },
+  "Crossbow, Heavy": {
+    "name": "Arbalète, lourde"
+  },
+  "Longbow": {
+    "name": "Arc"
+  },
+  "Net": {
+    "name": "Filet"
+  },
+  "Padded": {
+    "name": "Rembourré"
+  },
+  "Leather": {
+    "name": "Cuir"
+  },
+  "Studded Leather": {
+    "name": "Cuir clouté"
+  },
+  "Hide": {
+    "name": "Cacher"
+  },
+  "Chain Shirt": {
+    "name": "Chemise à chaîne"
+  },
+  "Scale Mail": {
+    "name": "Courrier à l'échelle"
+  },
+  "Breastplate": {
+    "name": "Pectoral"
+  },
+  "Half Plate": {
+    "name": "Demi-assiette"
+  },
+  "Ring Mail": {
+    "name": "Courrier en anneau"
+  },
+  "Chain Mail": {
+    "name": "Cotte de mailles"
+  },
+  "Splint": {
+    "name": "Éclisse"
+  },
+  "Plate": {
+    "name": "Plaque"
+  },
+  "Shield": {
+    "name": "Bouclier"
+  },
+  "Abacus": {
+    "name": "Abaque"
+  },
+  "Acid (vial)": {
+    "name": "Acide (flacon)"
+  },
+  "Alchemist's Fire": {
+    "name": "Feu de l'alchimiste"
+  },
+  "Arrows (20)": {
+    "name": "Flèches (20)"
+  },
+  "Blowgun Needles (50)": {
+    "name": "Aiguilles pour sarbacane (50)"
+  },
+  "Crossbow Bolts (20)": {
+    "name": "Carreaux d'arbalète (20)"
+  },
+  "Sling Bullets (20)": {
+    "name": "Balles de fronde (20)"
+  },
+  "Antitoxin (vial)": {
+    "name": "Antitoxine (flacon)"
+  },
+  "Backpack": {
+    "name": "Sac à dos"
+  },
+  "Ball Bearings (bag of 1000)": {
+    "name": "Roulements à billes (sachet de 1000)"
+  },
+  "Barrel": {
+    "name": "Baril"
+  },
+  "Basket": {
+    "name": "Panier"
+  },
+  "Bedroll": {
+    "name": "Sac de couchage"
+  },
+  "Bell": {
+    "name": "Cloche"
+  },
+  "Blanket": {
+    "name": "Couverture"
+  },
+  "Block and Tackle": {
+    "name": "Bloquer et tacler"
+  },
+  "Book": {
+    "name": "Livre"
+  },
+  "Bottle, glass": {
+    "name": "Bouteille, verre"
+  },
+  "Bucket": {
+    "name": "Seau"
+  },
+  "Caltrops (bag of 20)": {
+    "name": "Caltrops (sachet de 20)"
+  },
+  "Candle": {
+    "name": "Bougie"
+  },
+  "Case, crossbow bolt": {
+    "name": "Étui, carreau d'arbalète"
+  },
+  "Case, map or scroll": {
+    "name": "Cas, carte ou défilement"
+  },
+  "Chain (10 feet)": {
+    "name": "Chaîne (10 pieds)"
+  },
+  "Chalk (1 piece)": {
+    "name": "Craie (1 pièce)"
+  },
+  "Chest": {
+    "name": "Poitrine"
+  },
+  "Climber's Kit": {
+    "name": "Kit du grimpeur"
+  },
+  "Clothes, common": {
+    "name": "Vêtements communs"
+  },
+  "Clothes, costume": {
+    "name": "Vêtements, costumes"
+  },
+  "Clothes, fine": {
+    "name": "Des vêtements, bien"
+  },
+  "Clothes, traveler's": {
+    "name": "Vêtements de voyage"
+  },
+  "Component Pouch": {
+    "name": "Pochette de composants"
+  },
+  "Crowbar": {
+    "name": "Pied de biche"
+  },
+  "Druidic Focus": {
+    "name": "Concentration druidique"
+  },
+  "Flask or tankard": {
+    "name": "Flacon ou chope"
+  },
+  "Grappling Hook": {
+    "name": "Grappin"
+  },
+  "Hammer": {
+    "name": "Marteau"
+  },
+  "Hammer, sledge": {
+    "name": "Marteau, traîneau"
+  },
+  "Healer's Kit": {
+    "name": "Kit du guérisseur"
+  },
+  "Holy Symbol": {
+    "name": "Symbole sacré"
+  },
+  "Holy Water (flask)": {
+    "name": "Eau bénite (flacon)"
+  },
+  "Hourglass": {
+    "name": "Sablier"
+  },
+  "Hunting Trap": {
+    "name": "Piège de chasse"
+  },
+  "Ink (1 ounce bottle)": {
+    "name": "Encre (bouteille de 1 once)"
+  },
+  "Ink Pen": {
+    "name": "Stylo à encre"
+  },
+  "Jug or Pitcher": {
+    "name": "Cruche ou pichet"
+  },
+  "Ladder (10-foot)": {
+    "name": "Échelle (10 pieds)"
+  },
+  "Lamp": {
+    "name": "Lampe"
+  },
+  "Lantern, bullseye": {
+    "name": "Lanterne, cible"
+  },
+  "Lantern, hooded": {
+    "name": "Lanterne, à capuchon"
+  },
+  "Lock": {
+    "name": "Verrouillage"
+  },
+  "Magnifying Glass": {
+    "name": "Loupe"
+  },
+  "Manacles": {
+    "name": "Fers"
+  },
+  "Mess Kit": {
+    "name": "Trousse de mess"
+  },
+  "Mirror, steel": {
+    "name": "Miroir, acier"
+  },
+  "Oil (flask)": {
+    "name": "Huile (flacon)"
+  },
+  "Paper (one sheet)": {
+    "name": "Papier (une feuille)"
+  },
+  "Parchment (one sheet)": {
+    "name": "Parchemin (une feuille)"
+  },
+  "Perfume (vial)": {
+    "name": "Parfum (flacon)"
+  },
+  "Pick, miner's": {
+    "name": "Pioche, mineur"
+  },
+  "Piton": {
+    "name": "Piton"
+  },
+  "Poison, basic (vial)": {
+    "name": "Poison, basique (flacon)"
+  },
+  "Pole (10-foot)": {
+    "name": "Poteau (10 pieds)"
+  },
+  "Pot, iron": {
+    "name": "Casserole, fer"
+  },
+  "Pouch": {
+    "name": "Poche"
+  },
+  "Quiver": {
+    "name": "Frémir"
+  },
+  "Ram, portable": {
+    "name": "Bélier, portable"
+  },
+  "Rations (1 day)": {
+    "name": "Rations (1 jour)"
+  },
+  "Rope, hempen (50 feet)": {
+    "name": "Corde, chanvre (50 pieds)"
+  },
+  "Rope, silk (50 feet)": {
+    "name": "Corde, soie (50 pieds)"
+  },
+  "Sack": {
+    "name": "Sac"
+  },
+  "Scale, merchant's": {
+    "name": "Balance de marchand"
+  },
+  "Sealing Wax": {
+    "name": "Cire à cacheter"
+  },
+  "Shovel": {
+    "name": "Pelle"
+  },
+  "Signal Whistle": {
+    "name": "Sifflet de signalisation"
+  },
+  "Signet Ring": {
+    "name": "Chevalière"
+  },
+  "Soap": {
+    "name": "Savon"
+  },
+  "Spellbook": {
+    "name": "Livre de sorts"
+  },
+  "Spikes, iron (10)": {
+    "name": "Pointes, fer (10)"
+  },
+  "Spyglass": {
+    "name": "Longue-vue"
+  },
+  "Tent, two-person": {
+    "name": "Tente, deux personnes"
+  },
+  "Tinderbox": {
+    "name": "Poudrière"
+  },
+  "Torch": {
+    "name": "Torche"
+  },
+  "Vial": {
+    "name": "Ampoule"
+  },
+  "Waterskin": {
+    "name": "Outre"
+  },
+  "Whetstone": {
+    "name": "Pierre à aiguiser"
+  }
+}

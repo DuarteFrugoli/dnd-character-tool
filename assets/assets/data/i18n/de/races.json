@@ -1,0 +1,137 @@
+{
+  "Dwarf": {
+    "name": "Zwerg",
+    "languages": [
+      "Gemeinsam",
+      "Zwergisch"
+    ],
+    "subraces": [
+      {
+        "name": "Hügelzwerg"
+      },
+      {
+        "name": "Bergzwerg"
+      }
+    ]
+  },
+  "Elf": {
+    "name": "Elf",
+    "languages": [
+      "Gemeinsam",
+      "Elbisch"
+    ],
+    "subraces": [
+      {
+        "name": "Hochelf"
+      },
+      {
+        "name": "Waldelf"
+      },
+      {
+        "name": "Dunkelelf (Drow)"
+      }
+    ]
+  },
+  "Halfling": {
+    "name": "Halbling",
+    "languages": [
+      "Gemeinsam",
+      "Halbling"
+    ],
+    "subraces": [
+      {
+        "name": "Leichtfuß"
+      },
+      {
+        "name": "Stout"
+      }
+    ]
+  },
+  "Human": {
+    "name": "Menschlich",
+    "languages": [
+      "Gemeinsam",
+      "ein Extra Ihrer Wahl"
+    ],
+    "subraces": []
+  },
+  "Dragonborn": {
+    "name": "Drachengeborenes",
+    "languages": [
+      "Gemeinsam",
+      "Drakonisch"
+    ],
+    "subraces": [
+      {
+        "name": "Schwarz (Säure)"
+      },
+      {
+        "name": "Blau (Blitz)"
+      },
+      {
+        "name": "Messing (Feuer)"
+      },
+      {
+        "name": "Bronze (Blitz)"
+      },
+      {
+        "name": "Kupfer (Säure)"
+      },
+      {
+        "name": "Gold (Feuer)"
+      },
+      {
+        "name": "Grün (Gift)"
+      },
+      {
+        "name": "Rot (Feuer)"
+      },
+      {
+        "name": "Silber (kalt)"
+      },
+      {
+        "name": "Weiß (kalt)"
+      }
+    ]
+  },
+  "Gnome": {
+    "name": "Gnom",
+    "languages": [
+      "Gemeinsam",
+      "Gnomisch"
+    ],
+    "subraces": [
+      {
+        "name": "Waldzwerg"
+      },
+      {
+        "name": "Felszwerg"
+      }
+    ]
+  },
+  "Half-Elf": {
+    "name": "Halbelf",
+    "languages": [
+      "Gemeinsam",
+      "Elbisch",
+      "ein Extra Ihrer Wahl"
+    ],
+    "subraces": []
+  },
+  "Half-Orc": {
+    "name": "Halb-Ork",
+    "languages": [
+      "Gemeinsam",
+      "Ork"
+    ],
+    "subraces": []
+  },
+  "Tiefling": {
+    "name": "Tiefling",
+    "languages": [
+      "Gemeinsam",
+      "Höllisch"
+    ],
+    "subraces": []
+  }
+}

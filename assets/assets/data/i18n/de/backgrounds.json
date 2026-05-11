@@ -1,0 +1,181 @@
+{
+  "Acolyte": {
+    "name": "Akolyth",
+    "startingEquipment": [
+      "Heiliges Symbol",
+      "Gebetbuch oder Gebetsmühle",
+      "5 Räucherstäbchen",
+      "Gewänder",
+      "Gemeinsame Kleidung",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Zufluchtsort der Gläubigen",
+      "description": "Sie und Ihre Begleiter können in den Tempeln Ihres Glaubens kostenlose Heilung und Pflege erhalten und Priester um Hilfe bitten."
+    }
+  },
+  "Charlatan": {
+    "name": "Scharlatan",
+    "startingEquipment": [
+      "Feine Kleidung",
+      "Verkleidungsset",
+      "Werkzeuge der Con Ihrer Wahl",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Falsche Identität",
+      "description": "Sie haben eine zweite Identität geschaffen, einschließlich Dokumentation, etablierter Bekanntschaften und Verkleidungen."
+    }
+  },
+  "Criminal": {
+    "name": "Kriminell",
+    "startingEquipment": [
+      "Brecheisen",
+      "Dunkle Alltagskleidung mit Kapuze",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Krimineller Kontakt",
+      "description": "Sie haben einen zuverlässigen Ansprechpartner, der als Vermittler zu einem Netzwerk von Kriminellen fungiert."
+    }
+  },
+  "Entertainer": {
+    "name": "Entertainer",
+    "startingEquipment": [
+      "Musikinstrument",
+      "Die Gunst eines Bewunderers",
+      "Kostüm",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Auf vielfachen Wunsch",
+      "description": "Sie können immer einen Ort finden, an dem Sie auftreten können, und erhalten kostenlose Unterkunft und Verpflegung von bescheidener Qualität."
+    }
+  },
+  "Folk Hero": {
+    "name": "Volksheld",
+    "startingEquipment": [
+      "Handwerkerwerkzeuge",
+      "Schaufel",
+      "Eisentopf",
+      "Gemeinsame Kleidung",
+      "10 GM"
+    ],
+    "feature": {
+      "name": "Rustikale Gastfreundschaft",
+      "description": "Das einfache Volk wird dir und deinen Gefährten Schutz bieten, dich verstecken und dich nicht verraten."
+    }
+  },
+  "Guild Artisan": {
+    "name": "Gildenhandwerker",
+    "startingEquipment": [
+      "Handwerkerwerkzeuge",
+      "Vorstellungsschreiben Ihrer Gilde",
+      "Kleidung eines Reisenden",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Gildenmitgliedschaft",
+      "description": "Ihre Gilde bietet Unterkunft, Rechtsbeistand und Beistand – und erwartet im Gegenzug Beiträge und Loyalität."
+    }
+  },
+  "Hermit": {
+    "name": "Einsiedler",
+    "startingEquipment": [
+      "Schriftrollenetui mit Notizen",
+      "Winterdecke",
+      "Gemeinsame Kleidung",
+      "Kräuterkunde-Set",
+      "5 GM"
+    ],
+    "feature": {
+      "name": "Entdeckung",
+      "description": "Ihre Einsamkeit brachte eine einzigartige Entdeckung hervor – eine große Wahrheit, ein Geheimnis oder einen verborgenen Ort."
+    }
+  },
+  "Noble": {
+    "name": "Edel",
+    "startingEquipment": [
+      "Feine Kleidung",
+      "Siegelring",
+      "Stammbaumrolle",
+      "25 GM"
+    ],
+    "feature": {
+      "name": "Privilegierte Position",
+      "description": "Die Leute gehen davon aus, dass Sie das Beste sind. Sie sind in der High Society willkommen und können sich eine Audienz bei einem örtlichen Adligen sichern."
+    }
+  },
+  "Outlander": {
+    "name": "Outlander",
+    "startingEquipment": [
+      "Personal",
+      "Jagdfalle",
+      "Trophäe von einem Tier",
+      "Kleidung eines Reisenden",
+      "10 GM"
+    ],
+    "feature": {
+      "name": "Wanderer",
+      "description": "Sie können täglich Nahrung und frisches Wasser für sich und bis zu fünf andere finden und sich die allgemeine Beschaffenheit des Geländes merken."
+    }
+  },
+  "Sage": {
+    "name": "Salbei",
+    "startingEquipment": [
+      "Flasche schwarze Tinte",
+      "Feder",
+      "Kleines Messer",
+      "Brief eines toten Kollegen",
+      "Gemeinsame Kleidung",
+      "10 GM"
+    ],
+    "feature": {
+      "name": "Forscher",
+      "description": "Sie wissen, wo Sie obskure Informationen finden. Wenn Sie es nicht wissen, wissen Sie, wer es weiß."
+    }
+  },
+  "Sailor": {
+    "name": "Seemann",
+    "startingEquipment": [
+      "Sicherungsstift (Schläger)",
+      "50 Fuß Seidenseil",
+      "Glücksbringer",
+      "Gemeinsame Kleidung",
+      "10 GM"
+    ],
+    "feature": {
+      "name": "Schiffspassage",
+      "description": "Gegen Arbeitskraft können Sie sich und Ihren Begleitern die freie Durchfahrt auf Segelschiffen sichern."
+    }
+  },
+  "Soldier": {
+    "name": "Soldat",
+    "startingEquipment": [
+      "Rangabzeichen",
+      "Trophäe eines gefallenen Feindes",
+      "Karten- oder Würfelspiel",
+      "Gemeinsame Kleidung",
+      "10 GM"
+    ],
+    "feature": {
+      "name": "Militärischer Rang",
+      "description": "Soldaten, die Ihrer ehemaligen Fraktion treu ergeben sind, erkennen Ihren Rang an. Sie können sich auf Ihren Rang berufen, um Einfluss und Zugang zu Militärlagern zu erhalten."
+    }
+  },
+  "Urchin": {
+    "name": "Urchin",
+    "startingEquipment": [
+      "Kleines Messer",
+      "Karte Ihrer Heimatstadt",
+      "Haustiermaus",
+      "Token von deinen Eltern",
+      "Gemeinsame Kleidung",
+      "10 GM"
+    ],
+    "feature": {
+      "name": "Stadtgeheimnisse",
+      "description": "Sie kennen die geheimen Muster von Städten und können doppelt so schnell Passagen durch städtische Gebiete finden wie normal."
+    }
+  }
+}

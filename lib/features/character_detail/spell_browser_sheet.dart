@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/datasources/srd/srd_data_source.dart';
+import '../../data/datasources/srd/srd_i18n_service.dart';
+import '../../shared/providers/providers.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/spell.dart';
 
@@ -848,7 +851,7 @@ class _SpellBrowserTile extends StatelessWidget {
 // ── Spell Detail Sheet ────────────────────────────────────────────────────────
 
 /// Shows full spell info. Opened from the browser or directly from a spell row.
-class SpellDetailSheet extends StatelessWidget {
+class SpellDetailSheet extends ConsumerWidget {
   const SpellDetailSheet({
     super.key,
     required this.spell,
@@ -920,7 +923,8 @@ class SpellDetailSheet extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
 
     return DraggableScrollableSheet(
@@ -948,7 +952,7 @@ class SpellDetailSheet extends StatelessWidget {
           ),
 
           // ── Name ─────────────────────────────────────────────────────────
-          Text(spell.name,
+          Text(i18n.spellName(spell.name),
               style: Theme.of(context).textTheme.headlineSmall),
           const SizedBox(height: 4),
 
@@ -1009,7 +1013,7 @@ class SpellDetailSheet extends StatelessWidget {
 
           // ── Description ───────────────────────────────────────────────────
           Text(
-            spell.description,
+            i18n.spellDescription(spell.name) ?? spell.description,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
 
@@ -1027,7 +1031,7 @@ class SpellDetailSheet extends StatelessWidget {
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   TextSpan(
-                    text: spell.higherLevels!,
+                    text: i18n.spellHigherLevels(spell.name) ?? spell.higherLevels!,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],

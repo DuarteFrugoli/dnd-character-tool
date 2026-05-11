@@ -138,6 +138,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
               if (data.subclassFeatures.isNotEmpty) ...[
                 const SizedBox(height: 24),
                 _SubclassFeaturesSection(
+                  className: widget.character.characterClass,
                   subclassName: data.subclassName,
                   features: data.subclassFeatures,
                   isEditing: isEditing,
@@ -222,7 +223,7 @@ class _FeatureToggleButton extends StatelessWidget {
   }
 }
 
-class _RacialTraitsSection extends StatelessWidget {
+class _RacialTraitsSection extends ConsumerWidget {
   const _RacialTraitsSection({
     required this.raceName,
     required this.subraceName,
@@ -244,7 +245,8 @@ class _RacialTraitsSection extends StatelessWidget {
   final void Function(String) onToggle;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     final allTraits = [...raceTraits, ...subraceTraits];
     if (allTraits.isEmpty) return const SizedBox.shrink();
@@ -275,7 +277,7 @@ class _RacialTraitsSection extends StatelessWidget {
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 title: Text(
-                  trait,
+                  i18n.raceTraitName(trait) ?? trait,
                   style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
                 trailing: isEditing
@@ -300,7 +302,7 @@ class _RacialTraitsSection extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        trait,
+                        i18n.raceTraitName(trait) ?? trait,
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -316,7 +318,7 @@ class _RacialTraitsSection extends StatelessWidget {
                 ),
                 children: [
                   Text(
-                    desc,
+                    i18n.raceTraitDescription(trait) ?? desc,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: scheme.onSurfaceVariant,
                           height: 1.5,
@@ -333,7 +335,7 @@ class _RacialTraitsSection extends StatelessWidget {
   }
 }
 
-class _BackgroundFeatureSection extends StatelessWidget {
+class _BackgroundFeatureSection extends ConsumerWidget {
   const _BackgroundFeatureSection({
     required this.backgroundName,
     required this.featureName,
@@ -351,7 +353,8 @@ class _BackgroundFeatureSection extends StatelessWidget {
   final void Function(String) onToggle;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final isDisabled = disabledFeatures.contains(featureName);
     final card = Card(
       child: ExpansionTile(
@@ -359,7 +362,7 @@ class _BackgroundFeatureSection extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                featureName,
+                i18n.backgroundFeatureName(backgroundName) ?? featureName,
                 style: const TextStyle(fontWeight: FontWeight.w600),
               ),
             ),
@@ -377,7 +380,7 @@ class _BackgroundFeatureSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
             child: Text(
-              featureDescription,
+              i18n.backgroundFeatureDescription(backgroundName) ?? featureDescription,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
@@ -543,7 +546,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
   }
 }
 
-class _ClassFeaturesSection extends StatelessWidget {
+class _ClassFeaturesSection extends ConsumerWidget {
   const _ClassFeaturesSection({
     required this.className,
     required this.features,
@@ -588,7 +591,8 @@ class _ClassFeaturesSection extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
 
     if (features.isEmpty) {
@@ -629,7 +633,7 @@ class _ClassFeaturesSection extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      f.name,
+                      i18n.classFeatureName(className, f.name) ?? f.name,
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -675,7 +679,7 @@ class _ClassFeaturesSection extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
-                    f.description,
+                    i18n.classFeatureDescription(className, f.name) ?? f.description,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
@@ -691,8 +695,9 @@ class _ClassFeaturesSection extends StatelessWidget {
 
 // ── Subclass Features Section ─────────────────────────────────────────────────
 
-class _SubclassFeaturesSection extends StatelessWidget {
+class _SubclassFeaturesSection extends ConsumerWidget {
   const _SubclassFeaturesSection({
+    required this.className,
     required this.subclassName,
     required this.features,
     required this.isEditing,
@@ -700,6 +705,7 @@ class _SubclassFeaturesSection extends StatelessWidget {
     required this.onToggle,
   });
 
+  final String className;
   final String subclassName;
   final List<SrdClassFeature> features;
   final bool isEditing;
@@ -707,7 +713,8 @@ class _SubclassFeaturesSection extends StatelessWidget {
   final void Function(String) onToggle;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -731,7 +738,7 @@ class _SubclassFeaturesSection extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      f.name,
+                      i18n.subclassFeatureName(className, subclassName, f.name) ?? f.name,
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -763,7 +770,7 @@ class _SubclassFeaturesSection extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
-                    f.description,
+                    i18n.subclassFeatureDescription(className, subclassName, f.name) ?? f.description,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),

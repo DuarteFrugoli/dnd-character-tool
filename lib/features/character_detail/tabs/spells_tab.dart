@@ -607,7 +607,7 @@ class _SpellLevelHeader extends StatelessWidget {
 
 // ── Spell Row ─────────────────────────────────────────────────────────────────
 
-class _SpellRow extends StatelessWidget {
+class _SpellRow extends ConsumerWidget {
   const _SpellRow({
     required this.spell,
     required this.srdSpell,
@@ -668,7 +668,8 @@ class _SpellRow extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     final srd = srdSpell;
     final isPrepared = spell.isPrepared || spell.isAlwaysPrepared;
@@ -708,7 +709,7 @@ class _SpellRow extends StatelessWidget {
               // Name
               Expanded(
                 child: Text(
-                  spell.name,
+                  i18n.spellName(spell.name),
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.w500,
                         color: dimmed ? scheme.onSurfaceVariant : null,
@@ -850,7 +851,7 @@ class _SmallBadge extends StatelessWidget {
 
 // ── Innate Spell Row ──────────────────────────────────────────────────────────
 
-class _InnateSpellRow extends StatelessWidget {
+class _InnateSpellRow extends ConsumerWidget {
   const _InnateSpellRow({
     required this.spell,
     required this.onUse,
@@ -862,7 +863,8 @@ class _InnateSpellRow extends StatelessWidget {
   final VoidCallback? onTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     return InkWell(
       onTap: onTap,
@@ -875,7 +877,7 @@ class _InnateSpellRow extends StatelessWidget {
             const SizedBox(width: 12),
             Expanded(
               child: Text(
-                spell.name,
+                i18n.spellName(spell.name),
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),

@@ -42,6 +42,7 @@ class _SkillsTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     final profSet =
         character.skillProficiencies.map((s) => s.toLowerCase()).toSet();
@@ -100,7 +101,7 @@ class _SkillsTab extends ConsumerWidget {
                   size: 16,
                   color: isProf ? scheme.primary : scheme.outlineVariant,
                 ),
-                title: Text(skillName),
+                title: Text(i18n.skillName(skillName)),
                 subtitle: Text(
                   ability.substring(0, 3).toUpperCase(),
                   style: Theme.of(context).textTheme.labelSmall,

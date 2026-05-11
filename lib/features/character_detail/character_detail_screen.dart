@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
 import '../../data/datasources/srd/srd_data_source.dart';
+import '../../data/datasources/srd/srd_i18n_service.dart';
 import 'spell_browser_sheet.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';

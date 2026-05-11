@@ -10,7 +10,9 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import 'character_list_provider.dart';
+import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/models/models.dart';
+import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_avatar.dart';
 
 class CharacterListScreen extends ConsumerWidget {
@@ -206,6 +208,7 @@ class _CharacterCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     Future<void> exportCharacter() async {
       final json =
           await ref.read(characterListProvider.notifier).exportCharacter(character);
@@ -253,7 +256,7 @@ class _CharacterCard extends ConsumerWidget {
         ),
         title: Text(character.name),
         subtitle: Text(
-          '${character.race} · ${character.characterClass} · ${l10n.charCardLevel(character.level)}',
+          '${i18n.raceName(character.race)} · ${i18n.className(character.characterClass)} · ${l10n.charCardLevel(character.level)}',
         ),
         trailing: PopupMenuButton<String>(
           onSelected: (value) async {

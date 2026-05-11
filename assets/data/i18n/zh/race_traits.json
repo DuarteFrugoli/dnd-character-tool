@@ -1,0 +1,154 @@
+{
+  "Darkvision": {
+    "name": "黑暗视觉",
+    "description": "习惯了地下生活，您在黑暗和昏暗的条件下拥有出色的视力。在 60 英尺范围内的昏暗光线中，您可以看到如同明亮的光一样的东西，而在黑暗中，就好像它是昏暗的光一样的东西。在黑暗中你无法辨别颜色，只能辨别灰色阴影。"
+  },
+  "Superior Darkvision": {
+    "name": "高级暗视觉",
+    "description": "你的黑暗视觉半径为 120 英尺。"
+  },
+  "Dwarven Resilience": {
+    "name": "矮人的韧性",
+    "description": "你在对抗毒药的豁免检定上有优势，并且对毒药伤害有抵抗力。"
+  },
+  "Dwarven Combat Training": {
+    "name": "矮人战斗训练",
+    "description": "你精通战斧、手斧、轻锤和战锤。"
+  },
+  "Stonecunning": {
+    "name": "斯通狡猾",
+    "description": "每当你进行与石制品起源相关的智力（历史）检定时，你就被认为精通历史技能，并将双倍的熟练加值添加到检定中。"
+  },
+  "Tool Proficiency": {
+    "name": "工具熟练程度",
+    "description": "你可以熟练使用你选择的工匠工具：铁匠工具、酿酒师工具或泥瓦匠工具。"
+  },
+  "Dwarven Toughness": {
+    "name": "矮人韧性",
+    "description": "你的最大生命值增加 1，并且每升一级，生命值就会增加 1。"
+  },
+  "Dwarven Armor Training": {
+    "name": "矮人盔甲训练",
+    "description": "你精通轻型和中型装甲。"
+  },
+  "Keen Senses": {
+    "name": "敏锐的感官",
+    "description": "您精通感知技能。"
+  },
+  "Fey Ancestry": {
+    "name": "妖类血统",
+    "description": "你在对抗魅惑的豁免检定上有优势，而且魔法不能让你入睡。"
+  },
+  "Trance": {
+    "name": "发呆",
+    "description": "精灵不需要睡觉。相反，他们每天保持半昏迷状态进行深度冥想 4 小时。冥想时，你可以追随时尚的梦想；这样的梦实际上是经过多年练习而成为反射性的心理练习。以这种方式休息后，您将获得与人类 8 小时睡眠相同的益处。"
+  },
+  "Elf Weapon Training": {
+    "name": "精灵武器训练",
+    "description": "你精通长剑、短剑、短弓和长弓。"
+  },
+  "Cantrip": {
+    "name": "恶作剧",
+    "description": "你知道巫师咒语列表中你选择的一种戏法。智力是你的施法能力。"
+  },
+  "Extra Language": {
+    "name": "额外语言",
+    "description": "您可以说、读、写您选择的一种额外语言。"
+  },
+  "Fleet of Foot": {
+    "name": "快速脚步",
+    "description": "您的基本步行速度增加至 35 英尺。"
+  },
+  "Mask of the Wild": {
+    "name": "狂野面具",
+    "description": "即使您只是被树叶、大雨、落雪、薄雾和其他自然现象轻微遮挡，您也可以尝试隐藏。"
+  },
+  "Sunlight Sensitivity": {
+    "name": "阳光敏感度",
+    "description": "当你、你的攻击目标或你试图感知的任何东西处于阳光直射下时，你在攻击检定和感知（感知）检查上处于劣势，这些检查依赖于视觉。"
+  },
+  "Drow Magic": {
+    "name": "卓尔魔法",
+    "description": "你知道舞动的灯光戏法。当你达到第3级时，你每天可以施展一次精灵之火法术。当你达到5级时，你还可以每天施展一次黑暗法术。魅力是你施展这些法术的能力。"
+  },
+  "Drow Weapon Training": {
+    "name": "卓尔武器训练",
+    "description": "你精通细剑、短剑和手弩。"
+  },
+  "Lucky": {
+    "name": "幸运的",
+    "description": "当你在 d20 上掷出 1 进行攻击检定、能力检定或豁免检定时，你可以重新掷骰子并且必须使用新的掷骰。"
+  },
+  "Brave": {
+    "name": "勇敢的",
+    "description": "你在对抗恐惧的豁免检定方面具有优势。"
+  },
+  "Halfling Nimbleness": {
+    "name": "半身人敏捷",
+    "description": "你可以在任何体型比你大的生物的空间中移动。"
+  },
+  "Naturally Stealthy": {
+    "name": "天生隐秘",
+    "description": "即使您只被比您大至少一倍的生物遮挡，您也可以尝试隐藏。"
+  },
+  "Stout Resilience": {
+    "name": "坚韧的韧性",
+    "description": "你在对抗毒药的豁免检定上有优势，并且对毒药伤害有抵抗力。"
+  },
+  "Draconic Ancestry": {
+    "name": "龙族血统",
+    "description": "你拥有来自特定龙类的龙类传承。从龙族血统表中选择一种龙。你的喷吐武器和伤害抗性取决于所选的龙类型。"
+  },
+  "Breath Weapon": {
+    "name": "呼吸武器",
+    "description": "你可以用你的行动呼出破坏性的能量。它的大小、形状和伤害类型由你的龙类血统决定。当你使用喷吐武器时，喷吐区域内的每个生物都必须进行一次豁免检定（DC = 8 + 你的体质调整值 + 你的熟练加值）。如果豁免失败，该生物会受到 2d6 点伤害。成功豁免后，伤害会减半。每次短暂或长时间休息时，你可以使用一次喷吐武器。"
+  },
+  "Damage Resistance": {
+    "name": "抗损坏性",
+    "description": "你对与你的龙类血统相关的伤害类型有抵抗力。"
+  },
+  "Gnome Cunning": {
+    "name": "狡猾的侏儒",
+    "description": "你在对抗魔法的所有智力、感知和魅力豁免检定上都具有优势。"
+  },
+  "Natural Illusionist": {
+    "name": "自然魔术师",
+    "description": "你知道小幻象戏法。智力是你的施法能力。"
+  },
+  "Speak with Small Beasts": {
+    "name": "与小野兽交谈",
+    "description": "通过声音和手势，您可以与小型或更小的动物交流简单的想法。森林侏儒热爱动物，经常饲养松鼠、獾、兔子、鼹鼠、啄木鸟和其他生物作为心爱的宠物。"
+  },
+  "Artificer's Lore": {
+    "name": "技师的传说",
+    "description": "每当你进行与魔法物品、炼金物品或技术设备相关的智力（历史）检定时，你可以添加两倍的熟练加值，而不是你通常应用的任何熟练加值。"
+  },
+  "Tinker": {
+    "name": "修补匠",
+    "description": "你熟练使用工匠工具（修补匠工具）。使用这些工具，您可以花费 1 小时和 10 gp 的材料来构建一个微型发条装置（AC 5，1 hp）。除非您花 1 小时进行维修，否则设备将在 24 小时后停止运行。您一次最多可以激活三个此类设备。"
+  },
+  "Skill Versatility": {
+    "name": "技能多样性",
+    "description": "您可以熟练掌握您选择的两项技能。"
+  },
+  "Menacing": {
+    "name": "来势汹汹",
+    "description": "你获得了恐吓技能的熟练程度。"
+  },
+  "Relentless Endurance": {
+    "name": "不懈的耐力",
+    "description": "当你的生命值降低到 0 但没有被彻底杀死时，你可以将生命值降低到 1。在完成长时间休息之前，您无法再次使用此功能。"
+  },
+  "Savage Attacks": {
+    "name": "野蛮攻击",
+    "description": "当你通过近战武器攻击获得致命一击时，你可以再掷一次该武器的伤害骰子，并将其添加到致命一击的额外伤害中。"
+  },
+  "Hellish Resistance": {
+    "name": "地狱抵抗",
+    "description": "你对火焰伤害有抵抗力。"
+  },
+  "Infernal Legacy": {
+    "name": "地狱遗产",
+    "description": "你知道奇术戏法。当你达到第3级时，你可以使用此特性将地狱斥责法术作为2级法术施展一次，并在你完成长时间休息后重新获得这样做的能力。当你达到5级时，你可以用这个特质施放一次黑暗法术，并在你完成长时间休息后恢复这样做的能力。魅力是你施展这些法术的能力。"
+  }
+}

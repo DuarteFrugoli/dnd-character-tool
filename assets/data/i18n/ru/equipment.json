@@ -1,0 +1,410 @@
+{
+  "Club": {
+    "name": "Клуб"
+  },
+  "Dagger": {
+    "name": "Кинжал"
+  },
+  "Greatclub": {
+    "name": "Отличный клуб"
+  },
+  "Handaxe": {
+    "name": "Ручной топор"
+  },
+  "Javelin": {
+    "name": "Копье"
+  },
+  "Light Hammer": {
+    "name": "Легкий молот"
+  },
+  "Mace": {
+    "name": "Мейс"
+  },
+  "Quarterstaff": {
+    "name": "Посох"
+  },
+  "Sickle": {
+    "name": "Серп"
+  },
+  "Spear": {
+    "name": "Копье"
+  },
+  "Crossbow, Light": {
+    "name": "Арбалет, Свет"
+  },
+  "Dart": {
+    "name": "Дарт"
+  },
+  "Shortbow": {
+    "name": "Короткий лук"
+  },
+  "Sling": {
+    "name": "Слинг"
+  },
+  "Battleaxe": {
+    "name": "Боевой топор"
+  },
+  "Flail": {
+    "name": "Цеп"
+  },
+  "Glaive": {
+    "name": "Глефа"
+  },
+  "Greataxe": {
+    "name": "Большой топор"
+  },
+  "Greatsword": {
+    "name": "Большой меч"
+  },
+  "Halberd": {
+    "name": "Алебарда"
+  },
+  "Lance": {
+    "name": "Лэнс"
+  },
+  "Longsword": {
+    "name": "Длинный меч"
+  },
+  "Maul": {
+    "name": "Мол"
+  },
+  "Morningstar": {
+    "name": "Морнингстар"
+  },
+  "Pike": {
+    "name": "Щука"
+  },
+  "Rapier": {
+    "name": "Рапира"
+  },
+  "Scimitar": {
+    "name": "Ятаган"
+  },
+  "Shortsword": {
+    "name": "Короткий меч"
+  },
+  "Trident": {
+    "name": "Трезубец"
+  },
+  "War Pick": {
+    "name": "Военный выбор"
+  },
+  "Warhammer": {
+    "name": "Вархаммер"
+  },
+  "Whip": {
+    "name": "Хлыст"
+  },
+  "Blowgun": {
+    "name": "духовой пистолет"
+  },
+  "Crossbow, Hand": {
+    "name": "Арбалет, Рука"
+  },
+  "Crossbow, Heavy": {
+    "name": "Арбалет, Тяжелый"
+  },
+  "Longbow": {
+    "name": "Длинный лук"
+  },
+  "Net": {
+    "name": "Сеть"
+  },
+  "Padded": {
+    "name": "Мягкий"
+  },
+  "Leather": {
+    "name": "Кожа"
+  },
+  "Studded Leather": {
+    "name": "Кожа с шипами"
+  },
+  "Hide": {
+    "name": "Скрывать"
+  },
+  "Chain Shirt": {
+    "name": "Кольчужная рубашка"
+  },
+  "Scale Mail": {
+    "name": "Масштабная кольчуга"
+  },
+  "Breastplate": {
+    "name": "Кираса"
+  },
+  "Half Plate": {
+    "name": "Половина пластины"
+  },
+  "Ring Mail": {
+    "name": "Кольцевая почта"
+  },
+  "Chain Mail": {
+    "name": "Кольчуга"
+  },
+  "Splint": {
+    "name": "шина"
+  },
+  "Plate": {
+    "name": "Тарелка"
+  },
+  "Shield": {
+    "name": "Щит"
+  },
+  "Abacus": {
+    "name": "Счеты"
+  },
+  "Acid (vial)": {
+    "name": "Кислота (флакон)"
+  },
+  "Alchemist's Fire": {
+    "name": "Алхимический огонь"
+  },
+  "Arrows (20)": {
+    "name": "Стрелы (20)"
+  },
+  "Blowgun Needles (50)": {
+    "name": "Иглы для духовки (50)"
+  },
+  "Crossbow Bolts (20)": {
+    "name": "Арбалетные болты (20)"
+  },
+  "Sling Bullets (20)": {
+    "name": "Пули для ремня (20)"
+  },
+  "Antitoxin (vial)": {
+    "name": "Антитоксин (флакон)"
+  },
+  "Backpack": {
+    "name": "Рюкзак"
+  },
+  "Ball Bearings (bag of 1000)": {
+    "name": "Шарикоподшипники (упаковка 1000 шт.)"
+  },
+  "Barrel": {
+    "name": "Бочка"
+  },
+  "Basket": {
+    "name": "Корзина"
+  },
+  "Bedroll": {
+    "name": "Спальное место"
+  },
+  "Bell": {
+    "name": "Белл"
+  },
+  "Blanket": {
+    "name": "Одеяло"
+  },
+  "Block and Tackle": {
+    "name": "Блок и отбор"
+  },
+  "Book": {
+    "name": "Книга"
+  },
+  "Bottle, glass": {
+    "name": "Бутылка, стекло"
+  },
+  "Bucket": {
+    "name": "Ведро"
+  },
+  "Caltrops (bag of 20)": {
+    "name": "Кальтропы (20 шт. в упаковке)"
+  },
+  "Candle": {
+    "name": "Свеча"
+  },
+  "Case, crossbow bolt": {
+    "name": "Кейс, арбалетный болт"
+  },
+  "Case, map or scroll": {
+    "name": "Чехол, карта или свиток"
+  },
+  "Chain (10 feet)": {
+    "name": "Цепь (10 футов)"
+  },
+  "Chalk (1 piece)": {
+    "name": "Мел (1 шт.)"
+  },
+  "Chest": {
+    "name": "Грудь"
+  },
+  "Climber's Kit": {
+    "name": "Комплект альпиниста"
+  },
+  "Clothes, common": {
+    "name": "Одежда общая"
+  },
+  "Clothes, costume": {
+    "name": "Одежда, костюм"
+  },
+  "Clothes, fine": {
+    "name": "Одежда, хорошо"
+  },
+  "Clothes, traveler's": {
+    "name": "Одежда туристическая"
+  },
+  "Component Pouch": {
+    "name": "Сумка для компонентов"
+  },
+  "Crowbar": {
+    "name": "Лом"
+  },
+  "Druidic Focus": {
+    "name": "Друидический фокус"
+  },
+  "Flask or tankard": {
+    "name": "Колба или кружка"
+  },
+  "Grappling Hook": {
+    "name": "Абордажный крюк"
+  },
+  "Hammer": {
+    "name": "Молоток"
+  },
+  "Hammer, sledge": {
+    "name": "Молот, сани"
+  },
+  "Healer's Kit": {
+    "name": "Набор Целителя"
+  },
+  "Holy Symbol": {
+    "name": "Священный символ"
+  },
+  "Holy Water (flask)": {
+    "name": "Святая вода (фляга)"
+  },
+  "Hourglass": {
+    "name": "Песочные часы"
+  },
+  "Hunting Trap": {
+    "name": "Охотничья ловушка"
+  },
+  "Ink (1 ounce bottle)": {
+    "name": "Чернила (бутылка на 1 унцию)"
+  },
+  "Ink Pen": {
+    "name": "Чернильная ручка"
+  },
+  "Jug or Pitcher": {
+    "name": "Кувшин или кувшин"
+  },
+  "Ladder (10-foot)": {
+    "name": "Лестница (10 футов)"
+  },
+  "Lamp": {
+    "name": "Лампа"
+  },
+  "Lantern, bullseye": {
+    "name": "Фонарь, яблочко"
+  },
+  "Lantern, hooded": {
+    "name": "Фонарь с капюшоном"
+  },
+  "Lock": {
+    "name": "Замок"
+  },
+  "Magnifying Glass": {
+    "name": "Увеличительное стекло"
+  },
+  "Manacles": {
+    "name": "Наручники"
+  },
+  "Mess Kit": {
+    "name": "Беспорядок"
+  },
+  "Mirror, steel": {
+    "name": "Зеркало, сталь"
+  },
+  "Oil (flask)": {
+    "name": "Масло (колба)"
+  },
+  "Paper (one sheet)": {
+    "name": "Бумага (один лист)"
+  },
+  "Parchment (one sheet)": {
+    "name": "Пергамент (один лист)"
+  },
+  "Perfume (vial)": {
+    "name": "Духи (флакон)"
+  },
+  "Pick, miner's": {
+    "name": "Пик, шахтер"
+  },
+  "Piton": {
+    "name": "Питон"
+  },
+  "Poison, basic (vial)": {
+    "name": "Яд, обычный (флакон)"
+  },
+  "Pole (10-foot)": {
+    "name": "Полюс (10 футов)"
+  },
+  "Pot, iron": {
+    "name": "Кастрюля, утюг"
+  },
+  "Pouch": {
+    "name": "Мешочек"
+  },
+  "Quiver": {
+    "name": "Колчан"
+  },
+  "Ram, portable": {
+    "name": "Рам, портативный"
+  },
+  "Rations (1 day)": {
+    "name": "Рационы (1 день)"
+  },
+  "Rope, hempen (50 feet)": {
+    "name": "Веревка, пеньковая (50 футов)"
+  },
+  "Rope, silk (50 feet)": {
+    "name": "Веревка, шелк (50 футов)"
+  },
+  "Sack": {
+    "name": "Мешок"
+  },
+  "Scale, merchant's": {
+    "name": "Весы торговые"
+  },
+  "Sealing Wax": {
+    "name": "Сургуч"
+  },
+  "Shovel": {
+    "name": "Лопата"
+  },
+  "Signal Whistle": {
+    "name": "Сигнальный свисток"
+  },
+  "Signet Ring": {
+    "name": "Кольцо-печатка"
+  },
+  "Soap": {
+    "name": "Мыло"
+  },
+  "Spellbook": {
+    "name": "Книга заклинаний"
+  },
+  "Spikes, iron (10)": {
+    "name": "Шипы железные (10)"
+  },
+  "Spyglass": {
+    "name": "Подзорная труба"
+  },
+  "Tent, two-person": {
+    "name": "Палатка двухместная"
+  },
+  "Tinderbox": {
+    "name": "Трутница"
+  },
+  "Torch": {
+    "name": "Факел"
+  },
+  "Vial": {
+    "name": "флакон"
+  },
+  "Waterskin": {
+    "name": "Бурдюк для воды"
+  },
+  "Whetstone": {
+    "name": "точильный камень"
+  }
+}

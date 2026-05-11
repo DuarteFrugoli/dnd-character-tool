@@ -1,0 +1,186 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "광전사의 길",
+      "description": "분노를 맹렬한 분노로 바꿔보세요. 분노하면 광란에 빠질 수 있습니다. 매 턴마다 보너스 행동으로 추가 근접 공격을 가하지만 나중에는 탈진하게 됩니다."
+    },
+    "Path of the Totem Warrior": {
+      "name": "토템 전사의 길",
+      "description": "동물의 정령을 가이드로 삼아 마법의 힘을 얻으세요. Bear(모든 피해에 대한 저항), Eagle(보너스 액션으로 해제) 또는 Wolf(아군이 근처의 적에 대한 근접 공격에서 이점을 얻음) 중에서 선택하세요."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "로어 칼리지",
+      "description": "지식과 비밀의 달인. 세 가지 추가 기술, 적을 방해하는 단어 자르기, 다른 클래스의 마법 비밀을 훔치는 능력에 능숙해집니다."
+    },
+    "College of Valor": {
+      "name": "용기의 대학",
+      "description": "전투에서 아군에게 영감을 주는 전투 준비가 되어 있는 수행자입니다. 중간 갑옷, 방패, 군용 무기에 능숙해지며 궁극적으로 Bardic Inspiration으로 아군에게 추가 공격을 부여합니다."
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "name": "지식 영역",
+      "description": "비밀과 신성한 지혜의 학자. 두 가지 추가 기술과 두 가지 추가 언어에 능숙해지고, 사물의 기억을 읽고, 다른 사람의 생각을 알 수 있습니다."
+    },
+    "Life Domain": {
+      "name": "생명영역",
+      "description": "생명의 신들의 축복을 받은 치유자이자 보호자입니다. 중갑 숙련도, 치유력 향상, 죽음의 문턱에서 생명을 구하는 능력."
+    },
+    "Light Domain": {
+      "name": "라이트 도메인",
+      "description": "어둠에 대항하여 신성한 불꽃을 보내십시오. 보너스 화재 캔트립, 공격자를 방해하는 Warding Flare, 그리고 높은 레벨에서 빛나는 빛의 코로나."
+    },
+    "Nature Domain": {
+      "name": "자연 영역",
+      "description": "야생 장소와 자라는 식물의 수호자. 중갑옷 숙련도, 보너스 드루이드 캔트립, 동물과 식물을 매료시키는 능력."
+    },
+    "Tempest Domain": {
+      "name": "폭풍우 도메인",
+      "description": "폭풍과 바다의 분노. 중갑옷과 무술의 숙련도, 공격자를 응징하는 폭풍의 분노, 파괴적인 바람과 번개 마법."
+    },
+    "Trickery Domain": {
+      "name": "속임수 도메인",
+      "description": "속임수와 환상의 신. Duplicity를 호출하여 자신의 환상적인 복사본을 만들고 잘못된 지시 및 은신을 위한 주문 모음에 액세스하세요."
+    },
+    "War Domain": {
+      "name": "전쟁 도메인",
+      "description": "신들의 전사. 중갑옷과 무술 무기 숙련도, 워 프리스트의 보너스 액션으로 추가 공격, 그리고 강력한 전투 주문."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "대지의 원",
+      "description": "고대 전통과 자연의 비밀을 지키는 사람. 짧은 휴식을 통해 주문 슬롯을 회복하고, 정령과 정령의 매력과 공포에 저항하고, 선택한 지형에 따라 추가 주문을 얻으세요."
+    },
+    "Circle of the Moon": {
+      "name": "달의 원",
+      "description": "강력한 변신 장치. CR 1부터 시작하여(더 높은 레벨에서는 CR 6까지 확장) 전투 준비가 된 야수로 변신하고 결국에는 원소 형태로 전환됩니다."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "챔피언",
+      "description": "완성된 전사. 향상된 치명타(19~20), 신체적 도전에 대한 뛰어난 운동선수, 그리고 궁극적으로 두 번째 전투 스타일인 가장 단순하고 가장 강력한 무술 전형입니다."
+    },
+    "Battle Master": {
+      "name": "배틀마스터",
+      "description": "전술 천재. 우월 주사위를 사용해 넘어뜨리기, 무장 해제하기, 막기, 아군 지휘하기 등 다양한 전투 기동을 수행하고 짧은 휴식을 취하여 회복시키세요."
+    },
+    "Eldritch Knight": {
+      "name": "엘드리치 나이트",
+      "description": "무술 훈련과 신비한 힘을 결합한 마법검입니다. 포기와 소환 주문을 배우고, 무기를 손에 묶고, 최종적으로 보너스 액션으로 주문을 시전하세요."
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "name": "열린 손의 길",
+      "description": "비무장 전투의 달인. 오픈 핸드 테크닉(Open Hand Technique)을 사용하면 쓰러뜨리거나 밀거나 반응을 방지할 수 있습니다. 떨리는 손바닥은 결국 한 번의 터치로 막대한 피해를 입힙니다."
+    },
+    "Way of Shadow": {
+      "name": "그림자의 길",
+      "description": "무술과 그림자 마법을 융합한 닌자 같은 전사입니다. 기를 사용하여 어둠과 침묵을 발산하고 흔적도 없이 지나간 다음 그림자 사이를 순간이동합니다."
+    },
+    "Way of the Four Elements": {
+      "name": "네 가지 요소의 길",
+      "description": "요소 자체를 채널링합니다. 기를 사용하여 불을 던지고, 물을 제어하고, 돌담을 만들고, 바람을 타는 등 원소 훈련을 시전하세요."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "헌신의 맹세",
+      "description": "정의와 질서의 고전적인 기사. 공격을 강화하는 신성한 무기, 악마와 언데드에게 피해를 주는 홀리 후광, 강력한 보호 및 강타 주문을 사용합니다."
+    },
+    "Oath of the Ancients": {
+      "name": "고대인의 맹세",
+      "description": "빛과 자연계의 수호자. 적을 제지하는 자연의 분노, 엘더 챔피언 변신, 원소 및 마법 피해로부터 보호."
+    },
+    "Oath of Vengeance": {
+      "name": "복수의 맹세",
+      "description": "거대한 악을 무자비하게 처벌하는 자. 공격에 유리한 적대의 맹세, 복수의 천사 변신, 사악한 자들을 사냥하는 추적 주문."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "사냥꾼",
+      "description": "마스터 추적자이자 포식자입니다. Hunter's Prey 옵션(Colossus Slayer, Giant Killer, Horde Breaker)과 방어 전술 중에서 선택하여 모든 위협에 대처하세요."
+    },
+    "Beast Master": {
+      "name": "비스트 마스터",
+      "description": "당신과 함께 싸우는 동물친구와 깊은 유대감을 형성해보세요. 짐승은 당신의 차례에 행동하고 레벨이 오를수록 힘이 커집니다."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "도둑",
+      "description": "도둑이자 기회주의자. 보너스 액션으로 빠른 아이템 사용을 위한 Fast Hands, 뛰어난 등반 속도를 위한 Second-Story Work, 더 높은 레벨에서 Magic Device 사용이 가능합니다."
+    },
+    "Assassin": {
+      "name": "암살자",
+      "description": "치명적인 매복자. 놀란 대상에 대한 이점과 보너스 피해, 매일 새로운 변장 신분, 생물의 말을 흉내내는 능력."
+    },
+    "Arcane Trickster": {
+      "name": "신비한 사기꾼",
+      "description": "마법을 속임수로 엮는 주문 시전 도적입니다. 환상과 마법 주문을 배우고, Mage Hand Legerdemain을 사용하고, 결국 다른 캐스터의 주문 효과를 훔칩니다."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "name": "용의 혈통",
+      "description": "용의 조상으로부터 얻은 힘. 추가 체력, 천연 방어구(방어구 없이 AC 13 + DEX), 손상에 대한 원소 친화력, 높은 레벨에서 성장하는 용의 날개."
+    },
+    "Wild Magic": {
+      "name": "와일드 매직",
+      "description": "예측할 수 없는 힘의 혼란스러운 급증. 굴림에서 이점을 얻을 수 있는 혼돈의 파도, 무작위 야생 마법 급증 효과, 아군이 위기에 처해 마법 포인트를 회복하도록 돕는 능력."
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "name": "더 아치페이",
+      "description": "감정과 매력을 겸비한 요정의 군주. 주변 생물을 매혹하거나 겁을 주는 Fey Presence, 맞으면 사라지는 Misty Escape, 마법에 초점을 맞춘 마법입니다."
+    },
+    "The Fiend": {
+      "name": "악마",
+      "description": "강력한 악마 또는 악마. Dark One's Blessing은 처치 시 일시적인 체력을 부여하고 Hurl Through Hell로 끝나는 일련의 불과 괴사 주문을 제공합니다."
+    },
+    "The Great Old One": {
+      "name": "그레이트 올드 원",
+      "description": "이해를 초월하는 외계 우주 존재. 텔레파시 통신, Awakened Mind는 마음과 마음을 대화하고 결국 마음을 뒤틀고 현실을 왜곡하는 마법을 마스터합니다."
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "name": "포기의 학교",
+      "description": "보호마법의 달인. Arcane Ward는 피해를 흡수하고, Projected Ward는 보호 기능을 아군에게까지 확장하며, 포기는 최대의 효과를 발휘합니다."
+    },
+    "School of Conjuration": {
+      "name": "마법 학교",
+      "description": "소환과 이동의 달인. 소환물을 순간이동하거나 교체할 수 있는 양성 전치, 끊임없는 집중을 위한 집중 소환, 소환된 생물의 내구성이 뛰어납니다."
+    },
+    "School of Divination": {
+      "name": "점술 학교",
+      "description": "선견자와 오라클. Portent를 사용하면 새벽에 두 개의 d20을 굴리고 게임의 모든 굴림을 그것으로 대체할 수 있습니다. 잠재적으로 중요한 순간의 결과를 바꿀 수 있습니다."
+    },
+    "School of Enchantment": {
+      "name": "마법의 학교",
+      "description": "마음과 감정의 주인. 매 턴마다 생물을 기절시키는 최면 시선, 불이익을 주는 의심 주입, 그리고 결국 적들이 경험한 것을 지우는 기억 변경."
+    },
+    "School of Evocation": {
+      "name": "환기 학교",
+      "description": "신비한 블래스터. 지역 효과에서 아군을 제외하는 주문 조각, 저장 시 피해량이 절반인 강력한 캔트립, 피해 굴림을 최대화하는 강화된 불러일으키기 등이 있습니다."
+    },
+    "School of Illusion": {
+      "name": "환상의 학교",
+      "description": "속임수와 거짓 현실의 대가. 향상된 Minor Illusion, 실시간으로 모양을 바꿀 수 있는 Malleable Illusions, 공격에 대한 방패 역할을 하는 Illusory Self."
+    },
+    "School of Necromancy": {
+      "name": "강령술 학교",
+      "description": "죽음마법의 달인. 주문으로 적을 처치할 때 체력을 회복하는 Grim Harvest, 더 강력한 언데드 하인을 위한 Undead Thralls, 높은 레벨의 Command Undead 등이 있습니다."
+    },
+    "School of Transmutation": {
+      "name": "변환 학교",
+      "description": "변신의 달인. 지속적인 버프를 위한 트랜스뮤터의 돌, 스스로 변신할 수 있는 셰이프체인저, 돌을 소모하여 기적적인 효과를 얻을 수 있는 마스터 트랜스뮤터."
+    }
+  }
+}

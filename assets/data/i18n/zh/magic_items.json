@@ -1,0 +1,70 @@
+{
+  "Potion of Healing": {
+    "name": "治疗药水",
+    "description": "喝下此药水后，你会恢复 2d4 + 2 点生命值。"
+  },
+  "Potion of Greater Healing": {
+    "name": "强效治疗药水",
+    "description": "喝下此药水后，你会恢复 4d4 + 4 点生命值。"
+  },
+  "Potion of Superior Healing": {
+    "name": "高级治疗药水",
+    "description": "喝下此药水后，你会恢复 8d4 + 8 点生命值。"
+  },
+  "Potion of Supreme Healing": {
+    "name": "至尊治疗药水",
+    "description": "喝下此药水后，你会恢复 10d4 + 20 点生命值。"
+  },
+  "Bag of Holding": {
+    "name": "持有袋",
+    "description": "该包的内部空间比其外部尺寸大得多。该包最多可容纳 500 磅的重量，但体积不超过 64 立方英尺。无论内容如何，​​该包重 15 磅。"
+  },
+  "+1 Weapon": {
+    "name": "+1 武器",
+    "description": "你用这件魔法武器进行的攻击和伤害检定获得+1加值。"
+  },
+  "+2 Weapon": {
+    "name": "+2 武器",
+    "description": "你用这件魔法武器进行的攻击和伤害检定获得+2加值。"
+  },
+  "+3 Weapon": {
+    "name": "+3 武器",
+    "description": "使用这把魔法武器，你的攻击和伤害检定获得+3加值。"
+  },
+  "+1 Armor": {
+    "name": "+1 护甲",
+    "description": "穿着这件盔甲时，你的 AC 获得+1 加值。"
+  },
+  "Cloak of Protection": {
+    "name": "防护斗篷",
+    "description": "当你穿着这件斗篷时，你的AC和豁免检定获得+1加值。"
+  },
+  "Ring of Protection": {
+    "name": "保护戒指",
+    "description": "佩戴这枚戒指时，你的AC和豁免检定获得+1加值。"
+  },
+  "Boots of Speed": {
+    "name": "速度之靴",
+    "description": "当你穿着这些靴子时，你可以使用一个奖励动作，将靴子的后跟敲在一起，使你的行走速度加倍。此外，困难的地形并不需要您额外的移动。如果您使用奖励动作再次点击脚跟或不再穿着靴子，该效果就会结束。"
+  },
+  "Gauntlets of Ogre Power": {
+    "name": "食人魔力量护手",
+    "description": "当您佩戴这些护手时，您的力量得分为 19。如果你的力量已经达到 19 或更高，它们对你没有任何影响。"
+  },
+  "Headband of Intellect": {
+    "name": "智力头带",
+    "description": "当您佩戴此头带时，您的智力得分为 19。如果你的智力已经是19或更高，它对你没有影响。"
+  },
+  "Amulet of Health": {
+    "name": "健康护身符",
+    "description": "当您佩戴此护身符时，您的体质得分为 19。如果您的体质已经达到 19 岁或更高，它对您没有影响。"
+  },
+  "Wand of Magic Missiles": {
+    "name": "魔法导弹棒",
+    "description": "这根魔杖有 7 个电荷。持有它时，你可以用一个动作消耗 1 个或更多的能量来施放魔法飞弹法术。通过 1 次充能，你可以施展该法术的 1 级版本。每花费额外的费用，你就可以将法术位等级提高一级。魔杖每天在黎明时恢复 1d6 + 1 消耗的能量。"
+  },
+  "Rope of Climbing": {
+    "name": "攀登绳索",
+    "description": "这条 60 英尺长的丝绳重 3 磅，最多可承受 3,000 磅的重量。如果您握住绳子的一端并使用某个动作说出命令词，绳子就会产生动画。作为奖励动作，您可以命令另一端朝您选择的目的地移动。"
+  }
+}

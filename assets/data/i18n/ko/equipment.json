@@ -1,0 +1,410 @@
+{
+  "Club": {
+    "name": "클럽"
+  },
+  "Dagger": {
+    "name": "단검"
+  },
+  "Greatclub": {
+    "name": "그레이트클럽"
+  },
+  "Handaxe": {
+    "name": "손도끼"
+  },
+  "Javelin": {
+    "name": "던지는 창"
+  },
+  "Light Hammer": {
+    "name": "라이트 해머"
+  },
+  "Mace": {
+    "name": "메이스"
+  },
+  "Quarterstaff": {
+    "name": "육척봉"
+  },
+  "Sickle": {
+    "name": "낫"
+  },
+  "Spear": {
+    "name": "창"
+  },
+  "Crossbow, Light": {
+    "name": "석궁, 라이트"
+  },
+  "Dart": {
+    "name": "다트"
+  },
+  "Shortbow": {
+    "name": "단궁"
+  },
+  "Sling": {
+    "name": "슬링"
+  },
+  "Battleaxe": {
+    "name": "전투도끼"
+  },
+  "Flail": {
+    "name": "도리깨"
+  },
+  "Glaive": {
+    "name": "검"
+  },
+  "Greataxe": {
+    "name": "거대도끼"
+  },
+  "Greatsword": {
+    "name": "그레이트소드"
+  },
+  "Halberd": {
+    "name": "미늘창"
+  },
+  "Lance": {
+    "name": "창"
+  },
+  "Longsword": {
+    "name": "장검"
+  },
+  "Maul": {
+    "name": "큰 나무 망치"
+  },
+  "Morningstar": {
+    "name": "모닝스타"
+  },
+  "Pike": {
+    "name": "단창"
+  },
+  "Rapier": {
+    "name": "레이피어"
+  },
+  "Scimitar": {
+    "name": "시미터"
+  },
+  "Shortsword": {
+    "name": "쇼트소드"
+  },
+  "Trident": {
+    "name": "삼지창"
+  },
+  "War Pick": {
+    "name": "워픽"
+  },
+  "Warhammer": {
+    "name": "워해머"
+  },
+  "Whip": {
+    "name": "채찍"
+  },
+  "Blowgun": {
+    "name": "블로우건"
+  },
+  "Crossbow, Hand": {
+    "name": "석궁, 손"
+  },
+  "Crossbow, Heavy": {
+    "name": "석궁, 헤비"
+  },
+  "Longbow": {
+    "name": "큰 활"
+  },
+  "Net": {
+    "name": "그물"
+  },
+  "Padded": {
+    "name": "패딩 처리된"
+  },
+  "Leather": {
+    "name": "가죽"
+  },
+  "Studded Leather": {
+    "name": "스터드 가죽"
+  },
+  "Hide": {
+    "name": "숨다"
+  },
+  "Chain Shirt": {
+    "name": "체인 셔츠"
+  },
+  "Scale Mail": {
+    "name": "스케일 메일"
+  },
+  "Breastplate": {
+    "name": "흉갑"
+  },
+  "Half Plate": {
+    "name": "하프 플레이트"
+  },
+  "Ring Mail": {
+    "name": "링 메일"
+  },
+  "Chain Mail": {
+    "name": "체인 메일"
+  },
+  "Splint": {
+    "name": "부목"
+  },
+  "Plate": {
+    "name": "그릇"
+  },
+  "Shield": {
+    "name": "방패"
+  },
+  "Abacus": {
+    "name": "주판"
+  },
+  "Acid (vial)": {
+    "name": "산(바이알)"
+  },
+  "Alchemist's Fire": {
+    "name": "연금술사의 불"
+  },
+  "Arrows (20)": {
+    "name": "화살 (20)"
+  },
+  "Blowgun Needles (50)": {
+    "name": "블로우건 바늘 (50)"
+  },
+  "Crossbow Bolts (20)": {
+    "name": "석궁 볼트 (20)"
+  },
+  "Sling Bullets (20)": {
+    "name": "슬링 총알 (20)"
+  },
+  "Antitoxin (vial)": {
+    "name": "항독소(바이알)"
+  },
+  "Backpack": {
+    "name": "배낭"
+  },
+  "Ball Bearings (bag of 1000)": {
+    "name": "볼 베어링(1000개들이 봉지)"
+  },
+  "Barrel": {
+    "name": "통"
+  },
+  "Basket": {
+    "name": "바구니"
+  },
+  "Bedroll": {
+    "name": "침낭"
+  },
+  "Bell": {
+    "name": "벨"
+  },
+  "Blanket": {
+    "name": "담요"
+  },
+  "Block and Tackle": {
+    "name": "블록 앤 태클"
+  },
+  "Book": {
+    "name": "책"
+  },
+  "Bottle, glass": {
+    "name": "병, 유리"
+  },
+  "Bucket": {
+    "name": "버킷"
+  },
+  "Caltrops (bag of 20)": {
+    "name": "마름쇠 (20개들이 봉지)"
+  },
+  "Candle": {
+    "name": "양초"
+  },
+  "Case, crossbow bolt": {
+    "name": "케이스, 석궁 볼트"
+  },
+  "Case, map or scroll": {
+    "name": "케이스, 지도 또는 스크롤"
+  },
+  "Chain (10 feet)": {
+    "name": "체인(10피트)"
+  },
+  "Chalk (1 piece)": {
+    "name": "분필(1개)"
+  },
+  "Chest": {
+    "name": "가슴"
+  },
+  "Climber's Kit": {
+    "name": "등산용 키트"
+  },
+  "Clothes, common": {
+    "name": "옷, 일반"
+  },
+  "Clothes, costume": {
+    "name": "의상, 의상"
+  },
+  "Clothes, fine": {
+    "name": "옷, 괜찮아요"
+  },
+  "Clothes, traveler's": {
+    "name": "옷, 여행자의 것"
+  },
+  "Component Pouch": {
+    "name": "구성품 파우치"
+  },
+  "Crowbar": {
+    "name": "바"
+  },
+  "Druidic Focus": {
+    "name": "드루이드 집중"
+  },
+  "Flask or tankard": {
+    "name": "플라스크 또는 텀커드"
+  },
+  "Grappling Hook": {
+    "name": "갈고리"
+  },
+  "Hammer": {
+    "name": "망치"
+  },
+  "Hammer, sledge": {
+    "name": "망치, 썰매"
+  },
+  "Healer's Kit": {
+    "name": "힐러 키트"
+  },
+  "Holy Symbol": {
+    "name": "신성한 상징"
+  },
+  "Holy Water (flask)": {
+    "name": "성수(플라스크)"
+  },
+  "Hourglass": {
+    "name": "모래시계"
+  },
+  "Hunting Trap": {
+    "name": "사냥용 함정"
+  },
+  "Ink (1 ounce bottle)": {
+    "name": "잉크(1온스 병)"
+  },
+  "Ink Pen": {
+    "name": "잉크 펜"
+  },
+  "Jug or Pitcher": {
+    "name": "주전자 또는 투수"
+  },
+  "Ladder (10-foot)": {
+    "name": "사다리(10피트)"
+  },
+  "Lamp": {
+    "name": "램프"
+  },
+  "Lantern, bullseye": {
+    "name": "랜턴, 불스아이"
+  },
+  "Lantern, hooded": {
+    "name": "랜턴, 후드"
+  },
+  "Lock": {
+    "name": "잠그다"
+  },
+  "Magnifying Glass": {
+    "name": "확대경"
+  },
+  "Manacles": {
+    "name": "수갑"
+  },
+  "Mess Kit": {
+    "name": "엉망 키트"
+  },
+  "Mirror, steel": {
+    "name": "거울, 강철"
+  },
+  "Oil (flask)": {
+    "name": "오일(플라스크)"
+  },
+  "Paper (one sheet)": {
+    "name": "종이(1장)"
+  },
+  "Parchment (one sheet)": {
+    "name": "양피지(1장)"
+  },
+  "Perfume (vial)": {
+    "name": "향수(병)"
+  },
+  "Pick, miner's": {
+    "name": "픽, 광부"
+  },
+  "Piton": {
+    "name": "피톤"
+  },
+  "Poison, basic (vial)": {
+    "name": "독, 기본(병)"
+  },
+  "Pole (10-foot)": {
+    "name": "기둥(10피트)"
+  },
+  "Pot, iron": {
+    "name": "냄비, 다리미"
+  },
+  "Pouch": {
+    "name": "작은 주머니"
+  },
+  "Quiver": {
+    "name": "떨림"
+  },
+  "Ram, portable": {
+    "name": "램, 휴대용"
+  },
+  "Rations (1 day)": {
+    "name": "식량(1일)"
+  },
+  "Rope, hempen (50 feet)": {
+    "name": "밧줄, 대마(50피트)"
+  },
+  "Rope, silk (50 feet)": {
+    "name": "로프, 실크(50피트)"
+  },
+  "Sack": {
+    "name": "해고"
+  },
+  "Scale, merchant's": {
+    "name": "저울, 상인"
+  },
+  "Sealing Wax": {
+    "name": "씰링왁스"
+  },
+  "Shovel": {
+    "name": "삽"
+  },
+  "Signal Whistle": {
+    "name": "신호 호루라기"
+  },
+  "Signet Ring": {
+    "name": "인장 반지"
+  },
+  "Soap": {
+    "name": "비누"
+  },
+  "Spellbook": {
+    "name": "마법서"
+  },
+  "Spikes, iron (10)": {
+    "name": "스파이크, 철(10)"
+  },
+  "Spyglass": {
+    "name": "작은 망원경"
+  },
+  "Tent, two-person": {
+    "name": "텐트, 2인용"
+  },
+  "Tinderbox": {
+    "name": "부싯깃 통"
+  },
+  "Torch": {
+    "name": "토치"
+  },
+  "Vial": {
+    "name": "바이알"
+  },
+  "Waterskin": {
+    "name": "워터스킨"
+  },
+  "Whetstone": {
+    "name": "숫돌"
+  }
+}

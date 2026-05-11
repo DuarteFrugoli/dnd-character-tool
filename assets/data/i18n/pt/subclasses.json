@@ -1,226 +1,186 @@
 {
-  "Barbarian": [
-    {
+  "Barbarian": {
+    "Path of the Berserker": {
       "name": "Caminho do Berserker",
-      "original": "Path of the Berserker",
       "description": "Canalize sua fúria em ferocidade selvagem. Ao entrar em fúria, você pode entrar em frenesi — fazendo um ataque corpo a corpo extra a cada turno como ação bônus, ao custo de exaustão depois."
     },
-    {
+    "Path of the Totem Warrior": {
       "name": "Caminho do Guerreiro Totêmico",
-      "original": "Path of the Totem Warrior",
       "description": "Vincule-se a um espírito animal como seu guia e ganhe poderes mágicos. Escolha entre Urso, com resistência a quase todo dano; Águia, com mobilidade superior; ou Lobo, que ajuda aliados a atacarem inimigos próximos."
     }
-  ],
-  "Bard": [
-    {
+  },
+  "Bard": {
+    "College of Lore": {
       "name": "Colégio do Conhecimento",
-      "original": "College of Lore",
       "description": "Um mestre do conhecimento e dos segredos. Ganha proficiência em três perícias extras, Palavras Cortantes para atrapalhar inimigos e a capacidade de aprender segredos mágicos de outras classes."
     },
-    {
+    "College of Valor": {
       "name": "Colégio do Valor",
-      "original": "College of Valor",
       "description": "Um artista preparado para a batalha que inspira aliados em combate. Ganha proficiência com armaduras médias, escudos e armas marciais, além de melhorar o uso da Inspiração de Bardo em situações de combate."
     }
-  ],
-  "Cleric": [
-    {
+  },
+  "Cleric": {
+    "Knowledge Domain": {
       "name": "Domínio do Conhecimento",
-      "original": "Knowledge Domain",
       "description": "Um estudioso dos segredos e da sabedoria divina. Ganha proficiência em duas perícias extras, dois idiomas adicionais, poderes para ler pensamentos e visões ligadas ao passado."
     },
-    {
+    "Life Domain": {
       "name": "Domínio da Vida",
-      "original": "Life Domain",
       "description": "Um curandeiro e protetor abençoado por deuses da vida. Ganha proficiência com armaduras pesadas, cura aprimorada e a capacidade de preservar vidas à beira da morte."
     },
-    {
+    "Light Domain": {
       "name": "Domínio da Luz",
-      "original": "Light Domain",
       "description": "Canalize a chama divina contra a escuridão. Recebe um truque de luz, Clarão Protetor para atrapalhar atacantes e, em níveis altos, uma poderosa Coroa de Luz."
     },
-    {
+    "Nature Domain": {
       "name": "Domínio da Natureza",
-      "original": "Nature Domain",
       "description": "Guardião dos lugares selvagens e das forças naturais. Ganha proficiência com armaduras pesadas, um truque de druida adicional e a capacidade de enfeitiçar animais e plantas."
     },
-    {
+    "Tempest Domain": {
       "name": "Domínio da Tempestade",
-      "original": "Tempest Domain",
       "description": "A ira da tempestade e do mar. Ganha proficiência com armas marciais e armaduras pesadas, pune atacantes com Ira da Tempestade e usa magia ligada a trovões, ventos e relâmpagos."
     },
-    {
+    "Trickery Domain": {
       "name": "Domínio da Trapaça",
-      "original": "Trickery Domain",
       "description": "Um domínio ligado ao engano, ilusões e furtividade. Permite criar uma cópia ilusória de si mesmo, conceder vantagem em furtividade e acessar magias voltadas à distração e disfarce."
     },
-    {
+    "War Domain": {
       "name": "Domínio da Guerra",
-      "original": "War Domain",
       "description": "Um guerreiro dos deuses. Ganha proficiência com armaduras pesadas e armas marciais, ataques extras como ação bônus e poderosas bênçãos de combate."
     }
-  ],
-  "Druid": [
-    {
+  },
+  "Druid": {
+    "Circle of the Land": {
       "name": "Círculo da Terra",
-      "original": "Circle of the Land",
       "description": "Guardião de tradições antigas e segredos naturais. Recupera espaços de magia em descansos curtos, recebe magias extras baseadas no terreno escolhido e ganha proteções ligadas à natureza."
     },
-    {
+    "Circle of the Moon": {
       "name": "Círculo da Lua",
-      "original": "Circle of the Moon",
       "description": "Um poderoso metamorfo. Usa Forma Selvagem para assumir formas de combate mais fortes desde cedo e, em níveis mais altos, consegue se transformar em elementais."
     }
-  ],
-  "Fighter": [
-    {
+  },
+  "Fighter": {
+    "Champion": {
       "name": "Campeão",
-      "original": "Champion",
       "description": "O guerreiro aperfeiçoado. Recebe crítico aprimorado, melhora em desafios físicos e eventualmente um segundo estilo de luta — uma opção marcial simples e direta."
     },
-    {
+    "Battle Master": {
       "name": "Mestre de Batalha",
-      "original": "Battle Master",
       "description": "Um gênio tático. Usa dados de superioridade para executar manobras de combate, como derrubar, desarmar, aparar ataques e orientar aliados, recuperando esses dados em descansos curtos."
     },
-    {
+    "Eldritch Knight": {
       "name": "Cavaleiro Arcano",
-      "original": "Eldritch Knight",
       "description": "Um guerreiro mágico que combina treinamento marcial com poder arcano. Aprende magias de abjuração e evocação, vincula armas à própria mão e mistura ataques com conjuração."
     }
-  ],
-  "Monk": [
-    {
+  },
+  "Monk": {
+    "Way of the Open Hand": {
       "name": "Caminho da Mão Aberta",
-      "original": "Way of the Open Hand",
       "description": "Mestre do combate desarmado. Suas técnicas permitem derrubar, empurrar ou impedir reações dos inimigos, culminando em golpes capazes de causar dano devastador com um único toque."
     },
-    {
+    "Way of Shadow": {
       "name": "Caminho das Sombras",
-      "original": "Way of Shadow",
       "description": "Um guerreiro semelhante a um ninja, que combina artes marciais com magia das sombras. Usa ki para conjurar escuridão, silêncio e passagem sem rastros, além de se teleportar entre sombras."
     },
-    {
+    "Way of the Four Elements": {
       "name": "Caminho dos Quatro Elementos",
-      "original": "Way of the Four Elements",
       "description": "Canalize os próprios elementos. Gaste ki para usar disciplinas elementais, lançando fogo, controlando água, criando muralhas de pedra e cavalgando o vento."
     }
-  ],
-  "Paladin": [
-    {
+  },
+  "Paladin": {
+    "Oath of Devotion": {
       "name": "Juramento da Devoção",
-      "original": "Oath of Devotion",
       "description": "O clássico cavaleiro da justiça e da ordem. Usa Arma Sagrada para fortalecer ataques, protege aliados contra o mal e, em níveis altos, irradia luz divina contra ínferos e mortos-vivos."
     },
-    {
+    "Oath of the Ancients": {
       "name": "Juramento dos Anciões",
-      "original": "Oath of the Ancients",
       "description": "Guardião da luz e do mundo natural. Usa a Ira da Natureza para restringir inimigos, recebe proteção contra dano mágico e pode assumir uma forma poderosa ligada às forças antigas da natureza."
     },
-    {
+    "Oath of Vengeance": {
       "name": "Juramento da Vingança",
-      "original": "Oath of Vengeance",
       "description": "Um punidor implacável de grandes males. Usa Voto de Inimizade para ganhar vantagem contra um alvo, persegue inimigos sem descanso e pode assumir uma forma angelical vingadora."
     }
-  ],
-  "Ranger": [
-    {
+  },
+  "Ranger": {
+    "Hunter": {
       "name": "Caçador",
-      "original": "Hunter",
       "description": "Mestre rastreador e predador. Escolhe técnicas como Matador de Colossos, Matador de Gigantes ou Destruidor de Hordas, adaptando seu estilo para lidar com diferentes ameaças."
     },
-    {
+    "Beast Master": {
       "name": "Mestre das Bestas",
-      "original": "Beast Master",
       "description": "Forma um vínculo profundo com um companheiro animal que luta ao seu lado. A besta age em conjunto com você e se torna mais poderosa conforme você sobe de nível."
     }
-  ],
-  "Rogue": [
-    {
+  },
+  "Rogue": {
+    "Thief": {
       "name": "Ladrão",
-      "original": "Thief",
       "description": "Mestre arrombador e oportunista. Usa Mãos Rápidas para interagir com objetos como ação bônus, escala melhor, usa itens mágicos com mais liberdade e age mais rapidamente em combate."
     },
-    {
+    "Assassin": {
       "name": "Assassino",
-      "original": "Assassin",
       "description": "Um emboscador mortal. Ganha vantagem e dano crítico contra alvos surpresos, cria identidades falsas e aprende a imitar fala, escrita e comportamento de outras pessoas."
     },
-    {
+    "Arcane Trickster": {
       "name": "Trapaceiro Arcano",
-      "original": "Arcane Trickster",
       "description": "Um ladino conjurador que mistura magia com trapaça. Aprende magias de ilusão e encantamento, aprimora Mão Mágica e eventualmente pode roubar efeitos mágicos de outros conjuradores."
     }
-  ],
-  "Sorcerer": [
-    {
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
       "name": "Linhagem Dracônica",
-      "original": "Draconic Bloodline",
       "description": "Poder vindo de ancestralidade dracônica. Recebe pontos de vida extras, armadura natural, afinidade elemental com dano e, em níveis altos, asas dracônicas."
     },
-    {
+    "Wild Magic": {
       "name": "Magia Selvagem",
-      "original": "Wild Magic",
       "description": "Surtos caóticos de poder imprevisível. Usa Marés do Caos para ganhar vantagem em rolagens, desencadeia efeitos aleatórios de Magia Selvagem e manipula a sorte em momentos críticos."
     }
-  ],
-  "Warlock": [
-    {
+  },
+  "Warlock": {
+    "The Archfey": {
       "name": "O Arquifada",
-      "original": "The Archfey",
       "description": "Um patrono feérico ligado à emoção e ao glamour. Usa Presença Feérica para enfeitiçar ou amedrontar criaturas próximas, escapa em névoa quando ferido e domina magia de encantamento."
     },
-    {
+    "The Fiend": {
       "name": "O Ínfero",
-      "original": "The Fiend",
       "description": "Um poderoso demônio ou diabo como patrono. Recebe pontos de vida temporários ao derrotar inimigos, manipula a sorte em seu favor e pode lançar inimigos por uma experiência infernal aterrorizante."
     },
-    {
+    "The Great Old One": {
       "name": "O Grande Antigo",
-      "original": "The Great Old One",
       "description": "Uma entidade cósmica alienígena além da compreensão. Concede comunicação telepática, proteção mental e poderes capazes de distorcer mentes e controlar criaturas."
     }
-  ],
-  "Wizard": [
-    {
+  },
+  "Wizard": {
+    "School of Abjuration": {
       "name": "Escola de Abjuração",
-      "original": "School of Abjuration",
       "description": "Mestre da magia protetora. Cria uma proteção arcana que absorve dano, pode estender essa defesa a aliados e se torna especialmente resistente contra magias."
     },
-    {
+    "School of Conjuration": {
       "name": "Escola de Conjuração",
-      "original": "School of Conjuration",
       "description": "Mestre da invocação e do transporte. Conjura objetos menores, teleporta-se ou troca de lugar com aliados, mantém concentração em conjurações e fortalece criaturas invocadas."
     },
-    {
+    "School of Divination": {
       "name": "Escola de Adivinhação",
-      "original": "School of Divination",
       "description": "Vidente e oráculo. Portento permite rolar d20s após um descanso longo e usá-los para substituir rolagens importantes, alterando momentos decisivos."
     },
-    {
+    "School of Enchantment": {
       "name": "Escola de Encantamento",
-      "original": "School of Enchantment",
       "description": "Mestre da mente e das emoções. Usa Olhar Hipnótico para incapacitar inimigos, desvia ataques por influência mental e altera memórias de criaturas enfeitiçadas."
     },
-    {
+    "School of Evocation": {
       "name": "Escola de Evocação",
-      "original": "School of Evocation",
       "description": "O especialista em dano arcano. Molda magias para proteger aliados de efeitos em área, fortalece truques e aumenta o dano de magias de evocação."
     },
-    {
+    "School of Illusion": {
       "name": "Escola de Ilusão",
-      "original": "School of Illusion",
       "description": "Mestre do engano e das falsas realidades. Aprimora Ilusão Menor, altera ilusões em tempo real e pode usar uma duplicata ilusória para se proteger de ataques."
     },
-    {
+    "School of Necromancy": {
       "name": "Escola de Necromancia",
-      "original": "School of Necromancy",
       "description": "Mestre da magia da morte. Recupera pontos de vida ao matar com magias, cria mortos-vivos mais poderosos e pode comandar mortos-vivos em níveis altos."
     },
-    {
+    "School of Transmutation": {
       "name": "Escola de Transmutação",
-      "original": "School of Transmutation",
       "description": "Mestre da transformação. Usa uma Pedra de Transmutador para conceder benefícios contínuos, altera a própria forma e, em níveis altos, produz efeitos quase milagrosos ao consumir a pedra."
     }
-  ]
+  }
 }

@@ -1,0 +1,186 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "El camino del berserker",
+      "description": "Canaliza tu ira en furia salvaje. Cuando te enfureces, puedes entrar en un frenesí: realizar un ataque cuerpo a cuerpo adicional cada turno como acción adicional, a costa del agotamiento posterior."
+    },
+    "Path of the Totem Warrior": {
+      "name": "El camino del guerrero tótem",
+      "description": "Únase a un espíritu animal como guía y obtenga poderes mágicos. Elige entre Oso (resistencia a todo daño), Águila (retirarse como acción adicional) o Lobo (los aliados obtienen ventaja en ataques cuerpo a cuerpo contra enemigos cercanos)."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "colegio de tradiciones",
+      "description": "Un maestro del conocimiento y los secretos. Adquiere competencia en tres habilidades adicionales, cortando palabras para obstaculizar a los enemigos y la capacidad de robar secretos mágicos de otras clases."
+    },
+    "College of Valor": {
+      "name": "colegio de valor",
+      "description": "Un artista listo para la batalla que inspira a los aliados en combate. Adquiere competencia con armaduras medianas, escudos y armas marciales y, eventualmente, otorga a tus aliados un ataque adicional con tu inspiración bárdica."
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "name": "Dominio del conocimiento",
+      "description": "Erudito de los secretos y la sabiduría divina. Adquiera dominio en dos habilidades adicionales y dos idiomas adicionales, lea recuerdos de objetos y conozca los pensamientos de los demás."
+    },
+    "Life Domain": {
+      "name": "Dominio de la vida",
+      "description": "Sanador y protector bendecido por los dioses de la vida. Dominio de armaduras pesadas, curación mejorada y la capacidad de preservar la vida al borde de la muerte."
+    },
+    "Light Domain": {
+      "name": "Dominio ligero",
+      "description": "Canaliza la llama divina contra la oscuridad. Truco de fuego adicional, Warding Flare para impedir a los atacantes y una brillante Corona de Luz en niveles altos."
+    },
+    "Nature Domain": {
+      "name": "Dominio de la naturaleza",
+      "description": "Guardián de los lugares salvajes y de las cosas en crecimiento. Dominio de armaduras pesadas, un truco de druida adicional y la capacidad de encantar animales y plantas."
+    },
+    "Tempest Domain": {
+      "name": "Dominio de la tempestad",
+      "description": "Ira de tormenta y mar. Competencia con armadura pesada y armas marciales, Wrath of the Storm para castigar a los atacantes y magia destructiva de viento y relámpagos."
+    },
+    "Trickery Domain": {
+      "name": "Dominio de engaño",
+      "description": "Deidad del engaño y la ilusión. Invoca Duplicidad para crear una copia ilusoria de ti mismo y accede a un conjunto de hechizos para despistar y sigilo."
+    },
+    "War Domain": {
+      "name": "Dominio de guerra",
+      "description": "Guerrero de los dioses. Competencia con armadura pesada y armas marciales, ataques adicionales de War Priest como acción adicional y poderosos hechizos de combate."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Círculo de la tierra",
+      "description": "Guardián de antiguas tradiciones y secretos naturales. Recupera espacios para hechizos con un breve descanso, resiste el encanto y el miedo de las hadas y los elementales, y gana hechizos adicionales según el terreno elegido."
+    },
+    "Circle of the Moon": {
+      "name": "círculo de la luna",
+      "description": "Potente cambiaformas. Forma salvaje en bestias listas para el combate a partir de CR 1 (escalando a CR 6 en niveles más altos) y, finalmente, cambia a formas elementales."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Campeón",
+      "description": "El guerrero perfeccionado. Crítico mejorado (19-20), Atleta notable para desafíos físicos y, finalmente, un segundo estilo de lucha: el arquetipo marcial más simple y poderoso."
+    },
+    "Battle Master": {
+      "name": "Maestro de batalla",
+      "description": "Genio táctico. Usa los dados de superioridad para realizar una variedad de maniobras de combate (hacer tropezar, desarmar, parar y dirigir a los aliados) y recupéralos con un breve descanso."
+    },
+    "Eldritch Knight": {
+      "name": "Caballero sobrenatural",
+      "description": "Un espadachín que fusiona el entrenamiento marcial con el poder arcano. Aprende hechizos de abjuración y evocación, ata armas a tu mano y, finalmente, lanza hechizos como acción adicional."
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "name": "Camino de la mano abierta",
+      "description": "Maestro del combate sin armas. La técnica de la mano abierta te permite derribar, empujar o prevenir reacciones; Quivering Palm eventualmente causa un daño masivo con un solo toque."
+    },
+    "Way of Shadow": {
+      "name": "Camino de la sombra",
+      "description": "Un guerrero parecido a un ninja que combina las artes marciales con la magia de las sombras. Gasta ki para generar oscuridad, silencio y pasar sin dejar rastro, luego teletransportate entre las sombras."
+    },
+    "Way of the Four Elements": {
+      "name": "Camino de los Cuatro Elementos",
+      "description": "Canalizar los propios elementos. Gasta ki para lanzar disciplinas elementales: lanzar fuego, controlar el agua, crear muros de piedra y montar en el viento."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Juramento de devoción",
+      "description": "El clásico caballero de la justicia y el orden. Arma sagrada para potenciar los ataques, Nimbus sagrado para dañar a demonios y muertos vivientes, y poderosos hechizos de protección y castigo."
+    },
+    "Oath of the Ancients": {
+      "name": "Juramento de los antiguos",
+      "description": "Guardián de la luz y del mundo natural. Ira de la naturaleza para frenar a los enemigos, transformación de Campeón Anciano y protección contra daños elementales y mágicos."
+    },
+    "Oath of Vengeance": {
+      "name": "Juramento de venganza",
+      "description": "Un castigador implacable de grandes males. Voto de enemistad para obtener ventaja en los ataques, transformación del ángel vengador y hechizos de persecución para cazar a los malvados."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Cazador",
+      "description": "Maestro rastreador y depredador. Elige entre las opciones de Hunter's Prey (Colossus Slayer, Giant Killer, Horde Breaker) y Tácticas defensivas para enfrentar cualquier amenaza."
+    },
+    "Beast Master": {
+      "name": "Maestro de las Bestias",
+      "description": "Únete profundamente a un compañero animal que lucha junto a ti. La bestia actúa en tu turno y aumenta su poder a medida que subes de nivel."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Ladrón",
+      "description": "Maestro ladrón y oportunista. Manos rápidas para el uso rápido de elementos como acción adicional, Trabajo en el segundo piso para una velocidad de escalada superior y Uso de dispositivo mágico en niveles más altos."
+    },
+    "Assassin": {
+      "name": "Asesino",
+      "description": "Emboscador mortal. Ventaja y daño adicional contra objetivos sorprendidos, una nueva identidad de disfraz cada día y la capacidad de imitar el habla de cualquier criatura."
+    },
+    "Arcane Trickster": {
+      "name": "Embaucador arcano",
+      "description": "Un pícaro lanzador de hechizos que convierte la magia en engaños. Aprende hechizos de ilusión y encantamiento, usa prestidigitación de mano de mago y, eventualmente, roba efectos de hechizos de otros lanzadores."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "name": "Línea de sangre dracónica",
+      "description": "Poder de ascendencia dracónica. Puntos de vida adicionales, armadura natural (CA 13 + DEX sin armadura), afinidad elemental por el daño y alas dracónicas en crecimiento en niveles altos."
+    },
+    "Wild Magic": {
+      "name": "Magia salvaje",
+      "description": "Oleadas caóticas de poder impredecible. Mareas del Caos para obtener ventaja en una tirada, efectos aleatorios de Oleada de Magia Salvaje y la capacidad de ayudar a los aliados a recuperar puntos de hechicería en caso de apuro."
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "name": "El Archifey",
+      "description": "Un señor feérico de la emoción y el glamour. Presencia Fey para encantar o asustar a las criaturas cercanas, Misty Escape para desaparecer cuando es golpeado y magia centrada en encantamientos."
+    },
+    "The Fiend": {
+      "name": "el demonio",
+      "description": "Un diablo o demonio poderoso. Dark One's Blessing otorga puntos de vida temporales cuando matas, y un conjunto de hechizos de fuego y necróticos que terminan en Hurl Through Hell."
+    },
+    "The Great Old One": {
+      "name": "El gran viejo",
+      "description": "Una entidad cósmica alienígena más allá de la comprensión. Comunicación telepática, Mente Despierta para hablar de mente a mente y, finalmente, dominar la magia que distorsiona la mente y la realidad."
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "name": "escuela de abjuración",
+      "description": "Maestro de la magia protectora. Arcane Ward absorbe el daño por ti, Projected Ward extiende la protección a los aliados y tus abjuraciones son máximamente efectivas."
+    },
+    "School of Conjuration": {
+      "name": "escuela de conjuración",
+      "description": "Maestro de invocación y transporte. Transposición benigna para teletransportarse o intercambiar una invocación, Conjuración enfocada por concentración ininterrumpida y criaturas invocadas duraderas."
+    },
+    "School of Divination": {
+      "name": "Escuela de Adivinación",
+      "description": "Vidente y oráculo. Portent te permite tirar dos d20 al amanecer y reemplazar cualquier tirada del juego con ellos, lo que podría cambiar el resultado de los momentos críticos."
+    },
+    "School of Enchantment": {
+      "name": "escuela de encantamiento",
+      "description": "Maestro de la mente y la emoción. Mirada hipnótica para aturdir a una criatura en cada turno, Infundir duda para imponer desventaja y, finalmente, Alterar recuerdos para borrar lo que experimentaron los enemigos."
+    },
+    "School of Evocation": {
+      "name": "Escuela de Evocación",
+      "description": "El desintegrador arcano. Esculpe hechizos para excluir a los aliados de los efectos de tu área, Potent Cantrip para la mitad del daño en las salvaciones y Evocación potenciada para maximizar la tirada de daño."
+    },
+    "School of Illusion": {
+      "name": "Escuela de Ilusión",
+      "description": "Maestro del engaño y las falsas realidades. Ilusión menor mejorada, ilusiones maleables para remodelarlas en tiempo real y yo ilusorio como escudo contra ataques."
+    },
+    "School of Necromancy": {
+      "name": "escuela de nigromancia",
+      "description": "Maestro de la magia de la muerte. Grim Harvest para recuperar puntos de vida cuando matas con hechizos, Undead Thralls para sirvientes no muertos más poderosos y Command Undead en niveles altos."
+    },
+    "School of Transmutation": {
+      "name": "Escuela de Transmutación",
+      "description": "Maestro de la transformación. Transmuter's Stone para obtener mejoras continuas, Shapechanger para polimorfizarte y Master Transmuter para lograr efectos milagrosos al gastar tu piedra."
+    }
+  }
+}

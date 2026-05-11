@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
@@ -52,8 +53,8 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
             ),
             const SizedBox(height: 8),
             if (grantedRaw.isNotEmpty) ...[
-              Text('Granted by background:',
-                  style: Theme.of(context).textTheme.labelSmall),
+              Text(AppLocalizations.of(context)!.stepGrantedByBackground,
+                style: Theme.of(context).textTheme.labelSmall),
               const SizedBox(height: 4),
               Wrap(
                 spacing: 8,
@@ -66,7 +67,7 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
               ),
               const Divider(height: 24),
             ],
-            Text('Class skill choices ($needed):',
+            Text(AppLocalizations.of(context)!.stepClassSkillChoices(needed),
                 style: Theme.of(context).textTheme.labelSmall),
             const SizedBox(height: 4),
             ...allowedPool.map((skillName) {

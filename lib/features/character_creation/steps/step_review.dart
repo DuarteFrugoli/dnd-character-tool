@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../character_draft_provider.dart';
@@ -12,6 +13,7 @@ class StepReview extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final draft = ref.watch(characterDraftProvider);
     final attrs = draft.finalAttributes;
     final con = attrs['Constitution'] ?? 10;
@@ -26,12 +28,12 @@ class StepReview extends ConsumerWidget {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        _ReviewSection(title: 'Identity', children: [
+        _ReviewSection(title: l10n.sectionIdentity, children: [
           _Row('Name', draft.name.isEmpty ? 'Unnamed Hero' : draft.name),
           if (draft.playerName.isNotEmpty)
             _Row('Player', draft.playerName),
         ]),
-        _ReviewSection(title: 'Class', children: [
+        _ReviewSection(title: l10n.creationStepClass, children: [
           _Row('Class', draft.selectedClass?.name ?? '—'),
           if (draft.selectedSubclass != null)
             _Row(
@@ -46,7 +48,7 @@ class StepReview extends ConsumerWidget {
           if (draft.selectedClass != null)
             const _StartingGoldRow(),
         ]),
-        _ReviewSection(title: 'Race', children: [
+        _ReviewSection(title: l10n.creationStepRace, children: [
           _Row('Race', draft.selectedRace?.name ?? '—'),
           if (draft.selectedSubrace != null)
             _Row('Subrace', draft.selectedSubrace!.name),
@@ -54,19 +56,19 @@ class StepReview extends ConsumerWidget {
           if (draft.fixedRaceLanguages.isNotEmpty)
             _Row('Languages', draft.fixedRaceLanguages.join(', ')),
         ]),
-        _ReviewSection(title: 'Background', children: [
+        _ReviewSection(title: l10n.creationStepBackground, children: [
           _Row('Background', draft.selectedBackground?.name ?? '—'),
           _Row(
             'Feature',
             draft.selectedBackground?.feature.name ?? '—',
           ),
         ]),
-        _ReviewSection(title: 'Skills', children: [
+        _ReviewSection(title: l10n.creationStepSkills, children: [
           _Row('From background', draft.grantedSkills.join(', ')),
           if (draft.chosenSkills.isNotEmpty)
             _Row('Class choices', draft.chosenSkills.join(', ')),
         ]),
-        _ReviewSection(title: 'Attributes', children: [
+        _ReviewSection(title: l10n.creationStepAttributes, children: [
           ...attrs.entries
               .map((e) => _Row(e.key, '${e.value} (${_mod(e.value)})')),
           _Row('Max HP', '$maxHp  (d$hitDie + $conMod CON)'),
@@ -372,7 +374,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
                       border: const OutlineInputBorder(),
                       isDense: true,
                     ),
-                    hint: const Text('Choose one'),
+                    hint: Text(AppLocalizations.of(context)!.stepChooseOne),
                     items: options
                         .map((o) =>
                             DropdownMenuItem(value: o, child: Text(o)))
@@ -758,8 +760,8 @@ class _ToolProficiencySection extends ConsumerWidget {
                           contentPadding:
                               EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                         ),
-                        hint: const Text('Select a tool…',
-                            style: TextStyle(fontSize: 13)),
+                        hint: Text(AppLocalizations.of(context)!.stepSelectTool,
+                            style: const TextStyle(fontSize: 13)),
                         items: slot.options
                             .map((tool) => DropdownMenuItem(
                                   value: tool,

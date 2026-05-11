@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class ModeSelectionScreen extends ConsumerWidget {
@@ -7,9 +8,10 @@ class ModeSelectionScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New Character'),
+        title: Text(l10n.modeSelectionTitle),
         leading: BackButton(onPressed: () {
           if (context.canPop()) {
             context.pop();
@@ -22,41 +24,37 @@ class ModeSelectionScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(24),
         children: [
           Text(
-            'How do you want to create your character?',
+            l10n.modeSelectionQuestion,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 24),
           _ModeCard(
             icon: Icons.menu_book,
-            title: 'Guided',
-            subtitle:
-                'Step-by-step wizard. Choose class, race, background, skills and attributes one at a time. Recommended for new players.',
+            title: l10n.modeGuidedTitle,
+            subtitle: l10n.modeGuidedSubtitle,
             onTap: () => context.push('/create/guided'),
           ),
           const SizedBox(height: 12),
           _ModeCard(
             icon: Icons.edit_note,
-            title: 'Manual',
-            subtitle:
-                'Fill in everything yourself. All fields are free and no values are calculated for you. Best for experienced players.',
+            title: l10n.modeManualTitle,
+            subtitle: l10n.modeManualSubtitle,
             onTap: () => context.push('/create/manual'),
             comingSoon: true,
           ),
           const SizedBox(height: 12),
           _ModeCard(
             icon: Icons.casino,
-            title: 'Random',
-            subtitle:
-                'Everything is rolled for you — race, class, background and attributes. Great for a challenge or one-shots.',
+            title: l10n.modeRandomTitle,
+            subtitle: l10n.modeRandomSubtitle,
             onTap: () {},
             comingSoon: true,
           ),
           const SizedBox(height: 12),
           _ModeCard(
             icon: Icons.tune,
-            title: 'Semi-random',
-            subtitle:
-                'You pick the important choices; everything else is rolled. Good for when you have a concept but want surprises.',
+            title: l10n.modeSemiRandomTitle,
+            subtitle: l10n.modeSemiRandomSubtitle,
             onTap: () {},
             comingSoon: true,
           ),
@@ -111,7 +109,7 @@ class _ModeCard extends StatelessWidget {
                           if (comingSoon) ...[
                             const SizedBox(width: 8),
                             Chip(
-                              label: const Text('Soon'),
+                              label: Text(AppLocalizations.of(context)!.modeComingSoon),
                               labelStyle: Theme.of(context)
                                   .textTheme
                                   .labelSmall,

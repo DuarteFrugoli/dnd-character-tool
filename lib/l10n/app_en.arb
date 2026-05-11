@@ -73,5 +73,555 @@
   "@deleteDialogContent": {
     "description": "Delete confirmation dialog body.",
     "placeholders": { "name": { "type": "String" } }
-  }
+  },
+
+  "dialogConfirm": "Confirm",
+  "@dialogConfirm": { "description": "Generic confirm button." },
+
+  "dialogDiscard": "Discard",
+  "@dialogDiscard": { "description": "Generic discard button." },
+
+  "dialogContinue": "Continue",
+  "@dialogContinue": { "description": "Generic continue button." },
+
+  "dialogKeepEditing": "Keep editing",
+  "@dialogKeepEditing": { "description": "Generic keep editing button." },
+
+  "dialogRemove": "Remove",
+  "@dialogRemove": { "description": "Generic remove button." },
+
+  "dialogAdd": "Add",
+  "@dialogAdd": { "description": "Generic add button." },
+
+  "settingsTitle": "Settings",
+  "@settingsTitle": { "description": "Settings screen AppBar title." },
+
+  "settingsSectionTheme": "Visual Theme",
+  "@settingsSectionTheme": { "description": "Settings section header for themes." },
+
+  "settingsDark": "Dark",
+  "@settingsDark": { "description": "Dark brightness label." },
+
+  "settingsLight": "Light",
+  "@settingsLight": { "description": "Light brightness label." },
+
+  "settingsChooseTheme": "Choose a Theme",
+  "@settingsChooseTheme": { "description": "Theme picker bottom sheet title." },
+
+  "settingsSectionLanguage": "Language",
+  "@settingsSectionLanguage": { "description": "Settings section header for language." },
+
+  "settingsAppLanguage": "App language",
+  "@settingsAppLanguage": { "description": "Language tile title." },
+
+  "settingsChooseLanguage": "Choose a Language",
+  "@settingsChooseLanguage": { "description": "Language picker bottom sheet title." },
+
+  "settingsSystemDefault": "System default",
+  "@settingsSystemDefault": { "description": "System default locale option." },
+
+  "modeSelectionTitle": "New Character",
+  "@modeSelectionTitle": { "description": "Mode selection screen AppBar title." },
+
+  "modeSelectionQuestion": "How do you want to create your character?",
+  "@modeSelectionQuestion": { "description": "Mode selection prompt." },
+
+  "modeGuidedTitle": "Guided",
+  "@modeGuidedTitle": { "description": "Guided creation mode title." },
+
+  "modeGuidedSubtitle": "Step-by-step wizard. Choose class, race, background, skills and attributes one at a time. Recommended for new players.",
+  "@modeGuidedSubtitle": { "description": "Guided creation mode description." },
+
+  "modeManualTitle": "Manual",
+  "@modeManualTitle": { "description": "Manual creation mode title." },
+
+  "modeManualSubtitle": "Fill in everything yourself. All fields are free and no values are calculated for you. Best for experienced players.",
+  "@modeManualSubtitle": { "description": "Manual creation mode description." },
+
+  "modeRandomTitle": "Random",
+  "@modeRandomTitle": { "description": "Random creation mode title." },
+
+  "modeRandomSubtitle": "Everything is rolled for you — race, class, background and attributes. Great for a challenge or one-shots.",
+  "@modeRandomSubtitle": { "description": "Random creation mode description." },
+
+  "modeSemiRandomTitle": "Semi-random",
+  "@modeSemiRandomTitle": { "description": "Semi-random creation mode title." },
+
+  "modeSemiRandomSubtitle": "You pick the important choices; everything else is rolled. Good for when you have a concept but want surprises.",
+  "@modeSemiRandomSubtitle": { "description": "Semi-random creation mode description." },
+
+  "modeComingSoon": "Soon",
+  "@modeComingSoon": { "description": "Coming soon chip label." },
+
+  "creationStepClass": "Class",
+  "@creationStepClass": { "description": "Step title for class selection." },
+
+  "creationStepRace": "Race",
+  "@creationStepRace": { "description": "Step title for race selection." },
+
+  "creationStepBackground": "Background",
+  "@creationStepBackground": { "description": "Step title for background selection." },
+
+  "creationStepSkills": "Skills",
+  "@creationStepSkills": { "description": "Step title for skill selection." },
+
+  "creationStepAttributes": "Attributes",
+  "@creationStepAttributes": { "description": "Step title for attribute assignment." },
+
+  "creationStepName": "Name",
+  "@creationStepName": { "description": "Step title for naming the character." },
+
+  "creationStepReview": "Review",
+  "@creationStepReview": { "description": "Step title for review." },
+
+  "creationDiscardTitle": "Discard character?",
+  "@creationDiscardTitle": { "description": "Discard creation dialog title." },
+
+  "creationDiscardContent": "All progress will be lost. Are you sure?",
+  "@creationDiscardContent": { "description": "Discard creation dialog body." },
+
+  "creationTooltipCancel": "Cancel",
+  "@creationTooltipCancel": { "description": "Cancel creation tooltip." },
+
+  "creationBack": "Back",
+  "@creationBack": { "description": "Back button in creation wizard." },
+
+  "creationCreateCharacter": "Create Character",
+  "@creationCreateCharacter": { "description": "Final step button." },
+
+  "detailLeaveWithoutSaving": "Leave without saving?",
+  "@detailLeaveWithoutSaving": { "description": "Dialog title when leaving edit mode with unsaved changes." },
+
+  "detailChangesWillBeDiscarded": "Changes will be discarded. To save, use the ✓ button at the top right.",
+  "@detailChangesWillBeDiscarded": { "description": "Dialog body when leaving with unsaved changes." },
+
+  "detailLeaveAndDiscard": "Leave and discard",
+  "@detailLeaveAndDiscard": { "description": "Button to leave and discard changes." },
+
+  "detailErrorLoading": "Error loading character: {error}",
+  "@detailErrorLoading": {
+    "description": "Error state body.",
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "detailTooltipLongRest": "Long Rest",
+  "@detailTooltipLongRest": { "description": "Long rest icon button tooltip." },
+
+  "detailTooltipCancelEdit": "Cancel editing",
+  "@detailTooltipCancelEdit": { "description": "Cancel edit icon button tooltip." },
+
+  "detailTooltipDoneEditing": "Done editing",
+  "@detailTooltipDoneEditing": { "description": "Done editing icon button tooltip." },
+
+  "detailTooltipEditCharacter": "Edit character",
+  "@detailTooltipEditCharacter": { "description": "Edit character icon button tooltip." },
+
+  "detailCancelEditTitle": "Cancel editing?",
+  "@detailCancelEditTitle": { "description": "Cancel edit dialog title." },
+
+  "detailCancelEditContent": "All changes will be discarded.",
+  "@detailCancelEditContent": { "description": "Cancel edit dialog body." },
+
+  "detailFinishEditTitle": "Finish editing?",
+  "@detailFinishEditTitle": { "description": "Finish edit dialog title." },
+
+  "detailFinishEditContent": "Changes will be saved.",
+  "@detailFinishEditContent": { "description": "Finish edit dialog body." },
+
+  "detailTabStats": "Stats",
+  "@detailTabStats": { "description": "Stats tab label." },
+
+  "detailTabSkills": "Skills",
+  "@detailTabSkills": { "description": "Skills tab label." },
+
+  "detailTabFeatures": "Features",
+  "@detailTabFeatures": { "description": "Features tab label." },
+
+  "detailTabSpells": "Spells",
+  "@detailTabSpells": { "description": "Spells tab label." },
+
+  "detailTabInventory": "Inventory",
+  "@detailTabInventory": { "description": "Inventory tab label." },
+
+  "detailTabNotes": "Notes",
+  "@detailTabNotes": { "description": "Notes tab label." },
+
+  "longRestTitle": "Long Rest",
+  "@longRestTitle": { "description": "Long rest dialog title." },
+
+  "longRestContent": "Restore HP to maximum and recover all spell slots?",
+  "@longRestContent": { "description": "Long rest dialog body." },
+
+  "longRestButton": "Rest",
+  "@longRestButton": { "description": "Long rest confirm button." },
+
+  "sectionIdentity": "Identity",
+  "@sectionIdentity": { "description": "Stats tab identity section title." },
+
+  "sectionHitPoints": "Hit Points",
+  "@sectionHitPoints": { "description": "Stats tab hit points section title." },
+
+  "sectionCombat": "Combat",
+  "@sectionCombat": { "description": "Stats tab combat section title." },
+
+  "sectionAbilityScores": "Ability Scores",
+  "@sectionAbilityScores": { "description": "Stats tab ability scores section title." },
+
+  "sectionSavingThrows": "Saving Throw Proficiencies",
+  "@sectionSavingThrows": { "description": "Stats tab saving throws section title." },
+
+  "labelName": "Name",
+  "@labelName": { "description": "Name field label." },
+
+  "labelBackground": "Background",
+  "@labelBackground": { "description": "Background field label." },
+
+  "labelChange": "Change",
+  "@labelChange": { "description": "Change button label." },
+
+  "labelAlignment": "Alignment",
+  "@labelAlignment": { "description": "Alignment field label." },
+
+  "labelPlayer": "Player",
+  "@labelPlayer": { "description": "Player name field label." },
+
+  "labelLevel": "Level",
+  "@labelLevel": { "description": "Level field label." },
+
+  "labelSubclass": "Subclass",
+  "@labelSubclass": { "description": "Subclass field label." },
+
+  "labelLanguages": "Languages",
+  "@labelLanguages": { "description": "Languages field label." },
+
+  "hintAddLanguage": "Add language…",
+  "@hintAddLanguage": { "description": "Language input hint." },
+
+  "labelChoose": "Choose",
+  "@labelChoose": { "description": "Choose button label." },
+
+  "labelMaxHP": "Max HP",
+  "@labelMaxHP": { "description": "Max HP inline field label." },
+
+  "labelTempHP": "Temp HP",
+  "@labelTempHP": { "description": "Temporary HP field label." },
+
+  "labelAmount": "Amount",
+  "@labelAmount": { "description": "Amount field label for HP tracker." },
+
+  "labelSpeed": "Speed (ft)",
+  "@labelSpeed": { "description": "Speed inline field label." },
+
+  "detailDamage": "Damage",
+  "@detailDamage": { "description": "Damage button in HP tracker." },
+
+  "detailHeal": "Heal",
+  "@detailHeal": { "description": "Heal button in HP tracker." },
+
+  "detailNone": "None",
+  "@detailNone": { "description": "None placeholder (e.g. no concentration spell)." },
+
+  "tempHpDialogTitle": "Add Temporary HP",
+  "@tempHpDialogTitle": { "description": "Temp HP dialog title when no temp HP." },
+
+  "tempHpDialogTitleReplace": "Temporary HP",
+  "@tempHpDialogTitleReplace": { "description": "Temp HP dialog title when temp HP exists." },
+
+  "tempHpCurrent": "Current: +{n} temp HP",
+  "@tempHpCurrent": {
+    "description": "Current temp HP display.",
+    "placeholders": { "n": { "type": "int" } }
+  },
+
+  "tempHpNoStack": "Temp HP doesn't stack — only higher values replace the current.",
+  "@tempHpNoStack": { "description": "Temp HP stacking note." },
+
+  "tempHpReplace": "Replace",
+  "@tempHpReplace": { "description": "Replace temp HP button." },
+
+  "subclassConfirmTitle": "Confirm {feature}",
+  "@subclassConfirmTitle": {
+    "description": "Subclass dialog title when confirming existing choice.",
+    "placeholders": { "feature": { "type": "String" } }
+  },
+
+  "subclassChooseTitle": "Choose {feature}",
+  "@subclassChooseTitle": {
+    "description": "Subclass dialog title when choosing for the first time.",
+    "placeholders": { "feature": { "type": "String" } }
+  },
+
+  "subclassConfirmBody": "You reached level {level}. Confirm or change your {feature}.",
+  "@subclassConfirmBody": {
+    "description": "Subclass confirm dialog body.",
+    "placeholders": {
+      "level": { "type": "int" },
+      "feature": { "type": "String" }
+    }
+  },
+
+  "subclassChooseBody": "You reached level {level}! Choose your {feature}.",
+  "@subclassChooseBody": {
+    "description": "Subclass choose dialog body.",
+    "placeholders": {
+      "level": { "type": "int" },
+      "feature": { "type": "String" }
+    }
+  },
+
+  "subclassKeepCurrent": "Keep current",
+  "@subclassKeepCurrent": { "description": "Keep current subclass button." },
+
+  "subclassChangeTitle": "Change subclass",
+  "@subclassChangeTitle": { "description": "Change subclass warning dialog title." },
+
+  "subclassChangeWarning": "Warning: spells and proficiencies granted by the previous subclass are not removed automatically. You will need to adjust them manually.",
+  "@subclassChangeWarning": { "description": "Change subclass warning dialog body." },
+
+  "backgroundChooseTitle": "Choose Background",
+  "@backgroundChooseTitle": { "description": "Background picker dialog title." },
+
+  "featuresTooltipAdd": "Add feature",
+  "@featuresTooltipAdd": { "description": "Add feature FAB tooltip." },
+
+  "featuresTooltipRemove": "Remove",
+  "@featuresTooltipRemove": { "description": "Remove feature tooltip." },
+
+  "featuresRemoveTitle": "Remove feature?",
+  "@featuresRemoveTitle": { "description": "Remove feature dialog title." },
+
+  "featuresRemoveContent": "\"{name}\" will be removed.",
+  "@featuresRemoveContent": {
+    "description": "Remove feature dialog body.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "featuresNoneAvailable": "No features available.",
+  "@featuresNoneAvailable": { "description": "Empty state for features." },
+
+  "featuresAddLabel": "Add Feature",
+  "@featuresAddLabel": { "description": "Add feature FAB label." },
+
+  "featuresLoadError": "Error loading features.",
+  "@featuresLoadError": { "description": "Features tab error state." },
+
+  "hintSearch": "Search...",
+  "@hintSearch": { "description": "Generic search hint." },
+
+  "labelFeatureName": "Name",
+  "@labelFeatureName": { "description": "Feature name field label." },
+
+  "labelFeatureDescription": "Description (optional)",
+  "@labelFeatureDescription": { "description": "Feature description field label." },
+
+  "labelFeatureType": "Type:",
+  "@labelFeatureType": { "description": "Feature type label." },
+
+  "labelPassive": "Passive",
+  "@labelPassive": { "description": "Passive feature type." },
+
+  "labelActive": "Active",
+  "@labelActive": { "description": "Active feature type." },
+
+  "spellsTooltipAdd": "Add spell",
+  "@spellsTooltipAdd": { "description": "Add spell button tooltip." },
+
+  "spellsRemoveTitle": "Remove spell?",
+  "@spellsRemoveTitle": { "description": "Remove spell dialog title." },
+
+  "spellsRemoveContent": "Remove \"{name}\" from your spell list?",
+  "@spellsRemoveContent": {
+    "description": "Remove spell dialog body.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "spellsAtWill": "At will",
+  "@spellsAtWill": { "description": "At-will spell slot label." },
+
+  "notesTooltipAdd": "Add note",
+  "@notesTooltipAdd": { "description": "Add note FAB tooltip." },
+
+  "notesTooltipEdit": "Edit note",
+  "@notesTooltipEdit": { "description": "Edit note tooltip." },
+
+  "notesTooltipDelete": "Delete note",
+  "@notesTooltipDelete": { "description": "Delete note tooltip." },
+
+  "notesDeleteTitle": "Delete note?",
+  "@notesDeleteTitle": { "description": "Delete note dialog title." },
+
+  "notesDeleteContentNamed": "\"{title}\" will be permanently deleted.",
+  "@notesDeleteContentNamed": {
+    "description": "Delete note dialog body when note has a title.",
+    "placeholders": { "title": { "type": "String" } }
+  },
+
+  "notesDeleteContent": "This note will be permanently deleted.",
+  "@notesDeleteContent": { "description": "Delete note dialog body when note has no title." },
+
+  "notesLabelTitle": "Title",
+  "@notesLabelTitle": { "description": "Note title field label." },
+
+  "notesLabelContent": "Content",
+  "@notesLabelContent": { "description": "Note content field label." },
+
+  "sectionPersonalityTraits": "Personality Traits",
+  "@sectionPersonalityTraits": { "description": "Notes tab personality traits section." },
+
+  "sectionIdeals": "Ideals",
+  "@sectionIdeals": { "description": "Notes tab ideals section." },
+
+  "sectionBonds": "Bonds",
+  "@sectionBonds": { "description": "Notes tab bonds section." },
+
+  "sectionFlaws": "Flaws",
+  "@sectionFlaws": { "description": "Notes tab flaws section." },
+
+  "sectionBackstory": "Backstory",
+  "@sectionBackstory": { "description": "Notes tab backstory section." },
+
+  "inventoryEquippedSection": "Equipped ({count})  ·  AC {ac}",
+  "@inventoryEquippedSection": {
+    "description": "Equipped items section title.",
+    "placeholders": {
+      "count": { "type": "int" },
+      "ac": { "type": "int" }
+    }
+  },
+
+  "inventoryTooltipAdd": "Add item",
+  "@inventoryTooltipAdd": { "description": "Add item FAB tooltip." },
+
+  "inventoryTooltipRemove": "Remove",
+  "@inventoryTooltipRemove": { "description": "Remove item tooltip." },
+
+  "inventoryRemoveTitle": "Remove item?",
+  "@inventoryRemoveTitle": { "description": "Remove item dialog title." },
+
+  "inventoryRemoveContent": "Remove {name} from inventory?",
+  "@inventoryRemoveContent": {
+    "description": "Remove item dialog body (single).",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "inventoryRemovePartial": "Will remove: {count} of {total}",
+  "@inventoryRemovePartial": {
+    "description": "Partial removal display.",
+    "placeholders": {
+      "count": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+
+  "inventoryLabelQuantity": "Quantity:",
+  "@inventoryLabelQuantity": { "description": "Quantity label in item dialog." },
+
+  "inventoryLabelQuantityToRemove": "Quantity to remove",
+  "@inventoryLabelQuantityToRemove": { "description": "Quantity to remove field label." },
+
+  "inventoryAddCustomItem": "Add Custom Item",
+  "@inventoryAddCustomItem": { "description": "Add custom item button." },
+
+  "inventoryAddItem": "Add Item",
+  "@inventoryAddItem": { "description": "Add item browser title." },
+
+  "inventoryLabelItemName": "Name *",
+  "@inventoryLabelItemName": { "description": "Custom item name field label." },
+
+  "inventoryLabelType": "Type",
+  "@inventoryLabelType": { "description": "Custom item type field label." },
+
+  "inventoryLabelCategory": "Category",
+  "@inventoryLabelCategory": { "description": "Custom item category field label." },
+
+  "inventoryLabelItemQuantity": "Quantity",
+  "@inventoryLabelItemQuantity": { "description": "Custom item quantity field label." },
+
+  "inventoryLabelDescription": "Description (optional)",
+  "@inventoryLabelDescription": { "description": "Custom item description field label." },
+
+  "inventoryTypeWeapon": "Weapon",
+  "@inventoryTypeWeapon": { "description": "Item type: weapon." },
+
+  "inventoryTypeArmor": "Armor",
+  "@inventoryTypeArmor": { "description": "Item type: armor." },
+
+  "inventoryTypeConsumable": "Consumable",
+  "@inventoryTypeConsumable": { "description": "Item type: consumable." },
+
+  "inventoryTypeGear": "Gear",
+  "@inventoryTypeGear": { "description": "Item type: gear." },
+
+  "inventoryReplaceArmorTitle": "Replace equipped armor?",
+  "@inventoryReplaceArmorTitle": { "description": "Replace armor confirmation dialog title." },
+
+  "inventoryTabWeapons": "Weapons",
+  "@inventoryTabWeapons": { "description": "Inventory browser weapons tab." },
+
+  "inventoryTabArmor": "Armor",
+  "@inventoryTabArmor": { "description": "Inventory browser armor tab." },
+
+  "inventoryTabGear": "Gear",
+  "@inventoryTabGear": { "description": "Inventory browser gear tab." },
+
+  "inventoryTabMagic": "Magic",
+  "@inventoryTabMagic": { "description": "Inventory browser magic tab." },
+
+  "inventoryTabCustom": "Custom",
+  "@inventoryTabCustom": { "description": "Inventory browser custom tab." },
+
+  "hintSearchCategory": "Search {category}...",
+  "@hintSearchCategory": {
+    "description": "Search hint with category name.",
+    "placeholders": { "category": { "type": "String" } }
+  },
+
+  "stepChooseMethod": "Choose your method:",
+  "@stepChooseMethod": { "description": "Attributes step method selector label." },
+
+  "stepStandardArray": "Standard Array",
+  "@stepStandardArray": { "description": "Standard Array method chip." },
+
+  "stepPointBuy": "Point Buy",
+  "@stepPointBuy": { "description": "Point Buy method chip." },
+
+  "stepRoll4d6": "Roll 4d6",
+  "@stepRoll4d6": { "description": "Roll 4d6 method chip." },
+
+  "stepDistributeRacialBonuses": "Distribute racial bonuses freely",
+  "@stepDistributeRacialBonuses": { "description": "Tasha's optional rule switch label." },
+
+  "stepAssignRolls": "Assign each roll to an attribute:",
+  "@stepAssignRolls": { "description": "Rolled dice assignment label." },
+
+  "stepAssignValues": "Assign each value to one attribute:",
+  "@stepAssignValues": { "description": "Standard array assignment label." },
+
+  "stepPointsRemaining": "Points remaining: ",
+  "@stepPointsRemaining": { "description": "Point buy remaining points label." },
+
+  "stepRaceBonus": "+{n} race",
+  "@stepRaceBonus": {
+    "description": "Race ASI bonus label.",
+    "placeholders": { "n": { "type": "int" } }
+  },
+
+  "stepChooseSubrace": "Choose a subrace:",
+  "@stepChooseSubrace": { "description": "Subrace selector label." },
+
+  "stepGrantedByBackground": "Granted by background:",
+  "@stepGrantedByBackground": { "description": "Background skill grant label." },
+
+  "stepClassSkillChoices": "Class skill choices ({count}):",
+  "@stepClassSkillChoices": {
+    "description": "Class skill choices label.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "stepChooseOne": "Choose one",
+  "@stepChooseOne": { "description": "Generic choose one dropdown hint." },
+
+  "stepSelectTool": "Select a tool\u2026",
+  "@stepSelectTool": { "description": "Tool proficiency dropdown hint." }
 }
+

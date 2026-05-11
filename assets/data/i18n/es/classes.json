@@ -1,0 +1,592 @@
+{
+  "Barbarian": {
+    "name": "Bárbaro",
+    "subclassFeatureName": "Camino primordial",
+    "weaponProficiencies": [
+      "simple",
+      "marcial"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "paquete de explorador",
+        "4 jabalinas"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "gran hacha"
+            ],
+            [
+              "cualquier arma marcial cuerpo a cuerpo"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "hacha de mano",
+              "hacha de mano"
+            ],
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Bard": {
+    "name": "Bardo",
+    "subclassFeatureName": "colegio bardo",
+    "weaponProficiencies": [
+      "simple",
+      "ballesta de mano",
+      "espada larga",
+      "estoque",
+      "espada corta"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armadura de cuero",
+        "Daga"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Estoque"
+            ],
+            [
+              "espada larga"
+            ],
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Paquete de diplomático"
+            ],
+            [
+              "paquete de animador"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Laúd"
+            ],
+            [
+              "cualquier instrumento musical"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "Clérigo",
+    "subclassFeatureName": "Dominio Divino",
+    "weaponProficiencies": [
+      "simple"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Blindaje",
+        "símbolo sagrado"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Maza"
+            ],
+            [
+              "martillo de guerra"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Correo de escala"
+            ],
+            [
+              "Armadura de cuero"
+            ],
+            [
+              "cota de malla"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "ballesta ligera",
+              "20 pernos"
+            ],
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "paquete de sacerdote"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Druid": {
+    "name": "druida",
+    "subclassFeatureName": "Círculo druida",
+    "weaponProficiencies": [
+      "clubs",
+      "dagas",
+      "dardos",
+      "jabalinas",
+      "mazas",
+      "bastones",
+      "cimitarras",
+      "hoces",
+      "eslingas",
+      "lanzas"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armadura de cuero",
+        "paquete de explorador",
+        "Enfoque druídico"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Escudo de madera"
+            ],
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Cimitarra"
+            ],
+            [
+              "cualquier arma cuerpo a cuerpo simple"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "Combatiente",
+    "subclassFeatureName": "Arquetipo marcial",
+    "weaponProficiencies": [
+      "simple",
+      "marcial"
+    ],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {
+          "options": [
+            [
+              "cota de malla"
+            ],
+            [
+              "Armadura de cuero",
+              "Arco",
+              "20 flechas"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "cualquier arma marcial",
+              "Blindaje"
+            ],
+            [
+              "cualquier arma marcial",
+              "cualquier arma marcial"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "ballesta ligera",
+              "20 pernos"
+            ],
+            [
+              "hacha de mano",
+              "hacha de mano"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Paquete de mazmorra"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Monk": {
+    "name": "Monje",
+    "subclassFeatureName": "Tradición monástica",
+    "weaponProficiencies": [
+      "simple",
+      "espadas cortas"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "10 dardos"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Espada corta"
+            ],
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Paquete de mazmorra"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "Paladín",
+    "subclassFeatureName": "Juramento Sagrado",
+    "weaponProficiencies": [
+      "simple",
+      "marcial"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "cota de malla",
+        "símbolo sagrado"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "cualquier arma marcial",
+              "Blindaje"
+            ],
+            [
+              "cualquier arma marcial",
+              "cualquier arma marcial"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "5 jabalinas"
+            ],
+            [
+              "cualquier arma cuerpo a cuerpo simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "paquete de sacerdote"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "Guardabosque",
+    "subclassFeatureName": "Arquetipo de guardabosques",
+    "weaponProficiencies": [
+      "simple",
+      "marcial"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Arco",
+        "Carcaj con 20 flechas"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Correo de escala"
+            ],
+            [
+              "Armadura de cuero"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Espada corta",
+              "Espada corta"
+            ],
+            [
+              "cualquier arma cuerpo a cuerpo simple",
+              "cualquier arma cuerpo a cuerpo simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Paquete de mazmorra"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "Pícaro",
+    "subclassFeatureName": "Arquetipo pícaro",
+    "weaponProficiencies": [
+      "simple",
+      "ballesta de mano",
+      "espada larga",
+      "estoque",
+      "espada corta"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armadura de cuero",
+        "Daga",
+        "Daga",
+        "herramientas de ladrones"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Estoque"
+            ],
+            [
+              "Espada corta"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "arco corto",
+              "Carcaj con 20 flechas"
+            ],
+            [
+              "Espada corta"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "paquete de ladrón"
+            ],
+            [
+              "Paquete de mazmorra"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "Hechicero",
+    "subclassFeatureName": "Origen hechicero",
+    "weaponProficiencies": [
+      "dagas",
+      "dardos",
+      "eslingas",
+      "bastones",
+      "ballestas ligeras"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Daga",
+        "Daga"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "ballesta ligera",
+              "20 pernos"
+            ],
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Bolsa de componentes"
+            ],
+            [
+              "Enfoque arcano"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Paquete de mazmorra"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "Brujo",
+    "subclassFeatureName": "Patrón de otro mundo",
+    "weaponProficiencies": [
+      "simple"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armadura de cuero",
+        "Daga",
+        "Daga"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "ballesta ligera",
+              "20 pernos"
+            ],
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Bolsa de componentes"
+            ],
+            [
+              "Enfoque arcano"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "paquete de erudito"
+            ],
+            [
+              "Paquete de mazmorra"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "cualquier arma simple"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "Mago",
+    "subclassFeatureName": "Tradición Arcana",
+    "weaponProficiencies": [
+      "dagas",
+      "dardos",
+      "eslingas",
+      "bastones",
+      "ballestas ligeras"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Libro de hechizos"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Barra"
+            ],
+            [
+              "Daga"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Bolsa de componentes"
+            ],
+            [
+              "Enfoque arcano"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "paquete de erudito"
+            ],
+            [
+              "paquete de explorador"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

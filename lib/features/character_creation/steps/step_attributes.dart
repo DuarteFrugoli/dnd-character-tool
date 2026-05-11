@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_models.dart';
@@ -79,22 +80,22 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
           [_ClassReminder(cls: draft.selectedClass!), const SizedBox(height: 16)],
 
         // ── Método ────────────────────────────────────────────────────────
-        Text('Choose your method:',
+        Text(AppLocalizations.of(context)!.stepChooseMethod,
             style: Theme.of(context).textTheme.labelLarge),
         const SizedBox(height: 8),
         SegmentedButton<AttributeMethod>(
-          segments: const [
+          segments: [
             ButtonSegment(
               value: AttributeMethod.standardArray,
-              label: Text('Standard Array'),
+              label: Text(AppLocalizations.of(context)!.stepStandardArray),
             ),
             ButtonSegment(
               value: AttributeMethod.pointBuy,
-              label: Text('Point Buy'),
+              label: Text(AppLocalizations.of(context)!.stepPointBuy),
             ),
             ButtonSegment(
               value: AttributeMethod.rolledDice,
-              label: Text('Roll 4d6'),
+              label: Text(AppLocalizations.of(context)!.stepRoll4d6),
             ),
           ],
           selected: {method},
@@ -111,7 +112,7 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
         if (raceAsi.isNotEmpty) ...[
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
-            title: const Text('Distribute racial bonuses freely'),
+            title: Text(AppLocalizations.of(context)!.stepDistributeRacialBonuses),
             subtitle: const Text(
                 'Tasha\'s optional rule — assign ASI points to any attribute'),
             value: freeAsi,
@@ -358,7 +359,7 @@ class _RolledDiceSection extends StatelessWidget {
           )
         else ...[
           const SizedBox(height: 12),
-          Text('Assign each roll to an attribute:',
+          Text(AppLocalizations.of(context)!.stepAssignRolls,
               style: Theme.of(context).textTheme.bodySmall),
           const SizedBox(height: 8),
           ..._attributes.map((attr) {
@@ -406,7 +407,7 @@ class _RolledDiceSection extends StatelessWidget {
                   if (asi != 0)
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
-                      child: Text('+$asi race',
+                      child: Text(AppLocalizations.of(context)!.stepRaceBonus(asi),
                           style: Theme.of(context)
                               .textTheme
                               .bodySmall
@@ -454,7 +455,7 @@ class _StandardArraySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Assign each value to one attribute:',
+        Text(AppLocalizations.of(context)!.stepAssignValues,
             style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 8),
         ..._attributes.map((attr) {
@@ -505,7 +506,7 @@ class _StandardArraySection extends StatelessWidget {
                 if (asi != 0)
                   Padding(
                     padding: const EdgeInsets.only(left: 8),
-                    child: Text('+$asi race',
+                    child: Text(AppLocalizations.of(context)!.stepRaceBonus(asi),
                         style: Theme.of(context)
                             .textTheme
                             .bodySmall
@@ -560,7 +561,7 @@ class _PointBuySection extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text('Points remaining: ',
+            Text(AppLocalizations.of(context)!.stepPointsRemaining,
                 style: Theme.of(context).textTheme.bodySmall),
             Text(
               '$_remaining / $_pointBuyTotal',

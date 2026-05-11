@@ -12,6 +12,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:go_router/go_router.dart';
@@ -88,16 +89,16 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   void _goBack() => context.canPop() ? context.pop() : context.go('/');
 
   Future<bool> _confirmDiscardEdit() async {
+    final l10n = AppLocalizations.of(context)!;
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Sair sem salvar?'),
-        content: const Text(
-            'As alterações serão descartadas. Para salvar, use o botão ✓ no canto superior direito.'),
+        title: Text(l10n.detailLeaveWithoutSaving),
+        content: Text(l10n.detailChangesWillBeDiscarded),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('Continuar editando'),
+            child: Text(l10n.dialogKeepEditing),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
@@ -105,7 +106,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               backgroundColor: Theme.of(context).colorScheme.error,
               foregroundColor: Theme.of(context).colorScheme.onError,
             ),
-            child: const Text('Sair e descartar'),
+            child: Text(l10n.detailLeaveAndDiscard),
           ),
         ],
       ),
@@ -147,7 +148,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           leading: BackButton(onPressed: _handleBack),
           title: const Text('Character'),
         ),
-        body: Center(child: Text('Error loading character: $e')),
+        body: Center(child: Text(AppLocalizations.of(context)!.detailErrorLoading(e.toString()))),
       ),
       data: _buildLoaded,
     );
@@ -207,24 +208,24 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           if (!_editMode)
             IconButton(
               icon: const Icon(Icons.bedtime_outlined),
-              tooltip: 'Long Rest',
+              tooltip: AppLocalizations.of(context)!.detailTooltipLongRest,
               onPressed: () => _confirmLongRest(),
             ),
           if (_editMode)
             IconButton(
               icon: const Icon(Icons.close),
-              tooltip: 'Cancelar edição',
+              tooltip: AppLocalizations.of(context)!.detailTooltipCancelEdit,
               onPressed: () async {
+                final l10n = AppLocalizations.of(context)!;
                 final confirm = await showDialog<bool>(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    title: const Text('Cancelar edição?'),
-                    content: const Text(
-                        'Todas as alterações serão descartadas.'),
+                    title: Text(l10n.detailCancelEditTitle),
+                    content: Text(l10n.detailCancelEditContent),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(ctx, false),
-                        child: const Text('Continuar editando'),
+                        child: Text(l10n.dialogKeepEditing),
                       ),
                       FilledButton(
                         onPressed: () => Navigator.pop(ctx, true),
@@ -234,7 +235,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
                           foregroundColor:
                               Theme.of(context).colorScheme.onError,
                         ),
-                        child: const Text('Descartar'),
+                        child: Text(l10n.dialogDiscard),
                       ),
                     ],
                   ),
@@ -258,7 +259,9 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             icon: Icon(_editMode
                 ? Icons.check_circle_outlined
                 : Icons.edit_outlined),
-            tooltip: _editMode ? 'Done editing' : 'Edit character',
+            tooltip: _editMode
+                ? AppLocalizations.of(context)!.detailTooltipDoneEditing
+                : AppLocalizations.of(context)!.detailTooltipEditCharacter,
             color: _editMode
                 ? Theme.of(context).colorScheme.primary
                 : null,
@@ -277,19 +280,20 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               FocusScope.of(context).unfocus();
               await Future.delayed(Duration.zero);
               if (!mounted) return;
+              final l10n = AppLocalizations.of(context)!;
               final confirm = await showDialog<bool>(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: const Text('Finalizar edição?'),
-                  content: const Text('As alterações serão salvas.'),
+                  title: Text(l10n.detailFinishEditTitle),
+                  content: Text(l10n.detailFinishEditContent),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(ctx, false),
-                      child: const Text('Continuar editando'),
+                      child: Text(l10n.dialogKeepEditing),
                     ),
                     FilledButton(
                       onPressed: () => Navigator.pop(ctx, true),
-                      child: const Text('Confirmar'),
+                      child: Text(l10n.dialogConfirm),
                     ),
                   ],
                 ),
@@ -307,13 +311,13 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           controller: _tabs,
           isScrollable: true,
           tabAlignment: TabAlignment.start,
-          tabs: const [
-            Tab(text: 'Stats'),
-            Tab(text: 'Skills'),
-            Tab(text: 'Features'),
-            Tab(text: 'Spells'),
-            Tab(text: 'Inventory'),
-            Tab(text: 'Notes'),
+          tabs: [
+            Tab(text: AppLocalizations.of(context)!.detailTabStats),
+            Tab(text: AppLocalizations.of(context)!.detailTabSkills),
+            Tab(text: AppLocalizations.of(context)!.detailTabFeatures),
+            Tab(text: AppLocalizations.of(context)!.detailTabSpells),
+            Tab(text: AppLocalizations.of(context)!.detailTabInventory),
+            Tab(text: AppLocalizations.of(context)!.detailTabNotes),
           ],
         ),
       ),
@@ -333,20 +337,20 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   }
 
   Future<void> _confirmLongRest() async {
+    final l10n = AppLocalizations.of(context)!;
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Long Rest'),
-        content:
-            const Text('Restore HP to maximum and recover all spell slots?'),
+        title: Text(l10n.longRestTitle),
+        content: Text(l10n.longRestContent),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('Cancel'),
+            child: Text(l10n.dialogCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('Rest'),
+            child: Text(l10n.longRestButton),
           ),
         ],
       ),
@@ -449,6 +453,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     required String? current,
     required bool isConfirm,
   }) {
+    final l10n = AppLocalizations.of(context)!;
     String? selected = current;
     return showDialog<String>(
       context: context,
@@ -457,8 +462,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         builder: (ctx, setDialogState) {
           return AlertDialog(
             title: Text(isConfirm
-                ? 'Confirmar ${srdClass.subclassFeatureName}'
-                : 'Escolher ${srdClass.subclassFeatureName}'),
+                ? l10n.subclassConfirmTitle(srdClass.subclassFeatureName)
+                : l10n.subclassChooseTitle(srdClass.subclassFeatureName)),
             content: SizedBox(
               width: double.maxFinite,
               child: Column(
@@ -469,8 +474,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 12),
                       child: Text(
-                        'Você chegou ao nível ${srdClass.subclassLevel}. '
-                        'Confirme ou altere sua ${srdClass.subclassFeatureName}.',
+                        l10n.subclassConfirmBody(srdClass.subclassLevel, srdClass.subclassFeatureName),
                         style: Theme.of(ctx).textTheme.bodySmall,
                       ),
                     )
@@ -478,8 +482,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 12),
                       child: Text(
-                        'Você chegou ao nível ${srdClass.subclassLevel}! '
-                        'Escolha sua ${srdClass.subclassFeatureName}.',
+                        l10n.subclassChooseBody(srdClass.subclassLevel, srdClass.subclassFeatureName),
                         style: Theme.of(ctx).textTheme.bodySmall,
                       ),
                     ),
@@ -515,13 +518,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               if (isConfirm)
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, current),
-                  child: const Text('Manter atual'),
+                  child: Text(AppLocalizations.of(ctx)!.subclassKeepCurrent),
                 ),
               FilledButton(
                 onPressed: selected != null
                     ? () => Navigator.pop(ctx, selected)
                     : null,
-                child: const Text('Confirmar'),
+                child: Text(AppLocalizations.of(ctx)!.dialogConfirm),
               ),
             ],
           );
@@ -542,19 +545,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
       final confirm = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: const Text('Trocar subclasse'),
-          content: const Text(
-            'Atenção: spells e proficiências concedidas pela subclasse anterior '
-            'não são removidas automaticamente. Você precisará ajustá-las manualmente.',
-          ),
+          title: Text(AppLocalizations.of(context)!.subclassChangeTitle),
+          content: Text(AppLocalizations.of(context)!.subclassChangeWarning),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Cancelar'),
+              child: Text(AppLocalizations.of(ctx)!.dialogCancel),
             ),
             FilledButton(
               onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Continuar'),
+              child: Text(AppLocalizations.of(ctx)!.dialogContinue),
             ),
           ],
         ),
@@ -643,7 +643,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
       context: context,
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setDialogState) => AlertDialog(
-          title: const Text('Escolher Background'),
+          title: Text(AppLocalizations.of(context)!.backgroundChooseTitle),
           content: SizedBox(
             width: double.maxFinite,
             height: 400,
@@ -665,13 +665,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: const Text('Cancelar'),
+              child: Text(AppLocalizations.of(ctx)!.dialogCancel),
             ),
             FilledButton(
               onPressed: selected != null
                   ? () => Navigator.pop(ctx, selected)
                   : null,
-              child: const Text('Confirmar'),
+              child: Text(AppLocalizations.of(ctx)!.dialogConfirm),
             ),
           ],
         ),
@@ -696,7 +696,9 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               parsed > 0 &&
               (currentTemp == 0 || parsed > currentTemp);
           return AlertDialog(
-            title: Text(currentTemp > 0 ? 'Temporary HP' : 'Add Temporary HP'),
+            title: Text(currentTemp > 0
+              ? AppLocalizations.of(context)!.tempHpDialogTitleReplace
+              : AppLocalizations.of(context)!.tempHpDialogTitle),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -705,7 +707,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8),
                     child: Text(
-                      'Current: +$currentTemp temp HP',
+                      AppLocalizations.of(ctx)!.tempHpCurrent(currentTemp),
                       style: TextStyle(
                         color: Theme.of(ctx).colorScheme.onSurfaceVariant,
                       ),
@@ -717,9 +719,9 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   textAlign: TextAlign.center,
-                  decoration: const InputDecoration(
-                    labelText: 'Temp HP',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(ctx)!.labelTempHP,
+                    border: const OutlineInputBorder(),
                   ),
                   onChanged: (_) => setLocal(() {}),
                   onSubmitted: (_) {
@@ -733,7 +735,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: Text(
-                      'Temp HP doesn\'t stack — only higher values replace the current.',
+                      AppLocalizations.of(ctx)!.tempHpNoStack,
                       style: TextStyle(
                         fontSize: 12,
                         color: Theme.of(ctx).colorScheme.onSurfaceVariant,
@@ -746,15 +748,17 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               if (currentTemp > 0)
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, 0),
-                  child: const Text('Remove'),
+                  child: Text(AppLocalizations.of(ctx)!.dialogRemove),
                 ),
               TextButton(
                 onPressed: () => Navigator.pop(ctx),
-                child: const Text('Cancel'),
+                child: Text(AppLocalizations.of(ctx)!.dialogCancel),
               ),
               FilledButton(
                 onPressed: isValid ? () => Navigator.pop(ctx, parsed) : null,
-                child: Text(currentTemp > 0 ? 'Replace' : 'Add'),
+                child: Text(currentTemp > 0
+                    ? AppLocalizations.of(ctx)!.tempHpReplace
+                    : AppLocalizations.of(ctx)!.dialogAdd),
               ),
             ],
           );
@@ -771,6 +775,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final character = widget.character;
     final isEditing = widget.isEditing;
     final hp = character.hitPoints;
@@ -802,7 +807,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _InlineField(
-                        label: 'Name',
+                        label: l10n.labelName,
                         controller: _nameCtrl,
                         focusNode: _nameFocus),
                     // Background — picker, not free text
@@ -813,7 +818,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           SizedBox(
                             width: 96,
                             child: Text(
-                              'Background',
+                              l10n.labelBackground,
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     color: scheme.onSurfaceVariant),
                             ),
@@ -828,7 +833,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           ),
                           OutlinedButton.icon(
                             icon: const Icon(Icons.swap_horiz, size: 16),
-                            label: const Text('Alterar'),
+                            label: Text(l10n.labelChange),
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 4),
@@ -840,11 +845,11 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                       ),
                     ),
                     _InlineField(
-                        label: 'Alignment',
+                        label: l10n.labelAlignment,
                         controller: _alignCtrl,
                         focusNode: _alignFocus),
                     _InlineField(
-                        label: 'Player',
+                        label: l10n.labelPlayer,
                         controller: _playerCtrl,
                         focusNode: _playerFocus),
                     Padding(
@@ -854,7 +859,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           SizedBox(
                             width: 96,
                             child: Text(
-                              'Level',
+                              l10n.labelLevel,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall
@@ -902,7 +907,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           SizedBox(
                             width: 96,
                             child: Text(
-                              'Subclass',
+                              l10n.labelSubclass,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall
@@ -920,8 +925,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           OutlinedButton.icon(
                             icon: const Icon(Icons.swap_horiz, size: 16),
                             label: Text(character.subclass?.isNotEmpty == true
-                                ? 'Trocar'
-                                : 'Escolher'),
+                                ? l10n.labelChange
+                                : l10n.labelChoose),
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 4),
@@ -943,7 +948,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                             child: Padding(
                               padding: const EdgeInsets.only(top: 6),
                               child: Text(
-                                'Languages',
+                                l10n.labelLanguages,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodySmall
@@ -991,12 +996,12 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                         focusNode: _langFocus,
                                         textCapitalization:
                                             TextCapitalization.words,
-                                        decoration: const InputDecoration(
+                                        decoration: InputDecoration(
                                           isDense: true,
-                                          hintText: 'Add language…',
-                                          border: OutlineInputBorder(),
+                                          hintText: l10n.hintAddLanguage,
+                                          border: const OutlineInputBorder(),
                                           contentPadding:
-                                              EdgeInsets.symmetric(
+                                              const EdgeInsets.symmetric(
                                                   horizontal: 10,
                                                   vertical: 8),
                                         ),
@@ -1046,13 +1051,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               : Column(
                   children: [
                     if (character.background.isNotEmpty)
-                      _InfoRow('Background', character.background),
+                      _InfoRow(l10n.labelBackground, character.background),
                     if (character.alignment.isNotEmpty)
-                      _InfoRow('Alignment', character.alignment),
+                      _InfoRow(l10n.labelAlignment, character.alignment),
                     if (character.playerName.isNotEmpty)
-                      _InfoRow('Player', character.playerName),
+                      _InfoRow(l10n.labelPlayer, character.playerName),
                     _InfoRow(
-                      'Languages',
+                      l10n.labelLanguages,
                       character.languages.isEmpty
                           ? '—'
                           : character.languages.join(', '),
@@ -1064,7 +1069,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
         // ── HP Tracker ────────────────────────────────────────────────────
         _Section(
-          title: 'Hit Points',
+          title: l10n.sectionHitPoints,
           child: Column(
             children: [
               Row(
@@ -1137,11 +1142,11 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         FilteringTextInputFormatter.digitsOnly,
                       ],
                       textAlign: TextAlign.center,
-                      decoration: const InputDecoration(
-                        labelText: 'Amount',
-                        border: OutlineInputBorder(),
+                      decoration: InputDecoration(
+                        labelText: l10n.labelAmount,
+                        border: const OutlineInputBorder(),
                         contentPadding:
-                            EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                            const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                       ),
                     ),
                   ),
@@ -1162,7 +1167,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                               .adjustHp(-n);
                         }
                       },
-                      child: const Text('Damage'),
+                      child: Text(l10n.detailDamage),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -1182,7 +1187,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                               .adjustHp(n);
                         }
                       },
-                      child: const Text('Heal'),
+                      child: Text(l10n.detailHeal),
                     ),
                   ),
                 ],
@@ -1190,7 +1195,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               if (isEditing) ...[
                 const SizedBox(height: 12),
                 _InlineField(
-                  label: 'Max HP',
+                  label: l10n.labelMaxHP,
                   controller: _hpMaxCtrl,
                   focusNode: _hpMaxFocus,
                   keyboardType: TextInputType.number,
@@ -1204,13 +1209,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
         // ── Combat Stats ──────────────────────────────────────────────────
         _Section(
-          title: 'Combat',
+          title: l10n.sectionCombat,
           child: isEditing
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _InlineField(
-                      label: 'Speed (ft)',
+                      label: l10n.labelSpeed,
                       controller: _speedCtrl,
                       focusNode: _speedFocus,
                       keyboardType: TextInputType.number,
@@ -1254,7 +1259,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
         // ── Ability Scores ────────────────────────────────────────────────
         _Section(
-          title: 'Ability Scores',
+          title: l10n.sectionAbilityScores,
           child: GridView.count(
             crossAxisCount: 3,
             shrinkWrap: true,
@@ -1282,14 +1287,14 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
         // ── Saving Throws ─────────────────────────────────────────────────
         _Section(
-          title: 'Saving Throw Proficiencies',
+          title: l10n.sectionSavingThrows,
           child: isEditing
               ? _SavingThrowsEditor(
                   current: character.savingThrowProficiencies,
                   notifier: notifier,
                 )
               : character.savingThrowProficiencies.isEmpty
-                  ? const Text('None')
+                  ? Text(l10n.detailNone)
                   : Wrap(
                       spacing: 8,
                       runSpacing: 4,
@@ -1513,7 +1518,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           return const Center(child: CircularProgressIndicator());
         }
         if (snap.hasError || !snap.hasData) {
-          return const Center(child: Text('Erro ao carregar features.'));
+          return Center(child: Text(AppLocalizations.of(context)!.featuresLoadError));
         }
         final data = snap.data!;
         final isEditing = widget.isEditing;
@@ -1590,7 +1595,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: _openAddSheet,
-            tooltip: 'Adicionar feature',
+            tooltip: AppLocalizations.of(context)!.featuresTooltipAdd,
             child: const Icon(Icons.add),
           ),
         );
@@ -1926,17 +1931,18 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                 trailing: IconButton(
                   icon: const Icon(Icons.delete_outline, size: 18),
                   color: scheme.error,
-                  tooltip: 'Remover',
+                  tooltip: AppLocalizations.of(context)!.featuresTooltipRemove,
                   onPressed: () async {
+                    final l10n = AppLocalizations.of(context)!;
                     final confirm = await showDialog<bool>(
                       context: context,
                       builder: (ctx) => AlertDialog(
-                        title: const Text('Remove feature?'),
-                        content: Text('"${f.name}" will be removed.'),
+                        title: Text(l10n.featuresRemoveTitle),
+                        content: Text(l10n.featuresRemoveContent(f.name)),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(ctx, false),
-                            child: const Text('Cancel'),
+                            child: Text(l10n.dialogCancel),
                           ),
                           FilledButton(
                             onPressed: () => Navigator.pop(ctx, true),
@@ -1944,7 +1950,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                               backgroundColor: scheme.error,
                               foregroundColor: scheme.onError,
                             ),
-                            child: const Text('Remove'),
+                            child: Text(l10n.dialogRemove),
                           ),
                         ],
                       ),
@@ -1998,12 +2004,13 @@ class _ClassFeaturesSection extends StatelessWidget {
     }
   }
 
-  String _typeLabel(String type) {
+  String _typeLabel(String type, BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     switch (type) {
       case 'active':
-        return 'Active';
+        return l10n.labelActive;
       case 'passive':
-        return 'Passive';
+        return l10n.labelPassive;
       case 'subclass':
         return 'Subclass';
       case 'asi':
@@ -2029,7 +2036,7 @@ class _ClassFeaturesSection extends StatelessWidget {
                 ?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
-          const Text('Nenhuma feature disponível.'),
+          Text(AppLocalizations.of(context)!.featuresNoneAvailable),
         ],
       );
     }
@@ -2069,7 +2076,7 @@ class _ClassFeaturesSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
-                      _typeLabel(f.type),
+                      _typeLabel(f.type, context),
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
                             color: typeColor,
                             fontWeight: FontWeight.bold,
@@ -2171,7 +2178,7 @@ class _SubclassFeaturesSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
-                      f.type == 'active' ? 'Active' : 'Passive',
+                      f.type == 'active' ? AppLocalizations.of(context)!.labelActive : AppLocalizations.of(context)!.labelPassive,
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
                             color: typeColor,
                             fontWeight: FontWeight.bold,
@@ -2328,7 +2335,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                Text('Add Feature',
+                Text(AppLocalizations.of(context)!.featuresAddLabel,
                     style: Theme.of(context).textTheme.titleMedium),
                 const Spacer(),
                 IconButton(
@@ -2346,7 +2353,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               child: TextField(
                 controller: _search,
                 decoration: InputDecoration(
-                  hintText: 'Search...',
+                  hintText: AppLocalizations.of(context)!.hintSearch,
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: _search.text.isNotEmpty
                       ? IconButton(
@@ -2695,34 +2702,34 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         children: [
           TextField(
             controller: _customNameCtrl,
-            decoration: const InputDecoration(
-              labelText: 'Nome',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+            labelText: AppLocalizations.of(context)!.labelFeatureName,
+              border: const OutlineInputBorder(),
             ),
             onChanged: (_) => setState(() {}),
           ),
           const SizedBox(height: 12),
           TextField(
             controller: _customDescCtrl,
-            decoration: const InputDecoration(
-              labelText: 'Descrição (opcional)',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: AppLocalizations.of(context)!.labelFeatureDescription,
+              border: const OutlineInputBorder(),
             ),
             maxLines: 4,
           ),
           const SizedBox(height: 12),
           Row(
             children: [
-              const Text('Tipo:'),
+              Text(AppLocalizations.of(context)!.labelFeatureType),
               const SizedBox(width: 12),
               ChoiceChip(
-                label: const Text('Passive'),
+                label: Text(AppLocalizations.of(context)!.labelPassive),
                 selected: !_customTypeActive,
                 onSelected: (_) => setState(() => _customTypeActive = false),
               ),
               const SizedBox(width: 8),
               ChoiceChip(
-                label: const Text('Active'),
+                label: Text(AppLocalizations.of(context)!.labelActive),
                 selected: _customTypeActive,
                 onSelected: (_) => setState(() => _customTypeActive = true),
               ),
@@ -3308,7 +3315,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                       : null,
                 ),
               ),
-              tooltip: 'Add spell',
+              tooltip: AppLocalizations.of(context)!.spellsTooltipAdd,
               child: const Icon(Icons.add),
             )
           : null,
@@ -3610,16 +3617,16 @@ class _SpellRow extends StatelessWidget {
           return await showDialog<bool>(
             context: context,
             builder: (ctx) => AlertDialog(
-              title: const Text('Remove spell?'),
-              content: Text('Remove "${spell.name}" from your spell list?'),
+              title: Text(AppLocalizations.of(context)!.spellsRemoveTitle),
+              content: Text(AppLocalizations.of(context)!.spellsRemoveContent(spell.name)),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, false),
-                  child: const Text('Cancel'),
+                  child: Text(AppLocalizations.of(context)!.dialogCancel),
                 ),
                 FilledButton(
                   onPressed: () => Navigator.pop(ctx, true),
-                  child: const Text('Remove'),
+                  child: Text(AppLocalizations.of(context)!.dialogRemove),
                 ),
               ],
             ),
@@ -3721,7 +3728,7 @@ class _InnateSpellRow extends StatelessWidget {
             ),
             if (spell.isAtWill)
               Chip(
-                label: const Text('à vontade'),
+                label: Text(AppLocalizations.of(context)!.spellsAtWill),
                 side: BorderSide.none,
                 backgroundColor: scheme.secondaryContainer,
                 labelStyle: TextStyle(
@@ -3874,6 +3881,7 @@ class _NotesTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
@@ -3922,21 +3930,21 @@ class _NotesTab extends ConsumerWidget {
                         final confirm = await showDialog<bool>(
                           context: context,
                           builder: (ctx) => AlertDialog(
-                            title: const Text('Delete note?'),
+                            title: Text(AppLocalizations.of(context)!.notesDeleteTitle),
                             content: note.title.isNotEmpty
-                                ? Text('"${note.title}" will be permanently deleted.')
-                                : const Text('This note will be permanently deleted.'),
+                                ? Text(AppLocalizations.of(context)!.notesDeleteContentNamed(note.title))
+                                : Text(AppLocalizations.of(context)!.notesDeleteContent),
                             actions: [
                               TextButton(
                                 onPressed: () => Navigator.pop(ctx, false),
-                                child: const Text('Cancel'),
+                                child: Text(AppLocalizations.of(context)!.dialogCancel),
                               ),
                               FilledButton(
                                 onPressed: () => Navigator.pop(ctx, true),
                                 style: FilledButton.styleFrom(
                                   backgroundColor: Theme.of(context).colorScheme.error,
                                 ),
-                                child: const Text('Delete'),
+                                child: Text(AppLocalizations.of(context)!.dialogRemove),
                               ),
                             ],
                           ),
@@ -3950,24 +3958,24 @@ class _NotesTab extends ConsumerWidget {
                   if (notes.isNotEmpty) const SizedBox(height: 8),
                   if (p.traits.isNotEmpty)
                     _Section(
-                        title: 'Personality Traits',
+                        title: l10n.sectionPersonalityTraits,
                         child: Text(p.traits)),
                   if (p.ideals.isNotEmpty) ...[
                     const SizedBox(height: 12),
-                    _Section(title: 'Ideals', child: Text(p.ideals)),
+                    _Section(title: l10n.sectionIdeals, child: Text(p.ideals)),
                   ],
                   if (p.bonds.isNotEmpty) ...[
                     const SizedBox(height: 12),
-                    _Section(title: 'Bonds', child: Text(p.bonds)),
+                    _Section(title: l10n.sectionBonds, child: Text(p.bonds)),
                   ],
                   if (p.flaws.isNotEmpty) ...[
                     const SizedBox(height: 12),
-                    _Section(title: 'Flaws', child: Text(p.flaws)),
+                    _Section(title: l10n.sectionFlaws, child: Text(p.flaws)),
                   ],
                   if (character.backstory.isNotEmpty) ...[
                     const SizedBox(height: 12),
                     _Section(
-                        title: 'Backstory',
+                        title: l10n.sectionBackstory,
                         child: Text(character.backstory)),
                   ],
                 ],
@@ -3975,7 +3983,7 @@ class _NotesTab extends ConsumerWidget {
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _openNoteSheet(context, ref),
-        tooltip: 'Add note',
+        tooltip: AppLocalizations.of(context)!.notesTooltipAdd,
         child: const Icon(Icons.add),
       ),
     );
@@ -4066,7 +4074,7 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
               child: Row(
                 children: [
                   Text(
-                    widget.existing == null ? 'New Note' : 'Edit Note',
+                    widget.existing == null ? AppLocalizations.of(context)!.notesTooltipAdd : AppLocalizations.of(context)!.notesTooltipEdit,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const Spacer(),
@@ -4086,9 +4094,9 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
                     controller: _titleCtrl,
                     autofocus: widget.existing == null,
                     textCapitalization: TextCapitalization.sentences,
-                    decoration: const InputDecoration(
-                      labelText: 'Title',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      labelText: AppLocalizations.of(context)!.notesLabelTitle,
+                      border: const OutlineInputBorder(),
                     ),
                     onSubmitted: (_) => FocusScope.of(context).nextFocus(),
                   ),
@@ -4099,17 +4107,17 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
                     maxLines: 10,
                     minLines: 4,
                     textCapitalization: TextCapitalization.sentences,
-                    decoration: const InputDecoration(
-                      labelText: 'Content',
+                    decoration: InputDecoration(
+                      labelText: AppLocalizations.of(context)!.notesLabelContent,
                       alignLabelWithHint: true,
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(height: 16),
                   FilledButton(
                     onPressed: _save,
                     child: Text(
-                        widget.existing == null ? 'Add Note' : 'Save'),
+                        widget.existing == null ? AppLocalizations.of(context)!.dialogAdd : AppLocalizations.of(context)!.dialogConfirm),
                   ),
                 ],
               ),
@@ -4171,7 +4179,7 @@ class _NoteViewSheet extends StatelessWidget {
                 ),
                 IconButton(
                   icon: const Icon(Icons.edit_outlined),
-                  tooltip: 'Edit note',
+                  tooltip: AppLocalizations.of(context)!.notesTooltipEdit,
                   onPressed: () => Navigator.pop(context, true),
                 ),
                 IconButton(
@@ -4305,7 +4313,7 @@ class _NoteCard extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.delete_outline, size: 18),
                 color: scheme.error,
-                tooltip: 'Delete note',
+                tooltip: AppLocalizations.of(context)!.notesTooltipDelete,
                 onPressed: onDelete,
               ),
             ],
@@ -4509,7 +4517,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddItemSheet,
-        tooltip: 'Add item',
+        tooltip: AppLocalizations.of(context)!.inventoryTooltipAdd,
         child: const Icon(Icons.add),
       ),
     );
@@ -4524,16 +4532,16 @@ Future<int?> _showRemoveQuantityDialog(
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Remove item?'),
-        content: Text('Remove ${item.name} from inventory?'),
+        title: Text(AppLocalizations.of(context)!.inventoryRemoveTitle),
+        content: Text(AppLocalizations.of(context)!.inventoryRemoveContent(item.name)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('Remove'),
+            child: Text(AppLocalizations.of(context)!.dialogRemove),
           ),
         ],
       ),
@@ -4549,14 +4557,14 @@ Future<int?> _showRemoveQuantityDialog(
     context: context,
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setState) => AlertDialog(
-        title: const Text('Remove item?'),
+        title: Text(AppLocalizations.of(context)!.inventoryRemoveTitle),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(item.name),
             const SizedBox(height: 10),
-            Text('Will remove: $selected of ${item.quantity}'),
+            Text(AppLocalizations.of(context)!.inventoryRemovePartial(selected, item.quantity)),
             const SizedBox(height: 12),
             Slider(
               value: selected.toDouble(),
@@ -4578,11 +4586,11 @@ Future<int?> _showRemoveQuantityDialog(
               keyboardType: TextInputType.number,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               textAlign: TextAlign.center,
-              decoration: const InputDecoration(
-                labelText: 'Quantity to remove',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.inventoryLabelQuantityToRemove,
+                border: const OutlineInputBorder(),
                 contentPadding:
-                    EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               ),
               onChanged: (text) {
                 final parsed = int.tryParse(text);
@@ -4598,11 +4606,11 @@ Future<int?> _showRemoveQuantityDialog(
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, selected),
-            child: const Text('Remove'),
+            child: Text(AppLocalizations.of(context)!.dialogRemove),
           ),
         ],
       ),
@@ -4733,7 +4741,16 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   List<SrdMagicItem>? _magic;
   String? _loadError;
 
-  static const _tabLabels = ['Weapons', 'Armor', 'Gear', 'Magic', 'Custom'];
+  List<String> _getTabLabels(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return [
+      l10n.inventoryTabWeapons,
+      l10n.inventoryTabArmor,
+      l10n.inventoryTabGear,
+      l10n.inventoryTabMagic,
+      l10n.inventoryTabCustom,
+    ];
+  }
 
   /// Remove notação de pacote do nome: "Arrows (20)" → "Arrows"
   static String _stripPackNotation(String name) =>
@@ -4805,7 +4822,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
         title: Text(name),
         content: Row(
           children: [
-            const Text('Quantity:'),
+            Text(AppLocalizations.of(context)!.inventoryLabelQuantity),
             const SizedBox(width: 12),
             SizedBox(
               width: 64,
@@ -4827,11 +4844,11 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('Add'),
+            child: Text(AppLocalizations.of(context)!.dialogAdd),
           ),
         ],
       ),
@@ -4965,23 +4982,23 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                 TextField(
                   controller: nameCtrl,
                   autofocus: false,
-                  decoration: const InputDecoration(
-                      labelText: 'Name *', border: OutlineInputBorder()),
+                  decoration: InputDecoration(
+                      labelText: AppLocalizations.of(context)!.inventoryLabelItemName, border: const OutlineInputBorder()),
                 ),
                 const SizedBox(height: 12),
                 DropdownButtonFormField<ItemType>(
                   initialValue: selectedType,
-                  decoration: const InputDecoration(
-                      labelText: 'Type', border: OutlineInputBorder()),
-                  items: const [
+                  decoration: InputDecoration(
+                      labelText: AppLocalizations.of(context)!.inventoryLabelType, border: const OutlineInputBorder()),
+                  items: [
                     DropdownMenuItem(
-                        value: ItemType.weapon, child: Text('Weapon')),
+                        value: ItemType.weapon, child: Text(AppLocalizations.of(context)!.inventoryTypeWeapon)),
                     DropdownMenuItem(
-                        value: ItemType.armor, child: Text('Armor')),
+                        value: ItemType.armor, child: Text(AppLocalizations.of(context)!.inventoryTypeArmor)),
                     DropdownMenuItem(
-                        value: ItemType.consumable, child: Text('Consumable')),
+                        value: ItemType.consumable, child: Text(AppLocalizations.of(context)!.inventoryTypeConsumable)),
                     DropdownMenuItem(
-                        value: ItemType.gear, child: Text('Gear')),
+                        value: ItemType.gear, child: Text(AppLocalizations.of(context)!.inventoryTypeGear)),
                   ],
                   onChanged: (v) {
                     if (v != null) setType(() => selectedType = v);
@@ -4990,24 +5007,24 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                 const SizedBox(height: 12),
                 TextField(
                   controller: categoryCtrl,
-                  decoration: const InputDecoration(
-                      labelText: 'Category', border: OutlineInputBorder()),
+                  decoration: InputDecoration(
+                      labelText: AppLocalizations.of(context)!.inventoryLabelCategory, border: const OutlineInputBorder()),
                 ),
                 const SizedBox(height: 12),
                 TextField(
                   controller: qtyCtrl,
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  decoration: const InputDecoration(
-                      labelText: 'Quantity', border: OutlineInputBorder()),
+                  decoration: InputDecoration(
+                      labelText: AppLocalizations.of(context)!.inventoryLabelItemQuantity, border: const OutlineInputBorder()),
                 ),
                 const SizedBox(height: 12),
                 TextField(
                   controller: descCtrl,
                   maxLines: 3,
-                  decoration: const InputDecoration(
-                      labelText: 'Description (optional)',
-                      border: OutlineInputBorder()),
+                  decoration: InputDecoration(
+                      labelText: AppLocalizations.of(context)!.inventoryLabelDescription,
+                      border: const OutlineInputBorder()),
                 ),
                 const SizedBox(height: 16),
                 FilledButton(
@@ -5030,7 +5047,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     backgroundColor: scheme.primary,
                     foregroundColor: scheme.onPrimary,
                   ),
-                  child: const Text('Add Custom Item'),
+                  child: Text(AppLocalizations.of(context)!.inventoryAddCustomItem),
                 ),
               ],
             ),
@@ -5068,7 +5085,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                Text('Add Item',
+                Text(AppLocalizations.of(context)!.inventoryAddItem,
                     style: Theme.of(context).textTheme.titleMedium),
                 const Spacer(),
                 IconButton(
@@ -5085,7 +5102,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
               child: TextField(
                 controller: _search,
                 decoration: InputDecoration(
-                  hintText: 'Search ${_tabLabels[_tabs.index]}...',
+                  hintText: AppLocalizations.of(context)!.hintSearchCategory(_getTabLabels(context)[_tabs.index]),
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: _search.text.isNotEmpty
                       ? IconButton(
@@ -5103,7 +5120,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
             controller: _tabs,
             isScrollable: true,
             tabAlignment: TabAlignment.start,
-            tabs: _tabLabels.map((l) => Tab(text: l)).toList(),
+            tabs: _getTabLabels(context).map((l) => Tab(text: l)).toList(),
           ),
           Expanded(
             child: TabBarView(
@@ -5357,7 +5374,7 @@ class _ItemTile extends ConsumerWidget {
         final confirm = await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: const Text('Replace equipped armor?'),
+            title: Text(AppLocalizations.of(context)!.inventoryReplaceArmorTitle),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -5371,7 +5388,7 @@ class _ItemTile extends ConsumerWidget {
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx, false),
-                child: const Text('Cancel'),
+                child: Text(AppLocalizations.of(context)!.dialogCancel),
               ),
               FilledButton(
                 onPressed: () => Navigator.pop(ctx, true),

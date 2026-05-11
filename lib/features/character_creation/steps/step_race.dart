@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
@@ -172,7 +173,7 @@ class _SubraceSelector extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text('Choose a subrace:',
+            child: Text(AppLocalizations.of(context)!.stepChooseSubrace,
                 style: Theme.of(context).textTheme.labelLarge),
           ),
           ...race.subraces.map((sub) {

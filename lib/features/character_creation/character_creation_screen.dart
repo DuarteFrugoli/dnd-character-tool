@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,14 +14,14 @@ import 'steps/step_name.dart';
 import 'steps/step_review.dart';
 import 'widgets/step_indicator.dart';
 
-const _stepTitles = [
-  'Class',
-  'Race',
-  'Background',
-  'Skills',
-  'Attributes',
-  'Name',
-  'Review',
+List<String> _getStepTitles(AppLocalizations l10n) => [
+  l10n.creationStepClass,
+  l10n.creationStepRace,
+  l10n.creationStepBackground,
+  l10n.creationStepSkills,
+  l10n.creationStepAttributes,
+  l10n.creationStepName,
+  l10n.creationStepReview,
 ];
 
 class CharacterCreationScreen extends ConsumerStatefulWidget {
@@ -35,6 +36,8 @@ class _CharacterCreationScreenState
     extends ConsumerState<CharacterCreationScreen> {
   int _currentStep = 0;
 
+  List<String> get _stepTitles => _getStepTitles(AppLocalizations.of(context)!);
+
   void _next() {
     if (_currentStep < _stepTitles.length - 1) {
       setState(() => _currentStep++);
@@ -48,20 +51,20 @@ class _CharacterCreationScreenState
   }
 
   Future<void> _cancel() async {
+    final l10n = AppLocalizations.of(context)!;
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Discard character?'),
-        content:
-            const Text('All progress will be lost. Are you sure?'),
+        title: Text(l10n.creationDiscardTitle),
+        content: Text(l10n.creationDiscardContent),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('Keep editing'),
+            child: Text(l10n.dialogKeepEditing),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('Discard'),
+            child: Text(l10n.dialogDiscard),
           ),
         ],
       ),
@@ -106,7 +109,9 @@ class _CharacterCreationScreenState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final draft = ref.watch(characterDraftProvider);
+    final stepTitles = _getStepTitles(l10n);
     final steps = [
       const StepClass(),
       const StepRace(),
@@ -119,17 +124,17 @@ class _CharacterCreationScreenState
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_stepTitles[_currentStep]),
+        title: Text(stepTitles[_currentStep]),
         leading: IconButton(
           icon: const Icon(Icons.close),
-          tooltip: 'Cancel',
+          tooltip: l10n.creationTooltipCancel,
           onPressed: _cancel,
         ),
       ),
       body: Column(
         children: [
           StepIndicator(
-            totalSteps: _stepTitles.length,
+            totalSteps: stepTitles.length,
             currentStep: _currentStep,
           ),
           Expanded(child: steps[_currentStep]),
@@ -143,19 +148,19 @@ class _CharacterCreationScreenState
               if (_currentStep > 0)
                 OutlinedButton(
                   onPressed: _back,
-                  child: const Text('Back'),
+                  child: Text(l10n.creationBack),
                 ),
               const Spacer(),
               FilledButton(
                 onPressed: _isStepValid(draft)
-                    ? (_currentStep == _stepTitles.length - 1
+                    ? (_currentStep == stepTitles.length - 1
                         ? _finishCreation
                         : _next)
                     : null,
                 child: Text(
-                  _currentStep == _stepTitles.length - 1
-                      ? 'Create Character'
-                      : 'Continue',
+                  _currentStep == stepTitles.length - 1
+                      ? l10n.creationCreateCharacter
+                      : l10n.dialogContinue,
                 ),
               ),
             ],

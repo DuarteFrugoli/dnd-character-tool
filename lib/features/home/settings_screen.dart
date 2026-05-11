@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
+
 import '../../core/locale/locale_provider.dart';
 import '../../core/theme/app_themes.dart';
 import '../../core/theme/theme_provider.dart';
@@ -9,6 +11,7 @@ class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   void _openThemePicker(BuildContext context, WidgetRef ref, AppTheme current) {
+    final l10n = AppLocalizations.of(context)!;
     showModalBottomSheet<void>(
       context: context,
       useSafeArea: true,
@@ -37,7 +40,7 @@ class SettingsScreen extends ConsumerWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Choose a Theme',
+                  l10n.settingsChooseTheme,
                   style: Theme.of(ctx).textTheme.titleMedium,
                 ),
               ),
@@ -74,7 +77,7 @@ class SettingsScreen extends ConsumerWidget {
     final currentScheme = current.toThemeData().colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.settingsTitle)),
       body: ListView(
         padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 16),
         children: [
@@ -82,7 +85,7 @@ class SettingsScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
             child: Text(
-              'Visual Theme',
+              AppLocalizations.of(context)!.settingsSectionTheme,
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
@@ -93,7 +96,9 @@ class SettingsScreen extends ConsumerWidget {
             leading: _ColorSwatch(scheme: currentScheme),
             title: Text(current.name),
             subtitle: Text(
-              current.brightness == Brightness.dark ? 'Dark' : 'Light',
+              current.brightness == Brightness.dark
+                  ? AppLocalizations.of(context)!.settingsDark
+                  : AppLocalizations.of(context)!.settingsLight,
               style: Theme.of(context)
                   .textTheme
                   .bodySmall
@@ -109,7 +114,7 @@ class SettingsScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Text(
-              'Language',
+              AppLocalizations.of(context)!.settingsSectionLanguage,
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
@@ -128,18 +133,21 @@ class _LanguageTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = ref.watch(localeProvider);
 
+    final l10n = AppLocalizations.of(context)!;
     String label;
     if (locale == null) {
-      label = 'System default';
+      label = l10n.settingsSystemDefault;
     } else if (locale.languageCode == 'en') {
       label = 'English';
-    } else {
+    } else if (locale.languageCode == 'pt') {
       label = 'Português';
+    } else {
+      label = locale.languageCode;
     }
 
     return ListTile(
       leading: const Icon(Icons.language_outlined),
-      title: const Text('App language'),
+      title: Text(l10n.settingsAppLanguage),
       subtitle: Text(label),
       trailing: const Icon(Icons.chevron_right),
       onTap: () => _openLanguagePicker(context, ref, locale),
@@ -147,8 +155,9 @@ class _LanguageTile extends ConsumerWidget {
   }
 
   void _openLanguagePicker(BuildContext context, WidgetRef ref, Locale? current) {
+    final l10n = AppLocalizations.of(context)!;
     final options = [
-      (label: 'System default', locale: null),
+      (label: l10n.settingsSystemDefault, locale: null),
       (label: 'English', locale: const Locale('en')),
       (label: 'Português', locale: const Locale('pt')),
     ];
@@ -165,7 +174,7 @@ class _LanguageTile extends ConsumerWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Choose a Language',
+                  l10n.settingsChooseLanguage,
                   style: Theme.of(ctx).textTheme.titleMedium,
                 ),
               ),
@@ -216,7 +225,9 @@ class _ThemeTile extends StatelessWidget {
       leading: _ColorSwatch(scheme: previewScheme),
       title: Text(theme.name),
       subtitle: Text(
-        theme.brightness == Brightness.dark ? 'Dark' : 'Light',
+        theme.brightness == Brightness.dark
+            ? AppLocalizations.of(context)!.settingsDark
+            : AppLocalizations.of(context)!.settingsLight,
         style: Theme.of(context)
             .textTheme
             .bodySmall

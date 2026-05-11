@@ -1,0 +1,137 @@
+{
+  "Dwarf": {
+    "name": "Nain",
+    "languages": [
+      "Commun",
+      "Nain"
+    ],
+    "subraces": [
+      {
+        "name": "Nain des collines"
+      },
+      {
+        "name": "Nain des montagnes"
+      }
+    ]
+  },
+  "Elf": {
+    "name": "Elfe",
+    "languages": [
+      "Commun",
+      "Elfique"
+    ],
+    "subraces": [
+      {
+        "name": "Haut Elfe"
+      },
+      {
+        "name": "Elfe des bois"
+      },
+      {
+        "name": "Elfe noir (Drow)"
+      }
+    ]
+  },
+  "Halfling": {
+    "name": "Halfelin",
+    "languages": [
+      "Commun",
+      "Halfelin"
+    ],
+    "subraces": [
+      {
+        "name": "Pied léger"
+      },
+      {
+        "name": "Gros"
+      }
+    ]
+  },
+  "Human": {
+    "name": "Humain",
+    "languages": [
+      "Commun",
+      "un extra au choix"
+    ],
+    "subraces": []
+  },
+  "Dragonborn": {
+    "name": "Enfant de Dragon",
+    "languages": [
+      "Commun",
+      "Draconique"
+    ],
+    "subraces": [
+      {
+        "name": "Noir (acide)"
+      },
+      {
+        "name": "Bleu (éclair)"
+      },
+      {
+        "name": "Laiton (Feu)"
+      },
+      {
+        "name": "Bronze (foudre)"
+      },
+      {
+        "name": "Cuivre (Acide)"
+      },
+      {
+        "name": "Or (Feu)"
+      },
+      {
+        "name": "Vert (Poison)"
+      },
+      {
+        "name": "Rouge (Feu)"
+      },
+      {
+        "name": "Argent (froid)"
+      },
+      {
+        "name": "Blanc (Froid)"
+      }
+    ]
+  },
+  "Gnome": {
+    "name": "Gnome",
+    "languages": [
+      "Commun",
+      "Gnome"
+    ],
+    "subraces": [
+      {
+        "name": "Gnome des forêts"
+      },
+      {
+        "name": "Gnome de roche"
+      }
+    ]
+  },
+  "Half-Elf": {
+    "name": "Demi-elfe",
+    "languages": [
+      "Commun",
+      "Elfique",
+      "un extra au choix"
+    ],
+    "subraces": []
+  },
+  "Half-Orc": {
+    "name": "Demi-Orque",
+    "languages": [
+      "Commun",
+      "Orque"
+    ],
+    "subraces": []
+  },
+  "Tiefling": {
+    "name": "Tieffelin",
+    "languages": [
+      "Commun",
+      "Infernal"
+    ],
+    "subraces": []
+  }
+}

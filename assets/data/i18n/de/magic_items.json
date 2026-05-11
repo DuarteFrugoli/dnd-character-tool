@@ -1,0 +1,70 @@
+{
+  "Potion of Healing": {
+    "name": "Trank der Heilung",
+    "description": "Wenn du diesen Trank trinkst, erhältst du 2W4 + 2 Trefferpunkte zurück."
+  },
+  "Potion of Greater Healing": {
+    "name": "Trank der größeren Heilung",
+    "description": "Wenn du diesen Trank trinkst, erhältst du 4W4 + 4 Trefferpunkte zurück."
+  },
+  "Potion of Superior Healing": {
+    "name": "Trank der überlegenen Heilung",
+    "description": "Wenn Sie diesen Trank trinken, erhalten Sie 8W4 + 8 Trefferpunkte zurück."
+  },
+  "Potion of Supreme Healing": {
+    "name": "Trank der höchsten Heilung",
+    "description": "Wenn Sie diesen Trank trinken, erhalten Sie 10W4 + 20 Trefferpunkte zurück."
+  },
+  "Bag of Holding": {
+    "name": "Beutel voller Halt",
+    "description": "Der Innenraum dieser Tasche ist wesentlich größer als ihre Außenmaße. Die Tasche kann bis zu 500 Pfund tragen und darf ein Volumen von 64 Kubikfuß nicht überschreiten. Die Tasche wiegt unabhängig vom Inhalt 15 Pfund."
+  },
+  "+1 Weapon": {
+    "name": "+1 Waffe",
+    "description": "Du erhältst einen Bonus von +1 auf Angriffs- und Schadenswürfe mit dieser magischen Waffe."
+  },
+  "+2 Weapon": {
+    "name": "+2 Waffe",
+    "description": "Du erhältst einen Bonus von +2 auf Angriffs- und Schadenswürfe mit dieser magischen Waffe."
+  },
+  "+3 Weapon": {
+    "name": "+3 Waffe",
+    "description": "Du erhältst einen Bonus von +3 auf Angriffs- und Schadenswürfe mit dieser magischen Waffe."
+  },
+  "+1 Armor": {
+    "name": "+1 Rüstung",
+    "description": "Wenn du diese Rüstung trägst, erhältst du einen Bonus von +1 auf deine RK."
+  },
+  "Cloak of Protection": {
+    "name": "Schutzumhang",
+    "description": "Wenn du diesen Umhang trägst, erhältst du einen Bonus von +1 auf AC und Rettungswürfe."
+  },
+  "Ring of Protection": {
+    "name": "Ring des Schutzes",
+    "description": "Wenn du diesen Ring trägst, erhältst du einen Bonus von +1 auf AC und Rettungswürfe."
+  },
+  "Boots of Speed": {
+    "name": "Stiefel der Geschwindigkeit",
+    "description": "Während du diese Stiefel trägst, kannst du eine Bonusaktion nutzen und die Absätze der Stiefel zusammenklicken, um deine Gehgeschwindigkeit zu verdoppeln. Darüber hinaus kostet dich schwieriges Gelände keine zusätzliche Bewegung. Der Effekt endet, wenn du mit einer Bonusaktion erneut mit den Absätzen klapperst oder die Stiefel nicht mehr trägst."
+  },
+  "Gauntlets of Ogre Power": {
+    "name": "Panzerhandschuhe der Ogermacht",
+    "description": "Dein Stärkewert beträgt 19, während du diese Stulpen trägst. Sie haben keine Wirkung auf dich, wenn deine Stärke bereits 19 oder höher ist."
+  },
+  "Headband of Intellect": {
+    "name": "Stirnband der Intelligenz",
+    "description": "Ihr Intelligenzwert beträgt 19, während Sie dieses Stirnband tragen. Es hat keine Auswirkungen auf Sie, wenn Ihre Intelligenz bereits 19 oder höher ist."
+  },
+  "Amulet of Health": {
+    "name": "Amulett der Gesundheit",
+    "description": "Ihr Konstitutionswert beträgt 19, während Sie dieses Amulett tragen. Es hat keine Auswirkungen auf Sie, wenn Ihre Verfassung bereits 19 oder höher ist."
+  },
+  "Wand of Magic Missiles": {
+    "name": "Zauberstab der magischen Raketen",
+    "description": "Dieser Zauberstab hat 7 Ladungen. Während Sie es halten, können Sie eine Aktion ausführen, um eine oder mehrere seiner Ladungen zu verbrauchen, um den Zauber „Magische Rakete“ von ihm zu wirken. Für 1 Ladung wirken Sie die Version des Zaubers der 1. Stufe. Für jede zusätzlich aufgewendete Ladung können Sie die Stufe des Zauberslots um eins erhöhen. Der Zauberstab erhält täglich im Morgengrauen 1W6 + 1 verbrauchte Ladung zurück."
+  },
+  "Rope of Climbing": {
+    "name": "Kletterseil",
+    "description": "Dieses 60 Fuß lange Seidenseil wiegt 3 Pfund und kann bis zu 3.000 Pfund tragen. Wenn Sie ein Ende des Seils festhalten und mit einer Aktion das Befehlswort aussprechen, wird das Seil animiert. Als Bonusaktion können Sie dem anderen Ende befehlen, sich zu einem von Ihnen gewählten Ziel zu bewegen."
+  }
+}

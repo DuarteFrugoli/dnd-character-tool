@@ -1,0 +1,490 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Rage",
+      "description": "Au combat, vous vous battez avec une férocité primordiale. À votre tour, vous pouvez entrer en colère comme une action bonus. Lorsque vous êtes en rage, vous bénéficiez d'un avantage aux tests de Force et aux jets de sauvegarde, bénéficiez d'un bonus aux jets de dégâts en mêlée utilisant la Force et avez une résistance aux dégâts contondants, perçants et tranchants. Votre rage dure 1 minute. Il se termine plus tôt si vous perdez connaissance ou si votre tour se termine et que vous n'avez pas attaqué de créature hostile depuis votre dernier tour ni subi de dégâts depuis lors."
+    },
+    "Unarmored Defense": {
+      "name": "Défense sans armure",
+      "description": "Tant que vous ne portez aucune armure, votre classe d'armure est égale à 10 + votre modificateur de Dextérité + votre modificateur de Constitution. Vous pouvez utiliser un bouclier tout en bénéficiant de cet avantage."
+    },
+    "Reckless Attack": {
+      "name": "Attaque imprudente",
+      "description": "Lorsque vous effectuez votre première attaque à votre tour, vous pouvez décider d'attaquer de manière imprudente. Cela vous donne un avantage sur les jets d'attaque au corps à corps avec une arme en utilisant la Force pendant ce tour, mais les jets d'attaque contre vous ont un avantage jusqu'à votre prochain tour."
+    },
+    "Danger Sense": {
+      "name": "Sens du danger",
+      "description": "Vous avez le sentiment étrange que les choses à proximité ne sont pas comme elles devraient l'être. Vous avez un avantage aux jets de sauvegarde de Dextérité contre les effets que vous pouvez voir, comme les pièges et les sorts. Pour bénéficier de cet avantage, vous ne pouvez pas être aveuglé, devenu sourd ou incapable d'agir."
+    },
+    "Primal Path": {
+      "name": "Chemin primordial",
+      "description": "Vous choisissez un chemin qui façonne la nature de votre rage."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous effectuez l'action Attaque pendant votre tour."
+    },
+    "Fast Movement": {
+      "name": "Mouvement rapide",
+      "description": "Votre vitesse augmente de 10 pieds lorsque vous ne portez pas d'armure lourde."
+    },
+    "Feral Instinct": {
+      "name": "Instinct sauvage",
+      "description": "Votre instinct est si aiguisé que vous avez l’avantage aux jets d’initiative. De plus, si vous êtes surpris au début du combat et n'êtes pas incapable d'agir, vous pouvez agir normalement lors de votre premier tour, mais seulement si vous entrez dans votre rage avant de faire autre chose pendant ce tour."
+    },
+    "Brutal Critical": {
+      "name": "Critique brutale",
+      "description": "Vous pouvez lancer un dé de dégâts d’arme supplémentaire pour déterminer les dégâts supplémentaires d’un coup critique avec une attaque de mêlée. Cela passe à deux dés supplémentaires au niveau 13 et à trois dés supplémentaires au niveau 17."
+    },
+    "Relentless Rage": {
+      "name": "Colère implacable",
+      "description": "Votre rage peut vous pousser à vous battre malgré de graves blessures. Si vous tombez à 0 point de vie alors que vous êtes en rage et que vous ne mourez pas sur le coup, vous pouvez effectuer un jet de sauvegarde de Constitution DD 10. Si vous réussissez, vous perdez 1 point de vie. Chaque fois que vous utilisez cette fonctionnalité après la première, le DC augmente de 5. Lorsque vous terminez un repos court ou long, le DC se réinitialise à 10."
+    },
+    "Persistent Rage": {
+      "name": "Colère persistante",
+      "description": "Votre rage est si féroce qu’elle ne se termine prématurément que si vous perdez connaissance ou si vous choisissez d’y mettre fin."
+    },
+    "Indomitable Might": {
+      "name": "Pouvoir indomptable",
+      "description": "Si votre total pour un test de Force est inférieur à votre score de Force, vous pouvez utiliser ce score à la place du total."
+    },
+    "Primal Champion": {
+      "name": "Champion primordial",
+      "description": "Vous incarnez le pouvoir de la nature. Vos scores de Force et de Constitution augmentent de 4. Votre maximum pour ces scores est désormais de 24."
+    }
+  },
+  "Bard": {
+    "Spellcasting": {
+      "name": "Lancement de sorts",
+      "description": "Vous avez appris à démêler et à remodeler le tissu de la réalité en harmonie avec vos souhaits et votre musique. Le charisme est votre capacité à lancer des sorts."
+    },
+    "Bardic Inspiration": {
+      "name": "Inspiration bardique",
+      "description": "Vous pouvez inspirer les autres grâce à des mots ou de la musique émouvants. Par une action bonus, vous pouvez donner à une créature autre que vous-même un dé d'Inspiration bardique (d6). Une fois au cours des 10 prochaines minutes, la créature peut lancer ce dé et ajouter le nombre à un test de capacité, un jet d'attaque ou un jet de sauvegarde qu'elle effectue."
+    },
+    "Jack of All Trades": {
+      "name": "Touche-à-tout",
+      "description": "Vous pouvez ajouter la moitié de votre bonus de maîtrise, arrondi à l'inférieur, à tout test de capacité que vous effectuez et qui n'inclut pas déjà votre bonus de maîtrise."
+    },
+    "Song of Rest": {
+      "name": "Chanson de repos",
+      "description": "Vous pouvez utiliser une musique ou un discours apaisant pour aider à revitaliser vos alliés blessés pendant un court repos. Si vous ou toute créature amie qui peut entendre votre performance récupérez des points de vie à la fin du court repos en dépensant un ou plusieurs dés de vie, chacune de ces créatures récupère 1d6 points de vie supplémentaires."
+    },
+    "Bard College": {
+      "name": "Collège des bardes",
+      "description": "Vous plongez dans les techniques avancées d'un collège de bardes de votre choix."
+    },
+    "Expertise": {
+      "name": "Compétence",
+      "description": "Choisissez deux de vos compétences. Votre bonus de maîtrise est doublé pour tout test de capacité que vous effectuez et qui utilise l'une ou l'autre des compétences choisies."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Font of Inspiration": {
+      "name": "Source d’inspiration",
+      "description": "Vous récupérez toutes vos utilisations d'Inspiration bardique lorsque vous terminez un repos court ou long."
+    },
+    "Countercharm": {
+      "name": "Contre-charme",
+      "description": "Vous gagnez la capacité d'utiliser des notes de musique ou des mots de pouvoir pour perturber les effets d'influence mentale. Par une action, vous pouvez démarrer une représentation qui dure jusqu'à la fin de votre prochain tour. Pendant ce temps, vous et toutes les créatures amies à moins de 9 mètres de vous avez un avantage aux jets de sauvegarde contre l'effroi ou le charme."
+    },
+    "Magical Secrets": {
+      "name": "Secrets magiques",
+      "description": "Vous avez pillé des connaissances magiques dans un large éventail de disciplines. Choisissez deux sorts de n'importe quelle classe, y compris celle-ci. Un sort que vous choisissez doit être d'un niveau que vous pouvez lancer. Les sorts choisis comptent pour vous comme des sorts de barde."
+    },
+    "Superior Inspiration": {
+      "name": "Inspiration supérieure",
+      "description": "Lorsque vous lancez un jet d’initiative et qu’il ne vous reste plus d’utilisation d’Inspiration bardique, vous récupérez une utilisation."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Lancement de sorts",
+      "description": "En tant que canal du pouvoir divin, vous pouvez lancer des sorts de clerc. La sagesse est votre capacité à lancer des sorts."
+    },
+    "Divine Domain": {
+      "name": "Domaine divin",
+      "description": "Choisissez un domaine lié à votre divinité. Votre choix vous accorde des sorts de domaine et d'autres fonctionnalités."
+    },
+    "Channel Divinity": {
+      "name": "Canal Divinité",
+      "description": "Vous obtenez la capacité de canaliser l’énergie divine directement depuis votre divinité, en utilisant cette énergie pour alimenter des effets magiques. Vous commencez avec deux de ces effets : Turn Undead et un effet déterminé par votre domaine. Lorsque vous utilisez votre Channel Divinity, vous choisissez l'effet à créer."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Destroy Undead": {
+      "name": "Détruire les morts-vivants",
+      "description": "Lorsqu'un mort-vivant échoue à son jet de sauvegarde contre votre fonction Turn Undead, la créature est instantanément détruite si son niveau de défi est égal ou inférieur à un certain seuil (CR 1/2 au niveau 5, augmentant aux niveaux supérieurs)."
+    },
+    "Divine Intervention": {
+      "name": "Intervention divine",
+      "description": "Vous pouvez faire appel à votre divinité pour intervenir en votre faveur lorsque votre besoin est grand. Implorez l’aide de votre divinité sous forme d’action. Décrivez l’aide que vous recherchez et lancez les dés centiles. Si vous obtenez un nombre égal ou inférieur à votre niveau de clerc, votre divinité intervient."
+    }
+  },
+  "Druid": {
+    "Druidic": {
+      "name": "Druidique",
+      "description": "Vous connaissez le Druidique, le langage secret des druides. Vous pouvez parler la langue et l'utiliser pour laisser des messages cachés."
+    },
+    "Spellcasting": {
+      "name": "Lancement de sorts",
+      "description": "En vous appuyant sur l’essence divine de la nature elle-même, vous pouvez lancer des sorts pour façonner cette essence selon votre volonté. La sagesse est votre capacité à lancer des sorts."
+    },
+    "Wild Shape": {
+      "name": "Forme sauvage",
+      "description": "À partir du niveau 2, vous pouvez utiliser votre action pour prendre comme par magie la forme d'une bête que vous avez déjà vue. Vous pouvez utiliser cette fonctionnalité deux fois. Vous récupérez les utilisations dépensées lorsque vous terminez un repos court ou long."
+    },
+    "Druid Circle": {
+      "name": "Cercle des Druides",
+      "description": "Vous choisissez de vous identifier à un cercle de druides."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Timeless Body": {
+      "name": "Corps intemporel",
+      "description": "La magie primitive que vous exercez vous fait vieillir plus lentement. Tous les 10 ans qui passent, votre corps ne vieillit que d’un an."
+    },
+    "Beast Spells": {
+      "name": "Sorts de bête",
+      "description": "Vous pouvez lancer plusieurs de vos sorts de druide sous n’importe quelle forme que vous prenez en utilisant Wild Shape. Vous pouvez exécuter les composantes somatiques et verbales d'un sort de druide sous forme de bête, mais vous n'êtes pas en mesure de fournir des composantes matérielles."
+    },
+    "Archdruid": {
+      "name": "Archidruide",
+      "description": "Vous pouvez utiliser votre Wild Shape un nombre illimité de fois. De plus, vous pouvez ignorer les composantes verbales et somatiques de vos sorts de druide, ainsi que toutes les composantes matérielles qui n'ont pas de coût et ne sont pas consommées par un sort."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Style de combat",
+      "description": "Vous adoptez un style de combat particulier comme spécialité. Choisissez un style de combat : tir à l'arc, défense, duel, combat à grande arme, protection ou combat à deux armes."
+    },
+    "Second Wind": {
+      "name": "Deuxième souffle",
+      "description": "Vous disposez d’une réserve d’endurance limitée sur laquelle vous pouvez puiser pour vous protéger du danger. A votre tour, vous pouvez utiliser une action bonus pour récupérer des points de vie égaux à 1d10 + votre niveau de combattant."
+    },
+    "Action Surge": {
+      "name": "Déferlement d'action",
+      "description": "À partir du 2e niveau, vous pouvez dépasser un instant vos limites habituelles. À votre tour, vous pouvez effectuer une action supplémentaire en plus de votre action habituelle et d’une éventuelle action bonus."
+    },
+    "Martial Archetype": {
+      "name": "Archétype martial",
+      "description": "Vous choisissez un archétype que vous vous efforcez d’imiter dans vos styles et techniques de combat."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous effectuez l'action Attaque pendant votre tour."
+    },
+    "Indomitable": {
+      "name": "Indomptable",
+      "description": "Vous pouvez relancer un jet de sauvegarde que vous échouez. Si vous le faites, vous devez utiliser le nouveau jet et vous ne pourrez plus utiliser cette fonctionnalité tant que vous n'aurez pas terminé un repos long."
+    }
+  },
+  "Monk": {
+    "Unarmored Defense": {
+      "name": "Défense sans armure",
+      "description": "Tant que vous ne portez aucune armure et ne portez pas de bouclier, votre CA est égale à 10 + votre modificateur de Dextérité + votre modificateur de Sagesse."
+    },
+    "Martial Arts": {
+      "name": "Arts martiaux",
+      "description": "Votre pratique des arts martiaux vous permet de maîtriser les styles de combat utilisant des frappes à mains nues et des armes de moine. Vous pouvez utiliser la Dextérité au lieu de la Force pour les jets d'attaque et de dégâts. Vous pouvez lancer un d4 à la place des dégâts normaux de votre frappe à mains nues ou de votre arme de moine. Lorsque vous utilisez l’action Attaque avec une frappe à mains nues ou une arme de moine, vous pouvez effectuer une frappe à mains nues comme action bonus."
+    },
+    "Ki": {
+      "name": "Ki",
+      "description": "Votre entraînement vous permet d’exploiter l’énergie mystique du ki. Votre accès à cette énergie est représenté par un nombre de points ki égal à votre niveau de moine. Vous pouvez dépenser des points de ki pour alimenter les fonctionnalités du ki : Rafale de coups, Défense du patient, Pas du vent."
+    },
+    "Unarmored Movement": {
+      "name": "Mouvement sans armure",
+      "description": "Votre vitesse augmente de 10 pieds lorsque vous ne portez pas d’armure ou de bouclier. Ce bonus augmente lorsque vous atteignez certains niveaux de moine."
+    },
+    "Monastic Tradition": {
+      "name": "Tradition monastique",
+      "description": "Vous vous engagez dans une tradition monastique."
+    },
+    "Deflect Missiles": {
+      "name": "Dévier les missiles",
+      "description": "Vous pouvez utiliser votre réaction pour dévier ou attraper le missile lorsque vous êtes touché par une attaque avec une arme à distance. Lorsque vous faites cela, les dégâts que vous subissez de l'attaque sont réduits de 1d10 + votre modificateur de Dextérité + votre niveau de moine."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Slow Fall": {
+      "name": "Chute lente",
+      "description": "Vous pouvez utiliser votre réaction lorsque vous tombez pour réduire les dégâts de chute que vous subissez d'un montant égal à cinq fois votre niveau de moine."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous effectuez l'action Attaque pendant votre tour."
+    },
+    "Stunning Strike": {
+      "name": "Frappe époustouflante",
+      "description": "Vous pouvez interférer avec la circulation du ki dans le corps d'un adversaire. Lorsque vous touchez une autre créature avec une attaque au corps à corps avec une arme, vous pouvez dépenser 1 point de ki pour tenter une frappe étourdissante. La cible doit réussir un jet de sauvegarde de Constitution ou être étourdie jusqu'à la fin de votre prochain tour."
+    },
+    "Stillness of Mind": {
+      "name": "Calme d'esprit",
+      "description": "Vous pouvez utiliser votre action pour mettre fin à un effet sur vous-même qui vous charme ou vous effraie."
+    },
+    "Timeless Body": {
+      "name": "Corps intemporel",
+      "description": "Votre ki vous soutient afin que vous ne souffriez pas de la fragilité de la vieillesse et que vous ne puissiez pas vieillir comme par magie. Cependant, vous mourez toujours de vieillesse. De plus, vous n’avez plus besoin de nourriture ni d’eau."
+    },
+    "Empty Body": {
+      "name": "Corps vide",
+      "description": "Vous pouvez utiliser votre action pour dépenser 4 points de ki afin de devenir invisible pendant 1 minute. Pendant ce temps, vous bénéficiez également d'une résistance à tous les dégâts, à l'exception des dégâts de force."
+    },
+    "Perfect Self": {
+      "name": "Soi parfait",
+      "description": "Lorsque vous lancez un jet d'initiative et qu'il ne vous reste plus de points de ki, vous récupérez 4 points de ki."
+    }
+  },
+  "Paladin": {
+    "Divine Sense": {
+      "name": "Sens divin",
+      "description": "La présence d’un mal puissant s’enregistre sur vos sens comme une odeur nauséabonde, et un bien puissant résonne comme une musique céleste dans vos oreilles. Par une action, vous pouvez ouvrir votre conscience pour détecter de telles forces. Jusqu'à la fin de votre prochain tour, vous connaissez l'emplacement de tout être céleste, démon ou mort-vivant dans un rayon de 20 mètres autour de vous qui n'est pas à couvert."
+    },
+    "Lay on Hands": {
+      "name": "Imposer les mains",
+      "description": "Votre contact béni peut guérir les blessures. Vous disposez d’une réserve de pouvoir de guérison qui se reconstitue lorsque vous prenez un long repos. Avec cette réserve, vous pouvez restaurer un nombre total de points de vie égal à votre niveau de paladin × 5."
+    },
+    "Fighting Style": {
+      "name": "Style de combat",
+      "description": "Adoptez un style de combat particulier comme spécialité. Choisissez parmi : Défense, Duel, Combat avec des armes puissantes ou Protection."
+    },
+    "Spellcasting": {
+      "name": "Lancement de sorts",
+      "description": "Vous avez appris à faire appel à la magie divine par la méditation et la prière pour lancer des sorts. Le charisme est votre capacité à lancer des sorts."
+    },
+    "Divine Smite": {
+      "name": "Châtiment divin",
+      "description": "Lorsque vous touchez une créature avec une attaque au corps à corps avec une arme, vous pouvez dépenser un emplacement de sort pour infliger des dégâts radiants à la cible, en plus des dégâts de l'arme. Les dégâts supplémentaires sont de 2d8 pour un emplacement de sort de niveau 1, plus 1d8 pour chaque niveau de sort supérieur au 1er, jusqu'à un maximum de 5d8."
+    },
+    "Sacred Oath": {
+      "name": "Serment sacré",
+      "description": "Vous prêtez le serment qui vous lie pour toujours en tant que paladin. Jusqu’à présent, vous étiez dans une phase préparatoire, engagés sur le chemin mais pas encore juré de l’emprunter."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous effectuez l'action Attaque pendant votre tour."
+    },
+    "Aura of Protection": {
+      "name": "Aura de protection",
+      "description": "Chaque fois que vous ou une créature amie à moins de 3 mètres de vous devez effectuer un jet de sauvegarde, la créature gagne un bonus au jet de sauvegarde égal à votre modificateur de Charisme (avec un bonus minimum de +1). Vous devez en être conscient pour accorder ce bonus."
+    },
+    "Aura of Courage": {
+      "name": "Aura de courage",
+      "description": "Vous et les créatures amies situées à moins de 3 mètres de vous ne pouvez pas être effrayés tant que vous êtes conscient."
+    },
+    "Cleansing Touch": {
+      "name": "Touche Nettoyante",
+      "description": "Vous pouvez utiliser votre action pour mettre fin à un sort sur vous-même ou sur une créature volontaire que vous touchez."
+    }
+  },
+  "Ranger": {
+    "Favored Enemy": {
+      "name": "Ennemi favori",
+      "description": "Vous avez une expérience significative dans l’étude, le suivi, la chasse et même la conversation avec un certain type d’ennemi. Choisissez un type d'ennemi préféré : aberrations, bêtes, célestes, constructions, dragons, élémentaires, fées, démons, géants, monstruosités, limons, plantes ou morts-vivants. Vous avez un avantage aux tests de Sagesse (Survie) pour traquer vos ennemis favoris, ainsi qu'aux tests d'Intelligence pour rappeler des informations les concernant."
+    },
+    "Natural Explorer": {
+      "name": "Explorateur naturel",
+      "description": "Vous connaissez particulièrement un type d’environnement naturel et êtes apte à voyager et à survivre dans de telles régions. Choisissez un type de terrain préféré : arctique, côte, désert, forêt, prairie, montagne, marécage ou Underdark."
+    },
+    "Fighting Style": {
+      "name": "Style de combat",
+      "description": "Adoptez un style de combat particulier comme spécialité. Choisissez parmi : tir à l'arc, défense, duel ou combat à deux armes."
+    },
+    "Spellcasting": {
+      "name": "Lancement de sorts",
+      "description": "Vous avez appris à utiliser l'essence magique de la nature pour lancer des sorts. La sagesse est votre capacité à lancer des sorts."
+    },
+    "Ranger Archetype": {
+      "name": "Archétype du Ranger",
+      "description": "Vous choisissez un archétype que vous vous efforcez d’imiter."
+    },
+    "Primeval Awareness": {
+      "name": "Conscience primitive",
+      "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez sentir si certains types de créatures sont présents à moins de 1,6 km de vous."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous pouvez attaquer deux fois, au lieu d'une, chaque fois que vous effectuez l'action Attaque pendant votre tour."
+    },
+    "Land's Stride": {
+      "name": "La foulée de la terre",
+      "description": "Se déplacer sur un terrain difficile non magique ne vous coûte aucun mouvement supplémentaire. Vous pouvez également traverser des plantes non magiques sans être ralenti par elles et sans subir de dégâts si elles ont des épines, des épines ou un danger similaire."
+    },
+    "Hide in Plain Sight": {
+      "name": "Cachez-vous à la vue de tous",
+      "description": "Vous pouvez passer 1 minute à créer un camouflage pour vous-même. Vous devez avoir accès à de la boue fraîche, de la terre, des plantes, de la suie et d'autres matériaux naturels avec lesquels créer votre camouflage. Une fois que vous êtes ainsi camouflé, vous pouvez essayer de vous cacher en vous appuyant contre une surface solide, comme un arbre ou un mur, qui est au moins aussi haute et large que vous. Vous bénéficiez d'un bonus de +10 aux tests de Dextérité (Discrétion) tant que vous restez là sans bouger ni entreprendre d'actions."
+    },
+    "Vanish": {
+      "name": "Disparaître",
+      "description": "Vous pouvez utiliser l’action Cacher comme action bonus pendant votre tour. De plus, vous ne pouvez pas être suivi par des moyens non magiques, à moins que vous ne choisissiez de laisser une trace."
+    },
+    "Feral Senses": {
+      "name": "Sens sauvages",
+      "description": "Vous acquérez des sens surnaturels qui vous aident à combattre des créatures que vous ne pouvez pas voir. Lorsque vous attaquez une créature que vous ne pouvez pas voir, votre incapacité à la voir n'impose pas de désavantage à vos jets d'attaque contre elle."
+    },
+    "Foe Slayer": {
+      "name": "Tueur d'ennemis",
+      "description": "Vous devenez un chasseur hors pair de vos ennemis. Une fois à chacun de vos tours, vous pouvez ajouter votre modificateur de Sagesse au jet d'attaque ou au jet de dégâts d'une attaque que vous effectuez contre l'un de vos ennemis favoris."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Compétence",
+      "description": "Choisissez deux de vos compétences, ou une de vos compétences et votre maîtrise des outils des voleurs. Votre bonus de maîtrise est doublé pour tout test de capacité que vous effectuez et qui utilise l'une ou l'autre des compétences choisies."
+    },
+    "Sneak Attack": {
+      "name": "Attaque sournoise",
+      "description": "Vous savez frapper subtilement et exploiter la distraction de l'ennemi. Une fois par tour, vous pouvez infliger 1d6 dégâts supplémentaires à une créature que vous frappez avec une attaque si vous avez un avantage au jet d'attaque. L'attaque doit utiliser une arme de finesse ou à distance. Vous n'avez pas besoin d'un avantage au jet d'attaque si un autre ennemi de la cible se trouve à moins de 1,50 mètre de celle-ci, cet ennemi n'est pas incapable d'agir et vous n'avez pas de désavantage au jet d'attaque. Le montant des dégâts supplémentaires augmente à mesure que vous gagnez des niveaux dans cette classe."
+    },
+    "Thieves' Cant": {
+      "name": "Les voleurs ne peuvent pas",
+      "description": "Au cours de votre formation de voleur, vous avez appris le langage des voleurs, un mélange secret de dialecte, de jargon et de code qui vous permet de cacher des messages dans une conversation apparemment normale."
+    },
+    "Cunning Action": {
+      "name": "Action astucieuse",
+      "description": "Votre rapidité de réflexion et votre agilité vous permettent de vous déplacer et d’agir rapidement. Vous pouvez effectuer une action bonus à chacun de vos tours de combat. Cette action ne peut être utilisée que pour effectuer l’action Dash, Désengagement ou Cacher."
+    },
+    "Roguish Archetype": {
+      "name": "Archétype espiègle",
+      "description": "Vous choisissez un archétype que vous émulez dans l’exercice de vos capacités de voleur."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Uncanny Dodge": {
+      "name": "Esquive étrange",
+      "description": "Lorsqu'un attaquant que vous pouvez voir vous frappe avec une attaque, vous pouvez utiliser votre réaction pour réduire de moitié les dégâts de l'attaque contre vous."
+    },
+    "Evasion": {
+      "name": "Évasion",
+      "description": "Lorsque vous êtes soumis à un effet qui vous permet d'effectuer un jet de sauvegarde de Dextérité pour ne subir que la moitié des dégâts, vous ne subissez aucun dégât si vous réussissez le jet de sauvegarde, et seulement la moitié des dégâts en cas d'échec."
+    },
+    "Reliable Talent": {
+      "name": "Talent fiable",
+      "description": "Vous avez affiné les compétences que vous avez choisies jusqu'à ce qu'elles se rapprochent de la perfection. Chaque fois que vous effectuez un test de capacité qui vous permet d'ajouter votre bonus de maîtrise, vous pouvez traiter un résultat d20 de 9 ou moins comme un 10."
+    },
+    "Blindsense": {
+      "name": "Sens aveugle",
+      "description": "Si vous êtes capable d'entendre, vous connaissez l'emplacement de toute créature cachée ou invisible à moins de 10 pieds de vous."
+    },
+    "Slippery Mind": {
+      "name": "Esprit glissant",
+      "description": "Vous avez acquis une plus grande force mentale. Vous gagnez la maîtrise des jets de sauvegarde de Sagesse."
+    },
+    "Elusive": {
+      "name": "Insaisissable",
+      "description": "Vous êtes si évasif que les attaquants prennent rarement le dessus sur vous. Aucun jet d'attaque n'a d'avantage contre vous tant que vous n'êtes pas incapable d'agir."
+    },
+    "Stroke of Luck": {
+      "name": "Coup de chance",
+      "description": "Vous avez un don étrange pour réussir lorsque vous en avez besoin. Si votre attaque manque une cible à portée, vous pouvez transformer cet échec en coup sûr. Alternativement, si vous échouez à un test de capacité, vous pouvez traiter le jet de d20 comme un 20."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Lancement de sorts",
+      "description": "Un événement de votre passé, ou de la vie d’un parent ou d’un ancêtre, a laissé une marque indélébile sur vous, vous imprégnant de magie arcanique. Le charisme est votre capacité à lancer des sorts."
+    },
+    "Sorcerous Origin": {
+      "name": "Origine sorcière",
+      "description": "Choisissez une origine sorcière, qui décrit la source de votre pouvoir magique inné."
+    },
+    "Font of Magic": {
+      "name": "Fonte de Magie",
+      "description": "Vous puisez dans une profonde source de magie en vous. Cette source est représentée par des points de sorcellerie, qui permettent de créer divers effets magiques. Vous disposez de 2 points de sorcellerie au niveau 2 et gagnez 1 point supplémentaire pour chaque niveau au-delà du 2ème."
+    },
+    "Metamagic": {
+      "name": "Métamagie",
+      "description": "Vous obtenez la possibilité de modifier vos sorts en fonction de vos besoins. Vous obtenez deux options de métamagie de votre choix parmi : Sort prudent, Sort distant, Sort surpuissant, Sort étendu, Sort intensifié, Sort accéléré, Sort subtil, Sort jumelé."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Sorcerous Restoration": {
+      "name": "Restauration sorcière",
+      "description": "Vous récupérez 4 points de sorcellerie dépensés chaque fois que vous terminez un court repos."
+    }
+  },
+  "Warlock": {
+    "Otherworldly Patron": {
+      "name": "Patron d'un autre monde",
+      "description": "Vous avez conclu un marché avec un être d'un autre monde de votre choix : l'Archifey, le Démon ou le Grand Ancien, chacun étant détaillé à la fin de la description de la classe."
+    },
+    "Pact Magic": {
+      "name": "Magie du Pacte",
+      "description": "Vos recherches arcaniques et la magie que vous confère votre patron vous ont donné de la facilité avec les sorts. Le charisme est votre capacité à lancer des sorts. Contrairement aux autres lanceurs de sorts, tous les emplacements de sorts dépensés sont restaurés lors d'un repos court ou long."
+    },
+    "Eldritch Invocations": {
+      "name": "Invocations surnaturelles",
+      "description": "Dans votre étude des connaissances occultes, vous avez découvert des invocations surnaturelles, des fragments de connaissances interdites qui vous confèrent une capacité magique permanente. Vous gagnez deux invocations surnaturelles de votre choix."
+    },
+    "Pact Boon": {
+      "name": "Bénédiction du Pacte",
+      "description": "Votre patron d’un autre monde vous offre un cadeau pour vos loyaux services. Vous gagnez l'une des fonctionnalités suivantes de votre choix : Pacte de la Chaîne, Pacte de la Lame ou Pacte du Tome."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Mystic Arcanum": {
+      "name": "Arcane mystique",
+      "description": "Votre patron vous confie un secret magique appelé arcane. Choisissez un sort de niveau 6 dans la liste des sorts de démoniste comme arcane. Vous pouvez lancer votre sort d'arcane une fois sans dépenser d'emplacement de sort. Vous devez terminer un long repos avant de recommencer."
+    },
+    "Eldritch Master": {
+      "name": "Maître surnaturel",
+      "description": "Vous pouvez puiser dans votre réserve intérieure de pouvoir mystique tout en suppliant votre patron de récupérer les emplacements de sorts dépensés. Vous pouvez passer 1 minute à demander de l'aide à votre patron pour récupérer tous vos emplacements de sorts dépensés grâce à votre fonction Pact Magic. Une fois que vous avez récupéré des emplacements de sorts avec cette fonctionnalité, vous devez terminer un long repos avant de pouvoir le faire à nouveau."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Lancement de sorts",
+      "description": "En tant qu'étudiant en magie arcanique, vous disposez d'un grimoire contenant 6 sorts de 1er niveau de votre choix. L'intelligence est votre capacité à lancer des sorts."
+    },
+    "Arcane Recovery": {
+      "name": "Récupération des Arcanes",
+      "description": "Vous avez appris à retrouver une partie de votre énergie magique en étudiant votre grimoire. Une fois par jour, lorsque vous terminez un court repos, vous pouvez choisir des emplacements de sorts dépensés à récupérer. Les emplacements de sorts peuvent avoir un niveau combiné égal ou inférieur à la moitié de votre niveau de sorcier (arrondi au supérieur), et aucun des emplacements ne peut être de niveau 6 ou supérieur."
+    },
+    "Arcane Tradition": {
+      "name": "Tradition arcanique",
+      "description": "Vous choisissez une tradition arcanique et façonnez votre pratique de la magie à travers l'une des écoles suivantes : Abjuration, Conjuration, Divination, Enchantement, Évocation, Illusion, Nécromancie ou Transmutation."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration du score de capacité",
+      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+    },
+    "Spell Mastery": {
+      "name": "Maîtrise des sorts",
+      "description": "Vous maîtrisez tellement certains sorts que vous pouvez les lancer à volonté. Choisissez un sort de sorcier de 1er niveau et un sort de sorcier de 2e niveau qui se trouvent dans votre livre de sorts. Vous pouvez lancer ces sorts à leur niveau le plus bas sans dépenser un emplacement de sort lorsque vous les avez préparés."
+    },
+    "Signature Spells": {
+      "name": "Sorts de signature",
+      "description": "Vous maîtrisez deux sorts puissants et pouvez les lancer avec peu d’effort. Choisissez deux sorts de sorcier de niveau 3 dans votre livre de sorts comme sorts de signature. Vous avez toujours ces sorts préparés, ils ne comptent pas dans le nombre de sorts que vous avez préparés, et vous pouvez lancer chacun d'eux une fois au niveau 3 sans dépenser d'emplacement de sort. Lorsque vous le faites, vous ne pouvez plus le faire avant d'avoir terminé un repos court ou long."
+    }
+  }
+}

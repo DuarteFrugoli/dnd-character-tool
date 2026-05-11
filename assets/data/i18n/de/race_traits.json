@@ -1,0 +1,154 @@
+{
+  "Darkvision": {
+    "name": "Dunkelsicht",
+    "description": "Da Sie an das Leben unter der Erde gewöhnt sind, verfügen Sie auch bei Dunkelheit über eine hervorragende Sicht. Sie können bei schwachem Licht in einem Umkreis von 60 Fuß um Sie herum sehen, als ob es helles Licht wäre, und bei Dunkelheit, als wäre es schwaches Licht. In der Dunkelheit kann man keine Farben erkennen, sondern nur Grautöne."
+  },
+  "Superior Darkvision": {
+    "name": "Überlegene Dunkelsicht",
+    "description": "Ihre Dunkelsicht hat einen Radius von 120 Fuß."
+  },
+  "Dwarven Resilience": {
+    "name": "Widerstandsfähigkeit der Zwerge",
+    "description": "Du hast einen Vorteil bei Rettungswürfen gegen Gift und eine Resistenz gegen Giftschaden."
+  },
+  "Dwarven Combat Training": {
+    "name": "Zwergen-Kampftraining",
+    "description": "Sie beherrschen den Umgang mit Streitaxt, Handaxt, Leichthammer und Kriegshammer."
+  },
+  "Stonecunning": {
+    "name": "Steinlist",
+    "description": "Immer wenn Sie eine Intelligenzprüfung (Geschichte) im Zusammenhang mit der Herkunft von Mauerwerk durchführen, gelten Sie als kompetent in der Fertigkeit Geschichte und addieren das Doppelte Ihres Fähigkeitsbonus zur Prüfung."
+  },
+  "Tool Proficiency": {
+    "name": "Werkzeugkenntnisse",
+    "description": "Sie erwerben Kenntnisse im Umgang mit den Handwerkswerkzeugen Ihrer Wahl: Schmiedewerkzeuge, Brauerbedarf oder Maurerwerkzeuge."
+  },
+  "Dwarven Toughness": {
+    "name": "Zwergische Zähigkeit",
+    "description": "Dein Trefferpunktmaximum erhöht sich um 1 und jedes Mal, wenn du ein Level aufsteigst, um 1."
+  },
+  "Dwarven Armor Training": {
+    "name": "Zwergenrüstungstraining",
+    "description": "Sie verfügen über Kenntnisse im Umgang mit leichter und mittlerer Rüstung."
+  },
+  "Keen Senses": {
+    "name": "Geschärfte Sinne",
+    "description": "Sie beherrschen die Fähigkeit Wahrnehmung."
+  },
+  "Fey Ancestry": {
+    "name": "Fey-Abstammung",
+    "description": "Du hast bei Rettungswürfen einen Vorteil gegenüber Verzauberungen und Magie kann dich nicht einschläfern."
+  },
+  "Trance": {
+    "name": "Trance",
+    "description": "Elfen müssen nicht schlafen. Stattdessen meditieren sie vier Stunden am Tag tief und halb bewusstlos. Beim Meditieren können Sie in gewisser Weise träumen; Solche Träume sind eigentlich mentale Übungen, die durch jahrelange Übung reflexiv geworden sind. Wenn Sie sich auf diese Weise ausruhen, profitieren Sie von den gleichen Vorteilen wie ein Mensch, der 8 Stunden schläft."
+  },
+  "Elf Weapon Training": {
+    "name": "Waffentraining der Elfen",
+    "description": "Sie beherrschen den Umgang mit Langschwert, Kurzschwert, Kurzbogen und Langbogen."
+  },
+  "Cantrip": {
+    "name": "Cantrip",
+    "description": "Sie kennen einen Cantrip Ihrer Wahl aus der Zauberliste des Zauberers. Intelligenz ist Ihre Zauberfähigkeit dafür."
+  },
+  "Extra Language": {
+    "name": "Zusätzliche Sprache",
+    "description": "Sie können eine zusätzliche Sprache Ihrer Wahl sprechen, lesen und schreiben."
+  },
+  "Fleet of Foot": {
+    "name": "Flotte zu Fuß",
+    "description": "Ihre Grundgehgeschwindigkeit erhöht sich auf 35 Fuß."
+  },
+  "Mask of the Wild": {
+    "name": "Maske der Wildnis",
+    "description": "Sie können versuchen, sich zu verstecken, selbst wenn Sie nur leicht von Laub, starkem Regen, fallendem Schnee, Nebel und anderen Naturphänomenen verdeckt werden."
+  },
+  "Sunlight Sensitivity": {
+    "name": "Sonnenlichtempfindlichkeit",
+    "description": "Sie haben einen Nachteil bei Angriffswürfen und bei Weisheitswürfen (Wahrnehmung), die auf der Sicht basieren, wenn Sie, das Ziel Ihres Angriffs oder was auch immer Sie wahrnehmen möchten, direktem Sonnenlicht ausgesetzt sind."
+  },
+  "Drow Magic": {
+    "name": "Drow-Magie",
+    "description": "Du kennst den Cantrip mit den tanzenden Lichtern. Wenn Sie die 3. Stufe erreichen, können Sie den Zauber „Feenfeuer“ einmal pro Tag wirken. Wenn Sie die 5. Stufe erreichen, können Sie den Dunkelheitszauber auch einmal pro Tag wirken. Charisma ist Ihre Zauberfähigkeit für diese Zauber."
+  },
+  "Drow Weapon Training": {
+    "name": "Drow-Waffentraining",
+    "description": "Sie beherrschen den Umgang mit Degen, Kurzschwertern und Handarmbrüsten."
+  },
+  "Lucky": {
+    "name": "Glücklich",
+    "description": "Wenn Sie für einen Angriffswurf, eine Fähigkeitsüberprüfung oder einen Rettungswurf eine 1 auf dem W20 würfeln, können Sie den Würfel erneut würfeln und müssen den neuen Wurf verwenden."
+  },
+  "Brave": {
+    "name": "Mutig",
+    "description": "Du hast einen Vorteil bei Rettungswürfen gegenüber Angstgefühlen."
+  },
+  "Halfling Nimbleness": {
+    "name": "Halblings Beweglichkeit",
+    "description": "Du kannst dich durch den Raum jeder Kreatur bewegen, die größer ist als du."
+  },
+  "Naturally Stealthy": {
+    "name": "Natürlich heimlich",
+    "description": "Sie können versuchen, sich zu verstecken, selbst wenn Sie nur von einer Kreatur verdeckt werden, die mindestens eine Nummer größer ist als Sie."
+  },
+  "Stout Resilience": {
+    "name": "Starke Widerstandsfähigkeit",
+    "description": "Du hast einen Vorteil bei Rettungswürfen gegen Gift und eine Resistenz gegen Giftschaden."
+  },
+  "Draconic Ancestry": {
+    "name": "Drakonische Abstammung",
+    "description": "Du hast ein drakonisches Erbe von einem bestimmten Drachentyp. Wählen Sie einen Drachentyp aus der Tabelle „Drakonische Abstammung“. Ihre Odemwaffe und Schadensresistenz werden durch den gewählten Drachentyp bestimmt."
+  },
+  "Breath Weapon": {
+    "name": "Atemwaffe",
+    "description": "Sie können Ihre Aktion nutzen, um zerstörerische Energie auszuatmen. Seine Größe, Form und Schadensart werden durch Ihre drakonische Abstammung bestimmt. Wenn Sie Ihre Atemwaffe verwenden, muss jede Kreatur im Bereich der Ausatmung einen Rettungswurf ausführen (SG = 8 + Ihr Konstitutionsmodifikator + Ihr Fähigkeitsbonus). Bei einem fehlgeschlagenen Rettungswurf erleidet die Kreatur 2W6 Schaden. Bei einem erfolgreichen Rettungswurf erleidet es halb so viel Schaden. Sie können Ihre Atemwaffe einmal pro kurzer oder langer Pause verwenden."
+  },
+  "Damage Resistance": {
+    "name": "Schadensresistenz",
+    "description": "Du verfügst über Widerstand gegen die Schadensart, die mit deiner drakonischen Abstammung verbunden ist."
+  },
+  "Gnome Cunning": {
+    "name": "Gnome List",
+    "description": "Du hast einen Vorteil bei allen Intelligenz-, Weisheits- und Charisma-Rettungswürfen gegen Magie."
+  },
+  "Natural Illusionist": {
+    "name": "Natürlicher Illusionist",
+    "description": "Sie kennen den kleinen Illusions-Cantrip. Intelligenz ist Ihre Zauberfähigkeit dafür."
+  },
+  "Speak with Small Beasts": {
+    "name": "Sprich mit kleinen Bestien",
+    "description": "Durch Geräusche und Gesten können Sie kleinen oder kleineren Tieren einfache Ideen mitteilen. Waldzwerge lieben Tiere und halten oft Eichhörnchen, Dachse, Kaninchen, Maulwürfe, Spechte und andere Kreaturen als geliebte Haustiere."
+  },
+  "Artificer's Lore": {
+    "name": "Überlieferung des Kunsthandwerkers",
+    "description": "Immer wenn Sie eine Intelligenzprüfung (Geschichte) im Zusammenhang mit magischen Gegenständen, alchemistischen Objekten oder technischen Geräten durchführen, können Sie anstelle des normalerweise angewendeten Fähigkeitsbonus das Doppelte Ihres Fähigkeitsbonus hinzufügen."
+  },
+  "Tinker": {
+    "name": "Basteln",
+    "description": "Sie verfügen über Kenntnisse im Umgang mit Handwerkswerkzeugen (Bastlerwerkzeugen). Mit diesen Werkzeugen können Sie 1 Stunde und Materialien im Wert von 10 GM aufwenden, um ein kleines Uhrwerk zu bauen (AC 5, 1 PS). Das Gerät funktioniert nach 24 Stunden nicht mehr, es sei denn, Sie nehmen sich eine Stunde Zeit für die Reparatur. Sie können bis zu drei solcher Geräte gleichzeitig aktiv haben."
+  },
+  "Skill Versatility": {
+    "name": "Vielseitigkeit der Fähigkeiten",
+    "description": "Sie erwerben Kenntnisse in zwei Fertigkeiten Ihrer Wahl."
+  },
+  "Menacing": {
+    "name": "Bedrohlich",
+    "description": "Sie erlangen Kenntnisse in der Fertigkeit Einschüchterung."
+  },
+  "Relentless Endurance": {
+    "name": "Unerbittliche Ausdauer",
+    "description": "Wenn Ihre Trefferpunkte auf 0 reduziert, aber nicht vollständig getötet werden, können Sie stattdessen auf 1 Trefferpunkt sinken. Sie können diese Funktion erst wieder verwenden, wenn Sie eine lange Pause beendet haben."
+  },
+  "Savage Attacks": {
+    "name": "Wilde Angriffe",
+    "description": "Wenn Sie mit einem Nahkampfwaffenangriff einen kritischen Treffer erzielen, können Sie einen der Schadenswürfel der Waffe ein weiteres Mal werfen und ihn zum zusätzlichen Schaden des kritischen Treffers addieren."
+  },
+  "Hellish Resistance": {
+    "name": "Höllischer Widerstand",
+    "description": "Du hast Resistenz gegen Feuerschaden."
+  },
+  "Infernal Legacy": {
+    "name": "Höllisches Erbe",
+    "description": "Sie kennen den Thaumaturgie-Cantrip. Wenn du die 3. Stufe erreichst, kannst du mit dieser Eigenschaft den höllischen Zurechtweisungszauber einmal als Zauber der 2. Stufe wirken und erlangst die Fähigkeit dazu wieder, wenn du eine lange Pause beendet hast. Wenn Sie die 5. Stufe erreichen, können Sie mit dieser Eigenschaft den Dunkelheitszauber einmal wirken und erhalten die Fähigkeit dazu wieder, wenn Sie eine lange Pause beendet haben. Charisma ist Ihre Zauberfähigkeit für diese Zauber."
+  }
+}

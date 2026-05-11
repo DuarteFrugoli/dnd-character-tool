@@ -1,0 +1,186 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "La voie du Berserker",
+      "description": "Canalisez votre rage en une fureur sauvage. Lorsque vous êtes en colère, vous pouvez entrer dans une frénésie – en effectuant une attaque de mêlée supplémentaire à chaque tour en tant qu'action bonus, au prix de l'épuisement par la suite."
+    },
+    "Path of the Totem Warrior": {
+      "name": "Voie du guerrier totem",
+      "description": "Liez-vous avec un esprit animal comme guide et acquérez des pouvoirs magiques. Choisissez parmi Ours (résistance à tous les dégâts), Aigle (désengagement comme action bonus) ou Loup (les alliés bénéficient d'un avantage sur les attaques de mêlée contre les ennemis proches de vous)."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "Collège du savoir",
+      "description": "Un maître de la connaissance et des secrets. Maîtrisez trois compétences supplémentaires, couper des mots pour gêner les ennemis et voler des secrets magiques aux autres classes."
+    },
+    "College of Valor": {
+      "name": "Collège de la Valeur",
+      "description": "Un artiste prêt au combat qui inspire ses alliés au combat. Maîtrisez les armures moyennes, les boucliers et les armes martiales, et accordez éventuellement à vos alliés une attaque supplémentaire avec votre inspiration bardique."
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "name": "Domaine de connaissances",
+      "description": "Érudit des secrets et de la sagesse divine. Maîtrisez deux compétences supplémentaires et deux langues supplémentaires, lisez les souvenirs d'objets et connaissez les pensées des autres."
+    },
+    "Life Domain": {
+      "name": "Domaine de la vie",
+      "description": "Guérisseur et protecteur béni par les dieux de la vie. Maîtrise des armures lourdes, soins améliorés et capacité à préserver la vie au bord de la mort."
+    },
+    "Light Domain": {
+      "name": "Domaine de la lumière",
+      "description": "Canalisez la flamme divine contre les ténèbres. Cantrip de feu bonus, Warding Flare pour gêner les attaquants et une brillante couronne de lumière à des niveaux élevés."
+    },
+    "Nature Domain": {
+      "name": "Domaine Nature",
+      "description": "Gardien des lieux sauvages et des choses en croissance. Maîtrise des armures lourdes, un bonus pour le druide et la capacité de charmer les animaux et les plantes."
+    },
+    "Tempest Domain": {
+      "name": "Domaine de la Tempête",
+      "description": "Colère de la tempête et de la mer. Maîtrise des armures lourdes et des armes martiales, Colère de la tempête pour punir les attaquants, et magie destructrice du vent et de la foudre."
+    },
+    "Trickery Domain": {
+      "name": "Domaine de la supercherie",
+      "description": "Divinité de la tromperie et de l'illusion. Invoquez Duplicity pour créer une copie illusoire de vous-même et accédez à une suite de sorts de mauvaise direction et de furtivité."
+    },
+    "War Domain": {
+      "name": "Domaine de guerre",
+      "description": "Guerrier des dieux. Maîtrise des armures lourdes et des armes martiales, attaques supplémentaires de War Priest en tant qu'action bonus et puissants sorts de combat."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Cercle du Pays",
+      "description": "Gardien des traditions anciennes et des secrets naturels. Récupérez des emplacements de sorts lors d'un court repos, résistez au charme et à la peur des fées et des élémentaires, et gagnez des sorts supplémentaires en fonction du terrain choisi."
+    },
+    "Circle of the Moon": {
+      "name": "Cercle de la Lune",
+      "description": "Puissant métamorphe. Façonnez-vous en bêtes prêtes au combat à partir de CR 1 (évoluant jusqu'à CR 6 à des niveaux plus élevés), et finissez par passer à des formes élémentaires."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Champion",
+      "description": "Le guerrier parfait. Critique amélioré (19-20), athlète remarquable pour les défis physiques, et éventuellement un deuxième style de combat – l'archétype martial le plus simple et le plus puissant."
+    },
+    "Battle Master": {
+      "name": "Maître de bataille",
+      "description": "Génie tactique. Utilisez les dés de supériorité pour effectuer diverses manœuvres de combat – faire trébucher, désarmer, parer et diriger vos alliés – et récupérez-les après un court repos."
+    },
+    "Eldritch Knight": {
+      "name": "Chevalier surnaturel",
+      "description": "Une lame magique qui fusionne l'entraînement martial avec le pouvoir arcanique. Apprenez des sorts d'abjuration et d'évocation, liez des armes à votre main et éventuellement lancez des sorts en tant qu'action bonus."
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "name": "Voie de la main ouverte",
+      "description": "Maître du combat à mains nues. La technique de la main ouverte vous permet de renverser, de pousser ou d'empêcher les réactions ; Quivering Palm inflige finalement des dégâts massifs avec une seule touche."
+    },
+    "Way of Shadow": {
+      "name": "Voie de l'Ombre",
+      "description": "Un guerrier ninja qui mélange les arts martiaux et la magie de l'ombre. Dépensez du ki pour projeter l'obscurité, le silence et passer sans laisser de trace, puis téléportez-vous entre les ombres."
+    },
+    "Way of the Four Elements": {
+      "name": "Voie des Quatre Éléments",
+      "description": "Canalisez les éléments eux-mêmes. Dépensez du ki pour lancer des disciplines élémentaires : lancer du feu, contrôler l'eau, créer des murs de pierre et chevaucher le vent."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Serment de dévotion",
+      "description": "Le chevalier classique de la justice et de l'ordre. Arme sacrée pour renforcer les attaques, Holy Nimbus pour endommager les démons et les morts-vivants, ainsi que de puissants sorts de protection et de châtiment."
+    },
+    "Oath of the Ancients": {
+      "name": "Serment des Anciens",
+      "description": "Gardien de la lumière et du monde naturel. Courroux de la nature pour retenir les ennemis, transformation du champion aîné et protection contre les dégâts élémentaires et magiques."
+    },
+    "Oath of Vengeance": {
+      "name": "Serment de vengeance",
+      "description": "Un punisseur implacable d'un grand mal. Vœu d'inimitié pour un avantage sur les attaques, la transformation d'Ange vengeur et les sorts de poursuite pour traquer les méchants."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Chasseur",
+      "description": "Maître traqueur et prédateur. Choisissez parmi les options Hunter's Prey (Colossus Slayer, Giant Killer, Horde Breaker) et les tactiques défensives pour faire face à n'importe quelle menace."
+    },
+    "Beast Master": {
+      "name": "Maître des bêtes",
+      "description": "Créez des liens profonds avec un compagnon animal qui combat à vos côtés. La bête agit à votre tour et gagne en puissance à mesure que vous montez de niveau."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Voleur",
+      "description": "Maître cambrioleur et opportuniste. Fast Hands pour une utilisation rapide des objets comme action bonus, Second-Story Work pour une vitesse d'escalade supérieure et Use Magic Device à des niveaux plus élevés."
+    },
+    "Assassin": {
+      "name": "Assassin",
+      "description": "Embuscade mortelle. Avantage et dégâts bonus contre les cibles surprises, une nouvelle identité de déguisement chaque jour et la capacité d'imiter le discours de n'importe quelle créature."
+    },
+    "Arcane Trickster": {
+      "name": "Filou des arcanes",
+      "description": "Un voyou lanceur de sorts qui transforme la magie en ruse. Apprenez les sorts d’illusion et d’enchantement, utilisez Mage Hand Legerdemain et volez éventuellement les effets des sorts aux autres lanceurs."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "name": "Lignée draconique",
+      "description": "Pouvoir issu d’une ascendance draconique. Des points de vie supplémentaires, une armure naturelle (AC 13 + DEX sans armure), une affinité élémentaire pour les dégâts et des ailes draconiques en croissance à des niveaux élevés."
+    },
+    "Wild Magic": {
+      "name": "Magie sauvage",
+      "description": "Des poussées chaotiques de puissance imprévisible. Marées du chaos pour un avantage sur un jet, des effets aléatoires de Wild Magic Surge et la possibilité d'aider les alliés à récupérer des points de sorcellerie en un clin d'œil."
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "name": "L'Archfey",
+      "description": "Un seigneur féerique d'émotion et de glamour. Fey Presence pour charmer ou effrayer les créatures proches, Misty Escape pour disparaître lorsqu'elle est touchée et une magie axée sur l'enchantement."
+    },
+    "The Fiend": {
+      "name": "Le démon",
+      "description": "Un diable ou un démon puissant. La Bénédiction du Ténébreux accorde des points de vie temporaires lorsque vous tuez, ainsi qu'une suite de sorts de feu et de nécrotiques se terminant par Hurl Through Hell."
+    },
+    "The Great Old One": {
+      "name": "Le Grand Ancien",
+      "description": "Une entité cosmique extraterrestre au-delà de la compréhension. Communication télépathique, esprit éveillé pour parler d'esprit à esprit et finalement maîtriser la magie qui déforme l'esprit et déforme la réalité."
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "name": "École de l'abjuration",
+      "description": "Maître de la magie protectrice. Arcane Ward absorbe les dégâts pour vous, Projected Ward étend la protection aux alliés et vos abjurations sont d'une efficacité maximale."
+    },
+    "School of Conjuration": {
+      "name": "École de Conjuration",
+      "description": "Maître de l'invocation et du transport. Transposition bénigne pour se téléporter ou échanger une invocation, Conjuration ciblée pour une concentration ininterrompue et des créatures invoquées durables."
+    },
+    "School of Divination": {
+      "name": "École de divination",
+      "description": "Voyant et oracle. Portent vous permet de lancer deux d20 à l'aube et de remplacer n'importe quel jet du jeu par eux, ce qui peut potentiellement changer l'issue des moments critiques."
+    },
+    "School of Enchantment": {
+      "name": "École d'enchantement",
+      "description": "Maître de l'esprit et de l'émotion. Regard hypnotique pour étourdir une créature à chaque tour, susciter le doute pour imposer un désavantage et éventuellement modifier les souvenirs pour effacer ce que les ennemis ont vécu."
+    },
+    "School of Evocation": {
+      "name": "École d'évocation",
+      "description": "Le blaster arcanique. Sculptez des sorts pour exclure les alliés de vos effets de zone, Potent Cantrip pour réduire la moitié des dégâts lors des sauvegardes et Empowered Evocation pour maximiser un jet de dégâts."
+    },
+    "School of Illusion": {
+      "name": "École de l'illusion",
+      "description": "Maître de la tromperie et des fausses réalités. Illusion mineure améliorée, illusions malléables pour les remodeler en temps réel et soi illusoire comme bouclier contre les attaques."
+    },
+    "School of Necromancy": {
+      "name": "École de nécromancie",
+      "description": "Maître de la magie de la mort. Grim Harvest pour regagner des points de vie lorsque vous tuez avec des sorts, Undead Thralls pour des serviteurs morts-vivants plus puissants et Command Undead à des niveaux élevés."
+    },
+    "School of Transmutation": {
+      "name": "École de Transmutation",
+      "description": "Maître de transformation. Transmuter's Stone pour des améliorations continues, Shapechanger pour vous métamorphoser et Master Transmuter pour obtenir des effets miraculeux en dépensant votre pierre."
+    }
+  }
+}

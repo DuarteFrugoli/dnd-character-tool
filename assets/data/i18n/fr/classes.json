@@ -1,0 +1,592 @@
+{
+  "Barbarian": {
+    "name": "Barbare",
+    "subclassFeatureName": "Chemin primordial",
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Pack de l'explorateur",
+        "4 javelots"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Grande hache"
+            ],
+            [
+              "n'importe quelle arme martiale de mêlée"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Hachette",
+              "Hachette"
+            ],
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Bard": {
+    "name": "Barde",
+    "subclassFeatureName": "Collège des bardes",
+    "weaponProficiencies": [
+      "simple",
+      "arbalète à main",
+      "épée longue",
+      "rapière",
+      "épée courte"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armure de cuir",
+        "Poignard"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Rapière"
+            ],
+            [
+              "Épée longue"
+            ],
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack du diplomate"
+            ],
+            [
+              "Pack animateur"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Luth"
+            ],
+            [
+              "n'importe quel instrument de musique"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "Clerc",
+    "subclassFeatureName": "Domaine divin",
+    "weaponProficiencies": [
+      "simple"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Bouclier",
+        "Symbole sacré"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Masse"
+            ],
+            [
+              "Marteau de guerre"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Courrier à l'échelle"
+            ],
+            [
+              "Armure de cuir"
+            ],
+            [
+              "Cotte de mailles"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Arbalète légère",
+              "20 boulons"
+            ],
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack de prêtre"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Druid": {
+    "name": "Druide",
+    "subclassFeatureName": "Cercle des Druides",
+    "weaponProficiencies": [
+      "clubs",
+      "poignards",
+      "fléchettes",
+      "javelots",
+      "masses",
+      "bâtons",
+      "cimeterres",
+      "faucilles",
+      "élingues",
+      "lances"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armure de cuir",
+        "Pack de l'explorateur",
+        "Concentration druidique"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Bouclier en bois"
+            ],
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Cimeterre"
+            ],
+            [
+              "n'importe quelle arme de mêlée simple"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "Combattant",
+    "subclassFeatureName": "Archétype martial",
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {
+          "options": [
+            [
+              "Cotte de mailles"
+            ],
+            [
+              "Armure de cuir",
+              "Arc",
+              "20 flèches"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "n'importe quelle arme martiale",
+              "Bouclier"
+            ],
+            [
+              "n'importe quelle arme martiale",
+              "n'importe quelle arme martiale"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Arbalète légère",
+              "20 boulons"
+            ],
+            [
+              "Hachette",
+              "Hachette"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack du donjon"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Monk": {
+    "name": "Moine",
+    "subclassFeatureName": "Tradition monastique",
+    "weaponProficiencies": [
+      "simple",
+      "épées courtes"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "10 fléchettes"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Épée courte"
+            ],
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack du donjon"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "Paladin",
+    "subclassFeatureName": "Serment sacré",
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Cotte de mailles",
+        "Symbole sacré"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "n'importe quelle arme martiale",
+              "Bouclier"
+            ],
+            [
+              "n'importe quelle arme martiale",
+              "n'importe quelle arme martiale"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "5 javelots"
+            ],
+            [
+              "n'importe quelle arme de mêlée simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack de prêtre"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "Ranger",
+    "subclassFeatureName": "Archétype du Ranger",
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Arc",
+        "Carquois avec 20 flèches"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Courrier à l'échelle"
+            ],
+            [
+              "Armure de cuir"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Épée courte",
+              "Épée courte"
+            ],
+            [
+              "n'importe quelle arme de mêlée simple",
+              "n'importe quelle arme de mêlée simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack du donjon"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "Voyou",
+    "subclassFeatureName": "Archétype espiègle",
+    "weaponProficiencies": [
+      "simple",
+      "arbalète à main",
+      "épée longue",
+      "rapière",
+      "épée courte"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armure de cuir",
+        "Poignard",
+        "Poignard",
+        "Les outils des voleurs"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Rapière"
+            ],
+            [
+              "Épée courte"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Arc court",
+              "Carquois avec 20 flèches"
+            ],
+            [
+              "Épée courte"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack de cambrioleur"
+            ],
+            [
+              "Pack du donjon"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "Sorcier",
+    "subclassFeatureName": "Origine sorcière",
+    "weaponProficiencies": [
+      "poignards",
+      "fléchettes",
+      "élingues",
+      "bâtons",
+      "arbalètes légères"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Poignard",
+        "Poignard"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Arbalète légère",
+              "20 boulons"
+            ],
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pochette de composants"
+            ],
+            [
+              "Concentration arcanique"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack du donjon"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "Sorcier",
+    "subclassFeatureName": "Patron d'un autre monde",
+    "weaponProficiencies": [
+      "simple"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armure de cuir",
+        "Poignard",
+        "Poignard"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Arbalète légère",
+              "20 boulons"
+            ],
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pochette de composants"
+            ],
+            [
+              "Concentration arcanique"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack d'érudit"
+            ],
+            [
+              "Pack du donjon"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "n'importe quelle arme simple"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "Magicien",
+    "subclassFeatureName": "Tradition arcanique",
+    "weaponProficiencies": [
+      "poignards",
+      "fléchettes",
+      "élingues",
+      "bâtons",
+      "arbalètes légères"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Livre de sorts"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Bâton"
+            ],
+            [
+              "Poignard"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pochette de composants"
+            ],
+            [
+              "Concentration arcanique"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pack d'érudit"
+            ],
+            [
+              "Pack de l'explorateur"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

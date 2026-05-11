@@ -1,0 +1,592 @@
+{
+  "Barbarian": {
+    "name": "Barbaro",
+    "subclassFeatureName": "Sentiero Primordiale",
+    "weaponProficiencies": [
+      "semplice",
+      "marziale"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Pacchetto dell'esploratore",
+        "4 giavellotti"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Grande ascia"
+            ],
+            [
+              "qualsiasi arma da mischia marziale"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Ascia",
+              "Ascia"
+            ],
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Bard": {
+    "name": "Bardo",
+    "subclassFeatureName": "Collegio Bardo",
+    "weaponProficiencies": [
+      "semplice",
+      "balestra a mano",
+      "spada lunga",
+      "stocco",
+      "spada corta"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armatura di cuoio",
+        "Pugnale"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Stocco"
+            ],
+            [
+              "Spada lunga"
+            ],
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto del diplomatico"
+            ],
+            [
+              "Pacchetto dell'intrattenitore"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Liuto"
+            ],
+            [
+              "qualsiasi strumento musicale"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "Chierico",
+    "subclassFeatureName": "Dominio Divino",
+    "weaponProficiencies": [
+      "semplice"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Scudo",
+        "Simbolo sacro"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Mazza"
+            ],
+            [
+              "Warhammer"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Posta in scala"
+            ],
+            [
+              "Armatura di cuoio"
+            ],
+            [
+              "Cotta di maglia"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Balestra leggera",
+              "20 bulloni"
+            ],
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto del prete"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Druid": {
+    "name": "druido",
+    "subclassFeatureName": "Circolo dei Druidi",
+    "weaponProficiencies": [
+      "club",
+      "pugnali",
+      "freccette",
+      "giavellotti",
+      "mazze",
+      "quarti",
+      "scimitarre",
+      "falci",
+      "imbracature",
+      "lance"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armatura di cuoio",
+        "Pacchetto dell'esploratore",
+        "Focus druidico"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Scudo di legno"
+            ],
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Scimitarra"
+            ],
+            [
+              "qualsiasi arma da mischia semplice"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "Combattente",
+    "subclassFeatureName": "Archetipo marziale",
+    "weaponProficiencies": [
+      "semplice",
+      "marziale"
+    ],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {
+          "options": [
+            [
+              "Cotta di maglia"
+            ],
+            [
+              "Armatura di cuoio",
+              "Arco lungo",
+              "20 frecce"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "qualsiasi arma da guerra",
+              "Scudo"
+            ],
+            [
+              "qualsiasi arma da guerra",
+              "qualsiasi arma da guerra"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Balestra leggera",
+              "20 bulloni"
+            ],
+            [
+              "Ascia",
+              "Ascia"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto del Dungeoneer"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Monk": {
+    "name": "Monaco",
+    "subclassFeatureName": "Tradizione monastica",
+    "weaponProficiencies": [
+      "semplice",
+      "spade corte"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "10 freccette"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Spada corta"
+            ],
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto del Dungeoneer"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "Paladino",
+    "subclassFeatureName": "Giuramento sacro",
+    "weaponProficiencies": [
+      "semplice",
+      "marziale"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Cotta di maglia",
+        "Simbolo sacro"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "qualsiasi arma da guerra",
+              "Scudo"
+            ],
+            [
+              "qualsiasi arma da guerra",
+              "qualsiasi arma da guerra"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "5 giavellotti"
+            ],
+            [
+              "qualsiasi arma da mischia semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto del prete"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "Ranger",
+    "subclassFeatureName": "Archetipo del Ranger",
+    "weaponProficiencies": [
+      "semplice",
+      "marziale"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Arco lungo",
+        "Faretra con 20 frecce"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Posta in scala"
+            ],
+            [
+              "Armatura di cuoio"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Spada corta",
+              "Spada corta"
+            ],
+            [
+              "qualsiasi arma da mischia semplice",
+              "qualsiasi arma da mischia semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto del Dungeoneer"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "Briccone",
+    "subclassFeatureName": "Archetipo Ladro",
+    "weaponProficiencies": [
+      "semplice",
+      "balestra a mano",
+      "spada lunga",
+      "stocco",
+      "spada corta"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armatura di cuoio",
+        "Pugnale",
+        "Pugnale",
+        "Strumenti dei ladri"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Stocco"
+            ],
+            [
+              "Spada corta"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Arco corto",
+              "Faretra con 20 frecce"
+            ],
+            [
+              "Spada corta"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto da ladro"
+            ],
+            [
+              "Pacchetto del Dungeoneer"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "Stregone",
+    "subclassFeatureName": "Origine stregonesca",
+    "weaponProficiencies": [
+      "pugnali",
+      "freccette",
+      "imbracature",
+      "quarti",
+      "balestre leggere"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Pugnale",
+        "Pugnale"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Balestra leggera",
+              "20 bulloni"
+            ],
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Custodia per componenti"
+            ],
+            [
+              "Focus arcano"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto del Dungeoneer"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "Stregone",
+    "subclassFeatureName": "Patrono ultraterreno",
+    "weaponProficiencies": [
+      "semplice"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Armatura di cuoio",
+        "Pugnale",
+        "Pugnale"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Balestra leggera",
+              "20 bulloni"
+            ],
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Custodia per componenti"
+            ],
+            [
+              "Focus arcano"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto da studioso"
+            ],
+            [
+              "Pacchetto del Dungeoneer"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "qualsiasi arma semplice"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "Procedura guidata",
+    "subclassFeatureName": "Tradizione Arcana",
+    "weaponProficiencies": [
+      "pugnali",
+      "freccette",
+      "imbracature",
+      "quarti",
+      "balestre leggere"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "Libro degli incantesimi"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "Bastone ferrato"
+            ],
+            [
+              "Pugnale"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Custodia per componenti"
+            ],
+            [
+              "Focus arcano"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "Pacchetto da studioso"
+            ],
+            [
+              "Pacchetto dell'esploratore"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

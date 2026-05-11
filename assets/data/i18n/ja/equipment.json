@@ -1,0 +1,410 @@
+{
+  "Club": {
+    "name": "クラブ"
+  },
+  "Dagger": {
+    "name": "短剣"
+  },
+  "Greatclub": {
+    "name": "グレートクラブ"
+  },
+  "Handaxe": {
+    "name": "ハンドアックス"
+  },
+  "Javelin": {
+    "name": "やり投げ"
+  },
+  "Light Hammer": {
+    "name": "ライトハンマー"
+  },
+  "Mace": {
+    "name": "メース"
+  },
+  "Quarterstaff": {
+    "name": "クォータースタッフ"
+  },
+  "Sickle": {
+    "name": "鎌"
+  },
+  "Spear": {
+    "name": "槍"
+  },
+  "Crossbow, Light": {
+    "name": "クロスボウ、ライト"
+  },
+  "Dart": {
+    "name": "ダーツ"
+  },
+  "Shortbow": {
+    "name": "ショートボウ"
+  },
+  "Sling": {
+    "name": "スリング"
+  },
+  "Battleaxe": {
+    "name": "戦斧"
+  },
+  "Flail": {
+    "name": "フレイル"
+  },
+  "Glaive": {
+    "name": "グレイブ"
+  },
+  "Greataxe": {
+    "name": "グレートアックス"
+  },
+  "Greatsword": {
+    "name": "大剣"
+  },
+  "Halberd": {
+    "name": "ハルバード"
+  },
+  "Lance": {
+    "name": "ランス"
+  },
+  "Longsword": {
+    "name": "ロングソード"
+  },
+  "Maul": {
+    "name": "モール"
+  },
+  "Morningstar": {
+    "name": "モーニングスター"
+  },
+  "Pike": {
+    "name": "パイク"
+  },
+  "Rapier": {
+    "name": "レイピア"
+  },
+  "Scimitar": {
+    "name": "シミター"
+  },
+  "Shortsword": {
+    "name": "ショートソード"
+  },
+  "Trident": {
+    "name": "トライデント"
+  },
+  "War Pick": {
+    "name": "ウォーピック"
+  },
+  "Warhammer": {
+    "name": "ウォーハンマー"
+  },
+  "Whip": {
+    "name": "ホイップ"
+  },
+  "Blowgun": {
+    "name": "吹き矢"
+  },
+  "Crossbow, Hand": {
+    "name": "クロスボウ、ハンド"
+  },
+  "Crossbow, Heavy": {
+    "name": "クロスボウ、ヘビー"
+  },
+  "Longbow": {
+    "name": "ロングボウ"
+  },
+  "Net": {
+    "name": "ネット"
+  },
+  "Padded": {
+    "name": "パッド入り"
+  },
+  "Leather": {
+    "name": "レザー"
+  },
+  "Studded Leather": {
+    "name": "スタッズレザー"
+  },
+  "Hide": {
+    "name": "隠れる"
+  },
+  "Chain Shirt": {
+    "name": "チェーンシャツ"
+  },
+  "Scale Mail": {
+    "name": "スケールメール"
+  },
+  "Breastplate": {
+    "name": "胸当て"
+  },
+  "Half Plate": {
+    "name": "ハーフプレート"
+  },
+  "Ring Mail": {
+    "name": "リングメール"
+  },
+  "Chain Mail": {
+    "name": "チェーンメール"
+  },
+  "Splint": {
+    "name": "添え木"
+  },
+  "Plate": {
+    "name": "皿"
+  },
+  "Shield": {
+    "name": "シールド"
+  },
+  "Abacus": {
+    "name": "そろばん"
+  },
+  "Acid (vial)": {
+    "name": "酸（バイアル）"
+  },
+  "Alchemist's Fire": {
+    "name": "錬金術師の火"
+  },
+  "Arrows (20)": {
+    "name": "矢 (20)"
+  },
+  "Blowgun Needles (50)": {
+    "name": "吹き矢の針 (50)"
+  },
+  "Crossbow Bolts (20)": {
+    "name": "クロスボウボルト (20)"
+  },
+  "Sling Bullets (20)": {
+    "name": "スリング弾 (20)"
+  },
+  "Antitoxin (vial)": {
+    "name": "抗毒素（バイアル）"
+  },
+  "Backpack": {
+    "name": "バックパック"
+  },
+  "Ball Bearings (bag of 1000)": {
+    "name": "ボールベアリング（1000個入り袋）"
+  },
+  "Barrel": {
+    "name": "バレル"
+  },
+  "Basket": {
+    "name": "バスケット"
+  },
+  "Bedroll": {
+    "name": "ベッドロール"
+  },
+  "Bell": {
+    "name": "ベル"
+  },
+  "Blanket": {
+    "name": "ブランケット"
+  },
+  "Block and Tackle": {
+    "name": "ブロック＆タックル"
+  },
+  "Book": {
+    "name": "本"
+  },
+  "Bottle, glass": {
+    "name": "ボトル、グラス"
+  },
+  "Bucket": {
+    "name": "バケツ"
+  },
+  "Caltrops (bag of 20)": {
+    "name": "カルトロプス（20袋入り）"
+  },
+  "Candle": {
+    "name": "キャンドル"
+  },
+  "Case, crossbow bolt": {
+    "name": "ケース、クロスボウボルト"
+  },
+  "Case, map or scroll": {
+    "name": "事件、地図、巻物"
+  },
+  "Chain (10 feet)": {
+    "name": "チェーン (10 フィート)"
+  },
+  "Chalk (1 piece)": {
+    "name": "チョーク(1本)"
+  },
+  "Chest": {
+    "name": "胸"
+  },
+  "Climber's Kit": {
+    "name": "クライマーズキット"
+  },
+  "Clothes, common": {
+    "name": "服装、共通"
+  },
+  "Clothes, costume": {
+    "name": "洋服、コスチューム"
+  },
+  "Clothes, fine": {
+    "name": "服装、大丈夫です"
+  },
+  "Clothes, traveler's": {
+    "name": "衣類、旅行者用"
+  },
+  "Component Pouch": {
+    "name": "コンポーネントポーチ"
+  },
+  "Crowbar": {
+    "name": "バール"
+  },
+  "Druidic Focus": {
+    "name": "ドルイドの焦点"
+  },
+  "Flask or tankard": {
+    "name": "フラスコまたはジョッキ"
+  },
+  "Grappling Hook": {
+    "name": "グラップリングフック"
+  },
+  "Hammer": {
+    "name": "ハンマー"
+  },
+  "Hammer, sledge": {
+    "name": "ハンマー、そり"
+  },
+  "Healer's Kit": {
+    "name": "ヒーラーキット"
+  },
+  "Holy Symbol": {
+    "name": "ホーリーシンボル"
+  },
+  "Holy Water (flask)": {
+    "name": "聖水（フラスコ）"
+  },
+  "Hourglass": {
+    "name": "砂時計"
+  },
+  "Hunting Trap": {
+    "name": "ハンティングトラップ"
+  },
+  "Ink (1 ounce bottle)": {
+    "name": "インク (1オンスボトル)"
+  },
+  "Ink Pen": {
+    "name": "インクペン"
+  },
+  "Jug or Pitcher": {
+    "name": "ジャグまたはピッチャー"
+  },
+  "Ladder (10-foot)": {
+    "name": "はしご（10フィート）"
+  },
+  "Lamp": {
+    "name": "ランプ"
+  },
+  "Lantern, bullseye": {
+    "name": "ランタン、ブルズアイ"
+  },
+  "Lantern, hooded": {
+    "name": "ランタン、フード付き"
+  },
+  "Lock": {
+    "name": "ロック"
+  },
+  "Magnifying Glass": {
+    "name": "虫眼鏡"
+  },
+  "Manacles": {
+    "name": "手錠"
+  },
+  "Mess Kit": {
+    "name": "散らかりキット"
+  },
+  "Mirror, steel": {
+    "name": "ミラー、スチール"
+  },
+  "Oil (flask)": {
+    "name": "油（フラスコ）"
+  },
+  "Paper (one sheet)": {
+    "name": "用紙（1枚）"
+  },
+  "Parchment (one sheet)": {
+    "name": "羊皮紙（1枚）"
+  },
+  "Perfume (vial)": {
+    "name": "香水（小瓶）"
+  },
+  "Pick, miner's": {
+    "name": "選んでください、鉱山労働者"
+  },
+  "Piton": {
+    "name": "ピトン"
+  },
+  "Poison, basic (vial)": {
+    "name": "毒、基本（バイアル）"
+  },
+  "Pole (10-foot)": {
+    "name": "ポール（10フィート）"
+  },
+  "Pot, iron": {
+    "name": "鍋、鉄"
+  },
+  "Pouch": {
+    "name": "ポーチ"
+  },
+  "Quiver": {
+    "name": "矢筒"
+  },
+  "Ram, portable": {
+    "name": "ラム、ポータブル"
+  },
+  "Rations (1 day)": {
+    "name": "配給量（1日分）"
+  },
+  "Rope, hempen (50 feet)": {
+    "name": "ロープ、麻（50フィート）"
+  },
+  "Rope, silk (50 feet)": {
+    "name": "ロープ、シルク (50 フィート)"
+  },
+  "Sack": {
+    "name": "袋"
+  },
+  "Scale, merchant's": {
+    "name": "スケール、商人の"
+  },
+  "Sealing Wax": {
+    "name": "シーリングワックス"
+  },
+  "Shovel": {
+    "name": "シャベル"
+  },
+  "Signal Whistle": {
+    "name": "信号ホイッスル"
+  },
+  "Signet Ring": {
+    "name": "シグネットリング"
+  },
+  "Soap": {
+    "name": "石鹸"
+  },
+  "Spellbook": {
+    "name": "魔法の書"
+  },
+  "Spikes, iron (10)": {
+    "name": "スパイク、アイアン (10)"
+  },
+  "Spyglass": {
+    "name": "小型望遠鏡"
+  },
+  "Tent, two-person": {
+    "name": "テント、2人用"
+  },
+  "Tinderbox": {
+    "name": "火口箱"
+  },
+  "Torch": {
+    "name": "トーチ"
+  },
+  "Vial": {
+    "name": "バイアル"
+  },
+  "Waterskin": {
+    "name": "ウォータースキン"
+  },
+  "Whetstone": {
+    "name": "砥石"
+  }
+}

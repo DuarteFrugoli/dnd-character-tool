@@ -1,0 +1,878 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Frenesia",
+        "description": "A partire da quando scegli questo percorso al 3° livello, puoi entrare in frenesia quando sei in preda all'ira. Se lo fai, per la durata della tua ira puoi effettuare un singolo attacco con arma da mischia come azione bonus in ciascuno dei tuoi turni successivi a questo. Quando la tua rabbia termina, soffri di un livello di esaurimento."
+      },
+      "Mindless Rage": {
+        "name": "Rabbia senza senso",
+        "description": "A partire dal 6° livello, non puoi essere affascinato o spaventato mentre sei in ira. Se si è affascinati o spaventati quando si entra in ira, l'effetto è sospeso per la durata dell'ira."
+      },
+      "Intimidating Presence": {
+        "name": "Presenza intimidatoria",
+        "description": "A partire dal 10° livello, puoi usare la tua azione per spaventare qualcuno con la tua presenza minacciosa. Scegli una creatura che puoi vedere entro 9 metri da te. Se la creatura può vederti o sentirti, deve riuscire un tiro salvezza su Saggezza (CD = 8 + il tuo bonus di competenza + il tuo modificatore di Carisma) o avere paura di te fino alla fine del tuo turno successivo. Nei turni successivi, puoi usare la tua azione per estendere la durata fino alla fine del tuo turno successivo. L'effetto termina se la creatura termina il suo turno fuori dalla linea di vista o a più di 60 piedi di distanza da te."
+      },
+      "Retaliation": {
+        "name": "Ritorsione",
+        "description": "A partire dal 14° livello, quando subisci danni da una creatura che si trova entro 1,5 metri da te, puoi usare la tua reazione per effettuare un attacco con arma da mischia contro quella creatura."
+      }
+    },
+    "Path of the Totem Warrior": {
+      "Spirit Seeker": {
+        "name": "Cercatore di spiriti",
+        "description": "Il tuo è un percorso che cerca la sintonia con il mondo naturale. Al 3° livello, ottieni la capacità di lanciare i sensi della bestia e parlare con gli incantesimi degli animali, ma solo come rituali."
+      },
+      "Totem Spirit": {
+        "name": "Spirito totemico",
+        "description": "Al 3° livello, scegli uno spirito totem e ottieni la sua caratteristica. Orso: mentre sei in preda all'ira, hai resistenza a tutti i danni tranne quelli psichici. Aquila: Mentre sei in ira, le altre creature hanno svantaggio ai tiri per colpire di opportunità contro di te, e puoi usare Scatto come azione bonus. Lupo: Mentre sono in preda all'ira, i tuoi amici hanno vantaggio ai tiri per colpire in mischia contro qualsiasi creatura entro 1,5 metri da te che ti sia ostile."
+      },
+      "Aspect of the Beast": {
+        "name": "Aspetto della Bestia",
+        "description": "Ottieni un beneficio magico in base all'animale totem scelto. Orso: la tua capacità di carico è raddoppiata e hai vantaggio alle prove di Forza per spingere, tirare, sollevare o rompere oggetti. Aquila: Puoi vedere fino a 1 miglio di distanza senza difficoltà, e la luce fioca non impone svantaggio alle tue prove di Percezione. Lupo: Puoi seguire le tracce di altre creature mentre viaggi a un ritmo veloce e puoi muoverti furtivamente mentre viaggi a un ritmo normale."
+      },
+      "Spirit Walker": {
+        "name": "Spirito Camminatore",
+        "description": "Puoi lanciare l'incantesimo Comunione con la Natura, ma solo come rituale. Quando lo fai, una versione spirituale di uno dei tuoi animali totem sembra trasmettere le informazioni che cerchi."
+      },
+      "Totemic Attunement": {
+        "name": "Sintonizzazione Totemica",
+        "description": "Ottieni un beneficio magico basato su un animale totem di tua scelta. Orso: Mentre è in preda all'ira, qualsiasi creatura ostile entro 1,5 metri da te subisce svantaggio ai tiri per colpire contro bersagli diversi da te. Aquila: Mentre sei in ira, hai una velocità di volo pari alla tua velocità di camminata, ma cadi se finisci il tuo turno in aria. Lupo: Mentre sei in ira, puoi usare un'azione bonus per buttare a terra una creatura di taglia Grande o inferiore quando la colpisci con un attacco con arma da mischia."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Competenze bonus",
+        "description": "Quando ti unisci al College of Lore al 3° livello, acquisisci competenza in tre abilità a tua scelta."
+      },
+      "Cutting Words": {
+        "name": "Parole taglienti",
+        "description": "Inoltre al 3° livello, quando una creatura che puoi vedere entro 18 metri effettua un tiro per colpire, una prova di caratteristica o un tiro per i danni, puoi usare la tua reazione per spendere un uso di Ispirazione Bardica, lanciando il dado e sottraendo il numero dal tiro della creatura. La creatura è immune se non può sentirti o è immune all'essere affascinata."
+      },
+      "Additional Magical Secrets": {
+        "name": "Ulteriori segreti magici",
+        "description": "Al 6° livello, apprendi due incantesimi a tua scelta da qualsiasi classe. Un incantesimo che scegli deve essere di un livello che puoi lanciare. Gli incantesimi scelti contano come incantesimi da bardo per te, ma non contano nel numero di incantesimi da bardo che conosci."
+      },
+      "Peerless Skill": {
+        "name": "Abilità impareggiabile",
+        "description": "A partire dal 14° livello, quando effettui una prova di caratteristica, puoi spendere un uso di Ispirazione Bardica. Lancia un dado di Ispirazione Bardica e aggiungi il numero ottenuto alla tua prova di abilità. Puoi scegliere di farlo dopo aver tirato il tiro, ma prima che il DM ti dica se hai successo o fallisci."
+      }
+    },
+    "College of Valor": {
+      "Bonus Proficiencies": {
+        "name": "Competenze bonus",
+        "description": "Quando ti unisci al Collegio del Valore al 3° livello, acquisisci competenza con armature medie, scudi e armi da guerra."
+      },
+      "Combat Inspiration": {
+        "name": "Ispirazione al combattimento",
+        "description": "Sempre al 3° livello, una creatura con un dado di Ispirazione Bardica da te può lanciare quel dado e aggiungere il numero al tiro per i danni dell'arma appena effettuato. In alternativa, quando viene effettuato un tiro per colpire contro la creatura, questa può usare la sua reazione per lanciare il dado e aggiungere il numero alla sua CA contro quell'attacco, dopo aver visto il tiro ma prima di sapere se colpisce."
+      },
+      "Extra Attack": {
+        "name": "Attacco extra",
+        "description": "A partire dal 6° livello, puoi attaccare due volte, anziché una, ogni volta che esegui l'azione Attacco nel tuo turno."
+      },
+      "Battle Magic": {
+        "name": "Magia da battaglia",
+        "description": "Al 14° livello, quando usi la tua azione per lanciare un incantesimo da bardo, puoi effettuare un attacco con l'arma come azione bonus."
+      }
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "Blessings of Knowledge": {
+        "name": "Benedizioni della Conoscenza",
+        "description": "Al 1° livello impari due lingue a tua scelta. Inoltre diventi esperto in due delle seguenti abilità: Arcani, Storia, Natura o Religione. Il tuo bonus di competenza viene raddoppiato per qualsiasi prova di caratteristica effettuata che utilizzi una di queste abilità."
+      },
+      "Channel Divinity: Knowledge of the Ages": {
+        "name": "Divinità del Canale: Conoscenza delle Ere",
+        "description": "A partire dal 2° livello, puoi usare Incanalare Divinità per attingere a un pozzo divino di conoscenza. Come azione, scegli un'abilità o uno strumento. Per 10 minuti, hai competenza con l'abilità o lo strumento scelto."
+      },
+      "Channel Divinity: Read Thoughts": {
+        "name": "Canalizzare Divinità: Leggi i Pensieri",
+        "description": "Al 6° livello, puoi usare Incanalare Divinità per leggere i pensieri di una creatura. Si lancia Individuazione dei Pensieri (la CD del tiro salvezza è pari alla CD del tiro salvezza degli incantesimi da chierico) senza slot incantesimo o componenti richiesti. Il bersaglio che fallisce il tiro salvezza viene affascinato da te per 1 minuto o finché non gli infliggi danni."
+      },
+      "Potent Spellcasting": {
+        "name": "Potente lancio di incantesimi",
+        "description": "A partire dall'8° livello, aggiungi il tuo modificatore di Saggezza al danno che infliggi con qualsiasi trucchetto da chierico."
+      },
+      "Visions of the Past": {
+        "name": "Visioni del passato",
+        "description": "A partire dal 17° livello, puoi evocare visioni del passato che si riferiscono a un oggetto che tieni in mano o all'ambiente circostante. Trascorri almeno 1 minuto in meditazione e preghiera, quindi ricevi visioni oniriche e confuse di eventi recenti. Puoi meditare in questo modo per un numero di minuti pari al tuo punteggio di Saggezza e devi mantenere la concentrazione durante quel tempo."
+      }
+    },
+    "Life Domain": {
+      "Bonus Proficiency": {
+        "name": "Competenza bonus",
+        "description": "Quando scegli questo dominio al 1° livello, ottieni competenza nelle armature pesanti."
+      },
+      "Disciple of Life": {
+        "name": "Discepolo della Vita",
+        "description": "Inoltre, a partire dal 1° livello, i tuoi incantesimi di guarigione sono più efficaci. Ogni volta che si usa un incantesimo di 1° livello o superiore per ripristinare punti ferita su una creatura, la creatura recupera punti ferita aggiuntivi pari a 2 + il livello dell'incantesimo."
+      },
+      "Channel Divinity: Preserve Life": {
+        "name": "Incanalare la divinità: preservare la vita",
+        "description": "A partire dal 2° livello, come azione, presenti il ​​tuo simbolo sacro ed evochi energia curativa che può ripristinare un numero di punti ferita pari a cinque volte il tuo livello da chierico. Scegli qualsiasi creatura entro 9 metri da te e dividi quei punti ferita tra loro. Questa caratteristica può riportare una creatura a non più della metà dei suoi punti ferita massimi."
+      },
+      "Blessed Healer": {
+        "name": "Beato Guaritore",
+        "description": "A partire dal 6° livello, gli incantesimi di guarigione che lanci sugli altri guariscono anche te. Quando lanci un incantesimo di 1° livello o superiore che ripristina punti ferita a una creatura diversa da te, recuperi punti ferita pari a 2 + il livello dell'incantesimo."
+      },
+      "Divine Strike": {
+        "name": "Colpo Divino",
+        "description": "All'8° livello, una volta per ciascuno dei tuoi turni in cui colpisci una creatura con un attacco con un'arma, puoi fare in modo che l'attacco infligga 1d8 danni radiosi aggiuntivi al bersaglio. Quando raggiungi il 14° livello, il danno extra aumenta a 2d8."
+      },
+      "Supreme Healing": {
+        "name": "Guarigione Suprema",
+        "description": "A partire dal 17° livello, quando normalmente si lanciano uno o più dadi per ripristinare i punti ferita con un incantesimo, si usa invece il numero più alto possibile per ciascun dado. Ad esempio, invece di ripristinare 2d6 punti ferita, ne ripristini 12."
+      }
+    },
+    "Light Domain": {
+      "Bonus Cantrip": {
+        "name": "Trucchetto bonus",
+        "description": "Quando scegli questo dominio al 1° livello, ottieni il trucchetto Luce se non lo conosci già."
+      },
+      "Warding Flare": {
+        "name": "Bagliore protettivo",
+        "description": "Inoltre al 1° livello, quando vieni attaccato da una creatura entro 9 metri da te e che puoi vedere, puoi usare la tua reazione per imporre svantaggio al tiro per colpire, provocando un bagliore di luce davanti all'attaccante. È possibile utilizzare questo privilegio un numero di volte pari al proprio modificatore di Saggezza (minimo una volta) e riacquistare tutti gli usi con un riposo lungo."
+      },
+      "Channel Divinity: Radiance of the Dawn": {
+        "name": "Incanalare Divinità: Radianza dell'Alba",
+        "description": "A partire dal 2° livello, come azione, presenti il ​​tuo simbolo sacro e qualsiasi oscurità magica entro 9 metri da te viene dissolta. Inoltre, ogni creatura ostile entro 9 metri deve effettuare un tiro salvezza su Costituzione, subendo 2d10 + il proprio livello da chierico danni radiosi se il tiro salvezza fallisce, o la metà se lo supera."
+      },
+      "Improved Flare": {
+        "name": "Flare migliorato",
+        "description": "A partire dal 6° livello, puoi anche usare il tuo privilegio Bagliore Protettivo quando una creatura che puoi vedere entro 9 metri da te attacca una creatura diversa da te."
+      },
+      "Potent Spellcasting": {
+        "name": "Potente lancio di incantesimi",
+        "description": "A partire dall'8° livello, aggiungi il tuo modificatore di Saggezza al danno che infliggi con qualsiasi trucchetto da chierico."
+      },
+      "Corona of Light": {
+        "name": "Corona di Luce",
+        "description": "A partire dal 17° livello, puoi usare la tua azione per attivare un'aura di luce solare che dura 1 minuto o finché non la interrompi. Emetti luce intensa in un raggio di 18 metri e luce fioca 9 metri oltre. I tuoi nemici nella luce intensa hanno svantaggio ai tiri salvezza contro qualsiasi incantesimo che infligga danni da fuoco o radiosi."
+      }
+    },
+    "Nature Domain": {
+      "Acolyte of Nature": {
+        "name": "Accolito della Natura",
+        "description": "Al 1° livello, apprendi un trucchetto da druido a tua scelta. Ottieni anche competenza in una delle seguenti abilità: Gestione degli animali, Natura o Sopravvivenza."
+      },
+      "Bonus Proficiency": {
+        "name": "Competenza bonus",
+        "description": "Inoltre al 1° livello ottieni competenza nelle armature pesanti."
+      },
+      "Channel Divinity: Charm Animals and Plants": {
+        "name": "Incanalare Divinità: Incanta Animali e Piante",
+        "description": "A partire dal 2° livello, come azione, presenti il ​​tuo simbolo sacro e invochi il nome della tua divinità. Ogni creatura bestia o pianta che può vederti entro 9 metri deve effettuare un tiro salvezza su Saggezza. Se fallisce, viene affascinato da te per 1 minuto o finché non subisce danni."
+      },
+      "Dampen Elements": {
+        "name": "Smorzare gli elementi",
+        "description": "A partire dal 6° livello, quando tu o una creatura entro 9 metri da te subite danni da acido, freddo, fuoco, fulmine o tuono, puoi usare la tua reazione per conferire resistenza alla creatura contro quell'istanza del danno."
+      },
+      "Divine Strike": {
+        "name": "Colpo Divino",
+        "description": "All'8° livello, una volta per ciascuno dei tuoi turni in cui colpisci una creatura con un attacco con un'arma, puoi fare in modo che l'attacco infligga 1d8 danni extra da freddo, fuoco o fulmine (a tua scelta) al bersaglio. Quando raggiungi il 14° livello, il danno extra aumenta a 2d8."
+      },
+      "Master of Nature": {
+        "name": "Maestro della natura",
+        "description": "Al 17° livello, ottieni la capacità di comandare animali e creature vegetali. Mentre le creature sono affascinate dalla tua funzione Incanta animali e piante, puoi eseguire un'azione bonus nel tuo turno per comandare verbalmente cosa farà ciascuna di quelle creature nel turno successivo."
+      }
+    },
+    "Tempest Domain": {
+      "Bonus Proficiencies": {
+        "name": "Competenze bonus",
+        "description": "Al 1° livello, ottieni competenza nelle armi da guerra e nelle armature pesanti."
+      },
+      "Wrath of the Storm": {
+        "name": "L'ira della tempesta",
+        "description": "Inoltre, al 1° livello, quando una creatura entro 1,5 metri da te e che puoi vedere ti colpisce con un attacco, puoi usare la tua reazione per far sì che la creatura effettui un tiro salvezza su Destrezza. Se fallisce il tiro salvezza, subisce 2d8 danni da fulmine o tuono (a tua scelta), o la metà se lo supera. È possibile utilizzare questo privilegio un numero di volte pari al proprio modificatore di Saggezza (minimo una volta) e riacquistare tutti gli usi con un riposo lungo."
+      },
+      "Channel Divinity: Destructive Wrath": {
+        "name": "Incanalare Divinità: Ira Distruttiva",
+        "description": "A partire dal 2° livello, quando tiri i danni da fulmine o tuono, puoi usare Incanalare Divinità per infliggere il massimo danno invece di tirare."
+      },
+      "Thunderbolt Strike": {
+        "name": "Colpo di fulmine",
+        "description": "Al 6° livello, quando infliggi danni da fulmine a una creatura Grande o più piccola, puoi anche spingerla fino a 3 metri lontano da te."
+      },
+      "Divine Strike": {
+        "name": "Colpo Divino",
+        "description": "All'8° livello, una volta per ciascuno dei tuoi turni in cui colpisci una creatura con un attacco con un'arma, puoi fare in modo che l'attacco infligga 1d8 danni da tuono aggiuntivi al bersaglio. Quando raggiungi il 14° livello, il danno extra aumenta a 2d8."
+      },
+      "Stormborn": {
+        "name": "Nato dalla Tempesta",
+        "description": "Al 17° livello, hai una velocità di volo pari alla tua attuale velocità di camminata ogni volta che non sei sottoterra o al chiuso."
+      }
+    },
+    "Trickery Domain": {
+      "Blessing of the Trickster": {
+        "name": "Benedizione dell'Imbroglione",
+        "description": "A partire da quando scegli questo dominio al 1° livello, puoi usare la tua azione per toccare una creatura consenziente diversa da te per darle vantaggio alle prove di Destrezza (Furtività). Questa benedizione dura 1 ora o finché non utilizzi nuovamente questa funzionalità."
+      },
+      "Channel Divinity: Invoke Duplicity": {
+        "name": "Incanalare Divinità: Invoca la Duplicità",
+        "description": "A partire dal 2° livello, come azione, crei un perfetto duplicato illusorio di te stesso che dura 1 minuto. L'illusione appare in uno spazio non occupato che puoi vedere entro 9 metri da te. Come azione bonus nel tuo turno, puoi spostare l'illusione fino a 9 metri. Puoi lanciare incantesimi come se fossi nello spazio dell'illusione, ma devi usare i tuoi sensi."
+      },
+      "Channel Divinity: Cloak of Shadows": {
+        "name": "Divinità Incanalata: Mantello delle Ombre",
+        "description": "A partire dal 6° livello, come azione, diventi invisibile fino alla fine del tuo turno successivo. Diventi visibile se attacchi o lanci un incantesimo."
+      },
+      "Divine Strike": {
+        "name": "Colpo Divino",
+        "description": "All'8° livello, una volta per ciascuno dei tuoi turni in cui colpisci una creatura con un attacco con un'arma, puoi fare in modo che l'attacco infligga 1d8 danni da veleno aggiuntivi al bersaglio. Quando raggiungi il 14° livello, il danno extra aumenta a 2d8."
+      },
+      "Improved Duplicity": {
+        "name": "Duplicità migliorata",
+        "description": "Al 17° livello, puoi creare fino a quattro duplicati di te stesso, invece di uno, quando usi Invoca Duplicità. Come azione bonus nel tuo turno, puoi spostarne un numero qualsiasi fino a 9 metri, fino a un raggio massimo di 120 piedi."
+      }
+    },
+    "War Domain": {
+      "Bonus Proficiencies": {
+        "name": "Competenze bonus",
+        "description": "Al 1° livello, ottieni competenza nelle armi da guerra e nelle armature pesanti."
+      },
+      "War Priest": {
+        "name": "Sacerdote di guerra",
+        "description": "Dal 1° livello, quando usi l'azione Attacco, puoi effettuare un attacco con l'arma come azione bonus. È possibile utilizzare questo privilegio un numero di volte pari al proprio modificatore di Saggezza (minimo una volta) e riacquistare tutti gli usi con un riposo lungo."
+      },
+      "Channel Divinity: Guided Strike": {
+        "name": "Incanalare Divinità: Attacco Guidato",
+        "description": "A partire dal 2° livello, quando effettui un tiro per colpire, puoi usare Incanalare Divinità per ottenere un bonus di +10 al tiro. Si effettua questa scelta prima o dopo aver visto il tiro, ma prima che venga applicato qualsiasi effetto."
+      },
+      "Channel Divinity: War God's Blessing": {
+        "name": "Channel Divinity: Benedizione del Dio della Guerra",
+        "description": "Al 6° livello, quando una creatura entro 9 metri da te effettua un tiro per colpire, puoi usare la tua reazione per concedere a quella creatura un bonus di +10 al tiro usando Incanalare Divinità."
+      },
+      "Divine Strike": {
+        "name": "Colpo Divino",
+        "description": "All'8° livello, una volta per ciascuno dei tuoi turni in cui colpisci una creatura con un attacco con un'arma, puoi fare in modo che l'attacco infligga 1d8 danni aggiuntivi dello stesso tipo inflitti dall'arma. Quando raggiungi il 14° livello, il danno extra aumenta a 2d8."
+      },
+      "Avatar of Battle": {
+        "name": "Avatar della battaglia",
+        "description": "Al 17° livello, ottieni resistenza ai danni contundenti, perforanti e taglienti inflitti dalle armi non magiche."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Bonus Cantrip": {
+        "name": "Trucchetto bonus",
+        "description": "Quando scegli questo circolo al 2° livello, apprendi un trucchetto da druido aggiuntivo a tua scelta."
+      },
+      "Natural Recovery": {
+        "name": "Recupero naturale",
+        "description": "A partire dal 2° livello, durante un riposo breve, puoi scegliere gli slot incantesimo consumati da recuperare. Gli slot incantesimo possono avere un livello combinato pari o inferiore alla metà del tuo livello da druido (arrotondato per eccesso) e nessuno degli slot può essere di 6° livello o superiore. Non puoi utilizzare nuovamente questo privilegio finché non finisci un riposo lungo."
+      },
+      "Land's Stride": {
+        "name": "Il passo della terra",
+        "description": "A partire dal 6° livello, muoversi attraverso terreni difficili non magici non richiede movimento aggiuntivo. Puoi anche passare attraverso le piante non magiche senza esserne rallentato e senza subire danni se hanno spine, aculei o pericoli simili."
+      },
+      "Nature's Ward": {
+        "name": "Il reparto della natura",
+        "description": "Quando raggiungi il 10° livello, non puoi essere affascinato o spaventato dagli elementali o dalle fate, e sei immune ai veleni e alle malattie."
+      },
+      "Nature's Sanctuary": {
+        "name": "Santuario della natura",
+        "description": "Quando raggiungi il 14° livello, quando una creatura bestia o pianta ti attacca, quella creatura deve effettuare un tiro salvezza su Saggezza contro la CD del tuo incantesimo da druido. Se fallisce il Tiro Salvezza, la creatura deve scegliere un bersaglio diverso, altrimenti l'attacco fallisce automaticamente."
+      }
+    },
+    "Circle of the Moon": {
+      "Combat Wild Shape": {
+        "name": "Combatti la forma selvatica",
+        "description": "Quando scegli questo cerchio al 2° livello, ottieni la capacità di usare la Forma Selvatica nel tuo turno come azione bonus anziché come azione. Inoltre, mentre sei trasformato dalla Forma Selvatica, puoi usare un'azione bonus per spendere uno slot incantesimo e recuperare 1d8 punti ferita per livello dello slot incantesimo speso."
+      },
+      "Circle Forms": {
+        "name": "Forme circolari",
+        "description": "I riti del tuo circolo ti conferiscono la capacità di trasformarti in forme animali più pericolose. A partire dal 2° livello, puoi usare la Forma Selvatica per trasformarti in una bestia con un grado di sfida pari a 1. A partire dal 6° livello, puoi trasformarti in una bestia con un grado di sfida pari al tuo livello da druido diviso per 3, arrotondato per difetto."
+      },
+      "Primal Strike": {
+        "name": "Colpo Primordiale",
+        "description": "A partire dal 6° livello, i propri attacchi in forma bestiale contano come magici allo scopo di superare la resistenza e l'immunità agli attacchi e ai danni non magici."
+      },
+      "Elemental Wild Shape": {
+        "name": "Forma selvatica elementale",
+        "description": "Al 10° livello, puoi spendere due usi della Forma Selvatica contemporaneamente per trasformarti in un elementale dell'aria, della terra, del fuoco o dell'acqua."
+      },
+      "Thousand Forms": {
+        "name": "Mille forme",
+        "description": "Al 14° livello, hai imparato a usare la magia per alterare la tua forma fisica in modi più sottili. Puoi lanciare l'incantesimo alterare te stesso a piacimento."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Critico migliorato",
+        "description": "A partire da quando scegli questo archetipo al 3° livello, i tuoi attacchi con l'arma ottengono un colpo critico con un risultato di 19 o 20."
+      },
+      "Remarkable Athlete": {
+        "name": "Atleta notevole",
+        "description": "A partire dal 7° livello, puoi aggiungere metà del tuo bonus di competenza (arrotondato per eccesso) a qualsiasi prova di Forza, Destrezza o Costituzione effettuata che non utilizzi già il tuo bonus di competenza. Inoltre, quando effettui un salto in lungo con corsa, la distanza che puoi coprire aumenta di un numero di piedi pari al tuo modificatore di Forza."
+      },
+      "Additional Fighting Style": {
+        "name": "Stile di combattimento aggiuntivo",
+        "description": "Al 10° livello, puoi scegliere una seconda opzione dal privilegio di classe Stile di Combattimento."
+      },
+      "Superior Critical": {
+        "name": "Critico superiore",
+        "description": "A partire dal 15° livello, i tuoi attacchi con l'arma mettono a segno un colpo critico con un risultato di 18, 19 o 20."
+      },
+      "Survivor": {
+        "name": "Sopravvissuto",
+        "description": "Al 18° livello, all'inizio di ciascuno dei tuoi turni, recuperi punti ferita pari a 5 + il tuo modificatore di Costituzione se non ti restano più della metà dei tuoi punti ferita. Non ottieni questo beneficio se hai 0 punti ferita."
+      }
+    },
+    "Battle Master": {
+      "Combat Superiority": {
+        "name": "Superiorità in combattimento",
+        "description": "Quando scegli questo archetipo al 3° livello, apprendi manovre alimentate da speciali dadi superiorità (d8). Impari tre manovre a tua scelta e hai quattro dadi superiorità. Recuperi tutti i dadi superiorità spesi quando termini un riposo breve o lungo. CD del tiro salvezza = 8 + bonus di competenza + modificatore di Forza o Destrezza (a tua scelta). Apprendi due manovre aggiuntive al 7°, 10° e 15° livello."
+      },
+      "Student of War": {
+        "name": "Studente di guerra",
+        "description": "Al 3° livello, ottieni competenza con un tipo di strumenti da artigiano a tua scelta."
+      },
+      "Know Your Enemy": {
+        "name": "Conosci il tuo nemico",
+        "description": "A partire dal 7° livello, se trascorri almeno 1 minuto osservando o interagendo con un'altra creatura fuori dal combattimento, il DM ti dirà se la creatura è pari a te, superiore o inferiore rispetto a due delle seguenti caratteristiche a tua scelta: Forza, Destrezza, Costituzione, Classe Armatura, punti ferita attuali, livelli di classe totali, livelli di classe del Guerriero."
+      },
+      "Improved Combat Superiority": {
+        "name": "Superiorità in combattimento migliorata",
+        "description": "Al 10° livello, i tuoi dadi superiorità si trasformano in d10. Al 18° livello si trasformano in d12."
+      },
+      "Relentless": {
+        "name": "Inflessibile",
+        "description": "A partire dal 15° livello, quando tiri l'iniziativa e non hai più dadi superiorità, recuperi 1 dado superiorità."
+      }
+    },
+    "Eldritch Knight": {
+      "Spellcasting": {
+        "name": "Incantesimi",
+        "description": "Quando raggiungi il 3° livello, aumenti la tua abilità marziale con la capacità di lanciare incantesimi. L'intelligenza è la tua abilità da incantatore per gli incantesimi da mago. Conosci tre trucchetti da mago e quattro incantesimi da mago di 1° livello, almeno due dei quali devono provenire dalle scuole di abiurazione o di evocazione."
+      },
+      "Weapon Bond": {
+        "name": "Legame d'arma",
+        "description": "Sempre al 3° livello, apprendi un rituale che crea un legame magico tra te e un'arma. Esegui il rituale nell'arco di 1 ora, dopodiché non puoi essere disarmato da quell'arma a meno che non sia inabile. Se si trova sullo stesso piano di esistenza, puoi evocare quell'arma come azione bonus nel tuo turno, facendola teletrasportare istantaneamente nella tua mano."
+      },
+      "War Magic": {
+        "name": "Magia della guerra",
+        "description": "A partire dal 7° livello, quando usi la tua azione per lanciare un trucchetto, puoi effettuare un attacco con l'arma come azione bonus."
+      },
+      "Eldritch Strike": {
+        "name": "Colpo Eldritch",
+        "description": "Al 10° livello, quando colpisci una creatura con un attacco con arma, quella creatura ha svantaggio al successivo tiro salvezza che effettua contro un incantesimo da te lanciato prima della fine del tuo turno successivo."
+      },
+      "Arcane Charge": {
+        "name": "Carica Arcana",
+        "description": "Al 15° livello, ottieni la capacità di teletrasportarti fino a 9 metri in uno spazio non occupato che puoi vedere quando usi l'Impeto d'Azione. Puoi teletrasportarti prima o dopo l'azione aggiuntiva."
+      },
+      "Improved War Magic": {
+        "name": "Magia di guerra migliorata",
+        "description": "A partire dal 18° livello, quando usi la tua azione per lanciare un incantesimo, puoi effettuare un attacco con l'arma come azione bonus."
+      }
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Tecnica della mano aperta",
+        "description": "A partire da quando scegli questa tradizione al 3° livello, ogni volta che colpisci una creatura con uno degli attacchi concessi dalla tua Raffica di Colpi, puoi imporre uno dei seguenti effetti: deve superare un tiro salvezza su Destrezza o cadere prono; deve effettuare un tiro salvezza su Forza: se fallisce, puoi spingerlo fino a 15 piedi di distanza; oppure non può effettuare reazioni fino alla fine del tuo prossimo turno."
+      },
+      "Wholeness of Body": {
+        "name": "Interezza del corpo",
+        "description": "Al 6° livello, ottieni la capacità di curarti. Con un'azione, puoi recuperare punti ferita pari a tre volte il tuo livello da monaco. È necessario terminare un riposo lungo prima di poter utilizzare nuovamente questa capacità."
+      },
+      "Tranquility": {
+        "name": "Tranquillità",
+        "description": "A partire dall'11° livello, alla fine di un riposo lungo, ottieni l'effetto di un incantesimo santuario che dura fino all'inizio del tuo riposo lungo successivo. La CD del tiro salvezza è pari a 8 + il tuo modificatore di Saggezza + il tuo bonus di competenza."
+      },
+      "Quivering Palm": {
+        "name": "Palma tremante",
+        "description": "Al 17° livello, quando colpisci una creatura con un colpo senz'armi, puoi spendere 3 punti ki per avviare vibrazioni impercettibili nel suo corpo che durano per un numero di giorni pari al tuo livello da monaco. Puoi usare la tua azione per porvi fine. La creatura deve effettuare un tiro salvezza su Costituzione: in caso di fallimento viene ridotta a 0 punti ferita; in caso di successo subisce 10d10 danni necrotici."
+      }
+    },
+    "Way of Shadow": {
+      "Shadow Arts": {
+        "name": "Arti dell'ombra",
+        "description": "A partire da quando scegli questa tradizione al 3° livello, puoi usare il tuo ki per duplicare gli effetti di certi incantesimi. Come azione, puoi spendere 2 punti ki per lanciare oscurità, scurovisione, passare senza lasciare tracce o silenzio, senza fornire componenti materiali. Inoltre, ottieni il trucchetto Illusione Minore se non lo conosci già."
+      },
+      "Shadow Step": {
+        "name": "Passo d'ombra",
+        "description": "Al 6° livello, quando sei in penombra o nell'oscurità, come azione bonus puoi teletrasportarti fino a 18 metri in uno spazio non occupato che puoi vedere e che è anch'esso in penombra o nell'oscurità. Avrai quindi vantaggio sul primo attacco in mischia che effettuerai prima della fine del turno."
+      },
+      "Cloak of Shadows": {
+        "name": "Mantello delle Ombre",
+        "description": "All'11° livello, quando ti trovi in ​​un'area di scarsa luce o oscurità, puoi usare la tua azione per diventare invisibile. Rimani invisibile finché non effettui un attacco, lanci un incantesimo o ti trovi in ​​un'area di luce intensa."
+      },
+      "Opportunist": {
+        "name": "Opportunista",
+        "description": "Al 17° livello, ogni volta che una creatura entro 1,5 metri da te viene colpita da un attacco effettuato da una creatura diversa da te, puoi usare la tua reazione per effettuare un attacco in mischia contro quella creatura."
+      }
+    },
+    "Way of the Four Elements": {
+      "Disciple of the Elements": {
+        "name": "Discepolo degli Elementi",
+        "description": "Quando scegli questa tradizione al 3° livello, apprendi discipline magiche che sfruttano il potere dei quattro elementi. Conosci la disciplina Armonia Elementale e un'altra disciplina elementale di tua scelta. Apprendi una disciplina aggiuntiva al 6°, 11° e 17° livello. Ogni volta che impari una nuova disciplina, puoi anche sostituire una disciplina che già conosci con un'altra diversa. Ogni disciplina richiede che tu spenda punti ki ogni volta che la usi."
+      },
+      "Additional Elemental Disciplines": {
+        "name": "Ulteriori discipline elementari",
+        "description": "Al 17° livello, apprendi un'altra disciplina elementale. Diventano disponibili le discipline più potenti come Avatar of the Elements e Wave of Rolling Earth."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Channel Divinity: Sacred Weapon": {
+        "name": "Divinità Incanalata: Arma Sacra",
+        "description": "Con un'azione, puoi infondere energia positiva in un'arma che impugni, utilizzando Incanalare Divinità. Per 1 minuto, aggiungi il tuo modificatore di Carisma ai tiri per colpire effettuati con quell'arma (minimo +1). L'arma emette anche luce intensa in un raggio di 6 metri e luce fioca 20 piedi oltre. Se l'arma non è già magica, diventa magica per la durata."
+      },
+      "Channel Divinity: Turn the Unholy": {
+        "name": "Incanalare Divinità: Trasforma gli Empi",
+        "description": "Come azione, presenti il ​​tuo simbolo sacro e pronunci una preghiera censurando immondi e non morti, usando Incanalare Divinità. Ogni immondo o non morto che può vederti o sentirti entro 9 metri deve effettuare un tiro salvezza su Saggezza. In caso di fallimento, la creatura viene scacciata per 1 minuto o finché non subisce danni."
+      },
+      "Aura of Devotion": {
+        "name": "Aura di devozione",
+        "description": "A partire dal 7° livello, tu e le creature amiche entro 3 metri da te non potete essere affascinati mentre sei cosciente. Al 18° livello, la portata di quest'aura aumenta a 9 metri."
+      },
+      "Purity of Spirit": {
+        "name": "Purezza di spirito",
+        "description": "A partire dal 15° livello, sei sempre sotto gli effetti dell'incantesimo protezione dal bene e dal male."
+      },
+      "Holy Nimbus": {
+        "name": "Santo Nimbo",
+        "description": "Al 20° livello, come azione, puoi emanare un'aura di luce solare. Per 1 minuto, la luce intensa risplende da te in un raggio di 9 metri, e la luce fioca risplende per 9 metri oltre. Ogni volta che una creatura nemica inizia il suo turno in piena luce, subisce 10 danni radiosi. Inoltre, hai vantaggio ai tiri salvezza contro gli incantesimi lanciati da immondi o non morti. Una volta utilizzata questa capacità, non potrai utilizzarla nuovamente finché non avrai terminato un riposo lungo."
+      }
+    },
+    "Oath of the Ancients": {
+      "Channel Divinity: Nature's Wrath": {
+        "name": "Incanalare Divinità: L'Ira della Natura",
+        "description": "Con un'azione, puoi far sì che i rampicanti spettrali spuntino e raggiungano una creatura entro 3 metri da te e che puoi vedere. La creatura deve superare un tiro salvezza su Forza o Destrezza (a sua scelta) o essere trattenuta. Mentre è trattenuta dai rampicanti, la creatura ripete il tiro salvezza alla fine di ciascuno dei suoi turni. In caso di successo, si libera e le viti svaniscono."
+      },
+      "Channel Divinity: Turn the Faithless": {
+        "name": "Incanalare Divinità: Trasforma gli Infedeli",
+        "description": "Con un'azione, presenti il ​​tuo simbolo sacro e ogni folletto o demone entro 9 metri da te che possa sentirti deve effettuare un tiro salvezza su Saggezza. Se il tiro salvezza fallisce, la creatura viene scacciata per 1 minuto o finché non subisce danni."
+      },
+      "Aura of Warding": {
+        "name": "Aura di protezione",
+        "description": "A partire dal 7° livello, la magia antica grava così pesantemente su di te da formare una protezione mistica. Tu e le creature amiche entro 3 metri da te avete resistenza ai danni degli incantesimi. Al 18° livello, la portata di quest'aura aumenta a 9 metri."
+      },
+      "Undying Sentinel": {
+        "name": "Sentinella immortale",
+        "description": "A partire dal 15° livello, quando sei ridotto a 0 punti ferita e non vieni ucciso sul colpo, puoi invece scegliere di scendere a 1 punto ferita. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo lungo. Inoltre, non soffri di nessuno degli svantaggi della vecchiaia e non puoi invecchiare magicamente."
+      },
+      "Elder Champion": {
+        "name": "Campione anziano",
+        "description": "Al 20° livello, come azione, assumi la forma di un'antica forza della natura per 1 minuto. Ottieni i seguenti benefici: all'inizio di ciascuno dei tuoi turni, recuperi 10 punti ferita; ogni volta che lanci un incantesimo da paladino con un tempo di lancio pari a 1 azione, puoi invece lanciarlo utilizzando un'azione bonus; le creature nemiche entro 3 metri da te hanno svantaggio ai tiri salvezza contro i tuoi incantesimi da paladino e le opzioni di Incanalare Divinità."
+      }
+    },
+    "Oath of Vengeance": {
+      "Channel Divinity: Abjure Enemy": {
+        "name": "Incanalare Divinità: Abiurare il Nemico",
+        "description": "Come azione, presenti il ​​tuo simbolo sacro e pronunci una preghiera di denuncia, usando il tuo Canale Divinità. Scegli una creatura entro 60 piedi da te che puoi vedere. Quella creatura deve effettuare un tiro salvezza su Saggezza. Immondi e non morti hanno svantaggio in questo tiro salvezza. Se fallisce il Tiro Salvezza, la creatura è spaventata per 1 minuto o finché non subisce danni. Mentre è spaventata, la velocità della creatura è 0 e non può beneficiare di alcun bonus alla sua velocità."
+      },
+      "Channel Divinity: Vow of Enmity": {
+        "name": "Incanalare Divinità: Voto di Inimicizia",
+        "description": "Come azione bonus, puoi pronunciare un voto di inimicizia contro una creatura che puoi vedere entro 3 metri da te, usando Incanalare Divinità. Si ottiene vantaggio ai tiri per colpire contro la creatura per 1 minuto o finché non scende a 0 punti ferita o perde i sensi."
+      },
+      "Relentless Avenger": {
+        "name": "Vendicatore implacabile",
+        "description": "Al 7° livello, quando colpisci una creatura con un attacco di opportunità, puoi muoverti fino a metà della tua velocità immediatamente dopo l'attacco e come parte della stessa reazione. Questo movimento non provoca attacchi di opportunità."
+      },
+      "Soul of Vengeance": {
+        "name": "Anima della vendetta",
+        "description": "A partire dal 15° livello, quando una creatura sotto l'effetto del tuo Voto di Inimicizia effettua un attacco, puoi usare la tua reazione per effettuare un attacco con arma da mischia contro quella creatura se si trova nel raggio d'azione."
+      },
+      "Avenging Angel": {
+        "name": "Angelo vendicatore",
+        "description": "Al 20° livello, come azione, assumi la forma di un vendicatore angelico per 1 minuto. Le ali spuntano dalla tua schiena e ti garantiscono una velocità di volo di 18 metri. Emani un'aura di minaccia in un raggio di 9 metri: la prima volta che una creatura nemica entra nell'aura o inizia il suo turno lì, deve riuscire un tiro salvezza su Saggezza o diventare spaventata da te per 1 minuto o finché non subisce danni."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Prey": {
+        "name": "La preda del cacciatore",
+        "description": "Al 3° livello, ottieni uno dei seguenti privilegi a tua scelta. Uccisore di colosso: quando colpisci una creatura con un attacco con un'arma, la creatura subisce 1d8 danni aggiuntivi se è al di sotto dei suoi punti ferita massimi. Puoi infliggere questo danno extra solo una volta per turno. Uccisore di giganti: quando una creatura di taglia Grande o superiore entro 1,5 metri da te ti colpisce o ti manca con un attacco, puoi usare la tua reazione per attaccare quella creatura immediatamente dopo. Spezzaorda: una volta per ciascuno dei tuoi turni in cui effettui un attacco con un'arma, puoi effettuare un altro attacco con la stessa arma contro una creatura diversa che si trova entro 1,5 metri dal bersaglio originale."
+      },
+      "Defensive Tactics": {
+        "name": "Tattiche difensive",
+        "description": "Al 7° livello, ottieni uno dei seguenti privilegi. Fuggi dall'Orda: gli attacchi di opportunità contro di te vengono effettuati con svantaggio. Difesa Multiattacco: Quando una creatura ti colpisce con un attacco, ottieni un bonus di +4 alla CA contro tutti gli attacchi successivi effettuati da quella creatura per il resto del turno. Volontà d'acciaio: hai vantaggio ai tiri salvezza contro la paura."
+      },
+      "Multiattack": {
+        "name": "Multiattacco",
+        "description": "All'11° livello, ottieni uno dei seguenti privilegi. Raffica: puoi usare la tua azione per effettuare un attacco a distanza contro un qualsiasi numero di creature entro 3 metri da un punto visibile all'interno della portata della tua arma, effettuando un tiro per colpire separato per ciascun bersaglio. Attacco Turbinante: puoi usare la tua azione per effettuare un attacco in mischia contro un qualsiasi numero di creature entro 1,5 metri da te, con un tiro per colpire separato per ciascun bersaglio."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Difesa del cacciatore superiore",
+        "description": "Al 15° livello, ottieni uno dei seguenti privilegi. Eludere: quando effettui un tiro salvezza su Destrezza per subire solo la metà dei danni, non subisci invece alcun danno se lo superi e solo la metà del danno se fallisci. Resistere alla corrente: quando una creatura ostile ti manca con un attacco in mischia, puoi usare la tua reazione per costringere quella creatura a ripetere lo stesso attacco contro un'altra creatura a tua scelta. Schivata prodigiosa: quando un attaccante che puoi vedere ti colpisce con un attacco, puoi usare la tua reazione per dimezzare il danno dell'attacco contro di te."
+      }
+    },
+    "Beast Master": {
+      "Ranger's Companion": {
+        "name": "Compagno del Ranger",
+        "description": "Al 3° livello, ottieni una bestia compagna che ti accompagna nelle tue avventure ed è addestrata a combattere al tuo fianco. Scegli una bestia che non sia più grande di Media e che abbia un grado di sfida pari o inferiore a 1/4. Aggiungi il tuo bonus di competenza alla CA, ai tiri per colpire e ai tiri per i danni della bestia, così come a qualsiasi tiro salvezza e abilità in cui è competente. Il suo punto ferita massimo è pari a quattro volte il tuo livello da ranger."
+      },
+      "Exceptional Training": {
+        "name": "Formazione eccezionale",
+        "description": "A partire dal 7° livello, in qualsiasi turno in cui il tuo compagno bestia non attacca, puoi usare un'azione bonus per comandare alla bestia di effettuare l'azione Scattare, Disimpegnarsi, Schivare o Aiuto nel suo turno. Anche gli attacchi della bestia contano come magici allo scopo di superare la resistenza e l'immunità."
+      },
+      "Bestial Fury": {
+        "name": "Furia bestiale",
+        "description": "A partire dall'11° livello, il tuo compagno bestia può effettuare due attacchi quando gli ordini di usare l'azione Attacco."
+      },
+      "Share Spells": {
+        "name": "Condividi incantesimi",
+        "description": "A partire dal 15° livello, quando lanci un incantesimo contro te stesso, puoi anche influenzare la tua bestia compagna con l'incantesimo se la bestia si trova entro 9 metri da te."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Mani veloci",
+        "description": "A partire dal 3° livello, puoi utilizzare l'azione bonus concessa dalla tua Azione Astuta per effettuare una prova di Destrezza (Rapidità di Mano), utilizzare gli strumenti da ladro per disinnescare una trappola o aprire una serratura, oppure effettuare l'azione Utilizzare un Oggetto."
+      },
+      "Second-Story Work": {
+        "name": "Lavoro del secondo piano",
+        "description": "Quando scegli questo archetipo al 3° livello, scalare non ti costa più movimento extra. Inoltre, quando effettui un salto in corsa, la distanza che percorri aumenta di un numero di piedi pari al tuo modificatore di Destrezza."
+      },
+      "Supreme Sneak": {
+        "name": "Sgancio supremo",
+        "description": "A partire dal 9° livello, hai vantaggio su una prova di Destrezza (Furtività) se non ti muovi più della metà della tua velocità nello stesso turno."
+      },
+      "Use Magic Device": {
+        "name": "Usa il dispositivo magico",
+        "description": "Al 13° livello, hai imparato abbastanza sul funzionamento della magia da poter improvvisare l'uso degli oggetti anche quando non sono destinati a te. Ignori tutti i requisiti di classe, razza e livello sull'uso degli oggetti magici."
+      },
+      "Thief's Reflexes": {
+        "name": "I riflessi del ladro",
+        "description": "Quando raggiungi il 17° livello, puoi effettuare due turni durante il primo round di qualsiasi combattimento. Effettui il tuo primo turno con la tua normale iniziativa e il secondo turno con la tua iniziativa meno 10."
+      }
+    },
+    "Assassin": {
+      "Bonus Proficiencies": {
+        "name": "Competenze bonus",
+        "description": "Quando scegli questo archetipo al 3° livello, ottieni competenza con il kit di travestimento e il kit dell'avvelenatore."
+      },
+      "Assassinate": {
+        "name": "Assassinare",
+        "description": "A partire dal 3° livello, diventi più letale quando sbagli i tuoi nemici. Hai vantaggio ai tiri per colpire contro qualsiasi creatura che non abbia ancora effettuato un turno nel combattimento. Inoltre, qualsiasi colpo messo a segno contro una creatura sorpresa è un colpo critico."
+      },
+      "Infiltration Expertise": {
+        "name": "Competenza in materia di infiltrazione",
+        "description": "A partire dal 9° livello, puoi immancabilmente creare false identità per te stesso. È necessario spendere sette giorni e 25 mo per stabilire la storia, la professione e le affiliazioni di un'identità. Successivamente, se adotti la nuova identità come travestimento, le altre creature crederanno che tu sia quella persona finché non verrà data una ragione ovvia per non farlo."
+      },
+      "Impostor": {
+        "name": "Impostore",
+        "description": "Al 13° livello, ottieni la capacità di imitare infallibilmente il linguaggio, la scrittura e il comportamento di un'altra persona. Devi dedicare almeno tre ore allo studio di queste tre componenti del comportamento della persona. Se una creatura diffidente sospetta che qualcosa non va, hai vantaggio su qualsiasi prova di Carisma (Inganno) per evitare di essere scoperta."
+      },
+      "Death Strike": {
+        "name": "Colpo della morte",
+        "description": "A partire dal 17° livello, quando attacchi e colpisci una creatura sorpresa, deve effettuare un tiro salvezza su Costituzione (CD 8 + il tuo modificatore di Destrezza + il tuo bonus di competenza). Se fallisci il tiro salvezza, raddoppia il danno del tuo attacco contro la creatura."
+      }
+    },
+    "Arcane Trickster": {
+      "Spellcasting": {
+        "name": "Incantesimi",
+        "description": "Quando raggiungi il 3° livello, aumenti le tue abilità furfanti con abilità magiche. L'intelligenza è la tua abilità da incantatore per gli incantesimi da mago. Conosci tre trucchetti da mago (mano magica più altri due a tua scelta) e tre incantesimi da mago di 1° livello, almeno due dei quali devono provenire dalle scuole di Ammaliamento e Illusione."
+      },
+      "Mage Hand Legerdemain": {
+        "name": "Legerdemain della Mano Magia",
+        "description": "A partire dal 3° livello, quando lanci Mano Magica, puoi rendere invisibile la mano spettrale e con essa puoi eseguire compiti aggiuntivi: riporre o recuperare oggetti da contenitori indossati da un'altra creatura, o usare strumenti da ladro per scassinare serrature e disinnescare trappole a distanza. Puoi farlo senza essere notato se riesci in una prova di Rapidità di Mano contestata dalla prova di Percezione della creatura."
+      },
+      "Magical Ambush": {
+        "name": "Agguato Magico",
+        "description": "A partire dal 9° livello, se sei nascosto da una creatura quando lanci un incantesimo su di essa, la creatura ha svantaggio su qualsiasi tiro salvezza effettuato contro l'incantesimo in questo turno."
+      },
+      "Versatile Trickster": {
+        "name": "Imbroglione versatile",
+        "description": "Al 13° livello, come azione bonus nel tuo turno, puoi designare una creatura entro 1,5 metri dalla mano spettrale creata dalla mano magica. Farlo ti dà vantaggio ai tiri per colpire contro quella creatura fino alla fine del turno."
+      },
+      "Spell Thief": {
+        "name": "Ladro di incantesimi",
+        "description": "Al 17° livello, immediatamente dopo che una creatura ha lanciato un incantesimo che ti prende di mira o ti include nella sua area di effetto, puoi usare la tua reazione per costringere la creatura a effettuare un tiro salvezza con la sua capacità di incantatore. La CD è pari alla CD del tiro salvezza dell'incantesimo. Se fallisci il Tiro Salvezza, ne annulli l'effetto contro di te e rubi la conoscenza dell'incantesimo se è almeno di 1° livello e di un livello che puoi lanciare. Conosci l'incantesimo da 8 ore."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "Dragon Ancestor": {
+        "name": "Antenato del drago",
+        "description": "Al 1° livello, scegli un tipo di drago come tuo antenato. Puoi parlare, leggere e scrivere in Draconico. Ogni volta che effettui una prova di Carisma mentre interagisci con i draghi, il tuo bonus di competenza viene raddoppiato se si applica alla prova."
+      },
+      "Draconic Resilience": {
+        "name": "Resilienza Draconica",
+        "description": "Mentre la magia scorre attraverso il tuo corpo, fa emergere i tratti fisici dei tuoi antenati draghi. I tuoi punti ferita massimi aumentano di 1 e aumentano nuovamente di 1 ogni volta che guadagni un livello in questa classe. Inoltre, quando non indossi un'armatura, la tua CA è pari a 13 + il tuo modificatore di Destrezza."
+      },
+      "Elemental Affinity": {
+        "name": "Affinità Elementale",
+        "description": "A partire dal 6° livello, quando lanci un incantesimo che infligge danni del tipo associato alla tua stirpe draconica, aggiungi il tuo modificatore di Carisma a quel danno. Allo stesso tempo, puoi spendere 1 punto stregoneria per ottenere resistenza a quel tipo di danno per 1 ora."
+      },
+      "Dragon Wings": {
+        "name": "Ali del drago",
+        "description": "Al 14° livello, ottieni la capacità di far spuntare un paio di ali di drago dalla tua schiena, ottenendo una velocità di volo pari alla tua velocità attuale. Puoi creare queste ali come azione bonus durante il tuo turno. Durano finché non li congedi come azione bonus nel tuo turno."
+      },
+      "Draconic Presence": {
+        "name": "Presenza Draconica",
+        "description": "A partire dal 18° livello, come azione, puoi spendere 5 punti stregoneria per emanare un'aura di soggezione o paura (a tua scelta) fino a una distanza di 18 metri. Per 1 minuto o finché non perdi la concentrazione, ogni creatura ostile che inizia il suo turno in quest'aura deve riuscire un tiro salvezza su Saggezza o essere affascinata (se hai scelto soggezione) o spaventata (se hai scelto paura) finché l'aura non termina."
+      }
+    },
+    "Wild Magic": {
+      "Wild Magic Surge": {
+        "name": "Ondata di magia selvaggia",
+        "description": "A partire da quando scegli questa origine al 1° livello, i tuoi incantesimi possono scatenare ondate di magia selvaggia. Immediatamente dopo aver lanciato un incantesimo da stregone di 1° livello o superiore, il DM può farti tirare un d20. Se ottieni 1, tira sulla tabella Wild Magic Surge per creare un effetto magico casuale."
+      },
+      "Tides of Chaos": {
+        "name": "Maree del caos",
+        "description": "A partire dal 1° livello, puoi manipolare le forze del caso e del caos per ottenere vantaggio su un tiro per colpire, una prova di caratteristica o un tiro salvezza. Una volta fatto ciò, devi terminare un riposo lungo prima di poter utilizzare nuovamente questa capacità. In qualsiasi momento prima che tu riacquisti l'uso di questa funzionalità, il DM può farti tirare sulla tabella Impulso di Magia Selvaggia immediatamente dopo aver lanciato un incantesimo da stregone di 1° livello o superiore."
+      },
+      "Bend Luck": {
+        "name": "Piega la fortuna",
+        "description": "A partire dal 6° livello, quando un'altra creatura che puoi vedere effettua un tiro per colpire, una prova di caratteristica o un tiro salvezza, puoi usare la tua reazione e spendere 2 punti stregoneria per tirare 1d4 e applicare il numero ottenuto come bonus o penalità (a tua scelta) al tiro della creatura. Puoi farlo dopo che la creatura ha tirato ma prima che qualsiasi effetto del tiro venga risolto."
+      },
+      "Controlled Chaos": {
+        "name": "Caos controllato",
+        "description": "Al 14° livello, ogni volta che tiri sulla tabella Impulso di Magia Selvaggia, puoi tirare due volte e utilizzare uno dei due numeri."
+      },
+      "Spell Bombardment": {
+        "name": "Bombardamento di incantesimi",
+        "description": "A partire dal 18° livello, quando tiri il danno per un incantesimo e ottieni il numero più alto possibile su uno qualsiasi dei dadi, scegli uno di quei dadi, lancialo di nuovo e aggiungi quel tiro al danno. Puoi utilizzare la funzione solo una volta per turno."
+      }
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "Fey Presence": {
+        "name": "Presenza Fatata",
+        "description": "A partire dal 1° livello, come azione, puoi fare in modo che ogni creatura in un cubo di 3 metri proveniente da te effettui un tiro salvezza su Saggezza contro la CD del tuo incantesimo da stregone. Le creature che falliscono vengono tutte affascinate o spaventate da te (a tua scelta) fino alla fine del tuo turno successivo. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
+      },
+      "Misty Escape": {
+        "name": "Fuga nebbiosa",
+        "description": "A partire dal 6° livello, quando subisci danni, puoi usare la tua reazione per diventare invisibile e teletrasportarti fino a 18 metri in uno spazio non occupato e visibile. Rimani invisibile fino all'inizio del tuo turno successivo o finché non attacchi o lanci un incantesimo. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
+      },
+      "Beguiling Defenses": {
+        "name": "Difese ingannevoli",
+        "description": "A partire dal 10° livello, sei immune all'essere affascinato. Quando un'altra creatura tenta di affascinarti, puoi usare la tua reazione per tentare di riportare l'incantesimo su quella creatura. La creatura deve riuscire un tiro salvezza su Saggezza contro la CD del tiro salvezza del tuo incantesimo da stregone o essere affascinata da te per 1 minuto o finché la creatura non subisce danni."
+      },
+      "Dark Delirium": {
+        "name": "Delirio Oscuro",
+        "description": "A partire dal 14° livello, come azione, scegli una creatura che puoi vedere entro 18 metri. Deve effettuare un tiro salvezza su Saggezza o restare affascinato o spaventato da te (a tua scelta) per 1 minuto o finché la tua concentrazione non viene interrotta. Questo effetto termina anticipatamente se la creatura subisce danni. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
+      }
+    },
+    "The Fiend": {
+      "Dark One's Blessing": {
+        "name": "La benedizione dell'Oscuro",
+        "description": "A partire dal 1° livello, quando riduci una creatura ostile a 0 punti ferita, guadagni punti ferita temporanei pari al tuo modificatore di Carisma + il tuo livello da Stregone (minimo 1)."
+      },
+      "Dark One's Own Luck": {
+        "name": "La fortuna dell'Oscuro",
+        "description": "A partire dal 6° livello, quando effettui una prova di caratteristica o un tiro salvezza, puoi usare questa capacità per aggiungere un d10 al tuo tiro. Puoi farlo dopo aver visto il tiro iniziale ma prima che si verifichi qualsiasi effetto del tiro. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
+      },
+      "Fiendish Resilience": {
+        "name": "Resilienza diabolica",
+        "description": "A partire dal 10° livello, puoi scegliere un tipo di danno quando termini un riposo breve o lungo. Ottieni resistenza a quel tipo di danno finché non ne scegli uno diverso con questa capacità. I danni provocati dalle armi magiche o dalle armi d'argento ignorano questa resistenza."
+      },
+      "Hurl Through Hell": {
+        "name": "Lanciati attraverso l'inferno",
+        "description": "A partire dal 14° livello, quando colpisci una creatura con un attacco, puoi usare questa capacità per trasportare istantaneamente il bersaglio attraverso i piani inferiori. La creatura scompare e sfreccia attraverso un paesaggio da incubo. Alla fine del tuo turno successivo, il bersaglio ritorna nello spazio precedentemente occupato o nello spazio non occupato più vicino. Se il bersaglio non è un demone, subisce 10d10 danni psichici mentre si riprende dalla sua orribile esperienza. Una volta utilizzata questa capacità, non potrai utilizzarla nuovamente finché non avrai terminato un riposo lungo."
+      }
+    },
+    "The Great Old One": {
+      "Awakened Mind": {
+        "name": "Mente risvegliata",
+        "description": "A partire dal 1° livello, la tua conoscenza aliena ti dà la capacità di toccare le menti di altre creature. Puoi comunicare telepaticamente con qualsiasi creatura che puoi vedere entro 9 metri da te. Non è necessario condividere un linguaggio con la creatura affinché possa comprendere le tue espressioni telepatiche, ma la creatura deve essere in grado di comprendere almeno un linguaggio."
+      },
+      "Entropic Ward": {
+        "name": "Reparto entropico",
+        "description": "Al 6° livello, quando una creatura effettua un tiro per colpire contro di te, puoi usare la tua reazione per imporre uno svantaggio a quel tiro. Se l'attacco ti manca, il tuo prossimo tiro per colpire contro la creatura ha vantaggio se lo effettui prima della fine del tuo turno successivo. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
+      },
+      "Thought Shield": {
+        "name": "Scudo del pensiero",
+        "description": "A partire dal 10° livello, i tuoi pensieri non possono essere letti tramite telepatia o altri mezzi a meno che tu non lo permetta. Inoltre, ogni volta che una creatura ti infligge danno psichico, quella creatura subisce lo stesso ammontare di danno che subisci tu."
+      },
+      "Create Thrall": {
+        "name": "Crea Schiavo",
+        "description": "Al 14° livello, ottieni la capacità di infettare la mente di un umanoide con la magia aliena del tuo protettore. Puoi usare la tua azione per toccare un umanoide incapace. Quella creatura viene quindi affascinata da te finché non viene lanciato su di essa un incantesimo rimuovi maledizione, la condizione affascinata viene rimossa o finché non usi nuovamente questa capacità. Puoi comunicare telepaticamente con la creatura affascinata fintanto che voi due siete sullo stesso piano di esistenza."
+      }
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "Abjuration Savant": {
+        "name": "Savant dell'Abiurazione",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di abiurazione nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Arcane Ward": {
+        "name": "Guardia Arcana",
+        "description": "A partire dal 2° livello, quando lanci un incantesimo di abiurazione di 1° livello o superiore, puoi contemporaneamente creare una protezione magica su te stesso che dura finché non termini un riposo lungo. La tutela ha punti ferita pari al doppio del tuo livello da mago + il tuo modificatore di Intelligenza. Ogni volta che subisci danni, la protezione subisce invece il danno. Se questo danno riduce la protezione a 0 punti ferita, subisci tutti i danni rimanenti."
+      },
+      "Projected Ward": {
+        "name": "Reparto proiettato",
+        "description": "A partire dal 6° livello, quando una creatura che puoi vedere entro 9 metri da te subisce danni, puoi usare la tua reazione per far sì che la tua Protezione Arcana assorba quel danno. Se questo danno riduce la tutela a 0 punti ferita, la creatura protetta subisce tutti i danni rimanenti."
+      },
+      "Improved Abjuration": {
+        "name": "Abiurazione migliorata",
+        "description": "A partire dal 10° livello, quando lanci un incantesimo di abiurazione che richiede di effettuare una prova di caratteristica come parte del lancio dell'incantesimo (come in Controincantesimo e Dissolvi Magie), aggiungi il tuo bonus di competenza a quella prova di caratteristica."
+      },
+      "Spell Resistance": {
+        "name": "Resistenza agli incantesimi",
+        "description": "A partire dal 14° livello, hai vantaggio sui tiri salvezza contro gli incantesimi. Inoltre, hai resistenza contro i danni degli incantesimi."
+      }
+    },
+    "School of Conjuration": {
+      "Conjuration Savant": {
+        "name": "Sapiente dell'Evocazione",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di evocazione nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Minor Conjuration": {
+        "name": "Evocazione minore",
+        "description": "A partire dal 2° livello, puoi usare la tua azione per evocare un oggetto inanimato nella tua mano o sul terreno in uno spazio non occupato entro 3 metri da te. Questo oggetto non può essere più grande di 90 centimetri per lato e pesare non più di 5 chili, e la sua forma deve essere quella di un oggetto non magico che hai visto. L'oggetto è visibilmente magico. L'oggetto scompare dopo 1 ora, quando usi nuovamente questa capacità o se subisce o infligge danni."
+      },
+      "Benign Transposition": {
+        "name": "Trasposizione benigna",
+        "description": "A partire dal 6° livello, puoi usare la tua azione per teletrasportarti fino a 9 metri in uno spazio non occupato che puoi vedere, o che puoi vedere occupato da una creatura Piccola o Media disposta a essere teletrasportata. Dopo aver utilizzato questo privilegio, non è possibile utilizzarlo nuovamente finché non si termina un riposo lungo o si lancia un incantesimo di evocazione di 1° livello o superiore."
+      },
+      "Focused Conjuration": {
+        "name": "Evocazione Focalizzata",
+        "description": "A partire dal 10° livello, mentre ti concentri su un incantesimo di evocazione, la tua concentrazione non può essere interrotta se subisci danni."
+      },
+      "Durable Summons": {
+        "name": "Evocazione durevole",
+        "description": "A partire dal 14° livello, qualsiasi creatura evocata o creata con un incantesimo di evocazione ha 30 punti ferita temporanei."
+      }
+    },
+    "School of Divination": {
+      "Divination Savant": {
+        "name": "Divinazione Savant",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di divinazione nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Portent": {
+        "name": "Portento",
+        "description": "A partire dal 2° livello, quando termini un riposo lungo, tira due d20 e registra i numeri lanciati. Puoi sostituire qualsiasi tiro per colpire, tiro salvezza o prova di caratteristica effettuata da te o da una creatura che puoi vedere con uno di questi tiri di predizione. Devi scegliere di farlo prima del tiro e puoi sostituire un tiro in questo modo solo una volta per turno. Ogni tiro di predizione può essere utilizzato una sola volta. Quando termini un riposo lungo, perdi tutti i tiri di predizione non utilizzati."
+      },
+      "Expert Divination": {
+        "name": "Divinazione esperta",
+        "description": "A partire dal 6° livello, quando esegui un incantesimo di divinazione di 2° livello o superiore utilizzando uno slot incantesimo, recuperi uno slot incantesimo speso. Lo slot che riacquisti deve essere di livello inferiore all'incantesimo che hai lanciato e non può essere superiore al 5° livello."
+      },
+      "The Third Eye": {
+        "name": "Il terzo occhio",
+        "description": "A partire dal 10° livello, puoi usare la tua azione per aumentare i tuoi poteri di percezione. Quando lo fai, scegli uno dei seguenti benefici, che dura finché non diventi Incapace o finché non effettui un riposo breve o lungo: Scurovisione (18 metri), Vista Eterea (vedere nel Piano Etereo), Comprensione Superiore (leggere qualsiasi linguaggio) o Vedere Invisibilità."
+      },
+      "Greater Portent": {
+        "name": "Portento Maggiore",
+        "description": "A partire dal 14° livello, tiri tre d20 per il tuo privilegio Portent, invece di due."
+      }
+    },
+    "School of Enchantment": {
+      "Enchantment Savant": {
+        "name": "Esperto di incantesimi",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di ammaliamento nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Hypnotic Gaze": {
+        "name": "Sguardo ipnotico",
+        "description": "A partire dal 2° livello, come azione, scegli una creatura che puoi vedere entro 1,5 metri da te. Se il bersaglio può vederti o sentirti, deve riuscire un tiro salvezza su Saggezza contro la CD del tuo incantesimo da mago o restare affascinato da te fino alla fine del tuo turno successivo. La velocità della creatura affascinata scende a 0 ed è incapace e visibilmente frastornata. Nei turni successivi, puoi usare la tua azione per mantenere questo effetto fino alla fine del tuo turno successivo. L'effetto termina se ti sposti a più di 1,5 metri di distanza, se la creatura non può né vederti né sentirti, o se subisce danni."
+      },
+      "Instinctive Charm": {
+        "name": "Fascino Istintivo",
+        "description": "A partire dal 6° livello, quando una creatura che puoi vedere entro 9 metri da te effettua un tiro per colpire contro di te, puoi usare la tua reazione per deviare l'attacco. L'attaccante deve effettuare un tiro salvezza su Saggezza. Se fallisce il Tiro Salvezza, l'attaccante deve prendere di mira la creatura più vicina a lui, senza contare te o se stesso. Una volta utilizzata questa capacità, non è possibile utilizzarla finché non si termina un riposo lungo, a meno che non si spenda uno slot incantesimo di qualsiasi livello per utilizzarla nuovamente."
+      },
+      "Split Enchantment": {
+        "name": "Incantesimo diviso",
+        "description": "A partire dal 10° livello, quando lanci un incantesimo di ammaliamento di 1° livello o superiore che prende a bersaglio solo una creatura, puoi fare in modo che bersagli una seconda creatura."
+      },
+      "Alter Memories": {
+        "name": "Alterare i ricordi",
+        "description": "Al 14° livello, quando esegui un incantesimo di ammaliamento per affascinare una o più creature, puoi alterare la comprensione di una creatura in modo che rimanga inconsapevole di essere affascinata. Inoltre, una volta prima che l'incantesimo scada, puoi usare la tua azione per cercare di far dimenticare alla creatura scelta parte del tempo trascorso sotto charme. La creatura deve superare un tiro salvezza su Intelligenza contro la CD del tiro salvezza dell'incantesimo da mago o perdere un numero di ore dei suoi ricordi pari a 1 + il proprio modificatore di Carisma (minimo 1)."
+      }
+    },
+    "School of Evocation": {
+      "Evocation Savant": {
+        "name": "Evocazione Savant",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di evocazione nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Sculpt Spells": {
+        "name": "Scolpisci incantesimi",
+        "description": "A partire dal 2° livello, quando lanci un incantesimo di evocazione che influenza altre creature che puoi vedere, puoi sceglierne un numero pari a 1 + il livello dell'incantesimo. Le creature scelte superano automaticamente i loro tiri salvezza contro l'incantesimo e non subiscono danni se normalmente subirebbero la metà dei danni in caso di tiro salvezza riuscito."
+      },
+      "Potent Cantrip": {
+        "name": "Trucchetto potente",
+        "description": "A partire dal 6° livello, quando una creatura supera un tiro salvezza contro il trucchetto, la creatura subisce la metà dei danni del trucchetto (se presenti) ma non subisce alcun effetto aggiuntivo dal trucchetto."
+      },
+      "Empowered Evocation": {
+        "name": "Evocazione Potenziata",
+        "description": "A partire dal 10° livello, puoi aggiungere il tuo modificatore di Intelligenza a un tiro per i danni di qualsiasi incantesimo di evocazione da mago che lanci."
+      },
+      "Overchannel": {
+        "name": "Overchannel",
+        "description": "A partire dal 14° livello, quando lanci un incantesimo da mago dal 1° al 5° livello che infligge danni, puoi infliggere il massimo danno con quell'incantesimo. La prima volta che lo fai, non subisci alcun effetto negativo. Se usi nuovamente questo privilegio prima di terminare un riposo lungo, subisci 2d12 danni necrotici per ogni livello dell'incantesimo, immediatamente dopo averlo lanciato. Questo danno ignora la resistenza e l'immunità."
+      }
+    },
+    "School of Illusion": {
+      "Illusion Savant": {
+        "name": "Sapiente dell'Illusione",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di illusione nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Improved Minor Illusion": {
+        "name": "Illusione Minore Migliorata",
+        "description": "Quando scegli questa scuola al 2° livello, apprendi il trucchetto Minore dell'Illusione. Se conosci già questo trucchetto, impari un diverso trucchetto da mago a tua scelta. Quando lanci un'illusione minore, puoi creare sia un suono che un'immagine con un singolo lancio dell'incantesimo."
+      },
+      "Malleable Illusions": {
+        "name": "Illusioni malleabili",
+        "description": "A partire dal 6° livello, quando lanci un incantesimo di illusione che ha una durata di 1 minuto o più, puoi usare la tua azione per cambiare la natura di quell'illusione (usando i normali parametri dell'incantesimo per l'illusione), a condizione che tu possa vedere l'illusione."
+      },
+      "Illusory Self": {
+        "name": "Sé Illusorio",
+        "description": "A partire dal 10° livello, quando una creatura effettua un tiro per colpire contro di te, puoi usare la tua reazione per interporre un tuo duplicato illusorio tra te e l'attaccante. L'attacco ti manca automaticamente, poi l'illusione si dissipa. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
+      },
+      "Illusory Reality": {
+        "name": "Realtà illusoria",
+        "description": "Al 14° livello, quando esegui un incantesimo di illusione di 1° livello o superiore, puoi scegliere un oggetto inanimato e non magico che fa parte dell'illusione e renderlo reale. Puoi farlo nel tuo turno come azione bonus mentre l'incantesimo è in corso. L'oggetto rimane reale per 1 minuto. Non può infliggere danni o danneggiare direttamente nessuno in altro modo."
+      }
+    },
+    "School of Necromancy": {
+      "Necromancy Savant": {
+        "name": "Sapiente della Negromanzia",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di negromanzia nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Grim Harvest": {
+        "name": "Raccolto triste",
+        "description": "Al 2° livello, una volta per turno quando uccidi una o più creature con un incantesimo di 1° livello o superiore, recuperi punti ferita pari al doppio del livello dell'incantesimo, o tre volte il suo livello se l'incantesimo appartiene alla Scuola di Necromanzia. Non ottieni questo beneficio uccidendo costrutti o non morti."
+      },
+      "Undead Thralls": {
+        "name": "Schiavi non morti",
+        "description": "Al 6° livello, aggiungi l'incantesimo Animare Morti al tuo libro degli incantesimi se non è già presente. Quando lanci animare morti, puoi prendere di mira un cadavere o un mucchio di ossa aggiuntivo, creando un altro zombi o scheletro, a seconda dei casi. Ogni volta che crei un non morto usando un incantesimo di negromanzia, ottiene ulteriori benefici: i suoi punti ferita massimi aumentano di un ammontare pari al tuo livello da mago e aggiunge il tuo bonus di competenza ai tiri per i danni dell'arma."
+      },
+      "Inured to Undeath": {
+        "name": "Abituato alla non morte",
+        "description": "A partire dal 10° livello, hai resistenza ai danni necrotici e i tuoi punti ferita massimi non possono essere ridotti. Hai passato così tanto tempo ad avere a che fare con i non morti e le forze che li animano che ti sei abituato ad alcuni dei loro effetti peggiori."
+      },
+      "Command Undead": {
+        "name": "Comanda i non morti",
+        "description": "A partire dal 14° livello, come azione, puoi scegliere un non morto che puoi vedere entro 18 metri da te. Quella creatura deve effettuare un tiro salvezza su Carisma contro la CD del tiro salvezza dell'incantesimo da mago. Se ha successo, non potrai utilizzare nuovamente questa funzionalità. Se fallisce, diventa amichevole con te e obbedisce ai tuoi comandi finché non utilizzi nuovamente questa funzionalità. I non morti intelligenti sono più difficili da controllare e hanno vantaggio al tiro salvezza."
+      }
+    },
+    "School of Transmutation": {
+      "Transmutation Savant": {
+        "name": "Esperto di Trasmutazione",
+        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di trasmutazione nel tuo libro degli incantesimi vengono dimezzati."
+      },
+      "Minor Alchemy": {
+        "name": "Alchimia minore",
+        "description": "A partire dal 2° livello, puoi alterare temporaneamente le proprietà fisiche di un oggetto non magico, trasformandolo da una sostanza a un'altra. Esegui una speciale procedura alchemica su un oggetto composto interamente di legno, pietra (ma non pietra preziosa), ferro, rame o argento. Per ogni 10 minuti trascorsi nell'esecuzione della procedura, puoi trasformare fino a 1 piede cubo di materiale. Dopo 1 ora, o finché non si perde la concentrazione, il materiale ritorna alla sua sostanza originale."
+      },
+      "Transmuter's Stone": {
+        "name": "Pietra del Trasmutatore",
+        "description": "A partire dal 6° livello, puoi trascorrere 8 ore a creare una pietra di trasmutazione che immagazzini la magia di trasmutazione. Una creatura ottiene un beneficio a tua scelta finché la pietra è in suo possesso: Scurovisione (18 metri), velocità aumentata di 3 metri, competenza nei tiri salvezza su Costituzione o resistenza ai danni da acido, freddo, fuoco, fulmine o tuono."
+      },
+      "Shapechanger": {
+        "name": "Cambiaforma",
+        "description": "Al 10° livello, aggiungi l'incantesimo metamorfosi al tuo libro degli incantesimi. Puoi lanciare metamorfosi senza spendere uno slot incantesimo, ma puoi prendere di mira solo te stesso e trasformarti in una bestia il cui grado di sfida è 1 o inferiore. Una volta lanciato metamorfosi in questo modo, non puoi farlo di nuovo finché non finisci un riposo breve o lungo."
+      },
+      "Master Transmuter": {
+        "name": "Maestro Trasmutatore",
+        "description": "A partire dal 14° livello, puoi usare la tua azione per consumare la riserva di magia di trasmutazione immagazzinata nella tua pietra di trasmutazione. Quando lo fai, scegli uno dei seguenti effetti: Trasformazione Maggiore (lancia metamorfosi senza uno slot incantesimo, della durata di 1 ora), Panacea (rimuove tutte le maledizioni, le malattie e i veleni; ripristina tutti i punti ferita), Ripristina la vita (lancia resuscitare morti senza uno slot incantesimo) o Ripristina la giovinezza (fa apparire una creatura toccata fino a 3d10 anni più giovane)."
+      }
+    }
+  }
+}

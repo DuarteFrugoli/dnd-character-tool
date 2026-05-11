@@ -1,0 +1,154 @@
+{
+  "Darkvision": {
+    "name": "Scurovisione",
+    "description": "Abituato alla vita sottoterra, hai una visione superiore in condizioni di oscurità e penombra. Puoi vedere in condizioni di scarsa luce entro 18 metri da te come se fosse luce intensa, e nell'oscurità come se fosse luce fioca. Nell'oscurità non puoi distinguere i colori, solo le sfumature di grigio."
+  },
+  "Superior Darkvision": {
+    "name": "Scurovisione superiore",
+    "description": "La tua scurovisione ha un raggio di 36 metri."
+  },
+  "Dwarven Resilience": {
+    "name": "Resilienza nanica",
+    "description": "Hai vantaggio ai tiri salvezza contro il veleno e hai resistenza contro i danni da veleno."
+  },
+  "Dwarven Combat Training": {
+    "name": "Addestramento al combattimento dei nani",
+    "description": "Hai competenza con l'ascia da battaglia, l'ascia, il martello leggero e il martello da guerra."
+  },
+  "Stonecunning": {
+    "name": "Astuzia",
+    "description": "Ogni volta che effettui una prova di Intelligenza (Storia) relativa all'origine della lavorazione della pietra, sei considerato competente nell'abilità Storia e aggiungi il doppio del tuo bonus di competenza alla prova."
+  },
+  "Tool Proficiency": {
+    "name": "Competenza negli strumenti",
+    "description": "Ottieni competenza con gli strumenti da artigiano di tua scelta: strumenti da fabbro, forniture da birraio o strumenti da muratore."
+  },
+  "Dwarven Toughness": {
+    "name": "Robustezza nanica",
+    "description": "I tuoi punti ferita massimi aumentano di 1 e aumentano di 1 ogni volta che guadagni un livello."
+  },
+  "Dwarven Armor Training": {
+    "name": "Addestramento alle armature naniche",
+    "description": "Hai competenza con le armature leggere e medie."
+  },
+  "Keen Senses": {
+    "name": "Sensi acuti",
+    "description": "Hai competenza nell'abilità Percezione."
+  },
+  "Fey Ancestry": {
+    "name": "Ascendenza Fey",
+    "description": "Hai vantaggio ai tiri salvezza contro l'essere affascinato e la magia non può farti addormentare."
+  },
+  "Trance": {
+    "name": "Trance",
+    "description": "Gli elfi non hanno bisogno di dormire. Meditano invece profondamente, rimanendo semicoscienti, per 4 ore al giorno. Mentre mediti, puoi sognare in un certo senso; tali sogni sono in realtà esercizi mentali diventati riflessivi attraverso anni di pratica. Dopo aver riposato in questo modo, ottieni lo stesso beneficio che un essere umano ottiene da 8 ore di sonno."
+  },
+  "Elf Weapon Training": {
+    "name": "Addestramento alle armi degli elfi",
+    "description": "Hai competenza con la spada lunga, la spada corta, l'arco corto e l'arco lungo."
+  },
+  "Cantrip": {
+    "name": "Trucchetto",
+    "description": "Conosci un trucchetto a tua scelta dalla lista degli incantesimi da mago. L'intelligenza è la tua abilità di incantatore per questo."
+  },
+  "Extra Language": {
+    "name": "Lingua extra",
+    "description": "Puoi parlare, leggere e scrivere una lingua extra a tua scelta."
+  },
+  "Fleet of Foot": {
+    "name": "Flotta di piedi",
+    "description": "La tua velocità di camminata base aumenta a 35 piedi."
+  },
+  "Mask of the Wild": {
+    "name": "Maschera del selvaggio",
+    "description": "Puoi tentare di nasconderti anche quando sei solo leggermente oscurato da fogliame, forte pioggia, neve che cade, nebbia e altri fenomeni naturali."
+  },
+  "Sunlight Sensitivity": {
+    "name": "Sensibilità alla luce solare",
+    "description": "Hai svantaggio ai tiri per colpire e alle prove di Saggezza (Percezione) che si basano sulla vista quando tu, il bersaglio del tuo attacco, o qualunque cosa tu stia cercando di percepire, siete esposti alla luce solare diretta."
+  },
+  "Drow Magic": {
+    "name": "Magia drow",
+    "description": "Conosci il trucchetto delle luci danzanti. Quando raggiungi il 3° livello, puoi lanciare l'incantesimo Fuoco Fatato una volta al giorno. Quando raggiungi il 5° livello, puoi anche lanciare l'incantesimo oscurità una volta al giorno. Il carisma è la tua abilità da incantatore per questi incantesimi."
+  },
+  "Drow Weapon Training": {
+    "name": "Addestramento con le armi dei drow",
+    "description": "Hai competenza con gli stocchi, le spade corte e le balestre a mano."
+  },
+  "Lucky": {
+    "name": "Fortunato",
+    "description": "Quando ottieni 1 sul d20 per un tiro per colpire, una prova di caratteristica o un tiro salvezza, puoi ripetere il tiro del dado e devi usare il nuovo tiro."
+  },
+  "Brave": {
+    "name": "Coraggioso",
+    "description": "Hai vantaggio ai tiri salvezza contro la paura."
+  },
+  "Halfling Nimbleness": {
+    "name": "Agilità Halfling",
+    "description": "Puoi muoverti attraverso lo spazio di qualsiasi creatura di taglia più grande della tua."
+  },
+  "Naturally Stealthy": {
+    "name": "Naturalmente furtivo",
+    "description": "Puoi tentare di nasconderti anche quando sei oscurato solo da una creatura che sia almeno di una taglia più grande della tua."
+  },
+  "Stout Resilience": {
+    "name": "Robusta resilienza",
+    "description": "Hai vantaggio ai tiri salvezza contro il veleno e hai resistenza contro i danni da veleno."
+  },
+  "Draconic Ancestry": {
+    "name": "Ascendenza Draconica",
+    "description": "Hai un retaggio draconico derivante da uno specifico tipo di drago. Scegli un tipo di drago dalla tabella Ascendenza Draconica. La tua arma a soffio e la resistenza ai danni sono determinate dal tipo di drago scelto."
+  },
+  "Breath Weapon": {
+    "name": "Arma a soffio",
+    "description": "Puoi usare la tua azione per espirare energia distruttiva. Le sue dimensioni, forma e tipo di danno sono determinati dalla tua stirpe draconica. Quando usi il tuo soffio, ogni creatura nell'area dell'espirazione deve effettuare un tiro salvezza (CD = 8 + il tuo modificatore di Costituzione + il tuo bonus di competenza). Se il tiro salvezza fallisce, la creatura subisce 2d6 danni. Se il tiro salvezza riesce, subisce la metà dei danni. Puoi usare il tuo soffio una volta per ogni riposo breve o lungo."
+  },
+  "Damage Resistance": {
+    "name": "Resistenza al danno",
+    "description": "Hai resistenza al tipo di danno associato alla tua stirpe draconica."
+  },
+  "Gnome Cunning": {
+    "name": "Gnomo Astuto",
+    "description": "Hai vantaggio su tutti i tiri salvezza su Intelligenza, Saggezza e Carisma contro la magia."
+  },
+  "Natural Illusionist": {
+    "name": "Illusionista naturale",
+    "description": "Conosci il trucchetto dell'illusione minore. L'intelligenza è la tua abilità di incantatore per questo."
+  },
+  "Speak with Small Beasts": {
+    "name": "Parla con le Piccole Bestie",
+    "description": "Attraverso suoni e gesti puoi comunicare idee semplici con animali piccoli o più piccoli. Gli gnomi delle foreste amano gli animali e spesso tengono scoiattoli, tassi, conigli, talpe, picchi e altre creature come amati animali domestici."
+  },
+  "Artificer's Lore": {
+    "name": "La tradizione dell'artigiano",
+    "description": "Ogni volta che effettui una prova di Intelligenza (Storia) relativa a oggetti magici, oggetti alchemici o dispositivi tecnologici, puoi aggiungere il doppio del tuo bonus di competenza, invece di qualsiasi bonus di competenza che applichi normalmente."
+  },
+  "Tinker": {
+    "name": "Armeggiare",
+    "description": "Hai competenza con gli strumenti da artigiano (strumenti da armeggiatore). Usando questi strumenti, puoi spendere 1 ora e 10 mo di materiali per costruire un Minuscolo dispositivo a orologeria (CA 5, 1 pf). Il dispositivo smette di funzionare dopo 24 ore a meno che non venga impiegata 1 ora per ripararlo. Puoi avere fino a tre dispositivi di questo tipo attivi alla volta."
+  },
+  "Skill Versatility": {
+    "name": "Versatilità delle abilità",
+    "description": "Ottieni competenza in due abilità a tua scelta."
+  },
+  "Menacing": {
+    "name": "Minaccioso",
+    "description": "Ottieni competenza nell'abilità Intimidazione."
+  },
+  "Relentless Endurance": {
+    "name": "Resistenza implacabile",
+    "description": "Quando vieni ridotto a 0 punti ferita ma non vieni ucciso sul colpo, puoi invece scendere a 1 punto ferita. Non puoi utilizzare nuovamente questo privilegio finché non finisci un riposo lungo."
+  },
+  "Savage Attacks": {
+    "name": "Attacchi selvaggi",
+    "description": "Quando ottieni un colpo critico con un attacco con un'arma da mischia, puoi lanciare uno dei dadi di danno dell'arma una volta aggiuntiva e aggiungerlo al danno extra del colpo critico."
+  },
+  "Hellish Resistance": {
+    "name": "Resistenza infernale",
+    "description": "Hai resistenza ai danni da fuoco."
+  },
+  "Infernal Legacy": {
+    "name": "Eredità Infernale",
+    "description": "Conosci il trucchetto della taumaturgia. Quando raggiungi il 3° livello, puoi lanciare l'incantesimo di intimorire infernale come un incantesimo di 2° livello una volta con questo tratto e riacquistare l'abilità di farlo al termine di un riposo lungo. Quando raggiungi il 5° livello, puoi lanciare l'incantesimo oscurità una volta con questo tratto e riacquistare l'abilità di farlo al termine di un riposo lungo. Il carisma è la tua abilità da incantatore per questi incantesimi."
+  }
+}

@@ -140,8 +140,10 @@ class _LanguageTile extends ConsumerWidget {
     } else if (locale.languageCode == 'en') {
       label = 'English';
     } else if (locale.languageCode == 'pt') {
-      label = 'Português';
-    } else {
+      label = 'Português';    } else if (locale.languageCode == 'es') {
+      label = 'Espa\u00f1ol';
+    } else if (locale.languageCode == 'fr') {
+      label = 'Fran\u00e7ais';    } else {
       label = locale.languageCode;
     }
 
@@ -159,8 +161,8 @@ class _LanguageTile extends ConsumerWidget {
     final options = [
       (label: l10n.settingsSystemDefault, locale: null),
       (label: 'English', locale: const Locale('en')),
-      (label: 'Português', locale: const Locale('pt')),
-    ];
+      (label: 'Português', locale: const Locale('pt')),      (label: 'Espa\u00f1ol', locale: const Locale('es')),
+      (label: 'Fran\u00e7ais', locale: const Locale('fr')),    ];
 
     showModalBottomSheet<void>(
       context: context,

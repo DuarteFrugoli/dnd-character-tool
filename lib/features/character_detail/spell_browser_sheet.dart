@@ -13,7 +13,7 @@ import '../../data/models/spell.dart';
 ///
 /// Filters: "my class only" toggle, level, school, casting time.
 /// Tapping a row opens [SpellDetailSheet]; the + button adds immediately.
-class SpellBrowserSheet extends StatefulWidget {
+class SpellBrowserSheet extends ConsumerStatefulWidget {
   const SpellBrowserSheet({
     super.key,
     required this.characterClass,
@@ -48,7 +48,7 @@ class SpellBrowserSheet extends StatefulWidget {
   final void Function(String spellName, bool prepare)? onTogglePrepared;
 
   @override
-  State<SpellBrowserSheet> createState() => _SpellBrowserSheetState();
+  ConsumerState<SpellBrowserSheet> createState() => _SpellBrowserSheetState();
 }
 
 // ── Filter state (extracted so the panel sheet can mutate it) ────────────────
@@ -98,7 +98,7 @@ class _SpellFilters {
 
 // ── State ─────────────────────────────────────────────────────────────────────
 
-class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
+class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
   List<SrdSpell>? _allSpells;
   final _searchCtrl = TextEditingController();
   String _search = '';
@@ -275,6 +275,7 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     final filtered = _filtered;
     final isLoading = _allSpells == null;
@@ -476,6 +477,7 @@ class _SpellBrowserSheetState extends State<SpellBrowserSheet> {
                               _knownNames.contains(nameLower);
                           return _SpellBrowserTile(
                             spell: spell,
+                            displayName: i18n.spellName(spell.name),
                             isKnown: isKnown,
                             isClassSpell: isClassSpell,
                             isPrepared: isPrepared,
@@ -775,6 +777,7 @@ class _SpellBrowserTile extends StatelessWidget {
     this.isPrepared = false,
     this.onAdd,
     this.onTogglePrepared,
+    this.displayName,
   });
 
   final SrdSpell spell;
@@ -784,6 +787,7 @@ class _SpellBrowserTile extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback? onAdd;
   final VoidCallback? onTogglePrepared;
+  final String? displayName;
 
   static String _castingLabel(String type) {
     switch (type) {
@@ -815,7 +819,7 @@ class _SpellBrowserTile extends StatelessWidget {
 
     return ListTile(
       title: Text(
-        spell.name,
+        displayName ?? spell.name,
         style: const TextStyle(fontWeight: FontWeight.w500),
       ),
       subtitle: Text(

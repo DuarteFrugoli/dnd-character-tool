@@ -9,6 +9,8 @@ const _kLocaleKey = 'selected_locale';
 const supportedLocales = [
   Locale('en'),
   Locale('pt'),
+  Locale('es'),
+  Locale('fr'),
 ];
 
 class LocaleNotifier extends Notifier<Locale?> {

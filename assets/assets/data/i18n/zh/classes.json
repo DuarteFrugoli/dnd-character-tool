@@ -1,0 +1,592 @@
+{
+  "Barbarian": {
+    "name": "野蛮人",
+    "subclassFeatureName": "原始路径",
+    "weaponProficiencies": [
+      "简单的",
+      "武术"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "探险家包",
+        "4 标枪"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "巨斧"
+            ],
+            [
+              "任何军事近战武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "手斧",
+              "手斧"
+            ],
+            [
+              "任何简单的武器"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Bard": {
+    "name": "诗人",
+    "subclassFeatureName": "巴德学院",
+    "weaponProficiencies": [
+      "简单的",
+      "手弩",
+      "长剑",
+      "剑杆",
+      "短剑"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "皮甲",
+        "匕首"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "剑杆"
+            ],
+            [
+              "长剑"
+            ],
+            [
+              "任何简单的武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "外交官包"
+            ],
+            [
+              "艺人包"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "琵琶"
+            ],
+            [
+              "任何乐器"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "牧师",
+    "subclassFeatureName": "神域",
+    "weaponProficiencies": [
+      "简单的"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "盾",
+        "圣徽"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "锤"
+            ],
+            [
+              "战锤"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "鳞甲邮件"
+            ],
+            [
+              "皮甲"
+            ],
+            [
+              "连锁邮件"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "轻弩",
+              "20 个螺栓"
+            ],
+            [
+              "任何简单的武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "牧师包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Druid": {
+    "name": "德鲁伊",
+    "subclassFeatureName": "德鲁伊圆环",
+    "weaponProficiencies": [
+      "俱乐部",
+      "匕首",
+      "飞镖",
+      "标枪",
+      "狼牙棒",
+      "军需人员",
+      "弯刀",
+      "镰刀",
+      "吊索",
+      "矛"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "皮甲",
+        "探险家包",
+        "德鲁伊焦点"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "木盾"
+            ],
+            [
+              "任何简单的武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "弯刀"
+            ],
+            [
+              "任何简单的近战武器"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "战斗机",
+    "subclassFeatureName": "武术原型",
+    "weaponProficiencies": [
+      "简单的",
+      "武术"
+    ],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {
+          "options": [
+            [
+              "连锁邮件"
+            ],
+            [
+              "皮甲",
+              "长弓",
+              "20支箭"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "任何军事武器",
+              "盾"
+            ],
+            [
+              "任何军事武器",
+              "任何军事武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "轻弩",
+              "20 个螺栓"
+            ],
+            [
+              "手斧",
+              "手斧"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "地牢探险者包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Monk": {
+    "name": "僧",
+    "subclassFeatureName": "修道院传统",
+    "weaponProficiencies": [
+      "简单的",
+      "短剑"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "10 飞镖"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "短剑"
+            ],
+            [
+              "任何简单的武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "地牢探险者包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "圣骑士",
+    "subclassFeatureName": "神圣誓言",
+    "weaponProficiencies": [
+      "简单的",
+      "武术"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "连锁邮件",
+        "圣徽"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "任何军事武器",
+              "盾"
+            ],
+            [
+              "任何军事武器",
+              "任何军事武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "5 标枪"
+            ],
+            [
+              "任何简单的近战武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "牧师包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "游侠",
+    "subclassFeatureName": "游侠原型",
+    "weaponProficiencies": [
+      "简单的",
+      "武术"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "长弓",
+        "装有 20 支箭的箭袋"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "鳞甲邮件"
+            ],
+            [
+              "皮甲"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "短剑",
+              "短剑"
+            ],
+            [
+              "任何简单的近战武器",
+              "任何简单的近战武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "地牢探险者包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "流氓",
+    "subclassFeatureName": "流氓原型",
+    "weaponProficiencies": [
+      "简单的",
+      "手弩",
+      "长剑",
+      "剑杆",
+      "短剑"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "皮甲",
+        "匕首",
+        "匕首",
+        "盗贼的工具"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "剑杆"
+            ],
+            [
+              "短剑"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "短弓",
+              "装有 20 支箭的箭袋"
+            ],
+            [
+              "短剑"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "窃贼包"
+            ],
+            [
+              "地牢探险者包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "巫师",
+    "subclassFeatureName": "巫术起源",
+    "weaponProficiencies": [
+      "匕首",
+      "飞镖",
+      "吊索",
+      "军需人员",
+      "轻弩"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "匕首",
+        "匕首"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "轻弩",
+              "20 个螺栓"
+            ],
+            [
+              "任何简单的武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "元件袋"
+            ],
+            [
+              "奥术专注"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "地牢探险者包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "术士",
+    "subclassFeatureName": "超凡脱俗的赞助人",
+    "weaponProficiencies": [
+      "简单的"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "皮甲",
+        "匕首",
+        "匕首"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "轻弩",
+              "20 个螺栓"
+            ],
+            [
+              "任何简单的武器"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "元件袋"
+            ],
+            [
+              "奥术专注"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "学者包"
+            ],
+            [
+              "地牢探险者包"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "任何简单的武器"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "向导",
+    "subclassFeatureName": "奥术传统",
+    "weaponProficiencies": [
+      "匕首",
+      "飞镖",
+      "吊索",
+      "军需人员",
+      "轻弩"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "法术书"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "军需人员"
+            ],
+            [
+              "匕首"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "元件袋"
+            ],
+            [
+              "奥术专注"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "学者包"
+            ],
+            [
+              "探险家包"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

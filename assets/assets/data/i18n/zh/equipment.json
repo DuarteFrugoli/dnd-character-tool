@@ -1,0 +1,410 @@
+{
+  "Club": {
+    "name": "俱乐部"
+  },
+  "Dagger": {
+    "name": "匕首"
+  },
+  "Greatclub": {
+    "name": "伟大的俱乐部"
+  },
+  "Handaxe": {
+    "name": "手斧"
+  },
+  "Javelin": {
+    "name": "标枪"
+  },
+  "Light Hammer": {
+    "name": "轻锤"
+  },
+  "Mace": {
+    "name": "锤"
+  },
+  "Quarterstaff": {
+    "name": "军需人员"
+  },
+  "Sickle": {
+    "name": "镰刀"
+  },
+  "Spear": {
+    "name": "矛"
+  },
+  "Crossbow, Light": {
+    "name": "十字弓，轻"
+  },
+  "Dart": {
+    "name": "镖"
+  },
+  "Shortbow": {
+    "name": "短弓"
+  },
+  "Sling": {
+    "name": "吊带"
+  },
+  "Battleaxe": {
+    "name": "战斧"
+  },
+  "Flail": {
+    "name": "连枷"
+  },
+  "Glaive": {
+    "name": "格莱夫"
+  },
+  "Greataxe": {
+    "name": "巨斧"
+  },
+  "Greatsword": {
+    "name": "巨剑"
+  },
+  "Halberd": {
+    "name": "戟"
+  },
+  "Lance": {
+    "name": "槊"
+  },
+  "Longsword": {
+    "name": "长剑"
+  },
+  "Maul": {
+    "name": "打伤"
+  },
+  "Morningstar": {
+    "name": "晨星公司"
+  },
+  "Pike": {
+    "name": "派克"
+  },
+  "Rapier": {
+    "name": "剑杆"
+  },
+  "Scimitar": {
+    "name": "弯刀"
+  },
+  "Shortsword": {
+    "name": "短剑"
+  },
+  "Trident": {
+    "name": "三叉戟"
+  },
+  "War Pick": {
+    "name": "战争选择"
+  },
+  "Warhammer": {
+    "name": "战锤"
+  },
+  "Whip": {
+    "name": "鞭"
+  },
+  "Blowgun": {
+    "name": "吹气枪"
+  },
+  "Crossbow, Hand": {
+    "name": "手弩"
+  },
+  "Crossbow, Heavy": {
+    "name": "重弩"
+  },
+  "Longbow": {
+    "name": "长弓"
+  },
+  "Net": {
+    "name": "网"
+  },
+  "Padded": {
+    "name": "带衬垫"
+  },
+  "Leather": {
+    "name": "皮革"
+  },
+  "Studded Leather": {
+    "name": "镶钉皮革"
+  },
+  "Hide": {
+    "name": "隐藏"
+  },
+  "Chain Shirt": {
+    "name": "链条衬衫"
+  },
+  "Scale Mail": {
+    "name": "鳞甲"
+  },
+  "Breastplate": {
+    "name": "胸甲"
+  },
+  "Half Plate": {
+    "name": "半盘"
+  },
+  "Ring Mail": {
+    "name": "环形邮件"
+  },
+  "Chain Mail": {
+    "name": "锁子甲"
+  },
+  "Splint": {
+    "name": "夹板"
+  },
+  "Plate": {
+    "name": "盘子"
+  },
+  "Shield": {
+    "name": "盾"
+  },
+  "Abacus": {
+    "name": "算盘"
+  },
+  "Acid (vial)": {
+    "name": "酸（小瓶）"
+  },
+  "Alchemist's Fire": {
+    "name": "炼金术士之火"
+  },
+  "Arrows (20)": {
+    "name": "箭 (20)"
+  },
+  "Blowgun Needles (50)": {
+    "name": "风枪针 (50)"
+  },
+  "Crossbow Bolts (20)": {
+    "name": "弩箭 (20)"
+  },
+  "Sling Bullets (20)": {
+    "name": "弹弓子弹 (20)"
+  },
+  "Antitoxin (vial)": {
+    "name": "抗毒素（小瓶）"
+  },
+  "Backpack": {
+    "name": "背包"
+  },
+  "Ball Bearings (bag of 1000)": {
+    "name": "滚珠轴承（每袋 1000 个）"
+  },
+  "Barrel": {
+    "name": "桶"
+  },
+  "Basket": {
+    "name": "篮子"
+  },
+  "Bedroll": {
+    "name": "铺盖卷"
+  },
+  "Bell": {
+    "name": "钟"
+  },
+  "Blanket": {
+    "name": "毯子"
+  },
+  "Block and Tackle": {
+    "name": "拦网和铲车"
+  },
+  "Book": {
+    "name": "书"
+  },
+  "Bottle, glass": {
+    "name": "瓶子、玻璃"
+  },
+  "Bucket": {
+    "name": "桶"
+  },
+  "Caltrops (bag of 20)": {
+    "name": "菱角（20粒装）"
+  },
+  "Candle": {
+    "name": "蜡烛"
+  },
+  "Case, crossbow bolt": {
+    "name": "箱体，弩栓"
+  },
+  "Case, map or scroll": {
+    "name": "案例、地图或卷轴"
+  },
+  "Chain (10 feet)": {
+    "name": "链条（10英尺）"
+  },
+  "Chalk (1 piece)": {
+    "name": "粉笔（1支）"
+  },
+  "Chest": {
+    "name": "胸部"
+  },
+  "Climber's Kit": {
+    "name": "登山者套件"
+  },
+  "Clothes, common": {
+    "name": "衣服，普通"
+  },
+  "Clothes, costume": {
+    "name": "衣服、戏服"
+  },
+  "Clothes, fine": {
+    "name": "衣服，还好"
+  },
+  "Clothes, traveler's": {
+    "name": "衣服，旅行者的"
+  },
+  "Component Pouch": {
+    "name": "元件袋"
+  },
+  "Crowbar": {
+    "name": "撬棍"
+  },
+  "Druidic Focus": {
+    "name": "德鲁伊焦点"
+  },
+  "Flask or tankard": {
+    "name": "烧瓶或大酒杯"
+  },
+  "Grappling Hook": {
+    "name": "抓钩"
+  },
+  "Hammer": {
+    "name": "锤"
+  },
+  "Hammer, sledge": {
+    "name": "锤子、雪橇"
+  },
+  "Healer's Kit": {
+    "name": "治疗师套件"
+  },
+  "Holy Symbol": {
+    "name": "圣徽"
+  },
+  "Holy Water (flask)": {
+    "name": "圣水（瓶）"
+  },
+  "Hourglass": {
+    "name": "滴漏"
+  },
+  "Hunting Trap": {
+    "name": "狩猎陷阱"
+  },
+  "Ink (1 ounce bottle)": {
+    "name": "墨水（1盎司瓶）"
+  },
+  "Ink Pen": {
+    "name": "墨水笔"
+  },
+  "Jug or Pitcher": {
+    "name": "壶或水罐"
+  },
+  "Ladder (10-foot)": {
+    "name": "梯子（10英尺）"
+  },
+  "Lamp": {
+    "name": "灯"
+  },
+  "Lantern, bullseye": {
+    "name": "灯笼、靶心"
+  },
+  "Lantern, hooded": {
+    "name": "灯笼，带帽"
+  },
+  "Lock": {
+    "name": "锁"
+  },
+  "Magnifying Glass": {
+    "name": "放大镜"
+  },
+  "Manacles": {
+    "name": "手铐"
+  },
+  "Mess Kit": {
+    "name": "混乱套件"
+  },
+  "Mirror, steel": {
+    "name": "镜面、钢"
+  },
+  "Oil (flask)": {
+    "name": "油（烧瓶）"
+  },
+  "Paper (one sheet)": {
+    "name": "纸（一张）"
+  },
+  "Parchment (one sheet)": {
+    "name": "羊皮纸（一张）"
+  },
+  "Perfume (vial)": {
+    "name": "香水（小瓶）"
+  },
+  "Pick, miner's": {
+    "name": "采摘，矿工的"
+  },
+  "Piton": {
+    "name": "皮顿"
+  },
+  "Poison, basic (vial)": {
+    "name": "基本毒药（小瓶）"
+  },
+  "Pole (10-foot)": {
+    "name": "杆（10 英尺）"
+  },
+  "Pot, iron": {
+    "name": "锅、铁"
+  },
+  "Pouch": {
+    "name": "小袋"
+  },
+  "Quiver": {
+    "name": "颤动"
+  },
+  "Ram, portable": {
+    "name": "内存，便携式"
+  },
+  "Rations (1 day)": {
+    "name": "口粮（1天）"
+  },
+  "Rope, hempen (50 feet)": {
+    "name": "麻绳（50 英尺）"
+  },
+  "Rope, silk (50 feet)": {
+    "name": "丝绳（50 英尺）"
+  },
+  "Sack": {
+    "name": "解雇"
+  },
+  "Scale, merchant's": {
+    "name": "规模、商家"
+  },
+  "Sealing Wax": {
+    "name": "封蜡"
+  },
+  "Shovel": {
+    "name": "铲"
+  },
+  "Signal Whistle": {
+    "name": "信号哨"
+  },
+  "Signet Ring": {
+    "name": "图章戒指"
+  },
+  "Soap": {
+    "name": "肥皂"
+  },
+  "Spellbook": {
+    "name": "法术书"
+  },
+  "Spikes, iron (10)": {
+    "name": "铁钉 (10)"
+  },
+  "Spyglass": {
+    "name": "望远镜"
+  },
+  "Tent, two-person": {
+    "name": "帐篷，两人"
+  },
+  "Tinderbox": {
+    "name": "火药盒"
+  },
+  "Torch": {
+    "name": "火炬"
+  },
+  "Vial": {
+    "name": "小瓶"
+  },
+  "Waterskin": {
+    "name": "水袋"
+  },
+  "Whetstone": {
+    "name": "磨石"
+  }
+}

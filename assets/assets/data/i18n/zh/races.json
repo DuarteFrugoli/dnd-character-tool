@@ -1,0 +1,137 @@
+{
+  "Dwarf": {
+    "name": "矮人",
+    "languages": [
+      "常见的",
+      "矮人语"
+    ],
+    "subraces": [
+      {
+        "name": "山矮人"
+      },
+      {
+        "name": "山矮人"
+      }
+    ]
+  },
+  "Elf": {
+    "name": "精灵",
+    "languages": [
+      "常见的",
+      "精灵语"
+    ],
+    "subraces": [
+      {
+        "name": "高等精灵"
+      },
+      {
+        "name": "木精灵"
+      },
+      {
+        "name": "黑暗精灵（卓尔）"
+      }
+    ]
+  },
+  "Halfling": {
+    "name": "半身人",
+    "languages": [
+      "常见的",
+      "半身人"
+    ],
+    "subraces": [
+      {
+        "name": "莱特富特"
+      },
+      {
+        "name": "肥硕"
+      }
+    ]
+  },
+  "Human": {
+    "name": "人类",
+    "languages": [
+      "常见的",
+      "您可以额外选择一项"
+    ],
+    "subraces": []
+  },
+  "Dragonborn": {
+    "name": "龙裔",
+    "languages": [
+      "常见的",
+      "龙语"
+    ],
+    "subraces": [
+      {
+        "name": "黑色（酸性）"
+      },
+      {
+        "name": "蓝色（闪电）"
+      },
+      {
+        "name": "黄铜（火）"
+      },
+      {
+        "name": "青铜（闪电）"
+      },
+      {
+        "name": "铜（酸）"
+      },
+      {
+        "name": "金（火）"
+      },
+      {
+        "name": "绿色（毒）"
+      },
+      {
+        "name": "红色（火）"
+      },
+      {
+        "name": "银（冷）"
+      },
+      {
+        "name": "白色（冷）"
+      }
+    ]
+  },
+  "Gnome": {
+    "name": "侏儒",
+    "languages": [
+      "常见的",
+      "侏儒"
+    ],
+    "subraces": [
+      {
+        "name": "森林侏儒"
+      },
+      {
+        "name": "岩石侏儒"
+      }
+    ]
+  },
+  "Half-Elf": {
+    "name": "半精灵",
+    "languages": [
+      "常见的",
+      "精灵语",
+      "您可以额外选择一项"
+    ],
+    "subraces": []
+  },
+  "Half-Orc": {
+    "name": "半兽人",
+    "languages": [
+      "常见的",
+      "兽人"
+    ],
+    "subraces": []
+  },
+  "Tiefling": {
+    "name": "提夫林",
+    "languages": [
+      "常见的",
+      "地狱"
+    ],
+    "subraces": []
+  }
+}

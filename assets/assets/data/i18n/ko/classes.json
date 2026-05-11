@@ -1,0 +1,592 @@
+{
+  "Barbarian": {
+    "name": "야만인",
+    "subclassFeatureName": "원시 경로",
+    "weaponProficiencies": [
+      "단순한",
+      "용감한"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "탐험가의 팩",
+        "투창 4개"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "거대도끼"
+            ],
+            [
+              "모든 전투용 근접 무기"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "손도끼",
+              "손도끼"
+            ],
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Bard": {
+    "name": "음유 시인",
+    "subclassFeatureName": "바드 칼리지",
+    "weaponProficiencies": [
+      "단순한",
+      "손 석궁",
+      "장검",
+      "레이피어",
+      "쇼트소드"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "가죽 갑옷",
+        "단검"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "레이피어"
+            ],
+            [
+              "장검"
+            ],
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "외교관의 팩"
+            ],
+            [
+              "연예인 팩"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "류트"
+            ],
+            [
+              "어떤 악기라도"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "성직자",
+    "subclassFeatureName": "신성한 영역",
+    "weaponProficiencies": [
+      "단순한"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "방패",
+        "신성한 상징"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "메이스"
+            ],
+            [
+              "워해머"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "스케일 메일"
+            ],
+            [
+              "가죽 갑옷"
+            ],
+            [
+              "체인 메일"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "가벼운 석궁",
+              "볼트 20개"
+            ],
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "성직자의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Druid": {
+    "name": "드루이드",
+    "subclassFeatureName": "드루이드 서클",
+    "weaponProficiencies": [
+      "클럽",
+      "단검",
+      "다트",
+      "투창",
+      "메이스",
+      "육척봉",
+      "시미터",
+      "낫",
+      "슬링",
+      "창"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "가죽 갑옷",
+        "탐험가의 팩",
+        "드루이드 집중"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "나무 방패"
+            ],
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "시미터"
+            ],
+            [
+              "간단한 근접 무기"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "전투기",
+    "subclassFeatureName": "무술 유형",
+    "weaponProficiencies": [
+      "단순한",
+      "용감한"
+    ],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {
+          "options": [
+            [
+              "체인 메일"
+            ],
+            [
+              "가죽 갑옷",
+              "큰 활",
+              "화살 20개"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "어떤 군용 무기라도",
+              "방패"
+            ],
+            [
+              "어떤 군용 무기라도",
+              "어떤 군용 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "가벼운 석궁",
+              "볼트 20개"
+            ],
+            [
+              "손도끼",
+              "손도끼"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "던전 탐험가의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Monk": {
+    "name": "수도사",
+    "subclassFeatureName": "수도원 전통",
+    "weaponProficiencies": [
+      "단순한",
+      "단검"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "다트 10개"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "쇼트소드"
+            ],
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "던전 탐험가의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "무협가",
+    "subclassFeatureName": "신성한 맹세",
+    "weaponProficiencies": [
+      "단순한",
+      "용감한"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "체인 메일",
+        "신성한 상징"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "어떤 군용 무기라도",
+              "방패"
+            ],
+            [
+              "어떤 군용 무기라도",
+              "어떤 군용 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "투창 5개"
+            ],
+            [
+              "간단한 근접 무기"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "성직자의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "레인저",
+    "subclassFeatureName": "레인저 전형",
+    "weaponProficiencies": [
+      "단순한",
+      "용감한"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "큰 활",
+        "화살 20개가 달린 화살통"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "스케일 메일"
+            ],
+            [
+              "가죽 갑옷"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "쇼트소드",
+              "쇼트소드"
+            ],
+            [
+              "간단한 근접 무기",
+              "간단한 근접 무기"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "던전 탐험가의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "악당",
+    "subclassFeatureName": "악성 원형",
+    "weaponProficiencies": [
+      "단순한",
+      "손 석궁",
+      "장검",
+      "레이피어",
+      "쇼트소드"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "가죽 갑옷",
+        "단검",
+        "단검",
+        "도둑의 도구"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "레이피어"
+            ],
+            [
+              "쇼트소드"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "단궁",
+              "화살 20개가 달린 화살통"
+            ],
+            [
+              "쇼트소드"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "도둑의 꾸러미"
+            ],
+            [
+              "던전 탐험가의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "마법사",
+    "subclassFeatureName": "마법의 근원",
+    "weaponProficiencies": [
+      "단검",
+      "다트",
+      "슬링",
+      "육척봉",
+      "가벼운 석궁"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "단검",
+        "단검"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "가벼운 석궁",
+              "볼트 20개"
+            ],
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "구성품 파우치"
+            ],
+            [
+              "비전 집중"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "던전 탐험가의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "요술 장이",
+    "subclassFeatureName": "다른 세상의 후원자",
+    "weaponProficiencies": [
+      "단순한"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "가죽 갑옷",
+        "단검",
+        "단검"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "가벼운 석궁",
+              "볼트 20개"
+            ],
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "구성품 파우치"
+            ],
+            [
+              "비전 집중"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "학자의 팩"
+            ],
+            [
+              "던전 탐험가의 팩"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "어떤 간단한 무기라도"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "마법사",
+    "subclassFeatureName": "신비한 전통",
+    "weaponProficiencies": [
+      "단검",
+      "다트",
+      "슬링",
+      "육척봉",
+      "가벼운 석궁"
+    ],
+    "startingEquipment": {
+      "fixed": [
+        "마법서"
+      ],
+      "choices": [
+        {
+          "options": [
+            [
+              "육척봉"
+            ],
+            [
+              "단검"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "구성품 파우치"
+            ],
+            [
+              "비전 집중"
+            ]
+          ]
+        },
+        {
+          "options": [
+            [
+              "학자의 팩"
+            ],
+            [
+              "탐험가의 팩"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

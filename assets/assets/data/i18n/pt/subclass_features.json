@@ -1,0 +1,886 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Frenesi",
+        "description": "A partir do 3º nível, quando você escolhe este caminho, você pode entrar em frenesi ao entrar em fúria. Se fizer isso, pela duração da fúria, você pode fazer um único ataque corpo a corpo com arma coma ação bônus em cada um dos seus turnos após este. Quando sua fúria termina, você sofre um nível de exaustão."
+      },
+      "Mindless Rage": {
+        "name": "Fúria Inconsciente",
+        "description": "A partir do 6º nível, você não pode ser enfeitiçado ou amedrontado enquanto estiver em fúria. Se já estiver enfeitiçado ou amedrontado ao entrar em fúria, o efeito fica suspenso pela duração da fúria."
+      },
+      "Intimidating Presence": {
+        "name": "Presença Intimidadora",
+        "description": "A partir do 10º nível, você pode usar sua ação para frighten someone com seu menacing presence. Escolha uma criatura que você pode see a até 9 metros de você. If a criatura pode see ou ouvir você, it deve ser bem-sucedida em uma salvaguarda de Sabedoria (CD = 8 + seu bônus de proficiência + seu modificador de Carisma) ou ser amedrontado de você até o final do seu próximo turno. On subsequentes turnos, você pode usar sua ação para extend o duração até o final do seu próximo turno. O efeito termina if a criatura termina seu turno fora de linha de visão ou mais de 18 metros de distância de você."
+      },
+      "Retaliation": {
+        "name": "Retaliação",
+        "description": "A partir do 14º nível, quando você sofre dano de uma criatura que esteja a até 1,5 metro de você, pode usar sua reação para fazer um ataque corpo a corpo com arma contra essa criatura."
+      }
+    },
+    "Path of the Totem Warrior": {
+      "Spirit Seeker": {
+        "name": "Buscador Espiritual",
+        "description": "Yours é a path que seeks sintonia com o natural mundo. No 3º nível, você ganha o habilidade para conjurar o besta sense e speak com animais magias, mas apenas as rituais."
+      },
+      "Totem Spirit": {
+        "name": "Espírito Totêmico",
+        "description": "No 3º nível, escolha a totem espírito e ganha seu característica. Urso: Enquanto em fúria, você tem resistência para todo dano except psychic dano. Águia: Enquanto em fúria, outras criaturas tem desvantagem on opportunity jogada de ataques contra você, e você pode usar Disparada como uma ação bônus. Lobo: Enquanto em fúria, seus aliados tem vantagem on corpo a corpo jogada de ataques contra qualquer criatura a até 1,5 metro de você que é hostil para você."
+      },
+      "Aspect of the Beast": {
+        "name": "Aspecto da Besta",
+        "description": "Você ganha a mágico beneficiar baseado on seu escolhidas totem animal. Urso: Your carga capacidade é dobrado e você tem vantagem on Strength checks para empurrar, puxar, erguer, ou quebrar coisas. Águia: Você pode see up para 1 milha distância com no dificuldade, e penumbra não impor desvantagem on seu Percepção checks. Lobo: Você pode rastrear outras criaturas enquanto viajando at a rápido ritmo, e você pode movimento furtivamente enquanto viajando at a normal ritmo."
+      },
+      "Spirit Walker": {
+        "name": "Andarilho Espiritual",
+        "description": "Você pode conjurar o commune com natureza magia, mas apenas as a ritual. Quando você do so, a spiritual versão of uma de vocêr totem animais aparece para transmitir o informação você busca."
+      },
+      "Totemic Attunement": {
+        "name": "Sintonia Totêmica",
+        "description": "Você ganha a mágico beneficiar baseado on a totem animal à sua escolha. Urso: Enquanto em fúria, qualquer hostil criatura a até 1,5 metro de você tem desvantagem on jogada de ataques contra alvos outras que você. Águia: Enquanto em fúria, você tem a deslocamento de voo igual a seu deslocamento de caminhada, mas você cai if você terminar seu turnoo in o ar. Lobo: Enquanto em fúria, você pode usar uma ação bônus para derrubar a Grande ou menor criatura caído quando você acerta it com a ataque corpo a corpo com arma."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Proficiências Bônus",
+        "description": "Quando você entra no Colégio do Conhecimento no 3º nível, ganha proficiência em três perícias à sua escolha."
+      },
+      "Cutting Words": {
+        "name": "Palavras Cortantes",
+        "description": "Também no 3º nível, quando a criatura que você pode see a até 18 metros faz an jogada de ataque, teste de atributo, ou rolagem de dano, você pode usar sua reação para gastar uma uso of Inspiração de Bardo, rolando o dado e subtraindo o número da criatura's rolagem. O criatura é imune se ela não pode ouvir você ou é imune para ser enfeitiçado."
+      },
+      "Additional Magical Secrets": {
+        "name": "Segredos Mágicos Adicionais",
+        "description": "No 6º nível, você aprende duas magias à sua escolha de qualquer classe. A magia você escolhe deve ser of a nível você pode conjurar. O escolhidas magias contam as barda magias para você mas não contam contra o número of barda magias você conhece."
+      },
+      "Peerless Skill": {
+        "name": "Perícia Inigualável",
+        "description": "A partir do 14º nível, quando você faz an teste de atributo, você pode gastar uma uso of Inspiração de Bardo. Role a Inspiração de Bardo dado e adiciona o número rolado para seu teste de atributo. Você pode escolha para do so depois você rolagem, mas antes o Mestre tells você se você sucedem ou falham."
+      }
+    },
+    "College of Valor": {
+      "Bonus Proficiencies": {
+        "name": "Proficiências Bônus",
+        "description": "Quando você join o College of Valor at 3rd nível, você ganha proficiência com armadura média, escudos, e armas marciais."
+      },
+      "Combat Inspiration": {
+        "name": "Inspiração de Combate",
+        "description": "Também no 3º nível, a criatura com a Inspiração de Bardo dado de você pode rolagem que dado e adiciona o número para a arma rolagem de dano it just feita. Como alternativa, quando an jogada de ataque é feita contra a criatura, ela pode uso seu reação para rolagem o dado e adiciona o número para seu CA contra que ataque, depois ver o rolagem mas antes saber se it acerta."
+      },
+      "Extra Attack": {
+        "name": "Ataque Extra",
+        "description": "A partir do 6º nível, você pode atacar duas vezes, em vez de uma, sempre que realiza a ação Atacar no seu turno."
+      },
+      "Battle Magic": {
+        "name": "Magia de Batalha",
+        "description": "No 14º nível, quando você uso seu ação para conjurar a barda magia, você pode fazer um ataque com arma como uma ação bônus."
+      }
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "Blessings of Knowledge": {
+        "name": "Bênçãos do Conhecimento",
+        "description": "No 1º nível, você aprende duas idiomas à sua escolha. Você também ficam proficiente in duas do seguintes perícias: Arcana, História, Natureza, ou Religião. Your bônus de proficiência é dobrado for qualquer teste de atributo você faz que usos either of those perícias."
+      },
+      "Channel Divinity: Knowledge of the Ages": {
+        "name": "Canalizar Divindade: Conhecimento das Eras",
+        "description": "A partir do 2º nível, você pode usar seu Canalizar Divindade para acessar em a divino fonte of conhecimento. Como uma ação, você escolhe uma perícia ou ferramenta. Por 10 minutes, você tem proficiência com as escolhidas perícia ou ferramenta."
+      },
+      "Channel Divinity: Read Thoughts": {
+        "name": "Canalizar Divindade: Ler Pensamentos",
+        "description": "No 6º nível, você pode usar seu Canalizar Divindade para read a criatura's pensamentos. Você conjura detectar pensamentos (salvaguarda CD equals seu CD de resistência das suas magias de clérigo) com no espaço de magia ou componentes exigidos. O alvo que falha seu salvaguarda é então enfeitiçado by você por 1 minuto ou até você causar dano para it."
+      },
+      "Potent Spellcasting": {
+        "name": "Conjuração Potente",
+        "description": "A partir do 8º nível, você adiciona seu modificador de Sabedoria ao dano causado por qualquer truque de clérigo."
+      },
+      "Visions of the Past": {
+        "name": "Visões do Passado",
+        "description": "A partir do 17º nível, você pode call up visions do past que relate para an objea você segura ou seu imediato arredores. Você gastar at menos 1 minuto in meditação e oração, então recebe oníricas, nebulosas visions of recentes eventos. Você pode meditate in dessa forma for a número de minutes igual a seu Wisdom obtém e deve manter concentração during que tempo."
+      }
+    },
+    "Life Domain": {
+      "Bonus Proficiency": {
+        "name": "Proficiência Bônus",
+        "description": "Quando você escolhe este domínio no 1º nível, ganha proficiência com armaduras pesadas."
+      },
+      "Disciple of Life": {
+        "name": "Discípulo da Vida",
+        "description": "Também a partir do 1º nível, suas magias de cura se tornam mais eficazes. Sempre que você usa uma magia de 1º nível ou superior para restaurar pontos de vida de uma criatura, ela recupera pontos de vida adicionais iguais a 2 + o nível da magia."
+      },
+      "Channel Divinity: Preserve Life": {
+        "name": "Canalizar Divindade: Preservar Vida",
+        "description": "A partir do 2º nível, como uma ação, você apresenta seu sagrado símbolo e evoca cura energia que pode restaurar a número de pontos de vida igual a five vezes seu clérigo nível. Escolha qualquer criaturas a até 9 metros de você, e divida those pontos de vida entre them. Esta característica pode restaurar a criatura para no mais de metade of seu acerto ponto máximo."
+      },
+      "Blessed Healer": {
+        "name": "Curandeiro Abençoado",
+        "description": "A partir do 6º nível, o cura magias você conjura on outros curar você as fonte. Quando você conjura a magia of 1st nível ou superior que restaura pontos de vida para a criatura outras que você, você recupera pontos de vida igual a 2 + a magia's nível."
+      },
+      "Divine Strike": {
+        "name": "Ataque Divino",
+        "description": "No 8º nível, uma vez on cada de vocêr turnos quando você acerta a criatura com a ataque com arma, você pode causar o ataque para causar an extra 1d8 radiant dano para o alvo. Quando você alcança o 14º nível, o extra dano aumenta para 2d8."
+      },
+      "Supreme Healing": {
+        "name": "Cura Suprema",
+        "description": "A partir do 17º nível, quando você would normalmente rolagem uma ou mais dados para restaurar pontos de vida com a magia, você em vez disso uso o maior number possível for cada dado. For exemplo, em vez disso of restaurar 2d6 pontos de vida, você restaurar 12."
+      }
+    },
+    "Light Domain": {
+      "Bonus Cantrip": {
+        "name": "Truque Bônus",
+        "description": "Quando você escolhe este domínio no 1º nível, você ganha o luz truque if você não já conhece it."
+      },
+      "Warding Flare": {
+        "name": "Clarão Protetor",
+        "description": "Também no 1º nível, quando você é ataqueed by a criatura a até 9 metros de você que você pode see, você pode usar sua reação para impor desvantagem on o jogada de ataque, fazendo luz para clarão antes o ataqueer. Você pode usar esta característica a número de vezes igual a seu modificador de Sabedoria (mínimo uma vez), e recupera todo usos on a descanso longo."
+      },
+      "Channel Divinity: Radiance of the Dawn": {
+        "name": "Canalizar Divindade: Radiância da Aurora",
+        "description": "A partir do 2º nível, como uma ação, você apresenta seu sagrado símbolo e qualquer mágico escuridão a até 9 metros de você é dimagiaed. Além disso, cada hostil criatura a até 9 metros deve fazer uma salvaguarda de Constituição, taking 2d10 + seu clérigo nível radiant dano em uma falha, ou metade em um sucesso."
+      },
+      "Improved Flare": {
+        "name": "Clarão Aprimorado",
+        "description": "A partir do 6º nível, você pode também uso seu Warding Flare característica quando a criatura que você pode see a até 9 metros de você ataques a criatura outras que você."
+      },
+      "Potent Spellcasting": {
+        "name": "Conjuração Potente",
+        "description": "A partir do 8º nível, você adiciona seu modificador de Sabedoria ao dano causado por qualquer truque de clérigo."
+      },
+      "Corona of Light": {
+        "name": "Coroa de Luz",
+        "description": "A partir do 17º nível, você pode usar sua ação para activate an aura of luz solar que dura por 1 minuto ou até você dispensar it. Você emite luz brilhante in a 18 metros raio e penumbra 9 metros além que. Your inimigos in o luz brilhante tem desvantagem on salvaguardas contra qualquer magia que causa fogo ou radiant dano."
+      }
+    },
+    "Nature Domain": {
+      "Acolyte of Nature": {
+        "name": "Acólito da Natureza",
+        "description": "No 1º nível, você aprende uma druida truque à sua escolha. Você também ganha proficiência in uma do seguintes perícias: Animais Adestramento, Natureza, ou Sobrevivência."
+      },
+      "Bonus Proficiency": {
+        "name": "Proficiência Bônus",
+        "description": "Também no 1º nível, você ganha proficiência com armadura pesada."
+      },
+      "Channel Divinity: Charm Animals and Plants": {
+        "name": "Canalizar Divindade: Enfeitiçar Animais e Plantas",
+        "description": "A partir do 2º nível, como uma ação, você apresenta seu sagrado símbolo e invoca o name de vocêr divindade. Each besta ou planta criatura que pode see você a até 9 metros deve fazer uma salvaguarda de Sabedoria. Se falhar, it é enfeitiçado by você por 1 minuto ou até it sofre dano."
+      },
+      "Dampen Elements": {
+        "name": "Amortecer Elementos",
+        "description": "A partir do 6º nível, quando você ou a criatura a até 9 metros of você sofres ácido, frio, fogo, elétrico, ou trovejante dano, você pode usar sua reação para concedem resistência para a criatura contra que ocorrência do dano."
+      },
+      "Divine Strike": {
+        "name": "Ataque Divino",
+        "description": "No 8º nível, uma vez on cada de vocêr turnos quando você acerta a criatura com a ataque com arma, você pode causar o ataque para causar an extra 1d8 frio, fogo, ou elétrico dano (sua escolha) para o alvo. Quando você alcança o 14º nível, o extra dano aumenta para 2d8."
+      },
+      "Master of Nature": {
+        "name": "Mestre da Natureza",
+        "description": "No 17º nível, você ganha o habilidade para comandar animais e planta criaturas. Enquanta criaturas são enfeitiçado by seu Charm Animals e Plants característica, você pode sofrer a ação bônus on seu turnoo para verbalmente comandar what cada of those criaturas will do on seu próximo turno."
+      }
+    },
+    "Tempest Domain": {
+      "Bonus Proficiencies": {
+        "name": "Proficiências Bônus",
+        "description": "No 1º nível, você ganha proficiência com armas marciais e armadura pesada."
+      },
+      "Wrath of the Storm": {
+        "name": "Ira da Tempestade",
+        "description": "Também no 1º nível, quando a criatura a até 1,5 metro de você que você pode see acerta você com an ataque, você pode usar sua reação para causar a criatura para fazer a Dexterity salvaguarda. It sofre 2d8 elétrico ou trovejante dano (sua escolha) em uma falha, ou metade em um sucesso. Você pode usar esta característica a número de vezes igual a seu modificador de Sabedoria (mínimo uma vez) e recupera todo usos on a descanso longo."
+      },
+      "Channel Divinity: Destructive Wrath": {
+        "name": "Canalizar Divindade: Ira Destrutiva",
+        "description": "A partir do 2º nível, quando você rolagem elétrico ou trovejante dano, você pode usar seu Canalizar Divindade para causar máximo dano em vez disso of rolando."
+      },
+      "Thunderbolt Strike": {
+        "name": "Golpe do Relâmpago",
+        "description": "No 6º nível, quando você causar elétrico dano para a Grande ou menor criatura, você pode também empurrar it up para 3 metros de distância de você."
+      },
+      "Divine Strike": {
+        "name": "Ataque Divino",
+        "description": "No 8º nível, uma vez on cada de vocêr turnos quando você acerta a criatura com a ataque com arma, você pode causar o ataque para causar an extra 1d8 trovejante dano para o alvo. Quando você alcança o 14º nível, o extra dano aumenta para 2d8."
+      },
+      "Stormborn": {
+        "name": "Nascido da Tempestade",
+        "description": "No 17º nível, você tem a deslocamento de voo igual a seu atual deslocamento de caminhada sempre que você é não subterrâneo ou em local fechado."
+      }
+    },
+    "Trickery Domain": {
+      "Blessing of the Trickster": {
+        "name": "Bênção do Trapaceiro",
+        "description": "A partir do 1º nível, quando você escolhe este domínio, você pode usar sua ação para tocar a disposta criatura outras que você mesmo para give it vantagem on Dexterity (Furtividade) checks. Esta blessing dura por 1 hora ou até você uso esta característica again."
+      },
+      "Channel Divinity: Invoke Duplicity": {
+        "name": "Canalizar Divindade: Invocar Duplicidade",
+        "description": "A partir do 2º nível, como uma ação, você criar a perfeito ilusório duplicar de vocêrself que dura por 1 minuto. O ilusão aparece in an desocupado espaço você pode see a até 9 metros de você. Como uma ação bônus on seu turnoo, você pode movimento o ilusão até 9 metros. Você pode conjurar magias as though você were in o ilusão's espaço, mas deve uso seu próprio sentidos."
+      },
+      "Channel Divinity: Cloak of Shadows": {
+        "name": "Canalizar Divindade: Manto das Sombras",
+        "description": "A partir do 6º nível, como uma ação, você ficam invisível até o final do seu próximo turno. Você ficam visível if você ataque ou conjurar a magia."
+      },
+      "Divine Strike": {
+        "name": "Ataque Divino",
+        "description": "No 8º nível, uma vez on cada de vocêr turnos quando você acerta a criatura com a ataque com arma, você pode causar o ataque para causar an extra 1d8 veneno dano para o alvo. Quando você alcança o 14º nível, o extra dano aumenta para 2d8."
+      },
+      "Improved Duplicity": {
+        "name": "Duplicidade Aprimorada",
+        "description": "No 17º nível, você pode criar up para quatro duplicatas de vocêrself, em vez disso of uma, quando você uso Invoke Duplicity. Como uma ação bônus on seu turnoo, você pode movimento qualquer number dom até 9 metros, para a máximo alcance of 16 metros."
+      }
+    },
+    "War Domain": {
+      "Bonus Proficiencies": {
+        "name": "Proficiências Bônus",
+        "description": "No 1º nível, você ganha proficiência com armas marciais e armadura pesada."
+      },
+      "War Priest": {
+        "name": "Sacerdote da Guerra",
+        "description": "A partir do 1º nível, quando você uso o Attack ação, você pode fazer um ataque com arma como uma ação bônus. Você pode usar esta característica a número de vezes igual a seu modificador de Sabedoria (mínimo uma vez) e recupera todo usos on a descanso longo."
+      },
+      "Channel Divinity: Guided Strike": {
+        "name": "Canalizar Divindade: Golpe Guiado",
+        "description": "A partir do 2º nível, quando você faz an jogada de ataque, você pode usar seu Canalizar Divindade para ganha a +10 bônus para o rolagem. Você faz esta escolha antes ou depois ver o rolagem, mas antes qualquer efeitos são aplicados."
+      },
+      "Channel Divinity: War God's Blessing": {
+        "name": "Canalizar Divindade: Bênção do Deus da Guerra",
+        "description": "No 6º nível, quando a criatura a até 9 metros of você fazs an jogada de ataque, você pode usar sua reação para concedem que criatura a +10 bônus para o rolagem usando seu Canalizar Divindade."
+      },
+      "Divine Strike": {
+        "name": "Ataque Divino",
+        "description": "No 8º nível, uma vez on cada de vocêr turnos quando você acerta a criatura com a ataque com arma, você pode causar o ataque para causar an extra 1d8 dano do mesmo tipo causado by o arma. Quando você alcança o 14º nível, o extra dano aumenta para 2d8."
+      },
+      "Avatar of Battle": {
+        "name": "Avatar da Batalha",
+        "description": "No 17º nível, você ganha resistência para concussão, perfurante, e cortante dano de não mágico armas."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Bonus Cantrip": {
+        "name": "Truque Bônus",
+        "description": "Quando você escolhe este círculo no 2º nível, você aprende uma adicional druida truque à sua escolha."
+      },
+      "Natural Recovery": {
+        "name": "Recuperação Natural",
+        "description": "A partir do 2º nível, during a descanso curto, você pode escolha gasto espaço de magias para recover. O espaço de magias pode tem a combined nível igual a ou menor que metade seu druida nível (arredondado up), e none do slots pode ser 6th nível ou superior. Você não pode uso esta característica again até você termina a descanso longo."
+      },
+      "Land's Stride": {
+        "name": "Passo da Terra",
+        "description": "A partir do 6º nível, mover-se através não mágico difícil terreno custa você no extra movement. Você pode também pass através não mágico plantas sem ser desacelerado by them e sem taking dano dom if they tem espinhos, espinhos, ou a similar perigo."
+      },
+      "Nature's Ward": {
+        "name": "Proteção da Natureza",
+        "description": "Quando você alcança o 10º nível, você não pode ser enfeitiçado ou amedrontado by elementais ou feérico, e você é imune para veneno e doença."
+      },
+      "Nature's Sanctuary": {
+        "name": "Santuário da Natureza",
+        "description": "Quando você alcança o 14º nível, quando a besta ou planta criatura ataques você, que criatura deve fazer uma salvaguarda de Sabedoria contra seu druida CD de resistência à magia. Em uma falha, a criatura deve escolha a diferente alvo, ou o ataque automaticamente erra."
+      }
+    },
+    "Circle of the Moon": {
+      "Combat Wild Shape": {
+        "name": "Forma Selvagem de Combate",
+        "description": "Quando você escolhe este círculo no 2º nível, você ganha o habilidade para usar Forma Selvagem on seu turnoo como uma ação bônus rather que como uma ação. Além disso, enquanto transformed by Forma Selvagem, você pode usar uma ação bônus para gastar uma espaço de magia para recupera 1d8 pontos de vida per nível do espaço de magia gasto."
+      },
+      "Circle Forms": {
+        "name": "Formas do Círculo",
+        "description": "O rites de vocêr circle concedem você o habilidade para transformar em mais perigosas animal forma. A partir do 2º nível, você pode usar Forma Selvagem para transformar em a besta com a nível de desafio as high as 1. A partir do 6º nível, você pode transformar em a besta com a nível de desafio as high as seu druida nível divided by 3, arredondado para baixo."
+      },
+      "Primal Strike": {
+        "name": "Ataque Primitivo",
+        "description": "A partir do 6º nível, seu ataques in besta forma contam as mágico for o propósito of superar resistência e imunidade para não mágico ataques e dano."
+      },
+      "Elemental Wild Shape": {
+        "name": "Forma Selvagem Elemental",
+        "description": "No 10º nível, você pode gastar duas usos of Forma Selvagem at o mesmo tempo para transformar em an ar elemental, an earth elemental, a fogo elemental, ou a water elemental."
+      },
+      "Thousand Forms": {
+        "name": "Mil Formas",
+        "description": "Ao chegar ao 14º nível, você tem learned para usa magia para alterar seu físicos forma in mais sutis maneiras. Você pode conjurar o alterar self magia à vontade."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Crítico Aprimorado",
+        "description": "A partir do momento em que você escolhe este arquétipo no 3º nível, seus ataques com arma causam acerto crítico com uma rolagem de 19 ou 20."
+      },
+      "Remarkable Athlete": {
+        "name": "Atleta Notável",
+        "description": "A partir do 7º nível, você pode adiciona metade seu bônus de proficiência (arredondado up) para qualquer Strength, Dexterity, ou Constitution teste você faz que não já uso seu bônus de proficiência. Além disso, quando você faz a corrida longo salto, o distância você pode cobrir aumenta by a número de pés igual a seu modificador de Força."
+      },
+      "Additional Fighting Style": {
+        "name": "Estilo de Luta Adicional",
+        "description": "No 10º nível, você pode escolha a second opção do Fighting Style característica de classe."
+      },
+      "Superior Critical": {
+        "name": "Crítico Superior",
+        "description": "A partir do 15º nível, seus ataques com arma causam acerto crítico com uma rolagem de 18, 19 ou 20."
+      },
+      "Survivor": {
+        "name": "Sobrevivente",
+        "description": "No 18º nível, at o começar of cada de vocêr turnos, você recupera pontos de vida igual a 5 + seu modificador de Constituição if você tem no mais de metade de vocêr pontos de vida lepés Você não ganha esta beneficiar if você tem 0 pontos de vida."
+      }
+    },
+    "Battle Master": {
+      "Combat Superiority": {
+        "name": "Superioridade em Combate",
+        "description": "Quando você escolhe este arquétipo no 3º nível, você aprende manobras que são alimentadas by especiais superioridade dados (d8s). Você aprende três manobras à sua escolha e tem quatro superioridade dados. Você recupera todo gasto superioridade dados quando você termina a descanso curto ou longo. Save CD = 8 + bônus de proficiência + Strength ou modificador de Destreza (sua escolha). Você aprende duas adicional manobras at 7th, 10th, e 15th nível."
+      },
+      "Student of War": {
+        "name": "Estudante da Guerra",
+        "description": "No 3º nível, você ganha proficiência com uma tipo of artisan's ferramentas à sua escolha."
+      },
+      "Know Your Enemy": {
+        "name": "Conheça seu Inimigo",
+        "description": "A partir do 7º nível, if você gastar at menos 1 minuto observando ou interagir com outra criatura fora combate, o Mestre tells você if a criatura é seu igual, superior, ou inferior in relação para duas do seguintes características à sua escolha: Strength, Dexterity, Constitution, Classe de Armadura, current pontos de vida, totais classe níveis, Guerreiro classe níveis."
+      },
+      "Improved Combat Superiority": {
+        "name": "Superioridade em Combate Aprimorada",
+        "description": "No 10º nível, seu superioridade dados turno em d10s. No 18º nível, they turno em d12s."
+      },
+      "Relentless": {
+        "name": "Implacável",
+        "description": "A partir do 15º nível, quando você rolagem iniciativa e tem no superioridade dados restante, você recupera 1 superioridade dado."
+      }
+    },
+    "Eldritch Knight": {
+      "Spellcasting": {
+        "name": "Conjuração",
+        "description": "Quando você alcança o 3º nível, você aumenta seu marcial aptidão com o habilidade para conjurar magias. Inteligência é seu magiacasting habilidade para vocêr maga magias. Você conhece três mago truques e quatro 1st-nível maga magias, at menos duas of which deve ser do abjuração ou evocação schools."
+      },
+      "Weapon Bond": {
+        "name": "Vínculo com Arma",
+        "description": "Também no 3º nível, você aprende a ritual que creates a mágico vínculo entre você mesmo e uma arma. Você realiza o ritual over 1 hora, depois which você não pode ser desarmado of que arma a menos que incapacitado. Se ela é on o mesmo plano of existência, você pode invocar que arma como uma ação bônus on seu turnoo, fazendo it para teletransportar instantaneamente para seu mão."
+      },
+      "War Magic": {
+        "name": "Magia de Guerra",
+        "description": "A partir do 7º nível, quando você uso seu ação para conjurar a truque, você pode fazer um ataque com arma como uma ação bônus."
+      },
+      "Eldritch Strike": {
+        "name": "Golpe Sobrenatural",
+        "description": "No 10º nível, quando você acerta a criatura com a ataque com arma, que criatura tem desvantagem on o próximo salvaguarda it faz contra a magia você conjura antes o terminar de vocêr próximo turno."
+      },
+      "Arcane Charge": {
+        "name": "Investida Arcana",
+        "description": "No 15º nível, você ganha o habilidade para teletransportar até 9 metros para an desocupado espaço você pode see quando você uso seu Surto de Ação. Você pode teletransportar antes ou depois o adicional ação."
+      },
+      "Improved War Magic": {
+        "name": "Magia de Guerra Aprimorada",
+        "description": "A partir do 18º nível, quando você uso seu ação para conjurar a magia, você pode fazer um ataque com arma como uma ação bônus."
+      }
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Técnica da Mão Aberta",
+        "description": "A partir do 3º nível, quando você escolhe esta tradição, sempre que você acerta a criatura com uma do ataques concedida by seu Rajada de Golpes, você pode impor uma do seguintes efeitos: ela deve sucedem on a Dexterity salvaguarda ou ser knocked caído; it deve fazer uma salvaguarda de Força — if ela falha, você pode empurrar it up para 11,5 metro distância; ou it não pode sofrer reaçãos até o final do seu próximo turno."
+      },
+      "Wholeness of Body": {
+        "name": "Integridade Corporal",
+        "description": "No 6º nível, você ganha o habilidade para curar você mesmo. Como uma ação, você pode recupera pontos de vida igual a três vezes seu monge nível. Você deve finish a descanso longo antes você pode usar esta característica again."
+      },
+      "Tranquility": {
+        "name": "Tranquilidade",
+        "description": "A partir do 11º nível, at o terminar of a descanso longo, você ganha o efeito of a santuária magia que dura até o começar de vocêr próximo descanso longo. O salvaguarda CD equals 8 + seu modificador de Sabedoria + seu bônus de proficiência."
+      },
+      "Quivering Palm": {
+        "name": "Palma Vibrante",
+        "description": "No 17º nível, quando você acerta a criatura com an golpe desarmado, você pode gastar 3 pontos de ki para começar imperceptible vibrações in seu corpo que durar for a número de dias igual a seu monge nível. Você pode usar seu ação para terminar them. O criatura deve fazer uma salvaguarda de Constituição — on a falha it é reduzida para 0 pontos de vida; on a sucesso it sofre 10d10 necrótico dano."
+      }
+    },
+    "Way of Shadow": {
+      "Shadow Arts": {
+        "name": "Artes das Sombras",
+        "description": "A partir do 3º nível, quando você escolhe esta tradição, você pode usar seu ki para duplicar o efeitos of certas magias. Como uma ação, você pode gastar 2 pontos de ki para conjurar escuridão, visão no escuro, pass sem trace, ou silêncio, sem fornecer material componentes. Além disso, você ganha o menor ilusão truque if você não já conhece it."
+      },
+      "Shadow Step": {
+        "name": "Passo das Sombras",
+        "description": "No 6º nível, quando você é in penumbra ou escuridão, como uma ação bônus você pode teletransportar até 18 metros para an desocupado espaço você pode see que é também in penumbra ou escuridão. Você então tem vantagem on o primeiro ataque corpo a corpo você faz antes o terminar do turno."
+      },
+      "Cloak of Shadows": {
+        "name": "Manto das Sombras",
+        "description": "Ao chegar ao 11º nível, quando você é in an área of penumbra ou escuridão, você pode usar sua ação para ficam invisível. Você remain invisível até você faz an ataque, conjurar a magia, ou são in an área of luz brilhante."
+      },
+      "Opportunist": {
+        "name": "Oportunista",
+        "description": "No 17º nível, sempre que a criatura a até 1,5 metro de você é acerto by an ataque feita by a criatura outras que você, você pode usar sua reação para fazer a ataque corpo a corpo contra que criatura."
+      }
+    },
+    "Way of the Four Elements": {
+      "Disciple of the Elements": {
+        "name": "Discípulo dos Elementos",
+        "description": "Quando você escolhe esta tradição no 3º nível, você aprende mágico disciplines que harness o power do quatro elements. Você conhece o Elemental Attunement disciplina e uma outras elemental disciplina à sua escolha. Você aprende uma adicional disciplina at 6th, 11th, e 17th nível. Whenever você aprende a new disciplina, você pode também substituir uma disciplina você já conhece com a diferente uma. Each disciplina requires você para gastar pontos de ki cada tempo você uso it."
+      },
+      "Additional Elemental Disciplines (Level 6)": {
+        "name": "Disciplinas Elementais Adicionais",
+        "description": "No 6º nível, você aprende uma adicional elemental disciplina. Higher-nível disciplines ficam available, such as Earth Tremor, Eternal Mountain Defense, Flames do Phoenix, Gong do Summit, Mist Stance, ou Rido Wind."
+      },
+      "Additional Elemental Disciplines (Level 11)": {
+        "name": "Disciplinas Elementais Adicionais",
+        "description": "No 11º nível, você aprende uma mais elemental disciplina. Advanced disciplines such as Breath of Winter, Clench do North Wind, e Erupting Earth ficam available."
+      },
+      "Additional Elemental Disciplines (Level 17)": {
+        "name": "Disciplinas Elementais Adicionais",
+        "description": "No 17º nível, você aprende uma mais elemental disciplina. O most powerful disciplines such as Avatar do Elements e Wave of Rolling Earth ficam available."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Channel Divinity: Sacred Weapon": {
+        "name": "Canalizar Divindade: Arma Sagrada",
+        "description": "Como uma ação, você pode imbue uma arma que você é holding com positive energia, usando seu Canalizar Divindade. Por 1 minuto, você adiciona seu modificador de Carisma para jogada de ataques feita com que arma (mínimo +1). O arma também emits luz brilhante in a 6 metros raio e penumbra 6 metros além que. If o arma é não já mágico, it fica mágico for o duração."
+      },
+      "Channel Divinity: Turn the Unholy": {
+        "name": "Canalizar Divindade: Expulsar o Profano",
+        "description": "Como uma ação, você apresenta seu sagrado símbolo e speak a oração censurando ínferos e morto-vivo, usando seu Canalizar Divindade. Each ínfero ou morto-vivo que pode see ou ouvir você a até 9 metros deve fazer uma salvaguarda de Sabedoria. On a falha, a criatura é expulsa por 1 minuto ou até it sofre dano."
+      },
+      "Aura of Devotion": {
+        "name": "Aura de Devoção",
+        "description": "A partir do 7º nível, você e aliadas criaturas a até 3 metros of você não pode ser enfeitiçado enquanto você é consciente. No 18º nível, o alcance of nesta aura aumenta para 9 metros."
+      },
+      "Purity of Spirit": {
+        "name": "Pureza de Espírito",
+        "description": "A partir do 15º nível, você é always under o efeitos of a proteção de mal e bem magia."
+      },
+      "Holy Nimbus": {
+        "name": "Nimbo Sagrado",
+        "description": "No 20º nível, como uma ação, você pode emanate an aura of luz solar. Por 1 minuto, luz brilhante brilha de você in a 9 metros raio, e penumbra brilha 9 metros além que. Whenever an inimiga criatura começa seu turno in o luz brilhante, a criatura sofre 10 radiant dano. Além disso, você tem vantagem on salvaguardas contra magias conjurar by ínferos ou morto-vivo. Depois de usar esta característica, você não pode uso it again até você termina a descanso longo."
+      }
+    },
+    "Oath of the Ancients": {
+      "Channel Divinity: Nature's Wrath": {
+        "name": "Canalizar Divindade: Ira da Natureza",
+        "description": "Como uma ação, você pode causar espectral vinhas para surgem up e alcançar for a criatura a até 3 metros de você que você pode see. O criatura deve ser bem-sucedida em uma salvaguarda de Força ou Destreza (seu escolha) ou ser contido. Enquanto contido by o vinhas, a criatura repete o salvaguarda at o terminar of cada of seu turnos. Em um sucesso, it liberta itself e o vinhas desaparecem."
+      },
+      "Channel Divinity: Turn the Faithless": {
+        "name": "Canalizar Divindade: Expulsar os Infiéis",
+        "description": "Como uma ação, você apresenta seu sagrado símbolo, e cada feérico ou ínfero a até 9 metros de você que pode ouvir você deve fazer uma salvaguarda de Sabedoria. Em uma falha, a criatura é expulsa por 1 minuto ou até it sofre dano."
+      },
+      "Aura of Warding": {
+        "name": "Aura de Proteção",
+        "description": "A partir do 7º nível, antiga magia lies so fortemente sobre você que it forma an sobrenatural proteção. Você e aliadas criaturas a até 3 metros of você tem resistência para dano de magias. No 18º nível, o alcance of nesta aura aumenta para 9 metros."
+      },
+      "Undying Sentinel": {
+        "name": "Sentinela Imortal",
+        "description": "A partir do 15º nível, quando você é reduzida para 0 pontos de vida e são não killed imediatamente, você pode escolha para vantagem para 1 acerto ponto em vez disso. Once você uso esta habilidade, você não pode uso it again até você termina a descanso longo. Além disso, você sofre none do desvantagens of velhice idade e não pode ser envelhecido magicamente."
+      },
+      "Elder Champion": {
+        "name": "Campeão Ancião",
+        "description": "No 20º nível, como uma ação, você assume o forma of an antiga forçar of natureza por 1 minuto. Você ganha o seguintes benefícios: at o começar of cada de vocêr turnos, você recupera 10 pontos de vida; sempre que você conjura a paladina magia com a conjuração tempo of 1 ação, você pode conjurar it usando a ação bônus em vez disso; inimiga criaturas a até 3 metros of você tem desvantagem on salvaguardas contra seu paladina magias e Canalizar Divindade opções."
+      }
+    },
+    "Oath of Vengeance": {
+      "Channel Divinity: Abjure Enemy": {
+        "name": "Canalizar Divindade: Abjurar Inimigo",
+        "description": "Como uma ação, você apresenta seu sagrado símbolo e speak a oração of denúncia, usando seu Canalizar Divindade. Escolha uma criatura a até 18 metros de você que você pode see. That criatura deve fazer uma salvaguarda de Sabedoria. Fiends e morto-vivo tem desvantagem on esta salvaguarda. Em uma falha, a criatura é amedrontado por 1 minuto ou até it sofre qualquer dano. Enquanto amedrontado, a criatura's deslocamento é 0 e it não pode beneficiar de qualquer bônus para seu deslocamento."
+      },
+      "Channel Divinity: Vow of Enmity": {
+        "name": "Canalizar Divindade: Voto de Inimizade",
+        "description": "Como uma ação bônus, você pode proferir a voto of inimizade contra a criatura você pode see a até 3 metros de você, usando seu Canalizar Divindade. Você ganha vantagem on jogada de ataques contra a criatura por 1 minuto ou até it cai para 0 pontos de vida ou falls inconsciente."
+      },
+      "Relentless Avenger": {
+        "name": "Vingador Implacável",
+        "description": "Ao chegar ao 7º nível, quando você acerta a criatura com an ataque de oportunidade, você pode movimento up para metade seu deslocamento imediatamente depois o ataque e as parte do mesmo reação. Esta movement não provoca ataque de oportunidades."
+      },
+      "Soul of Vengeance": {
+        "name": "Alma da Vingança",
+        "description": "A partir do 15º nível, quando a criatura under o efeito de vocêr Vow of Enmity faz an ataque, você pode usar sua reação para fazer a ataque corpo a corpo com arma contra que criatura se ela é dentro alcance."
+      },
+      "Avenging Angel": {
+        "name": "Anjo Vingador",
+        "description": "No 20º nível, como uma ação, você assume o forma of an angelic avenger por 1 minuto. Wings brotar de seu volta e concedem você a deslocamento de voo of 18 metros. Você emanate an aura of ameaça in a 9 metros raio — o primeiro tempo qualquer inimiga criatura entra o aura ou começa seu turno there, it deve ser bem-sucedida em uma salvaguarda de Sabedoria ou ficam amedrontado de você por 1 minuto ou até it sofre qualquer dano."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Prey": {
+        "name": "Presa do Caçador",
+        "description": "No 3º nível, você ganha uma do seguintes características à sua escolha. Matador de Colossos: Quando você acerta a criatura com a ataque com arma, a criatura sofre an extra 1d8 dano se ela's abaixo seu acerto ponto máximo. Você pode causar esta extra dano apenas uma vez por turnoo. Matador de Gigantes: Quando a Grande ou maior criatura a até 1,5 metro of você acertas ou erra você com an ataque, você pode usar sua reação para ataque que criatura imediatamente depois. Destruidor de Hordas: Once on cada de vocêr turnos quando você faz a ataque com arma, você pode fazer outra ataque com o mesmo arma contra a diferente criatura que é a até 1,5 metro do original alvo."
+      },
+      "Defensive Tactics": {
+        "name": "Táticas Defensivas",
+        "description": "No 7º nível, você ganha uma do seguintes características. Escapar da Horda: Opportunity ataques contra você é feita com desvantagem. Multiataque Defense: Quando a criatura acerta você com an ataque, você ganha a +4 bônus para CA contra todo subsequentes ataques feita by que criatura for o restante do turno. Vontade de Aço: Você tem vantagem on salvaguardas contra ser amedrontado."
+      },
+      "Multiattack": {
+        "name": "Ataque Múltiplo",
+        "description": "No 11º nível, você ganha uma do seguintes características. Saraivada: Você pode usar seu ação para fazer a ataque à distância contra qualquer número de criaturas a até 3 metros of a ponto você pode see dentro seu arma's alcance, making a separate jogada de ataque for cada alvo. Ataque Giratório: Você pode usar seu ação para fazer a ataque corpo a corpo contra qualquer número de criaturas a até 1,5 metro de você, com a separate jogada de ataque for cada alvo."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Defesa Superior do Caçador",
+        "description": "No 15º nível, você ganha uma do seguintes características. Evasão: Quando você faz a Dexterity salvaguarda para sofrer apenas metade dano, você em vez disso sofrer no dano if você sucedem, e apenas metade dano if você falham. Resistir à Maré: Quando a hostil criatura erra você com a ataque corpo a corpo, você pode usar sua reação para forçar que criatura para repeat o mesmo ataque contra outra criatura à sua escolha. Esquiva Sobrenatural: Quando an ataqueer que você pode see acerta você com an ataque, você pode usar sua reação para reduzir pela metade o ataque's dano contra você."
+      }
+    },
+    "Beast Master": {
+      "Ranger's Companion": {
+        "name": "Companheiro do Patrulheiro",
+        "description": "No 3º nível, você ganha a besta companheiro que acompanha você on seu aventuras e é treinado para fight ao lado você. Escolha a besta que é no maior que Médio e que tem a nível de desafio of 1/4 ou menor. Add seu bônus de proficiência para o besta's CA, jogada de ataques, e rolagem de danos, as fonte as para qualquer salvaguardas e perícias it é proficiente in. Its acerto ponto máximo equals quatro vezes seu patrulheiro nível."
+      },
+      "Exceptional Training": {
+        "name": "Treinamento Excepcional",
+        "description": "A partir do 7º nível, on qualquer de vocêr turnos quando seu besta companheiro não ataque, você pode usar uma ação bônus para comandar o besta para sofrer o Disparada, Desengajar, Esquivar, ou Ajudar ação on seu turno. O besta's ataques também contam as mágico for o propósito of superar resistência e imunidade."
+      },
+      "Bestial Fury": {
+        "name": "Fúria Bestial",
+        "description": "A partir do 11º nível, seu companheiro animal pode fazer dois ataques quando você o comanda a realizar a ação Atacar."
+      },
+      "Share Spells": {
+        "name": "Compartilhar Magias",
+        "description": "A partir do 15º nível, quando você conjura a magia alvoing você mesmo, você pode também afetar seu besta companheiro com a magia if o besta é a até 9 metros de você."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Mãos Rápidas",
+        "description": "A partir do 3º nível, você pode usar a ação bônus concedida by seu Ação Ardilosa para fazer a Dexterity (Prestidigitação of Hand) teste, uso seu thieves' ferramentas para desarmar a armadilha ou open a fechadura, ou sofrer o Usar an Objeta ação."
+      },
+      "Second-Story Work": {
+        "name": "Trabalho em Andares Superiores",
+        "description": "Quando você escolhe este arquétipo no 3º nível, escalar no mais custa você extra movement. Além disso, quando você faz a corrida salto, o distância você cobrir aumenta by a número de pés igual a seu modificador de Destreza."
+      },
+      "Supreme Sneak": {
+        "name": "Furtividade Suprema",
+        "description": "A partir do 9º nível, você tem vantagem on a Dexterity (Furtividade) teste if você movimento no mais de metade seu deslocamento on o mesmo turno."
+      },
+      "Use Magic Device": {
+        "name": "Usar Dispositivo Mágico",
+        "description": "Ao chegar ao 13º nível, você tem learned enough about o workings of magia que você pode improvise o uso of items even quando they são não intended para você. Você ignora todo classe, raça, e nível requisitos on o uso of magia items."
+      },
+      "Thief's Reflexes": {
+        "name": "Reflexos de Ladrão",
+        "description": "Quando você alcança o 17º nível, você pode sofrer duas turnos during o primeiro rodada of qualquer combate. Você sofrer seu primeiro turno at seu normal iniciativa e seu second turno at seu iniciativa menos 10."
+      }
+    },
+    "Assassin": {
+      "Bonus Proficiencies": {
+        "name": "Proficiências Bônus",
+        "description": "Quando você escolhe este arquétipo no 3º nível, você ganha proficiência com o disfarce kit e o venenoer's kit."
+      },
+      "Assassinate": {
+        "name": "Assassinar",
+        "description": "A partir do 3º nível, você é at seu mais mortal quando você get o vantagem on seu inimigos. Você tem vantagem on jogada de ataques contra qualquer criatura que hasn't taken a turno in o combate yet. Além disso, qualquer acerto você obtém contra a criatura que é surpreso é a crítico acerto."
+      },
+      "Infiltration Expertise": {
+        "name": "Especialização em Infiltração",
+        "description": "A partir do 9º nível, você pode unfailingly criar false identidades para vocêrself. Você deve gastar seven dias e 25 gp para estabelecer o histórico, profissão, e afiliações for an identidade. Depois disso, if você adota o new identidade as a disfarce, outras criaturas acreditam você para ser que pessoa até receberem an óbvia razão não para."
+      },
+      "Impostor": {
+        "name": "Impostor",
+        "description": "No 13º nível, você ganha o habilidade para unerringly imitar outra pessoa's fala, escrita, e comportamento. Você deve gastar at menos três horas estudando these três componentes do pessoa's comportamento. If a desconfiada criatura suspeita something é errado, você tem vantagem on qualquer Charisma (Enganação) teste para avoid detecção."
+      },
+      "Death Strike": {
+        "name": "Golpe Mortal",
+        "description": "A partir do 17º nível, quando você ataque e acerto a criatura que é surpreso, it deve fazer uma salvaguarda de Constituição (CD 8 + seu modificador de Destreza + seu bônus de proficiência). Em uma falha, dobre o dano de vocêr ataque contra a criatura."
+      }
+    },
+    "Arcane Trickster": {
+      "Spellcasting": {
+        "name": "Conjuração",
+        "description": "Quando você alcança o 3º nível, você aumenta seu ladinas abilities com mágico ones. Inteligência é seu magiacasting habilidade para vocêr maga magias. Você conhece três mago truques (mago mão plus duas outros à sua escolha) e três 1st-nível maga magias, at menos duas of which deve ser do enchantment e ilusão schools."
+      },
+      "Mage Hand Legerdemain": {
+        "name": "Prestidigitação com Mão Mágica",
+        "description": "A partir do 3º nível, quando você conjura mago mão, você pode fazer o espectral mão invisível, e você pode realiza adicional tasks com it: guardar ou recuperar objetos de recipientes usados by outra criatura, ou uso thieves' ferramentas para pick fechaduras e desarmar armadilhas at alcance. Você pode do these sem ser percebido if você sucedem on a Prestidigitação of Hand teste contestado by a criatura's Percepção teste."
+      },
+      "Magical Ambush": {
+        "name": "Emboscada Mágica",
+        "description": "A partir do 9º nível, if você é escondido de a criatura quando você conjura a magia on it, a criatura tem desvantagem on qualquer salvaguarda it faz contra a magia neste turnoo."
+      },
+      "Versatile Trickster": {
+        "name": "Trapaceiro Versátil",
+        "description": "No 13º nível, como uma ação bônus on seu turnoo, você pode designar a criatura a até 1,5 metro do espectral mão criada by mago mão. Doing so gives você vantagem on jogada de ataques contra que criatura até o terminar do turno."
+      },
+      "Spell Thief": {
+        "name": "Ladrão de Magias",
+        "description": "No 17º nível, imediatamente depois a criatura casts a magia que alvos você ou inclui você in seu área of efeito, você pode usar sua reação para forçar a criatura para fazer a salvaguarda com seu magiacasting habilidade. O CD equals seu CD de resistência à magia. Em uma falha, você anula a magia's efeito contra você e rouba o conhecimento da magia se ela é at menos 1st nível e of a nível você pode conjurar. Você conhece a magia por 8 horas."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "Dragon Ancestor": {
+        "name": "Ancestral Dracônico",
+        "description": "No 1º nível, você escolhe uma tipo of dragon as seu ancestral. Você pode speak, read, e write Dracônico. Whenever você faz a Charisma teste quando interagir com dragões, seu bônus de proficiência é dobrado se ela applies para o teste."
+      },
+      "Draconic Resilience": {
+        "name": "Resiliência Dracônica",
+        "description": "As magia flui através seu corpo, it causes físicos traços de vocêr dragon ancestors para emergir. Your acerto ponto máximo aumenta by 1 e aumenta by 1 again sempre que você ganha a nível in esta classe. Além disso, quando você én't usando armadura, seu CA equals 13 + seu modificador de Destreza."
+      },
+      "Elemental Affinity": {
+        "name": "Afinidade Elemental",
+        "description": "A partir do 6º nível, quando você conjura a magia que causa dano do tipo associado com seu draconic ancestralidade, adiciona seu modificador de Carisma para que dano. At o mesmo tempo, você pode gastar 1 sorcery ponto para ganha resistência para que dano tipo por 1 hora."
+      },
+      "Dragon Wings": {
+        "name": "Asas de Dragão",
+        "description": "No 14º nível, você ganha o habilidade para brotar a par of dragon asas de seu volta, gaining a deslocamento de voo igual a seu atual deslocamento. Você pode criar these asas como uma ação bônus on seu turnoo. They durar até você dispensar them como uma ação bônus on seu turnoo."
+      },
+      "Draconic Presence": {
+        "name": "Presença Dracônica",
+        "description": "A partir do 18º nível, como uma ação, você pode gastar 5 pontos de feitiçaria para exude an aura of fascínio ou medo (sua escolha) para a distância of 18 metros. Por 1 minuto ou até você perde seu concentração, cada hostil criatura que começa seu turno in nesta aura deve ser bem-sucedida em uma salvaguarda de Sabedoria ou ser enfeitiçado (if você chose fascínio) ou amedrontado (if você chose medo) até o aura termina."
+      }
+    },
+    "Wild Magic": {
+      "Wild Magic Surge": {
+        "name": "Surto de Magia Selvagem",
+        "description": "A partir do 1º nível, quando você escolhe esta origem, seu magiacasting pode liberar surtos of indomada magia. Imediatamente depois você conjura a feiticeira magia of 1st nível ou superior, o Mestre pode tem você rolagem a d20. If você rolagem a 1, rolagem on o Wild Magic Surge table para criar a aleatório mágico efeito."
+      },
+      "Tides of Chaos": {
+        "name": "Marés do Caos",
+        "description": "A partir do 1º nível, você pode manipular o forças of acaso e caos para ganha vantagem on uma jogada de ataque, teste de atributo, ou salvaguarda. Once você do so, você deve finish a descanso longo antes você pode usar esta característica again. Any tempo antes você recupera o uso of esta característica, o Mestre pode tem você rolagem on o Wild Magic Surge table imediatamente depois você conjura a feiticeira magia of 1st nível ou superior."
+      },
+      "Bend Luck": {
+        "name": "Dobrar a Sorte",
+        "description": "A partir do 6º nível, quando outra criatura você pode see faz an jogada de ataque, teste de atributo, ou salvaguarda, você pode usar seu reação e gastar 2 pontos de feitiçaria para rolagem 1d4 e apply o número rolado as um bônus ou penalidade (sua escolha) para a criatura's rolagem. Você pode do so depois a criatura rolls mas antes qualquer efeitos do rolagem são resolvidos."
+      },
+      "Controlled Chaos": {
+        "name": "Caos Controlado",
+        "description": "No 14º nível, sempre que você rolagem on o Wild Magic Surge table, você pode rolagem twice e uso either number."
+      },
+      "Spell Bombardment": {
+        "name": "Bombardeio de Magias",
+        "description": "A partir do 18º nível, quando você rolagem dano for a magia e rolagem o maior number possível on qualquer do dados, escolha uma of those dados, rolagem it again e adiciona que rolagem para o dano. Você pode usar o característica apenas uma vez por turnoo."
+      }
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "Fey Presence": {
+        "name": "Presença Feérica",
+        "description": "A partir do 1º nível, como uma ação, você pode causar cada criatura in a 3 metros cubo originado de você para fazer a Wisdom salvaguarda contra seu bruxo CD de resistência à magia. O criaturas que falham são todo enfeitiçado ou amedrontado by você (sua escolha) até o final do seu próximo turno. Depois de usar esta característica, você não pode uso it again até você termina a descanso curto ou longo."
+      },
+      "Misty Escape": {
+        "name": "Fuga Enevoada",
+        "description": "A partir do 6º nível, quando você sofre dano, você pode usar sua reação para turno invisível e teletransportar até 18 metros para an desocupado espaço você pode see. Você remain invisível até o começar de vocêr próximo turno ou até você ataque ou conjurar a magia. Depois de usar esta característica, você não pode uso it again até você termina a descanso curto ou longo."
+      },
+      "Beguiling Defenses": {
+        "name": "Defesas Encantadoras",
+        "description": "A partir do 10º nível, você é imune para ser enfeitiçado. Quando outra criatura tenta para charm você, você pode usar sua reação para tentar para turno o charm volta on que criatura. O criatura deve ser bem-sucedida em uma salvaguarda de Sabedoria contra seu bruxo CD de resistência à magia ou ser enfeitiçado by você por 1 minuto ou até a criatura sofre qualquer dano."
+      },
+      "Dark Delirium": {
+        "name": "Delírio Sombrio",
+        "description": "A partir do 14º nível, como uma ação, escolha a criatura que você pode see a até 18 metros. It deve fazer uma salvaguarda de Sabedoria ou ser enfeitiçado ou amedrontado by você (sua escolha) por 1 minuto ou até seu concentração é quebrada. Esta efeito termina antecipadamente if a criatura sofre qualquer dano. Depois de usar esta característica, você não pode uso it again até você termina a descanso curto ou longo."
+      }
+    },
+    "The Fiend": {
+      "Dark One's Blessing": {
+        "name": "Bênção do Obscuro",
+        "description": "A partir do 1º nível, quando você reduz a hostil criatura para 0 pontos de vida, você ganha temporários pontos de vida igual a seu modificador de Carisma + seu bruxo nível (mínimo of 1)."
+      },
+      "Dark One's Own Luck": {
+        "name": "Sorte Própria do Obscuro",
+        "description": "A partir do 6º nível, quando você faz an teste de atributo ou salvaguarda, você pode usar esta característica para adiciona a d10 para seu rolagem. Você pode do so depois ver o inicial rolagem mas antes qualquer do rolagem's efeitos ocorrer. Depois de usar esta característica, você não pode uso it again até você termina a descanso curto ou longo."
+      },
+      "Fiendish Resilience": {
+        "name": "Resiliência Infernal",
+        "description": "A partir do 10º nível, você pode escolha uma dano tipo quando você termina a descanso curto ou longo. Você ganha resistência para que dano tipo até você escolhe a diferente uma com esta característica. Damage de mágico armas ou prata armas ignora esta resistência."
+      },
+      "Hurl Through Hell": {
+        "name": "Arremessar pelo Inferno",
+        "description": "A partir do 14º nível, quando você acerta a criatura com an ataque, você pode usar esta característica para instantaneamente transportar o alvo através o menor planos. O criatura desaparece e é arremessado através a pesadelo paisagem. At o terminar de vocêr próximo turno, o alvo retorna para o espaço it anteriormente ocupado, ou o mais próximo desocupado espaço. If o alvo é não a ínfero, it sofre 10d10 psychic dano as it abalado de seu horrível experiência. Depois de usar esta característica, você não pode uso it again até você termina a descanso longo."
+      }
+    },
+    "The Great Old One": {
+      "Awakened Mind": {
+        "name": "Mente Desperta",
+        "description": "A partir do 1º nível, seu alienígena conhecimento gives você o habilidade para tocar o mentes of outras criaturas. Você pode comunicar telepaticamente com qualquer criatura você pode see a até 9 metros de você. Você não need para compartilhar a idioma com a criatura for it para entender seu telepathic mensagens, mas a criatura deve ser able para entender at menos uma idioma."
+      },
+      "Entropic Ward": {
+        "name": "Proteção Entrópica",
+        "description": "No 6º nível, quando a criatura faz an jogada de ataque contra você, você pode usar sua reação para impor desvantagem on que rolagem. If o ataque erra você, seu próximo jogada de ataque contra a criatura tem vantagem if você faz it antes o terminar de vocêr próximo turno. Depois de usar esta característica, você não pode uso it again até você termina a descanso curto ou longo."
+      },
+      "Thought Shield": {
+        "name": "Escudo Mental",
+        "description": "A partir do 10º nível, seu pensamentos não pode ser read by telepathy ou outras means a menos que você permitir it. Also, sempre que a criatura causa psychic dano para você, que criatura sofre o mesmo quantidade de dano que você do."
+      },
+      "Create Thrall": {
+        "name": "Criar Servo",
+        "description": "No 14º nível, você ganha o habilidade para infectar a humanoide's mind com o alienígena magia de vocêr patrono. Você pode usar seu ação para tocar an incapacitado humanoide. That criatura é então enfeitiçado by você até a remover maldiçãa magia é conjurar on it, o enfeitiçado condição é removed, ou você uso esta característica again. Você pode comunicar telepaticamente com o enfeitiçada criatura as longo as o duas of você é on o mesmo plano of existência."
+      }
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "Abjuration Savant": {
+        "name": "Sábio da Abjuração",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar an abjuraçãa magia em seu grimório é reduzido pela metade."
+      },
+      "Arcane Ward": {
+        "name": "Proteção Arcana",
+        "description": "A partir do 2º nível, quando você conjura an abjuraçãa magia of 1st nível ou superior, você pode ao mesmo tempo criar a mágico proteção on você mesmo que dura até você termina a descanso longo. O proteção tem pontos de vida igual a twice seu mago nível + seu modificador de Inteligência. Whenever você sofre dano, o proteção sofre o dano em vez disso. If esta dano reduces o proteção para 0 pontos de vida, você sofre qualquer restante dano."
+      },
+      "Projected Ward": {
+        "name": "Proteção Projetada",
+        "description": "A partir do 6º nível, quando a criatura que você pode see a até 9 metros of você sofres dano, você pode usar sua reação para causar seu Arcane Ward para absorb que dano. If esta dano reduces o proteção para 0 pontos de vida, o protegida criatura sofre qualquer restante dano."
+      },
+      "Improved Abjuration": {
+        "name": "Abjuração Aprimorada",
+        "description": "A partir do 10º nível, quando você conjura an abjuraçãa magia que requires você para fazer an teste de atributo as a parte of conjuração que magia (as in countermagia e dissipar magia), você adiciona seu bônus de proficiência para que teste de atributo."
+      },
+      "Spell Resistance": {
+        "name": "Resistência a Magias",
+        "description": "A partir do 14º nível, você tem vantagem on salvaguardas contra magias. Além disso, você tem resistência contra o dano of magias."
+      }
+    },
+    "School of Conjuration": {
+      "Conjuration Savant": {
+        "name": "Sábio da Conjuração",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar a conjuration magia em seu grimório é reduzido pela metade."
+      },
+      "Minor Conjuration": {
+        "name": "Conjuração Menor",
+        "description": "A partir do 2º nível, você pode usar sua ação para conjure up an inanimado objeto in seu mão ou on o ground in an desocupado espaço a até 3 metros de você. Esta objeto pode ser no maior que 3 pés on a side e pesar no mais de 10 libras, e seu forma deve ser que of a não mágico objeto que você tem seen. O objeto é visivelmente mágico. O objeto desaparece depois de 1 hora, quando você uso esta característica again, ou se ela sofre ou causa qualquer dano."
+      },
+      "Benign Transposition": {
+        "name": "Transposição Benigna",
+        "description": "A partir do 6º nível, você pode usar sua ação para teletransportar até 9 metros para an desocupado espaço que você pode see, ou que você pode see é ocupado by a Pequeno ou Média criatura disposta para ser teleported. After você uso esta característica, você não pode uso it again até você termina a descanso longo ou você conjura a conjuration magia of 1st nível ou superior."
+      },
+      "Focused Conjuration": {
+        "name": "Conjuração Focada",
+        "description": "A partir do 10º nível, enquanto você é concentrando-se on a conjuration magia, seu concentração não pode ser quebrada as a result of taking dano."
+      },
+      "Durable Summons": {
+        "name": "Invocações Duráveis",
+        "description": "A partir do 14º nível, qualquer criatura que você invocar ou criar com a conjuration magia tem 30 temporários pontos de vida."
+      }
+    },
+    "School of Divination": {
+      "Divination Savant": {
+        "name": "Sábio da Adivinhação",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar a divination magia em seu grimório é reduzido pela metade."
+      },
+      "Portent": {
+        "name": "Presságio",
+        "description": "A partir do 2º nível, quando você termina a descanso longo, rolagem duas d20 e record o números rolado. Você pode substituir qualquer jogada de ataque, salvaguarda, ou teste de atributo feita by você ou a criatura que você pode see com uma dose premonição rolls. Você deve escolha para do so antes o rolagem, e você pode substituir a rolagem in dessa forma apenas uma vez por turnoo. Each premonição rolagem pode ser used apenas uma vez. Quando você termina a descanso longo, você perde qualquer não usadas premonição rolls."
+      },
+      "Expert Divination": {
+        "name": "Adivinhação Especialista",
+        "description": "A partir do 6º nível, quando você conjura a divination magia of 2nd nível ou superior usando a espaço de magia, você recupera uma gasto espaço de magia. O espaço você recupera deve ser of a nível menor que a magia você conjura e não pode ser superior que 5th nível."
+      },
+      "The Third Eye": {
+        "name": "O Terceiro Olho",
+        "description": "A partir do 10º nível, você pode usar sua ação para increase seu powers of perception. Quando você do so, escolha uma do seguintes benefícios, which dura até você é incapacitado ou você sofre a descanso curto ou longo: Visão no Escuro (18 metros), Visão Etérea (see em o Etéreo Plano), Compreensão Maior (read qualquer idioma), ou Ver Invisibilidade."
+      },
+      "Greater Portent": {
+        "name": "Presságio Maior",
+        "description": "A partir do 14º nível, você rolagem três d20 para vocêr Portent característica, rather que duas."
+      }
+    },
+    "School of Enchantment": {
+      "Enchantment Savant": {
+        "name": "Sábio do Encantamento",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar an enchantment magia em seu grimório é reduzido pela metade."
+      },
+      "Hypnotic Gaze": {
+        "name": "Olhar Hipnótico",
+        "description": "A partir do 2º nível, como uma ação, escolha uma criatura que você pode see a até 1,5 metro de você. If o alvo pode see ou ouvir você, it deve ser bem-sucedida em uma salvaguarda de Sabedoria contra seu mago CD de resistência à magia ou ser enfeitiçado by você até o final do seu próximo turno. O enfeitiçada criatura's deslocamento cai para 0 e it é incapacitado e visivelmente atordoada. On subsequentes turnos, você pode usar sua ação para manter esta efeito até o final do seu próximo turno. O efeito termina if você movimento mais de 1,5 metro distância, if a criatura pode nem see nor ouvir você, ou if a criatura sofre dano."
+      },
+      "Instinctive Charm": {
+        "name": "Encanto Instintivo",
+        "description": "A partir do 6º nível, quando a criatura você pode see a até 9 metros of você fazs an jogada de ataque contra você, você pode usar sua reação para desviar o ataque. O ataqueer deve fazer uma salvaguarda de Sabedoria. Em uma falha, o ataqueer deve alvo a criatura mais próxima para it, não contando você ou itself. Depois de usar esta característica, você não pode uso it até você termina a descanso longo, a menos que você gastar a espaço de magia of qualquer nível para usar it again."
+      },
+      "Split Enchantment": {
+        "name": "Encantamento Dividido",
+        "description": "A partir do 10º nível, quando você conjura an enchantment magia of 1st nível ou superior que alvos apenas uma criatura, você pode tem it alvo a second criatura."
+      },
+      "Alter Memories": {
+        "name": "Alterar Memórias",
+        "description": "No 14º nível, quando você conjura an enchantment magia para charm uma ou mais criaturas, você pode alterar uma criatura's percepção so que it permanece inconsciente of ser enfeitiçado. Além disso, uma vez antes a magia expirar, você pode usar sua ação para try para fazer as escolhidas criatura esquecer some do tempo it spent enfeitiçado. O criatura deve sucedem on an Inteligência salvaguarda contra seu mago CD de resistência à magia ou perde a número de horas of seu memórias igual a 1 + seu modificador de Carisma (mínimo 1)."
+      }
+    },
+    "School of Evocation": {
+      "Evocation Savant": {
+        "name": "Sábio da Evocação",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar an evocaçãa magia em seu grimório é reduzido pela metade."
+      },
+      "Sculpt Spells": {
+        "name": "Esculpir Magias",
+        "description": "A partir do 2º nível, quando você conjura an evocaçãa magia que afeta outras criaturas que você pode see, você pode escolha a number dom igual a 1 + a magia's nível. O escolhidas criaturas automaticamente sucedem on their salvaguardas contra a magia, e they sofrer no dano if they would normalmente sofrer metade dano on a successful salvaguarda."
+      },
+      "Potent Cantrip": {
+        "name": "Truque Potente",
+        "description": "A partir do 6º nível, quando a criatura succeeds on a salvaguarda contra seu truque, a criatura sofre metado truque's dano (if qualquer) mas sofre no adicional efeito do truque."
+      },
+      "Empowered Evocation": {
+        "name": "Evocação Fortalecida",
+        "description": "A partir do 10º nível, você pode adiciona seu modificador de Inteligência para uma rolagem de dano of qualquer mago evocaçãa magia você conjura."
+      },
+      "Overchannel": {
+        "name": "Canalização Excessiva",
+        "description": "A partir do 14º nível, quando você conjura a maga magia of 1st através 5th nível que causa dano, você pode causar máximo dano com que magia. O primeiro tempo você do so, você sofre no adverso efeito. If você uso esta característica again antes você termina a descanso longo, você sofre 2d12 necrótico dano for cada nível da magia, imediatamente depois você conjura it. Esta dano ignora resistência e imunidade."
+      }
+    },
+    "School of Illusion": {
+      "Illusion Savant": {
+        "name": "Sábio da Ilusão",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar an ilusãa magia em seu grimório é reduzido pela metade."
+      },
+      "Improved Minor Illusion": {
+        "name": "Ilusão Menor Aprimorada",
+        "description": "Quando você escolhe esta escola at 2nd nível, você aprendo menor ilusão truque. If você já conhece esta truque, você aprende a diferente mago truque à sua escolha. Quando você conjura menor ilusão, você pode criar both a som e an imagem com a única conjuração da magia."
+      },
+      "Malleable Illusions": {
+        "name": "Ilusões Maleáveis",
+        "description": "A partir do 6º nível, quando você conjura an ilusãa magia que tem a duração of 1 minuto ou mais, você pode usar sua ação para change o natureza of que ilusão (usando a magia's normal parâmetros for o ilusão), desde que você pode see o ilusão."
+      },
+      "Illusory Self": {
+        "name": "Eu Ilusório",
+        "description": "A partir do 10º nível, quando a criatura faz an jogada de ataque contra você, você pode usar sua reação para interpor an ilusório duplicar de vocêrself entre o ataqueer e você mesmo. O ataque automaticamente erra você, então o ilusão se dissipa. Depois de usar esta característica, você não pode uso it again até você termina a descanso curto ou longo."
+      },
+      "Illusory Reality": {
+        "name": "Realidade Ilusória",
+        "description": "Ao chegar ao 14º nível, quando você conjura an ilusãa magia of 1st nível ou superior, você pode escolha uma inanimado, não mágico objeto que é parte do ilusão e fazer que objeto real. Você pode do esta on seu turnoo como uma ação bônus enquanto a magia é ativa. O objeto permanece real por 1 minuto. It não pode causar dano ou otherwise directly ferir anyone."
+      }
+    },
+    "School of Necromancy": {
+      "Necromancy Savant": {
+        "name": "Sábio da Necromancia",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar a necromancy magia em seu grimório é reduzido pela metade."
+      },
+      "Grim Harvest": {
+        "name": "Colheita Sombria",
+        "description": "No 2º nível, uma vez por turnoo quando você mata uma ou mais criaturas com a magia of 1st nível ou superior, você recupera pontos de vida igual a twice a magia's nível, ou três vezes seu nível if a magia belongs para o School of Necromancy. Você não ganha esta beneficiar for killing constructos ou morto-vivo."
+      },
+      "Undead Thralls": {
+        "name": "Servos Mortos-vivos",
+        "description": "No 6º nível, você adiciona o animar mortos magia para seu grimório se ela é não there já. Quando você conjura animar mortos, você pode alvo uma adicional cadáver ou pilha of ossos, creating outra zumbi ou esqueleto, as apropriado. Whenever você criar an morto-vivo usando a necromancy magia, it tem adicional benefícios: seu acerto ponto máximo é aumentado by an quantia igual a seu mago nível, e it adds seu bônus de proficiência para seu arma rolagem de danos."
+      },
+      "Inured to Undeath": {
+        "name": "Habituado à Não Morte",
+        "description": "A partir do 10º nível, você tem resistência para necrótico dano e seu acerto ponto máximo não pode ser reduzida. Você tem spent so much tempo dealing com morto-vivo e o forças que animar them que você tem ficam inured para some doir piores efeitos."
+      },
+      "Command Undead": {
+        "name": "Comandar Mortos-vivos",
+        "description": "A partir do 14º nível, como uma ação, você pode escolha uma morto-vivo que você pode see a até 18 metros de você. That criatura deve fazer uma salvaguarda de Carisma contra seu mago CD de resistência à magia. If ela tem sucesso, você não pode uso esta característica on it again. Se falhar, it fica aliadas para você e obeys seu commands até você uso esta característica again. Intelligent morto-vivo são mais difíceis para controlar e tem vantagem on o salvaguarda."
+      }
+    },
+    "School of Transmutation": {
+      "Transmutation Savant": {
+        "name": "Sábio da Transmutação",
+        "description": "A partir do momento em que você seleciona esta escola no 2º nível, o ouro e tempo você deve gastar para copiar a transmutation magia em seu grimório é reduzido pela metade."
+      },
+      "Minor Alchemy": {
+        "name": "Alquimia Menor",
+        "description": "A partir do 2º nível, você pode temporariamente alterar o físicos propriedades of uma não mágico objeto, changing it de uma substância em outra. Você realiza a especiais alchemical procedure on uma objeto composed entirely of madeira, pedra (mas não a gema), ferro, cobre, ou prata. For cada 10 minutes você gastar performing o procedure, você pode transformar up para 1 cúbico pé of material. Depois de 1 hora, ou até você perde seu concentração, o material retorna para seu original substância."
+      },
+      "Transmuter's Stone": {
+        "name": "Pedra do Transmutador",
+        "description": "A partir do 6º nível, você pode gastar 8 horas creating a transmuter's pedra que armazena transmutation magia. A criatura gains a beneficiar à sua escolha as longo as o pedra é in a criatura's posse: Visão no Escuro (18 metros), deslocamento aumentado by 3 metros, proficiência in Constitution salvaguardas, ou resistência para ácido, frio, fogo, elétrico, ou trovejante dano."
+      },
+      "Shapechanger": {
+        "name": "Metamorfo",
+        "description": "No 10º nível, você adiciona o metamorfose magia para seu grimório. Você pode conjurar metamorfose sem gastar a espaço de magia, mas você pode alvo apenas você mesmo e transformar em a besta whose nível de desafio é 1 ou menor. Once você conjura metamorfose in dessa forma, você não pode do so again até você termina a descanso curto ou longo."
+      },
+      "Master Transmuter": {
+        "name": "Mestre Transmutador",
+        "description": "A partir do 14º nível, você pode usar sua ação para consume o reserva of transmutation magia armazenada dentro seu transmuter's pedra. Quando você do so, escolha uma do seguintes efeitos: Transformação Maior (conjurar metamorfose sem a espaço de magia, lasting 1 hora), Panaceia (remover todo maldições, doenças, e venenos; restaurar todo pontos de vida), Restaurar Vida (conjurar raise mortos sem a espaço de magia), ou Restaurar Juventude (fazer a tocada criatura parecer up para 3d10 years mais jovem)."
+      }
+    }
+  }
+}

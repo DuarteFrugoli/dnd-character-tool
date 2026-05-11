@@ -1,0 +1,71 @@
+{
+  "Dwarf": {
+    "name": "Anão",
+    "languages": ["Comum", "Anão"],
+    "subraces": [
+      { "name": "Anão da Colina" },
+      { "name": "Anão da Montanha" }
+    ]
+  },
+  "Elf": {
+    "name": "Elfo",
+    "languages": ["Comum", "Élfico"],
+    "subraces": [
+      { "name": "Alto Elfo" },
+      { "name": "Elfo da Floresta" },
+      { "name": "Elfo Negro (Drow)" }
+    ]
+  },
+  "Halfling": {
+    "name": "Halfling",
+    "languages": ["Comum", "Halfling"],
+    "subraces": [
+      { "name": "Pés-Leves" },
+      { "name": "Robusto" }
+    ]
+  },
+  "Human": {
+    "name": "Humano",
+    "languages": ["Comum", "um idioma adicional à sua escolha"],
+    "subraces": []
+  },
+  "Dragonborn": {
+    "name": "Draconato",
+    "languages": ["Comum", "Dracônico"],
+    "subraces": [
+      { "name": "Negro (Ácido)" },
+      { "name": "Azul (Elétrico)" },
+      { "name": "Latão (Fogo)" },
+      { "name": "Bronze (Elétrico)" },
+      { "name": "Cobre (Ácido)" },
+      { "name": "Ouro (Fogo)" },
+      { "name": "Verde (Veneno)" },
+      { "name": "Vermelho (Fogo)" },
+      { "name": "Prata (Frio)" },
+      { "name": "Branco (Frio)" }
+    ]
+  },
+  "Gnome": {
+    "name": "Gnomo",
+    "languages": ["Comum", "Gnômico"],
+    "subraces": [
+      { "name": "Gnomo da Floresta" },
+      { "name": "Gnomo das Rochas" }
+    ]
+  },
+  "Half-Elf": {
+    "name": "Meio-Elfo",
+    "languages": ["Comum", "Élfico", "um idioma adicional à sua escolha"],
+    "subraces": []
+  },
+  "Half-Orc": {
+    "name": "Meio-Orc",
+    "languages": ["Comum", "Orc"],
+    "subraces": []
+  },
+  "Tiefling": {
+    "name": "Tiefling",
+    "languages": ["Comum", "Infernal"],
+    "subraces": []
+  }
+}

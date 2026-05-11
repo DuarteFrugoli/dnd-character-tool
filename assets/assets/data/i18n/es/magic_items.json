@@ -1,0 +1,70 @@
+{
+  "Potion of Healing": {
+    "name": "Poción de curación",
+    "description": "Recuperas 2d4 + 2 puntos de vida cuando bebes esta poción."
+  },
+  "Potion of Greater Healing": {
+    "name": "Poción de curación mayor",
+    "description": "Recuperas 4d4 + 4 puntos de vida cuando bebes esta poción."
+  },
+  "Potion of Superior Healing": {
+    "name": "Poción de curación superior",
+    "description": "Recuperas 8d4 + 8 puntos de vida cuando bebes esta poción."
+  },
+  "Potion of Supreme Healing": {
+    "name": "Poción de curación suprema",
+    "description": "Recuperas 10d4 + 20 puntos de vida cuando bebes esta poción."
+  },
+  "Bag of Holding": {
+    "name": "Bolsa de tenencia",
+    "description": "Este bolso tiene un espacio interior considerablemente mayor que sus dimensiones exteriores. La bolsa puede contener hasta 500 libras, sin exceder un volumen de 64 pies cúbicos. La bolsa pesa 15 libras, independientemente de su contenido."
+  },
+  "+1 Weapon": {
+    "name": "+1 arma",
+    "description": "Tienes una bonificación de +1 a las tiradas de ataque y daño realizadas con esta arma mágica."
+  },
+  "+2 Weapon": {
+    "name": "+2 Arma",
+    "description": "Tienes una bonificación de +2 a las tiradas de ataque y daño realizadas con esta arma mágica."
+  },
+  "+3 Weapon": {
+    "name": "+3 Arma",
+    "description": "Tienes una bonificación de +3 a las tiradas de ataque y daño realizadas con esta arma mágica."
+  },
+  "+1 Armor": {
+    "name": "+1 Armadura",
+    "description": "Tienes una bonificación de +1 a la CA mientras usas esta armadura."
+  },
+  "Cloak of Protection": {
+    "name": "Capa de protección",
+    "description": "Obtienes una bonificación de +1 a la CA y a las tiradas de salvación mientras usas esta capa."
+  },
+  "Ring of Protection": {
+    "name": "Anillo de protección",
+    "description": "Obtienes una bonificación de +1 a la CA y a las tiradas de salvación mientras llevas este anillo."
+  },
+  "Boots of Speed": {
+    "name": "Botas de velocidad",
+    "description": "Mientras usas estas botas, puedes usar una acción adicional y hacer clic en los talones de las botas para duplicar tu velocidad al caminar. Además, el terreno difícil no te cuesta movimiento extra. El efecto termina si usas una acción adicional para volver a hacer clic con los talones o si ya no usas las botas."
+  },
+  "Gauntlets of Ogre Power": {
+    "name": "Guanteletes de poder ogro",
+    "description": "Tu puntuación de Fuerza es 19 mientras usas estos guanteletes. No tienen ningún efecto sobre ti si tu Fuerza ya es 19 o más."
+  },
+  "Headband of Intellect": {
+    "name": "Diadema de intelecto",
+    "description": "Tu puntuación de Inteligencia es 19 mientras usas esta diadema. No tiene ningún efecto sobre ti si tu Inteligencia ya es 19 o más."
+  },
+  "Amulet of Health": {
+    "name": "Amuleto de la salud",
+    "description": "Tu puntuación de Constitución es 19 mientras llevas este amuleto. No tiene ningún efecto sobre ti si tu Constitución ya es 19 o más."
+  },
+  "Wand of Magic Missiles": {
+    "name": "Varita de misiles mágicos",
+    "description": "Esta varita tiene 7 cargas. Mientras lo sostienes, puedes usar una acción para gastar 1 o más de sus cargas para lanzar el hechizo de misil mágico. Por 1 carga, lanzas la versión de primer nivel del hechizo. Puedes aumentar el nivel del espacio para hechizos en uno por cada carga adicional que gastes. La varita recupera 1d6 + 1 cargas gastadas diariamente al amanecer."
+  },
+  "Rope of Climbing": {
+    "name": "Cuerda de Escalada",
+    "description": "Esta cuerda de seda de 60 pies de largo pesa 3 libras y puede soportar hasta 3000 libras. Si sostienes un extremo de la cuerda y usas una acción para pronunciar la palabra de comando, la cuerda se anima. Como acción adicional, puedes ordenar al otro extremo que se mueva hacia el destino que elijas."
+  }
+}

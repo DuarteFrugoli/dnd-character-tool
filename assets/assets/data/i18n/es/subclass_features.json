@@ -1,0 +1,878 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Frenesí",
+        "description": "A partir de que eliges este camino en el nivel 3, puedes entrar en frenesí cuando te enfureces. Si lo haces, mientras dure tu ira podrás realizar un único ataque con arma cuerpo a cuerpo como acción adicional en cada uno de tus turnos posteriores a este. Cuando tu ira termina, sufres un nivel de agotamiento."
+      },
+      "Mindless Rage": {
+        "name": "Rabia sin sentido",
+        "description": "A partir del nivel 6, no puedes ser hechizado ni asustado mientras estás furioso. Si estás encantado o asustado cuando entras en ira, el efecto se suspende mientras dure la ira."
+      },
+      "Intimidating Presence": {
+        "name": "Presencia intimidante",
+        "description": "A partir del nivel 10, puedes usar tu acción para asustar a alguien con tu presencia amenazadora. Elige una criatura que puedas ver a 30 pies de ti. Si la criatura puede verte u oírte, debe superar una tirada de salvación de Sabiduría (CD = 8 + tu bonificación de competencia + tu modificador de Carisma) o tener miedo de ti hasta el final de tu siguiente turno. En turnos posteriores, puedes usar tu acción para extender la duración hasta el final de tu siguiente turno. El efecto termina si la criatura termina su turno fuera de tu línea de visión o a más de 60 pies de ti."
+      },
+      "Retaliation": {
+        "name": "Represalias",
+        "description": "A partir del nivel 14, cuando recibes daño de una criatura que está a 5 pies de ti, puedes usar tu reacción para realizar un ataque con arma cuerpo a cuerpo contra esa criatura."
+      }
+    },
+    "Path of the Totem Warrior": {
+      "Spirit Seeker": {
+        "name": "Buscador de espíritus",
+        "description": "El tuyo es un camino que busca la sintonía con el mundo natural. En el nivel 3, obtienes la capacidad de lanzar hechizos de sentir la bestia y hablar con los animales, pero sólo como rituales."
+      },
+      "Totem Spirit": {
+        "name": "Espíritu tótem",
+        "description": "En el nivel 3, elige un espíritu tótem y obtén su característica. Oso: Mientras estás furioso, tienes resistencia a todo el daño excepto al daño psíquico. Águila: mientras están furiosas, otras criaturas tienen desventaja en las tiradas de ataque de oportunidad contra ti, y puedes usar Dash como acción adicional. Lobo: mientras están furiosos, tus amigos tienen ventaja en las tiradas de ataque cuerpo a cuerpo contra cualquier criatura a 5 pies de ti que sea hostil hacia ti."
+      },
+      "Aspect of the Beast": {
+        "name": "Aspecto de la Bestia",
+        "description": "Obtienes un beneficio mágico basado en el animal tótem elegido. Oso: Tu capacidad de carga se duplica y tienes ventaja en las pruebas de Fuerza para empujar, tirar, levantar o romper cosas. Águila: Puedes ver hasta 1 milla de distancia sin dificultad, y la luz tenue no impone desventajas en tus pruebas de Percepción. Lobo: puedes rastrear a otras criaturas mientras viajas a un ritmo rápido y puedes moverte sigilosamente mientras viajas a un ritmo normal."
+      },
+      "Spirit Walker": {
+        "name": "Caminante espiritual",
+        "description": "Puedes lanzar el hechizo de comunión con la naturaleza, pero sólo como un ritual. Cuando lo haces, aparece una versión espiritual de uno de tus animales tótem para transmitir la información que buscas."
+      },
+      "Totemic Attunement": {
+        "name": "Sintonía totémica",
+        "description": "Obtienes un beneficio mágico basado en un animal tótem de tu elección. Oso: mientras está furioso, cualquier criatura hostil a 5 pies de ti tiene desventaja en las tiradas de ataque contra objetivos que no sean tú. Águila: Mientras estás furioso, tienes una velocidad de vuelo igual a tu velocidad al caminar, pero caes si terminas tu turno en el aire. Lobo: mientras estás furioso, puedes usar una acción adicional para derribar a una criatura grande o más pequeña cuando la golpeas con un ataque de arma cuerpo a cuerpo."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Competencias adicionales",
+        "description": "Cuando te unes al College of Lore en el nivel 3, adquieres competencia con tres habilidades de tu elección."
+      },
+      "Cutting Words": {
+        "name": "Cortar palabras",
+        "description": "También en el nivel 3, cuando una criatura que puedes ver a menos de 60 pies hace una tirada de ataque, prueba de habilidad o tirada de daño, puedes usar tu reacción para gastar un uso de Inspiración bárdica, tirar el dado y restar el número de la tirada de la criatura. La criatura es inmune si no puede oírte o es inmune a ser encantada."
+      },
+      "Additional Magical Secrets": {
+        "name": "Secretos mágicos adicionales",
+        "description": "En el nivel 6, aprendes dos hechizos de tu elección de cualquier clase. El hechizo que elijas debe tener un nivel que puedas lanzar. Los hechizos elegidos cuentan como hechizos de bardo para ti, pero no cuentan para el número de hechizos de bardo que conoces."
+      },
+      "Peerless Skill": {
+        "name": "Habilidad incomparable",
+        "description": "A partir del nivel 14, cuando realizas una prueba de habilidad, puedes gastar un uso de Bardic Inspiration. Lanza un dado de Inspiración Bárdica y suma el número obtenido a tu prueba de habilidad. Puedes elegir hacerlo después de tirar, pero antes de que el DM te diga si tienes éxito o fracasas."
+      }
+    },
+    "College of Valor": {
+      "Bonus Proficiencies": {
+        "name": "Competencias adicionales",
+        "description": "Cuando te unes al College of Valor en el nivel 3, adquieres competencia con armaduras medianas, escudos y armas marciales."
+      },
+      "Combat Inspiration": {
+        "name": "Inspiración de combate",
+        "description": "También en el nivel 3, una criatura con un dado de Inspiración Bárdica tuyo puede tirar ese dado y sumar el número a una tirada de daño de arma que acaba de realizar. Alternativamente, cuando se realiza una tirada de ataque contra la criatura, esta puede usar su reacción para tirar el dado y sumar el número a su CA contra ese ataque, después de ver la tirada pero antes de saber si impacta."
+      },
+      "Extra Attack": {
+        "name": "Ataque extra",
+        "description": "A partir del nivel 6, puedes atacar dos veces, en lugar de una, siempre que realices la acción de Ataque en tu turno."
+      },
+      "Battle Magic": {
+        "name": "Magia de batalla",
+        "description": "En el nivel 14, cuando usas tu acción para lanzar un hechizo de bardo, puedes realizar un ataque con arma como acción adicional."
+      }
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "Blessings of Knowledge": {
+        "name": "Bendiciones del conocimiento",
+        "description": "En el primer nivel, aprendes dos idiomas de tu elección. También dominas dos de las siguientes habilidades: Arcanos, Historia, Naturaleza o Religión. Tu bonificación de competencia se duplica por cualquier prueba de habilidad que realices y que utilice cualquiera de esas habilidades."
+      },
+      "Channel Divinity: Knowledge of the Ages": {
+        "name": "Canalizar la Divinidad: Conocimiento de las Edades",
+        "description": "A partir del nivel 2, puedes usar tu Canal de Divinidad para acceder a un pozo divino de conocimiento. Como acción, eliges una habilidad o herramienta. Durante 10 minutos, dominas la habilidad o herramienta elegida."
+      },
+      "Channel Divinity: Read Thoughts": {
+        "name": "Canalizar Divinidad: leer pensamientos",
+        "description": "En el nivel 6, puedes usar tu Canalizar Divinidad para leer los pensamientos de una criatura. Lanzas detectar pensamientos (la CD de salvación es igual a la CD de salvación del clérigo) sin necesidad de espacio para hechizos ni componentes. El objetivo que falla su salvación será encantado por ti durante 1 minuto o hasta que le hagas daño."
+      },
+      "Potent Spellcasting": {
+        "name": "Lanzamiento de hechizos potente",
+        "description": "A partir del nivel 8, agregas tu modificador de Sabiduría al daño que infliges con cualquier truco de clérigo."
+      },
+      "Visions of the Past": {
+        "name": "Visiones del pasado",
+        "description": "A partir del nivel 17, puedes invocar visiones del pasado que se relacionan con un objeto que sostienes o tu entorno inmediato. Pasas al menos 1 minuto en meditación y oración, luego recibes visiones confusas y oníricas de acontecimientos recientes. Puedes meditar de esta manera durante una cantidad de minutos igual a tu puntuación de Sabiduría y debes mantener la concentración durante ese tiempo."
+      }
+    },
+    "Life Domain": {
+      "Bonus Proficiency": {
+        "name": "Competencia adicional",
+        "description": "Cuando eliges este dominio en el nivel 1, obtienes competencia con armadura pesada."
+      },
+      "Disciple of Life": {
+        "name": "Discípulo de la vida",
+        "description": "Además, a partir del nivel 1, tus hechizos de curación son más efectivos. Siempre que uses un hechizo de nivel 1 o superior para restaurar los puntos de golpe de una criatura, la criatura recupera puntos de golpe adicionales iguales a 2 + el nivel del hechizo."
+      },
+      "Channel Divinity: Preserve Life": {
+        "name": "Canalizar Divinidad: Preservar la vida",
+        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado y evocas energía curativa que puede restaurar una cantidad de puntos de vida igual a cinco veces tu nivel de clérigo. Elige cualquier criatura a 30 pies de ti y divide esos puntos de vida entre ellas. Esta característica puede restaurar una criatura a no más de la mitad de su máximo de puntos de vida."
+      },
+      "Blessed Healer": {
+        "name": "Bendito sanador",
+        "description": "A partir del nivel 6, los hechizos curativos que lanzas sobre otros también te curan a ti. Cuando lanzas un hechizo de nivel 1 o superior que restaura puntos de golpe a una criatura distinta a ti, recuperas puntos de golpe iguales a 2 + el nivel del hechizo."
+      },
+      "Divine Strike": {
+        "name": "Golpe divino",
+        "description": "En el nivel 8, una vez en cada uno de tus turnos, cuando golpeas a una criatura con un ataque con arma, puedes hacer que el ataque cause 1d8 de daño radiante adicional al objetivo. Cuando alcanzas el nivel 14, el daño extra aumenta a 2d8."
+      },
+      "Supreme Healing": {
+        "name": "Sanación Suprema",
+        "description": "A partir del nivel 17, cuando normalmente tirarías uno o más dados para restaurar los puntos de vida con un hechizo, utilizas el número más alto posible para cada dado. Por ejemplo, en lugar de restaurar 2d6 puntos de vida, restauras 12."
+      }
+    },
+    "Light Domain": {
+      "Bonus Cantrip": {
+        "name": "Truco extra",
+        "description": "Cuando eliges este dominio en el 1er nivel, obtienes el truco de luz si aún no lo sabes."
+      },
+      "Warding Flare": {
+        "name": "Llamarada protectora",
+        "description": "También en el nivel 1, cuando eres atacado por una criatura a 30 pies de ti que puedes ver, puedes usar tu reacción para imponer desventaja en la tirada de ataque, provocando que una luz brille ante el atacante. Puedes usar esta característica una cantidad de veces igual a tu modificador de Sabiduría (mínimo una vez) y recuperar todos los usos con un descanso prolongado."
+      },
+      "Channel Divinity: Radiance of the Dawn": {
+        "name": "Canal Divinidad: Resplandor del amanecer",
+        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado y se disipa cualquier oscuridad mágica dentro de 30 pies de ti. Además, cada criatura hostil en un radio de 30 pies debe realizar una tirada de salvación de Constitución, recibiendo 2d10 + tu nivel de clérigo de daño radiante si falla, o la mitad si tiene éxito."
+      },
+      "Improved Flare": {
+        "name": "Destello mejorado",
+        "description": "A partir del nivel 6, también puedes usar tu función Warding Flare cuando una criatura que puedes ver a 30 pies de ti ataca a otra criatura que no seas tú."
+      },
+      "Potent Spellcasting": {
+        "name": "Lanzamiento de hechizos potente",
+        "description": "A partir del nivel 8, agregas tu modificador de Sabiduría al daño que infliges con cualquier truco de clérigo."
+      },
+      "Corona of Light": {
+        "name": "Corona de Luz",
+        "description": "A partir del nivel 17, puedes usar tu acción para activar un aura de luz solar que dura 1 minuto o hasta que la desestimes. Emites luz brillante en un radio de 60 pies y luz tenue 30 pies más allá. Tus enemigos en la luz brillante tienen desventaja en las tiradas de salvación contra cualquier hechizo que cause fuego o daño radiante."
+      }
+    },
+    "Nature Domain": {
+      "Acolyte of Nature": {
+        "name": "Acólito de la naturaleza",
+        "description": "En el nivel 1, aprendes un truco de druida de tu elección. También adquieres competencia en una de las siguientes habilidades: manejo de animales, naturaleza o supervivencia."
+      },
+      "Bonus Proficiency": {
+        "name": "Competencia adicional",
+        "description": "También en el nivel 1, ganas competencia con armadura pesada."
+      },
+      "Channel Divinity: Charm Animals and Plants": {
+        "name": "Canalizar Divinidad: Encantar animales y plantas",
+        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado e invocas el nombre de tu deidad. Cada bestia o criatura vegetal que pueda verte a menos de 30 pies debe realizar una tirada de salvación de Sabiduría. Si falla, quedará encantado durante 1 minuto o hasta que sufra daño."
+      },
+      "Dampen Elements": {
+        "name": "Elementos humedecidos",
+        "description": "A partir del nivel 6, cuando tú o una criatura a 30 pies de ti sufre daño por ácido, frío, fuego, relámpago o trueno, puedes usar tu reacción para otorgar resistencia a la criatura contra esa instancia del daño."
+      },
+      "Divine Strike": {
+        "name": "Golpe divino",
+        "description": "En el nivel 8, una vez en cada uno de tus turnos, cuando golpeas a una criatura con un ataque con arma, puedes hacer que el ataque cause 1d8 daños adicionales por frío, fuego o rayo (tu elección) al objetivo. Cuando alcanzas el nivel 14, el daño extra aumenta a 2d8."
+      },
+      "Master of Nature": {
+        "name": "Maestro de la naturaleza",
+        "description": "En el nivel 17, obtienes la capacidad de comandar animales y criaturas vegetales. Mientras las criaturas están encantadas con tu función Encantar animales y plantas, puedes realizar una acción adicional en tu turno para ordenar verbalmente lo que hará cada una de esas criaturas en su próximo turno."
+      }
+    },
+    "Tempest Domain": {
+      "Bonus Proficiencies": {
+        "name": "Competencias adicionales",
+        "description": "En el nivel 1, adquieres competencia con armas marciales y armaduras pesadas."
+      },
+      "Wrath of the Storm": {
+        "name": "La ira de la tormenta",
+        "description": "También en el nivel 1, cuando una criatura a 5 pies de ti que puedas ver te golpea con un ataque, puedes usar tu reacción para hacer que la criatura realice una tirada de salvación de Destreza. Se necesitan 2d8 daños por rayos o truenos (a tu elección) si falla la salvación, o la mitad si tienes éxito. Puedes usar esta característica una cantidad de veces igual a tu modificador de Sabiduría (mínimo una vez) y recuperar todos los usos con un descanso prolongado."
+      },
+      "Channel Divinity: Destructive Wrath": {
+        "name": "Canalizar la divinidad: ira destructiva",
+        "description": "A partir del nivel 2, cuando lanzas daño por relámpago o trueno, puedes usar tu Canal de Divinidad para causar el máximo daño en lugar de tirar."
+      },
+      "Thunderbolt Strike": {
+        "name": "Golpe de rayo",
+        "description": "En el nivel 6, cuando infliges daño de rayo a una criatura Grande o más pequeña, también puedes empujarla hasta 10 pies de distancia de ti."
+      },
+      "Divine Strike": {
+        "name": "Golpe divino",
+        "description": "En el nivel 8, una vez en cada uno de tus turnos, cuando golpeas a una criatura con un ataque con arma, puedes hacer que el ataque cause 1d8 de daño de trueno adicional al objetivo. Cuando alcanzas el nivel 14, el daño extra aumenta a 2d8."
+      },
+      "Stormborn": {
+        "name": "Nacido de la tormenta",
+        "description": "En el nivel 17, tienes una velocidad de vuelo igual a tu velocidad actual al caminar siempre que no estés bajo tierra o en interiores."
+      }
+    },
+    "Trickery Domain": {
+      "Blessing of the Trickster": {
+        "name": "Bendición del embaucador",
+        "description": "A partir de que eliges este dominio en el nivel 1, puedes usar tu acción para tocar a una criatura voluntaria distinta a ti para darle ventaja en las pruebas de Destreza (Sigilo). Esta bendición dura 1 hora o hasta que uses esta función nuevamente."
+      },
+      "Channel Divinity: Invoke Duplicity": {
+        "name": "Canalizar la divinidad: invocar la duplicidad",
+        "description": "A partir del nivel 2, como acción, creas un duplicado ilusorio perfecto de ti mismo que dura 1 minuto. La ilusión aparece en un espacio desocupado que puedes ver a 30 pies de ti. Como acción adicional en tu turno, puedes mover la ilusión hasta 30 pies. Puedes lanzar hechizos como si estuvieras en el espacio de la ilusión, pero debes usar tus propios sentidos."
+      },
+      "Channel Divinity: Cloak of Shadows": {
+        "name": "Canalizar Divinidad: Capa de Sombras",
+        "description": "A partir del nivel 6, como acción, te vuelves invisible hasta el final de tu siguiente turno. Te vuelves visible si atacas o lanzas un hechizo."
+      },
+      "Divine Strike": {
+        "name": "Golpe divino",
+        "description": "En el nivel 8, una vez en cada uno de tus turnos, cuando golpeas a una criatura con un ataque con arma, puedes hacer que el ataque cause 1d8 daños de veneno adicionales al objetivo. Cuando alcanzas el nivel 14, el daño extra aumenta a 2d8."
+      },
+      "Improved Duplicity": {
+        "name": "Duplicidad mejorada",
+        "description": "En el nivel 17, puedes crear hasta cuatro duplicados de ti mismo, en lugar de uno, cuando usas Invocar Duplicidad. Como acción adicional en tu turno, puedes mover cualquier número de ellos hasta 30 pies, hasta un alcance máximo de 120 pies."
+      }
+    },
+    "War Domain": {
+      "Bonus Proficiencies": {
+        "name": "Competencias adicionales",
+        "description": "En el nivel 1, adquieres competencia con armas marciales y armaduras pesadas."
+      },
+      "War Priest": {
+        "name": "Sacerdote de guerra",
+        "description": "Desde el nivel 1, cuando usas la acción de Ataque, puedes realizar un ataque con arma como acción adicional. Puedes usar esta característica una cantidad de veces igual a tu modificador de Sabiduría (mínimo una vez) y recuperar todos los usos con un descanso prolongado."
+      },
+      "Channel Divinity: Guided Strike": {
+        "name": "Canalizar Divinidad: Golpe guiado",
+        "description": "A partir del nivel 2, cuando haces una tirada de ataque, puedes usar tu Canalizar Divinidad para obtener una bonificación de +10 a la tirada. Haces esta elección antes o después de ver la tirada, pero antes de que se aplique cualquier efecto."
+      },
+      "Channel Divinity: War God's Blessing": {
+        "name": "Channel Divinity: La bendición del dios de la guerra",
+        "description": "En el nivel 6, cuando una criatura a 30 pies de ti realiza una tirada de ataque, puedes usar tu reacción para otorgarle a esa criatura una bonificación de +10 a la tirada usando tu Canalizar Divinidad."
+      },
+      "Divine Strike": {
+        "name": "Golpe divino",
+        "description": "En el nivel 8, una vez en cada uno de tus turnos, cuando golpeas a una criatura con un ataque con arma, puedes hacer que el ataque cause 1d8 daños adicionales del mismo tipo que el arma. Cuando alcanzas el nivel 14, el daño extra aumenta a 2d8."
+      },
+      "Avatar of Battle": {
+        "name": "Avatar de batalla",
+        "description": "En el nivel 17, obtienes resistencia al daño contundente, perforante y cortante de armas no mágicas."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Bonus Cantrip": {
+        "name": "Truco extra",
+        "description": "Cuando eliges este círculo en el nivel 2, aprendes un truco de druida adicional de tu elección."
+      },
+      "Natural Recovery": {
+        "name": "Recuperación Natural",
+        "description": "A partir del nivel 2, durante un breve descanso, puedes elegir espacios de hechizo gastados para recuperarte. Los espacios para hechizos pueden tener un nivel combinado igual o inferior a la mitad de tu nivel de druida (redondeado hacia arriba), y ninguno de los espacios puede ser de nivel 6 o superior. No podrás volver a utilizar esta función hasta que termines un descanso prolongado."
+      },
+      "Land's Stride": {
+        "name": "Paso de tierra",
+        "description": "A partir del nivel 6, moverte a través de terreno difícil no mágico no te cuesta ningún movimiento adicional. También puedes atravesar plantas no mágicas sin que te ralenticen y sin recibir daño si tienen espinas, espinas o un peligro similar."
+      },
+      "Nature's Ward": {
+        "name": "Guardián de la naturaleza",
+        "description": "Cuando alcanzas el nivel 10, los elementales o las hadas no te pueden hechizar ni asustar, y eres inmune al veneno y las enfermedades."
+      },
+      "Nature's Sanctuary": {
+        "name": "Santuario de la naturaleza",
+        "description": "Cuando alcanzas el nivel 14, cuando una criatura bestia o planta te ataca, esa criatura debe realizar una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de druida. Si falla la salvación, la criatura debe elegir un objetivo diferente o el ataque falla automáticamente."
+      }
+    },
+    "Circle of the Moon": {
+      "Combat Wild Shape": {
+        "name": "Forma salvaje de combate",
+        "description": "Cuando eliges este círculo en el nivel 2, obtienes la capacidad de usar Forma salvaje en tu turno como una acción adicional en lugar de una acción. Además, mientras estás transformado por Wild Shape, puedes usar una acción adicional para gastar un espacio de hechizo para recuperar 1d8 puntos de golpe por nivel del espacio de hechizo gastado."
+      },
+      "Circle Forms": {
+        "name": "Formas de círculo",
+        "description": "Los ritos de tu círculo te otorgan la capacidad de transformarte en formas animales más peligrosas. A partir del nivel 2, puedes usar Forma Salvaje para transformarte en una bestia con un índice de desafío tan alto como 1. A partir del nivel 6, puedes transformarte en una bestia con un índice de desafío tan alto como tu nivel de druida dividido por 3, redondeado hacia abajo."
+      },
+      "Primal Strike": {
+        "name": "Golpe primigenio",
+        "description": "A partir del nivel 6, tus ataques en forma de bestia cuentan como mágicos con el fin de superar la resistencia y la inmunidad a ataques y daños no mágicos."
+      },
+      "Elemental Wild Shape": {
+        "name": "Forma salvaje elemental",
+        "description": "En el nivel 10, puedes gastar dos usos de Forma Salvaje al mismo tiempo para transformarte en un elemental de aire, un elemental de tierra, un elemental de fuego o un elemental de agua."
+      },
+      "Thousand Forms": {
+        "name": "Mil Formas",
+        "description": "En el nivel 14, has aprendido a usar la magia para alterar tu forma física de maneras más sutiles. Puedes lanzar el hechizo alter self a voluntad."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Crítico mejorado",
+        "description": "A partir de cuando eliges este arquetipo en el nivel 3, tus ataques con armas obtienen un golpe crítico con una tirada de 19 o 20."
+      },
+      "Remarkable Athlete": {
+        "name": "Atleta notable",
+        "description": "A partir del nivel 7, puedes agregar la mitad de tu bono de competencia (redondeando hacia arriba) a cualquier prueba de Fuerza, Destreza o Constitución que realices y que aún no utilice tu bono de competencia. Además, cuando realizas un salto de longitud corriendo, la distancia que puedes cubrir aumenta en una cantidad de pies igual a tu modificador de Fuerza."
+      },
+      "Additional Fighting Style": {
+        "name": "Estilo de lucha adicional",
+        "description": "En el nivel 10, puedes elegir una segunda opción del rasgo de clase Estilo de lucha."
+      },
+      "Superior Critical": {
+        "name": "Crítico superior",
+        "description": "A partir del nivel 15, tus ataques con armas obtienen un golpe crítico con una tirada de 18, 19 o 20."
+      },
+      "Survivor": {
+        "name": "Sobreviviente",
+        "description": "En el nivel 18, al comienzo de cada uno de tus turnos, recuperas puntos de vida iguales a 5 + tu modificador de Constitución si no te quedan más de la mitad de tus puntos de vida. No obtienes este beneficio si tienes 0 puntos de vida."
+      }
+    },
+    "Battle Master": {
+      "Combat Superiority": {
+        "name": "Superioridad en combate",
+        "description": "Cuando eliges este arquetipo en el nivel 3, aprendes maniobras impulsadas por dados de superioridad especiales (d8). Aprendes tres maniobras de tu elección y tienes cuatro dados de superioridad. Recuperas todos los dados de superioridad gastados cuando terminas un descanso corto o largo. CD de salvación = 8 + bonificación de competencia + modificador de Fuerza o Destreza (tu elección). Aprendes dos maniobras adicionales en los niveles 7, 10 y 15."
+      },
+      "Student of War": {
+        "name": "Estudiante de guerra",
+        "description": "En el nivel 3, adquieres competencia con un tipo de herramientas artesanales de tu elección."
+      },
+      "Know Your Enemy": {
+        "name": "Conoce a tu enemigo",
+        "description": "A partir del nivel 7, si pasas al menos 1 minuto observando o interactuando con otra criatura fuera del combate, el DM te dice si la criatura es igual, superior o inferior con respecto a dos de las siguientes características de tu elección: fuerza, destreza, constitución, clase de armadura, puntos de vida actuales, niveles totales de clase, niveles de clase de luchador."
+      },
+      "Improved Combat Superiority": {
+        "name": "Superioridad de combate mejorada",
+        "description": "En el décimo nivel, tus dados de superioridad se convierten en d10. En el nivel 18, se convierten en d12."
+      },
+      "Relentless": {
+        "name": "Implacable",
+        "description": "A partir del nivel 15, cuando tiras iniciativa y no te quedan dados de superioridad, recuperas 1 dado de superioridad."
+      }
+    },
+    "Eldritch Knight": {
+      "Spellcasting": {
+        "name": "Lanzamiento de hechizos",
+        "description": "Cuando alcanzas el nivel 3, aumentas tu destreza marcial con la capacidad de lanzar hechizos. La inteligencia es tu habilidad para lanzar hechizos para tus hechizos de mago. Conoces tres trucos de mago y cuatro hechizos de mago de primer nivel, al menos dos de los cuales deben ser de las escuelas de abjuración o evocación."
+      },
+      "Weapon Bond": {
+        "name": "Vínculo de arma",
+        "description": "También en el nivel 3, aprendes un ritual que crea un vínculo mágico entre tú y un arma. Realizas el ritual durante 1 hora, después de la cual no podrás desarmarte de esa arma a menos que estés incapacitado. Si está en el mismo plano de existencia, puedes invocar esa arma como acción adicional en tu turno, haciendo que se teletransporte instantáneamente a tu mano."
+      },
+      "War Magic": {
+        "name": "Magia de guerra",
+        "description": "A partir del nivel 7, cuando usas tu acción para lanzar un truco, puedes realizar un ataque con arma como acción adicional."
+      },
+      "Eldritch Strike": {
+        "name": "Golpe sobrenatural",
+        "description": "En el nivel 10, cuando golpeas a una criatura con un ataque de arma, esa criatura tiene desventaja en la siguiente tirada de salvación que realiza contra un hechizo que lanzaste antes del final de tu siguiente turno."
+      },
+      "Arcane Charge": {
+        "name": "Carga arcana",
+        "description": "En el nivel 15, obtienes la capacidad de teletransportarte hasta 30 pies a un espacio desocupado que puedes ver cuando usas tu Action Surge. Puedes teletransportarte antes o después de la acción adicional."
+      },
+      "Improved War Magic": {
+        "name": "Magia de guerra mejorada",
+        "description": "A partir del nivel 18, cuando usas tu acción para lanzar un hechizo, puedes realizar un ataque con arma como acción adicional."
+      }
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Técnica de mano abierta",
+        "description": "A partir de cuando eliges esta tradición en el nivel 3, cada vez que golpeas a una criatura con uno de los ataques otorgados por tu Ráfaga de Golpes, puedes imponer uno de los siguientes efectos: debe tener éxito en una tirada de salvación de Destreza o quedará derribado; debe realizar una tirada de salvación de Fuerza; si falla, puedes empujarlo hasta 15 pies de distancia; o no puede reaccionar hasta el final de tu siguiente turno."
+      },
+      "Wholeness of Body": {
+        "name": "Totalidad del cuerpo",
+        "description": "En el nivel 6, obtienes la capacidad de curarte a ti mismo. Como acción, puedes recuperar puntos de vida equivalentes a tres veces tu nivel de monje. Debes finalizar un descanso prolongado antes de poder volver a utilizar esta función."
+      },
+      "Tranquility": {
+        "name": "Tranquilidad",
+        "description": "A partir del nivel 11, al final de un descanso prolongado, obtienes el efecto de un conjuro de santuario que dura hasta el comienzo de tu siguiente descanso prolongado. La CD de la tirada de salvación es igual a 8 + tu modificador de Sabiduría + tu bonificación de competencia."
+      },
+      "Quivering Palm": {
+        "name": "Palma temblorosa",
+        "description": "En el nivel 17, cuando golpeas a una criatura con un golpe desarmado, puedes gastar 3 puntos de ki para iniciar vibraciones imperceptibles en su cuerpo que duran una cantidad de días igual a tu nivel de monje. Puedes usar tu acción para acabar con ellos. La criatura debe realizar una tirada de salvación de Constitución; si falla, se reduce a 0 puntos de vida; con éxito, sufre 10d10 de daño necrótico."
+      }
+    },
+    "Way of Shadow": {
+      "Shadow Arts": {
+        "name": "Artes de las Sombras",
+        "description": "A partir de que eliges esta tradición en el nivel 3, puedes usar tu ki para duplicar los efectos de ciertos hechizos. Como acción, puedes gastar 2 puntos de ki para lanzar oscuridad, visión en la oscuridad, pasar sin dejar rastro o silencio, sin aportar componentes materiales. Además, obtienes el truco de ilusión menor si aún no lo sabes."
+      },
+      "Shadow Step": {
+        "name": "Paso de sombra",
+        "description": "En el nivel 6, cuando estás en condiciones de poca luz u oscuridad, como acción adicional puedes teletransportarte hasta 60 pies a un espacio desocupado que puedas ver y que también esté en condiciones de poca luz u oscuridad. Entonces tendrás ventaja en el primer ataque cuerpo a cuerpo que realices antes del final del turno."
+      },
+      "Cloak of Shadows": {
+        "name": "Manto de sombras",
+        "description": "En el nivel 11, cuando estás en un área de poca luz u oscuridad, puedes usar tu acción para volverte invisible. Permaneces invisible hasta que realizas un ataque, lanzas un hechizo o estás en un área de luz brillante."
+      },
+      "Opportunist": {
+        "name": "Oportunista",
+        "description": "En el nivel 17, siempre que una criatura a 5 pies de ti sea golpeada por un ataque realizado por una criatura distinta a ti, puedes usar tu reacción para realizar un ataque cuerpo a cuerpo contra esa criatura."
+      }
+    },
+    "Way of the Four Elements": {
+      "Disciple of the Elements": {
+        "name": "Discípulo de los elementos",
+        "description": "Cuando eliges esta tradición en el nivel 3, aprendes disciplinas mágicas que aprovechan el poder de los cuatro elementos. Conoces la disciplina de Sintonía Elemental y otra disciplina elemental de tu elección. Aprendes una disciplina adicional en los niveles 6, 11 y 17. Cada vez que aprendes una nueva disciplina, también puedes reemplazar una disciplina que ya conoces por otra diferente. Cada disciplina requiere que gastes puntos de ki cada vez que la usas."
+      },
+      "Additional Elemental Disciplines": {
+        "name": "Disciplinas elementales adicionales",
+        "description": "En el nivel 17, aprendes una disciplina elemental más. Las disciplinas más poderosas como Avatar of the Elements y Wave of Rolling Earth están disponibles."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Channel Divinity: Sacred Weapon": {
+        "name": "Canalizar Divinidad: Arma Sagrada",
+        "description": "Como acción, puedes imbuir un arma que estás sosteniendo con energía positiva, usando tu Canal Divinidad. Durante 1 minuto, añades tu modificador de Carisma a las tiradas de ataque realizadas con esa arma (mínimo +1). El arma también emite luz brillante en un radio de 20 pies y luz tenue 20 pies más allá. Si el arma aún no es mágica, se vuelve mágica mientras dure."
+      },
+      "Channel Divinity: Turn the Unholy": {
+        "name": "Canalizar la divinidad: convertir lo impío",
+        "description": "Como acción, presentas tu símbolo sagrado y pronuncias una oración censurando a los demonios y no-muertos, usando tu Canal Divinidad. Cada demonio o no-muerto que pueda verte u oírte en un radio de 30 pies debe realizar una tirada de salvación de Sabiduría. Si falla, la criatura gira durante 1 minuto o hasta que reciba daño."
+      },
+      "Aura of Devotion": {
+        "name": "Aura de devoción",
+        "description": "A partir del nivel 7, ni tú ni las criaturas amigas que se encuentren a 10 pies de ti no podéis ser hechizados mientras estéis conscientes. En el nivel 18, el alcance de esta aura aumenta a 30 pies."
+      },
+      "Purity of Spirit": {
+        "name": "Pureza de espíritu",
+        "description": "A partir del nivel 15, siempre estás bajo los efectos de un hechizo de protección contra el mal y el bien."
+      },
+      "Holy Nimbus": {
+        "name": "Santo Nimbo",
+        "description": "En el nivel 20, como acción, puedes emanar un aura de luz solar. Durante 1 minuto, una luz brillante brilla desde usted en un radio de 30 pies y una luz tenue brilla 30 pies más allá de ese radio. Cada vez que una criatura enemiga comienza su turno en la luz brillante, la criatura sufre 10 de daño radiante. Además, tienes ventaja en las tiradas de salvación contra hechizos lanzados por demonios o no-muertos. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso prolongado."
+      }
+    },
+    "Oath of the Ancients": {
+      "Channel Divinity: Nature's Wrath": {
+        "name": "Canalizar Divinidad: La ira de la naturaleza",
+        "description": "Como acción, puedes hacer que surjan enredaderas espectrales y alcancen una criatura a 10 pies de ti que puedas ver. La criatura debe superar una tirada de salvación de Fuerza o Destreza (a su elección) o ser restringida. Mientras está sujeta por las enredaderas, la criatura repite la tirada de salvación al final de cada uno de sus turnos. Si tiene éxito, se libera y las enredaderas desaparecen."
+      },
+      "Channel Divinity: Turn the Faithless": {
+        "name": "Canalizar la divinidad: convertir a los infieles",
+        "description": "Como acción, presentas tu símbolo sagrado, y cada hada o demonio a 30 pies de ti que pueda oírte debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, la criatura gira durante 1 minuto o hasta que reciba daño."
+      },
+      "Aura of Warding": {
+        "name": "Aura de protección",
+        "description": "A partir del nivel 7, la magia antigua yace tan pesadamente sobre ti que forma una protección sobrenatural. Tú y las criaturas amigas que se encuentren a 10 pies de ti tenéis resistencia al daño de los hechizos. En el nivel 18, el alcance de esta aura aumenta a 30 pies."
+      },
+      "Undying Sentinel": {
+        "name": "Centinela inmortal",
+        "description": "A partir del nivel 15, cuando te reducen a 0 puntos de vida y no te matan directamente, puedes optar por bajar a 1 punto de vida. Una vez que uses esta habilidad, no podrás volver a usarla hasta que termines un descanso prolongado. Además, no sufres ninguno de los inconvenientes de la vejez y no puedes envejecer mágicamente."
+      },
+      "Elder Champion": {
+        "name": "Campeón anciano",
+        "description": "En el nivel 20, como acción, asumes la forma de una antigua fuerza de la naturaleza durante 1 minuto. Obtienes los siguientes beneficios: al comienzo de cada uno de tus turnos, recuperas 10 puntos de vida; siempre que lances un hechizo de paladín con un tiempo de lanzamiento de 1 acción, puedes lanzarlo usando una acción adicional; Las criaturas enemigas a 10 pies de ti tienen desventaja en los tiros de salvación contra tus hechizos de paladín y las opciones de Canalizar Divinidad."
+      }
+    },
+    "Oath of Vengeance": {
+      "Channel Divinity: Abjure Enemy": {
+        "name": "Canalizar Divinidad: Abjurar del enemigo",
+        "description": "Como acción, presentas tu símbolo sagrado y pronuncias una oración de denuncia, usando tu Canal Divinidad. Elige una criatura a 60 pies de ti que puedas ver. Esa criatura debe realizar una tirada de salvación de Sabiduría. Los demonios y los no-muertos tienen desventaja en esta tirada de salvación. Si falla la salvación, la criatura queda asustada durante 1 minuto o hasta que reciba algún daño. Mientras está asustada, la velocidad de la criatura es 0 y no puede beneficiarse de ninguna bonificación a su velocidad."
+      },
+      "Channel Divinity: Vow of Enmity": {
+        "name": "Canalizar Divinidad: Voto de Enemistad",
+        "description": "Como acción adicional, puedes pronunciar un voto de enemistad contra una criatura que puedas ver a 10 pies de ti, usando tu Canalizar Divinidad. Obtienes ventaja en las tiradas de ataque contra la criatura durante 1 minuto o hasta que baje a 0 puntos de vida o quede inconsciente."
+      },
+      "Relentless Avenger": {
+        "name": "Vengador implacable",
+        "description": "En el nivel 7, cuando golpeas a una criatura con un ataque de oportunidad, puedes moverte hasta la mitad de tu velocidad inmediatamente después del ataque y como parte de la misma reacción. Este movimiento no provoca ataques de oportunidad."
+      },
+      "Soul of Vengeance": {
+        "name": "Alma de venganza",
+        "description": "A partir del nivel 15, cuando una criatura bajo el efecto de tu Voto de Enemistad realiza un ataque, puedes usar tu reacción para realizar un ataque con arma cuerpo a cuerpo contra esa criatura si está dentro del alcance."
+      },
+      "Avenging Angel": {
+        "name": "ángel vengador",
+        "description": "En el nivel 20, como acción, asumes la forma de un vengador angelical durante 1 minuto. Las alas brotan de tu espalda y te otorgan una velocidad de vuelo de 60 pies. Emanas un aura de amenaza en un radio de 30 pies: la primera vez que una criatura enemiga ingresa al aura o comienza su turno allí, debe superar una tirada de salvación de Sabiduría o te tendrá miedo durante 1 minuto o hasta que reciba algún daño."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Prey": {
+        "name": "La presa del cazador",
+        "description": "En el nivel 3, obtienes una de las siguientes características de tu elección. Colossus Slayer: cuando golpeas a una criatura con un ataque con arma, la criatura sufre 1d8 de daño adicional si está por debajo de su máximo de puntos de vida. Puedes infligir este daño adicional solo una vez por turno. Asesino de gigantes: cuando una criatura grande o más grande a 5 pies de ti te golpea o falla con un ataque, puedes usar tu reacción para atacar a esa criatura inmediatamente después. Rompehordas: una vez en cada uno de tus turnos, cuando realizas un ataque con arma, puedes realizar otro ataque con la misma arma contra una criatura diferente que esté a 5 pies del objetivo original."
+      },
+      "Defensive Tactics": {
+        "name": "Tácticas defensivas",
+        "description": "En el nivel 7, obtienes una de las siguientes características. Escapa de la Horda: Los ataques de oportunidad contra ti se realizan con desventaja. Defensa multiataque: cuando una criatura te golpea con un ataque, obtienes una bonificación de +4 a la CA contra todos los ataques posteriores realizados por esa criatura durante el resto del turno. Voluntad de acero: Tienes ventaja en las tiradas de salvación contra el miedo."
+      },
+      "Multiattack": {
+        "name": "Multiataque",
+        "description": "En el nivel 11, obtienes una de las siguientes características. Volea: puedes usar tu acción para realizar un ataque a distancia contra cualquier cantidad de criaturas dentro de 10 pies de un punto que puedas ver dentro del alcance de tu arma, realizando una tirada de ataque separada para cada objetivo. Ataque torbellino: puedes usar tu acción para realizar un ataque cuerpo a cuerpo contra cualquier cantidad de criaturas dentro de un radio de 5 pies de ti, con una tirada de ataque separada para cada objetivo."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Defensa del cazador superior",
+        "description": "En el nivel 15, obtienes una de las siguientes características. Evasión: cuando realizas una tirada de salvación de Destreza para recibir solo la mitad del daño, no recibes daño si tienes éxito, y solo la mitad del daño si fallas. Stand Against the Tide: Cuando una criatura hostil te falla con un ataque cuerpo a cuerpo, puedes usar tu reacción para obligar a esa criatura a repetir el mismo ataque contra otra criatura de tu elección. Esquiva asombrosa: cuando un atacante que puedes ver te golpea con un ataque, puedes usar tu reacción para reducir a la mitad el daño del ataque contra ti."
+      }
+    },
+    "Beast Master": {
+      "Ranger's Companion": {
+        "name": "Compañero del guardabosques",
+        "description": "En el nivel 3, obtienes una bestia compañera que te acompaña en tus aventuras y está entrenada para luchar junto a ti. Elige una bestia que no sea más grande que Mediana y que tenga un índice de desafío de 1/4 o menos. Añade tu bonificación de competencia a la CA, las tiradas de ataque y las tiradas de daño de la bestia, así como a cualquier tiro de salvación y habilidad en la que sea competente. Su punto de vida máximo equivale a cuatro veces tu nivel de guardabosques."
+      },
+      "Exceptional Training": {
+        "name": "Entrenamiento excepcional",
+        "description": "A partir del nivel 7, en cualquiera de tus turnos cuando tu compañero bestia no ataca, puedes usar una acción adicional para ordenarle a la bestia que realice la acción Correr, Retirarse, Esquivar o Ayudar en su turno. Los ataques de la bestia también cuentan como mágicos a efectos de superar la resistencia y la inmunidad."
+      },
+      "Bestial Fury": {
+        "name": "Furia bestial",
+        "description": "A partir del nivel 11, tu compañero bestia puede realizar dos ataques cuando le ordenas que use la acción de Ataque."
+      },
+      "Share Spells": {
+        "name": "Compartir hechizos",
+        "description": "A partir del nivel 15, cuando lanzas un hechizo dirigido a ti mismo, también puedes afectar a tu compañera bestia con el hechizo si la bestia está a 30 pies de ti."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "manos rapidas",
+        "description": "A partir del nivel 3, puedes usar la acción adicional otorgada por tu acción de Astucia para realizar una prueba de Destreza (Juego de manos), usar las herramientas de tus ladrones para desarmar una trampa o abrir una cerradura, o realizar la acción Usar un objeto."
+      },
+      "Second-Story Work": {
+        "name": "Trabajo del segundo piso",
+        "description": "Cuando eliges este arquetipo en el nivel 3, escalar ya no te cuesta movimiento extra. Además, cuando haces un salto corriendo, la distancia que cubres aumenta en una cantidad de pies igual a tu modificador de Destreza."
+      },
+      "Supreme Sneak": {
+        "name": "Furtivo Supremo",
+        "description": "A partir del nivel 9, tienes ventaja en una prueba de Destreza (Sigilo) si no te mueves más de la mitad de tu velocidad en el mismo turno."
+      },
+      "Use Magic Device": {
+        "name": "Usar dispositivo mágico",
+        "description": "En el nivel 13, habrás aprendido lo suficiente sobre el funcionamiento de la magia como para poder improvisar el uso de objetos incluso cuando no sean para ti. Ignoras todos los requisitos de clase, raza y nivel sobre el uso de objetos mágicos."
+      },
+      "Thief's Reflexes": {
+        "name": "Reflejos del ladrón",
+        "description": "Cuando alcances el nivel 17, podrás realizar dos turnos durante la primera ronda de cualquier combate. Tomas tu primer turno con tu iniciativa normal y el segundo turno con tu iniciativa menos 10."
+      }
+    },
+    "Assassin": {
+      "Bonus Proficiencies": {
+        "name": "Competencias adicionales",
+        "description": "Cuando eliges este arquetipo en el nivel 3, obtienes competencia con el kit de disfraz y el kit de envenenador."
+      },
+      "Assassinate": {
+        "name": "Asesinar",
+        "description": "A partir del nivel 3, eres más letal cuando derribas a tus enemigos. Tienes ventaja en las tiradas de ataque contra cualquier criatura que aún no haya tomado un turno en el combate. Además, cualquier golpe que consigas contra una criatura sorprendida es un golpe crítico."
+      },
+      "Infiltration Expertise": {
+        "name": "Experiencia en infiltración",
+        "description": "A partir del nivel 9, puedes crear indefectiblemente identidades falsas para ti mismo. Debes dedicar siete días y 25 po para establecer la historia, la profesión y las afiliaciones de una identidad. A partir de entonces, si adoptas la nueva identidad como disfraz, otras criaturas creerán que eres esa persona hasta que se te dé una razón obvia para no hacerlo."
+      },
+      "Impostor": {
+        "name": "Impostor",
+        "description": "En el nivel 13, adquieres la capacidad de imitar infaliblemente el habla, la escritura y el comportamiento de otra persona. Debes dedicar al menos tres horas a estudiar estos tres componentes del comportamiento de la persona. Si una criatura cautelosa sospecha que algo anda mal, tienes ventaja en cualquier prueba de Carisma (Engaño) para evitar ser detectado."
+      },
+      "Death Strike": {
+        "name": "Golpe mortal",
+        "description": "A partir del nivel 17, cuando atacas y golpeas a una criatura que está sorprendida, esta debe realizar una tirada de salvación de Constitución (CD 8 + tu modificador de Destreza + tu bonificación de competencia). Si falla la salvación, duplica el daño de tu ataque contra la criatura."
+      }
+    },
+    "Arcane Trickster": {
+      "Spellcasting": {
+        "name": "Lanzamiento de hechizos",
+        "description": "Cuando alcanzas el nivel 3, aumentas tus habilidades pícaras con habilidades mágicas. La inteligencia es tu habilidad para lanzar hechizos para tus hechizos de mago. Conoces tres trucos de mago (la mano del mago más otros dos de tu elección) y tres hechizos de mago de primer nivel, al menos dos de los cuales deben ser de las escuelas de encantamientos e ilusiones."
+      },
+      "Mage Hand Legerdemain": {
+        "name": "Prestigio de mano de mago",
+        "description": "A partir del nivel 3, cuando lanzas mano de mago, puedes hacer que la mano espectral sea invisible y puedes realizar tareas adicionales con ella: guardar o recuperar objetos de contenedores usados ​​por otra criatura, o usar herramientas de ladrones para forzar cerraduras y desarmar trampas a distancia. Puedes hacer esto sin que te den cuenta si tienes éxito en una prueba de Juego de manos impugnada por la prueba de Percepción de la criatura."
+      },
+      "Magical Ambush": {
+        "name": "Emboscada mágica",
+        "description": "A partir del nivel 9, si estás oculto de una criatura cuando le lanzas un hechizo, la criatura tiene desventaja en cualquier tirada de salvación que realice contra el hechizo este turno."
+      },
+      "Versatile Trickster": {
+        "name": "Embaucador versátil",
+        "description": "En el nivel 13, como acción adicional en tu turno, puedes designar una criatura a 5 pies de la mano espectral creada por la mano del mago. Hacerlo te da ventaja en las tiradas de ataque contra esa criatura hasta el final del turno."
+      },
+      "Spell Thief": {
+        "name": "Ladrón de hechizos",
+        "description": "En el nivel 17, inmediatamente después de que una criatura lance un hechizo que te seleccione como objetivo o te incluya en su área de efecto, puedes usar tu reacción para obligar a la criatura a realizar una tirada de salvación con su habilidad de lanzar hechizos. La CD es igual a la CD de salvación de tu hechizo. En una salvación fallida, niegas el efecto del hechizo contra ti y robas el conocimiento del hechizo si es al menos de 1er nivel y de un nivel que puedes lanzar. Conoces el hechizo durante 8 horas."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "Dragon Ancestor": {
+        "name": "Ancestro Dragón",
+        "description": "En el nivel 1, eliges un tipo de dragón como ancestro. Puedes hablar, leer y escribir dracónico. Siempre que realizas una prueba de Carisma al interactuar con dragones, tu bonificación de competencia se duplica si se aplica a la prueba."
+      },
+      "Draconic Resilience": {
+        "name": "Resiliencia dracónica",
+        "description": "A medida que la magia fluye a través de tu cuerpo, hace que surjan rasgos físicos de tus ancestros dragones. Tu máximo de puntos de vida aumenta en 1 y aumenta en 1 nuevamente cada vez que subes de nivel en esta clase. Además, cuando no llevas armadura, tu CA es igual a 13 + tu modificador de Destreza."
+      },
+      "Elemental Affinity": {
+        "name": "Afinidad elemental",
+        "description": "A partir del nivel 6, cuando lanzas un hechizo que causa daño del tipo asociado con tu ascendencia dracónica, agrega tu modificador de Carisma a ese daño. Al mismo tiempo, puedes gastar 1 punto de hechicería para ganar resistencia a ese tipo de daño durante 1 hora."
+      },
+      "Dragon Wings": {
+        "name": "Alas de dragón",
+        "description": "En el nivel 14, obtienes la capacidad de hacer brotar un par de alas de dragón de tu espalda, ganando una velocidad de vuelo igual a tu velocidad actual. Puedes crear estas alas como acción adicional en tu turno. Duran hasta que los descartas como acción adicional en tu turno."
+      },
+      "Draconic Presence": {
+        "name": "Presencia dracónica",
+        "description": "A partir del nivel 18, como acción, puedes gastar 5 puntos de hechicería para exudar un aura de asombro o miedo (tú eliges) a una distancia de 60 pies. Durante 1 minuto o hasta que pierdas la concentración, cada criatura hostil que comience su turno en esta aura debe superar una tirada de salvación de Sabiduría o quedar encantada (si eliges asombro) o asustada (si eliges miedo) hasta que el aura termine."
+      }
+    },
+    "Wild Magic": {
+      "Wild Magic Surge": {
+        "name": "Oleada de magia salvaje",
+        "description": "A partir de que eliges este origen en el nivel 1, tu lanzamiento de hechizos puede desatar oleadas de magia indomable. Inmediatamente después de lanzar un hechizo de hechicero de 1er nivel o superior, el DM puede hacerte tirar un d20. Si obtienes un 1, tira en la tabla Wild Magic Surge para crear un efecto mágico aleatorio."
+      },
+      "Tides of Chaos": {
+        "name": "Mareas del Caos",
+        "description": "A partir del nivel 1, puedes manipular las fuerzas del azar y el caos para obtener ventaja en una tirada de ataque, prueba de habilidad o tirada de salvación. Una vez que lo hagas, deberás finalizar un descanso prolongado antes de poder volver a utilizar esta función. En cualquier momento antes de que recuperes el uso de esta característica, el DM puede hacerte tirar en la tabla Wild Magic Surge inmediatamente después de lanzar un hechizo de hechicero de 1er nivel o superior."
+      },
+      "Bend Luck": {
+        "name": "doblar la suerte",
+        "description": "A partir del nivel 6, cuando otra criatura que puedes ver hace una tirada de ataque, prueba de habilidad o tirada de salvación, puedes usar tu reacción y gastar 2 puntos de hechicería para tirar 1d4 y aplicar el número obtenido como bonificación o penalización (tu elección) a la tirada de la criatura. Puedes hacerlo después de que la criatura tire, pero antes de que se resuelva cualquier efecto de la tirada."
+      },
+      "Controlled Chaos": {
+        "name": "Caos controlado",
+        "description": "En el nivel 14, cada vez que tiras en la tabla Wild Magic Surge, puedes tirar dos veces y usar cualquier número."
+      },
+      "Spell Bombardment": {
+        "name": "Bombardeo de hechizos",
+        "description": "A partir del nivel 18, cuando tiras el daño de un hechizo y obtienes el mayor número posible en cualquiera de los dados, elige uno de esos dados, tíralo de nuevo y suma esa tirada al daño. Puedes usar la función solo una vez por turno."
+      }
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "Fey Presence": {
+        "name": "Presencia feérica",
+        "description": "A partir del nivel 1, como acción, puedes hacer que cada criatura en un cubo de 10 pies que se origina en ti haga una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de brujo. Las criaturas que fallan quedan encantadas o asustadas por ti (tú eliges) hasta el final de tu siguiente turno. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+      },
+      "Misty Escape": {
+        "name": "Escape brumoso",
+        "description": "A partir del nivel 6, cuando recibes daño, puedes usar tu reacción para volverte invisible y teletransportarte hasta 60 pies a un espacio desocupado que puedas ver. Permaneces invisible hasta el comienzo de tu siguiente turno o hasta que atacas o lanzas un hechizo. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+      },
+      "Beguiling Defenses": {
+        "name": "Defensas seductoras",
+        "description": "A partir del nivel 10, eres inmune a ser hechizado. Cuando otra criatura intenta encantarte, puedes usar tu reacción para intentar devolverle el hechizo a esa criatura. La criatura debe tener éxito en una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de brujo o ser hechizada por ti durante 1 minuto o hasta que la criatura reciba algún daño."
+      },
+      "Dark Delirium": {
+        "name": "Delirio oscuro",
+        "description": "A partir del nivel 14, como acción, elige una criatura que puedas ver a 60 pies o menos. Debe realizar una tirada de salvación de Sabiduría o ser hechizado o asustado por ti (tú eliges) durante 1 minuto o hasta que rompas tu concentración. Este efecto termina antes de tiempo si la criatura sufre algún daño. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+      }
+    },
+    "The Fiend": {
+      "Dark One's Blessing": {
+        "name": "La bendición del oscuro",
+        "description": "A partir del 1er nivel, cuando reduces una criatura hostil a 0 puntos de golpe, obtienes puntos de golpe temporales iguales a tu modificador de Carisma + tu nivel de brujo (mínimo de 1)."
+      },
+      "Dark One's Own Luck": {
+        "name": "La propia suerte del oscuro",
+        "description": "A partir del nivel 6, cuando realizas una prueba de habilidad o una tirada de salvación, puedes usar esta función para agregar un d10 a tu tirada. Puedes hacerlo después de ver la tirada inicial pero antes de que se produzca cualquiera de los efectos de la tirada. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+      },
+      "Fiendish Resilience": {
+        "name": "Resiliencia diabólica",
+        "description": "A partir del nivel 10, puedes elegir un tipo de daño cuando termines un descanso corto o largo. Obtienes resistencia a ese tipo de daño hasta que elijas uno diferente con esta característica. El daño de armas mágicas o armas plateadas ignora esta resistencia."
+      },
+      "Hurl Through Hell": {
+        "name": "Lanzarse a través del infierno",
+        "description": "A partir del nivel 14, cuando golpeas a una criatura con un ataque, puedes usar esta característica para transportar instantáneamente al objetivo a través de los planos inferiores. La criatura desaparece y se lanza a través de un paisaje de pesadilla. Al final de tu siguiente turno, el objetivo regresa al espacio que ocupaba anteriormente, o al espacio desocupado más cercano. Si el objetivo no es un demonio, sufre 10d10 de daño psíquico mientras se recupera de su horrible experiencia. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso prolongado."
+      }
+    },
+    "The Great Old One": {
+      "Awakened Mind": {
+        "name": "Mente despierta",
+        "description": "A partir del nivel 1, tu conocimiento alienígena te otorga la capacidad de tocar las mentes de otras criaturas. Puedes comunicarte telepáticamente con cualquier criatura que puedas ver a 30 pies de ti. No es necesario compartir un idioma con la criatura para que comprenda sus expresiones telepáticas, pero la criatura debe poder comprender al menos un idioma."
+      },
+      "Entropic Ward": {
+        "name": "Barrio entrópico",
+        "description": "En el nivel 6, cuando una criatura hace una tirada de ataque contra ti, puedes usar tu reacción para imponer desventaja en esa tirada. Si el ataque falla, tu próxima tirada de ataque contra la criatura tiene ventaja si la realizas antes del final de tu siguiente turno. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+      },
+      "Thought Shield": {
+        "name": "Escudo de pensamiento",
+        "description": "A partir del décimo nivel, tus pensamientos no pueden leerse mediante telepatía u otros medios a menos que tú lo permitas. Además, cada vez que una criatura te causa daño psíquico, esa criatura recibe la misma cantidad de daño que tú."
+      },
+      "Create Thrall": {
+        "name": "Crear esclavo",
+        "description": "En el nivel 14, obtienes la capacidad de infectar la mente de un humanoide con la magia alienígena de tu patrón. Puedes usar tu acción para tocar a un humanoide incapacitado. Luego, esa criatura es encantada por ti hasta que se le lanza un hechizo para eliminar la maldición, se elimina la condición de encantamiento o usas esta característica nuevamente. Puedes comunicarte telepáticamente con la criatura encantada siempre que ambos estéis en el mismo plano de existencia."
+      }
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "Abjuration Savant": {
+        "name": "Sabio de la abjuración",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de abjuración en tu libro de hechizos se reducen a la mitad."
+      },
+      "Arcane Ward": {
+        "name": "Resguardo arcano",
+        "description": "A partir del nivel 2, cuando lanzas un hechizo de abjuración de nivel 1 o superior, puedes crear simultáneamente una protección mágica sobre ti que dura hasta que terminas un descanso prolongado. El pupilo tiene puntos de vida iguales al doble de tu nivel de mago + tu modificador de Inteligencia. Cada vez que recibes daño, el resguardo recibe el daño. Si este daño reduce el resguardo a 0 puntos de vida, recibirás el daño restante."
+      },
+      "Projected Ward": {
+        "name": "Sala proyectada",
+        "description": "A partir del nivel 6, cuando una criatura que puedes ver a 30 pies de ti sufre daño, puedes usar tu reacción para hacer que tu Resguardo Arcano absorba ese daño. Si este daño reduce la protección a 0 puntos de vida, la criatura protegida recibe el daño restante."
+      },
+      "Improved Abjuration": {
+        "name": "Abjuración mejorada",
+        "description": "A partir del nivel 10, cuando lanzas un conjuro de abjuración que requiere que realices una prueba de habilidad como parte del lanzamiento de ese hechizo (como en el contraconjuro y disipar magia), agregas tu bono de competencia a esa prueba de habilidad."
+      },
+      "Spell Resistance": {
+        "name": "Resistencia a hechizos",
+        "description": "A partir del nivel 14, tienes ventaja en las tiradas de salvación contra hechizos. Además, tienes resistencia contra el daño de los hechizos."
+      }
+    },
+    "School of Conjuration": {
+      "Conjuration Savant": {
+        "name": "Sabio de la conjuración",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de conjuración en tu libro de hechizos se reducen a la mitad."
+      },
+      "Minor Conjuration": {
+        "name": "Conjuración menor",
+        "description": "A partir del nivel 2, puedes usar tu acción para conjurar un objeto inanimado en tu mano o en el suelo en un espacio desocupado a 10 pies de ti. Este objeto no puede medir más de 3 pies de lado y pesar no más de 10 libras, y su forma debe ser la de un objeto no mágico que hayas visto. El objeto es visiblemente mágico. El objeto desaparece después de 1 hora, cuando usas esta función nuevamente o si recibe o causa algún daño."
+      },
+      "Benign Transposition": {
+        "name": "Transposición benigna",
+        "description": "A partir del nivel 6, puedes usar tu acción para teletransportarte hasta 30 pies a un espacio desocupado que puedas ver, o que puedas ver que está ocupado por una criatura Pequeña o Mediana dispuesta a ser teletransportada. Después de usar esta función, no podrás volver a usarla hasta que termines un descanso prolongado o lances un hechizo de conjuración de nivel 1 o superior."
+      },
+      "Focused Conjuration": {
+        "name": "Conjuración enfocada",
+        "description": "A partir del nivel 10, mientras te concentras en un hechizo de conjuración, tu concentración no puede romperse como resultado de recibir daño."
+      },
+      "Durable Summons": {
+        "name": "Invocaciones duraderas",
+        "description": "A partir del nivel 14, cualquier criatura que invoques o crees con un hechizo de conjuración tiene 30 puntos de vida temporales."
+      }
+    },
+    "School of Divination": {
+      "Divination Savant": {
+        "name": "Sabio de la adivinación",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de adivinación en tu libro de hechizos se reducen a la mitad."
+      },
+      "Portent": {
+        "name": "Presagio",
+        "description": "A partir del segundo nivel, cuando termines un descanso largo, tira dos d20 y registra los números obtenidos. Puedes reemplazar cualquier tirada de ataque, tirada de salvación o prueba de habilidad realizada por ti o por una criatura que puedas ver con una de estas tiradas de predicción. Debes elegir hacerlo antes de la tirada, y puedes reemplazar una tirada de esta manera sólo una vez por turno. Cada tirada de predicción sólo se puede utilizar una vez. Cuando terminas un descanso prolongado, pierdes las tiradas de predicción no utilizadas."
+      },
+      "Expert Divination": {
+        "name": "Adivinación experta",
+        "description": "A partir del nivel 6, cuando lanzas un conjuro de adivinación de nivel 2 o superior usando un espacio de conjuro, recuperas un espacio de conjuro gastado. El espacio que recuperes debe ser de un nivel inferior al del hechizo que lanzaste y no puede ser superior al nivel 5."
+      },
+      "The Third Eye": {
+        "name": "El tercer ojo",
+        "description": "A partir del nivel 10, puedes usar tu acción para aumentar tus poderes de percepción. Cuando lo hagas, elige uno de los siguientes beneficios, que dura hasta que quedes incapacitado o tomes un descanso corto o largo: Visión en la oscuridad (60 pies), Visión etérea (ver el plano etéreo), Mayor comprensión (leer cualquier idioma) o Ver invisibilidad."
+      },
+      "Greater Portent": {
+        "name": "Mayor presagio",
+        "description": "A partir del nivel 14, tiras tres d20 para tu característica Presagio, en lugar de dos."
+      }
+    },
+    "School of Enchantment": {
+      "Enchantment Savant": {
+        "name": "Sabio del encantamiento",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de encantamiento en tu libro de hechizos se reducen a la mitad."
+      },
+      "Hypnotic Gaze": {
+        "name": "Mirada hipnótica",
+        "description": "A partir del nivel 2, como acción, elige una criatura que puedas ver a 5 pies de ti. Si el objetivo puede verte u oírte, debe superar una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de mago o ser hechizado por ti hasta el final de tu siguiente turno. La velocidad de la criatura encantada cae a 0 y queda incapacitada y visiblemente aturdida. En turnos posteriores, puedes usar tu acción para mantener este efecto hasta el final de tu siguiente turno. El efecto termina si te alejas más de 5 pies, si la criatura no puede verte ni oírte, o si la criatura sufre daño."
+      },
+      "Instinctive Charm": {
+        "name": "Encanto instintivo",
+        "description": "A partir del nivel 6, cuando una criatura que puedes ver a 30 pies de ti realiza una tirada de ataque contra ti, puedes usar tu reacción para desviar el ataque. El atacante debe realizar una tirada de salvación de Sabiduría. En caso de una salvación fallida, el atacante debe apuntar a la criatura más cercana a él, sin contarte a ti ni a él mismo. Una vez que uses esta función, no podrás usarla hasta que termines un descanso prolongado, a menos que gastes un espacio de hechizo de cualquier nivel para usarla nuevamente."
+      },
+      "Split Enchantment": {
+        "name": "Encantamiento dividido",
+        "description": "A partir del nivel 10, cuando lanzas un hechizo de encantamiento de nivel 1 o superior que tiene como objetivo sólo una criatura, puedes hacer que tenga como objetivo una segunda criatura."
+      },
+      "Alter Memories": {
+        "name": "Alterar recuerdos",
+        "description": "En el nivel 14, cuando lanzas un conjuro de encantamiento para encantar a una o más criaturas, puedes alterar la comprensión de una criatura para que no se dé cuenta de que está encantada. Además, una vez antes de que expire el hechizo, puedes usar tu acción para intentar que la criatura elegida olvide parte del tiempo que pasó encantada. La criatura debe superar una tirada de salvación de Inteligencia contra la CD de salvación de tu hechizo de mago o perderá un número de horas de sus recuerdos igual a 1 + tu modificador de Carisma (mínimo 1)."
+      }
+    },
+    "School of Evocation": {
+      "Evocation Savant": {
+        "name": "Sabio de la evocación",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de evocación en tu libro de hechizos se reducen a la mitad."
+      },
+      "Sculpt Spells": {
+        "name": "Esculpir hechizos",
+        "description": "A partir del nivel 2, cuando lanzas un hechizo de evocación que afecta a otras criaturas que puedes ver, puedes elegir un número de ellas igual a 1 + el nivel del hechizo. Las criaturas elegidas automáticamente tienen éxito en sus tiradas de salvación contra el hechizo, y no reciben daño si normalmente recibirían la mitad del daño en una salvación exitosa."
+      },
+      "Potent Cantrip": {
+        "name": "Potente truco",
+        "description": "A partir del nivel 6, cuando una criatura tiene éxito en una tirada de salvación contra tu truco, la criatura recibe la mitad del daño del truco (si lo tiene), pero no sufre ningún efecto adicional del truco."
+      },
+      "Empowered Evocation": {
+        "name": "Evocación potenciada",
+        "description": "A partir del nivel 10, puedes agregar tu modificador de Inteligencia a una tirada de daño de cualquier hechizo de evocación de mago que lances."
+      },
+      "Overchannel": {
+        "name": "sobrecanal",
+        "description": "A partir del nivel 14, cuando lanzas un hechizo de mago de nivel 1 al 5 que causa daño, puedes causar el máximo daño con ese hechizo. La primera vez que lo haces no sufres ningún efecto adverso. Si usas esta característica nuevamente antes de terminar un descanso prolongado, recibirás 2d12 de daño necrótico por cada nivel del hechizo, inmediatamente después de lanzarlo. Este daño ignora la resistencia y la inmunidad."
+      }
+    },
+    "School of Illusion": {
+      "Illusion Savant": {
+        "name": "Sabio de la ilusión",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de ilusión en tu libro de hechizos se reducen a la mitad."
+      },
+      "Improved Minor Illusion": {
+        "name": "Ilusión menor mejorada",
+        "description": "Cuando eliges esta escuela en el segundo nivel, aprendes el truco de ilusión menor. Si ya conoces este truco, aprenderás un truco de mago diferente de tu elección. Cuando lanzas una ilusión menor, puedes crear tanto un sonido como una imagen con un solo lanzamiento del hechizo."
+      },
+      "Malleable Illusions": {
+        "name": "Ilusiones maleables",
+        "description": "A partir del nivel 6, cuando lanzas un hechizo de ilusión que tiene una duración de 1 minuto o más, puedes usar tu acción para cambiar la naturaleza de esa ilusión (usando los parámetros normales del hechizo para la ilusión), siempre que puedas ver la ilusión."
+      },
+      "Illusory Self": {
+        "name": "Yo ilusorio",
+        "description": "A partir del nivel 10, cuando una criatura realiza una tirada de ataque contra ti, puedes usar tu reacción para interponer un duplicado ilusorio de ti mismo entre el atacante y tú mismo. El ataque automáticamente no te alcanza y luego la ilusión se disipa. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+      },
+      "Illusory Reality": {
+        "name": "Realidad ilusoria",
+        "description": "En el nivel 14, cuando lanzas un conjuro de ilusión de nivel 1 o superior, puedes elegir un objeto inanimado y no mágico que sea parte de la ilusión y convertirlo en real. Puedes hacer esto en tu turno como acción adicional mientras el hechizo está en curso. El objeto permanece real durante 1 minuto. No puede causar daño ni dañar directamente a nadie."
+      }
+    },
+    "School of Necromancy": {
+      "Necromancy Savant": {
+        "name": "Sabio de la nigromancia",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de nigromancia en tu libro de hechizos se reducen a la mitad."
+      },
+      "Grim Harvest": {
+        "name": "Cosecha sombría",
+        "description": "En el nivel 2, una vez por turno, cuando matas a una o más criaturas con un hechizo de nivel 1 o superior, recuperas puntos de vida equivalentes al doble del nivel del hechizo, o tres veces su nivel si el hechizo pertenece a la Escuela de Nigromancia. No obtienes este beneficio por matar constructos o muertos vivientes."
+      },
+      "Undead Thralls": {
+        "name": "Esclavos no muertos",
+        "description": "En el nivel 6, agregas el hechizo animar a los muertos a tu libro de hechizos si aún no está allí. Cuando lanzas animar muertos, puedes apuntar a un cadáver o pila de huesos adicional, creando otro zombi o esqueleto, según corresponda. Siempre que creas un no-muerto usando un hechizo de nigromancia, tiene beneficios adicionales: su punto de vida máximo aumenta en una cantidad igual a tu nivel de mago y agrega tu bonificación de competencia a sus tiradas de daño con arma."
+      },
+      "Inured to Undeath": {
+        "name": "Acostumbrado a la no muerte",
+        "description": "A partir del nivel 10, tienes resistencia al daño necrótico y tu máximo de puntos de vida no se puede reducir. Has pasado tanto tiempo lidiando con los no-muertos y las fuerzas que los animan que te has acostumbrado a algunos de sus peores efectos."
+      },
+      "Command Undead": {
+        "name": "Comando no-muertos",
+        "description": "A partir del nivel 14, como acción, puedes elegir un no-muerto que puedas ver a 60 pies de ti. Esa criatura debe realizar una tirada de salvación de Carisma contra la CD de salvación de tu hechizo de mago. Si tiene éxito, no podrá volver a utilizar esta función. Si falla, se vuelve amigable contigo y obedece tus órdenes hasta que uses esta función nuevamente. Los muertos vivientes inteligentes son más difíciles de controlar y tienen ventaja en la tirada de salvación."
+      }
+    },
+    "School of Transmutation": {
+      "Transmutation Savant": {
+        "name": "Sabio de la transmutación",
+        "description": "A partir de que seleccionas esta escuela en el nivel 2, el oro y el tiempo que debes gastar para copiar un hechizo de transmutación en tu libro de hechizos se reducen a la mitad."
+      },
+      "Minor Alchemy": {
+        "name": "Alquimia menor",
+        "description": "A partir del nivel 2, puedes alterar temporalmente las propiedades físicas de un objeto no mágico, cambiándolo de una sustancia a otra. Realizas un procedimiento alquímico especial en un objeto compuesto enteramente de madera, piedra (pero no una piedra preciosa), hierro, cobre o plata. Por cada 10 minutos que dediques a realizar el procedimiento, podrás transformar hasta 1 pie cúbico de material. Después de 1 hora, o hasta que pierda la concentración, el material vuelve a su sustancia original."
+      },
+      "Transmuter's Stone": {
+        "name": "Piedra del transmutador",
+        "description": "A partir del nivel 6, puedes pasar 8 horas creando una piedra transmutadora que almacena magia de transmutación. Una criatura obtiene un beneficio de tu elección siempre que la piedra esté en posesión de la criatura: visión en la oscuridad (60 pies), velocidad aumentada en 10 pies, competencia en las tiradas de salvación de Constitución o resistencia al daño por ácido, frío, fuego, relámpagos o truenos."
+      },
+      "Shapechanger": {
+        "name": "Cambiador de forma",
+        "description": "En el nivel 10, agregas el hechizo polimorfa a tu libro de hechizos. Puedes lanzar polimorfismo sin gastar un espacio de hechizo, pero solo puedes apuntar a ti mismo y transformarte en una bestia cuyo índice de desafío sea 1 o inferior. Una vez que lanzas polimorfia de esta manera, no puedes volver a hacerlo hasta que termines un descanso corto o largo."
+      },
+      "Master Transmuter": {
+        "name": "Maestro transmutador",
+        "description": "A partir del nivel 14, puedes usar tu acción para consumir la reserva de magia de transmutación almacenada dentro de tu piedra transmutadora. Cuando lo hagas, elige uno de los siguientes efectos: Transformación mayor (lanzar polimorfismo sin un espacio de hechizo, que dura 1 hora), Panacea (eliminar todas las maldiciones, enfermedades y venenos; restaurar todos los puntos de vida), Restaurar vida (lanzar resucitar a los muertos sin un espacio de hechizo) o Restaurar juventud (hacer que una criatura tocada parezca hasta 3d10 años más joven)."
+      }
+    }
+  }
+}

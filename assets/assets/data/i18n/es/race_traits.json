@@ -1,0 +1,154 @@
+{
+  "Darkvision": {
+    "name": "Visión oscura",
+    "description": "Acostumbrado a la vida bajo tierra, tienes una visión superior en condiciones de oscuridad y penumbra. Puedes ver en condiciones de poca luz a una distancia de 60 pies de ti como si fuera una luz brillante, y en la oscuridad como si fuera una luz tenue. No se pueden discernir colores en la oscuridad, sólo matices de gris."
+  },
+  "Superior Darkvision": {
+    "name": "Visión en la oscuridad superior",
+    "description": "Tu visión en la oscuridad tiene un radio de 120 pies."
+  },
+  "Dwarven Resilience": {
+    "name": "Resiliencia enana",
+    "description": "Tienes ventaja en las tiradas de salvación contra el veneno y tienes resistencia contra el daño del veneno."
+  },
+  "Dwarven Combat Training": {
+    "name": "Entrenamiento de combate enano",
+    "description": "Tienes competencia con el hacha de batalla, el hacha de mano, el martillo ligero y el martillo de guerra."
+  },
+  "Stonecunning": {
+    "name": "astucia de piedra",
+    "description": "Siempre que realizas una prueba de Inteligencia (Historia) relacionada con el origen de la mampostería, se te considera competente en la habilidad Historia y añades el doble de tu bonificación de competencia a la prueba."
+  },
+  "Tool Proficiency": {
+    "name": "Competencia con la herramienta",
+    "description": "Obtienes competencia con las herramientas de artesano de tu elección: herramientas de herrero, suministros de cervecería o herramientas de albañil."
+  },
+  "Dwarven Toughness": {
+    "name": "Dureza enana",
+    "description": "Tu máximo de puntos de vida aumenta en 1 y aumenta en 1 cada vez que subes de nivel."
+  },
+  "Dwarven Armor Training": {
+    "name": "Entrenamiento de armadura enana",
+    "description": "Tienes competencia con armaduras ligeras y medias."
+  },
+  "Keen Senses": {
+    "name": "Sentidos agudos",
+    "description": "Tienes competencia en la habilidad de Percepción."
+  },
+  "Fey Ancestry": {
+    "name": "Ascendencia Fey",
+    "description": "Tienes ventaja en las tiradas de salvación contra ser encantado y la magia no puede hacerte dormir."
+  },
+  "Trance": {
+    "name": "Trance",
+    "description": "Los elfos no necesitan dormir. En cambio, meditan profundamente, permaneciendo semiconscientes, durante 4 horas al día. Mientras meditas, puedes soñar en cierto modo; Estos sueños son en realidad ejercicios mentales que se han vuelto reflexivos a través de años de práctica. Después de descansar de esta manera, obtienes el mismo beneficio que un ser humano con 8 horas de sueño."
+  },
+  "Elf Weapon Training": {
+    "name": "Entrenamiento con armas de elfos",
+    "description": "Tienes competencia con la espada larga, la espada corta, el arco corto y el arco largo."
+  },
+  "Cantrip": {
+    "name": "Broma",
+    "description": "Conoces un truco de tu elección de la lista de hechizos del mago. La inteligencia es tu habilidad para lanzar hechizos."
+  },
+  "Extra Language": {
+    "name": "Idioma adicional",
+    "description": "Puede hablar, leer y escribir un idioma adicional de su elección."
+  },
+  "Fleet of Foot": {
+    "name": "Flota de pies",
+    "description": "Su velocidad base al caminar aumenta a 35 pies."
+  },
+  "Mask of the Wild": {
+    "name": "Máscara de lo salvaje",
+    "description": "Puedes intentar esconderte incluso cuando estés ligeramente oscurecido por el follaje, las fuertes lluvias, la nieve, la niebla y otros fenómenos naturales."
+  },
+  "Sunlight Sensitivity": {
+    "name": "Sensibilidad a la luz solar",
+    "description": "Tienes desventaja en las tiradas de ataque y en las pruebas de Sabiduría (Percepción) que dependen de la vista cuando tú, el objetivo de tu ataque o cualquier cosa que estés tratando de percibir, estás bajo la luz solar directa."
+  },
+  "Drow Magic": {
+    "name": "Magia Drow",
+    "description": "Ya conoces el truco de las luces danzantes. Cuando alcances el nivel 3, podrás lanzar el hechizo de fuego feérico una vez al día. Cuando alcances el nivel 5, también podrás lanzar el hechizo de oscuridad una vez al día. El carisma es tu habilidad para lanzar hechizos para estos hechizos."
+  },
+  "Drow Weapon Training": {
+    "name": "Entrenamiento con armas drow",
+    "description": "Tienes competencia con estoques, espadas cortas y ballestas de mano."
+  },
+  "Lucky": {
+    "name": "Afortunado",
+    "description": "Cuando sacas un 1 en el d20 para una tirada de ataque, prueba de habilidad o tirada de salvación, puedes volver a tirar el dado y debes usar la nueva tirada."
+  },
+  "Brave": {
+    "name": "Corajudo",
+    "description": "Tienes ventaja en las tiradas de salvación contra el miedo."
+  },
+  "Halfling Nimbleness": {
+    "name": "Agilidad del mediano",
+    "description": "Podrás moverte por el espacio de cualquier criatura que sea de un tamaño mayor que el tuyo."
+  },
+  "Naturally Stealthy": {
+    "name": "Naturalmente sigiloso",
+    "description": "Puedes intentar esconderte incluso cuando estés oscurecido únicamente por una criatura que sea al menos un tamaño más grande que tú."
+  },
+  "Stout Resilience": {
+    "name": "Fuerte resiliencia",
+    "description": "Tienes ventaja en las tiradas de salvación contra el veneno y tienes resistencia contra el daño del veneno."
+  },
+  "Draconic Ancestry": {
+    "name": "Ascendencia dracónica",
+    "description": "Tienes herencia dracónica de un tipo de dragón específico. Elige un tipo de dragón de la tabla Draconic Ancestry. Tu arma de aliento y tu resistencia al daño están determinadas por el tipo de dragón elegido."
+  },
+  "Breath Weapon": {
+    "name": "Arma de aliento",
+    "description": "Puedes usar tu acción para exhalar energía destructiva. Su tamaño, forma y tipo de daño están determinados por tu ascendencia dracónica. Cuando usas tu arma de aliento, cada criatura en el área de la exhalación debe realizar una tirada de salvación (CD = 8 + tu modificador de Constitución + tu bonificación de competencia). Si falla la salvación, la criatura sufre 2d6 daños. Con una salvación exitosa, sufre la mitad de daño. Puedes usar tu arma de aliento una vez por descanso corto o largo."
+  },
+  "Damage Resistance": {
+    "name": "Resistencia al daño",
+    "description": "Tienes resistencia al tipo de daño asociado con tu ascendencia dracónica."
+  },
+  "Gnome Cunning": {
+    "name": "Gnomo astuto",
+    "description": "Tienes ventaja en todas las tiradas de salvación de Inteligencia, Sabiduría y Carisma contra la magia."
+  },
+  "Natural Illusionist": {
+    "name": "Ilusionista natural",
+    "description": "Ya conoces el truco de la ilusión menor. La inteligencia es tu habilidad para lanzar hechizos."
+  },
+  "Speak with Small Beasts": {
+    "name": "Habla con pequeñas bestias",
+    "description": "A través de sonidos y gestos, podrás comunicar ideas sencillas con bestias pequeñas o de menor tamaño. Los gnomos del bosque aman a los animales y, a menudo, tienen ardillas, tejones, conejos, topos, pájaros carpinteros y otras criaturas como queridas mascotas."
+  },
+  "Artificer's Lore": {
+    "name": "Conocimiento del artífice",
+    "description": "Siempre que realices una prueba de Inteligencia (Historia) relacionada con objetos mágicos, objetos alquímicos o dispositivos tecnológicos, puedes agregar el doble de tu bonificación de competencia, en lugar de cualquier bonificación de competencia que normalmente aplicas."
+  },
+  "Tinker": {
+    "name": "Gitano",
+    "description": "Tienes dominio de las herramientas artesanales (herramientas de calderero). Usando esas herramientas, puedes gastar 1 hora y 10 po en materiales para construir un pequeño dispositivo de relojería (CA 5, 1 hp). El dispositivo deja de funcionar después de 24 horas a menos que dediques 1 hora a repararlo. Puede tener hasta tres de estos dispositivos activos a la vez."
+  },
+  "Skill Versatility": {
+    "name": "Versatilidad de habilidades",
+    "description": "Obtienes competencia en dos habilidades de tu elección."
+  },
+  "Menacing": {
+    "name": "Amenazador",
+    "description": "Obtienes competencia en la habilidad Intimidación."
+  },
+  "Relentless Endurance": {
+    "name": "Resistencia implacable",
+    "description": "Cuando te reducen a 0 puntos de vida pero no te matan directamente, puedes bajar a 1 punto de vida. No podrás volver a utilizar esta función hasta que termines un descanso prolongado."
+  },
+  "Savage Attacks": {
+    "name": "Ataques salvajes",
+    "description": "Cuando logras un golpe crítico con un ataque con arma cuerpo a cuerpo, puedes tirar uno de los dados de daño del arma una vez más y agregarlo al daño adicional del golpe crítico."
+  },
+  "Hellish Resistance": {
+    "name": "Resistencia infernal",
+    "description": "Tienes resistencia al daño por fuego."
+  },
+  "Infernal Legacy": {
+    "name": "Legado Infernal",
+    "description": "Ya conoces el truco de taumaturgia. Cuando alcanzas el nivel 3, puedes lanzar el hechizo de reprimenda infernal como un hechizo de nivel 2 una vez con este rasgo y recuperar la capacidad de hacerlo cuando termines un descanso prolongado. Cuando alcances el nivel 5, podrás lanzar el hechizo de oscuridad una vez con este rasgo y recuperar la capacidad de hacerlo cuando termines un descanso prolongado. El carisma es tu habilidad para lanzar hechizos para estos hechizos."
+  }
+}

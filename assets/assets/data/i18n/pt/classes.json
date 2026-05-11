@@ -1,0 +1,158 @@
+{
+  "Barbarian": {
+    "name": "Bárbaro",
+    "subclassFeatureName": "Caminho Primitivo",
+    "weaponProficiencies": ["simples", "marciais"],
+    "startingEquipment": {
+      "fixed": ["Mochila de explorador", "4 azagaias"],
+      "choices": [
+        {"options": [["Machado grande"], ["qualquer arma marcial corpo a corpo"]]},
+        {"options": [["Machadinha", "Machadinha"], ["qualquer arma simples"]]}
+      ]
+    }
+  },
+  "Bard": {
+    "name": "Bardo",
+    "subclassFeatureName": "Colégio de Bardo",
+    "weaponProficiencies": ["simples", "besta de mão", "espada longa", "rapieira", "espada curta"],
+    "startingEquipment": {
+      "fixed": ["Armadura de couro", "Adaga"],
+      "choices": [
+        {"options": [["Rapieira"], ["Espada longa"], ["qualquer arma simples"]]},
+        {"options": [["Mochila de diplomata"], ["Mochila de artista"]]},
+        {"options": [["Alaúde"], ["qualquer instrumento musical"]]}
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "Clérigo",
+    "subclassFeatureName": "Domínio Divino",
+    "weaponProficiencies": ["simples"],
+    "startingEquipment": {
+      "fixed": ["Escudo", "Símbolo sagrado"],
+      "choices": [
+        {"options": [["Maça"], ["Martelo de guerra"]]},
+        {"options": [["Cota de escamas"], ["Armadura de couro"], ["Cota de malha"]]},
+        {"options": [["Besta leve", "20 virotes"], ["qualquer arma simples"]]},
+        {"options": [["Mochila de sacerdote"], ["Mochila de explorador"]]}
+      ]
+    }
+  },
+  "Druid": {
+    "name": "Druida",
+    "subclassFeatureName": "Círculo Druídico",
+    "weaponProficiencies": ["clavas", "adagas", "dardos", "azagaias", "maças", "cajados", "cimitarras", "foices", "fundas", "lanças"],
+    "startingEquipment": {
+      "fixed": ["Armadura de couro", "Mochila de explorador", "Foco druídico"],
+      "choices": [
+        {"options": [["Escudo de madeira"], ["qualquer arma simples"]]},
+        {"options": [["Cimitarra"], ["qualquer arma simples corpo a corpo"]]}
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "Guerreiro",
+    "subclassFeatureName": "Arquétipo Marcial",
+    "weaponProficiencies": ["simples", "marciais"],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {"options": [["Cota de malha"], ["Armadura de couro", "Arco longo", "20 flechas"]]},
+        {"options": [["qualquer arma marcial", "Escudo"], ["qualquer arma marcial", "qualquer arma marcial"]]},
+        {"options": [["Besta leve", "20 virotes"], ["Machadinha", "Machadinha"]]},
+        {"options": [["Mochila de aventureiro"], ["Mochila de explorador"]]}
+      ]
+    }
+  },
+  "Monk": {
+    "name": "Monge",
+    "subclassFeatureName": "Tradição Monástica",
+    "weaponProficiencies": ["simples", "espadas curtas"],
+    "startingEquipment": {
+      "fixed": ["10 dardos"],
+      "choices": [
+        {"options": [["Espada curta"], ["qualquer arma simples"]]},
+        {"options": [["Mochila de aventureiro"], ["Mochila de explorador"]]}
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "Paladino",
+    "subclassFeatureName": "Juramento Sagrado",
+    "weaponProficiencies": ["simples", "marciais"],
+    "startingEquipment": {
+      "fixed": ["Cota de malha", "Símbolo sagrado"],
+      "choices": [
+        {"options": [["qualquer arma marcial", "Escudo"], ["qualquer arma marcial", "qualquer arma marcial"]]},
+        {"options": [["5 azagaias"], ["qualquer arma simples corpo a corpo"]]},
+        {"options": [["Mochila de sacerdote"], ["Mochila de explorador"]]}
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "Patrulheiro",
+    "subclassFeatureName": "Arquétipo de Patrulheiro",
+    "weaponProficiencies": ["simples", "marciais"],
+    "startingEquipment": {
+      "fixed": ["Arco longo", "Aljava com 20 flechas"],
+      "choices": [
+        {"options": [["Cota de escamas"], ["Armadura de couro"]]},
+        {"options": [["Espada curta", "Espada curta"], ["qualquer arma simples corpo a corpo", "qualquer arma simples corpo a corpo"]]},
+        {"options": [["Mochila de aventureiro"], ["Mochila de explorador"]]}
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "Ladino",
+    "subclassFeatureName": "Arquétipo de Ladino",
+    "weaponProficiencies": ["simples", "besta de mão", "espada longa", "rapieira", "espada curta"],
+    "startingEquipment": {
+      "fixed": ["Armadura de couro", "Adaga", "Adaga", "Ferramentas de ladrão"],
+      "choices": [
+        {"options": [["Rapieira"], ["Espada curta"]]},
+        {"options": [["Arco curto", "Aljava com 20 flechas"], ["Espada curta"]]},
+        {"options": [["Mochila de assaltante"], ["Mochila de aventureiro"], ["Mochila de explorador"]]}
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "Feiticeiro",
+    "subclassFeatureName": "Origem Feiticeira",
+    "weaponProficiencies": ["adagas", "dardos", "fundas", "cajados", "bestas leves"],
+    "startingEquipment": {
+      "fixed": ["Adaga", "Adaga"],
+      "choices": [
+        {"options": [["Besta leve", "20 virotes"], ["qualquer arma simples"]]},
+        {"options": [["Bolsa de componentes"], ["Foco arcano"]]},
+        {"options": [["Mochila de aventureiro"], ["Mochila de explorador"]]}
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "Bruxo",
+    "subclassFeatureName": "Patrono Transcendental",
+    "weaponProficiencies": ["simples"],
+    "startingEquipment": {
+      "fixed": ["Armadura de couro", "Adaga", "Adaga"],
+      "choices": [
+        {"options": [["Besta leve", "20 virotes"], ["qualquer arma simples"]]},
+        {"options": [["Bolsa de componentes"], ["Foco arcano"]]},
+        {"options": [["Mochila de estudioso"], ["Mochila de aventureiro"]]},
+        {"options": [["qualquer arma simples"]]}
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "Mago",
+    "subclassFeatureName": "Tradição Arcana",
+    "weaponProficiencies": ["adagas", "dardos", "fundas", "cajados", "bestas leves"],
+    "startingEquipment": {
+      "fixed": ["Livro de Magias"],
+      "choices": [
+        {"options": [["Cajado"], ["Adaga"]]},
+        {"options": [["Bolsa de componentes"], ["Foco arcano"]]},
+        {"options": [["Mochila de estudioso"], ["Mochila de explorador"]]}
+      ]
+    }
+  }
+}

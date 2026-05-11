@@ -1,0 +1,20 @@
+{
+  "Acrobatics":     { "name": "Acrobacia" },
+  "Animal Handling": { "name": "Adestrar Animais" },
+  "Arcana":          { "name": "Arcanismo" },
+  "Athletics":       { "name": "Atletismo" },
+  "Deception":       { "name": "Enganação" },
+  "History":         { "name": "História" },
+  "Insight":         { "name": "Intuição" },
+  "Intimidation":    { "name": "Intimidação" },
+  "Investigation":   { "name": "Investigação" },
+  "Medicine":        { "name": "Medicina" },
+  "Nature":          { "name": "Natureza" },
+  "Perception":      { "name": "Percepção" },
+  "Performance":     { "name": "Atuação" },
+  "Persuasion":      { "name": "Persuasão" },
+  "Religion":        { "name": "Religião" },
+  "Sleight of Hand": { "name": "Prestidigitação" },
+  "Stealth":         { "name": "Furtividade" },
+  "Survival":        { "name": "Sobrevivência" }
+}

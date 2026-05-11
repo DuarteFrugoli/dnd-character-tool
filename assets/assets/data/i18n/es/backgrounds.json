@@ -1,0 +1,181 @@
+{
+  "Acolyte": {
+    "name": "Acólito",
+    "startingEquipment": [
+      "símbolo sagrado",
+      "Libro de oraciones o rueda de oración",
+      "5 varitas de incienso",
+      "Vestiduras",
+      "ropa común",
+      "15 po"
+    ],
+    "feature": {
+      "name": "Refugio de los fieles",
+      "description": "Usted y sus compañeros pueden recibir curación y atención gratuita en los templos de su fe, y pueden pedir ayuda a los sacerdotes."
+    }
+  },
+  "Charlatan": {
+    "name": "Charlatán",
+    "startingEquipment": [
+      "ropa fina",
+      "kit de disfraz",
+      "Herramientas de la estafa de tu elección.",
+      "15 po"
+    ],
+    "feature": {
+      "name": "Falsa identidad",
+      "description": "Ha creado una segunda identidad, que incluye documentación, conocidos establecidos y disfraces."
+    }
+  },
+  "Criminal": {
+    "name": "Criminal",
+    "startingEquipment": [
+      "Palanca",
+      "Ropa común oscura con capucha.",
+      "15 po"
+    ],
+    "feature": {
+      "name": "Contacto criminal",
+      "description": "Tiene un contacto confiable que actúa como enlace con una red de delincuentes."
+    }
+  },
+  "Entertainer": {
+    "name": "Artista",
+    "startingEquipment": [
+      "Instrumento musical",
+      "El favor de un admirador",
+      "Traje",
+      "15 po"
+    ],
+    "feature": {
+      "name": "Por demanda popular",
+      "description": "Siempre podrás encontrar un lugar para actuar y recibir alojamiento y comida gratis de modesta calidad."
+    }
+  },
+  "Folk Hero": {
+    "name": "Héroe popular",
+    "startingEquipment": [
+      "herramientas del artesano",
+      "Pala",
+      "olla de hierro",
+      "ropa común",
+      "10 po"
+    ],
+    "feature": {
+      "name": "Hospitalidad Rústica",
+      "description": "La gente común te protegerá a ti y a tus compañeros, te esconderá y no te traicionará."
+    }
+  },
+  "Guild Artisan": {
+    "name": "Artesano del gremio",
+    "startingEquipment": [
+      "herramientas del artesano",
+      "Carta de presentación de tu gremio",
+      "ropa de viajero",
+      "15 po"
+    ],
+    "feature": {
+      "name": "Membresía del gremio",
+      "description": "Su gremio ofrece alojamiento, asistencia jurídica y asistencia, y espera a cambio cuotas y lealtad."
+    }
+  },
+  "Hermit": {
+    "name": "Ermitaño",
+    "startingEquipment": [
+      "Estuche de pergamino con notas",
+      "manta de invierno",
+      "ropa común",
+      "kit de herboristería",
+      "5 po"
+    ],
+    "feature": {
+      "name": "Descubrimiento",
+      "description": "Tu soledad produjo un descubrimiento único: una gran verdad, un secreto o un lugar escondido."
+    }
+  },
+  "Noble": {
+    "name": "Noble",
+    "startingEquipment": [
+      "ropa fina",
+      "Anillo de sello",
+      "Pergamino de pedigrí",
+      "25 po"
+    ],
+    "feature": {
+      "name": "Posición de privilegio",
+      "description": "La gente asume lo mejor de ti. Eres bienvenido en la alta sociedad y puedes conseguir una audiencia con un noble local."
+    }
+  },
+  "Outlander": {
+    "name": "forastero",
+    "startingEquipment": [
+      "Personal",
+      "trampa de caza",
+      "Trofeo de un animal",
+      "ropa de viajero",
+      "10 po"
+    ],
+    "feature": {
+      "name": "Vagabundo",
+      "description": "Puedes encontrar comida y agua fresca para ti y hasta 5 personas más cada día, y recordar el diseño general del terreno."
+    }
+  },
+  "Sage": {
+    "name": "Sabio",
+    "startingEquipment": [
+      "Botella de tinta negra",
+      "Pluma",
+      "cuchillo pequeño",
+      "Carta de un colega fallecido",
+      "ropa común",
+      "10 po"
+    ],
+    "feature": {
+      "name": "Investigador",
+      "description": "Sabes dónde encontrar información oscura. Si no lo sabes, sabes quién lo sabe."
+    }
+  },
+  "Sailor": {
+    "name": "Marinero",
+    "startingEquipment": [
+      "Pasador de aseguramiento (club)",
+      "50 pies de cuerda de seda",
+      "amuleto de la suerte",
+      "ropa común",
+      "10 po"
+    ],
+    "feature": {
+      "name": "Paso del barco",
+      "description": "Puede asegurarse un pasaje gratuito en veleros para usted y sus acompañantes a cambio de mano de obra."
+    }
+  },
+  "Soldier": {
+    "name": "Soldado",
+    "startingEquipment": [
+      "Insignias de rango",
+      "Trofeo de un enemigo caído",
+      "Baraja de cartas o dados",
+      "ropa común",
+      "10 po"
+    ],
+    "feature": {
+      "name": "Rango militar",
+      "description": "Los soldados leales a tu antigua facción reconocen tu rango. Puedes invocar tu rango para tener influencia y acceder a campamentos militares."
+    }
+  },
+  "Urchin": {
+    "name": "Pilluelo",
+    "startingEquipment": [
+      "cuchillo pequeño",
+      "Mapa de tu ciudad natal",
+      "ratón mascota",
+      "Token de tus padres",
+      "ropa común",
+      "10 po"
+    ],
+    "feature": {
+      "name": "Secretos de la ciudad",
+      "description": "Conoces los patrones secretos de las ciudades y puedes encontrar pasajes a través de áreas urbanas dos veces más rápido de lo normal."
+    }
+  }
+}

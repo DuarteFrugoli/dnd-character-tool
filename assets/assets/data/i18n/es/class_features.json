@@ -1,0 +1,490 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Furia",
+      "description": "En la batalla, luchas con una ferocidad primordial. En tu turno, puedes entrar en ira como acción adicional. Mientras estás furioso, tienes ventaja en las pruebas de Fuerza y ​​en los tiros de salvación, obtienes una bonificación a las tiradas de daño cuerpo a cuerpo usando Fuerza y ​​tienes resistencia al daño contundente, perforante y cortante. Tu rabia dura 1 minuto. Termina antes si quedas inconsciente o si tu turno termina y no has atacado a una criatura hostil desde tu último turno ni has recibido daño desde entonces."
+    },
+    "Unarmored Defense": {
+      "name": "Defensa sin armadura",
+      "description": "Mientras no uses ninguna armadura, tu Clase de Armadura es igual a 10 + tu modificador de Destreza + tu modificador de Constitución. Puedes usar un escudo y aun así obtener este beneficio."
+    },
+    "Reckless Attack": {
+      "name": "Ataque imprudente",
+      "description": "Cuando realizas tu primer ataque en tu turno, puedes decidir atacar imprudentemente. Hacerlo te da ventaja en las tiradas de ataque con armas cuerpo a cuerpo usando Fuerza durante este turno, pero las tiradas de ataque contra ti tienen ventaja hasta tu próximo turno."
+    },
+    "Danger Sense": {
+      "name": "Sentido de peligro",
+      "description": "Tienes una extraña sensación de cuando las cosas cercanas no son como deberían ser. Tienes ventaja en las tiradas de salvación de Destreza contra efectos que puedes ver, como trampas y hechizos. Para obtener este beneficio, no puede quedar ciego, ensordecido ni incapacitado."
+    },
+    "Primal Path": {
+      "name": "Camino primordial",
+      "description": "Eliges un camino que da forma a la naturaleza de tu ira."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Extra Attack": {
+      "name": "Ataque extra",
+      "description": "Puedes atacar dos veces, en lugar de una, siempre que realices la acción de Atacar en tu turno."
+    },
+    "Fast Movement": {
+      "name": "Movimiento rápido",
+      "description": "Tu velocidad aumenta 10 pies mientras no llevas armadura pesada."
+    },
+    "Feral Instinct": {
+      "name": "Instinto salvaje",
+      "description": "Tus instintos están tan afinados que tienes ventaja en las tiradas de iniciativa. Además, si te sorprenden al comienzo del combate y no estás incapacitado, puedes actuar normalmente en tu primer turno, pero solo si entras en ira antes de hacer cualquier otra cosa en ese turno."
+    },
+    "Brutal Critical": {
+      "name": "Crítico brutal",
+      "description": "Puedes tirar un dado de daño de arma adicional al determinar el daño adicional por un golpe crítico con un ataque cuerpo a cuerpo. Esto aumenta a dos dados adicionales en el nivel 13 y tres dados adicionales en el nivel 17."
+    },
+    "Relentless Rage": {
+      "name": "Rabia implacable",
+      "description": "Tu rabia puede hacerte seguir luchando a pesar de las graves heridas. Si bajas a 0 puntos de vida mientras estás furioso y no mueres inmediatamente, puedes realizar una tirada de salvación de Constitución CD 10. Si tienes éxito, caerás a 1 punto de vida. Cada vez que usas esta función después de la primera, la CD aumenta en 5. Cuando terminas un descanso corto o largo, la CD se restablece a 10."
+    },
+    "Persistent Rage": {
+      "name": "Rabia persistente",
+      "description": "Tu ira es tan feroz que termina antes de tiempo sólo si caes inconsciente o si eliges ponerle fin."
+    },
+    "Indomitable Might": {
+      "name": "Poder indomable",
+      "description": "Si el total de una prueba de Fuerza es menor que tu puntuación de Fuerza, puedes usar esa puntuación en lugar del total."
+    },
+    "Primal Champion": {
+      "name": "Campeón primigenio",
+      "description": "Encarnas el poder de la naturaleza. Tus puntuaciones de Fuerza y ​​Constitución aumentan en 4. Tu máximo para esas puntuaciones ahora es 24."
+    }
+  },
+  "Bard": {
+    "Spellcasting": {
+      "name": "Lanzamiento de hechizos",
+      "description": "Has aprendido a desenredar y remodelar el tejido de la realidad en armonía con tus deseos y tu música. El carisma es tu habilidad para lanzar hechizos."
+    },
+    "Bardic Inspiration": {
+      "name": "Inspiración bárdica",
+      "description": "Puedes inspirar a otros a través de palabras conmovedoras o música. Como acción adicional, puedes darle a una criatura que no seas tú un dado de Inspiración Bárdica (d6). Una vez en los próximos 10 minutos, la criatura puede tirar ese dado y sumar el número a una prueba de habilidad, tirada de ataque o tirada de salvación que realice."
+    },
+    "Jack of All Trades": {
+      "name": "Experto en todos los oficios",
+      "description": "Puedes agregar la mitad de tu bono de competencia, redondeando hacia abajo, a cualquier prueba de habilidad que realices y que no incluya ya tu bono de competencia."
+    },
+    "Song of Rest": {
+      "name": "Canción de descanso",
+      "description": "Puedes utilizar música u oraciones relajantes para ayudar a revitalizar a tus aliados heridos durante un breve descanso. Si tú o cualquier criatura amiga que pueda escuchar tu actuación recuperas puntos de vida al final del breve descanso gastando uno o más Dados de Golpe, cada una de esas criaturas recupera 1d6 puntos de vida adicionales."
+    },
+    "Bard College": {
+      "name": "colegio bardo",
+      "description": "Profundizas en las técnicas avanzadas de una universidad de bardos de tu elección."
+    },
+    "Expertise": {
+      "name": "Pericia",
+      "description": "Elija dos de sus habilidades. Tu bonificación de competencia se duplica por cualquier prueba de habilidad que realices que utilice cualquiera de las competencias elegidas."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Font of Inspiration": {
+      "name": "Fuente de inspiración",
+      "description": "Recuperas todos los usos gastados de Bardic Inspiration cuando terminas un descanso corto o largo."
+    },
+    "Countercharm": {
+      "name": "Contraencanto",
+      "description": "Obtienes la capacidad de usar notas musicales o palabras de poder para interrumpir los efectos que influyen en la mente. Como acción, puedes iniciar una actuación que dura hasta el final de tu siguiente turno. Durante ese tiempo, tú y cualquier criatura amiga a 30 pies de ti tenéis ventaja en las tiradas de salvación contra ser asustados o encantados."
+    },
+    "Magical Secrets": {
+      "name": "Secretos magicos",
+      "description": "Has saqueado conocimientos mágicos de un amplio espectro de disciplinas. Elige dos hechizos de cualquier clase, incluida ésta. El hechizo que elijas debe tener un nivel que puedas lanzar. Los hechizos elegidos cuentan como hechizos de bardo para ti."
+    },
+    "Superior Inspiration": {
+      "name": "Inspiración superior",
+      "description": "Cuando tiras iniciativa y no te quedan usos de Bardic Inspiration, recuperas un uso."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Lanzamiento de hechizos",
+      "description": "Como conducto para el poder divino, puedes lanzar hechizos de clérigo. La sabiduría es tu habilidad para lanzar hechizos."
+    },
+    "Divine Domain": {
+      "name": "Dominio Divino",
+      "description": "Elija un dominio relacionado con su deidad. Tu elección te otorga hechizos de dominio y otras características."
+    },
+    "Channel Divinity": {
+      "name": "Canalizar la Divinidad",
+      "description": "Obtienes la capacidad de canalizar energía divina directamente desde tu deidad, usando esa energía para alimentar efectos mágicos. Comienzas con dos de esos efectos: convertir a los no muertos y un efecto determinado por tu dominio. Cuando usas tu Channel Divinity, eliges qué efecto crear."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Destroy Undead": {
+      "name": "Destruir no-muertos",
+      "description": "Cuando un no-muerto falla su tirada de salvación contra tu función Turn Undead, la criatura es destruida instantáneamente si su índice de desafío está en o por debajo de un cierto umbral (CR 1/2 en el nivel 5, aumentando en niveles más altos)."
+    },
+    "Divine Intervention": {
+      "name": "Intervención Divina",
+      "description": "Puedes invocar a tu deidad para que intervenga en tu nombre cuando tu necesidad sea grande. Implora la ayuda de tu deidad como acción. Describe la ayuda que buscas y tira los dados percentiles. Si obtienes un número igual o inferior a tu nivel de clérigo, tu deidad interviene."
+    }
+  },
+  "Druid": {
+    "Druidic": {
+      "name": "druida",
+      "description": "Ya conoces el druida, el lenguaje secreto de los druidas. Puedes hablar el idioma y usarlo para dejar mensajes ocultos."
+    },
+    "Spellcasting": {
+      "name": "Lanzamiento de hechizos",
+      "description": "Aprovechando la esencia divina de la naturaleza misma, puedes lanzar hechizos para moldear esa esencia a tu voluntad. La sabiduría es tu habilidad para lanzar hechizos."
+    },
+    "Wild Shape": {
+      "name": "Forma salvaje",
+      "description": "A partir del nivel 2, puedes usar tu acción para asumir mágicamente la forma de una bestia que hayas visto antes. Puede utilizar esta función dos veces. Recuperas los usos gastados cuando terminas un descanso corto o largo."
+    },
+    "Druid Circle": {
+      "name": "Círculo druida",
+      "description": "Eliges identificarte con un círculo de druidas."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Timeless Body": {
+      "name": "Cuerpo atemporal",
+      "description": "La magia primordial que ejerces hace que envejezcas más lentamente. Por cada 10 años que pasan, tu cuerpo envejece sólo 1 año."
+    },
+    "Beast Spells": {
+      "name": "Hechizos de bestias",
+      "description": "Puedes lanzar muchos de tus hechizos de druida en cualquier forma que asumas usando Wild Shape. Puedes realizar los componentes somáticos y verbales de un hechizo de druida mientras estás en forma de bestia, pero no puedes proporcionar componentes materiales."
+    },
+    "Archdruid": {
+      "name": "Archidruida",
+      "description": "Puedes usar tu Wild Shape un número ilimitado de veces. Además, puedes ignorar los componentes verbales y somáticos de tus hechizos de druida, así como cualquier componente material que carezca de costo y no sea consumido por un hechizo."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Estilo de lucha",
+      "description": "Adoptas un estilo particular de lucha como especialidad. Elige un estilo de lucha: tiro con arco, defensa, duelo, lucha con grandes armas, protección o lucha con dos armas."
+    },
+    "Second Wind": {
+      "name": "Segundo aliento",
+      "description": "Tienes una fuente limitada de resistencia a la que puedes recurrir para protegerte del daño. En tu turno, puedes usar una acción adicional para recuperar puntos de vida equivalentes a 1d10 + tu nivel de luchador."
+    },
+    "Action Surge": {
+      "name": "Aumento de acción",
+      "description": "A partir del nivel 2, puedes esforzarte más allá de tus límites normales por un momento. En tu turno, puedes realizar una acción adicional además de tu acción habitual y una posible acción adicional."
+    },
+    "Martial Archetype": {
+      "name": "Arquetipo marcial",
+      "description": "Eliges un arquetipo que te esfuerzas por emular en tus estilos y técnicas de combate."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Extra Attack": {
+      "name": "Ataque extra",
+      "description": "Puedes atacar dos veces, en lugar de una, siempre que realices la acción de Atacar en tu turno."
+    },
+    "Indomitable": {
+      "name": "Indomable",
+      "description": "Puedes repetir una tirada de salvación que falles. Si lo haces, deberás utilizar la nueva tirada y no podrás volver a utilizar esta función hasta que termines un descanso largo."
+    }
+  },
+  "Monk": {
+    "Unarmored Defense": {
+      "name": "Defensa sin armadura",
+      "description": "Mientras no lleves armadura ni empuñes un escudo, tu CA es igual a 10 + tu modificador de Destreza + tu modificador de Sabiduría."
+    },
+    "Martial Arts": {
+      "name": "Artes marciales",
+      "description": "Tu práctica de artes marciales te permitirá dominar los estilos de combate que utilizan ataques desarmados y armas de monje. Puedes usar Destreza en lugar de Fuerza para las tiradas de ataque y daño. Puedes tirar un d4 en lugar del daño normal de tu ataque desarmado o arma de monje. Cuando usas la acción de Ataque con un golpe desarmado o con un arma de monje, puedes realizar un golpe desarmado como acción adicional."
+    },
+    "Ki": {
+      "name": "ki",
+      "description": "Tu entrenamiento te permite aprovechar la energía mística del ki. Tu acceso a esta energía está representado por una cantidad de puntos de ki igual a tu nivel de monje. Puedes gastar puntos de ki para alimentar funciones de ki: Ráfaga de golpes, Defensa del paciente, Paso del viento."
+    },
+    "Unarmored Movement": {
+      "name": "Movimiento sin armadura",
+      "description": "Tu velocidad aumenta en 10 pies mientras no llevas armadura ni empuñas un escudo. Esta bonificación aumenta cuando alcanzas ciertos niveles de monje."
+    },
+    "Monastic Tradition": {
+      "name": "Tradición monástica",
+      "description": "Te comprometes con una tradición monástica."
+    },
+    "Deflect Missiles": {
+      "name": "Desviar misiles",
+      "description": "Puedes usar tu reacción para desviar o atrapar el misil cuando seas alcanzado por un ataque con arma a distancia. Cuando lo haces, el daño que recibes del ataque se reduce en 1d10 + tu modificador de Destreza + tu nivel de monje."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Slow Fall": {
+      "name": "caída lenta",
+      "description": "Puedes usar tu reacción cuando caes para reducir cualquier daño por caída que recibas en una cantidad equivalente a cinco veces tu nivel de monje."
+    },
+    "Extra Attack": {
+      "name": "Ataque extra",
+      "description": "Puedes atacar dos veces, en lugar de una, siempre que realices la acción de Atacar en tu turno."
+    },
+    "Stunning Strike": {
+      "name": "Golpe aturdidor",
+      "description": "Puedes interferir con el flujo de ki en el cuerpo de un oponente. Cuando golpeas a otra criatura con un ataque con arma cuerpo a cuerpo, puedes gastar 1 punto de ki para intentar un golpe aturdidor. El objetivo debe superar una tirada de salvación de Constitución o quedará aturdido hasta el final de tu siguiente turno."
+    },
+    "Stillness of Mind": {
+      "name": "Quietud de la mente",
+      "description": "Puedes usar tu acción para poner fin a un efecto en ti mismo que te hace sentir encantado o asustado."
+    },
+    "Timeless Body": {
+      "name": "Cuerpo atemporal",
+      "description": "Tu ki te sostiene para que no sufras nada de la fragilidad de la vejez y no puedes envejecer mágicamente. Sin embargo, todavía mueres de vejez. Además, ya no necesita comida ni agua."
+    },
+    "Empty Body": {
+      "name": "cuerpo vacío",
+      "description": "Puedes usar tu acción para gastar 4 puntos de ki y volverte invisible durante 1 minuto. Durante ese tiempo, también tienes resistencia a todo daño excepto al daño forzado."
+    },
+    "Perfect Self": {
+      "name": "Yo perfecto",
+      "description": "Cuando tiras por iniciativa y no te quedan puntos de ki, recuperas 4 puntos de ki."
+    }
+  },
+  "Paladin": {
+    "Divine Sense": {
+      "name": "Sentido Divino",
+      "description": "La presencia de un fuerte mal se registra en tus sentidos como un olor nocivo, y un poderoso bien suena como música celestial en tus oídos. Como acción, puedes abrir tu conciencia para detectar tales fuerzas. Hasta el final de tu siguiente turno, conoces la ubicación de cualquier celestial, demonio o no-muerto dentro de 60 pies de ti que no esté detrás de una cobertura total."
+    },
+    "Lay on Hands": {
+      "name": "Imposición de manos",
+      "description": "Tu toque bendito puede curar heridas. Tienes una reserva de poder curativo que se repone cuando tomas un descanso prolongado. Con ese grupo, puedes restaurar una cantidad total de puntos de vida igual a tu nivel de paladín × 5."
+    },
+    "Fighting Style": {
+      "name": "Estilo de lucha",
+      "description": "Adopta un estilo particular de lucha como especialidad. Elige entre: Defensa, Duelo, Lucha con grandes armas o Protección."
+    },
+    "Spellcasting": {
+      "name": "Lanzamiento de hechizos",
+      "description": "Has aprendido a recurrir a la magia divina a través de la meditación y la oración para lanzar hechizos. El carisma es tu habilidad para lanzar hechizos."
+    },
+    "Divine Smite": {
+      "name": "Castigo Divino",
+      "description": "Cuando golpeas a una criatura con un ataque de arma cuerpo a cuerpo, puedes gastar un espacio de hechizo para infligir daño radiante al objetivo, además del daño del arma. El daño adicional es 2d8 para un espacio de hechizo de primer nivel, más 1d8 por cada nivel de hechizo superior al primero, hasta un máximo de 5d8."
+    },
+    "Sacred Oath": {
+      "name": "Juramento Sagrado",
+      "description": "Haces el juramento que te une como paladín para siempre. Hasta este momento habéis estado en una etapa preparatoria, comprometidos con el camino pero aún no jurados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Extra Attack": {
+      "name": "Ataque extra",
+      "description": "Puedes atacar dos veces, en lugar de una, siempre que realices la acción de Atacar en tu turno."
+    },
+    "Aura of Protection": {
+      "name": "Aura de protección",
+      "description": "Siempre que tú o una criatura amiga a 10 pies de ti debas realizar una tirada de salvación, la criatura obtiene una bonificación a la tirada de salvación igual a tu modificador de Carisma (con una bonificación mínima de +1). Debes estar consciente para otorgar este bono."
+    },
+    "Aura of Courage": {
+      "name": "Aura de coraje",
+      "description": "Ni tú ni las criaturas amigas que se encuentren a 10 pies de ti pueden asustarse mientras estás consciente."
+    },
+    "Cleansing Touch": {
+      "name": "Toque limpiador",
+      "description": "Puedes usar tu acción para finalizar un hechizo sobre ti mismo o sobre una criatura voluntaria que toques."
+    }
+  },
+  "Ranger": {
+    "Favored Enemy": {
+      "name": "Enemigo favorecido",
+      "description": "Tienes una gran experiencia estudiando, rastreando, cazando e incluso hablando con cierto tipo de enemigo. Elige un tipo de enemigo favorito: aberraciones, bestias, celestiales, constructos, dragones, elementales, hadas, demonios, gigantes, monstruosidades, exudados, plantas o no-muertos. Tienes ventaja en las pruebas de Sabiduría (Supervivencia) para rastrear a tus enemigos favoritos, así como en las pruebas de Inteligencia para recordar información sobre ellos."
+    },
+    "Natural Explorer": {
+      "name": "Explorador natural",
+      "description": "Estás particularmente familiarizado con un tipo de entorno natural y eres experto en viajar y sobrevivir en dichas regiones. Elige un tipo de terreno favorito: ártico, costa, desierto, bosque, pradera, montaña, pantano o la Infraoscuridad."
+    },
+    "Fighting Style": {
+      "name": "Estilo de lucha",
+      "description": "Adopta un estilo particular de lucha como especialidad. Elige entre: Tiro con arco, Defensa, Duelo o Lucha con dos armas."
+    },
+    "Spellcasting": {
+      "name": "Lanzamiento de hechizos",
+      "description": "Has aprendido a utilizar la esencia mágica de la naturaleza para lanzar hechizos. La sabiduría es tu habilidad para lanzar hechizos."
+    },
+    "Ranger Archetype": {
+      "name": "Arquetipo de guardabosques",
+      "description": "Eliges un arquetipo que te esfuerzas por emular."
+    },
+    "Primeval Awareness": {
+      "name": "Conciencia primitiva",
+      "description": "Puedes usar tu acción y gastar un espacio de hechizo de guardabosques para centrar tu atención en la región que te rodea. Durante 1 minuto por nivel del espacio de hechizo que gastes, puedes sentir si ciertos tipos de criaturas están presentes dentro de 1 milla de ti."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Extra Attack": {
+      "name": "Ataque extra",
+      "description": "Puedes atacar dos veces, en lugar de una, siempre que realices la acción de Atacar en tu turno."
+    },
+    "Land's Stride": {
+      "name": "Paso de tierra",
+      "description": "Moverse a través de terrenos difíciles no mágicos no te cuesta ningún movimiento adicional. También puedes atravesar plantas no mágicas sin que te ralenticen y sin recibir daño si tienen espinas, espinas o un peligro similar."
+    },
+    "Hide in Plain Sight": {
+      "name": "Esconderse a plena vista",
+      "description": "Puedes dedicar 1 minuto a crear camuflaje para ti. Debes tener acceso a barro fresco, tierra, plantas, hollín y otros materiales naturales con los que crear tu camuflaje. Una vez que esté camuflado de esta manera, puede intentar esconderse presionándose contra una superficie sólida, como un árbol o una pared, que sea al menos tan alta y ancha como usted. Obtienes una bonificación de +10 a las pruebas de Destreza (Sigilo) siempre que permanezcas allí sin moverte ni realizar acciones."
+    },
+    "Vanish": {
+      "name": "Desaparecer",
+      "description": "Puedes utilizar la acción Ocultar como acción adicional en tu turno. Además, no puedes ser rastreado por medios no mágicos, a menos que decidas dejar un rastro."
+    },
+    "Feral Senses": {
+      "name": "Sentidos salvajes",
+      "description": "Obtienes sentidos sobrenaturales que te ayudan a luchar contra criaturas que no puedes ver. Cuando atacas a una criatura que no puedes ver, tu incapacidad para verla no impone desventaja en tus tiradas de ataque contra ella."
+    },
+    "Foe Slayer": {
+      "name": "Asesino de enemigos",
+      "description": "Te conviertes en un cazador incomparable de tus enemigos. Una vez en cada uno de tus turnos, puedes agregar tu modificador de Sabiduría a la tirada de ataque o a la tirada de daño de un ataque que realices contra uno de tus enemigos favoritos."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Pericia",
+      "description": "Elija dos de sus competencias de habilidades, o una de sus competencias de habilidades y su competencia con las herramientas de los ladrones. Tu bonificación de competencia se duplica por cualquier prueba de habilidad que realices que utilice cualquiera de las competencias elegidas."
+    },
+    "Sneak Attack": {
+      "name": "Ataque furtivo",
+      "description": "Sabes cómo atacar sutilmente y aprovechar la distracción del enemigo. Una vez por turno, puedes infligir 1d6 de daño adicional a una criatura que golpees con un ataque si tienes ventaja en la tirada de ataque. El ataque debe utilizar delicadeza o un arma a distancia. No necesitas ventaja en la tirada de ataque si otro enemigo del objetivo está a 5 pies de él, ese enemigo no está incapacitado y no tienes desventaja en la tirada de ataque. La cantidad de daño adicional aumenta a medida que ganas niveles en esta clase."
+    },
+    "Thieves' Cant": {
+      "name": "El hipocresía de los ladrones",
+      "description": "Durante tu entrenamiento como pícaro, aprendiste el lenguaje de los ladrones, una mezcla secreta de dialecto, jerga y código que te permite ocultar mensajes en una conversación aparentemente normal."
+    },
+    "Cunning Action": {
+      "name": "Acción astuta",
+      "description": "Su rapidez de pensamiento y agilidad le permiten moverse y actuar con rapidez. Puedes realizar una acción adicional en cada uno de tus turnos de combate. Esta acción solo se puede utilizar para realizar la acción Dash, Disengage u Hide."
+    },
+    "Roguish Archetype": {
+      "name": "Arquetipo pícaro",
+      "description": "Eliges un arquetipo que emulas en el ejercicio de tus habilidades de pícaro."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Uncanny Dodge": {
+      "name": "Esquiva asombrosa",
+      "description": "Cuando un atacante que puedes ver te golpea con un ataque, puedes usar tu reacción para reducir a la mitad el daño del ataque contra ti."
+    },
+    "Evasion": {
+      "name": "Evasión",
+      "description": "Cuando estás sujeto a un efecto que te permite realizar una tirada de salvación de Destreza para recibir solo la mitad del daño, en lugar de eso no recibes daño si tienes éxito en la tirada de salvación, y solo la mitad del daño si fallas."
+    },
+    "Reliable Talent": {
+      "name": "Talento confiable",
+      "description": "Has refinado las habilidades elegidas hasta que se acercan a la perfección. Siempre que realices una prueba de habilidad que te permita agregar tu bonificación de competencia, puedes tratar una tirada de d20 de 9 o menos como un 10."
+    },
+    "Blindsense": {
+      "name": "Sentido ciego",
+      "description": "Si puede oír, sabrá la ubicación de cualquier criatura oculta o invisible a menos de 10 pies de usted."
+    },
+    "Slippery Mind": {
+      "name": "Mente resbaladiza",
+      "description": "Has adquirido una mayor fuerza mental. Obtienes competencia en las tiradas de salvación de Sabiduría."
+    },
+    "Elusive": {
+      "name": "Elusivo",
+      "description": "Eres tan evasivo que los atacantes rara vez ganan terreno contra ti. Ninguna tirada de ataque tiene ventaja contra ti mientras no estés incapacitado."
+    },
+    "Stroke of Luck": {
+      "name": "Golpe de suerte",
+      "description": "Tienes una extraña habilidad para triunfar cuando lo necesitas. Si tu ataque falla en un objetivo dentro del alcance, puedes convertir el error en un impacto. Alternativamente, si fallas una prueba de habilidad, puedes tratar la tirada de d20 como un 20."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Lanzamiento de hechizos",
+      "description": "Un evento en tu pasado, o en la vida de uno de tus padres o antepasados, dejó una marca indeleble en ti, infundiéndote magia arcana. El carisma es tu habilidad para lanzar hechizos."
+    },
+    "Sorcerous Origin": {
+      "name": "Origen hechicero",
+      "description": "Elige un origen hechicero, que describa la fuente de tu poder mágico innato."
+    },
+    "Font of Magic": {
+      "name": "fuente de magia",
+      "description": "Aprovechas una profunda fuente de magia dentro de ti. Esta fuente está representada por puntos de hechicería, que te permiten crear una variedad de efectos mágicos. Tienes 2 puntos de hechicería en el segundo nivel y ganas 1 punto adicional por cada nivel más allá del segundo."
+    },
+    "Metamagic": {
+      "name": "metamagia",
+      "description": "Obtienes la capacidad de modificar tus hechizos para adaptarlos a tus necesidades. Obtienes dos opciones metamágicas de tu elección: Hechizo cuidadoso, Hechizo distante, Hechizo potenciado, Hechizo extendido, Hechizo intensificado, Hechizo acelerado, Hechizo sutil, Hechizo gemelo."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Sorcerous Restoration": {
+      "name": "Restauración hechicera",
+      "description": "Recuperas 4 puntos de hechicería gastados cada vez que terminas un breve descanso."
+    }
+  },
+  "Warlock": {
+    "Otherworldly Patron": {
+      "name": "Patrón de otro mundo",
+      "description": "Has llegado a un acuerdo con un ser de otro mundo de tu elección: el Archifey, el Demonio o el Primigenio, cada uno de los cuales se detalla al final de la descripción de la clase."
+    },
+    "Pact Magic": {
+      "name": "Pacto mágico",
+      "description": "Tu investigación arcana y la magia que te ha otorgado tu patrón te han dado facilidad con los hechizos. El carisma es tu habilidad para lanzar hechizos. A diferencia de otros lanzadores de hechizos, todos los espacios de hechizo gastados se recuperan con un descanso breve o prolongado."
+    },
+    "Eldritch Invocations": {
+      "name": "Invocaciones sobrenaturales",
+      "description": "En tu estudio de la ciencia oculta, has desenterrado invocaciones sobrenaturales, fragmentos de conocimiento prohibido que te imbuyen de una habilidad mágica duradera. Obtienes dos invocaciones sobrenaturales de tu elección."
+    },
+    "Pact Boon": {
+      "name": "Bendición del pacto",
+      "description": "Tu patrón sobrenatural te otorga un regalo por tu leal servicio. Obtienes una de las siguientes características de tu elección: Pacto de la Cadena, Pacto de la Espada o Pacto del Tomo."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Mystic Arcanum": {
+      "name": "Arcano místico",
+      "description": "Tu patrón te otorga un secreto mágico llamado arcano. Elige un hechizo de nivel 6 de la lista de hechizos de brujo como este arcano. Puedes lanzar tu hechizo arcano una vez sin gastar un espacio de hechizo. Debes terminar un descanso largo antes de volver a hacerlo."
+    },
+    "Eldritch Master": {
+      "name": "Maestro sobrenatural",
+      "description": "Puedes recurrir a tu reserva interior de poder místico mientras suplicas a tu patrón que recupere los espacios para hechizos gastados. Puedes pasar 1 minuto pidiéndole ayuda a tu patrón para recuperar todos los espacios para hechizos gastados de tu función Pact Magic. Una vez que recuperes espacios para hechizos con esta característica, debes terminar un descanso prolongado antes de poder hacerlo nuevamente."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Lanzamiento de hechizos",
+      "description": "Como estudiante de magia arcana, tienes un libro de hechizos que contiene 6 hechizos de 1er nivel de tu elección. La inteligencia es tu habilidad para lanzar hechizos."
+    },
+    "Arcane Recovery": {
+      "name": "Recuperación Arcana",
+      "description": "Has aprendido a recuperar parte de tu energía mágica estudiando tu libro de hechizos. Una vez al día, cuando termines un breve descanso, puedes elegir espacios de hechizo gastados para recuperarte. Los espacios para hechizos pueden tener un nivel combinado igual o inferior a la mitad de tu nivel de mago (redondeado hacia arriba), y ninguno de los espacios puede ser de nivel 6 o superior."
+    },
+    "Arcane Tradition": {
+      "name": "Tradición Arcana",
+      "description": "Eliges una tradición arcana y moldeas tu práctica de la magia a través de una de las siguientes escuelas: Abjuración, Conjuración, Adivinación, Encantamiento, Evocación, Ilusión, Nigromancia o Transmutación."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de la puntuación de habilidad",
+      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+    },
+    "Spell Mastery": {
+      "name": "Dominio de hechizos",
+      "description": "Has logrado tal dominio sobre ciertos hechizos que puedes lanzarlos a voluntad. Elige un hechizo de mago de primer nivel y un hechizo de mago de segundo nivel que estén en tu libro de hechizos. Puedes lanzar esos hechizos en su nivel más bajo sin gastar un espacio de hechizo cuando los tengas preparados."
+    },
+    "Signature Spells": {
+      "name": "Hechizos característicos",
+      "description": "Obtienes dominio sobre dos hechizos poderosos y puedes lanzarlos con poco esfuerzo. Elige dos hechizos de mago de tercer nivel en tu libro de hechizos como tus hechizos característicos. Siempre tienes estos hechizos preparados, no cuentan para el número de hechizos que has preparado y puedes lanzar cada uno de ellos una vez en el nivel 3 sin gastar un espacio de hechizo. Cuando lo hagas, no podrás volver a hacerlo hasta que termines un descanso corto o largo."
+    }
+  }
+}

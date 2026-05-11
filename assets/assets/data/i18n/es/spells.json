@@ -1,0 +1,1577 @@
+{
+  "Acid Splash": {
+    "name": "Salpicadura de ácido",
+    "description": "Lanzas una burbuja de ácido. Elige una criatura dentro del alcance o elige dos criaturas dentro del alcance que estén a 5 pies de distancia entre sí. Un objetivo debe superar una tirada de salvación de Destreza o sufrir 1d6 de daño por ácido. El daño de este hechizo aumenta en 1d6 cuando alcanzas el nivel 5 (2d6), el nivel 11 (3d6) y el nivel 17 (4d6).",
+    "higherLevels": null
+  },
+  "Blade Ward": {
+    "name": "Protección de espadas",
+    "description": "Extiendes tu mano y trazas un sello de protección en el aire. Hasta el final de tu próximo turno, tienes resistencia contra el daño contundente, perforante y cortante infligido por ataques con armas.",
+    "higherLevels": null
+  },
+  "Chill Touch": {
+    "name": "Toque frío",
+    "description": "Creas una mano esquelética y fantasmal en el espacio de una criatura dentro del alcance. Realiza un ataque con hechizo a distancia contra la criatura. Con un impacto, el objetivo sufre 1d8 de daño necrótico y no puede recuperar puntos de golpe hasta el comienzo de tu siguiente turno. Hasta entonces, la mano se aferra al objetivo. Si golpeas a un objetivo no-muerto, también tiene desventaja en las tiradas de ataque contra ti hasta el final de tu siguiente turno. El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 (2d8), el nivel 11 (3d8) y el nivel 17 (4d8).",
+    "higherLevels": null
+  },
+  "Dancing Lights": {
+    "name": "Luces danzantes",
+    "description": "Creas hasta cuatro luces del tamaño de una antorcha dentro del alcance, haciéndolas aparecer como antorchas, linternas u orbes brillantes que flotan en el aire mientras dura. También puedes combinar las cuatro luces en una forma brillante, vagamente humanoide, de tamaño mediano. Como acción adicional, puedes mover las luces hasta 60 pies a un nuevo lugar dentro del alcance.",
+    "higherLevels": null
+  },
+  "Druidcraft": {
+    "name": "druida",
+    "description": "Al susurrar a los espíritus de la naturaleza, creas uno de los siguientes efectos dentro del alcance: un efecto sensorial diminuto e inofensivo que predice el tiempo que hará durante las próximas 24 horas; florece una flor, florece un capullo o se abre una hoja; creas un efecto sensorial instantáneo e inofensivo, como hojas que caen, una ráfaga de viento, el sonido de un animal pequeño; o enciendes o apagas una vela, una antorcha o una pequeña fogata.",
+    "higherLevels": null
+  },
+  "Eldritch Blast": {
+    "name": "Explosión sobrenatural",
+    "description": "Un rayo de energía crepitante se dirige hacia una criatura dentro del alcance. Realiza un ataque con hechizo a distancia contra el objetivo. Con un impacto, el objetivo sufre 1d10 de daño de fuerza. El hechizo crea más de un rayo cuando alcanzas niveles más altos: dos rayos en el nivel 5, tres rayos en el nivel 11 y cuatro rayos en el nivel 17. Puedes dirigir los rayos al mismo objetivo o a diferentes.",
+    "higherLevels": null
+  },
+  "Fire Bolt": {
+    "name": "Rayo de fuego",
+    "description": "Lanzas una mota de fuego a una criatura u objeto dentro del alcance. Realiza un ataque con hechizo a distancia contra el objetivo. Con un impacto, el objetivo sufre 1d10 de daño por fuego. Un objeto inflamable golpeado por este hechizo se enciende si no se usa o se transporta. El daño de este hechizo aumenta en 1d10 cuando alcanzas el nivel 5 (2d10), el nivel 11 (3d10) y el nivel 17 (4d10).",
+    "higherLevels": null
+  },
+  "Friends": {
+    "name": "Amigos",
+    "description": "Mientras dure, tienes ventaja en todas las pruebas de Carisma dirigidas a una criatura de tu elección que no sea hostil hacia ti. Cuando termina el hechizo, la criatura se da cuenta de que usaste magia para influir en su estado de ánimo y se vuelve hostil hacia ti. Una criatura propensa a la violencia podría atacarte. Otra criatura podría buscar retribución de otras maneras (a discreción del DM), dependiendo de la naturaleza de tu interacción con ella.",
+    "higherLevels": null
+  },
+  "Guidance": {
+    "name": "Guía",
+    "description": "Tocas a una criatura dispuesta. Una vez antes de que termine el hechizo, el objetivo puede tirar un d4 y sumar el número obtenido a una prueba de habilidad de su elección. Puede tirar el dado antes o después de realizar la prueba de habilidad. Entonces el hechizo termina.",
+    "higherLevels": null
+  },
+  "Light": {
+    "name": "Luz",
+    "description": "Tocas un objeto que no mide más de 10 pies en cualquier dimensión. Hasta que finaliza el hechizo, el objeto arroja luz brillante en un radio de 20 pies y luz tenue en 20 pies adicionales. La luz se puede colorear como quieras. Cubrir completamente el objeto con algo opaco bloquea la luz. El hechizo termina si lo vuelves a lanzar o lo descartas como acción. Si apuntas a un objeto sostenido o usado por una criatura hostil, esa criatura debe superar una tirada de salvación de Destreza para evitar el hechizo.",
+    "higherLevels": null
+  },
+  "Mage Hand": {
+    "name": "Mano de mago",
+    "description": "Una mano espectral flotante aparece en un punto que elijas dentro del alcance. La mano dura mientras dure o hasta que la descartes como una acción. La mano desaparece si alguna vez está a más de 30 pies de distancia de ti o si vuelves a lanzar este hechizo. Puede usar la mano para manipular un objeto, abrir una puerta o un contenedor sin llave, guardar o recuperar un artículo de un contenedor abierto o verter el contenido de un vial. No puede atacar, activar objetos mágicos ni transportar más de 10 libras.",
+    "higherLevels": null
+  },
+  "Mending": {
+    "name": "Ropa de repaso",
+    "description": "Este hechizo repara una única rotura o desgarro en un objeto que tocas, como un eslabón de cadena roto, dos mitades de una llave rota, una capa rota o un odre de vino que gotea. Siempre que la rotura o desgarro no supere 1 pie en cualquier dimensión, podrá repararlo sin dejar rastro del daño anterior. Este hechizo puede reparar físicamente un objeto o construcción mágico, pero no puede restaurar la magia de dicho objeto.",
+    "higherLevels": null
+  },
+  "Message": {
+    "name": "Mensaje",
+    "description": "Señalas con el dedo hacia una criatura dentro del alcance y susurras un mensaje. El objetivo (y sólo él) escucha el mensaje y puede responder en un susurro que sólo usted puede oír. Puedes lanzar este hechizo a través de objetos sólidos si estás familiarizado con el objetivo y sabes que está más allá de la barrera. Silencio mágico, 1 pie de piedra, 1 pulgada de metal común, una fina lámina de plomo o 3 pies de madera bloquean el hechizo.",
+    "higherLevels": null
+  },
+  "Minor Illusion": {
+    "name": "Ilusión menor",
+    "description": "Creas un sonido o una imagen de un objeto dentro del alcance que dura todo el tiempo. La ilusión termina si la descartas como acción o lanzas este hechizo nuevamente. Si creas un sonido, su volumen puede variar desde un susurro hasta un grito. Si crea una imagen de un objeto, no debe ser más grande que un cubo de 5 pies. Una criatura que usa su acción para examinar el sonido o la imagen puede determinar que es una ilusión con una prueba exitosa de Inteligencia (Investigación) contra la CD de salvación de tu hechizo.",
+    "higherLevels": null
+  },
+  "Poison Spray": {
+    "name": "Aerosol venenoso",
+    "description": "Extiendes tu mano hacia una criatura que puedes ver dentro del alcance y proyectas una bocanada de gas nocivo desde tu palma. La criatura debe superar una tirada de salvación de Constitución o sufrir 1d12 de daño por veneno. El daño de este hechizo aumenta en 1d12 cuando alcanzas el nivel 5 (2d12), el nivel 11 (3d12) y el nivel 17 (4d12).",
+    "higherLevels": null
+  },
+  "Prestidigitation": {
+    "name": "Prestidigitación",
+    "description": "Este hechizo es un truco mágico menor que los lanzadores de conjuros novatos utilizan para practicar. Creas uno de los siguientes efectos mágicos dentro del alcance: un efecto sensorial instantáneo e inofensivo; encender o apagar una vela, una antorcha o una pequeña fogata; limpiar o ensuciar un objeto; enfríe, caliente o dé sabor a hasta 1 pie cúbico de material no vivo; hacer aparecer un color, una pequeña marca o un símbolo en un objeto o superficie durante 1 hora; o crea una baratija no mágica o una imagen ilusoria que pueda caber en tu mano.",
+    "higherLevels": null
+  },
+  "Produce Flame": {
+    "name": "producir llama",
+    "description": "Una llama parpadeante aparece en tu mano. La llama permanece allí durante todo el tiempo y no le daña a usted ni a su equipo. La llama arroja luz brillante en un radio de 10 pies y luz tenue en 10 pies adicionales. El hechizo termina si lo descartas como acción o si lo vuelves a lanzar. También puedes atacar con la llama, aunque al hacerlo finaliza el hechizo. Cuando lanzas este hechizo, o como acción en un turno posterior, puedes arrojar la llama a una criatura que se encuentre a 30 pies de ti. Realiza un ataque con hechizo a distancia. Con un impacto, el objetivo sufre 1d8 de daño por fuego. El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 (2d8), el nivel 11 (3d8) y el nivel 17 (4d8).",
+    "higherLevels": null
+  },
+  "Ray of Frost": {
+    "name": "Rayo de escarcha",
+    "description": "Un gélido rayo de luz azul-blanca se dirige hacia una criatura dentro del alcance. Realiza un ataque con hechizo a distancia contra el objetivo. Con un golpe, sufre 1d8 de daño por frío y su velocidad se reduce en 10 pies hasta el comienzo de tu siguiente turno. El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 (2d8), el nivel 11 (3d8) y el nivel 17 (4d8).",
+    "higherLevels": null
+  },
+  "Resistance": {
+    "name": "Resistencia",
+    "description": "Tocas a una criatura dispuesta. Una vez antes de que termine el hechizo, el objetivo puede tirar un d4 y sumar el número obtenido a una tirada de salvación de su elección. Puede tirar el dado antes o después de realizar la tirada de salvación. Entonces el hechizo termina.",
+    "higherLevels": null
+  },
+  "Sacred Flame": {
+    "name": "Llama Sagrada",
+    "description": "Un resplandor parecido a una llama desciende sobre una criatura que puedes ver dentro del alcance. El objetivo debe superar una tirada de salvación de Destreza o sufrir 1d8 de daño radiante. El objetivo no obtiene ningún beneficio de la cobertura de esta tirada de salvación. El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 (2d8), el nivel 11 (3d8) y el nivel 17 (4d8).",
+    "higherLevels": null
+  },
+  "Shillelagh": {
+    "name": "Cachiporra",
+    "description": "La madera de un garrote o un bastón que sostiene está imbuida del poder de la naturaleza. Mientras dure, puedes usar tu habilidad de lanzar hechizos en lugar de Fuerza para las tiradas de ataque y daño de los ataques cuerpo a cuerpo usando esa arma, y ​​el dado de daño del arma se convierte en un d8. El arma también se vuelve mágica, si no lo es ya. El hechizo termina si lo vuelves a lanzar o si sueltas el arma.",
+    "higherLevels": null
+  },
+  "Shocking Grasp": {
+    "name": "Agarre impactante",
+    "description": "Un rayo brota de tu mano para dar una descarga eléctrica a una criatura que intentas tocar. Realiza un ataque de hechizo cuerpo a cuerpo contra el objetivo. Tienes ventaja en la tirada de ataque si el objetivo lleva una armadura de metal. Con un impacto, el objetivo sufre 1d8 de daño por rayo y no puede reaccionar hasta el comienzo de su siguiente turno. El daño de este hechizo aumenta en 1d8 cuando alcanzas el nivel 5 (2d8), el nivel 11 (3d8) y el nivel 17 (4d8).",
+    "higherLevels": null
+  },
+  "Spare the Dying": {
+    "name": "Perdona a los moribundos",
+    "description": "Tocas una criatura viviente que tiene 0 puntos de vida. La criatura se estabiliza. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": null
+  },
+  "Thaumaturgy": {
+    "name": "Taumaturgia",
+    "description": "Manifiestas una maravilla menor, una señal de poder sobrenatural, dentro de tu alcance. Creas uno de los siguientes efectos mágicos: tu voz resuena hasta tres veces más fuerte de lo normal durante 1 minuto; haces que las llamas parpadeen, se iluminen, se atenúen o cambien de color durante 1 minuto; provocas temblores inofensivos en el suelo durante 1 minuto; creas un sonido instantáneo que se origina desde un punto de tu elección dentro del alcance; instantáneamente haces que una puerta o ventana sin llave se abra o se cierre de golpe; o alteras la apariencia de tus ojos durante 1 minuto.",
+    "higherLevels": null
+  },
+  "True Strike": {
+    "name": "Golpe verdadero",
+    "description": "Extiendes la mano y señalas con el dedo un objetivo dentro del alcance. Tu magia te otorga una breve visión de las defensas del objetivo. En tu siguiente turno, obtienes ventaja en tu primera tirada de ataque contra el objetivo, siempre que este hechizo no haya terminado.",
+    "higherLevels": null
+  },
+  "Vicious Mockery": {
+    "name": "Burla viciosa",
+    "description": "Desatas una serie de insultos mezclados con encantamientos sutiles contra una criatura que puedes ver dentro de tu alcance. Si el objetivo puede oírte (aunque no es necesario que te entienda), debe superar una tirada de salvación de Sabiduría o sufrir 1d4 de daño psíquico y tener desventaja en la siguiente tirada de ataque que realice antes del final de su siguiente turno. El daño de este hechizo aumenta en 1d4 cuando alcanzas el nivel 5 (2d4), el nivel 11 (3d4) y el nivel 17 (4d4).",
+    "higherLevels": null
+  },
+  "Alarm": {
+    "name": "Alarma",
+    "description": "Configuras una alarma contra intrusiones no deseadas. Elija una puerta, una ventana o un área dentro del alcance que no supere un cubo de 20 pies. Hasta que finalice el hechizo, una alarma te avisará cada vez que una criatura pequeña o más grande toque o entre en el área protegida. Cuando lanzas el hechizo, eliges si la alarma es mental o audible.",
+    "higherLevels": null
+  },
+  "Animal Friendship": {
+    "name": "Amistad Animal",
+    "description": "Este hechizo te permite convencer a una bestia de que no quieres hacerle daño. Elige una bestia que puedas ver dentro del alcance. Debe verte y oírte. Si la Inteligencia de la bestia es 4 o superior, el hechizo falla. De lo contrario, la bestia debe superar una tirada de salvación de Sabiduría o ser hechizada por ti mientras dure el hechizo.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2.º nivel o superior, puedes afectar a una bestia adicional por cada nivel de espacio por encima del 1.º."
+  },
+  "Bane": {
+    "name": "Perdición",
+    "description": "Hasta tres criaturas de tu elección que puedas ver dentro del alcance deben realizar tiradas de salvación de Carisma. Siempre que un objetivo que falla esta tirada de salvación realiza una tirada de ataque o una tirada de salvación antes de que termine el hechizo, el objetivo debe tirar un d4 y restar el número obtenido de la tirada de ataque o de la tirada de salvación.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 2 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 1."
+  },
+  "Bless": {
+    "name": "Bendecir",
+    "description": "Bendices hasta tres criaturas de tu elección dentro del alcance. Siempre que un objetivo realiza una tirada de ataque o una tirada de salvación antes de que termine el hechizo, el objetivo puede tirar un d4 y sumar el número obtenido a la tirada de ataque o tirada de salvación.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 2 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 1."
+  },
+  "Burning Hands": {
+    "name": "Manos ardientes",
+    "description": "Mientras sostienes tus manos con los pulgares tocándose y los dedos extendidos, una fina lámina de llamas brota de las yemas de tus dedos extendidos. Cada criatura en un cono de 15 pies debe realizar una tirada de salvación de Destreza. Una criatura sufre 3d6 daños por fuego si falla la salvación, o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, el daño aumenta en 1d6 por cada nivel de espacio por encima del 1º."
+  },
+  "Charm Person": {
+    "name": "Persona encantadora",
+    "description": "Intentas encantar a un humanoide que puedes ver dentro del alcance. Debe realizar una tirada de salvación de Sabiduría, y lo hace con ventaja si tú o tus compañeros estáis luchando contra él. Si falla la tirada de salvación, quedará encantado hasta que finalice el hechizo o hasta que tú o tus compañeros le hagan algo perjudicial.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 2 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 1."
+  },
+  "Color Spray": {
+    "name": "Aerosol de color",
+    "description": "Una deslumbrante variedad de luces de colores parpadeantes brota de tu mano. Tira 6d10; el total es cuántos puntos de vida de las criaturas puede afectar este hechizo. Comenzando con la criatura que tiene los puntos de vida actuales más bajos, cada criatura afectada por este hechizo queda cegada hasta que el hechizo termina.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, tira 2d10 adicionales por cada nivel de espacio por encima del 1º."
+  },
+  "Command": {
+    "name": "Dominio",
+    "description": "Le dices una orden de una palabra a una criatura que puedes ver dentro del alcance. El objetivo debe superar una tirada de salvación de Sabiduría o seguir la orden en su siguiente turno. El hechizo no tiene ningún efecto si el objetivo es un no-muerto, si no entiende tu idioma o si tu orden es directamente perjudicial para él.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 2 o superior, puedes afectar a una criatura adicional por cada nivel de espacio por encima del 1."
+  },
+  "Comprehend Languages": {
+    "name": "Comprender idiomas",
+    "description": "Mientras dura, comprende el significado literal de cualquier idioma hablado que escuche. También comprendes cualquier lenguaje escrito que veas, pero debes tocar la superficie en la que están escritas las palabras.",
+    "higherLevels": null
+  },
+  "Create or Destroy Water": {
+    "name": "Crear o destruir agua",
+    "description": "O creas o destruyes el agua. Crear agua: crea hasta 10 galones de agua limpia dentro del alcance en un recipiente abierto. Destruye agua: destruyes hasta 10 galones de agua en un recipiente abierto dentro del alcance.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, creas o destruyes 10 galones adicionales de agua por cada nivel de espacio por encima del 1º."
+  },
+  "Cure Wounds": {
+    "name": "curar heridas",
+    "description": "Una criatura que tocas recupera una cantidad de puntos de vida igual a 1d8 + tu modificador de habilidad de lanzamiento de hechizos. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2.º nivel o superior, la curación aumenta en 1d8 por cada nivel de espacio por encima del 1.º."
+  },
+  "Detect Evil and Good": {
+    "name": "Detectar el mal y el bien",
+    "description": "Mientras dura, sabes si hay una aberración, celestial, elemental, hada, demonio o no-muerto a 30 pies de ti, así como dónde se encuentra la criatura. También sabes si hay un lugar u objeto dentro de 30 pies que haya sido consagrado o profanado mágicamente.",
+    "higherLevels": null
+  },
+  "Detect Magic": {
+    "name": "Detectar magia",
+    "description": "Mientras dura, sientes la presencia de magia a 30 pies de ti. Si sientes magia de esta manera, puedes usar tu acción para ver un aura tenue alrededor de cualquier criatura u objeto visible en el área que tenga magia, y aprenderás su escuela de magia, si la hay.",
+    "higherLevels": null
+  },
+  "Detect Poison and Disease": {
+    "name": "Detectar veneno y enfermedades",
+    "description": "Mientras dura, puedes sentir la presencia y ubicación de venenos, criaturas venenosas y enfermedades dentro de un radio de 30 pies de ti. También identificas el tipo de veneno, criatura venenosa o enfermedad en cada caso.",
+    "higherLevels": null
+  },
+  "Disguise Self": {
+    "name": "Disfrazarse",
+    "description": "Te haces lucir diferente, incluida tu ropa, armadura, armas y otras pertenencias, hasta que el hechizo termina o hasta que usas tu acción para cancelarlo. Puedes parecer 1 pie más bajo o más alto y puedes parecer delgado, gordo o intermedio.",
+    "higherLevels": null
+  },
+  "Divine Favor": {
+    "name": "Favor divino",
+    "description": "Tu oración te fortalece con un resplandor divino. Hasta que finalice el hechizo, tus ataques con armas causan 1d4 de daño radiante adicional con cada golpe.",
+    "higherLevels": null
+  },
+  "Entangle": {
+    "name": "Enredar",
+    "description": "Las malas hierbas y las enredaderas brotan del suelo en un cuadrado de 20 pies a partir de un punto dentro del alcance. Mientras dura, estas plantas convierten el suelo de la zona en un terreno difícil. Una criatura en el área cuando lanzas el hechizo debe superar una tirada de salvación de Fuerza o ser restringida por las plantas enredadoras hasta que termine el hechizo.",
+    "higherLevels": null
+  },
+  "Expeditious Retreat": {
+    "name": "Retiro expedito",
+    "description": "Este hechizo te permite moverte a un ritmo increíble. Cuando lanzas este hechizo, y luego como acción adicional en cada uno de tus turnos hasta que finaliza el hechizo, puedes realizar la acción Dash.",
+    "higherLevels": null
+  },
+  "Faerie Fire": {
+    "name": "Fuego de hadas",
+    "description": "Cada objeto en un cubo de 20 pies dentro del alcance está delineado con luz azul, verde o violeta. Cualquier criatura en el área cuando se lanza el hechizo también aparece resaltada en luz si falla una tirada de salvación de Destreza. Cualquier tirada de ataque contra una criatura u objeto afectado tiene ventaja si el atacante puede verlo.",
+    "higherLevels": null
+  },
+  "False Life": {
+    "name": "vida falsa",
+    "description": "Al reforzarte con una facsímil nigromántica de la vida, obtienes 1d4 + 4 puntos de vida temporales mientras dure.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 2 o superior, obtienes 5 puntos de golpe temporales adicionales por cada nivel de espacio por encima del 1."
+  },
+  "Feather Fall": {
+    "name": "caída de plumas",
+    "description": "Elige hasta cinco criaturas que caen dentro del alcance. La velocidad de descenso de una criatura que cae se reduce a 60 pies por asalto hasta que termina el hechizo. Si la criatura aterriza antes de que termine el hechizo, no sufre daño por caída y puede aterrizar de pie.",
+    "higherLevels": null
+  },
+  "Find Familiar": {
+    "name": "encontrar familiar",
+    "description": "Obtienes el servicio de un familiar, un espíritu que toma la forma animal que elijas: murciélago, gato, cangrejo, rana, halcón, lagarto, pulpo, búho, serpiente venenosa, pez, rata, cuervo, caballito de mar, araña o comadreja. Al aparecer en un espacio desocupado dentro del alcance, el familiar tiene las estadísticas de la forma elegida.",
+    "higherLevels": null
+  },
+  "Fog Cloud": {
+    "name": "Nube de niebla",
+    "description": "Creas una esfera de niebla de 20 pies de radio centrada en un punto dentro del alcance. La esfera se extiende por las esquinas y su área está muy oscurecida. Dura mientras dura o hasta que un viento de velocidad moderada o mayor (al menos 10 millas por hora) lo dispersa.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, el radio de la niebla aumenta en 20 pies por cada nivel de espacio por encima del 1º."
+  },
+  "Goodberry": {
+    "name": "Goodberry",
+    "description": "Aparecen hasta diez bayas en tu mano y están impregnadas de magia mientras dura. Una criatura puede usar su acción para comerse una baya. Comer una baya restaura 1 punto de vida y la baya proporciona suficiente alimento para sustentar a una criatura durante un día. Las bayas pierden su potencia si no se consumen en un plazo de 24 horas.",
+    "higherLevels": null
+  },
+  "Grease": {
+    "name": "Grasa",
+    "description": "La grasa resbaladiza cubre el suelo en un cuadrado de 10 pies centrado en un punto dentro del alcance y lo convierte en terreno difícil mientras dura. Cuando aparece la grasa, cada criatura que se encuentre en su área debe superar una tirada de salvación de Destreza o caerá boca abajo.",
+    "higherLevels": null
+  },
+  "Guiding Bolt": {
+    "name": "Perno guía",
+    "description": "Un destello de luz se dirige hacia una criatura de tu elección dentro del alcance. Realiza un ataque con hechizo a distancia contra el objetivo. Con un impacto, el objetivo sufre 4d6 de daño radiante, y la siguiente tirada de ataque realizada contra este objetivo antes del final de tu siguiente turno tiene ventaja.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, el daño aumenta en 1d6 por cada nivel de espacio por encima del 1º."
+  },
+  "Healing Word": {
+    "name": "Palabra curativa",
+    "description": "Una criatura de tu elección que puedas ver dentro del alcance recupera puntos de vida equivalentes a 1d4 + tu modificador de habilidad de lanzamiento de hechizos. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, la curación aumenta en 1d4 por cada nivel de espacio por encima del 1º."
+  },
+  "Hellish Rebuke": {
+    "name": "Reprimenda infernal",
+    "description": "Señalas con el dedo y la criatura que te dañó queda momentáneamente rodeada de llamas infernales. La criatura debe realizar una tirada de salvación de Destreza. Requiere 2d10 de daño por fuego si falla la salvación, o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, el daño aumenta en 1d10 por cada nivel de espacio por encima del 1º."
+  },
+  "Heroism": {
+    "name": "Heroísmo",
+    "description": "Una criatura voluntaria a la que tocas está imbuida de valentía. Hasta que finalice el hechizo, la criatura es inmune a ser asustada y gana puntos de golpe temporales iguales a tu modificador de habilidad de lanzamiento de hechizos al comienzo de cada uno de sus turnos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 2 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 1."
+  },
+  "Hex": {
+    "name": "Maleficio",
+    "description": "Lanzas una maldición sobre una criatura que puedes ver dentro del alcance. Hasta que finalice el hechizo, infliges 1d6 de daño necrótico adicional al objetivo cada vez que lo golpeas con un ataque. Además, elige una habilidad cuando lances el hechizo. El objetivo tiene desventaja en las pruebas de habilidad realizadas con la habilidad elegida.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 3 o 4, puedes mantener tu concentración en el hechizo por hasta 8 horas. Cuando usas un espacio de hechizo de nivel 5 o superior, puedes mantener la concentración hasta por 24 horas."
+  },
+  "Hunter's Mark": {
+    "name": "Marca del cazador",
+    "description": "Eliges una criatura que puedas ver dentro del alcance y la marcas místicamente como tu presa. Hasta que finalice el hechizo, infliges 1d6 de daño adicional al objetivo cada vez que lo golpeas con un ataque con arma, y ​​tienes ventaja en cualquier prueba de Sabiduría (Percepción) o Sabiduría (Supervivencia) que realices para encontrarlo.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 3 o 4, puedes mantener tu concentración en el hechizo por hasta 8 horas. Cuando usas un espacio de hechizo de nivel 5 o superior, puedes mantener la concentración hasta por 24 horas."
+  },
+  "Identify": {
+    "name": "Identificar",
+    "description": "Eliges un objeto que debes tocar durante el lanzamiento del hechizo. Si es un objeto mágico o algún otro objeto imbuido de magia, aprendes sus propiedades y cómo usarlas, si requiere sintonía para su uso y cuántas cargas tiene, si corresponde.",
+    "higherLevels": null
+  },
+  "Illusory Script": {
+    "name": "Guión ilusorio",
+    "description": "Escribes en pergamino, papel o algún otro material de escritura adecuado y lo imbuyes de una potente ilusión que dura todo el tiempo. Para ti y para cualquier criatura que designes cuando lanzas el hechizo, la escritura parece normal. Para todas las demás criaturas, la escritura aparece como si estuviera escrita en una escritura mágica o desconocida.",
+    "higherLevels": null
+  },
+  "Inflict Wounds": {
+    "name": "Infligir heridas",
+    "description": "Realiza un ataque con hechizo cuerpo a cuerpo contra una criatura que puedas alcanzar. Con un impacto, el objetivo sufre 3d10 de daño necrótico.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, el daño aumenta en 1d10 por cada nivel de espacio por encima del 1º."
+  },
+  "Jump": {
+    "name": "Saltar",
+    "description": "Tocas una criatura. La distancia de salto de la criatura se triplica hasta que finaliza el hechizo.",
+    "higherLevels": null
+  },
+  "Longstrider": {
+    "name": "Zancudo largo",
+    "description": "Tocas una criatura. La velocidad del objetivo aumenta 10 pies hasta que finaliza el hechizo.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 2 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 1."
+  },
+  "Mage Armor": {
+    "name": "Armadura de mago",
+    "description": "Tocas a una criatura voluntaria que no lleva armadura y una fuerza mágica protectora la rodea hasta que termina el hechizo. La CA base del objetivo se convierte en 13 + su modificador de Destreza. El hechizo termina si el objetivo se pone armadura o si descartas el hechizo como una acción.",
+    "higherLevels": null
+  },
+  "Magic Missile": {
+    "name": "Misil mágico",
+    "description": "Creas tres dardos brillantes de fuerza mágica. Cada dardo golpea a una criatura de tu elección que puedes ver dentro del alcance. Un dardo causa 1d4 + 1 de daño de fuerza a su objetivo. Todos los dardos golpean simultáneamente y puedes ordenarlos para que golpeen a una criatura o a varias.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2.º nivel o superior, el hechizo crea un dardo más por cada nivel de espacio por encima del 1.º."
+  },
+  "Protection from Evil and Good": {
+    "name": "Protección contra el mal y el bien",
+    "description": "Hasta que finalice el hechizo, una criatura voluntaria que toques estará protegida contra ciertos tipos de criaturas: aberraciones, celestiales, elementales, hadas, demonios y no-muertos. La protección otorga varios beneficios: esas criaturas tienen desventaja en las tiradas de ataque contra el objetivo, y el objetivo no puede ser hechizado, asustado ni poseído por ellas.",
+    "higherLevels": null
+  },
+  "Sanctuary": {
+    "name": "Santuario",
+    "description": "Proteges a una criatura dentro del alcance contra el ataque. Hasta que finalice el hechizo, cualquier criatura que apunte a la criatura protegida con un ataque o un hechizo dañino debe realizar primero una tirada de salvación de Sabiduría. Si falla la salvación, la criatura debe elegir un nuevo objetivo o perderá el ataque o hechizo.",
+    "higherLevels": null
+  },
+  "Shield": {
+    "name": "Blindaje",
+    "description": "Una barrera invisible de fuerza mágica aparece y te protege. Hasta el comienzo de tu próximo turno, tienes una bonificación de +5 a la CA, incluso contra el ataque desencadenante, y no recibes daño del misil mágico.",
+    "higherLevels": null
+  },
+  "Shield of Faith": {
+    "name": "Escudo de fe",
+    "description": "Aparece un campo brillante que rodea a una criatura de tu elección dentro del alcance, otorgándole una bonificación de +2 a la CA mientras dure.",
+    "higherLevels": null
+  },
+  "Silent Image": {
+    "name": "Imagen silenciosa",
+    "description": "Creas la imagen de un objeto, una criatura o algún otro fenómeno visible que no sea más grande que un cubo de 15 pies. La imagen aparece en un lugar dentro del alcance y dura todo el tiempo. La imagen es puramente visual; no va acompañado de sonido, olor u otros efectos sensoriales.",
+    "higherLevels": null
+  },
+  "Sleep": {
+    "name": "Dormir",
+    "description": "Este hechizo envía a las criaturas a un sueño mágico. Tira 5d8; el total es cuántos puntos de vida de las criaturas puede afectar este hechizo. Comenzando con la criatura que tiene los puntos de vida actuales más bajos, cada criatura afectada por este hechizo queda inconsciente hasta que el hechizo termina, el durmiente sufre daño o alguien usa una acción para sacudir o abofetear al durmiente para despertarlo.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, tira 2d8 adicionales por cada nivel de espacio por encima del 1º."
+  },
+  "Speak with Animals": {
+    "name": "Habla con animales",
+    "description": "Obtienes la capacidad de comprender y comunicarte verbalmente con las bestias mientras dure. El conocimiento y la conciencia de muchas bestias están limitados por su inteligencia, pero como mínimo, las bestias pueden brindarte información sobre ubicaciones y monstruos cercanos, incluido todo lo que puedan percibir o hayan percibido durante el último día.",
+    "higherLevels": null
+  },
+  "Thunderwave": {
+    "name": "Onda de trueno",
+    "description": "Una ola de fuerza atronadora surge de ti. Cada criatura en un cubo de 15 pies que se origine en ti debe realizar una tirada de salvación de Constitución. Si falla la salvación, una criatura sufre 2d8 daños por trueno y es empujada a 10 pies de distancia de ti. Con una salvación exitosa, la criatura recibe la mitad de daño y no es empujada.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 1º."
+  },
+  "Unseen Servant": {
+    "name": "Sirviente invisible",
+    "description": "Este hechizo crea una fuerza media invisible, sin sentido y sin forma que realiza tareas simples a tus órdenes hasta que finaliza el hechizo. El sirviente surge en un espacio desocupado en el suelo dentro del alcance. Tiene CA 10, 1 punto de vida y una Fuerza de 2, y no puede atacar.",
+    "higherLevels": null
+  },
+  "Witch Bolt": {
+    "name": "Descarga de bruja",
+    "description": "Un rayo de energía azul crepitante se lanza hacia una criatura dentro del alcance, formando un arco sostenido de relámpago entre tú y el objetivo. Realiza un ataque con hechizo a distancia contra esa criatura. Con un golpe, el objetivo recibe 1d12 de daño por rayo, y en cada uno de tus turnos mientras dure, puedes usar tu acción para infligir 1d12 de daño por rayo al objetivo automáticamente.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 2º nivel o superior, el daño inicial en un golpe aumenta en 1d12 por cada nivel de espacio por encima del 1º."
+  },
+  "Wrathful Smite": {
+    "name": "Golpe iracundo",
+    "description": "La próxima vez que golpees con un ataque con arma cuerpo a cuerpo durante la duración de este hechizo, tu ataque inflige 1d6 de daño psíquico adicional. Además, si el objetivo es una criatura, debe realizar una tirada de salvación de Sabiduría o tenerte miedo hasta que termine el hechizo.",
+    "higherLevels": null
+  },
+  "Acid Arrow": {
+    "name": "Flecha ácida",
+    "description": "Una flecha verde brillante se dirige hacia un objetivo dentro del alcance y estalla en una lluvia de ácido. Realiza un ataque con hechizo a distancia contra el objetivo. Con un impacto, el objetivo sufre 4d4 de daño por ácido inmediatamente y 2d4 de daño por ácido al final de su siguiente turno. Si falla, la flecha salpica al objetivo con ácido causando la mitad del daño inicial y ningún daño al final de su siguiente turno.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3.er nivel o superior, el daño (tanto inicial como posterior) aumenta en 1d4 por cada nivel de espacio por encima del 2.º."
+  },
+  "Alter Self": {
+    "name": "Alterarse a sí mismo",
+    "description": "Asumes una forma diferente. Cuando lanzas el hechizo, elige una de las siguientes opciones, cuyos efectos duran mientras dure: Adaptación acuática, Cambio de apariencia o Armas naturales (tus ataques desarmados causan 1d6 de daño contundente, perforante o cortante).",
+    "higherLevels": null
+  },
+  "Animal Messenger": {
+    "name": "Mensajero de animales",
+    "description": "Mediante este hechizo, utilizas un animal para entregar un mensaje. Elige una pequeña bestia que puedas ver dentro del alcance, como una ardilla, un arrendajo azul o un murciélago. Especificas un lugar que debes haber visitado y un destinatario que coincide con una descripción general, como \"un hombre o una mujer vestido con el uniforme de la guardia de la ciudad\" o \"un enano pelirrojo con un sombrero puntiagudo\". También pronuncias un mensaje de hasta veinticinco palabras. La bestia objetivo viaja durante la duración del hechizo hacia la ubicación especificada.",
+    "higherLevels": "Si lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, la duración del hechizo aumenta en 48 horas por cada nivel de espacio por encima del 2do."
+  },
+  "Arcane Lock": {
+    "name": "Bloqueo arcano",
+    "description": "Tocas una puerta, ventana, portón, cofre u otra entrada cerrada y queda bloqueada mientras dure. Tú y las criaturas que designes cuando lanzas este hechizo podéis abrir el objeto normalmente. También puedes establecer una contraseña que, cuando se pronuncia a menos de 5 pies del objeto, suprime este hechizo durante 1 minuto. De lo contrario, es intransitable hasta que se rompa o el hechizo se disipe o suprima.",
+    "higherLevels": null
+  },
+  "Augury": {
+    "name": "Augurio",
+    "description": "Al lanzar palos con incrustaciones de gemas, hacer rodar huesos de dragón, colocar cartas ornamentadas o emplear alguna otra herramienta de adivinación, recibes un presagio de una entidad de otro mundo sobre los resultados de un curso de acción específico que planeas tomar en los próximos 30 minutos. El DM elige entre los siguientes presagios posibles: bien (buenos resultados), ay (malos resultados), bien y ay (resultados buenos y malos) o nada (resultados que no son especialmente buenos o malos).",
+    "higherLevels": null
+  },
+  "Barkskin": {
+    "name": "piel de corteza",
+    "description": "Tocas a una criatura dispuesta. Hasta que finaliza el hechizo, la piel del objetivo tiene una apariencia áspera, parecida a una corteza, y la CA del objetivo no puede ser inferior a 16, independientemente del tipo de armadura que lleve.",
+    "higherLevels": null
+  },
+  "Blindness/Deafness": {
+    "name": "Ceguera/Sordera",
+    "description": "Puedes cegar o ensordecer a un enemigo. Elige una criatura que puedas ver dentro del alcance para realizar una tirada de salvación de Constitución. Si falla, el objetivo queda cegado o ensordecido (tú eliges) mientras dure. Al final de cada uno de sus turnos, el objetivo puede realizar una tirada de salvación de Constitución. Si tiene éxito, el hechizo termina.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 3 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 2."
+  },
+  "Blur": {
+    "name": "Difuminar",
+    "description": "Tu cuerpo se vuelve borroso, moviéndose y vacilando ante todos los que pueden verte. Mientras dure, cualquier criatura tiene desventaja en las tiradas de ataque contra ti. Un atacante es inmune a este efecto si no depende de la vista, como ocurre con la visión ciega, o si puede ver a través de ilusiones, como con la visión verdadera.",
+    "higherLevels": null
+  },
+  "Calm Emotions": {
+    "name": "Calmar las emociones",
+    "description": "Intentas reprimir emociones fuertes en un grupo de personas. Cada humanoide en una esfera de 20 pies de radio centrada en un punto que elijas dentro del alcance debe realizar una tirada de salvación de Carisma; una criatura puede optar por fallar esta tirada de salvación si así lo desea. Si una criatura falla su tirada de salvación, elige uno de los dos efectos siguientes: suprimir cualquier efecto que cause que un objetivo esté encantado o asustado, o hacer que el objetivo sea indiferente a las criaturas de tu elección hacia las que es hostil.",
+    "higherLevels": null
+  },
+  "Cloud of Daggers": {
+    "name": "Nube de dagas",
+    "description": "Llenas el aire en un cubo de 5 pies centrado en un punto que eliges dentro del alcance con dagas giratorias. Una criatura sufre 4d4 de daño cortante cuando entra en el área del hechizo por primera vez en un turno o comienza su turno allí.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, el daño aumenta en 2d4 por cada nivel de espacio por encima del 2do."
+  },
+  "Continual Flame": {
+    "name": "Llama continua",
+    "description": "Una llama, equivalente en brillo a una antorcha, brota de un objeto que tocas. El efecto parece una llama normal, pero no genera calor y no utiliza oxígeno. Una llama continua puede cubrirse u ocultarse, pero no sofocarse ni apagarse.",
+    "higherLevels": null
+  },
+  "Crown of Madness": {
+    "name": "corona de locura",
+    "description": "Un humanoide de tu elección que puedas ver dentro del alcance debe superar una tirada de salvación de Sabiduría o quedará encantado por ti mientras dure. Mientras el objetivo es hechizado de esta manera, una corona retorcida de hierro dentado aparece en su cabeza y una locura brilla en sus ojos. El objetivo hechizado debe usar su acción antes de moverse en cada uno de sus turnos para realizar un ataque cuerpo a cuerpo contra una criatura distinta a él que elijas mentalmente.",
+    "higherLevels": null
+  },
+  "Darkness": {
+    "name": "Oscuridad",
+    "description": "La oscuridad mágica se extiende desde un punto que elijas dentro del alcance para llenar una esfera de 15 pies de radio mientras dura. La oscuridad se extiende por las esquinas. Una criatura con visión en la oscuridad no puede ver a través de esta oscuridad y la luz no mágica no puede iluminarla. Si el punto que eliges está sobre un objeto que estás sosteniendo o uno que no está siendo usado o transportado, la oscuridad emana del objeto y se mueve con él.",
+    "higherLevels": null
+  },
+  "Darkvision": {
+    "name": "Visión oscura",
+    "description": "Tocas a una criatura voluntaria para otorgarle la capacidad de ver en la oscuridad. Mientras dura, esa criatura tiene visión en la oscuridad en un rango de 60 pies.",
+    "higherLevels": null
+  },
+  "Detect Thoughts": {
+    "name": "Detectar pensamientos",
+    "description": "Mientras dura, puedes leer los pensamientos de ciertas criaturas. Cuando lanzas el hechizo y como acción en cada turno hasta que finaliza el hechizo, puedes concentrar tu mente en cualquier criatura que puedas ver a 30 pies de ti. Si la criatura que eliges tiene una Inteligencia de 3 o menos o no habla ningún idioma, la criatura no se ve afectada.",
+    "higherLevels": null
+  },
+  "Enhance Ability": {
+    "name": "Mejorar la capacidad",
+    "description": "Tocas una criatura y le otorgas una mejora mágica. Elija uno de los siguientes efectos; el objetivo gana ese efecto hasta que finaliza el hechizo: Resistencia del oso (ventaja en las pruebas de CON, 2d6 HP temporales), Fuerza del toro (ventaja en las pruebas de FUE, doble capacidad de carga), Gracia del gato (ventaja en las pruebas de DEX, sin daño por caída hasta 20 pies), Esplendor del Águila (ventaja en las pruebas de CHA), Astucia del Zorro (ventaja en las pruebas de INT), o Sabiduría del Búho (ventaja en controles WIS).",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 3 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 2."
+  },
+  "Enlarge/Reduce": {
+    "name": "Ampliar/Reducir",
+    "description": "Haces que una criatura o un objeto que puedes ver dentro del alcance crezca o se haga más pequeño mientras dura el efecto. Elige una criatura o un objeto que no esté ni usado ni transportado. Si el objetivo no está dispuesto, puede realizar una tirada de salvación de Constitución. Si tiene éxito, el hechizo no tiene efecto. Ampliar: el tamaño del objetivo se duplica, los ataques con armas causan 1d4 de daño adicional. Reducir: el tamaño del objetivo se reduce a la mitad, los ataques con armas causan 1d4 menos de daño.",
+    "higherLevels": null
+  },
+  "Find Steed": {
+    "name": "encontrar corcel",
+    "description": "Invocas un espíritu que asume la forma de un corcel inusualmente inteligente, fuerte y leal, creando un vínculo duradero con él. Al aparecer en un espacio desocupado dentro del alcance, el corcel adopta la forma que elijas: un caballo de guerra, un pony, un camello, un alce o un mastín. El corcel tiene las estadísticas de la forma elegida, aunque es un celestial, un hada o un demonio (tú eliges) en lugar de su tipo normal.",
+    "higherLevels": null
+  },
+  "Find Traps": {
+    "name": "encontrar trampas",
+    "description": "Sientes la presencia de cualquier trampa dentro del alcance que esté dentro de la línea de visión. Una trampa, a los efectos de este hechizo, incluye cualquier cosa que pueda infligir un efecto repentino o inesperado que consideres dañino o indeseable, que fue específicamente diseñado como tal por su creador. Aprendes la naturaleza general del peligro que representa una trampa que sientes.",
+    "higherLevels": null
+  },
+  "Flame Blade": {
+    "name": "Hoja de llama",
+    "description": "Evocas una espada de fuego en tu mano libre. La hoja es similar en tamaño y forma a una cimitarra y dura todo el tiempo. Si sueltas la espada, ésta desaparece, pero puedes evocarla nuevamente como acción adicional. Puedes usar tu acción para realizar un ataque de hechizo cuerpo a cuerpo con la espada de fuego. Con un impacto, el objetivo sufre 3d6 daños por fuego. La hoja en llamas arroja luz brillante en un radio de 10 pies y luz tenue en 10 pies adicionales.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, el daño aumenta en 1d6 por cada dos niveles de espacio por encima del 2º."
+  },
+  "Flaming Sphere": {
+    "name": "Esfera llameante",
+    "description": "Una esfera de fuego de 5 pies de diámetro aparece en un espacio desocupado de tu elección dentro del alcance y dura todo el tiempo. Cualquier criatura que finalice su turno a menos de 5 pies de la esfera debe realizar una tirada de salvación de Destreza. La criatura sufre 2d6 daños por fuego si falla la salvación, o la mitad si tiene éxito. Como acción adicional, puedes mover la esfera hasta 30 pies.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, el daño aumenta en 1d6 por cada nivel de espacio por encima del 2do."
+  },
+  "Gentle Repose": {
+    "name": "Reposo suave",
+    "description": "Tocas un cadáver u otros restos. Mientras dura, el objetivo está protegido de la descomposición y no puede convertirse en no-muerto. El hechizo también extiende efectivamente el límite de tiempo para resucitar al objetivo de entre los muertos, ya que los días pasados ​​bajo la influencia de este hechizo no cuentan contra el límite de tiempo de hechizos como resucitar a los muertos.",
+    "higherLevels": null
+  },
+  "Gust of Wind": {
+    "name": "Racha",
+    "description": "Una línea de fuerte viento de 60 pies de largo y 10 pies de ancho sopla desde ti en la dirección que elijas durante la duración del hechizo. Cada criatura que comienza su turno en la línea debe superar una tirada de salvación de Fuerza o ser empujada a 15 pies de distancia de ti en la dirección que sigue la línea. Cualquier criatura en la línea debe gastar 2 pies de movimiento por cada 1 pie que se mueva cuando se acerque a ti.",
+    "higherLevels": null
+  },
+  "Heat Metal": {
+    "name": "Calentar metales",
+    "description": "Elija un objeto de metal fabricado, como un arma de metal o una armadura de metal pesado o mediano, que pueda ver dentro del alcance. Haces que el objeto brille al rojo vivo. Cualquier criatura en contacto físico con el objeto sufre 2d8 de daño por fuego cuando lanzas el hechizo. Hasta que finalice el hechizo, puedes usar una acción adicional en cada uno de tus turnos siguientes para infligir este daño nuevamente.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 2do."
+  },
+  "Hold Person": {
+    "name": "Retener persona",
+    "description": "Elige un humanoide que puedas ver dentro del alcance. El objetivo debe superar una tirada de salvación de Sabiduría o quedará paralizado mientras dure el efecto. Al final de cada uno de sus turnos, el objetivo puede realizar otra tirada de salvación de Sabiduría. Si tiene éxito, el hechizo termina en el objetivo.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, puedes apuntar a un humanoide adicional por cada nivel de espacio por encima del 2do."
+  },
+  "Invisibility": {
+    "name": "Invisibilidad",
+    "description": "Una criatura que tocas se vuelve invisible hasta que termina el hechizo. Cualquier cosa que el objetivo esté usando o llevando es invisible siempre que esté sobre su persona. El hechizo termina para un objetivo que ataca o lanza un hechizo.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 3 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 2."
+  },
+  "Knock": {
+    "name": "Golpear",
+    "description": "Elija un objeto que pueda ver dentro del alcance. El objeto puede ser una puerta cerrada, una caja, un cofre, un juego de esposas, un candado u otro objeto que contenga un medio mundano o mágico que impida el acceso. Un objetivo que se mantiene cerrado mediante un candado mundano o que está atascado o bloqueado se desbloquea, se despega o se desbloquea. Cuando lanzas el hechizo, un fuerte golpe, audible desde una distancia de hasta 300 pies, emana del objeto objetivo.",
+    "higherLevels": null
+  },
+  "Lesser Restoration": {
+    "name": "Restauración menor",
+    "description": "Tocas una criatura y puedes acabar con una enfermedad o una condición que la aflige. La condición puede ser ceguera, ensordecimiento, paralización o envenenamiento.",
+    "higherLevels": null
+  },
+  "Levitate": {
+    "name": "Erigir por levitación",
+    "description": "Una criatura u objeto de tu elección que puedas ver dentro del alcance se eleva verticalmente, hasta 20 pies, y permanece suspendido allí mientras dura. El hechizo puede levitar un objetivo que pese hasta 500 libras. Una criatura renuente que tenga éxito en una tirada de salvación de Constitución no se ve afectada. El objetivo sólo puede moverse empujando o tirando de un objeto fijo o de una superficie a su alcance.",
+    "higherLevels": null
+  },
+  "Locate Animals or Plants": {
+    "name": "Localizar animales o plantas",
+    "description": "Describe o nombra un tipo específico de bestia o planta. Al concentrarse en la voz de la naturaleza a su alrededor, aprende la dirección y la distancia a la criatura o planta más cercana de ese tipo en un radio de 5 millas, si hay alguna presente.",
+    "higherLevels": null
+  },
+  "Locate Object": {
+    "name": "Localizar objeto",
+    "description": "Describe o nombra un objeto que te resulte familiar. Sientes la dirección hacia la ubicación del objeto, siempre y cuando ese objeto esté a menos de 1000 pies de ti. Si el objeto está en movimiento, sabes la dirección de su movimiento. El hechizo puede localizar un objeto específico que conoces, siempre y cuando lo hayas visto de cerca (a menos de 30 pies) al menos una vez.",
+    "higherLevels": null
+  },
+  "Magic Mouth": {
+    "name": "Boca Mágica",
+    "description": "Implantas un mensaje dentro de un objeto dentro del alcance, un mensaje que se pronuncia cuando se cumple una condición desencadenante. Elige un objeto que puedas ver y que no esté siendo usado o transportado por otra criatura. Luego diga el mensaje, que debe tener 25 palabras o menos, aunque puede durar hasta 10 minutos. Finalmente, determina la circunstancia que desencadenará el hechizo para entregar tu mensaje.",
+    "higherLevels": null
+  },
+  "Magic Weapon": {
+    "name": "Arma mágica",
+    "description": "Tocas un arma no mágica. Hasta que finalice el hechizo, esa arma se convierte en un arma mágica con una bonificación de +1 a las tiradas de ataque y daño.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 4 o superior, la bonificación aumenta a +2. Cuando usas un espacio de hechizo de nivel 6 o superior, la bonificación aumenta a +3."
+  },
+  "Mirror Image": {
+    "name": "Imagen reflejada",
+    "description": "Tres duplicados ilusorios de ti aparecen en tu espacio. Hasta que finaliza el hechizo, los duplicados se mueven contigo e imitan tus acciones, cambiando de posición para que sea imposible rastrear qué imagen es real. Puedes usar tu acción para descartar los duplicados ilusorios. Cada vez que una criatura te ataca con un ataque durante la duración del hechizo, tira un d20 para determinar si el ataque apunta a uno de tus duplicados.",
+    "higherLevels": null
+  },
+  "Misty Step": {
+    "name": "paso brumoso",
+    "description": "Rodeado brevemente por una niebla plateada, te teletransportas hasta 30 pies a un espacio desocupado que puedes ver.",
+    "higherLevels": null
+  },
+  "Moonbeam": {
+    "name": "Rayo de luna",
+    "description": "Un rayo plateado de luz pálida brilla en un cilindro de 5 pies de radio y 40 pies de alto centrado en un punto dentro del alcance. Hasta que termina el hechizo, una luz tenue llena el cilindro. Cuando una criatura entra en el área del hechizo por primera vez en un turno o comienza su turno allí, queda envuelta en llamas fantasmales que causan un dolor abrasador y debe realizar una tirada de salvación de Constitución. Se necesitan 2d10 de daño radiante en una salvación fallida, o la mitad en una exitosa.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, el daño aumenta en 1d10 por cada nivel de espacio por encima del 2do."
+  },
+  "Nystul's Magic Aura": {
+    "name": "Aura mágica de Nystul",
+    "description": "Colocas una ilusión sobre una criatura o un objeto que tocas para que los hechizos de adivinación revelen información falsa sobre él. El objetivo puede ser una criatura dispuesta o un objeto que no esté siendo transportado ni usado por otra criatura. Cuando lanzas el hechizo, elige uno o ambos de los siguientes efectos: Aura falsa o Máscara.",
+    "higherLevels": null
+  },
+  "Pass without Trace": {
+    "name": "Pasar sin rastro",
+    "description": "Un velo de sombras y silencio irradia desde ti, ocultándote a ti y a tus compañeros de ser detectados. Mientras dure, cada criatura que elijas dentro de 30 pies de ti (incluido tú) tiene una bonificación de +10 a las pruebas de Destreza (Sigilo) y no puede ser rastreada excepto por medios mágicos. Una criatura que recibe esta bonificación no deja huellas ni otros rastros de su paso.",
+    "higherLevels": null
+  },
+  "Prayer of Healing": {
+    "name": "Oración de curación",
+    "description": "Hasta seis criaturas de tu elección que puedas ver dentro del alcance recuperan puntos de golpe equivalentes a 2d8 + tu modificador de habilidad de lanzamiento de hechizos. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3.er nivel o superior, la curación aumenta en 1d8 por cada nivel de espacio por encima del 2.º."
+  },
+  "Protection from Poison": {
+    "name": "Protección contra el veneno",
+    "description": "Tocas una criatura. Si está envenenado, neutralizas el veneno. Si más de un veneno afecta al objetivo, neutralizas un veneno que sabes que está presente o neutralizas uno al azar. Mientras dura, el objetivo tiene ventaja en las tiradas de salvación contra ser envenenado y tiene resistencia al daño por veneno.",
+    "higherLevels": null
+  },
+  "Ray of Enfeeblement": {
+    "name": "Rayo de debilitamiento",
+    "description": "Un rayo negro de energía enervante surge de tu dedo hacia una criatura dentro del alcance. Realiza un ataque con hechizo a distancia contra la criatura. Con un golpe, el objetivo inflige solo la mitad del daño con ataques con armas que usan Fuerza hasta que finaliza el hechizo. Al final de cada uno de los turnos del objetivo, este puede realizar una tirada de salvación de Constitución contra el hechizo. Si tiene éxito, el hechizo termina.",
+    "higherLevels": null
+  },
+  "Rope Trick": {
+    "name": "Truco de cuerda",
+    "description": "Tocas un trozo de cuerda de hasta 60 pies de largo. Luego, un extremo de la cuerda se eleva en el aire hasta que toda la cuerda cuelga perpendicular al suelo. En el extremo superior de la cuerda, se abre una entrada invisible a un espacio extradimensional que dura hasta que termina el hechizo. Se puede llegar al espacio extradimensional subiendo a la parte superior de la cuerda. En el espacio extradimensional pueden caber hasta ocho criaturas medianas o más pequeñas.",
+    "higherLevels": null
+  },
+  "Scorching Ray": {
+    "name": "Rayo abrasador",
+    "description": "Creas tres rayos de fuego y los lanzas a los objetivos dentro del alcance. Puedes lanzarlos a un objetivo o a varios. Realiza un ataque con hechizo a distancia para cada rayo. Con un impacto, el objetivo sufre 2d6 daños por fuego.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, creas un rayo adicional por cada nivel de espacio por encima del 2do."
+  },
+  "See Invisibility": {
+    "name": "Ver Invisibilidad",
+    "description": "Mientras dura, ves criaturas y objetos invisibles como si fueran visibles, y puedes ver el plano etéreo, hasta un alcance de 60 pies. Las criaturas y objetos etéreos parecen fantasmales y translúcidos.",
+    "higherLevels": null
+  },
+  "Shatter": {
+    "name": "Romper",
+    "description": "Un repentino y fuerte zumbido, dolorosamente intenso, surge desde un punto que usted elija dentro del alcance. Cada criatura en una esfera de 10 pies de radio centrada en ese punto debe realizar una tirada de salvación de Constitución. Una criatura sufre 3d8 daños por trueno si falla la salvación, o la mitad si tiene éxito. Una criatura hecha de material inorgánico como piedra, cristal o metal tiene desventaja en esta tirada de salvación.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 2do."
+  },
+  "Silence": {
+    "name": "Silencio",
+    "description": "Mientras dure, no se puede crear ningún sonido dentro ni pasar a través de una esfera de 20 pies de radio centrada en un punto que usted elija dentro del alcance. Cualquier criatura u objeto completamente dentro de la esfera es inmune al daño del trueno, y las criaturas quedan ensordecidas mientras están completamente dentro de ella. Allí es imposible lanzar un hechizo que incluya un componente verbal.",
+    "higherLevels": null
+  },
+  "Spider Climb": {
+    "name": "Escalada de araña",
+    "description": "Hasta que finaliza el hechizo, una criatura voluntaria que tocas adquiere la capacidad de moverse hacia arriba, hacia abajo y a través de superficies verticales y boca abajo a lo largo de los techos, dejando sus manos libres. El objetivo también gana una velocidad de ascenso igual a su velocidad al caminar.",
+    "higherLevels": null
+  },
+  "Spiritual Weapon": {
+    "name": "Arma espiritual",
+    "description": "Creas un arma espectral flotante dentro del alcance que dura mientras dura o hasta que lanzas este hechizo nuevamente. Cuando lanzas el hechizo, puedes realizar un ataque de hechizo cuerpo a cuerpo contra una criatura a 5 pies del arma. Con un golpe, el objetivo sufre un daño de fuerza igual a 1d8 + tu modificador de habilidad de lanzamiento de hechizos. Como acción adicional en tu turno, puedes mover el arma hasta 20 pies y repetir el ataque contra una criatura a 5 pies de ella.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 3er nivel o superior, el daño aumenta en 1d8 por cada dos niveles de espacio por encima del 2do."
+  },
+  "Suggestion": {
+    "name": "Sugerencia",
+    "description": "Sugieres un curso de actividad (limitado a una oración o dos) e influyes mágicamente en una criatura que puedes ver dentro del alcance y que puede escucharte y comprenderte. La sugerencia debe redactarse de tal manera que el curso de acción parezca razonable. El hechizo finaliza cuando se completa la actividad o después de 8 horas, lo que ocurra primero.",
+    "higherLevels": null
+  },
+  "Web": {
+    "name": "Web",
+    "description": "Conjuras una masa de redes gruesas y pegajosas en un punto de tu elección dentro del alcance. Las redes llenan un cubo de 20 pies desde ese punto y duran todo el tiempo. Las redes son terreno difícil, y cada criatura que comienza su turno en las redes o que entra en ellas durante su turno debe realizar una tirada de salvación de Destreza o ser restringida mientras permanezca en las redes o hasta que se libere.",
+    "higherLevels": null
+  },
+  "Zone of Truth": {
+    "name": "Zona de la verdad",
+    "description": "Creas una zona mágica que protege contra el engaño en una esfera de 15 pies de radio centrada en un punto de tu elección dentro del alcance. Hasta que finalice el hechizo, una criatura que entre en el área del hechizo por primera vez en un turno o comience su turno allí debe realizar una tirada de salvación de Carisma. En una salvación fallida, una criatura no puede decir una mentira deliberada mientras se encuentre en el radio.",
+    "higherLevels": null
+  },
+  "Animate Dead": {
+    "name": "animar muertos",
+    "description": "Este hechizo crea un sirviente no-muerto. Elige un montón de huesos o el cadáver de un humanoide mediano o pequeño dentro del alcance. Tu hechizo imbuye al objetivo con una asquerosa imitación de vida, levantándolo como una criatura no-muerta. En cada uno de tus turnos, puedes usar una acción adicional para comandar mentalmente cualquier criatura que hayas creado con este hechizo si la criatura está a 60 pies de ti.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 4 o superior, animas o reafirmas el control sobre dos criaturas no muertas adicionales por cada nivel de espacio por encima del 3."
+  },
+  "Bestow Curse": {
+    "name": "Otorgar maldición",
+    "description": "Tocas una criatura y esa criatura debe superar una tirada de salvación de Sabiduría o quedará maldita mientras dure el hechizo. Cuando lanzas este hechizo, elige la naturaleza de la maldición entre las siguientes opciones: desventaja en las pruebas de habilidad y tiros de salvación usando una puntuación de habilidad elegida; desventaja en las tiradas de ataque contra ti; debe realizar una salvación WIS en cada turno o desperdiciar su acción; tus ataques causan +1d8 de daño necrótico al objetivo.",
+    "higherLevels": "Si lanzas este hechizo usando un espacio de hechizo de nivel 4 o superior, la duración es de 10 minutos (sin concentración). Si utiliza un espacio de nivel 5 o 6, 8 horas. Si utiliza una ranura de nivel 7 o superior, 24 horas."
+  },
+  "Call Lightning": {
+    "name": "Llamar relámpago",
+    "description": "Aparece una nube de tormenta en forma de cilindro de 10 pies de alto con un radio de 60 pies, centrada en un punto que puede ver dentro del alcance directamente encima de usted. Cuando lances el hechizo, elige un punto que puedas ver debajo de la nube. Un relámpago desciende hasta ese punto. Cada criatura a 5 pies de ese punto debe realizar una tirada de salvación de Destreza, recibiendo 3d10 de daño por rayo si falla o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 4 o superior, el daño aumenta en 1d10 por cada nivel de espacio por encima del 3."
+  },
+  "Clairvoyance": {
+    "name": "Clarividencia",
+    "description": "Crea un sensor invisible dentro del alcance en una ubicación que le resulta familiar (un lugar que ha visitado o visto antes) o en una ubicación obvia que no le resulta familiar (como detrás de una puerta, a la vuelta de una esquina o en una arboleda). El sensor permanece en su lugar mientras dura el juego y no se puede atacar ni interactuar con él de ninguna otra manera. Cuando lanzas el hechizo, eliges ver u oír. Podrás utilizar el sentido elegido a través del sensor como si estuvieras en su espacio.",
+    "higherLevels": null
+  },
+  "Conjure Animals": {
+    "name": "Conjurar animales",
+    "description": "Invocas espíritus feéricos que toman la forma de bestias y aparecen en espacios desocupados que puedes ver dentro del alcance. Elija una de las siguientes opciones para lo que aparece: una bestia de nivel de desafío 2 o inferior; dos bestias de desafío con calificación 1 o inferior; cuatro bestias de desafío con calificación 1/2 o inferior; ocho bestias de desafío con una calificación de 1/4 o inferior. Cada bestia también se considera hada y desaparece cuando sus puntos de vida caen a 0 o cuando termina el hechizo.",
+    "higherLevels": "Cuando lanzas este hechizo usando ciertos espacios para hechizos de nivel superior, eliges una de las opciones de invocación anteriores y aparecen más criaturas: el doble con un espacio de nivel 5, el triple con un espacio de nivel 7 y cuatro veces más con un espacio de nivel 9."
+  },
+  "Counterspell": {
+    "name": "Contrahechizo",
+    "description": "Intentas interrumpir a una criatura en el proceso de lanzar un hechizo. Si la criatura está lanzando un hechizo de nivel 3 o inferior, su hechizo falla y no tiene ningún efecto. Si está lanzando un hechizo de nivel 4 o superior, haz una prueba de habilidad usando tu habilidad de lanzar hechizos. La CD es igual a 10 + el nivel del hechizo. Si tiene éxito, el hechizo de la criatura falla y no tiene ningún efecto.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 4 o superior, el hechizo interrumpido no tiene efecto si su nivel es menor o igual al nivel del espacio de hechizo que usaste."
+  },
+  "Create Food and Water": {
+    "name": "Crear comida y agua",
+    "description": "Creas 45 libras de comida y 30 galones de agua en el suelo o en contenedores dentro del alcance, suficiente para sustentar hasta quince humanoides o cinco corceles durante 24 horas. La comida es blanda pero nutritiva y se echa a perder si no se ingiere después de 24 horas. El agua está limpia y no se echa a perder.",
+    "higherLevels": null
+  },
+  "Daylight": {
+    "name": "Luz",
+    "description": "Una esfera de luz de 60 pies de radio se extiende desde un punto que elijas dentro del alcance. La esfera es una luz brillante y arroja luz tenue durante 60 pies adicionales. Si eliges un punto en un objeto que estás sosteniendo o uno que no está siendo usado o transportado, la luz brilla desde el objeto y se mueve con él. Cubrir completamente el objeto afectado con un objeto opaco, como un cuenco o un yelmo, bloquea la luz.",
+    "higherLevels": null
+  },
+  "Dispel Magic": {
+    "name": "disipar la magia",
+    "description": "Elige una criatura, objeto o efecto mágico dentro del alcance. Cualquier hechizo de nivel 3 o inferior sobre el objetivo finaliza. Por cada hechizo de nivel 4 o superior sobre el objetivo, haz una prueba de habilidad usando tu habilidad de lanzar hechizos. La CD es igual a 10 + el nivel del hechizo. Con una prueba exitosa, el hechizo termina.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 4 o superior, automáticamente finalizas los efectos de un hechizo en el objetivo si el nivel del hechizo es igual o menor que el nivel del espacio de hechizo que usaste."
+  },
+  "Fear": {
+    "name": "Miedo",
+    "description": "Proyectas una imagen fantasmal de los peores temores de una criatura. Cada criatura en un cono de 30 pies debe superar una tirada de salvación de Sabiduría o dejar caer lo que sea que esté sosteniendo y asustarse mientras dure. Mientras está asustada por este hechizo, una criatura debe realizar la acción Dash y alejarse de ti por la ruta más segura disponible en cada uno de sus turnos, a menos que no haya ningún lugar adonde moverse.",
+    "higherLevels": null
+  },
+  "Feign Death": {
+    "name": "fingir muerte",
+    "description": "Tocas a una criatura dispuesta y la pones en un estado cataléptico que es indistinguible de la muerte. Durante la duración del hechizo, o hasta que uses una acción para tocar al objetivo y descartar el hechizo, el objetivo parece muerto a todas las inspecciones externas y a los hechizos utilizados para determinar el estado del objetivo. El objetivo queda cegado e incapacitado, y su velocidad cae a 0. El objetivo tiene resistencia a todo daño excepto al daño psíquico.",
+    "higherLevels": null
+  },
+  "Fireball": {
+    "name": "bola de fuego",
+    "description": "Un rayo brillante parpadea desde el dedo que señala hasta un punto que elijas dentro del alcance y luego florece con un rugido bajo en una explosión de llamas. Cada criatura en una esfera de 20 pies de radio centrada en ese punto debe realizar una tirada de salvación de Destreza. Un objetivo sufre 8d6 daños por fuego si falla la salvación, o la mitad si tiene éxito. El fuego se propaga por las esquinas.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, el daño aumenta en 1d6 por cada nivel de espacio por encima del 3º."
+  },
+  "Fly": {
+    "name": "Volar",
+    "description": "Tocas a una criatura dispuesta. El objetivo gana una velocidad de vuelo de 60 pies mientras dura el efecto. Cuando termina el hechizo, el objetivo cae si todavía está en el aire, a menos que pueda detener la caída.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 4 o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 3."
+  },
+  "Gaseous Form": {
+    "name": "Forma gaseosa",
+    "description": "Transformas una criatura voluntaria que tocas, junto con todo lo que lleva puesto y lleva, en una nube brumosa mientras dura. El hechizo termina si la criatura cae a 0 puntos de vida. Una criatura incorpórea no se ve afectada. Mientras está en esta forma, el único método de movimiento del objetivo es una velocidad de vuelo de 10 pies. El objetivo puede entrar y ocupar el espacio de otra criatura. El objetivo tiene resistencia al daño no mágico y tiene ventaja en las tiradas de salvación de Fuerza, Destreza y Constitución.",
+    "higherLevels": null
+  },
+  "Glyph of Warding": {
+    "name": "Glifo de protección",
+    "description": "Cuando lanzas este hechizo, inscribes un glifo que daña a otras criaturas, ya sea sobre una superficie (como una mesa o una sección de suelo o pared) o dentro de un objeto que puede cerrarse (como un libro, un pergamino o un cofre del tesoro) para ocultar el glifo. Cuando se activa, el glifo estalla con energía mágica en una esfera de 20 pies de radio. Cada criatura en el área debe realizar una tirada de salvación de Destreza. Una criatura sufre 5d8 de daño si falla una tirada de salvación, o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, el daño de un glifo de runas explosivas aumenta en 1d8 por cada nivel de espacio por encima del 3º."
+  },
+  "Haste": {
+    "name": "Prisa",
+    "description": "Elige una criatura dispuesta que puedas ver dentro del alcance. Hasta que finaliza el hechizo, la velocidad del objetivo se duplica, obtiene una bonificación de +2 a la CA, tiene ventaja en las tiradas de salvación de Destreza y obtiene una acción adicional en cada uno de sus turnos. Esa acción solo se puede usar para realizar la acción Atacar (solo un ataque con arma), Correr, Desactivarse, Ocultarse o Usar un objeto. Cuando termina el hechizo, el objetivo no puede moverse ni realizar acciones hasta después de su siguiente turno.",
+    "higherLevels": null
+  },
+  "Hypnotic Pattern": {
+    "name": "Patrón hipnótico",
+    "description": "Creas un patrón retorcido de colores que se entrelaza en el aire dentro de un cubo de 30 pies dentro del alcance. El patrón aparece por un momento y desaparece. Cada criatura en el área que vea el patrón debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, la criatura queda encantada mientras dure el efecto. Mientras está encantada por este hechizo, la criatura queda incapacitada y tiene una velocidad de 0.",
+    "higherLevels": null
+  },
+  "Leomund's Tiny Hut": {
+    "name": "La pequeña cabaña de Leomund",
+    "description": "Una cúpula de fuerza inmóvil de 10 pies de radio surge a tu alrededor y por encima de ti y permanece estacionaria mientras dura. El hechizo termina si abandonas su área. Nueve criaturas de tamaño mediano o más pequeñas pueden caber dentro de la cúpula contigo. El ambiente dentro del espacio es confortable y seco, independientemente del clima exterior. Hasta que finalice el hechizo, puedes ordenar que el interior quede oscuro o con poca luz. La cúpula es opaca por fuera, del color que elijas, pero es transparente por dentro.",
+    "higherLevels": null
+  },
+  "Lightning Bolt": {
+    "name": "Rayo",
+    "description": "Un rayo que forma una línea de 100 pies de largo y 5 pies de ancho sale disparado de ti en la dirección que elijas. Cada criatura en la línea debe realizar una tirada de salvación de Destreza. Una criatura sufre 8d6 daños por rayo si falla la salvación, o la mitad si tiene éxito. El rayo enciende objetos inflamables en el área que no se usan ni se transportan.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, el daño aumenta en 1d6 por cada nivel de espacio por encima del 3º."
+  },
+  "Mass Healing Word": {
+    "name": "Palabra de sanación masiva",
+    "description": "A medida que pronuncias palabras de restauración, hasta seis criaturas de tu elección que puedas ver dentro del alcance recuperan puntos de vida equivalentes a 1d4 + tu modificador de habilidad de lanzamiento de hechizos. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, la curación aumenta en 1d4 por cada nivel de espacio por encima del 3º."
+  },
+  "Meld into Stone": {
+    "name": "Fundir en piedra",
+    "description": "Entras en un objeto o superficie de piedra lo suficientemente grande como para contener completamente tu cuerpo, fusionándote a ti mismo y a todo el equipo que llevas con la piedra mientras dura. Usando tu movimiento, entras en la piedra en un punto que puedes tocar. Nada de tu presencia permanece visible o detectable de otro modo por los sentidos no mágicos.",
+    "higherLevels": null
+  },
+  "Nondetection": {
+    "name": "No detección",
+    "description": "Mientras dura, ocultas un objetivo que tocas de la magia de adivinación. El objetivo puede ser una criatura dispuesta o un lugar o un objeto de no más de 10 pies en cualquier dimensión. El objetivo no puede ser objetivo de ninguna magia de adivinación ni percibirse a través de sensores mágicos de exploración.",
+    "higherLevels": null
+  },
+  "Plant Growth": {
+    "name": "Crecimiento vegetal",
+    "description": "Este hechizo canaliza vitalidad hacia las plantas dentro de un área específica. Hay dos usos posibles para el hechizo, otorgando beneficios inmediatos o a largo plazo. Si lanzas este hechizo usando 1 acción, elige un punto dentro del alcance. Todas las plantas normales en un radio de 100 pies centrado en ese punto se vuelven espesas y crecen demasiado. Una criatura que se mueve a través del área debe gastar 4 pies de movimiento por cada 1 pie que se mueve. Puedes excluir una o más áreas de cualquier tamaño dentro del área del hechizo para que no se vean afectadas.",
+    "higherLevels": null
+  },
+  "Protection from Energy": {
+    "name": "Protección de la energía",
+    "description": "Mientras dure, la criatura dispuesta que tocas tiene resistencia a un tipo de daño de tu elección: ácido, frío, fuego, relámpago o trueno.",
+    "higherLevels": null
+  },
+  "Remove Curse": {
+    "name": "Quitar maldición",
+    "description": "Con tu toque, todas las maldiciones que afectan a una criatura u objeto terminan. Si el objeto es un objeto mágico maldito, su maldición permanece, pero el hechizo rompe la sintonía de su propietario con el objeto por lo que puede ser eliminado o descartado.",
+    "higherLevels": null
+  },
+  "Revivify": {
+    "name": "Revivificar",
+    "description": "Tocas una criatura que ha muerto en el último minuto. Esa criatura vuelve a la vida con 1 punto de vida. Este hechizo no puede devolver la vida a una criatura que ha muerto de vejez, ni puede restaurar partes del cuerpo faltantes.",
+    "higherLevels": null
+  },
+  "Sending": {
+    "name": "Envío",
+    "description": "Envías un mensaje corto de veinticinco palabras o menos a una criatura con la que estás familiarizado. La criatura escucha el mensaje en su mente, te reconoce como el remitente si te conoce y puede responder de la misma manera inmediatamente. El hechizo permite a las criaturas con puntuaciones de Inteligencia de al menos 1 comprender el significado de tu mensaje.",
+    "higherLevels": null
+  },
+  "Sleet Storm": {
+    "name": "Tormenta de aguanieve",
+    "description": "Hasta que finaliza el hechizo, lluvia helada y aguanieve caen en un cilindro de 20 pies de altura con un radio de 40 pies centrado en un punto que elijas dentro del alcance. El área está muy oscurecida y las llamas expuestas en el área se apagan. El terreno de la zona está cubierto de hielo resbaladizo, lo que dificulta el terreno. Cuando una criatura entra en el área del hechizo por primera vez en un turno o comienza su turno allí, debe realizar una tirada de salvación de Destreza o caer boca abajo.",
+    "higherLevels": null
+  },
+  "Slow": {
+    "name": "Lento",
+    "description": "Modificas el tiempo alrededor de hasta seis criaturas de tu elección en un cubo de 40 pies dentro del alcance. Cada objetivo debe superar una tirada de salvación de Sabiduría o verse afectado mientras dure. La velocidad de un objetivo afectado se reduce a la mitad, sufre una penalización de -2 a las tiradas de salvación de CA y Destreza, y no puede usar reacciones. En su turno, puede utilizar una acción o una acción adicional, no ambas. Independientemente de las habilidades o los objetos mágicos de la criatura, no puede realizar más de un ataque cuerpo a cuerpo o a distancia durante su turno.",
+    "higherLevels": null
+  },
+  "Speak with Dead": {
+    "name": "hablar con los muertos",
+    "description": "Otorgas la apariencia de vida e inteligencia a un cadáver de tu elección dentro del alcance, permitiéndole responder las preguntas que planteas. El cadáver aún debe tener boca y no puede ser un no-muerto. El hechizo puede comunicarse con un cadáver que lleva muerto no más de 10 días. Puedes hacerle al cadáver hasta cinco preguntas. El cadáver sólo sabe lo que supo en vida y no está obligado a ofrecer una respuesta veraz.",
+    "higherLevels": null
+  },
+  "Speak with Plants": {
+    "name": "Habla con las plantas",
+    "description": "Imbuyes a las plantas a 30 pies de ti con sensibilidad y animación limitadas, dándoles la capacidad de comunicarse contigo y seguir tus simples órdenes. Puedes interrogar a las plantas sobre eventos en el área del hechizo durante el día anterior, obteniendo información sobre las criaturas que han pasado, el clima y otras circunstancias. También puedes convertir terreno difícil causado por el crecimiento de plantas en terreno ordinario que dure todo el tiempo. Es posible que las plantas puedan realizar otras tareas en su nombre.",
+    "higherLevels": null
+  },
+  "Spirit Guardians": {
+    "name": "Guardianes espirituales",
+    "description": "Invocas espíritus para que te protejan. Revolotean a tu alrededor a una distancia de 15 pies mientras dura. Si eres bueno o neutral, su forma espectral parece angelical o feérica (tú eliges). Si eres malvado, ellos parecen diabólicos. Cuando lanzas este hechizo, puedes designar cualquier número de criaturas que veas que no se verán afectadas por él. La velocidad de una criatura afectada se reduce a la mitad en el área, y cuando la criatura ingresa al área por primera vez en un turno o comienza su turno allí, debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, la criatura sufre 3d8 de daño radiante (si eres bueno o neutral) o 3d8 de daño necrótico (si eres malvado). Con una salvación exitosa, la criatura sufre la mitad de daño.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 3º."
+  },
+  "Stinking Cloud": {
+    "name": "Nube apestosa",
+    "description": "Creas una esfera de 20 pies de radio de gas amarillo y nauseabundo centrada en un punto dentro del alcance. La nube se extiende por las esquinas y su área está muy oscurecida. La nube permanece en el aire mientras dura. Cada criatura que esté completamente dentro de la nube al comienzo de su turno debe realizar una tirada de salvación de Constitución contra el veneno. Si falla la salvación, la criatura gasta su acción de ese turno en arcadas y tambaleándose.",
+    "higherLevels": null
+  },
+  "Tongues": {
+    "name": "lenguas",
+    "description": "Este hechizo otorga a la criatura que tocas la capacidad de comprender cualquier idioma hablado que escuche. Además, cuando el objetivo habla, cualquier criatura que conozca al menos un idioma y pueda oírlo entenderá lo que dice.",
+    "higherLevels": null
+  },
+  "Vampiric Touch": {
+    "name": "Toque vampírico",
+    "description": "El toque de tu mano envuelta en sombras puede extraer fuerza vital de otros para curar tus heridas. Realiza un ataque con hechizo cuerpo a cuerpo contra una criatura que esté a tu alcance. Con un impacto, el objetivo sufre 3d6 de daño necrótico y recuperas puntos de golpe equivalentes a la mitad de la cantidad de daño necrótico infligido. Hasta que termine el hechizo, puedes volver a realizar el ataque en cada uno de tus turnos como acción.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, el daño aumenta en 1d6 por cada nivel de espacio por encima del 3º."
+  },
+  "Water Breathing": {
+    "name": "Respiración de agua",
+    "description": "Este hechizo otorga a hasta diez criaturas voluntarias que puedes ver dentro del alcance la capacidad de respirar bajo el agua hasta que finalice el hechizo. Las criaturas afectadas también conservan su modo normal de respiración.",
+    "higherLevels": null
+  },
+  "Water Walk": {
+    "name": "Paseo por el agua",
+    "description": "Este hechizo otorga la capacidad de moverse a través de cualquier superficie líquida, como agua, ácido, barro, nieve, arenas movedizas o lava, como si fuera tierra sólida inofensiva (las criaturas que cruzan lava fundida aún pueden sufrir daños por el calor) hasta diez criaturas dispuestas que puedes ver dentro del alcance mientras dura.",
+    "higherLevels": null
+  },
+  "Wind Wall": {
+    "name": "Muro de viento",
+    "description": "Una pared de fuerte viento se levanta desde el suelo en un punto que elijas dentro del alcance. Puede hacer que la pared tenga hasta 50 pies de largo, 15 pies de alto y 1 pie de espesor. Puedes darle forma a la pared de la forma que elijas, siempre que forme un camino continuo a lo largo del suelo. El muro dura todo el tiempo. Cuando aparece el muro, cada criatura dentro de su área debe realizar una tirada de salvación de Fuerza. Una criatura sufre 3d8 de daño contundente si falla una salvación, o la mitad si tiene éxito.",
+    "higherLevels": null
+  },
+  "Arcane Eye": {
+    "name": "Ojo arcano",
+    "description": "Creas un ojo mágico invisible dentro del alcance que flota en el aire mientras dura. Mentalmente recibes información visual del ojo, que tiene visión normal y visión en la oscuridad hasta 30 pies. El ojo puede mirar en todas direcciones. Como acción, puedes mover el ojo hasta 30 pies en cualquier dirección. No hay límite en cuanto a qué tan lejos de ti puede moverse el ojo, pero no puede entrar en otro plano de existencia.",
+    "higherLevels": null
+  },
+  "Banishment": {
+    "name": "Destierro",
+    "description": "Intentas enviar una criatura que puedes ver dentro del alcance a otro plano de existencia. El objetivo debe superar una tirada de salvación de Carisma o será desterrado. Si el objetivo es nativo del plano de existencia en el que te encuentras, lo destierras a un semiplano inofensivo. Mientras está allí, el objetivo queda incapacitado. El objetivo permanece allí hasta que termina el hechizo, momento en el que reaparece en el espacio que dejó o en el espacio desocupado más cercano si ese espacio está ocupado.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 5º nivel o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 4º."
+  },
+  "Blight": {
+    "name": "Plaga",
+    "description": "La energía nigromántica baña a una criatura de tu elección que puedes ver dentro del alcance, drenando su humedad y vitalidad. El objetivo debe realizar una tirada de salvación de Constitución. El objetivo sufre 8d8 de daño necrótico si falla la salvación, o la mitad si tiene éxito. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos. Si apuntas a una criatura vegetal o una planta mágica, ésta realiza la tirada de salvación con desventaja y el hechizo le inflige el máximo daño.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 5º nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 4º."
+  },
+  "Compulsion": {
+    "name": "Compulsión",
+    "description": "Las criaturas de tu elección que puedas ver dentro del alcance y que puedan oírte deben realizar una tirada de salvación de Sabiduría. Un objetivo tiene éxito automáticamente en esta tirada de salvación si no puede ser hechizado. Si falla la salvación, el objetivo se ve afectado por este hechizo. Hasta que finalice el hechizo, puedes usar una acción adicional en cada uno de tus turnos para designar una dirección que sea horizontal para ti. Cada objetivo afectado debe utilizar la mayor cantidad de movimiento posible para moverse en esa dirección en su próximo turno.",
+    "higherLevels": null
+  },
+  "Confusion": {
+    "name": "Confusión",
+    "description": "Este hechizo ataca y retuerce las mentes de las criaturas, generando delirios y provocando acciones incontroladas. Cada criatura en una esfera de 10 pies de radio centrada en un punto que elijas dentro del alcance debe superar una tirada de salvación de Sabiduría cuando lances este hechizo o se verá afectada por él. Un objetivo afectado no puede reaccionar y debe tirar un d10 al comienzo de cada uno de sus turnos para determinar su comportamiento en ese turno.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 5º nivel o superior, el radio de la esfera aumenta en 5 pies por cada nivel de espacio por encima del 4º."
+  },
+  "Conjure Minor Elementals": {
+    "name": "Conjurar elementales menores",
+    "description": "Invocas elementales que aparecen en espacios desocupados que puedes ver dentro del alcance. Eliges una de las siguientes opciones para lo que aparece: un elemental con índice de desafío 2 o inferior; dos elementales de nivel de desafío 1 o inferior; cuatro elementales de índice de desafío 1/2 o inferior; ocho elementales con un índice de desafío de 1/4 o inferior. Un elemental invocado por este hechizo desaparece cuando sus puntos de vida caen a 0 o cuando termina el hechizo.",
+    "higherLevels": "Cuando lanzas este hechizo usando ciertos espacios para hechizos de nivel superior, eliges una de las opciones de invocación anteriores y aparecen más criaturas: el doble con un espacio de nivel 6 y el triple con un espacio de nivel 8."
+  },
+  "Conjure Woodland Beings": {
+    "name": "Conjurar seres del bosque",
+    "description": "Invocas criaturas feéricas que aparecen en espacios desocupados que puedes ver dentro del alcance. Elige una de las siguientes opciones para lo que aparece: una criatura feérica con índice de desafío 2 o inferior; dos criaturas feéricas con un nivel de desafío de 1 o inferior; cuatro criaturas feéricas con un índice de desafío de 1/2 o inferior; ocho criaturas feéricas con un índice de desafío de 1/4 o inferior.",
+    "higherLevels": "Cuando lanzas este hechizo usando ciertos espacios para hechizos de nivel superior, eliges una de las opciones de invocación anteriores y aparecen más criaturas: el doble con un espacio de nivel 6 y el triple con un espacio de nivel 8."
+  },
+  "Control Water": {
+    "name": "Controlar el agua",
+    "description": "Hasta que finalice el hechizo, controlas cualquier agua estancada dentro de un área que elijas que sea un cubo de hasta 100 pies de lado. Puedes elegir entre cualquiera de los siguientes efectos cuando lanzas este hechizo, o cualquier combinación: Inundación, Agua parcial, Flujo redirigido o Remolino.",
+    "higherLevels": null
+  },
+  "Death Ward": {
+    "name": "Sala de la muerte",
+    "description": "Tocas una criatura y le otorgas una medida de protección contra la muerte. La primera vez que el objetivo cae a 0 puntos de vida como resultado de recibir daño, el objetivo cae a 1 punto de vida y el hechizo termina. Si el hechizo todavía está en efecto cuando el objetivo es sometido a un efecto que lo mataría instantáneamente sin causar daño, ese efecto se niega contra el objetivo y el hechizo termina.",
+    "higherLevels": null
+  },
+  "Dimension Door": {
+    "name": "Puerta de dimensión",
+    "description": "Te teletransportas desde tu ubicación actual a cualquier otro lugar dentro del alcance. Llegas exactamente al lugar deseado. Puede ser un lugar que puedas ver, uno que puedas visualizar o uno que puedas describir indicando la distancia y la dirección. Puedes llevar objetos siempre que su peso no exceda lo que puedes transportar. También puedes traer una criatura voluntaria de tu tamaño o más pequeña que lleve equipo hasta su capacidad de carga.",
+    "higherLevels": null
+  },
+  "Divination": {
+    "name": "Divinidad",
+    "description": "Tu magia y una ofrenda te ponen en contacto con un dios o los sirvientes de un dios. Usted hace una sola pregunta sobre un objetivo, evento o actividad específica que ocurrirá dentro de 7 días. El DM ofrece una respuesta veraz. La respuesta puede ser una frase corta, una rima críptica o un presagio. El hechizo no tiene en cuenta ninguna posible circunstancia que pueda cambiar el resultado, como el lanzamiento de hechizos adicionales o la pérdida o ganancia de un compañero.",
+    "higherLevels": null
+  },
+  "Dominate Beast": {
+    "name": "Dominar Bestia",
+    "description": "Intentas engañar a una bestia que puedes ver dentro del alcance. Debe superar una tirada de salvación de Sabiduría o ser hechizado por ti mientras dure. Si tú o criaturas que son amigas tuyas luchan contra él, tiene ventaja en la tirada de salvación. Mientras la bestia está encantada, tienes un vínculo telepático con ella siempre que ambos estéis en el mismo plano de existencia.",
+    "higherLevels": "Cuando lanzas este hechizo con un espacio de hechizo de nivel 9, la duración es de concentración, hasta 8 horas."
+  },
+  "Evard's Black Tentacles": {
+    "name": "Tentáculos negros de Evard",
+    "description": "Los tentáculos de ébano que se retuercen llenan un cuadrado de 20 pies en el suelo que puedes ver dentro del alcance. Mientras duran, estos tentáculos convierten el suelo de la zona en un terreno difícil. Cuando una criatura entra en el área afectada por primera vez en un turno o comienza su turno allí, la criatura debe superar una tirada de salvación de Destreza o sufrir 3d6 de daño contundente y ser restringida por los tentáculos hasta que termine el hechizo.",
+    "higherLevels": null
+  },
+  "Fabricate": {
+    "name": "Fabricar",
+    "description": "Conviertes materias primas en productos del mismo material. Por ejemplo, puedes fabricar un puente de madera con un grupo de árboles, una cuerda con un trozo de cáñamo y ropa con lino o lana. Elija materias primas que pueda ver dentro del alcance. Puedes fabricar un objeto Grande o más pequeño (contenido dentro de un cubo de 10 pies, u ocho cubos conectados de 5 pies), dada una cantidad suficiente de materia prima.",
+    "higherLevels": null
+  },
+  "Fire Shield": {
+    "name": "Escudo de fuego",
+    "description": "Llamas delgadas y tenues envuelven tu cuerpo mientras dura, arrojando luz brillante en un radio de 10 pies y luz tenue en 10 pies adicionales. Las llamas te proporcionan un escudo cálido o un escudo frío, según elijas. El escudo cálido te otorga resistencia al daño por frío y el escudo frío te otorga resistencia al daño por fuego. Además, cada vez que una criatura a 5 pies de ti te golpea con un ataque cuerpo a cuerpo, el escudo estalla en llamas. El atacante recibe 2d8 de daño por fuego de un escudo cálido, o 2d8 de daño por frío de un escudo frío.",
+    "higherLevels": null
+  },
+  "Freedom of Movement": {
+    "name": "Libertad de movimiento",
+    "description": "Tocas a una criatura dispuesta. Mientras dura, el movimiento del objetivo no se ve afectado por el terreno difícil, y los hechizos y otros efectos mágicos no pueden reducir la velocidad del objetivo ni causar que quede paralizado o restringido. El objetivo también puede gastar 5 pies de movimiento para escapar automáticamente de restricciones no mágicas, como esposas o una criatura que lo tenga apresado.",
+    "higherLevels": null
+  },
+  "Giant Insect": {
+    "name": "Insecto gigante",
+    "description": "Transformas hasta diez ciempiés, tres avispas, cinco avispones o un escorpión dentro del alcance en versiones gigantes de sus formas naturales mientras dura el juego. Un ciempiés se convierte en un ciempiés gigante, una avispa se convierte en una avispa gigante, un avispón se convierte en una avispa gigante y un escorpión se convierte en un escorpión gigante. Cada criatura obedece tus órdenes verbales y, en combate, actúan en tu turno en cada ronda.",
+    "higherLevels": null
+  },
+  "Greater Invisibility": {
+    "name": "Mayor invisibilidad",
+    "description": "Tú o una criatura que tocas te vuelves invisible hasta que finaliza el hechizo. Cualquier cosa que el objetivo esté usando o llevando es invisible siempre que esté sobre su persona. A diferencia de la Invisibilidad, este hechizo no termina cuando el objetivo ataca o lanza un hechizo.",
+    "higherLevels": null
+  },
+  "Guardian of Faith": {
+    "name": "Guardián de la fe",
+    "description": "Aparece un guardián espectral grande que flota mientras dura en un espacio desocupado de tu elección que puedes ver dentro del alcance. El guardián ocupa ese espacio y no se distingue excepto por una espada reluciente y un escudo adornado con el símbolo de tu deidad. Cualquier criatura hostil a ti que se mueva a un espacio dentro de los 10 pies del guardián por primera vez en un turno debe superar una tirada de salvación de Destreza. La criatura sufre 20 daños radiantes si falla la salvación, o la mitad si tiene éxito.",
+    "higherLevels": null
+  },
+  "Hallucinatory Terrain": {
+    "name": "Terreno alucinatorio",
+    "description": "Haces que el terreno natural en un cubo de 150 pies de alcance se vea, suene y huela como otro tipo de terreno natural. Por lo tanto, se puede hacer que los campos abiertos o un camino parezcan un pantano, una colina, una grieta o algún otro terreno difícil o intransitable. Se puede hacer que un estanque parezca una pradera cubierta de hierba, un precipicio como una pendiente suave o un barranco cubierto de rocas como un camino ancho y liso. Las estructuras, equipos y criaturas fabricadas dentro del área no cambian en apariencia.",
+    "higherLevels": null
+  },
+  "Ice Storm": {
+    "name": "Tormenta de hielo",
+    "description": "Una lluvia de hielo duro como una roca cae al suelo en un cilindro de 20 pies de radio y 40 pies de alto centrado en un punto dentro del alcance. Cada criatura en el cilindro debe realizar una tirada de salvación de Destreza. Una criatura sufre 2d8 de daño contundente y 4d6 de daño por frío si falla una salvación, o la mitad si tiene éxito. Los granizos convierten el área de efecto de la tormenta en terreno difícil hasta el final de tu siguiente turno.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 5º nivel o superior, el daño contundente aumenta en 1d8 por cada nivel de espacio por encima del 4º."
+  },
+  "Locate Creature": {
+    "name": "Localizar criatura",
+    "description": "Describe o nombra una criatura que te resulte familiar. Sientes la dirección hacia la ubicación de la criatura, siempre y cuando esa criatura esté a menos de 1000 pies de ti. Si la criatura se está moviendo, sabes la dirección de su movimiento. El hechizo puede localizar una criatura específica que conoces, o la criatura más cercana de un tipo específico (como un humano o un unicornio), siempre y cuando hayas visto dicha criatura de cerca a menos de 30 pies al menos una vez.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Faithful Hound": {
+    "name": "El perro fiel de Mordenkainen",
+    "description": "Conjuras un perro guardián fantasma en un espacio desocupado que puedes ver dentro del alcance, donde permanece mientras dura, hasta que lo descartas como una acción o hasta que te alejas más de 100 pies de él. El sabueso es invisible para todas las criaturas excepto para ti y no puede sufrir daño. Cuando una criatura pequeña o más grande se acerca a 30 pies de ella sin pronunciar primero la contraseña que especificas cuando lanzas este hechizo, el perro comienza a ladrar fuerte. El perro ve criaturas invisibles y puede detectarlas a 5 pies de él. En tu turno, como acción adicional, puedes ordenarle al perro que ataque a una criatura a 5 pies de él. Con un golpe, causa 4d8 de daño perforante.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Private Sanctum": {
+    "name": "Santuario privado de Mordenkainen",
+    "description": "Haces que un área dentro del alcance sea mágicamente segura. El área es un cubo que puede tener desde 5 pies hasta 100 pies de cada lado. El hechizo dura mientras dure o hasta que uses una acción para cancelarlo. Cuando lanzas el hechizo, decides qué tipo de seguridad proporciona el hechizo, eligiendo cualquiera o todas las siguientes propiedades: el sonido no puede atravesar la barrera, la barrera se vuelve opaca, los hechizos de adivinación no pueden apuntar dentro del área, las criaturas en el área no pueden ser objetivo de la magia de adivinación, nada puede teletransportarse dentro o fuera del área protegida, el viaje planar está bloqueado dentro del área protegida.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 5º nivel o superior, puedes aumentar el tamaño del cubo en 100 pies por cada nivel de espacio más allá del 4º. Por lo tanto, podrías proteger un cubo que puede tener hasta 200 pies de lado usando una ranura de hechizo de 5º nivel."
+  },
+  "Otiluke's Resilient Sphere": {
+    "name": "La esfera resistente de Otiluke",
+    "description": "Una esfera de fuerza brillante encierra a una criatura u objeto de tamaño grande o más pequeño dentro del alcance. Una criatura que no lo desee debe realizar una tirada de salvación de Destreza. Si falla la salvación, la criatura queda encerrada mientras dure. Nada (ni objetos físicos, energía u otros efectos de hechizos) puede atravesar la barrera, ni hacia adentro ni hacia afuera, aunque una criatura en la esfera puede respirar allí. La esfera es inmune a todo daño y una criatura u objeto dentro no puede ser dañado por ataques o efectos provenientes del exterior.",
+    "higherLevels": null
+  },
+  "Phantasmal Killer": {
+    "name": "Asesino fantasmal",
+    "description": "Aprovechas las pesadillas de una criatura que puedes ver dentro del alcance y creas una manifestación ilusoria de sus miedos más profundos, visible solo para esa criatura. El objetivo debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, el objetivo queda asustado mientras dure. Al final de cada uno de los turnos del objetivo antes de que termine el hechizo, el objetivo debe superar una tirada de salvación de Sabiduría o sufrir 4d10 de daño psíquico. Con una salvación exitosa, el hechizo termina.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 5º nivel o superior, el daño aumenta en 1d10 por cada nivel de espacio por encima del 4º."
+  },
+  "Polymorph": {
+    "name": "Organismo polimorfo",
+    "description": "Este hechizo transforma una criatura que puedes ver dentro del alcance en una nueva forma. Una criatura que no lo desee debe realizar una tirada de salvación de Sabiduría para evitar el efecto. El hechizo no tiene efecto sobre un cambiaformas o una criatura con 0 puntos de vida. La transformación dura mientras dura o hasta que el objetivo cae a 0 puntos de vida o muere. La nueva forma puede ser cualquier bestia cuyo índice de desafío sea igual o menor que el del objetivo (o el nivel del objetivo, si no tiene un índice de desafío).",
+    "higherLevels": null
+  },
+  "Secret Chest": {
+    "name": "Cofre secreto",
+    "description": "Escondes un cofre y todo su contenido en el Plano Etéreo. Debes tocar el cofre y la réplica en miniatura que sirve como componente material del hechizo. El cofre puede contener hasta 12 pies cúbicos de material no vivo (3 pies por 2 pies por 2 pies). Mientras el cofre permanece en el plano etéreo, puedes usar una acción y tocar la réplica para recuperar el cofre. Aparece en un espacio abierto en el suelo a 5 pies de ti. Puedes enviar el cofre de regreso al Plano Etéreo usando una acción y tocando tanto el cofre como la réplica.",
+    "higherLevels": null
+  },
+  "Stone Shape": {
+    "name": "Forma de piedra",
+    "description": "Tocas un objeto de piedra de tamaño mediano o más pequeño o una sección de piedra de no más de 5 pies en cualquier dimensión y le das la forma que se adapte a tu propósito. Entonces, por ejemplo, podrías convertir una roca grande en un arma, un ídolo o un cofre, o hacer un pequeño pasaje a través de una pared, siempre y cuando la pared tenga menos de 5 pies de espesor. También puedes darle forma a una puerta de piedra o a su marco para sellarla y cerrarla.",
+    "higherLevels": null
+  },
+  "Stoneskin": {
+    "name": "piel de piedra",
+    "description": "Este hechizo vuelve la carne de una criatura voluntaria que tocas tan dura como una piedra. Hasta que finaliza el hechizo, el objetivo tiene resistencia al daño contundente, perforante y cortante no mágico.",
+    "higherLevels": null
+  },
+  "Wall of Fire": {
+    "name": "Muro de fuego",
+    "description": "Creas un muro de fuego sobre una superficie sólida dentro del alcance. La pared puede tener hasta 60 pies de largo, 20 pies de alto y 1 pie de espesor, o una pared anillada de hasta 20 pies de diámetro, 20 pies de alto y 1 pie de espesor. La pared es opaca y dura todo el tiempo. Cuando aparece el muro, cada criatura dentro de su área debe realizar una tirada de salvación de Destreza. Con una salvación fallida, una criatura sufre 5d8 daños por fuego, o la mitad si tiene éxito. Un lado de la pared (tu elección) causa 5d8 de daño por fuego a cada criatura que finaliza su turno a menos de 10 pies de ese lado.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 5º nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 4º."
+  },
+  "Animate Objects": {
+    "name": "Animar objetos",
+    "description": "Los objetos cobran vida a tus órdenes. Elija hasta diez objetos no mágicos dentro del alcance que no estén siendo usados ​​ni transportados. Los objetivos medianos cuentan como dos objetos, los objetivos grandes cuentan como cuatro objetos y los objetivos enormes cuentan como ocho objetos. No puedes animar ningún objeto más grande que Huge. Cada objetivo se anima y se convierte en una criatura bajo tu control hasta que finaliza el hechizo o hasta que se reduce a 0 puntos de vida.",
+    "higherLevels": "Si lanzas este hechizo usando un espacio de hechizo de 6.º nivel o superior, puedes animar dos objetos adicionales para cada nivel de espacio por encima del 5.º."
+  },
+  "Antilife Shell": {
+    "name": "Caparazón antivida",
+    "description": "Una barrera brillante se extiende desde ti en un radio de 10 pies y se mueve contigo, permaneciendo centrada en ti y protegiendo a las criaturas que no sean muertos vivientes y constructos. La barrera dura todo el tiempo. La barrera impide que una criatura afectada pase o la atraviese. Una criatura afectada puede lanzar hechizos o realizar ataques con armas a distancia o de alcance a través de la barrera.",
+    "higherLevels": null
+  },
+  "Bigby's Hand": {
+    "name": "La mano de Bigby",
+    "description": "Creas una mano grande de fuerza translúcida y brillante en un espacio desocupado que puedes ver dentro del alcance. La mano dura mientras dura el hechizo y se mueve según tus órdenes, imitando los movimientos de tu propia mano. La mano es un objeto que tiene CA 20 y puntos de vida iguales a tu máximo de puntos de vida. Si cae a 0 puntos de vida, el hechizo termina. Tiene una Fuerza de 26 (+8) y una Destreza de 10 (+0). Puede tomar una variedad de acciones: Puño cerrado (fuerza 2d8), Mano contundente (empujar), Mano agarradora (refrenar), Mano interpuesta (bloquear).",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6º nivel o superior, el daño de la opción del puño cerrado aumenta en 2d8 y el daño de la mano agarradora aumenta en 2d6 por cada nivel de espacio por encima del 5º."
+  },
+  "Cloudkill": {
+    "name": "matar nubes",
+    "description": "Creas una esfera de 20 pies de radio de niebla venenosa de color amarillo verdoso centrada en un punto que elijas dentro del alcance. La niebla se extiende por las esquinas. Dura mientras dura el hechizo o hasta que un fuerte viento disperse la niebla, poniendo fin al hechizo. Su área está muy oscurecida. Cuando una criatura entra en el área del hechizo por primera vez en un turno o comienza su turno allí, esa criatura debe realizar una tirada de salvación de Constitución. La criatura sufre 5d8 daños por veneno si falla la salvación, o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6º nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 5º."
+  },
+  "Commune": {
+    "name": "Comuna",
+    "description": "Te pones en contacto con tu deidad o con un representante divino y le haces hasta tres preguntas que pueden responderse con un sí o un no. Debes hacer tus preguntas antes de que termine el hechizo. Recibirá una respuesta correcta para cada pregunta formulada. Los seres divinos no son necesariamente omniscientes, por lo que es posible que recibas una respuesta \"poco clara\" si una pregunta se refiere a información que se encuentra más allá del conocimiento de la deidad.",
+    "higherLevels": null
+  },
+  "Commune with Nature": {
+    "name": "Comunión con la naturaleza",
+    "description": "Te conviertes brevemente en uno con la naturaleza y adquieres conocimientos del territorio circundante. Al aire libre, el hechizo te brinda información objetiva sobre la tierra dentro de un radio de 3 millas de ti. En cuevas y otros entornos subterráneos naturales, el radio está limitado a 300 pies. El hechizo no funciona donde la naturaleza ha sido reemplazada por la construcción, como en mazmorras y ciudades. Obtienes instantáneamente conocimiento de hasta tres datos de tu elección sobre cualquiera de los siguientes temas relacionados con el área: terreno y cuerpos de agua, plantas, minerales, animales o pueblos predominantes, celestiales poderosos, hadas, demonios, elementales o no-muertos, influencia de otros planos de existencia, edificios.",
+    "higherLevels": null
+  },
+  "Cone of Cold": {
+    "name": "Cono de frio",
+    "description": "Una ráfaga de aire frío brota de tus manos. Cada criatura en un cono de 60 pies debe realizar una tirada de salvación de Constitución. Una criatura sufre 8d8 de daño por frío si falla una salvación, o la mitad si tiene éxito. Una criatura muerta por este hechizo se convierte en una estatua congelada hasta que se descongela.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6º nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 5º."
+  },
+  "Conjure Elemental": {
+    "name": "Conjurar elemental",
+    "description": "Invocas a un sirviente elemental. Elija un área de aire, tierra, fuego o agua que llene un cubo de 10 pies dentro del alcance. Un elemental con un índice de desafío de 5 o inferior apropiado para el área que elegiste aparece en un espacio desocupado a 10 pies de ella. Por ejemplo, un elemental de fuego emerge de una hoguera y un elemental de tierra se eleva desde el suelo. Si pierdes la concentración, el elemental no desaparece. En cambio, pierdes el control del elemental, se vuelve hostil hacia ti y tus compañeros y podría atacar.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6.º nivel o superior, el índice de desafío aumenta en 1 por cada nivel de espacio por encima del 5.º."
+  },
+  "Contact Other Plane": {
+    "name": "Contacto Otro Avión",
+    "description": "Te pones en contacto mentalmente con un semidiós, el espíritu de un sabio muerto hace mucho tiempo o alguna otra entidad misteriosa de otro plano. Ponerse en contacto con esta inteligencia extraplanar puede forzar o incluso romper tu mente. Cuando lances este hechizo, haz una tirada de salvación de Inteligencia CD 15. Si fallas, recibes 6d6 de daño psíquico y te vuelves loco hasta que terminas un descanso prolongado. Mientras estás loco, no puedes tomar medidas, no puedes entender lo que dicen otras criaturas, no puedes leer y solo hablas en un galimatías. Si guarda con éxito, puede hacerle a la entidad hasta cinco preguntas.",
+    "higherLevels": null
+  },
+  "Contagion": {
+    "name": "Contagio",
+    "description": "Tu toque inflige enfermedad. Realiza un ataque con hechizo cuerpo a cuerpo contra una criatura que esté a tu alcance. Con un golpe, afliges a la criatura con una enfermedad de tu elección entre cualquiera de las siguientes. El objetivo debe realizar una tirada de salvación de Constitución al final de cada uno de sus turnos. Después de fallar tres de estas tiradas de salvación, los efectos de la enfermedad duran todo el tiempo y la criatura deja de realizar estas tiradas de salvación. Después de superar tres de estas tiradas de salvación, la criatura se recupera de la enfermedad y el hechizo finaliza. Enfermedades: enfermedad cegadora, fiebre de la inmundicia, podredumbre de la carne, fuego mental, convulsiones, fatalidad viscosa.",
+    "higherLevels": null
+  },
+  "Creation": {
+    "name": "Creación",
+    "description": "Sacas volutas de material de sombra de Shadowfell para crear un objeto no vivo de materia vegetal dentro del alcance: artículos blandos, cuerdas, madera o algo similar. También puedes utilizar este hechizo para crear objetos minerales como piedra, cristal o metal. El objeto creado no debe ser más grande que un cubo de 5 pies y debe tener una forma y un material que hayas visto antes. La duración depende del material del objeto.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6.º nivel o superior, el cubo aumenta 5 pies por cada nivel de espacio por encima del 5.º."
+  },
+  "Dispel Evil and Good": {
+    "name": "Disipar el mal y el bien",
+    "description": "Una energía brillante te rodea y te protege de hadas, no-muertos y criaturas que se originan más allá del plano material. Mientras dure, los celestiales, elementales, hadas, demonios y muertos vivientes tienen desventaja en las tiradas de ataque contra ti. Puedes finalizar el hechizo antes de tiempo usando cualquiera de las siguientes funciones especiales: Romper encantamiento o Despedir.",
+    "higherLevels": null
+  },
+  "Dominate Person": {
+    "name": "Persona dominante",
+    "description": "Intentas engañar a un humanoide que puedes ver dentro del alcance. Debe superar una tirada de salvación de Sabiduría o ser hechizado por ti mientras dure. Si tú o criaturas que son amigas tuyas luchan contra él, tiene ventaja en la tirada de salvación. Mientras el objetivo está encantado, tienes un vínculo telepático con él siempre que ambos estén en el mismo plano de existencia. Puedes usar este vínculo telepático para dar órdenes a la criatura mientras estás consciente (no se requiere ninguna acción), que ella hace todo lo posible por obedecer.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 6, la duración es concentración, hasta 10 minutos. Cuando usas un espacio para hechizos de nivel 7, la duración es de concentración, hasta 1 hora. Cuando usas un espacio de hechizo de nivel 8 o superior, la duración es de concentración, hasta 8 horas."
+  },
+  "Dream": {
+    "name": "Sueño",
+    "description": "Este hechizo da forma a los sueños de una criatura. Elige una criatura que conozcas como objetivo de este hechizo. El objetivo debe estar en el mismo plano de existencia que tú. Este hechizo no puede contactar con las criaturas que no duermen, como los elfos. Tú, o una criatura dispuesta a tocar, entras en un estado de trance, actuando como mensajero. Mientras está en trance, el mensajero es consciente de su entorno, pero no puede realizar acciones ni moverse.",
+    "higherLevels": null
+  },
+  "Flame Strike": {
+    "name": "Golpe de llama",
+    "description": "Una columna vertical de fuego divino ruge desde los cielos en un lugar que especifiques. Cada criatura en un cilindro de 10 pies de radio y 40 pies de alto centrado en un punto dentro del alcance debe realizar una tirada de salvación de Destreza. Una criatura sufre 4d6 de daño por fuego y 4d6 de daño radiante si falla una salvación, o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6º nivel o superior, el daño por fuego o el daño radiante (tu elección) aumenta en 1d6 por cada nivel de espacio por encima del 5º."
+  },
+  "Geas": {
+    "name": "Geas",
+    "description": "Colocas una orden mágica sobre una criatura que puedes ver dentro del alcance, obligándola a realizar algún servicio o abstenerse de alguna acción o curso de actividad según lo decidas. Si la criatura puede entenderte, debe superar una tirada de salvación de Sabiduría o quedará hechizada por ti mientras dure. Mientras la criatura está encantada por ti, sufre 5d10 de daño psíquico cada vez que actúa de una manera directamente contraria a tus instrucciones.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 7 u 8, la duración es de 1 año. Cuando lanzas este hechizo usando un espacio de hechizo de nivel 9, el hechizo dura hasta que uno de los hechizos que pueden terminar con maldiciones lo termina."
+  },
+  "Greater Restoration": {
+    "name": "Mayor restauración",
+    "description": "Imbuyes a una criatura que tocas con energía positiva para deshacer un efecto debilitante. Puedes reducir el nivel de agotamiento del objetivo en uno, o finalizar uno de los siguientes efectos en el objetivo: un efecto que encantó o petrificó al objetivo; una maldición, incluida la sintonía del objetivo con un objeto mágico maldito; cualquier reducción a una de las puntuaciones de habilidad del objetivo; un efecto que reduce el punto de vida máximo del objetivo.",
+    "higherLevels": null
+  },
+  "Hold Monster": {
+    "name": "Mantenga monstruo",
+    "description": "Elige una criatura que puedas ver dentro del alcance. El objetivo debe superar una tirada de salvación de Sabiduría o quedará paralizado mientras dure el efecto. Este hechizo no tiene ningún efecto sobre los muertos vivientes. Al final de cada uno de sus turnos, el objetivo puede realizar otra tirada de salvación de Sabiduría. Si tiene éxito, el hechizo termina en el objetivo.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6.º nivel o superior, puedes apuntar a una criatura adicional por cada nivel de espacio por encima del 5.º."
+  },
+  "Insect Plague": {
+    "name": "Plaga de insectos",
+    "description": "Un enjambre de langostas que pican llenan una esfera de 20 pies de radio centrada en un punto que elijas dentro del alcance. La esfera se extiende por las esquinas. La esfera permanece mientras dura el efecto y su área queda ligeramente oscurecida. El área de la esfera es un terreno difícil. Cuando aparece el área, cada criatura que se encuentre en ella debe realizar una tirada de salvación de Constitución. Una criatura sufre 4d10 de daño perforante si falla una salvación, o la mitad si tiene éxito. Una criatura también debe realizar esta tirada de salvación cuando entra al área del hechizo por primera vez en un turno o finaliza su turno allí.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6º nivel o superior, el daño aumenta en 1d10 por cada nivel de espacio por encima del 5º."
+  },
+  "Legend Lore": {
+    "name": "Historia de la leyenda",
+    "description": "Nombra o describe una persona, lugar u objeto. El hechizo trae a tu mente un breve resumen de la importante tradición sobre lo que nombraste. La tradición puede consistir en cuentos actuales, historias olvidadas o incluso tradiciones secretas que nunca han sido ampliamente conocidas. Si lo que nombraste no es de importancia legendaria, no obtendrás información.",
+    "higherLevels": null
+  },
+  "Mass Cure Wounds": {
+    "name": "Heridas de curación masiva",
+    "description": "Una ola de energía curativa surge desde un punto de tu elección dentro del alcance. Elige hasta seis criaturas en una esfera de 30 pies de radio centrada en ese punto. Cada objetivo recupera puntos de golpe equivalentes a 3d8 + tu modificador de habilidad de lanzamiento de hechizos. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 6º nivel o superior, la curación aumenta en 1d8 por cada nivel de espacio por encima del 5º."
+  },
+  "Mislead": {
+    "name": "Engañar",
+    "description": "Te vuelves invisible al mismo tiempo que un doble ilusorio de ti aparece donde estás parado. El doble dura mientras dura, pero la invisibilidad termina si atacas o lanzas un hechizo. Puedes usar tu acción para mover tu doble ilusorio hasta el doble de tu velocidad y hacer que gesticule, hable y se comporte de la manera que elijas. Puedes ver a través de sus ojos y oír a través de sus oídos como si estuvieras ubicado donde él está.",
+    "higherLevels": null
+  },
+  "Modify Memory": {
+    "name": "Modificar memoria",
+    "description": "Intentas remodelar los recuerdos de otra criatura. Una criatura que puedas ver debe realizar una tirada de salvación de Sabiduría. Si estás luchando contra la criatura, esta tiene ventaja en la tirada de salvación. En caso de una salvación fallida, el objetivo quedará encantado por ti mientras dure. El objetivo encantado está incapacitado y no es consciente de su entorno, aunque todavía puede oírte. Mientras dure este hechizo, puedes afectar la memoria del objetivo sobre un evento que experimentó dentro de las últimas 24 horas y que no duró más de 10 minutos.",
+    "higherLevels": "Si lanzas este hechizo usando un espacio de hechizo de nivel 6 o superior, puedes alterar los recuerdos del objetivo de un evento que tuvo lugar hace hasta 7 días (nivel 6), hace 30 días (nivel 7), hace 1 año (nivel 8) o en cualquier momento en el pasado de la criatura (nivel 9)."
+  },
+  "Passwall": {
+    "name": "Muro de paso",
+    "description": "Un pasaje aparece en un punto de tu elección que puedes ver en una superficie de madera, yeso o piedra (como una pared, un techo o un piso) dentro del alcance y dura todo el tiempo. Tú eliges las dimensiones de la abertura: hasta 5 pies de ancho, 8 pies de alto y 20 pies de profundidad. El pasaje no crea inestabilidad en la estructura que lo rodea.",
+    "higherLevels": null
+  },
+  "Planar Binding": {
+    "name": "Encuadernación plana",
+    "description": "Con este hechizo, intentas vincular a un celestial, un elemental, un hada o un demonio a tu servicio. La criatura debe estar dentro del alcance durante todo el lanzamiento del hechizo. (Normalmente, primero se convoca a la criatura al centro de un círculo mágico invertido para mantenerla atrapada mientras se lanza este hechizo). Al finalizar el lanzamiento, el objetivo debe realizar una tirada de salvación de Carisma. Si falla el guardado, seguramente le servirá mientras dure.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de un nivel superior, la duración aumenta a 10 días (nivel 6), 30 días (nivel 7), 180 días (nivel 8) o un año y un día (nivel 9)."
+  },
+  "Raise Dead": {
+    "name": "resucitar muertos",
+    "description": "Devuelves la vida a una criatura muerta que tocas, siempre que haya estado muerta no más de 10 días. Si el alma de la criatura está dispuesta y en libertad de reunirse con el cuerpo, la criatura vuelve a la vida con 1 punto de vida. Este hechizo también neutraliza cualquier veneno y cura enfermedades no mágicas que afectaron a la criatura en el momento de su muerte. Sin embargo, este hechizo no elimina enfermedades mágicas, maldiciones o efectos similares. El hechizo no puede devolver la vida a una criatura no muerta.",
+    "higherLevels": null
+  },
+  "Reincarnate": {
+    "name": "Reencarnar",
+    "description": "Tocas un humanoide muerto o un trozo de un humanoide muerto. Siempre que la criatura haya estado muerta no más de 10 días, el hechizo forma un nuevo cuerpo adulto para ella y luego llama al alma para que entre en ese cuerpo. Si el alma del objetivo no está libre o no está dispuesta a hacerlo, el hechizo falla. La magia crea un nuevo cuerpo para que lo habite la criatura, lo que probablemente provoca que la raza de la criatura cambie.",
+    "higherLevels": null
+  },
+  "Rary's Telepathic Bond": {
+    "name": "Vínculo telepático de Rary",
+    "description": "Forjas un vínculo telepático entre hasta ocho criaturas voluntarias de tu elección dentro del alcance, vinculando psíquicamente a cada criatura con todas las demás durante el tiempo que dure. Las criaturas con puntuaciones de Inteligencia de 2 o menos no se ven afectadas por este hechizo. Hasta que finalice el hechizo, los objetivos pueden comunicarse telepáticamente a través del vínculo, tengan o no un idioma común.",
+    "higherLevels": null
+  },
+  "Scrying": {
+    "name": "Adivinando",
+    "description": "Puedes ver y oír una criatura particular que elijas y que esté en el mismo plano de existencia que tú. El objetivo debe realizar una tirada de salvación de Sabiduría, que se modifica según lo bien que conozcas al objetivo y el tipo de conexión física que tengas con él. Con una salvación exitosa, el objetivo no se ve afectado y no podrás volver a usar este hechizo contra él durante 24 horas.",
+    "higherLevels": null
+  },
+  "Seeming": {
+    "name": "Aparente",
+    "description": "Este hechizo te permite cambiar la apariencia de cualquier cantidad de criaturas que puedas ver dentro del alcance. Le das a cada objetivo que eliges una apariencia nueva e ilusoria. Un objetivo que no lo desee puede realizar una tirada de salvación de Carisma y, si tiene éxito, no se verá afectado por este hechizo. El hechizo disfraza la apariencia física, así como la ropa, armaduras, armas y equipo.",
+    "higherLevels": null
+  },
+  "Telekinesis": {
+    "name": "Telequinesia",
+    "description": "Obtienes la capacidad de mover o manipular criaturas u objetos mediante el pensamiento. Cuando lanzas el hechizo, y como acción en cada asalto durante su duración, puedes ejercer tu voluntad sobre una criatura u objeto que puedas ver dentro del alcance, provocando el efecto apropiado a continuación. Puedes afectar al mismo objetivo ronda tras ronda, o elegir uno nuevo en cualquier momento. Si cambias de objetivo, el objetivo anterior ya no se ve afectado por el hechizo.",
+    "higherLevels": null
+  },
+  "Teleportation Circle": {
+    "name": "Círculo de teletransportación",
+    "description": "Mientras lanzas el hechizo, dibujas un círculo de 10 pies de diámetro en el suelo con sigilos inscritos que vinculan tu ubicación a un círculo de teletransportación permanente de tu elección cuya secuencia de sigilos conoces y que está en el mismo plano de existencia que tú. Se abre un portal brillante dentro del círculo que dibujaste y permanece abierto hasta el final de tu siguiente turno. Cualquier criatura que entre al portal aparece instantáneamente a 5 pies del círculo de destino o en el espacio desocupado más cercano si ese espacio está ocupado.",
+    "higherLevels": null
+  },
+  "Tree Stride": {
+    "name": "Paso de árbol",
+    "description": "Obtienes la capacidad de entrar en un árbol y moverte desde su interior hasta el interior de otro árbol del mismo tipo dentro de un radio de 500 pies. Ambos árboles deben estar vivos y tener al menos el mismo tamaño que tú. Debes utilizar 5 pies de movimiento para entrar a un árbol. Conoces instantáneamente la ubicación de todos los demás árboles del mismo tipo dentro de 500 pies y, como parte del movimiento utilizado para entrar al árbol, puedes pasar a uno de esos árboles o salir del árbol en el que te encuentras.",
+    "higherLevels": null
+  },
+  "Wall of Force": {
+    "name": "Muro de fuerza",
+    "description": "Un muro invisible de fuerza surge en el punto que elijas dentro del alcance. La pared aparece en cualquier orientación que elijas, como una barrera horizontal o vertical o en ángulo. Puede flotar libremente o descansar sobre una superficie sólida. Puede darle forma de cúpula hemisférica o de esfera con un radio de hasta 10 pies, o puede darle forma a una superficie plana compuesta por diez paneles de 10 pies por 10 pies. Cada panel debe ser contiguo a otro panel. En cualquier forma, la pared tiene 1/4 de pulgada de espesor. Dura lo que dura.",
+    "higherLevels": null
+  },
+  "Wall of Stone": {
+    "name": "Muro de piedra",
+    "description": "Un muro no mágico de piedra sólida surge en un punto que elijas dentro del alcance. La pared tiene 6 pulgadas de espesor y está compuesta por diez paneles de 10 por 10 pies. Cada panel debe ser contiguo a al menos otro panel. Alternativamente, puede crear paneles de 10 por 20 pies que tengan solo 3 pulgadas de espesor. Si el muro atraviesa el espacio de una criatura cuando aparece, la criatura es empujada hacia un lado del muro (tú eliges). Si una criatura estuviera rodeada por todos lados por la pared (o la pared y otra superficie sólida), esa criatura puede realizar una tirada de salvación de Destreza.",
+    "higherLevels": null
+  },
+  "Arcane Gate": {
+    "name": "Puerta Arcana",
+    "description": "Creas portales de teletransportación vinculados que permanecen abiertos mientras dure. Elija dos puntos en el suelo que pueda ver, un punto a 10 pies de usted y un punto a 500 pies de usted. Un portal circular, de 10 pies de diámetro, se abre sobre cada punto. Cualquier criatura u objeto que entre por un portal sale por el otro portal como si los dos estuvieran adyacentes entre sí; pasar a través de un portal desde el lado no portal no tiene ningún efecto.",
+    "higherLevels": null
+  },
+  "Blade Barrier": {
+    "name": "Barrera de cuchillas",
+    "description": "Creas una pared vertical de hojas giratorias y afiladas hechas de energía mágica. El muro aparece dentro del alcance y dura todo el tiempo. Puede hacer una pared recta de hasta 100 pies de largo, 20 pies de alto y 5 pies de espesor, o una pared anillada de hasta 60 pies de diámetro, 20 pies de alto y 5 pies de espesor. El muro proporciona cobertura de tres cuartos a las criaturas detrás de él, y su espacio es un terreno difícil. Cuando una criatura entra en el área del muro por primera vez en un turno o comienza su turno allí, la criatura debe realizar una tirada de salvación de Destreza. Si falla la salvación, la criatura sufre 6d10 de daño cortante. Con una salvación exitosa, la criatura sufre la mitad de daño.",
+    "higherLevels": null
+  },
+  "Chain Lightning": {
+    "name": "Cadena de relámpagos",
+    "description": "Creas un rayo que se arquea hacia un objetivo de tu elección que puedes ver dentro del alcance. Luego, tres rayos saltan desde ese objetivo hasta otros tres objetivos, cada uno de los cuales debe estar a 30 pies del primer objetivo. Un objetivo puede ser una criatura o un objeto y sólo puede ser objetivo de uno de los rayos. El objetivo debe realizar una tirada de salvación de Destreza. El objetivo sufre 10d8 de daño por rayo si falla la salvación, o la mitad de daño si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7.º nivel o superior, un rayo adicional salta del primer objetivo a otro objetivo por cada nivel de espacio por encima del 6.º."
+  },
+  "Circle of Death": {
+    "name": "Círculo de la muerte",
+    "description": "Una esfera de energía negativa se propaga en una esfera de 60 pies de radio desde un punto dentro del alcance. Cada criatura viviente en esa área debe realizar una tirada de salvación de Constitución. Un objetivo sufre 8d6 de daño necrótico si falla la salvación, o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7º nivel o superior, el daño aumenta en 2d6 por cada nivel de espacio por encima del 6º."
+  },
+  "Conjure Fey": {
+    "name": "Conjurar hadas",
+    "description": "Invocas una criatura feérica con un índice de desafío de 6 o inferior, o un espíritu feérico que toma la forma de una bestia con un índice de desafío de 6 o inferior. Aparece en un espacio desocupado que puedes ver dentro del alcance. La criatura feérica desaparece cuando sus puntos de vida caen a 0 o cuando termina el hechizo. La criatura feérica es amigable contigo y tus compañeros mientras dure. Tira la iniciativa de la criatura, que tiene sus propios turnos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7.º nivel o superior, el índice de desafío aumenta en 1 por cada nivel de espacio por encima del 6.º."
+  },
+  "Contingency": {
+    "name": "Contingencia",
+    "description": "Elige un hechizo de nivel 5 o inferior que puedas lanzar, que tenga un tiempo de lanzamiento de 1 acción y que pueda apuntar a ti. Lanzas ese hechizo, llamado hechizo contingente, como parte del lanzamiento de contingencia, gastando espacios de hechizo para ambos, pero el hechizo contingente no entra en efecto. En cambio, entra en vigor cuando ocurre una determinada circunstancia. Describes esa circunstancia cuando lanzas los dos hechizos. Cuando esa circunstancia ocurre por primera vez, el hechizo contingente surte efecto. La contingencia termina si la vuelves a lanzar, si la estatuilla se mueve a más de 10 pies de ti o si mueres.",
+    "higherLevels": null
+  },
+  "Create Undead": {
+    "name": "Crear muertos vivientes",
+    "description": "Puedes lanzar este hechizo sólo por la noche. Elige hasta tres cadáveres de humanoides medianos o pequeños dentro del alcance. Cada cadáver se convierte en un demonio bajo tu control. (El DM tiene estadísticas de juego para estas criaturas). Como acción adicional en cada uno de tus turnos, puedes comandar mentalmente cualquier criatura que hayas animado con este hechizo si la criatura está a 120 pies de ti (si controlas varias criaturas, puedes comandar cualquiera o todas al mismo tiempo, emitiendo la misma orden a cada una).",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 7, puedes animar o reafirmar el control sobre cuatro ghouls. Cuando lanzas este hechizo usando un espacio de hechizo de nivel 8, puedes animar o reafirmar el control sobre cinco fantasmas o espectros. Cuando lanzas este hechizo usando un espacio de hechizo de nivel 9, puedes animar o reafirmar el control sobre seis espectros o espectros o tres momias."
+  },
+  "Disintegrate": {
+    "name": "Desintegrarse",
+    "description": "Un fino rayo verde surge del dedo que señala hacia un objetivo que puede ver dentro del alcance. El objetivo puede ser una criatura, un objeto o una creación de fuerza mágica, como el muro creado por el muro de fuerza. Una criatura objetivo de este hechizo debe realizar una tirada de salvación de Destreza. Si falla la salvación, el objetivo sufre 10d6 + 40 de daño de fuerza. El objetivo se desintegra si este daño lo deja con 0 puntos de vida. Una criatura desintegrada y todo lo que lleva puesto y lleva, excepto los objetos mágicos, quedan reducidos a un montón de fino polvo gris.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7º nivel o superior, el daño aumenta en 3d6 por cada nivel de espacio por encima del 6º."
+  },
+  "Drawmij's Instant Summons": {
+    "name": "Invocaciones instantáneas de Drawmij",
+    "description": "Tocas un objeto que pesa 10 libras o menos cuya dimensión más larga es de 6 pies o menos. El hechizo deja una marca invisible en su superficie e inscribe de forma invisible el nombre del objeto en el zafiro que utilizas como componente material. Cada vez que lances este hechizo, deberás utilizar un zafiro diferente. En cualquier momento posterior, puedes usar tu acción para pronunciar el nombre del objeto y aplastar el zafiro. El objeto aparece instantáneamente en tu mano independientemente de las distancias físicas o planas, y el hechizo finaliza.",
+    "higherLevels": null
+  },
+  "Eyebite": {
+    "name": "mordedura de ojo",
+    "description": "Mientras dura el hechizo, tus ojos se convierten en un vacío oscuro imbuido de un poder aterrador. Una criatura de tu elección dentro de 60 pies de ti que puedas ver debe superar una tirada de salvación de Sabiduría o verse afectada por uno de los siguientes efectos de tu elección mientras dure: Dormido, En pánico o Enfermo. En cada uno de tus turnos hasta que finalice el hechizo, puedes usar tu acción para apuntar a otra criatura, pero no puedes apuntar a una criatura nuevamente si ha tenido éxito en una tirada de salvación contra este lanzamiento de mordedura de ojo.",
+    "higherLevels": null
+  },
+  "Find the Path": {
+    "name": "Encuentra el camino",
+    "description": "Este hechizo te permite encontrar la ruta física más corta y directa a una ubicación fija específica con la que estás familiarizado en el mismo plano de existencia. Si nombras un destino en otro plano de existencia, un destino que se mueve (como una fortaleza móvil) o un destino que no es específico (como \"la guarida de un dragón verde\"), el hechizo falla. Mientras dure, mientras estés en el mismo plano de existencia que el destino, sabrás qué tan lejos está y en qué dirección se encuentra.",
+    "higherLevels": null
+  },
+  "Flesh to Stone": {
+    "name": "De carne a piedra",
+    "description": "Intentas convertir en piedra una criatura que puedes ver dentro del alcance. Si el cuerpo del objetivo está hecho de carne, la criatura debe realizar una tirada de salvación de Constitución. En una salvación fallida, queda inmovilizado cuando su carne comienza a endurecerse. Con una salvación exitosa, la criatura no se ve afectada. Una criatura restringida por este hechizo debe realizar otra tirada de salvación de Constitución al final de cada uno de sus turnos. Si logra salvarse contra este hechizo tres veces, el hechizo termina. Si falla sus salvaciones tres veces, se convierte en piedra y se somete a la condición de petrificado mientras dure.",
+    "higherLevels": null
+  },
+  "Forbiddance": {
+    "name": "Prohibición",
+    "description": "Creas una protección contra los viajes mágicos que protege hasta 40.000 pies cuadrados de espacio hasta una altura de 30 pies sobre el suelo. Mientras dure, las criaturas no pueden teletransportarse al área ni usar portales, como los creados por el hechizo de puerta, para ingresar al área. La protección también evita que entren criaturas de un tipo específico (tu elección cuando lanzas el hechizo): celestiales, elementales, hadas, demonios o no-muertos. Cuando una criatura así intenta entrar en el área protegida por primera vez en un turno, sufre 5d10 de daño radiante o necrótico (tú eliges cuando lanzas el hechizo).",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 7 o superior, puedes mantener la protección hasta por 2 días con un espacio de nivel 7, 10 días con un nivel 8 o 30 días con un nivel 9."
+  },
+  "Globe of Invulnerability": {
+    "name": "Globo de invulnerabilidad",
+    "description": "Una barrera inmóvil y ligeramente brillante surge en un radio de 10 pies a tu alrededor y permanece mientras dura. Cualquier hechizo de nivel 5 o inferior lanzado desde fuera de la barrera no puede afectar a criaturas u objetos dentro de ella, incluso si el hechizo se lanza usando un espacio de hechizo de nivel superior. Un hechizo de este tipo puede apuntar a criaturas y objetos dentro de la barrera, pero el hechizo no tiene ningún efecto sobre ellos.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7.º nivel o superior, la barrera bloquea hechizos de un nivel superior por cada nivel de espacio por encima del 6.º."
+  },
+  "Guards and Wards": {
+    "name": "Guardias y salas",
+    "description": "Usted crea una sala que protege hasta 2500 pies cuadrados de espacio (un área de 50 pies cuadrados, o cien cuadrados de 5 pies o veinticinco cuadrados de 10 pies). El área protegida puede tener hasta 20 pies de altura y tener la forma que desee. Puedes proteger varias historias de una fortaleza dividiendo el área entre ellas, siempre y cuando puedas caminar hacia cada área contigua mientras lanzas el hechizo. Cuando lanzas este hechizo, puedes especificar personas que no se vean afectadas por ninguno o todos los efectos que elijas. También puede especificar una contraseña que, cuando se pronuncia en voz alta, hace que el hablante sea inmune a estos efectos.",
+    "higherLevels": null
+  },
+  "Harm": {
+    "name": "Dañar",
+    "description": "Desatas una enfermedad virulenta en una criatura que puedes ver dentro del alcance. El objetivo debe realizar una tirada de salvación de Constitución. En una salvación fallida, sufre 14d6 de daño necrótico, o la mitad en una salvación exitosa. El daño no puede reducir los puntos de vida del objetivo por debajo de 1. Si el objetivo falla la tirada de salvación, su punto de vida máximo se reduce durante 1 hora en una cantidad igual al daño necrótico que recibió.",
+    "higherLevels": null
+  },
+  "Heal": {
+    "name": "Sanar",
+    "description": "Elige una criatura que puedas ver dentro del alcance. Una oleada de energía positiva recorre a la criatura, lo que hace que recupere 70 puntos de vida. Este hechizo también acaba con la ceguera, la sordera y cualquier enfermedad que afecte al objetivo. Este hechizo no tiene efecto sobre constructos ni muertos vivientes.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 7 o superior, la cantidad de curación aumenta en 10 por cada nivel de espacio por encima del 6."
+  },
+  "Heroes' Feast": {
+    "name": "Fiesta de los héroes",
+    "description": "Ofreces un gran festín, que incluye comida y bebida magníficas. El festín tarda 1 hora en consumirse y desaparece al final de ese tiempo, y los efectos beneficiosos no aparecen hasta que termina esta hora. Hasta doce criaturas pueden participar del festín. Una criatura que participa del festín obtiene varios beneficios durante 24 horas: inmunidad al veneno y a las enfermedades; ventaja en las tiradas de salvación de Sabiduría; un aumento de su máximo de puntos de vida de 2d10 puntos de vida durante 24 horas.",
+    "higherLevels": null
+  },
+  "Irresistible Dance": {
+    "name": "Danza irresistible",
+    "description": "Elige una criatura que puedas ver dentro del alcance. El objetivo comienza una danza cómica en el lugar: arrastrando los pies, dando golpecitos con los pies y haciendo cabriolas mientras dura. Las criaturas que no pueden ser encantadas son inmunes a este hechizo. Una criatura danzante debe utilizar todo su movimiento para bailar sin salir de su espacio y tiene desventaja en las tiradas de salvación de Destreza y en las tiradas de ataque. Mientras el objetivo se ve afectado por este hechizo, otras criaturas tienen ventaja en las tiradas de ataque contra él. Como acción, una criatura danzante realiza una tirada de salvación de Sabiduría para recuperar el control de sí misma. Con una salvación exitosa, el hechizo termina.",
+    "higherLevels": null
+  },
+  "Magic Jar": {
+    "name": "tarro mágico",
+    "description": "Tu cuerpo cae en un estado catatónico cuando tu alma lo abandona y entra en el recipiente que usaste para el componente material del hechizo. Mientras tu alma habita el contenedor, eres consciente de tu entorno como si estuvieras en el espacio del contenedor. No puedes moverte ni usar reacciones. La única acción que puedes realizar es proyectar tu alma hasta 100 pies fuera del contenedor, ya sea regresando a tu cuerpo vivo (y finalizando el hechizo) o intentando poseer el cuerpo de un humanoide.",
+    "higherLevels": null
+  },
+  "Mass Suggestion": {
+    "name": "Sugerencia masiva",
+    "description": "Sugieres un curso de actividad (limitado a una frase o dos) e influyes mágicamente en hasta doce criaturas de tu elección que puedes ver dentro de tu alcance y que pueden oírte y comprenderte. Las criaturas que no pueden ser encantadas son inmunes a este efecto. La sugerencia debe redactarse de tal manera que el curso de acción parezca razonable. Cada objetivo debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, seguirá el curso de acción que describiste lo mejor que pueda durante el tiempo que dure.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 7, la duración es de 10 días. Cuando usas un espacio para hechizos de nivel 8, la duración es de 30 días. Cuando usas un espacio para hechizos de nivel 9, la duración es de un año y un día."
+  },
+  "Move Earth": {
+    "name": "mover la tierra",
+    "description": "Elija un área de terreno que no supere los 40 pies de lado dentro del alcance. Puede remodelar la tierra, la arena o la arcilla del área de la forma que elija durante el tiempo que dure. Puede subir o bajar la elevación del área, crear o rellenar una zanja, erigir o aplanar un muro o formar un pilar. El alcance de dichos cambios no puede exceder la mitad de la dimensión más grande del área. Entonces, si afecta un cuadrado de 40 pies, puede crear un pilar de hasta 20 pies de alto, subir o bajar la elevación del cuadrado hasta 20 pies, cavar una zanja de hasta 20 pies de profundidad, y así sucesivamente.",
+    "higherLevels": null
+  },
+  "Planar Ally": {
+    "name": "Aliado plano",
+    "description": "Le suplicas ayuda a una entidad de otro mundo. Debes conocer el ser: un dios, un primordial, un príncipe demonio o algún otro ser de poder cósmico. Esa entidad envía un celestial, un elemental o un demonio leal a ella para ayudarte, haciendo que la criatura aparezca en un espacio desocupado dentro del alcance. Si conoces el nombre de una criatura específica, puedes pronunciar ese nombre cuando lances este hechizo para solicitar esa criatura, aunque es posible que obtengas una criatura diferente de todos modos (a elección del DM). Cuando la criatura aparece, no está obligada a ayudarte.",
+    "higherLevels": null
+  },
+  "Programmed Illusion": {
+    "name": "Ilusión programada",
+    "description": "Creas una ilusión de un objeto, una criatura o algún otro fenómeno visible dentro del alcance que se activa cuando ocurre una condición específica. La ilusión es imperceptible hasta entonces. No debe ser más grande que un cubo de 30 pies y tú decides, cuando lanzas el hechizo, cómo se comporta la ilusión y qué sonidos hace. Esta actuación con guión puede durar hasta 5 minutos. Cuando ocurre la condición que usted especifica, la ilusión surge y se realiza de la manera que usted describió.",
+    "higherLevels": null
+  },
+  "Sunbeam": {
+    "name": "Rayo de sol",
+    "description": "Un rayo de luz brillante sale de tu mano en una línea de 5 pies de ancho y 60 pies de largo. Cada criatura en la línea debe realizar una tirada de salvación de Constitución. En una salvación fallida, una criatura sufre 6d8 de daño radiante y queda cegada hasta tu próximo turno. Con una salvación exitosa, recibe la mitad de daño y este hechizo no lo ciega. Los muertos vivientes y los cienos tienen desventaja en esta tirada de salvación. Puedes crear una nueva línea de resplandor como acción en cualquier turno hasta que finalice el hechizo.",
+    "higherLevels": null
+  },
+  "Transport via Plants": {
+    "name": "Transporte a través de plantas",
+    "description": "Este hechizo crea un vínculo mágico entre una planta inanimada grande o más grande dentro del alcance y otra planta, a cualquier distancia, en el mismo plano de existencia. Debes haber visto o tocado la planta de destino al menos una vez antes. Mientras dura, cualquier criatura puede entrar en la planta objetivo y salir de la planta de destino usando 5 pies de movimiento.",
+    "higherLevels": null
+  },
+  "True Seeing": {
+    "name": "Verdadera visión",
+    "description": "Le das a la criatura voluntaria que tocas la capacidad de ver las cosas como realmente son. Mientras dura, la criatura tiene visión verdadera, nota puertas secretas ocultas por magia y puede ver el interior del Plano Etéreo, todo en un rango de 120 pies.",
+    "higherLevels": null
+  },
+  "Wall of Ice": {
+    "name": "Muro de Hielo",
+    "description": "Creas una pared de hielo sobre una superficie sólida dentro del alcance. La pared tiene 1 pie de espesor y hasta 30 pies de largo y 10 pies de alto, o es una cúpula hemisférica de hasta 20 pies de diámetro. El muro permanece en su lugar mientras dure. Cada sección de 10 pies de la pared tiene CA 5 y 30 puntos de vida. Si una sección se destruye, deja una capa de aire helado en el espacio que ocupaba la pared. Una criatura que se mueve a través de la capa de aire helado por primera vez en un turno debe realizar una tirada de salvación de Constitución o sufrir 5d6 de daño por frío.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7º nivel o superior, el daño que inflige el muro cuando aparece aumenta en 2d6 y el daño al atravesar la lámina de aire gélido aumenta en 1d6, por cada nivel de espacio por encima del 6º."
+  },
+  "Wall of Thorns": {
+    "name": "Muro de espinas",
+    "description": "Creas una pared de maleza dura, flexible y enredada, erizada de espinas afiladas como agujas. La pared aparece dentro del alcance sobre una superficie sólida y dura todo el tiempo. Usted elige hacer la pared de hasta 60 pies de largo, 10 pies de alto y 5 pies de espesor o un círculo que tenga un diámetro de 20 pies y hasta 20 pies de alto y 5 pies de espesor. La pared bloquea la línea de visión. Cuando aparece el muro, cada criatura dentro de su área debe realizar una tirada de salvación de Destreza. En una salvación fallida, una criatura sufre 7d8 de daño perforante, o la mitad en una salvación exitosa.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7º nivel o superior, ambos tipos de daño aumentan en 1d8 por cada nivel de espacio por encima del 6º."
+  },
+  "Wind Walk": {
+    "name": "Paseo del viento",
+    "description": "Tú y hasta diez criaturas voluntarias que puedas ver dentro del alcance asumen una forma gaseosa mientras dura, apareciendo como volutas de nubes. Mientras está en esta forma de nube, una criatura tiene una velocidad de vuelo de 300 pies y tiene resistencia al daño de armas no mágicas. Las únicas acciones que una criatura puede realizar en esta forma son la acción Dash o volver a su forma normal. Revertir toma 1 minuto, tiempo durante el cual la criatura queda incapacitada y no puede moverse.",
+    "higherLevels": null
+  },
+  "Word of Recall": {
+    "name": "Palabra de recuerdo",
+    "description": "Tú y hasta cinco criaturas dispuestas a 5 pies de ti te teletransportas instantáneamente a un santuario previamente designado. Tú y cualquier criatura que se teletransporte contigo apareces en el espacio desocupado más cercano al lugar que designaste cuando preparaste tu santuario (ver más abajo). Si lanzas este hechizo sin preparar primero un santuario, el hechizo no tiene ningún efecto. Debes designar un santuario lanzando este hechizo dentro de una ubicación, como un templo, dedicado o fuertemente vinculado a tu deidad.",
+    "higherLevels": null
+  },
+  "Conjure Celestial": {
+    "name": "Conjurar celestial",
+    "description": "Invocas un celestial con un nivel de desafío de 4 o inferior, que aparece en un espacio desocupado que puedes ver dentro del alcance. El celestial desaparece cuando cae a 0 puntos de vida o cuando termina el hechizo. El celestial es amigable contigo y tus compañeros mientras dure. Tirada de iniciativa para la celeste, que tiene sus propios turnos. Obedece cualquier orden verbal que le des (no requieres ninguna acción), siempre y cuando no violen su alineación.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 9, invocas un celestial con un índice de desafío de 5 o inferior."
+  },
+  "Delayed Blast Fireball": {
+    "name": "Bola de fuego explosiva retrasada",
+    "description": "Un rayo de luz amarilla parpadea desde el dedo que señala y luego se condensa para permanecer en un punto elegido dentro del alcance como una perla brillante mientras dura. Cuando el hechizo termina, ya sea porque tu concentración se rompe o porque decides terminarlo, la cuenta florece con un rugido bajo en una explosión de llamas que se extiende por las esquinas. Cada criatura en una esfera de 20 pies de radio centrada en ese punto debe realizar una tirada de salvación de Destreza. Una criatura sufre un daño de fuego igual al daño total acumulado en una salvación fallida, o la mitad en una salvada exitosa. El daño base del hechizo es 12d6.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 8.º nivel o superior, el daño base aumenta en 1d6 por cada nivel de espacio por encima del 7.º."
+  },
+  "Divine Word": {
+    "name": "Palabra Divina",
+    "description": "Pronuncias una palabra divina, imbuida del poder que dio forma al mundo en los albores de la creación. Elige cualquier cantidad de criaturas que puedas ver dentro del alcance. Cada criatura que pueda oírte debe realizar una tirada de salvación de Carisma. Si falla la salvación, una criatura sufre un efecto basado en sus puntos de vida actuales: 50 HP o menos: ensordecedora durante 1 minuto; 40 HP o menos: ensordecido y cegado durante 10 minutos; 30 HP o menos: cegado, ensordecido y aturdido durante 1 hora; 20 HP o menos: muere instantáneamente. Independientemente de sus puntos de vida actuales, un celestial, un elemental, un hada o un demonio que falla su salvación se ve obligado a regresar a su plano de origen.",
+    "higherLevels": null
+  },
+  "Etherealness": {
+    "name": "Etéreo",
+    "description": "Entras en las regiones fronterizas del Plano Etéreo, en el área donde se superpone con tu plano actual. Permaneces en Border Ethereal mientras dure o hasta que uses tu acción para cancelar el hechizo. Durante este tiempo, puedes moverte en cualquier dirección. Si te mueves hacia arriba o hacia abajo, cada pie de movimiento cuesta un pie extra. Puedes ver y oír el avión desde el que viniste, pero todo allí parece gris y no puedes ver nada a más de 60 pies de distancia.",
+    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de nivel 8 o superior, puedes apuntar a hasta tres criaturas voluntarias (incluyéndote a ti) por cada nivel de espacio superior al 7.º."
+  },
+  "Finger of Death": {
+    "name": "dedo de la muerte",
+    "description": "Envías energía negativa a través de una criatura que puedes ver dentro del alcance, causándole un dolor punzante. El objetivo debe realizar una tirada de salvación de Constitución. Se necesitan 7d8 + 30 de daño necrótico en una salvación fallida, o la mitad en una exitosa. Un humanoide asesinado por este hechizo se levanta al comienzo de tu siguiente turno como un zombi que está permanentemente bajo tu mando, siguiendo tus órdenes verbales lo mejor que puede.",
+    "higherLevels": null
+  },
+  "Fire Storm": {
+    "name": "tormenta de fuego",
+    "description": "Una tormenta formada por láminas de llamas rugientes aparece en el lugar que elijas dentro del alcance. El área de la tormenta consta de hasta diez cubos de 10 pies, que puedes organizar como desees. Cada cubo debe tener al menos una cara adyacente a la cara de otro cubo. Cada criatura en el área debe realizar una tirada de salvación de Destreza. Requiere 7d10 de daño por fuego si falla la salvación, o la mitad si tiene éxito. El fuego daña objetos en el área y enciende objetos inflamables que no se usan ni se transportan.",
+    "higherLevels": null
+  },
+  "Forcecage": {
+    "name": "Jaula de fuerza",
+    "description": "Una prisión inmóvil, invisible y con forma de cubo compuesta de fuerza mágica surge alrededor de un área que elijas dentro del alcance. La prisión puede ser una jaula (un cubo de 20 pies con barras de 1/2 pulgada de diámetro espaciadas 1/2 pulgada entre sí) o una caja (un cubo de 10 pies que es sólido por todos sus lados). Una criatura dentro de la jaula está atrapada. Se pueden lanzar hechizos a través de la jaula, pero la criatura no puede salir de ninguna manera. El hechizo termina si lo lanzas de nuevo o si usas una acción para cancelarlo.",
+    "higherLevels": null
+  },
+  "Mirage Arcane": {
+    "name": "Espejismo Arcano",
+    "description": "Haces que el terreno en un área de hasta 1 milla cuadrada parezca, suene, huela e incluso se sienta como otro tipo de terreno. Sin embargo, la forma general del terreno sigue siendo la misma. Se podrían hacer campos abiertos o un camino para que parezcan un pantano, una colina, una grieta o algún otro terreno difícil o intransitable. Se puede hacer que un estanque parezca una pradera cubierta de hierba, un precipicio como una pendiente suave o un barranco cubierto de rocas como un camino ancho y liso. De manera similar, puede alterar la apariencia de las estructuras o agregarlas donde no las haya.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Magnificent Mansion": {
+    "name": "La magnífica mansión de Mordenkainen",
+    "description": "Conjuras una morada extradimensional en un rango que dura todo el tiempo. Tú eliges dónde se encuentra su única entrada. La entrada brilla levemente y mide 5 pies de ancho y 10 pies de alto. Tú y cualquier criatura que designes cuando lanzas el hechizo puedes ingresar a la morada extradimensional siempre que el portal permanezca abierto. Puede abrir o cerrar el portal si se encuentra a 30 pies de él.",
+    "higherLevels": null
+  },
+  "Mordenkainen's Sword": {
+    "name": "La espada de Mordenkainen",
+    "description": "Creas un plano de fuerza en forma de espada que flota dentro del alcance. Dura lo que dura. Cuando aparece la espada, realizas un ataque de hechizo cuerpo a cuerpo contra un objetivo de tu elección dentro de 5 pies de la espada. Con un impacto, el objetivo sufre 3d10 de daño de fuerza. Hasta que finalice el hechizo, puedes usar una acción adicional en cada uno de tus turnos para mover la espada hasta 20 pies hasta un lugar que puedas ver y repetir este ataque contra el mismo objetivo o contra uno diferente.",
+    "higherLevels": null
+  },
+  "Plane Shift": {
+    "name": "Cambio de plano",
+    "description": "Tú y hasta ocho criaturas dispuestas que unen sus manos en un círculo son transportados a un plano de existencia diferente. Puedes especificar un destino objetivo en términos generales, como la Ciudad de Bronce en el Plano Elemental de Fuego o el palacio de Dispater en el segundo nivel de los Nueve Infiernos, y aparecerás en ese destino o cerca de él. Alternativamente, si conoces la secuencia de sigilos de un círculo de teletransportación en otro plano de existencia, puedes usar ese círculo como destino.",
+    "higherLevels": null
+  },
+  "Prismatic Spray": {
+    "name": "Aerosol prismático",
+    "description": "Ocho rayos de luz multicolores destellan de tu mano. Cada rayo es de un color diferente y tiene un poder y propósito diferente. Cada criatura en un cono de 60 pies debe realizar una tirada de salvación de Destreza. Para cada objetivo, tira un d8 para determinar qué color de rayo lo afecta: 1 rojo (10d6 fuego), 2 naranja (10d6 ácido), 3 amarillo (10d6 relámpago), 4 verde (veneno, muerte), 5 azul (10d6 frío), 6 índigo (contenido, luego petrificado), 7 violeta (ciego y luego transportado), 8 especial (dos rayos).",
+    "higherLevels": null
+  },
+  "Project Image": {
+    "name": "Imagen del proyecto",
+    "description": "Creas una copia ilusoria de ti mismo que dura todo el tiempo. La copia puede aparecer en cualquier lugar dentro del alcance que hayas visto antes, independientemente de los obstáculos que se interpongan. La ilusión se parece y suena a ti, pero es intangible. Si la ilusión sufre algún daño, desaparece y el hechizo termina. Puedes usar tu acción para mover esta ilusión al doble de tu velocidad y hacerla gesticular, hablar y comportarse de la forma que elijas.",
+    "higherLevels": null
+  },
+  "Regenerate": {
+    "name": "Regenerado",
+    "description": "Tocas una criatura y estimulas su capacidad curativa natural. El objetivo recupera 4d8 + 15 puntos de vida. Mientras dure el hechizo, el objetivo recupera 1 punto de vida al comienzo de cada uno de sus turnos (10 puntos de vida cada minuto). Los miembros amputados del cuerpo del objetivo (dedos, piernas, colas, etc.) se recuperan después de 2 minutos. Si tienes la parte cortada y la sujetas al muñón, el hechizo hace que instantáneamente la extremidad se una al muñón.",
+    "higherLevels": null
+  },
+  "Resurrection": {
+    "name": "Resurrección",
+    "description": "Tocas una criatura muerta que lleva muerta no más de un siglo, que no murió de vejez y que no es un no-muerto. Si su alma es libre y dispuesta, el objetivo vuelve a la vida con todos sus puntos de vida. Este hechizo neutraliza cualquier veneno y cura las enfermedades normales que afligen a la criatura cuando muere. Sin embargo, no elimina enfermedades mágicas, maldiciones y similares. El hechizo puede incluso proporcionar un nuevo cuerpo si el original ya no existe, en cuyo caso debes pronunciar el nombre de la criatura.",
+    "higherLevels": null
+  },
+  "Reverse Gravity": {
+    "name": "Gravedad inversa",
+    "description": "Este hechizo invierte la gravedad en un cilindro de 50 pies de radio y 100 pies de alto centrado en un punto dentro del alcance. Todas las criaturas y objetos que no están anclados de alguna manera al suelo en el área caen hacia arriba y alcanzan la parte superior del área. Una criatura puede realizar una tirada de salvación de Destreza para agarrarse a un objeto fijo que pueda alcanzar, evitando así la caída. Si se encuentra algún objeto sólido (como un techo) durante la caída, las criaturas y objetos que caen lo golpean tal como lo harían durante una caída normal.",
+    "higherLevels": null
+  },
+  "Sequester": {
+    "name": "Secuestrar",
+    "description": "Por medio de este hechizo, una criatura voluntaria o un objeto puede ocultarse, a salvo de ser detectado mientras dure. Cuando lanzas el hechizo y tocas el objetivo, este se vuelve invisible y no puede ser objetivo de hechizos de adivinación ni percibirse a través de sensores de visión creados por hechizos de adivinación. Si el objetivo es una criatura, cae en un estado de animación suspendida. El tiempo deja de fluir para él y no envejece.",
+    "higherLevels": null
+  },
+  "Simulacrum": {
+    "name": "Simulacro",
+    "description": "Das forma a un duplicado ilusorio de una bestia o humanoide que está dentro del alcance durante todo el tiempo de lanzamiento del hechizo. El duplicado es una criatura, parcialmente real y formada a partir de hielo o nieve, y puede realizar acciones y verse afectada como una criatura normal. Parece ser el mismo que el original, pero tiene la mitad del punto de vida máximo de la criatura y está formado sin ningún equipo. De lo contrario, la ilusión utiliza todas las estadísticas de la criatura que duplica, excepto que es una construcción.",
+    "higherLevels": null
+  },
+  "Symbol": {
+    "name": "Símbolo",
+    "description": "Cuando lanzas este hechizo, inscribes un glifo dañino en una superficie (como una sección del suelo, una pared o una mesa) o dentro de un objeto que puede cerrarse para ocultar el glifo (como un libro, un pergamino o un cofre del tesoro). El glifo puede cubrir un área de no más de 10 pies de diámetro. Tú decides qué desencadena el glifo cuando lanzas el hechizo. Para los glifos inscritos en una superficie, los desencadenantes más típicos incluyen tocar o pisar el glifo, quitar otro objeto que lo cubre o acercarse a una cierta distancia del mismo. Cuando se activa, el glifo estalla con energía mágica en una esfera de 60 pies de radio centrada en el glifo. La esfera se extiende por las esquinas. Cada criatura en el área debe realizar una tirada de salvación (el tipo depende del efecto elegido: Muerte, Discordia, Miedo, Desesperanza, Locura, Dolor, Dormir o Aturdimiento).",
+    "higherLevels": null
+  },
+  "Teleport": {
+    "name": "Teletransportarse",
+    "description": "Este hechizo te transporta instantáneamente a ti y a hasta ocho criaturas voluntarias de tu elección que puedas ver dentro del alcance, o un único objeto que puedas ver dentro del alcance, al destino que selecciones. Si apuntas a un objeto, debe poder caber completamente dentro de un cubo de 10 pies y no puede ser sostenido ni transportado por una criatura que no lo desee. El destino que elijas debe ser conocido por ti y debe estar en el mismo plano de existencia que tú. Su familiaridad con el destino determina si llegará allí con éxito.",
+    "higherLevels": null
+  },
+  "Whirlwind": {
+    "name": "Torbellino",
+    "description": "Un torbellino aúlla hasta un punto del terreno que usted especifique. El torbellino es un cilindro de 10 pies de radio y 30 pies de alto centrado en ese punto. Hasta que finalice el hechizo, puedes usar tu acción para mover el torbellino hasta 30 pies en cualquier dirección a lo largo del suelo. El torbellino aspira cualquier objeto mediano o más pequeño que no esté sujeto a nada y que no esté usado ni transportado. Una criatura debe realizar una tirada de salvación de Destreza la primera vez en un turno en el que entra en el torbellino o en que el torbellino entra en su espacio.",
+    "higherLevels": null
+  },
+  "Antimagic Field": {
+    "name": "Campo antimagia",
+    "description": "Una esfera invisible de antimagia de 10 pies de radio te rodea. Esta área está divorciada de la energía mágica que impregna el multiverso. Dentro de la esfera, no se pueden lanzar hechizos, las criaturas convocadas desaparecen e incluso los objetos mágicos se vuelven mundanos. Hasta que finaliza el hechizo, la esfera se mueve contigo, centrada en ti. Los hechizos y otros efectos mágicos, excepto los creados por un artefacto o una deidad, se suprimen en la esfera y no pueden sobresalir de ella.",
+    "higherLevels": null
+  },
+  "Antipathy/Sympathy": {
+    "name": "Antipatía/Simpatía",
+    "description": "Este hechizo atrae o repele a las criaturas de tu elección. Apuntas a algo dentro del alcance, ya sea un objeto o criatura enorme o más pequeña o un área que no sea mayor que un cubo de 200 pies. Luego especifica un tipo de criatura inteligente, como dragones rojos, duendes o vampiros. Inviertes al objetivo con un aura que atrae o repele a las criaturas especificadas durante el tiempo que dure. Elija antipatía o simpatía como efecto del aura. Cualquier criatura del tipo que elijas que se acerque a 60 pies del objetivo debe realizar una tirada de salvación de Sabiduría.",
+    "higherLevels": null
+  },
+  "Clone": {
+    "name": "Clon",
+    "description": "Este hechizo genera un duplicado inerte de una criatura viviente como protección contra la muerte. Este clon se forma dentro de un recipiente sellado y alcanza su tamaño y madurez completos después de 120 días; También puedes optar por que el clon sea una versión más joven de la misma criatura. Permanece inerte y dura indefinidamente, mientras su recipiente permanezca imperturbable. En cualquier momento después de que el clon madure, si la criatura original muere, su alma se transfiere al clon, siempre que el alma esté libre y dispuesta a regresar.",
+    "higherLevels": null
+  },
+  "Control Weather": {
+    "name": "Controlar el clima",
+    "description": "Tomas el control del clima dentro de 5 millas de ti durante la duración. Debes estar al aire libre para lanzar este hechizo. Moverse a un lugar donde no tienes un camino despejado hacia el cielo finaliza el hechizo antes de tiempo. Cuando lanzas el hechizo, cambias las condiciones climáticas actuales, que son determinadas por el DM en función del clima y la estación. Puede cambiar la precipitación, la temperatura y el viento. Las nuevas condiciones tardan 1d4 × 10 minutos en surtir efecto.",
+    "higherLevels": null
+  },
+  "Demiplane": {
+    "name": "semiplano",
+    "description": "Creas una puerta oscura sobre una superficie plana y sólida que puedes ver dentro del alcance. La puerta es lo suficientemente grande como para permitir que las criaturas medianas pasen sin obstáculos. Cuando se abre, la puerta conduce a un semiplano que parece ser una habitación vacía de 30 pies en cada dimensión, hecha de madera o piedra. Cuando termina el hechizo, la puerta desaparece y cualquier criatura u objeto dentro del semiplano queda atrapado allí, ya que la puerta es la única entrada o salida.",
+    "higherLevels": null
+  },
+  "Dominate Monster": {
+    "name": "Dominar Monstruo",
+    "description": "Intentas engañar a una criatura que puedes ver dentro del alcance. Debe superar una tirada de salvación de Sabiduría o ser hechizado por ti mientras dure. Si tú o criaturas que son amigas tuyas luchan contra él, tiene ventaja en la tirada de salvación. Mientras la criatura está encantada, tienes un vínculo telepático con ella siempre que ambos estéis en el mismo plano de existencia. Puedes usar este vínculo telepático para dar órdenes a la criatura mientras estás consciente (no se requiere ninguna acción), que ella hace todo lo posible por obedecer.",
+    "higherLevels": "Cuando lanzas este hechizo con un espacio de hechizo de nivel 9, la duración es de concentración, hasta 8 horas."
+  },
+  "Earthquake": {
+    "name": "Terremoto",
+    "description": "Creas una perturbación sísmica en un punto del suelo que puedes ver dentro del alcance. Mientras dura, un intenso temblor atraviesa el suelo en un círculo de 100 pies de radio centrado en ese punto. Cada criatura en el suelo en esa área debe realizar una tirada de salvación de Destreza. Si falla la salvación, la criatura queda tumbada. La zona se vuelve terreno difícil. Cada criatura en el suelo que esté concentrada debe realizar una tirada de salvación de Constitución. Si falla la salvación, la concentración de la criatura se rompe.",
+    "higherLevels": null
+  },
+  "Feeblemind": {
+    "name": "Débil",
+    "description": "Explotas la mente de una criatura que puedes ver dentro del alcance, intentando destrozar su intelecto y personalidad. El objetivo sufre 4d6 de daño psíquico y debe realizar una tirada de salvación de Inteligencia. En una salvación fallida, las puntuaciones de Inteligencia y Carisma de la criatura se convierten en 1. La criatura no puede lanzar hechizos, activar objetos mágicos, comprender el lenguaje ni comunicarse de ninguna manera inteligible. Sin embargo, la criatura puede identificar a sus amigos, seguirlos e incluso protegerlos.",
+    "higherLevels": null
+  },
+  "Glibness": {
+    "name": "Labia",
+    "description": "Hasta que finalice el hechizo, cuando hagas una prueba de Carisma, puedes reemplazar el número que obtengas con un 15. Además, no importa lo que digas, la magia que determinaría si estás diciendo la verdad indica que estás siendo sincero.",
+    "higherLevels": null
+  },
+  "Holy Aura": {
+    "name": "Aura Sagrada",
+    "description": "La luz divina sale de ti y se fusiona en un suave resplandor en un radio de 30 pies a tu alrededor. Las criaturas de tu elección en ese radio cuando lanzas este hechizo arrojan una luz tenue en un radio de 5 pies y tienen ventaja en todos los tiros de salvación, y otras criaturas tienen desventaja en las tiradas de ataque contra ellas hasta que finaliza el hechizo. Además, cuando un demonio o un no-muerto golpea a una criatura afectada con un ataque cuerpo a cuerpo, el aura destella con una luz brillante. El atacante debe superar una tirada de salvación de Constitución o quedará cegado hasta que finalice el hechizo.",
+    "higherLevels": null
+  },
+  "Incendiary Cloud": {
+    "name": "Nube incendiaria",
+    "description": "Una nube arremolinada de humo atravesada por brasas candentes aparece en una esfera de 20 pies de radio centrada en un punto dentro del alcance. La nube se extiende por las esquinas y está muy oscurecida. Dura mientras dura o hasta que un viento de velocidad moderada o mayor (al menos 10 millas por hora) lo dispersa. Cuando aparece la nube, cada criatura que esté en ella debe realizar una tirada de salvación de Destreza. Una criatura sufre 10d8 de daño por fuego si falla una salvación, o la mitad si tiene éxito. Una criatura también debe realizar esta tirada de salvación cuando entra al área del hechizo por primera vez en un turno o finaliza su turno allí.",
+    "higherLevels": null
+  },
+  "Maze": {
+    "name": "Laberinto",
+    "description": "Destierras a una criatura que puedes ver dentro del alcance a un semiplano laberíntico. El objetivo permanece allí mientras dure o hasta que escape del laberinto. El objetivo puede utilizar su acción para intentar escapar. Cuando lo hace, realiza una prueba de Inteligencia CD 20. Si lo logra, escapa y el hechizo termina. Un minotauro o un demonio goristro lo consigue automáticamente.",
+    "higherLevels": null
+  },
+  "Mind Blank": {
+    "name": "Mente en blanco",
+    "description": "Hasta que finalice el hechizo, una criatura voluntaria que tocas es inmune al daño psíquico, a cualquier efecto que pueda sentir sus emociones o leer sus pensamientos, hechizos de adivinación y la condición de hechizo. El hechizo incluso frustra hechizos de deseos y hechizos o efectos de poder similar utilizados para afectar la mente del objetivo o para obtener información sobre el objetivo.",
+    "higherLevels": null
+  },
+  "Power Word Stun": {
+    "name": "Aturdimiento de palabra de poder",
+    "description": "Abrumas la mente de una criatura que puedes ver dentro del alcance, dejándola estupefacta. Si el objetivo tiene 150 puntos de vida o menos, queda aturdido. De lo contrario, el hechizo no tiene efecto. El objetivo aturdido debe realizar una tirada de salvación de Constitución al final de cada uno de sus turnos. Si se salva con éxito, el efecto aturdidor termina.",
+    "higherLevels": null
+  },
+  "Sunburst": {
+    "name": "resplandor solar",
+    "description": "La brillante luz del sol destella en un radio de 60 pies centrado en un punto que elijas dentro del alcance. Cada criatura en esa luz debe realizar una tirada de salvación de Constitución. Si falla la salvación, la criatura sufre 12d6 de daño radiante y queda cegada durante 1 minuto. Con una salvación exitosa, recibe la mitad de daño y este hechizo no lo ciega. Los muertos vivientes y los cienos tienen desventaja en esta tirada de salvación. Una criatura cegada por este hechizo realiza otra tirada de salvación de Constitución al final de cada uno de sus turnos.",
+    "higherLevels": null
+  },
+  "Telepathy": {
+    "name": "Telepatía",
+    "description": "Creas un vínculo telepático entre tú y una criatura voluntaria con la que estás familiarizado. La criatura puede estar en cualquier lugar del mismo plano de existencia que tú. El hechizo termina si tú o el objetivo ya no estáis en el mismo plano. Hasta que finalice el hechizo, tú y el objetivo podéis compartir instantáneamente palabras, imágenes, sonidos y otros mensajes sensoriales entre sí a través del enlace, y el objetivo os reconocerá como la criatura con la que se está comunicando.",
+    "higherLevels": null
+  },
+  "Tsunami": {
+    "name": "tsunami",
+    "description": "Una pared de agua surge en el punto que elijas dentro del alcance. Puede hacer que la pared tenga hasta 300 pies de largo, 300 pies de alto y 50 pies de espesor. El muro dura todo el tiempo. Cuando aparece el muro, cada criatura dentro de su área debe realizar una tirada de salvación de Fuerza. En una salvación fallida, una criatura sufre 6d10 de daño contundente, o la mitad en una salvación exitosa. Al comienzo de cada uno de tus turnos, después de que aparece el muro, el muro, junto con las criaturas que hay en él, se aleja 50 pies de ti.",
+    "higherLevels": null
+  },
+  "Astral Projection": {
+    "name": "Proyección Astral",
+    "description": "Tú y hasta ocho criaturas dispuestas dentro del alcance proyectan vuestros cuerpos astrales en el Plano Astral (el hechizo falla y el lanzamiento se desperdicia si ya estás en ese plano). El cuerpo material que dejáis atrás está inconsciente y en un estado de animación suspendida; no necesita comida ni aire y no envejece. Tu cuerpo astral se parece a tu forma mortal en casi todos los sentidos, replicando tus posesiones y estadísticas de juego.",
+    "higherLevels": null
+  },
+  "Foresight": {
+    "name": "Previsión",
+    "description": "Tocas a una criatura dispuesta y le otorgas una capacidad limitada para ver el futuro inmediato. Mientras dura, el objetivo no puede ser sorprendido y tiene ventaja en las tiradas de ataque, pruebas de habilidad y tiros de salvación. Además, otras criaturas tienen desventaja en las tiradas de ataque contra el objetivo mientras dure. Este hechizo termina inmediatamente si lo vuelves a lanzar antes de que termine su duración.",
+    "higherLevels": null
+  },
+  "Gate": {
+    "name": "Puerta",
+    "description": "Conjuras un portal que vincula un espacio desocupado que puedes ver dentro del alcance con una ubicación precisa en un plano de existencia diferente. El portal es una abertura circular, que puedes hacer de 5 a 20 pies de diámetro. Puede orientar el portal en cualquier dirección que elija. El portal dura lo que dure. El portal tiene un frente y un reverso en cada plano donde aparece. Viajar a través del portal sólo es posible moviéndose por su frente. Todo lo que lo haga es transportado instantáneamente al otro plano.",
+    "higherLevels": null
+  },
+  "Imprisonment": {
+    "name": "Prisión",
+    "description": "Creas una restricción mágica para mantener a una criatura que puedes ver dentro del alcance. El objetivo debe superar una tirada de salvación de Sabiduría o quedará atado por el hechizo; si tiene éxito, es inmune a este hechizo si lo vuelves a lanzar. Mientras esté afectada por este hechizo, la criatura no necesita respirar, comer ni beber, y no envejece. Los hechizos de adivinación no pueden localizar ni percibir al objetivo. Eliges una de las siguientes formas de encarcelamiento: entierro, encadenamiento, prisión protegida, contención mínima o sueño.",
+    "higherLevels": null
+  },
+  "Mass Heal": {
+    "name": "Curación masiva",
+    "description": "Una avalancha de energía curativa fluye desde ti hacia las criaturas heridas que te rodean. Restauras hasta 700 puntos de vida, divididos a tu elección entre cualquier cantidad de criaturas que puedas ver dentro del alcance. Las criaturas curadas por este hechizo también se curan de todas las enfermedades y de cualquier efecto que las cegue o ensordezca. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": null
+  },
+  "Meteor Swarm": {
+    "name": "Enjambre de meteoritos",
+    "description": "Orbes de fuego ardientes caen en picado al suelo en cuatro puntos diferentes que puedes ver dentro del alcance. Cada criatura en una esfera de 40 pies de radio centrada en cada punto que elijas debe realizar una tirada de salvación de Destreza. La esfera se extiende por las esquinas. Una criatura sufre 20d6 de daño por fuego y 20d6 de daño contundente si falla una salvación, o la mitad si tiene éxito. Una criatura en el área de más de una explosión de fuego se ve afectada sólo una vez.",
+    "higherLevels": null
+  },
+  "Power Word Heal": {
+    "name": "Palabra de poder sanar",
+    "description": "Una ola de energía curativa baña a la criatura que tocas. El objetivo recupera todos sus puntos de vida. Si la criatura está encantada, asustada, paralizada o aturdida, la condición termina. Si la criatura está boca abajo, puede usar su reacción para levantarse. Este hechizo no tiene efecto sobre los muertos vivientes ni sobre los constructos.",
+    "higherLevels": null
+  },
+  "Power Word Kill": {
+    "name": "Palabra de poder matar",
+    "description": "Pronuncias una palabra de poder que puede obligar a una criatura que puedas ver dentro del alcance a morir instantáneamente. Si la criatura que eliges tiene 100 puntos de vida o menos, muere. De lo contrario, el hechizo no tiene efecto.",
+    "higherLevels": null
+  },
+  "Prismatic Wall": {
+    "name": "Muro prismático",
+    "description": "Un plano de luz multicolor y brillante forma una pared vertical opaca (de hasta 90 pies de largo, 30 pies de alto y 1 pulgada de espesor) centrada en un punto que se puede ver dentro del alcance. Alternativamente, puede darle forma a la pared en una esfera de hasta 30 pies de diámetro centrada en un punto que elija dentro del alcance. El muro permanece en su lugar mientras dure. Si colocas la pared de manera que atraviese un espacio ocupado por una criatura, el hechizo falla y tu acción y el espacio del hechizo se desperdician.",
+    "higherLevels": null
+  },
+  "Shapechange": {
+    "name": "cambio de forma",
+    "description": "Asumes la forma de una criatura diferente mientras dura el juego. La nueva forma puede ser la de cualquier criatura con un índice de desafío igual o inferior a tu nivel. La criatura no puede ser una construcción o un no-muerto, y debes haber visto ese tipo de criatura al menos una vez. Te transformas en un ejemplo promedio de esa criatura, una sin ningún nivel de clase ni el rasgo de Lanzamiento de hechizos. Las estadísticas de tu juego se reemplazan por las estadísticas de la criatura elegida.",
+    "higherLevels": null
+  },
+  "Storm of Vengeance": {
+    "name": "Tormenta de venganza",
+    "description": "Se forma una nube de tormenta agitada, centrada en un punto que se puede ver y que se extiende en un radio de 360 ​​pies. En la zona caen relámpagos, truenos y fuertes vientos. Cada criatura bajo la nube (a no más de 5.000 pies debajo de la nube) cuando aparece debe realizar una tirada de salvación de Constitución. Si falla la salvación, la criatura sufre 2d6 daños por trueno y queda ensordecida durante 5 minutos. Cada ronda que mantengas la concentración en este hechizo, la tormenta produce diferentes efectos en tu turno.",
+    "higherLevels": null
+  },
+  "Time Stop": {
+    "name": "Parada del tiempo",
+    "description": "Detienes brevemente el flujo del tiempo para todos menos para ti. Para otras criaturas no pasa el tiempo, mientras tú tomas 1d4 + 1 turnos seguidos, durante los cuales puedes usar acciones y moverte con normalidad. Este efecto finaliza si una de las acciones que usas durante este período, o cualquier efecto que crees durante este período, afecta a una criatura que no seas tú o a un objeto usado o transportado por alguien que no seas tú.",
+    "higherLevels": null
+  },
+  "True Polymorph": {
+    "name": "Verdadero polimorfo",
+    "description": "Elige una criatura u objeto no mágico que puedas ver dentro del alcance. Transformas la criatura en una criatura diferente, la criatura en un objeto no mágico o el objeto en una criatura (el objeto no debe ser usado ni transportado por otra criatura). La transformación dura mientras dura o hasta que el objetivo cae a 0 puntos de vida o muere. Si te concentras en este hechizo durante toda su duración, la transformación se vuelve permanente.",
+    "higherLevels": null
+  },
+  "True Resurrection": {
+    "name": "Verdadera resurrección",
+    "description": "Tocas una criatura que ha estado muerta por no más de 200 años y que murió por cualquier motivo excepto por vejez. Si el alma de la criatura es libre y dispuesta, la criatura vuelve a la vida con todos sus puntos de vida. Este hechizo cierra todas las heridas, neutraliza cualquier veneno, cura todas las enfermedades y levanta cualquier maldición que afectara a la criatura cuando murió. El hechizo reemplaza órganos y extremidades dañados o faltantes. Si la criatura era un no-muerto, vuelve a su forma de no-muerto.",
+    "higherLevels": null
+  },
+  "Weird": {
+    "name": "Extraño",
+    "description": "Basándote en los miedos más profundos de un grupo de criaturas, creas criaturas ilusorias en sus mentes, visibles sólo para ellos. Cada criatura en una esfera de 30 pies de radio centrada en un punto de tu elección dentro del alcance debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, la criatura queda asustada mientras dure. La ilusión invoca los miedos más profundos de la criatura, manifestando sus peores pesadillas como una amenaza implacable. Al final de cada uno de los turnos de la criatura asustada, debe superar una tirada de salvación de Sabiduría o sufrir 4d10 de daño psíquico.",
+    "higherLevels": null
+  },
+  "Wish": {
+    "name": "Desear",
+    "description": "El deseo es el hechizo más poderoso que puede lanzar una criatura mortal. Simplemente hablando en voz alta, puedes alterar los fundamentos mismos de la realidad de acuerdo con tus deseos. El uso básico de este hechizo es duplicar cualquier otro hechizo de nivel 8 o inferior. No necesitas cumplir ningún requisito en ese hechizo, incluidos componentes costosos. El hechizo simplemente surte efecto. Alternativamente, puedes crear uno de los siguientes efectos de tu elección: crear cualquier objeto con un valor de hasta 25.000 po; otorgar hasta diez criaturas inmunidad a un solo hechizo u otro efecto mágico durante 8 horas; deshacer un único evento reciente forzando una nueva tirada de cualquier tirada realizada en la última ronda.",
+    "higherLevels": null
+  }
+}

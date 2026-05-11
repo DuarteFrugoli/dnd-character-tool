@@ -1,0 +1,137 @@
+{
+  "Dwarf": {
+    "name": "Enano",
+    "languages": [
+      "Común",
+      "enano"
+    ],
+    "subraces": [
+      {
+        "name": "Enano de la colina"
+      },
+      {
+        "name": "Enano de montaña"
+      }
+    ]
+  },
+  "Elf": {
+    "name": "Duende",
+    "languages": [
+      "Común",
+      "Mágico"
+    ],
+    "subraces": [
+      {
+        "name": "Alto Elfo"
+      },
+      {
+        "name": "Elfo del Bosque"
+      },
+      {
+        "name": "Elfo Oscuro (Drow)"
+      }
+    ]
+  },
+  "Halfling": {
+    "name": "Mediano",
+    "languages": [
+      "Común",
+      "Mediano"
+    ],
+    "subraces": [
+      {
+        "name": "Pie ligero"
+      },
+      {
+        "name": "Cerveza negra"
+      }
+    ]
+  },
+  "Human": {
+    "name": "Humano",
+    "languages": [
+      "Común",
+      "uno extra de tu elección"
+    ],
+    "subraces": []
+  },
+  "Dragonborn": {
+    "name": "nacido de dragón",
+    "languages": [
+      "Común",
+      "dracónico"
+    ],
+    "subraces": [
+      {
+        "name": "Negro (ácido)"
+      },
+      {
+        "name": "Azul (relámpago)"
+      },
+      {
+        "name": "Latón (Fuego)"
+      },
+      {
+        "name": "Bronce (Rayo)"
+      },
+      {
+        "name": "Cobre (ácido)"
+      },
+      {
+        "name": "Oro (Fuego)"
+      },
+      {
+        "name": "Verde (veneno)"
+      },
+      {
+        "name": "Rojo (fuego)"
+      },
+      {
+        "name": "Plata (frío)"
+      },
+      {
+        "name": "Blanco (frío)"
+      }
+    ]
+  },
+  "Gnome": {
+    "name": "Gnomo",
+    "languages": [
+      "Común",
+      "gnomo"
+    ],
+    "subraces": [
+      {
+        "name": "Gnomo del bosque"
+      },
+      {
+        "name": "Gnomo de roca"
+      }
+    ]
+  },
+  "Half-Elf": {
+    "name": "Semielfo",
+    "languages": [
+      "Común",
+      "Mágico",
+      "uno extra de tu elección"
+    ],
+    "subraces": []
+  },
+  "Half-Orc": {
+    "name": "Semiorco",
+    "languages": [
+      "Común",
+      "Orco"
+    ],
+    "subraces": []
+  },
+  "Tiefling": {
+    "name": "tiflin",
+    "languages": [
+      "Común",
+      "Infernal"
+    ],
+    "subraces": []
+  }
+}

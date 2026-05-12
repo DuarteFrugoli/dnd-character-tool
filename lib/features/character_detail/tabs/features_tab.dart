@@ -408,13 +408,14 @@ class _BackgroundFeatureSection extends ConsumerWidget {
 
 // ── Tool Proficiencies Section ────────────────────────────────────────────────
 
-class _ToolProficienciesSection extends StatelessWidget {
+class _ToolProficienciesSection extends ConsumerWidget {
   const _ToolProficienciesSection({required this.features});
   final List<String> features;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -439,7 +440,7 @@ class _ToolProficienciesSection extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               leading: const Icon(Icons.handyman_outlined, size: 20),
               title: Text(
-                label,
+                i18n.toolName(label),
                 style: const TextStyle(fontWeight: FontWeight.w600),
               ),
             ),

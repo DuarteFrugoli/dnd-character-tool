@@ -1,0 +1,119 @@
+{
+  "Alchemist's supplies": {
+    "name": "Suministros de alquimista"
+  },
+  "Brewer's supplies": {
+    "name": "Suministros de cervecería"
+  },
+  "Calligrapher's supplies": {
+    "name": "Suministros de calígrafo"
+  },
+  "Carpenter's tools": {
+    "name": "herramientas de carpintero"
+  },
+  "Cartographer's tools": {
+    "name": "herramientas del cartógrafo"
+  },
+  "Cobbler's tools": {
+    "name": "herramientas de zapatero"
+  },
+  "Cook's utensils": {
+    "name": "utensilios de cocina"
+  },
+  "Glassblower's tools": {
+    "name": "Herramientas de soplador de vidrio"
+  },
+  "Jeweler's tools": {
+    "name": "herramientas de joyero"
+  },
+  "Leatherworker's tools": {
+    "name": "Herramientas de peletero"
+  },
+  "Mason's tools": {
+    "name": "herramientas de albañil"
+  },
+  "Painter's supplies": {
+    "name": "suministros de pintor"
+  },
+  "Potter's tools": {
+    "name": "herramientas de alfarero"
+  },
+  "Smith's tools": {
+    "name": "herramientas de smith"
+  },
+  "Tinker's tools": {
+    "name": "herramientas de tinker"
+  },
+  "Weaver's tools": {
+    "name": "herramientas de tejedor"
+  },
+  "Woodcarver's tools": {
+    "name": "Herramientas de tallador de madera"
+  },
+  "Dice set": {
+    "name": "Juego de dados"
+  },
+  "Dragonchess set": {
+    "name": "Conjunto de dragones"
+  },
+  "Playing card set": {
+    "name": "juego de naipes"
+  },
+  "Three-Dragon Ante set": {
+    "name": "Conjunto Ante de tres dragones"
+  },
+  "Bagpipes": {
+    "name": "Gaita"
+  },
+  "Drum": {
+    "name": "Tambor"
+  },
+  "Dulcimer": {
+    "name": "Dulcimer"
+  },
+  "Flute": {
+    "name": "Flauta"
+  },
+  "Lute": {
+    "name": "Laúd"
+  },
+  "Lyre": {
+    "name": "Lira"
+  },
+  "Horn": {
+    "name": "Bocina"
+  },
+  "Pan flute": {
+    "name": "flauta de pan"
+  },
+  "Shawm": {
+    "name": "Caramillo"
+  },
+  "Viol": {
+    "name": "viola"
+  },
+  "Disguise kit": {
+    "name": "kit de disfraz"
+  },
+  "Forgery kit": {
+    "name": "kit de falsificación"
+  },
+  "Thieves' tools": {
+    "name": "herramientas de ladrones"
+  },
+  "Herbalism kit": {
+    "name": "kit de herboristería"
+  },
+  "Navigator's tools": {
+    "name": "herramientas del navegador"
+  },
+  "Poisoner's kit": {
+    "name": "kit de envenenador"
+  },
+  "Vehicles (land)": {
+    "name": "Vehículos (terrestres)"
+  },
+  "Vehicles (water)": {
+    "name": "Vehículos (agua)"
+  }
+}

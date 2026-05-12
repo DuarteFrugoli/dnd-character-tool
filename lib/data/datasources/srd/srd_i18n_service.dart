@@ -169,6 +169,26 @@ class SrdI18nService {
 
   String backgroundEquipmentName(String en) => _bgEquipmentNames[en] ?? en;
 
+  // ── Tools ──────────────────────────────────────────────────────────────────
+
+  /// Returns the translated name of a tool proficiency, or [en] if not found.
+  /// Lookup is case-insensitive to handle lowercase variants (e.g. class json).
+  String toolName(String en) {
+    final exact = _str('tools', en, 'name');
+    if (exact != null) return exact;
+    final toolsMap = _data['tools'];
+    if (toolsMap != null) {
+      final lower = en.toLowerCase();
+      for (final entry in toolsMap.entries) {
+        if (entry.key.toLowerCase() == lower) {
+          final v = entry.value;
+          if (v is Map) return (v['name'] as String?) ?? en;
+        }
+      }
+    }
+    return en;
+  }
+
   // ── Backgrounds ────────────────────────────────────────────────────────────
 
   String backgroundName(String en) => _str('backgrounds', en, 'name') ?? en;

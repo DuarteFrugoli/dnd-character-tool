@@ -1,0 +1,119 @@
+{
+  "Alchemist's supplies": {
+    "name": "Vorräte des Alchemisten"
+  },
+  "Brewer's supplies": {
+    "name": "Brauereibedarf"
+  },
+  "Calligrapher's supplies": {
+    "name": "Kalligraphenbedarf"
+  },
+  "Carpenter's tools": {
+    "name": "Zimmermannswerkzeuge"
+  },
+  "Cartographer's tools": {
+    "name": "Werkzeuge des Kartographen"
+  },
+  "Cobbler's tools": {
+    "name": "Schusterwerkzeuge"
+  },
+  "Cook's utensils": {
+    "name": "Kochutensilien"
+  },
+  "Glassblower's tools": {
+    "name": "Werkzeuge des Glasbläsers"
+  },
+  "Jeweler's tools": {
+    "name": "Juwelierwerkzeuge"
+  },
+  "Leatherworker's tools": {
+    "name": "Werkzeuge des Lederarbeiters"
+  },
+  "Mason's tools": {
+    "name": "Maurerwerkzeuge"
+  },
+  "Painter's supplies": {
+    "name": "Malerbedarf"
+  },
+  "Potter's tools": {
+    "name": "Potters Werkzeuge"
+  },
+  "Smith's tools": {
+    "name": "Smiths Werkzeuge"
+  },
+  "Tinker's tools": {
+    "name": "Bastelwerkzeuge"
+  },
+  "Weaver's tools": {
+    "name": "Weberwerkzeuge"
+  },
+  "Woodcarver's tools": {
+    "name": "Werkzeuge des Holzschnitzers"
+  },
+  "Dice set": {
+    "name": "Würfelset"
+  },
+  "Dragonchess set": {
+    "name": "Drachenschach-Set"
+  },
+  "Playing card set": {
+    "name": "Spielkartenset"
+  },
+  "Three-Dragon Ante set": {
+    "name": "Drei-Drachen-Ante-Set"
+  },
+  "Bagpipes": {
+    "name": "Dudelsack"
+  },
+  "Drum": {
+    "name": "Trommel"
+  },
+  "Dulcimer": {
+    "name": "Hackbrett"
+  },
+  "Flute": {
+    "name": "Flöte"
+  },
+  "Lute": {
+    "name": "Laute"
+  },
+  "Lyre": {
+    "name": "Leier"
+  },
+  "Horn": {
+    "name": "Horn"
+  },
+  "Pan flute": {
+    "name": "Panflöte"
+  },
+  "Shawm": {
+    "name": "Schalmei"
+  },
+  "Viol": {
+    "name": "Viol"
+  },
+  "Disguise kit": {
+    "name": "Verkleidungsset"
+  },
+  "Forgery kit": {
+    "name": "Fälschungsset"
+  },
+  "Thieves' tools": {
+    "name": "Werkzeuge der Diebe"
+  },
+  "Herbalism kit": {
+    "name": "Kräuterkunde-Set"
+  },
+  "Navigator's tools": {
+    "name": "Navigator-Tools"
+  },
+  "Poisoner's kit": {
+    "name": "Vergiftungsausrüstung"
+  },
+  "Vehicles (land)": {
+    "name": "Fahrzeuge (Land)"
+  },
+  "Vehicles (water)": {
+    "name": "Fahrzeuge (Wasser)"
+  }
+}

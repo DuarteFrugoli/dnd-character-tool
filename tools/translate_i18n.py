@@ -183,9 +183,15 @@ def extract_languages() -> dict:
     return {lang["name"]: {"name": lang["name"]} for lang in _srd("languages.json")}
 
 
+def extract_tools() -> dict:
+    # srd: [{ name }]
+    return {tool["name"]: {"name": tool["name"]} for tool in _srd("tools.json")}
+
+
 # Map filename → extractor function
 EXTRACTORS = {
     "languages.json":         extract_languages,
+    "tools.json":             extract_tools,
     "skills.json":            extract_skills,
     "equipment.json":         extract_equipment,
     "magic_items.json":       extract_magic_items,

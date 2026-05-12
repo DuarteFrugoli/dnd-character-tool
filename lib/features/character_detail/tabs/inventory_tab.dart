@@ -940,11 +940,14 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
 // ── Item Tile ─────────────────────────────────────────────────────────────────
 
 /// Returns a localised display name for [item].
-/// Tries equipment overlay, then magic_items overlay, then falls back to original name.
+/// Tries equipment overlay, then magic_items overlay, then background
+/// equipment strings, then falls back to the original name.
 String _itemDisplayName(EquipmentItem item, SrdI18nService i18n) {
   final fromEquip = i18n.equipmentName(item.name);
   if (fromEquip != item.name) return fromEquip;
-  return i18n.magicItemName(item.name);
+  final fromMagic = i18n.magicItemName(item.name);
+  if (fromMagic != item.name) return fromMagic;
+  return i18n.backgroundEquipmentName(item.name);
 }
 
 class _ItemTile extends ConsumerWidget {

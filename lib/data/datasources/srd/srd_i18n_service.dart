@@ -7,7 +7,8 @@ import 'package:flutter/services.dart';
 /// Keys are always English identifiers; values are localised strings.
 /// Returning `null` means "use the original English string".
 class SrdI18nService {
-  SrdI18nService._(this.locale, this._data, this._subraceNames);
+  SrdI18nService._(this.locale, this._data, this._subraceNames,
+      this._bgEquipmentNames);
 
   final String locale;
 
@@ -17,9 +18,12 @@ class SrdI18nService {
   // English subrace name → translated name (built by crossing SRD + i18n races)
   final Map<String, String> _subraceNames;
 
+  // English background equipment string → translated (built by crossing SRD + i18n backgrounds)
+  final Map<String, String> _bgEquipmentNames;
+
   /// No-op service: every lookup returns null, so callers fall back to English.
   static final SrdI18nService english =
-      SrdI18nService._('en', const {}, const {});
+      SrdI18nService._('en', const {}, const {}, const {});
 
   static const _files = [
     'backgrounds',
@@ -83,7 +87,37 @@ class SrdI18nService {
       }
     } catch (_) {}
 
-    return SrdI18nService._(locale, data, subraceNames);
+    // Build English→translated background equipment index by crossing SRD
+    // backgrounds with the i18n overlay (positional arrays).
+    final bgEquipmentNames = <String, String>{};
+    try {
+      final srdRaw =
+          await rootBundle.loadString('assets/data/srd/backgrounds.json');
+      final srdBackgrounds = jsonDecode(srdRaw) as List<dynamic>;
+      final i18nBackgrounds = data['backgrounds'];
+      if (i18nBackgrounds != null) {
+        for (final srdBg in srdBackgrounds) {
+          final bgEnName = srdBg['name'] as String?;
+          if (bgEnName == null) continue;
+          final srdItems =
+              List<String>.from(srdBg['startingEquipment'] as List? ?? []);
+          final i18nEntry = i18nBackgrounds[bgEnName];
+          if (i18nEntry is! Map) continue;
+          final i18nItems =
+              List<dynamic>.from(i18nEntry['startingEquipment'] as List? ?? []);
+          for (var i = 0; i < srdItems.length; i++) {
+            final enItem = srdItems[i];
+            final translated =
+                i < i18nItems.length ? i18nItems[i] as String? : null;
+            if (translated != null && translated != enItem) {
+              bgEquipmentNames[enItem] = translated;
+            }
+          }
+        }
+      }
+    } catch (_) {}
+
+    return SrdI18nService._(locale, data, subraceNames, bgEquipmentNames);
   }
 
   // ── Generic helpers ────────────────────────────────────────────────────────
@@ -130,6 +164,10 @@ class SrdI18nService {
   String raceName(String en) => _str('races', en, 'name') ?? en;
 
   String subraceName(String en) => _subraceNames[en] ?? en;
+
+  // ── Background equipment ───────────────────────────────────────────────────
+
+  String backgroundEquipmentName(String en) => _bgEquipmentNames[en] ?? en;
 
   // ── Backgrounds ────────────────────────────────────────────────────────────
 

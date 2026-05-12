@@ -108,7 +108,10 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     if (character == null) return;
     await ref
         .read(characterRepositoryProvider)
-        .save(character.copyWith(imagePath: imagePath));
+        .save(character.copyWith(
+          imagePath: imagePath,
+          clearImagePath: imagePath == null,
+        ));
     await refresh();
   }
 }

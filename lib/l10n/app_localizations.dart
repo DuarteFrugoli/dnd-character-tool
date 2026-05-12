@@ -1489,6 +1489,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Platinum'**
   String get coinPlatinum;
+
+  /// Weapon browser group: simple melee.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple Melee'**
+  String get inventoryGroupSimpleMelee;
+
+  /// Weapon browser group: simple ranged.
+  ///
+  /// In en, this message translates to:
+  /// **'Simple Ranged'**
+  String get inventoryGroupSimpleRanged;
+
+  /// Weapon browser group: martial melee.
+  ///
+  /// In en, this message translates to:
+  /// **'Martial Melee'**
+  String get inventoryGroupMartialMelee;
+
+  /// Weapon browser group: martial ranged.
+  ///
+  /// In en, this message translates to:
+  /// **'Martial Ranged'**
+  String get inventoryGroupMartialRanged;
+
+  /// Armor browser group: light armor.
+  ///
+  /// In en, this message translates to:
+  /// **'Light Armor'**
+  String get inventoryGroupLightArmor;
+
+  /// Armor browser group: medium armor.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium Armor'**
+  String get inventoryGroupMediumArmor;
+
+  /// Armor browser group: heavy armor.
+  ///
+  /// In en, this message translates to:
+  /// **'Heavy Armor'**
+  String get inventoryGroupHeavyArmor;
+
+  /// Armor browser group: shields.
+  ///
+  /// In en, this message translates to:
+  /// **'Shields'**
+  String get inventoryGroupShields;
+
+  /// Gear browser group: adventuring gear.
+  ///
+  /// In en, this message translates to:
+  /// **'Adventuring Gear'**
+  String get inventoryGroupAdventuringGear;
+
+  /// Gear browser group: ammunition.
+  ///
+  /// In en, this message translates to:
+  /// **'Ammunition'**
+  String get inventoryGroupAmmunition;
+
+  /// Gear browser group: arcane focus.
+  ///
+  /// In en, this message translates to:
+  /// **'Arcane Focus'**
+  String get inventoryGroupArcaneFocus;
+
+  /// Gear browser group: clothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Clothing'**
+  String get inventoryGroupClothing;
+
+  /// Gear browser group: container.
+  ///
+  /// In en, this message translates to:
+  /// **'Container'**
+  String get inventoryGroupContainer;
+
+  /// Gear browser group: poison.
+  ///
+  /// In en, this message translates to:
+  /// **'Poison'**
+  String get inventoryGroupPoison;
+
+  /// Magic item browser group: potions.
+  ///
+  /// In en, this message translates to:
+  /// **'Potions'**
+  String get inventoryGroupPotions;
+
+  /// Magic item browser group: rings.
+  ///
+  /// In en, this message translates to:
+  /// **'Rings'**
+  String get inventoryGroupRings;
+
+  /// Magic item browser group: wands.
+  ///
+  /// In en, this message translates to:
+  /// **'Wands'**
+  String get inventoryGroupWands;
+
+  /// Magic item browser group: weapons.
+  ///
+  /// In en, this message translates to:
+  /// **'Weapons'**
+  String get inventoryGroupWeapons;
+
+  /// Magic item browser group: armor.
+  ///
+  /// In en, this message translates to:
+  /// **'Armor'**
+  String get inventoryGroupArmor;
+
+  /// Magic item browser group: wondrous items.
+  ///
+  /// In en, this message translates to:
+  /// **'Wondrous Items'**
+  String get inventoryGroupWondrousItems;
 }
 
 class _AppLocalizationsDelegate

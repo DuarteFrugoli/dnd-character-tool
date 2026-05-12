@@ -768,4 +768,64 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get coinPlatinum => 'Platina';
+
+  @override
+  String get inventoryGroupSimpleMelee => 'Corpo a Corpo Simples';
+
+  @override
+  String get inventoryGroupSimpleRanged => 'À Distância Simples';
+
+  @override
+  String get inventoryGroupMartialMelee => 'Corpo a Corpo Marcial';
+
+  @override
+  String get inventoryGroupMartialRanged => 'À Distância Marcial';
+
+  @override
+  String get inventoryGroupLightArmor => 'Armadura Leve';
+
+  @override
+  String get inventoryGroupMediumArmor => 'Armadura Média';
+
+  @override
+  String get inventoryGroupHeavyArmor => 'Armadura Pesada';
+
+  @override
+  String get inventoryGroupShields => 'Escudos';
+
+  @override
+  String get inventoryGroupAdventuringGear => 'Equipamento de Aventura';
+
+  @override
+  String get inventoryGroupAmmunition => 'Munições';
+
+  @override
+  String get inventoryGroupArcaneFocus => 'Foco Arcano';
+
+  @override
+  String get inventoryGroupClothing => 'Vestimentas';
+
+  @override
+  String get inventoryGroupContainer => 'Recipientes';
+
+  @override
+  String get inventoryGroupPoison => 'Venenos';
+
+  @override
+  String get inventoryGroupPotions => 'Poções';
+
+  @override
+  String get inventoryGroupRings => 'Anéis';
+
+  @override
+  String get inventoryGroupWands => 'Varinhas';
+
+  @override
+  String get inventoryGroupWeapons => 'Armas';
+
+  @override
+  String get inventoryGroupArmor => 'Armaduras';
+
+  @override
+  String get inventoryGroupWondrousItems => 'Itens Maravilhosos';
 }

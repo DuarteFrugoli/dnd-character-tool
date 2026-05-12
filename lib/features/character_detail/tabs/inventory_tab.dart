@@ -430,10 +430,6 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     ];
   }
 
-  /// Remove notação de pacote do nome: "Arrows (20)" → "Arrows"
-  static String _stripPackNotation(String name) =>
-      name.replaceAll(RegExp(r'\s*\(\d+\)\s*$'), '').trim();
-
   @override
   void initState() {
     super.initState();
@@ -488,6 +484,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   // Mostra dialog de confirmação com quantidade antes de adicionar
   Future<void> _confirmAdd({
     required String name,
+    String? displayName,
     required String category,
     required ItemType itemType,
     required String? description,
@@ -497,7 +494,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(name),
+        title: Text(displayName ?? name),
         content: Row(
           children: [
             Text(AppLocalizations.of(context)!.inventoryLabelQuantity),
@@ -548,6 +545,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   Widget _buildGroupedSrdList<T>({
     required List<T>? items,
     required String Function(T) getName,
+    String Function(T)? getDisplayName,
     required String Function(T) getSubtitle,
     required String Function(T) getCategory,
     required String Function(T) getGroup,
@@ -574,7 +572,11 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final q = _search.text.toLowerCase();
     final filtered = q.isEmpty
         ? items
-        : items.where((e) => getName(e).toLowerCase().contains(q)).toList();
+        : items.where((e) {
+            final display = (getDisplayName ?? getName)(e).toLowerCase();
+            final english = getName(e).toLowerCase();
+            return display.contains(q) || english.contains(q);
+          }).toList();
 
     if (filtered.isEmpty) {
       return Center(
@@ -587,7 +589,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     }
 
     Widget buildTile(T item) => ListTile(
-          title: Text(getName(item), style: const TextStyle(fontSize: 14)),
+          title: Text((getDisplayName ?? getName)(item), style: const TextStyle(fontSize: 14)),
           subtitle: Text(
             getSubtitle(item),
             style: TextStyle(
@@ -599,6 +601,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
             color: Theme.of(context).colorScheme.primary,
             onPressed: () => _confirmAdd(
               name: getName(item),
+              displayName: getDisplayName?.call(item),
               category: getCategory(item),
               itemType: getItemType(item),
               description: getDescription(item),
@@ -738,6 +741,8 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final isCustomTab = _tabs.index == 4;
 
     return DraggableScrollableSheet(
@@ -808,6 +813,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                 _buildGroupedSrdList<SrdWeapon>(
                   items: _weapons,
                   getName: (w) => w.name,
+                  getDisplayName: (w) => i18n.equipmentName(w.name),
                   getSubtitle: (w) =>
                       '${w.damage} ${w.damageType}  ·  ${w.cost}',
                   getCategory: (w) => w.category,
@@ -826,17 +832,18 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'martial melee',
                     'martial ranged',
                   ],
-                  groupLabels: const {
-                    'simple melee': 'Simple Melee',
-                    'simple ranged': 'Simple Ranged',
-                    'martial melee': 'Martial Melee',
-                    'martial ranged': 'Martial Ranged',
+                  groupLabels: {
+                    'simple melee': l10n.inventoryGroupSimpleMelee,
+                    'simple ranged': l10n.inventoryGroupSimpleRanged,
+                    'martial melee': l10n.inventoryGroupMartialMelee,
+                    'martial ranged': l10n.inventoryGroupMartialRanged,
                   },
                 ),
                 // Armor
                 _buildGroupedSrdList<SrdArmor>(
                   items: _armors,
-                  getName: (a) => a.isShield ? a.name : '${a.name} Armor',
+                  getName: (a) => a.name,
+                  getDisplayName: (a) => i18n.equipmentName(a.name),
                   getSubtitle: (a) => a.isShield
                       ? '+${a.acBonus} AC  ·  ${a.cost}'
                       : 'AC ${a.baseAC}${a.addDexModifier ? " + DEX" : ""}${a.maxDexBonus != null ? " (max +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
@@ -854,17 +861,18 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'acBonus': a.acBonus,
                   },
                   groupOrder: const ['light', 'medium', 'heavy', 'shield'],
-                  groupLabels: const {
-                    'light': 'Light Armor',
-                    'medium': 'Medium Armor',
-                    'heavy': 'Heavy Armor',
-                    'shield': 'Shields',
+                  groupLabels: {
+                    'light': l10n.inventoryGroupLightArmor,
+                    'medium': l10n.inventoryGroupMediumArmor,
+                    'heavy': l10n.inventoryGroupHeavyArmor,
+                    'shield': l10n.inventoryGroupShields,
                   },
                 ),
                 // Gear
                 _buildGroupedSrdList<SrdGearItem>(
                   items: _gear,
-                  getName: (g) => _stripPackNotation(g.name),
+                  getName: (g) => g.name,
+                  getDisplayName: (g) => i18n.equipmentName(g.name),
                   getSubtitle: (g) => g.cost,
                   getCategory: (g) => g.category,
                   getGroup: (g) => g.category,
@@ -881,19 +889,20 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'container',
                     'poison',
                   ],
-                  groupLabels: const {
-                    'adventuring gear': 'Adventuring Gear',
-                    'ammunition': 'Ammunition',
-                    'arcane focus': 'Arcane Focus',
-                    'clothing': 'Clothing',
-                    'container': 'Container',
-                    'poison': 'Poison',
+                  groupLabels: {
+                    'adventuring gear': l10n.inventoryGroupAdventuringGear,
+                    'ammunition': l10n.inventoryGroupAmmunition,
+                    'arcane focus': l10n.inventoryGroupArcaneFocus,
+                    'clothing': l10n.inventoryGroupClothing,
+                    'container': l10n.inventoryGroupContainer,
+                    'poison': l10n.inventoryGroupPoison,
                   },
                 ),
                 // Magic Items
                 _buildGroupedSrdList<SrdMagicItem>(
                   items: _magic,
                   getName: (m) => m.name,
+                  getDisplayName: (m) => i18n.magicItemName(m.name),
                   getSubtitle: (m) =>
                       '${m.rarity}${m.requiresAttunement ? "  ·  attunement" : ""}',
                   getCategory: (m) => m.type,
@@ -908,13 +917,13 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'armor',
                     'wondrous item',
                   ],
-                  groupLabels: const {
-                    'potion': 'Potions',
-                    'ring': 'Rings',
-                    'wand': 'Wands',
-                    'weapon': 'Weapons',
-                    'armor': 'Armor',
-                    'wondrous item': 'Wondrous Items',
+                  groupLabels: {
+                    'potion': l10n.inventoryGroupPotions,
+                    'ring': l10n.inventoryGroupRings,
+                    'wand': l10n.inventoryGroupWands,
+                    'weapon': l10n.inventoryGroupWeapons,
+                    'armor': l10n.inventoryGroupArmor,
+                    'wondrous item': l10n.inventoryGroupWondrousItems,
                   },
                 ),
                 // Custom

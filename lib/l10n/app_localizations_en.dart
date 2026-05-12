@@ -765,4 +765,64 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get coinPlatinum => 'Platinum';
+
+  @override
+  String get inventoryGroupSimpleMelee => 'Simple Melee';
+
+  @override
+  String get inventoryGroupSimpleRanged => 'Simple Ranged';
+
+  @override
+  String get inventoryGroupMartialMelee => 'Martial Melee';
+
+  @override
+  String get inventoryGroupMartialRanged => 'Martial Ranged';
+
+  @override
+  String get inventoryGroupLightArmor => 'Light Armor';
+
+  @override
+  String get inventoryGroupMediumArmor => 'Medium Armor';
+
+  @override
+  String get inventoryGroupHeavyArmor => 'Heavy Armor';
+
+  @override
+  String get inventoryGroupShields => 'Shields';
+
+  @override
+  String get inventoryGroupAdventuringGear => 'Adventuring Gear';
+
+  @override
+  String get inventoryGroupAmmunition => 'Ammunition';
+
+  @override
+  String get inventoryGroupArcaneFocus => 'Arcane Focus';
+
+  @override
+  String get inventoryGroupClothing => 'Clothing';
+
+  @override
+  String get inventoryGroupContainer => 'Container';
+
+  @override
+  String get inventoryGroupPoison => 'Poison';
+
+  @override
+  String get inventoryGroupPotions => 'Potions';
+
+  @override
+  String get inventoryGroupRings => 'Rings';
+
+  @override
+  String get inventoryGroupWands => 'Wands';
+
+  @override
+  String get inventoryGroupWeapons => 'Weapons';
+
+  @override
+  String get inventoryGroupArmor => 'Armor';
+
+  @override
+  String get inventoryGroupWondrousItems => 'Wondrous Items';
 }

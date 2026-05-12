@@ -253,6 +253,30 @@
   "coinSilver": "Prata",
   "coinElectrum": "Electrum",
   "coinGold": "Ouro",
-  "coinPlatinum": "Platina"
+  "coinPlatinum": "Platina",
+
+  "inventoryGroupSimpleMelee": "Corpo a Corpo Simples",
+  "inventoryGroupSimpleRanged": "À Distância Simples",
+  "inventoryGroupMartialMelee": "Corpo a Corpo Marcial",
+  "inventoryGroupMartialRanged": "À Distância Marcial",
+
+  "inventoryGroupLightArmor": "Armadura Leve",
+  "inventoryGroupMediumArmor": "Armadura Média",
+  "inventoryGroupHeavyArmor": "Armadura Pesada",
+  "inventoryGroupShields": "Escudos",
+
+  "inventoryGroupAdventuringGear": "Equipamento de Aventura",
+  "inventoryGroupAmmunition": "Munições",
+  "inventoryGroupArcaneFocus": "Foco Arcano",
+  "inventoryGroupClothing": "Vestimentas",
+  "inventoryGroupContainer": "Recipientes",
+  "inventoryGroupPoison": "Venenos",
+
+  "inventoryGroupPotions": "Poções",
+  "inventoryGroupRings": "Anéis",
+  "inventoryGroupWands": "Varinhas",
+  "inventoryGroupWeapons": "Armas",
+  "inventoryGroupArmor": "Armaduras",
+  "inventoryGroupWondrousItems": "Itens Maravilhosos"
 }
 

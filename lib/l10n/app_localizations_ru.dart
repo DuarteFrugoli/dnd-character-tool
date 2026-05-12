@@ -1081,4 +1081,25 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get stepFreePicksNoStack =>
       'Невозможно назначить атрибутам, уже получающим расовый бонус.';
+
+  @override
+  String reviewClassEquipmentTitle(String name) {
+    return 'Классовое снаряжение — $name';
+  }
+
+  @override
+  String get reviewEquipmentIncluded => 'Включено:';
+
+  @override
+  String get stepToolCategoryGamingSet => 'Игровой набор';
+
+  @override
+  String get stepToolCategoryInstrument => 'Музыкальный инструмент';
+
+  @override
+  String get stepToolCategoryArtisanTool => 'инструмент ремесленника';
+
+  @override
+  String get stepToolCategoryArtisanOrInstrument =>
+      'Инструмент или инструмент ремесленника';
 }

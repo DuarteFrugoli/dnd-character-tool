@@ -216,11 +216,17 @@ class SrdI18nService {
   String skillName(String en) {
     final exact = _str('skills', en, 'name');
     if (exact != null) return exact;
-    // SRD data may store skill names in lowercase — try capitalized fallback.
-    if (en.isNotEmpty) {
-      final capitalized = en[0].toUpperCase() + en.substring(1);
-      final byCapitalized = _str('skills', capitalized, 'name');
-      if (byCapitalized != null) return byCapitalized;
+    // SRD data may store skill names in lowercase (e.g. "sleight of hand").
+    // Do a case-insensitive search over all keys in the skills map.
+    final skillsMap = _data['skills'];
+    if (skillsMap != null) {
+      final lower = en.toLowerCase();
+      for (final entry in skillsMap.entries) {
+        if (entry.key.toLowerCase() == lower) {
+          final v = entry.value;
+          if (v is Map) return (v['name'] as String?) ?? en;
+        }
+      }
     }
     return en;
   }

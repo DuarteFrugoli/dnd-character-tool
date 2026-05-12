@@ -362,6 +362,12 @@
 
   "stepFreeAsiRemaining": "Distribua os bônus raciais livremente ({remaining} restantes):",
   "stepFreePicksRemaining": "ASI racial livre: atribua +1 a {total} atributos ({remaining} restantes):",
-  "stepFreePicksNoStack": "Não é possível atribuir a atributos que já recebem bônus racial."
+  "stepFreePicksNoStack": "Não é possível atribuir a atributos que já recebem bônus racial.",
+  "reviewClassEquipmentTitle": "Equipamento de Classe — {name}",
+  "reviewEquipmentIncluded": "Incluído:",
+  "stepToolCategoryGamingSet": "Kit de jogo",
+  "stepToolCategoryInstrument": "Instrumento musical",
+  "stepToolCategoryArtisanTool": "Ferramenta de artesão",
+  "stepToolCategoryArtisanOrInstrument": "Ferramenta de artesão ou instrumento"
 }
 

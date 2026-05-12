@@ -2069,6 +2069,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cannot assign to attributes already receiving a racial bonus.'**
   String get stepFreePicksNoStack;
+
+  /// No description provided for @reviewClassEquipmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Class Equipment — {name}'**
+  String reviewClassEquipmentTitle(String name);
+
+  /// No description provided for @reviewEquipmentIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'Included:'**
+  String get reviewEquipmentIncluded;
+
+  /// No description provided for @stepToolCategoryGamingSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming set'**
+  String get stepToolCategoryGamingSet;
+
+  /// No description provided for @stepToolCategoryInstrument.
+  ///
+  /// In en, this message translates to:
+  /// **'Musical instrument'**
+  String get stepToolCategoryInstrument;
+
+  /// No description provided for @stepToolCategoryArtisanTool.
+  ///
+  /// In en, this message translates to:
+  /// **'Artisan\'s tool'**
+  String get stepToolCategoryArtisanTool;
+
+  /// No description provided for @stepToolCategoryArtisanOrInstrument.
+  ///
+  /// In en, this message translates to:
+  /// **'Artisan\'s tool or instrument'**
+  String get stepToolCategoryArtisanOrInstrument;
 }
 
 class _AppLocalizationsDelegate

@@ -1080,4 +1080,25 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get stepFreePicksNoStack =>
       'Cannot assign to attributes already receiving a racial bonus.';
+
+  @override
+  String reviewClassEquipmentTitle(String name) {
+    return 'Class Equipment — $name';
+  }
+
+  @override
+  String get reviewEquipmentIncluded => 'Included:';
+
+  @override
+  String get stepToolCategoryGamingSet => 'Gaming set';
+
+  @override
+  String get stepToolCategoryInstrument => 'Musical instrument';
+
+  @override
+  String get stepToolCategoryArtisanTool => 'Artisan\'s tool';
+
+  @override
+  String get stepToolCategoryArtisanOrInstrument =>
+      'Artisan\'s tool or instrument';
 }

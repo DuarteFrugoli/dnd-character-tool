@@ -325,5 +325,11 @@
   "abilityCharisma": "魅力",
   "stepFreeAsiRemaining": "自由分配种族ASI积分（剩余{remaining}）：",
   "stepFreePicksRemaining": "无种族 ASI：为 {total} 属性指定 +1（剩余 {remaining}）：",
-  "stepFreePicksNoStack": "无法分配给已经获得种族加值的属性。"
+  "stepFreePicksNoStack": "无法分配给已经获得种族加值的属性。",
+  "reviewClassEquipmentTitle": "等级装备 — {name}",
+  "reviewEquipmentIncluded": "包括：",
+  "stepToolCategoryGamingSet": "游戏套装",
+  "stepToolCategoryInstrument": "乐器",
+  "stepToolCategoryArtisanTool": "工匠的工具",
+  "stepToolCategoryArtisanOrInstrument": "工匠的工具或仪器"
 }

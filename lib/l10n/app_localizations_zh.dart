@@ -1061,4 +1061,24 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get stepFreePicksNoStack => '无法分配给已经获得种族加值的属性。';
+
+  @override
+  String reviewClassEquipmentTitle(String name) {
+    return '等级装备 — $name';
+  }
+
+  @override
+  String get reviewEquipmentIncluded => '包括：';
+
+  @override
+  String get stepToolCategoryGamingSet => '游戏套装';
+
+  @override
+  String get stepToolCategoryInstrument => '乐器';
+
+  @override
+  String get stepToolCategoryArtisanTool => '工匠的工具';
+
+  @override
+  String get stepToolCategoryArtisanOrInstrument => '工匠的工具或仪器';
 }

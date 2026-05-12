@@ -270,6 +270,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
     final draft = ref.watch(characterDraftProvider);
     final notifier = ref.read(characterDraftProvider.notifier);
     final scheme = Theme.of(context).colorScheme;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final bg = draft.selectedBackground!;
 
     final fixedItems =
@@ -346,7 +347,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
                   value: isSelected,
                   onChanged: (_) => notifier.toggleStartingItem(item),
                   title: Text(
-                    item,
+                    i18n.backgroundEquipmentName(item),
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   secondary: isGold
@@ -382,14 +383,14 @@ class _StartingEquipmentSection extends ConsumerWidget {
                   child: DropdownButtonFormField<String>(
                     initialValue: current,
                     decoration: InputDecoration(
-                      labelText: item,
+                      labelText: i18n.backgroundEquipmentName(item),
                       border: const OutlineInputBorder(),
                       isDense: true,
                     ),
                     hint: Text(AppLocalizations.of(context)!.stepChooseOne),
                     items: options
-                        .map((o) =>
-                            DropdownMenuItem(value: o, child: Text(o)))
+                        .map((o) => DropdownMenuItem(
+                            value: o, child: Text(i18n.backgroundEquipmentName(o))))
                         .toList(),
                     onChanged: (v) {
                       if (v != null) notifier.setEquipmentChoice(item, v);
@@ -608,15 +609,16 @@ String _formatStartingGold(String dice) {
   return '$notation gp  (avg. ~$avg gp)';
 }
 
-List<_ToolSlot> _buildToolSlots(CharacterDraft draft) {
+List<_ToolSlot> _buildToolSlots(
+    CharacterDraft draft, SrdI18nService i18n, AppLocalizations l10n) {
   final slots = <_ToolSlot>[];
 
   // Race: "Tool Proficiency" trait → one artisan's tool
   final race = draft.selectedRace;
   if (race != null && race.traits.contains('Tool Proficiency')) {
     slots.add(_ToolSlot(
-      source: race.name,
-      label: "Artisan's tool",
+      source: i18n.raceName(race.name),
+      label: l10n.stepToolCategoryArtisanTool,
       options: _kArtisanTools,
     ));
   }
@@ -627,13 +629,14 @@ List<_ToolSlot> _buildToolSlots(CharacterDraft draft) {
     for (final tool in bg.toolProficiencies) {
       if (_isToolChoice(tool)) {
         final lower = tool.toLowerCase();
+        final label = lower.contains('gaming')
+            ? l10n.stepToolCategoryGamingSet
+            : lower.contains('musical')
+                ? l10n.stepToolCategoryInstrument
+                : l10n.stepToolCategoryArtisanTool;
         slots.add(_ToolSlot(
-          source: bg.name,
-          label: lower.contains('gaming')
-              ? 'Gaming set'
-              : lower.contains('musical')
-                  ? 'Musical instrument'
-                  : "Artisan's tool",
+          source: i18n.backgroundName(bg.name),
+          label: label,
           options: _toolOptionsForEntry(lower),
         ));
       }
@@ -652,10 +655,11 @@ List<_ToolSlot> _buildToolSlots(CharacterDraft draft) {
         final count = _kWordToInt[countWord] ?? 1;
         final options = _toolOptionsForEntry(lower);
         final label = lower.contains('artisan') && lower.contains('musical')
-            ? "Artisan's tool or instrument"
-            : 'Musical instrument';
+            ? l10n.stepToolCategoryArtisanOrInstrument
+            : l10n.stepToolCategoryInstrument;
         for (int i = 0; i < count; i++) {
-          slots.add(_ToolSlot(source: cls.name, label: label, options: options));
+          slots.add(_ToolSlot(
+              source: i18n.className(cls.name), label: label, options: options));
         }
       }
     }
@@ -664,20 +668,24 @@ List<_ToolSlot> _buildToolSlots(CharacterDraft draft) {
   return slots;
 }
 
-List<String> _buildFixedTools(CharacterDraft draft) {
+List<String> _buildFixedTools(CharacterDraft draft, SrdI18nService i18n) {
   final fixed = <String>[];
 
   final bg = draft.selectedBackground;
   if (bg != null) {
     for (final tool in bg.toolProficiencies) {
-      if (!_isToolChoice(tool)) fixed.add('${bg.name}: $tool');
+      if (!_isToolChoice(tool)) {
+        fixed.add('${i18n.backgroundName(bg.name)}: ${i18n.toolName(tool)}');
+      }
     }
   }
 
   final cls = draft.selectedClass;
   if (cls != null) {
     for (final tool in cls.toolProficiencies) {
-      if (!_isToolChoice(tool)) fixed.add('${cls.name}: $tool');
+      if (!_isToolChoice(tool)) {
+        fixed.add('${i18n.className(cls.name)}: ${i18n.toolName(tool)}');
+      }
     }
   }
 
@@ -693,9 +701,11 @@ class _ToolProficiencySection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final draft = ref.watch(characterDraftProvider);
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
-    final slots = _buildToolSlots(draft);
-    final fixed = _buildFixedTools(draft);
+    final slots = _buildToolSlots(draft, i18n, l10n);
+    final fixed = _buildFixedTools(draft, i18n);
 
     if (slots.isEmpty && fixed.isEmpty) return const SizedBox.shrink();
 
@@ -777,7 +787,7 @@ class _ToolProficiencySection extends ConsumerWidget {
                         items: slot.options
                             .map((tool) => DropdownMenuItem(
                                   value: tool,
-                                  child: Text(tool,
+                                  child: Text(i18n.toolName(tool),
                                       style: const TextStyle(fontSize: 13)),
                                 ))
                             .toList(),
@@ -815,6 +825,8 @@ class _ClassEquipmentSection extends ConsumerWidget {
     final draft = ref.watch(characterDraftProvider);
     final notifier = ref.read(characterDraftProvider.notifier);
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final cls = draft.selectedClass!;
     final equip = cls.startingEquipment!;
 
@@ -826,7 +838,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Class Equipment — ${cls.name}',
+              l10n.reviewClassEquipmentTitle(i18n.className(cls.name)),
               style: Theme.of(context)
                   .textTheme
                   .labelLarge
@@ -836,7 +848,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
             if (equip.fixed.isNotEmpty) ...[
               const SizedBox(height: 8),
               Text(
-                'Included:',
+                l10n.reviewEquipmentIncluded,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall
@@ -848,7 +860,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
                 runSpacing: 4,
                 children: equip.fixed
                     .map((item) => Chip(
-                          label: Text(item,
+                          label: Text(i18n.backgroundEquipmentName(item),
                               style: Theme.of(context).textTheme.bodySmall),
                           materialTapTargetSize:
                               MaterialTapTargetSize.shrinkWrap,
@@ -869,7 +881,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
 
               // Label for a package: items joined by " + "
               String optionLabel(List<String> items) =>
-                  items.map((i) => i.startsWith('any ') ? i : i).join(' + ');
+                  items.map((i) => i18n.backgroundEquipmentName(i)).join(' + ');
 
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -936,7 +948,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
                           items: opts
                               .map((o) => DropdownMenuItem(
                                     value: o,
-                                    child: Text(o,
+                                    child: Text(i18n.backgroundEquipmentName(o),
                                         style: const TextStyle(fontSize: 13)),
                                   ))
                               .toList(),

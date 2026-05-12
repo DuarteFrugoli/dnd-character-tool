@@ -1082,4 +1082,25 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get stepFreePicksNoStack =>
       'Kann nicht Attributen zugewiesen werden, die bereits einen Volksbonus erhalten.';
+
+  @override
+  String reviewClassEquipmentTitle(String name) {
+    return 'Klassenausrüstung – $name';
+  }
+
+  @override
+  String get reviewEquipmentIncluded => 'Im Lieferumfang enthalten:';
+
+  @override
+  String get stepToolCategoryGamingSet => 'Gaming-Set';
+
+  @override
+  String get stepToolCategoryInstrument => 'Musikinstrument';
+
+  @override
+  String get stepToolCategoryArtisanTool => 'Handwerkerwerkzeug';
+
+  @override
+  String get stepToolCategoryArtisanOrInstrument =>
+      'Handwerkliches Werkzeug oder Instrument';
 }

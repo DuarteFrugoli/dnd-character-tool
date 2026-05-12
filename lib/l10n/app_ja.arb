@@ -325,5 +325,11 @@
   "abilityCharisma": "カリスマ",
   "stepFreeAsiRemaining": "人種 ASI ポイントを自由に分配します (残り {remaining}):",
   "stepFreePicksRemaining": "人種フリー ASI: {total} 属性に +1 を割り当てます (残り {remaining}):",
-  "stepFreePicksNoStack": "すでに種族ボーナスを受けている属性には割り当てることができません。"
+  "stepFreePicksNoStack": "すでに種族ボーナスを受けている属性には割り当てることができません。",
+  "reviewClassEquipmentTitle": "クラス装備 — {name}",
+  "reviewEquipmentIncluded": "含まれるもの:",
+  "stepToolCategoryGamingSet": "ゲームセット",
+  "stepToolCategoryInstrument": "楽器",
+  "stepToolCategoryArtisanTool": "職人の道具",
+  "stepToolCategoryArtisanOrInstrument": "職人の道具や道具"
 }

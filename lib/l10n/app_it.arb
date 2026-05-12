@@ -325,5 +325,11 @@
   "abilityCharisma": "Carisma",
   "stepFreeAsiRemaining": "Distribuisci liberamente i punti ASI razziali ({remaining} rimanenti):",
   "stepFreePicksRemaining": "ASI senza razza: assegna +1 a {total} attributi ({remaining} rimanenti):",
-  "stepFreePicksNoStack": "Non è possibile assegnare attributi che già ricevono un bonus razziale."
+  "stepFreePicksNoStack": "Non è possibile assegnare attributi che già ricevono un bonus razziale.",
+  "reviewClassEquipmentTitle": "Equipaggiamento di classe — {name}",
+  "reviewEquipmentIncluded": "Incluso:",
+  "stepToolCategoryGamingSet": "Set da gioco",
+  "stepToolCategoryInstrument": "Strumento musicale",
+  "stepToolCategoryArtisanTool": "Lo strumento dell'artigiano",
+  "stepToolCategoryArtisanOrInstrument": "Attrezzo o strumento dell'artigiano"
 }

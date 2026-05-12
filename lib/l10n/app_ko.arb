@@ -325,5 +325,11 @@
   "abilityCharisma": "카리스마",
   "stepFreeAsiRemaining": "인종별 ASI 포인트를 자유롭게 배포하세요({remaining} 남음):",
   "stepFreePicksRemaining": "인종 자유 ASI: {total} 속성에 +1 할당({remaining} 남음):",
-  "stepFreePicksNoStack": "이미 인종 보너스를 받고 있는 속성에는 할당할 수 없습니다."
+  "stepFreePicksNoStack": "이미 인종 보너스를 받고 있는 속성에는 할당할 수 없습니다.",
+  "reviewClassEquipmentTitle": "직업 장비 — {name}",
+  "reviewEquipmentIncluded": "포함:",
+  "stepToolCategoryGamingSet": "게임 세트",
+  "stepToolCategoryInstrument": "악기",
+  "stepToolCategoryArtisanTool": "장인의 도구",
+  "stepToolCategoryArtisanOrInstrument": "장인의 도구 또는 도구"
 }

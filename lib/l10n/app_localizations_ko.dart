@@ -1067,4 +1067,24 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get stepFreePicksNoStack => '이미 인종 보너스를 받고 있는 속성에는 할당할 수 없습니다.';
+
+  @override
+  String reviewClassEquipmentTitle(String name) {
+    return '직업 장비 — $name';
+  }
+
+  @override
+  String get reviewEquipmentIncluded => '포함:';
+
+  @override
+  String get stepToolCategoryGamingSet => '게임 세트';
+
+  @override
+  String get stepToolCategoryInstrument => '악기';
+
+  @override
+  String get stepToolCategoryArtisanTool => '장인의 도구';
+
+  @override
+  String get stepToolCategoryArtisanOrInstrument => '장인의 도구 또는 도구';
 }

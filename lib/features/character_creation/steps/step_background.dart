@@ -8,6 +8,18 @@ import '../../../data/datasources/srd/srd_models.dart';
 import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
 
+/// Translates a background tool proficiency string.
+/// Choice descriptions ("one type of gaming set") use ARB keys;
+/// specific tools (e.g. "Disguise kit") use the i18n tool map.
+String _bgToolName(String en, SrdI18nService i18n, AppLocalizations l10n) {
+  final lower = en.toLowerCase();
+  if (lower.contains('gaming')) return l10n.stepToolCategoryGamingSet;
+  if (lower.contains('musical instrument')) return l10n.stepToolCategoryInstrument;
+  if (lower.contains('artisan') && lower.contains('musical')) return l10n.stepToolCategoryArtisanOrInstrument;
+  if (lower.contains('artisan')) return l10n.stepToolCategoryArtisanTool;
+  return i18n.toolName(en);
+}
+
 class StepBackground extends ConsumerStatefulWidget {
   const StepBackground({super.key});
 
@@ -111,7 +123,7 @@ class _BackgroundCard extends StatelessWidget {
                     if (bg.toolProficiencies.isNotEmpty) ...[
                       const SizedBox(height: 2),
                       Text(
-                        '${l10n.inventoryTabTools}: ${bg.toolProficiencies.map(i18n.toolName).join(', ')}',  
+                        '${l10n.inventoryTabTools}: ${bg.toolProficiencies.map((t) => _bgToolName(t, i18n, l10n)).join(', ')}',  
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: isSelected
                                   ? scheme.onPrimaryContainer

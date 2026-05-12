@@ -1081,4 +1081,25 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get stepFreePicksNoStack =>
       'Não é possível atribuir a atributos que já recebem bônus racial.';
+
+  @override
+  String reviewClassEquipmentTitle(String name) {
+    return 'Equipamento de Classe — $name';
+  }
+
+  @override
+  String get reviewEquipmentIncluded => 'Incluído:';
+
+  @override
+  String get stepToolCategoryGamingSet => 'Kit de jogo';
+
+  @override
+  String get stepToolCategoryInstrument => 'Instrumento musical';
+
+  @override
+  String get stepToolCategoryArtisanTool => 'Ferramenta de artesão';
+
+  @override
+  String get stepToolCategoryArtisanOrInstrument =>
+      'Ferramenta de artesão ou instrumento';
 }

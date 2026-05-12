@@ -1066,4 +1066,24 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get stepFreePicksNoStack => 'すでに種族ボーナスを受けている属性には割り当てることができません。';
+
+  @override
+  String reviewClassEquipmentTitle(String name) {
+    return 'クラス装備 — $name';
+  }
+
+  @override
+  String get reviewEquipmentIncluded => '含まれるもの:';
+
+  @override
+  String get stepToolCategoryGamingSet => 'ゲームセット';
+
+  @override
+  String get stepToolCategoryInstrument => '楽器';
+
+  @override
+  String get stepToolCategoryArtisanTool => '職人の道具';
+
+  @override
+  String get stepToolCategoryArtisanOrInstrument => '職人の道具や道具';
 }

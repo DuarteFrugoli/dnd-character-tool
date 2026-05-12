@@ -325,5 +325,11 @@
   "abilityCharisma": "Харизма",
   "stepFreeAsiRemaining": "Свободно распределяйте расовые очки ASI (осталось {remaining}):",
   "stepFreePicksRemaining": "Свободный от расы ASI: присвойте +1 к {total} атрибутам (осталось {remaining}):",
-  "stepFreePicksNoStack": "Невозможно назначить атрибутам, уже получающим расовый бонус."
+  "stepFreePicksNoStack": "Невозможно назначить атрибутам, уже получающим расовый бонус.",
+  "reviewClassEquipmentTitle": "Классовое снаряжение — {name}",
+  "reviewEquipmentIncluded": "Включено:",
+  "stepToolCategoryGamingSet": "Игровой набор",
+  "stepToolCategoryInstrument": "Музыкальный инструмент",
+  "stepToolCategoryArtisanTool": "инструмент ремесленника",
+  "stepToolCategoryArtisanOrInstrument": "Инструмент или инструмент ремесленника"
 }

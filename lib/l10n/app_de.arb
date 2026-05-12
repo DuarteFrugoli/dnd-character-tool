@@ -325,5 +325,11 @@
   "abilityCharisma": "Charisma",
   "stepFreeAsiRemaining": "Verteilen Sie rassistische ASI-Punkte frei ({remaining} verbleibend):",
   "stepFreePicksRemaining": "Rassenfreier ASI: Weisen Sie {total} Attributen +1 zu ({remaining} verbleibend):",
-  "stepFreePicksNoStack": "Kann nicht Attributen zugewiesen werden, die bereits einen Volksbonus erhalten."
+  "stepFreePicksNoStack": "Kann nicht Attributen zugewiesen werden, die bereits einen Volksbonus erhalten.",
+  "reviewClassEquipmentTitle": "Klassenausrüstung – {name}",
+  "reviewEquipmentIncluded": "Im Lieferumfang enthalten:",
+  "stepToolCategoryGamingSet": "Gaming-Set",
+  "stepToolCategoryInstrument": "Musikinstrument",
+  "stepToolCategoryArtisanTool": "Handwerkerwerkzeug",
+  "stepToolCategoryArtisanOrInstrument": "Handwerkliches Werkzeug oder Instrument"
 }

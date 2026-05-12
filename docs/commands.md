@@ -1,5 +1,5 @@
 gerar build:
 - C:\develop\flutter\bin\flutter.bat build apk --release
 
-gerar traduções abr:
+gerar traduções arb:
 - flutter gen-l10n

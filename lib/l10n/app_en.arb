@@ -964,6 +964,13 @@
     }
   },
   "stepFreePicksNoStack": "Cannot assign to attributes already receiving a racial bonus.",
-  "@stepFreePicksNoStack": { "description": "Attributes step: free picks constraint hint." }
+  "@stepFreePicksNoStack": { "description": "Attributes step: free picks constraint hint." },
+  "reviewClassEquipmentTitle": "Class Equipment — {name}",
+  "@reviewClassEquipmentTitle": { "placeholders": { "name": { "type": "String" } } },
+  "reviewEquipmentIncluded": "Included:",
+  "stepToolCategoryGamingSet": "Gaming set",
+  "stepToolCategoryInstrument": "Musical instrument",
+  "stepToolCategoryArtisanTool": "Artisan's tool",
+  "stepToolCategoryArtisanOrInstrument": "Artisan's tool or instrument"
 }
 

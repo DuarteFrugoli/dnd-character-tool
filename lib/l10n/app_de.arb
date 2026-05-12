@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "de",
   "appTitle": "D&D-Charakter-Tool",
   "charListTitle": "D&D-Charaktere",
@@ -267,5 +267,10 @@
   "spellDetailAtHigherLevels": "Auf höheren Ebenen.",
   "spellDetailClasses": "Klassen: {classes}",
   "spellDetailLevelSchool": "{ordinal} -Ebene {school}",
-  "spellDetailCantrip": "{school} Cantrip"
+  "spellDetailCantrip": "{school} Cantrip",
+
+  "armorSwapCurrent": "Aktuell: {name}",
+  "armorSwapAcNow": "RK jetzt: {ac}",
+  "armorSwapAcAfter": "RK danach: {ac}",
+  "armorSwapButton": "Rüstung wechseln"
 }

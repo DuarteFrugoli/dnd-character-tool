@@ -819,6 +819,15 @@
   "spellDetailLevelSchool": "{ordinal}-level {school}",
   "@spellDetailLevelSchool": { "description": "Spell level + school descriptor.", "placeholders": { "ordinal": { "type": "String" }, "school": { "type": "String" } } },
   "spellDetailCantrip": "{school} cantrip",
-  "@spellDetailCantrip": { "description": "Cantrip school descriptor.", "placeholders": { "school": { "type": "String" } } }
+  "@spellDetailCantrip": { "description": "Cantrip school descriptor.", "placeholders": { "school": { "type": "String" } } },
+
+  "armorSwapCurrent": "Current: {name}",
+  "@armorSwapCurrent": { "description": "Armor swap dialog: current armor name.", "placeholders": { "name": { "type": "String" } } },
+  "armorSwapAcNow": "AC now: {ac}",
+  "@armorSwapAcNow": { "description": "Armor swap dialog: current AC value.", "placeholders": { "ac": { "type": "int" } } },
+  "armorSwapAcAfter": "AC after: {ac}",
+  "@armorSwapAcAfter": { "description": "Armor swap dialog: AC after swap.", "placeholders": { "ac": { "type": "int" } } },
+  "armorSwapButton": "Swap armor",
+  "@armorSwapButton": { "description": "Armor swap confirm button." }
 }
 

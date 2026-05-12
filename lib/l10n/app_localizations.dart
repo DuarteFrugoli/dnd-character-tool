@@ -1721,6 +1721,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{school} cantrip'**
   String spellDetailCantrip(String school);
+
+  /// Armor swap dialog: current armor name.
+  ///
+  /// In en, this message translates to:
+  /// **'Current: {name}'**
+  String armorSwapCurrent(String name);
+
+  /// Armor swap dialog: current AC value.
+  ///
+  /// In en, this message translates to:
+  /// **'AC now: {ac}'**
+  String armorSwapAcNow(int ac);
+
+  /// Armor swap dialog: AC after swap.
+  ///
+  /// In en, this message translates to:
+  /// **'AC after: {ac}'**
+  String armorSwapAcAfter(int ac);
+
+  /// Armor swap confirm button.
+  ///
+  /// In en, this message translates to:
+  /// **'Swap armor'**
+  String get armorSwapButton;
 }
 
 class _AppLocalizationsDelegate

@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "zh",
   "appTitle": "D&D 角色工具",
   "charListTitle": "龙与地下城角色",
@@ -267,5 +267,10 @@
   "spellDetailAtHigherLevels": "在更高的层次上。",
   "spellDetailClasses": "类别： {classes}",
   "spellDetailLevelSchool": "{ordinal} 级别 {school}",
-  "spellDetailCantrip": "{school} 戏法"
+  "spellDetailCantrip": "{school} 戏法",
+
+  "armorSwapCurrent": "当前: {name}",
+  "armorSwapAcNow": "AC现在: {ac}",
+  "armorSwapAcAfter": "AC之后: {ac}",
+  "armorSwapButton": "更换护甲"
 }

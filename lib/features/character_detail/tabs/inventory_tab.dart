@@ -1114,28 +1114,31 @@ class _ItemTile extends ConsumerWidget {
         }).toList();
         final nextAc = _calcArmorClass(character, simulated);
 
+        final l10n = AppLocalizations.of(context)!;
+        final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+        final armorDisplayName = i18n.equipmentName(equippedBodyArmor.name);
         final confirm = await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: Text(AppLocalizations.of(context)!.inventoryReplaceArmorTitle),
+            title: Text(l10n.inventoryReplaceArmorTitle),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Current: ${equippedBodyArmor.name}'),
+                Text(l10n.armorSwapCurrent(armorDisplayName)),
                 const SizedBox(height: 8),
-                Text('AC now: ${character.armorClass}'),
-                Text('AC after: $nextAc'),
+                Text(l10n.armorSwapAcNow(character.armorClass)),
+                Text(l10n.armorSwapAcAfter(nextAc)),
               ],
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx, false),
-                child: Text(AppLocalizations.of(context)!.dialogCancel),
+                child: Text(l10n.dialogCancel),
               ),
               FilledButton(
                 onPressed: () => Navigator.pop(ctx, true),
-                child: const Text('Swap armor'),
+                child: Text(l10n.armorSwapButton),
               ),
             ],
           ),

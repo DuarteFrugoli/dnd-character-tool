@@ -986,6 +986,22 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
 
   // ── Shared tile builder ───────────────────────────────────────────────────
 
+  String _typeLabel(String type, BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    switch (type) {
+      case 'active':
+        return l10n.labelActive;
+      case 'passive':
+        return l10n.labelPassive;
+      case 'subclass':
+        return 'Subclass';
+      case 'asi':
+        return 'ASI';
+      default:
+        return type;
+    }
+  }
+
   Widget _buildTile({
     required SrdClassFeature feature,
     required String sourceLabel,
@@ -995,14 +1011,20 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     required ColorScheme scheme,
     String? subtitle,
     String? Function(String)? nameTranslator,
+    String? Function(String)? descriptionTranslator,
   }) {
     final key = '$sourceKey:${feature.name}';
     final alreadyAdded = existingKeys.contains(key);
     final displayName = nameTranslator?.call(feature.name) ?? feature.name;
+    final displayDescription =
+        descriptionTranslator?.call(feature.name) ?? feature.description;
+    final typeLabel = _typeLabel(feature.type, context);
+    final displaySubtitle =
+        subtitle ?? 'Nível ${feature.level} · $typeLabel';
     return ListTile(
       title: Text(displayName, style: const TextStyle(fontSize: 14)),
       subtitle: Text(
-        subtitle ?? 'Nível ${feature.level} · ${feature.type}',
+        displaySubtitle,
         style: TextStyle(
           fontSize: 12,
           color: Theme.of(context).colorScheme.onSurfaceVariant,
@@ -1032,8 +1054,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           useSafeArea: true,
           builder: (_) => _FeatureDetailSheet(
             name: displayName,
-            description: feature.description,
-            subtitle: subtitle ?? 'Nível ${feature.level} · ${feature.type}',
+            description: displayDescription,
+            subtitle: displaySubtitle,
           ),
         );
       },
@@ -1075,6 +1097,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                   notifier: notifier,
                   scheme: scheme,
                   nameTranslator: (n) => i18n.classFeatureName(r.$1, n),
+                  descriptionTranslator: (n) => i18n.classFeatureDescription(r.$1, n),
                 ))
             .toList(),
       );
@@ -1096,6 +1119,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               notifier: notifier,
               scheme: scheme,
               nameTranslator: (n) => i18n.classFeatureName(cls, n),
+              descriptionTranslator: (n) => i18n.classFeatureDescription(cls, n),
             ),
             childCount: features.length,
           ),
@@ -1145,6 +1169,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                   notifier: notifier,
                   scheme: scheme,
                   nameTranslator: (n) => i18n.subclassFeatureName(r.$1, r.$2, n),
+                  descriptionTranslator: (n) => i18n.subclassFeatureDescription(r.$1, r.$2, n),
                 ))
             .toList(),
       );
@@ -1169,6 +1194,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                 notifier: notifier,
                 scheme: scheme,
                 nameTranslator: (n) => i18n.subclassFeatureName(cls, subName, n),
+                descriptionTranslator: (n) => i18n.subclassFeatureDescription(cls, subName, n),
               ),
               childCount: features.length,
             ),
@@ -1232,6 +1258,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                   scheme: scheme,
                   subtitle: r.$1,
                   nameTranslator: (n) => i18n.raceTraitName(n),
+                  descriptionTranslator: (n) => i18n.raceTraitDescription(n),
                 ))
             .toList(),
       );
@@ -1265,6 +1292,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                 scheme: scheme,
                 subtitle: key == race.name ? race.name : '${race.name} — $key',
                 nameTranslator: (n) => i18n.raceTraitName(n),
+                descriptionTranslator: (n) => i18n.raceTraitDescription(n),
               );
             },
             childCount: allEntries.length,
@@ -1398,6 +1426,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                   scheme: scheme,
                   subtitle: r.$1,
                   nameTranslator: (_) => i18n.backgroundFeatureName(r.$1),
+                  descriptionTranslator: (_) => i18n.backgroundFeatureDescription(r.$1),
                 ))
             .toList(),
       );
@@ -1419,6 +1448,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               scheme: scheme,
               subtitle: bg.name,
               nameTranslator: (_) => i18n.backgroundFeatureName(bg.name),
+              descriptionTranslator: (_) => i18n.backgroundFeatureDescription(bg.name),
             ),
             childCount: 1,
           ),

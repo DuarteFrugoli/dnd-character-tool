@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "it",
   "appTitle": "Strumento per i personaggi di D&D",
   "charListTitle": "Personaggi di D&D",
@@ -267,5 +267,10 @@
   "spellDetailAtHigherLevels": "A livelli più alti.",
   "spellDetailClasses": "Classi: {classes}",
   "spellDetailLevelSchool": "{ordinal} -livello {school}",
-  "spellDetailCantrip": "{school} trucchetto"
+  "spellDetailCantrip": "{school} trucchetto",
+
+  "armorSwapCurrent": "Attuale: {name}",
+  "armorSwapAcNow": "CA ora: {ac}",
+  "armorSwapAcAfter": "CA dopo: {ac}",
+  "armorSwapButton": "Scambia armatura"
 }

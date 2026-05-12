@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "ja",
   "appTitle": "D&D キャラクターツール",
   "charListTitle": "D&Dのキャラクター",
@@ -267,5 +267,10 @@
   "spellDetailAtHigherLevels": "より高いレベルで。",
   "spellDetailClasses": "クラス: {classes}",
   "spellDetailLevelSchool": "{ordinal} - レベル {school}",
-  "spellDetailCantrip": "{school} キャントリップ"
+  "spellDetailCantrip": "{school} キャントリップ",
+
+  "armorSwapCurrent": "現在: {name}",
+  "armorSwapAcNow": "AC今: {ac}",
+  "armorSwapAcAfter": "AC後: {ac}",
+  "armorSwapButton": "防具を交換"
 }

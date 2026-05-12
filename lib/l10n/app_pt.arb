@@ -296,6 +296,11 @@
   "spellDetailAtHigherLevels": "Em Níveis Superiores. ",
   "spellDetailClasses": "Classes: {classes}",
   "spellDetailLevelSchool": "{ordinal}º nível — {school}",
-  "spellDetailCantrip": "Truque de {school}"
+  "spellDetailCantrip": "Truque de {school}",
+
+  "armorSwapCurrent": "Atual: {name}",
+  "armorSwapAcNow": "CA atual: {ac}",
+  "armorSwapAcAfter": "CA depois: {ac}",
+  "armorSwapButton": "Trocar armadura"
 }
 

@@ -867,4 +867,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String spellDetailCantrip(String school) {
     return '$school 戏法';
   }
+
+  @override
+  String armorSwapCurrent(String name) {
+    return '当前: $name';
+  }
+
+  @override
+  String armorSwapAcNow(int ac) {
+    return 'AC现在: $ac';
+  }
+
+  @override
+  String armorSwapAcAfter(int ac) {
+    return 'AC之后: $ac';
+  }
+
+  @override
+  String get armorSwapButton => '更换护甲';
 }

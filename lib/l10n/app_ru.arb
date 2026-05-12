@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "ru",
   "appTitle": "Инструмент создания персонажей D&D",
   "charListTitle": "Персонажи D&D",
@@ -267,5 +267,10 @@
   "spellDetailAtHigherLevels": "На более высоких уровнях.",
   "spellDetailClasses": "Классы: {classes}",
   "spellDetailLevelSchool": "{ordinal} - уровень {school}",
-  "spellDetailCantrip": "{school} кантрип"
+  "spellDetailCantrip": "{school} кантрип",
+
+  "armorSwapCurrent": "Текущее: {name}",
+  "armorSwapAcNow": "КЗ сейчас: {ac}",
+  "armorSwapAcAfter": "КЗ после: {ac}",
+  "armorSwapButton": "Сменить доспехи"
 }

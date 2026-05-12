@@ -882,4 +882,22 @@ class AppLocalizationsDe extends AppLocalizations {
   String spellDetailCantrip(String school) {
     return '$school Cantrip';
   }
+
+  @override
+  String armorSwapCurrent(String name) {
+    return 'Aktuell: $name';
+  }
+
+  @override
+  String armorSwapAcNow(int ac) {
+    return 'RK jetzt: $ac';
+  }
+
+  @override
+  String armorSwapAcAfter(int ac) {
+    return 'RK danach: $ac';
+  }
+
+  @override
+  String get armorSwapButton => 'Rüstung wechseln';
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "fr",
   "appTitle": "Outil de personnage D&D",
   "charListTitle": "Personnages D&D",
@@ -267,5 +267,10 @@
   "spellDetailAtHigherLevels": "Aux niveaux supérieurs.",
   "spellDetailClasses": "Classes : {classes}",
   "spellDetailLevelSchool": "{ordinal} -niveau {school}",
-  "spellDetailCantrip": "Déclencheur {school}"
+  "spellDetailCantrip": "Déclencheur {school}",
+
+  "armorSwapCurrent": "Actuelle : {name}",
+  "armorSwapAcNow": "CA maintenant : {ac}",
+  "armorSwapAcAfter": "CA après : {ac}",
+  "armorSwapButton": "Changer l'armure"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "ko",
   "appTitle": "D&D 캐릭터 도구",
   "charListTitle": "D&D 캐릭터",
@@ -267,5 +267,10 @@
   "spellDetailAtHigherLevels": "더 높은 수준에서.",
   "spellDetailClasses": "클래스: {classes}",
   "spellDetailLevelSchool": "{ordinal} -레벨 {school}",
-  "spellDetailCantrip": "{school} 캔트립"
+  "spellDetailCantrip": "{school} 캔트립",
+
+  "armorSwapCurrent": "현재: {name}",
+  "armorSwapAcNow": "AC 현재: {ac}",
+  "armorSwapAcAfter": "AC 이후: {ac}",
+  "armorSwapButton": "방어구 교체"
 }

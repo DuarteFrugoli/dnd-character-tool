@@ -888,19 +888,124 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String armorSwapCurrent(String name) {
-    return 'Actuelle : $name';
+    return 'Actuel : $name';
   }
 
   @override
   String armorSwapAcNow(int ac) {
-    return 'CA maintenant : $ac';
+    return 'CA actuel : $ac';
   }
 
   @override
   String armorSwapAcAfter(int ac) {
-    return 'CA après : $ac';
+    return 'CA après : $ac';
   }
 
   @override
-  String get armorSwapButton => 'Changer l\'armure';
+  String get armorSwapButton => 'Changer d\'armure';
+
+  @override
+  String get reviewRowName => 'Nom';
+
+  @override
+  String get reviewUnnamedHero => 'Héros sans nom';
+
+  @override
+  String get reviewRowPlayer => 'Joueur';
+
+  @override
+  String get reviewRowSubclass => 'Sous-classe';
+
+  @override
+  String get reviewRowHitDie => 'Toucher le dé';
+
+  @override
+  String get reviewRowSavingThrows => 'Jets de sauvegarde';
+
+  @override
+  String get reviewRowSubrace => 'Sous-race';
+
+  @override
+  String get reviewRowSpeed => 'Vitesse';
+
+  @override
+  String get reviewRowLanguages => 'Langues';
+
+  @override
+  String get reviewRowFeature => 'Fonctionnalité';
+
+  @override
+  String get reviewRowFromBackground => 'Depuis l\'arrière-plan';
+
+  @override
+  String get reviewRowClassChoices => 'Choix de classe';
+
+  @override
+  String get reviewRowMaxHp => 'PV maximum';
+
+  @override
+  String get reviewRowAcUnarmored => 'AC (sans armure)';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return 'CA avec $name';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => 'Bonus de compétence';
+
+  @override
+  String get reviewStartingGold => 'Commencer l\'or';
+
+  @override
+  String get reviewStartingEquipment => 'Équipement de départ';
+
+  @override
+  String get reviewDeselectAll => 'Tout désélectionner';
+
+  @override
+  String get reviewSelectAll => 'Tout sélectionner';
+
+  @override
+  String get reviewUncheckHint =>
+      'Décochez les articles que vous ne souhaitez pas ajouter à votre inventaire.';
+
+  @override
+  String get reviewEquipmentChoices => 'Choix d\'équipement';
+
+  @override
+  String get reviewEquipmentChoicesHint =>
+      'Choisissez l\'élément spécifique pour chaque emplacement.';
+
+  @override
+  String get reviewToolProficiencies => 'Maîtrise des outils';
+
+  @override
+  String get reviewChooseToolProficiency =>
+      'Choisissez votre maîtrise de l\'outil :';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return 'Choisissez la ou les langues $count accordées en fonction de votre race ou de vos origines.';
+  }
+
+  @override
+  String get reviewChooseOne => 'Choisissez-en un :';
+
+  @override
+  String get stepTashaRule =>
+      'Règle facultative de Tasha : attribuez des points ASI à n\'importe quel attribut';
+
+  @override
+  String get stepRollDice => 'Lancer les dés';
+
+  @override
+  String get stepReroll => 'Relancer';
+
+  @override
+  String get stepRollHint =>
+      'Lancez pour générer 6 valeurs (4d6, descendez le plus bas)';
+
+  @override
+  String get stepPrimaryAbilities => 'capacités principales :';
 }

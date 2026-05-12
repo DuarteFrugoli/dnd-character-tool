@@ -29,53 +29,53 @@ class StepReview extends ConsumerWidget {
       padding: const EdgeInsets.all(16),
       children: [
         _ReviewSection(title: l10n.sectionIdentity, children: [
-          _Row('Name', draft.name.isEmpty ? 'Unnamed Hero' : draft.name),
+          _Row(l10n.reviewRowName, draft.name.isEmpty ? l10n.reviewUnnamedHero : draft.name),
           if (draft.playerName.isNotEmpty)
-            _Row('Player', draft.playerName),
+            _Row(l10n.reviewRowPlayer, draft.playerName),
         ]),
         _ReviewSection(title: l10n.creationStepClass, children: [
-          _Row('Class', draft.selectedClass?.name ?? '—'),
+          _Row(l10n.creationStepClass, draft.selectedClass?.name ?? '—'),
           if (draft.selectedSubclass != null)
             _Row(
-              draft.selectedClass?.subclassFeatureName ?? 'Subclass',
+              draft.selectedClass?.subclassFeatureName ?? l10n.reviewRowSubclass,
               draft.selectedSubclass!.name,
             ),
-          _Row('Hit Die', 'd${draft.selectedClass?.hitDie ?? '—'}'),
+          _Row(l10n.reviewRowHitDie, 'd${draft.selectedClass?.hitDie ?? '—'}'),
           _Row(
-            'Saving Throws',
+            l10n.reviewRowSavingThrows,
             draft.selectedClass?.savingThrows.join(', ') ?? '—',
           ),
           if (draft.selectedClass != null)
             const _StartingGoldRow(),
         ]),
         _ReviewSection(title: l10n.creationStepRace, children: [
-          _Row('Race', draft.selectedRace?.name ?? '—'),
+          _Row(l10n.creationStepRace, draft.selectedRace?.name ?? '—'),
           if (draft.selectedSubrace != null)
-            _Row('Subrace', draft.selectedSubrace!.name),
-          _Row('Speed', '${draft.selectedRace?.speed ?? 0} ft'),
+            _Row(l10n.reviewRowSubrace, draft.selectedSubrace!.name),
+          _Row(l10n.reviewRowSpeed, '${draft.selectedRace?.speed ?? 0} ft'),
           if (draft.fixedRaceLanguages.isNotEmpty)
-            _Row('Languages', draft.fixedRaceLanguages.join(', ')),
+            _Row(l10n.reviewRowLanguages, draft.fixedRaceLanguages.join(', ')),
         ]),
         _ReviewSection(title: l10n.creationStepBackground, children: [
-          _Row('Background', draft.selectedBackground?.name ?? '—'),
+          _Row(l10n.creationStepBackground, draft.selectedBackground?.name ?? '—'),
           _Row(
-            'Feature',
+            l10n.reviewRowFeature,
             draft.selectedBackground?.feature.name ?? '—',
           ),
         ]),
         _ReviewSection(title: l10n.creationStepSkills, children: [
-          _Row('From background', draft.grantedSkills.join(', ')),
+          _Row(l10n.reviewRowFromBackground, draft.grantedSkills.join(', ')),
           if (draft.chosenSkills.isNotEmpty)
-            _Row('Class choices', draft.chosenSkills.join(', ')),
+            _Row(l10n.reviewRowClassChoices, draft.chosenSkills.join(', ')),
         ]),
         _ReviewSection(title: l10n.creationStepAttributes, children: [
           ...attrs.entries
               .map((e) => _Row(e.key, '${e.value} (${_mod(e.value)})')),
-          _Row('Max HP', '$maxHp  (d$hitDie + $conMod CON)'),
-          _Row('AC (Unarmored)', '${10 + dexMod}'),
+          _Row(l10n.reviewRowMaxHp, '$maxHp  (d$hitDie + $conMod CON)'),
+          _Row(l10n.reviewRowAcUnarmored, '${10 + dexMod}'),
           if (armorInfo != null)
-            _Row('AC with ${armorInfo.$2}', '${armorInfo.$1}'),
-          _Row('Proficiency Bonus', '+2'),
+            _Row(l10n.reviewRowAcWith(armorInfo.$2), '${armorInfo.$1}'),
+          _Row(l10n.reviewRowProficiencyBonus, '+2'),
         ]),
         // ── Language Choices ────────────────────────────────────────────────────────
         if (draft.languageChoicesNeeded > 0)
@@ -204,7 +204,7 @@ class _StartingGoldRowState extends ConsumerState<_StartingGoldRow> {
           SizedBox(
             width: 140,
             child: Text(
-              'Starting Gold',
+              AppLocalizations.of(context)!.reviewStartingGold,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -278,7 +278,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
             Row(
               children: [
                 Text(
-                  'Starting Equipment',
+                  AppLocalizations.of(context)!.reviewStartingEquipment,
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge
@@ -308,7 +308,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                     child: Text(
-                      allFixedSelected ? 'Deselect all' : 'Select all',
+                      allFixedSelected ? AppLocalizations.of(context)!.reviewDeselectAll : AppLocalizations.of(context)!.reviewSelectAll,
                       style: TextStyle(fontSize: 12, color: scheme.primary),
                     ),
                   ),
@@ -317,7 +317,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
             if (fixedItems.isNotEmpty) ...[  
               const SizedBox(height: 4),
               Text(
-                "Uncheck items you don't want to add to your inventory.",
+                AppLocalizations.of(context)!.reviewUncheckHint,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -348,7 +348,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
             if (choiceItems.isNotEmpty) ...[  
               if (fixedItems.isNotEmpty) const Divider(height: 20),
               Text(
-                'Equipment Choices',
+                AppLocalizations.of(context)!.reviewEquipmentChoices,
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium
@@ -356,7 +356,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Pick the specific item for each slot.',
+                AppLocalizations.of(context)!.reviewEquipmentChoicesHint,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -697,7 +697,7 @@ class _ToolProficiencySection extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Tool Proficiencies',
+              AppLocalizations.of(context)!.reviewToolProficiencies,
               style: Theme.of(context)
                   .textTheme
                   .labelLarge
@@ -726,7 +726,7 @@ class _ToolProficiencySection extends ConsumerWidget {
             if (slots.isNotEmpty) ...[
               const SizedBox(height: 8),
               Text(
-                'Choose your tool proficiency:',
+                AppLocalizations.of(context)!.reviewChooseToolProficiency,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall
@@ -864,7 +864,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
                 children: [
                   const SizedBox(height: 12),
                   Text(
-                    'Choose one:',
+                    AppLocalizations.of(context)!.reviewChooseOne,
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall
@@ -919,8 +919,8 @@ class _ClassEquipmentSection extends ConsumerWidget {
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 8),
                           ),
-                          hint: const Text('Choose one',
-                              style: TextStyle(fontSize: 13)),
+                          hint: Text(AppLocalizations.of(context)!.stepChooseOne,
+                              style: const TextStyle(fontSize: 13)),
                           items: opts
                               .map((o) => DropdownMenuItem(
                                     value: o,
@@ -1016,7 +1016,7 @@ class _LanguageChoiceSectionState
             ),
             const SizedBox(height: 4),
             Text(
-              'Choose $needed language(s) granted by your race or background.',
+              AppLocalizations.of(context)!.reviewChooseLanguages(needed),
               style: Theme.of(context)
                   .textTheme
                   .bodySmall

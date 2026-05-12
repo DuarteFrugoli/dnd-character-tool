@@ -899,4 +899,109 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get armorSwapButton => 'Сменить доспехи';
+
+  @override
+  String get reviewRowName => 'Имя';
+
+  @override
+  String get reviewUnnamedHero => 'Безымянный герой';
+
+  @override
+  String get reviewRowPlayer => 'Игрок';
+
+  @override
+  String get reviewRowSubclass => 'Подкласс';
+
+  @override
+  String get reviewRowHitDie => 'Хит умереть';
+
+  @override
+  String get reviewRowSavingThrows => 'Спасительные броски';
+
+  @override
+  String get reviewRowSubrace => 'Подраса';
+
+  @override
+  String get reviewRowSpeed => 'Скорость';
+
+  @override
+  String get reviewRowLanguages => 'Языки';
+
+  @override
+  String get reviewRowFeature => 'Особенность';
+
+  @override
+  String get reviewRowFromBackground => 'Из фона';
+
+  @override
+  String get reviewRowClassChoices => 'Выбор класса';
+
+  @override
+  String get reviewRowMaxHp => 'Макс. HP';
+
+  @override
+  String get reviewRowAcUnarmored => 'AC (небронированный)';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return 'AC с $name';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => 'Бонус мастерства';
+
+  @override
+  String get reviewStartingGold => 'Стартовое золото';
+
+  @override
+  String get reviewStartingEquipment => 'Стартовое оборудование';
+
+  @override
+  String get reviewDeselectAll => 'Отменить выбор всех';
+
+  @override
+  String get reviewSelectAll => 'Выбрать все';
+
+  @override
+  String get reviewUncheckHint =>
+      'Снимите флажки с предметов, которые вы не хотите добавлять в свой инвентарь.';
+
+  @override
+  String get reviewEquipmentChoices => 'Выбор оборудования';
+
+  @override
+  String get reviewEquipmentChoicesHint =>
+      'Выберите конкретный предмет для каждого слота.';
+
+  @override
+  String get reviewToolProficiencies => 'Владение инструментами';
+
+  @override
+  String get reviewChooseToolProficiency =>
+      'Выберите уровень владения инструментом:';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return 'Выберите язык(и) ($count), предоставленный вашей расой или происхождением.';
+  }
+
+  @override
+  String get reviewChooseOne => 'Выберите один:';
+
+  @override
+  String get stepTashaRule =>
+      'Необязательное правило Таши — присваивайте баллы ASI любому атрибуту';
+
+  @override
+  String get stepRollDice => 'Бросить кости';
+
+  @override
+  String get stepReroll => 'Переролл';
+
+  @override
+  String get stepRollHint =>
+      'Бросайте бросок, чтобы получить 6 значений (4d6, самое низкое значение)';
+
+  @override
+  String get stepPrimaryAbilities => 'основные способности:';
 }

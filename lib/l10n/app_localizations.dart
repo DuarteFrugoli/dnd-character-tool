@@ -1745,6 +1745,198 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Swap armor'**
   String get armorSwapButton;
+
+  /// Review step: name row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get reviewRowName;
+
+  /// Review step: placeholder when character has no name.
+  ///
+  /// In en, this message translates to:
+  /// **'Unnamed Hero'**
+  String get reviewUnnamedHero;
+
+  /// Review step: player row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Player'**
+  String get reviewRowPlayer;
+
+  /// Review step: subclass row label fallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Subclass'**
+  String get reviewRowSubclass;
+
+  /// Review step: hit die row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Hit Die'**
+  String get reviewRowHitDie;
+
+  /// Review step: saving throws row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving Throws'**
+  String get reviewRowSavingThrows;
+
+  /// Review step: subrace row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Subrace'**
+  String get reviewRowSubrace;
+
+  /// Review step: speed row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get reviewRowSpeed;
+
+  /// Review step: languages row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages'**
+  String get reviewRowLanguages;
+
+  /// Review step: background feature row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature'**
+  String get reviewRowFeature;
+
+  /// Review step: skills from background row label.
+  ///
+  /// In en, this message translates to:
+  /// **'From background'**
+  String get reviewRowFromBackground;
+
+  /// Review step: class skill choices row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Class choices'**
+  String get reviewRowClassChoices;
+
+  /// Review step: max HP row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Max HP'**
+  String get reviewRowMaxHp;
+
+  /// Review step: AC unarmored row label.
+  ///
+  /// In en, this message translates to:
+  /// **'AC (Unarmored)'**
+  String get reviewRowAcUnarmored;
+
+  /// Review step: AC with armor row label.
+  ///
+  /// In en, this message translates to:
+  /// **'AC with {name}'**
+  String reviewRowAcWith(String name);
+
+  /// Review step: proficiency bonus row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Proficiency Bonus'**
+  String get reviewRowProficiencyBonus;
+
+  /// Review step: starting gold row label.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting Gold'**
+  String get reviewStartingGold;
+
+  /// Review step: starting equipment section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting Equipment'**
+  String get reviewStartingEquipment;
+
+  /// Review step: deselect all button.
+  ///
+  /// In en, this message translates to:
+  /// **'Deselect all'**
+  String get reviewDeselectAll;
+
+  /// Review step: select all button.
+  ///
+  /// In en, this message translates to:
+  /// **'Select all'**
+  String get reviewSelectAll;
+
+  /// Review step: hint below starting equipment list.
+  ///
+  /// In en, this message translates to:
+  /// **'Uncheck items you don\'t want to add to your inventory.'**
+  String get reviewUncheckHint;
+
+  /// Review step: equipment choices subsection title.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment Choices'**
+  String get reviewEquipmentChoices;
+
+  /// Review step: equipment choices hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick the specific item for each slot.'**
+  String get reviewEquipmentChoicesHint;
+
+  /// Review step: tool proficiencies section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Tool Proficiencies'**
+  String get reviewToolProficiencies;
+
+  /// Review step: choose tool proficiency label.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your tool proficiency:'**
+  String get reviewChooseToolProficiency;
+
+  /// Review step: choose languages hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} language(s) granted by your race or background.'**
+  String reviewChooseLanguages(int count);
+
+  /// Review step: choose one option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose one:'**
+  String get reviewChooseOne;
+
+  /// Attributes step: Tasha's optional rule subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasha\'s optional rule — assign ASI points to any attribute'**
+  String get stepTashaRule;
+
+  /// Attributes step: roll dice button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll dice'**
+  String get stepRollDice;
+
+  /// Attributes step: reroll button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Reroll'**
+  String get stepReroll;
+
+  /// Attributes step: roll hint when no values rolled yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll to generate 6 values (4d6, drop lowest)'**
+  String get stepRollHint;
+
+  /// Attributes step: class reminder primary abilities label.
+  ///
+  /// In en, this message translates to:
+  /// **'primary abilities: '**
+  String get stepPrimaryAbilities;
 }
 
 class _AppLocalizationsDelegate

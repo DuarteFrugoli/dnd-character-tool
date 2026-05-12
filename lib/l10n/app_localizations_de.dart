@@ -890,14 +890,119 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String armorSwapAcNow(int ac) {
-    return 'RK jetzt: $ac';
+    return 'AC jetzt: $ac';
   }
 
   @override
   String armorSwapAcAfter(int ac) {
-    return 'RK danach: $ac';
+    return 'AC nach: $ac';
   }
 
   @override
-  String get armorSwapButton => 'Rüstung wechseln';
+  String get armorSwapButton => 'Rüstung tauschen';
+
+  @override
+  String get reviewRowName => 'Name';
+
+  @override
+  String get reviewUnnamedHero => 'Unbenannter Held';
+
+  @override
+  String get reviewRowPlayer => 'Spieler';
+
+  @override
+  String get reviewRowSubclass => 'Unterklasse';
+
+  @override
+  String get reviewRowHitDie => 'Klicken Sie auf „Sterben“.';
+
+  @override
+  String get reviewRowSavingThrows => 'Rettungswürfe';
+
+  @override
+  String get reviewRowSubrace => 'Unterrasse';
+
+  @override
+  String get reviewRowSpeed => 'Geschwindigkeit';
+
+  @override
+  String get reviewRowLanguages => 'Sprachen';
+
+  @override
+  String get reviewRowFeature => 'Besonderheit';
+
+  @override
+  String get reviewRowFromBackground => 'Aus dem Hintergrund';
+
+  @override
+  String get reviewRowClassChoices => 'Klassenauswahl';
+
+  @override
+  String get reviewRowMaxHp => 'Maximale HP';
+
+  @override
+  String get reviewRowAcUnarmored => 'AC (ungepanzert)';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return 'Wechselstrom mit $name';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => 'Kompetenzbonus';
+
+  @override
+  String get reviewStartingGold => 'Startgold';
+
+  @override
+  String get reviewStartingEquipment => 'Startausrüstung';
+
+  @override
+  String get reviewDeselectAll => 'Alle abwählen';
+
+  @override
+  String get reviewSelectAll => 'Alles auswählen';
+
+  @override
+  String get reviewUncheckHint =>
+      'Deaktivieren Sie die Artikel, die Sie nicht zu Ihrem Inventar hinzufügen möchten.';
+
+  @override
+  String get reviewEquipmentChoices => 'Ausrüstungsauswahl';
+
+  @override
+  String get reviewEquipmentChoicesHint =>
+      'Wählen Sie den spezifischen Artikel für jeden Slot aus.';
+
+  @override
+  String get reviewToolProficiencies => 'Werkzeugkenntnisse';
+
+  @override
+  String get reviewChooseToolProficiency =>
+      'Wählen Sie Ihre Werkzeugkompetenz:';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return 'Wählen Sie die $count-Sprache(n), die Ihrer Rasse oder Ihrem Hintergrund entspricht.';
+  }
+
+  @override
+  String get reviewChooseOne => 'Wählen Sie eines aus:';
+
+  @override
+  String get stepTashaRule =>
+      'Tashas optionale Regel: Weisen Sie jedem Attribut ASI-Punkte zu';
+
+  @override
+  String get stepRollDice => 'Würfeln';
+
+  @override
+  String get stepReroll => 'Wiederholen';
+
+  @override
+  String get stepRollHint =>
+      'Würfeln, um 6 Werte zu erzeugen (4W6, niedrigster Wert)';
+
+  @override
+  String get stepPrimaryAbilities => 'Hauptfähigkeiten:';
 }

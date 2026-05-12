@@ -885,4 +885,104 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get armorSwapButton => '更换护甲';
+
+  @override
+  String get reviewRowName => '姓名';
+
+  @override
+  String get reviewUnnamedHero => '无名英雄';
+
+  @override
+  String get reviewRowPlayer => '玩家';
+
+  @override
+  String get reviewRowSubclass => '子类';
+
+  @override
+  String get reviewRowHitDie => '击中骰子';
+
+  @override
+  String get reviewRowSavingThrows => '豁免检定';
+
+  @override
+  String get reviewRowSubrace => '亚种';
+
+  @override
+  String get reviewRowSpeed => '速度';
+
+  @override
+  String get reviewRowLanguages => '语言';
+
+  @override
+  String get reviewRowFeature => '特征';
+
+  @override
+  String get reviewRowFromBackground => '从背景来看';
+
+  @override
+  String get reviewRowClassChoices => '班级选择';
+
+  @override
+  String get reviewRowMaxHp => '最大生命值';
+
+  @override
+  String get reviewRowAcUnarmored => '交流（非装甲）';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return '与 $name 的交流';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => '熟练度加成';
+
+  @override
+  String get reviewStartingGold => '起始黄金';
+
+  @override
+  String get reviewStartingEquipment => '启动设备';
+
+  @override
+  String get reviewDeselectAll => '取消全选';
+
+  @override
+  String get reviewSelectAll => '选择全部';
+
+  @override
+  String get reviewUncheckHint => '取消选中您不想添加到库存中的商品。';
+
+  @override
+  String get reviewEquipmentChoices => '设备选择';
+
+  @override
+  String get reviewEquipmentChoicesHint => '为每个插槽选择特定的项目。';
+
+  @override
+  String get reviewToolProficiencies => '工具熟练程度';
+
+  @override
+  String get reviewChooseToolProficiency => '选择您的工具熟练程度：';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return '选择您的种族或背景授予的 $count 种语言。';
+  }
+
+  @override
+  String get reviewChooseOne => '选择一项：';
+
+  @override
+  String get stepTashaRule => 'Tasha 的可选规则 — 将 ASI 点分配给任何属性';
+
+  @override
+  String get stepRollDice => '掷骰子';
+
+  @override
+  String get stepReroll => '重新滚动';
+
+  @override
+  String get stepRollHint => '滚动生成 6 个值（4d6，降到最低）';
+
+  @override
+  String get stepPrimaryAbilities => '主要能力：';
 }

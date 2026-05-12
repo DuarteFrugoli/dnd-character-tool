@@ -880,14 +880,114 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String armorSwapAcNow(int ac) {
-    return 'AC今: $ac';
+    return '現在AC: $ac';
   }
 
   @override
   String armorSwapAcAfter(int ac) {
-    return 'AC後: $ac';
+    return 'AC後：$ac';
   }
 
   @override
-  String get armorSwapButton => '防具を交換';
+  String get armorSwapButton => 'アーマーを交換する';
+
+  @override
+  String get reviewRowName => '名前';
+
+  @override
+  String get reviewUnnamedHero => '名前のない英雄';
+
+  @override
+  String get reviewRowPlayer => 'プレーヤー';
+
+  @override
+  String get reviewRowSubclass => 'サブクラス';
+
+  @override
+  String get reviewRowHitDie => 'ヒットダイ';
+
+  @override
+  String get reviewRowSavingThrows => 'セービングスロー';
+
+  @override
+  String get reviewRowSubrace => 'サブレース';
+
+  @override
+  String get reviewRowSpeed => 'スピード';
+
+  @override
+  String get reviewRowLanguages => '言語';
+
+  @override
+  String get reviewRowFeature => '特徴';
+
+  @override
+  String get reviewRowFromBackground => '背景から';
+
+  @override
+  String get reviewRowClassChoices => 'クラスの選択';
+
+  @override
+  String get reviewRowMaxHp => '最大HP';
+
+  @override
+  String get reviewRowAcUnarmored => 'AC (非装甲)';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return '$nameを搭載したAC';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => '熟練度ボーナス';
+
+  @override
+  String get reviewStartingGold => 'スターティングゴールド';
+
+  @override
+  String get reviewStartingEquipment => '始動装置';
+
+  @override
+  String get reviewDeselectAll => 'すべての選択を解除します';
+
+  @override
+  String get reviewSelectAll => 'すべて選択';
+
+  @override
+  String get reviewUncheckHint => 'インベントリに追加したくないアイテムのチェックを外します。';
+
+  @override
+  String get reviewEquipmentChoices => '装備の選択';
+
+  @override
+  String get reviewEquipmentChoicesHint => '各スロットに特定のアイテムを選択します。';
+
+  @override
+  String get reviewToolProficiencies => 'ツールの習熟度';
+
+  @override
+  String get reviewChooseToolProficiency => 'ツールの習熟度を選択してください:';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return '人種または背景によって許可された $count 言語を選択してください。';
+  }
+
+  @override
+  String get reviewChooseOne => '1 つ選択してください:';
+
+  @override
+  String get stepTashaRule => 'Tasha のオプションのルール — ASI ポイントを任意の属性に割り当てる';
+
+  @override
+  String get stepRollDice => 'サイコロを振る';
+
+  @override
+  String get stepReroll => 'リセマラ';
+
+  @override
+  String get stepRollHint => 'ロールして 6 つの値を生成します (4d6、最低値をドロップ)';
+
+  @override
+  String get stepPrimaryAbilities => '主な能力:';
 }

@@ -900,4 +900,108 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get armorSwapButton => 'Trocar armadura';
+
+  @override
+  String get reviewRowName => 'Nome';
+
+  @override
+  String get reviewUnnamedHero => 'Herói Sem Nome';
+
+  @override
+  String get reviewRowPlayer => 'Jogador';
+
+  @override
+  String get reviewRowSubclass => 'Subclasse';
+
+  @override
+  String get reviewRowHitDie => 'Dado de Vida';
+
+  @override
+  String get reviewRowSavingThrows => 'Resistências';
+
+  @override
+  String get reviewRowSubrace => 'Subraça';
+
+  @override
+  String get reviewRowSpeed => 'Movimento';
+
+  @override
+  String get reviewRowLanguages => 'Idiomas';
+
+  @override
+  String get reviewRowFeature => 'Habilidade';
+
+  @override
+  String get reviewRowFromBackground => 'Do antecedente';
+
+  @override
+  String get reviewRowClassChoices => 'Escolhas da classe';
+
+  @override
+  String get reviewRowMaxHp => 'PV Máx.';
+
+  @override
+  String get reviewRowAcUnarmored => 'CA (Sem armadura)';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return 'CA com $name';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => 'Bônus de Proficiência';
+
+  @override
+  String get reviewStartingGold => 'Ouro Inicial';
+
+  @override
+  String get reviewStartingEquipment => 'Equipamento Inicial';
+
+  @override
+  String get reviewDeselectAll => 'Desmarcar todos';
+
+  @override
+  String get reviewSelectAll => 'Marcar todos';
+
+  @override
+  String get reviewUncheckHint =>
+      'Desmarque os itens que não quer adicionar ao inventário.';
+
+  @override
+  String get reviewEquipmentChoices => 'Escolhas de Equipamento';
+
+  @override
+  String get reviewEquipmentChoicesHint =>
+      'Escolha o item específico para cada vaga.';
+
+  @override
+  String get reviewToolProficiencies => 'Proficiências em Ferramentas';
+
+  @override
+  String get reviewChooseToolProficiency =>
+      'Escolha sua proficiência em ferramenta:';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return 'Escolha $count idioma(s) concedido(s) pela sua raça ou antecedente.';
+  }
+
+  @override
+  String get reviewChooseOne => 'Escolha uma opção:';
+
+  @override
+  String get stepTashaRule =>
+      'Regra opcional de Tasha — distribua pontos de ATR em qualquer atributo';
+
+  @override
+  String get stepRollDice => 'Rolar dados';
+
+  @override
+  String get stepReroll => 'Rolar novamente';
+
+  @override
+  String get stepRollHint => 'Role para gerar 6 valores (4d6, menor excluído)';
+
+  @override
+  String get stepPrimaryAbilities => 'habilidades primárias: ';
 }

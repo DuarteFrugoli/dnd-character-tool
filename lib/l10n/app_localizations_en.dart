@@ -897,4 +897,107 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get armorSwapButton => 'Swap armor';
+
+  @override
+  String get reviewRowName => 'Name';
+
+  @override
+  String get reviewUnnamedHero => 'Unnamed Hero';
+
+  @override
+  String get reviewRowPlayer => 'Player';
+
+  @override
+  String get reviewRowSubclass => 'Subclass';
+
+  @override
+  String get reviewRowHitDie => 'Hit Die';
+
+  @override
+  String get reviewRowSavingThrows => 'Saving Throws';
+
+  @override
+  String get reviewRowSubrace => 'Subrace';
+
+  @override
+  String get reviewRowSpeed => 'Speed';
+
+  @override
+  String get reviewRowLanguages => 'Languages';
+
+  @override
+  String get reviewRowFeature => 'Feature';
+
+  @override
+  String get reviewRowFromBackground => 'From background';
+
+  @override
+  String get reviewRowClassChoices => 'Class choices';
+
+  @override
+  String get reviewRowMaxHp => 'Max HP';
+
+  @override
+  String get reviewRowAcUnarmored => 'AC (Unarmored)';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return 'AC with $name';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => 'Proficiency Bonus';
+
+  @override
+  String get reviewStartingGold => 'Starting Gold';
+
+  @override
+  String get reviewStartingEquipment => 'Starting Equipment';
+
+  @override
+  String get reviewDeselectAll => 'Deselect all';
+
+  @override
+  String get reviewSelectAll => 'Select all';
+
+  @override
+  String get reviewUncheckHint =>
+      'Uncheck items you don\'t want to add to your inventory.';
+
+  @override
+  String get reviewEquipmentChoices => 'Equipment Choices';
+
+  @override
+  String get reviewEquipmentChoicesHint =>
+      'Pick the specific item for each slot.';
+
+  @override
+  String get reviewToolProficiencies => 'Tool Proficiencies';
+
+  @override
+  String get reviewChooseToolProficiency => 'Choose your tool proficiency:';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return 'Choose $count language(s) granted by your race or background.';
+  }
+
+  @override
+  String get reviewChooseOne => 'Choose one:';
+
+  @override
+  String get stepTashaRule =>
+      'Tasha\'s optional rule — assign ASI points to any attribute';
+
+  @override
+  String get stepRollDice => 'Roll dice';
+
+  @override
+  String get stepReroll => 'Reroll';
+
+  @override
+  String get stepRollHint => 'Roll to generate 6 values (4d6, drop lowest)';
+
+  @override
+  String get stepPrimaryAbilities => 'primary abilities: ';
 }

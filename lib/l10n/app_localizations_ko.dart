@@ -881,14 +881,114 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String armorSwapAcNow(int ac) {
-    return 'AC 현재: $ac';
+    return '현재 AC: $ac';
   }
 
   @override
   String armorSwapAcAfter(int ac) {
-    return 'AC 이후: $ac';
+    return '이후 AC: $ac';
   }
 
   @override
-  String get armorSwapButton => '방어구 교체';
+  String get armorSwapButton => '갑옷 교환';
+
+  @override
+  String get reviewRowName => '이름';
+
+  @override
+  String get reviewUnnamedHero => '이름 없는 영웅';
+
+  @override
+  String get reviewRowPlayer => '플레이어';
+
+  @override
+  String get reviewRowSubclass => '아강';
+
+  @override
+  String get reviewRowHitDie => '히트 다이';
+
+  @override
+  String get reviewRowSavingThrows => '던지기 저장';
+
+  @override
+  String get reviewRowSubrace => '서브레이스';
+
+  @override
+  String get reviewRowSpeed => '속도';
+
+  @override
+  String get reviewRowLanguages => '언어';
+
+  @override
+  String get reviewRowFeature => '특징';
+
+  @override
+  String get reviewRowFromBackground => '배경에서';
+
+  @override
+  String get reviewRowClassChoices => '클래스 선택';
+
+  @override
+  String get reviewRowMaxHp => '최대 HP';
+
+  @override
+  String get reviewRowAcUnarmored => 'AC(비무장)';
+
+  @override
+  String reviewRowAcWith(String name) {
+    return '$name를 갖춘 AC';
+  }
+
+  @override
+  String get reviewRowProficiencyBonus => '숙련도 보너스';
+
+  @override
+  String get reviewStartingGold => '골드 시작';
+
+  @override
+  String get reviewStartingEquipment => '시동 장비';
+
+  @override
+  String get reviewDeselectAll => '모두 선택 취소';
+
+  @override
+  String get reviewSelectAll => '모두 선택';
+
+  @override
+  String get reviewUncheckHint => '인벤토리에 추가하고 싶지 않은 항목을 선택 취소하세요.';
+
+  @override
+  String get reviewEquipmentChoices => '장비 선택';
+
+  @override
+  String get reviewEquipmentChoicesHint => '각 슬롯에 대한 특정 항목을 선택하십시오.';
+
+  @override
+  String get reviewToolProficiencies => '도구 숙련도';
+
+  @override
+  String get reviewChooseToolProficiency => '도구 숙련도를 선택하세요.';
+
+  @override
+  String reviewChooseLanguages(int count) {
+    return '인종이나 배경에 따라 부여된 $count 언어를 선택하세요.';
+  }
+
+  @override
+  String get reviewChooseOne => '하나를 선택하세요:';
+
+  @override
+  String get stepTashaRule => 'Tasha의 선택적 규칙 - 모든 속성에 ASI 포인트 할당';
+
+  @override
+  String get stepRollDice => '주사위 굴리기';
+
+  @override
+  String get stepReroll => '재굴림';
+
+  @override
+  String get stepRollHint => '굴려서 6개의 값을 생성합니다(4d6, 가장 낮은 값으로 떨어짐).';
+
+  @override
+  String get stepPrimaryAbilities => '주요 능력:';
 }

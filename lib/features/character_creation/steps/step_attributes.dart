@@ -113,8 +113,8 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(AppLocalizations.of(context)!.stepDistributeRacialBonuses),
-            subtitle: const Text(
-                'Tasha\'s optional rule — assign ASI points to any attribute'),
+            subtitle: Text(
+                AppLocalizations.of(context)!.stepTashaRule),
             value: freeAsi,
             onChanged: (v) {
               ref.read(characterDraftProvider.notifier).setFreeAsi(v);
@@ -269,7 +269,8 @@ class _ClassReminder extends StatelessWidget {
                     text: '${cls.name} ',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  const TextSpan(text: '— primary abilities: '),
+                  const TextSpan(text: '— '),
+                  TextSpan(text: AppLocalizations.of(context)!.stepPrimaryAbilities),
                   TextSpan(
                     text: cls.primaryAbility.join(', '),
                     style: TextStyle(
@@ -316,7 +317,7 @@ class _RolledDiceSection extends StatelessWidget {
             FilledButton.icon(
               onPressed: onRoll,
               icon: const Icon(Icons.casino_outlined, size: 18),
-              label: Text(rolledValues.isEmpty ? 'Roll dice' : 'Reroll'),
+              label: Text(rolledValues.isEmpty ? AppLocalizations.of(context)!.stepRollDice : AppLocalizations.of(context)!.stepReroll),
             ),
             if (rolledValues.isNotEmpty) ...[
               const SizedBox(width: 12),
@@ -350,7 +351,7 @@ class _RolledDiceSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 6),
             child: Text(
-              'Roll to generate 6 values (4d6, drop lowest)',
+              AppLocalizations.of(context)!.stepRollHint,
               style: Theme.of(context)
                   .textTheme
                   .bodySmall

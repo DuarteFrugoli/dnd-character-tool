@@ -152,6 +152,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   }
 
   Widget _buildLoaded(Character character) {
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     return PopScope(
       canPop: !_editMode,
       onPopInvokedWithResult: (didPop, _) {
@@ -189,9 +190,9 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             ),
             Text(
-              '${character.characterClass}${character.subclass != null ? ' (${character.subclass})' : ''}  Â·  ${character.race}'
+              '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${character.subclass})' : ''}  ·  ${i18n.raceName(character.race)}'
               '${character.subrace != null ? ' (${character.subrace})' : ''}'
-              '  Â·  Lv ${character.level}',
+              '  ·  Lv ${character.level}',
               maxLines: 2,
               overflow: TextOverflow.visible,
               softWrap: true,

@@ -224,13 +224,22 @@ class _SavingThrowsEditorState extends State<_SavingThrowsEditor> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final labels = {
+      'Strength': l10n.abilityStr,
+      'Dexterity': l10n.abilityDex,
+      'Constitution': l10n.abilityCon,
+      'Intelligence': l10n.abilityInt,
+      'Wisdom': l10n.abilityWis,
+      'Charisma': l10n.abilityCha,
+    };
     return Wrap(
       spacing: 8,
       runSpacing: 4,
       children: _kAllAbilities.map((ability) {
         final on = _selected.contains(ability);
         return FilterChip(
-          label: Text(ability.substring(0, 3)),
+          label: Text(labels[ability] ?? ability.substring(0, 3)),
           selected: on,
           onSelected: (_) => _toggle(ability),
         );

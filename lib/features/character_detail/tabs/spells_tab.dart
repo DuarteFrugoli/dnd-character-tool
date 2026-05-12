@@ -92,12 +92,12 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
               ),
               const SizedBox(height: 16),
               Text(
-                'No Spellcasting',
+                AppLocalizations.of(context)!.spellsNoSpellcasting,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 8),
               Text(
-                'This class has no spellcasting features.',
+                AppLocalizations.of(context)!.spellsNoSpellcastingDesc,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Theme.of(context).colorScheme.outline,
@@ -207,7 +207,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                 // ── Spell Slots ─────────────────────────────────────────────
                 if (hasSlots) ...[
                   Text(
-                    'Spell Slots',
+                    AppLocalizations.of(context)!.spellsSlots,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: 8),
@@ -357,7 +357,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                   const SizedBox(height: 24),
                   Center(
                     child: Text(
-                      'No spells added yet.\nTap + to browse spells.',
+                      AppLocalizations.of(context)!.spellsEmpty,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             color: Theme.of(context).colorScheme.outline,
@@ -497,6 +497,7 @@ class _SpellcastingBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final ability = engine.spellcastingAbility.toUpperCase();
     final modStr = engine.abilityModifier >= 0
@@ -511,7 +512,7 @@ class _SpellcastingBanner extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Spellcasting · $ability ($modStr)',
+              '${l10n.spellsSpellcasting} · $ability ($modStr)',
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: scheme.primary,
@@ -522,23 +523,23 @@ class _SpellcastingBanner extends StatelessWidget {
               spacing: 24,
               runSpacing: 8,
               children: [
-                _BannerStat('Attack', engine.spellAttackFormatted),
-                _BannerStat('Save DC', '${engine.saveDC}'),
+                _BannerStat(l10n.spellsAttack, engine.spellAttackFormatted),
+                _BannerStat(l10n.spellsSaveDC, '${engine.saveDC}'),
                 if (engine.maxCantrips > 0)
                   _BannerStat(
-                    'Cantrips',
+                    l10n.spellsCantrips,
                     '$cantripCount / ${engine.maxCantrips}',
                     warning: cantripCount > engine.maxCantrips,
                   ),
                 if (preparedCount != null && maxPrepared != null)
                   _BannerStat(
-                    'Prepared',
+                    l10n.spellsPrepared,
                     '$preparedCount / $maxPrepared',
                     warning: preparedCount! > maxPrepared!,
                   )
                 else if (knownCount != null)
                   _BannerStat(
-                    'Known',
+                    l10n.spellsKnown,
                     maxKnown != null
                         ? '$knownCount / $maxKnown'
                         : '$knownCount',
@@ -595,7 +596,7 @@ class _SpellLevelHeader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 4, bottom: 2),
       child: Text(
-        level == 0 ? 'Cantrips' : 'Level $level',
+        level == 0 ? AppLocalizations.of(context)!.spellsCantrips : AppLocalizations.of(context)!.spellsLevelN(level),
         style: Theme.of(context)
             .textTheme
             .titleSmall
@@ -945,6 +946,7 @@ class _SpellSlotRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final remaining = total - used;
 
@@ -955,7 +957,7 @@ class _SpellSlotRow extends StatelessWidget {
           SizedBox(
             width: 56,
             child: Text(
-              'Lvl $level',
+              l10n.spellsSlotLevel(level),
               style: Theme.of(context).textTheme.labelMedium,
             ),
           ),

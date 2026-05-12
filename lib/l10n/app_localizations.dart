@@ -1213,6 +1213,282 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select a tool…'**
   String get stepSelectTool;
+
+  /// Armor Class stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'AC'**
+  String get statAC;
+
+  /// Armor stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'Armor'**
+  String get statArmor;
+
+  /// Armor summary when no armor equipped.
+  ///
+  /// In en, this message translates to:
+  /// **'No armor'**
+  String get statNoArmor;
+
+  /// Armor summary when only shield equipped.
+  ///
+  /// In en, this message translates to:
+  /// **'No armor + Shield'**
+  String get statNoArmorShield;
+
+  /// Shield suffix appended to armor name.
+  ///
+  /// In en, this message translates to:
+  /// **' + Shield'**
+  String get statShieldSuffix;
+
+  /// Speed stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get statSpeed;
+
+  /// Initiative stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'Initiative'**
+  String get statInitiative;
+
+  /// Proficiency bonus stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'Prof Bonus'**
+  String get statProfBonus;
+
+  /// Passive perception stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'Passive Perc'**
+  String get statPassivePerc;
+
+  /// Status label when HP reaches 0.
+  ///
+  /// In en, this message translates to:
+  /// **'Unconscious / Dying'**
+  String get statUnconsciousDying;
+
+  /// Temp HP button tooltip when none.
+  ///
+  /// In en, this message translates to:
+  /// **'Add temp HP'**
+  String get tooltipAddTempHp;
+
+  /// Temp HP button tooltip when some exists.
+  ///
+  /// In en, this message translates to:
+  /// **'Change temp HP'**
+  String get tooltipChangeTempHp;
+
+  /// Strength abbreviation.
+  ///
+  /// In en, this message translates to:
+  /// **'STR'**
+  String get abilityStr;
+
+  /// Dexterity abbreviation.
+  ///
+  /// In en, this message translates to:
+  /// **'DEX'**
+  String get abilityDex;
+
+  /// Constitution abbreviation.
+  ///
+  /// In en, this message translates to:
+  /// **'CON'**
+  String get abilityCon;
+
+  /// Intelligence abbreviation.
+  ///
+  /// In en, this message translates to:
+  /// **'INT'**
+  String get abilityInt;
+
+  /// Wisdom abbreviation.
+  ///
+  /// In en, this message translates to:
+  /// **'WIS'**
+  String get abilityWis;
+
+  /// Charisma abbreviation.
+  ///
+  /// In en, this message translates to:
+  /// **'CHA'**
+  String get abilityCha;
+
+  /// Features tab racial traits section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Racial Traits — {name}'**
+  String featuresSectionRacialTraits(String name);
+
+  /// Features tab background feature section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Background Feature — {name}'**
+  String featuresSectionBackground(String name);
+
+  /// Features tab class features section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Class Features — {name}'**
+  String featuresSectionClass(String name);
+
+  /// Features tab subclass features section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Subclass Features — {name}'**
+  String featuresSectionSubclass(String name);
+
+  /// Features tab tool proficiencies section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Tool Proficiencies'**
+  String get featuresSectionTools;
+
+  /// Features tab extra features section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra Features'**
+  String get featuresSectionExtra;
+
+  /// Empty state headline when class has no spellcasting.
+  ///
+  /// In en, this message translates to:
+  /// **'No Spellcasting'**
+  String get spellsNoSpellcasting;
+
+  /// Empty state body when class has no spellcasting.
+  ///
+  /// In en, this message translates to:
+  /// **'This class has no spellcasting features.'**
+  String get spellsNoSpellcastingDesc;
+
+  /// Spell slots section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Spell Slots'**
+  String get spellsSlots;
+
+  /// Spellcasting banner title word.
+  ///
+  /// In en, this message translates to:
+  /// **'Spellcasting'**
+  String get spellsSpellcasting;
+
+  /// Spell attack banner stat label.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack'**
+  String get spellsAttack;
+
+  /// Save DC banner stat label.
+  ///
+  /// In en, this message translates to:
+  /// **'Save DC'**
+  String get spellsSaveDC;
+
+  /// Cantrips label (banner + level header).
+  ///
+  /// In en, this message translates to:
+  /// **'Cantrips'**
+  String get spellsCantrips;
+
+  /// Prepared spells banner stat label.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepared'**
+  String get spellsPrepared;
+
+  /// Known spells banner stat label.
+  ///
+  /// In en, this message translates to:
+  /// **'Known'**
+  String get spellsKnown;
+
+  /// Empty state when no spells added and not prepare-all.
+  ///
+  /// In en, this message translates to:
+  /// **'No spells added yet.\nTap + to browse spells.'**
+  String get spellsEmpty;
+
+  /// Spell slot row level label.
+  ///
+  /// In en, this message translates to:
+  /// **'Lvl {level}'**
+  String spellsSlotLevel(int level);
+
+  /// Spell list level group header.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}'**
+  String spellsLevelN(int level);
+
+  /// Currency card section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency'**
+  String get inventoryCurrency;
+
+  /// Carried items section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Carried ({count})'**
+  String inventoryCarriedSection(int count);
+
+  /// Inventory section title when all sections empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventory'**
+  String get inventoryInventory;
+
+  /// Inventory empty state text.
+  ///
+  /// In en, this message translates to:
+  /// **'No items yet. Tap + to add.'**
+  String get inventoryEmpty;
+
+  /// Ammunition section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Ammunition'**
+  String get inventoryAmmunition;
+
+  /// Copper coin label.
+  ///
+  /// In en, this message translates to:
+  /// **'Copper'**
+  String get coinCopper;
+
+  /// Silver coin label.
+  ///
+  /// In en, this message translates to:
+  /// **'Silver'**
+  String get coinSilver;
+
+  /// Electrum coin label.
+  ///
+  /// In en, this message translates to:
+  /// **'Electrum'**
+  String get coinElectrum;
+
+  /// Gold coin label.
+  ///
+  /// In en, this message translates to:
+  /// **'Gold'**
+  String get coinGold;
+
+  /// Platinum coin label.
+  ///
+  /// In en, this message translates to:
+  /// **'Platinum'**
+  String get coinPlatinum;
 }
 
 class _AppLocalizationsDelegate

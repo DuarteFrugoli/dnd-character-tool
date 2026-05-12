@@ -612,4 +612,157 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get stepSelectTool => 'Select a tool…';
+
+  @override
+  String get statAC => 'AC';
+
+  @override
+  String get statArmor => 'Armor';
+
+  @override
+  String get statNoArmor => 'No armor';
+
+  @override
+  String get statNoArmorShield => 'No armor + Shield';
+
+  @override
+  String get statShieldSuffix => ' + Shield';
+
+  @override
+  String get statSpeed => 'Speed';
+
+  @override
+  String get statInitiative => 'Initiative';
+
+  @override
+  String get statProfBonus => 'Prof Bonus';
+
+  @override
+  String get statPassivePerc => 'Passive Perc';
+
+  @override
+  String get statUnconsciousDying => 'Unconscious / Dying';
+
+  @override
+  String get tooltipAddTempHp => 'Add temp HP';
+
+  @override
+  String get tooltipChangeTempHp => 'Change temp HP';
+
+  @override
+  String get abilityStr => 'STR';
+
+  @override
+  String get abilityDex => 'DEX';
+
+  @override
+  String get abilityCon => 'CON';
+
+  @override
+  String get abilityInt => 'INT';
+
+  @override
+  String get abilityWis => 'WIS';
+
+  @override
+  String get abilityCha => 'CHA';
+
+  @override
+  String featuresSectionRacialTraits(String name) {
+    return 'Racial Traits — $name';
+  }
+
+  @override
+  String featuresSectionBackground(String name) {
+    return 'Background Feature — $name';
+  }
+
+  @override
+  String featuresSectionClass(String name) {
+    return 'Class Features — $name';
+  }
+
+  @override
+  String featuresSectionSubclass(String name) {
+    return 'Subclass Features — $name';
+  }
+
+  @override
+  String get featuresSectionTools => 'Tool Proficiencies';
+
+  @override
+  String get featuresSectionExtra => 'Extra Features';
+
+  @override
+  String get spellsNoSpellcasting => 'No Spellcasting';
+
+  @override
+  String get spellsNoSpellcastingDesc =>
+      'This class has no spellcasting features.';
+
+  @override
+  String get spellsSlots => 'Spell Slots';
+
+  @override
+  String get spellsSpellcasting => 'Spellcasting';
+
+  @override
+  String get spellsAttack => 'Attack';
+
+  @override
+  String get spellsSaveDC => 'Save DC';
+
+  @override
+  String get spellsCantrips => 'Cantrips';
+
+  @override
+  String get spellsPrepared => 'Prepared';
+
+  @override
+  String get spellsKnown => 'Known';
+
+  @override
+  String get spellsEmpty => 'No spells added yet.\nTap + to browse spells.';
+
+  @override
+  String spellsSlotLevel(int level) {
+    return 'Lvl $level';
+  }
+
+  @override
+  String spellsLevelN(int level) {
+    return 'Level $level';
+  }
+
+  @override
+  String get inventoryCurrency => 'Currency';
+
+  @override
+  String inventoryCarriedSection(int count) {
+    return 'Carried ($count)';
+  }
+
+  @override
+  String get inventoryInventory => 'Inventory';
+
+  @override
+  String get inventoryEmpty => 'No items yet. Tap + to add.';
+
+  @override
+  String get inventoryAmmunition => 'Ammunition';
+
+  @override
+  String get coinCopper => 'Copper';
+
+  @override
+  String get coinSilver => 'Silver';
+
+  @override
+  String get coinElectrum => 'Electrum';
+
+  @override
+  String get coinGold => 'Gold';
+
+  @override
+  String get coinPlatinum => 'Platinum';
 }

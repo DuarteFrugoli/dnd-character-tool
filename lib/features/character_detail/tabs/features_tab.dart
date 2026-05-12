@@ -247,6 +247,7 @@ class _RacialTraitsSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final allTraits = [...raceTraits, ...subraceTraits];
     if (allTraits.isEmpty) return const SizedBox.shrink();
@@ -258,7 +259,7 @@ class _RacialTraitsSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Racial Traits — $title',
+          l10n.featuresSectionRacialTraits(title),
           style: Theme.of(context)
               .textTheme
               .titleMedium
@@ -387,11 +388,12 @@ class _BackgroundFeatureSection extends ConsumerWidget {
         ],
       ),
     );
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Background Feature — $backgroundName',
+          l10n.featuresSectionBackground(backgroundName),
           style: Theme.of(context)
               .textTheme
               .titleMedium
@@ -412,11 +414,12 @@ class _ToolProficienciesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Tool Proficiencies',
+          l10n.featuresSectionTools,
           style: Theme.of(context)
               .textTheme
               .titleMedium
@@ -462,11 +465,12 @@ class _ExtraFeaturesSection extends ConsumerWidget {
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
 
+    final l10n2 = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Extra Features',
+          l10n2.featuresSectionExtra,
           style: Theme.of(context)
               .textTheme
               .titleMedium
@@ -593,6 +597,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
 
     if (features.isEmpty) {
@@ -600,14 +605,14 @@ class _ClassFeaturesSection extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Class Features — $className',
+            l10n.featuresSectionClass(className),
             style: Theme.of(context)
                 .textTheme
                 .titleMedium
                 ?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
-          Text(AppLocalizations.of(context)!.featuresNoneAvailable),
+          Text(l10n.featuresNoneAvailable),
         ],
       );
     }
@@ -616,7 +621,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Class Features — $className',
+          l10n.featuresSectionClass(className),
           style: Theme.of(context)
               .textTheme
               .titleMedium
@@ -715,12 +720,13 @@ class _SubclassFeaturesSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Subclass Features — $subclassName',
+          l10n.featuresSectionSubclass(subclassName),
           style: Theme.of(context)
               .textTheme
               .titleMedium

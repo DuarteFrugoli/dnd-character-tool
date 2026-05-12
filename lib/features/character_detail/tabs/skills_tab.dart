@@ -43,6 +43,15 @@ class _SkillsTab extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
+    final abilityLabels = {
+      'Strength': l10n.abilityStr,
+      'Dexterity': l10n.abilityDex,
+      'Constitution': l10n.abilityCon,
+      'Intelligence': l10n.abilityInt,
+      'Wisdom': l10n.abilityWis,
+      'Charisma': l10n.abilityCha,
+    };
     final scheme = Theme.of(context).colorScheme;
     final profSet =
         character.skillProficiencies.map((s) => s.toLowerCase()).toSet();
@@ -103,7 +112,7 @@ class _SkillsTab extends ConsumerWidget {
                 ),
                 title: Text(i18n.skillName(skillName)),
                 subtitle: Text(
-                  ability.substring(0, 3).toUpperCase(),
+                  abilityLabels[ability] ?? ability.substring(0, 3).toUpperCase(),
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
                 trailing: isEditing

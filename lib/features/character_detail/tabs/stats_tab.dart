@@ -412,6 +412,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final character = widget.character;
     final isEditing = widget.isEditing;
     final hp = character.hitPoints;
@@ -427,8 +428,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     final usingShield =
         equippedArmor.any((e) => e.properties?['isShield'] == true);
     final armorSummary = bodyArmor.isEmpty
-        ? (usingShield ? 'No armor + Shield' : 'No armor')
-        : '${bodyArmor.first.name}${usingShield ? ' + Shield' : ''}';
+        ? (usingShield ? l10n.statNoArmorShield : l10n.statNoArmor)
+        : '${bodyArmor.first.name}${usingShield ? l10n.statShieldSuffix : ''}';
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -437,7 +438,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         children: [
           // ── Identity ──────────────────────────────────────────────────────
           _Section(
-          title: 'Identity',
+          title: l10n.sectionIdentity,
           child: isEditing
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -659,7 +660,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                     const SizedBox(width: 4),
                                     IconButton.filled(
                                       icon: const Icon(Icons.add, size: 18),
-                                      tooltip: 'Add',
+                                      tooltip: l10n.dialogAdd,
                                       onPressed: () {
                                         final s = _langCtrl.text.trim();
                                         if (s.isNotEmpty &&
@@ -687,7 +688,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               : Column(
                   children: [
                     if (character.background.isNotEmpty)
-                      _InfoRow(l10n.labelBackground, character.background),
+                      _InfoRow(l10n.labelBackground, i18n.backgroundName(character.background)),
                     if (character.alignment.isNotEmpty)
                       _InfoRow(l10n.labelAlignment, character.alignment),
                     if (character.playerName.isNotEmpty)
@@ -751,8 +752,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         fixedSize: const Size(32, 32),
                       ),
                       tooltip: hp.temporary > 0
-                          ? 'Change temp HP'
-                          : 'Add temp HP',
+                          ? l10n.tooltipChangeTempHp
+                          : l10n.tooltipAddTempHp,
                       onPressed: () => _showSetTempHpDialog(context),
                     ),
                   ),
@@ -762,7 +763,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: Text(
-                    'Unconscious / Dying',
+                    l10n.statUnconsciousDying,
                     style: TextStyle(color: scheme.error),
                   ),
                 ),
@@ -864,13 +865,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                       spacing: 8,
                       runSpacing: 8,
                       children: [
-                        _StatChip('AC', '${character.armorClass}'),
-                        _StatChip('Armor', armorSummary),
+                        _StatChip(l10n.statAC, '${character.armorClass}'),
+                        _StatChip(l10n.statArmor, armorSummary),
                         _StatChip(
-                            'Initiative', _sign(character.initiative)),
-                        _StatChip('Prof Bonus',
+                            l10n.statInitiative, _sign(character.initiative)),
+                        _StatChip(l10n.statProfBonus,
                             _sign(character.proficiencyBonus)),
-                        _StatChip('Passive Perc',
+                        _StatChip(l10n.statPassivePerc,
                             '${character.passivePerception}'),
                       ],
                     ),
@@ -880,14 +881,14 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   spacing: 8,
                   runSpacing: 8,
                   children: [
-                    _StatChip('AC', '${character.armorClass}'),
-                    _StatChip('Armor', armorSummary),
-                    _StatChip('Speed', '${character.speed} ft'),
-                    _StatChip('Initiative', _sign(character.initiative)),
+                    _StatChip(l10n.statAC, '${character.armorClass}'),
+                    _StatChip(l10n.statArmor, armorSummary),
+                    _StatChip(l10n.statSpeed, '${character.speed} ft'),
+                    _StatChip(l10n.statInitiative, _sign(character.initiative)),
                     _StatChip(
-                        'Prof Bonus', _sign(character.proficiencyBonus)),
+                        l10n.statProfBonus, _sign(character.proficiencyBonus)),
                     _StatChip(
-                        'Passive Perc', '${character.passivePerception}'),
+                        l10n.statPassivePerc, '${character.passivePerception}'),
                   ],
                 ),
         ),
@@ -904,17 +905,17 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
             children: [
-              _AbilityCardEdit('STR', character.abilityScores.strength,
+              _AbilityCardEdit(l10n.abilityStr, character.abilityScores.strength,
                   'strength', notifier: notifier, isEditing: isEditing),
-              _AbilityCardEdit('DEX', character.abilityScores.dexterity,
+              _AbilityCardEdit(l10n.abilityDex, character.abilityScores.dexterity,
                   'dexterity', notifier: notifier, isEditing: isEditing),
-              _AbilityCardEdit('CON', character.abilityScores.constitution,
+              _AbilityCardEdit(l10n.abilityCon, character.abilityScores.constitution,
                   'constitution', notifier: notifier, isEditing: isEditing),
-              _AbilityCardEdit('INT', character.abilityScores.intelligence,
+              _AbilityCardEdit(l10n.abilityInt, character.abilityScores.intelligence,
                   'intelligence', notifier: notifier, isEditing: isEditing),
-              _AbilityCardEdit('WIS', character.abilityScores.wisdom,
+              _AbilityCardEdit(l10n.abilityWis, character.abilityScores.wisdom,
                   'wisdom', notifier: notifier, isEditing: isEditing),
-              _AbilityCardEdit('CHA', character.abilityScores.charisma,
+              _AbilityCardEdit(l10n.abilityCha, character.abilityScores.charisma,
                   'charisma', notifier: notifier, isEditing: isEditing),
             ],
           ),

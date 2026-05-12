@@ -16,13 +16,6 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
   late final Map<String, TextEditingController> _currencyCtrl;
 
   static const _coins = ['cp', 'sp', 'ep', 'gp', 'pp'];
-  static const _coinLabels = {
-    'cp': 'Copper',
-    'sp': 'Silver',
-    'ep': 'Electrum',
-    'gp': 'Gold',
-    'pp': 'Platinum',
-  };
 
   @override
   void initState() {
@@ -78,6 +71,14 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
   Widget build(BuildContext context) {
     final character = widget.character;
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+    final coinLabels = {
+      'cp': l10n.coinCopper,
+      'sp': l10n.coinSilver,
+      'ep': l10n.coinElectrum,
+      'gp': l10n.coinGold,
+      'pp': l10n.coinPlatinum,
+    };
     final ammo = character.equipment
         .where((e) => e.itemType == ItemType.ammunition)
         .toList();
@@ -98,7 +99,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Currency',
+                    l10n.inventoryCurrency,
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(
                           color: scheme.primary,
                         ),
@@ -117,7 +118,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                             ],
                             textAlign: TextAlign.center,
                             decoration: InputDecoration(
-                              labelText: _coinLabels[c],
+                              labelText: coinLabels[c],
                               border: const OutlineInputBorder(),
                               contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 4, vertical: 8),
@@ -153,7 +154,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
           // ── Equipped ────────────────────────────────────────────────────
           if (equipped.isNotEmpty) ...[
             _Section(
-              title: 'Equipped (${equipped.length})  ·  AC ${character.armorClass}',
+              title: l10n.inventoryEquippedSection(equipped.length, character.armorClass),
               child: Column(
                 children: equipped
                     .map((item) => _ItemTile(
@@ -169,13 +170,13 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
           // ── Carried ─────────────────────────────────────────────────────
           _Section(
             title: carried.isEmpty && equipped.isEmpty && ammo.isEmpty
-                ? 'Inventory'
-                : 'Carried (${carried.length})',
+                ? l10n.inventoryInventory
+                : l10n.inventoryCarriedSection(carried.length),
             child: carried.isEmpty
                 ? Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Text(
-                      'No items yet. Tap + to add.',
+                      l10n.inventoryEmpty,
                       style: TextStyle(color: scheme.onSurfaceVariant),
                     ),
                   )
@@ -317,6 +318,7 @@ class _AmmunitionSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
@@ -328,7 +330,7 @@ class _AmmunitionSection extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Ammunition',
+              l10n.inventoryAmmunition,
               style: Theme.of(context)
                   .textTheme
                   .labelLarge

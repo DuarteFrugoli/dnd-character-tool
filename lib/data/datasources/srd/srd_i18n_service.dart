@@ -94,6 +94,10 @@ class SrdI18nService {
 
   String raceName(String en) => _str('races', en, 'name') ?? en;
 
+  // ── Backgrounds ────────────────────────────────────────────────────────────
+
+  String backgroundName(String en) => _str('backgrounds', en, 'name') ?? en;
+
   // ── Classes ────────────────────────────────────────────────────────────────
 
   String className(String en) => _str('classes', en, 'name') ?? en;

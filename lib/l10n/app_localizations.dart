@@ -1645,6 +1645,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Stealth disadvantage'**
   String get armorStealthDisadvantage;
+
+  /// Spell detail label: casting time.
+  ///
+  /// In en, this message translates to:
+  /// **'Casting time'**
+  String get spellDetailCastingTime;
+
+  /// Spell detail label: range.
+  ///
+  /// In en, this message translates to:
+  /// **'Range'**
+  String get spellDetailRange;
+
+  /// Spell detail label: duration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get spellDetailDuration;
+
+  /// Spell detail label: components.
+  ///
+  /// In en, this message translates to:
+  /// **'Components'**
+  String get spellDetailComponents;
+
+  /// Spell detail badge: requires concentration.
+  ///
+  /// In en, this message translates to:
+  /// **'Requires concentration'**
+  String get spellDetailConcentration;
+
+  /// Spell detail badge: can be cast as a ritual.
+  ///
+  /// In en, this message translates to:
+  /// **'Can be cast as a ritual'**
+  String get spellDetailRitual;
+
+  /// Spell detail section heading: at higher levels.
+  ///
+  /// In en, this message translates to:
+  /// **'At Higher Levels. '**
+  String get spellDetailAtHigherLevels;
+
+  /// Spell detail classes line.
+  ///
+  /// In en, this message translates to:
+  /// **'Classes: {classes}'**
+  String spellDetailClasses(String classes);
+
+  /// Spell level + school descriptor.
+  ///
+  /// In en, this message translates to:
+  /// **'{ordinal}-level {school}'**
+  String spellDetailLevelSchool(String ordinal, String school);
+
+  /// Cantrip school descriptor.
+  ///
+  /// In en, this message translates to:
+  /// **'{school} cantrip'**
+  String spellDetailCantrip(String school);
 }
 
 class _AppLocalizationsDelegate

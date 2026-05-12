@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
+import '../../l10n/app_localizations.dart';
 import '../../shared/providers/providers.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/spell.dart';
@@ -929,6 +930,7 @@ class SpellDetailSheet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
 
     return DraggableScrollableSheet(
@@ -963,8 +965,8 @@ class SpellDetailSheet extends ConsumerWidget {
           // ── Level / school ────────────────────────────────────────────────
           Text(
             spell.level == 0
-                ? '${spell.school} cantrip'
-                : '${_ordinal(spell.level)}-level ${spell.school.toLowerCase()}',
+                ? l10n.spellDetailCantrip(spell.school)
+                : l10n.spellDetailLevelSchool(_ordinal(spell.level), spell.school.toLowerCase()),
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: scheme.onSurfaceVariant,
                   fontStyle: FontStyle.italic,
@@ -975,10 +977,10 @@ class SpellDetailSheet extends ConsumerWidget {
           const SizedBox(height: 12),
 
           // ── Stat rows ─────────────────────────────────────────────────────
-          _StatRow('Casting time', spell.castingTime),
-          _StatRow('Range', spell.range),
-          _StatRow('Duration', spell.duration),
-          _StatRow('Components', _componentsStr()),
+          _StatRow(l10n.spellDetailCastingTime, spell.castingTime),
+          _StatRow(l10n.spellDetailRange, spell.range),
+          _StatRow(l10n.spellDetailDuration, spell.duration),
+          _StatRow(l10n.spellDetailComponents, _componentsStr()),
           if (spell.concentration) ...[
             const SizedBox(height: 4),
             Row(
@@ -986,7 +988,7 @@ class SpellDetailSheet extends ConsumerWidget {
                 Icon(Icons.timer_outlined, size: 14, color: scheme.secondary),
                 const SizedBox(width: 6),
                 Text(
-                  'Requires concentration',
+                  l10n.spellDetailConcentration,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: scheme.secondary,
                         fontWeight: FontWeight.w500,
@@ -1002,7 +1004,7 @@ class SpellDetailSheet extends ConsumerWidget {
                 Icon(Icons.auto_fix_high, size: 14, color: scheme.tertiary),
                 const SizedBox(width: 6),
                 Text(
-                  'Can be cast as a ritual',
+                  l10n.spellDetailRitual,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: scheme.tertiary,
                         fontWeight: FontWeight.w500,
@@ -1028,7 +1030,7 @@ class SpellDetailSheet extends ConsumerWidget {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: 'At Higher Levels. ',
+                    text: l10n.spellDetailAtHigherLevels,
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium
@@ -1046,7 +1048,7 @@ class SpellDetailSheet extends ConsumerWidget {
           // ── Classes ───────────────────────────────────────────────────────
           const SizedBox(height: 16),
           Text(
-            'Classes: ${spell.classes.join(', ')}',
+            l10n.spellDetailClasses(spell.classes.join(', ')),
             style: Theme.of(context)
                 .textTheme
                 .bodySmall

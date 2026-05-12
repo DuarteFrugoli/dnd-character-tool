@@ -843,4 +843,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get armorStealthDisadvantage => 'Stealth disadvantage';
+
+  @override
+  String get spellDetailCastingTime => 'Casting time';
+
+  @override
+  String get spellDetailRange => 'Range';
+
+  @override
+  String get spellDetailDuration => 'Duration';
+
+  @override
+  String get spellDetailComponents => 'Components';
+
+  @override
+  String get spellDetailConcentration => 'Requires concentration';
+
+  @override
+  String get spellDetailRitual => 'Can be cast as a ritual';
+
+  @override
+  String get spellDetailAtHigherLevels => 'At Higher Levels. ';
+
+  @override
+  String spellDetailClasses(String classes) {
+    return 'Classes: $classes';
+  }
+
+  @override
+  String spellDetailLevelSchool(String ordinal, String school) {
+    return '$ordinal-level $school';
+  }
+
+  @override
+  String spellDetailCantrip(String school) {
+    return '$school cantrip';
+  }
 }

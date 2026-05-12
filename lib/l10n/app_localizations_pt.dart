@@ -846,4 +846,40 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get armorStealthDisadvantage => 'Desvantagem em Furtividade';
+
+  @override
+  String get spellDetailCastingTime => 'Tempo de conjuração';
+
+  @override
+  String get spellDetailRange => 'Alcance';
+
+  @override
+  String get spellDetailDuration => 'Duração';
+
+  @override
+  String get spellDetailComponents => 'Componentes';
+
+  @override
+  String get spellDetailConcentration => 'Requer concentração';
+
+  @override
+  String get spellDetailRitual => 'Pode ser conjurada como ritual';
+
+  @override
+  String get spellDetailAtHigherLevels => 'Em Níveis Superiores. ';
+
+  @override
+  String spellDetailClasses(String classes) {
+    return 'Classes: $classes';
+  }
+
+  @override
+  String spellDetailLevelSchool(String ordinal, String school) {
+    return '$ordinalº nível — $school';
+  }
+
+  @override
+  String spellDetailCantrip(String school) {
+    return 'Truque de $school';
+  }
 }

@@ -429,7 +429,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         equippedArmor.any((e) => e.properties?['isShield'] == true);
     final armorSummary = bodyArmor.isEmpty
         ? (usingShield ? l10n.statNoArmorShield : l10n.statNoArmor)
-        : '${bodyArmor.first.name}${usingShield ? l10n.statShieldSuffix : ''}';
+        : '${i18n.equipmentName(bodyArmor.first.name)}${usingShield ? l10n.statShieldSuffix : ''}';
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),

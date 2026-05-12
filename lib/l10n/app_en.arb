@@ -798,6 +798,27 @@
   "@inventoryGroupOtherTools": { "description": "Tools browser group: other tools." },
 
   "armorStealthDisadvantage": "Stealth disadvantage",
-  "@armorStealthDisadvantage": { "description": "Label shown when armor imposes stealth disadvantage." }
+  "@armorStealthDisadvantage": { "description": "Label shown when armor imposes stealth disadvantage." },
+
+  "spellDetailCastingTime": "Casting time",
+  "@spellDetailCastingTime": { "description": "Spell detail label: casting time." },
+  "spellDetailRange": "Range",
+  "@spellDetailRange": { "description": "Spell detail label: range." },
+  "spellDetailDuration": "Duration",
+  "@spellDetailDuration": { "description": "Spell detail label: duration." },
+  "spellDetailComponents": "Components",
+  "@spellDetailComponents": { "description": "Spell detail label: components." },
+  "spellDetailConcentration": "Requires concentration",
+  "@spellDetailConcentration": { "description": "Spell detail badge: requires concentration." },
+  "spellDetailRitual": "Can be cast as a ritual",
+  "@spellDetailRitual": { "description": "Spell detail badge: can be cast as a ritual." },
+  "spellDetailAtHigherLevels": "At Higher Levels. ",
+  "@spellDetailAtHigherLevels": { "description": "Spell detail section heading: at higher levels." },
+  "spellDetailClasses": "Classes: {classes}",
+  "@spellDetailClasses": { "description": "Spell detail classes line.", "placeholders": { "classes": { "type": "String" } } },
+  "spellDetailLevelSchool": "{ordinal}-level {school}",
+  "@spellDetailLevelSchool": { "description": "Spell level + school descriptor.", "placeholders": { "ordinal": { "type": "String" }, "school": { "type": "String" } } },
+  "spellDetailCantrip": "{school} cantrip",
+  "@spellDetailCantrip": { "description": "Cantrip school descriptor.", "placeholders": { "school": { "type": "String" } } }
 }
 

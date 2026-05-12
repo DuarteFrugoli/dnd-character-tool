@@ -82,6 +82,7 @@ flutter:
     - assets/data/srd/magic_items.json
     - assets/data/srd/race_traits.json
     - assets/data/srd/subclass_features.json
+    - assets/data/srd/tools.json
     - assets/data/i18n/de/
     - assets/data/i18n/es/
     - assets/data/i18n/fr/

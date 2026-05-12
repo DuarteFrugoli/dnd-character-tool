@@ -285,6 +285,17 @@
   "inventoryGroupMusicalInstruments": "Instrumentos Musicais",
   "inventoryGroupOtherTools": "Outras Ferramentas",
 
-  "armorStealthDisadvantage": "Desvantagem em Furtividade"
+  "armorStealthDisadvantage": "Desvantagem em Furtividade",
+
+  "spellDetailCastingTime": "Tempo de conjuração",
+  "spellDetailRange": "Alcance",
+  "spellDetailDuration": "Duração",
+  "spellDetailComponents": "Componentes",
+  "spellDetailConcentration": "Requer concentração",
+  "spellDetailRitual": "Pode ser conjurada como ritual",
+  "spellDetailAtHigherLevels": "Em Níveis Superiores. ",
+  "spellDetailClasses": "Classes: {classes}",
+  "spellDetailLevelSchool": "{ordinal}º nível — {school}",
+  "spellDetailCantrip": "Truque de {school}"
 }
 

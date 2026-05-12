@@ -178,8 +178,14 @@ def extract_subclass_features() -> dict:
     return out
 
 
+def extract_languages() -> dict:
+    # srd: [{ name }]
+    return {lang["name"]: {"name": lang["name"]} for lang in _srd("languages.json")}
+
+
 # Map filename → extractor function
 EXTRACTORS = {
+    "languages.json":         extract_languages,
     "skills.json":            extract_skills,
     "equipment.json":         extract_equipment,
     "magic_items.json":       extract_magic_items,

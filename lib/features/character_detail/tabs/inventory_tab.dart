@@ -319,6 +319,7 @@ class _AmmunitionSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
@@ -344,7 +345,7 @@ class _AmmunitionSection extends ConsumerWidget {
                       const Icon(Icons.arrow_upward, size: 16),
                       const SizedBox(width: 6),
                       Expanded(
-                        child: Text(item.name,
+                        child: Text(_itemDisplayName(item, i18n),
                             style: const TextStyle(fontSize: 14)),
                       ),
                       // Diminuir
@@ -929,6 +930,14 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
 
 // ── Item Tile ─────────────────────────────────────────────────────────────────
 
+/// Returns a localised display name for [item].
+/// Tries equipment overlay, then magic_items overlay, then falls back to original name.
+String _itemDisplayName(EquipmentItem item, SrdI18nService i18n) {
+  final fromEquip = i18n.equipmentName(item.name);
+  if (fromEquip != item.name) return fromEquip;
+  return i18n.magicItemName(item.name);
+}
+
 class _ItemTile extends ConsumerWidget {
   const _ItemTile({required this.item, required this.characterId});
   final EquipmentItem item;
@@ -1087,10 +1096,12 @@ class _ItemTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
     final canEquip =
         item.itemType == ItemType.weapon || item.itemType == ItemType.armor;
     final meta = _itemMeta(item);
+    final displayName = _itemDisplayName(item, i18n);
 
     String? subtitleText;
     if (meta != null && item.description != null && item.description!.isNotEmpty) {
@@ -1131,7 +1142,7 @@ class _ItemTile extends ConsumerWidget {
               ),
             ),
       title: Text(
-        item.quantity > 1 ? '${item.name} ×${item.quantity}' : item.name,
+        item.quantity > 1 ? '$displayName ×${item.quantity}' : displayName,
         style: const TextStyle(fontSize: 14),
       ),
       subtitle: subtitleText != null

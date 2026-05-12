@@ -604,7 +604,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                     runSpacing: 4,
                                     children: character.languages
                                         .map((lang) => Chip(
-                                              label: Text(lang),
+                                              label: Text(i18n.languageName(lang)),
                                               labelStyle: const TextStyle(
                                                   fontSize: 12),
                                               materialTapTargetSize:
@@ -697,7 +697,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                       l10n.labelLanguages,
                       character.languages.isEmpty
                           ? '—'
-                          : character.languages.join(', '),
+                          : character.languages.map((l) => i18n.languageName(l)).join(', '),
                     ),
                   ],
                 ),

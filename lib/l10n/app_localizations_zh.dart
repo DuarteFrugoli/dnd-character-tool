@@ -985,4 +985,80 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get stepPrimaryAbilities => '主要能力：';
+
+  @override
+  String get stepNameTitle => '给你的角色起一个名字。';
+
+  @override
+  String get stepNameHint => '您以后可以随时更改此设置。';
+
+  @override
+  String get stepNameCharLabel => '角色名称';
+
+  @override
+  String get stepNamePlayerLabel => '玩家姓名（可选）';
+
+  @override
+  String get stepHitDieLabel => '命中死亡';
+
+  @override
+  String get stepSavesLabel => '保存';
+
+  @override
+  String get stepSpellcastingLabel => '施法';
+
+  @override
+  String get stepOptionsLabel => '选项';
+
+  @override
+  String stepChooseSubclassPrompt(String feature, int level) {
+    return '选择一个$feature（Lv $level）：';
+  }
+
+  @override
+  String get stepRaceSpeedLabel => '速度';
+
+  @override
+  String get stepRaceASILabel => '亚洲SI';
+
+  @override
+  String stepRaceSubracesAvailable(int count) {
+    return '$count 个子比赛可用';
+  }
+
+  @override
+  String stepChooseSkillsHint(int count) {
+    return '从您的班级列表中选择 $count 项技能。';
+  }
+
+  @override
+  String get abilityStrength => '力量';
+
+  @override
+  String get abilityDexterity => '灵巧';
+
+  @override
+  String get abilityConstitution => '宪法';
+
+  @override
+  String get abilityIntelligence => '智力';
+
+  @override
+  String get abilityWisdom => '智慧';
+
+  @override
+  String get abilityCharisma => '魅力';
+
+  @override
+  String stepFreeAsiRemaining(int remaining) {
+    return '自由分配种族ASI积分（剩余$remaining）：';
+  }
+
+  @override
+  String stepFreePicksRemaining(int total, int remaining) {
+    return '无种族 ASI：为 $total 属性指定 +1（剩余 $remaining）：';
+  }
+
+  @override
+  String get stepFreePicksNoStack => '无法分配给已经获得种族加值的属性。';
 }

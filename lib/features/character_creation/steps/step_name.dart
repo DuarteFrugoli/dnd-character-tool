@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../character_draft_provider.dart';
@@ -31,18 +32,19 @@ class _StepNameState extends ConsumerState<StepName> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Give your character a name.',
+            l10n.stepNameTitle,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
           Text(
-            'You can always change this later.',
+            l10n.stepNameHint,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
@@ -50,9 +52,9 @@ class _StepNameState extends ConsumerState<StepName> {
           const SizedBox(height: 24),
           TextField(
             controller: _nameCtrl,
-            decoration: const InputDecoration(
-              labelText: 'Character name',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: l10n.stepNameCharLabel,
+              border: const OutlineInputBorder(),
             ),
             textCapitalization: TextCapitalization.words,
             onChanged: (v) =>
@@ -61,9 +63,9 @@ class _StepNameState extends ConsumerState<StepName> {
           const SizedBox(height: 16),
           TextField(
             controller: _playerCtrl,
-            decoration: const InputDecoration(
-              labelText: 'Player name (optional)',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: l10n.stepNamePlayerLabel,
+              border: const OutlineInputBorder(),
             ),
             textCapitalization: TextCapitalization.words,
             onChanged: (v) =>

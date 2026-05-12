@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
+import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
@@ -94,6 +96,7 @@ class _ClassCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final clsName = i18n.className(cls.name);
     final subclassFeature = i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
@@ -122,7 +125,7 @@ class _ClassCard extends StatelessWidget {
                             )),
                     const SizedBox(height: 4),
                     Text(
-                      'Hit die: d${cls.hitDie}  ·  Saves: ${cls.savingThrows.join(', ')}',
+                      '${l10n.stepHitDieLabel}: d${cls.hitDie}  ·  ${l10n.stepSavesLabel}: ${cls.savingThrows.map((s) => abilityName(l10n, s)).join(', ')}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: isSelected
                                 ? scheme.onPrimaryContainer
@@ -133,7 +136,7 @@ class _ClassCard extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 4),
                         child: Text(
-                          'Spellcasting: ${cls.spellcastingAbility}',
+                          '${l10n.stepSpellcastingLabel}: ${abilityName(l10n, cls.spellcastingAbility ?? '')}',
                           style: Theme.of(context)
                               .textTheme
                               .bodySmall
@@ -148,7 +151,7 @@ class _ClassCard extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 4),
                         child: Text(
-                          '${cls.subclasses.length} $subclassFeature options',
+                          '${cls.subclasses.length} $subclassFeature ${l10n.stepOptionsLabel}',
                           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: isSelected
                                     ? scheme.onPrimaryContainer
@@ -184,6 +187,7 @@ class _SubclassSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final subclassFeature = i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
     return Padding(
@@ -194,7 +198,7 @@ class _SubclassSelector extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
             child: Text(
-              'Choose a $subclassFeature (Lv ${cls.subclassLevel}):',
+              l10n.stepChooseSubclassPrompt(subclassFeature, cls.subclassLevel),
               style: Theme.of(context).textTheme.labelLarge,
             ),
           ),

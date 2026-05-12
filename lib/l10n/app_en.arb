@@ -893,6 +893,77 @@
   "stepRollHint": "Roll to generate 6 values (4d6, drop lowest)",
   "@stepRollHint": { "description": "Attributes step: roll hint when no values rolled yet." },
   "stepPrimaryAbilities": "primary abilities: ",
-  "@stepPrimaryAbilities": { "description": "Attributes step: class reminder primary abilities label." }
+  "@stepPrimaryAbilities": { "description": "Attributes step: class reminder primary abilities label." },
+
+  "stepNameTitle": "Give your character a name.",
+  "@stepNameTitle": { "description": "Name step: page title." },
+  "stepNameHint": "You can always change this later.",
+  "@stepNameHint": { "description": "Name step: subtitle hint." },
+  "stepNameCharLabel": "Character name",
+  "@stepNameCharLabel": { "description": "Name step: character name field label." },
+  "stepNamePlayerLabel": "Player name (optional)",
+  "@stepNamePlayerLabel": { "description": "Name step: player name field label." },
+
+  "stepHitDieLabel": "Hit die",
+  "@stepHitDieLabel": { "description": "Class card: hit die label." },
+  "stepSavesLabel": "Saves",
+  "@stepSavesLabel": { "description": "Class card: saving throws label." },
+  "stepSpellcastingLabel": "Spellcasting",
+  "@stepSpellcastingLabel": { "description": "Class card: spellcasting ability label." },
+  "stepOptionsLabel": "options",
+  "@stepOptionsLabel": { "description": "Class card: subclass options count suffix." },
+  "stepChooseSubclassPrompt": "Choose a {feature} (Lv {level}):",
+  "@stepChooseSubclassPrompt": {
+    "description": "Class step: subclass selector prompt.",
+    "placeholders": {
+      "feature": { "type": "String" },
+      "level": { "type": "int" }
+    }
+  },
+
+  "stepRaceSpeedLabel": "Speed",
+  "@stepRaceSpeedLabel": { "description": "Race card: speed label." },
+  "stepRaceASILabel": "ASI",
+  "@stepRaceASILabel": { "description": "Race card: ability score increase label." },
+  "stepRaceSubracesAvailable": "{count} subraces available",
+  "@stepRaceSubracesAvailable": {
+    "description": "Race card: subraces count.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "stepChooseSkillsHint": "Choose {count} skills from your class list.",
+  "@stepChooseSkillsHint": {
+    "description": "Skills step: prompt to choose skills.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "abilityStrength": "Strength",
+  "@abilityStrength": { "description": "Full name of the Strength ability score." },
+  "abilityDexterity": "Dexterity",
+  "@abilityDexterity": { "description": "Full name of the Dexterity ability score." },
+  "abilityConstitution": "Constitution",
+  "@abilityConstitution": { "description": "Full name of the Constitution ability score." },
+  "abilityIntelligence": "Intelligence",
+  "@abilityIntelligence": { "description": "Full name of the Intelligence ability score." },
+  "abilityWisdom": "Wisdom",
+  "@abilityWisdom": { "description": "Full name of the Wisdom ability score." },
+  "abilityCharisma": "Charisma",
+  "@abilityCharisma": { "description": "Full name of the Charisma ability score." },
+
+  "stepFreeAsiRemaining": "Distribute racial ASI points freely ({remaining} remaining):",
+  "@stepFreeAsiRemaining": {
+    "description": "Attributes step: Tasha free ASI distribution label.",
+    "placeholders": { "remaining": { "type": "int" } }
+  },
+  "stepFreePicksRemaining": "Racial free ASI: assign +1 to {total} attributes ({remaining} remaining):",
+  "@stepFreePicksRemaining": {
+    "description": "Attributes step: Half-Elf style free picks label.",
+    "placeholders": {
+      "total": { "type": "int" },
+      "remaining": { "type": "int" }
+    }
+  },
+  "stepFreePicksNoStack": "Cannot assign to attributes already receiving a racial bonus.",
+  "@stepFreePicksNoStack": { "description": "Attributes step: free picks constraint hint." }
 }
 

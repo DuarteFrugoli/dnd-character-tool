@@ -990,4 +990,80 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get stepPrimaryAbilities => '主な能力:';
+
+  @override
+  String get stepNameTitle => 'キャラクターに名前を付けます。';
+
+  @override
+  String get stepNameHint => 'これは後でいつでも変更できます。';
+
+  @override
+  String get stepNameCharLabel => 'キャラクター名';
+
+  @override
+  String get stepNamePlayerLabel => 'プレイヤー名（任意）';
+
+  @override
+  String get stepHitDieLabel => 'ヒットダイ';
+
+  @override
+  String get stepSavesLabel => '保存';
+
+  @override
+  String get stepSpellcastingLabel => '呪文詠唱';
+
+  @override
+  String get stepOptionsLabel => 'オプション';
+
+  @override
+  String stepChooseSubclassPrompt(String feature, int level) {
+    return '$feature (Lv $level) を選択してください:';
+  }
+
+  @override
+  String get stepRaceSpeedLabel => 'スピード';
+
+  @override
+  String get stepRaceASILabel => 'ASI';
+
+  @override
+  String stepRaceSubracesAvailable(int count) {
+    return '$count 個のサブレースが利用可能';
+  }
+
+  @override
+  String stepChooseSkillsHint(int count) {
+    return 'クラスリストから $count 個のスキルを選択してください。';
+  }
+
+  @override
+  String get abilityStrength => '強さ';
+
+  @override
+  String get abilityDexterity => '器用さ';
+
+  @override
+  String get abilityConstitution => '憲法';
+
+  @override
+  String get abilityIntelligence => '知能';
+
+  @override
+  String get abilityWisdom => '知恵';
+
+  @override
+  String get abilityCharisma => 'カリスマ';
+
+  @override
+  String stepFreeAsiRemaining(int remaining) {
+    return '人種 ASI ポイントを自由に分配します (残り $remaining):';
+  }
+
+  @override
+  String stepFreePicksRemaining(int total, int remaining) {
+    return '人種フリー ASI: $total 属性に +1 を割り当てます (残り $remaining):';
+  }
+
+  @override
+  String get stepFreePicksNoStack => 'すでに種族ボーナスを受けている属性には割り当てることができません。';
 }

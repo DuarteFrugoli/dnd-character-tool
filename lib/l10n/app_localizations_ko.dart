@@ -991,4 +991,80 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get stepPrimaryAbilities => '주요 능력:';
+
+  @override
+  String get stepNameTitle => '캐릭터에게 이름을 지어주세요.';
+
+  @override
+  String get stepNameHint => '나중에 언제든지 변경할 수 있습니다.';
+
+  @override
+  String get stepNameCharLabel => '캐릭터 이름';
+
+  @override
+  String get stepNamePlayerLabel => '플레이어 이름(선택사항)';
+
+  @override
+  String get stepHitDieLabel => '죽어라';
+
+  @override
+  String get stepSavesLabel => '저장';
+
+  @override
+  String get stepSpellcastingLabel => '주문 시전';
+
+  @override
+  String get stepOptionsLabel => '옵션';
+
+  @override
+  String stepChooseSubclassPrompt(String feature, int level) {
+    return '$feature(Lv $level)을 선택하세요:';
+  }
+
+  @override
+  String get stepRaceSpeedLabel => '속도';
+
+  @override
+  String get stepRaceASILabel => 'ASI';
+
+  @override
+  String stepRaceSubracesAvailable(int count) {
+    return '$count개의 하위 경주 사용 가능';
+  }
+
+  @override
+  String stepChooseSkillsHint(int count) {
+    return '클래스 목록에서 $count개의 기술을 선택하세요.';
+  }
+
+  @override
+  String get abilityStrength => '힘';
+
+  @override
+  String get abilityDexterity => '재치';
+
+  @override
+  String get abilityConstitution => '헌법';
+
+  @override
+  String get abilityIntelligence => '지능';
+
+  @override
+  String get abilityWisdom => '지혜';
+
+  @override
+  String get abilityCharisma => '카리스마';
+
+  @override
+  String stepFreeAsiRemaining(int remaining) {
+    return '인종별 ASI 포인트를 자유롭게 배포하세요($remaining 남음):';
+  }
+
+  @override
+  String stepFreePicksRemaining(int total, int remaining) {
+    return '인종 자유 ASI: $total 속성에 +1 할당($remaining 남음):';
+  }
+
+  @override
+  String get stepFreePicksNoStack => '이미 인종 보너스를 받고 있는 속성에는 할당할 수 없습니다.';
 }

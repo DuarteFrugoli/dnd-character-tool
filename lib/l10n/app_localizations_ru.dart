@@ -1004,4 +1004,81 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get stepPrimaryAbilities => 'основные способности:';
+
+  @override
+  String get stepNameTitle => 'Дайте своему персонажу имя.';
+
+  @override
+  String get stepNameHint => 'Вы всегда можете изменить это позже.';
+
+  @override
+  String get stepNameCharLabel => 'Имя персонажа';
+
+  @override
+  String get stepNamePlayerLabel => 'Имя игрока (необязательно)';
+
+  @override
+  String get stepHitDieLabel => 'Хит умереть';
+
+  @override
+  String get stepSavesLabel => 'Сохранения';
+
+  @override
+  String get stepSpellcastingLabel => 'Колдовство';
+
+  @override
+  String get stepOptionsLabel => 'параметры';
+
+  @override
+  String stepChooseSubclassPrompt(String feature, int level) {
+    return 'Выберите $feature (уровень $level):';
+  }
+
+  @override
+  String get stepRaceSpeedLabel => 'Скорость';
+
+  @override
+  String get stepRaceASILabel => 'АСИ';
+
+  @override
+  String stepRaceSubracesAvailable(int count) {
+    return 'Доступно $count подрас';
+  }
+
+  @override
+  String stepChooseSkillsHint(int count) {
+    return 'Выберите $count навыков из списка вашего класса.';
+  }
+
+  @override
+  String get abilityStrength => 'Сила';
+
+  @override
+  String get abilityDexterity => 'Ловкость';
+
+  @override
+  String get abilityConstitution => 'Конституция';
+
+  @override
+  String get abilityIntelligence => 'Интеллект';
+
+  @override
+  String get abilityWisdom => 'Мудрость';
+
+  @override
+  String get abilityCharisma => 'Харизма';
+
+  @override
+  String stepFreeAsiRemaining(int remaining) {
+    return 'Свободно распределяйте расовые очки ASI (осталось $remaining):';
+  }
+
+  @override
+  String stepFreePicksRemaining(int total, int remaining) {
+    return 'Свободный от расы ASI: присвойте +1 к $total атрибутам (осталось $remaining):';
+  }
+
+  @override
+  String get stepFreePicksNoStack =>
+      'Невозможно назначить атрибутам, уже получающим расовый бонус.';
 }

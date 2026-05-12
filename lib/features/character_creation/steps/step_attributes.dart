@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
+import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_models.dart';
@@ -272,7 +273,7 @@ class _ClassReminder extends StatelessWidget {
                   const TextSpan(text: '— '),
                   TextSpan(text: AppLocalizations.of(context)!.stepPrimaryAbilities),
                   TextSpan(
-                    text: cls.primaryAbility.join(', '),
+                    text: cls.primaryAbility.map((a) => abilityName(AppLocalizations.of(context)!, a)).join(', '),
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: scheme.primary),
                   ),
@@ -305,6 +306,7 @@ class _RolledDiceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final usedIndices = assignment.values.whereType<int>().toSet();
 
@@ -376,7 +378,7 @@ class _RolledDiceSection extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 110,
-                    child: Text(attr,
+                    child: Text(abilityName(l10n, attr),
                         style: Theme.of(context).textTheme.bodyMedium),
                   ),
                   Expanded(
@@ -451,6 +453,7 @@ class _StandardArraySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final usedIndices = assignment.values.whereType<int>().toSet();
 
     return Column(
@@ -472,7 +475,7 @@ class _StandardArraySection extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 110,
-                  child: Text(attr,
+                  child: Text(abilityName(l10n, attr),
                       style: Theme.of(context).textTheme.bodyMedium),
                 ),
                 Expanded(
@@ -557,12 +560,13 @@ class _PointBuySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Text(AppLocalizations.of(context)!.stepPointsRemaining,
+            Text(l10n.stepPointsRemaining,
                 style: Theme.of(context).textTheme.bodySmall),
             Text(
               '$_remaining / $_pointBuyTotal',
@@ -587,7 +591,7 @@ class _PointBuySection extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 110,
-                  child: Text(attr,
+                  child: Text(abilityName(l10n, attr),
                       style: Theme.of(context).textTheme.bodyMedium),
                 ),
                 IconButton(
@@ -640,6 +644,7 @@ class _FreeAsiSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final dist = ref.watch(characterDraftProvider).freeAsiDistribution;
     final totalPool =
         raceAsi.values.fold(0, (a, b) => a + b);
@@ -650,7 +655,7 @@ class _FreeAsiSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Distribute racial ASI points freely ($remaining remaining):',
+          l10n.stepFreeAsiRemaining(remaining),
           style: Theme.of(context).textTheme.labelLarge,
         ),
         const SizedBox(height: 8),
@@ -660,7 +665,7 @@ class _FreeAsiSection extends ConsumerWidget {
             children: [
               SizedBox(
                   width: 110,
-                  child: Text(attr,
+                  child: Text(abilityName(l10n, attr),
                       style: Theme.of(context).textTheme.bodyMedium)),
               IconButton(
                 icon: const Icon(Icons.remove, size: 18),
@@ -706,6 +711,7 @@ class _FreePicksSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final dist = ref.watch(characterDraftProvider).freePicksDistribution;
     final assigned = dist.values.fold(0, (a, b) => a + b);
     final remaining = totalPoints - assigned;
@@ -714,12 +720,12 @@ class _FreePicksSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Racial free ASI: assign +1 to $totalPoints attributes ($remaining remaining):',
+          l10n.stepFreePicksRemaining(totalPoints, remaining),
           style: Theme.of(context).textTheme.labelLarge,
         ),
         const SizedBox(height: 4),
         Text(
-          'Cannot assign to attributes already receiving a racial bonus.',
+          l10n.stepFreePicksNoStack,
           style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(height: 8),
@@ -730,7 +736,7 @@ class _FreePicksSection extends ConsumerWidget {
             children: [
               SizedBox(
                   width: 110,
-                  child: Text(attr,
+                  child: Text(abilityName(l10n, attr),
                       style: Theme.of(context).textTheme.bodyMedium)),
               IconButton(
                 icon: const Icon(Icons.remove, size: 18),

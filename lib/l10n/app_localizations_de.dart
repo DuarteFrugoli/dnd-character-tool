@@ -1005,4 +1005,81 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get stepPrimaryAbilities => 'Hauptfähigkeiten:';
+
+  @override
+  String get stepNameTitle => 'Geben Sie Ihrem Charakter einen Namen.';
+
+  @override
+  String get stepNameHint => 'Sie können dies später jederzeit ändern.';
+
+  @override
+  String get stepNameCharLabel => 'Charaktername';
+
+  @override
+  String get stepNamePlayerLabel => 'Spielername (optional)';
+
+  @override
+  String get stepHitDieLabel => 'Hit sterben';
+
+  @override
+  String get stepSavesLabel => 'Spart';
+
+  @override
+  String get stepSpellcastingLabel => 'Zauberei';
+
+  @override
+  String get stepOptionsLabel => 'Optionen';
+
+  @override
+  String stepChooseSubclassPrompt(String feature, int level) {
+    return 'Wählen Sie ein $feature (Lv $level):';
+  }
+
+  @override
+  String get stepRaceSpeedLabel => 'Geschwindigkeit';
+
+  @override
+  String get stepRaceASILabel => 'DA ICH';
+
+  @override
+  String stepRaceSubracesAvailable(int count) {
+    return '$count Unterrassen verfügbar';
+  }
+
+  @override
+  String stepChooseSkillsHint(int count) {
+    return 'Wählen Sie $count Fertigkeiten aus Ihrer Klassenliste aus.';
+  }
+
+  @override
+  String get abilityStrength => 'Stärke';
+
+  @override
+  String get abilityDexterity => 'Geschicklichkeit';
+
+  @override
+  String get abilityConstitution => 'Verfassung';
+
+  @override
+  String get abilityIntelligence => 'Intelligenz';
+
+  @override
+  String get abilityWisdom => 'Weisheit';
+
+  @override
+  String get abilityCharisma => 'Charisma';
+
+  @override
+  String stepFreeAsiRemaining(int remaining) {
+    return 'Verteilen Sie rassistische ASI-Punkte frei ($remaining verbleibend):';
+  }
+
+  @override
+  String stepFreePicksRemaining(int total, int remaining) {
+    return 'Rassenfreier ASI: Weisen Sie $total Attributen +1 zu ($remaining verbleibend):';
+  }
+
+  @override
+  String get stepFreePicksNoStack =>
+      'Kann nicht Attributen zugewiesen werden, die bereits einen Volksbonus erhalten.';
 }

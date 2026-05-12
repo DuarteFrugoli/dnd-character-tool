@@ -1007,4 +1007,81 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get stepPrimaryAbilities => 'abilità primarie:';
+
+  @override
+  String get stepNameTitle => 'Dai un nome al tuo personaggio.';
+
+  @override
+  String get stepNameHint => 'Puoi sempre modificarlo in seguito.';
+
+  @override
+  String get stepNameCharLabel => 'Nome del personaggio';
+
+  @override
+  String get stepNamePlayerLabel => 'Nome del giocatore (facoltativo)';
+
+  @override
+  String get stepHitDieLabel => 'Colpisci morire';
+
+  @override
+  String get stepSavesLabel => 'Salva';
+
+  @override
+  String get stepSpellcastingLabel => 'Incantesimi';
+
+  @override
+  String get stepOptionsLabel => 'opzioni';
+
+  @override
+  String stepChooseSubclassPrompt(String feature, int level) {
+    return 'Scegli una $feature (Lv $level):';
+  }
+
+  @override
+  String get stepRaceSpeedLabel => 'Velocità';
+
+  @override
+  String get stepRaceASILabel => 'ASI';
+
+  @override
+  String stepRaceSubracesAvailable(int count) {
+    return '$count sottorazze disponibili';
+  }
+
+  @override
+  String stepChooseSkillsHint(int count) {
+    return 'Scegli $count abilità dall\'elenco delle tue lezioni.';
+  }
+
+  @override
+  String get abilityStrength => 'Forza';
+
+  @override
+  String get abilityDexterity => 'Destrezza';
+
+  @override
+  String get abilityConstitution => 'Costituzione';
+
+  @override
+  String get abilityIntelligence => 'Intelligenza';
+
+  @override
+  String get abilityWisdom => 'Saggezza';
+
+  @override
+  String get abilityCharisma => 'Carisma';
+
+  @override
+  String stepFreeAsiRemaining(int remaining) {
+    return 'Distribuisci liberamente i punti ASI razziali ($remaining rimanenti):';
+  }
+
+  @override
+  String stepFreePicksRemaining(int total, int remaining) {
+    return 'ASI senza razza: assegna +1 a $total attributi ($remaining rimanenti):';
+  }
+
+  @override
+  String get stepFreePicksNoStack =>
+      'Non è possibile assegnare attributi che già ricevono un bonus razziale.';
 }

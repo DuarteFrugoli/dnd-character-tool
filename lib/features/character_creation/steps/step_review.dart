@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
+import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_i18n_service.dart';
@@ -57,7 +58,7 @@ class StepReview extends ConsumerWidget {
           _Row(l10n.reviewRowHitDie, 'd${draft.selectedClass?.hitDie ?? '—'}'),
           _Row(
             l10n.reviewRowSavingThrows,
-            draft.selectedClass?.savingThrows.join(', ') ?? '—',
+            draft.selectedClass?.savingThrows.map((s) => abilityName(l10n, s)).join(', ') ?? '—',
           ),
           if (draft.selectedClass != null)
             const _StartingGoldRow(),

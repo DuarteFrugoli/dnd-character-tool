@@ -334,6 +334,34 @@
   "stepRollDice": "Rolar dados",
   "stepReroll": "Rolar novamente",
   "stepRollHint": "Role para gerar 6 valores (4d6, menor excluído)",
-  "stepPrimaryAbilities": "habilidades primárias: "
+  "stepPrimaryAbilities": "habilidades primárias: ",
+
+  "stepNameTitle": "Dê um nome ao seu personagem.",
+  "stepNameHint": "Você pode alterar isso depois.",
+  "stepNameCharLabel": "Nome do personagem",
+  "stepNamePlayerLabel": "Nome do jogador (opcional)",
+
+  "stepHitDieLabel": "Dado de Vida",
+  "stepSavesLabel": "Resistências",
+  "stepSpellcastingLabel": "Conjuração",
+  "stepOptionsLabel": "opções",
+  "stepChooseSubclassPrompt": "Escolha um(a) {feature} (Nv {level}):",
+
+  "stepRaceSpeedLabel": "Velocidade",
+  "stepRaceASILabel": "Bônus de Atributo",
+  "stepRaceSubracesAvailable": "{count} subraças disponíveis",
+
+  "stepChooseSkillsHint": "Escolha {count} perícias da lista da sua classe.",
+
+  "abilityStrength": "Força",
+  "abilityDexterity": "Destreza",
+  "abilityConstitution": "Constituição",
+  "abilityIntelligence": "Inteligência",
+  "abilityWisdom": "Sabedoria",
+  "abilityCharisma": "Carisma",
+
+  "stepFreeAsiRemaining": "Distribua os bônus raciais livremente ({remaining} restantes):",
+  "stepFreePicksRemaining": "ASI racial livre: atribua +1 a {total} atributos ({remaining} restantes):",
+  "stepFreePicksNoStack": "Não é possível atribuir a atributos que já recebem bônus racial."
 }
 

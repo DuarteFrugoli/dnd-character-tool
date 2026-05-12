@@ -1937,6 +1937,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'primary abilities: '**
   String get stepPrimaryAbilities;
+
+  /// Name step: page title.
+  ///
+  /// In en, this message translates to:
+  /// **'Give your character a name.'**
+  String get stepNameTitle;
+
+  /// Name step: subtitle hint.
+  ///
+  /// In en, this message translates to:
+  /// **'You can always change this later.'**
+  String get stepNameHint;
+
+  /// Name step: character name field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Character name'**
+  String get stepNameCharLabel;
+
+  /// Name step: player name field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Player name (optional)'**
+  String get stepNamePlayerLabel;
+
+  /// Class card: hit die label.
+  ///
+  /// In en, this message translates to:
+  /// **'Hit die'**
+  String get stepHitDieLabel;
+
+  /// Class card: saving throws label.
+  ///
+  /// In en, this message translates to:
+  /// **'Saves'**
+  String get stepSavesLabel;
+
+  /// Class card: spellcasting ability label.
+  ///
+  /// In en, this message translates to:
+  /// **'Spellcasting'**
+  String get stepSpellcastingLabel;
+
+  /// Class card: subclass options count suffix.
+  ///
+  /// In en, this message translates to:
+  /// **'options'**
+  String get stepOptionsLabel;
+
+  /// Class step: subclass selector prompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a {feature} (Lv {level}):'**
+  String stepChooseSubclassPrompt(String feature, int level);
+
+  /// Race card: speed label.
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get stepRaceSpeedLabel;
+
+  /// Race card: ability score increase label.
+  ///
+  /// In en, this message translates to:
+  /// **'ASI'**
+  String get stepRaceASILabel;
+
+  /// Race card: subraces count.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} subraces available'**
+  String stepRaceSubracesAvailable(int count);
+
+  /// Skills step: prompt to choose skills.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} skills from your class list.'**
+  String stepChooseSkillsHint(int count);
+
+  /// Full name of the Strength ability score.
+  ///
+  /// In en, this message translates to:
+  /// **'Strength'**
+  String get abilityStrength;
+
+  /// Full name of the Dexterity ability score.
+  ///
+  /// In en, this message translates to:
+  /// **'Dexterity'**
+  String get abilityDexterity;
+
+  /// Full name of the Constitution ability score.
+  ///
+  /// In en, this message translates to:
+  /// **'Constitution'**
+  String get abilityConstitution;
+
+  /// Full name of the Intelligence ability score.
+  ///
+  /// In en, this message translates to:
+  /// **'Intelligence'**
+  String get abilityIntelligence;
+
+  /// Full name of the Wisdom ability score.
+  ///
+  /// In en, this message translates to:
+  /// **'Wisdom'**
+  String get abilityWisdom;
+
+  /// Full name of the Charisma ability score.
+  ///
+  /// In en, this message translates to:
+  /// **'Charisma'**
+  String get abilityCharisma;
+
+  /// Attributes step: Tasha free ASI distribution label.
+  ///
+  /// In en, this message translates to:
+  /// **'Distribute racial ASI points freely ({remaining} remaining):'**
+  String stepFreeAsiRemaining(int remaining);
+
+  /// Attributes step: Half-Elf style free picks label.
+  ///
+  /// In en, this message translates to:
+  /// **'Racial free ASI: assign +1 to {total} attributes ({remaining} remaining):'**
+  String stepFreePicksRemaining(int total, int remaining);
+
+  /// Attributes step: free picks constraint hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot assign to attributes already receiving a racial bonus.'**
+  String get stepFreePicksNoStack;
 }
 
 class _AppLocalizationsDelegate

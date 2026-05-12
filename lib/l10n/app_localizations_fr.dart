@@ -1008,4 +1008,81 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get stepPrimaryAbilities => 'capacités principales :';
+
+  @override
+  String get stepNameTitle => 'Give your character a name.';
+
+  @override
+  String get stepNameHint => 'You can always change this later.';
+
+  @override
+  String get stepNameCharLabel => 'Character name';
+
+  @override
+  String get stepNamePlayerLabel => 'Player name (optional)';
+
+  @override
+  String get stepHitDieLabel => 'Hit die';
+
+  @override
+  String get stepSavesLabel => 'Saves';
+
+  @override
+  String get stepSpellcastingLabel => 'Spellcasting';
+
+  @override
+  String get stepOptionsLabel => 'options';
+
+  @override
+  String stepChooseSubclassPrompt(String feature, int level) {
+    return 'Choose a $feature (Lv $level):';
+  }
+
+  @override
+  String get stepRaceSpeedLabel => 'Speed';
+
+  @override
+  String get stepRaceASILabel => 'ASI';
+
+  @override
+  String stepRaceSubracesAvailable(int count) {
+    return '$count subraces available';
+  }
+
+  @override
+  String stepChooseSkillsHint(int count) {
+    return 'Choose $count skills from your class list.';
+  }
+
+  @override
+  String get abilityStrength => 'Strength';
+
+  @override
+  String get abilityDexterity => 'Dexterity';
+
+  @override
+  String get abilityConstitution => 'Constitution';
+
+  @override
+  String get abilityIntelligence => 'Intelligence';
+
+  @override
+  String get abilityWisdom => 'Wisdom';
+
+  @override
+  String get abilityCharisma => 'Charisma';
+
+  @override
+  String stepFreeAsiRemaining(int remaining) {
+    return 'Distribute racial ASI points freely ($remaining remaining):';
+  }
+
+  @override
+  String stepFreePicksRemaining(int total, int remaining) {
+    return 'Racial free ASI: assign +1 to $total attributes ($remaining remaining):';
+  }
+
+  @override
+  String get stepFreePicksNoStack =>
+      'Cannot assign to attributes already receiving a racial bonus.';
 }

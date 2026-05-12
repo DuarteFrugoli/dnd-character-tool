@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
+import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
+import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
+import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
 
 class StepSkills extends ConsumerStatefulWidget {
@@ -24,7 +27,9 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final draft = ref.watch(characterDraftProvider);
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final cls = draft.selectedClass;
     if (cls == null) return const SizedBox.shrink();
 
@@ -48,26 +53,26 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
           padding: const EdgeInsets.all(16),
           children: [
             Text(
-              'Choose $needed skill${needed > 1 ? 's' : ''} from your class list.',
+              l10n.stepChooseSkillsHint(needed),
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 8),
             if (grantedRaw.isNotEmpty) ...[
-              Text(AppLocalizations.of(context)!.stepGrantedByBackground,
+              Text(l10n.stepGrantedByBackground,
                 style: Theme.of(context).textTheme.labelSmall),
               const SizedBox(height: 4),
               Wrap(
                 spacing: 8,
                 children: grantedRaw
                     .map((s) => Chip(
-                          label: Text(s),
+                          label: Text(i18n.skillName(s)),
                           avatar: const Icon(Icons.lock, size: 14),
                         ))
                     .toList(),
               ),
               const Divider(height: 24),
             ],
-            Text(AppLocalizations.of(context)!.stepClassSkillChoices(needed),
+            Text(l10n.stepClassSkillChoices(needed),
                 style: Theme.of(context).textTheme.labelSmall),
             const SizedBox(height: 4),
             ...allowedPool.map((skillName) {
@@ -82,9 +87,9 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
                   .firstOrNull;
 
               return CheckboxListTile(
-                title: Text(skillName),
+                title: Text(i18n.skillName(skillName)),
                 subtitle: skill != null
-                    ? Text(skill.ability,
+                    ? Text(abilityName(l10n, skill.ability),
                         style: Theme.of(context).textTheme.bodySmall)
                     : null,
                 value: isChosen || isGranted,

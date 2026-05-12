@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
+import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
@@ -92,14 +93,15 @@ class _RaceCard extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
 
-  String _asiText() {
+  String _asiText(AppLocalizations l10n) {
     return race.abilityScoreIncreases.entries
-        .map((e) => '+${e.value} ${e.key}')
+        .map((e) => '+${e.value} ${abilityName(l10n, e.key)}')
         .join(', ');
   }
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final raceName = i18n.raceName(race.name);
     return Card(
@@ -127,7 +129,7 @@ class _RaceCard extends StatelessWidget {
                             )),
                     const SizedBox(height: 4),
                     Text(
-                      'Speed: ${race.speed}ft  ·  ASI: ${_asiText()}',
+                      '${l10n.stepRaceSpeedLabel}: ${race.speed}ft  ·  ${l10n.stepRaceASILabel}: ${_asiText(l10n)}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: isSelected
                                 ? scheme.onPrimaryContainer
@@ -138,7 +140,7 @@ class _RaceCard extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 4),
                         child: Text(
-                          '${race.subraces.length} subraces available',
+                          l10n.stepRaceSubracesAvailable(race.subraces.length),
                           style:
                               Theme.of(context).textTheme.bodySmall?.copyWith(
                                     color: isSelected
@@ -175,6 +177,7 @@ class _SubraceSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.only(left: 16, bottom: 8),
@@ -183,13 +186,13 @@ class _SubraceSelector extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text(AppLocalizations.of(context)!.stepChooseSubrace,
+            child: Text(l10n.stepChooseSubrace,
                 style: Theme.of(context).textTheme.labelLarge),
           ),
           ...race.subraces.map((sub) {
             final isSelected = selectedSubrace?.name == sub.name;
             final asiText = sub.abilityScoreIncreases.entries
-                .map((e) => '+${e.value} ${e.key}')
+                .map((e) => '+${e.value} ${abilityName(l10n, e.key)}')
                 .join(', ');
             final subName = i18n.subraceName(sub.name);
             return Card(
@@ -214,7 +217,7 @@ class _SubraceSelector extends StatelessWidget {
                                     ?.copyWith(fontWeight: FontWeight.bold)),
                             if (asiText.isNotEmpty)
                               Text(
-                                'ASI: $asiText',
+                                '${l10n.stepRaceASILabel}: $asiText',
                                 style: Theme.of(context).textTheme.bodySmall,
                               ),
                           ],

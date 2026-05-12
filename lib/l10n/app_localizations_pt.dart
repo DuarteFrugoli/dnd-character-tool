@@ -561,6 +561,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get inventoryTabMagic => 'Mágicos';
 
   @override
+  String get inventoryTabTools => 'Ferramentas';
+
+  @override
   String get inventoryTabCustom => 'Personalizados';
 
   @override
@@ -828,4 +831,19 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get inventoryGroupWondrousItems => 'Itens Maravilhosos';
+
+  @override
+  String get inventoryGroupArtisansTools => 'Ferramentas de Artesão';
+
+  @override
+  String get inventoryGroupGamingSets => 'Jogos de Mesa';
+
+  @override
+  String get inventoryGroupMusicalInstruments => 'Instrumentos Musicais';
+
+  @override
+  String get inventoryGroupOtherTools => 'Outras Ferramentas';
+
+  @override
+  String get armorStealthDisadvantage => 'Desvantagem em Furtividade';
 }

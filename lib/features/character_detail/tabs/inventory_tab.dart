@@ -417,6 +417,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   List<SrdArmor>? _armors;
   List<SrdGearItem>? _gear;
   List<SrdMagicItem>? _magic;
+  List<SrdTool>? _tools;
   String? _loadError;
 
   List<String> _getTabLabels(BuildContext context) {
@@ -426,6 +427,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
       l10n.inventoryTabArmor,
       l10n.inventoryTabGear,
       l10n.inventoryTabMagic,
+      l10n.inventoryTabTools,
       l10n.inventoryTabCustom,
     ];
   }
@@ -433,7 +435,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 5, vsync: this);
+    _tabs = TabController(length: 6, vsync: this);
     _tabs.addListener(() {
       if (!_tabs.indexIsChanging) {
         _search.clear();
@@ -459,6 +461,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
         srd.getArmors(),
         srd.getGear(),
         srd.getMagicItems(),
+        srd.getTools(),
       ]);
       if (mounted) {
         setState(() {
@@ -466,6 +469,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
           _armors = results[1] as List<SrdArmor>;
           _gear = results[2] as List<SrdGearItem>;
           _magic = results[3] as List<SrdMagicItem>;
+          _tools = results[4] as List<SrdTool>;
         });
       }
     } catch (e, st) {
@@ -588,10 +592,15 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
       );
     }
 
-    Widget buildTile(T item) => ListTile(
+    Widget buildTile(T item) {
+      final desc = getDescription(item);
+      final subtitleFull = (desc != null && desc.isNotEmpty)
+          ? '${getSubtitle(item)}  ·  $desc'
+          : getSubtitle(item);
+      return ListTile(
           title: Text((getDisplayName ?? getName)(item), style: const TextStyle(fontSize: 14)),
           subtitle: Text(
-            getSubtitle(item),
+            subtitleFull,
             style: TextStyle(
                 fontSize: 12,
                 color: Theme.of(context).colorScheme.onSurfaceVariant),
@@ -609,6 +618,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
             ),
           ),
         );
+    }
 
     // Com busca activa: lista plana sem cabeçalhos.
     if (q.isNotEmpty) {
@@ -743,7 +753,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
-    final isCustomTab = _tabs.index == 4;
+    final isCustomTab = _tabs.index == 5;
 
     return DraggableScrollableSheet(
       initialChildSize: 0.87,
@@ -850,7 +860,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getCategory: (_) => 'armor',
                   getGroup: (a) => a.type,
                   getDescription: (a) => a.stealthDisadvantage
-                      ? 'Stealth disadvantage'
+                      ? l10n.armorStealthDisadvantage
                       : null,
                   getItemType: (_) => ItemType.armor,
                   getProperties: (a) => {
@@ -859,6 +869,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'maxDexBonus': a.maxDexBonus,
                     'isShield': a.isShield,
                     'acBonus': a.acBonus,
+                    if (a.stealthDisadvantage) 'stealthDisadvantage': true,
                   },
                   groupOrder: const ['light', 'medium', 'heavy', 'shield'],
                   groupLabels: {
@@ -924,6 +935,36 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'weapon': l10n.inventoryGroupWeapons,
                     'armor': l10n.inventoryGroupArmor,
                     'wondrous item': l10n.inventoryGroupWondrousItems,
+                  },
+                ),
+                // Tools
+                _buildGroupedSrdList<SrdTool>(
+                  items: _tools,
+                  getName: (t) => t.name,
+                  getDisplayName: (t) => i18n.toolName(t.name),
+                  getSubtitle: (t) {
+                    switch (t.category) {
+                      case 'artisans_tools':  return l10n.inventoryGroupArtisansTools;
+                      case 'gaming_sets':     return l10n.inventoryGroupGamingSets;
+                      case 'musical_instruments': return l10n.inventoryGroupMusicalInstruments;
+                      default:                return l10n.inventoryGroupOtherTools;
+                    }
+                  },
+                  getCategory: (t) => t.category,
+                  getGroup: (t) => t.category,
+                  getDescription: (_) => null,
+                  getItemType: (_) => ItemType.gear,
+                  groupOrder: const [
+                    'artisans_tools',
+                    'gaming_sets',
+                    'musical_instruments',
+                    'other_tools',
+                  ],
+                  groupLabels: {
+                    'artisans_tools':       l10n.inventoryGroupArtisansTools,
+                    'gaming_sets':          l10n.inventoryGroupGamingSets,
+                    'musical_instruments':  l10n.inventoryGroupMusicalInstruments,
+                    'other_tools':          l10n.inventoryGroupOtherTools,
                   },
                 ),
                 // Custom
@@ -1108,6 +1149,7 @@ class _ItemTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
     final canEquip =
@@ -1115,11 +1157,22 @@ class _ItemTile extends ConsumerWidget {
     final meta = _itemMeta(item);
     final displayName = _itemDisplayName(item, i18n);
 
+    // Stealth disadvantage: stored in properties (new items) or description (old items)
+    final stealthDisadv = item.itemType == ItemType.armor &&
+        (item.properties?['stealthDisadvantage'] == true ||
+         (item.description?.toLowerCase().contains('stealth') == true));
+
     String? subtitleText;
-    if (meta != null && item.description != null && item.description!.isNotEmpty) {
+    if (meta != null && item.description != null && item.description!.isNotEmpty &&
+        !stealthDisadv) {
       subtitleText = '$meta  ·  ${item.description!}';
     } else {
-      subtitleText = meta ?? item.description;
+      subtitleText = meta ?? (stealthDisadv ? null : item.description);
+    }
+    if (stealthDisadv) {
+      subtitleText = subtitleText != null
+          ? '$subtitleText  ·  ${l10n.armorStealthDisadvantage}'
+          : l10n.armorStealthDisadvantage;
     }
 
     return ListTile(

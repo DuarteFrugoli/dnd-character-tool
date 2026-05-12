@@ -1118,6 +1118,12 @@ abstract class AppLocalizations {
   /// **'Magic'**
   String get inventoryTabMagic;
 
+  /// Inventory browser tools tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get inventoryTabTools;
+
   /// Inventory browser custom tab.
   ///
   /// In en, this message translates to:
@@ -1609,6 +1615,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Wondrous Items'**
   String get inventoryGroupWondrousItems;
+
+  /// Tools browser group: artisan's tools.
+  ///
+  /// In en, this message translates to:
+  /// **'Artisan\'s Tools'**
+  String get inventoryGroupArtisansTools;
+
+  /// Tools browser group: gaming sets.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming Sets'**
+  String get inventoryGroupGamingSets;
+
+  /// Tools browser group: musical instruments.
+  ///
+  /// In en, this message translates to:
+  /// **'Musical Instruments'**
+  String get inventoryGroupMusicalInstruments;
+
+  /// Tools browser group: other tools.
+  ///
+  /// In en, this message translates to:
+  /// **'Other Tools'**
+  String get inventoryGroupOtherTools;
+
+  /// Label shown when armor imposes stealth disadvantage.
+  ///
+  /// In en, this message translates to:
+  /// **'Stealth disadvantage'**
+  String get armorStealthDisadvantage;
 }
 
 class _AppLocalizationsDelegate

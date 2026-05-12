@@ -187,6 +187,7 @@
   "inventoryTabArmor": "Armaduras",
   "inventoryTabGear": "Equipamentos",
   "inventoryTabMagic": "Mágicos",
+  "inventoryTabTools": "Ferramentas",
   "inventoryTabCustom": "Personalizados",
   "hintSearchCategory": "Buscar {category}...",
 
@@ -277,6 +278,13 @@
   "inventoryGroupWands": "Varinhas",
   "inventoryGroupWeapons": "Armas",
   "inventoryGroupArmor": "Armaduras",
-  "inventoryGroupWondrousItems": "Itens Maravilhosos"
+  "inventoryGroupWondrousItems": "Itens Maravilhosos",
+
+  "inventoryGroupArtisansTools": "Ferramentas de Artesão",
+  "inventoryGroupGamingSets": "Jogos de Mesa",
+  "inventoryGroupMusicalInstruments": "Instrumentos Musicais",
+  "inventoryGroupOtherTools": "Outras Ferramentas",
+
+  "armorStealthDisadvantage": "Desvantagem em Furtividade"
 }
 

@@ -560,6 +560,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get inventoryTabMagic => 'Magic';
 
   @override
+  String get inventoryTabTools => 'Tools';
+
+  @override
   String get inventoryTabCustom => 'Custom';
 
   @override
@@ -825,4 +828,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get inventoryGroupWondrousItems => 'Wondrous Items';
+
+  @override
+  String get inventoryGroupArtisansTools => 'Artisan\'s Tools';
+
+  @override
+  String get inventoryGroupGamingSets => 'Gaming Sets';
+
+  @override
+  String get inventoryGroupMusicalInstruments => 'Musical Instruments';
+
+  @override
+  String get inventoryGroupOtherTools => 'Other Tools';
+
+  @override
+  String get armorStealthDisadvantage => 'Stealth disadvantage';
 }

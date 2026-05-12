@@ -602,6 +602,20 @@ class SrdGearItem {
       );
 }
 
+// ── Tools ─────────────────────────────────────────────────────────────────────
+
+class SrdTool {
+  final String name;
+  final String category;
+
+  const SrdTool({required this.name, required this.category});
+
+  factory SrdTool.fromJson(Map<String, dynamic> json) => SrdTool(
+        name: (json['name'] as String?) ?? '',
+        category: (json['category'] as String?) ?? '',
+      );
+}
+
 class SrdMagicItem {
   final String name;
   final String type;

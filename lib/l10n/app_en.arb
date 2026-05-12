@@ -567,6 +567,9 @@
   "inventoryTabMagic": "Magic",
   "@inventoryTabMagic": { "description": "Inventory browser magic tab." },
 
+  "inventoryTabTools": "Tools",
+  "@inventoryTabTools": { "description": "Inventory browser tools tab." },
+
   "inventoryTabCustom": "Custom",
   "@inventoryTabCustom": { "description": "Inventory browser custom tab." },
 
@@ -783,6 +786,18 @@
   "inventoryGroupArmor": "Armor",
   "@inventoryGroupArmor": { "description": "Magic item browser group: armor." },
   "inventoryGroupWondrousItems": "Wondrous Items",
-  "@inventoryGroupWondrousItems": { "description": "Magic item browser group: wondrous items." }
+  "@inventoryGroupWondrousItems": { "description": "Magic item browser group: wondrous items." },
+
+  "inventoryGroupArtisansTools": "Artisan's Tools",
+  "@inventoryGroupArtisansTools": { "description": "Tools browser group: artisan's tools." },
+  "inventoryGroupGamingSets": "Gaming Sets",
+  "@inventoryGroupGamingSets": { "description": "Tools browser group: gaming sets." },
+  "inventoryGroupMusicalInstruments": "Musical Instruments",
+  "@inventoryGroupMusicalInstruments": { "description": "Tools browser group: musical instruments." },
+  "inventoryGroupOtherTools": "Other Tools",
+  "@inventoryGroupOtherTools": { "description": "Tools browser group: other tools." },
+
+  "armorStealthDisadvantage": "Stealth disadvantage",
+  "@armorStealthDisadvantage": { "description": "Label shown when armor imposes stealth disadvantage." }
 }
 

@@ -25,6 +25,7 @@ class SrdDataSource {
   Map<String, String>? _raceTraits;
   Map<String, Map<String, List<SrdClassFeature>>>? _subclassFeatures;
   Map<String, SrdItemData>? _items;
+  List<SrdTool>? _tools;
 
   Future<List<SrdSkill>> getSkills() async {
     _skills ??= await _loadList(
@@ -143,6 +144,14 @@ class SrdDataSource {
       SrdMagicItem.fromJson,
     );
     return _magicItems!;
+  }
+
+  Future<List<SrdTool>> getTools() async {
+    _tools ??= await _loadList(
+      'assets/data/srd/tools.json',
+      SrdTool.fromJson,
+    );
+    return _tools!;
   }
 
   Future<Map<String, SrdItemData>> getItems() async {
@@ -323,6 +332,7 @@ class SrdDataSource {
     _raceTraits = null;
     _subclassFeatures = null;
     _items = null;
+    _tools = null;
   }
 }
 

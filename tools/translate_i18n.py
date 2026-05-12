@@ -7,9 +7,11 @@ Keys in overlay files are always English identifiers — never translated.
 All string VALUES are translated from English to the target language.
 
 Usage:
-  python tools/translate_i18n.py              # translate to ALL locales
-  python tools/translate_i18n.py es fr de     # translate to specific locales
-  python tools/translate_i18n.py es --force   # overwrite existing non-empty files
+  python tools/translate_i18n.py                              # translate to ALL locales
+  python tools/translate_i18n.py es fr de                     # translate to specific locales
+  python tools/translate_i18n.py es --force                   # overwrite existing non-empty files
+  python tools/translate_i18n.py --file equipment.json        # only translate equipment.json for all locales
+  python tools/translate_i18n.py es --file equipment.json --force  # overwrite equipment.json for es
 
 Requires:
   pip install deep-translator
@@ -66,13 +68,16 @@ def extract_skills() -> dict:
 
 
 def extract_equipment() -> dict:
-    # srd: { weapons: [...], armor: [...], adventuringGear: [...] }
+    # srd: { weapons: [...], armor: [...], gear: [...] }
     out = {}
     for category in _srd("equipment.json").values():
         if isinstance(category, list):
             for item in category:
                 if isinstance(item, dict) and "name" in item:
-                    out[item["name"]] = {"name": item["name"]}
+                    entry = {"name": item["name"]}
+                    if item.get("description"):
+                        entry["description"] = item["description"]
+                    out[item["name"]] = entry
     return out
 
 
@@ -267,6 +272,13 @@ def main():
     force = "--force" in raw_args
     args  = [a for a in raw_args if a != "--force"]
 
+    # --file equipment.json  → translate only that file
+    file_filter = None
+    if "--file" in args:
+        idx = args.index("--file")
+        file_filter = args[idx + 1]
+        args = args[:idx] + args[idx + 2:]
+
     if args:
         target_locales = args
         unknown = [l for l in target_locales if l not in LOCALE_LANG]
@@ -278,6 +290,11 @@ def main():
         target_locales = list(LOCALE_LANG.keys())
 
     filenames = sorted(EXTRACTORS.keys())
+    if file_filter:
+        if file_filter not in EXTRACTORS:
+            print(f"Unknown file: {file_filter}. Available: {', '.join(sorted(EXTRACTORS.keys()))}")
+            sys.exit(1)
+        filenames = [file_filter]
 
     print(f"Source : {SRD_DIR} (English SRD)")
     print(f"Targets: {', '.join(target_locales)}")

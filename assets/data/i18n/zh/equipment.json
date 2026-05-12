@@ -150,261 +150,347 @@
     "name": "盾"
   },
   "Abacus": {
-    "name": "算盘"
+    "name": "算盘",
+    "description": "用于计算的计数工具。"
   },
   "Acid (vial)": {
-    "name": "酸（小瓶）"
+    "name": "酸（小瓶）",
+    "description": "作为一个动作，你可以将这个小瓶中的内容物溅到 5 英尺内的生物身上，或者将其扔到 20 英尺外，在撞击时将其打破。生物被击中时会受到 2d6 酸液伤害。"
   },
   "Alchemist's Fire": {
-    "name": "炼金术士之火"
+    "name": "炼金术士之火",
+    "description": "这种粘稠的粘性液体暴露在空气中时会点燃。燃烧时，生物在每个回合开始时都会受到 1d4 火焰伤害。动作和 DC 10 敏捷检定就可以解决这个问题。"
   },
   "Arrows (20)": {
-    "name": "箭 (20)"
+    "name": "箭 (20)",
+    "description": "短弓和长弓的弹药。"
   },
   "Blowgun Needles (50)": {
-    "name": "风枪针 (50)"
+    "name": "风枪针 (50)",
+    "description": "吹气枪的弹药。"
   },
   "Crossbow Bolts (20)": {
-    "name": "弩箭 (20)"
+    "name": "弩箭 (20)",
+    "description": "弩的弹药。"
   },
   "Sling Bullets (20)": {
-    "name": "弹弓子弹 (20)"
+    "name": "弹弓子弹 (20)",
+    "description": "弹弓弹药。"
   },
   "Antitoxin (vial)": {
-    "name": "抗毒素（小瓶）"
+    "name": "抗毒素（小瓶）",
+    "description": "喝下这瓶液体的生物在 1 小时内获得毒药豁免检定优势。"
   },
   "Backpack": {
-    "name": "背包"
+    "name": "背包",
+    "description": "可容纳 30 磅/1 立方英尺。"
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "滚珠轴承（每袋 1000 个）"
+    "name": "滚珠轴承（每袋 1000 个）",
+    "description": "作为一个动作，将这些小金属球散开。生物必须成功通过 DC 10 敏捷豁免检定，否则就会摔倒。"
   },
   "Barrel": {
-    "name": "桶"
+    "name": "桶",
+    "description": "可容纳 40 加仑液体或 4 立方英尺固体。"
   },
   "Basket": {
-    "name": "篮子"
+    "name": "篮子",
+    "description": "可容纳 2 立方英尺/40 磅。"
   },
   "Bedroll": {
-    "name": "铺盖卷"
+    "name": "铺盖卷",
+    "description": "带衬垫的睡垫。"
   },
   "Bell": {
-    "name": "钟"
+    "name": "钟",
+    "description": "一个小铃铛。"
   },
   "Blanket": {
-    "name": "毯子"
+    "name": "毯子",
+    "description": "一条温暖的毯子。"
   },
   "Block and Tackle": {
-    "name": "拦网和铲车"
+    "name": "拦网和铲车",
+    "description": "一组带有缆绳的滑轮，可减少举升重物所需的力气。"
   },
   "Book": {
-    "name": "书"
+    "name": "书",
+    "description": "一本传说书，包含有关 GM 选择的主题的信息。"
   },
   "Bottle, glass": {
-    "name": "瓶子、玻璃"
+    "name": "瓶子、玻璃",
+    "description": "可容纳 1.5 品脱液体。"
   },
   "Bucket": {
-    "name": "桶"
+    "name": "桶",
+    "description": "可容纳 3 加仑。"
   },
   "Caltrops (bag of 20)": {
-    "name": "菱角（20粒装）"
+    "name": "菱角（20粒装）",
+    "description": "分散在 5 英尺的区域内。穿过的生物必须进行 DC 15 敏捷豁免，否则会停止并受到 1 点穿刺伤害（速度降低 10 英尺直至痊愈）。"
   },
   "Candle": {
-    "name": "蜡烛"
+    "name": "蜡烛",
+    "description": "照亮半径 5 英尺的亮光和 5 英尺的暗光，持续 1 小时。"
   },
   "Case, crossbow bolt": {
-    "name": "箱体，弩栓"
+    "name": "箱体，弩栓",
+    "description": "可容纳 20 个十字弓螺栓。"
   },
   "Case, map or scroll": {
-    "name": "案例、地图或卷轴"
+    "name": "案例、地图或卷轴",
+    "description": "用于放置地图和卷轴的圆柱形盒子。"
   },
   "Chain (10 feet)": {
-    "name": "链条（10英尺）"
+    "name": "链条（10英尺）",
+    "description": "拥有 10 点生命值。 Can be burst with a DC 20 Strength check."
   },
   "Chalk (1 piece)": {
-    "name": "粉笔（1支）"
+    "name": "粉笔（1支）",
+    "description": "写粉笔。"
   },
   "Chest": {
-    "name": "胸部"
+    "name": "胸部",
+    "description": "可容纳 12 立方英尺/300 磅。"
   },
   "Climber's Kit": {
-    "name": "登山者套件"
+    "name": "登山者套件",
+    "description": "包括特殊的岩钉、靴套、手套和安全带。为攀爬检查提供优势。"
   },
   "Clothes, common": {
-    "name": "衣服，普通"
+    "name": "衣服，普通",
+    "description": "简单的日常服装。"
   },
   "Clothes, costume": {
-    "name": "衣服、戏服"
+    "name": "衣服、戏服",
+    "description": "戏剧或化装服装。"
   },
   "Clothes, fine": {
-    "name": "衣服，还好"
+    "name": "衣服，还好",
+    "description": "适合贵族的优雅服装。"
   },
   "Clothes, traveler's": {
-    "name": "衣服，旅行者的"
+    "name": "衣服，旅行者的",
+    "description": "专为旅行打造的坚固服装。"
   },
   "Component Pouch": {
-    "name": "元件袋"
+    "name": "元件袋",
+    "description": "一个防水的小袋子，里面有隔间，可以容纳法术的所有材料组件，除了具有特定成本的组件。"
   },
   "Crowbar": {
-    "name": "撬棍"
+    "name": "撬棍",
+    "description": "在可以应用杠杆的力量检查中赋予优势。"
   },
   "Druidic Focus": {
-    "name": "德鲁伊焦点"
+    "name": "德鲁伊焦点",
+    "description": "一枝槲寄生、一个图腾、一根木杖或一根紫杉木魔杖——可以作为德鲁伊的施法焦点。"
   },
   "Flask or tankard": {
-    "name": "烧瓶或大酒杯"
+    "name": "烧瓶或大酒杯",
+    "description": "可容纳 1 品脱液体。"
   },
   "Grappling Hook": {
-    "name": "抓钩"
+    "name": "抓钩",
+    "description": "可以投掷以将绳子固定在表面上。"
   },
   "Hammer": {
-    "name": "锤"
+    "name": "锤",
+    "description": "木匠的锤子。"
   },
   "Hammer, sledge": {
-    "name": "锤子、雪橇"
+    "name": "锤子、雪橇",
+    "description": "一把沉重的大锤。"
   },
   "Healer's Kit": {
-    "name": "治疗师套件"
+    "name": "治疗师套件",
+    "description": "10 次使用。以一个动作，稳定一个 HP 为 0 的生物，无需进行药物检定。"
   },
   "Holy Symbol": {
-    "name": "圣徽"
+    "name": "圣徽",
+    "description": "护身符、徽章或圣物盒。充当牧师和圣骑士的施法焦点。"
   },
   "Holy Water (flask)": {
-    "name": "圣水（瓶）"
+    "name": "圣水（瓶）",
+    "description": "以一个动作，将生物溅到 5 英尺内或将其扔到 20 英尺外。击中时，恶魔或不死生物会受到 2d6 光辉伤害。"
   },
   "Hourglass": {
-    "name": "滴漏"
+    "name": "滴漏",
+    "description": "测量一小时。"
   },
   "Hunting Trap": {
-    "name": "狩猎陷阱"
+    "name": "狩猎陷阱",
+    "description": "设置后，踩到陷阱的大型或小型生物必须进行 DC 13 敏捷豁免，否则会受到 1d4 穿刺伤害并停止移动。"
   },
   "Ink (1 ounce bottle)": {
-    "name": "墨水（1盎司瓶）"
+    "name": "墨水（1盎司瓶）",
+    "description": "书写墨水。"
   },
   "Ink Pen": {
-    "name": "墨水笔"
+    "name": "墨水笔",
+    "description": "用于书写的羽毛笔或芦苇笔。"
   },
   "Jug or Pitcher": {
-    "name": "壶或水罐"
+    "name": "壶或水罐",
+    "description": "可容纳 1 加仑液体。"
   },
   "Ladder (10-foot)": {
-    "name": "梯子（10英尺）"
+    "name": "梯子（10英尺）",
+    "description": "10英尺高的木梯。"
   },
   "Lamp": {
-    "name": "灯"
+    "name": "灯",
+    "description": "燃烧油（1 品脱 = 6 小时）。在 15 英尺半径内发出明亮的光线，在另外 30 英尺的范围内发出昏暗的光线。"
   },
   "Lantern, bullseye": {
-    "name": "灯笼、靶心"
+    "name": "灯笼、靶心",
+    "description": "燃烧油（1 品脱 = 6 小时）。 60 英尺的锥体亮光，额外的 60 英尺的暗光。"
   },
   "Lantern, hooded": {
-    "name": "灯笼，带帽"
+    "name": "灯笼，带帽",
+    "description": "燃烧油（1 品脱 = 6 小时）。 30 英尺半径的亮光，额外 30 英尺的暗光。可以戴上帽子以减少 5 英尺处的昏暗光线。"
   },
   "Lock": {
-    "name": "锁"
+    "name": "锁",
+    "description": "一把带钥匙的小挂锁。 DC 15 使用盗贼工具进行敏捷性检查，无需钥匙即可打开。"
   },
   "Magnifying Glass": {
-    "name": "放大镜"
+    "name": "放大镜",
+    "description": "在阳光照射下可用于生火。赋予感知检查优势以检查细节。"
   },
   "Manacles": {
-    "name": "手铐"
+    "name": "手铐",
+    "description": "可以束缚小型或中型生物。逃脱需要 DC 20 敏捷检定。破坏需要 DC 20 强度。每套都配有一把钥匙。"
   },
   "Mess Kit": {
-    "name": "混乱套件"
+    "name": "混乱套件",
+    "description": "一个铁盒，里面有一个杯子和简单的器皿。"
   },
   "Mirror, steel": {
-    "name": "镜面、钢"
+    "name": "镜面、钢",
+    "description": "一个手持式小镜子。"
   },
   "Oil (flask)": {
-    "name": "油（烧瓶）"
+    "name": "油（烧瓶）",
+    "description": "灯用燃料（每瓶 6 小时）。也可以被点燃和溅射——目标在下次击中时受到 5 点火焰伤害，如果被点燃则受到 2d6 点伤害。"
   },
   "Paper (one sheet)": {
-    "name": "纸（一张）"
+    "name": "纸（一张）",
+    "description": "信纸。"
   },
   "Parchment (one sheet)": {
-    "name": "羊皮纸（一张）"
+    "name": "羊皮纸（一张）",
+    "description": "动物皮书写表面。"
   },
   "Perfume (vial)": {
-    "name": "香水（小瓶）"
+    "name": "香水（小瓶）",
+    "description": "一小瓶香水。"
   },
   "Pick, miner's": {
-    "name": "采摘，矿工的"
+    "name": "采摘，矿工的",
+    "description": "采矿用的重型镐。"
   },
   "Piton": {
-    "name": "皮顿"
+    "name": "皮顿",
+    "description": "用于攀爬和锚定的铁钉。"
   },
   "Poison, basic (vial)": {
-    "name": "基本毒药（小瓶）"
+    "name": "基本毒药（小瓶）",
+    "description": "适用于挥砍或穿刺武器。被击中的生物必须成功通过 DC 10 体质豁免，否则会受到 1d4 中毒伤害。 1 分钟后，毒药失去效力。"
   },
   "Pole (10-foot)": {
-    "name": "杆（10 英尺）"
+    "name": "杆（10 英尺）",
+    "description": "一根 10 英尺高的木杆。"
   },
   "Pot, iron": {
-    "name": "锅、铁"
+    "name": "锅、铁",
+    "description": "一个大铁锅。"
   },
   "Pouch": {
-    "name": "小袋"
+    "name": "小袋",
+    "description": "可容纳最多 20 颗弹弓子弹或 50 支吹气枪针，或 6 磅/1/5 立方英尺的装备。"
   },
   "Quiver": {
-    "name": "颤动"
+    "name": "颤动",
+    "description": "最多可容纳 20 支箭。"
   },
   "Ram, portable": {
-    "name": "内存，便携式"
+    "name": "内存，便携式",
+    "description": "破门的力量检定获得 +4 加值。两个人可以使用它——一个人可以提供优势。"
   },
   "Rations (1 day)": {
-    "name": "口粮（1天）"
+    "name": "口粮（1天）",
+    "description": "适合长途旅行的干食品，包括肉干、干果、硬面包和坚果。"
   },
   "Rope, hempen (50 feet)": {
-    "name": "麻绳（50 英尺）"
+    "name": "麻绳（50 英尺）",
+    "description": "拥有 2 点生命值，并且可以通过 DC 17 的力量检定来爆发。"
   },
   "Rope, silk (50 feet)": {
-    "name": "丝绳（50 英尺）"
+    "name": "丝绳（50 英尺）",
+    "description": "拥有 2 点生命值，并且可以通过 DC 17 的力量检定来爆发。"
   },
   "Sack": {
-    "name": "解雇"
+    "name": "解雇",
+    "description": "可容纳 1 立方英尺/30 磅。"
   },
   "Scale, merchant's": {
-    "name": "规模、商家"
+    "name": "规模、商家",
+    "description": "带有平底锅的小天平，用于称量硬币和宝石。"
   },
   "Sealing Wax": {
-    "name": "封蜡"
+    "name": "封蜡",
+    "description": "用于密封信件和文件的蜡。"
   },
   "Shovel": {
-    "name": "铲"
+    "name": "铲",
+    "description": "一把挖土铲。"
   },
   "Signal Whistle": {
-    "name": "信号哨"
+    "name": "信号哨",
+    "description": "600 英尺外都能听到的小金属哨子。"
   },
   "Signet Ring": {
-    "name": "图章戒指"
+    "name": "图章戒指",
+    "description": "用于验证文件真伪的个人印章环。"
   },
   "Soap": {
-    "name": "肥皂"
+    "name": "肥皂",
+    "description": "一块肥皂。"
   },
   "Spellbook": {
-    "name": "法术书"
+    "name": "法术书",
+    "description": "对于巫师来说必不可少。包含 100 页用于记录咒语 - 购买时为空白。"
   },
   "Spikes, iron (10)": {
-    "name": "铁钉 (10)"
+    "name": "铁钉 (10)",
+    "description": "十个铁钉与锤子。"
   },
   "Spyglass": {
-    "name": "望远镜"
+    "name": "望远镜",
+    "description": "通过望远镜看到的物体被放大到两倍大小。"
   },
   "Tent, two-person": {
-    "name": "帐篷，两人"
+    "name": "帐篷，两人",
+    "description": "一个简单便携的帆布庇护所。"
   },
   "Tinderbox": {
-    "name": "火药盒"
+    "name": "火药盒",
+    "description": "包含燧石、火钢和火绒。点燃火把或火需要 1 个动作（如果火绒潮湿则需要 1 分钟）。"
   },
   "Torch": {
-    "name": "火炬"
+    "name": "火炬",
+    "description": "燃烧1小时。 20 英尺半径内有亮光，另外 20 英尺内有暗光。可用作简易武器（1d4 火焰伤害）。"
   },
   "Vial": {
-    "name": "小瓶"
+    "name": "小瓶",
+    "description": "可容纳 4 盎司液体。"
   },
   "Waterskin": {
-    "name": "水袋"
+    "name": "水袋",
+    "description": "可容纳 4 品脱液体。满载时重 5 磅。"
   },
   "Whetstone": {
-    "name": "磨石"
+    "name": "磨石",
+    "description": "用于磨利刀片。"
   }
 }

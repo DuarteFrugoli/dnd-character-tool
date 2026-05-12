@@ -150,261 +150,347 @@
     "name": "Bouclier"
   },
   "Abacus": {
-    "name": "Abaque"
+    "name": "Abaque",
+    "description": "Un outil de comptage utilisé pour les calculs."
   },
   "Acid (vial)": {
-    "name": "Acide (flacon)"
+    "name": "Acide (flacon)",
+    "description": "As an action, you can splash the contents of this vial onto a creature within 5 feet or throw it up to 20 feet, breaking it on impact. Une créature subit 2d6 dégâts d'acide lors d'un coup."
   },
   "Alchemist's Fire": {
-    "name": "Feu de l'alchimiste"
+    "name": "Feu de l'alchimiste",
+    "description": "Ce fluide collant et adhésif s'enflamme lorsqu'il est exposé à l'air. Une créature subit 1d4 dégâts de feu au début de chacun de ses tours lorsqu'elle brûle. Une action et un test de Dextérité DD 10 l'éteignent."
   },
   "Arrows (20)": {
-    "name": "Flèches (20)"
+    "name": "Flèches (20)",
+    "description": "Munitions pour arcs courts et arcs longs."
   },
   "Blowgun Needles (50)": {
-    "name": "Aiguilles pour sarbacane (50)"
+    "name": "Aiguilles pour sarbacane (50)",
+    "description": "Munitions pour sarbacanes."
   },
   "Crossbow Bolts (20)": {
-    "name": "Carreaux d'arbalète (20)"
+    "name": "Carreaux d'arbalète (20)",
+    "description": "Munitions pour arbalètes."
   },
   "Sling Bullets (20)": {
-    "name": "Balles de fronde (20)"
+    "name": "Balles de fronde (20)",
+    "description": "Munitions pour frondes."
   },
   "Antitoxin (vial)": {
-    "name": "Antitoxine (flacon)"
+    "name": "Antitoxine (flacon)",
+    "description": "Une créature qui boit cette fiole de liquide bénéficie d'un avantage aux jets de sauvegarde contre le poison pendant 1 heure."
   },
   "Backpack": {
-    "name": "Sac à dos"
+    "name": "Sac à dos",
+    "description": "Peut contenir 30 lb/1 pied cube."
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "Roulements à billes (sachet de 1000)"
+    "name": "Roulements à billes (sachet de 1000)",
+    "description": "En guise d'action, dispersez ces petites boules métalliques. Les créatures doivent réussir un jet de sauvegarde de Dextérité DD 10 ou tomber à terre."
   },
   "Barrel": {
-    "name": "Baril"
+    "name": "Baril",
+    "description": "Peut contenir 40 gallons de liquide ou 4 pieds cubes de solide."
   },
   "Basket": {
-    "name": "Panier"
+    "name": "Panier",
+    "description": "Peut contenir 2 pieds cubes/40 lb."
   },
   "Bedroll": {
-    "name": "Sac de couchage"
+    "name": "Sac de couchage",
+    "description": "Un tapis de couchage rembourré."
   },
   "Bell": {
-    "name": "Cloche"
+    "name": "Cloche",
+    "description": "Une petite cloche."
   },
   "Blanket": {
-    "name": "Couverture"
+    "name": "Couverture",
+    "description": "Une couverture chaude."
   },
   "Block and Tackle": {
-    "name": "Bloquer et tacler"
+    "name": "Bloquer et tacler",
+    "description": "Un ensemble de poulies avec un câble qui réduit l'effort nécessaire pour soulever de lourdes charges."
   },
   "Book": {
-    "name": "Livre"
+    "name": "Livre",
+    "description": "Un livre d'histoire, contenant des informations sur un sujet choisi par le MJ."
   },
   "Bottle, glass": {
-    "name": "Bouteille, verre"
+    "name": "Bouteille, verre",
+    "description": "Contient 1,5 pinte de liquide."
   },
   "Bucket": {
-    "name": "Seau"
+    "name": "Seau",
+    "description": "Peut contenir 3 gallons."
   },
   "Caltrops (bag of 20)": {
-    "name": "Caltrops (sachet de 20)"
+    "name": "Caltrops (sachet de 20)",
+    "description": "Dispersez-vous sur une zone de 5 pieds. Les créatures qui se déplacent doivent réussir un jet de Dextérité DD 15 ou s'arrêter et subir 1 dégât perforant (vitesse réduite de 10 pieds jusqu'à ce qu'elles soient guéries)."
   },
   "Candle": {
-    "name": "Bougie"
+    "name": "Bougie",
+    "description": "Illumine un rayon de 5 pieds de lumière vive et 5 pieds de lumière faible pendant 1 heure."
   },
   "Case, crossbow bolt": {
-    "name": "Étui, carreau d'arbalète"
+    "name": "Étui, carreau d'arbalète",
+    "description": "Peut contenir 20 carreaux d'arbalète."
   },
   "Case, map or scroll": {
-    "name": "Cas, carte ou défilement"
+    "name": "Cas, carte ou défilement",
+    "description": "Un étui cylindrique pour cartes et parchemins."
   },
   "Chain (10 feet)": {
-    "name": "Chaîne (10 pieds)"
+    "name": "Chaîne (10 pieds)",
+    "description": "A 10 points de vie. Peut être éclaté avec un test de Force DD 20."
   },
   "Chalk (1 piece)": {
-    "name": "Craie (1 pièce)"
+    "name": "Craie (1 pièce)",
+    "description": "Craie d'écriture."
   },
   "Chest": {
-    "name": "Poitrine"
+    "name": "Poitrine",
+    "description": "Peut contenir 12 pieds cubes/300 lb."
   },
   "Climber's Kit": {
-    "name": "Kit du grimpeur"
+    "name": "Kit du grimpeur",
+    "description": "Comprend des pitons spéciaux, des embouts de bottes, des gants et un harnais. Accorde un avantage sur les tests effectués pour grimper."
   },
   "Clothes, common": {
-    "name": "Vêtements communs"
+    "name": "Vêtements communs",
+    "description": "Des vêtements simples pour tous les jours."
   },
   "Clothes, costume": {
-    "name": "Vêtements, costumes"
+    "name": "Vêtements, costumes",
+    "description": "Un costume de théâtre ou de déguisement."
   },
   "Clothes, fine": {
-    "name": "Des vêtements, bien"
+    "name": "Des vêtements, bien",
+    "description": "Vêtements élégants adaptés aux nobles."
   },
   "Clothes, traveler's": {
-    "name": "Vêtements de voyage"
+    "name": "Vêtements de voyage",
+    "description": "Des vêtements robustes conçus pour le voyage."
   },
   "Component Pouch": {
-    "name": "Pochette de composants"
+    "name": "Pochette de composants",
+    "description": "Une petite pochette étanche qui comporte des compartiments pour contenir tous les composants matériels de vos sorts, à l'exception des composants qui ont un coût spécifique."
   },
   "Crowbar": {
-    "name": "Pied de biche"
+    "name": "Pied de biche",
+    "description": "Accorde un avantage sur les tests de Force où l'effet de levier peut être appliqué."
   },
   "Druidic Focus": {
-    "name": "Concentration druidique"
+    "name": "Concentration druidique",
+    "description": "Un brin de gui, un totem, un bâton en bois ou une baguette en if – sert de foyer de lancement de sorts aux druides."
   },
   "Flask or tankard": {
-    "name": "Flacon ou chope"
+    "name": "Flacon ou chope",
+    "description": "Peut contenir 1 pinte de liquide."
   },
   "Grappling Hook": {
-    "name": "Grappin"
+    "name": "Grappin",
+    "description": "Peut être lancé pour ancrer une corde à une surface."
   },
   "Hammer": {
-    "name": "Marteau"
+    "name": "Marteau",
+    "description": "Un marteau de charpentier."
   },
   "Hammer, sledge": {
-    "name": "Marteau, traîneau"
+    "name": "Marteau, traîneau",
+    "description": "Un lourd marteau."
   },
   "Healer's Kit": {
-    "name": "Kit du guérisseur"
+    "name": "Kit du guérisseur",
+    "description": "10 utilisations. Par une action, stabilisez une créature avec 0 PV sans test de médecine."
   },
   "Holy Symbol": {
-    "name": "Symbole sacré"
+    "name": "Symbole sacré",
+    "description": "Une amulette, un emblème ou un reliquaire. Sert de centre de lancement de sorts pour les prêtres et les paladins."
   },
   "Holy Water (flask)": {
-    "name": "Eau bénite (flacon)"
+    "name": "Eau bénite (flacon)",
+    "description": "Par une action, éclaboussez une créature dans un rayon de 1,50 mètre ou lancez-la jusqu'à 20 pieds. En cas de coup, un démon ou un mort-vivant subit 2d6 dégâts radiants."
   },
   "Hourglass": {
-    "name": "Sablier"
+    "name": "Sablier",
+    "description": "Mesure une heure."
   },
   "Hunting Trap": {
-    "name": "Piège de chasse"
+    "name": "Piège de chasse",
+    "description": "Lorsqu'elle est activée, une créature de taille G ou plus petite qui marche sur le piège doit effectuer un jet de Dextérité DD 13 ou subir 1d4 dégâts perforants et arrêter de bouger."
   },
   "Ink (1 ounce bottle)": {
-    "name": "Encre (bouteille de 1 once)"
+    "name": "Encre (bouteille de 1 once)",
+    "description": "Encre à écrire."
   },
   "Ink Pen": {
-    "name": "Stylo à encre"
+    "name": "Stylo à encre",
+    "description": "Une plume ou un roseau pour écrire."
   },
   "Jug or Pitcher": {
-    "name": "Cruche ou pichet"
+    "name": "Cruche ou pichet",
+    "description": "Peut contenir 1 gallon de liquide."
   },
   "Ladder (10-foot)": {
-    "name": "Échelle (10 pieds)"
+    "name": "Échelle (10 pieds)",
+    "description": "Une échelle en bois de 10 pieds."
   },
   "Lamp": {
-    "name": "Lampe"
+    "name": "Lampe",
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Projette une lumière vive dans un rayon de 15 pieds et une lumière tamisée sur 30 pieds supplémentaires."
   },
   "Lantern, bullseye": {
-    "name": "Lanterne, cible"
+    "name": "Lanterne, cible",
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Cône de 60 pieds de lumière vive, 60 pieds supplémentaires de lumière tamisée."
   },
   "Lantern, hooded": {
-    "name": "Lanterne, à capuchon"
+    "name": "Lanterne, à capuchon",
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Lumière vive dans un rayon de 30 pieds, lumière faible supplémentaire de 30 pieds. Peut être recouvert d'une capuche pour réduire la lumière à 5 pieds."
   },
   "Lock": {
-    "name": "Verrouillage"
+    "name": "Verrouillage",
+    "description": "Un petit cadenas avec une clé. DC 15 Test de dextérité avec les outils des voleurs pour ouvrir sans la clé."
   },
   "Magnifying Glass": {
-    "name": "Loupe"
+    "name": "Loupe",
+    "description": "Peut être utilisé pour allumer un feu en présence de lumière du soleil. Accorde un avantage aux tests de Perception pour examiner les moindres détails."
   },
   "Manacles": {
-    "name": "Fers"
+    "name": "Fers",
+    "description": "Peut lier une créature de taille petite ou moyenne. L'évasion nécessite un test de Dextérité DD 20. La rupture nécessite un DD de Force 20. Chaque ensemble est livré avec une clé."
   },
   "Mess Kit": {
-    "name": "Trousse de mess"
+    "name": "Trousse de mess",
+    "description": "Une boîte en fer blanc avec une tasse et des ustensiles simples."
   },
   "Mirror, steel": {
-    "name": "Miroir, acier"
+    "name": "Miroir, acier",
+    "description": "Un petit miroir de poche."
   },
   "Oil (flask)": {
-    "name": "Huile (flacon)"
+    "name": "Huile (flacon)",
+    "description": "Combustible pour lampes (6 heures par flacon). Peut également être allumé et éclaboussé – la cible subit 5 dégâts de feu au prochain coup, ou 2d6 si elle est incendiée."
   },
   "Paper (one sheet)": {
-    "name": "Papier (une feuille)"
+    "name": "Papier (une feuille)",
+    "description": "Papier à écrire."
   },
   "Parchment (one sheet)": {
-    "name": "Parchemin (une feuille)"
+    "name": "Parchemin (une feuille)",
+    "description": "Surface d'écriture en peau de bête."
   },
   "Perfume (vial)": {
-    "name": "Parfum (flacon)"
+    "name": "Parfum (flacon)",
+    "description": "Un petit flacon de parfum."
   },
   "Pick, miner's": {
-    "name": "Pioche, mineur"
+    "name": "Pioche, mineur",
+    "description": "Un choix lourd pour l’exploitation minière."
   },
   "Piton": {
-    "name": "Piton"
+    "name": "Piton",
+    "description": "Une pointe en fer pour grimper et s'ancrer."
   },
   "Poison, basic (vial)": {
-    "name": "Poison, basique (flacon)"
+    "name": "Poison, basique (flacon)",
+    "description": "Appliquer sur une arme tranchante ou perçante. Une créature touchée doit réussir un jet de Constitution DD 10 ou subir 1d4 dégâts de poison. Après 1 minute, le poison perd de son efficacité."
   },
   "Pole (10-foot)": {
-    "name": "Poteau (10 pieds)"
+    "name": "Poteau (10 pieds)",
+    "description": "Un poteau en bois de 10 pieds."
   },
   "Pot, iron": {
-    "name": "Casserole, fer"
+    "name": "Casserole, fer",
+    "description": "Une grande marmite en fer."
   },
   "Pouch": {
-    "name": "Poche"
+    "name": "Poche",
+    "description": "Peut contenir jusqu'à 20 balles de fronde ou 50 aiguilles de sarbacane, ou 6 lb / 1/5 pied cube d'équipement."
   },
   "Quiver": {
-    "name": "Frémir"
+    "name": "Frémir",
+    "description": "Peut contenir jusqu'à 20 flèches."
   },
   "Ram, portable": {
-    "name": "Bélier, portable"
+    "name": "Bélier, portable",
+    "description": "Accorde un bonus de +4 aux tests de Force pour enfoncer les portes. Deux personnes peuvent l’utiliser – une seule donne un avantage."
   },
   "Rations (1 day)": {
-    "name": "Rations (1 jour)"
+    "name": "Rations (1 jour)",
+    "description": "Aliments secs adaptés aux voyages prolongés, notamment la viande séchée, les fruits secs, les fruits secs et les noix."
   },
   "Rope, hempen (50 feet)": {
-    "name": "Corde, chanvre (50 pieds)"
+    "name": "Corde, chanvre (50 pieds)",
+    "description": "A 2 points de vie et peut être éclaté avec un test de Force DD 17."
   },
   "Rope, silk (50 feet)": {
-    "name": "Corde, soie (50 pieds)"
+    "name": "Corde, soie (50 pieds)",
+    "description": "A 2 points de vie et peut être éclaté avec un test de Force DD 17."
   },
   "Sack": {
-    "name": "Sac"
+    "name": "Sac",
+    "description": "Peut contenir 1 pied cube/30 lb."
   },
   "Scale, merchant's": {
-    "name": "Balance de marchand"
+    "name": "Balance de marchand",
+    "description": "Une petite balance avec des plateaux pour peser les pièces de monnaie et les pierres précieuses."
   },
   "Sealing Wax": {
-    "name": "Cire à cacheter"
+    "name": "Cire à cacheter",
+    "description": "Cire pour cacheter des lettres et des documents."
   },
   "Shovel": {
-    "name": "Pelle"
+    "name": "Pelle",
+    "description": "Une pelle à creuser."
   },
   "Signal Whistle": {
-    "name": "Sifflet de signalisation"
+    "name": "Sifflet de signalisation",
+    "description": "Un petit sifflet métallique audible jusqu'à 600 pieds de distance."
   },
   "Signet Ring": {
-    "name": "Chevalière"
+    "name": "Chevalière",
+    "description": "Une bague de sceau personnelle utilisée pour authentifier les documents."
   },
   "Soap": {
-    "name": "Savon"
+    "name": "Savon",
+    "description": "Un pain de savon."
   },
   "Spellbook": {
-    "name": "Livre de sorts"
+    "name": "Livre de sorts",
+    "description": "Indispensable pour les sorciers. Contient 100 pages pour enregistrer les sorts – vierges à l’achat."
   },
   "Spikes, iron (10)": {
-    "name": "Pointes, fer (10)"
+    "name": "Pointes, fer (10)",
+    "description": "Dix pointes de fer avec un marteau."
   },
   "Spyglass": {
-    "name": "Longue-vue"
+    "name": "Longue-vue",
+    "description": "Les objets observés à travers la lunette sont agrandis jusqu'à deux fois leur taille."
   },
   "Tent, two-person": {
-    "name": "Tente, deux personnes"
+    "name": "Tente, deux personnes",
+    "description": "Un abri en toile simple et portable."
   },
   "Tinderbox": {
-    "name": "Poudrière"
+    "name": "Poudrière",
+    "description": "Contient du silex, de l'acier à feu et de l'amadou. Allumer une torche ou un feu nécessite 1 action (ou 1 minute si l'amadou est humide)."
   },
   "Torch": {
-    "name": "Torche"
+    "name": "Torche",
+    "description": "Brûle 1 heure. Lumière vive dans un rayon de 20 pieds, lumière tamisée dans un rayon de 20 pieds supplémentaires. Peut être utilisé comme une arme improvisée (1d4 dégâts de feu)."
   },
   "Vial": {
-    "name": "Ampoule"
+    "name": "Ampoule",
+    "description": "Contient 4 onces de liquide."
   },
   "Waterskin": {
-    "name": "Outre"
+    "name": "Outre",
+    "description": "Peut contenir 4 pintes de liquide. Pèse 5 livres une fois plein."
   },
   "Whetstone": {
-    "name": "Pierre à aiguiser"
+    "name": "Pierre à aiguiser",
+    "description": "Utilisé pour affûter les lames."
   }
 }

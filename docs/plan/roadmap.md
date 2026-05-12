@@ -1,6 +1,6 @@
 # Roadmap
 
-## v1 — MVP (atual)
+## v1 — MVP (pronto)
 
 - [x] Modelos de dados completos (Character, AbilityScores, HitPoints, EquipmentItem, SpellSlots, etc.)
 - [x] Persistência local em JSON via `path_provider` (nativo) e `shared_preferences` (web)
@@ -22,13 +22,11 @@
 - [x] Temas de cores
 - [x] Imagem do personagem (galeria, crop 1:1, avatar na lista)
 - [x] Pin e reordenação de personagens
-- [ ] Internacionalização (i18n): Português e Inglês
+- [x] Internacionalização (i18n): Línguas mais utilizadas
 
 ---
 
-## v1.5 — Ferramenta de Mestre
-
-A mesma base de modelos e modos de criação reutilizada para geração de NPCs.
+## v1.5 — Ferramenta de Mestre (atual)
 
 ### Home com navegação por abas
 - [ ] Bottom navigation bar: **Personagens** | **NPCs**

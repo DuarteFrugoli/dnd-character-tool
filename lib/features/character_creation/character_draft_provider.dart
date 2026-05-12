@@ -582,7 +582,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         for (int i = 0; i < option.length; i++) {
           final item = option[i];
           if (item.toLowerCase().startsWith('any ')) {
-            final specific = draft.classEquipmentSpecifics['\$g:\$i'];
+            final specific = draft.classEquipmentSpecifics['$g:$i'];
             if (specific != null) addItem(specific);
           } else {
             addItem(item);

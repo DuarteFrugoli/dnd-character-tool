@@ -54027,14 +54027,14 @@ if(!B.c.bZ(a0.toLowerCase(),"any "))d.$1(a0)}for(f=a.b,c=o.cy,a1=o.cx,a2=0;a2<f.
 a3=a1[a2]
 if(a3==null)continue
 a4=f[a2].a[a3]
-for(a5=J.bk(a4),a6=0;a6<a5.gK(a4);++a6){a0=a5.h(a4,a6)
-if(B.c.bZ(a0.toLowerCase(),"any ")){a7=c.h(0,"$g:$i")
-if(a7!=null)d.$1(a7)}else d.$1(a0)}}}f=o.a
+for(a5=J.bk(a4),a6=""+a2+":",a7=0;a7<a5.gK(a4);++a7){a0=a5.h(a4,a7)
+if(B.c.bZ(a0.toLowerCase(),"any ")){a8=c.h(0,a6+a7)
+if(a8!=null)d.$1(a8)}else d.$1(a0)}}}f=o.a
 c=o.as
 if(c.length===0)c="Unnamed Hero"
 a1=o.at
 a5=o.d
-a8=a5.a
+a6=a5.a
 a9=o.e
 a9=a9==null?null:a9.a
 b0=d2.a
@@ -54071,7 +54071,7 @@ c9=c8.i("cT<1,h>")
 c7=A.O(new A.cT(new A.aa(c7,new A.ai7(),c8.i("aa<1>")),new A.ai8(),c9),c9.i("G.E"))
 c0=A.O(o.gLI(),c0)
 B.b.J(c0,o.ay)
-d0=A.b1M(new A.D5(b3,b4,l,b5,b6,b7),"",B.rK,10+b9,b2,"",b0,new A.e6(Date.now(),0,!1),B.tp,c4,B.aC,B.aC,h,0,B.z2,c7,new A.FE(b8,b8,0),f,null,B.z1,!1,c0,1,c,B.z3,B.rL,a1,2,a8,d2,c2,c1,0,a5,new A.Aq(c6,c3),c5,b1,a9,new A.e6(Date.now(),0,!1))
+d0=A.b1M(new A.D5(b3,b4,l,b5,b6,b7),"",B.rK,10+b9,b2,"",b0,new A.e6(Date.now(),0,!1),B.tp,c4,B.aC,B.aC,h,0,B.z2,c7,new A.FE(b8,b8,0),f,null,B.z1,!1,c0,1,c,B.z3,B.rL,a1,2,a6,d2,c2,c1,0,a5,new A.Aq(c6,c3),c5,b1,a9,new A.e6(Date.now(),0,!1))
 s=4
 return A.n(n.iX(d0),$async$Ec)
 case 4:q=d0

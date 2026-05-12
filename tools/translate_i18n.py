@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 """
-Generate SRD i18n overlay JSON files for all locales by translating directly
-from the English SRD source data (assets/data/srd/*.json).
+Generate SRD i18n overlay JSON files and Flutter ARB locale files for all locales
+by translating directly from English source data using Google Translate.
 
-Keys in overlay files are always English identifiers — never translated.
-All string VALUES are translated from English to the target language.
-
-Usage:
+Usage (SRD overlays — assets/data/i18n/):
   python tools/translate_i18n.py                              # translate to ALL locales
   python tools/translate_i18n.py es fr de                     # translate to specific locales
   python tools/translate_i18n.py es --force                   # overwrite existing non-empty files
   python tools/translate_i18n.py --file equipment.json        # only translate equipment.json for all locales
   python tools/translate_i18n.py es --file equipment.json --force  # overwrite equipment.json for es
 
+Usage (ARB locale files — lib/l10n/):
+  python tools/translate_i18n.py --arb                        # generate ARBs for ALL locales
+  python tools/translate_i18n.py es fr --arb                  # generate ARBs for specific locales
+  python tools/translate_i18n.py es --arb --force             # overwrite existing ARBs
+
 Requires:
   pip install deep-translator
 """
 
 import json
+import re
 import sys
 import time
 import random
@@ -31,9 +34,10 @@ except ImportError:
 
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-ROOT = Path(__file__).resolve().parent.parent
+ROOT     = Path(__file__).resolve().parent.parent
 SRD_DIR  = ROOT / "assets" / "data" / "srd"
 I18N_DIR = ROOT / "assets" / "data" / "i18n"
+L10N_DIR = ROOT / "lib" / "l10n"
 
 # ── Locale → Google Translate language code ────────────────────────────────────
 LOCALE_LANG = {
@@ -265,14 +269,95 @@ def is_empty(path: Path) -> bool:
     return not content or content in ("{}", "[]", "")
 
 
+# ── ARB translation ────────────────────────────────────────────────────────────
+
+# Pattern for ICU-style placeholders: {name}, {level}, {count}, etc.
+_PLACEHOLDER_RE = re.compile(r"\{[A-Za-z_][A-Za-z0-9_]*\}")
+# Token template: something Google won't touch (all-caps, no spaces)
+_TOKEN_FMT = "XARBPHX{i}X"
+
+
+def _translate_arb_string(text: str, tgt_lang: str) -> str:
+    """
+    Translate an ARB string value while preserving {placeholder} tokens.
+    Also skips translation for strings that contain no translatable content
+    (e.g. pure symbols / punctuation / empty).
+    """
+    if not text or not text.strip():
+        return text
+
+    # Extract and replace placeholders with safe sentinel tokens.
+    # Wrap each token in spaces so Google doesn't merge it with adjacent words;
+    # we'll collapse any resulting double-spaces after restoration.
+    placeholders: list[str] = _PLACEHOLDER_RE.findall(text)
+    tokenized = text
+    token_map: dict[str, str] = {}
+    for i, ph in enumerate(placeholders):
+        token = _TOKEN_FMT.format(i=i)
+        token_map[token] = ph
+        tokenized = tokenized.replace(ph, f" {token} ", 1)
+
+    translated = _translate(tokenized, tgt_lang)
+
+    # Restore placeholder tokens
+    for token, ph in token_map.items():
+        translated = translated.replace(token, ph)
+
+    # Collapse any double-spaces introduced by the padding
+    translated = re.sub(r"  +", " ", translated).strip()
+
+    return translated
+
+
+def translate_arb(locale: str, tgt_lang: str, force: bool):
+    """
+    Translate lib/l10n/app_en.arb → lib/l10n/app_{locale}.arb.
+    Metadata keys (@xxx) are copied verbatim; @@locale is updated.
+    """
+    src_arb = L10N_DIR / "app_en.arb"
+    dst_arb = L10N_DIR / f"app_{locale}.arb"
+
+    if not src_arb.exists():
+        print(f"  app_en.arb not found at {src_arb}")
+        return
+
+    if not force and not is_empty(dst_arb):
+        print(f"  app_{locale}.arb            SKIP (use --force to overwrite)")
+        return
+
+    print(f"  app_{locale}.arb            ", end="", flush=True)
+
+    src: dict = json.loads(src_arb.read_text(encoding="utf-8"))
+    out: dict = {}
+
+    for key, value in src.items():
+        if key == "@@locale":
+            out["@@locale"] = locale
+            continue
+        if key.startswith("@"):
+            # Skip all metadata blocks — Flutter reads them from app_en.arb
+            continue
+        if isinstance(value, str):
+            out[key] = _translate_arb_string(value, tgt_lang)
+        else:
+            out[key] = value
+
+    dst_arb.write_text(
+        json.dumps(out, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print("done")
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
     raw_args = sys.argv[1:]
-    force = "--force" in raw_args
-    args  = [a for a in raw_args if a != "--force"]
+    force    = "--force" in raw_args
+    arb_mode = "--arb"   in raw_args
+    args     = [a for a in raw_args if a not in ("--force", "--arb")]
 
-    # --file equipment.json  → translate only that file
+    # --file equipment.json  → translate only that SRD file
     file_filter = None
     if "--file" in args:
         idx = args.index("--file")
@@ -289,6 +374,22 @@ def main():
     else:
         target_locales = list(LOCALE_LANG.keys())
 
+    # ── ARB mode ──────────────────────────────────────────────────────────────
+    if arb_mode:
+        print(f"Source : {L10N_DIR / 'app_en.arb'}")
+        print(f"Targets: {', '.join(target_locales)}")
+        print(f"Force  : {force}\n")
+        for locale in target_locales:
+            tgt_lang = LOCALE_LANG[locale]
+            print(f"{'='*60}")
+            print(f"Translating ARB to '{locale}' ({tgt_lang})")
+            print(f"{'='*60}")
+            translate_arb(locale, tgt_lang, force)
+        print(f"\n{'='*60}")
+        print("ARB translations complete.")
+        return
+
+    # ── SRD overlay mode ──────────────────────────────────────────────────────
     filenames = sorted(EXTRACTORS.keys())
     if file_filter:
         if file_filter not in EXTRACTORS:

@@ -11,6 +11,12 @@ const supportedLocales = [
   Locale('pt'),
   Locale('es'),
   Locale('fr'),
+  Locale('de'),
+  Locale('it'),
+  Locale('ja'),
+  Locale('ko'),
+  Locale('ru'),
+  Locale('zh'),
 ];
 
 class LocaleNotifier extends Notifier<Locale?> {

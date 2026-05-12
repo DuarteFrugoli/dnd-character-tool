@@ -1,0 +1,53 @@
+{
+  "Common": {
+    "name": "常见的"
+  },
+  "Dwarvish": {
+    "name": "矮人语"
+  },
+  "Elvish": {
+    "name": "精灵语"
+  },
+  "Halfling": {
+    "name": "半身人"
+  },
+  "Draconic": {
+    "name": "龙语"
+  },
+  "Gnomish": {
+    "name": "侏儒"
+  },
+  "Orc": {
+    "name": "兽人"
+  },
+  "Infernal": {
+    "name": "地狱"
+  },
+  "Abyssal": {
+    "name": "深渊"
+  },
+  "Celestial": {
+    "name": "天界"
+  },
+  "Deep Speech": {
+    "name": "深度演讲"
+  },
+  "Giant": {
+    "name": "巨大的"
+  },
+  "Gnoll": {
+    "name": "豺狼人"
+  },
+  "Goblin": {
+    "name": "哥布林"
+  },
+  "Primordial": {
+    "name": "原始的"
+  },
+  "Sylvan": {
+    "name": "西尔万"
+  },
+  "Undercommon": {
+    "name": "地底常见"
+  }
+}

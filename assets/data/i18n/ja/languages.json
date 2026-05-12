@@ -1,0 +1,53 @@
+{
+  "Common": {
+    "name": "一般"
+  },
+  "Dwarvish": {
+    "name": "ドワーフ語"
+  },
+  "Elvish": {
+    "name": "エルフ語"
+  },
+  "Halfling": {
+    "name": "ハーフリング"
+  },
+  "Draconic": {
+    "name": "ドラコニック"
+  },
+  "Gnomish": {
+    "name": "ノーミッシュ"
+  },
+  "Orc": {
+    "name": "オーク"
+  },
+  "Infernal": {
+    "name": "地獄の"
+  },
+  "Abyssal": {
+    "name": "アビサル"
+  },
+  "Celestial": {
+    "name": "天体"
+  },
+  "Deep Speech": {
+    "name": "ディープスピーチ"
+  },
+  "Giant": {
+    "name": "巨人"
+  },
+  "Gnoll": {
+    "name": "ノール"
+  },
+  "Goblin": {
+    "name": "ゴブリン"
+  },
+  "Primordial": {
+    "name": "原始的な"
+  },
+  "Sylvan": {
+    "name": "シルバン"
+  },
+  "Undercommon": {
+    "name": "アンダーコモン"
+  }
+}

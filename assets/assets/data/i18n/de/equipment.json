@@ -150,261 +150,347 @@
     "name": "Schild"
   },
   "Abacus": {
-    "name": "Abakus"
+    "name": "Abakus",
+    "description": "Ein Zählwerkzeug für Berechnungen."
   },
   "Acid (vial)": {
-    "name": "Säure (Fläschchen)"
+    "name": "Säure (Fläschchen)",
+    "description": "Als Aktion können Sie den Inhalt dieser Phiole auf eine Kreatur im Umkreis von 1,5 m spritzen oder sie bis zu 6 m weit werfen, sodass sie beim Aufprall zerbricht. Bei einem Treffer erleidet eine Kreatur 2W6 Säureschaden."
   },
   "Alchemist's Fire": {
-    "name": "Feuer des Alchemisten"
+    "name": "Feuer des Alchemisten",
+    "description": "Diese klebrige, klebende Flüssigkeit entzündet sich, wenn sie Luft ausgesetzt wird. Eine Kreatur erleidet beim Brennen zu Beginn jedes ihrer Züge 1W4 Feuerschaden. Eine Aktion und ein Geschicklichkeitswurf gegen SG 10 bringen es zum Erliegen."
   },
   "Arrows (20)": {
-    "name": "Pfeile (20)"
+    "name": "Pfeile (20)",
+    "description": "Munition für Kurzbögen und Langbögen."
   },
   "Blowgun Needles (50)": {
-    "name": "Blasrohrnadeln (50)"
+    "name": "Blasrohrnadeln (50)",
+    "description": "Munition für Blasrohre."
   },
   "Crossbow Bolts (20)": {
-    "name": "Armbrustbolzen (20)"
+    "name": "Armbrustbolzen (20)",
+    "description": "Munition für Armbrüste."
   },
   "Sling Bullets (20)": {
-    "name": "Schleudergeschosse (20)"
+    "name": "Schleudergeschosse (20)",
+    "description": "Munition für Schleudern."
   },
   "Antitoxin (vial)": {
-    "name": "Antitoxin (Fläschchen)"
+    "name": "Antitoxin (Fläschchen)",
+    "description": "Eine Kreatur, die dieses Fläschchen mit Flüssigkeit trinkt, erhält 1 Stunde lang einen Vorteil bei Rettungswürfen gegen Gift."
   },
   "Backpack": {
-    "name": "Rucksack"
+    "name": "Rucksack",
+    "description": "Hält 30 Pfund / 1 Kubikfuß."
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "Kugellager (Beutel mit 1000 Stück)"
+    "name": "Kugellager (Beutel mit 1000 Stück)",
+    "description": "Streuen Sie als Aktion diese kleinen Metallkugeln. Den Kreaturen muss ein Geschicklichkeitsrettungswurf von DC 10 gelingen, sonst fallen sie hin."
   },
   "Barrel": {
-    "name": "Fass"
+    "name": "Fass",
+    "description": "Fasst 40 Gallonen Flüssigkeit oder 4 Kubikfuß Feststoff."
   },
   "Basket": {
-    "name": "Korb"
+    "name": "Korb",
+    "description": "Fasst 2 Kubikfuß / 40 Pfund."
   },
   "Bedroll": {
-    "name": "Bettzeug"
+    "name": "Bettzeug",
+    "description": "Eine gepolsterte Schlafmatte."
   },
   "Bell": {
-    "name": "Glocke"
+    "name": "Glocke",
+    "description": "Eine kleine Glocke."
   },
   "Blanket": {
-    "name": "Decke"
+    "name": "Decke",
+    "description": "Eine warme Decke."
   },
   "Block and Tackle": {
-    "name": "Block und Tackle"
+    "name": "Block und Tackle",
+    "description": "Ein Satz Rollen mit Kabel, der den Kraftaufwand beim Heben schwerer Lasten verringert."
   },
   "Book": {
-    "name": "Buch"
+    "name": "Buch",
+    "description": "Ein Wissensbuch, das Informationen zu einem vom GM gewählten Thema enthält."
   },
   "Bottle, glass": {
-    "name": "Flasche, Glas"
+    "name": "Flasche, Glas",
+    "description": "Fasst 1,5 Pints ​​Flüssigkeit."
   },
   "Bucket": {
-    "name": "Eimer"
+    "name": "Eimer",
+    "description": "Fasst 3 Gallonen."
   },
   "Caltrops (bag of 20)": {
-    "name": "Caltrops (Beutel mit 20 Stück)"
+    "name": "Caltrops (Beutel mit 20 Stück)",
+    "description": "Über eine Fläche von 1,50 m verteilen. Kreaturen, die sich hindurchbewegen, müssen einen Geschicklichkeitswurf gegen SG 15 schaffen oder anhalten und 1 Stichschaden erleiden (die Geschwindigkeit wird bis zur Heilung um 10 Fuß verringert)."
   },
   "Candle": {
-    "name": "Kerze"
+    "name": "Kerze",
+    "description": "Beleuchtet 1 Stunde lang einen Radius von 1,5 m mit hellem Licht und 1,5 m mit schwachem Licht."
   },
   "Case, crossbow bolt": {
-    "name": "Koffer, Armbrustbolzen"
+    "name": "Koffer, Armbrustbolzen",
+    "description": "Hält 20 Armbrustbolzen."
   },
   "Case, map or scroll": {
-    "name": "Fall, Karte oder Schriftrolle"
+    "name": "Fall, Karte oder Schriftrolle",
+    "description": "Ein zylindrischer Koffer für Karten und Schriftrollen."
   },
   "Chain (10 feet)": {
-    "name": "Kette (10 Fuß)"
+    "name": "Kette (10 Fuß)",
+    "description": "Hat 10 Trefferpunkte. Kann mit einem Stärkewurf von DC 20 gesprengt werden."
   },
   "Chalk (1 piece)": {
-    "name": "Kreide (1 Stück)"
+    "name": "Kreide (1 Stück)",
+    "description": "Schreibkreide."
   },
   "Chest": {
-    "name": "Brust"
+    "name": "Brust",
+    "description": "Fasst 12 Kubikfuß / 300 Pfund."
   },
   "Climber's Kit": {
-    "name": "Kletterausrüstung"
+    "name": "Kletterausrüstung",
+    "description": "Beinhaltet spezielle Haken, Stiefelspitzen, Handschuhe und einen Gurt. Gewährt einen Vorteil bei Schecks zum Klettern."
   },
   "Clothes, common": {
-    "name": "Kleidung, üblich"
+    "name": "Kleidung, üblich",
+    "description": "Einfache Alltagskleidung."
   },
   "Clothes, costume": {
-    "name": "Kleidung, Kostüm"
+    "name": "Kleidung, Kostüm",
+    "description": "Ein Theater- oder Verkleidungskostüm."
   },
   "Clothes, fine": {
-    "name": "Kleidung, gut"
+    "name": "Kleidung, gut",
+    "description": "Elegante Kleidung, geeignet für Adlige."
   },
   "Clothes, traveler's": {
-    "name": "Kleidung, Reisekleidung"
+    "name": "Kleidung, Reisekleidung",
+    "description": "Robuste Kleidung für unterwegs."
   },
   "Component Pouch": {
-    "name": "Komponententasche"
+    "name": "Komponententasche",
+    "description": "Ein kleiner, wasserdichter Beutel mit Fächern zur Aufnahme aller Materialkomponenten für deine Zauber, mit Ausnahme von Komponenten, die bestimmte Kosten haben."
   },
   "Crowbar": {
-    "name": "Brecheisen"
+    "name": "Brecheisen",
+    "description": "Gewährt einen Vorteil bei Stärkewürfen, bei denen Hebel eingesetzt werden können."
   },
   "Druidic Focus": {
-    "name": "Druidischer Fokus"
+    "name": "Druidischer Fokus",
+    "description": "Ein Mistelzweig, ein Totem, ein Holzstab oder ein Eibenstab – dient Druiden als Zauberfokus."
   },
   "Flask or tankard": {
-    "name": "Flasche oder Humpen"
+    "name": "Flasche oder Humpen",
+    "description": "Hält 1 Pint Flüssigkeit."
   },
   "Grappling Hook": {
-    "name": "Enterhaken"
+    "name": "Enterhaken",
+    "description": "Kann geworfen werden, um ein Seil an einer Oberfläche zu verankern."
   },
   "Hammer": {
-    "name": "Hammer"
+    "name": "Hammer",
+    "description": "Ein Zimmermannshammer."
   },
   "Hammer, sledge": {
-    "name": "Hammer, Vorschlag"
+    "name": "Hammer, Vorschlag",
+    "description": "Ein schwerer Vorschlaghammer."
   },
   "Healer's Kit": {
-    "name": "Heiler-Kit"
+    "name": "Heiler-Kit",
+    "description": "10 Anwendungen. Stabilisiere als Aktion eine Kreatur mit 0 HP ohne einen Medizincheck."
   },
   "Holy Symbol": {
-    "name": "Heiliges Symbol"
+    "name": "Heiliges Symbol",
+    "description": "Ein Amulett, Emblem oder Reliquiar. Dient als Zauberfokus für Kleriker und Paladine."
   },
   "Holy Water (flask)": {
-    "name": "Weihwasser (Flasche)"
+    "name": "Weihwasser (Flasche)",
+    "description": "Bespritze als Aktion eine Kreatur im Umkreis von 1,5 m oder schleudere sie bis zu 6 m weit. Bei einem Treffer erleidet ein Untoter oder Untoter 2W6 Strahlungsschaden."
   },
   "Hourglass": {
-    "name": "Sanduhr"
+    "name": "Sanduhr",
+    "description": "Misst eine Stunde."
   },
   "Hunting Trap": {
-    "name": "Jagdfalle"
+    "name": "Jagdfalle",
+    "description": "Wenn diese Option aktiviert ist, muss eine große oder kleinere Kreatur, die auf die Falle tritt, einen Geschicklichkeitswurf gegen SG 13 bestehen oder 1W4 Stichschaden erleiden und aufhören, sich zu bewegen."
   },
   "Ink (1 ounce bottle)": {
-    "name": "Tinte (1-Unzen-Flasche)"
+    "name": "Tinte (1-Unzen-Flasche)",
+    "description": "Schreibtinte."
   },
   "Ink Pen": {
-    "name": "Tintenstift"
+    "name": "Tintenstift",
+    "description": "Eine Feder oder ein Rohrfederhalter zum Schreiben."
   },
   "Jug or Pitcher": {
-    "name": "Krug oder Krug"
+    "name": "Krug oder Krug",
+    "description": "Hält 1 Gallone Flüssigkeit."
   },
   "Ladder (10-foot)": {
-    "name": "Leiter (10 Fuß)"
+    "name": "Leiter (10 Fuß)",
+    "description": "Eine 10 Fuß lange Holzleiter."
   },
   "Lamp": {
-    "name": "Lampe"
+    "name": "Lampe",
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Spendet helles Licht in einem Radius von 15 Fuß und gedämpftes Licht für weitere 30 Fuß."
   },
   "Lantern, bullseye": {
-    "name": "Laterne, Volltreffer"
+    "name": "Laterne, Volltreffer",
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). 60-Fuß-Kegel aus hellem Licht, zusätzlich 60 Fuß gedämpftes Licht."
   },
   "Lantern, hooded": {
-    "name": "Laterne, mit Kapuze"
+    "name": "Laterne, mit Kapuze",
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Helles Licht mit einem Radius von 30 Fuß, zusätzliches schwaches Licht mit einem Radius von 30 Fuß. Kann mit einer Haube abgedeckt werden, um das Licht auf 1,5 m zu reduzieren."
   },
   "Lock": {
-    "name": "Sperren"
+    "name": "Sperren",
+    "description": "Ein kleines Vorhängeschloss mit Schlüssel. DC 15 Geschicklichkeitsprüfung mit Diebeswerkzeug zum Öffnen ohne Schlüssel."
   },
   "Magnifying Glass": {
-    "name": "Lupe"
+    "name": "Lupe",
+    "description": "Kann verwendet werden, um bei Sonnenlicht ein Feuer zu entfachen. Gewährt einen Vorteil bei Wahrnehmungswürfen, um feine Details zu untersuchen."
   },
   "Manacles": {
-    "name": "Handschellen"
+    "name": "Handschellen",
+    "description": "Kann eine kleine oder mittlere Kreatur binden. Für die Flucht ist eine Geschicklichkeitsprüfung von DC 20 erforderlich. Für das Brechen ist eine Stärke von DC 20 erforderlich. Zu jedem Set gehört ein Schlüssel."
   },
   "Mess Kit": {
-    "name": "Essgeschirr"
+    "name": "Essgeschirr",
+    "description": "Eine Blechdose mit einer Tasse und einfachen Utensilien."
   },
   "Mirror, steel": {
-    "name": "Spiegel, Stahl"
+    "name": "Spiegel, Stahl",
+    "description": "Ein kleiner Handspiegel."
   },
   "Oil (flask)": {
-    "name": "Öl (Flasche)"
+    "name": "Öl (Flasche)",
+    "description": "Brennstoff für Lampen (6 Stunden pro Flasche). Kann auch angezündet und bespritzt werden – das Ziel erleidet beim nächsten Treffer 5 Feuerschaden oder 2W6, wenn es angezündet wird."
   },
   "Paper (one sheet)": {
-    "name": "Papier (ein Blatt)"
+    "name": "Papier (ein Blatt)",
+    "description": "Schreibpapier."
   },
   "Parchment (one sheet)": {
-    "name": "Pergament (ein Blatt)"
+    "name": "Pergament (ein Blatt)",
+    "description": "Schreibfläche aus Tierhaut."
   },
   "Perfume (vial)": {
-    "name": "Parfüm (Fläschchen)"
+    "name": "Parfüm (Fläschchen)",
+    "description": "Ein kleines Fläschchen Parfüm."
   },
   "Pick, miner's": {
-    "name": "Pick, Bergmann"
+    "name": "Pick, Bergmann",
+    "description": "Eine schwere Wahl für den Bergbau."
   },
   "Piton": {
-    "name": "Felshaken"
+    "name": "Felshaken",
+    "description": "Ein Eisenspieß zum Klettern und Ankern."
   },
   "Poison, basic (vial)": {
-    "name": "Gift, basisch (Fläschchen)"
+    "name": "Gift, basisch (Fläschchen)",
+    "description": "Auf eine Hieb- oder Stichwaffe auftragen. Einer getroffenen Kreatur muss ein Konstitutionswurf gegen SG 10 gelingen, sonst erleidet sie 1W4 Giftschaden. Nach 1 Minute verliert das Gift seine Wirksamkeit."
   },
   "Pole (10-foot)": {
-    "name": "Stange (10 Fuß)"
+    "name": "Stange (10 Fuß)",
+    "description": "Eine 10 Fuß lange Holzstange."
   },
   "Pot, iron": {
-    "name": "Topf, Eisen"
+    "name": "Topf, Eisen",
+    "description": "Ein großer Kochtopf aus Eisen."
   },
   "Pouch": {
-    "name": "Beutel"
+    "name": "Beutel",
+    "description": "Hält bis zu 20 Schleudergeschosse oder 50 Blaspistolennadeln oder 6 Pfund / 1/5 Kubikfuß Ausrüstung."
   },
   "Quiver": {
-    "name": "Köcher"
+    "name": "Köcher",
+    "description": "Hält bis zu 20 Pfeile."
   },
   "Ram, portable": {
-    "name": "Ram, tragbar"
+    "name": "Ram, tragbar",
+    "description": "Gewährt einen Bonus von +4 auf Stärkewürfe zum Aufbrechen von Türen. Zwei Personen können es nutzen – einer verschafft einen Vorteil."
   },
   "Rations (1 day)": {
-    "name": "Rationen (1 Tag)"
+    "name": "Rationen (1 Tag)",
+    "description": "Trockene Lebensmittel, die für längere Reisen geeignet sind, darunter Trockenfrüchte, Trockenfrüchte, Trockenfrüchte und Nüsse."
   },
   "Rope, hempen (50 feet)": {
-    "name": "Seil, Hanf (50 Fuß)"
+    "name": "Seil, Hanf (50 Fuß)",
+    "description": "Hat 2 Trefferpunkte und kann mit einem Stärkewurf von DC 17 gesprengt werden."
   },
   "Rope, silk (50 feet)": {
-    "name": "Seil, Seide (50 Fuß)"
+    "name": "Seil, Seide (50 Fuß)",
+    "description": "Hat 2 Trefferpunkte und kann mit einem Stärkewurf von DC 17 gesprengt werden."
   },
   "Sack": {
-    "name": "Sack"
+    "name": "Sack",
+    "description": "Fasst 1 Kubikfuß / 30 Pfund."
   },
   "Scale, merchant's": {
-    "name": "Waage, Händler"
+    "name": "Waage, Händler",
+    "description": "Eine kleine Waage mit Waagschalen zum Wiegen von Münzen und Edelsteinen."
   },
   "Sealing Wax": {
-    "name": "Siegellack"
+    "name": "Siegellack",
+    "description": "Wachs zum Versiegeln von Briefen und Dokumenten."
   },
   "Shovel": {
-    "name": "Schaufel"
+    "name": "Schaufel",
+    "description": "Eine Grabschaufel."
   },
   "Signal Whistle": {
-    "name": "Signalpfeife"
+    "name": "Signalpfeife",
+    "description": "Eine kleine Metallpfeife, die bis zu 600 Fuß entfernt hörbar ist."
   },
   "Signet Ring": {
-    "name": "Siegelring"
+    "name": "Siegelring",
+    "description": "Ein persönlicher Siegelring zur Authentifizierung von Dokumenten."
   },
   "Soap": {
-    "name": "Seife"
+    "name": "Seife",
+    "description": "Ein Stück Seife."
   },
   "Spellbook": {
-    "name": "Zauberbuch"
+    "name": "Zauberbuch",
+    "description": "Unverzichtbar für Zauberer. Enthält 100 Seiten zum Aufzeichnen von Zaubersprüchen – beim Kauf leer."
   },
   "Spikes, iron (10)": {
-    "name": "Spikes, Eisen (10)"
+    "name": "Spikes, Eisen (10)",
+    "description": "Zehn Eisenspitzen mit einem Hammer."
   },
   "Spyglass": {
-    "name": "Fernglas"
+    "name": "Fernglas",
+    "description": "Durch das Fernglas betrachtete Objekte werden auf das Doppelte ihrer Größe vergrößert."
   },
   "Tent, two-person": {
-    "name": "Zelt, zwei Personen"
+    "name": "Zelt, zwei Personen",
+    "description": "Ein einfacher und tragbarer Zeltunterstand."
   },
   "Tinderbox": {
-    "name": "Zunderbüchse"
+    "name": "Zunderbüchse",
+    "description": "Enthält Feuerstein, Feuerstahl und Zunder. Das Anzünden einer Fackel oder eines Feuers erfordert 1 Aktion (oder 1 Minute, wenn der Zunder feucht ist)."
   },
   "Torch": {
-    "name": "Fackel"
+    "name": "Fackel",
+    "description": "Brennt 1 Stunde. Helles Licht in einem Radius von 20 Fuß, gedämpftes Licht in weiteren 20 Fuß. Kann als improvisierte Waffe verwendet werden (1W4 Feuerschaden)."
   },
   "Vial": {
-    "name": "Phiole"
+    "name": "Phiole",
+    "description": "Hält 4 Unzen Flüssigkeit."
   },
   "Waterskin": {
-    "name": "Wasserschlauch"
+    "name": "Wasserschlauch",
+    "description": "Fasst 4 Pints ​​Flüssigkeit. Wiegt im vollen Zustand 5 Pfund."
   },
   "Whetstone": {
-    "name": "Wetzstein"
+    "name": "Wetzstein",
+    "description": "Wird zum Schärfen von Klingen verwendet."
   }
 }

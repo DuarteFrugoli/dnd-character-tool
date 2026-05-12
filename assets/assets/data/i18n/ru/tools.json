@@ -1,0 +1,119 @@
+{
+  "Alchemist's supplies": {
+    "name": "Принадлежности алхимика"
+  },
+  "Brewer's supplies": {
+    "name": "Принадлежности для пивоваров"
+  },
+  "Calligrapher's supplies": {
+    "name": "Товары для каллиграфа"
+  },
+  "Carpenter's tools": {
+    "name": "Инструменты плотника"
+  },
+  "Cartographer's tools": {
+    "name": "Инструменты картографа"
+  },
+  "Cobbler's tools": {
+    "name": "Инструменты сапожника"
+  },
+  "Cook's utensils": {
+    "name": "Поварская посуда"
+  },
+  "Glassblower's tools": {
+    "name": "Инструменты стеклодува"
+  },
+  "Jeweler's tools": {
+    "name": "Инструменты ювелира"
+  },
+  "Leatherworker's tools": {
+    "name": "Инструменты кожевника"
+  },
+  "Mason's tools": {
+    "name": "Инструменты Мэйсона"
+  },
+  "Painter's supplies": {
+    "name": "Малярные принадлежности"
+  },
+  "Potter's tools": {
+    "name": "Инструменты гончара"
+  },
+  "Smith's tools": {
+    "name": "Инструменты Смита"
+  },
+  "Tinker's tools": {
+    "name": "Инструменты Тинкера"
+  },
+  "Weaver's tools": {
+    "name": "Инструменты ткача"
+  },
+  "Woodcarver's tools": {
+    "name": "Инструменты резчика по дереву"
+  },
+  "Dice set": {
+    "name": "Набор кубиков"
+  },
+  "Dragonchess set": {
+    "name": "Набор драконьих шахмат"
+  },
+  "Playing card set": {
+    "name": "Набор игральных карт"
+  },
+  "Three-Dragon Ante set": {
+    "name": "Набор «Анте трех драконов»"
+  },
+  "Bagpipes": {
+    "name": "Волынки"
+  },
+  "Drum": {
+    "name": "Барабан"
+  },
+  "Dulcimer": {
+    "name": "Цимбалы"
+  },
+  "Flute": {
+    "name": "Флейта"
+  },
+  "Lute": {
+    "name": "Лютня"
+  },
+  "Lyre": {
+    "name": "Лира"
+  },
+  "Horn": {
+    "name": "Рог"
+  },
+  "Pan flute": {
+    "name": "Пан-флейта"
+  },
+  "Shawm": {
+    "name": "Шаум"
+  },
+  "Viol": {
+    "name": "Виола"
+  },
+  "Disguise kit": {
+    "name": "Маскировочный комплект"
+  },
+  "Forgery kit": {
+    "name": "Подделочный комплект"
+  },
+  "Thieves' tools": {
+    "name": "Воровские инструменты"
+  },
+  "Herbalism kit": {
+    "name": "Набор для травления"
+  },
+  "Navigator's tools": {
+    "name": "Инструменты навигатора"
+  },
+  "Poisoner's kit": {
+    "name": "Набор отравителя"
+  },
+  "Vehicles (land)": {
+    "name": "Транспортные средства (земля)"
+  },
+  "Vehicles (water)": {
+    "name": "Транспортные средства (вода)"
+  }
+}

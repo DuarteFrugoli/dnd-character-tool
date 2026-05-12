@@ -1,0 +1,119 @@
+{
+  "Alchemist's supplies": {
+    "name": "錬金術師の必需品"
+  },
+  "Brewer's supplies": {
+    "name": "醸造所の備品"
+  },
+  "Calligrapher's supplies": {
+    "name": "書道家用品"
+  },
+  "Carpenter's tools": {
+    "name": "大工道具"
+  },
+  "Cartographer's tools": {
+    "name": "地図製作者のツール"
+  },
+  "Cobbler's tools": {
+    "name": "コブラーの道具"
+  },
+  "Cook's utensils": {
+    "name": "調理器具"
+  },
+  "Glassblower's tools": {
+    "name": "ガラス吹き職人の道具"
+  },
+  "Jeweler's tools": {
+    "name": "宝石商の道具"
+  },
+  "Leatherworker's tools": {
+    "name": "革細工師の道具"
+  },
+  "Mason's tools": {
+    "name": "メイソンの道具"
+  },
+  "Painter's supplies": {
+    "name": "画家の消耗品"
+  },
+  "Potter's tools": {
+    "name": "陶芸道具"
+  },
+  "Smith's tools": {
+    "name": "スミスの道具"
+  },
+  "Tinker's tools": {
+    "name": "ティンカーの道具"
+  },
+  "Weaver's tools": {
+    "name": "織り手の道具"
+  },
+  "Woodcarver's tools": {
+    "name": "木彫りの道具"
+  },
+  "Dice set": {
+    "name": "サイコロセット"
+  },
+  "Dragonchess set": {
+    "name": "ドラゴンチェスセット"
+  },
+  "Playing card set": {
+    "name": "トランプセット"
+  },
+  "Three-Dragon Ante set": {
+    "name": "スリードラゴンアンティセット"
+  },
+  "Bagpipes": {
+    "name": "バグパイプ"
+  },
+  "Drum": {
+    "name": "ドラム"
+  },
+  "Dulcimer": {
+    "name": "ダルシマー"
+  },
+  "Flute": {
+    "name": "フルート"
+  },
+  "Lute": {
+    "name": "リュート"
+  },
+  "Lyre": {
+    "name": "リラ"
+  },
+  "Horn": {
+    "name": "ホルン"
+  },
+  "Pan flute": {
+    "name": "パンフルート"
+  },
+  "Shawm": {
+    "name": "ショーム"
+  },
+  "Viol": {
+    "name": "ヴィオール"
+  },
+  "Disguise kit": {
+    "name": "変装キット"
+  },
+  "Forgery kit": {
+    "name": "偽造キット"
+  },
+  "Thieves' tools": {
+    "name": "盗賊の道具"
+  },
+  "Herbalism kit": {
+    "name": "薬草学キット"
+  },
+  "Navigator's tools": {
+    "name": "ナビゲーターのツール"
+  },
+  "Poisoner's kit": {
+    "name": "毒殺者のキット"
+  },
+  "Vehicles (land)": {
+    "name": "車両（陸上）"
+  },
+  "Vehicles (water)": {
+    "name": "乗り物（水）"
+  }
+}

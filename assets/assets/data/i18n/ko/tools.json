@@ -1,0 +1,119 @@
+{
+  "Alchemist's supplies": {
+    "name": "연금술사의 보급품"
+  },
+  "Brewer's supplies": {
+    "name": "브루어의 소모품"
+  },
+  "Calligrapher's supplies": {
+    "name": "서예가의 용품"
+  },
+  "Carpenter's tools": {
+    "name": "목수의 도구"
+  },
+  "Cartographer's tools": {
+    "name": "지도 제작자의 도구"
+  },
+  "Cobbler's tools": {
+    "name": "코블러의 도구"
+  },
+  "Cook's utensils": {
+    "name": "요리사의 도구"
+  },
+  "Glassblower's tools": {
+    "name": "Glassblower의 도구"
+  },
+  "Jeweler's tools": {
+    "name": "보석상 도구"
+  },
+  "Leatherworker's tools": {
+    "name": "가죽세공인의 도구"
+  },
+  "Mason's tools": {
+    "name": "메이슨의 도구"
+  },
+  "Painter's supplies": {
+    "name": "화가의 용품"
+  },
+  "Potter's tools": {
+    "name": "포터의 도구"
+  },
+  "Smith's tools": {
+    "name": "스미스의 도구"
+  },
+  "Tinker's tools": {
+    "name": "Tinker의 도구"
+  },
+  "Weaver's tools": {
+    "name": "위버의 도구"
+  },
+  "Woodcarver's tools": {
+    "name": "목각가의 도구"
+  },
+  "Dice set": {
+    "name": "주사위 세트"
+  },
+  "Dragonchess set": {
+    "name": "용체 세트"
+  },
+  "Playing card set": {
+    "name": "트럼프패 세트"
+  },
+  "Three-Dragon Ante set": {
+    "name": "삼룡안티 세트"
+  },
+  "Bagpipes": {
+    "name": "백파이프"
+  },
+  "Drum": {
+    "name": "북"
+  },
+  "Dulcimer": {
+    "name": "덜시머"
+  },
+  "Flute": {
+    "name": "플루트"
+  },
+  "Lute": {
+    "name": "류트"
+  },
+  "Lyre": {
+    "name": "거문고"
+  },
+  "Horn": {
+    "name": "뿔"
+  },
+  "Pan flute": {
+    "name": "팬 플루트"
+  },
+  "Shawm": {
+    "name": "샴"
+  },
+  "Viol": {
+    "name": "비올"
+  },
+  "Disguise kit": {
+    "name": "변장 키트"
+  },
+  "Forgery kit": {
+    "name": "위조 키트"
+  },
+  "Thieves' tools": {
+    "name": "도둑의 도구"
+  },
+  "Herbalism kit": {
+    "name": "약초학 키트"
+  },
+  "Navigator's tools": {
+    "name": "네비게이터 도구"
+  },
+  "Poisoner's kit": {
+    "name": "독살자 키트"
+  },
+  "Vehicles (land)": {
+    "name": "차량(육상)"
+  },
+  "Vehicles (water)": {
+    "name": "차량(물)"
+  }
+}

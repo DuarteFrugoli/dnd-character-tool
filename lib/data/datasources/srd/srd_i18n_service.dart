@@ -306,7 +306,11 @@ class SrdI18nService {
 
   String equipmentName(String en) => _str('equipment', en, 'name') ?? en;
 
+  String? equipmentDescription(String en) => _str('equipment', en, 'description');
+
   String magicItemName(String en) => _str('magic_items', en, 'name') ?? en;
+
+  String? magicItemDescription(String en) => _str('magic_items', en, 'description');
 
   // ── Languages ──────────────────────────────────────────────────────────────
 
@@ -374,6 +378,18 @@ class SrdI18nService {
     'transmutation': 'transmutação',
     // UI game terms
     'shield': 'escudo',
+    // Armor abbreviations
+    'AC': 'CA',
+    'DEX': 'DES',
+    // Magic item rarities
+    'common': 'comum',
+    'uncommon': 'incomum',
+    'rare': 'raro',
+    'very rare': 'muito raro',
+    'legendary': 'lendário',
+    'artifact': 'artefato',
+    // Attunement
+    'attunement': 'sintonia',
   };
 
   static Map<String, String>? _getTermsMap(String locale) {
@@ -437,4 +453,34 @@ class SrdI18nService {
   /// Translates and joins weapon property strings.
   String weaponProperties(List<String> props) =>
       props.map((p) => term(p)).join(', ');
+
+  /// Searches all classes to find a subclass feature name by subclass key alone.
+  String? anySubclassFeatureName(String subclassKey, String featureName) {
+    final file = _data['subclass_features'];
+    if (file == null) return null;
+    for (final classEntry in file.values) {
+      if (classEntry is! Map) continue;
+      final sub = classEntry[subclassKey];
+      if (sub is! Map) continue;
+      final feat = sub[featureName];
+      if (feat is! Map) continue;
+      return feat['name'] as String?;
+    }
+    return null;
+  }
+
+  /// Searches all classes to find a subclass feature description by subclass key alone.
+  String? anySubclassFeatureDescription(String subclassKey, String featureName) {
+    final file = _data['subclass_features'];
+    if (file == null) return null;
+    for (final classEntry in file.values) {
+      if (classEntry is! Map) continue;
+      final sub = classEntry[subclassKey];
+      if (sub is! Map) continue;
+      final feat = sub[featureName];
+      if (feat is! Map) continue;
+      return feat['description'] as String?;
+    }
+    return null;
+  }
 }

@@ -465,6 +465,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     final l10n2 = AppLocalizations.of(context)!;
     return Column(
@@ -485,7 +486,9 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        f.name,
+                        i18n.classFeatureName(f.sourceClass, f.name)
+                            ?? i18n.anySubclassFeatureName(f.sourceClass, f.name)
+                            ?? i18n.raceTraitName(f.name),
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -539,7 +542,9 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                     child: Text(
-                      f.description,
+                      i18n.classFeatureDescription(f.sourceClass, f.name)
+                          ?? i18n.anySubclassFeatureDescription(f.sourceClass, f.name)
+                          ?? f.description,
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),

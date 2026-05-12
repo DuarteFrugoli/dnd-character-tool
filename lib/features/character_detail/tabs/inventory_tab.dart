@@ -855,8 +855,8 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getName: (a) => a.name,
                   getDisplayName: (a) => i18n.equipmentName(a.name),
                   getSubtitle: (a) => a.isShield
-                      ? '+${a.acBonus} AC  ·  ${a.cost}'
-                      : 'AC ${a.baseAC}${a.addDexModifier ? " + DEX" : ""}${a.maxDexBonus != null ? " (max +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
+                      ? '+${a.acBonus} ${i18n.term("AC")}  ·  ${a.cost}'
+                      : '${i18n.term("AC")} ${a.baseAC}${a.addDexModifier ? " + ${i18n.term("DEX")}" : ""}${a.maxDexBonus != null ? " (max +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
                   getCategory: (_) => 'armor',
                   getGroup: (a) => a.type,
                   getDescription: (a) => a.stealthDisadvantage
@@ -888,7 +888,8 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getCategory: (g) => g.category,
                   getGroup: (g) => g.category,
                   getDescription: (g) =>
-                      g.description.isNotEmpty ? g.description : null,
+                      i18n.equipmentDescription(g.name) ??
+                      (g.description.isNotEmpty ? g.description : null),
                   getItemType: (g) => g.category == 'ammunition'
                       ? ItemType.ammunition
                       : ItemType.gear,
@@ -915,10 +916,11 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getName: (m) => m.name,
                   getDisplayName: (m) => i18n.magicItemName(m.name),
                   getSubtitle: (m) =>
-                      '${m.rarity}${m.requiresAttunement ? "  ·  attunement" : ""}',
+                      '${i18n.term(m.rarity)}${m.requiresAttunement ? "  ·  ${i18n.term("attunement")}" : ""}',
                   getCategory: (m) => m.type,
                   getGroup: (m) => m.type,
-                  getDescription: (m) => m.description,
+                  getDescription: (m) =>
+                      i18n.magicItemDescription(m.name) ?? m.description,
                   getItemType: (m) => m.itemType,
                   groupOrder: const [
                     'potion',
@@ -1029,9 +1031,11 @@ class _ItemTile extends ConsumerWidget {
       if (baseAc != null) {
         final addDex = props['addDexModifier'] as bool? ?? true;
         final maxDex = (props['maxDexBonus'] as num?)?.toInt();
-        if (!addDex) return 'AC $baseAc';
-        if (maxDex != null) return 'AC $baseAc + DEX (max +$maxDex)';
-        return 'AC $baseAc + DEX';
+        final ac = i18n?.term('AC') ?? 'AC';
+        final dex = i18n?.term('DEX') ?? 'DEX';
+        if (!addDex) return '$ac $baseAc';
+        if (maxDex != null) return '$ac $baseAc + $dex (max +$maxDex)';
+        return '$ac $baseAc + $dex';
       }
     }
 

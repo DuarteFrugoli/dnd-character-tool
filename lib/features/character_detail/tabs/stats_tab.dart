@@ -935,9 +935,17 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   : Wrap(
                       spacing: 8,
                       runSpacing: 4,
-                      children: character.savingThrowProficiencies
-                          .map((s) => Chip(label: Text(s)))
-                          .toList(),
+                      children: character.savingThrowProficiencies.map((s) {
+                        final label = {
+                          'strength':     l10n.abilityStr,
+                          'dexterity':    l10n.abilityDex,
+                          'constitution': l10n.abilityCon,
+                          'intelligence': l10n.abilityInt,
+                          'wisdom':       l10n.abilityWis,
+                          'charisma':     l10n.abilityCha,
+                        }[s.toLowerCase()] ?? s;
+                        return Chip(label: Text(label));
+                      }).toList(),
                     ),
         ),
       ],

@@ -38,6 +38,7 @@ class SrdI18nService {
     'spells',
     'subclasses',
     'subclass_features',
+    'tools',
   ];
 
   /// Loads the i18n overlay for [locale] from bundled assets.
@@ -117,6 +118,63 @@ class SrdI18nService {
       }
     } catch (_) {}
 
+    // Also add class starting equipment (fixed + choices) by positional cross-ref.
+    try {
+      final srdClsRaw =
+          await rootBundle.loadString('assets/data/srd/classes.json');
+      final srdClasses = jsonDecode(srdClsRaw) as List<dynamic>;
+      final i18nClasses = data['classes'];
+      if (i18nClasses != null) {
+        void crossItems(List<dynamic> enList, List<dynamic> trList) {
+          for (var i = 0; i < enList.length && i < trList.length; i++) {
+            final en = enList[i] is String ? enList[i] as String : null;
+            final tr = trList[i] is String ? trList[i] as String : null;
+            if (en != null && tr != null && tr != en) {
+              bgEquipmentNames[en] = tr;
+            }
+          }
+        }
+
+        for (final srdCls in srdClasses) {
+          final clsName = srdCls['name'] as String?;
+          if (clsName == null) continue;
+          final i18nEntry = i18nClasses[clsName];
+          if (i18nEntry is! Map) continue;
+          final srdEquip = srdCls['startingEquipment'] as Map?;
+          final i18nEquip = i18nEntry['startingEquipment'] as Map?;
+          if (srdEquip == null || i18nEquip == null) continue;
+
+          // Fixed items
+          crossItems(
+            List<dynamic>.from(srdEquip['fixed'] as List? ?? []),
+            List<dynamic>.from(i18nEquip['fixed'] as List? ?? []),
+          );
+
+          // Choice options (choices[g].options[o][i])
+          final srdChoices =
+              List<dynamic>.from(srdEquip['choices'] as List? ?? []);
+          final i18nChoices =
+              List<dynamic>.from(i18nEquip['choices'] as List? ?? []);
+          for (var g = 0;
+              g < srdChoices.length && g < i18nChoices.length;
+              g++) {
+            final srdOpts =
+                List<dynamic>.from(srdChoices[g]['options'] as List? ?? []);
+            final i18nOpts =
+                List<dynamic>.from(i18nChoices[g]['options'] as List? ?? []);
+            for (var o = 0;
+                o < srdOpts.length && o < i18nOpts.length;
+                o++) {
+              crossItems(
+                List<dynamic>.from(srdOpts[o] as List? ?? []),
+                List<dynamic>.from(i18nOpts[o] as List? ?? []),
+              );
+            }
+          }
+        }
+      }
+    } catch (_) {}
+
     return SrdI18nService._(locale, data, subraceNames, bgEquipmentNames);
   }
 
@@ -146,6 +204,12 @@ class SrdI18nService {
     if (entry is! Map) return null;
     return entry[field] as String?;
   }
+
+  // ── Race traits ────────────────────────────────────────────────────────────
+
+  String raceTraitName(String en) => _str('race_traits', en, 'name') ?? en;
+
+  String? raceTraitDescription(String en) => _str('race_traits', en, 'description');
 
   // ── Skills ─────────────────────────────────────────────────────────────────
 
@@ -199,13 +263,6 @@ class SrdI18nService {
 
   String subclassName(String classEn, String subclassEn) =>
       _nested2('subclasses', classEn, subclassEn, 'name') ?? subclassEn;
-
-  // ── Race traits ────────────────────────────────────────────────────────────
-
-  String? raceTraitName(String en) => _str('race_traits', en, 'name');
-
-  String? raceTraitDescription(String en) =>
-      _str('race_traits', en, 'description');
 
   // ── Backgrounds ────────────────────────────────────────────────────────────
 

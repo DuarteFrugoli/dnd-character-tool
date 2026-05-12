@@ -278,7 +278,7 @@ class _RacialTraitsSection extends ConsumerWidget {
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 title: Text(
-                  i18n.raceTraitName(trait) ?? trait,
+                  i18n.raceTraitName(trait),
                   style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
                 trailing: isEditing
@@ -303,7 +303,7 @@ class _RacialTraitsSection extends ConsumerWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        i18n.raceTraitName(trait) ?? trait,
+                        i18n.raceTraitName(trait),
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -884,6 +884,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final notifier =
         ref.read(characterDetailProvider(widget.characterId).notifier);
     final character =
@@ -964,10 +966,10 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                 : TabBarView(
                     controller: _tabs,
                     children: [
-                      _buildClassList(existingKeys, notifier, scheme),
-                      _buildSubclassList(existingKeys, notifier, scheme),
-                      _buildRacialList(existingKeys, notifier, scheme),
-                      _buildBackgroundList(existingKeys, notifier, scheme),
+                      _buildClassList(existingKeys, notifier, scheme, i18n),
+                      _buildSubclassList(existingKeys, notifier, scheme, i18n),
+                      _buildRacialList(existingKeys, notifier, scheme, i18n),
+                      _buildBackgroundList(existingKeys, notifier, scheme, i18n),
                       _buildCustomForm(notifier, scheme, scrollCtrl),
                     ],
                   ),
@@ -987,11 +989,13 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     required CharacterDetailNotifier notifier,
     required ColorScheme scheme,
     String? subtitle,
+    String? Function(String)? nameTranslator,
   }) {
     final key = '$sourceKey:${feature.name}';
     final alreadyAdded = existingKeys.contains(key);
+    final displayName = nameTranslator?.call(feature.name) ?? feature.name;
     return ListTile(
-      title: Text(feature.name, style: const TextStyle(fontSize: 14)),
+      title: Text(displayName, style: const TextStyle(fontSize: 14)),
       subtitle: Text(
         subtitle ?? 'Nível ${feature.level} · ${feature.type}',
         style: TextStyle(
@@ -1024,7 +1028,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(feature.name,
+                Text(displayName,
                     style: const TextStyle(fontWeight: FontWeight.bold)),
                 const SizedBox(height: 4),
                 Text(
@@ -1048,6 +1052,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     Set<String> existingKeys,
     CharacterDetailNotifier notifier,
     ColorScheme scheme,
+    SrdI18nService i18n,
   ) {
     if (_allClassFeatures == null) return const Center(child: CircularProgressIndicator());
     final q = _search.text.toLowerCase();
@@ -1075,6 +1080,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                   existingKeys: existingKeys,
                   notifier: notifier,
                   scheme: scheme,
+                  nameTranslator: (n) => i18n.classFeatureName(r.$1, n),
                 ))
             .toList(),
       );
@@ -1095,6 +1101,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               existingKeys: existingKeys,
               notifier: notifier,
               scheme: scheme,
+              nameTranslator: (n) => i18n.classFeatureName(cls, n),
             ),
             childCount: features.length,
           ),
@@ -1111,13 +1118,15 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     Set<String> existingKeys,
     CharacterDetailNotifier notifier,
     ColorScheme scheme,
+    SrdI18nService i18n,
   ) {
     if (_allSubclassFeatures == null) return const Center(child: CircularProgressIndicator());
     final q = _search.text.toLowerCase();
     final allSub = _allSubclassFeatures!;
 
     if (q.isNotEmpty) {
-      final results = <(String, SrdClassFeature)>[];
+      // Tuple: (className, subclassName, feature)
+      final results = <(String, String, SrdClassFeature)>[];
       for (final cls in _classOrder) {
         final subMap = allSub[cls] ?? {};
         for (final subName in subMap.keys) {
@@ -1125,7 +1134,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
             if (f.name.toLowerCase().contains(q) ||
                 f.description.toLowerCase().contains(q) ||
                 subName.toLowerCase().contains(q)) {
-              results.add((subName, f));
+              results.add((cls, subName, f));
             }
           }
         }
@@ -1135,12 +1144,13 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
         children: results
             .map((r) => _buildTile(
-                  feature: r.$2,
-                  sourceLabel: r.$1,
-                  sourceKey: r.$1,
+                  feature: r.$3,
+                  sourceLabel: r.$2,
+                  sourceKey: r.$2,
                   existingKeys: existingKeys,
                   notifier: notifier,
                   scheme: scheme,
+                  nameTranslator: (n) => i18n.subclassFeatureName(r.$1, r.$2, n),
                 ))
             .toList(),
       );
@@ -1164,6 +1174,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                 existingKeys: existingKeys,
                 notifier: notifier,
                 scheme: scheme,
+                nameTranslator: (n) => i18n.subclassFeatureName(cls, subName, n),
               ),
               childCount: features.length,
             ),
@@ -1181,6 +1192,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     Set<String> existingKeys,
     CharacterDetailNotifier notifier,
     ColorScheme scheme,
+    SrdI18nService i18n,
   ) {
     if (_races == null || _raceTraits == null) return const Center(child: CircularProgressIndicator());
     final q = _search.text.toLowerCase();
@@ -1225,6 +1237,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                   notifier: notifier,
                   scheme: scheme,
                   subtitle: r.$1,
+                  nameTranslator: (n) => i18n.raceTraitName(n),
                 ))
             .toList(),
       );
@@ -1257,6 +1270,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                 notifier: notifier,
                 scheme: scheme,
                 subtitle: key == race.name ? race.name : '${race.name} — $key',
+                nameTranslator: (n) => i18n.raceTraitName(n),
               );
             },
             childCount: allEntries.length,
@@ -1355,6 +1369,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     Set<String> existingKeys,
     CharacterDetailNotifier notifier,
     ColorScheme scheme,
+    SrdI18nService i18n,
   ) {
     if (_backgrounds == null) return const Center(child: CircularProgressIndicator());
     final q = _search.text.toLowerCase();
@@ -1388,6 +1403,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                   notifier: notifier,
                   scheme: scheme,
                   subtitle: r.$1,
+                  nameTranslator: (_) => i18n.backgroundFeatureName(r.$1),
                 ))
             .toList(),
       );
@@ -1408,6 +1424,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               notifier: notifier,
               scheme: scheme,
               subtitle: bg.name,
+              nameTranslator: (_) => i18n.backgroundFeatureName(bg.name),
             ),
             childCount: 1,
           ),

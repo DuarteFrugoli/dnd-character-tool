@@ -884,21 +884,21 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String armorSwapCurrent(String name) {
-    return 'Текущее: $name';
+    return 'Текущий: $name';
   }
 
   @override
   String armorSwapAcNow(int ac) {
-    return 'КЗ сейчас: $ac';
+    return 'AC сейчас: $ac';
   }
 
   @override
   String armorSwapAcAfter(int ac) {
-    return 'КЗ после: $ac';
+    return 'AC после: $ac';
   }
 
   @override
-  String get armorSwapButton => 'Сменить доспехи';
+  String get armorSwapButton => 'Сменить броню';
 
   @override
   String get reviewRowName => 'Имя';
@@ -944,7 +944,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String reviewRowAcWith(String name) {
-    return 'AC с $name';
+    return 'переменного тока с $name';
   }
 
   @override
@@ -982,7 +982,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String reviewChooseLanguages(int count) {
-    return 'Выберите язык(и) ($count), предоставленный вашей расой или происхождением.';
+    return 'Выберите язык(и) $count, предоставленный вашей расой или происхождением.';
   }
 
   @override

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/datasources/srd/srd_i18n_service.dart';
+import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
 
 class StepReview extends ConsumerWidget {
@@ -14,6 +16,7 @@ class StepReview extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final draft = ref.watch(characterDraftProvider);
     final attrs = draft.finalAttributes;
     final con = attrs['Constitution'] ?? 10;
@@ -25,6 +28,20 @@ class StepReview extends ConsumerWidget {
     final allItems = _resolveEquipmentItems(draft);
     final armorInfo = _findArmorAC(allItems, dexMod);
 
+    final clsName = draft.selectedClass != null ? i18n.className(draft.selectedClass!.name) : null;
+    final subclassFeature = draft.selectedClass != null
+        ? (i18n.classSubclassFeatureName(draft.selectedClass!.name) ?? draft.selectedClass!.subclassFeatureName)
+        : l10n.reviewRowSubclass;
+    final subclassName = draft.selectedSubclass != null && draft.selectedClass != null
+        ? i18n.subclassName(draft.selectedClass!.name, draft.selectedSubclass!.name)
+        : null;
+    final raceName = draft.selectedRace != null ? i18n.raceName(draft.selectedRace!.name) : null;
+    final subraceName = draft.selectedSubrace != null ? i18n.subraceName(draft.selectedSubrace!.name) : null;
+    final bgName = draft.selectedBackground != null ? i18n.backgroundName(draft.selectedBackground!.name) : null;
+    final bgFeatureName = draft.selectedBackground != null
+        ? (i18n.backgroundFeatureName(draft.selectedBackground!.name) ?? draft.selectedBackground!.feature.name)
+        : null;
+
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
@@ -34,12 +51,9 @@ class StepReview extends ConsumerWidget {
             _Row(l10n.reviewRowPlayer, draft.playerName),
         ]),
         _ReviewSection(title: l10n.creationStepClass, children: [
-          _Row(l10n.creationStepClass, draft.selectedClass?.name ?? '—'),
-          if (draft.selectedSubclass != null)
-            _Row(
-              draft.selectedClass?.subclassFeatureName ?? l10n.reviewRowSubclass,
-              draft.selectedSubclass!.name,
-            ),
+          _Row(l10n.creationStepClass, clsName ?? '—'),
+          if (subclassName != null)
+            _Row(subclassFeature, subclassName),
           _Row(l10n.reviewRowHitDie, 'd${draft.selectedClass?.hitDie ?? '—'}'),
           _Row(
             l10n.reviewRowSavingThrows,
@@ -49,24 +63,21 @@ class StepReview extends ConsumerWidget {
             const _StartingGoldRow(),
         ]),
         _ReviewSection(title: l10n.creationStepRace, children: [
-          _Row(l10n.creationStepRace, draft.selectedRace?.name ?? '—'),
-          if (draft.selectedSubrace != null)
-            _Row(l10n.reviewRowSubrace, draft.selectedSubrace!.name),
+          _Row(l10n.creationStepRace, raceName ?? '—'),
+          if (subraceName != null)
+            _Row(l10n.reviewRowSubrace, subraceName),
           _Row(l10n.reviewRowSpeed, '${draft.selectedRace?.speed ?? 0} ft'),
           if (draft.fixedRaceLanguages.isNotEmpty)
-            _Row(l10n.reviewRowLanguages, draft.fixedRaceLanguages.join(', ')),
+            _Row(l10n.reviewRowLanguages, draft.fixedRaceLanguages.map(i18n.languageName).join(', ')),
         ]),
         _ReviewSection(title: l10n.creationStepBackground, children: [
-          _Row(l10n.creationStepBackground, draft.selectedBackground?.name ?? '—'),
-          _Row(
-            l10n.reviewRowFeature,
-            draft.selectedBackground?.feature.name ?? '—',
-          ),
+          _Row(l10n.creationStepBackground, bgName ?? '—'),
+          _Row(l10n.reviewRowFeature, bgFeatureName ?? '—'),
         ]),
         _ReviewSection(title: l10n.creationStepSkills, children: [
-          _Row(l10n.reviewRowFromBackground, draft.grantedSkills.join(', ')),
+          _Row(l10n.reviewRowFromBackground, draft.grantedSkills.map(i18n.skillName).join(', ')),
           if (draft.chosenSkills.isNotEmpty)
-            _Row(l10n.reviewRowClassChoices, draft.chosenSkills.join(', ')),
+            _Row(l10n.reviewRowClassChoices, draft.chosenSkills.map(i18n.skillName).join(', ')),
         ]),
         _ReviewSection(title: l10n.creationStepAttributes, children: [
           ...attrs.entries

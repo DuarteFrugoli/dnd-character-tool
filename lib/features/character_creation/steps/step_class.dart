@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
+import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
+import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
 
 class StepClass extends ConsumerStatefulWidget {
@@ -24,6 +26,7 @@ class _StepClassState extends ConsumerState<StepClass> {
   @override
   Widget build(BuildContext context) {
     final selected = ref.watch(characterDraftProvider).selectedClass;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     return FutureBuilder<List<SrdClass>>(
       future: _classesFuture,
@@ -43,6 +46,7 @@ class _StepClassState extends ConsumerState<StepClass> {
               children: [
                 _ClassCard(
                   cls: cls,
+                  i18n: i18n,
                   isSelected: isSelected,
                   onTap: () {
                     if (isSelected) {
@@ -59,6 +63,7 @@ class _StepClassState extends ConsumerState<StepClass> {
                 if (isSelected && cls.subclasses.isNotEmpty)
                   _SubclassSelector(
                     cls: cls,
+                    i18n: i18n,
                     selectedSubclass:
                         ref.watch(characterDraftProvider).selectedSubclass,
                     onSelect: (s) => ref
@@ -77,17 +82,21 @@ class _StepClassState extends ConsumerState<StepClass> {
 class _ClassCard extends StatelessWidget {
   const _ClassCard({
     required this.cls,
+    required this.i18n,
     required this.isSelected,
     required this.onTap,
   });
 
   final SrdClass cls;
+  final SrdI18nService i18n;
   final bool isSelected;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final clsName = i18n.className(cls.name);
+    final subclassFeature = i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       color: isSelected ? scheme.primaryContainer : null,
@@ -102,7 +111,7 @@ class _ClassCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(cls.name,
+                    Text(clsName,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium
@@ -139,7 +148,7 @@ class _ClassCard extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 4),
                         child: Text(
-                          '${cls.subclasses.length} ${cls.subclassFeatureName} options',
+                          '${cls.subclasses.length} $subclassFeature options',
                           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: isSelected
                                     ? scheme.onPrimaryContainer
@@ -163,17 +172,20 @@ class _ClassCard extends StatelessWidget {
 class _SubclassSelector extends StatelessWidget {
   const _SubclassSelector({
     required this.cls,
+    required this.i18n,
     required this.selectedSubclass,
     required this.onSelect,
   });
 
   final SrdClass cls;
+  final SrdI18nService i18n;
   final SrdSubclass? selectedSubclass;
   final ValueChanged<SrdSubclass?> onSelect;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final subclassFeature = i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
     return Padding(
       padding: const EdgeInsets.only(left: 16, bottom: 8),
       child: Column(
@@ -182,12 +194,14 @@ class _SubclassSelector extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
             child: Text(
-              'Choose a ${cls.subclassFeatureName} (Lv ${cls.subclassLevel}):',
+              'Choose a $subclassFeature (Lv ${cls.subclassLevel}):',
               style: Theme.of(context).textTheme.labelLarge,
             ),
           ),
           ...cls.subclasses.map((sub) {
             final isSelected = selectedSubclass?.name == sub.name;
+            final subName = i18n.subclassName(cls.name, sub.name);
+            final subDesc = i18n.subclassDescription(cls.name, sub.name) ?? sub.description;
             return Card(
               margin: const EdgeInsets.only(bottom: 6),
               color: isSelected ? scheme.secondaryContainer : scheme.surface,
@@ -204,7 +218,7 @@ class _SubclassSelector extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              sub.name,
+                              subName,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium
@@ -212,7 +226,7 @@ class _SubclassSelector extends StatelessWidget {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              sub.description,
+                              subDesc,
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ],

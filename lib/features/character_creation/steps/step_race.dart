@@ -3,7 +3,9 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
+import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
+import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
 
 class StepRace extends ConsumerStatefulWidget {
@@ -25,6 +27,7 @@ class _StepRaceState extends ConsumerState<StepRace> {
   @override
   Widget build(BuildContext context) {
     final draft = ref.watch(characterDraftProvider);
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     return FutureBuilder<List<SrdRace>>(
       future: _racesFuture,
@@ -44,6 +47,7 @@ class _StepRaceState extends ConsumerState<StepRace> {
               children: [
                 _RaceCard(
                   race: race,
+                  i18n: i18n,
                   isSelected: isSelected,
                   onTap: () {
                     if (isSelected) {
@@ -60,6 +64,7 @@ class _StepRaceState extends ConsumerState<StepRace> {
                 if (isSelected && race.subraces.isNotEmpty)
                   _SubraceSelector(
                     race: race,
+                    i18n: i18n,
                     selectedSubrace: draft.selectedSubrace,
                     onSelect: (s) => ref
                         .read(characterDraftProvider.notifier)
@@ -77,11 +82,13 @@ class _StepRaceState extends ConsumerState<StepRace> {
 class _RaceCard extends StatelessWidget {
   const _RaceCard({
     required this.race,
+    required this.i18n,
     required this.isSelected,
     required this.onTap,
   });
 
   final SrdRace race;
+  final SrdI18nService i18n;
   final bool isSelected;
   final VoidCallback onTap;
 
@@ -94,6 +101,7 @@ class _RaceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final raceName = i18n.raceName(race.name);
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       color: isSelected ? scheme.primaryContainer : null,
@@ -108,7 +116,7 @@ class _RaceCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(race.name,
+                    Text(raceName,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium
@@ -155,11 +163,13 @@ class _RaceCard extends StatelessWidget {
 class _SubraceSelector extends StatelessWidget {
   const _SubraceSelector({
     required this.race,
+    required this.i18n,
     required this.selectedSubrace,
     required this.onSelect,
   });
 
   final SrdRace race;
+  final SrdI18nService i18n;
   final SrdSubrace? selectedSubrace;
   final ValueChanged<SrdSubrace?> onSelect;
 
@@ -181,6 +191,7 @@ class _SubraceSelector extends StatelessWidget {
             final asiText = sub.abilityScoreIncreases.entries
                 .map((e) => '+${e.value} ${e.key}')
                 .join(', ');
+            final subName = i18n.subraceName(sub.name);
             return Card(
               margin: const EdgeInsets.only(bottom: 6),
               color: isSelected ? scheme.secondaryContainer : scheme.surface,
@@ -196,7 +207,7 @@ class _SubraceSelector extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(sub.name,
+                            Text(subName,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium

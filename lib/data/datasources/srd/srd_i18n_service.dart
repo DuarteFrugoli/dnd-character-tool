@@ -264,6 +264,12 @@ class SrdI18nService {
   String subclassName(String classEn, String subclassEn) =>
       _nested2('subclasses', classEn, subclassEn, 'name') ?? subclassEn;
 
+  String? subclassDescription(String classEn, String subclassEn) =>
+      _nested2('subclasses', classEn, subclassEn, 'description');
+
+  String? classSubclassFeatureName(String classEn) =>
+      _str('classes', classEn, 'subclassFeatureName');
+
   // ── Backgrounds ────────────────────────────────────────────────────────────
 
   String? backgroundFeatureName(String backgroundEn) {

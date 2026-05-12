@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
+import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
+import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
 
 class StepBackground extends ConsumerStatefulWidget {
@@ -24,6 +26,7 @@ class _StepBackgroundState extends ConsumerState<StepBackground> {
   @override
   Widget build(BuildContext context) {
     final selected = ref.watch(characterDraftProvider).selectedBackground;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     return FutureBuilder<List<SrdBackground>>(
       future: _backgroundsFuture,
@@ -40,6 +43,7 @@ class _StepBackgroundState extends ConsumerState<StepBackground> {
             final isSelected = selected?.name == bg.name;
             return _BackgroundCard(
               bg: bg,
+              i18n: i18n,
               isSelected: isSelected,
               onTap: () => ref
                   .read(characterDraftProvider.notifier)
@@ -55,17 +59,22 @@ class _StepBackgroundState extends ConsumerState<StepBackground> {
 class _BackgroundCard extends StatelessWidget {
   const _BackgroundCard({
     required this.bg,
+    required this.i18n,
     required this.isSelected,
     required this.onTap,
   });
 
   final SrdBackground bg;
+  final SrdI18nService i18n;
   final bool isSelected;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final bgName = i18n.backgroundName(bg.name);
+    final featureName = i18n.backgroundFeatureName(bg.name) ?? bg.feature.name;
+    final featureDesc = i18n.backgroundFeatureDescription(bg.name) ?? bg.feature.description;
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       color: isSelected ? scheme.primaryContainer : null,
@@ -81,7 +90,7 @@ class _BackgroundCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(bg.name,
+                    Text(bgName,
                         style:
                             Theme.of(context).textTheme.titleMedium?.copyWith(
                                   color: isSelected
@@ -90,7 +99,7 @@ class _BackgroundCard extends StatelessWidget {
                                 )),
                     const SizedBox(height: 4),
                     Text(
-                      'Skills: ${bg.skillProficiencies.join(', ')}',
+                      'Skills: ${bg.skillProficiencies.map(i18n.skillName).join(', ')}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: isSelected
                                 ? scheme.onPrimaryContainer
@@ -100,7 +109,7 @@ class _BackgroundCard extends StatelessWidget {
                     if (bg.toolProficiencies.isNotEmpty) ...[
                       const SizedBox(height: 2),
                       Text(
-                        'Tools: ${bg.toolProficiencies.join(', ')}',
+                        'Tools: ${bg.toolProficiencies.map(i18n.toolName).join(', ')}',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: isSelected
                                   ? scheme.onPrimaryContainer
@@ -110,7 +119,7 @@ class _BackgroundCard extends StatelessWidget {
                     ],
                     const SizedBox(height: 4),
                     Text(
-                      'Feature: ${bg.feature.name}',
+                      'Feature: $featureName',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: isSelected
                                 ? scheme.onPrimaryContainer
@@ -121,7 +130,7 @@ class _BackgroundCard extends StatelessWidget {
                     if (isSelected) ...[
                       const SizedBox(height: 8),
                       Text(
-                        bg.feature.description,
+                        featureDesc,
                         style:
                             Theme.of(context).textTheme.bodySmall?.copyWith(
                                   color: scheme.onPrimaryContainer,

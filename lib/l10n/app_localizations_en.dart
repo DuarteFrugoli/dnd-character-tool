@@ -39,6 +39,20 @@ class AppLocalizationsEn extends AppLocalizations {
       'Unexpected error while importing. Please try again.';
 
   @override
+  String get importErrorInvalidJson => 'The pasted text is not valid JSON.';
+
+  @override
+  String get importErrorNotObject => 'Invalid format: expected a JSON object.';
+
+  @override
+  String get importErrorMissingCharacter =>
+      'Invalid JSON: \'character\' field not found.';
+
+  @override
+  String get importErrorCorruptedCharacter =>
+      'Could not read character. The JSON may be incomplete or from an incompatible version.';
+
+  @override
   String charCardLevel(int level) {
     return 'Level $level';
   }
@@ -390,6 +404,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get featuresTooltipRemove => 'Remove';
+
+  @override
+  String get featuresTooltipEnable => 'Enable';
+
+  @override
+  String get featuresTooltipDisable => 'Disable';
+
+  @override
+  String get featuresTabClass => 'Class';
+
+  @override
+  String get featuresTabRacial => 'Racial';
+
+  @override
+  String get featuresTabCustom => 'Custom';
 
   @override
   String get featuresRemoveTitle => 'Remove feature?';

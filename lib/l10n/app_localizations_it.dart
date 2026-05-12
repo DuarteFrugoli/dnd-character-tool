@@ -39,6 +39,22 @@ class AppLocalizationsIt extends AppLocalizations {
       'Errore imprevisto durante l\'importazione. Per favore riprova.';
 
   @override
+  String get importErrorInvalidJson =>
+      'Il testo incollato non è un JSON valido.';
+
+  @override
+  String get importErrorNotObject =>
+      'Formato non valido: era atteso un oggetto JSON.';
+
+  @override
+  String get importErrorMissingCharacter =>
+      'JSON non valido: campo \"character\" non trovato.';
+
+  @override
+  String get importErrorCorruptedCharacter =>
+      'Impossibile leggere il personaggio. Il JSON potrebbe essere incompleto o di una versione incompatibile.';
+
+  @override
   String charCardLevel(int level) {
     return 'Livello XARBPPHX0X';
   }
@@ -390,6 +406,21 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get featuresTooltipRemove => 'Rimuovere';
+
+  @override
+  String get featuresTooltipEnable => 'Attiva';
+
+  @override
+  String get featuresTooltipDisable => 'Disattiva';
+
+  @override
+  String get featuresTabClass => 'Classe';
+
+  @override
+  String get featuresTabRacial => 'Razziale';
+
+  @override
+  String get featuresTabCustom => 'Personaliz.';
 
   @override
   String get featuresRemoveTitle => 'Rimuovere la funzione?';

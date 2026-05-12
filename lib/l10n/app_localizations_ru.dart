@@ -40,6 +40,21 @@ class AppLocalizationsRu extends AppLocalizations {
       'Непредвиденная ошибка при импорте. Пожалуйста, попробуйте еще раз.';
 
   @override
+  String get importErrorInvalidJson =>
+      'Вставленный текст не является допустимым JSON.';
+
+  @override
+  String get importErrorNotObject => 'Неверный формат: ожидался объект JSON.';
+
+  @override
+  String get importErrorMissingCharacter =>
+      'Недопустимый JSON: поле \"character\" не найдено.';
+
+  @override
+  String get importErrorCorruptedCharacter =>
+      'Не удалось прочитать персонажа. JSON может быть неполным или от несовместимой версии.';
+
+  @override
   String charCardLevel(int level) {
     return 'Уровень $level';
   }
@@ -390,6 +405,21 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get featuresTooltipRemove => 'Удалять';
+
+  @override
+  String get featuresTooltipEnable => 'Включить';
+
+  @override
+  String get featuresTooltipDisable => 'Отключить';
+
+  @override
+  String get featuresTabClass => 'Класс';
+
+  @override
+  String get featuresTabRacial => 'Расовые';
+
+  @override
+  String get featuresTabCustom => 'Свой';
 
   @override
   String get featuresRemoveTitle => 'Удалить функцию?';

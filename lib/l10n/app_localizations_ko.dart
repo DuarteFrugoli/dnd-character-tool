@@ -38,6 +38,20 @@ class AppLocalizationsKo extends AppLocalizations {
   String get charListImportError => '가져오는 동안 예상치 못한 오류가 발생했습니다. 다시 시도해 주세요.';
 
   @override
+  String get importErrorInvalidJson => '붙여넣은 텍스트가 유효한 JSON가 아닙니다.';
+
+  @override
+  String get importErrorNotObject => '잘못된 형식: JSON 개체가 예상됩니다.';
+
+  @override
+  String get importErrorMissingCharacter =>
+      '잘못된 JSON: \"character\" 필드를 찾을 수 없습니다.';
+
+  @override
+  String get importErrorCorruptedCharacter =>
+      '캐릭터를 읽을 수 없습니다. JSON이 오래된 앱 버전에서 오거나 지원되지 않는 형식일 수 있습니다.';
+
+  @override
   String charCardLevel(int level) {
     return '레벨 $level';
   }
@@ -385,6 +399,21 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get featuresTooltipRemove => '제거하다';
+
+  @override
+  String get featuresTooltipEnable => '활성화';
+
+  @override
+  String get featuresTooltipDisable => '비활성화';
+
+  @override
+  String get featuresTabClass => '직업';
+
+  @override
+  String get featuresTabRacial => '종족';
+
+  @override
+  String get featuresTabCustom => '커스텀';
 
   @override
   String get featuresRemoveTitle => '기능을 삭제하시겠습니까?';

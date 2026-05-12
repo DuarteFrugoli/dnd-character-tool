@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/models/models.dart';
@@ -102,7 +103,8 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     if (trimmed.isEmpty) return;
     final current = state.valueOrNull;
     if (current == null) return;
-    final character = current.firstWhere((c) => c.id == id);
+    final character = current.firstWhereOrNull((c) => c.id == id);
+    if (character == null) return;
     final updated = character.copyWith(name: trimmed, updatedAt: DateTime.now());
     await ref.read(characterRepositoryProvider).save(updated);
     state = AsyncData(current.map((c) => c.id == id ? updated : c).toList());
@@ -111,7 +113,8 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
   Future<void> updateImage(String id, String? imagePath) async {
     final current = state.valueOrNull;
     if (current == null) return;
-    final character = current.firstWhere((c) => c.id == id);
+    final character = current.firstWhereOrNull((c) => c.id == id);
+    if (character == null) return;
     final updated = character.copyWith(
       imagePath: imagePath,
       clearImagePath: imagePath == null,

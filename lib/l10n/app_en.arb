@@ -30,6 +30,18 @@
   "charListImportError": "Unexpected error while importing. Please try again.",
   "@charListImportError": { "description": "Generic import error snackbar." },
 
+  "importErrorInvalidJson": "The pasted text is not valid JSON.",
+  "@importErrorInvalidJson": { "description": "Import error: not valid JSON." },
+
+  "importErrorNotObject": "Invalid format: expected a JSON object.",
+  "@importErrorNotObject": { "description": "Import error: expected object." },
+
+  "importErrorMissingCharacter": "Invalid JSON: 'character' field not found.",
+  "@importErrorMissingCharacter": { "description": "Import error: missing character field." },
+
+  "importErrorCorruptedCharacter": "Could not read character. The JSON may be incomplete or from an incompatible version.",
+  "@importErrorCorruptedCharacter": { "description": "Import error: character field corrupted." },
+
   "charCardLevel": "Level {level}",
   "@charCardLevel": {
     "description": "Level label on character card subtitle.",
@@ -386,6 +398,21 @@
 
   "featuresTooltipRemove": "Remove",
   "@featuresTooltipRemove": { "description": "Remove feature tooltip." },
+
+  "featuresTooltipEnable": "Enable",
+  "@featuresTooltipEnable": { "description": "Enable feature tooltip." },
+
+  "featuresTooltipDisable": "Disable",
+  "@featuresTooltipDisable": { "description": "Disable feature tooltip." },
+
+  "featuresTabClass": "Class",
+  "@featuresTabClass": { "description": "Add feature sheet: Class tab label." },
+
+  "featuresTabRacial": "Racial",
+  "@featuresTabRacial": { "description": "Add feature sheet: Racial tab label." },
+
+  "featuresTabCustom": "Custom",
+  "@featuresTabCustom": { "description": "Add feature sheet: Custom tab label." },
 
   "featuresRemoveTitle": "Remove feature?",
   "@featuresRemoveTitle": { "description": "Remove feature dialog title." },

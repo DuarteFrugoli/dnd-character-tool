@@ -215,7 +215,9 @@ class _FeatureToggleButton extends StatelessWidget {
         size: 18,
       ),
       color: isDisabled ? scheme.outline : scheme.primary,
-      tooltip: isDisabled ? 'Habilitar' : 'Desabilitar',
+      tooltip: isDisabled
+          ? AppLocalizations.of(context)!.featuresTooltipEnable
+          : AppLocalizations.of(context)!.featuresTooltipDisable,
       padding: EdgeInsets.zero,
       constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
       onPressed: () => onToggle(featureName),
@@ -503,7 +505,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                   ],
                 ),
                 subtitle: Text(
-                  'Nível ${f.level}',
+                  l10n2.charCardLevel(f.level),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 trailing: IconButton(
@@ -592,9 +594,9 @@ class _ClassFeaturesSection extends ConsumerWidget {
       case 'passive':
         return l10n.labelPassive;
       case 'subclass':
-        return 'Subclass';
+        return l10n.labelSubclass;
       case 'asi':
-        return 'ASI';
+        return l10n.stepRaceASILabel;
       default:
         return type;
     }
@@ -671,7 +673,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
               subtitle: Row(
                 children: [
                   Text(
-                    'Nível ${f.level}',
+                    l10n.charCardLevel(f.level),
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   if (f.uses != null) ...[
@@ -775,7 +777,7 @@ class _SubclassFeaturesSection extends ConsumerWidget {
                 ],
               ),
               subtitle: Text(
-                'Nível ${f.level}',
+                l10n.charCardLevel(f.level),
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               children: [
@@ -815,9 +817,16 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
 
   late final TabController _tabs;
 
-  static const _tabLabels = [
-    'Classe', 'Subclasse', 'Racial', 'Background', 'Custom',
-  ];
+  List<String> _getTabLabels(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return [
+      l10n.featuresTabClass,
+      l10n.labelSubclass,
+      l10n.featuresTabRacial,
+      l10n.labelBackground,
+      l10n.featuresTabCustom,
+    ];
+  }
 
   Map<String, List<SrdClassFeature>>? _allClassFeatures;
   Map<String, Map<String, List<SrdClassFeature>>>? _allSubclassFeatures;
@@ -834,7 +843,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: _tabLabels.length, vsync: this);
+    _tabs = TabController(length: 5, vsync: this);
     _tabs.addListener(() {
       if (!_tabs.indexIsChanging) {
         _search.clear();
@@ -960,13 +969,13 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
             controller: _tabs,
             isScrollable: true,
             tabAlignment: TabAlignment.start,
-            tabs: _tabLabels.map((l) => Tab(text: l)).toList(),
+            tabs: _getTabLabels(context).map((l) => Tab(text: l)).toList(),
           ),
           // Body
           Expanded(
             child: _loadError != null
                 ? Center(
-                    child: Text('Erro: $_loadError',
+                    child: Text(AppLocalizations.of(context)!.featuresLoadError,
                         style: TextStyle(color: scheme.error)))
                 : TabBarView(
                     controller: _tabs,
@@ -994,9 +1003,9 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       case 'passive':
         return l10n.labelPassive;
       case 'subclass':
-        return 'Subclass';
+        return l10n.labelSubclass;
       case 'asi':
-        return 'ASI';
+        return l10n.stepRaceASILabel;
       default:
         return type;
     }
@@ -1020,7 +1029,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         descriptionTranslator?.call(feature.name) ?? feature.description;
     final typeLabel = _typeLabel(feature.type, context);
     final displaySubtitle =
-        subtitle ?? 'Nível ${feature.level} · $typeLabel';
+        subtitle ?? '${AppLocalizations.of(context)!.charCardLevel(feature.level)} · $typeLabel';
     return ListTile(
       title: Text(displayName, style: const TextStyle(fontSize: 14)),
       subtitle: Text(

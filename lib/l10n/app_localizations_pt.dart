@@ -40,6 +40,21 @@ class AppLocalizationsPt extends AppLocalizations {
       'Erro inesperado ao importar. Tente novamente.';
 
   @override
+  String get importErrorInvalidJson => 'O texto colado não é um JSON válido.';
+
+  @override
+  String get importErrorNotObject =>
+      'Formato inválido: esperado um objeto JSON.';
+
+  @override
+  String get importErrorMissingCharacter =>
+      'JSON inválido: campo \"character\" não encontrado.';
+
+  @override
+  String get importErrorCorruptedCharacter =>
+      'Não foi possível ler o personagem. O JSON pode estar incompleto ou ser de uma versão incompatível.';
+
+  @override
   String charCardLevel(int level) {
     return 'Nível $level';
   }
@@ -391,6 +406,21 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get featuresTooltipRemove => 'Remover';
+
+  @override
+  String get featuresTooltipEnable => 'Habilitar';
+
+  @override
+  String get featuresTooltipDisable => 'Desabilitar';
+
+  @override
+  String get featuresTabClass => 'Classe';
+
+  @override
+  String get featuresTabRacial => 'Racial';
+
+  @override
+  String get featuresTabCustom => 'Personalizado';
 
   @override
   String get featuresRemoveTitle => 'Remover habilidade?';

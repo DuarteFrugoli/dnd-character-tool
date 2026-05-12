@@ -168,6 +168,30 @@ abstract class AppLocalizations {
   /// **'Unexpected error while importing. Please try again.'**
   String get charListImportError;
 
+  /// Import error: not valid JSON.
+  ///
+  /// In en, this message translates to:
+  /// **'The pasted text is not valid JSON.'**
+  String get importErrorInvalidJson;
+
+  /// Import error: expected object.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid format: expected a JSON object.'**
+  String get importErrorNotObject;
+
+  /// Import error: missing character field.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid JSON: \'character\' field not found.'**
+  String get importErrorMissingCharacter;
+
+  /// Import error: character field corrupted.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not read character. The JSON may be incomplete or from an incompatible version.'**
+  String get importErrorCorruptedCharacter;
+
   /// Level label on character card subtitle.
   ///
   /// In en, this message translates to:
@@ -821,6 +845,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remove'**
   String get featuresTooltipRemove;
+
+  /// Enable feature tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable'**
+  String get featuresTooltipEnable;
+
+  /// Disable feature tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable'**
+  String get featuresTooltipDisable;
+
+  /// Add feature sheet: Class tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Class'**
+  String get featuresTabClass;
+
+  /// Add feature sheet: Racial tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Racial'**
+  String get featuresTabRacial;
+
+  /// Add feature sheet: Custom tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom'**
+  String get featuresTabCustom;
 
   /// Remove feature dialog title.
   ///

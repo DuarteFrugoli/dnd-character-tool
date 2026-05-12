@@ -220,7 +220,10 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     _speedCtrl = TextEditingController(text: '${c.speed}');
 
     _nameFocus.addListener(() {
-      if (!_nameFocus.hasFocus) _notifier.updateName(_nameCtrl.text);
+      if (!_nameFocus.hasFocus) {
+        final fallback = AppLocalizations.of(context)!.reviewUnnamedHero;
+        _notifier.updateName(_nameCtrl.text, fallback: fallback);
+      }
     });
     _alignFocus.addListener(() {
       if (!_alignFocus.hasFocus) _notifier.updateAlignment(_alignCtrl.text);

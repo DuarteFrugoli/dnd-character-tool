@@ -94,28 +94,26 @@ class CharacterLocalDataSource {
     try {
       decoded = jsonDecode(jsonString);
     } catch (_) {
-      throw const FormatException('O texto colado não é um JSON válido.');
+      throw const FormatException('invalid_json');
     }
 
     if (decoded is! Map<String, dynamic>) {
-      throw const FormatException('Formato inválido: esperado um objeto JSON.');
+      throw const FormatException('not_object');
     }
 
     if (!decoded.containsKey('character')) {
-      throw const FormatException(
-          'JSON inválido: campo "character" não encontrado. Certifique-se de usar um JSON exportado por este app.');
+      throw const FormatException('missing_character');
     }
 
     final characterJson = decoded['character'];
     if (characterJson is! Map<String, dynamic>) {
-      throw const FormatException('JSON inválido: campo "character" corrompido.');
+      throw const FormatException('corrupted_character');
     }
 
     try {
       return Character.fromJson(characterJson).copyWith(clearImagePath: true);
     } catch (_) {
-      throw const FormatException(
-          'Não foi possível ler o personagem. O JSON pode estar incompleto ou ser de uma versão incompatível.');
+      throw const FormatException('corrupted_character');
     }
   }
 }

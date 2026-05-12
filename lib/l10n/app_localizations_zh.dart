@@ -38,6 +38,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get charListImportError => '导入时出现意外错误。请再试一次。';
 
   @override
+  String get importErrorInvalidJson => '粘贴的文本不是有效的 JSON。';
+
+  @override
+  String get importErrorNotObject => '格式无效：需要 JSON 对象。';
+
+  @override
+  String get importErrorMissingCharacter => 'JSON 无效：未找到 \"character\" 字段。';
+
+  @override
+  String get importErrorCorruptedCharacter => '无法读取角色。JSON 可能不完整或来自不兼容的版本。';
+
+  @override
   String charCardLevel(int level) {
     return '等级 $level';
   }
@@ -379,6 +391,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get featuresTooltipRemove => '消除';
+
+  @override
+  String get featuresTooltipEnable => '启用';
+
+  @override
+  String get featuresTooltipDisable => '禁用';
+
+  @override
+  String get featuresTabClass => '职业';
+
+  @override
+  String get featuresTabRacial => '种族';
+
+  @override
+  String get featuresTabCustom => '自定义';
 
   @override
   String get featuresRemoveTitle => '删除功能？';

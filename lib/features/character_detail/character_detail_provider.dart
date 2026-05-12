@@ -156,11 +156,11 @@ class CharacterDetailNotifier
     await _save(c.copyWith(innateSpells: updated));
   }
 
-  Future<void> updateName(String name) async {
+  Future<void> updateName(String name, {String fallback = 'Unnamed Hero'}) async {
     final c = state.valueOrNull;
     if (c == null) return;
     final trimmed = name.trim();
-    await _save(c.copyWith(name: trimmed.isEmpty ? 'Unnamed Hero' : trimmed));
+    await _save(c.copyWith(name: trimmed.isEmpty ? fallback : trimmed));
   }
 
   Future<void> updateLevel(int level) async {

@@ -38,6 +38,20 @@ class AppLocalizationsJa extends AppLocalizations {
   String get charListImportError => 'インポート中に予期しないエラーが発生しました。もう一度試してください。';
 
   @override
+  String get importErrorInvalidJson => '貼り付けたテキストは有効なJSONではありません。';
+
+  @override
+  String get importErrorNotObject => '無効な形式です：JSONオブジェクトが予期されます。';
+
+  @override
+  String get importErrorMissingCharacter =>
+      '無効なJSON：\"character\"フィールドが見つかりません。';
+
+  @override
+  String get importErrorCorruptedCharacter =>
+      'キャラクターを読み込めませんでした。JSONが不完全、または互換性のないバージョンからのデータの可能性があります。';
+
+  @override
   String charCardLevel(int level) {
     return 'レベル$level';
   }
@@ -384,6 +398,21 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get featuresTooltipRemove => '取り除く';
+
+  @override
+  String get featuresTooltipEnable => '有効';
+
+  @override
+  String get featuresTooltipDisable => '無効';
+
+  @override
+  String get featuresTabClass => 'クラス';
+
+  @override
+  String get featuresTabRacial => '種族';
+
+  @override
+  String get featuresTabCustom => 'カスタム';
 
   @override
   String get featuresRemoveTitle => '機能を削除しますか?';

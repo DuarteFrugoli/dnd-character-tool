@@ -42,9 +42,16 @@ class CharacterListScreen extends ConsumerWidget {
         );
       } on FormatException catch (e) {
         if (!context.mounted) return;
+        final msg = switch (e.message) {
+          'invalid_json' => l10n.importErrorInvalidJson,
+          'not_object' => l10n.importErrorNotObject,
+          'missing_character' => l10n.importErrorMissingCharacter,
+          'corrupted_character' => l10n.importErrorCorruptedCharacter,
+          _ => l10n.charListImportError,
+        };
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(e.message),
+            content: Text(msg),
             backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );

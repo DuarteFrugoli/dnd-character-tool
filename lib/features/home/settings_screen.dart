@@ -174,38 +174,51 @@ class _LanguageTile extends ConsumerWidget {
 
     showModalBottomSheet<void>(
       context: context,
+      isScrollControlled: true,
       builder: (ctx) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(height: 12),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  l10n.settingsChooseLanguage,
-                  style: Theme.of(ctx).textTheme.titleMedium,
+        child: DraggableScrollableSheet(
+          expand: false,
+          initialChildSize: 0.6,
+          minChildSize: 0.4,
+          maxChildSize: 0.9,
+          builder: (_, scrollController) => Column(
+            children: [
+              const SizedBox(height: 12),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    l10n.settingsChooseLanguage,
+                    style: Theme.of(ctx).textTheme.titleMedium,
+                  ),
                 ),
               ),
-            ),
-            for (final opt in options)
-              ListTile(
-                title: Text(opt.label),
-                trailing: opt.locale?.languageCode == current?.languageCode &&
-                        !(opt.locale == null && current != null)
-                    ? Icon(Icons.check_circle,
-                        color: Theme.of(ctx).colorScheme.primary)
-                    : const SizedBox.shrink(),
-                selected: opt.locale?.languageCode == current?.languageCode &&
-                    !(opt.locale == null && current != null),
-                onTap: () {
-                  ref.read(localeProvider.notifier).setLocale(opt.locale);
-                  Navigator.pop(ctx);
-                },
+              Expanded(
+                child: ListView(
+                  controller: scrollController,
+                  children: [
+                    for (final opt in options)
+                      ListTile(
+                        title: Text(opt.label),
+                        trailing: opt.locale?.languageCode == current?.languageCode &&
+                                !(opt.locale == null && current != null)
+                            ? Icon(Icons.check_circle,
+                                color: Theme.of(ctx).colorScheme.primary)
+                            : const SizedBox.shrink(),
+                        selected: opt.locale?.languageCode == current?.languageCode &&
+                            !(opt.locale == null && current != null),
+                        onTap: () {
+                          ref.read(localeProvider.notifier).setLocale(opt.locale);
+                          Navigator.pop(ctx);
+                        },
+                      ),
+                    const SizedBox(height: 8),
+                  ],
+                ),
               ),
-            const SizedBox(height: 8),
-          ],
+            ],
+          ),
         ),
       ),
     );

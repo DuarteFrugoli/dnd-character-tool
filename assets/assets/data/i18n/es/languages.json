@@ -1,0 +1,53 @@
+{
+  "Common": {
+    "name": "Común"
+  },
+  "Dwarvish": {
+    "name": "enano"
+  },
+  "Elvish": {
+    "name": "Mágico"
+  },
+  "Halfling": {
+    "name": "Mediano"
+  },
+  "Draconic": {
+    "name": "dracónico"
+  },
+  "Gnomish": {
+    "name": "gnomo"
+  },
+  "Orc": {
+    "name": "Orco"
+  },
+  "Infernal": {
+    "name": "Infernal"
+  },
+  "Abyssal": {
+    "name": "Abisal"
+  },
+  "Celestial": {
+    "name": "Celestial"
+  },
+  "Deep Speech": {
+    "name": "discurso profundo"
+  },
+  "Giant": {
+    "name": "Gigante"
+  },
+  "Gnoll": {
+    "name": "gnoll"
+  },
+  "Goblin": {
+    "name": "Duende"
+  },
+  "Primordial": {
+    "name": "Primordial"
+  },
+  "Sylvan": {
+    "name": "Selvático"
+  },
+  "Undercommon": {
+    "name": "poco común"
+  }
+}

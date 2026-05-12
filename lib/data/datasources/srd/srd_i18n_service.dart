@@ -213,7 +213,17 @@ class SrdI18nService {
 
   // ── Skills ─────────────────────────────────────────────────────────────────
 
-  String skillName(String en) => _str('skills', en, 'name') ?? en;
+  String skillName(String en) {
+    final exact = _str('skills', en, 'name');
+    if (exact != null) return exact;
+    // SRD data may store skill names in lowercase — try capitalized fallback.
+    if (en.isNotEmpty) {
+      final capitalized = en[0].toUpperCase() + en.substring(1);
+      final byCapitalized = _str('skills', capitalized, 'name');
+      if (byCapitalized != null) return byCapitalized;
+    }
+    return en;
+  }
 
   // ── Spells ─────────────────────────────────────────────────────────────────
 

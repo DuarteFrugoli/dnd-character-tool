@@ -6,47 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
-/// Opens the photo picker / remove bottom sheet and calls [onImageChanged]
-/// with the resulting path (or `null` for removal). Can be called from
-/// anywhere — e.g. from a popup menu — without needing a [CharacterAvatar].
-Future<void> showCharacterPhotoPicker(
+/// Directly opens the image picker + cropper and calls [onChanged] with the
+/// resulting path. No bottom sheet shown.
+Future<void> _pickAndCrop(
   BuildContext context, {
-  required String? currentImagePath,
-  required void Function(String? path) onImageChanged,
+  required void Function(String? path) onChanged,
 }) async {
-  final action = await showModalBottomSheet<_AvatarAction>(
-    context: context,
-    builder: (ctx) => SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ListTile(
-            leading: const Icon(Icons.photo_library_outlined),
-            title: const Text('Choose photo'),
-            onTap: () => Navigator.pop(ctx, _AvatarAction.pick),
-          ),
-          if (currentImagePath != null)
-            ListTile(
-              leading: const Icon(Icons.delete_outline),
-              title: const Text('Remove photo'),
-              onTap: () => Navigator.pop(ctx, _AvatarAction.delete),
-            ),
-          ListTile(
-            leading: const Icon(Icons.close),
-            title: const Text('Cancel'),
-            onTap: () => Navigator.pop(ctx),
-          ),
-        ],
-      ),
-    ),
-  );
-
-  if (action == null) return;
-
-  if (action == _AvatarAction.delete) {
-    onImageChanged(null);
-    return;
-  }
 
   final picker = ImagePicker();
   final XFile? picked;
@@ -89,10 +54,54 @@ Future<void> showCharacterPhotoPicker(
   if (kIsWeb) {
     final bytes = await cropped.readAsBytes();
     final encoded = base64Encode(bytes);
-    onImageChanged('data:image/jpeg;base64,$encoded');
+    onChanged('data:image/jpeg;base64,$encoded');
   } else {
-    onImageChanged(cropped.path);
+    onChanged(cropped.path);
   }
+}
+
+/// Opens a bottom sheet with pick / remove options and calls [onImageChanged].
+/// Can be called from anywhere without a [CharacterAvatar].
+Future<void> showCharacterPhotoPicker(
+  BuildContext context, {
+  required String? currentImagePath,
+  required void Function(String? path) onImageChanged,
+}) async {
+  final action = await showModalBottomSheet<_AvatarAction>(
+    context: context,
+    builder: (ctx) => SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            leading: const Icon(Icons.photo_library_outlined),
+            title: const Text('Choose photo'),
+            onTap: () => Navigator.pop(ctx, _AvatarAction.pick),
+          ),
+          if (currentImagePath != null)
+            ListTile(
+              leading: const Icon(Icons.delete_outline),
+              title: const Text('Remove photo'),
+              onTap: () => Navigator.pop(ctx, _AvatarAction.delete),
+            ),
+          ListTile(
+            leading: const Icon(Icons.close),
+            title: const Text('Cancel'),
+            onTap: () => Navigator.pop(ctx),
+          ),
+        ],
+      ),
+    ),
+  );
+
+  if (action == null || !context.mounted) return;
+
+  if (action == _AvatarAction.delete) {
+    onImageChanged(null);
+    return;
+  }
+
+  await _pickAndCrop(context, onChanged: onImageChanged);
 }
 
 /// Returns the appropriate [ImageProvider] for [path]:
@@ -177,37 +186,40 @@ class CharacterAvatar extends StatelessWidget {
 
 // ── Full-screen photo viewer ─────────────────────────────────────────────────
 
+enum _ViewerResult { pick, remove }
+
 Future<void> _showPhotoViewer(
   BuildContext context, {
   required String imagePath,
   required void Function(String? path) onImageChanged,
-}) {
-  return Navigator.of(context).push(
+}) async {
+  final result = await Navigator.of(context).push<_ViewerResult>(
     PageRouteBuilder(
       opaque: false,
       barrierColor: Colors.black87,
       barrierDismissible: true,
       transitionDuration: const Duration(milliseconds: 220),
       reverseTransitionDuration: const Duration(milliseconds: 180),
-      pageBuilder: (_, __, ___) => _PhotoViewerPage(
-        imagePath: imagePath,
-        onImageChanged: onImageChanged,
-      ),
-      transitionsBuilder: (_, animation, __, child) {
+      pageBuilder: (_, _, _) => _PhotoViewerPage(imagePath: imagePath),
+      transitionsBuilder: (_, animation, _, child) {
         return FadeTransition(opacity: animation, child: child);
       },
     ),
   );
+
+  if (!context.mounted) return;
+
+  if (result == _ViewerResult.remove) {
+    onImageChanged(null);
+  } else if (result == _ViewerResult.pick) {
+    await _pickAndCrop(context, onChanged: onImageChanged);
+  }
 }
 
 class _PhotoViewerPage extends StatelessWidget {
-  const _PhotoViewerPage({
-    required this.imagePath,
-    required this.onImageChanged,
-  });
+  const _PhotoViewerPage({required this.imagePath});
 
   final String imagePath;
-  final void Function(String? path) onImageChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -269,22 +281,12 @@ class _PhotoViewerPage extends StatelessWidget {
                   _ViewerAction(
                     icon: Icons.edit_outlined,
                     label: 'Alterar foto',
-                    onTap: () async {
-                      Navigator.of(context).pop();
-                      await showCharacterPhotoPicker(
-                        context,
-                        currentImagePath: imagePath,
-                        onImageChanged: onImageChanged,
-                      );
-                    },
+                    onTap: () => Navigator.of(context).pop(_ViewerResult.pick),
                   ),
                   _ViewerAction(
                     icon: Icons.delete_outline,
                     label: 'Remover foto',
-                    onTap: () {
-                      Navigator.of(context).pop();
-                      onImageChanged(null);
-                    },
+                    onTap: () => Navigator.of(context).pop(_ViewerResult.remove),
                   ),
                 ],
               ),

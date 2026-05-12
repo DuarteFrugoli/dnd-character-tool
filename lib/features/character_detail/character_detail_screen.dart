@@ -190,8 +190,8 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             ),
             Text(
-              '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${character.subclass})' : ''}  ·  ${i18n.raceName(character.race)}'
-              '${character.subrace != null ? ' (${character.subrace})' : ''}'
+              '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${i18n.subclassName(character.characterClass, character.subclass!)})' : ''}  ·  ${i18n.raceName(character.race)}'
+              '${character.subrace != null ? ' (${i18n.subraceName(character.subrace!)})' : ''}'
               '  ·  Lv ${character.level}',
               maxLines: 2,
               overflow: TextOverflow.visible,

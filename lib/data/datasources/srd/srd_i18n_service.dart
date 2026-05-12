@@ -7,15 +7,19 @@ import 'package:flutter/services.dart';
 /// Keys are always English identifiers; values are localised strings.
 /// Returning `null` means "use the original English string".
 class SrdI18nService {
-  SrdI18nService._(this.locale, this._data);
+  SrdI18nService._(this.locale, this._data, this._subraceNames);
 
   final String locale;
 
   // filename (without .json) → englishKey → { "name": ..., "description": ..., ... }
   final Map<String, Map<String, dynamic>> _data;
 
+  // English subrace name → translated name (built by crossing SRD + i18n races)
+  final Map<String, String> _subraceNames;
+
   /// No-op service: every lookup returns null, so callers fall back to English.
-  static final SrdI18nService english = SrdI18nService._('en', const {});
+  static final SrdI18nService english =
+      SrdI18nService._('en', const {}, const {});
 
   static const _files = [
     'backgrounds',
@@ -49,7 +53,37 @@ class SrdI18nService {
         // Missing, empty, or invalid JSON — fall back to English for this file.
       }
     }
-    return SrdI18nService._(locale, data);
+    // Build English→translated subrace index by crossing SRD races with the
+    // i18n overlay. Subraces in the i18n file are stored as a positional array,
+    // so we match them by index against the SRD source.
+    final subraceNames = <String, String>{};
+    try {
+      final srdRaw =
+          await rootBundle.loadString('assets/data/srd/races.json');
+      final srdRaces = jsonDecode(srdRaw) as List<dynamic>;
+      final i18nRaces = data['races'];
+      if (i18nRaces != null) {
+        for (final srdRace in srdRaces) {
+          final raceEnName = srdRace['name'] as String?;
+          if (raceEnName == null) continue;
+          final srdSubraces = srdRace['subraces'] as List<dynamic>? ?? [];
+          final i18nEntry = i18nRaces[raceEnName];
+          if (i18nEntry is! Map) continue;
+          final i18nSubraces = i18nEntry['subraces'] as List<dynamic>? ?? [];
+          for (var i = 0; i < srdSubraces.length; i++) {
+            final enName = srdSubraces[i]['name'] as String?;
+            final translatedName = i < i18nSubraces.length
+                ? i18nSubraces[i]['name'] as String?
+                : null;
+            if (enName != null && translatedName != null) {
+              subraceNames[enName] = translatedName;
+            }
+          }
+        }
+      }
+    } catch (_) {}
+
+    return SrdI18nService._(locale, data, subraceNames);
   }
 
   // ── Generic helpers ────────────────────────────────────────────────────────
@@ -95,6 +129,8 @@ class SrdI18nService {
 
   String raceName(String en) => _str('races', en, 'name') ?? en;
 
+  String subraceName(String en) => _subraceNames[en] ?? en;
+
   // ── Backgrounds ────────────────────────────────────────────────────────────
 
   String backgroundName(String en) => _str('backgrounds', en, 'name') ?? en;
@@ -102,6 +138,9 @@ class SrdI18nService {
   // ── Classes ────────────────────────────────────────────────────────────────
 
   String className(String en) => _str('classes', en, 'name') ?? en;
+
+  String subclassName(String classEn, String subclassEn) =>
+      _nested2('subclasses', classEn, subclassEn, 'name') ?? subclassEn;
 
   // ── Race traits ────────────────────────────────────────────────────────────
 

@@ -20,19 +20,14 @@ const supportedLocales = [
 ];
 
 class LocaleNotifier extends Notifier<Locale?> {
-  @override
-  Locale? build() {
-    _load();
-    return null; // default: system
-  }
+  LocaleNotifier([this._initial]);
+  final Locale? _initial;
 
-  Future<void> _load() async {
-    final prefs = await SharedPreferences.getInstance();
-    final code = prefs.getString(_kLocaleKey);
-    if (code != null) {
-      state = Locale(code);
-    }
-  }
+  /// Named constructor used by main() to pass the pre-loaded value.
+  static LocaleNotifier withInitial(Locale? locale) => LocaleNotifier(locale);
+
+  @override
+  Locale? build() => _initial; // null means "follow system"
 
   Future<void> setLocale(Locale? locale) async {
     final prefs = await SharedPreferences.getInstance();

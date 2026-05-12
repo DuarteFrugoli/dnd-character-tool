@@ -1,14 +1,37 @@
 import 'package:flutter/material.dart';
-import 'l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/locale/locale_provider.dart';
 import 'core/router/app_router.dart';
+import 'core/theme/app_themes.dart';
 import 'core/theme/theme_provider.dart';
+import 'l10n/app_localizations.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MainApp()));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load persisted theme and locale before first frame — no flash.
+  final prefs = await SharedPreferences.getInstance();
+
+  final savedThemeId = prefs.getString('selected_theme_id');
+  final initialTheme = savedThemeId != null
+      ? appThemes.where((t) => t.id == savedThemeId).firstOrNull ?? appThemes[0]
+      : appThemes[0];
+
+  final savedLocaleCode = prefs.getString('selected_locale');
+  final initialLocale =
+      savedLocaleCode != null ? Locale(savedLocaleCode) : null;
+
+  runApp(ProviderScope(
+    overrides: [
+      themeProvider.overrideWith(() => ThemeNotifier.withInitial(initialTheme)),
+      localeProvider.overrideWith(
+          () => LocaleNotifier.withInitial(initialLocale)),
+    ],
+    child: const MainApp(),
+  ));
 }
 
 class MainApp extends ConsumerWidget {

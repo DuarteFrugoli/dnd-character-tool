@@ -80,7 +80,10 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
 
   Future<void> delete(String id) async {
     await ref.read(characterRepositoryProvider).delete(id);
-    await refresh();
+    final current = state.valueOrNull;
+    if (current != null) {
+      state = AsyncData(current.where((c) => c.id != id).toList());
+    }
   }
 
   Future<String> exportCharacter(Character character) {
@@ -97,21 +100,24 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
   Future<void> rename(String id, String newName) async {
     final trimmed = newName.trim();
     if (trimmed.isEmpty) return;
-    final character = await ref.read(characterRepositoryProvider).getById(id);
-    if (character == null) return;
-    await ref.read(characterRepositoryProvider).save(character.copyWith(name: trimmed));
-    await refresh();
+    final current = state.valueOrNull;
+    if (current == null) return;
+    final character = current.firstWhere((c) => c.id == id);
+    final updated = character.copyWith(name: trimmed, updatedAt: DateTime.now());
+    await ref.read(characterRepositoryProvider).save(updated);
+    state = AsyncData(current.map((c) => c.id == id ? updated : c).toList());
   }
 
   Future<void> updateImage(String id, String? imagePath) async {
-    final character = await ref.read(characterRepositoryProvider).getById(id);
-    if (character == null) return;
-    await ref
-        .read(characterRepositoryProvider)
-        .save(character.copyWith(
-          imagePath: imagePath,
-          clearImagePath: imagePath == null,
-        ));
-    await refresh();
+    final current = state.valueOrNull;
+    if (current == null) return;
+    final character = current.firstWhere((c) => c.id == id);
+    final updated = character.copyWith(
+      imagePath: imagePath,
+      clearImagePath: imagePath == null,
+      updatedAt: DateTime.now(),
+    );
+    await ref.read(characterRepositoryProvider).save(updated);
+    state = AsyncData(current.map((c) => c.id == id ? updated : c).toList());
   }
 }

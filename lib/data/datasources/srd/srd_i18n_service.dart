@@ -311,4 +311,130 @@ class SrdI18nService {
   // ── Languages ──────────────────────────────────────────────────────────────
 
   String languageName(String en) => _str('languages', en, 'name') ?? en;
+
+  // ── Game term translations ─────────────────────────────────────────────────
+  // Fixed finite sets of D&D terms that appear as raw values in SRD data.
+
+  static const _ptTerms = <String, String>{
+    // Casting times
+    '1 action': '1 ação',
+    '1 bonus action': '1 ação bônus',
+    '1 reaction': '1 reação',
+    '1 minute': '1 minuto',
+    '10 minutes': '10 minutos',
+    '1 hour': '1 hora',
+    '8 hours': '8 horas',
+    '24 hours': '24 horas',
+    // Duration specials
+    'instantaneous': 'instantânea',
+    '1 round': '1 turno',
+    'until dispelled': 'até ser dissipado',
+    'until dispelled or triggered': 'até ser dissipado ou ativado',
+    'permanent': 'permanente',
+    '7 days': '7 dias',
+    '10 days': '10 dias',
+    '30 days': '30 dias',
+    // Duration prefixes (with trailing space)
+    'up to ': 'até ',
+    'concentration, up to ': 'concentração, até ',
+    // Damage types
+    'bludgeoning': 'concussão',
+    'piercing': 'perfurante',
+    'slashing': 'cortante',
+    'acid': 'ácido',
+    'cold': 'frio',
+    'fire': 'fogo',
+    'force': 'energia',
+    'lightning': 'elétrico',
+    'necrotic': 'necrótico',
+    'poison': 'veneno',
+    'psychic': 'psíquico',
+    'radiant': 'radiante',
+    'thunder': 'trovão',
+    'none': 'nenhum',
+    // Weapon properties
+    'ammunition': 'munição',
+    'finesse': 'finesse',
+    'heavy': 'pesada',
+    'light': 'leve',
+    'loading': 'recarga',
+    'reach': 'alcance adicional',
+    'special': 'especial',
+    'thrown': 'arremessável',
+    'two-handed': 'duas mãos',
+    'versatile': 'versátil',
+    // Spell schools
+    'abjuration': 'abjuração',
+    'conjuration': 'conjuração',
+    'divination': 'adivinhação',
+    'enchantment': 'encantamento',
+    'evocation': 'evocação',
+    'illusion': 'ilusão',
+    'necromancy': 'necromancia',
+    'transmutation': 'transmutação',
+    // UI game terms
+    'shield': 'escudo',
+  };
+
+  static Map<String, String>? _getTermsMap(String locale) {
+    switch (locale) {
+      case 'pt': return _ptTerms;
+      default:   return null;
+    }
+  }
+
+  /// Translates a single game term via case-insensitive exact match.
+  String term(String en) {
+    final map = _getTermsMap(locale);
+    if (map == null) return en;
+    return map[en] ?? map[en.toLowerCase()] ?? en;
+  }
+
+  /// Translates a spell casting time string.
+  /// Handles "1 reaction, which you take when..." by translating the prefix.
+  String castingTime(String en) {
+    final map = _getTermsMap(locale);
+    if (map == null) return en;
+    final exact = map[en] ?? map[en.toLowerCase()];
+    if (exact != null) return exact;
+    final lower = en.toLowerCase();
+    if (lower.startsWith('1 reaction')) {
+      final tr = map['1 reaction'] ?? '1 reaction';
+      return en.length > '1 reaction'.length
+          ? '$tr${en.substring('1 reaction'.length)}'
+          : tr;
+    }
+    return en;
+  }
+
+  /// Translates a spell duration string.
+  /// Handles "Up to X" and "Concentration, up to X" prefixes.
+  String spellDuration(String en) {
+    final map = _getTermsMap(locale);
+    if (map == null) return en;
+    final exact = map[en] ?? map[en.toLowerCase()];
+    if (exact != null) return exact;
+    final lower = en.toLowerCase();
+    const concPrefix = 'concentration, up to ';
+    if (lower.startsWith(concPrefix)) {
+      final tail = en.substring(concPrefix.length);
+      return '${map[concPrefix] ?? 'Concentration, up to '}${map[tail.toLowerCase()] ?? tail}';
+    }
+    const upToPrefix = 'up to ';
+    if (lower.startsWith(upToPrefix)) {
+      final tail = en.substring(upToPrefix.length);
+      return '${map[upToPrefix] ?? 'Up to '}${map[tail.toLowerCase()] ?? tail}';
+    }
+    return en;
+  }
+
+  /// Translates a damage type string.
+  String damageType(String en) => term(en);
+
+  /// Translates a spell school name.
+  String spellSchool(String en) => term(en.toLowerCase());
+
+  /// Translates and joins weapon property strings.
+  String weaponProperties(List<String> props) =>
+      props.map((p) => term(p)).join(', ');
 }

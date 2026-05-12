@@ -965,8 +965,8 @@ class SpellDetailSheet extends ConsumerWidget {
           // ── Level / school ────────────────────────────────────────────────
           Text(
             spell.level == 0
-                ? l10n.spellDetailCantrip(spell.school)
-                : l10n.spellDetailLevelSchool(_ordinal(spell.level), spell.school.toLowerCase()),
+                ? l10n.spellDetailCantrip(i18n.spellSchool(spell.school))
+                : l10n.spellDetailLevelSchool(_ordinal(spell.level), i18n.spellSchool(spell.school)),
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: scheme.onSurfaceVariant,
                   fontStyle: FontStyle.italic,
@@ -977,9 +977,9 @@ class SpellDetailSheet extends ConsumerWidget {
           const SizedBox(height: 12),
 
           // ── Stat rows ─────────────────────────────────────────────────────
-          _StatRow(l10n.spellDetailCastingTime, spell.castingTime),
+          _StatRow(l10n.spellDetailCastingTime, i18n.castingTime(spell.castingTime)),
           _StatRow(l10n.spellDetailRange, spell.range),
-          _StatRow(l10n.spellDetailDuration, spell.duration),
+          _StatRow(l10n.spellDetailDuration, i18n.spellDuration(spell.duration)),
           _StatRow(l10n.spellDetailComponents, _componentsStr()),
           if (spell.concentration) ...[
             const SizedBox(height: 4),

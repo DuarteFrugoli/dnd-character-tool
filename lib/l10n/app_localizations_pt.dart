@@ -27,8 +27,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get charListEmpty => 'Nenhum personagem ainda';
 
   @override
-  String get charListEmptyHint =>
-      'Toque em + para criar seu primeiro personagem';
+  String get charListEmptyHint => 'Toque em + para criar seu primeiro personagem';
 
   @override
   String charListImportedSuccess(String name) {
@@ -36,8 +35,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get charListImportError =>
-      'Erro inesperado ao importar. Tente novamente.';
+  String get charListImportError => 'Erro inesperado ao importar. Tente novamente.';
 
   @override
   String charCardLevel(int level) {
@@ -137,29 +135,25 @@ class AppLocalizationsPt extends AppLocalizations {
   String get modeGuidedTitle => 'Guiado';
 
   @override
-  String get modeGuidedSubtitle =>
-      'Assistente passo a passo. Escolha classe, raça, antecedente, perícias e atributos um de cada vez. Recomendado para novos jogadores.';
+  String get modeGuidedSubtitle => 'Assistente passo a passo. Escolha classe, raça, antecedente, perícias e atributos um de cada vez. Recomendado para novos jogadores.';
 
   @override
   String get modeManualTitle => 'Manual';
 
   @override
-  String get modeManualSubtitle =>
-      'Preencha tudo você mesmo. Todos os campos são livres e nenhum valor é calculado para você. Melhor para jogadores experientes.';
+  String get modeManualSubtitle => 'Preencha tudo você mesmo. Todos os campos são livres e nenhum valor é calculado para você. Melhor para jogadores experientes.';
 
   @override
   String get modeRandomTitle => 'Aleatório';
 
   @override
-  String get modeRandomSubtitle =>
-      'Tudo é rolado para você — raça, classe, antecedente e atributos. Ótimo para desafios ou one-shots.';
+  String get modeRandomSubtitle => 'Tudo é rolado para você — raça, classe, antecedente e atributos. Ótimo para desafios ou one-shots.';
 
   @override
   String get modeSemiRandomTitle => 'Semi-aleatório';
 
   @override
-  String get modeSemiRandomSubtitle =>
-      'Você faz as escolhas importantes; todo o resto é rolado. Bom para quando você tem um conceito mas quer surpresas.';
+  String get modeSemiRandomSubtitle => 'Você faz as escolhas importantes; todo o resto é rolado. Bom para quando você tem um conceito mas quer surpresas.';
 
   @override
   String get modeComingSoon => 'Em breve';
@@ -189,8 +183,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get creationDiscardTitle => 'Descartar personagem?';
 
   @override
-  String get creationDiscardContent =>
-      'Todo o progresso será perdido. Tem certeza?';
+  String get creationDiscardContent => 'Todo o progresso será perdido. Tem certeza?';
 
   @override
   String get creationTooltipCancel => 'Cancelar';
@@ -205,8 +198,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get detailLeaveWithoutSaving => 'Sair sem salvar?';
 
   @override
-  String get detailChangesWillBeDiscarded =>
-      'As alterações serão descartadas. Para salvar, use o botão ✓ no canto superior direito.';
+  String get detailChangesWillBeDiscarded => 'As alterações serão descartadas. Para salvar, use o botão ✓ no canto superior direito.';
 
   @override
   String get detailLeaveAndDiscard => 'Sair e descartar';
@@ -232,8 +224,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get detailCancelEditTitle => 'Cancelar edição?';
 
   @override
-  String get detailCancelEditContent =>
-      'Todas as alterações serão descartadas.';
+  String get detailCancelEditContent => 'Todas as alterações serão descartadas.';
 
   @override
   String get detailFinishEditTitle => 'Finalizar edição?';
@@ -263,8 +254,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get longRestTitle => 'Descanso Longo';
 
   @override
-  String get longRestContent =>
-      'Restaurar o HP ao máximo e recuperar todos os espaços de magia?';
+  String get longRestContent => 'Restaurar o HP ao máximo e recuperar todos os espaços de magia?';
 
   @override
   String get longRestButton => 'Descansar';
@@ -347,8 +337,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get tempHpNoStack =>
-      'PV temporários não se acumulam — apenas valores maiores substituem o atual.';
+  String get tempHpNoStack => 'PV temporários não se acumulam — apenas valores maiores substituem o atual.';
 
   @override
   String get tempHpReplace => 'Substituir';
@@ -380,8 +369,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get subclassChangeTitle => 'Trocar subclasse';
 
   @override
-  String get subclassChangeWarning =>
-      'Atenção: magias e proficiências concedidas pela subclasse anterior não são removidas automaticamente. Você precisará ajustá-las manualmente.';
+  String get subclassChangeWarning => 'Atenção: magias e proficiências concedidas pela subclasse anterior não são removidas automaticamente. Você precisará ajustá-las manualmente.';
 
   @override
   String get backgroundChooseTitle => 'Escolher Antecedente';
@@ -584,8 +572,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get stepRoll4d6 => 'Rolar 4d6';
 
   @override
-  String get stepDistributeRacialBonuses =>
-      'Distribuir bônus raciais livremente';
+  String get stepDistributeRacialBonuses => 'Distribuir bônus raciais livremente';
 
   @override
   String get stepAssignRolls => 'Atribuir cada rolagem a um atributo:';
@@ -702,8 +689,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get spellsNoSpellcasting => 'Sem Conjuração';
 
   @override
-  String get spellsNoSpellcastingDesc =>
-      'Esta classe não possui características de conjuração.';
+  String get spellsNoSpellcastingDesc => 'Esta classe não possui características de conjuração.';
 
   @override
   String get spellsSlots => 'Espaços de Magia';
@@ -727,8 +713,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get spellsKnown => 'Conhecidas';
 
   @override
-  String get spellsEmpty =>
-      'Nenhuma magia adicionada ainda.\nToque em + para navegar pelas magias.';
+  String get spellsEmpty => 'Nenhuma magia adicionada ainda.\nToque em + para navegar pelas magias.';
 
   @override
   String spellsSlotLevel(int level) {

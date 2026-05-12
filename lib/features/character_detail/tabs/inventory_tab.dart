@@ -825,11 +825,11 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getName: (w) => w.name,
                   getDisplayName: (w) => i18n.equipmentName(w.name),
                   getSubtitle: (w) =>
-                      '${w.damage} ${w.damageType}  ·  ${w.cost}',
+                      '${w.damage} ${i18n.damageType(w.damageType)}  ·  ${w.cost}',
                   getCategory: (w) => w.category,
                   getGroup: (w) => w.category,
                   getDescription: (w) => w.properties.isNotEmpty
-                      ? w.properties.join(', ')
+                      ? i18n.weaponProperties(w.properties)
                       : null,
                   getItemType: (_) => ItemType.weapon,
                   getProperties: (w) => {
@@ -1006,14 +1006,14 @@ class _ItemTile extends ConsumerWidget {
     }
   }
 
-  static String? _itemMeta(EquipmentItem item) {
+  static String? _itemMeta(EquipmentItem item, [SrdI18nService? i18n]) {
     final props = item.properties;
 
     if (item.itemType == ItemType.weapon && props != null) {
       final dice = props['damageDice']?.toString();
       final type = props['damageType']?.toString();
       if (dice != null && dice.isNotEmpty && type != null && type.isNotEmpty) {
-        return '$dice $type';
+        return '$dice ${i18n?.damageType(type) ?? type}';
       }
       if (dice != null && dice.isNotEmpty) return dice;
     }
@@ -1022,7 +1022,7 @@ class _ItemTile extends ConsumerWidget {
       final isShield = props['isShield'] == true;
       if (isShield) {
         final bonus = (props['acBonus'] as num?)?.toInt() ?? 2;
-        return 'Shield  ·  +$bonus AC';
+        return '${i18n?.term('shield') ?? 'Shield'}  ·  +$bonus AC';
       }
 
       final baseAc = (props['baseAC'] as num?)?.toInt();
@@ -1154,7 +1154,7 @@ class _ItemTile extends ConsumerWidget {
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
     final canEquip =
         item.itemType == ItemType.weapon || item.itemType == ItemType.armor;
-    final meta = _itemMeta(item);
+    final meta = _itemMeta(item, i18n);
     final displayName = _itemDisplayName(item, i18n);
 
     // Stealth disadvantage: stored in properties (new items) or description (old items)

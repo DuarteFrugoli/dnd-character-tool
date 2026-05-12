@@ -35,8 +35,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get charListImportError =>
-      'Unexpected error while importing. Please try again.';
+  String get charListImportError => 'Unexpected error while importing. Please try again.';
 
   @override
   String charCardLevel(int level) {
@@ -130,36 +129,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get modeSelectionTitle => 'New Character';
 
   @override
-  String get modeSelectionQuestion =>
-      'How do you want to create your character?';
+  String get modeSelectionQuestion => 'How do you want to create your character?';
 
   @override
   String get modeGuidedTitle => 'Guided';
 
   @override
-  String get modeGuidedSubtitle =>
-      'Step-by-step wizard. Choose class, race, background, skills and attributes one at a time. Recommended for new players.';
+  String get modeGuidedSubtitle => 'Step-by-step wizard. Choose class, race, background, skills and attributes one at a time. Recommended for new players.';
 
   @override
   String get modeManualTitle => 'Manual';
 
   @override
-  String get modeManualSubtitle =>
-      'Fill in everything yourself. All fields are free and no values are calculated for you. Best for experienced players.';
+  String get modeManualSubtitle => 'Fill in everything yourself. All fields are free and no values are calculated for you. Best for experienced players.';
 
   @override
   String get modeRandomTitle => 'Random';
 
   @override
-  String get modeRandomSubtitle =>
-      'Everything is rolled for you — race, class, background and attributes. Great for a challenge or one-shots.';
+  String get modeRandomSubtitle => 'Everything is rolled for you — race, class, background and attributes. Great for a challenge or one-shots.';
 
   @override
   String get modeSemiRandomTitle => 'Semi-random';
 
   @override
-  String get modeSemiRandomSubtitle =>
-      'You pick the important choices; everything else is rolled. Good for when you have a concept but want surprises.';
+  String get modeSemiRandomSubtitle => 'You pick the important choices; everything else is rolled. Good for when you have a concept but want surprises.';
 
   @override
   String get modeComingSoon => 'Soon';
@@ -189,8 +183,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get creationDiscardTitle => 'Discard character?';
 
   @override
-  String get creationDiscardContent =>
-      'All progress will be lost. Are you sure?';
+  String get creationDiscardContent => 'All progress will be lost. Are you sure?';
 
   @override
   String get creationTooltipCancel => 'Cancel';
@@ -205,8 +198,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailLeaveWithoutSaving => 'Leave without saving?';
 
   @override
-  String get detailChangesWillBeDiscarded =>
-      'Changes will be discarded. To save, use the ✓ button at the top right.';
+  String get detailChangesWillBeDiscarded => 'Changes will be discarded. To save, use the ✓ button at the top right.';
 
   @override
   String get detailLeaveAndDiscard => 'Leave and discard';
@@ -262,8 +254,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get longRestTitle => 'Long Rest';
 
   @override
-  String get longRestContent =>
-      'Restore HP to maximum and recover all spell slots?';
+  String get longRestContent => 'Restore HP to maximum and recover all spell slots?';
 
   @override
   String get longRestButton => 'Rest';
@@ -346,8 +337,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get tempHpNoStack =>
-      'Temp HP doesn\'t stack — only higher values replace the current.';
+  String get tempHpNoStack => 'Temp HP doesn\'t stack — only higher values replace the current.';
 
   @override
   String get tempHpReplace => 'Replace';
@@ -379,8 +369,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get subclassChangeTitle => 'Change subclass';
 
   @override
-  String get subclassChangeWarning =>
-      'Warning: spells and proficiencies granted by the previous subclass are not removed automatically. You will need to adjust them manually.';
+  String get subclassChangeWarning => 'Warning: spells and proficiencies granted by the previous subclass are not removed automatically. You will need to adjust them manually.';
 
   @override
   String get backgroundChooseTitle => 'Choose Background';
@@ -700,8 +689,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get spellsNoSpellcasting => 'No Spellcasting';
 
   @override
-  String get spellsNoSpellcastingDesc =>
-      'This class has no spellcasting features.';
+  String get spellsNoSpellcastingDesc => 'This class has no spellcasting features.';
 
   @override
   String get spellsSlots => 'Spell Slots';

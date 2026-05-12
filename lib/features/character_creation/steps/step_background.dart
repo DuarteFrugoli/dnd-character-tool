@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_data_source.dart';
@@ -71,6 +72,7 @@ class _BackgroundCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final bgName = i18n.backgroundName(bg.name);
     final featureName = i18n.backgroundFeatureName(bg.name) ?? bg.feature.name;
@@ -99,7 +101,7 @@ class _BackgroundCard extends StatelessWidget {
                                 )),
                     const SizedBox(height: 4),
                     Text(
-                      'Skills: ${bg.skillProficiencies.map(i18n.skillName).join(', ')}',
+                      '${l10n.creationStepSkills}: ${bg.skillProficiencies.map(i18n.skillName).join(', ')}',  
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: isSelected
                                 ? scheme.onPrimaryContainer
@@ -109,7 +111,7 @@ class _BackgroundCard extends StatelessWidget {
                     if (bg.toolProficiencies.isNotEmpty) ...[
                       const SizedBox(height: 2),
                       Text(
-                        'Tools: ${bg.toolProficiencies.map(i18n.toolName).join(', ')}',
+                        '${l10n.inventoryTabTools}: ${bg.toolProficiencies.map(i18n.toolName).join(', ')}',  
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: isSelected
                                   ? scheme.onPrimaryContainer
@@ -119,7 +121,7 @@ class _BackgroundCard extends StatelessWidget {
                     ],
                     const SizedBox(height: 4),
                     Text(
-                      'Feature: $featureName',
+                      '${l10n.reviewRowFeature}: $featureName',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: isSelected
                                 ? scheme.onPrimaryContainer

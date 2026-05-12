@@ -5,7 +5,9 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
+import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
 
 const _attributes = [
@@ -62,6 +64,7 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
   @override
   Widget build(BuildContext context) {
     final draft = ref.watch(characterDraftProvider);
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final method = draft.attributeMethod;
     final freeAsi = draft.freeAsi;
 
@@ -78,7 +81,7 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
       children: [
         // ── Lembrete de classe ───────────────────────────────────────────────
         if (draft.selectedClass != null) ...
-          [_ClassReminder(cls: draft.selectedClass!), const SizedBox(height: 16)],
+          [_ClassReminder(cls: draft.selectedClass!, i18n: i18n), const SizedBox(height: 16)],
 
         // ── Método ────────────────────────────────────────────────────────
         Text(AppLocalizations.of(context)!.stepChooseMethod,
@@ -241,8 +244,9 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
 // ── Class Reminder ────────────────────────────────────────────────────────────
 
 class _ClassReminder extends StatelessWidget {
-  const _ClassReminder({required this.cls});
+  const _ClassReminder({required this.cls, required this.i18n});
   final SrdClass cls;
+  final SrdI18nService i18n;
 
   @override
   Widget build(BuildContext context) {
@@ -267,7 +271,7 @@ class _ClassReminder extends StatelessWidget {
                     ?.copyWith(color: scheme.onSurface),
                 children: [
                   TextSpan(
-                    text: '${cls.name} ',
+                    text: '${i18n.className(cls.name)} ',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const TextSpan(text: '— '),

@@ -84,7 +84,7 @@ class CharacterLocalDataSource {
     final payload = {
       'version': '1.0',
       'exportedAt': DateTime.now().toIso8601String(),
-      'character': character.copyWith(imagePath: null).toJson(),
+      'character': character.copyWith(clearImagePath: true).toJson(),
     };
     return const JsonEncoder.withIndent('  ').convert(payload);
   }
@@ -112,7 +112,7 @@ class CharacterLocalDataSource {
     }
 
     try {
-      return Character.fromJson(characterJson);
+      return Character.fromJson(characterJson).copyWith(clearImagePath: true);
     } catch (_) {
       throw const FormatException(
           'Não foi possível ler o personagem. O JSON pode estar incompleto ou ser de uma versão incompatível.');

@@ -150,13 +150,185 @@ class CharacterAvatar extends StatelessWidget {
 
     if (onImageChanged == null) return avatar;
 
+    final interactive = imagePath != null
+        ? Hero(tag: 'character_avatar_$imagePath', child: avatar)
+        : avatar;
+
     return GestureDetector(
-      onTap: () => showCharacterPhotoPicker(
-        context,
-        currentImagePath: imagePath,
-        onImageChanged: onImageChanged!,
+      onTap: () {
+        if (imagePath != null) {
+          _showPhotoViewer(
+            context,
+            imagePath: imagePath!,
+            onImageChanged: onImageChanged!,
+          );
+        } else {
+          showCharacterPhotoPicker(
+            context,
+            currentImagePath: null,
+            onImageChanged: onImageChanged!,
+          );
+        }
+      },
+      child: interactive,
+    );
+  }
+}
+
+// ── Full-screen photo viewer ─────────────────────────────────────────────────
+
+Future<void> _showPhotoViewer(
+  BuildContext context, {
+  required String imagePath,
+  required void Function(String? path) onImageChanged,
+}) {
+  return Navigator.of(context).push(
+    PageRouteBuilder(
+      opaque: false,
+      barrierColor: Colors.black87,
+      barrierDismissible: true,
+      transitionDuration: const Duration(milliseconds: 220),
+      reverseTransitionDuration: const Duration(milliseconds: 180),
+      pageBuilder: (_, __, ___) => _PhotoViewerPage(
+        imagePath: imagePath,
+        onImageChanged: onImageChanged,
       ),
-      child: avatar,
+      transitionsBuilder: (_, animation, __, child) {
+        return FadeTransition(opacity: animation, child: child);
+      },
+    ),
+  );
+}
+
+class _PhotoViewerPage extends StatelessWidget {
+  const _PhotoViewerPage({
+    required this.imagePath,
+    required this.onImageChanged,
+  });
+
+  final String imagePath;
+  final void Function(String? path) onImageChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final image = _resolveImageProvider(imagePath);
+    final bottomPadding = MediaQuery.of(context).viewPadding.bottom;
+
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Stack(
+        children: [
+          // Tap outside to close
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => Navigator.of(context).pop(),
+            child: const SizedBox.expand(),
+          ),
+
+          // Photo centered
+          Center(
+            child: Hero(
+              tag: 'character_avatar_$imagePath',
+              child: Image(
+                image: image,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+
+          // Top bar: close button
+          Positioned(
+            top: MediaQuery.of(context).viewPadding.top + 8,
+            left: 8,
+            child: IconButton(
+              icon: const Icon(Icons.close, color: Colors.white),
+              style: IconButton.styleFrom(
+                backgroundColor: Colors.black45,
+              ),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ),
+
+          // Bottom action bar
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Colors.black87, Colors.transparent],
+                ),
+              ),
+              padding: EdgeInsets.fromLTRB(16, 24, 16, bottomPadding + 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _ViewerAction(
+                    icon: Icons.edit_outlined,
+                    label: 'Alterar foto',
+                    onTap: () async {
+                      Navigator.of(context).pop();
+                      await showCharacterPhotoPicker(
+                        context,
+                        currentImagePath: imagePath,
+                        onImageChanged: onImageChanged,
+                      );
+                    },
+                  ),
+                  _ViewerAction(
+                    icon: Icons.delete_outline,
+                    label: 'Remover foto',
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      onImageChanged(null);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ViewerAction extends StatelessWidget {
+  const _ViewerAction({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white24,
+              borderRadius: BorderRadius.circular(32),
+            ),
+            padding: const EdgeInsets.all(14),
+            child: Icon(icon, color: Colors.white, size: 26),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            label,
+            style: const TextStyle(color: Colors.white, fontSize: 12),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -161,8 +161,16 @@ class _LanguageTile extends ConsumerWidget {
     final options = [
       (label: l10n.settingsSystemDefault, locale: null),
       (label: 'English', locale: const Locale('en')),
-      (label: 'Português', locale: const Locale('pt')),      (label: 'Espa\u00f1ol', locale: const Locale('es')),
-      (label: 'Fran\u00e7ais', locale: const Locale('fr')),    ];
+      (label: 'Português', locale: const Locale('pt')),
+      (label: 'Español', locale: const Locale('es')),
+      (label: 'Français', locale: const Locale('fr')),
+      (label: 'Deutsch', locale: const Locale('de')),
+      (label: 'Italiano', locale: const Locale('it')),
+      (label: '日本語', locale: const Locale('ja')),
+      (label: '한국어', locale: const Locale('ko')),
+      (label: 'Русский', locale: const Locale('ru')),
+      (label: '中文', locale: const Locale('zh')),
+    ];
 
     showModalBottomSheet<void>(
       context: context,

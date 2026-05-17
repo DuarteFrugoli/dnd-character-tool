@@ -288,8 +288,8 @@ class _RacialTraitsSection extends ConsumerWidget {
     if (allTraits.isEmpty) return const SizedBox.shrink();
 
     final title = subraceName != null && subraceName!.isNotEmpty
-        ? subraceName!
-        : raceName;
+        ? i18n.subraceName(subraceName!)
+        : i18n.raceName(raceName);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -437,7 +437,7 @@ class _BackgroundFeatureSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          l10n.featuresSectionBackground(backgroundName),
+          l10n.featuresSectionBackground(i18n.backgroundName(backgroundName)),
           style: Theme.of(
             context,
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -645,7 +645,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            l10n.featuresSectionClass(className),
+            l10n.featuresSectionClass(i18n.className(className)),
             style: Theme.of(
               context,
             ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -660,7 +660,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          l10n.featuresSectionClass(className),
+          l10n.featuresSectionClass(i18n.className(className)),
           style: Theme.of(
             context,
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -774,7 +774,7 @@ class _SubclassFeaturesSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          l10n.featuresSectionSubclass(subclassName),
+          l10n.featuresSectionSubclass(i18n.subclassName(className, subclassName)),
           style: Theme.of(
             context,
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),

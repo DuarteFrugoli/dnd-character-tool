@@ -172,9 +172,12 @@ class _CharacterCreationScreenState
 
   Future<void> _finishCreation() async {
     if (!_isStepValid(ref.read(characterDraftProvider))) return;
-    await ref.read(characterDraftProvider.notifier).buildAndSave(ref);
+    final created = await ref.read(characterDraftProvider.notifier).buildAndSave(
+      ref,
+      fallbackName: AppLocalizations.of(context)!.reviewUnnamedHero,
+    );
     ref.read(characterDraftProvider.notifier).reset();
-    ref.invalidate(characterListProvider);
+    await ref.read(characterListProvider.notifier).updateSingle(created);
     if (mounted) context.go('/');
   }
 }

@@ -365,14 +365,14 @@ class _ExportDialogState extends State<_ExportDialog> {
     await Clipboard.setData(ClipboardData(text: text));
     if (!ctx.mounted) return;
     ScaffoldMessenger.of(ctx)
-        .showSnackBar(SnackBar(content: Text('$label copied!')));
+        .showSnackBar(SnackBar(content: Text(AppLocalizations.of(ctx)!.exportCopied(label))));
   }
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return AlertDialog(
-      title: Text('Export ${widget.characterName}'),
+      title: Text(AppLocalizations.of(context)!.exportDialogTitle(widget.characterName)),
       content: SizedBox(
         width: 520,
         child: SingleChildScrollView(
@@ -403,13 +403,13 @@ class _ExportDialogState extends State<_ExportDialog> {
               const SizedBox(height: 8),
               FilledButton.icon(
                 icon: const Icon(Icons.copy, size: 16),
-                label: const Text('Copy token'),
-                onPressed: () => _copy(context, widget.token, 'Token'),
+                label: Text(AppLocalizations.of(context)!.exportCopyToken),
+                onPressed: () => _copy(context, widget.token, AppLocalizations.of(context)!.exportLabelToken),
               ),
               const SizedBox(height: 6),
               OutlinedButton.icon(
                 icon: Icon(_qrExpanded ? Icons.qr_code_2 : Icons.qr_code, size: 16),
-                label: Text(_qrExpanded ? 'Hide QR Code' : 'Show QR Code'),
+                label: Text(_qrExpanded ? AppLocalizations.of(context)!.exportHideQr : AppLocalizations.of(context)!.exportShowQr),
                 onPressed: () => setState(() => _qrExpanded = !_qrExpanded),
               ),
               if (_qrExpanded) ...
@@ -451,7 +451,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Text(
-                        'Character too large for QR code.\nUse the token or JSON to share.',
+                        AppLocalizations.of(context)!.exportQrTooLarge,
                         style: TextStyle(
                             color: Theme.of(context).colorScheme.error),
                         textAlign: TextAlign.center,
@@ -478,7 +478,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Show JSON',
+                        AppLocalizations.of(context)!.exportShowJson,
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
@@ -508,7 +508,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                 const SizedBox(height: 6),
                 FilledButton.icon(
                   icon: const Icon(Icons.copy, size: 16),
-                  label: const Text('Copy JSON'),
+                  label: Text(AppLocalizations.of(context)!.exportCopyJson),
                   onPressed: () =>
                       _copy(context, widget.json, 'JSON'),
                 ),
@@ -520,7 +520,7 @@ class _ExportDialogState extends State<_ExportDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Close'),
+          child: Text(AppLocalizations.of(context)!.dialogClose),
         ),
       ],
     );
@@ -574,7 +574,7 @@ class _ImportDialogState extends State<_ImportDialog> {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return AlertDialog(
-      title: const Text('Import Character'),
+      title: Text(AppLocalizations.of(context)!.importDialogTitle),
       content: SizedBox(
         width: 520,
         child: SingleChildScrollView(
@@ -583,14 +583,14 @@ class _ImportDialogState extends State<_ImportDialog> {
             mainAxisSize: MainAxisSize.min,
             children: [
               // ── Token (primary) ──────────────────────────────────────────
-              Text('Token', style: Theme.of(context).textTheme.labelLarge),
+              Text(AppLocalizations.of(context)!.exportLabelToken, style: Theme.of(context).textTheme.labelLarge),
               const SizedBox(height: 6),
               TextField(
                 controller: _tokenCtrl,
                 autofocus: true,
-                decoration: const InputDecoration(
-                  hintText: 'Paste token here…',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  hintText: AppLocalizations.of(context)!.importTokenHint,
+                  border: const OutlineInputBorder(),
                   isDense: true,
                 ),
                 onChanged: (_) => setState(() {}),
@@ -599,7 +599,7 @@ class _ImportDialogState extends State<_ImportDialog> {
               // QR code scanner
               OutlinedButton.icon(
                 icon: const Icon(Icons.qr_code_scanner, size: 16),
-                label: const Text('Scan QR Code'),
+                label: Text(AppLocalizations.of(context)!.importScanQr),
                 onPressed: () async {
                   final scanned = await Navigator.push<String>(
                     context,
@@ -630,7 +630,7 @@ class _ImportDialogState extends State<_ImportDialog> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Use JSON directly',
+                        AppLocalizations.of(context)!.importUseJson,
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
@@ -645,9 +645,9 @@ class _ImportDialogState extends State<_ImportDialog> {
                 TextField(
                   controller: _jsonCtrl,
                   maxLines: 8,
-                  decoration: const InputDecoration(
-                    hintText: 'Paste JSON here…',
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    hintText: AppLocalizations.of(context)!.importJsonHint,
+                    border: const OutlineInputBorder(),
                   ),
                   onChanged: (_) => setState(() {}),
                 ),
@@ -659,13 +659,13 @@ class _ImportDialogState extends State<_ImportDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          child: Text(AppLocalizations.of(context)!.dialogCancel),
         ),
         FilledButton(
           onPressed: _resolveInput() != null
               ? () => Navigator.pop(context, _resolveInput())
               : null,
-          child: const Text('Import'),
+          child: Text(AppLocalizations.of(context)!.dialogImport),
         ),
       ],
     );
@@ -687,7 +687,7 @@ class _QrScannerScreenState extends State<_QrScannerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Scan QR Code')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.importScanQr)),
       body: MobileScanner(
         onDetect: (capture) {
           if (_scanned) return;

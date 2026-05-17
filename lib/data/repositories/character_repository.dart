@@ -54,6 +54,19 @@ class CharacterRepository {
     return updated;
   }
 
+  /// Remove a imagem do personagem e retorna o personagem atualizado sem imagePath.
+  Future<Character> removeImage(Character character) async {
+    if (character.imagePath != null) {
+      await _local.deleteImage(character.imagePath);
+    }
+    final updated = character.copyWith(
+      clearImagePath: true,
+      updatedAt: DateTime.now(),
+    );
+    await _local.save(updated);
+    return updated;
+  }
+
   /// Resolve o caminho absoluto da imagem do personagem.
   Future<String?> resolveImagePath(Character character) =>
       _local.resolveImagePath(character.imagePath);
@@ -66,20 +79,16 @@ class CharacterRepository {
       _local.exportToJson(character);
 
   /// Importa um personagem de um JSON exportado.
-  /// O personagem importado recebe um novo ID para evitar conflito caso o
-  /// original já exista no dispositivo.
+  /// O personagem importado *sempre* recebe um novo ID para garantir que o ID
+  /// persistido seja gerado localmente (previne path traversal e conflitos).
   Future<Character> importFromJson(String jsonString) async {
     final imported = _local.importFromJson(jsonString);
 
-    // Verifica se já existe um personagem com o mesmo ID.
-    final alreadyExists = await _local.exists(imported.id);
-    final character = alreadyExists
-        ? imported.copyWith(
-            id: _generateId(),
-            createdAt: DateTime.now(),
-            updatedAt: DateTime.now(),
-          )
-        : imported.copyWith(updatedAt: DateTime.now());
+    final character = imported.copyWith(
+      id: _generateId(),
+      createdAt: DateTime.now(),
+      updatedAt: DateTime.now(),
+    );
 
     await _local.save(character);
     return character;

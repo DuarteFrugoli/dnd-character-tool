@@ -3,7 +3,6 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../data/datasources/srd/srd_data_source.dart';
 import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
 import '../../../shared/providers/providers.dart';
@@ -22,13 +21,14 @@ class _StepClassState extends ConsumerState<StepClass> {
   @override
   void initState() {
     super.initState();
-    _classesFuture = SrdDataSource.instance.getClasses();
+    _classesFuture = ref.read(srdDataSourceProvider).getClasses();
   }
 
   @override
   Widget build(BuildContext context) {
     final selected = ref.watch(characterDraftProvider).selectedClass;
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     return FutureBuilder<List<SrdClass>>(
       future: _classesFuture,
@@ -52,13 +52,9 @@ class _StepClassState extends ConsumerState<StepClass> {
                   isSelected: isSelected,
                   onTap: () {
                     if (isSelected) {
-                      ref
-                          .read(characterDraftProvider.notifier)
-                          .clearClass();
+                      ref.read(characterDraftProvider.notifier).clearClass();
                     } else {
-                      ref
-                          .read(characterDraftProvider.notifier)
-                          .setClass(cls);
+                      ref.read(characterDraftProvider.notifier).setClass(cls);
                     }
                   },
                 ),
@@ -66,8 +62,9 @@ class _StepClassState extends ConsumerState<StepClass> {
                   _SubclassSelector(
                     cls: cls,
                     i18n: i18n,
-                    selectedSubclass:
-                        ref.watch(characterDraftProvider).selectedSubclass,
+                    selectedSubclass: ref
+                        .watch(characterDraftProvider)
+                        .selectedSubclass,
                     onSelect: (s) => ref
                         .read(characterDraftProvider.notifier)
                         .setSubclass(s),
@@ -99,7 +96,8 @@ class _ClassCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final clsName = i18n.className(cls.name);
-    final subclassFeature = i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
+    final subclassFeature =
+        i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       color: isSelected ? scheme.primaryContainer : null,
@@ -114,32 +112,27 @@ class _ClassCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(clsName,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(
-                              color: isSelected
-                                  ? scheme.onPrimaryContainer
-                                  : null,
-                            )),
+                    Text(
+                      clsName,
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: isSelected ? scheme.onPrimaryContainer : null,
+                      ),
+                    ),
                     const SizedBox(height: 4),
                     Text(
                       '${l10n.stepHitDieLabel}: d${cls.hitDie}  ·  ${l10n.stepSavesLabel}: ${cls.savingThrows.map((s) => abilityName(l10n, s)).join(', ')}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: isSelected
-                                ? scheme.onPrimaryContainer
-                                : scheme.onSurfaceVariant,
-                          ),
+                        color: isSelected
+                            ? scheme.onPrimaryContainer
+                            : scheme.onSurfaceVariant,
+                      ),
                     ),
                     if (cls.isSpellcaster)
                       Padding(
                         padding: const EdgeInsets.only(top: 4),
                         child: Text(
                           '${l10n.stepSpellcastingLabel}: ${abilityName(l10n, cls.spellcastingAbility ?? '')}',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
+                          style: Theme.of(context).textTheme.bodySmall
                               ?.copyWith(
                                 color: isSelected
                                     ? scheme.onPrimaryContainer
@@ -152,7 +145,8 @@ class _ClassCard extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 4),
                         child: Text(
                           '${cls.subclasses.length} $subclassFeature ${l10n.stepOptionsLabel}',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
                                 color: isSelected
                                     ? scheme.onPrimaryContainer
                                     : scheme.secondary,
@@ -162,8 +156,7 @@ class _ClassCard extends StatelessWidget {
                   ],
                 ),
               ),
-              if (isSelected)
-                Icon(Icons.check_circle, color: scheme.primary),
+              if (isSelected) Icon(Icons.check_circle, color: scheme.primary),
             ],
           ),
         ),
@@ -189,7 +182,8 @@ class _SubclassSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final subclassFeature = i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
+    final subclassFeature =
+        i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
     return Padding(
       padding: const EdgeInsets.only(left: 16, bottom: 8),
       child: Column(
@@ -205,7 +199,8 @@ class _SubclassSelector extends StatelessWidget {
           ...cls.subclasses.map((sub) {
             final isSelected = selectedSubclass?.name == sub.name;
             final subName = i18n.subclassName(cls.name, sub.name);
-            final subDesc = i18n.subclassDescription(cls.name, sub.name) ?? sub.description;
+            final subDesc =
+                i18n.subclassDescription(cls.name, sub.name) ?? sub.description;
             return Card(
               margin: const EdgeInsets.only(bottom: 6),
               color: isSelected ? scheme.secondaryContainer : scheme.surface,
@@ -214,7 +209,9 @@ class _SubclassSelector extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 12),
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
                   child: Row(
                     children: [
                       Expanded(
@@ -223,9 +220,7 @@ class _SubclassSelector extends StatelessWidget {
                           children: [
                             Text(
                               subName,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
+                              style: Theme.of(context).textTheme.bodyMedium
                                   ?.copyWith(fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 2),
@@ -237,8 +232,11 @@ class _SubclassSelector extends StatelessWidget {
                         ),
                       ),
                       if (isSelected)
-                        Icon(Icons.check_circle,
-                            color: scheme.secondary, size: 20),
+                        Icon(
+                          Icons.check_circle,
+                          color: scheme.secondary,
+                          size: 20,
+                        ),
                     ],
                   ),
                 ),

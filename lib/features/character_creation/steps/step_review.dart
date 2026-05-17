@@ -990,6 +990,7 @@ class _LanguageChoiceSectionState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final draft = ref.watch(characterDraftProvider);
     final scheme = Theme.of(context).colorScheme;
     final needed = draft.languageChoicesNeeded;
@@ -1021,7 +1022,7 @@ class _LanguageChoiceSectionState
             Row(
               children: [
                 Text(
-                  'Language Choices',
+                  l10n.reviewLanguageChoices,
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge
@@ -1067,9 +1068,9 @@ class _LanguageChoiceSectionState
                   child: TextField(
                     controller: _ctrl,
                     textCapitalization: TextCapitalization.words,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       isDense: true,
-                      hintText: 'Type a language…',
+                      hintText: l10n.reviewLanguageTypeHint,
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.symmetric(
                           horizontal: 10, vertical: 8),

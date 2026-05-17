@@ -6,8 +6,8 @@ import '../../shared/providers/providers.dart';
 
 final characterListProvider =
     AsyncNotifierProvider<CharacterListNotifier, List<Character>>(
-  CharacterListNotifier.new,
-);
+      CharacterListNotifier.new,
+    );
 
 class CharacterListNotifier extends AsyncNotifier<List<Character>> {
   @override
@@ -66,7 +66,8 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
 
     final allUpdated = [
       for (var i = 0; i < pinned.length; i++) pinned[i].copyWith(sortOrder: i),
-      for (var i = 0; i < unpinned.length; i++) unpinned[i].copyWith(sortOrder: i),
+      for (var i = 0; i < unpinned.length; i++)
+        unpinned[i].copyWith(sortOrder: i),
     ];
 
     // Update UI immediately — no flash
@@ -91,10 +92,24 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     return ref.read(characterRepositoryProvider).exportToJson(character);
   }
 
+  Future<void> updateSingle(Character character) async {
+    var current = state.valueOrNull;
+    if (current == null) {
+      try {
+        current = await future;
+      } catch (_) {
+        return;
+      }
+    }
+    final withoutOld = current.where((c) => c.id != character.id).toList();
+    state = AsyncData(_sorted([character, ...withoutOld]));
+  }
+
   Future<Character> importCharacter(String jsonString) async {
-    final character =
-        await ref.read(characterRepositoryProvider).importFromJson(jsonString);
-    await refresh();
+    final character = await ref
+        .read(characterRepositoryProvider)
+        .importFromJson(jsonString);
+    await updateSingle(character);
     return character;
   }
 
@@ -105,7 +120,10 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     if (current == null) return;
     final character = current.firstWhereOrNull((c) => c.id == id);
     if (character == null) return;
-    final updated = character.copyWith(name: trimmed, updatedAt: DateTime.now());
+    final updated = character.copyWith(
+      name: trimmed,
+      updatedAt: DateTime.now(),
+    );
     await ref.read(characterRepositoryProvider).save(updated);
     state = AsyncData(current.map((c) => c.id == id ? updated : c).toList());
   }
@@ -115,12 +133,20 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     if (current == null) return;
     final character = current.firstWhereOrNull((c) => c.id == id);
     if (character == null) return;
-    final updated = character.copyWith(
-      imagePath: imagePath,
-      clearImagePath: imagePath == null,
-      updatedAt: DateTime.now(),
-    );
-    await ref.read(characterRepositoryProvider).save(updated);
+    final repo = ref.read(characterRepositoryProvider);
+    final Character updated;
+    if (imagePath == null) {
+      // Deleta a imagem persistida e limpa o campo.
+      updated = await repo.removeImage(character);
+    } else if (imagePath.startsWith('data:')) {
+      // Web: data URL já é o dado final — salva direto sem copiar.
+      updated = await repo.save(
+        character.copyWith(imagePath: imagePath, updatedAt: DateTime.now()),
+      );
+    } else {
+      // Nativo: copia o arquivo temporário do cropper para a pasta persistente.
+      updated = await repo.saveImage(character, imagePath);
+    }
     state = AsyncData(current.map((c) => c.id == id ? updated : c).toList());
   }
 }

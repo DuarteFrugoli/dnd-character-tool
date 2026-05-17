@@ -26,6 +26,8 @@ class SrdDataSource {
   Map<String, Map<String, List<SrdClassFeature>>>? _subclassFeatures;
   Map<String, SrdItemData>? _items;
   List<SrdTool>? _tools;
+  /// Guard against parsing equipment.json multiple times in parallel.
+  Future<void>? _equipmentLoadFuture;
 
   Future<List<SrdSkill>> getSkills() async {
     _skills ??= await _loadList(
@@ -295,6 +297,12 @@ class SrdDataSource {
 
   Future<void> _loadEquipment() async {
     if (_weapons != null && _armors != null && _gear != null) return;
+    // Reuse the in-flight future so concurrent callers share one parse.
+    _equipmentLoadFuture ??= _doLoadEquipment();
+    await _equipmentLoadFuture;
+  }
+
+  Future<void> _doLoadEquipment() async {
     final raw = await rootBundle.loadString('assets/data/srd/equipment.json');
     final json = jsonDecode(raw) as Map<String, dynamic>;
     _weapons = (json['weapons'] as List<dynamic>)
@@ -327,6 +335,7 @@ class SrdDataSource {
     _weapons = null;
     _armors = null;
     _gear = null;
+    _equipmentLoadFuture = null;
     _magicItems = null;
     _classFeatures = null;
     _raceTraits = null;

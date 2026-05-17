@@ -2159,6 +2159,246 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Artisan\'s tool or instrument'**
   String get stepToolCategoryArtisanOrInstrument;
+
+  /// Snackbar shown after copying to clipboard.
+  ///
+  /// In en, this message translates to:
+  /// **'{label} copied!'**
+  String exportCopied(String label);
+
+  /// Export dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Export {name}'**
+  String exportDialogTitle(String name);
+
+  /// Export dialog: token section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Token'**
+  String get exportLabelToken;
+
+  /// Export dialog: copy token button.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy token'**
+  String get exportCopyToken;
+
+  /// Export dialog: hide QR code button.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide QR Code'**
+  String get exportHideQr;
+
+  /// Export dialog: show QR code button.
+  ///
+  /// In en, this message translates to:
+  /// **'Show QR Code'**
+  String get exportShowQr;
+
+  /// Export dialog: character too large for QR code warning.
+  ///
+  /// In en, this message translates to:
+  /// **'Character too large for QR code.\nUse the token or JSON to share.'**
+  String get exportQrTooLarge;
+
+  /// Export dialog: expand JSON section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Show JSON'**
+  String get exportShowJson;
+
+  /// Export dialog: copy JSON button.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy JSON'**
+  String get exportCopyJson;
+
+  /// Generic dialog close button.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get dialogClose;
+
+  /// Import dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Import Character'**
+  String get importDialogTitle;
+
+  /// Import dialog: token text field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste token here…'**
+  String get importTokenHint;
+
+  /// Import dialog: scan QR code button / AppBar title.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan QR Code'**
+  String get importScanQr;
+
+  /// Import dialog: expand JSON section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Use JSON directly'**
+  String get importUseJson;
+
+  /// Import dialog: JSON text field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste JSON here…'**
+  String get importJsonHint;
+
+  /// Import dialog: import button.
+  ///
+  /// In en, this message translates to:
+  /// **'Import'**
+  String get dialogImport;
+
+  /// Spell browser sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Spells'**
+  String get spellBrowserTitle;
+
+  /// Spell browser: filter icon button tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get spellBrowserFilters;
+
+  /// Spell browser: search field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search spells...'**
+  String get spellBrowserSearchHint;
+
+  /// Filter panel: clear all filters button.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all'**
+  String get filterClearAll;
+
+  /// Generic loading label.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get loadingLabel;
+
+  /// Spell browser: result count.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} spell{s}'**
+  String spellBrowserCount(int count, String s);
+
+  /// Spell browser: empty state message.
+  ///
+  /// In en, this message translates to:
+  /// **'No spells match the current filters.'**
+  String get spellBrowserEmpty;
+
+  /// Spell level 0 label.
+  ///
+  /// In en, this message translates to:
+  /// **'Cantrip'**
+  String get spellCantrip;
+
+  /// Spell level N label.
+  ///
+  /// In en, this message translates to:
+  /// **'Lvl {n}'**
+  String spellLevelN(int n);
+
+  /// Casting time: action.
+  ///
+  /// In en, this message translates to:
+  /// **'Action'**
+  String get castingTimeAction;
+
+  /// Casting time: bonus action.
+  ///
+  /// In en, this message translates to:
+  /// **'Bonus action'**
+  String get castingTimeBonusAction;
+
+  /// Casting time: reaction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reaction'**
+  String get castingTimeReaction;
+
+  /// Casting time: longer than one round.
+  ///
+  /// In en, this message translates to:
+  /// **'Longer cast'**
+  String get castingTimeLonger;
+
+  /// Filter label: concentration.
+  ///
+  /// In en, this message translates to:
+  /// **'Concentration'**
+  String get filterConcentration;
+
+  /// Filter label: ritual.
+  ///
+  /// In en, this message translates to:
+  /// **'Ritual'**
+  String get filterRitual;
+
+  /// Filter label: show all spell levels.
+  ///
+  /// In en, this message translates to:
+  /// **'All levels'**
+  String get filterAllLevels;
+
+  /// Character avatar: choose photo option.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose photo'**
+  String get avatarChoosePhoto;
+
+  /// Character avatar: remove photo option.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove photo'**
+  String get avatarRemovePhoto;
+
+  /// Character avatar: crop photo toolbar title.
+  ///
+  /// In en, this message translates to:
+  /// **'Crop photo'**
+  String get avatarCropPhoto;
+
+  /// Character avatar: change photo action in full-screen viewer.
+  ///
+  /// In en, this message translates to:
+  /// **'Change photo'**
+  String get avatarChangePhoto;
+
+  /// Features tab: snackbar shown after adding a custom feature.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} added!'**
+  String featureAddedSnackbar(String name);
+
+  /// Features tab: add custom feature button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Feature'**
+  String get featureAddButton;
+
+  /// Review step: language choices section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Language Choices'**
+  String get reviewLanguageChoices;
+
+  /// Review step: language text field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a language…'**
+  String get reviewLanguageTypeHint;
 }
 
 class _AppLocalizationsDelegate

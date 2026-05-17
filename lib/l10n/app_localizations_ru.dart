@@ -1132,4 +1132,136 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get stepToolCategoryArtisanOrInstrument =>
       'Инструмент или инструмент ремесленника';
+
+  @override
+  String exportCopied(String label) {
+    return '$label скопировано!';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return 'Экспорт $name';
+  }
+
+  @override
+  String get exportLabelToken => 'Токен';
+
+  @override
+  String get exportCopyToken => 'Копировать токен';
+
+  @override
+  String get exportHideQr => 'Скрыть QR-код';
+
+  @override
+  String get exportShowQr => 'Показать QR-код';
+
+  @override
+  String get exportQrTooLarge =>
+      'Персонаж слишком большой для QR-кода.\nИспользуйте токен или JSON для обмена.';
+
+  @override
+  String get exportShowJson => 'Показать JSON';
+
+  @override
+  String get exportCopyJson => 'Копировать JSON';
+
+  @override
+  String get dialogClose => 'Закрыть';
+
+  @override
+  String get importDialogTitle => 'Импорт персонажа';
+
+  @override
+  String get importTokenHint => 'Вставьте токен здесь…';
+
+  @override
+  String get importScanQr => 'Сканировать QR-код';
+
+  @override
+  String get importUseJson => 'Использовать JSON напрямую';
+
+  @override
+  String get importJsonHint => 'Вставьте JSON здесь…';
+
+  @override
+  String get dialogImport => 'Импорт';
+
+  @override
+  String get spellBrowserTitle => 'Обзор заклинаний';
+
+  @override
+  String get spellBrowserFilters => 'Фильтры';
+
+  @override
+  String get spellBrowserSearchHint => 'Поиск заклинаний...';
+
+  @override
+  String get filterClearAll => 'Очистить всё';
+
+  @override
+  String get loadingLabel => 'Загрузка...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '$count заклинание$s';
+  }
+
+  @override
+  String get spellBrowserEmpty =>
+      'Ни одно заклинание не соответствует текущим фильтрам.';
+
+  @override
+  String get spellCantrip => 'Заговор';
+
+  @override
+  String spellLevelN(int n) {
+    return 'Ур $n';
+  }
+
+  @override
+  String get castingTimeAction => 'Действие';
+
+  @override
+  String get castingTimeBonusAction => 'Бонусное действие';
+
+  @override
+  String get castingTimeReaction => 'Реакция';
+
+  @override
+  String get castingTimeLonger => 'Длительное';
+
+  @override
+  String get filterConcentration => 'Концентрация';
+
+  @override
+  String get filterRitual => 'Ритуал';
+
+  @override
+  String get filterAllLevels => 'Все уровни';
+
+  @override
+  String get avatarChoosePhoto => 'Выбрать фото';
+
+  @override
+  String get avatarRemovePhoto => 'Удалить фото';
+
+  @override
+  String get avatarCropPhoto => 'Обрезать фото';
+
+  @override
+  String get avatarChangePhoto => 'Изменить фото';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '$name добавлено!';
+  }
+
+  @override
+  String get featureAddButton => 'Добавить особенность';
+
+  @override
+  String get reviewLanguageChoices => 'Выбор языков';
+
+  @override
+  String get reviewLanguageTypeHint => 'Введите язык…';
 }

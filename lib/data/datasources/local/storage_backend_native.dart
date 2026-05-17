@@ -77,6 +77,11 @@ class NativeStorageBackend implements StorageBackend {
   }
 
   Future<File> _fileForId(String id) async {
+    // Allow only safe alphanumeric + hyphen/underscore characters to prevent
+    // path traversal (e.g. an id like "../../etc/passwd" from a crafted import).
+    if (!RegExp(r'^[a-zA-Z0-9_\-]+$').hasMatch(id)) {
+      throw ArgumentError('Invalid character id: "$id"');
+    }
     final dir = await _charactersDir;
     return File('${dir.path}/$id.json');
   }

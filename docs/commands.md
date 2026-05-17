@@ -3,3 +3,6 @@ gerar build:
 
 gerar traduções arb:
 - flutter gen-l10n
+
+rodar testes:
+- C:\develop\flutter\bin\flutter.bat test

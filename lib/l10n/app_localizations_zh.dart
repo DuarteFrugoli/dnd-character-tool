@@ -1108,4 +1108,134 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get stepToolCategoryArtisanOrInstrument => '工匠的工具或仪器';
+
+  @override
+  String exportCopied(String label) {
+    return '$label已复制!';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return '导出$name';
+  }
+
+  @override
+  String get exportLabelToken => '令牌';
+
+  @override
+  String get exportCopyToken => '复制令牌';
+
+  @override
+  String get exportHideQr => '隐藏二维码';
+
+  @override
+  String get exportShowQr => '显示二维码';
+
+  @override
+  String get exportQrTooLarge => '角色太大，无法生成二维码。\n请使用令牌或JSON进行分享。';
+
+  @override
+  String get exportShowJson => '显示JSON';
+
+  @override
+  String get exportCopyJson => '复制JSON';
+
+  @override
+  String get dialogClose => '关闭';
+
+  @override
+  String get importDialogTitle => '导入角色';
+
+  @override
+  String get importTokenHint => '在此粘贴令牌…';
+
+  @override
+  String get importScanQr => '扫描二维码';
+
+  @override
+  String get importUseJson => '直接使用JSON';
+
+  @override
+  String get importJsonHint => '在此粘贴JSON…';
+
+  @override
+  String get dialogImport => '导入';
+
+  @override
+  String get spellBrowserTitle => '浏览法术';
+
+  @override
+  String get spellBrowserFilters => '筛选';
+
+  @override
+  String get spellBrowserSearchHint => '搜索法术...';
+
+  @override
+  String get filterClearAll => '清除所有';
+
+  @override
+  String get loadingLabel => '加载中...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '$count个法术';
+  }
+
+  @override
+  String get spellBrowserEmpty => '没有法术符合当前筛选条件。';
+
+  @override
+  String get spellCantrip => '戏法';
+
+  @override
+  String spellLevelN(int n) {
+    return '等级$n';
+  }
+
+  @override
+  String get castingTimeAction => '动作';
+
+  @override
+  String get castingTimeBonusAction => '附赠动作';
+
+  @override
+  String get castingTimeReaction => '反应';
+
+  @override
+  String get castingTimeLonger => '较长施法';
+
+  @override
+  String get filterConcentration => '专注';
+
+  @override
+  String get filterRitual => '仪式';
+
+  @override
+  String get filterAllLevels => '所有等级';
+
+  @override
+  String get avatarChoosePhoto => '选择照片';
+
+  @override
+  String get avatarRemovePhoto => '删除照片';
+
+  @override
+  String get avatarCropPhoto => '裁剪照片';
+
+  @override
+  String get avatarChangePhoto => '更换照片';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '$name已添加!';
+  }
+
+  @override
+  String get featureAddButton => '添加特性';
+
+  @override
+  String get reviewLanguageChoices => '语言选择';
+
+  @override
+  String get reviewLanguageTypeHint => '输入一门语言…';
 }

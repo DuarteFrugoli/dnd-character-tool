@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../l10n/app_localizations.dart';
+
 /// Directly opens the image picker + cropper and calls [onChanged] with the
 /// resulting path. No bottom sheet shown.
 Future<void> _pickAndCrop(
@@ -32,12 +34,12 @@ Future<void> _pickAndCrop(
       compressQuality: 85,
       uiSettings: [
         AndroidUiSettings(
-          toolbarTitle: 'Crop photo',
+          toolbarTitle: AppLocalizations.of(context)?.avatarCropPhoto ?? 'Crop photo',
           lockAspectRatio: true,
           hideBottomControls: false,
         ),
         IOSUiSettings(
-          title: 'Crop photo',
+          title: AppLocalizations.of(context)?.avatarCropPhoto ?? 'Crop photo',
           aspectRatioLockEnabled: true,
         ),
         WebUiSettings(context: context, presentStyle: WebPresentStyle.dialog),
@@ -75,18 +77,18 @@ Future<void> showCharacterPhotoPicker(
         children: [
           ListTile(
             leading: const Icon(Icons.photo_library_outlined),
-            title: const Text('Choose photo'),
+            title: Text(AppLocalizations.of(ctx)?.avatarChoosePhoto ?? 'Choose photo'),
             onTap: () => Navigator.pop(ctx, _AvatarAction.pick),
           ),
           if (currentImagePath != null)
             ListTile(
               leading: const Icon(Icons.delete_outline),
-              title: const Text('Remove photo'),
+              title: Text(AppLocalizations.of(ctx)?.avatarRemovePhoto ?? 'Remove photo'),
               onTap: () => Navigator.pop(ctx, _AvatarAction.delete),
             ),
           ListTile(
             leading: const Icon(Icons.close),
-            title: const Text('Cancel'),
+            title: Text(AppLocalizations.of(ctx)?.dialogCancel ?? 'Cancel'),
             onTap: () => Navigator.pop(ctx),
           ),
         ],
@@ -280,12 +282,12 @@ class _PhotoViewerPage extends StatelessWidget {
                 children: [
                   _ViewerAction(
                     icon: Icons.edit_outlined,
-                    label: 'Alterar foto',
+                    label: AppLocalizations.of(context)?.avatarChangePhoto ?? 'Change photo',
                     onTap: () => Navigator.of(context).pop(_ViewerResult.pick),
                   ),
                   _ViewerAction(
                     icon: Icons.delete_outline,
-                    label: 'Remover foto',
+                    label: AppLocalizations.of(context)?.avatarRemovePhoto ?? 'Remove photo',
                     onTap: () => Navigator.of(context).pop(_ViewerResult.remove),
                   ),
                 ],

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,11 +6,11 @@ import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
-import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import 'spell_browser_sheet.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
+import '../../data/models/domain_constants.dart';
 import '../../shared/providers/providers.dart';
 import 'character_detail_provider.dart';
 
@@ -145,14 +145,19 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           leading: BackButton(onPressed: _handleBack),
           title: const Text('Character'),
         ),
-        body: Center(child: Text(AppLocalizations.of(context)!.detailErrorLoading(e.toString()))),
+        body: Center(
+          child: Text(
+            AppLocalizations.of(context)!.detailErrorLoading(e.toString()),
+          ),
+        ),
       ),
       data: _buildLoaded,
     );
   }
 
   Widget _buildLoaded(Character character) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     return PopScope(
       canPop: !_editMode,
       onPopInvokedWithResult: (didPop, _) {
@@ -176,50 +181,120 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         });
       },
       child: Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 72,
-        leading: BackButton(onPressed: _handleBack),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              character.name,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-            ),
-            Text(
-              '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${i18n.subclassName(character.characterClass, character.subclass!)})' : ''}  ·  ${i18n.raceName(character.race)}'
-              '${character.subrace != null ? ' (${i18n.subraceName(character.subrace!)})' : ''}'
-              '  ·  Lv ${character.level}',
-              maxLines: 2,
-              overflow: TextOverflow.visible,
-              softWrap: true,
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
-            ),
-          ],
-        ),
-        actions: [
-          if (!_editMode)
+        appBar: AppBar(
+          toolbarHeight: 72,
+          leading: BackButton(onPressed: _handleBack),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                character.name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${i18n.subclassName(character.characterClass, character.subclass!)})' : ''}  ·  ${i18n.raceName(character.race)}'
+                '${character.subrace != null ? ' (${i18n.subraceName(character.subrace!)})' : ''}'
+                '  ·  Lv ${character.level}',
+                maxLines: 2,
+                overflow: TextOverflow.visible,
+                softWrap: true,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            if (!_editMode)
+              IconButton(
+                icon: const Icon(Icons.bedtime_outlined),
+                tooltip: AppLocalizations.of(context)!.detailTooltipLongRest,
+                onPressed: () => _confirmLongRest(),
+              ),
+            if (_editMode)
+              IconButton(
+                icon: const Icon(Icons.close),
+                tooltip: AppLocalizations.of(context)!.detailTooltipCancelEdit,
+                onPressed: () async {
+                  final l10n = AppLocalizations.of(context)!;
+                  final confirm = await showDialog<bool>(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: Text(l10n.detailCancelEditTitle),
+                      content: Text(l10n.detailCancelEditContent),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx, false),
+                          child: Text(l10n.dialogKeepEditing),
+                        ),
+                        FilledButton(
+                          onPressed: () => Navigator.pop(ctx, true),
+                          style: FilledButton.styleFrom(
+                            backgroundColor: Theme.of(
+                              context,
+                            ).colorScheme.error,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.onError,
+                          ),
+                          child: Text(l10n.dialogDiscard),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirm == true && mounted) {
+                    final snap = _snapshot;
+                    if (snap != null) {
+                      await ref
+                          .read(
+                            characterDetailProvider(
+                              widget.characterId,
+                            ).notifier,
+                          )
+                          .revertTo(snap);
+                    }
+                    setState(() {
+                      _editMode = false;
+                      _snapshot = null;
+                    });
+                  }
+                },
+              ),
             IconButton(
-              icon: const Icon(Icons.bedtime_outlined),
-              tooltip: AppLocalizations.of(context)!.detailTooltipLongRest,
-              onPressed: () => _confirmLongRest(),
-            ),
-          if (_editMode)
-            IconButton(
-              icon: const Icon(Icons.close),
-              tooltip: AppLocalizations.of(context)!.detailTooltipCancelEdit,
+              icon: Icon(
+                _editMode ? Icons.check_circle_outlined : Icons.edit_outlined,
+              ),
+              tooltip: _editMode
+                  ? AppLocalizations.of(context)!.detailTooltipDoneEditing
+                  : AppLocalizations.of(context)!.detailTooltipEditCharacter,
+              color: _editMode ? Theme.of(context).colorScheme.primary : null,
               onPressed: () async {
+                if (!_editMode) {
+                  setState(() {
+                    _editMode = true;
+                    _snapshot = character; // capture state before any edits
+                  });
+                  // Se estiver numa aba sem suporte a ediÃ§Ã£o (Spells/Inventory/Notes),
+                  // volta para Features (Ãºltima aba editÃ¡vel). Caso contrÃ¡rio, fica onde estÃ¡.
+                  if (_tabs.index > 2) _tabs.animateTo(2);
+                  return;
+                }
+                // Flush any focused text field before showing dialog
+                FocusScope.of(context).unfocus();
+                await Future.delayed(Duration.zero);
+                if (!mounted) return;
                 final l10n = AppLocalizations.of(context)!;
                 final confirm = await showDialog<bool>(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    title: Text(l10n.detailCancelEditTitle),
-                    content: Text(l10n.detailCancelEditContent),
+                    title: Text(l10n.detailFinishEditTitle),
+                    content: Text(l10n.detailFinishEditContent),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(ctx, false),
@@ -227,25 +302,12 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
                       ),
                       FilledButton(
                         onPressed: () => Navigator.pop(ctx, true),
-                        style: FilledButton.styleFrom(
-                          backgroundColor:
-                              Theme.of(context).colorScheme.error,
-                          foregroundColor:
-                              Theme.of(context).colorScheme.onError,
-                        ),
-                        child: Text(l10n.dialogDiscard),
+                        child: Text(l10n.dialogConfirm),
                       ),
                     ],
                   ),
                 );
                 if (confirm == true && mounted) {
-                  final snap = _snapshot;
-                  if (snap != null) {
-                    await ref
-                        .read(characterDetailProvider(widget.characterId)
-                            .notifier)
-                        .revertTo(snap);
-                  }
                   setState(() {
                     _editMode = false;
                     _snapshot = null;
@@ -253,83 +315,47 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
                 }
               },
             ),
-          IconButton(
-            icon: Icon(_editMode
-                ? Icons.check_circle_outlined
-                : Icons.edit_outlined),
-            tooltip: _editMode
-                ? AppLocalizations.of(context)!.detailTooltipDoneEditing
-                : AppLocalizations.of(context)!.detailTooltipEditCharacter,
-            color: _editMode
-                ? Theme.of(context).colorScheme.primary
-                : null,
-            onPressed: () async {
-              if (!_editMode) {
-                setState(() {
-                  _editMode = true;
-                  _snapshot = character; // capture state before any edits
-                });
-                // Se estiver numa aba sem suporte a ediÃ§Ã£o (Spells/Inventory/Notes),
-                // volta para Features (Ãºltima aba editÃ¡vel). Caso contrÃ¡rio, fica onde estÃ¡.
-                if (_tabs.index > 2) _tabs.animateTo(2);
-                return;
-              }
-              // Flush any focused text field before showing dialog
-              FocusScope.of(context).unfocus();
-              await Future.delayed(Duration.zero);
-              if (!mounted) return;
-              final l10n = AppLocalizations.of(context)!;
-              final confirm = await showDialog<bool>(
-                context: context,
-                builder: (ctx) => AlertDialog(
-                  title: Text(l10n.detailFinishEditTitle),
-                  content: Text(l10n.detailFinishEditContent),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(ctx, false),
-                      child: Text(l10n.dialogKeepEditing),
-                    ),
-                    FilledButton(
-                      onPressed: () => Navigator.pop(ctx, true),
-                      child: Text(l10n.dialogConfirm),
-                    ),
-                  ],
-                ),
-              );
-              if (confirm == true && mounted) {
-                setState(() {
-                  _editMode = false;
-                  _snapshot = null;
-                });
-              }
-            },
+          ],
+          bottom: TabBar(
+            controller: _tabs,
+            isScrollable: true,
+            tabAlignment: TabAlignment.start,
+            tabs: [
+              Tab(text: AppLocalizations.of(context)!.detailTabStats),
+              Tab(text: AppLocalizations.of(context)!.detailTabSkills),
+              Tab(text: AppLocalizations.of(context)!.detailTabFeatures),
+              Tab(text: AppLocalizations.of(context)!.detailTabSpells),
+              Tab(text: AppLocalizations.of(context)!.detailTabInventory),
+              Tab(text: AppLocalizations.of(context)!.detailTabNotes),
+            ],
           ),
-        ],
-        bottom: TabBar(
+        ),
+        body: TabBarView(
           controller: _tabs,
-          isScrollable: true,
-          tabAlignment: TabAlignment.start,
-          tabs: [
-            Tab(text: AppLocalizations.of(context)!.detailTabStats),
-            Tab(text: AppLocalizations.of(context)!.detailTabSkills),
-            Tab(text: AppLocalizations.of(context)!.detailTabFeatures),
-            Tab(text: AppLocalizations.of(context)!.detailTabSpells),
-            Tab(text: AppLocalizations.of(context)!.detailTabInventory),
-            Tab(text: AppLocalizations.of(context)!.detailTabNotes),
+          children: [
+            _StatsTab(
+              character: character,
+              characterId: widget.characterId,
+              isEditing: _editMode,
+            ),
+            _SkillsTab(
+              character: character,
+              characterId: widget.characterId,
+              isEditing: _editMode,
+            ),
+            _FeaturesTab(
+              character: character,
+              characterId: widget.characterId,
+              isEditing: _editMode,
+            ),
+            _SpellsTab(character: character, characterId: widget.characterId),
+            _InventoryTab(
+              character: character,
+              characterId: widget.characterId,
+            ),
+            _NotesTab(character: character, characterId: widget.characterId),
           ],
         ),
-      ),
-      body: TabBarView(
-        controller: _tabs,
-        children: [
-          _StatsTab(character: character, characterId: widget.characterId, isEditing: _editMode),
-          _SkillsTab(character: character, characterId: widget.characterId, isEditing: _editMode),
-          _FeaturesTab(character: character, characterId: widget.characterId, isEditing: _editMode),
-          _SpellsTab(character: character, characterId: widget.characterId),
-          _InventoryTab(character: character, characterId: widget.characterId),
-          _NotesTab(character: character, characterId: widget.characterId),
-        ],
-      ),
       ), // PopScope child
     );
   }
@@ -359,5 +385,4 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           .longRest();
     }
   }
-
 }

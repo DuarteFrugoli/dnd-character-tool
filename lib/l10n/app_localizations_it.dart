@@ -1136,4 +1136,136 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get stepToolCategoryArtisanOrInstrument =>
       'Attrezzo o strumento dell\'artigiano';
+
+  @override
+  String exportCopied(String label) {
+    return '$label copiato!';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return 'Esporta $name';
+  }
+
+  @override
+  String get exportLabelToken => 'Token';
+
+  @override
+  String get exportCopyToken => 'Copia token';
+
+  @override
+  String get exportHideQr => 'Nascondi QR Code';
+
+  @override
+  String get exportShowQr => 'Mostra QR Code';
+
+  @override
+  String get exportQrTooLarge =>
+      'Personaggio troppo grande per il QR code.\nUsa il token o il JSON per condividere.';
+
+  @override
+  String get exportShowJson => 'Mostra JSON';
+
+  @override
+  String get exportCopyJson => 'Copia JSON';
+
+  @override
+  String get dialogClose => 'Chiudi';
+
+  @override
+  String get importDialogTitle => 'Importa personaggio';
+
+  @override
+  String get importTokenHint => 'Incolla il token qui…';
+
+  @override
+  String get importScanQr => 'Scansiona QR Code';
+
+  @override
+  String get importUseJson => 'Usa JSON direttamente';
+
+  @override
+  String get importJsonHint => 'Incolla JSON qui…';
+
+  @override
+  String get dialogImport => 'Importa';
+
+  @override
+  String get spellBrowserTitle => 'Sfoglia incantesimi';
+
+  @override
+  String get spellBrowserFilters => 'Filtri';
+
+  @override
+  String get spellBrowserSearchHint => 'Cerca incantesimi...';
+
+  @override
+  String get filterClearAll => 'Cancella tutto';
+
+  @override
+  String get loadingLabel => 'Caricamento...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '$count incantesimo$s';
+  }
+
+  @override
+  String get spellBrowserEmpty =>
+      'Nessun incantesimo corrisponde ai filtri attuali.';
+
+  @override
+  String get spellCantrip => 'Trucchetto';
+
+  @override
+  String spellLevelN(int n) {
+    return 'Liv $n';
+  }
+
+  @override
+  String get castingTimeAction => 'Azione';
+
+  @override
+  String get castingTimeBonusAction => 'Azione bonus';
+
+  @override
+  String get castingTimeReaction => 'Reazione';
+
+  @override
+  String get castingTimeLonger => 'Lancio lungo';
+
+  @override
+  String get filterConcentration => 'Concentrazione';
+
+  @override
+  String get filterRitual => 'Rituale';
+
+  @override
+  String get filterAllLevels => 'Tutti i livelli';
+
+  @override
+  String get avatarChoosePhoto => 'Scegli foto';
+
+  @override
+  String get avatarRemovePhoto => 'Rimuovi foto';
+
+  @override
+  String get avatarCropPhoto => 'Ritaglia foto';
+
+  @override
+  String get avatarChangePhoto => 'Cambia foto';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '$name aggiunto!';
+  }
+
+  @override
+  String get featureAddButton => 'Aggiungi caratteristica';
+
+  @override
+  String get reviewLanguageChoices => 'Scelte linguistiche';
+
+  @override
+  String get reviewLanguageTypeHint => 'Digita una lingua…';
 }

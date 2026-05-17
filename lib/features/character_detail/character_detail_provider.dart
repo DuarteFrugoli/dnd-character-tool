@@ -1,19 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
-import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../character_list/character_list_provider.dart';
 
-final characterDetailProvider = AsyncNotifierProvider.family<
-    CharacterDetailNotifier, Character, String>(
-  CharacterDetailNotifier.new,
-);
+final characterDetailProvider =
+    AsyncNotifierProvider.family<CharacterDetailNotifier, Character, String>(
+      CharacterDetailNotifier.new,
+    );
 
-class CharacterDetailNotifier
-    extends FamilyAsyncNotifier<Character, String> {
+class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   @override
   Future<Character> build(String id) async {
     final c = await ref.read(characterRepositoryProvider).getById(id);
@@ -24,7 +22,9 @@ class CharacterDetailNotifier
   Future<void> _save(Character updated) async {
     final saved = await ref.read(characterRepositoryProvider).save(updated);
     state = AsyncData(saved);
-    ref.invalidate(characterListProvider);
+    if (ref.exists(characterListProvider)) {
+      await ref.read(characterListProvider.notifier).updateSingle(saved);
+    }
   }
 
   /// Restore a previously snapshotted character, discarding all edit changes.
@@ -50,17 +50,24 @@ class CharacterDetailNotifier
       newCurrent = (newCurrent + delta).clamp(0, hp.maximum);
     }
     await _save(
-        c.copyWith(hitPoints: hp.copyWith(current: newCurrent, temporary: newTemp)));
+      c.copyWith(
+        hitPoints: hp.copyWith(current: newCurrent, temporary: newTemp),
+      ),
+    );
   }
 
   Future<void> setTemporaryHp(int temp) async {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(
-        c.copyWith(hitPoints: c.hitPoints.copyWith(temporary: temp.clamp(0, 9999))));
+      c.copyWith(
+        hitPoints: c.hitPoints.copyWith(temporary: temp.clamp(0, 9999)),
+      ),
+    );
   }
 
   Future<void> useSpellSlot(int level) async {
+    if (level < 1 || level > 9) return;
     final c = state.valueOrNull;
     if (c == null) return;
     final slots = c.spellSlots;
@@ -72,6 +79,7 @@ class CharacterDetailNotifier
   }
 
   Future<void> restoreSpellSlot(int level) async {
+    if (level < 1 || level > 9) return;
     final c = state.valueOrNull;
     if (c == null) return;
     final slots = c.spellSlots;
@@ -92,9 +100,9 @@ class CharacterDetailNotifier
   Future<void> removeSpell(String name) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(
-      spells: c.spells.where((s) => s.name != name).toList(),
-    ));
+    await _save(
+      c.copyWith(spells: c.spells.where((s) => s.name != name).toList()),
+    );
   }
 
   Future<void> togglePrepared(String name) async {
@@ -112,11 +120,18 @@ class CharacterDetailNotifier
   Future<void> longRest() async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(
-      hitPoints: c.hitPoints.copyWith(current: c.hitPoints.maximum, temporary: 0),
-      spellSlots: c.spellSlots.copyWith(used: List.filled(9, 0)),
-      innateSpells: c.innateSpells.map((s) => s.copyWith(usedToday: 0)).toList(),
-    ));
+    await _save(
+      c.copyWith(
+        hitPoints: c.hitPoints.copyWith(
+          current: c.hitPoints.maximum,
+          temporary: 0,
+        ),
+        spellSlots: c.spellSlots.copyWith(used: List.filled(9, 0)),
+        innateSpells: c.innateSpells
+            .map((s) => s.copyWith(usedToday: 0))
+            .toList(),
+      ),
+    );
   }
 
   /// Auto-populates [innateSpells] from the SRD race data if the character has
@@ -125,7 +140,7 @@ class CharacterDetailNotifier
     final c = state.valueOrNull;
     if (c == null) return;
     if (c.innateSpells.isNotEmpty) return;
-    final races = await SrdDataSource.instance.getRaces();
+    final races = await ref.read(srdDataSourceProvider).getRaces();
     // Check main race
     final srdRace = races.where((r) => r.name == c.race).firstOrNull;
     final raceDefs = srdRace?.innateSpells ?? [];
@@ -136,11 +151,13 @@ class CharacterDetailNotifier
     final subraceDefs = srdSubrace?.innateSpells ?? [];
     final allDefs = [...raceDefs, ...subraceDefs];
     if (allDefs.isEmpty) return;
-    await _save(c.copyWith(
-      innateSpells: allDefs
-          .map((d) => InnateSpell(name: d.name, usesPerDay: d.usesPerDay))
-          .toList(),
-    ));
+    await _save(
+      c.copyWith(
+        innateSpells: allDefs
+            .map((d) => InnateSpell(name: d.name, usesPerDay: d.usesPerDay))
+            .toList(),
+      ),
+    );
   }
 
   /// Uses one charge of an innate spell (no-op if at-will or already exhausted).
@@ -156,7 +173,10 @@ class CharacterDetailNotifier
     await _save(c.copyWith(innateSpells: updated));
   }
 
-  Future<void> updateName(String name, {String fallback = 'Unnamed Hero'}) async {
+  Future<void> updateName(
+    String name, {
+    String fallback = 'Unnamed Hero',
+  }) async {
     final c = state.valueOrNull;
     if (c == null) return;
     final trimmed = name.trim();
@@ -167,7 +187,10 @@ class CharacterDetailNotifier
     final c = state.valueOrNull;
     if (c == null) return;
     final clamped = level.clamp(1, 20);
-    final updated = c.copyWith(level: clamped, proficiencyBonus: _profBonus(clamped));
+    final updated = c.copyWith(
+      level: clamped,
+      proficiencyBonus: _profBonus(clamped),
+    );
     await _save(_applySlotSync(updated));
   }
 
@@ -234,12 +257,14 @@ class CharacterDetailNotifier
     final c = state.valueOrNull;
     if (c == null) return;
     final clamped = max.clamp(1, 9999);
-    await _save(c.copyWith(
-      hitPoints: c.hitPoints.copyWith(
-        maximum: clamped,
-        current: c.hitPoints.current.clamp(0, clamped),
+    await _save(
+      c.copyWith(
+        hitPoints: c.hitPoints.copyWith(
+          maximum: clamped,
+          current: c.hitPoints.current.clamp(0, clamped),
+        ),
       ),
-    ));
+    );
   }
 
   Future<void> updateSpeed(int speed) async {
@@ -260,10 +285,9 @@ class CharacterDetailNotifier
   ) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(
-      skillProficiencies: profs,
-      skillExpertises: expertises,
-    ));
+    await _save(
+      c.copyWith(skillProficiencies: profs, skillExpertises: expertises),
+    );
   }
 
   Future<void> updateDisabledFeatures(List<String> disabled) async {
@@ -311,7 +335,10 @@ class CharacterDetailNotifier
 
   // ── Extra Features (multiclasse / manual) ──────────────────────────────────
 
-  Future<void> addExtraFeature(SrdClassFeature feature, String sourceClass) async {
+  Future<void> addExtraFeature(
+    SrdClassFeature feature,
+    String sourceClass,
+  ) async {
     final c = state.valueOrNull;
     if (c == null) return;
     // Evita duplicatas
@@ -346,9 +373,7 @@ class CharacterDetailNotifier
     // Sempre adiciona em item não equipado; nunca empilha item novo em equipado.
     final idx = c.equipment.indexWhere(
       (e) =>
-          !e.isEquipped &&
-          e.name == item.name &&
-          e.itemType == item.itemType,
+          !e.isEquipped && e.name == item.name && e.itemType == item.itemType,
     );
     if (idx >= 0) {
       final updated = List<EquipmentItem>.from(c.equipment);
@@ -377,7 +402,9 @@ class CharacterDetailNotifier
 
     // Em stacks, remove apenas a quantidade selecionada.
     if (removeAmount < removed.quantity) {
-      updated[idx] = removed.copyWith(quantity: removed.quantity - removeAmount);
+      updated[idx] = removed.copyWith(
+        quantity: removed.quantity - removeAmount,
+      );
       await _save(c.copyWith(equipment: updated));
       return;
     }
@@ -435,10 +462,7 @@ class CharacterDetailNotifier
     } else {
       // Desequipar: remove a entrada equipada e devolve ao stack carregado.
       updated.removeAt(idx);
-      _mergeIntoCarried(
-        updated,
-        target.copyWith(isEquipped: false),
-      );
+      _mergeIntoCarried(updated, target.copyWith(isEquipped: false));
     }
 
     final newC = c.copyWith(equipment: updated);
@@ -459,12 +483,16 @@ class CharacterDetailNotifier
     return props.containsKey('baseAC');
   }
 
-  void _unequipOtherBodyArmors(List<EquipmentItem> items,
-      {required String exceptId}) {
+  void _unequipOtherBodyArmors(
+    List<EquipmentItem> items, {
+    required String exceptId,
+  }) {
     final toUnequip = items
         .where((e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e))
         .toList();
-    items.removeWhere((e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e));
+    items.removeWhere(
+      (e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e),
+    );
     for (final armor in toUnequip) {
       _mergeIntoCarried(items, armor.copyWith(isEquipped: false));
     }
@@ -533,9 +561,9 @@ class CharacterDetailNotifier
       return e.copyWith(quantity: newQty);
     }).toList();
     // Remove se chegou a zero
-    await _save(c.copyWith(
-      equipment: updated.where((e) => e.quantity > 0).toList(),
-    ));
+    await _save(
+      c.copyWith(equipment: updated.where((e) => e.quantity > 0).toList()),
+    );
   }
 
   Future<void> updateCurrency(Map<String, int> currency) async {
@@ -555,17 +583,13 @@ class CharacterDetailNotifier
   Future<void> updateNote(CharacterNote updated) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final notes = c.notes
-        .map((n) => n.id == updated.id ? updated : n)
-        .toList();
+    final notes = c.notes.map((n) => n.id == updated.id ? updated : n).toList();
     await _save(c.copyWith(notes: notes));
   }
 
   Future<void> deleteNote(String id) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(
-      notes: c.notes.where((n) => n.id != id).toList(),
-    ));
+    await _save(c.copyWith(notes: c.notes.where((n) => n.id != id).toList()));
   }
 }

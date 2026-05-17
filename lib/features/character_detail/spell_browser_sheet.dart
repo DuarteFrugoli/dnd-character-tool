@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/providers/providers.dart';
@@ -104,6 +103,8 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
   final _searchCtrl = TextEditingController();
   String _search = '';
   final _filters = _SpellFilters();
+  SrdI18nService _i18n = SrdI18nService.english;
+  AppLocalizations? _l10n;
 
   /// True when the header chip is showing "my class only" (shortcut).
   bool get _myClassOnly =>
@@ -125,7 +126,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
     _knownNames = {for (final s in widget.knownSpells) s.name.toLowerCase()};
     _preparedNames = {
       for (final s in widget.knownSpells)
-        if (s.isPrepared) s.name.toLowerCase()
+        if (s.isPrepared) s.name.toLowerCase(),
     };
     // Pre-select the character's class as default filter.
     _filters.classes = {widget.characterClass.toLowerCase()};
@@ -142,7 +143,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
   }
 
   Future<void> _loadSpells() async {
-    final all = await SrdDataSource.instance.getSpells();
+    final all = await ref.read(srdDataSourceProvider).getSpells();
     if (mounted) {
       setState(() {
         _allSpells = all;
@@ -150,7 +151,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
           final cls = widget.characterClass.toLowerCase();
           _classSpellNames = {
             for (final s in all)
-              if (s.classes.contains(cls) && s.level > 0) s.name.toLowerCase()
+              if (s.classes.contains(cls) && s.level > 0) s.name.toLowerCase(),
           };
         }
       });
@@ -184,14 +185,17 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
       }
       if (_filters.concentration && !s.concentration) return false;
       if (_filters.ritual && !s.ritual) return false;
-      if (query.isNotEmpty && !s.name.toLowerCase().contains(query)) {
+      if (query.isNotEmpty &&
+          !s.name.toLowerCase().contains(query) &&
+          !_i18n.spellName(s.name).toLowerCase().contains(query)) {
         return false;
       }
       return true;
-    }).toList()
-      ..sort((a, b) => a.level != b.level
+    }).toList()..sort(
+      (a, b) => a.level != b.level
           ? a.level.compareTo(b.level)
-          : a.name.compareTo(b.name));
+          : a.name.compareTo(b.name),
+    );
   }
 
   void _addSpell(SrdSpell spell) {
@@ -217,7 +221,8 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
 
   void _openDetail(SrdSpell spell) {
     final nameLower = spell.name.toLowerCase();
-    final isClassSpell = widget.isPrepareAll && _classSpellNames.contains(nameLower);
+    final isClassSpell =
+        widget.isPrepareAll && _classSpellNames.contains(nameLower);
     final isPrepared = _preparedNames.contains(nameLower);
     final isKnown = isClassSpell || _knownNames.contains(nameLower);
     showModalBottomSheet<void>(
@@ -276,7 +281,10 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
 
   @override
   Widget build(BuildContext context) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    _i18n = i18n;
+    _l10n = AppLocalizations.of(context);
     final scheme = Theme.of(context).colorScheme;
     final filtered = _filtered;
     final isLoading = _allSpells == null;
@@ -308,7 +316,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
             child: Row(
               children: [
                 Text(
-                  'Browse Spells',
+                  _l10n?.spellBrowserTitle ?? 'Browse Spells',
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const Spacer(),
@@ -321,7 +329,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                         Icons.tune,
                         color: activeFilters > 0 ? scheme.primary : null,
                       ),
-                      tooltip: 'Filters',
+                      tooltip: _l10n?.spellBrowserFilters ?? 'Filters',
                       onPressed: _openFilterPanel,
                     ),
                     if (activeFilters > 0)
@@ -367,7 +375,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                     controller: _searchCtrl,
                     textInputAction: TextInputAction.search,
                     decoration: InputDecoration(
-                      hintText: 'Search spells...',
+                      hintText: _l10n?.spellBrowserSearchHint ?? 'Search spells...',
                       prefixIcon: const Icon(Icons.search),
                       suffixIcon: _search.isNotEmpty
                           ? IconButton(
@@ -408,20 +416,20 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                   Expanded(
                     child: Text(
                       _filterSummary(),
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: scheme.primary,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelSmall?.copyWith(color: scheme.primary),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   GestureDetector(
                     onTap: () => setState(() => _filters.reset()),
                     child: Text(
-                      'Clear all',
+                      _l10n?.filterClearAll ?? 'Clear all',
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: scheme.error,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        color: scheme.error,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
@@ -435,12 +443,11 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
               alignment: Alignment.centerLeft,
               child: Text(
                 isLoading
-                    ? 'Loading...'
+                    ? _l10n?.loadingLabel ?? 'Loading...'
                     : '${filtered.length} spell${filtered.length == 1 ? '' : 's'}',
-                style: Theme.of(context)
-                    .textTheme
-                    .labelSmall
-                    ?.copyWith(color: scheme.onSurfaceVariant),
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ),
           ),
@@ -451,45 +458,50 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
             child: isLoading
                 ? const Center(child: CircularProgressIndicator())
                 : filtered.isEmpty
-                    ? Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(32),
-                          child: Text(
-                            'No spells match the current filters.',
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(color: scheme.outline),
-                          ),
-                        ),
-                      )
-                    : ListView.builder(
-                        controller: scrollCtrl,
-                        itemCount: filtered.length,
-                        padding: EdgeInsets.fromLTRB(8, 0, 8, MediaQuery.of(context).viewPadding.bottom),
-                        itemBuilder: (_, i) {
-                          final spell = filtered[i];
-                          final nameLower = spell.name.toLowerCase();
-                          final isClassSpell = widget.isPrepareAll &&
-                              _classSpellNames.contains(nameLower);
-                          final isPrepared = _preparedNames.contains(nameLower);
-                          final isKnown = isClassSpell ||
-                              _knownNames.contains(nameLower);
-                          return _SpellBrowserTile(
-                            spell: spell,
-                            displayName: i18n.spellName(spell.name),
-                            isKnown: isKnown,
-                            isClassSpell: isClassSpell,
-                            isPrepared: isPrepared,
-                            onTap: () => _openDetail(spell),
-                            onAdd: isKnown ? null : () => _addSpell(spell),
-                            onTogglePrepared: isClassSpell
-                                ? () => _togglePrepared(spell, !isPrepared)
-                                : null,
-                          );
-                        },
+                ? Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(32),
+                      child: Text(
+                        _l10n?.spellBrowserEmpty ?? 'No spells match the current filters.',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium?.copyWith(color: scheme.outline),
                       ),
+                    ),
+                  )
+                : ListView.builder(
+                    controller: scrollCtrl,
+                    itemCount: filtered.length,
+                    padding: EdgeInsets.fromLTRB(
+                      8,
+                      0,
+                      8,
+                      MediaQuery.of(context).viewPadding.bottom,
+                    ),
+                    itemBuilder: (_, i) {
+                      final spell = filtered[i];
+                      final nameLower = spell.name.toLowerCase();
+                      final isClassSpell =
+                          widget.isPrepareAll &&
+                          _classSpellNames.contains(nameLower);
+                      final isPrepared = _preparedNames.contains(nameLower);
+                      final isKnown =
+                          isClassSpell || _knownNames.contains(nameLower);
+                      return _SpellBrowserTile(
+                        spell: spell,
+                        displayName: i18n.spellName(spell.name),
+                        isKnown: isKnown,
+                        isClassSpell: isClassSpell,
+                        isPrepared: isPrepared,
+                        onTap: () => _openDetail(spell),
+                        onAdd: isKnown ? null : () => _addSpell(spell),
+                        onTogglePrepared: isClassSpell
+                            ? () => _togglePrepared(spell, !isPrepared)
+                            : null,
+                      );
+                    },
+                  ),
           ),
         ],
       ),
@@ -499,25 +511,29 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
   String _filterSummary() {
     final parts = <String>[];
     if (_filters.level != null) {
-      parts.add(_filters.level == 0 ? 'Cantrip' : 'Lvl ${_filters.level}');
+      parts.add(_filters.level == 0
+          ? (_l10n?.spellCantrip ?? 'Cantrip')
+          : (_l10n?.spellLevelN(_filters.level!) ?? 'Lvl ${_filters.level}'));
     }
     if (_filters.school != null) parts.add(_filters.school!);
     if (_filters.castingType != null) {
-      const labels = {
-        'action': 'Action',
-        'bonus_action': 'Bonus action',
-        'reaction': 'Reaction',
-        'longer': 'Longer cast',
+      final labels = {
+        'action': _l10n?.castingTimeAction ?? 'Action',
+        'bonus_action': _l10n?.castingTimeBonusAction ?? 'Bonus action',
+        'reaction': _l10n?.castingTimeReaction ?? 'Reaction',
+        'longer': _l10n?.castingTimeLonger ?? 'Longer cast',
       };
       parts.add(labels[_filters.castingType] ?? _filters.castingType!);
     }
-    if (_filters.concentration) parts.add('Concentration');
-    if (_filters.ritual) parts.add('Ritual');
-    if (_filters.showAllLevels) parts.add('All levels');
+    if (_filters.concentration) parts.add(_l10n?.filterConcentration ?? 'Concentration');
+    if (_filters.ritual) parts.add(_l10n?.filterRitual ?? 'Ritual');
+    if (_filters.showAllLevels) parts.add(_l10n?.filterAllLevels ?? 'All levels');
     if (_filters.classes.isNotEmpty) {
-      parts.add(_filters.classes
-          .map((c) => c[0].toUpperCase() + c.substring(1))
-          .join(', '));
+      parts.add(
+        _filters.classes
+            .map((c) => c[0].toUpperCase() + c.substring(1))
+            .join(', '),
+      );
     }
     return parts.join(' · ');
   }
@@ -543,8 +559,14 @@ class _FilterPanelSheet extends StatefulWidget {
 
 class _FilterPanelSheetState extends State<_FilterPanelSheet> {
   static const _schools = [
-    'Evocation', 'Abjuration', 'Conjuration', 'Divination',
-    'Enchantment', 'Illusion', 'Necromancy', 'Transmutation',
+    'Evocation',
+    'Abjuration',
+    'Conjuration',
+    'Divination',
+    'Enchantment',
+    'Illusion',
+    'Necromancy',
+    'Transmutation',
   ];
 
   static const _castingOptions = <(String, String)>[
@@ -555,8 +577,15 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
   ];
 
   static const _allClasses = [
-    'bard', 'cleric', 'druid', 'paladin', 'ranger',
-    'sorcerer', 'warlock', 'wizard', 'artificer',
+    'bard',
+    'cleric',
+    'druid',
+    'paladin',
+    'ranger',
+    'sorcerer',
+    'warlock',
+    'wizard',
+    'artificer',
   ];
 
   String _cap(String s) => s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
@@ -595,8 +624,10 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
               padding: const EdgeInsets.fromLTRB(20, 0, 8, 8),
               child: Row(
                 children: [
-                  Text('Filters',
-                      style: Theme.of(context).textTheme.titleLarge),
+                  Text(
+                    'Filters',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                   const Spacer(),
                   TextButton(
                     onPressed: () => setState(() => f.reset()),
@@ -611,7 +642,12 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
             Expanded(
               child: ListView(
                 controller: scrollCtrl,
-                padding: EdgeInsets.fromLTRB(20, 12, 20, MediaQuery.of(context).viewPadding.bottom),
+                padding: EdgeInsets.fromLTRB(
+                  20,
+                  12,
+                  20,
+                  MediaQuery.of(context).viewPadding.bottom,
+                ),
                 children: [
                   // ── Classes ──────────────────────────────────────────────
                   _SectionLabel('Classes'),
@@ -639,8 +675,8 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   Text(
                     'No class selected = show all classes',
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                   const SizedBox(height: 16),
 
@@ -662,7 +698,11 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                     spacing: 8,
                     runSpacing: 4,
                     children: [
-                      for (int lvl = 0; lvl <= (f.showAllLevels ? 9 : widget.maxSpellLevel); lvl++)
+                      for (
+                        int lvl = 0;
+                        lvl <= (f.showAllLevels ? 9 : widget.maxSpellLevel);
+                        lvl++
+                      )
                         ChoiceChip(
                           label: Text(lvl == 0 ? 'Cantrip' : 'Lvl $lvl'),
                           selected: f.level == lvl,
@@ -683,8 +723,8 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                         ChoiceChip(
                           label: Text(opt.$2),
                           selected: f.castingType == opt.$1,
-                          onSelected: (v) => setState(
-                              () => f.castingType = v ? opt.$1 : null),
+                          onSelected: (v) =>
+                              setState(() => f.castingType = v ? opt.$1 : null),
                         ),
                     ],
                   ),
@@ -695,7 +735,8 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   CheckboxListTile(
                     title: const Text('Concentration'),
                     subtitle: const Text(
-                        'Only spells that require concentration'),
+                      'Only spells that require concentration',
+                    ),
                     value: f.concentration,
                     onChanged: (v) =>
                         setState(() => f.concentration = v ?? false),
@@ -704,8 +745,9 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   ),
                   CheckboxListTile(
                     title: const Text('Ritual'),
-                    subtitle:
-                        const Text('Only spells that can be cast as rituals'),
+                    subtitle: const Text(
+                      'Only spells that can be cast as rituals',
+                    ),
                     value: f.ritual,
                     onChanged: (v) => setState(() => f.ritual = v ?? false),
                     controlAffinity: ListTileControlAffinity.leading,
@@ -734,7 +776,12 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
 
             // Apply button
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 8, 20, 20 + MediaQuery.of(context).viewPadding.bottom),
+              padding: EdgeInsets.fromLTRB(
+                20,
+                8,
+                20,
+                20 + MediaQuery.of(context).viewPadding.bottom,
+              ),
               child: SizedBox(
                 width: double.infinity,
                 child: FilledButton(
@@ -756,15 +803,14 @@ class _SectionLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: 8),
-        child: Text(
-          text,
-          style: Theme.of(context)
-              .textTheme
-              .titleSmall
-              ?.copyWith(fontWeight: FontWeight.bold),
-        ),
-      );
+    padding: const EdgeInsets.only(bottom: 8),
+    child: Text(
+      text,
+      style: Theme.of(
+        context,
+      ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+    ),
+  );
 }
 
 // ── Spell Browser Tile ────────────────────────────────────────────────────────
@@ -826,10 +872,9 @@ class _SpellBrowserTile extends StatelessWidget {
       subtitle: Text(
         '$levelStr · ${spell.school} · $castStr'
         '${extras.isNotEmpty ? '  ·  $extras' : ''}',
-        style: Theme.of(context)
-            .textTheme
-            .bodySmall
-            ?.copyWith(color: scheme.onSurfaceVariant),
+        style: Theme.of(
+          context,
+        ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
       ),
       onTap: onTap,
       trailing: isClassSpell
@@ -901,8 +946,7 @@ class SpellDetailSheet extends ConsumerWidget {
             onPressed: () => Navigator.pop(ctx, true),
             child: Text(
               'Remove',
-              style: TextStyle(
-                  color: Theme.of(ctx).colorScheme.error),
+              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
             ),
           ),
         ],
@@ -929,7 +973,8 @@ class SpellDetailSheet extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
 
@@ -940,7 +985,12 @@ class SpellDetailSheet extends ConsumerWidget {
       maxChildSize: 1.0,
       builder: (_, scrollCtrl) => ListView(
         controller: scrollCtrl,
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 16 + MediaQuery.of(context).viewPadding.bottom),
+        padding: EdgeInsets.fromLTRB(
+          20,
+          0,
+          20,
+          16 + MediaQuery.of(context).viewPadding.bottom,
+        ),
         children: [
           // ── Drag handle ──────────────────────────────────────────────────
           Center(
@@ -958,28 +1008,39 @@ class SpellDetailSheet extends ConsumerWidget {
           ),
 
           // ── Name ─────────────────────────────────────────────────────────
-          Text(i18n.spellName(spell.name),
-              style: Theme.of(context).textTheme.headlineSmall),
+          Text(
+            i18n.spellName(spell.name),
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
           const SizedBox(height: 4),
 
           // ── Level / school ────────────────────────────────────────────────
           Text(
             spell.level == 0
                 ? l10n.spellDetailCantrip(i18n.spellSchool(spell.school))
-                : l10n.spellDetailLevelSchool(_ordinal(spell.level), i18n.spellSchool(spell.school)),
+                : l10n.spellDetailLevelSchool(
+                    _ordinal(spell.level),
+                    i18n.spellSchool(spell.school),
+                  ),
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: scheme.onSurfaceVariant,
-                  fontStyle: FontStyle.italic,
-                ),
+              color: scheme.onSurfaceVariant,
+              fontStyle: FontStyle.italic,
+            ),
           ),
           const SizedBox(height: 16),
           const Divider(),
           const SizedBox(height: 12),
 
           // ── Stat rows ─────────────────────────────────────────────────────
-          _StatRow(l10n.spellDetailCastingTime, i18n.castingTime(spell.castingTime)),
+          _StatRow(
+            l10n.spellDetailCastingTime,
+            i18n.castingTime(spell.castingTime),
+          ),
           _StatRow(l10n.spellDetailRange, spell.range),
-          _StatRow(l10n.spellDetailDuration, i18n.spellDuration(spell.duration)),
+          _StatRow(
+            l10n.spellDetailDuration,
+            i18n.spellDuration(spell.duration),
+          ),
           _StatRow(l10n.spellDetailComponents, _componentsStr()),
           if (spell.concentration) ...[
             const SizedBox(height: 4),
@@ -990,9 +1051,9 @@ class SpellDetailSheet extends ConsumerWidget {
                 Text(
                   l10n.spellDetailConcentration,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.secondary,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    color: scheme.secondary,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             ),
@@ -1006,9 +1067,9 @@ class SpellDetailSheet extends ConsumerWidget {
                 Text(
                   l10n.spellDetailRitual,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.tertiary,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    color: scheme.tertiary,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             ),
@@ -1031,13 +1092,14 @@ class SpellDetailSheet extends ConsumerWidget {
                 children: [
                   TextSpan(
                     text: l10n.spellDetailAtHigherLevels,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   TextSpan(
-                    text: i18n.spellHigherLevels(spell.name) ?? spell.higherLevels!,
+                    text:
+                        i18n.spellHigherLevels(spell.name) ??
+                        spell.higherLevels!,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],
@@ -1049,10 +1111,9 @@ class SpellDetailSheet extends ConsumerWidget {
           const SizedBox(height: 16),
           Text(
             l10n.spellDetailClasses(spell.classes.join(', ')),
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall
-                ?.copyWith(color: scheme.onSurfaceVariant),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
           ),
 
           // ── Action button ─────────────────────────────────────────────────
@@ -1067,16 +1128,18 @@ class SpellDetailSheet extends ConsumerWidget {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.info_outline,
-                      size: 16,
-                      color: Theme.of(context).colorScheme.onSurfaceVariant),
+                  Icon(
+                    Icons.info_outline,
+                    size: 16,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'Esta magia já faz parte da lista da sua classe e não precisa ser aprendida.',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: Theme.of(context).colorScheme.onSurfaceVariant,
-                          ),
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
                     ),
                   ),
                 ],
@@ -1104,11 +1167,14 @@ class SpellDetailSheet extends ConsumerWidget {
           else ...[
             OutlinedButton.icon(
               icon: const Icon(Icons.check),
-              label: Text(onRemove != null
-                  ? 'In your spell list — tap to remove'
-                  : 'Already in your spell list'),
-              onPressed:
-                  onRemove != null ? () => _confirmRemove(context) : null,
+              label: Text(
+                onRemove != null
+                    ? 'In your spell list — tap to remove'
+                    : 'Already in your spell list',
+              ),
+              onPressed: onRemove != null
+                  ? () => _confirmRemove(context)
+                  : null,
             ),
           ],
         ],
@@ -1137,14 +1203,13 @@ class _StatRow extends StatelessWidget {
             child: Text(
               label,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                    fontWeight: FontWeight.w500,
-                  ),
+                color: scheme.onSurfaceVariant,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
           Expanded(
-            child:
-                Text(value, style: Theme.of(context).textTheme.bodyMedium),
+            child: Text(value, style: Theme.of(context).textTheme.bodyMedium),
           ),
         ],
       ),

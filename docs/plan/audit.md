@@ -1,235 +1,207 @@
-# Auditoria de Código — DnD Character Tool
+# Auditoria de Código - DnD Character Tool
 
-> Gerado após revisão completa do codebase. Cada item tem severidade, localização exata e recomendação de correção.
+> Revisão geral do codebase no estado atual. Itens antigos já resolvidos foram removidos. Os achados abaixo foram mantidos apenas quando havia evidência direta no código.
 
 ---
 
-## Bugs / Erros de Correção
+## Estruturas atuais do projeto
 
-### B1 — `firstWhere` sem `orElse` pode lançar `StateError`
+- **Aplicação Flutter por features:** `lib/features` agrupa fluxos de criação, lista, detalhe, home e export/import; `lib/core` contém router, tema, locale e utilitários; `lib/shared` concentra providers/widgets compartilhados.
+- **Estado com Riverpod:** uso de `NotifierProvider`, `AsyncNotifierProvider`, `AsyncNotifierProvider.family`, `FutureProvider` e `ConsumerWidget`/`ConsumerStatefulWidget`.
+- **Navegação com GoRouter:** rotas centralizadas em `lib/core/router/app_router.dart`.
+- **Persistência em camadas:** `CharacterRepository` -> `CharacterLocalDataSource` -> `StorageBackend` condicional. Nativo usa JSON em arquivos via `path_provider`; web usa `shared_preferences`.
+- **Modelos serializáveis:** modelos Dart com `json_annotation`/`json_serializable` e arquivos `.g.dart`, além de alguns modelos manuais para campos específicos.
+- **Dados SRD em assets:** `SrdDataSource` lê JSONs de `assets/data/srd`, com cache em memória e exposição via `srdDataSourceProvider`.
+- **Internacionalização híbrida:** UI principal usa ARB/gen-l10n (`AppLocalizations`); nomes/descrições do SRD usam overlays JSON via `SrdI18nService`.
+- **UI de detalhe por `part` files:** `character_detail_screen.dart` agrega abas em arquivos `part`, mantendo widgets privados dentro do mesmo library scope.
+
+---
+
+## Bugs / Erros de correção
+
+### B1 - ID importado é usado como caminho de arquivo sem validação
 **Severidade:** Alta  
-**Arquivo:** `lib/features/character_list/character_list_provider.dart` — linhas 105, 114  
-**Métodos:** `rename()`, `updateImage()`
+**Arquivos:** `lib/data/repositories/character_repository.dart:71`, `lib/data/datasources/local/storage_backend_native.dart:79`
 
-```dart
-// Linha 105 (rename)
-final character = current.firstWhere((c) => c.id == id);
+`importFromJson()` preserva o `id` do JSON importado quando não existe colisão local. No backend nativo, `_fileForId()` interpola esse `id` diretamente em `${dir.path}/$id.json`.
 
-// Linha 114 (updateImage)
-final character = current.firstWhere((c) => c.id == id);
-```
+Impacto:
+- Um JSON/token importado com `id` contendo separadores de caminho pode gravar fora da pasta `characters`.
+- IDs com caracteres inválidos para o sistema de arquivos podem quebrar save/load/delete.
+- A validação depende da origem do JSON, mas import é uma fronteira externa.
 
-Ambos os métodos têm guard `if (current == null) return;` mas não verificam se o personagem com o `id` dado existe na lista. Se o personagem foi deletado entre o guard e o `firstWhere` (race condition), a chamada lança `StateError` não tratado, quebrando o provider.
-
-**Fix:**
-```dart
-final character = current.firstWhereOrNull((c) => c.id == id);
-if (character == null) return;
-```
-*(Requer `package:collection` ou extensão manual de `Iterable`.)*
+**Correção recomendada:** gerar um novo `Uuid().v4()` para todo import, ou validar o `id` com uma allowlist rígida antes de qualquer acesso ao storage. Mesmo com validação no repository, `_fileForId()` também deveria recusar ids fora do padrão.
 
 ---
 
-### B2 — `'Unnamed Hero'` hard-coded em inglês na camada de dados
-**Severidade:** Média  
-**Arquivo:** `lib/features/character_detail/character_detail_provider.dart` — linha 163  
-**Contexto:** Chamada via `updateName('')` quando o usuário limpa o nome
+### B2 - Foto do personagem ignora o fluxo persistente de imagens no nativo
+**Severidade:** Alta  
+**Arquivos:** `lib/shared/widgets/character_avatar.dart:45`, `lib/features/character_list/character_list_provider.dart:119`, `lib/data/repositories/character_repository.dart:46`, `lib/data/datasources/local/storage_backend_native.dart:87`
 
-```dart
-await _save(c.copyWith(name: trimmed.isEmpty ? 'Unnamed Hero' : trimmed));
-```
+No nativo, o cropper retorna `cropped.path` e o list provider salva esse caminho diretamente em `character.imagePath`. O repository já tem `saveImage()` e `resolveImagePath()`, mas esse fluxo não é usado.
 
-O provider não tem acesso a `BuildContext`, então não pode usar `AppLocalizations`. A ARB key `reviewUnnamedHero` existe em todos os 10 idiomas mas não é usada aqui. Usuários em outros idiomas sempre verão o fallback em inglês.
+Impacto:
+- A imagem pode ficar apontando para cache/temporário do picker/cropper e sumir depois.
+- `delete()` chama `deleteImage(character.imagePath)`, mas o backend espera um nome de arquivo dentro da pasta `images`, não um caminho absoluto.
+- O app tem dois contratos conflitantes: `imagePath` ora é caminho absoluto/data URL, ora deveria ser nome de arquivo persistido.
 
-**Fix (preferível):** O UI layer (`_StatsTab`) deve validar o nome vazio e passar o fallback localizado como argumento, ou expor um método `updateName(String name, {String fallback})`.
-
-**Fix (alternativa simples):** Aceitar string vazia no provider e deixar o fallback ser tratado apenas na exibição.
+**Correção recomendada:** centralizar alterações de foto no repository. Em nativo, copiar a imagem para `images/` e salvar só o `fileName`; na UI, resolver o caminho com `resolveImagePath()`. Em web, manter data URL ou criar um contrato explícito separado.
 
 ---
 
-### B3 — Strings hard-coded em `features_tab.dart` não internacionalizadas
-**Severidade:** Média  
-**Arquivo:** `lib/features/character_detail/tabs/features_tab.dart`
+### B3 - `SpellSlots` aceita listas inválidas e pode lançar `RangeError`
+**Severidade:** Alta  
+**Arquivos:** `lib/data/models/spell.dart:11`, `lib/features/character_detail/character_detail_provider.dart:69`, `lib/features/character_detail/tabs/spells_tab.dart:238`
 
-Múltiplos pontos com texto fixo em português ou inglês:
+`SpellSlots.fromJson()` aceita `total` e `used` como vierem do JSON. Depois, o app acessa índices `level - 1` assumindo exatamente 9 posições.
 
-| Linha | String | Idioma | ARB key disponível? |
-|-------|--------|--------|---------------------|
-| 218 | `'Habilitar'` / `'Desabilitar'` (tooltip do `_FeatureToggleButton`) | Português | Não |
-| 506, 674, 778, 1023 | `'Nível ${f.level}'` | Português | Sim — `charCardLevel` |
-| 597, 601 | `'Subclass'` / `'ASI'` em `_typeLabel()` | Inglês | Sim — `labelSubclass`, `stepRaceASILabel` |
-| 819 | `['Classe', 'Subclasse', 'Racial', 'Background', 'Custom']` (tab labels de `_AddFeatureSheet`) | Português | Não |
-| 1366 | `'Custom'` passado como `sourceClass` | Inglês | — |
+Impacto:
+- Personagens antigos, importados ou corrompidos com listas menores quebram uso/restauração de slots e renderização da aba de magias.
+- `_applySlotSync()` também usa `c.spellSlots.used[i]` em loop de 9 posições.
 
-**Fix para `_typeLabel()`** (linhas 587–601 e 989–1003):
-```dart
-case 'subclass':
-  return l10n.labelSubclass;   // já existe em todos os 10 idiomas
-case 'asi':
-  return l10n.stepRaceASILabel; // já existe em todos os 10 idiomas
-```
-
-**Fix para `'Nível ${f.level}'`:** Usar `l10n.charCardLevel(f.level)` (ARB key `charCardLevel` com placeholder `{level}` já existe).
-
-**Fix para tooltip e tab labels:** Adicionar as ARB keys correspondentes e usá-las via `l10n`.
+**Correção recomendada:** normalizar `SpellSlots` na desserialização ou no construtor: padding/truncate para 9 posições, valores não negativos e `used <= total`. Também vale proteger `useSpellSlot()`/`restoreSpellSlot()` contra níveis fora de `1..9`.
 
 ---
 
-### B4 — Mensagens de erro de importação hard-coded em português
+### B4 - Criação ainda salva fallback de nome em inglês e não trata whitespace
 **Severidade:** Média  
-**Arquivo:** `lib/data/datasources/local/character_local_data_source.dart` — linhas 97, 101, 111  
-**Exibido em:** `character_list_screen.dart` via `ScaffoldMessenger` (usa `e.message` direto)
+**Arquivo:** `lib/features/character_creation/character_draft_provider.dart:596`
+
+Na criação guiada, o personagem é salvo com:
 
 ```dart
-throw const FormatException('O texto colado não é um JSON válido.');
-throw const FormatException('Formato inválido: esperado um objeto JSON.');
-throw const FormatException('JSON inválido: campo "character" corrompido.');
+name: draft.name.isEmpty ? 'Unnamed Hero' : draft.name,
 ```
 
-Essas mensagens chegam ao usuário via `on FormatException catch (e)` no `character_list_screen.dart` (linha 43), que as exibe com `e.message`. Como a camada de dados não tem acesso a `BuildContext`, elas são sempre em português.
+Impacto:
+- O review mostra `reviewUnnamedHero` localizado, mas o dado persistido usa inglês.
+- Um nome com apenas espaços não cai no fallback, porque não há `trim()`.
 
-**Fix:** Criar uma exceção tipada (`ImportException`) no lugar de `FormatException`, e tratá-la na UI com mensagens i18n, usando a `message` apenas como código de erro para logging.
+**Correção recomendada:** salvar `draft.name.trim()` e receber o fallback localizado da UI, ou persistir string vazia e aplicar fallback apenas na apresentação.
+
+---
+
+### B5 - Review mostra CA com armadura, mas o personagem é salvo sem equipamento vestido
+**Severidade:** Média  
+**Arquivos:** `lib/features/character_creation/steps/step_review.dart:30`, `lib/features/character_creation/character_draft_provider.dart:572`, `lib/features/character_creation/character_draft_provider.dart:619`
+
+O review calcula e exibe uma CA potencial com armadura inicial (`_findArmorAC`). Porém, na criação, todos os `EquipmentItem` entram sem `isEquipped`, e `armorClass` é salvo como `10 + DEX`.
+
+Impacto:
+- O usuário pode concluir a criação vendo uma CA com armadura, mas abrir a ficha com CA desarmada.
+- Shields/armaduras iniciais precisam ser equipados manualmente depois, mesmo quando vieram do equipamento inicial.
+
+**Correção recomendada:** decidir uma regra única. Ou equipar automaticamente uma armadura corporal e shield iniciais e salvar a CA correspondente, ou deixar claro no review que a CA exibida é apenas potencial.
 
 ---
 
 ## Ineficiências
 
-### I1 — `ref.invalidate(characterListProvider)` em todo save da tela de detalhes
-**Severidade:** Alta (performance)  
-**Arquivo:** `lib/features/character_detail/character_detail_provider.dart` — linha 27
-
-```dart
-Future<void> _save(Character updated) async {
-  final saved = await ref.read(characterRepositoryProvider).save(updated);
-  state = AsyncData(saved);
-  ref.invalidate(characterListProvider);  // ← força reload de TODOS os personagens do disco
-}
-```
-
-`_save()` é chamado em **toda** operação: ajuste de HP, uso de slot de magia, toggle de spell preparada, long rest, etc. Cada uma dessas ações força o `characterListProvider` a reler todos os arquivos JSON do disco.
-
-**Fix:** Em vez de invalidar, atualizar o estado da lista em-place, da mesma forma que `rename()` e `updateImage()` já fazem em `character_list_provider.dart`:
-```dart
-// No detail provider, após salvar:
-final listNotifier = ref.read(characterListProvider.notifier);
-listNotifier.updateSingle(saved); // método a ser adicionado no list provider
-```
-
----
-
-### I2 — `importCharacter` usa `refresh()` para adicionar um personagem
-**Severidade:** Baixa  
-**Arquivo:** `lib/features/character_list/character_list_provider.dart`
-
-```dart
-Future<Character> importCharacter(String jsonString) async {
-  final character = await ref.read(characterRepositoryProvider).importFromJson(jsonString);
-  await refresh();   // ← reload completo do disco
-  return character;
-}
-```
-
-Após importar um único personagem, o provider faz reload completo de todos os personagens do disco. Deveria adicionar o personagem diretamente ao estado:
-```dart
-state = AsyncData([character, ...current]);
-```
-
----
-
-### I3 — `_FeaturesTab._load()` não é re-executado quando subclasse muda
+### I1 - Carregamento de equipamentos SRD pode parsear o mesmo JSON em paralelo
 **Severidade:** Média  
-**Arquivo:** `lib/features/character_detail/tabs/features_tab.dart`
+**Arquivos:** `lib/data/datasources/srd/srd_data_source.dart:126`, `lib/data/datasources/srd/srd_data_source.dart:296`, `lib/features/character_detail/tabs/inventory_tab.dart:459`
 
-`_future` é calculado em `initState` e nunca atualizado. Se o usuário muda a subclasse do personagem no modo de edição (que é possível via `_StatsTab`), a aba de Features continua mostrando as features da subclasse anterior até o widget ser reconstruído do zero.
+`getWeapons()`, `getArmors()` e `getGear()` chamam `_loadEquipment()`. Na sheet de inventário, os três são disparados juntos em `Future.wait()`. Como `_loadEquipment()` só cacheia depois de terminar, chamadas simultâneas podem carregar/parsear `equipment.json` mais de uma vez.
 
-**Fix:** Adicionar `didUpdateWidget`:
-```dart
-@override
-void didUpdateWidget(_FeaturesTab old) {
-  super.didUpdateWidget(old);
-  if (widget.character.characterClass != old.character.characterClass ||
-      widget.character.subclass != old.character.subclass ||
-      widget.character.level != old.character.level) {
-    _future = _load();
-  }
-}
-```
+**Correção recomendada:** adicionar `Future<void>? _equipmentLoadFuture` e reutilizar a mesma future enquanto o primeiro load estiver em andamento. Outra opção é expor um método combinado para retornar weapons/armors/gear de uma vez.
 
 ---
 
-### I4 — `_typeLabel()` duplicada em `features_tab.dart`
+### I2 - Finalizar criação invalida a lista inteira após salvar um personagem
 **Severidade:** Baixa  
-**Arquivo:** `lib/features/character_detail/tabs/features_tab.dart` — linhas 587 e 989
+**Arquivo:** `lib/features/character_creation/character_creation_screen.dart:175`
 
-O método `_typeLabel(String type, BuildContext context)` é implementado de forma idêntica em duas classes diferentes (`_ClassFeaturesSection` e `_AddFeatureSheetState`). Além de ser duplicação, ambas têm o mesmo bug do B3 (hard-coded `'Subclass'` e `'ASI'`).
+Depois de `buildAndSave()`, a tela chama `ref.invalidate(characterListProvider)`. Isso força reload completo da lista, embora apenas um personagem novo tenha sido salvo. O list provider já tem `updateSingle()`, usado no import e no detalhe.
 
-**Fix:** Extrair para uma função top-level ou helper e corrigir os valores hard-coded conforme B3.
+**Correção recomendada:** usar o `Character` retornado por `buildAndSave()` e chamar `characterListProvider.notifier.updateSingle(created)` quando o provider existir.
 
 ---
 
-### I5 — Acesso direto a `SrdDataSource.instance` fora do Riverpod
+### I3 - Buscas em telas localizadas filtram apenas texto fonte em inglês
+**Severidade:** Média  
+**Arquivos:** `lib/features/character_detail/spell_browser_sheet.dart:161`, `lib/features/character_detail/tabs/features_tab.dart:1156`
+
+O browser de magias exibe nomes localizados com `i18n.spellName()`, mas filtra só por `s.name`. A sheet de adicionar features também filtra por `f.name`, `description`, `subName` e `bg.name`, enquanto a UI pode mostrar nomes/descrições traduzidas.
+
+Impacto:
+- Em idiomas diferentes de inglês, o usuário digita o termo visível na tela e não encontra o item.
+- A experiência fica inconsistente com o inventário, que já compara texto traduzido e texto original.
+
+**Correção recomendada:** montar o texto de busca com nome/descrição original e localizado, normalizado uma vez por item.
+
+---
+
+## Problemas estruturais
+
+### S1 - Internacionalização ainda está incompleta em fluxos importantes
+**Severidade:** Média  
+**Arquivos:** `lib/features/character_list/character_list_screen.dart:368`, `lib/features/character_detail/spell_browser_sheet.dart:313`, `lib/shared/widgets/character_avatar.dart:17`, `lib/features/character_detail/tabs/features_tab.dart:1501`, `lib/features/character_creation/steps/step_review.dart:1043`
+
+Há várias strings visíveis ao usuário fora de `AppLocalizations`, especialmente em export/import, QR, browser de magias, avatar, feature customizada e escolhas de idioma.
+
+Exemplos atuais:
+- `Export`, `Token`, `Copy token`, `Show QR Code`, `Import Character`, `Scan QR Code`
+- `Browse Spells`, `Filters`, `No spells match the current filters.`, `Remove spell`
+- `Choose photo`, `Remove photo`, `Crop photo`, `Alterar foto`
+- `${f.name} adicionada!`, `Adicionar Feature`
+- `Language Choices`, `Type a language...`
+
+**Correção recomendada:** mover textos para ARB e manter SRD/i18n de domínio em `SrdI18nService`. Também vale adicionar uma regra de revisão para impedir novos `Text('...')` hard-coded em telas localizadas.
+
+---
+
+### S2 - Strings mágicas persistidas ainda representam conceitos de domínio
 **Severidade:** Baixa  
-**Arquivos:**
-- `features_tab.dart` — linha 29
-- `stats_tab.dart` — linha 275
-- `character_detail_provider.dart` — linha 128
-- `spell_browser_sheet.dart` — linha 145
-- Steps de criação: `step_class.dart`, `step_race.dart`, `step_background.dart`, `step_skills.dart`
+**Arquivos:** `lib/features/character_detail/tabs/features_tab.dart:1495`, `lib/features/character_creation/character_draft_provider.dart:46`
 
-Esses locais usam `SrdDataSource.instance` diretamente em vez do `srdDataSourceProvider`. Funcionalmente equivalente (singleton), mas:
-- Inconsistente com o padrão do projeto
-- Impede substituição por mock em testes
-- O Riverpod não conhece essas dependências
+Ainda existem valores como `'Custom'`, categorias de item (`'weapon'`, `'armor'`, `'adventuring gear'`) e features textuais (`'Tool Proficiency: $t'`) usados como contrato entre UI, modelo e persistência.
 
-**Fix:** Substituir chamadas diretas por `ref.read(srdDataSourceProvider).getXxx()`.
+Impacto:
+- Alterar uma string quebra dados existentes ou filtros.
+- Fica difícil distinguir texto de exibição de identificador interno.
+
+**Correção recomendada:** extrair constantes/enum/value objects para identificadores persistidos e traduzir só na borda de UI.
 
 ---
 
-## Problemas Estruturais
+### S3 - Não há testes automatizados no workspace
+**Severidade:** Média  
+**Evidência:** `rg --files -g "*_test.dart"` não encontrou arquivos.
 
-### S1 — Camada de dados produz strings visíveis ao usuário
-**Severity:** Média  
-**Arquivo:** `character_local_data_source.dart` (importFromJson)
+O projeto tem lógica sensível em import/export, storage, slots de magia, criação de equipamento e i18n. Sem testes, regressões nesses fluxos tendem a aparecer só manualmente.
 
-A camada de dados não deveria produzir strings exibidas ao usuário. As mensagens de erro de importação devem ser geradas na UI layer com suporte a i18n. Ver B4.
-
----
-
-### S2 — `'Custom'` como string mágica para sourceClass de features extras
-**Severidade:** Baixa  
-**Arquivo:** `features_tab.dart` — linha 1366
-
-```dart
-await notifier.addExtraFeature(f, 'Custom');
-```
-
-A string `'Custom'` é persistida em JSON como `character.extraFeatures[].sourceClass`. Não há validação, constante definida ou enum. Se mudar o valor em algum lugar, dados existentes ficam incompatíveis.
-
-**Fix:** Definir uma constante `const kCustomSourceClass = 'Custom';` ou adicionar ao enum se existir algum.
+**Correção recomendada:** começar por testes unitários de baixo custo:
+- normalização de `SpellSlots`;
+- import/export com ids inválidos e colisão;
+- criação guiada com armadura/shield;
+- busca localizada em magias/features;
+- parsing de equipamentos iniciais.
 
 ---
 
-### S3 — `characterDetailProvider._save()` sempre invalida a lista, criando acoplamento implícito
+### S4 - Arquivos de UI acumulam muita lógica de domínio e estado local
 **Severidade:** Informativa  
-**Ver:** I1
+**Arquivos:** `features_tab.dart` (~1682 linhas), `spell_browser_sheet.dart` (~1210 linhas), `step_review.dart` (~1115 linhas), `character_list_screen.dart` (~740 linhas)
 
-O detail provider depende de invalidar o list provider após cada save. Isso cria acoplamento indireto: o detalhe conhece a existência da lista. Uma abordagem mais limpa seria o list provider observar o detail provider via `ref.listen` ou o detail provider notificar a lista de forma explícita.
+Esses arquivos misturam renderização, filtros, parsing, regras de domínio e ações de persistência. Isso não é um bug imediato, mas aumenta custo de manutenção e facilita inconsistências como busca localizada, textos hard-coded e regras duplicadas.
+
+**Correção recomendada:** extrair view models/helpers testáveis para filtros, normalização de busca, cálculo/equipamento inicial, contratos de import/export e ações de foto.
 
 ---
 
 ## Resumo
 
-| ID | Tipo | Severidade | Arquivo Principal |
-|----|------|------------|-------------------|
-| B1 | Bug | Alta | `character_list_provider.dart` |
-| B2 | Bug | Média | `character_detail_provider.dart` |
-| B3 | Bug | Média | `features_tab.dart` |
-| B4 | Bug | Média | `character_local_data_source.dart` |
-| I1 | Ineficiência | Alta | `character_detail_provider.dart` |
-| I2 | Ineficiência | Baixa | `character_list_provider.dart` |
-| I3 | Ineficiência | Média | `features_tab.dart` |
-| I4 | Ineficiência | Baixa | `features_tab.dart` |
-| I5 | Ineficiência | Baixa | múltiplos |
-| S1 | Estrutural | Média | `character_local_data_source.dart` |
-| S2 | Estrutural | Baixa | `features_tab.dart` |
-| S3 | Estrutural | Informativa | `character_detail_provider.dart` |
+| ID | Tipo | Severidade | Área principal |
+|----|------|------------|----------------|
+| B1 | Bug | Alta | Import/storage |
+| B2 | Bug | Alta | Fotos/avatar |
+| B3 | Bug | Alta | Spell slots |
+| B4 | Bug | Média | Criação/i18n |
+| B5 | Bug | Média | Criação/equipamento |
+| I1 | Ineficiência | Média | SRD/equipment |
+| I2 | Ineficiência | Baixa | Criação/lista |
+| I3 | Ineficiência/UX | Média | Busca localizada |
+| S1 | Estrutural | Média | i18n |
+| S2 | Estrutural | Baixa | Contratos de domínio |
+| S3 | Estrutural | Média | Testes |
+| S4 | Estrutural | Informativa | Organização de UI |

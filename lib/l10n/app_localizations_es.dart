@@ -1113,22 +1113,154 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String reviewClassEquipmentTitle(String name) {
-    return 'Class Equipment — $name';
+    return 'Equipo de clase — $name';
   }
 
   @override
-  String get reviewEquipmentIncluded => 'Included:';
+  String get reviewEquipmentIncluded => 'Incluido:';
 
   @override
-  String get stepToolCategoryGamingSet => 'Gaming set';
+  String get stepToolCategoryGamingSet => 'Kit de juego';
 
   @override
-  String get stepToolCategoryInstrument => 'Musical instrument';
+  String get stepToolCategoryInstrument => 'Instrumento musical';
 
   @override
-  String get stepToolCategoryArtisanTool => 'Artisan\'s tool';
+  String get stepToolCategoryArtisanTool => 'Herramienta artesanal';
 
   @override
   String get stepToolCategoryArtisanOrInstrument =>
-      'Artisan\'s tool or instrument';
+      'Herramienta artesanal o instrumento';
+
+  @override
+  String exportCopied(String label) {
+    return '¡$label copiado!';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return 'Exportar $name';
+  }
+
+  @override
+  String get exportLabelToken => 'Token';
+
+  @override
+  String get exportCopyToken => 'Copiar token';
+
+  @override
+  String get exportHideQr => 'Ocultar código QR';
+
+  @override
+  String get exportShowQr => 'Mostrar código QR';
+
+  @override
+  String get exportQrTooLarge =>
+      'El personaje es demasiado grande para el código QR.\nUsa el token o JSON para compartir.';
+
+  @override
+  String get exportShowJson => 'Mostrar JSON';
+
+  @override
+  String get exportCopyJson => 'Copiar JSON';
+
+  @override
+  String get dialogClose => 'Cerrar';
+
+  @override
+  String get importDialogTitle => 'Importar personaje';
+
+  @override
+  String get importTokenHint => 'Pega el token aquí…';
+
+  @override
+  String get importScanQr => 'Escanear código QR';
+
+  @override
+  String get importUseJson => 'Usar JSON directamente';
+
+  @override
+  String get importJsonHint => 'Pega el JSON aquí…';
+
+  @override
+  String get dialogImport => 'Importar';
+
+  @override
+  String get spellBrowserTitle => 'Explorar conjuros';
+
+  @override
+  String get spellBrowserFilters => 'Filtros';
+
+  @override
+  String get spellBrowserSearchHint => 'Buscar conjuros...';
+
+  @override
+  String get filterClearAll => 'Borrar todo';
+
+  @override
+  String get loadingLabel => 'Cargando...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '$count conjuro$s';
+  }
+
+  @override
+  String get spellBrowserEmpty =>
+      'Ningún conjuro coincide con los filtros actuales.';
+
+  @override
+  String get spellCantrip => 'Truco';
+
+  @override
+  String spellLevelN(int n) {
+    return 'Niv $n';
+  }
+
+  @override
+  String get castingTimeAction => 'Acción';
+
+  @override
+  String get castingTimeBonusAction => 'Acción adicional';
+
+  @override
+  String get castingTimeReaction => 'Reacción';
+
+  @override
+  String get castingTimeLonger => 'Lanzamiento largo';
+
+  @override
+  String get filterConcentration => 'Concentración';
+
+  @override
+  String get filterRitual => 'Ritual';
+
+  @override
+  String get filterAllLevels => 'Todos los niveles';
+
+  @override
+  String get avatarChoosePhoto => 'Elegir foto';
+
+  @override
+  String get avatarRemovePhoto => 'Eliminar foto';
+
+  @override
+  String get avatarCropPhoto => 'Recortar foto';
+
+  @override
+  String get avatarChangePhoto => 'Cambiar foto';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '¡$name añadido!';
+  }
+
+  @override
+  String get featureAddButton => 'Añadir característica';
+
+  @override
+  String get reviewLanguageChoices => 'Opciones de idioma';
+
+  @override
+  String get reviewLanguageTypeHint => 'Escribe un idioma…';
 }

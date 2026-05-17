@@ -3,7 +3,6 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../data/datasources/srd/srd_data_source.dart';
 import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
 import '../../../shared/providers/providers.dart';
@@ -22,14 +21,15 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
   @override
   void initState() {
     super.initState();
-    _skillsFuture = SrdDataSource.instance.getSkills();
+    _skillsFuture = ref.read(srdDataSourceProvider).getSkills();
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final draft = ref.watch(characterDraftProvider);
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final cls = draft.selectedClass;
     if (cls == null) return const SizedBox.shrink();
 
@@ -58,30 +58,34 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
             ),
             const SizedBox(height: 8),
             if (grantedRaw.isNotEmpty) ...[
-              Text(l10n.stepGrantedByBackground,
-                style: Theme.of(context).textTheme.labelSmall),
+              Text(
+                l10n.stepGrantedByBackground,
+                style: Theme.of(context).textTheme.labelSmall,
+              ),
               const SizedBox(height: 4),
               Wrap(
                 spacing: 8,
                 children: grantedRaw
-                    .map((s) => Chip(
-                          label: Text(i18n.skillName(s)),
-                          avatar: const Icon(Icons.lock, size: 14),
-                        ))
+                    .map(
+                      (s) => Chip(
+                        label: Text(i18n.skillName(s)),
+                        avatar: const Icon(Icons.lock, size: 14),
+                      ),
+                    )
                     .toList(),
               ),
               const Divider(height: 24),
             ],
-            Text(l10n.stepClassSkillChoices(needed),
-                style: Theme.of(context).textTheme.labelSmall),
+            Text(
+              l10n.stepClassSkillChoices(needed),
+              style: Theme.of(context).textTheme.labelSmall,
+            ),
             const SizedBox(height: 4),
             ...allowedPool.map((skillName) {
               final isGranted = grantedLower.contains(skillName.toLowerCase());
               final isChosen = chosen.contains(skillName);
-              final canAdd = !isGranted &&
-                  (!isChosen
-                      ? chosen.length < needed
-                      : true);
+              final canAdd =
+                  !isGranted && (!isChosen ? chosen.length < needed : true);
               final skill = allSkills
                   .where((s) => s.name == skillName)
                   .firstOrNull;
@@ -89,8 +93,10 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
               return CheckboxListTile(
                 title: Text(i18n.skillName(skillName)),
                 subtitle: skill != null
-                    ? Text(abilityName(l10n, skill.ability),
-                        style: Theme.of(context).textTheme.bodySmall)
+                    ? Text(
+                        abilityName(l10n, skill.ability),
+                        style: Theme.of(context).textTheme.bodySmall,
+                      )
                     : null,
                 value: isChosen || isGranted,
                 onChanged: isGranted
@@ -103,13 +109,10 @@ class _StepSkillsState extends ConsumerState<StepSkills> {
                         } else if (v == false) {
                           ref
                               .read(characterDraftProvider.notifier)
-                              .setChosenSkills(
-                                  chosen..remove(skillName));
+                              .setChosenSkills(chosen..remove(skillName));
                         }
                       },
-                secondary: isGranted
-                    ? const Icon(Icons.lock, size: 16)
-                    : null,
+                secondary: isGranted ? const Icon(Icons.lock, size: 16) : null,
               );
             }),
           ],

@@ -22,8 +22,21 @@ class SpellSlots {
     );
   }
 
-  factory SpellSlots.fromJson(Map<String, dynamic> json) =>
-      _$SpellSlotsFromJson(json);
+  factory SpellSlots.fromJson(Map<String, dynamic> json) {
+    final raw = _$SpellSlotsFromJson(json);
+    return SpellSlots._normalized(raw.total, raw.used);
+  }
+
+  /// Garante exatamente 9 posições, valores não-negativos e used <= total.
+  factory SpellSlots._normalized(List<int> total, List<int> used) {
+    const size = 9;
+    final t = List<int>.generate(size, (i) => i < total.length ? total[i].clamp(0, 9999) : 0);
+    final u = List<int>.generate(size, (i) {
+      final usedVal = i < used.length ? used[i].clamp(0, 9999) : 0;
+      return usedVal.clamp(0, t[i]);
+    });
+    return SpellSlots(total: t, used: u);
+  }
 
   Map<String, dynamic> toJson() => _$SpellSlotsToJson(this);
 }

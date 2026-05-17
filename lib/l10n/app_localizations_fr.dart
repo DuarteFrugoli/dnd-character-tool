@@ -1119,22 +1119,154 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String reviewClassEquipmentTitle(String name) {
-    return 'Class Equipment — $name';
+    return 'Équipement de classe — $name';
   }
 
   @override
-  String get reviewEquipmentIncluded => 'Included:';
+  String get reviewEquipmentIncluded => 'Inclus :';
 
   @override
-  String get stepToolCategoryGamingSet => 'Gaming set';
+  String get stepToolCategoryGamingSet => 'Kit de jeu';
 
   @override
-  String get stepToolCategoryInstrument => 'Musical instrument';
+  String get stepToolCategoryInstrument => 'Instrument de musique';
 
   @override
-  String get stepToolCategoryArtisanTool => 'Artisan\'s tool';
+  String get stepToolCategoryArtisanTool => 'Outil d\'artisan';
 
   @override
   String get stepToolCategoryArtisanOrInstrument =>
-      'Artisan\'s tool or instrument';
+      'Outil d\'artisan ou instrument';
+
+  @override
+  String exportCopied(String label) {
+    return '$label copié !';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return 'Exporter $name';
+  }
+
+  @override
+  String get exportLabelToken => 'Jeton';
+
+  @override
+  String get exportCopyToken => 'Copier le jeton';
+
+  @override
+  String get exportHideQr => 'Masquer le QR code';
+
+  @override
+  String get exportShowQr => 'Afficher le QR code';
+
+  @override
+  String get exportQrTooLarge =>
+      'Personnage trop grand pour le QR code.\nUtilise le jeton ou le JSON pour partager.';
+
+  @override
+  String get exportShowJson => 'Afficher le JSON';
+
+  @override
+  String get exportCopyJson => 'Copier le JSON';
+
+  @override
+  String get dialogClose => 'Fermer';
+
+  @override
+  String get importDialogTitle => 'Importer un personnage';
+
+  @override
+  String get importTokenHint => 'Colle le jeton ici…';
+
+  @override
+  String get importScanQr => 'Scanner le QR code';
+
+  @override
+  String get importUseJson => 'Utiliser le JSON directement';
+
+  @override
+  String get importJsonHint => 'Colle le JSON ici…';
+
+  @override
+  String get dialogImport => 'Importer';
+
+  @override
+  String get spellBrowserTitle => 'Parcourir les sorts';
+
+  @override
+  String get spellBrowserFilters => 'Filtres';
+
+  @override
+  String get spellBrowserSearchHint => 'Rechercher des sorts...';
+
+  @override
+  String get filterClearAll => 'Tout effacer';
+
+  @override
+  String get loadingLabel => 'Chargement...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '$count sort$s';
+  }
+
+  @override
+  String get spellBrowserEmpty =>
+      'Aucun sort ne correspond aux filtres actuels.';
+
+  @override
+  String get spellCantrip => 'Tour de magie';
+
+  @override
+  String spellLevelN(int n) {
+    return 'Niv $n';
+  }
+
+  @override
+  String get castingTimeAction => 'Action';
+
+  @override
+  String get castingTimeBonusAction => 'Action bonus';
+
+  @override
+  String get castingTimeReaction => 'Réaction';
+
+  @override
+  String get castingTimeLonger => 'Incantation longue';
+
+  @override
+  String get filterConcentration => 'Concentration';
+
+  @override
+  String get filterRitual => 'Rituel';
+
+  @override
+  String get filterAllLevels => 'Tous les niveaux';
+
+  @override
+  String get avatarChoosePhoto => 'Choisir une photo';
+
+  @override
+  String get avatarRemovePhoto => 'Supprimer la photo';
+
+  @override
+  String get avatarCropPhoto => 'Recadrer la photo';
+
+  @override
+  String get avatarChangePhoto => 'Modifier la photo';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '$name ajouté !';
+  }
+
+  @override
+  String get featureAddButton => 'Ajouter une caractéristique';
+
+  @override
+  String get reviewLanguageChoices => 'Choix de langues';
+
+  @override
+  String get reviewLanguageTypeHint => 'Saisissez une langue…';
 }

@@ -1115,4 +1115,135 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get stepToolCategoryArtisanOrInstrument => '職人の道具や道具';
+
+  @override
+  String exportCopied(String label) {
+    return '$labelをコピーしました!';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return '$nameをエクスポート';
+  }
+
+  @override
+  String get exportLabelToken => 'トークン';
+
+  @override
+  String get exportCopyToken => 'トークンをコピー';
+
+  @override
+  String get exportHideQr => 'QRコードを非表示';
+
+  @override
+  String get exportShowQr => 'QRコードを表示';
+
+  @override
+  String get exportQrTooLarge =>
+      'キャラクターがQRコードに収まりません。\nトークンまたはJSONを使って共有してください。';
+
+  @override
+  String get exportShowJson => 'JSONを表示';
+
+  @override
+  String get exportCopyJson => 'JSONをコピー';
+
+  @override
+  String get dialogClose => '閉じる';
+
+  @override
+  String get importDialogTitle => 'キャラクターをインポート';
+
+  @override
+  String get importTokenHint => 'ここにトークンを貼り付け…';
+
+  @override
+  String get importScanQr => 'QRコードをスキャン';
+
+  @override
+  String get importUseJson => 'JSONを直接使用';
+
+  @override
+  String get importJsonHint => 'ここにJSONを貼り付け…';
+
+  @override
+  String get dialogImport => 'インポート';
+
+  @override
+  String get spellBrowserTitle => '呪文を検索';
+
+  @override
+  String get spellBrowserFilters => 'フィルター';
+
+  @override
+  String get spellBrowserSearchHint => '呪文を検索...';
+
+  @override
+  String get filterClearAll => 'すべてクリア';
+
+  @override
+  String get loadingLabel => '読み込み中...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '呪文$count件';
+  }
+
+  @override
+  String get spellBrowserEmpty => '現在のフィルターに一致する呪文がありません。';
+
+  @override
+  String get spellCantrip => 'カントリップ';
+
+  @override
+  String spellLevelN(int n) {
+    return '$nレベル';
+  }
+
+  @override
+  String get castingTimeAction => 'アクション';
+
+  @override
+  String get castingTimeBonusAction => 'ボーナスアクション';
+
+  @override
+  String get castingTimeReaction => '反応';
+
+  @override
+  String get castingTimeLonger => '長い詠唱';
+
+  @override
+  String get filterConcentration => '集中';
+
+  @override
+  String get filterRitual => '儀式';
+
+  @override
+  String get filterAllLevels => '全レベル';
+
+  @override
+  String get avatarChoosePhoto => '写真を選ぶ';
+
+  @override
+  String get avatarRemovePhoto => '写真を削除';
+
+  @override
+  String get avatarCropPhoto => '写真を切り取る';
+
+  @override
+  String get avatarChangePhoto => '写真を変更';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '$nameを追加しました!';
+  }
+
+  @override
+  String get featureAddButton => '特性を追加';
+
+  @override
+  String get reviewLanguageChoices => '言語の選択';
+
+  @override
+  String get reviewLanguageTypeHint => '言語を入力…';
 }

@@ -2,6 +2,22 @@ part of '../character_detail_screen.dart';
 
 // ── Features Tab ──────────────────────────────────────────────────────────────
 
+String _featureTypeLabel(String type, BuildContext context) {
+  final l10n = AppLocalizations.of(context)!;
+  switch (type) {
+    case 'active':
+      return l10n.labelActive;
+    case 'passive':
+      return l10n.labelPassive;
+    case 'subclass':
+      return l10n.labelSubclass;
+    case 'asi':
+      return l10n.stepRaceASILabel;
+    default:
+      return type;
+  }
+}
+
 class _FeaturesTab extends ConsumerStatefulWidget {
   const _FeaturesTab({
     required this.character,
@@ -25,8 +41,23 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
     _future = _load();
   }
 
+  @override
+  void didUpdateWidget(_FeaturesTab old) {
+    super.didUpdateWidget(old);
+    final current = widget.character;
+    final previous = old.character;
+    if (current.characterClass != previous.characterClass ||
+        current.subclass != previous.subclass ||
+        current.level != previous.level ||
+        current.race != previous.race ||
+        current.subrace != previous.subrace ||
+        current.background != previous.background) {
+      _future = _load();
+    }
+  }
+
   Future<_FeaturesData> _load() async {
-    final srd = SrdDataSource.instance;
+    final srd = ref.read(srdDataSourceProvider);
     final subclassName = widget.character.subclass ?? '';
     final results = await Future.wait([
       srd.getClassFeatures(widget.character.characterClass),
@@ -41,8 +72,9 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
     final traitDescriptions = results[3] as Map<String, String>;
     final subclassFeatures = results[4] as List<SrdClassFeature>;
 
-    final race =
-        races.where((r) => r.name == widget.character.race).firstOrNull;
+    final race = races
+        .where((r) => r.name == widget.character.race)
+        .firstOrNull;
     final subrace = race?.subraces
         .where((s) => s.name == widget.character.subrace)
         .firstOrNull;
@@ -85,7 +117,9 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           return const Center(child: CircularProgressIndicator());
         }
         if (snap.hasError || !snap.hasData) {
-          return Center(child: Text(AppLocalizations.of(context)!.featuresLoadError));
+          return Center(
+            child: Text(AppLocalizations.of(context)!.featuresLoadError),
+          );
         }
         final data = snap.data!;
         final isEditing = widget.isEditing;
@@ -148,9 +182,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
               ],
               if (widget.character.features.isNotEmpty) ...[
                 const SizedBox(height: 24),
-                _ToolProficienciesSection(
-                  features: widget.character.features,
-                ),
+                _ToolProficienciesSection(features: widget.character.features),
               ],
               if (extraFeatures.isNotEmpty) ...[
                 const SizedBox(height: 24),
@@ -248,24 +280,25 @@ class _RacialTraitsSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final allTraits = [...raceTraits, ...subraceTraits];
     if (allTraits.isEmpty) return const SizedBox.shrink();
 
-    final title =
-        subraceName != null && subraceName!.isNotEmpty ? subraceName! : raceName;
+    final title = subraceName != null && subraceName!.isNotEmpty
+        ? subraceName!
+        : raceName;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           l10n.featuresSectionRacialTraits(title),
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         ...allTraits.map((trait) {
@@ -277,8 +310,10 @@ class _RacialTraitsSection extends ConsumerWidget {
               margin: const EdgeInsets.only(bottom: 6),
               child: ListTile(
                 dense: true,
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 4,
+                ),
                 title: Text(
                   i18n.raceTraitName(trait),
                   style: const TextStyle(fontWeight: FontWeight.w600),
@@ -289,8 +324,11 @@ class _RacialTraitsSection extends ConsumerWidget {
                         isDisabled: isDisabled,
                         onToggle: onToggle,
                       )
-                    : Icon(Icons.info_outline,
-                        size: 16, color: scheme.onSurfaceVariant),
+                    : Icon(
+                        Icons.info_outline,
+                        size: 16,
+                        color: scheme.onSurfaceVariant,
+                      ),
               ),
             );
           } else {
@@ -298,8 +336,10 @@ class _RacialTraitsSection extends ConsumerWidget {
               margin: const EdgeInsets.only(bottom: 6),
               clipBehavior: Clip.antiAlias,
               child: ExpansionTile(
-                tilePadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+                tilePadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 2,
+                ),
                 childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
                 title: Row(
                   children: [
@@ -323,9 +363,9 @@ class _RacialTraitsSection extends ConsumerWidget {
                   Text(
                     i18n.raceTraitDescription(trait) ?? desc,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                          height: 1.5,
-                        ),
+                      color: scheme.onSurfaceVariant,
+                      height: 1.5,
+                    ),
                   ),
                 ],
               ),
@@ -357,7 +397,8 @@ class _BackgroundFeatureSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final isDisabled = disabledFeatures.contains(featureName);
     final card = Card(
       child: ExpansionTile(
@@ -383,7 +424,8 @@ class _BackgroundFeatureSection extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
             child: Text(
-              i18n.backgroundFeatureDescription(backgroundName) ?? featureDescription,
+              i18n.backgroundFeatureDescription(backgroundName) ??
+                  featureDescription,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
@@ -396,10 +438,9 @@ class _BackgroundFeatureSection extends ConsumerWidget {
       children: [
         Text(
           l10n.featuresSectionBackground(backgroundName),
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         isDisabled ? Opacity(opacity: 0.35, child: card) : card,
@@ -417,16 +458,16 @@ class _ToolProficienciesSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           l10n.featuresSectionTools,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         ...features.map((f) {
@@ -438,8 +479,10 @@ class _ToolProficienciesSection extends ConsumerWidget {
             margin: const EdgeInsets.only(bottom: 6),
             child: ListTile(
               dense: true,
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 4,
+              ),
               leading: const Icon(Icons.handyman_outlined, size: 20),
               title: Text(
                 i18n.toolName(label),
@@ -465,9 +508,9 @@ class _ExtraFeaturesSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final notifier =
-        ref.read(characterDetailProvider(characterId).notifier);
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final notifier = ref.read(characterDetailProvider(characterId).notifier);
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     final l10n2 = AppLocalizations.of(context)!;
     return Column(
@@ -475,84 +518,88 @@ class _ExtraFeaturesSection extends ConsumerWidget {
       children: [
         Text(
           l10n2.featuresSectionExtra,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
-        ...features.map((f) => Card(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: ExpansionTile(
-                title: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        i18n.classFeatureName(f.sourceClass, f.name)
-                            ?? i18n.anySubclassFeatureName(f.sourceClass, f.name)
-                            ?? i18n.raceTraitName(f.name),
-                        style: const TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      f.sourceClass,
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: scheme.tertiary,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ],
-                ),
-                subtitle: Text(
-                  l10n2.charCardLevel(f.level),
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete_outline, size: 18),
-                  color: scheme.error,
-                  tooltip: AppLocalizations.of(context)!.featuresTooltipRemove,
-                  onPressed: () async {
-                    final l10n = AppLocalizations.of(context)!;
-                    final confirm = await showDialog<bool>(
-                      context: context,
-                      builder: (ctx) => AlertDialog(
-                        title: Text(l10n.featuresRemoveTitle),
-                        content: Text(l10n.featuresRemoveContent(f.name)),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.pop(ctx, false),
-                            child: Text(l10n.dialogCancel),
-                          ),
-                          FilledButton(
-                            onPressed: () => Navigator.pop(ctx, true),
-                            style: FilledButton.styleFrom(
-                              backgroundColor: scheme.error,
-                              foregroundColor: scheme.onError,
-                            ),
-                            child: Text(l10n.dialogRemove),
-                          ),
-                        ],
-                      ),
-                    );
-                    if (confirm == true) {
-                      notifier.removeExtraFeature(f.name, f.sourceClass);
-                    }
-                  },
-                ),
+        ...features.map(
+          (f) => Card(
+            margin: const EdgeInsets.only(bottom: 10),
+            child: ExpansionTile(
+              title: Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  Expanded(
                     child: Text(
-                      i18n.classFeatureDescription(f.sourceClass, f.name)
-                          ?? i18n.anySubclassFeatureDescription(f.sourceClass, f.name)
-                          ?? f.description,
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      i18n.classFeatureName(f.sourceClass, f.name) ??
+                          i18n.anySubclassFeatureName(f.sourceClass, f.name) ??
+                          i18n.raceTraitName(f.name),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    f.sourceClass,
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      color: scheme.tertiary,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
-            )),
+              subtitle: Text(
+                l10n2.charCardLevel(f.level),
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.delete_outline, size: 18),
+                color: scheme.error,
+                tooltip: AppLocalizations.of(context)!.featuresTooltipRemove,
+                onPressed: () async {
+                  final l10n = AppLocalizations.of(context)!;
+                  final confirm = await showDialog<bool>(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: Text(l10n.featuresRemoveTitle),
+                      content: Text(l10n.featuresRemoveContent(f.name)),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx, false),
+                          child: Text(l10n.dialogCancel),
+                        ),
+                        FilledButton(
+                          onPressed: () => Navigator.pop(ctx, true),
+                          style: FilledButton.styleFrom(
+                            backgroundColor: scheme.error,
+                            foregroundColor: scheme.onError,
+                          ),
+                          child: Text(l10n.dialogRemove),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirm == true) {
+                    notifier.removeExtraFeature(f.name, f.sourceClass);
+                  }
+                },
+              ),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: Text(
+                    i18n.classFeatureDescription(f.sourceClass, f.name) ??
+                        i18n.anySubclassFeatureDescription(
+                          f.sourceClass,
+                          f.name,
+                        ) ??
+                        f.description,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -586,25 +633,10 @@ class _ClassFeaturesSection extends ConsumerWidget {
     }
   }
 
-  String _typeLabel(String type, BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    switch (type) {
-      case 'active':
-        return l10n.labelActive;
-      case 'passive':
-        return l10n.labelPassive;
-      case 'subclass':
-        return l10n.labelSubclass;
-      case 'asi':
-        return l10n.stepRaceASILabel;
-      default:
-        return type;
-    }
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
 
@@ -614,10 +646,9 @@ class _ClassFeaturesSection extends ConsumerWidget {
         children: [
           Text(
             l10n.featuresSectionClass(className),
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
           Text(l10n.featuresNoneAvailable),
@@ -630,10 +661,9 @@ class _ClassFeaturesSection extends ConsumerWidget {
       children: [
         Text(
           l10n.featuresSectionClass(className),
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         ...features.map((f) {
@@ -652,22 +682,31 @@ class _ClassFeaturesSection extends ConsumerWidget {
                   ),
                   const SizedBox(width: 8),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 2,
+                    ),
                     decoration: BoxDecoration(
                       color: typeColor.withAlpha(30),
                       border: Border.all(color: typeColor.withAlpha(100)),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
-                      _typeLabel(f.type, context),
+                      _featureTypeLabel(f.type, context),
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: typeColor,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        color: typeColor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  if (isEditing) ...[const SizedBox(width: 4), _FeatureToggleButton(featureName: f.name, isDisabled: isDisabled, onToggle: onToggle)],
+                  if (isEditing) ...[
+                    const SizedBox(width: 4),
+                    _FeatureToggleButton(
+                      featureName: f.name,
+                      isDisabled: isDisabled,
+                      onToggle: onToggle,
+                    ),
+                  ],
                 ],
               ),
               subtitle: Row(
@@ -680,10 +719,9 @@ class _ClassFeaturesSection extends ConsumerWidget {
                     const SizedBox(width: 8),
                     Text(
                       '${f.uses!.amount}× / ${f.uses!.rechargeLabel}',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall
-                          ?.copyWith(color: scheme.primary),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: scheme.primary),
                     ),
                   ],
                 ],
@@ -692,7 +730,8 @@ class _ClassFeaturesSection extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
-                    i18n.classFeatureDescription(className, f.name) ?? f.description,
+                    i18n.classFeatureDescription(className, f.name) ??
+                        f.description,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
@@ -727,7 +766,8 @@ class _SubclassFeaturesSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     return Column(
@@ -735,15 +775,15 @@ class _SubclassFeaturesSection extends ConsumerWidget {
       children: [
         Text(
           l10n.featuresSectionSubclass(subclassName),
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         ...features.map((f) {
-          final typeColor =
-              f.type == 'active' ? scheme.primary : scheme.outline;
+          final typeColor = f.type == 'active'
+              ? scheme.primary
+              : scheme.outline;
           final isDisabled = disabledFeatures.contains(f.name);
           final card = Card(
             margin: const EdgeInsets.only(bottom: 10),
@@ -752,28 +792,44 @@ class _SubclassFeaturesSection extends ConsumerWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      i18n.subclassFeatureName(className, subclassName, f.name) ?? f.name,
+                      i18n.subclassFeatureName(
+                            className,
+                            subclassName,
+                            f.name,
+                          ) ??
+                          f.name,
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
                   const SizedBox(width: 8),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 2,
+                    ),
                     decoration: BoxDecoration(
                       color: typeColor.withAlpha(30),
                       border: Border.all(color: typeColor.withAlpha(100)),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
-                      f.type == 'active' ? AppLocalizations.of(context)!.labelActive : AppLocalizations.of(context)!.labelPassive,
+                      f.type == 'active'
+                          ? AppLocalizations.of(context)!.labelActive
+                          : AppLocalizations.of(context)!.labelPassive,
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: typeColor,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        color: typeColor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  if (isEditing) ...[const SizedBox(width: 4), _FeatureToggleButton(featureName: f.name, isDisabled: isDisabled, onToggle: onToggle)],
+                  if (isEditing) ...[
+                    const SizedBox(width: 4),
+                    _FeatureToggleButton(
+                      featureName: f.name,
+                      isDisabled: isDisabled,
+                      onToggle: onToggle,
+                    ),
+                  ],
                 ],
               ),
               subtitle: Text(
@@ -784,7 +840,12 @@ class _SubclassFeaturesSection extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
-                    i18n.subclassFeatureDescription(className, subclassName, f.name) ?? f.description,
+                    i18n.subclassFeatureDescription(
+                          className,
+                          subclassName,
+                          f.name,
+                        ) ??
+                        f.description,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
@@ -836,8 +897,18 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   String? _loadError;
 
   static const _classOrder = [
-    'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
-    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard',
+    'Barbarian',
+    'Bard',
+    'Cleric',
+    'Druid',
+    'Fighter',
+    'Monk',
+    'Paladin',
+    'Ranger',
+    'Rogue',
+    'Sorcerer',
+    'Warlock',
+    'Wizard',
   ];
 
   @override
@@ -869,9 +940,11 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       final results = await Future.wait([
         Future(() async {
           final map = <String, List<SrdClassFeature>>{};
-          await Future.wait(_classOrder.map((cls) async {
-            map[cls] = await srd.getClassFeatures(cls);
-          }));
+          await Future.wait(
+            _classOrder.map((cls) async {
+              map[cls] = await srd.getClassFeatures(cls);
+            }),
+          );
           return map;
         }),
         srd.getAllSubclassFeatures(),
@@ -881,8 +954,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       ]);
       if (mounted) {
         setState(() {
-          _allClassFeatures =
-              results[0] as Map<String, List<SrdClassFeature>>;
+          _allClassFeatures = results[0] as Map<String, List<SrdClassFeature>>;
           _allSubclassFeatures =
               results[1] as Map<String, Map<String, List<SrdClassFeature>>>;
           _races = results[2] as List<SrdRace>;
@@ -900,10 +972,12 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     final scheme = Theme.of(context).colorScheme;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
-    final notifier =
-        ref.read(characterDetailProvider(widget.characterId).notifier);
-    final character =
-        ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
+    final notifier = ref.read(
+      characterDetailProvider(widget.characterId).notifier,
+    );
+    final character = ref
+        .watch(characterDetailProvider(widget.characterId))
+        .valueOrNull;
     final existingKeys = {
       ...?character?.extraFeatures.map((f) => '${f.sourceClass}:${f.name}'),
     };
@@ -932,8 +1006,10 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                Text(AppLocalizations.of(context)!.featuresAddLabel,
-                    style: Theme.of(context).textTheme.titleMedium),
+                Text(
+                  AppLocalizations.of(context)!.featuresAddLabel,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
                 const Spacer(),
                 IconButton(
                   icon: const Icon(Icons.close),
@@ -945,8 +1021,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           // Search field (hidden on Custom tab, index 4)
           if (_tabs.index != 4)
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: TextField(
                 controller: _search,
                 decoration: InputDecoration(
@@ -975,15 +1050,23 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           Expanded(
             child: _loadError != null
                 ? Center(
-                    child: Text(AppLocalizations.of(context)!.featuresLoadError,
-                        style: TextStyle(color: scheme.error)))
+                    child: Text(
+                      AppLocalizations.of(context)!.featuresLoadError,
+                      style: TextStyle(color: scheme.error),
+                    ),
+                  )
                 : TabBarView(
                     controller: _tabs,
                     children: [
                       _buildClassList(existingKeys, notifier, scheme, i18n),
                       _buildSubclassList(existingKeys, notifier, scheme, i18n),
                       _buildRacialList(existingKeys, notifier, scheme, i18n),
-                      _buildBackgroundList(existingKeys, notifier, scheme, i18n),
+                      _buildBackgroundList(
+                        existingKeys,
+                        notifier,
+                        scheme,
+                        i18n,
+                      ),
                       _buildCustomForm(notifier, scheme, scrollCtrl),
                     ],
                   ),
@@ -994,22 +1077,6 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   }
 
   // ── Shared tile builder ───────────────────────────────────────────────────
-
-  String _typeLabel(String type, BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    switch (type) {
-      case 'active':
-        return l10n.labelActive;
-      case 'passive':
-        return l10n.labelPassive;
-      case 'subclass':
-        return l10n.labelSubclass;
-      case 'asi':
-        return l10n.stepRaceASILabel;
-      default:
-        return type;
-    }
-  }
 
   Widget _buildTile({
     required SrdClassFeature feature,
@@ -1027,9 +1094,10 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     final displayName = nameTranslator?.call(feature.name) ?? feature.name;
     final displayDescription =
         descriptionTranslator?.call(feature.name) ?? feature.description;
-    final typeLabel = _typeLabel(feature.type, context);
+    final typeLabel = _featureTypeLabel(feature.type, context);
     final displaySubtitle =
-        subtitle ?? '${AppLocalizations.of(context)!.charCardLevel(feature.level)} · $typeLabel';
+        subtitle ??
+        '${AppLocalizations.of(context)!.charCardLevel(feature.level)} · $typeLabel';
     return ListTile(
       title: Text(displayName, style: const TextStyle(fontSize: 14)),
       subtitle: Text(
@@ -1044,8 +1112,11 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               width: 48,
               height: 48,
               child: Center(
-                child:
-                    Icon(Icons.check_circle, color: scheme.primary, size: 24),
+                child: Icon(
+                  Icons.check_circle,
+                  color: scheme.primary,
+                  size: 24,
+                ),
               ),
             )
           : IconButton(
@@ -1079,15 +1150,21 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     ColorScheme scheme,
     SrdI18nService i18n,
   ) {
-    if (_allClassFeatures == null) return const Center(child: CircularProgressIndicator());
+    if (_allClassFeatures == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
     final q = _search.text.toLowerCase();
 
     if (q.isNotEmpty) {
       final results = <(String, SrdClassFeature)>[];
       for (final cls in _classOrder) {
         for (final f in _allClassFeatures![cls] ?? <SrdClassFeature>[]) {
+          final localizedName = i18n.classFeatureName(cls, f.name);
+          final localizedDesc = i18n.classFeatureDescription(cls, f.name);
           if (f.name.toLowerCase().contains(q) ||
-              f.description.toLowerCase().contains(q)) {
+              f.description.toLowerCase().contains(q) ||
+              (localizedName != null && localizedName.toLowerCase().contains(q)) ||
+              (localizedDesc != null && localizedDesc.toLowerCase().contains(q))) {
             results.add((cls, f));
           }
         }
@@ -1096,18 +1173,23 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         return _emptySearch(q);
       }
       return ListView(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
         children: results
-            .map((r) => _buildTile(
-                  feature: r.$2,
-                  sourceLabel: r.$1,
-                  sourceKey: r.$1,
-                  existingKeys: existingKeys,
-                  notifier: notifier,
-                  scheme: scheme,
-                  nameTranslator: (n) => i18n.classFeatureName(r.$1, n),
-                  descriptionTranslator: (n) => i18n.classFeatureDescription(r.$1, n),
-                ))
+            .map(
+              (r) => _buildTile(
+                feature: r.$2,
+                sourceLabel: r.$1,
+                sourceKey: r.$1,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+                nameTranslator: (n) => i18n.classFeatureName(r.$1, n),
+                descriptionTranslator: (n) =>
+                    i18n.classFeatureDescription(r.$1, n),
+              ),
+            )
             .toList(),
       );
     }
@@ -1116,26 +1198,35 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     for (final cls in _classOrder) {
       final features = _allClassFeatures![cls] ?? [];
       if (features.isEmpty) continue;
-      slivers.add(SliverStickyHeader(
-        header: _GroupHeader(label: cls),
-        sliver: SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (_, i) => _buildTile(
-              feature: features[i],
-              sourceLabel: cls,
-              sourceKey: cls,
-              existingKeys: existingKeys,
-              notifier: notifier,
-              scheme: scheme,
-              nameTranslator: (n) => i18n.classFeatureName(cls, n),
-              descriptionTranslator: (n) => i18n.classFeatureDescription(cls, n),
+      slivers.add(
+        SliverStickyHeader(
+          header: _GroupHeader(label: cls),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (_, i) => _buildTile(
+                feature: features[i],
+                sourceLabel: cls,
+                sourceKey: cls,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+                nameTranslator: (n) => i18n.classFeatureName(cls, n),
+                descriptionTranslator: (n) =>
+                    i18n.classFeatureDescription(cls, n),
+              ),
+              childCount: features.length,
             ),
-            childCount: features.length,
           ),
         ),
-      ));
+      );
     }
-    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
+    slivers.add(
+      SliverPadding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
+      ),
+    );
     return CustomScrollView(slivers: slivers);
   }
 
@@ -1147,7 +1238,9 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     ColorScheme scheme,
     SrdI18nService i18n,
   ) {
-    if (_allSubclassFeatures == null) return const Center(child: CircularProgressIndicator());
+    if (_allSubclassFeatures == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
     final q = _search.text.toLowerCase();
     final allSub = _allSubclassFeatures!;
 
@@ -1158,9 +1251,15 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         final subMap = allSub[cls] ?? {};
         for (final subName in subMap.keys) {
           for (final f in subMap[subName]!) {
+            final localizedName = i18n.subclassFeatureName(cls, subName, f.name);
+            final localizedDesc = i18n.subclassFeatureDescription(cls, subName, f.name);
+            final localizedSub = i18n.subclassName(cls, subName);
             if (f.name.toLowerCase().contains(q) ||
                 f.description.toLowerCase().contains(q) ||
-                subName.toLowerCase().contains(q)) {
+                subName.toLowerCase().contains(q) ||
+                (localizedName != null && localizedName.toLowerCase().contains(q)) ||
+                (localizedDesc != null && localizedDesc.toLowerCase().contains(q)) ||
+                localizedSub.toLowerCase().contains(q)) {
               results.add((cls, subName, f));
             }
           }
@@ -1168,18 +1267,23 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       }
       if (results.isEmpty) return _emptySearch(q);
       return ListView(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
         children: results
-            .map((r) => _buildTile(
-                  feature: r.$3,
-                  sourceLabel: r.$2,
-                  sourceKey: r.$2,
-                  existingKeys: existingKeys,
-                  notifier: notifier,
-                  scheme: scheme,
-                  nameTranslator: (n) => i18n.subclassFeatureName(r.$1, r.$2, n),
-                  descriptionTranslator: (n) => i18n.subclassFeatureDescription(r.$1, r.$2, n),
-                ))
+            .map(
+              (r) => _buildTile(
+                feature: r.$3,
+                sourceLabel: r.$2,
+                sourceKey: r.$2,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+                nameTranslator: (n) => i18n.subclassFeatureName(r.$1, r.$2, n),
+                descriptionTranslator: (n) =>
+                    i18n.subclassFeatureDescription(r.$1, r.$2, n),
+              ),
+            )
             .toList(),
       );
     }
@@ -1191,27 +1295,37 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       for (final subName in subMap.keys) {
         final features = subMap[subName]!;
         if (features.isEmpty) continue;
-        slivers.add(SliverStickyHeader(
-          header: _GroupHeader(label: '$cls — $subName'),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (_, i) => _buildTile(
-                feature: features[i],
-                sourceLabel: subName,
-                sourceKey: subName,
-                existingKeys: existingKeys,
-                notifier: notifier,
-                scheme: scheme,
-                nameTranslator: (n) => i18n.subclassFeatureName(cls, subName, n),
-                descriptionTranslator: (n) => i18n.subclassFeatureDescription(cls, subName, n),
+        slivers.add(
+          SliverStickyHeader(
+            header: _GroupHeader(label: '$cls — $subName'),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (_, i) => _buildTile(
+                  feature: features[i],
+                  sourceLabel: subName,
+                  sourceKey: subName,
+                  existingKeys: existingKeys,
+                  notifier: notifier,
+                  scheme: scheme,
+                  nameTranslator: (n) =>
+                      i18n.subclassFeatureName(cls, subName, n),
+                  descriptionTranslator: (n) =>
+                      i18n.subclassFeatureDescription(cls, subName, n),
+                ),
+                childCount: features.length,
               ),
-              childCount: features.length,
             ),
           ),
-        ));
+        );
       }
     }
-    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
+    slivers.add(
+      SliverPadding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
+      ),
+    );
     return CustomScrollView(slivers: slivers);
   }
 
@@ -1223,32 +1337,42 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     ColorScheme scheme,
     SrdI18nService i18n,
   ) {
-    if (_races == null || _raceTraits == null) return const Center(child: CircularProgressIndicator());
+    if (_races == null || _raceTraits == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
     final q = _search.text.toLowerCase();
     final traitMap = _raceTraits!;
 
     SrdClassFeature traitToFeature(String traitName) => SrdClassFeature(
-          name: traitName,
-          level: 1,
-          type: 'passive',
-          description: traitMap[traitName] ?? '',
-        );
+      name: traitName,
+      level: 1,
+      type: 'passive',
+      description: traitMap[traitName] ?? '',
+    );
 
     if (q.isNotEmpty) {
       final results = <(String, SrdClassFeature)>[];
       for (final race in _races!) {
         for (final t in race.traits) {
           final f = traitToFeature(t);
+          final localizedName = i18n.raceTraitName(t);
+          final localizedDesc = i18n.raceTraitDescription(t);
           if (t.toLowerCase().contains(q) ||
-              f.description.toLowerCase().contains(q)) {
+              f.description.toLowerCase().contains(q) ||
+              localizedName.toLowerCase().contains(q) ||
+              (localizedDesc != null && localizedDesc.toLowerCase().contains(q))) {
             results.add((race.name, f));
           }
         }
         for (final sub in race.subraces) {
           for (final t in sub.traits) {
             final f = traitToFeature(t);
+            final localizedName = i18n.raceTraitName(t);
+            final localizedDesc = i18n.raceTraitDescription(t);
             if (t.toLowerCase().contains(q) ||
-                f.description.toLowerCase().contains(q)) {
+                f.description.toLowerCase().contains(q) ||
+                localizedName.toLowerCase().contains(q) ||
+                (localizedDesc != null && localizedDesc.toLowerCase().contains(q))) {
               results.add((sub.name, f));
             }
           }
@@ -1256,19 +1380,23 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       }
       if (results.isEmpty) return _emptySearch(q);
       return ListView(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
         children: results
-            .map((r) => _buildTile(
-                  feature: r.$2,
-                  sourceLabel: r.$1,
-                  sourceKey: r.$1,
-                  existingKeys: existingKeys,
-                  notifier: notifier,
-                  scheme: scheme,
-                  subtitle: r.$1,
-                  nameTranslator: (n) => i18n.raceTraitName(n),
-                  descriptionTranslator: (n) => i18n.raceTraitDescription(n),
-                ))
+            .map(
+              (r) => _buildTile(
+                feature: r.$2,
+                sourceLabel: r.$1,
+                sourceKey: r.$1,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+                subtitle: r.$1,
+                nameTranslator: (n) => i18n.raceTraitName(n),
+                descriptionTranslator: (n) => i18n.raceTraitDescription(n),
+              ),
+            )
             .toList(),
       );
     }
@@ -1286,11 +1414,11 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       }
       if (allEntries.isEmpty) continue;
 
-      slivers.add(SliverStickyHeader(
-        header: _GroupHeader(label: race.name),
-        sliver: SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (_, i) {
+      slivers.add(
+        SliverStickyHeader(
+          header: _GroupHeader(label: race.name),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate((_, i) {
               final (key, f) = allEntries[i];
               return _buildTile(
                 feature: f,
@@ -1303,13 +1431,18 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                 nameTranslator: (n) => i18n.raceTraitName(n),
                 descriptionTranslator: (n) => i18n.raceTraitDescription(n),
               );
-            },
-            childCount: allEntries.length,
+            }, childCount: allEntries.length),
           ),
         ),
-      ));
+      );
     }
-    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
+    slivers.add(
+      SliverPadding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
+      ),
+    );
     return CustomScrollView(slivers: slivers);
   }
 
@@ -1322,14 +1455,19 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   ) {
     return SingleChildScrollView(
       controller: scrollCtrl,
-      padding: EdgeInsets.fromLTRB(16, 8, 16, 32 + MediaQuery.of(context).viewPadding.bottom),
+      padding: EdgeInsets.fromLTRB(
+        16,
+        8,
+        16,
+        32 + MediaQuery.of(context).viewPadding.bottom,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextField(
             controller: _customNameCtrl,
             decoration: InputDecoration(
-            labelText: AppLocalizations.of(context)!.labelFeatureName,
+              labelText: AppLocalizations.of(context)!.labelFeatureName,
               border: const OutlineInputBorder(),
             ),
             onChanged: (_) => setState(() {}),
@@ -1372,22 +1510,21 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                       type: _customTypeActive ? 'active' : 'passive',
                       description: _customDescCtrl.text.trim(),
                     );
-                    await notifier.addExtraFeature(f, 'Custom');
+                    await notifier.addExtraFeature(f, kFeatureSourceCustom);
                     _customNameCtrl.clear();
                     _customDescCtrl.clear();
                     if (mounted) {
                       setState(() {});
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(
-                              '${f.name} adicionada!'),
+                          content: Text(AppLocalizations.of(context)!.featureAddedSnackbar(f.name)),
                           behavior: SnackBarBehavior.floating,
                         ),
                       );
                     }
                   },
             icon: const Icon(Icons.add),
-            label: const Text('Adicionar Feature'),
+            label: Text(AppLocalizations.of(context)!.featureAddButton),
           ),
         ],
       ),
@@ -1402,41 +1539,52 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     ColorScheme scheme,
     SrdI18nService i18n,
   ) {
-    if (_backgrounds == null) return const Center(child: CircularProgressIndicator());
+    if (_backgrounds == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
     final q = _search.text.toLowerCase();
 
     SrdClassFeature bgToFeature(SrdBackground bg) => SrdClassFeature(
-          name: bg.feature.name,
-          level: 1,
-          type: 'passive',
-          description: bg.feature.description,
-        );
+      name: bg.feature.name,
+      level: 1,
+      type: 'passive',
+      description: bg.feature.description,
+    );
 
     if (q.isNotEmpty) {
       final results = <(String, SrdClassFeature)>[];
       for (final bg in _backgrounds!) {
         final f = bgToFeature(bg);
+        final localizedBgName = i18n.backgroundName(bg.name);
+        final localizedFeatureName = i18n.backgroundFeatureName(bg.name);
         if (bg.name.toLowerCase().contains(q) ||
             f.name.toLowerCase().contains(q) ||
-            f.description.toLowerCase().contains(q)) {
+            f.description.toLowerCase().contains(q) ||
+            localizedBgName.toLowerCase().contains(q) ||
+            (localizedFeatureName != null && localizedFeatureName.toLowerCase().contains(q))) {
           results.add((bg.name, f));
         }
       }
       if (results.isEmpty) return _emptySearch(q);
       return ListView(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
         children: results
-            .map((r) => _buildTile(
-                  feature: r.$2,
-                  sourceLabel: r.$1,
-                  sourceKey: r.$1,
-                  existingKeys: existingKeys,
-                  notifier: notifier,
-                  scheme: scheme,
-                  subtitle: r.$1,
-                  nameTranslator: (_) => i18n.backgroundFeatureName(r.$1),
-                  descriptionTranslator: (_) => i18n.backgroundFeatureDescription(r.$1),
-                ))
+            .map(
+              (r) => _buildTile(
+                feature: r.$2,
+                sourceLabel: r.$1,
+                sourceKey: r.$1,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+                subtitle: r.$1,
+                nameTranslator: (_) => i18n.backgroundFeatureName(r.$1),
+                descriptionTranslator: (_) =>
+                    i18n.backgroundFeatureDescription(r.$1),
+              ),
+            )
             .toList(),
       );
     }
@@ -1444,37 +1592,45 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     final slivers = <Widget>[];
     for (final bg in _backgrounds!) {
       final f = bgToFeature(bg);
-      slivers.add(SliverStickyHeader(
-        header: _GroupHeader(label: bg.name),
-        sliver: SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (_, _) => _buildTile(
-              feature: f,
-              sourceLabel: bg.name,
-              sourceKey: bg.name,
-              existingKeys: existingKeys,
-              notifier: notifier,
-              scheme: scheme,
-              subtitle: bg.name,
-              nameTranslator: (_) => i18n.backgroundFeatureName(bg.name),
-              descriptionTranslator: (_) => i18n.backgroundFeatureDescription(bg.name),
+      slivers.add(
+        SliverStickyHeader(
+          header: _GroupHeader(label: bg.name),
+          sliver: SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (_, _) => _buildTile(
+                feature: f,
+                sourceLabel: bg.name,
+                sourceKey: bg.name,
+                existingKeys: existingKeys,
+                notifier: notifier,
+                scheme: scheme,
+                subtitle: bg.name,
+                nameTranslator: (_) => i18n.backgroundFeatureName(bg.name),
+                descriptionTranslator: (_) =>
+                    i18n.backgroundFeatureDescription(bg.name),
+              ),
+              childCount: 1,
             ),
-            childCount: 1,
           ),
         ),
-      ));
+      );
     }
-    slivers.add(SliverPadding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom)));
+    slivers.add(
+      SliverPadding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewPadding.bottom,
+        ),
+      ),
+    );
     return CustomScrollView(slivers: slivers);
   }
 
   Widget _emptySearch(String q) => Center(
-        child: Text(
-          'Nenhuma feature encontrada para "$q"',
-          style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurfaceVariant),
-        ),
-      );
+    child: Text(
+      'Nenhuma feature encontrada para "$q"',
+      style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
+    ),
+  );
 }
 
 // ── Feature Detail Sheet ──────────────────────────────────────────────────────
@@ -1502,7 +1658,11 @@ class _FeatureDetailSheet extends StatelessWidget {
       builder: (_, scrollCtrl) => ListView(
         controller: scrollCtrl,
         padding: EdgeInsets.fromLTRB(
-            20, 0, 20, 16 + MediaQuery.of(context).viewPadding.bottom),
+          20,
+          0,
+          20,
+          16 + MediaQuery.of(context).viewPadding.bottom,
+        ),
         children: [
           // Drag handle
           Center(
@@ -1527,19 +1687,16 @@ class _FeatureDetailSheet extends StatelessWidget {
           Text(
             subtitle,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: scheme.onSurfaceVariant,
-                  fontStyle: FontStyle.italic,
-                ),
+              color: scheme.onSurfaceVariant,
+              fontStyle: FontStyle.italic,
+            ),
           ),
           const SizedBox(height: 16),
           const Divider(),
           const SizedBox(height: 12),
 
           // Description
-          Text(
-            description,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
+          Text(description, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );

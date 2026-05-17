@@ -3,7 +3,6 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../data/datasources/srd/srd_data_source.dart';
 import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
 import '../../../shared/providers/providers.dart';
@@ -22,13 +21,14 @@ class _StepRaceState extends ConsumerState<StepRace> {
   @override
   void initState() {
     super.initState();
-    _racesFuture = SrdDataSource.instance.getRaces();
+    _racesFuture = ref.read(srdDataSourceProvider).getRaces();
   }
 
   @override
   Widget build(BuildContext context) {
     final draft = ref.watch(characterDraftProvider);
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     return FutureBuilder<List<SrdRace>>(
       future: _racesFuture,
@@ -52,13 +52,9 @@ class _StepRaceState extends ConsumerState<StepRace> {
                   isSelected: isSelected,
                   onTap: () {
                     if (isSelected) {
-                      ref
-                          .read(characterDraftProvider.notifier)
-                          .clearRace();
+                      ref.read(characterDraftProvider.notifier).clearRace();
                     } else {
-                      ref
-                          .read(characterDraftProvider.notifier)
-                          .setRace(race);
+                      ref.read(characterDraftProvider.notifier).setRace(race);
                     }
                   },
                 ),
@@ -67,9 +63,8 @@ class _StepRaceState extends ConsumerState<StepRace> {
                     race: race,
                     i18n: i18n,
                     selectedSubrace: draft.selectedSubrace,
-                    onSelect: (s) => ref
-                        .read(characterDraftProvider.notifier)
-                        .setSubrace(s),
+                    onSelect: (s) =>
+                        ref.read(characterDraftProvider.notifier).setSubrace(s),
                   ),
               ],
             );
@@ -118,42 +113,38 @@ class _RaceCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(raceName,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium
-                            ?.copyWith(
-                              color: isSelected
-                                  ? scheme.onPrimaryContainer
-                                  : null,
-                            )),
+                    Text(
+                      raceName,
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: isSelected ? scheme.onPrimaryContainer : null,
+                      ),
+                    ),
                     const SizedBox(height: 4),
                     Text(
                       '${l10n.stepRaceSpeedLabel}: ${race.speed}ft  ·  ${l10n.stepRaceASILabel}: ${_asiText(l10n)}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: isSelected
-                                ? scheme.onPrimaryContainer
-                                : scheme.onSurfaceVariant,
-                          ),
+                        color: isSelected
+                            ? scheme.onPrimaryContainer
+                            : scheme.onSurfaceVariant,
+                      ),
                     ),
                     if (race.subraces.isNotEmpty)
                       Padding(
                         padding: const EdgeInsets.only(top: 4),
                         child: Text(
                           l10n.stepRaceSubracesAvailable(race.subraces.length),
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    color: isSelected
-                                        ? scheme.onPrimaryContainer
-                                        : scheme.primary,
-                                  ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                                color: isSelected
+                                    ? scheme.onPrimaryContainer
+                                    : scheme.primary,
+                              ),
                         ),
                       ),
                   ],
                 ),
               ),
-              if (isSelected)
-                Icon(Icons.check_circle, color: scheme.primary),
+              if (isSelected) Icon(Icons.check_circle, color: scheme.primary),
             ],
           ),
         ),
@@ -186,8 +177,10 @@ class _SubraceSelector extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text(l10n.stepChooseSubrace,
-                style: Theme.of(context).textTheme.labelLarge),
+            child: Text(
+              l10n.stepChooseSubrace,
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
           ),
           ...race.subraces.map((sub) {
             final isSelected = selectedSubrace?.name == sub.name;
@@ -203,18 +196,20 @@ class _SubraceSelector extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 12),
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
                   child: Row(
                     children: [
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(subName,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium
-                                    ?.copyWith(fontWeight: FontWeight.bold)),
+                            Text(
+                              subName,
+                              style: Theme.of(context).textTheme.bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.bold),
+                            ),
                             if (asiText.isNotEmpty)
                               Text(
                                 '${l10n.stepRaceASILabel}: $asiText',
@@ -224,8 +219,11 @@ class _SubraceSelector extends StatelessWidget {
                         ),
                       ),
                       if (isSelected)
-                        Icon(Icons.check_circle,
-                            color: scheme.secondary, size: 20),
+                        Icon(
+                          Icons.check_circle,
+                          color: scheme.secondary,
+                          size: 20,
+                        ),
                     ],
                   ),
                 ),

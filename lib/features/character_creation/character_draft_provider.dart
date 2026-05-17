@@ -497,7 +497,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     state = state.copyWith(classEquipmentSpecifics: specifics);
   }
 
-  Future<Character> buildAndSave(WidgetRef ref) async {
+  Future<Character> buildAndSave(WidgetRef ref, {String fallbackName = 'Unnamed Hero'}) async {
     final draft = state;
     final repo = ref.read(characterRepositoryProvider);
     final attrs = draft.finalAttributes;
@@ -591,9 +591,49 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       }
     }
 
+    // Equipa a primeira armadura de corpo e o escudo (se houver) e calcula AC.
+    final dex = attrs['Dexterity'] ?? 10;
+    final dexMod = ((dex - 10) / 2).floor();
+
+    EquipmentItem? bodyArmor;
+    EquipmentItem? shield;
+    for (final item in startingEquipment) {
+      if (item.itemType != ItemType.armor) continue;
+      if (item.properties?['isShield'] == true) {
+        shield ??= item;
+      } else {
+        bodyArmor ??= item;
+      }
+    }
+    // Marca como equipado na lista
+    for (int i = 0; i < startingEquipment.length; i++) {
+      if (identical(startingEquipment[i], bodyArmor) ||
+          identical(startingEquipment[i], shield)) {
+        startingEquipment[i] = startingEquipment[i].copyWith(isEquipped: true);
+      }
+    }
+    // Calcula a CA real com base nas propriedades da armadura
+    int armorClass = 10 + dexMod;
+    if (bodyArmor != null && bodyArmor.properties != null) {
+      final props = bodyArmor.properties!;
+      final base = (props['baseAC'] as num).toInt();
+      final addDex = props['addDexModifier'] as bool? ?? false;
+      final maxDex = props['maxDexBonus'] as int?;
+      if (!addDex) {
+        armorClass = base;
+      } else if (maxDex != null) {
+        armorClass = base + (dexMod < maxDex ? dexMod : maxDex);
+      } else {
+        armorClass = base + dexMod;
+      }
+    }
+    if (shield != null) {
+      armorClass += (shield.properties?['acBonus'] as int? ?? 2);
+    }
+
     final character = Character(
       id: draft.id,
-      name: draft.name.isEmpty ? 'Unnamed Hero' : draft.name,
+      name: draft.name.trim().isEmpty ? fallbackName : draft.name.trim(),
       playerName: draft.playerName,
       race: draft.selectedRace!.name,
       subrace: draft.selectedSubrace?.name,
@@ -616,7 +656,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         current: hitDie + conMod,
         temporary: 0,
       ),
-      armorClass: 10 + (((attrs['Dexterity'] ?? 10) - 10) / 2).floor(),
+      armorClass: armorClass,
       speed: draft.selectedRace!.speed,
       proficiencyBonus: 2,
       savingThrowProficiencies: draft.selectedClass!.savingThrows,

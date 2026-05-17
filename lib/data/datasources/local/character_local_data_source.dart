@@ -13,6 +13,10 @@ import '../../models/models.dart';
 class CharacterLocalDataSource {
   CharacterLocalDataSource._() : _backend = createStorageBackend();
 
+  /// Constructor for testing: accepts a custom [StorageBackend].
+  CharacterLocalDataSource.fromBackend(StorageBackend backend)
+      : _backend = backend;
+
   static final CharacterLocalDataSource instance =
       CharacterLocalDataSource._();
 

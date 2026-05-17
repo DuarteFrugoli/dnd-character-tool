@@ -1116,4 +1116,135 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get stepToolCategoryArtisanOrInstrument => '장인의 도구 또는 도구';
+
+  @override
+  String exportCopied(String label) {
+    return '$label 복사됨!';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return '$name 내보내기';
+  }
+
+  @override
+  String get exportLabelToken => '토큰';
+
+  @override
+  String get exportCopyToken => '토큰 복사';
+
+  @override
+  String get exportHideQr => 'QR 코드 숨기기';
+
+  @override
+  String get exportShowQr => 'QR 코드 표시';
+
+  @override
+  String get exportQrTooLarge =>
+      '캐릭터가 QR 코드에 비해 너무 큽니다.\n토큰 또는 JSON을 사용하여 공유하세요.';
+
+  @override
+  String get exportShowJson => 'JSON 표시';
+
+  @override
+  String get exportCopyJson => 'JSON 복사';
+
+  @override
+  String get dialogClose => '닫기';
+
+  @override
+  String get importDialogTitle => '캐릭터 가져오기';
+
+  @override
+  String get importTokenHint => '여기에 토큰 붙여넣기…';
+
+  @override
+  String get importScanQr => 'QR 코드 스캔';
+
+  @override
+  String get importUseJson => 'JSON 직접 사용';
+
+  @override
+  String get importJsonHint => '여기에 JSON 붙여넣기…';
+
+  @override
+  String get dialogImport => '가져오기';
+
+  @override
+  String get spellBrowserTitle => '주문 검색';
+
+  @override
+  String get spellBrowserFilters => '필터';
+
+  @override
+  String get spellBrowserSearchHint => '주문 검색...';
+
+  @override
+  String get filterClearAll => '모두 지우기';
+
+  @override
+  String get loadingLabel => '로딩 중...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '주문 $count개';
+  }
+
+  @override
+  String get spellBrowserEmpty => '현재 필터와 일치하는 주문이 없습니다.';
+
+  @override
+  String get spellCantrip => '소마법';
+
+  @override
+  String spellLevelN(int n) {
+    return '$n레벨';
+  }
+
+  @override
+  String get castingTimeAction => '행동';
+
+  @override
+  String get castingTimeBonusAction => '추가 행동';
+
+  @override
+  String get castingTimeReaction => '반응';
+
+  @override
+  String get castingTimeLonger => '긴 시전';
+
+  @override
+  String get filterConcentration => '집중';
+
+  @override
+  String get filterRitual => '의식';
+
+  @override
+  String get filterAllLevels => '모든 레벨';
+
+  @override
+  String get avatarChoosePhoto => '사진 선택';
+
+  @override
+  String get avatarRemovePhoto => '사진 제거';
+
+  @override
+  String get avatarCropPhoto => '사진 자르기';
+
+  @override
+  String get avatarChangePhoto => '사진 변경';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '$name 추가됨!';
+  }
+
+  @override
+  String get featureAddButton => '특성 추가';
+
+  @override
+  String get reviewLanguageChoices => '언어 선택';
+
+  @override
+  String get reviewLanguageTypeHint => '언어 입력…';
 }

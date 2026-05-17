@@ -1127,4 +1127,135 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get stepToolCategoryArtisanOrInstrument =>
       'Artisan\'s tool or instrument';
+
+  @override
+  String exportCopied(String label) {
+    return '$label copied!';
+  }
+
+  @override
+  String exportDialogTitle(String name) {
+    return 'Export $name';
+  }
+
+  @override
+  String get exportLabelToken => 'Token';
+
+  @override
+  String get exportCopyToken => 'Copy token';
+
+  @override
+  String get exportHideQr => 'Hide QR Code';
+
+  @override
+  String get exportShowQr => 'Show QR Code';
+
+  @override
+  String get exportQrTooLarge =>
+      'Character too large for QR code.\nUse the token or JSON to share.';
+
+  @override
+  String get exportShowJson => 'Show JSON';
+
+  @override
+  String get exportCopyJson => 'Copy JSON';
+
+  @override
+  String get dialogClose => 'Close';
+
+  @override
+  String get importDialogTitle => 'Import Character';
+
+  @override
+  String get importTokenHint => 'Paste token here…';
+
+  @override
+  String get importScanQr => 'Scan QR Code';
+
+  @override
+  String get importUseJson => 'Use JSON directly';
+
+  @override
+  String get importJsonHint => 'Paste JSON here…';
+
+  @override
+  String get dialogImport => 'Import';
+
+  @override
+  String get spellBrowserTitle => 'Browse Spells';
+
+  @override
+  String get spellBrowserFilters => 'Filters';
+
+  @override
+  String get spellBrowserSearchHint => 'Search spells...';
+
+  @override
+  String get filterClearAll => 'Clear all';
+
+  @override
+  String get loadingLabel => 'Loading...';
+
+  @override
+  String spellBrowserCount(int count, String s) {
+    return '$count spell$s';
+  }
+
+  @override
+  String get spellBrowserEmpty => 'No spells match the current filters.';
+
+  @override
+  String get spellCantrip => 'Cantrip';
+
+  @override
+  String spellLevelN(int n) {
+    return 'Lvl $n';
+  }
+
+  @override
+  String get castingTimeAction => 'Action';
+
+  @override
+  String get castingTimeBonusAction => 'Bonus action';
+
+  @override
+  String get castingTimeReaction => 'Reaction';
+
+  @override
+  String get castingTimeLonger => 'Longer cast';
+
+  @override
+  String get filterConcentration => 'Concentration';
+
+  @override
+  String get filterRitual => 'Ritual';
+
+  @override
+  String get filterAllLevels => 'All levels';
+
+  @override
+  String get avatarChoosePhoto => 'Choose photo';
+
+  @override
+  String get avatarRemovePhoto => 'Remove photo';
+
+  @override
+  String get avatarCropPhoto => 'Crop photo';
+
+  @override
+  String get avatarChangePhoto => 'Change photo';
+
+  @override
+  String featureAddedSnackbar(String name) {
+    return '$name added!';
+  }
+
+  @override
+  String get featureAddButton => 'Add Feature';
+
+  @override
+  String get reviewLanguageChoices => 'Language Choices';
+
+  @override
+  String get reviewLanguageTypeHint => 'Type a language…';
 }

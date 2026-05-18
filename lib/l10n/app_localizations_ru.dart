@@ -1264,4 +1264,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get reviewLanguageTypeHint => 'Введите язык…';
+
+  @override
+  String get avatarRemoveConfirmTitle => 'Удалить фото?';
+
+  @override
+  String get avatarRemoveConfirmBody => 'Это действие нельзя отменить.';
 }

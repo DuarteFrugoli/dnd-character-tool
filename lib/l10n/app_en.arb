@@ -1083,6 +1083,10 @@
   "reviewLanguageChoices": "Language Choices",
   "@reviewLanguageChoices": { "description": "Review step: language choices section title." },
   "reviewLanguageTypeHint": "Type a language…",
-  "@reviewLanguageTypeHint": { "description": "Review step: language text field hint." }
+  "@reviewLanguageTypeHint": { "description": "Review step: language text field hint." },
+  "avatarRemoveConfirmTitle": "Remove photo?",
+  "@avatarRemoveConfirmTitle": { "description": "Avatar: confirmation dialog title when removing photo." },
+  "avatarRemoveConfirmBody": "This action cannot be undone.",
+  "@avatarRemoveConfirmBody": { "description": "Avatar: confirmation dialog body when removing photo." }
 }
 

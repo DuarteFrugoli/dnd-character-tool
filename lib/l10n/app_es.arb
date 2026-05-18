@@ -382,5 +382,7 @@
   "featureAddedSnackbar": "¡{name} añadido!",
   "featureAddButton": "Añadir característica",
   "reviewLanguageChoices": "Opciones de idioma",
-  "reviewLanguageTypeHint": "Escribe un idioma…"
+  "reviewLanguageTypeHint": "Escribe un idioma…",
+  "avatarRemoveConfirmTitle": "¿Eliminar foto?",
+  "avatarRemoveConfirmBody": "Esta acción no se puede deshacer."
 }

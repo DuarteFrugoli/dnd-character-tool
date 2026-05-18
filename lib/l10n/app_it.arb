@@ -381,5 +381,7 @@
   "featureAddedSnackbar": "{name} aggiunto!",
   "featureAddButton": "Aggiungi caratteristica",
   "reviewLanguageChoices": "Scelte linguistiche",
-  "reviewLanguageTypeHint": "Digita una lingua…"
+  "reviewLanguageTypeHint": "Digita una lingua…",
+  "avatarRemoveConfirmTitle": "Rimuovere la foto?",
+  "avatarRemoveConfirmBody": "Questa azione non può essere annullata."
 }

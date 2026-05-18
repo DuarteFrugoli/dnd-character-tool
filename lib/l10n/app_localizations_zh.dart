@@ -1238,4 +1238,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get reviewLanguageTypeHint => '输入一门语言…';
+
+  @override
+  String get avatarRemoveConfirmTitle => '删除照片？';
+
+  @override
+  String get avatarRemoveConfirmBody => '此操作无法撤销。';
 }

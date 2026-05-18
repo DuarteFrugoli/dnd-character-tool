@@ -1258,4 +1258,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reviewLanguageTypeHint => 'Type a language…';
+
+  @override
+  String get avatarRemoveConfirmTitle => 'Remove photo?';
+
+  @override
+  String get avatarRemoveConfirmBody => 'This action cannot be undone.';
 }

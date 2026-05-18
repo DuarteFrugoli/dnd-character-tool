@@ -1247,4 +1247,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get reviewLanguageTypeHint => '언어 입력…';
+
+  @override
+  String get avatarRemoveConfirmTitle => '사진을 삭제할까요?';
+
+  @override
+  String get avatarRemoveConfirmBody => '이 작업은 취소할 수 없습니다.';
 }

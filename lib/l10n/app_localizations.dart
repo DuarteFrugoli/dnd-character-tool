@@ -2399,6 +2399,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Type a language…'**
   String get reviewLanguageTypeHint;
+
+  /// Avatar: confirmation dialog title when removing photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove photo?'**
+  String get avatarRemoveConfirmTitle;
+
+  /// Avatar: confirmation dialog body when removing photo.
+  ///
+  /// In en, this message translates to:
+  /// **'This action cannot be undone.'**
+  String get avatarRemoveConfirmBody;
 }
 
 class _AppLocalizationsDelegate

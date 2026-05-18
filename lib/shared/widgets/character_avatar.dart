@@ -99,7 +99,27 @@ Future<void> showCharacterPhotoPicker(
   if (action == null || !context.mounted) return;
 
   if (action == _AvatarAction.delete) {
-    onImageChanged(null);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmTitle ?? 'Remove photo?'),
+        content: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmBody ?? 'This action cannot be undone.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(AppLocalizations.of(ctx)?.dialogCancel ?? 'Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(
+              AppLocalizations.of(ctx)?.avatarRemovePhoto ?? 'Remove',
+              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
+            ),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true && context.mounted) onImageChanged(null);
     return;
   }
 
@@ -212,7 +232,27 @@ Future<void> _showPhotoViewer(
   if (!context.mounted) return;
 
   if (result == _ViewerResult.remove) {
-    onImageChanged(null);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmTitle ?? 'Remove photo?'),
+        content: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmBody ?? 'This action cannot be undone.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(AppLocalizations.of(ctx)?.dialogCancel ?? 'Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(
+              AppLocalizations.of(ctx)?.avatarRemovePhoto ?? 'Remove',
+              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
+            ),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true && context.mounted) onImageChanged(null);
   } else if (result == _ViewerResult.pick) {
     await _pickAndCrop(context, onChanged: onImageChanged);
   }

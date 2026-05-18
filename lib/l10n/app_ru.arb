@@ -381,5 +381,7 @@
   "featureAddedSnackbar": "{name} добавлено!",
   "featureAddButton": "Добавить особенность",
   "reviewLanguageChoices": "Выбор языков",
-  "reviewLanguageTypeHint": "Введите язык…"
+  "reviewLanguageTypeHint": "Введите язык…",
+  "avatarRemoveConfirmTitle": "Удалить фото?",
+  "avatarRemoveConfirmBody": "Это действие нельзя отменить."
 }

@@ -1246,4 +1246,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get reviewLanguageTypeHint => '言語を入力…';
+
+  @override
+  String get avatarRemoveConfirmTitle => '写真を削除しますか？';
+
+  @override
+  String get avatarRemoveConfirmBody => 'この操作は元に戻せません。';
 }

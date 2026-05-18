@@ -381,5 +381,7 @@
   "featureAddedSnackbar": "{name} 추가됨!",
   "featureAddButton": "특성 추가",
   "reviewLanguageChoices": "언어 선택",
-  "reviewLanguageTypeHint": "언어 입력…"
+  "reviewLanguageTypeHint": "언어 입력…",
+  "avatarRemoveConfirmTitle": "사진을 삭제할까요?",
+  "avatarRemoveConfirmBody": "이 작업은 취소할 수 없습니다."
 }

@@ -1265,4 +1265,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get reviewLanguageTypeHint => 'Sprache eingeben…';
+
+  @override
+  String get avatarRemoveConfirmTitle => 'Foto entfernen?';
+
+  @override
+  String get avatarRemoveConfirmBody =>
+      'Diese Aktion kann nicht rückgängig gemacht werden.';
 }

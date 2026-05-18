@@ -1269,4 +1269,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get reviewLanguageTypeHint => 'Saisissez une langue…';
+
+  @override
+  String get avatarRemoveConfirmTitle => 'Supprimer la photo ?';
+
+  @override
+  String get avatarRemoveConfirmBody => 'Cette action est irréversible.';
 }

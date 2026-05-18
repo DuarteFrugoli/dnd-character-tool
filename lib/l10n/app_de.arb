@@ -381,5 +381,7 @@
   "featureAddedSnackbar": "{name} hinzugefügt!",
   "featureAddButton": "Merkmal hinzufügen",
   "reviewLanguageChoices": "Sprachauswahl",
-  "reviewLanguageTypeHint": "Sprache eingeben…"
+  "reviewLanguageTypeHint": "Sprache eingeben…",
+  "avatarRemoveConfirmTitle": "Foto entfernen?",
+  "avatarRemoveConfirmBody": "Diese Aktion kann nicht rückgängig gemacht werden."
 }

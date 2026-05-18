@@ -9477,6 +9477,7 @@ if(s!==r)return s
 return b.yn(r)},
 bqU(a,b){var s,r,q,p,o,n,m,l,k=null,j=a.w,i=a.d
 if(i===B.eA&&j!=null){s=j.h(0,"damageDice")
+if(s==null)s=j.h(0,"damage")
 r=s==null?k:J.dw(s)
 s=j.h(0,"damageType")
 q=s==null?k:J.dw(s)
@@ -53032,7 +53033,7 @@ for(l=t.j,k=J.bc(l.a(o.h(0,"weapons"))),j=t.z;k.A();){i=a6.a(k.gR())
 h=A.aI(i.h(0,"name")).toLowerCase()
 g=A.aI(i.h(0,"category"))
 f=A.x(n,j)
-f.n(0,"damage",i.h(0,"damage"))
+f.n(0,"damageDice",i.h(0,"damage"))
 f.n(0,"damageType",i.h(0,"damageType"))
 if(i.h(0,"properties")!=null)f.n(0,"weaponProperties",i.h(0,"properties"))
 if(i.h(0,"range")!=null)f.n(0,"range",i.h(0,"range"))

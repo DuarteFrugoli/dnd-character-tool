@@ -76,10 +76,11 @@ Um item no inventário do personagem.
 |---|---|---|
 | `name` | `String` | Nome do item |
 | `category` | `String` | Ex: `"weapon"`, `"armor"`, `"gear"` |
+| `itemType` | `ItemType` | Enum: `weapon`, `armor`, `ammunition`, `gear` |
 | `quantity` | `int` | Quantidade (padrão: 1) |
 | `description` | `String?` | Descrição opcional |
 | `isEquipped` | `bool` | Se está equipado no momento |
-| `properties` | `Map<String, dynamic>?` | Propriedades extras (dano, peso, etc.) |
+| `properties` | `Map<String, dynamic>?` | Propriedades extras; armas: `damageDice`, `damageType`; armaduras: `baseAC`, `addDexModifier`, `maxDexBonus`, `isShield`, `acBonus` |
 
 ---
 
@@ -104,7 +105,20 @@ Uma magia conhecida ou preparada pelo personagem.
 | `level` | `int` | Nível (0 = truque) |
 | `isPrepared` | `bool` | Se está preparada (classes que preparam) |
 | `isAlwaysPrepared` | `bool` | Preparada por feature de classe/subclasse |
-| `school` | `String?` | Escola de magia |
+
+---
+
+## `InnateSpell`
+
+Magia inata racial (ex: Hellish Rebuke do Tiefling, Dancing Lights do Drow). Serialização manual.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `name` | `String` | Nome da magia |
+| `usesPerDay` | `int?` | Usos por dia; `null` = à vontade |
+| `usedToday` | `int` | Usos já gastos hoje |
+
+**Getters:** `isAtWill`, `canUse`, `remaining`.
 
 ---
 
@@ -164,9 +178,11 @@ Modelo principal. Compõe todos os modelos acima.
 | `currency` | `Map<String, int>` | Moedas: CP, SP, EP, GP, PP |
 | `spells` | `List<KnownSpell>` |
 | `spellSlots` | `SpellSlots` |
+| `innateSpells` | `List<InnateSpell>` | Magias inatas raciais com tracker de usos diários |
 | `features` | `List<String>` | Features de classe/raça/background como strings |
 | `extraFeatures` | `List<CharacterExtraFeature>` | Features adicionadas manualmente |
 | `disabledFeatures` | `List<String>` | Nomes de features desabilitadas (ocultas na UI) |
+| `disabledSpells` | `List<String>` | Nomes de magias desabilitadas pelo mestre |
 | `languages` | `List<String>` |
 | `personality` | `CharacterPersonality` |
 | `appearance` | `CharacterAppearance` |
@@ -174,6 +190,8 @@ Modelo principal. Compõe todos os modelos acima.
 | `notes` | `List<CharacterNote>` | Notas livres do jogador |
 | `imagePath` | `String?` |
 | `creationMode` | `CreationMode` |
+| `isPinned` | `bool` | Fixado no topo da lista |
+| `sortOrder` | `int` | Posição na lista (drag to reorder) |
 | `createdAt` | `DateTime` |
 | `updatedAt` | `DateTime` |
 

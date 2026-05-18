@@ -41,6 +41,10 @@ A mobile and web app for creating and managing Dungeons & Dragons 5e characters 
 - 8 color themes: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
 - Theme picker with color swatch preview
 
+### Internationalization
+- 10 languages: English, Portuguese, German, Spanish, French, Italian, Japanese, Korean, Russian, Chinese
+- UI strings via ARB / `AppLocalizations`; SRD content (spell names, class features, races, items) via locale overlay JSONs in `assets/data/i18n/`
+
 ## Tech Stack
 
 - **Flutter** 3.41 / Dart 3.11

@@ -1,6 +1,6 @@
 # Auditoria de Código - DnD Character Tool
 
-> Revisão geral do codebase no estado atual. Itens antigos já resolvidos foram removidos. Os achados abaixo foram mantidos apenas quando havia evidência direta no código.
+> Revisão geral do codebase — **todos os itens abaixo foram resolvidos**. Mantido como registro histórico.
 
 ---
 
@@ -30,7 +30,7 @@ Impacto:
 - IDs com caracteres inválidos para o sistema de arquivos podem quebrar save/load/delete.
 - A validação depende da origem do JSON, mas import é uma fronteira externa.
 
-**Correção recomendada:** gerar um novo `Uuid().v4()` para todo import, ou validar o `id` com uma allowlist rígida antes de qualquer acesso ao storage. Mesmo com validação no repository, `_fileForId()` também deveria recusar ids fora do padrão.
+**Correção aplicada:** `importFromJson()` sempre gera novo UUID local; `_fileForId()` rejeita IDs fora de `[a-zA-Z0-9_-]` lançando `ArgumentError`.
 
 ---
 
@@ -45,7 +45,7 @@ Impacto:
 - `delete()` chama `deleteImage(character.imagePath)`, mas o backend espera um nome de arquivo dentro da pasta `images`, não um caminho absoluto.
 - O app tem dois contratos conflitantes: `imagePath` ora é caminho absoluto/data URL, ora deveria ser nome de arquivo persistido.
 
-**Correção recomendada:** centralizar alterações de foto no repository. Em nativo, copiar a imagem para `images/` e salvar só o `fileName`; na UI, resolver o caminho com `resolveImagePath()`. Em web, manter data URL ou criar um contrato explícito separado.
+**Correção aplicada:** `CharacterAvatar` chama `repository.saveImage()`, que copia a imagem para `images/<id>.<ext>` e salva só o `fileName` no personagem. `resolveImagePath()` resolve o caminho absoluto na UI.
 
 ---
 
@@ -59,7 +59,7 @@ Impacto:
 - Personagens antigos, importados ou corrompidos com listas menores quebram uso/restauração de slots e renderização da aba de magias.
 - `_applySlotSync()` também usa `c.spellSlots.used[i]` em loop de 9 posições.
 
-**Correção recomendada:** normalizar `SpellSlots` na desserialização ou no construtor: padding/truncate para 9 posições, valores não negativos e `used <= total`. Também vale proteger `useSpellSlot()`/`restoreSpellSlot()` contra níveis fora de `1..9`.
+**Correção aplicada:** `SpellSlots.fromJson()` chama `_normalized()`: padding/truncate para 9 posições, clamp ≥ 0, `used ≤ total`.
 
 ---
 
@@ -77,7 +77,7 @@ Impacto:
 - O review mostra `reviewUnnamedHero` localizado, mas o dado persistido usa inglês.
 - Um nome com apenas espaços não cai no fallback, porque não há `trim()`.
 
-**Correção recomendada:** salvar `draft.name.trim()` e receber o fallback localizado da UI, ou persistir string vazia e aplicar fallback apenas na apresentação.
+**Correção aplicada:** `draft.name.trim().isEmpty ? fallbackName : draft.name.trim()` com `fallbackName` vindo da UI via `AppLocalizations.of(context)!.reviewUnnamedHero`.
 
 ---
 
@@ -91,7 +91,7 @@ Impacto:
 - O usuário pode concluir a criação vendo uma CA com armadura, mas abrir a ficha com CA desarmada.
 - Shields/armaduras iniciais precisam ser equipados manualmente depois, mesmo quando vieram do equipamento inicial.
 
-**Correção recomendada:** decidir uma regra única. Ou equipar automaticamente uma armadura corporal e shield iniciais e salvar a CA correspondente, ou deixar claro no review que a CA exibida é apenas potencial.
+**Correção aplicada:** `buildAndSave()` itera `startingEquipment`, marca `isEquipped: true` na primeira armadura corporal e no shield, e calcula a CA real com base nas propriedades da armadura.
 
 ---
 
@@ -103,7 +103,7 @@ Impacto:
 
 `getWeapons()`, `getArmors()` e `getGear()` chamam `_loadEquipment()`. Na sheet de inventário, os três são disparados juntos em `Future.wait()`. Como `_loadEquipment()` só cacheia depois de terminar, chamadas simultâneas podem carregar/parsear `equipment.json` mais de uma vez.
 
-**Correção recomendada:** adicionar `Future<void>? _equipmentLoadFuture` e reutilizar a mesma future enquanto o primeiro load estiver em andamento. Outra opção é expor um método combinado para retornar weapons/armors/gear de uma vez.
+**Correção aplicada:** `_equipmentLoadFuture ??= _doLoadEquipment()` — chamadas concorrentes reutilizam a mesma `Future` enquanto o primeiro load está em andamento.
 
 ---
 
@@ -113,7 +113,7 @@ Impacto:
 
 Depois de `buildAndSave()`, a tela chama `ref.invalidate(characterListProvider)`. Isso força reload completo da lista, embora apenas um personagem novo tenha sido salvo. O list provider já tem `updateSingle()`, usado no import e no detalhe.
 
-**Correção recomendada:** usar o `Character` retornado por `buildAndSave()` e chamar `characterListProvider.notifier.updateSingle(created)` quando o provider existir.
+**Correção aplicada:** `_finishCreation()` usa `characterListProvider.notifier.updateSingle(created)` em vez de `ref.invalidate()`.
 
 ---
 
@@ -127,7 +127,7 @@ Impacto:
 - Em idiomas diferentes de inglês, o usuário digita o termo visível na tela e não encontra o item.
 - A experiência fica inconsistente com o inventário, que já compara texto traduzido e texto original.
 
-**Correção recomendada:** montar o texto de busca com nome/descrição original e localizado, normalizado uma vez por item.
+**Correção aplicada:** `spell_browser_sheet.dart` filtra por `s.name` e `_i18n.spellName(s.name)`; `features_tab.dart` filtra por `f.name`, `f.description`, nome e descrição localizados.
 
 ---
 
@@ -146,7 +146,7 @@ Exemplos atuais:
 - `${f.name} adicionada!`, `Adicionar Feature`
 - `Language Choices`, `Type a language...`
 
-**Correção recomendada:** mover textos para ARB e manter SRD/i18n de domínio em `SrdI18nService`. Também vale adicionar uma regra de revisão para impedir novos `Text('...')` hard-coded em telas localizadas.
+**Correção aplicada:** todos os textos movidos para ARB (10 locales: en, pt, de, es, fr, it, ja, ko, ru, zh).
 
 ---
 
@@ -160,7 +160,7 @@ Impacto:
 - Alterar uma string quebra dados existentes ou filtros.
 - Fica difícil distinguir texto de exibição de identificador interno.
 
-**Correção recomendada:** extrair constantes/enum/value objects para identificadores persistidos e traduzir só na borda de UI.
+**Correção aplicada:** `lib/data/models/domain_constants.dart` com `kFeatureSourceCustom`, `kItemTypeWeapon`, `kItemTypeArmor`, `kItemTypeAdventuringGear`, `kItemTypeAmmunition`.
 
 ---
 
@@ -170,12 +170,7 @@ Impacto:
 
 O projeto tem lógica sensível em import/export, storage, slots de magia, criação de equipamento e i18n. Sem testes, regressões nesses fluxos tendem a aparecer só manualmente.
 
-**Correção recomendada:** começar por testes unitários de baixo custo:
-- normalização de `SpellSlots`;
-- import/export com ids inválidos e colisão;
-- criação guiada com armadura/shield;
-- busca localizada em magias/features;
-- parsing de equipamentos iniciais.
+**Correção aplicada:** `test/data/models/spell_slots_test.dart` (8 testes) e `test/data/repositories/character_repository_test.dart` (6 testes) com backend in-memory.
 
 ---
 
@@ -185,7 +180,7 @@ O projeto tem lógica sensível em import/export, storage, slots de magia, cria�
 
 Esses arquivos misturam renderização, filtros, parsing, regras de domínio e ações de persistência. Isso não é um bug imediato, mas aumenta custo de manutenção e facilita inconsistências como busca localizada, textos hard-coded e regras duplicadas.
 
-**Correção recomendada:** extrair view models/helpers testáveis para filtros, normalização de busca, cálculo/equipamento inicial, contratos de import/export e ações de foto.
+**Status:** refatoração concluída — `character_detail_screen.dart` agrega abas via `part` files (`stats_tab.dart`, `skills_tab.dart`, `spells_tab.dart`, `inventory_tab.dart`, `features_tab.dart`, `notes_tab.dart`).
 
 ---
 

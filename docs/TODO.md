@@ -1,1 +1,1 @@
-- refatorar sheet de personagem, arquivo mt grande, separar em abas
+- [x] refatorar sheet de personagem — concluído: `character_detail_screen.dart` usa `part` files por aba (`stats_tab.dart`, `skills_tab.dart`, `spells_tab.dart`, `inventory_tab.dart`, `features_tab.dart`, `notes_tab.dart`)

@@ -444,7 +444,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
               child: Text(
                 isLoading
                     ? _l10n?.loadingLabel ?? 'Loading...'
-                    : '${filtered.length} spell${filtered.length == 1 ? '' : 's'}',
+                    : _l10n?.spellBrowserCount(filtered.length, filtered.length == 1 ? '' : 's') ?? '${filtered.length} spell${filtered.length == 1 ? '' : 's'}',
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: scheme.onSurfaceVariant,
                 ),

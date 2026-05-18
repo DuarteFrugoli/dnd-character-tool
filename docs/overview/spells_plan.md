@@ -1,8 +1,10 @@
-﻿# Plano — Sistema de Magias
+﻿# Sistema de Magias — Estado atual
+
+> Documento histórico de planejamento — **todo o plano foi executado**. Mantido como referência da arquitetura implementada.
 
 ---
 
-## 1. O que já está implementado
+## 1. O que está implementado
 
 ### Dados
 - `spells.json`: 315 magias (níveis 0–9, SRD 5.1 completo)
@@ -37,7 +39,7 @@
 
 ---
 
-## 2. Próxima implementação — Prepare-all classes
+## 2. ✅ Prepare-all classes (implementado)
 
 **Classes afetadas:** Cleric, Druid, Paladin, Artificer, Wizard  
 **Regra D&D 5e:** essas classes têm acesso a *todas* as magias da classe até o nível máximo de slot — não precisam "aprender" magias, só precisam preparar as que vão usar no dia.
@@ -92,7 +94,7 @@ A lista principal da classe já está sempre visível — o browser não é usad
 
 ---
 
-## 3. Subclass always-prepared (domínios, juramentos, pactos)
+## 3. ✅ Subclass always-prepared (implementado)
 
 **Prioridade:** Alta — implementar logo após prepare-all.
 
@@ -114,7 +116,7 @@ A lista principal da classe já está sempre visível — o browser não é usad
 
 ---
 
-## 4. Subclasses conjuradoras (Eldritch Knight, Arcane Trickster)
+## 4. ✅ Subclasses conjuradoras — Eldritch Knight / Arcane Trickster (implementado)
 
 **Prioridade:** Média.
 
@@ -151,7 +153,7 @@ Fighter e Rogue base não são conjuradores (`SpellcastingEngine.forClass` retor
 
 ---
 
-## 5. Magias inatas raciais
+## 5. ✅ Magias inatas raciais (implementado)
 
 **Prioridade:** Baixa — não implementar na mesma sprint que 2 e 3.
 
@@ -182,7 +184,7 @@ Magias inatas (Tiefling, Drow, Gnome, etc.) têm mecanismo completamente diferen
 
 ---
 
-## 6. Decisões em aberto
+## 6. Decisões em aberto (registro histórico)
 
 - **Multiclasse:** não suportar em v1. Personagem tem uma classe. Documentar como limitação.
 - **Warlock Pact Magic:** slots especiais (todos do mesmo nível, recuperados em Short Rest). Requer campo separado no modelo ou lógica especial no engine. Adiar para sprint dedicada.

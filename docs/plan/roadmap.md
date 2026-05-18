@@ -26,7 +26,24 @@
 
 ---
 
-## v1.5 — Ferramenta de Mestre (atual)
+## v1.5 — Qualidade de vida do jogador (atual)
+
+### Edição da ficha
+- [ ] Edição completa: raça, subraça, classe, subclasse e background
+- [ ] Level up guiado — ao subir de nível: escolha de subclasse (se aplicável), ASI/feat, novos slots e features
+
+### Testes automatizados
+- [ ] `SpellcastingEngine` — slots, DC, attack bonus por classe e nível
+- [ ] `buildAndSave` — fluxo de criação com armadura/CA
+- [ ] `CharacterRepository` — save → load → delete
+
+### Pequenas melhorias
+- [ ] Export completo como `.zip` (JSON + imagem juntos)
+- [ ] Rolar dados diretamente na ficha (toque em atributo/perícia → resultado)
+
+---
+
+## v2 — Ferramenta de Mestre
 
 ### Home com navegação por abas
 - [ ] Bottom navigation bar: **Personagens** | **NPCs**
@@ -42,17 +59,6 @@
   - Importante: ficha completa salva na lista de NPCs
 - [ ] Flag `isNpc: bool` no modelo `Character` para distinguir PCs de NPCs internamente
 - [ ] NPCs figurantes têm opção de "Salvar" ou "Descartar" após geração
-
----
-
-## v2 — Qualidade de vida
-
-- [ ] Export completo como `.zip` (JSON + imagem do personagem juntos)
-- [ ] Imagens de exemplo bundadas para NPCs e equipamentos base
-- [ ] Tema visual customizado (cores, tipografia inspirada em D&D)
-- [ ] Rolar dados diretamente na ficha (animação de dado)
-- [ ] **Modo aleatório de criação** — revisitar quando definida a questão de granularidade (o quão aleatório = ainda jogável?)
-- [ ] Edição completa da ficha (raça, subraça e classe)
 
 ---
 

@@ -9,6 +9,24 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.1.1] - 2026-05-18
+
+### Fixed
+- Android: corrected package namespace from `com.example` to `com.duartefrugoli.dnd_character_tool`, fixing crash on launch (ClassNotFoundException)
+- Android: configured release signing with upload keystore for Play Store
+
+### Internal
+- versionCode 3 (closed testing, first functional build)
+
+---
+
+## [0.1.0] - 2026-05-18
+
+### Internal
+- versionCode 1–2: internal and closed testing builds with namespace bug (not distributed to users)
+
+---
+
 ## [1.0.0] - 2026-04-30
 
 ### Added

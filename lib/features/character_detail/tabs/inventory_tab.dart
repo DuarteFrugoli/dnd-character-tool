@@ -1012,7 +1012,7 @@ class _ItemTile extends ConsumerWidget {
     final props = item.properties;
 
     if (item.itemType == ItemType.weapon && props != null) {
-      final dice = props['damageDice']?.toString();
+      final dice = (props['damageDice'] ?? props['damage'])?.toString();
       final type = props['damageType']?.toString();
       if (dice != null && dice.isNotEmpty && type != null && type.isNotEmpty) {
         return '$dice ${i18n?.damageType(type) ?? type}';

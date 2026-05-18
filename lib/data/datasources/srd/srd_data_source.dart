@@ -169,7 +169,7 @@ class SrdDataSource {
         final rawName = (w['name'] as String).toLowerCase();
         final category = w['category'] as String;
         final props = <String, dynamic>{
-          'damage': w['damage'],
+          'damageDice': w['damage'],
           'damageType': w['damageType'],
           if (w['properties'] != null) 'weaponProperties': w['properties'],
           if (w['range'] != null) 'range': w['range'],

@@ -371,7 +371,10 @@ class _RacialTraitsSection extends ConsumerWidget {
               ),
             );
           }
-          return isDisabled ? Opacity(opacity: 0.35, child: card) : card;
+          return GestureDetector(
+            onLongPress: () => onToggle(trait),
+            child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
+          );
         }),
       ],
     );
@@ -443,7 +446,10 @@ class _BackgroundFeatureSection extends ConsumerWidget {
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
-        isDisabled ? Opacity(opacity: 0.35, child: card) : card,
+        GestureDetector(
+          onLongPress: () => onToggle(featureName),
+          child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
+        ),
       ],
     );
   }
@@ -738,7 +744,10 @@ class _ClassFeaturesSection extends ConsumerWidget {
               ],
             ),
           );
-          return isDisabled ? Opacity(opacity: 0.35, child: card) : card;
+          return GestureDetector(
+            onLongPress: () => onToggle(f.name),
+            child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
+          );
         }),
       ],
     );
@@ -852,7 +861,10 @@ class _SubclassFeaturesSection extends ConsumerWidget {
               ],
             ),
           );
-          return isDisabled ? Opacity(opacity: 0.35, child: card) : card;
+          return GestureDetector(
+            onLongPress: () => onToggle(f.name),
+            child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
+          );
         }),
       ],
     );

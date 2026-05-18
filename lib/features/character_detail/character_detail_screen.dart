@@ -213,7 +213,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           actions: [
             if (!_editMode)
               IconButton(
-                icon: const Icon(Icons.bedtime_outlined),
+                icon: const Icon(Icons.single_bed),
                 tooltip: AppLocalizations.of(context)!.detailTooltipLongRest,
                 onPressed: () => _confirmLongRest(),
               ),
@@ -282,7 +282,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
                   });
                   // Se estiver numa aba sem suporte a ediÃ§Ã£o (Spells/Inventory/Notes),
                   // volta para Features (Ãºltima aba editÃ¡vel). Caso contrÃ¡rio, fica onde estÃ¡.
-                  if (_tabs.index > 2) _tabs.animateTo(2);
+                  if (_tabs.index > 2) _tabs.animateTo(1);
                   return;
                 }
                 // Flush any focused text field before showing dialog

@@ -9,6 +9,20 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.1.2] - 2026-05-18
+
+### Fixed
+- Features: imagem do personagem não aparecia após ser selecionada (o path absoluto agora é guardado em vez de apenas o filename)
+- Features: long-press em qualquer feature (racial, background, classe, subclasse) alterna o estado ativo/inativo sem precisar do modo de edição
+
+### Changed
+- Modo de edição: ao entrar via botão de edição a partir de uma aba sem suporte (Spells/Inventory/Notes), redireciona para Skills (tab 2) em vez de Features (tab 3)
+
+### Internal
+- versionCode 4
+
+---
+
 ## [0.1.1] - 2026-05-18
 
 ### Fixed

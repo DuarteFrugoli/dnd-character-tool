@@ -88,6 +88,10 @@ class NativeStorageBackend implements StorageBackend {
 
   // ---- Imagens ----
 
+  /// Returns true if [path] is an absolute filesystem path.
+  bool _isAbsolute(String path) =>
+      path.startsWith('/') || (path.length >= 2 && path[1] == ':');
+
   @override
   Future<String?> saveImage(String characterId, String sourcePath) async {
     final dir = await _imagesDir;
@@ -97,22 +101,26 @@ class NativeStorageBackend implements StorageBackend {
     final fileName = '$characterId.$ext';
     final dest = File('${dir.path}/$fileName');
     await File(sourcePath).copy(dest.path);
-    return fileName;
+    return dest.path; // full absolute path
   }
 
   @override
   Future<String?> resolveImagePath(String? fileName) async {
     if (fileName == null) return null;
-    final dir = await _imagesDir;
-    final file = File('${dir.path}/$fileName');
+    // Support both absolute paths (new) and bare filenames (legacy).
+    final file = _isAbsolute(fileName)
+        ? File(fileName)
+        : File('${(await _imagesDir).path}/$fileName');
     return await file.exists() ? file.path : null;
   }
 
   @override
   Future<void> deleteImage(String? fileName) async {
     if (fileName == null) return;
-    final dir = await _imagesDir;
-    final file = File('${dir.path}/$fileName');
+    // Support both absolute paths (new) and bare filenames (legacy).
+    final file = _isAbsolute(fileName)
+        ? File(fileName)
+        : File('${(await _imagesDir).path}/$fileName');
     if (await file.exists()) await file.delete();
   }
 }

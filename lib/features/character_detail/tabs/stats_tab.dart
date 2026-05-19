@@ -496,7 +496,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                             Expanded(
                               child: Text(
                                 character.background.isNotEmpty
-                                    ? character.background
+                                    ? i18n.backgroundName(character.background)
                                     : '—',
                                 style: Theme.of(context).textTheme.bodyMedium,
                               ),
@@ -590,7 +590,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                             Expanded(
                               child: Text(
                                 character.subclass?.isNotEmpty == true
-                                    ? character.subclass!
+                                    ? i18n.subclassName(character.characterClass, character.subclass!)
                                     : '—',
                                 style: Theme.of(context).textTheme.bodyMedium,
                               ),

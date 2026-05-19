@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/models/models.dart';
@@ -97,7 +98,8 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     if (current == null) {
       try {
         current = await future;
-      } catch (_) {
+      } catch (e, st) {
+        debugPrint('updateSingle: failed to resolve current state: $e\n$st');
         return;
       }
     }

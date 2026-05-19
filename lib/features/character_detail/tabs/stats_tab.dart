@@ -105,24 +105,20 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     _speedCtrl = TextEditingController(text: '${c.speed}');
     _xpCtrl = TextEditingController(text: '${c.experiencePoints}');
 
-    _hpMaxFocus.addListener(() {
-      if (!_hpMaxFocus.hasFocus && _isEditing) {
-        final v = int.tryParse(_hpMaxCtrl.text);
-        if (v != null) _notifier.updateHpMax(v);
+    // Use a single atomic save when any field loses focus to avoid
+    // concurrent writes from multiple individual listeners.
+    void onFocusLost() {
+      if (_isEditing) {
+        _notifier.saveStatsEdit(
+          hpMax: int.tryParse(_hpMaxCtrl.text),
+          speed: int.tryParse(_speedCtrl.text),
+          xp: int.tryParse(_xpCtrl.text),
+        );
       }
-    });
-    _speedFocus.addListener(() {
-      if (!_speedFocus.hasFocus && _isEditing) {
-        final v = int.tryParse(_speedCtrl.text);
-        if (v != null) _notifier.updateSpeed(v);
-      }
-    });
-    _xpFocus.addListener(() {
-      if (!_xpFocus.hasFocus && _isEditing) {
-        final v = int.tryParse(_xpCtrl.text);
-        if (v != null) _notifier.updateExperiencePoints(v);
-      }
-    });
+    }
+    _hpMaxFocus.addListener(() { if (!_hpMaxFocus.hasFocus) onFocusLost(); });
+    _speedFocus.addListener(() { if (!_speedFocus.hasFocus) onFocusLost(); });
+    _xpFocus.addListener(() { if (!_xpFocus.hasFocus) onFocusLost(); });
   }
 
   @override

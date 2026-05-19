@@ -49,7 +49,13 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
   }
 
   Future<void> _loadSpells() async {
-    final all = await ref.read(srdDataSourceProvider).getSpells();
+    final List<SrdSpell> all;
+    try {
+      all = await ref.read(srdDataSourceProvider).getSpells();
+    } catch (e, st) {
+      debugPrint('_loadSpells error: $e\n$st');
+      return;
+    }
     if (!mounted) return;
     final character = widget.character;
     final cls = character.characterClass.toLowerCase();

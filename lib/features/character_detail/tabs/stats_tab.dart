@@ -795,7 +795,6 @@ class _XpProgressionPanel extends StatelessWidget {
                   final amount = int.tryParse(xpAddCtrl.text) ?? 0;
                   if (amount > 0) {
                     onAdd(amount);
-                    xpAddCtrl.text = '0';
                   }
                 },
                 child: Text(l10n.tooltipAddXp),

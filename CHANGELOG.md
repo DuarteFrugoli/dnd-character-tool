@@ -8,6 +8,62 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ---
+## [0.2.0] - 2026-05-19
+
+### Added
+- **Stats tab — Painel de Progressão de XP**: barra de progresso de nível, display de nível atual, campo de adição rápida de XP com stepper e botão, tabela colapsável com todos os limiares de XP do D&D 5e
+- **Stats tab — Stepper de HP**: seção de HP remodelada com linha `[−][campo][+]` para definir o valor e botões separados de Dano e Cura
+- **Stats tab — Inspiração**: banner dedicado com toggle de inspiração
+- **Identity tab — Personalidade e Histórico**: novas seções editáveis para Traços, Ideais, Vínculos, Defeitos e Histórico do personagem
+- **Identity tab — Aparência**: botão de edição e avatar de foto diretamente na seção de aparência
+
+### Fixed
+- **Crítico — corrupção de arquivo / personagem sumindo**: `_saveEditing()` disparava até 6 writes concorrentes no mesmo arquivo JSON (3 focus-listeners + 3 chamadas explícitas). O arquivo corrompido causava o personagem sumir da lista silenciosamente. Corrigido tornando o save atômico via `saveStatsEdit()` e espelhando o padrão correto do identity tab (setar `_isEditing = false` antes de `unfocus()`)
+- **Crítico — i18n cross-reference quebrado**: `_lowercaseKeys()` lowercaseia todas as chaves dos JSONs de i18n, mas as lookups de classes e backgrounds usavam TitleCase (`"Barbarian"`) e camelCase (`"startingEquipment"`). Resultado: nenhum item de equipamento de classe ou background era traduzido via cross-reference. Corrigido usando `.toLowerCase()` nas lookups
+- **Equipamentos de classe em inglês**: itens como `"Explorer's pack"`, `"any simple weapon"`, `"any martial melee weapon"` passaram a ser traduzidos corretamente
+- **Equipamentos de background em inglês**: `"dark common clothes with hood"` e outros itens fixos de background passaram a ser traduzidos
+- **Opções de kit/instrumento em inglês**: `backgroundEquipmentName()` agora consulta `equipment.json` e `tools.json` como fallback, traduzindo kits (Disguise, Forgery, Poisoner's), instrumentos (Bagpipes, Drum, etc.) e ferramentas de artesão
+- **Race condition no identity tab**: save da identidade tornado atômico para evitar writes concorrentes
+- **Subraça no AppBar**: nome da subraça agora é exibido corretamente na barra de título
+- **Padding inferior do identity tab**: ajuste de espaçamento
+
+### Changed
+- Campo de adição de XP mantém o valor após adicionar (não zera mais)
+- Tradução do "Three-Dragon Ante set" simplificada para "Three-Dragon Ante" (nome próprio)
+- Removido código morto: `cantripBonusDice`, `kItemType*`, `getSpellByName`, `getCantrips`, `getSpellsByLevel`, `clearCache`, `SpellSlots.remaining`
+
+### Internal
+- versionCode 5
+
+---
+## [0.2.0] - 2026-05-19
+
+### Added
+- **Stats tab — Painel de Progressão de XP**: barra de progresso de nível, display de nível atual, campo de adição rápida de XP com stepper e botão, tabela colapsável com todos os limiares de XP do D&D 5e
+- **Stats tab — Stepper de HP**: seção de HP remodelada com linha `[−][campo][+]` para definir o valor e botões separados de Dano e Cura
+- **Stats tab — Inspiração**: banner dedicado com toggle de inspiração
+- **Identity tab — Personalidade e Histórico**: novas seções editáveis para Traços, Ideais, Vínculos, Defeitos e Histórico do personagem
+- **Identity tab — Aparência**: botão de edição e avatar de foto diretamente na seção de aparência
+
+### Fixed
+- **Crítico — corrupção de arquivo / personagem sumindo**: `_saveEditing()` disparava até 6 writes concorrentes no mesmo arquivo JSON (3 focus-listeners + 3 chamadas explícitas). O arquivo corrompido causava o personagem sumir da lista silenciosamente. Corrigido tornando o save atômico via `saveStatsEdit()` e espelhando o padrão correto do `identity_tab` (setar `_isEditing = false` antes de `unfocus()`)
+- **Crítico — i18n cross-reference quebrado**: `_lowercaseKeys()` lowercaseia todas as chaves dos JSONs de i18n, mas as lookups de classes e backgrounds usavam TitleCase (`"Barbarian"`) e camelCase (`"startingEquipment"`). Resultado: nenhum item de equipamento de classe ou background era traduzido via cross-reference. Corrigido usando `.toLowerCase()` nas lookups
+- **Equipamentos de classe em inglês**: após o fix acima, itens como `"Explorer's pack"`, `"any simple weapon"`, `"any martial melee weapon"` passaram a ser traduzidos corretamente
+- **Equipamentos de background em inglês**: `"dark common clothes with hood"` e outros itens fixos de background passaram a ser traduzidos
+- **Opções de kit/instrumento em inglês**: `backgroundEquipmentName()` agora consulta `equipment.json` e `tools.json` como fallback, traduzindo kits (Disguise, Forgery, Poisoner's), instrumentos (Bagpipes, Drum, etc.) e ferramentas de artesão
+- **Race condition no `identity_tab`**: save da identidade tornando atômico para evitar writes concorrentes
+- **Subraça no AppBar**: nome da subraça agora é exibido corretamente na barra de título
+- **Padding inferior do identity tab**: ajuste de espaçamento
+
+### Changed
+- Campo de adição de XP mantém o valor após adicionar (não zera mais)
+- Tradução do "Three-Dragon Ante set" simplificada para "Three-Dragon Ante" (nome próprio, prefixo desnecessário)
+- Removido código morto: `cantripBonusDice`, `kItemType*`, `getSpellByName`, `getCantrips`, `getSpellsByLevel`, `clearCache`, `SpellSlots.remaining`
+
+### Internal
+- versionCode 5
+
+---
 
 ## [0.1.2] - 2026-05-18
 

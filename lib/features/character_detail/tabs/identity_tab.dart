@@ -457,7 +457,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
           children: [
           // ── Identity section ─────────────────────────────────────────────
           _Section(

@@ -72,7 +72,7 @@ class SrdI18nService {
           final raceEnName = srdRace['name'] as String?;
           if (raceEnName == null) continue;
           final srdSubraces = srdRace['subraces'] as List<dynamic>? ?? [];
-          final i18nEntry = i18nRaces[raceEnName];
+          final i18nEntry = i18nRaces[raceEnName.toLowerCase()];
           if (i18nEntry is! Map) continue;
           final i18nSubraces = i18nEntry['subraces'] as List<dynamic>? ?? [];
           for (var i = 0; i < srdSubraces.length; i++) {

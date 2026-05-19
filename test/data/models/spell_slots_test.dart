@@ -50,7 +50,6 @@ void main() {
       });
       expect(slots.total[0], 4);
       expect(slots.used[0], 2);
-      expect(slots.remaining(1), 2);
     });
 
     test('handles empty lists', () {
@@ -60,18 +59,6 @@ void main() {
       });
       expect(slots.total.length, 9);
       expect(slots.total.every((v) => v == 0), true);
-    });
-  });
-
-  group('SpellSlots.remaining', () {
-    test('returns correct remaining slots for given level', () {
-      const slots = SpellSlots(
-        total: [4, 3, 2, 1, 0, 0, 0, 0, 0],
-        used: [1, 2, 2, 0, 0, 0, 0, 0, 0],
-      );
-      expect(slots.remaining(1), 3);
-      expect(slots.remaining(2), 1);
-      expect(slots.remaining(3), 0);
     });
   });
 

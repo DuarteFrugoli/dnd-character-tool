@@ -13,8 +13,6 @@ class SpellSlots {
     this.used = const [0, 0, 0, 0, 0, 0, 0, 0, 0],
   });
 
-  int remaining(int level) => total[level - 1] - used[level - 1];
-
   SpellSlots copyWith({List<int>? total, List<int>? used}) {
     return SpellSlots(
       total: total ?? List.from(this.total),

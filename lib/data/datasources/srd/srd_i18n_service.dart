@@ -102,10 +102,10 @@ class SrdI18nService {
           if (bgEnName == null) continue;
           final srdItems =
               List<String>.from(srdBg['startingEquipment'] as List? ?? []);
-          final i18nEntry = i18nBackgrounds[bgEnName];
+          final i18nEntry = i18nBackgrounds[bgEnName.toLowerCase()];
           if (i18nEntry is! Map) continue;
           final i18nItems =
-              List<dynamic>.from(i18nEntry['startingEquipment'] as List? ?? []);
+              List<dynamic>.from(i18nEntry['startingequipment'] as List? ?? []);
           for (var i = 0; i < srdItems.length; i++) {
             final enItem = srdItems[i];
             final translated =
@@ -138,10 +138,10 @@ class SrdI18nService {
         for (final srdCls in srdClasses) {
           final clsName = srdCls['name'] as String?;
           if (clsName == null) continue;
-          final i18nEntry = i18nClasses[clsName];
+          final i18nEntry = i18nClasses[clsName.toLowerCase()];
           if (i18nEntry is! Map) continue;
           final srdEquip = srdCls['startingEquipment'] as Map?;
-          final i18nEquip = i18nEntry['startingEquipment'] as Map?;
+          final i18nEquip = i18nEntry['startingequipment'] as Map?;
           if (srdEquip == null || i18nEquip == null) continue;
 
           // Fixed items

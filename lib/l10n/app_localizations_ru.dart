@@ -830,6 +830,34 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => 'Расовые заклинания';
+
+  @override
+  String get spellsDisableTitle => 'Отключить заклинание?';
+
+  @override
+  String get spellsEnableTitle => 'Включить заклинание?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return 'Отключить \"$name\"? Оно будет выделено серым и его нельзя будет подготовить.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return 'Включить \"$name\"? Оно снова будет отображаться нормально.';
+  }
+
+  @override
+  String get spellsDisable => 'Отключить';
+
+  @override
+  String get spellsEnable => 'Включить';
+
+  @override
+  String get spellsExtrasHeader => 'Дополнительные заклинания';
+
+  @override
   String get inventoryCurrency => 'Валюта';
 
   @override

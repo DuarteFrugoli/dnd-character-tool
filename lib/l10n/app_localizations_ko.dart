@@ -820,6 +820,34 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => '종족 주문';
+
+  @override
+  String get spellsDisableTitle => '주문 비활성화?';
+
+  @override
+  String get spellsEnableTitle => '주문 활성화?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return '\"$name\"을(를) 비활성화하시겠습니까? 회색으로 표시되어 준비할 수 없게 됩니다.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return '\"$name\"을(를) 활성화하시겠습니까? 정상적으로 다시 표시됩니다.';
+  }
+
+  @override
+  String get spellsDisable => '비활성화';
+
+  @override
+  String get spellsEnable => '활성화';
+
+  @override
+  String get spellsExtrasHeader => '추가 주문';
+
+  @override
   String get inventoryCurrency => '통화';
 
   @override

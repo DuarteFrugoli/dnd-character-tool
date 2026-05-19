@@ -812,6 +812,34 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => '种族法术';
+
+  @override
+  String get spellsDisableTitle => '禁用法术？';
+
+  @override
+  String get spellsEnableTitle => '启用法术？';
+
+  @override
+  String spellsDisableContent(String name) {
+    return '禁用“$name”？它将显示为灰色，无法准备。';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return '启用“$name”？它将再次正常显示。';
+  }
+
+  @override
+  String get spellsDisable => '禁用';
+
+  @override
+  String get spellsEnable => '启用';
+
+  @override
+  String get spellsExtrasHeader => '额外法术';
+
+  @override
   String get inventoryCurrency => '货币';
 
   @override

@@ -1620,6 +1620,54 @@ abstract class AppLocalizations {
   /// **'Level {level}'**
   String spellsLevelN(int level);
 
+  /// Innate/racial spells section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Racial Spells'**
+  String get spellsInnateHeader;
+
+  /// Dialog title when disabling a spell.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable spell?'**
+  String get spellsDisableTitle;
+
+  /// Dialog title when re-enabling a spell.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable spell?'**
+  String get spellsEnableTitle;
+
+  /// Dialog body when disabling a spell.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable \"{name}\"? It will be grayed out and cannot be prepared.'**
+  String spellsDisableContent(String name);
+
+  /// Dialog body when re-enabling a spell.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable \"{name}\"? It will appear normally again.'**
+  String spellsEnableContent(String name);
+
+  /// Disable button in spell disable dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable'**
+  String get spellsDisable;
+
+  /// Enable button in spell re-enable dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable'**
+  String get spellsEnable;
+
+  /// Header for extra spells added to a prepare-all caster.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra Spells'**
+  String get spellsExtrasHeader;
+
   /// Currency card section header.
   ///
   /// In en, this message translates to:

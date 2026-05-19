@@ -297,7 +297,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                 // ── Racial / Innate Spells ──────────────────────────────────
                 if (character.innateSpells.isNotEmpty) ...[
                   Text(
-                    'Magias Raciais',
+                    AppLocalizations.of(context)!.spellsInnateHeader,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: 4),
@@ -383,27 +383,27 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                                       builder: (ctx) => AlertDialog(
                                         title: Text(
                                           isDisabled
-                                              ? 'Reativar magia?'
-                                              : 'Desativar magia?',
+                                              ? AppLocalizations.of(context)!.spellsEnableTitle
+                                              : AppLocalizations.of(context)!.spellsDisableTitle,
                                         ),
                                         content: Text(
                                           isDisabled
-                                              ? 'Reativar "${spell.name}"? Ela voltará a aparecer normalmente.'
-                                              : 'Desativar "${spell.name}"? Ela ficará esmaecida e não poderá ser preparada.',
+                                              ? AppLocalizations.of(context)!.spellsEnableContent(spell.name)
+                                              : AppLocalizations.of(context)!.spellsDisableContent(spell.name),
                                         ),
                                         actions: [
                                           TextButton(
                                             onPressed: () =>
                                                 Navigator.pop(ctx, false),
-                                            child: const Text('Cancelar'),
+                                            child: Text(AppLocalizations.of(ctx)!.dialogCancel),
                                           ),
                                           FilledButton(
                                             onPressed: () =>
                                                 Navigator.pop(ctx, true),
                                             child: Text(
                                               isDisabled
-                                                  ? 'Reativar'
-                                                  : 'Desativar',
+                                                  ? AppLocalizations.of(context)!.spellsEnable
+                                                  : AppLocalizations.of(context)!.spellsDisable,
                                             ),
                                           ),
                                         ],
@@ -484,7 +484,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Text(
-                          'Magias Extras',
+                          AppLocalizations.of(context)!.spellsExtrasHeader,
                           style: Theme.of(context).textTheme.labelMedium
                               ?.copyWith(
                                 color: Theme.of(context).colorScheme.outline,

@@ -829,6 +829,34 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => 'Rassenzauber';
+
+  @override
+  String get spellsDisableTitle => 'Zauber deaktivieren?';
+
+  @override
+  String get spellsEnableTitle => 'Zauber aktivieren?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return '\"$name\" deaktivieren? Er wird ausgegraut und kann nicht vorbereitet werden.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return '\"$name\" aktivieren? Er wird wieder normal angezeigt.';
+  }
+
+  @override
+  String get spellsDisable => 'Deaktivieren';
+
+  @override
+  String get spellsEnable => 'Aktivieren';
+
+  @override
+  String get spellsExtrasHeader => 'Zusatzzauber';
+
+  @override
   String get inventoryCurrency => 'Währung';
 
   @override

@@ -834,6 +834,34 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => 'Sorts Raciaux';
+
+  @override
+  String get spellsDisableTitle => 'Désactiver le sort ?';
+
+  @override
+  String get spellsEnableTitle => 'Réactiver le sort ?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return 'Désactiver \"$name\" ? Il sera grisé et ne pourra pas être préparé.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return 'Réactiver \"$name\" ? Il réapparaîtra normalement.';
+  }
+
+  @override
+  String get spellsDisable => 'Désactiver';
+
+  @override
+  String get spellsEnable => 'Réactiver';
+
+  @override
+  String get spellsExtrasHeader => 'Sorts Supplémentaires';
+
+  @override
   String get inventoryCurrency => 'Devise';
 
   @override

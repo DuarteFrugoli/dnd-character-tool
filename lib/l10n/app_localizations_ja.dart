@@ -819,6 +819,34 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => '種族の呻文';
+
+  @override
+  String get spellsDisableTitle => '呻文を無効化しますか？';
+
+  @override
+  String get spellsEnableTitle => '呻文を有効化しますか？';
+
+  @override
+  String spellsDisableContent(String name) {
+    return '「$name」を無効化しますか？グレーアウトされ、準備できなくなります。';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return '「$name」を有効化しますか？通常通り表示されます。';
+  }
+
+  @override
+  String get spellsDisable => '無効化';
+
+  @override
+  String get spellsEnable => '有効化';
+
+  @override
+  String get spellsExtrasHeader => '追加呻文';
+
+  @override
   String get inventoryCurrency => '通貨';
 
   @override

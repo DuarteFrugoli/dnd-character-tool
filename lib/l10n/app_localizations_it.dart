@@ -834,6 +834,34 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => 'Incantesimi Razziali';
+
+  @override
+  String get spellsDisableTitle => 'Disattivare incantesimo?';
+
+  @override
+  String get spellsEnableTitle => 'Riattivare incantesimo?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return 'Disattivare \"$name\"? Sarà in grigio e non potrà essere preparato.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return 'Riattivare \"$name\"? Tornerà a essere visualizzato normalmente.';
+  }
+
+  @override
+  String get spellsDisable => 'Disattiva';
+
+  @override
+  String get spellsEnable => 'Riattiva';
+
+  @override
+  String get spellsExtrasHeader => 'Incantesimi Extra';
+
+  @override
   String get inventoryCurrency => 'Valuta';
 
   @override

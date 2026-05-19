@@ -829,6 +829,34 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => 'Hechizos Raciales';
+
+  @override
+  String get spellsDisableTitle => '¿Desactivar hechizo?';
+
+  @override
+  String get spellsEnableTitle => '¿Reactivar hechizo?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return '¿Desactivar \"$name\"? Aparecerá en gris y no podrá ser preparado.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return '¿Reactivar \"$name\"? Volverá a aparecer normalmente.';
+  }
+
+  @override
+  String get spellsDisable => 'Desactivar';
+
+  @override
+  String get spellsEnable => 'Reactivar';
+
+  @override
+  String get spellsExtrasHeader => 'Hechizos Extra';
+
+  @override
   String get inventoryCurrency => 'Divisa';
 
   @override

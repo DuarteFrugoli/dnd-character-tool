@@ -826,6 +826,34 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => 'Racial Spells';
+
+  @override
+  String get spellsDisableTitle => 'Disable spell?';
+
+  @override
+  String get spellsEnableTitle => 'Enable spell?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return 'Disable \"$name\"? It will be grayed out and cannot be prepared.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return 'Enable \"$name\"? It will appear normally again.';
+  }
+
+  @override
+  String get spellsDisable => 'Disable';
+
+  @override
+  String get spellsEnable => 'Enable';
+
+  @override
+  String get spellsExtrasHeader => 'Extra Spells';
+
+  @override
   String get inventoryCurrency => 'Currency';
 
   @override

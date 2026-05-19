@@ -831,6 +831,34 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
+  String get spellsInnateHeader => 'Magias Raciais';
+
+  @override
+  String get spellsDisableTitle => 'Desativar magia?';
+
+  @override
+  String get spellsEnableTitle => 'Reativar magia?';
+
+  @override
+  String spellsDisableContent(String name) {
+    return 'Desativar \"$name\"? Ela ficará esmaecida e não poderá ser preparada.';
+  }
+
+  @override
+  String spellsEnableContent(String name) {
+    return 'Reativar \"$name\"? Ela voltará a aparecer normalmente.';
+  }
+
+  @override
+  String get spellsDisable => 'Desativar';
+
+  @override
+  String get spellsEnable => 'Reativar';
+
+  @override
+  String get spellsExtrasHeader => 'Magias Extras';
+
+  @override
   String get inventoryCurrency => 'Moedas';
 
   @override

@@ -799,6 +799,28 @@
     "description": "Spell list level group header.",
     "placeholders": { "level": { "type": "int" } }
   },
+  "spellsInnateHeader": "Racial Spells",
+  "@spellsInnateHeader": { "description": "Innate/racial spells section header." },
+  "spellsDisableTitle": "Disable spell?",
+  "@spellsDisableTitle": { "description": "Dialog title when disabling a spell." },
+  "spellsEnableTitle": "Enable spell?",
+  "@spellsEnableTitle": { "description": "Dialog title when re-enabling a spell." },
+  "spellsDisableContent": "Disable \"{name}\"? It will be grayed out and cannot be prepared.",
+  "@spellsDisableContent": {
+    "description": "Dialog body when disabling a spell.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "spellsEnableContent": "Enable \"{name}\"? It will appear normally again.",
+  "@spellsEnableContent": {
+    "description": "Dialog body when re-enabling a spell.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "spellsDisable": "Disable",
+  "@spellsDisable": { "description": "Disable button in spell disable dialog." },
+  "spellsEnable": "Enable",
+  "@spellsEnable": { "description": "Enable button in spell re-enable dialog." },
+  "spellsExtrasHeader": "Extra Spells",
+  "@spellsExtrasHeader": { "description": "Header for extra spells added to a prepare-all caster." },
 
   "inventoryCurrency": "Currency",
   "@inventoryCurrency": { "description": "Currency card section header." },

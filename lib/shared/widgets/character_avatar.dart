@@ -279,8 +279,8 @@ class _PhotoViewerPage extends StatelessWidget {
             child: const SizedBox.expand(),
           ),
 
-          // Photo centered
-          Center(
+          // Photo filling the screen (contain keeps aspect ratio)
+          Positioned.fill(
             child: Hero(
               tag: 'character_avatar_$imagePath',
               child: Image(

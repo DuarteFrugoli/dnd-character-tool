@@ -318,13 +318,7 @@ class _RacialTraitsSection extends ConsumerWidget {
                   i18n.raceTraitName(trait),
                   style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
-                trailing: isEditing
-                    ? _FeatureToggleButton(
-                        featureName: trait,
-                        isDisabled: isDisabled,
-                        onToggle: onToggle,
-                      )
-                    : Icon(
+                trailing: Icon(
                         Icons.info_outline,
                         size: 16,
                         color: scheme.onSurfaceVariant,
@@ -349,14 +343,6 @@ class _RacialTraitsSection extends ConsumerWidget {
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
                     ),
-                    if (isEditing) ...[
-                      const SizedBox(width: 4),
-                      _FeatureToggleButton(
-                        featureName: trait,
-                        isDisabled: isDisabled,
-                        onToggle: onToggle,
-                      ),
-                    ],
                   ],
                 ),
                 children: [
@@ -413,14 +399,6 @@ class _BackgroundFeatureSection extends ConsumerWidget {
                 style: const TextStyle(fontWeight: FontWeight.w600),
               ),
             ),
-            if (isEditing) ...[
-              const SizedBox(width: 4),
-              _FeatureToggleButton(
-                featureName: featureName,
-                isDisabled: isDisabled,
-                onToggle: onToggle,
-              ),
-            ],
           ],
         ),
         children: [
@@ -705,14 +683,6 @@ class _ClassFeaturesSection extends ConsumerWidget {
                       ),
                     ),
                   ),
-                  if (isEditing) ...[
-                    const SizedBox(width: 4),
-                    _FeatureToggleButton(
-                      featureName: f.name,
-                      isDisabled: isDisabled,
-                      onToggle: onToggle,
-                    ),
-                  ],
                 ],
               ),
               subtitle: Row(
@@ -831,14 +801,6 @@ class _SubclassFeaturesSection extends ConsumerWidget {
                       ),
                     ),
                   ),
-                  if (isEditing) ...[
-                    const SizedBox(width: 4),
-                    _FeatureToggleButton(
-                      featureName: f.name,
-                      isDisabled: isDisabled,
-                      onToggle: onToggle,
-                    ),
-                  ],
                 ],
               ),
               subtitle: Text(

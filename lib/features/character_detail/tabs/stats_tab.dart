@@ -249,39 +249,12 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         ? (usingShield ? l10n.statNoArmorShield : l10n.statNoArmor)
         : '${i18n.equipmentName(bodyArmor.first.name)}${usingShield ? l10n.statShieldSuffix : ''}';
 
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
-        children: [
-          // ── Edit mode button row ──────────────────────────────────────────
-          if (!_isEditing)
-            Align(
-              alignment: Alignment.centerRight,
-              child: IconButton(
-                icon: const Icon(Icons.edit_outlined),
-                tooltip: l10n.detailEditButton,
-                onPressed: _startEditing,
-              ),
-            )
-          else
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                OutlinedButton(
-                  onPressed: _cancelEditing,
-                  child: Text(l10n.dialogCancel),
-                ),
-                const SizedBox(width: 8),
-                FilledButton(
-                  onPressed: _saveEditing,
-                  child: Text(l10n.dialogSave),
-                ),
-              ],
-            ),
-          const SizedBox(height: 12),
-
-
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
+          children: [
           // ── HP Tracker ────────────────────────────────────────────────────
           _Section(
             title: l10n.sectionHitPoints,
@@ -583,7 +556,35 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   ),
           ),
         ],
+        ),
       ),
+      floatingActionButton: _isEditing
+          ? Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FloatingActionButton.small(
+                  heroTag: 'stats_cancel',
+                  onPressed: _cancelEditing,
+                  backgroundColor: scheme.errorContainer,
+                  foregroundColor: scheme.onErrorContainer,
+                  tooltip: l10n.dialogCancel,
+                  child: const Icon(Icons.close),
+                ),
+                const SizedBox(height: 8),
+                FloatingActionButton(
+                  heroTag: 'stats_save',
+                  onPressed: _saveEditing,
+                  tooltip: l10n.dialogSave,
+                  child: const Icon(Icons.check),
+                ),
+              ],
+            )
+          : FloatingActionButton(
+              heroTag: 'stats_edit',
+              onPressed: _startEditing,
+              tooltip: l10n.detailEditButton,
+              child: const Icon(Icons.edit_outlined),
+            ),
     );
   }
 }

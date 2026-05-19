@@ -453,49 +453,12 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     final scheme = Theme.of(context).colorScheme;
     final notifier = _notifier;
 
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 48),
-        children: [
-          // ── Profile image ─────────────────────────────────────────────
-          Center(
-            child: CharacterAvatar(
-              name: character.name,
-              imagePath: character.imagePath,
-              radius: 48,
-              onImageChanged: _isEditing
-                  ? (path) => _notifier.updateImage(path)
-                  : null,
-            ),
-          ),
-          const SizedBox(height: 8),
-
-          // ── Edit mode toggle ─────────────────────────────────────────────
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: _isEditing
-                ? [
-                    OutlinedButton(
-                      onPressed: _cancelEditing,
-                      child: Text(l10n.dialogCancel),
-                    ),
-                    const SizedBox(width: 8),
-                    FilledButton(
-                      onPressed: _saveEditing,
-                      child: Text(l10n.dialogConfirm),
-                    ),
-                  ]
-                : [
-                    IconButton(
-                      icon: const Icon(Icons.edit_outlined),
-                      tooltip: l10n.detailTooltipEditCharacter,
-                      onPressed: _startEditing,
-                    ),
-                  ],
-          ),
-          const SizedBox(height: 12),
-
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
+          children: [
           // ── Identity section ─────────────────────────────────────────────
           _Section(
             title: l10n.sectionIdentity,
@@ -821,6 +784,15 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Center(
+                        child: CharacterAvatar(
+                          name: character.name,
+                          imagePath: character.imagePath,
+                          radius: 44,
+                          onImageChanged: (path) => _notifier.updateImage(path),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
                       _InlineField(
                         label: l10n.labelAge,
                         controller: _ageCtrl,
@@ -854,42 +826,84 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                       ),
                     ],
                   )
-                : Builder(
-                    builder: (ctx) {
-                      final app = character.appearance;
-                      final hasAny = app.age != null ||
-                          app.height.isNotEmpty ||
-                          app.weight.isNotEmpty ||
-                          app.eyes.isNotEmpty ||
-                          app.skin.isNotEmpty ||
-                          app.hair.isNotEmpty;
-                      if (!hasAny) {
-                        return Text(
-                          '—',
-                          style: Theme.of(ctx).textTheme.bodyMedium,
-                        );
-                      }
-                      return Column(
-                        children: [
-                          if (app.age != null)
-                            _InfoRow(l10n.labelAge, '${app.age}'),
-                          if (app.height.isNotEmpty)
-                            _InfoRow(l10n.labelHeight, app.height),
-                          if (app.weight.isNotEmpty)
-                            _InfoRow(l10n.labelWeight, app.weight),
-                          if (app.eyes.isNotEmpty)
-                            _InfoRow(l10n.labelEyes, app.eyes),
-                          if (app.skin.isNotEmpty)
-                            _InfoRow(l10n.labelSkin, app.skin),
-                          if (app.hair.isNotEmpty)
-                            _InfoRow(l10n.labelHair, app.hair),
-                        ],
-                      );
-                    },
+                : Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CharacterAvatar(
+                        name: character.name,
+                        imagePath: character.imagePath,
+                        radius: 44,
+                        onImageChanged: (path) => _notifier.updateImage(path),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Builder(
+                          builder: (ctx) {
+                            final app = character.appearance;
+                            final hasAny = app.age != null ||
+                                app.height.isNotEmpty ||
+                                app.weight.isNotEmpty ||
+                                app.eyes.isNotEmpty ||
+                                app.skin.isNotEmpty ||
+                                app.hair.isNotEmpty;
+                            if (!hasAny) {
+                              return const Padding(
+                                padding: EdgeInsets.only(top: 8),
+                                child: Text('—'),
+                              );
+                            }
+                            return Column(
+                              children: [
+                                if (app.age != null)
+                                  _InfoRow(l10n.labelAge, '${app.age}'),
+                                if (app.height.isNotEmpty)
+                                  _InfoRow(l10n.labelHeight, app.height),
+                                if (app.weight.isNotEmpty)
+                                  _InfoRow(l10n.labelWeight, app.weight),
+                                if (app.eyes.isNotEmpty)
+                                  _InfoRow(l10n.labelEyes, app.eyes),
+                                if (app.skin.isNotEmpty)
+                                  _InfoRow(l10n.labelSkin, app.skin),
+                                if (app.hair.isNotEmpty)
+                                  _InfoRow(l10n.labelHair, app.hair),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
           ),
         ],
+        ),
       ),
+      floatingActionButton: _isEditing
+          ? Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FloatingActionButton.small(
+                  heroTag: 'identity_cancel',
+                  onPressed: _cancelEditing,
+                  backgroundColor: scheme.errorContainer,
+                  foregroundColor: scheme.onErrorContainer,
+                  tooltip: l10n.dialogCancel,
+                  child: const Icon(Icons.close),
+                ),
+                const SizedBox(height: 8),
+                FloatingActionButton(
+                  heroTag: 'identity_save',
+                  onPressed: _saveEditing,
+                  tooltip: l10n.dialogSave,
+                  child: const Icon(Icons.check),
+                ),
+              ],
+            )
+          : FloatingActionButton(
+              heroTag: 'identity_edit',
+              onPressed: _startEditing,
+              tooltip: l10n.detailTooltipEditCharacter,
+              child: const Icon(Icons.edit_outlined),
+            ),
     );
   }
 }

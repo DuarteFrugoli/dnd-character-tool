@@ -306,6 +306,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get sectionCombat => 'Combat';
 
   @override
+  String get sectionProgression => 'Progression';
+
+  @override
   String get sectionAbilityScores => 'Scores de capacité';
 
   @override
@@ -719,7 +722,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statXP => 'XP';
 
   @override
-  String get statUnconsciousDying => 'Inconscient / Mourant';
+  String get inspirationGranted => 'Accordée';
+
+  @override
+  String get inspirationNotGranted => 'Non accordée';
+
+  @override
+  String get statUnconsciousDying => 'Unconscious / Dying';
 
   @override
   String get tooltipAddTempHp => 'Ajouter du HP temporaire';

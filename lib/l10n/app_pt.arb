@@ -105,6 +105,7 @@
   "sectionIdentity": "Identidade",
   "sectionHitPoints": "Pontos de Vida",
   "sectionCombat": "Combate",
+  "sectionProgression": "Progress\u00e3o",
   "sectionAbilityScores": "Atributos",
   "sectionSavingThrows": "Proficiências em Resistências",
 
@@ -243,7 +244,8 @@
   "statPassivePerc": "Perc. Passiva",
   "statInspiration": "Inspiração",
   "statXP": "XP",
-  "statUnconsciousDying": "Inconsciente / Morrendo",
+  "inspirationGranted": "Concedida",
+  "inspirationNotGranted": "N\u00e3o concedida",
   "tooltipAddTempHp": "Adicionar PV temp.",
   "tooltipChangeTempHp": "Alterar PV temp.",
   "abilityStr": "FOR",

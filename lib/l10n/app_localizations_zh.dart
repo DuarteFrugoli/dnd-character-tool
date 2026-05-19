@@ -290,6 +290,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sectionCombat => '战斗';
 
   @override
+  String get sectionProgression => '进度';
+
+  @override
   String get sectionAbilityScores => '能力分数';
 
   @override
@@ -697,6 +700,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get statXP => '经验';
+
+  @override
+  String get inspirationGranted => '已获得';
+
+  @override
+  String get inspirationNotGranted => '未获得';
 
   @override
   String get statUnconsciousDying => '失去知觉/濒临死亡';

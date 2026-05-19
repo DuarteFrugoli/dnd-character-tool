@@ -303,6 +303,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get sectionCombat => 'Бой';
 
   @override
+  String get sectionProgression => 'Прогресс';
+
+  @override
   String get sectionAbilityScores => 'Показатели способностей';
 
   @override
@@ -713,6 +716,12 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get statXP => 'ОО';
+
+  @override
+  String get inspirationGranted => 'Получено';
+
+  @override
+  String get inspirationNotGranted => 'Не получено';
 
   @override
   String get statUnconsciousDying => 'Без сознания / Умирающий';

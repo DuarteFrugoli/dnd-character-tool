@@ -302,6 +302,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get sectionCombat => 'Combatir';
 
   @override
+  String get sectionProgression => 'Progresión';
+
+  @override
   String get sectionAbilityScores => 'Puntuaciones de habilidad';
 
   @override
@@ -714,7 +717,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get statXP => 'XP';
 
   @override
-  String get statUnconsciousDying => 'Inconsciente / Moribundo';
+  String get inspirationGranted => 'Concedida';
+
+  @override
+  String get inspirationNotGranted => 'No concedida';
+
+  @override
+  String get statUnconsciousDying => 'Unconscious / Dying';
 
   @override
   String get tooltipAddTempHp => 'Agregar HP temporal';

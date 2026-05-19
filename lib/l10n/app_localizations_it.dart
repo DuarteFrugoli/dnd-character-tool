@@ -304,6 +304,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get sectionCombat => 'Combattere';
 
   @override
+  String get sectionProgression => 'Progressione';
+
+  @override
   String get sectionAbilityScores => 'Punteggi di abilità';
 
   @override
@@ -717,6 +720,12 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get statXP => 'XP';
+
+  @override
+  String get inspirationGranted => 'Granted';
+
+  @override
+  String get inspirationNotGranted => 'Not granted';
 
   @override
   String get statUnconsciousDying => 'Inconscio / Morente';

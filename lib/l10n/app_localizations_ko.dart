@@ -297,6 +297,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sectionCombat => '전투';
 
   @override
+  String get sectionProgression => '진행';
+
+  @override
   String get sectionAbilityScores => '능력 점수';
 
   @override
@@ -707,7 +710,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get statXP => 'XP';
 
   @override
-  String get statUnconsciousDying => '의식불명 / 사망';
+  String get inspirationGranted => '획득';
+
+  @override
+  String get inspirationNotGranted => '미획득';
+
+  @override
+  String get statUnconsciousDying => 'Unconscious / Dying';
 
   @override
   String get tooltipAddTempHp => '임시 HP 추가';

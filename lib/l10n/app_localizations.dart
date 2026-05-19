@@ -660,6 +660,12 @@ abstract class AppLocalizations {
   /// **'Combat'**
   String get sectionCombat;
 
+  /// Stats tab XP/progression section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Progression'**
+  String get sectionProgression;
+
   /// Stats tab ability scores section title.
   ///
   /// In en, this message translates to:
@@ -1421,6 +1427,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'XP'**
   String get statXP;
+
+  /// Inspiration active subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Granted'**
+  String get inspirationGranted;
+
+  /// Inspiration inactive subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Not granted'**
+  String get inspirationNotGranted;
 
   /// Status label when HP reaches 0.
   ///

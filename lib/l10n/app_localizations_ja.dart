@@ -296,6 +296,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sectionCombat => '戦闘';
 
   @override
+  String get sectionProgression => '進行状況';
+
+  @override
   String get sectionAbilityScores => '能力値';
 
   @override
@@ -706,7 +709,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get statXP => 'XP';
 
   @override
-  String get statUnconsciousDying => '意識不明 / 瀕死';
+  String get inspirationGranted => '取得済み';
+
+  @override
+  String get inspirationNotGranted => '未取得';
+
+  @override
+  String get statUnconsciousDying => 'Unconscious / Dying';
 
   @override
   String get tooltipAddTempHp => '一時HPを追加';

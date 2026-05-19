@@ -284,6 +284,8 @@
 
   "sectionCombat": "Combat",
   "@sectionCombat": { "description": "Stats tab combat section title." },
+  "sectionProgression": "Progression",
+  "@sectionProgression": { "description": "Stats tab XP/progression section title." },
 
   "sectionAbilityScores": "Ability Scores",
   "@sectionAbilityScores": { "description": "Stats tab ability scores section title." },
@@ -708,6 +710,10 @@
   "@statInspiration": { "description": "Inspiration toggle label." },
   "statXP": "XP",
   "@statXP": { "description": "Experience points label." },
+  "inspirationGranted": "Granted",
+  "@inspirationGranted": { "description": "Inspiration active subtitle." },
+  "inspirationNotGranted": "Not granted",
+  "@inspirationNotGranted": { "description": "Inspiration inactive subtitle." },
   "statUnconsciousDying": "Unconscious / Dying",
   "@statUnconsciousDying": { "description": "Status label when HP reaches 0." },
   "tooltipAddTempHp": "Add temp HP",

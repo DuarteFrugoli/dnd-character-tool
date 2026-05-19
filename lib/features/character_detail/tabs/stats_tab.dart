@@ -420,6 +420,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           ),
           const SizedBox(height: 12),
 
+          // ── Inspiration ───────────────────────────────────────────────────
+          _InspirationBanner(
+            active: character.inspiration,
+            onTap: () => notifier.toggleInspiration(),
+            label: l10n.statInspiration,
+            activeSubtitle: l10n.inspirationGranted,
+            inactiveSubtitle: l10n.inspirationNotGranted,
+          ),
+          const SizedBox(height: 12),
+
           // ── Combat Stats ──────────────────────────────────────────────────
           _Section(
             title: l10n.sectionCombat,
@@ -431,16 +441,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         label: l10n.labelSpeed,
                         controller: _speedCtrl,
                         focusNode: _speedFocus,
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      _InlineField(
-                        label: l10n.statXP,
-                        controller: _xpCtrl,
-                        focusNode: _xpFocus,
                         keyboardType: TextInputType.number,
                         inputFormatters: [
                           FilteringTextInputFormatter.digitsOnly,
@@ -465,11 +465,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                             l10n.statPassivePerc,
                             '${character.passivePerception}',
                           ),
-                          _InspirationChip(
-                            label: l10n.statInspiration,
-                            active: character.inspiration,
-                            onTap: () => notifier.toggleInspiration(),
-                          ),
                         ],
                       ),
                     ],
@@ -492,12 +487,6 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                       _StatChip(
                         l10n.statPassivePerc,
                         '${character.passivePerception}',
-                      ),
-                      _StatChip(l10n.statXP, '${character.experiencePoints}'),
-                      _InspirationChip(
-                        label: l10n.statInspiration,
-                        active: character.inspiration,
-                        onTap: () => notifier.toggleInspiration(),
                       ),
                     ],
                   ),
@@ -590,6 +579,37 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     }).toList(),
                   ),
           ),
+          const SizedBox(height: 12),
+
+          // ── Progression ───────────────────────────────────────────────────
+          _Section(
+            title: l10n.sectionProgression,
+            child: _isEditing
+                ? _InlineField(
+                    label: l10n.statXP,
+                    controller: _xpCtrl,
+                    focusNode: _xpFocus,
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  )
+                : Row(
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        '${character.experiencePoints}',
+                        style: Theme.of(context).textTheme.headlineMedium
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        l10n.statXP,
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(color: scheme.onSurfaceVariant),
+                      ),
+                    ],
+                  ),
+          ),
         ],
         ),
       ),
@@ -624,47 +644,90 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   }
 }
 
-// ── Inspiration chip ──────────────────────────────────────────────────────────
+// ── Inspiration banner ────────────────────────────────────────────────────────
 
-class _InspirationChip extends StatelessWidget {
-  const _InspirationChip({
-    required this.label,
+class _InspirationBanner extends StatelessWidget {
+  const _InspirationBanner({
     required this.active,
     required this.onTap,
+    required this.label,
+    required this.activeSubtitle,
+    required this.inactiveSubtitle,
   });
 
-  final String label;
   final bool active;
   final VoidCallback onTap;
+  final String label;
+  final String activeSubtitle;
+  final String inactiveSubtitle;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(
-          color: active
-              ? scheme.primaryContainer
-              : scheme.surfaceContainerHighest,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              active ? Icons.star : Icons.star_border,
-              size: 20,
-              color: active ? scheme.primary : scheme.onSurfaceVariant,
-            ),
-            Text(
-              label,
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: active ? scheme.onPrimaryContainer : null,
-                  ),
-            ),
-          ],
+    return Material(
+      color: active ? scheme.tertiaryContainer : scheme.surfaceContainerLow,
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: active
+                      ? scheme.tertiary.withValues(alpha: 0.2)
+                      : scheme.surfaceContainerHigh,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  active ? Icons.auto_awesome : Icons.auto_awesome_outlined,
+                  color: active ? scheme.tertiary : scheme.onSurfaceVariant,
+                  size: 24,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      label,
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            color: active
+                                ? scheme.onTertiaryContainer
+                                : scheme.onSurface,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      active ? activeSubtitle : inactiveSubtitle,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: active
+                                ? scheme.onTertiaryContainer
+                                    .withValues(alpha: 0.8)
+                                : scheme.onSurfaceVariant,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 200),
+                child: Icon(
+                  active
+                      ? Icons.check_circle_rounded
+                      : Icons.circle_outlined,
+                  key: ValueKey(active),
+                  color: active ? scheme.tertiary : scheme.outlineVariant,
+                  size: 28,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

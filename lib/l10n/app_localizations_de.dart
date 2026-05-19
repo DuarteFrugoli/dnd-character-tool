@@ -303,6 +303,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get sectionCombat => 'Kampf';
 
   @override
+  String get sectionProgression => 'Fortschritt';
+
+  @override
   String get sectionAbilityScores => 'Fähigkeitswerte';
 
   @override
@@ -712,6 +715,12 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get statXP => 'EP';
+
+  @override
+  String get inspirationGranted => 'Gewährt';
+
+  @override
+  String get inspirationNotGranted => 'Nicht gewährt';
 
   @override
   String get statUnconsciousDying => 'Bewusstlos / Sterbend';

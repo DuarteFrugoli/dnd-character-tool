@@ -230,6 +230,7 @@
   "statLevel": "Niveau {level}",
   "tooltipAddXp": "Ajouter XP",
   "labelLevelTable": "Tableau des Niveaux",
+  "statUnconsciousDying": "Inconscient / Mourant",
   "tooltipAddTempHp": "Ajouter du HP temporaire",
   "tooltipChangeTempHp": "Changer la température HP",
   "abilityStr": "STR",

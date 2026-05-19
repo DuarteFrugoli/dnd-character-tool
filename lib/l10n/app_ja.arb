@@ -230,6 +230,7 @@
   "statLevel": "レベル{level}",
   "tooltipAddXp": "XPを追加",
   "labelLevelTable": "レベル表",
+  "statUnconsciousDying": "気絶する / 死にかけている",
   "tooltipAddTempHp": "一時HPを追加",
   "tooltipChangeTempHp": "温度HP変更",
   "abilityStr": "STR",

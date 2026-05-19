@@ -249,6 +249,7 @@
   "statLevel": "N\u00edvel {level}",
   "tooltipAddXp": "Adicionar XP",
   "labelLevelTable": "Tabela de N\u00edveis",
+  "statUnconsciousDying": "Inconsciente / Morrendo",
   "tooltipAddTempHp": "Adicionar PV temp.",
   "tooltipChangeTempHp": "Alterar PV temp.",
   "abilityStr": "FOR",

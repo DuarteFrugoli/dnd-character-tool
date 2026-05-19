@@ -520,10 +520,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notesLabelContent => 'コンテンツ';
 
   @override
-  String get sectionPersonality => '個性';
-
-  @override
   String get sectionPersonalityTraits => '性格特性';
+  String get sectionPersonality => '個性';
 
   @override
   String get sectionIdeals => '理想';
@@ -698,11 +696,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get statPassivePerc => 'パッシブパーク';
-
-  @override
   String get statInspiration => 'ヒラメキ';
-
-  @override
   String get statXP => 'XP';
 
   @override

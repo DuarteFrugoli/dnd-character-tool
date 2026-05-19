@@ -528,10 +528,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get notesLabelContent => 'Содержание';
 
   @override
-  String get sectionPersonality => 'Личность';
-
-  @override
   String get sectionPersonalityTraits => 'Черты личности';
+  String get sectionPersonality => 'Личность';
 
   @override
   String get sectionIdeals => 'Идеалы';
@@ -707,11 +705,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get statPassivePerc => 'Пассивный процент';
-
-  @override
   String get statInspiration => 'Вдохновение';
-
-  @override
   String get statXP => 'ОО';
 
   @override

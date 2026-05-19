@@ -521,10 +521,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notesLabelContent => '콘텐츠';
 
   @override
-  String get sectionPersonality => '성격';
-
-  @override
   String get sectionPersonalityTraits => '성격 특성';
+  String get sectionPersonality => '성격';
 
   @override
   String get sectionIdeals => '이상';
@@ -699,11 +697,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get statPassivePerc => '패시브 퍼크';
-
-  @override
   String get statInspiration => '영감';
-
-  @override
   String get statXP => 'XP';
 
   @override

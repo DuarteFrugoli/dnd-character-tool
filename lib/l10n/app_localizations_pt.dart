@@ -529,10 +529,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get notesLabelContent => 'Conteúdo';
 
   @override
-  String get sectionPersonality => 'Personalidade';
-
-  @override
   String get sectionPersonalityTraits => 'Traços de Personalidade';
+  String get sectionPersonality => 'Personalidade';
 
   @override
   String get sectionIdeals => 'Ideais';
@@ -708,11 +706,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get statPassivePerc => 'Perc. Passiva';
-
-  @override
   String get statInspiration => 'Inspiração';
-
-  @override
   String get statXP => 'XP';
 
   @override

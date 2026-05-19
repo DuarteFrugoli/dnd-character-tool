@@ -1074,17 +1074,14 @@ abstract class AppLocalizations {
   /// **'Content'**
   String get notesLabelContent;
 
-  /// Identity tab personality section.
-  ///
-  /// In en, this message translates to:
-  /// **'Personality'**
-  String get sectionPersonality;
-
   /// Notes tab personality traits section.
   ///
   /// In en, this message translates to:
   /// **'Personality Traits'**
   String get sectionPersonalityTraits;
+
+  /// Personality section header.
+  String get sectionPersonality;
 
   /// Notes tab ideals section.
   ///
@@ -1410,16 +1407,10 @@ abstract class AppLocalizations {
   /// **'Passive Perc'**
   String get statPassivePerc;
 
-  /// Inspiration stat chip label.
-  ///
-  /// In en, this message translates to:
-  /// **'Inspiration'**
+  /// Inspiration toggle label.
   String get statInspiration;
 
-  /// Experience points stat chip label.
-  ///
-  /// In en, this message translates to:
-  /// **'XP'**
+  /// Experience points label.
   String get statXP;
 
   /// Status label when HP reaches 0.

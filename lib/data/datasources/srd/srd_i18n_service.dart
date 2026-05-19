@@ -52,7 +52,7 @@ class SrdI18nService {
             await rootBundle.loadString('assets/data/i18n/$locale/$file.json');
         final decoded = jsonDecode(raw);
         if (decoded is Map<String, dynamic> && decoded.isNotEmpty) {
-          data[file] = decoded;
+          data[file] = _lowercaseKeys(decoded);
         }
       } catch (_) {
         // Missing, empty, or invalid JSON — fall back to English for this file.
@@ -178,29 +178,40 @@ class SrdI18nService {
     return SrdI18nService._(locale, data, subraceNames, bgEquipmentNames);
   }
 
+  // ── Key normalisation ──────────────────────────────────────────────────────
+
+  /// Recursively lowercases all [String] map keys so every lookup is
+  /// case-insensitive at O(1) cost. Called once at load time.
+  static Map<String, dynamic> _lowercaseKeys(Map<String, dynamic> map) => {
+        for (final e in map.entries)
+          e.key.toLowerCase(): e.value is Map<String, dynamic>
+              ? _lowercaseKeys(e.value as Map<String, dynamic>)
+              : e.value,
+      };
+
   // ── Generic helpers ────────────────────────────────────────────────────────
 
   String? _str(String file, String key, String field) {
-    final entry = _data[file]?[key];
+    final entry = _data[file]?[key.toLowerCase()];
     if (entry is! Map) return null;
     return entry[field] as String?;
   }
 
   String? _nested2(String file, String k1, String k2, String field) {
-    final level1 = _data[file]?[k1];
+    final level1 = _data[file]?[k1.toLowerCase()];
     if (level1 is! Map) return null;
-    final entry = level1[k2];
+    final entry = level1[k2.toLowerCase()];
     if (entry is! Map) return null;
     return entry[field] as String?;
   }
 
   String? _nested3(
       String file, String k1, String k2, String k3, String field) {
-    final level1 = _data[file]?[k1];
+    final level1 = _data[file]?[k1.toLowerCase()];
     if (level1 is! Map) return null;
-    final level2 = level1[k2];
+    final level2 = level1[k2.toLowerCase()];
     if (level2 is! Map) return null;
-    final entry = level2[k3];
+    final entry = level2[k3.toLowerCase()];
     if (entry is! Map) return null;
     return entry[field] as String?;
   }
@@ -213,23 +224,7 @@ class SrdI18nService {
 
   // ── Skills ─────────────────────────────────────────────────────────────────
 
-  String skillName(String en) {
-    final exact = _str('skills', en, 'name');
-    if (exact != null) return exact;
-    // SRD data may store skill names in lowercase (e.g. "sleight of hand").
-    // Do a case-insensitive search over all keys in the skills map.
-    final skillsMap = _data['skills'];
-    if (skillsMap != null) {
-      final lower = en.toLowerCase();
-      for (final entry in skillsMap.entries) {
-        if (entry.key.toLowerCase() == lower) {
-          final v = entry.value;
-          if (v is Map) return (v['name'] as String?) ?? en;
-        }
-      }
-    }
-    return en;
-  }
+  String skillName(String en) => _str('skills', en, 'name') ?? en;
 
   // ── Spells ─────────────────────────────────────────────────────────────────
 
@@ -251,23 +246,7 @@ class SrdI18nService {
 
   // ── Tools ──────────────────────────────────────────────────────────────────
 
-  /// Returns the translated name of a tool proficiency, or [en] if not found.
-  /// Lookup is case-insensitive to handle lowercase variants (e.g. class json).
-  String toolName(String en) {
-    final exact = _str('tools', en, 'name');
-    if (exact != null) return exact;
-    final toolsMap = _data['tools'];
-    if (toolsMap != null) {
-      final lower = en.toLowerCase();
-      for (final entry in toolsMap.entries) {
-        if (entry.key.toLowerCase() == lower) {
-          final v = entry.value;
-          if (v is Map) return (v['name'] as String?) ?? en;
-        }
-      }
-    }
-    return en;
-  }
+  String toolName(String en) => _str('tools', en, 'name') ?? en;
 
   // ── Backgrounds ────────────────────────────────────────────────────────────
 
@@ -289,7 +268,7 @@ class SrdI18nService {
   // ── Backgrounds ────────────────────────────────────────────────────────────
 
   String? backgroundFeatureName(String backgroundEn) {
-    final entry = _data['backgrounds']?[backgroundEn];
+    final entry = _data['backgrounds']?[backgroundEn.toLowerCase()];
     if (entry is! Map) return null;
     final feature = entry['feature'];
     if (feature is! Map) return null;
@@ -297,7 +276,7 @@ class SrdI18nService {
   }
 
   String? backgroundFeatureDescription(String backgroundEn) {
-    final entry = _data['backgrounds']?[backgroundEn];
+    final entry = _data['backgrounds']?[backgroundEn.toLowerCase()];
     if (entry is! Map) return null;
     final feature = entry['feature'];
     if (feature is! Map) return null;
@@ -326,23 +305,7 @@ class SrdI18nService {
 
   // ── Equipment ──────────────────────────────────────────────────────────────
 
-  String equipmentName(String en) {
-    final exact = _str('equipment', en, 'name');
-    if (exact != null) return exact;
-    // SRD data may store equipment names with inconsistent capitalisation
-    // (e.g. "Scale mail" vs "Scale Mail"). Fall back to case-insensitive search.
-    final equipMap = _data['equipment'];
-    if (equipMap != null) {
-      final lower = en.toLowerCase();
-      for (final entry in equipMap.entries) {
-        if (entry.key.toLowerCase() == lower) {
-          final v = entry.value;
-          if (v is Map) return (v['name'] as String?) ?? en;
-        }
-      }
-    }
-    return en;
-  }
+  String equipmentName(String en) => _str('equipment', en, 'name') ?? en;
 
   String? equipmentDescription(String en) => _str('equipment', en, 'description');
 

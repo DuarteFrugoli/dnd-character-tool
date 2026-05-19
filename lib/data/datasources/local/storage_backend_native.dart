@@ -98,7 +98,10 @@ class NativeStorageBackend implements StorageBackend {
     final ext = sourcePath.contains('.')
         ? sourcePath.split('.').last.toLowerCase()
         : 'jpg';
-    final fileName = '$characterId.$ext';
+    // Use a timestamp so the path always changes on update, preventing
+    // Flutter's FileImage cache from serving the stale image.
+    final ts = DateTime.now().millisecondsSinceEpoch;
+    final fileName = '${characterId}_$ts.$ext';
     final dest = File('${dir.path}/$fileName');
     await File(sourcePath).copy(dest.path);
     return dest.path; // full absolute path

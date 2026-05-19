@@ -175,6 +175,29 @@ class SrdI18nService {
       }
     } catch (_) {}
 
+    // Add short-name aliases for "(N)" equipment entries so that items stored
+    // with stripped names (e.g. "bolts" from "20 bolts") can be looked up.
+    // Mirrors the alias strategy in srd_data_source.dart:
+    //   "Crossbow Bolts (20)" → add "crossbow bolts" and "bolts" aliases.
+    //   "Arrows (20)"         → add "arrows" alias.
+    final equipData = data['equipment'];
+    if (equipData != null) {
+      final parenRe = RegExp(r'^(.+?)\s*\(\d+\)$');
+      final aliases = <String, dynamic>{};
+      for (final entry in equipData.entries) {
+        final m = parenRe.firstMatch(entry.key);
+        if (m != null) {
+          final base = m.group(1)!.trim(); // e.g. "crossbow bolts"
+          aliases.putIfAbsent(base, () => entry.value);
+          final lastWord = base.split(' ').last; // e.g. "bolts"
+          if (lastWord != base) {
+            aliases.putIfAbsent(lastWord, () => entry.value);
+          }
+        }
+      }
+      equipData.addAll(aliases);
+    }
+
     return SrdI18nService._(locale, data, subraceNames, bgEquipmentNames);
   }
 

@@ -41,6 +41,17 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
   final _skinFocus = FocusNode();
   final _hairFocus = FocusNode();
 
+  late final TextEditingController _traitsCtrl;
+  late final TextEditingController _idealsCtrl;
+  late final TextEditingController _bondsCtrl;
+  late final TextEditingController _flawsCtrl;
+  late final TextEditingController _backstoryCtrl;
+  final _traitsFocus = FocusNode();
+  final _idealsFocus = FocusNode();
+  final _bondsFocus = FocusNode();
+  final _flawsFocus = FocusNode();
+  final _backstoryFocus = FocusNode();
+
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
 
@@ -58,6 +69,13 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _eyesCtrl = TextEditingController(text: app.eyes);
     _skinCtrl = TextEditingController(text: app.skin);
     _hairCtrl = TextEditingController(text: app.hair);
+
+    final p = c.personality;
+    _traitsCtrl = TextEditingController(text: p.traits);
+    _idealsCtrl = TextEditingController(text: p.ideals);
+    _bondsCtrl = TextEditingController(text: p.bonds);
+    _flawsCtrl = TextEditingController(text: p.flaws);
+    _backstoryCtrl = TextEditingController(text: c.backstory);
 
     _ageFocus.addListener(() {
       if (!_ageFocus.hasFocus && _isEditing) {
@@ -108,6 +126,17 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     });
   }
 
+  void _savePersonality() {
+    _notifier.updatePersonality(
+      CharacterPersonality(
+        traits: _traitsCtrl.text.trim(),
+        ideals: _idealsCtrl.text.trim(),
+        bonds: _bondsCtrl.text.trim(),
+        flaws: _flawsCtrl.text.trim(),
+      ),
+    );
+  }
+
   @override
   void didUpdateWidget(_IdentityTab old) {
     super.didUpdateWidget(old);
@@ -122,6 +151,12 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     if (!_eyesFocus.hasFocus) _eyesCtrl.text = app.eyes;
     if (!_skinFocus.hasFocus) _skinCtrl.text = app.skin;
     if (!_hairFocus.hasFocus) _hairCtrl.text = app.hair;
+    final p = c.personality;
+    if (!_traitsFocus.hasFocus) _traitsCtrl.text = p.traits;
+    if (!_idealsFocus.hasFocus) _idealsCtrl.text = p.ideals;
+    if (!_bondsFocus.hasFocus) _bondsCtrl.text = p.bonds;
+    if (!_flawsFocus.hasFocus) _flawsCtrl.text = p.flaws;
+    if (!_backstoryFocus.hasFocus) _backstoryCtrl.text = c.backstory;
   }
 
   @override
@@ -136,6 +171,11 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _eyesCtrl.dispose();
     _skinCtrl.dispose();
     _hairCtrl.dispose();
+    _traitsCtrl.dispose();
+    _idealsCtrl.dispose();
+    _bondsCtrl.dispose();
+    _flawsCtrl.dispose();
+    _backstoryCtrl.dispose();
     _nameFocus.dispose();
     _alignFocus.dispose();
     _playerFocus.dispose();
@@ -146,6 +186,11 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _eyesFocus.dispose();
     _skinFocus.dispose();
     _hairFocus.dispose();
+    _traitsFocus.dispose();
+    _idealsFocus.dispose();
+    _bondsFocus.dispose();
+    _flawsFocus.dispose();
+    _backstoryFocus.dispose();
     super.dispose();
   }
 
@@ -199,6 +244,8 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _notifier.updateAlignment(_alignCtrl.text);
     _notifier.updatePlayerName(_playerCtrl.text);
     _notifier.updateAppearance(_buildCurrentAppearance());
+    _savePersonality();
+    _notifier.updateBackstory(_backstoryCtrl.text);
     setState(() {
       _isEditing = false;
       _snapshot = null;
@@ -874,6 +921,70 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                     ],
                   ),
           ),
+          const SizedBox(height: 12),
+
+          // ── Personality section ──────────────────────────────────────────
+          _Section(
+            title: l10n.sectionPersonality,
+            child: _isEditing
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _MultilineField(
+                        label: l10n.sectionPersonalityTraits,
+                        controller: _traitsCtrl,
+                        focusNode: _traitsFocus,
+                      ),
+                      const SizedBox(height: 8),
+                      _MultilineField(
+                        label: l10n.sectionIdeals,
+                        controller: _idealsCtrl,
+                        focusNode: _idealsFocus,
+                      ),
+                      const SizedBox(height: 8),
+                      _MultilineField(
+                        label: l10n.sectionBonds,
+                        controller: _bondsCtrl,
+                        focusNode: _bondsFocus,
+                      ),
+                      const SizedBox(height: 8),
+                      _MultilineField(
+                        label: l10n.sectionFlaws,
+                        controller: _flawsCtrl,
+                        focusNode: _flawsFocus,
+                      ),
+                    ],
+                  )
+                : _PersonalityView(
+                    personality: character.personality,
+                    traitsLabel: l10n.sectionPersonalityTraits,
+                    idealsLabel: l10n.sectionIdeals,
+                    bondsLabel: l10n.sectionBonds,
+                    flawsLabel: l10n.sectionFlaws,
+                  ),
+          ),
+          const SizedBox(height: 12),
+
+          // ── Backstory section ────────────────────────────────────────────
+          _Section(
+            title: l10n.sectionBackstory,
+            child: _isEditing
+                ? _MultilineField(
+                    label: null,
+                    controller: _backstoryCtrl,
+                    focusNode: _backstoryFocus,
+                    minLines: 5,
+                  )
+                : character.backstory.isNotEmpty
+                    ? Text(
+                        character.backstory,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      )
+                    : Text(
+                        '—',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+          ),
         ],
         ),
       ),
@@ -904,6 +1015,104 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
               tooltip: l10n.detailTooltipEditCharacter,
               child: const Icon(Icons.edit_outlined),
             ),
+    );
+  }
+}
+
+// ── Multiline text field ──────────────────────────────────────────────────────
+
+class _MultilineField extends StatelessWidget {
+  const _MultilineField({
+    required this.label,
+    required this.controller,
+    required this.focusNode,
+    this.minLines = 3,
+  });
+
+  final String? label;
+  final TextEditingController controller;
+  final FocusNode focusNode;
+  final int minLines;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (label != null) ...[
+          Text(
+            label!,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+          ),
+          const SizedBox(height: 4),
+        ],
+        TextField(
+          controller: controller,
+          focusNode: focusNode,
+          maxLines: null,
+          minLines: minLines,
+          textCapitalization: TextCapitalization.sentences,
+          decoration: const InputDecoration(
+            isDense: true,
+            border: OutlineInputBorder(),
+            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Personality view (read-only) ──────────────────────────────────────────────
+
+class _PersonalityView extends StatelessWidget {
+  const _PersonalityView({
+    required this.personality,
+    required this.traitsLabel,
+    required this.idealsLabel,
+    required this.bondsLabel,
+    required this.flawsLabel,
+  });
+
+  final CharacterPersonality personality;
+  final String traitsLabel;
+  final String idealsLabel;
+  final String bondsLabel;
+  final String flawsLabel;
+
+  @override
+  Widget build(BuildContext context) {
+    final fields = [
+      (traitsLabel, personality.traits),
+      (idealsLabel, personality.ideals),
+      (bondsLabel, personality.bonds),
+      (flawsLabel, personality.flaws),
+    ].where((e) => e.$2.isNotEmpty).toList();
+
+    if (fields.isEmpty) {
+      return Text('—', style: Theme.of(context).textTheme.bodyMedium);
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        for (int i = 0; i < fields.length; i++) ...[
+          if (i > 0) const SizedBox(height: 8),
+          Text(
+            fields[i].$1,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            fields[i].$2,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ],
+      ],
     );
   }
 }

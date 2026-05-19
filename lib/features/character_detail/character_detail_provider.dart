@@ -622,4 +622,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       await ref.read(characterListProvider.notifier).updateSingle(updated);
     }
   }
+
+  // ── Personality & Backstory ───────────────────────────────────────────────
+
+  Future<void> updatePersonality(CharacterPersonality personality) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(personality: personality));
+  }
+
+  Future<void> updateBackstory(String backstory) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(backstory: backstory.trim()));
+  }
 }

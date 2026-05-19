@@ -526,6 +526,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notesLabelContent => 'Content';
 
   @override
+  String get sectionPersonality => 'Personality';
+
+  @override
   String get sectionPersonalityTraits => 'Personality Traits';
 
   @override

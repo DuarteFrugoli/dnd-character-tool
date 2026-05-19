@@ -521,6 +521,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notesLabelContent => '콘텐츠';
 
   @override
+  String get sectionPersonality => '성격';
+
+  @override
   String get sectionPersonalityTraits => '성격 특성';
 
   @override

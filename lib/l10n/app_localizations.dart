@@ -1074,6 +1074,12 @@ abstract class AppLocalizations {
   /// **'Content'**
   String get notesLabelContent;
 
+  /// Identity tab personality section.
+  ///
+  /// In en, this message translates to:
+  /// **'Personality'**
+  String get sectionPersonality;
+
   /// Notes tab personality traits section.
   ///
   /// In en, this message translates to:

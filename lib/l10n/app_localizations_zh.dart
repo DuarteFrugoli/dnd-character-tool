@@ -513,6 +513,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get notesLabelContent => '内容';
 
   @override
+  String get sectionPersonality => '个性';
+
+  @override
   String get sectionPersonalityTraits => '性格特征';
 
   @override

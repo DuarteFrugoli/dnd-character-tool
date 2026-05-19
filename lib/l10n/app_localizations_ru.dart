@@ -528,6 +528,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get notesLabelContent => 'Содержание';
 
   @override
+  String get sectionPersonality => 'Личность';
+
+  @override
   String get sectionPersonalityTraits => 'Черты личности';
 
   @override

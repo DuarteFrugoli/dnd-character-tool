@@ -520,6 +520,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notesLabelContent => 'コンテンツ';
 
   @override
+  String get sectionPersonality => '個性';
+
+  @override
   String get sectionPersonalityTraits => '性格特性';
 
   @override

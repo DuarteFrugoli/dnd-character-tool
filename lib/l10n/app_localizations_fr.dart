@@ -532,6 +532,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get notesLabelContent => 'Contenu';
 
   @override
+  String get sectionPersonality => 'Personnalité';
+
+  @override
   String get sectionPersonalityTraits => 'Traits de personnalité';
 
   @override

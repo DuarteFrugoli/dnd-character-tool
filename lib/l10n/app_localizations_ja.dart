@@ -257,7 +257,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detailEditButton => '編集';
 
   @override
-  String get skillsEditHint => 'タップして切替: なし→習熟→熟達';
+  String get skillsEditHint => '長押して切替: なし→習熟→熟達';
 
   @override
   String get detailTabStats => '統計';
@@ -330,6 +330,27 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get labelChoose => '選ぶ';
+
+  @override
+  String get sectionAppearance => '外見';
+
+  @override
+  String get labelAge => '年齢';
+
+  @override
+  String get labelHeight => '身長';
+
+  @override
+  String get labelWeight => '体重';
+
+  @override
+  String get labelEyes => '目';
+
+  @override
+  String get labelSkin => '肌';
+
+  @override
+  String get labelHair => '髪';
 
   @override
   String get labelMaxHP => '最大HP';

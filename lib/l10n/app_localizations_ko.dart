@@ -258,7 +258,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get detailEditButton => '편집';
 
   @override
-  String get skillsEditHint => '탭하여 전환: 없음 → 숙련 → 전문가';
+  String get skillsEditHint => '길게 눌러 전환: 없음 → 숙련 → 전문가';
 
   @override
   String get detailTabStats => '통계';
@@ -331,6 +331,27 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get labelChoose => '선택하다';
+
+  @override
+  String get sectionAppearance => '외모';
+
+  @override
+  String get labelAge => '나이';
+
+  @override
+  String get labelHeight => '키';
+
+  @override
+  String get labelWeight => '몸무게';
+
+  @override
+  String get labelEyes => '눈';
+
+  @override
+  String get labelSkin => '피부';
+
+  @override
+  String get labelHair => '머리카락';
 
   @override
   String get labelMaxHP => '최대 HP';

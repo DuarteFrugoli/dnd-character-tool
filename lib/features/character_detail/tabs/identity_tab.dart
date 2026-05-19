@@ -28,6 +28,19 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
   final _playerFocus = FocusNode();
   final _langFocus = FocusNode();
 
+  late final TextEditingController _ageCtrl;
+  late final TextEditingController _heightCtrl;
+  late final TextEditingController _weightCtrl;
+  late final TextEditingController _eyesCtrl;
+  late final TextEditingController _skinCtrl;
+  late final TextEditingController _hairCtrl;
+  final _ageFocus = FocusNode();
+  final _heightFocus = FocusNode();
+  final _weightFocus = FocusNode();
+  final _eyesFocus = FocusNode();
+  final _skinFocus = FocusNode();
+  final _hairFocus = FocusNode();
+
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
 
@@ -38,6 +51,44 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _nameCtrl = TextEditingController(text: c.name);
     _alignCtrl = TextEditingController(text: c.alignment);
     _playerCtrl = TextEditingController(text: c.playerName);
+    final app = c.appearance;
+    _ageCtrl = TextEditingController(text: app.age != null ? '${app.age}' : '');
+    _heightCtrl = TextEditingController(text: app.height);
+    _weightCtrl = TextEditingController(text: app.weight);
+    _eyesCtrl = TextEditingController(text: app.eyes);
+    _skinCtrl = TextEditingController(text: app.skin);
+    _hairCtrl = TextEditingController(text: app.hair);
+
+    _ageFocus.addListener(() {
+      if (!_ageFocus.hasFocus && _isEditing) {
+        _notifier.updateAppearance(_buildCurrentAppearance());
+      }
+    });
+    _heightFocus.addListener(() {
+      if (!_heightFocus.hasFocus && _isEditing) {
+        _notifier.updateAppearance(_buildCurrentAppearance());
+      }
+    });
+    _weightFocus.addListener(() {
+      if (!_weightFocus.hasFocus && _isEditing) {
+        _notifier.updateAppearance(_buildCurrentAppearance());
+      }
+    });
+    _eyesFocus.addListener(() {
+      if (!_eyesFocus.hasFocus && _isEditing) {
+        _notifier.updateAppearance(_buildCurrentAppearance());
+      }
+    });
+    _skinFocus.addListener(() {
+      if (!_skinFocus.hasFocus && _isEditing) {
+        _notifier.updateAppearance(_buildCurrentAppearance());
+      }
+    });
+    _hairFocus.addListener(() {
+      if (!_hairFocus.hasFocus && _isEditing) {
+        _notifier.updateAppearance(_buildCurrentAppearance());
+      }
+    });
 
     _nameFocus.addListener(() {
       if (!_nameFocus.hasFocus && _isEditing) {
@@ -46,12 +97,14 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
       }
     });
     _alignFocus.addListener(() {
-      if (!_alignFocus.hasFocus && _isEditing)
+      if (!_alignFocus.hasFocus && _isEditing) {
         _notifier.updateAlignment(_alignCtrl.text);
+      }
     });
     _playerFocus.addListener(() {
-      if (!_playerFocus.hasFocus && _isEditing)
+      if (!_playerFocus.hasFocus && _isEditing) {
         _notifier.updatePlayerName(_playerCtrl.text);
+      }
     });
   }
 
@@ -62,6 +115,13 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     if (!_nameFocus.hasFocus) _nameCtrl.text = c.name;
     if (!_alignFocus.hasFocus) _alignCtrl.text = c.alignment;
     if (!_playerFocus.hasFocus) _playerCtrl.text = c.playerName;
+    final app = c.appearance;
+    if (!_ageFocus.hasFocus) _ageCtrl.text = app.age != null ? '${app.age}' : '';
+    if (!_heightFocus.hasFocus) _heightCtrl.text = app.height;
+    if (!_weightFocus.hasFocus) _weightCtrl.text = app.weight;
+    if (!_eyesFocus.hasFocus) _eyesCtrl.text = app.eyes;
+    if (!_skinFocus.hasFocus) _skinCtrl.text = app.skin;
+    if (!_hairFocus.hasFocus) _hairCtrl.text = app.hair;
   }
 
   @override
@@ -70,10 +130,22 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _alignCtrl.dispose();
     _playerCtrl.dispose();
     _langCtrl.dispose();
+    _ageCtrl.dispose();
+    _heightCtrl.dispose();
+    _weightCtrl.dispose();
+    _eyesCtrl.dispose();
+    _skinCtrl.dispose();
+    _hairCtrl.dispose();
     _nameFocus.dispose();
     _alignFocus.dispose();
     _playerFocus.dispose();
     _langFocus.dispose();
+    _ageFocus.dispose();
+    _heightFocus.dispose();
+    _weightFocus.dispose();
+    _eyesFocus.dispose();
+    _skinFocus.dispose();
+    _hairFocus.dispose();
     super.dispose();
   }
 
@@ -126,11 +198,21 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _notifier.updateName(_nameCtrl.text, fallback: fallback);
     _notifier.updateAlignment(_alignCtrl.text);
     _notifier.updatePlayerName(_playerCtrl.text);
+    _notifier.updateAppearance(_buildCurrentAppearance());
     setState(() {
       _isEditing = false;
       _snapshot = null;
     });
   }
+
+  CharacterAppearance _buildCurrentAppearance() => CharacterAppearance(
+        age: int.tryParse(_ageCtrl.text.trim()),
+        height: _heightCtrl.text.trim(),
+        weight: _weightCtrl.text.trim(),
+        eyes: _eyesCtrl.text.trim(),
+        skin: _skinCtrl.text.trim(),
+        hair: _hairCtrl.text.trim(),
+      );
 
   Future<void> _onLevelUp(Character character) async {
     final newLevel = character.level + 1;
@@ -376,6 +458,19 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
       child: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 48),
         children: [
+          // ── Profile image ─────────────────────────────────────────────
+          Center(
+            child: CharacterAvatar(
+              name: character.name,
+              imagePath: character.imagePath,
+              radius: 48,
+              onImageChanged: _isEditing
+                  ? (path) => _notifier.updateImage(path)
+                  : null,
+            ),
+          ),
+          const SizedBox(height: 8),
+
           // ── Edit mode toggle ─────────────────────────────────────────────
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -392,12 +487,9 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                     ),
                   ]
                 : [
-                    OutlinedButton.icon(
-                      icon: const Icon(Icons.edit_outlined, size: 16),
-                      label: Text(l10n.detailTooltipEditCharacter),
-                      style: OutlinedButton.styleFrom(
-                        visualDensity: VisualDensity.compact,
-                      ),
+                    IconButton(
+                      icon: const Icon(Icons.edit_outlined),
+                      tooltip: l10n.detailTooltipEditCharacter,
                       onPressed: _startEditing,
                     ),
                   ],
@@ -718,6 +810,82 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                                   .join(', '),
                       ),
                     ],
+                  ),
+          ),
+          const SizedBox(height: 12),
+
+          // ── Appearance section ───────────────────────────────────────────
+          _Section(
+            title: l10n.sectionAppearance,
+            child: _isEditing
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _InlineField(
+                        label: l10n.labelAge,
+                        controller: _ageCtrl,
+                        focusNode: _ageFocus,
+                        keyboardType: TextInputType.number,
+                      ),
+                      _InlineField(
+                        label: l10n.labelHeight,
+                        controller: _heightCtrl,
+                        focusNode: _heightFocus,
+                      ),
+                      _InlineField(
+                        label: l10n.labelWeight,
+                        controller: _weightCtrl,
+                        focusNode: _weightFocus,
+                      ),
+                      _InlineField(
+                        label: l10n.labelEyes,
+                        controller: _eyesCtrl,
+                        focusNode: _eyesFocus,
+                      ),
+                      _InlineField(
+                        label: l10n.labelSkin,
+                        controller: _skinCtrl,
+                        focusNode: _skinFocus,
+                      ),
+                      _InlineField(
+                        label: l10n.labelHair,
+                        controller: _hairCtrl,
+                        focusNode: _hairFocus,
+                      ),
+                    ],
+                  )
+                : Builder(
+                    builder: (ctx) {
+                      final app = character.appearance;
+                      final hasAny = app.age != null ||
+                          app.height.isNotEmpty ||
+                          app.weight.isNotEmpty ||
+                          app.eyes.isNotEmpty ||
+                          app.skin.isNotEmpty ||
+                          app.hair.isNotEmpty;
+                      if (!hasAny) {
+                        return Text(
+                          '—',
+                          style: Theme.of(ctx).textTheme.bodyMedium,
+                        );
+                      }
+                      return Column(
+                        children: [
+                          if (app.age != null)
+                            _InfoRow(l10n.labelAge, '${app.age}'),
+                          if (app.height.isNotEmpty)
+                            _InfoRow(l10n.labelHeight, app.height),
+                          if (app.weight.isNotEmpty)
+                            _InfoRow(l10n.labelWeight, app.weight),
+                          if (app.eyes.isNotEmpty)
+                            _InfoRow(l10n.labelEyes, app.eyes),
+                          if (app.skin.isNotEmpty)
+                            _InfoRow(l10n.labelSkin, app.skin),
+                          if (app.hair.isNotEmpty)
+                            _InfoRow(l10n.labelHair, app.hair),
+                        ],
+                      );
+                    },
                   ),
           ),
         ],

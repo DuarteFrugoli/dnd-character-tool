@@ -263,7 +263,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get skillsEditHint =>
-      'Нажмите для переключения: нет → владение → экспертиза';
+      'Удерживайте для переключения: нет → владение → экспертиза';
 
   @override
   String get detailTabStats => 'Статистика';
@@ -337,6 +337,27 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get labelChoose => 'Выбирать';
+
+  @override
+  String get sectionAppearance => 'Внешность';
+
+  @override
+  String get labelAge => 'Возраст';
+
+  @override
+  String get labelHeight => 'Рост';
+
+  @override
+  String get labelWeight => 'Вес';
+
+  @override
+  String get labelEyes => 'Глаза';
+
+  @override
+  String get labelSkin => 'Кожа';
+
+  @override
+  String get labelHair => 'Волосы';
 
   @override
   String get labelMaxHP => 'Макс. HP';

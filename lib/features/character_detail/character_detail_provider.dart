@@ -592,4 +592,34 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (c == null) return;
     await _save(c.copyWith(notes: c.notes.where((n) => n.id != id).toList()));
   }
+
+  // ── Appearance ───────────────────────────────────────────────────────────────
+
+  Future<void> updateAppearance(CharacterAppearance appearance) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(appearance: appearance));
+  }
+
+  // ── Image ────────────────────────────────────────────────────────────────────
+
+  Future<void> updateImage(String? newPath) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final repo = ref.read(characterRepositoryProvider);
+    final Character updated;
+    if (newPath == null) {
+      updated = await repo.removeImage(c);
+    } else if (newPath.startsWith('data:')) {
+      updated = await repo.save(
+        c.copyWith(imagePath: newPath, updatedAt: DateTime.now()),
+      );
+    } else {
+      updated = await repo.saveImage(c, newPath);
+    }
+    state = AsyncData(updated);
+    if (ref.exists(characterListProvider)) {
+      await ref.read(characterListProvider.notifier).updateSingle(updated);
+    }
+  }
 }

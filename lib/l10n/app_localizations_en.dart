@@ -261,7 +261,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailEditButton => 'Edit';
 
   @override
-  String get skillsEditHint => 'Tap to toggle: none → proficient → expert';
+  String get skillsEditHint => 'Hold to toggle: none → proficient → expert';
 
   @override
   String get detailTabStats => 'Stats';
@@ -335,6 +335,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get labelChoose => 'Choose';
+
+  @override
+  String get sectionAppearance => 'Appearance';
+
+  @override
+  String get labelAge => 'Age';
+
+  @override
+  String get labelHeight => 'Height';
+
+  @override
+  String get labelWeight => 'Weight';
+
+  @override
+  String get labelEyes => 'Eyes';
+
+  @override
+  String get labelSkin => 'Skin';
+
+  @override
+  String get labelHair => 'Hair';
 
   @override
   String get labelMaxHP => 'Max HP';

@@ -15,8 +15,6 @@ class _SkillsTab extends ConsumerStatefulWidget {
 }
 
 class _SkillsTabState extends ConsumerState<_SkillsTab> {
-  bool _isEditing = false;
-
   void _cycleSkill(String skillName) {
     final c = ref
         .read(characterDetailProvider(widget.characterId))
@@ -70,35 +68,16 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (_isEditing)
-                Row(children: [
-                  Icon(Icons.touch_app_outlined, size: 14, color: scheme.primary),
-                  const SizedBox(width: 6),
-                  Text(
-                    l10n.skillsEditHint,
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: scheme.primary,
-                        ),
+          child: Row(children: [
+            Icon(Icons.touch_app_outlined, size: 14, color: scheme.primary),
+            const SizedBox(width: 6),
+            Text(
+              l10n.skillsEditHint,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    color: scheme.primary,
                   ),
-                ])
-              else
-                const SizedBox.shrink(),
-              if (!_isEditing)
-                OutlinedButton.icon(
-                  icon: const Icon(Icons.edit_outlined, size: 16),
-                  label: Text(l10n.detailEditButton),
-                  onPressed: () => setState(() => _isEditing = true),
-                )
-              else
-                FilledButton(
-                  onPressed: () => setState(() => _isEditing = false),
-                  child: Text(l10n.dialogSave),
-                ),
-            ],
-          ),
+            ),
+          ]),
         ),
         Expanded(
           child: ListView.builder(
@@ -122,7 +101,7 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
 
               return ListTile(
                 dense: true,
-                onTap: _isEditing ? () => _cycleSkill(skillName) : null,
+                onLongPress: () => _cycleSkill(skillName),
                 leading: Icon(
                   isExpert
                       ? Icons.star_rounded
@@ -137,9 +116,7 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
                   abilityLabels[ability] ?? ability.substring(0, 3).toUpperCase(),
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
-                trailing: _isEditing
-                    ? Icon(Icons.swap_vert, size: 16, color: scheme.outline)
-                    : Text(
+                trailing: Text(
                         _sign(bonus),
                         style: TextStyle(
                           fontWeight:

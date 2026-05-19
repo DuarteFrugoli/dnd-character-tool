@@ -251,7 +251,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get detailEditButton => '编辑';
 
   @override
-  String get skillsEditHint => '点击切换: 无 → 熟练 → 专精';
+  String get skillsEditHint => '长按切换: 无 → 熟练 → 专精';
 
   @override
   String get detailTabStats => '统计数据';
@@ -324,6 +324,27 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get labelChoose => '选择';
+
+  @override
+  String get sectionAppearance => '外貌';
+
+  @override
+  String get labelAge => '年龄';
+
+  @override
+  String get labelHeight => '身高';
+
+  @override
+  String get labelWeight => '体重';
+
+  @override
+  String get labelEyes => '眼睛';
+
+  @override
+  String get labelSkin => '肤色';
+
+  @override
+  String get labelHair => '发色';
 
   @override
   String get labelMaxHP => '最大生命值';

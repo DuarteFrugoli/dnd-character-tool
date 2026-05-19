@@ -582,10 +582,10 @@ abstract class AppLocalizations {
   /// **'Edit'**
   String get detailEditButton;
 
-  /// Skills edit mode hint text.
+  /// Skills long-press hint text.
   ///
   /// In en, this message translates to:
-  /// **'Tap to toggle: none → proficient → expert'**
+  /// **'Hold to toggle: none → proficient → expert'**
   String get skillsEditHint;
 
   /// Stats tab label.
@@ -731,6 +731,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose'**
   String get labelChoose;
+
+  /// Identity tab appearance section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get sectionAppearance;
+
+  /// Appearance age field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get labelAge;
+
+  /// Appearance height field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Height'**
+  String get labelHeight;
+
+  /// Appearance weight field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight'**
+  String get labelWeight;
+
+  /// Appearance eye color field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Eyes'**
+  String get labelEyes;
+
+  /// Appearance skin color field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Skin'**
+  String get labelSkin;
+
+  /// Appearance hair color field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Hair'**
+  String get labelHair;
 
   /// Max HP inline field label.
   ///

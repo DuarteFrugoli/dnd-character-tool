@@ -263,7 +263,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get detailEditButton => 'Bearbeiten';
 
   @override
-  String get skillsEditHint => 'Tippen zum Wechseln: kein → geübt → Experte';
+  String get skillsEditHint => 'Halten zum Wechseln: kein → geübt → Experte';
 
   @override
   String get detailTabStats => 'Statistiken';
@@ -337,6 +337,27 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get labelChoose => 'Wählen';
+
+  @override
+  String get sectionAppearance => 'Erscheinung';
+
+  @override
+  String get labelAge => 'Alter';
+
+  @override
+  String get labelHeight => 'Größe';
+
+  @override
+  String get labelWeight => 'Gewicht';
+
+  @override
+  String get labelEyes => 'Augen';
+
+  @override
+  String get labelSkin => 'Haut';
+
+  @override
+  String get labelHair => 'Haare';
 
   @override
   String get labelMaxHP => 'Maximale HP';

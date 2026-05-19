@@ -264,7 +264,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get skillsEditHint =>
-      'Toque para alternar: nenhum → proficiente → experiente';
+      'Segure para alternar: nenhum → proficiente → experiente';
 
   @override
   String get detailTabStats => 'Status';
@@ -338,6 +338,27 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get labelChoose => 'Escolher';
+
+  @override
+  String get sectionAppearance => 'Aparência';
+
+  @override
+  String get labelAge => 'Idade';
+
+  @override
+  String get labelHeight => 'Altura';
+
+  @override
+  String get labelWeight => 'Peso';
+
+  @override
+  String get labelEyes => 'Olhos';
+
+  @override
+  String get labelSkin => 'Pele';
+
+  @override
+  String get labelHair => 'Cabelo';
 
   @override
   String get labelMaxHP => 'PV Máx';

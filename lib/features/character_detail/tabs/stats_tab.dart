@@ -258,9 +258,9 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           if (!_isEditing)
             Align(
               alignment: Alignment.centerRight,
-              child: OutlinedButton.icon(
-                icon: const Icon(Icons.edit_outlined, size: 16),
-                label: Text(l10n.detailEditButton),
+              child: IconButton(
+                icon: const Icon(Icons.edit_outlined),
+                tooltip: l10n.detailEditButton,
                 onPressed: _startEditing,
               ),
             )

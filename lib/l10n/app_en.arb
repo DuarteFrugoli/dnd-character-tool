@@ -246,8 +246,8 @@
   "detailEditButton": "Edit",
   "@detailEditButton": { "description": "Edit mode toggle button label." },
 
-  "skillsEditHint": "Tap to toggle: none \u2192 proficient \u2192 expert",
-  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+  "skillsEditHint": "Hold to toggle: none \u2192 proficient \u2192 expert",
+  "@skillsEditHint": { "description": "Skills long-press hint text." },
 
   "detailTabStats": "Stats",
   "@detailTabStats": { "description": "Stats tab label." },
@@ -320,6 +320,27 @@
 
   "labelChoose": "Choose",
   "@labelChoose": { "description": "Choose button label." },
+
+  "sectionAppearance": "Appearance",
+  "@sectionAppearance": { "description": "Identity tab appearance section title." },
+
+  "labelAge": "Age",
+  "@labelAge": { "description": "Appearance age field label." },
+
+  "labelHeight": "Height",
+  "@labelHeight": { "description": "Appearance height field label." },
+
+  "labelWeight": "Weight",
+  "@labelWeight": { "description": "Appearance weight field label." },
+
+  "labelEyes": "Eyes",
+  "@labelEyes": { "description": "Appearance eye color field label." },
+
+  "labelSkin": "Skin",
+  "@labelSkin": { "description": "Appearance skin color field label." },
+
+  "labelHair": "Hair",
+  "@labelHair": { "description": "Appearance hair color field label." },
 
   "labelMaxHP": "Max HP",
   "@labelMaxHP": { "description": "Max HP inline field label." },

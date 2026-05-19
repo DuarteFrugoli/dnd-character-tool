@@ -726,7 +726,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get labelLevelTable => 'レベル表';
 
   @override
-  String get statUnconsciousDying => 'Unconscious / Dying';
+  String get statUnconsciousDying => '気絶する / 死にかけている';
 
   @override
   String get tooltipAddTempHp => '一時HPを追加';

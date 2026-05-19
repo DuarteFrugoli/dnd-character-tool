@@ -734,7 +734,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get labelLevelTable => 'Tabla de Niveles';
 
   @override
-  String get statUnconsciousDying => 'Unconscious / Dying';
+  String get statUnconsciousDying => 'Inconsciente / Muriéndose';
 
   @override
   String get tooltipAddTempHp => 'Agregar HP temporal';

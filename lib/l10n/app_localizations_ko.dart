@@ -727,7 +727,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get labelLevelTable => '레벨 표';
 
   @override
-  String get statUnconsciousDying => 'Unconscious / Dying';
+  String get statUnconsciousDying => '무의식 / 죽어가는 중';
 
   @override
   String get tooltipAddTempHp => '임시 HP 추가';

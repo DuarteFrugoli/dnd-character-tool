@@ -219,37 +219,6 @@ class _FeaturesData {
   });
 }
 
-// ── Feature toggle button (shown in edit mode) ────────────────────────────────
-
-class _FeatureToggleButton extends StatelessWidget {
-  const _FeatureToggleButton({
-    required this.featureName,
-    required this.isDisabled,
-    required this.onToggle,
-  });
-  final String featureName;
-  final bool isDisabled;
-  final void Function(String) onToggle;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return IconButton(
-      icon: Icon(
-        isDisabled ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-        size: 18,
-      ),
-      color: isDisabled ? scheme.outline : scheme.primary,
-      tooltip: isDisabled
-          ? AppLocalizations.of(context)!.featuresTooltipEnable
-          : AppLocalizations.of(context)!.featuresTooltipDisable,
-      padding: EdgeInsets.zero,
-      constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
-      onPressed: () => onToggle(featureName),
-    );
-  }
-}
-
 class _RacialTraitsSection extends ConsumerWidget {
   const _RacialTraitsSection({
     required this.raceName,

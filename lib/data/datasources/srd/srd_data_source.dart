@@ -16,7 +16,7 @@ class SrdDataSource {
   List<SrdClass>? _classes;
   List<SrdBackground>? _backgrounds;
   List<SrdSpell>? _spells;
-  Map<String, SrdSpell>? _spellIndex;
+
   List<SrdWeapon>? _weapons;
   List<SrdArmor>? _armors;
   List<SrdGearItem>? _gear;
@@ -98,31 +98,11 @@ class SrdDataSource {
     return _spells!;
   }
 
-  /// Returns a spell by exact name (case-insensitive), or null if not found.
-  /// Uses a lazy-built index for O(1) lookups after first call.
-  Future<SrdSpell?> getSpellByName(String name) async {
-    if (_spellIndex == null) {
-      final all = await getSpells();
-      _spellIndex = {for (final s in all) s.name.toLowerCase(): s};
-    }
-    return _spellIndex![name.toLowerCase()];
-  }
-
   Future<List<SrdSpell>> getSpellsForClass(String className) async {
     final all = await getSpells();
     return all
         .where((s) => s.classes.contains(className.toLowerCase()))
         .toList();
-  }
-
-  Future<List<SrdSpell>> getCantrips() async {
-    final all = await getSpells();
-    return all.where((s) => s.isCantrip).toList();
-  }
-
-  Future<List<SrdSpell>> getSpellsByLevel(int level) async {
-    final all = await getSpells();
-    return all.where((s) => s.level == level).toList();
   }
 
   Future<List<SrdWeapon>> getWeapons() async {
@@ -325,24 +305,7 @@ class SrdDataSource {
     return list.map((e) => fromJson(e as Map<String, dynamic>)).toList();
   }
 
-  /// Limpa o cache (útil em testes).
-  void clearCache() {
-    _skills = null;
-    _races = null;
-    _classes = null;
-    _backgrounds = null;
-    _spells = null;
-    _weapons = null;
-    _armors = null;
-    _gear = null;
-    _equipmentLoadFuture = null;
-    _magicItems = null;
-    _classFeatures = null;
-    _raceTraits = null;
-    _subclassFeatures = null;
-    _items = null;
-    _tools = null;
-  }
+
 }
 
 // ── Equipment indexing helpers ────────────────────────────────────────────────

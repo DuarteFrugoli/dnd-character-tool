@@ -174,17 +174,6 @@ class SpellcastingEngine {
     }
   }
 
-  // ── Cantrip scaling ───────────────────────────────────────────────────────
-
-  /// Number of extra damage dice added to cantrips based on *character* level.
-  /// (Pass the total character level, not just the class level.)
-  static int cantripBonusDice(int characterLevel) {
-    if (characterLevel >= 17) return 3;
-    if (characterLevel >= 11) return 2;
-    if (characterLevel >= 5) return 1;
-    return 0;
-  }
-
   // ── Slot tables (SRD 5.1) ────────────────────────────────────────────────
 
   static const List<int> _fullCasterMaxSlot = [

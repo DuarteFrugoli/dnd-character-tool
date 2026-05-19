@@ -7,8 +7,4 @@ library;
 /// Source key used when the user creates a custom class feature.
 const kFeatureSourceCustom = 'Custom';
 
-/// Item type keys stored in [Item.type] and used for category filtering.
-const kItemTypeWeapon = 'weapon';
-const kItemTypeArmor = 'armor';
-const kItemTypeAdventuringGear = 'adventuring gear';
-const kItemTypeAmmunition = 'ammunition';
+

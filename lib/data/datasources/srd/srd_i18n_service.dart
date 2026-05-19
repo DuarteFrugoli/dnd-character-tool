@@ -326,7 +326,23 @@ class SrdI18nService {
 
   // ── Equipment ──────────────────────────────────────────────────────────────
 
-  String equipmentName(String en) => _str('equipment', en, 'name') ?? en;
+  String equipmentName(String en) {
+    final exact = _str('equipment', en, 'name');
+    if (exact != null) return exact;
+    // SRD data may store equipment names with inconsistent capitalisation
+    // (e.g. "Scale mail" vs "Scale Mail"). Fall back to case-insensitive search.
+    final equipMap = _data['equipment'];
+    if (equipMap != null) {
+      final lower = en.toLowerCase();
+      for (final entry in equipMap.entries) {
+        if (entry.key.toLowerCase() == lower) {
+          final v = entry.value;
+          if (v is Map) return (v['name'] as String?) ?? en;
+        }
+      }
+    }
+    return en;
+  }
 
   String? equipmentDescription(String en) => _str('equipment', en, 'description');
 

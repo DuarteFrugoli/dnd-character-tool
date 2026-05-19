@@ -714,6 +714,17 @@
   "@inspirationGranted": { "description": "Inspiration active subtitle." },
   "inspirationNotGranted": "Not granted",
   "@inspirationNotGranted": { "description": "Inspiration inactive subtitle." },
+  "statLevel": "Level {level}",
+  "@statLevel": {
+    "description": "Level label with number.",
+    "placeholders": {
+      "level": { "type": "int" }
+    }
+  },
+  "tooltipAddXp": "Add XP",
+  "@tooltipAddXp": { "description": "Add XP quick-action button." },
+  "labelLevelTable": "Level Table",
+  "@labelLevelTable": { "description": "Level/XP table toggle label." },
   "statUnconsciousDying": "Unconscious / Dying",
   "@statUnconsciousDying": { "description": "Status label when HP reaches 0." },
   "tooltipAddTempHp": "Add temp HP",

@@ -716,6 +716,17 @@ class AppLocalizationsKo extends AppLocalizations {
   String get inspirationNotGranted => '미획득';
 
   @override
+  String statLevel(int level) {
+    return '레벨 $level';
+  }
+
+  @override
+  String get tooltipAddXp => 'XP 추가';
+
+  @override
+  String get labelLevelTable => '레벨 표';
+
+  @override
   String get statUnconsciousDying => 'Unconscious / Dying';
 
   @override

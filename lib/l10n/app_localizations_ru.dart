@@ -724,6 +724,17 @@ class AppLocalizationsRu extends AppLocalizations {
   String get inspirationNotGranted => 'Не получено';
 
   @override
+  String statLevel(int level) {
+    return 'Уровень $level';
+  }
+
+  @override
+  String get tooltipAddXp => 'Добавить ОО';
+
+  @override
+  String get labelLevelTable => 'Таблица уровней';
+
+  @override
   String get statUnconsciousDying => 'Без сознания / Умирающий';
 
   @override

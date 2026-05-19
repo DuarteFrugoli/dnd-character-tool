@@ -1440,6 +1440,24 @@ abstract class AppLocalizations {
   /// **'Not granted'**
   String get inspirationNotGranted;
 
+  /// Level label with number.
+  ///
+  /// In en, this message translates to:
+  /// **'Level {level}'**
+  String statLevel(int level);
+
+  /// Add XP quick-action button.
+  ///
+  /// In en, this message translates to:
+  /// **'Add XP'**
+  String get tooltipAddXp;
+
+  /// Level/XP table toggle label.
+  ///
+  /// In en, this message translates to:
+  /// **'Level Table'**
+  String get labelLevelTable;
+
   /// Status label when HP reaches 0.
   ///
   /// In en, this message translates to:

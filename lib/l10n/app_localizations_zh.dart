@@ -708,6 +708,17 @@ class AppLocalizationsZh extends AppLocalizations {
   String get inspirationNotGranted => '未获得';
 
   @override
+  String statLevel(int level) {
+    return '第$level级';
+  }
+
+  @override
+  String get tooltipAddXp => '添加经验';
+
+  @override
+  String get labelLevelTable => '等级表';
+
+  @override
   String get statUnconsciousDying => '失去知觉/濒临死亡';
 
   @override

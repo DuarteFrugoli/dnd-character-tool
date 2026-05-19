@@ -32,6 +32,10 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   final _speedFocus = FocusNode();
   final _xpFocus = FocusNode();
 
+  // XP progression panel
+  final _xpAddCtrl = TextEditingController(text: '0');
+  bool _levelTableExpanded = false;
+
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
 
@@ -135,10 +139,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     _hpMaxCtrl.dispose();
     _speedCtrl.dispose();
     _xpCtrl.dispose();
+    _xpAddCtrl.dispose();
     _hpMaxFocus.dispose();
     _speedFocus.dispose();
     _xpFocus.dispose();
     super.dispose();
+  }
+
+  void _incrementAmount(int delta) {
+    final v = int.tryParse(_amountCtrl.text) ?? 1;
+    _amountCtrl.text = '${(v + delta).clamp(1, 9999)}';
   }
 
   Future<void> _showSetTempHpDialog(BuildContext context) async {
@@ -336,10 +346,18 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     ),
                   ),
                 const SizedBox(height: 12),
+                // Stepper row
                 Row(
                   children: [
+                    IconButton.outlined(
+                      icon: const Icon(Icons.remove, size: 16),
+                      style: IconButton.styleFrom(
+                        minimumSize: const Size(36, 36),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                      onPressed: () => _incrementAmount(-1),
+                    ),
                     Expanded(
-                      flex: 2,
                       child: TextField(
                         controller: _amountCtrl,
                         keyboardType: TextInputType.number,
@@ -351,15 +369,27 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           labelText: l10n.labelAmount,
                           border: const OutlineInputBorder(),
                           contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 12,
+                            horizontal: 8,
                             vertical: 8,
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 8),
+                    IconButton.outlined(
+                      icon: const Icon(Icons.add, size: 16),
+                      style: IconButton.styleFrom(
+                        minimumSize: const Size(36, 36),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                      onPressed: () => _incrementAmount(1),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                // Action row
+                Row(
+                  children: [
                     Expanded(
-                      flex: 3,
                       child: FilledButton.tonal(
                         style: FilledButton.styleFrom(
                           backgroundColor: scheme.errorContainer,
@@ -367,22 +397,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         ),
                         onPressed: () {
                           final n = int.tryParse(_amountCtrl.text) ?? 0;
-                          if (n > 0) {
-                            ref
-                                .read(
-                                  characterDetailProvider(
-                                    widget.characterId,
-                                  ).notifier,
-                                )
-                                .adjustHp(-n);
-                          }
+                          if (n > 0) notifier.adjustHp(-n);
                         },
                         child: Text(l10n.detailDamage),
                       ),
                     ),
                     const SizedBox(width: 8),
                     Expanded(
-                      flex: 3,
                       child: FilledButton.tonal(
                         style: FilledButton.styleFrom(
                           backgroundColor: scheme.primaryContainer,
@@ -390,15 +411,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         ),
                         onPressed: () {
                           final n = int.tryParse(_amountCtrl.text) ?? 0;
-                          if (n > 0) {
-                            ref
-                                .read(
-                                  characterDetailProvider(
-                                    widget.characterId,
-                                  ).notifier,
-                                )
-                                .adjustHp(n);
-                          }
+                          if (n > 0) notifier.adjustHp(n);
                         },
                         child: Text(l10n.detailHeal),
                       ),
@@ -592,22 +605,18 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     keyboardType: TextInputType.number,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   )
-                : Row(
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
-                    children: [
-                      Text(
-                        '${character.experiencePoints}',
-                        style: Theme.of(context).textTheme.headlineMedium
-                            ?.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        l10n.statXP,
-                        style: Theme.of(context).textTheme.titleMedium
-                            ?.copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                    ],
+                : _XpProgressionPanel(
+                    xp: character.experiencePoints,
+                    xpAddCtrl: _xpAddCtrl,
+                    expanded: _levelTableExpanded,
+                    onToggle: () => setState(
+                      () => _levelTableExpanded = !_levelTableExpanded,
+                    ),
+                    onAdd: (amount) => notifier.updateExperiencePoints(
+                      character.experiencePoints + amount,
+                    ),
+                    l10n: l10n,
+                    scheme: scheme,
                   ),
           ),
         ],
@@ -640,6 +649,218 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               tooltip: l10n.detailEditButton,
               child: const Icon(Icons.edit_outlined),
             ),
+    );
+  }
+}
+
+// ── XP / Progression ─────────────────────────────────────────────────────────
+
+const List<int> _kXpThresholds = [
+  0, 300, 900, 2700, 6500, 14000, 23000, 34000,
+  48000, 64000, 85000, 100000, 120000, 140000,
+  165000, 195000, 225000, 265000, 305000, 355000,
+];
+
+int _xpToLevel(int xp) {
+  for (int i = _kXpThresholds.length - 1; i >= 0; i--) {
+    if (xp >= _kXpThresholds[i]) return i + 1;
+  }
+  return 1;
+}
+
+class _XpProgressionPanel extends StatelessWidget {
+  const _XpProgressionPanel({
+    required this.xp,
+    required this.xpAddCtrl,
+    required this.expanded,
+    required this.onToggle,
+    required this.onAdd,
+    required this.l10n,
+    required this.scheme,
+  });
+
+  final int xp;
+  final TextEditingController xpAddCtrl;
+  final bool expanded;
+  final VoidCallback onToggle;
+  final void Function(int) onAdd;
+  final AppLocalizations l10n;
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    final level = _xpToLevel(xp);
+    final isMax = level >= 20;
+    final prevXp = _kXpThresholds[level - 1];
+    final nextXp = isMax ? _kXpThresholds.last : _kXpThresholds[level];
+    final progress = isMax
+        ? 1.0
+        : (xp - prevXp) / (nextXp - prevXp).toDouble();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Level + XP row
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+          children: [
+            Text(
+              l10n.statLevel(level),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const Spacer(),
+            Text(
+              '$xp',
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(width: 4),
+            Text(
+              l10n.statXP,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        // Progress bar
+        ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: LinearProgressIndicator(
+            value: progress,
+            minHeight: 6,
+            backgroundColor: scheme.surfaceContainerHigh,
+            color: scheme.primary,
+          ),
+        ),
+        if (!isMax) ...[
+          const SizedBox(height: 4),
+          Text(
+            '${nextXp - xp} ${l10n.statXP} → ${l10n.statLevel(level + 1)}',
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+          ),
+        ],
+        const SizedBox(height: 12),
+        // Quick-add XP row
+        Row(
+          children: [
+            IconButton.outlined(
+              icon: const Icon(Icons.remove, size: 16),
+              style: IconButton.styleFrom(
+                minimumSize: const Size(32, 32),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              onPressed: () {
+                final v = int.tryParse(xpAddCtrl.text) ?? 0;
+                xpAddCtrl.text = '${(v - 1).clamp(0, 999999)}';
+              },
+            ),
+            Expanded(
+              child: TextField(
+                controller: xpAddCtrl,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                textAlign: TextAlign.center,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                ),
+              ),
+            ),
+            IconButton.outlined(
+              icon: const Icon(Icons.add, size: 16),
+              style: IconButton.styleFrom(
+                minimumSize: const Size(32, 32),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              onPressed: () {
+                final v = int.tryParse(xpAddCtrl.text) ?? 0;
+                xpAddCtrl.text = '${v + 1}';
+              },
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              flex: 2,
+              child: FilledButton(
+                onPressed: () {
+                  final amount = int.tryParse(xpAddCtrl.text) ?? 0;
+                  if (amount > 0) {
+                    onAdd(amount);
+                    xpAddCtrl.text = '0';
+                  }
+                },
+                child: Text(l10n.tooltipAddXp),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        // Level table toggle
+        TextButton.icon(
+          icon: Icon(
+            expanded ? Icons.expand_less : Icons.expand_more,
+            size: 18,
+          ),
+          label: Text(l10n.labelLevelTable),
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+            minimumSize: const Size(0, 32),
+            foregroundColor: scheme.onSurfaceVariant,
+          ),
+          onPressed: onToggle,
+        ),
+        if (expanded) ...[
+          const SizedBox(height: 8),
+          ...List.generate(20, (i) {
+            final lvl = i + 1;
+            final threshold = _kXpThresholds[i];
+            final isCurrent = level == lvl;
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 2),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 90,
+                    child: Text(
+                      l10n.statLevel(lvl),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontWeight: isCurrent
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                            color: isCurrent ? scheme.primary : null,
+                          ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      '$threshold ${l10n.statXP}',
+                      style:
+                          Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                color: isCurrent
+                                    ? scheme.primary
+                                    : scheme.onSurfaceVariant,
+                                fontWeight: isCurrent
+                                    ? FontWeight.bold
+                                    : FontWeight.normal,
+                              ),
+                    ),
+                  ),
+                  if (isCurrent)
+                    Icon(Icons.arrow_left, size: 16, color: scheme.primary),
+                ],
+              ),
+            );
+          }),
+        ],
+      ],
     );
   }
 }

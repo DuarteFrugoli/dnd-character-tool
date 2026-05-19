@@ -723,6 +723,17 @@ class AppLocalizationsDe extends AppLocalizations {
   String get inspirationNotGranted => 'Nicht gewährt';
 
   @override
+  String statLevel(int level) {
+    return 'Stufe $level';
+  }
+
+  @override
+  String get tooltipAddXp => 'EP hinzufügen';
+
+  @override
+  String get labelLevelTable => 'Stufentabelle';
+
+  @override
   String get statUnconsciousDying => 'Bewusstlos / Sterbend';
 
   @override

@@ -728,6 +728,17 @@ class AppLocalizationsFr extends AppLocalizations {
   String get inspirationNotGranted => 'Non accordée';
 
   @override
+  String statLevel(int level) {
+    return 'Niveau $level';
+  }
+
+  @override
+  String get tooltipAddXp => 'Ajouter XP';
+
+  @override
+  String get labelLevelTable => 'Tableau des Niveaux';
+
+  @override
   String get statUnconsciousDying => 'Unconscious / Dying';
 
   @override

@@ -722,10 +722,21 @@ class AppLocalizationsIt extends AppLocalizations {
   String get statXP => 'XP';
 
   @override
-  String get inspirationGranted => 'Granted';
+  String get inspirationGranted => 'Concessa';
 
   @override
-  String get inspirationNotGranted => 'Not granted';
+  String get inspirationNotGranted => 'Non concessa';
+
+  @override
+  String statLevel(int level) {
+    return 'Livello $level';
+  }
+
+  @override
+  String get tooltipAddXp => 'Aggiungi XP';
+
+  @override
+  String get labelLevelTable => 'Tabella dei Livelli';
 
   @override
   String get statUnconsciousDying => 'Inconscio / Morente';

@@ -82,6 +82,15 @@
   "detailFinishEditTitle": "Finalizar edição?",
   "detailFinishEditContent": "As alterações serão salvas.",
 
+  "detailTabIdentity": "Identidade",
+  "@detailTabIdentity": { "description": "Identity tab label." },
+
+  "detailEditButton": "Editar",
+  "@detailEditButton": { "description": "Edit mode toggle button label." },
+
+  "skillsEditHint": "Toque para alternar: nenhum \u2192 proficiente \u2192 experiente",
+  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+
   "detailTabStats": "Status",
   "detailTabSkills": "Perícias",
   "detailTabFeatures": "Habilidades",

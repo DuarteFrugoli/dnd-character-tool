@@ -22,11 +22,9 @@ class _FeaturesTab extends ConsumerStatefulWidget {
   const _FeaturesTab({
     required this.character,
     required this.characterId,
-    required this.isEditing,
   });
   final Character character;
   final String characterId;
-  final bool isEditing;
 
   @override
   ConsumerState<_FeaturesTab> createState() => _FeaturesTabState();
@@ -122,7 +120,6 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           );
         }
         final data = snap.data!;
-        final isEditing = widget.isEditing;
         final disabledSet = widget.character.disabledFeatures.toSet();
         void toggle(String name) {
           final list = List<String>.from(widget.character.disabledFeatures);
@@ -146,7 +143,6 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 raceTraits: data.raceTraits,
                 subraceTraits: data.subraceTraits,
                 traitDescriptions: data.traitDescriptions,
-                isEditing: isEditing,
                 disabledFeatures: disabledSet,
                 onToggle: toggle,
               ),
@@ -156,7 +152,6 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                   backgroundName: widget.character.background,
                   featureName: data.backgroundFeatureName!,
                   featureDescription: data.backgroundFeatureDescription ?? '',
-                  isEditing: isEditing,
                   disabledFeatures: disabledSet,
                   onToggle: toggle,
                 ),
@@ -165,7 +160,6 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
               _ClassFeaturesSection(
                 className: widget.character.characterClass,
                 features: data.classFeatures,
-                isEditing: isEditing,
                 disabledFeatures: disabledSet,
                 onToggle: toggle,
               ),
@@ -175,7 +169,6 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                   className: widget.character.characterClass,
                   subclassName: data.subclassName,
                   features: data.subclassFeatures,
-                  isEditing: isEditing,
                   disabledFeatures: disabledSet,
                   onToggle: toggle,
                 ),
@@ -264,7 +257,6 @@ class _RacialTraitsSection extends ConsumerWidget {
     required this.raceTraits,
     required this.subraceTraits,
     required this.traitDescriptions,
-    required this.isEditing,
     required this.disabledFeatures,
     required this.onToggle,
   });
@@ -274,7 +266,6 @@ class _RacialTraitsSection extends ConsumerWidget {
   final List<String> raceTraits;
   final List<String> subraceTraits;
   final Map<String, String> traitDescriptions;
-  final bool isEditing;
   final Set<String> disabledFeatures;
   final void Function(String) onToggle;
 
@@ -372,7 +363,6 @@ class _BackgroundFeatureSection extends ConsumerWidget {
     required this.backgroundName,
     required this.featureName,
     required this.featureDescription,
-    required this.isEditing,
     required this.disabledFeatures,
     required this.onToggle,
   });
@@ -380,7 +370,6 @@ class _BackgroundFeatureSection extends ConsumerWidget {
   final String backgroundName;
   final String featureName;
   final String featureDescription;
-  final bool isEditing;
   final Set<String> disabledFeatures;
   final void Function(String) onToggle;
 
@@ -593,14 +582,12 @@ class _ClassFeaturesSection extends ConsumerWidget {
   const _ClassFeaturesSection({
     required this.className,
     required this.features,
-    required this.isEditing,
     required this.disabledFeatures,
     required this.onToggle,
   });
 
   final String className;
   final List<SrdClassFeature> features;
-  final bool isEditing;
   final Set<String> disabledFeatures;
   final void Function(String) onToggle;
 
@@ -731,7 +718,6 @@ class _SubclassFeaturesSection extends ConsumerWidget {
     required this.className,
     required this.subclassName,
     required this.features,
-    required this.isEditing,
     required this.disabledFeatures,
     required this.onToggle,
   });
@@ -739,7 +725,6 @@ class _SubclassFeaturesSection extends ConsumerWidget {
   final String className;
   final String subclassName;
   final List<SrdClassFeature> features;
-  final bool isEditing;
   final Set<String> disabledFeatures;
   final void Function(String) onToggle;
 

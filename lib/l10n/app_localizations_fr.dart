@@ -259,6 +259,16 @@ class AppLocalizationsFr extends AppLocalizations {
       'Les modifications seront enregistrées.';
 
   @override
+  String get detailTabIdentity => 'Identité';
+
+  @override
+  String get detailEditButton => 'Modifier';
+
+  @override
+  String get skillsEditHint =>
+      'Appuyez pour alterner: aucun → compétent → expert';
+
+  @override
   String get detailTabStats => 'Statistiques';
 
   @override

@@ -570,6 +570,24 @@ abstract class AppLocalizations {
   /// **'Changes will be saved.'**
   String get detailFinishEditContent;
 
+  /// Identity tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity'**
+  String get detailTabIdentity;
+
+  /// Edit mode toggle button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get detailEditButton;
+
+  /// Skills edit mode hint text.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to toggle: none → proficient → expert'**
+  String get skillsEditHint;
+
   /// Stats tab label.
   ///
   /// In en, this message translates to:

@@ -255,6 +255,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailFinishEditContent => 'Changes will be saved.';
 
   @override
+  String get detailTabIdentity => 'Identity';
+
+  @override
+  String get detailEditButton => 'Edit';
+
+  @override
+  String get skillsEditHint => 'Tap to toggle: none → proficient → expert';
+
+  @override
   String get detailTabStats => 'Stats';
 
   @override

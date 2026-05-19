@@ -257,6 +257,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get detailFinishEditContent => 'As alterações serão salvas.';
 
   @override
+  String get detailTabIdentity => 'Identidade';
+
+  @override
+  String get detailEditButton => 'Editar';
+
+  @override
+  String get skillsEditHint =>
+      'Toque para alternar: nenhum → proficiente → experiente';
+
+  @override
   String get detailTabStats => 'Status';
 
   @override

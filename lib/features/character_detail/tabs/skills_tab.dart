@@ -2,18 +2,25 @@ part of '../character_detail_screen.dart';
 
 // ── Skills Tab ────────────────────────────────────────────────────────────────
 
-class _SkillsTab extends ConsumerWidget {
+class _SkillsTab extends ConsumerStatefulWidget {
   const _SkillsTab({
     required this.character,
     required this.characterId,
-    required this.isEditing,
   });
   final Character character;
   final String characterId;
-  final bool isEditing;
 
-  void _cycleSkill(String skillName, WidgetRef ref) {
-    final c = ref.read(characterDetailProvider(characterId)).valueOrNull;
+  @override
+  ConsumerState<_SkillsTab> createState() => _SkillsTabState();
+}
+
+class _SkillsTabState extends ConsumerState<_SkillsTab> {
+  bool _isEditing = false;
+
+  void _cycleSkill(String skillName) {
+    final c = ref
+        .read(characterDetailProvider(widget.characterId))
+        .valueOrNull;
     if (c == null) return;
     final lower = skillName.toLowerCase();
     // Normalize to lowercase so contains/remove always match regardless of
@@ -36,14 +43,15 @@ class _SkillsTab extends ConsumerWidget {
       profs.add(lower);
     }
     ref
-        .read(characterDetailProvider(characterId).notifier)
+        .read(characterDetailProvider(widget.characterId).notifier)
         .updateSkillProficiencies(profs, experts);
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
+    final character = widget.character;
     final abilityLabels = {
       'Strength': l10n.abilityStr,
       'Dexterity': l10n.abilityDex,
@@ -60,24 +68,38 @@ class _SkillsTab extends ConsumerWidget {
 
     return Column(
       children: [
-        if (isEditing)
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            color: scheme.primaryContainer.withAlpha(80),
-            child: Row(children: [
-              Icon(Icons.touch_app_outlined, size: 14, color: scheme.primary),
-              const SizedBox(width: 6),
-              Expanded(
-                child: Text(
-                  'Toque para alternar: nenhum → proficiente → experiente',
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: scheme.primary,
-                      ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              if (_isEditing)
+                Row(children: [
+                  Icon(Icons.touch_app_outlined, size: 14, color: scheme.primary),
+                  const SizedBox(width: 6),
+                  Text(
+                    l10n.skillsEditHint,
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: scheme.primary,
+                        ),
+                  ),
+                ])
+              else
+                const SizedBox.shrink(),
+              if (!_isEditing)
+                OutlinedButton.icon(
+                  icon: const Icon(Icons.edit_outlined, size: 16),
+                  label: Text(l10n.detailEditButton),
+                  onPressed: () => setState(() => _isEditing = true),
+                )
+              else
+                FilledButton(
+                  onPressed: () => setState(() => _isEditing = false),
+                  child: Text(l10n.dialogSave),
                 ),
-              ),
-            ]),
+            ],
           ),
+        ),
         Expanded(
           child: ListView.builder(
             padding: const EdgeInsets.fromLTRB(0, 8, 0, 192),
@@ -100,7 +122,7 @@ class _SkillsTab extends ConsumerWidget {
 
               return ListTile(
                 dense: true,
-                onTap: isEditing ? () => _cycleSkill(skillName, ref) : null,
+                onTap: _isEditing ? () => _cycleSkill(skillName) : null,
                 leading: Icon(
                   isExpert
                       ? Icons.star_rounded
@@ -115,7 +137,7 @@ class _SkillsTab extends ConsumerWidget {
                   abilityLabels[ability] ?? ability.substring(0, 3).toUpperCase(),
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
-                trailing: isEditing
+                trailing: _isEditing
                     ? Icon(Icons.swap_vert, size: 16, color: scheme.outline)
                     : Text(
                         _sign(bonus),

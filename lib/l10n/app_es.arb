@@ -76,6 +76,15 @@
   "detailCancelEditContent": "Todos los cambios serán descartados.",
   "detailFinishEditTitle": "¿Terminar de editar?",
   "detailFinishEditContent": "Los cambios se guardarán.",
+  "detailTabIdentity": "Identidad",
+  "@detailTabIdentity": { "description": "Identity tab label." },
+
+  "detailEditButton": "Editar",
+  "@detailEditButton": { "description": "Edit mode toggle button label." },
+
+  "skillsEditHint": "Toca para alternar: ninguno \u2192 competente \u2192 experto",
+  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+
   "detailTabStats": "Estadísticas",
   "detailTabSkills": "Habilidades",
   "detailTabFeatures": "Características",

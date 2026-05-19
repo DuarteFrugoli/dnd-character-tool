@@ -256,6 +256,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get detailFinishEditContent => 'Изменения будут сохранены.';
 
   @override
+  String get detailTabIdentity => 'Личность';
+
+  @override
+  String get detailEditButton => 'Редактировать';
+
+  @override
+  String get skillsEditHint =>
+      'Нажмите для переключения: нет → владение → экспертиза';
+
+  @override
   String get detailTabStats => 'Статистика';
 
   @override

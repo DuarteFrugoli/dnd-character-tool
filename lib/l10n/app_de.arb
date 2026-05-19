@@ -76,6 +76,15 @@
   "detailCancelEditContent": "Alle Änderungen werden verworfen.",
   "detailFinishEditTitle": "Bearbeitung abschließen?",
   "detailFinishEditContent": "Änderungen werden gespeichert.",
+  "detailTabIdentity": "Identit\u00e4t",
+  "@detailTabIdentity": { "description": "Identity tab label." },
+
+  "detailEditButton": "Bearbeiten",
+  "@detailEditButton": { "description": "Edit mode toggle button label." },
+
+  "skillsEditHint": "Tippen zum Wechseln: kein \u2192 ge\u00fcbt \u2192 Experte",
+  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+
   "detailTabStats": "Statistiken",
   "detailTabSkills": "Fähigkeiten",
   "detailTabFeatures": "Merkmale",

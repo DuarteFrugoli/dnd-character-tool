@@ -255,6 +255,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get detailFinishEditContent => 'Los cambios se guardarán.';
 
   @override
+  String get detailTabIdentity => 'Identidad';
+
+  @override
+  String get detailEditButton => 'Editar';
+
+  @override
+  String get skillsEditHint =>
+      'Toca para alternar: ninguno → competente → experto';
+
+  @override
   String get detailTabStats => 'Estadísticas';
 
   @override

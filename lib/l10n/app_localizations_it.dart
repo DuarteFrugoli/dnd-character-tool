@@ -257,6 +257,16 @@ class AppLocalizationsIt extends AppLocalizations {
   String get detailFinishEditContent => 'Le modifiche verranno salvate.';
 
   @override
+  String get detailTabIdentity => 'Identità';
+
+  @override
+  String get detailEditButton => 'Modifica';
+
+  @override
+  String get skillsEditHint =>
+      'Tocca per alternare: nessuno → competente → esperto';
+
+  @override
   String get detailTabStats => 'Statistiche';
 
   @override

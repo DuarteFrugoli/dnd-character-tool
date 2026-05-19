@@ -252,6 +252,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get detailFinishEditContent => '변경사항이 저장됩니다.';
 
   @override
+  String get detailTabIdentity => '신원';
+
+  @override
+  String get detailEditButton => '편집';
+
+  @override
+  String get skillsEditHint => '탭하여 전환: 없음 → 숙련 → 전문가';
+
+  @override
   String get detailTabStats => '통계';
 
   @override

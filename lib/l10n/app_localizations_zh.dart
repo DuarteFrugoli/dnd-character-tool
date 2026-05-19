@@ -245,6 +245,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get detailFinishEditContent => '更改将被保存。';
 
   @override
+  String get detailTabIdentity => '身份';
+
+  @override
+  String get detailEditButton => '编辑';
+
+  @override
+  String get skillsEditHint => '点击切换: 无 → 熟练 → 专精';
+
+  @override
   String get detailTabStats => '统计数据';
 
   @override

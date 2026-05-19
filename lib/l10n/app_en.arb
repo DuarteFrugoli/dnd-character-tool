@@ -240,6 +240,15 @@
   "detailFinishEditContent": "Changes will be saved.",
   "@detailFinishEditContent": { "description": "Finish edit dialog body." },
 
+  "detailTabIdentity": "Identity",
+  "@detailTabIdentity": { "description": "Identity tab label." },
+
+  "detailEditButton": "Edit",
+  "@detailEditButton": { "description": "Edit mode toggle button label." },
+
+  "skillsEditHint": "Tap to toggle: none \u2192 proficient \u2192 expert",
+  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+
   "detailTabStats": "Stats",
   "@detailTabStats": { "description": "Stats tab label." },
 

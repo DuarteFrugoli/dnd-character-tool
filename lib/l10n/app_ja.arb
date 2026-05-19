@@ -76,6 +76,15 @@
   "detailCancelEditContent": "すべての変更は破棄されます。",
   "detailFinishEditTitle": "編集を終了しますか?",
   "detailFinishEditContent": "変更は保存されます。",
+  "detailTabIdentity": "\u7d20\u6027",
+  "@detailTabIdentity": { "description": "Identity tab label." },
+
+  "detailEditButton": "\u7de8\u96c6",
+  "@detailEditButton": { "description": "Edit mode toggle button label." },
+
+  "skillsEditHint": "\u30bf\u30c3\u30d7\u3057\u3066\u5207\u66ff: \u306a\u3057\u2192\u7fd2\u719f\u2192\u719f\u9054",
+  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+
   "detailTabStats": "統計",
   "detailTabSkills": "スキル",
   "detailTabFeatures": "特徴",

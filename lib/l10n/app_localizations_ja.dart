@@ -251,6 +251,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detailFinishEditContent => '変更は保存されます。';
 
   @override
+  String get detailTabIdentity => '素性';
+
+  @override
+  String get detailEditButton => '編集';
+
+  @override
+  String get skillsEditHint => 'タップして切替: なし→習熟→熟達';
+
+  @override
   String get detailTabStats => '統計';
 
   @override

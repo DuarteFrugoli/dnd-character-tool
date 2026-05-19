@@ -76,6 +76,15 @@
   "detailCancelEditContent": "所有更改都将被丢弃。",
   "detailFinishEditTitle": "完成编辑吗？",
   "detailFinishEditContent": "更改将被保存。",
+  "detailTabIdentity": "\u8eab\u4efd",
+  "@detailTabIdentity": { "description": "Identity tab label." },
+
+  "detailEditButton": "\u7f16\u8f91",
+  "@detailEditButton": { "description": "Edit mode toggle button label." },
+
+  "skillsEditHint": "\u70b9\u51fb\u5207\u6362: \u65e0 \u2192 \u719f\u7ec3 \u2192 \u4e13\u7cbe",
+  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+
   "detailTabStats": "统计数据",
   "detailTabSkills": "技能",
   "detailTabFeatures": "特征",

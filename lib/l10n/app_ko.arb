@@ -76,6 +76,15 @@
   "detailCancelEditContent": "모든 변경사항이 삭제됩니다.",
   "detailFinishEditTitle": "편집을 마치시겠습니까?",
   "detailFinishEditContent": "변경사항이 저장됩니다.",
+  "detailTabIdentity": "\uc2e0\uc6d0",
+  "@detailTabIdentity": { "description": "Identity tab label." },
+
+  "detailEditButton": "\ud3b8\uc9d1",
+  "@detailEditButton": { "description": "Edit mode toggle button label." },
+
+  "skillsEditHint": "\ud0ed\ud558\uc5ec \uc804\ud658: \uc5c6\uc74c \u2192 \uc219\ub828 \u2192 \uc804\ubb38\uac00",
+  "@skillsEditHint": { "description": "Skills edit mode hint text." },
+
   "detailTabStats": "통계",
   "detailTabSkills": "기술",
   "detailTabFeatures": "특징",

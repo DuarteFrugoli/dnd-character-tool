@@ -383,5 +383,6 @@
   "reviewLanguageChoices": "Sprachauswahl",
   "reviewLanguageTypeHint": "Sprache eingeben…",
   "avatarRemoveConfirmTitle": "Foto entfernen?",
-  "avatarRemoveConfirmBody": "Diese Aktion kann nicht rückgängig gemacht werden."
+  "avatarRemoveConfirmBody": "Diese Aktion kann nicht rückgängig gemacht werden.",
+  "editModeBanner": "Bearbeitung läuft"
 }

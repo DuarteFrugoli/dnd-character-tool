@@ -1244,4 +1244,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get avatarRemoveConfirmBody => '此操作无法撤销。';
+
+  @override
+  String get editModeBanner => '编辑中';
 }

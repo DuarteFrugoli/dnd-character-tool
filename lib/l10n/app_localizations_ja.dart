@@ -1252,4 +1252,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get avatarRemoveConfirmBody => 'この操作は元に戻せません。';
+
+  @override
+  String get editModeBanner => '編集中';
 }

@@ -383,5 +383,6 @@
   "reviewLanguageChoices": "语言选择",
   "reviewLanguageTypeHint": "输入一门语言…",
   "avatarRemoveConfirmTitle": "删除照片？",
-  "avatarRemoveConfirmBody": "此操作无法撤销。"
+  "avatarRemoveConfirmBody": "此操作无法撤销。",
+  "editModeBanner": "编辑中"
 }

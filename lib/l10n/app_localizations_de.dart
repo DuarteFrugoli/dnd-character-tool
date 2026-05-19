@@ -1272,4 +1272,7 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get avatarRemoveConfirmBody =>
       'Diese Aktion kann nicht rückgängig gemacht werden.';
+
+  @override
+  String get editModeBanner => 'Bearbeitung läuft';
 }

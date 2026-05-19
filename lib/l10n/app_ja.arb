@@ -383,5 +383,6 @@
   "reviewLanguageChoices": "言語の選択",
   "reviewLanguageTypeHint": "言語を入力…",
   "avatarRemoveConfirmTitle": "写真を削除しますか？",
-  "avatarRemoveConfirmBody": "この操作は元に戻せません。"
+  "avatarRemoveConfirmBody": "この操作は元に戻せません。",
+  "editModeBanner": "編集中"
 }

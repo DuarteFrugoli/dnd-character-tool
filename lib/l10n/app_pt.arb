@@ -420,6 +420,7 @@
   "reviewLanguageChoices": "Escolhas de Idioma",
   "reviewLanguageTypeHint": "Digite um idioma…",
   "avatarRemoveConfirmTitle": "Remover foto?",
-  "avatarRemoveConfirmBody": "Esta ação não pode ser desfeita."
+  "avatarRemoveConfirmBody": "Esta ação não pode ser desfeita.",
+  "editModeBanner": "Editando"
 }
 

@@ -2411,6 +2411,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This action cannot be undone.'**
   String get avatarRemoveConfirmBody;
+
+  /// Banner shown at the top of the stats tab when in edit mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Editing'**
+  String get editModeBanner;
 }
 
 class _AppLocalizationsDelegate

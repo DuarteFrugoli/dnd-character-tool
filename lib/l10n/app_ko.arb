@@ -383,5 +383,6 @@
   "reviewLanguageChoices": "언어 선택",
   "reviewLanguageTypeHint": "언어 입력…",
   "avatarRemoveConfirmTitle": "사진을 삭제할까요?",
-  "avatarRemoveConfirmBody": "이 작업은 취소할 수 없습니다."
+  "avatarRemoveConfirmBody": "이 작업은 취소할 수 없습니다.",
+  "editModeBanner": "편집 중"
 }

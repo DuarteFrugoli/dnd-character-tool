@@ -1270,4 +1270,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get avatarRemoveConfirmBody => 'Esta ação não pode ser desfeita.';
+
+  @override
+  String get editModeBanner => 'Editando';
 }

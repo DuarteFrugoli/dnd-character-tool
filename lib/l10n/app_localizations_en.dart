@@ -1264,4 +1264,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get avatarRemoveConfirmBody => 'This action cannot be undone.';
+
+  @override
+  String get editModeBanner => 'Editing';
 }

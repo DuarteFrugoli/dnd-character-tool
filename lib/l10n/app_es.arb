@@ -384,5 +384,6 @@
   "reviewLanguageChoices": "Opciones de idioma",
   "reviewLanguageTypeHint": "Escribe un idioma…",
   "avatarRemoveConfirmTitle": "¿Eliminar foto?",
-  "avatarRemoveConfirmBody": "Esta acción no se puede deshacer."
+  "avatarRemoveConfirmBody": "Esta acción no se puede deshacer.",
+  "editModeBanner": "Editando"
 }

@@ -1087,6 +1087,8 @@
   "avatarRemoveConfirmTitle": "Remove photo?",
   "@avatarRemoveConfirmTitle": { "description": "Avatar: confirmation dialog title when removing photo." },
   "avatarRemoveConfirmBody": "This action cannot be undone.",
-  "@avatarRemoveConfirmBody": { "description": "Avatar: confirmation dialog body when removing photo." }
+  "@avatarRemoveConfirmBody": { "description": "Avatar: confirmation dialog body when removing photo." },
+  "editModeBanner": "Editing",
+  "@editModeBanner": { "description": "Banner shown at the top of the stats tab when in edit mode." }
 }
 

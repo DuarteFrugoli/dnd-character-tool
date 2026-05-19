@@ -1275,4 +1275,7 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get avatarRemoveConfirmBody =>
       'Questa azione non può essere annullata.';
+
+  @override
+  String get editModeBanner => 'Modifica in corso';
 }

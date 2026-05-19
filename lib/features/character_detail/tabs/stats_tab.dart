@@ -538,18 +538,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                     ?.copyWith(color: scheme.onSurfaceVariant),
                               ),
                             ),
-                            IconButton(
-                              icon: const Icon(Icons.remove, size: 18),
-                              padding: EdgeInsets.zero,
-                              constraints: const BoxConstraints(
-                                minWidth: 32,
-                                minHeight: 32,
-                              ),
+                            OutlinedButton(
                               onPressed: character.level > 1
-                                  ? () => notifier.updateLevel(
-                                      character.level - 1,
-                                    )
+                                  ? () => notifier.updateLevel(character.level - 1)
                                   : null,
+                              style: OutlinedButton.styleFrom(
+                                minimumSize: const Size(36, 36),
+                                padding: EdgeInsets.zero,
+                                visualDensity: VisualDensity.compact,
+                              ),
+                              child: const Icon(Icons.remove, size: 16),
                             ),
                             SizedBox(
                               width: 40,
@@ -560,16 +558,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                     ?.copyWith(fontWeight: FontWeight.bold),
                               ),
                             ),
-                            IconButton(
-                              icon: const Icon(Icons.add, size: 18),
-                              padding: EdgeInsets.zero,
-                              constraints: const BoxConstraints(
-                                minWidth: 32,
-                                minHeight: 32,
-                              ),
+                            OutlinedButton(
                               onPressed: character.level < 20
                                   ? () => _onLevelUp(character)
                                   : null,
+                              style: OutlinedButton.styleFrom(
+                                minimumSize: const Size(36, 36),
+                                padding: EdgeInsets.zero,
+                                visualDensity: VisualDensity.compact,
+                              ),
+                              child: const Icon(Icons.add, size: 16),
                             ),
                           ],
                         ),

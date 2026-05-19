@@ -1275,4 +1275,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get avatarRemoveConfirmBody => 'Cette action est irréversible.';
+
+  @override
+  String get editModeBanner => 'Modification en cours';
 }

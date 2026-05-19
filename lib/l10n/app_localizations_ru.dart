@@ -1270,4 +1270,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get avatarRemoveConfirmBody => 'Это действие нельзя отменить.';
+
+  @override
+  String get editModeBanner => 'Редактирование';
 }

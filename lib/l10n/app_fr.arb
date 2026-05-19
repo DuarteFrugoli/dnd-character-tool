@@ -384,5 +384,6 @@
   "reviewLanguageChoices": "Choix de langues",
   "reviewLanguageTypeHint": "Saisissez une langue…",
   "avatarRemoveConfirmTitle": "Supprimer la photo ?",
-  "avatarRemoveConfirmBody": "Cette action est irréversible."
+  "avatarRemoveConfirmBody": "Cette action est irréversible.",
+  "editModeBanner": "Modification en cours"
 }

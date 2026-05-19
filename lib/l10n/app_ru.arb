@@ -383,5 +383,6 @@
   "reviewLanguageChoices": "Выбор языков",
   "reviewLanguageTypeHint": "Введите язык…",
   "avatarRemoveConfirmTitle": "Удалить фото?",
-  "avatarRemoveConfirmBody": "Это действие нельзя отменить."
+  "avatarRemoveConfirmBody": "Это действие нельзя отменить.",
+  "editModeBanner": "Редактирование"
 }

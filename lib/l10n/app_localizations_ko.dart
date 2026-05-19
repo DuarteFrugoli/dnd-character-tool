@@ -1253,4 +1253,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get avatarRemoveConfirmBody => '이 작업은 취소할 수 없습니다.';
+
+  @override
+  String get editModeBanner => '편집 중';
 }

@@ -383,5 +383,6 @@
   "reviewLanguageChoices": "Scelte linguistiche",
   "reviewLanguageTypeHint": "Digita una lingua…",
   "avatarRemoveConfirmTitle": "Rimuovere la foto?",
-  "avatarRemoveConfirmBody": "Questa azione non può essere annullata."
+  "avatarRemoveConfirmBody": "Questa azione non può essere annullata.",
+  "editModeBanner": "Modifica in corso"
 }

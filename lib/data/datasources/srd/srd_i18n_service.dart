@@ -265,7 +265,15 @@ class SrdI18nService {
 
   // ── Background equipment ───────────────────────────────────────────────────
 
-  String backgroundEquipmentName(String en) => _bgEquipmentNames[en] ?? en;
+  /// Translates an equipment item name, checking sources in priority order:
+  /// 1. Positional cross-ref from background/class JSON arrays (most exact)
+  /// 2. Equipment i18n data (handles weapons in "any X" sub-choice dropdowns)
+  /// 3. Tools i18n data (handles kits, instruments, artisan/gaming tools)
+  String backgroundEquipmentName(String en) =>
+      _bgEquipmentNames[en] ??
+      _str('equipment', en, 'name') ??
+      _str('tools', en, 'name') ??
+      en;
 
   // ── Tools ──────────────────────────────────────────────────────────────────
 

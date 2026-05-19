@@ -83,17 +83,18 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   }
 
   void _saveEditing() {
-    FocusScope.of(context).unfocus();
-    final hpMax = int.tryParse(_hpMaxCtrl.text);
-    if (hpMax != null) _notifier.updateHpMax(hpMax);
-    final speed = int.tryParse(_speedCtrl.text);
-    if (speed != null) _notifier.updateSpeed(speed);
-    final xp = int.tryParse(_xpCtrl.text);
-    if (xp != null) _notifier.updateExperiencePoints(xp);
+    // Set _isEditing = false BEFORE unfocus() so focus listeners don't fire
+    // individual saves that would race against each other and corrupt the file.
     setState(() {
       _isEditing = false;
       _snapshot = null;
     });
+    FocusScope.of(context).unfocus();
+    _notifier.saveStatsEdit(
+      hpMax: int.tryParse(_hpMaxCtrl.text),
+      speed: int.tryParse(_speedCtrl.text),
+      xp: int.tryParse(_xpCtrl.text),
+    );
   }
 
   @override

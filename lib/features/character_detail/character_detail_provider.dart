@@ -20,6 +20,9 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   }
 
   Future<void> _save(Character updated) async {
+    // Optimistic update: ensures concurrent calls read the latest state
+    // instead of the stale snapshot that was current when they were dispatched.
+    state = AsyncData(updated);
     final saved = await ref.read(characterRepositoryProvider).save(updated);
     state = AsyncData(saved);
     if (ref.exists(characterListProvider)) {
@@ -271,6 +274,31 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(c.copyWith(speed: speed.clamp(0, 999)));
+  }
+
+  /// Atomic save for all stats-tab edit-mode fields.
+  /// Replaces three separate saves that previously ran concurrently and could
+  /// corrupt the character file when writes interleaved.
+  Future<void> saveStatsEdit({
+    required int? hpMax,
+    required int? speed,
+    required int? xp,
+  }) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final clampedHpMax = (hpMax ?? c.hitPoints.maximum).clamp(1, 9999);
+    await _save(
+      c.copyWith(
+        hitPoints: hpMax != null
+            ? c.hitPoints.copyWith(
+                maximum: clampedHpMax,
+                current: c.hitPoints.current.clamp(0, clampedHpMax),
+              )
+            : null,
+        speed: speed?.clamp(0, 999),
+        experiencePoints: xp?.clamp(0, 999999),
+      ),
+    );
   }
 
   Future<void> updateSavingThrows(List<String> proficiencies) async {

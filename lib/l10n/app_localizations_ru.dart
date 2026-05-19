@@ -529,6 +529,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get sectionPersonalityTraits => 'Черты личности';
+
+  @override
   String get sectionPersonality => 'Личность';
 
   @override
@@ -705,7 +707,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get statPassivePerc => 'Пассивный процент';
+
+  @override
   String get statInspiration => 'Вдохновение';
+
+  @override
   String get statXP => 'ОО';
 
   @override

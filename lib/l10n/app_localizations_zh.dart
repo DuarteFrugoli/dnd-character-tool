@@ -514,6 +514,8 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get sectionPersonalityTraits => '性格特征';
+
+  @override
   String get sectionPersonality => '个性';
 
   @override
@@ -689,7 +691,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get statPassivePerc => '被动全氯乙烯';
+
+  @override
   String get statInspiration => '灵感';
+
+  @override
   String get statXP => '经验';
 
   @override

@@ -1081,6 +1081,9 @@ abstract class AppLocalizations {
   String get sectionPersonalityTraits;
 
   /// Personality section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Personality'**
   String get sectionPersonality;
 
   /// Notes tab ideals section.
@@ -1408,9 +1411,15 @@ abstract class AppLocalizations {
   String get statPassivePerc;
 
   /// Inspiration toggle label.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspiration'**
   String get statInspiration;
 
   /// Experience points label.
+  ///
+  /// In en, this message translates to:
+  /// **'XP'**
   String get statXP;
 
   /// Status label when HP reaches 0.

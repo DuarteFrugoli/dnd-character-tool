@@ -524,6 +524,8 @@
 
   "sectionPersonalityTraits": "Personality Traits",
   "@sectionPersonalityTraits": { "description": "Notes tab personality traits section." },
+  "sectionPersonality": "Personality",
+  "@sectionPersonality": { "description": "Personality section header." },
 
   "sectionIdeals": "Ideals",
   "@sectionIdeals": { "description": "Notes tab ideals section." },
@@ -702,6 +704,10 @@
   "@statProfBonus": { "description": "Proficiency bonus stat chip label." },
   "statPassivePerc": "Passive Perc",
   "@statPassivePerc": { "description": "Passive perception stat chip label." },
+  "statInspiration": "Inspiration",
+  "@statInspiration": { "description": "Inspiration toggle label." },
+  "statXP": "XP",
+  "@statXP": { "description": "Experience points label." },
   "statUnconsciousDying": "Unconscious / Dying",
   "@statUnconsciousDying": { "description": "Status label when HP reaches 0." },
   "tooltipAddTempHp": "Add temp HP",

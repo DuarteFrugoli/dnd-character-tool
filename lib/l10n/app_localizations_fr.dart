@@ -533,6 +533,8 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get sectionPersonalityTraits => 'Traits de personnalité';
+
+  @override
   String get sectionPersonality => 'Personnalité';
 
   @override
@@ -709,7 +711,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get statPassivePerc => 'Perc. passif';
+
+  @override
   String get statInspiration => 'Inspiration';
+
+  @override
   String get statXP => 'XP';
 
   @override

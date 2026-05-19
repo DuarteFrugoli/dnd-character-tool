@@ -126,17 +126,6 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     });
   }
 
-  void _savePersonality() {
-    _notifier.updatePersonality(
-      CharacterPersonality(
-        traits: _traitsCtrl.text.trim(),
-        ideals: _idealsCtrl.text.trim(),
-        bonds: _bondsCtrl.text.trim(),
-        flaws: _flawsCtrl.text.trim(),
-      ),
-    );
-  }
-
   @override
   void didUpdateWidget(_IdentityTab old) {
     super.didUpdateWidget(old);
@@ -238,18 +227,28 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
   }
 
   void _saveEditing() {
-    FocusScope.of(context).unfocus();
-    final fallback = AppLocalizations.of(context)!.reviewUnnamedHero;
-    _notifier.updateName(_nameCtrl.text, fallback: fallback);
-    _notifier.updateAlignment(_alignCtrl.text);
-    _notifier.updatePlayerName(_playerCtrl.text);
-    _notifier.updateAppearance(_buildCurrentAppearance());
-    _savePersonality();
-    _notifier.updateBackstory(_backstoryCtrl.text);
+    // Set _isEditing = false BEFORE unfocus() so focus listeners don't fire
+    // individual saves that race against each other.
     setState(() {
       _isEditing = false;
       _snapshot = null;
     });
+    FocusScope.of(context).unfocus();
+    final fallback = AppLocalizations.of(context)!.reviewUnnamedHero;
+    _notifier.updateIdentity(
+      name: _nameCtrl.text,
+      alignment: _alignCtrl.text,
+      playerName: _playerCtrl.text,
+      appearance: _buildCurrentAppearance(),
+      personality: CharacterPersonality(
+        traits: _traitsCtrl.text.trim(),
+        ideals: _idealsCtrl.text.trim(),
+        bonds: _bondsCtrl.text.trim(),
+        flaws: _flawsCtrl.text.trim(),
+      ),
+      backstory: _backstoryCtrl.text,
+      nameFallback: fallback,
+    );
   }
 
   CharacterAppearance _buildCurrentAppearance() => CharacterAppearance(

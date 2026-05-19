@@ -623,6 +623,30 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     }
   }
 
+  // ── Identity (atomic save) ────────────────────────────────────────────────
+
+  Future<void> updateIdentity({
+    required String name,
+    required String alignment,
+    required String playerName,
+    required CharacterAppearance appearance,
+    required CharacterPersonality personality,
+    required String backstory,
+    String nameFallback = 'Unnamed Hero',
+  }) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final trimmed = name.trim();
+    await _save(c.copyWith(
+      name: trimmed.isEmpty ? nameFallback : trimmed,
+      alignment: alignment.trim(),
+      playerName: playerName.trim(),
+      appearance: appearance,
+      personality: personality,
+      backstory: backstory.trim(),
+    ));
+  }
+
   // ── Personality & Backstory ───────────────────────────────────────────────
 
   Future<void> updatePersonality(CharacterPersonality personality) async {

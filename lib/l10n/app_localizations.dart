@@ -1410,6 +1410,18 @@ abstract class AppLocalizations {
   /// **'Passive Perc'**
   String get statPassivePerc;
 
+  /// Inspiration stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspiration'**
+  String get statInspiration;
+
+  /// Experience points stat chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'XP'**
+  String get statXP;
+
   /// Status label when HP reaches 0.
   ///
   /// In en, this message translates to:

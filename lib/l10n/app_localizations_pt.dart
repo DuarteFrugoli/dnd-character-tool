@@ -710,6 +710,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get statPassivePerc => 'Perc. Passiva';
 
   @override
+  String get statInspiration => 'Inspiração';
+
+  @override
+  String get statXP => 'XP';
+
+  @override
   String get statUnconsciousDying => 'Inconsciente / Morrendo';
 
   @override

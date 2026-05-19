@@ -47,6 +47,7 @@ class Character {
   final CharacterPersonality personality;
   final CharacterAppearance appearance;
   final String backstory;
+  final bool inspiration;
   final List<CharacterNote> notes;
   final String? imagePath;
   final CreationMode creationMode;
@@ -88,6 +89,7 @@ class Character {
     this.personality = const CharacterPersonality(),
     this.appearance = const CharacterAppearance(),
     this.backstory = '',
+    this.inspiration = false,
     this.notes = const [],
     this.imagePath,
     this.creationMode = CreationMode.manual,
@@ -143,6 +145,7 @@ class Character {
     CharacterPersonality? personality,
     CharacterAppearance? appearance,
     String? backstory,
+    bool? inspiration,
     List<CharacterNote>? notes,
     String? imagePath,
     bool clearImagePath = false,
@@ -186,6 +189,7 @@ class Character {
       personality: personality ?? this.personality,
       appearance: appearance ?? this.appearance,
       backstory: backstory ?? this.backstory,
+      inspiration: inspiration ?? this.inspiration,
       notes: notes ?? this.notes,
       imagePath: clearImagePath ? null : (imagePath ?? this.imagePath),
       creationMode: creationMode ?? this.creationMode,

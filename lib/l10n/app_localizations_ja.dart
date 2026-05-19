@@ -700,6 +700,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get statPassivePerc => 'パッシブパーク';
 
   @override
+  String get statInspiration => 'ヒラメキ';
+
+  @override
+  String get statXP => 'XP';
+
+  @override
   String get statUnconsciousDying => '意識不明 / 瀕死';
 
   @override

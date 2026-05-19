@@ -701,6 +701,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get statPassivePerc => '패시브 퍼크';
 
   @override
+  String get statInspiration => '영감';
+
+  @override
+  String get statXP => 'XP';
+
+  @override
   String get statUnconsciousDying => '의식불명 / 사망';
 
   @override

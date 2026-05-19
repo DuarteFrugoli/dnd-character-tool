@@ -708,6 +708,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get statPassivePerc => 'Perc Pasivo';
 
   @override
+  String get statInspiration => 'Inspiración';
+
+  @override
+  String get statXP => 'XP';
+
+  @override
   String get statUnconsciousDying => 'Inconsciente / Moribundo';
 
   @override

@@ -25,10 +25,12 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   // Stats edit controllers
   late final TextEditingController _hpMaxCtrl;
   late final TextEditingController _speedCtrl;
+  late final TextEditingController _xpCtrl;
 
   // Focus nodes
   final _hpMaxFocus = FocusNode();
   final _speedFocus = FocusNode();
+  final _xpFocus = FocusNode();
 
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
@@ -82,6 +84,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     if (hpMax != null) _notifier.updateHpMax(hpMax);
     final speed = int.tryParse(_speedCtrl.text);
     if (speed != null) _notifier.updateSpeed(speed);
+    final xp = int.tryParse(_xpCtrl.text);
+    if (xp != null) _notifier.updateExperiencePoints(xp);
     setState(() {
       _isEditing = false;
       _snapshot = null;
@@ -94,6 +98,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     final c = widget.character;
     _hpMaxCtrl = TextEditingController(text: '${c.hitPoints.maximum}');
     _speedCtrl = TextEditingController(text: '${c.speed}');
+    _xpCtrl = TextEditingController(text: '${c.experiencePoints}');
 
     _hpMaxFocus.addListener(() {
       if (!_hpMaxFocus.hasFocus && _isEditing) {
@@ -107,6 +112,12 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         if (v != null) _notifier.updateSpeed(v);
       }
     });
+    _xpFocus.addListener(() {
+      if (!_xpFocus.hasFocus && _isEditing) {
+        final v = int.tryParse(_xpCtrl.text);
+        if (v != null) _notifier.updateExperiencePoints(v);
+      }
+    });
   }
 
   @override
@@ -115,6 +126,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     final c = widget.character;
     if (!_hpMaxFocus.hasFocus) _hpMaxCtrl.text = '${c.hitPoints.maximum}';
     if (!_speedFocus.hasFocus) _speedCtrl.text = '${c.speed}';
+    if (!_xpFocus.hasFocus) _xpCtrl.text = '${c.experiencePoints}';
   }
 
   @override
@@ -122,8 +134,10 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
     _amountCtrl.dispose();
     _hpMaxCtrl.dispose();
     _speedCtrl.dispose();
+    _xpCtrl.dispose();
     _hpMaxFocus.dispose();
     _speedFocus.dispose();
+    _xpFocus.dispose();
     super.dispose();
   }
 
@@ -423,6 +437,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         ],
                       ),
                       const SizedBox(height: 8),
+                      _InlineField(
+                        label: l10n.statXP,
+                        controller: _xpCtrl,
+                        focusNode: _xpFocus,
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly,
+                        ],
+                      ),
+                      const SizedBox(height: 8),
                       Wrap(
                         spacing: 8,
                         runSpacing: 8,
@@ -440,6 +464,11 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           _StatChip(
                             l10n.statPassivePerc,
                             '${character.passivePerception}',
+                          ),
+                          _InspirationChip(
+                            label: l10n.statInspiration,
+                            active: character.inspiration,
+                            onTap: () => notifier.toggleInspiration(),
                           ),
                         ],
                       ),
@@ -463,6 +492,12 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                       _StatChip(
                         l10n.statPassivePerc,
                         '${character.passivePerception}',
+                      ),
+                      _StatChip(l10n.statXP, '${character.experiencePoints}'),
+                      _InspirationChip(
+                        label: l10n.statInspiration,
+                        active: character.inspiration,
+                        onTap: () => notifier.toggleInspiration(),
                       ),
                     ],
                   ),
@@ -585,6 +620,53 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
               tooltip: l10n.detailEditButton,
               child: const Icon(Icons.edit_outlined),
             ),
+    );
+  }
+}
+
+// ── Inspiration chip ──────────────────────────────────────────────────────────
+
+class _InspirationChip extends StatelessWidget {
+  const _InspirationChip({
+    required this.label,
+    required this.active,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool active;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: BoxDecoration(
+          color: active
+              ? scheme.primaryContainer
+              : scheme.surfaceContainerHighest,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              active ? Icons.star : Icons.star_border,
+              size: 20,
+              color: active ? scheme.primary : scheme.onSurfaceVariant,
+            ),
+            Text(
+              label,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    color: active ? scheme.onPrimaryContainer : null,
+                  ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

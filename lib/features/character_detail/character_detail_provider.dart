@@ -636,4 +636,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (c == null) return;
     await _save(c.copyWith(backstory: backstory.trim()));
   }
+
+  // ── Inspiration & XP ─────────────────────────────────────────────────────
+
+  Future<void> toggleInspiration() async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(inspiration: !c.inspiration));
+  }
+
+  Future<void> updateExperiencePoints(int xp) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(experiencePoints: xp.clamp(0, 999999)));
+  }
 }

@@ -709,6 +709,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get statPassivePerc => 'Пассивный процент';
 
   @override
+  String get statInspiration => 'Вдохновение';
+
+  @override
+  String get statXP => 'ОО';
+
+  @override
   String get statUnconsciousDying => 'Без сознания / Умирающий';
 
   @override

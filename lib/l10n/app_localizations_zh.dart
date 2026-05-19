@@ -693,6 +693,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get statPassivePerc => '被动全氯乙烯';
 
   @override
+  String get statInspiration => '灵感';
+
+  @override
+  String get statXP => '经验';
+
+  @override
   String get statUnconsciousDying => '失去知觉/濒临死亡';
 
   @override

@@ -91,6 +91,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
           json['appearance'] as Map<String, dynamic>,
         ),
   backstory: json['backstory'] as String? ?? '',
+  inspiration: json['inspiration'] as bool? ?? false,
   notes: (json['notes'] as List<dynamic>?)
       ?.map((e) => CharacterNote.fromJson(e as Map<String, dynamic>))
       .toList() ??
@@ -138,6 +139,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'personality': instance.personality.toJson(),
   'appearance': instance.appearance.toJson(),
   'backstory': instance.backstory,
+  'inspiration': instance.inspiration,
   'notes': instance.notes.map((e) => e.toJson()).toList(),
   'imagePath': instance.imagePath,
   'creationMode': _$CreationModeEnumMap[instance.creationMode]!,

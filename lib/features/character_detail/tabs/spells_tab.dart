@@ -25,6 +25,95 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
   /// Spells that are always prepared due to the character's subclass feature.
   List<SrdSpell>? _subclassAlwaysSpells;
 
+  // Cached display data — recomputed when character or class spell lists change,
+  // not on every build() call.
+  List<KnownSpell> _displaySpells = const [];
+  List<KnownSpell> _extraSpells = const [];
+  Map<int, List<KnownSpell>> _byLevel = const {};
+  Map<int, List<KnownSpell>> _extraByLevel = const {};
+
+  /// Recomputes spell display lists. Call inside setState or before a scheduled rebuild.
+  void _rebuildSpellDisplayData() {
+    final character = widget.character;
+    final engine = SpellcastingEngine.forClass(
+      className: character.characterClass,
+      classLevel: character.level,
+      abilityScores: character.abilityScores,
+      proficiencyBonus: character.proficiencyBonus,
+      subclass: character.subclass,
+    );
+    final isPrepareAll =
+        engine != null && _isPrepareAllClass(character.characterClass);
+
+    List<KnownSpell> displaySpells;
+    List<KnownSpell> extraSpells = [];
+
+    if (isPrepareAll && _classAllSpells != null) {
+      final classSpellNamesSet = {
+        for (final s in _classAllSpells!) s.name.toLowerCase(),
+      };
+      final preparedNames = {for (final s in character.spells) s.name};
+      final maxLevel = engine.maxSpellLevel;
+      final alwaysNames = _subclassAlwaysSpells != null
+          ? {for (final s in _subclassAlwaysSpells!) s.name.toLowerCase()}
+          : <String>{};
+      final classSpells = _classAllSpells!
+          .where((srd) => srd.level > 0 && srd.level <= maxLevel)
+          .map((srd) {
+            final isAlways = alwaysNames.contains(srd.name.toLowerCase());
+            return KnownSpell(
+              name: srd.name,
+              level: srd.level,
+              isPrepared: isAlways || preparedNames.contains(srd.name),
+              isAlwaysPrepared: isAlways,
+            );
+          })
+          .toList();
+      final extraSubclassSpells =
+          _subclassAlwaysSpells
+              ?.where(
+                (srd) =>
+                    srd.level <= maxLevel &&
+                    !classSpellNamesSet.contains(srd.name.toLowerCase()),
+              )
+              .map(
+                (srd) => KnownSpell(
+                  name: srd.name,
+                  level: srd.level,
+                  isPrepared: true,
+                  isAlwaysPrepared: true,
+                ),
+              )
+              .toList() ??
+          [];
+      final cantrips = character.spells.where((s) => s.level == 0).toList();
+      displaySpells = [...cantrips, ...classSpells, ...extraSubclassSpells];
+      extraSpells = character.spells
+          .where(
+            (s) =>
+                s.level > 0 &&
+                !classSpellNamesSet.contains(s.name.toLowerCase()),
+          )
+          .toList();
+    } else {
+      displaySpells = character.spells;
+    }
+
+    final byLevel = <int, List<KnownSpell>>{};
+    for (final s in displaySpells) {
+      (byLevel[s.level] ??= []).add(s);
+    }
+    final extraByLevel = <int, List<KnownSpell>>{};
+    for (final s in extraSpells) {
+      (extraByLevel[s.level] ??= []).add(s);
+    }
+
+    _displaySpells = displaySpells;
+    _extraSpells = extraSpells;
+    _byLevel = byLevel;
+    _extraByLevel = extraByLevel;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -46,6 +135,16 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
           .read(characterDetailProvider(widget.characterId).notifier)
           .syncInnateSpells();
     });
+  }
+
+  @override
+  void didUpdateWidget(_SpellsTab old) {
+    super.didUpdateWidget(old);
+    // Recompute cached display lists when the character data changes.
+    // This avoids rebuilding the expensive spell lists on every build() call.
+    if (old.character != widget.character) {
+      _rebuildSpellDisplayData();
+    }
   }
 
   Future<void> _loadSpells() async {
@@ -77,6 +176,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
               .toList();
         }
       }
+      _rebuildSpellDisplayData();
     });
   }
 
@@ -131,77 +231,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
     final isPrepareAll =
         isCaster && _isPrepareAllClass(character.characterClass);
 
-    // Build display list: full class list for prepare-all, character.spells for known
-    List<KnownSpell> displaySpells;
-    List<KnownSpell> extraSpells =
-        []; // non-class spells added manually to prepare-all
-    if (isPrepareAll && _classAllSpells != null) {
-      final classSpellNamesSet = {
-        for (final s in _classAllSpells!) s.name.toLowerCase(),
-      };
-      final preparedNames = {for (final s in character.spells) s.name};
-      final maxLevel = engine.maxSpellLevel;
-      // Names that are always prepared due to subclass
-      final alwaysNames = _subclassAlwaysSpells != null
-          ? {for (final s in _subclassAlwaysSpells!) s.name.toLowerCase()}
-          : <String>{};
-      final classSpells = _classAllSpells!
-          .where((srd) => srd.level > 0 && srd.level <= maxLevel)
-          .map((srd) {
-            final isAlways = alwaysNames.contains(srd.name.toLowerCase());
-            return KnownSpell(
-              name: srd.name,
-              level: srd.level,
-              isPrepared: isAlways || preparedNames.contains(srd.name),
-              isAlwaysPrepared: isAlways,
-            );
-          })
-          .toList();
-      // Subclass spells not already in the class list (e.g. Burning Hands for Light Domain)
-      final extraSubclassSpells =
-          _subclassAlwaysSpells
-              ?.where(
-                (srd) =>
-                    srd.level <= maxLevel &&
-                    !classSpellNamesSet.contains(srd.name.toLowerCase()),
-              )
-              .map(
-                (srd) => KnownSpell(
-                  name: srd.name,
-                  level: srd.level,
-                  isPrepared: true,
-                  isAlwaysPrepared: true,
-                ),
-              )
-              .toList() ??
-          [];
-      // Cantrips are still managed manually via browser for all classes
-      final cantrips = character.spells.where((s) => s.level == 0).toList();
-      displaySpells = [...cantrips, ...classSpells, ...extraSubclassSpells];
-      // Extra spells: in character.spells but NOT in the class list and not subclass
-      extraSpells = character.spells
-          .where(
-            (s) =>
-                s.level > 0 &&
-                !classSpellNamesSet.contains(s.name.toLowerCase()),
-          )
-          .toList();
-    } else {
-      displaySpells = character.spells;
-    }
-
-    // Group spells by level
-    final byLevel = <int, List<KnownSpell>>{};
-    for (final s in displaySpells) {
-      (byLevel[s.level] ??= []).add(s);
-    }
-    final levels = byLevel.keys.toList()..sort();
-
-    // Group extra spells by level
-    final extraByLevel = <int, List<KnownSpell>>{};
-    for (final s in extraSpells) {
-      (extraByLevel[s.level] ??= []).add(s);
-    }
+    final levels = _byLevel.keys.toList()..sort();
 
     // "prepares" = shows Prepared counter in banner (includes Wizard/spellbook)
     final prepares =
@@ -299,11 +329,11 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                 ],
 
                 // ── Spell list grouped by level ─────────────────────────────
-                if (displaySpells.isNotEmpty)
+                if (_displaySpells.isNotEmpty)
                   for (final lvl in levels) ...[
                     _SpellLevelHeader(level: lvl),
                     const SizedBox(height: 4),
-                    for (final spell in byLevel[lvl]!)
+                    for (final spell in _byLevel[lvl]!)
                       Builder(
                         builder: (context) {
                           final isDisabled = character.disabledSpells.contains(
@@ -446,7 +476,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                 ],
 
                 // ── Extra spells (non-class spells added to prepare-all) ────
-                if (extraSpells.isNotEmpty) ...[
+                if (_extraSpells.isNotEmpty) ...[
                   const SizedBox(height: 8),
                   Row(
                     children: [
@@ -465,10 +495,10 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                     ],
                   ),
                   const SizedBox(height: 8),
-                  for (final lvl in extraByLevel.keys.toList()..sort()) ...[
+                  for (final lvl in _extraByLevel.keys.toList()..sort()) ...[
                     _SpellLevelHeader(level: lvl),
                     const SizedBox(height: 4),
-                    for (final spell in extraByLevel[lvl]!)
+                    for (final spell in _extraByLevel[lvl]!)
                       _SpellRow(
                         spell: spell,
                         srdSpell: _spellIndex![spell.name.toLowerCase()],

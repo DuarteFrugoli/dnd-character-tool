@@ -41,6 +41,7 @@ L10N_DIR = ROOT / "lib" / "l10n"
 
 # ── Locale → Google Translate language code ────────────────────────────────────
 LOCALE_LANG = {
+    "pt": "pt",    # Portuguese
     "es": "es",    # Spanish
     "fr": "fr",    # French
     "de": "de",    # German
@@ -197,10 +198,23 @@ def extract_tools() -> dict:
     return {tool["name"]: {"name": tool["name"]} for tool in _srd("tools.json")}
 
 
+def extract_feats() -> dict:
+    # srd: [{ name, prerequisite, description }]
+    return {
+        feat["name"]: {
+            "name": feat["name"],
+            "prerequisite": feat.get("prerequisite"),
+            "description": feat.get("description", ""),
+        }
+        for feat in _srd("feats.json")
+    }
+
+
 # Map filename → extractor function
 EXTRACTORS = {
     "languages.json":         extract_languages,
     "tools.json":             extract_tools,
+    "feats.json":             extract_feats,
     "skills.json":            extract_skills,
     "equipment.json":         extract_equipment,
     "magic_items.json":       extract_magic_items,

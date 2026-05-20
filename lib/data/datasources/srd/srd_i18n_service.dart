@@ -217,7 +217,7 @@ class SrdI18nService {
   String? _str(String file, String key, String field) {
     final entry = _data[file]?[key.toLowerCase()];
     if (entry is! Map) return null;
-    return entry[field] as String?;
+    return entry[field.toLowerCase()] as String?;
   }
 
   String? _nested2(String file, String k1, String k2, String field) {
@@ -225,7 +225,7 @@ class SrdI18nService {
     if (level1 is! Map) return null;
     final entry = level1[k2.toLowerCase()];
     if (entry is! Map) return null;
-    return entry[field] as String?;
+    return entry[field.toLowerCase()] as String?;
   }
 
   String? _nested3(
@@ -236,7 +236,7 @@ class SrdI18nService {
     if (level2 is! Map) return null;
     final entry = level2[k3.toLowerCase()];
     if (entry is! Map) return null;
-    return entry[field] as String?;
+    return entry[field.toLowerCase()] as String?;
   }
 
   // ── Race traits ────────────────────────────────────────────────────────────

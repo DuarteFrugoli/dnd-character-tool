@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
@@ -14,6 +15,17 @@ final characterDetailProvider =
 class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   @override
   Future<Character> build(String id) async {
+    // Stay in sync with updates that come from the character list
+    // (e.g. image changes made from the list screen).
+    ref.listen<AsyncValue<List<Character>>>(
+      characterListProvider,
+      (_, next) {
+        final fromList =
+            next.valueOrNull?.firstWhereOrNull((c) => c.id == id);
+        if (fromList != null) state = AsyncData(fromList);
+      },
+    );
+
     final c = await ref.read(characterRepositoryProvider).getById(id);
     if (c == null) throw Exception('Character not found');
     return c;

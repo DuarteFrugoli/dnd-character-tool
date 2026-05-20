@@ -1,1 +1,80 @@
-- [x] refatorar sheet de personagem — concluído: `character_detail_screen.dart` usa `part` files por aba (`stats_tab.dart`, `skills_tab.dart`, `spells_tab.dart`, `inventory_tab.dart`, `features_tab.dart`, `notes_tab.dart`)
+# TODO - Melhorias do App D&D
+
+## Alta Prioridade
+
+### Sistema automático de level up
+- [ ] Criar botão "Upar Nível" na ficha do personagem
+- [ ] Aplicar aumento automático de HP ao subir de nível
+- [ ] Atualizar automaticamente o bônus de proficiência
+- [ ] Aplicar progressão automática da classe
+- [ ] Atualizar slots de magia automaticamente
+- [ ] Desbloquear recursos da classe automaticamente
+- [ ] Desbloquear recursos da subclasse automaticamente
+- [ ] Implementar escolha de:
+  - [ ] aumento de atributo
+  - [ ] talentos (feats)
+- [ ] Exibir tela/resumo das mudanças ao subir de nível
+- [ ] Melhorar experiência de level up inspirada em Baldur's Gate 3
+
+---
+
+### Correção do bônus de proficiência
+- [ ] Verificar cálculo automático baseado no nível total
+- [ ] Garantir atualização visual imediata na ficha
+- [ ] Garantir funcionamento correto em multiclasse
+
+---
+
+### Sistema de armaduras/equipamentos
+- [ ] Melhorar fluxo de equipar armaduras
+- [ ] Adicionar botão claro de "Equipar"
+- [ ] Destacar itens equipados visualmente
+- [ ] Atualizar CA automaticamente ao equipar
+- [ ] Melhorar feedback visual do inventário
+
+---
+
+## Média Prioridade
+
+### Conteúdo faltando
+- [ ] Adicionar antecedentes faltando
+  - [ ] Andarilho
+- [ ] Revisar lista completa de backgrounds
+- [ ] Revisar talentos disponíveis
+- [ ] Revisar recursos de classes/subclasses
+
+---
+
+### Inventário
+- [ ] Adicionar descrição automática para itens padrão
+- [ ] Melhorar visualização de itens
+- [ ] Adicionar tooltip/modal de descrição
+
+---
+
+### Melhorias de UX
+- [ ] Melhorar discoverability das funções
+- [ ] Reduzir dependência do modo edição
+- [ ] Tornar ações importantes mais visíveis
+- [ ] Melhorar onboarding para novos jogadores
+- [ ] Adicionar dicas/contextual help
+- [ ] Revisar navegação da ficha
+
+---
+
+## Baixa Prioridade
+
+### Refinamentos gerais
+- [ ] Melhorar experiência para mesas presenciais
+- [ ] Adicionar mais automações de regras
+- [ ] Melhorar consistência visual
+- [ ] Revisar feedback visual das alterações automáticas
+
+---
+
+# Feedbacks positivos
+- [x] Sistema de slots de magia foi bem recebido
+
+# pedro
+- [ ] Mostrar o dado de vida do personagem em algum lugar
+- [ ] Corrigir bug da imagem não atualizar dentro da ficha

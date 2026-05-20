@@ -1,0 +1,212 @@
+{
+  "Alert": {
+    "name": "Alerte",
+    "prerequisite": null,
+    "description": "Toujours à l'affût du danger, vous bénéficiez des avantages suivants :\n• Bonus de +5 à l'initiative.\n• Vous ne pouvez pas être surpris lorsque vous êtes conscient.\n• Les autres créatures ne bénéficient pas d'avantage aux jets d'attaque contre vous parce qu'elles ne sont pas vues par vous."
+  },
+  "Athlete": {
+    "name": "Athlète",
+    "prerequisite": null,
+    "description": "Vous avez suivi un entraînement physique approfondi pour bénéficier des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Lorsque vous êtes couché, vous lever n'utilise que 5 pieds de votre mouvement.\n• L'escalade ne vous coûte pas de mouvement supplémentaire.\n• Vous pouvez faire un saut en longueur ou un saut en hauteur en courant après avoir bougé de seulement 5 pieds à pied, au lieu de 10 pieds."
+  },
+  "Actor": {
+    "name": "Acteur",
+    "prerequisite": null,
+    "description": "Habile en mimétisme et en théâtre, vous bénéficiez des avantages suivants :\n• Augmentez votre score de Charisme de 1, jusqu'à un maximum de 20.\n• Vous avez un avantage aux tests de Charisme (Tromperie) et de Charisme (Performance) lorsque vous essayez de vous faire passer pour une personne différente.\n• Vous pouvez imiter le discours d'une autre personne ou les sons émis par d'autres créatures. Vous devez avoir entendu la personne parler, ou entendu la créature émettre le son, pendant au moins 1 minute. Un test de Sagesse (Perspicacité) réussi et contesté par votre test de Charisme (Tromperie) permet à un auditeur de déterminer que l'effet est truqué."
+  },
+  "Charger": {
+    "name": "Chargeur",
+    "prerequisite": null,
+    "description": "Lorsque vous utilisez votre action Dash, vous pouvez utiliser une action bonus pour effectuer une attaque au corps à corps avec une arme ou pour pousser une créature. Si vous vous déplacez d'au moins 3 mètres en ligne droite immédiatement avant d'effectuer cette action bonus, soit vous bénéficiez d'un bonus de +5 au jet de dégâts de l'attaque (si vous choisissez de faire une attaque au corps à corps et de toucher), soit vous poussez la cible jusqu'à 3 mètres de vous (si vous choisissez de la pousser et que vous réussissez)."
+  },
+  "Crossbow Expert": {
+    "name": "Expert en arbalète",
+    "prerequisite": null,
+    "description": "Grâce à une pratique approfondie de l'arbalète, vous bénéficiez des avantages suivants :\n• Vous ignorez la qualité de chargement des arbalètes que vous maîtrisez.\n• Être à moins de 1,50 mètre d'une créature hostile n'impose pas de désavantage à vos jets d'attaque à distance.\n• Lorsque vous utilisez l'action Attaque et attaquez avec une arme à une main, vous pouvez utiliser une action bonus pour attaquer avec une arbalète à main que vous tenez."
+  },
+  "Defensive Duelist": {
+    "name": "Duelliste défensif",
+    "prerequisite": "Dextérité 13 ou plus",
+    "description": "Lorsque vous maniez une arme de finesse avec laquelle vous maîtrisez et qu'une autre créature vous frappe avec une attaque de mêlée, vous pouvez utiliser votre réaction pour ajouter votre bonus de maîtrise à votre CA pour cette attaque, ce qui pourrait faire en sorte que l'attaque vous manque."
+  },
+  "Dual Wielder": {
+    "name": "Double porteur",
+    "prerequisite": null,
+    "description": "Vous maîtrisez le combat avec deux armes, bénéficiant des avantages suivants :\n• Vous gagnez un bonus de +1 à la CA lorsque vous maniez une arme de mêlée distincte dans chaque main.\n• Vous pouvez utiliser le combat à deux armes même lorsque les armes de mêlée à une main que vous utilisez ne sont pas légères.\n• Vous pouvez dégainer ou ranger deux armes à une main alors que vous ne pourriez normalement dégainer ou ranger qu'une seule."
+  },
+  "Dungeon Delver": {
+    "name": "Sondeur de donjon",
+    "prerequisite": null,
+    "description": "Alerté aux pièges cachés et aux portes secrètes que l'on trouve dans de nombreux donjons, vous bénéficiez des avantages suivants :\n• Vous avez un avantage aux tests de Sagesse (Perception) et d'Intelligence (Enquête) effectués pour détecter la présence de portes secrètes.\n• Vous avez un avantage sur les jets de sauvegarde effectués pour éviter ou résister aux pièges.\n• Vous disposez d'une résistance aux dégâts infligés par les pièges.\n• Voyager à un rythme rapide n'impose pas la pénalité normale de -5 sur votre score passif de Sagesse (Perception)."
+  },
+  "Durable": {
+    "name": "Durable",
+    "prerequisite": null,
+    "description": "Robuste et résilient, vous bénéficiez des avantages suivants :\n• Augmentez votre score de Constitution de 1, jusqu'à un maximum de 20.\n• Lorsque vous lancez un dé de vie pour regagner des points de vie, le nombre minimum de points de vie que vous récupérez grâce au lancer est égal à deux fois votre modificateur de Constitution (minimum de 2)."
+  },
+  "Elemental Adept": {
+    "name": "Adepte élémentaire",
+    "prerequisite": "La capacité de lancer au moins un sort",
+    "description": "Lorsque vous obtenez ce don, choisissez l'un des types de dégâts suivants : acide, froid, feu, foudre ou tonnerre. Les sorts que vous lancez ignorent la résistance aux dégâts du type choisi. De plus, lorsque vous lancez des dégâts pour un sort que vous lancez et qui inflige des dégâts de ce type, vous pouvez traiter n'importe quel 1 sur un dé de dégâts comme un 2.\nVous pouvez sélectionner cet exploit plusieurs fois. À chaque fois que vous le faites, vous devez choisir un type de dégâts différent."
+  },
+  "Grappler": {
+    "name": "Grappin",
+    "prerequisite": "Force 13 ou plus",
+    "description": "Vous avez développé les compétences nécessaires pour vous défendre dans des combats rapprochés. Vous bénéficiez des avantages suivants :\n• Vous avez un avantage aux jets d'attaque contre une créature que vous agrippez.\n• Vous pouvez utiliser votre action pour tenter de coincer une créature agrippée par vous. Pour ce faire, effectuez une autre vérification du grappin. Si vous réussissez, vous et la créature êtes tous deux retenus jusqu'à la fin du combat."
+  },
+  "Great Weapon Master": {
+    "name": "Grand maître d'armes",
+    "prerequisite": null,
+    "description": "Vous avez appris à mettre le poids d'une arme à votre avantage, en laissant son élan renforcer vos frappes. Vous bénéficiez des avantages suivants :\n• À votre tour, lorsque vous réussissez un coup critique avec une arme de mêlée ou réduisez une créature à 0 point de vie avec une, vous pouvez effectuer une attaque avec une arme de mêlée en tant qu'action bonus.\n• Avant d'effectuer une attaque au corps à corps avec une arme lourde que vous maîtrisez, vous pouvez choisir de subir un malus de -5 au jet d'attaque. Si l'attaque réussit, vous ajoutez +10 au jet de dégâts de l'attaque."
+  },
+  "Healer": {
+    "name": "Guérisseur",
+    "prerequisite": null,
+    "description": "Vous êtes un médecin compétent, ce qui vous permet de panser rapidement vos blessures et de remettre vos alliés dans le combat. Vous bénéficiez des avantages suivants :\n• Lorsque vous utilisez un kit de guérisseur pour stabiliser une créature mourante, cette créature récupère également 1 point de vie.\n• Par une action, vous pouvez utiliser un kit de guérisseur pour soigner une créature et lui redonner 1d6 + 4 points de vie, plus des points de vie supplémentaires égaux au nombre maximum de dés de vie de la créature. La créature ne peut plus regagner de points de vie grâce à ce don tant qu'elle n'a pas terminé un repos court ou long."
+  },
+  "Heavily Armored": {
+    "name": "Fortement blindé",
+    "prerequisite": "Maîtrise de l'armure moyenne",
+    "description": "Vous vous êtes entraîné à maîtriser l'utilisation des armures lourdes, bénéficiant ainsi des avantages suivants :\n• Augmentez votre score de Force de 1, jusqu'à un maximum de 20.\n• You gain proficiency with heavy armor."
+  },
+  "Heavy Armor Master": {
+    "name": "Maître des armures lourdes",
+    "prerequisite": "Maîtrise des armures lourdes",
+    "description": "Vous pouvez utiliser votre armure pour dévier les frappes qui pourraient tuer d'autres personnes. Vous bénéficiez des avantages suivants :\n• Augmentez votre score de Force de 1, jusqu'à un maximum de 20.\n• Lorsque vous portez une armure lourde, les dégâts contondants, perforants et tranchants que vous subissez avec des armes non magiques sont réduits de 3."
+  },
+  "Inspiring Leader": {
+    "name": "Leader inspirant",
+    "prerequisite": "Charisme 13 ou supérieur",
+    "description": "Vous pouvez passer 10 minutes à inspirer vos compagnons, renforçant ainsi leur détermination à se battre. Ce faisant, choisissez jusqu'à six créatures amies (qui peuvent vous inclure) à moins de 9 mètres de vous qui peuvent vous voir ou vous entendre et qui peuvent vous comprendre. Chaque créature peut gagner des points de vie temporaires égaux à votre niveau + votre modificateur de Charisme. Une créature ne peut plus gagner de points de vie temporaires grâce à ce don tant qu'elle n'a pas terminé un repos court ou long."
+  },
+  "Keen Mind": {
+    "name": "Esprit vif",
+    "prerequisite": null,
+    "description": "Vous avez un esprit capable de suivre le temps, la direction et les détails avec une précision étrange. Vous bénéficiez des avantages suivants :\n• Augmentez votre score d'Intelligence de 1, jusqu'à un maximum de 20.\n• Vous savez toujours où se trouve le nord.\n• Vous connaissez toujours le nombre d'heures restantes avant le prochain lever ou coucher du soleil.\n• Vous pouvez vous rappeler avec précision tout ce que vous avez vu ou entendu au cours du mois dernier."
+  },
+  "Lightly Armored": {
+    "name": "Légèrement blindé",
+    "prerequisite": null,
+    "description": "Vous vous êtes entraîné à maîtriser l'utilisation des armures légères, bénéficiant ainsi des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Vous gagnez en maîtrise des armures légères."
+  },
+  "Linguist": {
+    "name": "Linguiste",
+    "prerequisite": null,
+    "description": "Vous avez étudié les langues et les codes, bénéficiant des avantages suivants :\n• Augmentez votre score d'Intelligence de 1, jusqu'à un maximum de 20.\n• Vous apprenez trois langues de votre choix.\n• Vous pouvez créer des chiffres écrits avec compétence. Les autres ne peuvent pas déchiffrer un code que vous créez à moins que vous ne leur appreniez, qu'ils réussissent un test d'Intelligence (DD égal à votre score d'Intelligence + votre bonus de maîtrise) ou qu'ils utilisent la magie pour le déchiffrer."
+  },
+  "Lucky": {
+    "name": "Chanceux",
+    "prerequisite": null,
+    "description": "Vous avez une chance inexplicable qui semble survenir juste au bon moment.\nVous avez 3 points de chance. Chaque fois que vous effectuez un jet d'attaque, un test de caractéristique ou un jet de sauvegarde, vous pouvez dépenser un point de chance pour lancer un d20 supplémentaire. Vous pouvez choisir de dépenser un de vos points de chance après avoir lancé le dé, mais avant que le résultat ne soit déterminé. Vous choisissez lequel des d20 est utilisé pour le jet d’attaque, le test de caractéristique ou le jet de sauvegarde.\nVous pouvez également dépenser un point de chance lorsqu'un jet d'attaque est effectué contre vous. Lancez un d20, puis choisissez si l'attaque utilise le jet de l'attaquant ou le vôtre. Si plusieurs créatures dépensent un point de chance pour influencer le résultat d'un jet, les points s'annulent.\nVous récupérez vos points de chance dépensés lorsque vous terminez un repos long."
+  },
+  "Mage Slayer": {
+    "name": "Tueur de mages",
+    "prerequisite": null,
+    "description": "Vous avez pratiqué des techniques utiles dans les combats au corps à corps contre des lanceurs de sorts, bénéficiant des avantages suivants :\n• Lorsqu'une créature à moins de 1,50 mètre de vous lance un sort, vous pouvez utiliser votre réaction pour lancer une attaque de mêlée avec une arme contre cette créature.\n• Lorsque vous blessez une créature qui se concentre sur un sort, cette créature est désavantagée lors du jet de sauvegarde qu'elle effectue pour maintenir sa concentration.\n• Vous avez un avantage aux jets de sauvegarde contre les sorts lancés par des créatures situées à moins de 1,50 mètre de vous."
+  },
+  "Magic Initiate": {
+    "name": "Initié magique",
+    "prerequisite": null,
+    "description": "Choisissez une classe : barde, clerc, druide, sorcier, démoniste ou sorcier. Vous apprenez deux sorts mineurs de votre choix dans la liste de sorts de cette classe.\nDe plus, choisissez un sort de niveau 1 dans cette même liste. Vous apprenez ce sort et pouvez le lancer à son niveau le plus bas. Une fois que vous l'avez lancé, vous devez terminer un long repos avant de pouvoir le lancer à nouveau en utilisant ce don.\nVotre capacité à lancer des sorts pour ces sorts dépend de la classe que vous avez choisie : Charisme pour barde, sorcier ou démoniste ; Sagesse pour clerc ou druide ; ou Intelligence pour l'assistant."
+  },
+  "Martial Adept": {
+    "name": "Adepte martial",
+    "prerequisite": null,
+    "description": "Vous disposez d'un entraînement martial qui vous permet d'effectuer des manœuvres de combat spéciales. Vous bénéficiez des avantages suivants :\n• Vous apprenez deux manœuvres de votre choix parmi celles disponibles pour l'archétype Battle Master de la classe combattant. Si une manœuvre que vous utilisez nécessite que votre cible effectue un jet de sauvegarde pour résister aux effets de la manœuvre, le DD du jet de sauvegarde est égal à 8 + votre bonus de maîtrise + votre modificateur de Force ou de Dextérité (au choix).\n• Vous gagnez un dé de supériorité, qui est un d6 (ce dé est ajouté à tous les dés de supériorité que vous possédez d'une autre source). Ce dé sert à alimenter vos manœuvres. Un dé de supériorité est dépensé lorsque vous l’utilisez. Vous récupérez vos dés de supériorité dépensés lorsque vous terminez un repos court ou long."
+  },
+  "Medium Armor Master": {
+    "name": "Maître des armures moyennes",
+    "prerequisite": "Maîtrise de l'armure moyenne",
+    "description": "Vous vous êtes entraîné à vous déplacer avec une armure moyenne pour bénéficier des avantages suivants :\n• Le port d'une armure moyenne n'impose pas de désavantage à vos tests de Dextérité (Furtivité).\n• Lorsque vous portez une armure moyenne, vous pouvez ajouter 3, au lieu de 2, à votre CA si vous avez une Dextérité de 16 ou plus."
+  },
+  "Mobile": {
+    "name": "Mobile",
+    "prerequisite": null,
+    "description": "Vous êtes exceptionnellement rapide et agile. Vous bénéficiez des avantages suivants :\n• Votre vitesse augmente de 10 pieds.\n• Lorsque vous utilisez l'action Dash, un terrain difficile ne vous coûte pas de mouvement supplémentaire pendant ce tour.\n• Lorsque vous effectuez une attaque au corps à corps contre une créature, vous ne provoquez pas d'attaques d'opportunité de cette créature pour le reste du tour, que l'attaque touche ou non."
+  },
+  "Moderately Armored": {
+    "name": "Modérément blindé",
+    "prerequisite": "Maîtrise des armures légères",
+    "description": "Vous vous êtes entraîné à maîtriser l'utilisation des armures et des boucliers moyens, bénéficiant ainsi des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Vous gagnez en maîtrise avec les armures et boucliers moyens."
+  },
+  "Mounted Combatant": {
+    "name": "Combattant monté",
+    "prerequisite": null,
+    "description": "Vous êtes un ennemi dangereux à affronter lorsque vous êtes monté. Tant que vous êtes monté et que vous n'êtes pas incapable d'agir, vous bénéficiez des avantages suivants :\n• Vous avez un avantage aux jets d'attaque en mêlée contre toute créature non montée qui est plus petite que votre monture.\n• Vous pouvez forcer une attaque ciblée sur votre monture à vous cibler à la place.\n• Si votre monture est soumise à un effet qui lui permet d'effectuer un jet de sauvegarde de Dextérité pour ne subir que la moitié des dégâts, elle ne subit aucun dégât si elle réussit le jet de sauvegarde, et seulement la moitié des dégâts en cas d'échec."
+  },
+  "Observant": {
+    "name": "Observateur",
+    "prerequisite": null,
+    "description": "En remarquant rapidement les détails de votre environnement, vous bénéficiez des avantages suivants :\n• Augmentez votre score d'Intelligence ou de Sagesse de 1, jusqu'à un maximum de 20.\n• Si vous pouvez voir la bouche d'une créature pendant qu'elle parle une langue que vous comprenez, vous pouvez interpréter ce qu'elle dit en lisant sur ses lèvres.\n• Vous disposez d'un bonus de +5 à vos scores passifs de Sagesse (Perception) et d'Intelligence passive (Enquête)."
+  },
+  "Polearm Master": {
+    "name": "Maître d'arme d'hast",
+    "prerequisite": null,
+    "description": "Vous pouvez garder vos ennemis à distance avec des armes à portée de main. Vous bénéficiez des avantages suivants :\n• Lorsque vous effectuez l'action Attaque et attaquez avec uniquement un glaive, une hallebarde, une pique ou un bâton, vous pouvez utiliser une action bonus pour effectuer une attaque au corps à corps avec l'extrémité opposée de l'arme ; cette attaque utilise le même modificateur de capacité que l'attaque principale. Le dé de dégâts de l'arme pour cette attaque est un d4 et elle inflige des dégâts contondants.\n• Pendant que vous brandissez un glaive, une hallebarde, une pique ou un bâton, d'autres créatures provoquent une attaque d'opportunité de votre part lorsqu'elles entrent dans la portée que vous avez avec cette arme."
+  },
+  "Resilient": {
+    "name": "Résilient",
+    "prerequisite": null,
+    "description": "Choisissez une valeur de capacité. Vous bénéficiez des avantages suivants :\n• Augmentez le score de capacité choisi de 1, jusqu'à un maximum de 20.\n• Vous gagnez la maîtrise des jets de sauvegarde en utilisant la capacité choisie."
+  },
+  "Ritual Caster": {
+    "name": "Lanceur rituel",
+    "prerequisite": "Intelligence ou Sagesse 13 ou supérieur",
+    "description": "Vous avez appris un certain nombre de sorts que vous pouvez lancer sous forme de rituels. Ces sorts sont écrits dans un livre de rituels, que vous devez avoir en main lorsque vous lancez l'un d'entre eux.\nEn choisissant ce don, vous acquérez un livre rituel contenant deux sorts de niveau 1 de votre choix. Choisissez l'une des classes suivantes : barde, clerc, druide, sorcier, démoniste ou sorcier. Vous devez choisir vos sorts dans la liste de sorts de cette classe, et les sorts que vous choisissez doivent avoir l'étiquette rituelle. La classe que vous choisissez détermine également votre capacité à lancer des sorts pour ces sorts : Charisme pour barde, sorcier ou démoniste ; Sagesse pour clerc ou druide ; ou Intelligence pour l'assistant.\nSi vous tombez sur un sort sous forme écrite, comme un parchemin de sorts magiques ou un livre de sorts de sorcier, vous pourrez peut-être l'ajouter à votre livre de rituels. Le sort doit figurer sur la liste des sorts de la classe que vous avez choisie, son niveau ne peut pas être supérieur à la moitié de votre niveau (arrondi au supérieur) et il doit avoir l'étiquette rituelle. Le processus de copie du sort dans votre livre de rituel prend 2 heures par niveau du sort et coûte 50 po par niveau. Le coût représente les composants matériels que vous dépensez lorsque vous expérimentez le sort pour le maîtriser, ainsi que les encres fines dont vous avez besoin pour l'enregistrer."
+  },
+  "Savage Attacker": {
+    "name": "Attaquant sauvage",
+    "prerequisite": null,
+    "description": "Une fois par tour, lorsque vous lancez des dégâts pour une attaque au corps à corps avec une arme, vous pouvez relancer les dés de dégâts de l'arme et utiliser l'un ou l'autre total."
+  },
+  "Sentinel": {
+    "name": "Sentinelle",
+    "prerequisite": null,
+    "description": "Vous maîtrisez les techniques nécessaires pour profiter de chaque baisse de garde ennemie, bénéficiant ainsi des avantages suivants :\n• Lorsque vous touchez une créature avec une attaque d'opportunité, la vitesse de la créature devient 0 pour le reste du tour.\n• Les créatures provoquent des attaques d'opportunité de votre part même si elles effectuent l'action Désengagement avant de quitter votre portée.\n• Lorsqu'une créature à moins de 1,50 mètre de vous effectue une attaque contre une cible autre que vous (et que cette cible ne possède pas ce don), vous pouvez utiliser votre réaction pour lancer une attaque au corps à corps avec une arme contre la créature attaquante."
+  },
+  "Sharpshooter": {
+    "name": "Tireur d'élite",
+    "prerequisite": null,
+    "description": "Vous maîtrisez les armes à distance et pouvez réaliser des tirs que d'autres trouvent impossibles. Vous bénéficiez des avantages suivants :\n• Attaquer à longue distance n'impose pas de désavantage sur vos jets d'attaque avec une arme à distance.\n• Vos attaques avec des armes à distance ignorent la moitié et les trois quarts de la couverture.\n• Avant de lancer une attaque avec une arme à distance que vous maîtrisez, vous pouvez choisir de subir un malus de -5 au jet d'attaque. Si l'attaque réussit, vous ajoutez +10 au jet de dégâts de l'attaque."
+  },
+  "Shield Master": {
+    "name": "Maître du Bouclier",
+    "prerequisite": null,
+    "description": "Vous utilisez des boucliers non seulement pour vous protéger mais aussi pour vous attaquer. Vous bénéficiez des avantages suivants lorsque vous utilisez un bouclier :\n• Si vous effectuez l'action Attaque à votre tour, vous pouvez utiliser une action bonus pour essayer de pousser une créature à moins de 1,50 mètre de vous avec votre bouclier.\n• Si vous n'êtes pas incapable d'agir, vous pouvez ajouter le bonus à la CA de votre bouclier à n'importe quel jet de sauvegarde de Dextérité que vous effectuez contre un sort ou tout autre effet néfaste qui ne cible que vous.\n• Si vous êtes soumis à un effet qui vous permet de faire un jet de sauvegarde de Dextérité pour ne subir que la moitié des dégâts, vous pouvez utiliser votre réaction pour ne subir aucun dégât si vous réussissez votre jet de sauvegarde, en interposant votre bouclier entre vous et la source de l'effet."
+  },
+  "Skilled": {
+    "name": "Qualifié",
+    "prerequisite": null,
+    "description": "Vous maîtrisez n’importe quelle combinaison de trois compétences ou outils de votre choix."
+  },
+  "Skulker": {
+    "name": "Skulker",
+    "prerequisite": "Dextérité 13 ou plus",
+    "description": "Vous êtes expert dans l’art de vous faufiler dans les ombres. Vous bénéficiez des avantages suivants :\n• Vous pouvez essayer de vous cacher lorsque vous êtes légèrement caché de la créature dont vous vous cachez.\n• Lorsque vous êtes caché d'une créature et que vous la manquez avec une attaque avec une arme à distance, l'attaque ne révèle pas votre position.\n• Une faible lumière n'impose pas de désavantage à vos tests de Sagesse (Perception) basés sur la vue."
+  },
+  "Spell Sniper": {
+    "name": "Tireur d'élite",
+    "prerequisite": "La capacité de lancer au moins un sort",
+    "description": "Vous avez appris des techniques pour améliorer vos attaques avec certains types de sorts, bénéficiant ainsi des avantages suivants :\n• Lorsque vous lancez un sort qui nécessite un jet d'attaque, la portée du sort est doublée.\n• Vos attaques de sorts à distance ignorent la moitié et les trois quarts de la couverture.\n• Vous apprenez un sort mineur qui nécessite un jet d'attaque. Choisissez le sort mineur dans la liste des sorts de barde, clerc, druide, sorcier, démoniste ou sorcier. Votre capacité de lancement de sorts pour ce cantrip dépend de la liste de sorts que vous avez choisie parmi : Charisme pour barde, sorcier ou démoniste ; Sagesse pour clerc ou druide ; ou Intelligence pour l'assistant."
+  },
+  "Tavern Brawler": {
+    "name": "Bagarreur de taverne",
+    "prerequisite": null,
+    "description": "Habitué aux combats acharnés en utilisant toutes les armes à portée de main, vous bénéficiez des avantages suivants :\n• Augmentez votre score de Force ou de Constitution de 1, jusqu'à un maximum de 20.\n• Vous maîtrisez le maniement des armes improvisées.\n• Votre frappe à mains nues utilise un d4 pour les dégâts.\n• Lorsque vous touchez une créature avec une frappe à mains nues ou avec une arme improvisée pendant votre tour, vous pouvez utiliser une action bonus pour tenter d'agripper la cible."
+  },
+  "Tough": {
+    "name": "Difficile",
+    "prerequisite": null,
+    "description": "Votre maximum de points de vie augmente d'un montant égal à deux fois votre niveau lorsque vous obtenez ce don. Chaque fois que vous gagnez un niveau par la suite, votre maximum de points de vie augmente de 2 points de vie supplémentaires."
+  },
+  "War Caster": {
+    "name": "Lanceur de guerre",
+    "prerequisite": "La capacité de lancer au moins un sort",
+    "description": "Vous vous êtes entraîné à lancer des sorts en plein combat, apprenant des techniques qui vous accordent les avantages suivants :\n• Vous avez un avantage sur les jets de sauvegarde de Constitution que vous effectuez pour maintenir votre concentration sur un sort lorsque vous subissez des dégâts.\n• Vous pouvez exécuter les composantes somatiques des sorts même si vous avez des armes ou un bouclier dans une ou deux mains.\n• Lorsque le mouvement d'une créature hostile provoque une attaque d'opportunité de votre part, vous pouvez utiliser votre réaction pour lancer un sort sur la créature, plutôt que de lancer une attaque d'opportunité. Le sort doit avoir un temps d'incantation de 1 action et doit cibler uniquement cette créature."
+  },
+  "Weapon Master": {
+    "name": "Maître d'armes",
+    "prerequisite": null,
+    "description": "Vous avez beaucoup pratiqué avec diverses armes, bénéficiant des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Vous maîtrisez quatre armes de votre choix. Chacun doit être une arme simple ou martiale."
+  }
+}

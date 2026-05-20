@@ -1,0 +1,212 @@
+{
+  "Alert": {
+    "name": "Alerta",
+    "prerequisite": null,
+    "description": "Siempre atento al peligro, obtienes los siguientes beneficios:\n• Bonificación de +5 a la iniciativa.\n• No puedes sorprenderte mientras estás consciente.\n• Otras criaturas no obtienen ventaja en las tiradas de ataque contra ti como resultado de no ser vistas por ti."
+  },
+  "Athlete": {
+    "name": "Atleta",
+    "prerequisite": null,
+    "description": "Ha realizado un extenso entrenamiento físico para obtener los siguientes beneficios:\n• Aumenta tu puntuación de Fuerza o Destreza en 1, hasta un máximo de 20.\n• Cuando está boca abajo, pararse utiliza sólo 5 pies de su movimiento.\n• Escalar no te cuesta movimiento extra.\n• Puedes realizar un salto de longitud corriendo o un salto de altura corriendo después de moverte sólo 5 pies a pie, en lugar de 10 pies."
+  },
+  "Actor": {
+    "name": "Actor",
+    "prerequisite": null,
+    "description": "Si eres experto en mímica y dramatismo, obtendrás los siguientes beneficios:\n• Aumenta tu puntuación de Carisma en 1, hasta un máximo de 20.\n• Tienes ventaja en las pruebas de Carisma (Engaño) y Carisma (Actuación) cuando intentas hacerte pasar por una persona diferente.\n• Puedes imitar el habla de otra persona o los sonidos de otras criaturas. Debes haber escuchado a la persona hablar o haber escuchado a la criatura hacer el sonido durante al menos 1 minuto. Una prueba exitosa de Sabiduría (Perspicacia) impugnada por tu prueba de Carisma (Engaño) permite al oyente determinar que el efecto es falso."
+  },
+  "Charger": {
+    "name": "Cargador",
+    "prerequisite": null,
+    "description": "Cuando usas tu acción para correr, puedes usar una acción adicional para realizar un ataque con arma cuerpo a cuerpo o empujar una criatura. Si te mueves al menos 10 pies en línea recta inmediatamente antes de realizar esta acción adicional, obtienes una bonificación de +5 a la tirada de daño del ataque (si eliges realizar un ataque cuerpo a cuerpo y golpeas) o empujas al objetivo hasta 10 pies de distancia de ti (si eliges empujar y tienes éxito)."
+  },
+  "Crossbow Expert": {
+    "name": "Experto en ballesta",
+    "prerequisite": null,
+    "description": "Gracias a una amplia práctica con la ballesta, obtienes los siguientes beneficios:\n• Ignoras la calidad de carga de las ballestas con las que eres competente.\n• Estar a 5 pies de una criatura hostil no impone desventaja en tus tiradas de ataque a distancia.\n• Cuando usas la acción de Ataque y atacas con un arma de una mano, puedes usar una acción adicional para atacar con una ballesta de mano que estés sosteniendo."
+  },
+  "Defensive Duelist": {
+    "name": "Duelista defensivo",
+    "prerequisite": "Destreza 13 o superior",
+    "description": "Cuando empuñas un arma delicada con la que eres competente y otra criatura te golpea con un ataque cuerpo a cuerpo, puedes usar tu reacción para agregar tu bonificación de competencia a tu CA para ese ataque, lo que podría provocar que el ataque no te alcance."
+  },
+  "Dual Wielder": {
+    "name": "Doble portador",
+    "prerequisite": null,
+    "description": "Dominas la lucha con dos armas y obtienes los siguientes beneficios:\n• Obtienes una bonificación de +1 a la CA mientras empuñas un arma cuerpo a cuerpo separada en cada mano.\n• Puedes usar combates con dos armas incluso cuando las armas cuerpo a cuerpo de una mano que empuñas no sean livianas.\n• Puedes sacar o guardar dos armas de una mano cuando normalmente sólo podrías sacar o guardar una."
+  },
+  "Dungeon Delver": {
+    "name": "Explorador de mazmorras",
+    "prerequisite": null,
+    "description": "Alerta de las trampas ocultas y puertas secretas que se encuentran en muchas mazmorras, obtienes los siguientes beneficios:\n• Tienes ventaja en las pruebas de Sabiduría (Percepción) e Inteligencia (Investigación) realizadas para detectar la presencia de puertas secretas.\n• Tienes ventaja en las tiradas de salvación realizadas para evitar o resistir trampas.\n• Tienes resistencia al daño causado por las trampas.\n• Viajar a un ritmo rápido no impone la penalización normal de -5 en tu puntuación pasiva de Sabiduría (Percepción)."
+  },
+  "Durable": {
+    "name": "Durable",
+    "prerequisite": null,
+    "description": "Resistente y resistente, obtienes los siguientes beneficios:\n• Aumenta tu puntuación de Constitución en 1, hasta un máximo de 20.\n• Cuando lanzas un Dado de Golpe para recuperar puntos de golpe, el número mínimo de puntos de golpe que recuperas de la tirada es igual al doble de tu modificador de Constitución (mínimo de 2)."
+  },
+  "Elemental Adept": {
+    "name": "Adepto elemental",
+    "prerequisite": "La capacidad de lanzar al menos un hechizo.",
+    "description": "Cuando obtengas esta dote, elige uno de los siguientes tipos de daño: ácido, frío, fuego, relámpago o trueno. Los hechizos que lanzas ignoran la resistencia al daño del tipo elegido. Además, cuando tiras daño por un hechizo que lanzas y que causa daño de ese tipo, puedes tratar cualquier 1 en un dado de daño como un 2.\nPuedes seleccionar esta hazaña varias veces. Cada vez que lo hagas, deberás elegir un tipo de daño diferente."
+  },
+  "Grappler": {
+    "name": "luchador",
+    "prerequisite": "Fuerza 13 o superior",
+    "description": "Has desarrollado las habilidades necesarias para defenderte en combates cuerpo a cuerpo. Obtienes los siguientes beneficios:\n• Tienes ventaja en las tiradas de ataque contra una criatura a la que estás agarrando.\n• Puedes usar tu acción para intentar inmovilizar a una criatura apresada por ti. Para hacerlo, haz otra prueba de agarre. Si tienes éxito, tanto tú como la criatura quedaréis inmovilizados hasta que finalice la presa."
+  },
+  "Great Weapon Master": {
+    "name": "Gran maestro de armas",
+    "prerequisite": null,
+    "description": "Has aprendido a aprovechar el peso de un arma y dejar que su impulso potencie tus ataques. Obtienes los siguientes beneficios:\n• En tu turno, cuando consigas un golpe crítico con un arma cuerpo a cuerpo o reduzcas una criatura a 0 puntos de golpe con uno, puedes realizar un ataque con arma cuerpo a cuerpo como acción adicional.\n• Antes de realizar un ataque cuerpo a cuerpo con un arma pesada con la que seas competente, puedes optar por recibir una penalización de -5 a la tirada de ataque. Si el ataque impacta, sumas +10 a la tirada de daño del ataque."
+  },
+  "Healer": {
+    "name": "Curador",
+    "prerequisite": null,
+    "description": "Eres un médico capaz, lo que te permite curar heridas rápidamente y hacer que tus aliados vuelvan a la lucha. Obtienes los siguientes beneficios:\n• Cuando usas un kit de sanador para estabilizar a una criatura moribunda, esa criatura también recupera 1 punto de vida.\n• Como acción, puedes gastar un uso de un kit de sanador para atender a una criatura y restaurarle 1d6 + 4 puntos de golpe, más puntos de golpe adicionales iguales al número máximo de Dados de Golpe de la criatura. La criatura no puede volver a recuperar puntos de vida de esta dote hasta que finalice un descanso corto o largo."
+  },
+  "Heavily Armored": {
+    "name": "Fuertemente blindado",
+    "prerequisite": "Competencia con armadura media",
+    "description": "Te has entrenado para dominar el uso de armaduras pesadas y has obtenido los siguientes beneficios:\n• Aumenta tu puntuación de Fuerza en 1, hasta un máximo de 20.\n• Obtienes competencia con armaduras pesadas."
+  },
+  "Heavy Armor Master": {
+    "name": "Maestro de armadura pesada",
+    "prerequisite": "Competencia con armadura pesada.",
+    "description": "Puedes usar tu armadura para desviar ataques que matarían a otros. Obtienes los siguientes beneficios:\n• Aumenta tu puntuación de Fuerza en 1, hasta un máximo de 20.\n• Mientras llevas puesta una armadura pesada, el daño contundente, perforante y cortante que recibes de armas no mágicas se reduce en 3."
+  },
+  "Inspiring Leader": {
+    "name": "Líder inspirador",
+    "prerequisite": "Carisma 13 o superior",
+    "description": "Puedes dedicar 10 minutos a inspirar a tus compañeros y reforzar su determinación de luchar. Cuando lo hagas, elige hasta seis criaturas amigas (entre las que puedes incluirte a ti) a 30 pies de ti que puedan verte u oírte y que puedan entenderte. Cada criatura puede ganar puntos de vida temporales iguales a tu nivel + tu modificador de Carisma. Una criatura no puede volver a ganar puntos de golpe temporales con esta dote hasta que haya terminado un descanso corto o largo."
+  },
+  "Keen Mind": {
+    "name": "Mente aguda",
+    "prerequisite": null,
+    "description": "Tienes una mente que puede seguir el tiempo, la dirección y los detalles con asombrosa precisión. Obtienes los siguientes beneficios:\n• Aumenta tu puntuación de Inteligencia en 1, hasta un máximo de 20.\n• Siempre sabes en qué dirección está el norte.\n• Siempre sabrás el número de horas que quedan antes del próximo amanecer o atardecer.\n• Puede recordar con precisión cualquier cosa que haya visto u oído durante el último mes."
+  },
+  "Lightly Armored": {
+    "name": "Ligeramente blindado",
+    "prerequisite": null,
+    "description": "Te has entrenado para dominar el uso de armaduras ligeras, obteniendo los siguientes beneficios:\n• Aumenta tu puntuación de Fuerza o Destreza en 1, hasta un máximo de 20.\n• Obtienes competencia con la armadura ligera."
+  },
+  "Linguist": {
+    "name": "Lingüista",
+    "prerequisite": null,
+    "description": "Has estudiado idiomas y códigos, obteniendo los siguientes beneficios:\n• Aumenta tu puntuación de Inteligencia en 1, hasta un máximo de 20.\n• Aprendes tres idiomas de tu elección.\n• Puede crear hábilmente cifrados escritos. Otros no pueden descifrar un código que creas a menos que les enseñes, tienen éxito en una prueba de Inteligencia (CD igual a tu puntuación de Inteligencia + tu bonificación de competencia) o usan magia para descifrarlo."
+  },
+  "Lucky": {
+    "name": "Afortunado",
+    "prerequisite": null,
+    "description": "Tienes una suerte inexplicable que parece activarse en el momento justo.\nTienes 3 puntos de suerte. Siempre que hagas una tirada de ataque, una prueba de habilidad o una tirada de salvación, puedes gastar un punto de suerte para tirar un d20 adicional. Puedes optar por gastar uno de tus puntos de suerte después de tirar el dado, pero antes de que se determine el resultado. Tú eliges cuál de los d20 se utiliza para la tirada de ataque, la prueba de habilidad o la tirada de salvación.\nTambién puedes gastar un punto de suerte cuando se realiza una tirada de ataque contra ti. Tira un d20 y luego elige si el ataque utiliza la tirada del atacante o la tuya. Si más de una criatura gasta un punto de suerte para influir en el resultado de una tirada, los puntos se cancelan entre sí.\nRecuperas los puntos de suerte gastados cuando terminas un descanso prolongado."
+  },
+  "Mage Slayer": {
+    "name": "Asesino de magos",
+    "prerequisite": null,
+    "description": "Has practicado técnicas útiles en el combate cuerpo a cuerpo contra lanzadores de conjuros, obteniendo los siguientes beneficios:\n• Cuando una criatura a 5 pies de ti lanza un hechizo, puedes usar tu reacción para realizar un ataque con arma cuerpo a cuerpo contra esa criatura.\n• Cuando dañas a una criatura que está concentrada en un hechizo, esa criatura tiene desventaja en la tirada de salvación que realiza para mantener su concentración.\n• Tienes ventaja en las tiradas de salvación contra hechizos lanzados por criaturas a 5 pies de ti."
+  },
+  "Magic Initiate": {
+    "name": "Iniciado mágico",
+    "prerequisite": null,
+    "description": "Elige una clase: bardo, clérigo, druida, hechicero, brujo o mago. Aprendes dos trucos de tu elección de la lista de hechizos de esa clase.\nAdemás, elige un hechizo de nivel 1 de esa misma lista. Aprendes ese hechizo y puedes lanzarlo en su nivel más bajo. Una vez que lo lanzas, debes terminar un descanso prolongado antes de poder lanzarlo nuevamente usando esta dote.\nTu habilidad para lanzar hechizos depende de la clase que elijas: Carisma para bardo, hechicero o brujo; Sabiduría para clérigo o druida; o Inteligencia para mago."
+  },
+  "Martial Adept": {
+    "name": "Adepto marcial",
+    "prerequisite": null,
+    "description": "Tienes entrenamiento marcial que te permite realizar maniobras de combate especiales. Obtienes los siguientes beneficios:\n• Aprendes dos maniobras de tu elección entre las disponibles para el arquetipo de Maestro de batalla en la clase de luchador. Si una maniobra que usas requiere que tu objetivo haga una tirada de salvación para resistir los efectos de la maniobra, la CD de la tirada de salvación es igual a 8 + tu bonificación de competencia + tu modificador de Fuerza o Destreza (tu elección).\n• Obtienes un dado de superioridad, que es un d6 (este dado se suma a cualquier dado de superioridad que tengas de otra fuente). Este dado se utiliza para impulsar tus maniobras. Un dado de superioridad se gasta cuando lo usas. Recuperas tus dados de superioridad gastados cuando terminas un descanso corto o largo."
+  },
+  "Medium Armor Master": {
+    "name": "Maestro de armadura media",
+    "prerequisite": "Competencia con armadura media",
+    "description": "Has practicado moverte con armadura media para obtener los siguientes beneficios:\n• Usar una armadura media no impone desventajas en tus pruebas de Destreza (Sigilo).\n• Cuando usas una armadura media, puedes sumar 3, en lugar de 2, a tu CA si tienes una Destreza de 16 o superior."
+  },
+  "Mobile": {
+    "name": "Móvil",
+    "prerequisite": null,
+    "description": "Eres excepcionalmente rápido y ágil. Obtienes los siguientes beneficios:\n• Tu velocidad aumenta en 10 pies.\n• Cuando usas la acción Dash, el terreno difícil no te cuesta movimiento adicional en ese turno.\n• Cuando realizas un ataque cuerpo a cuerpo contra una criatura, no provocas ataques de oportunidad de esa criatura durante el resto del turno, independientemente de si el ataque impacta o no."
+  },
+  "Moderately Armored": {
+    "name": "Moderadamente blindado",
+    "prerequisite": "Competencia con armadura ligera.",
+    "description": "Te has entrenado para dominar el uso de armaduras y escudos medianos, obteniendo los siguientes beneficios:\n• Aumenta tu puntuación de Fuerza o Destreza en 1, hasta un máximo de 20.\n• Obtienes competencia con armaduras y escudos medianos."
+  },
+  "Mounted Combatant": {
+    "name": "Combatiente montado",
+    "prerequisite": null,
+    "description": "Eres un enemigo peligroso al que enfrentarte mientras estás montado. Mientras esté montado y no esté incapacitado, obtendrá los siguientes beneficios:\n• Tienes ventaja en las tiradas de ataque cuerpo a cuerpo contra cualquier criatura no montada que sea más pequeña que tu montura.\n• Puedes forzar un ataque dirigido a tu montura para que te apunte a ti.\n• Si tu montura está sujeta a un efecto que le permite realizar una tirada de salvación de Destreza para recibir sólo la mitad del daño, en lugar de ello no sufre daño si tiene éxito en la tirada de salvación, y sólo la mitad del daño si falla."
+  },
+  "Observant": {
+    "name": "Observante",
+    "prerequisite": null,
+    "description": "Al notar rápidamente los detalles de su entorno, obtendrá los siguientes beneficios:\n• Aumenta tu puntuación de Inteligencia o Sabiduría en 1, hasta un máximo de 20.\n• Si puedes ver la boca de una criatura mientras habla un idioma que entiendes, puedes interpretar lo que dice leyendo sus labios.\n• Tienes una bonificación de +5 a tus puntuaciones pasivas de Sabiduría (Percepción) e Inteligencia pasiva (Investigación)."
+  },
+  "Polearm Master": {
+    "name": "Maestro de armas de asta",
+    "prerequisite": null,
+    "description": "Puedes mantener a raya a tus enemigos con armas de alcance. Obtienes los siguientes beneficios:\n• Cuando realizas la acción de Ataque y atacas sólo con una guja, una alabarda, una pica o un bastón, puedes usar una acción adicional para realizar un ataque cuerpo a cuerpo con el extremo opuesto del arma; este ataque usa el mismo modificador de habilidad que el ataque principal. El dado de daño del arma para este ataque es un d4 y causa un daño contundente.\n• Mientras empuñas una guja, una alabarda, una pica o un bastón, otras criaturas provocan un ataque de oportunidad de tu parte cuando entran al alcance que tienes con esa arma."
+  },
+  "Resilient": {
+    "name": "Resiliente",
+    "prerequisite": null,
+    "description": "Elige una puntuación de habilidad. Obtienes los siguientes beneficios:\n• Aumentar la puntuación de habilidad elegida en 1, hasta un máximo de 20.\n• Obtienes competencia en los tiros de salvación usando la habilidad elegida."
+  },
+  "Ritual Caster": {
+    "name": "Lanzador ritual",
+    "prerequisite": "Inteligencia o Sabiduría 13 o superior",
+    "description": "Has aprendido una serie de hechizos que puedes lanzar como rituales. Estos hechizos están escritos en un libro de rituales, que debes tener en la mano mientras lanzas uno de ellos.\nCuando eliges esta dote, adquieres un libro de rituales que contiene dos hechizos de primer nivel de tu elección. Elige una de las siguientes clases: bardo, clérigo, druida, hechicero, brujo o mago. Debes elegir tus hechizos de la lista de hechizos de esa clase, y los hechizos que elijas deben tener la etiqueta ritual. La clase que elijas también determina tu habilidad para lanzar hechizos: Carisma para bardo, hechicero o brujo; Sabiduría para clérigo o druida; o Inteligencia para mago.\nSi encuentras un hechizo en forma escrita, como un pergamino mágico o un libro de hechizos de un mago, es posible que puedas agregarlo a tu libro de rituales. El hechizo debe estar en la lista de hechizos de la clase que elegiste, el nivel del hechizo no puede ser superior a la mitad de tu nivel (redondeado hacia arriba) y debe tener la etiqueta ritual. El proceso de copiar el hechizo en tu libro de rituales toma 2 horas por nivel del hechizo y cuesta 50 po por nivel. El costo representa los componentes materiales que gastas mientras experimentas con el hechizo para dominarlo, así como las tintas finas que necesitas para grabarlo."
+  },
+  "Savage Attacker": {
+    "name": "Atacante salvaje",
+    "prerequisite": null,
+    "description": "Una vez por turno, cuando tiras daño para un ataque con arma cuerpo a cuerpo, puedes volver a tirar los dados de daño del arma y usar cualquier total."
+  },
+  "Sentinel": {
+    "name": "Centinela",
+    "prerequisite": null,
+    "description": "Has dominado técnicas para aprovechar cada caída en la guardia de cualquier enemigo, obteniendo los siguientes beneficios:\n• Cuando golpeas a una criatura con un ataque de oportunidad, la velocidad de la criatura se vuelve 0 por el resto del turno.\n• Las criaturas provocan ataques de oportunidad de tu parte incluso si realizan la acción de Desengancharse antes de salir de tu alcance.\n• Cuando una criatura a 5 pies de ti realiza un ataque contra un objetivo que no eres tú (y ese objetivo no tiene esta dote), puedes usar tu reacción para realizar un ataque con arma cuerpo a cuerpo contra la criatura atacante."
+  },
+  "Sharpshooter": {
+    "name": "Tirador de primera",
+    "prerequisite": null,
+    "description": "Dominas las armas a distancia y puedes realizar disparos que a otros les resultan imposibles. Obtienes los siguientes beneficios:\n• Atacar a larga distancia no impone desventajas en tus tiradas de ataque con armas a distancia.\n• Tus ataques con armas a distancia ignoran la mitad de la cobertura y las tres cuartas partes de la cobertura.\n• Antes de realizar un ataque con un arma a distancia con la que eres competente, puedes optar por recibir una penalización de -5 a la tirada de ataque. Si el ataque impacta, sumas +10 a la tirada de daño del ataque."
+  },
+  "Shield Master": {
+    "name": "Maestro del escudo",
+    "prerequisite": null,
+    "description": "Usas escudos no sólo para protegerte sino también para ofender. Obtienes los siguientes beneficios mientras empuñas un escudo:\n• Si realizas la acción de Ataque en tu turno, puedes usar una acción adicional para intentar empujar a una criatura a 5 pies de ti con tu escudo.\n• Si no estás incapacitado, puedes agregar el bono de CA de tu escudo a cualquier tirada de salvación de Destreza que realices contra un hechizo u otro efecto dañino que solo te ataque a ti.\n• Si estás sujeto a un efecto que te permite realizar una tirada de salvación de Destreza para recibir sólo la mitad del daño, puedes usar tu reacción para no recibir daño si tienes éxito en la tirada de salvación, interponiendo tu escudo entre tú y la fuente del efecto."
+  },
+  "Skilled": {
+    "name": "Experto",
+    "prerequisite": null,
+    "description": "Obtienes competencia en cualquier combinación de tres habilidades o herramientas de tu elección."
+  },
+  "Skulker": {
+    "name": "merodeador",
+    "prerequisite": "Destreza 13 o superior",
+    "description": "Eres experto en escabullirte entre las sombras. Obtienes los siguientes beneficios:\n• Puedes intentar esconderte cuando estés ligeramente oculto de la criatura de la que te estás escondiendo.\n• Cuando estás escondido de una criatura y fallas con un ataque con arma a distancia, realizar el ataque no revela tu posición.\n• La luz tenue no impone desventajas en tus pruebas de Sabiduría (Percepción) basadas en la vista."
+  },
+  "Spell Sniper": {
+    "name": "Francotirador de hechizos",
+    "prerequisite": "La capacidad de lanzar al menos un hechizo.",
+    "description": "Has aprendido técnicas para potenciar tus ataques con cierto tipo de hechizos, obteniendo los siguientes beneficios:\n• Cuando lanzas un hechizo que requiere que hagas una tirada de ataque, el alcance del hechizo se duplica.\n• Tus ataques con hechizos a distancia ignoran la mitad de la cobertura y las tres cuartas partes de la cobertura.\n• Aprendes un truco que requiere una tirada de ataque. Elige el truco de la lista de hechizos de bardo, clérigo, druida, hechicero, brujo o mago. Tu habilidad para lanzar hechizos para este truco depende de la lista de hechizos que hayas elegido: Carisma para bardo, hechicero o brujo; Sabiduría para clérigo o druida; o Inteligencia para mago."
+  },
+  "Tavern Brawler": {
+    "name": "Luchador de taberna",
+    "prerequisite": null,
+    "description": "Acostumbrado a pelear duro usando cualquier arma que tengas a mano, obtienes los siguientes beneficios:\n• Aumenta tu puntuación de Fuerza o Constitución en 1, hasta un máximo de 20.\n• Eres competente con armas improvisadas.\n• Tu ataque desarmado usa un d4 para causar daño.\n• Cuando golpeas a una criatura con un golpe desarmado o con un arma improvisada en tu turno, puedes usar una acción adicional para intentar agarrar al objetivo."
+  },
+  "Tough": {
+    "name": "Difícil",
+    "prerequisite": null,
+    "description": "Tu máximo de puntos de vida aumenta en una cantidad igual al doble de tu nivel cuando obtienes esta dote. Cada vez que subas de nivel a partir de entonces, tu máximo de puntos de vida aumentará en 2 puntos de vida adicionales."
+  },
+  "War Caster": {
+    "name": "Lanzador de guerra",
+    "prerequisite": "La capacidad de lanzar al menos un hechizo.",
+    "description": "Has practicado lanzar hechizos en medio del combate, aprendiendo técnicas que te otorgan los siguientes beneficios:\n• Tienes ventaja en las tiradas de salvación de Constitución que realizas para mantener tu concentración en un hechizo cuando sufres daño.\n• Puedes realizar los componentes somáticos de los hechizos incluso cuando tengas armas o un escudo en una o ambas manos.\n• Cuando el movimiento de una criatura hostil provoca un ataque de oportunidad de tu parte, puedes usar tu reacción para lanzar un hechizo a la criatura, en lugar de realizar un ataque de oportunidad. El hechizo debe tener un tiempo de lanzamiento de 1 acción y debe apuntar únicamente a esa criatura."
+  },
+  "Weapon Master": {
+    "name": "Maestro de armas",
+    "prerequisite": null,
+    "description": "Has practicado extensamente con una variedad de armas y has obtenido los siguientes beneficios:\n• Aumenta tu puntuación de Fuerza o Destreza en 1, hasta un máximo de 20.\n• Obtienes competencia con cuatro armas de tu elección. Cada uno debe ser un arma simple o marcial."
+  }
+}

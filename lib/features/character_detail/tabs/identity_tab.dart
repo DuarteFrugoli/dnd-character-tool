@@ -277,12 +277,15 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
 
     if (!mounted) return;
 
+    final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+
     if (character.subclass != null && character.subclass!.isNotEmpty) {
       final picked = await _showSubclassDialog(
         context: context,
         srdClass: srdClass,
         current: character.subclass,
         isConfirm: true,
+        i18n: i18n,
       );
       if (!mounted) return;
       if (picked != null) await _notifier.updateSubclass(picked);
@@ -295,6 +298,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
       srdClass: srdClass,
       current: null,
       isConfirm: false,
+      i18n: i18n,
     );
     if (!mounted) return;
     if (picked != null) await _notifier.updateSubclass(picked);
@@ -306,6 +310,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     required SrdClass srdClass,
     required String? current,
     required bool isConfirm,
+    required SrdI18nService i18n,
   }) {
     final l10n = AppLocalizations.of(context)!;
     String? selected = current;
@@ -357,11 +362,14 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                           mainAxisSize: MainAxisSize.min,
                           children: srdClass.subclasses
                               .map(
-                                (sub) => RadioListTile<String>(
-                                  title: Text(sub.name),
-                                  subtitle: sub.description.isNotEmpty
+                                (sub) {
+                                final translatedName = i18n.subclassName(srdClass.name, sub.name);
+                                final translatedDesc = i18n.subclassDescription(srdClass.name, sub.name) ?? (sub.description.isNotEmpty ? sub.description : null);
+                                return RadioListTile<String>(
+                                  title: Text(translatedName),
+                                  subtitle: translatedDesc != null
                                       ? Text(
-                                          sub.description,
+                                          translatedDesc,
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                           style: Theme.of(
@@ -372,8 +380,8 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                                   value: sub.name,
                                   contentPadding: EdgeInsets.zero,
                                   dense: true,
-                                ),
-                              )
+                                );
+                              })
                               .toList(),
                         ),
                       ),
@@ -430,11 +438,13 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
       if (confirm != true || !mounted) return;
     }
 
+    final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final picked = await _showSubclassDialog(
       context: context,
       srdClass: srdClass,
       current: character.subclass,
       isConfirm: character.subclass != null,
+      i18n: i18n,
     );
     if (picked != null && picked != character.subclass) {
       await _notifier.updateSubclass(picked);

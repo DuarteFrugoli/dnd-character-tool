@@ -1,0 +1,212 @@
+{
+  "Alert": {
+    "name": "Alerta",
+    "prerequisite": null,
+    "description": "Sempre atento ao perigo, você obtém os seguintes benefícios:\n• +5 de bônus na iniciativa.\n• Você não pode se surpreender enquanto estiver consciente.\n• Outras criaturas não ganham vantagem em jogadas de ataque contra você por não serem vistas por você."
+  },
+  "Athlete": {
+    "name": "Atleta",
+    "prerequisite": null,
+    "description": "Você passou por um extenso treinamento físico para obter os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Quando você está deitado, levantar-se utiliza apenas 1,5 metro do seu movimento.\n• Escalar não custa movimento extra.\n• Você pode dar um salto em distância com corrida ou um salto em altura depois de se mover apenas 1,5 metro a pé, em vez de 3 metros."
+  },
+  "Actor": {
+    "name": "Ator",
+    "prerequisite": null,
+    "description": "Hábil em mímica e dramatização, você ganha os seguintes benefícios:\n• Aumente seu valor de Carisma em 1, até um máximo de 20.\n• Você tem vantagem em testes de Carisma (Enganação) e Carisma (Desempenho) ao tentar se passar por uma pessoa diferente.\n• Você pode imitar a fala de outra pessoa ou os sons produzidos por outras criaturas. Você deve ter ouvido a pessoa falando, ou ouvido a criatura fazer o som, por pelo menos 1 minuto. Um teste bem-sucedido de Sabedoria (Intuição) contestado por seu teste de Carisma (Enganação) permite ao ouvinte determinar que o efeito é falso."
+  },
+  "Charger": {
+    "name": "Carregador",
+    "prerequisite": null,
+    "description": "Quando você usa sua ação para Correr, você pode usar uma ação bônus para fazer um ataque corpo a corpo com arma ou empurrar uma criatura. Se você se mover pelo menos 3 metros em linha reta imediatamente antes de realizar esta ação bônus, você ganha +5 de bônus na jogada de dano do ataque (se você escolheu fazer um ataque corpo a corpo e acertar) ou empurra o alvo até 3 metros de distância de você (se você escolheu empurrar e tiver sucesso)."
+  },
+  "Crossbow Expert": {
+    "name": "Especialista em besta",
+    "prerequisite": null,
+    "description": "Graças à prática extensiva com a besta, você obtém os seguintes benefícios:\n• Você ignora a qualidade de carregamento das bestas com as quais é proficiente.\n• Estar a até 1,5 metro de uma criatura hostil não impõe desvantagem em suas jogadas de ataque à distância.\n• Quando você usa a ação Atacar e ataca com uma arma de uma mão, você pode usar uma ação bônus para atacar com uma besta de mão que estiver segurando."
+  },
+  "Defensive Duelist": {
+    "name": "Duelista Defensivo",
+    "prerequisite": "Destreza 13 ou superior",
+    "description": "Quando você estiver empunhando uma arma de destreza com a qual você é proficiente e outra criatura atingir você com um ataque corpo a corpo, você pode usar sua reação para adicionar seu bônus de proficiência à sua CA para esse ataque, potencialmente fazendo com que o ataque erre você."
+  },
+  "Dual Wielder": {
+    "name": "Portador Duplo",
+    "prerequisite": null,
+    "description": "Você domina a luta com duas armas, ganhando os seguintes benefícios:\n• Você ganha um bônus de +1 na CA enquanto estiver empunhando uma arma corpo a corpo separada em cada mão.\n• Você pode usar o combate com duas armas mesmo quando as armas corpo a corpo de uma mão que você está empunhando não são leves.\n• Você pode sacar ou guardar duas armas de uma mão quando normalmente só conseguiria sacar ou guardar uma."
+  },
+  "Dungeon Delver": {
+    "name": "Explorador de Masmorras",
+    "prerequisite": null,
+    "description": "Alertado para as armadilhas escondidas e portas secretas encontradas em muitas masmorras, você ganha os seguintes benefícios:\n• Você tem vantagem em testes de Sabedoria (Percepção) e Inteligência (Investigação) feitos para detectar a presença de portas secretas.\n• Você tem vantagem em testes de resistência feitos para evitar ou resistir a armadilhas.\n• Você tem resistência ao dano causado por armadilhas.\n• Viajar em ritmo acelerado não impõe a penalidade normal de −5 em seu valor de Sabedoria passiva (Percepção)."
+  },
+  "Durable": {
+    "name": "Durável",
+    "prerequisite": null,
+    "description": "Resistente e resiliente, você obtém os seguintes benefícios:\n• Aumente seu valor de Constituição em 1, até um máximo de 20.\n• Quando você lança um Dado de Vida para recuperar pontos de vida, o número mínimo de pontos de vida que você recupera na jogada é igual a duas vezes seu modificador de Constituição (mínimo de 2)."
+  },
+  "Elemental Adept": {
+    "name": "Adepto Elemental",
+    "prerequisite": "A capacidade de lançar pelo menos um feitiço",
+    "description": "Quando você ganha esse talento, escolha um dos seguintes tipos de dano: ácido, frio, fogo, raio ou trovão. Os feitiços que você lança ignoram a resistência ao dano do tipo escolhido. Além disso, quando você rola dano para uma magia que você lançou que causa dano daquele tipo, você pode tratar qualquer 1 em um dado de dano como 2.\nVocê pode selecionar esse talento várias vezes. Cada vez que fizer isso, você deverá escolher um tipo de dano diferente."
+  },
+  "Grappler": {
+    "name": "Lutador",
+    "prerequisite": "Força 13 ou superior",
+    "description": "Você desenvolveu as habilidades necessárias para se manter firme no combate corpo a corpo. Você ganha os seguintes benefícios:\n• Você tem vantagem nas jogadas de ataque contra uma criatura que você está agarrando.\n• Você pode usar sua ação para tentar imobilizar uma criatura agarrada por você. Para fazer isso, faça outro teste de agarrar. Se tiver sucesso, você e a criatura ficarão impedidos até o agarrão terminar."
+  },
+  "Great Weapon Master": {
+    "name": "Grande Mestre de Armas",
+    "prerequisite": null,
+    "description": "Você aprendeu a colocar o peso de uma arma a seu favor, deixando seu impulso fortalecer seus ataques. Você ganha os seguintes benefícios:\n• No seu turno, quando você obtém um acerto crítico com uma arma corpo-a-corpo ou reduz uma criatura a 0 pontos de vida com uma, você pode realizar um ataque com arma corpo-a-corpo como uma ação bônus.\n• Antes de realizar um ataque corpo a corpo com uma arma pesada com a qual você seja proficiente, você pode optar por sofrer uma penalidade de -5 na jogada de ataque. Se o ataque acertar, você adiciona +10 à jogada de dano do ataque."
+  },
+  "Healer": {
+    "name": "Curador",
+    "prerequisite": null,
+    "description": "Você é um médico competente, permitindo curar ferimentos rapidamente e trazer seus aliados de volta à luta. Você ganha os seguintes benefícios:\n• Quando você usa um kit de curandeiro para estabilizar uma criatura moribunda, essa criatura também recupera 1 ponto de vida.\n• Como uma ação, você pode usar um kit de curandeiro para cuidar de uma criatura e restaurar 1d6 + 4 pontos de vida a ela, mais pontos de vida adicionais iguais ao número máximo de Dados de Vida da criatura. A criatura não pode recuperar pontos de vida deste talento novamente até terminar um descanso curto ou longo."
+  },
+  "Heavily Armored": {
+    "name": "Fortemente Blindado",
+    "prerequisite": "Proficiência com armadura média",
+    "description": "Você treinou para dominar o uso de armaduras pesadas, ganhando os seguintes benefícios:\n• Aumente seu valor de Força em 1, até um máximo de 20.\n• Você ganha proficiência com armaduras pesadas."
+  },
+  "Heavy Armor Master": {
+    "name": "Mestre de Armadura Pesada",
+    "prerequisite": "Proficiência com armadura pesada",
+    "description": "Você pode usar sua armadura para desviar ataques que matariam outras pessoas. Você ganha os seguintes benefícios:\n• Aumente seu valor de Força em 1, até um máximo de 20.\n• Enquanto você estiver usando uma armadura pesada, o dano de concussão, perfurante e cortante sofrido por armas não-mágicas é reduzido em 3."
+  },
+  "Inspiring Leader": {
+    "name": "Líder inspirador",
+    "prerequisite": "Carisma 13 ou superior",
+    "description": "Você pode passar 10 minutos inspirando seus companheiros, reforçando sua determinação de lutar. Ao fazer isso, escolha até seis criaturas amigáveis ​​(que podem incluir você) a até 9 metros de você que possam ver ou ouvir você e que possam entendê-lo. Cada criatura pode ganhar pontos de vida temporários iguais ao seu nível + seu modificador de Carisma. Uma criatura não pode ganhar pontos de vida temporários com este talento novamente até que termine um descanso curto ou longo."
+  },
+  "Keen Mind": {
+    "name": "Mente Aguçada",
+    "prerequisite": null,
+    "description": "Você tem uma mente que pode acompanhar o tempo, a direção e os detalhes com uma precisão incrível. Você ganha os seguintes benefícios:\n• Aumente seu valor de Inteligência em 1, até um máximo de 20.\n• Você sempre sabe qual é o norte.\n• Você sempre sabe quantas horas faltam para o próximo nascer ou pôr do sol.\n• Você consegue se lembrar com precisão de tudo o que viu ou ouviu no último mês."
+  },
+  "Lightly Armored": {
+    "name": "Levemente Blindado",
+    "prerequisite": null,
+    "description": "Você treinou para dominar o uso de armaduras leves, ganhando os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Você ganha proficiência com armaduras leves."
+  },
+  "Linguist": {
+    "name": "Linguista",
+    "prerequisite": null,
+    "description": "Você estudou linguagens e códigos, obtendo os seguintes benefícios:\n• Aumente seu valor de Inteligência em 1, até um máximo de 20.\n• Você aprende três idiomas de sua escolha.\n• Você pode criar cifras escritas habilmente. Outros não podem decifrar um código que você cria, a menos que você os ensine, eles tenham sucesso em um teste de Inteligência (CD igual ao seu valor de Inteligência + seu bônus de proficiência) ou usem magia para decifrá-lo."
+  },
+  "Lucky": {
+    "name": "Sortudo",
+    "prerequisite": null,
+    "description": "Você tem uma sorte inexplicável que parece surgir no momento certo.\nVocê tem 3 pontos de sorte. Sempre que você fizer uma jogada de ataque, um teste de habilidade ou um teste de resistência, você pode gastar um ponto de sorte para rolar um d20 adicional. Você pode optar por gastar um de seus pontos de sorte depois de lançar o dado, mas antes que o resultado seja determinado. Você escolhe qual dos d20s será usado para a jogada de ataque, teste de habilidade ou teste de resistência.\nVocê também pode gastar um ponto de sorte quando uma jogada de ataque for feita contra você. Role um d20 e então escolha se o ataque usa a jogada do atacante ou a sua. Se mais de uma criatura gastar um ponto de sorte para influenciar o resultado de uma jogada, os pontos se anulam.\nVocê recupera seus pontos de sorte gastos ao terminar um descanso longo."
+  },
+  "Mage Slayer": {
+    "name": "Matador de Magos",
+    "prerequisite": null,
+    "description": "Você praticou técnicas úteis em combate corpo a corpo contra conjuradores, obtendo os seguintes benefícios:\n• Quando uma criatura a até 1,5 metro de você conjura uma magia, você pode usar sua reação para realizar um ataque corpo a corpo com arma contra aquela criatura.\n• Quando você causa dano a uma criatura que está se concentrando em uma mágica, aquela criatura tem desvantagem no teste de resistência que realiza para manter sua concentração.\n• Você tem vantagem em testes de resistência contra magias lançadas por criaturas a até 1,5 metro de você."
+  },
+  "Magic Initiate": {
+    "name": "Iniciado Mágico",
+    "prerequisite": null,
+    "description": "Escolha uma classe: bardo, clérigo, druida, feiticeiro, feiticeiro ou mago. Você aprende dois truques à sua escolha da lista de magias daquela classe.\nAlém disso, escolha uma magia de 1º nível da mesma lista. Você aprende essa magia e pode lançá-la em seu nível mais baixo. Depois de conjurá-lo, você deve terminar um descanso longo antes de poder conjurá-lo novamente usando este talento.\nSua habilidade de conjurar essas magias depende da classe que você escolheu: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago."
+  },
+  "Martial Adept": {
+    "name": "Adepto Marcial",
+    "prerequisite": null,
+    "description": "Você possui treinamento marcial que lhe permite realizar manobras especiais de combate. Você ganha os seguintes benefícios:\n• Você aprende duas manobras de sua escolha dentre aquelas disponíveis para o arquétipo Battle Master na classe lutador. Se uma manobra que você usa exige que seu alvo faça um teste de resistência para resistir aos efeitos da manobra, a CD do teste de resistência é igual a 8 + seu bônus de proficiência + seu modificador de Força ou Destreza (sua escolha).\n• Você ganha um dado de superioridade, que é um d6 (esse dado é adicionado a qualquer dado de superioridade que você tenha de outra fonte). Este dado é usado para alimentar suas manobras. Um dado de superioridade é gasto quando você o usa. Você recupera seus dados de superioridade gastos ao terminar um descanso curto ou longo."
+  },
+  "Medium Armor Master": {
+    "name": "Mestre de Armadura Média",
+    "prerequisite": "Proficiência com armadura média",
+    "description": "Você praticou movimentação com armadura média para obter os seguintes benefícios:\n• Usar armadura média não impõe desvantagem em seus testes de Destreza (Furtividade).\n• Quando você usa armadura média, você pode adicionar 3, em vez de 2, à sua CA se tiver Destreza 16 ou superior."
+  },
+  "Mobile": {
+    "name": "Móvel",
+    "prerequisite": null,
+    "description": "Você é excepcionalmente rápido e ágil. Você ganha os seguintes benefícios:\n• Sua velocidade aumenta em 3 metros.\n• Quando você usa a ação Correr, terreno difícil não custa movimento extra naquele turno.\n• Quando você realiza um ataque corpo a corpo contra uma criatura, você não provoca ataques de oportunidade daquela criatura pelo resto do turno, independentemente de o ataque acertar ou não."
+  },
+  "Moderately Armored": {
+    "name": "Moderadamente Blindado",
+    "prerequisite": "Proficiência com armadura leve",
+    "description": "Você treinou para dominar o uso de armaduras e escudos médios, obtendo os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Você ganha proficiência com armaduras e escudos médios."
+  },
+  "Mounted Combatant": {
+    "name": "Combatente Montado",
+    "prerequisite": null,
+    "description": "Você é um inimigo perigoso de enfrentar enquanto estiver montado. Enquanto estiver montado e não incapacitado, você ganha os seguintes benefícios:\n• Você tem vantagem em jogadas de ataque corpo a corpo contra qualquer criatura desmontada que seja menor que sua montaria.\n• Você pode forçar um ataque direcionado à sua montaria para atingir você.\n• Se sua montaria estiver sujeita a um efeito que lhe permita realizar um teste de resistência de Destreza para sofrer apenas metade do dano, ela não sofrerá nenhum dano se for bem-sucedida no teste de resistência, e apenas metade do dano se falhar."
+  },
+  "Observant": {
+    "name": "Atento",
+    "prerequisite": null,
+    "description": "Rapidamente percebendo detalhes do seu ambiente, você obtém os seguintes benefícios:\n• Aumente seu valor de Inteligência ou Sabedoria em 1, até um máximo de 20.\n• Se você consegue ver a boca de uma criatura enquanto ela fala um idioma que você entende, você pode interpretar o que ela está dizendo lendo seus lábios.\n• Você recebe um bônus de +5 em seus valores de Sabedoria passiva (Percepção) e Inteligência passiva (Investigação)."
+  },
+  "Polearm Master": {
+    "name": "Mestre da Arma de Pólo",
+    "prerequisite": null,
+    "description": "Você pode manter seus inimigos afastados com armas de alcance. Você ganha os seguintes benefícios:\n• Quando você realiza a ação de Ataque e ataca apenas com uma glaive, alabarda, lança ou bordão, você pode usar uma ação bônus para fazer um ataque corpo a corpo com a extremidade oposta da arma; este ataque usa o mesmo modificador de habilidade do ataque primário. O dado de dano da arma para este ataque é um d4 e causa dano de concussão.\n• Enquanto você estiver empunhando uma glaive, alabarda, lança ou bordão, outras criaturas provocam um ataque de oportunidade seu quando entram no alcance que você tem com aquela arma."
+  },
+  "Resilient": {
+    "name": "Resiliente",
+    "prerequisite": null,
+    "description": "Escolha um valor de habilidade. Você ganha os seguintes benefícios:\n• Aumente o valor da habilidade escolhida em 1, até um máximo de 20.\n• Você ganha proficiência em testes de resistência usando a habilidade escolhida."
+  },
+  "Ritual Caster": {
+    "name": "Conjurador Ritual",
+    "prerequisite": "Inteligência ou Sabedoria 13 ou superior",
+    "description": "Você aprendeu vários feitiços que pode lançar como rituais. Esses feitiços estão escritos em um livro de rituais, que você deve ter em mãos ao lançar um deles.\nAo escolher este talento, você adquire um livro ritual contendo duas magias de 1º nível à sua escolha. Escolha uma das seguintes classes: bardo, clérigo, druida, feiticeiro, bruxo ou mago. Você deve escolher suas magias na lista de magias daquela classe, e as magias que você escolher devem ter a etiqueta ritual. A classe que você escolhe também determina sua habilidade de lançar magias para estas magias: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago.\nSe você encontrar um feitiço escrito, como um pergaminho de feitiço mágico ou um livro de feitiços de um mago, poderá adicioná-lo ao seu livro de rituais. A magia deve estar na lista de magias da classe que você escolheu, o nível da magia não pode ser superior à metade do seu nível (arredondado para cima) e deve ter a etiqueta ritual. O processo de copiar a magia em seu livro de rituais leva 2 horas por nível da magia e custa 50 po por nível. O custo representa os componentes materiais que você gasta ao experimentar a magia para dominá-la, bem como as tintas finas necessárias para registrá-la."
+  },
+  "Savage Attacker": {
+    "name": "Atacante Selvagem",
+    "prerequisite": null,
+    "description": "Uma vez por turno, quando você rolar o dano de um ataque corpo a corpo com arma, você pode rolar novamente os dados de dano da arma e usar qualquer um dos totais."
+  },
+  "Sentinel": {
+    "name": "Sentinela",
+    "prerequisite": null,
+    "description": "Você dominou técnicas para aproveitar cada queda na guarda de qualquer inimigo, obtendo os seguintes benefícios:\n• Quando você atinge uma criatura com um ataque de oportunidade, o deslocamento da criatura se torna 0 pelo resto do turno.\n• As criaturas provocam ataques de oportunidade mesmo que realizem a ação Desengajar antes de saírem do seu alcance.\n• Quando uma criatura a até 1,5 metro de você ataca um alvo que não seja você (e esse alvo não possui esse talento), você pode usar sua reação para realizar um ataque corpo a corpo com arma contra a criatura atacante."
+  },
+  "Sharpshooter": {
+    "name": "Atirador de elite",
+    "prerequisite": null,
+    "description": "Você domina armas de longo alcance e pode disparar tiros que outros consideram impossíveis. Você ganha os seguintes benefícios:\n• Atacar a longa distância não impõe desvantagem em suas jogadas de ataque com arma de longo alcance.\n• Seus ataques com armas de longo alcance ignoram meia cobertura e três quartos de cobertura.\n• Antes de realizar um ataque com uma arma de longo alcance com a qual você seja proficiente, você pode optar por sofrer uma penalidade de -5 na jogada de ataque. Se o ataque acertar, você adiciona +10 à jogada de dano do ataque."
+  },
+  "Shield Master": {
+    "name": "Mestre do Escudo",
+    "prerequisite": null,
+    "description": "Você usa escudos não apenas para proteção, mas também para ataque. Você ganha os seguintes benefícios enquanto empunha um escudo:\n• Se você realizar a ação de Ataque no seu turno, você pode usar uma ação bônus para tentar empurrar uma criatura a até 1,5 metro de você com seu escudo.\n• Se você não estiver incapacitado, você pode adicionar o bônus de CA do seu escudo a qualquer teste de resistência de Destreza que você fizer contra uma magia ou outro efeito prejudicial que atinja apenas você.\n• Se você estiver sujeito a um efeito que lhe permita fazer um teste de resistência de Destreza para sofrer apenas metade do dano, você pode usar sua reação para não sofrer nenhum dano se tiver sucesso no teste de resistência, interpondo seu escudo entre você e a fonte do efeito."
+  },
+  "Skilled": {
+    "name": "Habilidoso",
+    "prerequisite": null,
+    "description": "Você ganha proficiência em qualquer combinação de três perícias ou ferramentas de sua escolha."
+  },
+  "Skulker": {
+    "name": "Espreitador",
+    "prerequisite": "Destreza 13 ou superior",
+    "description": "Você é especialista em se esgueirar pelas sombras. Você ganha os seguintes benefícios:\n• Você pode tentar se esconder quando estiver levemente obscurecido pela criatura da qual está se escondendo.\n• Quando você está escondido de uma criatura e erra um ataque com arma de longo alcance, fazer o ataque não revela sua posição.\n• A penumbra não impõe desvantagem em seus testes de Sabedoria (Percepção) baseados na visão."
+  },
+  "Spell Sniper": {
+    "name": "Feitiço Atirador",
+    "prerequisite": "A capacidade de lançar pelo menos um feitiço",
+    "description": "Você aprendeu técnicas para aprimorar seus ataques com certos tipos de feitiços, obtendo os seguintes benefícios:\n• Quando você lança um feitiço que exige que você faça uma jogada de ataque, o alcance do feitiço é duplicado.\n• Seus ataques mágicos à distância ignoram meia cobertura e três quartos de cobertura.\n• Você aprende um truque que requer uma jogada de ataque. Escolha o truque na lista de magias de bardo, clérigo, druida, feiticeiro, bruxo ou mago. Sua habilidade de lançar feitiços para este truque depende da lista de feitiços que você escolheu: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago."
+  },
+  "Tavern Brawler": {
+    "name": "Lutador de Taverna",
+    "prerequisite": null,
+    "description": "Acostumado a lutas violentas usando qualquer arma que esteja à mão, você ganha os seguintes benefícios:\n• Aumente seu valor de Força ou Constituição em 1, até um máximo de 20.\n• Você é proficiente com armas improvisadas.\n• Seu ataque desarmado usa um d4 para dano.\n• Quando você acerta uma criatura com um ataque desarmado ou com uma arma improvisada no seu turno, você pode usar uma ação bônus para tentar agarrar o alvo."
+  },
+  "Tough": {
+    "name": "Difícil",
+    "prerequisite": null,
+    "description": "Seu máximo de pontos de vida aumenta em uma quantidade igual ao dobro do seu nível quando você ganha este talento. Sempre que você ganha um nível depois disso, seu máximo de pontos de vida aumenta em 2 pontos de vida adicionais."
+  },
+  "War Caster": {
+    "name": "Conjurador de Guerra",
+    "prerequisite": "A capacidade de lançar pelo menos um feitiço",
+    "description": "Você praticou lançar feitiços no meio do combate, aprendendo técnicas que lhe concedem os seguintes benefícios:\n• Você tem vantagem nos testes de resistência de Constituição que você faz para manter sua concentração em uma magia quando sofre dano.\n• Você pode executar os componentes somáticos dos feitiços mesmo quando tiver armas ou escudo em uma ou ambas as mãos.\n• Quando o movimento de uma criatura hostil provoca um ataque de oportunidade de sua parte, você pode usar sua reação para lançar uma magia na criatura, em vez de fazer um ataque de oportunidade. A magia deve ter um tempo de lançamento de 1 ação e deve ter como alvo apenas aquela criatura."
+  },
+  "Weapon Master": {
+    "name": "Mestre de Armas",
+    "prerequisite": null,
+    "description": "Você praticou extensivamente com uma variedade de armas, obtendo os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Você ganha proficiência com quatro armas à sua escolha. Cada uma deve ser uma arma simples ou marcial."
+  }
+}

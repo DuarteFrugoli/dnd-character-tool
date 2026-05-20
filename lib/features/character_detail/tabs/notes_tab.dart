@@ -44,22 +44,13 @@ class _NotesTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
     final notes = character.notes;
 
-    // Dados de personagem da criação (personality, backstory, features)
-    final p = character.personality;
-    final hasLegacy = p.traits.isNotEmpty ||
-        p.ideals.isNotEmpty ||
-        p.bonds.isNotEmpty ||
-        p.flaws.isNotEmpty ||
-        character.backstory.isNotEmpty;
-
     return Scaffold(
-      body: notes.isEmpty && !hasLegacy
+      body: notes.isEmpty
           ? Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -115,33 +106,6 @@ class _NotesTab extends ConsumerWidget {
                         if (confirm == true) notifier.deleteNote(note.id);
                       },
                     )),
-
-                // ── Legacy data from character creation ────────────────
-                if (hasLegacy) ...[
-                  if (notes.isNotEmpty) const SizedBox(height: 8),
-                  if (p.traits.isNotEmpty)
-                    _Section(
-                        title: l10n.sectionPersonalityTraits,
-                        child: Text(p.traits)),
-                  if (p.ideals.isNotEmpty) ...[
-                    const SizedBox(height: 12),
-                    _Section(title: l10n.sectionIdeals, child: Text(p.ideals)),
-                  ],
-                  if (p.bonds.isNotEmpty) ...[
-                    const SizedBox(height: 12),
-                    _Section(title: l10n.sectionBonds, child: Text(p.bonds)),
-                  ],
-                  if (p.flaws.isNotEmpty) ...[
-                    const SizedBox(height: 12),
-                    _Section(title: l10n.sectionFlaws, child: Text(p.flaws)),
-                  ],
-                  if (character.backstory.isNotEmpty) ...[
-                    const SizedBox(height: 12),
-                    _Section(
-                        title: l10n.sectionBackstory,
-                        child: Text(character.backstory)),
-                  ],
-                ],
               ],
             ),
       floatingActionButton: FloatingActionButton(

@@ -15,6 +15,14 @@ class _StatsTab extends ConsumerStatefulWidget {
 }
 
 class _StatsTabState extends ConsumerState<_StatsTab> {
+  static const _classHitDie = {
+    'barbarian': 12,
+    'fighter': 10, 'paladin': 10, 'ranger': 10,
+    'bard': 8, 'cleric': 8, 'druid': 8,
+    'monk': 8, 'rogue': 8, 'warlock': 8,
+    'sorcerer': 6, 'wizard': 6,
+  };
+
   // HP tracker
   final _amountCtrl = TextEditingController(text: '1');
 
@@ -415,6 +423,22 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 8),
+                Builder(builder: (context) {
+                  final hitDie = _classHitDie[
+                    character.characterClass.toLowerCase()
+                  ];
+                  if (hitDie == null) return const SizedBox.shrink();
+                  return Text(
+                    '${l10n.stepHitDieLabel}: d$hitDie × ${character.level}',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: Theme.of(context)
+                              .colorScheme
+                              .onSurfaceVariant,
+                        ),
+                    textAlign: TextAlign.center,
+                  );
+                }),
                 if (_isEditing) ...[
                   const SizedBox(height: 12),
                   _InlineField(

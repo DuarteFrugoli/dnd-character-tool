@@ -1,0 +1,212 @@
+{
+  "Alert": {
+    "name": "Alarm",
+    "prerequisite": null,
+    "description": "Stets auf der Hut vor Gefahren, profitieren Sie von folgenden Vorteilen:\n• +5 Bonus auf Initiative.\n• Sie können nicht überrascht sein, solange Sie bei Bewusstsein sind.\n• Andere Kreaturen erlangen keinen Vorteil bei Angriffswürfen gegen dich, weil sie für dich unsichtbar sind."
+  },
+  "Athlete": {
+    "name": "Athlet",
+    "prerequisite": null,
+    "description": "Sie haben ein umfangreiches körperliches Training absolviert, um die folgenden Vorteile zu erzielen:\n• Erhöhen Sie Ihren Stärke- oder Geschicklichkeitswert um 1 auf maximal 20.\n• Wenn Sie in Bauchlage sind, beansprucht das Aufstehen nur 1,5 Meter Ihrer Bewegung.\n• Klettern kostet Sie keine zusätzliche Bewegung.\n• Sie können einen rennenden Weitsprung oder einen rennenden Hochsprung ausführen, nachdem Sie sich zu Fuß nur 5 Fuß statt 10 Fuß bewegt haben."
+  },
+  "Actor": {
+    "name": "Schauspieler",
+    "prerequisite": null,
+    "description": "Wenn Sie sich mit Mimik und Dramatik auskennen, profitieren Sie von folgenden Vorteilen:\n• Erhöhen Sie Ihren Charisma-Wert um 1 auf maximal 20.\n• Sie sind bei Charisma- (Täuschung) und Charisma- (Leistung) Prüfungen im Vorteil, wenn Sie versuchen, sich als eine andere Person auszugeben.\n• Sie können die Sprache einer anderen Person oder die Geräusche anderer Lebewesen nachahmen. Sie müssen die Person mindestens 1 Minute lang sprechen hören oder die Kreatur den Ton von sich geben hören. Ein erfolgreicher Wurf auf Weisheit (Einsicht), der durch Ihren Wurf auf Charisma (Täuschung) angefochten wird, ermöglicht es einem Zuhörer festzustellen, dass der Effekt vorgetäuscht ist."
+  },
+  "Charger": {
+    "name": "Ladegerät",
+    "prerequisite": null,
+    "description": "Wenn Sie Ihre Aktion zum Sprinten verwenden, können Sie eine Bonusaktion verwenden, um einen Nahkampfwaffenangriff durchzuführen oder eine Kreatur zu stoßen. Wenn Sie sich unmittelbar vor dem Ausführen dieser Bonusaktion mindestens 10 Fuß in einer geraden Linie bewegen, erhalten Sie entweder einen Bonus von +5 auf den Schadenswurf des Angriffs (wenn Sie sich für einen Nahkampfangriff und einen Treffer entschieden haben) oder Sie stoßen das Ziel bis zu 10 Fuß von Ihnen weg (wenn Sie sich für einen Stoß entschieden haben und es gelingt)."
+  },
+  "Crossbow Expert": {
+    "name": "Armbrustexperte",
+    "prerequisite": null,
+    "description": "Durch ausgiebiges Üben mit der Armbrust erzielen Sie folgende Vorteile:\n• Sie ignorieren die Ladequalität von Armbrüsten, mit denen Sie vertraut sind.\n• Wenn Sie sich in einem Umkreis von 5 Fuß um eine feindliche Kreatur aufhalten, bedeutet dies keinen Nachteil für Ihre Fernkampfangriffswürfe.\n• Wenn Sie die Angriffsaktion verwenden und mit einer Einhandwaffe angreifen, können Sie eine Bonusaktion verwenden, um mit einer Handarmbrust anzugreifen, die Sie in der Hand halten."
+  },
+  "Defensive Duelist": {
+    "name": "Defensiver Duellant",
+    "prerequisite": "Geschicklichkeit 13 oder höher",
+    "description": "Wenn du eine Finesse-Waffe verwendest, mit der du gut umgehen kannst, und eine andere Kreatur dich mit einem Nahkampfangriff trifft, kannst du deine Reaktion nutzen, um deinen Fähigkeitsbonus zu deiner AC für diesen Angriff hinzuzufügen, was möglicherweise dazu führt, dass der Angriff dich verfehlt."
+  },
+  "Dual Wielder": {
+    "name": "Doppelträger",
+    "prerequisite": null,
+    "description": "Du meisterst den Kampf mit zwei Waffen und erhältst folgende Vorteile:\n• Du erhältst einen Bonus von +1 auf deine RK, wenn du in jeder Hand eine separate Nahkampfwaffe führst.\n• Sie können den Kampf mit zwei Waffen auch dann nutzen, wenn die einhändigen Nahkampfwaffen, die Sie tragen, nicht leicht sind.\n• Sie können zwei Einhandwaffen ziehen oder verstauen, wenn Sie normalerweise nur eine ziehen oder verstauen könnten."
+  },
+  "Dungeon Delver": {
+    "name": "Dungeon-Delver",
+    "prerequisite": null,
+    "description": "Wenn Sie auf die versteckten Fallen und Geheimtüren achten, die in vielen Dungeons zu finden sind, profitieren Sie von folgenden Vorteilen:\n• Sie haben einen Vorteil bei Prüfungen auf Weisheit (Wahrnehmung) und Intelligenz (Untersuchung), die durchgeführt werden, um das Vorhandensein von Geheimtüren zu erkennen.\n• Sie haben einen Vorteil bei Rettungswürfen, die ausgeführt werden, um Fallen zu vermeiden oder ihnen zu widerstehen.\n• Du hast Widerstand gegen den durch Fallen verursachten Schaden.\n• Schnelles Reisen führt nicht zu der normalen Strafe von -5 auf Ihren passiven Weisheitswert (Wahrnehmung)."
+  },
+  "Durable": {
+    "name": "Dauerhaft",
+    "prerequisite": null,
+    "description": "Robust und belastbar profitieren Sie von folgenden Vorteilen:\n• Erhöhen Sie Ihren Konstitutionswert um 1 auf maximal 20.\n• Wenn Sie einen Trefferwürfel werfen, um Trefferpunkte zurückzugewinnen, entspricht die Mindestanzahl an Trefferpunkten, die Sie durch den Wurf zurückerhalten, dem Doppelten Ihres Konstitutionsmodifikators (mindestens 2)."
+  },
+  "Elemental Adept": {
+    "name": "Elementar-Adept",
+    "prerequisite": "Die Fähigkeit, mindestens einen Zauber zu wirken",
+    "description": "Wenn Sie dieses Talent erlangen, wählen Sie eine der folgenden Schadensarten: Säure, Kälte, Feuer, Blitz oder Donner. Zauber, die du wirkst, ignorieren den Schadenswiderstand des gewählten Typs. Wenn du außerdem Schaden für einen von dir gewirkten Zauber würfelst, der Schaden dieser Art verursacht, kannst du jede 1 auf einem Schadenswürfel als 2 behandeln.\nSie können dieses Talent mehrmals auswählen. Jedes Mal, wenn Sie dies tun, müssen Sie eine andere Schadensart auswählen."
+  },
+  "Grappler": {
+    "name": "Grappler",
+    "prerequisite": "Stärke 13 oder höher",
+    "description": "Du hast die nötigen Fähigkeiten entwickelt, um im Nahkampf zu bestehen. Sie profitieren von folgenden Vorteilen:\n• Sie haben einen Vorteil bei Angriffswürfen gegen eine Kreatur, mit der Sie ringen.\n• Du kannst mit deiner Aktion versuchen, eine von dir gepackte Kreatur festzunageln. Führen Sie dazu einen weiteren Grapple-Check durch. Wenn Sie Erfolg haben, werden Sie und die Kreatur beide zurückgehalten, bis der Kampf endet."
+  },
+  "Great Weapon Master": {
+    "name": "Großer Waffenmeister",
+    "prerequisite": null,
+    "description": "Sie haben gelernt, das Gewicht einer Waffe zu Ihrem Vorteil zu nutzen und deren Schwung Ihren Schlägen Kraft zu verleihen. Sie profitieren von folgenden Vorteilen:\n• Wenn du in deinem Zug einen kritischen Treffer mit einer Nahkampfwaffe erzielst oder eine Kreatur mit einer Nahkampfwaffe auf 0 Trefferpunkte reduzierst, kannst du als Bonusaktion einen Nahkampfwaffenangriff durchführen.\n• Bevor Sie einen Nahkampfangriff mit einer schweren Waffe ausführen, mit der Sie vertraut sind, können Sie einen Malus von -5 auf den Angriffswurf in Kauf nehmen. Wenn der Angriff trifft, addierst du +10 zum Schadenswurf des Angriffs."
+  },
+  "Healer": {
+    "name": "Heiler",
+    "prerequisite": null,
+    "description": "Sie sind ein fähiger Arzt, der es Ihnen ermöglicht, Wunden schnell zu heilen und Ihre Verbündeten wieder in den Kampf einzubeziehen. Sie profitieren von folgenden Vorteilen:\n• Wenn du eine Heilerausrüstung verwendest, um eine sterbende Kreatur zu stabilisieren, erhält diese Kreatur ebenfalls 1 Trefferpunkt zurück.\n• Als Aktion kannst du einen Einsatz eines Heiler-Kits nutzen, um dich um eine Kreatur zu kümmern und ihr 1W6 + 4 Trefferpunkte sowie zusätzliche Trefferpunkte in Höhe der maximalen Anzahl an Trefferwürfeln der Kreatur wiederherzustellen. Die Kreatur kann durch dieses Talent erst dann wieder Trefferpunkte erhalten, wenn sie eine kurze oder lange Pause beendet hat."
+  },
+  "Heavily Armored": {
+    "name": "Schwer gepanzert",
+    "prerequisite": "Kenntnisse im Umgang mit mittlerer Rüstung",
+    "description": "Sie haben gelernt, den Umgang mit schwerer Rüstung zu meistern und haben folgende Vorteile erlangt:\n• Erhöhen Sie Ihren Stärkewert um 1 auf maximal 20.\n• Sie erlangen Kenntnisse im Umgang mit schwerer Rüstung."
+  },
+  "Heavy Armor Master": {
+    "name": "Meister schwerer Rüstungen",
+    "prerequisite": "Kenntnisse im Umgang mit schwerer Rüstung",
+    "description": "Mit Ihrer Rüstung können Sie Schläge abwehren, die andere töten würden. Sie profitieren von folgenden Vorteilen:\n• Erhöhen Sie Ihren Stärkewert um 1 auf maximal 20.\n• Während du schwere Rüstung trägst, wird der Schlag-, Stich- und Hiebschaden, den du durch nichtmagische Waffen erleidest, um 3 verringert."
+  },
+  "Inspiring Leader": {
+    "name": "Inspirierender Anführer",
+    "prerequisite": "Charisma 13 oder höher",
+    "description": "Sie können 10 Minuten damit verbringen, Ihre Gefährten zu inspirieren und ihre Kampfesentschlossenheit zu stärken. Wenn Sie dies tun, wählen Sie bis zu sechs freundliche Kreaturen (zu denen Sie selbst gehören können) im Umkreis von 30 Fuß um Sie aus, die Sie sehen oder hören und verstehen können. Jede Kreatur kann vorübergehende Trefferpunkte in Höhe deiner Stufe + deinem Charisma-Modifikator erhalten. Eine Kreatur kann durch dieses Talent keine temporären Trefferpunkte mehr erhalten, bis sie eine kurze oder lange Pause beendet hat."
+  },
+  "Keen Mind": {
+    "name": "Scharfer Verstand",
+    "prerequisite": null,
+    "description": "Sie verfügen über einen Verstand, der Zeit, Richtung und Details mit unheimlicher Präzision verfolgen kann. Sie profitieren von folgenden Vorteilen:\n• Erhöhen Sie Ihren Intelligenzwert um 1 auf maximal 20.\n• Sie wissen immer, wo der Norden liegt.\n• Sie wissen immer, wie viele Stunden bis zum nächsten Sonnenaufgang oder Sonnenuntergang verbleiben.\n• Sie können sich genau an alles erinnern, was Sie im letzten Monat gesehen oder gehört haben."
+  },
+  "Lightly Armored": {
+    "name": "Leicht gepanzert",
+    "prerequisite": null,
+    "description": "Sie haben gelernt, den Umgang mit leichter Rüstung zu meistern und haben folgende Vorteile erlangt:\n• Erhöhen Sie Ihren Stärke- oder Geschicklichkeitswert um 1 auf maximal 20.\n• Sie erlangen Kenntnisse im Umgang mit leichter Rüstung."
+  },
+  "Linguist": {
+    "name": "Linguist",
+    "prerequisite": null,
+    "description": "Sie haben Sprachen und Codes studiert und daraus folgende Vorteile gezogen:\n• Erhöhen Sie Ihren Intelligenzwert um 1 auf maximal 20.\n• Sie lernen drei Sprachen Ihrer Wahl.\n• Sie können geschickt schriftliche Chiffren erstellen. Andere können einen von Ihnen erstellten Code nicht entschlüsseln, es sei denn, Sie bringen es ihnen bei, sie haben einen erfolgreichen Intelligenzwurf (SG entspricht Ihrem Intelligenzwert + Ihrem Fähigkeitsbonus) oder sie verwenden Magie, um ihn zu entschlüsseln."
+  },
+  "Lucky": {
+    "name": "Glücklich",
+    "prerequisite": null,
+    "description": "Sie haben unerklärliches Glück, das genau im richtigen Moment einsetzt.\nDu hast 3 Glückspunkte. Immer wenn du einen Angriffswurf, eine Fähigkeitsüberprüfung oder einen Rettungswurf durchführst, kannst du einen Glückspunkt ausgeben, um einen zusätzlichen W20 zu würfeln. Sie können einen Ihrer Glückspunkte ausgeben, nachdem Sie gewürfelt haben, aber bevor das Ergebnis feststeht. Sie entscheiden, welcher der W20 für den Angriffswurf, die Fähigkeitsprüfung oder den Rettungswurf verwendet wird.\nSie können auch einen Glückspunkt ausgeben, wenn ein Angriffswurf gegen Sie durchgeführt wird. Wirf einen W20 und wähle dann, ob der Angriff den Wurf des Angreifers oder deinen nutzt. Wenn mehr als eine Kreatur einen Glückspunkt ausgibt, um das Ergebnis eines Wurfs zu beeinflussen, heben sich die Punkte gegenseitig auf.\nNach einer längeren Pause erhalten Sie Ihre verbrauchten Glückspunkte zurück."
+  },
+  "Mage Slayer": {
+    "name": "Magiertöter",
+    "prerequisite": null,
+    "description": "Du hast Techniken geübt, die im Nahkampf gegen Zauberer nützlich sind, und dir dabei die folgenden Vorteile verschafft:\n• Wenn eine Kreatur in einem Umkreis von 5 Fuß um dich herum einen Zauber wirkt, kannst du deine Reaktion nutzen, um einen Nahkampfwaffenangriff gegen diese Kreatur durchzuführen.\n• Wenn du einer Kreatur Schaden zufügst, die sich auf einen Zauber konzentriert, hat diese Kreatur einen Nachteil bei dem Rettungswurf, den sie durchführt, um ihre Konzentration aufrechtzuerhalten.\n• Du hast einen Vorteil bei Rettungswürfen gegen Zauber, die von Kreaturen in einem Umkreis von 5 Fuß um dich gewirkt werden."
+  },
+  "Magic Initiate": {
+    "name": "Magischer Eingeweihter",
+    "prerequisite": null,
+    "description": "Wählen Sie eine Klasse: Barde, Kleriker, Druide, Zauberer, Hexenmeister oder Zauberer. Du lernst zwei Cantrips deiner Wahl aus der Zauberliste dieser Klasse.\nWählen Sie außerdem einen Zauberspruch des 1. Grades aus derselben Liste. Du lernst diesen Zauber und kannst ihn auf der niedrigsten Stufe wirken. Nachdem Sie es gewirkt haben, müssen Sie eine lange Pause einlegen, bevor Sie es mit diesem Talent erneut wirken können.\nIhre Zauberfähigkeit für diese Zauber hängt von der von Ihnen gewählten Klasse ab: Charisma für Barden, Zauberer oder Hexenmeister; Weisheit für Geistliche oder Druiden; oder Intelligenz für Zauberer."
+  },
+  "Martial Adept": {
+    "name": "Kampfexperte",
+    "prerequisite": null,
+    "description": "Sie verfügen über eine Kampfausbildung, die es Ihnen ermöglicht, spezielle Kampfmanöver durchzuführen. Sie profitieren von folgenden Vorteilen:\n• Sie lernen zwei Manöver Ihrer Wahl aus den Manövern, die dem Battle Master-Archetyp in der Kämpferklasse zur Verfügung stehen. Wenn ein von Ihnen verwendetes Manöver erfordert, dass Ihr Ziel einen Rettungswurf durchführt, um den Effekten des Manövers zu widerstehen, beträgt der SG des Rettungswurfs 8 + Ihr Fähigkeitsbonus + Ihr Stärke- oder Geschicklichkeitsmodifikator (Ihre Wahl).\n• Sie erhalten einen Überlegenheitswürfel, einen W6 (dieser Würfel wird zu allen Überlegenheitswürfeln hinzugefügt, die Sie von einer anderen Quelle haben). Dieser Würfel wird verwendet, um Ihre Manöver voranzutreiben. Wenn Sie ihn verwenden, wird ein Überlegenheitswürfel ausgegeben. Du erhältst deine verbrauchten Überlegenheitswürfel zurück, wenn du eine kurze oder lange Pause beendest."
+  },
+  "Medium Armor Master": {
+    "name": "Meister der mittleren Rüstung",
+    "prerequisite": "Kenntnisse im Umgang mit mittlerer Rüstung",
+    "description": "Sie haben das Bewegen in mittlerer Rüstung geübt, um die folgenden Vorteile zu erlangen:\n• Das Tragen einer mittleren Rüstung führt nicht zu Nachteilen bei Ihren Geschicklichkeitsprüfungen (Stealth).\n• Wenn Sie eine mittlere Rüstung tragen, können Sie Ihre AC um 3 statt um 2 erhöhen, wenn Sie über eine Geschicklichkeit von 16 oder höher verfügen."
+  },
+  "Mobile": {
+    "name": "Mobile",
+    "prerequisite": null,
+    "description": "Du bist außergewöhnlich schnell und wendig. Sie profitieren von folgenden Vorteilen:\n• Ihre Geschwindigkeit erhöht sich um 10 Fuß.\n• Wenn Sie die Sprint-Aktion verwenden, kostet Sie schwieriges Gelände in dieser Runde keine zusätzliche Bewegung.\n• Wenn du einen Nahkampfangriff gegen eine Kreatur ausführst, provozierst du für den Rest des Zuges keine Gelegenheitsangriffe dieser Kreatur, unabhängig davon, ob der Angriff trifft oder nicht."
+  },
+  "Moderately Armored": {
+    "name": "Mäßig gepanzert",
+    "prerequisite": "Kenntnisse im Umgang mit leichter Rüstung",
+    "description": "Sie haben gelernt, den Einsatz mittlerer Rüstungen und Schilde zu meistern und haben folgende Vorteile erlangt:\n• Erhöhen Sie Ihren Stärke- oder Geschicklichkeitswert um 1 auf maximal 20.\n• Sie erlangen Kenntnisse im Umgang mit mittleren Rüstungen und Schilden."
+  },
+  "Mounted Combatant": {
+    "name": "Berittener Kämpfer",
+    "prerequisite": null,
+    "description": "Auf dem Pferd ist man ein gefährlicher Gegner. Solange Sie beritten und nicht handlungsunfähig sind, profitieren Sie von folgenden Vorteilen:\n• Du hast einen Vorteil bei Nahkampfangriffswürfen gegen jede nicht berittene Kreatur, die kleiner als dein Reittier ist.\n• Sie können einen auf Ihr Reittier gerichteten Angriff erzwingen, der stattdessen Sie selbst angreift.\n• Wenn Ihr Reittier einem Effekt ausgesetzt ist, der es ihm ermöglicht, bei einem Geschicklichkeitsrettungswurf nur halben Schaden zu erleiden, erleidet es stattdessen keinen Schaden, wenn ihm der Rettungswurf gelingt, und nur halben Schaden, wenn er fehlschlägt."
+  },
+  "Observant": {
+    "name": "Aufmerksam",
+    "prerequisite": null,
+    "description": "Wenn Sie schnell Details Ihrer Umgebung erkennen, profitieren Sie von folgenden Vorteilen:\n• Erhöhen Sie Ihren Intelligenz- oder Weisheitswert um 1 auf maximal 20.\n• Wenn Sie den Mund eines Lebewesens sehen können, während es eine Sprache spricht, die Sie verstehen, können Sie durch Ablesen seiner Lippen interpretieren, was es sagt.\n• Sie haben einen Bonus von +5 auf Ihre passiven Weisheits- (Wahrnehmungs-) und passiven Intelligenz- (Ermittlungs-)Werte."
+  },
+  "Polearm Master": {
+    "name": "Stangenwaffenmeister",
+    "prerequisite": null,
+    "description": "Mit Reichweitenwaffen können Sie Ihre Feinde auf Abstand halten. Sie profitieren von folgenden Vorteilen:\n• Wenn Sie die Angriffsaktion ausführen und nur mit einer Gleve, Hellebarde, Pike oder Kampfstab angreifen, können Sie eine Bonusaktion verwenden, um einen Nahkampfangriff mit dem anderen Ende der Waffe durchzuführen. Dieser Angriff verwendet denselben Fähigkeitsmodifikator wie der Primärangriff. Der Schadenswürfel der Waffe für diesen Angriff ist ein W4 und sie verursacht Wuchtschaden.\n• Während Sie eine Gleve, Hellebarde, Pike oder Kampfstab führen, provozieren andere Kreaturen einen Gelegenheitsangriff von Ihnen, wenn sie in die Reichweite gelangen, die Sie mit dieser Waffe haben."
+  },
+  "Resilient": {
+    "name": "Robust",
+    "prerequisite": null,
+    "description": "Wählen Sie einen Fähigkeitswert. Sie profitieren von folgenden Vorteilen:\n• Erhöhen Sie den gewählten Fähigkeitswert um 1, bis zu einem Maximum von 20.\n• Du erlangst Fertigkeiten im Rettungswurf mithilfe der gewählten Fähigkeit."
+  },
+  "Ritual Caster": {
+    "name": "Ritualwirker",
+    "prerequisite": "Intelligenz oder Weisheit 13 oder höher",
+    "description": "Du hast eine Reihe von Zaubersprüchen gelernt, die du als Rituale wirken kannst. Diese Zauber sind in einem Ritualbuch niedergeschrieben, das Sie beim Wirken eines dieser Zauber zur Hand haben müssen.\nWenn du dieses Talent wählst, erwirbst du ein Ritualbuch mit zwei Zaubersprüchen des 1. Grades deiner Wahl. Wählen Sie eine der folgenden Klassen: Barde, Kleriker, Druide, Zauberer, Hexenmeister oder Zauberer. Sie müssen Ihre Zauber aus der Zauberliste dieser Klasse auswählen und die von Ihnen ausgewählten Zauber müssen über das Ritual-Tag verfügen. Die von Ihnen gewählte Klasse bestimmt auch Ihre Zauberfähigkeit für diese Zauber: Charisma für Barden, Zauberer oder Hexenmeister; Weisheit für Geistliche oder Druiden; oder Intelligenz für Zauberer.\nWenn Sie auf einen Zauberspruch in schriftlicher Form stoßen, beispielsweise auf einer magischen Zauberschriftrolle oder im Zauberbuch eines Zauberers, können Sie ihn möglicherweise Ihrem Ritualbuch hinzufügen. Der Zauber muss auf der Zauberliste der von Ihnen gewählten Klasse stehen, die Stufe des Zaubers darf nicht höher als die Hälfte Ihrer Stufe (aufgerundet) sein und er muss über das Ritual-Tag verfügen. Das Kopieren des Zaubers in Ihr Ritualbuch dauert 2 Stunden pro Zauberstufe und kostet 50 GM pro Stufe. Die Kosten stellen die Materialkomponenten dar, die Sie verbrauchen, wenn Sie mit dem Zauber experimentieren, um ihn zu meistern, sowie die feinen Tinten, die Sie zum Aufzeichnen benötigen."
+  },
+  "Savage Attacker": {
+    "name": "Wilder Angreifer",
+    "prerequisite": null,
+    "description": "Einmal pro Spielzug, wenn Sie den Schaden für einen Nahkampfwaffenangriff würfeln, können Sie die Schadenswürfel der Waffe erneut würfeln und eine der beiden Summen verwenden."
+  },
+  "Sentinel": {
+    "name": "Wächter",
+    "prerequisite": null,
+    "description": "Sie beherrschen die Techniken, um jeden Verlust in der Abwehr eines Feindes auszunutzen und sich die folgenden Vorteile zu sichern:\n• Wenn du eine Kreatur mit einem Gelegenheitsangriff triffst, wird die Geschwindigkeit der Kreatur für den Rest der Runde auf 0 gesetzt.\n• Kreaturen provozieren Gelegenheitsangriffe von dir, selbst wenn sie die Aktion „Entfernen“ ausführen, bevor sie deine Reichweite verlassen.\n• Wenn eine Kreatur im Umkreis von 5 Fuß um dich herum einen Angriff gegen ein anderes Ziel als dich ausführt (und dieses Ziel nicht über dieses Talent verfügt), kannst du deine Reaktion nutzen, um einen Nahkampfwaffenangriff gegen die angreifende Kreatur durchzuführen."
+  },
+  "Sharpshooter": {
+    "name": "Scharfschütze",
+    "prerequisite": null,
+    "description": "Sie beherrschen Fernkampfwaffen und können Schüsse ausführen, die andere für unmöglich halten. Sie profitieren von folgenden Vorteilen:\n• Ein Angriff aus großer Entfernung bedeutet keinen Nachteil für Ihre Angriffswürfe mit Fernkampfwaffen.\n• Ihre Fernkampfwaffenangriffe ignorieren halbe und dreiviertel Deckung.\n• Bevor Sie einen Angriff mit einer Fernkampfwaffe durchführen, mit der Sie vertraut sind, können Sie sich dafür entscheiden, einen Malus von -5 auf den Angriffswurf zu erleiden. Wenn der Angriff trifft, addierst du +10 zum Schadenswurf des Angriffs."
+  },
+  "Shield Master": {
+    "name": "Schildmeister",
+    "prerequisite": null,
+    "description": "Sie verwenden Schilde nicht nur zum Schutz, sondern auch zum Angriff. Wenn Sie einen Schild tragen, erhalten Sie folgende Vorteile:\n• Wenn Sie in Ihrem Zug die Angriffsaktion ausführen, können Sie mit einer Bonusaktion versuchen, mit Ihrem Schild eine Kreatur in einem Umkreis von 5 Fuß um Sie herumzudrängen.\n• Wenn Sie nicht handlungsunfähig sind, können Sie den AC-Bonus Ihres Schildes zu jedem Geschicklichkeitsrettungswurf hinzufügen, den Sie gegen einen Zauber oder einen anderen schädlichen Effekt ausführen, der nur Sie als Ziel hat.\n• Wenn Sie einem Effekt ausgesetzt sind, der es Ihnen ermöglicht, bei einem Geschicklichkeitsrettungswurf nur den halben Schaden zu erleiden, können Sie Ihre Reaktion nutzen, um keinen Schaden zu erleiden, wenn Ihnen der Rettungswurf gelingt, indem Sie Ihren Schild zwischen sich und die Quelle des Effekts legen."
+  },
+  "Skilled": {
+    "name": "Geschickt",
+    "prerequisite": null,
+    "description": "Sie erwerben Kenntnisse in einer beliebigen Kombination von drei Fertigkeiten oder Werkzeugen Ihrer Wahl."
+  },
+  "Skulker": {
+    "name": "Schleicher",
+    "prerequisite": "Geschicklichkeit 13 oder höher",
+    "description": "Du bist ein Experte darin, durch Schatten zu schleichen. Sie profitieren von folgenden Vorteilen:\n• Sie können versuchen, sich zu verstecken, wenn Sie von der Kreatur, vor der Sie sich verstecken, leicht verdeckt sind.\n• Wenn Sie vor einer Kreatur verborgen sind und diese mit einem Fernkampfwaffenangriff verfehlen, verrät die Ausführung des Angriffs nicht Ihre Position.\n• Schwaches Licht beeinträchtigt Ihre Weisheits- (Wahrnehmungs-)Prüfungen, die auf dem Sehvermögen basieren, nicht."
+  },
+  "Spell Sniper": {
+    "name": "Zauberscharfschütze",
+    "prerequisite": "Die Fähigkeit, mindestens einen Zauber zu wirken",
+    "description": "Sie haben Techniken erlernt, mit denen Sie Ihre Angriffe mit bestimmten Arten von Zaubersprüchen verstärken können, wodurch Sie die folgenden Vorteile erzielen:\n• Wenn Sie einen Zauber wirken, der einen Angriffswurf erfordert, wird die Reichweite des Zaubers verdoppelt.\n• Deine Fernkampfangriffe ignorieren halbe und dreiviertel Deckung.\n• Du lernst einen Trick, der einen Angriffswurf erfordert. Wählen Sie den Cantrip aus der Liste der Zaubersprüche Barde, Kleriker, Druide, Zauberer, Hexenmeister oder Zauberer. Ihre Zauberfähigkeit für diesen Cantrip hängt von der Zauberliste ab, aus der Sie ausgewählt haben: Charisma für Barden, Zauberer oder Hexenmeister; Weisheit für Geistliche oder Druiden; oder Intelligenz für Zauberer."
+  },
+  "Tavern Brawler": {
+    "name": "Tavernenschläger",
+    "prerequisite": null,
+    "description": "Wenn Sie es gewohnt sind, mit den Waffen, die Ihnen gerade zur Verfügung stehen, hart zu kämpfen, profitieren Sie von folgenden Vorteilen:\n• Erhöhen Sie Ihren Stärke- oder Konstitutionswert um 1 auf maximal 20.\n• Sie beherrschen den Umgang mit improvisierten Waffen.\n• Ihr unbewaffneter Schlag verursacht einen W4 für den Schaden.\n• Wenn du in deinem Zug eine Kreatur mit einem unbewaffneten Schlag oder einer improvisierten Waffe triffst, kannst du mit einer Bonusaktion versuchen, das Ziel festzuhalten."
+  },
+  "Tough": {
+    "name": "Hart",
+    "prerequisite": null,
+    "description": "Wenn Sie dieses Talent erlangen, erhöht sich Ihr maximales Trefferpunktvolumen um das Doppelte Ihres Levels. Immer wenn Sie danach eine Stufe aufsteigen, erhöht sich Ihr Trefferpunktmaximum um weitere 2 Trefferpunkte."
+  },
+  "War Caster": {
+    "name": "Kriegswirker",
+    "prerequisite": "Die Fähigkeit, mindestens einen Zauber zu wirken",
+    "description": "Sie haben das Wirken von Zaubersprüchen mitten im Kampf geübt und dabei Techniken erlernt, die Ihnen die folgenden Vorteile verschaffen:\n• Du hast einen Vorteil bei konstitutionsrettenden Würfen, die du ausführst, um deine Konzentration auf einen Zauber aufrechtzuerhalten, wenn du Schaden erleidest.\n• Sie können die somatischen Komponenten von Zaubersprüchen auch dann ausführen, wenn Sie Waffen oder einen Schild in einer oder beiden Händen haben.\n• Wenn die Bewegung einer feindlichen Kreatur einen Gelegenheitsangriff Ihrerseits provoziert, können Sie Ihre Reaktion nutzen, um einen Zauber auf die Kreatur zu wirken, anstatt einen Gelegenheitsangriff durchzuführen. Der Zauber muss eine Zauberzeit von 1 Aktion haben und darf nur auf diese Kreatur abzielen."
+  },
+  "Weapon Master": {
+    "name": "Waffenmeister",
+    "prerequisite": null,
+    "description": "Sie haben ausgiebig mit einer Vielzahl von Waffen geübt und dabei die folgenden Vorteile erlangt:\n• Erhöhen Sie Ihren Stärke- oder Geschicklichkeitswert um 1 auf maximal 20.\n• Sie erwerben Kenntnisse im Umgang mit vier Waffen Ihrer Wahl. Bei jeder davon muss es sich um eine einfache Waffe oder eine Kampfwaffe handeln."
+  }
+}

@@ -1,6 +1,5 @@
 import 'package:dnd_character_tool/core/utils/spellcasting_engine.dart';
 import 'package:dnd_character_tool/data/models/ability_scores.dart';
-import 'package:dnd_character_tool/data/models/spell.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────

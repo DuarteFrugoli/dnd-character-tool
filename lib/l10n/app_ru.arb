@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "Дополнительные заклинания",
   "inventoryCurrency": "Валюта",
   "inventoryCarriedSection": "Перенесено ( {count} )",
+  "inventoryEquippableSection": "Снаряжаемое ({count})",
+  "inventoryEquipHint": "Нажмите на круглый значок слева, чтобы надеть или снять предмет",
   "inventoryInventory": "Инвентарь",
   "inventoryEmpty": "Товаров пока нет. Нажмите +, чтобы добавить.",
   "inventoryAmmunition": "Боеприпасы",

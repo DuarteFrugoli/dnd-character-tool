@@ -1028,6 +1028,15 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String inventoryEquippableSection(int count) {
+    return 'Снаряжаемое ($count)';
+  }
+
+  @override
+  String get inventoryEquipHint =>
+      'Нажмите на круглый значок слева, чтобы надеть или снять предмет';
+
+  @override
   String get inventoryInventory => 'Инвентарь';
 
   @override

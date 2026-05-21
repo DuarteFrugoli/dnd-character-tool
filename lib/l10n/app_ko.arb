@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "추가 주문",
   "inventoryCurrency": "통화",
   "inventoryCarriedSection": "운반됨( {count} )",
+  "inventoryEquippableSection": "장착 가능 ({count})",
+  "inventoryEquipHint": "왼쪽 원형 아이콘을 탭하여 장착하거나 해제할 수 있습니다",
   "inventoryInventory": "목록",
   "inventoryEmpty": "아직 항목이 없습니다. 추가하려면 +를 탭하세요.",
   "inventoryAmmunition": "탄약",

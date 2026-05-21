@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "Magias Extras",
   "inventoryCurrency": "Moedas",
   "inventoryCarriedSection": "Carregados ({count})",
+  "inventoryEquippableSection": "Equipáveis ({count})",
+  "inventoryEquipHint": "Toque no ícone circular à esquerda para equipar ou desequipar",
   "inventoryInventory": "Inventário",
   "inventoryEmpty": "Sem itens ainda. Toque em + para adicionar.",
   "inventoryAmmunition": "Munição",

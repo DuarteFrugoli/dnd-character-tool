@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "Hechizos Extra",
   "inventoryCurrency": "Divisa",
   "inventoryCarriedSection": "Llevado ( {count} )",
+  "inventoryEquippableSection": "Equipable ({count})",
+  "inventoryEquipHint": "Toca el ícono circular a la izquierda para equipar o desequipar",
   "inventoryInventory": "Inventario",
   "inventoryEmpty": "Aún no hay artículos. Toque + para agregar.",
   "inventoryAmmunition": "Munición",

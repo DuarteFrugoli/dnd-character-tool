@@ -1016,6 +1016,14 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String inventoryEquippableSection(int count) {
+    return '장착 가능 ($count)';
+  }
+
+  @override
+  String get inventoryEquipHint => '왼쪽 원형 아이콘을 탭하여 장착하거나 해제할 수 있습니다';
+
+  @override
   String get inventoryInventory => '목록';
 
   @override

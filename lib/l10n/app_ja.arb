@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "追加呻文",
   "inventoryCurrency": "通貨",
   "inventoryCarriedSection": "搭載 ( {count} )",
+  "inventoryEquippableSection": "装備可能 ({count})",
+  "inventoryEquipHint": "左の丸いアイコンをタップして装備・解除できます",
   "inventoryInventory": "在庫",
   "inventoryEmpty": "まだアイテムはありません。 +をタップして追加します。",
   "inventoryAmmunition": "弾薬",

@@ -9,6 +9,19 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.3.1] - 2026-05-21
+
+### Added
+- **Inventário — seção Equipáveis**: weapons e armaduras não equipadas ficam agora numa seção própria, separada dos itens carregados
+- **Inventário — descrição no tap**: itens com descrição abrem um bottom sheet com o texto completo ao serem tocados
+- **Inventário — dica de equipar**: aviso sutil abaixo da seção Equipáveis orienta o usuário a tocar no ícone circular para equipar/desequipar
+- **Level Up — alinhamento do secondary**: ícone "já conhecido" e botão Info agora têm o mesmo tamanho base no picker de magias
+
+### Fixed
+- Ícone de equipar (CircleAvatar) não aparece mais em itens não-equipáveis (gear, consumíveis)
+
+---
+
 ## [0.3.0] - 2026-05-21
 
 ### Added

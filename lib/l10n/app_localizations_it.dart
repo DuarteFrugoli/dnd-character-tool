@@ -1031,6 +1031,15 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String inventoryEquippableSection(int count) {
+    return 'Equipaggiabile ($count)';
+  }
+
+  @override
+  String get inventoryEquipHint =>
+      'Tocca l\'icona circolare a sinistra per equipaggiare o rimuovere';
+
+  @override
   String get inventoryInventory => 'Inventario';
 
   @override

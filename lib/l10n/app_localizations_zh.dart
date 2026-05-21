@@ -1008,6 +1008,14 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String inventoryEquippableSection(int count) {
+    return '可装备（$count）';
+  }
+
+  @override
+  String get inventoryEquipHint => '点击左侧圆形图标以装备或卸下该物品';
+
+  @override
   String get inventoryInventory => '存货';
 
   @override

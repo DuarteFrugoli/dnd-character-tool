@@ -1926,6 +1926,18 @@ abstract class AppLocalizations {
   /// **'Carried ({count})'**
   String inventoryCarriedSection(int count);
 
+  /// Equippable items (weapons/armor not yet equipped) section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Equippable ({count})'**
+  String inventoryEquippableSection(int count);
+
+  /// Hint below the equippable items section.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the circle icon on the left to equip or unequip'**
+  String get inventoryEquipHint;
+
   /// Inventory section title when all sections empty.
   ///
   /// In en, this message translates to:

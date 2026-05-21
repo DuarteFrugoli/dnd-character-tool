@@ -298,15 +298,22 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const Spacer(),
-                  Chip(
-                    label: Text(
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: colorScheme.primaryContainer,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Text(
                       '→ Lv ${_state.newLevel}',
                       style: TextStyle(
-                        color: colorScheme.onPrimary,
+                        color: colorScheme.onPrimaryContainer,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    backgroundColor: colorScheme.primary,
                   ),
                 ],
               ),
@@ -1013,9 +1020,12 @@ class _SpellPickPage extends StatelessWidget {
             secondary: knownAlready
                 ? Tooltip(
                     message: l10n.levelUpSpellAlreadyKnown,
-                    child: Icon(
-                      Icons.check_circle,
-                      color: Theme.of(context).colorScheme.secondary,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.check_circle,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                      onPressed: null,
                     ),
                   )
                 : IconButton(

@@ -1015,6 +1015,14 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String inventoryEquippableSection(int count) {
+    return '装備可能 ($count)';
+  }
+
+  @override
+  String get inventoryEquipHint => '左の丸いアイコンをタップして装備・解除できます';
+
+  @override
   String get inventoryInventory => '在庫';
 
   @override

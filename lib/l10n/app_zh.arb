@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "额外法术",
   "inventoryCurrency": "货币",
   "inventoryCarriedSection": "携带（{count}）",
+  "inventoryEquippableSection": "可装备（{count}）",
+  "inventoryEquipHint": "点击左侧圆形图标以装备或卸下该物品",
   "inventoryInventory": "存货",
   "inventoryEmpty": "还没有商品。点击 + 进行添加。",
   "inventoryAmmunition": "弹药",

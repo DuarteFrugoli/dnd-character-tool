@@ -1026,6 +1026,15 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String inventoryEquippableSection(int count) {
+    return 'Ausrüstbar ($count)';
+  }
+
+  @override
+  String get inventoryEquipHint =>
+      'Tippe auf das Kreis-Symbol links, um das Item auszurüsten oder abzulegen';
+
+  @override
   String get inventoryInventory => 'Inventar';
 
   @override

@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "Incantesimi Extra",
   "inventoryCurrency": "Valuta",
   "inventoryCarriedSection": "Portato ({count})",
+  "inventoryEquippableSection": "Equipaggiabile ({count})",
+  "inventoryEquipHint": "Tocca l'icona circolare a sinistra per equipaggiare o rimuovere",
   "inventoryInventory": "Inventario",
   "inventoryEmpty": "Nessun articolo ancora Tocca + per aggiungere.",
   "inventoryAmmunition": "Munizioni",

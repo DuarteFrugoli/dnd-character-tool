@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "Sorts Supplémentaires",
   "inventoryCurrency": "Devise",
   "inventoryCarriedSection": "Adoptée ( {count} )",
+  "inventoryEquippableSection": "Équipable ({count})",
+  "inventoryEquipHint": "Appuyez sur l'icône circulaire à gauche pour équiper ou déséquiper",
   "inventoryInventory": "Inventaire",
   "inventoryEmpty": "Aucun article pour l'instant. Appuyez sur + pour ajouter.",
   "inventoryAmmunition": "Munitions",

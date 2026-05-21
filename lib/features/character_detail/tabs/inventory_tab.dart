@@ -85,7 +85,13 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
     final nonAmmo =
         character.equipment.where((e) => e.itemType != ItemType.ammunition);
     final equipped = nonAmmo.where((e) => e.isEquipped).toList();
-    final carried = nonAmmo.where((e) => !e.isEquipped).toList();
+    const equippableTypes = {ItemType.weapon, ItemType.armor};
+    final equippable = nonAmmo
+        .where((e) => !e.isEquipped && equippableTypes.contains(e.itemType))
+        .toList();
+    final carried = nonAmmo
+        .where((e) => !e.isEquipped && !equippableTypes.contains(e.itemType))
+        .toList();
 
     return Scaffold(
       body: ListView(
@@ -167,28 +173,66 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
             const SizedBox(height: 12),
           ],
 
-          // ── Carried ─────────────────────────────────────────────────────
-          _Section(
-            title: carried.isEmpty && equipped.isEmpty && ammo.isEmpty
-                ? l10n.inventoryInventory
-                : l10n.inventoryCarriedSection(carried.length),
-            child: carried.isEmpty
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: Text(
-                      l10n.inventoryEmpty,
-                      style: TextStyle(color: scheme.onSurfaceVariant),
+          // ── Equippable ──────────────────────────────────────────────────
+          if (equippable.isNotEmpty) ...[
+            _Section(
+              title: l10n.inventoryEquippableSection(equippable.length),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ...equippable.map((item) => _ItemTile(
+                        item: item,
+                        characterId: widget.characterId,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(4, 6, 4, 2),
+                    child: Row(
+                      children: [
+                        Icon(Icons.touch_app_outlined,
+                            size: 13, color: scheme.onSurfaceVariant),
+                        const SizedBox(width: 4),
+                        Expanded(
+                          child: Text(
+                            l10n.inventoryEquipHint,
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  )
-                : Column(
-                    children: carried
-                        .map((item) => _ItemTile(
-                              item: item,
-                              characterId: widget.characterId,
-                            ))
-                        .toList(),
                   ),
-          ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+          ],
+
+          // ── Carried ─────────────────────────────────────────────────────
+          if (carried.isNotEmpty ||
+              (equipped.isEmpty && equippable.isEmpty && ammo.isEmpty))
+            _Section(
+              title: carried.isEmpty
+                  ? l10n.inventoryInventory
+                  : l10n.inventoryCarriedSection(carried.length),
+              child: carried.isEmpty
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: Text(
+                        l10n.inventoryEmpty,
+                        style: TextStyle(color: scheme.onSurfaceVariant),
+                      ),
+                    )
+                  : Column(
+                      children: carried
+                          .map((item) => _ItemTile(
+                                item: item,
+                                characterId: widget.characterId,
+                              ))
+                          .toList(),
+                    ),
+            ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -1092,6 +1136,74 @@ class _ItemTile extends ConsumerWidget {
     return base + shieldBonus;
   }
 
+  void _showDescriptionSheet(
+    BuildContext context,
+    String displayName,
+    String? meta,
+  ) {
+    final scheme = Theme.of(context).colorScheme;
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      builder: (_) => DraggableScrollableSheet(
+        initialChildSize: 0.45,
+        minChildSize: 0.25,
+        maxChildSize: 0.85,
+        expand: false,
+        builder: (ctx, scrollCtrl) => Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                width: 32,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: scheme.outlineVariant,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+              child: Text(
+                item.quantity > 1
+                    ? '$displayName ×${item.quantity}'
+                    : displayName,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            if (meta != null)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                child: Text(
+                  meta,
+                  style: TextStyle(color: scheme.primary, fontSize: 13),
+                ),
+              ),
+            const Divider(height: 1),
+            Expanded(
+              child: ListView(
+                controller: scrollCtrl,
+                padding: const EdgeInsets.all(16),
+                children: [
+                  Text(
+                    item.description!,
+                    style: const TextStyle(height: 1.6),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Future<void> _onEquipTap(
     BuildContext context,
     WidgetRef ref,
@@ -1182,8 +1294,14 @@ class _ItemTile extends ConsumerWidget {
           : l10n.armorStealthDisadvantage;
     }
 
+    final hasDescription =
+        item.description != null && item.description!.trim().isNotEmpty;
+
     return ListTile(
       contentPadding: EdgeInsets.zero,
+      onTap: hasDescription
+          ? () => _showDescriptionSheet(context, displayName, meta)
+          : null,
       leading: canEquip
           ? GestureDetector(
               onTap: () => _onEquipTap(context, ref, notifier),
@@ -1204,15 +1322,7 @@ class _ItemTile extends ConsumerWidget {
                 ),
               ),
             )
-          : CircleAvatar(
-              radius: 16,
-              backgroundColor: scheme.surfaceContainerHighest,
-              child: Icon(
-                _leadingIcon(item.itemType, false),
-                size: 16,
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
+          : null,
       title: Text(
         item.quantity > 1 ? '$displayName ×${item.quantity}' : displayName,
         style: const TextStyle(fontSize: 14),
@@ -1220,7 +1330,7 @@ class _ItemTile extends ConsumerWidget {
       subtitle: subtitleText != null
           ? Text(
               subtitleText,
-              maxLines: 2,
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                   fontSize: 12, color: scheme.onSurfaceVariant),

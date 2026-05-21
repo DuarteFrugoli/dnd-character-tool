@@ -275,6 +275,8 @@
   "spellsExtrasHeader": "Zusatzzauber",
   "inventoryCurrency": "Währung",
   "inventoryCarriedSection": "Getragen ( {count} )",
+  "inventoryEquippableSection": "Ausrüstbar ({count})",
+  "inventoryEquipHint": "Tippe auf das Kreis-Symbol links, um das Item auszurüsten oder abzulegen",
   "inventoryInventory": "Inventar",
   "inventoryEmpty": "Noch keine Artikel. Tippen Sie zum Hinzufügen auf +.",
   "inventoryAmmunition": "Munition",

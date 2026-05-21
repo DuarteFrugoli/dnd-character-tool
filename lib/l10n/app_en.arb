@@ -920,6 +920,13 @@
     "description": "Carried items section title.",
     "placeholders": { "count": { "type": "int" } }
   },
+  "inventoryEquippableSection": "Equippable ({count})",
+  "@inventoryEquippableSection": {
+    "description": "Equippable items (weapons/armor not yet equipped) section title.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "inventoryEquipHint": "Tap the circle icon on the left to equip or unequip",
+  "@inventoryEquipHint": { "description": "Hint below the equippable items section." },
   "inventoryInventory": "Inventory",
   "@inventoryInventory": { "description": "Inventory section title when all sections empty." },
   "inventoryEmpty": "No items yet. Tap + to add.",

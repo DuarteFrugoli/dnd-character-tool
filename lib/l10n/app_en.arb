@@ -443,6 +443,18 @@
   "featuresTooltipDisable": "Disable",
   "@featuresTooltipDisable": { "description": "Disable feature tooltip." },
 
+  "featuresTabFeats": "Feats",
+  "@featuresTabFeats": { "description": "Add feature sheet: Feats tab label." },
+
+  "featPrerequisite": "Prerequisite: {req}",
+  "@featPrerequisite": {
+    "description": "Feat prerequisite label.",
+    "placeholders": { "req": { "type": "String" } }
+  },
+
+  "featuresSectionFeats": "Feats",
+  "@featuresSectionFeats": { "description": "Feats section header in Features tab." },
+
   "featuresTabClass": "Class",
   "@featuresTabClass": { "description": "Add feature sheet: Class tab label." },
 

@@ -936,6 +936,24 @@ abstract class AppLocalizations {
   /// **'Disable'**
   String get featuresTooltipDisable;
 
+  /// Add feature sheet: Feats tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Feats'**
+  String get featuresTabFeats;
+
+  /// Feat prerequisite label.
+  ///
+  /// In en, this message translates to:
+  /// **'Prerequisite: {req}'**
+  String featPrerequisite(String req);
+
+  /// Feats section header in Features tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Feats'**
+  String get featuresSectionFeats;
+
   /// Add feature sheet: Class tab label.
   ///
   /// In en, this message translates to:

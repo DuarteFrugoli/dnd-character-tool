@@ -455,6 +455,17 @@ class AppLocalizationsIt extends AppLocalizations {
   String get featuresTooltipDisable => 'Disattiva';
 
   @override
+  String get featuresTabFeats => 'Talenti';
+
+  @override
+  String featPrerequisite(String req) {
+    return 'Prerequisito: $req';
+  }
+
+  @override
+  String get featuresSectionFeats => 'Talenti';
+
+  @override
   String get featuresTabClass => 'Classe';
 
   @override

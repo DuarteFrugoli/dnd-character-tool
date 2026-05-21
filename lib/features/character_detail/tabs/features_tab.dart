@@ -108,6 +108,8 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
   @override
   Widget build(BuildContext context) {
     final extraFeatures = widget.character.extraFeatures;
+    final featItems = extraFeatures.where((f) => f.sourceClass == 'Feat').toList();
+    final classExtras = extraFeatures.where((f) => f.sourceClass != 'Feat').toList();
     return FutureBuilder<_FeaturesData>(
       future: _future,
       builder: (context, snap) {
@@ -137,6 +139,10 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           body: ListView(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
             children: [
+              if (featItems.isNotEmpty) ...[
+                _FeatsSection(feats: featItems, characterId: widget.characterId),
+                const SizedBox(height: 24),
+              ],
               _RacialTraitsSection(
                 raceName: widget.character.race,
                 subraceName: widget.character.subrace,
@@ -177,10 +183,10 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 const SizedBox(height: 24),
                 _ToolProficienciesSection(features: widget.character.features),
               ],
-              if (extraFeatures.isNotEmpty) ...[
+              if (classExtras.isNotEmpty) ...[
                 const SizedBox(height: 24),
                 _ExtraFeaturesSection(
-                  features: extraFeatures,
+                  features: classExtras,
                   characterId: widget.characterId,
                 ),
               ],
@@ -433,6 +439,93 @@ class _ToolProficienciesSection extends ConsumerWidget {
             ),
           );
         }),
+      ],
+    );
+  }
+}
+
+class _FeatsSection extends ConsumerWidget {
+  const _FeatsSection({required this.feats, required this.characterId});
+
+  final List<CharacterExtraFeature> feats;
+  final String characterId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final notifier = ref.read(characterDetailProvider(characterId).notifier);
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          l10n.featuresSectionFeats,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        ...feats.map(
+          (f) => Card(
+            margin: const EdgeInsets.only(bottom: 10),
+            child: ExpansionTile(
+              title: Text(
+                i18n.featName(f.name) ?? f.name,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+              subtitle: Text(
+                l10n.featuresSectionFeats,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: scheme.tertiary,
+                ),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.delete_outline, size: 18),
+                color: scheme.error,
+                tooltip: l10n.featuresTooltipRemove,
+                onPressed: () async {
+                  final confirm = await showDialog<bool>(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: Text(l10n.featuresRemoveTitle),
+                      content: Text(l10n.featuresRemoveContent(f.name)),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx, false),
+                          child: Text(l10n.dialogCancel),
+                        ),
+                        FilledButton(
+                          onPressed: () => Navigator.pop(ctx, true),
+                          style: FilledButton.styleFrom(
+                            backgroundColor: scheme.error,
+                            foregroundColor: scheme.onError,
+                          ),
+                          child: Text(l10n.dialogRemove),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirm == true) {
+                    await notifier.removeExtraFeature(f.name, 'Feat');
+                  }
+                },
+              ),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: Text(
+                    i18n.featDescription(f.name) ?? f.description,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -809,6 +902,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   List<String> _getTabLabels(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return [
+      l10n.featuresTabFeats,
       l10n.featuresTabClass,
       l10n.labelSubclass,
       l10n.featuresTabRacial,
@@ -822,6 +916,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   List<SrdRace>? _races;
   Map<String, String>? _raceTraits;
   List<SrdBackground>? _backgrounds;
+  List<SrdFeat>? _feats;
   String? _loadError;
 
   static const _classOrder = [
@@ -842,7 +937,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 5, vsync: this);
+    _tabs = TabController(length: 6, vsync: this);
     _tabs.addListener(() {
       if (!_tabs.indexIsChanging) {
         _search.clear();
@@ -879,6 +974,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         srd.getRaces(),
         srd.getRaceTraits(),
         srd.getBackgrounds(),
+        srd.getFeats(),
       ]);
       if (mounted) {
         setState(() {
@@ -888,6 +984,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           _races = results[2] as List<SrdRace>;
           _raceTraits = results[3] as Map<String, String>;
           _backgrounds = results[4] as List<SrdBackground>;
+          _feats = results[5] as List<SrdFeat>;
         });
       }
     } catch (e) {
@@ -946,8 +1043,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               ],
             ),
           ),
-          // Search field (hidden on Custom tab, index 4)
-          if (_tabs.index != 4)
+          // Search field (hidden on Custom tab, index 5)
+          if (_tabs.index != 5)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: TextField(
@@ -986,6 +1083,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                 : TabBarView(
                     controller: _tabs,
                     children: [
+                      _buildFeatsList(existingKeys, notifier, scheme, i18n),
                       _buildClassList(existingKeys, notifier, scheme, i18n),
                       _buildSubclassList(existingKeys, notifier, scheme, i18n),
                       _buildRacialList(existingKeys, notifier, scheme, i18n),
@@ -1065,6 +1163,89 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
             description: displayDescription,
             subtitle: displaySubtitle,
           ),
+        );
+      },
+    );
+  }
+
+  // ── Feats tab ─────────────────────────────────────────────────────────────
+
+  Widget _buildFeatsList(
+    Set<String> existingKeys,
+    CharacterDetailNotifier notifier,
+    ColorScheme scheme,
+    SrdI18nService i18n,
+  ) {
+    if (_feats == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    final l10n = AppLocalizations.of(context)!;
+    final q = _search.text.toLowerCase();
+    final feats = q.isEmpty
+        ? _feats!
+        : _feats!.where((f) {
+            final name = i18n.featName(f.name) ?? f.name;
+            final desc = i18n.featDescription(f.name) ?? f.description;
+            return name.toLowerCase().contains(q) ||
+                desc.toLowerCase().contains(q) ||
+                f.name.toLowerCase().contains(q);
+          }).toList();
+
+    if (feats.isEmpty) return _emptySearch(q);
+
+    return ListView.builder(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewPadding.bottom,
+      ),
+      itemCount: feats.length,
+      itemBuilder: (_, i) {
+        final feat = feats[i];
+        final key = 'Feat:${feat.name}';
+        final alreadyAdded = existingKeys.contains(key);
+        final displayName = i18n.featName(feat.name) ?? feat.name;
+        final displayDesc = i18n.featDescription(feat.name) ?? feat.description;
+        final prereq = feat.prerequisite;
+        final subtitle = prereq != null
+            ? l10n.featPrerequisite(prereq)
+            : l10n.labelPassive;
+        return ListTile(
+          title: Text(displayName, style: const TextStyle(fontSize: 14)),
+          subtitle: Text(
+            subtitle,
+            style: TextStyle(
+              fontSize: 12,
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+          trailing: alreadyAdded
+              ? SizedBox(
+                  width: 48,
+                  height: 48,
+                  child: Center(
+                    child: Icon(Icons.check_circle,
+                        color: scheme.primary, size: 24),
+                  ),
+                )
+              : IconButton(
+                  icon: const Icon(Icons.add_circle_outline),
+                  color: scheme.primary,
+                  onPressed: () async {
+                    await notifier.addFeat(feat);
+                    if (mounted) setState(() {});
+                  },
+                ),
+          onTap: () {
+            showModalBottomSheet<void>(
+              context: context,
+              isScrollControlled: true,
+              useSafeArea: true,
+              builder: (_) => _FeatureDetailSheet(
+                name: displayName,
+                description: displayDesc,
+                subtitle: subtitle,
+              ),
+            );
+          },
         );
       },
     );

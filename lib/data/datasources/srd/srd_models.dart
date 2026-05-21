@@ -646,6 +646,26 @@ class SrdMagicItem {
       );
 }
 
+// ── Feats ─────────────────────────────────────────────────────────────────────
+
+class SrdFeat {
+  final String name;
+  final String? prerequisite;
+  final String description;
+
+  const SrdFeat({
+    required this.name,
+    this.prerequisite,
+    required this.description,
+  });
+
+  factory SrdFeat.fromJson(Map<String, dynamic> json) => SrdFeat(
+        name: json['name'] as String,
+        prerequisite: json['prerequisite'] as String?,
+        description: json['description'] as String,
+      );
+}
+
 // ── Class Features ────────────────────────────────────────────────────────────
 
 class SrdFeatureUses {

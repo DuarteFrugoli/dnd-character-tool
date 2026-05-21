@@ -30,6 +30,7 @@ class SrdI18nService {
     'classes',
     'class_features',
     'equipment',
+    'feats',
     'languages',
     'magic_items',
     'races',
@@ -321,6 +322,12 @@ class SrdI18nService {
 
   String? classFeatureDescription(String className, String featureName) =>
       _nested2('class_features', className, featureName, 'description');
+
+  // ── Feats ──────────────────────────────────────────────────────────────────
+
+  String? featName(String en) => _str('feats', en, 'name');
+
+  String? featDescription(String en) => _str('feats', en, 'description');
 
   // ── Subclass features ──────────────────────────────────────────────────────
 

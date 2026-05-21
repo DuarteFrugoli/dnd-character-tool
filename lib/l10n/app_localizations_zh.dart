@@ -439,6 +439,17 @@ class AppLocalizationsZh extends AppLocalizations {
   String get featuresTooltipDisable => '禁用';
 
   @override
+  String get featuresTabFeats => '专长';
+
+  @override
+  String featPrerequisite(String req) {
+    return '先决条件: $req';
+  }
+
+  @override
+  String get featuresSectionFeats => '专长';
+
+  @override
   String get featuresTabClass => '职业';
 
   @override

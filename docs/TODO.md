@@ -1,4 +1,4 @@
-# TODO - Melhorias do App D&D
+# TODO - Melhorias do App D&D segundo usuários
 
 ## Alta Prioridade
 

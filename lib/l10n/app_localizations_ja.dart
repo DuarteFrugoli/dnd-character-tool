@@ -446,6 +446,17 @@ class AppLocalizationsJa extends AppLocalizations {
   String get featuresTooltipDisable => '無効';
 
   @override
+  String get featuresTabFeats => '特技';
+
+  @override
+  String featPrerequisite(String req) {
+    return '前提条件: $req';
+  }
+
+  @override
+  String get featuresSectionFeats => '特技';
+
+  @override
   String get featuresTabClass => 'クラス';
 
   @override

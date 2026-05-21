@@ -454,6 +454,17 @@ class AppLocalizationsRu extends AppLocalizations {
   String get featuresTooltipDisable => 'Отключить';
 
   @override
+  String get featuresTabFeats => 'Таланты';
+
+  @override
+  String featPrerequisite(String req) {
+    return 'Требование: $req';
+  }
+
+  @override
+  String get featuresSectionFeats => 'Таланты';
+
+  @override
   String get featuresTabClass => 'Класс';
 
   @override

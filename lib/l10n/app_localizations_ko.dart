@@ -447,6 +447,17 @@ class AppLocalizationsKo extends AppLocalizations {
   String get featuresTooltipDisable => '비활성화';
 
   @override
+  String get featuresTabFeats => '특기';
+
+  @override
+  String featPrerequisite(String req) {
+    return '전제 조건: $req';
+  }
+
+  @override
+  String get featuresSectionFeats => '특기';
+
+  @override
   String get featuresTabClass => '직업';
 
   @override

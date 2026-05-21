@@ -26,6 +26,7 @@ class SrdDataSource {
   Map<String, Map<String, List<SrdClassFeature>>>? _subclassFeatures;
   Map<String, SrdItemData>? _items;
   List<SrdTool>? _tools;
+  List<SrdFeat>? _feats;
   /// Guard against parsing equipment.json multiple times in parallel.
   Future<void>? _equipmentLoadFuture;
 
@@ -134,6 +135,14 @@ class SrdDataSource {
       SrdTool.fromJson,
     );
     return _tools!;
+  }
+
+  Future<List<SrdFeat>> getFeats() async {
+    _feats ??= await _loadList(
+      'assets/data/srd/feats.json',
+      SrdFeat.fromJson,
+    );
+    return _feats!;
   }
 
   Future<Map<String, SrdItemData>> getItems() async {

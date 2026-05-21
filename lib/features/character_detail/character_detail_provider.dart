@@ -396,6 +396,25 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(c.copyWith(extraFeatures: [...c.extraFeatures, extra]));
   }
 
+  Future<void> addFeat(SrdFeat feat) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    const sourceClass = 'Feat';
+    if (c.extraFeatures.any(
+      (f) => f.name == feat.name && f.sourceClass == sourceClass,
+    )) {
+      return;
+    }
+    final extra = CharacterExtraFeature(
+      sourceClass: sourceClass,
+      name: feat.name,
+      level: c.level,
+      type: 'passive',
+      description: feat.description,
+    );
+    await _save(c.copyWith(extraFeatures: [...c.extraFeatures, extra]));
+  }
+
   Future<void> removeExtraFeature(String name, String sourceClass) async {
     final c = state.valueOrNull;
     if (c == null) return;

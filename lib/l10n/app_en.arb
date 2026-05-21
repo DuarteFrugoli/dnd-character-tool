@@ -1182,6 +1182,19 @@
   "avatarRemoveConfirmBody": "This action cannot be undone.",
   "@avatarRemoveConfirmBody": { "description": "Avatar: confirmation dialog body when removing photo." },
   "editModeBanner": "Editing",
-  "@editModeBanner": { "description": "Banner shown at the top of the stats tab when in edit mode." }
+  "@editModeBanner": { "description": "Banner shown at the top of the stats tab when in edit mode." },
+
+  "detailSheetInfoTooltip": "Details",
+  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "detailSheetProficiencies": "Proficiencies",
+  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "detailSheetTraits": "Traits",
+  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "detailSheetSubclassFeaturePlaceholder": "Subclass Feature",
+  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "detailSheetAvailableSubclasses": "Available {feature}",
+  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "detailSheetAvailableSubraces": "Subraces",
+  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." }
 }
 

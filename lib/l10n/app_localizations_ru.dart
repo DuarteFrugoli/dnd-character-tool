@@ -1379,4 +1379,24 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get editModeBanner => 'Редактирование';
+
+  @override
+  String get detailSheetInfoTooltip => 'Подробнее';
+
+  @override
+  String get detailSheetProficiencies => 'Владения';
+
+  @override
+  String get detailSheetTraits => 'Черты';
+
+  @override
+  String get detailSheetSubclassFeaturePlaceholder => 'Умение подкласса';
+
+  @override
+  String detailSheetAvailableSubclasses(String feature) {
+    return 'Доступные $feature';
+  }
+
+  @override
+  String get detailSheetAvailableSubraces => 'Подрасы';
 }

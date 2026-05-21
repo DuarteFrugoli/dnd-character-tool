@@ -1372,4 +1372,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editModeBanner => 'Editing';
+
+  @override
+  String get detailSheetInfoTooltip => 'Details';
+
+  @override
+  String get detailSheetProficiencies => 'Proficiencies';
+
+  @override
+  String get detailSheetTraits => 'Traits';
+
+  @override
+  String get detailSheetSubclassFeaturePlaceholder => 'Subclass Feature';
+
+  @override
+  String detailSheetAvailableSubclasses(String feature) {
+    return 'Available $feature';
+  }
+
+  @override
+  String get detailSheetAvailableSubraces => 'Subraces';
 }

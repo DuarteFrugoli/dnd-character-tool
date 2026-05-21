@@ -2609,6 +2609,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Editing'**
   String get editModeBanner;
+
+  /// Tooltip for the info button on class/race cards in character creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get detailSheetInfoTooltip;
+
+  /// Detail sheet: proficiencies section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Proficiencies'**
+  String get detailSheetProficiencies;
+
+  /// Detail sheet: racial traits section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Traits'**
+  String get detailSheetTraits;
+
+  /// Detail sheet: placeholder label shown at the level where a subclass feature is gained.
+  ///
+  /// In en, this message translates to:
+  /// **'Subclass Feature'**
+  String get detailSheetSubclassFeaturePlaceholder;
+
+  /// Detail sheet: available subclasses section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Available {feature}'**
+  String detailSheetAvailableSubclasses(String feature);
+
+  /// Detail sheet: available subraces section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Subraces'**
+  String get detailSheetAvailableSubraces;
 }
 
 class _AppLocalizationsDelegate

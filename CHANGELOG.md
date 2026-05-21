@@ -9,6 +9,14 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.3.0] - 2026-05-21
+
+### Added
+### Fixed
+### Internal
+
+---
+
 ## [0.2.1] - 2026-05-21
 
 ### Added

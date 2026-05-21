@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "it",
   "appTitle": "Strumento per i personaggi di D&D",
   "charListTitle": "Personaggi di D&D",
@@ -423,4 +423,18 @@
   "avatarRemoveConfirmTitle": "Rimuovere la foto?",
   "avatarRemoveConfirmBody": "Questa azione non può essere annullata.",
   "editModeBanner": "Modifica in corso"
+,
+
+  "detailSheetInfoTooltip": "Dettagli",
+  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "detailSheetProficiencies": "Competenze",
+  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "detailSheetTraits": "Tratti",
+  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "detailSheetSubclassFeaturePlaceholder": "Capacità di Sottoclasse",
+  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "detailSheetAvailableSubclasses": "{feature} disponibili",
+  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "detailSheetAvailableSubraces": "Sottorazze",
+  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." }
 }

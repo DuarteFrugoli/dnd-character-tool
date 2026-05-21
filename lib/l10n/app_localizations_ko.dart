@@ -1361,4 +1361,24 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get editModeBanner => '편집 중';
+
+  @override
+  String get detailSheetInfoTooltip => '상세 정보';
+
+  @override
+  String get detailSheetProficiencies => '숙련';
+
+  @override
+  String get detailSheetTraits => '특성';
+
+  @override
+  String get detailSheetSubclassFeaturePlaceholder => '하위 클래스 특성';
+
+  @override
+  String detailSheetAvailableSubclasses(String feature) {
+    return '$feature 선택지';
+  }
+
+  @override
+  String get detailSheetAvailableSubraces => '하위 종족';
 }

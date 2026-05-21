@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "ko",
   "appTitle": "D&D 캐릭터 도구",
   "charListTitle": "D&D 캐릭터",
@@ -423,4 +423,18 @@
   "avatarRemoveConfirmTitle": "사진을 삭제할까요?",
   "avatarRemoveConfirmBody": "이 작업은 취소할 수 없습니다.",
   "editModeBanner": "편집 중"
+,
+
+  "detailSheetInfoTooltip": "상세 정보",
+  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "detailSheetProficiencies": "숙련",
+  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "detailSheetTraits": "특성",
+  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "detailSheetSubclassFeaturePlaceholder": "하위 클래스 특성",
+  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "detailSheetAvailableSubclasses": "{feature} 선택지",
+  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "detailSheetAvailableSubraces": "하위 종족",
+  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." }
 }

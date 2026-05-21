@@ -1352,4 +1352,24 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get editModeBanner => '编辑中';
+
+  @override
+  String get detailSheetInfoTooltip => '详情';
+
+  @override
+  String get detailSheetProficiencies => '熟练项';
+
+  @override
+  String get detailSheetTraits => '种族特性';
+
+  @override
+  String get detailSheetSubclassFeaturePlaceholder => '子职业特性';
+
+  @override
+  String detailSheetAvailableSubclasses(String feature) {
+    return '可选$feature';
+  }
+
+  @override
+  String get detailSheetAvailableSubraces => '亚种';
 }

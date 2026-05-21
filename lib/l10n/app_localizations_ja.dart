@@ -1360,4 +1360,24 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get editModeBanner => '編集中';
+
+  @override
+  String get detailSheetInfoTooltip => '詳細';
+
+  @override
+  String get detailSheetProficiencies => '習熟';
+
+  @override
+  String get detailSheetTraits => '特性';
+
+  @override
+  String get detailSheetSubclassFeaturePlaceholder => 'サブクラス特性';
+
+  @override
+  String detailSheetAvailableSubclasses(String feature) {
+    return '$featureの選択肢';
+  }
+
+  @override
+  String get detailSheetAvailableSubraces => 'サブ種族';
 }

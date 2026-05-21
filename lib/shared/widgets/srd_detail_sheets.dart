@@ -72,7 +72,7 @@ class _SheetHandle extends StatelessWidget {
         width: 40,
         height: 4,
         decoration: BoxDecoration(
-          color: color.withOpacity(0.4),
+          color: color.withValues(alpha: 0.4),
           borderRadius: BorderRadius.circular(2),
         ),
       ),

@@ -323,6 +323,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get labelLevel => 'レベル';
 
   @override
+  String get levelManualChangeWarning =>
+      'クラス特徴と呪文スロットのみ自動更新されます。レベルアップ全体（HP・能力値・特技・呪文）はトップバーの「レベルアップ」ボタンを使ってください。';
+
+  @override
+  String get tooltipLevelUp => 'レベルアップ';
+
+  @override
   String get labelSubclass => 'サブクラス';
 
   @override

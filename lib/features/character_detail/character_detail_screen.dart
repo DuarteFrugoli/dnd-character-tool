@@ -146,6 +146,12 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             ],
           ),
           actions: [
+            // TODO: implement guided level up wizard
+            IconButton(
+              icon: const Icon(Icons.upgrade),
+              tooltip: AppLocalizations.of(context)!.tooltipLevelUp,
+              onPressed: null,
+            ),
             IconButton(
               icon: const Icon(Icons.single_bed),
               tooltip: AppLocalizations.of(context)!.detailTooltipLongRest,

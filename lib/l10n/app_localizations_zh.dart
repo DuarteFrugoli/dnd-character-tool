@@ -317,6 +317,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get labelLevel => '等级';
 
   @override
+  String get levelManualChangeWarning =>
+      '仅职业特性和法术位会自动更新。如需完整升级（HP、属性、专长、法术），请使用顶部栏的「升级」按鈕。';
+
+  @override
+  String get tooltipLevelUp => '升级';
+
+  @override
   String get labelSubclass => '子类';
 
   @override

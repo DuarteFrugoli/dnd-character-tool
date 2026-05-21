@@ -328,6 +328,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get labelLevel => 'Level';
 
   @override
+  String get levelManualChangeWarning =>
+      'Only features and spell slots are updated automatically. For a full level up (HP, ability scores, feats, spell choices), use the Level Up button in the top bar.';
+
+  @override
+  String get tooltipLevelUp => 'Level Up';
+
+  @override
   String get labelSubclass => 'Subclass';
 
   @override

@@ -324,6 +324,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get labelLevel => '수준';
 
   @override
+  String get levelManualChangeWarning =>
+      '클래스 특성과 주문 슬롯만 자동 업데이트됩니다. 전체 레벨 업(HP, 능력치, 특기, 주문)은 상단 바의 레벨 업 버튼을 사용하세요.';
+
+  @override
+  String get tooltipLevelUp => '레벨 업';
+
+  @override
   String get labelSubclass => '아강';
 
   @override

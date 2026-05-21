@@ -714,6 +714,18 @@ abstract class AppLocalizations {
   /// **'Level'**
   String get labelLevel;
 
+  /// Warning shown near the manual level control in edit mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Only features and spell slots are updated automatically. For a full level up (HP, ability scores, feats, spell choices), use the Level Up button in the top bar.'**
+  String get levelManualChangeWarning;
+
+  /// Tooltip for the Level Up button in the AppBar.
+  ///
+  /// In en, this message translates to:
+  /// **'Level Up'**
+  String get tooltipLevelUp;
+
   /// Subclass field label.
   ///
   /// In en, this message translates to:

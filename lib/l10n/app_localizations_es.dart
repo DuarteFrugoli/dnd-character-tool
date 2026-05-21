@@ -329,6 +329,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get labelLevel => 'Nivel';
 
   @override
+  String get levelManualChangeWarning =>
+      'Solo las aptitudes y ranuras de conjuros se actualizan automáticamente. Para subir de nivel completo (PV, atributos, talentos, conjuros), usa el botón Subir Nivel en la barra superior.';
+
+  @override
+  String get tooltipLevelUp => 'Subir Nivel';
+
+  @override
   String get labelSubclass => 'Subclase';
 
   @override

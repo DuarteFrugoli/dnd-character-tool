@@ -311,6 +311,12 @@
   "labelLevel": "Level",
   "@labelLevel": { "description": "Level field label." },
 
+  "levelManualChangeWarning": "Only features and spell slots are updated automatically. For a full level up (HP, ability scores, feats, spell choices), use the Level Up button in the top bar.",
+  "@levelManualChangeWarning": { "description": "Warning shown near the manual level control in edit mode." },
+
+  "tooltipLevelUp": "Level Up",
+  "@tooltipLevelUp": { "description": "Tooltip for the Level Up button in the AppBar." },
+
   "labelSubclass": "Subclass",
   "@labelSubclass": { "description": "Subclass field label." },
 

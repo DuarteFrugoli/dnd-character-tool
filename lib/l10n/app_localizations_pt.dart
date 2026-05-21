@@ -331,6 +331,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get labelLevel => 'Nível';
 
   @override
+  String get levelManualChangeWarning =>
+      'Apenas features e slots de magia são atualizados automaticamente. Para um level up completo (vida, atributos, talentos, magias), use o botão Upar Nível na barra superior.';
+
+  @override
+  String get tooltipLevelUp => 'Upar Nível';
+
+  @override
   String get labelSubclass => 'Subclasse';
 
   @override

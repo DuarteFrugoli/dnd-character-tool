@@ -334,6 +334,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get labelLevel => 'Niveau';
 
   @override
+  String get levelManualChangeWarning =>
+      'Seules les aptitudes et les emplacements de sorts sont mis à jour automatiquement. Pour une montée de niveau complète (PV, caractéristiques, dons, sorts), utilisez le bouton Niveau Sup. dans la barre supérieure.';
+
+  @override
+  String get tooltipLevelUp => 'Niveau Sup.';
+
+  @override
   String get labelSubclass => 'Sous-classe';
 
   @override

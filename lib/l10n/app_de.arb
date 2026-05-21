@@ -106,6 +106,8 @@
   "labelAlignment": "Ausrichtung",
   "labelPlayer": "Spieler",
   "labelLevel": "Ebene",
+  "levelManualChangeWarning": "Nur Fähigkeiten und Zauberplätze werden automatisch aktualisiert. Für ein vollständiges Stufen-Up (HP, Attribute, Talente, Zauber) nutze den Aufsteigen-Button in der Titelleiste.",
+  "tooltipLevelUp": "Aufsteigen",
   "labelSubclass": "Unterklasse",
   "labelLanguages": "Sprachen",
   "hintAddLanguage": "Sprache hinzufügen…",

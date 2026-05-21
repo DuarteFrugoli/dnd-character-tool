@@ -106,6 +106,8 @@
   "labelAlignment": "Allineamento",
   "labelPlayer": "Giocatore",
   "labelLevel": "Livello",
+  "levelManualChangeWarning": "Solo le capacità e gli slot degli incantesimi vengono aggiornati automaticamente. Per un avanzamento completo (PF, punteggi, talenti, incantesimi), usa il pulsante Sali di Livello nella barra superiore.",
+  "tooltipLevelUp": "Sali di Livello",
   "labelSubclass": "Sottoclasse",
   "labelLanguages": "Lingue",
   "hintAddLanguage": "Aggiungi lingua...",

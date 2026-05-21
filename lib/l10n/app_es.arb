@@ -106,6 +106,8 @@
   "labelAlignment": "Alineación",
   "labelPlayer": "Jugador",
   "labelLevel": "Nivel",
+  "levelManualChangeWarning": "Solo las aptitudes y ranuras de conjuros se actualizan automáticamente. Para subir de nivel completo (PV, atributos, talentos, conjuros), usa el botón Subir Nivel en la barra superior.",
+  "tooltipLevelUp": "Subir Nivel",
   "labelSubclass": "Subclase",
   "labelLanguages": "Idiomas",
   "hintAddLanguage": "Agregar idioma…",

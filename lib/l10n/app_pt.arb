@@ -115,6 +115,8 @@
   "labelAlignment": "Alinhamento",
   "labelPlayer": "Jogador",
   "labelLevel": "Nível",
+  "levelManualChangeWarning": "Apenas features e slots de magia são atualizados automaticamente. Para um level up completo (vida, atributos, talentos, magias), use o botão Upar Nível na barra superior.",
+  "tooltipLevelUp": "Upar Nível",
   "labelSubclass": "Subclasse",
   "labelLanguages": "Idiomas",
   "hintAddLanguage": "Adicionar idioma…",

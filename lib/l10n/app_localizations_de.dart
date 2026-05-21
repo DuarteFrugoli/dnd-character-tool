@@ -330,6 +330,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String get labelLevel => 'Ebene';
 
   @override
+  String get levelManualChangeWarning =>
+      'Nur Fähigkeiten und Zauberplätze werden automatisch aktualisiert. Für ein vollständiges Stufen-Up (HP, Attribute, Talente, Zauber) nutze den Aufsteigen-Button in der Titelleiste.';
+
+  @override
+  String get tooltipLevelUp => 'Aufsteigen';
+
+  @override
   String get labelSubclass => 'Unterklasse';
 
   @override

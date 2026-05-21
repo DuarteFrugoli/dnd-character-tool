@@ -74,7 +74,3 @@
 
 # Feedbacks positivos
 - [x] Sistema de slots de magia foi bem recebido
-
-# pedro
-- [ ] Mostrar o dado de vida do personagem em algum lugar
-- [ ] Corrigir bug da imagem não atualizar dentro da ficha

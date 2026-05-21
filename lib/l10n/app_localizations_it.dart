@@ -331,6 +331,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get labelLevel => 'Livello';
 
   @override
+  String get levelManualChangeWarning =>
+      'Solo le capacità e gli slot degli incantesimi vengono aggiornati automaticamente. Per un avanzamento completo (PF, punteggi, talenti, incantesimi), usa il pulsante Sali di Livello nella barra superiore.';
+
+  @override
+  String get tooltipLevelUp => 'Sali di Livello';
+
+  @override
   String get labelSubclass => 'Sottoclasse';
 
   @override

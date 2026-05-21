@@ -330,6 +330,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get labelLevel => 'Уровень';
 
   @override
+  String get levelManualChangeWarning =>
+      'Только способности и ячейки заклинаний обновляются автоматически. Для полного повышения уровня (HP, характеристики, черты, заклинания) используйте кнопку «Повышение» на верхней панели.';
+
+  @override
+  String get tooltipLevelUp => 'Повышение';
+
+  @override
   String get labelSubclass => 'Подкласс';
 
   @override

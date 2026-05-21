@@ -106,6 +106,8 @@
   "labelAlignment": "位置合わせ",
   "labelPlayer": "プレーヤー",
   "labelLevel": "レベル",
+  "levelManualChangeWarning": "クラス特徴と呪文スロットのみ自動更新されます。レベルアップ全体（HP・能力値・特技・呪文）はトップバーの「レベルアップ」ボタンを使ってください。",
+  "tooltipLevelUp": "レベルアップ",
   "labelSubclass": "サブクラス",
   "labelLanguages": "言語",
   "hintAddLanguage": "言語を追加…",

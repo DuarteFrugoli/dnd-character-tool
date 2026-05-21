@@ -336,7 +336,19 @@ class SrdI18nService {
 
   // ── Equipment ──────────────────────────────────────────────────────────────
 
-  String equipmentName(String en) => _str('equipment', en, 'name') ?? en;
+  String equipmentName(String en) {
+    final direct = _str('equipment', en, 'name');
+    if (direct != null) return direct;
+    // Armor items stored as e.g. "Leather armor" may only have a key "Leather"
+    // in the i18n file (matching the SRD equipment.json canonical name).
+    // Strip common armor/mail suffixes and retry.
+    final lower = en.toLowerCase();
+    final stripped = lower
+        .replaceFirst(RegExp(r'\s+armor$'), '')
+        .replaceFirst(RegExp(r'\s+mail$'), '');
+    if (stripped != lower) return _str('equipment', stripped, 'name') ?? en;
+    return en;
+  }
 
   String? equipmentDescription(String en) => _str('equipment', en, 'description');
 

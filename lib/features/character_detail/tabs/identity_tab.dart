@@ -626,6 +626,29 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                           ],
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 4),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.info_outline,
+                              size: 13,
+                              color: scheme.onSurfaceVariant,
+                            ),
+                            const SizedBox(width: 6),
+                            Expanded(
+                              child: Text(
+                                l10n.levelManualChangeWarning,
+                                style: Theme.of(context).textTheme.bodySmall
+                                    ?.copyWith(
+                                      color: scheme.onSurfaceVariant,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       // Subclass row
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 4),

@@ -106,6 +106,8 @@
   "labelAlignment": "结盟",
   "labelPlayer": "玩家",
   "labelLevel": "等级",
+  "levelManualChangeWarning": "仅职业特性和法术位会自动更新。如需完整升级（HP、属性、专长、法术），请使用顶部栏的「升级」按鈕。",
+  "tooltipLevelUp": "升级",
   "labelSubclass": "子类",
   "labelLanguages": "语言",
   "hintAddLanguage": "添加语言...",

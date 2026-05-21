@@ -13,11 +13,8 @@ class _LevelUpState {
     this.hpChosen = false,
     this.asiMode = _AsiMode.asi,
     this.asiChanges = const {},
-    this.featChosen,
-    this.subclassChosen,
     this.cantripsLearned = const [],
     this.spellsLearned = const [],
-    this.spellSwapped,
   });
 
   final int newLevel;
@@ -216,8 +213,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       _spellsToLearn = spellsToLearn;
       _warlockSwap = warlockSwap;
       _newFeatures = [...newFeatures, ...newSubclassFeatures];
-      _needsSubclass = needsSubclass;
-      _needsAsi = needsAsi;
     });
   }
 
@@ -225,8 +220,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
   int _spellsToLearn = 0;
   bool _warlockSwap = false;
   List<SrdClassFeature> _newFeatures = [];
-  bool _needsSubclass = false;
-  bool _needsAsi = false;
 
   int get _currentPage => _pageController.hasClients
       ? _pageController.page?.round() ?? 0
@@ -641,24 +634,28 @@ class _SubclassPage extends StatelessWidget {
           ),
         ],
         const SizedBox(height: 12),
-        ...subclasses.map((sc) {
-          final name = i18n.subclassName(srdClass?.name ?? '', sc.name) ?? sc.name;
-          final selected = (currentChoice ?? existing ?? '') == sc.name;
-          return Card(
-            child: RadioListTile<String>(
-              title: Text(name),
-              subtitle: Text(
-                i18n.subclassDescription(srdClass?.name ?? '', sc.name) ?? sc.description,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              value: sc.name,
-              groupValue: currentChoice ?? existing ?? '',
-              onChanged: (v) => onChanged(v!),
-              selected: selected,
-            ),
-          );
-        }),
+        RadioGroup<String>(
+          groupValue: currentChoice ?? existing ?? '',
+          onChanged: (v) { if (v != null) onChanged(v); },
+          child: Column(
+            children: subclasses.map((sc) {
+              final name = i18n.subclassName(srdClass?.name ?? '', sc.name);
+              final selected = (currentChoice ?? existing) == sc.name;
+              return Card(
+                child: RadioListTile<String>(
+                  title: Text(name),
+                  subtitle: Text(
+                    i18n.subclassDescription(srdClass?.name ?? '', sc.name) ?? sc.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  value: sc.name,
+                  selected: selected,
+                ),
+              );
+            }).toList(),
+          ),
+        ),
       ],
     );
   }
@@ -774,22 +771,29 @@ class _AsiPage extends StatelessWidget {
           }),
         ] else ...[
           // Feat picker
-          ...allFeats.map((feat) {
-            final selected = featChosen?.name == feat.name;
-            return Card(
-              child: RadioListTile<String>(
-                title: Text(feat.name),
-                subtitle: feat.prerequisite != null
-                    ? Text('Req: ${feat.prerequisite}',
-                        style: const TextStyle(fontSize: 12))
-                    : null,
-                value: feat.name,
-                groupValue: featChosen?.name,
-                onChanged: (_) => onFeatChosen(feat),
-                selected: selected,
-              ),
-            );
-          }),
+          RadioGroup<String>(
+            groupValue: featChosen?.name,
+            onChanged: (v) {
+              if (v == null) return;
+              onFeatChosen(allFeats.firstWhere((f) => f.name == v));
+            },
+            child: Column(
+              children: allFeats.map((feat) {
+                final selected = featChosen?.name == feat.name;
+                return Card(
+                  child: RadioListTile<String>(
+                    title: Text(feat.name),
+                    subtitle: feat.prerequisite != null
+                        ? Text('Req: ${feat.prerequisite}',
+                            style: const TextStyle(fontSize: 12))
+                        : null,
+                    value: feat.name,
+                    selected: selected,
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
         ],
       ],
     );
@@ -961,19 +965,21 @@ class _SpellPickPage extends StatelessWidget {
             title: Text(l10n.levelUpSpellSwap),
             trailing: const Icon(Icons.swap_horiz),
           ),
-          ...knownSpells.map((ks) {
-            return RadioListTile<String?>(
-              title: Text(ks.name),
-              value: ks.name,
-              groupValue: swapped,
-              onChanged: (v) => onSwapChanged?.call(v),
-            );
-          }),
-          RadioListTile<String?>(
-            title: const Text('None'),
-            value: null,
+          RadioGroup<String?>(
             groupValue: swapped,
             onChanged: (v) => onSwapChanged?.call(v),
+            child: Column(
+              children: [
+                ...knownSpells.map((ks) => RadioListTile<String?>(
+                  title: Text(ks.name),
+                  value: ks.name,
+                )),
+                const RadioListTile<String?>(
+                  title: Text('None'),
+                  value: null,
+                ),
+              ],
+            ),
           ),
           const Divider(),
           const SizedBox(height: 8),

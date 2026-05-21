@@ -180,12 +180,8 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ...equippable.map((item) => _ItemTile(
-                        item: item,
-                        characterId: widget.characterId,
-                      )),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(4, 6, 4, 2),
+                    padding: const EdgeInsets.fromLTRB(4, 0, 4, 6),
                     child: Row(
                       children: [
                         Icon(Icons.touch_app_outlined,
@@ -203,6 +199,10 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                       ],
                     ),
                   ),
+                  ...equippable.map((item) => _ItemTile(
+                        item: item,
+                        characterId: widget.characterId,
+                      )),
                 ],
               ),
             ),

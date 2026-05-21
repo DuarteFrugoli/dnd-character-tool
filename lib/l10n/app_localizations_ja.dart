@@ -330,45 +330,45 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tooltipLevelUp => 'レベルアップ';
 
   @override
-  String get levelUpTitle => 'Level Up';
+  String get levelUpTitle => 'レベルアップ';
 
   @override
-  String get levelUpConfirm => 'Confirm Level Up';
+  String get levelUpConfirm => 'レベルアップ確定';
 
   @override
-  String get levelUpCancel => 'Cancel';
+  String get levelUpCancel => 'キャンセル';
 
   @override
-  String get levelUpStepFeatures => 'New Features';
+  String get levelUpStepFeatures => '新しいクラス特徴';
 
   @override
   String levelUpStepSubclass(String feature) {
-    return 'Choose $feature';
+    return '$featureを選択';
   }
 
   @override
-  String get levelUpStepAsi => 'Ability Score Improvement';
+  String get levelUpStepAsi => '能力値向上';
 
   @override
-  String get levelUpStepHp => 'Hit Points';
+  String get levelUpStepHp => 'ヒットポイント';
 
   @override
-  String get levelUpStepCantrips => 'New Cantrips';
+  String get levelUpStepCantrips => '新しいカントリップ';
 
   @override
-  String get levelUpStepSpells => 'New Spells';
+  String get levelUpStepSpells => '新しい呪文';
 
   @override
-  String get levelUpStepSummary => 'Summary';
+  String get levelUpStepSummary => 'まとめ';
 
   @override
-  String get levelUpNoNewFeatures => 'No new class features at this level.';
+  String get levelUpNoNewFeatures => 'このレベルでは新しいクラス特徴はありません。';
 
   @override
-  String get levelUpHpRoll => 'Roll';
+  String get levelUpHpRoll => 'ダイスを振る';
 
   @override
-  String get levelUpHpAverage => 'Average';
+  String get levelUpHpAverage => '平均値';
 
   @override
   String levelUpHpGained(int n) {
@@ -381,76 +381,95 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get levelUpAsiOption => 'Ability Score Improvement';
+  String get levelUpAsiOption => '能力値向上';
 
   @override
-  String get levelUpFeatOption => 'Choose a Feat';
+  String get levelUpFeatOption => '特技を選択';
 
   @override
   String levelUpAsiPointsLeft(int n) {
-    return '$n point(s) remaining';
+    return '残り$nポイント';
   }
 
   @override
   String levelUpSpellsToLearn(int n) {
-    return 'Choose $n spell(s) to learn';
+    return '$nつの呪文を選択';
   }
 
   @override
   String levelUpCantripsToLearn(int n) {
-    return 'Choose $n cantrip(s)';
+    return '$nつのカントリップを選択';
   }
 
   @override
-  String get levelUpSpellSwap => 'Replace a known spell (optional)';
+  String get levelUpSpellSwap => '既知の呪文を交換（任意）';
 
   @override
   String levelUpSpellSwapCurrent(String name) {
-    return 'Currently: $name';
+    return '現在: $name';
   }
 
   @override
   String levelUpSummaryLevel(int level) {
-    return '→ Level $level';
+    return '→ レベル$level';
   }
 
   @override
   String levelUpSummaryHp(int n) {
-    return 'Max HP +$n';
+    return '最大HP +$n';
   }
 
   @override
   String levelUpSummaryAsi(String changes) {
-    return 'ASI: $changes';
+    return '能力値向上: $changes';
   }
 
   @override
   String levelUpSummaryFeat(String name) {
-    return 'Feat: $name';
+    return '特技: $name';
   }
 
   @override
   String levelUpSummarySubclass(String name) {
-    return 'Subclass: $name';
+    return 'サブクラス: $name';
   }
 
   @override
   String levelUpSummarySpellsLearned(int count) {
-    return 'Spells learned: $count';
+    return '習得した呪文: $count';
   }
 
   @override
   String levelUpSummaryCantripsLearned(int count) {
-    return 'Cantrips learned: $count';
+    return '習得したカントリップ: $count';
   }
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Current subclass: $name';
+    return '現在のサブクラス: $name';
   }
 
   @override
-  String get levelUpMaxLevel => 'Already at maximum level (20).';
+  String get levelUpMaxLevel => 'すでに最大レベル（20）に達しています。';
+
+  @override
+  String get levelUpHpReroll => '振り直す / 変更';
+
+  @override
+  String get levelUpSpellSwapNone => 'なし';
+
+  @override
+  String get levelUpSpellAlreadyKnown => '習得済み';
+
+  @override
+  String levelUpSpellCantripSubtitle(String school) {
+    return '$school（カントリップ）';
+  }
+
+  @override
+  String levelUpSpellSubtitle(int level, String school) {
+    return 'Lv$level $school';
+  }
 
   @override
   String get labelSubclass => 'サブクラス';

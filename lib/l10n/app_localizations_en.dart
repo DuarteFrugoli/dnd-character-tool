@@ -458,6 +458,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get levelUpMaxLevel => 'Already at maximum level (20).';
 
   @override
+  String get levelUpHpReroll => 'Reroll / change';
+
+  @override
+  String get levelUpSpellSwapNone => 'None';
+
+  @override
+  String get levelUpSpellAlreadyKnown => 'Already known';
+
+  @override
+  String levelUpSpellCantripSubtitle(String school) {
+    return '$school cantrip';
+  }
+
+  @override
+  String levelUpSpellSubtitle(int level, String school) {
+    return 'Lv $level $school';
+  }
+
+  @override
   String get labelSubclass => 'Subclass';
 
   @override

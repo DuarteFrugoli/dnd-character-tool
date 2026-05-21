@@ -76,15 +76,18 @@
   "detailCancelEditContent": "모든 변경사항이 삭제됩니다.",
   "detailFinishEditTitle": "편집을 마치시겠습니까?",
   "detailFinishEditContent": "변경사항이 저장됩니다.",
-  "detailTabIdentity": "\uc2e0\uc6d0",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
-  "detailEditButton": "\ud3b8\uc9d1",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "\uae38\uac8c \ub20c\ub7ec \uc804\ud658: \uc5c6\uc74c \u2192 \uc219\ub828 \u2192 \uc804\ubb38\uac00",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "detailTabIdentity": "신원",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
+  "detailEditButton": "편집",
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "길게 눌러 전환: 없음 → 숙련 → 전문가",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "통계",
   "detailTabSkills": "기술",
   "detailTabFeatures": "특징",
@@ -379,7 +382,6 @@
   "stepToolCategoryInstrument": "악기",
   "stepToolCategoryArtisanTool": "장인의 도구",
   "stepToolCategoryArtisanOrInstrument": "장인의 도구 또는 도구",
-
   "exportCopied": "{label} 복사됨!",
   "exportDialogTitle": "{name} 내보내기",
   "exportLabelToken": "토큰",
@@ -422,50 +424,70 @@
   "reviewLanguageTypeHint": "언어 입력…",
   "avatarRemoveConfirmTitle": "사진을 삭제할까요?",
   "avatarRemoveConfirmBody": "이 작업은 취소할 수 없습니다.",
-  "editModeBanner": "편집 중"
-,
-
+  "editModeBanner": "편집 중",
   "detailSheetInfoTooltip": "상세 정보",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "숙련",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "특성",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "하위 클래스 특성",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "{feature} 선택지",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "하위 종족",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
-  "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "levelUpTitle": "레벨 업",
+  "levelUpConfirm": "레벨 업 확정",
+  "levelUpCancel": "취소",
+  "levelUpStepFeatures": "새로운 특성",
+  "levelUpStepSubclass": "{feature} 선택",
+  "levelUpStepAsi": "능력치 향상",
+  "levelUpStepHp": "히트포인트",
+  "levelUpStepCantrips": "새로운 소마술",
+  "levelUpStepSpells": "새로운 주문",
+  "levelUpStepSummary": "요약",
+  "levelUpNoNewFeatures": "이 레벨에서 새로운 클래스 특성이 없습니다.",
+  "levelUpHpRoll": "주사위 굴리기",
+  "levelUpHpAverage": "평균값",
   "levelUpHpGained": "+{n} HP",
   "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "levelUpAsiOption": "능력치 향상",
+  "levelUpFeatOption": "특기 선택",
+  "levelUpAsiPointsLeft": "남은 포인트: {n}",
+  "levelUpSpellsToLearn": "주문 {n}개 선택",
+  "levelUpCantripsToLearn": "소마술 {n}개 선택",
+  "levelUpSpellSwap": "알고 있는 주문 교체 (선택)",
+  "levelUpSpellSwapCurrent": "현재: {name}",
+  "levelUpSummaryLevel": "→ 레벨 {level}",
+  "levelUpSummaryHp": "최대 HP +{n}",
+  "levelUpSummaryAsi": "능력치: {changes}",
+  "levelUpSummaryFeat": "특기: {name}",
+  "levelUpSummarySubclass": "서브클래스: {name}",
+  "levelUpSummarySpellsLearned": "습득한 주문: {count}",
+  "levelUpSummaryCantripsLearned": "습득한 소마술: {count}",
+  "levelUpSubclassAlreadyHas": "현재 서브클래스: {name}",
+  "levelUpMaxLevel": "이미 최대 레벨(20)입니다.",
+  "levelUpHpReroll": "다시 굴리기 / 변경",
+  "levelUpSpellSwapNone": "없음",
+  "levelUpSpellAlreadyKnown": "이미 습득",
+  "levelUpSpellCantripSubtitle": "{school} (소마술)",
+  "levelUpSpellSubtitle": "레벨 {level} {school}"
 }

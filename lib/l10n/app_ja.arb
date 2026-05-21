@@ -76,15 +76,18 @@
   "detailCancelEditContent": "すべての変更は破棄されます。",
   "detailFinishEditTitle": "編集を終了しますか?",
   "detailFinishEditContent": "変更は保存されます。",
-  "detailTabIdentity": "\u7d20\u6027",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
-  "detailEditButton": "\u7de8\u96c6",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "\u9577\u62bc\u3057\u3066\u5207\u66ff: \u306a\u3057\u2192\u7fd2\u719f\u2192\u719f\u9054",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "detailTabIdentity": "素性",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
+  "detailEditButton": "編集",
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "長押して切替: なし→習熟→熟達",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "統計",
   "detailTabSkills": "スキル",
   "detailTabFeatures": "特徴",
@@ -379,7 +382,6 @@
   "stepToolCategoryInstrument": "楽器",
   "stepToolCategoryArtisanTool": "職人の道具",
   "stepToolCategoryArtisanOrInstrument": "職人の道具や道具",
-
   "exportCopied": "{label}をコピーしました!",
   "exportDialogTitle": "{name}をエクスポート",
   "exportLabelToken": "トークン",
@@ -422,50 +424,70 @@
   "reviewLanguageTypeHint": "言語を入力…",
   "avatarRemoveConfirmTitle": "写真を削除しますか？",
   "avatarRemoveConfirmBody": "この操作は元に戻せません。",
-  "editModeBanner": "編集中"
-,
-
+  "editModeBanner": "編集中",
   "detailSheetInfoTooltip": "詳細",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "習熟",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "特性",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "サブクラス特性",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "{feature}の選択肢",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "サブ種族",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
-  "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "levelUpTitle": "レベルアップ",
+  "levelUpConfirm": "レベルアップ確定",
+  "levelUpCancel": "キャンセル",
+  "levelUpStepFeatures": "新しいクラス特徴",
+  "levelUpStepSubclass": "{feature}を選択",
+  "levelUpStepAsi": "能力値向上",
+  "levelUpStepHp": "ヒットポイント",
+  "levelUpStepCantrips": "新しいカントリップ",
+  "levelUpStepSpells": "新しい呪文",
+  "levelUpStepSummary": "まとめ",
+  "levelUpNoNewFeatures": "このレベルでは新しいクラス特徴はありません。",
+  "levelUpHpRoll": "ダイスを振る",
+  "levelUpHpAverage": "平均値",
   "levelUpHpGained": "+{n} HP",
   "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "levelUpAsiOption": "能力値向上",
+  "levelUpFeatOption": "特技を選択",
+  "levelUpAsiPointsLeft": "残り{n}ポイント",
+  "levelUpSpellsToLearn": "{n}つの呪文を選択",
+  "levelUpCantripsToLearn": "{n}つのカントリップを選択",
+  "levelUpSpellSwap": "既知の呪文を交換（任意）",
+  "levelUpSpellSwapCurrent": "現在: {name}",
+  "levelUpSummaryLevel": "→ レベル{level}",
+  "levelUpSummaryHp": "最大HP +{n}",
+  "levelUpSummaryAsi": "能力値向上: {changes}",
+  "levelUpSummaryFeat": "特技: {name}",
+  "levelUpSummarySubclass": "サブクラス: {name}",
+  "levelUpSummarySpellsLearned": "習得した呪文: {count}",
+  "levelUpSummaryCantripsLearned": "習得したカントリップ: {count}",
+  "levelUpSubclassAlreadyHas": "現在のサブクラス: {name}",
+  "levelUpMaxLevel": "すでに最大レベル（20）に達しています。",
+  "levelUpHpReroll": "振り直す / 変更",
+  "levelUpSpellSwapNone": "なし",
+  "levelUpSpellAlreadyKnown": "習得済み",
+  "levelUpSpellCantripSubtitle": "{school}（カントリップ）",
+  "levelUpSpellSubtitle": "Lv{level} {school}"
 }

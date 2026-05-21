@@ -912,6 +912,36 @@ abstract class AppLocalizations {
   /// **'Already at maximum level (20).'**
   String get levelUpMaxLevel;
 
+  /// Level Up HP step: reroll button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Reroll / change'**
+  String get levelUpHpReroll;
+
+  /// Level Up spell swap: no swap option.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get levelUpSpellSwapNone;
+
+  /// Level Up spell pick: tooltip for already-known spells.
+  ///
+  /// In en, this message translates to:
+  /// **'Already known'**
+  String get levelUpSpellAlreadyKnown;
+
+  /// Level Up cantrip subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{school} cantrip'**
+  String levelUpSpellCantripSubtitle(String school);
+
+  /// Level Up spell subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lv {level} {school}'**
+  String levelUpSpellSubtitle(int level, String school);
+
   /// Subclass field label.
   ///
   /// In en, this message translates to:

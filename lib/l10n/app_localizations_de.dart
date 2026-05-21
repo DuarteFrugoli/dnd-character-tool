@@ -340,124 +340,144 @@ class AppLocalizationsDe extends AppLocalizations {
   String get levelUpTitle => 'Level Up';
 
   @override
-  String get levelUpConfirm => 'Confirm Level Up';
+  String get levelUpConfirm => 'Level Up bestätigen';
 
   @override
-  String get levelUpCancel => 'Cancel';
+  String get levelUpCancel => 'Abbrechen';
 
   @override
-  String get levelUpStepFeatures => 'New Features';
+  String get levelUpStepFeatures => 'Neue Fähigkeiten';
 
   @override
   String levelUpStepSubclass(String feature) {
-    return 'Choose $feature';
+    return '$feature wählen';
   }
 
   @override
-  String get levelUpStepAsi => 'Ability Score Improvement';
+  String get levelUpStepAsi => 'Eigenschaftswertverbesserung';
 
   @override
-  String get levelUpStepHp => 'Hit Points';
+  String get levelUpStepHp => 'Trefferpunkte';
 
   @override
-  String get levelUpStepCantrips => 'New Cantrips';
+  String get levelUpStepCantrips => 'Neue Zaubertricks';
 
   @override
-  String get levelUpStepSpells => 'New Spells';
+  String get levelUpStepSpells => 'Neue Zauber';
 
   @override
-  String get levelUpStepSummary => 'Summary';
+  String get levelUpStepSummary => 'Zusammenfassung';
 
   @override
-  String get levelUpNoNewFeatures => 'No new class features at this level.';
+  String get levelUpNoNewFeatures =>
+      'Keine neuen Klassenmerkmale auf dieser Stufe.';
 
   @override
-  String get levelUpHpRoll => 'Roll';
+  String get levelUpHpRoll => 'Würfeln';
 
   @override
-  String get levelUpHpAverage => 'Average';
+  String get levelUpHpAverage => 'Durchschnitt';
 
   @override
   String levelUpHpGained(int n) {
-    return '+$n HP';
+    return '+$n TP';
   }
 
   @override
   String levelUpHpFormula(int die, String mod) {
-    return 'd$die + CON ($mod)';
+    return 'W$die + KON ($mod)';
   }
 
   @override
-  String get levelUpAsiOption => 'Ability Score Improvement';
+  String get levelUpAsiOption => 'Eigenschaftswertverbesserung';
 
   @override
-  String get levelUpFeatOption => 'Choose a Feat';
+  String get levelUpFeatOption => 'Fertigkeit wählen';
 
   @override
   String levelUpAsiPointsLeft(int n) {
-    return '$n point(s) remaining';
+    return '$n Punkt(e) verbleibend';
   }
 
   @override
   String levelUpSpellsToLearn(int n) {
-    return 'Choose $n spell(s) to learn';
+    return '$n Zauber auswählen';
   }
 
   @override
   String levelUpCantripsToLearn(int n) {
-    return 'Choose $n cantrip(s)';
+    return '$n Zaubertrick(s) auswählen';
   }
 
   @override
-  String get levelUpSpellSwap => 'Replace a known spell (optional)';
+  String get levelUpSpellSwap => 'Bekannten Zauber ersetzen (optional)';
 
   @override
   String levelUpSpellSwapCurrent(String name) {
-    return 'Currently: $name';
+    return 'Aktuell: $name';
   }
 
   @override
   String levelUpSummaryLevel(int level) {
-    return '→ Level $level';
+    return '→ Stufe $level';
   }
 
   @override
   String levelUpSummaryHp(int n) {
-    return 'Max HP +$n';
+    return 'Max TP +$n';
   }
 
   @override
   String levelUpSummaryAsi(String changes) {
-    return 'ASI: $changes';
+    return 'EWV: $changes';
   }
 
   @override
   String levelUpSummaryFeat(String name) {
-    return 'Feat: $name';
+    return 'Fertigkeit: $name';
   }
 
   @override
   String levelUpSummarySubclass(String name) {
-    return 'Subclass: $name';
+    return 'Unterklasse: $name';
   }
 
   @override
   String levelUpSummarySpellsLearned(int count) {
-    return 'Spells learned: $count';
+    return 'Gelernte Zauber: $count';
   }
 
   @override
   String levelUpSummaryCantripsLearned(int count) {
-    return 'Cantrips learned: $count';
+    return 'Gelernte Zaubertricks: $count';
   }
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Current subclass: $name';
+    return 'Aktuelle Unterklasse: $name';
   }
 
   @override
-  String get levelUpMaxLevel => 'Already at maximum level (20).';
+  String get levelUpMaxLevel => 'Bereits auf maximaler Stufe (20).';
+
+  @override
+  String get levelUpHpReroll => 'Neu würfeln / ändern';
+
+  @override
+  String get levelUpSpellSwapNone => 'Keiner';
+
+  @override
+  String get levelUpSpellAlreadyKnown => 'Bereits bekannt';
+
+  @override
+  String levelUpSpellCantripSubtitle(String school) {
+    return '$school (Zaubertrick)';
+  }
+
+  @override
+  String levelUpSpellSubtitle(int level, String school) {
+    return 'Std $level $school';
+  }
 
   @override
   String get labelSubclass => 'Unterklasse';

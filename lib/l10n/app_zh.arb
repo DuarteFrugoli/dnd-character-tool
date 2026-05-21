@@ -76,15 +76,18 @@
   "detailCancelEditContent": "所有更改都将被丢弃。",
   "detailFinishEditTitle": "完成编辑吗？",
   "detailFinishEditContent": "更改将被保存。",
-  "detailTabIdentity": "\u8eab\u4efd",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
-  "detailEditButton": "\u7f16\u8f91",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "\u957f\u6309\u5207\u6362: \u65e0 \u2192 \u719f\u7ec3 \u2192 \u4e13\u7cbe",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "detailTabIdentity": "身份",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
+  "detailEditButton": "编辑",
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "长按切换: 无 → 熟练 → 专精",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "统计数据",
   "detailTabSkills": "技能",
   "detailTabFeatures": "特征",
@@ -379,7 +382,6 @@
   "stepToolCategoryInstrument": "乐器",
   "stepToolCategoryArtisanTool": "工匠的工具",
   "stepToolCategoryArtisanOrInstrument": "工匠的工具或仪器",
-
   "exportCopied": "{label}已复制!",
   "exportDialogTitle": "导出{name}",
   "exportLabelToken": "令牌",
@@ -422,50 +424,70 @@
   "reviewLanguageTypeHint": "输入一门语言…",
   "avatarRemoveConfirmTitle": "删除照片？",
   "avatarRemoveConfirmBody": "此操作无法撤销。",
-  "editModeBanner": "编辑中"
-,
-
+  "editModeBanner": "编辑中",
   "detailSheetInfoTooltip": "详情",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "熟练项",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "种族特性",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "子职业特性",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "可选{feature}",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "亚种",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
-  "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "levelUpTitle": "升级",
+  "levelUpConfirm": "确认升级",
+  "levelUpCancel": "取消",
+  "levelUpStepFeatures": "新职业特性",
+  "levelUpStepSubclass": "选择{feature}",
+  "levelUpStepAsi": "属性值提升",
+  "levelUpStepHp": "生命值",
+  "levelUpStepCantrips": "新戏法",
+  "levelUpStepSpells": "新法术",
+  "levelUpStepSummary": "总结",
+  "levelUpNoNewFeatures": "此等级没有新的职业特性。",
+  "levelUpHpRoll": "掷骰",
+  "levelUpHpAverage": "平均值",
   "levelUpHpGained": "+{n} HP",
-  "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "levelUpHpFormula": "d{die} + 体质 ({mod})",
+  "levelUpAsiOption": "属性值提升",
+  "levelUpFeatOption": "选择专长",
+  "levelUpAsiPointsLeft": "剩余{n}点",
+  "levelUpSpellsToLearn": "选择{n}个法术",
+  "levelUpCantripsToLearn": "选择{n}个戏法",
+  "levelUpSpellSwap": "替换已知法术（可选）",
+  "levelUpSpellSwapCurrent": "当前：{name}",
+  "levelUpSummaryLevel": "→ {level}级",
+  "levelUpSummaryHp": "最大HP +{n}",
+  "levelUpSummaryAsi": "属性提升: {changes}",
+  "levelUpSummaryFeat": "专长: {name}",
+  "levelUpSummarySubclass": "子职业: {name}",
+  "levelUpSummarySpellsLearned": "学会法术: {count}",
+  "levelUpSummaryCantripsLearned": "学会戏法: {count}",
+  "levelUpSubclassAlreadyHas": "当前子职业: {name}",
+  "levelUpMaxLevel": "已达到最高等级（20）。",
+  "levelUpHpReroll": "重掷 / 更改",
+  "levelUpSpellSwapNone": "无",
+  "levelUpSpellAlreadyKnown": "已知晓",
+  "levelUpSpellCantripSubtitle": "{school}（戏法）",
+  "levelUpSpellSubtitle": "{level}环 {school}"
 }

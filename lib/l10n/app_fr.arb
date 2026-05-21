@@ -76,15 +76,18 @@
   "detailCancelEditContent": "Toutes les modifications seront rejetées.",
   "detailFinishEditTitle": "Terminer la modification ?",
   "detailFinishEditContent": "Les modifications seront enregistrées.",
-  "detailTabIdentity": "Identit\u00e9",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
+  "detailTabIdentity": "Identité",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
   "detailEditButton": "Modifier",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "Maintenez pour alterner: aucun \u2192 comp\u00e9tent \u2192 expert",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "Maintenez pour alterner: aucun → compétent → expert",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "Statistiques",
   "detailTabSkills": "Compétences",
   "detailTabFeatures": "Caractéristiques",
@@ -113,7 +116,7 @@
   "hintAddLanguage": "Ajouter une langue…",
   "labelChoose": "Choisir",
   "sectionAppearance": "Apparence",
-  "labelAge": "\u00c2ge",
+  "labelAge": "Âge",
   "labelHeight": "Taille",
   "labelWeight": "Poids",
   "labelEyes": "Yeux",
@@ -230,8 +233,8 @@
   "statPassivePerc": "Perc. passif",
   "statInspiration": "Inspiration",
   "statXP": "XP",
-  "inspirationGranted": "Accord\u00e9e",
-  "inspirationNotGranted": "Non accord\u00e9e",
+  "inspirationGranted": "Accordée",
+  "inspirationNotGranted": "Non accordée",
   "statLevel": "Niveau {level}",
   "tooltipAddXp": "Ajouter XP",
   "labelLevelTable": "Tableau des Niveaux",
@@ -373,14 +376,12 @@
   "stepFreeAsiRemaining": "Distribute racial ASI points freely ({remaining} remaining):",
   "stepFreePicksRemaining": "Racial free ASI: assign +1 to {total} attributes ({remaining} remaining):",
   "stepFreePicksNoStack": "Cannot assign to attributes already receiving a racial bonus.",
-
   "reviewClassEquipmentTitle": "Équipement de classe — {name}",
   "reviewEquipmentIncluded": "Inclus :",
   "stepToolCategoryGamingSet": "Kit de jeu",
   "stepToolCategoryInstrument": "Instrument de musique",
   "stepToolCategoryArtisanTool": "Outil d'artisan",
   "stepToolCategoryArtisanOrInstrument": "Outil d'artisan ou instrument",
-
   "exportCopied": "{label} copié !",
   "exportDialogTitle": "Exporter {name}",
   "exportLabelToken": "Jeton",
@@ -423,50 +424,70 @@
   "reviewLanguageTypeHint": "Saisissez une langue…",
   "avatarRemoveConfirmTitle": "Supprimer la photo ?",
   "avatarRemoveConfirmBody": "Cette action est irréversible.",
-  "editModeBanner": "Modification en cours"
-,
-
+  "editModeBanner": "Modification en cours",
   "detailSheetInfoTooltip": "Détails",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "Maîtrises",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "Traits",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "Trait de Sous-classe",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "{feature} disponibles",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "Sous-races",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
-  "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
-  "levelUpHpGained": "+{n} HP",
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "levelUpTitle": "Montée de niveau",
+  "levelUpConfirm": "Confirmer la montée",
+  "levelUpCancel": "Annuler",
+  "levelUpStepFeatures": "Nouvelles aptitudes",
+  "levelUpStepSubclass": "Choisir {feature}",
+  "levelUpStepAsi": "Amélioration de caractéristique",
+  "levelUpStepHp": "Points de vie",
+  "levelUpStepCantrips": "Nouveaux tours de magie",
+  "levelUpStepSpells": "Nouveaux sorts",
+  "levelUpStepSummary": "Résumé",
+  "levelUpNoNewFeatures": "Aucune nouvelle aptitude de classe à ce niveau.",
+  "levelUpHpRoll": "Lancer",
+  "levelUpHpAverage": "Moyenne",
+  "levelUpHpGained": "+{n} PV",
   "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "levelUpAsiOption": "Amélioration de caractéristique",
+  "levelUpFeatOption": "Choisir un don",
+  "levelUpAsiPointsLeft": "{n} point(s) restant(s)",
+  "levelUpSpellsToLearn": "Choisir {n} sort(s)",
+  "levelUpCantripsToLearn": "Choisir {n} tour(s) de magie",
+  "levelUpSpellSwap": "Remplacer un sort connu (facultatif)",
+  "levelUpSpellSwapCurrent": "Actuel : {name}",
+  "levelUpSummaryLevel": "→ Niveau {level}",
+  "levelUpSummaryHp": "PV Max +{n}",
+  "levelUpSummaryAsi": "AC : {changes}",
+  "levelUpSummaryFeat": "Don : {name}",
+  "levelUpSummarySubclass": "Sous-classe : {name}",
+  "levelUpSummarySpellsLearned": "Sorts appris : {count}",
+  "levelUpSummaryCantripsLearned": "Tours de magie appris : {count}",
+  "levelUpSubclassAlreadyHas": "Sous-classe actuelle : {name}",
+  "levelUpMaxLevel": "Déjà au niveau maximum (20).",
+  "levelUpHpReroll": "Relancer / modifier",
+  "levelUpSpellSwapNone": "Aucun",
+  "levelUpSpellAlreadyKnown": "Déjà connu",
+  "levelUpSpellCantripSubtitle": "{school} (tour de magie)",
+  "levelUpSpellSubtitle": "Niv {level} {school}"
 }

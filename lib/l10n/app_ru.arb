@@ -76,15 +76,18 @@
   "detailCancelEditContent": "Все изменения будут отменены.",
   "detailFinishEditTitle": "Завершить редактирование?",
   "detailFinishEditContent": "Изменения будут сохранены.",
-  "detailTabIdentity": "\u041b\u0438\u0447\u043d\u043e\u0441\u0442\u044c",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
-  "detailEditButton": "\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u0434\u043b\u044f \u043f\u0435\u0440\u0435\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f: \u043d\u0435\u0442 \u2192 \u0432\u043b\u0430\u0434\u0435\u043d\u0438\u0435 \u2192 \u044d\u043a\u0441\u043f\u0435\u0440\u0442\u0438\u0437\u0430",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "detailTabIdentity": "Личность",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
+  "detailEditButton": "Редактировать",
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "Удерживайте для переключения: нет → владение → экспертиза",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "Статистика",
   "detailTabSkills": "Навыки",
   "detailTabFeatures": "Функции",
@@ -379,7 +382,6 @@
   "stepToolCategoryInstrument": "Музыкальный инструмент",
   "stepToolCategoryArtisanTool": "инструмент ремесленника",
   "stepToolCategoryArtisanOrInstrument": "Инструмент или инструмент ремесленника",
-
   "exportCopied": "{label} скопировано!",
   "exportDialogTitle": "Экспорт {name}",
   "exportLabelToken": "Токен",
@@ -422,50 +424,70 @@
   "reviewLanguageTypeHint": "Введите язык…",
   "avatarRemoveConfirmTitle": "Удалить фото?",
   "avatarRemoveConfirmBody": "Это действие нельзя отменить.",
-  "editModeBanner": "Редактирование"
-,
-
+  "editModeBanner": "Редактирование",
   "detailSheetInfoTooltip": "Подробнее",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "Владения",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "Черты",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "Умение подкласса",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "Доступные {feature}",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "Подрасы",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
-  "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
-  "levelUpHpGained": "+{n} HP",
-  "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "levelUpTitle": "Повышение уровня",
+  "levelUpConfirm": "Подтвердить повышение",
+  "levelUpCancel": "Отмена",
+  "levelUpStepFeatures": "Новые способности",
+  "levelUpStepSubclass": "Выбрать {feature}",
+  "levelUpStepAsi": "Улучшение характеристик",
+  "levelUpStepHp": "Хиты",
+  "levelUpStepCantrips": "Новые заговоры",
+  "levelUpStepSpells": "Новые заклинания",
+  "levelUpStepSummary": "Итог",
+  "levelUpNoNewFeatures": "На этом уровне нет новых классовых умений.",
+  "levelUpHpRoll": "Бросить кости",
+  "levelUpHpAverage": "Среднее",
+  "levelUpHpGained": "+{n} хитов",
+  "levelUpHpFormula": "к{die} + ТЕЛ ({mod})",
+  "levelUpAsiOption": "Улучшение характеристик",
+  "levelUpFeatOption": "Выбрать черту",
+  "levelUpAsiPointsLeft": "Осталось очков: {n}",
+  "levelUpSpellsToLearn": "Выбрать {n} заклинание(й)",
+  "levelUpCantripsToLearn": "Выбрать {n} заговор(ов)",
+  "levelUpSpellSwap": "Заменить известное заклинание (необязательно)",
+  "levelUpSpellSwapCurrent": "Текущее: {name}",
+  "levelUpSummaryLevel": "→ Уровень {level}",
+  "levelUpSummaryHp": "Макс. хиты +{n}",
+  "levelUpSummaryAsi": "Улучшение: {changes}",
+  "levelUpSummaryFeat": "Черта: {name}",
+  "levelUpSummarySubclass": "Подкласс: {name}",
+  "levelUpSummarySpellsLearned": "Изучено заклинаний: {count}",
+  "levelUpSummaryCantripsLearned": "Изучено заговоров: {count}",
+  "levelUpSubclassAlreadyHas": "Текущий подкласс: {name}",
+  "levelUpMaxLevel": "Уже максимальный уровень (20).",
+  "levelUpHpReroll": "Перебросить / изменить",
+  "levelUpSpellSwapNone": "Ни одного",
+  "levelUpSpellAlreadyKnown": "Уже известно",
+  "levelUpSpellCantripSubtitle": "{school} (заговор)",
+  "levelUpSpellSubtitle": "Ур {level} {school}"
 }

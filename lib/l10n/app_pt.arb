@@ -26,14 +26,12 @@
   "dialogSave": "Salvar",
   "deleteDialogTitle": "Excluir personagem?",
   "deleteDialogContent": "Tem certeza que deseja excluir {name}? Esta ação não pode ser desfeita.",
-
   "dialogConfirm": "Confirmar",
   "dialogDiscard": "Descartar",
   "dialogContinue": "Continuar",
   "dialogKeepEditing": "Continuar editando",
   "dialogRemove": "Remover",
   "dialogAdd": "Adicionar",
-
   "settingsTitle": "Configurações",
   "settingsSectionTheme": "Tema Visual",
   "settingsDark": "Escuro",
@@ -43,7 +41,6 @@
   "settingsAppLanguage": "Idioma do app",
   "settingsChooseLanguage": "Escolher Idioma",
   "settingsSystemDefault": "Padrão do sistema",
-
   "modeSelectionTitle": "Novo Personagem",
   "modeSelectionQuestion": "Como você quer criar seu personagem?",
   "modeGuidedTitle": "Guiado",
@@ -55,7 +52,6 @@
   "modeSemiRandomTitle": "Semi-aleatório",
   "modeSemiRandomSubtitle": "Você faz as escolhas importantes; todo o resto é rolado. Bom para quando você tem um conceito mas quer surpresas.",
   "modeComingSoon": "Em breve",
-
   "creationStepClass": "Classe",
   "creationStepRace": "Raça",
   "creationStepBackground": "Antecedente",
@@ -68,7 +64,6 @@
   "creationTooltipCancel": "Cancelar",
   "creationBack": "Voltar",
   "creationCreateCharacter": "Criar Personagem",
-
   "detailLeaveWithoutSaving": "Sair sem salvar?",
   "detailChangesWillBeDiscarded": "As alterações serão descartadas. Para salvar, use o botão ✓ no canto superior direito.",
   "detailLeaveAndDiscard": "Sair e descartar",
@@ -81,34 +76,33 @@
   "detailCancelEditContent": "Todas as alterações serão descartadas.",
   "detailFinishEditTitle": "Finalizar edição?",
   "detailFinishEditContent": "As alterações serão salvas.",
-
   "detailTabIdentity": "Identidade",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
   "detailEditButton": "Editar",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "Segure para alternar: nenhum \u2192 proficiente \u2192 experiente",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "Segure para alternar: nenhum → proficiente → experiente",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "Status",
   "detailTabSkills": "Perícias",
   "detailTabFeatures": "Habilidades",
   "detailTabSpells": "Magias",
   "detailTabInventory": "Inventário",
   "detailTabNotes": "Notas",
-
   "longRestTitle": "Descanso Longo",
   "longRestContent": "Restaurar o HP ao máximo e recuperar todos os espaços de magia?",
   "longRestButton": "Descansar",
-
   "sectionIdentity": "Identidade",
   "sectionHitPoints": "Pontos de Vida",
   "sectionCombat": "Combate",
-  "sectionProgression": "Progress\u00e3o",
+  "sectionProgression": "Progressão",
   "sectionAbilityScores": "Atributos",
   "sectionSavingThrows": "Proficiências em Resistências",
-
   "labelName": "Nome",
   "labelBackground": "Antecedente",
   "labelChange": "Alterar",
@@ -121,7 +115,7 @@
   "labelLanguages": "Idiomas",
   "hintAddLanguage": "Adicionar idioma…",
   "labelChoose": "Escolher",
-  "sectionAppearance": "Apar\u00eancia",
+  "sectionAppearance": "Aparência",
   "labelAge": "Idade",
   "labelHeight": "Altura",
   "labelWeight": "Peso",
@@ -132,17 +126,14 @@
   "labelTempHP": "PV Temp",
   "labelAmount": "Quantidade",
   "labelSpeed": "Velocidade (ft)",
-
   "detailDamage": "Dano",
   "detailHeal": "Cura",
   "detailNone": "Nenhum",
-
   "tempHpDialogTitle": "Adicionar PV Temporários",
   "tempHpDialogTitleReplace": "PV Temporários",
   "tempHpCurrent": "Atual: +{n} PV temp",
   "tempHpNoStack": "PV temporários não se acumulam — apenas valores maiores substituem o atual.",
   "tempHpReplace": "Substituir",
-
   "subclassConfirmTitle": "Confirmar {feature}",
   "subclassChooseTitle": "Escolher {feature}",
   "subclassConfirmBody": "Você chegou ao nível {level}. Confirme ou altere sua {feature}.",
@@ -150,9 +141,7 @@
   "subclassKeepCurrent": "Manter atual",
   "subclassChangeTitle": "Trocar subclasse",
   "subclassChangeWarning": "Atenção: magias e proficiências concedidas pela subclasse anterior não são removidas automaticamente. Você precisará ajustá-las manualmente.",
-
   "backgroundChooseTitle": "Escolher Antecedente",
-
   "featuresTooltipAdd": "Adicionar habilidade",
   "featuresTooltipRemove": "Remover",
   "featuresTooltipEnable": "Habilitar",
@@ -174,12 +163,10 @@
   "labelFeatureType": "Tipo:",
   "labelPassive": "Passiva",
   "labelActive": "Ativa",
-
   "spellsTooltipAdd": "Adicionar magia",
   "spellsRemoveTitle": "Remover magia?",
   "spellsRemoveContent": "Remover \"{name}\" da sua lista de magias?",
   "spellsAtWill": "À vontade",
-
   "notesTooltipAdd": "Adicionar nota",
   "notesTooltipEdit": "Editar nota",
   "notesTooltipDelete": "Excluir nota",
@@ -194,7 +181,6 @@
   "sectionBonds": "Laços",
   "sectionFlaws": "Fraquezas",
   "sectionBackstory": "História",
-
   "inventoryEquippedSection": "Equipado ({count})  ·  CA {ac}",
   "inventoryTooltipAdd": "Adicionar item",
   "inventoryTooltipRemove": "Remover",
@@ -222,7 +208,6 @@
   "inventoryTabTools": "Ferramentas",
   "inventoryTabCustom": "Personalizados",
   "hintSearchCategory": "Buscar {category}...",
-
   "stepChooseMethod": "Escolha seu método:",
   "stepStandardArray": "Array Padrão",
   "stepPointBuy": "Compra de Pontos",
@@ -237,7 +222,6 @@
   "stepClassSkillChoices": "Escolhas de perícias da classe ({count}):",
   "stepChooseOne": "Escolher",
   "stepSelectTool": "Selecionar ferramenta…",
-
   "statAC": "CA",
   "statArmor": "Armadura",
   "statNoArmor": "Sem armadura",
@@ -250,10 +234,10 @@
   "statInspiration": "Inspiração",
   "statXP": "XP",
   "inspirationGranted": "Concedida",
-  "inspirationNotGranted": "N\u00e3o concedida",
-  "statLevel": "N\u00edvel {level}",
+  "inspirationNotGranted": "Não concedida",
+  "statLevel": "Nível {level}",
   "tooltipAddXp": "Adicionar XP",
-  "labelLevelTable": "Tabela de N\u00edveis",
+  "labelLevelTable": "Tabela de Níveis",
   "statUnconsciousDying": "Inconsciente / Morrendo",
   "tooltipAddTempHp": "Adicionar PV temp.",
   "tooltipChangeTempHp": "Alterar PV temp.",
@@ -263,14 +247,12 @@
   "abilityInt": "INT",
   "abilityWis": "SAB",
   "abilityCha": "CAR",
-
   "featuresSectionRacialTraits": "Características Raciais — {name}",
   "featuresSectionBackground": "Característica de Antecedente — {name}",
   "featuresSectionClass": "Características de Classe — {name}",
   "featuresSectionSubclass": "Características de Subclasse — {name}",
   "featuresSectionTools": "Proficiências de Ferramentas",
   "featuresSectionExtra": "Características Extras",
-
   "spellsNoSpellcasting": "Sem Conjuração",
   "spellsNoSpellcastingDesc": "Esta classe não possui características de conjuração.",
   "spellsSlots": "Espaços de Magia",
@@ -291,7 +273,6 @@
   "spellsDisable": "Desativar",
   "spellsEnable": "Reativar",
   "spellsExtrasHeader": "Magias Extras",
-
   "inventoryCurrency": "Moedas",
   "inventoryCarriedSection": "Carregados ({count})",
   "inventoryInventory": "Inventário",
@@ -302,38 +283,31 @@
   "coinElectrum": "Electrum",
   "coinGold": "Ouro",
   "coinPlatinum": "Platina",
-
   "inventoryGroupSimpleMelee": "Corpo a Corpo Simples",
   "inventoryGroupSimpleRanged": "À Distância Simples",
   "inventoryGroupMartialMelee": "Corpo a Corpo Marcial",
   "inventoryGroupMartialRanged": "À Distância Marcial",
-
   "inventoryGroupLightArmor": "Armadura Leve",
   "inventoryGroupMediumArmor": "Armadura Média",
   "inventoryGroupHeavyArmor": "Armadura Pesada",
   "inventoryGroupShields": "Escudos",
-
   "inventoryGroupAdventuringGear": "Equipamento de Aventura",
   "inventoryGroupAmmunition": "Munições",
   "inventoryGroupArcaneFocus": "Foco Arcano",
   "inventoryGroupClothing": "Vestimentas",
   "inventoryGroupContainer": "Recipientes",
   "inventoryGroupPoison": "Venenos",
-
   "inventoryGroupPotions": "Poções",
   "inventoryGroupRings": "Anéis",
   "inventoryGroupWands": "Varinhas",
   "inventoryGroupWeapons": "Armas",
   "inventoryGroupArmor": "Armaduras",
   "inventoryGroupWondrousItems": "Itens Maravilhosos",
-
   "inventoryGroupArtisansTools": "Ferramentas de Artesão",
   "inventoryGroupGamingSets": "Jogos de Mesa",
   "inventoryGroupMusicalInstruments": "Instrumentos Musicais",
   "inventoryGroupOtherTools": "Outras Ferramentas",
-
   "armorStealthDisadvantage": "Desvantagem em Furtividade",
-
   "spellDetailCastingTime": "Tempo de conjuração",
   "spellDetailRange": "Alcance",
   "spellDetailDuration": "Duração",
@@ -344,12 +318,10 @@
   "spellDetailClasses": "Classes: {classes}",
   "spellDetailLevelSchool": "{ordinal}º nível — {school}",
   "spellDetailCantrip": "Truque de {school}",
-
   "armorSwapCurrent": "Atual: {name}",
   "armorSwapAcNow": "CA atual: {ac}",
   "armorSwapAcAfter": "CA depois: {ac}",
   "armorSwapButton": "Trocar armadura",
-
   "reviewRowName": "Nome",
   "reviewUnnamedHero": "Herói Sem Nome",
   "reviewRowPlayer": "Jogador",
@@ -382,31 +354,25 @@
   "stepReroll": "Rolar novamente",
   "stepRollHint": "Role para gerar 6 valores (4d6, menor excluído)",
   "stepPrimaryAbilities": "habilidades primárias: ",
-
   "stepNameTitle": "Dê um nome ao seu personagem.",
   "stepNameHint": "Você pode alterar isso depois.",
   "stepNameCharLabel": "Nome do personagem",
   "stepNamePlayerLabel": "Nome do jogador (opcional)",
-
   "stepHitDieLabel": "Dado de Vida",
   "stepSavesLabel": "Resistências",
   "stepSpellcastingLabel": "Conjuração",
   "stepOptionsLabel": "opções",
   "stepChooseSubclassPrompt": "Escolha um(a) {feature} (Nv {level}):",
-
   "stepRaceSpeedLabel": "Velocidade",
   "stepRaceASILabel": "Bônus de Atributo",
   "stepRaceSubracesAvailable": "{count} subraças disponíveis",
-
   "stepChooseSkillsHint": "Escolha {count} perícias da lista da sua classe.",
-
   "abilityStrength": "Força",
   "abilityDexterity": "Destreza",
   "abilityConstitution": "Constituição",
   "abilityIntelligence": "Inteligência",
   "abilityWisdom": "Sabedoria",
   "abilityCharisma": "Carisma",
-
   "stepFreeAsiRemaining": "Distribua os bônus raciais livremente ({remaining} restantes):",
   "stepFreePicksRemaining": "ASI racial livre: atribua +1 a {total} atributos ({remaining} restantes):",
   "stepFreePicksNoStack": "Não é possível atribuir a atributos que já recebem bônus racial.",
@@ -416,7 +382,6 @@
   "stepToolCategoryInstrument": "Instrumento musical",
   "stepToolCategoryArtisanTool": "Ferramenta de artesão",
   "stepToolCategoryArtisanOrInstrument": "Ferramenta de artesão ou instrumento",
-
   "exportCopied": "{label} copiado!",
   "exportDialogTitle": "Exportar {name}",
   "exportLabelToken": "Token",
@@ -459,50 +424,70 @@
   "reviewLanguageTypeHint": "Digite um idioma…",
   "avatarRemoveConfirmTitle": "Remover foto?",
   "avatarRemoveConfirmBody": "Esta ação não pode ser desfeita.",
-  "editModeBanner": "Editando"
-,
-
+  "editModeBanner": "Editando",
   "detailSheetInfoTooltip": "Detalhes",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "Proficiências",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "Características",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "Habilidade de Subclasse",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "{feature} disponíveis",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "Subraças",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
-  "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
-  "levelUpHpGained": "+{n} HP",
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "levelUpTitle": "Subir de Nível",
+  "levelUpConfirm": "Confirmar Level Up",
+  "levelUpCancel": "Cancelar",
+  "levelUpStepFeatures": "Novas Habilidades",
+  "levelUpStepSubclass": "Escolher {feature}",
+  "levelUpStepAsi": "Melhoria de Atributo",
+  "levelUpStepHp": "Pontos de Vida",
+  "levelUpStepCantrips": "Novos Truques",
+  "levelUpStepSpells": "Novas Magias",
+  "levelUpStepSummary": "Resumo",
+  "levelUpNoNewFeatures": "Nenhuma nova habilidade de classe neste nível.",
+  "levelUpHpRoll": "Rolar",
+  "levelUpHpAverage": "Média",
+  "levelUpHpGained": "+{n} PV",
   "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "levelUpAsiOption": "Melhoria de Atributo",
+  "levelUpFeatOption": "Escolher um Talento",
+  "levelUpAsiPointsLeft": "{n} ponto(s) restante(s)",
+  "levelUpSpellsToLearn": "Escolher {n} magia(s)",
+  "levelUpCantripsToLearn": "Escolher {n} truque(s)",
+  "levelUpSpellSwap": "Substituir uma magia conhecida (opcional)",
+  "levelUpSpellSwapCurrent": "Atual: {name}",
+  "levelUpSummaryLevel": "→ Nível {level}",
+  "levelUpSummaryHp": "PV Máx +{n}",
+  "levelUpSummaryAsi": "MHA: {changes}",
+  "levelUpSummaryFeat": "Talento: {name}",
+  "levelUpSummarySubclass": "Subclasse: {name}",
+  "levelUpSummarySpellsLearned": "Magias aprendidas: {count}",
+  "levelUpSummaryCantripsLearned": "Truques aprendidos: {count}",
+  "levelUpSubclassAlreadyHas": "Subclasse atual: {name}",
+  "levelUpMaxLevel": "Já está no nível máximo (20).",
+  "levelUpHpReroll": "Rolar novamente / alterar",
+  "levelUpSpellSwapNone": "Nenhuma",
+  "levelUpSpellAlreadyKnown": "Já conhecida",
+  "levelUpSpellCantripSubtitle": "{school} (truque)",
+  "levelUpSpellSubtitle": "Nv {level} {school}"
 }

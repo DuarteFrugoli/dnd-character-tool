@@ -784,7 +784,7 @@ class _AsiPage extends StatelessWidget {
                   child: RadioListTile<String>(
                     title: Text(feat.name),
                     subtitle: feat.prerequisite != null
-                        ? Text('Req: ${feat.prerequisite}',
+                        ? Text(l10n.featPrerequisite(feat.prerequisite!),
                             style: const TextStyle(fontSize: 12))
                         : null,
                     value: feat.name,
@@ -855,7 +855,7 @@ class _HpPage extends StatelessWidget {
                 const SizedBox(height: 12),
                 TextButton(
                   onPressed: () => onHpChosen(_roll()),
-                  child: Text('Reroll / change'),
+                  child: Text(l10n.levelUpHpReroll),
                 ),
               ],
             ),
@@ -974,8 +974,8 @@ class _SpellPickPage extends StatelessWidget {
                   title: Text(ks.name),
                   value: ks.name,
                 )),
-                const RadioListTile<String?>(
-                  title: Text('None'),
+                RadioListTile<String?>(
+                  title: Text(l10n.levelUpSpellSwapNone),
                   value: null,
                 ),
               ],
@@ -995,8 +995,8 @@ class _SpellPickPage extends StatelessWidget {
             title: Text(spell.name),
             subtitle: Text(
               isCantrip
-                  ? '${spell.school} cantrip'
-                  : 'Lv ${spell.level} ${spell.school}',
+                  ? l10n.levelUpSpellCantripSubtitle(spell.school)
+                  : l10n.levelUpSpellSubtitle(spell.level, spell.school),
               style: const TextStyle(fontSize: 12),
             ),
             value: isChosen,
@@ -1013,7 +1013,7 @@ class _SpellPickPage extends StatelessWidget {
                   },
             secondary: knownAlready
                 ? Tooltip(
-                    message: 'Already known',
+                    message: l10n.levelUpSpellAlreadyKnown,
                     child: Icon(
                       Icons.check_circle,
                       color: Theme.of(context).colorScheme.secondary,

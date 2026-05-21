@@ -76,15 +76,18 @@
   "detailCancelEditContent": "Alle Änderungen werden verworfen.",
   "detailFinishEditTitle": "Bearbeitung abschließen?",
   "detailFinishEditContent": "Änderungen werden gespeichert.",
-  "detailTabIdentity": "Identit\u00e4t",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
+  "detailTabIdentity": "Identität",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
   "detailEditButton": "Bearbeiten",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "Halten zum Wechseln: kein \u2192 ge\u00fcbt \u2192 Experte",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "Halten zum Wechseln: kein → geübt → Experte",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "Statistiken",
   "detailTabSkills": "Fähigkeiten",
   "detailTabFeatures": "Merkmale",
@@ -230,10 +233,10 @@
   "statPassivePerc": "Passiver Perc",
   "statInspiration": "Inspiration",
   "statXP": "EP",
-  "inspirationGranted": "Gew\u00e4hrt",
-  "inspirationNotGranted": "Nicht gew\u00e4hrt",
+  "inspirationGranted": "Gewährt",
+  "inspirationNotGranted": "Nicht gewährt",
   "statLevel": "Stufe {level}",
-  "tooltipAddXp": "EP hinzuf\u00fcgen",
+  "tooltipAddXp": "EP hinzufügen",
   "labelLevelTable": "Stufentabelle",
   "statUnconsciousDying": "Bewusstlos / Sterbend",
   "tooltipAddTempHp": "Fügen Sie temporäre HP hinzu",
@@ -379,7 +382,6 @@
   "stepToolCategoryInstrument": "Musikinstrument",
   "stepToolCategoryArtisanTool": "Handwerkerwerkzeug",
   "stepToolCategoryArtisanOrInstrument": "Handwerkliches Werkzeug oder Instrument",
-
   "exportCopied": "{label} kopiert!",
   "exportDialogTitle": "{name} exportieren",
   "exportLabelToken": "Token",
@@ -422,50 +424,70 @@
   "reviewLanguageTypeHint": "Sprache eingeben…",
   "avatarRemoveConfirmTitle": "Foto entfernen?",
   "avatarRemoveConfirmBody": "Diese Aktion kann nicht rückgängig gemacht werden.",
-  "editModeBanner": "Bearbeitung läuft"
-,
-
+  "editModeBanner": "Bearbeitung läuft",
   "detailSheetInfoTooltip": "Details",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "Fertigkeiten",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "Merkmale",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "Unterklassen-Merkmal",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "{feature} verfügbar",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "Unterrassen",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
   "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
-  "levelUpHpGained": "+{n} HP",
-  "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "levelUpConfirm": "Level Up bestätigen",
+  "levelUpCancel": "Abbrechen",
+  "levelUpStepFeatures": "Neue Fähigkeiten",
+  "levelUpStepSubclass": "{feature} wählen",
+  "levelUpStepAsi": "Eigenschaftswertverbesserung",
+  "levelUpStepHp": "Trefferpunkte",
+  "levelUpStepCantrips": "Neue Zaubertricks",
+  "levelUpStepSpells": "Neue Zauber",
+  "levelUpStepSummary": "Zusammenfassung",
+  "levelUpNoNewFeatures": "Keine neuen Klassenmerkmale auf dieser Stufe.",
+  "levelUpHpRoll": "Würfeln",
+  "levelUpHpAverage": "Durchschnitt",
+  "levelUpHpGained": "+{n} TP",
+  "levelUpHpFormula": "W{die} + KON ({mod})",
+  "levelUpAsiOption": "Eigenschaftswertverbesserung",
+  "levelUpFeatOption": "Fertigkeit wählen",
+  "levelUpAsiPointsLeft": "{n} Punkt(e) verbleibend",
+  "levelUpSpellsToLearn": "{n} Zauber auswählen",
+  "levelUpCantripsToLearn": "{n} Zaubertrick(s) auswählen",
+  "levelUpSpellSwap": "Bekannten Zauber ersetzen (optional)",
+  "levelUpSpellSwapCurrent": "Aktuell: {name}",
+  "levelUpSummaryLevel": "→ Stufe {level}",
+  "levelUpSummaryHp": "Max TP +{n}",
+  "levelUpSummaryAsi": "EWV: {changes}",
+  "levelUpSummaryFeat": "Fertigkeit: {name}",
+  "levelUpSummarySubclass": "Unterklasse: {name}",
+  "levelUpSummarySpellsLearned": "Gelernte Zauber: {count}",
+  "levelUpSummaryCantripsLearned": "Gelernte Zaubertricks: {count}",
+  "levelUpSubclassAlreadyHas": "Aktuelle Unterklasse: {name}",
+  "levelUpMaxLevel": "Bereits auf maximaler Stufe (20).",
+  "levelUpHpReroll": "Neu würfeln / ändern",
+  "levelUpSpellSwapNone": "Keiner",
+  "levelUpSpellAlreadyKnown": "Bereits bekannt",
+  "levelUpSpellCantripSubtitle": "{school} (Zaubertrick)",
+  "levelUpSpellSubtitle": "Std {level} {school}"
 }

@@ -324,45 +324,45 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tooltipLevelUp => '升级';
 
   @override
-  String get levelUpTitle => 'Level Up';
+  String get levelUpTitle => '升级';
 
   @override
-  String get levelUpConfirm => 'Confirm Level Up';
+  String get levelUpConfirm => '确认升级';
 
   @override
-  String get levelUpCancel => 'Cancel';
+  String get levelUpCancel => '取消';
 
   @override
-  String get levelUpStepFeatures => 'New Features';
+  String get levelUpStepFeatures => '新职业特性';
 
   @override
   String levelUpStepSubclass(String feature) {
-    return 'Choose $feature';
+    return '选择$feature';
   }
 
   @override
-  String get levelUpStepAsi => 'Ability Score Improvement';
+  String get levelUpStepAsi => '属性值提升';
 
   @override
-  String get levelUpStepHp => 'Hit Points';
+  String get levelUpStepHp => '生命值';
 
   @override
-  String get levelUpStepCantrips => 'New Cantrips';
+  String get levelUpStepCantrips => '新戏法';
 
   @override
-  String get levelUpStepSpells => 'New Spells';
+  String get levelUpStepSpells => '新法术';
 
   @override
-  String get levelUpStepSummary => 'Summary';
+  String get levelUpStepSummary => '总结';
 
   @override
-  String get levelUpNoNewFeatures => 'No new class features at this level.';
+  String get levelUpNoNewFeatures => '此等级没有新的职业特性。';
 
   @override
-  String get levelUpHpRoll => 'Roll';
+  String get levelUpHpRoll => '掷骰';
 
   @override
-  String get levelUpHpAverage => 'Average';
+  String get levelUpHpAverage => '平均值';
 
   @override
   String levelUpHpGained(int n) {
@@ -371,80 +371,99 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String levelUpHpFormula(int die, String mod) {
-    return 'd$die + CON ($mod)';
+    return 'd$die + 体质 ($mod)';
   }
 
   @override
-  String get levelUpAsiOption => 'Ability Score Improvement';
+  String get levelUpAsiOption => '属性值提升';
 
   @override
-  String get levelUpFeatOption => 'Choose a Feat';
+  String get levelUpFeatOption => '选择专长';
 
   @override
   String levelUpAsiPointsLeft(int n) {
-    return '$n point(s) remaining';
+    return '剩余$n点';
   }
 
   @override
   String levelUpSpellsToLearn(int n) {
-    return 'Choose $n spell(s) to learn';
+    return '选择$n个法术';
   }
 
   @override
   String levelUpCantripsToLearn(int n) {
-    return 'Choose $n cantrip(s)';
+    return '选择$n个戏法';
   }
 
   @override
-  String get levelUpSpellSwap => 'Replace a known spell (optional)';
+  String get levelUpSpellSwap => '替换已知法术（可选）';
 
   @override
   String levelUpSpellSwapCurrent(String name) {
-    return 'Currently: $name';
+    return '当前：$name';
   }
 
   @override
   String levelUpSummaryLevel(int level) {
-    return '→ Level $level';
+    return '→ $level级';
   }
 
   @override
   String levelUpSummaryHp(int n) {
-    return 'Max HP +$n';
+    return '最大HP +$n';
   }
 
   @override
   String levelUpSummaryAsi(String changes) {
-    return 'ASI: $changes';
+    return '属性提升: $changes';
   }
 
   @override
   String levelUpSummaryFeat(String name) {
-    return 'Feat: $name';
+    return '专长: $name';
   }
 
   @override
   String levelUpSummarySubclass(String name) {
-    return 'Subclass: $name';
+    return '子职业: $name';
   }
 
   @override
   String levelUpSummarySpellsLearned(int count) {
-    return 'Spells learned: $count';
+    return '学会法术: $count';
   }
 
   @override
   String levelUpSummaryCantripsLearned(int count) {
-    return 'Cantrips learned: $count';
+    return '学会戏法: $count';
   }
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Current subclass: $name';
+    return '当前子职业: $name';
   }
 
   @override
-  String get levelUpMaxLevel => 'Already at maximum level (20).';
+  String get levelUpMaxLevel => '已达到最高等级（20）。';
+
+  @override
+  String get levelUpHpReroll => '重掷 / 更改';
+
+  @override
+  String get levelUpSpellSwapNone => '无';
+
+  @override
+  String get levelUpSpellAlreadyKnown => '已知晓';
+
+  @override
+  String levelUpSpellCantripSubtitle(String school) {
+    return '$school（戏法）';
+  }
+
+  @override
+  String levelUpSpellSubtitle(int level, String school) {
+    return '$level环 $school';
+  }
 
   @override
   String get labelSubclass => '子类';

@@ -331,45 +331,45 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tooltipLevelUp => '레벨 업';
 
   @override
-  String get levelUpTitle => 'Level Up';
+  String get levelUpTitle => '레벨 업';
 
   @override
-  String get levelUpConfirm => 'Confirm Level Up';
+  String get levelUpConfirm => '레벨 업 확정';
 
   @override
-  String get levelUpCancel => 'Cancel';
+  String get levelUpCancel => '취소';
 
   @override
-  String get levelUpStepFeatures => 'New Features';
+  String get levelUpStepFeatures => '새로운 특성';
 
   @override
   String levelUpStepSubclass(String feature) {
-    return 'Choose $feature';
+    return '$feature 선택';
   }
 
   @override
-  String get levelUpStepAsi => 'Ability Score Improvement';
+  String get levelUpStepAsi => '능력치 향상';
 
   @override
-  String get levelUpStepHp => 'Hit Points';
+  String get levelUpStepHp => '히트포인트';
 
   @override
-  String get levelUpStepCantrips => 'New Cantrips';
+  String get levelUpStepCantrips => '새로운 소마술';
 
   @override
-  String get levelUpStepSpells => 'New Spells';
+  String get levelUpStepSpells => '새로운 주문';
 
   @override
-  String get levelUpStepSummary => 'Summary';
+  String get levelUpStepSummary => '요약';
 
   @override
-  String get levelUpNoNewFeatures => 'No new class features at this level.';
+  String get levelUpNoNewFeatures => '이 레벨에서 새로운 클래스 특성이 없습니다.';
 
   @override
-  String get levelUpHpRoll => 'Roll';
+  String get levelUpHpRoll => '주사위 굴리기';
 
   @override
-  String get levelUpHpAverage => 'Average';
+  String get levelUpHpAverage => '평균값';
 
   @override
   String levelUpHpGained(int n) {
@@ -382,76 +382,95 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get levelUpAsiOption => 'Ability Score Improvement';
+  String get levelUpAsiOption => '능력치 향상';
 
   @override
-  String get levelUpFeatOption => 'Choose a Feat';
+  String get levelUpFeatOption => '특기 선택';
 
   @override
   String levelUpAsiPointsLeft(int n) {
-    return '$n point(s) remaining';
+    return '남은 포인트: $n';
   }
 
   @override
   String levelUpSpellsToLearn(int n) {
-    return 'Choose $n spell(s) to learn';
+    return '주문 $n개 선택';
   }
 
   @override
   String levelUpCantripsToLearn(int n) {
-    return 'Choose $n cantrip(s)';
+    return '소마술 $n개 선택';
   }
 
   @override
-  String get levelUpSpellSwap => 'Replace a known spell (optional)';
+  String get levelUpSpellSwap => '알고 있는 주문 교체 (선택)';
 
   @override
   String levelUpSpellSwapCurrent(String name) {
-    return 'Currently: $name';
+    return '현재: $name';
   }
 
   @override
   String levelUpSummaryLevel(int level) {
-    return '→ Level $level';
+    return '→ 레벨 $level';
   }
 
   @override
   String levelUpSummaryHp(int n) {
-    return 'Max HP +$n';
+    return '최대 HP +$n';
   }
 
   @override
   String levelUpSummaryAsi(String changes) {
-    return 'ASI: $changes';
+    return '능력치: $changes';
   }
 
   @override
   String levelUpSummaryFeat(String name) {
-    return 'Feat: $name';
+    return '특기: $name';
   }
 
   @override
   String levelUpSummarySubclass(String name) {
-    return 'Subclass: $name';
+    return '서브클래스: $name';
   }
 
   @override
   String levelUpSummarySpellsLearned(int count) {
-    return 'Spells learned: $count';
+    return '습득한 주문: $count';
   }
 
   @override
   String levelUpSummaryCantripsLearned(int count) {
-    return 'Cantrips learned: $count';
+    return '습득한 소마술: $count';
   }
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Current subclass: $name';
+    return '현재 서브클래스: $name';
   }
 
   @override
-  String get levelUpMaxLevel => 'Already at maximum level (20).';
+  String get levelUpMaxLevel => '이미 최대 레벨(20)입니다.';
+
+  @override
+  String get levelUpHpReroll => '다시 굴리기 / 변경';
+
+  @override
+  String get levelUpSpellSwapNone => '없음';
+
+  @override
+  String get levelUpSpellAlreadyKnown => '이미 습득';
+
+  @override
+  String levelUpSpellCantripSubtitle(String school) {
+    return '$school (소마술)';
+  }
+
+  @override
+  String levelUpSpellSubtitle(int level, String school) {
+    return '레벨 $level $school';
+  }
 
   @override
   String get labelSubclass => '아강';

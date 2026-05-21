@@ -337,127 +337,148 @@ class AppLocalizationsRu extends AppLocalizations {
   String get tooltipLevelUp => 'Повышение';
 
   @override
-  String get levelUpTitle => 'Level Up';
+  String get levelUpTitle => 'Повышение уровня';
 
   @override
-  String get levelUpConfirm => 'Confirm Level Up';
+  String get levelUpConfirm => 'Подтвердить повышение';
 
   @override
-  String get levelUpCancel => 'Cancel';
+  String get levelUpCancel => 'Отмена';
 
   @override
-  String get levelUpStepFeatures => 'New Features';
+  String get levelUpStepFeatures => 'Новые способности';
 
   @override
   String levelUpStepSubclass(String feature) {
-    return 'Choose $feature';
+    return 'Выбрать $feature';
   }
 
   @override
-  String get levelUpStepAsi => 'Ability Score Improvement';
+  String get levelUpStepAsi => 'Улучшение характеристик';
 
   @override
-  String get levelUpStepHp => 'Hit Points';
+  String get levelUpStepHp => 'Хиты';
 
   @override
-  String get levelUpStepCantrips => 'New Cantrips';
+  String get levelUpStepCantrips => 'Новые заговоры';
 
   @override
-  String get levelUpStepSpells => 'New Spells';
+  String get levelUpStepSpells => 'Новые заклинания';
 
   @override
-  String get levelUpStepSummary => 'Summary';
+  String get levelUpStepSummary => 'Итог';
 
   @override
-  String get levelUpNoNewFeatures => 'No new class features at this level.';
+  String get levelUpNoNewFeatures =>
+      'На этом уровне нет новых классовых умений.';
 
   @override
-  String get levelUpHpRoll => 'Roll';
+  String get levelUpHpRoll => 'Бросить кости';
 
   @override
-  String get levelUpHpAverage => 'Average';
+  String get levelUpHpAverage => 'Среднее';
 
   @override
   String levelUpHpGained(int n) {
-    return '+$n HP';
+    return '+$n хитов';
   }
 
   @override
   String levelUpHpFormula(int die, String mod) {
-    return 'd$die + CON ($mod)';
+    return 'к$die + ТЕЛ ($mod)';
   }
 
   @override
-  String get levelUpAsiOption => 'Ability Score Improvement';
+  String get levelUpAsiOption => 'Улучшение характеристик';
 
   @override
-  String get levelUpFeatOption => 'Choose a Feat';
+  String get levelUpFeatOption => 'Выбрать черту';
 
   @override
   String levelUpAsiPointsLeft(int n) {
-    return '$n point(s) remaining';
+    return 'Осталось очков: $n';
   }
 
   @override
   String levelUpSpellsToLearn(int n) {
-    return 'Choose $n spell(s) to learn';
+    return 'Выбрать $n заклинание(й)';
   }
 
   @override
   String levelUpCantripsToLearn(int n) {
-    return 'Choose $n cantrip(s)';
+    return 'Выбрать $n заговор(ов)';
   }
 
   @override
-  String get levelUpSpellSwap => 'Replace a known spell (optional)';
+  String get levelUpSpellSwap =>
+      'Заменить известное заклинание (необязательно)';
 
   @override
   String levelUpSpellSwapCurrent(String name) {
-    return 'Currently: $name';
+    return 'Текущее: $name';
   }
 
   @override
   String levelUpSummaryLevel(int level) {
-    return '→ Level $level';
+    return '→ Уровень $level';
   }
 
   @override
   String levelUpSummaryHp(int n) {
-    return 'Max HP +$n';
+    return 'Макс. хиты +$n';
   }
 
   @override
   String levelUpSummaryAsi(String changes) {
-    return 'ASI: $changes';
+    return 'Улучшение: $changes';
   }
 
   @override
   String levelUpSummaryFeat(String name) {
-    return 'Feat: $name';
+    return 'Черта: $name';
   }
 
   @override
   String levelUpSummarySubclass(String name) {
-    return 'Subclass: $name';
+    return 'Подкласс: $name';
   }
 
   @override
   String levelUpSummarySpellsLearned(int count) {
-    return 'Spells learned: $count';
+    return 'Изучено заклинаний: $count';
   }
 
   @override
   String levelUpSummaryCantripsLearned(int count) {
-    return 'Cantrips learned: $count';
+    return 'Изучено заговоров: $count';
   }
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Current subclass: $name';
+    return 'Текущий подкласс: $name';
   }
 
   @override
-  String get levelUpMaxLevel => 'Already at maximum level (20).';
+  String get levelUpMaxLevel => 'Уже максимальный уровень (20).';
+
+  @override
+  String get levelUpHpReroll => 'Перебросить / изменить';
+
+  @override
+  String get levelUpSpellSwapNone => 'Ни одного';
+
+  @override
+  String get levelUpSpellAlreadyKnown => 'Уже известно';
+
+  @override
+  String levelUpSpellCantripSubtitle(String school) {
+    return '$school (заговор)';
+  }
+
+  @override
+  String levelUpSpellSubtitle(int level, String school) {
+    return 'Ур $level $school';
+  }
 
   @override
   String get labelSubclass => 'Подкласс';

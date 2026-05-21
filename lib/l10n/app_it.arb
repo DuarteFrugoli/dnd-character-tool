@@ -76,15 +76,18 @@
   "detailCancelEditContent": "Tutte le modifiche verranno annullate.",
   "detailFinishEditTitle": "Terminare la modifica?",
   "detailFinishEditContent": "Le modifiche verranno salvate.",
-  "detailTabIdentity": "Identit\u00e0",
-  "@detailTabIdentity": { "description": "Identity tab label." },
-
+  "detailTabIdentity": "Identità",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
   "detailEditButton": "Modifica",
-  "@detailEditButton": { "description": "Edit mode toggle button label." },
-
-  "skillsEditHint": "Tieni premuto per alternare: nessuno \u2192 competente \u2192 esperto",
-  "@skillsEditHint": { "description": "Skills long-press hint text." },
-
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "Tieni premuto per alternare: nessuno → competente → esperto",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
   "detailTabStats": "Statistiche",
   "detailTabSkills": "Competenze",
   "detailTabFeatures": "Caratteristiche",
@@ -113,7 +116,7 @@
   "hintAddLanguage": "Aggiungi lingua...",
   "labelChoose": "Scegliere",
   "sectionAppearance": "Aspetto",
-  "labelAge": "Et\u00e0",
+  "labelAge": "Età",
   "labelHeight": "Altezza",
   "labelWeight": "Peso",
   "labelEyes": "Occhi",
@@ -379,7 +382,6 @@
   "stepToolCategoryInstrument": "Strumento musicale",
   "stepToolCategoryArtisanTool": "Lo strumento dell'artigiano",
   "stepToolCategoryArtisanOrInstrument": "Attrezzo o strumento dell'artigiano",
-
   "exportCopied": "{label} copiato!",
   "exportDialogTitle": "Esporta {name}",
   "exportLabelToken": "Token",
@@ -422,50 +424,70 @@
   "reviewLanguageTypeHint": "Digita una lingua…",
   "avatarRemoveConfirmTitle": "Rimuovere la foto?",
   "avatarRemoveConfirmBody": "Questa azione non può essere annullata.",
-  "editModeBanner": "Modifica in corso"
-,
-
+  "editModeBanner": "Modifica in corso",
   "detailSheetInfoTooltip": "Dettagli",
-  "@detailSheetInfoTooltip": { "description": "Tooltip for the info button on class/race cards in character creation." },
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
   "detailSheetProficiencies": "Competenze",
-  "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
   "detailSheetTraits": "Tratti",
-  "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
   "detailSheetSubclassFeaturePlaceholder": "Capacità di Sottoclasse",
-  "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
   "detailSheetAvailableSubclasses": "{feature} disponibili",
-  "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
   "detailSheetAvailableSubraces": "Sottorazze",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
-  "levelUpTitle": "Level Up",
-  "levelUpConfirm": "Confirm Level Up",
-  "levelUpCancel": "Cancel",
-  "levelUpStepFeatures": "New Features",
-  "levelUpStepSubclass": "Choose {feature}",
-  "levelUpStepAsi": "Ability Score Improvement",
-  "levelUpStepHp": "Hit Points",
-  "levelUpStepCantrips": "New Cantrips",
-  "levelUpStepSpells": "New Spells",
-  "levelUpStepSummary": "Summary",
-  "levelUpNoNewFeatures": "No new class features at this level.",
-  "levelUpHpRoll": "Roll",
-  "levelUpHpAverage": "Average",
-  "levelUpHpGained": "+{n} HP",
-  "levelUpHpFormula": "d{die} + CON ({mod})",
-  "levelUpAsiOption": "Ability Score Improvement",
-  "levelUpFeatOption": "Choose a Feat",
-  "levelUpAsiPointsLeft": "{n} point(s) remaining",
-  "levelUpSpellsToLearn": "Choose {n} spell(s) to learn",
-  "levelUpCantripsToLearn": "Choose {n} cantrip(s)",
-  "levelUpSpellSwap": "Replace a known spell (optional)",
-  "levelUpSpellSwapCurrent": "Currently: {name}",
-  "levelUpSummaryLevel": "→ Level {level}",
-  "levelUpSummaryHp": "Max HP +{n}",
-  "levelUpSummaryAsi": "ASI: {changes}",
-  "levelUpSummaryFeat": "Feat: {name}",
-  "levelUpSummarySubclass": "Subclass: {name}",
-  "levelUpSummarySpellsLearned": "Spells learned: {count}",
-  "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "levelUpMaxLevel": "Already at maximum level (20)."
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "levelUpTitle": "Salita di livello",
+  "levelUpConfirm": "Conferma salita",
+  "levelUpCancel": "Annulla",
+  "levelUpStepFeatures": "Nuove abilità",
+  "levelUpStepSubclass": "Scegli {feature}",
+  "levelUpStepAsi": "Miglioramento del punteggio",
+  "levelUpStepHp": "Punti ferita",
+  "levelUpStepCantrips": "Nuovi trucchi",
+  "levelUpStepSpells": "Nuovi incantesimi",
+  "levelUpStepSummary": "Riepilogo",
+  "levelUpNoNewFeatures": "Nessuna nuova capacità di classe a questo livello.",
+  "levelUpHpRoll": "Lancia",
+  "levelUpHpAverage": "Media",
+  "levelUpHpGained": "+{n} PF",
+  "levelUpHpFormula": "d{die} + COS ({mod})",
+  "levelUpAsiOption": "Miglioramento del punteggio",
+  "levelUpFeatOption": "Scegli un'impresa",
+  "levelUpAsiPointsLeft": "{n} punto/i rimanente/i",
+  "levelUpSpellsToLearn": "Scegli {n} incantesimo/i",
+  "levelUpCantripsToLearn": "Scegli {n} trucco/i",
+  "levelUpSpellSwap": "Sostituire un incantesimo noto (opzionale)",
+  "levelUpSpellSwapCurrent": "Attuale: {name}",
+  "levelUpSummaryLevel": "→ Livello {level}",
+  "levelUpSummaryHp": "PF Max +{n}",
+  "levelUpSummaryAsi": "MPC: {changes}",
+  "levelUpSummaryFeat": "Impresa: {name}",
+  "levelUpSummarySubclass": "Sottoclasse: {name}",
+  "levelUpSummarySpellsLearned": "Incantesimi appresi: {count}",
+  "levelUpSummaryCantripsLearned": "Trucchi appresi: {count}",
+  "levelUpSubclassAlreadyHas": "Sottoclasse attuale: {name}",
+  "levelUpMaxLevel": "Già al livello massimo (20).",
+  "levelUpHpReroll": "Rilancia / cambia",
+  "levelUpSpellSwapNone": "Nessuno",
+  "levelUpSpellAlreadyKnown": "Già noto",
+  "levelUpSpellCantripSubtitle": "{school} (trucco)",
+  "levelUpSpellSubtitle": "Lv {level} {school}"
 }

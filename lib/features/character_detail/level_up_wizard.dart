@@ -67,13 +67,25 @@ void _openLevelUpWizardSheet(BuildContext context, Character character, String c
     );
     return;
   }
-  showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
-    useSafeArea: true,
-    builder: (_) => _LevelUpWizard(
-      character: character,
-      characterId: characterId,
+  Navigator.of(context).push(
+    PageRouteBuilder<void>(
+      pageBuilder: (context, _, _) => _LevelUpWizard(
+        character: character,
+        characterId: characterId,
+      ),
+      transitionsBuilder: (_, animation, _, child) {
+        final slide = Tween<Offset>(
+          begin: const Offset(0, 1),
+          end: Offset.zero,
+        ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOutCubic));
+        final fade = CurvedAnimation(parent: animation, curve: Curves.easeIn);
+        return SlideTransition(
+          position: slide,
+          child: FadeTransition(opacity: fade, child: child),
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 400),
+      reverseTransitionDuration: const Duration(milliseconds: 280),
     ),
   );
 }
@@ -261,38 +273,24 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     final colorScheme = Theme.of(context).colorScheme;
 
     if (_loading) {
-      return const SizedBox(
-        height: 300,
-        child: Center(child: CircularProgressIndicator()),
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
       );
     }
 
-    return DraggableScrollableSheet(
-      initialChildSize: 0.9,
-      minChildSize: 0.5,
-      maxChildSize: 0.95,
-      expand: false,
-      builder: (ctx, scrollController) {
-        return Column(
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
           children: [
-            // Handle
+            // Title + close + level badge
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              child: Container(
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: colorScheme.onSurfaceVariant.withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-            ),
-
-            // Title + level badge
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.fromLTRB(4, 8, 16, 4),
               child: Row(
                 children: [
+                  IconButton(
+                    icon: const Icon(Icons.close),
+                    onPressed: () => Navigator.pop(context),
+                  ),
                   const Icon(Icons.upgrade),
                   const SizedBox(width: 8),
                   Text(
@@ -315,11 +313,14 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
             ),
 
             // Step indicators
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              child: _StepIndicator(
-                pages: _pages,
-                currentPage: _currentPage,
+            ListenableBuilder(
+              listenable: _pageController,
+              builder: (ctx, _) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                child: _StepIndicator(
+                  pages: _pages,
+                  currentPage: _currentPage,
+                ),
               ),
             ),
 
@@ -329,50 +330,47 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
                 controller: _pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: _pages.length,
-                itemBuilder: (ctx, idx) =>
-                    _buildPage(ctx, _pages[idx], scrollController),
+                itemBuilder: (ctx, idx) => _buildPage(ctx, _pages[idx]),
               ),
             ),
 
             // Navigation buttons
-            SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: StatefulBuilder(
-                  builder: (ctx, setSt) {
-                    _pageController.addListener(() => setSt(() {}));
-                    final pageIdx = _pageController.hasClients
-                        ? (_pageController.page?.round() ?? 0)
-                        : 0;
-                    final isLast = pageIdx == _pages.length - 1;
-                    final isFirst = pageIdx == 0;
-                    return Row(
-                      children: [
-                        if (!isFirst)
-                          OutlinedButton(
-                            onPressed: _prevPage,
-                            child: const Icon(Icons.arrow_back),
-                          ),
-                        const Spacer(),
-                        if (!isLast)
-                          FilledButton(
-                            onPressed: _canAdvance(pageIdx) ? _nextPage : null,
-                            child: const Icon(Icons.arrow_forward),
-                          )
-                        else
-                          FilledButton(
-                            onPressed: _state.hpChosen ? _confirm : null,
-                            child: Text(l10n.levelUpConfirm),
-                          ),
-                      ],
-                    );
-                  },
-                ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: StatefulBuilder(
+                builder: (ctx, setSt) {
+                  _pageController.addListener(() => setSt(() {}));
+                  final pageIdx = _pageController.hasClients
+                      ? (_pageController.page?.round() ?? 0)
+                      : 0;
+                  final isLast = pageIdx == _pages.length - 1;
+                  final isFirst = pageIdx == 0;
+                  return Row(
+                    children: [
+                      if (!isFirst)
+                        OutlinedButton(
+                          onPressed: _prevPage,
+                          child: const Icon(Icons.arrow_back),
+                        ),
+                      const Spacer(),
+                      if (!isLast)
+                        FilledButton(
+                          onPressed: _canAdvance(pageIdx) ? _nextPage : null,
+                          child: const Icon(Icons.arrow_forward),
+                        )
+                      else
+                        FilledButton(
+                          onPressed: _state.hpChosen ? _confirm : null,
+                          child: Text(l10n.levelUpConfirm),
+                        ),
+                    ],
+                  );
+                },
               ),
             ),
           ],
-        );
-      },
+        ),
+      ),
     );
   }
 
@@ -402,18 +400,13 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     }
   }
 
-  Widget _buildPage(
-    BuildContext context,
-    _WizardPage page,
-    ScrollController scrollController,
-  ) {
+  Widget _buildPage(BuildContext context, _WizardPage page) {
     switch (page) {
       case _WizardPage.features:
         return _FeaturesPage(
           features: _newFeatures,
           srdClass: _srdClass,
           i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
-          scrollController: scrollController,
         );
       case _WizardPage.subclass:
         return _SubclassPage(
@@ -424,7 +417,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           onChanged: (name) => setState(() {
             _state = _state.copyWith(subclassChosen: name);
           }),
-          scrollController: scrollController,
         );
       case _WizardPage.asi:
         return _AsiPage(
@@ -444,7 +436,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
               setState(() => _state = _state.copyWith(asiChanges: changes)),
           onFeatChosen: (feat) =>
               setState(() => _state = _state.copyWith(featChosen: feat)),
-          scrollController: scrollController,
         );
       case _WizardPage.hp:
         return _HpPage(
@@ -454,7 +445,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           onHpChosen: (hp) => setState(() {
             _state = _state.copyWith(hpGained: hp, hpChosen: true);
           }),
-          scrollController: scrollController,
         );
       case _WizardPage.cantrips:
         return _SpellPickPage(
@@ -468,7 +458,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           maxLevel: 0,
           onChanged: (list) =>
               setState(() => _state = _state.copyWith(cantripsLearned: list)),
-          scrollController: scrollController,
           isCantrip: true,
         );
       case _WizardPage.spells:
@@ -486,7 +475,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           maxLevel: engine?.maxSpellLevel ?? 9,
           onChanged: (list) =>
               setState(() => _state = _state.copyWith(spellsLearned: list)),
-          scrollController: scrollController,
           isCantrip: false,
           allowSwap: _warlockSwap,
           knownSpells: widget.character.spells
@@ -500,7 +488,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         return _SummaryPage(
           wizardState: _state,
           character: widget.character,
-          scrollController: scrollController,
         );
     }
   }
@@ -547,18 +534,15 @@ class _FeaturesPage extends StatelessWidget {
     required this.features,
     required this.srdClass,
     required this.i18n,
-    required this.scrollController,
   });
   final List<SrdClassFeature> features;
   final SrdClass? srdClass;
   final SrdI18nService i18n;
-  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return ListView(
-      controller: scrollController,
       padding: const EdgeInsets.all(16),
       children: [
         Text(
@@ -598,14 +582,12 @@ class _SubclassPage extends StatelessWidget {
     required this.currentChoice,
     required this.i18n,
     required this.onChanged,
-    required this.scrollController,
   });
   final SrdClass? srdClass;
   final Character character;
   final String? currentChoice;
   final SrdI18nService i18n;
   final ValueChanged<String> onChanged;
-  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -616,7 +598,6 @@ class _SubclassPage extends StatelessWidget {
     final existing = character.subclass;
 
     return ListView(
-      controller: scrollController,
       padding: const EdgeInsets.all(16),
       children: [
         Text(
@@ -673,7 +654,6 @@ class _AsiPage extends StatelessWidget {
     required this.onModeChanged,
     required this.onAsiChanged,
     required this.onFeatChosen,
-    required this.scrollController,
   });
   final Character character;
   final _AsiMode mode;
@@ -683,7 +663,6 @@ class _AsiPage extends StatelessWidget {
   final ValueChanged<_AsiMode> onModeChanged;
   final ValueChanged<Map<String, int>> onAsiChanged;
   final ValueChanged<SrdFeat?> onFeatChosen;
-  final ScrollController scrollController;
 
   static const _abilities = [
     'strength',
@@ -702,7 +681,6 @@ class _AsiPage extends StatelessWidget {
     final remaining = 2 - total;
 
     return ListView(
-      controller: scrollController,
       padding: const EdgeInsets.all(16),
       children: [
         Text(
@@ -808,13 +786,11 @@ class _HpPage extends StatelessWidget {
     required this.hpGained,
     required this.hpChosen,
     required this.onHpChosen,
-    required this.scrollController,
   });
   final Character character;
   final int hpGained;
   final bool hpChosen;
   final ValueChanged<int> onHpChosen;
-  final ScrollController scrollController;
 
   int get _hitDie => levelUpHitDie(character.characterClass);
   int get _conMod =>
@@ -829,7 +805,6 @@ class _HpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return ListView(
-      controller: scrollController,
       padding: const EdgeInsets.all(16),
       children: [
         Text(
@@ -921,7 +896,6 @@ class _SpellPickPage extends StatelessWidget {
     required this.chosen,
     required this.maxLevel,
     required this.onChanged,
-    required this.scrollController,
     required this.isCantrip,
     this.allowSwap = false,
     this.knownSpells = const [],
@@ -934,7 +908,6 @@ class _SpellPickPage extends StatelessWidget {
   final List<KnownSpell> chosen;
   final int maxLevel;
   final ValueChanged<List<KnownSpell>> onChanged;
-  final ScrollController scrollController;
   final bool isCantrip;
   final bool allowSwap;
   final List<KnownSpell> knownSpells;
@@ -947,7 +920,6 @@ class _SpellPickPage extends StatelessWidget {
     final chosenNames = chosen.map((s) => s.name).toSet();
 
     return ListView(
-      controller: scrollController,
       padding: const EdgeInsets.all(16),
       children: [
         Text(
@@ -1033,11 +1005,9 @@ class _SummaryPage extends StatelessWidget {
   const _SummaryPage({
     required this.wizardState,
     required this.character,
-    required this.scrollController,
   });
   final _LevelUpState wizardState;
   final Character character;
-  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -1090,7 +1060,6 @@ class _SummaryPage extends StatelessWidget {
     }
 
     return ListView(
-      controller: scrollController,
       padding: const EdgeInsets.all(16),
       children: [
         Text(

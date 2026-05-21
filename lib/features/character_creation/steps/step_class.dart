@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
 import '../../../shared/providers/providers.dart';
+import '../../../shared/widgets/srd_detail_sheets.dart';
 import '../character_draft_provider.dart';
 
 class StepClass extends ConsumerStatefulWidget {
@@ -156,7 +157,19 @@ class _ClassCard extends StatelessWidget {
                   ],
                 ),
               ),
-              if (isSelected) Icon(Icons.check_circle, color: scheme.primary),
+              IconButton(
+                icon: Icon(
+                  Icons.info_outline,
+                  color: isSelected
+                      ? scheme.onPrimaryContainer
+                      : scheme.onSurfaceVariant,
+                ),
+                tooltip: AppLocalizations.of(context)!.detailSheetInfoTooltip,
+                onPressed: () =>
+                    showClassDetailSheet(context, cls, i18n),
+              ),
+              if (isSelected)
+                Icon(Icons.check_circle, color: scheme.primary),
             ],
           ),
         ),
@@ -230,6 +243,20 @@ class _SubclassSelector extends StatelessWidget {
                             ),
                           ],
                         ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.info_outline,
+                          color: isSelected
+                              ? scheme.onSecondaryContainer
+                              : scheme.onSurfaceVariant,
+                          size: 20,
+                        ),
+                        tooltip: AppLocalizations.of(context)!.detailSheetInfoTooltip,
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                        onPressed: () =>
+                            showSubclassDetailSheet(context, cls, sub, i18n),
                       ),
                       if (isSelected)
                         Icon(

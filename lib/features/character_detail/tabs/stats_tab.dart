@@ -43,6 +43,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   // XP progression panel
   final _xpAddCtrl = TextEditingController(text: '0');
   bool _levelTableExpanded = false;
+  bool _xpAddInProgress = false;
 
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
@@ -53,47 +54,57 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   }
 
   Future<void> _addXp(int amount) async {
+    if (_xpAddInProgress) return;
     final character = widget.character;
     if (!character.xpTrackingEnabled) return;
-    final newXp = (character.experiencePoints + amount).clamp(0, 999999);
-    if (character.level < 20) {
-      final nextThreshold = kXpThresholds[character.level];
-      if (newXp >= nextThreshold &&
-          character.experiencePoints < nextThreshold) {
-        final l10n = AppLocalizations.of(context)!;
-        final levelNow = await showDialog<bool>(
-          context: context,
-          builder: (ctx) => AlertDialog(
-            title: Text(l10n.xpLevelUpNowTitle),
-            content: Text(l10n.xpLevelUpNowMessage(character.level + 1)),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(ctx, false),
-                child: Text(l10n.xpLevelUpLater),
-              ),
-              FilledButton(
-                onPressed: () => Navigator.pop(ctx, true),
-                child: Text(l10n.tooltipLevelUp),
-              ),
-            ],
-          ),
-        );
-        if (!mounted) return;
-        // Always set XP to exactly the threshold (preserves pending state for
-        // the "No" path; for "Yes" the wizard will update level & XP afterward)
-        await _notifier.updateExperiencePoints(nextThreshold);
-        if (!mounted) return;
-        if (levelNow == true) {
-          _openLevelUpWizardSheet(
-            context,
-            widget.character,
-            widget.characterId,
+    setState(() => _xpAddInProgress = true);
+    try {
+      final newXp = (character.experiencePoints + amount).clamp(0, 999999);
+      if (character.level < 20) {
+        final nextThreshold = kXpThresholds[character.level];
+        if (newXp >= nextThreshold &&
+            character.experiencePoints < nextThreshold) {
+          final l10n = AppLocalizations.of(context)!;
+          // Save the full earned XP before showing dialog
+          await _notifier.updateExperiencePoints(newXp);
+          if (!mounted) return;
+          final levelNow = await showDialog<bool>(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: Text(l10n.xpLevelUpNowTitle),
+              content:
+                  Text(l10n.xpLevelUpNowMessage(character.level + 1)),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx, false),
+                  child: Text(l10n.xpLevelUpLater),
+                ),
+                FilledButton(
+                  onPressed: () => Navigator.pop(ctx, true),
+                  child: Text(l10n.tooltipLevelUp),
+                ),
+              ],
+            ),
           );
+          if (!mounted) return;
+          if (levelNow == true) {
+            // Wizard will set XP to min of new level via provider.levelUp()
+            _openLevelUpWizardSheet(
+              context,
+              widget.character,
+              widget.characterId,
+            );
+          } else {
+            // Cap at threshold so the pending state remains visible
+            await _notifier.updateExperiencePoints(nextThreshold);
+          }
+          return;
         }
-        return;
       }
+      await _notifier.updateExperiencePoints(newXp);
+    } finally {
+      if (mounted) setState(() => _xpAddInProgress = false);
     }
-    await _notifier.updateExperiencePoints(newXp);
   }
 
   void _startEditing() {
@@ -702,6 +713,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           )
                         : _XpProgressionPanel(
                             xp: character.experiencePoints,
+                            characterLevel: character.level,
                             xpAddCtrl: _xpAddCtrl,
                             expanded: _levelTableExpanded,
                             onToggle: () => setState(
@@ -765,6 +777,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 class _XpProgressionPanel extends StatelessWidget {
   const _XpProgressionPanel({
     required this.xp,
+    required this.characterLevel,
     required this.xpAddCtrl,
     required this.expanded,
     required this.onToggle,
@@ -777,6 +790,7 @@ class _XpProgressionPanel extends StatelessWidget {
   });
 
   final int xp;
+  final int characterLevel;
   final TextEditingController xpAddCtrl;
   final bool expanded;
   final VoidCallback onToggle;
@@ -789,13 +803,15 @@ class _XpProgressionPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final level = xpToLevel(xp);
+    // Use characterLevel as source of truth — XP and level may diverge when
+    // tracking is disabled.
+    final level = characterLevel;
     final isMax = level >= 20;
     final prevXp = kXpThresholds[level - 1];
     final nextXp = isMax ? kXpThresholds.last : kXpThresholds[level];
     final progress = isMax
         ? 1.0
-        : (xp - prevXp) / (nextXp - prevXp).toDouble();
+        : ((xp - prevXp) / (nextXp - prevXp).toDouble()).clamp(0.0, 1.0);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

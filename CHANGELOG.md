@@ -12,8 +12,22 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [0.3.0] - 2026-05-21
 
 ### Added
+- **Level Up Wizard**: fluxo completo de subida de nível como rota fullscreen com transição slide-up. Cobre HP, ASI/Feats, seleção de subclasse, magias extras e features
+- **Rastreamento de XP**: toggle "Rastrear XP" na seção Progressão da aba de Atributos. Quando ativo, exibe barra de progresso, campo para adicionar XP e tabela de níveis SRD 5e expansível
+- **Detecção automática de level up**: ao adicionar XP suficiente para o próximo nível, um diálogo pergunta se o usuário quer subir agora ou depois. Estado pendente exibe botão "Pronto para subir de nível!"
+- **Strings i18n para o wizard e XP**: 5 novas chaves (`xpTrackingLabel`, `xpReadyToLevelUp`, `xpLevelUpNowTitle`, `xpLevelUpNowMessage`, `xpLevelUpLater`) traduzidas em PT; outros 8 idiomas com fallback em inglês
+
 ### Fixed
+- **Botões de ação ocultos no SpellDetailSheet em modo leitura**: botões de adicionar/remover magia não eram exibidos ao abrir a folha de detalhes a partir do wizard (modo read-only)
+- **Habilidades, talentos e magias não traduzidos no wizard**: lookups de i18n corrigidos para abilities, feats e spells mostrados dentro do Level Up Wizard
+- **Strings do wizard não traduzidas em 10 idiomas**: avisos do analyzer na geração de l10n corrigidos; todas as strings do wizard estão presentes nos 10 locales
+- **Race condition no botão Adicionar XP**: dois taps rápidos podiam disparar dois `_addXp` simultâneos e mostrar dois diálogos. Corrigido com guard `_xpAddInProgress`
+- **Perda de XP ao dizer "Depois"**: XP excedente acima do threshold era descartado. Agora o XP completo é salvo primeiro; só é travado no threshold se o usuário recusar o level up
+- **Nível exibido no painel de XP**: painel usava `xpToLevel(xp)` em vez de `character.level`, causando dessincronização quando o nível foi ajustado manualmente com tracking desativado. Corrigido para usar `character.level` como fonte da verdade; barra de progresso clampada em `[0.0, 1.0]`
+
 ### Internal
+- `kXpThresholds`, `xpToLevel` e `levelToMinXp` movidos para `lib/data/constants/level_up_rules.dart`
+- `Character.xpTrackingEnabled` adicionado ao modelo com serialização JSON (`?? false` para retrocompatibilidade)
 
 ---
 

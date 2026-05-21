@@ -537,6 +537,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tempHpReplace => '代替';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n临时HP';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return '确认$feature';
   }
@@ -1007,6 +1012,99 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => '额外法术';
+
+  @override
+  String get spellFilterTitle => '筛选';
+
+  @override
+  String get spellFilterReset => '重置';
+
+  @override
+  String get spellFilterApply => '应用筛选';
+
+  @override
+  String get spellFilterSectionClasses => '职业';
+
+  @override
+  String get spellFilterClassesHint => '未选职业 = 显示所有职业';
+
+  @override
+  String get spellFilterSectionLevel => '法术环位';
+
+  @override
+  String get spellFilterShowAllLevels => '显示所有环位';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return '包括超过当前最大环位（第$max环）的法术';
+  }
+
+  @override
+  String get spellFilterCantrip => '戏法';
+
+  @override
+  String spellFilterLvl(int n) {
+    return '$n环';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => '施法时间';
+
+  @override
+  String get spellFilterCastAction => '动作';
+
+  @override
+  String get spellFilterCastBonus => '附赠动作';
+
+  @override
+  String get spellFilterCastReaction => '反应';
+
+  @override
+  String get spellFilterCastLonger => '较长施法（1分钟+）';
+
+  @override
+  String get spellFilterSectionProperties => '属性';
+
+  @override
+  String get spellFilterConcentration => '专注';
+
+  @override
+  String get spellFilterConcentrationHint => '仅显示需要专注的法术';
+
+  @override
+  String get spellFilterRitual => '仪式';
+
+  @override
+  String get spellFilterRitualHint => '仅显示可以作为仪式施放的法术';
+
+  @override
+  String get spellFilterSectionSchool => '法术流派';
+
+  @override
+  String get spellRemoveTitle => '移除法术';
+
+  @override
+  String spellRemoveContent(String name) {
+    return '从法术列表中移除“$name”？';
+  }
+
+  @override
+  String get spellActionPrepared => '已准备 — 点击取消准备';
+
+  @override
+  String get spellActionPrepare => '今日准备';
+
+  @override
+  String get spellActionAdd => '添加到角色';
+
+  @override
+  String get spellActionInList => '在你的列表中 — 点击移除';
+
+  @override
+  String get spellActionAlreadyInList => '已在你的法术列表中';
+
+  @override
+  String get spellActionClassSpellInfo => '此法术已包含在你的职业法术列表中，无需学习。';
 
   @override
   String get inventoryCurrency => '货币';

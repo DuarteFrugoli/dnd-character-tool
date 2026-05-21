@@ -552,6 +552,11 @@ class AppLocalizationsDe extends AppLocalizations {
   String get tempHpReplace => 'Ersetzen';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n temp';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return 'Bestätigen Sie $feature';
   }
@@ -1026,6 +1031,103 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => 'Zusatzzauber';
+
+  @override
+  String get spellFilterTitle => 'Filter';
+
+  @override
+  String get spellFilterReset => 'Zurücksetzen';
+
+  @override
+  String get spellFilterApply => 'Filter anwenden';
+
+  @override
+  String get spellFilterSectionClasses => 'Klassen';
+
+  @override
+  String get spellFilterClassesHint =>
+      'Keine Klasse ausgewählt = alle Klassen anzeigen';
+
+  @override
+  String get spellFilterSectionLevel => 'Zaubergrad';
+
+  @override
+  String get spellFilterShowAllLevels => 'Alle Grade anzeigen';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return 'Zauber über deinen aktuellen Maximalgrad einbeziehen (Grad $max)';
+  }
+
+  @override
+  String get spellFilterCantrip => 'Zaubertrick';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'Grad $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => 'Zeitaufwand';
+
+  @override
+  String get spellFilterCastAction => 'Aktion';
+
+  @override
+  String get spellFilterCastBonus => 'Bonusaktion';
+
+  @override
+  String get spellFilterCastReaction => 'Reaktion';
+
+  @override
+  String get spellFilterCastLonger => 'Langer Zeitaufwand (1 Min.+)';
+
+  @override
+  String get spellFilterSectionProperties => 'Eigenschaften';
+
+  @override
+  String get spellFilterConcentration => 'Konzentration';
+
+  @override
+  String get spellFilterConcentrationHint =>
+      'Nur Zauber, die Konzentration erfordern';
+
+  @override
+  String get spellFilterRitual => 'Ritual';
+
+  @override
+  String get spellFilterRitualHint =>
+      'Nur Zauber, die als Rituale gewirkt werden können';
+
+  @override
+  String get spellFilterSectionSchool => 'Zauberschule';
+
+  @override
+  String get spellRemoveTitle => 'Zauber entfernen';
+
+  @override
+  String spellRemoveContent(String name) {
+    return '\"$name\" aus deiner Zauberliste entfernen?';
+  }
+
+  @override
+  String get spellActionPrepared => 'Vorbereitet – tippe zum Abwählen';
+
+  @override
+  String get spellActionPrepare => 'Für heute vorbereiten';
+
+  @override
+  String get spellActionAdd => 'Zum Charakter hinzufügen';
+
+  @override
+  String get spellActionInList => 'In deiner Liste – tippe zum Entfernen';
+
+  @override
+  String get spellActionAlreadyInList => 'Bereits in deiner Zauberliste';
+
+  @override
+  String get spellActionClassSpellInfo =>
+      'Dieser Zauber ist bereits Teil deiner Klassenliste und muss nicht erlernt werden.';
 
   @override
   String get inventoryCurrency => 'Währung';

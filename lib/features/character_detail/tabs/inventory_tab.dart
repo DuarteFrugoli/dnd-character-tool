@@ -1339,7 +1339,7 @@ class _ItemTile extends ConsumerWidget {
       trailing: IconButton(
         icon: const Icon(Icons.delete_outline, size: 18),
         color: scheme.error,
-        tooltip: 'Remove',
+        tooltip: l10n.inventoryTooltipRemove,
         onPressed: () => _confirmRemoveItem(context, notifier),
       ),
     );

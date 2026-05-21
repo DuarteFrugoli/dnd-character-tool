@@ -553,6 +553,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get tempHpReplace => 'Заменять';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n врем.';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return 'Подтвердите $feature';
   }
@@ -1027,6 +1032,102 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => 'Дополнительные заклинания';
+
+  @override
+  String get spellFilterTitle => 'Фильтры';
+
+  @override
+  String get spellFilterReset => 'Сбросить';
+
+  @override
+  String get spellFilterApply => 'Применить фильтры';
+
+  @override
+  String get spellFilterSectionClasses => 'Классы';
+
+  @override
+  String get spellFilterClassesHint => 'Без класса = показать все классы';
+
+  @override
+  String get spellFilterSectionLevel => 'Уровень заклинания';
+
+  @override
+  String get spellFilterShowAllLevels => 'Показать все уровни';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return 'Включая заклинания выше вашего максимума (Ур. $max)';
+  }
+
+  @override
+  String get spellFilterCantrip => 'Заговор';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'Ур. $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => 'Время применения';
+
+  @override
+  String get spellFilterCastAction => 'Действие';
+
+  @override
+  String get spellFilterCastBonus => 'Бонусное действие';
+
+  @override
+  String get spellFilterCastReaction => 'Реакция';
+
+  @override
+  String get spellFilterCastLonger => 'Длинное применение (1 мин+)';
+
+  @override
+  String get spellFilterSectionProperties => 'Свойства';
+
+  @override
+  String get spellFilterConcentration => 'Концентрация';
+
+  @override
+  String get spellFilterConcentrationHint =>
+      'Только заклинания, требующие концентрации';
+
+  @override
+  String get spellFilterRitual => 'Ритуал';
+
+  @override
+  String get spellFilterRitualHint =>
+      'Только заклинания, которые можно применять как ритуалы';
+
+  @override
+  String get spellFilterSectionSchool => 'Школа магии';
+
+  @override
+  String get spellRemoveTitle => 'Удалить заклинание';
+
+  @override
+  String spellRemoveContent(String name) {
+    return 'Удалить \"$name\" из вашего списка заклинаний?';
+  }
+
+  @override
+  String get spellActionPrepared => 'Подготовлено — нажмите для отмены';
+
+  @override
+  String get spellActionPrepare => 'Подготовить на сегодня';
+
+  @override
+  String get spellActionAdd => 'Добавить персонажу';
+
+  @override
+  String get spellActionInList => 'В вашем списке — нажмите для удаления';
+
+  @override
+  String get spellActionAlreadyInList => 'Уже в вашем списке заклинаний';
+
+  @override
+  String get spellActionClassSpellInfo =>
+      'Это заклинание уже является частью списка вашего класса и не требует изучения.';
 
   @override
   String get inventoryCurrency => 'Валюта';

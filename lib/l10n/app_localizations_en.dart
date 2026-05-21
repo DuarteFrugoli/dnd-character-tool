@@ -549,6 +549,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tempHpReplace => 'Replace';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n temp';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return 'Confirm $feature';
   }
@@ -1021,6 +1026,101 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => 'Extra Spells';
+
+  @override
+  String get spellFilterTitle => 'Filters';
+
+  @override
+  String get spellFilterReset => 'Reset';
+
+  @override
+  String get spellFilterApply => 'Apply Filters';
+
+  @override
+  String get spellFilterSectionClasses => 'Classes';
+
+  @override
+  String get spellFilterClassesHint => 'No class selected = show all classes';
+
+  @override
+  String get spellFilterSectionLevel => 'Spell Level';
+
+  @override
+  String get spellFilterShowAllLevels => 'Show all spell levels';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return 'Include spells above your current max (Lvl $max)';
+  }
+
+  @override
+  String get spellFilterCantrip => 'Cantrip';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'Lvl $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => 'Casting Time';
+
+  @override
+  String get spellFilterCastAction => 'Action';
+
+  @override
+  String get spellFilterCastBonus => 'Bonus action';
+
+  @override
+  String get spellFilterCastReaction => 'Reaction';
+
+  @override
+  String get spellFilterCastLonger => 'Longer cast (1 min+)';
+
+  @override
+  String get spellFilterSectionProperties => 'Properties';
+
+  @override
+  String get spellFilterConcentration => 'Concentration';
+
+  @override
+  String get spellFilterConcentrationHint =>
+      'Only spells that require concentration';
+
+  @override
+  String get spellFilterRitual => 'Ritual';
+
+  @override
+  String get spellFilterRitualHint => 'Only spells that can be cast as rituals';
+
+  @override
+  String get spellFilterSectionSchool => 'School of Magic';
+
+  @override
+  String get spellRemoveTitle => 'Remove spell';
+
+  @override
+  String spellRemoveContent(String name) {
+    return 'Remove \"$name\" from your spell list?';
+  }
+
+  @override
+  String get spellActionPrepared => 'Prepared — tap to unprepare';
+
+  @override
+  String get spellActionPrepare => 'Prepare for today';
+
+  @override
+  String get spellActionAdd => 'Add to character';
+
+  @override
+  String get spellActionInList => 'In your spell list — tap to remove';
+
+  @override
+  String get spellActionAlreadyInList => 'Already in your spell list';
+
+  @override
+  String get spellActionClassSpellInfo =>
+      'This spell is already part of your class list and doesn\'t need to be learned.';
 
   @override
   String get inventoryCurrency => 'Currency';

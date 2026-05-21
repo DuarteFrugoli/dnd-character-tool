@@ -556,6 +556,11 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tempHpReplace => 'Remplacer';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n temp';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return 'Confirmer $feature';
   }
@@ -1030,6 +1035,103 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => 'Sorts Supplémentaires';
+
+  @override
+  String get spellFilterTitle => 'Filtres';
+
+  @override
+  String get spellFilterReset => 'Réinitialiser';
+
+  @override
+  String get spellFilterApply => 'Appliquer les filtres';
+
+  @override
+  String get spellFilterSectionClasses => 'Classes';
+
+  @override
+  String get spellFilterClassesHint =>
+      'Aucune classe sélectionnée = afficher toutes les classes';
+
+  @override
+  String get spellFilterSectionLevel => 'Niveau de sort';
+
+  @override
+  String get spellFilterShowAllLevels => 'Afficher tous les niveaux';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return 'Inclure les sorts au-delà de votre maximum (Niv $max)';
+  }
+
+  @override
+  String get spellFilterCantrip => 'Tour de magie';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'Niv $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => 'Temps d\'incantation';
+
+  @override
+  String get spellFilterCastAction => 'Action';
+
+  @override
+  String get spellFilterCastBonus => 'Action bonus';
+
+  @override
+  String get spellFilterCastReaction => 'Réaction';
+
+  @override
+  String get spellFilterCastLonger => 'Incantation longue (1 min+)';
+
+  @override
+  String get spellFilterSectionProperties => 'Propriétés';
+
+  @override
+  String get spellFilterConcentration => 'Concentration';
+
+  @override
+  String get spellFilterConcentrationHint =>
+      'Seulement les sorts nécessitant une concentration';
+
+  @override
+  String get spellFilterRitual => 'Rituel';
+
+  @override
+  String get spellFilterRitualHint =>
+      'Seulement les sorts pouvant être lancés en tant que rituels';
+
+  @override
+  String get spellFilterSectionSchool => 'École de magie';
+
+  @override
+  String get spellRemoveTitle => 'Supprimer le sort';
+
+  @override
+  String spellRemoveContent(String name) {
+    return 'Supprimer \"$name\" de votre liste de sorts ?';
+  }
+
+  @override
+  String get spellActionPrepared => 'Préparé — appuyez pour annuler';
+
+  @override
+  String get spellActionPrepare => 'Préparer pour aujourd\'hui';
+
+  @override
+  String get spellActionAdd => 'Ajouter au personnage';
+
+  @override
+  String get spellActionInList => 'Dans votre liste — appuyez pour supprimer';
+
+  @override
+  String get spellActionAlreadyInList => 'Déjà dans votre liste de sorts';
+
+  @override
+  String get spellActionClassSpellInfo =>
+      'Ce sort fait déjà partie de la liste de votre classe et n\'a pas besoin d\'être appris.';
 
   @override
   String get inventoryCurrency => 'Devise';

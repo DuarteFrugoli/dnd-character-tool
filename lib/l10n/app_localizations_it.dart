@@ -553,6 +553,11 @@ class AppLocalizationsIt extends AppLocalizations {
   String get tempHpReplace => 'Sostituire';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n temp';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return 'Conferma $feature';
   }
@@ -1030,6 +1035,103 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => 'Incantesimi Extra';
+
+  @override
+  String get spellFilterTitle => 'Filtri';
+
+  @override
+  String get spellFilterReset => 'Reimposta';
+
+  @override
+  String get spellFilterApply => 'Applica filtri';
+
+  @override
+  String get spellFilterSectionClasses => 'Classi';
+
+  @override
+  String get spellFilterClassesHint =>
+      'Nessuna classe = mostra tutte le classi';
+
+  @override
+  String get spellFilterSectionLevel => 'Livello incantesimo';
+
+  @override
+  String get spellFilterShowAllLevels => 'Mostra tutti i livelli';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return 'Includi incantesimi oltre il tuo massimo (Lv $max)';
+  }
+
+  @override
+  String get spellFilterCantrip => 'Trucco';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'Lv $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => 'Tempo di lancio';
+
+  @override
+  String get spellFilterCastAction => 'Azione';
+
+  @override
+  String get spellFilterCastBonus => 'Azione bonus';
+
+  @override
+  String get spellFilterCastReaction => 'Reazione';
+
+  @override
+  String get spellFilterCastLonger => 'Lancio lungo (1 min+)';
+
+  @override
+  String get spellFilterSectionProperties => 'Proprietà';
+
+  @override
+  String get spellFilterConcentration => 'Concentrazione';
+
+  @override
+  String get spellFilterConcentrationHint =>
+      'Solo incantesimi che richiedono concentrazione';
+
+  @override
+  String get spellFilterRitual => 'Rituale';
+
+  @override
+  String get spellFilterRitualHint =>
+      'Solo incantesimi che possono essere lanciati come rituali';
+
+  @override
+  String get spellFilterSectionSchool => 'Scuola di magia';
+
+  @override
+  String get spellRemoveTitle => 'Rimuovi incantesimo';
+
+  @override
+  String spellRemoveContent(String name) {
+    return 'Rimuovere \"$name\" dalla tua lista di incantesimi?';
+  }
+
+  @override
+  String get spellActionPrepared => 'Preparato — tocca per annullare';
+
+  @override
+  String get spellActionPrepare => 'Prepara per oggi';
+
+  @override
+  String get spellActionAdd => 'Aggiungi al personaggio';
+
+  @override
+  String get spellActionInList => 'Nella tua lista — tocca per rimuovere';
+
+  @override
+  String get spellActionAlreadyInList => 'Già nella tua lista di incantesimi';
+
+  @override
+  String get spellActionClassSpellInfo =>
+      'Questo incantesimo fa già parte della lista della tua classe e non deve essere appreso.';
 
   @override
   String get inventoryCurrency => 'Valuta';

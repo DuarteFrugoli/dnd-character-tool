@@ -553,6 +553,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tempHpReplace => 'Substituir';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n temp';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return 'Confirmar $feature';
   }
@@ -1027,6 +1032,103 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => 'Magias Extras';
+
+  @override
+  String get spellFilterTitle => 'Filtros';
+
+  @override
+  String get spellFilterReset => 'Redefinir';
+
+  @override
+  String get spellFilterApply => 'Aplicar Filtros';
+
+  @override
+  String get spellFilterSectionClasses => 'Classes';
+
+  @override
+  String get spellFilterClassesHint =>
+      'Nenhuma classe selecionada = mostrar todas as classes';
+
+  @override
+  String get spellFilterSectionLevel => 'Nível de Magia';
+
+  @override
+  String get spellFilterShowAllLevels => 'Mostrar todos os níveis';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return 'Incluir magias acima do seu máximo atual (Nível $max)';
+  }
+
+  @override
+  String get spellFilterCantrip => 'Truque';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'Nível $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => 'Tempo de Conjuração';
+
+  @override
+  String get spellFilterCastAction => 'Ação';
+
+  @override
+  String get spellFilterCastBonus => 'Ação de bônus';
+
+  @override
+  String get spellFilterCastReaction => 'Reação';
+
+  @override
+  String get spellFilterCastLonger => 'Conjuração longa (1 min+)';
+
+  @override
+  String get spellFilterSectionProperties => 'Propriedades';
+
+  @override
+  String get spellFilterConcentration => 'Concentração';
+
+  @override
+  String get spellFilterConcentrationHint =>
+      'Apenas magias que exigem concentração';
+
+  @override
+  String get spellFilterRitual => 'Ritual';
+
+  @override
+  String get spellFilterRitualHint =>
+      'Apenas magias que podem ser conjuradas como rituais';
+
+  @override
+  String get spellFilterSectionSchool => 'Escola de Magia';
+
+  @override
+  String get spellRemoveTitle => 'Remover magia';
+
+  @override
+  String spellRemoveContent(String name) {
+    return 'Remover \"$name\" da sua lista de magias?';
+  }
+
+  @override
+  String get spellActionPrepared => 'Preparada — toque para despreparar';
+
+  @override
+  String get spellActionPrepare => 'Preparar para hoje';
+
+  @override
+  String get spellActionAdd => 'Adicionar ao personagem';
+
+  @override
+  String get spellActionInList => 'Na sua lista — toque para remover';
+
+  @override
+  String get spellActionAlreadyInList => 'Já está na sua lista de magias';
+
+  @override
+  String get spellActionClassSpellInfo =>
+      'Esta magia já faz parte da lista da sua classe e não precisa ser aprendida.';
 
   @override
   String get inventoryCurrency => 'Moedas';

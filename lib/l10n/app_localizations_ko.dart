@@ -544,6 +544,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tempHpReplace => '바꾸다';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n 임시HP';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return '$feature 확인';
   }
@@ -1015,6 +1020,99 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => '추가 주문';
+
+  @override
+  String get spellFilterTitle => '필터';
+
+  @override
+  String get spellFilterReset => '초기화';
+
+  @override
+  String get spellFilterApply => '필터 적용';
+
+  @override
+  String get spellFilterSectionClasses => '클래스';
+
+  @override
+  String get spellFilterClassesHint => '클래스 미선택 = 모든 클래스 표시';
+
+  @override
+  String get spellFilterSectionLevel => '주문 레벨';
+
+  @override
+  String get spellFilterShowAllLevels => '모든 레벨 표시';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return '현재 최대 레벨($max) 이상의 주문 포함';
+  }
+
+  @override
+  String get spellFilterCantrip => '소마법';
+
+  @override
+  String spellFilterLvl(int n) {
+    return '레벨 $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => '시전 시간';
+
+  @override
+  String get spellFilterCastAction => '행동';
+
+  @override
+  String get spellFilterCastBonus => '추가 행동';
+
+  @override
+  String get spellFilterCastReaction => '반응';
+
+  @override
+  String get spellFilterCastLonger => '긴 시전 (1분+)';
+
+  @override
+  String get spellFilterSectionProperties => '속성';
+
+  @override
+  String get spellFilterConcentration => '집중';
+
+  @override
+  String get spellFilterConcentrationHint => '집중이 필요한 주문만';
+
+  @override
+  String get spellFilterRitual => '의식';
+
+  @override
+  String get spellFilterRitualHint => '의식으로 시전할 수 있는 주문만';
+
+  @override
+  String get spellFilterSectionSchool => '마법 계열';
+
+  @override
+  String get spellRemoveTitle => '주문 제거';
+
+  @override
+  String spellRemoveContent(String name) {
+    return '\"$name\"을(를) 주문 목록에서 제거하시겠습니까?';
+  }
+
+  @override
+  String get spellActionPrepared => '준비됨 — 탭하여 해제';
+
+  @override
+  String get spellActionPrepare => '오늘을 위해 준비';
+
+  @override
+  String get spellActionAdd => '캐릭터에 추가';
+
+  @override
+  String get spellActionInList => '목록에 있음 — 탭하여 제거';
+
+  @override
+  String get spellActionAlreadyInList => '이미 주문 목록에 있습니다';
+
+  @override
+  String get spellActionClassSpellInfo => '이 주문은 이미 클래스 목록의 일부이며 학습할 필요가 없습니다.';
 
   @override
   String get inventoryCurrency => '통화';

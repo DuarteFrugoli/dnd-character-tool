@@ -543,6 +543,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tempHpReplace => '交換する';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n 一時HP';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return '$featureを確認する';
   }
@@ -1014,6 +1019,99 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => '追加呻文';
+
+  @override
+  String get spellFilterTitle => 'フィルター';
+
+  @override
+  String get spellFilterReset => 'リセット';
+
+  @override
+  String get spellFilterApply => 'フィルターを適用';
+
+  @override
+  String get spellFilterSectionClasses => 'クラス';
+
+  @override
+  String get spellFilterClassesHint => 'クラス未選択 = すべてのクラスを表示';
+
+  @override
+  String get spellFilterSectionLevel => '魔法レベル';
+
+  @override
+  String get spellFilterShowAllLevels => 'すべてのレベルを表示';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return '現在の最大（レベル$max）を超える魔法を含む';
+  }
+
+  @override
+  String get spellFilterCantrip => 'カントリップ';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'レベル$n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => '発動時間';
+
+  @override
+  String get spellFilterCastAction => 'アクション';
+
+  @override
+  String get spellFilterCastBonus => 'ボーナスアクション';
+
+  @override
+  String get spellFilterCastReaction => 'リアクション';
+
+  @override
+  String get spellFilterCastLonger => '長い発動（1分+）';
+
+  @override
+  String get spellFilterSectionProperties => 'プロパティ';
+
+  @override
+  String get spellFilterConcentration => '集中';
+
+  @override
+  String get spellFilterConcentrationHint => '集中が必要な魔法のみ';
+
+  @override
+  String get spellFilterRitual => '儀式';
+
+  @override
+  String get spellFilterRitualHint => '儀式として唱えられる魔法のみ';
+
+  @override
+  String get spellFilterSectionSchool => '魔法の系統';
+
+  @override
+  String get spellRemoveTitle => '魔法を削除';
+
+  @override
+  String spellRemoveContent(String name) {
+    return '「$name」を魔法リストから削除しますか？';
+  }
+
+  @override
+  String get spellActionPrepared => '準備済み — タップで解除';
+
+  @override
+  String get spellActionPrepare => '今日の準備';
+
+  @override
+  String get spellActionAdd => 'キャラクターに追加';
+
+  @override
+  String get spellActionInList => 'リストにあります — タップで削除';
+
+  @override
+  String get spellActionAlreadyInList => 'すでに魔法リストにあります';
+
+  @override
+  String get spellActionClassSpellInfo => 'この魔法はすでにクラスリストに含まれており、習得する必要はありません。';
 
   @override
   String get inventoryCurrency => '通貨';

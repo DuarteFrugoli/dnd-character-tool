@@ -569,11 +569,11 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
     'Transmutation',
   ];
 
-  static const _castingOptions = <(String, String)>[
-    ('action', 'Action'),
-    ('bonus_action', 'Bonus action'),
-    ('reaction', 'Reaction'),
-    ('longer', 'Longer cast (1 min+)'),
+  List<(String, String)> _getCastingOptions(AppLocalizations l10n) => [
+    ('action', l10n.spellFilterCastAction),
+    ('bonus_action', l10n.spellFilterCastBonus),
+    ('reaction', l10n.spellFilterCastReaction),
+    ('longer', l10n.spellFilterCastLonger),
   ];
 
   static const _allClasses = [
@@ -593,6 +593,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
     final f = widget.filters;
 
     return Padding(
@@ -625,13 +626,13 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
               child: Row(
                 children: [
                   Text(
-                    'Filters',
+                    l10n.spellFilterTitle,
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const Spacer(),
                   TextButton(
                     onPressed: () => setState(() => f.reset()),
-                    child: const Text('Reset'),
+                    child: Text(l10n.spellFilterReset),
                   ),
                 ],
               ),
@@ -650,7 +651,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                 ),
                 children: [
                   // ── Classes ──────────────────────────────────────────────
-                  _SectionLabel('Classes'),
+                  _SectionLabel(l10n.spellFilterSectionClasses),
                   Wrap(
                     spacing: 8,
                     runSpacing: 4,
@@ -673,7 +674,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'No class selected = show all classes',
+                    l10n.spellFilterClassesHint,
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -681,13 +682,10 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   const SizedBox(height: 16),
 
                   // ── Level ────────────────────────────────────────────────
-                  _SectionLabel('Spell Level'),
+                  _SectionLabel(l10n.spellFilterSectionLevel),
                   SwitchListTile(
-                    title: const Text('Show all spell levels'),
-                    subtitle: Text(
-                      'Include spells above your current max '
-                      '(Lvl ${widget.maxSpellLevel})',
-                    ),
+                    title: Text(l10n.spellFilterShowAllLevels),
+                    subtitle: Text(l10n.spellFilterShowAllLevelsHint(widget.maxSpellLevel)),
                     value: f.showAllLevels,
                     onChanged: (v) => setState(() => f.showAllLevels = v),
                     dense: true,
@@ -704,7 +702,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                         lvl++
                       )
                         ChoiceChip(
-                          label: Text(lvl == 0 ? 'Cantrip' : 'Lvl $lvl'),
+                          label: Text(lvl == 0 ? l10n.spellFilterCantrip : l10n.spellFilterLvl(lvl)),
                           selected: f.level == lvl,
                           onSelected: (v) =>
                               setState(() => f.level = v ? lvl : null),
@@ -714,12 +712,12 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   const SizedBox(height: 16),
 
                   // ── Casting time ─────────────────────────────────────────
-                  _SectionLabel('Casting Time'),
+                  _SectionLabel(l10n.spellFilterSectionCastingTime),
                   Wrap(
                     spacing: 8,
                     runSpacing: 4,
                     children: [
-                      for (final opt in _castingOptions)
+                      for (final opt in _getCastingOptions(l10n))
                         ChoiceChip(
                           label: Text(opt.$2),
                           selected: f.castingType == opt.$1,
@@ -731,12 +729,10 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   const SizedBox(height: 16),
 
                   // ── Properties ───────────────────────────────────────────
-                  _SectionLabel('Properties'),
+                  _SectionLabel(l10n.spellFilterSectionProperties),
                   CheckboxListTile(
-                    title: const Text('Concentration'),
-                    subtitle: const Text(
-                      'Only spells that require concentration',
-                    ),
+                    title: Text(l10n.spellFilterConcentration),
+                    subtitle: Text(l10n.spellFilterConcentrationHint),
                     value: f.concentration,
                     onChanged: (v) =>
                         setState(() => f.concentration = v ?? false),
@@ -744,10 +740,8 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                     dense: true,
                   ),
                   CheckboxListTile(
-                    title: const Text('Ritual'),
-                    subtitle: const Text(
-                      'Only spells that can be cast as rituals',
-                    ),
+                    title: Text(l10n.spellFilterRitual),
+                    subtitle: Text(l10n.spellFilterRitualHint),
                     value: f.ritual,
                     onChanged: (v) => setState(() => f.ritual = v ?? false),
                     controlAffinity: ListTileControlAffinity.leading,
@@ -756,7 +750,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   const SizedBox(height: 16),
 
                   // ── School ───────────────────────────────────────────────
-                  _SectionLabel('School of Magic'),
+                  _SectionLabel(l10n.spellFilterSectionSchool),
                   Wrap(
                     spacing: 8,
                     runSpacing: 4,
@@ -786,7 +780,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                 width: double.infinity,
                 child: FilledButton(
                   onPressed: () => Navigator.pop(context, true),
-                  child: const Text('Apply Filters'),
+                  child: Text(l10n.spellFilterApply),
                 ),
               ),
             ),
@@ -936,20 +930,21 @@ class SpellDetailSheet extends ConsumerWidget {
   final VoidCallback? onTogglePrepared;
 
   Future<void> _confirmRemove(BuildContext context) async {
+    final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Remove spell'),
-        content: Text('Remove "${spell.name}" from your spell list?'),
+        title: Text(l10n.spellRemoveTitle),
+        content: Text(l10n.spellRemoveContent(spell.name)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(ctx)!.dialogCancel),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
             child: Text(
-              'Remove',
+              AppLocalizations.of(ctx)!.dialogRemove,
               style: TextStyle(color: Theme.of(ctx).colorScheme.error),
             ),
           ),
@@ -1141,7 +1136,7 @@ class SpellDetailSheet extends ConsumerWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Esta magia já faz parte da lista da sua classe e não precisa ser aprendida.',
+                      l10n.spellActionClassSpellInfo,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
@@ -1155,18 +1150,18 @@ class SpellDetailSheet extends ConsumerWidget {
               isPrepared
                   ? OutlinedButton.icon(
                       icon: const Icon(Icons.check_box),
-                      label: const Text('Preparada — toque para despreparar'),
+                      label: Text(l10n.spellActionPrepared),
                       onPressed: onTogglePrepared,
                     )
                   : FilledButton.icon(
                       icon: const Icon(Icons.check_box_outline_blank),
-                      label: const Text('Preparar para hoje'),
+                      label: Text(l10n.spellActionPrepare),
                       onPressed: onTogglePrepared,
                     ),
           ] else if (!isKnown && onAdd != null)
             FilledButton.icon(
               icon: const Icon(Icons.add),
-              label: const Text('Add to character'),
+              label: Text(l10n.spellActionAdd),
               onPressed: onAdd,
             )
           else ...[
@@ -1174,8 +1169,8 @@ class SpellDetailSheet extends ConsumerWidget {
               icon: const Icon(Icons.check),
               label: Text(
                 onRemove != null
-                    ? 'In your spell list — tap to remove'
-                    : 'Already in your spell list',
+                    ? l10n.spellActionInList
+                    : l10n.spellActionAlreadyInList,
               ),
               onPressed: onRemove != null
                   ? () => _confirmRemove(context)

@@ -551,6 +551,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get tempHpReplace => 'Reemplazar';
 
   @override
+  String statsTempHpChip(int n) {
+    return '+$n temp';
+  }
+
+  @override
   String subclassConfirmTitle(String feature) {
     return 'Confirmar $feature';
   }
@@ -1025,6 +1030,102 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get spellsExtrasHeader => 'Hechizos Extra';
+
+  @override
+  String get spellFilterTitle => 'Filtros';
+
+  @override
+  String get spellFilterReset => 'Restablecer';
+
+  @override
+  String get spellFilterApply => 'Aplicar filtros';
+
+  @override
+  String get spellFilterSectionClasses => 'Clases';
+
+  @override
+  String get spellFilterClassesHint => 'Sin clase = mostrar todas las clases';
+
+  @override
+  String get spellFilterSectionLevel => 'Nivel de conjuro';
+
+  @override
+  String get spellFilterShowAllLevels => 'Mostrar todos los niveles';
+
+  @override
+  String spellFilterShowAllLevelsHint(int max) {
+    return 'Incluir conjuros sobre tu máximo actual (Niv $max)';
+  }
+
+  @override
+  String get spellFilterCantrip => 'Truco';
+
+  @override
+  String spellFilterLvl(int n) {
+    return 'Niv $n';
+  }
+
+  @override
+  String get spellFilterSectionCastingTime => 'Tiempo de lanzamiento';
+
+  @override
+  String get spellFilterCastAction => 'Acción';
+
+  @override
+  String get spellFilterCastBonus => 'Acción adicional';
+
+  @override
+  String get spellFilterCastReaction => 'Reacción';
+
+  @override
+  String get spellFilterCastLonger => 'Lanzamiento largo (1 min+)';
+
+  @override
+  String get spellFilterSectionProperties => 'Propiedades';
+
+  @override
+  String get spellFilterConcentration => 'Concentración';
+
+  @override
+  String get spellFilterConcentrationHint =>
+      'Solo conjuros que requieren concentración';
+
+  @override
+  String get spellFilterRitual => 'Ritual';
+
+  @override
+  String get spellFilterRitualHint =>
+      'Solo conjuros que se pueden lanzar como rituales';
+
+  @override
+  String get spellFilterSectionSchool => 'Escuela de magia';
+
+  @override
+  String get spellRemoveTitle => 'Eliminar conjuro';
+
+  @override
+  String spellRemoveContent(String name) {
+    return '¿Eliminar \"$name\" de tu lista de conjuros?';
+  }
+
+  @override
+  String get spellActionPrepared => 'Preparado — toca para despreparar';
+
+  @override
+  String get spellActionPrepare => 'Preparar para hoy';
+
+  @override
+  String get spellActionAdd => 'Añadir al personaje';
+
+  @override
+  String get spellActionInList => 'En tu lista — toca para eliminar';
+
+  @override
+  String get spellActionAlreadyInList => 'Ya está en tu lista de conjuros';
+
+  @override
+  String get spellActionClassSpellInfo =>
+      'Este conjuro ya es parte de la lista de tu clase y no necesita aprenderse.';
 
   @override
   String get inventoryCurrency => 'Divisa';

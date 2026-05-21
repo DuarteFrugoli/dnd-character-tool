@@ -372,7 +372,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     const SizedBox(width: 8),
                     if (hp.temporary > 0) ...[
                       Chip(
-                        label: Text('+${hp.temporary} temp'),
+                        label: Text(l10n.statsTempHpChip(hp.temporary)),
                         backgroundColor: scheme.tertiaryContainer,
                         labelStyle: TextStyle(
                           color: scheme.onTertiaryContainer,

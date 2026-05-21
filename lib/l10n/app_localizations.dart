@@ -1080,6 +1080,12 @@ abstract class AppLocalizations {
   /// **'Replace'**
   String get tempHpReplace;
 
+  /// Temporary HP chip label in HP row.
+  ///
+  /// In en, this message translates to:
+  /// **'+{n} temp'**
+  String statsTempHpChip(int n);
+
   /// Subclass dialog title when confirming existing choice.
   ///
   /// In en, this message translates to:
@@ -1931,6 +1937,180 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Extra Spells'**
   String get spellsExtrasHeader;
+
+  /// Spell filter sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get spellFilterTitle;
+
+  /// Reset filters button.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get spellFilterReset;
+
+  /// Apply filters button.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply Filters'**
+  String get spellFilterApply;
+
+  /// Filter section: classes.
+  ///
+  /// In en, this message translates to:
+  /// **'Classes'**
+  String get spellFilterSectionClasses;
+
+  /// Hint below class filter chips.
+  ///
+  /// In en, this message translates to:
+  /// **'No class selected = show all classes'**
+  String get spellFilterClassesHint;
+
+  /// Filter section: spell level.
+  ///
+  /// In en, this message translates to:
+  /// **'Spell Level'**
+  String get spellFilterSectionLevel;
+
+  /// Switch label to show all spell levels.
+  ///
+  /// In en, this message translates to:
+  /// **'Show all spell levels'**
+  String get spellFilterShowAllLevels;
+
+  /// Subtitle for show-all-levels switch.
+  ///
+  /// In en, this message translates to:
+  /// **'Include spells above your current max (Lvl {max})'**
+  String spellFilterShowAllLevelsHint(int max);
+
+  /// Cantrip chip label in level filter.
+  ///
+  /// In en, this message translates to:
+  /// **'Cantrip'**
+  String get spellFilterCantrip;
+
+  /// Spell level chip label.
+  ///
+  /// In en, this message translates to:
+  /// **'Lvl {n}'**
+  String spellFilterLvl(int n);
+
+  /// Filter section: casting time.
+  ///
+  /// In en, this message translates to:
+  /// **'Casting Time'**
+  String get spellFilterSectionCastingTime;
+
+  /// Casting time filter: action.
+  ///
+  /// In en, this message translates to:
+  /// **'Action'**
+  String get spellFilterCastAction;
+
+  /// Casting time filter: bonus action.
+  ///
+  /// In en, this message translates to:
+  /// **'Bonus action'**
+  String get spellFilterCastBonus;
+
+  /// Casting time filter: reaction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reaction'**
+  String get spellFilterCastReaction;
+
+  /// Casting time filter: 1+ min.
+  ///
+  /// In en, this message translates to:
+  /// **'Longer cast (1 min+)'**
+  String get spellFilterCastLonger;
+
+  /// Filter section: spell properties.
+  ///
+  /// In en, this message translates to:
+  /// **'Properties'**
+  String get spellFilterSectionProperties;
+
+  /// Concentration checkbox label.
+  ///
+  /// In en, this message translates to:
+  /// **'Concentration'**
+  String get spellFilterConcentration;
+
+  /// Concentration checkbox subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Only spells that require concentration'**
+  String get spellFilterConcentrationHint;
+
+  /// Ritual checkbox label.
+  ///
+  /// In en, this message translates to:
+  /// **'Ritual'**
+  String get spellFilterRitual;
+
+  /// Ritual checkbox subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Only spells that can be cast as rituals'**
+  String get spellFilterRitualHint;
+
+  /// Filter section: school of magic.
+  ///
+  /// In en, this message translates to:
+  /// **'School of Magic'**
+  String get spellFilterSectionSchool;
+
+  /// Remove spell dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove spell'**
+  String get spellRemoveTitle;
+
+  /// Remove spell dialog content.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove \"{name}\" from your spell list?'**
+  String spellRemoveContent(String name);
+
+  /// Button label: spell is prepared, tap to unprepare.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepared — tap to unprepare'**
+  String get spellActionPrepared;
+
+  /// Button label: prepare spell for today.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare for today'**
+  String get spellActionPrepare;
+
+  /// Button label: add spell to character.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to character'**
+  String get spellActionAdd;
+
+  /// Button label: spell already in list, tap to remove.
+  ///
+  /// In en, this message translates to:
+  /// **'In your spell list — tap to remove'**
+  String get spellActionInList;
+
+  /// Button label: spell already in list, no remove action.
+  ///
+  /// In en, this message translates to:
+  /// **'Already in your spell list'**
+  String get spellActionAlreadyInList;
+
+  /// Info text for prepare-all class spells.
+  ///
+  /// In en, this message translates to:
+  /// **'This spell is already part of your class list and doesn\'t need to be learned.'**
+  String get spellActionClassSpellInfo;
 
   /// Currency card section header.
   ///

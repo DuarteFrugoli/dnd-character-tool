@@ -676,6 +676,15 @@ class AppLocalizationsRu extends AppLocalizations {
   String get notesTooltipDelete => 'Удалить заметку';
 
   @override
+  String get notesEmptyTitle => 'Заметок пока нет';
+
+  @override
+  String get notesEmptyHint => 'Нажмите +, чтобы создать первую заметку.';
+
+  @override
+  String get notesUntitled => 'Без названия';
+
+  @override
   String get notesDeleteTitle => 'Удалить заметку?';
 
   @override

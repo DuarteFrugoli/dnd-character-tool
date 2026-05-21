@@ -597,6 +597,15 @@
   "notesTooltipDelete": "Delete note",
   "@notesTooltipDelete": { "description": "Delete note tooltip." },
 
+  "notesEmptyTitle": "No notes yet",
+  "@notesEmptyTitle": { "description": "Notes tab empty state title." },
+
+  "notesEmptyHint": "Tap + to create your first note.",
+  "@notesEmptyHint": { "description": "Notes tab empty state subtitle." },
+
+  "notesUntitled": "Untitled",
+  "@notesUntitled": { "description": "Default title for a note with no title." },
+
   "notesDeleteTitle": "Delete note?",
   "@notesDeleteTitle": { "description": "Delete note dialog title." },
 

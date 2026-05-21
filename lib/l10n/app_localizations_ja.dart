@@ -666,6 +666,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notesTooltipDelete => 'メモの削除';
 
   @override
+  String get notesEmptyTitle => 'まだメモがありません';
+
+  @override
+  String get notesEmptyHint => '＋をタップして最初のメモを作成しましょう。';
+
+  @override
+  String get notesUntitled => '無題';
+
+  @override
   String get notesDeleteTitle => 'メモを削除しますか?';
 
   @override

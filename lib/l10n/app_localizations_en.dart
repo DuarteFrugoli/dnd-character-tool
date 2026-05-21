@@ -672,6 +672,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notesTooltipDelete => 'Delete note';
 
   @override
+  String get notesEmptyTitle => 'No notes yet';
+
+  @override
+  String get notesEmptyHint => 'Tap + to create your first note.';
+
+  @override
+  String get notesUntitled => 'Untitled';
+
+  @override
   String get notesDeleteTitle => 'Delete note?';
 
   @override

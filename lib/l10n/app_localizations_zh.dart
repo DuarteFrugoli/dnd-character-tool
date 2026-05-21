@@ -659,6 +659,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get notesTooltipDelete => '删除注释';
 
   @override
+  String get notesEmptyTitle => '暂无笔记';
+
+  @override
+  String get notesEmptyHint => '点击 + 创建您的第一条笔记。';
+
+  @override
+  String get notesUntitled => '无标题';
+
+  @override
   String get notesDeleteTitle => '删除注释？';
 
   @override

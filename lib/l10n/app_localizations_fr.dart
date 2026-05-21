@@ -679,6 +679,15 @@ class AppLocalizationsFr extends AppLocalizations {
   String get notesTooltipDelete => 'Supprimer la note';
 
   @override
+  String get notesEmptyTitle => 'Aucune note pour l\'instant';
+
+  @override
+  String get notesEmptyHint => 'Appuyez sur + pour créer votre première note.';
+
+  @override
+  String get notesUntitled => 'Sans titre';
+
+  @override
   String get notesDeleteTitle => 'Supprimer la note ?';
 
   @override

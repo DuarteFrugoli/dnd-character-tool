@@ -45,6 +45,7 @@ class _NotesTab extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
     final notifier =
         ref.read(characterDetailProvider(characterId).notifier);
     final notes = character.notes;
@@ -59,12 +60,12 @@ class _NotesTab extends ConsumerWidget {
                       size: 64, color: scheme.outlineVariant),
                   const SizedBox(height: 16),
                   Text(
-                    'No notes yet',
+                    l10n.notesEmptyTitle,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Tap + to create your first note.',
+                    l10n.notesEmptyHint,
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium
@@ -150,18 +151,20 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
   void _save() {
     final title = _titleCtrl.text.trim();
     final content = _contentCtrl.text.trim();
+    final l10n = AppLocalizations.of(context)!;
     if (title.isEmpty && content.isEmpty) {
       Navigator.pop(context);
       return;
     }
+    final effectiveTitle = title.isEmpty ? l10n.notesUntitled : title;
     if (widget.existing == null) {
       widget.notifier.addNote(CharacterNote(
-        title: title.isEmpty ? 'Untitled' : title,
+        title: effectiveTitle,
         content: content,
       ));
     } else {
       widget.notifier.updateNote(widget.existing!.copyWith(
-        title: title.isEmpty ? 'Untitled' : title,
+        title: effectiveTitle,
         content: content,
       ));
     }

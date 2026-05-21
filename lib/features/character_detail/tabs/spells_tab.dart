@@ -629,7 +629,12 @@ class _SpellcastingBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final ability = engine.spellcastingAbility.toUpperCase();
+    final ability = switch (engine.spellcastingAbility.toUpperCase()) {
+      'INT' => l10n.abilityInt,
+      'WIS' => l10n.abilityWis,
+      'CHA' => l10n.abilityCha,
+      _ => engine.spellcastingAbility.toUpperCase(),
+    };
     final modStr = engine.abilityModifier >= 0
         ? '+${engine.abilityModifier}'
         : '${engine.abilityModifier}';

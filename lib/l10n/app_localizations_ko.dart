@@ -667,6 +667,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notesTooltipDelete => '메모 삭제';
 
   @override
+  String get notesEmptyTitle => '아직 메모가 없습니다';
+
+  @override
+  String get notesEmptyHint => '+ 를 눌러 첫 번째 메모를 만드세요.';
+
+  @override
+  String get notesUntitled => '제목 없음';
+
+  @override
   String get notesDeleteTitle => '메모를 삭제하시겠습니까?';
 
   @override

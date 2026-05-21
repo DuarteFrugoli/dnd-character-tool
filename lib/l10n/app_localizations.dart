@@ -1296,6 +1296,24 @@ abstract class AppLocalizations {
   /// **'Delete note'**
   String get notesTooltipDelete;
 
+  /// Notes tab empty state title.
+  ///
+  /// In en, this message translates to:
+  /// **'No notes yet'**
+  String get notesEmptyTitle;
+
+  /// Notes tab empty state subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap + to create your first note.'**
+  String get notesEmptyHint;
+
+  /// Default title for a note with no title.
+  ///
+  /// In en, this message translates to:
+  /// **'Untitled'**
+  String get notesUntitled;
+
   /// Delete note dialog title.
   ///
   /// In en, this message translates to:

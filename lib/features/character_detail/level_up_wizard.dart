@@ -224,14 +224,16 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       _cantripsToLearn = cantripsToLearn;
       _spellsToLearn = spellsToLearn;
       _warlockSwap = warlockSwap;
-      _newFeatures = [...newFeatures, ...newSubclassFeatures];
+      _newClassFeatures = newFeatures;
+      _newSubclassFeatures = newSubclassFeatures;
     });
   }
 
   int _cantripsToLearn = 0;
   int _spellsToLearn = 0;
   bool _warlockSwap = false;
-  List<SrdClassFeature> _newFeatures = [];
+  List<SrdClassFeature> _newClassFeatures = [];
+  List<SrdClassFeature> _newSubclassFeatures = [];
 
   int get _currentPage => _pageController.hasClients
       ? _pageController.page?.round() ?? 0
@@ -411,7 +413,9 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     switch (page) {
       case _WizardPage.features:
         return _FeaturesPage(
-          features: _newFeatures,
+          classFeatures: _newClassFeatures,
+          subclassFeatures: _newSubclassFeatures,
+          subclassName: widget.character.subclass,
           srdClass: _srdClass,
           i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
@@ -541,29 +545,41 @@ class _StepIndicator extends StatelessWidget {
 
 class _FeaturesPage extends StatelessWidget {
   const _FeaturesPage({
-    required this.features,
+    required this.classFeatures,
+    required this.subclassFeatures,
     required this.srdClass,
     required this.i18n,
+    this.subclassName,
   });
-  final List<SrdClassFeature> features;
+  final List<SrdClassFeature> classFeatures;
+  final List<SrdClassFeature> subclassFeatures;
   final SrdClass? srdClass;
   final SrdI18nService i18n;
+  final String? subclassName;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final sectionStyle = theme.textTheme.labelLarge?.copyWith(
+      color: theme.colorScheme.primary,
+    );
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
         Text(
           l10n.levelUpStepFeatures,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: theme.textTheme.titleMedium,
         ),
         const SizedBox(height: 12),
-        if (features.isEmpty)
+        if (classFeatures.isEmpty && subclassFeatures.isEmpty)
           Text(l10n.levelUpNoNewFeatures)
-        else
-          ...features.map(
+        else ...[
+          if (classFeatures.isNotEmpty) ...[
+            Text(i18n.className(srdClass?.name ?? ''), style: sectionStyle),
+            const SizedBox(height: 4),
+          ],
+          ...classFeatures.map(
             (f) => Card(
               child: ExpansionTile(
                 title: Text(i18n.classFeatureName(srdClass?.name ?? '', f.name) ?? f.name),
@@ -578,6 +594,32 @@ class _FeaturesPage extends StatelessWidget {
               ),
             ),
           ),
+          if (subclassFeatures.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Text(
+              i18n.subclassName(srdClass?.name ?? '', subclassName ?? ''),
+              style: sectionStyle,
+            ),
+            const SizedBox(height: 4),
+            ...subclassFeatures.map(
+              (f) => Card(
+                child: ExpansionTile(
+                  title: Text(
+                    i18n.subclassFeatureName(srdClass?.name ?? '', subclassName ?? '', f.name) ?? f.name,
+                  ),
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                      child: Text(
+                        i18n.subclassFeatureDescription(srdClass?.name ?? '', subclassName ?? '', f.name) ?? f.description,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ],
       ],
     );
   }

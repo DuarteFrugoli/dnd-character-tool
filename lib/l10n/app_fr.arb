@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "fr",
   "appTitle": "Outil de personnage D&D",
   "charListTitle": "Personnages D&D",
@@ -489,5 +489,11 @@
   "levelUpSpellSwapNone": "Aucun",
   "levelUpSpellAlreadyKnown": "Déjà connu",
   "levelUpSpellCantripSubtitle": "{school} (tour de magie)",
-  "levelUpSpellSubtitle": "Niv {level} {school}"
+  "levelUpSpellSubtitle": "Niv {level} {school}",
+
+  "xpTrackingLabel": "Track XP",
+  "xpReadyToLevelUp": "Ready to level up!",
+  "xpLevelUpNowTitle": "Level Up?",
+  "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
+  "xpLevelUpLater": "Later"
 }

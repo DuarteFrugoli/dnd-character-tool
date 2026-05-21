@@ -203,9 +203,13 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     final clamped = level.clamp(1, 20);
+    final newXp = c.xpTrackingEnabled
+        ? levelToMinXp(clamped)
+        : c.experiencePoints;
     final updated = c.copyWith(
       level: clamped,
       proficiencyBonus: _profBonus(clamped),
+      experiencePoints: newXp,
     );
     await _save(_applySlotSync(updated));
   }
@@ -274,10 +278,15 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       spells: newSpells,
     );
 
-    // 6. Sync spell slots to new level
+    // 6. Sync XP to minimum for new level when tracking is enabled
+    if (c.xpTrackingEnabled) {
+      updated = updated.copyWith(experiencePoints: levelToMinXp(newLevel));
+    }
+
+    // 7. Sync spell slots to new level
     await _save(_applySlotSync(updated));
 
-    // 7. Sync innate spells if subclass changed
+    // 8. Sync innate spells if subclass changed
     if (result.subclassChosen != null) {
       await syncInnateSpells();
     }
@@ -806,5 +815,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(c.copyWith(experiencePoints: xp.clamp(0, 999999)));
+  }
+
+  /// Enables or disables XP tracking.
+  /// When enabling: adjusts XP to the minimum for the current level if needed.
+  Future<void> updateXpTracking(bool enabled) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    int xp = c.experiencePoints;
+    if (enabled) {
+      final minXp = levelToMinXp(c.level);
+      if (xp < minXp) xp = minXp;
+    }
+    await _save(c.copyWith(xpTrackingEnabled: enabled, experiencePoints: xp));
   }
 }

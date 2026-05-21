@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "ru",
   "appTitle": "Инструмент создания персонажей D&D",
   "charListTitle": "Персонажи D&D",
@@ -489,5 +489,11 @@
   "levelUpSpellSwapNone": "Ни одного",
   "levelUpSpellAlreadyKnown": "Уже известно",
   "levelUpSpellCantripSubtitle": "{school} (заговор)",
-  "levelUpSpellSubtitle": "Ур {level} {school}"
+  "levelUpSpellSubtitle": "Ур {level} {school}",
+
+  "xpTrackingLabel": "Track XP",
+  "xpReadyToLevelUp": "Ready to level up!",
+  "xpLevelUpNowTitle": "Level Up?",
+  "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
+  "xpLevelUpLater": "Later"
 }

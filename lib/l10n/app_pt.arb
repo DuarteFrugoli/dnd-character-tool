@@ -489,5 +489,11 @@
   "levelUpSpellSwapNone": "Nenhuma",
   "levelUpSpellAlreadyKnown": "Já conhecida",
   "levelUpSpellCantripSubtitle": "{school} (truque)",
-  "levelUpSpellSubtitle": "Nv {level} {school}"
+  "levelUpSpellSubtitle": "Nv {level} {school}",
+
+  "xpTrackingLabel": "Rastrear XP",
+  "xpReadyToLevelUp": "Pronto para subir de nível!",
+  "xpLevelUpNowTitle": "Subir de Nível?",
+  "xpLevelUpNowMessage": "Você tem XP suficiente para atingir o Nível {level}. Subir de nível agora?",
+  "xpLevelUpLater": "Depois"
 }

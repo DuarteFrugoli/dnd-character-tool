@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "ko",
   "appTitle": "D&D 캐릭터 도구",
   "charListTitle": "D&D 캐릭터",
@@ -489,5 +489,11 @@
   "levelUpSpellSwapNone": "없음",
   "levelUpSpellAlreadyKnown": "이미 습득",
   "levelUpSpellCantripSubtitle": "{school} (소마술)",
-  "levelUpSpellSubtitle": "레벨 {level} {school}"
+  "levelUpSpellSubtitle": "레벨 {level} {school}",
+
+  "xpTrackingLabel": "Track XP",
+  "xpReadyToLevelUp": "Ready to level up!",
+  "xpLevelUpNowTitle": "Level Up?",
+  "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
+  "xpLevelUpLater": "Later"
 }

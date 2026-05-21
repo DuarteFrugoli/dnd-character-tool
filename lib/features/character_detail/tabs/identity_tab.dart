@@ -612,6 +612,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                                     ?.copyWith(fontWeight: FontWeight.bold),
                               ),
                             ),
+                            if (!character.xpTrackingEnabled)
                             OutlinedButton(
                               onPressed: character.level < 20
                                   ? () => _onLevelUp(character)

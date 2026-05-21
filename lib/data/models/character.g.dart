@@ -104,6 +104,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   isPinned: json['isPinned'] as bool? ?? false,
   sortOrder: (json['sortOrder'] as num?)?.toInt() ?? 0,
+  xpTrackingEnabled: json['xpTrackingEnabled'] as bool? ?? false,
 );
 
 Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
@@ -147,6 +148,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'updatedAt': instance.updatedAt.toIso8601String(),
   'isPinned': instance.isPinned,
   'sortOrder': instance.sortOrder,
+  'xpTrackingEnabled': instance.xpTrackingEnabled,
 };
 
 const _$CreationModeEnumMap = {

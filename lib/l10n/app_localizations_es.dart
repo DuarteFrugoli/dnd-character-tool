@@ -1541,4 +1541,21 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get detailSheetAvailableSubraces => 'Subrazas';
+
+  @override
+  String get xpTrackingLabel => 'Track XP';
+
+  @override
+  String get xpReadyToLevelUp => 'Ready to level up!';
+
+  @override
+  String get xpLevelUpNowTitle => 'Level Up?';
+
+  @override
+  String xpLevelUpNowMessage(int level) {
+    return 'You have enough XP to reach Level $level. Level up now?';
+  }
+
+  @override
+  String get xpLevelUpLater => 'Later';
 }

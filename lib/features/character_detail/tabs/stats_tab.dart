@@ -47,6 +47,55 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
 
+  bool _isPendingLevelUp(Character c) {
+    if (!c.xpTrackingEnabled || c.level >= 20) return false;
+    return c.experiencePoints >= kXpThresholds[c.level];
+  }
+
+  Future<void> _addXp(int amount) async {
+    final character = widget.character;
+    if (!character.xpTrackingEnabled) return;
+    final newXp = (character.experiencePoints + amount).clamp(0, 999999);
+    if (character.level < 20) {
+      final nextThreshold = kXpThresholds[character.level];
+      if (newXp >= nextThreshold &&
+          character.experiencePoints < nextThreshold) {
+        final l10n = AppLocalizations.of(context)!;
+        final levelNow = await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l10n.xpLevelUpNowTitle),
+            content: Text(l10n.xpLevelUpNowMessage(character.level + 1)),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: Text(l10n.xpLevelUpLater),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                child: Text(l10n.tooltipLevelUp),
+              ),
+            ],
+          ),
+        );
+        if (!mounted) return;
+        // Always set XP to exactly the threshold (preserves pending state for
+        // the "No" path; for "Yes" the wizard will update level & XP afterward)
+        await _notifier.updateExperiencePoints(nextThreshold);
+        if (!mounted) return;
+        if (levelNow == true) {
+          _openLevelUpWizardSheet(
+            context,
+            widget.character,
+            widget.characterId,
+          );
+        }
+        return;
+      }
+    }
+    await _notifier.updateExperiencePoints(newXp);
+  }
+
   void _startEditing() {
     setState(() {
       _isEditing = true;
@@ -618,27 +667,62 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           // ── Progression ───────────────────────────────────────────────────
           _Section(
             title: l10n.sectionProgression,
-            child: _isEditing
-                ? _InlineField(
-                    label: l10n.statXP,
-                    controller: _xpCtrl,
-                    focusNode: _xpFocus,
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  )
-                : _XpProgressionPanel(
-                    xp: character.experiencePoints,
-                    xpAddCtrl: _xpAddCtrl,
-                    expanded: _levelTableExpanded,
-                    onToggle: () => setState(
-                      () => _levelTableExpanded = !_levelTableExpanded,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // XP Tracking toggle — always visible
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        l10n.xpTrackingLabel,
+                        style: Theme.of(context).textTheme.titleSmall,
+                      ),
                     ),
-                    onAdd: (amount) => notifier.updateExperiencePoints(
-                      character.experiencePoints + amount,
+                    Switch(
+                      value: character.xpTrackingEnabled,
+                      onChanged: (v) => notifier.updateXpTracking(v),
                     ),
-                    l10n: l10n,
-                    scheme: scheme,
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Opacity(
+                  opacity: character.xpTrackingEnabled ? 1.0 : 0.4,
+                  child: AbsorbPointer(
+                    absorbing: !character.xpTrackingEnabled,
+                    child: _isEditing
+                        ? _InlineField(
+                            label: l10n.statXP,
+                            controller: _xpCtrl,
+                            focusNode: _xpFocus,
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly,
+                            ],
+                          )
+                        : _XpProgressionPanel(
+                            xp: character.experiencePoints,
+                            xpAddCtrl: _xpAddCtrl,
+                            expanded: _levelTableExpanded,
+                            onToggle: () => setState(
+                              () =>
+                                  _levelTableExpanded = !_levelTableExpanded,
+                            ),
+                            onAdd: (amount) { _addXp(amount); },
+                            xpTrackingEnabled: character.xpTrackingEnabled,
+                            isPendingLevelUp: _isPendingLevelUp(character),
+                            onLevelUpTap: () => _openLevelUpWizardSheet(
+                              context,
+                              character,
+                              widget.characterId,
+                            ),
+                            l10n: l10n,
+                            scheme: scheme,
+                          ),
                   ),
+                ),
+              ],
+            ),
           ),
         ],
         ),
@@ -676,18 +760,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
 
 // ── XP / Progression ─────────────────────────────────────────────────────────
 
-const List<int> _kXpThresholds = [
-  0, 300, 900, 2700, 6500, 14000, 23000, 34000,
-  48000, 64000, 85000, 100000, 120000, 140000,
-  165000, 195000, 225000, 265000, 305000, 355000,
-];
-
-int _xpToLevel(int xp) {
-  for (int i = _kXpThresholds.length - 1; i >= 0; i--) {
-    if (xp >= _kXpThresholds[i]) return i + 1;
-  }
-  return 1;
-}
+// ── XP / Progression ──────────────────────────────────────────────────────────
 
 class _XpProgressionPanel extends StatelessWidget {
   const _XpProgressionPanel({
@@ -696,6 +769,9 @@ class _XpProgressionPanel extends StatelessWidget {
     required this.expanded,
     required this.onToggle,
     required this.onAdd,
+    required this.xpTrackingEnabled,
+    required this.isPendingLevelUp,
+    required this.onLevelUpTap,
     required this.l10n,
     required this.scheme,
   });
@@ -705,15 +781,18 @@ class _XpProgressionPanel extends StatelessWidget {
   final bool expanded;
   final VoidCallback onToggle;
   final void Function(int) onAdd;
+  final bool xpTrackingEnabled;
+  final bool isPendingLevelUp;
+  final VoidCallback onLevelUpTap;
   final AppLocalizations l10n;
   final ColorScheme scheme;
 
   @override
   Widget build(BuildContext context) {
-    final level = _xpToLevel(xp);
+    final level = xpToLevel(xp);
     final isMax = level >= 20;
-    final prevXp = _kXpThresholds[level - 1];
-    final nextXp = isMax ? _kXpThresholds.last : _kXpThresholds[level];
+    final prevXp = kXpThresholds[level - 1];
+    final nextXp = isMax ? kXpThresholds.last : kXpThresholds[level];
     final progress = isMax
         ? 1.0
         : (xp - prevXp) / (nextXp - prevXp).toDouble();
@@ -768,9 +847,22 @@ class _XpProgressionPanel extends StatelessWidget {
                 ),
           ),
         ],
-        const SizedBox(height: 12),
-        // Quick-add XP row
-        Row(
+        // Pending level-up CTA
+        if (isPendingLevelUp) ...[
+          const SizedBox(height: 12),
+          FilledButton.icon(
+            onPressed: onLevelUpTap,
+            icon: const Icon(Icons.upgrade),
+            label: Text(l10n.xpReadyToLevelUp),
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(40),
+            ),
+          ),
+        ],
+        // Quick-add XP row (hidden while pending)
+        if (!isPendingLevelUp) ...[
+          const SizedBox(height: 12),
+          Row(
           children: [
             IconButton.outlined(
               icon: const Icon(Icons.remove, size: 16),
@@ -821,7 +913,8 @@ class _XpProgressionPanel extends StatelessWidget {
               ),
             ),
           ],
-        ),
+          ),
+        ],
         const SizedBox(height: 8),
         // Level table toggle
         TextButton.icon(
@@ -841,7 +934,7 @@ class _XpProgressionPanel extends StatelessWidget {
           const SizedBox(height: 8),
           ...List.generate(20, (i) {
             final lvl = i + 1;
-            final threshold = _kXpThresholds[i];
+            final threshold = kXpThresholds[i];
             final isCurrent = level == lvl;
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),

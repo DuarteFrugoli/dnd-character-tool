@@ -55,6 +55,7 @@ class Character {
   final DateTime updatedAt;
   final bool isPinned;
   final int sortOrder;
+  final bool xpTrackingEnabled;
 
   const Character({
     required this.id,
@@ -97,6 +98,7 @@ class Character {
     required this.updatedAt,
     this.isPinned = false,
     this.sortOrder = 0,
+    this.xpTrackingEnabled = false,
   });
 
   /// Passive perception = 10 + perception modifier
@@ -154,6 +156,7 @@ class Character {
     DateTime? updatedAt,
     bool? isPinned,
     int? sortOrder,
+    bool? xpTrackingEnabled,
   }) {
     return Character(
       id: id ?? this.id,
@@ -197,6 +200,7 @@ class Character {
       updatedAt: updatedAt ?? this.updatedAt,
       isPinned: isPinned ?? this.isPinned,
       sortOrder: sortOrder ?? this.sortOrder,
+      xpTrackingEnabled: xpTrackingEnabled ?? this.xpTrackingEnabled,
     );
   }
 

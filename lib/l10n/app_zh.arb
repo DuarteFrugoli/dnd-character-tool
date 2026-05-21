@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "zh",
   "appTitle": "D&D 角色工具",
   "charListTitle": "龙与地下城角色",
@@ -489,5 +489,11 @@
   "levelUpSpellSwapNone": "无",
   "levelUpSpellAlreadyKnown": "已知晓",
   "levelUpSpellCantripSubtitle": "{school}（戏法）",
-  "levelUpSpellSubtitle": "{level}环 {school}"
+  "levelUpSpellSubtitle": "{level}环 {school}",
+
+  "xpTrackingLabel": "Track XP",
+  "xpReadyToLevelUp": "Ready to level up!",
+  "xpLevelUpNowTitle": "Level Up?",
+  "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
+  "xpLevelUpLater": "Later"
 }

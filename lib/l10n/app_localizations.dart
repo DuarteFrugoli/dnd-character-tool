@@ -2861,6 +2861,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Subraces'**
   String get detailSheetAvailableSubraces;
+
+  /// Label for the XP tracking toggle switch.
+  ///
+  /// In en, this message translates to:
+  /// **'Track XP'**
+  String get xpTrackingLabel;
+
+  /// CTA button shown when XP reaches the next level threshold.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to level up!'**
+  String get xpReadyToLevelUp;
+
+  /// Dialog title shown when XP reaches a new level threshold.
+  ///
+  /// In en, this message translates to:
+  /// **'Level Up?'**
+  String get xpLevelUpNowTitle;
+
+  /// Dialog message shown when XP reaches a new level threshold.
+  ///
+  /// In en, this message translates to:
+  /// **'You have enough XP to reach Level {level}. Level up now?'**
+  String xpLevelUpNowMessage(int level);
+
+  /// Dialog button to postpone leveling up.
+  ///
+  /// In en, this message translates to:
+  /// **'Later'**
+  String get xpLevelUpLater;
 }
 
 class _AppLocalizationsDelegate

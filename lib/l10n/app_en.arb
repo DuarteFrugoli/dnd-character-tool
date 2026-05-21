@@ -1268,6 +1268,20 @@
   "detailSheetAvailableSubclasses": "Available {feature}",
   "@detailSheetAvailableSubclasses": { "description": "Detail sheet: available subclasses section label.", "placeholders": { "feature": { "type": "String" } } },
   "detailSheetAvailableSubraces": "Subraces",
-  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." }
+  "@detailSheetAvailableSubraces": { "description": "Detail sheet: available subraces section label." },
+
+  "xpTrackingLabel": "Track XP",
+  "@xpTrackingLabel": { "description": "Label for the XP tracking toggle switch." },
+  "xpReadyToLevelUp": "Ready to level up!",
+  "@xpReadyToLevelUp": { "description": "CTA button shown when XP reaches the next level threshold." },
+  "xpLevelUpNowTitle": "Level Up?",
+  "@xpLevelUpNowTitle": { "description": "Dialog title shown when XP reaches a new level threshold." },
+  "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
+  "@xpLevelUpNowMessage": {
+    "description": "Dialog message shown when XP reaches a new level threshold.",
+    "placeholders": { "level": { "type": "int" } }
+  },
+  "xpLevelUpLater": "Later",
+  "@xpLevelUpLater": { "description": "Dialog button to postpone leveling up." }
 }
 

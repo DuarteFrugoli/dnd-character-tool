@@ -425,6 +425,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           asiChanges: _state.asiChanges,
           featChosen: _state.featChosen,
           allFeats: _allFeats ?? [],
+          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
           onModeChanged: (m) => setState(() {
             _state = _state.copyWith(
               asiMode: m,
@@ -459,6 +460,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           onChanged: (list) =>
               setState(() => _state = _state.copyWith(cantripsLearned: list)),
           isCantrip: true,
+          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
       case _WizardPage.spells:
         final engine = _engineFor(_state.newLevel);
@@ -483,6 +485,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           swapped: _state.spellSwapped,
           onSwapChanged: (name) =>
               setState(() => _state = _state.copyWith(spellSwapped: name)),
+          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
       case _WizardPage.summary:
         return _SummaryPage(
@@ -651,6 +654,7 @@ class _AsiPage extends StatelessWidget {
     required this.asiChanges,
     required this.featChosen,
     required this.allFeats,
+    required this.i18n,
     required this.onModeChanged,
     required this.onAsiChanged,
     required this.onFeatChosen,
@@ -660,6 +664,7 @@ class _AsiPage extends StatelessWidget {
   final Map<String, int> asiChanges;
   final SrdFeat? featChosen;
   final List<SrdFeat> allFeats;
+  final SrdI18nService i18n;
   final ValueChanged<_AsiMode> onModeChanged;
   final ValueChanged<Map<String, int>> onAsiChanged;
   final ValueChanged<SrdFeat?> onFeatChosen;
@@ -672,7 +677,18 @@ class _AsiPage extends StatelessWidget {
     'wisdom',
     'charisma',
   ];
-  static const _abilityLabels = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
+
+  static String _abilityLabel(String key, AppLocalizations l10n) {
+    switch (key) {
+      case 'strength': return l10n.abilityStr;
+      case 'dexterity': return l10n.abilityDex;
+      case 'constitution': return l10n.abilityCon;
+      case 'intelligence': return l10n.abilityInt;
+      case 'wisdom': return l10n.abilityWis;
+      case 'charisma': return l10n.abilityCha;
+      default: return key;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -709,14 +725,12 @@ class _AsiPage extends StatelessWidget {
         if (mode == _AsiMode.asi) ...[
           Text(l10n.levelUpAsiPointsLeft(remaining)),
           const SizedBox(height: 8),
-          ..._abilities.asMap().entries.map((entry) {
-            final i = entry.key;
-            final attr = entry.value;
+          ..._abilities.map((attr) {
             final current = character.abilityScores[attr];
             final bonus = asiChanges[attr] ?? 0;
             final newVal = (current + bonus).clamp(1, 20);
             return ListTile(
-              title: Text(_abilityLabels[i]),
+              title: Text(_abilityLabel(attr, l10n)),
               subtitle: Text('$current → $newVal'),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -757,16 +771,27 @@ class _AsiPage extends StatelessWidget {
             },
             child: Column(
               children: allFeats.map((feat) {
-                final selected = featChosen?.name == feat.name;
+                final featName = i18n.featName(feat.name) ?? feat.name;
+                final featDesc = i18n.featDescription(feat.name) ?? feat.description;
                 return Card(
-                  child: RadioListTile<String>(
-                    title: Text(feat.name),
+                  child: ExpansionTile(
+                    leading: Radio<String>(
+                      value: feat.name,
+                    ),
+                    title: Text(featName),
                     subtitle: feat.prerequisite != null
                         ? Text(l10n.featPrerequisite(feat.prerequisite!),
                             style: const TextStyle(fontSize: 12))
                         : null,
-                    value: feat.name,
-                    selected: selected,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(featDesc),
+                        ),
+                      ),
+                    ],
                   ),
                 );
               }).toList(),
@@ -897,6 +922,7 @@ class _SpellPickPage extends StatelessWidget {
     required this.maxLevel,
     required this.onChanged,
     required this.isCantrip,
+    required this.i18n,
     this.allowSwap = false,
     this.knownSpells = const [],
     this.swapped,
@@ -909,6 +935,7 @@ class _SpellPickPage extends StatelessWidget {
   final int maxLevel;
   final ValueChanged<List<KnownSpell>> onChanged;
   final bool isCantrip;
+  final SrdI18nService i18n;
   final bool allowSwap;
   final List<KnownSpell> knownSpells;
   final String? swapped;
@@ -960,15 +987,15 @@ class _SpellPickPage extends StatelessWidget {
         ...classSpells.map((spell) {
           final knownAlready = alreadyKnown.contains(spell.name);
           final isChosen = chosenNames.contains(spell.name);
-          final canAdd = !knownAlready &&
-              !isChosen &&
-              chosen.length < toLearn;
+          final canAdd = !knownAlready && !isChosen && chosen.length < toLearn;
+          final translatedName = i18n.spellName(spell.name);
+          final translatedSchool = i18n.spellSchool(spell.school);
           return CheckboxListTile(
-            title: Text(spell.name),
+            title: Text(translatedName),
             subtitle: Text(
               isCantrip
-                  ? l10n.levelUpSpellCantripSubtitle(spell.school)
-                  : l10n.levelUpSpellSubtitle(spell.level, spell.school),
+                  ? l10n.levelUpSpellCantripSubtitle(translatedSchool)
+                  : l10n.levelUpSpellSubtitle(spell.level, translatedSchool),
               style: const TextStyle(fontSize: 12),
             ),
             value: isChosen,
@@ -991,7 +1018,17 @@ class _SpellPickPage extends StatelessWidget {
                       color: Theme.of(context).colorScheme.secondary,
                     ),
                   )
-                : null,
+                : IconButton(
+                    icon: const Icon(Icons.info_outline),
+                    onPressed: () => showModalBottomSheet<void>(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (_) => SpellDetailSheet(
+                        spell: spell,
+                        isKnown: false,
+                      ),
+                    ),
+                  ),
           );
         }),
       ],
@@ -1036,8 +1073,19 @@ class _SummaryPage extends StatelessWidget {
         text: l10n.levelUpSummaryFeat(wizardState.featChosen!.name),
       ));
     } else if (wizardState.asiChanges.isNotEmpty) {
+      String abilityLabel(String key) {
+        switch (key) {
+          case 'strength': return l10n.abilityStr;
+          case 'dexterity': return l10n.abilityDex;
+          case 'constitution': return l10n.abilityCon;
+          case 'intelligence': return l10n.abilityInt;
+          case 'wisdom': return l10n.abilityWis;
+          case 'charisma': return l10n.abilityCha;
+          default: return key;
+        }
+      }
       final parts = wizardState.asiChanges.entries
-          .map((e) => '${e.key} +${e.value}')
+          .map((e) => '${abilityLabel(e.key)} +${e.value}')
           .join(', ');
       rows.add(_SummaryRow(
         icon: Icons.bar_chart,

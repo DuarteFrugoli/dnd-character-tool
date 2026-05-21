@@ -3,18 +3,18 @@
 ## Alta Prioridade
 
 ### Sistema automático de level up
-- [ ] Criar botão "Upar Nível" na ficha do personagem
-- [ ] Aplicar aumento automático de HP ao subir de nível
-- [ ] Atualizar automaticamente o bônus de proficiência
-- [ ] Aplicar progressão automática da classe
-- [ ] Atualizar slots de magia automaticamente
-- [ ] Desbloquear recursos da classe automaticamente
-- [ ] Desbloquear recursos da subclasse automaticamente
-- [ ] Implementar escolha de:
-  - [ ] aumento de atributo
-  - [ ] talentos (feats)
-- [ ] Exibir tela/resumo das mudanças ao subir de nível
-- [ ] Melhorar experiência de level up inspirada em Baldur's Gate 3
+- [x] Criar botão "Upar Nível" na ficha do personagem
+- [x] Aplicar aumento automático de HP ao subir de nível
+- [x] Atualizar automaticamente o bônus de proficiência
+- [x] Aplicar progressão automática da classe
+- [x] Atualizar slots de magia automaticamente
+- [x] Desbloquear recursos da classe automaticamente
+- [x] Desbloquear recursos da subclasse automaticamente
+- [x] Implementar escolha de:
+  - [x] aumento de atributo
+  - [x] talentos (feats)
+- [x] Exibir tela/resumo das mudanças ao subir de nível
+- [x] Melhorar experiência de level up inspirada em Baldur's Gate 3
 
 ---
 

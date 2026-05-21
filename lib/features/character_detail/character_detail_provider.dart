@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
+import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
@@ -207,6 +208,79 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       proficiencyBonus: _profBonus(clamped),
     );
     await _save(_applySlotSync(updated));
+  }
+
+  /// Applies all decisions from the Level Up Wizard atomically.
+  Future<void> levelUp(LevelUpResult result) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+
+    final newLevel = (c.level + 1).clamp(1, 20);
+    final newProfBonus = _profBonus(newLevel);
+
+    // 1. Apply HP
+    final newMaxHp = c.hitPoints.maximum + result.hpGained;
+    final newCurrentHp = c.hitPoints.current + result.hpGained;
+
+    // 2. Apply ASI
+    var newScores = c.abilityScores;
+    for (final entry in result.asiChanges.entries) {
+      newScores = newScores.increment(entry.key, entry.value);
+    }
+
+    // 3. Apply subclass
+    final newSubclass =
+        result.subclassChosen != null ? result.subclassChosen! : c.subclass;
+
+    // 4. Apply feat
+    var newExtraFeatures = c.extraFeatures;
+    if (result.featChosen != null) {
+      final feat = result.featChosen!;
+      final alreadyHas = newExtraFeatures.any(
+        (f) => f.name == feat.name && f.sourceClass == 'Feat',
+      );
+      if (!alreadyHas) {
+        newExtraFeatures = [
+          ...newExtraFeatures,
+          CharacterExtraFeature(
+            sourceClass: 'Feat',
+            name: feat.name,
+            level: newLevel,
+            type: 'passive',
+            description: feat.description,
+          ),
+        ];
+      }
+    }
+
+    // 5. Apply spell changes
+    var newSpells = c.spells;
+    if (result.spellSwapped != null) {
+      newSpells =
+          newSpells.where((s) => s.name != result.spellSwapped).toList();
+    }
+    newSpells = [...newSpells, ...result.cantripsLearned, ...result.spellsLearned];
+
+    var updated = c.copyWith(
+      level: newLevel,
+      proficiencyBonus: newProfBonus,
+      hitPoints: c.hitPoints.copyWith(
+        maximum: newMaxHp,
+        current: newCurrentHp.clamp(0, newMaxHp),
+      ),
+      abilityScores: newScores,
+      subclass: newSubclass,
+      extraFeatures: newExtraFeatures,
+      spells: newSpells,
+    );
+
+    // 6. Sync spell slots to new level
+    await _save(_applySlotSync(updated));
+
+    // 7. Sync innate spells if subclass changed
+    if (result.subclassChosen != null) {
+      await syncInnateSpells();
+    }
   }
 
   /// Syncs `spellSlots.total` to match the class progression for the given

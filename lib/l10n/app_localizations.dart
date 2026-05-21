@@ -726,6 +726,192 @@ abstract class AppLocalizations {
   /// **'Level Up'**
   String get tooltipLevelUp;
 
+  /// Level Up wizard bottom sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Level Up'**
+  String get levelUpTitle;
+
+  /// Level Up wizard confirm button.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Level Up'**
+  String get levelUpConfirm;
+
+  /// Level Up wizard cancel button.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get levelUpCancel;
+
+  /// Level Up wizard step: new features.
+  ///
+  /// In en, this message translates to:
+  /// **'New Features'**
+  String get levelUpStepFeatures;
+
+  /// Level Up wizard step: subclass.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {feature}'**
+  String levelUpStepSubclass(String feature);
+
+  /// Level Up wizard step: ASI.
+  ///
+  /// In en, this message translates to:
+  /// **'Ability Score Improvement'**
+  String get levelUpStepAsi;
+
+  /// Level Up wizard step: HP.
+  ///
+  /// In en, this message translates to:
+  /// **'Hit Points'**
+  String get levelUpStepHp;
+
+  /// Level Up wizard step: cantrips.
+  ///
+  /// In en, this message translates to:
+  /// **'New Cantrips'**
+  String get levelUpStepCantrips;
+
+  /// Level Up wizard step: spells.
+  ///
+  /// In en, this message translates to:
+  /// **'New Spells'**
+  String get levelUpStepSpells;
+
+  /// Level Up wizard step: summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Summary'**
+  String get levelUpStepSummary;
+
+  /// Level Up wizard: no features message.
+  ///
+  /// In en, this message translates to:
+  /// **'No new class features at this level.'**
+  String get levelUpNoNewFeatures;
+
+  /// Level Up wizard HP: roll button.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll'**
+  String get levelUpHpRoll;
+
+  /// Level Up wizard HP: average button.
+  ///
+  /// In en, this message translates to:
+  /// **'Average'**
+  String get levelUpHpAverage;
+
+  /// Level Up wizard HP gained label.
+  ///
+  /// In en, this message translates to:
+  /// **'+{n} HP'**
+  String levelUpHpGained(int n);
+
+  /// Level Up wizard HP formula hint.
+  ///
+  /// In en, this message translates to:
+  /// **'d{die} + CON ({mod})'**
+  String levelUpHpFormula(int die, String mod);
+
+  /// Level Up wizard ASI: ASI option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Ability Score Improvement'**
+  String get levelUpAsiOption;
+
+  /// Level Up wizard ASI: feat option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a Feat'**
+  String get levelUpFeatOption;
+
+  /// Level Up wizard ASI: points remaining.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} point(s) remaining'**
+  String levelUpAsiPointsLeft(int n);
+
+  /// Level Up wizard spells: how many to pick.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {n} spell(s) to learn'**
+  String levelUpSpellsToLearn(int n);
+
+  /// Level Up wizard cantrips: how many to pick.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {n} cantrip(s)'**
+  String levelUpCantripsToLearn(int n);
+
+  /// Level Up wizard: Warlock spell swap section.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace a known spell (optional)'**
+  String get levelUpSpellSwap;
+
+  /// Level Up wizard: currently swapped spell label.
+  ///
+  /// In en, this message translates to:
+  /// **'Currently: {name}'**
+  String levelUpSpellSwapCurrent(String name);
+
+  /// Level Up summary: new level.
+  ///
+  /// In en, this message translates to:
+  /// **'→ Level {level}'**
+  String levelUpSummaryLevel(int level);
+
+  /// Level Up summary: HP gained.
+  ///
+  /// In en, this message translates to:
+  /// **'Max HP +{n}'**
+  String levelUpSummaryHp(int n);
+
+  /// Level Up summary: ASI changes.
+  ///
+  /// In en, this message translates to:
+  /// **'ASI: {changes}'**
+  String levelUpSummaryAsi(String changes);
+
+  /// Level Up summary: feat chosen.
+  ///
+  /// In en, this message translates to:
+  /// **'Feat: {name}'**
+  String levelUpSummaryFeat(String name);
+
+  /// Level Up summary: subclass chosen.
+  ///
+  /// In en, this message translates to:
+  /// **'Subclass: {name}'**
+  String levelUpSummarySubclass(String name);
+
+  /// Level Up summary: spells learned.
+  ///
+  /// In en, this message translates to:
+  /// **'Spells learned: {count}'**
+  String levelUpSummarySpellsLearned(int count);
+
+  /// Level Up summary: cantrips learned.
+  ///
+  /// In en, this message translates to:
+  /// **'Cantrips learned: {count}'**
+  String levelUpSummaryCantripsLearned(int count);
+
+  /// Level Up subclass step: warning when character already has a subclass.
+  ///
+  /// In en, this message translates to:
+  /// **'Current subclass: {name}'**
+  String levelUpSubclassAlreadyHas(String name);
+
+  /// Level Up: shown when character is already level 20.
+  ///
+  /// In en, this message translates to:
+  /// **'Already at maximum level (20).'**
+  String get levelUpMaxLevel;
+
   /// Subclass field label.
   ///
   /// In en, this message translates to:

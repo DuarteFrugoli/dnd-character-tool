@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/utils/spellcasting_engine.dart';
+import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import 'spell_browser_sheet.dart';
 import '../../data/datasources/srd/srd_models.dart';
@@ -23,6 +25,7 @@ part 'tabs/spells_tab.dart';
 part 'tabs/notes_tab.dart';
 part 'tabs/inventory_tab.dart';
 part 'widgets/detail_widgets.dart';
+part 'level_up_wizard.dart';
 
 // â”€â”€ Skill â†’ Ability mapping â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -150,7 +153,11 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             IconButton(
               icon: const Icon(Icons.upgrade),
               tooltip: AppLocalizations.of(context)!.tooltipLevelUp,
-              onPressed: null,
+              onPressed: () => _openLevelUpWizardSheet(
+                context,
+                character,
+                widget.characterId,
+              ),
             ),
             IconButton(
               icon: const Icon(Icons.single_bed),

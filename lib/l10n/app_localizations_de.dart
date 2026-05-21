@@ -337,6 +337,129 @@ class AppLocalizationsDe extends AppLocalizations {
   String get tooltipLevelUp => 'Aufsteigen';
 
   @override
+  String get levelUpTitle => 'Level Up';
+
+  @override
+  String get levelUpConfirm => 'Confirm Level Up';
+
+  @override
+  String get levelUpCancel => 'Cancel';
+
+  @override
+  String get levelUpStepFeatures => 'New Features';
+
+  @override
+  String levelUpStepSubclass(String feature) {
+    return 'Choose $feature';
+  }
+
+  @override
+  String get levelUpStepAsi => 'Ability Score Improvement';
+
+  @override
+  String get levelUpStepHp => 'Hit Points';
+
+  @override
+  String get levelUpStepCantrips => 'New Cantrips';
+
+  @override
+  String get levelUpStepSpells => 'New Spells';
+
+  @override
+  String get levelUpStepSummary => 'Summary';
+
+  @override
+  String get levelUpNoNewFeatures => 'No new class features at this level.';
+
+  @override
+  String get levelUpHpRoll => 'Roll';
+
+  @override
+  String get levelUpHpAverage => 'Average';
+
+  @override
+  String levelUpHpGained(int n) {
+    return '+$n HP';
+  }
+
+  @override
+  String levelUpHpFormula(int die, String mod) {
+    return 'd$die + CON ($mod)';
+  }
+
+  @override
+  String get levelUpAsiOption => 'Ability Score Improvement';
+
+  @override
+  String get levelUpFeatOption => 'Choose a Feat';
+
+  @override
+  String levelUpAsiPointsLeft(int n) {
+    return '$n point(s) remaining';
+  }
+
+  @override
+  String levelUpSpellsToLearn(int n) {
+    return 'Choose $n spell(s) to learn';
+  }
+
+  @override
+  String levelUpCantripsToLearn(int n) {
+    return 'Choose $n cantrip(s)';
+  }
+
+  @override
+  String get levelUpSpellSwap => 'Replace a known spell (optional)';
+
+  @override
+  String levelUpSpellSwapCurrent(String name) {
+    return 'Currently: $name';
+  }
+
+  @override
+  String levelUpSummaryLevel(int level) {
+    return '→ Level $level';
+  }
+
+  @override
+  String levelUpSummaryHp(int n) {
+    return 'Max HP +$n';
+  }
+
+  @override
+  String levelUpSummaryAsi(String changes) {
+    return 'ASI: $changes';
+  }
+
+  @override
+  String levelUpSummaryFeat(String name) {
+    return 'Feat: $name';
+  }
+
+  @override
+  String levelUpSummarySubclass(String name) {
+    return 'Subclass: $name';
+  }
+
+  @override
+  String levelUpSummarySpellsLearned(int count) {
+    return 'Spells learned: $count';
+  }
+
+  @override
+  String levelUpSummaryCantripsLearned(int count) {
+    return 'Cantrips learned: $count';
+  }
+
+  @override
+  String levelUpSubclassAlreadyHas(String name) {
+    return 'Current subclass: $name';
+  }
+
+  @override
+  String get levelUpMaxLevel => 'Already at maximum level (20).';
+
+  @override
   String get labelSubclass => 'Unterklasse';
 
   @override

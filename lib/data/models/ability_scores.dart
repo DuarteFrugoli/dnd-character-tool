@@ -66,6 +66,28 @@ class AbilityScores {
     );
   }
 
+  /// Returns a new [AbilityScores] with [attribute] increased by [delta],
+  /// clamped to [1, 20]. [attribute] must be the lowercase full name
+  /// (e.g. 'strength', 'dexterity'). Unknown attributes return `this`.
+  AbilityScores increment(String attribute, int delta) {
+    switch (attribute.toLowerCase()) {
+      case 'strength':
+        return copyWith(strength: (strength + delta).clamp(1, 20));
+      case 'dexterity':
+        return copyWith(dexterity: (dexterity + delta).clamp(1, 20));
+      case 'constitution':
+        return copyWith(constitution: (constitution + delta).clamp(1, 20));
+      case 'intelligence':
+        return copyWith(intelligence: (intelligence + delta).clamp(1, 20));
+      case 'wisdom':
+        return copyWith(wisdom: (wisdom + delta).clamp(1, 20));
+      case 'charisma':
+        return copyWith(charisma: (charisma + delta).clamp(1, 20));
+      default:
+        return this;
+    }
+  }
+
   factory AbilityScores.fromJson(Map<String, dynamic> json) =>
       _$AbilityScoresFromJson(json);
 

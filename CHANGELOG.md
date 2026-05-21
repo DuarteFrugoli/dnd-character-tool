@@ -9,24 +9,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [0.2.2] - 2026-05-20
+## [0.2.1] - 2026-05-21
 
 ### Added
 - **Feats SRD**: `assets/data/srd/feats.json` com os 42 talentos do SRD 5.1 (Alert → Weapon Master), incluindo pré-requisitos e descrições com bullets `•`. Traduções geradas para pt, es, fr, de, it, ja, ko, ru, zh via `translate_i18n.py`
 - **Stats tab — Dado de Vida**: exibido na seção de HP como "Dado de Vida: d10 × 5" (nível = quantidade de dados disponíveis). Usa `stepHitDieLabel` já traduzido em todos os idiomas
-
-### Fixed
-- **Dialog de subclasse não traduzido ao upar/trocar**: `_showSubclassDialog` usava nome e descrição crus do SRD em inglês. Agora recebe `SrdI18nService` e exibe nomes/descrições traduzidos; valor armazenado permanece a chave inglesa
-- **Aba de Notas exibia campos de personalidade**: bloco legado (`traits`, `ideals`, `bonds`, `flaws`, `backstory`) era renderizado na aba de Notas. Removido — esses campos pertencem exclusivamente à aba de Identidade
-- **Sincronização de imagem lista → ficha**: imagem trocada na tela de lista não atualizava na aba de Identidade sem reiniciar o app. Corrigido com `ref.listen(characterListProvider)` no `build` do `characterDetailProvider` — qualquer atualização na lista agora propaga imediatamente para a ficha aberta
-
-### Internal
-- `translate_i18n.py`: adicionado extrator `extract_feats()` e locale `pt` ao `LOCALE_LANG`
-- versionCode 8
-
----
-
-## [0.2.1] - 2026-05-19
+- **Botão Level Up no AppBar**: ícone de upgrade adicionado à barra de ações da ficha (placeholder — wizard completo em versão futura)
 
 ### Fixed
 - **i18n — nome do subclasse em inglês na criação de personagem**: `_str()`, `_nested2()` e `_nested3()` faziam lookup de campos como `subclassFeatureName` e `higherLevels` sem lowercase, mas `_lowercaseKeys()` já havia convertido todas as chaves dos JSONs de i18n. Corrigido com `.toLowerCase()` no argumento `field` dos três helpers — "Caminho Primitivo" e outros nomes agora aparecem corretamente em todos os idiomas
@@ -34,8 +22,14 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **spells_tab — `_loadSpells()` sem tratamento de erro**: chamada fire-and-forget que falhava silenciosamente em caso de erro de leitura (disco cheio, JSON corrompido). Adicionado try/catch com `debugPrint` e guard de `mounted`
 - **spells_tab — listas de magias recalculadas a cada `build()`**: `displaySpells`/`byLevel` eram reconstruídos em cada rebuild do widget (toggle de slot, mudança de HP, etc.). Movidos para estado memoizado e recalculados apenas via `didUpdateWidget` quando `character` muda
 - **character_list_provider — `catch (_)` silencioso**: erros ao resolver estado atual suprimidos sem log, dificultando diagnóstico. Adicionado `debugPrint` com stack trace
+- **Dialog de subclasse não traduzido ao upar/trocar**: `_showSubclassDialog` usava nome e descrição crus do SRD em inglês. Agora recebe `SrdI18nService` e exibe nomes/descrições traduzidos; valor armazenado permanece a chave inglesa
+- **Aba de Notas exibia campos de personalidade**: bloco legado (`traits`, `ideals`, `bonds`, `flaws`, `backstory`) era renderizado na aba de Notas. Removido — esses campos pertencem exclusivamente à aba de Identidade
+- **Sincronização de imagem lista → ficha**: imagem trocada na tela de lista não atualizava na aba de Identidade sem reiniciar o app. Corrigido com `ref.listen(characterListProvider)` no `build` do `characterDetailProvider` — qualquer atualização na lista agora propaga imediatamente para a ficha aberta
+- **i18n — armaduras com sufixo não traduzidas**: `equipmentName()` agora remove sufixos `" armor"`/`" mail"` antes de retry no mapa de i18n, corrigindo "Leather armor", "Hide armor", "Plate armor" e similares que ficavam em inglês na aba de Atributos
+- **Aviso na edição manual de nível**: texto informativo adicionado abaixo dos botões ± de nível no modo de edição
 
 ### Internal
+- `translate_i18n.py`: adicionado extrator `extract_feats()` e locale `pt` ao `LOCALE_LANG`
 - versionCode 7
 
 ---
@@ -65,7 +59,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Removido código morto: `cantripBonusDice`, `kItemType*`, `getSpellByName`, `getCantrips`, `getSpellsByLevel`, `clearCache`, `SpellSlots.remaining`
 
 ### Internal
-- versionCode 5
+- versionCode 6
 
 ---
 
@@ -85,24 +79,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [0.1.1] - 2026-05-18
 
-### Fixed
-- Android: corrected package namespace from `com.example` to `com.duartefrugoli.dnd_character_tool`, fixing crash on launch (ClassNotFoundException)
-- Android: configured release signing with upload keystore for Play Store
-
-### Internal
-- versionCode 3 (closed testing, first functional build)
-
----
-
-## [0.1.0] - 2026-05-18
-
-### Internal
-- versionCode 1–2: internal and closed testing builds with namespace bug (not distributed to users)
-
----
-
-## [1.0.0] - 2026-04-30
-
 ### Added
 - First official release
 - 7-step character creation wizard: class, race, background, skills, attributes, name and review
@@ -119,3 +95,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Android, iOS and Web support
 - Character photo: pick from gallery and crop to 1:1
 - Bilingual README (EN / PT) and proprietary LICENSE with SRD CC BY 4.0 attribution
+
+### Fixed
+- Android: corrected package namespace from `com.example` to `com.duartefrugoli.dnd_character_tool`, fixing crash on launch (ClassNotFoundException)
+- Android: configured release signing with upload keystore for Play Store
+
+### Internal
+- versionCode 3 (closed testing, first functional build)
+
+---
+
+## [0.1.0] - 2026-05-18
+
+### Internal
+- versionCode 1–2: internal and closed testing builds with namespace bug (not distributed to users)

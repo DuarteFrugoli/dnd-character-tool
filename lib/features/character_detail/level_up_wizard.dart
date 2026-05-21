@@ -1026,6 +1026,7 @@ class _SpellPickPage extends StatelessWidget {
                       builder: (_) => SpellDetailSheet(
                         spell: spell,
                         isKnown: false,
+                        readOnly: true,
                       ),
                     ),
                   ),

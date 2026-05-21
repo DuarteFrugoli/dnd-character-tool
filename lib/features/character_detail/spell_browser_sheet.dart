@@ -908,6 +908,7 @@ class SpellDetailSheet extends ConsumerWidget {
     required this.isKnown,
     this.isClassSpell = false,
     this.isPrepared = false,
+    this.readOnly = false,
     this.onAdd,
     this.onRemove,
     this.onTogglePrepared,
@@ -921,6 +922,9 @@ class SpellDetailSheet extends ConsumerWidget {
 
   /// True when the spell is currently prepared.
   final bool isPrepared;
+
+  /// When true, no add/remove action buttons are shown (info-only mode).
+  final bool readOnly;
 
   /// Null when the spell is already on the character.
   final VoidCallback? onAdd;
@@ -1118,6 +1122,7 @@ class SpellDetailSheet extends ConsumerWidget {
 
           // ── Action button ─────────────────────────────────────────────────
           const SizedBox(height: 24),
+          if (!readOnly) ...[
           if (isClassSpell) ...[
             // Prepare-all class: show info + prepare/unprepare toggle
             Container(
@@ -1177,6 +1182,7 @@ class SpellDetailSheet extends ConsumerWidget {
                   : null,
             ),
           ],
+          ], // end if (!readOnly)
         ],
       ),
     );

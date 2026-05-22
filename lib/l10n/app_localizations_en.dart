@@ -39,7 +39,14 @@ class AppLocalizationsEn extends AppLocalizations {
       'Unexpected error while importing. Please try again.';
 
   @override
-  String get importErrorInvalidJson => 'The pasted text is not valid JSON.';
+  String get importErrorInvalidJson => 'The pasted JSON is not valid.';
+
+  @override
+  String get importErrorInvalidToken =>
+      'Invalid token. It may be corrupted or from an incompatible version.';
+
+  @override
+  String get importFieldLockedHint => 'Clear the other field to use this one.';
 
   @override
   String get importErrorNotObject => 'Invalid format: expected a JSON object.';
@@ -1557,6 +1564,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importJsonHint => 'Paste JSON here…';
+
+  @override
+  String get importPickFile => 'Pick .dndchar file';
+
+  @override
+  String get importFileError => 'Invalid or corrupted .dndchar file';
+
+  @override
+  String get importFileIncoming => 'Import character from file?';
 
   @override
   String get dialogImport => 'Import';

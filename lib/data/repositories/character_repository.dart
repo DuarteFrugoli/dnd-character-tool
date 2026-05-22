@@ -97,6 +97,19 @@ class CharacterRepository {
     return character;
   }
 
+  Future<Character> importFromDndCharFile(String fileJson) async {
+    final imported = await _local.importFromDndCharFile(fileJson);
+
+    final character = imported.copyWith(
+      id: _generateId(),
+      createdAt: DateTime.now(),
+      updatedAt: DateTime.now(),
+    );
+
+    await _local.save(character);
+    return character;
+  }
+
   String _generateId() {
     // UUID v4 simples sem dependência extra.
     final now = DateTime.now().microsecondsSinceEpoch;

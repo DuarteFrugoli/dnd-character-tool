@@ -119,6 +119,14 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     return character;
   }
 
+  Future<Character> importCharacterFromFile(String fileJson) async {
+    final character = await ref
+        .read(characterRepositoryProvider)
+        .importFromDndCharFile(fileJson);
+    await updateSingle(character);
+    return character;
+  }
+
   Future<void> rename(String id, String newName) async {
     final trimmed = newName.trim();
     if (trimmed.isEmpty) return;

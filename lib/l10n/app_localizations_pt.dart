@@ -40,7 +40,14 @@ class AppLocalizationsPt extends AppLocalizations {
       'Erro inesperado ao importar. Tente novamente.';
 
   @override
-  String get importErrorInvalidJson => 'O texto colado não é um JSON válido.';
+  String get importErrorInvalidJson => 'O JSON colado não é válido.';
+
+  @override
+  String get importErrorInvalidToken =>
+      'Token inválido. Pode estar corrompido ou ser de uma versão incompatível.';
+
+  @override
+  String get importFieldLockedHint => 'Limpe o outro campo para usar este.';
 
   @override
   String get importErrorNotObject =>
@@ -1567,6 +1574,15 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get importJsonHint => 'Cole o JSON aqui…';
+
+  @override
+  String get importPickFile => 'Escolher arquivo .dndchar';
+
+  @override
+  String get importFileError => 'Arquivo .dndchar inválido ou corrompido';
+
+  @override
+  String get importFileIncoming => 'Importar personagem do arquivo?';
 
   @override
   String get dialogImport => 'Importar';

@@ -38,7 +38,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get charListImportError => '导入时出现意外错误。请再试一次。';
 
   @override
-  String get importErrorInvalidJson => '粘贴的文本不是有效的 JSON。';
+  String get importErrorInvalidJson => '粘贴的JSON无效。';
+
+  @override
+  String get importErrorInvalidToken => '无效的令牌。它可能已损坏或来自不兼容的版本。';
+
+  @override
+  String get importFieldLockedHint => '清除另一个字段才能使用此字段。';
 
   @override
   String get importErrorNotObject => '格式无效：需要 JSON 对象。';
@@ -1534,6 +1540,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get importJsonHint => '在此粘贴JSON…';
+
+  @override
+  String get importPickFile => '选择 .dndchar 文件';
+
+  @override
+  String get importFileError => '无效或损坏的 .dndchar 文件';
+
+  @override
+  String get importFileIncoming => '从文件导入角色？';
 
   @override
   String get dialogImport => '导入';

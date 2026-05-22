@@ -38,7 +38,14 @@ class AppLocalizationsJa extends AppLocalizations {
   String get charListImportError => 'インポート中に予期しないエラーが発生しました。もう一度試してください。';
 
   @override
-  String get importErrorInvalidJson => '貼り付けたテキストは有効なJSONではありません。';
+  String get importErrorInvalidJson => '貼り付けたJSONが無効です。';
+
+  @override
+  String get importErrorInvalidToken =>
+      'トークンが無効です。破損しているか、互換性のないバージョンの可能性があります。';
+
+  @override
+  String get importFieldLockedHint => 'このフィールドを使用するには、もう一方をクリアしてください。';
 
   @override
   String get importErrorNotObject => '無効な形式です：JSONオブジェクトが予期されます。';
@@ -1542,6 +1549,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get importJsonHint => 'ここにJSONを貼り付け…';
+
+  @override
+  String get importPickFile => '.dndcharファイルを選択';
+
+  @override
+  String get importFileError => '無効または破損した.dndcharファイル';
+
+  @override
+  String get importFileIncoming => 'ファイルからキャラクターをインポートしますか？';
 
   @override
   String get dialogImport => 'インポート';

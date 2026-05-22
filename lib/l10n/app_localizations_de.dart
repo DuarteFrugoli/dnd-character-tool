@@ -40,8 +40,15 @@ class AppLocalizationsDe extends AppLocalizations {
       'Unerwarteter Fehler beim Importieren. Bitte versuchen Sie es erneut.';
 
   @override
-  String get importErrorInvalidJson =>
-      'Der eingefügte Text ist kein gültiges JSON.';
+  String get importErrorInvalidJson => 'Das eingefügte JSON ist nicht gültig.';
+
+  @override
+  String get importErrorInvalidToken =>
+      'Ungültiges Token. Es ist möglicherweise beschädigt oder von einer inkompatiblen Version.';
+
+  @override
+  String get importFieldLockedHint =>
+      'Leere das andere Feld, um dieses zu verwenden.';
 
   @override
   String get importErrorNotObject => 'Ungültiges Format: JSON-Objekt erwartet.';
@@ -1567,6 +1574,15 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get importJsonHint => 'JSON hier einfügen…';
+
+  @override
+  String get importPickFile => '.dndchar-Datei auswählen';
+
+  @override
+  String get importFileError => 'Ungültige oder beschädigte .dndchar-Datei';
+
+  @override
+  String get importFileIncoming => 'Charakter aus Datei importieren?';
 
   @override
   String get dialogImport => 'Importieren';

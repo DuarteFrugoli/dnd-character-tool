@@ -38,7 +38,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get charListImportError => '가져오는 동안 예상치 못한 오류가 발생했습니다. 다시 시도해 주세요.';
 
   @override
-  String get importErrorInvalidJson => '붙여넣은 텍스트가 유효한 JSON가 아닙니다.';
+  String get importErrorInvalidJson => '붙여넣은 JSON이 유효하지 않습니다.';
+
+  @override
+  String get importErrorInvalidToken =>
+      '유효하지 않은 토큰입니다. 손상되었거나 호환되지 않는 버전일 수 있습니다.';
+
+  @override
+  String get importFieldLockedHint => '이 필드를 사용하려면 다른 필드를 지우세요.';
 
   @override
   String get importErrorNotObject => '잘못된 형식: JSON 개체가 예상됩니다.';
@@ -1543,6 +1550,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get importJsonHint => '여기에 JSON 붙여넣기…';
+
+  @override
+  String get importPickFile => '.dndchar 파일 선택';
+
+  @override
+  String get importFileError => '잘못되거나 손상된 .dndchar 파일';
+
+  @override
+  String get importFileIncoming => '파일에서 캐릭터를 가져오시겠습니까?';
 
   @override
   String get dialogImport => '가져오기';

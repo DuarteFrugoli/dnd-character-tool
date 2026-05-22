@@ -9,6 +9,27 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.3.2] - 2026-05-22
+
+### Added
+- **Export — formato `.dndchar`**: exportar personagem (incluindo foto) para um arquivo `.dndchar` portátil, compartilhável via sistema de arquivos, WhatsApp, e-mail etc. (Android e iOS)
+- **Export — Token de compartilhamento**: token compacto e URL-safe gerado a partir dos dados do personagem para compartilhamento rápido via copia/cola
+- **Import — exclusividade mútua**: preencher o campo de token desabilita o campo JSON e vice-versa, evitando entrada ambígua
+- **Import — dica de campo bloqueado**: tocar num campo bloqueado exibe uma mensagem explicativa fixada no fundo do dialog
+- **Import — erros contextuais**: mensagens de erro distintas para "token inválido" vs. "JSON inválido"; `importErrorInvalidToken` e `importFieldLockedHint` adicionados aos 10 idiomas
+
+### Fixed
+- **Import — erro sempre dizia "JSON inválido"** mesmo quando o token era inválido; corrigido com source tagging via Dart record `({String json, String source})`
+- **Import — race condition na dica de campo bloqueado**: `Future.delayed` acumulado substituído por `Timer` cancelável; duração agora consistente
+- **Export — performance**: codificação base64 e serialização JSON movidas para isolate via `compute()`, evitando jank na UI em personagens com foto grande
+- **i18n**: filtro de magias, botões de ação, tooltip de inventário, chip de HP temporário, abreviação de habilidade de conjuração, estado vazio de Notas e features de classe/subclasse no Level Up Wizard agora traduzidos corretamente em todos os 10 idiomas
+
+### Internal
+- Suporte a abertura de `.dndchar` via Android `MethodChannel` (`dnd.character/file_import`) e iOS `SceneDelegate`
+- `importErrorInvalidJson` e `importErrorInvalidToken` são agora chaves l10n distintas em todos os 10 locales
+
+---
+
 ## [0.3.1] - 2026-05-21
 
 ### Added

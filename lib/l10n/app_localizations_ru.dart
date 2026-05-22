@@ -40,8 +40,15 @@ class AppLocalizationsRu extends AppLocalizations {
       'Непредвиденная ошибка при импорте. Пожалуйста, попробуйте еще раз.';
 
   @override
-  String get importErrorInvalidJson =>
-      'Вставленный текст не является допустимым JSON.';
+  String get importErrorInvalidJson => 'Вставленный JSON недопустим.';
+
+  @override
+  String get importErrorInvalidToken =>
+      'Недействительный токен. Он может быть повреждён или от несовместимой версии.';
+
+  @override
+  String get importFieldLockedHint =>
+      'Очистите другое поле, чтобы использовать это.';
 
   @override
   String get importErrorNotObject => 'Неверный формат: ожидался объект JSON.';
@@ -1567,6 +1574,15 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get importJsonHint => 'Вставьте JSON здесь…';
+
+  @override
+  String get importPickFile => 'Выбрать файл .dndchar';
+
+  @override
+  String get importFileError => 'Недопустимый или повреждённый файл .dndchar';
+
+  @override
+  String get importFileIncoming => 'Импортировать персонажа из файла?';
 
   @override
   String get dialogImport => 'Импорт';

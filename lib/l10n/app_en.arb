@@ -30,8 +30,12 @@
   "charListImportError": "Unexpected error while importing. Please try again.",
   "@charListImportError": { "description": "Generic import error snackbar." },
 
-  "importErrorInvalidJson": "The pasted text is not valid JSON.",
-  "@importErrorInvalidJson": { "description": "Import error: not valid JSON." },
+  "importErrorInvalidJson": "The pasted JSON is not valid.",
+  "@importErrorInvalidJson": { "description": "Import error: pasted JSON is not valid." },
+  "importErrorInvalidToken": "Invalid token. It may be corrupted or from an incompatible version.",
+  "@importErrorInvalidToken": { "description": "Import error: the token is not valid." },
+  "importFieldLockedHint": "Clear the other field to use this one.",
+  "@importFieldLockedHint": { "description": "Hint shown when tapping a disabled input field during import." },
 
   "importErrorNotObject": "Invalid format: expected a JSON object.",
   "@importErrorNotObject": { "description": "Import error: expected object." },
@@ -1284,6 +1288,12 @@
   "@importUseJson": { "description": "Import dialog: expand JSON section label." },
   "importJsonHint": "Paste JSON here…",
   "@importJsonHint": { "description": "Import dialog: JSON text field hint." },
+  "importPickFile": "Pick .dndchar file",
+  "@importPickFile": { "description": "Import dialog: button to open a .dndchar file from storage." },
+  "importFileError": "Invalid or corrupted .dndchar file",
+  "@importFileError": { "description": "Import dialog: error shown when picked file is invalid." },
+  "importFileIncoming": "Import character from file?",
+  "@importFileIncoming": { "description": "Confirmation dialog title when app is opened with a .dndchar file." },
   "dialogImport": "Import",
   "@dialogImport": { "description": "Import dialog: import button." },
 

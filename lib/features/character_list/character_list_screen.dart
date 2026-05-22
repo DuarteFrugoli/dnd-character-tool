@@ -1,6 +1,8 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +11,8 @@ import 'package:share_plus/share_plus.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../core/services/incoming_file_service.dart';
 
 import 'character_list_provider.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
@@ -20,35 +24,128 @@ import '../../shared/widgets/character_avatar.dart';
 String _buildToken(String json) =>
     base64Url.encode(GZipCodec().encode(utf8.encode(json)));
 
-class CharacterListScreen extends ConsumerWidget {
+class CharacterListScreen extends ConsumerStatefulWidget {
   const CharacterListScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(characterListProvider);
+  ConsumerState<CharacterListScreen> createState() => _CharacterListScreenState();
+}
+
+class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
+  StreamSubscription<String>? _fileSub;
+
+  @override
+  void initState() {
+    super.initState();
+    _fileSub = IncomingFileService.instance.fileStream.listen(_handleIncomingFile);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      IncomingFileService.instance.checkPendingFile();
+    });
+  }
+
+  @override
+  void dispose() {
+    _fileSub?.cancel();
+    super.dispose();
+  }
+
+  Future<void> _handleIncomingFile(String fileJson) async {
+    if (!mounted) return;
     final l10n = AppLocalizations.of(context)!;
-
-    Future<void> importCharacter() async {
-      final result = await showDialog<String>(
-        context: context,
-        builder: (ctx) => const _ImportDialog(),
-      );
-
-      if (result == null || result.isEmpty || !context.mounted) return;
-      try {
-        final character =
-            await ref.read(characterListProvider.notifier).importCharacter(result);
-        if (!context.mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.charListImportedSuccess(character.name)),
-            backgroundColor: Theme.of(context).colorScheme.primary,
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.importFileIncoming),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(l10n.dialogCancel),
           ),
-        );
-      } on FormatException catch (e) {
-        if (!context.mounted) return;
-        final msg = switch (e.message) {
-          'invalid_json' => l10n.importErrorInvalidJson,
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(l10n.dialogImport),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+    await _importFromFileJson(fileJson);
+  }
+
+  Future<void> _importFromFileJson(String fileJson) async {
+    if (!mounted) return;
+    final l10n = AppLocalizations.of(context)!;
+    try {
+      final character = await ref
+          .read(characterListProvider.notifier)
+          .importCharacterFromFile(fileJson);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.charListImportedSuccess(character.name)),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+        ),
+      );
+    } on FormatException catch (e) {
+      if (!mounted) return;
+      final msg = switch (e.message) {
+        'invalid_json' => l10n.importErrorInvalidJson,
+        'not_object' => l10n.importErrorNotObject,
+        'missing_character' => l10n.importErrorMissingCharacter,
+        'corrupted_character' => l10n.importErrorCorruptedCharacter,
+        _ => l10n.charListImportError,
+      };
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(msg),
+          backgroundColor: Theme.of(context).colorScheme.error,
+        ),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.charListImportError),
+          backgroundColor: Theme.of(context).colorScheme.error,
+        ),
+      );
+    }
+  }
+
+  Future<void> _importCharacter() async {
+    final l10n = AppLocalizations.of(context)!;
+    final result = await showDialog<({String json, String source})>(
+      context: context,
+      builder: (ctx) => _ImportDialog(
+        onFileImported: (character) {
+          if (!mounted) return;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l10n.charListImportedSuccess(character.name)),
+              backgroundColor: Theme.of(context).colorScheme.primary,
+            ),
+          );
+        },
+      ),
+    );
+
+    if (result == null || !mounted) return;
+    try {
+      final character =
+          await ref.read(characterListProvider.notifier).importCharacter(result.json);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.charListImportedSuccess(character.name)),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+        ),
+      );
+    } on FormatException catch (e) {
+      if (!mounted) return;
+      final msg = switch (e.message) {
+          'invalid_json' => result.source == 'token'
+              ? l10n.importErrorInvalidToken
+              : l10n.importErrorInvalidJson,
           'not_object' => l10n.importErrorNotObject,
           'missing_character' => l10n.importErrorMissingCharacter,
           'corrupted_character' => l10n.importErrorCorruptedCharacter,
@@ -60,8 +157,8 @@ class CharacterListScreen extends ConsumerWidget {
             backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
-      } catch (e) {
-        if (!context.mounted) return;
+      } catch (_) {
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(l10n.charListImportError),
@@ -69,7 +166,12 @@ class CharacterListScreen extends ConsumerWidget {
           ),
         );
       }
-    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final state = ref.watch(characterListProvider);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
@@ -77,7 +179,7 @@ class CharacterListScreen extends ConsumerWidget {
         actions: [
           IconButton(
             tooltip: l10n.charListImportTooltip,
-            onPressed: importCharacter,
+            onPressed: _importCharacter,
             icon: const Icon(Icons.upload_file),
           ),
           IconButton(
@@ -524,130 +626,222 @@ class _ExportDialogState extends State<_ExportDialog> {
 
 // ── Import Dialog ─────────────────────────────────────────────────────────────
 
-class _ImportDialog extends StatefulWidget {
-  const _ImportDialog();
+class _ImportDialog extends ConsumerStatefulWidget {
+  const _ImportDialog({required this.onFileImported});
+
+  final void Function(Character character) onFileImported;
 
   @override
-  State<_ImportDialog> createState() => _ImportDialogState();
+  ConsumerState<_ImportDialog> createState() => _ImportDialogState();
 }
 
-class _ImportDialogState extends State<_ImportDialog> {
+class _ImportDialogState extends ConsumerState<_ImportDialog> {
   final _tokenCtrl = TextEditingController();
   final _jsonCtrl = TextEditingController();
   bool _jsonExpanded = false;
+  bool _pickingFile = false;
+  bool _lockedHintVisible = false;
+  Timer? _lockedHintTimer;
 
   @override
   void dispose() {
+    _lockedHintTimer?.cancel();
     _tokenCtrl.dispose();
     _jsonCtrl.dispose();
     super.dispose();
   }
 
-  String? _resolveInput() {
+  ({String json, String source})? _resolveInput() {
     final token = _tokenCtrl.text.trim();
-    final json = _jsonCtrl.text.trim();
+    final rawJson = _jsonCtrl.text.trim();
     if (token.isNotEmpty) {
       try {
         final bytes = base64Url.decode(base64Url.normalize(token));
-        // Try gzip decompress (new format), fall back to raw UTF-8 (old format)
-        try {
-          return utf8.decode(GZipCodec().decode(bytes));
-        } catch (_) {
-          return utf8.decode(bytes);
-        }
+        return (json: utf8.decode(GZipCodec().decode(bytes)), source: 'token');
       } catch (_) {
-        // Token inválido → tenta o JSON como fallback
-        if (json.isNotEmpty) return json;
         return null;
       }
     }
-    if (json.isNotEmpty) return json;
+    if (rawJson.isNotEmpty) return (json: rawJson, source: 'json');
     return null;
+  }
+
+  void _showLockedHint() {
+    _lockedHintTimer?.cancel();
+    setState(() => _lockedHintVisible = true);
+    _lockedHintTimer = Timer(const Duration(seconds: 2), () {
+      if (mounted) setState(() => _lockedHintVisible = false);
+    });
+  }
+
+  Future<void> _pickFile(BuildContext ctx) async {
+    setState(() => _pickingFile = true);
+    try {
+      final result = await FilePicker.platform.pickFiles(
+        type: FileType.any,
+        allowMultiple: false,
+      );
+      if (result == null || result.files.isEmpty) return;
+      final path = result.files.single.path;
+      if (path == null || !path.endsWith('.dndchar')) {
+        if (!ctx.mounted) return;
+        ScaffoldMessenger.of(ctx).showSnackBar(
+          SnackBar(
+            content: Text(AppLocalizations.of(ctx)!.importFileError),
+            backgroundColor: Theme.of(ctx).colorScheme.error,
+          ),
+        );
+        return;
+      }
+      final fileJson = await File(path).readAsString();
+      if (!ctx.mounted) return;
+      final character = await ref
+          .read(characterListProvider.notifier)
+          .importCharacterFromFile(fileJson);
+      if (!ctx.mounted) return;
+      Navigator.pop(ctx);
+      widget.onFileImported(character);
+    } on FormatException {
+      if (!ctx.mounted) return;
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        SnackBar(
+          content: Text(AppLocalizations.of(ctx)!.importFileError),
+          backgroundColor: Theme.of(ctx).colorScheme.error,
+        ),
+      );
+    } catch (_) {
+      if (!ctx.mounted) return;
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        SnackBar(
+          content: Text(AppLocalizations.of(ctx)!.importFileError),
+          backgroundColor: Theme.of(ctx).colorScheme.error,
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _pickingFile = false);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+    final tokenHasContent = _tokenCtrl.text.isNotEmpty;
+    final jsonHasContent = _jsonCtrl.text.isNotEmpty;
     return AlertDialog(
-      title: Text(AppLocalizations.of(context)!.importDialogTitle),
+      title: Text(l10n.importDialogTitle),
       content: SizedBox(
         width: 520,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // ── Token (primary) ──────────────────────────────────────────
-              Text(AppLocalizations.of(context)!.exportLabelToken, style: Theme.of(context).textTheme.labelLarge),
-              const SizedBox(height: 6),
-              TextField(
-                controller: _tokenCtrl,
-                autofocus: true,
-                decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.importTokenHint,
-                  border: const OutlineInputBorder(),
-                  isDense: true,
-                ),
-                onChanged: (_) => setState(() {}),
-              ),
-              const SizedBox(height: 16),
-              // ── JSON (secondary, expandable) ─────────────────────────────
-              InkWell(
-                onTap: () => setState(() => _jsonExpanded = !_jsonExpanded),
-                borderRadius: BorderRadius.circular(6),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Row(
-                    children: [
-                      Icon(
-                        _jsonExpanded
-                            ? Icons.keyboard_arrow_up
-                            : Icons.keyboard_arrow_down,
-                        size: 18,
-                        color: scheme.onSurfaceVariant,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Flexible(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // ── Token (primary) ──────────────────────────────────
+                    Text(l10n.exportLabelToken, style: Theme.of(context).textTheme.labelLarge),
+                    const SizedBox(height: 6),
+                    GestureDetector(
+                      onTap: jsonHasContent ? _showLockedHint : null,
+                      child: TextField(
+                        controller: _tokenCtrl,
+                        autofocus: true,
+                        enabled: !jsonHasContent,
+                        decoration: InputDecoration(
+                          hintText: l10n.importTokenHint,
+                          border: const OutlineInputBorder(),
+                          isDense: true,
+                        ),
+                        onChanged: (_) => setState(() {}),
                       ),
-                      const SizedBox(width: 4),
-                      Text(
-                        AppLocalizations.of(context)!.importUseJson,
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelMedium
-                            ?.copyWith(color: scheme.onSurfaceVariant),
+                    ),
+                    const SizedBox(height: 16),
+                    // ── File (secondary) ─────────────────────────────────
+                    OutlinedButton.icon(
+                      onPressed: _pickingFile ? null : () => _pickFile(context),
+                      icon: _pickingFile
+                          ? const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : const Icon(Icons.folder_open, size: 18),
+                      label: Text(l10n.importPickFile),
+                    ),
+                    const SizedBox(height: 8),
+                    // ── JSON (tertiary, expandable) ───────────────────────
+                    InkWell(
+                      onTap: () => setState(() => _jsonExpanded = !_jsonExpanded),
+                      borderRadius: BorderRadius.circular(6),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: Row(
+                          children: [
+                            Icon(
+                              _jsonExpanded
+                                  ? Icons.keyboard_arrow_up
+                                  : Icons.keyboard_arrow_down,
+                              size: 18,
+                              color: scheme.onSurfaceVariant,
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              l10n.importUseJson,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelMedium
+                                  ?.copyWith(color: scheme.onSurfaceVariant),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    if (_jsonExpanded) ...[
+                      const SizedBox(height: 6),
+                      GestureDetector(
+                        onTap: tokenHasContent ? _showLockedHint : null,
+                        child: TextField(
+                          controller: _jsonCtrl,
+                          maxLines: 8,
+                          enabled: !tokenHasContent,
+                          decoration: InputDecoration(
+                            hintText: l10n.importJsonHint,
+                            border: const OutlineInputBorder(),
+                          ),
+                          onChanged: (_) => setState(() {}),
+                        ),
                       ),
                     ],
-                  ),
+                  ],
                 ),
               ),
-              if (_jsonExpanded) ...[
-                const SizedBox(height: 6),
-                TextField(
-                  controller: _jsonCtrl,
-                  maxLines: 8,
-                  decoration: InputDecoration(
-                    hintText: AppLocalizations.of(context)!.importJsonHint,
-                    border: const OutlineInputBorder(),
-                  ),
-                  onChanged: (_) => setState(() {}),
-                ),
-              ],
+            ),
+            if (_lockedHintVisible) ...[
+              const SizedBox(height: 8),
+              Text(
+                l10n.importFieldLockedHint,
+                style: TextStyle(fontSize: 12, color: scheme.onSurfaceVariant),
+              ),
             ],
-          ),
+          ],
         ),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(AppLocalizations.of(context)!.dialogCancel),
+          child: Text(l10n.dialogCancel),
         ),
         FilledButton(
           onPressed: _resolveInput() != null
               ? () => Navigator.pop(context, _resolveInput())
               : null,
-          child: Text(AppLocalizations.of(context)!.dialogImport),
+          child: Text(l10n.dialogImport),
         ),
       ],
     );
   }
 }
-
-

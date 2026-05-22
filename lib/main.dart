@@ -5,12 +5,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/locale/locale_provider.dart';
 import 'core/router/app_router.dart';
+import 'core/services/incoming_file_service.dart';
 import 'core/theme/app_themes.dart';
 import 'core/theme/theme_provider.dart';
 import 'l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  IncomingFileService.instance.initialize();
 
   // Load persisted theme and locale before first frame — no flash.
   final prefs = await SharedPreferences.getInstance();

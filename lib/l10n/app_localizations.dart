@@ -168,11 +168,23 @@ abstract class AppLocalizations {
   /// **'Unexpected error while importing. Please try again.'**
   String get charListImportError;
 
-  /// Import error: not valid JSON.
+  /// Import error: pasted JSON is not valid.
   ///
   /// In en, this message translates to:
-  /// **'The pasted text is not valid JSON.'**
+  /// **'The pasted JSON is not valid.'**
   String get importErrorInvalidJson;
+
+  /// Import error: the token is not valid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid token. It may be corrupted or from an incompatible version.'**
+  String get importErrorInvalidToken;
+
+  /// Hint shown when tapping a disabled input field during import.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear the other field to use this one.'**
+  String get importFieldLockedHint;
 
   /// Import error: expected object.
   ///
@@ -2897,6 +2909,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Paste JSON here…'**
   String get importJsonHint;
+
+  /// Import dialog: button to open a .dndchar file from storage.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick .dndchar file'**
+  String get importPickFile;
+
+  /// Import dialog: error shown when picked file is invalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid or corrupted .dndchar file'**
+  String get importFileError;
+
+  /// Confirmation dialog title when app is opened with a .dndchar file.
+  ///
+  /// In en, this message translates to:
+  /// **'Import character from file?'**
+  String get importFileIncoming;
 
   /// Import dialog: import button.
   ///

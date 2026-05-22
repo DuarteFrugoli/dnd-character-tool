@@ -1,6 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
+import 'package:path_provider/path_provider.dart';
+
 import 'storage_backend_stub.dart'
     if (dart.library.io) 'storage_backend_native.dart'
     if (dart.library.js_interop) 'storage_backend_web.dart';
@@ -95,30 +98,27 @@ class CharacterLocalDataSource {
   }
 
   Future<String> exportToFileJson(Character character) async {
-    String? imageData;
-    String? imageMimeType;
+    Uint8List? bytes;
+    String? mimeType;
 
     if (character.imagePath != null) {
       final absolutePath = await resolveImagePath(character.imagePath);
       if (absolutePath != null) {
         final file = File(absolutePath);
         if (await file.exists()) {
-          final bytes = await file.readAsBytes();
-          imageData = base64Encode(bytes);
+          bytes = await file.readAsBytes();
           final ext = absolutePath.split('.').last.toLowerCase();
-          imageMimeType = ext == 'png' ? 'image/png' : 'image/jpeg';
+          mimeType = ext == 'png' ? 'image/png' : 'image/jpeg';
         }
       }
     }
 
-    final payload = <String, dynamic>{
-      'version': '1.0',
-      'exportedAt': DateTime.now().toIso8601String(),
-      'imageData': ?imageData,
-      'imageMimeType': ?imageMimeType,
+    return compute(_encodeExportPayload, {
       'character': character.copyWith(clearImagePath: true).toJson(),
-    };
-    return const JsonEncoder.withIndent('  ').convert(payload);
+      'bytes': bytes,
+      'mimeType': mimeType,
+      'exportedAt': DateTime.now().toIso8601String(),
+    });
   }
 
   Character importFromJson(String jsonString) {
@@ -148,5 +148,69 @@ class CharacterLocalDataSource {
       throw const FormatException('corrupted_character');
     }
   }
+
+  /// Imports a character from a `.dndchar` file JSON string.
+  /// Returns the parsed [Character] with image saved to disk (if present).
+  /// The caller is responsible for assigning a final ID before persisting.
+  Future<Character> importFromDndCharFile(String fileJson) async {
+    final dynamic decoded;
+    try {
+      decoded = jsonDecode(fileJson);
+    } catch (_) {
+      throw const FormatException('invalid_json');
+    }
+
+    if (decoded is! Map<String, dynamic>) throw const FormatException('not_object');
+    if (!decoded.containsKey('character')) throw const FormatException('missing_character');
+
+    final characterJson = decoded['character'];
+    if (characterJson is! Map<String, dynamic>) throw const FormatException('corrupted_character');
+
+    Character character;
+    try {
+      character = Character.fromJson(characterJson).copyWith(clearImagePath: true);
+    } catch (_) {
+      throw const FormatException('corrupted_character');
+    }
+
+    final imageData = decoded['imageData'] as String?;
+    final imageMimeType = decoded['imageMimeType'] as String?;
+
+    if (imageData != null) {
+      try {
+        final bytes = base64Decode(imageData);
+        final ext = imageMimeType == 'image/png' ? 'png' : 'jpg';
+        final tempDir = await getTemporaryDirectory();
+        final tempFile = File('${tempDir.path}/dndchar_import.$ext');
+        await tempFile.writeAsBytes(bytes);
+        final savedPath = await _backend.saveImage('import_tmp', tempFile.path);
+        await tempFile.delete().catchError((_) => File(''));
+        if (savedPath != null) {
+          character = character.copyWith(imagePath: savedPath);
+        }
+      } catch (_) {
+        // Image import failed — proceed without image
+      }
+    }
+
+    return character;
+  }
+}
+
+// Top-level function required by compute() — runs in a separate isolate.
+String _encodeExportPayload(Map<String, dynamic> args) {
+  final characterJson = args['character'] as Map<String, dynamic>;
+  final bytes = args['bytes'] as Uint8List?;
+  final mimeType = args['mimeType'] as String?;
+  final exportedAt = args['exportedAt'] as String;
+
+  final payload = <String, dynamic>{
+    'version': '1.0',
+    'exportedAt': exportedAt,
+    if (bytes != null) 'imageData': base64Encode(bytes),
+    'imageMimeType': ?mimeType,
+    'character': characterJson,
+  };
+  return const JsonEncoder.withIndent('  ').convert(payload);
 }
 

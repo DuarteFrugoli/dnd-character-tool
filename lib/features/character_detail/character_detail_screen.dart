@@ -151,7 +151,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           actions: [
             if (!character.xpTrackingEnabled)
               IconButton(
-                icon: const Icon(Icons.upgrade),
+                icon: const Icon(Icons.keyboard_double_arrow_up),
                 tooltip: AppLocalizations.of(context)!.tooltipLevelUp,
                 onPressed: () => _openLevelUpWizardSheet(
                   context,
@@ -160,7 +160,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
                 ),
               ),
             IconButton(
-              icon: const Icon(Icons.single_bed),
+              icon: const Icon(Icons.hotel_outlined),
               tooltip: AppLocalizations.of(context)!.detailTooltipLongRest,
               onPressed: () => _confirmLongRest(),
             ),

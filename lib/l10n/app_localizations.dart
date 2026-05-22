@@ -2832,6 +2832,36 @@ abstract class AppLocalizations {
   /// **'Copy JSON'**
   String get exportCopyJson;
 
+  /// Export dialog: quick share section heading.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick share'**
+  String get exportSectionQuick;
+
+  /// Export dialog: quick share section caption.
+  ///
+  /// In en, this message translates to:
+  /// **'No image — for sharing stats'**
+  String get exportSectionQuickCaption;
+
+  /// Export dialog: complete file section heading.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete file'**
+  String get exportSectionFile;
+
+  /// Export dialog: complete file section caption.
+  ///
+  /// In en, this message translates to:
+  /// **'Includes the character photo'**
+  String get exportSectionFileCaption;
+
+  /// Export dialog: share .dndchar file button.
+  ///
+  /// In en, this message translates to:
+  /// **'Share .dndchar'**
+  String get exportShareFile;
+
   /// Generic dialog close button.
   ///
   /// In en, this message translates to:

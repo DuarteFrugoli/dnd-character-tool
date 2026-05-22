@@ -1536,6 +1536,21 @@ class AppLocalizationsDe extends AppLocalizations {
   String get exportCopyJson => 'JSON kopieren';
 
   @override
+  String get exportSectionQuick => 'Schnell teilen';
+
+  @override
+  String get exportSectionQuickCaption => 'Kein Bild — zum Teilen von Werten';
+
+  @override
+  String get exportSectionFile => 'Vollständige Datei';
+
+  @override
+  String get exportSectionFileCaption => 'Enthält das Charakterbild';
+
+  @override
+  String get exportShareFile => '.dndchar teilen';
+
+  @override
   String get dialogClose => 'Schließen';
 
   @override

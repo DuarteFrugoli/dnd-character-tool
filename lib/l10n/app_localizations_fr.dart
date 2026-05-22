@@ -1540,6 +1540,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get exportCopyJson => 'Copier le JSON';
 
   @override
+  String get exportSectionQuick => 'Partage rapide';
+
+  @override
+  String get exportSectionQuickCaption =>
+      'Sans image — pour partager les stats';
+
+  @override
+  String get exportSectionFile => 'Fichier complet';
+
+  @override
+  String get exportSectionFileCaption => 'Inclut la photo du personnage';
+
+  @override
+  String get exportShareFile => 'Partager .dndchar';
+
+  @override
   String get dialogClose => 'Fermer';
 
   @override

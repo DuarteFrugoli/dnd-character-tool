@@ -1,19 +1,24 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 
 import 'character_list_provider.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_avatar.dart';
+
+// Top-level: runs in a separate isolate via compute()
+String _buildToken(String json) =>
+    base64Url.encode(GZipCodec().encode(utf8.encode(json)));
 
 class CharacterListScreen extends ConsumerWidget {
   const CharacterListScreen({super.key});
@@ -73,7 +78,7 @@ class CharacterListScreen extends ConsumerWidget {
           IconButton(
             tooltip: l10n.charListImportTooltip,
             onPressed: importCharacter,
-            icon: const Icon(Icons.file_download_outlined),
+            icon: const Icon(Icons.upload_file),
           ),
           IconButton(
             tooltip: l10n.charListSettingsTooltip,
@@ -217,10 +222,14 @@ class _CharacterCard extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     Future<void> exportCharacter() async {
-      final json =
-          await ref.read(characterListProvider.notifier).exportCharacter(character);
-      // Token: base64url(gzip(json))
-      final token = base64Url.encode(GZipCodec().encode(utf8.encode(json)));
+      final results = await Future.wait([
+        ref.read(characterListProvider.notifier).exportCharacter(character),
+        ref.read(characterListProvider.notifier).exportCharacterToFile(character),
+      ]);
+      final json = results[0];
+      final fileJson = results[1];
+      // Token: base64url(gzip(json)) — run in isolate to avoid blocking UI
+      final token = await compute(_buildToken, json);
       if (!context.mounted) return;
       await showDialog<void>(
         context: context,
@@ -228,6 +237,7 @@ class _CharacterCard extends ConsumerWidget {
           characterName: character.name,
           token: token,
           json: json,
+          fileJson: fileJson,
         ),
       );
     }
@@ -347,11 +357,13 @@ class _ExportDialog extends StatefulWidget {
     required this.characterName,
     required this.token,
     required this.json,
+    required this.fileJson,
   });
 
   final String characterName;
   final String token;
   final String json;
+  final String fileJson;
 
   @override
   State<_ExportDialog> createState() => _ExportDialogState();
@@ -359,7 +371,7 @@ class _ExportDialog extends StatefulWidget {
 
 class _ExportDialogState extends State<_ExportDialog> {
   bool _jsonExpanded = false;
-  bool _qrExpanded = false;
+  bool _sharingFile = false;
 
   Future<void> _copy(BuildContext ctx, String text, String label) async {
     await Clipboard.setData(ClipboardData(text: text));
@@ -368,11 +380,28 @@ class _ExportDialogState extends State<_ExportDialog> {
         .showSnackBar(SnackBar(content: Text(AppLocalizations.of(ctx)!.exportCopied(label))));
   }
 
+  Future<void> _shareFile() async {
+    setState(() => _sharingFile = true);
+    try {
+      final dir = await getTemporaryDirectory();
+      final safeName = widget.characterName.replaceAll(RegExp(r'[^\w]'), '_');
+      final file = File('${dir.path}/$safeName.dndchar');
+      await file.writeAsString(widget.fileJson);
+      await Share.shareXFiles(
+        [XFile(file.path, mimeType: 'application/octet-stream')],
+        subject: widget.characterName,
+      );
+    } finally {
+      if (mounted) setState(() => _sharingFile = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     return AlertDialog(
-      title: Text(AppLocalizations.of(context)!.exportDialogTitle(widget.characterName)),
+      title: Text(l10n.exportDialogTitle(widget.characterName)),
       content: SizedBox(
         width: 520,
         child: SingleChildScrollView(
@@ -380,10 +409,13 @@ class _ExportDialogState extends State<_ExportDialog> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              // ── Token (primary) ──────────────────────────────────────────
-              Text('Token', style: Theme.of(context).textTheme.labelLarge),
-              const SizedBox(height: 6),
-              // Fixed-height scrollable box, same pattern as JSON
+              // ── Compartilhamento rápido ───────────────────────────────────
+              Text(l10n.exportSectionQuick, style: Theme.of(context).textTheme.labelLarge),
+              const SizedBox(height: 2),
+              Text(l10n.exportSectionQuickCaption,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant)),
+              const SizedBox(height: 10),
               Container(
                 height: 40,
                 padding: const EdgeInsets.all(10),
@@ -395,75 +427,40 @@ class _ExportDialogState extends State<_ExportDialog> {
                   scrollDirection: Axis.horizontal,
                   child: SelectableText(
                     widget.token,
-                    style: const TextStyle(
-                        fontFamily: 'monospace', fontSize: 12),
+                    style: const TextStyle(fontFamily: 'monospace', fontSize: 12),
                   ),
                 ),
               ),
               const SizedBox(height: 8),
               FilledButton.icon(
                 icon: const Icon(Icons.copy, size: 16),
-                label: Text(AppLocalizations.of(context)!.exportCopyToken),
-                onPressed: () => _copy(context, widget.token, AppLocalizations.of(context)!.exportLabelToken),
+                label: Text(l10n.exportCopyToken),
+                onPressed: () => _copy(context, widget.token, l10n.exportLabelToken),
               ),
-              const SizedBox(height: 6),
-              OutlinedButton.icon(
-                icon: Icon(_qrExpanded ? Icons.qr_code_2 : Icons.qr_code, size: 16),
-                label: Text(_qrExpanded ? AppLocalizations.of(context)!.exportHideQr : AppLocalizations.of(context)!.exportShowQr),
-                onPressed: () => setState(() => _qrExpanded = !_qrExpanded),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16),
+                child: Divider(),
               ),
-              if (_qrExpanded) ...
-                [
-                  const SizedBox(height: 12),
-                  Builder(builder: (context) {
-                    final validation = QrValidator.validate(
-                      data: widget.token,
-                      version: QrVersions.auto,
-                      errorCorrectionLevel: QrErrorCorrectLevel.L,
-                    );
-                    if (validation.isValid) {
-                      return LayoutBuilder(builder: (context, constraints) {
-                        final size = constraints.maxWidth.isFinite
-                            ? constraints.maxWidth
-                            : 260.0;
-                        return GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => _QrFullscreenScreen(
-                                  characterName: widget.characterName,
-                                  token: widget.token),
-                            ),
-                          ),
-                          child: ColoredBox(
-                            color: Colors.white,
-                            child: QrImageView(
-                              data: widget.token,
-                              version: QrVersions.auto,
-                              size: size,
-                              padding: const EdgeInsets.all(12),
-                              errorCorrectionLevel: QrErrorCorrectLevel.L,
-                            ),
-                          ),
-                        );
-                      });
-                    }
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: Text(
-                        AppLocalizations.of(context)!.exportQrTooLarge,
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.error),
-                        textAlign: TextAlign.center,
-                      ),
-                    );
-                  }),
-                ],
+              // ── Arquivo completo ──────────────────────────────────────────
+              Text(l10n.exportSectionFile, style: Theme.of(context).textTheme.labelLarge),
+              const SizedBox(height: 2),
+              Text(l10n.exportSectionFileCaption,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant)),
+              const SizedBox(height: 10),
+              FilledButton.icon(
+                icon: _sharingFile
+                    ? const SizedBox(
+                        width: 16, height: 16,
+                        child: CircularProgressIndicator(strokeWidth: 2))
+                    : const Icon(Icons.ios_share, size: 16),
+                label: Text(l10n.exportShareFile),
+                onPressed: _sharingFile ? null : _shareFile,
+              ),
               const SizedBox(height: 16),
-              // ── JSON (secondary, expandable) ─────────────────────────────
+              // ── JSON (avançado, expansível) ───────────────────────────────
               InkWell(
-                onTap: () =>
-                    setState(() => _jsonExpanded = !_jsonExpanded),
+                onTap: () => setState(() => _jsonExpanded = !_jsonExpanded),
                 borderRadius: BorderRadius.circular(6),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
@@ -478,7 +475,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        AppLocalizations.of(context)!.exportShowJson,
+                        l10n.exportShowJson,
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
@@ -498,19 +495,17 @@ class _ExportDialogState extends State<_ExportDialog> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: SingleChildScrollView(
-                    child: SelectableText(
+                    child: Text(
                       widget.json,
-                      style: const TextStyle(
-                          fontFamily: 'monospace', fontSize: 11),
+                      style: const TextStyle(fontFamily: 'monospace', fontSize: 11),
                     ),
                   ),
                 ),
                 const SizedBox(height: 6),
                 FilledButton.icon(
                   icon: const Icon(Icons.copy, size: 16),
-                  label: Text(AppLocalizations.of(context)!.exportCopyJson),
-                  onPressed: () =>
-                      _copy(context, widget.json, 'JSON'),
+                  label: Text(l10n.exportCopyJson),
+                  onPressed: () => _copy(context, widget.json, 'JSON'),
                 ),
               ],
             ],
@@ -520,7 +515,7 @@ class _ExportDialogState extends State<_ExportDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(AppLocalizations.of(context)!.dialogClose),
+          child: Text(l10n.dialogClose),
         ),
       ],
     );
@@ -595,23 +590,6 @@ class _ImportDialogState extends State<_ImportDialog> {
                 ),
                 onChanged: (_) => setState(() {}),
               ),
-              const SizedBox(height: 6),
-              // QR code scanner
-              OutlinedButton.icon(
-                icon: const Icon(Icons.qr_code_scanner, size: 16),
-                label: Text(AppLocalizations.of(context)!.importScanQr),
-                onPressed: () async {
-                  final scanned = await Navigator.push<String>(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => const _QrScannerScreen()),
-                  );
-                  if (scanned != null) {
-                    _tokenCtrl.text = scanned;
-                    setState(() {});
-                  }
-                },
-              ),
               const SizedBox(height: 16),
               // ── JSON (secondary, expandable) ─────────────────────────────
               InkWell(
@@ -672,69 +650,4 @@ class _ImportDialogState extends State<_ImportDialog> {
   }
 }
 
-// ── QR Scanner Screen ─────────────────────────────────────────────────────────
 
-class _QrScannerScreen extends StatefulWidget {
-  const _QrScannerScreen();
-
-  @override
-  State<_QrScannerScreen> createState() => _QrScannerScreenState();
-}
-
-class _QrScannerScreenState extends State<_QrScannerScreen> {
-  bool _scanned = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context)!.importScanQr)),
-      body: MobileScanner(
-        onDetect: (capture) {
-          if (_scanned) return;
-          final barcode = capture.barcodes.firstOrNull;
-          if (barcode == null) return;
-          final value = barcode.rawValue;
-          if (value != null && value.isNotEmpty) {
-            _scanned = true;
-            Navigator.pop(context, value);
-          }
-        },
-      ),
-    );
-  }
-}
-
-// ── QR Fullscreen Screen ──────────────────────────────────────────────────────
-
-class _QrFullscreenScreen extends StatelessWidget {
-  const _QrFullscreenScreen({
-    required this.characterName,
-    required this.token,
-  });
-
-  final String characterName;
-  final String token;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(characterName),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: QrImageView(
-            data: token,
-            version: QrVersions.auto,
-            size: double.infinity,
-            errorCorrectionLevel: QrErrorCorrectLevel.L,
-          ),
-        ),
-      ),
-    );
-  }
-}

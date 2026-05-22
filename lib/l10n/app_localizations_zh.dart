@@ -1503,6 +1503,21 @@ class AppLocalizationsZh extends AppLocalizations {
   String get exportCopyJson => '复制JSON';
 
   @override
+  String get exportSectionQuick => '快速分享';
+
+  @override
+  String get exportSectionQuickCaption => '无图片 — 用于分享属性';
+
+  @override
+  String get exportSectionFile => '完整文件';
+
+  @override
+  String get exportSectionFileCaption => '包含角色照片';
+
+  @override
+  String get exportShareFile => '分享 .dndchar';
+
+  @override
   String get dialogClose => '关闭';
 
   @override

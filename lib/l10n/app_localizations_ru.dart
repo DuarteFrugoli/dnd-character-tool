@@ -1535,6 +1535,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String get exportCopyJson => 'Копировать JSON';
 
   @override
+  String get exportSectionQuick => 'Быстрый обмен';
+
+  @override
+  String get exportSectionQuickCaption =>
+      'Без фото — для обмена характеристиками';
+
+  @override
+  String get exportSectionFile => 'Полный файл';
+
+  @override
+  String get exportSectionFileCaption => 'Включает фотографию персонажа';
+
+  @override
+  String get exportShareFile => 'Поделиться .dndchar';
+
+  @override
   String get dialogClose => 'Закрыть';
 
   @override

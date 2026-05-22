@@ -1535,6 +1535,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get exportCopyJson => 'Copiar JSON';
 
   @override
+  String get exportSectionQuick => 'Compartilhamento rápido';
+
+  @override
+  String get exportSectionQuickCaption =>
+      'Sem imagem — para compartilhar stats';
+
+  @override
+  String get exportSectionFile => 'Arquivo completo';
+
+  @override
+  String get exportSectionFileCaption => 'Inclui a foto do personagem';
+
+  @override
+  String get exportShareFile => 'Compartilhar .dndchar';
+
+  @override
   String get dialogClose => 'Fechar';
 
   @override

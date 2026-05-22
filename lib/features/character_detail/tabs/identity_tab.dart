@@ -63,7 +63,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     _alignCtrl = TextEditingController(text: c.alignment);
     _playerCtrl = TextEditingController(text: c.playerName);
     final app = c.appearance;
-    _ageCtrl = TextEditingController(text: app.age != null ? '${app.age}' : '');
+    _ageCtrl = TextEditingController(text: app.age ?? '');
     _heightCtrl = TextEditingController(text: app.height);
     _weightCtrl = TextEditingController(text: app.weight);
     _eyesCtrl = TextEditingController(text: app.eyes);
@@ -134,7 +134,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
     if (!_alignFocus.hasFocus) _alignCtrl.text = c.alignment;
     if (!_playerFocus.hasFocus) _playerCtrl.text = c.playerName;
     final app = c.appearance;
-    if (!_ageFocus.hasFocus) _ageCtrl.text = app.age != null ? '${app.age}' : '';
+    if (!_ageFocus.hasFocus) _ageCtrl.text = app.age ?? '';
     if (!_heightFocus.hasFocus) _heightCtrl.text = app.height;
     if (!_weightFocus.hasFocus) _weightCtrl.text = app.weight;
     if (!_eyesFocus.hasFocus) _eyesCtrl.text = app.eyes;
@@ -252,7 +252,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
   }
 
   CharacterAppearance _buildCurrentAppearance() => CharacterAppearance(
-        age: int.tryParse(_ageCtrl.text.trim()),
+        age: _ageCtrl.text.trim().isEmpty ? null : _ageCtrl.text.trim(),
         height: _heightCtrl.text.trim(),
         weight: _weightCtrl.text.trim(),
         eyes: _eyesCtrl.text.trim(),
@@ -877,7 +877,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                         label: l10n.labelAge,
                         controller: _ageCtrl,
                         focusNode: _ageFocus,
-                        keyboardType: TextInputType.number,
+                        keyboardType: TextInputType.text,
                       ),
                       _InlineField(
                         label: l10n.labelHeight,

@@ -78,6 +78,9 @@ class CharacterRepository {
   Future<String> exportToJson(Character character) =>
       _local.exportToJson(character);
 
+  Future<String> exportToFileJson(Character character) =>
+      _local.exportToFileJson(character);
+
   /// Importa um personagem de um JSON exportado.
   /// O personagem importado *sempre* recebe um novo ID para garantir que o ID
   /// persistido seja gerado localmente (previne path traversal e conflitos).

@@ -1526,6 +1526,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get exportCopyJson => 'Copy JSON';
 
   @override
+  String get exportSectionQuick => 'Quick share';
+
+  @override
+  String get exportSectionQuickCaption => 'No image — for sharing stats';
+
+  @override
+  String get exportSectionFile => 'Complete file';
+
+  @override
+  String get exportSectionFileCaption => 'Includes the character photo';
+
+  @override
+  String get exportShareFile => 'Share .dndchar';
+
+  @override
   String get dialogClose => 'Close';
 
   @override

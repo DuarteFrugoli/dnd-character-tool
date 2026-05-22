@@ -1511,6 +1511,21 @@ class AppLocalizationsJa extends AppLocalizations {
   String get exportCopyJson => 'JSONをコピー';
 
   @override
+  String get exportSectionQuick => 'クイック共有';
+
+  @override
+  String get exportSectionQuickCaption => '画像なし — ステータスを共有するため';
+
+  @override
+  String get exportSectionFile => '完全なファイル';
+
+  @override
+  String get exportSectionFileCaption => 'キャラクターの写真を含む';
+
+  @override
+  String get exportShareFile => '.dndcharを共有';
+
+  @override
   String get dialogClose => '閉じる';
 
   @override

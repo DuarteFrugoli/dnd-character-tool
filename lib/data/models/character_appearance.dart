@@ -4,7 +4,7 @@ part 'character_appearance.g.dart';
 
 @JsonSerializable()
 class CharacterAppearance {
-  final int? age;
+  final String? age;
   final String height;
   final String weight;
   final String eyes;
@@ -21,7 +21,7 @@ class CharacterAppearance {
   });
 
   CharacterAppearance copyWith({
-    int? age,
+    String? age,
     String? height,
     String? weight,
     String? eyes,

@@ -8,7 +8,7 @@ part of 'character_appearance.dart';
 
 CharacterAppearance _$CharacterAppearanceFromJson(Map<String, dynamic> json) =>
     CharacterAppearance(
-      age: (json['age'] as num?)?.toInt(),
+      age: json['age']?.toString(),
       height: json['height'] as String? ?? '',
       weight: json['weight'] as String? ?? '',
       eyes: json['eyes'] as String? ?? '',

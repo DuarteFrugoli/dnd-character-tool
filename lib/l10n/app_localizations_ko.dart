@@ -1512,6 +1512,21 @@ class AppLocalizationsKo extends AppLocalizations {
   String get exportCopyJson => 'JSON 복사';
 
   @override
+  String get exportSectionQuick => '빠른 공유';
+
+  @override
+  String get exportSectionQuickCaption => '이미지 없음 — 스탬 공유용';
+
+  @override
+  String get exportSectionFile => '완전한 파일';
+
+  @override
+  String get exportSectionFileCaption => '캐릭터 사진 포함';
+
+  @override
+  String get exportShareFile => '.dndchar 공유';
+
+  @override
   String get dialogClose => '닫기';
 
   @override

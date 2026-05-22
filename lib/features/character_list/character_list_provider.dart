@@ -93,6 +93,10 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     return ref.read(characterRepositoryProvider).exportToJson(character);
   }
 
+  Future<String> exportCharacterToFile(Character character) {
+    return ref.read(characterRepositoryProvider).exportToFileJson(character);
+  }
+
   Future<void> updateSingle(Character character) async {
     var current = state.valueOrNull;
     if (current == null) {

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'storage_backend_stub.dart'
     if (dart.library.io) 'storage_backend_native.dart'
@@ -88,6 +89,33 @@ class CharacterLocalDataSource {
     final payload = {
       'version': '1.0',
       'exportedAt': DateTime.now().toIso8601String(),
+      'character': character.copyWith(clearImagePath: true).toJson(),
+    };
+    return const JsonEncoder.withIndent('  ').convert(payload);
+  }
+
+  Future<String> exportToFileJson(Character character) async {
+    String? imageData;
+    String? imageMimeType;
+
+    if (character.imagePath != null) {
+      final absolutePath = await resolveImagePath(character.imagePath);
+      if (absolutePath != null) {
+        final file = File(absolutePath);
+        if (await file.exists()) {
+          final bytes = await file.readAsBytes();
+          imageData = base64Encode(bytes);
+          final ext = absolutePath.split('.').last.toLowerCase();
+          imageMimeType = ext == 'png' ? 'image/png' : 'image/jpeg';
+        }
+      }
+    }
+
+    final payload = <String, dynamic>{
+      'version': '1.0',
+      'exportedAt': DateTime.now().toIso8601String(),
+      'imageData': ?imageData,
+      'imageMimeType': ?imageMimeType,
       'character': character.copyWith(clearImagePath: true).toJson(),
     };
     return const JsonEncoder.withIndent('  ').convert(payload);

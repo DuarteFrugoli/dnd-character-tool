@@ -669,12 +669,11 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           // ── Saving Throws ─────────────────────────────────────────────────
           _Section(
             title: l10n.sectionSavingThrows,
-            child: _isEditing
-                ? _SavingThrowsEditor(
-                    current: character.savingThrowProficiencies,
-                    notifier: notifier,
-                  )
-                : _SavingThrowsList(character: character, l10n: l10n),
+            child: _SavingThrowsList(
+              character: character,
+              l10n: l10n,
+              notifier: _isEditing ? notifier : null,
+            ),
           ),
           const SizedBox(height: 12),
 
@@ -1225,13 +1224,30 @@ class _ConditionPickerSheetState extends State<_ConditionPickerSheet> {
 // ── Saving Throws list (view mode) ────────────────────────────────────────────
 
 class _SavingThrowsList extends StatelessWidget {
-  const _SavingThrowsList({required this.character, required this.l10n});
+  const _SavingThrowsList({
+    required this.character,
+    required this.l10n,
+    this.notifier,
+  });
   final Character character;
   final AppLocalizations l10n;
+  final CharacterDetailNotifier? notifier;
+
+  void _toggle(BuildContext context, String key) {
+    final current = List<String>.from(character.savingThrowProficiencies);
+    final lower = key.toLowerCase();
+    if (current.any((s) => s.toLowerCase() == lower)) {
+      current.removeWhere((s) => s.toLowerCase() == lower);
+    } else {
+      current.add(key);
+    }
+    notifier!.updateSavingThrows(current);
+  }
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final isEditing = notifier != null;
     final profSet = character.savingThrowProficiencies
         .map((s) => s.toLowerCase())
         .toSet();
@@ -1248,7 +1264,7 @@ class _SavingThrowsList extends StatelessWidget {
         final (key, abbr, abilityMod) = entry;
         final isProf = profSet.contains(key);
         final bonus = abilityMod + (isProf ? character.proficiencyBonus : 0);
-        return Padding(
+        final row = Padding(
           padding: const EdgeInsets.symmetric(vertical: 2),
           child: Row(
             children: [
@@ -1276,6 +1292,12 @@ class _SavingThrowsList extends StatelessWidget {
               ),
             ],
           ),
+        );
+        if (!isEditing) return row;
+        return InkWell(
+          borderRadius: BorderRadius.circular(4),
+          onTap: () => _toggle(context, key),
+          child: row,
         );
       }).toList(),
     );

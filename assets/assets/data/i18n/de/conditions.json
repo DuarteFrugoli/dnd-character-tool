@@ -1,0 +1,62 @@
+{
+  "Blinded": {
+    "name": "Geblendet",
+    "description": "Eine geblendete Kreatur kann nicht sehen und scheitert automatisch an jeder Fähigkeitsprüfung, die Sicht erfordert. Angriffswürfe gegen die Kreatur haben einen Vorteil, und die Angriffswürfe der Kreatur haben einen Nachteil."
+  },
+  "Charmed": {
+    "name": "Fasziniert",
+    "description": "Eine verzauberte Kreatur kann den Beschwörer nicht angreifen oder ihn mit schädlichen Fähigkeiten oder magischen Effekten angreifen. Der Charmeur hat bei jeder Fähigkeitsüberprüfung einen Vorteil, wenn es darum geht, sozial mit der Kreatur zu interagieren."
+  },
+  "Deafened": {
+    "name": "Betäubt",
+    "description": "Eine taube Kreatur kann nicht hören und besteht automatisch jede Fähigkeitsüberprüfung, die Hören erfordert, nicht."
+  },
+  "Exhaustion": {
+    "name": "Erschöpfung",
+    "description": "Die Erschöpfung wird in sechs Stufen gemessen. Stufe 1: Nachteil bei Fähigkeitsüberprüfungen. Stufe 2: Geschwindigkeit halbiert. Stufe 3: Nachteil bei Angriffswürfen und Rettungswürfen. Level 4: Maximaler Trefferpunkt halbiert. Level 5: Geschwindigkeit auf 0 reduziert. Level 6: Tod. Das Beenden einer langen Pause verringert den Erschöpfungsgrad um 1, vorausgesetzt, die Kreatur hat auch etwas gegessen und getrunken."
+  },
+  "Frightened": {
+    "name": "Erschrocken",
+    "description": "Eine verängstigte Kreatur ist bei Fähigkeits- und Angriffswürfen im Nachteil, solange die Quelle ihrer Angst in Sichtweite liegt. Die Kreatur kann sich nicht freiwillig der Quelle ihrer Angst nähern."
+  },
+  "Grappled": {
+    "name": "Gekämpft",
+    "description": "Die Geschwindigkeit einer im Kampf befindlichen Kreatur wird zu 0 und sie kann nicht von einem Geschwindigkeitsbonus profitieren. Der Zustand endet, wenn der Greifer außer Gefecht gesetzt wird. Der Zustand endet auch, wenn ein Effekt die im Ringkampf befindliche Kreatur aus der Reichweite des Ringkämpfers oder des Ringkampfeffekts entfernt."
+  },
+  "Incapacitated": {
+    "name": "Handlungsunfähig",
+    "description": "Eine außer Gefecht gesetzte Kreatur kann weder Aktionen noch Reaktionen ausführen."
+  },
+  "Invisible": {
+    "name": "Unsichtbar",
+    "description": "Ohne die Hilfe von Magie oder einem besonderen Sinn ist es unmöglich, ein unsichtbares Wesen zu sehen. Der Standort der Kreatur kann anhand aller Geräusche oder Spuren, die sie hinterlässt, ermittelt werden. Angriffswürfe gegen die Kreatur haben einen Nachteil, und die Angriffswürfe der Kreatur haben einen Vorteil."
+  },
+  "Paralyzed": {
+    "name": "Gelähmt",
+    "description": "Eine gelähmte Kreatur ist handlungsunfähig und kann sich weder bewegen noch sprechen. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Angriffswürfe gegen die Kreatur haben einen Vorteil. Jeder Angriff, der die Kreatur trifft, ist ein kritischer Treffer, wenn sich der Angreifer innerhalb von 5 Fuß von der Kreatur befindet."
+  },
+  "Petrified": {
+    "name": "Versteinert",
+    "description": "Eine versteinerte Kreatur verwandelt sich zusammen mit jedem nichtmagischen Gegenstand, den sie trägt oder trägt, in eine feste, unbelebte Substanz (normalerweise Stein). Sein Gewicht nimmt um das Zehnfache zu und es hört auf zu altern. Die Kreatur ist handlungsunfähig, kann sich weder bewegen noch sprechen und nimmt ihre Umgebung nicht wahr. Angriffswürfe gegen die Kreatur haben einen Vorteil. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Die Kreatur ist resistent gegen jeglichen Schaden. Die Kreatur ist immun gegen Gift und Krankheit, obwohl ein Gift oder eine Krankheit, die sich bereits in ihrem System befindet, ausgesetzt und nicht neutralisiert wird."
+  },
+  "Poisoned": {
+    "name": "Vergiftet",
+    "description": "Eine vergiftete Kreatur hat einen Nachteil bei Angriffswürfen und Fähigkeitsüberprüfungen."
+  },
+  "Prone": {
+    "name": "Anfällig",
+    "description": "Die einzige Bewegungsmöglichkeit einer anfälligen Kreatur ist das Kriechen, es sei denn, sie steht auf und beendet damit den Zustand. Die Kreatur hat einen Nachteil bei Angriffswürfen. Ein Angriffswurf gegen die Kreatur hat einen Vorteil, wenn sich der Angreifer innerhalb von 5 Fuß von der Kreatur befindet. Ansonsten hat der Angriffswurf einen Nachteil."
+  },
+  "Restrained": {
+    "name": "Zurückhaltend",
+    "description": "Die Geschwindigkeit einer gefesselten Kreatur wird zu 0 und sie kann nicht von einem Geschwindigkeitsbonus profitieren. Angriffswürfe gegen die Kreatur haben einen Vorteil, und die Angriffswürfe der Kreatur haben einen Nachteil. Die Kreatur hat einen Nachteil bei Geschicklichkeitsrettungswürfen."
+  },
+  "Stunned": {
+    "name": "Betäubt",
+    "description": "Eine betäubte Kreatur ist handlungsunfähig, kann sich nicht bewegen und kann nur stockend sprechen. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Angriffswürfe gegen die Kreatur haben einen Vorteil."
+  },
+  "Unconscious": {
+    "name": "Unbewusst",
+    "description": "Eine bewusstlose Kreatur ist handlungsunfähig, kann sich weder bewegen noch sprechen und nimmt ihre Umgebung nicht wahr. Die Kreatur lässt alles fallen, was sie in der Hand hält, und fällt hin. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Angriffswürfe gegen die Kreatur haben einen Vorteil. Jeder Angriff, der die Kreatur trifft, ist ein kritischer Treffer, wenn sich der Angreifer innerhalb von 5 Fuß von der Kreatur befindet."
+  }
+}

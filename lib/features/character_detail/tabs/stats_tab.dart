@@ -674,25 +674,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     current: character.savingThrowProficiencies,
                     notifier: notifier,
                   )
-                : character.savingThrowProficiencies.isEmpty
-                ? Text(l10n.detailNone)
-                : Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
-                    children: character.savingThrowProficiencies.map((s) {
-                      final label =
-                          {
-                            'strength': l10n.abilityStr,
-                            'dexterity': l10n.abilityDex,
-                            'constitution': l10n.abilityCon,
-                            'intelligence': l10n.abilityInt,
-                            'wisdom': l10n.abilityWis,
-                            'charisma': l10n.abilityCha,
-                          }[s.toLowerCase()] ??
-                          s;
-                      return Chip(label: Text(label));
-                    }).toList(),
-                  ),
+                : _SavingThrowsList(character: character, l10n: l10n),
           ),
           const SizedBox(height: 12),
 
@@ -1236,6 +1218,66 @@ class _ConditionPickerSheetState extends State<_ConditionPickerSheet> {
           ],
         ),
       ),
+    );
+  }
+}
+
+// ── Saving Throws list (view mode) ────────────────────────────────────────────
+
+class _SavingThrowsList extends StatelessWidget {
+  const _SavingThrowsList({required this.character, required this.l10n});
+  final Character character;
+  final AppLocalizations l10n;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final profSet = character.savingThrowProficiencies
+        .map((s) => s.toLowerCase())
+        .toSet();
+    final abilities = [
+      ('strength',     l10n.abilityStr, character.abilityScores.strengthModifier),
+      ('dexterity',    l10n.abilityDex, character.abilityScores.dexterityModifier),
+      ('constitution', l10n.abilityCon, character.abilityScores.constitutionModifier),
+      ('intelligence', l10n.abilityInt, character.abilityScores.intelligenceModifier),
+      ('wisdom',       l10n.abilityWis, character.abilityScores.wisdomModifier),
+      ('charisma',     l10n.abilityCha, character.abilityScores.charismaModifier),
+    ];
+    return Column(
+      children: abilities.map((entry) {
+        final (key, abbr, abilityMod) = entry;
+        final isProf = profSet.contains(key);
+        final bonus = abilityMod + (isProf ? character.proficiencyBonus : 0);
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 2),
+          child: Row(
+            children: [
+              Icon(
+                isProf ? Icons.circle : Icons.circle_outlined,
+                size: 10,
+                color: isProf ? scheme.primary : scheme.outlineVariant,
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  abbr,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
+                        color: isProf ? scheme.onSurface : scheme.onSurfaceVariant,
+                      ),
+                ),
+              ),
+              Text(
+                _sign(bonus),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
+                      color: isProf ? scheme.primary : scheme.onSurfaceVariant,
+                    ),
+              ),
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 }

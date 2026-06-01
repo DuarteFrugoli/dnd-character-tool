@@ -9,6 +9,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.3.3] - 2026-06-01
+
+### Added
+- **Condições ativas**: nova seção "Condições Ativas" na aba de Atributos. Toque em "+" para abrir o seletor com as 15 condições do SRD 5e; toque num chip para ver a descrição e remover; X no chip para remover diretamente. Traduzidas em todos os 10 idiomas
+- **Death saves**: rastreamento de salvaguardas de morte (3 sucessos / 3 falhas) exibido automaticamente quando os PV chegam a 0; indicadores visuais de Estabilizado e Morto; reset automático ao receber cura
+
+### Fixed
+- **Tradução PT — Prone**: "Propenso" corrigido para "Prostrado"
+
+---
+
 ## [0.3.2] - 2026-05-22
 
 ### Added

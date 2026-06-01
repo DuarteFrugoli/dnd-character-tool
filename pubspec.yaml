@@ -1,7 +1,7 @@
 name: dnd_character_tool
 description: "D&D 5e character creation and management tool."
 publish_to: 'none'
-version: 0.3.2+10
+version: 0.3.3+11
 
 environment:
   sdk: ^3.11.5
@@ -82,6 +82,7 @@ flutter:
     - assets/data/srd/subclass_features.json
     - assets/data/srd/tools.json
     - assets/data/srd/feats.json
+    - assets/data/srd/conditions.json
     - assets/data/i18n/de/
     - assets/data/i18n/es/
     - assets/data/i18n/fr/

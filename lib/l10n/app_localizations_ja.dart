@@ -120,6 +120,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dialogAdd => '追加';
 
   @override
+  String get dialogDone => '完了';
+
+  @override
   String get settingsTitle => '設定';
 
   @override
@@ -908,6 +911,36 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get statUnconsciousDying => '気絶する / 死にかけている';
+
+  @override
+  String get deathSavesTitle => '死亡セーヴ';
+
+  @override
+  String get deathSavesSuccesses => '成功';
+
+  @override
+  String get deathSavesFailures => '失敗';
+
+  @override
+  String get deathSavesStabilized => '安定化';
+
+  @override
+  String get deathSavesDead => '死亡';
+
+  @override
+  String get sectionActiveConditions => 'アクティブな状態';
+
+  @override
+  String get conditionsNone => 'アクティブなし';
+
+  @override
+  String get conditionsAdd => '状態を追加';
+
+  @override
+  String get conditionsPickTitle => '状態を適用';
+
+  @override
+  String get conditionsRemove => '状態を削除';
 
   @override
   String get tooltipAddTempHp => '一時HPを追加';

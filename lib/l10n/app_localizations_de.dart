@@ -123,6 +123,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get dialogAdd => 'Hinzufügen';
 
   @override
+  String get dialogDone => 'Fertig';
+
+  @override
   String get settingsTitle => 'Einstellungen';
 
   @override
@@ -918,6 +921,36 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get statUnconsciousDying => 'Bewusstlos / Sterbend';
+
+  @override
+  String get deathSavesTitle => 'Todesrettungswürfe';
+
+  @override
+  String get deathSavesSuccesses => 'Erfolge';
+
+  @override
+  String get deathSavesFailures => 'Misserfolge';
+
+  @override
+  String get deathSavesStabilized => 'Stabilisiert';
+
+  @override
+  String get deathSavesDead => 'Tot';
+
+  @override
+  String get sectionActiveConditions => 'Aktive Zustände';
+
+  @override
+  String get conditionsNone => 'Keine aktiv';
+
+  @override
+  String get conditionsAdd => 'Zustand hinzufügen';
+
+  @override
+  String get conditionsPickTitle => 'Zustand anwenden';
+
+  @override
+  String get conditionsRemove => 'Zustand entfernen';
 
   @override
   String get tooltipAddTempHp => 'Fügen Sie temporäre HP hinzu';

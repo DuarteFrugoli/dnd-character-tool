@@ -65,9 +65,32 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       // Heal: only affects real HP
       newCurrent = (newCurrent + delta).clamp(0, hp.maximum);
     }
+    // When recovering from 0 HP, reset death saves
+    final resetDeathSaves = hp.isDead && (newCurrent > 0 || newTemp > 0);
     await _save(
       c.copyWith(
-        hitPoints: hp.copyWith(current: newCurrent, temporary: newTemp),
+        hitPoints: hp.copyWith(
+          current: newCurrent,
+          temporary: newTemp,
+          deathSaveSuccesses: resetDeathSaves ? 0 : null,
+          deathSaveFailures: resetDeathSaves ? 0 : null,
+        ),
+      ),
+    );
+  }
+
+  Future<void> updateDeathSaves({
+    required int successes,
+    required int failures,
+  }) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(
+      c.copyWith(
+        hitPoints: c.hitPoints.copyWith(
+          deathSaveSuccesses: successes.clamp(0, 3),
+          deathSaveFailures: failures.clamp(0, 3),
+        ),
       ),
     );
   }
@@ -809,6 +832,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(c.copyWith(inspiration: !c.inspiration));
+  }
+
+  Future<void> toggleCondition(String name) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final current = List<String>.from(c.activeConditions);
+    if (current.contains(name)) {
+      current.remove(name);
+    } else {
+      current.add(name);
+    }
+    await _save(c.copyWith(activeConditions: current));
   }
 
   Future<void> updateExperiencePoints(int xp) async {

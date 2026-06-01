@@ -318,6 +318,12 @@ abstract class AppLocalizations {
   /// **'Add'**
   String get dialogAdd;
 
+  /// Generic done button.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get dialogDone;
+
   /// Settings screen AppBar title.
   ///
   /// In en, this message translates to:
@@ -1745,6 +1751,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unconscious / Dying'**
   String get statUnconsciousDying;
+
+  /// Death saves section header in Stats tab.
+  ///
+  /// In en, this message translates to:
+  /// **'Death Saves'**
+  String get deathSavesTitle;
+
+  /// Death save successes label.
+  ///
+  /// In en, this message translates to:
+  /// **'Successes'**
+  String get deathSavesSuccesses;
+
+  /// Death save failures label.
+  ///
+  /// In en, this message translates to:
+  /// **'Failures'**
+  String get deathSavesFailures;
+
+  /// Message when 3 death save successes are reached.
+  ///
+  /// In en, this message translates to:
+  /// **'Stabilized'**
+  String get deathSavesStabilized;
+
+  /// Message when 3 death save failures are reached.
+  ///
+  /// In en, this message translates to:
+  /// **'Dead'**
+  String get deathSavesDead;
+
+  /// Stats tab active conditions section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Conditions'**
+  String get sectionActiveConditions;
+
+  /// Shown when no conditions are active.
+  ///
+  /// In en, this message translates to:
+  /// **'None active'**
+  String get conditionsNone;
+
+  /// Tooltip/button to open condition picker.
+  ///
+  /// In en, this message translates to:
+  /// **'Add condition'**
+  String get conditionsAdd;
+
+  /// Title of the condition picker bottom sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply Condition'**
+  String get conditionsPickTitle;
+
+  /// Button to remove an active condition.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove condition'**
+  String get conditionsRemove;
 
   /// Temp HP button tooltip when none.
   ///

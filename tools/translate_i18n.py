@@ -210,11 +210,20 @@ def extract_feats() -> dict:
     }
 
 
+def extract_conditions() -> dict:
+    # srd: [{ name, description }]
+    return {
+        c["name"]: {"name": c["name"], "description": c["description"]}
+        for c in _srd("conditions.json")
+    }
+
+
 # Map filename → extractor function
 EXTRACTORS = {
     "languages.json":         extract_languages,
     "tools.json":             extract_tools,
     "feats.json":             extract_feats,
+    "conditions.json":        extract_conditions,
     "skills.json":            extract_skills,
     "equipment.json":         extract_equipment,
     "magic_items.json":       extract_magic_items,

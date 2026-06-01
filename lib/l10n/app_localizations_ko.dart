@@ -120,6 +120,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dialogAdd => '추가하다';
 
   @override
+  String get dialogDone => '완료';
+
+  @override
   String get settingsTitle => '설정';
 
   @override
@@ -909,6 +912,36 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get statUnconsciousDying => '무의식 / 죽어가는 중';
+
+  @override
+  String get deathSavesTitle => '죽음의 내성굴림';
+
+  @override
+  String get deathSavesSuccesses => '성공';
+
+  @override
+  String get deathSavesFailures => '실패';
+
+  @override
+  String get deathSavesStabilized => '안정됨';
+
+  @override
+  String get deathSavesDead => '사망';
+
+  @override
+  String get sectionActiveConditions => '활성 상태';
+
+  @override
+  String get conditionsNone => '활성 없음';
+
+  @override
+  String get conditionsAdd => '상태 추가';
+
+  @override
+  String get conditionsPickTitle => '상태 적용';
+
+  @override
+  String get conditionsRemove => '상태 제거';
 
   @override
   String get tooltipAddTempHp => '임시 HP 추가';

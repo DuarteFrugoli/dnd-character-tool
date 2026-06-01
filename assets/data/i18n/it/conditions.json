@@ -1,0 +1,62 @@
+{
+  "Blinded": {
+    "name": "Accecato",
+    "description": "Una creatura accecata non può vedere e fallisce automaticamente qualsiasi prova di caratteristica che richieda la vista. I tiri per colpire contro la creatura hanno vantaggio, mentre i tiri per colpire della creatura hanno svantaggio."
+  },
+  "Charmed": {
+    "name": "Ammaliato",
+    "description": "Una creatura affascinata non può attaccare l'incantatore o prenderlo di mira con capacità dannose o effetti magici. L'incantatore dispone di vantaggio su qualsiasi prova di caratteristica per interagire socialmente con la creatura."
+  },
+  "Deafened": {
+    "name": "Assordato",
+    "description": "Una creatura sorda non può sentire e fallisce automaticamente qualsiasi prova di caratteristica che richieda l'udito."
+  },
+  "Exhaustion": {
+    "name": "Esaurimento",
+    "description": "L'esaurimento è misurato in sei livelli. Livello 1: svantaggio alle prove di abilità. Livello 2: velocità dimezzata. Livello 3: svantaggio ai tiri per colpire e ai tiri salvezza. Livello 4: punti ferita massimi dimezzati. Livello 5: Velocità ridotta a 0. Livello 6: Morte. Terminare un riposo lungo riduce il livello di esaurimento di 1, a condizione che la creatura abbia ingerito anche cibo e bevande."
+  },
+  "Frightened": {
+    "name": "Spaventato",
+    "description": "Una creatura spaventata subisce svantaggio alle prove di caratteristica e ai tiri per colpire mentre la fonte della sua paura è nel campo visivo. La creatura non può avvicinarsi volontariamente alla fonte della sua paura."
+  },
+  "Grappled": {
+    "name": "Afferrato",
+    "description": "La velocità di una creatura In Lotta diventa 0 e non può beneficiare di alcun bonus alla sua velocità. La condizione termina se il lottatore diventa incapace. La condizione termina anche se un effetto rimuove la creatura in lotta dalla portata di chi lotta o dell'effetto di lotta."
+  },
+  "Incapacitated": {
+    "name": "Incapace",
+    "description": "Una creatura Incapacitata non può compiere azioni o reazioni."
+  },
+  "Invisible": {
+    "name": "Invisibile",
+    "description": "Una creatura invisibile è impossibile da vedere senza l'aiuto della magia o di sensi speciali. La posizione della creatura può essere rilevata da qualsiasi rumore emetta o da eventuali tracce che lascia. I tiri per colpire contro la creatura hanno svantaggio, mentre i tiri per colpire della creatura hanno vantaggio."
+  },
+  "Paralyzed": {
+    "name": "Paralizzato",
+    "description": "Una creatura paralizzata è incapace e non può muoversi o parlare. La creatura fallisce automaticamente i tiri salvezza su Forza e Destrezza. I tiri per colpire contro la creatura hanno vantaggio. Qualsiasi attacco che colpisca la creatura è un colpo critico se l'attaccante si trova entro 1,5 metri dalla creatura."
+  },
+  "Petrified": {
+    "name": "Pietrificato",
+    "description": "Una creatura pietrificata viene trasformata, insieme a qualsiasi oggetto non magico che indossa o trasporta, in una sostanza solida e inanimata (solitamente pietra). Il suo peso aumenta di dieci volte e smette di invecchiare. La creatura è incapace, non può muoversi o parlare e non è consapevole di ciò che la circonda. I tiri per colpire contro la creatura hanno vantaggio. La creatura fallisce automaticamente i tiri salvezza su Forza e Destrezza. La creatura ha resistenza a tutti i danni. La creatura è immune ai veleni e alle malattie, sebbene un veleno o una malattia già presenti nel suo sistema vengano sospesi, non neutralizzati."
+  },
+  "Poisoned": {
+    "name": "Avvelenato",
+    "description": "Una creatura avvelenata ha svantaggio ai tiri per colpire e alle prove di caratteristica."
+  },
+  "Prone": {
+    "name": "Incline",
+    "description": "L'unica opzione di movimento di una creatura prona è strisciare, a meno che non si alzi e quindi metta fine alla condizione. La creatura ha svantaggio ai tiri per colpire. Un tiro per colpire contro la creatura ha vantaggio se l'attaccante si trova entro 1,5 metri dalla creatura. Altrimenti, il tiro per colpire ha svantaggio."
+  },
+  "Restrained": {
+    "name": "Trattenuto",
+    "description": "La velocità di una creatura intralciata diventa 0 e non può beneficiare di alcun bonus alla sua velocità. I tiri per colpire contro la creatura hanno vantaggio, mentre i tiri per colpire della creatura hanno svantaggio. La creatura ha svantaggio ai tiri salvezza su Destrezza."
+  },
+  "Stunned": {
+    "name": "Stordito",
+    "description": "Una creatura stordita è incapace, non può muoversi e può parlare solo in modo vacillante. La creatura fallisce automaticamente i tiri salvezza su Forza e Destrezza. I tiri per colpire contro la creatura hanno vantaggio."
+  },
+  "Unconscious": {
+    "name": "Inconscio",
+    "description": "Una creatura priva di sensi è incapace, non può muoversi né parlare e non è consapevole di ciò che la circonda. La creatura lascia cadere qualunque cosa abbia in mano e cade prona. La creatura fallisce automaticamente i tiri salvezza su Forza e Destrezza. I tiri per colpire contro la creatura hanno vantaggio. Qualsiasi attacco che colpisca la creatura è un colpo critico se l'attaccante si trova entro 1,5 metri dalla creatura."
+  }
+}

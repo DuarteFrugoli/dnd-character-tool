@@ -117,6 +117,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get dialogAdd => '添加';
 
   @override
+  String get dialogDone => '完成';
+
+  @override
   String get settingsTitle => '设置';
 
   @override
@@ -900,6 +903,36 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get statUnconsciousDying => '失去知觉/濒临死亡';
+
+  @override
+  String get deathSavesTitle => '死亡豁免';
+
+  @override
+  String get deathSavesSuccesses => '成功';
+
+  @override
+  String get deathSavesFailures => '失败';
+
+  @override
+  String get deathSavesStabilized => '已稳定';
+
+  @override
+  String get deathSavesDead => '死亡';
+
+  @override
+  String get sectionActiveConditions => '活跃状态';
+
+  @override
+  String get conditionsNone => '无活跃状态';
+
+  @override
+  String get conditionsAdd => '添加状态';
+
+  @override
+  String get conditionsPickTitle => '应用状态';
+
+  @override
+  String get conditionsRemove => '移除状态';
 
   @override
   String get tooltipAddTempHp => '添加临时 HP';

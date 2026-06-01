@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,4 +27,19 @@ final srdI18nProvider = FutureProvider<SrdI18nService>((ref) async {
   final code = locale?.languageCode ??
       WidgetsBinding.instance.platformDispatcher.locale.languageCode;
   return SrdI18nService.load(code);
+});
+
+final srdConditionsProvider =
+    FutureProvider<List<({String name, String description})>>((ref) async {
+  final raw =
+      await rootBundle.loadString('assets/data/srd/conditions.json');
+  final list = jsonDecode(raw) as List<dynamic>;
+  return list
+      .map(
+        (e) => (
+          name: e['name'] as String,
+          description: e['description'] as String,
+        ),
+      )
+      .toList();
 });

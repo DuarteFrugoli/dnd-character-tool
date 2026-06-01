@@ -56,6 +56,7 @@ class Character {
   final bool isPinned;
   final int sortOrder;
   final bool xpTrackingEnabled;
+  final List<String> activeConditions;
 
   const Character({
     required this.id,
@@ -99,6 +100,7 @@ class Character {
     this.isPinned = false,
     this.sortOrder = 0,
     this.xpTrackingEnabled = false,
+    this.activeConditions = const [],
   });
 
   /// Passive perception = 10 + perception modifier
@@ -157,6 +159,7 @@ class Character {
     bool? isPinned,
     int? sortOrder,
     bool? xpTrackingEnabled,
+    List<String>? activeConditions,
   }) {
     return Character(
       id: id ?? this.id,
@@ -201,6 +204,7 @@ class Character {
       isPinned: isPinned ?? this.isPinned,
       sortOrder: sortOrder ?? this.sortOrder,
       xpTrackingEnabled: xpTrackingEnabled ?? this.xpTrackingEnabled,
+      activeConditions: activeConditions ?? this.activeConditions,
     );
   }
 

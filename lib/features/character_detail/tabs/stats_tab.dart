@@ -509,8 +509,29 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   ),
                 ],
+                if (isDead) ...[
+                  const SizedBox(height: 8),
+                  _DeathSavesRow(
+                    successes: hp.deathSaveSuccesses,
+                    failures: hp.deathSaveFailures,
+                    onChanged: (s, f) => notifier.updateDeathSaves(
+                      successes: s,
+                      failures: f,
+                    ),
+                  ),
+                ],
               ],
             ),
+          ),
+          const SizedBox(height: 12),
+
+          // ── Active Conditions ─────────────────────────────────────────────
+          _ConditionsSection(
+            activeConditions: character.activeConditions,
+            i18n: i18n,
+            onToggle: notifier.toggleCondition,
+            allConditions:
+                ref.watch(srdConditionsProvider).valueOrNull ?? const [],
           ),
           const SizedBox(height: 12),
 
@@ -989,6 +1010,353 @@ class _XpProgressionPanel extends StatelessWidget {
             );
           }),
         ],
+      ],
+    );
+  }
+}
+
+// ── Active Conditions section ─────────────────────────────────────────────────
+
+class _ConditionsSection extends StatelessWidget {
+  const _ConditionsSection({
+    required this.activeConditions,
+    required this.i18n,
+    required this.onToggle,
+    required this.allConditions,
+  });
+
+  final List<String> activeConditions;
+  final SrdI18nService i18n;
+  final void Function(String name) onToggle;
+  final List<({String name, String description})> allConditions;
+
+  void _showPicker(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) => _ConditionPickerSheet(
+        allConditions: allConditions,
+        activeConditions: activeConditions,
+        i18n: i18n,
+        onToggle: onToggle,
+        title: l10n.conditionsPickTitle,
+      ),
+    );
+  }
+
+  void _showDetail(BuildContext context, String name, String enDescription) {
+    final l10n = AppLocalizations.of(context)!;
+    final translated = i18n.conditionDescription(name);
+    final description = translated ?? enDescription;
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) {
+        final scheme = Theme.of(ctx).colorScheme;
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        i18n.conditionName(name),
+                        style:
+                            Theme.of(ctx).textTheme.titleLarge?.copyWith(
+                                  color: scheme.error,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () => Navigator.pop(ctx),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Text(description),
+                const SizedBox(height: 16),
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton.icon(
+                    icon: const Icon(Icons.remove_circle_outline, size: 16),
+                    label: Text(l10n.conditionsRemove),
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: scheme.error,
+                    ),
+                    onPressed: () {
+                      onToggle(name);
+                      Navigator.pop(ctx);
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+
+    // Build a lookup for English descriptions
+    final descMap = {for (final c in allConditions) c.name: c.description};
+
+    return _Section(
+      title: l10n.sectionActiveConditions,
+      action: IconButton(
+        icon: const Icon(Icons.add, size: 20),
+        tooltip: l10n.conditionsAdd,
+        visualDensity: VisualDensity.compact,
+        onPressed: () => _showPicker(context),
+      ),
+      child: activeConditions.isEmpty
+          ? Text(
+              l10n.conditionsNone,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+            )
+          : Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              children: activeConditions.map((name) {
+                return InputChip(
+                  label: Text(i18n.conditionName(name)),
+                  backgroundColor: scheme.errorContainer,
+                  labelStyle: TextStyle(color: scheme.onErrorContainer),
+                  deleteIconColor: scheme.onErrorContainer,
+                  onPressed: () => _showDetail(
+                    context,
+                    name,
+                    descMap[name] ?? '',
+                  ),
+                  onDeleted: () => onToggle(name),
+                );
+              }).toList(),
+            ),
+    );
+  }
+}
+
+class _ConditionPickerSheet extends StatefulWidget {
+  const _ConditionPickerSheet({
+    required this.allConditions,
+    required this.activeConditions,
+    required this.i18n,
+    required this.onToggle,
+    required this.title,
+  });
+
+  final List<({String name, String description})> allConditions;
+  final List<String> activeConditions;
+  final SrdI18nService i18n;
+  final void Function(String name) onToggle;
+  final String title;
+
+  @override
+  State<_ConditionPickerSheet> createState() => _ConditionPickerSheetState();
+}
+
+class _ConditionPickerSheetState extends State<_ConditionPickerSheet> {
+  late final Set<String> _active;
+
+  @override
+  void initState() {
+    super.initState();
+    _active = Set.from(widget.activeConditions);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.title,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 16),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: widget.allConditions.map((c) {
+                final isActive = _active.contains(c.name);
+                return FilterChip(
+                  label: Text(widget.i18n.conditionName(c.name)),
+                  selected: isActive,
+                  selectedColor: scheme.errorContainer,
+                  checkmarkColor: scheme.onErrorContainer,
+                  labelStyle: TextStyle(
+                    color: isActive
+                        ? scheme.onErrorContainer
+                        : scheme.onSurface,
+                  ),
+                  onSelected: (_) {
+                    setState(() {
+                      if (isActive) {
+                        _active.remove(c.name);
+                      } else {
+                        _active.add(c.name);
+                      }
+                    });
+                    widget.onToggle(c.name);
+                  },
+                );
+              }).toList(),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text(AppLocalizations.of(context)!.dialogDone),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── Death saves row ───────────────────────────────────────────────────────────
+
+class _DeathSavesRow extends StatelessWidget {
+  const _DeathSavesRow({
+    required this.successes,
+    required this.failures,
+    required this.onChanged,
+  });
+
+  final int successes;
+  final int failures;
+  final void Function(int successes, int failures) onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+    final isStabilized = successes >= 3;
+    final characterDied = failures >= 3;
+    const successColor = Color(0xFF43A047);
+
+    Widget buildCircles({
+      required int filled,
+      required Color filledColor,
+      required void Function(int index) onTap,
+    }) {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: List.generate(3, (i) {
+          final isFilled = i < filled;
+          return GestureDetector(
+            onTap: () => onTap(i),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 4),
+              child: Icon(
+                isFilled ? Icons.circle : Icons.radio_button_unchecked,
+                color: isFilled ? filledColor : scheme.outlineVariant,
+                size: 26,
+              ),
+            ),
+          );
+        }),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Divider(height: 20),
+        Text(
+          l10n.deathSavesTitle,
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+        ),
+        const SizedBox(height: 8),
+        // Successes
+        Row(
+          children: [
+            SizedBox(
+              width: 84,
+              child: Text(
+                l10n.deathSavesSuccesses,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
+            buildCircles(
+              filled: successes,
+              filledColor: successColor,
+              onTap: (i) {
+                final newVal = (i + 1 == successes) ? i : i + 1;
+                onChanged(newVal, failures);
+              },
+            ),
+            if (isStabilized) ...[
+              const SizedBox(width: 6),
+              Text(
+                l10n.deathSavesStabilized,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: successColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+            ],
+          ],
+        ),
+        const SizedBox(height: 4),
+        // Failures
+        Row(
+          children: [
+            SizedBox(
+              width: 84,
+              child: Text(
+                l10n.deathSavesFailures,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
+            buildCircles(
+              filled: failures,
+              filledColor: scheme.error,
+              onTap: (i) {
+                final newVal = (i + 1 == failures) ? i : i + 1;
+                onChanged(successes, newVal);
+              },
+            ),
+            if (characterDied) ...[
+              const SizedBox(width: 6),
+              Text(
+                l10n.deathSavesDead,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: scheme.error,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+            ],
+          ],
+        ),
       ],
     );
   }

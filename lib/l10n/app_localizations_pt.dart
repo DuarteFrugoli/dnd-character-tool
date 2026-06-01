@@ -123,6 +123,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get dialogAdd => 'Adicionar';
 
   @override
+  String get dialogDone => 'Concluído';
+
+  @override
   String get settingsTitle => 'Configurações';
 
   @override
@@ -919,6 +922,36 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get statUnconsciousDying => 'Inconsciente / Morrendo';
+
+  @override
+  String get deathSavesTitle => 'Salvaguardas de Morte';
+
+  @override
+  String get deathSavesSuccesses => 'Sucessos';
+
+  @override
+  String get deathSavesFailures => 'Falhas';
+
+  @override
+  String get deathSavesStabilized => 'Estabilizado';
+
+  @override
+  String get deathSavesDead => 'Morto';
+
+  @override
+  String get sectionActiveConditions => 'Condições Ativas';
+
+  @override
+  String get conditionsNone => 'Nenhuma ativa';
+
+  @override
+  String get conditionsAdd => 'Adicionar condição';
+
+  @override
+  String get conditionsPickTitle => 'Aplicar Condição';
+
+  @override
+  String get conditionsRemove => 'Remover condição';
 
   @override
   String get tooltipAddTempHp => 'Adicionar PV temp.';

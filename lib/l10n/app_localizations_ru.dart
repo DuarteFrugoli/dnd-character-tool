@@ -123,6 +123,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get dialogAdd => 'Добавлять';
 
   @override
+  String get dialogDone => 'Готово';
+
+  @override
   String get settingsTitle => 'Настройки';
 
   @override
@@ -919,6 +922,36 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get statUnconsciousDying => 'Без сознания / Умирающий';
+
+  @override
+  String get deathSavesTitle => 'Спасброски от смерти';
+
+  @override
+  String get deathSavesSuccesses => 'Успехи';
+
+  @override
+  String get deathSavesFailures => 'Провалы';
+
+  @override
+  String get deathSavesStabilized => 'Стабилизирован';
+
+  @override
+  String get deathSavesDead => 'Мёртв';
+
+  @override
+  String get sectionActiveConditions => 'Активные состояния';
+
+  @override
+  String get conditionsNone => 'Нет активных';
+
+  @override
+  String get conditionsAdd => 'Добавить состояние';
+
+  @override
+  String get conditionsPickTitle => 'Применить состояние';
+
+  @override
+  String get conditionsRemove => 'Удалить состояние';
 
   @override
   String get tooltipAddTempHp => 'Добавить временное HP';

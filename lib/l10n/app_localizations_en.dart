@@ -121,6 +121,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dialogAdd => 'Add';
 
   @override
+  String get dialogDone => 'Done';
+
+  @override
   String get settingsTitle => 'Settings';
 
   @override
@@ -914,6 +917,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get statUnconsciousDying => 'Unconscious / Dying';
+
+  @override
+  String get deathSavesTitle => 'Death Saves';
+
+  @override
+  String get deathSavesSuccesses => 'Successes';
+
+  @override
+  String get deathSavesFailures => 'Failures';
+
+  @override
+  String get deathSavesStabilized => 'Stabilized';
+
+  @override
+  String get deathSavesDead => 'Dead';
+
+  @override
+  String get sectionActiveConditions => 'Active Conditions';
+
+  @override
+  String get conditionsNone => 'None active';
+
+  @override
+  String get conditionsAdd => 'Add condition';
+
+  @override
+  String get conditionsPickTitle => 'Apply Condition';
+
+  @override
+  String get conditionsRemove => 'Remove condition';
 
   @override
   String get tooltipAddTempHp => 'Add temp HP';

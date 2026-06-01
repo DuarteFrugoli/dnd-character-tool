@@ -1,0 +1,62 @@
+{
+  "Blinded": {
+    "name": "Cegado",
+    "description": "Una criatura ciega no puede ver y automáticamente falla cualquier prueba de habilidad que requiera vista. Las tiradas de ataque contra la criatura tienen ventaja y las tiradas de ataque de la criatura tienen desventaja."
+  },
+  "Charmed": {
+    "name": "Encantado",
+    "description": "Una criatura encantada no puede atacar al encantador ni apuntarle con habilidades dañinas o efectos mágicos. El encantador tiene ventaja en cualquier prueba de habilidad para interactuar socialmente con la criatura."
+  },
+  "Deafened": {
+    "name": "ensordecido",
+    "description": "Una criatura ensordecedora no puede oír y automáticamente falla cualquier prueba de habilidad que requiera oír."
+  },
+  "Exhaustion": {
+    "name": "Agotamiento",
+    "description": "El agotamiento se mide en seis niveles. Nivel 1: Desventaja en las pruebas de habilidad. Nivel 2: Velocidad reducida a la mitad. Nivel 3: Desventaja en las tiradas de ataque y tiradas de salvación. Nivel 4: Punto de vida máximo reducido a la mitad. Nivel 5: Velocidad reducida a 0. Nivel 6: Muerte. Terminar un descanso prolongado reduce el nivel de agotamiento en 1, siempre que la criatura también haya ingerido algo de comida y bebida."
+  },
+  "Frightened": {
+    "name": "Atemorizado",
+    "description": "Una criatura asustada tiene desventaja en las pruebas de característica y tiradas de ataque mientras la fuente de su miedo esté dentro de su línea de visión. La criatura no puede acercarse voluntariamente a la fuente de su miedo."
+  },
+  "Grappled": {
+    "name": "luchado",
+    "description": "La velocidad de una criatura apresada se vuelve 0 y no puede beneficiarse de ninguna bonificación a su velocidad. La condición termina si el luchador queda incapacitado. La condición también termina si un efecto elimina a la criatura apresada del alcance del luchador o del efecto de agarre."
+  },
+  "Incapacitated": {
+    "name": "incapacitado",
+    "description": "Una criatura incapacitada no puede realizar acciones ni reacciones."
+  },
+  "Invisible": {
+    "name": "Invisible",
+    "description": "Es imposible ver una criatura invisible sin la ayuda de la magia o un sentido especial. La ubicación de la criatura se puede detectar por cualquier ruido que haga o por las huellas que deje. Las tiradas de ataque contra la criatura tienen desventaja y las tiradas de ataque de la criatura tienen ventaja."
+  },
+  "Paralyzed": {
+    "name": "Paralizado",
+    "description": "Una criatura paralizada está incapacitada y no puede moverse ni hablar. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja. Cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a 5 pies de la criatura."
+  },
+  "Petrified": {
+    "name": "petrificado",
+    "description": "Una criatura petrificada se transforma, junto con cualquier objeto no mágico que lleve o lleve, en una sustancia sólida inanimada (normalmente piedra). Su peso aumenta diez veces y deja de envejecer. La criatura está incapacitada, no puede moverse ni hablar y desconoce su entorno. Las tiradas de ataque contra la criatura tienen ventaja. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. La criatura tiene resistencia a todo daño. La criatura es inmune al veneno y a las enfermedades, aunque un veneno o una enfermedad que ya esté en su sistema queda suspendido, no neutralizado."
+  },
+  "Poisoned": {
+    "name": "envenenado",
+    "description": "Una criatura envenenada tiene desventaja en las tiradas de ataque y pruebas de habilidad."
+  },
+  "Prone": {
+    "name": "Propenso",
+    "description": "La única opción de movimiento de una criatura boca abajo es gatear, a menos que se ponga de pie y así termine la condición. La criatura tiene desventaja en las tiradas de ataque. Una tirada de ataque contra la criatura tiene ventaja si el atacante está a 5 pies de la criatura. De lo contrario, la tirada de ataque tiene desventaja."
+  },
+  "Restrained": {
+    "name": "Contenido",
+    "description": "La velocidad de una criatura restringida se vuelve 0 y no puede beneficiarse de ninguna bonificación a su velocidad. Las tiradas de ataque contra la criatura tienen ventaja y las tiradas de ataque de la criatura tienen desventaja. La criatura tiene desventaja en las tiradas de salvación de Destreza."
+  },
+  "Stunned": {
+    "name": "Aturdido",
+    "description": "Una criatura aturdida queda incapacitada, no puede moverse y sólo puede hablar entrecortadamente. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja."
+  },
+  "Unconscious": {
+    "name": "Inconsciente",
+    "description": "Una criatura inconsciente está incapacitada, no puede moverse ni hablar y no es consciente de su entorno. La criatura deja caer lo que sea que esté sosteniendo y cae boca abajo. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja. Cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a 5 pies de la criatura."
+  }
+}

@@ -29,6 +29,7 @@ class SrdI18nService {
     'backgrounds',
     'classes',
     'class_features',
+    'conditions',
     'equipment',
     'feats',
     'languages',
@@ -340,6 +341,13 @@ class SrdI18nService {
           String className, String subclassName, String featureName) =>
       _nested3('subclass_features', className, subclassName, featureName,
           'description');
+
+  // ── Conditions ─────────────────────────────────────────────────────────────
+
+  String conditionName(String en) => _str('conditions', en, 'name') ?? en;
+
+  String? conditionDescription(String en) =>
+      _str('conditions', en, 'description');
 
   // ── Equipment ──────────────────────────────────────────────────────────────
 

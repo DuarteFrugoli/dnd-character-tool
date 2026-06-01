@@ -1,0 +1,62 @@
+{
+  "Blinded": {
+    "name": "Cego",
+    "description": "Uma criatura cega não pode ver e falha automaticamente em qualquer teste de habilidade que exija visão. As jogadas de ataque contra a criatura têm vantagem e as jogadas de ataque da criatura têm desvantagem."
+  },
+  "Charmed": {
+    "name": "Encantado",
+    "description": "Uma criatura encantada não pode atacar o encantador ou atingi-lo com habilidades prejudiciais ou efeitos mágicos. O encantador tem vantagem em qualquer teste de habilidade para interagir socialmente com a criatura."
+  },
+  "Deafened": {
+    "name": "Ensurdecido",
+    "description": "Uma criatura surda não pode ouvir e falha automaticamente em qualquer teste de habilidade que exija audição."
+  },
+  "Exhaustion": {
+    "name": "Exaustão",
+    "description": "A exaustão é medida em seis níveis. Nível 1: Desvantagem em testes de habilidade. Nível 2: Velocidade reduzida pela metade. Nível 3: Desvantagem em jogadas de ataque e testes de resistência. Nível 4: Ponto de vida máximo reduzido pela metade. Nível 5: Velocidade reduzida a 0. Nível 6: Morte. Terminar um descanso longo reduz o nível de exaustão em 1, desde que a criatura também tenha ingerido alguma comida e bebida."
+  },
+  "Frightened": {
+    "name": "Com medo",
+    "description": "Uma criatura assustada tem desvantagem em testes de habilidade e jogadas de ataque enquanto a fonte de seu medo estiver dentro de sua linha de visão. A criatura não pode se aproximar voluntariamente da fonte de seu medo."
+  },
+  "Grappled": {
+    "name": "Agarrado",
+    "description": "O deslocamento de uma criatura agarrada torna-se 0 e ela não pode se beneficiar de nenhum bônus em seu deslocamento. A condição termina se o grappler estiver incapacitado. A condição também termina se um efeito remover a criatura agarrada do alcance do agarrador ou do efeito de agarrar."
+  },
+  "Incapacitated": {
+    "name": "Incapacitado",
+    "description": "Uma criatura incapacitada não pode realizar ações ou reações."
+  },
+  "Invisible": {
+    "name": "Invisível",
+    "description": "É impossível ver uma criatura invisível sem a ajuda de magia ou de um sentido especial. A localização da criatura pode ser detectada por qualquer ruído que ela faça ou por qualquer rastro que ela deixe. As jogadas de ataque contra a criatura têm desvantagem e as jogadas de ataque da criatura têm vantagem."
+  },
+  "Paralyzed": {
+    "name": "Paralisado",
+    "description": "Uma criatura paralisada fica incapacitada e não pode se mover ou falar. A criatura falha automaticamente nos testes de resistência de Força e Destreza. As jogadas de ataque contra a criatura têm vantagem. Qualquer ataque que atinja a criatura será um acerto crítico se o atacante estiver a até 1,5 metro da criatura."
+  },
+  "Petrified": {
+    "name": "Petrificado",
+    "description": "Uma criatura petrificada é transformada, junto com qualquer objeto não mágico que esteja usando ou carregando, em uma substância sólida inanimada (geralmente pedra). Seu peso aumenta dez vezes e ele para de envelhecer. A criatura está incapacitada, não pode se mover ou falar e não tem consciência do que está ao seu redor. As jogadas de ataque contra a criatura têm vantagem. A criatura falha automaticamente nos testes de resistência de Força e Destreza. A criatura tem resistência a todos os danos. A criatura é imune a venenos e doenças, embora um veneno ou doença já presente em seu sistema seja suspenso, e não neutralizado."
+  },
+  "Poisoned": {
+    "name": "Envenenado",
+    "description": "Uma criatura envenenada tem desvantagem em jogadas de ataque e testes de habilidade."
+  },
+  "Prone": {
+    "name": "Prostrado",
+    "description": "A única opção de movimento de uma criatura caída é rastejar, a menos que ela se levante e assim encerre a condição. A criatura tem desvantagem nas jogadas de ataque. Uma jogada de ataque contra a criatura tem vantagem se o atacante estiver a até 1,5 metro da criatura. Caso contrário, a jogada de ataque terá desvantagem."
+  },
+  "Restrained": {
+    "name": "Contido",
+    "description": "O deslocamento de uma criatura restringida torna-se 0 e ela não pode se beneficiar de nenhum bônus em seu deslocamento. As jogadas de ataque contra a criatura têm vantagem e as jogadas de ataque da criatura têm desvantagem. A criatura tem desvantagem nos testes de resistência de Destreza."
+  },
+  "Stunned": {
+    "name": "Atordoado",
+    "description": "Uma criatura atordoada fica incapacitada, não pode se mover e só consegue falar de maneira hesitante. A criatura falha automaticamente nos testes de resistência de Força e Destreza. As jogadas de ataque contra a criatura têm vantagem."
+  },
+  "Unconscious": {
+    "name": "Inconsciente",
+    "description": "Uma criatura inconsciente está incapacitada, não pode se mover ou falar e não tem consciência do que está ao seu redor. A criatura deixa cair tudo o que está segurando e cai no chão. A criatura falha automaticamente nos testes de resistência de Força e Destreza. As jogadas de ataque contra a criatura têm vantagem. Qualquer ataque que atinja a criatura será um acerto crítico se o atacante estiver a até 1,5 metro da criatura."
+  }
+}

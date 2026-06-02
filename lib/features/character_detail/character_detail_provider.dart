@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/utils/spellcasting_engine.dart';
+import '../../data/spellcasting_engine.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';

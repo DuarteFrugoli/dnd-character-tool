@@ -1,13 +1,13 @@
 # D&D Character Tool
 
-A mobile and web app for creating and managing Dungeons & Dragons 5e characters — built with Flutter.
+A mobile app for creating and managing Dungeons & Dragons 5e characters — built with Flutter.
 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Open%20Beta-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.41-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11-0175C2?logo=dart&logoColor=white)
 ![Version](https://img.shields.io/badge/version-0.3.3-orange)
-![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
-![License](https://img.shields.io/badge/License-MIT-blue)
+![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS-lightgrey)
+![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
 
 ## Features
@@ -47,10 +47,9 @@ A mobile and web app for creating and managing Dungeons & Dragons 5e characters 
 - Character photo: pick from gallery, crop 1:1
 
 ### Export & Import
-- Export as **`.dndchar`** portable file (includes photo), shareable via file system, WhatsApp, e-mail, etc.
+- Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
 - Export as **JSON** or compressed **token** (gzip + base64url)
-- **QR code** generation and scanning (camera)
-- Import by `.dndchar` file, token, JSON or QR
+- Import by `.dndchar` file, token or JSON
 
 ### Customization
 - 9 color themes: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
@@ -78,7 +77,7 @@ A mobile and web app for creating and managing Dungeons & Dragons 5e characters 
 |----------|--------|
 | Android  | ✅ Supported |
 | iOS      | ✅ Supported |
-| Web      | ✅ Supported |
+| Web      | ⚠️ Not available |
 
 ## Getting Started
 
@@ -104,7 +103,7 @@ See [LICENSE](LICENSE) for details.
 
 # D&D Character Tool (Português)
 
-Aplicativo mobile e web para criar e gerenciar personagens de Dungeons & Dragons 5e — feito com Flutter.
+Aplicativo mobile para criar e gerenciar personagens de Dungeons & Dragons 5e — feito com Flutter.
 
 ## Funcionalidades
 
@@ -143,10 +142,9 @@ Aplicativo mobile e web para criar e gerenciar personagens de Dungeons & Dragons
 - Foto do personagem: escolher da galeria, cortar em 1:1
 
 ### Export & Import
-- Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de arquivos, WhatsApp, e-mail etc.
+- Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
 - Exportar como **JSON** ou **token** comprimido (gzip + base64url)
-- Geração e leitura de **QR Code** (câmera)
-- Importar por arquivo `.dndchar`, token, JSON ou QR
+- Importar por arquivo `.dndchar`, token ou JSON
 
 ### Personalização
 - 9 temas de cores: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
@@ -174,7 +172,7 @@ Aplicativo mobile e web para criar e gerenciar personagens de Dungeons & Dragons
 |------------|--------|
 | Android    | ✅ Suportado |
 | iOS        | ✅ Suportado |
-| Web        | ✅ Suportado |
+| Web        | ⚠️ Indisponível |
 
 ## Como rodar
 

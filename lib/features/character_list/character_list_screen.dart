@@ -6,13 +6,12 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:share_plus/share_plus.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/services/incoming_file_service.dart';
+import '../../core/utils/file_exporter.dart';
 
 import 'character_list_provider.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
@@ -485,14 +484,7 @@ class _ExportDialogState extends State<_ExportDialog> {
   Future<void> _shareFile() async {
     setState(() => _sharingFile = true);
     try {
-      final dir = await getTemporaryDirectory();
-      final safeName = widget.characterName.replaceAll(RegExp(r'[^\w]'), '_');
-      final file = File('${dir.path}/$safeName.dndchar');
-      await file.writeAsString(widget.fileJson);
-      await Share.shareXFiles(
-        [XFile(file.path, mimeType: 'application/octet-stream')],
-        subject: widget.characterName,
-      );
+      await exportDndCharFile(widget.characterName, widget.fileJson);
     } finally {
       if (mounted) setState(() => _sharingFile = false);
     }

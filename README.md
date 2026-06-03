@@ -20,12 +20,18 @@ A mobile and web app for creating and managing Dungeons & Dragons 5e characters 
 - Tool and instrument proficiency selection
 
 ### Character Sheet
-- **Stats tab**: HP tracker (damage/heal), combat info (AC, speed, initiative), attributes and saving throws
-- **Skills tab**: all 18 skills with proficiency/expertise indicators
-- **Features tab**: racial traits, background feature, class features by level, extra features
+- **Stats tab**: HP tracker with damage/heal buttons, AC, speed, initiative; Saving Throws with calculated values; Inspiration banner; XP tracking with progress bar and level-up detection; Death Saves (auto-shown at 0 HP); Active Conditions picker with 15 SRD conditions
+- **Skills tab**: all 18 skills with proficiency/expertise indicators and calculated bonuses
+- **Features tab**: racial traits, background feature, class features by level, 42 SRD feats, extra features
 - **Spells tab**: spell slots tracker, known/prepared spells, spell browser with filters
 - **Inventory tab**: equipped/carried items, armor class calculation, currencies (CP/SP/EP/GP/PP)
-- **Notes tab**: personality traits, ideals, bonds, flaws, backstory
+- **Identity tab**: appearance (photo + crop), personality traits, ideals, bonds, flaws, backstory
+- **Notes tab**: free-form notes per character
+
+### Level Up
+- **Level Up Wizard**: full level-up flow (HP roll, ASI/Feats, subclass selection, extra spells, class features)
+- **XP tracking**: optional toggle with progress bar, quick-add field and full SRD XP table
+- **Auto level-up prompt**: dialog when accumulated XP reaches the next threshold
 
 ### Spell System
 - Full SRD spell list with school, casting time, concentration and ritual badges
@@ -41,26 +47,30 @@ A mobile and web app for creating and managing Dungeons & Dragons 5e characters 
 - Character photo: pick from gallery, crop 1:1
 
 ### Export & Import
+- Export as **`.dndchar`** portable file (includes photo), shareable via file system, WhatsApp, e-mail, etc.
 - Export as **JSON** or compressed **token** (gzip + base64url)
 - **QR code** generation and scanning (camera)
-- Import by token, JSON or QR
+- Import by `.dndchar` file, token, JSON or QR
 
 ### Customization
-- 8 color themes: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
+- 9 color themes: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
 - Theme picker with color swatch preview
 
 ### Internationalization
 - 10 languages: English, Portuguese, German, Spanish, French, Italian, Japanese, Korean, Russian, Chinese
-- UI strings via ARB / `AppLocalizations`; SRD content (spell names, class features, races, items) via locale overlay JSONs in `assets/data/i18n/`
+- UI strings via ARB / `AppLocalizations`; SRD content (spell names, class features, races, items, conditions) via locale overlay JSONs in `assets/data/i18n/`
 
 ## Tech Stack
 
 - **Flutter** 3.41 / Dart 3.11
-- **State management**: flutter_riverpod
+- **State management**: flutter_riverpod 2
 - **Navigation**: go_router
 - **Persistence**: JSON files via `path_provider` (mobile) and `shared_preferences` (web)
+- **Serialization**: json_serializable + json_annotation (code-gen)
 - **Images**: image_picker + image_cropper (Android, iOS and Web via Cropper.js)
 - **QR**: qr_flutter + mobile_scanner
+- **Export/Import**: share_plus + file_picker
+- **UI utilities**: flutter_sticky_header, uuid, collection
 
 ## Platforms
 
@@ -106,12 +116,18 @@ Aplicativo mobile e web para criar e gerenciar personagens de Dungeons & Dragons
 - Seleção de proficiências em ferramentas e instrumentos
 
 ### Ficha do Personagem
-- **Aba Stats**: rastreador de HP (dano/cura), informações de combate (CA, deslocamento, iniciativa), atributos e salvaguardas
-- **Aba Skills**: as 18 perícias com indicadores de proficiência e expertise
-- **Aba Features**: traços raciais, feature do antecedente, features de classe por nível, features extras
+- **Aba Stats**: rastreador de HP com botões de Dano e Cura, CA, deslocamento, iniciativa; Salvaguardas com valores calculados; banner de Inspiração; rastreamento de XP com barra de progresso e detecção de level up; Salvaguardas de Morte (exibidas automaticamente ao chegar a 0 PV); seletor de Condições Ativas com 15 condições do SRD
+- **Aba Skills**: 18 perícias com indicadores de proficiência/expertise e bônus calculados
+- **Aba Features**: traços raciais, feature do antecedente, features de classe por nível, 42 talentos do SRD, features extras
 - **Aba Spells**: rastreador de espaços de magia, magias conhecidas/preparadas, browser de magias com filtros
 - **Aba Inventory**: itens equipados/carregados, cálculo de CA por armadura, moedas (CP/SP/EP/GP/PP)
-- **Aba Notes**: traços de personalidade, ideais, vínculos, fraquezas, história
+- **Aba Identity**: aparência (foto + corte), traços de personalidade, ideais, vínculos, fraquezas, história
+- **Aba Notes**: notas livres por personagem
+
+### Subida de Nível
+- **Level Up Wizard**: fluxo completo de level up (rolagem de HP, ASI/Talentos, seleção de subclasse, magias extras, features de classe)
+- **Rastreamento de XP**: toggle opcional com barra de progresso, campo de adição rápida e tabela completa de XP do SRD
+- **Detecção automática de level up**: diálogo ao acumular XP suficiente para o próximo nível
 
 ### Sistema de Magias
 - Lista completa de magias do SRD com badges de escola, tempo de conjuração, concentração e ritual
@@ -127,22 +143,30 @@ Aplicativo mobile e web para criar e gerenciar personagens de Dungeons & Dragons
 - Foto do personagem: escolher da galeria, cortar em 1:1
 
 ### Export & Import
+- Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de arquivos, WhatsApp, e-mail etc.
 - Exportar como **JSON** ou **token** comprimido (gzip + base64url)
 - Geração e leitura de **QR Code** (câmera)
-- Importar por token, JSON ou QR
+- Importar por arquivo `.dndchar`, token, JSON ou QR
 
 ### Personalização
-- 8 temas de cores: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
+- 9 temas de cores: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
 - Seletor de tema com preview de swatches de cores
+
+### Internacionalização
+- 10 idiomas: Inglês, Português, Alemão, Espanhol, Francês, Italiano, Japonês, Coreano, Russo, Chinês
+- Strings da UI via ARB / `AppLocalizations`; conteúdo SRD (nomes de magias, features de classe, raças, itens, condições) via JSONs de overlay em `assets/data/i18n/`
 
 ## Tecnologias
 
 - **Flutter** 3.41 / Dart 3.11
-- **Gerenciamento de estado**: flutter_riverpod
+- **Gerenciamento de estado**: flutter_riverpod 2
 - **Navegação**: go_router
 - **Persistência**: arquivos JSON via `path_provider` (mobile) e `shared_preferences` (web)
+- **Serialização**: json_serializable + json_annotation (geração de código)
 - **Imagens**: image_picker + image_cropper (Android, iOS e Web via Cropper.js)
 - **QR**: qr_flutter + mobile_scanner
+- **Export/Import**: share_plus + file_picker
+- **Utilitários de UI**: flutter_sticky_header, uuid, collection
 
 ## Plataformas
 

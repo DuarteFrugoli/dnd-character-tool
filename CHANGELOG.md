@@ -9,6 +9,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.3.4] - 2026-06-03
+
+### Fixed
+- **Web — exportar `.dndchar`**: corrigido import condicional `dart.library.html` → `dart.library.js_interop` (Dart 3+); o arquivo de download agora é corretamente invocado no browser
+- **Web — token de compartilhamento**: `GZipCodec` (dart:io) indisponível na web causava crash ao abrir a tela; token na web agora usa `base64url` sem compressão; importação aceita tokens com ou sem gzip (compatibilidade cruzada mobile ↔ web)
+- **Cross-platform — imagem ao importar `.dndchar`**: personagens exportados no celular (imagePath como caminho de arquivo) agora preservam a foto ao serem importados na web — imagem é armazenada como data URL (`data:image/jpeg;base64,...`)
+- **Cross-platform — imagem ao exportar `.dndchar` na web**: imagem já em formato data URL é corretamente lida e embutida no arquivo `.dndchar` sem usar `dart:io`
+
+---
+
 ## [0.3.3] - 2026-06-01
 
 ### Added

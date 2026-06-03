@@ -20,8 +20,12 @@ import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_avatar.dart';
 
 // Top-level: runs in a separate isolate via compute()
-String _buildToken(String json) =>
-    base64Url.encode(GZipCodec().encode(utf8.encode(json)));
+// Web doesn't support GZipCodec (dart:io) — use plain base64url there.
+String _buildToken(String json) {
+  final bytes = utf8.encode(json);
+  if (kIsWeb) return base64Url.encode(bytes);
+  return base64Url.encode(GZipCodec().encode(bytes));
+}
 
 class CharacterListScreen extends ConsumerStatefulWidget {
   const CharacterListScreen({super.key});
@@ -649,7 +653,14 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
     if (token.isNotEmpty) {
       try {
         final bytes = base64Url.decode(base64Url.normalize(token));
-        return (json: utf8.decode(GZipCodec().decode(bytes)), source: 'token');
+        // Try gzip-decode first (tokens from native); fall back to plain (tokens from web).
+        String decoded;
+        try {
+          decoded = utf8.decode(GZipCodec().decode(bytes));
+        } catch (_) {
+          decoded = utf8.decode(bytes);
+        }
+        return (json: decoded, source: 'token');
       } catch (_) {
         return null;
       }

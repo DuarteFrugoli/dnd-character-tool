@@ -672,10 +672,15 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
       final result = await FilePicker.platform.pickFiles(
         type: FileType.any,
         allowMultiple: false,
+        // On web, path is always null — we need bytes instead.
+        withData: kIsWeb,
       );
       if (result == null || result.files.isEmpty) return;
-      final path = result.files.single.path;
-      if (path == null || !path.endsWith('.dndchar')) {
+
+      final picked = result.files.single;
+
+      // Validate filename (name is always available on all platforms).
+      if (!picked.name.endsWith('.dndchar')) {
         if (!ctx.mounted) return;
         ScaffoldMessenger.of(ctx).showSnackBar(
           SnackBar(
@@ -685,7 +690,19 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
         );
         return;
       }
-      final fileJson = await File(path).readAsString();
+
+      // Read content: use bytes on web, File on native.
+      final String fileJson;
+      if (kIsWeb) {
+        final bytes = picked.bytes;
+        if (bytes == null) return;
+        fileJson = utf8.decode(bytes);
+      } else {
+        final path = picked.path;
+        if (path == null) return;
+        fileJson = await File(path).readAsString();
+      }
+
       if (!ctx.mounted) return;
       final character = await ref
           .read(characterListProvider.notifier)

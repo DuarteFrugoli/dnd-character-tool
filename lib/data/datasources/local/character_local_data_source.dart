@@ -102,13 +102,27 @@ class CharacterLocalDataSource {
     String? mimeType;
 
     if (character.imagePath != null) {
-      final absolutePath = await resolveImagePath(character.imagePath);
-      if (absolutePath != null) {
-        final file = File(absolutePath);
-        if (await file.exists()) {
-          bytes = await file.readAsBytes();
-          final ext = absolutePath.split('.').last.toLowerCase();
-          mimeType = ext == 'png' ? 'image/png' : 'image/jpeg';
+      final imagePath = character.imagePath!;
+      if (imagePath.startsWith('data:')) {
+        // Web: image is already a base64 data URL — extract bytes and mime type.
+        final commaIdx = imagePath.indexOf(',');
+        if (commaIdx != -1) {
+          final header = imagePath.substring(5, commaIdx); // e.g. "image/jpeg;base64"
+          mimeType = header.split(';').first; // "image/jpeg"
+          try {
+            bytes = base64Decode(imagePath.substring(commaIdx + 1));
+          } catch (_) {}
+        }
+      } else {
+        // Native: resolve file path and read bytes.
+        final absolutePath = await resolveImagePath(imagePath);
+        if (absolutePath != null) {
+          final file = File(absolutePath);
+          if (await file.exists()) {
+            bytes = await file.readAsBytes();
+            final ext = absolutePath.split('.').last.toLowerCase();
+            mimeType = ext == 'png' ? 'image/png' : 'image/jpeg';
+          }
         }
       }
     }
@@ -178,15 +192,23 @@ class CharacterLocalDataSource {
 
     if (imageData != null) {
       try {
-        final bytes = base64Decode(imageData);
-        final ext = imageMimeType == 'image/png' ? 'png' : 'jpg';
-        final tempDir = await getTemporaryDirectory();
-        final tempFile = File('${tempDir.path}/dndchar_import.$ext');
-        await tempFile.writeAsBytes(bytes);
-        final savedPath = await _backend.saveImage('import_tmp', tempFile.path);
-        await tempFile.delete().catchError((_) => File(''));
-        if (savedPath != null) {
-          character = character.copyWith(imagePath: savedPath);
+        final mimeType = imageMimeType ?? 'image/jpeg';
+        if (kIsWeb) {
+          // On web, store image as base64 data URL directly in the character JSON.
+          character = character.copyWith(
+            imagePath: 'data:$mimeType;base64,$imageData',
+          );
+        } else {
+          final bytes = base64Decode(imageData);
+          final ext = mimeType == 'image/png' ? 'png' : 'jpg';
+          final tempDir = await getTemporaryDirectory();
+          final tempFile = File('${tempDir.path}/dndchar_import.$ext');
+          await tempFile.writeAsBytes(bytes);
+          final savedPath = await _backend.saveImage('import_tmp', tempFile.path);
+          await tempFile.delete().catchError((_) => File(''));
+          if (savedPath != null) {
+            character = character.copyWith(imagePath: savedPath);
+          }
         }
       } catch (_) {
         // Image import failed — proceed without image

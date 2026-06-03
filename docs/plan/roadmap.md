@@ -29,17 +29,25 @@
 ## v1.5 — Qualidade de vida do jogador (atual)
 
 ### Edição da ficha
-- [ ] Edição completa: raça, subraça, classe, subclasse e background
-- [ ] Level up guiado — ao subir de nível: escolha de subclasse (se aplicável), ASI/feat, novos slots e features
+- [x] Level up guiado — ao subir de nível: escolha de subclasse (se aplicável), ASI/feat, novos slots e features
+- [x] Condições ativas — 15 condições do SRD com chips, descrições e persistência
+- [x] Death Saves — 3 sucessos / 3 falhas, reset automático ao receber cura
+- [x] Saving Throws — valores calculados (mod + proficiência) sempre visíveis
+- [ ] Multiclasse
+- [ ] Descanso Curto / Longo — recuperar HP (HD), slots e usos de features
+- [ ] Concentração — indicador da magia ativa, aviso ao tentar empilhar
+- [ ] Rolar dados diretamente na ficha (toque em atributo/perícia → resultado)
 
 ### Testes automatizados
-- [ ] `SpellcastingEngine` — slots, DC, attack bonus por classe e nível
-- [ ] `buildAndSave` — fluxo de criação com armadura/CA
-- [ ] `CharacterRepository` — save → load → delete
+- [x] `SpellcastingEngine` — slots, DC, attack bonus por classe e nível
+- [x] `buildAndSave` — fluxo de criação com armadura/CA
+- [x] `CharacterRepository` — save → load → delete
 
 ### Pequenas melhorias
-- [ ] Export completo como `.zip` (JSON + imagem juntos)
-- [ ] Rolar dados diretamente na ficha (toque em atributo/perícia → resultado)
+- [x] Export completo como `.dndchar` (JSON + imagem embutida em base64)
+- [x] Export / import `.dndchar` funcionando na web
+- [x] Token de compartilhamento compatível entre mobile e web
+- [ ] Peso do inventário — barra de carga (STR × 15 lb) com unidades Imperial/Métrico
 
 ---
 

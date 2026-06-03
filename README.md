@@ -2,6 +2,8 @@
 
 A mobile and web app for creating and managing Dungeons & Dragons 5e characters — built with Flutter.
 
+[![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Open%20Beta-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
+
 ## Features
 
 ### Character Creation

@@ -611,7 +611,10 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           // ── Ability Scores ────────────────────────────────────────────────
           _Section(
             title: l10n.sectionAbilityScores,
-            child: GridView.count(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 480),
+                child: GridView.count(
               crossAxisCount: 3,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -662,6 +665,8 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   isEditing: _isEditing,
                 ),
               ],
+                ),
+              ),
             ),
           ),
           const SizedBox(height: 12),

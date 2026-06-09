@@ -362,14 +362,6 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     );
   }
 
-  /// Manually sync spell slots to current class/level. Exposed so the UI
-  /// can call it once for characters created before auto-sync existed.
-  Future<void> syncSpellSlots() async {
-    final c = state.valueOrNull;
-    if (c == null) return;
-    await _save(_applySlotSync(c));
-  }
-
   Future<void> updateSubclass(String subclassName) async {
     final c = state.valueOrNull;
     if (c == null) return;

@@ -118,23 +118,6 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
   void initState() {
     super.initState();
     _loadSpells();
-    // Sync spell slots on first load for characters that predate auto-sync
-    // (characters created before updateLevel() started calling _applySlotSync).
-    // Also auto-populate racial innate spells on first load.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      final c = ref
-          .read(characterDetailProvider(widget.characterId))
-          .valueOrNull;
-      if (c != null && c.spellSlots.total.every((t) => t == 0)) {
-        ref
-            .read(characterDetailProvider(widget.characterId).notifier)
-            .syncSpellSlots();
-      }
-      ref
-          .read(characterDetailProvider(widget.characterId).notifier)
-          .syncInnateSpells();
-    });
   }
 
   @override

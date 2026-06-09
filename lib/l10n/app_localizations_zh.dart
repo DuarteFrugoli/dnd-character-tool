@@ -824,6 +824,24 @@ class AppLocalizationsZh extends AppLocalizations {
   String get inventoryLabelWeight => '重量';
 
   @override
+  String get weightCarried => '携带中';
+
+  @override
+  String get weightCapacity => '承载量';
+
+  @override
+  String get weightEncumbered => '负重';
+
+  @override
+  String get weightHeavilyEncumbered => '严重负重';
+
+  @override
+  String get weightEnableTooltip => '启用重量跟踪';
+
+  @override
+  String get weightDisableTooltip => '禁用重量跟踪';
+
+  @override
   String get inventoryLabelDescription => '说明（可选）';
 
   @override

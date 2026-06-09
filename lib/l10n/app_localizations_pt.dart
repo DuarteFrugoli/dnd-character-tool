@@ -843,6 +843,24 @@ class AppLocalizationsPt extends AppLocalizations {
   String get inventoryLabelWeight => 'Peso';
 
   @override
+  String get weightCarried => 'Carregando';
+
+  @override
+  String get weightCapacity => 'Capacidade';
+
+  @override
+  String get weightEncumbered => 'Sobrecarregado';
+
+  @override
+  String get weightHeavilyEncumbered => 'Muito Sobrecarregado';
+
+  @override
+  String get weightEnableTooltip => 'Ativar rastreamento de peso';
+
+  @override
+  String get weightDisableTooltip => 'Desativar rastreamento de peso';
+
+  @override
   String get inventoryLabelDescription => 'Descrição (opcional)';
 
   @override

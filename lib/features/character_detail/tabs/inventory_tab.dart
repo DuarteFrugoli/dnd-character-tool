@@ -93,6 +93,16 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
         .where((e) => !e.isEquipped && !equippableTypes.contains(e.itemType))
         .toList();
 
+    // Weight tracking
+    final strScore = character.abilityScores.strength;
+    final totalWeight = character.equipment.fold<double>(
+      0.0,
+      (sum, item) => sum + item.weight * item.quantity,
+    );
+    final maxCarry = strScore * 15.0;
+    final encumberedThreshold = strScore * 5.0;
+    final heavilyEncThreshold = strScore * 10.0;
+
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
@@ -147,6 +157,34 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
             ),
           ),
           const SizedBox(height: 12),
+
+          // ── Weight Tracking ─────────────────────────────────────────────
+          if (character.weightTrackingEnabled)
+            _WeightBar(
+              totalWeight: totalWeight,
+              maxCarry: maxCarry,
+              encumberedAt: encumberedThreshold,
+              heavilyEncAt: heavilyEncThreshold,
+              onDisable: () => ref
+                  .read(characterDetailProvider(widget.characterId).notifier)
+                  .toggleWeightTracking(),
+            )
+          else
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton.icon(
+                onPressed: () => ref
+                    .read(characterDetailProvider(widget.characterId).notifier)
+                    .toggleWeightTracking(),
+                icon: const Icon(Icons.monitor_weight_outlined, size: 16),
+                label: Text(l10n.weightEnableTooltip),
+                style: TextButton.styleFrom(
+                  foregroundColor: scheme.onSurfaceVariant,
+                  textStyle: Theme.of(context).textTheme.labelSmall,
+                ),
+              ),
+            ),
+          const SizedBox(height: 4),
 
           // ── Ammunition ──────────────────────────────────────────────────
           if (ammo.isNotEmpty) ...[
@@ -436,6 +474,132 @@ class _AmmunitionSection extends ConsumerWidget {
                   ),
                 )),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── Weight Bar ────────────────────────────────────────────────────────────────
+
+class _WeightBar extends StatelessWidget {
+  const _WeightBar({
+    required this.totalWeight,
+    required this.maxCarry,
+    required this.encumberedAt,
+    required this.heavilyEncAt,
+    required this.onDisable,
+  });
+
+  final double totalWeight;
+  final double maxCarry;
+  final double encumberedAt;
+  final double heavilyEncAt;
+  final VoidCallback onDisable;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    final fraction = maxCarry > 0 ? (totalWeight / maxCarry).clamp(0.0, 1.0) : 0.0;
+
+    final Color barColor;
+    String? statusLabel;
+    if (totalWeight > heavilyEncAt) {
+      barColor = scheme.error;
+      statusLabel = l10n.weightHeavilyEncumbered;
+    } else if (totalWeight > encumberedAt) {
+      barColor = Colors.orange;
+      statusLabel = l10n.weightEncumbered;
+    } else {
+      barColor = scheme.primary;
+    }
+
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.monitor_weight_outlined, size: 16, color: scheme.primary),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text.rich(
+                    TextSpan(children: [
+                      TextSpan(
+                        text: '${totalWeight % 1 == 0 ? totalWeight.toInt() : totalWeight.toStringAsFixed(2)} / ${maxCarry.toInt()} lb',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      if (statusLabel != null) ...[
+                        const TextSpan(text: '  '),
+                        TextSpan(
+                          text: statusLabel,
+                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: barColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ]),
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.close, size: 16),
+                  tooltip: l10n.weightDisableTooltip,
+                  onPressed: onDisable,
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
+                  visualDensity: VisualDensity.compact,
+                ),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(
+                    value: fraction,
+                    minHeight: 8,
+                    backgroundColor: scheme.surfaceContainerHighest,
+                    valueColor: AlwaysStoppedAnimation<Color>(barColor),
+                  ),
+                ),
+                // Tick marks at ×5 and ×10 STR thresholds
+                if (maxCarry > 0) ...[
+                  _WeightTick(fraction: encumberedAt / maxCarry),
+                  _WeightTick(fraction: heavilyEncAt / maxCarry),
+                ],
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _WeightTick extends StatelessWidget {
+  const _WeightTick({required this.fraction});
+  final double fraction;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return FractionallySizedBox(
+      alignment: Alignment.centerLeft,
+      widthFactor: fraction.clamp(0.0, 1.0),
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Container(
+          width: 2,
+          height: 8,
+          color: scheme.surface,
         ),
       ),
     );

@@ -1602,6 +1602,42 @@ abstract class AppLocalizations {
   /// **'Weight'**
   String get inventoryLabelWeight;
 
+  /// Weight tracking: label for current carried weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Carried'**
+  String get weightCarried;
+
+  /// Weight tracking: label for max carry capacity.
+  ///
+  /// In en, this message translates to:
+  /// **'Capacity'**
+  String get weightCapacity;
+
+  /// Weight tracking: encumbered status label.
+  ///
+  /// In en, this message translates to:
+  /// **'Encumbered'**
+  String get weightEncumbered;
+
+  /// Weight tracking: heavily encumbered status label.
+  ///
+  /// In en, this message translates to:
+  /// **'Heavily Encumbered'**
+  String get weightHeavilyEncumbered;
+
+  /// Tooltip for the weight tracking toggle button.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable weight tracking'**
+  String get weightEnableTooltip;
+
+  /// Tooltip for the weight tracking disable button.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable weight tracking'**
+  String get weightDisableTooltip;
+
   /// Custom item description field label.
   ///
   /// In en, this message translates to:

@@ -748,6 +748,19 @@
   "inventoryLabelWeight": "Weight",
   "@inventoryLabelWeight": { "description": "Custom item weight field label (in lb)." },
 
+  "weightCarried": "Carried",
+  "@weightCarried": { "description": "Weight tracking: label for current carried weight." },
+  "weightCapacity": "Capacity",
+  "@weightCapacity": { "description": "Weight tracking: label for max carry capacity." },
+  "weightEncumbered": "Encumbered",
+  "@weightEncumbered": { "description": "Weight tracking: encumbered status label." },
+  "weightHeavilyEncumbered": "Heavily Encumbered",
+  "@weightHeavilyEncumbered": { "description": "Weight tracking: heavily encumbered status label." },
+  "weightEnableTooltip": "Enable weight tracking",
+  "@weightEnableTooltip": { "description": "Tooltip for the weight tracking toggle button." },
+  "weightDisableTooltip": "Disable weight tracking",
+  "@weightDisableTooltip": { "description": "Tooltip for the weight tracking disable button." },
+
   "inventoryLabelDescription": "Description (optional)",
   "@inventoryLabelDescription": { "description": "Custom item description field label." },
 

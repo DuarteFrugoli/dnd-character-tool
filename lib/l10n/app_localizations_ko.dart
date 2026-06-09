@@ -833,6 +833,24 @@ class AppLocalizationsKo extends AppLocalizations {
   String get inventoryLabelWeight => '무게';
 
   @override
+  String get weightCarried => '휴대 중';
+
+  @override
+  String get weightCapacity => '수낙 능력';
+
+  @override
+  String get weightEncumbered => '과적재';
+
+  @override
+  String get weightHeavilyEncumbered => '중에 과적재';
+
+  @override
+  String get weightEnableTooltip => '무게 추적 활성화';
+
+  @override
+  String get weightDisableTooltip => '무게 추적 비활성화';
+
+  @override
   String get inventoryLabelDescription => '설명(선택사항)';
 
   @override

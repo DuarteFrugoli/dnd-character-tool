@@ -890,4 +890,10 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     }
     await _save(c.copyWith(xpTrackingEnabled: enabled, experiencePoints: xp));
   }
+
+  Future<void> toggleWeightTracking() async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(weightTrackingEnabled: !c.weightTrackingEnabled));
+  }
 }

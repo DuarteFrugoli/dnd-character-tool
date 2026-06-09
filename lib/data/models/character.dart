@@ -59,6 +59,7 @@ class Character {
   final bool isPinned;
   final int sortOrder;
   final bool xpTrackingEnabled;
+  final bool weightTrackingEnabled;
   final List<String> activeConditions;
   final String? concentrationSpell;
 
@@ -104,6 +105,7 @@ class Character {
     this.isPinned = false,
     this.sortOrder = 0,
     this.xpTrackingEnabled = false,
+    this.weightTrackingEnabled = false,
     this.activeConditions = const [],
     this.concentrationSpell,
   });
@@ -164,6 +166,7 @@ class Character {
     bool? isPinned,
     int? sortOrder,
     bool? xpTrackingEnabled,
+    bool? weightTrackingEnabled,
     List<String>? activeConditions,
     Object? concentrationSpell = _keep,
   }) {
@@ -210,6 +213,7 @@ class Character {
       isPinned: isPinned ?? this.isPinned,
       sortOrder: sortOrder ?? this.sortOrder,
       xpTrackingEnabled: xpTrackingEnabled ?? this.xpTrackingEnabled,
+      weightTrackingEnabled: weightTrackingEnabled ?? this.weightTrackingEnabled,
       activeConditions: activeConditions ?? this.activeConditions,
       concentrationSpell: concentrationSpell == _keep
           ? this.concentrationSpell

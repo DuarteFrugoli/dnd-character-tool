@@ -832,6 +832,24 @@ class AppLocalizationsJa extends AppLocalizations {
   String get inventoryLabelWeight => '重さ';
 
   @override
+  String get weightCarried => '持ち运び中';
+
+  @override
+  String get weightCapacity => '最大荷重';
+
+  @override
+  String get weightEncumbered => '荷物辺り';
+
+  @override
+  String get weightHeavilyEncumbered => '重荷物';
+
+  @override
+  String get weightEnableTooltip => '重量トラッキングを有効にする';
+
+  @override
+  String get weightDisableTooltip => '重量トラッキングを無効にする';
+
+  @override
   String get inventoryLabelDescription => '説明 (オプション)';
 
   @override

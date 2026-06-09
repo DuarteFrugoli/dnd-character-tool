@@ -844,6 +844,24 @@ class AppLocalizationsRu extends AppLocalizations {
   String get inventoryLabelWeight => 'Вес';
 
   @override
+  String get weightCarried => 'Несётся';
+
+  @override
+  String get weightCapacity => 'Грузоподъёмность';
+
+  @override
+  String get weightEncumbered => 'Отягощён';
+
+  @override
+  String get weightHeavilyEncumbered => 'Сильно Отягощён';
+
+  @override
+  String get weightEnableTooltip => 'Включить отслеживание веса';
+
+  @override
+  String get weightDisableTooltip => 'Выключить отслеживание веса';
+
+  @override
   String get inventoryLabelDescription => 'Описание (необязательно)';
 
   @override

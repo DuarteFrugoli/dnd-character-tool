@@ -852,17 +852,19 @@ class _SpellRow extends ConsumerWidget {
             children: [
               // Prepare toggle or always-prepared icon
               if (showPrepareToggle) ...[
-                GestureDetector(
-                  onTap: onTogglePrepared,
-                  mouseCursor: SystemMouseCursors.click,
-                  child: Icon(
-                    spell.isPrepared
-                        ? Icons.check_box
-                        : Icons.check_box_outline_blank,
-                    size: 20,
-                    color: spell.isPrepared
-                        ? scheme.primary
-                        : scheme.outlineVariant,
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: onTogglePrepared,
+                    child: Icon(
+                      spell.isPrepared
+                          ? Icons.check_box
+                          : Icons.check_box_outline_blank,
+                      size: 20,
+                      color: spell.isPrepared
+                          ? scheme.primary
+                          : scheme.outlineVariant,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -909,16 +911,17 @@ class _SpellRow extends ConsumerWidget {
                   const SizedBox(width: 2),
                   Builder(builder: (ctx) {
                     final isActive = concentrationSpell == spell.name;
-                    return GestureDetector(
-                      onTap: () => _onConcentrationTap(
-                        ctx,
-                        ref,
-                        spell.name,
-                        concentrationSpell,
-                        characterId!,
-                      ),
-                      mouseCursor: SystemMouseCursors.click,
-                      child: Tooltip(
+                    return MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () => _onConcentrationTap(
+                          ctx,
+                          ref,
+                          spell.name,
+                          concentrationSpell,
+                          characterId!,
+                        ),
+                        child: Tooltip(
                         message: AppLocalizations.of(ctx)!.concentrationTooltip,
                         child: Icon(
                           isActive ? Icons.gps_fixed : Icons.gps_not_fixed,
@@ -926,6 +929,7 @@ class _SpellRow extends ConsumerWidget {
                           color: isActive
                               ? scheme.primary
                               : scheme.outlineVariant,
+                        ),
                         ),
                       ),
                     );
@@ -1196,19 +1200,21 @@ class _InnateSpellRow extends ConsumerWidget {
               const SizedBox(width: 6),
               ...List.generate(spell.usesPerDay!, (i) {
                 final isUsed = i >= spell.remaining;
-                return GestureDetector(
-                  onTap: isUsed ? null : onUse,
-                  mouseCursor: isUsed ? MouseCursor.defer : SystemMouseCursors.click,
-                  child: Container(
-                    width: 20,
-                    height: 20,
-                    margin: const EdgeInsets.symmetric(horizontal: 2),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: isUsed ? null : scheme.primaryContainer,
-                      border: Border.all(
-                        color: isUsed ? scheme.outlineVariant : scheme.primary,
-                        width: 2,
+                return MouseRegion(
+                  cursor: isUsed ? MouseCursor.defer : SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: isUsed ? null : onUse,
+                    child: Container(
+                      width: 20,
+                      height: 20,
+                      margin: const EdgeInsets.symmetric(horizontal: 2),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: isUsed ? null : scheme.primaryContainer,
+                        border: Border.all(
+                          color: isUsed ? scheme.outlineVariant : scheme.primary,
+                          width: 2,
+                        ),
                       ),
                     ),
                   ),
@@ -1261,10 +1267,11 @@ class _SpellSlotRow extends StatelessWidget {
               spacing: 4,
               children: List.generate(total, (i) {
                 final isUsed = i >= remaining;
-                return GestureDetector(
-                  onTap: isUsed ? onRestore : onUse,
-                  mouseCursor: SystemMouseCursors.click,
-                  child: Container(
+                return MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: isUsed ? onRestore : onUse,
+                    child: Container(
                     width: 28,
                     height: 28,
                     decoration: BoxDecoration(
@@ -1275,6 +1282,7 @@ class _SpellSlotRow extends StatelessWidget {
                         width: 2,
                       ),
                     ),
+                  ),
                   ),
                 );
               }),

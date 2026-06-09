@@ -185,8 +185,9 @@ class CharacterAvatar extends StatelessWidget {
         ? Hero(tag: 'character_avatar_$imagePath', child: avatar)
         : avatar;
 
-    return GestureDetector(
-      mouseCursor: SystemMouseCursors.click,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
       onTap: () {
         if (imagePath != null) {
           _showPhotoViewer(
@@ -203,6 +204,7 @@ class CharacterAvatar extends StatelessWidget {
         }
       },
       child: interactive,
+    ),
     );
   }
 }
@@ -354,26 +356,28 @@ class _ViewerAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      mouseCursor: SystemMouseCursors.click,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white24,
-              borderRadius: BorderRadius.circular(32),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white24,
+                borderRadius: BorderRadius.circular(32),
+              ),
+              padding: const EdgeInsets.all(14),
+              child: Icon(icon, color: Colors.white, size: 26),
             ),
-            padding: const EdgeInsets.all(14),
-            child: Icon(icon, color: Colors.white, size: 26),
-          ),
-          const SizedBox(height: 6),
-          Text(
-            label,
-            style: const TextStyle(color: Colors.white, fontSize: 12),
-          ),
-        ],
+            const SizedBox(height: 6),
+            Text(
+              label,
+              style: const TextStyle(color: Colors.white, fontSize: 12),
+            ),
+          ],
+        ),
       ),
     );
   }

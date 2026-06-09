@@ -1494,10 +1494,11 @@ class _ItemTile extends ConsumerWidget {
           ? () => _showDescriptionSheet(context, displayName, meta)
           : null,
       leading: canEquip
-          ? GestureDetector(
-              onTap: () => _onEquipTap(context, ref, notifier),
-              mouseCursor: SystemMouseCursors.click,
-              child: Tooltip(
+          ? MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () => _onEquipTap(context, ref, notifier),
+                child: Tooltip(
                 message: item.isEquipped ? 'Unequip' : 'Equip',
                 child: CircleAvatar(
                   radius: 16,
@@ -1513,7 +1514,8 @@ class _ItemTile extends ConsumerWidget {
                   ),
                 ),
               ),
-            )
+            ),
+          )
           : null,
       title: Text(
         item.quantity > 1 ? '$displayName ×${item.quantity}' : displayName,

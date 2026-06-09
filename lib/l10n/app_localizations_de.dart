@@ -304,6 +304,44 @@ class AppLocalizationsDe extends AppLocalizations {
   String get longRestButton => 'Ausruhen';
 
   @override
+  String get restPickerTitle => 'Pause';
+
+  @override
+  String get restPickerShort => 'Kurze Pause';
+
+  @override
+  String get restPickerShortCaption =>
+      'Trefferwürfel ausgeben, um TP zu erholen';
+
+  @override
+  String get restPickerLong => 'Lange Pause';
+
+  @override
+  String get restPickerLongCaption =>
+      'Volle TP und alle Zauberplätze zurückgewinnen';
+
+  @override
+  String get shortRestTitle => 'Kurze Pause';
+
+  @override
+  String get shortRestAvailableDice => 'Verfügbare Trefferwürfel';
+
+  @override
+  String get shortRestSpend => 'Ausgeben';
+
+  @override
+  String get shortRestRolled => 'TP erholt';
+
+  @override
+  String get shortRestRollButton => 'Würfeln';
+
+  @override
+  String get shortRestButton => 'Ausruhen';
+
+  @override
+  String get shortRestNoDice => 'Keine Trefferwürfel übrig';
+
+  @override
   String get sectionIdentity => 'Identität';
 
   @override

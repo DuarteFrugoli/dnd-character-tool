@@ -9,6 +9,7 @@ class HitPoints {
   final int temporary;
   final int deathSaveSuccesses;
   final int deathSaveFailures;
+  final int hitDiceUsed;
 
   const HitPoints({
     required this.maximum,
@@ -16,6 +17,7 @@ class HitPoints {
     this.temporary = 0,
     this.deathSaveSuccesses = 0,
     this.deathSaveFailures = 0,
+    this.hitDiceUsed = 0,
   });
 
   bool get isDead => current <= 0 && temporary <= 0;
@@ -27,6 +29,7 @@ class HitPoints {
     int? temporary,
     int? deathSaveSuccesses,
     int? deathSaveFailures,
+    int? hitDiceUsed,
   }) {
     return HitPoints(
       maximum: maximum ?? this.maximum,
@@ -34,6 +37,7 @@ class HitPoints {
       temporary: temporary ?? this.temporary,
       deathSaveSuccesses: deathSaveSuccesses ?? this.deathSaveSuccesses,
       deathSaveFailures: deathSaveFailures ?? this.deathSaveFailures,
+      hitDiceUsed: hitDiceUsed ?? this.hitDiceUsed,
     );
   }
 

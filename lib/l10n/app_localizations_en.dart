@@ -302,6 +302,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get longRestButton => 'Rest';
 
   @override
+  String get restPickerTitle => 'Rest';
+
+  @override
+  String get restPickerShort => 'Short Rest';
+
+  @override
+  String get restPickerShortCaption => 'Spend Hit Dice to recover HP';
+
+  @override
+  String get restPickerLong => 'Long Rest';
+
+  @override
+  String get restPickerLongCaption => 'Full HP and spell slot recovery';
+
+  @override
+  String get shortRestTitle => 'Short Rest';
+
+  @override
+  String get shortRestAvailableDice => 'Available Hit Dice';
+
+  @override
+  String get shortRestSpend => 'Spend';
+
+  @override
+  String get shortRestRolled => 'HP recovered';
+
+  @override
+  String get shortRestRollButton => 'Roll';
+
+  @override
+  String get shortRestButton => 'Rest';
+
+  @override
+  String get shortRestNoDice => 'No Hit Dice remaining';
+
+  @override
   String get sectionIdentity => 'Identity';
 
   @override

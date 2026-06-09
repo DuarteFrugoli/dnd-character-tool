@@ -303,6 +303,43 @@ class AppLocalizationsEs extends AppLocalizations {
   String get longRestButton => 'Descansar';
 
   @override
+  String get restPickerTitle => 'Descanso';
+
+  @override
+  String get restPickerShort => 'Descanso Corto';
+
+  @override
+  String get restPickerShortCaption => 'Gasta Dados de Golpe para recuperar PG';
+
+  @override
+  String get restPickerLong => 'Descanso Largo';
+
+  @override
+  String get restPickerLongCaption =>
+      'Recupera PG máximos y todos los espacios de hechizos';
+
+  @override
+  String get shortRestTitle => 'Descanso Corto';
+
+  @override
+  String get shortRestAvailableDice => 'Dados de Golpe disponibles';
+
+  @override
+  String get shortRestSpend => 'Gastar';
+
+  @override
+  String get shortRestRolled => 'PG recuperados';
+
+  @override
+  String get shortRestRollButton => 'Tirar';
+
+  @override
+  String get shortRestButton => 'Descansar';
+
+  @override
+  String get shortRestNoDice => 'Sin Dados de Golpe restantes';
+
+  @override
   String get sectionIdentity => 'Identidad';
 
   @override

@@ -159,16 +159,35 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> longRest() async {
     final c = state.valueOrNull;
     if (c == null) return;
+    // Recover ceil(level / 2) hit dice on a long rest (PHB rules)
+    final hdRecovered = (c.level / 2).ceil();
+    final newHdUsed = (c.hitPoints.hitDiceUsed - hdRecovered).clamp(0, c.level);
     await _save(
       c.copyWith(
         hitPoints: c.hitPoints.copyWith(
           current: c.hitPoints.maximum,
           temporary: 0,
+          hitDiceUsed: newHdUsed,
         ),
         spellSlots: c.spellSlots.copyWith(used: List.filled(9, 0)),
         innateSpells: c.innateSpells
             .map((s) => s.copyWith(usedToday: 0))
             .toList(),
+      ),
+    );
+  }
+
+  Future<void> shortRest({required int hdSpent, required int hpGained}) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final clampedHp = hpGained.clamp(0, c.hitPoints.maximum - c.hitPoints.current);
+    final newHdUsed = (c.hitPoints.hitDiceUsed + hdSpent).clamp(0, c.level);
+    await _save(
+      c.copyWith(
+        hitPoints: c.hitPoints.copyWith(
+          current: c.hitPoints.current + clampedHp,
+          hitDiceUsed: newHdUsed,
+        ),
       ),
     );
   }

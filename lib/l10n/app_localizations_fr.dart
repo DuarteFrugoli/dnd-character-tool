@@ -307,6 +307,44 @@ class AppLocalizationsFr extends AppLocalizations {
   String get longRestButton => 'Repos';
 
   @override
+  String get restPickerTitle => 'Repos';
+
+  @override
+  String get restPickerShort => 'Repos Court';
+
+  @override
+  String get restPickerShortCaption =>
+      'Dépenser des dés de vie pour récupérer des PV';
+
+  @override
+  String get restPickerLong => 'Long Repos';
+
+  @override
+  String get restPickerLongCaption =>
+      'Récupère tous les PV et emplacements de sorts';
+
+  @override
+  String get shortRestTitle => 'Repos Court';
+
+  @override
+  String get shortRestAvailableDice => 'Dés de vie disponibles';
+
+  @override
+  String get shortRestSpend => 'Dépenser';
+
+  @override
+  String get shortRestRolled => 'PV récupérés';
+
+  @override
+  String get shortRestRollButton => 'Lancer';
+
+  @override
+  String get shortRestButton => 'Se reposer';
+
+  @override
+  String get shortRestNoDice => 'Plus de dés de vie disponibles';
+
+  @override
   String get sectionIdentity => 'Identité';
 
   @override

@@ -1,4 +1,5 @@
 ﻿import 'dart:math' as math;
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
@@ -161,8 +162,8 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               ),
             IconButton(
               icon: const Icon(Icons.hotel_outlined),
-              tooltip: AppLocalizations.of(context)!.detailTooltipLongRest,
-              onPressed: () => _confirmLongRest(),
+              tooltip: AppLocalizations.of(context)!.restPickerTitle,
+              onPressed: () => _showRestPicker(character),
             ),
           ],
           bottom: TabBar(
@@ -210,6 +211,73 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     );
   }
 
+  void _showRestPicker(Character character) {
+    final l10n = AppLocalizations.of(context)!;
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: Text(l10n.restPickerTitle,
+                  style: Theme.of(ctx).textTheme.titleMedium),
+            ),
+            const Divider(height: 1),
+            ListTile(
+              leading: const Icon(Icons.bedtime_outlined),
+              title: Text(l10n.restPickerShort),
+              subtitle: Text(l10n.restPickerShortCaption),
+              onTap: () {
+                Navigator.pop(ctx);
+                _showShortRestDialog(character);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.hotel_outlined),
+              title: Text(l10n.restPickerLong),
+              subtitle: Text(l10n.restPickerLongCaption),
+              onTap: () {
+                Navigator.pop(ctx);
+                _confirmLongRest();
+              },
+            ),
+            const SizedBox(height: 8),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _showShortRestDialog(Character character) async {
+    final l10n = AppLocalizations.of(context)!;
+    final notifier = ref.read(characterDetailProvider(widget.characterId).notifier);
+
+    // Fetch hit die from SRD
+    final classes = await ref.read(srdDataSourceProvider).getClasses();
+    final srdClass = classes.firstWhereOrNull((c) => c.name == character.characterClass);
+    final hitDie = srdClass?.hitDie ?? 8;
+    final conMod = (character.abilityScores.constitution - 10) ~/ 2;
+    final available = character.level - character.hitPoints.hitDiceUsed;
+
+    if (!mounted) return;
+    await showDialog(
+      context: context,
+      builder: (ctx) => _ShortRestDialog(
+        l10n: l10n,
+        hitDie: hitDie,
+        conMod: conMod,
+        availableHd: available,
+        maxHp: character.hitPoints.maximum,
+        currentHp: character.hitPoints.current,
+        onConfirm: (hdSpent, hpGained) async {
+          await notifier.shortRest(hdSpent: hdSpent, hpGained: hpGained);
+        },
+      ),
+    );
+  }
+
   Future<void> _confirmLongRest() async {
     final l10n = AppLocalizations.of(context)!;
     final confirm = await showDialog<bool>(
@@ -234,5 +302,127 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           .read(characterDetailProvider(widget.characterId).notifier)
           .longRest();
     }
+  }
+}
+
+// ── Short Rest Dialog ─────────────────────────────────────────────────────────
+
+class _ShortRestDialog extends StatefulWidget {
+  final AppLocalizations l10n;
+  final int hitDie;
+  final int conMod;
+  final int availableHd;
+  final int maxHp;
+  final int currentHp;
+  final Future<void> Function(int hdSpent, int hpGained) onConfirm;
+
+  const _ShortRestDialog({
+    required this.l10n,
+    required this.hitDie,
+    required this.conMod,
+    required this.availableHd,
+    required this.maxHp,
+    required this.currentHp,
+    required this.onConfirm,
+  });
+
+  @override
+  State<_ShortRestDialog> createState() => _ShortRestDialogState();
+}
+
+class _ShortRestDialogState extends State<_ShortRestDialog> {
+  int _hdToSpend = 1;
+  int _rolledHp = 0;
+  bool _hasRolled = false;
+
+  void _roll() {
+    final rng = math.Random();
+    int total = 0;
+    for (int i = 0; i < _hdToSpend; i++) {
+      total += rng.nextInt(widget.hitDie) + 1;
+    }
+    total += widget.conMod * _hdToSpend;
+    setState(() {
+      _rolledHp = total.clamp(0, widget.maxHp - widget.currentHp);
+      _hasRolled = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = widget.l10n;
+    final scheme = Theme.of(context).colorScheme;
+    final noDice = widget.availableHd <= 0;
+
+    return AlertDialog(
+      title: Text(l10n.shortRestTitle),
+      content: noDice
+          ? Text(l10n.shortRestNoDice)
+          : Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${l10n.shortRestAvailableDice}: ${widget.availableHd} d${widget.hitDie}'
+                  '${widget.conMod >= 0 ? ' (+${widget.conMod} CON)' : ' (${widget.conMod} CON)'}',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 16),
+                // Stepper
+                Row(
+                  children: [
+                    Text('${l10n.shortRestSpend}: '),
+                    IconButton(
+                      icon: const Icon(Icons.remove),
+                      onPressed: _hdToSpend > 1
+                          ? () => setState(() {
+                                _hdToSpend--;
+                                _hasRolled = false;
+                              })
+                          : null,
+                    ),
+                    Text('$_hdToSpend',
+                        style: Theme.of(context).textTheme.titleMedium),
+                    IconButton(
+                      icon: const Icon(Icons.add),
+                      onPressed: _hdToSpend < widget.availableHd
+                          ? () => setState(() {
+                                _hdToSpend++;
+                                _hasRolled = false;
+                              })
+                          : null,
+                    ),
+                  ],
+                ),
+                if (_hasRolled) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    '${l10n.shortRestRolled}: +$_rolledHp HP',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: scheme.primary),
+                  ),
+                ],
+              ],
+            ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(l10n.dialogCancel),
+        ),
+        if (!noDice && !_hasRolled)
+          FilledButton(
+            onPressed: _roll,
+            child: Text(l10n.shortRestRollButton),
+          ),
+        if (!noDice && _hasRolled)
+          FilledButton(
+            onPressed: () async {
+              Navigator.pop(context);
+              await widget.onConfirm(_hdToSpend, _rolledHp);
+            },
+            child: Text(l10n.shortRestButton),
+          ),
+        ],
+    );
   }
 }

@@ -297,6 +297,42 @@ class AppLocalizationsJa extends AppLocalizations {
   String get longRestButton => '休む';
 
   @override
+  String get restPickerTitle => '休憩';
+
+  @override
+  String get restPickerShort => '小休憩';
+
+  @override
+  String get restPickerShortCaption => 'ヒットダイスを消費してHPを回復';
+
+  @override
+  String get restPickerLong => '長い休憩';
+
+  @override
+  String get restPickerLongCaption => 'HPと呪文スロットをすべて回復';
+
+  @override
+  String get shortRestTitle => '小休憩';
+
+  @override
+  String get shortRestAvailableDice => '使用可能なヒットダイス';
+
+  @override
+  String get shortRestSpend => '消費';
+
+  @override
+  String get shortRestRolled => '回復HP';
+
+  @override
+  String get shortRestRollButton => 'ロール';
+
+  @override
+  String get shortRestButton => '休憩する';
+
+  @override
+  String get shortRestNoDice => 'ヒットダイスが残っていません';
+
+  @override
   String get sectionIdentity => '身元';
 
   @override

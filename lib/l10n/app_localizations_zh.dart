@@ -290,6 +290,42 @@ class AppLocalizationsZh extends AppLocalizations {
   String get longRestButton => '休息';
 
   @override
+  String get restPickerTitle => '休息';
+
+  @override
+  String get restPickerShort => '短休息';
+
+  @override
+  String get restPickerShortCaption => '花费生命骰恢复HP';
+
+  @override
+  String get restPickerLong => '长休息';
+
+  @override
+  String get restPickerLongCaption => '恢复全部HP和法术位';
+
+  @override
+  String get shortRestTitle => '短休息';
+
+  @override
+  String get shortRestAvailableDice => '可用生命骰';
+
+  @override
+  String get shortRestSpend => '花费';
+
+  @override
+  String get shortRestRolled => '恢复的HP';
+
+  @override
+  String get shortRestRollButton => '投掷';
+
+  @override
+  String get shortRestButton => '休息';
+
+  @override
+  String get shortRestNoDice => '没有剩余生命骰';
+
+  @override
   String get sectionIdentity => '身份';
 
   @override

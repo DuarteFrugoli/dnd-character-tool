@@ -298,6 +298,42 @@ class AppLocalizationsKo extends AppLocalizations {
   String get longRestButton => '나머지';
 
   @override
+  String get restPickerTitle => '휴식';
+
+  @override
+  String get restPickerShort => '짧은 휴식';
+
+  @override
+  String get restPickerShortCaption => '히트 다이스를 써서 HP 회복';
+
+  @override
+  String get restPickerLong => '긴 휴식';
+
+  @override
+  String get restPickerLongCaption => 'HP와 주문 슬롯 전체 회복';
+
+  @override
+  String get shortRestTitle => '짧은 휴식';
+
+  @override
+  String get shortRestAvailableDice => '사용 가능한 히트 다이스';
+
+  @override
+  String get shortRestSpend => '사용';
+
+  @override
+  String get shortRestRolled => '회복된 HP';
+
+  @override
+  String get shortRestRollButton => '굴리기';
+
+  @override
+  String get shortRestButton => '휴식하기';
+
+  @override
+  String get shortRestNoDice => '남은 히트 다이스 없음';
+
+  @override
   String get sectionIdentity => '신원';
 
   @override

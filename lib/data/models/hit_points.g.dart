@@ -12,6 +12,7 @@ HitPoints _$HitPointsFromJson(Map<String, dynamic> json) => HitPoints(
   temporary: (json['temporary'] as num?)?.toInt() ?? 0,
   deathSaveSuccesses: (json['deathSaveSuccesses'] as num?)?.toInt() ?? 0,
   deathSaveFailures: (json['deathSaveFailures'] as num?)?.toInt() ?? 0,
+  hitDiceUsed: (json['hitDiceUsed'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$HitPointsToJson(HitPoints instance) => <String, dynamic>{
@@ -20,4 +21,5 @@ Map<String, dynamic> _$HitPointsToJson(HitPoints instance) => <String, dynamic>{
   'temporary': instance.temporary,
   'deathSaveSuccesses': instance.deathSaveSuccesses,
   'deathSaveFailures': instance.deathSaveFailures,
+  'hitDiceUsed': instance.hitDiceUsed,
 };

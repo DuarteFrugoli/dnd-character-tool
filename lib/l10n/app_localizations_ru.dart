@@ -304,6 +304,44 @@ class AppLocalizationsRu extends AppLocalizations {
   String get longRestButton => 'Отдых';
 
   @override
+  String get restPickerTitle => 'Отдых';
+
+  @override
+  String get restPickerShort => 'Короткий отдых';
+
+  @override
+  String get restPickerShortCaption =>
+      'Потратьте кости хитов для восстановления HP';
+
+  @override
+  String get restPickerLong => 'Длинный отдых';
+
+  @override
+  String get restPickerLongCaption =>
+      'Восстанавливает все HP и ячейки заклинаний';
+
+  @override
+  String get shortRestTitle => 'Короткий отдых';
+
+  @override
+  String get shortRestAvailableDice => 'Доступные кости хитов';
+
+  @override
+  String get shortRestSpend => 'Потратить';
+
+  @override
+  String get shortRestRolled => 'Восстановлено HP';
+
+  @override
+  String get shortRestRollButton => 'Бросить';
+
+  @override
+  String get shortRestButton => 'Отдохнуть';
+
+  @override
+  String get shortRestNoDice => 'Костей хитов не осталось';
+
+  @override
   String get sectionIdentity => 'Личность';
 
   @override

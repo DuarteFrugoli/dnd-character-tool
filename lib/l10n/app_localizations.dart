@@ -660,6 +660,78 @@ abstract class AppLocalizations {
   /// **'Rest'**
   String get longRestButton;
 
+  /// Rest type picker title.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest'**
+  String get restPickerTitle;
+
+  /// Short rest option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Short Rest'**
+  String get restPickerShort;
+
+  /// Short rest option caption.
+  ///
+  /// In en, this message translates to:
+  /// **'Spend Hit Dice to recover HP'**
+  String get restPickerShortCaption;
+
+  /// Long rest option label.
+  ///
+  /// In en, this message translates to:
+  /// **'Long Rest'**
+  String get restPickerLong;
+
+  /// Long rest option caption.
+  ///
+  /// In en, this message translates to:
+  /// **'Full HP and spell slot recovery'**
+  String get restPickerLongCaption;
+
+  /// Short rest dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Short Rest'**
+  String get shortRestTitle;
+
+  /// Short rest dialog available HD label.
+  ///
+  /// In en, this message translates to:
+  /// **'Available Hit Dice'**
+  String get shortRestAvailableDice;
+
+  /// Short rest dialog spend label.
+  ///
+  /// In en, this message translates to:
+  /// **'Spend'**
+  String get shortRestSpend;
+
+  /// Short rest dialog HP result label.
+  ///
+  /// In en, this message translates to:
+  /// **'HP recovered'**
+  String get shortRestRolled;
+
+  /// Short rest roll dice button.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll'**
+  String get shortRestRollButton;
+
+  /// Short rest confirm button.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest'**
+  String get shortRestButton;
+
+  /// Short rest: no HD available message.
+  ///
+  /// In en, this message translates to:
+  /// **'No Hit Dice remaining'**
+  String get shortRestNoDice;
+
   /// Stats tab identity section title.
   ///
   /// In en, this message translates to:

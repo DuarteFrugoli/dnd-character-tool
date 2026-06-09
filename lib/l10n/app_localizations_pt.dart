@@ -305,6 +305,43 @@ class AppLocalizationsPt extends AppLocalizations {
   String get longRestButton => 'Descansar';
 
   @override
+  String get restPickerTitle => 'Descanso';
+
+  @override
+  String get restPickerShort => 'Descanso Curto';
+
+  @override
+  String get restPickerShortCaption => 'Gaste Dados de Vida para recuperar PV';
+
+  @override
+  String get restPickerLong => 'Descanso Longo';
+
+  @override
+  String get restPickerLongCaption =>
+      'Recupera PV máximos e todos os espaços de magia';
+
+  @override
+  String get shortRestTitle => 'Descanso Curto';
+
+  @override
+  String get shortRestAvailableDice => 'Dados de Vida disponíveis';
+
+  @override
+  String get shortRestSpend => 'Gastar';
+
+  @override
+  String get shortRestRolled => 'PV recuperados';
+
+  @override
+  String get shortRestRollButton => 'Rolar';
+
+  @override
+  String get shortRestButton => 'Descansar';
+
+  @override
+  String get shortRestNoDice => 'Sem Dados de Vida restantes';
+
+  @override
   String get sectionIdentity => 'Identidade';
 
   @override

@@ -304,6 +304,43 @@ class AppLocalizationsIt extends AppLocalizations {
   String get longRestButton => 'Riposo';
 
   @override
+  String get restPickerTitle => 'Riposo';
+
+  @override
+  String get restPickerShort => 'Riposo Breve';
+
+  @override
+  String get restPickerShortCaption => 'Spendi Dadi Vita per recuperare PF';
+
+  @override
+  String get restPickerLong => 'Riposo Lungo';
+
+  @override
+  String get restPickerLongCaption =>
+      'Recupera PF massimi e tutti gli slot incantesimo';
+
+  @override
+  String get shortRestTitle => 'Riposo Breve';
+
+  @override
+  String get shortRestAvailableDice => 'Dadi Vita disponibili';
+
+  @override
+  String get shortRestSpend => 'Spendi';
+
+  @override
+  String get shortRestRolled => 'PF recuperati';
+
+  @override
+  String get shortRestRollButton => 'Tira';
+
+  @override
+  String get shortRestButton => 'Riposare';
+
+  @override
+  String get shortRestNoDice => 'Nessun Dado Vita rimanente';
+
+  @override
   String get sectionIdentity => 'Identità';
 
   @override

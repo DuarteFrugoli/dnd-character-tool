@@ -60,6 +60,57 @@ String _mod(int score) {
 
 String _sign(int n) => n >= 0 ? '+$n' : '$n';
 
+// ── Edit Guard ─────────────────────────────────────────────────────────────────
+// Shared object that lets the tab screen know when a child tab is in edit mode
+// and request a discard-confirmation before allowing the tab to change.
+
+class _EditGuard {
+  /// True when any tab is in edit mode.
+  bool get isEditing => _discardFn != null;
+
+  /// Registered by the tab that enters edit mode. Called only after confirmation.
+  Future<void> Function()? _discardFn;
+
+  void register(Future<void> Function() discardFn) {
+    _discardFn = discardFn;
+  }
+
+  void unregister() {
+    _discardFn = null;
+  }
+
+  /// Shows a discard-confirmation dialog, then calls the tab's discard function.
+  /// Returns true if the user confirmed (tab exited edit mode), false otherwise.
+  Future<bool> requestCancel(BuildContext context, AppLocalizations l10n) async {
+    final fn = _discardFn;
+    if (fn == null) return true;
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.detailCancelEditTitle),
+        content: Text(l10n.detailCancelEditContent),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(l10n.dialogKeepEditing),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: FilledButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.error,
+              foregroundColor: Theme.of(context).colorScheme.onError,
+            ),
+            child: Text(l10n.dialogDiscard),
+          ),
+        ],
+      ),
+    );
+    if (confirm != true) return false;
+    await fn();
+    return true;
+  }
+}
+
 // ── Screen ────────────────────────────────────────────────────────────────────
 
 class CharacterDetailScreen extends ConsumerStatefulWidget {
@@ -74,17 +125,48 @@ class CharacterDetailScreen extends ConsumerStatefulWidget {
 class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
+  final _editGuard = _EditGuard();
 
   @override
   void initState() {
     super.initState();
     _tabs = TabController(length: 7, vsync: this);
+    _tabs.addListener(_onTabChanging);
   }
 
   @override
   void dispose() {
+    _tabs.removeListener(_onTabChanging);
     _tabs.dispose();
     super.dispose();
+  }
+
+  int _lastTabIndex = 0;
+  bool _isIntercepting = false;
+
+  void _onTabChanging() {
+    // Only act when the tab index actually changes (not animation updates).
+    if (!_tabs.indexIsChanging) return;
+    // Prevent re-entry: animateTo(_lastTabIndex) below re-triggers this listener.
+    if (_isIntercepting) return;
+    if (!_editGuard.isEditing) {
+      _lastTabIndex = _tabs.index;
+      return;
+    }
+    // A tab is in edit mode — intercept the change.
+    final targetIndex = _tabs.index;
+    _isIntercepting = true;
+    // Jump back to the editing tab immediately (before the animation settles).
+    _tabs.animateTo(_lastTabIndex);
+    // Then ask the tab to confirm discard asynchronously.
+    final l10n = AppLocalizations.of(context)!;
+    _editGuard.requestCancel(context, l10n).then((discarded) {
+      _isIntercepting = false;
+      if (discarded && mounted) {
+        _lastTabIndex = targetIndex;
+        _tabs.animateTo(targetIndex);
+      }
+    });
   }
 
   void _goBack() => context.canPop() ? context.pop() : context.go('/');
@@ -187,10 +269,12 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             _IdentityTab(
               character: character,
               characterId: widget.characterId,
+              editGuard: _editGuard,
             ),
             _StatsTab(
               character: character,
               characterId: widget.characterId,
+              editGuard: _editGuard,
             ),
             _SkillsTab(
               character: character,

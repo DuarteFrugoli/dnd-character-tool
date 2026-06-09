@@ -6,9 +6,11 @@ class _StatsTab extends ConsumerStatefulWidget {
   const _StatsTab({
     required this.character,
     required this.characterId,
+    required this.editGuard,
   });
   final Character character;
   final String characterId;
+  final _EditGuard editGuard;
 
   @override
   ConsumerState<_StatsTab> createState() => _StatsTabState();
@@ -108,9 +110,25 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   }
 
   void _startEditing() {
+    widget.editGuard.register(_discardEditing);
     setState(() {
       _isEditing = true;
       _snapshot = widget.character;
+    });
+  }
+
+  /// Called by the guard after the user confirms discard (no additional dialog).
+  Future<void> _discardEditing() async {
+    FocusScope.of(context).unfocus();
+    final snap = _snapshot;
+    if (snap != null) {
+      await _notifier.revertTo(snap);
+    }
+    if (!mounted) return;
+    widget.editGuard.unregister();
+    setState(() {
+      _isEditing = false;
+      _snapshot = null;
     });
   }
 
@@ -138,21 +156,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
       ),
     );
     if (confirm != true || !mounted) return;
-    FocusScope.of(context).unfocus();
-    final snap = _snapshot;
-    if (snap != null) {
-      await _notifier.revertTo(snap);
-    }
-    if (!mounted) return;
-    setState(() {
-      _isEditing = false;
-      _snapshot = null;
-    });
+    await _discardEditing();
   }
 
   void _saveEditing() {
     // Set _isEditing = false BEFORE unfocus() so focus listeners don't fire
     // individual saves that would race against each other and corrupt the file.
+    widget.editGuard.unregister();
     setState(() {
       _isEditing = false;
       _snapshot = null;

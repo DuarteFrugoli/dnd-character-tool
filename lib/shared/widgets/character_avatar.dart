@@ -186,6 +186,7 @@ class CharacterAvatar extends StatelessWidget {
         : avatar;
 
     return GestureDetector(
+      mouseCursor: SystemMouseCursors.click,
       onTap: () {
         if (imagePath != null) {
           _showPhotoViewer(
@@ -355,6 +356,7 @@ class _ViewerAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
+      mouseCursor: SystemMouseCursors.click,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

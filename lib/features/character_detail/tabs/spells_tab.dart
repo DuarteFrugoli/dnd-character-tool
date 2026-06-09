@@ -854,6 +854,7 @@ class _SpellRow extends ConsumerWidget {
               if (showPrepareToggle) ...[
                 GestureDetector(
                   onTap: onTogglePrepared,
+                  mouseCursor: SystemMouseCursors.click,
                   child: Icon(
                     spell.isPrepared
                         ? Icons.check_box
@@ -916,6 +917,7 @@ class _SpellRow extends ConsumerWidget {
                         concentrationSpell,
                         characterId!,
                       ),
+                      mouseCursor: SystemMouseCursors.click,
                       child: Tooltip(
                         message: AppLocalizations.of(ctx)!.concentrationTooltip,
                         child: Icon(
@@ -1196,6 +1198,7 @@ class _InnateSpellRow extends ConsumerWidget {
                 final isUsed = i >= spell.remaining;
                 return GestureDetector(
                   onTap: isUsed ? null : onUse,
+                  mouseCursor: isUsed ? MouseCursor.defer : SystemMouseCursors.click,
                   child: Container(
                     width: 20,
                     height: 20,
@@ -1260,6 +1263,7 @@ class _SpellSlotRow extends StatelessWidget {
                 final isUsed = i >= remaining;
                 return GestureDetector(
                   onTap: isUsed ? onRestore : onUse,
+                  mouseCursor: SystemMouseCursors.click,
                   child: Container(
                     width: 28,
                     height: 28,

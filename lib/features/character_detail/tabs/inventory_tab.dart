@@ -1496,6 +1496,7 @@ class _ItemTile extends ConsumerWidget {
       leading: canEquip
           ? GestureDetector(
               onTap: () => _onEquipTap(context, ref, notifier),
+              mouseCursor: SystemMouseCursors.click,
               child: Tooltip(
                 message: item.isEquipped ? 'Unequip' : 'Equip',
                 child: CircleAvatar(

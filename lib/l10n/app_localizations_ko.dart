@@ -334,6 +334,26 @@ class AppLocalizationsKo extends AppLocalizations {
   String get shortRestNoDice => '남은 히트 다이스 없음';
 
   @override
+  String get concentrationBannerLabel => '집중 중:';
+
+  @override
+  String get concentrationBreakButton => '종료';
+
+  @override
+  String get concentrationReplaceTitle => '집중 교체?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return '$current에 집중하고 있습니다. $next을 시작하면 집중이 종료됩니다.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => '교체';
+
+  @override
+  String get concentrationTooltip => '집중 설정';
+
+  @override
   String get sectionIdentity => '신원';
 
   @override

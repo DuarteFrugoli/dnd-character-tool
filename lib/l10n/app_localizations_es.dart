@@ -340,6 +340,26 @@ class AppLocalizationsEs extends AppLocalizations {
   String get shortRestNoDice => 'Sin Dados de Golpe restantes';
 
   @override
+  String get concentrationBannerLabel => 'Concentrado en:';
+
+  @override
+  String get concentrationBreakButton => 'Terminar';
+
+  @override
+  String get concentrationReplaceTitle => '¿Reemplazar Concentración?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return 'Estás concentrado en $current. Lanzar $next terminará tu concentración.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => 'Reemplazar';
+
+  @override
+  String get concentrationTooltip => 'Establecer concentración';
+
+  @override
   String get sectionIdentity => 'Identidad';
 
   @override

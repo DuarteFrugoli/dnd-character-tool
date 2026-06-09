@@ -342,6 +342,26 @@ class AppLocalizationsDe extends AppLocalizations {
   String get shortRestNoDice => 'Keine Trefferwürfel übrig';
 
   @override
+  String get concentrationBannerLabel => 'Konzentration auf:';
+
+  @override
+  String get concentrationBreakButton => 'Beenden';
+
+  @override
+  String get concentrationReplaceTitle => 'Konzentration ersetzen?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return 'Du konzentrierst dich auf $current. $next zu wirken beendet deine Konzentration.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => 'Ersetzen';
+
+  @override
+  String get concentrationTooltip => 'Konzentration setzen';
+
+  @override
   String get sectionIdentity => 'Identität';
 
   @override

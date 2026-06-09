@@ -338,6 +338,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shortRestNoDice => 'No Hit Dice remaining';
 
   @override
+  String get concentrationBannerLabel => 'Concentrating on:';
+
+  @override
+  String get concentrationBreakButton => 'End';
+
+  @override
+  String get concentrationReplaceTitle => 'Replace Concentration?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return 'You are concentrating on $current. Starting $next will end your concentration.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => 'Replace';
+
+  @override
+  String get concentrationTooltip => 'Set concentration';
+
+  @override
   String get sectionIdentity => 'Identity';
 
   @override

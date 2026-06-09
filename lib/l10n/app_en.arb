@@ -308,6 +308,19 @@
   "shortRestNoDice": "No Hit Dice remaining",
   "@shortRestNoDice": { "description": "Short rest: no HD available message." },
 
+  "concentrationBannerLabel": "Concentrating on:",
+  "@concentrationBannerLabel": { "description": "Concentration banner prefix label." },
+  "concentrationBreakButton": "End",
+  "@concentrationBreakButton": { "description": "Button to break concentration." },
+  "concentrationReplaceTitle": "Replace Concentration?",
+  "@concentrationReplaceTitle": { "description": "Dialog title when replacing active concentration." },
+  "concentrationReplaceBody": "You are concentrating on {current}. Starting {next} will end your concentration.",
+  "@concentrationReplaceBody": { "description": "Dialog body when replacing concentration.", "placeholders": { "current": { "type": "String" }, "next": { "type": "String" } } },
+  "concentrationReplaceConfirm": "Replace",
+  "@concentrationReplaceConfirm": { "description": "Confirm button to replace concentration." },
+  "concentrationTooltip": "Set concentration",
+  "@concentrationTooltip": { "description": "Tooltip for the concentration icon button on a spell card." },
+
   "sectionIdentity": "Identity",
   "@sectionIdentity": { "description": "Stats tab identity section title." },
 

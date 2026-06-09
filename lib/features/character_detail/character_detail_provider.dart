@@ -173,8 +173,15 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         innateSpells: c.innateSpells
             .map((s) => s.copyWith(usedToday: 0))
             .toList(),
+        concentrationSpell: null,
       ),
     );
+  }
+
+  Future<void> setConcentration(String? spellName) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(concentrationSpell: spellName));
   }
 
   Future<void> shortRest({required int hdSpent, required int hpGained}) async {

@@ -341,6 +341,26 @@ class AppLocalizationsIt extends AppLocalizations {
   String get shortRestNoDice => 'Nessun Dado Vita rimanente';
 
   @override
+  String get concentrationBannerLabel => 'Concentrazione su:';
+
+  @override
+  String get concentrationBreakButton => 'Terminare';
+
+  @override
+  String get concentrationReplaceTitle => 'Sostituire la concentrazione?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return 'Ti stai concentrando su $current. Lanciare $next terminerà la tua concentrazione.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => 'Sostituire';
+
+  @override
+  String get concentrationTooltip => 'Imposta concentrazione';
+
+  @override
   String get sectionIdentity => 'Identità';
 
   @override

@@ -342,6 +342,26 @@ class AppLocalizationsPt extends AppLocalizations {
   String get shortRestNoDice => 'Sem Dados de Vida restantes';
 
   @override
+  String get concentrationBannerLabel => 'Concentrado em:';
+
+  @override
+  String get concentrationBreakButton => 'Encerrar';
+
+  @override
+  String get concentrationReplaceTitle => 'Substituir Concentração?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return 'Você está concentrado em $current. Iniciar $next vai encerrar sua concentração.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => 'Substituir';
+
+  @override
+  String get concentrationTooltip => 'Definir concentração';
+
+  @override
   String get sectionIdentity => 'Identidade';
 
   @override

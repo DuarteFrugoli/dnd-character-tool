@@ -333,6 +333,26 @@ class AppLocalizationsJa extends AppLocalizations {
   String get shortRestNoDice => 'ヒットダイスが残っていません';
 
   @override
+  String get concentrationBannerLabel => '集中中の魔法：';
+
+  @override
+  String get concentrationBreakButton => '終了';
+
+  @override
+  String get concentrationReplaceTitle => '集中を変更？';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return '$currentに集中しています。$nextを発動すると集中が終わります。';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => '変更';
+
+  @override
+  String get concentrationTooltip => '集中を設定';
+
+  @override
   String get sectionIdentity => '身元';
 
   @override

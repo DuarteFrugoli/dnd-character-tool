@@ -108,6 +108,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   activeConditions: (json['activeConditions'] as List<dynamic>?)
       ?.map((e) => e as String)
       .toList() ?? const [],
+  concentrationSpell: json['concentrationSpell'] as String?,
 );
 
 Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
@@ -153,6 +154,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'sortOrder': instance.sortOrder,
   'xpTrackingEnabled': instance.xpTrackingEnabled,
   'activeConditions': instance.activeConditions,
+  'concentrationSpell': instance.concentrationSpell,
 };
 
 const _$CreationModeEnumMap = {

@@ -328,6 +328,18 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                   const SizedBox(height: 16),
                 ],
 
+                // ── Concentration Banner ────────────────────────────────────
+                if (character.concentrationSpell != null) ...[
+                  _ConcentrationBanner(
+                    spellName: character.concentrationSpell!,
+                    onBreak: () => ref
+                        .read(
+                          characterDetailProvider(widget.characterId).notifier,
+                        )
+                        .setConcentration(null),
+                  ),
+                ],
+
                 // ── Spell list grouped by level ─────────────────────────────
                 if (_displaySpells.isNotEmpty)
                   for (final lvl in levels) ...[
@@ -457,6 +469,8 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                                         ).notifier,
                                       )
                                       .removeSpell(spell.name),
+                            characterId: widget.characterId,
+                            concentrationSpell: character.concentrationSpell,
                           );
                         },
                       ),
@@ -541,6 +555,8 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                                     ).notifier,
                                   )
                                   .removeSpell(spell.name),
+                        characterId: widget.characterId,
+                        concentrationSpell: character.concentrationSpell,
                       ),
                     const SizedBox(height: 8),
                   ],
@@ -753,6 +769,8 @@ class _SpellRow extends ConsumerWidget {
     this.onRemove,
     this.isDisabled = false,
     this.onLongPress,
+    this.characterId,
+    this.concentrationSpell,
   });
 
   final KnownSpell spell;
@@ -763,6 +781,10 @@ class _SpellRow extends ConsumerWidget {
   final VoidCallback? onRemove;
   final bool isDisabled;
   final VoidCallback? onLongPress;
+  /// Passed when concentration tracking is enabled (non-null characterId).
+  final String? characterId;
+  /// The currently active concentration spell name (from character state).
+  final String? concentrationSpell;
 
   static Color _schoolColor(String school) {
     switch (school.toLowerCase()) {
@@ -895,10 +917,35 @@ class _SpellRow extends ConsumerWidget {
                 ),
               ],
 
-              // Concentration badge
+              // Concentration badge + icon
               if (srd?.concentration == true) ...[
                 const SizedBox(width: 4),
                 _SmallBadge('C', scheme.secondary),
+                if (characterId != null) ...[
+                  const SizedBox(width: 2),
+                  Builder(builder: (ctx) {
+                    final isActive = concentrationSpell == spell.name;
+                    return GestureDetector(
+                      onTap: () => _onConcentrationTap(
+                        ctx,
+                        ref,
+                        spell.name,
+                        concentrationSpell,
+                        characterId!,
+                      ),
+                      child: Tooltip(
+                        message: AppLocalizations.of(ctx)!.concentrationTooltip,
+                        child: Icon(
+                          isActive ? Icons.gps_fixed : Icons.gps_not_fixed,
+                          size: 16,
+                          color: isActive
+                              ? scheme.primary
+                              : scheme.outlineVariant,
+                        ),
+                      ),
+                    );
+                  }),
+                ],
               ],
 
               // Ritual badge
@@ -1011,6 +1058,103 @@ class _SmallBadge extends StatelessWidget {
       ),
     ),
   );
+}
+
+// ── Concentration helpers ─────────────────────────────────────────────────────
+
+Future<void> _onConcentrationTap(
+  BuildContext context,
+  WidgetRef ref,
+  String spellName,
+  String? currentConcentration,
+  String characterId,
+) async {
+  final notifier = ref.read(characterDetailProvider(characterId).notifier);
+  if (currentConcentration == spellName) {
+    // Toggle off — already concentrating on this spell
+    await notifier.setConcentration(null);
+    return;
+  }
+  if (currentConcentration == null) {
+    // No active concentration — set directly
+    await notifier.setConcentration(spellName);
+    return;
+  }
+  // Already concentrating on a different spell — confirm switch
+  if (!context.mounted) return;
+  final l10n = AppLocalizations.of(context)!;
+  final confirmed = await showDialog<bool>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      title: Text(l10n.concentrationReplaceTitle),
+      content: Text(
+        l10n.concentrationReplaceBody(currentConcentration, spellName),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(ctx, false),
+          child: Text(l10n.dialogCancel),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.pop(ctx, true),
+          child: Text(l10n.concentrationReplaceConfirm),
+        ),
+      ],
+    ),
+  );
+  if (confirmed == true) {
+    await notifier.setConcentration(spellName);
+  }
+}
+
+// ── Concentration Banner ──────────────────────────────────────────────────────
+
+class _ConcentrationBanner extends StatelessWidget {
+  const _ConcentrationBanner({
+    required this.spellName,
+    required this.onBreak,
+  });
+
+  final String spellName;
+  final VoidCallback onBreak;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    return Card(
+      color: scheme.primaryContainer,
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Row(
+          children: [
+            Icon(Icons.gps_fixed, size: 18, color: scheme.primary),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                '${l10n.concentrationBannerLabel} $spellName',
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: scheme.onPrimaryContainer,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: onBreak,
+              style: TextButton.styleFrom(
+                foregroundColor: scheme.onPrimaryContainer,
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              child: Text(l10n.concentrationBreakButton),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 // ── Innate Spell Row ──────────────────────────────────────────────────────────

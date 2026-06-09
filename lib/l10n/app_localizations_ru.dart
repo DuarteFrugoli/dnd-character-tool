@@ -342,6 +342,26 @@ class AppLocalizationsRu extends AppLocalizations {
   String get shortRestNoDice => 'Костей хитов не осталось';
 
   @override
+  String get concentrationBannerLabel => 'Концентрация на:';
+
+  @override
+  String get concentrationBreakButton => 'Завершить';
+
+  @override
+  String get concentrationReplaceTitle => 'Заменить концентрацию?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return 'Вы концентрируетесь на $current. Использование $next прервёт концентрацию.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => 'Заменить';
+
+  @override
+  String get concentrationTooltip => 'Установить концентрацию';
+
+  @override
   String get sectionIdentity => 'Личность';
 
   @override

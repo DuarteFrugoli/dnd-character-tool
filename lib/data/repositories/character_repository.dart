@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import '../datasources/local/character_local_data_source.dart';
 import '../models/models.dart';
 
@@ -111,8 +113,8 @@ class CharacterRepository {
   }
 
   String _generateId() {
-    // UUID v4 simples sem dependência extra.
     final now = DateTime.now().microsecondsSinceEpoch;
-    return now.toRadixString(16).padLeft(16, '0');
+    final rnd = math.Random().nextInt(0xFFFF);
+    return '${now.toRadixString(16).padLeft(16, '0')}${rnd.toRadixString(16).padLeft(4, '0')}';
   }
 }

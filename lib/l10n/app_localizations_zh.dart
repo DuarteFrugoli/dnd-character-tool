@@ -326,6 +326,26 @@ class AppLocalizationsZh extends AppLocalizations {
   String get shortRestNoDice => '没有剩余生命骰';
 
   @override
+  String get concentrationBannerLabel => '正在专注于：';
+
+  @override
+  String get concentrationBreakButton => '结束';
+
+  @override
+  String get concentrationReplaceTitle => '更换专注？';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return '您正在专注于$current。施放$next将终止专注。';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => '更换';
+
+  @override
+  String get concentrationTooltip => '设置专注';
+
+  @override
   String get sectionIdentity => '身份';
 
   @override

@@ -11,6 +11,9 @@ import 'spell.dart';
 
 part 'character.g.dart';
 
+// Sentinel used to distinguish "not passed" from explicit null in copyWith.
+const _keep = Object();
+
 enum CreationMode { random, semiRandom, guided, manual }
 
 @JsonSerializable(explicitToJson: true)
@@ -57,6 +60,7 @@ class Character {
   final int sortOrder;
   final bool xpTrackingEnabled;
   final List<String> activeConditions;
+  final String? concentrationSpell;
 
   const Character({
     required this.id,
@@ -101,6 +105,7 @@ class Character {
     this.sortOrder = 0,
     this.xpTrackingEnabled = false,
     this.activeConditions = const [],
+    this.concentrationSpell,
   });
 
   /// Passive perception = 10 + perception modifier
@@ -160,6 +165,7 @@ class Character {
     int? sortOrder,
     bool? xpTrackingEnabled,
     List<String>? activeConditions,
+    Object? concentrationSpell = _keep,
   }) {
     return Character(
       id: id ?? this.id,
@@ -205,6 +211,9 @@ class Character {
       sortOrder: sortOrder ?? this.sortOrder,
       xpTrackingEnabled: xpTrackingEnabled ?? this.xpTrackingEnabled,
       activeConditions: activeConditions ?? this.activeConditions,
+      concentrationSpell: concentrationSpell == _keep
+          ? this.concentrationSpell
+          : concentrationSpell as String?,
     );
   }
 

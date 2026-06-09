@@ -732,6 +732,42 @@ abstract class AppLocalizations {
   /// **'No Hit Dice remaining'**
   String get shortRestNoDice;
 
+  /// Concentration banner prefix label.
+  ///
+  /// In en, this message translates to:
+  /// **'Concentrating on:'**
+  String get concentrationBannerLabel;
+
+  /// Button to break concentration.
+  ///
+  /// In en, this message translates to:
+  /// **'End'**
+  String get concentrationBreakButton;
+
+  /// Dialog title when replacing active concentration.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace Concentration?'**
+  String get concentrationReplaceTitle;
+
+  /// Dialog body when replacing concentration.
+  ///
+  /// In en, this message translates to:
+  /// **'You are concentrating on {current}. Starting {next} will end your concentration.'**
+  String concentrationReplaceBody(String current, String next);
+
+  /// Confirm button to replace concentration.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace'**
+  String get concentrationReplaceConfirm;
+
+  /// Tooltip for the concentration icon button on a spell card.
+  ///
+  /// In en, this message translates to:
+  /// **'Set concentration'**
+  String get concentrationTooltip;
+
   /// Stats tab identity section title.
   ///
   /// In en, this message translates to:

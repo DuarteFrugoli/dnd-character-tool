@@ -345,6 +345,26 @@ class AppLocalizationsFr extends AppLocalizations {
   String get shortRestNoDice => 'Plus de dés de vie disponibles';
 
   @override
+  String get concentrationBannerLabel => 'Concentration sur :';
+
+  @override
+  String get concentrationBreakButton => 'Terminer';
+
+  @override
+  String get concentrationReplaceTitle => 'Remplacer la concentration ?';
+
+  @override
+  String concentrationReplaceBody(String current, String next) {
+    return 'Vous vous concentrez sur $current. Lancer $next mettra fin à votre concentration.';
+  }
+
+  @override
+  String get concentrationReplaceConfirm => 'Remplacer';
+
+  @override
+  String get concentrationTooltip => 'Définir la concentration';
+
+  @override
   String get sectionIdentity => 'Identité';
 
   @override

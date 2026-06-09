@@ -221,6 +221,7 @@
   "inventoryLabelType": "Taper",
   "inventoryLabelCategory": "Catégorie",
   "inventoryLabelItemQuantity": "Quantité",
+  "inventoryLabelWeight": "Poids",
   "inventoryLabelDescription": "Description (facultatif)",
   "inventoryTypeWeapon": "Arme",
   "inventoryTypeArmor": "Armure",

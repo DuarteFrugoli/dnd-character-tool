@@ -4,24 +4,15 @@ Gaps identificados comparando o estado atual do app com o que é necessário num
 
 ---
 
-### Concentração
-Sem indicador de qual magia está em concentração ativa. Comum esquecer e empilhar duas magias.
-
-**O que implementar:**
-- Campo `concentrationSpell: String?` no modelo
-- Badge ou chip na aba de Magias indicando a magia em concentração
-- Ao preparar uma segunda magia de concentração: aviso de que a anterior será interrompida
-
----
-
 ## Média prioridade — qualidade de vida
 
 ### Peso do Inventário
 Sem cálculo de carga carregada vs. capacidade (Strength × 15 lb).
 
 **O que implementar:**
-- Adicionar campo `weight` opcional nos itens de equipamento do SRD
-- Barra de progresso de carga na aba de Inventário
+- Adicionar campo `weight` (sempre presente) nos itens de equipamento do SRD
+- Toggle **por personagem** para habilitar/desabilitar tracking de carga (igual ao toggle de XP — desabilitado por padrão, configurado na ficha e não nas preferências globais)
+- Quando habilitado: barra de progresso de carga na aba de Inventário
 - Limites: encumbered (×5 STR), heavily encumbered (×10 STR), máximo (×15 STR)
 
 ### Unidades por região
@@ -43,6 +34,24 @@ Em inglês a medida de distância é feet (ft) e peso é lb; em outros idiomas s
 
 ---
 
+## Média prioridade — qualidade de vida (Settings)
+
+### Tamanho de Fonte
+Acessibilidade — telas pequenas ou jogadores com dificuldade de leitura.
+
+**O que implementar:**
+- Opção nas configurações: **Pequeno / Normal / Grande** (3 tamanhos)
+- Salvo em SharedPreferences, aplica um `TextScaleFactor` customizado via `MediaQuery` no root do app
+
+### Toggle de Dado Virtual
+Quem joga com dados físicos não quer o botão de rolagem ocupando espaço na ficha.
+
+**O que implementar:**
+- Toggle nas configurações globais para habilitar/desabilitar os botões de rolagem de dados na ficha
+- Desabilitado por padrão (respeita quem prefere dados físicos)
+
+---
+
 ## Baixa prioridade / nice-to-have
 
 ### Dado Virtual
@@ -50,6 +59,7 @@ Rolagem de dados integrada para quem joga solo ou digital (sem física de dado).
 
 - Rolar 1d20 + modificador diretamente de um atributo/perícia com tap longo
 - Histórico da última rolagem visível
+- Depende do toggle de Dado Virtual estar habilitado nas configurações
 
 ---
 

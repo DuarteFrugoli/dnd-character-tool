@@ -821,6 +821,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get inventoryLabelItemQuantity => '数量';
 
   @override
+  String get inventoryLabelWeight => '重量';
+
+  @override
   String get inventoryLabelDescription => '说明（可选）';
 
   @override

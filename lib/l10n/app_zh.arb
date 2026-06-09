@@ -221,6 +221,7 @@
   "inventoryLabelType": "类型",
   "inventoryLabelCategory": "类别",
   "inventoryLabelItemQuantity": "数量",
+  "inventoryLabelWeight": "重量",
   "inventoryLabelDescription": "说明（可选）",
   "inventoryTypeWeapon": "武器",
   "inventoryTypeArmor": "盔甲",

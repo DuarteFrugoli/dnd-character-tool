@@ -745,6 +745,8 @@
 
   "inventoryLabelItemQuantity": "Quantity",
   "@inventoryLabelItemQuantity": { "description": "Custom item quantity field label." },
+  "inventoryLabelWeight": "Weight",
+  "@inventoryLabelWeight": { "description": "Custom item weight field label (in lb)." },
 
   "inventoryLabelDescription": "Description (optional)",
   "@inventoryLabelDescription": { "description": "Custom item description field label." },

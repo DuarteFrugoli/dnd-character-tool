@@ -841,6 +841,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get inventoryLabelItemQuantity => 'Количество';
 
   @override
+  String get inventoryLabelWeight => 'Вес';
+
+  @override
   String get inventoryLabelDescription => 'Описание (необязательно)';
 
   @override

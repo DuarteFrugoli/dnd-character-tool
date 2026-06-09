@@ -29,6 +29,7 @@ class EquipmentItem {
   final int quantity;
   final String? description;
   final bool isEquipped;
+  final double weight;
 
   /// Dados extras por tipo:
   /// armor  → {baseAC, addDexModifier, maxDexBonus, isShield, acBonus}
@@ -43,6 +44,7 @@ class EquipmentItem {
     this.quantity = 1,
     this.description,
     this.isEquipped = false,
+    this.weight = 0.0,
     this.properties,
   }) : id = id ?? _uuid.v4();
 
@@ -54,6 +56,7 @@ class EquipmentItem {
     int? quantity,
     String? description,
     bool? isEquipped,
+    double? weight,
     Map<String, dynamic>? properties,
   }) {
     return EquipmentItem(
@@ -64,6 +67,7 @@ class EquipmentItem {
       quantity: quantity ?? this.quantity,
       description: description ?? this.description,
       isEquipped: isEquipped ?? this.isEquipped,
+      weight: weight ?? this.weight,
       properties: properties ?? this.properties,
     );
   }

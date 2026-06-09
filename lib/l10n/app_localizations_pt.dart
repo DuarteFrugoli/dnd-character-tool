@@ -840,6 +840,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get inventoryLabelItemQuantity => 'Quantidade';
 
   @override
+  String get inventoryLabelWeight => 'Peso';
+
+  @override
   String get inventoryLabelDescription => 'Descrição (opcional)';
 
   @override

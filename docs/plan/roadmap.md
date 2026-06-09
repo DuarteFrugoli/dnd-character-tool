@@ -34,8 +34,8 @@
 - [x] Death Saves — 3 sucessos / 3 falhas, reset automático ao receber cura
 - [x] Saving Throws — valores calculados (mod + proficiência) sempre visíveis
 - [ ] Multiclasse
-- [ ] Descanso Curto / Longo — recuperar HP (HD), slots e usos de features
-- [ ] Concentração — indicador da magia ativa, aviso ao tentar empilhar
+- [x] Descanso Curto / Longo — recuperar HP (HD), slots e usos de features
+- [x] Concentração — indicador da magia ativa, aviso ao tentar empilhar
 - [ ] Rolar dados diretamente na ficha (toque em atributo/perícia → resultado)
 
 ### Testes automatizados

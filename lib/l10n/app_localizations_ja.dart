@@ -829,6 +829,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get inventoryLabelItemQuantity => '量';
 
   @override
+  String get inventoryLabelWeight => '重さ';
+
+  @override
   String get inventoryLabelDescription => '説明 (オプション)';
 
   @override

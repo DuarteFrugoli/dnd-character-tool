@@ -1596,6 +1596,12 @@ abstract class AppLocalizations {
   /// **'Quantity'**
   String get inventoryLabelItemQuantity;
 
+  /// Custom item weight field label (in lb).
+  ///
+  /// In en, this message translates to:
+  /// **'Weight'**
+  String get inventoryLabelWeight;
+
   /// Custom item description field label.
   ///
   /// In en, this message translates to:

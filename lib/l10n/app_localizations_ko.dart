@@ -830,6 +830,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get inventoryLabelItemQuantity => '수량';
 
   @override
+  String get inventoryLabelWeight => '무게';
+
+  @override
   String get inventoryLabelDescription => '설명(선택사항)';
 
   @override

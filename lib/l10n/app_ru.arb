@@ -221,6 +221,7 @@
   "inventoryLabelType": "Тип",
   "inventoryLabelCategory": "Категория",
   "inventoryLabelItemQuantity": "Количество",
+  "inventoryLabelWeight": "Вес",
   "inventoryLabelDescription": "Описание (необязательно)",
   "inventoryTypeWeapon": "Оружие",
   "inventoryTypeArmor": "Броня",

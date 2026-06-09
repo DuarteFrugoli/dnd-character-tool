@@ -221,6 +221,7 @@
   "inventoryLabelType": "Tipo",
   "inventoryLabelCategory": "Categoría",
   "inventoryLabelItemQuantity": "Cantidad",
+  "inventoryLabelWeight": "Peso",
   "inventoryLabelDescription": "Descripción (opcional)",
   "inventoryTypeWeapon": "Arma",
   "inventoryTypeArmor": "Armadura",

@@ -221,6 +221,7 @@
   "inventoryLabelType": "유형",
   "inventoryLabelCategory": "범주",
   "inventoryLabelItemQuantity": "수량",
+  "inventoryLabelWeight": "무게",
   "inventoryLabelDescription": "설명(선택사항)",
   "inventoryTypeWeapon": "무기",
   "inventoryTypeArmor": "갑옷",

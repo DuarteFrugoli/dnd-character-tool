@@ -537,6 +537,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     required ItemType itemType,
     required String? description,
     Map<String, dynamic>? properties,
+    double weight = 0.0,
   }) async {
     final qtyCtrl = TextEditingController(text: '1');
     final confirmed = await showDialog<bool>(
@@ -583,6 +584,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
         itemType: itemType,
         quantity: int.tryParse(qtyCtrl.text) ?? 1,
         description: description,
+        weight: weight,
         properties: properties,
       ));
     }
@@ -600,6 +602,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     required String? Function(T) getDescription,
     required ItemType Function(T) getItemType,
     Map<String, dynamic>? Function(T)? getProperties,
+    double Function(T)? getWeight,
     required List<String> groupOrder,
     required Map<String, String> groupLabels,
   }) {
@@ -659,6 +662,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
               itemType: getItemType(item),
               description: getDescription(item),
               properties: getProperties?.call(item),
+              weight: getWeight?.call(item) ?? 0.0,
             ),
           ),
         );
@@ -701,6 +705,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final nameCtrl = TextEditingController();
     final categoryCtrl = TextEditingController(text: 'adventuring gear');
     final qtyCtrl = TextEditingController(text: '1');
+    final weightCtrl = TextEditingController(text: '0');
     final descCtrl = TextEditingController();
     final scheme = Theme.of(context).colorScheme;
 
@@ -746,12 +751,30 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                       labelText: AppLocalizations.of(context)!.inventoryLabelCategory, border: const OutlineInputBorder()),
                 ),
                 const SizedBox(height: 12),
-                TextField(
-                  controller: qtyCtrl,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context)!.inventoryLabelItemQuantity, border: const OutlineInputBorder()),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: qtyCtrl,
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                        decoration: InputDecoration(
+                            labelText: AppLocalizations.of(context)!.inventoryLabelItemQuantity, border: const OutlineInputBorder()),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: TextField(
+                        controller: weightCtrl,
+                        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                        inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))],
+                        decoration: InputDecoration(
+                            labelText: AppLocalizations.of(context)!.inventoryLabelWeight,
+                            suffixText: 'lb',
+                            border: const OutlineInputBorder()),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 12),
                 TextField(
@@ -773,6 +796,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                           : categoryCtrl.text.trim(),
                       itemType: selectedType,
                       quantity: int.tryParse(qtyCtrl.text) ?? 1,
+                      weight: double.tryParse(weightCtrl.text.replaceAll(',', '.')) ?? 0.0,
                       description: descCtrl.text.trim().isEmpty
                           ? null
                           : descCtrl.text.trim(),
@@ -880,6 +904,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'damageDice': w.damage,
                     'damageType': w.damageType,
                   },
+                  getWeight: (w) => w.weight,
                   groupOrder: const [
                     'simple melee',
                     'simple ranged',
@@ -915,6 +940,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                     'acBonus': a.acBonus,
                     if (a.stealthDisadvantage) 'stealthDisadvantage': true,
                   },
+                  getWeight: (a) => a.weight,
                   groupOrder: const ['light', 'medium', 'heavy', 'shield'],
                   groupLabels: {
                     'light': l10n.inventoryGroupLightArmor,
@@ -937,6 +963,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getItemType: (g) => g.category == 'ammunition'
                       ? ItemType.ammunition
                       : ItemType.gear,
+                  getWeight: (g) => g.weight,
                   groupOrder: const [
                     'adventuring gear',
                     'ammunition',

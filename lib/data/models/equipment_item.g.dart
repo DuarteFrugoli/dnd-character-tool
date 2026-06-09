@@ -17,6 +17,7 @@ EquipmentItem _$EquipmentItemFromJson(Map<String, dynamic> json) =>
       quantity: (json['quantity'] as num?)?.toInt() ?? 1,
       description: json['description'] as String?,
       isEquipped: json['isEquipped'] as bool? ?? false,
+      weight: (json['weight'] as num? ?? 0).toDouble(),
       properties: json['properties'] as Map<String, dynamic>?,
     );
 
@@ -29,5 +30,6 @@ Map<String, dynamic> _$EquipmentItemToJson(EquipmentItem instance) =>
       'quantity': instance.quantity,
       'description': instance.description,
       'isEquipped': instance.isEquipped,
+      'weight': instance.weight,
       'properties': instance.properties,
     };

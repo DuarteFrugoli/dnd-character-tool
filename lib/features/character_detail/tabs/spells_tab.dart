@@ -1083,12 +1083,16 @@ Future<void> _onConcentrationTap(
   // Already concentrating on a different spell — confirm switch
   if (!context.mounted) return;
   final l10n = AppLocalizations.of(context)!;
+  final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
   final confirmed = await showDialog<bool>(
     context: context,
     builder: (ctx) => AlertDialog(
       title: Text(l10n.concentrationReplaceTitle),
       content: Text(
-        l10n.concentrationReplaceBody(currentConcentration, spellName),
+        l10n.concentrationReplaceBody(
+          i18n.spellName(currentConcentration),
+          i18n.spellName(spellName),
+        ),
       ),
       actions: [
         TextButton(
@@ -1109,7 +1113,7 @@ Future<void> _onConcentrationTap(
 
 // ── Concentration Banner ──────────────────────────────────────────────────────
 
-class _ConcentrationBanner extends StatelessWidget {
+class _ConcentrationBanner extends ConsumerWidget {
   const _ConcentrationBanner({
     required this.spellName,
     required this.onBreak,
@@ -1119,8 +1123,9 @@ class _ConcentrationBanner extends StatelessWidget {
   final VoidCallback onBreak;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     return Card(
       color: scheme.primaryContainer,
@@ -1133,7 +1138,7 @@ class _ConcentrationBanner extends StatelessWidget {
             const SizedBox(width: 8),
             Expanded(
               child: Text(
-                '${l10n.concentrationBannerLabel} $spellName',
+                '${l10n.concentrationBannerLabel} ${i18n.spellName(spellName)}',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: scheme.onPrimaryContainer,
                   fontWeight: FontWeight.w500,

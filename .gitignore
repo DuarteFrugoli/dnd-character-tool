@@ -18,6 +18,7 @@ migrate_working_dir/
 *.iws
 .idea/
 
+# VS Code related
 .vscode/
 
 # Flutter/Dart/Pub related

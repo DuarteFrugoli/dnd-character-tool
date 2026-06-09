@@ -4,19 +4,6 @@ Gaps identificados comparando o estado atual do app com o que é necessário num
 
 ---
 
-## Alta prioridade — afeta diretamente o uso na mesa
-
-### Descanso Curto e Longo
-Sem mecanismo para aplicar os efeitos de descanso: recuperar HD, slots de magia, usos de features.
-
-**O que implementar:**
-- Botões "Descanso Curto" e "Descanso Longo" (menu ou FAB na aba de Stats)
-- Descanso curto: permite gastar HD para recuperar HP
-- Descanso longo: recupera todos os slots, metade dos HD, HP máximo
-- Dialog de confirmação listando o que será recuperado
-
----
-
 ### Concentração
 Sem indicador de qual magia está em concentração ativa. Comum esquecer e empilhar duas magias.
 

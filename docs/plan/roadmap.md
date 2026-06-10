@@ -2,9 +2,9 @@
 
 ---
 
-## v0.3.5 — Open Beta (atual)
+## v1.0.0 — Lançamento público (atual)
 
-Versão enviada ao open beta da Play Store. Todas as features abaixo estão completas.
+Versão lançada na Play Store.
 
 ### Ficha — mecânicas de sessão
 - [x] Rastreador de HP e spell slots em sessão
@@ -46,7 +46,6 @@ Versão enviada ao open beta da Play Store. Todas as features abaixo estão comp
 - [x] Death Saves — 3 sucessos / 3 falhas, reset automático ao receber cura
 - [x] Saving Throws — valores calculados (mod + proficiência) sempre visíveis
 - [x] Condições ativas — 15 condições do SRD com chips, descrições e persistência
-- [ ] **Multiclasse** — `List<CharacterClassEntry>` no modelo; slots combinados pela tabela PHB; level up com escolha de classe; preparation por classe separada; HD por classe
 
 ### Ficha — progressão do personagem
 - [x] Level up guiado — escolha de subclasse (se aplicável), ASI/feat, novos slots e features
@@ -74,7 +73,23 @@ Versão enviada ao open beta da Play Store. Todas as features abaixo estão comp
 
 ---
 
-## v1.1 — Mecânicas avançadas
+## v1.1 — Multiclasse + Schema Versioning
+
+### Schema versioning e migração
+- [ ] Campo `schemaVersion: int` no modelo `Character` (atual = 1, multiclasse = 2)
+- [ ] Badge discreto no card da lista quando `schemaVersion < atual` (ex: chip `v1` no canto inferior)
+- [ ] Migração automática ao abrir o personagem — toast *"Personagem atualizado"* + salva com `schemaVersion: 2`
+- [ ] Código legado removível após todos os personagens migrarem
+
+### Multiclasse
+- [ ] **Fase 1 — Modelo** — `schemaVersion: 2`; `List<CharacterClassEntry>` no `Character`; `SpellSlots` derivado; `hitDice: Map<String, int>`; `preparedSpells: Map<String, List<String>>`
+- [ ] **Fase 2 — SpellcastingEngine** — tabela de slots combinados do PHB (full×1, half×0.5, third×0.33, pact separado)
+- [ ] **Fase 3 — Level up wizard** — escolher qual classe sobe; adicionar nova classe (validação de pré-requisito); ASI por classe
+- [ ] **Fase 4 — UI da ficha** — header "Wizard 3 / Cleric 2"; preparation separada por classe
+
+---
+
+## v1.2 — Mecânicas avançadas e acessibilidade
 
 ### Dados virtuais
 - [ ] Toggle nas configurações para habilitar/desabilitar (desabilitado por padrão)
@@ -89,7 +104,7 @@ Versão enviada ao open beta da Play Store. Todas as features abaixo estão comp
 
 ---
 
-## v1.2 — Notas de sessão
+## v1.3 — Notas de sessão
 
 - [ ] Notas organizadas por sessão (título + data automática)
 - [ ] Lista de sessões com preview da primeira linha
@@ -127,36 +142,4 @@ Versão enviada ao open beta da Play Store. Todas as features abaixo estão comp
 - Modo campanha: grupo de personagens com história compartilhada
 - Bestiary — catálogo de monstros com fichas prontas
 - Suporte a outros sistemas de RPG além de D&D 5e
-
----
-
-## Multiclasse — plano de implementação
-
-### Fase 1 — Modelo de dados (sem retrocompat)
-```dart
-class CharacterClassEntry {
-  final String className;
-  final int level;
-  final String? subclass;
-}
-// Character.classes: List<CharacterClassEntry>
-// Character.get totalLevel => classes.fold(0, (s, e) => s + e.level)
-```
-- `SpellSlots` passa a ser derivado (calculado), não armazenado
-- `hitDice` vira `Map<String, int>` — ex: `{ 'd8': 3, 'd6': 2 }`
-- `preparedSpells` vira `Map<String, List<String>>` — chaveado por classe
-
-### Fase 2 — SpellcastingEngine
-- Tabela de slots combinados do PHB (full=1×, half=0.5×, third=0.33×, pact=separado)
-- `SpellProgressionType` já existe — só precisa agregar por `classes`
-
-### Fase 3 — Level up wizard
-- Passo "escolher qual classe sobe" (ou adicionar nova com validação de pré-requisito de atributo)
-- Subclasse por classe independente
-- ASI por classe (a cada 4 níveis na maioria)
-
-### Fase 4 — UI da ficha
-- Header: "Wizard 3 / Cleric 2" em vez de "Wizard 5"
-- Slots combinados exibidos normalmente
-- Spell preparation separada por classe com contadores independentes
 

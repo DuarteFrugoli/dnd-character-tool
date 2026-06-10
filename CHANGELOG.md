@@ -9,7 +9,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [0.3.5] - 2026-06-10
+## [1.0.0] - 2026-06-10
 
 ### Added
 - **Concentração** — badge "C" na magia ativa, banner de aviso ao tentar lançar segunda magia de concentração, botão para encerrar manualmente. Nome da magia exibido no idioma do app

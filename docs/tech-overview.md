@@ -1,63 +1,69 @@
-# Visão Técnica — DnD Character Tool
+﻿# Technical Overview — DnD Character Tool
 
-Documento de referência para apresentar o projeto em entrevistas técnicas.
+This document describes the architecture, stack and design decisions behind the project. Useful for contributors, forks, and anyone curious about how it works under the hood.
 
 ---
 
-## Stack principal
+## Stack
 
-| Camada | Tecnologia |
-|--------|-----------|
+| Layer | Technology |
+|-------|-----------|
 | Framework | Flutter 3.x / Dart 3.x |
-| Gerência de estado | Riverpod 2 (`flutter_riverpod`) |
-| Navegação | GoRouter |
-| Persistência local | JSON em disco (Android/iOS/Desktop) via `path_provider`; `SharedPreferences` no Web |
-| Serialização | `json_serializable` + `build_runner` (code generation) |
-| Internacionalização | Flutter `gen-l10n` (ARB) + camada de i18n própria para dados do SRD |
-| Export/Import | `share_plus`, `file_picker`, MethodChannel nativo |
-| Imagem | `image_picker`, `image_cropper` |
+| State management | Riverpod 2 (`flutter_riverpod`) |
+| Navigation | GoRouter |
+| Local persistence | JSON files on disk (Android/iOS/Desktop) via `path_provider`; `SharedPreferences` on Web |
+| Serialization | `json_serializable` + `build_runner` (code generation) |
+| Internationalization | Flutter `gen-l10n` (ARB) + custom i18n layer for SRD data |
+| Export/Import | `share_plus`, `file_picker`, native MethodChannel |
+| Image | `image_picker`, `image_cropper` |
 
 ---
 
-## Arquitetura
-
-O projeto segue uma arquitetura em camadas inspirada em Clean Architecture, adaptada para Flutter mobile:
+## Project Structure
 
 ```
 lib/
-├── core/          # Infraestrutura transversal (router, tema, locale, utils)
+├── core/          # Cross-cutting infrastructure (router, theme, locale, utils, units)
 ├── data/
-│   ├── models/        # Modelos de domínio (Character, HitPoints, AbilityScores…)
-│   ├── datasources/   # Acesso a dados: local (JSON/disco) e SRD (assets JSON)
-│   └── repositories/  # CharacterRepository — ponto único de acesso a personagens
-├── features/      # Telas organizadas por feature (character_list, character_detail, etc.)
-├── shared/        # Providers Riverpod compartilhados entre features
-└── l10n/          # Arquivos ARB e classes geradas pelo gen-l10n
+│   ├── models/        # Domain models (Character, HitPoints, AbilityScores…)
+│   ├── datasources/   # Data access: local (JSON/disk) and SRD (asset JSONs)
+│   └── repositories/  # CharacterRepository — single access point for characters
+├── features/      # Screens organized by feature (character_list, character_detail, etc.)
+├── shared/        # Riverpod providers shared across features
+└── l10n/          # ARB files and gen-l10n generated classes
+
+assets/
+├── data/
+│   ├── srd/       # SRD 5.1 JSON data (spells, races, classes, backgrounds, feats…)
+│   └── i18n/      # Translation overlays per locale for SRD data
+
+tools/             # Python scripts for i18n generation and patching
+docs/              # Project documentation
 ```
 
-### Fluxo de dados
+The project follows a layered architecture loosely inspired by Clean Architecture, adapted to Flutter mobile:
 
 ```
-UI (Widget) → Provider (Riverpod) → Repository → DataSource → Disco/Assets
+UI (Widget) → Provider (Riverpod) → Repository → DataSource → Disk/Assets
 ```
 
-- A UI nunca acessa o disco diretamente — sempre via provider.
-- O `CharacterRepository` isola as features do datasource concreto, facilitando testes e futura migração para backend remoto.
+The UI never accesses disk directly — always through a provider. `CharacterRepository` decouples features from the concrete datasource, making it straightforward to migrate to a remote backend in the future.
 
 ---
 
-## Gerência de estado — Riverpod
+## State Management — Riverpod
 
-- **`characterListProvider`** — `AsyncNotifierProvider` que mantém a lista de todos os personagens. Carrega do `CharacterRepository` e expõe métodos como `create`, `delete`, `updateSingle`.
-- **`characterDetailProvider(id)`** — `AsyncNotifierProvider.family` parametrizado por ID. Contém toda a lógica de edição de um personagem: `adjustHp`, `toggleCondition`, `updateSavingThrows`, `updateDeathSaves`, etc. Usa _optimistic update_: atualiza o estado local imediatamente antes de persistir, evitando jank na UI.
-- **`srdDataSourceProvider`** / **`srdI18nProvider`** — Providers que carregam os dados do SRD e as traduções. O `srdI18nProvider` observa o `localeProvider` e recarrega automaticamente ao trocar de idioma.
-- **`themeProvider`** / **`localeProvider`** — `NotifierProvider` com estado inicial injetado via `ProviderScope.overrides` no `main()` para evitar flash de tema/idioma incorreto na inicialização.
+- **`characterListProvider`** — `AsyncNotifierProvider` holding the full character list. Loads from `CharacterRepository` and exposes methods like `create`, `delete`, `updateSingle`.
+- **`characterDetailProvider(id)`** — `AsyncNotifierProvider.family` parameterized by ID. Contains all editing logic for a single character: `adjustHp`, `toggleCondition`, `updateSavingThrows`, `updateDeathSaves`, etc. Uses _optimistic update_: state is updated locally before persisting, avoiding UI jank.
+- **`srdDataSourceProvider`** / **`srdI18nProvider`** — Providers that load SRD data and translation overlays. `srdI18nProvider` watches `localeProvider` and reloads automatically on locale change.
+- **`themeProvider`** / **`localeProvider`** — `NotifierProvider` with initial state injected via `ProviderScope.overrides` in `main()` to prevent a flash of incorrect theme/locale on startup.
+- **`unitSystemProvider`** — `NotifierProvider<UnitSystemNotifier, UnitSystem>` persisted in `SharedPreferences`. Controls display of distances (ft/m/sq) and weights (lb/kg) across all screens.
 
 ---
 
-## Persistência local
+## Local Persistence
 
-A camada de storage usa um padrão de **platform-conditional import** do Dart:
+Storage uses Dart's **platform-conditional import** pattern:
 
 ```dart
 import 'storage_backend_stub.dart'
@@ -65,16 +71,16 @@ import 'storage_backend_stub.dart'
     if (dart.library.js_interop) 'storage_backend_web.dart';
 ```
 
-- **Nativo (Android/iOS/Desktop):** cada personagem é um arquivo `.json` na pasta `ApplicationDocuments/dnd_character_tool/characters/`. Imagens ficam em `images/`. Sem banco de dados — arquivos simples facilitam backup e inspeção manual.
-- **Web:** usa `SharedPreferences` (localStorage) serializado como JSON, já que não há acesso ao sistema de arquivos.
+- **Native (Android/iOS/Desktop):** each character is a `.json` file under `ApplicationDocuments/dnd_character_tool/characters/`. Images are stored separately under `images/`. No database — plain files are easy to back up and inspect.
+- **Web:** uses `SharedPreferences` (localStorage) serialized as JSON, since filesystem access is unavailable.
 
 ---
 
-## Serialização — Code Generation
+## Serialization — Code Generation
 
-Os modelos usam `@JsonSerializable` com `@JsonSerializable(explicitToJson: true)` para nested objects. O `build_runner` gera os arquivos `.g.dart` com `fromJson`/`toJson`. O modelo principal `Character` tem ~30 campos, incluindo listas e objetos aninhados como `AbilityScores`, `HitPoints`, `SpellSlots`, `EquipmentItem`.
+Models use `@JsonSerializable(explicitToJson: true)` for nested objects. `build_runner` generates `.g.dart` files with `fromJson`/`toJson`. The main `Character` model has ~30 fields including nested objects like `AbilityScores`, `HitPoints`, `SpellSlots`, and `EquipmentItem`.
 
-Campos adicionados manualmente ao `.g.dart` seguem o padrão de nullable com fallback:
+New fields follow the nullable-with-fallback pattern for backwards compatibility:
 ```dart
 activeConditions: (json['activeConditions'] as List<dynamic>?)
     ?.map((e) => e as String).toList() ?? const [],
@@ -82,68 +88,85 @@ activeConditions: (json['activeConditions'] as List<dynamic>?)
 
 ---
 
-## Internacionalização (i18n)
+## Internationalization (i18n)
 
-O projeto tem **duas camadas de i18n** independentes:
+The project has **two independent i18n layers**:
 
 ### 1. UI strings — Flutter gen-l10n
-- 10 idiomas: en, pt, es, fr, de, it, ja, ko, ru, zh
-- Arquivos `.arb` em `lib/l10n/`
-- `flutter gen-l10n` gera classes tipadas em `app_localizations.dart`
-- Acessado via `AppLocalizations.of(context)!`
+- 10 languages: en, pt, es, fr, de, it, ja, ko, ru, zh
+- `.arb` files in `lib/l10n/`
+- `flutter gen-l10n` generates typed classes in `app_localizations.dart`
+- Accessed via `AppLocalizations.of(context)!`
 
-### 2. Dados do SRD — SrdI18nService
-- Os dados de jogo (nomes de magias, raças, condições, etc.) vêm de JSONs em inglês nos assets
-- `SrdI18nService` carrega overlays de tradução por locale de `assets/data/i18n/{locale}/`
-- Padrão: `_str('conditions', 'Blinded', 'name')` → retorna string traduzida ou `null` (fallback para inglês)
-- Chaves são normalizadas para lowercase internamente (`_lowercaseKeys`)
+### 2. SRD data — SrdI18nService
+- Game data (spell names, races, conditions, etc.) comes from English JSONs in assets
+- `SrdI18nService` loads translation overlays per locale from `assets/data/i18n/{locale}/`
+- Pattern: `_str('conditions', 'Blinded', 'name')` → returns translated string or `null` (falls back to English)
+- Keys are normalized to lowercase internally via `_lowercaseKeys`
 
----
-
-## Navegação — GoRouter
-
-Rotas declarativas com path parameters:
-
-| Rota | Tela |
-|------|------|
-| `/` | Lista de personagens |
-| `/character/:id` | Detalhe/edição do personagem |
-| `/create` | Wizard de criação |
-| `/settings` | Configurações |
-
-Inclui `redirect` de segurança para evitar crash quando o Android/iOS passa URIs `content://` ou `file://` diretamente ao router (cenário de abertura de arquivo `.dndchar`).
+Translation overlays are generated by Python scripts in `tools/`:
+- `translate_i18n.py` — bulk translation via `deep-translator` (Google Translate)
+- `patch_spell_material.py` — safe patching of the `material` field without overwriting existing translations
 
 ---
 
-## Export/Import — formato .dndchar
+## Navigation — GoRouter
 
-- Arquivo proprietário `.dndchar` = JSON do personagem + imagem em base64, compactado e encodado.
-- **Export Android:** `share_plus` abre o seletor de compartilhamento nativo com o arquivo.
-- **Import Android:** `MethodChannel` (`dnd.character/file_import`) captura intents de abertura de arquivo e emite via `IncomingFileService.fileStream` (padrão Singleton + Stream broadcast).
-- **Import iOS:** `SceneDelegate` repassa a URL para o mesmo canal.
-- Codificação base64 e serialização JSON são executadas em isolate separado via `compute()` para não travar a UI thread com personagens de foto grande.
-- Também suporta **token de compartilhamento**: string compacta e URL-safe gerada a partir dos dados do personagem.
+Declarative routes with path parameters:
 
----
+| Route | Screen |
+|-------|--------|
+| `/` | Character list |
+| `/character/:id` | Character detail / editing |
+| `/create` | Creation wizard |
+| `/settings` | Settings |
 
-## Temas
-
-- Múltiplos temas `ThemeData` pré-definidos em `app_themes.dart`
-- `ThemeNotifier` persiste a escolha em `SharedPreferences`
-- Inicializado antes do primeiro frame (`ProviderScope.overrides`) para evitar flash de tema padrão
+Includes a `redirect` guard to prevent crashes when Android/iOS passes `content://` or `file://` URIs directly to the router (`.dndchar` file opening scenario).
 
 ---
 
-## Features principais implementadas
+## Export/Import — .dndchar Format
 
-| Feature | Detalhe técnico relevante |
-|---------|--------------------------|
-| **Criação de personagem** | Wizard multi-step com seleção de raça, classe, atributos, background e magias a partir dos JSONs do SRD |
-| **Level Up Wizard** | Fluxo fullscreen com slide-up: HP, ASI/Feats, subclasse, magias |
-| **Rastreamento de XP** | Detecção automática de level-up com guard contra race condition em taps duplos |
-| **HP Tracker** | Adjust +/-, HP temporário, death saves (3 sucessos / 3 falhas) com reset automático |
-| **Condições Ativas** | 15 condições SRD persistidas como `List<String>` no modelo, UI com chips + bottom sheet de detalhe |
-| **Saving Throws** | Valores calculados (mod + bônus de proficiência) com layout unificado entre view e edit mode |
-| **Inventário** | Seção de equipáveis separada, descrição no tap, peso de equipamento |
-| **Magias** | Filtro por nível/escola, slots por nível, innate spells |
-| **Notas** | Campo livre com suporte a múltiplas notas por personagem |
+- Proprietary `.dndchar` file = character JSON + base64-encoded image, compressed and encoded.
+- **Export (Android):** `share_plus` opens the native share sheet with the file attached.
+- **Import (Android):** `MethodChannel` (`dnd.character/file_import`) captures file-open intents and emits via `IncomingFileService.fileStream` (Singleton + broadcast Stream pattern).
+- **Import (iOS):** `SceneDelegate` forwards the URL to the same channel.
+- Base64 encoding and JSON serialization run in a separate isolate via `compute()` to avoid blocking the UI thread with large character photos.
+- Also supports a **share token**: a compact, URL-safe string derived from character data (gzip + base64url on native; base64url-only on web for cross-platform compatibility).
+
+---
+
+## Unit System
+
+Three display modes configurable in Settings:
+- **Imperial** — feet (ft) and pounds (lb) — default for `en` locale
+- **Metric** — metres (m) and kilograms (kg) — default for all other locales
+- **Squares** — square units (sq) for grid-based play
+
+Applied consistently across character speed, inventory weight, and spell ranges. Persisted in `SharedPreferences` via `unitSystemProvider`.
+
+---
+
+## Themes
+
+- Multiple `ThemeData` presets defined in `app_themes.dart`
+- `ThemeNotifier` persists the selection in `SharedPreferences`
+- Initialized before the first frame (`ProviderScope.overrides`) to prevent a default-theme flash
+
+---
+
+## Key Features — Implementation Notes
+
+| Feature | Notable detail |
+|---------|---------------|
+| **Character creation** | Multi-step wizard pulling race, class, background, and spell data from SRD asset JSONs |
+| **Level Up Wizard** | Fullscreen slide-up flow: HP roll, ASI/Feat selection, subclass, spells |
+| **XP tracking** | Automatic level-up detection with guard against double-tap race condition |
+| **HP tracker** | Adjust +/-, temporary HP, death saves (3 successes/3 failures) with auto-reset on heal |
+| **Active conditions** | 15 SRD conditions persisted as `List<String>` on the model; chip UI + detail bottom sheet |
+| **Saving throws** | Calculated values (modifier + proficiency bonus); unified layout between view and edit modes |
+| **Concentration** | "C" badge on active spell, warning banner on second concentration cast, manual end button |
+| **Short rest** | Spends available Hit Dice (d + CON modifier) to recover HP, with HD availability validation |
+| **Inventory** | Equippable section separate from carried items; item description on tap; carry weight bar |
+| **Spells** | Filter by level/school, slots per level, innate spells, spell range unit conversion |
+| **Notes** | Free-form multi-note field per character |

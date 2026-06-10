@@ -1376,6 +1376,42 @@ class AppLocalizationsFr extends AppLocalizations {
   String get spellDetailRange => 'Gamme';
 
   @override
+  String get spellRangeSelf => 'Personnelle';
+
+  @override
+  String get spellRangeTouch => 'Contact';
+
+  @override
+  String get spellRangeSight => 'Ligne de mire';
+
+  @override
+  String get spellRangeSpecial => 'Spéciale';
+
+  @override
+  String get spellRangeUnlimited => 'Illimitée';
+
+  @override
+  String get spellAreaSphere => 'sphère';
+
+  @override
+  String get spellAreaCone => 'cône';
+
+  @override
+  String get spellAreaCube => 'cube';
+
+  @override
+  String get spellAreaCylinder => 'cylindre';
+
+  @override
+  String get spellAreaLine => 'ligne';
+
+  @override
+  String get spellAreaWall => 'mur';
+
+  @override
+  String get spellAreaCircle => 'cercle';
+
+  @override
   String get spellDetailDuration => 'Durée';
 
   @override

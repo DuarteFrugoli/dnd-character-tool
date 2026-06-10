@@ -1371,6 +1371,42 @@ class AppLocalizationsRu extends AppLocalizations {
   String get spellDetailRange => 'Диапазон';
 
   @override
+  String get spellRangeSelf => 'На себя';
+
+  @override
+  String get spellRangeTouch => 'Касание';
+
+  @override
+  String get spellRangeSight => 'В пределах видимости';
+
+  @override
+  String get spellRangeSpecial => 'Особая';
+
+  @override
+  String get spellRangeUnlimited => 'Неограниченная';
+
+  @override
+  String get spellAreaSphere => 'сфера';
+
+  @override
+  String get spellAreaCone => 'конус';
+
+  @override
+  String get spellAreaCube => 'куб';
+
+  @override
+  String get spellAreaCylinder => 'цилиндр';
+
+  @override
+  String get spellAreaLine => 'линия';
+
+  @override
+  String get spellAreaWall => 'стена';
+
+  @override
+  String get spellAreaCircle => 'круг';
+
+  @override
   String get spellDetailDuration => 'Продолжительность';
 
   @override

@@ -1373,6 +1373,42 @@ class AppLocalizationsIt extends AppLocalizations {
   String get spellDetailRange => 'Allineare';
 
   @override
+  String get spellRangeSelf => 'Su se stesso';
+
+  @override
+  String get spellRangeTouch => 'Tocco';
+
+  @override
+  String get spellRangeSight => 'Vista';
+
+  @override
+  String get spellRangeSpecial => 'Speciale';
+
+  @override
+  String get spellRangeUnlimited => 'Illimitato';
+
+  @override
+  String get spellAreaSphere => 'sfera';
+
+  @override
+  String get spellAreaCone => 'cono';
+
+  @override
+  String get spellAreaCube => 'cubo';
+
+  @override
+  String get spellAreaCylinder => 'cilindro';
+
+  @override
+  String get spellAreaLine => 'linea';
+
+  @override
+  String get spellAreaWall => 'muro';
+
+  @override
+  String get spellAreaCircle => 'cerchio';
+
+  @override
   String get spellDetailDuration => 'Durata';
 
   @override

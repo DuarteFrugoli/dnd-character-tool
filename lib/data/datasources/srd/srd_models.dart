@@ -388,6 +388,11 @@ class SrdSpell {
 
   final bool ritual;
   final String range;
+
+  /// Range converted to feet for unit formatting; null for non-numeric ranges
+  /// ("Self", "Touch", "Sight", "Special", "Unlimited").
+  final int? rangeInFeet;
+
   final List<String> components;
 
   /// Material component description (null if no M component or no description).
@@ -433,6 +438,7 @@ class SrdSpell {
     required this.castingTimeType,
     required this.ritual,
     required this.range,
+    this.rangeInFeet,
     required this.components,
     this.material,
     this.materialCost,
@@ -454,14 +460,25 @@ class SrdSpell {
 
   bool get requiresMaterial => components.contains('M') && material != null;
 
-  factory SrdSpell.fromJson(Map<String, dynamic> json) => SrdSpell(
+  static int? _parseRangeInFeet(String range) {
+    final feetMatch = RegExp(r'^(\d+)\s+feet$').firstMatch(range);
+    if (feetMatch != null) return int.parse(feetMatch.group(1)!);
+    final mileMatch = RegExp(r'^(\d+)\s+miles?$').firstMatch(range);
+    if (mileMatch != null) return int.parse(mileMatch.group(1)!) * 5280;
+    return null;
+  }
+
+  factory SrdSpell.fromJson(Map<String, dynamic> json) {
+    final range = json['range'] as String;
+    return SrdSpell(
         name: json['name'] as String,
         level: json['level'] as int,
         school: json['school'] as String,
         castingTime: json['castingTime'] as String,
         castingTimeType: json['castingTimeType'] as String? ?? 'action',
         ritual: json['ritual'] as bool? ?? false,
-        range: json['range'] as String,
+        range: range,
+        rangeInFeet: _parseRangeInFeet(range),
         components: List<String>.from(json['components']),
         material: json['material'] as String?,
         materialCost: json['materialCost'] as int?,
@@ -485,6 +502,7 @@ class SrdSpell {
             .map((e) => RaceSpellRef.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
+  }
 }
 
 class SrdWeaponRange {

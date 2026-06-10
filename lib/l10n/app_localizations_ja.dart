@@ -1352,6 +1352,42 @@ class AppLocalizationsJa extends AppLocalizations {
   String get spellDetailRange => '範囲';
 
   @override
+  String get spellRangeSelf => '自分自身';
+
+  @override
+  String get spellRangeTouch => '接触';
+
+  @override
+  String get spellRangeSight => '視界';
+
+  @override
+  String get spellRangeSpecial => '特殊';
+
+  @override
+  String get spellRangeUnlimited => '無制限';
+
+  @override
+  String get spellAreaSphere => '球体';
+
+  @override
+  String get spellAreaCone => '円錐';
+
+  @override
+  String get spellAreaCube => '立方体';
+
+  @override
+  String get spellAreaCylinder => '円柱';
+
+  @override
+  String get spellAreaLine => '直線';
+
+  @override
+  String get spellAreaWall => '壁';
+
+  @override
+  String get spellAreaCircle => '円';
+
+  @override
   String get spellDetailDuration => '間隔';
 
   @override

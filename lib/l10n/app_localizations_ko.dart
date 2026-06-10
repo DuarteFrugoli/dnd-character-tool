@@ -1353,6 +1353,42 @@ class AppLocalizationsKo extends AppLocalizations {
   String get spellDetailRange => '범위';
 
   @override
+  String get spellRangeSelf => '자신';
+
+  @override
+  String get spellRangeTouch => '접촉';
+
+  @override
+  String get spellRangeSight => '시야';
+
+  @override
+  String get spellRangeSpecial => '특수';
+
+  @override
+  String get spellRangeUnlimited => '무제한';
+
+  @override
+  String get spellAreaSphere => '구체';
+
+  @override
+  String get spellAreaCone => '원뿔';
+
+  @override
+  String get spellAreaCube => '정육면체';
+
+  @override
+  String get spellAreaCylinder => '원기둥';
+
+  @override
+  String get spellAreaLine => '선';
+
+  @override
+  String get spellAreaWall => '벽';
+
+  @override
+  String get spellAreaCircle => '원';
+
+  @override
   String get spellDetailDuration => '지속';
 
   @override

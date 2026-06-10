@@ -1368,6 +1368,42 @@ class AppLocalizationsEs extends AppLocalizations {
   String get spellDetailRange => 'Rango';
 
   @override
+  String get spellRangeSelf => 'A uno mismo';
+
+  @override
+  String get spellRangeTouch => 'Toque';
+
+  @override
+  String get spellRangeSight => 'Vista';
+
+  @override
+  String get spellRangeSpecial => 'Especial';
+
+  @override
+  String get spellRangeUnlimited => 'Ilimitado';
+
+  @override
+  String get spellAreaSphere => 'esfera';
+
+  @override
+  String get spellAreaCone => 'cono';
+
+  @override
+  String get spellAreaCube => 'cubo';
+
+  @override
+  String get spellAreaCylinder => 'cilindro';
+
+  @override
+  String get spellAreaLine => 'línea';
+
+  @override
+  String get spellAreaWall => 'muro';
+
+  @override
+  String get spellAreaCircle => 'círculo';
+
+  @override
   String get spellDetailDuration => 'Duración';
 
   @override

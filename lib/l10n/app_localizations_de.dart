@@ -1372,6 +1372,42 @@ class AppLocalizationsDe extends AppLocalizations {
   String get spellDetailRange => 'Reichweite';
 
   @override
+  String get spellRangeSelf => 'Selbst';
+
+  @override
+  String get spellRangeTouch => 'Berührung';
+
+  @override
+  String get spellRangeSight => 'Sichtweite';
+
+  @override
+  String get spellRangeSpecial => 'Besondere';
+
+  @override
+  String get spellRangeUnlimited => 'Unbegrenzt';
+
+  @override
+  String get spellAreaSphere => 'Kugel';
+
+  @override
+  String get spellAreaCone => 'Kegel';
+
+  @override
+  String get spellAreaCube => 'Würfel';
+
+  @override
+  String get spellAreaCylinder => 'Zylinder';
+
+  @override
+  String get spellAreaLine => 'Linie';
+
+  @override
+  String get spellAreaWall => 'Wand';
+
+  @override
+  String get spellAreaCircle => 'Kreis';
+
+  @override
   String get spellDetailDuration => 'Dauer';
 
   @override

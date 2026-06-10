@@ -2574,6 +2574,78 @@ abstract class AppLocalizations {
   /// **'Range'**
   String get spellDetailRange;
 
+  /// No description provided for @spellRangeSelf.
+  ///
+  /// In en, this message translates to:
+  /// **'Self'**
+  String get spellRangeSelf;
+
+  /// No description provided for @spellRangeTouch.
+  ///
+  /// In en, this message translates to:
+  /// **'Touch'**
+  String get spellRangeTouch;
+
+  /// No description provided for @spellRangeSight.
+  ///
+  /// In en, this message translates to:
+  /// **'Sight'**
+  String get spellRangeSight;
+
+  /// No description provided for @spellRangeSpecial.
+  ///
+  /// In en, this message translates to:
+  /// **'Special'**
+  String get spellRangeSpecial;
+
+  /// No description provided for @spellRangeUnlimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited'**
+  String get spellRangeUnlimited;
+
+  /// No description provided for @spellAreaSphere.
+  ///
+  /// In en, this message translates to:
+  /// **'sphere'**
+  String get spellAreaSphere;
+
+  /// No description provided for @spellAreaCone.
+  ///
+  /// In en, this message translates to:
+  /// **'cone'**
+  String get spellAreaCone;
+
+  /// No description provided for @spellAreaCube.
+  ///
+  /// In en, this message translates to:
+  /// **'cube'**
+  String get spellAreaCube;
+
+  /// No description provided for @spellAreaCylinder.
+  ///
+  /// In en, this message translates to:
+  /// **'cylinder'**
+  String get spellAreaCylinder;
+
+  /// No description provided for @spellAreaLine.
+  ///
+  /// In en, this message translates to:
+  /// **'line'**
+  String get spellAreaLine;
+
+  /// No description provided for @spellAreaWall.
+  ///
+  /// In en, this message translates to:
+  /// **'wall'**
+  String get spellAreaWall;
+
+  /// No description provided for @spellAreaCircle.
+  ///
+  /// In en, this message translates to:
+  /// **'circle'**
+  String get spellAreaCircle;
+
   /// Spell detail label: duration.
   ///
   /// In en, this message translates to:

@@ -47,7 +47,7 @@
 - [x] Export completo como `.dndchar` (JSON + imagem embutida em base64)
 - [x] Export / import `.dndchar` funcionando na web
 - [x] Token de compartilhamento compatível entre mobile e web
-- [ ] Peso do inventário — barra de carga (STR × 15 lb) com unidades Imperial/Métrico
+- [x] Peso do inventário — barra de carga (STR × 15 lb) com unidades Imperial/Métrico
 
 ---
 

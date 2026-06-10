@@ -1371,6 +1371,42 @@ class AppLocalizationsPt extends AppLocalizations {
   String get spellDetailRange => 'Alcance';
 
   @override
+  String get spellRangeSelf => 'Si mesmo';
+
+  @override
+  String get spellRangeTouch => 'Toque';
+
+  @override
+  String get spellRangeSight => 'Visão';
+
+  @override
+  String get spellRangeSpecial => 'Especial';
+
+  @override
+  String get spellRangeUnlimited => 'Ilimitado';
+
+  @override
+  String get spellAreaSphere => 'esfera';
+
+  @override
+  String get spellAreaCone => 'cone';
+
+  @override
+  String get spellAreaCube => 'cubo';
+
+  @override
+  String get spellAreaCylinder => 'cilindro';
+
+  @override
+  String get spellAreaLine => 'linha';
+
+  @override
+  String get spellAreaWall => 'parede';
+
+  @override
+  String get spellAreaCircle => 'círculo';
+
+  @override
   String get spellDetailDuration => 'Duração';
 
   @override

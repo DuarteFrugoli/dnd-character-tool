@@ -1362,6 +1362,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get spellDetailRange => 'Range';
 
   @override
+  String get spellRangeSelf => 'Self';
+
+  @override
+  String get spellRangeTouch => 'Touch';
+
+  @override
+  String get spellRangeSight => 'Sight';
+
+  @override
+  String get spellRangeSpecial => 'Special';
+
+  @override
+  String get spellRangeUnlimited => 'Unlimited';
+
+  @override
+  String get spellAreaSphere => 'sphere';
+
+  @override
+  String get spellAreaCone => 'cone';
+
+  @override
+  String get spellAreaCube => 'cube';
+
+  @override
+  String get spellAreaCylinder => 'cylinder';
+
+  @override
+  String get spellAreaLine => 'line';
+
+  @override
+  String get spellAreaWall => 'wall';
+
+  @override
+  String get spellAreaCircle => 'circle';
+
+  @override
   String get spellDetailDuration => 'Duration';
 
   @override

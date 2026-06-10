@@ -1344,6 +1344,42 @@ class AppLocalizationsZh extends AppLocalizations {
   String get spellDetailRange => '范围';
 
   @override
+  String get spellRangeSelf => '自身';
+
+  @override
+  String get spellRangeTouch => '触碰';
+
+  @override
+  String get spellRangeSight => '视野';
+
+  @override
+  String get spellRangeSpecial => '特殊';
+
+  @override
+  String get spellRangeUnlimited => '无限';
+
+  @override
+  String get spellAreaSphere => '球形';
+
+  @override
+  String get spellAreaCone => '锥形';
+
+  @override
+  String get spellAreaCube => '立方体';
+
+  @override
+  String get spellAreaCylinder => '圆柱体';
+
+  @override
+  String get spellAreaLine => '直线';
+
+  @override
+  String get spellAreaWall => '墙';
+
+  @override
+  String get spellAreaCircle => '圆形';
+
+  @override
   String get spellDetailDuration => '期间';
 
   @override

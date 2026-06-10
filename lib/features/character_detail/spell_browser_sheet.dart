@@ -966,6 +966,37 @@ class SpellDetailSheet extends ConsumerWidget {
     return '${n}th';
   }
 
+  String _displayRange(AppLocalizations l10n, UnitSystem unitSystem) {
+    if (spell.rangeInFeet case final feet?) {
+      return formatDistance(feet, unitSystem);
+    }
+    final area = spell.areaOfEffect;
+    if (spell.range.startsWith('Self')) {
+      if (area != null) {
+        return '${l10n.spellRangeSelf} (${formatDistance(area.size, unitSystem)} ${_areaType(l10n, area.type)})';
+      }
+      return l10n.spellRangeSelf;
+    }
+    return switch (spell.range) {
+      'Touch'     => l10n.spellRangeTouch,
+      'Sight'     => l10n.spellRangeSight,
+      'Special'   => l10n.spellRangeSpecial,
+      'Unlimited' => l10n.spellRangeUnlimited,
+      _           => spell.range,
+    };
+  }
+
+  String _areaType(AppLocalizations l10n, String type) => switch (type) {
+    'sphere'   => l10n.spellAreaSphere,
+    'cone'     => l10n.spellAreaCone,
+    'cube'     => l10n.spellAreaCube,
+    'cylinder' => l10n.spellAreaCylinder,
+    'line'     => l10n.spellAreaLine,
+    'wall'     => l10n.spellAreaWall,
+    'circle'   => l10n.spellAreaCircle,
+    _          => type,
+  };
+
   String _componentsStr() {
     final base = spell.components.join(', ');
     if (spell.material != null) return '$base (${spell.material})';
@@ -1037,7 +1068,7 @@ class SpellDetailSheet extends ConsumerWidget {
             l10n.spellDetailCastingTime,
             i18n.castingTime(spell.castingTime),
           ),
-          _StatRow(l10n.spellDetailRange, formatSpellRange(spell.range, ref.watch(unitSystemProvider))),
+          _StatRow(l10n.spellDetailRange, _displayRange(l10n, ref.watch(unitSystemProvider))),
           _StatRow(
             l10n.spellDetailDuration,
             i18n.spellDuration(spell.duration),

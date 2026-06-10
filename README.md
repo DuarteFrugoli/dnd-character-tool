@@ -1,41 +1,57 @@
-# D&D Character Tool
+# DnD Character Tool
 
-A mobile app for creating and managing Dungeons & Dragons 5e characters — built with Flutter.
+A mobile app for creating and managing DnD 5e characters — built with Flutter.
 
-[![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Open%20Beta-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
+[![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.41-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-0.3.4-orange)
-![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS-lightgrey)
+![Version](https://img.shields.io/badge/version-1.0.1-orange)
+![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
 
 ## Features
 
 ### Character Creation
-- **Guided wizard** with 7 steps: class, race, background, skills, attributes, name and review
+- **Guided wizard** — 7 steps: class, race, background, skills, attributes, name and review
 - **Standard Array** and **Point Buy** attribute methods
 - **Racial bonuses** applied automatically (PHB) or distributed freely (Tasha's / BG3 style)
 - Starting equipment from background applied automatically
 - Tool and instrument proficiency selection
 
 ### Character Sheet
-- **Stats tab**: HP tracker with damage/heal buttons, AC, speed, initiative; Saving Throws with calculated values; Inspiration banner; XP tracking with progress bar and level-up detection; Death Saves (auto-shown at 0 HP); Active Conditions picker with 15 SRD conditions
-- **Skills tab**: all 18 skills with proficiency/expertise indicators and calculated bonuses
-- **Features tab**: racial traits, background feature, class features by level, 42 SRD feats, extra features
-- **Spells tab**: spell slots tracker, known/prepared spells, spell browser with filters
-- **Inventory tab**: equipped/carried items, armor class calculation, currencies (CP/SP/EP/GP/PP)
-- **Identity tab**: appearance (photo + crop), personality traits, ideals, bonds, flaws, backstory
-- **Notes tab**: free-form notes per character
 
-### Level Up
-- **Level Up Wizard**: full level-up flow (HP roll, ASI/Feats, subclass selection, extra spells, class features)
-- **XP tracking**: optional toggle with progress bar, quick-add field and full SRD XP table
-- **Auto level-up prompt**: dialog when accumulated XP reaches the next threshold
+**Stats tab**
+- HP tracker with damage / heal buttons, AC, speed and initiative
+- Saving Throws with calculated values (mod + proficiency bonus)
+- Inspiration banner
+- XP tracking with progress bar and auto level-up detection
+- Death Saves (auto-shown at 0 HP) — tracks successes, failures, Stabilized and Dead states
+- Active Conditions — 15 SRD conditions with descriptions; add/remove via chip picker
+- Short Rest — spend Hit Dice to recover HP
+- Concentration tracker — badge on active spell, warning on second attempt, manual end button
+
+**Skills tab** — all 18 skills with proficiency/expertise indicators and calculated bonuses
+
+**Features tab** — racial traits, background feature, class features by level, 42 SRD feats, extra features
+
+**Spells tab** — spell slots tracker, concentration tracking, known/prepared spells, spell browser with filters
+
+**Inventory tab** — equipped/carried items split into sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), item description on tap
+
+**Identity tab** — character photo (pick from gallery, crop 1:1, full-screen viewer with zoom/pan and save to gallery), personality traits, ideals, bonds, flaws, backstory
+
+**Notes tab** — free-form notes per character
+
+### Level Up Wizard
+- Full level-up flow as a fullscreen modal with step indicators
+- Steps: new class features, subclass selection, ASI / Feat choice, HP roll or average, cantrip pick, spell swap (Warlocks), extra spells, summary
+- **Warlock spell swap** — dedicated step: choose which known spell to forget, then immediately pick the replacement in the same screen
+- **XP tracking** — optional toggle; quick-add field; full SRD XP table; auto prompt when XP threshold is reached
 
 ### Spell System
 - Full SRD spell list with school, casting time, concentration and ritual badges
-- Prepare-all classes (Cleric, Druid, Paladin, Artificer, Wizard): dynamic list from SRD with long-press to disable
+- Prepare-all classes (Cleric, Druid, Paladin, Artificer, Wizard): dynamic prepared list from SRD
 - Subclass always-prepared spells (domains, oaths, patrons)
 - Eldritch Knight and Arcane Trickster (⅓ caster) support
 - Innate racial spells with daily use tracker
@@ -44,40 +60,44 @@ A mobile app for creating and managing Dungeons & Dragons 5e characters — buil
 - Pin characters to the top of the list
 - Drag to reorder
 - Rename, delete and export per character
-- Character photo: pick from gallery, crop 1:1
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
 - Export as **JSON** or compressed **token** (gzip + base64url)
 - Import by `.dndchar` file, token or JSON
+- Cross-platform: characters exported on mobile import correctly on web and vice-versa
 
 ### Customization
-- 9 color themes: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
-- Theme picker with color swatch preview
+- **9 color themes**: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
+- **Unit system** — Imperial (ft / lb), Metric (m / kg) or Squares; applied to movement speed, carry weight and all distances throughout the app; defaults to device locale
 
 ### Internationalization
-- 10 languages: English, Portuguese, German, Spanish, French, Italian, Japanese, Korean, Russian, Chinese
-- UI strings via ARB / `AppLocalizations`; SRD content (spell names, class features, races, items, conditions) via locale overlay JSONs in `assets/data/i18n/`
+- **10 languages**: English, Portuguese, German, Spanish, French, Italian, Japanese, Korean, Russian, Chinese
+- UI strings via ARB / `AppLocalizations`
+- SRD content (spell names/descriptions/materials, class features, races, items, conditions, feats) via locale overlay JSONs in `assets/data/i18n/`
 
 ## Tech Stack
 
-- **Flutter** 3.41 / Dart 3.11
-- **State management**: flutter_riverpod 2
-- **Navigation**: go_router
-- **Persistence**: JSON files via `path_provider` (mobile) and `shared_preferences` (web)
-- **Serialization**: json_serializable + json_annotation (code-gen)
-- **Images**: image_picker + image_cropper (Android, iOS and Web via Cropper.js)
-- **QR**: qr_flutter + mobile_scanner
-- **Export/Import**: share_plus + file_picker
-- **UI utilities**: flutter_sticky_header, uuid, collection
+| Layer | Library |
+|---|---|
+| Framework | Flutter 3.41 / Dart 3.11 |
+| State management | flutter_riverpod 2 |
+| Navigation | go_router |
+| Persistence | path_provider (mobile) + shared_preferences (web) |
+| Serialization | json_serializable + json_annotation |
+| Images | image_picker + image_cropper |
+| Gallery save | gal |
+| Export / Import | share_plus + file_picker |
+| Web file download | package:web (dart:js_interop) |
+| UI utilities | flutter_sticky_header, uuid, collection |
 
 ## Platforms
 
 | Platform | Status |
-|----------|--------|
-| Android  | ✅ Supported |
-| iOS      | ✅ Supported |
-| Web      | ⚠️ [Preview (GitHub Pages)](https://duartefrugoli.github.io/dnd-character-tool/) |
+|---|---|
+| Android | ✅ Supported — [Google Play](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool) |
+| iOS | ✅ Supported |
+| Web | ⚠️ [Preview (GitHub Pages)](https://duartefrugoli.github.io/dnd-character-tool/) |
 
 ## Getting Started
 
@@ -86,7 +106,7 @@ flutter pub get
 flutter run
 ```
 
-> All D&D 5e content uses the **System Reference Document (SRD)** under the Creative Commons license.
+> All DnD 5e content uses the **System Reference Document (SRD)** under the Creative Commons license.
 
 ## License
 
@@ -97,13 +117,13 @@ See [LICENSE](LICENSE) for details.
 
 **Translation contributions** (`assets/data/i18n/`) are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — contributions are welcome! By submitting a translation you agree to license it under CC BY 4.0.
 
-> D&D 5e SRD content used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.
+> DnD 5e SRD content used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.
 
 ---
 
-# D&D Character Tool (Português)
+# DnD Character Tool (Português)
 
-Aplicativo mobile para criar e gerenciar personagens de Dungeons & Dragons 5e — feito com Flutter.
+Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flutter.
 
 ## Funcionalidades
 
@@ -115,22 +135,38 @@ Aplicativo mobile para criar e gerenciar personagens de Dungeons & Dragons 5e �
 - Seleção de proficiências em ferramentas e instrumentos
 
 ### Ficha do Personagem
-- **Aba Stats**: rastreador de HP com botões de Dano e Cura, CA, deslocamento, iniciativa; Salvaguardas com valores calculados; banner de Inspiração; rastreamento de XP com barra de progresso e detecção de level up; Salvaguardas de Morte (exibidas automaticamente ao chegar a 0 PV); seletor de Condições Ativas com 15 condições do SRD
-- **Aba Skills**: 18 perícias com indicadores de proficiência/expertise e bônus calculados
-- **Aba Features**: traços raciais, feature do antecedente, features de classe por nível, 42 talentos do SRD, features extras
-- **Aba Spells**: rastreador de espaços de magia, magias conhecidas/preparadas, browser de magias com filtros
-- **Aba Inventory**: itens equipados/carregados, cálculo de CA por armadura, moedas (CP/SP/EP/GP/PP)
-- **Aba Identity**: aparência (foto + corte), traços de personalidade, ideais, vínculos, fraquezas, história
-- **Aba Notes**: notas livres por personagem
+
+**Aba Stats**
+- Rastreador de HP com botões de Dano e Cura, CA, deslocamento e iniciativa
+- Salvaguardas com valores calculados (mod + bônus de proficiência)
+- Banner de Inspiração
+- Rastreamento de XP com barra de progresso e detecção automática de level up
+- Salvaguardas de Morte (exibidas ao chegar a 0 PV) — rastreia sucessos, falhas, Estabilizado e Morto
+- Condições Ativas — 15 condições do SRD com descrições; adicionar/remover via chip picker
+- Descanso Curto — gastar Hit Dice para recuperar PV
+- Rastreador de Concentração — badge na magia ativa, aviso ao tentar uma segunda magia de concentração, botão para encerrar manualmente
+
+**Aba Skills** — 18 perícias com indicadores de proficiência/expertise e bônus calculados
+
+**Aba Features** — traços raciais, feature do antecedente, features de classe por nível, 42 talentos do SRD, features extras
+
+**Aba Spells** — rastreador de espaços de magia, rastreamento de concentração, magias conhecidas/preparadas, browser de magias com filtros
+
+**Aba Inventory** — itens equipados/carregados separados por seção, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), descrição do item ao tocar
+
+**Aba Identity** — foto do personagem (escolher da galeria, cortar 1:1, visualizador em tela cheia com zoom/pan e salvar na galeria), traços de personalidade, ideais, vínculos, fraquezas, história
+
+**Aba Notes** — notas livres por personagem
 
 ### Subida de Nível
-- **Level Up Wizard**: fluxo completo de level up (rolagem de HP, ASI/Talentos, seleção de subclasse, magias extras, features de classe)
-- **Rastreamento de XP**: toggle opcional com barra de progresso, campo de adição rápida e tabela completa de XP do SRD
-- **Detecção automática de level up**: diálogo ao acumular XP suficiente para o próximo nível
+- Fluxo completo de level up como modal em tela cheia com indicadores de passo
+- Passos: features novas, seleção de subclasse, ASI / Talento, rolagem de HP, cantrips, troca de magia (Warlocks), magias extras, resumo
+- **Troca de magia do Warlock** — passo dedicado: escolha qual magia esquecer e em seguida escolha a substituta na mesma tela
+- **Rastreamento de XP** — toggle opcional; campo de adição rápida; tabela completa de XP do SRD; prompt automático ao atingir o threshold
 
 ### Sistema de Magias
 - Lista completa de magias do SRD com badges de escola, tempo de conjuração, concentração e ritual
-- Classes prepare-all (Cleric, Druid, Paladin, Artificer, Wizard): lista dinâmica do SRD com pressão longa para desativar
+- Classes prepare-all (Cleric, Druid, Paladin, Artificer, Wizard): lista de preparação dinâmica do SRD
 - Magias always-prepared de subclasse (domínios, juramentos, patronos)
 - Suporte a Eldritch Knight e Arcane Trickster (⅓ conjurador)
 - Magias inatas raciais com rastreador de usos diários
@@ -139,40 +175,44 @@ Aplicativo mobile para criar e gerenciar personagens de Dungeons & Dragons 5e �
 - Fixar personagens no topo da lista
 - Reordenar arrastando
 - Renomear, excluir e exportar por personagem
-- Foto do personagem: escolher da galeria, cortar em 1:1
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
 - Exportar como **JSON** ou **token** comprimido (gzip + base64url)
 - Importar por arquivo `.dndchar`, token ou JSON
+- Cross-platform: personagens exportados no celular importam corretamente na web e vice-versa
 
 ### Personalização
-- 9 temas de cores: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
-- Seletor de tema com preview de swatches de cores
+- **9 temas de cores**: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
+- **Sistema de unidades** — Imperial (ft / lb), Métrico (m / kg) ou Quadrados; aplicado a deslocamento, peso e todas as distâncias no app; padrão conforme o locale do dispositivo
 
 ### Internacionalização
-- 10 idiomas: Inglês, Português, Alemão, Espanhol, Francês, Italiano, Japonês, Coreano, Russo, Chinês
-- Strings da UI via ARB / `AppLocalizations`; conteúdo SRD (nomes de magias, features de classe, raças, itens, condições) via JSONs de overlay em `assets/data/i18n/`
+- **10 idiomas**: Inglês, Português, Alemão, Espanhol, Francês, Italiano, Japonês, Coreano, Russo, Chinês
+- Strings da UI via ARB / `AppLocalizations`
+- Conteúdo SRD (nomes/descrições/materiais de magias, features de classe, raças, itens, condições, talentos) via JSONs de overlay em `assets/data/i18n/`
 
 ## Tecnologias
 
-- **Flutter** 3.41 / Dart 3.11
-- **Gerenciamento de estado**: flutter_riverpod 2
-- **Navegação**: go_router
-- **Persistência**: arquivos JSON via `path_provider` (mobile) e `shared_preferences` (web)
-- **Serialização**: json_serializable + json_annotation (geração de código)
-- **Imagens**: image_picker + image_cropper (Android, iOS e Web via Cropper.js)
-- **QR**: qr_flutter + mobile_scanner
-- **Export/Import**: share_plus + file_picker
-- **Utilitários de UI**: flutter_sticky_header, uuid, collection
+| Camada | Biblioteca |
+|---|---|
+| Framework | Flutter 3.41 / Dart 3.11 |
+| Gerenciamento de estado | flutter_riverpod 2 |
+| Navegação | go_router |
+| Persistência | path_provider (mobile) + shared_preferences (web) |
+| Serialização | json_serializable + json_annotation |
+| Imagens | image_picker + image_cropper |
+| Salvar na galeria | gal |
+| Export / Import | share_plus + file_picker |
+| Download web | package:web (dart:js_interop) |
+| Utilitários de UI | flutter_sticky_header, uuid, collection |
 
 ## Plataformas
 
 | Plataforma | Status |
-|------------|--------|
-| Android    | ✅ Suportado |
-| iOS        | ✅ Suportado |
-| Web        | ⚠️ Indisponível |
+|---|---|
+| Android | ✅ Suportado — [Google Play](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool) |
+| iOS | ✅ Suportado |
+| Web | ⚠️ [Preview (GitHub Pages)](https://duartefrugoli.github.io/dnd-character-tool/) |
 
 ## Como rodar
 
@@ -181,7 +221,7 @@ flutter pub get
 flutter run
 ```
 
-> Todo o conteúdo de D&D 5e utiliza o **System Reference Document (SRD)** sob a licença Creative Commons.
+> Todo o conteúdo de DnD 5e utiliza o **System Reference Document (SRD)** sob a licença Creative Commons.
 
 ## Licença
 
@@ -192,4 +232,4 @@ Veja [LICENSE](LICENSE) para mais detalhes.
 
 **Contribuições de tradução** (`assets/data/i18n/`) são licenciadas sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — contribuições são bem-vindas! Ao enviar uma tradução você concorda em licenciá-la sob CC BY 4.0.
 
-> Conteúdo SRD de D&D 5e utilizado sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.
+> Conteúdo SRD de DnD 5e utilizado sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.

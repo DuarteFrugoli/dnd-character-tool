@@ -533,6 +533,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get levelUpHpReroll => 'Перебросить / изменить';
 
   @override
+  String get levelUpSpellSwapPickReplacement =>
+      'Теперь выберите заменяющее заклинание';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => 'Заменить на';
+
+  @override
   String get levelUpSpellSwapNone => 'Ни одного';
 
   @override

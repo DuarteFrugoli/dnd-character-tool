@@ -532,6 +532,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get levelUpHpReroll => 'Rolar novamente / alterar';
 
   @override
+  String get levelUpSpellSwapPickReplacement =>
+      'Agora escolha uma magia substituta';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => 'Substituir por';
+
+  @override
   String get levelUpSpellSwapNone => 'Nenhuma';
 
   @override

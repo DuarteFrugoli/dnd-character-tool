@@ -9,6 +9,19 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.0.1] - 2026-06-10
+
+### Added
+- **Warlock — Troca de magia dedicada**: novo passo no wizard de level-up exclusivo para Warlocks, com duas seções — escolher qual magia esquecer (ou nenhuma) e, ao selecionar, escolher a substituta imediatamente na mesma tela; substituição confirmada junto com o level-up
+- **Visualizador de foto — estilo WhatsApp**: foto centralizada quando menor que a tela; pan limitado às bordas reais da imagem (sem barras pretas arrastáveis); toque fora da foto fecha o visualizador, toque na foto não fecha
+- **Salvar foto na galeria**: botão de download no visualizador de foto salva a imagem na galeria do dispositivo (Android/iOS) ou faz download no navegador (Web)
+
+### Fixed
+- Zoom no visualizador de foto agora preenche a tela corretamente sem distorção no primeiro frame
+- Duplo toque usa âncora correta para zoom centralizado na área tocada
+
+---
+
 ## [1.0.0] - 2026-06-10
 
 ### Added

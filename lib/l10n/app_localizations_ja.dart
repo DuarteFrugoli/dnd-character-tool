@@ -522,6 +522,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get levelUpHpReroll => '振り直す / 変更';
 
   @override
+  String get levelUpSpellSwapPickReplacement => '代わりの呪文を選んでください';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => '置き換え先';
+
+  @override
   String get levelUpSpellSwapNone => 'なし';
 
   @override

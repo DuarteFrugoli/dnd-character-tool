@@ -515,6 +515,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get levelUpHpReroll => '重掷 / 更改';
 
   @override
+  String get levelUpSpellSwapPickReplacement => '现在选择一个替换法术';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => '替换为';
+
+  @override
   String get levelUpSpellSwapNone => '无';
 
   @override

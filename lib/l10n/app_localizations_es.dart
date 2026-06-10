@@ -530,6 +530,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get levelUpHpReroll => 'Volver a tirar / cambiar';
 
   @override
+  String get levelUpSpellSwapPickReplacement =>
+      'Ahora elige un hechizo de reemplazo';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => 'Reemplazar con';
+
+  @override
   String get levelUpSpellSwapNone => 'Ninguno';
 
   @override

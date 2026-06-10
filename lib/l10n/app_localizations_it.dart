@@ -531,6 +531,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get levelUpHpReroll => 'Rilancia / cambia';
 
   @override
+  String get levelUpSpellSwapPickReplacement =>
+      'Ora scegli un incantesimo sostitutivo';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => 'Sostituire con';
+
+  @override
   String get levelUpSpellSwapNone => 'Nessuno';
 
   @override

@@ -27,6 +27,8 @@ class _LevelUpState {
   List<KnownSpell> cantripsLearned;
   List<KnownSpell> spellsLearned;
   String? spellSwapped;
+  // Replacement spell chosen on the dedicated swap page.
+  KnownSpell? swapReplacement;
 
   _LevelUpState copyWith({
     int? hpGained,
@@ -38,6 +40,7 @@ class _LevelUpState {
     List<KnownSpell>? cantripsLearned,
     List<KnownSpell>? spellsLearned,
     Object? spellSwapped = _sentinel,
+    Object? swapReplacement = _sentinel,
   }) {
     final s = _LevelUpState(
       newLevel: newLevel,
@@ -51,6 +54,7 @@ class _LevelUpState {
     s.featChosen = featChosen == _sentinel ? this.featChosen : featChosen as SrdFeat?;
     s.subclassChosen = subclassChosen == _sentinel ? this.subclassChosen : subclassChosen as String?;
     s.spellSwapped = spellSwapped == _sentinel ? this.spellSwapped : spellSwapped as String?;
+    s.swapReplacement = swapReplacement == _sentinel ? this.swapReplacement : swapReplacement as KnownSpell?;
     return s;
   }
 
@@ -216,14 +220,14 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       if (needsAsi) _WizardPage.asi,
       _WizardPage.hp,
       if (cantripsToLearn > 0) _WizardPage.cantrips,
-      if (spellsToLearn > 0 || warlockSwap) _WizardPage.spells,
+      if (warlockSwap) _WizardPage.spellSwap,
+      if (spellsToLearn > 0) _WizardPage.spells,
       _WizardPage.summary,
     ];
 
     setState(() {
       _cantripsToLearn = cantripsToLearn;
       _spellsToLearn = spellsToLearn;
-      _warlockSwap = warlockSwap;
       _newClassFeatures = newFeatures;
       _newSubclassFeatures = newSubclassFeatures;
     });
@@ -231,7 +235,6 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
 
   int _cantripsToLearn = 0;
   int _spellsToLearn = 0;
-  bool _warlockSwap = false;
   List<SrdClassFeature> _newClassFeatures = [];
   List<SrdClassFeature> _newSubclassFeatures = [];
 
@@ -260,7 +263,10 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       featChosen: _state.featChosen,
       subclassChosen: _state.subclassChosen,
       cantripsLearned: _state.cantripsLearned,
-      spellsLearned: _state.spellsLearned,
+      spellsLearned: [
+        ..._state.spellsLearned,
+        if (_state.swapReplacement != null) _state.swapReplacement!,
+      ],
       spellSwapped: _state.spellSwapped,
     );
     Navigator.pop(context);
@@ -402,6 +408,10 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         return _state.hpChosen;
       case _WizardPage.cantrips:
         return _state.cantripsLearned.length == _cantripsToLearn;
+      case _WizardPage.spellSwap:
+        // Optional step: can skip (None), but if a spell is chosen to forget
+        // a replacement must also be selected before advancing.
+        return _state.spellSwapped == null || _state.swapReplacement != null;
       case _WizardPage.spells:
         return _state.spellsLearned.length >= _spellsToLearn;
       case _WizardPage.summary:
@@ -473,11 +483,32 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           isCantrip: true,
           i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
-      case _WizardPage.spells:
+      case _WizardPage.spellSwap:
         final engine = _engineFor(_state.newLevel);
-        return _SpellPickPage(
+        return _SpellSwapPage(
           classSpells: (_classSpells ?? [])
               .where((s) => s.level > 0 && s.level <= (engine?.maxSpellLevel ?? 9))
+              .toList(),
+          knownSpells: widget.character.spells
+              .where((s) => s.level > 0)
+              .toList(),
+          swapped: _state.spellSwapped,
+          replacement: _state.swapReplacement,
+          onSwappedChanged: (name) => setState(() {
+            _state = _state.copyWith(
+              spellSwapped: name,
+              swapReplacement: null,
+            );
+          }),
+          onReplacementChanged: (spell) =>
+              setState(() => _state = _state.copyWith(swapReplacement: spell)),
+          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+        );
+      case _WizardPage.spells:
+        final engine2 = _engineFor(_state.newLevel);
+        return _SpellPickPage(
+          classSpells: (_classSpells ?? [])
+              .where((s) => s.level > 0 && s.level <= (engine2?.maxSpellLevel ?? 9))
               .toList(),
           alreadyKnown: widget.character.spells
               .where((s) => s.level > 0)
@@ -485,17 +516,10 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
               .toList(),
           toLearn: _spellsToLearn,
           chosen: _state.spellsLearned,
-          maxLevel: engine?.maxSpellLevel ?? 9,
+          maxLevel: engine2?.maxSpellLevel ?? 9,
           onChanged: (list) =>
               setState(() => _state = _state.copyWith(spellsLearned: list)),
           isCantrip: false,
-          allowSwap: _warlockSwap,
-          knownSpells: widget.character.spells
-              .where((s) => s.level > 0)
-              .toList(),
-          swapped: _state.spellSwapped,
-          onSwapChanged: (name) =>
-              setState(() => _state = _state.copyWith(spellSwapped: name)),
           i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
       case _WizardPage.summary:
@@ -509,7 +533,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
 
 // ── Step Pages Enum ───────────────────────────────────────────────────────────
 
-enum _WizardPage { features, subclass, asi, hp, cantrips, spells, summary }
+enum _WizardPage { features, subclass, asi, hp, cantrips, spellSwap, spells, summary }
 
 // ── Step Indicator ────────────────────────────────────────────────────────────
 
@@ -972,10 +996,6 @@ class _SpellPickPage extends StatelessWidget {
     required this.onChanged,
     required this.isCantrip,
     required this.i18n,
-    this.allowSwap = false,
-    this.knownSpells = const [],
-    this.swapped,
-    this.onSwapChanged,
   });
   final List<SrdSpell> classSpells;
   final List<String> alreadyKnown;
@@ -985,10 +1005,6 @@ class _SpellPickPage extends StatelessWidget {
   final ValueChanged<List<KnownSpell>> onChanged;
   final bool isCantrip;
   final SrdI18nService i18n;
-  final bool allowSwap;
-  final List<KnownSpell> knownSpells;
-  final String? swapped;
-  final ValueChanged<String?>? onSwapChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -1005,33 +1021,6 @@ class _SpellPickPage extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 8),
-
-        // Spell swap for Warlock
-        if (allowSwap && !isCantrip) ...[
-          const Divider(),
-          ListTile(
-            title: Text(l10n.levelUpSpellSwap),
-            trailing: const Icon(Icons.swap_horiz),
-          ),
-          RadioGroup<String?>(
-            groupValue: swapped,
-            onChanged: (v) => onSwapChanged?.call(v),
-            child: Column(
-              children: [
-                ...knownSpells.map((ks) => RadioListTile<String?>(
-                  title: Text(ks.name),
-                  value: ks.name,
-                )),
-                RadioListTile<String?>(
-                  title: Text(l10n.levelUpSpellSwapNone),
-                  value: null,
-                ),
-              ],
-            ),
-          ),
-          const Divider(),
-          const SizedBox(height: 8),
-        ],
 
         ...classSpells.map((spell) {
           final knownAlready = alreadyKnown.contains(spell.name);
@@ -1084,6 +1073,113 @@ class _SpellPickPage extends StatelessWidget {
                   ),
           );
         }),
+      ],
+    );
+  }
+}
+
+// ── Page: Spell Swap (Warlock) ────────────────────────────────────────────────
+
+class _SpellSwapPage extends StatelessWidget {
+  const _SpellSwapPage({
+    required this.classSpells,
+    required this.knownSpells,
+    required this.swapped,
+    required this.replacement,
+    required this.onSwappedChanged,
+    required this.onReplacementChanged,
+    required this.i18n,
+  });
+
+  final List<SrdSpell> classSpells;
+  final List<KnownSpell> knownSpells;
+  final String? swapped;
+  final KnownSpell? replacement;
+  final ValueChanged<String?> onSwappedChanged;
+  final ValueChanged<KnownSpell?> onReplacementChanged;
+  final SrdI18nService i18n;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final alreadyKnownNames = knownSpells.map((s) => s.name).toSet();
+    final available = classSpells
+        .where((s) => !alreadyKnownNames.contains(s.name))
+        .toList();
+
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        Text(
+          l10n.levelUpSpellSwap,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        const SizedBox(height: 12),
+
+        // ── Which spell to forget? ──────────────────────────────────────
+        RadioGroup<String?>(
+          groupValue: swapped,
+          onChanged: (v) {
+            onSwappedChanged(v);
+            onReplacementChanged(null);
+          },
+          child: Column(
+            children: [
+              ...knownSpells.map((ks) => RadioListTile<String?>(
+                    title: Text(i18n.spellName(ks.name)),
+                    value: ks.name,
+                  )),
+              RadioListTile<String?>(
+                title: Text(l10n.levelUpSpellSwapNone),
+                value: null,
+              ),
+            ],
+          ),
+        ),
+
+        // ── Replace it with? (only when a spell is selected to forget) ──
+        if (swapped != null) ...[
+          const Divider(height: 32),
+          Text(
+            l10n.levelUpSpellSwapReplaceWith,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const SizedBox(height: 8),
+          RadioGroup<String>(
+            groupValue: replacement?.name ?? '',
+            onChanged: (v) {
+              if (v == null) return;
+              final spell = available.firstWhere((s) => s.name == v);
+              onReplacementChanged(
+                  KnownSpell(name: spell.name, level: spell.level));
+            },
+            child: Column(
+              children: available
+                  .map((spell) => RadioListTile<String>(
+                        title: Text(i18n.spellName(spell.name)),
+                        subtitle: Text(
+                          l10n.levelUpSpellSubtitle(
+                              spell.level, i18n.spellSchool(spell.school)),
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                        value: spell.name,
+                        secondary: IconButton(
+                          icon: const Icon(Icons.info_outline),
+                          onPressed: () => showModalBottomSheet<void>(
+                            context: context,
+                            isScrollControlled: true,
+                            builder: (_) => SpellDetailSheet(
+                              spell: spell,
+                              isKnown: false,
+                              readOnly: true,
+                            ),
+                          ),
+                        ),
+                      ))
+                  .toList(),
+            ),
+          ),
+        ],
       ],
     );
   }

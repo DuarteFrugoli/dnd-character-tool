@@ -523,6 +523,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get levelUpHpReroll => '다시 굴리기 / 변경';
 
   @override
+  String get levelUpSpellSwapPickReplacement => '교체할 주문을 선택하세요';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => '교체할 주문';
+
+  @override
   String get levelUpSpellSwapNone => '없음';
 
   @override

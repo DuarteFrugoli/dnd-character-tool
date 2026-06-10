@@ -1044,6 +1044,18 @@ abstract class AppLocalizations {
   /// **'Reroll / change'**
   String get levelUpHpReroll;
 
+  /// Level Up wizard: prompt to pick replacement spell after warlock swap.
+  ///
+  /// In en, this message translates to:
+  /// **'Now choose a replacement spell'**
+  String get levelUpSpellSwapPickReplacement;
+
+  /// Level Up wizard Warlock swap page: section header for replacement spell.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace with'**
+  String get levelUpSpellSwapReplaceWith;
+
   /// Level Up spell swap: no swap option.
   ///
   /// In en, this message translates to:

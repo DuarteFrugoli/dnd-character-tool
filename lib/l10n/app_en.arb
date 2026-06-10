@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "en",
   "appTitle": "DnD Character Tool",
   "@appTitle": { "description": "The application title." },
@@ -426,6 +426,10 @@
   "@levelUpMaxLevel": { "description": "Level Up: shown when character is already level 20." },
   "levelUpHpReroll": "Reroll / change",
   "@levelUpHpReroll": { "description": "Level Up HP step: reroll button label." },
+    "levelUpSpellSwapPickReplacement": "Now choose a replacement spell",
+  "@levelUpSpellSwapPickReplacement": { "description": "Level Up wizard: prompt to pick replacement spell after warlock swap." },
+    "levelUpSpellSwapReplaceWith": "Replace with",
+  "@levelUpSpellSwapReplaceWith": { "description": "Level Up wizard Warlock swap page: section header for replacement spell." },
   "levelUpSpellSwapNone": "None",
   "@levelUpSpellSwapNone": { "description": "Level Up spell swap: no swap option." },
   "levelUpSpellAlreadyKnown": "Already known",

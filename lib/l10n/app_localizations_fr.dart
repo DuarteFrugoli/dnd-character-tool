@@ -536,6 +536,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get levelUpHpReroll => 'Relancer / modifier';
 
   @override
+  String get levelUpSpellSwapPickReplacement =>
+      'Choisissez maintenant un sort de remplacement';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => 'Remplacer par';
+
+  @override
   String get levelUpSpellSwapNone => 'Aucun';
 
   @override

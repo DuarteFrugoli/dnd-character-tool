@@ -532,6 +532,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String get levelUpHpReroll => 'Neu würfeln / ändern';
 
   @override
+  String get levelUpSpellSwapPickReplacement =>
+      'Wähle jetzt einen Ersatzzauber';
+
+  @override
+  String get levelUpSpellSwapReplaceWith => 'Ersetzen durch';
+
+  @override
   String get levelUpSpellSwapNone => 'Keiner';
 
   @override

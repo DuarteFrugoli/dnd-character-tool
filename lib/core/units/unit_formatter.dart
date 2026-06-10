@@ -51,6 +51,28 @@ double weightToLb(double value, UnitSystem system) {
   }
 }
 
+/// Converts a spell range string from the SRD JSON (e.g. "60 feet",
+/// "Self (30-foot cone)") to the target unit system.
+/// Non-distance strings ("Self", "Touch", "Sight", etc.) are returned as-is.
+String formatSpellRange(String range, UnitSystem system) {
+  if (system == UnitSystem.imperial) return range;
+
+  // "N feet"
+  final feetMatch = RegExp(r'^(\d+)\s+feet$').firstMatch(range);
+  if (feetMatch != null) {
+    return formatDistance(int.parse(feetMatch.group(1)!), system);
+  }
+
+  // "Self (N-foot shape)"
+  final selfMatch = RegExp(r'^(\S+) \((\d+)-foot (.+)\)$').firstMatch(range);
+  if (selfMatch != null) {
+    final dist = formatDistance(int.parse(selfMatch.group(2)!), system);
+    return '${selfMatch.group(1)!} ($dist ${selfMatch.group(3)!})';
+  }
+
+  return range;
+}
+
 /// Converts an internally stored lb value to the current system's display unit.
 double lbToDisplay(double lb, UnitSystem system) {
   switch (system) {

@@ -6,6 +6,8 @@ import '../../l10n/app_localizations.dart';
 import '../../shared/providers/providers.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/spell.dart';
+import '../../core/units/unit_formatter.dart';
+import '../../core/units/unit_system_provider.dart';
 
 // ── Spell Browser Sheet ───────────────────────────────────────────────────────
 
@@ -1035,7 +1037,7 @@ class SpellDetailSheet extends ConsumerWidget {
             l10n.spellDetailCastingTime,
             i18n.castingTime(spell.castingTime),
           ),
-          _StatRow(l10n.spellDetailRange, spell.range),
+          _StatRow(l10n.spellDetailRange, formatSpellRange(spell.range, ref.watch(unitSystemProvider))),
           _StatRow(
             l10n.spellDetailDuration,
             i18n.spellDuration(spell.duration),

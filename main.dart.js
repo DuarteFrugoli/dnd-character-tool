@@ -64262,7 +64262,7 @@ lZ(a){return new A.ci(A.bzq(a),t.kL)},
 BR(a){return B.b.m(A.b(["de","en","es","fr","it","ja","ko","pt","ru","zh"],t.s),a.gdD())},
 Aq(a){return!1}}
 A.Rp.prototype={
-grq(){return"D&D-Charaktere"},
+grq(){return"DnD-Charaktere"},
 grn(){return"JSON importieren"},
 grp(){return"Einstellungen"},
 gro(){return"Neuer Charakter"},
@@ -64791,7 +64791,7 @@ goj(){return"Metrisch (m / kg)"},
 gol(){return"Felder (sq / kg)"},
 god(){return"Einheitensystem w\xe4hlen"}}
 A.Rq.prototype={
-grq(){return"D&D Characters"},
+grq(){return"DnD Characters"},
 grn(){return"Import JSON"},
 grp(){return"Settings"},
 gro(){return"New Character"},
@@ -65320,7 +65320,7 @@ goj(){return"Metric (m / kg)"},
 gol(){return"Squares (sq / kg)"},
 god(){return"Choose Unit System"}}
 A.Rr.prototype={
-grq(){return"Personajes de D&D"},
+grq(){return"Personajes de DnD"},
 grn(){return"Importar JSON"},
 grp(){return"Ajustes"},
 gro(){return"Nuevo personaje"},
@@ -65849,7 +65849,7 @@ goj(){return"M\xe9trico (m / kg)"},
 gol(){return"Cuadrados (sq / kg)"},
 god(){return"Elegir sistema de unidades"}}
 A.Rs.prototype={
-grq(){return"Personnages D&D"},
+grq(){return"Personnages DnD"},
 grn(){return"Importer du JSON"},
 grp(){return"Param\xe8tres"},
 gro(){return"Nouveau personnage"},
@@ -66378,7 +66378,7 @@ goj(){return"M\xe9trique (m / kg)"},
 gol(){return"Cases (sq / kg)"},
 god(){return"Choisir le syst\xe8me d'unit\xe9s"}}
 A.Rt.prototype={
-grq(){return"Personaggi di D&D"},
+grq(){return"Personaggi di DnD"},
 grn(){return"Importa JSON"},
 grp(){return"Impostazioni"},
 gro(){return"Nuovo personaggio"},
@@ -66907,7 +66907,7 @@ goj(){return"Metrico (m / kg)"},
 gol(){return"Caselle (sq / kg)"},
 god(){return"Scegli il sistema di unit\xe0"}}
 A.Ru.prototype={
-grq(){return"D&D\u306e\u30ad\u30e3\u30e9\u30af\u30bf\u30fc"},
+grq(){return"DnD\u306e\u30ad\u30e3\u30e9\u30af\u30bf\u30fc"},
 grn(){return"JSON\u3092\u30a4\u30f3\u30dd\u30fc\u30c8\u3059\u308b"},
 grp(){return"\u8a2d\u5b9a"},
 gro(){return"\u65b0\u30ad\u30e3\u30e9\u30af\u30bf\u30fc"},
@@ -67436,7 +67436,7 @@ goj(){return"\u30e1\u30fc\u30c8\u30eb\u6cd5 (m / kg)"},
 gol(){return"\u30de\u30b9 (sq / kg)"},
 god(){return"\u5358\u4f4d\u7cfb\u3092\u9078\u629e"}}
 A.Rv.prototype={
-grq(){return"D&D \uce90\ub9ad\ud130"},
+grq(){return"DnD \uce90\ub9ad\ud130"},
 grn(){return"JSON \uac00\uc838\uc624\uae30"},
 grp(){return"\uc124\uc815"},
 gro(){return"\uc0c8\ub85c\uc6b4 \uce90\ub9ad\ud130"},
@@ -67965,7 +67965,7 @@ goj(){return"\ubbf8\ud130\ubc95 (m / kg)"},
 gol(){return"\uce78 (sq / kg)"},
 god(){return"\ub2e8\uc704 \uc2dc\uc2a4\ud15c \uc120\ud0dd"}}
 A.Rw.prototype={
-grq(){return"Personagens D&D"},
+grq(){return"Personagens DnD"},
 grn(){return"Importar JSON"},
 grp(){return"Configura\xe7\xf5es"},
 gro(){return"Novo Personagem"},
@@ -68494,7 +68494,7 @@ goj(){return"M\xe9trico (m / kg)"},
 gol(){return"Quadrados (sq / kg)"},
 god(){return"Escolher Sistema de Unidades"}}
 A.Rx.prototype={
-grq(){return"\u041f\u0435\u0440\u0441\u043e\u043d\u0430\u0436\u0438 D&D"},
+grq(){return"\u041f\u0435\u0440\u0441\u043e\u043d\u0430\u0436\u0438 DnD"},
 grn(){return"\u0418\u043c\u043f\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c JSON"},
 grp(){return"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438"},
 gro(){return"\u041d\u043e\u0432\u044b\u0439 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u0436"},
@@ -69571,7 +69571,7 @@ $0(){return new A.mQ(this.a)},
 $S:348}
 A.X2.prototype={
 e5(a,b){var s=b.c0($.ag1(),t.lo),r=b.c0($.R3(),t.x5)
-return new A.z9($.bl4(),"D&D Character Tool",s.a0M(),r,B.a1w,B.a_G,null)}}
+return new A.z9($.bl4(),"DnD Character Tool",s.a0M(),r,B.a1w,B.a_G,null)}}
 A.b3r.prototype={
 $1(a){var s=$.bhW()
 return new A.pE(s)},

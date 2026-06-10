@@ -3377,6 +3377,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Later'**
   String get xpLevelUpLater;
+
+  /// Settings section header for unit system.
+  ///
+  /// In en, this message translates to:
+  /// **'Units'**
+  String get settingsSectionUnits;
+
+  /// Unit system tile title.
+  ///
+  /// In en, this message translates to:
+  /// **'Unit system'**
+  String get settingsUnitSystem;
+
+  /// Imperial unit system option.
+  ///
+  /// In en, this message translates to:
+  /// **'Imperial (ft / lb)'**
+  String get settingsUnitImperial;
+
+  /// Metric unit system option.
+  ///
+  /// In en, this message translates to:
+  /// **'Metric (m / kg)'**
+  String get settingsUnitMetric;
+
+  /// Squares unit system option.
+  ///
+  /// In en, this message translates to:
+  /// **'Squares (sq / kg)'**
+  String get settingsUnitSquares;
+
+  /// Unit system picker bottom sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Unit System'**
+  String get settingsChooseUnitSystem;
 }
 
 class _AppLocalizationsDelegate

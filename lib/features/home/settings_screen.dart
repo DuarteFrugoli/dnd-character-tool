@@ -6,6 +6,7 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import '../../core/locale/locale_provider.dart';
 import '../../core/theme/app_themes.dart';
 import '../../core/theme/theme_provider.dart';
+import '../../core/units/unit_system_provider.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -122,6 +123,21 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ),
           _LanguageTile(),
+
+          const Divider(height: 32),
+
+          // ── Units ─────────────────────────────────────────────────────────
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+            child: Text(
+              AppLocalizations.of(context)!.settingsSectionUnits,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(color: cs.primary),
+            ),
+          ),
+          _UnitSystemTile(),
         ],
       ),
     );
@@ -290,6 +306,73 @@ class _ColorSwatch extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _UnitSystemTile extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final current = ref.watch(unitSystemProvider);
+    final l10n = AppLocalizations.of(context)!;
+
+    String label(UnitSystem v) => switch (v) {
+      UnitSystem.imperial => l10n.settingsUnitImperial,
+      UnitSystem.metric   => l10n.settingsUnitMetric,
+      UnitSystem.squares  => l10n.settingsUnitSquares,
+    };
+
+    return ListTile(
+      leading: const Icon(Icons.straighten_outlined),
+      title: Text(l10n.settingsUnitSystem),
+      subtitle: Text(label(current)),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => _openUnitPicker(context, ref, current, label, l10n),
+    );
+  }
+
+  void _openUnitPicker(
+    BuildContext context,
+    WidgetRef ref,
+    UnitSystem current,
+    String Function(UnitSystem) label,
+    AppLocalizations l10n,
+  ) {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (ctx) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  l10n.settingsChooseUnitSystem,
+                  style: Theme.of(ctx).textTheme.titleMedium,
+                ),
+              ),
+            ),
+            for (final v in UnitSystem.values)
+              ListTile(
+                title: Text(label(v)),
+                trailing: v == current
+                    ? Icon(Icons.check_circle,
+                        color: Theme.of(ctx).colorScheme.primary)
+                    : const SizedBox.shrink(),
+                selected: v == current,
+                onTap: () {
+                  ref.read(unitSystemProvider.notifier).setUnitSystem(v);
+                  Navigator.pop(ctx);
+                },
+              ),
+            const SizedBox(height: 8),
+          ],
+        ),
       ),
     );
   }

@@ -577,5 +577,12 @@
   "xpReadyToLevelUp": "Ready to level up!",
   "xpLevelUpNowTitle": "Level Up?",
   "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
-  "xpLevelUpLater": "Later"
+  "xpLevelUpLater": "Later",
+
+  "settingsSectionUnits": "단위",
+  "settingsUnitSystem": "단위 시스템",
+  "settingsUnitImperial": "야드파운드법 (ft / lb)",
+  "settingsUnitMetric": "미터법 (m / kg)",
+  "settingsUnitSquares": "칸 (sq / kg)",
+  "settingsChooseUnitSystem": "단위 시스템 선택"
 }

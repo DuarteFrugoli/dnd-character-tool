@@ -1456,6 +1456,19 @@
     "placeholders": { "level": { "type": "int" } }
   },
   "xpLevelUpLater": "Later",
-  "@xpLevelUpLater": { "description": "Dialog button to postpone leveling up." }
+  "@xpLevelUpLater": { "description": "Dialog button to postpone leveling up." },
+
+  "settingsSectionUnits": "Units",
+  "@settingsSectionUnits": { "description": "Settings section header for unit system." },
+  "settingsUnitSystem": "Unit system",
+  "@settingsUnitSystem": { "description": "Unit system tile title." },
+  "settingsUnitImperial": "Imperial (ft / lb)",
+  "@settingsUnitImperial": { "description": "Imperial unit system option." },
+  "settingsUnitMetric": "Metric (m / kg)",
+  "@settingsUnitMetric": { "description": "Metric unit system option." },
+  "settingsUnitSquares": "Squares (sq / kg)",
+  "@settingsUnitSquares": { "description": "Squares unit system option." },
+  "settingsChooseUnitSystem": "Choose Unit System",
+  "@settingsChooseUnitSystem": { "description": "Unit system picker bottom sheet title." }
 }
 

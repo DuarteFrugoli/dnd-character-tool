@@ -577,5 +577,12 @@
   "xpReadyToLevelUp": "Ready to level up!",
   "xpLevelUpNowTitle": "Level Up?",
   "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
-  "xpLevelUpLater": "Later"
+  "xpLevelUpLater": "Later",
+
+  "settingsSectionUnits": "Единицы",
+  "settingsUnitSystem": "Система единиц",
+  "settingsUnitImperial": "Имперская (ft / lb)",
+  "settingsUnitMetric": "Метрическая (m / kg)",
+  "settingsUnitSquares": "Клетки (sq / kg)",
+  "settingsChooseUnitSystem": "Выбрать систему единиц"
 }

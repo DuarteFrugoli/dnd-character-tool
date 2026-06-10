@@ -576,5 +576,12 @@
   "xpReadyToLevelUp": "Ready to level up!",
   "xpLevelUpNowTitle": "Level Up?",
   "xpLevelUpNowMessage": "You have enough XP to reach Level {level}. Level up now?",
-  "xpLevelUpLater": "Later"
+  "xpLevelUpLater": "Later",
+
+  "settingsSectionUnits": "单位",
+  "settingsUnitSystem": "单位制",
+  "settingsUnitImperial": "英制 (ft / lb)",
+  "settingsUnitMetric": "公制 (m / kg)",
+  "settingsUnitSquares": "格 (sq / kg)",
+  "settingsChooseUnitSystem": "选择单位制"
 }

@@ -1796,4 +1796,22 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get xpLevelUpLater => 'Later';
+
+  @override
+  String get settingsSectionUnits => '단위';
+
+  @override
+  String get settingsUnitSystem => '단위 시스템';
+
+  @override
+  String get settingsUnitImperial => '야드파운드법 (ft / lb)';
+
+  @override
+  String get settingsUnitMetric => '미터법 (m / kg)';
+
+  @override
+  String get settingsUnitSquares => '칸 (sq / kg)';
+
+  @override
+  String get settingsChooseUnitSystem => '단위 시스템 선택';
 }

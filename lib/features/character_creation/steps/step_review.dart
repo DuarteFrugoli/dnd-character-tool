@@ -7,6 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../shared/providers/providers.dart';
+import '../../../core/units/unit_system_provider.dart';
+import '../../../core/units/unit_formatter.dart';
 import '../character_draft_provider.dart';
 
 class StepReview extends ConsumerWidget {
@@ -67,7 +69,7 @@ class StepReview extends ConsumerWidget {
           _Row(l10n.creationStepRace, raceName ?? '—'),
           if (subraceName != null)
             _Row(l10n.reviewRowSubrace, subraceName),
-          _Row(l10n.reviewRowSpeed, '${draft.selectedRace?.speed ?? 0} ft'),
+          _Row(l10n.reviewRowSpeed, formatDistance(draft.selectedRace?.speed ?? 0, ref.watch(unitSystemProvider))),
           if (draft.fixedRaceLanguages.isNotEmpty)
             _Row(l10n.reviewRowLanguages, draft.fixedRaceLanguages.map(i18n.languageName).join(', ')),
         ]),

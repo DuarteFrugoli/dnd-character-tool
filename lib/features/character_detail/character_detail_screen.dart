@@ -16,6 +16,8 @@ import '../../data/models/models.dart';
 import '../../data/models/domain_constants.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_avatar.dart';
+import '../../core/units/unit_system_provider.dart';
+import '../../core/units/unit_formatter.dart';
 import 'character_detail_provider.dart';
 
 part 'tabs/identity_tab.dart';

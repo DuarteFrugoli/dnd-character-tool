@@ -1795,4 +1795,22 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get xpLevelUpLater => 'Later';
+
+  @override
+  String get settingsSectionUnits => '単位';
+
+  @override
+  String get settingsUnitSystem => '単位系';
+
+  @override
+  String get settingsUnitImperial => 'ヤード・ポンド法 (ft / lb)';
+
+  @override
+  String get settingsUnitMetric => 'メートル法 (m / kg)';
+
+  @override
+  String get settingsUnitSquares => 'マス (sq / kg)';
+
+  @override
+  String get settingsChooseUnitSystem => '単位系を選択';
 }

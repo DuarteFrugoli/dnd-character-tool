@@ -482,7 +482,7 @@ class _AmmunitionSection extends ConsumerWidget {
 
 // ── Weight Bar ────────────────────────────────────────────────────────────────
 
-class _WeightBar extends StatelessWidget {
+class _WeightBar extends ConsumerWidget {
   const _WeightBar({
     required this.totalWeight,
     required this.maxCarry,
@@ -498,9 +498,10 @@ class _WeightBar extends StatelessWidget {
   final VoidCallback onDisable;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
+    final unitSystem = ref.watch(unitSystemProvider);
     final fraction = maxCarry > 0 ? (totalWeight / maxCarry).clamp(0.0, 1.0) : 0.0;
 
     final Color barColor;
@@ -530,7 +531,7 @@ class _WeightBar extends StatelessWidget {
                   child: Text.rich(
                     TextSpan(children: [
                       TextSpan(
-                        text: '${totalWeight % 1 == 0 ? totalWeight.toInt() : totalWeight.toStringAsFixed(2)} / ${maxCarry.toInt()} lb',
+                        text: '${formatWeight(totalWeight, unitSystem)} / ${formatWeight(maxCarry, unitSystem)}',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -872,6 +873,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final weightCtrl = TextEditingController(text: '0');
     final descCtrl = TextEditingController();
     final scheme = Theme.of(context).colorScheme;
+    final unitSystem = ref.read(unitSystemProvider);
 
     return StatefulBuilder(
       builder: (ctx, setInner) {
@@ -934,7 +936,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                         inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))],
                         decoration: InputDecoration(
                             labelText: AppLocalizations.of(context)!.inventoryLabelWeight,
-                            suffixText: 'lb',
+                            suffixText: weightSuffix(unitSystem),
                             border: const OutlineInputBorder()),
                       ),
                     ),
@@ -960,7 +962,10 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                           : categoryCtrl.text.trim(),
                       itemType: selectedType,
                       quantity: int.tryParse(qtyCtrl.text) ?? 1,
-                      weight: double.tryParse(weightCtrl.text.replaceAll(',', '.')) ?? 0.0,
+                      weight: weightToLb(
+                        double.tryParse(weightCtrl.text.replaceAll(',', '.')) ?? 0.0,
+                        unitSystem,
+                      ),
                       description: descCtrl.text.trim().isEmpty
                           ? null
                           : descCtrl.text.trim(),

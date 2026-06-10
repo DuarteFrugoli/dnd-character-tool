@@ -1786,4 +1786,22 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get xpLevelUpLater => 'Later';
+
+  @override
+  String get settingsSectionUnits => '单位';
+
+  @override
+  String get settingsUnitSystem => '单位制';
+
+  @override
+  String get settingsUnitImperial => '英制 (ft / lb)';
+
+  @override
+  String get settingsUnitMetric => '公制 (m / kg)';
+
+  @override
+  String get settingsUnitSquares => '格 (sq / kg)';
+
+  @override
+  String get settingsChooseUnitSystem => '选择单位制';
 }

@@ -600,7 +600,10 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                     children: [
                       _StatChip(l10n.statAC, '${character.armorClass}'),
                       _StatChip(l10n.statArmor, armorSummary),
-                      _StatChip(l10n.statSpeed, '${character.speed} ft'),
+                      _StatChip(
+                        l10n.statSpeed,
+                        formatDistance(character.speed, ref.watch(unitSystemProvider)),
+                      ),
                       _StatChip(
                         l10n.statInitiative,
                         _sign(character.initiative),

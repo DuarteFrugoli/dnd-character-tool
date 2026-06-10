@@ -6,6 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
 import '../../../shared/providers/providers.dart';
+import '../../../core/units/unit_system_provider.dart';
+import '../../../core/units/unit_formatter.dart';
 import '../../../shared/widgets/srd_detail_sheets.dart';
 import '../character_draft_provider.dart';
 
@@ -76,7 +78,7 @@ class _StepRaceState extends ConsumerState<StepRace> {
   }
 }
 
-class _RaceCard extends StatelessWidget {
+class _RaceCard extends ConsumerWidget {
   const _RaceCard({
     required this.race,
     required this.i18n,
@@ -96,7 +98,7 @@ class _RaceCard extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final raceName = i18n.raceName(race.name);
@@ -122,7 +124,7 @@ class _RaceCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      '${l10n.stepRaceSpeedLabel}: ${race.speed}ft  ·  ${l10n.stepRaceASILabel}: ${_asiText(l10n)}',
+                      '${l10n.stepRaceSpeedLabel}: ${formatDistance(race.speed, ref.watch(unitSystemProvider))}  ·  ${l10n.stepRaceASILabel}: ${_asiText(l10n)}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: isSelected
                             ? scheme.onPrimaryContainer

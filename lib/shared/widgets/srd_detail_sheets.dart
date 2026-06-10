@@ -6,6 +6,8 @@ import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/datasources/srd/srd_models.dart';
+import '../../core/units/unit_system_provider.dart';
+import '../../core/units/unit_formatter.dart';
 import '../providers/providers.dart';
 
 // ── Public helpers ────────────────────────────────────────────────────────────
@@ -555,7 +557,7 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '${l10n.stepRaceSpeedLabel}: ${race.speed}ft  ·  '
+                  '${l10n.stepRaceSpeedLabel}: ${formatDistance(race.speed, ref.watch(unitSystemProvider))}  ·  '
                   '${l10n.stepRaceASILabel}: $asiText',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: scheme.onSurfaceVariant,

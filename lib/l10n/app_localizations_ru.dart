@@ -1823,4 +1823,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get xpLevelUpLater => 'Later';
+
+  @override
+  String get settingsSectionUnits => 'Единицы';
+
+  @override
+  String get settingsUnitSystem => 'Система единиц';
+
+  @override
+  String get settingsUnitImperial => 'Имперская (ft / lb)';
+
+  @override
+  String get settingsUnitMetric => 'Метрическая (m / kg)';
+
+  @override
+  String get settingsUnitSquares => 'Клетки (sq / kg)';
+
+  @override
+  String get settingsChooseUnitSystem => 'Выбрать систему единиц';
 }

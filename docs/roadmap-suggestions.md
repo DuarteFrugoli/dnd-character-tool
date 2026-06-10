@@ -6,15 +6,6 @@ Gaps identificados comparando o estado atual do app com o que é necessário num
 
 ## Média prioridade — qualidade de vida
 
-### Peso do Inventário
-Sem cálculo de carga carregada vs. capacidade (Strength × 15 lb).
-
-**O que implementar:**
-- Adicionar campo `weight` (sempre presente) nos itens de equipamento do SRD
-- Toggle **por personagem** para habilitar/desabilitar tracking de carga (igual ao toggle de XP — desabilitado por padrão, configurado na ficha e não nas preferências globais)
-- Quando habilitado: barra de progresso de carga na aba de Inventário
-- Limites: encumbered (×5 STR), heavily encumbered (×10 STR), máximo (×15 STR)
-
 ### Unidades por região
 Em inglês a medida de distância é feet (ft) e peso é lb; em outros idiomas são usados metros (m) e kg. Jogadores com grid preferem pensar em squares.
 

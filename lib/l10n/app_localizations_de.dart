@@ -1824,4 +1824,22 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get xpLevelUpLater => 'Later';
+
+  @override
+  String get settingsSectionUnits => 'Einheiten';
+
+  @override
+  String get settingsUnitSystem => 'Einheitensystem';
+
+  @override
+  String get settingsUnitImperial => 'Imperial (ft / lb)';
+
+  @override
+  String get settingsUnitMetric => 'Metrisch (m / kg)';
+
+  @override
+  String get settingsUnitSquares => 'Felder (sq / kg)';
+
+  @override
+  String get settingsChooseUnitSystem => 'Einheitensystem wählen';
 }

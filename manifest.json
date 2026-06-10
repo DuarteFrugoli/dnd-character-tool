@@ -1,6 +1,6 @@
 {
-    "name": "dnd_character_tool",
-    "short_name": "dnd_character_tool",
+    "name": "DnD Character Tool",
+    "short_name": "DnD Character Tool",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

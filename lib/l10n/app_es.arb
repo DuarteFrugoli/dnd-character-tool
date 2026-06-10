@@ -1,7 +1,7 @@
 ﻿{
   "@@locale": "es",
-  "appTitle": "Herramienta de personajes de D&D",
-  "charListTitle": "Personajes de D&D",
+  "appTitle": "Herramienta de personajes de DnD",
+  "charListTitle": "Personajes de DnD",
   "charListImportTooltip": "Importar JSON",
   "charListSettingsTooltip": "Ajustes",
   "charListNewCharacter": "Nuevo personaje",

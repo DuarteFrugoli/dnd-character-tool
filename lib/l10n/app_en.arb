@@ -1,9 +1,9 @@
 {
   "@@locale": "en",
-  "appTitle": "D&D Character Tool",
+  "appTitle": "DnD Character Tool",
   "@appTitle": { "description": "The application title." },
 
-  "charListTitle": "D&D Characters",
+  "charListTitle": "DnD Characters",
   "@charListTitle": { "description": "AppBar title on the character list screen." },
 
   "charListImportTooltip": "Import JSON",

@@ -9,10 +9,10 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get appTitle => 'D&D 캐릭터 도구';
+  String get appTitle => 'DnD 캐릭터 도구';
 
   @override
-  String get charListTitle => 'D&D 캐릭터';
+  String get charListTitle => 'DnD 캐릭터';
 
   @override
   String get charListImportTooltip => 'JSON 가져오기';

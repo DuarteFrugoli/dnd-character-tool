@@ -1,7 +1,7 @@
 ﻿{
   "@@locale": "ja",
-  "appTitle": "D&D キャラクターツール",
-  "charListTitle": "D&Dのキャラクター",
+  "appTitle": "DnD キャラクターツール",
+  "charListTitle": "DnDのキャラクター",
   "charListImportTooltip": "JSONをインポートする",
   "charListSettingsTooltip": "設定",
   "charListNewCharacter": "新キャラクター",

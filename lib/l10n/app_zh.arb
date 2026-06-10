@@ -1,6 +1,6 @@
 ﻿{
   "@@locale": "zh",
-  "appTitle": "D&D 角色工具",
+  "appTitle": "DnD 角色工具",
   "charListTitle": "龙与地下城角色",
   "charListImportTooltip": "导入 JSON",
   "charListSettingsTooltip": "设置",

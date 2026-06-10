@@ -9,7 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'D&D 角色工具';
+  String get appTitle => 'DnD 角色工具';
 
   @override
   String get charListTitle => '龙与地下城角色';

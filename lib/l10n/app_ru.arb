@@ -1,7 +1,7 @@
 ﻿{
   "@@locale": "ru",
-  "appTitle": "Инструмент создания персонажей D&D",
-  "charListTitle": "Персонажи D&D",
+  "appTitle": "Инструмент создания персонажей DnD",
+  "charListTitle": "Персонажи DnD",
   "charListImportTooltip": "Импортировать JSON",
   "charListSettingsTooltip": "Настройки",
   "charListNewCharacter": "Новый персонаж",

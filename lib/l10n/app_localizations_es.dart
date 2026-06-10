@@ -9,10 +9,10 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Herramienta de personajes de D&D';
+  String get appTitle => 'Herramienta de personajes de DnD';
 
   @override
-  String get charListTitle => 'Personajes de D&D';
+  String get charListTitle => 'Personajes de DnD';
 
   @override
   String get charListImportTooltip => 'Importar JSON';

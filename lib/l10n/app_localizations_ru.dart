@@ -9,10 +9,10 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'Инструмент создания персонажей D&D';
+  String get appTitle => 'Инструмент создания персонажей DnD';
 
   @override
-  String get charListTitle => 'Персонажи D&D';
+  String get charListTitle => 'Персонажи DnD';
 
   @override
   String get charListImportTooltip => 'Импортировать JSON';

@@ -9,10 +9,10 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get appTitle => 'D&D Character Tool';
+  String get appTitle => 'DnD Character Tool';
 
   @override
-  String get charListTitle => 'Personagens D&D';
+  String get charListTitle => 'Personagens DnD';
 
   @override
   String get charListImportTooltip => 'Importar JSON';

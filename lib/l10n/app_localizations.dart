@@ -117,13 +117,13 @@ abstract class AppLocalizations {
   /// The application title.
   ///
   /// In en, this message translates to:
-  /// **'D&D Character Tool'**
+  /// **'DnD Character Tool'**
   String get appTitle;
 
   /// AppBar title on the character list screen.
   ///
   /// In en, this message translates to:
-  /// **'D&D Characters'**
+  /// **'DnD Characters'**
   String get charListTitle;
 
   /// Tooltip for import button.

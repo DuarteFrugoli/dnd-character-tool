@@ -56,7 +56,7 @@ class MainApp extends ConsumerWidget {
     final appTheme = ref.watch(themeProvider);
     final locale = ref.watch(localeProvider);
     return MaterialApp.router(
-      title: 'D&D Character Tool',
+      title: 'DnD Character Tool',
       routerConfig: appRouter,
       theme: appTheme.toThemeData(),
       locale: locale,

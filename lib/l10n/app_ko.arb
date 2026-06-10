@@ -1,7 +1,7 @@
 ﻿{
   "@@locale": "ko",
-  "appTitle": "D&D 캐릭터 도구",
-  "charListTitle": "D&D 캐릭터",
+  "appTitle": "DnD 캐릭터 도구",
+  "charListTitle": "DnD 캐릭터",
   "charListImportTooltip": "JSON 가져오기",
   "charListSettingsTooltip": "설정",
   "charListNewCharacter": "새로운 캐릭터",

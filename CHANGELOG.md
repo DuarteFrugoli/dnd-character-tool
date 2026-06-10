@@ -12,19 +12,23 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [0.3.5] - 2026-06-10
 
 ### Added
-- **Sistema de unidades** — configuração em Settings: Imperial (ft / lb), Métrico (m / kg) ou Squares (sq/lb|kg). Padrão determinado pelo locale do dispositivo (`en` → Imperial, demais → Métrico). Aplicado em velocidade (Speed), peso do inventário e alcance de magias
-- **Alcance de magias localizado** — distâncias convertidas pelo sistema de unidades ativo; nomes não-numéricos (Self, Touch, Sight, Special, Unlimited) e tipos de área (sphere, cone, cube, cylinder, line, wall, circle) traduzidos nos 10 idiomas
-- **Nomes de classe traduzidos** na ficha de magia — "bard, cleric" agora aparece no idioma do app
-- **Material de componente traduzido** — campo `material` das magias traduzido via JSON de i18n com fallback para inglês. Ferramenta `tools/patch_spell_material.py` adiciona traduções de material sem reescrever os JSONs existentes
-- **Proteção de edição entre abas** — ao tentar mudar de aba enquanto em modo de edição, exibe confirmação de descarte
+- **Concentração** — badge "C" na magia ativa, banner de aviso ao tentar lançar segunda magia de concentração, botão para encerrar manualmente. Nome da magia exibido no idioma do app
+- **Descanso Curto** — gasta Hit Dice (d + mod CON) para recuperar HP, com validação de HD disponíveis
+- **Peso do inventário** — barra de carga na aba Inventário (STR × 15 lb); campo de peso ao criar itens customizados
+- **Sistema de unidades** — configuração em Settings: Imperial (ft / lb), Métrico (m / kg) ou Squares (sq). Padrão pelo locale do dispositivo (`en` → Imperial, demais → Métrico). Aplicado em velocidade, peso e alcance de magias
+- **Alcance de magias localizado** — distâncias convertidas pelo sistema de unidades ativo; rótulos não-numéricos (Self, Touch, Sight, Special, Unlimited) e tipos de área (sphere, cone, cube, cylinder, line, wall, circle) traduzidos nos 10 idiomas
+- **Nomes de classe traduzidos** na ficha de detalhe de magia
+- **Material de componente traduzido** — campo `material` das magias (ex: "a drop of blood") via JSON de i18n, fallback para inglês. Ferramenta `tools/patch_spell_material.py` para adicionar traduções sem reescrever os JSONs
+- **Proteção de edição entre abas** — confirmação de descarte ao mudar de aba com edição em andamento
 
 ### Fixed
-- **Web — cursor pointer** nos elementos interativos: spell slots, equip/unequip, concentração, prepare toggle, avatar do personagem
+- **Android** — permissão `READ_MEDIA_IMAGES` removida; usa Photo Picker do sistema (API 33+)
+- **Web — cursor pointer** nos elementos interativos: spell slots, equip/unequip, concentração, prepare toggle, avatar
 - **Web — ficha de atributos** com largura máxima para evitar cards oversized em telas largas
-- **Alcance de magias na ficha** — distâncias agora respeitam o sistema de unidades configurado (regressão da v0.3.x)
+- **Alcance de magias** — distâncias respeitam o sistema de unidades configurado
 
 ### Changed
-- **Versão 0.3.5** — Open Beta na Play Store
+- Código legado removido: `syncSpellSlots`, `syncInnateSpells` no init, caminhos de imagem sem prefixo
 
 
 ## [0.3.4] - 2026-06-03

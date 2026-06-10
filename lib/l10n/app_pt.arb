@@ -1,4 +1,4 @@
-{
+﻿{
   "@@locale": "pt",
   "appTitle": "DnD Character Tool",
   "charListTitle": "Personagens DnD",
@@ -511,6 +511,9 @@
   "avatarChoosePhoto": "Escolher foto",
   "avatarRemovePhoto": "Remover foto",
   "avatarCropPhoto": "Recortar foto",
+  "avatarSavePhoto": "Salvar foto",
+  "avatarSaveSuccess": "Foto salva na galeria",
+  "avatarSaveError": "N\u00e3o foi poss\u00edvel salvar a foto",
   "avatarChangePhoto": "Alterar foto",
   "featureAddedSnackbar": "{name} adicionada!",
   "featureAddButton": "Adicionar Feature",

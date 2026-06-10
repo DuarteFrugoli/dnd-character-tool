@@ -1801,6 +1801,15 @@ class AppLocalizationsRu extends AppLocalizations {
   String get avatarChangePhoto => 'Изменить фото';
 
   @override
+  String get avatarSavePhoto => 'Сохранить фото';
+
+  @override
+  String get avatarSaveSuccess => 'Фото сохранено в галерее';
+
+  @override
+  String get avatarSaveError => 'Не удалось сохранить фото';
+
+  @override
   String featureAddedSnackbar(String name) {
     return '$name добавлено!';
   }

@@ -1806,6 +1806,15 @@ class AppLocalizationsFr extends AppLocalizations {
   String get avatarChangePhoto => 'Modifier la photo';
 
   @override
+  String get avatarSavePhoto => 'Enregistrer la photo';
+
+  @override
+  String get avatarSaveSuccess => 'Photo enregistrée dans la galerie';
+
+  @override
+  String get avatarSaveError => 'Impossible d\'enregistrer la photo';
+
+  @override
   String featureAddedSnackbar(String name) {
     return '$name ajouté !';
   }

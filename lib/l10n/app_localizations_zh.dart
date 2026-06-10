@@ -1764,6 +1764,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get avatarChangePhoto => '更换照片';
 
   @override
+  String get avatarSavePhoto => '保存照片';
+
+  @override
+  String get avatarSaveSuccess => '照片已保存到相册';
+
+  @override
+  String get avatarSaveError => '无法保存照片';
+
+  @override
   String featureAddedSnackbar(String name) {
     return '$name已添加!';
   }

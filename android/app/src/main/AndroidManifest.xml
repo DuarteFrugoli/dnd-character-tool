@@ -2,6 +2,9 @@
     <!-- Gallery access: API < 33 (API 33+ uses the system Photo Picker — no permission needed) -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
+    <!-- Save to gallery: needed on Android < 29 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
     <application
         android:label="DnD Character Tool"
         android:name="${applicationName}"

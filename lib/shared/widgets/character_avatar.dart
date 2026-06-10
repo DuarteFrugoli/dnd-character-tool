@@ -1,12 +1,16 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gal/gal.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../l10n/app_localizations.dart';
+import 'character_avatar_save_web_stub.dart'
+    if (dart.library.js_interop) 'character_avatar_save_web.dart';
 
 /// Directly opens the image picker + cropper and calls [onChanged] with the
 /// resulting path. No bottom sheet shown.
@@ -193,6 +197,7 @@ class CharacterAvatar extends StatelessWidget {
           _showPhotoViewer(
             context,
             imagePath: imagePath!,
+            characterName: name,
             onImageChanged: onImageChanged!,
           );
         } else {
@@ -216,16 +221,15 @@ enum _ViewerResult { pick, remove }
 Future<void> _showPhotoViewer(
   BuildContext context, {
   required String imagePath,
+  required String characterName,
   required void Function(String? path) onImageChanged,
 }) async {
   final result = await Navigator.of(context).push<_ViewerResult>(
     PageRouteBuilder(
-      opaque: false,
-      barrierColor: Colors.black87,
-      barrierDismissible: true,
+      opaque: true,
       transitionDuration: const Duration(milliseconds: 220),
       reverseTransitionDuration: const Duration(milliseconds: 180),
-      pageBuilder: (_, _, _) => _PhotoViewerPage(imagePath: imagePath),
+      pageBuilder: (_, _, _) => _PhotoViewerPage(imagePath: imagePath, characterName: characterName),
       transitionsBuilder: (_, animation, _, child) {
         return FadeTransition(opacity: animation, child: child);
       },
@@ -261,83 +265,319 @@ Future<void> _showPhotoViewer(
   }
 }
 
-class _PhotoViewerPage extends StatelessWidget {
-  const _PhotoViewerPage({required this.imagePath});
+class _PhotoViewerPage extends StatefulWidget {
+  const _PhotoViewerPage({required this.imagePath, required this.characterName});
 
   final String imagePath;
+  final String characterName;
+
+  @override
+  State<_PhotoViewerPage> createState() => _PhotoViewerPageState();
+}
+
+class _PhotoViewerPageState extends State<_PhotoViewerPage>
+    with SingleTickerProviderStateMixin {
+  final _transformController = TransformationController();
+  late final AnimationController _animController;
+  Animation<Matrix4>? _animation;
+  TapDownDetails? _doubleTapDetails;
+  Size? _imageSize;
+  // Centering transform computed once layout + image size are both known.
+  Matrix4 _centeredTransform = Matrix4.identity();
+  bool _transformReady = false;
+  // Cached layout values read by the live clamp listener.
+  double _screenW = 0;
+  double _screenH = 0;
+  double _fittedW = 0;
+  double _fittedH = 0;
+  bool _clamping = false;
+
+  bool get _isZoomed =>
+      _transformController.value.getMaxScaleOnAxis() > 1.05;
+
+  @override
+  void initState() {
+    super.initState();
+    _animController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 220),
+    )..addListener(() {
+        if (_animation != null) {
+          _transformController.value = _animation!.value;
+        }
+      });
+    _transformController.addListener(() {
+      _clampTransform();
+      if (mounted) setState(() {});
+    });
+
+    // Load image dimensions to calculate exact boundary
+    _resolveImageProvider(widget.imagePath)
+        .resolve(const ImageConfiguration())
+        .addListener(ImageStreamListener((ImageInfo info, bool _) {
+      if (mounted) {
+        setState(() {
+          _imageSize = Size(
+            info.image.width.toDouble(),
+            info.image.height.toDouble(),
+          );
+        });
+      }
+    }));
+  }
+
+  @override
+  void dispose() {
+    _transformController.dispose();
+    _animController.dispose();
+    super.dispose();
+  }
+
+  void _onDoubleTapDown(TapDownDetails details) {
+    _doubleTapDetails = details;
+  }
+
+  void _onDoubleTap() {
+    final Matrix4 end;
+    if (_isZoomed) {
+      end = _centeredTransform;
+    } else {
+      const s = 3.0;
+      final cx = _centeredTransform.getTranslation().x;
+      final cy = _centeredTransform.getTranslation().y;
+      final px = _doubleTapDetails!.localPosition.dx;
+      final py = _doubleTapDetails!.localPosition.dy;
+      end = Matrix4.identity()
+        ..translateByDouble(px * (1 - s) + s * cx, py * (1 - s) + s * cy, 0.0, 1.0)
+        ..scaleByDouble(s, s, 1.0, 1.0);
+    }
+    _animateTo(end);
+  }
+
+  void _animateTo(Matrix4 target) {
+    _animation = Matrix4Tween(
+      begin: _transformController.value,
+      end: target,
+    ).animate(CurvedAnimation(parent: _animController, curve: Curves.easeOut));
+    _animController.forward(from: 0);
+  }
+
+  /// WhatsApp-style boundary clamping, fired on every controller change.
+  /// Rules applied independently per axis:
+  ///   scaledDim > screenDim  →  pan clamped to [screenDim − scaledDim, 0]
+  ///   scaledDim ≤ screenDim  →  centered (shows black bars on that axis)
+  void _clampTransform() {
+    if (_clamping || _fittedW == 0 || _screenW == 0) return;
+    final m = _transformController.value;
+    final s = m.getMaxScaleOnAxis();
+    final tx = m.getTranslation().x;
+    final ty = m.getTranslation().y;
+    final scaledW = s * _fittedW;
+    final scaledH = s * _fittedH;
+
+    final double clampedTx = scaledW >= _screenW
+        ? tx.clamp(_screenW - scaledW, 0.0)
+        : (_screenW - scaledW) / 2;
+    final double clampedTy = scaledH >= _screenH
+        ? ty.clamp(_screenH - scaledH, 0.0)
+        : (_screenH - scaledH) / 2;
+
+    if ((clampedTx - tx).abs() > 0.5 || (clampedTy - ty).abs() > 0.5) {
+      _clamping = true;
+      _transformController.value = Matrix4.identity()
+        ..translateByDouble(clampedTx, clampedTy, 0.0, 1.0)
+        ..scaleByDouble(s, s, 1.0, 1.0);
+      _clamping = false;
+    }
+  }
+
+  Future<void> _saveToGallery() async {
+    final path = widget.imagePath;
+    final l10n = AppLocalizations.of(context);
+    final safeName = widget.characterName.replaceAll(RegExp(r'[^\w]'), '_');
+    final filename = '${safeName}_photo.jpg';
+    try {
+      if (kIsWeb) {
+        final bytes = path.startsWith('data:')
+            ? base64Decode(path.split(',').last)
+            : await File(path).readAsBytes();
+        downloadImageWeb(bytes, filename);
+      } else if (path.startsWith('data:')) {
+        final bytes = base64Decode(path.split(',').last);
+        await Gal.putImageBytes(bytes);
+      } else {
+        await Gal.putImage(path);
+      }
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n?.avatarSaveSuccess ?? 'Photo saved'),
+          ),
+        );
+      }
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n?.avatarSaveError ?? 'Could not save photo'),
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final image = _resolveImageProvider(imagePath);
+    final image = _resolveImageProvider(widget.imagePath);
     final bottomPadding = MediaQuery.of(context).viewPadding.bottom;
 
+    // Overlay widgets reused in both the loading and the interactive state.
+    final topBar = Positioned(
+      top: MediaQuery.of(context).viewPadding.top + 8,
+      left: 8,
+      child: IconButton(
+        icon: const Icon(Icons.close, color: Colors.white),
+        style: IconButton.styleFrom(backgroundColor: Colors.black45),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+    );
+    final bottomBar = Positioned(
+      left: 0,
+      right: 0,
+      bottom: 0,
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            colors: [Colors.black87, Colors.transparent],
+          ),
+        ),
+        padding: EdgeInsets.fromLTRB(16, 24, 16, bottomPadding + 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _ViewerAction(
+              icon: Icons.download_outlined,
+              label: AppLocalizations.of(context)?.avatarSavePhoto ?? 'Save photo',
+              onTap: _saveToGallery,
+            ),
+            _ViewerAction(
+              icon: Icons.edit_outlined,
+              label: AppLocalizations.of(context)?.avatarChangePhoto ?? 'Change photo',
+              onTap: () => Navigator.of(context).pop(_ViewerResult.pick),
+            ),
+            _ViewerAction(
+              icon: Icons.delete_outline,
+              label: AppLocalizations.of(context)?.avatarRemovePhoto ?? 'Remove photo',
+              onTap: () => Navigator.of(context).pop(_ViewerResult.remove),
+            ),
+          ],
+        ),
+      ),
+    );
+
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Stack(
-        children: [
-          // Tap outside to close
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () => Navigator.of(context).pop(),
-            child: const SizedBox.expand(),
-          ),
+      backgroundColor: Colors.black,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final screenW = constraints.maxWidth;
+          final screenH = constraints.maxHeight;
 
-          // Photo filling the screen (contain keeps aspect ratio)
-          Positioned.fill(
-            child: Hero(
-              tag: 'character_avatar_$imagePath',
-              child: Image(
-                image: image,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
+          double fittedW = screenW;
+          double fittedH = screenH;
+          if (_imageSize != null) {
+            final scale = math.min(
+              screenW / _imageSize!.width,
+              screenH / _imageSize!.height,
+            );
+            fittedW = _imageSize!.width * scale;
+            fittedH = _imageSize!.height * scale;
+          }
 
-          // Top bar: close button
-          Positioned(
-            top: MediaQuery.of(context).viewPadding.top + 8,
-            left: 8,
-            child: IconButton(
-              icon: const Icon(Icons.close, color: Colors.white),
-              style: IconButton.styleFrom(
-                backgroundColor: Colors.black45,
-              ),
-              onPressed: () => Navigator.of(context).pop(),
-            ),
-          ),
+          // Cache for the live clamp listener (plain assignment, no rebuild).
+          _screenW = screenW;
+          _screenH = screenH;
+          _fittedW = fittedW;
+          _fittedH = fittedH;
 
-          // Bottom action bar
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [Colors.black87, Colors.transparent],
+          // Until image dimensions are loaded and the centering transform is
+          // set, show a static BoxFit.contain image (no distortion flash).
+          if (!_transformReady) {
+            if (_imageSize != null) {
+              // Dimensions known — schedule the one-time centering transform.
+              final tx = (screenW - fittedW) / 2;
+              final ty = (screenH - fittedH) / 2;
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                if (mounted && !_transformReady) {
+                  setState(() {
+                    _centeredTransform = Matrix4.translationValues(tx, ty, 0);
+                    _transformController.value = _centeredTransform;
+                    _transformReady = true;
+                  });
+                }
+              });
+            }
+            return Stack(children: [
+              Positioned.fill(
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => Navigator.of(context).pop(),
+                  child: Image(image: image, fit: BoxFit.contain),
                 ),
               ),
-              padding: EdgeInsets.fromLTRB(16, 24, 16, bottomPadding + 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _ViewerAction(
-                    icon: Icons.edit_outlined,
-                    label: AppLocalizations.of(context)?.avatarChangePhoto ?? 'Change photo',
-                    onTap: () => Navigator.of(context).pop(_ViewerResult.pick),
+              topBar,
+              bottomBar,
+            ]);
+          }
+
+          // ── Interactive viewer ───────────────────────────────────────────
+          // boundaryMargin is huge so InteractiveViewer never restricts
+          // movement itself.  _clampTransform() fires on every controller
+          // change and enforces the real rules:
+          //   scaledDim > screenDim  →  clamp pan to [screenDim-scaledDim, 0]
+          //   scaledDim ≤ screenDim  →  center (show black bars on that axis)
+          return Stack(
+            children: [
+              Positioned.fill(
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTapUp: _isZoomed
+                      ? null
+                      : (details) {
+                          // Close only when tapping the black area around the image.
+                          final inv =
+                              Matrix4.inverted(_transformController.value);
+                          final childPt = MatrixUtils.transformPoint(
+                              inv, details.localPosition);
+                          if (childPt.dx < 0 ||
+                              childPt.dx > fittedW ||
+                              childPt.dy < 0 ||
+                              childPt.dy > fittedH) {
+                            Navigator.of(context).pop();
+                          }
+                        },
+                  onDoubleTapDown: _onDoubleTapDown,
+                  onDoubleTap: _onDoubleTap,
+                  child: InteractiveViewer(
+                    transformationController: _transformController,
+                    constrained: false,
+                    minScale: 1.0,
+                    maxScale: 6.0,
+                    boundaryMargin: const EdgeInsets.all(double.maxFinite / 4),
+                    child: SizedBox(
+                      width: fittedW,
+                      height: fittedH,
+                      child: Image(image: image, fit: BoxFit.fill),
+                    ),
                   ),
-                  _ViewerAction(
-                    icon: Icons.delete_outline,
-                    label: AppLocalizations.of(context)?.avatarRemovePhoto ?? 'Remove photo',
-                    onTap: () => Navigator.of(context).pop(_ViewerResult.remove),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ),
-        ],
+              topBar,
+              bottomBar,
+            ],
+          );
+        },
       ),
     );
   }

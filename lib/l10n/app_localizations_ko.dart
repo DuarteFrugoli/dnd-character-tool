@@ -1774,6 +1774,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get avatarChangePhoto => '사진 변경';
 
   @override
+  String get avatarSavePhoto => '사진 저장';
+
+  @override
+  String get avatarSaveSuccess => '사진이 갤러리에 저장되었습니다';
+
+  @override
+  String get avatarSaveError => '사진을 저장할 수 없습니다';
+
+  @override
   String featureAddedSnackbar(String name) {
     return '$name 추가됨!';
   }

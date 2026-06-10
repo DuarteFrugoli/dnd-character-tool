@@ -1800,6 +1800,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get avatarChangePhoto => 'Alterar foto';
 
   @override
+  String get avatarSavePhoto => 'Salvar foto';
+
+  @override
+  String get avatarSaveSuccess => 'Foto salva na galeria';
+
+  @override
+  String get avatarSaveError => 'Não foi possível salvar a foto';
+
+  @override
   String featureAddedSnackbar(String name) {
     return '$name adicionada!';
   }

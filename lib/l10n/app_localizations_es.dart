@@ -1798,6 +1798,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get avatarChangePhoto => 'Cambiar foto';
 
   @override
+  String get avatarSavePhoto => 'Guardar foto';
+
+  @override
+  String get avatarSaveSuccess => 'Foto guardada en la galería';
+
+  @override
+  String get avatarSaveError => 'No se pudo guardar la foto';
+
+  @override
   String featureAddedSnackbar(String name) {
     return '¡$name añadido!';
   }

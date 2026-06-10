@@ -1426,6 +1426,12 @@
   "@avatarCropPhoto": { "description": "Character avatar: crop photo toolbar title." },
   "avatarChangePhoto": "Change photo",
   "@avatarChangePhoto": { "description": "Character avatar: change photo action in full-screen viewer." },
+  "avatarSavePhoto": "Save photo",
+  "@avatarSavePhoto": { "description": "Character avatar: save photo to device gallery action." },
+  "avatarSaveSuccess": "Photo saved to gallery",
+  "@avatarSaveSuccess": { "description": "Character avatar: snackbar shown after saving photo to gallery." },
+  "avatarSaveError": "Could not save photo",
+  "@avatarSaveError": { "description": "Character avatar: snackbar shown when saving photo to gallery fails." },
 
   "featureAddedSnackbar": "{name} added!",
   "@featureAddedSnackbar": { "description": "Features tab: snackbar shown after adding a custom feature.", "placeholders": { "name": { "type": "String" } } },

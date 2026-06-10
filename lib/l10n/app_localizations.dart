@@ -3342,6 +3342,24 @@ abstract class AppLocalizations {
   /// **'Change photo'**
   String get avatarChangePhoto;
 
+  /// Character avatar: save photo to device gallery action.
+  ///
+  /// In en, this message translates to:
+  /// **'Save photo'**
+  String get avatarSavePhoto;
+
+  /// Character avatar: snackbar shown after saving photo to gallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo saved to gallery'**
+  String get avatarSaveSuccess;
+
+  /// Character avatar: snackbar shown when saving photo to gallery fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save photo'**
+  String get avatarSaveError;
+
   /// Features tab: snackbar shown after adding a custom feature.
   ///
   /// In en, this message translates to:

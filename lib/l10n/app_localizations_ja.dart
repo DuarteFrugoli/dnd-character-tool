@@ -1773,6 +1773,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get avatarChangePhoto => '写真を変更';
 
   @override
+  String get avatarSavePhoto => '写真を保存';
+
+  @override
+  String get avatarSaveSuccess => '写真がギャラリーに保存されました';
+
+  @override
+  String get avatarSaveError => '写真を保存できませんでした';
+
+  @override
   String featureAddedSnackbar(String name) {
     return '$nameを追加しました!';
   }

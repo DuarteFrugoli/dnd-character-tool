@@ -49,4 +49,7 @@ __pycache__/
 *.py[cod]
 *.pyo
 
+# Docs
+docs/private/
+
 untranslated.json

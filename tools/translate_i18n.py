@@ -144,12 +144,13 @@ def extract_classes() -> dict:
 
 
 def extract_spells() -> dict:
-    # srd: [{ name, description, higherLevels, … }]
+    # srd: [{ name, description, higherLevels, material, … }]
     return {
         spell["name"]: {
             "name": spell["name"],
             "description": spell.get("description", ""),
             "higherLevels": spell.get("higherLevels"),
+            "material": spell.get("material"),
         }
         for spell in _srd("spells.json")
     }

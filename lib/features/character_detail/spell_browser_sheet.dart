@@ -997,10 +997,11 @@ class SpellDetailSheet extends ConsumerWidget {
     _          => type,
   };
 
-  String _componentsStr() {
+  String _componentsStr(SrdI18nService i18n) {
     final base = spell.components.join(', ');
-    if (spell.material != null) return '$base (${spell.material})';
-    return base;
+    if (spell.material == null) return base;
+    final translatedMaterial = i18n.spellMaterial(spell.name) ?? spell.material!;
+    return '$base ($translatedMaterial)';
   }
 
   @override
@@ -1073,7 +1074,7 @@ class SpellDetailSheet extends ConsumerWidget {
             l10n.spellDetailDuration,
             i18n.spellDuration(spell.duration),
           ),
-          _StatRow(l10n.spellDetailComponents, _componentsStr()),
+          _StatRow(l10n.spellDetailComponents, _componentsStr(i18n)),
           if (spell.concentration) ...[
             const SizedBox(height: 4),
             Row(
@@ -1142,7 +1143,7 @@ class SpellDetailSheet extends ConsumerWidget {
           // ── Classes ───────────────────────────────────────────────────────
           const SizedBox(height: 16),
           Text(
-            l10n.spellDetailClasses(spell.classes.join(', ')),
+            l10n.spellDetailClasses(spell.classes.map(i18n.className).join(', ')),
             style: Theme.of(
               context,
             ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),

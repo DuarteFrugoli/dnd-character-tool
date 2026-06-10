@@ -259,6 +259,8 @@ class SrdI18nService {
 
   String? spellHigherLevels(String en) => _str('spells', en, 'higherLevels');
 
+  String? spellMaterial(String en) => _str('spells', en, 'material');
+
   // ── Races ──────────────────────────────────────────────────────────────────
 
   String raceName(String en) => _str('races', en, 'name') ?? en;

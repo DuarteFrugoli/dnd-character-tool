@@ -17,7 +17,8 @@
   "Dancing Lights": {
     "name": "Luci danzanti",
     "description": "Crei fino a quattro luci grandi quanto una torcia nel raggio d'azione, facendole apparire come torce, lanterne o sfere luminose che fluttuano nell'aria per la durata. Puoi anche combinare le quattro luci in una forma luminosa e vagamente umanoide di taglia Media. Come azione bonus, puoi spostare le luci fino a 18 metri in un nuovo punto entro la gittata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di fosforo o di wychwood, o di lucciola"
   },
   "Druidcraft": {
     "name": "Druidcraft",
@@ -37,7 +38,8 @@
   "Friends": {
     "name": "Amici",
     "description": "Per la durata, hai vantaggio su tutte le prove di Carisma dirette contro una creatura di tua scelta che non sia ostile nei tuoi confronti. Quando l'incantesimo termina, la creatura si rende conto che hai usato la magia per influenzare il suo umore e diventa ostile nei tuoi confronti. Una creatura incline alla violenza potrebbe attaccarti. Un'altra creatura potrebbe cercare punizione in altri modi (a discrezione del DM), a seconda della natura della tua interazione con essa.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una piccola quantità di trucco applicata al viso mentre viene lanciato questo incantesimo"
   },
   "Guidance": {
     "name": "Guida",
@@ -47,7 +49,8 @@
   "Light": {
     "name": "Leggero",
     "description": "Tocchi un oggetto che non sia più grande di 3 metri in qualsiasi dimensione. Fino al termine dell'incantesimo, l'oggetto emette luce intensa in un raggio di 6 metri e luce fioca per altri 20 piedi. La luce può essere colorata a piacere. Coprire completamente l'oggetto con qualcosa di opaco blocca la luce. L'incantesimo termina se lo lanci di nuovo o lo interrompi come un'azione. Se si prende come bersaglio un oggetto tenuto o indossato da una creatura ostile, quella creatura deve superare un tiro salvezza su Destrezza per evitare l'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una lucciola o un muschio fosforescente"
   },
   "Mage Hand": {
     "name": "Mano magica",
@@ -57,17 +60,20 @@
   "Mending": {
     "name": "Rammendo",
     "description": "Questo incantesimo ripara una singola rottura o strappo in un oggetto toccato dall'incantatore, come un anello di catena rotto, due metà di una chiave rotta, un mantello strappato o un otre che perde. Finché la rottura o lo strappo non è più grande di 30 centimetri in qualsiasi dimensione, lo si ripara, senza lasciare traccia del danno precedente. Questo incantesimo può riparare fisicamente un oggetto o un costrutto magico, ma non può ripristinare la magia su tale oggetto.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "due calamite"
   },
   "Message": {
     "name": "Messaggio",
     "description": "Punti il ​​dito verso una creatura a portata di mano e sussurri un messaggio. Il bersaglio (e solo il bersaglio) ascolta il messaggio e può rispondere in un sussurro che solo tu puoi sentire. Puoi lanciare questo incantesimo attraverso oggetti solidi se hai familiarità con il bersaglio e sai che è oltre la barriera. Silenzio magico, 30 cm di pietra, 2,5 cm di metallo comune, un sottile foglio di piombo o 90 cm di legno bloccano l'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un breve pezzo di filo di rame"
   },
   "Minor Illusion": {
     "name": "Illusione minore",
     "description": "Crei un suono o un'immagine di un oggetto nel raggio d'azione che dura per la durata. L'illusione termina se la interrompi con un'azione o lanci nuovamente questo incantesimo. Se crei un suono, il suo volume può variare da un sussurro a un urlo. Se crei l'immagine di un oggetto, non deve essere più grande di un cubo di 1,5 metri. Una creatura che usa la sua azione per esaminare il suono o l'immagine può determinare che si tratta di un'illusione superando una prova di Intelligenza (Indagare) contro la CD del tiro salvezza dell'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di pile"
   },
   "Poison Spray": {
     "name": "Spray velenoso",
@@ -92,7 +98,8 @@
   "Resistance": {
     "name": "Resistenza",
     "description": "Tocchi una creatura consenziente. Una volta prima che l'incantesimo finisca, il bersaglio può tirare un d4 e aggiungere il numero ottenuto a un tiro salvezza a sua scelta. Può lanciare il dado prima o dopo aver effettuato il tiro salvezza. L'incantesimo poi termina.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un mantello in miniatura"
   },
   "Sacred Flame": {
     "name": "Fiamma Sacra",
@@ -102,7 +109,8 @@
   "Shillelagh": {
     "name": "Shillelagh",
     "description": "Il legno di una mazza o di un bastone ferrato che impugni è intriso del potere della natura. Per tutta la durata, puoi usare la tua capacità da incantatore invece della Forza per i tiri per colpire e per i danni degli attacchi in mischia usando quell'arma, e il dado di danno dell'arma diventa un d8. Anche l'arma diventa magica, se non lo è già. L'incantesimo termina se lo lanci nuovamente o se lasci andare l'arma.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "vischio, una foglia di trifoglio e una mazza o un bastone ferrato"
   },
   "Shocking Grasp": {
     "name": "Presa scioccante",
@@ -132,22 +140,26 @@
   "Alarm": {
     "name": "Allarme",
     "description": "Imposta un allarme contro le intrusioni indesiderate. Scegli una porta, una finestra o un'area entro il raggio d'azione non più grande di un cubo con spigolo di 20 piedi. Fino al termine dell'incantesimo, un allarme ti avvisa ogni volta che una creatura Minuscola o più grande tocca o entra nell'area protetta. Quando lanci l'incantesimo, scegli se l'allarme sarà mentale o udibile.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una campanella e un pezzo di sottile filo d'argento"
   },
   "Animal Friendship": {
     "name": "Amicizia animale",
     "description": "Questo incantesimo ti consente di convincere una bestia che non intendi farle del male. Scegli una bestia che puoi vedere nel raggio d'azione. Deve vederti e ascoltarti. Se l'Intelligenza della bestia è 4 o superiore, l'incantesimo fallisce. Altrimenti, la bestia deve riuscire in un tiro salvezza su Saggezza o essere affascinata da te per la durata dell'incantesimo.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi influenzare una bestia aggiuntiva per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi influenzare una bestia aggiuntiva per ogni livello di slot superiore al 1°.",
+    "material": "un boccone di cibo"
   },
   "Bane": {
     "name": "Rovina",
     "description": "Fino a tre creature a tua scelta che puoi vedere entro la gittata devono effettuare un tiro salvezza su Carisma. Ogni volta che un bersaglio che fallisce questo tiro salvezza effettua un tiro per colpire o un tiro salvezza prima che l'incantesimo finisca, il bersaglio deve tirare un d4 e sottrarre il numero ottenuto dal tiro per colpire o dal tiro salvezza.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 1°.",
+    "material": "una goccia di sangue"
   },
   "Bless": {
     "name": "Benedire",
     "description": "Benedici fino a tre creature a gittata di tua scelta. Ogni volta che un bersaglio effettua un tiro per colpire o un tiro salvezza prima che l'incantesimo finisca, il bersaglio può tirare un d4 e aggiungere il numero ottenuto al tiro per colpire o al tiro salvezza.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 1°.",
+    "material": "un'aspersione di acqua santa"
   },
   "Burning Hands": {
     "name": "Mani brucianti",
@@ -162,7 +174,8 @@
   "Color Spray": {
     "name": "Spruzzo di colore",
     "description": "Una serie abbagliante di luci colorate e lampeggianti scaturisce dalla tua mano. Tirare 6d10; il totale corrisponde al numero di punti ferita delle creature che questo incantesimo può influenzare. A partire dalla creatura che ha attualmente i punti ferita più bassi, ogni creatura influenzata da questo incantesimo viene accecata fino al termine dell'incantesimo.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, tira 2d10 aggiuntivi per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, tira 2d10 aggiuntivi per ogni livello di slot superiore al 1°.",
+    "material": "un pizzico di polvere o sabbia colorata di rosso, giallo e blu"
   },
   "Command": {
     "name": "Comando",
@@ -172,12 +185,14 @@
   "Comprehend Languages": {
     "name": "Comprendere le lingue",
     "description": "Per tutta la durata, comprendi il significato letterale di qualsiasi lingua parlata che ascolti. Comprendi anche qualsiasi lingua scritta che vedi, ma devi toccare la superficie su cui sono scritte le parole.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di fuliggine e sale"
   },
   "Create or Destroy Water": {
     "name": "Crea o distruggi l'acqua",
     "description": "O crei o distruggi l'acqua. Creare Acqua: Si creano fino a 10 litri di acqua pulita entro la gittata in un contenitore aperto. Distruggere l'acqua: Distruggi fino a 10 litri d'acqua in un contenitore aperto entro il raggio d'azione.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, crei o distruggi 10 litri d'acqua aggiuntivi per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, crei o distruggi 10 litri d'acqua aggiuntivi per ogni livello di slot superiore al 1°.",
+    "material": "una goccia d'acqua se crea acqua o qualche granello di sabbia se la distrugge"
   },
   "Cure Wounds": {
     "name": "Curare le ferite",
@@ -197,7 +212,8 @@
   "Detect Poison and Disease": {
     "name": "Rileva veleno e malattia",
     "description": "Per tutta la durata, puoi percepire la presenza e la posizione di veleni, creature velenose e malattie entro 9 metri da te. In ciascun caso identifichi anche il tipo di veleno, creatura velenosa o malattia.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una foglia di tasso"
   },
   "Disguise Self": {
     "name": "Travestire Sé",
@@ -227,17 +243,20 @@
   "False Life": {
     "name": "Vita falsa",
     "description": "Rafforzandoti con un facsimile necromantico di vita, ottieni 1d4 + 4 punti ferita temporanei per la durata.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, guadagni 5 punti ferita temporanei aggiuntivi per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, guadagni 5 punti ferita temporanei aggiuntivi per ogni livello di slot superiore al 1°.",
+    "material": "una piccola quantità di alcol o liquori distillati"
   },
   "Feather Fall": {
     "name": "Caduta delle piume",
     "description": "Scegli fino a cinque creature che cadono nel raggio d'azione. La velocità di discesa di una creatura che cade rallenta a 18 metri per round finché l'incantesimo non termina. Se la creatura atterra prima che l'incantesimo finisca, non subisce danni da caduta e può atterrare in piedi.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una piccola piuma o un pezzo di piumino"
   },
   "Find Familiar": {
     "name": "Trova familiare",
     "description": "Ottieni il servizio di un famiglio, uno spirito che assume una forma animale a tua scelta: pipistrello, gatto, granchio, rana, falco, lucertola, polipo, gufo, serpente velenoso, pesce, ratto, corvo, cavalluccio marino, ragno o donnola. Apparendo in uno spazio non occupato entro il raggio d'azione, il famiglio ha le statistiche della forma scelta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "Carbone, incenso ed erbe del valore di 10 mo che devono essere consumati dal fuoco in un braciere di ottone"
   },
   "Fog Cloud": {
     "name": "Nube di nebbia",
@@ -247,12 +266,14 @@
   "Goodberry": {
     "name": "Buonberry",
     "description": "Nella tua mano compaiono fino a dieci bacche che vengono infuse di magia per la durata. Una creatura può usare la sua azione per mangiare una bacca. Mangiare una bacca ripristina 1 punto ferita e la bacca fornisce nutrimento sufficiente a sostenere una creatura per un giorno. Le bacche perdono la loro potenza se non vengono consumate entro 24 ore.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un rametto di vischio"
   },
   "Grease": {
     "name": "Grasso",
     "description": "Il grasso viscido copre il terreno in un quadrato di 3 metri centrato su un punto entro gittata e lo trasforma in terreno difficile per la durata. Quando il grasso appare, ogni creatura che si trova nella sua area deve riuscire un tiro salvezza su Destrezza o cadere prona.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di cotenna o di burro"
   },
   "Guiding Bolt": {
     "name": "Bullone guida",
@@ -277,7 +298,8 @@
   "Hex": {
     "name": "Esadecimale",
     "description": "Lancia una maledizione su una creatura che puoi vedere e che si trova a gittata. Fino al termine dell'incantesimo, infliggi 1d6 danni necrotici aggiuntivi al bersaglio ogni volta che lo colpisci con un attacco. Inoltre, scegli un'abilità quando lanci l'incantesimo. Il bersaglio ha svantaggio alle prove di caratteristica effettuate con la capacità scelta.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° o 4° livello, puoi mantenere la concentrazione sull'incantesimo per un massimo di 8 ore. Quando usi uno slot incantesimo di 5° livello o superiore, puoi mantenere la concentrazione fino a 24 ore."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° o 4° livello, puoi mantenere la concentrazione sull'incantesimo per un massimo di 8 ore. Quando usi uno slot incantesimo di 5° livello o superiore, puoi mantenere la concentrazione fino a 24 ore.",
+    "material": "l'occhio pietrificato di un tritone"
   },
   "Hunter's Mark": {
     "name": "Marchio del cacciatore",
@@ -287,12 +309,14 @@
   "Identify": {
     "name": "Identificare",
     "description": "Scegli un oggetto che devi toccare durante il lancio dell'incantesimo. Se è un oggetto magico o qualche altro oggetto intriso di magia, ne apprendi le proprietà e come usarle, se richiede sintonia per essere utilizzato e quante cariche ha, se presenti.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una perla del valore di almeno 100 mo e una piuma di gufo"
   },
   "Illusory Script": {
     "name": "Scrittura illusoria",
     "description": "Si scrive su pergamena, carta o altro materiale adatto per scrivere e lo si permea con una potente illusione che dura per tutta la durata. A te e a tutte le creature da te designate quando lanci l'incantesimo, la scritta appare normale. A tutte le altre creature, la scrittura appare come se fosse scritta in una scrittura sconosciuta o magica.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un inchiostro a base di piombo del valore di almeno 10 mo, che l'incantesimo consuma"
   },
   "Inflict Wounds": {
     "name": "Infliggi ferite",
@@ -302,17 +326,20 @@
   "Jump": {
     "name": "Salto",
     "description": "Tocchi una creatura. La distanza di salto della creatura viene triplicata fino al termine dell'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "la zampa posteriore di una cavalletta"
   },
   "Longstrider": {
     "name": "Lungopasso",
     "description": "Tocchi una creatura. La velocità del bersaglio aumenta di 3 metri finché l'incantesimo non termina.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 1°.",
+    "material": "un pizzico di terra"
   },
   "Mage Armor": {
     "name": "Armatura magica",
     "description": "Tocchi una creatura consenziente che non indossa un'armatura e una forza magica protettiva la circonda finché l'incantesimo non termina. La CA base del bersaglio diventa 13 + il suo modificatore di Destrezza. L'incantesimo termina se il bersaglio indossa un'armatura o se si interrompe l'incantesimo con un'azione.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzo di pelle conciata"
   },
   "Magic Missile": {
     "name": "Missile magico",
@@ -322,12 +349,14 @@
   "Protection from Evil and Good": {
     "name": "Protezione dal male e dal bene",
     "description": "Fino al termine dell'incantesimo, una creatura consenziente toccata è protetta contro alcuni tipi di creature: aberrazioni, celestiali, elementali, folletti, immondi e non morti. La protezione garantisce diversi benefici: quelle creature hanno svantaggio ai tiri per colpire contro il bersaglio, e il bersaglio non può essere affascinato, spaventato o posseduto da loro.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "acqua santa o argento e ferro in polvere, che l'incantesimo consuma"
   },
   "Sanctuary": {
     "name": "Santuario",
     "description": "Proteggi una creatura a gittata dagli attacchi. Fino al termine dell'incantesimo, qualsiasi creatura che prende di mira la creatura protetta con un attacco o un incantesimo dannoso deve prima effettuare un tiro salvezza su Saggezza. Se fallisce il Tiro Salvezza, la creatura deve scegliere un nuovo bersaglio o perde l'attacco o l'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un piccolo specchio d'argento"
   },
   "Shield": {
     "name": "Scudo",
@@ -337,17 +366,20 @@
   "Shield of Faith": {
     "name": "Scudo della Fede",
     "description": "Un campo scintillante appare e circonda una creatura a gittata di tua scelta, conferendole bonus +2 alla CA per la durata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una piccola pergamena su cui è scritto un pezzettino di testo sacro"
   },
   "Silent Image": {
     "name": "Immagine silenziosa",
     "description": "Crei l'immagine di un oggetto, una creatura o qualche altro fenomeno visibile che non sia più grande di un cubo di 4,5 metri. L'immagine appare in un punto all'interno del raggio d'azione e dura per la durata. L'immagine è puramente visiva; non è accompagnato da suoni, odori o altri effetti sensoriali.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di pile"
   },
   "Sleep": {
     "name": "Sonno",
     "description": "Questo incantesimo manda le creature in un sonno magico. Tira 5d8; il totale corrisponde al numero di punti ferita delle creature che questo incantesimo può influenzare. A partire dalla creatura che ha i punti ferita attuali più bassi, ogni creatura influenzata da questo incantesimo perde i sensi finché l'incantesimo non termina, il dormiente non subisce danni o qualcuno usa un'azione per scuotere o schiaffeggiare il dormiente per svegliarlo.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, tira 2d8 aggiuntivi per ogni livello di slot superiore al 1°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, tira 2d8 aggiuntivi per ogni livello di slot superiore al 1°.",
+    "material": "un pizzico di sabbia fine, petali di rosa o un grillo"
   },
   "Speak with Animals": {
     "name": "Parla con gli animali",
@@ -362,12 +394,14 @@
   "Unseen Servant": {
     "name": "Servo invisibile",
     "description": "Questo incantesimo crea una forza Media invisibile, insensata e informe che esegue compiti semplici al tuo comando finché l'incantesimo non termina. Il servitore prende vita in uno spazio non occupato sul terreno entro la gittata. Ha CA 10, 1 punto ferita e Forza 2 e non può attaccare.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzo di corda e un po' di legno"
   },
   "Witch Bolt": {
     "name": "Bullone della Strega",
     "description": "Un raggio di energia blu crepitante si dirige verso una creatura a gittata, formando un arco di fulmine prolungato tra l'incantatore e il bersaglio. Effettua un attacco con incantesimo a distanza contro quella creatura. Se viene colpito, il bersaglio subisce 1d12 danni da fulmine e, in ciascuno dei tuoi turni per la durata, puoi usare la tua azione per infliggere automaticamente 1d12 danni da fulmine al bersaglio.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, il danno iniziale in caso di colpo a segno aumenta di 1d12 per ogni livello dello slot superiore al 1°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 2° livello o superiore, il danno iniziale in caso di colpo a segno aumenta di 1d12 per ogni livello dello slot superiore al 1°.",
+    "material": "un ramoscello di un albero colpito da un fulmine"
   },
   "Wrathful Smite": {
     "name": "Punizione irata",
@@ -377,7 +411,8 @@
   "Acid Arrow": {
     "name": "Freccia acida",
     "description": "Una freccia verde scintillante si dirige verso un bersaglio entro la gittata ed esplode in uno spruzzo di acido. Effettua un attacco con incantesimo a distanza contro il bersaglio. Se colpisce, il bersaglio subisce immediatamente 4d4 danni da acido e 2d4 danni da acido alla fine del suo turno successivo. Se fallisce, la freccia spruzza il bersaglio con acido per metà del danno iniziale e nessun danno alla fine del turno successivo.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno (sia iniziale che successivo) aumenta di 1d4 per ogni livello dello slot superiore al 2°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno (sia iniziale che successivo) aumenta di 1d4 per ogni livello dello slot superiore al 2°.",
+    "material": "foglie di rabarbaro in polvere e lo stomaco di una vipera"
   },
   "Alter Self": {
     "name": "Alterare Sé",
@@ -387,22 +422,26 @@
   "Animal Messenger": {
     "name": "Messaggero animale",
     "description": "Per mezzo di questo incantesimo usi un animale per consegnare un messaggio. Scegli una bestia Minuscola che puoi vedere a gittata, come uno scoiattolo, una ghiandaia azzurra o un pipistrello. Specifica un luogo, che devi aver visitato, e un destinatario che corrisponde a una descrizione generale, come ad esempio \"un uomo o una donna vestito con l'uniforme della guardia cittadina\" o \"un nano dai capelli rossi che indossa un cappello a punta\". Pronunci anche un messaggio fino a venticinque parole. La bestia bersaglio viaggia per la durata dell'incantesimo verso la posizione specificata.",
-    "higherLevels": "Se esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, la durata dell'incantesimo aumenta di 48 ore per ogni livello di slot superiore al 2°."
+    "higherLevels": "Se esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, la durata dell'incantesimo aumenta di 48 ore per ogni livello di slot superiore al 2°.",
+    "material": "un boccone di cibo"
   },
   "Arcane Lock": {
     "name": "Serratura Arcana",
     "description": "Tocchi una porta chiusa, una finestra, un cancello, un forziere o un altro ingresso e questo diventa bloccato per la durata. Tu e le creature da te designate quando lanci questo incantesimo potete aprire l'oggetto normalmente. Puoi anche impostare una password che, se pronunciata entro 1,5 metri dall'oggetto, sopprime questo incantesimo per 1 minuto. Altrimenti, è invalicabile finché non viene rotto o l'incantesimo viene dissolto o soppresso.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "polvere d'oro del valore di almeno 25 mo, che l'incantesimo consuma"
   },
   "Augury": {
     "name": "Augurio",
     "description": "Lanciando bastoncini intarsiati di gemme, facendo rotolare ossa di drago, disponendo carte ornate o impiegando qualche altro strumento divinatorio, ricevi un presagio da un'entità ultraterrena sui risultati di una specifica linea d'azione che intendi intraprendere entro i prossimi 30 minuti. Il DM sceglie tra i seguenti possibili presagi: Bene (buoni risultati), Guai (cattivi risultati), Bene e guai (risultati buoni e cattivi) o Niente (risultati che non sono particolarmente buoni o cattivi).",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "bastoncini, ossa o simboli simili appositamente contrassegnati del valore di almeno 25 mo"
   },
   "Barkskin": {
     "name": "Pelle di corteccia",
     "description": "Tocchi una creatura consenziente. Fino al termine dell'incantesimo, la pelle del bersaglio ha un aspetto ruvido, simile a corteccia, e la CA del bersaglio non può essere inferiore a 16, indipendentemente dal tipo di armatura che indossa.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una manciata di corteccia di quercia"
   },
   "Blindness/Deafness": {
     "name": "Cecità/Sordità",
@@ -422,12 +461,14 @@
   "Cloud of Daggers": {
     "name": "Nuvola di pugnali",
     "description": "Riempi l'aria in un cubo di 1,5 metri centrato su un punto a tua scelta entro la gittata con pugnali rotanti. Una creatura subisce 4d4 danni taglienti quando entra nell'area dell'incantesimo per la prima volta in un turno o inizia lì il suo turno.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 2d4 per ogni livello dello slot superiore al 2°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 2d4 per ogni livello dello slot superiore al 2°.",
+    "material": "una scheggia di vetro"
   },
   "Continual Flame": {
     "name": "Fiamma continua",
     "description": "Una fiamma, equivalente in luminosità a una torcia, scaturisce da un oggetto che tocchi. L'effetto assomiglia ad una fiamma normale, ma non crea calore e non utilizza ossigeno. Una fiamma continua può essere coperta o nascosta ma non soffocata o spenta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "polvere di rubino del valore di 50 mo, che l'incantesimo consuma"
   },
   "Crown of Madness": {
     "name": "Corona della follia",
@@ -437,27 +478,32 @@
   "Darkness": {
     "name": "Oscurità",
     "description": "L'oscurità magica si diffonde da un punto a gittata scelto dall'utente per riempire una sfera di 4,5 metri di raggio per la durata. L'oscurità si diffonde dietro gli angoli. Una creatura dotata di scurovisione non può vedere attraverso questa oscurità e la luce non magica non può illuminarla. Se il punto scelto è su un oggetto che stai tenendo o su uno che non viene indossato o trasportato, l'oscurità emana dall'oggetto e si muove con esso.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "pelliccia di pipistrello e una goccia di pece o un pezzo di carbone"
   },
   "Darkvision": {
     "name": "Scurovisione",
     "description": "Tocchi una creatura consenziente per concederle la capacità di vedere nell'oscurità. Per tutta la durata, quella creatura ha scurovisione entro un raggio di 18 metri.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "o un pizzico di carota essiccata o un'agata"
   },
   "Detect Thoughts": {
     "name": "Rileva i pensieri",
     "description": "Per tutta la durata, puoi leggere i pensieri di certe creature. Quando lanci l'incantesimo e come tua azione ogni turno fino al termine dell'incantesimo, puoi concentrare la tua mente su qualsiasi creatura che puoi vedere entro 9 metri da te. Se la creatura scelta ha un'Intelligenza pari o inferiore a 3 o non parla alcun linguaggio, la creatura non viene influenzata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzo di rame"
   },
   "Enhance Ability": {
     "name": "Migliora abilità",
     "description": "Tocchi una creatura e le conferisci un potenziamento magico. Scegli uno dei seguenti effetti; il bersaglio ottiene quell'effetto fino al termine dell'incantesimo: Resistenza dell'Orso (vantaggio alle prove CON, 2d6 HP temporanei), Forza del Toro (vantaggio alle prove STR, doppia capacità di trasporto), Grazia del Gatto (vantaggio alle prove DEX, nessun danno da caduta fino a 20 piedi), Splendore dell'Aquila (vantaggio alle prove CHA), Astuzia della Volpe (vantaggio alle prove INT), o Saggezza del Gufo (vantaggio sui controlli WIS).",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 2°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 2°.",
+    "material": "pelliccia o una piuma di una bestia"
   },
   "Enlarge/Reduce": {
     "name": "Ingrandisci/Riduci",
     "description": "Fai in modo che una creatura o un oggetto che puoi vedere entro la gittata diventi più grande o più piccolo per la durata. Scegli una creatura o un oggetto che non sia né indossato né trasportato. Se il bersaglio non è consenziente, può effettuare un tiro salvezza su Costituzione. In caso di successo, l'incantesimo non ha effetto. Ingrandire: le dimensioni del bersaglio raddoppiano, gli attacchi con l'arma infliggono 1d4 danni extra. Ridurre: le dimensioni del bersaglio si dimezzano, gli attacchi con le armi infliggono 1d4 danni in meno.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di polvere di ferro"
   },
   "Find Steed": {
     "name": "Trova Destriero",
@@ -472,37 +518,44 @@
   "Flame Blade": {
     "name": "Lama di fiamma",
     "description": "Evochi una lama infuocata nella tua mano libera. La lama è simile per dimensioni e forma a una scimitarra e dura per tutta la durata. Se lasci andare la lama, questa scompare, ma puoi evocarla nuovamente come azione bonus. Puoi usare la tua azione per effettuare un attacco con incantesimo in mischia con la lama infuocata. Se colpisce, il bersaglio subisce 3d6 danni da fuoco. La lama fiammeggiante emette luce intensa in un raggio di 3 metri e luce fioca per altri 3 metri.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d6 per ogni due livelli di slot superiori al 2°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d6 per ogni due livelli di slot superiori al 2°.",
+    "material": "foglia di sommacco"
   },
   "Flaming Sphere": {
     "name": "Sfera fiammeggiante",
     "description": "Una sfera di fuoco del diametro di 1,5 metri appare in uno spazio non occupato a tua scelta entro la gittata e dura per la sua durata. Qualsiasi creatura che termina il suo turno entro 1,5 metri dalla sfera deve effettuare un tiro salvezza su Destrezza. La creatura subisce 2d6 danni da fuoco se fallisce il tiro salvezza, o la metà se lo riesce. Come azione bonus, puoi spostare la sfera fino a 9 metri.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d6 per ogni livello dello slot superiore al 2°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d6 per ogni livello dello slot superiore al 2°.",
+    "material": "un po' di sego, un pizzico di zolfo e una spolverata di polvere di ferro"
   },
   "Gentle Repose": {
     "name": "Dolce riposo",
     "description": "Tocchi un cadavere o altri resti. Per tutta la durata, il bersaglio è protetto dal decadimento e non può diventare non morto. L'incantesimo inoltre estende efficacemente il limite di tempo per resuscitare il bersaglio dalla morte, poiché i giorni trascorsi sotto l'influenza di questo incantesimo non contano nel limite di tempo di incantesimi come resuscitare morti.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di sale e un pezzo di rame posto su ciascuno degli occhi del cadavere, che deve rimanere lì per tutta la durata"
   },
   "Gust of Wind": {
     "name": "Colpo di vento",
     "description": "Una linea di forte vento lunga 18 metri e larga 3 metri si irradia da te in una direzione scelta per la durata dell'incantesimo. Ogni creatura che inizia il suo turno sulla linea deve riuscire un tiro salvezza su Forza o essere spinta a 4,5 metri lontano da te in una direzione che segue la linea. Qualsiasi creatura sulla linea deve spendere 2 piedi di movimento per ogni piede di movimento quando si avvicina a te.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un seme di legume"
   },
   "Heat Metal": {
     "name": "Riscaldare il metallo",
     "description": "Scegli un oggetto metallico manufatto, come un'arma di metallo o un'armatura di metallo pesante o media, che puoi vedere a gittata. Fai diventare l'oggetto rovente. Qualsiasi creatura in contatto fisico con l'oggetto subisce 2d8 danni da fuoco quando si lancia l'incantesimo. Fino al termine dell'incantesimo, puoi utilizzare un'azione bonus in ciascuno dei tuoi turni successivi per infliggere nuovamente questo danno.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 2°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 2°.",
+    "material": "un pezzo di ferro e una fiamma"
   },
   "Hold Person": {
     "name": "Tieni la persona",
     "description": "Scegli un umanoide che puoi vedere nel raggio d'azione. Il bersaglio deve riuscire un tiro salvezza su Saggezza o rimanere paralizzato per la durata. Alla fine di ciascuno dei suoi turni, il bersaglio può effettuare un altro tiro salvezza su Saggezza. In caso di successo, l'incantesimo termina sul bersaglio.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, puoi prendere come bersaglio un umanoide aggiuntivo per ogni livello di slot superiore al 2°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, puoi prendere come bersaglio un umanoide aggiuntivo per ogni livello di slot superiore al 2°.",
+    "material": "un piccolo pezzo di ferro dritto"
   },
   "Invisibility": {
     "name": "Invisibilità",
     "description": "Una creatura che tocchi diventa invisibile finché l'incantesimo non termina. Tutto ciò che il bersaglio indossa o trasporta è invisibile fintanto che è sulla sua persona. L'incantesimo termina per un bersaglio che attacca o lancia un incantesimo.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 2°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 2°.",
+    "material": "una ciglia ricoperta di gomma arabica"
   },
   "Knock": {
     "name": "Bussa",
@@ -517,22 +570,26 @@
   "Levitate": {
     "name": "Levitare",
     "description": "Una creatura o un oggetto a gittata, a tua scelta e che puoi vedere, si alza verticalmente, fino a 6 metri, e rimane lì sospeso per tutta la durata. L'incantesimo può far levitare un bersaglio che pesa fino a 500 libbre. Una creatura non consenziente che supera un tiro salvezza su Costituzione non viene influenzata. Il bersaglio può muoversi solo spingendo o tirando contro un oggetto fisso o una superficie a portata di mano.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "o un piccolo anello di cuoio o un pezzo di filo dorato piegato a forma di coppa con un lungo gambo a un'estremità"
   },
   "Locate Animals or Plants": {
     "name": "Individua animali o piante",
     "description": "Descrivi o nomina un tipo specifico di animale o pianta. Concentrandoti sulla voce della natura che ti circonda, apprendi la direzione e la distanza dalla creatura o pianta di quel tipo più vicina entro 5 miglia, se presente.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di pelo di un segugio"
   },
   "Locate Object": {
     "name": "Individua oggetto",
     "description": "Descrivi o nomina un oggetto che ti è familiare. Percepisci la direzione verso la posizione dell'oggetto, purché l'oggetto si trovi entro 300 metri da te. Se l'oggetto è in movimento, conosci la direzione del suo movimento. L'incantesimo può localizzare un oggetto specifico a te noto, purché tu lo abbia visto da vicino - entro 9 metri - almeno una volta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un ramoscello biforcuto"
   },
   "Magic Mouth": {
     "name": "Bocca magica",
     "description": "Impianti un messaggio all'interno di un oggetto nel raggio d'azione, un messaggio che viene pronunciato quando viene soddisfatta una condizione di attivazione. Scegli un oggetto che puoi vedere e che non sia indossato o trasportato da un'altra creatura. Quindi pronuncia il messaggio, che deve contenere 25 parole o meno, anche se può essere pronunciato in un massimo di 10 minuti. Infine, determina la circostanza che attiverà l'incantesimo per consegnare il tuo messaggio.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzettino di favo d'ape e polvere di giada del valore di almeno 10 mo, che l'incantesimo consuma"
   },
   "Magic Weapon": {
     "name": "Arma magica",
@@ -552,17 +609,20 @@
   "Moonbeam": {
     "name": "Raggio di luna",
     "description": "Un raggio argentato di luce pallida risplende in un cilindro del raggio di 1,5 metri e alto 40 piedi centrato su un punto entro gittata. Fino al termine dell'incantesimo, una luce fioca riempie il cilindro. Quando una creatura entra nell'area dell'incantesimo per la prima volta in un turno o inizia il suo turno lì, viene avvolta da fiamme spettrali che causano dolore lancinante e deve effettuare un tiro salvezza su Costituzione. Se fallisce il tiro salvezza, subisce 2d10 danni radianti, o la metà se lo riesce.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d10 per ogni livello dello slot superiore al 2°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d10 per ogni livello dello slot superiore al 2°.",
+    "material": "diversi semi di qualsiasi pianta di semi di luna e un pezzo di feldspato opalescente"
   },
   "Nystul's Magic Aura": {
     "name": "Aura magica di Nystul",
     "description": "Metti un'illusione su una creatura o un oggetto che tocchi in modo che gli incantesimi di divinazione rivelino false informazioni su di esso. Il bersaglio può essere una creatura consenziente o un oggetto che non viene trasportato o indossato da un'altra creatura. Quando lanci l'incantesimo, scegli uno o entrambi i seguenti effetti: Falsa Aura o Maschera.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un quadratino di seta"
   },
   "Pass without Trace": {
     "name": "Passa senza traccia",
     "description": "Un velo di ombre e silenzio si irradia da te, nascondendo te e i tuoi compagni dal rilevamento. Per tutta la durata, ogni creatura scelta entro 9 metri da te (incluso te) ha un bonus di +10 alle prove di Destrezza (Furtività) e non può essere rintracciata se non con mezzi magici. Una creatura che riceve questo bonus non lascia tracce o altre tracce del suo passaggio.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "cenere di una foglia bruciata di vischio e di un rametto di abete rosso"
   },
   "Prayer of Healing": {
     "name": "Preghiera di guarigione",
@@ -582,7 +642,8 @@
   "Rope Trick": {
     "name": "Trucco della corda",
     "description": "Tocchi un tratto di corda lungo fino a 60 piedi. Un'estremità della corda si solleva quindi in aria finché l'intera corda rimane perpendicolare al suolo. All'estremità superiore della corda, un ingresso invisibile si apre su uno spazio extradimensionale che dura fino al termine dell'incantesimo. Lo spazio extradimensionale può essere raggiunto salendo in cima alla corda. Nello spazio extradimensionale possono entrare fino a otto creature di taglia Media o inferiore.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "estratto di mais in polvere e un anello ritorto di pergamena"
   },
   "Scorching Ray": {
     "name": "Raggio rovente",
@@ -592,12 +653,14 @@
   "See Invisibility": {
     "name": "Vedi Invisibilità",
     "description": "Per la durata dell'incantesimo, vedi creature e oggetti invisibili come se fossero visibili e puoi vedere all'interno del Piano Etereo, entro un raggio di 18 metri. Le creature e gli oggetti eterei appaiono spettrali e traslucidi.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di talco e una piccola spolverata di polvere d'argento"
   },
   "Shatter": {
     "name": "Frantumare",
     "description": "Un improvviso forte suono squillante, dolorosamente intenso, erutta da un punto a gittata di tua scelta. Ogni creatura in una sfera di 3 metri di raggio centrata su quel punto deve effettuare un tiro salvezza su Costituzione. Una creatura subisce 3d8 danni da tuono se fallisce il tiro salvezza, o la metà se lo supera. Una creatura fatta di materiale inorganico come pietra, cristallo o metallo subisce svantaggio a questo tiro salvezza.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 2°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 2°.",
+    "material": "un frammento di mica"
   },
   "Silence": {
     "name": "Silenzio",
@@ -607,7 +670,8 @@
   "Spider Climb": {
     "name": "Salita del ragno",
     "description": "Fino al termine dell'incantesimo, una creatura consenziente toccata dall'incantatore ottiene la capacità di muoversi su, giù e attraverso superfici verticali e capovolta lungo i soffitti, lasciando le mani libere. Il bersaglio ottiene anche una velocità di scalata pari alla sua velocità di camminata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una goccia di bitume e un ragno"
   },
   "Spiritual Weapon": {
     "name": "Arma spirituale",
@@ -617,12 +681,14 @@
   "Suggestion": {
     "name": "Suggerimento",
     "description": "Suggerisci un corso di attività (limitato a una frase o due) e influenzi magicamente una creatura che puoi vedere a portata e che può sentirti e capirti. Il suggerimento deve essere formulato in modo tale da far sembrare ragionevole la linea di condotta. L'incantesimo termina quando l'attività viene completata o dopo 8 ore, a seconda di quale evento si verifica per primo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una lingua di serpente e un pezzetto di favo di miele o una goccia di olio dolce"
   },
   "Web": {
     "name": "Rete",
     "description": "Evochi una massa di ragnatela spessa e appiccicosa in un punto a gittata di tua scelta. Da quel punto le tele riempiono un cubo di 6 metri e durano per tutta la durata. Le ragnatele sono terreni difficili, e ogni creatura che inizia il suo turno nelle ragnatele o che vi entra durante il suo turno deve effettuare un tiro salvezza su Destrezza o essere trattenuta finché rimane nelle ragnatele o finché non si libera.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di ragnatela"
   },
   "Zone of Truth": {
     "name": "Zona della verità",
@@ -632,7 +698,8 @@
   "Animate Dead": {
     "name": "Animare i morti",
     "description": "Questo incantesimo crea un servitore non morto. Scegli una pila di ossa o il cadavere di un umanoide Medio o Piccolo entro la gittata. Il tuo incantesimo permea il bersaglio con una disgustosa imitazione della vita, facendolo rivivere come una creatura non morta. In ciascuno dei tuoi turni, puoi utilizzare un'azione bonus per comandare mentalmente qualsiasi creatura creata con questo incantesimo se la creatura si trova entro 60 piedi da te.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, animi o riaffermi il controllo su due creature non morte aggiuntive per ogni livello di slot superiore al 3°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, animi o riaffermi il controllo su due creature non morte aggiuntive per ogni livello di slot superiore al 3°.",
+    "material": "una goccia di sangue, un pezzo di carne e un pizzico di polvere d'ossa"
   },
   "Bestow Curse": {
     "name": "Conferisci maledizione",
@@ -647,7 +714,8 @@
   "Clairvoyance": {
     "name": "Chiaroveggenza",
     "description": "Crei un sensore invisibile entro gittata in un luogo a te familiare (un luogo che hai visitato o visto prima) o in un luogo ovvio che non ti è familiare (come dietro una porta, dietro un angolo o in un boschetto di alberi). Il sensore rimane sul posto per tutta la durata e non può essere attaccato o interagito in altro modo. Quando lanci l'incantesimo, scegli di vedere o di sentire. Puoi utilizzare il senso scelto attraverso il sensore come se fossi nel suo spazio.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un focus del valore di almeno 100 mo, un corno ingioiellato per l'udito o un occhio di vetro per la vista"
   },
   "Conjure Animals": {
     "name": "Evoca animali",
@@ -677,52 +745,62 @@
   "Fear": {
     "name": "Paura",
     "description": "Proietti un'immagine fantasmatica delle peggiori paure di una creatura. Ogni creatura in un cono di 9 metri deve riuscire un tiro salvezza su Saggezza o lasciar cadere ciò che tiene in mano e diventare spaventata per la durata. Mentre è spaventata da questo incantesimo, una creatura deve eseguire l'azione Scattare e allontanarsi da te seguendo il percorso più sicuro disponibile in ciascuno dei suoi turni, a meno che non ci sia nessun posto dove muoversi.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una piuma bianca o il cuore di una gallina"
   },
   "Feign Death": {
     "name": "Morte simulata",
     "description": "Tocchi una creatura consenziente e la metti in uno stato catalettico indistinguibile dalla morte. Per la durata dell'incantesimo, o finché non si utilizza un'azione per toccare il bersaglio e interrompere l'incantesimo, il bersaglio appare morto a tutte le ispezioni esterne e agli incantesimi utilizzati per determinare il suo stato. Il bersaglio è accecato e incapace, e la sua velocità scende a 0. Il bersaglio ha resistenza a tutti i danni tranne quelli psichici.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di terra di cimitero"
   },
   "Fireball": {
     "name": "Bolide",
     "description": "Una striscia luminosa lampeggia dal tuo dito puntato verso un punto scelto entro il raggio d'azione e poi sboccia con un basso ruggito in un'esplosione di fiamme. Ogni creatura in una sfera di 6 metri di raggio centrata su quel punto deve effettuare un tiro salvezza su Destrezza. Un bersaglio subisce 8d6 danni da fuoco se fallisce il tiro salvezza, o la metà se lo riesce. Il fuoco si diffonde dietro gli angoli.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d6 per ogni livello dello slot superiore al 3°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d6 per ogni livello dello slot superiore al 3°.",
+    "material": "una pallina di guano di pipistrello e zolfo"
   },
   "Fly": {
     "name": "Volare",
     "description": "Tocchi una creatura consenziente. Il bersaglio ottiene una velocità di volo di 18 metri per la durata. Quando l'incantesimo termina, il bersaglio cade se è ancora in alto, a meno che non riesca a fermare la caduta.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 3°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 3°.",
+    "material": "una piuma d'ala di qualsiasi uccello"
   },
   "Gaseous Form": {
     "name": "Forma gassosa",
     "description": "Trasformi una creatura consenziente che tocchi, insieme a tutto ciò che indossa e trasporta, in una nuvola nebbiosa per la durata. L'incantesimo termina se la creatura scende a 0 punti ferita. Una creatura incorporea non viene influenzata. Mentre è in questa forma, l'unico metodo di movimento del bersaglio è una velocità di volo di 3 metri. Il bersaglio può entrare e occupare lo spazio di un'altra creatura. Il bersaglio ha resistenza ai danni non magici e dispone di vantaggio ai tiri salvezza su Forza, Destrezza e Costituzione.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di garza e un filo di fumo"
   },
   "Glyph of Warding": {
     "name": "Glifo della protezione",
     "description": "Quando esegui questo incantesimo, inscrivi un glifo che danneggia altre creature, su una superficie (come un tavolo, una sezione di pavimento o un muro) o all'interno di un oggetto che può essere chiuso (come un libro, una pergamena o uno scrigno del tesoro) per nascondere il glifo. Quando viene attivato, il glifo erutta energia magica in una sfera del raggio di 6 metri. Ogni creatura nell'area deve effettuare un tiro salvezza su Destrezza. Una creatura subisce 5d8 danni se fallisce il tiro salvezza, o la metà di questi danni se lo riesce.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno di un glifo delle rune esplosive aumenta di 1d8 per ogni livello dello slot superiore al 3°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno di un glifo delle rune esplosive aumenta di 1d8 per ogni livello dello slot superiore al 3°.",
+    "material": "incenso e polvere di diamante del valore di almeno 200 mo, che l'incantesimo consuma"
   },
   "Haste": {
     "name": "Fretta",
     "description": "Scegli una creatura consenziente che puoi vedere e che si trova a gittata. Fino al termine dell'incantesimo, la velocità del bersaglio raddoppia, ottiene bonus +2 alla CA, ha vantaggio ai tiri salvezza su Destrezza e ottiene un'azione aggiuntiva in ciascuno dei suoi turni. Quell'azione può essere utilizzata solo per effettuare l'azione Attacco (solo un attacco con un'arma), Scattare, Disingaggiare, Nascondersi o Utilizzare un oggetto. Quando l'incantesimo termina, il bersaglio non può muoversi o compiere azioni fino al suo turno successivo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una rasatura di radice di liquirizia"
   },
   "Hypnotic Pattern": {
     "name": "Modello ipnotico",
     "description": "Crei una trama contorta di colori che si intreccia nell'aria all'interno di un cubo di 9 metri entro gittata. Lo schema appare per un attimo e poi svanisce. Ogni creatura nell'area che vede la trama deve effettuare un tiro salvezza su Saggezza. Se il Tiro Salvezza fallisce, la creatura diventa affascinata per la durata. Mentre è affascinata da questo incantesimo, la creatura è incapace e ha una velocità pari a 0.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un bastoncino luminoso di incenso o una fiala di cristallo riempita di materiale fosforescente"
   },
   "Leomund's Tiny Hut": {
     "name": "La piccola capanna di Leomund",
     "description": "Una cupola di forza immobile del raggio di 3 metri prende forma intorno e sopra di te e rimane stazionaria per tutta la durata. L'incantesimo termina se esci dalla sua area. Nove creature di taglia Media o inferiore possono stare all'interno della cupola insieme a te. L'atmosfera all'interno dello spazio è confortevole e asciutta, indipendentemente dal tempo esterno. Fino al termine dell'incantesimo, puoi comandare che l'interno diventi fiocamente illuminato o buio. La cupola è opaca dall'esterno, di qualsiasi colore si scelga, ma è trasparente dall'interno.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una piccola perla di cristallo"
   },
   "Lightning Bolt": {
     "name": "Fulmine",
     "description": "Un fulmine che forma una linea lunga 30 metri e larga 1,5 metri fuoriesce da te in una direzione a tua scelta. Ogni creatura in fila deve effettuare un tiro salvezza su Destrezza. Una creatura subisce 8d6 danni da fulmine se fallisce il tiro salvezza, o la metà se lo supera. Il fulmine accende gli oggetti infiammabili presenti nell'area che non vengono indossati o trasportati.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d6 per ogni livello dello slot superiore al 3°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d6 per ogni livello dello slot superiore al 3°.",
+    "material": "un po' di pelliccia e una bacchetta di ambra, cristallo o vetro"
   },
   "Mass Healing Word": {
     "name": "Parola di guarigione di massa",
@@ -737,7 +815,8 @@
   "Nondetection": {
     "name": "Non rilevamento",
     "description": "Per la durata, nascondi un bersaglio che tocchi dalla magia di divinazione. Il bersaglio può essere una creatura consenziente, un luogo o un oggetto non più grande di 3 metri in qualsiasi dimensione. Il bersaglio non può essere preso di mira da alcuna magia di divinazione o percepito tramite sensori di scrutamento magico.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di polvere di diamante del valore di 25 mo cosparso sul bersaglio, che l'incantesimo consuma"
   },
   "Plant Growth": {
     "name": "Crescita delle piante",
@@ -757,27 +836,32 @@
   "Revivify": {
     "name": "Ravvivare",
     "description": "Tocchi una creatura che è morta nell'ultimo minuto. Quella creatura ritorna in vita con 1 punto ferita. Questo incantesimo non può riportare in vita una creatura morta di vecchiaia, né può ripristinare eventuali parti del corpo mancanti.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "diamanti del valore di 300 mo, che l'incantesimo consuma"
   },
   "Sending": {
     "name": "Invio",
     "description": "Invii un breve messaggio di venticinque parole o meno a una creatura con cui hai familiarità. La creatura sente il messaggio nella sua mente, ti riconosce come mittente se ti conosce e può rispondere immediatamente allo stesso modo. L'incantesimo consente alle creature con punteggio di Intelligenza pari almeno a 1 di comprendere il significato del tuo messaggio.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un breve pezzo di filo di rame sottile"
   },
   "Sleet Storm": {
     "name": "Tempesta di nevischio",
     "description": "Fino al termine dell'incantesimo, pioggia gelata e nevischio cadono in un cilindro alto 20 piedi con un raggio di 40 piedi centrato su un punto a gittata a scelta dell'incantatore. L'area è pesantemente oscurata e le fiamme esposte nell'area vengono spente. Il terreno nell'area è coperto di ghiaccio scivoloso, rendendolo un terreno difficile. Quando una creatura entra nell'area dell'incantesimo per la prima volta in un turno o inizia il suo turno lì, deve effettuare un tiro salvezza su Destrezza o cadere prona.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di polvere e qualche goccia d'acqua"
   },
   "Slow": {
     "name": "Lento",
     "description": "Alteri il tempo attorno a un massimo di sei creature di tua scelta in un cubo di 40 piedi entro gittata. Ogni bersaglio deve superare un tiro salvezza su Saggezza o essere influenzato per la durata. La velocità di un bersaglio influenzato è dimezzata, subisce una penalità di -2 alla CA e ai tiri salvezza su Destrezza e non può usare reazioni. Nel suo turno può utilizzare un'azione o un'azione bonus, non entrambe. Indipendentemente dalle capacità o dagli oggetti magici della creatura, essa non può effettuare più di un attacco in mischia o a distanza durante il suo turno.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una goccia di melassa"
   },
   "Speak with Dead": {
     "name": "Parla con i morti",
     "description": "Concedi una parvenza di vita e intelligenza a un cadavere di tua scelta che si trova a gittata, permettendogli di rispondere alle domande che poni. Il cadavere deve avere ancora la bocca e non può essere un non morto. L'incantesimo può comunicare con un cadavere morto da non più di 10 giorni. Puoi porre al cadavere fino a cinque domande. Il cadavere sa solo quello che sapeva in vita e non ha alcun obbligo di dare una risposta veritiera.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "bruciare incenso"
   },
   "Speak with Plants": {
     "name": "Parla con le piante",
@@ -787,17 +871,20 @@
   "Spirit Guardians": {
     "name": "Guardiani dello Spirito",
     "description": "Evochi gli spiriti per proteggerti. Volano attorno a te fino a una distanza di 4,5 metri per tutta la durata. Se sei buono o neutrale, la loro forma spettrale apparirà angelica o fatata (a tua scelta). Se sei malvagio, appaiono diabolici. Quando lanci questo incantesimo, puoi designare un qualsiasi numero di creature che puoi vedere come immuni da esso. La velocità di una creatura influenzata nell'area viene dimezzata e quando la creatura entra nell'area per la prima volta in un turno o inizia il suo turno lì, deve effettuare un tiro salvezza su Saggezza. Se il Tiro Salvezza fallisce, la creatura subisce 3d8 danni radiosi (se si è buoni o neutrali) o 3d8 danni necrotici (se si è malvagi). Se il tiro salvezza riesce, la creatura subisce la metà dei danni.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 3°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 3°.",
+    "material": "un simbolo sacro"
   },
   "Stinking Cloud": {
     "name": "Nuvola puzzolente",
     "description": "Crei una sfera di 6 metri di raggio di gas giallo e nauseabondo centrata su un punto entro gittata. La nuvola si estende dietro gli angoli e la sua area è fortemente oscurata. La nuvola rimane nell'aria per tutta la durata. Ogni creatura che si trova completamente all'interno della nuvola all'inizio del suo turno deve effettuare un tiro salvezza su Costituzione contro il veleno. Se fallisce il Tiro Salvezza, la creatura spende la sua azione in quel turno vomitando e barcollando.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un uovo marcio o diverse foglie di cavolo puzzola"
   },
   "Tongues": {
     "name": "Lingue",
     "description": "Questo incantesimo conferisce alla creatura che tocchi la capacità di comprendere qualsiasi linguaggio parlato senta. Inoltre, quando il bersaglio parla, qualsiasi creatura che conosca almeno una lingua e possa sentirlo capisce cosa dice.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un piccolo modello in creta di uno ziggurat"
   },
   "Vampiric Touch": {
     "name": "Tocco vampirico",
@@ -807,27 +894,32 @@
   "Water Breathing": {
     "name": "Respirazione in acqua",
     "description": "Questo incantesimo conferisce a un massimo di dieci creature consenzienti che puoi vedere nel raggio d'azione la capacità di respirare sott'acqua fino al termine dell'incantesimo. Le creature colpite mantengono anche la loro normale modalità di respirazione.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una canna corta o un pezzo di paglia"
   },
   "Water Walk": {
     "name": "Passeggiata sull'acqua",
     "description": "Questo incantesimo conferisce la capacità di muoversi attraverso qualsiasi superficie liquida (come acqua, acido, fango, neve, sabbie mobili o lava) come se fosse un terreno solido e innocuo (le creature che attraversano la lava fusa possono comunque subire danni dal calore) fino a dieci creature consenzienti che puoi vedere nel raggio d'azione per la durata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzo di sughero"
   },
   "Wind Wall": {
     "name": "Muro del vento",
     "description": "Un muro di forte vento si alza dal terreno in un punto a gittata da te scelto. Puoi realizzare un muro lungo fino a 50 piedi, alto 15 piedi e spesso 1 piede. Puoi modellare il muro nel modo che preferisci purché segua un percorso continuo lungo il terreno. Il muro dura per la durata. Quando il muro appare, ogni creatura all'interno della sua area deve effettuare un tiro salvezza su Forza. Una creatura subisce 3d8 danni contundenti se fallisce il tiro salvezza, o la metà se lo supera.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un minuscolo ventaglio e una piuma di origine esotica"
   },
   "Arcane Eye": {
     "name": "Occhio Arcano",
     "description": "Crei un occhio magico e invisibile entro il raggio d'azione che aleggia nell'aria per la durata. Ricevi mentalmente informazioni visive dall'occhio, che ha visione normale e scurovisione fino a 9 metri. L'occhio può guardare in ogni direzione. Con un'azione, è possibile muovere l'occhio fino a 9 metri in qualsiasi direzione. Non c'è limite alla distanza da te in cui l'occhio può allontanarsi, ma non può entrare in un altro piano di esistenza.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di pelliccia di pipistrello"
   },
   "Banishment": {
     "name": "Esilio",
     "description": "Tenti di inviare una creatura che puoi vedere entro il raggio d'azione su un altro piano di esistenza. Il bersaglio deve superare un tiro salvezza su Carisma o essere bandito. Se il bersaglio è nativo del piano di esistenza sul quale ti trovi, lo bandisci su un semipiano innocuo. Mentre è lì, il bersaglio è incapace. Il bersaglio rimane lì finché l'incantesimo non termina, a quel punto riappare nello spazio che ha lasciato o nello spazio non occupato più vicino se quello spazio è occupato.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 4°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 4°.",
+    "material": "un oggetto sgradevole per il bersaglio"
   },
   "Blight": {
     "name": "Perturbazione",
@@ -842,7 +934,8 @@
   "Confusion": {
     "name": "Confusione",
     "description": "Questo incantesimo assale e distorce le menti delle creature, generando illusioni e provocando azioni incontrollate. Ogni creatura in una sfera di 3 metri di raggio centrata su un punto scelto dall'incantatore entro la gittata deve riuscire un tiro salvezza su Saggezza quando si lancia questo incantesimo o ne viene influenzata. Un bersaglio influenzato non può effettuare reazioni e deve tirare un d10 all'inizio di ciascuno dei suoi turni per determinare il suo comportamento per quel turno.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, il raggio della sfera aumenta di 1,5 metri per ogni livello dello slot superiore al 4°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, il raggio della sfera aumenta di 1,5 metri per ogni livello dello slot superiore al 4°.",
+    "material": "tre gusci di noci"
   },
   "Conjure Minor Elementals": {
     "name": "Evoca Elementali Minori",
@@ -852,12 +945,14 @@
   "Conjure Woodland Beings": {
     "name": "Evoca gli esseri del bosco",
     "description": "Evochi creature fatate che appaiono negli spazi non occupati che puoi vedere nel raggio d'azione. Scegli una delle seguenti opzioni per ciò che appare: una creatura fatata con grado di sfida 2 o inferiore; due creature fatate di grado di sfida 1 o inferiore; quattro creature fatate con grado di sfida 1/2 o inferiore; otto creature fatate di grado di sfida 1/4 o inferiore.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando determinati slot incantesimo di livello superiore, scegli una delle opzioni di evocazione di cui sopra e appaiono più creature: il doppio con uno slot di 6° livello e il triplo con uno slot di 8° livello."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando determinati slot incantesimo di livello superiore, scegli una delle opzioni di evocazione di cui sopra e appaiono più creature: il doppio con uno slot di 6° livello e il triplo con uno slot di 8° livello.",
+    "material": "una bacca di agrifoglio per creatura evocata"
   },
   "Control Water": {
     "name": "Controllare l'acqua",
     "description": "Fino al termine dell'incantesimo, controlli qualsiasi acqua libera all'interno di un'area a tua scelta che sia un cubo fino a 100 piedi di lato. Puoi scegliere tra uno qualsiasi dei seguenti effetti quando lanci questo incantesimo, o qualsiasi combinazione: Inondazione, Parte dell'acqua, Reindirizzamento del flusso o Mulinello.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una goccia d'acqua e un pizzico di polvere"
   },
   "Death Ward": {
     "name": "Reparto della morte",
@@ -872,7 +967,8 @@
   "Divination": {
     "name": "Divinazione",
     "description": "La tua magia e un'offerta ti mettono in contatto con un dio o con i servitori di un dio. Fai una singola domanda riguardante un obiettivo, un evento o un'attività specifica che si verificherà entro 7 giorni. Il DM offre una risposta veritiera. La risposta potrebbe essere una breve frase, una rima criptica o un presagio. L'incantesimo non tiene conto di eventuali circostanze che potrebbero modificare il risultato, come il lancio di incantesimi aggiuntivi o la perdita o il guadagno di un compagno.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "incenso e un'offerta sacrificale appropriata alla tua religione, del valore complessivo di almeno 25 mo, che l'incantesimo consuma"
   },
   "Dominate Beast": {
     "name": "Domina la Bestia",
@@ -882,7 +978,8 @@
   "Evard's Black Tentacles": {
     "name": "I tentacoli neri di Evard",
     "description": "Tentacoli d'ebano che si contorcono riempiono un quadrato di 6 metri di terreno visibile entro gittata. Per la durata, questi tentacoli trasformano il terreno nell'area in terreno difficile. Quando una creatura entra nell'area influenzata per la prima volta in un turno o inizia il suo turno lì, deve riuscire un tiro salvezza su Destrezza o subire 3d6 danni contundenti ed essere trattenuta dai tentacoli fino al termine dell'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzo di tentacolo di un polipo gigante o di un calamaro gigante"
   },
   "Fabricate": {
     "name": "Fabbricare",
@@ -892,12 +989,14 @@
   "Fire Shield": {
     "name": "Scudo di fuoco",
     "description": "Fiamme sottili e sottili avvolgono il tuo corpo per la durata, diffondendo luce intensa in un raggio di 3 metri e luce fioca per altri 3 metri. Le fiamme ti forniscono uno scudo caldo o uno scudo gelido, a tua scelta. Lo scudo caldo garantisce resistenza ai danni da freddo, mentre lo scudo gelido garantisce resistenza ai danni da fuoco. Inoltre, ogni volta che una creatura entro 1,5 metri da te ti colpisce con un attacco in mischia, lo scudo erutta fiamme. L'attaccante subisce 2d8 danni da fuoco da uno scudo caldo o 2d8 danni da freddo da uno scudo freddo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di fosforo o una lucciola"
   },
   "Freedom of Movement": {
     "name": "Libertà di movimento",
     "description": "Tocchi una creatura consenziente. Per tutta la durata, il movimento del bersaglio non è influenzato dal terreno difficile, e gli incantesimi e altri effetti magici non possono né ridurre la velocità del bersaglio né causare paralisi o intralcio al bersaglio. Il bersaglio può anche spendere 1,5 metri di movimento per sfuggire automaticamente a restrizioni non magiche, come manette o una creatura con cui è in lotta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una cinghia di cuoio, legata attorno al braccio o un'appendice simile"
   },
   "Giant Insect": {
     "name": "Insetto gigante",
@@ -917,32 +1016,38 @@
   "Hallucinatory Terrain": {
     "name": "Terreno allucinatorio",
     "description": "Fai in modo che il terreno naturale in un cubo con spigolo di 150 piedi nel raggio d'azione sembri, suoni e odori come qualche altro tipo di terreno naturale. Pertanto, i campi aperti o una strada possono essere fatti assomigliare a una palude, una collina, un crepaccio o qualche altro terreno difficile o impraticabile. Uno stagno può essere fatto sembrare un prato erboso, un precipizio come un dolce pendio, o un burrone cosparso di rocce come una strada ampia e liscia. Le strutture, gli equipaggiamenti e le creature prodotte all'interno dell'area non cambiano aspetto.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una pietra, un ramoscello e un pezzetto di pianta verde"
   },
   "Ice Storm": {
     "name": "Tempesta di ghiaccio",
     "description": "Una grandinata di ghiaccio duro come la roccia si abbatte al suolo in un cilindro del raggio di 6 metri e alto 12 metri centrato su un punto entro gittata. Ogni creatura nel cilindro deve effettuare un tiro salvezza su Destrezza. Una creatura subisce 2d8 danni contundenti e 4d6 danni da freddo se fallisce il tiro salvezza, o la metà se lo riesce. I chicchi di grandine trasformano l'area d'effetto della tempesta in terreno difficile fino alla fine del tuo turno successivo.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, il danno contundente aumenta di 1d8 per ogni livello dello slot superiore al 4°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, il danno contundente aumenta di 1d8 per ogni livello dello slot superiore al 4°.",
+    "material": "un pizzico di polvere e qualche goccia d'acqua"
   },
   "Locate Creature": {
     "name": "Individua la creatura",
     "description": "Descrivi o nomina una creatura che ti è familiare. Percepisci la direzione verso la posizione della creatura, purché quella creatura si trovi entro 300 metri da te. Se la creatura si sta muovendo, conosci la direzione del suo movimento. L'incantesimo può localizzare una creatura specifica a te conosciuta, o la creatura più vicina di un tipo specifico (come un essere umano o un unicorno), purché tu abbia visto tale creatura da vicino entro 9 metri almeno una volta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di pelo di un segugio"
   },
   "Mordenkainen's Faithful Hound": {
     "name": "Il fedele segugio di Mordenkainen",
     "description": "Evochi un cane da guardia fantasma in uno spazio non occupato che puoi vedere entro la gittata, dove rimane per la durata, finché non lo interrompi con un'azione o finché non ti muovi a più di 30 metri di distanza da esso. Il segugio è invisibile a tutte le creature tranne che a te e non può essere ferito. Quando una creatura Piccola o più grande arriva entro 9 metri da esso senza prima pronunciare la password specificata quando si lancia questo incantesimo, il segugio inizia ad abbaiare sonoramente. Il segugio vede creature invisibili e può individuarle entro 1,5 metri da lui. Durante il tuo turno, come azione bonus, puoi ordinare al segugio di attaccare una creatura entro 1,5 metri da esso. Se colpisce, infligge 4d8 danni perforanti.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un minuscolo fischietto d'argento, un pezzo di osso e un filo"
   },
   "Mordenkainen's Private Sanctum": {
     "name": "Il santuario privato di Mordenkainen",
     "description": "L'incantatore rende magicamente sicura un'area entro il suo raggio d'azione. L'area è un cubo che può essere piccolo da 5 piedi fino a 100 piedi su ciascun lato. L'incantesimo dura per la durata o finché non si utilizza un'azione per interromperlo. Quando lanci l'incantesimo, decidi che tipo di sicurezza fornisce, scegliendo una o tutte le seguenti proprietà: il suono non può passare attraverso la barriera, la barriera diventa opaca, gli incantesimi di divinazione non possono prendere di mira l'interno dell'area, le creature nell'area non possono essere prese di mira dalla magia di divinazione, nulla può teletrasportarsi dentro o fuori dall'area protetta, il viaggio planare è bloccato all'interno dell'area protetta.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, puoi aumentare la dimensione del cubo di 30 metri per ogni livello dello slot oltre il 4°. Pertanto potresti proteggere un cubo che può essere fino a 200 piedi su un lato usando uno slot incantesimo di 5° livello."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, puoi aumentare la dimensione del cubo di 30 metri per ogni livello dello slot oltre il 4°. Pertanto potresti proteggere un cubo che può essere fino a 200 piedi su un lato usando uno slot incantesimo di 5° livello.",
+    "material": "un sottile foglio di piombo, un pezzo di vetro opaco, un batuffolo di cotone o stoffa e crisolito in polvere"
   },
   "Otiluke's Resilient Sphere": {
     "name": "La sfera resiliente di Otiluke",
     "description": "Una sfera di forza scintillante racchiude una creatura o un oggetto di taglia Grande o inferiore entro la gittata. Una creatura non consenziente deve effettuare un tiro salvezza su Destrezza. Se fallisce il Tiro Salvezza, la creatura resta rinchiusa per la durata. Niente (non oggetti fisici, energia o altri effetti di incantesimi) può passare attraverso la barriera, dentro o fuori, sebbene una creatura nella sfera possa respirare lì. La sfera è immune a tutti i danni e una creatura o un oggetto al suo interno non può essere danneggiato da attacchi o effetti originati dall'esterno.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzo emisferico di cristallo trasparente e un pezzo emisferico abbinato di gomma arabica"
   },
   "Phantasmal Killer": {
     "name": "Assassino fantasmatico",
@@ -952,27 +1057,32 @@
   "Polymorph": {
     "name": "Polimorfo",
     "description": "Questo incantesimo trasforma una creatura che puoi vedere nel raggio d'azione in una nuova forma. Una creatura non consenziente deve effettuare un tiro salvezza su Saggezza per evitare l'effetto. L'incantesimo non ha effetto su un mutaforma o su una creatura con 0 punti ferita. La trasformazione dura per la durata o finché il bersaglio non scende a 0 punti ferita o muore. La nuova forma può essere qualsiasi bestia il cui grado di sfida sia uguale o inferiore a quello del bersaglio (o al livello del bersaglio, se non ha un grado di sfida).",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un bozzolo di bruco"
   },
   "Secret Chest": {
     "name": "Forziere segreto",
     "description": "Nascondi uno scrigno e tutto il suo contenuto sul Piano Etereo. Devi toccare il baule e la replica in miniatura che funge da componente materiale per l'incantesimo. Lo scrigno può contenere fino a 12 piedi cubi di materiale non vivente (3 piedi per 2 piedi per 2 piedi). Mentre il baule rimane sul Piano Etereo, puoi usare un'azione e toccare la replica per richiamare il baule. Appare in uno spazio aperto sul terreno entro 1,5 metri da te. Puoi rimandare il baule nel Piano Etereo usando un'azione e toccando sia il baule che la replica.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "uno scrigno squisito, 3 piedi per 2 piedi per 2 piedi, costruito con materiali rari del valore di almeno 5.000 mo, e una replica minuscola realizzata con gli stessi materiali del valore di almeno 50 mo"
   },
   "Stone Shape": {
     "name": "Forma di pietra",
     "description": "Tocchi un oggetto di pietra di taglia Media o inferiore o una sezione di pietra non più lunga di 1,5 metri in qualsiasi dimensione e gli dai la forma che meglio si adatta al tuo scopo. Quindi, ad esempio, potresti modellare una grande roccia in un'arma, un idolo o uno scrigno, oppure creare un piccolo passaggio attraverso un muro, purché il muro sia spesso meno di 1,5 metri. Potresti anche modellare una porta di pietra o il suo telaio per sigillarla.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "argilla morbida, che deve essere lavorata all'incirca nella forma desiderata dell'oggetto in pietra"
   },
   "Stoneskin": {
     "name": "Pelle di pietra",
     "description": "Questo incantesimo trasforma la carne di una creatura consenziente che tocchi dura come la pietra. Fino al termine dell'incantesimo, il bersaglio ha resistenza ai danni contundenti, perforanti e taglienti non magici.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "polvere di diamante del valore di 100 mo, che l'incantesimo consuma"
   },
   "Wall of Fire": {
     "name": "Muro di fuoco",
     "description": "Crei un muro di fuoco su una superficie solida entro la gittata. Il muro può essere lungo fino a 18 metri, alto 20 piedi e spesso 30 cm, oppure un muro ad anello fino a 20 piedi di diametro, alto 20 piedi e spesso 30 cm. Il muro è opaco e dura per tutta la durata. Quando il muro appare, ogni creatura all'interno della sua area deve effettuare un tiro salvezza su Destrezza. Se il tiro salvezza fallisce, una creatura subisce 5d8 danni da fuoco, o la metà se il tiro salvezza riesce. Un lato del muro (a tua scelta) infligge 5d8 danni da fuoco a ogni creatura che termina il suo turno entro 3 metri da quel lato.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 4°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 5° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 4°.",
+    "material": "un pezzettino di fosforo"
   },
   "Animate Objects": {
     "name": "Animare oggetti",
@@ -987,7 +1097,8 @@
   "Bigby's Hand": {
     "name": "La mano di Bigby",
     "description": "Crei una Mano Grande di forza scintillante e traslucida in uno spazio non occupato che puoi vedere entro la gittata. La mano dura per la durata dell'incantesimo e si muove al tuo comando, imitando i movimenti della tua stessa mano. La mano è un oggetto che ha CA 20 e punti ferita pari al massimo dei tuoi punti ferita. Se scende a 0 punti ferita, l'incantesimo termina. Ha Forza 26 (+8) e Destrezza 10 (+0). Può intraprendere una varietà di azioni: Pugno Chiuso (forza 2d8), Mano Forte (spinta), Mano Afferrante (trattenere), Mano Interposta (blocco).",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno dell'opzione pugno chiuso aumenta di 2d8 e il danno della mano afferrante aumenta di 2d6 per ogni livello dello slot superiore al 5°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno dell'opzione pugno chiuso aumenta di 2d8 e il danno della mano afferrante aumenta di 2d6 per ogni livello dello slot superiore al 5°.",
+    "material": "un guscio d'uovo e un guanto di pelle di serpente"
   },
   "Cloudkill": {
     "name": "Nuvolauccide",
@@ -997,7 +1108,8 @@
   "Commune": {
     "name": "Comune",
     "description": "Contatta la tua divinità o un rappresentante divino e fai fino a tre domande a cui è possibile rispondere con un sì o un no. Devi porre le tue domande prima che l'incantesimo finisca. Riceverai una risposta corretta per ogni domanda posta. Gli esseri divini non sono necessariamente onniscienti, quindi potresti ricevere \"non chiaro\" come risposta se una domanda riguarda informazioni che vanno oltre la conoscenza della divinità.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "incenso e una fiala di acqua santa o empia"
   },
   "Commune with Nature": {
     "name": "Comunione con la natura",
@@ -1007,12 +1119,14 @@
   "Cone of Cold": {
     "name": "Cono di freddo",
     "description": "Una ventata di aria fredda erutta dalle tue mani. Ogni creatura in un cono di 18 metri deve effettuare un tiro salvezza su Costituzione. Una creatura subisce 8d8 danni da freddo se fallisce il tiro salvezza, o la metà se lo supera. Una creatura uccisa da questo incantesimo diventa una statua congelata finché non si scioglie.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 5°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 5°.",
+    "material": "un piccolo cono di cristallo o di vetro"
   },
   "Conjure Elemental": {
     "name": "Evoca Elementale",
     "description": "Evochi un servitore elementale. Scegli un'area di aria, terra, fuoco o acqua che riempia un cubo di 3 metri entro gittata. Un elementale di grado di sfida 5 o inferiore appropriato all'area scelta appare in uno spazio non occupato entro 3 metri da essa. Ad esempio, un elementale del fuoco emerge da un falò e un elementale della terra si alza dal terreno. Se perdi la concentrazione, l'elementale non scompare. Invece, perdi il controllo dell'elementale, diventa ostile nei tuoi confronti e nei tuoi compagni e potrebbe attaccare.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il grado di sfida aumenta di 1 per ogni livello di slot superiore al 5°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il grado di sfida aumenta di 1 per ogni livello di slot superiore al 5°.",
+    "material": "bruciare incenso al posto dell'aria, argilla molle al posto della terra, zolfo e fosforo al posto del fuoco, o acqua e sabbia al posto dell'acqua"
   },
   "Contact Other Plane": {
     "name": "Contatta l'altro aereo",
@@ -1027,12 +1141,14 @@
   "Creation": {
     "name": "Creazione",
     "description": "Si estrae ciuffi di materiale d'ombra dalla Coltre Oscura per creare un oggetto non vivente di materia vegetale nel raggio d'azione: articoli morbidi, corda, legno o qualcosa di simile. Puoi anche usare questo incantesimo per creare oggetti minerali come pietra, cristallo o metallo. L'oggetto creato non deve essere più grande di un cubo di 1,5 metri e deve avere la forma e il materiale già visti in precedenza. La durata dipende dal materiale dell'oggetto.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il cubo aumenta di 1,5 metri per ogni livello di slot superiore al 5°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il cubo aumenta di 1,5 metri per ogni livello di slot superiore al 5°.",
+    "material": "un minuscolo pezzo di materia dello stesso tipo dell'oggetto che intendi creare"
   },
   "Dispel Evil and Good": {
     "name": "Dissipare il male e il bene",
     "description": "L'energia scintillante ti circonda e ti protegge da folletti, non morti e creature provenienti da oltre il Piano Materiale. Per tutta la durata, celestiali, elementali, folletti, immondi e non morti hanno svantaggio ai tiri per colpire contro di te. Puoi terminare l'incantesimo in anticipo utilizzando una delle seguenti funzioni speciali: Spezza Incantesimo o Congedo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "acqua santa o argento e ferro in polvere"
   },
   "Dominate Person": {
     "name": "Dominare la persona",
@@ -1042,12 +1158,14 @@
   "Dream": {
     "name": "Sogno",
     "description": "Questo incantesimo modella i sogni di una creatura. Scegli una creatura a te nota come bersaglio di questo incantesimo. Il bersaglio deve trovarsi sul tuo stesso piano di esistenza. Le creature che non dormono, come gli elfi, non possono essere contattate da questo incantesimo. Tu, o una creatura consenziente che tocchi, entri in uno stato di trance, agendo come un messaggero. Mentre è in trance, il messaggero è consapevole di ciò che lo circonda, ma non può intraprendere azioni o muoversi.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una manciata di sabbia, una goccia d'inchiostro e una penna per scrivere strappata a un uccello addormentato"
   },
   "Flame Strike": {
     "name": "Colpo di Fiamma",
     "description": "Una colonna verticale di fuoco divino ruggisce dal cielo in un luogo da te specificato. Ogni creatura in un cilindro di 3 metri di raggio e alto 12 metri centrato su un punto entro la gittata deve effettuare un tiro salvezza su Destrezza. Una creatura subisce 4d6 danni da fuoco e 4d6 danni radiosi se fallisce il tiro salvezza, o la metà se lo supera.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno da fuoco o il danno radiante (a tua scelta) aumenta di 1d6 per ogni livello dello slot superiore al 5°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno da fuoco o il danno radiante (a tua scelta) aumenta di 1d6 per ogni livello dello slot superiore al 5°.",
+    "material": "pizzico di zolfo"
   },
   "Geas": {
     "name": "Geas",
@@ -1057,22 +1175,26 @@
   "Greater Restoration": {
     "name": "Maggiore Restaurazione",
     "description": "Infondi una creatura che tocchi con energia positiva per annullare un effetto debilitante. Puoi ridurre il livello di esaurimento del bersaglio di uno, o terminare uno dei seguenti effetti sul bersaglio: un effetto che ha affascinato o pietrificato il bersaglio; una maledizione, inclusa l'armonia del bersaglio con un oggetto magico maledetto; qualsiasi riduzione a uno dei punteggi di caratteristica del bersaglio; un effetto che riduce i punti ferita massimi del bersaglio.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "polvere di diamante del valore di almeno 100 mo, che l'incantesimo consuma"
   },
   "Hold Monster": {
     "name": "Tieni Mostro",
     "description": "Scegli una creatura che puoi vedere nel raggio d'azione. Il bersaglio deve riuscire un tiro salvezza su Saggezza o rimanere paralizzato per la durata. Questo incantesimo non ha effetto sui non morti. Alla fine di ciascuno dei suoi turni, il bersaglio può effettuare un altro tiro salvezza su Saggezza. In caso di successo, l'incantesimo termina sul bersaglio.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 5°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, puoi prendere come bersaglio una creatura aggiuntiva per ogni livello di slot superiore al 5°.",
+    "material": "un piccolo pezzo di ferro dritto"
   },
   "Insect Plague": {
     "name": "Peste degli insetti",
     "description": "Locuste sciamanti e mordenti riempiono una sfera del raggio di 6 metri centrata su un punto a gittata a scelta dell'incantatore. La sfera si diffonde attorno agli angoli. La sfera rimane per tutta la durata e la sua area è leggermente oscurata. L'area della sfera è un terreno difficile. Quando l'area appare, ogni creatura al suo interno deve effettuare un tiro salvezza su Costituzione. Una creatura subisce 4d10 danni perforanti se fallisce il tiro salvezza, o la metà se lo riesce. Una creatura deve effettuare questo tiro salvezza anche quando entra nell'area dell'incantesimo per la prima volta in un turno o termina lì il suo turno.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno aumenta di 1d10 per ogni livello dello slot superiore al 5°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, il danno aumenta di 1d10 per ogni livello dello slot superiore al 5°.",
+    "material": "alcuni chicchi di zucchero, alcuni chicchi di grano e una macchia di grasso"
   },
   "Legend Lore": {
     "name": "Leggenda Lore",
     "description": "Nomina o descrivi una persona, un luogo o un oggetto. L'incantesimo ti riporta alla mente un breve riassunto della tradizione significativa sulla cosa che hai nominato. La tradizione potrebbe consistere in racconti attuali, storie dimenticate o persino conoscenze segrete che non sono mai state ampiamente conosciute. Se la cosa che hai nominato non è di importanza leggendaria, non ottieni alcuna informazione.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "incenso del valore di almeno 250 mo, che l'incantesimo consuma, e quattro strisce d'avorio del valore di almeno 50 mo ciascuna"
   },
   "Mass Cure Wounds": {
     "name": "Ferite di cura di massa",
@@ -1092,32 +1214,38 @@
   "Passwall": {
     "name": "Passwall",
     "description": "Un passaggio appare in un punto a tua scelta che puoi vedere su una superficie di legno, gesso o pietra (come un muro, un soffitto o un pavimento) entro la gittata, e dura per la durata. Scegli le dimensioni dell'apertura: fino a 5 piedi di larghezza, 8 piedi di altezza e 20 piedi di profondità. Il passaggio non crea instabilità nella struttura che lo circonda.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di semi di sesamo"
   },
   "Planar Binding": {
     "name": "Legame planare",
     "description": "Con questo incantesimo, tenti di vincolare un celestiale, un elementale, un folletto o un immondo al tuo servizio. La creatura deve trovarsi nel raggio d'azione per l'intero lancio dell'incantesimo. (Di solito, la creatura viene prima evocata al centro di un cerchio magico invertito per mantenerla intrappolata mentre l'incantesimo viene lanciato.) Al termine del lancio, il bersaglio deve effettuare un tiro salvezza su Carisma. In caso di salvataggio fallito, è destinato a servirti per tutta la durata.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di livello superiore, la durata aumenta a 10 giorni (6° livello), 30 giorni (7° livello), 180 giorni (8° livello) o un anno e un giorno (9° livello)."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di livello superiore, la durata aumenta a 10 giorni (6° livello), 30 giorni (7° livello), 180 giorni (8° livello) o un anno e un giorno (9° livello).",
+    "material": "un gioiello del valore di almeno 1.000 mo, che l'incantesimo consuma"
   },
   "Raise Dead": {
     "name": "Resuscitare morti",
     "description": "Riporti in vita una creatura morta che tocchi, a condizione che sia morta da non più di 10 giorni. Se l'anima della creatura è disposta e libera di ricongiungersi al corpo, la creatura ritorna in vita con 1 punto ferita. Questo incantesimo neutralizza inoltre tutti i veleni e cura le malattie non magiche che colpivano la creatura al momento della sua morte. Questo incantesimo, tuttavia, non rimuove malattie magiche, maledizioni o effetti simili. L'incantesimo non può riportare in vita una creatura non morta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un diamante del valore di almeno 500 mo, che l'incantesimo consuma"
   },
   "Reincarnate": {
     "name": "Reincarnarsi",
     "description": "Tocchi un umanoide morto o un pezzo di umanoide morto. A condizione che la creatura sia morta da non più di 10 giorni, l'incantesimo forma per essa un nuovo corpo adulto e poi richiama l'anima ad entrare in quel corpo. Se l'anima del bersaglio non è libera o disposta a farlo, l'incantesimo fallisce. La magia modella un nuovo corpo in cui la creatura possa abitare, il che probabilmente fa sì che la razza della creatura cambi.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "oli e unguenti rari del valore di almeno 1.000 mo, che l'incantesimo consuma"
   },
   "Rary's Telepathic Bond": {
     "name": "Il legame telepatico di Rary",
     "description": "Forgi un collegamento telepatico tra un massimo di otto creature consenzienti di tua scelta entro il raggio d'azione, collegando psichicamente ciascuna creatura a tutte le altre per la durata. Le creature con punteggio di Intelligenza pari o inferiore a 2 non sono influenzate da questo incantesimo. Fino al termine dell'incantesimo, i bersagli possono comunicare telepaticamente attraverso il legame indipendentemente dal fatto che abbiano o meno un linguaggio comune.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "pezzi di guscio d'uovo di due diversi tipi di creature"
   },
   "Scrying": {
     "name": "Scrutare",
     "description": "Puoi vedere e sentire una particolare creatura di tua scelta che si trova sul tuo stesso piano di esistenza. Il bersaglio deve effettuare un tiro salvezza su Saggezza, che viene modificato in base a quanto bene conosci il bersaglio e al tipo di connessione fisica che hai con esso. Se il Tiro Salvezza riesce, il bersaglio non viene influenzato e non puoi usare nuovamente questo incantesimo contro di lui per 24 ore.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un focus del valore di almeno 1.000 mo, come una sfera di cristallo, uno specchio d'argento o una fonte piena di acqua santa"
   },
   "Seeming": {
     "name": "Apparente",
@@ -1132,7 +1260,8 @@
   "Teleportation Circle": {
     "name": "Cerchio di teletrasporto",
     "description": "Mentre lanci l'incantesimo, disegni sul terreno un cerchio del diametro di 3 metri su cui sono iscritti sigilli che collegano la tua posizione a un cerchio di teletrasporto permanente di tua scelta di cui conosci la sequenza dei sigilli e che si trova sul tuo stesso piano di esistenza. Un portale scintillante si apre all'interno del cerchio che hai disegnato e rimane aperto fino alla fine del tuo turno successivo. Qualsiasi creatura che entra nel portale appare istantaneamente entro 1,5 metri dal cerchio di destinazione o nello spazio non occupato più vicino se quello spazio è occupato.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "gessi e inchiostri rari infusi con gemme preziose del valore di 50 mo, che l'incantesimo consuma"
   },
   "Tree Stride": {
     "name": "Passo dell'albero",
@@ -1142,12 +1271,14 @@
   "Wall of Force": {
     "name": "Muro di Forza",
     "description": "Un invisibile muro di forza emerge in un punto a gittata scelto dall'incantatore. Il muro appare nell'orientamento scelto, come barriera orizzontale o verticale oppure ad angolo. Può galleggiare liberamente o appoggiarsi su una superficie solida. Puoi modellarlo in una cupola emisferica o in una sfera con un raggio massimo di 3 metri, oppure puoi modellare una superficie piana composta da dieci pannelli di 3 metri per 3 metri. Ogni pannello deve essere contiguo ad un altro pannello. In qualsiasi forma, il muro ha uno spessore di 1/4 di pollice. Dura per tutta la durata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di polvere ottenuta frantumando una pietra preziosa trasparente"
   },
   "Wall of Stone": {
     "name": "Muro di pietra",
     "description": "Un muro non magico di solida pietra appare in un punto a gittata da te scelto. Il muro ha uno spessore di 6 pollici ed è composto da dieci pannelli di 10 piedi per 10 piedi. Ogni pannello deve essere contiguo ad almeno un altro pannello. In alternativa, è possibile creare pannelli da 10 piedi per 20 piedi con uno spessore di soli 3 pollici. Se il muro attraversa lo spazio di una creatura quando appare, la creatura viene spinta da un lato del muro (a tua scelta). Se una creatura dovesse essere circondata su tutti i lati dal muro (o dal muro e da un'altra superficie solida), quella creatura può effettuare un tiro salvezza su Destrezza.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un piccolo blocco di granito"
   },
   "Arcane Gate": {
     "name": "Porta Arcana",
@@ -1162,12 +1293,14 @@
   "Chain Lightning": {
     "name": "Fulmine a catena",
     "description": "Crei un fulmine che si inarca verso un bersaglio di tua scelta che puoi vedere entro la gittata. Tre dardi poi saltano da quel bersaglio verso un massimo di altri tre bersagli, ognuno dei quali deve trovarsi entro 9 metri dal primo bersaglio. Un bersaglio può essere una creatura o un oggetto e può essere preso di mira solo da uno dei dardi. Un bersaglio deve effettuare un tiro salvezza su Destrezza. Il bersaglio subisce 10d8 danni da fulmine se fallisce il tiro salvezza, o la metà di questi danni se lo supera.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, un dardo aggiuntivo salta dal primo bersaglio a un altro bersaglio per ogni livello dello slot superiore al 6°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, un dardo aggiuntivo salta dal primo bersaglio a un altro bersaglio per ogni livello dello slot superiore al 6°.",
+    "material": "un po' di pelliccia; un pezzo di ambra, di vetro o una bacchetta di cristallo; e tre spille d'argento"
   },
   "Circle of Death": {
     "name": "Cerchio della morte",
     "description": "Una sfera di energia negativa si propaga in un raggio di 18 metri da un punto entro gittata. Ogni creatura vivente in quell'area deve effettuare un tiro salvezza su Costituzione. Un bersaglio subisce 8d6 danni necrotici se fallisce il tiro salvezza, o la metà se lo riesce.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, il danno aumenta di 2d6 per ogni livello dello slot superiore al 6°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, il danno aumenta di 2d6 per ogni livello dello slot superiore al 6°.",
+    "material": "la polvere di una perla nera frantumata del valore di almeno 500 mo"
   },
   "Conjure Fey": {
     "name": "Evoca Fey",
@@ -1177,22 +1310,26 @@
   "Contingency": {
     "name": "Contingenza",
     "description": "Scegli un incantesimo di 5° livello o inferiore che puoi lanciare, che abbia un tempo di lancio pari a 1 azione e che possa bersagliarti. Lanci quell'incantesimo, chiamato incantesimo contingente, come parte del lancio di contingenza, spendendo slot incantesimo per entrambi, ma l'incantesimo contingente non ha effetto. Invece, ha effetto quando si verifica una determinata circostanza. Descrivi quella circostanza quando lanci i due incantesimi. Quando tale circostanza si verifica per la prima volta, l’incantesimo contingente ha effetto. La contingenza termina se la lanci di nuovo, se la statuetta viene spostata a più di 3 metri da te o se muori.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una tua statuetta scolpita nell'avorio e decorata con gemme del valore di almeno 1.500 mo"
   },
   "Create Undead": {
     "name": "Crea non morti",
     "description": "Puoi lanciare questo incantesimo solo di notte. Scegli fino a tre cadaveri di umanoidi medi o piccoli nel raggio d'azione. Ogni cadavere diventa un ghoul sotto il tuo controllo. (Il DM ha le statistiche di gioco per queste creature.) Come azione bonus in ciascuno dei tuoi turni, puoi comandare mentalmente qualsiasi creatura che hai animato con questo incantesimo se la creatura si trova entro 120 piedi da te (se controlli più creature, puoi comandarne alcune o tutte contemporaneamente, impartendo a ciascuna lo stesso comando).",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 7° livello, puoi animare o riaffermare il controllo su quattro ghoul. Quando esegui questo incantesimo utilizzando uno slot incantesimo di 8° livello, puoi animare o riaffermare il controllo su cinque ghast o wight. Quando esegui questo incantesimo utilizzando uno slot incantesimo di 9° livello, puoi animare o riaffermare il controllo su sei ghast o wight o tre mummie."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 7° livello, puoi animare o riaffermare il controllo su quattro ghoul. Quando esegui questo incantesimo utilizzando uno slot incantesimo di 8° livello, puoi animare o riaffermare il controllo su cinque ghast o wight. Quando esegui questo incantesimo utilizzando uno slot incantesimo di 9° livello, puoi animare o riaffermare il controllo su sei ghast o wight o tre mummie.",
+    "material": "un vaso di terracotta pieno di terra tombale, un vaso di terracotta pieno di acqua salmastra e una pietra di onice nera da 150 mo per ogni cadavere"
   },
   "Disintegrate": {
     "name": "Disintegrarsi",
     "description": "Un sottile raggio verde scaturisce dal tuo dito puntato verso un bersaglio che puoi vedere a gittata. Il bersaglio può essere una creatura, un oggetto o una creazione di forza magica, come il muro creato da Muro di forza. Una creatura presa di mira da questo incantesimo deve effettuare un tiro salvezza su Destrezza. Se fallisce il Tiro Salvezza, il bersaglio subisce 10d6 + 40 danni da forza. Il bersaglio viene disintegrato se questo danno lo lascia con 0 punti ferita. Una creatura disintegrata e tutto ciò che indossa e trasporta, eccetto gli oggetti magici, sono ridotti a un mucchio di fine polvere grigia.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, il danno aumenta di 3d6 per ogni livello dello slot superiore al 6°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, il danno aumenta di 3d6 per ogni livello dello slot superiore al 6°.",
+    "material": "una calamita e un pizzico di polvere"
   },
   "Drawmij's Instant Summons": {
     "name": "Evocazione istantanea di Drawmij",
     "description": "Tocchi un oggetto che pesa 10 libbre o meno e la cui dimensione più lunga è 6 piedi o meno. L'incantesimo lascia un segno invisibile sulla sua superficie e incide invisibilmente il nome dell'oggetto sullo zaffiro che usi come componente materiale. Ogni volta che lanci questo incantesimo, devi usare uno zaffiro diverso. Successivamente, in qualsiasi momento, puoi usare la tua azione per pronunciare il nome dell'oggetto e schiacciare lo zaffiro. L'oggetto appare istantaneamente nella tua mano indipendentemente dalla distanza fisica o planare, e l'incantesimo termina.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "uno zaffiro del valore di 1.000 mo"
   },
   "Eyebite": {
     "name": "Occhiata",
@@ -1202,27 +1339,32 @@
   "Find the Path": {
     "name": "Trova il percorso",
     "description": "Questo incantesimo ti consente di trovare il percorso fisico più breve e diretto verso una specifica posizione fissa con cui hai familiarità sullo stesso piano di esistenza. Se si nomina una destinazione su un altro piano di esistenza, una destinazione che si muove (come una fortezza mobile) o una destinazione che non è specifica (come \"la tana di un drago verde\"), l'incantesimo fallisce. Per tutta la durata, finché sei sullo stesso piano di esistenza della destinazione, sai quanto è lontana e in quale direzione si trova.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un set di strumenti divinatori (come ossa, bastoncini d'avorio, carte, denti o rune scolpite) del valore di 100 mo e un oggetto dal luogo che desideri trovare"
   },
   "Flesh to Stone": {
     "name": "Dalla carne alla pietra",
     "description": "Tenti di trasformare in pietra una creatura che puoi vedere e che si trova a gittata. Se il corpo del bersaglio è fatto di carne, la creatura deve effettuare un tiro salvezza su Costituzione. Se fallisce il Tiro Salvezza, viene trattenuto poiché la sua carne inizia a indurirsi. Se il tiro salvezza riesce, la creatura non viene influenzata. Una creatura trattenuta da questo incantesimo deve effettuare un altro tiro salvezza su Costituzione alla fine di ciascuno dei suoi turni. Se supera il tiro salvezza contro questo incantesimo tre volte, l'incantesimo termina. Se fallisce il tiro salvezza tre volte, viene trasformato in pietra e sottoposto alla condizione pietrificata per la durata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di lime, acqua e terra"
   },
   "Forbiddance": {
     "name": "Proibizione",
     "description": "Crei una barriera contro i viaggi magici che protegge fino a 40.000 piedi quadrati di superficie fino ad un'altezza di 9 piedi sopra il pavimento. Per tutta la durata, le creature non possono teletrasportarsi nell'area o utilizzare portali, come quelli creati dall'incantesimo cancello, per entrare nell'area. La protezione impedisce inoltre l'ingresso a creature di un tipo specifico (a tua scelta quando lanci l'incantesimo): celestiali, elementali, fatati, immondi o non morti. Quando una tale creatura tenta di entrare nell'area protetta per la prima volta in un turno, subisce 5d10 danni radianti o necrotici (a tua scelta quando lanci l'incantesimo).",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, puoi mantenere la tutela fino a 2 giorni con uno slot di 7° livello, 10 giorni con uno slot di 8° o 30 giorni con uno di 9°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, puoi mantenere la tutela fino a 2 giorni con uno slot di 7° livello, 10 giorni con uno slot di 8° o 30 giorni con uno di 9°.",
+    "material": "una spruzzata di acqua santa, incenso raro e rubino in polvere del valore di almeno 1.000 mo"
   },
   "Globe of Invulnerability": {
     "name": "Globo dell'invulnerabilità",
     "description": "Una barriera immobile e debolmente luccicante appare in un raggio di 3 metri intorno a te e rimane per la durata. Qualsiasi incantesimo di 5° livello o inferiore lanciato dall'esterno della barriera non può influenzare le creature o gli oggetti al suo interno, anche se l'incantesimo viene lanciato utilizzando uno slot incantesimo di livello superiore. Un incantesimo di questo tipo può prendere di mira creature e oggetti all'interno della barriera, ma l'incantesimo non ha alcun effetto su di essi.",
-    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, la barriera blocca gli incantesimi di un livello superiore per ogni livello di slot superiore al 6°."
+    "higherLevels": "Quando lanci questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, la barriera blocca gli incantesimi di un livello superiore per ogni livello di slot superiore al 6°.",
+    "material": "una perla di vetro o cristallo che si frantuma al termine dell'incantesimo"
   },
   "Guards and Wards": {
     "name": "Guardie e reparti",
     "description": "Crei un'interdizione che protegge fino a 2.500 piedi quadrati di superficie (un'area di 50 piedi quadrati, o cento quadrati da 5 piedi o venticinque quadrati da 10 piedi). L'area protetta può essere alta fino a 20 piedi e modellata come desideri. Puoi proteggere diversi piani di una roccaforte dividendo l'area tra loro, purché tu possa camminare in ciascuna area contigua mentre lanci l'incantesimo. Quando lanci questo incantesimo, puoi specificare gli individui che non sono influenzati da nessuno o da tutti gli effetti da te scelti. Puoi anche specificare una password che, se pronunciata ad alta voce, rende chi parla immune da questi effetti.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "incenso che brucia, una piccola misura di zolfo e olio, una corda annodata, una piccola quantità di sangue di umber hulk e una piccola verga d'argento del valore di almeno 10 mo"
   },
   "Harm": {
     "name": "Danno",
@@ -1237,7 +1379,8 @@
   "Heroes' Feast": {
     "name": "Festa degli Eroi",
     "description": "Produci una grande festa, inclusi cibi e bevande magnifici. Il banchetto impiega 1 ora per essere consumato e scompare alla fine di quel tempo, e gli effetti benefici non si manifestano fino al termine di quest'ora. Fino a dodici creature possono partecipare al banchetto. Una creatura che partecipa al banchetto ottiene diversi benefici per 24 ore: immunità al veleno e alle malattie; vantaggio sui tiri salvezza su Saggezza; un aumento dei suoi punti ferita massimi di 2d10 punti ferita per 24 ore.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una ciotola tempestata di gemme del valore di almeno 1.000 mo, che l'incantesimo consuma"
   },
   "Irresistible Dance": {
     "name": "Danza irresistibile",
@@ -1247,17 +1390,20 @@
   "Magic Jar": {
     "name": "Vaso magico",
     "description": "Il tuo corpo cade in uno stato catatonico mentre la tua anima lo lascia ed entra nel contenitore che hai utilizzato per la componente materiale dell'incantesimo. Mentre la tua anima abita nel contenitore, sei consapevole di ciò che ti circonda come se fossi nello spazio del contenitore. Non puoi muoverti o usare reazioni. L'unica azione che puoi intraprendere è proiettare la tua anima fino a 30 metri fuori dal contenitore, ritornando nel tuo corpo vivente (e terminando l'incantesimo) o tentando di possedere il corpo di un umanoide.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una gemma, un cristallo, un reliquiario o qualche altro contenitore ornamentale del valore di almeno 500 mo"
   },
   "Mass Suggestion": {
     "name": "Suggerimento di massa",
     "description": "Suggerisci un corso di attività (limitato a una frase o due) e influenzi magicamente fino a dodici creature di tua scelta che puoi vedere nel raggio d'azione e che possono ascoltarti e capirti. Le creature che non possono essere affascinate sono immuni a questo effetto. Il suggerimento deve essere formulato in modo tale da far sembrare ragionevole la linea di condotta. Ogni bersaglio deve effettuare un tiro salvezza su Saggezza. Se fallisce il Tiro Salvezza, prosegue la linea d'azione descritta al meglio delle sue capacità per tutta la durata.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello, la durata è di 10 giorni. Quando usi uno slot incantesimo di 8° livello, la durata è di 30 giorni. Quando usi uno slot incantesimo di 9° livello, la durata è di un anno e un giorno."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello, la durata è di 10 giorni. Quando usi uno slot incantesimo di 8° livello, la durata è di 30 giorni. Quando usi uno slot incantesimo di 9° livello, la durata è di un anno e un giorno.",
+    "material": "una lingua di serpente e un pezzetto di favo di miele o una goccia di olio dolce"
   },
   "Move Earth": {
     "name": "Muovi la Terra",
     "description": "Scegli un'area di terreno non più grande di 40 piedi per lato entro la gittata. Puoi rimodellare la terra, la sabbia o l'argilla nell'area nel modo che preferisci per la durata. Puoi aumentare o diminuire l'elevazione dell'area, creare o riempire una trincea, erigere o appiattire un muro o formare un pilastro. L'entità di tali cambiamenti non può superare la metà della dimensione più grande dell'area. Quindi, se influenzi un quadrato di 40 piedi, puoi creare un pilastro alto fino a 20 piedi, aumentare o diminuire l'elevazione del quadrato fino a 20 piedi, scavare una trincea profonda fino a 20 piedi e così via.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una lama di ferro e un piccolo sacchetto contenente una miscela di terreno: argilla, terriccio e sabbia"
   },
   "Planar Ally": {
     "name": "Alleato Planare",
@@ -1267,12 +1413,14 @@
   "Programmed Illusion": {
     "name": "Illusione programmata",
     "description": "Crei l'illusione di un oggetto, una creatura o qualche altro fenomeno visibile entro il raggio d'azione che si attiva quando si verifica una condizione specifica. Fino ad allora l'illusione è impercettibile. Non deve essere più grande di un cubo di 9 metri e tu decidi quando lanci l'incantesimo come si comporta l'illusione e quali suoni emette. Questa performance con script può durare fino a 5 minuti. Quando si verifica la condizione da te specificata, l'illusione prende vita e si comporta nel modo da te descritto.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un po' di vello e polvere di giada del valore di almeno 25 mo"
   },
   "Sunbeam": {
     "name": "Raggio di sole",
     "description": "Un raggio di luce brillante esce dalla tua mano in una linea larga 1,5 metri e lunga 18 metri. Ogni creatura in fila deve effettuare un tiro salvezza su Costituzione. Se fallisce il tiro salvezza, la creatura subisce 6d8 danni radiosi e resta accecata fino al turno successivo dell'incantatore. Se il tiro salvezza riesce, subisce la metà dei danni e non viene accecato da questo incantesimo. I non morti e le melme hanno svantaggio in questo tiro salvezza. Puoi creare una nuova linea di splendore come tua azione in qualsiasi turno fino al termine dell'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una lente d'ingrandimento"
   },
   "Transport via Plants": {
     "name": "Trasporto tramite piante",
@@ -1282,22 +1430,26 @@
   "True Seeing": {
     "name": "La vera visione",
     "description": "Dai alla creatura consenziente che tocchi la capacità di vedere le cose come sono realmente. Per tutta la durata, la creatura possiede veravista, nota porte segrete nascoste dalla magia e può vedere nel Piano Etereo, il tutto entro un raggio di 32 metri.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un unguento per gli occhi che costa 25 mo; è fatto con polvere di funghi, zafferano e grasso; e viene consumato dall'incantesimo"
   },
   "Wall of Ice": {
     "name": "Muro di ghiaccio",
     "description": "Crei un muro di ghiaccio su una superficie solida entro la gittata. Il muro è spesso 30 cm, lungo fino a 9 metri e alto 3 metri, oppure è una cupola emisferica fino a 20 piedi di diametro. Il muro rimane al suo posto per tutta la durata. Ogni sezione di 3 metri del muro ha CA 5 e 30 punti ferita. Se una sezione viene distrutta, lascia dietro di sé uno strato di aria gelida nello spazio occupato dal muro. Una creatura che si muove attraverso la cortina di aria gelida per la prima volta in un turno deve effettuare un tiro salvezza su Costituzione o subire 5d6 danni da freddo.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, il danno inflitto dal muro quando appare aumenta di 2d6 e il danno derivante dal passaggio attraverso la cortina di aria gelida aumenta di 1d6, per ogni livello dello slot superiore al 6°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, il danno inflitto dal muro quando appare aumenta di 2d6 e il danno derivante dal passaggio attraverso la cortina di aria gelida aumenta di 1d6, per ogni livello dello slot superiore al 6°.",
+    "material": "un piccolo pezzo di quarzo"
   },
   "Wall of Thorns": {
     "name": "Muro di spine",
     "description": "Crei un muro di cespugli resistenti, flessibili e aggrovigliati, irti di spine aguzze. Il muro appare nel raggio d'azione su una superficie solida e dura per la durata. Scegli di realizzare un muro lungo fino a 18 metri, alto 3 metri e spesso 1,5 metri oppure un cerchio che abbia un diametro di 20 piedi e sia alto fino a 20 piedi e spesso 1,5 metri. Il muro blocca la linea di vista. Quando il muro appare, ogni creatura all'interno della sua area deve effettuare un tiro salvezza su Destrezza. Se il Tiro Salvezza fallisce, una creatura subisce 7d8 danni perforanti, o la metà se il Tiro Salvezza riesce.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, entrambi i tipi di danno aumentano di 1d8 per ogni livello di slot superiore al 6°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, entrambi i tipi di danno aumentano di 1d8 per ogni livello di slot superiore al 6°.",
+    "material": "una manciata di spine"
   },
   "Wind Walk": {
     "name": "Camminata del vento",
     "description": "Tu e fino a dieci creature consenzienti che puoi vedere nel raggio d'azione assumete una forma gassosa per la durata, apparendo come ciuffi di nuvole. Mentre si trova in questa forma di nuvola, una creatura ha una velocità di volo di 90 metri e ha resistenza ai danni provocati dalle armi non magiche. Le uniche azioni che una creatura può intraprendere in questa forma sono l'azione Scattare o tornare alla sua forma normale. Il ripristino richiede 1 minuto, durante il quale la creatura è incapace e non può muoversi.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "fuoco e acqua santa"
   },
   "Word of Recall": {
     "name": "Parola di richiamo",
@@ -1312,7 +1464,8 @@
   "Delayed Blast Fireball": {
     "name": "Palla di fuoco a esplosione ritardata",
     "description": "Un raggio di luce gialla lampeggia dal tuo dito puntato, quindi si condensa per indugiare in un punto scelto entro il raggio d'azione come una perla luminosa per la durata. Quando l'incantesimo termina, sia perché la tua concentrazione viene interrotta sia perché decidi di interromperlo, la perla sboccia con un basso ruggito in un'esplosione di fiamma che si diffonde dietro gli angoli. Ogni creatura in una sfera di 6 metri di raggio centrata su quel punto deve effettuare un tiro salvezza su Destrezza. Una creatura subisce danni da fuoco pari al totale dei danni accumulati se fallisce il Tiro Salvezza, o la metà se lo riesce. Il danno base dell'incantesimo è 12d6.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 8° livello o superiore, il danno base aumenta di 1d6 per ogni livello dello slot superiore al 7°."
+    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 8° livello o superiore, il danno base aumenta di 1d6 per ogni livello dello slot superiore al 7°.",
+    "material": "una pallina di guano di pipistrello e zolfo"
   },
   "Divine Word": {
     "name": "Parola Divina",
@@ -1337,7 +1490,8 @@
   "Forcecage": {
     "name": "Gabbia di forza",
     "description": "Una prigione immobile, invisibile, a forma di cubo, composta di forza magica, prende vita attorno a un'area a gittata scelta dall'incantatore. La prigione può essere una gabbia (un cubo di 20 piedi con sbarre del diametro di 1/2 pollice distanziate di 1/2 pollice l'una dall'altra) o una scatola (un cubo di 3 metri solido su tutti i lati). Una creatura all'interno della gabbia è intrappolata. Gli incantesimi possono essere lanciati attraverso la gabbia, ma la creatura non può uscirne in alcun modo. L'incantesimo termina se lo lanci di nuovo o se usi un'azione per interromperlo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "polvere di rubino del valore di 1.500 mo"
   },
   "Mirage Arcane": {
     "name": "Miraggio Arcano",
@@ -1347,17 +1501,20 @@
   "Mordenkainen's Magnificent Mansion": {
     "name": "La magnifica villa di Mordenkainen",
     "description": "Evochi una dimora extradimensionale nel raggio d'azione che dura per la durata. Scegli tu dove si trova il suo unico ingresso. L'ingresso luccica debolmente ed è largo 5 piedi e alto 10 piedi. Tu e qualsiasi creatura da te designata quando lanci l'incantesimo potete entrare nella dimora extradimensionale finché il portale rimane aperto. Puoi aprire o chiudere il portale se ti trovi entro 9 metri da esso.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un portale in miniatura scolpito nell'avorio, un piccolo pezzo di marmo lucido e un minuscolo cucchiaio d'argento, ogni oggetto vale almeno 5 mo"
   },
   "Mordenkainen's Sword": {
     "name": "La spada di Mordenkainen",
     "description": "Crei un piano di forza a forma di spada che fluttua nel raggio d'azione. Dura per tutta la durata. Quando appare la spada, effettui un attacco con incantesimo in mischia contro un bersaglio di tua scelta entro 1,5 metri dalla spada. Se colpisce, il bersaglio subisce 3d10 danni da forza. Fino al termine dell'incantesimo, puoi usare un'azione bonus in ciascuno dei tuoi turni per muovere la spada fino a 20 piedi in un punto che puoi vedere e ripetere questo attacco contro lo stesso bersaglio o uno diverso.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una spada di platino in miniatura con impugnatura e guardia a croce di rame e zinco, del valore di 250 mo"
   },
   "Plane Shift": {
     "name": "Spostamento aereo",
     "description": "Tu e un massimo di otto creature consenzienti che si tengono per mano in un cerchio venite trasportati su un diverso piano di esistenza. Puoi specificare una destinazione target in termini generali, come la Città d'Ottone sul Piano Elementale del Fuoco o il palazzo di Dispater sul secondo livello dei Nove Inferni, e apparire dentro o vicino a quella destinazione. In alternativa, se conosci la sequenza del sigillo di un cerchio di teletrasporto su un altro piano di esistenza, puoi usare quel cerchio come destinazione.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un'asta di metallo biforcuta del valore di almeno 250 mo, in sintonia con uno specifico piano di esistenza"
   },
   "Prismatic Spray": {
     "name": "Spruzzo prismatico",
@@ -1367,37 +1524,44 @@
   "Project Image": {
     "name": "Immagine del progetto",
     "description": "Crei una copia illusoria di te stesso che dura per tutta la durata. La copia può apparire in qualsiasi luogo entro il raggio d'azione che hai visto prima, indipendentemente dagli ostacoli che si frappongono. L'illusione ti assomiglia e suona come te ma è intangibile. Se l'illusione subisce danni, scompare e l'incantesimo termina. Puoi usare la tua azione per muovere questa illusione fino al doppio della tua velocità e farle gesticolare, parlare e comportarsi nel modo che preferisci.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una piccola replica di te realizzata con materiali del valore di almeno 5 mo"
   },
   "Regenerate": {
     "name": "Rigenerare",
     "description": "Tocchi una creatura e stimoli la sua naturale capacità di guarigione. Il bersaglio recupera 4d8 + 15 punti ferita. Per la durata dell'incantesimo, il bersaglio recupera 1 punto ferita all'inizio di ciascuno dei suoi turni (10 punti ferita ogni minuto). I membri del corpo mozzati del bersaglio (dita, gambe, code e così via) vengono ripristinati dopo 2 minuti. Se si prende la parte mozzata e la si tiene attaccata al moncone, l'incantesimo fa sì che l'arto si unisca istantaneamente al moncone.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una ruota di preghiera e acqua santa"
   },
   "Resurrection": {
     "name": "Risurrezione",
     "description": "Tocchi una creatura morta che è morta da non più di un secolo, che non è morta di vecchiaia e che non è morta. Se la sua anima è libera e consenziente, il bersaglio ritorna in vita con tutti i suoi punti ferita. Questo incantesimo neutralizza qualsiasi veleno e cura le normali malattie che affliggevano la creatura al momento della morte. Tuttavia, non rimuove malattie magiche, maledizioni e simili. L'incantesimo può anche fornire un nuovo corpo se l'originale non esiste più, nel qual caso devi pronunciare il nome della creatura.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un diamante del valore di almeno 1.000 mo, che l'incantesimo consuma"
   },
   "Reverse Gravity": {
     "name": "Gravità inversa",
     "description": "Questo incantesimo inverte la gravità in un cilindro del raggio di 15 metri e alto 30 metri centrato su un punto entro la gittata. Tutte le creature e gli oggetti che non sono in qualche modo ancorati al terreno nell'area cadono verso l'alto e raggiungono la parte superiore dell'area. Una creatura può effettuare un tiro salvezza su Destrezza per afferrare un oggetto fisso che può raggiungere, evitando così la caduta. Se durante la caduta si incontra un oggetto solido (come un soffitto), le creature e gli oggetti che cadono lo colpiscono proprio come farebbero durante una normale caduta verso il basso.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una calamita e limatura di ferro"
   },
   "Sequester": {
     "name": "Sequestrare",
     "description": "Per mezzo di questo incantesimo, una creatura consenziente o un oggetto può essere nascosto, al sicuro dall'essere scoperto per tutta la durata. Quando lanci l'incantesimo e tocchi il bersaglio, questo diventa invisibile e non può essere preso di mira da incantesimi di divinazione o percepito attraverso sensori di scrutamento creati da incantesimi di divinazione. Se il bersaglio è una creatura, cade in uno stato di animazione sospesa. Per lui il tempo cessa di scorrere e non invecchia.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una polvere composta da polvere di diamante, smeraldo, rubino e zaffiro del valore di almeno 5.000 mo, che l'incantesimo consuma"
   },
   "Simulacrum": {
     "name": "Simulacro",
     "description": "Si modella un duplicato illusorio di una bestia o di un umanoide che si trovi entro la gittata per l'intero tempo di lancio dell'incantesimo. Il duplicato è una creatura, parzialmente reale e formata da ghiaccio o neve, e può compiere azioni e subirne gli effetti come una normale creatura. Sembra essere uguale all'originale, ma ha la metà dei punti ferita massimi della creatura ed è formato senza alcun equipaggiamento. Altrimenti, l'illusione utilizza tutte le statistiche della creatura che duplica, tranne che si tratta di un costrutto.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "neve o ghiaccio in quantità sufficienti a realizzare una copia a grandezza naturale della creatura duplicata; alcuni capelli, ritagli di unghie o altri pezzi del corpo di quella creatura posti nella neve o nel ghiaccio; e rubino in polvere del valore di 1.500 mo, cosparso sul duplicato e consumato dall'incantesimo"
   },
   "Symbol": {
     "name": "Simbolo",
     "description": "Quando esegui questo incantesimo, inscrivi un glifo dannoso su una superficie (come una sezione di pavimento, un muro o un tavolo) o all'interno di un oggetto che può essere chiuso per nascondere il glifo (come un libro, una pergamena o uno scrigno del tesoro). Il glifo può coprire un'area non più grande di 3 metri di diametro. Sei tu a decidere cosa attiva il glifo quando lanci l'incantesimo. Per i glifi incisi su una superficie, i trigger più tipici includono toccare o calpestare il glifo, rimuovere un altro oggetto che lo copre o avvicinarsi entro una certa distanza da esso. Quando viene attivato, il glifo erutta energia magica in una sfera del raggio di 18 metri centrata sul glifo. La sfera si diffonde attorno agli angoli. Ogni creatura nell'area deve effettuare un tiro salvezza (il tipo dipende dall'effetto scelto: Morte, Discordia, Paura, Disperazione, Follia, Dolore, Sonno o Stordimento).",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "mercurio, fosforo e polvere di diamante e opale per un valore totale di almeno 1.000 mo, che l'incantesimo consuma"
   },
   "Teleport": {
     "name": "Teletrasporto",
@@ -1407,27 +1571,32 @@
   "Whirlwind": {
     "name": "Vortice",
     "description": "Un turbine ulula fino a un punto del terreno specificato. Il turbine è un cilindro del raggio di 3 metri e alto 9 metri centrato su quel punto. Fino al termine dell'incantesimo, puoi usare la tua azione per spostare il turbine fino a 9 metri in qualsiasi direzione lungo il terreno. Il turbine risucchia qualsiasi oggetto di taglia Media o inferiore che non sia fissato a nulla e che non venga indossato o trasportato. Una creatura deve effettuare un tiro salvezza su Destrezza la prima volta in un turno in cui entra nel turbine o in cui il turbine entra nel suo spazio.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pezzo di paglia"
   },
   "Antimagic Field": {
     "name": "Campo antimagia",
     "description": "Una sfera invisibile di antimagia del raggio di 3 metri ti circonda. Quest'area è separata dall'energia magica che pervade il multiverso. All'interno della sfera non è possibile lanciare incantesimi, le creature evocate scompaiono e persino gli oggetti magici diventano banali. Fino al termine dell'incantesimo, la sfera si muove con te, centrata su di te. Gli incantesimi e gli altri effetti magici, eccetto quelli creati da un artefatto o da una divinità, vengono soppressi nella sfera e non possono sporgere al suo interno.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di polvere di ferro o limatura di ferro"
   },
   "Antipathy/Sympathy": {
     "name": "Antipatia/simpatia",
     "description": "Questo incantesimo attrae o respinge le creature di tua scelta. Prendi di mira qualcosa entro la gittata, un oggetto o una creatura Enorme o più piccola o un'area che non sia più grande di un cubo di 200 piedi. Quindi specifica un tipo di creatura intelligente, come draghi rossi, goblin o vampiri. Investi il ​​bersaglio con un'aura che attrae o respinge le creature specificate per la durata. Scegli antipatia o simpatia come effetto dell'aura. Qualsiasi creatura del tipo da te scelto che si trova entro 18 metri dal bersaglio deve effettuare un tiro salvezza su Saggezza.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "o una zolletta di allume imbevuta di aceto per l'effetto antipatia oppure una goccia di miele per l'effetto simpatia"
   },
   "Clone": {
     "name": "Clone",
     "description": "Questo incantesimo fa crescere un duplicato inerte di una creatura vivente come protezione contro la morte. Questo clone si forma all'interno di un vaso sigillato e raggiunge la sua piena dimensione e maturità dopo 120 giorni; puoi anche scegliere che il clone sia una versione più giovane della stessa creatura. Rimane inerte e dura indefinitamente, finché il suo vaso rimane indisturbato. In qualsiasi momento dopo la maturazione del clone, se la creatura originale muore, la sua anima si trasferisce al clone, a condizione che l'anima sia libera e disposta a ritornare.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un diamante del valore di almeno 1.000 mo e almeno 1 pollice cubo di carne della creatura da clonare, che l'incantesimo consuma, e un vaso del valore di almeno 2.000 mo che abbia un coperchio sigillabile e sia abbastanza grande da contenere una creatura di taglia Media, come un'enorme urna, una bara, una ciste piena di fango nel terreno o un contenitore di cristallo pieno di acqua salata"
   },
   "Control Weather": {
     "name": "Controlla il tempo",
     "description": "Prendi il controllo del tempo entro 5 miglia da te per la durata. Devi essere all'aperto per lanciare questo incantesimo. Trasferirsi in un luogo dove non si ha una via libera verso il cielo pone fine anticipatamente all'incantesimo. Quando lanci l'incantesimo, cambi le condizioni meteorologiche attuali, che sono determinate dal DM in base al clima e alla stagione. Puoi modificare le precipitazioni, la temperatura e il vento. Sono necessari 1d4 x 10 minuti affinché le nuove condizioni abbiano effetto.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "bruciando incenso e pezzi di terra e di legno mescolati nell'acqua"
   },
   "Demiplane": {
     "name": "Semipiano",
@@ -1442,12 +1611,14 @@
   "Earthquake": {
     "name": "Terremoto",
     "description": "Crei un disturbo sismico in un punto del terreno che puoi vedere e che si trova a gittata. Per tutta la durata, un intenso tremore squarcia il terreno in un cerchio di 30 metri di raggio centrato su quel punto. Ogni creatura a terra in quell'area deve effettuare un tiro salvezza su Destrezza. Se il tiro salvezza fallisce, la creatura cade prona. L'area diventa terreno difficile. Ogni creatura a terra che si sta concentrando deve effettuare un tiro salvezza su Costituzione. Se il Tiro Salvezza fallisce, la concentrazione della creatura viene interrotta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un pizzico di terra, un pezzo di roccia e un pezzo di argilla"
   },
   "Feeblemind": {
     "name": "Debolezza mentale",
     "description": "Si fa esplodere la mente di una creatura visibile a gittata, tentando di frantumarne l'intelletto e la personalità. Il bersaglio subisce 4d6 danni psichici e deve effettuare un tiro salvezza su Intelligenza. Se fallisce il Tiro Salvezza, i punteggi di Intelligenza e Carisma della creatura diventano 1. La creatura non può lanciare incantesimi, attivare oggetti magici, comprendere il linguaggio o comunicare in alcun modo comprensibile. La creatura può, tuttavia, identificare i suoi amici, seguirli e persino proteggerli.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una manciata di sfere di argilla, cristallo, vetro o minerali"
   },
   "Glibness": {
     "name": "Disinvoltura",
@@ -1457,7 +1628,8 @@
   "Holy Aura": {
     "name": "Sacra Aura",
     "description": "La luce divina esce da te e si fonde in un tenue splendore in un raggio di 9 metri intorno a te. Le creature di tua scelta nel raggio in cui lanci questo incantesimo emettono luce fioca in un raggio di 1,5 metri e hanno vantaggio su tutti i tiri salvezza, e le altre creature hanno svantaggio sui tiri per colpire contro di loro fino al termine dell'incantesimo. Inoltre, quando un immondo o un non morto colpisce una creatura influenzata con un attacco in mischia, l'aura lampeggia di luce brillante. L'attaccante deve riuscire in un tiro salvezza su Costituzione o rimanere accecato fino al termine dell'incantesimo.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un piccolo reliquiario del valore di almeno 1.000 mo contenente una reliquia sacra, come un pezzo di stoffa della veste di un santo o un pezzo di pergamena del libro sacro di un chierico"
   },
   "Incendiary Cloud": {
     "name": "Nube incendiaria",
@@ -1482,12 +1654,14 @@
   "Sunburst": {
     "name": "Sprazzo di sole",
     "description": "Una brillante luce solare lampeggia in un raggio di 18 metri centrato su un punto a gittata scelto dall'incantatore. Ogni creatura in quella luce deve effettuare un tiro salvezza su Costituzione. Se fallisce il tiro salvezza, la creatura subisce 12d6 danni radiosi e resta accecata per 1 minuto. Se il tiro salvezza riesce, subisce la metà dei danni e non viene accecato da questo incantesimo. I non morti e le melme hanno svantaggio in questo tiro salvezza. Una creatura accecata da questo incantesimo effettua un altro tiro salvezza su Costituzione alla fine di ciascuno dei suoi turni.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "fuoco e un pezzo di pietra solare"
   },
   "Telepathy": {
     "name": "Telepatia",
     "description": "Crei un collegamento telepatico tra te e una creatura consenziente con cui hai familiarità. La creatura può trovarsi ovunque sul tuo stesso piano di esistenza. L'incantesimo termina se tu o il bersaglio non siete più sullo stesso piano. Fino al termine dell'incantesimo, tu e il bersaglio potete condividere istantaneamente parole, immagini, suoni e altri messaggi sensoriali tra loro attraverso il collegamento, e il bersaglio vi riconosce come la creatura con cui sta comunicando.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un paio di anelli d'argento collegati"
   },
   "Tsunami": {
     "name": "Tsunami",
@@ -1497,22 +1671,26 @@
   "Astral Projection": {
     "name": "Proiezione Astrale",
     "description": "Tu e fino a otto creature consenzienti entro il raggio d'azione proiettate i vostri corpi astrali nel Piano Astrale (l'incantesimo fallisce e il lancio viene sprecato se siete già su quel piano). Il corpo materiale che ti lasci dietro è inconscio e in uno stato di animazione sospesa; non ha bisogno di cibo né di aria e non invecchia. Il tuo corpo astrale assomiglia alla tua forma mortale in quasi ogni aspetto, replicando le tue statistiche di gioco e i tuoi beni.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "per ogni creatura influenzata da questo incantesimo, devi fornire un giacinto del valore di almeno 1.000 mo e un lingotto d'argento riccamente intagliato del valore di almeno 100 mo, tutti elementi che l'incantesimo consuma"
   },
   "Foresight": {
     "name": "Lungimiranza",
     "description": "Tocchi una creatura consenziente e conferisci una capacità limitata di vedere nell'immediato futuro. Per tutta la durata, il bersaglio non può essere sorpreso e dispone di vantaggio ai tiri per colpire, alle prove di caratteristica e ai tiri salvezza. Inoltre, le altre creature hanno svantaggio ai tiri per colpire contro il bersaglio per tutta la durata. Questo incantesimo termina immediatamente se lo lanci nuovamente prima che termini la sua durata.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una piuma di colibrì"
   },
   "Gate": {
     "name": "Cancello",
     "description": "Evochi un portale che collega uno spazio non occupato che puoi vedere a gittata con una posizione precisa su un diverso piano di esistenza. Il portale è un'apertura circolare, che puoi realizzare con un diametro compreso tra 1,5 e 20 piedi. Puoi orientare il portale in qualsiasi direzione tu scelga. Il portale dura per tutta la durata. Il portale ha una parte anteriore e una parte posteriore su ciascun piano in cui appare. Il viaggio attraverso il portale è possibile solo muovendosi attraverso la sua parte anteriore. Tutto ciò che lo fa viene immediatamente trasportato sull'altro piano.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un diamante del valore di almeno 5.000 mo"
   },
   "Imprisonment": {
     "name": "Reclusione",
     "description": "Crei un vincolo magico per trattenere a gittata una creatura che puoi vedere. Il bersaglio deve riuscire in un tiro salvezza su Saggezza o essere vincolato dall'incantesimo; se ha successo, è immune a questo incantesimo se lo lanci di nuovo. Mentre è influenzata da questo incantesimo, la creatura non ha bisogno di respirare, mangiare o bere e non invecchia. Gli incantesimi di divinazione non possono localizzare o percepire il bersaglio. Scegli una delle seguenti forme di prigionia: Sepoltura, Incatenamento, Prigione protetta, Contenimento Minimo o Sonno.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una raffigurazione su pergamena o una statuetta scolpita a somiglianza del bersaglio e un componente speciale che varia a seconda della versione dell'incantesimo scelto, del valore di almeno 500 mo per Dado Vita del bersaglio"
   },
   "Mass Heal": {
     "name": "Guarigione di massa",
@@ -1542,7 +1720,8 @@
   "Shapechange": {
     "name": "Cambiamento di forma",
     "description": "Assumi la forma di una creatura diversa per la durata. La nuova forma può essere quella di qualsiasi creatura con un grado di sfida pari al proprio livello o inferiore. La creatura non può essere un costrutto o un non morto e devi aver visto questo tipo di creatura almeno una volta. Ti trasformi in un esemplare medio di quella creatura, senza alcun livello di classe o tratto da Incantatore. Le tue statistiche di gioco vengono sostituite dalle statistiche della creatura scelta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "un cerchietto di giada del valore di almeno 1.500 mo, che devi mettere sulla tua testa prima di lanciare l'incantesimo"
   },
   "Storm of Vengeance": {
     "name": "Tempesta di vendetta",
@@ -1557,12 +1736,14 @@
   "True Polymorph": {
     "name": "Vero polimorfo",
     "description": "Scegli una creatura o un oggetto non magico che puoi vedere entro la gittata. Trasformi la creatura in una creatura diversa, la creatura in un oggetto non magico o l'oggetto in una creatura (l'oggetto non deve essere né indossato né trasportato da un'altra creatura). La trasformazione dura per la durata o finché il bersaglio non scende a 0 punti ferita o muore. Se ti concentri su questo incantesimo per l'intera durata, la trasformazione diventa permanente.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una goccia di mercurio, una cucchiaiata di gomma arabica e un filo di fumo"
   },
   "True Resurrection": {
     "name": "Vera Resurrezione",
     "description": "Tocchi una creatura morta da non più di 200 anni e morta per qualsiasi motivo tranne la vecchiaia. Se l'anima della creatura è libera e consenziente, la creatura ritorna in vita con tutti i suoi punti ferita. Questo incantesimo chiude tutte le ferite, neutralizza qualsiasi veleno, cura tutte le malattie e rimuove qualsiasi maledizione che colpisce la creatura quando muore. L'incantesimo sostituisce organi e arti danneggiati o mancanti. Se la creatura era non morta, viene riportata alla sua forma non morta.",
-    "higherLevels": null
+    "higherLevels": null,
+    "material": "una spruzzata di acqua santa e diamanti del valore di almeno 25.000 mo, che l'incantesimo consuma"
   },
   "Weird": {
     "name": "Strano",

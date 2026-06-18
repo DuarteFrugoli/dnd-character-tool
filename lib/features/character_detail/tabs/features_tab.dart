@@ -948,8 +948,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       l10n.labelSubclass,
       l10n.featuresTabRacial,
       l10n.labelBackground,
-      l10n.featuresTabCustom,
       l10n.featuresTabTools,
+      l10n.featuresTabCustom,
     ];
   }
 
@@ -1088,8 +1088,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               ],
             ),
           ),
-          // Search field (hidden on Custom tab, index 5)
-          if (_tabs.index != 5)
+          // Search field (hidden on Custom tab, index 6)
+          if (_tabs.index != 6)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: TextField(
@@ -1138,13 +1138,13 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                         scheme,
                         i18n,
                       ),
-                      _buildCustomForm(notifier, scheme, scrollCtrl),
                       _buildToolsList(
                         character?.features ?? [],
                         notifier,
                         scheme,
                         i18n,
                       ),
+                      _buildCustomForm(notifier, scheme, scrollCtrl),
                     ],
                   ),
           ),

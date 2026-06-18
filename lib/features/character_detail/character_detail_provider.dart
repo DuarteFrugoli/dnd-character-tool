@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/spellcasting_engine.dart';
+import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
@@ -486,7 +487,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       _ => c.abilityScores,
     };
     final newC = c.copyWith(abilityScores: updated);
-    await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
+    await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
   }
 
   static int _profBonus(int level) {
@@ -597,7 +598,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
 
     // Recalcula CA se a armadura removida estava equipada.
     if (removed.itemType == ItemType.armor && removed.isEquipped) {
-      await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
+      await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
     } else {
       await _save(newC);
     }
@@ -652,7 +653,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
 
     // Recalcula CA quando há mudança relacionada a armadura.
     if (target.itemType == ItemType.armor || isBodyArmor) {
-      await _save(newC.copyWith(armorClass: _calcArmorClass(newC)));
+      await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
     } else {
       await _save(newC);
     }
@@ -703,36 +704,6 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         ),
       );
     }
-  }
-
-  /// Calcula CA com base nos itens de armadura equipados.
-  /// Regra: a CA base vem de UMA armadura (não-shield). Shields somam bônus.
-  /// Sem armadura equipada: 10 + mod DEX.
-  int _calcArmorClass(Character c) {
-    final dexMod = c.abilityScores.dexterityModifier;
-    int base = 10 + dexMod; // sem armadura
-    int shieldBonus = 0;
-
-    for (final item in c.equipment) {
-      if (!item.isEquipped || item.itemType != ItemType.armor) continue;
-      final props = item.properties;
-      if (props == null) continue;
-
-      if (props['isShield'] == true) {
-        shieldBonus = (props['acBonus'] as num?)?.toInt() ?? 2;
-      } else {
-        final baseAC = (props['baseAC'] as num?)?.toInt() ?? 10;
-        final addDex = props['addDexModifier'] as bool? ?? true;
-        final maxDex = (props['maxDexBonus'] as num?)?.toInt();
-        int armorAC = baseAC;
-        if (addDex) {
-          armorAC += maxDex != null ? dexMod.clamp(-99, maxDex) : dexMod;
-        }
-        base = armorAC;
-      }
-    }
-
-    return base + shieldBonus;
   }
 
   Future<void> adjustItemQuantity(String id, int delta) async {

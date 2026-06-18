@@ -1305,33 +1305,6 @@ class _ItemTile extends ConsumerWidget {
     return props.containsKey('baseAC');
   }
 
-  static int _calcArmorClass(Character c, List<EquipmentItem> equipment) {
-    final dexMod = c.abilityScores.dexterityModifier;
-    int base = 10 + dexMod;
-    int shieldBonus = 0;
-
-    for (final it in equipment) {
-      if (!it.isEquipped || it.itemType != ItemType.armor) continue;
-      final props = it.properties;
-      if (props == null) continue;
-
-      if (props['isShield'] == true) {
-        shieldBonus = (props['acBonus'] as num?)?.toInt() ?? 2;
-      } else {
-        final baseAC = (props['baseAC'] as num?)?.toInt() ?? 10;
-        final addDex = props['addDexModifier'] as bool? ?? true;
-        final maxDex = (props['maxDexBonus'] as num?)?.toInt();
-        int armorAC = baseAC;
-        if (addDex) {
-          armorAC += maxDex != null ? dexMod.clamp(-99, maxDex) : dexMod;
-        }
-        base = armorAC;
-      }
-    }
-
-    return base + shieldBonus;
-  }
-
   void _showDescriptionSheet(
     BuildContext context,
     String displayName,
@@ -1420,7 +1393,7 @@ class _ItemTile extends ConsumerWidget {
           if (e.id == item.id) return e.copyWith(isEquipped: true);
           return e;
         }).toList();
-        final nextAc = _calcArmorClass(character, simulated);
+        final nextAc = calcArmorClass(character, equipment: simulated);
 
         final l10n = AppLocalizations.of(context)!;
         final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;

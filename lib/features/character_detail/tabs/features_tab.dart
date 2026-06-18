@@ -181,7 +181,10 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
               ],
               if (widget.character.features.isNotEmpty) ...[
                 const SizedBox(height: 24),
-                _ToolProficienciesSection(features: widget.character.features),
+                _ToolProficienciesSection(
+                  features: widget.character.features,
+                  characterId: widget.characterId,
+                ),
               ],
               if (classExtras.isNotEmpty) ...[
                 const SizedBox(height: 24),
@@ -400,14 +403,21 @@ class _BackgroundFeatureSection extends ConsumerWidget {
 // ── Tool Proficiencies Section ────────────────────────────────────────────────
 
 class _ToolProficienciesSection extends ConsumerWidget {
-  const _ToolProficienciesSection({required this.features});
+  const _ToolProficienciesSection({
+    required this.features,
+    required this.characterId,
+  });
   final List<String> features;
+  final String characterId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final notifier =
+        ref.read(characterDetailProvider(characterId).notifier);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -435,6 +445,37 @@ class _ToolProficienciesSection extends ConsumerWidget {
               title: Text(
                 i18n.toolName(label),
                 style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.delete_outline, size: 18),
+                color: scheme.error,
+                tooltip: l10n.featuresTooltipRemove,
+                onPressed: () async {
+                  final confirm = await showDialog<bool>(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: Text(l10n.featuresRemoveTitle),
+                      content: Text(l10n.featuresRemoveContent(label)),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx, false),
+                          child: Text(l10n.dialogCancel),
+                        ),
+                        FilledButton(
+                          onPressed: () => Navigator.pop(ctx, true),
+                          style: FilledButton.styleFrom(
+                            backgroundColor: scheme.error,
+                            foregroundColor: scheme.onError,
+                          ),
+                          child: Text(l10n.dialogRemove),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirm == true) {
+                    await notifier.removeToolProficiency(f);
+                  }
+                },
               ),
             ),
           );
@@ -908,6 +949,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       l10n.featuresTabRacial,
       l10n.labelBackground,
       l10n.featuresTabCustom,
+      l10n.featuresTabTools,
     ];
   }
 
@@ -917,6 +959,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   Map<String, String>? _raceTraits;
   List<SrdBackground>? _backgrounds;
   List<SrdFeat>? _feats;
+  List<SrdTool>? _tools;
   String? _loadError;
 
   static const _classOrder = [
@@ -937,7 +980,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 6, vsync: this);
+    _tabs = TabController(length: 7, vsync: this);
     _tabs.addListener(() {
       if (!_tabs.indexIsChanging) {
         _search.clear();
@@ -975,6 +1018,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         srd.getRaceTraits(),
         srd.getBackgrounds(),
         srd.getFeats(),
+        srd.getTools(),
       ]);
       if (mounted) {
         setState(() {
@@ -985,6 +1029,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           _raceTraits = results[3] as Map<String, String>;
           _backgrounds = results[4] as List<SrdBackground>;
           _feats = results[5] as List<SrdFeat>;
+          _tools = results[6] as List<SrdTool>;
         });
       }
     } catch (e) {
@@ -1094,6 +1139,12 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                         i18n,
                       ),
                       _buildCustomForm(notifier, scheme, scrollCtrl),
+                      _buildToolsList(
+                        character?.features ?? [],
+                        notifier,
+                        scheme,
+                        i18n,
+                      ),
                     ],
                   ),
           ),
@@ -1740,6 +1791,76 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
       style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
     ),
   );
+
+  // ── Tools tab ────────────────────────────────────────────────────────────
+
+  Widget _buildToolsList(
+    List<String> currentFeatures,
+    CharacterDetailNotifier notifier,
+    ColorScheme scheme,
+    SrdI18nService i18n,
+  ) {
+    if (_tools == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    final q = _search.text.toLowerCase();
+    final tools = q.isEmpty
+        ? _tools!
+        : _tools!.where((t) {
+            final name = i18n.toolName(t.name);
+            return name.toLowerCase().contains(q) ||
+                t.name.toLowerCase().contains(q) ||
+                t.category.toLowerCase().contains(q);
+          }).toList();
+
+    if (tools.isEmpty) return _emptySearch(q);
+
+    // Normalise existing tool proficiencies for quick lookup
+    final existing = currentFeatures.map((f) {
+      return f.startsWith('Tool Proficiency: ')
+          ? f.substring('Tool Proficiency: '.length)
+          : f;
+    }).toSet();
+
+    return ListView.builder(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewPadding.bottom,
+      ),
+      itemCount: tools.length,
+      itemBuilder: (_, i) {
+        final tool = tools[i];
+        final alreadyAdded = existing.contains(tool.name);
+        final displayName = i18n.toolName(tool.name);
+        return ListTile(
+          title: Text(displayName, style: const TextStyle(fontSize: 14)),
+          subtitle: Text(
+            tool.category,
+            style: TextStyle(fontSize: 12, color: scheme.onSurfaceVariant),
+          ),
+          trailing: alreadyAdded
+              ? SizedBox(
+                  width: 48,
+                  height: 48,
+                  child: Center(
+                    child: Icon(
+                      Icons.check_circle,
+                      color: scheme.primary,
+                      size: 24,
+                    ),
+                  ),
+                )
+              : IconButton(
+                  icon: const Icon(Icons.add_circle_outline),
+                  color: scheme.primary,
+                  onPressed: () async {
+                    await notifier.addToolProficiency(tool.name);
+                    if (mounted) setState(() {});
+                  },
+                ),
+        );
+      },
+    );
+  }
 }
 
 // ── Feature Detail Sheet ──────────────────────────────────────────────────────

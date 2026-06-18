@@ -175,6 +175,7 @@
   "featuresTabClass": "Klasse",
   "featuresTabRacial": "Rasse",
   "featuresTabCustom": "Benutzerd.",
+  "featuresTabTools": "Werkzeuge",
   "featuresRemoveTitle": "Funktion entfernen?",
   "featuresRemoveContent": "„{name}“ wird entfernt.",
   "featuresNoneAvailable": "Keine Funktionen verfügbar.",

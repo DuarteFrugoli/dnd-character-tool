@@ -685,6 +685,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get featuresTabCustom => 'カスタム';
 
   @override
+  String get featuresTabTools => 'ツール';
+
+  @override
   String get featuresRemoveTitle => '機能を削除しますか?';
 
   @override

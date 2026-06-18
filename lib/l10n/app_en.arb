@@ -588,6 +588,8 @@
 
   "featuresTabCustom": "Custom",
   "@featuresTabCustom": { "description": "Add feature sheet: Custom tab label." },
+  "featuresTabTools": "Tools",
+  "@featuresTabTools": { "description": "Add feature sheet: Tools tab label." },
 
   "featuresRemoveTitle": "Remove feature?",
   "@featuresRemoveTitle": { "description": "Remove feature dialog title." },

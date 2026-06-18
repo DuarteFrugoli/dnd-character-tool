@@ -174,6 +174,7 @@
   "featuresTabClass": "Класс",
   "featuresTabRacial": "Расовые",
   "featuresTabCustom": "Свой",
+  "featuresTabTools": "Инструменты",
   "featuresTooltipRemove": "Удалять",
   "featuresRemoveTitle": "Удалить функцию?",
   "featuresRemoveContent": "«{name}» будет удален.",

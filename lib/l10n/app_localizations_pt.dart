@@ -697,6 +697,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get featuresTabCustom => 'Personalizado';
 
   @override
+  String get featuresTabTools => 'Ferramentas';
+
+  @override
   String get featuresRemoveTitle => 'Remover habilidade?';
 
   @override

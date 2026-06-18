@@ -677,6 +677,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get featuresTabCustom => '自定义';
 
   @override
+  String get featuresTabTools => '工具';
+
+  @override
   String get featuresRemoveTitle => '删除功能？';
 
   @override

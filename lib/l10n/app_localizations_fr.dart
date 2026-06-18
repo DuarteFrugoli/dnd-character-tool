@@ -701,6 +701,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get featuresTabCustom => 'Personnalisé';
 
   @override
+  String get featuresTabTools => 'Outils';
+
+  @override
   String get featuresRemoveTitle => 'Supprimer la fonctionnalité ?';
 
   @override

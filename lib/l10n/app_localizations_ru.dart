@@ -698,6 +698,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get featuresTabCustom => 'Свой';
 
   @override
+  String get featuresTabTools => 'Инструменты';
+
+  @override
   String get featuresRemoveTitle => 'Удалить функцию?';
 
   @override

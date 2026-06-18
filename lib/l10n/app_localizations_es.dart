@@ -695,6 +695,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get featuresTabCustom => 'Personaliz.';
 
   @override
+  String get featuresTabTools => 'Herramientas';
+
+  @override
   String get featuresRemoveTitle => '¿Eliminar función?';
 
   @override

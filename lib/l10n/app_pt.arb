@@ -175,6 +175,7 @@
   "featuresTabClass": "Classe",
   "featuresTabRacial": "Racial",
   "featuresTabCustom": "Personalizado",
+  "featuresTabTools": "Ferramentas",
   "featuresRemoveTitle": "Remover habilidade?",
   "featuresRemoveContent": "\"{name}\" será removida.",
   "featuresNoneAvailable": "Nenhuma habilidade disponível.",

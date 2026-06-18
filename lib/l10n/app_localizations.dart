@@ -1332,6 +1332,12 @@ abstract class AppLocalizations {
   /// **'Custom'**
   String get featuresTabCustom;
 
+  /// Add feature sheet: Tools tab label.
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get featuresTabTools;
+
   /// Remove feature dialog title.
   ///
   /// In en, this message translates to:

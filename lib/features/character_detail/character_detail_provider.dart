@@ -549,6 +549,21 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(c.copyWith(extraFeatures: updated));
   }
 
+  Future<void> addToolProficiency(String toolName) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    if (c.features.contains(toolName)) return;
+    await _save(c.copyWith(features: [...c.features, toolName]));
+  }
+
+  Future<void> removeToolProficiency(String toolName) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(
+      c.copyWith(features: c.features.where((f) => f != toolName).toList()),
+    );
+  }
+
   // ── Inventário ─────────────────────────────────────────────────────────────
 
   Future<void> addEquipmentItem(EquipmentItem item) async {

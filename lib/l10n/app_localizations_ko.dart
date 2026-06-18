@@ -686,6 +686,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get featuresTabCustom => '커스텀';
 
   @override
+  String get featuresTabTools => '도구';
+
+  @override
   String get featuresRemoveTitle => '기능을 삭제하시겠습니까?';
 
   @override

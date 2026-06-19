@@ -9,6 +9,20 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.0.2] - 2026-06-19
+
+### Fixed
+- **Cálculo de CA (Armor Class)** — refatoração em função compartilhada `calcArmorClass`; corrige CA incorreta para Bárbaro e Monge:
+  - **Bárbaro — Unarmored Defense**: CA = 10 + mod DEX + mod CON (sem armadura); escudo ainda conta
+  - **Monge — Unarmored Defense**: CA = 10 + mod DEX + mod SAB (sem armadura *e* sem escudo, conforme regras do SRD)
+
+### Added
+- **Gerenciamento de proficiências de ferramentas na aba Habilidades**:
+  - Botão de exclusão (com diálogo de confirmação) em cada proficiência de ferramenta listada
+  - Nova aba **Ferramentas** no painel "Adicionar Habilidade" com lista pesquisável de todas as ferramentas do SRD; marca as já adicionadas com ícone de check
+
+---
+
 ## [1.0.1] - 2026-06-10
 
 ### Added

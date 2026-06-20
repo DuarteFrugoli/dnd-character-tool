@@ -111,7 +111,7 @@
   {
     "name": "Cloak of Protection",
     "type": "wondrous item",
-    "itemType": "armor",
+    "itemType": "equippable",
     "rarity": "uncommon",
     "requiresAttunement": true,
     "weight": 1,
@@ -124,7 +124,7 @@
   {
     "name": "Ring of Protection",
     "type": "ring",
-    "itemType": "armor",
+    "itemType": "equippable",
     "rarity": "rare",
     "requiresAttunement": true,
     "weight": 0,
@@ -137,7 +137,7 @@
   {
     "name": "Boots of Speed",
     "type": "wondrous item",
-    "itemType": "armor",
+    "itemType": "equippable",
     "requiresAttunement": true,
     "weight": 1,
     "cost": "—",
@@ -149,7 +149,7 @@
   {
     "name": "Gauntlets of Ogre Power",
     "type": "wondrous item",
-    "itemType": "armor",
+    "itemType": "equippable",
     "rarity": "uncommon",
     "requiresAttunement": true,
     "weight": 1,
@@ -162,7 +162,7 @@
   {
     "name": "Headband of Intellect",
     "type": "wondrous item",
-    "itemType": "armor",
+    "itemType": "equippable",
     "rarity": "uncommon",
     "requiresAttunement": true,
     "weight": 0,
@@ -175,7 +175,7 @@
   {
     "name": "Amulet of Health",
     "type": "wondrous item",
-    "itemType": "armor",
+    "itemType": "equippable",
     "rarity": "rare",
     "requiresAttunement": true,
     "weight": 0,

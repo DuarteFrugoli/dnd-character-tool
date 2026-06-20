@@ -12,7 +12,7 @@ String _titleCase(String s) =>
 
 /// Metadata for a single SRD item loaded from assets/data/srd/items.json.
 class SrdItemData {
-  final String itemType; // "weapon", "armor", "ammunition", "gear"
+  final String itemType; // "weapon", "armor", "ammunition", "equippable", "gear"
   final String category;
   final Map<String, dynamic>? properties;
 
@@ -39,6 +39,8 @@ class SrdItemData {
         return ItemType.ammunition;
       case 'consumable':
         return ItemType.consumable;
+      case 'equippable':
+        return ItemType.equippable;
       default:
         return ItemType.gear;
     }

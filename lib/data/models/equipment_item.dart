@@ -5,12 +5,13 @@ part 'equipment_item.g.dart';
 
 const _uuid = Uuid();
 
-/// Categorias de item que definem comportamento na UI e no provider.
+/// Tipos mecanicos de item que definem comportamento na UI e no provider.
 enum ItemType {
   weapon,
   armor,
   consumable,
   ammunition,
+  equippable,
   gear,
 }
 

@@ -85,7 +85,11 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
     final nonAmmo =
         character.equipment.where((e) => e.itemType != ItemType.ammunition);
     final equipped = nonAmmo.where((e) => e.isEquipped).toList();
-    const equippableTypes = {ItemType.weapon, ItemType.armor};
+    const equippableTypes = {
+      ItemType.weapon,
+      ItemType.armor,
+      ItemType.equippable,
+    };
     final equippable = nonAmmo
         .where((e) => !e.isEquipped && equippableTypes.contains(e.itemType))
         .toList();
@@ -621,6 +625,11 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
   final _search = TextEditingController();
+  final _customNameCtrl = TextEditingController();
+  final _customQtyCtrl = TextEditingController(text: '1');
+  final _customWeightCtrl = TextEditingController(text: '0');
+  final _customDescCtrl = TextEditingController();
+  ItemType _customSelectedType = ItemType.gear;
 
   List<SrdWeapon>? _weapons;
   List<SrdArmor>? _armors;
@@ -659,7 +668,28 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   void dispose() {
     _tabs.dispose();
     _search.dispose();
+    _customNameCtrl.dispose();
+    _customQtyCtrl.dispose();
+    _customWeightCtrl.dispose();
+    _customDescCtrl.dispose();
     super.dispose();
+  }
+
+  String _categoryForCustomType(ItemType type) {
+    switch (type) {
+      case ItemType.weapon:
+        return 'weapon';
+      case ItemType.armor:
+        return 'armor';
+      case ItemType.consumable:
+        return 'consumable';
+      case ItemType.ammunition:
+        return 'ammunition';
+      case ItemType.equippable:
+        return 'equippable';
+      case ItemType.gear:
+        return 'adventuring gear';
+    }
   }
 
   Future<void> _loadData() async {
@@ -753,7 +783,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
         properties: properties,
       ));
     }
-    // qtyCtrl é variável local — não precisa de dispose manual
+    qtyCtrl.dispose();
   }
 
   // Lista agrupada por categoria, com cabeçalhos. Ao pesquisar, exibe lista plana.
@@ -867,121 +897,100 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   }
 
   Widget _buildCustomTab() {
-    final nameCtrl = TextEditingController();
-    final categoryCtrl = TextEditingController(text: 'adventuring gear');
-    final qtyCtrl = TextEditingController(text: '1');
-    final weightCtrl = TextEditingController(text: '0');
-    final descCtrl = TextEditingController();
     final scheme = Theme.of(context).colorScheme;
     final unitSystem = ref.read(unitSystemProvider);
 
-    return StatefulBuilder(
-      builder: (ctx, setInner) {
-        var selectedType = ItemType.gear;
-
-        return StatefulBuilder(
-          builder: (ctx2, setType) => SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                TextField(
-                  controller: nameCtrl,
-                  autofocus: false,
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextField(
+            controller: _customNameCtrl,
+            autofocus: false,
+            decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.inventoryLabelItemName, border: const OutlineInputBorder()),
+          ),
+          const SizedBox(height: 12),
+          DropdownButtonFormField<ItemType>(
+            initialValue: _customSelectedType,
+            decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.inventoryLabelType, border: const OutlineInputBorder()),
+            items: [
+              DropdownMenuItem(
+                  value: ItemType.weapon, child: Text(AppLocalizations.of(context)!.inventoryTypeWeapon)),
+              DropdownMenuItem(
+                  value: ItemType.armor, child: Text(AppLocalizations.of(context)!.inventoryTypeArmor)),
+              DropdownMenuItem(
+                  value: ItemType.consumable, child: Text(AppLocalizations.of(context)!.inventoryTypeConsumable)),
+              DropdownMenuItem(
+                  value: ItemType.gear, child: Text(AppLocalizations.of(context)!.inventoryTypeGear)),
+            ],
+            onChanged: (v) {
+              if (v != null) setState(() => _customSelectedType = v);
+            },
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _customQtyCtrl,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context)!.inventoryLabelItemName, border: const OutlineInputBorder()),
+                      labelText: AppLocalizations.of(context)!.inventoryLabelItemQuantity, border: const OutlineInputBorder()),
                 ),
-                const SizedBox(height: 12),
-                DropdownButtonFormField<ItemType>(
-                  initialValue: selectedType,
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: TextField(
+                  controller: _customWeightCtrl,
+                  keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                  inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))],
                   decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context)!.inventoryLabelType, border: const OutlineInputBorder()),
-                  items: [
-                    DropdownMenuItem(
-                        value: ItemType.weapon, child: Text(AppLocalizations.of(context)!.inventoryTypeWeapon)),
-                    DropdownMenuItem(
-                        value: ItemType.armor, child: Text(AppLocalizations.of(context)!.inventoryTypeArmor)),
-                    DropdownMenuItem(
-                        value: ItemType.consumable, child: Text(AppLocalizations.of(context)!.inventoryTypeConsumable)),
-                    DropdownMenuItem(
-                        value: ItemType.gear, child: Text(AppLocalizations.of(context)!.inventoryTypeGear)),
-                  ],
-                  onChanged: (v) {
-                    if (v != null) setType(() => selectedType = v);
-                  },
-                ),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: categoryCtrl,
-                  decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context)!.inventoryLabelCategory, border: const OutlineInputBorder()),
-                ),
-                const SizedBox(height: 12),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: qtyCtrl,
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                        decoration: InputDecoration(
-                            labelText: AppLocalizations.of(context)!.inventoryLabelItemQuantity, border: const OutlineInputBorder()),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: TextField(
-                        controller: weightCtrl,
-                        keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                        inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))],
-                        decoration: InputDecoration(
-                            labelText: AppLocalizations.of(context)!.inventoryLabelWeight,
-                            suffixText: weightSuffix(unitSystem),
-                            border: const OutlineInputBorder()),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: descCtrl,
-                  maxLines: 3,
-                  decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context)!.inventoryLabelDescription,
+                      labelText: AppLocalizations.of(context)!.inventoryLabelWeight,
+                      suffixText: weightSuffix(unitSystem),
                       border: const OutlineInputBorder()),
                 ),
-                const SizedBox(height: 16),
-                FilledButton(
-                  onPressed: () {
-                    final name = nameCtrl.text.trim();
-                    if (name.isEmpty) return;
-                    _addItem(EquipmentItem(
-                      name: name,
-                      category: categoryCtrl.text.trim().isEmpty
-                          ? 'adventuring gear'
-                          : categoryCtrl.text.trim(),
-                      itemType: selectedType,
-                      quantity: int.tryParse(qtyCtrl.text) ?? 1,
-                      weight: weightToLb(
-                        double.tryParse(weightCtrl.text.replaceAll(',', '.')) ?? 0.0,
-                        unitSystem,
-                      ),
-                      description: descCtrl.text.trim().isEmpty
-                          ? null
-                          : descCtrl.text.trim(),
-                    ));
-                  },
-                  style: FilledButton.styleFrom(
-                    backgroundColor: scheme.primary,
-                    foregroundColor: scheme.onPrimary,
-                  ),
-                  child: Text(AppLocalizations.of(context)!.inventoryAddCustomItem),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        );
-      },
+          const SizedBox(height: 12),
+          TextField(
+            controller: _customDescCtrl,
+            maxLines: 3,
+            decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.inventoryLabelDescription,
+                border: const OutlineInputBorder()),
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            onPressed: () {
+              final name = _customNameCtrl.text.trim();
+              if (name.isEmpty) return;
+              _addItem(EquipmentItem(
+                name: name,
+                category: _categoryForCustomType(_customSelectedType),
+                itemType: _customSelectedType,
+                quantity: int.tryParse(_customQtyCtrl.text) ?? 1,
+                weight: weightToLb(
+                  double.tryParse(_customWeightCtrl.text.replaceAll(',', '.')) ?? 0.0,
+                  unitSystem,
+                ),
+                description: _customDescCtrl.text.trim().isEmpty
+                    ? null
+                    : _customDescCtrl.text.trim(),
+              ));
+            },
+            style: FilledButton.styleFrom(
+              backgroundColor: scheme.primary,
+              foregroundColor: scheme.onPrimary,
+            ),
+            child: Text(AppLocalizations.of(context)!.inventoryAddCustomItem),
+          ),
+        ],
+      ),
     );
   }
 
@@ -1292,6 +1301,8 @@ class _ItemTile extends ConsumerWidget {
         return Icons.local_drink_outlined;
       case ItemType.ammunition:
         return Icons.arrow_upward;
+      case ItemType.equippable:
+        return equipped ? Icons.checkroom : Icons.checkroom_outlined;
       case ItemType.gear:
         return Icons.backpack_outlined;
     }
@@ -1440,8 +1451,9 @@ class _ItemTile extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
-    final canEquip =
-        item.itemType == ItemType.weapon || item.itemType == ItemType.armor;
+    final canEquip = item.itemType == ItemType.weapon ||
+        item.itemType == ItemType.armor ||
+        item.itemType == ItemType.equippable;
     final meta = _itemMeta(item, i18n);
     final displayName = _itemDisplayName(item, i18n);
 

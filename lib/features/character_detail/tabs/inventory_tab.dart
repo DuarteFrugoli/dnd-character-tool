@@ -717,11 +717,20 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     }
   }
 
-  void _addItem(EquipmentItem item) {
-    ref
-        .read(characterDetailProvider(widget.characterId).notifier)
-        .addEquipmentItem(item);
-    Navigator.pop(context);
+  Future<void> _addItem(EquipmentItem item) async {
+    try {
+      await ref
+          .read(characterDetailProvider(widget.characterId).notifier)
+          .addEquipmentItem(item);
+      if (!mounted) return;
+      Navigator.pop(context);
+    } catch (e, st) {
+      debugPrint('_addItem error: $e\n$st');
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Could not add item.')),
+      );
+    }
   }
 
   // Mostra dialog de confirmação com quantidade antes de adicionar
@@ -735,55 +744,58 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     double weight = 0.0,
   }) async {
     final qtyCtrl = TextEditingController(text: '1');
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(displayName ?? name),
-        content: Row(
-          children: [
-            Text(AppLocalizations.of(context)!.inventoryLabelQuantity),
-            const SizedBox(width: 12),
-            SizedBox(
-              width: 64,
-              child: TextField(
-                controller: qtyCtrl,
-                autofocus: true,
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                textAlign: TextAlign.center,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+    try {
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text(displayName ?? name),
+          content: Row(
+            children: [
+              Text(AppLocalizations.of(context)!.inventoryLabelQuantity),
+              const SizedBox(width: 12),
+              SizedBox(
+                width: 64,
+                child: TextField(
+                  controller: qtyCtrl,
+                  autofocus: true,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  textAlign: TextAlign.center,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                  ),
                 ),
               ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: Text(AppLocalizations.of(context)!.dialogCancel),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: Text(AppLocalizations.of(context)!.dialogAdd),
             ),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(AppLocalizations.of(context)!.dialogCancel),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: Text(AppLocalizations.of(context)!.dialogAdd),
-          ),
-        ],
-      ),
-    );
-    if (confirmed == true && mounted) {
-      _addItem(EquipmentItem(
-        name: name,
-        category: category,
-        itemType: itemType,
-        quantity: int.tryParse(qtyCtrl.text) ?? 1,
-        description: description,
-        weight: weight,
-        properties: properties,
-      ));
+      );
+      if (confirmed == true && mounted) {
+        await _addItem(EquipmentItem(
+          name: name,
+          category: category,
+          itemType: itemType,
+          quantity: int.tryParse(qtyCtrl.text) ?? 1,
+          description: description,
+          weight: weight,
+          properties: properties,
+        ));
+      }
+    } finally {
+      qtyCtrl.dispose();
     }
-    qtyCtrl.dispose();
   }
 
   // Lista agrupada por categoria, com cabeçalhos. Ao pesquisar, exibe lista plana.
@@ -966,10 +978,10 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
           ),
           const SizedBox(height: 16),
           FilledButton(
-            onPressed: () {
+            onPressed: () async {
               final name = _customNameCtrl.text.trim();
               if (name.isEmpty) return;
-              _addItem(EquipmentItem(
+              await _addItem(EquipmentItem(
                 name: name,
                 category: _categoryForCustomType(_customSelectedType),
                 itemType: _customSelectedType,

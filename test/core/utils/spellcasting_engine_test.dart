@@ -159,6 +159,16 @@ void main() {
     test('level 1: maxSpellLevel = 0', () {
       expect(_engine('paladin', 1, _cha14).maxSpellLevel, 0);
     });
+
+    test('has no cantrips in base SRD', () {
+      expect(_engine('paladin', 3, _cha14).maxCantrips, 0);
+    });
+  });
+
+  group('Ranger', () {
+    test('has no cantrips in base SRD', () {
+      expect(_engine('ranger', 3, _wis16).maxCantrips, 0);
+    });
   });
 
   // ── Warlock (pact magic, CHA, known) ─────────────────────────────────────
@@ -204,6 +214,17 @@ void main() {
         subclass: 'Eldritch Knight',
       )!;
       expect(engine.maxKnown, 5);
+    });
+
+    test('level 3: has 2 subclass cantrips', () {
+      final engine = SpellcastingEngine.forClass(
+        className: 'Fighter',
+        classLevel: 3,
+        abilityScores: _int18,
+        proficiencyBonus: 2,
+        subclass: 'Eldritch Knight',
+      )!;
+      expect(engine.maxCantrips, 2);
     });
 
     test('level 2: no slots yet (1/3 casters start at level 3)', () {

@@ -154,10 +154,15 @@ class SpellcastingEngine {
 
   /// Max cantrips known (all classes; scales with character level, not class level,
   /// but we use class level as a proxy for single-class characters).
-  int get maxCantrips =>
-      _cantripsTable[className.toLowerCase()]
-          ?[classLevel.clamp(1, 20) - 1] ??
-      _thirdCasterCantrips[classLevel.clamp(1, 20) - 1];
+  int get maxCantrips {
+    final idx = classLevel.clamp(1, 20) - 1;
+    final classCantrips = _cantripsTable[className.toLowerCase()];
+    if (classCantrips != null) return classCantrips[idx];
+    if (progressionType == SpellProgressionType.third) {
+      return _thirdCasterCantrips[idx];
+    }
+    return 0;
+  }
 
   /// Highest spell slot level available, or 0 for non-casters.
   int get maxSpellLevel {

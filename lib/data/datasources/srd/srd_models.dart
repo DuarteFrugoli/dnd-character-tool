@@ -12,7 +12,8 @@ String _titleCase(String s) =>
 
 /// Metadata for a single SRD item loaded from assets/data/srd/items.json.
 class SrdItemData {
-  final String itemType; // "weapon", "armor", "ammunition", "equippable", "gear"
+  final String
+  itemType; // "weapon", "armor", "ammunition", "equippable", "container", "gear"
   final String category;
   final Map<String, dynamic>? properties;
 
@@ -23,10 +24,10 @@ class SrdItemData {
   });
 
   factory SrdItemData.fromJson(Map<String, dynamic> json) => SrdItemData(
-        itemType: json['itemType'] as String,
-        category: json['category'] as String,
-        properties: json['properties'] as Map<String, dynamic>?,
-      );
+    itemType: json['itemType'] as String,
+    category: json['category'] as String,
+    properties: json['properties'] as Map<String, dynamic>?,
+  );
 
   /// Converts the string [itemType] from JSON to the [ItemType] enum.
   ItemType get asItemType {
@@ -41,6 +42,8 @@ class SrdItemData {
         return ItemType.consumable;
       case 'equippable':
         return ItemType.equippable;
+      case 'container':
+        return ItemType.container;
       default:
         return ItemType.gear;
     }
@@ -54,9 +57,9 @@ class SrdSubclass {
   const SrdSubclass({required this.name, required this.description});
 
   factory SrdSubclass.fromJson(Map<String, dynamic> json) => SrdSubclass(
-        name: json['name'] as String,
-        description: json['description'] as String,
-      );
+    name: json['name'] as String,
+    description: json['description'] as String,
+  );
 }
 
 class SrdSkill {
@@ -66,9 +69,9 @@ class SrdSkill {
   const SrdSkill({required this.name, required this.ability});
 
   factory SrdSkill.fromJson(Map<String, dynamic> json) => SrdSkill(
-        name: json['name'] as String,
-        ability: json['ability'] as String,
-      );
+    name: json['name'] as String,
+    ability: json['ability'] as String,
+  );
 }
 
 class SrdSubrace {
@@ -89,22 +92,28 @@ class SrdSubrace {
   });
 
   factory SrdSubrace.fromJson(Map<String, dynamic> json) => SrdSubrace(
-        name: json['name'] as String,
-        abilityScoreIncreases:
-            (json['abilityScoreIncreases'] as Map<String, dynamic>? ?? {})
-                .map((k, v) => MapEntry(_titleCase(k), v as int)),
-        traits: List<String>.from(json['traits'] ?? []),
-        speed: json['speed'] as int?,
-        damageType: json['damageType'] as String?,
-        innateSpells: (json['innateSpells'] as List<dynamic>? ?? [])
-            .map((e) => SrdInnateSpellDef.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      );
+    name: json['name'] as String,
+    abilityScoreIncreases:
+        (json['abilityScoreIncreases'] as Map<String, dynamic>? ?? {}).map(
+          (k, v) => MapEntry(_titleCase(k), v as int),
+        ),
+    traits: List<String>.from(json['traits'] ?? []),
+    speed: json['speed'] as int?,
+    damageType: json['damageType'] as String?,
+    innateSpells: (json['innateSpells'] as List<dynamic>? ?? [])
+        .map((e) => SrdInnateSpellDef.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
 }
 
 // Atributos reais que podem receber bônus diretos.
 const _realAttributes = {
-  'strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma',
+  'strength',
+  'dexterity',
+  'constitution',
+  'intelligence',
+  'wisdom',
+  'charisma',
 };
 
 class SrdRace {
@@ -112,6 +121,7 @@ class SrdRace {
   final int speed;
   final String size;
   final Map<String, int> abilityScoreIncreases;
+
   /// Pontos de ASI livres (ex: Half-Elf "twoOthers": 1 = 2 pontos de +1 livres).
   final int freeAsiPoints;
   final List<String> traits;
@@ -174,9 +184,9 @@ class SrdSkillChoice {
   bool get isAny => from.isEmpty || from.contains('any');
 
   factory SrdSkillChoice.fromJson(Map<String, dynamic> json) => SrdSkillChoice(
-        count: json['count'] as int,
-        from: List<String>.from(json['from']),
-      );
+    count: json['count'] as int,
+    from: List<String>.from(json['from']),
+  );
 }
 
 // ── Class starting equipment ─────────────────────────────────────────────────
@@ -204,8 +214,10 @@ class SrdClassStartingEquipment {
       SrdClassStartingEquipment(
         fixed: List<String>.from(json['fixed'] as List<dynamic>? ?? []),
         choices: (json['choices'] as List<dynamic>? ?? [])
-            .map((c) => SrdEquipmentChoiceGroup
-                .fromJson(c as Map<String, dynamic>))
+            .map(
+              (c) =>
+                  SrdEquipmentChoiceGroup.fromJson(c as Map<String, dynamic>),
+            )
             .toList(),
       );
 }
@@ -248,28 +260,30 @@ class SrdClass {
   bool get isSpellcaster => spellcastingAbility != null;
 
   factory SrdClass.fromJson(Map<String, dynamic> json) => SrdClass(
-        name: json['name'] as String,
-        hitDie: json['hitDie'] as int,
-        primaryAbility: List<String>.from(json['primaryAbility']),
-        savingThrows: List<String>.from(json['savingThrows']),
-        armorProficiencies: List<String>.from(json['armorProficiencies']),
-        weaponProficiencies: List<String>.from(json['weaponProficiencies']),
-        toolProficiencies: List<String>.from(json['toolProficiencies']),
-        skillChoices:
-            SrdSkillChoice.fromJson(json['skillChoices'] as Map<String, dynamic>),
-        spellcastingAbility: json['spellcastingAbility'] as String?,
-        spellcastingType: json['spellcastingType'] as String?,
-        subclassLevel: json['subclassLevel'] as int,
-        subclassFeatureName: json['subclassFeatureName'] as String,
-        startingGoldDice: json['startingGoldDice'] as String,
-        startingEquipment: json['startingEquipment'] != null
-            ? SrdClassStartingEquipment.fromJson(
-                json['startingEquipment'] as Map<String, dynamic>)
-            : null,
-        subclasses: (json['subclasses'] as List<dynamic>? ?? [])
-            .map((e) => SrdSubclass.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      );
+    name: json['name'] as String,
+    hitDie: json['hitDie'] as int,
+    primaryAbility: List<String>.from(json['primaryAbility']),
+    savingThrows: List<String>.from(json['savingThrows']),
+    armorProficiencies: List<String>.from(json['armorProficiencies']),
+    weaponProficiencies: List<String>.from(json['weaponProficiencies']),
+    toolProficiencies: List<String>.from(json['toolProficiencies']),
+    skillChoices: SrdSkillChoice.fromJson(
+      json['skillChoices'] as Map<String, dynamic>,
+    ),
+    spellcastingAbility: json['spellcastingAbility'] as String?,
+    spellcastingType: json['spellcastingType'] as String?,
+    subclassLevel: json['subclassLevel'] as int,
+    subclassFeatureName: json['subclassFeatureName'] as String,
+    startingGoldDice: json['startingGoldDice'] as String,
+    startingEquipment: json['startingEquipment'] != null
+        ? SrdClassStartingEquipment.fromJson(
+            json['startingEquipment'] as Map<String, dynamic>,
+          )
+        : null,
+    subclasses: (json['subclasses'] as List<dynamic>? ?? [])
+        .map((e) => SrdSubclass.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
 }
 
 class SrdBackgroundFeature {
@@ -305,15 +319,16 @@ class SrdBackground {
   });
 
   factory SrdBackground.fromJson(Map<String, dynamic> json) => SrdBackground(
-        name: json['name'] as String,
-        skillProficiencies: List<String>.from(json['skillProficiencies']),
-        toolProficiencies: List<String>.from(json['toolProficiencies']),
-        languages: json['languages'] as int,
-        startingEquipment: List<String>.from(json['startingEquipment']),
-        feature: SrdBackgroundFeature.fromJson(
-            json['feature'] as Map<String, dynamic>),
-        variants: List<String>.from(json['variants'] ?? []),
-      );
+    name: json['name'] as String,
+    skillProficiencies: List<String>.from(json['skillProficiencies']),
+    toolProficiencies: List<String>.from(json['toolProficiencies']),
+    languages: json['languages'] as int,
+    startingEquipment: List<String>.from(json['startingEquipment']),
+    feature: SrdBackgroundFeature.fromJson(
+      json['feature'] as Map<String, dynamic>,
+    ),
+    variants: List<String>.from(json['variants'] ?? []),
+  );
 }
 
 // ── Spell helper types ────────────────────────────────────────────────────────
@@ -354,9 +369,9 @@ class RaceSpellRef {
   const RaceSpellRef({required this.race, this.subrace});
 
   factory RaceSpellRef.fromJson(Map<String, dynamic> json) => RaceSpellRef(
-        race: json['race'] as String,
-        subrace: json['subrace'] as String?,
-      );
+    race: json['race'] as String,
+    subrace: json['subrace'] as String?,
+  );
 }
 
 /// Racial innate spell definition as stored in races.json.
@@ -473,37 +488,38 @@ class SrdSpell {
   factory SrdSpell.fromJson(Map<String, dynamic> json) {
     final range = json['range'] as String;
     return SrdSpell(
-        name: json['name'] as String,
-        level: json['level'] as int,
-        school: json['school'] as String,
-        castingTime: json['castingTime'] as String,
-        castingTimeType: json['castingTimeType'] as String? ?? 'action',
-        ritual: json['ritual'] as bool? ?? false,
-        range: range,
-        rangeInFeet: _parseRangeInFeet(range),
-        components: List<String>.from(json['components']),
-        material: json['material'] as String?,
-        materialCost: json['materialCost'] as int?,
-        materialConsumed: json['materialConsumed'] as bool? ?? false,
-        duration: json['duration'] as String,
-        concentration: json['concentration'] as bool,
-        areaOfEffect: json['areaOfEffect'] != null
-            ? SpellAreaOfEffect.fromJson(
-                json['areaOfEffect'] as Map<String, dynamic>)
-            : null,
-        attackType: json['attackType'] as String?,
-        saveAttribute: json['saveAttribute'] as String?,
-        damageTypes: List<String>.from(json['damageTypes'] ?? []),
-        description: json['description'] as String,
-        higherLevels: json['higherLevels'] as String?,
-        classes: List<String>.from(json['classes']),
-        subclassSpells: (json['subclassSpells'] as List<dynamic>? ?? [])
-            .map((e) => SubclassSpellRef.fromJson(e as Map<String, dynamic>))
-            .toList(),
-        raceSpells: (json['raceSpells'] as List<dynamic>? ?? [])
-            .map((e) => RaceSpellRef.fromJson(e as Map<String, dynamic>))
-            .toList(),
-      );
+      name: json['name'] as String,
+      level: json['level'] as int,
+      school: json['school'] as String,
+      castingTime: json['castingTime'] as String,
+      castingTimeType: json['castingTimeType'] as String? ?? 'action',
+      ritual: json['ritual'] as bool? ?? false,
+      range: range,
+      rangeInFeet: _parseRangeInFeet(range),
+      components: List<String>.from(json['components']),
+      material: json['material'] as String?,
+      materialCost: json['materialCost'] as int?,
+      materialConsumed: json['materialConsumed'] as bool? ?? false,
+      duration: json['duration'] as String,
+      concentration: json['concentration'] as bool,
+      areaOfEffect: json['areaOfEffect'] != null
+          ? SpellAreaOfEffect.fromJson(
+              json['areaOfEffect'] as Map<String, dynamic>,
+            )
+          : null,
+      attackType: json['attackType'] as String?,
+      saveAttribute: json['saveAttribute'] as String?,
+      damageTypes: List<String>.from(json['damageTypes'] ?? []),
+      description: json['description'] as String,
+      higherLevels: json['higherLevels'] as String?,
+      classes: List<String>.from(json['classes']),
+      subclassSpells: (json['subclassSpells'] as List<dynamic>? ?? [])
+          .map((e) => SubclassSpellRef.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      raceSpells: (json['raceSpells'] as List<dynamic>? ?? [])
+          .map((e) => RaceSpellRef.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
   }
 }
 
@@ -513,10 +529,8 @@ class SrdWeaponRange {
 
   const SrdWeaponRange({required this.normal, required this.long});
 
-  factory SrdWeaponRange.fromJson(Map<String, dynamic> json) => SrdWeaponRange(
-        normal: json['normal'] as int,
-        long: json['long'] as int,
-      );
+  factory SrdWeaponRange.fromJson(Map<String, dynamic> json) =>
+      SrdWeaponRange(normal: json['normal'] as int, long: json['long'] as int);
 }
 
 class SrdWeapon {
@@ -543,18 +557,18 @@ class SrdWeapon {
   });
 
   factory SrdWeapon.fromJson(Map<String, dynamic> json) => SrdWeapon(
-        name: (json['name'] as String?) ?? '',
-        category: (json['category'] as String?) ?? '',
-        damage: (json['damage'] as String?) ?? '0',
-        damageType: (json['damageType'] as String?) ?? '',
-        weight: (json['weight'] as num? ?? 0).toDouble(),
-        cost: (json['cost'] as String?) ?? '',
-        properties: List<String>.from(json['properties']),
-        versatileDamage: json['versatileDamage'] as String?,
-        range: json['range'] != null
-            ? SrdWeaponRange.fromJson(json['range'] as Map<String, dynamic>)
-            : null,
-      );
+    name: (json['name'] as String?) ?? '',
+    category: (json['category'] as String?) ?? '',
+    damage: (json['damage'] as String?) ?? '0',
+    damageType: (json['damageType'] as String?) ?? '',
+    weight: (json['weight'] as num? ?? 0).toDouble(),
+    cost: (json['cost'] as String?) ?? '',
+    properties: List<String>.from(json['properties']),
+    versatileDamage: json['versatileDamage'] as String?,
+    range: json['range'] != null
+        ? SrdWeaponRange.fromJson(json['range'] as Map<String, dynamic>)
+        : null,
+  );
 }
 
 class SrdArmor {
@@ -585,17 +599,17 @@ class SrdArmor {
   bool get isShield => type == 'shield';
 
   factory SrdArmor.fromJson(Map<String, dynamic> json) => SrdArmor(
-        name: (json['name'] as String?) ?? '',
-        type: (json['type'] as String?) ?? '',
-        baseAC: json['baseAC'] as int?,
-        acBonus: json['acBonus'] as int?,
-        addDexModifier: json['addDexModifier'] as bool? ?? false,
-        maxDexBonus: json['maxDexBonus'] as int?,
-        stealthDisadvantage: json['stealthDisadvantage'] as bool? ?? false,
-        strengthRequired: json['strengthRequired'] as int?,
-        weight: (json['weight'] as num? ?? 0).toDouble(),
-        cost: (json['cost'] as String?) ?? '',
-      );
+    name: (json['name'] as String?) ?? '',
+    type: (json['type'] as String?) ?? '',
+    baseAC: json['baseAC'] as int?,
+    acBonus: json['acBonus'] as int?,
+    addDexModifier: json['addDexModifier'] as bool? ?? false,
+    maxDexBonus: json['maxDexBonus'] as int?,
+    stealthDisadvantage: json['stealthDisadvantage'] as bool? ?? false,
+    strengthRequired: json['strengthRequired'] as int?,
+    weight: (json['weight'] as num? ?? 0).toDouble(),
+    cost: (json['cost'] as String?) ?? '',
+  );
 }
 
 class SrdGearItem {
@@ -614,12 +628,12 @@ class SrdGearItem {
   });
 
   factory SrdGearItem.fromJson(Map<String, dynamic> json) => SrdGearItem(
-        name: (json['name'] as String?) ?? '',
-        category: (json['category'] as String?) ?? '',
-        weight: (json['weight'] as num? ?? 0).toDouble(),
-        cost: (json['cost'] as String?) ?? '',
-        description: (json['description'] as String?) ?? '',
-      );
+    name: (json['name'] as String?) ?? '',
+    category: (json['category'] as String?) ?? '',
+    weight: (json['weight'] as num? ?? 0).toDouble(),
+    cost: (json['cost'] as String?) ?? '',
+    description: (json['description'] as String?) ?? '',
+  );
 }
 
 // ── Tools ─────────────────────────────────────────────────────────────────────
@@ -631,9 +645,9 @@ class SrdTool {
   const SrdTool({required this.name, required this.category});
 
   factory SrdTool.fromJson(Map<String, dynamic> json) => SrdTool(
-        name: (json['name'] as String?) ?? '',
-        category: (json['category'] as String?) ?? '',
-      );
+    name: (json['name'] as String?) ?? '',
+    category: (json['category'] as String?) ?? '',
+  );
 }
 
 class SrdMagicItem {
@@ -641,29 +655,51 @@ class SrdMagicItem {
   final String type;
   final String rarity;
   final bool requiresAttunement;
+  final double weight;
+  final String cost;
   final String description;
   final ItemType itemType;
+  final Map<String, dynamic>? properties;
 
   const SrdMagicItem({
     required this.name,
     required this.type,
     required this.rarity,
     required this.requiresAttunement,
+    required this.weight,
+    required this.cost,
     required this.description,
     this.itemType = ItemType.gear,
+    this.properties,
   });
 
-  factory SrdMagicItem.fromJson(Map<String, dynamic> json) => SrdMagicItem(
-        name: (json['name'] as String?) ?? '',
-        type: (json['type'] as String?) ?? '',
-        rarity: (json['rarity'] as String?) ?? '',
-        requiresAttunement: json['requiresAttunement'] as bool? ?? false,
-        description: json['description'] as String? ?? '',
-        itemType: ItemType.values.firstWhere(
-          (e) => e.name == (json['itemType'] as String? ?? ''),
-          orElse: () => ItemType.gear,
-        ),
-      );
+  factory SrdMagicItem.fromJson(Map<String, dynamic> json) {
+    final rarity = (json['rarity'] as String?) ?? '';
+    final requiresAttunement = json['requiresAttunement'] as bool? ?? false;
+    final cost = (json['cost'] as String?) ?? '';
+    final props = <String, dynamic>{
+      if (rarity.isNotEmpty) 'rarity': rarity,
+      'requiresAttunement': requiresAttunement,
+      if (cost.isNotEmpty) 'cost': cost,
+      if (json['effect'] != null) 'effect': json['effect'],
+      if (json['features'] != null) 'features': json['features'],
+    };
+
+    return SrdMagicItem(
+      name: (json['name'] as String?) ?? '',
+      type: (json['type'] as String?) ?? '',
+      rarity: rarity,
+      requiresAttunement: requiresAttunement,
+      weight: (json['weight'] as num?)?.toDouble() ?? 0.0,
+      cost: cost,
+      description: json['description'] as String? ?? '',
+      itemType: ItemType.values.firstWhere(
+        (e) => e.name == (json['itemType'] as String? ?? ''),
+        orElse: () => ItemType.gear,
+      ),
+      properties: props.isEmpty ? null : props,
+    );
+  }
 }
 
 // ── Feats ─────────────────────────────────────────────────────────────────────
@@ -680,10 +716,10 @@ class SrdFeat {
   });
 
   factory SrdFeat.fromJson(Map<String, dynamic> json) => SrdFeat(
-        name: json['name'] as String,
-        prerequisite: json['prerequisite'] as String?,
-        description: json['description'] as String,
-      );
+    name: json['name'] as String,
+    prerequisite: json['prerequisite'] as String?,
+    description: json['description'] as String,
+  );
 }
 
 // ── Class Features ────────────────────────────────────────────────────────────
@@ -695,9 +731,9 @@ class SrdFeatureUses {
   const SrdFeatureUses({required this.amount, required this.rechargeOn});
 
   factory SrdFeatureUses.fromJson(Map<String, dynamic> json) => SrdFeatureUses(
-        amount: json['amount'].toString(),
-        rechargeOn: (json['rechargeOn'] as String?) ?? '',
-      );
+    amount: json['amount'].toString(),
+    rechargeOn: (json['rechargeOn'] as String?) ?? '',
+  );
 
   String get rechargeLabel {
     switch (rechargeOn) {

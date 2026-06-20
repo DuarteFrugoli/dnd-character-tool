@@ -875,6 +875,184 @@ class AppLocalizationsKo extends AppLocalizations {
   String get inventoryTypeGear => '기어';
 
   @override
+  String get inventoryTypeEquippable => '장착 가능';
+
+  @override
+  String get inventoryTypeContainer => '보관함';
+
+  @override
+  String get inventoryAddItemError => '아이템을 추가할 수 없습니다.';
+
+  @override
+  String inventoryLoadItemsError(String error) {
+    return '아이템 로드 오류:\n$error';
+  }
+
+  @override
+  String inventoryNoResults(String query) {
+    return '\"$query\"에 대한 결과 없음';
+  }
+
+  @override
+  String get inventoryTooltipEquip => '장착';
+
+  @override
+  String get inventoryTooltipUnequip => '장착 해제';
+
+  @override
+  String get inventoryCustomDamageDice => '피해 (예: 1d8)';
+
+  @override
+  String get inventoryCustomDamageType => '피해 유형';
+
+  @override
+  String get inventoryCustomWeaponProperties => '속성 (쉼표로 구분)';
+
+  @override
+  String get inventoryCustomRangeNormal => '일반 사거리';
+
+  @override
+  String get inventoryCustomRangeLong => '긴 사거리';
+
+  @override
+  String get inventoryCustomAddDexToAc => 'AC에 DEX 추가';
+
+  @override
+  String get inventoryCustomEquipSlot => '슬롯 (예: 반지, 목)';
+
+  @override
+  String get inventoryCustomCompatibleWith => '호환 대상 (쉼표로 구분)';
+
+  @override
+  String get inventoryDetailYes => '예';
+
+  @override
+  String get inventoryDetailNo => '아니요';
+
+  @override
+  String get inventoryDetailMaxShort => '최대';
+
+  @override
+  String get inventoryDetailDamage => '피해';
+
+  @override
+  String get inventoryDetailDamageType => '피해 유형';
+
+  @override
+  String get inventoryDetailWeaponProperties => '속성';
+
+  @override
+  String get inventoryDetailVersatileDamage => '다용도 피해';
+
+  @override
+  String get inventoryDetailRange => '사거리';
+
+  @override
+  String get inventoryDetailRangeNormal => '일반';
+
+  @override
+  String get inventoryDetailRangeLong => '장거리';
+
+  @override
+  String get inventoryDetailArmorType => '방어구 유형';
+
+  @override
+  String get inventoryDetailShield => '방패';
+
+  @override
+  String get inventoryDetailBaseAc => '기본 AC';
+
+  @override
+  String get inventoryDetailAcBonus => 'AC 보너스';
+
+  @override
+  String get inventoryDetailAddDexToAc => 'AC에 DEX 추가';
+
+  @override
+  String get inventoryDetailMaxDex => '최대 DEX';
+
+  @override
+  String get inventoryDetailStrengthMinimum => '최소 힘';
+
+  @override
+  String get inventoryDetailEquipSlot => '슬롯';
+
+  @override
+  String get inventoryDetailRequiresAttunement => '조율 필요';
+
+  @override
+  String get inventoryDetailCapacityWeight => '무게 용량';
+
+  @override
+  String get inventoryDetailCapacityVolume => '부피';
+
+  @override
+  String get inventoryDetailCapacityVolumeUnit => '부피 단위';
+
+  @override
+  String get inventoryDetailIgnoreContentWeight => '내용물 무게 무시';
+
+  @override
+  String get inventoryDetailEffect => '효과';
+
+  @override
+  String get inventoryDetailUses => '사용 횟수';
+
+  @override
+  String get inventoryDetailAction => '행동';
+
+  @override
+  String get inventoryDetailAmmoType => '탄약 유형';
+
+  @override
+  String get inventoryDetailCompatibleWith => '호환 대상';
+
+  @override
+  String get inventoryDetailBonus => '보너스';
+
+  @override
+  String get inventoryDetailExtraDamage => '추가 피해';
+
+  @override
+  String get inventoryDetailExtraDamageType => '추가 피해 유형';
+
+  @override
+  String get inventoryDetailSubtype => '하위 유형';
+
+  @override
+  String get inventoryDetailCost => '가격';
+
+  @override
+  String get inventoryDetailRarity => '희귀도';
+
+  @override
+  String get inventoryDetailFeatures => '특징';
+
+  @override
+  String get inventoryDetailWeightEach => '개당 무게';
+
+  @override
+  String get inventoryDetailWeightTotal => '총 무게';
+
+  @override
+  String get inventoryDetailState => '상태';
+
+  @override
+  String get inventoryDetailEquipped => '장착됨';
+
+  @override
+  String get inventoryDetailNotEquipped => '장착 안 됨';
+
+  @override
+  String get inventoryDetailSummary => '요약';
+
+  @override
+  String get inventoryDetailDescription => '설명';
+
+  @override
+  String get inventoryDetailAttributes => '속성';
+
+  @override
   String get inventoryReplaceArmorTitle => '장착된 방어구를 교체하시겠습니까?';
 
   @override

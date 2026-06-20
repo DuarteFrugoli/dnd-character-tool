@@ -887,6 +887,187 @@ class AppLocalizationsIt extends AppLocalizations {
   String get inventoryTypeGear => 'Ingranaggio';
 
   @override
+  String get inventoryTypeEquippable => 'Equipaggiabile';
+
+  @override
+  String get inventoryTypeContainer => 'Contenitore';
+
+  @override
+  String get inventoryAddItemError => 'Impossibile aggiungere l\'oggetto.';
+
+  @override
+  String inventoryLoadItemsError(String error) {
+    return 'Errore nel caricamento degli oggetti:\n$error';
+  }
+
+  @override
+  String inventoryNoResults(String query) {
+    return 'Nessun risultato per \"$query\"';
+  }
+
+  @override
+  String get inventoryTooltipEquip => 'Equipaggia';
+
+  @override
+  String get inventoryTooltipUnequip => 'Rimuovi equipaggiamento';
+
+  @override
+  String get inventoryCustomDamageDice => 'Danno (es. 1d8)';
+
+  @override
+  String get inventoryCustomDamageType => 'Tipo di danno';
+
+  @override
+  String get inventoryCustomWeaponProperties =>
+      'Proprietà (separate da virgole)';
+
+  @override
+  String get inventoryCustomRangeNormal => 'Gittata normale';
+
+  @override
+  String get inventoryCustomRangeLong => 'Gittata lunga';
+
+  @override
+  String get inventoryCustomAddDexToAc => 'Aggiungi DES alla CA';
+
+  @override
+  String get inventoryCustomEquipSlot => 'Slot (es. anello, collo)';
+
+  @override
+  String get inventoryCustomCompatibleWith =>
+      'Compatibile con (separato da virgole)';
+
+  @override
+  String get inventoryDetailYes => 'Sì';
+
+  @override
+  String get inventoryDetailNo => 'No';
+
+  @override
+  String get inventoryDetailMaxShort => 'max';
+
+  @override
+  String get inventoryDetailDamage => 'Danno';
+
+  @override
+  String get inventoryDetailDamageType => 'Tipo di danno';
+
+  @override
+  String get inventoryDetailWeaponProperties => 'Proprietà';
+
+  @override
+  String get inventoryDetailVersatileDamage => 'Danno versatile';
+
+  @override
+  String get inventoryDetailRange => 'Gittata';
+
+  @override
+  String get inventoryDetailRangeNormal => 'normale';
+
+  @override
+  String get inventoryDetailRangeLong => 'lunga';
+
+  @override
+  String get inventoryDetailArmorType => 'Tipo di armatura';
+
+  @override
+  String get inventoryDetailShield => 'Scudo';
+
+  @override
+  String get inventoryDetailBaseAc => 'CA base';
+
+  @override
+  String get inventoryDetailAcBonus => 'Bonus CA';
+
+  @override
+  String get inventoryDetailAddDexToAc => 'Aggiunge DES alla CA';
+
+  @override
+  String get inventoryDetailMaxDex => 'DES max';
+
+  @override
+  String get inventoryDetailStrengthMinimum => 'Forza minima';
+
+  @override
+  String get inventoryDetailEquipSlot => 'Slot';
+
+  @override
+  String get inventoryDetailRequiresAttunement => 'Richiede sintonia';
+
+  @override
+  String get inventoryDetailCapacityWeight => 'Capacità di peso';
+
+  @override
+  String get inventoryDetailCapacityVolume => 'Volume';
+
+  @override
+  String get inventoryDetailCapacityVolumeUnit => 'Unità di volume';
+
+  @override
+  String get inventoryDetailIgnoreContentWeight =>
+      'Ignora il peso del contenuto';
+
+  @override
+  String get inventoryDetailEffect => 'Effetto';
+
+  @override
+  String get inventoryDetailUses => 'Usi';
+
+  @override
+  String get inventoryDetailAction => 'Azione';
+
+  @override
+  String get inventoryDetailAmmoType => 'Tipo di munizione';
+
+  @override
+  String get inventoryDetailCompatibleWith => 'Compatibile con';
+
+  @override
+  String get inventoryDetailBonus => 'Bonus';
+
+  @override
+  String get inventoryDetailExtraDamage => 'Danno extra';
+
+  @override
+  String get inventoryDetailExtraDamageType => 'Tipo di danno extra';
+
+  @override
+  String get inventoryDetailSubtype => 'Sottotipo';
+
+  @override
+  String get inventoryDetailCost => 'Costo';
+
+  @override
+  String get inventoryDetailRarity => 'Rarità';
+
+  @override
+  String get inventoryDetailFeatures => 'Caratteristiche';
+
+  @override
+  String get inventoryDetailWeightEach => 'Peso per oggetto';
+
+  @override
+  String get inventoryDetailWeightTotal => 'Peso totale';
+
+  @override
+  String get inventoryDetailState => 'Stato';
+
+  @override
+  String get inventoryDetailEquipped => 'Equipaggiato';
+
+  @override
+  String get inventoryDetailNotEquipped => 'Non equipaggiato';
+
+  @override
+  String get inventoryDetailSummary => 'Riepilogo';
+
+  @override
+  String get inventoryDetailDescription => 'Descrizione';
+
+  @override
+  String get inventoryDetailAttributes => 'Attributi';
+
+  @override
   String get inventoryReplaceArmorTitle =>
       'Sostituire l\'armatura equipaggiata?';
 

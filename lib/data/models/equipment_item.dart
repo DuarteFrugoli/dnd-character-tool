@@ -12,6 +12,7 @@ enum ItemType {
   consumable,
   ammunition,
   equippable,
+  container,
   gear,
 }
 

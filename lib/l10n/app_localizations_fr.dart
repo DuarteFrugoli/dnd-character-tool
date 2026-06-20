@@ -890,6 +890,186 @@ class AppLocalizationsFr extends AppLocalizations {
   String get inventoryTypeGear => 'Engrenage';
 
   @override
+  String get inventoryTypeEquippable => 'Équipable';
+
+  @override
+  String get inventoryTypeContainer => 'Contenant';
+
+  @override
+  String get inventoryAddItemError => 'Impossible d\'ajouter l\'objet.';
+
+  @override
+  String inventoryLoadItemsError(String error) {
+    return 'Erreur de chargement des objets :\n$error';
+  }
+
+  @override
+  String inventoryNoResults(String query) {
+    return 'Aucun résultat pour \"$query\"';
+  }
+
+  @override
+  String get inventoryTooltipEquip => 'Équiper';
+
+  @override
+  String get inventoryTooltipUnequip => 'Déséquiper';
+
+  @override
+  String get inventoryCustomDamageDice => 'Dégâts (ex. : 1d8)';
+
+  @override
+  String get inventoryCustomDamageType => 'Type de dégâts';
+
+  @override
+  String get inventoryCustomWeaponProperties =>
+      'Propriétés (séparées par des virgules)';
+
+  @override
+  String get inventoryCustomRangeNormal => 'Portée normale';
+
+  @override
+  String get inventoryCustomRangeLong => 'Portée longue';
+
+  @override
+  String get inventoryCustomAddDexToAc => 'Ajouter DEX à la CA';
+
+  @override
+  String get inventoryCustomEquipSlot => 'Emplacement (ex. : anneau, cou)';
+
+  @override
+  String get inventoryCustomCompatibleWith =>
+      'Compatible avec (séparé par des virgules)';
+
+  @override
+  String get inventoryDetailYes => 'Oui';
+
+  @override
+  String get inventoryDetailNo => 'Non';
+
+  @override
+  String get inventoryDetailMaxShort => 'max';
+
+  @override
+  String get inventoryDetailDamage => 'Dégâts';
+
+  @override
+  String get inventoryDetailDamageType => 'Type de dégâts';
+
+  @override
+  String get inventoryDetailWeaponProperties => 'Propriétés';
+
+  @override
+  String get inventoryDetailVersatileDamage => 'Dégâts polyvalents';
+
+  @override
+  String get inventoryDetailRange => 'Portée';
+
+  @override
+  String get inventoryDetailRangeNormal => 'normale';
+
+  @override
+  String get inventoryDetailRangeLong => 'longue';
+
+  @override
+  String get inventoryDetailArmorType => 'Type d\'armure';
+
+  @override
+  String get inventoryDetailShield => 'Bouclier';
+
+  @override
+  String get inventoryDetailBaseAc => 'CA de base';
+
+  @override
+  String get inventoryDetailAcBonus => 'Bonus de CA';
+
+  @override
+  String get inventoryDetailAddDexToAc => 'Ajoute DEX à la CA';
+
+  @override
+  String get inventoryDetailMaxDex => 'DEX max.';
+
+  @override
+  String get inventoryDetailStrengthMinimum => 'Force minimale';
+
+  @override
+  String get inventoryDetailEquipSlot => 'Emplacement';
+
+  @override
+  String get inventoryDetailRequiresAttunement => 'Nécessite l\'harmonisation';
+
+  @override
+  String get inventoryDetailCapacityWeight => 'Capacité de poids';
+
+  @override
+  String get inventoryDetailCapacityVolume => 'Volume';
+
+  @override
+  String get inventoryDetailCapacityVolumeUnit => 'Unité de volume';
+
+  @override
+  String get inventoryDetailIgnoreContentWeight => 'Ignore le poids du contenu';
+
+  @override
+  String get inventoryDetailEffect => 'Effet';
+
+  @override
+  String get inventoryDetailUses => 'Utilisations';
+
+  @override
+  String get inventoryDetailAction => 'Action';
+
+  @override
+  String get inventoryDetailAmmoType => 'Type de munition';
+
+  @override
+  String get inventoryDetailCompatibleWith => 'Compatible avec';
+
+  @override
+  String get inventoryDetailBonus => 'Bonus';
+
+  @override
+  String get inventoryDetailExtraDamage => 'Dégâts supplémentaires';
+
+  @override
+  String get inventoryDetailExtraDamageType => 'Type de dégâts supplémentaires';
+
+  @override
+  String get inventoryDetailSubtype => 'Sous-type';
+
+  @override
+  String get inventoryDetailCost => 'Coût';
+
+  @override
+  String get inventoryDetailRarity => 'Rareté';
+
+  @override
+  String get inventoryDetailFeatures => 'Caractéristiques';
+
+  @override
+  String get inventoryDetailWeightEach => 'Poids par objet';
+
+  @override
+  String get inventoryDetailWeightTotal => 'Poids total';
+
+  @override
+  String get inventoryDetailState => 'État';
+
+  @override
+  String get inventoryDetailEquipped => 'Équipé';
+
+  @override
+  String get inventoryDetailNotEquipped => 'Non équipé';
+
+  @override
+  String get inventoryDetailSummary => 'Résumé';
+
+  @override
+  String get inventoryDetailDescription => 'Description';
+
+  @override
+  String get inventoryDetailAttributes => 'Attributs';
+
+  @override
   String get inventoryReplaceArmorTitle => 'Remplacer l\'armure équipée ?';
 
   @override

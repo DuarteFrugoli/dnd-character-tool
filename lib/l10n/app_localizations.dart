@@ -1686,6 +1686,354 @@ abstract class AppLocalizations {
   /// **'Gear'**
   String get inventoryTypeGear;
 
+  /// Item type: generic item that can be equipped without counting as armor.
+  ///
+  /// In en, this message translates to:
+  /// **'Equippable'**
+  String get inventoryTypeEquippable;
+
+  /// Item type: container that can hold other inventory items.
+  ///
+  /// In en, this message translates to:
+  /// **'Container'**
+  String get inventoryTypeContainer;
+
+  /// Snackbar shown when adding an inventory item fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not add item.'**
+  String get inventoryAddItemError;
+
+  /// Inventory item browser load error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading items:\n{error}'**
+  String inventoryLoadItemsError(String error);
+
+  /// Inventory item browser empty search result.
+  ///
+  /// In en, this message translates to:
+  /// **'No results for \"{query}\"'**
+  String inventoryNoResults(String query);
+
+  /// Tooltip for equipping an inventory item.
+  ///
+  /// In en, this message translates to:
+  /// **'Equip'**
+  String get inventoryTooltipEquip;
+
+  /// Tooltip for unequipping an inventory item.
+  ///
+  /// In en, this message translates to:
+  /// **'Unequip'**
+  String get inventoryTooltipUnequip;
+
+  /// Custom item field label for weapon damage dice.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage (e.g. 1d8)'**
+  String get inventoryCustomDamageDice;
+
+  /// Custom item field label for weapon damage type.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage type'**
+  String get inventoryCustomDamageType;
+
+  /// Custom item field label for comma-separated weapon properties.
+  ///
+  /// In en, this message translates to:
+  /// **'Properties (comma-separated)'**
+  String get inventoryCustomWeaponProperties;
+
+  /// Custom item field label for normal weapon range.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal range'**
+  String get inventoryCustomRangeNormal;
+
+  /// Custom item field label for long weapon range.
+  ///
+  /// In en, this message translates to:
+  /// **'Long range'**
+  String get inventoryCustomRangeLong;
+
+  /// Custom armor checkbox label for adding Dexterity modifier to AC.
+  ///
+  /// In en, this message translates to:
+  /// **'Add DEX to AC'**
+  String get inventoryCustomAddDexToAc;
+
+  /// Custom item field label for an equippable item's body slot.
+  ///
+  /// In en, this message translates to:
+  /// **'Slot (e.g. ring, neck)'**
+  String get inventoryCustomEquipSlot;
+
+  /// Custom ammunition field label for compatible weapons or ammunition users.
+  ///
+  /// In en, this message translates to:
+  /// **'Compatible with (comma-separated)'**
+  String get inventoryCustomCompatibleWith;
+
+  /// Boolean yes value in inventory item details.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get inventoryDetailYes;
+
+  /// Boolean no value in inventory item details.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get inventoryDetailNo;
+
+  /// Short label for maximum value, used in AC and Dexterity summaries.
+  ///
+  /// In en, this message translates to:
+  /// **'max'**
+  String get inventoryDetailMaxShort;
+
+  /// Inventory item detail label for damage.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage'**
+  String get inventoryDetailDamage;
+
+  /// Inventory item detail label for damage type.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage type'**
+  String get inventoryDetailDamageType;
+
+  /// Inventory item detail label for weapon properties.
+  ///
+  /// In en, this message translates to:
+  /// **'Properties'**
+  String get inventoryDetailWeaponProperties;
+
+  /// Inventory item detail label for versatile weapon damage.
+  ///
+  /// In en, this message translates to:
+  /// **'Versatile damage'**
+  String get inventoryDetailVersatileDamage;
+
+  /// Inventory item detail label for weapon range.
+  ///
+  /// In en, this message translates to:
+  /// **'Range'**
+  String get inventoryDetailRange;
+
+  /// Inventory item detail value label for normal range.
+  ///
+  /// In en, this message translates to:
+  /// **'normal'**
+  String get inventoryDetailRangeNormal;
+
+  /// Inventory item detail value label for long range.
+  ///
+  /// In en, this message translates to:
+  /// **'long'**
+  String get inventoryDetailRangeLong;
+
+  /// Inventory item detail label for armor type.
+  ///
+  /// In en, this message translates to:
+  /// **'Armor type'**
+  String get inventoryDetailArmorType;
+
+  /// Inventory item detail label for shield flag.
+  ///
+  /// In en, this message translates to:
+  /// **'Shield'**
+  String get inventoryDetailShield;
+
+  /// Inventory item detail label for base armor class.
+  ///
+  /// In en, this message translates to:
+  /// **'Base AC'**
+  String get inventoryDetailBaseAc;
+
+  /// Inventory item detail label for armor class bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'AC bonus'**
+  String get inventoryDetailAcBonus;
+
+  /// Inventory item detail label indicating whether Dexterity is added to AC.
+  ///
+  /// In en, this message translates to:
+  /// **'Adds DEX to AC'**
+  String get inventoryDetailAddDexToAc;
+
+  /// Inventory item detail label for maximum Dexterity bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'Max DEX'**
+  String get inventoryDetailMaxDex;
+
+  /// Inventory item detail label for minimum Strength requirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum Strength'**
+  String get inventoryDetailStrengthMinimum;
+
+  /// Inventory item detail label for equipment slot.
+  ///
+  /// In en, this message translates to:
+  /// **'Slot'**
+  String get inventoryDetailEquipSlot;
+
+  /// Inventory item detail label for attunement requirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Requires attunement'**
+  String get inventoryDetailRequiresAttunement;
+
+  /// Inventory item detail label for container weight capacity.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight capacity'**
+  String get inventoryDetailCapacityWeight;
+
+  /// Inventory item detail label for container volume.
+  ///
+  /// In en, this message translates to:
+  /// **'Volume'**
+  String get inventoryDetailCapacityVolume;
+
+  /// Inventory item detail label for container volume unit.
+  ///
+  /// In en, this message translates to:
+  /// **'Volume unit'**
+  String get inventoryDetailCapacityVolumeUnit;
+
+  /// Inventory item detail label for containers that ignore contained item weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Ignores content weight'**
+  String get inventoryDetailIgnoreContentWeight;
+
+  /// Inventory item detail label for item effect.
+  ///
+  /// In en, this message translates to:
+  /// **'Effect'**
+  String get inventoryDetailEffect;
+
+  /// Inventory item detail label for item uses.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses'**
+  String get inventoryDetailUses;
+
+  /// Inventory item detail label for action type.
+  ///
+  /// In en, this message translates to:
+  /// **'Action'**
+  String get inventoryDetailAction;
+
+  /// Inventory item detail label for ammunition type.
+  ///
+  /// In en, this message translates to:
+  /// **'Ammunition type'**
+  String get inventoryDetailAmmoType;
+
+  /// Inventory item detail label for compatible weapons or item types.
+  ///
+  /// In en, this message translates to:
+  /// **'Compatible with'**
+  String get inventoryDetailCompatibleWith;
+
+  /// Inventory item detail label for numeric bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'Bonus'**
+  String get inventoryDetailBonus;
+
+  /// Inventory item detail label for extra damage.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra damage'**
+  String get inventoryDetailExtraDamage;
+
+  /// Inventory item detail label for extra damage type.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra damage type'**
+  String get inventoryDetailExtraDamageType;
+
+  /// Inventory item detail label for item subtype.
+  ///
+  /// In en, this message translates to:
+  /// **'Subtype'**
+  String get inventoryDetailSubtype;
+
+  /// Inventory item detail label for item cost.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost'**
+  String get inventoryDetailCost;
+
+  /// Inventory item detail label for magic item rarity.
+  ///
+  /// In en, this message translates to:
+  /// **'Rarity'**
+  String get inventoryDetailRarity;
+
+  /// Inventory item detail label for item features.
+  ///
+  /// In en, this message translates to:
+  /// **'Features'**
+  String get inventoryDetailFeatures;
+
+  /// Inventory item detail label for per-item weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight per item'**
+  String get inventoryDetailWeightEach;
+
+  /// Inventory item detail label for total stack weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Total weight'**
+  String get inventoryDetailWeightTotal;
+
+  /// Inventory item detail label for equipped state.
+  ///
+  /// In en, this message translates to:
+  /// **'State'**
+  String get inventoryDetailState;
+
+  /// Inventory item detail value for equipped items.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipped'**
+  String get inventoryDetailEquipped;
+
+  /// Inventory item detail value for unequipped items.
+  ///
+  /// In en, this message translates to:
+  /// **'Not equipped'**
+  String get inventoryDetailNotEquipped;
+
+  /// Inventory item detail section title for summary rows.
+  ///
+  /// In en, this message translates to:
+  /// **'Summary'**
+  String get inventoryDetailSummary;
+
+  /// Inventory item detail section title for description text.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get inventoryDetailDescription;
+
+  /// Inventory item detail section title for item attributes.
+  ///
+  /// In en, this message translates to:
+  /// **'Attributes'**
+  String get inventoryDetailAttributes;
+
   /// Replace armor confirmation dialog title.
   ///
   /// In en, this message translates to:

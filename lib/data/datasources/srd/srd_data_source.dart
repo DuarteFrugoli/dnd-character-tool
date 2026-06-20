@@ -207,7 +207,11 @@ class SrdDataSource {
         final g = entry as Map<String, dynamic>;
         final rawName = (g['name'] as String).toLowerCase();
         final category = g['category'] as String;
-        final itemType = category == 'ammunition' ? 'ammunition' : 'gear';
+        final itemType = category == 'ammunition'
+            ? 'ammunition'
+            : category == 'container'
+                ? 'container'
+                : 'gear';
         result[rawName] = SrdItemData(itemType: itemType, category: category);
         // Alias stripped names for ammo bundles:
         // "arrows (20)" → "arrows", "crossbow bolts (20)" → "bolts", etc.

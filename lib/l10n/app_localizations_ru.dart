@@ -887,6 +887,184 @@ class AppLocalizationsRu extends AppLocalizations {
   String get inventoryTypeGear => 'Механизм';
 
   @override
+  String get inventoryTypeEquippable => 'Можно экипировать';
+
+  @override
+  String get inventoryTypeContainer => 'Контейнер';
+
+  @override
+  String get inventoryAddItemError => 'Не удалось добавить предмет.';
+
+  @override
+  String inventoryLoadItemsError(String error) {
+    return 'Ошибка загрузки предметов:\n$error';
+  }
+
+  @override
+  String inventoryNoResults(String query) {
+    return 'Нет результатов для \"$query\"';
+  }
+
+  @override
+  String get inventoryTooltipEquip => 'Экипировать';
+
+  @override
+  String get inventoryTooltipUnequip => 'Снять';
+
+  @override
+  String get inventoryCustomDamageDice => 'Урон (например, 1d8)';
+
+  @override
+  String get inventoryCustomDamageType => 'Тип урона';
+
+  @override
+  String get inventoryCustomWeaponProperties => 'Свойства (через запятую)';
+
+  @override
+  String get inventoryCustomRangeNormal => 'Обычная дистанция';
+
+  @override
+  String get inventoryCustomRangeLong => 'Дальняя дистанция';
+
+  @override
+  String get inventoryCustomAddDexToAc => 'Добавить ЛВК к КД';
+
+  @override
+  String get inventoryCustomEquipSlot => 'Слот (например, кольцо, шея)';
+
+  @override
+  String get inventoryCustomCompatibleWith => 'Совместимо с (через запятую)';
+
+  @override
+  String get inventoryDetailYes => 'Да';
+
+  @override
+  String get inventoryDetailNo => 'Нет';
+
+  @override
+  String get inventoryDetailMaxShort => 'макс.';
+
+  @override
+  String get inventoryDetailDamage => 'Урон';
+
+  @override
+  String get inventoryDetailDamageType => 'Тип урона';
+
+  @override
+  String get inventoryDetailWeaponProperties => 'Свойства';
+
+  @override
+  String get inventoryDetailVersatileDamage => 'Урон при универсальном хвате';
+
+  @override
+  String get inventoryDetailRange => 'Дистанция';
+
+  @override
+  String get inventoryDetailRangeNormal => 'обычная';
+
+  @override
+  String get inventoryDetailRangeLong => 'дальняя';
+
+  @override
+  String get inventoryDetailArmorType => 'Тип доспеха';
+
+  @override
+  String get inventoryDetailShield => 'Щит';
+
+  @override
+  String get inventoryDetailBaseAc => 'Базовый КД';
+
+  @override
+  String get inventoryDetailAcBonus => 'Бонус КД';
+
+  @override
+  String get inventoryDetailAddDexToAc => 'Добавляет ЛВК к КД';
+
+  @override
+  String get inventoryDetailMaxDex => 'Макс. ЛВК';
+
+  @override
+  String get inventoryDetailStrengthMinimum => 'Минимальная Сила';
+
+  @override
+  String get inventoryDetailEquipSlot => 'Слот';
+
+  @override
+  String get inventoryDetailRequiresAttunement => 'Требует настройки';
+
+  @override
+  String get inventoryDetailCapacityWeight => 'Грузоподъемность';
+
+  @override
+  String get inventoryDetailCapacityVolume => 'Объем';
+
+  @override
+  String get inventoryDetailCapacityVolumeUnit => 'Единица объема';
+
+  @override
+  String get inventoryDetailIgnoreContentWeight => 'Игнорирует вес содержимого';
+
+  @override
+  String get inventoryDetailEffect => 'Эффект';
+
+  @override
+  String get inventoryDetailUses => 'Использования';
+
+  @override
+  String get inventoryDetailAction => 'Действие';
+
+  @override
+  String get inventoryDetailAmmoType => 'Тип боеприпаса';
+
+  @override
+  String get inventoryDetailCompatibleWith => 'Совместимо с';
+
+  @override
+  String get inventoryDetailBonus => 'Бонус';
+
+  @override
+  String get inventoryDetailExtraDamage => 'Дополнительный урон';
+
+  @override
+  String get inventoryDetailExtraDamageType => 'Тип дополнительного урона';
+
+  @override
+  String get inventoryDetailSubtype => 'Подтип';
+
+  @override
+  String get inventoryDetailCost => 'Стоимость';
+
+  @override
+  String get inventoryDetailRarity => 'Редкость';
+
+  @override
+  String get inventoryDetailFeatures => 'Особенности';
+
+  @override
+  String get inventoryDetailWeightEach => 'Вес за предмет';
+
+  @override
+  String get inventoryDetailWeightTotal => 'Общий вес';
+
+  @override
+  String get inventoryDetailState => 'Состояние';
+
+  @override
+  String get inventoryDetailEquipped => 'Экипировано';
+
+  @override
+  String get inventoryDetailNotEquipped => 'Не экипировано';
+
+  @override
+  String get inventoryDetailSummary => 'Сводка';
+
+  @override
+  String get inventoryDetailDescription => 'Описание';
+
+  @override
+  String get inventoryDetailAttributes => 'Атрибуты';
+
+  @override
   String get inventoryReplaceArmorTitle => 'Заменить экипированную броню?';
 
   @override

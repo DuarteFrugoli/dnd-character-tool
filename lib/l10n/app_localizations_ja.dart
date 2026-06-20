@@ -874,6 +874,184 @@ class AppLocalizationsJa extends AppLocalizations {
   String get inventoryTypeGear => 'ギヤ';
 
   @override
+  String get inventoryTypeEquippable => '装備可能';
+
+  @override
+  String get inventoryTypeContainer => '容器';
+
+  @override
+  String get inventoryAddItemError => 'アイテムを追加できませんでした。';
+
+  @override
+  String inventoryLoadItemsError(String error) {
+    return 'アイテムの読み込みエラー:\n$error';
+  }
+
+  @override
+  String inventoryNoResults(String query) {
+    return '「$query」の結果はありません';
+  }
+
+  @override
+  String get inventoryTooltipEquip => '装備';
+
+  @override
+  String get inventoryTooltipUnequip => '装備解除';
+
+  @override
+  String get inventoryCustomDamageDice => 'ダメージ (例: 1d8)';
+
+  @override
+  String get inventoryCustomDamageType => 'ダメージ種別';
+
+  @override
+  String get inventoryCustomWeaponProperties => 'プロパティ (カンマ区切り)';
+
+  @override
+  String get inventoryCustomRangeNormal => '通常射程';
+
+  @override
+  String get inventoryCustomRangeLong => '長射程';
+
+  @override
+  String get inventoryCustomAddDexToAc => 'ACにDEXを加算';
+
+  @override
+  String get inventoryCustomEquipSlot => 'スロット (例: 指輪、首)';
+
+  @override
+  String get inventoryCustomCompatibleWith => '対応対象 (カンマ区切り)';
+
+  @override
+  String get inventoryDetailYes => 'はい';
+
+  @override
+  String get inventoryDetailNo => 'いいえ';
+
+  @override
+  String get inventoryDetailMaxShort => '最大';
+
+  @override
+  String get inventoryDetailDamage => 'ダメージ';
+
+  @override
+  String get inventoryDetailDamageType => 'ダメージ種別';
+
+  @override
+  String get inventoryDetailWeaponProperties => 'プロパティ';
+
+  @override
+  String get inventoryDetailVersatileDamage => '両用ダメージ';
+
+  @override
+  String get inventoryDetailRange => '射程';
+
+  @override
+  String get inventoryDetailRangeNormal => '通常';
+
+  @override
+  String get inventoryDetailRangeLong => '長距離';
+
+  @override
+  String get inventoryDetailArmorType => '防具種別';
+
+  @override
+  String get inventoryDetailShield => '盾';
+
+  @override
+  String get inventoryDetailBaseAc => '基本AC';
+
+  @override
+  String get inventoryDetailAcBonus => 'ACボーナス';
+
+  @override
+  String get inventoryDetailAddDexToAc => 'ACにDEXを加算';
+
+  @override
+  String get inventoryDetailMaxDex => '最大DEX';
+
+  @override
+  String get inventoryDetailStrengthMinimum => '必要筋力';
+
+  @override
+  String get inventoryDetailEquipSlot => 'スロット';
+
+  @override
+  String get inventoryDetailRequiresAttunement => '同調が必要';
+
+  @override
+  String get inventoryDetailCapacityWeight => '重量容量';
+
+  @override
+  String get inventoryDetailCapacityVolume => '容量';
+
+  @override
+  String get inventoryDetailCapacityVolumeUnit => '容量単位';
+
+  @override
+  String get inventoryDetailIgnoreContentWeight => '中身の重量を無視';
+
+  @override
+  String get inventoryDetailEffect => '効果';
+
+  @override
+  String get inventoryDetailUses => '使用回数';
+
+  @override
+  String get inventoryDetailAction => 'アクション';
+
+  @override
+  String get inventoryDetailAmmoType => '弾薬種別';
+
+  @override
+  String get inventoryDetailCompatibleWith => '対応対象';
+
+  @override
+  String get inventoryDetailBonus => 'ボーナス';
+
+  @override
+  String get inventoryDetailExtraDamage => '追加ダメージ';
+
+  @override
+  String get inventoryDetailExtraDamageType => '追加ダメージ種別';
+
+  @override
+  String get inventoryDetailSubtype => 'サブタイプ';
+
+  @override
+  String get inventoryDetailCost => '価格';
+
+  @override
+  String get inventoryDetailRarity => 'レアリティ';
+
+  @override
+  String get inventoryDetailFeatures => '特徴';
+
+  @override
+  String get inventoryDetailWeightEach => '1個あたりの重量';
+
+  @override
+  String get inventoryDetailWeightTotal => '総重量';
+
+  @override
+  String get inventoryDetailState => '状態';
+
+  @override
+  String get inventoryDetailEquipped => '装備中';
+
+  @override
+  String get inventoryDetailNotEquipped => '未装備';
+
+  @override
+  String get inventoryDetailSummary => '概要';
+
+  @override
+  String get inventoryDetailDescription => '説明';
+
+  @override
+  String get inventoryDetailAttributes => '属性';
+
+  @override
   String get inventoryReplaceArmorTitle => '装備している防具を交換しますか？';
 
   @override

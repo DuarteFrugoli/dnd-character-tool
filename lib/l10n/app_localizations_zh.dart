@@ -866,6 +866,184 @@ class AppLocalizationsZh extends AppLocalizations {
   String get inventoryTypeGear => '齿轮';
 
   @override
+  String get inventoryTypeEquippable => '可装备';
+
+  @override
+  String get inventoryTypeContainer => '容器';
+
+  @override
+  String get inventoryAddItemError => '无法添加物品。';
+
+  @override
+  String inventoryLoadItemsError(String error) {
+    return '加载物品时出错:\n$error';
+  }
+
+  @override
+  String inventoryNoResults(String query) {
+    return '没有“$query”的结果';
+  }
+
+  @override
+  String get inventoryTooltipEquip => '装备';
+
+  @override
+  String get inventoryTooltipUnequip => '卸下';
+
+  @override
+  String get inventoryCustomDamageDice => '伤害（例如 1d8）';
+
+  @override
+  String get inventoryCustomDamageType => '伤害类型';
+
+  @override
+  String get inventoryCustomWeaponProperties => '属性（用逗号分隔）';
+
+  @override
+  String get inventoryCustomRangeNormal => '普通射程';
+
+  @override
+  String get inventoryCustomRangeLong => '远射程';
+
+  @override
+  String get inventoryCustomAddDexToAc => '将DEX加入AC';
+
+  @override
+  String get inventoryCustomEquipSlot => '部位（例如：戒指，颈部）';
+
+  @override
+  String get inventoryCustomCompatibleWith => '兼容对象（用逗号分隔）';
+
+  @override
+  String get inventoryDetailYes => '是';
+
+  @override
+  String get inventoryDetailNo => '否';
+
+  @override
+  String get inventoryDetailMaxShort => '最大';
+
+  @override
+  String get inventoryDetailDamage => '伤害';
+
+  @override
+  String get inventoryDetailDamageType => '伤害类型';
+
+  @override
+  String get inventoryDetailWeaponProperties => '属性';
+
+  @override
+  String get inventoryDetailVersatileDamage => '多用伤害';
+
+  @override
+  String get inventoryDetailRange => '射程';
+
+  @override
+  String get inventoryDetailRangeNormal => '普通';
+
+  @override
+  String get inventoryDetailRangeLong => '远';
+
+  @override
+  String get inventoryDetailArmorType => '护甲类型';
+
+  @override
+  String get inventoryDetailShield => '盾牌';
+
+  @override
+  String get inventoryDetailBaseAc => '基础AC';
+
+  @override
+  String get inventoryDetailAcBonus => 'AC加值';
+
+  @override
+  String get inventoryDetailAddDexToAc => '将DEX加入AC';
+
+  @override
+  String get inventoryDetailMaxDex => '最大DEX';
+
+  @override
+  String get inventoryDetailStrengthMinimum => '最低力量';
+
+  @override
+  String get inventoryDetailEquipSlot => '部位';
+
+  @override
+  String get inventoryDetailRequiresAttunement => '需要同调';
+
+  @override
+  String get inventoryDetailCapacityWeight => '重量容量';
+
+  @override
+  String get inventoryDetailCapacityVolume => '体积';
+
+  @override
+  String get inventoryDetailCapacityVolumeUnit => '体积单位';
+
+  @override
+  String get inventoryDetailIgnoreContentWeight => '忽略内容重量';
+
+  @override
+  String get inventoryDetailEffect => '效果';
+
+  @override
+  String get inventoryDetailUses => '使用次数';
+
+  @override
+  String get inventoryDetailAction => '动作';
+
+  @override
+  String get inventoryDetailAmmoType => '弹药类型';
+
+  @override
+  String get inventoryDetailCompatibleWith => '兼容对象';
+
+  @override
+  String get inventoryDetailBonus => '加值';
+
+  @override
+  String get inventoryDetailExtraDamage => '额外伤害';
+
+  @override
+  String get inventoryDetailExtraDamageType => '额外伤害类型';
+
+  @override
+  String get inventoryDetailSubtype => '子类型';
+
+  @override
+  String get inventoryDetailCost => '价格';
+
+  @override
+  String get inventoryDetailRarity => '稀有度';
+
+  @override
+  String get inventoryDetailFeatures => '特性';
+
+  @override
+  String get inventoryDetailWeightEach => '单件重量';
+
+  @override
+  String get inventoryDetailWeightTotal => '总重量';
+
+  @override
+  String get inventoryDetailState => '状态';
+
+  @override
+  String get inventoryDetailEquipped => '已装备';
+
+  @override
+  String get inventoryDetailNotEquipped => '未装备';
+
+  @override
+  String get inventoryDetailSummary => '摘要';
+
+  @override
+  String get inventoryDetailDescription => '描述';
+
+  @override
+  String get inventoryDetailAttributes => '属性';
+
+  @override
   String get inventoryReplaceArmorTitle => '更换装备的装甲？';
 
   @override

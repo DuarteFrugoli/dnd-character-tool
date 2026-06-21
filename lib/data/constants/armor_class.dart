@@ -9,7 +9,7 @@ import '../models/models.dart';
 /// Rules:
 /// - Body armor (non-shield) sets the base AC per its properties.
 /// - Shield adds its bonus on top.
-/// - Without body armor, applies Unarmored Defense per class:
+/// - Without body armor, applies Unarmored Defense when available:
 ///   - Barbarian: 10 + DEX mod + CON mod
 ///   - Monk:      10 + DEX mod + WIS mod
 ///   - Others:    10 + DEX mod
@@ -31,7 +31,7 @@ int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
       final baseAC = (props['baseAC'] as num?)?.toInt() ?? 10;
       final addDex = props['addDexModifier'] as bool? ?? true;
       final maxDex = (props['maxDexBonus'] as num?)?.toInt();
-      int ac = baseAC;
+      var ac = baseAC;
       if (addDex) {
         ac += maxDex != null ? dexMod.clamp(-99, maxDex) : dexMod;
       }
@@ -39,22 +39,62 @@ int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
     }
   }
 
-  final int base;
-  if (armorBase != null) {
-    base = armorBase;
-  } else {
-    // Unarmored Defense — class-specific formula
-    final cls = c.characterClass.toLowerCase();
-    if (cls == 'barbarian') {
-      // Barbarians keep Unarmored Defense even with a shield.
-      base = 10 + dexMod + c.abilityScores.constitutionModifier;
-    } else if (cls == 'monk' && shieldBonus == 0) {
-      // Monks lose Unarmored Defense if they equip a shield.
-      base = 10 + dexMod + c.abilityScores.wisdomModifier;
-    } else {
-      base = 10 + dexMod;
-    }
-  }
+  if (armorBase != null) return armorBase + shieldBonus;
 
-  return base + shieldBonus;
+  return calcUnarmoredArmorClass(
+    characterClass: c.characterClass,
+    abilityScores: c.abilityScores,
+    shieldBonus: shieldBonus,
+    extraFeatures: c.extraFeatures,
+    disabledFeatures: c.disabledFeatures,
+  );
+}
+
+int calcUnarmoredArmorClass({
+  required String characterClass,
+  required AbilityScores abilityScores,
+  int shieldBonus = 0,
+  Iterable<CharacterExtraFeature> extraFeatures = const [],
+  Iterable<String> disabledFeatures = const [],
+}) {
+  final dexMod = abilityScores.dexterityModifier;
+  if (_hasUnarmoredDefense(
+    characterClass: characterClass,
+    sourceClass: 'Barbarian',
+    extraFeatures: extraFeatures,
+    disabledFeatures: disabledFeatures,
+  )) {
+    // Barbarians keep Unarmored Defense even with a shield.
+    return 10 + dexMod + abilityScores.constitutionModifier + shieldBonus;
+  }
+  if (shieldBonus == 0 &&
+      _hasUnarmoredDefense(
+        characterClass: characterClass,
+        sourceClass: 'Monk',
+        extraFeatures: extraFeatures,
+        disabledFeatures: disabledFeatures,
+      )) {
+    // Monks lose Unarmored Defense if they equip a shield.
+    return 10 + dexMod + abilityScores.wisdomModifier;
+  }
+  return 10 + dexMod + shieldBonus;
+}
+
+bool _hasUnarmoredDefense({
+  required String characterClass,
+  required String sourceClass,
+  required Iterable<CharacterExtraFeature> extraFeatures,
+  required Iterable<String> disabledFeatures,
+}) {
+  const featureName = 'Unarmored Defense';
+  if (disabledFeatures.contains(featureName)) return false;
+
+  final source = sourceClass.toLowerCase();
+  if (characterClass.toLowerCase() == source) return true;
+
+  return extraFeatures.any(
+    (f) =>
+        f.name.toLowerCase() == featureName.toLowerCase() &&
+        f.sourceClass.toLowerCase() == source,
+  );
 }

@@ -553,7 +553,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                 isScrollControlled: true,
                 useSafeArea: true,
                 builder: (_) => SpellBrowserSheet(
-                  characterClass: character.characterClass,
+                  characterClass: engine.spellListClass,
                   maxSpellLevel: engine.maxSpellLevel,
                   knownSpells: character.spells,
                   isPrepareAll: isPrepareAll,

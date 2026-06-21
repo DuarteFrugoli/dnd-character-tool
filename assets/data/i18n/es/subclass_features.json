@@ -349,7 +349,7 @@
     "Eldritch Knight": {
       "Spellcasting": {
         "name": "Lanzamiento de hechizos",
-        "description": "Cuando alcanzas el nivel 3, aumentas tu destreza marcial con la capacidad de lanzar hechizos. La inteligencia es tu habilidad para lanzar hechizos para tus hechizos de mago. Conoces tres trucos de mago y cuatro hechizos de mago de primer nivel, al menos dos de los cuales deben ser de las escuelas de abjuración o evocación."
+        "description": "Cuando alcanzas el nivel 3, aumentas tu destreza marcial con la capacidad de lanzar hechizos. La inteligencia es tu habilidad para lanzar hechizos para tus hechizos de mago. Conoces dos trucos de mago y tres hechizos de mago de primer nivel, al menos dos de los cuales deben ser de las escuelas de abjuración o evocación."
       },
       "Weapon Bond": {
         "name": "Vínculo de arma",

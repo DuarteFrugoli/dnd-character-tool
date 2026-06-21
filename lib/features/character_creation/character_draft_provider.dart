@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../data/constants/armor_class.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
@@ -591,10 +592,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       }
     }
 
-    // Equipa a primeira armadura de corpo e o escudo (se houver) e calcula AC.
-    final dex = attrs['Dexterity'] ?? 10;
-    final dexMod = ((dex - 10) / 2).floor();
-
+    // Equipa a primeira armadura de corpo e o escudo (se houver).
     EquipmentItem? bodyArmor;
     EquipmentItem? shield;
     for (final item in startingEquipment) {
@@ -612,26 +610,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         startingEquipment[i] = startingEquipment[i].copyWith(isEquipped: true);
       }
     }
-    // Calcula a CA real com base nas propriedades da armadura
-    int armorClass = 10 + dexMod;
-    if (bodyArmor != null && bodyArmor.properties != null) {
-      final props = bodyArmor.properties!;
-      final base = (props['baseAC'] as num).toInt();
-      final addDex = props['addDexModifier'] as bool? ?? false;
-      final maxDex = props['maxDexBonus'] as int?;
-      if (!addDex) {
-        armorClass = base;
-      } else if (maxDex != null) {
-        armorClass = base + (dexMod < maxDex ? dexMod : maxDex);
-      } else {
-        armorClass = base + dexMod;
-      }
-    }
-    if (shield != null) {
-      armorClass += (shield.properties?['acBonus'] as int? ?? 2);
-    }
 
-    final character = Character(
+    var character = Character(
       id: draft.id,
       name: draft.name.trim().isEmpty ? fallbackName : draft.name.trim(),
       playerName: draft.playerName,
@@ -656,7 +636,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         current: hitDie + conMod,
         temporary: 0,
       ),
-      armorClass: armorClass,
+      armorClass: 10,
       speed: draft.selectedRace!.speed,
       proficiencyBonus: 2,
       savingThrowProficiencies: draft.selectedClass!.savingThrows,
@@ -695,6 +675,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
     );
+    character = character.copyWith(armorClass: calcArmorClass(character));
 
     await repo.save(character);
     return character;

@@ -32,6 +32,12 @@ class SpellcastingEngine {
   /// Slot progression type (full, half, pact).
   final SpellProgressionType progressionType;
 
+  /// Class spell list used when selecting or browsing spells.
+  final String spellListClass;
+
+  /// Subclass used to enable subclass spellcasting rules, if any.
+  final String? subclass;
+
   const SpellcastingEngine._({
     required this.className,
     required this.classLevel,
@@ -40,6 +46,8 @@ class SpellcastingEngine {
     required this.spellcastingAbility,
     required this.mechanism,
     required this.progressionType,
+    required this.spellListClass,
+    this.subclass,
   });
 
   // ── Factory ───────────────────────────────────────────────────────────────
@@ -67,6 +75,8 @@ class SpellcastingEngine {
           spellcastingAbility: 'INT',
           mechanism: SpellcastingMechanism.known,
           progressionType: SpellProgressionType.third,
+          spellListClass: 'wizard',
+          subclass: subclass,
         );
       }
     }
@@ -80,6 +90,7 @@ class SpellcastingEngine {
       spellcastingAbility: info.ability,
       mechanism: info.mechanism,
       progressionType: info.progression,
+      spellListClass: key,
     );
   }
 
@@ -159,9 +170,44 @@ class SpellcastingEngine {
     final classCantrips = _cantripsTable[className.toLowerCase()];
     if (classCantrips != null) return classCantrips[idx];
     if (progressionType == SpellProgressionType.third) {
-      return _thirdCasterCantrips[idx];
+      final sub = subclass?.toLowerCase();
+      if (sub == 'arcane trickster') {
+        return _arcaneTricksterCantrips[idx];
+      }
+      return _eldritchKnightCantrips[idx];
     }
     return 0;
+  }
+
+  Set<String> get restrictedKnownSpellSchools {
+    if (progressionType != SpellProgressionType.third) return const {};
+    switch (subclass?.toLowerCase()) {
+      case 'eldritch knight':
+        return const {'abjuration', 'evocation'};
+      case 'arcane trickster':
+        return const {'enchantment', 'illusion'};
+      default:
+        return const {};
+    }
+  }
+
+  bool get canLearnAnySchoolThisLevel =>
+      progressionType == SpellProgressionType.third &&
+      const {8, 14, 20}.contains(classLevel);
+
+  int restrictedKnownSpellPicksRequired(int spellsToLearn) {
+    if (restrictedKnownSpellSchools.isEmpty || canLearnAnySchoolThisLevel) {
+      return 0;
+    }
+    if (classLevel == 3) return spellsToLearn.clamp(0, 2);
+    return spellsToLearn;
+  }
+
+  List<String> get fixedCantripNames {
+    if (subclass?.toLowerCase() == 'arcane trickster' && classLevel >= 3) {
+      return const ['Mage Hand'];
+    }
+    return const [];
   }
 
   /// Highest spell slot level available, or 0 for non-casters.
@@ -223,9 +269,14 @@ class SpellcastingEngine {
     0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12, 13,
   ];
 
-  /// Cantrips for Eldritch Knight / Arcane Trickster.
-  static const List<int> _thirdCasterCantrips = [
+  /// Cantrips for Eldritch Knight.
+  static const List<int> _eldritchKnightCantrips = [
     0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+  ];
+
+  /// Cantrips for Arcane Trickster, including the fixed Mage Hand cantrip.
+  static const List<int> _arcaneTricksterCantrips = [
+    0, 0, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
   ];
 
   /// Warlock Pact Magic slot level (all slots are this level).

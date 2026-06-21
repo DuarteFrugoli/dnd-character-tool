@@ -51,10 +51,18 @@ class _LevelUpState {
       cantripsLearned: cantripsLearned ?? this.cantripsLearned,
       spellsLearned: spellsLearned ?? this.spellsLearned,
     );
-    s.featChosen = featChosen == _sentinel ? this.featChosen : featChosen as SrdFeat?;
-    s.subclassChosen = subclassChosen == _sentinel ? this.subclassChosen : subclassChosen as String?;
-    s.spellSwapped = spellSwapped == _sentinel ? this.spellSwapped : spellSwapped as String?;
-    s.swapReplacement = swapReplacement == _sentinel ? this.swapReplacement : swapReplacement as KnownSpell?;
+    s.featChosen = featChosen == _sentinel
+        ? this.featChosen
+        : featChosen as SrdFeat?;
+    s.subclassChosen = subclassChosen == _sentinel
+        ? this.subclassChosen
+        : subclassChosen as String?;
+    s.spellSwapped = spellSwapped == _sentinel
+        ? this.spellSwapped
+        : spellSwapped as String?;
+    s.swapReplacement = swapReplacement == _sentinel
+        ? this.swapReplacement
+        : swapReplacement as KnownSpell?;
     return s;
   }
 
@@ -63,7 +71,11 @@ class _LevelUpState {
 
 // ── Wizard Entry Point ────────────────────────────────────────────────────────
 
-void _openLevelUpWizardSheet(BuildContext context, Character character, String characterId) {
+void _openLevelUpWizardSheet(
+  BuildContext context,
+  Character character,
+  String characterId,
+) {
   final newLevel = character.level + 1;
   if (newLevel > 20) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -73,15 +85,13 @@ void _openLevelUpWizardSheet(BuildContext context, Character character, String c
   }
   Navigator.of(context).push(
     PageRouteBuilder<void>(
-      pageBuilder: (context, _, _) => _LevelUpWizard(
-        character: character,
-        characterId: characterId,
-      ),
+      pageBuilder: (context, _, _) =>
+          _LevelUpWizard(character: character, characterId: characterId),
       transitionsBuilder: (_, animation, _, child) {
-        final slide = Tween<Offset>(
-          begin: const Offset(0, 1),
-          end: Offset.zero,
-        ).animate(CurvedAnimation(parent: animation, curve: Curves.easeOutCubic));
+        final slide = Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+            .animate(
+              CurvedAnimation(parent: animation, curve: Curves.easeOutCubic),
+            );
         final fade = CurvedAnimation(parent: animation, curve: Curves.easeIn);
         return SlideTransition(
           position: slide,
@@ -114,7 +124,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
   SrdClass? _srdClass;
   List<SrdClassFeature>? _classFeatures;
   List<SrdClassFeature>? _subclassFeatures;
-  List<SrdSpell>? _classSpells;
+  List<SrdSpell>? _allSpells;
   List<SrdFeat>? _allFeats;
   bool _loading = true;
 
@@ -139,7 +149,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       srd.getClasses(),
       srd.getClassFeatures(className),
       srd.getFeats(),
-      srd.getSpellsForClass(className),
+      srd.getSpells(),
     ]);
     if (!mounted) return;
     final classes = results[0] as List<SrdClass>;
@@ -158,32 +168,62 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     }
 
     _allFeats = results[2] as List<SrdFeat>;
-    _classSpells = results[3] as List<SrdSpell>;
+    _allSpells = results[3] as List<SrdSpell>;
 
     if (mounted) {
       setState(() {
         _loading = false;
-        _buildPages();
+        _rebuildPages();
       });
     }
   }
 
-  SpellcastingEngine? _engineFor(int level) {
+  String? get _effectiveSubclass =>
+      _state.subclassChosen ?? widget.character.subclass;
+
+  SpellcastingEngine? _engineFor(int level, {String? subclass}) {
     return SpellcastingEngine.forClass(
       className: widget.character.characterClass,
       classLevel: level,
       abilityScores: widget.character.abilityScores,
       proficiencyBonus: widget.character.proficiencyBonus,
-      subclass: widget.character.subclass,
+      subclass: subclass ?? _effectiveSubclass,
     );
   }
 
-  void _buildPages() {
+  List<String> _newFixedCantripNames(
+    SpellcastingEngine? engineOld,
+    SpellcastingEngine? engineNew,
+  ) {
+    if (engineNew == null) return const [];
+    final oldFixed = {
+      for (final name in engineOld?.fixedCantripNames ?? const <String>[])
+        name.toLowerCase(),
+    };
+    return engineNew.fixedCantripNames
+        .where((name) => !oldFixed.contains(name.toLowerCase()))
+        .toList();
+  }
+
+  List<KnownSpell> _computeFixedCantripsToLearn(
+    SpellcastingEngine? engineOld,
+    SpellcastingEngine? engineNew,
+  ) {
+    final knownNames = {
+      for (final spell in widget.character.spells) spell.name.toLowerCase(),
+    };
+    return _newFixedCantripNames(engineOld, engineNew)
+        .where((name) => !knownNames.contains(name.toLowerCase()))
+        .map((name) => KnownSpell(name: name, level: 0))
+        .toList();
+  }
+
+  void _rebuildPages() {
     final c = widget.character;
     final newLevel = _state.newLevel;
     final className = c.characterClass;
 
-    final engineOld = _engineFor(c.level);
+    final engineOld = _engineFor(c.level, subclass: c.subclass);
     final engineNew = _engineFor(newLevel);
 
     final newFeatures = (_classFeatures ?? [])
@@ -196,18 +236,26 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     final needsSubclass = isSubclassUnlockLevel(className, newLevel);
     final needsAsi = isAsiLevel(className, newLevel);
 
-    final cantripsToLearn = engineNew != null && engineOld != null
-        ? (engineNew.maxCantrips - engineOld.maxCantrips).clamp(0, 99)
+    final fixedCantrips = _computeFixedCantripsToLearn(engineOld, engineNew);
+    final fixedCantripSlots = _newFixedCantripNames(
+      engineOld,
+      engineNew,
+    ).length;
+    final cantripsToLearn = engineNew != null
+        ? (engineNew.maxCantrips -
+                  (engineOld?.maxCantrips ?? 0) -
+                  fixedCantripSlots)
+              .clamp(0, 99)
         : 0;
 
     // Spells to learn for known-caster/pact
     int spellsToLearn = 0;
-    if (engineNew != null && engineOld != null) {
+    if (engineNew != null) {
       final mech = engineNew.mechanism;
       if (mech == SpellcastingMechanism.known ||
           mech == SpellcastingMechanism.pact) {
         final newKnown = engineNew.maxKnown ?? 0;
-        final oldKnown = engineOld.maxKnown ?? 0;
+        final oldKnown = engineOld?.maxKnown ?? 0;
         spellsToLearn = (newKnown - oldKnown).clamp(0, 99);
       }
     }
@@ -225,22 +273,26 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       _WizardPage.summary,
     ];
 
-    setState(() {
-      _cantripsToLearn = cantripsToLearn;
-      _spellsToLearn = spellsToLearn;
-      _newClassFeatures = newFeatures;
-      _newSubclassFeatures = newSubclassFeatures;
-    });
+    _fixedCantripsLearned = fixedCantrips;
+    _requiredSpellSchools = engineNew?.restrictedKnownSpellSchools ?? const {};
+    _requiredSpellSchoolPicks =
+        engineNew?.restrictedKnownSpellPicksRequired(spellsToLearn) ?? 0;
+    _cantripsToLearn = cantripsToLearn;
+    _spellsToLearn = spellsToLearn;
+    _newClassFeatures = newFeatures;
+    _newSubclassFeatures = newSubclassFeatures;
   }
 
   int _cantripsToLearn = 0;
   int _spellsToLearn = 0;
+  List<KnownSpell> _fixedCantripsLearned = const [];
+  Set<String> _requiredSpellSchools = const {};
+  int _requiredSpellSchoolPicks = 0;
   List<SrdClassFeature> _newClassFeatures = [];
   List<SrdClassFeature> _newSubclassFeatures = [];
 
-  int get _currentPage => _pageController.hasClients
-      ? _pageController.page?.round() ?? 0
-      : 0;
+  int get _currentPage =>
+      _pageController.hasClients ? _pageController.page?.round() ?? 0 : 0;
 
   void _nextPage() {
     _pageController.nextPage(
@@ -262,7 +314,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       asiChanges: _state.asiChanges,
       featChosen: _state.featChosen,
       subclassChosen: _state.subclassChosen,
-      cantripsLearned: _state.cantripsLearned,
+      cantripsLearned: [..._fixedCantripsLearned, ..._state.cantripsLearned],
       spellsLearned: [
         ..._state.spellsLearned,
         if (_state.swapReplacement != null) _state.swapReplacement!,
@@ -281,9 +333,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     final colorScheme = Theme.of(context).colorScheme;
 
     if (_loading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     return Scaffold(
@@ -331,11 +381,11 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
             ListenableBuilder(
               listenable: _pageController,
               builder: (ctx, _) => Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                child: _StepIndicator(
-                  pages: _pages,
-                  currentPage: _currentPage,
+                padding: const EdgeInsets.symmetric(
+                  vertical: 8,
+                  horizontal: 16,
                 ),
+                child: _StepIndicator(pages: _pages, currentPage: _currentPage),
               ),
             ),
 
@@ -389,6 +439,42 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     );
   }
 
+  bool _spellSchoolRequirementMet(List<KnownSpell> chosen) {
+    if (_requiredSpellSchoolPicks <= 0 || _requiredSpellSchools.isEmpty) {
+      return true;
+    }
+    final spellIndex = {
+      for (final spell in _allSpells ?? const <SrdSpell>[])
+        spell.name.toLowerCase(): spell,
+    };
+    final matching = chosen.where((known) {
+      final spell = spellIndex[known.name.toLowerCase()];
+      return spell != null &&
+          _requiredSpellSchools.contains(spell.school.toLowerCase());
+    }).length;
+    return matching >= _requiredSpellSchoolPicks;
+  }
+
+  List<SrdSpell> _spellChoices(
+    SpellcastingEngine? engine, {
+    required bool isCantrip,
+  }) {
+    if (engine == null) return const [];
+    final fixedCantrips = {
+      for (final name in engine.fixedCantripNames) name.toLowerCase(),
+    };
+    return (_allSpells ?? const <SrdSpell>[])
+        .where((spell) => spell.classes.contains(engine.spellListClass))
+        .where((spell) {
+          if (isCantrip) {
+            return spell.level == 0 &&
+                !fixedCantrips.contains(spell.name.toLowerCase());
+          }
+          return spell.level > 0 && spell.level <= engine.maxSpellLevel;
+        })
+        .toList();
+  }
+
   bool _canAdvance(int pageIdx) {
     if (pageIdx >= _pages.length) return false;
     final page = _pages[pageIdx];
@@ -413,7 +499,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         // a replacement must also be selected before advancing.
         return _state.spellSwapped == null || _state.swapReplacement != null;
       case _WizardPage.spells:
-        return _state.spellsLearned.length >= _spellsToLearn;
+        return _state.spellsLearned.length >= _spellsToLearn &&
+            _spellSchoolRequirementMet(_state.spellsLearned);
       case _WizardPage.summary:
         return true;
     }
@@ -427,16 +514,25 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           subclassFeatures: _newSubclassFeatures,
           subclassName: widget.character.subclass,
           srdClass: _srdClass,
-          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
       case _WizardPage.subclass:
         return _SubclassPage(
           srdClass: _srdClass,
           character: widget.character,
           currentChoice: _state.subclassChosen,
-          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
           onChanged: (name) => setState(() {
-            _state = _state.copyWith(subclassChosen: name);
+            _state = _state.copyWith(
+              subclassChosen: name,
+              cantripsLearned: const [],
+              spellsLearned: const [],
+              spellSwapped: null,
+              swapReplacement: null,
+            );
+            _rebuildPages();
           }),
         );
       case _WizardPage.asi:
@@ -446,7 +542,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           asiChanges: _state.asiChanges,
           featChosen: _state.featChosen,
           allFeats: _allFeats ?? [],
-          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
           onModeChanged: (m) => setState(() {
             _state = _state.copyWith(
               asiMode: m,
@@ -469,8 +566,9 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           }),
         );
       case _WizardPage.cantrips:
+        final engine = _engineFor(_state.newLevel);
         return _SpellPickPage(
-          classSpells: (_classSpells ?? []).where((s) => s.level == 0).toList(),
+          classSpells: _spellChoices(engine, isCantrip: true),
           alreadyKnown: widget.character.spells
               .where((s) => s.level == 0)
               .map((s) => s.name)
@@ -481,35 +579,32 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           onChanged: (list) =>
               setState(() => _state = _state.copyWith(cantripsLearned: list)),
           isCantrip: true,
-          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          requiredSchools: const {},
+          requiredSchoolPickCount: 0,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
       case _WizardPage.spellSwap:
         final engine = _engineFor(_state.newLevel);
         return _SpellSwapPage(
-          classSpells: (_classSpells ?? [])
-              .where((s) => s.level > 0 && s.level <= (engine?.maxSpellLevel ?? 9))
-              .toList(),
+          classSpells: _spellChoices(engine, isCantrip: false),
           knownSpells: widget.character.spells
               .where((s) => s.level > 0)
               .toList(),
           swapped: _state.spellSwapped,
           replacement: _state.swapReplacement,
           onSwappedChanged: (name) => setState(() {
-            _state = _state.copyWith(
-              spellSwapped: name,
-              swapReplacement: null,
-            );
+            _state = _state.copyWith(spellSwapped: name, swapReplacement: null);
           }),
           onReplacementChanged: (spell) =>
               setState(() => _state = _state.copyWith(swapReplacement: spell)),
-          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
       case _WizardPage.spells:
         final engine2 = _engineFor(_state.newLevel);
         return _SpellPickPage(
-          classSpells: (_classSpells ?? [])
-              .where((s) => s.level > 0 && s.level <= (engine2?.maxSpellLevel ?? 9))
-              .toList(),
+          classSpells: _spellChoices(engine2, isCantrip: false),
           alreadyKnown: widget.character.spells
               .where((s) => s.level > 0)
               .map((s) => s.name)
@@ -520,12 +615,16 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           onChanged: (list) =>
               setState(() => _state = _state.copyWith(spellsLearned: list)),
           isCantrip: false,
-          i18n: ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          requiredSchools: _requiredSpellSchools,
+          requiredSchoolPickCount: _requiredSpellSchoolPicks,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
         );
       case _WizardPage.summary:
         return _SummaryPage(
           wizardState: _state,
           character: widget.character,
+          fixedCantripsLearned: _fixedCantripsLearned,
         );
     }
   }
@@ -533,7 +632,16 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
 
 // ── Step Pages Enum ───────────────────────────────────────────────────────────
 
-enum _WizardPage { features, subclass, asi, hp, cantrips, spellSwap, spells, summary }
+enum _WizardPage {
+  features,
+  subclass,
+  asi,
+  hp,
+  cantrips,
+  spellSwap,
+  spells,
+  summary,
+}
 
 // ── Step Indicator ────────────────────────────────────────────────────────────
 
@@ -553,9 +661,7 @@ class _StepIndicator extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 2),
             height: 4,
             decoration: BoxDecoration(
-              color: active
-                  ? color
-                  : color.withValues(alpha: 0.25),
+              color: active ? color : color.withValues(alpha: 0.25),
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -591,10 +697,7 @@ class _FeaturesPage extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        Text(
-          l10n.levelUpStepFeatures,
-          style: theme.textTheme.titleMedium,
-        ),
+        Text(l10n.levelUpStepFeatures, style: theme.textTheme.titleMedium),
         const SizedBox(height: 12),
         if (classFeatures.isEmpty && subclassFeatures.isEmpty)
           Text(l10n.levelUpNoNewFeatures)
@@ -606,12 +709,18 @@ class _FeaturesPage extends StatelessWidget {
           ...classFeatures.map(
             (f) => Card(
               child: ExpansionTile(
-                title: Text(i18n.classFeatureName(srdClass?.name ?? '', f.name) ?? f.name),
+                title: Text(
+                  i18n.classFeatureName(srdClass?.name ?? '', f.name) ?? f.name,
+                ),
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
                     child: Text(
-                      i18n.classFeatureDescription(srdClass?.name ?? '', f.name) ?? f.description,
+                      i18n.classFeatureDescription(
+                            srdClass?.name ?? '',
+                            f.name,
+                          ) ??
+                          f.description,
                     ),
                   ),
                 ],
@@ -629,13 +738,23 @@ class _FeaturesPage extends StatelessWidget {
               (f) => Card(
                 child: ExpansionTile(
                   title: Text(
-                    i18n.subclassFeatureName(srdClass?.name ?? '', subclassName ?? '', f.name) ?? f.name,
+                    i18n.subclassFeatureName(
+                          srdClass?.name ?? '',
+                          subclassName ?? '',
+                          f.name,
+                        ) ??
+                        f.name,
                   ),
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
                       child: Text(
-                        i18n.subclassFeatureDescription(srdClass?.name ?? '', subclassName ?? '', f.name) ?? f.description,
+                        i18n.subclassFeatureDescription(
+                              srdClass?.name ?? '',
+                              subclassName ?? '',
+                              f.name,
+                            ) ??
+                            f.description,
                       ),
                     ),
                   ],
@@ -668,8 +787,7 @@ class _SubclassPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final featureName =
-        srdClass?.subclassFeatureName ?? 'Subclass';
+    final featureName = srdClass?.subclassFeatureName ?? 'Subclass';
     final subclasses = srdClass?.subclasses ?? [];
     final existing = character.subclass;
 
@@ -693,7 +811,9 @@ class _SubclassPage extends StatelessWidget {
         const SizedBox(height: 12),
         RadioGroup<String>(
           groupValue: currentChoice ?? existing ?? '',
-          onChanged: (v) { if (v != null) onChanged(v); },
+          onChanged: (v) {
+            if (v != null) onChanged(v);
+          },
           child: Column(
             children: subclasses.map((sc) {
               final name = i18n.subclassName(srdClass?.name ?? '', sc.name);
@@ -702,7 +822,8 @@ class _SubclassPage extends StatelessWidget {
                 child: RadioListTile<String>(
                   title: Text(name),
                   subtitle: Text(
-                    i18n.subclassDescription(srdClass?.name ?? '', sc.name) ?? sc.description,
+                    i18n.subclassDescription(srdClass?.name ?? '', sc.name) ??
+                        sc.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -753,13 +874,20 @@ class _AsiPage extends StatelessWidget {
 
   static String _abilityLabel(String key, AppLocalizations l10n) {
     switch (key) {
-      case 'strength': return l10n.abilityStr;
-      case 'dexterity': return l10n.abilityDex;
-      case 'constitution': return l10n.abilityCon;
-      case 'intelligence': return l10n.abilityInt;
-      case 'wisdom': return l10n.abilityWis;
-      case 'charisma': return l10n.abilityCha;
-      default: return key;
+      case 'strength':
+        return l10n.abilityStr;
+      case 'dexterity':
+        return l10n.abilityDex;
+      case 'constitution':
+        return l10n.abilityCon;
+      case 'intelligence':
+        return l10n.abilityInt;
+      case 'wisdom':
+        return l10n.abilityWis;
+      case 'charisma':
+        return l10n.abilityCha;
+      default:
+        return key;
     }
   }
 
@@ -845,16 +973,17 @@ class _AsiPage extends StatelessWidget {
             child: Column(
               children: allFeats.map((feat) {
                 final featName = i18n.featName(feat.name) ?? feat.name;
-                final featDesc = i18n.featDescription(feat.name) ?? feat.description;
+                final featDesc =
+                    i18n.featDescription(feat.name) ?? feat.description;
                 return Card(
                   child: ExpansionTile(
-                    leading: Radio<String>(
-                      value: feat.name,
-                    ),
+                    leading: Radio<String>(value: feat.name),
                     title: Text(featName),
                     subtitle: feat.prerequisite != null
-                        ? Text(l10n.featPrerequisite(feat.prerequisite!),
-                            style: const TextStyle(fontSize: 12))
+                        ? Text(
+                            l10n.featPrerequisite(feat.prerequisite!),
+                            style: const TextStyle(fontSize: 12),
+                          )
                         : null,
                     children: [
                       Padding(
@@ -891,13 +1020,11 @@ class _HpPage extends StatelessWidget {
   final ValueChanged<int> onHpChosen;
 
   int get _hitDie => levelUpHitDie(character.characterClass);
-  int get _conMod =>
-      ((character.abilityScores.constitution - 10) / 2).floor();
+  int get _conMod => ((character.abilityScores.constitution - 10) / 2).floor();
   String get _conModStr => _conMod >= 0 ? '+$_conMod' : '$_conMod';
 
   int get _average => ((_hitDie / 2) + 1).ceil() + _conMod;
-  int _roll() =>
-      math.max(1, math.Random().nextInt(_hitDie) + 1 + _conMod);
+  int _roll() => math.max(1, math.Random().nextInt(_hitDie) + 1 + _conMod);
 
   @override
   Widget build(BuildContext context) {
@@ -922,8 +1049,8 @@ class _HpPage extends StatelessWidget {
                 Text(
                   l10n.levelUpHpGained(hpGained),
                   style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
                 const SizedBox(height: 12),
                 TextButton(
@@ -995,6 +1122,8 @@ class _SpellPickPage extends StatelessWidget {
     required this.maxLevel,
     required this.onChanged,
     required this.isCantrip,
+    required this.requiredSchools,
+    required this.requiredSchoolPickCount,
     required this.i18n,
   });
   final List<SrdSpell> classSpells;
@@ -1004,12 +1133,30 @@ class _SpellPickPage extends StatelessWidget {
   final int maxLevel;
   final ValueChanged<List<KnownSpell>> onChanged;
   final bool isCantrip;
+  final Set<String> requiredSchools;
+  final int requiredSchoolPickCount;
   final SrdI18nService i18n;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final chosenNames = chosen.map((s) => s.name).toSet();
+    final chosenByName = {for (final spell in classSpells) spell.name: spell};
+    final requiredChosen = chosen.where((known) {
+      final spell = chosenByName[known.name];
+      return spell != null &&
+          requiredSchools.contains(spell.school.toLowerCase());
+    }).length;
+    final mustChooseRequired =
+        !isCantrip &&
+        requiredSchools.isNotEmpty &&
+        requiredChosen < requiredSchoolPickCount;
+    final visibleSpells = classSpells.where((spell) {
+      if (!mustChooseRequired || chosenNames.contains(spell.name)) {
+        return true;
+      }
+      return requiredSchools.contains(spell.school.toLowerCase());
+    });
 
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -1022,7 +1169,7 @@ class _SpellPickPage extends StatelessWidget {
         ),
         const SizedBox(height: 8),
 
-        ...classSpells.map((spell) {
+        ...visibleSpells.map((spell) {
           final knownAlready = alreadyKnown.contains(spell.name);
           final isChosen = chosenNames.contains(spell.name);
           final canAdd = !knownAlready && !isChosen && chosen.length < toLearn;
@@ -1042,7 +1189,9 @@ class _SpellPickPage extends StatelessWidget {
                 : (v) {
                     final updated = List<KnownSpell>.from(chosen);
                     if (v == true && canAdd) {
-                      updated.add(KnownSpell(name: spell.name, level: spell.level));
+                      updated.add(
+                        KnownSpell(name: spell.name, level: spell.level),
+                      );
                     } else if (v == false) {
                       updated.removeWhere((s) => s.name == spell.name);
                     }
@@ -1125,10 +1274,12 @@ class _SpellSwapPage extends StatelessWidget {
           },
           child: Column(
             children: [
-              ...knownSpells.map((ks) => RadioListTile<String?>(
-                    title: Text(i18n.spellName(ks.name)),
-                    value: ks.name,
-                  )),
+              ...knownSpells.map(
+                (ks) => RadioListTile<String?>(
+                  title: Text(i18n.spellName(ks.name)),
+                  value: ks.name,
+                ),
+              ),
               RadioListTile<String?>(
                 title: Text(l10n.levelUpSpellSwapNone),
                 value: null,
@@ -1151,31 +1302,36 @@ class _SpellSwapPage extends StatelessWidget {
               if (v == null) return;
               final spell = available.firstWhere((s) => s.name == v);
               onReplacementChanged(
-                  KnownSpell(name: spell.name, level: spell.level));
+                KnownSpell(name: spell.name, level: spell.level),
+              );
             },
             child: Column(
               children: available
-                  .map((spell) => RadioListTile<String>(
-                        title: Text(i18n.spellName(spell.name)),
-                        subtitle: Text(
-                          l10n.levelUpSpellSubtitle(
-                              spell.level, i18n.spellSchool(spell.school)),
-                          style: const TextStyle(fontSize: 12),
+                  .map(
+                    (spell) => RadioListTile<String>(
+                      title: Text(i18n.spellName(spell.name)),
+                      subtitle: Text(
+                        l10n.levelUpSpellSubtitle(
+                          spell.level,
+                          i18n.spellSchool(spell.school),
                         ),
-                        value: spell.name,
-                        secondary: IconButton(
-                          icon: const Icon(Icons.info_outline),
-                          onPressed: () => showModalBottomSheet<void>(
-                            context: context,
-                            isScrollControlled: true,
-                            builder: (_) => SpellDetailSheet(
-                              spell: spell,
-                              isKnown: false,
-                              readOnly: true,
-                            ),
+                        style: const TextStyle(fontSize: 12),
+                      ),
+                      value: spell.name,
+                      secondary: IconButton(
+                        icon: const Icon(Icons.info_outline),
+                        onPressed: () => showModalBottomSheet<void>(
+                          context: context,
+                          isScrollControlled: true,
+                          builder: (_) => SpellDetailSheet(
+                            spell: spell,
+                            isKnown: false,
+                            readOnly: true,
                           ),
                         ),
-                      ))
+                      ),
+                    ),
+                  )
                   .toList(),
             ),
           ),
@@ -1191,9 +1347,11 @@ class _SummaryPage extends StatelessWidget {
   const _SummaryPage({
     required this.wizardState,
     required this.character,
+    required this.fixedCantripsLearned,
   });
   final _LevelUpState wizardState;
   final Character character;
+  final List<KnownSpell> fixedCantripsLearned;
 
   @override
   Widget build(BuildContext context) {
@@ -1201,59 +1359,80 @@ class _SummaryPage extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
     final rows = <Widget>[];
 
-    rows.add(_SummaryRow(
-      icon: Icons.trending_up,
-      text: l10n.levelUpSummaryLevel(wizardState.newLevel),
-      color: cs.primary,
-    ));
-    rows.add(_SummaryRow(
-      icon: Icons.favorite,
-      text: l10n.levelUpSummaryHp(wizardState.hpGained),
-    ));
+    rows.add(
+      _SummaryRow(
+        icon: Icons.trending_up,
+        text: l10n.levelUpSummaryLevel(wizardState.newLevel),
+        color: cs.primary,
+      ),
+    );
+    rows.add(
+      _SummaryRow(
+        icon: Icons.favorite,
+        text: l10n.levelUpSummaryHp(wizardState.hpGained),
+      ),
+    );
     if (wizardState.subclassChosen != null) {
-      rows.add(_SummaryRow(
-        icon: Icons.star,
-        text: l10n.levelUpSummarySubclass(wizardState.subclassChosen!),
-      ));
+      rows.add(
+        _SummaryRow(
+          icon: Icons.star,
+          text: l10n.levelUpSummarySubclass(wizardState.subclassChosen!),
+        ),
+      );
     }
     if (wizardState.featChosen != null) {
-      rows.add(_SummaryRow(
-        icon: Icons.emoji_events,
-        text: l10n.levelUpSummaryFeat(wizardState.featChosen!.name),
-      ));
+      rows.add(
+        _SummaryRow(
+          icon: Icons.emoji_events,
+          text: l10n.levelUpSummaryFeat(wizardState.featChosen!.name),
+        ),
+      );
     } else if (wizardState.asiChanges.isNotEmpty) {
       String abilityLabel(String key) {
         switch (key) {
-          case 'strength': return l10n.abilityStr;
-          case 'dexterity': return l10n.abilityDex;
-          case 'constitution': return l10n.abilityCon;
-          case 'intelligence': return l10n.abilityInt;
-          case 'wisdom': return l10n.abilityWis;
-          case 'charisma': return l10n.abilityCha;
-          default: return key;
+          case 'strength':
+            return l10n.abilityStr;
+          case 'dexterity':
+            return l10n.abilityDex;
+          case 'constitution':
+            return l10n.abilityCon;
+          case 'intelligence':
+            return l10n.abilityInt;
+          case 'wisdom':
+            return l10n.abilityWis;
+          case 'charisma':
+            return l10n.abilityCha;
+          default:
+            return key;
         }
       }
+
       final parts = wizardState.asiChanges.entries
           .map((e) => '${abilityLabel(e.key)} +${e.value}')
           .join(', ');
-      rows.add(_SummaryRow(
-        icon: Icons.bar_chart,
-        text: l10n.levelUpSummaryAsi(parts),
-      ));
+      rows.add(
+        _SummaryRow(icon: Icons.bar_chart, text: l10n.levelUpSummaryAsi(parts)),
+      );
     }
-    if (wizardState.cantripsLearned.isNotEmpty) {
-      rows.add(_SummaryRow(
-        icon: Icons.auto_fix_high,
-        text: l10n.levelUpSummaryCantripsLearned(
-            wizardState.cantripsLearned.length),
-      ));
+    final cantripsLearned =
+        fixedCantripsLearned.length + wizardState.cantripsLearned.length;
+    if (cantripsLearned > 0) {
+      rows.add(
+        _SummaryRow(
+          icon: Icons.auto_fix_high,
+          text: l10n.levelUpSummaryCantripsLearned(cantripsLearned),
+        ),
+      );
     }
     if (wizardState.spellsLearned.isNotEmpty) {
-      rows.add(_SummaryRow(
-        icon: Icons.menu_book,
-        text: l10n.levelUpSummarySpellsLearned(
-            wizardState.spellsLearned.length),
-      ));
+      rows.add(
+        _SummaryRow(
+          icon: Icons.menu_book,
+          text: l10n.levelUpSummarySpellsLearned(
+            wizardState.spellsLearned.length,
+          ),
+        ),
+      );
     }
 
     return ListView(
@@ -1285,7 +1464,9 @@ class _SummaryRow extends StatelessWidget {
         children: [
           Icon(icon, color: color ?? cs.onSurface),
           const SizedBox(width: 12),
-          Expanded(child: Text(text, style: Theme.of(context).textTheme.bodyLarge)),
+          Expanded(
+            child: Text(text, style: Theme.of(context).textTheme.bodyLarge),
+          ),
         ],
       ),
     );

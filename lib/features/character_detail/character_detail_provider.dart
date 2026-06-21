@@ -261,7 +261,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       proficiencyBonus: _profBonus(clamped),
       experiencePoints: newXp,
     );
-    await _save(_applySlotSync(updated));
+    final synced = _applySlotSync(updated);
+    await _save(synced.copyWith(armorClass: calcArmorClass(synced)));
   }
 
   /// Applies all decisions from the Level Up Wizard atomically.
@@ -333,6 +334,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       updated = updated.copyWith(experiencePoints: levelToMinXp(newLevel));
     }
 
+    updated = updated.copyWith(armorClass: calcArmorClass(updated));
+
     // 7. Sync spell slots to new level
     await _save(_applySlotSync(updated));
 
@@ -366,7 +369,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> updateSubclass(String subclassName) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(subclass: subclassName));
+    final updated = c.copyWith(subclass: subclassName);
+    await _save(updated.copyWith(armorClass: calcArmorClass(updated)));
   }
 
   Future<void> updateBackground(String v) async {
@@ -458,7 +462,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> updateDisabledFeatures(List<String> disabled) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(disabledFeatures: disabled));
+    final updated = c.copyWith(disabledFeatures: disabled);
+    await _save(updated.copyWith(armorClass: calcArmorClass(updated)));
   }
 
   Future<void> toggleDisabledSpell(String name) async {
@@ -518,7 +523,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       type: feature.type,
       description: feature.description,
     );
-    await _save(c.copyWith(extraFeatures: [...c.extraFeatures, extra]));
+    final updated = c.copyWith(extraFeatures: [...c.extraFeatures, extra]);
+    await _save(updated.copyWith(armorClass: calcArmorClass(updated)));
   }
 
   Future<void> addFeat(SrdFeat feat) async {
@@ -537,7 +543,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       type: 'passive',
       description: feat.description,
     );
-    await _save(c.copyWith(extraFeatures: [...c.extraFeatures, extra]));
+    final updated = c.copyWith(extraFeatures: [...c.extraFeatures, extra]);
+    await _save(updated.copyWith(armorClass: calcArmorClass(updated)));
   }
 
   Future<void> removeExtraFeature(String name, String sourceClass) async {
@@ -546,7 +553,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final updated = c.extraFeatures
         .where((f) => !(f.name == name && f.sourceClass == sourceClass))
         .toList();
-    await _save(c.copyWith(extraFeatures: updated));
+    final newC = c.copyWith(extraFeatures: updated);
+    await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
   }
 
   Future<void> addToolProficiency(String toolName) async {

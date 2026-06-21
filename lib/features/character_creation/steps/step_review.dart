@@ -5,7 +5,9 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/constants/armor_class.dart';
 import '../../../data/datasources/srd/srd_i18n_service.dart';
+import '../../../data/models/ability_scores.dart';
 import '../../../shared/providers/providers.dart';
 import '../../../core/units/unit_system_provider.dart';
 import '../../../core/units/unit_formatter.dart';
@@ -22,14 +24,36 @@ class StepReview extends ConsumerWidget {
     final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final draft = ref.watch(characterDraftProvider);
     final attrs = draft.finalAttributes;
+    final abilityScores = AbilityScores(
+      strength: attrs['Strength'] ?? 10,
+      dexterity: attrs['Dexterity'] ?? 10,
+      constitution: attrs['Constitution'] ?? 10,
+      intelligence: attrs['Intelligence'] ?? 10,
+      wisdom: attrs['Wisdom'] ?? 10,
+      charisma: attrs['Charisma'] ?? 10,
+    );
     final con = attrs['Constitution'] ?? 10;
     final conMod = ((con - 10) / 2).floor();
     final dex = attrs['Dexterity'] ?? 10;
     final dexMod = ((dex - 10) / 2).floor();
     final hitDie = draft.selectedClass?.hitDie ?? 8;
     final maxHp = hitDie + conMod;
+    final className = draft.selectedClass?.name ?? '';
+    final unarmoredAc = calcUnarmoredArmorClass(
+      characterClass: className,
+      abilityScores: abilityScores,
+    );
+    final shieldOnlyAc = calcUnarmoredArmorClass(
+      characterClass: className,
+      abilityScores: abilityScores,
+      shieldBonus: 2,
+    );
     final allItems = _resolveEquipmentItems(draft);
-    final armorInfo = _findArmorAC(allItems, dexMod);
+    final armorInfo = _findArmorAC(
+      allItems,
+      dexMod,
+      shieldOnlyAc: shieldOnlyAc,
+    );
 
     final clsName = draft.selectedClass != null ? i18n.className(draft.selectedClass!.name) : null;
     final subclassFeature = draft.selectedClass != null
@@ -86,7 +110,7 @@ class StepReview extends ConsumerWidget {
           ...attrs.entries
               .map((e) => _Row(e.key, '${e.value} (${_mod(e.value)})')),
           _Row(l10n.reviewRowMaxHp, '$maxHp  (d$hitDie + $conMod CON)'),
-          _Row(l10n.reviewRowAcUnarmored, '${10 + dexMod}'),
+          _Row(l10n.reviewRowAcUnarmored, '$unarmoredAc'),
           if (armorInfo != null)
             _Row(l10n.reviewRowAcWith(armorInfo.$2), '${armorInfo.$1}'),
           _Row(l10n.reviewRowProficiencyBonus, '+2'),
@@ -541,7 +565,11 @@ int? _calcArmorAC(String item, int dexMod) {
 
 /// Finds the highest-AC armor+shield combo in [items].
 /// Returns (finalAC, displayLabel) or null if no armor or shield found.
-(int, String)? _findArmorAC(List<String> items, int dexMod) {
+(int, String)? _findArmorAC(
+  List<String> items,
+  int dexMod, {
+  required int shieldOnlyAc,
+}) {
   final hasShield =
       items.any((i) => i.toLowerCase().contains('shield'));
 
@@ -557,7 +585,7 @@ int? _calcArmorAC(String item, int dexMod) {
   }
 
   if (bestAC == null && !hasShield) return null;
-  if (bestAC == null) return (10 + dexMod + 2, 'Shield (Unarmored)');
+  if (bestAC == null) return (shieldOnlyAc, 'Shield (Unarmored)');
 
   final totalAC = bestAC + (hasShield ? 2 : 0);
   final label = hasShield ? '$bestName + Shield' : bestName!;

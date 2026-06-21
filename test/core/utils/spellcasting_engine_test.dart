@@ -227,6 +227,19 @@ void main() {
       expect(engine.maxCantrips, 2);
     });
 
+    test('uses the wizard spell list with abjuration/evocation limits', () {
+      final engine = SpellcastingEngine.forClass(
+        className: 'Fighter',
+        classLevel: 3,
+        abilityScores: _int18,
+        proficiencyBonus: 2,
+        subclass: 'Eldritch Knight',
+      )!;
+      expect(engine.spellListClass, 'wizard');
+      expect(engine.restrictedKnownSpellSchools, {'abjuration', 'evocation'});
+      expect(engine.restrictedKnownSpellPicksRequired(3), 2);
+    });
+
     test('level 2: no slots yet (1/3 casters start at level 3)', () {
       final engine = SpellcastingEngine.forClass(
         className: 'Fighter',
@@ -240,6 +253,42 @@ void main() {
   });
 
   // ── KnownSpellCasting.classPrepares ───────────────────────────────────────
+  group('Arcane Trickster (Rogue subclass)', () {
+    test('level 3: has Mage Hand plus 2 selectable cantrips', () {
+      final engine = SpellcastingEngine.forClass(
+        className: 'Rogue',
+        classLevel: 3,
+        abilityScores: _int18,
+        proficiencyBonus: 2,
+        subclass: 'Arcane Trickster',
+      )!;
+      expect(engine.maxCantrips, 3);
+      expect(engine.fixedCantripNames, ['Mage Hand']);
+      expect(engine.spellListClass, 'wizard');
+    });
+
+    test('uses enchantment/illusion limits except unrestricted levels', () {
+      final engine = SpellcastingEngine.forClass(
+        className: 'Rogue',
+        classLevel: 7,
+        abilityScores: _int18,
+        proficiencyBonus: 3,
+        subclass: 'Arcane Trickster',
+      )!;
+      expect(engine.restrictedKnownSpellSchools, {'enchantment', 'illusion'});
+      expect(engine.restrictedKnownSpellPicksRequired(1), 1);
+
+      final unrestricted = SpellcastingEngine.forClass(
+        className: 'Rogue',
+        classLevel: 8,
+        abilityScores: _int18,
+        proficiencyBonus: 3,
+        subclass: 'Arcane Trickster',
+      )!;
+      expect(unrestricted.restrictedKnownSpellPicksRequired(1), 0);
+    });
+  });
+
   group('KnownSpellCasting.classPrepares', () {
     test('cleric prepares', () {
       expect(KnownSpellCasting.classPrepares('cleric'), isTrue);

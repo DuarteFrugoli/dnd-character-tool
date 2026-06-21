@@ -170,7 +170,7 @@
     "class": "Fighter",
     "subclass": "Eldritch Knight",
     "features": [
-      { "name": "Spellcasting", "level": 3, "type": "passive", "description": "When you reach 3rd level, you augment your martial prowess with the ability to cast spells. Intelligence is your spellcasting ability for your wizard spells. You know three wizard cantrips and four 1st-level wizard spells, at least two of which must be from the abjuration or evocation schools." },
+      { "name": "Spellcasting", "level": 3, "type": "passive", "description": "When you reach 3rd level, you augment your martial prowess with the ability to cast spells. Intelligence is your spellcasting ability for your wizard spells. You know two wizard cantrips and three 1st-level wizard spells, at least two of which must be from the abjuration or evocation schools." },
       { "name": "Weapon Bond", "level": 3, "type": "active", "description": "Also at 3rd level, you learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over 1 hour, after which you can't be disarmed of that weapon unless incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand." },
       { "name": "War Magic", "level": 7, "type": "passive", "description": "Beginning at 7th level, when you use your action to cast a cantrip, you can make one weapon attack as a bonus action." },
       { "name": "Eldritch Strike", "level": 10, "type": "passive", "description": "At 10th level, when you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn." },

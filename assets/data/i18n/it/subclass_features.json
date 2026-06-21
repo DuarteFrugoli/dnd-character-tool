@@ -349,7 +349,7 @@
     "Eldritch Knight": {
       "Spellcasting": {
         "name": "Incantesimi",
-        "description": "Quando raggiungi il 3° livello, aumenti la tua abilità marziale con la capacità di lanciare incantesimi. L'intelligenza è la tua abilità da incantatore per gli incantesimi da mago. Conosci tre trucchetti da mago e quattro incantesimi da mago di 1° livello, almeno due dei quali devono provenire dalle scuole di abiurazione o di evocazione."
+        "description": "Quando raggiungi il 3° livello, aumenti la tua abilità marziale con la capacità di lanciare incantesimi. L'intelligenza è la tua abilità da incantatore per gli incantesimi da mago. Conosci due trucchetti da mago e tre incantesimi da mago di 1° livello, almeno due dei quali devono provenire dalle scuole di abiurazione o di invocazione."
       },
       "Weapon Bond": {
         "name": "Legame d'arma",

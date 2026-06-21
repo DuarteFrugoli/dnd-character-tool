@@ -9,6 +9,32 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.0.3] - 2026-06-21
+
+### Added
+- **Inventário — tipos de item customizado**: formulário de criação agora muda os campos conforme o tipo escolhido, incluindo suporte a itens equipáveis genéricos e containers para futuras interações de armazenamento.
+- **Inventário — detalhes completos do item**: tocar em um item abre a descrição e mostra os atributos relevantes do item, incluindo dados customizados e propriedades mecânicas.
+- **Level Up — regras de Eldritch Knight e Arcane Trickster**: subclasses de Fighter/Rogue agora usam a lista de magias de Wizard com suas restrições corretas de escola.
+
+### Changed
+- **Itens mágicos equipáveis**: itens mágicos não-armadura foram ajustados para o tipo equipável, permitindo uso junto com armadura quando apropriado.
+- **Inventário customizado internacionalizado**: categorias, tipos e detalhes de itens customizados foram traduzidos/internacionalizados.
+- **Versionamento**: versão do app atualizada para `1.0.3+17`.
+
+### Fixed
+- **Inventário — criação de item customizado**: campos de texto não são mais reiniciados enquanto o usuário digita.
+- **Inventário — salvamento ao adicionar item**: o app aguarda o item ser salvo antes de fechar a tela, evitando travamentos aparentes ao adicionar itens.
+- **Inventário — consumíveis**: removida a opção redundante `consumeOnUse` do formulário de consumível.
+- **Level Up — Paladino e Ranger**: classes sem truques no SRD não caem mais na tabela de cantrips de Eldritch Knight/Arcane Trickster.
+- **Level Up — Eldritch Knight**: nível 3 agora oferece 2 truques e 3 magias, com pelo menos 2 magias de abjuração ou evocação.
+- **Level Up — Arcane Trickster**: `Mage Hand` é tratado como truque fixo; o jogador escolhe apenas os outros truques e segue as restrições de encantamento/ilusão.
+- **Level Up — escolha de subclasse**: o wizard recalcula as páginas de truques/magias imediatamente após escolher a subclasse.
+- **CA — Defesa Sem Armadura na criação**: Bárbaro e Monge agora salvam a CA correta já ao criar o personagem.
+- **CA — Defesa Sem Armadura ao ganhar/remover habilidades**: adicionar, remover ou desativar `Unarmored Defense` recalcula a CA automaticamente.
+- **CA — revisão de criação**: a tela de revisão mostra a CA sem armadura correta para Bárbaro e Monge.
+
+---
+
 ## [1.0.2] - 2026-06-19
 
 ### Fixed

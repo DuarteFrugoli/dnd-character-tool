@@ -2431,30 +2431,43 @@ dnd_character_tool
 
 Copyright (c) 2026 Pedro Frugoli. All rights reserved.
 
-This software and its source code are proprietary and confidential.
-Unauthorized copying, distribution, modification, or use of this software,
-in whole or in part, via any medium, is strictly prohibited without the
-express written permission of the copyright holder.
+Except where otherwise stated, this software, including its source code,
+assets, design, application logic, and documentation, is proprietary.
+
+Unauthorized copying, distribution, modification, sublicensing, or commercial
+use of this software, in whole or in part, via any medium, is strictly
+prohibited without the express written permission of the copyright holder.
+
+This repository being publicly accessible does not grant any license to use,
+copy, modify, distribute, or create derivative works from the proprietary
+parts of this project.
 
 ---
 
 TRANSLATION CONTRIBUTIONS
 
-Files located under assets/data/i18n/ (translation overlays) are licensed
-separately under the Creative Commons Attribution 4.0 International License
-(CC BY 4.0). Contributions to these files are welcome — by submitting a
-translation, you agree to license your contribution under CC BY 4.0 and
-grant Pedro Frugoli the right to include it in this project.
+Files located under assets/data/i18n/ are licensed separately under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
-See https://creativecommons.org/licenses/by/4.0/
+Translation contributions are welcome. By submitting a translation
+contribution, you agree to license your contribution under CC BY 4.0,
+allowing it to be used, modified, distributed, and included in both free
+and commercial versions of this project, with appropriate attribution.
+
+See: https://creativecommons.org/licenses/by/4.0/
 
 ---
 
 THIRD-PARTY CONTENT NOTICE
 
-Game content and rules from the Dungeons & Dragons System Reference Document (SRD)
-are used under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
-© Wizards of the Coast LLC. See https://creativecommons.org/licenses/by/4.0/
+This project includes material from the System Reference Document 5.1
+("SRD 5.1") by Wizards of the Coast LLC, licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0).
+
+This project is not affiliated with, endorsed, sponsored, or specifically
+approved by Wizards of the Coast LLC.
+
+See: https://creativecommons.org/licenses/by/4.0/
 
 --------------------------------------------------------------------------------
 double-conversion

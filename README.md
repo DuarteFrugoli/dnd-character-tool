@@ -1,11 +1,11 @@
 # DnD Character Tool
 
-A mobile app for creating and managing DnD 5e characters — built with Flutter.
+A cross-platform app for creating and managing DnD 5e characters — built with Flutter.
 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
-![Flutter](https://img.shields.io/badge/Flutter-3.41-02569B?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.11-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-1.0.1-orange)
+![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
+![Version](https://img.shields.io/badge/version-1.0.3-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
@@ -16,7 +16,7 @@ A mobile app for creating and managing DnD 5e characters — built with Flutter.
 - **Guided wizard** — 7 steps: class, race, background, skills, attributes, name and review
 - **Standard Array** and **Point Buy** attribute methods
 - **Racial bonuses** applied automatically (PHB) or distributed freely (Tasha's / BG3 style)
-- Starting equipment from background applied automatically
+- Class/background starting equipment and starting gold choices resolved during review
 - Tool and instrument proficiency selection
 
 ### Character Sheet
@@ -37,7 +37,7 @@ A mobile app for creating and managing DnD 5e characters — built with Flutter.
 
 **Spells tab** — spell slots tracker, concentration tracking, known/prepared spells, spell browser with filters
 
-**Inventory tab** — equipped/carried items split into sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), item description on tap
+**Inventory tab** — equipped/carried items split into sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), tappable item details, and custom item creation with type-specific fields (weapon, armor, equippable, container, consumable, ammunition, gear)
 
 **Identity tab** — character photo (pick from gallery, crop 1:1, full-screen viewer with zoom/pan and save to gallery), personality traits, ideals, bonds, flaws, backstory
 
@@ -45,13 +45,15 @@ A mobile app for creating and managing DnD 5e characters — built with Flutter.
 
 ### Level Up Wizard
 - Full level-up flow as a fullscreen modal with step indicators
-- Steps: new class features, subclass selection, ASI / Feat choice, HP roll or average, cantrip pick, spell swap (Warlocks), extra spells, summary
+- Steps: new class features, subclass selection, ASI / Feat choice, HP roll or average, cantrip/spell selection, spell swap (Warlocks), summary
 - **Warlock spell swap** — dedicated step: choose which known spell to forget, then immediately pick the replacement in the same screen
+- Eldritch Knight and Arcane Trickster spell choices respect Wizard-list and school-restriction rules
 - **XP tracking** — optional toggle; quick-add field; full SRD XP table; auto prompt when XP threshold is reached
 
 ### Spell System
 - Full SRD spell list with school, casting time, concentration and ritual badges
-- Prepare-all classes (Cleric, Druid, Paladin, Artificer, Wizard): dynamic prepared list from SRD
+- Prepare-all classes (Cleric, Druid, Paladin): dynamic prepared list from SRD
+- Wizard uses a spellbook/manual known-spell flow instead of preparing the entire class list
 - Subclass always-prepared spells (domains, oaths, patrons)
 - Eldritch Knight and Arcane Trickster (⅓ caster) support
 - Innate racial spells with daily use tracker
@@ -63,7 +65,7 @@ A mobile app for creating and managing DnD 5e characters — built with Flutter.
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
-- Export as **JSON** or compressed **token** (gzip + base64url)
+- Export as **JSON** or share **token** (gzip + base64url on native platforms; base64url on web)
 - Import by `.dndchar` file, token or JSON
 - Cross-platform: characters exported on mobile import correctly on web and vice-versa
 
@@ -80,7 +82,7 @@ A mobile app for creating and managing DnD 5e characters — built with Flutter.
 
 | Layer | Library |
 |---|---|
-| Framework | Flutter 3.41 / Dart 3.11 |
+| Framework | Flutter 3.x / Dart 3.11.5 |
 | State management | flutter_riverpod 2 |
 | Navigation | go_router |
 | Persistence | path_provider (mobile) + shared_preferences (web) |
@@ -106,6 +108,11 @@ flutter pub get
 flutter run
 ```
 
+## Documentation
+
+- [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, level-up rules and import/export flows.
+- [Changelog](CHANGELOG.md) tracks release history.
+
 > All DnD 5e content uses the **System Reference Document (SRD)** under the Creative Commons license.
 
 ## License
@@ -123,7 +130,7 @@ See [LICENSE](LICENSE) for details.
 
 # DnD Character Tool (Português)
 
-Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flutter.
+Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feito com Flutter.
 
 ## Funcionalidades
 
@@ -131,7 +138,7 @@ Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flu
 - **Assistente guiado** com 7 etapas: classe, raça, antecedente, perícias, atributos, nome e revisão
 - Métodos de atributos: **Standard Array** e **Point Buy**
 - Bônus raciais aplicados automaticamente (PHB) ou distribuídos livremente (Tasha's / BG3)
-- Equipamento inicial do antecedente aplicado automaticamente
+- Equipamentos iniciais de classe/antecedente e escolhas de ouro resolvidos na revisão
 - Seleção de proficiências em ferramentas e instrumentos
 
 ### Ficha do Personagem
@@ -152,7 +159,7 @@ Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flu
 
 **Aba Spells** — rastreador de espaços de magia, rastreamento de concentração, magias conhecidas/preparadas, browser de magias com filtros
 
-**Aba Inventory** — itens equipados/carregados separados por seção, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), descrição do item ao tocar
+**Aba Inventory** — itens equipados/carregados separados por seção, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), detalhes ao tocar e criação de itens customizados com campos por tipo (arma, armadura, equipável, container, consumível, munição, equipamento geral)
 
 **Aba Identity** — foto do personagem (escolher da galeria, cortar 1:1, visualizador em tela cheia com zoom/pan e salvar na galeria), traços de personalidade, ideais, vínculos, fraquezas, história
 
@@ -160,13 +167,15 @@ Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flu
 
 ### Subida de Nível
 - Fluxo completo de level up como modal em tela cheia com indicadores de passo
-- Passos: features novas, seleção de subclasse, ASI / Talento, rolagem de HP, cantrips, troca de magia (Warlocks), magias extras, resumo
+- Passos: features novas, seleção de subclasse, ASI / Talento, rolagem de HP, escolha de truques/magias, troca de magia (Warlocks), resumo
 - **Troca de magia do Warlock** — passo dedicado: escolha qual magia esquecer e em seguida escolha a substituta na mesma tela
+- Escolhas de magia de Eldritch Knight e Arcane Trickster respeitam lista de Wizard e restrições de escola
 - **Rastreamento de XP** — toggle opcional; campo de adição rápida; tabela completa de XP do SRD; prompt automático ao atingir o threshold
 
 ### Sistema de Magias
 - Lista completa de magias do SRD com badges de escola, tempo de conjuração, concentração e ritual
-- Classes prepare-all (Cleric, Druid, Paladin, Artificer, Wizard): lista de preparação dinâmica do SRD
+- Classes prepare-all (Cleric, Druid, Paladin): lista de preparação dinâmica do SRD
+- Wizard usa fluxo de spellbook/magias conhecidas manualmente, em vez de preparar a lista inteira da classe
 - Magias always-prepared de subclasse (domínios, juramentos, patronos)
 - Suporte a Eldritch Knight e Arcane Trickster (⅓ conjurador)
 - Magias inatas raciais com rastreador de usos diários
@@ -178,7 +187,7 @@ Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flu
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
-- Exportar como **JSON** ou **token** comprimido (gzip + base64url)
+- Exportar como **JSON** ou **token** de compartilhamento (gzip + base64url em plataformas nativas; base64url na web)
 - Importar por arquivo `.dndchar`, token ou JSON
 - Cross-platform: personagens exportados no celular importam corretamente na web e vice-versa
 
@@ -195,7 +204,7 @@ Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flu
 
 | Camada | Biblioteca |
 |---|---|
-| Framework | Flutter 3.41 / Dart 3.11 |
+| Framework | Flutter 3.x / Dart 3.11.5 |
 | Gerenciamento de estado | flutter_riverpod 2 |
 | Navegação | go_router |
 | Persistência | path_provider (mobile) + shared_preferences (web) |
@@ -220,6 +229,11 @@ Aplicativo mobile para criar e gerenciar personagens de DnD 5e — feito com Flu
 flutter pub get
 flutter run
 ```
+
+## Documentação
+
+- [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, regras de level up e fluxos de import/export.
+- [Changelog](CHANGELOG.md) registra o histórico de versões.
 
 > Todo o conteúdo de DnD 5e utiliza o **System Reference Document (SRD)** sob a licença Creative Commons.
 

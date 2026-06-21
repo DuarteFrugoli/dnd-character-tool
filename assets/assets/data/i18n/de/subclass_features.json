@@ -349,7 +349,7 @@
     "Eldritch Knight": {
       "Spellcasting": {
         "name": "Zauberei",
-        "description": "Wenn Sie die 3. Stufe erreichen, erweitern Sie Ihre Kampffähigkeiten durch die Fähigkeit, Zauber zu wirken. Intelligenz ist Ihre Zauberfähigkeit für Ihre Zaubersprüche. Sie kennen drei Zaubertricks und vier Zaubersprüche der ersten Stufe, von denen mindestens zwei aus der Abschwörungs- oder Beschwörungsschule stammen müssen."
+        "description": "Wenn Sie die 3. Stufe erreichen, erweitern Sie Ihre Kampffähigkeiten durch die Fähigkeit, Zauber zu wirken. Intelligenz ist Ihre Zauberfähigkeit für Ihre Zaubersprüche. Sie kennen zwei Zaubertricks und drei Zaubersprüche der ersten Stufe, von denen mindestens zwei aus der Abschwörungs- oder Hervorrufungsschule stammen müssen."
       },
       "Weapon Bond": {
         "name": "Waffenbindung",

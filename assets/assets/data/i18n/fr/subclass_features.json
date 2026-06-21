@@ -349,7 +349,7 @@
     "Eldritch Knight": {
       "Spellcasting": {
         "name": "Lancement de sorts",
-        "description": "Lorsque vous atteignez le niveau 3, vous augmentez vos prouesses martiales grâce à la capacité de lancer des sorts. L'intelligence est votre capacité à lancer des sorts pour vos sorts de sorcier. Vous connaissez trois sorts mineurs de sorcier et quatre sorts de sorcier de niveau 1, dont au moins deux doivent provenir des écoles d'abjuration ou d'évocation."
+        "description": "Lorsque vous atteignez le niveau 3, vous augmentez vos prouesses martiales grâce à la capacité de lancer des sorts. L'intelligence est votre capacité à lancer des sorts pour vos sorts de magicien. Vous connaissez deux sorts mineurs de magicien et trois sorts de magicien de niveau 1, dont au moins deux doivent provenir des écoles d'abjuration ou d'évocation."
       },
       "Weapon Bond": {
         "name": "Lien d'arme",

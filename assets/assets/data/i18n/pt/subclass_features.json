@@ -349,7 +349,7 @@
     "Eldritch Knight": {
       "Spellcasting": {
         "name": "Conjuração",
-        "description": "Quando você alcança o 3º nível, você aumenta seu marcial aptidão com o habilidade para conjurar magias. Inteligência é seu magiacasting habilidade para vocêr maga magias. Você conhece três mago truques e quatro 1st-nível maga magias, at menos duas of which deve ser do abjuração ou evocação schools."
+        "description": "Quando você alcança o 3º nível, você reforça sua aptidão marcial com a habilidade de conjurar magias. Inteligência é sua habilidade de conjuração para suas magias de mago. Você conhece dois truques de mago e três magias de mago de 1º nível, das quais pelo menos duas devem ser das escolas de abjuração ou evocação."
       },
       "Weapon Bond": {
         "name": "Vínculo com Arma",

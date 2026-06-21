@@ -1407,9 +1407,13 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   Widget _buildCustomTab() {
     final scheme = Theme.of(context).colorScheme;
     final unitSystem = ref.read(unitSystemProvider);
+    final mediaQuery = MediaQuery.of(context);
+    final bottomInset = mediaQuery.viewInsets.bottom > 0
+        ? mediaQuery.viewInsets.bottom
+        : mediaQuery.viewPadding.bottom;
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.fromLTRB(16, 16, 16, 16 + bottomInset),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

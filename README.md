@@ -117,14 +117,15 @@ flutter run
 
 ## License
 
-© 2026 Pedro Frugoli. All Rights Reserved.
+© 2026 Pedro Frugoli. All rights reserved.
 
-Unauthorized copying, distribution or use of this software is strictly prohibited.
-See [LICENSE](LICENSE) for details.
+Except where otherwise stated, this project is proprietary. See [LICENSE](./LICENSE) for details.
 
-**Translation contributions** (`assets/data/i18n/`) are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — contributions are welcome! By submitting a translation you agree to license it under CC BY 4.0.
+Translation files in `assets/data/i18n/` are licensed under CC BY 4.0, and translation contributions are welcome.
 
-> DnD 5e SRD content used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.
+This project includes material from the Dungeons & Dragons System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC, licensed under CC BY 4.0.
+
+This project is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.
 
 ---
 
@@ -241,9 +242,10 @@ flutter run
 
 © 2026 Pedro Frugoli. Todos os direitos reservados.
 
-É proibida a cópia, distribuição ou uso não autorizado deste software.
-Veja [LICENSE](LICENSE) para mais detalhes.
+Exceto quando indicado de outra forma, este projeto é proprietário. Consulte [LICENSE](./LICENSE) para mais detalhes.
 
-**Contribuições de tradução** (`assets/data/i18n/`) são licenciadas sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — contribuições são bem-vindas! Ao enviar uma tradução você concorda em licenciá-la sob CC BY 4.0.
+Os arquivos de tradução em `assets/data/i18n/` são licenciados sob CC BY 4.0, e contribuições de tradução são bem-vindas.
 
-> Conteúdo SRD de DnD 5e utilizado sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) © Wizards of the Coast LLC.
+Este projeto inclui material do System Reference Document 5.1 (“SRD 5.1”) de Dungeons & Dragons, da Wizards of the Coast LLC, licenciado sob CC BY 4.0.
+
+Este projeto não é afiliado, endossado, patrocinado ou especificamente aprovado pela Wizards of the Coast LLC.

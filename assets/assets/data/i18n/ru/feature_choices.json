@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "Командирский удар",
+        "description": "Совершая действие «Атака», вы можете отказаться от одной атаки и использовать бонусное действие, чтобы направить союзника на удар."
+      },
+      "disarming_attack": {
+        "name": "Обезоруживающая атака",
+        "description": "Когда вы поражаете существо атакой оружием, вы можете потратить кубик превосходства, чтобы попытаться обезоружить цель."
+      },
+      "distracting_strike": {
+        "name": "Отвлекающий удар",
+        "description": "Когда вы поражаете существо атакой оружием, вы можете потратить кубик превосходства, чтобы отвлечь существо."
+      },
+      "evasive_footwork": {
+        "name": "Уклоняющаяся работа ног",
+        "description": "Когда вы двигаетесь, вы можете потратить кубик превосходства и добавлять бросок к вашему AC, пока не перестанете двигаться."
+      },
+      "feinting_attack": {
+        "name": "Ложная атака",
+        "description": "Вы можете потратить кубик превосходства и использовать бонусное действие для обмана, получая преимущество при следующей атаке по существу."
+      },
+      "goading_attack": {
+        "name": "Подстрекающая атака",
+        "description": "Когда вы наносите удар оружием, вы можете потратить кубик превосходства, чтобы спровоцировать цель атаковать вас."
+      },
+      "lunging_attack": {
+        "name": "Стремительная атака",
+        "description": "Когда вы совершаете рукопашную атаку оружием, вы можете потратить кубик превосходства, чтобы увеличить дальность действия этой атаки."
+      },
+      "maneuvering_attack": {
+        "name": "Маневренная атака",
+        "description": "Когда вы наносите атаку оружием, вы можете потратить кубик превосходства, чтобы позволить союзнику двигаться, не провоцируя цель."
+      },
+      "menacing_attack": {
+        "name": "Угрожающая атака",
+        "description": "Когда вы наносите удар оружием, вы можете потратить кубик превосходства, чтобы попытаться напугать цель."
+      },
+      "parry": {
+        "name": "Парировать",
+        "description": "Когда другое существо наносит вам урон рукопашной атакой, вы можете потратить кубик превосходства, чтобы уменьшить урон."
+      },
+      "precision_attack": {
+        "name": "Точная атака",
+        "description": "Когда вы делаете бросок атаки оружием, вы можете потратить кубик превосходства и добавить его к броску."
+      },
+      "pushing_attack": {
+        "name": "Толкающая атака",
+        "description": "Когда вы наносите удар оружием, вы можете потратить кубик превосходства, чтобы попытаться оттолкнуть цель."
+      },
+      "rally": {
+        "name": "Ралли",
+        "description": "В свой ход вы можете потратить кубик превосходства и использовать бонусное действие, чтобы поддержать союзника временными очками жизни."
+      },
+      "riposte": {
+        "name": "ответный удар",
+        "description": "Когда существо промахивается по вам рукопашной атакой, вы можете потратить кубик превосходства, чтобы провести по нему рукопашную атаку оружием."
+      },
+      "sweeping_attack": {
+        "name": "Размашистая атака",
+        "description": "Когда вы наносите удар рукопашной атакой оружием, вы можете потратить кубик превосходства, чтобы нанести урон другому существу в пределах досягаемости."
+      },
+      "trip_attack": {
+        "name": "Поездка Атака",
+        "description": "Когда вы наносите удар оружием, вы можете потратить кубик превосходства, чтобы попытаться сбить цель с ног."
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "Стрельба из лука"
+      },
+      "defense": {
+        "name": "Оборона"
+      },
+      "dueling": {
+        "name": "Дуэль"
+      },
+      "great_weapon_fighting": {
+        "name": "Великий бой с оружием"
+      },
+      "protection": {
+        "name": "Защита"
+      },
+      "two_weapon_fighting": {
+        "name": "Бои с двумя оружиями"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "Оборона"
+      },
+      "dueling": {
+        "name": "Дуэль"
+      },
+      "great_weapon_fighting": {
+        "name": "Великий бой с оружием"
+      },
+      "protection": {
+        "name": "Защита"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "Стрельба из лука"
+      },
+      "defense": {
+        "name": "Оборона"
+      },
+      "dueling": {
+        "name": "Дуэль"
+      },
+      "two_weapon_fighting": {
+        "name": "Бои с двумя оружиями"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "Осторожное заклинание"
+      },
+      "distant_spell": {
+        "name": "Дистанционное заклинание"
+      },
+      "empowered_spell": {
+        "name": "Усиленное заклинание"
+      },
+      "extended_spell": {
+        "name": "Расширенное заклинание"
+      },
+      "heightened_spell": {
+        "name": "Усиленное заклинание"
+      },
+      "quickened_spell": {
+        "name": "Ускоренное заклинание"
+      },
+      "subtle_spell": {
+        "name": "Тонкое заклинание"
+      },
+      "twinned_spell": {
+        "name": "Двойное заклинание"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "Аберрации"
+      },
+      "beasts": {
+        "name": "Звери"
+      },
+      "celestials": {
+        "name": "Небожители"
+      },
+      "constructs": {
+        "name": "Конструкции"
+      },
+      "dragons": {
+        "name": "Драконы"
+      },
+      "elementals": {
+        "name": "Элементали"
+      },
+      "fey": {
+        "name": "Фей"
+      },
+      "fiends": {
+        "name": "Изверги"
+      },
+      "giants": {
+        "name": "Гиганты"
+      },
+      "monstrosities": {
+        "name": "Чудовища"
+      },
+      "oozes": {
+        "name": "сочится"
+      },
+      "plants": {
+        "name": "Растения"
+      },
+      "undead": {
+        "name": "Нежить"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "Арктика"
+      },
+      "coast": {
+        "name": "Побережье"
+      },
+      "desert": {
+        "name": "Пустыня"
+      },
+      "forest": {
+        "name": "Лес"
+      },
+      "grassland": {
+        "name": "луга"
+      },
+      "mountain": {
+        "name": "Гора"
+      },
+      "swamp": {
+        "name": "Болото"
+      },
+      "underdark": {
+        "name": "Подземье"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "Кислота"
+      },
+      "cold": {
+        "name": "Холодный"
+      },
+      "fire": {
+        "name": "Огонь"
+      },
+      "lightning": {
+        "name": "Молния"
+      },
+      "thunder": {
+        "name": "Гром"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "Сила"
+      },
+      "dexterity": {
+        "name": "Ловкость"
+      },
+      "constitution": {
+        "name": "Конституция"
+      },
+      "intelligence": {
+        "name": "Интеллект"
+      },
+      "wisdom": {
+        "name": "Мудрость"
+      },
+      "charisma": {
+        "name": "Харизма"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "Черный"
+      },
+      "blue": {
+        "name": "Синий"
+      },
+      "brass": {
+        "name": "Латунь"
+      },
+      "bronze": {
+        "name": "Бронза"
+      },
+      "copper": {
+        "name": "Медь"
+      },
+      "gold": {
+        "name": "Золото"
+      },
+      "green": {
+        "name": "Зеленый"
+      },
+      "red": {
+        "name": "Красный"
+      },
+      "silver": {
+        "name": "Серебро"
+      },
+      "white": {
+        "name": "Белый"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "Пакт Цепи"
+              },
+              "pact_of_the_blade": {
+                "name": "Пакт Клинка"
+              },
+              "pact_of_the_tome": {
+                "name": "Пакт Тома"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "Сила"
+                },
+                "dexterity": {
+                  "name": "Ловкость"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "Убийца Колоссов"
+                },
+                "giant_killer": {
+                  "name": "Гигантский убийца"
+                },
+                "horde_breaker": {
+                  "name": "Разрушитель Орды"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "Побег из Орды"
+                },
+                "multiattack_defense": {
+                  "name": "Многократная защита"
+                },
+                "steel_will": {
+                  "name": "Стальная воля"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "Залп"
+                },
+                "whirlwind_attack": {
+                  "name": "Вихревая атака"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "Уклонение"
+                },
+                "stand_against_the_tide": {
+                  "name": "Выстоять против течения"
+                },
+                "uncanny_dodge": {
+                  "name": "Странная уловка"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "Инструменты Смита"
+            },
+            "brewers_supplies": {
+              "name": "Принадлежности для пивоваров"
+            },
+            "masons_tools": {
+              "name": "Инструменты Мейсона"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "Бард"
+            },
+            "cleric": {
+              "name": "Священник"
+            },
+            "druid": {
+              "name": "Друид"
+            },
+            "sorcerer": {
+              "name": "Колдун"
+            },
+            "warlock": {
+              "name": "Чернокнижник"
+            },
+            "wizard": {
+              "name": "Волшебник"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "Сила"
+            },
+            "dexterity": {
+              "name": "Ловкость"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "Сила"
+            },
+            "dexterity": {
+              "name": "Ловкость"
+            }
+          }
+        }
+      }
+    }
+  }
+}

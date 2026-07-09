@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "Frappe du commandant",
+        "description": "Lorsque vous effectuez l'action Attaque, vous pouvez renoncer à une attaque et utiliser une action bonus pour ordonner à un allié de frapper."
+      },
+      "disarming_attack": {
+        "name": "Attaque désarmante",
+        "description": "Lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez dépenser un dé de supériorité pour tenter de désarmer la cible."
+      },
+      "distracting_strike": {
+        "name": "Frappe distrayante",
+        "description": "Lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez dépenser un dé de supériorité pour distraire la créature."
+      },
+      "evasive_footwork": {
+        "name": "Jeu de jambes évasif",
+        "description": "Lorsque vous vous déplacez, vous pouvez dépenser un dé de supériorité et ajouter le jet à votre CA jusqu'à ce que vous arrêtiez de bouger."
+      },
+      "feinting_attack": {
+        "name": "Attaque de feinte",
+        "description": "Vous pouvez dépenser un dé de supériorité et utiliser une action bonus pour feinter, obtenant ainsi un avantage lors de votre prochaine attaque contre une créature."
+      },
+      "goading_attack": {
+        "name": "Attaque d'aiguillon",
+        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour inciter la cible à vous attaquer."
+      },
+      "lunging_attack": {
+        "name": "Attaque brusque",
+        "description": "Lorsque vous effectuez une attaque au corps à corps avec une arme, vous pouvez dépenser un dé de supériorité pour augmenter la portée de cette attaque."
+      },
+      "maneuvering_attack": {
+        "name": "Attaque de manœuvre",
+        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour permettre à un allié de bouger sans provoquer la cible."
+      },
+      "menacing_attack": {
+        "name": "Attaque menaçante",
+        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour tenter d'effrayer la cible."
+      },
+      "parry": {
+        "name": "Parer",
+        "description": "Lorsqu'une autre créature vous blesse avec une attaque au corps à corps, vous pouvez dépenser un dé de supériorité pour réduire les dégâts."
+      },
+      "precision_attack": {
+        "name": "Attaque de précision",
+        "description": "Lorsque vous effectuez un jet d’attaque avec une arme, vous pouvez dépenser un dé de supériorité et l’ajouter au jet."
+      },
+      "pushing_attack": {
+        "name": "Attaque poussée",
+        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour tenter de repousser la cible."
+      },
+      "rally": {
+        "name": "Rallier",
+        "description": "À votre tour, vous pouvez dépenser un dé de supériorité et utiliser une action bonus pour renforcer un allié avec des points de vie temporaires."
+      },
+      "riposte": {
+        "name": "Riposte",
+        "description": "Lorsqu'une créature vous manque lors d'une attaque au corps à corps, vous pouvez dépenser un dé de supériorité pour lancer une attaque au corps à corps contre elle."
+      },
+      "sweeping_attack": {
+        "name": "Attaque radicale",
+        "description": "Lorsque vous frappez avec une attaque au corps à corps avec une arme, vous pouvez dépenser un dé de supériorité pour endommager une autre créature à portée."
+      },
+      "trip_attack": {
+        "name": "Attaque de voyage",
+        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour tenter de mettre la cible à terre."
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "Tir à l'arc"
+      },
+      "defense": {
+        "name": "Défense"
+      },
+      "dueling": {
+        "name": "Duel"
+      },
+      "great_weapon_fighting": {
+        "name": "Grand combat aux armes"
+      },
+      "protection": {
+        "name": "Protection"
+      },
+      "two_weapon_fighting": {
+        "name": "Combat à deux armes"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "Défense"
+      },
+      "dueling": {
+        "name": "Duel"
+      },
+      "great_weapon_fighting": {
+        "name": "Grand combat aux armes"
+      },
+      "protection": {
+        "name": "Protection"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "Tir à l'arc"
+      },
+      "defense": {
+        "name": "Défense"
+      },
+      "dueling": {
+        "name": "Duel"
+      },
+      "two_weapon_fighting": {
+        "name": "Combat à deux armes"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "Sort prudent"
+      },
+      "distant_spell": {
+        "name": "Sort lointain"
+      },
+      "empowered_spell": {
+        "name": "Sort surpuissant"
+      },
+      "extended_spell": {
+        "name": "Sort prolongé"
+      },
+      "heightened_spell": {
+        "name": "Sort amélioré"
+      },
+      "quickened_spell": {
+        "name": "Sort accéléré"
+      },
+      "subtle_spell": {
+        "name": "Sort subtil"
+      },
+      "twinned_spell": {
+        "name": "Sort jumelé"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "Aberrations"
+      },
+      "beasts": {
+        "name": "Bêtes"
+      },
+      "celestials": {
+        "name": "Célestes"
+      },
+      "constructs": {
+        "name": "Constructions"
+      },
+      "dragons": {
+        "name": "Dragons"
+      },
+      "elementals": {
+        "name": "Élémentaires"
+      },
+      "fey": {
+        "name": "Fée"
+      },
+      "fiends": {
+        "name": "Démons"
+      },
+      "giants": {
+        "name": "Géants"
+      },
+      "monstrosities": {
+        "name": "Monstruosités"
+      },
+      "oozes": {
+        "name": "suinte"
+      },
+      "plants": {
+        "name": "Plantes"
+      },
+      "undead": {
+        "name": "Mort-vivant"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "Arctique"
+      },
+      "coast": {
+        "name": "Côte"
+      },
+      "desert": {
+        "name": "Désert"
+      },
+      "forest": {
+        "name": "Forêt"
+      },
+      "grassland": {
+        "name": "Prairie"
+      },
+      "mountain": {
+        "name": "Montagne"
+      },
+      "swamp": {
+        "name": "Marais"
+      },
+      "underdark": {
+        "name": "Ténèbres"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "Acide"
+      },
+      "cold": {
+        "name": "Froid"
+      },
+      "fire": {
+        "name": "Feu"
+      },
+      "lightning": {
+        "name": "Foudre"
+      },
+      "thunder": {
+        "name": "Tonnerre"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "Force"
+      },
+      "dexterity": {
+        "name": "Dextérité"
+      },
+      "constitution": {
+        "name": "Constitution"
+      },
+      "intelligence": {
+        "name": "Intelligence"
+      },
+      "wisdom": {
+        "name": "Sagesse"
+      },
+      "charisma": {
+        "name": "Charisme"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "Noir"
+      },
+      "blue": {
+        "name": "Bleu"
+      },
+      "brass": {
+        "name": "Laiton"
+      },
+      "bronze": {
+        "name": "Bronze"
+      },
+      "copper": {
+        "name": "Cuivre"
+      },
+      "gold": {
+        "name": "Or"
+      },
+      "green": {
+        "name": "Vert"
+      },
+      "red": {
+        "name": "Rouge"
+      },
+      "silver": {
+        "name": "Argent"
+      },
+      "white": {
+        "name": "Blanc"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "Pacte de la Chaîne"
+              },
+              "pact_of_the_blade": {
+                "name": "Pacte de la Lame"
+              },
+              "pact_of_the_tome": {
+                "name": "Pacte du Tome"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "Force"
+                },
+                "dexterity": {
+                  "name": "Dextérité"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "Tueur de colosses"
+                },
+                "giant_killer": {
+                  "name": "Tueur géant"
+                },
+                "horde_breaker": {
+                  "name": "Brise-horde"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "Échapper à la Horde"
+                },
+                "multiattack_defense": {
+                  "name": "Défense multi-attaques"
+                },
+                "steel_will": {
+                  "name": "Volonté d'acier"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "Volée"
+                },
+                "whirlwind_attack": {
+                  "name": "Attaque tourbillonnante"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "Évasion"
+                },
+                "stand_against_the_tide": {
+                  "name": "Tenez-vous à contre-courant"
+                },
+                "uncanny_dodge": {
+                  "name": "Esquive étrange"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "Les outils de Smith"
+            },
+            "brewers_supplies": {
+              "name": "Fournitures du brasseur"
+            },
+            "masons_tools": {
+              "name": "Outils de maçon"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "Barde"
+            },
+            "cleric": {
+              "name": "Clerc"
+            },
+            "druid": {
+              "name": "Druide"
+            },
+            "sorcerer": {
+              "name": "Sorcier"
+            },
+            "warlock": {
+              "name": "Sorcier"
+            },
+            "wizard": {
+              "name": "Magicien"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "Force"
+            },
+            "dexterity": {
+              "name": "Dextérité"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "Force"
+            },
+            "dexterity": {
+              "name": "Dextérité"
+            }
+          }
+        }
+      }
+    }
+  }
+}

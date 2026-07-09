@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "Ataque do Comandante",
+        "description": "Quando você realiza a ação de Ataque, você pode renunciar a um ataque e usar uma ação bônus para direcionar um aliado para atacar."
+      },
+      "disarming_attack": {
+        "name": "Desarmando Ataque",
+        "description": "Quando você atinge uma criatura com um ataque com arma, você pode gastar um dado de superioridade para tentar desarmar o alvo."
+      },
+      "distracting_strike": {
+        "name": "Ataque Distrativo",
+        "description": "Quando você atinge uma criatura com um ataque com arma, você pode gastar um dado de superioridade para distrair a criatura."
+      },
+      "evasive_footwork": {
+        "name": "Trabalho de pés evasivo",
+        "description": "Quando você se move, você pode gastar um dado de superioridade e adicionar o resultado à sua CA até parar de se mover."
+      },
+      "feinting_attack": {
+        "name": "Finta Ataque",
+        "description": "Você pode gastar um dado de superioridade e usar uma ação bônus para fingir, ganhando vantagem em seu próximo ataque contra uma criatura."
+      },
+      "goading_attack": {
+        "name": "Incitando Ataque",
+        "description": "Quando você acerta um ataque com arma, você pode gastar um dado de superioridade para incitar o alvo a atacar você."
+      },
+      "lunging_attack": {
+        "name": "Ataque Pulmonar",
+        "description": "Quando você faz um ataque com arma corpo a corpo, você pode gastar um dado de superioridade para aumentar seu alcance para esse ataque."
+      },
+      "maneuvering_attack": {
+        "name": "Manobrando Ataque",
+        "description": "Quando você acerta com um ataque com arma, você pode gastar um dado de superioridade para permitir que um aliado se mova sem provocar o alvo."
+      },
+      "menacing_attack": {
+        "name": "Ataque ameaçador",
+        "description": "Quando você acerta um ataque com arma, você pode gastar um dado de superioridade para tentar assustar o alvo."
+      },
+      "parry": {
+        "name": "Desviar",
+        "description": "Quando outra criatura causa dano a você com um ataque corpo a corpo, você pode gastar um dado de superioridade para reduzir o dano."
+      },
+      "precision_attack": {
+        "name": "Ataque de Precisão",
+        "description": "Quando você faz uma jogada de ataque com arma, você pode gastar um dado de superioridade e adicioná-lo à jogada."
+      },
+      "pushing_attack": {
+        "name": "Empurrando Ataque",
+        "description": "Quando você acerta um ataque com arma, você pode gastar um dado de superioridade para tentar afastar o alvo."
+      },
+      "rally": {
+        "name": "Corrida",
+        "description": "No seu turno, você pode gastar um dado de superioridade e usar uma ação bônus para reforçar um aliado com pontos de vida temporários."
+      },
+      "riposte": {
+        "name": "Resposta",
+        "description": "Quando uma criatura erra você em um ataque corpo a corpo, você pode gastar um dado de superioridade para fazer um ataque corpo a corpo com arma contra ela."
+      },
+      "sweeping_attack": {
+        "name": "Ataque arrebatador",
+        "description": "Quando você acerta um ataque com arma corpo a corpo, você pode gastar um dado de superioridade para causar dano a outra criatura ao seu alcance."
+      },
+      "trip_attack": {
+        "name": "Ataque de viagem",
+        "description": "Quando você acerta um ataque com arma, você pode gastar um dado de superioridade para tentar derrubar o alvo."
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "Tiro com arco"
+      },
+      "defense": {
+        "name": "Defesa"
+      },
+      "dueling": {
+        "name": "Duelo"
+      },
+      "great_weapon_fighting": {
+        "name": "Grande luta com armas"
+      },
+      "protection": {
+        "name": "Proteção"
+      },
+      "two_weapon_fighting": {
+        "name": "Combate com duas armas"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "Defesa"
+      },
+      "dueling": {
+        "name": "Duelo"
+      },
+      "great_weapon_fighting": {
+        "name": "Grande luta com armas"
+      },
+      "protection": {
+        "name": "Proteção"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "Tiro com arco"
+      },
+      "defense": {
+        "name": "Defesa"
+      },
+      "dueling": {
+        "name": "Duelo"
+      },
+      "two_weapon_fighting": {
+        "name": "Combate com duas armas"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "Feitiço Cuidadoso"
+      },
+      "distant_spell": {
+        "name": "Feitiço Distante"
+      },
+      "empowered_spell": {
+        "name": "Feitiço Potencializado"
+      },
+      "extended_spell": {
+        "name": "Feitiço Estendido"
+      },
+      "heightened_spell": {
+        "name": "Feitiço Elevado"
+      },
+      "quickened_spell": {
+        "name": "Feitiço Acelerado"
+      },
+      "subtle_spell": {
+        "name": "Feitiço Sutil"
+      },
+      "twinned_spell": {
+        "name": "Feitiço Geminado"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "Aberrações"
+      },
+      "beasts": {
+        "name": "Bestas"
+      },
+      "celestials": {
+        "name": "Celestiais"
+      },
+      "constructs": {
+        "name": "Construções"
+      },
+      "dragons": {
+        "name": "Dragões"
+      },
+      "elementals": {
+        "name": "Elementais"
+      },
+      "fey": {
+        "name": "Fey"
+      },
+      "fiends": {
+        "name": "Demônios"
+      },
+      "giants": {
+        "name": "Gigantes"
+      },
+      "monstrosities": {
+        "name": "Monstruosidades"
+      },
+      "oozes": {
+        "name": "Gosmas"
+      },
+      "plants": {
+        "name": "Plantas"
+      },
+      "undead": {
+        "name": "Morto-vivo"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "ártico"
+      },
+      "coast": {
+        "name": "Costa"
+      },
+      "desert": {
+        "name": "Deserto"
+      },
+      "forest": {
+        "name": "Floresta"
+      },
+      "grassland": {
+        "name": "Pastagem"
+      },
+      "mountain": {
+        "name": "Montanha"
+      },
+      "swamp": {
+        "name": "Pântano"
+      },
+      "underdark": {
+        "name": "Subterrâneo"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "Ácido"
+      },
+      "cold": {
+        "name": "Frio"
+      },
+      "fire": {
+        "name": "Fogo"
+      },
+      "lightning": {
+        "name": "Raio"
+      },
+      "thunder": {
+        "name": "Trovão"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "Força"
+      },
+      "dexterity": {
+        "name": "Destreza"
+      },
+      "constitution": {
+        "name": "Constituição"
+      },
+      "intelligence": {
+        "name": "Inteligência"
+      },
+      "wisdom": {
+        "name": "Sabedoria"
+      },
+      "charisma": {
+        "name": "Carisma"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "Preto"
+      },
+      "blue": {
+        "name": "Azul"
+      },
+      "brass": {
+        "name": "Latão"
+      },
+      "bronze": {
+        "name": "Bronze"
+      },
+      "copper": {
+        "name": "Cobre"
+      },
+      "gold": {
+        "name": "Ouro"
+      },
+      "green": {
+        "name": "Verde"
+      },
+      "red": {
+        "name": "Vermelho"
+      },
+      "silver": {
+        "name": "Prata"
+      },
+      "white": {
+        "name": "Branco"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "Pacto da Cadeia"
+              },
+              "pact_of_the_blade": {
+                "name": "Pacto da Lâmina"
+              },
+              "pact_of_the_tome": {
+                "name": "Pacto do Tomé"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "Força"
+                },
+                "dexterity": {
+                  "name": "Destreza"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "Matador de Colossos"
+                },
+                "giant_killer": {
+                  "name": "Assassino Gigante"
+                },
+                "horde_breaker": {
+                  "name": "Destruidor da Horda"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "Fuja da Horda"
+                },
+                "multiattack_defense": {
+                  "name": "Defesa Multiataque"
+                },
+                "steel_will": {
+                  "name": "Vontade de aço"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "Voleibol"
+                },
+                "whirlwind_attack": {
+                  "name": "Ataque Redemoinho"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "Evasão"
+                },
+                "stand_against_the_tide": {
+                  "name": "Fique contra a maré"
+                },
+                "uncanny_dodge": {
+                  "name": "Esquiva Sobrenatural"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "Ferramentas de Smith"
+            },
+            "brewers_supplies": {
+              "name": "Suprimentos para cervejeiros"
+            },
+            "masons_tools": {
+              "name": "Ferramentas de pedreiro"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "Bardo"
+            },
+            "cleric": {
+              "name": "Clérigo"
+            },
+            "druid": {
+              "name": "druida"
+            },
+            "sorcerer": {
+              "name": "Feiticeiro"
+            },
+            "warlock": {
+              "name": "Bruxo"
+            },
+            "wizard": {
+              "name": "Mago"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "Força"
+            },
+            "dexterity": {
+              "name": "Destreza"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "Força"
+            },
+            "dexterity": {
+              "name": "Destreza"
+            }
+          }
+        }
+      }
+    }
+  }
+}

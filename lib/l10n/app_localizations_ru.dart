@@ -441,6 +441,29 @@ class AppLocalizationsRu extends AppLocalizations {
       'На этом уровне нет новых классовых умений.';
 
   @override
+  String get featureChoicesTitle => 'Выбор особенностей';
+
+  @override
+  String get featureChoicesPending => 'Выбор не завершен';
+
+  @override
+  String get featureChoicesEdit => 'Изменить выбор';
+
+  @override
+  String get featureChoicesChooseDependencyFirst =>
+      'Сначала выберите требуемый предыдущий вариант.';
+
+  @override
+  String featureChoicesChooseCount(String kind, int count) {
+    return 'Выберите $count $kind.';
+  }
+
+  @override
+  String featureChoicesSelectedCount(int selected, int count) {
+    return 'Выбрано $selected/$count';
+  }
+
+  @override
   String get levelUpHpRoll => 'Бросить кости';
 
   @override
@@ -471,6 +494,25 @@ class AppLocalizationsRu extends AppLocalizations {
   String levelUpSpellsToLearn(int n) {
     return 'Выбрать $n заклинание(й)';
   }
+
+  @override
+  String get levelUpSpellRestrictedSection => 'School requirement';
+
+  @override
+  String get levelUpSpellFreeSection => 'Free choice';
+
+  @override
+  String levelUpSpellRestrictedInstruction(int count, String schools) {
+    return 'Choose $count spell(s) from $schools.';
+  }
+
+  @override
+  String levelUpSpellFreeInstruction(int count) {
+    return 'Choose $count spell(s) from any school.';
+  }
+
+  @override
+  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
 
   @override
   String levelUpCantripsToLearn(int n) {

@@ -32,6 +32,7 @@ class SrdI18nService {
     'conditions',
     'equipment',
     'feats',
+    'feature_choices',
     'languages',
     'magic_items',
     'races',
@@ -376,6 +377,117 @@ class SrdI18nService {
   // ── Languages ──────────────────────────────────────────────────────────────
 
   String languageName(String en) => _str('languages', en, 'name') ?? en;
+
+  String? featureChoiceOptionName({
+    required String sourceType,
+    required String sourceClass,
+    String? sourceSubclass,
+    String? sourceName,
+    required String featureName,
+    required String choiceId,
+    required String optionId,
+    String? optionsSource,
+  }) =>
+      _featureChoiceOptionField(
+        sourceType: sourceType,
+        sourceClass: sourceClass,
+        sourceSubclass: sourceSubclass,
+        sourceName: sourceName,
+        featureName: featureName,
+        choiceId: choiceId,
+        optionId: optionId,
+        optionsSource: optionsSource,
+        field: 'name',
+      );
+
+  String? featureChoiceOptionDescription({
+    required String sourceType,
+    required String sourceClass,
+    String? sourceSubclass,
+    String? sourceName,
+    required String featureName,
+    required String choiceId,
+    required String optionId,
+    String? optionsSource,
+  }) =>
+      _featureChoiceOptionField(
+        sourceType: sourceType,
+        sourceClass: sourceClass,
+        sourceSubclass: sourceSubclass,
+        sourceName: sourceName,
+        featureName: featureName,
+        choiceId: choiceId,
+        optionId: optionId,
+        optionsSource: optionsSource,
+        field: 'description',
+      );
+
+  String? _featureChoiceOptionField({
+    required String sourceType,
+    required String sourceClass,
+    String? sourceSubclass,
+    String? sourceName,
+    required String featureName,
+    required String choiceId,
+    required String optionId,
+    String? optionsSource,
+    required String field,
+  }) {
+    final bySource = optionsSource == null
+        ? null
+        : _featureChoiceAt([
+            'optionsources',
+            optionsSource,
+            optionId,
+            field,
+          ]);
+    if (bySource is String) return bySource;
+
+    final sourcePath = switch (sourceType) {
+      'classFeature' => [
+          'classfeatures',
+          sourceClass,
+          featureName,
+        ],
+      'subclassFeature' => [
+          'subclassfeatures',
+          sourceClass,
+          sourceSubclass,
+          featureName,
+        ],
+      'raceTrait' => [
+          'racetraits',
+          sourceName ?? featureName,
+        ],
+      'feat' => [
+          'feats',
+          sourceName ?? featureName,
+        ],
+      _ => const <String?>[],
+    };
+    if (sourcePath.isEmpty || sourcePath.any((part) => part == null)) {
+      return null;
+    }
+
+    final inline = _featureChoiceAt([
+      ...sourcePath.cast<String>(),
+      'choices',
+      choiceId,
+      'options',
+      optionId,
+      field,
+    ]);
+    return inline is String ? inline : null;
+  }
+
+  dynamic _featureChoiceAt(List<String> path) {
+    dynamic current = _data['feature_choices'];
+    for (final part in path) {
+      if (current is! Map) return null;
+      current = current[part.toLowerCase()];
+    }
+    return current;
+  }
 
   // ── Game term translations ─────────────────────────────────────────────────
   // Fixed finite sets of D&D terms that appear as raw values in SRD data.

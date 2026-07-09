@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "指挥官的打击",
+        "description": "当你采取攻击动作时，你可以放弃一次攻击并使用奖励动作来指挥盟友进行攻击。"
+      },
+      "disarming_attack": {
+        "name": "解除攻击",
+        "description": "当你用武器攻击击中一个生物时，你可以花费一个优势骰子来尝试解除目标的武装。"
+      },
+      "distracting_strike": {
+        "name": "分散攻击",
+        "description": "当你用武器攻击击中一个生物时，你可以花费一个优势骰子来分散该生物的注意力。"
+      },
+      "evasive_footwork": {
+        "name": "回避步法",
+        "description": "当你移动时，你可以消耗一个优势骰子并将掷骰添加到你的AC中，直到你停止移动。"
+      },
+      "feinting_attack": {
+        "name": "佯攻",
+        "description": "你可以花费一个优势骰子并使用奖励动作进行佯攻，在下次攻击生物时获得优势。"
+      },
+      "goading_attack": {
+        "name": "刺激攻击",
+        "description": "当你用武器攻击时，你可以花费一个优势骰子来刺激目标攻击你。"
+      },
+      "lunging_attack": {
+        "name": "猛攻",
+        "description": "当你进行近战武器攻击时，你可以花费一个优势骰子来增加你的攻击范围。"
+      },
+      "maneuvering_attack": {
+        "name": "机动攻击",
+        "description": "当你用武器攻击击中时，你可以花费一个优势骰子来让盟友在不挑衅目标的情况下移动。"
+      },
+      "menacing_attack": {
+        "name": "来势汹汹的攻击",
+        "description": "当你用武器攻击时，你可以花费一个优势骰子来试图吓唬目标。"
+      },
+      "parry": {
+        "name": "招架",
+        "description": "当另一个生物通过近战攻击对你造成伤害时，你可以花费优势骰子来减少伤害。"
+      },
+      "precision_attack": {
+        "name": "精准攻击",
+        "description": "当你进行武器攻击检定时，你可以花费一个优势骰子并将其添加到检定中。"
+      },
+      "pushing_attack": {
+        "name": "推击",
+        "description": "当你用武器攻击击中时，你可以花费一个优势骰子来尝试将目标推开。"
+      },
+      "rally": {
+        "name": "集会",
+        "description": "在你的回合中，你可以花费一个优势骰子并使用奖励动作来支持具有临时生命值的盟友。"
+      },
+      "riposte": {
+        "name": "还击",
+        "description": "当一个生物的近战攻击没有击中你时，你可以花费一个优势骰子来对其进行近战武器攻击。"
+      },
+      "sweeping_attack": {
+        "name": "横扫进攻",
+        "description": "当你用近战武器攻击击中时，你可以花费优势骰子来伤害范围内的另一个生物。"
+      },
+      "trip_attack": {
+        "name": "绊倒攻击",
+        "description": "当你用武器攻击击中时，你可以花费一个优势骰子来尝试将目标击倒。"
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "射箭"
+      },
+      "defense": {
+        "name": "防御"
+      },
+      "dueling": {
+        "name": "决斗"
+      },
+      "great_weapon_fighting": {
+        "name": "伟大的武器战斗"
+      },
+      "protection": {
+        "name": "保护"
+      },
+      "two_weapon_fighting": {
+        "name": "双武器战斗"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "防御"
+      },
+      "dueling": {
+        "name": "决斗"
+      },
+      "great_weapon_fighting": {
+        "name": "伟大的武器战斗"
+      },
+      "protection": {
+        "name": "保护"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "射箭"
+      },
+      "defense": {
+        "name": "防御"
+      },
+      "dueling": {
+        "name": "决斗"
+      },
+      "two_weapon_fighting": {
+        "name": "双武器战斗"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "小心咒语"
+      },
+      "distant_spell": {
+        "name": "遥远的咒语"
+      },
+      "empowered_spell": {
+        "name": "强化法术"
+      },
+      "extended_spell": {
+        "name": "扩展法术"
+      },
+      "heightened_spell": {
+        "name": "强化法术"
+      },
+      "quickened_spell": {
+        "name": "瞬发法术"
+      },
+      "subtle_spell": {
+        "name": "微妙的咒语"
+      },
+      "twinned_spell": {
+        "name": "孪生咒语"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "像差"
+      },
+      "beasts": {
+        "name": "野兽"
+      },
+      "celestials": {
+        "name": "天神"
+      },
+      "constructs": {
+        "name": "构造"
+      },
+      "dragons": {
+        "name": "龙"
+      },
+      "elementals": {
+        "name": "元素生物"
+      },
+      "fey": {
+        "name": "费伊"
+      },
+      "fiends": {
+        "name": "恶魔"
+      },
+      "giants": {
+        "name": "巨人队"
+      },
+      "monstrosities": {
+        "name": "怪物"
+      },
+      "oozes": {
+        "name": "软泥"
+      },
+      "plants": {
+        "name": "植物"
+      },
+      "undead": {
+        "name": "亡灵"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "北极"
+      },
+      "coast": {
+        "name": "海岸"
+      },
+      "desert": {
+        "name": "沙漠"
+      },
+      "forest": {
+        "name": "森林"
+      },
+      "grassland": {
+        "name": "草原"
+      },
+      "mountain": {
+        "name": "山"
+      },
+      "swamp": {
+        "name": "沼泽"
+      },
+      "underdark": {
+        "name": "幽暗地域"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "酸"
+      },
+      "cold": {
+        "name": "寒冷的"
+      },
+      "fire": {
+        "name": "火"
+      },
+      "lightning": {
+        "name": "闪电"
+      },
+      "thunder": {
+        "name": "雷"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "力量"
+      },
+      "dexterity": {
+        "name": "灵巧"
+      },
+      "constitution": {
+        "name": "宪法"
+      },
+      "intelligence": {
+        "name": "智力"
+      },
+      "wisdom": {
+        "name": "智慧"
+      },
+      "charisma": {
+        "name": "魅力"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "黑色的"
+      },
+      "blue": {
+        "name": "蓝色的"
+      },
+      "brass": {
+        "name": "黄铜"
+      },
+      "bronze": {
+        "name": "青铜"
+      },
+      "copper": {
+        "name": "铜"
+      },
+      "gold": {
+        "name": "金子"
+      },
+      "green": {
+        "name": "绿色的"
+      },
+      "red": {
+        "name": "红色的"
+      },
+      "silver": {
+        "name": "银"
+      },
+      "white": {
+        "name": "白色的"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "链之契约"
+              },
+              "pact_of_the_blade": {
+                "name": "刀锋契约"
+              },
+              "pact_of_the_tome": {
+                "name": "圣典契约"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "力量"
+                },
+                "dexterity": {
+                  "name": "灵巧"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "巨像杀手"
+                },
+                "giant_killer": {
+                  "name": "巨人杀手"
+                },
+                "horde_breaker": {
+                  "name": "部落破坏者"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "逃离部落"
+                },
+                "multiattack_defense": {
+                  "name": "多重攻击防御"
+                },
+                "steel_will": {
+                  "name": "钢铁意志"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "截击"
+                },
+                "whirlwind_attack": {
+                  "name": "旋风攻击"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "闪避"
+                },
+                "stand_against_the_tide": {
+                  "name": "逆流而上"
+                },
+                "uncanny_dodge": {
+                  "name": "不可思议的闪避"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "史密斯的工具"
+            },
+            "brewers_supplies": {
+              "name": "酿酒者用品"
+            },
+            "masons_tools": {
+              "name": "梅森的工具"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "诗人"
+            },
+            "cleric": {
+              "name": "牧师"
+            },
+            "druid": {
+              "name": "德鲁伊"
+            },
+            "sorcerer": {
+              "name": "巫师"
+            },
+            "warlock": {
+              "name": "术士"
+            },
+            "wizard": {
+              "name": "向导"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "力量"
+            },
+            "dexterity": {
+              "name": "灵巧"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "力量"
+            },
+            "dexterity": {
+              "name": "灵巧"
+            }
+          }
+        }
+      }
+    }
+  }
+}

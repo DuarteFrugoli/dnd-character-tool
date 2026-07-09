@@ -441,6 +441,29 @@ class AppLocalizationsDe extends AppLocalizations {
       'Keine neuen Klassenmerkmale auf dieser Stufe.';
 
   @override
+  String get featureChoicesTitle => 'Feature-Auswahl';
+
+  @override
+  String get featureChoicesPending => 'Auswahl ausstehend';
+
+  @override
+  String get featureChoicesEdit => 'Auswahl bearbeiten';
+
+  @override
+  String get featureChoicesChooseDependencyFirst =>
+      'Waehle zuerst die erforderliche vorherige Option.';
+
+  @override
+  String featureChoicesChooseCount(String kind, int count) {
+    return 'Waehle $count $kind.';
+  }
+
+  @override
+  String featureChoicesSelectedCount(int selected, int count) {
+    return '$selected/$count ausgewaehlt';
+  }
+
+  @override
   String get levelUpHpRoll => 'Würfeln';
 
   @override
@@ -471,6 +494,25 @@ class AppLocalizationsDe extends AppLocalizations {
   String levelUpSpellsToLearn(int n) {
     return '$n Zauber auswählen';
   }
+
+  @override
+  String get levelUpSpellRestrictedSection => 'School requirement';
+
+  @override
+  String get levelUpSpellFreeSection => 'Free choice';
+
+  @override
+  String levelUpSpellRestrictedInstruction(int count, String schools) {
+    return 'Choose $count spell(s) from $schools.';
+  }
+
+  @override
+  String levelUpSpellFreeInstruction(int count) {
+    return 'Choose $count spell(s) from any school.';
+  }
+
+  @override
+  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
 
   @override
   String levelUpCantripsToLearn(int n) {

@@ -918,6 +918,42 @@ abstract class AppLocalizations {
   /// **'No new class features at this level.'**
   String get levelUpNoNewFeatures;
 
+  /// Title for the reusable feature choice editor.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature Choices'**
+  String get featureChoicesTitle;
+
+  /// Chip/text shown when a feature has incomplete required choices.
+  ///
+  /// In en, this message translates to:
+  /// **'Choice pending'**
+  String get featureChoicesPending;
+
+  /// Button label to edit saved feature choices.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit choices'**
+  String get featureChoicesEdit;
+
+  /// Message shown when a dependent feature choice cannot be selected yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the required previous option first.'**
+  String get featureChoicesChooseDependencyFirst;
+
+  /// Instruction to choose a number of feature options.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} {kind}(s).'**
+  String featureChoicesChooseCount(String kind, int count);
+
+  /// Selected/required count for a feature choice.
+  ///
+  /// In en, this message translates to:
+  /// **'{selected}/{count} selected'**
+  String featureChoicesSelectedCount(int selected, int count);
+
   /// Level Up wizard HP: roll button.
   ///
   /// In en, this message translates to:
@@ -965,6 +1001,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose {n} spell(s) to learn'**
   String levelUpSpellsToLearn(int n);
+
+  /// Level Up spell pick section title for required spell schools.
+  ///
+  /// In en, this message translates to:
+  /// **'School requirement'**
+  String get levelUpSpellRestrictedSection;
+
+  /// Level Up spell pick section title for unrestricted spell choices.
+  ///
+  /// In en, this message translates to:
+  /// **'Free choice'**
+  String get levelUpSpellFreeSection;
+
+  /// Instruction for spell choices restricted to specific schools.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} spell(s) from {schools}.'**
+  String levelUpSpellRestrictedInstruction(int count, String schools);
+
+  /// Instruction for unrestricted spell choices.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} spell(s) from any school.'**
+  String levelUpSpellFreeInstruction(int count);
+
+  /// Message shown when unrestricted spell choices are locked until required school choices are complete.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete the school requirement first.'**
+  String get levelUpSpellFreeLocked;
 
   /// Level Up wizard cantrips: how many to pick.
   ///

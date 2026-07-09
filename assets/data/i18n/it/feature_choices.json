@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "Colpo del comandante",
+        "description": "Quando esegui l'azione Attacco, puoi rinunciare a un attacco e utilizzare un'azione bonus per ordinare a un alleato di colpire."
+      },
+      "disarming_attack": {
+        "name": "Attacco disarmante",
+        "description": "Quando colpisci una creatura con un attacco con un'arma, puoi spendere un dado superiorità per tentare di disarmare il bersaglio."
+      },
+      "distracting_strike": {
+        "name": "Colpo distraente",
+        "description": "Quando colpisci una creatura con un attacco con un'arma, puoi spendere un dado superiorità per distrarre la creatura."
+      },
+      "evasive_footwork": {
+        "name": "Gioco di gambe evasivo",
+        "description": "Quando ti muovi, puoi spendere un dado superiorità e aggiungere il risultato alla tua AC finché non smetti di muoverti."
+      },
+      "feinting_attack": {
+        "name": "Attacco con finta",
+        "description": "Puoi spendere un dado superiorità e utilizzare un'azione bonus per fintare, ottenendo vantaggio al tuo prossimo attacco contro una creatura."
+      },
+      "goading_attack": {
+        "name": "Attacco pungente",
+        "description": "Quando colpisci con un attacco con un'arma, puoi spendere un dado superiorità per spingere il bersaglio ad attaccarti."
+      },
+      "lunging_attack": {
+        "name": "Attacco in affondo",
+        "description": "Quando effettui un attacco con un'arma da mischia, puoi spendere un dado superiorità per aumentare la portata di quell'attacco."
+      },
+      "maneuvering_attack": {
+        "name": "Attacco di manovra",
+        "description": "Quando colpisci con un attacco con un'arma, puoi spendere un dado superiorità per consentire a un alleato di muoversi senza provocare dal bersaglio."
+      },
+      "menacing_attack": {
+        "name": "Attacco minaccioso",
+        "description": "Quando colpisci con un attacco con arma, puoi spendere un dado superiorità per tentare di spaventare il bersaglio."
+      },
+      "parry": {
+        "name": "Parare",
+        "description": "Quando un'altra creatura ti danneggia con un attacco in mischia, puoi spendere un dado superiorità per ridurre il danno."
+      },
+      "precision_attack": {
+        "name": "Attacco di precisione",
+        "description": "Quando effettui un tiro per colpire con un'arma, puoi spendere un dado superiorità e aggiungerlo al tiro."
+      },
+      "pushing_attack": {
+        "name": "Attacco spingente",
+        "description": "Quando colpisci con un attacco con arma, puoi spendere un dado superiorità per tentare di respingere il bersaglio."
+      },
+      "rally": {
+        "name": "Rally",
+        "description": "Durante il tuo turno, puoi spendere un dado superiorità e utilizzare un'azione bonus per rafforzare un alleato con punti ferita temporanei."
+      },
+      "riposte": {
+        "name": "Risposta",
+        "description": "Quando una creatura ti manca con un attacco in mischia, puoi spendere un dado superiorità per effettuare un attacco con arma da mischia contro di essa."
+      },
+      "sweeping_attack": {
+        "name": "Attacco devastante",
+        "description": "Quando colpisci con un attacco con arma da mischia, puoi spendere un dado superiorità per danneggiare un'altra creatura a portata."
+      },
+      "trip_attack": {
+        "name": "Attacco in viaggio",
+        "description": "Quando colpisci con un attacco con arma, puoi spendere un dado superiorità per tentare di buttare a terra il bersaglio."
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "Tiro con l'arco"
+      },
+      "defense": {
+        "name": "Difesa"
+      },
+      "dueling": {
+        "name": "Duello"
+      },
+      "great_weapon_fighting": {
+        "name": "Grande combattimento con armi"
+      },
+      "protection": {
+        "name": "Protezione"
+      },
+      "two_weapon_fighting": {
+        "name": "Combattimento con due armi"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "Difesa"
+      },
+      "dueling": {
+        "name": "Duello"
+      },
+      "great_weapon_fighting": {
+        "name": "Grande combattimento con armi"
+      },
+      "protection": {
+        "name": "Protezione"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "Tiro con l'arco"
+      },
+      "defense": {
+        "name": "Difesa"
+      },
+      "dueling": {
+        "name": "Duello"
+      },
+      "two_weapon_fighting": {
+        "name": "Combattimento con due armi"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "Incantesimo attento"
+      },
+      "distant_spell": {
+        "name": "Incantesimo lontano"
+      },
+      "empowered_spell": {
+        "name": "Incantesimo Potenziato"
+      },
+      "extended_spell": {
+        "name": "Incantesimo esteso"
+      },
+      "heightened_spell": {
+        "name": "Incantesimo intensificato"
+      },
+      "quickened_spell": {
+        "name": "Incantesimo Rapido"
+      },
+      "subtle_spell": {
+        "name": "Incantesimo sottile"
+      },
+      "twinned_spell": {
+        "name": "Incantesimo gemellato"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "Aberrazioni"
+      },
+      "beasts": {
+        "name": "Bestie"
+      },
+      "celestials": {
+        "name": "Celestiali"
+      },
+      "constructs": {
+        "name": "Costrutti"
+      },
+      "dragons": {
+        "name": "Draghi"
+      },
+      "elementals": {
+        "name": "Elementali"
+      },
+      "fey": {
+        "name": "Fey"
+      },
+      "fiends": {
+        "name": "Demoni"
+      },
+      "giants": {
+        "name": "Giganti"
+      },
+      "monstrosities": {
+        "name": "Mostruosità"
+      },
+      "oozes": {
+        "name": "Trasuda"
+      },
+      "plants": {
+        "name": "Piante"
+      },
+      "undead": {
+        "name": "Non morti"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "artico"
+      },
+      "coast": {
+        "name": "Costa"
+      },
+      "desert": {
+        "name": "Deserto"
+      },
+      "forest": {
+        "name": "Foresta"
+      },
+      "grassland": {
+        "name": "Prateria"
+      },
+      "mountain": {
+        "name": "Montagna"
+      },
+      "swamp": {
+        "name": "Pantano"
+      },
+      "underdark": {
+        "name": "Sottosuolo"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "Acido"
+      },
+      "cold": {
+        "name": "Freddo"
+      },
+      "fire": {
+        "name": "Fuoco"
+      },
+      "lightning": {
+        "name": "Fulmine"
+      },
+      "thunder": {
+        "name": "Tuono"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "Forza"
+      },
+      "dexterity": {
+        "name": "Destrezza"
+      },
+      "constitution": {
+        "name": "Costituzione"
+      },
+      "intelligence": {
+        "name": "Intelligenza"
+      },
+      "wisdom": {
+        "name": "Saggezza"
+      },
+      "charisma": {
+        "name": "Carisma"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "Nero"
+      },
+      "blue": {
+        "name": "Blu"
+      },
+      "brass": {
+        "name": "Ottone"
+      },
+      "bronze": {
+        "name": "Bronzo"
+      },
+      "copper": {
+        "name": "Rame"
+      },
+      "gold": {
+        "name": "Oro"
+      },
+      "green": {
+        "name": "Verde"
+      },
+      "red": {
+        "name": "Rosso"
+      },
+      "silver": {
+        "name": "Argento"
+      },
+      "white": {
+        "name": "Bianco"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "Patto di Catena"
+              },
+              "pact_of_the_blade": {
+                "name": "Patto della Lama"
+              },
+              "pact_of_the_tome": {
+                "name": "Patto del Tomo"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "Forza"
+                },
+                "dexterity": {
+                  "name": "Destrezza"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "Uccisore di colossi"
+                },
+                "giant_killer": {
+                  "name": "Assassino di giganti"
+                },
+                "horde_breaker": {
+                  "name": "Spezzaorda"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "Fuggi dall'Orda"
+                },
+                "multiattack_defense": {
+                  "name": "Difesa multiattacco"
+                },
+                "steel_will": {
+                  "name": "Volontà d'acciaio"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "Volley"
+                },
+                "whirlwind_attack": {
+                  "name": "Attacco vorticoso"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "Evasione"
+                },
+                "stand_against_the_tide": {
+                  "name": "Stare contro la marea"
+                },
+                "uncanny_dodge": {
+                  "name": "Schivata inquietante"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "Gli strumenti di Smith"
+            },
+            "brewers_supplies": {
+              "name": "Forniture del birraio"
+            },
+            "masons_tools": {
+              "name": "Gli strumenti del muratore"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "Bardo"
+            },
+            "cleric": {
+              "name": "Chierico"
+            },
+            "druid": {
+              "name": "druido"
+            },
+            "sorcerer": {
+              "name": "Stregone"
+            },
+            "warlock": {
+              "name": "Stregone"
+            },
+            "wizard": {
+              "name": "Procedura guidata"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "Forza"
+            },
+            "dexterity": {
+              "name": "Destrezza"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "Forza"
+            },
+            "dexterity": {
+              "name": "Destrezza"
+            }
+          }
+        }
+      }
+    }
+  }
+}

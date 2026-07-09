@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/spellcasting_engine.dart';
+import '../../data/feature_choice_engine.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
@@ -326,6 +327,10 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       abilityScores: newScores,
       subclass: newSubclass,
       extraFeatures: newExtraFeatures,
+      featureChoices: FeatureChoiceEngine.upsertChoices(
+        c.featureChoices,
+        result.featureChoices,
+      ),
       spells: newSpells,
     );
 
@@ -547,13 +552,46 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(updated.copyWith(armorClass: calcArmorClass(updated)));
   }
 
+  Future<void> updateFeatureChoices(
+    List<CharacterFeatureChoice> choices,
+  ) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(c.copyWith(featureChoices: choices));
+  }
+
+  Future<void> upsertFeatureChoices(
+    List<CharacterFeatureChoice> choices,
+  ) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(
+      c.copyWith(
+        featureChoices: FeatureChoiceEngine.upsertChoices(
+          c.featureChoices,
+          choices,
+        ),
+      ),
+    );
+  }
+
   Future<void> removeExtraFeature(String name, String sourceClass) async {
     final c = state.valueOrNull;
     if (c == null) return;
     final updated = c.extraFeatures
         .where((f) => !(f.name == name && f.sourceClass == sourceClass))
         .toList();
-    final newC = c.copyWith(extraFeatures: updated);
+    final updatedChoices = c.featureChoices.where((choice) {
+      if (sourceClass == 'Feat') {
+        return !(choice.sourceType == FeatureChoiceSourceType.feat &&
+            choice.sourceName == name);
+      }
+      return !(choice.sourceClass == sourceClass && choice.featureName == name);
+    }).toList();
+    final newC = c.copyWith(
+      extraFeatures: updated,
+      featureChoices: updatedChoices,
+    );
     await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
   }
 

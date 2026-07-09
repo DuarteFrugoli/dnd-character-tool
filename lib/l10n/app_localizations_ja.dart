@@ -431,6 +431,28 @@ class AppLocalizationsJa extends AppLocalizations {
   String get levelUpNoNewFeatures => 'このレベルでは新しいクラス特徴はありません。';
 
   @override
+  String get featureChoicesTitle => '特徴の選択';
+
+  @override
+  String get featureChoicesPending => '選択が未完了';
+
+  @override
+  String get featureChoicesEdit => '選択を編集';
+
+  @override
+  String get featureChoicesChooseDependencyFirst => '先に必要な前の選択を選んでください。';
+
+  @override
+  String featureChoicesChooseCount(String kind, int count) {
+    return '$kindを$count個選択してください。';
+  }
+
+  @override
+  String featureChoicesSelectedCount(int selected, int count) {
+    return '$selected/$count 選択済み';
+  }
+
+  @override
   String get levelUpHpRoll => 'ダイスを振る';
 
   @override
@@ -461,6 +483,25 @@ class AppLocalizationsJa extends AppLocalizations {
   String levelUpSpellsToLearn(int n) {
     return '$nつの呪文を選択';
   }
+
+  @override
+  String get levelUpSpellRestrictedSection => 'School requirement';
+
+  @override
+  String get levelUpSpellFreeSection => 'Free choice';
+
+  @override
+  String levelUpSpellRestrictedInstruction(int count, String schools) {
+    return 'Choose $count spell(s) from $schools.';
+  }
+
+  @override
+  String levelUpSpellFreeInstruction(int count) {
+    return 'Choose $count spell(s) from any school.';
+  }
+
+  @override
+  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
 
   @override
   String levelUpCantripsToLearn(int n) {

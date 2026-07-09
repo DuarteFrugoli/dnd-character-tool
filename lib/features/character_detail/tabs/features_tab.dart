@@ -18,6 +18,283 @@ String _featureTypeLabel(String type, BuildContext context) {
   }
 }
 
+List<Widget> _featureChoiceWidgets({
+  required BuildContext context,
+  required WidgetRef ref,
+  required String characterId,
+  required Character character,
+  required List<FeatureChoiceRequest> requests,
+  required _FeaturesData data,
+}) {
+  if (requests.isEmpty) return const [];
+  final l10n = AppLocalizations.of(context)!;
+  final i18n =
+      ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+  final scheme = Theme.of(context).colorScheme;
+  final pending = FeatureChoiceEngine.pendingRequests(
+    requests,
+    character.featureChoices,
+  );
+  final chips = <Widget>[];
+  for (final request in requests) {
+    final choice = request.findIn(character.featureChoices);
+    if (choice == null || choice.values.isEmpty) continue;
+    final resolver = _FeatureChoiceOptionResolver(
+      request: request,
+      catalog: data.featureChoiceCatalog,
+      i18n: i18n,
+      skills: data.skills,
+      tools: data.tools,
+      spells: data.spells,
+    );
+    chips.addAll(
+      choice.values.map((value) {
+        final label = resolver.labelFor(value) ?? value;
+        final description = resolver.descriptionFor(value);
+        if (description == null || description.trim().isEmpty) {
+          return Chip(label: Text(label));
+        }
+        return ActionChip(
+          avatar: const Icon(Icons.info_outline, size: 18),
+          label: Text(label),
+          onPressed: () => _showFeatureChoiceValueDetails(
+            context,
+            title: label,
+            featureName: _featureChoiceRequestFeatureLabel(request, i18n),
+            description: description,
+          ),
+        );
+      }),
+    );
+  }
+
+  return [
+    Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  l10n.featureChoicesTitle,
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+              ),
+              if (pending.isNotEmpty)
+                Chip(
+                  label: Text(l10n.featureChoicesPending),
+                  backgroundColor: scheme.errorContainer,
+                ),
+            ],
+          ),
+          if (chips.isNotEmpty)
+            Wrap(spacing: 6, runSpacing: 6, children: chips)
+          else
+            Text(
+              l10n.featureChoicesPending,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+            ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton.icon(
+              icon: const Icon(Icons.edit_outlined),
+              label: Text(l10n.featureChoicesEdit),
+              onPressed: () => _openFeatureChoiceEditorSheet(
+                context: context,
+                ref: ref,
+                characterId: characterId,
+                character: character,
+                requests: requests,
+                data: data,
+                i18n: i18n,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  ];
+}
+
+String _featureChoiceRequestFeatureLabel(
+  FeatureChoiceRequest request,
+  SrdI18nService i18n,
+) {
+  return switch (request.sourceType) {
+    FeatureChoiceSourceType.classFeature =>
+      i18n.classFeatureName(request.sourceClass, request.featureName) ??
+          request.featureName,
+    FeatureChoiceSourceType.subclassFeature =>
+      i18n.subclassFeatureName(
+            request.sourceClass,
+            request.sourceSubclass ?? '',
+            request.featureName,
+          ) ??
+          request.featureName,
+    FeatureChoiceSourceType.raceTrait =>
+      i18n.raceTraitName(request.sourceName ?? request.featureName),
+    FeatureChoiceSourceType.feat =>
+      i18n.featName(request.sourceName ?? request.featureName) ??
+          request.featureName,
+    _ => request.featureName,
+  };
+}
+
+void _showFeatureChoiceValueDetails(
+  BuildContext context, {
+  required String title,
+  required String featureName,
+  required String description,
+}) {
+  showModalBottomSheet<void>(
+    context: context,
+    useSafeArea: true,
+    showDragHandle: true,
+    builder: (context) {
+      final theme = Theme.of(context);
+      final scheme = theme.colorScheme;
+      final l10n = AppLocalizations.of(context)!;
+      return SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 4, 24, 24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: theme.textTheme.titleLarge),
+              const SizedBox(height: 4),
+              Text(
+                featureName,
+                style: theme.textTheme.labelMedium?.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                description,
+                style: theme.textTheme.bodyMedium?.copyWith(height: 1.45),
+              ),
+              const SizedBox(height: 16),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.dialogClose),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void _openFeatureChoiceEditorSheet({
+  required BuildContext context,
+  required WidgetRef ref,
+  required String characterId,
+  required Character character,
+  required List<FeatureChoiceRequest> requests,
+  required _FeaturesData data,
+  required SrdI18nService i18n,
+}) {
+  var editedChoices = <CharacterFeatureChoice>[
+    for (final request in requests)
+      request.findIn(character.featureChoices) ?? request.emptyChoice(),
+  ];
+
+  showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    builder: (sheetContext) {
+      return StatefulBuilder(
+        builder: (context, setSheetState) {
+          final complete = FeatureChoiceEngine.allComplete(
+            requests,
+            editedChoices,
+          );
+          return DraggableScrollableSheet(
+            expand: false,
+            initialChildSize: 0.85,
+            minChildSize: 0.45,
+            maxChildSize: 1,
+            builder: (_, controller) {
+              return Column(
+                children: [
+                  Expanded(
+                    child: PrimaryScrollController(
+                      controller: controller,
+                      child: _FeatureChoiceEditor(
+                        requests: requests,
+                        initialChoices: editedChoices,
+                        catalog: data.featureChoiceCatalog,
+                        character: character,
+                        i18n: i18n,
+                        skills: data.skills,
+                        tools: data.tools,
+                        spells: data.spells,
+                        onChanged: (choices) {
+                          setSheetState(() => editedChoices = choices);
+                        },
+                      ),
+                    ),
+                  ),
+                  SafeArea(
+                    top: false,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: TextButton(
+                              onPressed: () => Navigator.pop(sheetContext),
+                              child: Text(
+                                AppLocalizations.of(context)!.dialogCancel,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: FilledButton(
+                              onPressed: complete
+                                  ? () async {
+                                      await ref
+                                          .read(
+                                            characterDetailProvider(
+                                              characterId,
+                                            ).notifier,
+                                          )
+                                          .upsertFeatureChoices(editedChoices);
+                                      if (sheetContext.mounted) {
+                                        Navigator.pop(sheetContext);
+                                      }
+                                    }
+                                  : null,
+                              child: Text(
+                                AppLocalizations.of(context)!.dialogSave,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          );
+        },
+      );
+    },
+  );
+}
+
 class _FeaturesTab extends ConsumerStatefulWidget {
   const _FeaturesTab({
     required this.character,
@@ -49,7 +326,8 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
         current.level != previous.level ||
         current.race != previous.race ||
         current.subrace != previous.subrace ||
-        current.background != previous.background) {
+        current.background != previous.background ||
+        current.featureChoices != previous.featureChoices) {
       _future = _load();
     }
   }
@@ -63,12 +341,20 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
       srd.getBackgrounds(),
       srd.getRaceTraits(),
       srd.getSubclassFeatures(widget.character.characterClass, subclassName),
+      srd.getFeatureChoiceCatalog(),
+      srd.getSkills(),
+      srd.getTools(),
+      srd.getSpells(),
     ]);
     final classFeatures = results[0] as List<SrdClassFeature>;
     final races = results[1] as List<SrdRace>;
     final backgrounds = results[2] as List<SrdBackground>;
     final traitDescriptions = results[3] as Map<String, String>;
     final subclassFeatures = results[4] as List<SrdClassFeature>;
+    final featureChoiceCatalog = results[5] as SrdFeatureChoiceCatalog;
+    final skills = results[6] as List<SrdSkill>;
+    final tools = results[7] as List<SrdTool>;
+    final spells = results[8] as List<SrdSpell>;
 
     final race = races
         .where((r) => r.name == widget.character.race)
@@ -93,6 +379,10 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
       subclassFeatures: subclassFeatures
           .where((f) => f.level <= widget.character.level)
           .toList(),
+      featureChoiceCatalog: featureChoiceCatalog,
+      skills: skills,
+      tools: tools,
+      spells: spells,
     );
   }
 
@@ -140,7 +430,12 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
             children: [
               if (featItems.isNotEmpty) ...[
-                _FeatsSection(feats: featItems, characterId: widget.characterId),
+                _FeatsSection(
+                  feats: featItems,
+                  character: widget.character,
+                  characterId: widget.characterId,
+                  data: data,
+                ),
                 const SizedBox(height: 24),
               ],
               _RacialTraitsSection(
@@ -151,6 +446,9 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 traitDescriptions: data.traitDescriptions,
                 disabledFeatures: disabledSet,
                 onToggle: toggle,
+                character: widget.character,
+                characterId: widget.characterId,
+                data: data,
               ),
               if (data.backgroundFeatureName != null) ...[
                 const SizedBox(height: 24),
@@ -168,6 +466,9 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 features: data.classFeatures,
                 disabledFeatures: disabledSet,
                 onToggle: toggle,
+                character: widget.character,
+                characterId: widget.characterId,
+                data: data,
               ),
               if (data.subclassFeatures.isNotEmpty) ...[
                 const SizedBox(height: 24),
@@ -177,6 +478,9 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                   features: data.subclassFeatures,
                   disabledFeatures: disabledSet,
                   onToggle: toggle,
+                  character: widget.character,
+                  characterId: widget.characterId,
+                  data: data,
                 ),
               ],
               if (widget.character.features.isNotEmpty) ...[
@@ -215,6 +519,10 @@ class _FeaturesData {
   final String? backgroundFeatureDescription;
   final String subclassName;
   final List<SrdClassFeature> subclassFeatures;
+  final SrdFeatureChoiceCatalog featureChoiceCatalog;
+  final List<SrdSkill> skills;
+  final List<SrdTool> tools;
+  final List<SrdSpell> spells;
 
   const _FeaturesData({
     required this.classFeatures,
@@ -225,6 +533,10 @@ class _FeaturesData {
     this.backgroundFeatureDescription,
     required this.subclassName,
     required this.subclassFeatures,
+    required this.featureChoiceCatalog,
+    required this.skills,
+    required this.tools,
+    required this.spells,
   });
 }
 
@@ -237,6 +549,9 @@ class _RacialTraitsSection extends ConsumerWidget {
     required this.traitDescriptions,
     required this.disabledFeatures,
     required this.onToggle,
+    required this.character,
+    required this.characterId,
+    required this.data,
   });
 
   final String raceName;
@@ -246,6 +561,9 @@ class _RacialTraitsSection extends ConsumerWidget {
   final Map<String, String> traitDescriptions;
   final Set<String> disabledFeatures;
   final void Function(String) onToggle;
+  final Character character;
+  final String characterId;
+  final _FeaturesData data;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -273,25 +591,42 @@ class _RacialTraitsSection extends ConsumerWidget {
         ...allTraits.map((trait) {
           final isDisabled = disabledFeatures.contains(trait);
           final desc = traitDescriptions[trait];
+          final requests = FeatureChoiceEngine.requestsForRaceTrait(
+            catalog: data.featureChoiceCatalog,
+            traitName: trait,
+            level: character.level,
+          );
           Widget card;
           if (desc == null || desc.isEmpty) {
             card = Card(
               margin: const EdgeInsets.only(bottom: 6),
-              child: ListTile(
-                dense: true,
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 4,
-                ),
-                title: Text(
-                  i18n.raceTraitName(trait),
-                  style: const TextStyle(fontWeight: FontWeight.w600),
-                ),
-                trailing: Icon(
-                        Icons.info_outline,
-                        size: 16,
-                        color: scheme.onSurfaceVariant,
-                      ),
+              child: Column(
+                children: [
+                  ListTile(
+                    dense: true,
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 4,
+                    ),
+                    title: Text(
+                      i18n.raceTraitName(trait),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    trailing: Icon(
+                      Icons.info_outline,
+                      size: 16,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                  ..._featureChoiceWidgets(
+                    context: context,
+                    ref: ref,
+                    characterId: characterId,
+                    character: character,
+                    requests: requests,
+                    data: data,
+                  ),
+                ],
               ),
             );
           } else {
@@ -315,6 +650,14 @@ class _RacialTraitsSection extends ConsumerWidget {
                   ],
                 ),
                 children: [
+                  ..._featureChoiceWidgets(
+                    context: context,
+                    ref: ref,
+                    characterId: characterId,
+                    character: character,
+                    requests: requests,
+                    data: data,
+                  ),
                   Text(
                     i18n.raceTraitDescription(trait) ?? desc,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -486,10 +829,17 @@ class _ToolProficienciesSection extends ConsumerWidget {
 }
 
 class _FeatsSection extends ConsumerWidget {
-  const _FeatsSection({required this.feats, required this.characterId});
+  const _FeatsSection({
+    required this.feats,
+    required this.character,
+    required this.characterId,
+    required this.data,
+  });
 
   final List<CharacterExtraFeature> feats;
+  final Character character;
   final String characterId;
+  final _FeaturesData data;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -510,8 +860,13 @@ class _FeatsSection extends ConsumerWidget {
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
-        ...feats.map(
-          (f) => Card(
+        ...feats.map((f) {
+          final requests = FeatureChoiceEngine.requestsForFeat(
+            catalog: data.featureChoiceCatalog,
+            featName: f.name,
+            level: character.level,
+          );
+          return Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
               title: Text(
@@ -556,6 +911,14 @@ class _FeatsSection extends ConsumerWidget {
                 },
               ),
               children: [
+                ..._featureChoiceWidgets(
+                  context: context,
+                  ref: ref,
+                  characterId: characterId,
+                  character: character,
+                  requests: requests,
+                  data: data,
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
@@ -565,8 +928,8 @@ class _FeatsSection extends ConsumerWidget {
                 ),
               ],
             ),
-          ),
-        ),
+          );
+        }),
       ],
     );
   }
@@ -687,12 +1050,18 @@ class _ClassFeaturesSection extends ConsumerWidget {
     required this.features,
     required this.disabledFeatures,
     required this.onToggle,
+    required this.character,
+    required this.characterId,
+    required this.data,
   });
 
   final String className;
   final List<SrdClassFeature> features;
   final Set<String> disabledFeatures;
   final void Function(String) onToggle;
+  final Character character;
+  final String characterId;
+  final _FeaturesData data;
 
   Color _typeColor(String type, ColorScheme scheme) {
     switch (type) {
@@ -743,6 +1112,12 @@ class _ClassFeaturesSection extends ConsumerWidget {
         ...features.map((f) {
           final typeColor = _typeColor(f.type, scheme);
           final isDisabled = disabledFeatures.contains(f.name);
+          final requests = FeatureChoiceEngine.requestsForClassFeature(
+            catalog: data.featureChoiceCatalog,
+            className: className,
+            featureName: f.name,
+            level: character.level,
+          );
           final card = Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
@@ -793,6 +1168,14 @@ class _ClassFeaturesSection extends ConsumerWidget {
                 ],
               ),
               children: [
+                ..._featureChoiceWidgets(
+                  context: context,
+                  ref: ref,
+                  characterId: characterId,
+                  character: character,
+                  requests: requests,
+                  data: data,
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
@@ -823,6 +1206,9 @@ class _SubclassFeaturesSection extends ConsumerWidget {
     required this.features,
     required this.disabledFeatures,
     required this.onToggle,
+    required this.character,
+    required this.characterId,
+    required this.data,
   });
 
   final String className;
@@ -830,6 +1216,9 @@ class _SubclassFeaturesSection extends ConsumerWidget {
   final List<SrdClassFeature> features;
   final Set<String> disabledFeatures;
   final void Function(String) onToggle;
+  final Character character;
+  final String characterId;
+  final _FeaturesData data;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -852,6 +1241,13 @@ class _SubclassFeaturesSection extends ConsumerWidget {
               ? scheme.primary
               : scheme.outline;
           final isDisabled = disabledFeatures.contains(f.name);
+          final requests = FeatureChoiceEngine.requestsForSubclassFeature(
+            catalog: data.featureChoiceCatalog,
+            className: className,
+            subclassName: subclassName,
+            featureName: f.name,
+            level: character.level,
+          );
           final card = Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
@@ -896,6 +1292,14 @@ class _SubclassFeaturesSection extends ConsumerWidget {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               children: [
+                ..._featureChoiceWidgets(
+                  context: context,
+                  ref: ref,
+                  characterId: characterId,
+                  character: character,
+                  requests: requests,
+                  data: data,
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(

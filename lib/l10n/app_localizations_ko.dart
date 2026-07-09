@@ -432,6 +432,28 @@ class AppLocalizationsKo extends AppLocalizations {
   String get levelUpNoNewFeatures => '이 레벨에서 새로운 클래스 특성이 없습니다.';
 
   @override
+  String get featureChoicesTitle => '특성 선택';
+
+  @override
+  String get featureChoicesPending => '선택 필요';
+
+  @override
+  String get featureChoicesEdit => '선택 편집';
+
+  @override
+  String get featureChoicesChooseDependencyFirst => '먼저 필요한 이전 선택을 고르세요.';
+
+  @override
+  String featureChoicesChooseCount(String kind, int count) {
+    return '$kind $count개를 선택하세요.';
+  }
+
+  @override
+  String featureChoicesSelectedCount(int selected, int count) {
+    return '$selected/$count 선택됨';
+  }
+
+  @override
   String get levelUpHpRoll => '주사위 굴리기';
 
   @override
@@ -462,6 +484,25 @@ class AppLocalizationsKo extends AppLocalizations {
   String levelUpSpellsToLearn(int n) {
     return '주문 $n개 선택';
   }
+
+  @override
+  String get levelUpSpellRestrictedSection => 'School requirement';
+
+  @override
+  String get levelUpSpellFreeSection => 'Free choice';
+
+  @override
+  String levelUpSpellRestrictedInstruction(int count, String schools) {
+    return 'Choose $count spell(s) from $schools.';
+  }
+
+  @override
+  String levelUpSpellFreeInstruction(int count) {
+    return 'Choose $count spell(s) from any school.';
+  }
+
+  @override
+  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
 
   @override
   String levelUpCantripsToLearn(int n) {

@@ -38,7 +38,7 @@
 
 ---
 
-## v1.1 — Multiclasse + Schema Versioning + Feature Choices
+## v2.1 — Multiclasse + Schema Versioning + Feature Choices
 
 ### Schema versioning e migração
 - [ ] Campo `schemaVersion: int` no modelo `Character` (atual = 1, multiclasse = 2)
@@ -63,7 +63,7 @@
 
 ---
 
-## v1.2 — Mecânicas avançadas e acessibilidade
+## v2.2 — Mecânicas avançadas e acessibilidade
 
 ### Dados virtuais
 - [ ] Toggle nas configurações para habilitar/desabilitar (desabilitado por padrão)
@@ -78,7 +78,7 @@
 
 ---
 
-## v1.3 — Notas de sessão
+## v2.3 — Notas de sessão
 
 - [ ] Notas organizadas por sessão (título + data automática)
 - [ ] Lista de sessões com preview da primeira linha
@@ -86,7 +86,7 @@
 
 ---
 
-## v1.4 — Homebrew
+## v2.4 — Homebrew
 
 - [ ] Formato JSON definido para conteúdo homebrew (classes, raças, magias, itens, features)
 - [ ] Import de arquivo homebrew `.brew.json` via file picker / share sheet
@@ -97,7 +97,7 @@
 
 ---
 
-## v2 — Ferramenta de Mestre
+## v3 — Ferramenta de Mestre
 
 ### Navegação
 - [ ] Bottom navigation bar: **Personagens** | **NPCs**
@@ -110,7 +110,7 @@
 
 ---
 
-## v3 — Backend e social
+## v4 — Backend e social
 
 - [ ] Backend com Supabase (conta de usuário, sync em nuvem)
 - [ ] Compartilhar personagem via link

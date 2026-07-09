@@ -424,6 +424,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String get levelUpNoNewFeatures => '此等级没有新的职业特性。';
 
   @override
+  String get featureChoicesTitle => '特性选择';
+
+  @override
+  String get featureChoicesPending => '待选择';
+
+  @override
+  String get featureChoicesEdit => '编辑选择';
+
+  @override
+  String get featureChoicesChooseDependencyFirst => '请先选择所需的前置选项。';
+
+  @override
+  String featureChoicesChooseCount(String kind, int count) {
+    return '选择 $count 个$kind。';
+  }
+
+  @override
+  String featureChoicesSelectedCount(int selected, int count) {
+    return '已选择 $selected/$count';
+  }
+
+  @override
   String get levelUpHpRoll => '掷骰';
 
   @override
@@ -454,6 +476,25 @@ class AppLocalizationsZh extends AppLocalizations {
   String levelUpSpellsToLearn(int n) {
     return '选择$n个法术';
   }
+
+  @override
+  String get levelUpSpellRestrictedSection => 'School requirement';
+
+  @override
+  String get levelUpSpellFreeSection => 'Free choice';
+
+  @override
+  String levelUpSpellRestrictedInstruction(int count, String schools) {
+    return 'Choose $count spell(s) from $schools.';
+  }
+
+  @override
+  String levelUpSpellFreeInstruction(int count) {
+    return 'Choose $count spell(s) from any school.';
+  }
+
+  @override
+  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
 
   @override
   String levelUpCantripsToLearn(int n) {

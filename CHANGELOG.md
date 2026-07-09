@@ -9,6 +9,36 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.0.4] - 2026-07-09
+
+### Added
+- **Feature Choices**: novo sistema para registrar escolhas feitas dentro de habilidades, traços raciais e talentos. Cobre estilos de luta, metamagia, inimigos/terrenos favoritos, Pact Boon, manobras, opções do Hunter, proficiências, Magic Initiate, Martial Adept, Weapon Master e outras escolhas semelhantes.
+- **Level Up — escolhas de features**: o wizard agora inclui uma etapa dedicada para escolhas obrigatórias de features/talentos no momento em que elas são recebidas.
+- **Aba Habilidades — escolhas salvas**: features, traits e talentos mostram escolhas já feitas, indicam escolhas pendentes e permitem editar posteriormente.
+- **Detalhes em chips de escolha**: tocar no chip de uma escolha salva abre uma folha com a descrição da opção escolhida.
+- **Dados SRD para escolhas de features**: adicionado `assets/data/srd/feature_choices.json` com nomes, opções e descrições em inglês para tradução automática.
+- **i18n de Feature Choices**: adicionados overlays `feature_choices.json` por idioma, lookup no `SrdI18nService` e suporte no script `tools/translate_i18n.py`.
+
+### Changed
+- **Level Up — magias restritas e livres**: escolhas de magia com restrição de escola, como Eldritch Knight e Arcane Trickster, agora aparecem em seções separadas e recolhíveis, com instruções claras para magias restritas e magias livres.
+- **Level Up — organização de listas de magia**: selecionar uma magia restrita não reorganiza mais a mesma lista de forma confusa; a UI mantém as opções restritas e livres separadas.
+- **Aba Habilidades — cards de features**: cards de classe, subclasse, raça e talentos carregam e exibem escolhas relacionadas quando existirem.
+- **Roadmap**: versões futuras foram renumeradas para reservar a série `1.0.x` para correções e melhorias incrementais atuais.
+
+### Fixed
+- **Feature Choices — descrições ausentes**: opções como Fighting Style agora têm descrição exibida como subtítulo durante a escolha/edição.
+- **Feature Choices — visualização posterior**: escolhas já salvas não ficam mais limitadas ao nome; a descrição pode ser consultada pelo chip na aba Habilidades.
+- **Level Up — escolhas persistidas**: escolhas feitas no wizard são salvas no personagem junto com o resultado do level up.
+- **i18n — metadados de novas strings**: novas chaves de interface de Feature Choices e listas de magia receberam metadata para geração correta de l10n.
+
+### Internal
+- **Persistência**: adicionado modelo `CharacterFeatureChoice` com serialização JSON.
+- **Engine de escolhas**: adicionada `FeatureChoiceEngine` para calcular escolhas pendentes por classe, subclasse, raça e talento.
+- **Assets**: `feature_choices.json` foi registrado no `pubspec.yaml`.
+- **Versionamento**: versão do app atualizada para `1.0.4+18`.
+
+---
+
 ## [1.0.3] - 2026-06-21
 
 ### Added

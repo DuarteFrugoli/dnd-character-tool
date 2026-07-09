@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "コマンダーズ・ストライク",
+        "description": "攻撃アクションを実行すると、1 回の攻撃を省略し、ボーナス アクションを使用して味方に攻撃を指示することができます。"
+      },
+      "disarming_attack": {
+        "name": "武装解除攻撃",
+        "description": "武器攻撃でクリーチャーを攻撃すると、優位性ダイスを消費してターゲットの武装解除を試みることができます。"
+      },
+      "distracting_strike": {
+        "name": "気を散らす攻撃",
+        "description": "クリーチャーに武器攻撃を当てると、優位性ダイスを消費してクリーチャーの注意をそらすことができます。"
+      },
+      "evasive_footwork": {
+        "name": "回避フットワーク",
+        "description": "あなたが移動するとき、あなたは優勢ダイスを消費し、移動を止めるまであなたのACにロールを追加することができます。"
+      },
+      "feinting_attack": {
+        "name": "フェイント攻撃",
+        "description": "優位性ダイスを消費し、ボーナス アクションを使用してフェイントを行うことで、クリーチャーに対する次の攻撃でアドバンテージを得ることができます。"
+      },
+      "goading_attack": {
+        "name": "煽り攻撃",
+        "description": "武器攻撃を当てると、優位性ダイスを消費してターゲットを攻撃するように仕向けることができます。"
+      },
+      "lunging_attack": {
+        "name": "突進攻撃",
+        "description": "近接武器攻撃を行うとき、優位性ダイスを消費して、その攻撃のリーチを増やすことができます。"
+      },
+      "maneuvering_attack": {
+        "name": "マニューバ攻撃",
+        "description": "武器攻撃を命中させると、優位性ダイスを消費して、ターゲットから挑発せずに味方を移動させることができます。"
+      },
+      "menacing_attack": {
+        "name": "脅威の攻撃",
+        "description": "武器攻撃を当てると、優位性ダイスを消費してターゲットを怖がらせることができます。"
+      },
+      "parry": {
+        "name": "パリー",
+        "description": "他のクリーチャーが近接攻撃であなたにダメージを与えたとき、あなたはダメージを軽減するために優位性ダイスを消費できます。"
+      },
+      "precision_attack": {
+        "name": "精密攻撃",
+        "description": "武器攻撃ロールを作成するとき、優位性ダイスを消費してロールに追加できます。"
+      },
+      "pushing_attack": {
+        "name": "押し攻撃",
+        "description": "武器攻撃を当てると、優位性ダイスを消費してターゲットを押しのけようとすることができます。"
+      },
+      "rally": {
+        "name": "ラリー",
+        "description": "自分のターンでは、優位性ダイスを消費し、ボーナス アクションを使用して味方を一時的なヒット ポイントで強化できます。"
+      },
+      "riposte": {
+        "name": "リポスト",
+        "description": "クリーチャーが近接攻撃を外した場合、優位性ダイスを消費してそれに対して近接武器攻撃を行うことができます。"
+      },
+      "sweeping_attack": {
+        "name": "スイープアタック",
+        "description": "近接武器攻撃を当てると、優位性ダイスを消費して、手の届く範囲にある別のクリーチャーにダメージを与えることができます。"
+      },
+      "trip_attack": {
+        "name": "トリップアタック",
+        "description": "武器攻撃を当てると、優位性ダイスを消費してターゲットを伏せさせようとすることができます。"
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "アーチェリー"
+      },
+      "defense": {
+        "name": "防衛"
+      },
+      "dueling": {
+        "name": "決闘"
+      },
+      "great_weapon_fighting": {
+        "name": "偉大な武器の戦い"
+      },
+      "protection": {
+        "name": "保護"
+      },
+      "two_weapon_fighting": {
+        "name": "二刀流の戦い"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "防衛"
+      },
+      "dueling": {
+        "name": "決闘"
+      },
+      "great_weapon_fighting": {
+        "name": "偉大な武器の戦い"
+      },
+      "protection": {
+        "name": "保護"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "アーチェリー"
+      },
+      "defense": {
+        "name": "防衛"
+      },
+      "dueling": {
+        "name": "決闘"
+      },
+      "two_weapon_fighting": {
+        "name": "二刀流の戦い"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "慎重な呪文"
+      },
+      "distant_spell": {
+        "name": "ディスタント・スペル"
+      },
+      "empowered_spell": {
+        "name": "強化された呪文"
+      },
+      "extended_spell": {
+        "name": "拡張呪文"
+      },
+      "heightened_spell": {
+        "name": "強化された呪文"
+      },
+      "quickened_spell": {
+        "name": "クイック化された呪文"
+      },
+      "subtle_spell": {
+        "name": "微妙な呪文"
+      },
+      "twinned_spell": {
+        "name": "ツインスペル"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "収差"
+      },
+      "beasts": {
+        "name": "獣"
+      },
+      "celestials": {
+        "name": "天体"
+      },
+      "constructs": {
+        "name": "構築物"
+      },
+      "dragons": {
+        "name": "ドラゴンズ"
+      },
+      "elementals": {
+        "name": "エレメンタルズ"
+      },
+      "fey": {
+        "name": "フェイ"
+      },
+      "fiends": {
+        "name": "フィーンド"
+      },
+      "giants": {
+        "name": "ジャイアンツ"
+      },
+      "monstrosities": {
+        "name": "怪物"
+      },
+      "oozes": {
+        "name": "にじみ出る"
+      },
+      "plants": {
+        "name": "植物"
+      },
+      "undead": {
+        "name": "アンデッド"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "北極"
+      },
+      "coast": {
+        "name": "海岸"
+      },
+      "desert": {
+        "name": "砂漠"
+      },
+      "forest": {
+        "name": "森"
+      },
+      "grassland": {
+        "name": "草原"
+      },
+      "mountain": {
+        "name": "山"
+      },
+      "swamp": {
+        "name": "沼地"
+      },
+      "underdark": {
+        "name": "アンダーダーク"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "酸"
+      },
+      "cold": {
+        "name": "寒い"
+      },
+      "fire": {
+        "name": "火"
+      },
+      "lightning": {
+        "name": "稲妻"
+      },
+      "thunder": {
+        "name": "雷"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "強さ"
+      },
+      "dexterity": {
+        "name": "器用さ"
+      },
+      "constitution": {
+        "name": "憲法"
+      },
+      "intelligence": {
+        "name": "知能"
+      },
+      "wisdom": {
+        "name": "知恵"
+      },
+      "charisma": {
+        "name": "カリスマ"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "黒"
+      },
+      "blue": {
+        "name": "青"
+      },
+      "brass": {
+        "name": "真鍮"
+      },
+      "bronze": {
+        "name": "ブロンズ"
+      },
+      "copper": {
+        "name": "銅"
+      },
+      "gold": {
+        "name": "金"
+      },
+      "green": {
+        "name": "緑"
+      },
+      "red": {
+        "name": "赤"
+      },
+      "silver": {
+        "name": "銀"
+      },
+      "white": {
+        "name": "白"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "チェーンの協定"
+              },
+              "pact_of_the_blade": {
+                "name": "刃の契約"
+              },
+              "pact_of_the_tome": {
+                "name": "書物の協定"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "強さ"
+                },
+                "dexterity": {
+                  "name": "器用さ"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "コロッサス・スレイヤー"
+                },
+                "giant_killer": {
+                  "name": "ジャイアントキラー"
+                },
+                "horde_breaker": {
+                  "name": "大群ブレイカー"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "大群からの脱出"
+                },
+                "multiattack_defense": {
+                  "name": "マルチアタックディフェンス"
+                },
+                "steel_will": {
+                  "name": "鋼の意志"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "ボレー"
+                },
+                "whirlwind_attack": {
+                  "name": "旋風攻撃"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "回避"
+                },
+                "stand_against_the_tide": {
+                  "name": "流れに立ち向かう"
+                },
+                "uncanny_dodge": {
+                  "name": "不気味な回避"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "スミスのツール"
+            },
+            "brewers_supplies": {
+              "name": "醸造用品"
+            },
+            "masons_tools": {
+              "name": "メイソンツール"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "吟遊詩人"
+            },
+            "cleric": {
+              "name": "クレリック"
+            },
+            "druid": {
+              "name": "ドルイド僧"
+            },
+            "sorcerer": {
+              "name": "魔術師"
+            },
+            "warlock": {
+              "name": "ウォーロック"
+            },
+            "wizard": {
+              "name": "ウィザード"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "強さ"
+            },
+            "dexterity": {
+              "name": "器用さ"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "強さ"
+            },
+            "dexterity": {
+              "name": "器用さ"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@ class _LevelUpState {
     this.asiChanges = const {},
     this.cantripsLearned = const [],
     this.spellsLearned = const [],
+    this.featureChoices = const [],
   });
 
   final int newLevel;
@@ -26,6 +27,7 @@ class _LevelUpState {
   String? subclassChosen;
   List<KnownSpell> cantripsLearned;
   List<KnownSpell> spellsLearned;
+  List<CharacterFeatureChoice> featureChoices;
   String? spellSwapped;
   // Replacement spell chosen on the dedicated swap page.
   KnownSpell? swapReplacement;
@@ -39,6 +41,7 @@ class _LevelUpState {
     Object? subclassChosen = _sentinel,
     List<KnownSpell>? cantripsLearned,
     List<KnownSpell>? spellsLearned,
+    List<CharacterFeatureChoice>? featureChoices,
     Object? spellSwapped = _sentinel,
     Object? swapReplacement = _sentinel,
   }) {
@@ -50,6 +53,7 @@ class _LevelUpState {
       asiChanges: asiChanges ?? this.asiChanges,
       cantripsLearned: cantripsLearned ?? this.cantripsLearned,
       spellsLearned: spellsLearned ?? this.spellsLearned,
+      featureChoices: featureChoices ?? this.featureChoices,
     );
     s.featChosen = featChosen == _sentinel
         ? this.featChosen
@@ -124,8 +128,12 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
   SrdClass? _srdClass;
   List<SrdClassFeature>? _classFeatures;
   List<SrdClassFeature>? _subclassFeatures;
+  Map<String, Map<String, List<SrdClassFeature>>>? _allSubclassFeatures;
   List<SrdSpell>? _allSpells;
   List<SrdFeat>? _allFeats;
+  SrdFeatureChoiceCatalog? _featureChoiceCatalog;
+  List<SrdSkill> _skills = const [];
+  List<SrdTool> _tools = const [];
   bool _loading = true;
 
   @override
@@ -150,6 +158,10 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       srd.getClassFeatures(className),
       srd.getFeats(),
       srd.getSpells(),
+      srd.getFeatureChoiceCatalog(),
+      srd.getSkills(),
+      srd.getTools(),
+      srd.getAllSubclassFeatures(),
     ]);
     if (!mounted) return;
     final classes = results[0] as List<SrdClass>;
@@ -159,16 +171,13 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     );
     _classFeatures = results[1] as List<SrdClassFeature>;
 
-    // Load subclass features if character has a subclass
-    if (widget.character.subclass != null) {
-      _subclassFeatures = await srd.getSubclassFeatures(
-        className,
-        widget.character.subclass!,
-      );
-    }
-
     _allFeats = results[2] as List<SrdFeat>;
     _allSpells = results[3] as List<SrdSpell>;
+    _featureChoiceCatalog = results[4] as SrdFeatureChoiceCatalog;
+    _skills = results[5] as List<SrdSkill>;
+    _tools = results[6] as List<SrdTool>;
+    _allSubclassFeatures =
+        results[7] as Map<String, Map<String, List<SrdClassFeature>>>;
 
     if (mounted) {
       setState(() {
@@ -222,9 +231,14 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     final c = widget.character;
     final newLevel = _state.newLevel;
     final className = c.characterClass;
+    final effectiveSubclass = _effectiveSubclass;
 
     final engineOld = _engineFor(c.level, subclass: c.subclass);
     final engineNew = _engineFor(newLevel);
+
+    _subclassFeatures = effectiveSubclass == null
+        ? const []
+        : _allSubclassFeatures?[className]?[effectiveSubclass] ?? const [];
 
     final newFeatures = (_classFeatures ?? [])
         .where((f) => f.level == newLevel)
@@ -261,11 +275,25 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     }
 
     final warlockSwap = engineNew?.mechanism == SpellcastingMechanism.pact;
+    final featureChoiceRequests = _featureChoiceCatalog == null
+        ? <FeatureChoiceRequest>[]
+        : FeatureChoiceEngine.requestsForLevelUp(
+            catalog: _featureChoiceCatalog!,
+            character: c,
+            newLevel: newLevel,
+            newClassFeatures: newFeatures,
+            newSubclassFeatures: newSubclassFeatures,
+            subclassName: effectiveSubclass,
+            featChosen:
+                _state.asiMode == _AsiMode.feat ? _state.featChosen : null,
+          );
+    _state.featureChoices = _featureChoicesForRequests(featureChoiceRequests);
 
     _pages = [
       _WizardPage.features,
       if (needsSubclass) _WizardPage.subclass,
       if (needsAsi) _WizardPage.asi,
+      if (featureChoiceRequests.isNotEmpty) _WizardPage.featureChoices,
       _WizardPage.hp,
       if (cantripsToLearn > 0) _WizardPage.cantrips,
       if (warlockSwap) _WizardPage.spellSwap,
@@ -281,6 +309,18 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     _spellsToLearn = spellsToLearn;
     _newClassFeatures = newFeatures;
     _newSubclassFeatures = newSubclassFeatures;
+    _featureChoiceRequests = featureChoiceRequests;
+  }
+
+  List<CharacterFeatureChoice> _featureChoicesForRequests(
+    List<FeatureChoiceRequest> requests,
+  ) {
+    return [
+      for (final request in requests)
+        request.findIn(_state.featureChoices) ??
+            request.findIn(widget.character.featureChoices) ??
+            request.emptyChoice(),
+    ];
   }
 
   int _cantripsToLearn = 0;
@@ -290,6 +330,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
   int _requiredSpellSchoolPicks = 0;
   List<SrdClassFeature> _newClassFeatures = [];
   List<SrdClassFeature> _newSubclassFeatures = [];
+  List<FeatureChoiceRequest> _featureChoiceRequests = [];
 
   int get _currentPage =>
       _pageController.hasClients ? _pageController.page?.round() ?? 0 : 0;
@@ -320,6 +361,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         if (_state.swapReplacement != null) _state.swapReplacement!,
       ],
       spellSwapped: _state.spellSwapped,
+      featureChoices: _state.featureChoices,
     );
     Navigator.pop(context);
     await ref
@@ -490,6 +532,11 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         }
         final total = _state.asiChanges.values.fold(0, (a, b) => a + b);
         return total == 2;
+      case _WizardPage.featureChoices:
+        return FeatureChoiceEngine.allComplete(
+          _featureChoiceRequests,
+          _state.featureChoices,
+        );
       case _WizardPage.hp:
         return _state.hpChosen;
       case _WizardPage.cantrips:
@@ -512,7 +559,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         return _FeaturesPage(
           classFeatures: _newClassFeatures,
           subclassFeatures: _newSubclassFeatures,
-          subclassName: widget.character.subclass,
+          subclassName: _effectiveSubclass,
           srdClass: _srdClass,
           i18n:
               ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
@@ -529,6 +576,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
               subclassChosen: name,
               cantripsLearned: const [],
               spellsLearned: const [],
+              featureChoices: const [],
               spellSwapped: null,
               swapReplacement: null,
             );
@@ -549,12 +597,36 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
               asiMode: m,
               asiChanges: {},
               featChosen: null,
+              featureChoices: const [],
             );
+            _rebuildPages();
           }),
-          onAsiChanged: (changes) =>
-              setState(() => _state = _state.copyWith(asiChanges: changes)),
-          onFeatChosen: (feat) =>
-              setState(() => _state = _state.copyWith(featChosen: feat)),
+          onAsiChanged: (changes) => setState(() {
+            _state = _state.copyWith(asiChanges: changes);
+            _rebuildPages();
+          }),
+          onFeatChosen: (feat) => setState(() {
+            _state = _state.copyWith(
+              featChosen: feat,
+              featureChoices: const [],
+            );
+            _rebuildPages();
+          }),
+        );
+      case _WizardPage.featureChoices:
+        return _FeatureChoiceEditor(
+          requests: _featureChoiceRequests,
+          initialChoices: _state.featureChoices,
+          catalog: _featureChoiceCatalog!,
+          character: widget.character,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          skills: _skills,
+          tools: _tools,
+          spells: _allSpells ?? const [],
+          onChanged: (choices) {
+            setState(() => _state = _state.copyWith(featureChoices: choices));
+          },
         );
       case _WizardPage.hp:
         return _HpPage(
@@ -625,6 +697,13 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           wizardState: _state,
           character: widget.character,
           fixedCantripsLearned: _fixedCantripsLearned,
+          featureChoiceRequests: _featureChoiceRequests,
+          featureChoiceCatalog: _featureChoiceCatalog,
+          i18n:
+              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          skills: _skills,
+          tools: _tools,
+          spells: _allSpells ?? const [],
         );
     }
   }
@@ -636,6 +715,7 @@ enum _WizardPage {
   features,
   subclass,
   asi,
+  featureChoices,
   hp,
   cantrips,
   spellSwap,
@@ -1140,23 +1220,40 @@ class _SpellPickPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final chosenNames = chosen.map((s) => s.name).toSet();
-    final chosenByName = {for (final spell in classSpells) spell.name: spell};
-    final requiredChosen = chosen.where((known) {
-      final spell = chosenByName[known.name];
-      return spell != null &&
-          requiredSchools.contains(spell.school.toLowerCase());
-    }).length;
-    final mustChooseRequired =
-        !isCantrip &&
-        requiredSchools.isNotEmpty &&
-        requiredChosen < requiredSchoolPickCount;
-    final visibleSpells = classSpells.where((spell) {
-      if (!mustChooseRequired || chosenNames.contains(spell.name)) {
-        return true;
+    final chosenNames = {for (final spell in chosen) _spellKey(spell.name)};
+    final alreadyKnownNames = {for (final name in alreadyKnown) _spellKey(name)};
+    final spellByName = {
+      for (final spell in classSpells) _spellKey(spell.name): spell,
+    };
+    final restrictedQuota = isCantrip
+        ? 0
+        : math.min(requiredSchoolPickCount, toLearn);
+    final freeQuota = math.max(0, toLearn - restrictedQuota);
+
+    var requiredSlotsLeft = restrictedQuota;
+    final requiredSelected = <String>{};
+    final freeSelected = <String>{};
+    for (final spell in chosen) {
+      final key = _spellKey(spell.name);
+      final srdSpell = spellByName[key];
+      final matchesRequired = srdSpell != null && _isRestricted(srdSpell);
+      if (requiredSlotsLeft > 0 && matchesRequired) {
+        requiredSelected.add(key);
+        requiredSlotsLeft--;
+      } else {
+        freeSelected.add(key);
       }
-      return requiredSchools.contains(spell.school.toLowerCase());
-    });
+    }
+
+    final hasRestrictedSection = restrictedQuota > 0;
+    final hasFreeSection = freeQuota > 0;
+    final isMixedChoice = hasRestrictedSection && hasFreeSection;
+    final restrictedComplete = requiredSelected.length >= restrictedQuota;
+    final schoolList = requiredSchools
+        .map(i18n.spellSchool)
+        .toList()
+      ..sort((a, b) => a.compareTo(b));
+    final schoolText = schoolList.join(' / ');
 
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -1168,63 +1265,231 @@ class _SpellPickPage extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 8),
-
-        ...visibleSpells.map((spell) {
-          final knownAlready = alreadyKnown.contains(spell.name);
-          final isChosen = chosenNames.contains(spell.name);
-          final canAdd = !knownAlready && !isChosen && chosen.length < toLearn;
-          final translatedName = i18n.spellName(spell.name);
-          final translatedSchool = i18n.spellSchool(spell.school);
-          return CheckboxListTile(
-            title: Text(translatedName),
-            subtitle: Text(
-              isCantrip
-                  ? l10n.levelUpSpellCantripSubtitle(translatedSchool)
-                  : l10n.levelUpSpellSubtitle(spell.level, translatedSchool),
-              style: const TextStyle(fontSize: 12),
+        if (chosen.isNotEmpty) ...[
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: [
+              for (final spell in chosen)
+                Chip(label: Text(i18n.spellName(spell.name))),
+            ],
+          ),
+          const SizedBox(height: 8),
+        ],
+        if (hasRestrictedSection)
+          _SpellChoiceSection(
+            key: ValueKey('spell_required_$restrictedComplete'),
+            title: l10n.levelUpSpellRestrictedSection,
+            description: l10n.levelUpSpellRestrictedInstruction(
+              restrictedQuota,
+              schoolText,
             ),
-            value: isChosen,
-            onChanged: knownAlready
-                ? null
-                : (v) {
-                    final updated = List<KnownSpell>.from(chosen);
-                    if (v == true && canAdd) {
-                      updated.add(
-                        KnownSpell(name: spell.name, level: spell.level),
-                      );
-                    } else if (v == false) {
-                      updated.removeWhere((s) => s.name == spell.name);
-                    }
-                    onChanged(updated);
-                  },
-            secondary: knownAlready
-                ? Tooltip(
-                    message: l10n.levelUpSpellAlreadyKnown,
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.check_circle,
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
-                      onPressed: null,
-                    ),
-                  )
-                : IconButton(
-                    icon: const Icon(Icons.info_outline),
-                    onPressed: () => showModalBottomSheet<void>(
-                      context: context,
-                      isScrollControlled: true,
-                      builder: (_) => SpellDetailSheet(
-                        spell: spell,
-                        isKnown: false,
-                        readOnly: true,
-                      ),
-                    ),
-                  ),
-          );
-        }),
+            selectedCount: requiredSelected.length,
+            requiredCount: restrictedQuota,
+            initiallyExpanded: !restrictedComplete || !hasFreeSection,
+            spells: classSpells.where(_isRestricted).toList(),
+            selectedNames: requiredSelected,
+            hiddenNames: const <String>{},
+            chosenNames: chosenNames,
+            alreadyKnownNames: alreadyKnownNames,
+            sectionFull: requiredSelected.length >= restrictedQuota,
+            globalFull: chosen.length >= toLearn,
+            l10n: l10n,
+            i18n: i18n,
+            isCantrip: isCantrip,
+            onChanged: onChanged,
+            chosen: chosen,
+          ),
+        if (hasFreeSection)
+          _SpellChoiceSection(
+            key: ValueKey('spell_free_${isMixedChoice && !restrictedComplete}'),
+            title: l10n.levelUpSpellFreeSection,
+            description: l10n.levelUpSpellFreeInstruction(freeQuota),
+            selectedCount: freeSelected.length,
+            requiredCount: freeQuota,
+            initiallyExpanded:
+                !isMixedChoice || restrictedComplete || freeSelected.isNotEmpty,
+            locked: isMixedChoice && !restrictedComplete,
+            lockedMessage: l10n.levelUpSpellFreeLocked,
+            spells: classSpells,
+            selectedNames: freeSelected,
+            hiddenNames: requiredSelected,
+            chosenNames: chosenNames,
+            alreadyKnownNames: alreadyKnownNames,
+            sectionFull: freeSelected.length >= freeQuota,
+            globalFull: chosen.length >= toLearn,
+            l10n: l10n,
+            i18n: i18n,
+            isCantrip: isCantrip,
+            onChanged: onChanged,
+            chosen: chosen,
+          ),
       ],
     );
   }
+
+  bool _isRestricted(SrdSpell spell) =>
+      requiredSchools.contains(spell.school.toLowerCase());
+
+  static String _spellKey(String name) => name.toLowerCase();
+}
+
+// ── Spell Choice Section ──────────────────────────────────────────────────────
+
+class _SpellChoiceSection extends StatelessWidget {
+  const _SpellChoiceSection({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.selectedCount,
+    required this.requiredCount,
+    required this.initiallyExpanded,
+    required this.spells,
+    required this.selectedNames,
+    required this.hiddenNames,
+    required this.chosenNames,
+    required this.alreadyKnownNames,
+    required this.sectionFull,
+    required this.globalFull,
+    required this.l10n,
+    required this.i18n,
+    required this.isCantrip,
+    required this.onChanged,
+    required this.chosen,
+    this.locked = false,
+    this.lockedMessage,
+  });
+
+  final String title;
+  final String description;
+  final int selectedCount;
+  final int requiredCount;
+  final bool initiallyExpanded;
+  final List<SrdSpell> spells;
+  final Set<String> selectedNames;
+  final Set<String> hiddenNames;
+  final Set<String> chosenNames;
+  final Set<String> alreadyKnownNames;
+  final bool sectionFull;
+  final bool globalFull;
+  final AppLocalizations l10n;
+  final SrdI18nService i18n;
+  final bool isCantrip;
+  final ValueChanged<List<KnownSpell>> onChanged;
+  final List<KnownSpell> chosen;
+  final bool locked;
+  final String? lockedMessage;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final visibleSpells = spells
+        .where((spell) => !hiddenNames.contains(_spellKey(spell.name)))
+        .toList();
+    final selectedVisibleSpells = visibleSpells
+        .where((spell) => selectedNames.contains(_spellKey(spell.name)))
+        .toList();
+
+    return Card(
+      margin: const EdgeInsets.only(top: 8),
+      child: ExpansionTile(
+        initiallyExpanded: initiallyExpanded,
+        title: Text(title),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(description),
+            const SizedBox(height: 2),
+            Text(
+              l10n.featureChoicesSelectedCount(selectedCount, requiredCount),
+              style: TextStyle(color: scheme.onSurfaceVariant),
+            ),
+          ],
+        ),
+        children: [
+          if (locked)
+            ...[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    lockedMessage ?? '',
+                    style: TextStyle(color: scheme.onSurfaceVariant),
+                  ),
+                ),
+              ),
+              ...selectedVisibleSpells.map(
+                (spell) => _buildSpellTile(context, spell),
+              ),
+            ]
+          else
+            ...visibleSpells.map((spell) => _buildSpellTile(context, spell)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSpellTile(BuildContext context, SrdSpell spell) {
+    final key = _spellKey(spell.name);
+    final knownAlready = alreadyKnownNames.contains(key);
+    final isSelected = selectedNames.contains(key);
+    final isChosenElsewhere = chosenNames.contains(key) && !isSelected;
+    final canAdd =
+        !knownAlready && !isChosenElsewhere && !sectionFull && !globalFull;
+    final canToggle = isSelected || canAdd;
+    final translatedName = i18n.spellName(spell.name);
+    final translatedSchool = i18n.spellSchool(spell.school);
+
+    return CheckboxListTile(
+      title: Text(translatedName),
+      subtitle: Text(
+        isCantrip
+            ? l10n.levelUpSpellCantripSubtitle(translatedSchool)
+            : l10n.levelUpSpellSubtitle(spell.level, translatedSchool),
+        style: const TextStyle(fontSize: 12),
+      ),
+      value: isSelected,
+      onChanged: knownAlready || isChosenElsewhere || !canToggle
+          ? null
+          : (v) {
+              final updated = List<KnownSpell>.from(chosen);
+              if (v == true && canAdd) {
+                updated.add(KnownSpell(name: spell.name, level: spell.level));
+              } else if (v == false) {
+                updated.removeWhere(
+                  (known) => _spellKey(known.name) == key,
+                );
+              }
+              onChanged(updated);
+            },
+      secondary: knownAlready
+          ? Tooltip(
+              message: l10n.levelUpSpellAlreadyKnown,
+              child: IconButton(
+                icon: Icon(
+                  Icons.check_circle,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                onPressed: null,
+              ),
+            )
+          : IconButton(
+              icon: const Icon(Icons.info_outline),
+              onPressed: () => showModalBottomSheet<void>(
+                context: context,
+                isScrollControlled: true,
+                builder: (_) => SpellDetailSheet(
+                  spell: spell,
+                  isKnown: false,
+                  readOnly: true,
+                ),
+              ),
+            ),
+    );
+  }
+
+  static String _spellKey(String name) => name.toLowerCase();
 }
 
 // ── Page: Spell Swap (Warlock) ────────────────────────────────────────────────
@@ -1348,10 +1613,22 @@ class _SummaryPage extends StatelessWidget {
     required this.wizardState,
     required this.character,
     required this.fixedCantripsLearned,
+    required this.featureChoiceRequests,
+    required this.featureChoiceCatalog,
+    required this.i18n,
+    required this.skills,
+    required this.tools,
+    required this.spells,
   });
   final _LevelUpState wizardState;
   final Character character;
   final List<KnownSpell> fixedCantripsLearned;
+  final List<FeatureChoiceRequest> featureChoiceRequests;
+  final SrdFeatureChoiceCatalog? featureChoiceCatalog;
+  final SrdI18nService i18n;
+  final List<SrdSkill> skills;
+  final List<SrdTool> tools;
+  final List<SrdSpell> spells;
 
   @override
   Widget build(BuildContext context) {
@@ -1433,6 +1710,36 @@ class _SummaryPage extends StatelessWidget {
           ),
         ),
       );
+    }
+    if (wizardState.featureChoices.isNotEmpty &&
+        featureChoiceCatalog != null) {
+      for (final choice in wizardState.featureChoices) {
+        if (choice.values.isEmpty) continue;
+        final request = featureChoiceRequests.firstWhereOrNull(
+          (request) => request.findIn([choice]) != null,
+        );
+        final labels = choice.values
+            .map(
+              (value) => _featureChoiceValueLabel(
+                value,
+                featureChoiceRequests,
+                featureChoiceCatalog!,
+                i18n,
+                skills,
+                tools,
+                spells,
+              ),
+            )
+            .join(', ');
+        rows.add(
+          _SummaryRow(
+            icon: Icons.checklist,
+            text: request == null
+                ? '${choice.featureName}: $labels'
+                : '${choice.featureName} - ${request.choiceId}: $labels',
+          ),
+        );
+      }
     }
 
     return ListView(

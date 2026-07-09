@@ -445,6 +445,29 @@ class AppLocalizationsFr extends AppLocalizations {
       'Aucune nouvelle aptitude de classe à ce niveau.';
 
   @override
+  String get featureChoicesTitle => 'Choix de capacites';
+
+  @override
+  String get featureChoicesPending => 'Choix en attente';
+
+  @override
+  String get featureChoicesEdit => 'Modifier les choix';
+
+  @override
+  String get featureChoicesChooseDependencyFirst =>
+      'Choisis d\'abord l\'option precedente requise.';
+
+  @override
+  String featureChoicesChooseCount(String kind, int count) {
+    return 'Choisis $count $kind.';
+  }
+
+  @override
+  String featureChoicesSelectedCount(int selected, int count) {
+    return '$selected/$count selectionnes';
+  }
+
+  @override
   String get levelUpHpRoll => 'Lancer';
 
   @override
@@ -475,6 +498,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String levelUpSpellsToLearn(int n) {
     return 'Choisir $n sort(s)';
   }
+
+  @override
+  String get levelUpSpellRestrictedSection => 'School requirement';
+
+  @override
+  String get levelUpSpellFreeSection => 'Free choice';
+
+  @override
+  String levelUpSpellRestrictedInstruction(int count, String schools) {
+    return 'Choose $count spell(s) from $schools.';
+  }
+
+  @override
+  String levelUpSpellFreeInstruction(int count) {
+    return 'Choose $count spell(s) from any school.';
+  }
+
+  @override
+  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
 
   @override
   String levelUpCantripsToLearn(int n) {

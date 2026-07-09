@@ -722,6 +722,240 @@ class SrdFeat {
   );
 }
 
+// ── Feature choices ──────────────────────────────────────────────────────────
+
+class SrdFeatureChoiceCatalog {
+  final Map<String, List<SrdFeatureChoiceOption>> optionSources;
+  final Map<String, Map<String, SrdFeatureChoiceDefinition>> classFeatures;
+  final Map<String, Map<String, Map<String, SrdFeatureChoiceDefinition>>>
+      subclassFeatures;
+  final Map<String, SrdFeatureChoiceDefinition> raceTraits;
+  final Map<String, SrdFeatureChoiceDefinition> feats;
+
+  const SrdFeatureChoiceCatalog({
+    required this.optionSources,
+    required this.classFeatures,
+    required this.subclassFeatures,
+    required this.raceTraits,
+    required this.feats,
+  });
+
+  factory SrdFeatureChoiceCatalog.fromJson(Map<String, dynamic> json) {
+    return SrdFeatureChoiceCatalog(
+      optionSources: _parseOptionSources(json['optionSources']),
+      classFeatures: _parseDefinitionMap2(json['classFeatures']),
+      subclassFeatures: _parseDefinitionMap3(json['subclassFeatures']),
+      raceTraits: _parseDefinitionMap1(json['raceTraits']),
+      feats: _parseDefinitionMap1(json['feats']),
+    );
+  }
+
+  SrdFeatureChoiceDefinition? classFeature(String className, String feature) =>
+      classFeatures[className]?[feature];
+
+  SrdFeatureChoiceDefinition? subclassFeature(
+    String className,
+    String subclassName,
+    String feature,
+  ) =>
+      subclassFeatures[className]?[subclassName]?[feature];
+
+  SrdFeatureChoiceDefinition? raceTrait(String trait) => raceTraits[trait];
+
+  SrdFeatureChoiceDefinition? feat(String name) => feats[name];
+
+  static Map<String, List<SrdFeatureChoiceOption>> _parseOptionSources(
+    dynamic value,
+  ) {
+    final result = <String, List<SrdFeatureChoiceOption>>{};
+    if (value is! Map) return result;
+    for (final entry in value.entries) {
+      final key = entry.key.toString();
+      final list = entry.value;
+      if (list is! List) continue;
+      result[key] = list
+          .whereType<Map>()
+          .map((e) => SrdFeatureChoiceOption.fromJson(
+                e.cast<String, dynamic>(),
+              ))
+          .toList();
+    }
+    return result;
+  }
+
+  static Map<String, SrdFeatureChoiceDefinition> _parseDefinitionMap1(
+    dynamic value,
+  ) {
+    final result = <String, SrdFeatureChoiceDefinition>{};
+    if (value is! Map) return result;
+    for (final entry in value.entries) {
+      if (entry.value is Map) {
+        result[entry.key.toString()] = SrdFeatureChoiceDefinition.fromJson(
+          (entry.value as Map).cast<String, dynamic>(),
+        );
+      }
+    }
+    return result;
+  }
+
+  static Map<String, Map<String, SrdFeatureChoiceDefinition>>
+      _parseDefinitionMap2(dynamic value) {
+    final result = <String, Map<String, SrdFeatureChoiceDefinition>>{};
+    if (value is! Map) return result;
+    for (final entry in value.entries) {
+      result[entry.key.toString()] = _parseDefinitionMap1(entry.value);
+    }
+    return result;
+  }
+
+  static Map<String, Map<String, Map<String, SrdFeatureChoiceDefinition>>>
+      _parseDefinitionMap3(dynamic value) {
+    final result =
+        <String, Map<String, Map<String, SrdFeatureChoiceDefinition>>>{};
+    if (value is! Map) return result;
+    for (final entry in value.entries) {
+      final nested = <String, Map<String, SrdFeatureChoiceDefinition>>{};
+      final subMap = entry.value;
+      if (subMap is Map) {
+        for (final subEntry in subMap.entries) {
+          nested[subEntry.key.toString()] =
+              _parseDefinitionMap1(subEntry.value);
+        }
+      }
+      result[entry.key.toString()] = nested;
+    }
+    return result;
+  }
+}
+
+class SrdFeatureChoiceDefinition {
+  final List<SrdFeatureChoiceRequirement> choices;
+
+  const SrdFeatureChoiceDefinition({required this.choices});
+
+  factory SrdFeatureChoiceDefinition.fromJson(Map<String, dynamic> json) {
+    return SrdFeatureChoiceDefinition(
+      choices: (json['choices'] as List<dynamic>? ?? const [])
+          .whereType<Map>()
+          .map((e) =>
+              SrdFeatureChoiceRequirement.fromJson(e.cast<String, dynamic>()))
+          .toList(),
+    );
+  }
+}
+
+class SrdFeatureChoiceRequirement {
+  final String id;
+  final String type;
+  final int count;
+  final Map<int, int> countByLevel;
+  final String? optionsSource;
+  final List<SrdFeatureChoiceOption> options;
+  final String? spellClass;
+  final int? spellLevel;
+  final int? minSpellLevel;
+  final int? maxSpellLevel;
+  final Map<int, int> maxSpellLevelByLevel;
+  final bool allowThievesTools;
+
+  const SrdFeatureChoiceRequirement({
+    required this.id,
+    required this.type,
+    this.count = 1,
+    this.countByLevel = const {},
+    this.optionsSource,
+    this.options = const [],
+    this.spellClass,
+    this.spellLevel,
+    this.minSpellLevel,
+    this.maxSpellLevel,
+    this.maxSpellLevelByLevel = const {},
+    this.allowThievesTools = false,
+  });
+
+  factory SrdFeatureChoiceRequirement.fromJson(Map<String, dynamic> json) {
+    return SrdFeatureChoiceRequirement(
+      id: json['id'] as String? ?? '',
+      type: json['type'] as String? ?? 'option',
+      count: (json['count'] as num?)?.toInt() ?? 1,
+      countByLevel: _countByLevelFromJson(json['countByLevel']),
+      optionsSource: json['optionsSource'] as String?,
+      options: (json['options'] as List<dynamic>? ?? const [])
+          .whereType<Map>()
+          .map((e) =>
+              SrdFeatureChoiceOption.fromJson(e.cast<String, dynamic>()))
+          .toList(),
+      spellClass: json['spellClass'] as String?,
+      spellLevel: (json['spellLevel'] as num?)?.toInt(),
+      minSpellLevel: (json['minSpellLevel'] as num?)?.toInt(),
+      maxSpellLevel: (json['maxSpellLevel'] as num?)?.toInt(),
+      maxSpellLevelByLevel:
+          _intMapFromJson(json['maxSpellLevelByLevel']),
+      allowThievesTools: json['allowThievesTools'] as bool? ?? false,
+    );
+  }
+
+  int requiredCountAtLevel(int level) {
+    if (countByLevel.isEmpty) return count;
+    var total = 0;
+    for (final entry in countByLevel.entries) {
+      if (entry.key <= level) total += entry.value;
+    }
+    return total;
+  }
+
+  bool isActiveAtLevel(int level) {
+    if (countByLevel.isEmpty) return true;
+    return countByLevel.keys.any((entryLevel) => entryLevel <= level);
+  }
+
+  int? maxSpellLevelAtLevel(int level) {
+    if (maxSpellLevelByLevel.isEmpty) return maxSpellLevel;
+    int? result;
+    for (final entry in maxSpellLevelByLevel.entries) {
+      if (entry.key <= level && (result == null || entry.value > result)) {
+        result = entry.value;
+      }
+    }
+    return result ?? maxSpellLevel;
+  }
+
+  static Map<int, int> _countByLevelFromJson(dynamic value) {
+    return _intMapFromJson(value);
+  }
+
+  static Map<int, int> _intMapFromJson(dynamic value) {
+    final result = <int, int>{};
+    if (value is! Map) return result;
+    for (final entry in value.entries) {
+      final level = int.tryParse(entry.key.toString());
+      final count = entry.value is num ? (entry.value as num).toInt() : null;
+      if (level != null && count != null) result[level] = count;
+    }
+    return result;
+  }
+}
+
+class SrdFeatureChoiceOption {
+  final String id;
+  final String name;
+  final String? description;
+
+  const SrdFeatureChoiceOption({
+    required this.id,
+    required this.name,
+    this.description,
+  });
+
+  factory SrdFeatureChoiceOption.fromJson(Map<String, dynamic> json) {
+    return SrdFeatureChoiceOption(
+      id: json['id'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      description: json['description'] as String?,
+    );
+  }
+}
+
 // ── Class Features ────────────────────────────────────────────────────────────
 
 class SrdFeatureUses {

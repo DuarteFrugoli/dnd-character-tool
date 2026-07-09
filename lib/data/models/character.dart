@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'ability_scores.dart';
 import 'character_appearance.dart';
 import 'character_extra_feature.dart';
+import 'character_feature_choice.dart';
 import 'character_note.dart';
 import 'character_personality.dart';
 import 'equipment_item.dart';
@@ -44,6 +45,7 @@ class Character {
   final List<InnateSpell> innateSpells;
   final List<String> features;
   final List<CharacterExtraFeature> extraFeatures;
+  final List<CharacterFeatureChoice> featureChoices;
   final List<String> disabledFeatures;
   final List<String> disabledSpells;
   final List<String> languages;
@@ -90,6 +92,7 @@ class Character {
     this.innateSpells = const [],
     this.features = const [],
     this.extraFeatures = const [],
+    this.featureChoices = const [],
     this.disabledFeatures = const [],
     this.disabledSpells = const [],
     this.languages = const [],
@@ -150,6 +153,7 @@ class Character {
     List<InnateSpell>? innateSpells,
     List<String>? features,
     List<CharacterExtraFeature>? extraFeatures,
+    List<CharacterFeatureChoice>? featureChoices,
     List<String>? disabledFeatures,
     List<String>? disabledSpells,
     List<String>? languages,
@@ -198,6 +202,7 @@ class Character {
       innateSpells: innateSpells ?? this.innateSpells,
       features: features ?? this.features,
       extraFeatures: extraFeatures ?? this.extraFeatures,
+      featureChoices: featureChoices ?? this.featureChoices,
       disabledFeatures: disabledFeatures ?? this.disabledFeatures,
       disabledSpells: disabledSpells ?? this.disabledSpells,
       languages: languages ?? this.languages,

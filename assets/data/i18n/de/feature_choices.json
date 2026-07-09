@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "Kommandantenschlag",
+        "description": "Wenn Sie die Aktion „Angreifen“ ausführen, können Sie auf einen Angriff verzichten und eine Bonusaktion nutzen, um einen Verbündeten zum Angriff anzuweisen."
+      },
+      "disarming_attack": {
+        "name": "Entwaffnender Angriff",
+        "description": "Wenn du eine Kreatur mit einem Waffenangriff triffst, kannst du einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel zu entwaffnen."
+      },
+      "distracting_strike": {
+        "name": "Ablenkender Schlag",
+        "description": "Wenn du eine Kreatur mit einem Waffenangriff triffst, kannst du einen Überlegenheitswürfel ausgeben, um die Kreatur abzulenken."
+      },
+      "evasive_footwork": {
+        "name": "Ausweichende Beinarbeit",
+        "description": "Wenn Sie sich bewegen, können Sie einen Überlegenheitswürfel ausgeben und den Wurf zu Ihrer AC hinzufügen, bis Sie aufhören, sich zu bewegen."
+      },
+      "feinting_attack": {
+        "name": "Finting-Angriff",
+        "description": "Sie können einen Überlegenheitswürfel einsetzen und eine Bonusaktion für eine Finte nutzen, um sich bei Ihrem nächsten Angriff gegen eine Kreatur einen Vorteil zu verschaffen."
+      },
+      "goading_attack": {
+        "name": "Anspornender Angriff",
+        "description": "Wenn Sie mit einer Waffe zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um das Ziel dazu zu bewegen, Sie anzugreifen."
+      },
+      "lunging_attack": {
+        "name": "Ausfallangriff",
+        "description": "Wenn Sie einen Nahkampfwaffenangriff ausführen, können Sie einen Überlegenheitswürfel ausgeben, um Ihre Reichweite für diesen Angriff zu erhöhen."
+      },
+      "maneuvering_attack": {
+        "name": "Manövrierangriff",
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel ausgeben, um einem Verbündeten die Möglichkeit zu geben, sich zu bewegen, ohne das Ziel zu provozieren."
+      },
+      "menacing_attack": {
+        "name": "Bedrohlicher Angriff",
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel zu erschrecken."
+      },
+      "parry": {
+        "name": "Parieren",
+        "description": "Wenn eine andere Kreatur dir mit einem Nahkampfangriff Schaden zufügt, kannst du einen Überlegenheitswürfel einsetzen, um den Schaden zu verringern."
+      },
+      "precision_attack": {
+        "name": "Präzisionsangriff",
+        "description": "Wenn Sie einen Waffenangriffswurf durchführen, können Sie einen Überlegenheitswürfel ausgeben und ihn zum Wurf hinzufügen."
+      },
+      "pushing_attack": {
+        "name": "Push-Angriff",
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel wegzustoßen."
+      },
+      "rally": {
+        "name": "Rallye",
+        "description": "In deinem Zug kannst du einen Überlegenheitswürfel ausgeben und eine Bonusaktion nutzen, um einen Verbündeten mit temporären Trefferpunkten zu stärken."
+      },
+      "riposte": {
+        "name": "Gegenrede",
+        "description": "Wenn eine Kreatur dich mit einem Nahkampfangriff verfehlt, kannst du einen Überlegenheitswürfel ausgeben, um einen Nahkampfwaffenangriff gegen sie durchzuführen."
+      },
+      "sweeping_attack": {
+        "name": "Durchgreifender Angriff",
+        "description": "Wenn Sie mit einem Nahkampfwaffenangriff zuschlagen, können Sie einen Überlegenheitswürfel ausgeben, um einer anderen Kreatur in Reichweite Schaden zuzufügen."
+      },
+      "trip_attack": {
+        "name": "Trip Attack",
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel zu Boden zu werfen."
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "Bogenschießen"
+      },
+      "defense": {
+        "name": "Verteidigung"
+      },
+      "dueling": {
+        "name": "Duell"
+      },
+      "great_weapon_fighting": {
+        "name": "Großartiger Waffenkampf"
+      },
+      "protection": {
+        "name": "Schutz"
+      },
+      "two_weapon_fighting": {
+        "name": "Zwei-Waffen-Kampf"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "Verteidigung"
+      },
+      "dueling": {
+        "name": "Duell"
+      },
+      "great_weapon_fighting": {
+        "name": "Großartiger Waffenkampf"
+      },
+      "protection": {
+        "name": "Schutz"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "Bogenschießen"
+      },
+      "defense": {
+        "name": "Verteidigung"
+      },
+      "dueling": {
+        "name": "Duell"
+      },
+      "two_weapon_fighting": {
+        "name": "Zwei-Waffen-Kampf"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "Vorsichtiger Zauber"
+      },
+      "distant_spell": {
+        "name": "Fernzauber"
+      },
+      "empowered_spell": {
+        "name": "Machtvoller Zauber"
+      },
+      "extended_spell": {
+        "name": "Erweiterter Zauber"
+      },
+      "heightened_spell": {
+        "name": "Erhöhter Zauber"
+      },
+      "quickened_spell": {
+        "name": "Beschleunigter Zauber"
+      },
+      "subtle_spell": {
+        "name": "Subtiler Zauber"
+      },
+      "twinned_spell": {
+        "name": "Zwillingszauber"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "Aberrationen"
+      },
+      "beasts": {
+        "name": "Bestien"
+      },
+      "celestials": {
+        "name": "Himmlische"
+      },
+      "constructs": {
+        "name": "Konstrukte"
+      },
+      "dragons": {
+        "name": "Drachen"
+      },
+      "elementals": {
+        "name": "Elementare"
+      },
+      "fey": {
+        "name": "Fey"
+      },
+      "fiends": {
+        "name": "Unholde"
+      },
+      "giants": {
+        "name": "Riesen"
+      },
+      "monstrosities": {
+        "name": "Monstrositäten"
+      },
+      "oozes": {
+        "name": "Sickert"
+      },
+      "plants": {
+        "name": "Pflanzen"
+      },
+      "undead": {
+        "name": "Untote"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "Arktis"
+      },
+      "coast": {
+        "name": "Küste"
+      },
+      "desert": {
+        "name": "Wüste"
+      },
+      "forest": {
+        "name": "Wald"
+      },
+      "grassland": {
+        "name": "Wiese"
+      },
+      "mountain": {
+        "name": "Berg"
+      },
+      "swamp": {
+        "name": "Sumpf"
+      },
+      "underdark": {
+        "name": "Underdark"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "Säure"
+      },
+      "cold": {
+        "name": "Kalt"
+      },
+      "fire": {
+        "name": "Feuer"
+      },
+      "lightning": {
+        "name": "Blitz"
+      },
+      "thunder": {
+        "name": "Donner"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "Stärke"
+      },
+      "dexterity": {
+        "name": "Geschicklichkeit"
+      },
+      "constitution": {
+        "name": "Verfassung"
+      },
+      "intelligence": {
+        "name": "Intelligenz"
+      },
+      "wisdom": {
+        "name": "Weisheit"
+      },
+      "charisma": {
+        "name": "Charisma"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "Schwarz"
+      },
+      "blue": {
+        "name": "Blau"
+      },
+      "brass": {
+        "name": "Messing"
+      },
+      "bronze": {
+        "name": "Bronze"
+      },
+      "copper": {
+        "name": "Kupfer"
+      },
+      "gold": {
+        "name": "Gold"
+      },
+      "green": {
+        "name": "Grün"
+      },
+      "red": {
+        "name": "Rot"
+      },
+      "silver": {
+        "name": "Silber"
+      },
+      "white": {
+        "name": "Weiß"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "Pakt der Kette"
+              },
+              "pact_of_the_blade": {
+                "name": "Pakt der Klinge"
+              },
+              "pact_of_the_tome": {
+                "name": "Pakt des Wälzers"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "Stärke"
+                },
+                "dexterity": {
+                  "name": "Geschicklichkeit"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "Kolossjäger"
+                },
+                "giant_killer": {
+                  "name": "Riesenmörder"
+                },
+                "horde_breaker": {
+                  "name": "Hordenbrecher"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "Entkomme der Horde"
+                },
+                "multiattack_defense": {
+                  "name": "Multiattack-Verteidigung"
+                },
+                "steel_will": {
+                  "name": "Stahlwille"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "Volley"
+                },
+                "whirlwind_attack": {
+                  "name": "Wirbelwind-Angriff"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "Ausweichen"
+                },
+                "stand_against_the_tide": {
+                  "name": "Stehen Sie gegen den Strom"
+                },
+                "uncanny_dodge": {
+                  "name": "Unheimliches Ausweichen"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "Smiths Werkzeuge"
+            },
+            "brewers_supplies": {
+              "name": "Brauereibedarf"
+            },
+            "masons_tools": {
+              "name": "Maurerwerkzeuge"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "Barde"
+            },
+            "cleric": {
+              "name": "Kleriker"
+            },
+            "druid": {
+              "name": "Druide"
+            },
+            "sorcerer": {
+              "name": "Zauberer"
+            },
+            "warlock": {
+              "name": "Hexenmeister"
+            },
+            "wizard": {
+              "name": "Zauberer"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "Stärke"
+            },
+            "dexterity": {
+              "name": "Geschicklichkeit"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "Stärke"
+            },
+            "dexterity": {
+              "name": "Geschicklichkeit"
+            }
+          }
+        }
+      }
+    }
+  }
+}

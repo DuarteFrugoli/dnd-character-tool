@@ -1,4 +1,5 @@
 import '../datasources/srd/srd_models.dart';
+import '../models/character_feature_choice.dart';
 import '../models/spell.dart';
 
 // ── Level Up Result ───────────────────────────────────────────────────────────
@@ -13,6 +14,7 @@ class LevelUpResult {
     this.cantripsLearned = const [],
     this.spellsLearned = const [],
     this.spellSwapped,
+    this.featureChoices = const [],
   });
 
   final int hpGained;
@@ -30,6 +32,9 @@ class LevelUpResult {
 
   /// Name of an existing known spell to forget (Warlock swap). Null if none.
   final String? spellSwapped;
+
+  /// Feature/feat choices made during this level up.
+  final List<CharacterFeatureChoice> featureChoices;
 }
 
 // ── XP Thresholds (SRD 5.1) ──────────────────────────────────────────────────

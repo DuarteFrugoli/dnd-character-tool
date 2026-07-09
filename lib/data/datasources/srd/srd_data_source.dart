@@ -27,6 +27,7 @@ class SrdDataSource {
   Map<String, SrdItemData>? _items;
   List<SrdTool>? _tools;
   List<SrdFeat>? _feats;
+  SrdFeatureChoiceCatalog? _featureChoiceCatalog;
   /// Guard against parsing equipment.json multiple times in parallel.
   Future<void>? _equipmentLoadFuture;
 
@@ -143,6 +144,18 @@ class SrdDataSource {
       SrdFeat.fromJson,
     );
     return _feats!;
+  }
+
+  Future<SrdFeatureChoiceCatalog> getFeatureChoiceCatalog() async {
+    if (_featureChoiceCatalog == null) {
+      final raw = await rootBundle.loadString(
+        'assets/data/srd/feature_choices.json',
+      );
+      _featureChoiceCatalog = SrdFeatureChoiceCatalog.fromJson(
+        jsonDecode(raw) as Map<String, dynamic>,
+      );
+    }
+    return _featureChoiceCatalog!;
   }
 
   Future<Map<String, SrdItemData>> getItems() async {

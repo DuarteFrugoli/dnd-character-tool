@@ -1,0 +1,465 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": {
+        "name": "커맨더스 스트라이크",
+        "description": "공격 행동을 취하면 한 번의 공격을 포기하고 보너스 행동을 사용하여 아군에게 공격을 지시할 수 있습니다."
+      },
+      "disarming_attack": {
+        "name": "무장 해제 공격",
+        "description": "무기 공격으로 생물을 공격할 때, 우월성 주사위를 사용하여 대상을 무장 해제할 수 있습니다."
+      },
+      "distracting_strike": {
+        "name": "주의를 산만하게 하는 일격",
+        "description": "무기 공격으로 생물을 공격하면 우월 주사위를 사용하여 생물의 주의를 분산시킬 수 있습니다."
+      },
+      "evasive_footwork": {
+        "name": "회피적인 발놀림",
+        "description": "이동할 때 우월성 주사위를 소비하고 이동을 멈출 때까지 AC에 굴림을 추가할 수 있습니다."
+      },
+      "feinting_attack": {
+        "name": "페인팅 공격",
+        "description": "당신은 우월성 주사위를 소비하고 보너스 행동을 사용하여 페인트를 칠 수 있으며, 생물에 대한 다음 공격에서 이점을 얻을 수 있습니다."
+      },
+      "goading_attack": {
+        "name": "고딩 공격",
+        "description": "무기 공격으로 공격할 때, 우월성 주사위를 사용하여 대상이 당신을 공격하도록 유도할 수 있습니다."
+      },
+      "lunging_attack": {
+        "name": "돌진 공격",
+        "description": "근접 무기 공격을 할 때 우월 주사위를 사용하여 해당 공격에 대한 범위를 늘릴 수 있습니다."
+      },
+      "maneuvering_attack": {
+        "name": "기동공격",
+        "description": "무기 공격으로 명중할 때, 우월성 주사위를 소비하여 대상으로부터 자극을 받지 않고 아군이 움직일 수 있도록 할 수 있습니다."
+      },
+      "menacing_attack": {
+        "name": "위협적인 공격",
+        "description": "무기 공격으로 명중할 때, 우월성 주사위를 사용하여 대상에게 겁을 주려고 시도할 수 있습니다."
+      },
+      "parry": {
+        "name": "패리",
+        "description": "다른 생물이 근접 공격으로 당신에게 피해를 입힐 때, 당신은 우월 주사위를 소비하여 피해를 줄일 수 있습니다."
+      },
+      "precision_attack": {
+        "name": "정밀 공격",
+        "description": "무기 공격 굴림을 할 때 우월성 주사위를 소모하여 굴림에 추가할 수 있습니다."
+      },
+      "pushing_attack": {
+        "name": "밀어붙이는 공격",
+        "description": "무기 공격으로 명중할 때, 우월성 주사위를 사용하여 대상을 밀어낼 수 있습니다."
+      },
+      "rally": {
+        "name": "랠리",
+        "description": "당신의 차례에 당신은 우월성 주사위를 소비하고 보너스 행동을 사용하여 임시 체력으로 아군을 강화할 수 있습니다."
+      },
+      "riposte": {
+        "name": "반격",
+        "description": "생물이 근접 공격으로 당신을 놓칠 때, 당신은 우월성 주사위를 사용하여 근접 무기 공격을 할 수 있습니다."
+      },
+      "sweeping_attack": {
+        "name": "휩쓸기 공격",
+        "description": "근접 무기 공격으로 명중할 때 우월성 주사위를 사용하여 도달 범위 내의 다른 생물에게 피해를 줄 수 있습니다."
+      },
+      "trip_attack": {
+        "name": "트립 어택",
+        "description": "무기 공격으로 명중할 때 우월성 주사위를 사용하여 대상을 넘어뜨리려고 시도할 수 있습니다."
+      }
+    },
+    "fighting_styles_fighter": {
+      "archery": {
+        "name": "양궁"
+      },
+      "defense": {
+        "name": "방어"
+      },
+      "dueling": {
+        "name": "결투"
+      },
+      "great_weapon_fighting": {
+        "name": "위대한 무기 싸움"
+      },
+      "protection": {
+        "name": "보호"
+      },
+      "two_weapon_fighting": {
+        "name": "두 무기 싸움"
+      }
+    },
+    "fighting_styles_paladin": {
+      "defense": {
+        "name": "방어"
+      },
+      "dueling": {
+        "name": "결투"
+      },
+      "great_weapon_fighting": {
+        "name": "위대한 무기 싸움"
+      },
+      "protection": {
+        "name": "보호"
+      }
+    },
+    "fighting_styles_ranger": {
+      "archery": {
+        "name": "양궁"
+      },
+      "defense": {
+        "name": "방어"
+      },
+      "dueling": {
+        "name": "결투"
+      },
+      "two_weapon_fighting": {
+        "name": "두 무기 싸움"
+      }
+    },
+    "metamagic_options": {
+      "careful_spell": {
+        "name": "조심스러운 주문"
+      },
+      "distant_spell": {
+        "name": "원거리 주문"
+      },
+      "empowered_spell": {
+        "name": "강화된 주문"
+      },
+      "extended_spell": {
+        "name": "확장된 주문"
+      },
+      "heightened_spell": {
+        "name": "강화된 주문"
+      },
+      "quickened_spell": {
+        "name": "빨라진 주문"
+      },
+      "subtle_spell": {
+        "name": "미묘한 주문"
+      },
+      "twinned_spell": {
+        "name": "쌍둥이 주문"
+      }
+    },
+    "favored_enemies": {
+      "aberrations": {
+        "name": "수차"
+      },
+      "beasts": {
+        "name": "수류"
+      },
+      "celestials": {
+        "name": "천체"
+      },
+      "constructs": {
+        "name": "구조물"
+      },
+      "dragons": {
+        "name": "용"
+      },
+      "elementals": {
+        "name": "정령"
+      },
+      "fey": {
+        "name": "이상한"
+      },
+      "fiends": {
+        "name": "악마"
+      },
+      "giants": {
+        "name": "자이언츠"
+      },
+      "monstrosities": {
+        "name": "괴물"
+      },
+      "oozes": {
+        "name": "수액"
+      },
+      "plants": {
+        "name": "식물"
+      },
+      "undead": {
+        "name": "언데드"
+      }
+    },
+    "favored_terrain": {
+      "arctic": {
+        "name": "북극"
+      },
+      "coast": {
+        "name": "해안"
+      },
+      "desert": {
+        "name": "사막"
+      },
+      "forest": {
+        "name": "숲"
+      },
+      "grassland": {
+        "name": "목초지"
+      },
+      "mountain": {
+        "name": "산"
+      },
+      "swamp": {
+        "name": "늪"
+      },
+      "underdark": {
+        "name": "언더다크"
+      }
+    },
+    "damage_types_elemental": {
+      "acid": {
+        "name": "산"
+      },
+      "cold": {
+        "name": "추운"
+      },
+      "fire": {
+        "name": "불"
+      },
+      "lightning": {
+        "name": "번개"
+      },
+      "thunder": {
+        "name": "우뢰"
+      }
+    },
+    "ability_scores": {
+      "strength": {
+        "name": "힘"
+      },
+      "dexterity": {
+        "name": "재치"
+      },
+      "constitution": {
+        "name": "헌법"
+      },
+      "intelligence": {
+        "name": "지능"
+      },
+      "wisdom": {
+        "name": "지혜"
+      },
+      "charisma": {
+        "name": "카리스마"
+      }
+    },
+    "draconic_ancestry": {
+      "black": {
+        "name": "검은색"
+      },
+      "blue": {
+        "name": "파란색"
+      },
+      "brass": {
+        "name": "놋쇠"
+      },
+      "bronze": {
+        "name": "청동"
+      },
+      "copper": {
+        "name": "구리"
+      },
+      "gold": {
+        "name": "금"
+      },
+      "green": {
+        "name": "녹색"
+      },
+      "red": {
+        "name": "빨간색"
+      },
+      "silver": {
+        "name": "은"
+      },
+      "white": {
+        "name": "하얀색"
+      }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": {
+        "choices": {
+          "pact_boon": {
+            "options": {
+              "pact_of_the_chain": {
+                "name": "사슬의 조약"
+              },
+              "pact_of_the_blade": {
+                "name": "칼날의 조약"
+              },
+              "pact_of_the_tome": {
+                "name": "고서의 조약"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": {
+          "choices": {
+            "maneuver_dc_ability": {
+              "options": {
+                "strength": {
+                  "name": "힘"
+                },
+                "dexterity": {
+                  "name": "재치"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": {
+            "hunters_prey": {
+              "options": {
+                "colossus_slayer": {
+                  "name": "거상 학살자"
+                },
+                "giant_killer": {
+                  "name": "자이언트 킬러"
+                },
+                "horde_breaker": {
+                  "name": "호드 파괴자"
+                }
+              }
+            }
+          }
+        },
+        "Defensive Tactics": {
+          "choices": {
+            "defensive_tactics": {
+              "options": {
+                "escape_the_horde": {
+                  "name": "호드에서 탈출하세요"
+                },
+                "multiattack_defense": {
+                  "name": "다중공격 방어"
+                },
+                "steel_will": {
+                  "name": "강철 의지"
+                }
+              }
+            }
+          }
+        },
+        "Multiattack": {
+          "choices": {
+            "multiattack": {
+              "options": {
+                "volley": {
+                  "name": "발리"
+                },
+                "whirlwind_attack": {
+                  "name": "회오리바람 공격"
+                }
+              }
+            }
+          }
+        },
+        "Superior Hunter's Defense": {
+          "choices": {
+            "superior_hunters_defense": {
+              "options": {
+                "evasion": {
+                  "name": "회피"
+                },
+                "stand_against_the_tide": {
+                  "name": "조류에 맞서라"
+                },
+                "uncanny_dodge": {
+                  "name": "언캐니 닷지"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Tool Proficiency": {
+      "choices": {
+        "artisan_tool": {
+          "options": {
+            "smiths_tools": {
+              "name": "스미스의 도구"
+            },
+            "brewers_supplies": {
+              "name": "양조업자의 용품"
+            },
+            "masons_tools": {
+              "name": "메이슨의 도구"
+            }
+          }
+        }
+      }
+    }
+  },
+  "feats": {
+    "Magic Initiate": {
+      "choices": {
+        "spell_class": {
+          "options": {
+            "bard": {
+              "name": "음유 시인"
+            },
+            "cleric": {
+              "name": "성직자"
+            },
+            "druid": {
+              "name": "드루이드"
+            },
+            "sorcerer": {
+              "name": "마법사"
+            },
+            "warlock": {
+              "name": "요술 장이"
+            },
+            "wizard": {
+              "name": "마법사"
+            }
+          }
+        }
+      }
+    },
+    "Martial Adept": {
+      "choices": {
+        "maneuver_dc_ability": {
+          "options": {
+            "strength": {
+              "name": "힘"
+            },
+            "dexterity": {
+              "name": "재치"
+            }
+          }
+        }
+      }
+    },
+    "Weapon Master": {
+      "choices": {
+        "ability": {
+          "options": {
+            "strength": {
+              "name": "힘"
+            },
+            "dexterity": {
+              "name": "재치"
+            }
+          }
+        }
+      }
+    }
+  }
+}

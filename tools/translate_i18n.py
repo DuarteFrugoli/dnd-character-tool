@@ -9,6 +9,7 @@ Usage (SRD overlays — assets/data/i18n/):
   python tools/translate_i18n.py es --force                   # overwrite existing non-empty files
   python tools/translate_i18n.py --file equipment.json        # only translate equipment.json for all locales
   python tools/translate_i18n.py es --file equipment.json --force  # overwrite equipment.json for es
+  python tools/translate_i18n.py pt --file feature_choices.json --force  # feature choice option labels
 
 Usage (ARB locale files — lib/l10n/):
   python tools/translate_i18n.py --arb                        # generate ARBs for ALL locales
@@ -220,11 +221,77 @@ def extract_conditions() -> dict:
 
 
 # Map filename → extractor function
+def _extract_feature_choice_options(options: list) -> dict:
+    out = {}
+    for option in options:
+        if not isinstance(option, dict) or "id" not in option:
+            continue
+        entry = {}
+        if option.get("name"):
+            entry["name"] = option["name"]
+        if option.get("description"):
+            entry["description"] = option["description"]
+        if entry:
+            out[option["id"]] = entry
+    return out
+
+
+def _extract_feature_choice_definitions(definitions: dict) -> dict:
+    out = {}
+    for name, definition in definitions.items():
+        choices = {}
+        for choice in definition.get("choices", []):
+            inline_options = _extract_feature_choice_options(choice.get("options", []))
+            if inline_options:
+                choices[choice["id"]] = {"options": inline_options}
+        if choices:
+            out[name] = {"choices": choices}
+    return out
+
+
+def _extract_feature_choice_definition_map(node) -> dict:
+    if not isinstance(node, dict):
+        return {}
+    if "choices" in node:
+        extracted = _extract_feature_choice_definitions({"_": node})
+        return extracted.get("_", {})
+    out = {}
+    for key, value in node.items():
+        extracted = _extract_feature_choice_definition_map(value)
+        if extracted:
+            out[key] = extracted
+    return out
+
+
+def extract_feature_choices() -> dict:
+    # feature_choices.json mixes rule metadata with player-facing option
+    # labels. Keep technical IDs/keys in English and translate only option
+    # names/descriptions.
+    src = _srd("feature_choices.json")
+    out = {}
+
+    option_sources = {}
+    for source_name, options in src.get("optionSources", {}).items():
+        extracted = _extract_feature_choice_options(options)
+        if extracted:
+            option_sources[source_name] = extracted
+    if option_sources:
+        out["optionSources"] = option_sources
+
+    for section in ("classFeatures", "subclassFeatures", "raceTraits", "feats"):
+        extracted = _extract_feature_choice_definition_map(src.get(section, {}))
+        if extracted:
+            out[section] = extracted
+
+    return out
+
+
 EXTRACTORS = {
     "languages.json":         extract_languages,
     "tools.json":             extract_tools,
     "feats.json":             extract_feats,
     "conditions.json":        extract_conditions,
+    "feature_choices.json":   extract_feature_choices,
     "skills.json":            extract_skills,
     "equipment.json":         extract_equipment,
     "magic_items.json":       extract_magic_items,

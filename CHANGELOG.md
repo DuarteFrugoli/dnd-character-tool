@@ -37,7 +37,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Persistência**: adicionado modelo `CharacterFeatureChoice` com serialização JSON.
 - **Engine de escolhas**: adicionada `FeatureChoiceEngine` para calcular escolhas pendentes por classe, subclasse, raça e talento.
 - **Assets**: `feature_choices.json` e `languages.json` foram registrados no `pubspec.yaml`.
-- **Versionamento**: versão do app atualizada para `1.0.4+18`.
 
 ---
 

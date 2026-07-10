@@ -1,8 +1,11 @@
+import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../data/constants/armor_class.dart';
 import '../../data/datasources/srd/srd_models.dart';
+import '../../data/feature_choice_engine.dart';
+import '../../data/feature_choice_option_resolver.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 
@@ -143,6 +146,9 @@ class CharacterDraft {
   final Map<String, String> resolvedEquipmentChoices;
   // Resultado da rolagem de ouro inicial (null = não rolado ainda)
   final int? rolledStartingGold;
+  final bool featureChoicesLoaded;
+  final List<FeatureChoiceRequest> featureChoiceRequests;
+  final List<CharacterFeatureChoice> featureChoices;
 
   const CharacterDraft({
     required this.id,
@@ -167,6 +173,9 @@ class CharacterDraft {
     this.classEquipmentChoices = const [],
     this.classEquipmentSpecifics = const {},
     this.rolledStartingGold,
+    this.featureChoicesLoaded = false,
+    this.featureChoiceRequests = const [],
+    this.featureChoices = const [],
   });
 
   CharacterDraft copyWith({
@@ -191,6 +200,9 @@ class CharacterDraft {
     List<int?>? classEquipmentChoices,
     Map<String, String>? classEquipmentSpecifics,
     Object? rolledStartingGold = _sentinel,
+    bool? featureChoicesLoaded,
+    List<FeatureChoiceRequest>? featureChoiceRequests,
+    List<CharacterFeatureChoice>? featureChoices,
   }) {
     return CharacterDraft(
       id: id,
@@ -222,13 +234,18 @@ class CharacterDraft {
           chosenToolProficiencies ?? this.chosenToolProficiencies,
       rolledValues: rolledValues ?? this.rolledValues,
       resolvedEquipmentChoices:
-          resolvedEquipmentChoices ?? this.resolvedEquipmentChoices,      classEquipmentChoices:
+          resolvedEquipmentChoices ?? this.resolvedEquipmentChoices,
+      classEquipmentChoices:
           classEquipmentChoices ?? this.classEquipmentChoices,
       classEquipmentSpecifics:
           classEquipmentSpecifics ?? this.classEquipmentSpecifics,
       rolledStartingGold: rolledStartingGold == _sentinel
           ? this.rolledStartingGold
           : rolledStartingGold as int?,
+      featureChoicesLoaded: featureChoicesLoaded ?? this.featureChoicesLoaded,
+      featureChoiceRequests:
+          featureChoiceRequests ?? this.featureChoiceRequests,
+      featureChoices: featureChoices ?? this.featureChoices,
     );
   }
 
@@ -362,6 +379,13 @@ class CharacterDraft {
     }
     // Idiomas livres precisam ser escolhidos
     if (chosenLanguages.length < languageChoicesNeeded) return false;
+    if (!featureChoicesLoaded) return false;
+    if (!FeatureChoiceEngine.allComplete(
+      featureChoiceRequests,
+      featureChoices,
+    )) {
+      return false;
+    }
     return true;
   }
 }
@@ -384,6 +408,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         chosenToolProficiencies: [],
         classEquipmentChoices: [],
         classEquipmentSpecifics: {},
+        featureChoicesLoaded: false,
+        featureChoiceRequests: const [],
+        featureChoices: const [],
       );
 
   void clearClass() => state = state.copyWith(
@@ -393,10 +420,18 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         chosenToolProficiencies: [],
         classEquipmentChoices: [],
         classEquipmentSpecifics: {},
+        featureChoicesLoaded: false,
+        featureChoiceRequests: const [],
+        featureChoices: const [],
       );
 
   void setSubclass(SrdSubclass? s) =>
-      state = state.copyWith(selectedSubclass: s);
+      state = state.copyWith(
+        selectedSubclass: s,
+        featureChoicesLoaded: false,
+        featureChoiceRequests: const [],
+        featureChoices: const [],
+      );
 
   void setRace(SrdRace r) => state = state.copyWith(
         selectedRace: r,
@@ -404,6 +439,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         freePicksDistribution: {},
         chosenLanguages: [],
         chosenToolProficiencies: [],
+        featureChoicesLoaded: false,
+        featureChoiceRequests: const [],
+        featureChoices: const [],
       );
 
   void clearRace() => state = state.copyWith(
@@ -412,10 +450,18 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         freePicksDistribution: {},
         chosenLanguages: [],
         chosenToolProficiencies: [],
+        featureChoicesLoaded: false,
+        featureChoiceRequests: const [],
+        featureChoices: const [],
       );
 
   void setSubrace(SrdSubrace? s) =>
-      state = state.copyWith(selectedSubrace: s);
+      state = state.copyWith(
+        selectedSubrace: s,
+        featureChoicesLoaded: false,
+        featureChoiceRequests: const [],
+        featureChoices: const [],
+      );
 
   void setBackground(SrdBackground b) => state = state.copyWith(
         selectedBackground: b,
@@ -427,6 +473,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         chosenLanguages: [],
         chosenToolProficiencies: [],
         resolvedEquipmentChoices: {},
+        featureChoicesLoaded: false,
+        featureChoiceRequests: const [],
+        featureChoices: const [],
       );
 
   void toggleStartingItem(String item) {
@@ -467,6 +516,21 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setChosenToolProficiencies(List<String> tools) =>
       state = state.copyWith(chosenToolProficiencies: tools);
 
+  void setFeatureChoiceRequests(List<FeatureChoiceRequest> requests) {
+    final choices = [
+      for (final request in requests)
+        request.findIn(state.featureChoices) ?? request.emptyChoice(),
+    ];
+    state = state.copyWith(
+      featureChoicesLoaded: true,
+      featureChoiceRequests: requests,
+      featureChoices: choices,
+    );
+  }
+
+  void setFeatureChoices(List<CharacterFeatureChoice> choices) =>
+      state = state.copyWith(featureChoices: choices);
+
   void setRolledStartingGold(int? gp) =>
       state = state.copyWith(rolledStartingGold: gp ?? _sentinel);
 
@@ -498,6 +562,57 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     state = state.copyWith(classEquipmentSpecifics: specifics);
   }
 
+  List<CharacterFeatureChoice> _featureChoicesForSave(CharacterDraft draft) {
+    final choices = List<CharacterFeatureChoice>.from(draft.featureChoices);
+
+    void upsert(CharacterFeatureChoice choice) {
+      final updated = FeatureChoiceEngine.upsertChoices(choices, [choice]);
+      choices
+        ..clear()
+        ..addAll(updated);
+    }
+
+    final race = draft.selectedRace;
+    if (race != null && race.traits.contains('Tool Proficiency')) {
+      final tool = draft.chosenToolProficiencies.firstOrNull;
+      if (tool != null && tool.isNotEmpty) {
+        upsert(
+          CharacterFeatureChoice(
+            sourceType: FeatureChoiceSourceType.raceTrait,
+            sourceName: 'Tool Proficiency',
+            featureName: 'Tool Proficiency',
+            choiceId: 'artisan_tool',
+            values: [FeatureChoiceOptionResolver.idFromName(tool)],
+          ),
+        );
+      }
+    }
+
+    final raceLanguageChoices = race?.languages
+            .where((language) =>
+                language.toLowerCase().contains('of your choice'))
+            .length ??
+        0;
+    if (race != null &&
+        race.traits.contains('Extra Language') &&
+        raceLanguageChoices > 0 &&
+        draft.chosenLanguages.isNotEmpty) {
+      upsert(
+        CharacterFeatureChoice(
+          sourceType: FeatureChoiceSourceType.raceTrait,
+          sourceName: 'Extra Language',
+          featureName: 'Extra Language',
+          choiceId: 'extra_language',
+          values: [
+            FeatureChoiceOptionResolver.idFromName(draft.chosenLanguages.first),
+          ],
+        ),
+      );
+    }
+
+    return choices;
+  }
+
   Future<Character> buildAndSave(WidgetRef ref, {String fallbackName = 'Unnamed Hero'}) async {
     final draft = state;
     final repo = ref.read(characterRepositoryProvider);
@@ -517,6 +632,63 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     // Load the SRD items lookup table for accurate type/category/properties.
     // Falls back to keyword heuristic for unknown items.
     final itemsDb = await ref.read(srdItemsProvider.future);
+    final srd = ref.read(srdDataSourceProvider);
+    final allSkills = await srd.getSkills();
+    final allLanguages = await srd.getLanguages();
+    final allSpells = await srd.getSpells();
+
+    final skillById = {
+      for (final skill in allSkills)
+        FeatureChoiceOptionResolver.idFromName(skill.name): skill.name,
+    };
+    final languageById = {
+      for (final language in allLanguages)
+        FeatureChoiceOptionResolver.idFromName(language.name): language.name,
+    };
+    final spellByName = {
+      for (final spell in allSpells) spell.name.toLowerCase(): spell,
+    };
+
+    final featureChoicesForSave = _featureChoicesForSave(draft);
+    final skillProficiencies = <String>[
+      ...draft.grantedSkills,
+      ...draft.chosenSkills,
+    ];
+    final characterLanguages = <String>[
+      ...draft.fixedRaceLanguages,
+      ...draft.chosenLanguages,
+    ];
+    final featureSpells = <KnownSpell>[];
+
+    void addUniqueString(List<String> values, String value) {
+      if (values.any((existing) => existing.toLowerCase() == value.toLowerCase())) {
+        return;
+      }
+      values.add(value);
+    }
+
+    for (final choice in featureChoicesForSave) {
+      final request = draft.featureChoiceRequests.firstWhereOrNull(
+        (request) => request.findIn([choice]) != null,
+      );
+      final type = request?.requirement.type;
+      for (final value in choice.values) {
+        switch (type) {
+          case 'language':
+            addUniqueString(characterLanguages, languageById[value] ?? value);
+            break;
+          case 'skill':
+            addUniqueString(skillProficiencies, skillById[value] ?? value);
+            break;
+          case 'cantrip':
+            final spell = spellByName[value.toLowerCase()];
+            featureSpells.add(KnownSpell(name: value, level: spell?.level ?? 0));
+            break;
+          default:
+            break;
+        }
+      }
+    }
 
     SrdItemData? lookupItem(String name) {
       final lower = name.toLowerCase();
@@ -640,14 +812,11 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       speed: draft.selectedRace!.speed,
       proficiencyBonus: 2,
       savingThrowProficiencies: draft.selectedClass!.savingThrows,
-      skillProficiencies: [
-        ...draft.grantedSkills,
-        ...draft.chosenSkills,
-      ],
+      skillProficiencies: skillProficiencies,
       skillExpertises: [],
       equipment: startingEquipment,
       currency: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': startingGp, 'pp': 0},
-      spells: [],
+      spells: featureSpells,
       spellSlots: SpellSlots(
         total: List.filled(9, 0),
         used: List.filled(9, 0),
@@ -656,7 +825,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
           .where((t) => t.isNotEmpty)
           .map((t) => 'Tool Proficiency: $t')
           .toList(),
-      languages: [...draft.fixedRaceLanguages, ...draft.chosenLanguages],
+      featureChoices: featureChoicesForSave,
+      languages: characterLanguages,
       personality: const CharacterPersonality(
         traits: '',
         ideals: '',

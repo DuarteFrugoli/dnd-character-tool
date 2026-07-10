@@ -3,15 +3,15 @@
     "battle_master_maneuvers": {
       "commanders_strike": {
         "name": "Colpo del comandante",
-        "description": "Quando esegui l'azione Attacco, puoi rinunciare a un attacco e utilizzare un'azione bonus per ordinare a un alleato di colpire."
+        "description": "Quando esegui l'azione Attacco, rinuncia a un attacco e usa un'azione bonus per consentire a un alleato che può vederti o sentirti di usare la sua reazione per effettuare un attacco con l'arma. Se colpisce, aggiungi il tuo dado superiorità al danno dell'attacco."
       },
       "disarming_attack": {
         "name": "Attacco disarmante",
-        "description": "Quando colpisci una creatura con un attacco con un'arma, puoi spendere un dado superiorità per tentare di disarmare il bersaglio."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Il bersaglio deve effettuare un tiro salvezza sulla Forza o lasciare cadere un oggetto a tua scelta che tiene in mano."
       },
       "distracting_strike": {
         "name": "Colpo distraente",
-        "description": "Quando colpisci una creatura con un attacco con un'arma, puoi spendere un dado superiorità per distrarre la creatura."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Il successivo tiro per colpire contro il bersaglio da parte di una creatura diversa da te ha vantaggio se effettuato prima dell'inizio del tuo turno successivo."
       },
       "evasive_footwork": {
         "name": "Gioco di gambe evasivo",
@@ -19,27 +19,27 @@
       },
       "feinting_attack": {
         "name": "Attacco con finta",
-        "description": "Puoi spendere un dado superiorità e utilizzare un'azione bonus per fintare, ottenendo vantaggio al tuo prossimo attacco contro una creatura."
+        "description": "Spendi un'azione bonus e un dado superiorità per fintare contro una creatura entro 1,5 metri. Hai vantaggio al tuo prossimo attacco contro di esso in questo turno e, se quell'attacco va a segno, aggiungi il dado superiorità al danno."
       },
       "goading_attack": {
         "name": "Attacco pungente",
-        "description": "Quando colpisci con un attacco con un'arma, puoi spendere un dado superiorità per spingere il bersaglio ad attaccarti."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Il bersaglio deve effettuare un tiro salvezza su Saggezza o avere svantaggio sugli attacchi contro creature diverse da te fino alla fine del tuo turno successivo."
       },
       "lunging_attack": {
         "name": "Attacco in affondo",
-        "description": "Quando effettui un attacco con un'arma da mischia, puoi spendere un dado superiorità per aumentare la portata di quell'attacco."
+        "description": "Quando effettui un attacco con un'arma da mischia, spendi un dado superiorità per aumentare la tua portata di 1,5 metri per quell'attacco. Se l'attacco va a segno, sommare il dado superiorità al danno."
       },
       "maneuvering_attack": {
         "name": "Attacco di manovra",
-        "description": "Quando colpisci con un attacco con un'arma, puoi spendere un dado superiorità per consentire a un alleato di muoversi senza provocare dal bersaglio."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Scegli un alleato che possa vederti o sentirti; quell'alleato può usare la sua reazione per muoversi fino alla metà della sua velocità senza provocare attacchi di opportunità da parte del bersaglio."
       },
       "menacing_attack": {
         "name": "Attacco minaccioso",
-        "description": "Quando colpisci con un attacco con arma, puoi spendere un dado superiorità per tentare di spaventare il bersaglio."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Il bersaglio deve effettuare un tiro salvezza su Saggezza o avrà paura di te fino alla fine del tuo turno successivo."
       },
       "parry": {
         "name": "Parare",
-        "description": "Quando un'altra creatura ti danneggia con un attacco in mischia, puoi spendere un dado superiorità per ridurre il danno."
+        "description": "Quando un'altra creatura ti danneggia con un attacco in mischia, usa la tua reazione e spendi un dado superiorità per ridurre il danno in base al tiro di dado + il tuo modificatore di Destrezza."
       },
       "precision_attack": {
         "name": "Attacco di precisione",
@@ -47,233 +47,297 @@
       },
       "pushing_attack": {
         "name": "Attacco spingente",
-        "description": "Quando colpisci con un attacco con arma, puoi spendere un dado superiorità per tentare di respingere il bersaglio."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Se il bersaglio è Grande o più piccolo, deve effettuare un tiro salvezza sulla Forza o essere spinto fino a 4,5 metri lontano da te."
       },
       "rally": {
         "name": "Rally",
-        "description": "Durante il tuo turno, puoi spendere un dado superiorità e utilizzare un'azione bonus per rafforzare un alleato con punti ferita temporanei."
+        "description": "Durante il tuo turno, spendi un'azione bonus e un dado superiorità per dare a un alleato che può vederti o sentirti punti ferita temporanei pari al tiro di dado + il tuo modificatore di Carisma."
       },
       "riposte": {
         "name": "Risposta",
-        "description": "Quando una creatura ti manca con un attacco in mischia, puoi spendere un dado superiorità per effettuare un attacco con arma da mischia contro di essa."
+        "description": "Quando una creatura ti manca con un attacco in mischia, usa la tua reazione e spendi un dado superiorità per effettuare un attacco con arma da mischia contro di essa. Se colpisci, aggiungi il dado superiorità al danno."
       },
       "sweeping_attack": {
         "name": "Attacco devastante",
-        "description": "Quando colpisci con un attacco con arma da mischia, puoi spendere un dado superiorità per danneggiare un'altra creatura a portata."
+        "description": "Quando colpisci con un attacco con arma da mischia, spendi un dado superiorità per danneggiare un'altra creatura entro 1,5 metri dal bersaglio originale e alla tua portata. Se il tiro per colpire originale dovesse colpire la seconda creatura, questa subirà danni pari al dado superiorità."
       },
       "trip_attack": {
         "name": "Attacco in viaggio",
-        "description": "Quando colpisci con un attacco con arma, puoi spendere un dado superiorità per tentare di buttare a terra il bersaglio."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Se il bersaglio è Grande o più piccolo, deve effettuare un tiro salvezza sulla Forza o cadere prono."
       }
     },
     "fighting_styles_fighter": {
       "archery": {
-        "name": "Tiro con l'arco"
+        "name": "Tiro con l'arco",
+        "description": "Ottieni bonus +2 ai tiri per colpire effettuati con armi a distanza."
       },
       "defense": {
-        "name": "Difesa"
+        "name": "Difesa",
+        "description": "Mentre indossi un'armatura, ottieni bonus +1 alla CA."
       },
       "dueling": {
-        "name": "Duello"
+        "name": "Duello",
+        "description": "Quando impugni un'arma da mischia in una mano e nessun'altra arma, ottieni bonus +2 ai tiri per i danni con quell'arma."
       },
       "great_weapon_fighting": {
-        "name": "Grande combattimento con armi"
+        "name": "Grande combattimento con armi",
+        "description": "Quando ottieni 1 o 2 su un dado di danno per un'arma da mischia tenuta con due mani, lancia nuovamente il dado e usa il nuovo tiro. L'arma deve avere la proprietà a due mani o versatile."
       },
       "protection": {
-        "name": "Protezione"
+        "name": "Protezione",
+        "description": "Quando una creatura attacca un bersaglio diverso da te entro 1,5 metri, puoi usare la tua reazione per imporre svantaggio al tiro per colpire. Devi impugnare uno scudo."
       },
       "two_weapon_fighting": {
-        "name": "Combattimento con due armi"
+        "name": "Combattimento con due armi",
+        "description": "Aggiungi il tuo modificatore di abilità al danno del tuo attacco con la seconda arma quando combatti con due armi."
       }
     },
     "fighting_styles_paladin": {
       "defense": {
-        "name": "Difesa"
+        "name": "Difesa",
+        "description": "Mentre indossi un'armatura, ottieni bonus +1 alla CA."
       },
       "dueling": {
-        "name": "Duello"
+        "name": "Duello",
+        "description": "Quando impugni un'arma da mischia in una mano e nessun'altra arma, ottieni bonus +2 ai tiri per i danni con quell'arma."
       },
       "great_weapon_fighting": {
-        "name": "Grande combattimento con armi"
+        "name": "Grande combattimento con armi",
+        "description": "Quando ottieni 1 o 2 su un dado di danno per un'arma da mischia tenuta con due mani, lancia nuovamente il dado e usa il nuovo tiro. L'arma deve avere la proprietà a due mani o versatile."
       },
       "protection": {
-        "name": "Protezione"
+        "name": "Protezione",
+        "description": "Quando una creatura attacca un bersaglio diverso da te entro 1,5 metri, puoi usare la tua reazione per imporre svantaggio al tiro per colpire. Devi impugnare uno scudo."
       }
     },
     "fighting_styles_ranger": {
       "archery": {
-        "name": "Tiro con l'arco"
+        "name": "Tiro con l'arco",
+        "description": "Ottieni bonus +2 ai tiri per colpire effettuati con armi a distanza."
       },
       "defense": {
-        "name": "Difesa"
+        "name": "Difesa",
+        "description": "Mentre indossi un'armatura, ottieni bonus +1 alla CA."
       },
       "dueling": {
-        "name": "Duello"
+        "name": "Duello",
+        "description": "Quando impugni un'arma da mischia in una mano e nessun'altra arma, ottieni bonus +2 ai tiri per i danni con quell'arma."
       },
       "two_weapon_fighting": {
-        "name": "Combattimento con due armi"
+        "name": "Combattimento con due armi",
+        "description": "Aggiungi il tuo modificatore di abilità al danno del tuo attacco con la seconda arma quando combatti con due armi."
       }
     },
     "metamagic_options": {
       "careful_spell": {
-        "name": "Incantesimo attento"
+        "name": "Incantesimo attento",
+        "description": "Spendi 1 punto stregoneria e scegli creature fino al tuo modificatore di Carisma (minimo 1). Le creature prescelte superano automaticamente il tiro salvezza dell'incantesimo."
       },
       "distant_spell": {
-        "name": "Incantesimo lontano"
+        "name": "Incantesimo lontano",
+        "description": "Spendi 1 punto stregoneria per raddoppiare la portata di un incantesimo se ha una portata di 1,5 metri o superiore. Se l'incantesimo ha una portata di contatto, la sua portata diventa 9 metri."
       },
       "empowered_spell": {
-        "name": "Incantesimo Potenziato"
+        "name": "Incantesimo Potenziato",
+        "description": "Spendi 1 punto stregoneria per ripetere il tiro di un numero di dadi di danno di un incantesimo fino al tuo modificatore di Carisma (minimo 1). È necessario utilizzare i nuovi rotoli."
       },
       "extended_spell": {
-        "name": "Incantesimo esteso"
+        "name": "Incantesimo esteso",
+        "description": "Spendi 1 punto stregoneria per raddoppiare la durata di un incantesimo se dura 1 minuto o più, fino a una durata massima di 24 ore."
       },
       "heightened_spell": {
-        "name": "Incantesimo intensificato"
+        "name": "Incantesimo intensificato",
+        "description": "Spendi 3 punti stregoneria per dare uno svantaggio a un bersaglio al suo primo tiro salvezza contro l'incantesimo."
       },
       "quickened_spell": {
-        "name": "Incantesimo Rapido"
+        "name": "Incantesimo Rapido",
+        "description": "Spendi invece 2 punti stregoneria per lanciare un incantesimo con un tempo di lancio di 1 azione come azione bonus."
       },
       "subtle_spell": {
-        "name": "Incantesimo sottile"
+        "name": "Incantesimo sottile",
+        "description": "Spendi 1 punto stregoneria per lanciare un incantesimo senza componenti somatiche o verbali."
       },
       "twinned_spell": {
-        "name": "Incantesimo gemellato"
+        "name": "Incantesimo gemellato",
+        "description": "Spendere punti stregoneria pari al livello dell'incantesimo, o 1 punto per un trucchetto, per prendere di mira una seconda creatura con un incantesimo che normalmente prende di mira solo una creatura e non ha raggio d'azione di sé."
       }
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "Aberrazioni"
+        "name": "Aberrazioni",
+        "description": "Scegli le aberrazioni come uno dei tuoi tipi di nemici preferiti."
       },
       "beasts": {
-        "name": "Bestie"
+        "name": "Bestie",
+        "description": "Scegli le bestie come uno dei tuoi tipi di nemici preferiti."
       },
       "celestials": {
-        "name": "Celestiali"
+        "name": "Celestiali",
+        "description": "Scegli i celestiali come uno dei tuoi tipi di nemici preferiti."
       },
       "constructs": {
-        "name": "Costrutti"
+        "name": "Costrutti",
+        "description": "Scegli i costrutti come uno dei tuoi tipi di nemici preferiti."
       },
       "dragons": {
-        "name": "Draghi"
+        "name": "Draghi",
+        "description": "Scegli i draghi come uno dei tuoi tipi di nemici preferiti."
       },
       "elementals": {
-        "name": "Elementali"
+        "name": "Elementali",
+        "description": "Scegli gli elementali come uno dei tuoi tipi di nemici preferiti."
       },
       "fey": {
-        "name": "Fey"
+        "name": "Fey",
+        "description": "Scegli il folletto come uno dei tuoi tipi di nemici preferiti."
       },
       "fiends": {
-        "name": "Demoni"
+        "name": "Demoni",
+        "description": "Scegli i demoni come uno dei tuoi tipi di nemici preferiti."
       },
       "giants": {
-        "name": "Giganti"
+        "name": "Giganti",
+        "description": "Scegli i giganti come uno dei tuoi tipi di nemici preferiti."
       },
       "monstrosities": {
-        "name": "Mostruosità"
+        "name": "Mostruosità",
+        "description": "Scegli le mostruosità come uno dei tuoi tipi di nemici preferiti."
       },
       "oozes": {
-        "name": "Trasuda"
+        "name": "Trasuda",
+        "description": "Scegli le melme come uno dei tuoi tipi di nemici preferiti."
       },
       "plants": {
-        "name": "Piante"
+        "name": "Piante",
+        "description": "Scegli le piante come uno dei tuoi tipi di nemici preferiti."
       },
       "undead": {
-        "name": "Non morti"
+        "name": "Non morti",
+        "description": "Scegli i non morti come uno dei tuoi tipi di nemici preferiti."
       }
     },
     "favored_terrain": {
       "arctic": {
-        "name": "artico"
+        "name": "artico",
+        "description": "Scegli il terreno artico come uno dei tuoi terreni preferiti."
       },
       "coast": {
-        "name": "Costa"
+        "name": "Costa",
+        "description": "Scegli il terreno costiero come uno dei tuoi terreni preferiti."
       },
       "desert": {
-        "name": "Deserto"
+        "name": "Deserto",
+        "description": "Scegli il terreno desertico come uno dei tuoi terreni preferiti."
       },
       "forest": {
-        "name": "Foresta"
+        "name": "Foresta",
+        "description": "Scegli il terreno forestale come uno dei tuoi terreni preferiti."
       },
       "grassland": {
-        "name": "Prateria"
+        "name": "Prateria",
+        "description": "Scegli il terreno prateria come uno dei tuoi terreni preferiti."
       },
       "mountain": {
-        "name": "Montagna"
+        "name": "Montagna",
+        "description": "Scegli il terreno montano come uno dei tuoi terreni preferiti."
       },
       "swamp": {
-        "name": "Pantano"
+        "name": "Pantano",
+        "description": "Scegli il terreno paludoso come uno dei tuoi terreni preferiti."
       },
       "underdark": {
-        "name": "Sottosuolo"
+        "name": "Sottosuolo",
+        "description": "Scegli il Sottosuolo come uno dei tuoi terreni preferiti."
       }
     },
     "damage_types_elemental": {
       "acid": {
-        "name": "Acido"
+        "name": "Acido",
+        "description": "Scegli l'acido come tipo di danno influenzato da questa funzione."
       },
       "cold": {
-        "name": "Freddo"
+        "name": "Freddo",
+        "description": "Scegli freddo come tipo di danno influenzato da questa funzionalità."
       },
       "fire": {
-        "name": "Fuoco"
+        "name": "Fuoco",
+        "description": "Scegli il fuoco come tipo di danno influenzato da questa funzione."
       },
       "lightning": {
-        "name": "Fulmine"
+        "name": "Fulmine",
+        "description": "Scegli il fulmine come tipo di danno influenzato da questa funzione."
       },
       "thunder": {
-        "name": "Tuono"
+        "name": "Tuono",
+        "description": "Scegli il tuono come tipo di danno influenzato da questa funzione."
       }
     },
     "ability_scores": {
       "strength": {
-        "name": "Forza"
+        "name": "Forza",
+        "description": "Scegli Forza per l'aumento di caratteristica, la competenza o la CD del tiro salvezza di questo privilegio."
       },
       "dexterity": {
-        "name": "Destrezza"
+        "name": "Destrezza",
+        "description": "Scegli Destrezza per l'aumento di caratteristica, la competenza o la CD del tiro salvezza di questo privilegio."
       },
       "constitution": {
-        "name": "Costituzione"
+        "name": "Costituzione",
+        "description": "Scegli Costituzione per l'aumento di caratteristica, la competenza o la CD del tiro salvezza di questo privilegio."
       },
       "intelligence": {
-        "name": "Intelligenza"
+        "name": "Intelligenza",
+        "description": "Scegli Intelligenza per l'aumento di caratteristica, la competenza o la CD del tiro salvezza di questo privilegio."
       },
       "wisdom": {
-        "name": "Saggezza"
+        "name": "Saggezza",
+        "description": "Scegli Saggezza per l'aumento di caratteristica, la competenza o la CD del tiro salvezza di questo privilegio."
       },
       "charisma": {
-        "name": "Carisma"
+        "name": "Carisma",
+        "description": "Scegli Carisma per l'aumento di caratteristica, la competenza o la CD del tiro salvezza di questo privilegio."
       }
     },
     "draconic_ancestry": {
       "black": {
-        "name": "Nero"
+        "name": "Nero",
+        "description": "Scegli l'ascendenza del drago nero, associato al danno da acido."
       },
       "blue": {
-        "name": "Blu"
+        "name": "Blu",
+        "description": "Scegli la stirpe del drago blu, associata al danno da fulmine."
       },
       "brass": {
-        "name": "Ottone"
+        "name": "Ottone",
+        "description": "Scegli l'ascendenza del drago d'ottone, associato al danno da fuoco."
       },
       "bronze": {
-        "name": "Bronzo"
+        "name": "Bronzo",
+        "description": "Scegli l'ascendenza del drago di bronzo, associato al danno da fulmine."
       },
       "copper": {
-        "name": "Rame"
+        "name": "Rame",
+        "description": "Scegli l'ascendenza del drago di rame, associato al danno da acido."
       },
       "gold": {
-        "name": "Oro"
+        "name": "Oro",
+        "description": "Scegli l'ascendenza del drago d'oro, associato al danno da fuoco."
       },
       "green": {
-        "name": "Verde"
+        "name": "Verde",
+        "description": "Scegli l'ascendenza del drago verde, associata al danno da veleno."
       },
       "red": {
-        "name": "Rosso"
+        "name": "Rosso",
+        "description": "Scegli l'ascendenza del drago rosso, associata al danno da fuoco."
       },
       "silver": {
-        "name": "Argento"
+        "name": "Argento",
+        "description": "Scegli la stirpe del drago d'argento, associata al danno da freddo."
       },
       "white": {
-        "name": "Bianco"
+        "name": "Bianco",
+        "description": "Scegli la discendenza del drago bianco, associata al danno da freddo."
       }
     }
   },
@@ -284,13 +348,16 @@
           "pact_boon": {
             "options": {
               "pact_of_the_chain": {
-                "name": "Patto di Catena"
+                "name": "Patto di Catena",
+                "description": "Impari a trovare familiarità come un rituale. Quando lo lanci, puoi scegliere un normale famiglio o una di queste forme speciali: diavoletto, pseudodrago, quasit o folletto."
               },
               "pact_of_the_blade": {
-                "name": "Patto della Lama"
+                "name": "Patto della Lama",
+                "description": "Crea un'arma del patto nella tua mano vuota o vincola un'arma magica come arma del patto."
               },
               "pact_of_the_tome": {
-                "name": "Patto del Tomo"
+                "name": "Patto del Tomo",
+                "description": "Ottieni un Libro delle Ombre con tre trucchetti dalla lista degli incantesimi di qualsiasi classe."
               }
             }
           }
@@ -306,10 +373,12 @@
             "maneuver_dc_ability": {
               "options": {
                 "strength": {
-                  "name": "Forza"
+                  "name": "Forza",
+                  "description": "Usa la Forza per calcolare la CD del tiro salvezza per le tue manovre."
                 },
                 "dexterity": {
-                  "name": "Destrezza"
+                  "name": "Destrezza",
+                  "description": "Usa la Destrezza per calcolare la CD del tiro salvezza per le tue manovre."
                 }
               }
             }
@@ -324,13 +393,16 @@
             "hunters_prey": {
               "options": {
                 "colossus_slayer": {
-                  "name": "Uccisore di colossi"
+                  "name": "Uccisore di colossi",
+                  "description": "Una volta per ciascuno dei tuoi turni, quando colpisci una creatura al di sotto dei suoi punti ferita massimi con un attacco con un'arma, l'attacco infligge 1d8 danni aggiuntivi."
                 },
                 "giant_killer": {
-                  "name": "Assassino di giganti"
+                  "name": "Assassino di giganti",
+                  "description": "Quando una creatura Grande o più grande vicino a te ti attacca, usa la tua reazione per attaccarla dopo il suo attacco."
                 },
                 "horde_breaker": {
-                  "name": "Spezzaorda"
+                  "name": "Spezzaorda",
+                  "description": "Una volta per ciascuno dei tuoi turni, effettua un attacco con arma extra contro una creatura diversa vicino al tuo bersaglio originale."
                 }
               }
             }
@@ -341,13 +413,16 @@
             "defensive_tactics": {
               "options": {
                 "escape_the_horde": {
-                  "name": "Fuggi dall'Orda"
+                  "name": "Fuggi dall'Orda",
+                  "description": "Gli attacchi di opportunità contro di te vengono effettuati con svantaggio."
                 },
                 "multiattack_defense": {
-                  "name": "Difesa multiattacco"
+                  "name": "Difesa multiattacco",
+                  "description": "Quando una creatura ti colpisce con un attacco, ottieni un bonus di +4 alla CA contro tutti gli attacchi successivi di quella creatura per il resto del turno."
                 },
                 "steel_will": {
-                  "name": "Volontà d'acciaio"
+                  "name": "Volontà d'acciaio",
+                  "description": "Ottieni vantaggio ai tiri salvezza contro la paura."
                 }
               }
             }
@@ -358,10 +433,12 @@
             "multiattack": {
               "options": {
                 "volley": {
-                  "name": "Volley"
+                  "name": "Volley",
+                  "description": "Usa la tua azione per effettuare un attacco a distanza contro un qualsiasi numero di creature all'interno di una piccola area nel raggio d'azione."
                 },
                 "whirlwind_attack": {
-                  "name": "Attacco vorticoso"
+                  "name": "Attacco vorticoso",
+                  "description": "Usa la tua azione per effettuare attacchi in mischia contro un qualsiasi numero di creature entro 1,5 metri da te."
                 }
               }
             }
@@ -372,13 +449,16 @@
             "superior_hunters_defense": {
               "options": {
                 "evasion": {
-                  "name": "Evasione"
+                  "name": "Evasione",
+                  "description": "Non subisci danni se viene effettuato con successo un tiro salvezza su Destrezza che normalmente infliggerebbe la metà dei danni."
                 },
                 "stand_against_the_tide": {
-                  "name": "Stare contro la marea"
+                  "name": "Stare contro la marea",
+                  "description": "Quando una creatura ostile ti manca con un attacco in mischia, reindirizza l'attacco contro un'altra creatura."
                 },
                 "uncanny_dodge": {
-                  "name": "Schivata inquietante"
+                  "name": "Schivata inquietante",
+                  "description": "Quando un attaccante che puoi vedere ti colpisce, usa la tua reazione per dimezzare il danno dell'attacco."
                 }
               }
             }
@@ -393,13 +473,16 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Gli strumenti di Smith"
+              "name": "Gli strumenti di Smith",
+              "description": "Acquisisci competenza con gli strumenti del fabbro."
             },
             "brewers_supplies": {
-              "name": "Forniture del birraio"
+              "name": "Forniture del birraio",
+              "description": "Acquisisci competenza con le forniture del birrificio."
             },
             "masons_tools": {
-              "name": "Gli strumenti del muratore"
+              "name": "Gli strumenti del muratore",
+              "description": "Acquisisci competenza con gli strumenti da muratore."
             }
           }
         }
@@ -412,22 +495,28 @@
         "spell_class": {
           "options": {
             "bard": {
-              "name": "Bardo"
+              "name": "Bardo",
+              "description": "Scegli Bardo come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "cleric": {
-              "name": "Chierico"
+              "name": "Chierico",
+              "description": "Scegli Chierico come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "druid": {
-              "name": "druido"
+              "name": "druido",
+              "description": "Scegli Druido come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "sorcerer": {
-              "name": "Stregone"
+              "name": "Stregone",
+              "description": "Scegli lo Stregone come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "warlock": {
-              "name": "Stregone"
+              "name": "Stregone",
+              "description": "Scegli Warlock come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "wizard": {
-              "name": "Procedura guidata"
+              "name": "Procedura guidata",
+              "description": "Scegli il Mago come classe di origine per i trucchetti e gli incantesimi di questo talento."
             }
           }
         }
@@ -438,10 +527,12 @@
         "maneuver_dc_ability": {
           "options": {
             "strength": {
-              "name": "Forza"
+              "name": "Forza",
+              "description": "Usa la Forza per calcolare la CD del tiro salvezza per le tue manovre."
             },
             "dexterity": {
-              "name": "Destrezza"
+              "name": "Destrezza",
+              "description": "Usa la Destrezza per calcolare la CD del tiro salvezza per le tue manovre."
             }
           }
         }
@@ -452,10 +543,12 @@
         "ability": {
           "options": {
             "strength": {
-              "name": "Forza"
+              "name": "Forza",
+              "description": "Aumenta il tuo punteggio di Forza per questa impresa."
             },
             "dexterity": {
-              "name": "Destrezza"
+              "name": "Destrezza",
+              "description": "Aumenta il tuo punteggio di Destrezza per questa impresa."
             }
           }
         }

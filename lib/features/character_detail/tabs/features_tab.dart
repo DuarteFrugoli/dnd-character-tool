@@ -39,13 +39,18 @@ List<Widget> _featureChoiceWidgets({
   for (final request in requests) {
     final choice = request.findIn(character.featureChoices);
     if (choice == null || choice.values.isEmpty) continue;
-    final resolver = _FeatureChoiceOptionResolver(
+    final resolver = FeatureChoiceOptionResolver(
       request: request,
       catalog: data.featureChoiceCatalog,
       i18n: i18n,
       skills: data.skills,
       tools: data.tools,
       spells: data.spells,
+      languages: data.languages,
+      weapons: data.weapons,
+      character: character,
+      relatedRequests: requests,
+      choices: character.featureChoices,
     );
     chips.addAll(
       choice.values.map((value) {
@@ -159,34 +164,39 @@ void _showFeatureChoiceValueDetails(
       final scheme = theme.colorScheme;
       final l10n = AppLocalizations.of(context)!;
       return SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(24, 4, 24, 24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title, style: theme.textTheme.titleLarge),
-              const SizedBox(height: 4),
-              Text(
-                featureName,
-                style: theme.textTheme.labelMedium?.copyWith(
-                  color: scheme.onSurfaceVariant,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.sizeOf(context).height * 0.75,
+          ),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(24, 4, 24, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: theme.textTheme.titleLarge),
+                const SizedBox(height: 4),
+                Text(
+                  featureName,
+                  style: theme.textTheme.labelMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                description,
-                style: theme.textTheme.bodyMedium?.copyWith(height: 1.45),
-              ),
-              const SizedBox(height: 16),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(l10n.dialogClose),
+                const SizedBox(height: 16),
+                Text(
+                  description,
+                  style: theme.textTheme.bodyMedium?.copyWith(height: 1.45),
                 ),
-              ),
-            ],
+                const SizedBox(height: 16),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(l10n.dialogClose),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
@@ -230,7 +240,7 @@ void _openFeatureChoiceEditorSheet({
                   Expanded(
                     child: PrimaryScrollController(
                       controller: controller,
-                      child: _FeatureChoiceEditor(
+                      child: FeatureChoiceEditor(
                         requests: requests,
                         initialChoices: editedChoices,
                         catalog: data.featureChoiceCatalog,
@@ -239,6 +249,10 @@ void _openFeatureChoiceEditorSheet({
                         skills: data.skills,
                         tools: data.tools,
                         spells: data.spells,
+                        languages: data.languages,
+                        weapons: data.weapons,
+                        featureLabelBuilder: (request) =>
+                            _featureChoiceRequestFeatureLabel(request, i18n),
                         onChanged: (choices) {
                           setSheetState(() => editedChoices = choices);
                         },
@@ -326,8 +340,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
         current.level != previous.level ||
         current.race != previous.race ||
         current.subrace != previous.subrace ||
-        current.background != previous.background ||
-        current.featureChoices != previous.featureChoices) {
+        current.background != previous.background) {
       _future = _load();
     }
   }
@@ -345,6 +358,8 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
       srd.getSkills(),
       srd.getTools(),
       srd.getSpells(),
+      srd.getLanguages(),
+      srd.getWeapons(),
     ]);
     final classFeatures = results[0] as List<SrdClassFeature>;
     final races = results[1] as List<SrdRace>;
@@ -355,6 +370,8 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
     final skills = results[6] as List<SrdSkill>;
     final tools = results[7] as List<SrdTool>;
     final spells = results[8] as List<SrdSpell>;
+    final languages = results[9] as List<SrdLanguage>;
+    final weapons = results[10] as List<SrdWeapon>;
 
     final race = races
         .where((r) => r.name == widget.character.race)
@@ -383,6 +400,8 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
       skills: skills,
       tools: tools,
       spells: spells,
+      languages: languages,
+      weapons: weapons,
     );
   }
 
@@ -495,6 +514,8 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
                 _ExtraFeaturesSection(
                   features: classExtras,
                   characterId: widget.characterId,
+                  character: widget.character,
+                  data: data,
                 ),
               ],
             ],
@@ -523,6 +544,8 @@ class _FeaturesData {
   final List<SrdSkill> skills;
   final List<SrdTool> tools;
   final List<SrdSpell> spells;
+  final List<SrdLanguage> languages;
+  final List<SrdWeapon> weapons;
 
   const _FeaturesData({
     required this.classFeatures,
@@ -537,6 +560,8 @@ class _FeaturesData {
     required this.skills,
     required this.tools,
     required this.spells,
+    required this.languages,
+    required this.weapons,
   });
 }
 
@@ -939,10 +964,40 @@ class _ExtraFeaturesSection extends ConsumerWidget {
   const _ExtraFeaturesSection({
     required this.features,
     required this.characterId,
+    required this.character,
+    required this.data,
   });
 
   final List<CharacterExtraFeature> features;
   final String characterId;
+  final Character character;
+  final _FeaturesData data;
+
+  List<FeatureChoiceRequest> _requestsForExtra(CharacterExtraFeature feature) {
+    final catalog = data.featureChoiceCatalog;
+    final classRequests = FeatureChoiceEngine.requestsForClassFeature(
+      catalog: catalog,
+      className: feature.sourceClass,
+      featureName: feature.name,
+      level: feature.level,
+    );
+    if (classRequests.isNotEmpty) return classRequests;
+
+    final subclassRequests = FeatureChoiceEngine.requestsForSubclassFeature(
+      catalog: catalog,
+      className: character.characterClass,
+      subclassName: feature.sourceClass,
+      featureName: feature.name,
+      level: feature.level,
+    );
+    if (subclassRequests.isNotEmpty) return subclassRequests;
+
+    return FeatureChoiceEngine.requestsForRaceTrait(
+      catalog: catalog,
+      traitName: feature.name,
+      level: character.level,
+    );
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -962,8 +1017,9 @@ class _ExtraFeaturesSection extends ConsumerWidget {
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
-        ...features.map(
-          (f) => Card(
+        ...features.map((f) {
+          final requests = _requestsForExtra(f);
+          return Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
               title: Row(
@@ -1023,6 +1079,14 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                 },
               ),
               children: [
+                ..._featureChoiceWidgets(
+                  context: context,
+                  ref: ref,
+                  characterId: characterId,
+                  character: character,
+                  requests: requests,
+                  data: data,
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
@@ -1037,8 +1101,8 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                 ),
               ],
             ),
-          ),
-        ),
+          );
+        }),
       ],
     );
   }

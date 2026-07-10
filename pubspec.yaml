@@ -80,6 +80,7 @@ flutter:
     - assets/data/srd/subclasses.json
     - assets/data/srd/backgrounds.json
     - assets/data/srd/skills.json
+    - assets/data/srd/languages.json
     - assets/data/srd/spells.json
     - assets/data/srd/equipment.json
     - assets/data/srd/class_features.json

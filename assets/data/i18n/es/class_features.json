@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Furia",
-      "description": "En la batalla, luchas con una ferocidad primordial. En tu turno, puedes entrar en ira como acción adicional. Mientras estás furioso, tienes ventaja en las pruebas de Fuerza y ​​en los tiros de salvación, obtienes una bonificación a las tiradas de daño cuerpo a cuerpo usando Fuerza y ​​tienes resistencia al daño contundente, perforante y cortante. Tu rabia dura 1 minuto. Termina antes si quedas inconsciente o si tu turno termina y no has atacado a una criatura hostil desde tu último turno ni has recibido daño desde entonces."
+      "description": "En la batalla, luchas con una ferocidad primordial. En tu turno, puedes entrar en ira como acción adicional. Mientras estás furioso, tienes ventaja en las pruebas de Fuerza y ​​tiros de salvación, obtienes una bonificación a las tiradas de daño cuerpo a cuerpo usando Fuerza (+2 en los niveles de bárbaro 1-8, +3 en los niveles 9-15 y +4 en los niveles 16-20) y tienes resistencia al daño contundente, perforante y cortante. Tu rabia dura 1 minuto. Termina antes si quedas inconsciente o si tu turno termina y no has atacado a una criatura hostil desde tu último turno ni has recibido daño desde entonces."
     },
     "Unarmored Defense": {
       "name": "Defensa sin armadura",
@@ -64,7 +64,7 @@
     },
     "Bardic Inspiration": {
       "name": "Inspiración bárdica",
-      "description": "Puedes inspirar a otros a través de palabras conmovedoras o música. Como acción adicional, puedes darle a una criatura que no seas tú un dado de Inspiración Bárdica (d6). Una vez en los próximos 10 minutos, la criatura puede tirar ese dado y sumar el número a una prueba de habilidad, tirada de ataque o tirada de salvación que realice."
+      "description": "Puedes inspirar a otros a través de palabras conmovedoras o música. Como acción adicional, puedes darle a una criatura que no seas tú un dado de Inspiración Bárdica. El dado es d6 en los niveles de bardo 1-4, d8 en los niveles 5-9, d10 en los niveles 10-14 y d12 en los niveles 15-20. Una vez en los próximos 10 minutos, la criatura puede tirar ese dado y sumar el número a una prueba de habilidad, tirada de ataque o tirada de salvación que realice."
     },
     "Jack of All Trades": {
       "name": "Experto en todos los oficios",
@@ -122,7 +122,7 @@
     },
     "Destroy Undead": {
       "name": "Destruir no-muertos",
-      "description": "Cuando un no-muerto falla su tirada de salvación contra tu función Turn Undead, la criatura es destruida instantáneamente si su índice de desafío está en o por debajo de un cierto umbral (CR 1/2 en el nivel 5, aumentando en niveles más altos)."
+      "description": "Cuando un no-muerto falla su tirada de salvación contra tu función Turn Undead, la criatura se destruye instantáneamente si su índice de desafío es lo suficientemente bajo: CR 1/2 en el nivel de clérigo 5, CR 1 en el nivel 8, CR 2 en el nivel 11, CR 3 en el nivel 14 y CR 4 en el nivel 17."
     },
     "Divine Intervention": {
       "name": "Intervención Divina",
@@ -200,7 +200,7 @@
     },
     "Martial Arts": {
       "name": "Artes marciales",
-      "description": "Tu práctica de artes marciales te permitirá dominar los estilos de combate que utilizan ataques desarmados y armas de monje. Puedes usar Destreza en lugar de Fuerza para las tiradas de ataque y daño. Puedes tirar un d4 en lugar del daño normal de tu ataque desarmado o arma de monje. Cuando usas la acción de Ataque con un golpe desarmado o con un arma de monje, puedes realizar un golpe desarmado como acción adicional."
+      "description": "Tu práctica de artes marciales te permitirá dominar los estilos de combate que utilizan ataques desarmados y armas de monje. Puedes usar Destreza en lugar de Fuerza para las tiradas de ataque y daño. Tu dado de Artes Marciales por un golpe desarmado o arma de monje es d4 en los niveles de monje 1-4, d6 en los niveles 5-10, d8 en los niveles 11-16 y d10 en los niveles 17-20. Cuando usas la acción de Ataque con un golpe desarmado o con un arma de monje, puedes realizar un golpe desarmado como acción adicional."
     },
     "Ki": {
       "name": "ki",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimiento sin armadura",
-      "description": "Tu velocidad aumenta en 10 pies mientras no llevas armadura ni empuñas un escudo. Esta bonificación aumenta cuando alcanzas ciertos niveles de monje."
+      "description": "Tu velocidad aumenta mientras no llevas armadura ni empuñas un escudo: +10 pies en el nivel 2 de monje, +15 pies en el nivel 6, +20 pies en el nivel 10, +25 pies en el nivel 14 y +30 pies en el nivel 18."
     },
     "Monastic Tradition": {
       "name": "Tradición monástica",
@@ -300,11 +300,11 @@
   "Ranger": {
     "Favored Enemy": {
       "name": "Enemigo favorecido",
-      "description": "Tienes una gran experiencia estudiando, rastreando, cazando e incluso hablando con cierto tipo de enemigo. Elige un tipo de enemigo favorito: aberraciones, bestias, celestiales, constructos, dragones, elementales, hadas, demonios, gigantes, monstruosidades, exudados, plantas o no-muertos. Tienes ventaja en las pruebas de Sabiduría (Supervivencia) para rastrear a tus enemigos favoritos, así como en las pruebas de Inteligencia para recordar información sobre ellos."
+      "description": "Tienes una gran experiencia estudiando, rastreando, cazando e incluso hablando con ciertos enemigos. Elige un tipo de enemigo favorito en el nivel 1 de guardabosques, otro en el nivel 6 y otro en el nivel 14: aberraciones, bestias, celestiales, constructos, dragones, elementales, hadas, demonios, gigantes, monstruosidades, cienos, plantas o muertos vivientes. Tienes ventaja en las pruebas de Sabiduría (Supervivencia) para rastrear a tus enemigos favoritos, así como en las pruebas de Inteligencia para recordar información sobre ellos."
     },
     "Natural Explorer": {
       "name": "Explorador natural",
-      "description": "Estás particularmente familiarizado con un tipo de entorno natural y eres experto en viajar y sobrevivir en dichas regiones. Elige un tipo de terreno favorito: ártico, costa, desierto, bosque, pradera, montaña, pantano o la Infraoscuridad."
+      "description": "Estás particularmente familiarizado con un tipo de entorno natural y eres experto en viajar y sobrevivir en dichas regiones. Elige un terreno favorito en el nivel 1 de guardabosques, otro en el nivel 6 y otro en el nivel 10: ártico, costa, desierto, bosque, pradera, montaña, pantano o la Infraoscuridad."
     },
     "Fighting Style": {
       "name": "Estilo de lucha",
@@ -320,7 +320,7 @@
     },
     "Primeval Awareness": {
       "name": "Conciencia primitiva",
-      "description": "Puedes usar tu acción y gastar un espacio de hechizo de guardabosques para centrar tu atención en la región que te rodea. Durante 1 minuto por nivel del espacio de hechizo que gastes, puedes sentir si ciertos tipos de criaturas están presentes dentro de 1 milla de ti."
+      "description": "Puedes usar tu acción y gastar un espacio de hechizo de guardabosques para centrar tu atención en la región que te rodea. Durante 1 minuto por nivel del espacio de hechizo que gastas, puedes sentir si hay aberraciones, celestiales, dragones, elementales, hadas, demonios o muertos vivientes en un radio de 1 milla de ti."
     },
     "Ability Score Improvement": {
       "name": "Mejora de la puntuación de habilidad",
@@ -358,7 +358,7 @@
     },
     "Sneak Attack": {
       "name": "Ataque furtivo",
-      "description": "Sabes cómo atacar sutilmente y aprovechar la distracción del enemigo. Una vez por turno, puedes infligir 1d6 de daño adicional a una criatura que golpees con un ataque si tienes ventaja en la tirada de ataque. El ataque debe utilizar delicadeza o un arma a distancia. No necesitas ventaja en la tirada de ataque si otro enemigo del objetivo está a 5 pies de él, ese enemigo no está incapacitado y no tienes desventaja en la tirada de ataque. La cantidad de daño adicional aumenta a medida que ganas niveles en esta clase."
+      "description": "Sabes cómo atacar sutilmente y aprovechar la distracción del enemigo. Una vez por turno, puedes infligir daño adicional a una criatura que golpeas con un ataque si tienes ventaja en la tirada de ataque. El ataque debe utilizar delicadeza o un arma a distancia. No necesitas ventaja si otro enemigo del objetivo está a 5 pies de él, ese enemigo no está incapacitado y no tienes desventaja. El daño adicional es 1d6 en los niveles 1-2 de pícaro, luego aumenta en 1d6 cada dos niveles de pícaro: 2d6 en el nivel 3, 3d6 en el nivel 5, 4d6 en el nivel 7, 5d6 en el nivel 9, 6d6 en el nivel 11, 7d6 en el nivel 13, 8d6 en el nivel 15, 9d6 en el nivel 17 y 10d6 en el nivel 19."
     },
     "Thieves' Cant": {
       "name": "El hipocresía de los ladrones",

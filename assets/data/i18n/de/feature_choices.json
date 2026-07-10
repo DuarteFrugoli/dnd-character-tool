@@ -3,15 +3,15 @@
     "battle_master_maneuvers": {
       "commanders_strike": {
         "name": "Kommandantenschlag",
-        "description": "Wenn Sie die Aktion „Angreifen“ ausführen, können Sie auf einen Angriff verzichten und eine Bonusaktion nutzen, um einen Verbündeten zum Angriff anzuweisen."
+        "description": "Wenn Sie die Angriffsaktion ausführen, verzichten Sie auf einen Angriff und verwenden Sie eine Bonusaktion, um einem Verbündeten, der Sie sehen oder hören kann, die Möglichkeit zu geben, seine Reaktion für einen Angriff mit einer Waffe zu nutzen. Wenn es trifft, addiere deinen Überlegenheitswürfel zum Schaden des Angriffs."
       },
       "disarming_attack": {
         "name": "Entwaffnender Angriff",
-        "description": "Wenn du eine Kreatur mit einem Waffenangriff triffst, kannst du einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel zu entwaffnen."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Das Ziel muss einen Kraftwurf machen oder einen Gegenstand seiner Wahl fallen lassen, den es in der Hand hält."
       },
       "distracting_strike": {
         "name": "Ablenkender Schlag",
-        "description": "Wenn du eine Kreatur mit einem Waffenangriff triffst, kannst du einen Überlegenheitswürfel ausgeben, um die Kreatur abzulenken."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Der nächste Angriffswurf gegen das Ziel durch eine andere Kreatur als dich hat einen Vorteil, wenn er vor Beginn deines nächsten Zuges ausgeführt wird."
       },
       "evasive_footwork": {
         "name": "Ausweichende Beinarbeit",
@@ -19,27 +19,27 @@
       },
       "feinting_attack": {
         "name": "Finting-Angriff",
-        "description": "Sie können einen Überlegenheitswürfel einsetzen und eine Bonusaktion für eine Finte nutzen, um sich bei Ihrem nächsten Angriff gegen eine Kreatur einen Vorteil zu verschaffen."
+        "description": "Geben Sie eine Bonusaktion und einen Überlegenheitswürfel aus, um eine Finte gegen eine Kreatur innerhalb von 5 Fuß durchzuführen. Du hast in diesem Zug bei deinem nächsten Angriff dagegen einen Vorteil, und wenn dieser Angriff trifft, addiere den Überlegenheitswürfel zum Schaden."
       },
       "goading_attack": {
         "name": "Anspornender Angriff",
-        "description": "Wenn Sie mit einer Waffe zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um das Ziel dazu zu bewegen, Sie anzugreifen."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Dem Ziel muss bis zum Ende deines nächsten Zuges ein Weisheitswurf gelingen oder es hat bei Angriffen gegen andere Kreaturen als dich einen Nachteil."
       },
       "lunging_attack": {
         "name": "Ausfallangriff",
-        "description": "Wenn Sie einen Nahkampfwaffenangriff ausführen, können Sie einen Überlegenheitswürfel ausgeben, um Ihre Reichweite für diesen Angriff zu erhöhen."
+        "description": "Wenn Sie einen Nahkampfwaffenangriff ausführen, geben Sie einen Überlegenheitswürfel aus, um Ihre Reichweite für diesen Angriff um 5 Fuß zu erhöhen. Wenn der Angriff trifft, addiere den Überlegenheitswürfel zum Schaden."
       },
       "maneuvering_attack": {
         "name": "Manövrierangriff",
-        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel ausgeben, um einem Verbündeten die Möglichkeit zu geben, sich zu bewegen, ohne das Ziel zu provozieren."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Wählen Sie einen Verbündeten, der Sie sehen oder hören kann; Dieser Verbündete kann seine Reaktion nutzen, um sich bis zur Hälfte seiner Geschwindigkeit zu bewegen, ohne Gelegenheitsangriffe des Ziels zu provozieren."
       },
       "menacing_attack": {
         "name": "Bedrohlicher Angriff",
-        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel zu erschrecken."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Dem Ziel muss ein Weisheitswurf gelingen, sonst hat es bis zum Ende deines nächsten Zuges Angst vor dir."
       },
       "parry": {
         "name": "Parieren",
-        "description": "Wenn eine andere Kreatur dir mit einem Nahkampfangriff Schaden zufügt, kannst du einen Überlegenheitswürfel einsetzen, um den Schaden zu verringern."
+        "description": "Wenn eine andere Kreatur dir mit einem Nahkampfangriff Schaden zufügt, nutze deine Reaktion und verwende einen Überlegenheitswürfel, um den Schaden um den Würfelwurf + deinen Geschicklichkeitsmodifikator zu reduzieren."
       },
       "precision_attack": {
         "name": "Präzisionsangriff",
@@ -47,233 +47,297 @@
       },
       "pushing_attack": {
         "name": "Push-Angriff",
-        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel wegzustoßen."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Wenn das Ziel groß oder kleiner ist, muss es einen Kraftwurf machen oder bis zu 15 Fuß von Ihnen entfernt werden."
       },
       "rally": {
         "name": "Rallye",
-        "description": "In deinem Zug kannst du einen Überlegenheitswürfel ausgeben und eine Bonusaktion nutzen, um einen Verbündeten mit temporären Trefferpunkten zu stärken."
+        "description": "Geben Sie in Ihrem Zug eine Bonusaktion und einen Überlegenheitswürfel aus, um einem Verbündeten, der Sie sehen oder hören kann, vorübergehende Trefferpunkte in Höhe des Würfelwurfs + Ihres Charisma-Modifikators zu geben."
       },
       "riposte": {
         "name": "Gegenrede",
-        "description": "Wenn eine Kreatur dich mit einem Nahkampfangriff verfehlt, kannst du einen Überlegenheitswürfel ausgeben, um einen Nahkampfwaffenangriff gegen sie durchzuführen."
+        "description": "Wenn eine Kreatur Sie mit einem Nahkampfangriff verfehlt, nutzen Sie Ihre Reaktion und geben Sie einen Überlegenheitswürfel aus, um einen Nahkampfwaffenangriff gegen sie durchzuführen. Wenn Sie treffen, addieren Sie den Überlegenheitswürfel zum Schaden."
       },
       "sweeping_attack": {
         "name": "Durchgreifender Angriff",
-        "description": "Wenn Sie mit einem Nahkampfwaffenangriff zuschlagen, können Sie einen Überlegenheitswürfel ausgeben, um einer anderen Kreatur in Reichweite Schaden zuzufügen."
+        "description": "Wenn Sie mit einem Nahkampfwaffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus, um einer anderen Kreatur innerhalb von 5 Fuß um das ursprüngliche Ziel und in Ihrer Reichweite Schaden zuzufügen. Wenn der ursprüngliche Angriffswurf die zweite Kreatur treffen würde, erleidet sie Schaden in Höhe des Überlegenheitswürfels."
       },
       "trip_attack": {
         "name": "Trip Attack",
-        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, können Sie einen Überlegenheitswürfel einsetzen, um zu versuchen, das Ziel zu Boden zu werfen."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Wenn das Ziel groß oder kleiner ist, muss es einen Kraftwurf machen, sonst fällt es in die Bauchlage."
       }
     },
     "fighting_styles_fighter": {
       "archery": {
-        "name": "Bogenschießen"
+        "name": "Bogenschießen",
+        "description": "Du erhältst einen Bonus von +2 auf Angriffswürfe, die du mit Fernkampfwaffen ausführst."
       },
       "defense": {
-        "name": "Verteidigung"
+        "name": "Verteidigung",
+        "description": "Während du eine Rüstung trägst, erhältst du einen Bonus von +1 auf deine RK."
       },
       "dueling": {
-        "name": "Duell"
+        "name": "Duell",
+        "description": "Wenn Sie eine Nahkampfwaffe in einer Hand und keine anderen Waffen tragen, erhalten Sie einen Bonus von +2 auf Schadenswürfe mit dieser Waffe."
       },
       "great_weapon_fighting": {
-        "name": "Großartiger Waffenkampf"
+        "name": "Großartiger Waffenkampf",
+        "description": "Wenn Sie eine 1 oder 2 auf einem Schadenswürfel für eine mit zwei Händen gehaltene Nahkampfwaffe würfeln, würfeln Sie erneut und verwenden Sie den neuen Wurf. Die Waffe muss die Eigenschaft besitzen, zweihändig oder vielseitig einsetzbar zu sein."
       },
       "protection": {
-        "name": "Schutz"
+        "name": "Schutz",
+        "description": "Wenn eine Kreatur ein anderes Ziel als dich im Umkreis von 5 Fuß angreift, kannst du deine Reaktion nutzen, um dem Angriffswurf einen Nachteil zu verschaffen. Du musst einen Schild tragen."
       },
       "two_weapon_fighting": {
-        "name": "Zwei-Waffen-Kampf"
+        "name": "Zwei-Waffen-Kampf",
+        "description": "Addiere deinen Fähigkeitsmodifikator zum Schaden deines zweiten Waffenangriffs, wenn du mit zwei Waffen kämpfst."
       }
     },
     "fighting_styles_paladin": {
       "defense": {
-        "name": "Verteidigung"
+        "name": "Verteidigung",
+        "description": "Während du eine Rüstung trägst, erhältst du einen Bonus von +1 auf deine RK."
       },
       "dueling": {
-        "name": "Duell"
+        "name": "Duell",
+        "description": "Wenn Sie eine Nahkampfwaffe in einer Hand und keine anderen Waffen tragen, erhalten Sie einen Bonus von +2 auf Schadenswürfe mit dieser Waffe."
       },
       "great_weapon_fighting": {
-        "name": "Großartiger Waffenkampf"
+        "name": "Großartiger Waffenkampf",
+        "description": "Wenn Sie eine 1 oder 2 auf einem Schadenswürfel für eine mit zwei Händen gehaltene Nahkampfwaffe würfeln, würfeln Sie erneut und verwenden Sie den neuen Wurf. Die Waffe muss die Eigenschaft besitzen, zweihändig oder vielseitig einsetzbar zu sein."
       },
       "protection": {
-        "name": "Schutz"
+        "name": "Schutz",
+        "description": "Wenn eine Kreatur ein anderes Ziel als dich im Umkreis von 5 Fuß angreift, kannst du deine Reaktion nutzen, um dem Angriffswurf einen Nachteil zu verschaffen. Du musst einen Schild tragen."
       }
     },
     "fighting_styles_ranger": {
       "archery": {
-        "name": "Bogenschießen"
+        "name": "Bogenschießen",
+        "description": "Du erhältst einen Bonus von +2 auf Angriffswürfe, die du mit Fernkampfwaffen ausführst."
       },
       "defense": {
-        "name": "Verteidigung"
+        "name": "Verteidigung",
+        "description": "Während du eine Rüstung trägst, erhältst du einen Bonus von +1 auf deine RK."
       },
       "dueling": {
-        "name": "Duell"
+        "name": "Duell",
+        "description": "Wenn Sie eine Nahkampfwaffe in einer Hand und keine anderen Waffen tragen, erhalten Sie einen Bonus von +2 auf Schadenswürfe mit dieser Waffe."
       },
       "two_weapon_fighting": {
-        "name": "Zwei-Waffen-Kampf"
+        "name": "Zwei-Waffen-Kampf",
+        "description": "Addiere deinen Fähigkeitsmodifikator zum Schaden deines zweiten Waffenangriffs, wenn du mit zwei Waffen kämpfst."
       }
     },
     "metamagic_options": {
       "careful_spell": {
-        "name": "Vorsichtiger Zauber"
+        "name": "Vorsichtiger Zauber",
+        "description": "Gib 1 Zauberpunkt aus und wähle Kreaturen bis zu deinem Charisma-Modifikator (mindestens 1). Ausgewählte Kreaturen haben beim Rettungswurf des Zaubers automatisch Erfolg."
       },
       "distant_spell": {
-        "name": "Fernzauber"
+        "name": "Fernzauber",
+        "description": "Geben Sie 1 Zauberpunkt aus, um die Reichweite eines Zaubers zu verdoppeln, wenn er eine Reichweite von 5 Fuß oder mehr hat. Wenn der Zauber eine Berührungsreichweite hat, beträgt seine Reichweite 30 Fuß."
       },
       "empowered_spell": {
-        "name": "Machtvoller Zauber"
+        "name": "Machtvoller Zauber",
+        "description": "Geben Sie 1 Zauberpunkt aus, um eine Anzahl der Schadenswürfel eines Zaubers bis zu Ihrem Charisma-Modifikator (mindestens 1) neu zu würfeln. Sie müssen die neuen Rollen verwenden."
       },
       "extended_spell": {
-        "name": "Erweiterter Zauber"
+        "name": "Erweiterter Zauber",
+        "description": "Geben Sie 1 Zauberpunkt aus, um die Dauer eines Zaubers zu verdoppeln, wenn er 1 Minute oder länger dauert, bis zu einer maximalen Dauer von 24 Stunden."
       },
       "heightened_spell": {
-        "name": "Erhöhter Zauber"
+        "name": "Erhöhter Zauber",
+        "description": "Geben Sie 3 Zauberpunkte aus, um einem Ziel bei seinem ersten Rettungswurf gegen den Zauber einen Nachteil zu verschaffen."
       },
       "quickened_spell": {
-        "name": "Beschleunigter Zauber"
+        "name": "Beschleunigter Zauber",
+        "description": "Geben Sie stattdessen 2 Zauberpunkte aus, um einen Zauber mit einer Zauberzeit von 1 Aktion als Bonusaktion zu wirken."
       },
       "subtle_spell": {
-        "name": "Subtiler Zauber"
+        "name": "Subtiler Zauber",
+        "description": "Geben Sie 1 Zauberpunkt aus, um einen Zauber ohne somatische oder verbale Komponenten zu wirken."
       },
       "twinned_spell": {
-        "name": "Zwillingszauber"
+        "name": "Zwillingszauber",
+        "description": "Geben Sie Zauberpunkte in Höhe der Stufe des Zaubers oder 1 Punkt für einen Zaubertrick aus, um eine zweite Kreatur mit einem Zauber anzugreifen, der normalerweise nur eine Kreatur als Ziel hat und keine Selbstreichweite hat."
       }
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "Aberrationen"
+        "name": "Aberrationen",
+        "description": "Wählen Sie Aberrationen als einen Ihrer bevorzugten Feindtypen."
       },
       "beasts": {
-        "name": "Bestien"
+        "name": "Bestien",
+        "description": "Wählen Sie Bestien als einen Ihrer bevorzugten Feindtypen."
       },
       "celestials": {
-        "name": "Himmlische"
+        "name": "Himmlische",
+        "description": "Wählen Sie Himmlische als einen Ihrer bevorzugten Feindtypen."
       },
       "constructs": {
-        "name": "Konstrukte"
+        "name": "Konstrukte",
+        "description": "Wählen Sie Konstrukte als einen Ihrer bevorzugten Feindtypen."
       },
       "dragons": {
-        "name": "Drachen"
+        "name": "Drachen",
+        "description": "Wählen Sie Drachen als einen Ihrer bevorzugten Feindtypen."
       },
       "elementals": {
-        "name": "Elementare"
+        "name": "Elementare",
+        "description": "Wählen Sie Elementare als einen Ihrer bevorzugten Feindtypen."
       },
       "fey": {
-        "name": "Fey"
+        "name": "Fey",
+        "description": "Wählen Sie Feen als einen Ihrer bevorzugten Feindtypen."
       },
       "fiends": {
-        "name": "Unholde"
+        "name": "Unholde",
+        "description": "Wählen Sie Unholde als einen Ihrer bevorzugten Feindtypen."
       },
       "giants": {
-        "name": "Riesen"
+        "name": "Riesen",
+        "description": "Wählen Sie Riesen als einen Ihrer bevorzugten Feindtypen."
       },
       "monstrosities": {
-        "name": "Monstrositäten"
+        "name": "Monstrositäten",
+        "description": "Wählen Sie Monstrositäten als einen Ihrer bevorzugten Feindtypen."
       },
       "oozes": {
-        "name": "Sickert"
+        "name": "Sickert",
+        "description": "Wählen Sie Schlamm als einen Ihrer bevorzugten Feindtypen."
       },
       "plants": {
-        "name": "Pflanzen"
+        "name": "Pflanzen",
+        "description": "Wählen Sie Pflanzen als einen Ihrer bevorzugten Feindtypen."
       },
       "undead": {
-        "name": "Untote"
+        "name": "Untote",
+        "description": "Wählen Sie Untote als einen Ihrer bevorzugten Feindtypen."
       }
     },
     "favored_terrain": {
       "arctic": {
-        "name": "Arktis"
+        "name": "Arktis",
+        "description": "Wählen Sie arktisches Gelände als eines Ihrer bevorzugten Gebiete."
       },
       "coast": {
-        "name": "Küste"
+        "name": "Küste",
+        "description": "Wählen Sie Küstengebiet als eines Ihrer bevorzugten Gebiete."
       },
       "desert": {
-        "name": "Wüste"
+        "name": "Wüste",
+        "description": "Wählen Sie Wüstengelände als eines Ihrer bevorzugten Gebiete."
       },
       "forest": {
-        "name": "Wald"
+        "name": "Wald",
+        "description": "Wählen Sie Waldgelände als eines Ihrer bevorzugten Gelände."
       },
       "grassland": {
-        "name": "Wiese"
+        "name": "Wiese",
+        "description": "Wählen Sie Grünland als eines Ihrer bevorzugten Gelände."
       },
       "mountain": {
-        "name": "Berg"
+        "name": "Berg",
+        "description": "Wählen Sie Berggelände als eines Ihrer bevorzugten Gebiete."
       },
       "swamp": {
-        "name": "Sumpf"
+        "name": "Sumpf",
+        "description": "Wählen Sie Sumpfgelände als eines Ihrer bevorzugten Gebiete."
       },
       "underdark": {
-        "name": "Underdark"
+        "name": "Underdark",
+        "description": "Wählen Sie das Unterreich als eines Ihrer bevorzugten Gebiete."
       }
     },
     "damage_types_elemental": {
       "acid": {
-        "name": "Säure"
+        "name": "Säure",
+        "description": "Wählen Sie Säure als Schadensart, die von dieser Funktion betroffen ist."
       },
       "cold": {
-        "name": "Kalt"
+        "name": "Kalt",
+        "description": "Wählen Sie „Kälte“ als Schadensart, die von dieser Funktion betroffen ist."
       },
       "fire": {
-        "name": "Feuer"
+        "name": "Feuer",
+        "description": "Wählen Sie Feuer als Schadensart, die von dieser Funktion betroffen ist."
       },
       "lightning": {
-        "name": "Blitz"
+        "name": "Blitz",
+        "description": "Wählen Sie Blitz als Schadensart, die von dieser Funktion betroffen ist."
       },
       "thunder": {
-        "name": "Donner"
+        "name": "Donner",
+        "description": "Wählen Sie Donner als Schadensart, die von dieser Funktion betroffen ist."
       }
     },
     "ability_scores": {
       "strength": {
-        "name": "Stärke"
+        "name": "Stärke",
+        "description": "Wählen Sie „Stärke“ für die Fähigkeitssteigerung, die Fertigkeit oder den Spar-SG dieser Funktion."
       },
       "dexterity": {
-        "name": "Geschicklichkeit"
+        "name": "Geschicklichkeit",
+        "description": "Wählen Sie „Geschicklichkeit“ für die Fähigkeitssteigerung, die Fertigkeit oder den Spar-SG dieser Funktion."
       },
       "constitution": {
-        "name": "Verfassung"
+        "name": "Verfassung",
+        "description": "Wählen Sie „Konstitution“ für die Fähigkeitssteigerung, die Fertigkeit oder den Rettungs-SG dieser Funktion."
       },
       "intelligence": {
-        "name": "Intelligenz"
+        "name": "Intelligenz",
+        "description": "Wählen Sie „Intelligenz“ für die Fähigkeitssteigerung, die Fertigkeit oder den Spar-SG dieser Funktion."
       },
       "wisdom": {
-        "name": "Weisheit"
+        "name": "Weisheit",
+        "description": "Wählen Sie „Weisheit“ für die Fähigkeitssteigerung, die Fertigkeit oder den Spar-SG dieser Funktion."
       },
       "charisma": {
-        "name": "Charisma"
+        "name": "Charisma",
+        "description": "Wählen Sie Charisma für die Fähigkeitssteigerung, die Fertigkeit oder den Save DC dieser Funktion."
       }
     },
     "draconic_ancestry": {
       "black": {
-        "name": "Schwarz"
+        "name": "Schwarz",
+        "description": "Wählen Sie die Abstammung eines schwarzen Drachen, der mit Säureschäden verbunden ist."
       },
       "blue": {
-        "name": "Blau"
+        "name": "Blau",
+        "description": "Wählen Sie die Abstammung des blauen Drachen, der mit Blitzschaden verbunden ist."
       },
       "brass": {
-        "name": "Messing"
+        "name": "Messing",
+        "description": "Wählen Sie die Abstammung eines Messingdrachen, der mit Feuerschaden verbunden ist."
       },
       "bronze": {
-        "name": "Bronze"
+        "name": "Bronze",
+        "description": "Wählen Sie die Abstammung eines Bronzedrachen, der mit Blitzschaden verbunden ist."
       },
       "copper": {
-        "name": "Kupfer"
+        "name": "Kupfer",
+        "description": "Wählen Sie die Abstammung eines Kupferdrachen, der mit Säureschäden verbunden ist."
       },
       "gold": {
-        "name": "Gold"
+        "name": "Gold",
+        "description": "Wählen Sie die Abstammung eines goldenen Drachen, der mit Feuerschaden verbunden ist."
       },
       "green": {
-        "name": "Grün"
+        "name": "Grün",
+        "description": "Wählen Sie die Abstammung eines grünen Drachen, der mit Giftschaden verbunden ist."
       },
       "red": {
-        "name": "Rot"
+        "name": "Rot",
+        "description": "Wählen Sie die Abstammung eines roten Drachen, der mit Feuerschaden verbunden ist."
       },
       "silver": {
-        "name": "Silber"
+        "name": "Silber",
+        "description": "Wählen Sie die Abstammung des silbernen Drachen, der mit Kälteschaden verbunden ist."
       },
       "white": {
-        "name": "Weiß"
+        "name": "Weiß",
+        "description": "Wählen Sie die Abstammung eines weißen Drachen, der mit Kälteschaden verbunden ist."
       }
     }
   },
@@ -284,13 +348,16 @@
           "pact_boon": {
             "options": {
               "pact_of_the_chain": {
-                "name": "Pakt der Kette"
+                "name": "Pakt der Kette",
+                "description": "Sie lernen, Vertrautes als Ritual zu finden. Wenn du es wirkst, kannst du einen normalen Vertrauten oder eine dieser Sonderformen wählen: Kobold, Pseudodrache, Quasit oder Kobold."
               },
               "pact_of_the_blade": {
-                "name": "Pakt der Klinge"
+                "name": "Pakt der Klinge",
+                "description": "Erstellen Sie eine Paktwaffe in Ihrer leeren Hand oder binden Sie eine magische Waffe als Ihre Paktwaffe."
               },
               "pact_of_the_tome": {
-                "name": "Pakt des Wälzers"
+                "name": "Pakt des Wälzers",
+                "description": "Erhalte ein Buch der Schatten mit drei Cantrips aus der Zauberliste einer beliebigen Klasse."
               }
             }
           }
@@ -306,10 +373,12 @@
             "maneuver_dc_ability": {
               "options": {
                 "strength": {
-                  "name": "Stärke"
+                  "name": "Stärke",
+                  "description": "Verwenden Sie Stärke, um den Rettungswurf-SG für Ihre Manöver zu berechnen."
                 },
                 "dexterity": {
-                  "name": "Geschicklichkeit"
+                  "name": "Geschicklichkeit",
+                  "description": "Verwenden Sie Geschicklichkeit, um den Rettungswurf-SG für Ihre Manöver zu berechnen."
                 }
               }
             }
@@ -324,13 +393,16 @@
             "hunters_prey": {
               "options": {
                 "colossus_slayer": {
-                  "name": "Kolossjäger"
+                  "name": "Kolossjäger",
+                  "description": "Einmal in jedem deiner Züge, wenn du mit einem Waffenangriff eine Kreatur triffst, die unter ihrem maximalen Trefferpunkt liegt, verursacht der Angriff zusätzlich 1W8 Schaden."
                 },
                 "giant_killer": {
-                  "name": "Riesenmörder"
+                  "name": "Riesenmörder",
+                  "description": "Wenn eine große oder größere Kreatur in Ihrer Nähe Sie angreift, nutzen Sie Ihre Reaktion, um sie nach ihrem Angriff anzugreifen."
                 },
                 "horde_breaker": {
-                  "name": "Hordenbrecher"
+                  "name": "Hordenbrecher",
+                  "description": "Führen Sie einmal in jedem Ihrer Züge einen zusätzlichen Waffenangriff gegen eine andere Kreatur in der Nähe Ihres ursprünglichen Ziels durch."
                 }
               }
             }
@@ -341,13 +413,16 @@
             "defensive_tactics": {
               "options": {
                 "escape_the_horde": {
-                  "name": "Entkomme der Horde"
+                  "name": "Entkomme der Horde",
+                  "description": "Gelegenheitsangriffe gegen Sie erfolgen mit Nachteil."
                 },
                 "multiattack_defense": {
-                  "name": "Multiattack-Verteidigung"
+                  "name": "Multiattack-Verteidigung",
+                  "description": "Wenn dich eine Kreatur mit einem Angriff trifft, erhältst du für den Rest des Zuges einen Bonus von +4 auf deine RK gegen alle späteren Angriffe dieser Kreatur."
                 },
                 "steel_will": {
-                  "name": "Stahlwille"
+                  "name": "Stahlwille",
+                  "description": "Verschaffen Sie sich einen Vorteil bei Rettungswürfen gegen Angstgefühle."
                 }
               }
             }
@@ -358,10 +433,12 @@
             "multiattack": {
               "options": {
                 "volley": {
-                  "name": "Volley"
+                  "name": "Volley",
+                  "description": "Nutzen Sie Ihre Aktion, um einen Fernangriff gegen eine beliebige Anzahl von Kreaturen innerhalb eines kleinen Bereichs in Reichweite durchzuführen."
                 },
                 "whirlwind_attack": {
-                  "name": "Wirbelwind-Angriff"
+                  "name": "Wirbelwind-Angriff",
+                  "description": "Nutze deine Aktion, um Nahkampfangriffe gegen eine beliebige Anzahl von Kreaturen in einem Umkreis von 5 Fuß um dich herum durchzuführen."
                 }
               }
             }
@@ -372,13 +449,16 @@
             "superior_hunters_defense": {
               "options": {
                 "evasion": {
-                  "name": "Ausweichen"
+                  "name": "Ausweichen",
+                  "description": "Erleide keinen Schaden bei einem erfolgreichen Geschicklichkeitsrettungswurf, der normalerweise den halben Schaden verursachen würde."
                 },
                 "stand_against_the_tide": {
-                  "name": "Stehen Sie gegen den Strom"
+                  "name": "Stehen Sie gegen den Strom",
+                  "description": "Wenn eine feindliche Kreatur dich mit einem Nahkampfangriff verfehlt, leite diesen Angriff gegen eine andere Kreatur um."
                 },
                 "uncanny_dodge": {
-                  "name": "Unheimliches Ausweichen"
+                  "name": "Unheimliches Ausweichen",
+                  "description": "Wenn ein Angreifer, den Sie sehen können, Sie trifft, nutzen Sie Ihre Reaktion, um den Schaden des Angriffs zu halbieren."
                 }
               }
             }
@@ -393,13 +473,16 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Smiths Werkzeuge"
+              "name": "Smiths Werkzeuge",
+              "description": "Erwerben Sie Kenntnisse im Umgang mit Schmiedewerkzeugen."
             },
             "brewers_supplies": {
-              "name": "Brauereibedarf"
+              "name": "Brauereibedarf",
+              "description": "Machen Sie sich mit Brauereibedarf vertraut."
             },
             "masons_tools": {
-              "name": "Maurerwerkzeuge"
+              "name": "Maurerwerkzeuge",
+              "description": "Machen Sie sich mit Maurerwerkzeugen vertraut."
             }
           }
         }
@@ -412,22 +495,28 @@
         "spell_class": {
           "options": {
             "bard": {
-              "name": "Barde"
+              "name": "Barde",
+              "description": "Wählen Sie Barde als Quellklasse für die Cantrips und Zauber dieses Talents."
             },
             "cleric": {
-              "name": "Kleriker"
+              "name": "Kleriker",
+              "description": "Wählen Sie „Kleriker“ als Quellklasse für die Cantrips und Zauber dieses Talents."
             },
             "druid": {
-              "name": "Druide"
+              "name": "Druide",
+              "description": "Wählen Sie Druide als Quellklasse für die Cantrips und Zauber dieses Talents."
             },
             "sorcerer": {
-              "name": "Zauberer"
+              "name": "Zauberer",
+              "description": "Wählen Sie „Zauberer“ als Quellklasse für die Cantrips und Zauber dieses Talents."
             },
             "warlock": {
-              "name": "Hexenmeister"
+              "name": "Hexenmeister",
+              "description": "Wählen Sie Warlock als Quellklasse für die Cantrips und Zauber dieses Talents."
             },
             "wizard": {
-              "name": "Zauberer"
+              "name": "Zauberer",
+              "description": "Wählen Sie Zauberer als Quellklasse für die Cantrips und Zauber dieses Kunststücks."
             }
           }
         }
@@ -438,10 +527,12 @@
         "maneuver_dc_ability": {
           "options": {
             "strength": {
-              "name": "Stärke"
+              "name": "Stärke",
+              "description": "Verwenden Sie Stärke, um den Rettungswurf-SG für Ihre Manöver zu berechnen."
             },
             "dexterity": {
-              "name": "Geschicklichkeit"
+              "name": "Geschicklichkeit",
+              "description": "Verwenden Sie Geschicklichkeit, um den Rettungswurf-SG für Ihre Manöver zu berechnen."
             }
           }
         }
@@ -452,10 +543,12 @@
         "ability": {
           "options": {
             "strength": {
-              "name": "Stärke"
+              "name": "Stärke",
+              "description": "Erhöhe deinen Stärkewert für dieses Kunststück."
             },
             "dexterity": {
-              "name": "Geschicklichkeit"
+              "name": "Geschicklichkeit",
+              "description": "Erhöhe deinen Geschicklichkeitswert für dieses Kunststück."
             }
           }
         }

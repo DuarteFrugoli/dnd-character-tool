@@ -61,11 +61,22 @@ class FeatureChoiceRequest {
   }
 
   bool isComplete(List<CharacterFeatureChoice> choices) {
-    return (findIn(choices)?.values.length ?? 0) >= requiredCount;
+    return _uniqueValues(findIn(choices)?.values ?? const []).length >=
+        requiredCount;
   }
 
   CharacterFeatureChoice toChoice(List<String> values) {
-    return emptyChoice().copyWith(values: values.take(requiredCount).toList());
+    return emptyChoice().copyWith(
+      values: _uniqueValues(values).take(requiredCount).toList(),
+    );
+  }
+
+  static List<String> _uniqueValues(List<String> values) {
+    final seen = <String>{};
+    return [
+      for (final value in values)
+        if (seen.add(value)) value,
+    ];
   }
 }
 

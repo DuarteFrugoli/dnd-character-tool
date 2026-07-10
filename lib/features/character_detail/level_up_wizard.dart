@@ -134,6 +134,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
   SrdFeatureChoiceCatalog? _featureChoiceCatalog;
   List<SrdSkill> _skills = const [];
   List<SrdTool> _tools = const [];
+  List<SrdLanguage> _languages = const [];
+  List<SrdWeapon> _weapons = const [];
   bool _loading = true;
 
   @override
@@ -141,13 +143,19 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     super.initState();
     _state = _LevelUpState(newLevel: widget.character.level + 1);
     _pageController = PageController();
+    _pageController.addListener(_handlePageChanged);
     _load();
   }
 
   @override
   void dispose() {
+    _pageController.removeListener(_handlePageChanged);
     _pageController.dispose();
     super.dispose();
+  }
+
+  void _handlePageChanged() {
+    if (mounted) setState(() {});
   }
 
   Future<void> _load() async {
@@ -162,6 +170,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       srd.getSkills(),
       srd.getTools(),
       srd.getAllSubclassFeatures(),
+      srd.getLanguages(),
+      srd.getWeapons(),
     ]);
     if (!mounted) return;
     final classes = results[0] as List<SrdClass>;
@@ -178,6 +188,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     _tools = results[6] as List<SrdTool>;
     _allSubclassFeatures =
         results[7] as Map<String, Map<String, List<SrdClassFeature>>>;
+    _languages = results[8] as List<SrdLanguage>;
+    _weapons = results[9] as List<SrdWeapon>;
 
     if (mounted) {
       setState(() {
@@ -444,35 +456,25 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
             // Navigation buttons
             Padding(
               padding: const EdgeInsets.all(16),
-              child: StatefulBuilder(
-                builder: (ctx, setSt) {
-                  _pageController.addListener(() => setSt(() {}));
-                  final pageIdx = _pageController.hasClients
-                      ? (_pageController.page?.round() ?? 0)
-                      : 0;
-                  final isLast = pageIdx == _pages.length - 1;
-                  final isFirst = pageIdx == 0;
-                  return Row(
-                    children: [
-                      if (!isFirst)
-                        OutlinedButton(
-                          onPressed: _prevPage,
-                          child: const Icon(Icons.arrow_back),
-                        ),
-                      const Spacer(),
-                      if (!isLast)
-                        FilledButton(
-                          onPressed: _canAdvance(pageIdx) ? _nextPage : null,
-                          child: const Icon(Icons.arrow_forward),
-                        )
-                      else
-                        FilledButton(
-                          onPressed: _state.hpChosen ? _confirm : null,
-                          child: Text(l10n.levelUpConfirm),
-                        ),
-                    ],
-                  );
-                },
+              child: Row(
+                children: [
+                  if (_currentPage > 0)
+                    OutlinedButton(
+                      onPressed: _prevPage,
+                      child: const Icon(Icons.arrow_back),
+                    ),
+                  const Spacer(),
+                  if (_currentPage != _pages.length - 1)
+                    FilledButton(
+                      onPressed: _canAdvance(_currentPage) ? _nextPage : null,
+                      child: const Icon(Icons.arrow_forward),
+                    )
+                  else
+                    FilledButton(
+                      onPressed: _state.hpChosen ? _confirm : null,
+                      child: Text(l10n.levelUpConfirm),
+                    ),
+                ],
               ),
             ),
           ],
@@ -614,16 +616,21 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           }),
         );
       case _WizardPage.featureChoices:
-        return _FeatureChoiceEditor(
+        final i18n =
+            ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+        return FeatureChoiceEditor(
           requests: _featureChoiceRequests,
           initialChoices: _state.featureChoices,
           catalog: _featureChoiceCatalog!,
           character: widget.character,
-          i18n:
-              ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english,
+          i18n: i18n,
           skills: _skills,
           tools: _tools,
           spells: _allSpells ?? const [],
+          languages: _languages,
+          weapons: _weapons,
+          featureLabelBuilder: (request) =>
+              _featureChoiceRequestFeatureLabel(request, i18n),
           onChanged: (choices) {
             setState(() => _state = _state.copyWith(featureChoices: choices));
           },
@@ -704,6 +711,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           skills: _skills,
           tools: _tools,
           spells: _allSpells ?? const [],
+          languages: _languages,
+          weapons: _weapons,
         );
     }
   }
@@ -1619,6 +1628,8 @@ class _SummaryPage extends StatelessWidget {
     required this.skills,
     required this.tools,
     required this.spells,
+    required this.languages,
+    required this.weapons,
   });
   final _LevelUpState wizardState;
   final Character character;
@@ -1629,6 +1640,8 @@ class _SummaryPage extends StatelessWidget {
   final List<SrdSkill> skills;
   final List<SrdTool> tools;
   final List<SrdSpell> spells;
+  final List<SrdLanguage> languages;
+  final List<SrdWeapon> weapons;
 
   @override
   Widget build(BuildContext context) {
@@ -1719,17 +1732,23 @@ class _SummaryPage extends StatelessWidget {
           (request) => request.findIn([choice]) != null,
         );
         final labels = choice.values
-            .map(
-              (value) => _featureChoiceValueLabel(
-                value,
-                featureChoiceRequests,
-                featureChoiceCatalog!,
-                i18n,
-                skills,
-                tools,
-                spells,
-              ),
-            )
+            .map((value) {
+              if (request == null) return value;
+              return featureChoiceValueLabelForRequest(
+                value: value,
+                request: request,
+                catalog: featureChoiceCatalog!,
+                i18n: i18n,
+                skills: skills,
+                tools: tools,
+                spells: spells,
+                languages: languages,
+                weapons: weapons,
+                character: character,
+                relatedRequests: featureChoiceRequests,
+                choices: wizardState.featureChoices,
+              );
+            })
             .join(', ');
         rows.add(
           _SummaryRow(

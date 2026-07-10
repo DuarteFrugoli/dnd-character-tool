@@ -10,7 +10,7 @@ String _titleCase(String s) =>
 
 // ── Item lookup data ─────────────────────────────────────────────────────────
 
-/// Metadata for a single SRD item loaded from assets/data/srd/items.json.
+/// Metadata for a single SRD item loaded from assets/data/srd/equipment.json.
 class SrdItemData {
   final String
   itemType; // "weapon", "armor", "ammunition", "equippable", "container", "gear"
@@ -71,6 +71,16 @@ class SrdSkill {
   factory SrdSkill.fromJson(Map<String, dynamic> json) => SrdSkill(
     name: json['name'] as String,
     ability: json['ability'] as String,
+  );
+}
+
+class SrdLanguage {
+  final String name;
+
+  const SrdLanguage({required this.name});
+
+  factory SrdLanguage.fromJson(Map<String, dynamic> json) => SrdLanguage(
+    name: json['name'] as String? ?? '',
   );
 }
 
@@ -852,6 +862,7 @@ class SrdFeatureChoiceRequirement {
   final String? optionsSource;
   final List<SrdFeatureChoiceOption> options;
   final String? spellClass;
+  final String? spellClassFromChoice;
   final int? spellLevel;
   final int? minSpellLevel;
   final int? maxSpellLevel;
@@ -866,6 +877,7 @@ class SrdFeatureChoiceRequirement {
     this.optionsSource,
     this.options = const [],
     this.spellClass,
+    this.spellClassFromChoice,
     this.spellLevel,
     this.minSpellLevel,
     this.maxSpellLevel,
@@ -886,6 +898,7 @@ class SrdFeatureChoiceRequirement {
               SrdFeatureChoiceOption.fromJson(e.cast<String, dynamic>()))
           .toList(),
       spellClass: json['spellClass'] as String?,
+      spellClassFromChoice: json['spellClassFromChoice'] as String?,
       spellLevel: (json['spellLevel'] as num?)?.toInt(),
       minSpellLevel: (json['minSpellLevel'] as num?)?.toInt(),
       maxSpellLevel: (json['maxSpellLevel'] as num?)?.toInt(),

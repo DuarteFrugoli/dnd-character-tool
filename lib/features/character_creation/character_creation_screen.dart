@@ -3,6 +3,7 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../data/feature_choice_engine.dart';
 import 'character_draft_provider.dart';
 import '../character_list/character_list_provider.dart';
 import 'steps/step_class.dart';
@@ -11,6 +12,7 @@ import 'steps/step_background.dart';
 import 'steps/step_skills.dart';
 import 'steps/step_attributes.dart';
 import 'steps/step_name.dart';
+import 'steps/step_feature_choices.dart';
 import 'steps/step_review.dart';
 import 'widgets/step_indicator.dart';
 
@@ -21,6 +23,7 @@ List<String> _getStepTitles(AppLocalizations l10n) => [
   l10n.creationStepSkills,
   l10n.creationStepAttributes,
   l10n.creationStepName,
+  l10n.featureChoicesTitle,
   l10n.creationStepReview,
 ];
 
@@ -85,7 +88,12 @@ class _CharacterCreationScreenState
       3 => _skillsComplete(draft),
       4 => draft.baseAttributes.length == 6,
       5 => true, // nome é opcional
-      6 => (draft.languageChoicesNeeded == 0 ||
+      6 => draft.featureChoicesLoaded &&
+          FeatureChoiceEngine.allComplete(
+            draft.featureChoiceRequests,
+            draft.featureChoices,
+          ),
+      7 => (draft.languageChoicesNeeded == 0 ||
               draft.chosenLanguages.length >= draft.languageChoicesNeeded) &&
           (draft.toolChoicesNeeded == 0 ||
               (draft.chosenToolProficiencies.length >=
@@ -96,7 +104,12 @@ class _CharacterCreationScreenState
           (draft.equipmentChoicesNeeded == 0 ||
               draft.resolvedEquipmentChoices.length >=
                   draft.equipmentChoicesNeeded) &&
-          draft.classEquipmentComplete,
+          draft.classEquipmentComplete &&
+          draft.featureChoicesLoaded &&
+          FeatureChoiceEngine.allComplete(
+            draft.featureChoiceRequests,
+            draft.featureChoices,
+          ),
       _ => false,
     };
   }
@@ -119,6 +132,7 @@ class _CharacterCreationScreenState
       const StepSkills(),
       const StepAttributes(),
       const StepName(),
+      const StepFeatureChoices(),
       StepReview(onFinish: _finishCreation),
     ];
 

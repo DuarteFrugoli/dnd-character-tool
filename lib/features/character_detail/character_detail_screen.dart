@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../data/spellcasting_engine.dart';
 import '../../data/feature_choice_engine.dart';
+import '../../data/feature_choice_option_resolver.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
@@ -21,6 +22,7 @@ import '../../shared/widgets/character_avatar.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/units/unit_formatter.dart';
 import 'character_detail_provider.dart';
+import 'widgets/feature_choice_editor.dart';
 
 part 'tabs/identity_tab.dart';
 part 'tabs/stats_tab.dart';
@@ -30,7 +32,6 @@ part 'tabs/spells_tab.dart';
 part 'tabs/notes_tab.dart';
 part 'tabs/inventory_tab.dart';
 part 'widgets/detail_widgets.dart';
-part 'widgets/feature_choice_editor.dart';
 part 'level_up_wizard.dart';
 
 // ── Skill → Ability mapping ───────────────────────────────────────────────────

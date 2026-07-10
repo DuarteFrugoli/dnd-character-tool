@@ -4,17 +4,17 @@
       {
         "id": "commanders_strike",
         "name": "Commander's Strike",
-        "description": "When you take the Attack action, you can forgo one attack and use a bonus action to direct an ally to strike."
+        "description": "When you take the Attack action, forgo one attack and use a bonus action to let an ally who can see or hear you use its reaction to make one weapon attack. If it hits, add your superiority die to the attack's damage."
       },
       {
         "id": "disarming_attack",
         "name": "Disarming Attack",
-        "description": "When you hit a creature with a weapon attack, you can expend a superiority die to attempt to disarm the target."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. The target must make a Strength save or drop one item of your choice that it is holding."
       },
       {
         "id": "distracting_strike",
         "name": "Distracting Strike",
-        "description": "When you hit a creature with a weapon attack, you can expend a superiority die to distract the creature."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. The next attack roll against the target by a creature other than you has advantage if made before the start of your next turn."
       },
       {
         "id": "evasive_footwork",
@@ -24,32 +24,32 @@
       {
         "id": "feinting_attack",
         "name": "Feinting Attack",
-        "description": "You can expend a superiority die and use a bonus action to feint, gaining advantage on your next attack against a creature."
+        "description": "Spend a bonus action and a superiority die to feint against a creature within 5 feet. You have advantage on your next attack against it this turn, and if that attack hits, add the superiority die to the damage."
       },
       {
         "id": "goading_attack",
         "name": "Goading Attack",
-        "description": "When you hit with a weapon attack, you can expend a superiority die to goad the target into attacking you."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. The target must make a Wisdom save or have disadvantage on attacks against creatures other than you until the end of your next turn."
       },
       {
         "id": "lunging_attack",
         "name": "Lunging Attack",
-        "description": "When you make a melee weapon attack, you can expend a superiority die to increase your reach for that attack."
+        "description": "When you make a melee weapon attack, expend a superiority die to increase your reach by 5 feet for that attack. If the attack hits, add the superiority die to the damage."
       },
       {
         "id": "maneuvering_attack",
         "name": "Maneuvering Attack",
-        "description": "When you hit with a weapon attack, you can expend a superiority die to let an ally move without provoking from the target."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. Choose an ally who can see or hear you; that ally can use its reaction to move up to half its speed without provoking opportunity attacks from the target."
       },
       {
         "id": "menacing_attack",
         "name": "Menacing Attack",
-        "description": "When you hit with a weapon attack, you can expend a superiority die to attempt to frighten the target."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. The target must make a Wisdom save or be frightened of you until the end of your next turn."
       },
       {
         "id": "parry",
         "name": "Parry",
-        "description": "When another creature damages you with a melee attack, you can expend a superiority die to reduce the damage."
+        "description": "When another creature damages you with a melee attack, use your reaction and expend a superiority die to reduce the damage by the die roll + your Dexterity modifier."
       },
       {
         "id": "precision_attack",
@@ -59,58 +59,58 @@
       {
         "id": "pushing_attack",
         "name": "Pushing Attack",
-        "description": "When you hit with a weapon attack, you can expend a superiority die to attempt to push the target away."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. If the target is Large or smaller, it must make a Strength save or be pushed up to 15 feet away from you."
       },
       {
         "id": "rally",
         "name": "Rally",
-        "description": "On your turn, you can expend a superiority die and use a bonus action to bolster an ally with temporary hit points."
+        "description": "On your turn, spend a bonus action and a superiority die to give an ally who can see or hear you temporary hit points equal to the die roll + your Charisma modifier."
       },
       {
         "id": "riposte",
         "name": "Riposte",
-        "description": "When a creature misses you with a melee attack, you can expend a superiority die to make a melee weapon attack against it."
+        "description": "When a creature misses you with a melee attack, use your reaction and expend a superiority die to make a melee weapon attack against it. If you hit, add the superiority die to the damage."
       },
       {
         "id": "sweeping_attack",
         "name": "Sweeping Attack",
-        "description": "When you hit with a melee weapon attack, you can expend a superiority die to damage another creature within reach."
+        "description": "When you hit with a melee weapon attack, expend a superiority die to damage another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the superiority die."
       },
       {
         "id": "trip_attack",
         "name": "Trip Attack",
-        "description": "When you hit with a weapon attack, you can expend a superiority die to attempt to knock the target prone."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. If the target is Large or smaller, it must make a Strength save or fall prone."
       }
     ],
     "fighting_styles_fighter": [
-      { "id": "archery", "name": "Archery", "description": "Gain a bonus to attack rolls you make with ranged weapons." },
-      { "id": "defense", "name": "Defense", "description": "Gain a bonus to AC while you are wearing armor." },
-      { "id": "dueling", "name": "Dueling", "description": "Deal extra damage when you wield a melee weapon in one hand and no other weapons." },
-      { "id": "great_weapon_fighting", "name": "Great Weapon Fighting", "description": "Reroll very low damage dice when you use a two-handed or versatile melee weapon with two hands." },
-      { "id": "protection", "name": "Protection", "description": "Use your shield and reaction to impose disadvantage on an attack against a nearby ally." },
+      { "id": "archery", "name": "Archery", "description": "You gain a +2 bonus to attack rolls you make with ranged weapons." },
+      { "id": "defense", "name": "Defense", "description": "While you are wearing armor, you gain a +1 bonus to AC." },
+      { "id": "dueling", "name": "Dueling", "description": "When you wield a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon." },
+      { "id": "great_weapon_fighting", "name": "Great Weapon Fighting", "description": "When you roll a 1 or 2 on a damage die for a melee weapon held with two hands, reroll the die and use the new roll. The weapon must have the two-handed or versatile property." },
+      { "id": "protection", "name": "Protection", "description": "When a creature attacks a target other than you within 5 feet, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield." },
       { "id": "two_weapon_fighting", "name": "Two-Weapon Fighting", "description": "Add your ability modifier to the damage of your second weapon attack when fighting with two weapons." }
     ],
     "fighting_styles_paladin": [
-      { "id": "defense", "name": "Defense", "description": "Gain a bonus to AC while you are wearing armor." },
-      { "id": "dueling", "name": "Dueling", "description": "Deal extra damage when you wield a melee weapon in one hand and no other weapons." },
-      { "id": "great_weapon_fighting", "name": "Great Weapon Fighting", "description": "Reroll very low damage dice when you use a two-handed or versatile melee weapon with two hands." },
-      { "id": "protection", "name": "Protection", "description": "Use your shield and reaction to impose disadvantage on an attack against a nearby ally." }
+      { "id": "defense", "name": "Defense", "description": "While you are wearing armor, you gain a +1 bonus to AC." },
+      { "id": "dueling", "name": "Dueling", "description": "When you wield a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon." },
+      { "id": "great_weapon_fighting", "name": "Great Weapon Fighting", "description": "When you roll a 1 or 2 on a damage die for a melee weapon held with two hands, reroll the die and use the new roll. The weapon must have the two-handed or versatile property." },
+      { "id": "protection", "name": "Protection", "description": "When a creature attacks a target other than you within 5 feet, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield." }
     ],
     "fighting_styles_ranger": [
-      { "id": "archery", "name": "Archery", "description": "Gain a bonus to attack rolls you make with ranged weapons." },
-      { "id": "defense", "name": "Defense", "description": "Gain a bonus to AC while you are wearing armor." },
-      { "id": "dueling", "name": "Dueling", "description": "Deal extra damage when you wield a melee weapon in one hand and no other weapons." },
+      { "id": "archery", "name": "Archery", "description": "You gain a +2 bonus to attack rolls you make with ranged weapons." },
+      { "id": "defense", "name": "Defense", "description": "While you are wearing armor, you gain a +1 bonus to AC." },
+      { "id": "dueling", "name": "Dueling", "description": "When you wield a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon." },
       { "id": "two_weapon_fighting", "name": "Two-Weapon Fighting", "description": "Add your ability modifier to the damage of your second weapon attack when fighting with two weapons." }
     ],
     "metamagic_options": [
-      { "id": "careful_spell", "name": "Careful Spell", "description": "Protect chosen creatures from the worst effects of your spell by helping them succeed on the saving throw." },
-      { "id": "distant_spell", "name": "Distant Spell", "description": "Increase a spell's range, or make a touch spell reach farther." },
-      { "id": "empowered_spell", "name": "Empowered Spell", "description": "Reroll some of a spell's damage dice after you roll damage." },
-      { "id": "extended_spell", "name": "Extended Spell", "description": "Double a spell's duration, up to a maximum of 24 hours." },
-      { "id": "heightened_spell", "name": "Heightened Spell", "description": "Give one target disadvantage on its first saving throw against the spell." },
-      { "id": "quickened_spell", "name": "Quickened Spell", "description": "Cast a spell that normally takes an action as a bonus action instead." },
-      { "id": "subtle_spell", "name": "Subtle Spell", "description": "Cast a spell without somatic or verbal components." },
-      { "id": "twinned_spell", "name": "Twinned Spell", "description": "Make a single-target spell affect a second valid target." }
+      { "id": "careful_spell", "name": "Careful Spell", "description": "Spend 1 sorcery point and choose creatures up to your Charisma modifier (minimum 1). Chosen creatures automatically succeed on the spell's saving throw." },
+      { "id": "distant_spell", "name": "Distant Spell", "description": "Spend 1 sorcery point to double a spell's range if it has a range of 5 feet or greater. If the spell has a range of touch, its range becomes 30 feet." },
+      { "id": "empowered_spell", "name": "Empowered Spell", "description": "Spend 1 sorcery point to reroll a number of a spell's damage dice up to your Charisma modifier (minimum 1). You must use the new rolls." },
+      { "id": "extended_spell", "name": "Extended Spell", "description": "Spend 1 sorcery point to double a spell's duration if it lasts 1 minute or longer, up to a maximum duration of 24 hours." },
+      { "id": "heightened_spell", "name": "Heightened Spell", "description": "Spend 3 sorcery points to give one target disadvantage on its first saving throw against the spell." },
+      { "id": "quickened_spell", "name": "Quickened Spell", "description": "Spend 2 sorcery points to cast a spell with a casting time of 1 action as a bonus action instead." },
+      { "id": "subtle_spell", "name": "Subtle Spell", "description": "Spend 1 sorcery point to cast a spell without somatic or verbal components." },
+      { "id": "twinned_spell", "name": "Twinned Spell", "description": "Spend sorcery points equal to the spell's level, or 1 point for a cantrip, to target a second creature with a spell that normally targets only one creature and does not have a range of self." }
     ],
     "favored_enemies": [
       { "id": "aberrations", "name": "Aberrations", "description": "Choose aberrations as one of your favored enemy types." },
@@ -238,7 +238,7 @@
             "type": "option",
             "count": 1,
             "options": [
-              { "id": "pact_of_the_chain", "name": "Pact of the Chain", "description": "Gain the find familiar spell and a special familiar option from your pact." },
+              { "id": "pact_of_the_chain", "name": "Pact of the Chain", "description": "You learn find familiar as a ritual. When you cast it, you can choose a normal familiar or one of these special forms: imp, pseudodragon, quasit, or sprite." },
               { "id": "pact_of_the_blade", "name": "Pact of the Blade", "description": "Create a pact weapon in your empty hand or bind a magic weapon as your pact weapon." },
               { "id": "pact_of_the_tome", "name": "Pact of the Tome", "description": "Gain a Book of Shadows with three cantrips from any class's spell list." }
             ]
@@ -314,7 +314,7 @@
               "type": "option",
               "count": 1,
               "options": [
-                { "id": "colossus_slayer", "name": "Colossus Slayer", "description": "Once on each of your turns, deal extra weapon damage to a creature below its hit point maximum." },
+                { "id": "colossus_slayer", "name": "Colossus Slayer", "description": "Once on each of your turns, when you hit a creature below its hit point maximum with a weapon attack, the attack deals an extra 1d8 damage." },
                 { "id": "giant_killer", "name": "Giant Killer", "description": "When a Large or larger creature near you attacks you, use your reaction to attack it after its attack." },
                 { "id": "horde_breaker", "name": "Horde Breaker", "description": "Once on each of your turns, make an extra weapon attack against a different creature near your original target." }
               ]
@@ -329,7 +329,7 @@
               "count": 1,
               "options": [
                 { "id": "escape_the_horde", "name": "Escape the Horde", "description": "Opportunity attacks against you are made with disadvantage." },
-                { "id": "multiattack_defense", "name": "Multiattack Defense", "description": "After a creature hits you with an attack, gain a bonus to AC against its later attacks for the turn." },
+                { "id": "multiattack_defense", "name": "Multiattack Defense", "description": "When a creature hits you with an attack, you gain a +4 bonus to AC against all later attacks from that creature for the rest of the turn." },
                 { "id": "steel_will", "name": "Steel Will", "description": "Gain advantage on saving throws against being frightened." }
               ]
             }
@@ -431,8 +431,8 @@
             { "id": "wizard", "name": "Wizard", "description": "Choose Wizard as the source class for this feat's cantrips and spell." }
           ]
         },
-        { "id": "cantrips", "type": "cantrip", "count": 2 },
-        { "id": "spell", "type": "spell", "count": 1, "spellLevel": 1 }
+        { "id": "cantrips", "type": "cantrip", "count": 2, "spellClassFromChoice": "spell_class" },
+        { "id": "spell", "type": "spell", "count": 1, "spellLevel": 1, "spellClassFromChoice": "spell_class" }
       ]
     },
     "Martial Adept": {

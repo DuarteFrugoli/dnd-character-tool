@@ -16,6 +16,7 @@ class SrdDataSource {
   List<SrdClass>? _classes;
   List<SrdBackground>? _backgrounds;
   List<SrdSpell>? _spells;
+  List<SrdLanguage>? _languages;
 
   List<SrdWeapon>? _weapons;
   List<SrdArmor>? _armors;
@@ -28,6 +29,7 @@ class SrdDataSource {
   List<SrdTool>? _tools;
   List<SrdFeat>? _feats;
   SrdFeatureChoiceCatalog? _featureChoiceCatalog;
+  Future<SrdFeatureChoiceCatalog>? _featureChoiceCatalogFuture;
   /// Guard against parsing equipment.json multiple times in parallel.
   Future<void>? _equipmentLoadFuture;
 
@@ -100,6 +102,14 @@ class SrdDataSource {
     return _spells!;
   }
 
+  Future<List<SrdLanguage>> getLanguages() async {
+    _languages ??= await _loadList(
+      'assets/data/srd/languages.json',
+      SrdLanguage.fromJson,
+    );
+    return _languages!;
+  }
+
   Future<List<SrdSpell>> getSpellsForClass(String className) async {
     final all = await getSpells();
     return all
@@ -147,15 +157,27 @@ class SrdDataSource {
   }
 
   Future<SrdFeatureChoiceCatalog> getFeatureChoiceCatalog() async {
-    if (_featureChoiceCatalog == null) {
-      final raw = await rootBundle.loadString(
-        'assets/data/srd/feature_choices.json',
-      );
-      _featureChoiceCatalog = SrdFeatureChoiceCatalog.fromJson(
-        jsonDecode(raw) as Map<String, dynamic>,
-      );
+    final cached = _featureChoiceCatalog;
+    if (cached != null) return cached;
+
+    _featureChoiceCatalogFuture ??= _loadFeatureChoiceCatalog();
+    try {
+      return await _featureChoiceCatalogFuture!;
+    } catch (_) {
+      _featureChoiceCatalogFuture = null;
+      rethrow;
     }
-    return _featureChoiceCatalog!;
+  }
+
+  Future<SrdFeatureChoiceCatalog> _loadFeatureChoiceCatalog() async {
+    final raw = await rootBundle.loadString(
+      'assets/data/srd/feature_choices.json',
+    );
+    final catalog = SrdFeatureChoiceCatalog.fromJson(
+      jsonDecode(raw) as Map<String, dynamic>,
+    );
+    _featureChoiceCatalog = catalog;
+    return catalog;
   }
 
   Future<Map<String, SrdItemData>> getItems() async {
@@ -305,7 +327,12 @@ class SrdDataSource {
     if (_weapons != null && _armors != null && _gear != null) return;
     // Reuse the in-flight future so concurrent callers share one parse.
     _equipmentLoadFuture ??= _doLoadEquipment();
-    await _equipmentLoadFuture;
+    try {
+      await _equipmentLoadFuture;
+    } catch (_) {
+      _equipmentLoadFuture = null;
+      rethrow;
+    }
   }
 
   Future<void> _doLoadEquipment() async {

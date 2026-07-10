@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Rage",
-      "description": "Au combat, vous vous battez avec une férocité primordiale. À votre tour, vous pouvez entrer en colère comme une action bonus. Lorsque vous êtes en rage, vous bénéficiez d'un avantage aux tests de Force et aux jets de sauvegarde, bénéficiez d'un bonus aux jets de dégâts en mêlée utilisant la Force et avez une résistance aux dégâts contondants, perçants et tranchants. Votre rage dure 1 minute. Il se termine plus tôt si vous perdez connaissance ou si votre tour se termine et que vous n'avez pas attaqué de créature hostile depuis votre dernier tour ni subi de dégâts depuis lors."
+      "description": "Au combat, vous combattez avec une férocité primordiale. À votre tour, vous pouvez entrer en colère comme une action bonus. Lorsque vous êtes en rage, vous avez un avantage aux tests de Force et aux jets de sauvegarde, bénéficiez d'un bonus aux jets de dégâts en mêlée en utilisant la Force (+2 aux niveaux barbares 1 à 8, +3 aux niveaux 9 à 15 et +4 aux niveaux 16 à 20) et avez une résistance aux dégâts contondants, perçants et tranchants. Votre rage dure 1 minute. Il se termine plus tôt si vous perdez connaissance ou si votre tour se termine et que vous n'avez pas attaqué de créature hostile depuis votre dernier tour ni subi de dégâts depuis lors."
     },
     "Unarmored Defense": {
       "name": "Défense sans armure",
@@ -64,7 +64,7 @@
     },
     "Bardic Inspiration": {
       "name": "Inspiration bardique",
-      "description": "Vous pouvez inspirer les autres grâce à des mots ou de la musique émouvants. Par une action bonus, vous pouvez donner à une créature autre que vous-même un dé d'Inspiration bardique (d6). Une fois au cours des 10 prochaines minutes, la créature peut lancer ce dé et ajouter le nombre à un test de capacité, un jet d'attaque ou un jet de sauvegarde qu'elle effectue."
+      "description": "Vous pouvez inspirer les autres grâce à des mots ou de la musique émouvants. Par une action bonus, vous pouvez donner à une créature autre que vous-même un dé d'Inspiration bardique. Le dé est d6 aux niveaux de barde 1 à 4, d8 aux niveaux 5 à 9, d10 aux niveaux 10 à 14 et d12 aux niveaux 15 à 20. Une fois au cours des 10 prochaines minutes, la créature peut lancer ce dé et ajouter le nombre à un test de capacité, un jet d'attaque ou un jet de sauvegarde qu'elle effectue."
     },
     "Jack of All Trades": {
       "name": "Touche-à-tout",
@@ -122,11 +122,11 @@
     },
     "Destroy Undead": {
       "name": "Détruire les morts-vivants",
-      "description": "Lorsqu'un mort-vivant échoue à son jet de sauvegarde contre votre fonction Turn Undead, la créature est instantanément détruite si son niveau de défi est égal ou inférieur à un certain seuil (CR 1/2 au niveau 5, augmentant aux niveaux supérieurs)."
+      "description": "Lorsqu'un mort-vivant échoue à son jet de sauvegarde contre votre fonction Turn Undead, la créature est instantanément détruite si son indice de défi est suffisamment bas : CR 1/2 au niveau de clerc 5, CR 1 au niveau 8, CR 2 au niveau 11, CR 3 au niveau 14 et CR 4 au niveau 17."
     },
     "Divine Intervention": {
       "name": "Intervention divine",
-      "description": "Vous pouvez faire appel à votre divinité pour intervenir en votre faveur lorsque votre besoin est grand. Implorez l’aide de votre divinité sous forme d’action. Décrivez l’aide que vous recherchez et lancez les dés centiles. Si vous obtenez un nombre égal ou inférieur à votre niveau de clerc, votre divinité intervient."
+      "description": "Vous pouvez faire appel à votre divinité pour intervenir en votre faveur lorsque votre besoin est grand. Implorez l'aide de votre divinité sous forme d'action. Décrivez l’aide que vous recherchez et lancez les dés centiles. Si vous obtenez un nombre égal ou inférieur à votre niveau de clerc, votre divinité intervient."
     }
   },
   "Druid": {
@@ -174,7 +174,7 @@
     },
     "Action Surge": {
       "name": "Déferlement d'action",
-      "description": "À partir du 2e niveau, vous pouvez dépasser un instant vos limites habituelles. À votre tour, vous pouvez effectuer une action supplémentaire en plus de votre action habituelle et d’une éventuelle action bonus."
+      "description": "À partir du niveau 2, vous pouvez repousser un instant vos limites normales. À votre tour, vous pouvez effectuer une action supplémentaire en plus de votre action habituelle et d’une éventuelle action bonus."
     },
     "Martial Archetype": {
       "name": "Archétype martial",
@@ -200,7 +200,7 @@
     },
     "Martial Arts": {
       "name": "Arts martiaux",
-      "description": "Votre pratique des arts martiaux vous permet de maîtriser les styles de combat utilisant des frappes à mains nues et des armes de moine. Vous pouvez utiliser la Dextérité au lieu de la Force pour les jets d'attaque et de dégâts. Vous pouvez lancer un d4 à la place des dégâts normaux de votre frappe à mains nues ou de votre arme de moine. Lorsque vous utilisez l’action Attaque avec une frappe à mains nues ou une arme de moine, vous pouvez effectuer une frappe à mains nues comme action bonus."
+      "description": "Votre pratique des arts martiaux vous permet de maîtriser les styles de combat utilisant des frappes à mains nues et des armes de moine. Vous pouvez utiliser la Dextérité au lieu de la Force pour les jets d'attaque et de dégâts. Votre dé d'arts martiaux pour une frappe à mains nues ou une arme de moine est d4 aux niveaux de moine 1 à 4, d6 aux niveaux 5 à 10, d8 aux niveaux 11 à 16 et d10 aux niveaux 17 à 20. Lorsque vous utilisez l’action Attaque avec une frappe à mains nues ou une arme de moine, vous pouvez effectuer une frappe à mains nues comme action bonus."
     },
     "Ki": {
       "name": "Ki",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Mouvement sans armure",
-      "description": "Votre vitesse augmente de 10 pieds lorsque vous ne portez pas d’armure ou de bouclier. Ce bonus augmente lorsque vous atteignez certains niveaux de moine."
+      "description": "Votre vitesse augmente lorsque vous ne portez pas d'armure ou ne brandissez pas de bouclier : +10 pieds au niveau de moine 2, +15 pieds au niveau 6, +20 pieds au niveau 10, +25 pieds au niveau 14 et +30 pieds au niveau 18."
     },
     "Monastic Tradition": {
       "name": "Tradition monastique",
@@ -300,11 +300,11 @@
   "Ranger": {
     "Favored Enemy": {
       "name": "Ennemi favori",
-      "description": "Vous avez une expérience significative dans l’étude, le suivi, la chasse et même la conversation avec un certain type d’ennemi. Choisissez un type d'ennemi préféré : aberrations, bêtes, célestes, constructions, dragons, élémentaires, fées, démons, géants, monstruosités, limons, plantes ou morts-vivants. Vous avez un avantage aux tests de Sagesse (Survie) pour traquer vos ennemis favoris, ainsi qu'aux tests d'Intelligence pour rappeler des informations les concernant."
+      "description": "Vous avez une expérience significative dans l’étude, le suivi, la chasse et même la conversation avec certains ennemis. Choisissez un type d'ennemi préféré au niveau 1 du rôdeur, un autre au niveau 6 et un autre au niveau 14 : aberrations, bêtes, célestes, constructions, dragons, élémentaires, fées, démons, géants, monstruosités, limons, plantes ou morts-vivants. Vous avez un avantage aux tests de Sagesse (Survie) pour traquer vos ennemis favoris, ainsi qu'aux tests d'Intelligence pour rappeler des informations les concernant."
     },
     "Natural Explorer": {
       "name": "Explorateur naturel",
-      "description": "Vous connaissez particulièrement un type d’environnement naturel et êtes apte à voyager et à survivre dans de telles régions. Choisissez un type de terrain préféré : arctique, côte, désert, forêt, prairie, montagne, marécage ou Underdark."
+      "description": "Vous connaissez particulièrement un type d’environnement naturel et êtes apte à voyager et à survivre dans de telles régions. Choisissez un terrain préféré au niveau 1 du ranger, un autre au niveau 6 et un autre au niveau 10 : arctique, côte, désert, forêt, prairie, montagne, marais ou Underdark."
     },
     "Fighting Style": {
       "name": "Style de combat",
@@ -320,7 +320,7 @@
     },
     "Primeval Awareness": {
       "name": "Conscience primitive",
-      "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez sentir si certains types de créatures sont présents à moins de 1,6 km de vous."
+      "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez détecter si des aberrations, des célestes, des dragons, des élémentaires, des fées, des démons ou des morts-vivants sont présents à moins de 1,6 km de vous."
     },
     "Ability Score Improvement": {
       "name": "Amélioration du score de capacité",
@@ -358,7 +358,7 @@
     },
     "Sneak Attack": {
       "name": "Attaque sournoise",
-      "description": "Vous savez frapper subtilement et exploiter la distraction de l'ennemi. Une fois par tour, vous pouvez infliger 1d6 dégâts supplémentaires à une créature que vous frappez avec une attaque si vous avez un avantage au jet d'attaque. L'attaque doit utiliser une arme de finesse ou à distance. Vous n'avez pas besoin d'un avantage au jet d'attaque si un autre ennemi de la cible se trouve à moins de 1,50 mètre de celle-ci, cet ennemi n'est pas incapable d'agir et vous n'avez pas de désavantage au jet d'attaque. Le montant des dégâts supplémentaires augmente à mesure que vous gagnez des niveaux dans cette classe."
+      "description": "Vous savez frapper subtilement et exploiter la distraction de l'ennemi. Une fois par tour, vous pouvez infliger des dégâts supplémentaires à une créature que vous frappez avec une attaque si vous avez un avantage au jet d'attaque. L'attaque doit utiliser une arme de finesse ou à distance. Vous n'avez pas besoin d'un avantage si un autre ennemi de la cible se trouve à moins de 1,50 mètre de celle-ci, cet ennemi n'est pas neutralisé et vous n'avez pas de désavantage. Les dégâts supplémentaires sont de 1d6 aux niveaux de voleur 1 et 2, puis augmentent de 1d6 tous les deux niveaux de voleur : 2d6 au niveau 3, 3d6 au niveau 5, 4d6 au niveau 7, 5d6 au niveau 9, 6d6 au niveau 11, 7d6 au niveau 13, 8d6 au niveau 15, 9d6 au niveau 17 et 10d6 au niveau 19."
     },
     "Thieves' Cant": {
       "name": "Les voleurs ne peuvent pas",
@@ -434,7 +434,7 @@
   "Warlock": {
     "Otherworldly Patron": {
       "name": "Patron d'un autre monde",
-      "description": "Vous avez conclu un marché avec un être d'un autre monde de votre choix : l'Archifey, le Démon ou le Grand Ancien, chacun étant détaillé à la fin de la description de la classe."
+      "description": "Vous avez conclu un marché avec un être d'un autre monde de votre choix : l'Archfey, le Démon ou le Grand Ancien, chacun étant détaillé à la fin de la description de la classe."
     },
     "Pact Magic": {
       "name": "Magie du Pacte",

@@ -3,15 +3,15 @@
     "battle_master_maneuvers": {
       "commanders_strike": {
         "name": "Frappe du commandant",
-        "description": "Lorsque vous effectuez l'action Attaque, vous pouvez renoncer à une attaque et utiliser une action bonus pour ordonner à un allié de frapper."
+        "description": "Lorsque vous effectuez l'action Attaque, renoncez à une attaque et utilisez une action bonus pour permettre à un allié qui peut vous voir ou vous entendre d'utiliser sa réaction pour effectuer une attaque avec une arme. S'il touche, ajoutez votre dé de supériorité aux dégâts de l'attaque."
       },
       "disarming_attack": {
         "name": "Attaque désarmante",
-        "description": "Lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez dépenser un dé de supériorité pour tenter de désarmer la cible."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. La cible doit effectuer une sauvegarde de Force ou lâcher un objet de votre choix qu'elle tient."
       },
       "distracting_strike": {
         "name": "Frappe distrayante",
-        "description": "Lorsque vous touchez une créature avec une attaque avec une arme, vous pouvez dépenser un dé de supériorité pour distraire la créature."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Le prochain jet d'attaque contre la cible par une créature autre que vous a un avantage s'il est effectué avant le début de votre prochain tour."
       },
       "evasive_footwork": {
         "name": "Jeu de jambes évasif",
@@ -19,27 +19,27 @@
       },
       "feinting_attack": {
         "name": "Attaque de feinte",
-        "description": "Vous pouvez dépenser un dé de supériorité et utiliser une action bonus pour feinter, obtenant ainsi un avantage lors de votre prochaine attaque contre une créature."
+        "description": "Dépensez une action bonus et un dé de supériorité pour feinter une créature à moins de 1,50 mètre. Vous avez un avantage lors de votre prochaine attaque contre lui ce tour-ci, et si cette attaque réussit, ajoutez le dé de supériorité aux dégâts."
       },
       "goading_attack": {
         "name": "Attaque d'aiguillon",
-        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour inciter la cible à vous attaquer."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. La cible doit réussir un jet de Sagesse ou être désavantagée lors des attaques contre des créatures autres que vous jusqu'à la fin de votre prochain tour."
       },
       "lunging_attack": {
         "name": "Attaque brusque",
-        "description": "Lorsque vous effectuez une attaque au corps à corps avec une arme, vous pouvez dépenser un dé de supériorité pour augmenter la portée de cette attaque."
+        "description": "Lorsque vous effectuez une attaque au corps à corps avec une arme, dépensez un dé de supériorité pour augmenter votre portée de 1,50 mètre pour cette attaque. Si l’attaque réussit, ajoutez le dé de supériorité aux dégâts."
       },
       "maneuvering_attack": {
         "name": "Attaque de manœuvre",
-        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour permettre à un allié de bouger sans provoquer la cible."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Choisissez un allié qui peut vous voir ou vous entendre ; cet allié peut utiliser sa réaction pour se déplacer jusqu'à la moitié de sa vitesse sans provoquer d'attaques d'opportunité de la part de la cible."
       },
       "menacing_attack": {
         "name": "Attaque menaçante",
-        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour tenter d'effrayer la cible."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. La cible doit réussir un jet de Sagesse sous peine d'avoir peur de vous jusqu'à la fin de votre prochain tour."
       },
       "parry": {
         "name": "Parer",
-        "description": "Lorsqu'une autre créature vous blesse avec une attaque au corps à corps, vous pouvez dépenser un dé de supériorité pour réduire les dégâts."
+        "description": "Lorsqu'une autre créature vous blesse avec une attaque au corps à corps, utilisez votre réaction et dépensez un dé de supériorité pour réduire les dégâts du jet de dé + votre modificateur de Dextérité."
       },
       "precision_attack": {
         "name": "Attaque de précision",
@@ -47,233 +47,297 @@
       },
       "pushing_attack": {
         "name": "Attaque poussée",
-        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour tenter de repousser la cible."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Si la cible est de grande taille ou plus petite, elle doit effectuer une sauvegarde de Force ou être poussée jusqu'à 15 pieds de vous."
       },
       "rally": {
         "name": "Rallier",
-        "description": "À votre tour, vous pouvez dépenser un dé de supériorité et utiliser une action bonus pour renforcer un allié avec des points de vie temporaires."
+        "description": "A votre tour, dépensez une action bonus et un dé de supériorité pour donner à un allié qui peut vous voir ou vous entendre des points de vie temporaires égaux au jet de dé + votre modificateur de Charisme."
       },
       "riposte": {
         "name": "Riposte",
-        "description": "Lorsqu'une créature vous manque lors d'une attaque au corps à corps, vous pouvez dépenser un dé de supériorité pour lancer une attaque au corps à corps contre elle."
+        "description": "Lorsqu'une créature vous manque lors d'une attaque au corps à corps, utilisez votre réaction et dépensez un dé de supériorité pour lancer une attaque au corps à corps contre elle. Si vous touchez, ajoutez le dé de supériorité aux dégâts."
       },
       "sweeping_attack": {
         "name": "Attaque radicale",
-        "description": "Lorsque vous frappez avec une attaque au corps à corps avec une arme, vous pouvez dépenser un dé de supériorité pour endommager une autre créature à portée."
+        "description": "Lorsque vous frappez avec une arme de mêlée, dépensez un dé de supériorité pour endommager une autre créature à moins de 1,50 mètre de la cible d'origine et à votre portée. Si le jet d'attaque d'origine devait toucher la deuxième créature, elle subit des dégâts égaux au dé de supériorité."
       },
       "trip_attack": {
         "name": "Attaque de voyage",
-        "description": "Lorsque vous frappez avec une arme, vous pouvez dépenser un dé de supériorité pour tenter de mettre la cible à terre."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Si la cible est de grande taille ou plus petite, elle doit effectuer un jet de Force ou tomber à terre."
       }
     },
     "fighting_styles_fighter": {
       "archery": {
-        "name": "Tir à l'arc"
+        "name": "Tir à l'arc",
+        "description": "Vous bénéficiez d'un bonus de +2 aux jets d'attaque que vous effectuez avec des armes à distance."
       },
       "defense": {
-        "name": "Défense"
+        "name": "Défense",
+        "description": "Tant que vous portez une armure, vous gagnez un bonus de +1 à la CA."
       },
       "dueling": {
-        "name": "Duel"
+        "name": "Duel",
+        "description": "Lorsque vous maniez une arme de mêlée dans une main et aucune autre arme, vous gagnez un bonus de +2 aux jets de dégâts avec cette arme."
       },
       "great_weapon_fighting": {
-        "name": "Grand combat aux armes"
+        "name": "Grand combat aux armes",
+        "description": "Lorsque vous obtenez un 1 ou un 2 sur un dé de dégâts pour une arme de mêlée tenue à deux mains, relancez le dé et utilisez le nouveau jet. L'arme doit avoir la propriété à deux mains ou polyvalente."
       },
       "protection": {
-        "name": "Protection"
+        "name": "Protection",
+        "description": "Lorsqu'une créature attaque une cible autre que vous dans un rayon de 1,50 mètre, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque. Vous devez porter un bouclier."
       },
       "two_weapon_fighting": {
-        "name": "Combat à deux armes"
+        "name": "Combat à deux armes",
+        "description": "Ajoutez votre modificateur de capacité aux dégâts de votre deuxième attaque avec une arme lorsque vous combattez avec deux armes."
       }
     },
     "fighting_styles_paladin": {
       "defense": {
-        "name": "Défense"
+        "name": "Défense",
+        "description": "Tant que vous portez une armure, vous gagnez un bonus de +1 à la CA."
       },
       "dueling": {
-        "name": "Duel"
+        "name": "Duel",
+        "description": "Lorsque vous maniez une arme de mêlée dans une main et aucune autre arme, vous gagnez un bonus de +2 aux jets de dégâts avec cette arme."
       },
       "great_weapon_fighting": {
-        "name": "Grand combat aux armes"
+        "name": "Grand combat aux armes",
+        "description": "Lorsque vous obtenez un 1 ou un 2 sur un dé de dégâts pour une arme de mêlée tenue à deux mains, relancez le dé et utilisez le nouveau jet. L'arme doit avoir la propriété à deux mains ou polyvalente."
       },
       "protection": {
-        "name": "Protection"
+        "name": "Protection",
+        "description": "Lorsqu'une créature attaque une cible autre que vous dans un rayon de 1,50 mètre, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque. Vous devez porter un bouclier."
       }
     },
     "fighting_styles_ranger": {
       "archery": {
-        "name": "Tir à l'arc"
+        "name": "Tir à l'arc",
+        "description": "Vous bénéficiez d'un bonus de +2 aux jets d'attaque que vous effectuez avec des armes à distance."
       },
       "defense": {
-        "name": "Défense"
+        "name": "Défense",
+        "description": "Tant que vous portez une armure, vous gagnez un bonus de +1 à la CA."
       },
       "dueling": {
-        "name": "Duel"
+        "name": "Duel",
+        "description": "Lorsque vous maniez une arme de mêlée dans une main et aucune autre arme, vous gagnez un bonus de +2 aux jets de dégâts avec cette arme."
       },
       "two_weapon_fighting": {
-        "name": "Combat à deux armes"
+        "name": "Combat à deux armes",
+        "description": "Ajoutez votre modificateur de capacité aux dégâts de votre deuxième attaque avec une arme lorsque vous combattez avec deux armes."
       }
     },
     "metamagic_options": {
       "careful_spell": {
-        "name": "Sort prudent"
+        "name": "Sort prudent",
+        "description": "Dépensez 1 point de sorcellerie et choisissez des créatures jusqu'à votre modificateur de Charisme (minimum 1). Les créatures choisies réussissent automatiquement le jet de sauvegarde du sort."
       },
       "distant_spell": {
-        "name": "Sort lointain"
+        "name": "Sort lointain",
+        "description": "Dépensez 1 point de sorcellerie pour doubler la portée d'un sort s'il a une portée de 1,50 mètre ou plus. Si le sort a une portée de contact, sa portée devient 9 mètres."
       },
       "empowered_spell": {
-        "name": "Sort surpuissant"
+        "name": "Sort surpuissant",
+        "description": "Dépensez 1 point de sorcellerie pour relancer un nombre de dés de dégâts d'un sort jusqu'à concurrence de votre modificateur de Charisme (minimum 1). Vous devez utiliser les nouveaux rouleaux."
       },
       "extended_spell": {
-        "name": "Sort prolongé"
+        "name": "Sort prolongé",
+        "description": "Dépensez 1 point de sorcellerie pour doubler la durée d'un sort s'il dure 1 minute ou plus, jusqu'à une durée maximale de 24 heures."
       },
       "heightened_spell": {
-        "name": "Sort amélioré"
+        "name": "Sort amélioré",
+        "description": "Dépensez 3 points de rituel pour désavantager une cible lors de son premier jet de sauvegarde contre le sort."
       },
       "quickened_spell": {
-        "name": "Sort accéléré"
+        "name": "Sort accéléré",
+        "description": "Dépensez 2 points de sorcellerie pour lancer à la place un sort avec un temps d'incantation de 1 action en guise d'action bonus."
       },
       "subtle_spell": {
-        "name": "Sort subtil"
+        "name": "Sort subtil",
+        "description": "Dépensez 1 point de sorcellerie pour lancer un sort sans composantes somatiques ou verbales."
       },
       "twinned_spell": {
-        "name": "Sort jumelé"
+        "name": "Sort jumelé",
+        "description": "Dépensez des points de sorcellerie égaux au niveau du sort, ou 1 point pour un sort mineur, pour cibler une deuxième créature avec un sort qui cible normalement une seule créature et n'a pas de portée de soi."
       }
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "Aberrations"
+        "name": "Aberrations",
+        "description": "Choisissez les aberrations comme l’un de vos types d’ennemis préférés."
       },
       "beasts": {
-        "name": "Bêtes"
+        "name": "Bêtes",
+        "description": "Choisissez les bêtes comme l’un de vos types d’ennemis préférés."
       },
       "celestials": {
-        "name": "Célestes"
+        "name": "Célestes",
+        "description": "Choisissez les célestes comme l’un de vos types d’ennemis préférés."
       },
       "constructs": {
-        "name": "Constructions"
+        "name": "Constructions",
+        "description": "Choisissez les constructions comme l’un de vos types d’ennemis préférés."
       },
       "dragons": {
-        "name": "Dragons"
+        "name": "Dragons",
+        "description": "Choisissez les dragons comme l’un de vos types d’ennemis préférés."
       },
       "elementals": {
-        "name": "Élémentaires"
+        "name": "Élémentaires",
+        "description": "Choisissez les élémentaires comme l’un de vos types d’ennemis préférés."
       },
       "fey": {
-        "name": "Fée"
+        "name": "Fée",
+        "description": "Choisissez Fey comme l’un de vos types d’ennemis préférés."
       },
       "fiends": {
-        "name": "Démons"
+        "name": "Démons",
+        "description": "Choisissez les démons comme l’un de vos types d’ennemis préférés."
       },
       "giants": {
-        "name": "Géants"
+        "name": "Géants",
+        "description": "Choisissez les géants comme l’un de vos types d’ennemis préférés."
       },
       "monstrosities": {
-        "name": "Monstruosités"
+        "name": "Monstruosités",
+        "description": "Choisissez les monstruosités comme l’un de vos types d’ennemis préférés."
       },
       "oozes": {
-        "name": "suinte"
+        "name": "suinte",
+        "description": "Choisissez les limons comme l’un de vos types d’ennemis préférés."
       },
       "plants": {
-        "name": "Plantes"
+        "name": "Plantes",
+        "description": "Choisissez les plantes comme l’un de vos types d’ennemis préférés."
       },
       "undead": {
-        "name": "Mort-vivant"
+        "name": "Mort-vivant",
+        "description": "Choisissez les morts-vivants comme l’un de vos types d’ennemis préférés."
       }
     },
     "favored_terrain": {
       "arctic": {
-        "name": "Arctique"
+        "name": "Arctique",
+        "description": "Choisissez le terrain arctique comme l’un de vos terrains préférés."
       },
       "coast": {
-        "name": "Côte"
+        "name": "Côte",
+        "description": "Choisissez le terrain côtier comme l’un de vos terrains préférés."
       },
       "desert": {
-        "name": "Désert"
+        "name": "Désert",
+        "description": "Choisissez un terrain désertique comme l’un de vos terrains préférés."
       },
       "forest": {
-        "name": "Forêt"
+        "name": "Forêt",
+        "description": "Choisissez le terrain forestier comme l’un de vos terrains préférés."
       },
       "grassland": {
-        "name": "Prairie"
+        "name": "Prairie",
+        "description": "Choisissez les terrains de prairie comme l’un de vos terrains préférés."
       },
       "mountain": {
-        "name": "Montagne"
+        "name": "Montagne",
+        "description": "Choisissez le terrain de montagne comme l’un de vos terrains préférés."
       },
       "swamp": {
-        "name": "Marais"
+        "name": "Marais",
+        "description": "Choisissez le terrain marécageux comme l’un de vos terrains préférés."
       },
       "underdark": {
-        "name": "Ténèbres"
+        "name": "Ténèbres",
+        "description": "Choisissez l’Underdark comme l’un de vos terrains préférés."
       }
     },
     "damage_types_elemental": {
       "acid": {
-        "name": "Acide"
+        "name": "Acide",
+        "description": "Choisissez l'acide comme type de dégâts affecté par cette fonctionnalité."
       },
       "cold": {
-        "name": "Froid"
+        "name": "Froid",
+        "description": "Choisissez le froid comme type de dommage affecté par cette fonctionnalité."
       },
       "fire": {
-        "name": "Feu"
+        "name": "Feu",
+        "description": "Choisissez le feu comme type de dégâts affecté par cette fonctionnalité."
       },
       "lightning": {
-        "name": "Foudre"
+        "name": "Foudre",
+        "description": "Choisissez la foudre comme type de dégâts affectés par cette fonctionnalité."
       },
       "thunder": {
-        "name": "Tonnerre"
+        "name": "Tonnerre",
+        "description": "Choisissez le tonnerre comme type de dégâts affectés par cette fonctionnalité."
       }
     },
     "ability_scores": {
       "strength": {
-        "name": "Force"
+        "name": "Force",
+        "description": "Choisissez Force pour augmenter la capacité, la maîtrise ou la sauvegarde du DD de cette fonctionnalité."
       },
       "dexterity": {
-        "name": "Dextérité"
+        "name": "Dextérité",
+        "description": "Choisissez Dextérité pour augmenter la capacité, la maîtrise ou la sauvegarde du DD de cette fonctionnalité."
       },
       "constitution": {
-        "name": "Constitution"
+        "name": "Constitution",
+        "description": "Choisissez Constitution pour l'augmentation de capacité, la maîtrise ou le DD de sauvegarde de cette fonctionnalité."
       },
       "intelligence": {
-        "name": "Intelligence"
+        "name": "Intelligence",
+        "description": "Choisissez Intelligence pour l’augmentation des capacités, la maîtrise ou la sauvegarde du DC de cette fonctionnalité."
       },
       "wisdom": {
-        "name": "Sagesse"
+        "name": "Sagesse",
+        "description": "Choisissez Sagesse pour augmenter la capacité, la maîtrise ou la sauvegarde du DC de cette fonctionnalité."
       },
       "charisma": {
-        "name": "Charisme"
+        "name": "Charisme",
+        "description": "Choisissez Charisme pour l'augmentation des capacités, la maîtrise ou la sauvegarde du DD de cette fonctionnalité."
       }
     },
     "draconic_ancestry": {
       "black": {
-        "name": "Noir"
+        "name": "Noir",
+        "description": "Choisissez l'ascendance du dragon noir, associée aux dégâts acides."
       },
       "blue": {
-        "name": "Bleu"
+        "name": "Bleu",
+        "description": "Choisissez l'ascendance du dragon bleu, associée aux dégâts de foudre."
       },
       "brass": {
-        "name": "Laiton"
+        "name": "Laiton",
+        "description": "Choisissez l'ascendance du dragon de laiton, associée aux dégâts de feu."
       },
       "bronze": {
-        "name": "Bronze"
+        "name": "Bronze",
+        "description": "Choisissez une ascendance dragon de bronze, associée aux dégâts de foudre."
       },
       "copper": {
-        "name": "Cuivre"
+        "name": "Cuivre",
+        "description": "Choisissez l'ascendance du dragon de cuivre, associée aux dégâts acides."
       },
       "gold": {
-        "name": "Or"
+        "name": "Or",
+        "description": "Choisissez l'ascendance dragon d'or, associée aux dégâts de feu."
       },
       "green": {
-        "name": "Vert"
+        "name": "Vert",
+        "description": "Choisissez l'ascendance du dragon vert, associée aux dégâts de poison."
       },
       "red": {
-        "name": "Rouge"
+        "name": "Rouge",
+        "description": "Choisissez l'ascendance du dragon rouge, associée aux dégâts de feu."
       },
       "silver": {
-        "name": "Argent"
+        "name": "Argent",
+        "description": "Choisissez l'ascendance du dragon d'argent, associée aux dégâts du froid."
       },
       "white": {
-        "name": "Blanc"
+        "name": "Blanc",
+        "description": "Choisissez une ascendance dragon blanc, associée aux dégâts du froid."
       }
     }
   },
@@ -284,13 +348,16 @@
           "pact_boon": {
             "options": {
               "pact_of_the_chain": {
-                "name": "Pacte de la Chaîne"
+                "name": "Pacte de la Chaîne",
+                "description": "Vous apprenez à retrouver le familier comme un rituel. Lorsque vous le lancez, vous pouvez choisir un familier normal ou l'une de ces formes spéciales : diablotin, pseudodragon, quasit ou sprite."
               },
               "pact_of_the_blade": {
-                "name": "Pacte de la Lame"
+                "name": "Pacte de la Lame",
+                "description": "Créez une arme du pacte dans votre main vide ou liez une arme magique comme arme du pacte."
               },
               "pact_of_the_tome": {
-                "name": "Pacte du Tome"
+                "name": "Pacte du Tome",
+                "description": "Gagnez un Livre des Ombres avec trois petits sorts de la liste de sorts de n'importe quelle classe."
               }
             }
           }
@@ -306,10 +373,12 @@
             "maneuver_dc_ability": {
               "options": {
                 "strength": {
-                  "name": "Force"
+                  "name": "Force",
+                  "description": "Utilisez la Force pour calculer le DD du jet de sauvegarde de vos manœuvres."
                 },
                 "dexterity": {
-                  "name": "Dextérité"
+                  "name": "Dextérité",
+                  "description": "Utilisez la Dextérité pour calculer le DD du jet de sauvegarde pour vos manœuvres."
                 }
               }
             }
@@ -324,13 +393,16 @@
             "hunters_prey": {
               "options": {
                 "colossus_slayer": {
-                  "name": "Tueur de colosses"
+                  "name": "Tueur de colosses",
+                  "description": "Une fois à chacun de vos tours, lorsque vous touchez une créature en dessous de son maximum de points de vie avec une attaque avec une arme, l'attaque inflige 1d8 dégâts supplémentaires."
                 },
                 "giant_killer": {
-                  "name": "Tueur géant"
+                  "name": "Tueur géant",
+                  "description": "Lorsqu'une créature de taille G ou plus près de vous vous attaque, utilisez votre réaction pour l'attaquer après son attaque."
                 },
                 "horde_breaker": {
-                  "name": "Brise-horde"
+                  "name": "Brise-horde",
+                  "description": "Une fois à chacun de vos tours, effectuez une attaque d'arme supplémentaire contre une créature différente proche de votre cible d'origine."
                 }
               }
             }
@@ -341,13 +413,16 @@
             "defensive_tactics": {
               "options": {
                 "escape_the_horde": {
-                  "name": "Échapper à la Horde"
+                  "name": "Échapper à la Horde",
+                  "description": "Les attaques d’opportunité contre vous sont lancées avec un désavantage."
                 },
                 "multiattack_defense": {
-                  "name": "Défense multi-attaques"
+                  "name": "Défense multi-attaques",
+                  "description": "Lorsqu'une créature vous frappe avec une attaque, vous gagnez un bonus de +4 à la CA contre toutes les attaques ultérieures de cette créature pour le reste du tour."
                 },
                 "steel_will": {
-                  "name": "Volonté d'acier"
+                  "name": "Volonté d'acier",
+                  "description": "Bénéficiez d'un avantage aux jets de sauvegarde contre la peur."
                 }
               }
             }
@@ -358,10 +433,12 @@
             "multiattack": {
               "options": {
                 "volley": {
-                  "name": "Volée"
+                  "name": "Volée",
+                  "description": "Utilisez votre action pour effectuer une attaque à distance contre n'importe quel nombre de créatures dans une petite zone à portée."
                 },
                 "whirlwind_attack": {
-                  "name": "Attaque tourbillonnante"
+                  "name": "Attaque tourbillonnante",
+                  "description": "Utilisez votre action pour effectuer des attaques au corps à corps contre n'importe quel nombre de créatures à moins de 1,50 mètre de vous."
                 }
               }
             }
@@ -372,13 +449,16 @@
             "superior_hunters_defense": {
               "options": {
                 "evasion": {
-                  "name": "Évasion"
+                  "name": "Évasion",
+                  "description": "Ne subissez aucun dégât lors d’un jet de sauvegarde de Dextérité réussi qui devrait normalement infliger la moitié des dégâts."
                 },
                 "stand_against_the_tide": {
-                  "name": "Tenez-vous à contre-courant"
+                  "name": "Tenez-vous à contre-courant",
+                  "description": "Lorsqu'une créature hostile vous manque avec une attaque de mêlée, redirigez cette attaque contre une autre créature."
                 },
                 "uncanny_dodge": {
-                  "name": "Esquive étrange"
+                  "name": "Esquive étrange",
+                  "description": "Lorsqu'un attaquant que vous pouvez voir vous frappe, utilisez votre réaction pour réduire de moitié les dégâts de l'attaque."
                 }
               }
             }
@@ -393,13 +473,16 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Les outils de Smith"
+              "name": "Les outils de Smith",
+              "description": "Maîtrisez les outils du forgeron."
             },
             "brewers_supplies": {
-              "name": "Fournitures du brasseur"
+              "name": "Fournitures du brasseur",
+              "description": "Maîtrisez les fournitures du brasseur."
             },
             "masons_tools": {
-              "name": "Outils de maçon"
+              "name": "Outils de maçon",
+              "description": "Maîtrisez les outils du maçon."
             }
           }
         }
@@ -412,22 +495,28 @@
         "spell_class": {
           "options": {
             "bard": {
-              "name": "Barde"
+              "name": "Barde",
+              "description": "Choisissez Bard comme classe source pour les sorts et les sorts de cet exploit."
             },
             "cleric": {
-              "name": "Clerc"
+              "name": "Clerc",
+              "description": "Choisissez Clerc comme classe source pour les sorts et sorts mineurs de cet exploit."
             },
             "druid": {
-              "name": "Druide"
+              "name": "Druide",
+              "description": "Choisissez Druide comme classe source pour les sorts et sorts mineurs de cet exploit."
             },
             "sorcerer": {
-              "name": "Sorcier"
+              "name": "Sorcier",
+              "description": "Choisissez Sorcier comme classe source pour les sorts et sorts mineurs de cet exploit."
             },
             "warlock": {
-              "name": "Sorcier"
+              "name": "Sorcier",
+              "description": "Choisissez Warlock comme classe source pour les sorts et les sorts de cet exploit."
             },
             "wizard": {
-              "name": "Magicien"
+              "name": "Magicien",
+              "description": "Choisissez Sorcier comme classe source pour les sorts et les sorts de cet exploit."
             }
           }
         }
@@ -438,10 +527,12 @@
         "maneuver_dc_ability": {
           "options": {
             "strength": {
-              "name": "Force"
+              "name": "Force",
+              "description": "Utilisez la Force pour calculer le DD du jet de sauvegarde de vos manœuvres."
             },
             "dexterity": {
-              "name": "Dextérité"
+              "name": "Dextérité",
+              "description": "Utilisez la Dextérité pour calculer le DD du jet de sauvegarde pour vos manœuvres."
             }
           }
         }
@@ -452,10 +543,12 @@
         "ability": {
           "options": {
             "strength": {
-              "name": "Force"
+              "name": "Force",
+              "description": "Augmentez votre score de Force pour cet exploit."
             },
             "dexterity": {
-              "name": "Dextérité"
+              "name": "Dextérité",
+              "description": "Augmentez votre score de Dextérité pour cet exploit."
             }
           }
         }

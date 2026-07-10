@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Fúria",
-      "description": "Em batalha, você luta com ferocidade primitiva. No seu turno, você pode entrar em fúria como ação bônus. Enquanto estiver em fúria, você tem vantagem em testes e testes de resistência de Força, ganha um bônus nas jogadas de dano corpo a corpo usando Força e tem resistência a dano de concussão, perfurante e cortante. Sua fúria dura 1 minuto. Ela termina antes se você ficar inconsciente ou se seu turno terminar e você não tiver atacado uma criatura hostil desde seu último turno nem sofrido dano desde então."
+      "description": "Em batalha, você luta com ferocidade primitiva. No seu turno, você pode entrar em fúria como ação bônus. Enquanto estiver em fúria, você tem vantagem em testes e testes de resistência de Força, ganha um bônus nas jogadas de dano corpo a corpo usando Força (+2 nos níveis 1-8 de bárbaro, +3 nos níveis 9-15 e +4 nos níveis 16-20) e tem resistência a dano de concussão, perfurante e cortante. Sua fúria dura 1 minuto. Ela termina antes se você ficar inconsciente ou se seu turno terminar e você não tiver atacado uma criatura hostil desde seu último turno nem sofrido dano desde então."
     },
     "Unarmored Defense": {
       "name": "Defesa sem Armadura",
@@ -64,7 +64,7 @@
     },
     "Bardic Inspiration": {
       "name": "Inspiração de Bardo",
-      "description": "Você pode inspirar outros por meio de palavras ou música estimulantes. Como ação bônus, você pode conceder um dado de Inspiração de Bardo (d6) a uma criatura que não seja você. Uma vez nos próximos 10 minutos, a criatura pode rolar esse dado e adicionar o resultado a um teste de habilidade, jogada de ataque ou teste de resistência que fizer."
+      "description": "Você pode inspirar outros por meio de palavras ou música estimulantes. Como ação bônus, você pode conceder um dado de Inspiração de Bardo a uma criatura que não seja você. O dado é d6 nos níveis 1-4 de bardo, d8 nos níveis 5-9, d10 nos níveis 10-14 e d12 nos níveis 15-20. Uma vez nos próximos 10 minutos, a criatura pode rolar esse dado e adicionar o resultado a um teste de habilidade, jogada de ataque ou teste de resistência que fizer."
     },
     "Jack of All Trades": {
       "name": "Pau para Toda Obra",
@@ -122,7 +122,7 @@
     },
     "Destroy Undead": {
       "name": "Destruir Mortos-Vivos",
-      "description": "Quando um morto-vivo falha no teste de resistência contra sua característica Expulsar Mortos-Vivos, a criatura é instantaneamente destruída se seu nível de desafio for igual ou inferior a determinado limite: ND 1/2 no 5º nível, aumentando em níveis superiores."
+      "description": "Quando um morto-vivo falha no teste de resistência contra sua característica Expulsar Mortos-Vivos, a criatura é instantaneamente destruída se seu nível de desafio for baixo o bastante: ND 1/2 no 5º nível de clérigo, ND 1 no 8º nível, ND 2 no 11º nível, ND 3 no 14º nível e ND 4 no 17º nível."
     },
     "Divine Intervention": {
       "name": "Intervenção Divina",
@@ -200,7 +200,7 @@
     },
     "Martial Arts": {
       "name": "Artes Marciais",
-      "description": "Sua prática das artes marciais concede domínio sobre estilos de combate que usam golpes desarmados e armas de monge. Você pode usar Destreza em vez de Força nas jogadas de ataque e dano. Você pode rolar um d4 no lugar do dano normal de seu golpe desarmado ou arma de monge. Quando usa a ação Atacar com um golpe desarmado ou arma de monge, pode fazer um golpe desarmado como ação bônus."
+      "description": "Sua prática das artes marciais concede domínio sobre estilos de combate que usam golpes desarmados e armas de monge. Você pode usar Destreza em vez de Força nas jogadas de ataque e dano. Seu dado de Artes Marciais para golpe desarmado ou arma de monge é d4 nos níveis 1-4 de monge, d6 nos níveis 5-10, d8 nos níveis 11-16 e d10 nos níveis 17-20. Quando usa a ação Atacar com um golpe desarmado ou arma de monge, pode fazer um golpe desarmado como ação bônus."
     },
     "Ki": {
       "name": "Ki",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimento sem Armadura",
-      "description": "Seu deslocamento aumenta em 3 metros enquanto você não estiver usando armadura nem empunhando um escudo. Esse bônus aumenta quando você alcança certos níveis de monge."
+      "description": "Seu deslocamento aumenta enquanto você não estiver usando armadura nem empunhando um escudo: +3 metros no 2º nível de monge, +4,5 metros no 6º nível, +6 metros no 10º nível, +7,5 metros no 14º nível e +9 metros no 18º nível."
     },
     "Monastic Tradition": {
       "name": "Tradição Monástica",
@@ -300,11 +300,11 @@
   "Ranger": {
     "Favored Enemy": {
       "name": "Inimigo Favorito",
-      "description": "Você tem experiência significativa estudando, rastreando, caçando e até falando com certo tipo de inimigo. Escolha um tipo de inimigo favorito: aberrações, bestas, celestiais, constructos, dragões, elementais, fadas, ínferos, gigantes, monstruosidades, limos, plantas ou mortos-vivos. Você tem vantagem em testes de Sabedoria (Sobrevivência) para rastrear seus inimigos favoritos, assim como em testes de Inteligência para lembrar informações sobre eles."
+      "description": "Você tem experiência significativa estudando, rastreando, caçando e até falando com certos inimigos. Escolha um tipo de inimigo favorito no 1º nível de patrulheiro, outro no 6º nível e outro no 14º nível: aberrações, bestas, celestiais, constructos, dragões, elementais, fadas, ínferos, gigantes, monstruosidades, limos, plantas ou mortos-vivos. Você tem vantagem em testes de Sabedoria (Sobrevivência) para rastrear seus inimigos favoritos, assim como em testes de Inteligência para lembrar informações sobre eles."
     },
     "Natural Explorer": {
       "name": "Explorador Natural",
-      "description": "Você é particularmente familiarizado com um tipo de ambiente natural e é hábil em viajar e sobreviver nessas regiões. Escolha um tipo de terreno favorito: ártico, costa, deserto, floresta, planície, montanha, pântano ou o Subterrâneo."
+      "description": "Você é particularmente familiarizado com um tipo de ambiente natural e é hábil em viajar e sobreviver nessas regiões. Escolha um terreno favorito no 1º nível de patrulheiro, outro no 6º nível e outro no 10º nível: ártico, costa, deserto, floresta, planície, montanha, pântano ou o Subterrâneo."
     },
     "Fighting Style": {
       "name": "Estilo de Luta",
@@ -320,7 +320,7 @@
     },
     "Primeval Awareness": {
       "name": "Consciência Primitiva",
-      "description": "Você pode usar sua ação e gastar um espaço de magia de patrulheiro para focar sua percepção na região ao seu redor. Por 1 minuto por nível do espaço de magia gasto, você pode sentir se certos tipos de criaturas estão presentes a até 1,5 quilômetro de você."
+      "description": "Você pode usar sua ação e gastar um espaço de magia de patrulheiro para focar sua percepção na região ao seu redor. Por 1 minuto por nível do espaço de magia gasto, você pode sentir se aberrações, celestiais, dragões, elementais, fadas, ínferos ou mortos-vivos estão presentes a até 1,5 quilômetro de você."
     },
     "Ability Score Improvement": {
       "name": "Aumento no Valor de Habilidade",
@@ -330,7 +330,7 @@
       "name": "Ataque Extra",
       "description": "Você pode atacar duas vezes, em vez de uma, sempre que realizar a ação Atacar no seu turno."
     },
-    "Land\u0027s Stride": {
+    "Land's Stride": {
       "name": "Passo da Terra",
       "description": "Mover-se por terreno difícil não mágico não custa movimento extra para você. Você também pode passar por plantas não mágicas sem ser retardado por elas e sem sofrer dano delas caso tenham espinhos, farpas ou perigo semelhante."
     },
@@ -358,9 +358,9 @@
     },
     "Sneak Attack": {
       "name": "Ataque Furtivo",
-      "description": "Você sabe como atacar sutilmente e explorar a distração de um inimigo. Uma vez por turno, você pode causar 1d6 de dano extra a uma criatura que atingir com um ataque se tiver vantagem na jogada de ataque. O ataque deve usar uma arma de acuidade ou uma arma à distância. Você não precisa ter vantagem na jogada de ataque se outro inimigo do alvo estiver a até 1,5 metro dele, esse inimigo não estiver incapacitado e você não tiver desvantagem na jogada de ataque. A quantidade de dano extra aumenta conforme você ganha níveis nesta classe."
+      "description": "Você sabe como atacar sutilmente e explorar a distração de um inimigo. Uma vez por turno, você pode causar dano extra a uma criatura que atingir com um ataque se tiver vantagem na jogada de ataque. O ataque deve usar uma arma de acuidade ou uma arma à distância. Você não precisa ter vantagem se outro inimigo do alvo estiver a até 1,5 metro dele, esse inimigo não estiver incapacitado e você não tiver desvantagem. O dano extra é 1d6 nos níveis 1-2 de ladino e aumenta em +1d6 a cada dois níveis de ladino: 2d6 no nível 3, 3d6 no nível 5, 4d6 no nível 7, 5d6 no nível 9, 6d6 no nível 11, 7d6 no nível 13, 8d6 no nível 15, 9d6 no nível 17 e 10d6 no nível 19."
     },
-    "Thieves\u0027 Cant": {
+    "Thieves' Cant": {
       "name": "Gíria de Ladrão",
       "description": "Durante seu treinamento de ladino, você aprendeu a gíria de ladrão, uma mistura secreta de dialeto, jargão e código que permite esconder mensagens em uma conversa aparentemente normal."
     },

@@ -3,15 +3,15 @@
     "battle_master_maneuvers": {
       "commanders_strike": {
         "name": "指挥官的打击",
-        "description": "当你采取攻击动作时，你可以放弃一次攻击并使用奖励动作来指挥盟友进行攻击。"
+        "description": "当您采取攻击动作时，放弃一次攻击并使用奖励动作，让可以看到或听到您的盟友使用其反应进行一次武器攻击。如果命中，则将你的优势骰子添加到攻击伤害中。"
       },
       "disarming_attack": {
         "name": "解除攻击",
-        "description": "当你用武器攻击击中一个生物时，你可以花费一个优势骰子来尝试解除目标的武装。"
+        "description": "当你用武器攻击击中时，会消耗一个优势骰子并将其添加到伤害中。目标必须进行一次力量豁免，或者丢弃你选择的一件其持有的物品。"
       },
       "distracting_strike": {
         "name": "分散攻击",
-        "description": "当你用武器攻击击中一个生物时，你可以花费一个优势骰子来分散该生物的注意力。"
+        "description": "当你用武器攻击击中时，会消耗一个优势骰子并将其添加到伤害中。如果在你的下一个回合开始之前进行，那么你以外的生物对目标进行的下一次攻击检​​定将具有优势。"
       },
       "evasive_footwork": {
         "name": "回避步法",
@@ -19,27 +19,27 @@
       },
       "feinting_attack": {
         "name": "佯攻",
-        "description": "你可以花费一个优势骰子并使用奖励动作进行佯攻，在下次攻击生物时获得优势。"
+        "description": "花费一个奖励动作和一个优势骰子来佯攻 5 英尺内的生物。你在本回合的下一次攻击中拥有优势，如果这次攻击击中，则将优势骰子添加到伤害中。"
       },
       "goading_attack": {
         "name": "刺激攻击",
-        "description": "当你用武器攻击时，你可以花费一个优势骰子来刺激目标攻击你。"
+        "description": "当你用武器攻击击中时，会消耗一个优势骰子并将其添加到伤害中。目标必须进行感知豁免，否则在对除你之外的生物的攻击中处于劣势，直到你的下回合结束。"
       },
       "lunging_attack": {
         "name": "猛攻",
-        "description": "当你进行近战武器攻击时，你可以花费一个优势骰子来增加你的攻击范围。"
+        "description": "当你进行近战武器攻击时，花费一个优势骰子来将你的攻击范围增加 5 英尺。如果攻击命中，则将优势骰子添加到伤害中。"
       },
       "maneuvering_attack": {
         "name": "机动攻击",
-        "description": "当你用武器攻击击中时，你可以花费一个优势骰子来让盟友在不挑衅目标的情况下移动。"
+        "description": "当你用武器攻击击中时，会消耗一个优势骰子并将其添加到伤害中。选择一个能看到或听到你的盟友；该盟友可以利用其反应将速度移动到其一半，而不会引发目标的借机攻击。"
       },
       "menacing_attack": {
         "name": "来势汹汹的攻击",
-        "description": "当你用武器攻击时，你可以花费一个优势骰子来试图吓唬目标。"
+        "description": "当你用武器攻击击中时，会消耗一个优势骰子并将其添加到伤害中。目标必须进行感知检定，否则就会被你吓到，直到你的下一个回合结束。"
       },
       "parry": {
         "name": "招架",
-        "description": "当另一个生物通过近战攻击对你造成伤害时，你可以花费优势骰子来减少伤害。"
+        "description": "当另一个生物通过近战攻击对你造成伤害时，使用你的反应并花费一个优势骰子来减少掷骰子+你的敏捷调整值造成的伤害。"
       },
       "precision_attack": {
         "name": "精准攻击",
@@ -47,233 +47,297 @@
       },
       "pushing_attack": {
         "name": "推击",
-        "description": "当你用武器攻击击中时，你可以花费一个优势骰子来尝试将目标推开。"
+        "description": "当你用武器攻击击中时，会消耗一个优势骰子并将其添加到伤害中。如果目标很大或更小，它必须进行力量豁免，否则会被推到离你 15 英尺远的地方。"
       },
       "rally": {
         "name": "集会",
-        "description": "在你的回合中，你可以花费一个优势骰子并使用奖励动作来支持具有临时生命值的盟友。"
+        "description": "在你的回合中，花费一个奖励动作和一个优势骰子，为可以看到或听到你的盟友提供临时生命值，该生命值等于骰子掷骰+你的魅力调整值。"
       },
       "riposte": {
         "name": "还击",
-        "description": "当一个生物的近战攻击没有击中你时，你可以花费一个优势骰子来对其进行近战武器攻击。"
+        "description": "当一个生物的近战攻击没有击中你时，利用你的反应并花费一个优势骰子来对其进行近战武器攻击。如果你击中了，则将优势骰子添加到伤害中。"
       },
       "sweeping_attack": {
         "name": "横扫进攻",
-        "description": "当你用近战武器攻击击中时，你可以花费优势骰子来伤害范围内的另一个生物。"
+        "description": "当你用近战武器攻击击中时，会花费一个优势骰子来伤害原始目标 5 英尺内且在你的攻击范围内的另一个生物。如果最初的攻击检定击中了第二个生物，它会受到等同于优势骰子的伤害。"
       },
       "trip_attack": {
         "name": "绊倒攻击",
-        "description": "当你用武器攻击击中时，你可以花费一个优势骰子来尝试将目标击倒。"
+        "description": "当你用武器攻击击中时，会消耗一个优势骰子并将其添加到伤害中。如果目标较大或较小，则必须进行力量豁免，否则容易摔倒。"
       }
     },
     "fighting_styles_fighter": {
       "archery": {
-        "name": "射箭"
+        "name": "射箭",
+        "description": "你使用远程武器进行的攻击检定获得+2加值。"
       },
       "defense": {
-        "name": "防御"
+        "name": "防御",
+        "description": "当你穿着盔甲时，你的AC获得+1加值。"
       },
       "dueling": {
-        "name": "决斗"
+        "name": "决斗",
+        "description": "当你一只手挥舞近战武器而没有其他武器时，你使用该武器的伤害检定获得+2加值。"
       },
       "great_weapon_fighting": {
-        "name": "伟大的武器战斗"
+        "name": "伟大的武器战斗",
+        "description": "当您在双手持有的近战武器的伤害骰上掷出 1 或 2 时，重新掷骰子并使用新的掷骰。该武器必须具有双手或多用途属性。"
       },
       "protection": {
-        "name": "保护"
+        "name": "保护",
+        "description": "当一个生物攻击 5 英尺内除你之外的目标时，你可以利用你的反应对攻击检定施加不利影响。你一定拿着盾牌。"
       },
       "two_weapon_fighting": {
-        "name": "双武器战斗"
+        "name": "双武器战斗",
+        "description": "当使用两种武器战斗时，将你的能力调整值添加到你的第二次武器攻击的伤害上。"
       }
     },
     "fighting_styles_paladin": {
       "defense": {
-        "name": "防御"
+        "name": "防御",
+        "description": "当你穿着盔甲时，你的AC获得+1加值。"
       },
       "dueling": {
-        "name": "决斗"
+        "name": "决斗",
+        "description": "当你一只手挥舞近战武器而没有其他武器时，你使用该武器的伤害检定获得+2加值。"
       },
       "great_weapon_fighting": {
-        "name": "伟大的武器战斗"
+        "name": "伟大的武器战斗",
+        "description": "当您在双手持有的近战武器的伤害骰上掷出 1 或 2 时，重新掷骰子并使用新的掷骰。该武器必须具有双手或多用途属性。"
       },
       "protection": {
-        "name": "保护"
+        "name": "保护",
+        "description": "当一个生物攻击 5 英尺内除你之外的目标时，你可以利用你的反应对攻击检定施加不利影响。你一定拿着盾牌。"
       }
     },
     "fighting_styles_ranger": {
       "archery": {
-        "name": "射箭"
+        "name": "射箭",
+        "description": "你使用远程武器进行的攻击检定获得+2加值。"
       },
       "defense": {
-        "name": "防御"
+        "name": "防御",
+        "description": "当你穿着盔甲时，你的AC获得+1加值。"
       },
       "dueling": {
-        "name": "决斗"
+        "name": "决斗",
+        "description": "当你一只手挥舞近战武器而没有其他武器时，你使用该武器的伤害检定获得+2加值。"
       },
       "two_weapon_fighting": {
-        "name": "双武器战斗"
+        "name": "双武器战斗",
+        "description": "当使用两种武器战斗时，将你的能力调整值添加到你的第二次武器攻击的伤害上。"
       }
     },
     "metamagic_options": {
       "careful_spell": {
-        "name": "小心咒语"
+        "name": "小心咒语",
+        "description": "花费 1 个魔法点并选择达到你的魅力调整值的生物（至少 1）。被选中的生物会自动通过法术豁免检定。"
       },
       "distant_spell": {
-        "name": "遥远的咒语"
+        "name": "遥远的咒语",
+        "description": "如果法术的范围为 5 英尺或更大，则花费 1 个魔法点使法术的范围加倍。如果该法术具有接触范围，则其范围将变为 30 英尺。"
       },
       "empowered_spell": {
-        "name": "强化法术"
+        "name": "强化法术",
+        "description": "花费 1 个魔法点来重新投掷一定数量的法术伤害骰，最多可达你的魅力调整值（最少 1）。您必须使用新卷。"
       },
       "extended_spell": {
-        "name": "扩展法术"
+        "name": "扩展法术",
+        "description": "如果法术持续时间为 1 分钟或更长时间，则花费 1 个魔法点使法术持续时间加倍，最长持续时间为 24 小时。"
       },
       "heightened_spell": {
-        "name": "强化法术"
+        "name": "强化法术",
+        "description": "花费 3 点魔法点使一个目标在对抗该法术的第一次豁免检定中处于劣势。"
       },
       "quickened_spell": {
-        "name": "瞬发法术"
+        "name": "瞬发法术",
+        "description": "花费 2 个法术点来施展施法时间为 1 个动作的法术作为奖励动作。"
       },
       "subtle_spell": {
-        "name": "微妙的咒语"
+        "name": "微妙的咒语",
+        "description": "花费 1 个法术点来施展一个没有躯体或语言成分的法术。"
       },
       "twinned_spell": {
-        "name": "孪生咒语"
+        "name": "孪生咒语",
+        "description": "花费等于法术等级的魔法点，或者戏法 1 点，用法术来瞄准第二个生物，该法术通常只以一个生物为目标，并且没有自身范围。"
       }
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "像差"
+        "name": "像差",
+        "description": "选择畸变作为你最喜欢的敌人类型之一。"
       },
       "beasts": {
-        "name": "野兽"
+        "name": "野兽",
+        "description": "选择野兽作为你最喜欢的敌人类型之一。"
       },
       "celestials": {
-        "name": "天神"
+        "name": "天神",
+        "description": "选择天体作为你最喜欢的敌人类型之一。"
       },
       "constructs": {
-        "name": "构造"
+        "name": "构造",
+        "description": "选择构造体作为你最喜欢的敌人类型之一。"
       },
       "dragons": {
-        "name": "龙"
+        "name": "龙",
+        "description": "选择龙作为你最喜欢的敌人类型之一。"
       },
       "elementals": {
-        "name": "元素生物"
+        "name": "元素生物",
+        "description": "选择元素作为你最喜欢的敌人类型之一。"
       },
       "fey": {
-        "name": "费伊"
+        "name": "费伊",
+        "description": "选择精类作为你最喜欢的敌人类型之一。"
       },
       "fiends": {
-        "name": "恶魔"
+        "name": "恶魔",
+        "description": "选择恶魔作为你最喜欢的敌人类型之一。"
       },
       "giants": {
-        "name": "巨人队"
+        "name": "巨人队",
+        "description": "选择巨人作为你最喜欢的敌人类型之一。"
       },
       "monstrosities": {
-        "name": "怪物"
+        "name": "怪物",
+        "description": "选择怪物作为你最喜欢的敌人类型之一。"
       },
       "oozes": {
-        "name": "软泥"
+        "name": "软泥",
+        "description": "选择软泥怪作为你最喜欢的敌人类型之一。"
       },
       "plants": {
-        "name": "植物"
+        "name": "植物",
+        "description": "选择植物作为你最喜欢的敌人类型之一。"
       },
       "undead": {
-        "name": "亡灵"
+        "name": "亡灵",
+        "description": "选择不死生物作为你最喜欢的敌人类型之一。"
       }
     },
     "favored_terrain": {
       "arctic": {
-        "name": "北极"
+        "name": "北极",
+        "description": "选择北极地形作为您最喜欢的地形之一。"
       },
       "coast": {
-        "name": "海岸"
+        "name": "海岸",
+        "description": "选择沿海地形作为您最喜欢的地形之一。"
       },
       "desert": {
-        "name": "沙漠"
+        "name": "沙漠",
+        "description": "选择沙漠地形作为您最喜欢的地形之一。"
       },
       "forest": {
-        "name": "森林"
+        "name": "森林",
+        "description": "选择森林地形作为您最喜欢的地形之一。"
       },
       "grassland": {
-        "name": "草原"
+        "name": "草原",
+        "description": "选择草原地形作为您最喜欢的地形之一。"
       },
       "mountain": {
-        "name": "山"
+        "name": "山",
+        "description": "选择山地地形作为您最喜欢的地形之一。"
       },
       "swamp": {
-        "name": "沼泽"
+        "name": "沼泽",
+        "description": "选择沼泽地形作为你最喜欢的地形之一。"
       },
       "underdark": {
-        "name": "幽暗地域"
+        "name": "幽暗地域",
+        "description": "选择幽暗地域作为你最喜欢的地形之一。"
       }
     },
     "damage_types_elemental": {
       "acid": {
-        "name": "酸"
+        "name": "酸",
+        "description": "选择酸作为受此功能影响的损坏类型。"
       },
       "cold": {
-        "name": "寒冷的"
+        "name": "寒冷的",
+        "description": "选择寒冷作为受此功能影响的伤害类型。"
       },
       "fire": {
-        "name": "火"
+        "name": "火",
+        "description": "选择火焰作为受此功能影响的伤害类型。"
       },
       "lightning": {
-        "name": "闪电"
+        "name": "闪电",
+        "description": "选择闪电作为受此功能影响的损坏类型。"
       },
       "thunder": {
-        "name": "雷"
+        "name": "雷",
+        "description": "选择雷作为受此功能影响的伤害类型。"
       }
     },
     "ability_scores": {
       "strength": {
-        "name": "力量"
+        "name": "力量",
+        "description": "选择“强度”可增加此功能的能力、熟练程度或节省 DC。"
       },
       "dexterity": {
-        "name": "灵巧"
+        "name": "灵巧",
+        "description": "选择敏捷可以增加该功能的能力、熟练程度或节省 DC。"
       },
       "constitution": {
-        "name": "宪法"
+        "name": "宪法",
+        "description": "选择体质可以增加此功能的能力、熟练度或节省 DC。"
       },
       "intelligence": {
-        "name": "智力"
+        "name": "智力",
+        "description": "选择智力可以增加此功能的能力、熟练程度或节省 DC。"
       },
       "wisdom": {
-        "name": "智慧"
+        "name": "智慧",
+        "description": "选择智慧可以增加此功能的能力、熟练度或节省 DC。"
       },
       "charisma": {
-        "name": "魅力"
+        "name": "魅力",
+        "description": "选择魅力可以增加此功能的能力、熟练度或节省 DC。"
       }
     },
     "draconic_ancestry": {
       "black": {
-        "name": "黑色的"
+        "name": "黑色的",
+        "description": "选择黑龙血统，与酸伤害相关。"
       },
       "blue": {
-        "name": "蓝色的"
+        "name": "蓝色的",
+        "description": "选择蓝龙血统，与闪电伤害相关。"
       },
       "brass": {
-        "name": "黄铜"
+        "name": "黄铜",
+        "description": "选择黄铜龙血统，与火焰伤害相关。"
       },
       "bronze": {
-        "name": "青铜"
+        "name": "青铜",
+        "description": "选择青铜龙血统，与闪电伤害相关。"
       },
       "copper": {
-        "name": "铜"
+        "name": "铜",
+        "description": "选择铜龙血统，与酸伤害有关。"
       },
       "gold": {
-        "name": "金子"
+        "name": "金子",
+        "description": "选择金龙血统，与火焰伤害相关。"
       },
       "green": {
-        "name": "绿色的"
+        "name": "绿色的",
+        "description": "选择绿龙血统，与毒害相关。"
       },
       "red": {
-        "name": "红色的"
+        "name": "红色的",
+        "description": "选择红龙血统，与火焰伤害相关。"
       },
       "silver": {
-        "name": "银"
+        "name": "银",
+        "description": "选择银龙血统，与寒冷伤害相关。"
       },
       "white": {
-        "name": "白色的"
+        "name": "白色的",
+        "description": "选择白龙血统，与寒冷伤害相关。"
       }
     }
   },
@@ -284,13 +348,16 @@
           "pact_boon": {
             "options": {
               "pact_of_the_chain": {
-                "name": "链之契约"
+                "name": "链之契约",
+                "description": "你学会把寻找熟悉作为一种仪式。当你施放它时，你可以选择一个普通的魔宠或以下特殊形态之一：小鬼、伪龙、卡西特或精灵。"
               },
               "pact_of_the_blade": {
-                "name": "刀锋契约"
+                "name": "刀锋契约",
+                "description": "在你的空手上创造一件契约武器，或者将一件魔法武器绑定为你的契约武器。"
               },
               "pact_of_the_tome": {
-                "name": "圣典契约"
+                "name": "圣典契约",
+                "description": "从任何职业的法术列表中获得一本带有三个戏法的暗影之书。"
               }
             }
           }
@@ -306,10 +373,12 @@
             "maneuver_dc_ability": {
               "options": {
                 "strength": {
-                  "name": "力量"
+                  "name": "力量",
+                  "description": "使用力量来计算你的动作的豁免DC。"
                 },
                 "dexterity": {
-                  "name": "灵巧"
+                  "name": "灵巧",
+                  "description": "使用敏捷来计算你的机动的豁免DC。"
                 }
               }
             }
@@ -324,13 +393,16 @@
             "hunters_prey": {
               "options": {
                 "colossus_slayer": {
-                  "name": "巨像杀手"
+                  "name": "巨像杀手",
+                  "description": "在你的每个回合中，当你用武器攻击击中低于其最大生命值的生物时，该攻击会造成额外的 1d8 点伤害。"
                 },
                 "giant_killer": {
-                  "name": "巨人杀手"
+                  "name": "巨人杀手",
+                  "description": "当你附近的大型或更大的生物攻击你时，在它攻击后使用你的反应来攻击它。"
                 },
                 "horde_breaker": {
-                  "name": "部落破坏者"
+                  "name": "部落破坏者",
+                  "description": "在你的每个回合中，对你原来目标附近的不同生物进行一次额外的武器攻击。"
                 }
               }
             }
@@ -341,13 +413,16 @@
             "defensive_tactics": {
               "options": {
                 "escape_the_horde": {
-                  "name": "逃离部落"
+                  "name": "逃离部落",
+                  "description": "对你的机会攻击是在不利的情况下进行的。"
                 },
                 "multiattack_defense": {
-                  "name": "多重攻击防御"
+                  "name": "多重攻击防御",
+                  "description": "当一个生物攻击你时，你在接下来的回合中对抗该生物之后的所有攻击获得+4的AC加值。"
                 },
                 "steel_will": {
-                  "name": "钢铁意志"
+                  "name": "钢铁意志",
+                  "description": "在对抗恐惧的豁免检定中获得优势。"
                 }
               }
             }
@@ -358,10 +433,12 @@
             "multiattack": {
               "options": {
                 "volley": {
-                  "name": "截击"
+                  "name": "截击",
+                  "description": "使用你的行动对范围内小范围内任意数量的生物进行远程攻击。"
                 },
                 "whirlwind_attack": {
-                  "name": "旋风攻击"
+                  "name": "旋风攻击",
+                  "description": "使用你的动作对你 5 英尺内任意数量的生物进行近战攻击。"
                 }
               }
             }
@@ -372,13 +449,16 @@
             "superior_hunters_defense": {
               "options": {
                 "evasion": {
-                  "name": "闪避"
+                  "name": "闪避",
+                  "description": "成功的敏捷豁免检定不会造成通常造成一半伤害的伤害。"
                 },
                 "stand_against_the_tide": {
-                  "name": "逆流而上"
+                  "name": "逆流而上",
+                  "description": "当敌对生物的近战攻击错过你时，将攻击转向另一个生物。"
                 },
                 "uncanny_dodge": {
-                  "name": "不可思议的闪避"
+                  "name": "不可思议的闪避",
+                  "description": "当您看到的攻击者击中您时，请利用您的反应将攻击的伤害减半。"
                 }
               }
             }
@@ -393,13 +473,16 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "史密斯的工具"
+              "name": "史密斯的工具",
+              "description": "熟练使用史密斯的工具。"
             },
             "brewers_supplies": {
-              "name": "酿酒者用品"
+              "name": "酿酒者用品",
+              "description": "熟练使用啤酒厂的用品。"
             },
             "masons_tools": {
-              "name": "梅森的工具"
+              "name": "梅森的工具",
+              "description": "熟练使用梅森的工具。"
             }
           }
         }
@@ -412,22 +495,28 @@
         "spell_class": {
           "options": {
             "bard": {
-              "name": "诗人"
+              "name": "诗人",
+              "description": "选择吟游诗人作为该专长的戏法和法术的源职业。"
             },
             "cleric": {
-              "name": "牧师"
+              "name": "牧师",
+              "description": "选择牧师作为该专长的戏法和法术的源职业。"
             },
             "druid": {
-              "name": "德鲁伊"
+              "name": "德鲁伊",
+              "description": "选择德鲁伊作为该专长的戏法和法术的源职业。"
             },
             "sorcerer": {
-              "name": "巫师"
+              "name": "巫师",
+              "description": "选择巫师作为该专长的戏法和法术的源职业。"
             },
             "warlock": {
-              "name": "术士"
+              "name": "术士",
+              "description": "选择术士作为该专长的戏法和法术的源职业。"
             },
             "wizard": {
-              "name": "向导"
+              "name": "向导",
+              "description": "选择巫师作为该专长的戏法和法术的源职业。"
             }
           }
         }
@@ -438,10 +527,12 @@
         "maneuver_dc_ability": {
           "options": {
             "strength": {
-              "name": "力量"
+              "name": "力量",
+              "description": "使用力量来计算你的动作的豁免DC。"
             },
             "dexterity": {
-              "name": "灵巧"
+              "name": "灵巧",
+              "description": "使用敏捷来计算你的机动的豁免DC。"
             }
           }
         }
@@ -452,10 +543,12 @@
         "ability": {
           "options": {
             "strength": {
-              "name": "力量"
+              "name": "力量",
+              "description": "增加此专长的力量得分。"
             },
             "dexterity": {
-              "name": "灵巧"
+              "name": "灵巧",
+              "description": "提高此专长的敏捷得分。"
             }
           }
         }

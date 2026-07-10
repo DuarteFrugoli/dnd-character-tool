@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Rabbia",
-      "description": "In battaglia combatti con ferocia primordiale. Durante il tuo turno, puoi entrare in ira come azione bonus. Mentre sei in ira, hai vantaggio alle prove di Forza e ai tiri salvezza, ottieni un bonus ai tiri per i danni in mischia usando Forza e hai resistenza ai danni contundenti, perforanti e taglienti. La tua rabbia dura 1 minuto. Termina presto se perdi i sensi o se il tuo turno termina e non hai attaccato una creatura ostile dal tuo ultimo turno o non hai subito danni da allora."
+      "description": "In battaglia combatti con ferocia primordiale. Durante il tuo turno, puoi entrare in ira come azione bonus. Mentre sei in ira, hai vantaggio alle prove di Forza e ai tiri salvezza, ottieni un bonus ai tiri per i danni in mischia usando Forza (+2 ai livelli barbari 1-8, +3 ai livelli 9-15 e +4 ai livelli 16-20) e hai resistenza ai danni contundenti, perforanti e taglienti. La tua rabbia dura 1 minuto. Termina presto se perdi i sensi o se il tuo turno termina e non hai attaccato una creatura ostile dal tuo ultimo turno o non hai subito danni da allora."
     },
     "Unarmored Defense": {
       "name": "Difesa senza armatura",
@@ -64,7 +64,7 @@
     },
     "Bardic Inspiration": {
       "name": "Ispirazione bardica",
-      "description": "Puoi ispirare gli altri attraverso parole o musica emozionanti. Come azione bonus, puoi dare a una creatura diversa da te un dado di Ispirazione Bardica (d6). Una volta nei successivi 10 minuti, la creatura può lanciare quel dado e aggiungere il numero a una prova di caratteristica, tiro per colpire o tiro salvezza effettuato."
+      "description": "Puoi ispirare gli altri attraverso parole o musica emozionanti. Come azione bonus, puoi dare a una creatura diversa da te un dado di Ispirazione Bardica. Il dado è d6 ai livelli da bardo 1-4, d8 ai livelli 5-9, d10 ai livelli 10-14 e d12 ai livelli 15-20. Una volta nei successivi 10 minuti, la creatura può lanciare quel dado e aggiungere il numero a una prova di caratteristica, tiro per colpire o tiro salvezza effettuato."
     },
     "Jack of All Trades": {
       "name": "Tuttofare",
@@ -100,7 +100,7 @@
     },
     "Superior Inspiration": {
       "name": "Ispirazione superiore",
-      "description": "Quando tiri l'iniziativa e non hai più usi dell'Ispirazione Bardica, ne recuperi un uso."
+      "description": "Quando tiri l'iniziativa e non hai più usi di Ispirazione Bardica, ne recuperi un uso."
     }
   },
   "Cleric": {
@@ -122,7 +122,7 @@
     },
     "Destroy Undead": {
       "name": "Distruggi i non morti",
-      "description": "Quando un non morto fallisce il suo tiro salvezza contro la tua capacità Scacciare Non Morti, la creatura viene immediatamente distrutta se il suo grado di sfida è pari o inferiore a una certa soglia (GS 1/2 al livello 5, che aumenta ai livelli più alti)."
+      "description": "Quando un non morto fallisce il suo tiro salvezza contro la tua funzione Scacciare non morti, la creatura viene immediatamente distrutta se il suo grado di sfida è sufficientemente basso: GS 1/2 al livello chierico 5, GS 1 al livello 8, GS 2 al livello 11, GS 3 al livello 14 e GS 4 al livello 17."
     },
     "Divine Intervention": {
       "name": "Intervento Divino",
@@ -170,7 +170,7 @@
     },
     "Second Wind": {
       "name": "Secondo vento",
-      "description": "Hai una riserva limitata di resistenza a cui puoi attingere per proteggerti dai danni. Durante il tuo turno, puoi utilizzare un'azione bonus per recuperare punti ferita pari a 1d10 + il tuo livello da guerriero."
+      "description": "Hai una riserva di resistenza limitata a cui puoi attingere per proteggerti dai danni. Durante il tuo turno, puoi usare un'azione bonus per recuperare punti ferita pari a 1d10 + il tuo livello da guerriero."
     },
     "Action Surge": {
       "name": "Aumento d'azione",
@@ -200,7 +200,7 @@
     },
     "Martial Arts": {
       "name": "Arti Marziali",
-      "description": "La pratica delle arti marziali ti conferisce la padronanza degli stili di combattimento che utilizzano colpi senz'armi e armi da monaco. Puoi usare Destrezza invece di Forza per i tiri per colpire e per i danni. Puoi tirare un d4 al posto del normale danno del tuo colpo senz'armi o della tua arma da monaco. Quando usi l'azione Attacco con un colpo senz'armi o un'arma da monaco, puoi effettuare un colpo senz'armi come azione bonus."
+      "description": "La pratica delle arti marziali ti conferisce la padronanza degli stili di combattimento che utilizzano colpi senz'armi e armi da monaco. Puoi usare Destrezza invece di Forza per i tiri per colpire e per i danni. Il tuo dado nelle Arti Marziali per un colpo senz'armi o un'arma da monaco è d4 ai livelli 1-4 del monaco, d6 ai livelli 5-10, d8 ai livelli 11-16 e d10 ai livelli 17-20. Quando usi l'azione Attacco con un colpo senz'armi o un'arma da monaco, puoi effettuare un colpo senz'armi come azione bonus."
     },
     "Ki": {
       "name": "Ki",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimento senza armatura",
-      "description": "La tua velocità aumenta di 3 metri mentre non indossi un'armatura o non impugni uno scudo. Questo bonus aumenta quando raggiungi determinati livelli da monaco."
+      "description": "La tua velocità aumenta mentre non indossi un'armatura o non impugni uno scudo: +10 piedi al livello monaco 2, +15 piedi al livello 6, +20 piedi al livello 10, +25 piedi al livello 14 e +9 metri al livello 18."
     },
     "Monastic Tradition": {
       "name": "Tradizione monastica",
@@ -274,7 +274,7 @@
     },
     "Sacred Oath": {
       "name": "Giuramento sacro",
-      "description": "Giura per sempre il giuramento che ti vincola come paladino. Fino a questo momento sei stato in una fase preparatoria, impegnato nel percorso ma non ancora giurato di seguirlo."
+      "description": "Giuri il giuramento che ti vincola come paladino per sempre. Fino a questo momento sei stato in una fase preparatoria, impegnato nel percorso ma non ancora giurato di seguirlo."
     },
     "Ability Score Improvement": {
       "name": "Miglioramento del punteggio di abilità",
@@ -300,11 +300,11 @@
   "Ranger": {
     "Favored Enemy": {
       "name": "Nemico favorito",
-      "description": "Hai una significativa esperienza nello studio, nel monitoraggio, nella caccia e persino nel parlare con un certo tipo di nemico. Scegli un tipo di nemico prescelto: aberrazioni, bestie, celestiali, costrutti, draghi, elementali, fate, immondi, giganti, mostruosità, melme, piante o non morti. Hai vantaggio sulle prove di Saggezza (Sopravvivenza) per rintracciare i tuoi nemici preferiti, così come sulle prove di Intelligenza per richiamare informazioni su di loro."
+      "description": "Hai una significativa esperienza nello studio, nel monitoraggio, nella caccia e persino nel parlare con alcuni nemici. Scegli un tipo di nemico preferito al livello ranger 1, un altro al livello 6 e un altro al livello 14: aberrazioni, bestie, celestiali, costrutti, draghi, elementali, folletti, immondi, giganti, mostruosità, melme, piante o non morti. Hai vantaggio sulle prove di Saggezza (Sopravvivenza) per rintracciare i tuoi nemici preferiti, così come sulle prove di Intelligenza per richiamare informazioni su di loro."
     },
     "Natural Explorer": {
       "name": "Esploratore naturale",
-      "description": "Hai particolare familiarità con un tipo di ambiente naturale e sei abile nel viaggiare e sopravvivere in tali regioni. Scegli un tipo di terreno preferito: artico, costa, deserto, foresta, prateria, montagna, palude o Sottosuolo."
+      "description": "Hai particolare familiarità con un tipo di ambiente naturale e sei abile nel viaggiare e sopravvivere in tali regioni. Scegli un terreno preferito al livello 1 da ranger, un altro al livello 6 e un altro al livello 10: artico, costa, deserto, foresta, prateria, montagna, palude o Sottosuolo."
     },
     "Fighting Style": {
       "name": "Stile di combattimento",
@@ -320,7 +320,7 @@
     },
     "Primeval Awareness": {
       "name": "Consapevolezza primordiale",
-      "description": "Puoi usare la tua azione e spendere uno slot incantesimo da ranger per focalizzare la tua consapevolezza sulla regione intorno a te. Per 1 minuto per livello dello slot incantesimo speso, puoi percepire se determinati tipi di creature sono presenti entro 1 miglio da te."
+      "description": "Puoi usare la tua azione e spendere uno slot incantesimo da ranger per focalizzare la tua consapevolezza sulla regione intorno a te. Per 1 minuto per livello dello slot incantesimo speso, puoi percepire se sono presenti aberrazioni, celestiali, draghi, elementali, folletti, immondi o non morti entro 1 miglio da te."
     },
     "Ability Score Improvement": {
       "name": "Miglioramento del punteggio di abilità",
@@ -358,7 +358,7 @@
     },
     "Sneak Attack": {
       "name": "Attacco furtivo",
-      "description": "Sai come colpire in modo sottile e sfruttare la distrazione del nemico. Una volta per turno, puoi infliggere 1d6 danni extra a una creatura colpita con un attacco se hai vantaggio sul tiro per colpire. L'attacco deve utilizzare un'arma fine o a distanza. Non hai bisogno di vantaggio al tiro per colpire se un altro nemico del bersaglio si trova entro 1,5 metri da esso, quel nemico non è incapacitato e non hai svantaggio al tiro per colpire. L'ammontare del danno extra aumenta man mano che sali di livello in questa classe."
+      "description": "Sai come colpire in modo sottile e sfruttare la distrazione del nemico. Una volta per turno, puoi infliggere danni extra a una creatura colpita con un attacco se hai vantaggio sul tiro per colpire. L'attacco deve utilizzare un'arma fine o a distanza. Non hai bisogno di vantaggio se un altro nemico del bersaglio si trova entro 1,5 metri da esso, quel nemico non è incapacitato e non hai svantaggio. Il danno extra è 1d6 ai livelli da ladro 1-2, poi aumenta di 1d6 ogni due livelli da ladro: 2d6 al livello 3, 3d6 al livello 5, 4d6 al livello 7, 5d6 al livello 9, 6d6 al livello 11, 7d6 al livello 13, 8d6 al livello 15, 9d6 al livello 17 e 10d6 al livello 19."
     },
     "Thieves' Cant": {
       "name": "Canzone dei ladri",
@@ -390,7 +390,7 @@
     },
     "Blindsense": {
       "name": "Senso cieco",
-      "description": "Se sei in grado di udire, sei consapevole della posizione di qualsiasi creatura nascosta o invisibile entro 3 metri da te."
+      "description": "Se sei in grado di sentire, sei consapevole della posizione di qualsiasi creatura nascosta o invisibile entro 3 metri da te."
     },
     "Slippery Mind": {
       "name": "Mente sfuggente",
@@ -458,13 +458,13 @@
     },
     "Eldritch Master": {
       "name": "Maestro Eldritch",
-      "description": "Puoi attingere alla tua riserva interiore di potere mistico mentre supplichi il tuo patrono di riguadagnare gli slot incantesimo esauriti. Puoi spendere 1 minuto supplicando il tuo patrono di chiedere aiuto per recuperare tutti gli slot incantesimo spesi dalla tua funzione Patto Magico. Una volta riacquistati gli slot incantesimo con questo privilegio, è necessario terminare un riposo lungo prima di poterlo fare di nuovo."
+      "description": "Puoi attingere alla tua riserva interiore di potere mistico mentre supplichi il tuo patrono di riguadagnare gli slot incantesimo esauriti. Puoi spendere 1 minuto supplicando il tuo patrono di chiedere aiuto per recuperare tutti gli slot incantesimo spesi dalla tua funzione Patto Magico. Una volta recuperati gli slot incantesimo con questo privilegio, è necessario terminare un riposo lungo prima di poterlo fare di nuovo."
     }
   },
   "Wizard": {
     "Spellcasting": {
       "name": "Incantesimi",
-      "description": "Come studente di magia arcana, possiedi un libro degli incantesimi contenente 6 incantesimi di 1° livello a tua scelta. L'intelligenza è la tua abilità da incantatore."
+      "description": "Come studente di magia arcana, hai un libro degli incantesimi contenente 6 incantesimi di 1° livello a tua scelta. L'intelligenza è la tua abilità da incantatore."
     },
     "Arcane Recovery": {
       "name": "Recupero Arcano",

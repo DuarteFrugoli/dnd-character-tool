@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Wut",
-      "description": "Im Kampf kämpfst du mit ursprünglicher Wildheit. Wer an der Reihe ist, kann als Bonusaktion eine Wut einsetzen. Während du tobst, hast du einen Vorteil bei Stärkewürfen und Rettungswürfen, erhältst einen Bonus auf Nahkampfschadenswürfe mit Stärke und bist resistent gegen Schlag-, Stich- und Hiebschaden. Deine Wut hält 1 Minute an. Es endet vorzeitig, wenn Sie bewusstlos geschlagen werden oder wenn Ihr Zug endet und Sie seit Ihrem letzten Zug keine feindliche Kreatur angegriffen oder seitdem Schaden erlitten haben."
+      "description": "Im Kampf kämpfst du mit ursprünglicher Wildheit. Wenn du an der Reihe bist, kannst du als Bonusaktion eine Wut einsetzen. Während du tobst, hast du einen Vorteil bei Stärkewürfen und Rettungswürfen, erhältst einen Bonus auf Nahkampfschadenswürfe mit Stärke (+2 auf den Barbarenstufen 1–8, +3 auf den Stufen 9–15 und +4 auf den Stufen 16–20) und bist resistent gegen Schlag-, Stich- und Hiebschaden. Deine Wut hält 1 Minute an. Es endet vorzeitig, wenn Sie bewusstlos geschlagen werden oder wenn Ihr Zug endet und Sie seit Ihrem letzten Zug keine feindliche Kreatur angegriffen oder seitdem Schaden erlitten haben."
     },
     "Unarmored Defense": {
       "name": "Ungepanzerte Verteidigung",
@@ -14,7 +14,7 @@
     },
     "Danger Sense": {
       "name": "Gefahrenbewusstsein",
-      "description": "Sie haben ein unheimliches Gespür dafür, wenn Dinge in der Nähe nicht so sind, wie sie sein sollten. Du hast bei Geschicklichkeitsrettungswürfen einen Vorteil gegenüber sichtbaren Effekten wie Fallen und Zaubersprüchen. Um diesen Vorteil zu erlangen, dürfen Sie nicht geblendet, taub oder handlungsunfähig sein."
+      "description": "Sie haben ein unheimliches Gespür dafür, wenn Dinge in der Nähe nicht so sind, wie sie sein sollten. Du hast einen Vorteil bei Geschicklichkeitsrettungswürfen gegenüber sichtbaren Effekten wie Fallen und Zaubersprüchen. Um diesen Vorteil zu erlangen, dürfen Sie nicht geblendet, taub oder handlungsunfähig sein."
     },
     "Primal Path": {
       "name": "Urpfad",
@@ -26,7 +26,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
     },
     "Fast Movement": {
       "name": "Schnelle Bewegung",
@@ -64,7 +64,7 @@
     },
     "Bardic Inspiration": {
       "name": "Bardische Inspiration",
-      "description": "Sie können andere durch mitreißende Worte oder Musik inspirieren. Als Bonusaktion kannst du einer anderen Kreatur als dir selbst einen bardischen Inspirationswürfel (W6) geben. Einmal in den nächsten 10 Minuten kann die Kreatur diesen Würfel werfen und die Zahl zu einer Fähigkeitsüberprüfung, einem Angriffswurf oder einem Rettungswurf addieren, die sie durchführt."
+      "description": "Sie können andere durch mitreißende Worte oder Musik inspirieren. Als Bonusaktion kannst du einer anderen Kreatur als dir selbst einen bardischen Inspirationswürfel geben. Der Würfel beträgt d6 auf den Stufen 1–4 des Barden, d8 auf den Stufen 5–9, d10 auf den Stufen 10–14 und d12 auf den Stufen 15–20. Einmal in den nächsten 10 Minuten kann die Kreatur diesen Würfel werfen und die Zahl zu einer Fähigkeitsüberprüfung, einem Angriffswurf oder einem Rettungswurf addieren, die sie durchführt."
     },
     "Jack of All Trades": {
       "name": "Alleskönner",
@@ -100,7 +100,7 @@
     },
     "Superior Inspiration": {
       "name": "Überlegene Inspiration",
-      "description": "Wenn du die Initiative würfelst und keine Verwendungsmöglichkeiten für Bardische Inspiration mehr hast, erhältst du eine Verwendung zurück."
+      "description": "Wenn du die Initiative würfelst und Bardic Inspiration nicht mehr nutzen kannst, erhältst du einen Einsatz zurück."
     }
   },
   "Cleric": {
@@ -122,7 +122,7 @@
     },
     "Destroy Undead": {
       "name": "Vernichte Untote",
-      "description": "Wenn der Rettungswurf eines Untoten gegen deine Funktion „Untote vertreiben“ scheitert, wird die Kreatur sofort zerstört, wenn ihr Herausforderungswert einen bestimmten Schwellenwert erreicht oder unterschreitet (CR 1/2 auf Stufe 5, skaliert auf höheren Stufen)."
+      "description": "Wenn der Rettungswurf eines Untoten gegen deine Funktion „Untote verwandeln“ scheitert, wird die Kreatur sofort zerstört, wenn ihr Herausforderungswert niedrig genug ist: CR 1/2 auf Klerikerstufe 5, CR 1 auf Stufe 8, CR 2 auf Stufe 11, CR 3 auf Stufe 14 und CR 4 auf Stufe 17."
     },
     "Divine Intervention": {
       "name": "Göttliches Eingreifen",
@@ -166,11 +166,11 @@
   "Fighter": {
     "Fighting Style": {
       "name": "Kampfstil",
-      "description": "Sie machen sich einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie einen Kampfstil: Bogenschießen, Verteidigung, Duell, Großwaffenkampf, Schutz oder Kampf mit zwei Waffen."
+      "description": "Sie machen sich einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie einen Kampfstil: Bogenschießen, Verteidigung, Duell, Kampf mit Großwaffen, Schutz oder Kampf mit zwei Waffen."
     },
     "Second Wind": {
       "name": "Zweiter Wind",
-      "description": "Sie verfügen nur über eine begrenzte Ausdauer, auf die Sie zurückgreifen können, um sich vor Schaden zu schützen. Wenn Sie an der Reihe sind, können Sie eine Bonusaktion nutzen, um Trefferpunkte in Höhe von 1W10 + Ihrer Kämpferstufe zurückzugewinnen."
+      "description": "Sie verfügen über eine begrenzte Ausdauer, auf die Sie zurückgreifen können, um sich vor Schaden zu schützen. Wenn Sie an der Reihe sind, können Sie eine Bonusaktion nutzen, um Trefferpunkte in Höhe von 1W10 + Ihrer Kämpferstufe zurückzugewinnen."
     },
     "Action Surge": {
       "name": "Aktionsschub",
@@ -186,7 +186,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
     },
     "Indomitable": {
       "name": "Unbezwingbar",
@@ -200,7 +200,7 @@
     },
     "Martial Arts": {
       "name": "Kampfkunst",
-      "description": "Durch die Ausübung der Kampfkünste beherrschen Sie Kampfstile, bei denen unbewaffnete Schläge und Mönchswaffen zum Einsatz kommen. Sie können Geschicklichkeit anstelle von Stärke für Angriffs- und Schadenswürfe verwenden. Sie können einen W4 anstelle des normalen Schadens Ihres unbewaffneten Schlags oder Ihrer Mönchswaffe würfeln. Wenn Sie die Angriffsaktion mit einem unbewaffneten Schlag oder einer Mönchswaffe verwenden, können Sie als Bonusaktion einen unbewaffneten Schlag ausführen."
+      "description": "Durch die Ausübung der Kampfkünste beherrschen Sie Kampfstile, bei denen unbewaffnete Schläge und Mönchswaffen zum Einsatz kommen. Sie können Geschicklichkeit anstelle von Stärke für Angriffs- und Schadenswürfe verwenden. Ihr Kampfkunst-Würfel für einen unbewaffneten Schlag oder eine Mönchswaffe beträgt W4 auf den Mönchsstufen 1–4, W6 auf den Stufen 5–10, W8 auf den Stufen 11–16 und W10 auf den Stufen 17–20. Wenn Sie die Angriffsaktion mit einem unbewaffneten Schlag oder einer Mönchswaffe verwenden, können Sie als Bonusaktion einen unbewaffneten Schlag ausführen."
     },
     "Ki": {
       "name": "Ki",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Ungepanzerte Bewegung",
-      "description": "Ihre Geschwindigkeit erhöht sich um 10 Fuß, wenn Sie keine Rüstung tragen oder keinen Schild tragen. Dieser Bonus erhöht sich, wenn Sie bestimmte Mönchsstufen erreichen."
+      "description": "Deine Geschwindigkeit erhöht sich, während du keine Rüstung trägst oder keinen Schild führst: +10 Fuß auf Mönchsstufe 2, +15 Fuß auf Stufe 6, +20 Fuß auf Stufe 10, +25 Fuß auf Stufe 14 und +30 Fuß auf Stufe 18."
     },
     "Monastic Tradition": {
       "name": "Klostertradition",
@@ -228,7 +228,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
     },
     "Stunning Strike": {
       "name": "Atemberaubender Schlag",
@@ -240,7 +240,7 @@
     },
     "Timeless Body": {
       "name": "Zeitloser Körper",
-      "description": "Your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. Sie sterben jedoch immer noch an Altersschwäche. Darüber hinaus benötigen Sie weder Nahrung noch Wasser mehr."
+      "description": "Ihr Ki trägt Sie, so dass Sie nicht unter der Gebrechlichkeit des Alters leiden und nicht auf magische Weise altern können. Sie sterben jedoch immer noch an Altersschwäche. Darüber hinaus benötigen Sie weder Nahrung noch Wasser mehr."
     },
     "Empty Body": {
       "name": "Leerer Körper",
@@ -248,13 +248,13 @@
     },
     "Perfect Self": {
       "name": "Perfektes Selbst",
-      "description": "Wenn Sie Initiative würfeln und keine Ki-Punkte mehr übrig haben, erhalten Sie 4 Ki-Punkte zurück."
+      "description": "Wenn du die Initiative würfelst und keine Ki-Punkte mehr übrig hast, erhältst du 4 Ki-Punkte zurück."
     }
   },
   "Paladin": {
     "Divine Sense": {
       "name": "Göttlicher Sinn",
-      "description": "Die Anwesenheit des starken Bösen nimmt Ihre Sinne wie ein schädlicher Geruch wahr, und das mächtige Gute klingt wie himmlische Musik in Ihren Ohren. Als Aktion können Sie Ihr Bewusstsein öffnen, um solche Kräfte zu erkennen. Bis zum Ende Ihres nächsten Zuges wissen Sie, wo sich alle Himmlischen, Unholde oder Untoten im Umkreis von 60 Fuß um Sie befinden, die sich nicht in vollständiger Deckung befinden."
+      "description": "Die Anwesenheit des starken Bösen nimmt Ihre Sinne wie ein schädlicher Geruch wahr, und das mächtige Gute klingt wie himmlische Musik in Ihren Ohren. Als Aktion können Sie Ihr Bewusstsein öffnen, um solche Kräfte zu erkennen. Bis zum Ende Ihres nächsten Zuges wissen Sie, wo sich alle Himmlischen, Untoten oder Untoten im Umkreis von 60 Fuß um Sie befinden, die sich nicht in vollständiger Deckung befinden."
     },
     "Lay on Hands": {
       "name": "Auf die Hände legen",
@@ -282,7 +282,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
     },
     "Aura of Protection": {
       "name": "Aura des Schutzes",
@@ -300,11 +300,11 @@
   "Ranger": {
     "Favored Enemy": {
       "name": "Bevorzugter Feind",
-      "description": "Sie verfügen über umfangreiche Erfahrung im Erkennen, Aufspüren, Jagen und sogar im Gespräch mit einer bestimmten Art von Feind. Wählen Sie eine Art bevorzugter Feinde: Aberrationen, Bestien, Himmlische, Konstrukte, Drachen, Elementare, Feenwesen, Unholde, Riesen, Monstrositäten, Schlamm, Pflanzen oder Untote. Sie haben einen Vorteil bei Würfen auf Weisheit (Überleben), um Ihre bevorzugten Feinde aufzuspüren, sowie bei Würfen auf Intelligenz, um Informationen über sie abzurufen."
+      "description": "Sie verfügen über umfangreiche Erfahrung im Erlernen, Aufspüren, Jagen und sogar im Sprechen mit bestimmten Feinden. Wählen Sie einen bevorzugten Feindtyp auf Ranger-Stufe 1, einen anderen auf Stufe 6 und einen weiteren auf Stufe 14: Aberrationen, Bestien, Himmlische, Konstrukte, Drachen, Elementare, Feenwesen, Unholde, Riesen, Monstrositäten, Schleime, Pflanzen oder Untote. Sie haben einen Vorteil bei Würfen auf Weisheit (Überleben), um Ihre bevorzugten Feinde aufzuspüren, sowie bei Würfen auf Intelligenz, um Informationen über sie abzurufen."
     },
     "Natural Explorer": {
       "name": "Natürlicher Entdecker",
-      "description": "Sie sind mit einer bestimmten Naturumgebung besonders vertraut und können sich in solchen Regionen gut fortbewegen und überleben. Wählen Sie eine Art bevorzugtes Gelände: Arktis, Küste, Wüste, Wald, Grasland, Berg, Sumpf oder Unterreich."
+      "description": "Sie sind mit einer bestimmten Naturumgebung besonders vertraut und können sich in solchen Regionen gut fortbewegen und überleben. Wählen Sie ein bevorzugtes Gelände auf Ranger-Stufe 1, ein anderes auf Stufe 6 und ein weiteres auf Stufe 10: Arktis, Küste, Wüste, Wald, Grasland, Berg, Sumpf oder das Unterreich."
     },
     "Fighting Style": {
       "name": "Kampfstil",
@@ -320,7 +320,7 @@
     },
     "Primeval Awareness": {
       "name": "Urzeitliches Bewusstsein",
-      "description": "Du kannst deine Aktion nutzen und einen Ranger-Zauberslot ausgeben, um deine Aufmerksamkeit auf die Region um dich herum zu richten. Für 1 Minute pro Stufe des Zauberslots, den du aufwendest, kannst du spüren, ob sich bestimmte Arten von Kreaturen im Umkreis von 1 Meile um dich befinden."
+      "description": "Du kannst deine Aktion nutzen und einen Ranger-Zauberslot ausgeben, um deine Aufmerksamkeit auf die Region um dich herum zu richten. Für 1 Minute pro Stufe des Zauberplatzes, den Sie aufwenden, können Sie spüren, ob sich im Umkreis von 1 Meile um Sie herum Aberrationen, Himmlische, Drachen, Elementare, Feenwesen, Unholde oder Untote befinden."
     },
     "Ability Score Improvement": {
       "name": "Verbesserung der Fähigkeitsbewertung",
@@ -354,11 +354,11 @@
   "Rogue": {
     "Expertise": {
       "name": "Sachverstand",
-      "description": "Wählen Sie zwei Ihrer Fertigkeitskompetenzen oder eine Ihrer Fertigkeitskompetenzen und Ihre Kenntnisse im Umgang mit Diebeswerkzeugen. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine der ausgewählten Fähigkeiten zum Einsatz kommt."
+      "description": "Wählen Sie zwei Ihrer Fähigkeitskompetenzen oder eine Ihrer Fähigkeitskompetenzen und Ihre Kenntnisse im Umgang mit Diebeswerkzeugen. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine der ausgewählten Fähigkeiten zum Einsatz kommt."
     },
     "Sneak Attack": {
       "name": "Hinterlistiger Angriff",
-      "description": "Sie wissen, wie man subtil zuschlägt und die Ablenkung eines Gegners ausnutzt. Einmal pro Spielzug kannst du einer Kreatur, die du mit einem Angriff triffst, zusätzlich 1W6 Schaden zufügen, wenn du beim Angriffswurf im Vorteil bist. Der Angriff muss mit einer Finesse- oder einer Fernkampfwaffe erfolgen. Sie benötigen keinen Vorteil beim Angriffswurf, wenn sich ein anderer Feind im Umkreis von 5 Fuß um das Ziel befindet, dieser Feind nicht außer Gefecht gesetzt ist und Sie keinen Nachteil beim Angriffswurf haben. Die Höhe des zusätzlichen Schadens erhöht sich mit zunehmendem Level in dieser Klasse."
+      "description": "Sie wissen, wie man subtil zuschlägt und die Ablenkung eines Gegners ausnutzt. Einmal pro Spielzug kannst du einer Kreatur, die du mit einem Angriff triffst, zusätzlichen Schaden zufügen, wenn du beim Angriffswurf im Vorteil bist. Der Angriff muss mit einer Finesse- oder einer Fernkampfwaffe erfolgen. Sie benötigen keinen Vorteil, wenn sich ein anderer Feind im Umkreis von 5 Fuß um das Ziel befindet, dieser Feind nicht außer Gefecht gesetzt ist und Sie keinen Nachteil haben. Der zusätzliche Schaden beträgt 1W6 auf den Schurkenstufen 1–2 und erhöht sich dann alle zwei Schurkenstufen um 1W6: 2W6 auf Stufe 3, 3W6 auf Stufe 5, 4W6 auf Stufe 7, 5W6 auf Stufe 9, 6W6 auf Stufe 11, 7W6 auf Stufe 13, 8W6 auf Stufe 15, 9W6 auf Stufe 17 und 10W6 auf Stufe 19."
     },
     "Thieves' Cant": {
       "name": "Diebesgesang",
@@ -412,7 +412,7 @@
     },
     "Sorcerous Origin": {
       "name": "Zauberhafter Ursprung",
-      "description": "Wählen Sie einen magischen Ursprung, der die Quelle Ihrer angeborenen magischen Kraft beschreibt."
+      "description": "Wählen Sie einen Zauberursprung, der die Quelle Ihrer angeborenen magischen Kraft beschreibt."
     },
     "Font of Magic": {
       "name": "Quelle der Magie",
@@ -484,7 +484,7 @@
     },
     "Signature Spells": {
       "name": "Signaturzauber",
-      "description": "Du meisterst zwei mächtige Zaubersprüche und kannst sie mit wenig Aufwand wirken. Wählen Sie zwei Zaubersprüche der 3. Stufe aus Ihrem Zauberbuch als Ihre Signaturzauber. Du hast diese Zauber immer vorbereitet, sie zählen nicht zu der Anzahl der Zauber, die du vorbereitet hast, und du kannst jeden von ihnen auf der 3. Stufe einmal wirken, ohne einen Zauberslot zu verbrauchen. Wenn Sie dies tun, können Sie dies nicht erneut tun, bis Sie eine kurze oder lange Pause beendet haben."
+      "description": "Du meisterst zwei mächtige Zaubersprüche und kannst sie mit wenig Aufwand wirken. Wählen Sie zwei Zaubersprüche der 3. Stufe aus Ihrem Zauberbuch als Ihre Signaturzauber. Du hast diese Zauber immer vorbereitet, sie zählen nicht zu der Anzahl der Zauber, die du vorbereitet hast, und du kannst jeden von ihnen einmal auf der 3. Stufe wirken, ohne einen Zauberslot zu verbrauchen. Wenn Sie dies tun, können Sie dies nicht erneut tun, bis Sie eine kurze oder lange Pause beendet haben."
     }
   }
 }

@@ -1,0 +1,19 @@
+[
+  { "name": "Common" },
+  { "name": "Dwarvish" },
+  { "name": "Elvish" },
+  { "name": "Halfling" },
+  { "name": "Draconic" },
+  { "name": "Gnomish" },
+  { "name": "Orc" },
+  { "name": "Infernal" },
+  { "name": "Abyssal" },
+  { "name": "Celestial" },
+  { "name": "Deep Speech" },
+  { "name": "Giant" },
+  { "name": "Gnoll" },
+  { "name": "Goblin" },
+  { "name": "Primordial" },
+  { "name": "Sylvan" },
+  { "name": "Undercommon" }
+]

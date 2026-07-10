@@ -3,15 +3,15 @@
     "battle_master_maneuvers": {
       "commanders_strike": {
         "name": "Golpe del comandante",
-        "description": "Cuando realizas la acción de Ataque, puedes renunciar a un ataque y usar una acción adicional para indicarle a un aliado que ataque."
+        "description": "Cuando realices la acción de Ataque, renuncia a un ataque y usa una acción adicional para permitir que un aliado que pueda verte u oírte use su reacción para realizar un ataque con arma. Si impacta, suma tu dado de superioridad al daño del ataque."
       },
       "disarming_attack": {
         "name": "Ataque desarmante",
-        "description": "Cuando golpeas a una criatura con un ataque con arma, puedes gastar un dado de superioridad para intentar desarmar al objetivo."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. El objetivo debe realizar una salvación de Fuerza o soltar un objeto de tu elección que esté sosteniendo."
       },
       "distracting_strike": {
         "name": "Golpe de distracción",
-        "description": "Cuando golpeas a una criatura con un ataque con arma, puedes gastar un dado de superioridad para distraer a la criatura."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. La siguiente tirada de ataque contra el objetivo por parte de una criatura distinta a ti tiene ventaja si se realiza antes del comienzo de tu siguiente turno."
       },
       "evasive_footwork": {
         "name": "Juego de pies evasivo",
@@ -19,27 +19,27 @@
       },
       "feinting_attack": {
         "name": "Ataque de finta",
-        "description": "Puedes gastar un dado de superioridad y usar una acción adicional para fintar, obteniendo ventaja en tu próximo ataque contra una criatura."
+        "description": "Gasta una acción adicional y un dado de superioridad para fintar contra una criatura a 5 pies. Tienes ventaja en tu próximo ataque contra él este turno, y si ese ataque impacta, suma el dado de superioridad al daño."
       },
       "goading_attack": {
         "name": "Ataque de incitación",
-        "description": "Cuando golpeas con un ataque con arma, puedes gastar un dado de superioridad para incitar al objetivo a atacarte."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. El objetivo debe realizar una salvación de Sabiduría o tener desventaja en los ataques contra criaturas distintas a ti hasta el final de tu siguiente turno."
       },
       "lunging_attack": {
         "name": "Ataque de acometida",
-        "description": "Cuando realizas un ataque con arma cuerpo a cuerpo, puedes gastar un dado de superioridad para aumentar tu alcance para ese ataque."
+        "description": "Cuando realices un ataque con arma cuerpo a cuerpo, gasta un dado de superioridad para aumentar tu alcance en 5 pies para ese ataque. Si el ataque impacta, suma el dado de superioridad al daño."
       },
       "maneuvering_attack": {
         "name": "Ataque de maniobra",
-        "description": "Cuando golpeas con un ataque con arma, puedes gastar un dado de superioridad para permitir que un aliado se mueva sin provocar al objetivo."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. Elige un aliado que pueda verte u oírte; ese aliado puede usar su reacción para moverse hasta la mitad de su velocidad sin provocar ataques de oportunidad por parte del objetivo."
       },
       "menacing_attack": {
         "name": "Ataque amenazante",
-        "description": "Cuando golpeas con un ataque con arma, puedes gastar un dado de superioridad para intentar asustar al objetivo."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. El objetivo debe realizar una salvación de Sabiduría o tener miedo de ti hasta el final de tu siguiente turno."
       },
       "parry": {
         "name": "Parar",
-        "description": "Cuando otra criatura te daña con un ataque cuerpo a cuerpo, puedes gastar un dado de superioridad para reducir el daño."
+        "description": "Cuando otra criatura te daña con un ataque cuerpo a cuerpo, usa tu reacción y gasta un dado de superioridad para reducir el daño en la tirada del dado + tu modificador de Destreza."
       },
       "precision_attack": {
         "name": "Ataque de precisión",
@@ -47,233 +47,297 @@
       },
       "pushing_attack": {
         "name": "Ataque de empuje",
-        "description": "Cuando golpeas con un ataque con arma, puedes gastar un dado de superioridad para intentar alejar al objetivo."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. Si el objetivo es Grande o más pequeño, debe realizar una salvación de Fuerza o ser empujado hasta 15 pies de distancia de ti."
       },
       "rally": {
         "name": "Reunión",
-        "description": "En tu turno, puedes gastar un dado de superioridad y usar una acción adicional para reforzar a un aliado con puntos de vida temporales."
+        "description": "En tu turno, gasta una acción adicional y un dado de superioridad para darle a un aliado que pueda verte u oírte puntos de golpe temporales iguales a la tirada del dado + tu modificador de Carisma."
       },
       "riposte": {
         "name": "Estocada",
-        "description": "Cuando una criatura te falla con un ataque cuerpo a cuerpo, puedes gastar un dado de superioridad para realizar un ataque con arma cuerpo a cuerpo contra ella."
+        "description": "Cuando una criatura te falla con un ataque cuerpo a cuerpo, usa tu reacción y gasta un dado de superioridad para realizar un ataque con arma cuerpo a cuerpo contra ella. Si aciertas, añade el dado de superioridad al daño."
       },
       "sweeping_attack": {
         "name": "Ataque de barrido",
-        "description": "Cuando golpeas con un ataque con arma cuerpo a cuerpo, puedes gastar un dado de superioridad para dañar a otra criatura que esté a tu alcance."
+        "description": "Cuando golpeas con un ataque con arma cuerpo a cuerpo, gasta un dado de superioridad para dañar a otra criatura dentro de 5 pies del objetivo original y dentro de tu alcance. Si la tirada de ataque original impactaría a la segunda criatura, sufrirá un daño igual al dado de superioridad."
       },
       "trip_attack": {
         "name": "Ataque de viaje",
-        "description": "Cuando golpeas con un ataque con arma, puedes gastar un dado de superioridad para intentar derribar al objetivo."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. Si el objetivo es Grande o más pequeño, debe realizar una salvación de Fuerza o caer."
       }
     },
     "fighting_styles_fighter": {
       "archery": {
-        "name": "Tiro al arco"
+        "name": "Tiro al arco",
+        "description": "Obtienes una bonificación de +2 a las tiradas de ataque que realices con armas a distancia."
       },
       "defense": {
-        "name": "Defensa"
+        "name": "Defensa",
+        "description": "Mientras llevas armadura, obtienes una bonificación de +1 a la CA."
       },
       "dueling": {
-        "name": "duelo"
+        "name": "duelo",
+        "description": "Cuando empuñas un arma cuerpo a cuerpo en una mano y ninguna otra arma, obtienes una bonificación de +2 a las tiradas de daño con esa arma."
       },
       "great_weapon_fighting": {
-        "name": "Gran lucha con armas"
+        "name": "Gran lucha con armas",
+        "description": "Cuando saques un 1 o un 2 en un dado de daño de un arma cuerpo a cuerpo empuñada con las dos manos, vuelve a tirar el dado y usa la nueva tirada. El arma debe tener la propiedad de dos manos o versátil."
       },
       "protection": {
-        "name": "Protección"
+        "name": "Protección",
+        "description": "Cuando una criatura ataca a un objetivo que no seas tú dentro de 5 pies, puedes usar tu reacción para imponer desventaja en la tirada de ataque. Debes estar empuñando un escudo."
       },
       "two_weapon_fighting": {
-        "name": "Lucha con dos armas"
+        "name": "Lucha con dos armas",
+        "description": "Añade tu modificador de habilidad al daño de tu segundo ataque con arma cuando luches con dos armas."
       }
     },
     "fighting_styles_paladin": {
       "defense": {
-        "name": "Defensa"
+        "name": "Defensa",
+        "description": "Mientras llevas armadura, obtienes una bonificación de +1 a la CA."
       },
       "dueling": {
-        "name": "duelo"
+        "name": "duelo",
+        "description": "Cuando empuñas un arma cuerpo a cuerpo en una mano y ninguna otra arma, obtienes una bonificación de +2 a las tiradas de daño con esa arma."
       },
       "great_weapon_fighting": {
-        "name": "Gran lucha con armas"
+        "name": "Gran lucha con armas",
+        "description": "Cuando saques un 1 o un 2 en un dado de daño de un arma cuerpo a cuerpo empuñada con las dos manos, vuelve a tirar el dado y usa la nueva tirada. El arma debe tener la propiedad de dos manos o versátil."
       },
       "protection": {
-        "name": "Protección"
+        "name": "Protección",
+        "description": "Cuando una criatura ataca a un objetivo que no seas tú dentro de 5 pies, puedes usar tu reacción para imponer desventaja en la tirada de ataque. Debes estar empuñando un escudo."
       }
     },
     "fighting_styles_ranger": {
       "archery": {
-        "name": "Tiro al arco"
+        "name": "Tiro al arco",
+        "description": "Obtienes una bonificación de +2 a las tiradas de ataque que realices con armas a distancia."
       },
       "defense": {
-        "name": "Defensa"
+        "name": "Defensa",
+        "description": "Mientras llevas armadura, obtienes una bonificación de +1 a la CA."
       },
       "dueling": {
-        "name": "duelo"
+        "name": "duelo",
+        "description": "Cuando empuñas un arma cuerpo a cuerpo en una mano y ninguna otra arma, obtienes una bonificación de +2 a las tiradas de daño con esa arma."
       },
       "two_weapon_fighting": {
-        "name": "Lucha con dos armas"
+        "name": "Lucha con dos armas",
+        "description": "Añade tu modificador de habilidad al daño de tu segundo ataque con arma cuando luches con dos armas."
       }
     },
     "metamagic_options": {
       "careful_spell": {
-        "name": "Hechizo cuidadoso"
+        "name": "Hechizo cuidadoso",
+        "description": "Gasta 1 punto de hechicería y elige criaturas hasta tu modificador de Carisma (mínimo 1). Las criaturas elegidas superan automáticamente la tirada de salvación del hechizo."
       },
       "distant_spell": {
-        "name": "Hechizo distante"
+        "name": "Hechizo distante",
+        "description": "Gasta 1 punto de hechicería para duplicar el alcance de un hechizo si tiene un alcance de 5 pies o más. Si el hechizo tiene un alcance de tacto, su alcance pasa a ser de 30 pies."
       },
       "empowered_spell": {
-        "name": "Hechizo potenciado"
+        "name": "Hechizo potenciado",
+        "description": "Gasta 1 punto de hechicería para volver a tirar una cantidad de dados de daño de un hechizo hasta tu modificador de Carisma (mínimo 1). Debes utilizar los rollos nuevos."
       },
       "extended_spell": {
-        "name": "Hechizo extendido"
+        "name": "Hechizo extendido",
+        "description": "Gasta 1 punto de hechicería para duplicar la duración de un hechizo si dura 1 minuto o más, hasta una duración máxima de 24 horas."
       },
       "heightened_spell": {
-        "name": "Hechizo intensificado"
+        "name": "Hechizo intensificado",
+        "description": "Gasta 3 puntos de hechicería para darle desventaja a un objetivo en su primera tirada de salvación contra el hechizo."
       },
       "quickened_spell": {
-        "name": "Hechizo acelerado"
+        "name": "Hechizo acelerado",
+        "description": "En su lugar, gasta 2 puntos de hechicería para lanzar un hechizo con un tiempo de lanzamiento de 1 acción como acción adicional."
       },
       "subtle_spell": {
-        "name": "Hechizo sutil"
+        "name": "Hechizo sutil",
+        "description": "Gasta 1 punto de hechicería para lanzar un hechizo sin componentes somáticos o verbales."
       },
       "twinned_spell": {
-        "name": "Hechizo hermanado"
+        "name": "Hechizo hermanado",
+        "description": "Gasta puntos de hechicería iguales al nivel del hechizo, o 1 punto por un truco, para apuntar a una segunda criatura con un hechizo que normalmente apunta a una sola criatura y no tiene un alcance propio."
       }
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "Aberraciones"
+        "name": "Aberraciones",
+        "description": "Elige las aberraciones como uno de tus tipos de enemigos favoritos."
       },
       "beasts": {
-        "name": "Ganado"
+        "name": "Ganado",
+        "description": "Elige bestias como uno de tus tipos de enemigos favoritos."
       },
       "celestials": {
-        "name": "Celestiales"
+        "name": "Celestiales",
+        "description": "Elige a los celestiales como uno de tus tipos de enemigos favoritos."
       },
       "constructs": {
-        "name": "Construcciones"
+        "name": "Construcciones",
+        "description": "Elige construcciones como uno de tus tipos de enemigos favoritos."
       },
       "dragons": {
-        "name": "dragones"
+        "name": "dragones",
+        "description": "Elige dragones como uno de tus tipos de enemigos favoritos."
       },
       "elementals": {
-        "name": "Elementales"
+        "name": "Elementales",
+        "description": "Elige elementales como uno de tus tipos de enemigos favoritos."
       },
       "fey": {
-        "name": "Vidente"
+        "name": "Vidente",
+        "description": "Elige a los hadas como uno de tus tipos de enemigos favoritos."
       },
       "fiends": {
-        "name": "Demonios"
+        "name": "Demonios",
+        "description": "Elige demonios como uno de tus tipos de enemigos favoritos."
       },
       "giants": {
-        "name": "Gigantes"
+        "name": "Gigantes",
+        "description": "Elige gigantes como uno de tus tipos de enemigos favoritos."
       },
       "monstrosities": {
-        "name": "Monstruosidades"
+        "name": "Monstruosidades",
+        "description": "Elige monstruosidades como uno de tus tipos de enemigos favoritos."
       },
       "oozes": {
-        "name": "Rezuma"
+        "name": "Rezuma",
+        "description": "Elige los mocos como uno de tus tipos de enemigos favoritos."
       },
       "plants": {
-        "name": "Plantas"
+        "name": "Plantas",
+        "description": "Elige plantas como uno de tus tipos de enemigos favoritos."
       },
       "undead": {
-        "name": "no-muertos"
+        "name": "no-muertos",
+        "description": "Elige a los muertos vivientes como uno de tus tipos de enemigos favoritos."
       }
     },
     "favored_terrain": {
       "arctic": {
-        "name": "Ártico"
+        "name": "Ártico",
+        "description": "Elige el terreno ártico como uno de tus terrenos favoritos."
       },
       "coast": {
-        "name": "Costa"
+        "name": "Costa",
+        "description": "Elija el terreno costero como uno de sus terrenos favoritos."
       },
       "desert": {
-        "name": "Desierto"
+        "name": "Desierto",
+        "description": "Elige el terreno desértico como uno de tus terrenos favoritos."
       },
       "forest": {
-        "name": "Bosque"
+        "name": "Bosque",
+        "description": "Elija el terreno forestal como uno de sus terrenos favoritos."
       },
       "grassland": {
-        "name": "Pradera"
+        "name": "Pradera",
+        "description": "Elija terreno de pastizales como uno de sus terrenos favoritos."
       },
       "mountain": {
-        "name": "Montaña"
+        "name": "Montaña",
+        "description": "Elija el terreno montañoso como uno de sus terrenos favoritos."
       },
       "swamp": {
-        "name": "Pantano"
+        "name": "Pantano",
+        "description": "Elige el terreno pantanoso como uno de tus terrenos favoritos."
       },
       "underdark": {
-        "name": "Infraoscuridad"
+        "name": "Infraoscuridad",
+        "description": "Elige la Infraoscuridad como uno de tus terrenos favoritos."
       }
     },
     "damage_types_elemental": {
       "acid": {
-        "name": "Ácido"
+        "name": "Ácido",
+        "description": "Elija ácido como tipo de daño afectado por esta característica."
       },
       "cold": {
-        "name": "Frío"
+        "name": "Frío",
+        "description": "Elija frío como el tipo de daño afectado por esta característica."
       },
       "fire": {
-        "name": "Fuego"
+        "name": "Fuego",
+        "description": "Elija fuego como tipo de daño afectado por esta característica."
       },
       "lightning": {
-        "name": "Iluminación"
+        "name": "Iluminación",
+        "description": "Elija un rayo como tipo de daño afectado por esta característica."
       },
       "thunder": {
-        "name": "Trueno"
+        "name": "Trueno",
+        "description": "Elija trueno como tipo de daño afectado por esta característica."
       }
     },
     "ability_scores": {
       "strength": {
-        "name": "Fortaleza"
+        "name": "Fortaleza",
+        "description": "Elija Fuerza para aumentar la habilidad, la competencia o guardar DC de esta característica."
       },
       "dexterity": {
-        "name": "Destreza"
+        "name": "Destreza",
+        "description": "Elija Destreza para aumentar la habilidad, la competencia o guardar DC de esta función."
       },
       "constitution": {
-        "name": "Constitución"
+        "name": "Constitución",
+        "description": "Elija Constitución para aumentar la habilidad, la competencia o guardar DC de esta característica."
       },
       "intelligence": {
-        "name": "Inteligencia"
+        "name": "Inteligencia",
+        "description": "Elija Inteligencia para aumentar la capacidad, la competencia o guardar DC de esta función."
       },
       "wisdom": {
-        "name": "Sabiduría"
+        "name": "Sabiduría",
+        "description": "Elija Sabiduría para aumentar la habilidad, la competencia o guardar DC de esta función."
       },
       "charisma": {
-        "name": "Carisma"
+        "name": "Carisma",
+        "description": "Elija Carisma para aumentar la habilidad, la competencia o guardar DC de esta función."
       }
     },
     "draconic_ancestry": {
       "black": {
-        "name": "Negro"
+        "name": "Negro",
+        "description": "Elija la ascendencia del dragón negro, asociada con el daño por ácido."
       },
       "blue": {
-        "name": "Azul"
+        "name": "Azul",
+        "description": "Elija la ascendencia del dragón azul, asociada con el daño del rayo."
       },
       "brass": {
-        "name": "Latón"
+        "name": "Latón",
+        "description": "Elija la ascendencia del dragón de bronce, asociada con el daño por fuego."
       },
       "bronze": {
-        "name": "Bronce"
+        "name": "Bronce",
+        "description": "Elija la ascendencia del dragón de bronce, asociada con el daño del rayo."
       },
       "copper": {
-        "name": "Cobre"
+        "name": "Cobre",
+        "description": "Elija la ascendencia del dragón de cobre, asociada con el daño del ácido."
       },
       "gold": {
-        "name": "Oro"
+        "name": "Oro",
+        "description": "Elija la ascendencia del dragón dorado, asociada con el daño por fuego."
       },
       "green": {
-        "name": "Verde"
+        "name": "Verde",
+        "description": "Elija la ascendencia del dragón verde, asociada con el daño por veneno."
       },
       "red": {
-        "name": "Rojo"
+        "name": "Rojo",
+        "description": "Elija la ascendencia del dragón rojo, asociada con el daño por fuego."
       },
       "silver": {
-        "name": "Plata"
+        "name": "Plata",
+        "description": "Elija la ascendencia del dragón plateado, asociada con el daño por frío."
       },
       "white": {
-        "name": "Blanco"
+        "name": "Blanco",
+        "description": "Elija la ascendencia del dragón blanco, asociada con el daño por frío."
       }
     }
   },
@@ -284,13 +348,16 @@
           "pact_boon": {
             "options": {
               "pact_of_the_chain": {
-                "name": "Pacto de la Cadena"
+                "name": "Pacto de la Cadena",
+                "description": "Aprendes a encontrar lo familiar como un ritual. Cuando lo lanzas, puedes elegir un familiar normal o una de estas formas especiales: diablillo, pseudodragón, cuasi o duende."
               },
               "pact_of_the_blade": {
-                "name": "Pacto de la Espada"
+                "name": "Pacto de la Espada",
+                "description": "Crea un arma de pacto en tu mano vacía o vincula un arma mágica como tu arma de pacto."
               },
               "pact_of_the_tome": {
-                "name": "Pacto del Tomo"
+                "name": "Pacto del Tomo",
+                "description": "Obtén un Libro de las Sombras con tres trucos de la lista de hechizos de cualquier clase."
               }
             }
           }
@@ -306,10 +373,12 @@
             "maneuver_dc_ability": {
               "options": {
                 "strength": {
-                  "name": "Fortaleza"
+                  "name": "Fortaleza",
+                  "description": "Usa Fuerza para calcular la CD de la tirada de salvación para tus maniobras."
                 },
                 "dexterity": {
-                  "name": "Destreza"
+                  "name": "Destreza",
+                  "description": "Usa Destreza para calcular la CD de la tirada de salvación para tus maniobras."
                 }
               }
             }
@@ -324,13 +393,16 @@
             "hunters_prey": {
               "options": {
                 "colossus_slayer": {
-                  "name": "Asesino coloso"
+                  "name": "Asesino coloso",
+                  "description": "Una vez en cada uno de tus turnos, cuando golpeas a una criatura por debajo de su máximo de puntos de vida con un ataque con arma, el ataque inflige 1d8 de daño adicional."
                 },
                 "giant_killer": {
-                  "name": "Asesino de gigantes"
+                  "name": "Asesino de gigantes",
+                  "description": "Cuando una criatura grande o más grande cerca de ti te ataca, usa tu reacción para atacarla después de su ataque."
                 },
                 "horde_breaker": {
-                  "name": "Rompehordas"
+                  "name": "Rompehordas",
+                  "description": "Una vez en cada uno de tus turnos, realiza un ataque con arma adicional contra una criatura diferente cerca de tu objetivo original."
                 }
               }
             }
@@ -341,13 +413,16 @@
             "defensive_tactics": {
               "options": {
                 "escape_the_horde": {
-                  "name": "escapar de la horda"
+                  "name": "escapar de la horda",
+                  "description": "Los ataques de oportunidad en tu contra se realizan con desventaja."
                 },
                 "multiattack_defense": {
-                  "name": "Defensa multiataque"
+                  "name": "Defensa multiataque",
+                  "description": "Cuando una criatura te golpea con un ataque, obtienes una bonificación de +4 a la CA contra todos los ataques posteriores de esa criatura durante el resto del turno."
                 },
                 "steel_will": {
-                  "name": "Voluntad de acero"
+                  "name": "Voluntad de acero",
+                  "description": "Obtén ventaja en las tiradas de salvación contra el miedo."
                 }
               }
             }
@@ -358,10 +433,12 @@
             "multiattack": {
               "options": {
                 "volley": {
-                  "name": "Voleo"
+                  "name": "Voleo",
+                  "description": "Usa tu acción para realizar un ataque a distancia contra cualquier número de criaturas dentro de un área pequeña dentro del alcance."
                 },
                 "whirlwind_attack": {
-                  "name": "Ataque torbellino"
+                  "name": "Ataque torbellino",
+                  "description": "Usa tu acción para realizar ataques cuerpo a cuerpo contra cualquier cantidad de criaturas dentro de un radio de 5 pies de ti."
                 }
               }
             }
@@ -372,13 +449,16 @@
             "superior_hunters_defense": {
               "options": {
                 "evasion": {
-                  "name": "Evasión"
+                  "name": "Evasión",
+                  "description": "No sufrirás daño en una tirada de salvación de Destreza exitosa que normalmente causaría la mitad del daño."
                 },
                 "stand_against_the_tide": {
-                  "name": "Ponte contra la corriente"
+                  "name": "Ponte contra la corriente",
+                  "description": "Cuando una criatura hostil te falla con un ataque cuerpo a cuerpo, redirige ese ataque contra otra criatura."
                 },
                 "uncanny_dodge": {
-                  "name": "Esquiva asombrosa"
+                  "name": "Esquiva asombrosa",
+                  "description": "Cuando un atacante que puedas ver te golpee, usa tu reacción para reducir a la mitad el daño del ataque."
                 }
               }
             }
@@ -393,13 +473,16 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Herramientas de Smith"
+              "name": "Herramientas de Smith",
+              "description": "Adquiera competencia con las herramientas de herrería."
             },
             "brewers_supplies": {
-              "name": "Suministros de cervecería"
+              "name": "Suministros de cervecería",
+              "description": "Adquiera competencia con los suministros de cervecería."
             },
             "masons_tools": {
-              "name": "Herramientas de albañil"
+              "name": "Herramientas de albañil",
+              "description": "Adquiera competencia con las herramientas de albañil."
             }
           }
         }
@@ -412,22 +495,28 @@
         "spell_class": {
           "options": {
             "bard": {
-              "name": "Bardo"
+              "name": "Bardo",
+              "description": "Elige a Bardo como clase fuente para los trucos y hechizos de esta hazaña."
             },
             "cleric": {
-              "name": "Clérigo"
+              "name": "Clérigo",
+              "description": "Elige Clérigo como clase fuente para los trucos y hechizos de esta hazaña."
             },
             "druid": {
-              "name": "druida"
+              "name": "druida",
+              "description": "Elige Druida como clase fuente para los trucos y hechizos de esta hazaña."
             },
             "sorcerer": {
-              "name": "Hechicero"
+              "name": "Hechicero",
+              "description": "Elige Hechicero como clase fuente para los trucos y hechizos de esta hazaña."
             },
             "warlock": {
-              "name": "Brujo"
+              "name": "Brujo",
+              "description": "Elige a Warlock como clase fuente para los trucos y hechizos de esta hazaña."
             },
             "wizard": {
-              "name": "Mago"
+              "name": "Mago",
+              "description": "Elige Mago como clase fuente para los trucos y hechizos de esta hazaña."
             }
           }
         }
@@ -438,10 +527,12 @@
         "maneuver_dc_ability": {
           "options": {
             "strength": {
-              "name": "Fortaleza"
+              "name": "Fortaleza",
+              "description": "Usa Fuerza para calcular la CD de la tirada de salvación para tus maniobras."
             },
             "dexterity": {
-              "name": "Destreza"
+              "name": "Destreza",
+              "description": "Usa Destreza para calcular la CD de la tirada de salvación para tus maniobras."
             }
           }
         }
@@ -452,10 +543,12 @@
         "ability": {
           "options": {
             "strength": {
-              "name": "Fortaleza"
+              "name": "Fortaleza",
+              "description": "Aumenta tu puntuación de Fuerza para esta hazaña."
             },
             "dexterity": {
-              "name": "Destreza"
+              "name": "Destreza",
+              "description": "Aumenta tu puntuación de Destreza para esta hazaña."
             }
           }
         }

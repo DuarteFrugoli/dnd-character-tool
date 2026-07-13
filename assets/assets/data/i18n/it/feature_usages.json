@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "rage": {
+      "name": "Rabbia"
+    },
+    "bardic_inspiration": {
+      "name": "Ispirazione bardica"
+    },
+    "cleric_channel_divinity": {
+      "name": "Divinità del canale"
+    },
+    "divine_intervention": {
+      "name": "Intervento Divino"
+    },
+    "wild_shape": {
+      "name": "Forma selvaggia"
+    },
+    "second_wind": {
+      "name": "Secondo vento"
+    },
+    "action_surge": {
+      "name": "Aumento d'azione"
+    },
+    "indomitable": {
+      "name": "Indomabile"
+    },
+    "ki": {
+      "name": "Ki"
+    },
+    "divine_sense": {
+      "name": "Senso Divino"
+    },
+    "lay_on_hands": {
+      "name": "Imporre le mani"
+    },
+    "paladin_channel_divinity": {
+      "name": "Divinità del canale"
+    },
+    "cleansing_touch": {
+      "name": "Tocco purificatore"
+    },
+    "stroke_of_luck": {
+      "name": "Colpo di fortuna"
+    },
+    "sorcery_points": {
+      "name": "Punti stregoneria"
+    },
+    "mystic_arcanum": {
+      "name": "Arcano mistico"
+    },
+    "eldritch_master": {
+      "name": "Maestro Eldritch"
+    },
+    "arcane_recovery": {
+      "name": "Recupero Arcano"
+    },
+    "signature_spells": {
+      "name": "Incantesimi distintivi"
+    },
+    "warding_flare": {
+      "name": "Bagliore protettivo"
+    },
+    "wrath_of_the_storm": {
+      "name": "L'ira della tempesta"
+    },
+    "war_priest": {
+      "name": "Sacerdote di guerra"
+    },
+    "natural_recovery": {
+      "name": "Recupero naturale"
+    },
+    "superiority_dice": {
+      "name": "Dadi di Superiorità"
+    },
+    "wholeness_of_body": {
+      "name": "Interezza del corpo"
+    },
+    "holy_nimbus": {
+      "name": "Santo Nimbo"
+    },
+    "undying_sentinel": {
+      "name": "Sentinella immortale"
+    },
+    "elder_champion": {
+      "name": "Campione anziano"
+    },
+    "tides_of_chaos": {
+      "name": "Maree del caos"
+    },
+    "fey_presence": {
+      "name": "Presenza Fatata"
+    },
+    "misty_escape": {
+      "name": "Fuga nebbiosa"
+    },
+    "dark_delirium": {
+      "name": "Delirio Oscuro"
+    },
+    "dark_ones_own_luck": {
+      "name": "La fortuna dell'Oscuro"
+    },
+    "hurl_through_hell": {
+      "name": "Lanciati attraverso l'inferno"
+    },
+    "entropic_ward": {
+      "name": "Reparto entropico"
+    },
+    "benign_transposition": {
+      "name": "Trasposizione benigna"
+    },
+    "portent": {
+      "name": "Portento"
+    },
+    "instinctive_charm": {
+      "name": "Fascino Istintivo"
+    },
+    "illusory_self": {
+      "name": "Sé Illusorio"
+    },
+    "shapechanger": {
+      "name": "Cambiaforma"
+    },
+    "lucky_points": {
+      "name": "Punti fortuna"
+    },
+    "martial_adept_superiority_die": {
+      "name": "La superiorità muore"
+    },
+    "magic_initiate_spell": {
+      "name": "Incantesimo dell'Iniziato Magico"
+    },
+    "breath_weapon": {
+      "name": "Arma a soffio"
+    },
+    "relentless_endurance": {
+      "name": "Resistenza implacabile"
+    }
+  }
+}

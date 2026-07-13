@@ -23,6 +23,14 @@
     "name": "Proficiência com Ferramentas",
     "description": "Você ganha proficiência com ferramentas de artesão à sua escolha: ferramentas de ferreiro, suprimentos de cervejeiro ou ferramentas de pedreiro."
   },
+  "Skill Proficiency": {
+    "name": "Proficiência em Perícia",
+    "description": "Você ganha proficiência em uma perícia à sua escolha."
+  },
+  "Bonus Feat": {
+    "name": "Talento Adicional",
+    "description": "Você ganha um talento à sua escolha."
+  },
   "Dwarven Toughness": {
     "name": "Robustez Anã",
     "description": "Seu máximo de pontos de vida aumenta em 1, e aumenta em 1 toda vez que você ganha um nível."

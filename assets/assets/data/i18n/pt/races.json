@@ -29,6 +29,11 @@
     "languages": ["Comum", "um idioma adicional à sua escolha"],
     "subraces": []
   },
+  "Variant Human": {
+    "name": "Humano Variante",
+    "languages": ["Comum", "um idioma adicional à sua escolha"],
+    "subraces": []
+  },
   "Dragonborn": {
     "name": "Draconato",
     "languages": ["Comum", "Dracônico"],

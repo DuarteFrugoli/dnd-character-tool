@@ -399,6 +399,16 @@
         { "id": "extra_language", "type": "language", "count": 1 }
       ]
     },
+    "Skill Proficiency": {
+      "choices": [
+        { "id": "skill", "type": "skill", "count": 1 }
+      ]
+    },
+    "Bonus Feat": {
+      "choices": [
+        { "id": "feat", "type": "feat", "count": 1 }
+      ]
+    },
     "Draconic Ancestry": {
       "choices": [
         { "id": "draconic_ancestry", "type": "option", "count": 1, "optionsSource": "draconic_ancestry" }

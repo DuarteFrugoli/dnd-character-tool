@@ -83,6 +83,15 @@
     "subraces": []
   },
   {
+    "name": "Variant Human",
+    "speed": 30,
+    "size": "Medium",
+    "abilityScoreIncreases": { "twoOthers": 1 },
+    "traits": ["Skill Proficiency", "Bonus Feat", "Extra Language"],
+    "languages": ["Common", "one extra of your choice"],
+    "subraces": []
+  },
+  {
     "name": "Dragonborn",
     "speed": 30,
     "size": "Medium",

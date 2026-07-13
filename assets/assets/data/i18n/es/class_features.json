@@ -190,7 +190,7 @@
     },
     "Indomitable": {
       "name": "Indomable",
-      "description": "Puedes repetir una tirada de salvación que falles. Si lo haces, deberás utilizar la nueva tirada y no podrás volver a utilizar esta función hasta que termines un descanso largo."
+      "description": "Puedes repetir una tirada de salvación que falles. Si lo haces, deberás utilizar la nueva tirada y no podrás volver a utilizar esta función hasta que termines un descanso prolongado."
     }
   },
   "Monk": {
@@ -275,6 +275,10 @@
     "Sacred Oath": {
       "name": "Juramento Sagrado",
       "description": "Haces el juramento que te une como paladín para siempre. Hasta este momento habéis estado en una etapa preparatoria, comprometidos con el camino pero aún no jurados."
+    },
+    "Channel Divinity": {
+      "name": "Canalizar la Divinidad",
+      "description": "Tu juramento te permite canalizar energía divina para alimentar efectos mágicos. Cuando usas tu Channel Divinity, eliges qué opción usar. Recuperas los usos gastados cuando terminas un descanso corto o largo."
     },
     "Ability Score Improvement": {
       "name": "Mejora de la puntuación de habilidad",

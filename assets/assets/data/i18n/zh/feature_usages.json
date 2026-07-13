@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "rage": {
+      "name": "愤怒"
+    },
+    "bardic_inspiration": {
+      "name": "吟游诗人的灵感"
+    },
+    "cleric_channel_divinity": {
+      "name": "渠道神性"
+    },
+    "divine_intervention": {
+      "name": "神圣干预"
+    },
+    "wild_shape": {
+      "name": "狂野造型"
+    },
+    "second_wind": {
+      "name": "第二次风"
+    },
+    "action_surge": {
+      "name": "行动激增"
+    },
+    "indomitable": {
+      "name": "不屈不挠"
+    },
+    "ki": {
+      "name": "基"
+    },
+    "divine_sense": {
+      "name": "神识"
+    },
+    "lay_on_hands": {
+      "name": "放在手上"
+    },
+    "paladin_channel_divinity": {
+      "name": "渠道神性"
+    },
+    "cleansing_touch": {
+      "name": "清洁触感"
+    },
+    "stroke_of_luck": {
+      "name": "幸运之击"
+    },
+    "sorcery_points": {
+      "name": "魔法点"
+    },
+    "mystic_arcanum": {
+      "name": "神秘奥秘"
+    },
+    "eldritch_master": {
+      "name": "邪术大师"
+    },
+    "arcane_recovery": {
+      "name": "奥术恢复"
+    },
+    "signature_spells": {
+      "name": "签名咒语"
+    },
+    "warding_flare": {
+      "name": "警戒照明弹"
+    },
+    "wrath_of_the_storm": {
+      "name": "风暴之怒"
+    },
+    "war_priest": {
+      "name": "战争牧师"
+    },
+    "natural_recovery": {
+      "name": "自然恢复"
+    },
+    "superiority_dice": {
+      "name": "优势骰子"
+    },
+    "wholeness_of_body": {
+      "name": "身体的完整性"
+    },
+    "holy_nimbus": {
+      "name": "神圣雨云"
+    },
+    "undying_sentinel": {
+      "name": "不朽哨兵"
+    },
+    "elder_champion": {
+      "name": "长老冠军"
+    },
+    "tides_of_chaos": {
+      "name": "混沌之潮"
+    },
+    "fey_presence": {
+      "name": "妖精存在"
+    },
+    "misty_escape": {
+      "name": "迷雾逃亡"
+    },
+    "dark_delirium": {
+      "name": "黑暗谵妄"
+    },
+    "dark_ones_own_luck": {
+      "name": "黑暗者自己的运气"
+    },
+    "hurl_through_hell": {
+      "name": "投掷地狱"
+    },
+    "entropic_ward": {
+      "name": "熵病房"
+    },
+    "benign_transposition": {
+      "name": "良性转位"
+    },
+    "portent": {
+      "name": "预兆"
+    },
+    "instinctive_charm": {
+      "name": "本能魅力"
+    },
+    "illusory_self": {
+      "name": "虚幻的自我"
+    },
+    "shapechanger": {
+      "name": "变形者"
+    },
+    "lucky_points": {
+      "name": "幸运点"
+    },
+    "martial_adept_superiority_die": {
+      "name": "模具优势"
+    },
+    "magic_initiate_spell": {
+      "name": "魔法启动咒语"
+    },
+    "breath_weapon": {
+      "name": "呼吸武器"
+    },
+    "relentless_endurance": {
+      "name": "不懈的耐力"
+    }
+  }
+}

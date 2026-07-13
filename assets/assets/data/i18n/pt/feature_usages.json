@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "rage": {
+      "name": "Raiva"
+    },
+    "bardic_inspiration": {
+      "name": "Inspiração Bárdica"
+    },
+    "cleric_channel_divinity": {
+      "name": "Divindade do Canal"
+    },
+    "divine_intervention": {
+      "name": "Intervenção Divina"
+    },
+    "wild_shape": {
+      "name": "Forma Selvagem"
+    },
+    "second_wind": {
+      "name": "Segundo Vento"
+    },
+    "action_surge": {
+      "name": "Surto de ação"
+    },
+    "indomitable": {
+      "name": "Indomável"
+    },
+    "ki": {
+      "name": "Ki"
+    },
+    "divine_sense": {
+      "name": "Sentido Divino"
+    },
+    "lay_on_hands": {
+      "name": "Coloque as mãos"
+    },
+    "paladin_channel_divinity": {
+      "name": "Divindade do Canal"
+    },
+    "cleansing_touch": {
+      "name": "Toque de limpeza"
+    },
+    "stroke_of_luck": {
+      "name": "Golpe de sorte"
+    },
+    "sorcery_points": {
+      "name": "Pontos de Feitiçaria"
+    },
+    "mystic_arcanum": {
+      "name": "Arcano Místico"
+    },
+    "eldritch_master": {
+      "name": "Mestre Eldritch"
+    },
+    "arcane_recovery": {
+      "name": "Recuperação Arcana"
+    },
+    "signature_spells": {
+      "name": "Feitiços de Assinatura"
+    },
+    "warding_flare": {
+      "name": "Sinalizador de Proteção"
+    },
+    "wrath_of_the_storm": {
+      "name": "Ira da Tempestade"
+    },
+    "war_priest": {
+      "name": "Sacerdote de Guerra"
+    },
+    "natural_recovery": {
+      "name": "Recuperação Natural"
+    },
+    "superiority_dice": {
+      "name": "Dados de Superioridade"
+    },
+    "wholeness_of_body": {
+      "name": "Totalidade do Corpo"
+    },
+    "holy_nimbus": {
+      "name": "Santo Nimbo"
+    },
+    "undying_sentinel": {
+      "name": "Sentinela Imortal"
+    },
+    "elder_champion": {
+      "name": "Campeão Ancião"
+    },
+    "tides_of_chaos": {
+      "name": "Marés do Caos"
+    },
+    "fey_presence": {
+      "name": "Presença Feérica"
+    },
+    "misty_escape": {
+      "name": "Fuga Enevoada"
+    },
+    "dark_delirium": {
+      "name": "Delírio Sombrio"
+    },
+    "dark_ones_own_luck": {
+      "name": "A própria sorte do Dark One"
+    },
+    "hurl_through_hell": {
+      "name": "Arremessar pelo Inferno"
+    },
+    "entropic_ward": {
+      "name": "Ala Entrópica"
+    },
+    "benign_transposition": {
+      "name": "Transposição Benigna"
+    },
+    "portent": {
+      "name": "Presságio"
+    },
+    "instinctive_charm": {
+      "name": "Charme Instintivo"
+    },
+    "illusory_self": {
+      "name": "Eu Ilusório"
+    },
+    "shapechanger": {
+      "name": "Metamorfo"
+    },
+    "lucky_points": {
+      "name": "Pontos de sorte"
+    },
+    "martial_adept_superiority_die": {
+      "name": "Dado de Superioridade"
+    },
+    "magic_initiate_spell": {
+      "name": "Feitiço de Iniciação Mágica"
+    },
+    "breath_weapon": {
+      "name": "Arma de sopro"
+    },
+    "relentless_endurance": {
+      "name": "Resistência implacável"
+    }
+  }
+}

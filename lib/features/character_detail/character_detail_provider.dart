@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/spellcasting_engine.dart';
 import '../../data/feature_choice_engine.dart';
+import '../../data/feature_usage_engine.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
@@ -163,7 +164,13 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (c == null) return;
     // Recover ceil(level / 2) hit dice on a long rest (PHB rules)
     final hdRecovered = (c.level / 2).ceil();
-    final newHdUsed = (c.hitPoints.hitDiceUsed - hdRecovered).clamp(0, c.level);
+    final newHdUsed = (c.hitPoints.hitDiceUsed - hdRecovered)
+        .clamp(0, c.level)
+        .toInt();
+    final featureResources = await _featureResourcesAfterRest(
+      c,
+      FeatureUsageRest.longRest,
+    );
     await _save(
       c.copyWith(
         hitPoints: c.hitPoints.copyWith(
@@ -175,6 +182,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         innateSpells: c.innateSpells
             .map((s) => s.copyWith(usedToday: 0))
             .toList(),
+        featureResources: featureResources,
         concentrationSpell: null,
       ),
     );
@@ -189,16 +197,114 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> shortRest({required int hdSpent, required int hpGained}) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final clampedHp = hpGained.clamp(0, c.hitPoints.maximum - c.hitPoints.current);
-    final newHdUsed = (c.hitPoints.hitDiceUsed + hdSpent).clamp(0, c.level);
-    await _save(
-      c.copyWith(
-        hitPoints: c.hitPoints.copyWith(
-          current: c.hitPoints.current + clampedHp,
-          hitDiceUsed: newHdUsed,
-        ),
+    final clampedHp = hpGained
+        .clamp(0, c.hitPoints.maximum - c.hitPoints.current)
+        .toInt();
+    final newHdUsed = (c.hitPoints.hitDiceUsed + hdSpent)
+        .clamp(0, c.level)
+        .toInt();
+    final rested = c.copyWith(
+      hitPoints: c.hitPoints.copyWith(
+        current: c.hitPoints.current + clampedHp,
+        hitDiceUsed: newHdUsed,
       ),
     );
+    final featureResources = await _featureResourcesAfterRest(
+      rested,
+      FeatureUsageRest.shortRest,
+    );
+    await _save(
+      rested.copyWith(featureResources: featureResources),
+    );
+  }
+
+  Future<void> adjustFeatureResource(String resourceId, int delta) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final catalog =
+        await ref.read(srdDataSourceProvider).getFeatureUsageCatalog();
+    final resource = catalog.resource(resourceId);
+    if (resource == null) return;
+    final max = FeatureUsageEngine.maxFor(resource, c);
+    if (max == null) return;
+    final current = FeatureUsageEngine.currentFor(c, resource, max) ?? max;
+    final next = (current + delta).clamp(0, max).toInt();
+    if (next == current) return;
+    await _save(
+      c.copyWith(
+        featureResources: {
+          ...c.featureResources,
+          resourceId: next,
+        },
+      ),
+    );
+  }
+
+  Future<Map<String, int>> _featureResourcesAfterRest(
+    Character c,
+    FeatureUsageRest rest,
+  ) async {
+    final result = Map<String, int>.from(c.featureResources);
+    final resources = await _activeFeatureUsageResources(c);
+    final activeResourceIds = resources.map((resource) => resource.id).toSet();
+    result.removeWhere((id, _) => !activeResourceIds.contains(id));
+    for (final resource in resources) {
+      final max = FeatureUsageEngine.maxFor(resource, c);
+      if (max == null) {
+        result.remove(resource.id);
+        continue;
+      }
+      final recharge = FeatureUsageEngine.rechargeFor(resource, c);
+      if (FeatureUsageEngine.restoresOn(recharge, rest)) {
+        result[resource.id] = max;
+        continue;
+      }
+      if (rest == FeatureUsageRest.shortRest &&
+          resource.id == 'sorcery_points' &&
+          c.characterClass == 'Sorcerer' &&
+          c.level >= 20) {
+        final current = FeatureUsageEngine.currentFor(c, resource, max) ?? max;
+        result[resource.id] = (current + 4).clamp(0, max).toInt();
+        continue;
+      }
+      final current = result[resource.id];
+      if (current != null) {
+        result[resource.id] = current.clamp(0, max).toInt();
+      }
+    }
+    return result;
+  }
+
+  Future<List<FeatureUsageResource>> _activeFeatureUsageResources(
+    Character c,
+  ) async {
+    final srd = ref.read(srdDataSourceProvider);
+    final catalog = await srd.getFeatureUsageCatalog();
+    final classFeatures = (await srd.getClassFeatures(c.characterClass))
+        .where((f) => f.level <= c.level)
+        .toList();
+    final subclassName = c.subclass ?? '';
+    final subclassFeatures = subclassName.isEmpty
+        ? <SrdClassFeature>[]
+        : (await srd.getSubclassFeatures(c.characterClass, subclassName))
+            .where((f) => f.level <= c.level)
+            .toList();
+    final races = await srd.getRaces();
+    final race = races.where((r) => r.name == c.race).firstOrNull;
+    final subrace = race?.subraces
+        .where((s) => s.name == c.subrace)
+        .firstOrNull;
+    final traits = <String>[
+      ...?race?.traits,
+      ...?subrace?.traits,
+    ];
+    return FeatureUsageEngine.activeResources(
+      character: c,
+      catalog: catalog,
+      classFeatures: classFeatures,
+      subclassFeatures: subclassFeatures,
+      raceTraits: traits,
+    ).toList();
   }
 
   /// Auto-populates [innateSpells] from the SRD race data if the character has

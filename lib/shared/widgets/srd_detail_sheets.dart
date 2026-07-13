@@ -531,9 +531,11 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
     final i18n = widget.i18n;
     final race = widget.race;
     final raceName = i18n.raceName(race.name);
-    final asiText = race.abilityScoreIncreases.entries
-        .map((e) => '+${e.value} ${abilityName(l10n, e.key)}')
-        .join(', ');
+    final asiText = [
+      for (final entry in race.abilityScoreIncreases.entries)
+        '+${entry.value} ${abilityName(l10n, entry.key)}',
+      if (race.freeAsiPoints > 0) '${race.freeAsiPoints}x +1',
+    ].join(', ');
 
     return DraggableScrollableSheet(
       initialChildSize: 0.87,

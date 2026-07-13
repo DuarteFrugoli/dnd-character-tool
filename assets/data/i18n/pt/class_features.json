@@ -276,6 +276,10 @@
       "name": "Juramento Sagrado",
       "description": "Você faz o juramento que o vincula como paladino para sempre. Até este momento, você esteve em uma fase preparatória, comprometido com o caminho, mas ainda não jurado a ele."
     },
+    "Channel Divinity": {
+      "name": "Canalizar Divindade",
+      "description": "Seu juramento permite que você canalize energia divina para alimentar efeitos mágicos. Ao usar Canalizar Divindade, você escolhe qual opção usar. Você recupera os usos gastos ao terminar um descanso curto ou longo."
+    },
     "Ability Score Improvement": {
       "name": "Aumento no Valor de Habilidade",
       "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."

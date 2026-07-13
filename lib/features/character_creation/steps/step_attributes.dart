@@ -69,12 +69,8 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
     final freeAsi = draft.freeAsi;
 
     // Combina bônus de raça base + subraça para exibição
-    final raceAsi = <String, int>{
-      ...?draft.selectedRace?.abilityScoreIncreases,
-    };
-    draft.selectedSubrace?.abilityScoreIncreases.forEach((attr, bonus) {
-      raceAsi[attr] = (raceAsi[attr] ?? 0) + bonus;
-    });
+    final raceAsi = draft.mergedRaceAsi;
+    final asiIncrements = draft.racialAsiIncrements;
 
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -113,21 +109,15 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
         const SizedBox(height: 16),
 
         // ── ASI toggle ───────────────────────────────────────────────────
-        if (raceAsi.isNotEmpty) ...[
+        if (asiIncrements.isNotEmpty) ...[
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(AppLocalizations.of(context)!.stepDistributeRacialBonuses),
             subtitle: Text(
                 AppLocalizations.of(context)!.stepTashaRule),
             value: freeAsi,
-            onChanged: (v) {
-              ref.read(characterDraftProvider.notifier).setFreeAsi(v);
-              if (v) {
-                ref
-                    .read(characterDraftProvider.notifier)
-                    .setFreeAsiDistribution({});
-              }
-            },
+            onChanged: (v) =>
+                ref.read(characterDraftProvider.notifier).setFreeAsi(v),
           ),
           const Divider(height: 24),
         ],
@@ -164,9 +154,9 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
         ],
 
         // ── Free ASI distribution (Tasha's) ──────────────────────────────
-        if (freeAsi && raceAsi.isNotEmpty) ...[
+        if (freeAsi && asiIncrements.isNotEmpty) ...[
           const Divider(height: 24),
-          _FreeAsiSection(raceAsi: raceAsi),
+          _FreeAsiSection(increments: asiIncrements),
         ],
       ],
     );
@@ -642,18 +632,19 @@ class _PointBuySection extends StatelessWidget {
 // ── Free ASI Distribution ─────────────────────────────────────────────────────
 
 class _FreeAsiSection extends ConsumerWidget {
-  const _FreeAsiSection({required this.raceAsi});
+  const _FreeAsiSection({required this.increments});
 
-  final Map<String, int> raceAsi;
+  final List<int> increments;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final dist = ref.watch(characterDraftProvider).freeAsiDistribution;
-    final totalPool =
-        raceAsi.values.fold(0, (a, b) => a + b);
-    final assigned = dist.values.fold(0, (a, b) => a + b);
-    final remaining = totalPool - assigned;
+    final assignments = _assignmentsFromDistribution(dist);
+    final remaining = [
+      for (var i = 0; i < increments.length; i++)
+        if (assignments[i] == null) increments[i],
+    ].fold(0, (a, b) => a + b);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -663,36 +654,108 @@ class _FreeAsiSection extends ConsumerWidget {
           style: Theme.of(context).textTheme.labelLarge,
         ),
         const SizedBox(height: 8),
-        ..._attributes.map((attr) {
-          final current = dist[attr] ?? 0;
-          return Row(
-            children: [
-              SizedBox(
-                  width: 110,
-                  child: Text(abilityName(l10n, attr),
-                      style: Theme.of(context).textTheme.bodyMedium)),
-              IconButton(
-                icon: const Icon(Icons.remove, size: 18),
-                onPressed: current > 0
-                    ? () => ref
-                        .read(characterDraftProvider.notifier)
-                        .setFreeAsiDistribution({...dist, attr: current - 1})
-                    : null,
-              ),
-              Text('$current',
-                  style: Theme.of(context).textTheme.bodyMedium),
-              IconButton(
-                icon: const Icon(Icons.add, size: 18),
-                onPressed: remaining > 0
-                    ? () => ref
-                        .read(characterDraftProvider.notifier)
-                        .setFreeAsiDistribution({...dist, attr: current + 1})
-                    : null,
-              ),
-            ],
-          );
-        }),
+        for (var i = 0; i < increments.length; i++)
+          _FreeAsiSlotRow(
+            increment: increments[i],
+            value: assignments[i],
+            selectedAttributes: assignments.whereType<String>().toSet(),
+            onChanged: (attribute) {
+              final updated = List<String?>.from(assignments);
+              updated[i] = attribute;
+              ref
+                  .read(characterDraftProvider.notifier)
+                  .setFreeAsiDistribution(
+                    _distributionFromAssignments(updated),
+                  );
+            },
+          ),
       ],
+    );
+  }
+
+  List<String?> _assignmentsFromDistribution(Map<String, int> distribution) {
+    final remaining = Map<String, int>.from(distribution)
+      ..removeWhere((_, value) => value <= 0);
+    return [
+      for (final increment in increments)
+        _takeAttributeForIncrement(remaining, increment),
+    ];
+  }
+
+  String? _takeAttributeForIncrement(
+    Map<String, int> remaining,
+    int increment,
+  ) {
+    for (final entry in remaining.entries.toList()) {
+      if (entry.value == increment) {
+        remaining.remove(entry.key);
+        return entry.key;
+      }
+    }
+    return null;
+  }
+
+  Map<String, int> _distributionFromAssignments(List<String?> assignments) {
+    final result = <String, int>{};
+    for (var i = 0; i < increments.length; i++) {
+      final attribute = assignments[i];
+      if (attribute == null) continue;
+      result[attribute] = increments[i];
+    }
+    return result;
+  }
+}
+
+class _FreeAsiSlotRow extends StatelessWidget {
+  const _FreeAsiSlotRow({
+    required this.increment,
+    required this.value,
+    required this.selectedAttributes,
+    required this.onChanged,
+  });
+
+  final int increment;
+  final String? value;
+  final Set<String> selectedAttributes;
+  final ValueChanged<String?> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 64,
+            child: Text(
+              '+$increment',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
+          Expanded(
+            child: DropdownButton<String?>(
+              isExpanded: true,
+              value: value,
+              hint: Text(l10n.creationStepAttributes),
+              items: [
+                const DropdownMenuItem<String?>(
+                  value: null,
+                  child: Text('-'),
+                ),
+                for (final attribute in _attributes)
+                  DropdownMenuItem<String?>(
+                    value: attribute,
+                    enabled:
+                        value == attribute || !selectedAttributes.contains(attribute),
+                    child: Text(abilityName(l10n, attribute)),
+                  ),
+              ],
+              onChanged: onChanged,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

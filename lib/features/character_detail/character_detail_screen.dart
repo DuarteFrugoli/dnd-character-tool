@@ -10,6 +10,7 @@ import 'package:go_router/go_router.dart';
 import '../../data/spellcasting_engine.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_choice_option_resolver.dart';
+import '../../data/feature_usage_engine.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';

@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Wut",
-      "description": "Im Kampf kämpfst du mit ursprünglicher Wildheit. Wenn du an der Reihe bist, kannst du als Bonusaktion eine Wut einsetzen. Während du tobst, hast du einen Vorteil bei Stärkewürfen und Rettungswürfen, erhältst einen Bonus auf Nahkampfschadenswürfe mit Stärke (+2 auf den Barbarenstufen 1–8, +3 auf den Stufen 9–15 und +4 auf den Stufen 16–20) und bist resistent gegen Schlag-, Stich- und Hiebschaden. Deine Wut hält 1 Minute an. Es endet vorzeitig, wenn Sie bewusstlos geschlagen werden oder wenn Ihr Zug endet und Sie seit Ihrem letzten Zug keine feindliche Kreatur angegriffen oder seitdem Schaden erlitten haben."
+      "description": "Im Kampf kämpfst du mit ursprünglicher Wildheit. Wenn du an der Reihe bist, kannst du als Bonusaktion eine Wut einsetzen. Während du tobst, hast du Vorteile bei Stärkewürfen und Rettungswürfen, erhältst einen Bonus auf Nahkampfschadenswürfe mit Stärke (+2 auf den Barbarenstufen 1–8, +3 auf den Stufen 9–15 und +4 auf den Stufen 16–20) und bist resistent gegen Schlag-, Stich- und Hiebschaden. Deine Wut hält 1 Minute an. Es endet vorzeitig, wenn Sie bewusstlos geschlagen werden oder wenn Ihr Zug endet und Sie seit Ihrem letzten Zug keine feindliche Kreatur angegriffen oder seitdem Schaden erlitten haben."
     },
     "Unarmored Defense": {
       "name": "Ungepanzerte Verteidigung",
@@ -26,7 +26,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
     },
     "Fast Movement": {
       "name": "Schnelle Bewegung",
@@ -72,7 +72,7 @@
     },
     "Song of Rest": {
       "name": "Lied der Ruhe",
-      "description": "Sie können beruhigende Musik oder Reden nutzen, um Ihre verwundeten Verbündeten während einer kurzen Pause wiederzubeleben. Wenn Sie oder eine befreundete Kreatur, die Ihre Leistung hören kann, am Ende der kurzen Pause durch das Ausgeben eines oder mehrerer Trefferwürfel Trefferpunkte zurückerhält, erhält jede dieser Kreaturen 1W6 zusätzliche Trefferpunkte zurück."
+      "description": "Sie können beruhigende Musik oder Reden nutzen, um Ihre verwundeten Verbündeten während einer kurzen Pause wiederzubeleben. Wenn Sie oder eine befreundete Kreatur, die Ihre Leistung hören kann, am Ende der kurzen Pause durch das Ausgeben eines oder mehrerer Trefferwürfel Trefferpunkte zurückgewinnen, erhält jede dieser Kreaturen zusätzlich 1W6 Trefferpunkte zurück."
     },
     "Bard College": {
       "name": "Bard College",
@@ -110,7 +110,7 @@
     },
     "Divine Domain": {
       "name": "Göttliche Domäne",
-      "description": "Wählen Sie eine Domain mit Bezug zu Ihrer Gottheit. Ihre Wahl gewährt Ihnen Domänenzauber und andere Funktionen."
+      "description": "Wählen Sie eine Domain aus, die mit Ihrer Gottheit in Zusammenhang steht. Ihre Wahl gewährt Ihnen Domänenzauber und andere Funktionen."
     },
     "Channel Divinity": {
       "name": "Kanal-Göttlichkeit",
@@ -122,7 +122,7 @@
     },
     "Destroy Undead": {
       "name": "Vernichte Untote",
-      "description": "Wenn der Rettungswurf eines Untoten gegen deine Funktion „Untote verwandeln“ scheitert, wird die Kreatur sofort zerstört, wenn ihr Herausforderungswert niedrig genug ist: CR 1/2 auf Klerikerstufe 5, CR 1 auf Stufe 8, CR 2 auf Stufe 11, CR 3 auf Stufe 14 und CR 4 auf Stufe 17."
+      "description": "Wenn ein Untoter seinen Rettungswurf gegen deine Funktion „Untote verwandeln“ misslingt, wird die Kreatur sofort zerstört, wenn ihre Herausforderungsbewertung niedrig genug ist: CR 1/2 auf Klerikerstufe 5, CR 1 auf Stufe 8, CR 2 auf Stufe 11, CR 3 auf Stufe 14 und CR 4 auf Stufe 17."
     },
     "Divine Intervention": {
       "name": "Göttliches Eingreifen",
@@ -166,11 +166,11 @@
   "Fighter": {
     "Fighting Style": {
       "name": "Kampfstil",
-      "description": "Sie machen sich einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie einen Kampfstil: Bogenschießen, Verteidigung, Duell, Kampf mit Großwaffen, Schutz oder Kampf mit zwei Waffen."
+      "description": "Sie machen sich einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie einen Kampfstil: Bogenschießen, Verteidigung, Duell, Großwaffenkampf, Schutz oder Kampf mit zwei Waffen."
     },
     "Second Wind": {
       "name": "Zweiter Wind",
-      "description": "Sie verfügen über eine begrenzte Ausdauer, auf die Sie zurückgreifen können, um sich vor Schaden zu schützen. Wenn Sie an der Reihe sind, können Sie eine Bonusaktion nutzen, um Trefferpunkte in Höhe von 1W10 + Ihrer Kämpferstufe zurückzugewinnen."
+      "description": "Sie verfügen nur über eine begrenzte Ausdauer, auf die Sie zurückgreifen können, um sich vor Schaden zu schützen. Wenn Sie an der Reihe sind, können Sie eine Bonusaktion nutzen, um Trefferpunkte in Höhe von 1W10 + Ihrer Kämpferstufe zurückzugewinnen."
     },
     "Action Surge": {
       "name": "Aktionsschub",
@@ -186,7 +186,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
     },
     "Indomitable": {
       "name": "Unbezwingbar",
@@ -200,7 +200,7 @@
     },
     "Martial Arts": {
       "name": "Kampfkunst",
-      "description": "Durch die Ausübung der Kampfkünste beherrschen Sie Kampfstile, bei denen unbewaffnete Schläge und Mönchswaffen zum Einsatz kommen. Sie können Geschicklichkeit anstelle von Stärke für Angriffs- und Schadenswürfe verwenden. Ihr Kampfkunst-Würfel für einen unbewaffneten Schlag oder eine Mönchswaffe beträgt W4 auf den Mönchsstufen 1–4, W6 auf den Stufen 5–10, W8 auf den Stufen 11–16 und W10 auf den Stufen 17–20. Wenn Sie die Angriffsaktion mit einem unbewaffneten Schlag oder einer Mönchswaffe verwenden, können Sie als Bonusaktion einen unbewaffneten Schlag ausführen."
+      "description": "Durch die Ausübung der Kampfkünste beherrschen Sie Kampfstile, bei denen unbewaffnete Schläge und Mönchswaffen zum Einsatz kommen. Sie können Geschicklichkeit anstelle von Stärke für Angriffs- und Schadenswürfe verwenden. Ihr Kampfkunst-Würfel für einen unbewaffneten Schlag oder eine Mönchswaffe beträgt d4 auf den Mönchsstufen 1–4, d6 auf den Stufen 5–10, d8 auf den Stufen 11–16 und d10 auf den Stufen 17–20. Wenn Sie die Angriffsaktion mit einem unbewaffneten Schlag oder einer Mönchswaffe verwenden, können Sie als Bonusaktion einen unbewaffneten Schlag ausführen."
     },
     "Ki": {
       "name": "Ki",
@@ -228,7 +228,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
     },
     "Stunning Strike": {
       "name": "Atemberaubender Schlag",
@@ -276,13 +276,17 @@
       "name": "Heiliger Eid",
       "description": "Du schwörst den Eid, der dich als Paladin für immer bindet. Bis zu diesem Zeitpunkt befanden Sie sich in einer Vorbereitungsphase, waren dem Weg verpflichtet, aber noch nicht darauf eingeschworen."
     },
+    "Channel Divinity": {
+      "name": "Kanal-Göttlichkeit",
+      "description": "Ihr Eid ermöglicht es Ihnen, göttliche Energie zu kanalisieren, um magische Effekte zu erzielen. Wenn Sie Ihren Channel Divinity nutzen, entscheiden Sie, welche Option Sie nutzen möchten. Nach einer kurzen oder langen Pause erhalten Sie verbrauchte Energie zurück."
+    },
     "Ability Score Improvement": {
       "name": "Verbesserung der Fähigkeitsbewertung",
       "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Angriffsaktion ausführen."
+      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
     },
     "Aura of Protection": {
       "name": "Aura des Schutzes",
@@ -304,7 +308,7 @@
     },
     "Natural Explorer": {
       "name": "Natürlicher Entdecker",
-      "description": "Sie sind mit einer bestimmten Naturumgebung besonders vertraut und können sich in solchen Regionen gut fortbewegen und überleben. Wählen Sie ein bevorzugtes Gelände auf Ranger-Stufe 1, ein anderes auf Stufe 6 und ein weiteres auf Stufe 10: Arktis, Küste, Wüste, Wald, Grasland, Berg, Sumpf oder das Unterreich."
+      "description": "Sie sind mit einer bestimmten Naturumgebung besonders vertraut und können sich in solchen Regionen gut fortbewegen und überleben. Wählen Sie ein bevorzugtes Gelände auf Ranger-Stufe 1, ein anderes auf Stufe 6 und ein weiteres auf Stufe 10: Arktis, Küste, Wüste, Wald, Grasland, Berg, Sumpf oder Unterreich."
     },
     "Fighting Style": {
       "name": "Kampfstil",
@@ -332,7 +336,7 @@
     },
     "Land's Stride": {
       "name": "Lands Schritt",
-      "description": "Das Bewegen durch nichtmagisches schwieriges Gelände kostet Sie keine zusätzliche Bewegung. Sie können auch durch nichtmagische Pflanzen hindurchgehen, ohne von ihnen verlangsamt zu werden und ohne Schaden durch sie zu erleiden, wenn sie Dornen, Stacheln oder eine ähnliche Gefahr haben."
+      "description": "Das Bewegen durch nichtmagisches schwieriges Gelände kostet Sie keine zusätzliche Bewegung. Sie können auch nichtmagische Pflanzen durchqueren, ohne von ihnen verlangsamt zu werden und ohne Schaden durch sie zu erleiden, wenn sie Dornen, Stacheln oder eine ähnliche Gefahr haben."
     },
     "Hide in Plain Sight": {
       "name": "Verstecke dich in Sichtweite",
@@ -402,7 +406,7 @@
     },
     "Stroke of Luck": {
       "name": "Glücksfall",
-      "description": "Sie haben ein unheimliches Gespür dafür, Erfolg zu haben, wenn es darauf ankommt. Wenn Ihr Angriff ein Ziel in Reichweite verfehlt, können Sie den Fehlschlag in einen Treffer umwandeln. Wenn Sie bei einer Fähigkeitsüberprüfung scheitern, können Sie alternativ den W20-Wurf als 20 behandeln."
+      "description": "Sie haben ein unheimliches Gespür dafür, erfolgreich zu sein, wenn es darauf ankommt. Wenn Ihr Angriff ein Ziel in Reichweite verfehlt, können Sie den Fehlschlag in einen Treffer umwandeln. Wenn Sie bei einer Fähigkeitsüberprüfung scheitern, können Sie alternativ den W20-Wurf als 20 behandeln."
     }
   },
   "Sorcerer": {
@@ -446,7 +450,7 @@
     },
     "Pact Boon": {
       "name": "Pakt-Segen",
-      "description": "Ihr jenseitiger Gönner schenkt Ihnen für Ihren treuen Dienst ein Geschenk. Sie erhalten eine der folgenden Eigenschaften Ihrer Wahl: Pakt der Kette, Pakt der Klinge oder Pakt des Wälzers."
+      "description": "Ihr jenseitiger Gönner macht Ihnen für Ihren treuen Dienst ein Geschenk. Sie erhalten eine der folgenden Eigenschaften Ihrer Wahl: Pakt der Kette, Pakt der Klinge oder Pakt des Wälzers."
     },
     "Ability Score Improvement": {
       "name": "Verbesserung der Fähigkeitsbewertung",
@@ -480,11 +484,11 @@
     },
     "Spell Mastery": {
       "name": "Zauberbeherrschung",
-      "description": "Du hast bestimmte Zaubersprüche so gut gemeistert, dass du sie nach Belieben wirken kannst. Wählen Sie einen Zaubererzauber der 1. Stufe und einen Zaubererzauber der 2. Stufe aus, die sich in Ihrem Zauberbuch befinden. Sie können diese Zauber auf der niedrigsten Stufe wirken, ohne einen Zauberslot zu verbrauchen, wenn Sie sie vorbereitet haben."
+      "description": "Du hast bestimmte Zauber so gut gemeistert, dass du sie nach Belieben wirken kannst. Wählen Sie einen Zaubererzauber der 1. Stufe und einen Zaubererzauber der 2. Stufe aus, die sich in Ihrem Zauberbuch befinden. Sie können diese Zauber auf der niedrigsten Stufe wirken, ohne einen Zauberslot zu verbrauchen, wenn Sie sie vorbereitet haben."
     },
     "Signature Spells": {
       "name": "Signaturzauber",
-      "description": "Du meisterst zwei mächtige Zaubersprüche und kannst sie mit wenig Aufwand wirken. Wählen Sie zwei Zaubersprüche der 3. Stufe aus Ihrem Zauberbuch als Ihre Signaturzauber. Du hast diese Zauber immer vorbereitet, sie zählen nicht zu der Anzahl der Zauber, die du vorbereitet hast, und du kannst jeden von ihnen einmal auf der 3. Stufe wirken, ohne einen Zauberslot zu verbrauchen. Wenn Sie dies tun, können Sie dies nicht erneut tun, bis Sie eine kurze oder lange Pause beendet haben."
+      "description": "Du meisterst zwei mächtige Zaubersprüche und kannst sie mit wenig Aufwand wirken. Wählen Sie zwei Zaubersprüche der 3. Stufe aus Ihrem Zauberbuch als Ihre Signaturzauber. Du hast diese Zauber immer vorbereitet, sie zählen nicht zu der Anzahl der Zauber, die du vorbereitet hast, und du kannst jeden von ihnen auf der 3. Stufe einmal wirken, ohne einen Zauberslot zu verbrauchen. Wenn Sie dies tun, können Sie dies nicht erneut tun, bis Sie eine kurze oder lange Pause beendet haben."
     }
   }
 }

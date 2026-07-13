@@ -8,6 +8,7 @@ Usage (SRD overlays — assets/data/i18n/):
   python tools/translate_i18n.py es fr de                     # translate to specific locales
   python tools/translate_i18n.py es --force                   # overwrite existing non-empty files
   python tools/translate_i18n.py --file equipment.json        # only translate equipment.json for all locales
+  python tools/translate_i18n.py --file class_features.json --file feature_usages.json --force
   python tools/translate_i18n.py es --file equipment.json --force  # overwrite equipment.json for es
   python tools/translate_i18n.py pt --file feature_choices.json --force  # feature choice option labels
 
@@ -286,12 +287,32 @@ def extract_feature_choices() -> dict:
     return out
 
 
+def extract_feature_usages() -> dict:
+    # feature_usages.json mixes rule metadata with player-facing resource
+    # labels. Keep IDs/formulas/recharge rules in SRD and translate only names.
+    resources = {}
+    for resource_id, resource in _srd("feature_usages.json").get(
+        "resources", {}
+    ).items():
+        if not isinstance(resource, dict):
+            continue
+        entry = {}
+        if resource.get("name"):
+            entry["name"] = resource["name"]
+        if resource.get("description"):
+            entry["description"] = resource["description"]
+        if entry:
+            resources[resource_id] = entry
+    return {"resources": resources} if resources else {}
+
+
 EXTRACTORS = {
     "languages.json":         extract_languages,
     "tools.json":             extract_tools,
     "feats.json":             extract_feats,
     "conditions.json":        extract_conditions,
     "feature_choices.json":   extract_feature_choices,
+    "feature_usages.json":    extract_feature_usages,
     "skills.json":            extract_skills,
     "equipment.json":         extract_equipment,
     "magic_items.json":       extract_magic_items,
@@ -449,10 +470,17 @@ def main():
     args     = [a for a in raw_args if a not in ("--force", "--arb")]
 
     # --file equipment.json  → translate only that SRD file
-    file_filter = None
-    if "--file" in args:
+    file_filters = []
+    while "--file" in args:
         idx = args.index("--file")
-        file_filter = args[idx + 1]
+        if idx + 1 >= len(args):
+            print("--file requires a filename")
+            sys.exit(1)
+        file_filters.extend(
+            part.strip()
+            for part in args[idx + 1].split(",")
+            if part.strip()
+        )
         args = args[:idx] + args[idx + 2:]
 
     if args:
@@ -482,11 +510,15 @@ def main():
 
     # ── SRD overlay mode ──────────────────────────────────────────────────────
     filenames = sorted(EXTRACTORS.keys())
-    if file_filter:
-        if file_filter not in EXTRACTORS:
-            print(f"Unknown file: {file_filter}. Available: {', '.join(sorted(EXTRACTORS.keys()))}")
+    if file_filters:
+        unknown_files = [f for f in file_filters if f not in EXTRACTORS]
+        if unknown_files:
+            print(
+                f"Unknown file(s): {', '.join(unknown_files)}. "
+                f"Available: {', '.join(sorted(EXTRACTORS.keys()))}"
+            )
             sys.exit(1)
-        filenames = [file_filter]
+        filenames = list(dict.fromkeys(file_filters))
 
     print(f"Source : {SRD_DIR} (English SRD)")
     print(f"Targets: {', '.join(target_locales)}")

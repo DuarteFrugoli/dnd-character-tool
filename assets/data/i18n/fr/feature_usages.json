@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "rage": {
+      "name": "Rage"
+    },
+    "bardic_inspiration": {
+      "name": "Inspiration bardique"
+    },
+    "cleric_channel_divinity": {
+      "name": "Canal Divinité"
+    },
+    "divine_intervention": {
+      "name": "Intervention divine"
+    },
+    "wild_shape": {
+      "name": "Forme sauvage"
+    },
+    "second_wind": {
+      "name": "Deuxième souffle"
+    },
+    "action_surge": {
+      "name": "Déferlement d'action"
+    },
+    "indomitable": {
+      "name": "Indomptable"
+    },
+    "ki": {
+      "name": "Ki"
+    },
+    "divine_sense": {
+      "name": "Sens divin"
+    },
+    "lay_on_hands": {
+      "name": "Imposer les mains"
+    },
+    "paladin_channel_divinity": {
+      "name": "Canal Divinité"
+    },
+    "cleansing_touch": {
+      "name": "Touche Nettoyante"
+    },
+    "stroke_of_luck": {
+      "name": "Coup de chance"
+    },
+    "sorcery_points": {
+      "name": "Points de sorcellerie"
+    },
+    "mystic_arcanum": {
+      "name": "Arcane mystique"
+    },
+    "eldritch_master": {
+      "name": "Maître surnaturel"
+    },
+    "arcane_recovery": {
+      "name": "Récupération des arcanes"
+    },
+    "signature_spells": {
+      "name": "Sorts de signature"
+    },
+    "warding_flare": {
+      "name": "Fusée de protection"
+    },
+    "wrath_of_the_storm": {
+      "name": "Colère de la tempête"
+    },
+    "war_priest": {
+      "name": "Prêtre de guerre"
+    },
+    "natural_recovery": {
+      "name": "Récupération naturelle"
+    },
+    "superiority_dice": {
+      "name": "Dés de supériorité"
+    },
+    "wholeness_of_body": {
+      "name": "Intégrité du corps"
+    },
+    "holy_nimbus": {
+      "name": "Nimbus sacré"
+    },
+    "undying_sentinel": {
+      "name": "Sentinelle éternelle"
+    },
+    "elder_champion": {
+      "name": "Champion aîné"
+    },
+    "tides_of_chaos": {
+      "name": "Marées du chaos"
+    },
+    "fey_presence": {
+      "name": "Présence féerique"
+    },
+    "misty_escape": {
+      "name": "Évasion brumeuse"
+    },
+    "dark_delirium": {
+      "name": "Délire sombre"
+    },
+    "dark_ones_own_luck": {
+      "name": "La chance du Ténébreux"
+    },
+    "hurl_through_hell": {
+      "name": "Traversez l'enfer"
+    },
+    "entropic_ward": {
+      "name": "Salle entropique"
+    },
+    "benign_transposition": {
+      "name": "Transposition bénigne"
+    },
+    "portent": {
+      "name": "Présage"
+    },
+    "instinctive_charm": {
+      "name": "Charme instinctif"
+    },
+    "illusory_self": {
+      "name": "Soi illusoire"
+    },
+    "shapechanger": {
+      "name": "Changeur de forme"
+    },
+    "lucky_points": {
+      "name": "Points de chance"
+    },
+    "martial_adept_superiority_die": {
+      "name": "Dé de supériorité"
+    },
+    "magic_initiate_spell": {
+      "name": "Sort d'initiation magique"
+    },
+    "breath_weapon": {
+      "name": "Souffle"
+    },
+    "relentless_endurance": {
+      "name": "Endurance implacable"
+    }
+  }
+}

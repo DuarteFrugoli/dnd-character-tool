@@ -15,6 +15,7 @@ class FeatureChoiceOptionResolver {
     required this.spells,
     required this.languages,
     required this.weapons,
+    required this.feats,
     this.character,
     this.relatedRequests = const [],
     this.choices = const [],
@@ -28,6 +29,7 @@ class FeatureChoiceOptionResolver {
   final List<SrdSpell> spells;
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
+  final List<SrdFeat> feats;
   final Character? character;
   final List<FeatureChoiceRequest> relatedRequests;
   final List<CharacterFeatureChoice> choices;
@@ -54,6 +56,8 @@ class FeatureChoiceOptionResolver {
     }
 
     switch (req.type) {
+      case 'feat':
+        return _featOptions();
       case 'skill':
         return _skillOptions();
       case 'skill_expertise':
@@ -172,6 +176,19 @@ class FeatureChoiceOptionResolver {
     return [...mapped, ..._thievesTools(prefix: prefix)];
   }
 
+  List<SrdFeatureChoiceOption> _featOptions() {
+    return feats
+        .map(
+          (feat) => SrdFeatureChoiceOption(
+            id: feat.name,
+            name: i18n.featName(feat.name) ?? feat.name,
+            description: i18n.featDescription(feat.name) ?? feat.description,
+          ),
+        )
+        .toList()
+      ..sort((a, b) => a.name.compareTo(b.name));
+  }
+
   List<SrdFeatureChoiceOption> _thievesTools({required bool prefix}) {
     return [
       SrdFeatureChoiceOption(
@@ -241,6 +258,7 @@ String featureChoiceValueLabelForRequest({
   required List<SrdSpell> spells,
   required List<SrdLanguage> languages,
   required List<SrdWeapon> weapons,
+  List<SrdFeat> feats = const [],
   Character? character,
   List<FeatureChoiceRequest> relatedRequests = const [],
   List<CharacterFeatureChoice> choices = const [],
@@ -254,6 +272,7 @@ String featureChoiceValueLabelForRequest({
     spells: spells,
     languages: languages,
     weapons: weapons,
+    feats: feats,
     character: character,
     relatedRequests: relatedRequests,
     choices: choices,

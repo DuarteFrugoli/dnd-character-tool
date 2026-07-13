@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "rage": {
+      "name": "격노"
+    },
+    "bardic_inspiration": {
+      "name": "바르딕 영감"
+    },
+    "cleric_channel_divinity": {
+      "name": "채널 디비니티"
+    },
+    "divine_intervention": {
+      "name": "신성한 개입"
+    },
+    "wild_shape": {
+      "name": "와일드 셰이프"
+    },
+    "second_wind": {
+      "name": "두 번째 바람"
+    },
+    "action_surge": {
+      "name": "액션 서지"
+    },
+    "indomitable": {
+      "name": "굽히지 않는"
+    },
+    "ki": {
+      "name": "기"
+    },
+    "divine_sense": {
+      "name": "신성한 감각"
+    },
+    "lay_on_hands": {
+      "name": "손을 얹다"
+    },
+    "paladin_channel_divinity": {
+      "name": "채널 디비니티"
+    },
+    "cleansing_touch": {
+      "name": "클렌징 터치"
+    },
+    "stroke_of_luck": {
+      "name": "행운의 뇌졸중"
+    },
+    "sorcery_points": {
+      "name": "마법 포인트"
+    },
+    "mystic_arcanum": {
+      "name": "신비한 영석"
+    },
+    "eldritch_master": {
+      "name": "엘드리치 마스터"
+    },
+    "arcane_recovery": {
+      "name": "비전 회복"
+    },
+    "signature_spells": {
+      "name": "시그니처 주문"
+    },
+    "warding_flare": {
+      "name": "와딩 플레어"
+    },
+    "wrath_of_the_storm": {
+      "name": "폭풍의 분노"
+    },
+    "war_priest": {
+      "name": "전쟁 사제"
+    },
+    "natural_recovery": {
+      "name": "자연회복"
+    },
+    "superiority_dice": {
+      "name": "우월 주사위"
+    },
+    "wholeness_of_body": {
+      "name": "몸의 완전성"
+    },
+    "holy_nimbus": {
+      "name": "신성한 후광"
+    },
+    "undying_sentinel": {
+      "name": "불멸의 파수꾼"
+    },
+    "elder_champion": {
+      "name": "장로 챔피언"
+    },
+    "tides_of_chaos": {
+      "name": "혼돈의 파도"
+    },
+    "fey_presence": {
+      "name": "페이 존재"
+    },
+    "misty_escape": {
+      "name": "미스티 이스케이프"
+    },
+    "dark_delirium": {
+      "name": "어두운 섬망"
+    },
+    "dark_ones_own_luck": {
+      "name": "어둠의 자 자신의 행운"
+    },
+    "hurl_through_hell": {
+      "name": "지옥으로 던져라"
+    },
+    "entropic_ward": {
+      "name": "엔트로피 병동"
+    },
+    "benign_transposition": {
+      "name": "양성 전치"
+    },
+    "portent": {
+      "name": "조짐"
+    },
+    "instinctive_charm": {
+      "name": "본능적인 매력"
+    },
+    "illusory_self": {
+      "name": "환상의 자아"
+    },
+    "shapechanger": {
+      "name": "셰이프체인저"
+    },
+    "lucky_points": {
+      "name": "행운 포인트"
+    },
+    "martial_adept_superiority_die": {
+      "name": "우월성 다이"
+    },
+    "magic_initiate_spell": {
+      "name": "마법 개시 주문"
+    },
+    "breath_weapon": {
+      "name": "브레스 무기"
+    },
+    "relentless_endurance": {
+      "name": "끊임없는 인내"
+    }
+  }
+}

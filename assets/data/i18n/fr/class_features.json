@@ -14,7 +14,7 @@
     },
     "Danger Sense": {
       "name": "Sens du danger",
-      "description": "Vous avez le sentiment étrange que les choses à proximité ne sont pas comme elles devraient l'être. Vous avez un avantage aux jets de sauvegarde de Dextérité contre les effets que vous pouvez voir, comme les pièges et les sorts. Pour bénéficier de cet avantage, vous ne pouvez pas être aveuglé, devenu sourd ou incapable d'agir."
+      "description": "Vous avez le sentiment étrange que les choses à proximité ne sont pas comme elles devraient l'être. Vous avez un avantage aux jets de sauvegarde de Dextérité contre les effets visibles, comme les pièges et les sorts. Pour bénéficier de cet avantage, vous ne pouvez pas être aveuglé, devenu sourd ou incapable d'agir."
     },
     "Primal Path": {
       "name": "Chemin primordial",
@@ -38,7 +38,7 @@
     },
     "Brutal Critical": {
       "name": "Critique brutale",
-      "description": "Vous pouvez lancer un dé de dégâts d’arme supplémentaire pour déterminer les dégâts supplémentaires d’un coup critique avec une attaque de mêlée. Cela passe à deux dés supplémentaires au niveau 13 et à trois dés supplémentaires au niveau 17."
+      "description": "Vous pouvez lancer un dé de dégâts d'arme supplémentaire pour déterminer les dégâts supplémentaires d'un coup critique avec une attaque de mêlée. Cela passe à deux dés supplémentaires au niveau 13 et à trois dés supplémentaires au niveau 17."
     },
     "Relentless Rage": {
       "name": "Colère implacable",
@@ -174,7 +174,7 @@
     },
     "Action Surge": {
       "name": "Déferlement d'action",
-      "description": "À partir du niveau 2, vous pouvez repousser un instant vos limites normales. À votre tour, vous pouvez effectuer une action supplémentaire en plus de votre action habituelle et d’une éventuelle action bonus."
+      "description": "À partir du 2e niveau, vous pouvez dépasser un instant vos limites habituelles. À votre tour, vous pouvez effectuer une action supplémentaire en plus de votre action habituelle et d’une éventuelle action bonus."
     },
     "Martial Archetype": {
       "name": "Archétype martial",
@@ -254,7 +254,7 @@
   "Paladin": {
     "Divine Sense": {
       "name": "Sens divin",
-      "description": "La présence d’un mal puissant s’enregistre sur vos sens comme une odeur nauséabonde, et un bien puissant résonne comme une musique céleste dans vos oreilles. Par une action, vous pouvez ouvrir votre conscience pour détecter de telles forces. Jusqu'à la fin de votre prochain tour, vous connaissez l'emplacement de tout être céleste, démon ou mort-vivant dans un rayon de 20 mètres autour de vous qui n'est pas à couvert."
+      "description": "La présence d’un mal puissant s’enregistre sur vos sens comme une odeur nauséabonde, et un bien puissant résonne comme une musique céleste à vos oreilles. Par une action, vous pouvez ouvrir votre conscience pour détecter de telles forces. Jusqu'à la fin de votre prochain tour, vous connaissez l'emplacement de tout être céleste, démon ou mort-vivant dans un rayon de 20 mètres autour de vous et qui n'est pas à couvert."
     },
     "Lay on Hands": {
       "name": "Imposer les mains",
@@ -275,6 +275,10 @@
     "Sacred Oath": {
       "name": "Serment sacré",
       "description": "Vous prêtez le serment qui vous lie pour toujours en tant que paladin. Jusqu’à présent, vous étiez dans une phase préparatoire, engagés sur le chemin mais pas encore juré de l’emprunter."
+    },
+    "Channel Divinity": {
+      "name": "Canal Divinité",
+      "description": "Votre serment vous permet de canaliser l'énergie divine pour alimenter des effets magiques. Lorsque vous utilisez votre Channel Divinity, vous choisissez quelle option utiliser. Vous récupérez les utilisations dépensées lorsque vous terminez un repos court ou long."
     },
     "Ability Score Improvement": {
       "name": "Amélioration du score de capacité",
@@ -320,7 +324,7 @@
     },
     "Primeval Awareness": {
       "name": "Conscience primitive",
-      "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez détecter si des aberrations, des célestes, des dragons, des élémentaires, des fées, des démons ou des morts-vivants sont présents à moins de 1,6 km de vous."
+      "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez sentir si des aberrations, des célestes, des dragons, des élémentaires, des fées, des démons ou des morts-vivants sont présents à moins de 1,6 km de vous."
     },
     "Ability Score Improvement": {
       "name": "Amélioration du score de capacité",
@@ -434,7 +438,7 @@
   "Warlock": {
     "Otherworldly Patron": {
       "name": "Patron d'un autre monde",
-      "description": "Vous avez conclu un marché avec un être d'un autre monde de votre choix : l'Archfey, le Démon ou le Grand Ancien, chacun étant détaillé à la fin de la description de la classe."
+      "description": "Vous avez conclu un marché avec un être d'un autre monde de votre choix : l'Archifey, le Démon ou le Grand Ancien, chacun étant détaillé à la fin de la description de la classe."
     },
     "Pact Magic": {
       "name": "Magie du Pacte",
@@ -467,7 +471,7 @@
       "description": "En tant qu'étudiant en magie arcanique, vous disposez d'un grimoire contenant 6 sorts de 1er niveau de votre choix. L'intelligence est votre capacité à lancer des sorts."
     },
     "Arcane Recovery": {
-      "name": "Récupération des Arcanes",
+      "name": "Récupération des arcanes",
       "description": "Vous avez appris à retrouver une partie de votre énergie magique en étudiant votre grimoire. Une fois par jour, lorsque vous terminez un court repos, vous pouvez choisir des emplacements de sorts dépensés à récupérer. Les emplacements de sorts peuvent avoir un niveau combiné égal ou inférieur à la moitié de votre niveau de sorcier (arrondi au supérieur), et aucun des emplacements ne peut être de niveau 6 ou supérieur."
     },
     "Arcane Tradition": {

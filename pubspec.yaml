@@ -91,6 +91,7 @@ flutter:
     - assets/data/srd/feats.json
     - assets/data/srd/conditions.json
     - assets/data/srd/feature_choices.json
+    - assets/data/srd/feature_usages.json
     - assets/data/i18n/de/
     - assets/data/i18n/es/
     - assets/data/i18n/fr/

@@ -18,6 +18,102 @@ String _featureTypeLabel(String type, BuildContext context) {
   }
 }
 
+String _featureUsageRechargeLabel(BuildContext context, String recharge) {
+  final l10n = AppLocalizations.of(context)!;
+  switch (recharge) {
+    case 'short_rest':
+    case 'short_or_long_rest':
+      return l10n.restPickerShort;
+    case 'long_rest':
+      return l10n.restPickerLong;
+    default:
+      return recharge;
+  }
+}
+
+class _FeatureUsageControls extends ConsumerWidget {
+  const _FeatureUsageControls({
+    required this.view,
+    required this.characterId,
+  });
+
+  final FeatureUsageView view;
+  final String characterId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (view.isUnlimited) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+    final notifier = ref.read(characterDetailProvider(characterId).notifier);
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final current = view.current ?? 0;
+    final max = view.max ?? 0;
+    final resourceName = i18n.featureUsageResourceName(
+      view.resource.id,
+      view.resource.name,
+    );
+
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerHighest.withValues(alpha: 0.55),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: scheme.outlineVariant),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                Text(
+                  '$resourceName: $current/$max',
+                  style: textTheme.labelMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
+                  _featureUsageRechargeLabel(context, view.recharge),
+                  style: textTheme.labelSmall?.copyWith(
+                    color: scheme.outline,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          IconButton.filledTonal(
+            icon: Text('-${view.spend}'),
+            tooltip: l10n.shortRestSpend,
+            visualDensity: VisualDensity.compact,
+            onPressed: view.canSpend
+                ? () => notifier.adjustFeatureResource(
+                      view.resource.id,
+                      -view.spend,
+                    )
+                : null,
+          ),
+          const SizedBox(width: 6),
+          IconButton.filledTonal(
+            icon: const Icon(Icons.add),
+            tooltip: l10n.dialogAdd,
+            visualDensity: VisualDensity.compact,
+            onPressed: view.canRecover
+                ? () => notifier.adjustFeatureResource(view.resource.id, 1)
+                : null,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 List<Widget> _featureChoiceWidgets({
   required BuildContext context,
   required WidgetRef ref,
@@ -48,6 +144,7 @@ List<Widget> _featureChoiceWidgets({
       spells: data.spells,
       languages: data.languages,
       weapons: data.weapons,
+      feats: data.srdFeats,
       character: character,
       relatedRequests: requests,
       choices: character.featureChoices,
@@ -251,6 +348,7 @@ void _openFeatureChoiceEditorSheet({
                         spells: data.spells,
                         languages: data.languages,
                         weapons: data.weapons,
+                        feats: data.srdFeats,
                         featureLabelBuilder: (request) =>
                             _featureChoiceRequestFeatureLabel(request, i18n),
                         onChanged: (choices) {
@@ -355,11 +453,13 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
       srd.getRaceTraits(),
       srd.getSubclassFeatures(widget.character.characterClass, subclassName),
       srd.getFeatureChoiceCatalog(),
+      srd.getFeatureUsageCatalog(),
       srd.getSkills(),
       srd.getTools(),
       srd.getSpells(),
       srd.getLanguages(),
       srd.getWeapons(),
+      srd.getFeats(),
     ]);
     final classFeatures = results[0] as List<SrdClassFeature>;
     final races = results[1] as List<SrdRace>;
@@ -367,11 +467,13 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
     final traitDescriptions = results[3] as Map<String, String>;
     final subclassFeatures = results[4] as List<SrdClassFeature>;
     final featureChoiceCatalog = results[5] as SrdFeatureChoiceCatalog;
-    final skills = results[6] as List<SrdSkill>;
-    final tools = results[7] as List<SrdTool>;
-    final spells = results[8] as List<SrdSpell>;
-    final languages = results[9] as List<SrdLanguage>;
-    final weapons = results[10] as List<SrdWeapon>;
+    final featureUsageCatalog = results[6] as FeatureUsageCatalog;
+    final skills = results[7] as List<SrdSkill>;
+    final tools = results[8] as List<SrdTool>;
+    final spells = results[9] as List<SrdSpell>;
+    final languages = results[10] as List<SrdLanguage>;
+    final weapons = results[11] as List<SrdWeapon>;
+    final srdFeats = results[12] as List<SrdFeat>;
 
     final race = races
         .where((r) => r.name == widget.character.race)
@@ -397,11 +499,13 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab> {
           .where((f) => f.level <= widget.character.level)
           .toList(),
       featureChoiceCatalog: featureChoiceCatalog,
+      featureUsageCatalog: featureUsageCatalog,
       skills: skills,
       tools: tools,
       spells: spells,
       languages: languages,
       weapons: weapons,
+      srdFeats: srdFeats,
     );
   }
 
@@ -541,11 +645,13 @@ class _FeaturesData {
   final String subclassName;
   final List<SrdClassFeature> subclassFeatures;
   final SrdFeatureChoiceCatalog featureChoiceCatalog;
+  final FeatureUsageCatalog featureUsageCatalog;
   final List<SrdSkill> skills;
   final List<SrdTool> tools;
   final List<SrdSpell> spells;
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
+  final List<SrdFeat> srdFeats;
 
   const _FeaturesData({
     required this.classFeatures,
@@ -557,11 +663,13 @@ class _FeaturesData {
     required this.subclassName,
     required this.subclassFeatures,
     required this.featureChoiceCatalog,
+    required this.featureUsageCatalog,
     required this.skills,
     required this.tools,
     required this.spells,
     required this.languages,
     required this.weapons,
+    required this.srdFeats,
   });
 }
 
@@ -616,6 +724,11 @@ class _RacialTraitsSection extends ConsumerWidget {
         ...allTraits.map((trait) {
           final isDisabled = disabledFeatures.contains(trait);
           final desc = traitDescriptions[trait];
+          final usageView = FeatureUsageEngine.viewForRef(
+            catalog: data.featureUsageCatalog,
+            character: character,
+            ref: data.featureUsageCatalog.raceTrait(trait),
+          );
           final requests = FeatureChoiceEngine.requestsForRaceTrait(
             catalog: data.featureChoiceCatalog,
             traitName: trait,
@@ -643,6 +756,11 @@ class _RacialTraitsSection extends ConsumerWidget {
                       color: scheme.onSurfaceVariant,
                     ),
                   ),
+                  if (usageView != null)
+                    _FeatureUsageControls(
+                      view: usageView,
+                      characterId: characterId,
+                    ),
                   ..._featureChoiceWidgets(
                     context: context,
                     ref: ref,
@@ -683,6 +801,11 @@ class _RacialTraitsSection extends ConsumerWidget {
                     requests: requests,
                     data: data,
                   ),
+                  if (usageView != null)
+                    _FeatureUsageControls(
+                      view: usageView,
+                      characterId: characterId,
+                    ),
                   Text(
                     i18n.raceTraitDescription(trait) ?? desc,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -891,6 +1014,11 @@ class _FeatsSection extends ConsumerWidget {
             featName: f.name,
             level: character.level,
           );
+          final usageView = FeatureUsageEngine.viewForRef(
+            catalog: data.featureUsageCatalog,
+            character: character,
+            ref: data.featureUsageCatalog.feat(f.name),
+          );
           return Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
@@ -944,6 +1072,11 @@ class _FeatsSection extends ConsumerWidget {
                   requests: requests,
                   data: data,
                 ),
+                if (usageView != null)
+                  _FeatureUsageControls(
+                    view: usageView,
+                    characterId: characterId,
+                  ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
@@ -1019,6 +1152,21 @@ class _ExtraFeaturesSection extends ConsumerWidget {
         const SizedBox(height: 8),
         ...features.map((f) {
           final requests = _requestsForExtra(f);
+          final usageRef = data.featureUsageCatalog.classFeature(
+                f.sourceClass,
+                f.name,
+              ) ??
+              data.featureUsageCatalog.subclassFeature(
+                character.characterClass,
+                f.sourceClass,
+                f.name,
+              ) ??
+              data.featureUsageCatalog.raceTrait(f.name);
+          final usageView = FeatureUsageEngine.viewForRef(
+            catalog: data.featureUsageCatalog,
+            character: character,
+            ref: usageRef,
+          );
           return Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
@@ -1087,6 +1235,11 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                   requests: requests,
                   data: data,
                 ),
+                if (usageView != null)
+                  _FeatureUsageControls(
+                    view: usageView,
+                    characterId: characterId,
+                  ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
@@ -1182,6 +1335,11 @@ class _ClassFeaturesSection extends ConsumerWidget {
             featureName: f.name,
             level: character.level,
           );
+          final usageView = FeatureUsageEngine.viewForRef(
+            catalog: data.featureUsageCatalog,
+            character: character,
+            ref: data.featureUsageCatalog.classFeature(className, f.name),
+          );
           final card = Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
@@ -1214,16 +1372,19 @@ class _ClassFeaturesSection extends ConsumerWidget {
                   ),
                 ],
               ),
-              subtitle: Row(
+              subtitle: Wrap(
+                spacing: 8,
+                runSpacing: 2,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   Text(
                     l10n.charCardLevel(f.level),
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
-                  if (f.uses != null) ...[
-                    const SizedBox(width: 8),
+                  if (usageView != null && !usageView.isUnlimited) ...[
                     Text(
-                      '${f.uses!.amount}× / ${f.uses!.rechargeLabel}',
+                      '${l10n.inventoryDetailUses}: '
+                      '${usageView.current}/${usageView.max}',
                       style: Theme.of(
                         context,
                       ).textTheme.bodySmall?.copyWith(color: scheme.primary),
@@ -1240,6 +1401,11 @@ class _ClassFeaturesSection extends ConsumerWidget {
                   requests: requests,
                   data: data,
                 ),
+                if (usageView != null)
+                  _FeatureUsageControls(
+                    view: usageView,
+                    characterId: characterId,
+                  ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
@@ -1312,6 +1478,15 @@ class _SubclassFeaturesSection extends ConsumerWidget {
             featureName: f.name,
             level: character.level,
           );
+          final usageView = FeatureUsageEngine.viewForRef(
+            catalog: data.featureUsageCatalog,
+            character: character,
+            ref: data.featureUsageCatalog.subclassFeature(
+              className,
+              subclassName,
+              f.name,
+            ),
+          );
           final card = Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
@@ -1351,9 +1526,25 @@ class _SubclassFeaturesSection extends ConsumerWidget {
                   ),
                 ],
               ),
-              subtitle: Text(
-                l10n.charCardLevel(f.level),
-                style: Theme.of(context).textTheme.bodySmall,
+              subtitle: Wrap(
+                spacing: 8,
+                runSpacing: 2,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  Text(
+                    l10n.charCardLevel(f.level),
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  if (usageView != null && !usageView.isUnlimited) ...[
+                    Text(
+                      '${l10n.inventoryDetailUses}: '
+                      '${usageView.current}/${usageView.max}',
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: scheme.primary),
+                    ),
+                  ],
+                ],
               ),
               children: [
                 ..._featureChoiceWidgets(
@@ -1364,6 +1555,11 @@ class _SubclassFeaturesSection extends ConsumerWidget {
                   requests: requests,
                   data: data,
                 ),
+                if (usageView != null)
+                  _FeatureUsageControls(
+                    view: usageView,
+                    characterId: characterId,
+                  ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(

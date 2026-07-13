@@ -14,7 +14,7 @@
     },
     "Danger Sense": {
       "name": "Senso del pericolo",
-      "description": "Hai una strana sensazione di quando le cose nelle vicinanze non sono come dovrebbero essere. Hai vantaggio sui tiri salvezza di Destrezza contro gli effetti che puoi vedere, come trappole e incantesimi. Per ottenere questo beneficio non è possibile essere accecati, assordati o incapacitati."
+      "description": "Hai la strana sensazione di quando le cose nelle vicinanze non sono come dovrebbero essere. Hai vantaggio sui tiri salvezza di Destrezza contro gli effetti che puoi vedere, come trappole e incantesimi. Per ottenere questo beneficio non è possibile essere accecati, assordati o incapacitati."
     },
     "Primal Path": {
       "name": "Sentiero Primordiale",
@@ -122,7 +122,7 @@
     },
     "Destroy Undead": {
       "name": "Distruggi i non morti",
-      "description": "Quando un non morto fallisce il suo tiro salvezza contro la tua funzione Scacciare non morti, la creatura viene immediatamente distrutta se il suo grado di sfida è sufficientemente basso: GS 1/2 al livello chierico 5, GS 1 al livello 8, GS 2 al livello 11, GS 3 al livello 14 e GS 4 al livello 17."
+      "description": "Quando un non morto fallisce il suo tiro salvezza contro la tua funzione Scacciare non morti, la creatura viene immediatamente distrutta se il suo grado di sfida è sufficientemente basso: GS 1/2 al livello da chierico 5, GS 1 al livello 8, GS 2 al livello 11, GS 3 al livello 14 e GS 4 al livello 17."
     },
     "Divine Intervention": {
       "name": "Intervento Divino",
@@ -216,7 +216,7 @@
     },
     "Deflect Missiles": {
       "name": "Deviare i missili",
-      "description": "Puoi usare la tua reazione per deviare o catturare il missile quando vieni colpito da un attacco con arma a distanza. Quando lo fai, il danno che subisci dall'attacco viene ridotto di 1d10 + il tuo modificatore di Destrezza + il tuo livello da monaco."
+      "description": "Puoi usare la tua reazione per deviare o catturare il missile quando vieni colpito da un attacco con un'arma a distanza. Quando lo fai, il danno che subisci dall'attacco viene ridotto di 1d10 + il tuo modificatore di Destrezza + il tuo livello da monaco."
     },
     "Ability Score Improvement": {
       "name": "Miglioramento del punteggio di abilità",
@@ -274,7 +274,11 @@
     },
     "Sacred Oath": {
       "name": "Giuramento sacro",
-      "description": "Giuri il giuramento che ti vincola come paladino per sempre. Fino a questo momento sei stato in una fase preparatoria, impegnato nel percorso ma non ancora giurato di seguirlo."
+      "description": "Giura per sempre il giuramento che ti vincola come paladino. Fino a questo momento sei stato in una fase preparatoria, impegnato nel percorso ma non ancora giurato di seguirlo."
+    },
+    "Channel Divinity": {
+      "name": "Divinità del canale",
+      "description": "Il tuo giuramento ti consente di incanalare l'energia divina per alimentare effetti magici. Quando usi Channel Divinity, scegli quale opzione usare. Recuperi gli usi spesi quando termini un riposo breve o lungo."
     },
     "Ability Score Improvement": {
       "name": "Miglioramento del punteggio di abilità",
@@ -336,7 +340,7 @@
     },
     "Hide in Plain Sight": {
       "name": "Nasconditi in piena vista",
-      "description": "Puoi spendere 1 minuto per creare mimetizzazione per te stesso. Devi avere accesso a fango fresco, terra, piante, fuliggine e altri materiali naturali con cui creare il tuo camuffamento. Una volta mimetizzato in questo modo, puoi provare a nasconderti premendoti contro una superficie solida, come un albero o un muro, che sia alta e larga almeno quanto te. Ottieni un bonus di +10 alle prove di Destrezza (Furtività) fintanto che rimani lì senza muoverti o intraprendere azioni."
+      "description": "Puoi spendere 1 minuto per creare mimetizzazione per te stesso. Devi avere accesso a fango fresco, terra, piante, fuliggine e altri materiali naturali con cui creare il tuo camuffamento. Una volta mimetizzato in questo modo, puoi provare a nasconderti premendoti contro una superficie solida, come un albero o un muro, che sia alta e larga almeno quanto te. Ottieni un bonus di +10 alle prove di Destrezza (Furtività) fintanto che rimani lì senza muoverti o compiere azioni."
     },
     "Vanish": {
       "name": "Svanire",
@@ -483,7 +487,7 @@
       "description": "Hai raggiunto una tale padronanza su alcuni incantesimi che puoi lanciarli a piacimento. Scegli un incantesimo da mago di 1° livello e un incantesimo da mago di 2° livello presenti nel tuo libro degli incantesimi. Puoi lanciare quegli incantesimi al loro livello più basso senza spendere uno slot incantesimo quando li hai preparati."
     },
     "Signature Spells": {
-      "name": "Incantesimi caratteristici",
+      "name": "Incantesimi distintivi",
       "description": "Ottieni la padronanza di due potenti incantesimi e puoi lanciarli con poco sforzo. Scegli due incantesimi da mago di 3° livello nel tuo libro degli incantesimi come incantesimi distintivi. Hai sempre questi incantesimi preparati, non contano nel numero di incantesimi che hai preparato e puoi lanciarli ciascuno una volta al 3° livello senza spendere uno slot incantesimo. Quando lo fai, non puoi farlo di nuovo finché non finisci un riposo breve o lungo."
     }
   }

@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "rage": {
+      "name": "怒り"
+    },
+    "bardic_inspiration": {
+      "name": "吟遊詩人のインスピレーション"
+    },
+    "cleric_channel_divinity": {
+      "name": "チャンネル神性"
+    },
+    "divine_intervention": {
+      "name": "神の介入"
+    },
+    "wild_shape": {
+      "name": "ワイルドシェイプ"
+    },
+    "second_wind": {
+      "name": "セカンドウィンド"
+    },
+    "action_surge": {
+      "name": "アクションサージ"
+    },
+    "indomitable": {
+      "name": "不屈の"
+    },
+    "ki": {
+      "name": "キ"
+    },
+    "divine_sense": {
+      "name": "神聖な感覚"
+    },
+    "lay_on_hands": {
+      "name": "手を置いて"
+    },
+    "paladin_channel_divinity": {
+      "name": "チャンネル神性"
+    },
+    "cleansing_touch": {
+      "name": "クレンジングタッチ"
+    },
+    "stroke_of_luck": {
+      "name": "幸運のストローク"
+    },
+    "sorcery_points": {
+      "name": "ソーサリーポイント"
+    },
+    "mystic_arcanum": {
+      "name": "ミスティックアルカナム"
+    },
+    "eldritch_master": {
+      "name": "異界のマスター"
+    },
+    "arcane_recovery": {
+      "name": "秘術の回復"
+    },
+    "signature_spells": {
+      "name": "シグネチャースペル"
+    },
+    "warding_flare": {
+      "name": "ウォーディングフレア"
+    },
+    "wrath_of_the_storm": {
+      "name": "嵐の怒り"
+    },
+    "war_priest": {
+      "name": "ウォープリースト"
+    },
+    "natural_recovery": {
+      "name": "自然回復"
+    },
+    "superiority_dice": {
+      "name": "優位性ダイス"
+    },
+    "wholeness_of_body": {
+      "name": "体の全体性"
+    },
+    "holy_nimbus": {
+      "name": "ホーリーニンバス"
+    },
+    "undying_sentinel": {
+      "name": "不死の番兵"
+    },
+    "elder_champion": {
+      "name": "エルダーチャンピオン"
+    },
+    "tides_of_chaos": {
+      "name": "混沌の潮流"
+    },
+    "fey_presence": {
+      "name": "フェイの存在"
+    },
+    "misty_escape": {
+      "name": "ミスティ エスケープ"
+    },
+    "dark_delirium": {
+      "name": "ダークデリリウム"
+    },
+    "dark_ones_own_luck": {
+      "name": "闇の者自身の幸運"
+    },
+    "hurl_through_hell": {
+      "name": "地獄を投げ抜けろ"
+    },
+    "entropic_ward": {
+      "name": "エントロピック病棟"
+    },
+    "benign_transposition": {
+      "name": "良性転位"
+    },
+    "portent": {
+      "name": "前兆"
+    },
+    "instinctive_charm": {
+      "name": "本能的な魅力"
+    },
+    "illusory_self": {
+      "name": "幻想的な自己"
+    },
+    "shapechanger": {
+      "name": "シェイプチェンジャー"
+    },
+    "lucky_points": {
+      "name": "幸運ポイント"
+    },
+    "martial_adept_superiority_die": {
+      "name": "優位性のダイ"
+    },
+    "magic_initiate_spell": {
+      "name": "マジックイニシエイトスペル"
+    },
+    "breath_weapon": {
+      "name": "ブレスウェポン"
+    },
+    "relentless_endurance": {
+      "name": "容赦ない耐久力"
+    }
+  }
+}

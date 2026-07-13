@@ -70,6 +70,7 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
           spells: data.spells,
           languages: data.languages,
           weapons: data.weapons,
+          feats: data.feats,
           featureLabelBuilder: (request) =>
               _featureChoiceRequestFeatureLabel(request, i18n),
           onChanged: (choices) {
@@ -123,6 +124,7 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
       srd.getSpells(),
       srd.getLanguages(),
       srd.getWeapons(),
+      srd.getFeats(),
     ]);
     final classFeatures = results[0] as List<SrdClassFeature>;
     final allSubclassFeatures =
@@ -133,12 +135,14 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
     final spells = results[5] as List<SrdSpell>;
     final languages = results[6] as List<SrdLanguage>;
     final weapons = results[7] as List<SrdWeapon>;
+    final feats = results[8] as List<SrdFeat>;
 
     final requests = _requestsForDraft(
       draft: draft,
       catalog: catalog,
       classFeatures: classFeatures,
       allSubclassFeatures: allSubclassFeatures,
+      feats: feats,
     );
 
     return _CreationFeatureChoiceData(
@@ -151,6 +155,7 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
       spells: spells,
       languages: languages,
       weapons: weapons,
+      feats: feats,
     );
   }
 
@@ -159,6 +164,7 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
     required SrdFeatureChoiceCatalog catalog,
     required List<SrdClassFeature> classFeatures,
     required Map<String, Map<String, List<SrdClassFeature>>> allSubclassFeatures,
+    required List<SrdFeat> feats,
   }) {
     final requests = <FeatureChoiceRequest>[];
     final seen = <String>{};
@@ -217,7 +223,33 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
       );
     }
 
+    final selectedFeatName = _selectedBonusFeatName(draft);
+    final selectedFeat = selectedFeatName == null
+        ? null
+        : feats.firstWhereOrNull((feat) => feat.name == selectedFeatName);
+    if (selectedFeat != null) {
+      addAll(
+        FeatureChoiceEngine.requestsForFeat(
+          catalog: catalog,
+          featName: selectedFeat.name,
+          level: 1,
+        ),
+      );
+    }
+
     return requests;
+  }
+
+  String? _selectedBonusFeatName(CharacterDraft draft) {
+    return draft.featureChoices
+        .firstWhereOrNull(
+          (choice) =>
+              choice.sourceType == FeatureChoiceSourceType.raceTrait &&
+              choice.sourceName == 'Bonus Feat' &&
+              choice.choiceId == 'feat',
+        )
+        ?.values
+        .firstOrNull;
   }
 
   bool _traitHandledByExistingCreationUi(CharacterDraft draft, String trait) {
@@ -276,6 +308,7 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
       draft.selectedRace?.name ?? '',
       draft.selectedSubrace?.name ?? '',
       draft.selectedBackground?.name ?? '',
+      _selectedBonusFeatName(draft) ?? '',
     ].join('|');
   }
 
@@ -315,6 +348,7 @@ class _CreationFeatureChoiceData {
     required this.spells,
     required this.languages,
     required this.weapons,
+    required this.feats,
   });
 
   factory _CreationFeatureChoiceData.empty(SrdI18nService i18n) {
@@ -344,6 +378,7 @@ class _CreationFeatureChoiceData {
       spells: const [],
       languages: const [],
       weapons: const [],
+      feats: const [],
     );
   }
 
@@ -356,4 +391,5 @@ class _CreationFeatureChoiceData {
   final List<SrdSpell> spells;
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
+  final List<SrdFeat> feats;
 }

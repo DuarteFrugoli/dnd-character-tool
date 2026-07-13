@@ -92,9 +92,12 @@ class _RaceCard extends ConsumerWidget {
   final VoidCallback onTap;
 
   String _asiText(AppLocalizations l10n) {
-    return race.abilityScoreIncreases.entries
-        .map((e) => '+${e.value} ${abilityName(l10n, e.key)}')
-        .join(', ');
+    final parts = [
+      for (final entry in race.abilityScoreIncreases.entries)
+        '+${entry.value} ${abilityName(l10n, entry.key)}',
+      if (race.freeAsiPoints > 0) '${race.freeAsiPoints}x +1',
+    ];
+    return parts.join(', ');
   }
 
   @override

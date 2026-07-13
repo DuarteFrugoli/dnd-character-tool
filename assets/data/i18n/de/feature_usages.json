@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "rage": {
+      "name": "Wut"
+    },
+    "bardic_inspiration": {
+      "name": "Bardische Inspiration"
+    },
+    "cleric_channel_divinity": {
+      "name": "Kanal-Göttlichkeit"
+    },
+    "divine_intervention": {
+      "name": "Göttliches Eingreifen"
+    },
+    "wild_shape": {
+      "name": "Wilde Form"
+    },
+    "second_wind": {
+      "name": "Zweiter Wind"
+    },
+    "action_surge": {
+      "name": "Aktionsschub"
+    },
+    "indomitable": {
+      "name": "Unbezwingbar"
+    },
+    "ki": {
+      "name": "Ki"
+    },
+    "divine_sense": {
+      "name": "Göttlicher Sinn"
+    },
+    "lay_on_hands": {
+      "name": "Auf die Hände legen"
+    },
+    "paladin_channel_divinity": {
+      "name": "Kanal-Göttlichkeit"
+    },
+    "cleansing_touch": {
+      "name": "Reinigende Berührung"
+    },
+    "stroke_of_luck": {
+      "name": "Glücksfall"
+    },
+    "sorcery_points": {
+      "name": "Zauberpunkte"
+    },
+    "mystic_arcanum": {
+      "name": "Mystisches Arkanum"
+    },
+    "eldritch_master": {
+      "name": "Eldritch-Meister"
+    },
+    "arcane_recovery": {
+      "name": "Arkane Erholung"
+    },
+    "signature_spells": {
+      "name": "Signaturzauber"
+    },
+    "warding_flare": {
+      "name": "Abwehrsignal"
+    },
+    "wrath_of_the_storm": {
+      "name": "Zorn des Sturms"
+    },
+    "war_priest": {
+      "name": "Kriegspriester"
+    },
+    "natural_recovery": {
+      "name": "Natürliche Erholung"
+    },
+    "superiority_dice": {
+      "name": "Überlegenheitswürfel"
+    },
+    "wholeness_of_body": {
+      "name": "Ganzheit des Körpers"
+    },
+    "holy_nimbus": {
+      "name": "Heiliger Nimbus"
+    },
+    "undying_sentinel": {
+      "name": "Unsterblicher Wächter"
+    },
+    "elder_champion": {
+      "name": "Älterer Champion"
+    },
+    "tides_of_chaos": {
+      "name": "Fluten des Chaos"
+    },
+    "fey_presence": {
+      "name": "Feenpräsenz"
+    },
+    "misty_escape": {
+      "name": "Misty Escape"
+    },
+    "dark_delirium": {
+      "name": "Dunkles Delirium"
+    },
+    "dark_ones_own_luck": {
+      "name": "Das eigene Glück des Dunklen"
+    },
+    "hurl_through_hell": {
+      "name": "Durch die Hölle schleudern"
+    },
+    "entropic_ward": {
+      "name": "Entropischer Bezirk"
+    },
+    "benign_transposition": {
+      "name": "Gutartige Umsetzung"
+    },
+    "portent": {
+      "name": "Zeichen"
+    },
+    "instinctive_charm": {
+      "name": "Instinktiver Charme"
+    },
+    "illusory_self": {
+      "name": "Illusionäres Selbst"
+    },
+    "shapechanger": {
+      "name": "Gestaltwandler"
+    },
+    "lucky_points": {
+      "name": "Glückspunkte"
+    },
+    "martial_adept_superiority_die": {
+      "name": "Überlegenheitswürfel"
+    },
+    "magic_initiate_spell": {
+      "name": "Magischer Initiationszauber"
+    },
+    "breath_weapon": {
+      "name": "Atemwaffe"
+    },
+    "relentless_endurance": {
+      "name": "Unerbittliche Ausdauer"
+    }
+  }
+}

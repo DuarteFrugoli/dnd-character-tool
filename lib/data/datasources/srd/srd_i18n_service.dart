@@ -33,6 +33,7 @@ class SrdI18nService {
     'equipment',
     'feats',
     'feature_choices',
+    'feature_usages',
     'languages',
     'magic_items',
     'races',
@@ -377,6 +378,14 @@ class SrdI18nService {
   // ── Languages ──────────────────────────────────────────────────────────────
 
   String languageName(String en) => _str('languages', en, 'name') ?? en;
+
+  String featureUsageResourceName(String resourceId, String fallback) {
+    final resources = _data['feature_usages']?['resources'];
+    if (resources is! Map) return fallback;
+    final entry = resources[resourceId.toLowerCase()];
+    if (entry is! Map) return fallback;
+    return entry['name'] as String? ?? fallback;
+  }
 
   String? featureChoiceOptionName({
     required String sourceType,

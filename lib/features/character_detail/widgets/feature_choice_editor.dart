@@ -23,6 +23,7 @@ class FeatureChoiceEditor extends StatefulWidget {
     required this.spells,
     required this.languages,
     required this.weapons,
+    required this.feats,
     required this.onChanged,
     this.featureLabelBuilder,
   });
@@ -37,6 +38,7 @@ class FeatureChoiceEditor extends StatefulWidget {
   final List<SrdSpell> spells;
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
+  final List<SrdFeat> feats;
   final ValueChanged<List<CharacterFeatureChoice>> onChanged;
   final FeatureChoiceLabelBuilder? featureLabelBuilder;
 
@@ -230,6 +232,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
       spells: widget.spells,
       languages: widget.languages,
       weapons: widget.weapons,
+      feats: widget.feats,
       character: widget.character,
       relatedRequests: widget.requests,
       choices: _currentChoices,
@@ -248,6 +251,8 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
         return l10n.spellCantrip.toLowerCase();
       case 'damageType':
         return l10n.inventoryCustomDamageType.toLowerCase();
+      case 'feat':
+        return l10n.levelUpFeatOption.toLowerCase();
       case 'language':
         return l10n.labelLanguages.toLowerCase();
       case 'skill':

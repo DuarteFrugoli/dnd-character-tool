@@ -629,6 +629,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           spells: _allSpells ?? const [],
           languages: _languages,
           weapons: _weapons,
+          feats: _allFeats ?? const [],
           featureLabelBuilder: (request) =>
               _featureChoiceRequestFeatureLabel(request, i18n),
           onChanged: (choices) {
@@ -713,6 +714,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           spells: _allSpells ?? const [],
           languages: _languages,
           weapons: _weapons,
+          feats: _allFeats ?? const [],
         );
     }
   }
@@ -1630,6 +1632,7 @@ class _SummaryPage extends StatelessWidget {
     required this.spells,
     required this.languages,
     required this.weapons,
+    required this.feats,
   });
   final _LevelUpState wizardState;
   final Character character;
@@ -1642,6 +1645,7 @@ class _SummaryPage extends StatelessWidget {
   final List<SrdSpell> spells;
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
+  final List<SrdFeat> feats;
 
   @override
   Widget build(BuildContext context) {
@@ -1744,6 +1748,7 @@ class _SummaryPage extends StatelessWidget {
                 spells: spells,
                 languages: languages,
                 weapons: weapons,
+                feats: feats,
                 character: character,
                 relatedRequests: featureChoiceRequests,
                 choices: wizardState.featureChoices,

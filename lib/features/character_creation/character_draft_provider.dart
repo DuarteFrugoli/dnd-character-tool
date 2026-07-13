@@ -32,6 +32,15 @@ const _kArmorKeywords = [
 
 const _kAmmoKeywords = ['arrows', 'bolts', 'darts', 'needles'];
 
+const _abilityIdToAttribute = {
+  'strength': 'Strength',
+  'dexterity': 'Dexterity',
+  'constitution': 'Constitution',
+  'intelligence': 'Intelligence',
+  'wisdom': 'Wisdom',
+  'charisma': 'Charisma',
+};
+
 /// Returns the appropriate [ItemType] for an equipment item name.
 ItemType _itemTypeForItem(String name) {
   final lower = name.toLowerCase();
@@ -249,7 +258,53 @@ class CharacterDraft {
     );
   }
 
-  // Retorna os atributos finais com bônus raciais aplicados
+  // Fixed race and subrace bonuses, without free picks like twoOthers.
+  Map<String, int> get mergedRaceAsi {
+    final merged = <String, int>{...?selectedRace?.abilityScoreIncreases};
+    selectedSubrace?.abilityScoreIncreases.forEach((attr, bonus) {
+      merged[attr] = (merged[attr] ?? 0) + bonus;
+    });
+    return merged;
+  }
+
+  List<int> get racialAsiIncrements {
+    final increments = [
+      ...mergedRaceAsi.values.where((bonus) => bonus > 0),
+      ...List<int>.filled(selectedRace?.freeAsiPoints ?? 0, 1),
+    ]..sort((a, b) => b.compareTo(a));
+    return increments;
+  }
+
+  bool get racialAsiComplete {
+    if (selectedRace == null) return false;
+
+    if (freeAsi) {
+      return _matchesAsiIncrements(freeAsiDistribution, racialAsiIncrements);
+    }
+
+    final freeNeeded = selectedRace!.freeAsiPoints;
+    if (freeNeeded == 0) return true;
+    final clean = Map<String, int>.from(freePicksDistribution)
+      ..removeWhere((_, value) => value <= 0);
+    final fixedAttributes = mergedRaceAsi.keys.toSet();
+    return clean.length == freeNeeded &&
+        clean.values.every((value) => value == 1) &&
+        clean.keys.every((attribute) => !fixedAttributes.contains(attribute));
+  }
+
+  bool _matchesAsiIncrements(
+    Map<String, int> distribution,
+    List<int> increments,
+  ) {
+    final assigned = distribution.values.where((value) => value > 0).toList()
+      ..sort((a, b) => b.compareTo(a));
+    if (assigned.length != increments.length) return false;
+    for (var i = 0; i < increments.length; i++) {
+      if (assigned[i] != increments[i]) return false;
+    }
+    return true;
+  }
+
   Map<String, int> get finalAttributes {
     final result = Map<String, int>.from(baseAttributes);
     if (freeAsi) {
@@ -259,20 +314,25 @@ class CharacterDraft {
       });
     } else {
       // Combina bônus da raça base + subraça
-      final raceAsi = selectedRace?.abilityScoreIncreases ?? {};
-      final subraceAsi = selectedSubrace?.abilityScoreIncreases ?? {};
-      final mergedAsi = <String, int>{...raceAsi};
-      subraceAsi.forEach((attr, bonus) {
-        mergedAsi[attr] = (mergedAsi[attr] ?? 0) + bonus;
+      mergedRaceAsi.forEach((attr, bonus) {
+        result[attr] = (result[attr] ?? 8) + bonus;
       });
-      mergedAsi.forEach((attr, bonus) {
+      freePicksDistribution.forEach((attr, bonus) {
         result[attr] = (result[attr] ?? 8) + bonus;
       });
     }
-    // Pontos livres da raça (twoOthers, etc.) — sempre aplicados
-    freePicksDistribution.forEach((attr, bonus) {
-      result[attr] = (result[attr] ?? 8) + bonus;
-    });
+    for (final choice in featureChoices) {
+      if (choice.sourceType != FeatureChoiceSourceType.feat ||
+          choice.choiceId != 'ability') {
+        continue;
+      }
+      for (final value in choice.values) {
+        final attribute = _abilityIdToAttribute[value.toLowerCase()];
+        if (attribute == null) continue;
+        final next = (result[attribute] ?? 10) + 1;
+        result[attribute] = next > 20 ? 20 : next;
+      }
+    }
     return result;
   }
 
@@ -371,12 +431,8 @@ class CharacterDraft {
         selectedBackground == null || baseAttributes.length != 6) {
       return false;
     }
-    // Se a raça tem pontos livres (ex: Half-Elf), todos precisam ser distribuídos
-    final freeNeeded = selectedRace!.freeAsiPoints;
-    if (freeNeeded > 0) {
-      final assigned = freePicksDistribution.values.fold(0, (a, b) => a + b);
-      if (assigned != freeNeeded) return false;
-    }
+    // Racial ASI slots must be complete in either default or Tasha mode.
+    if (!racialAsiComplete) return false;
     // Idiomas livres precisam ser escolhidos
     if (chosenLanguages.length < languageChoicesNeeded) return false;
     if (!featureChoicesLoaded) return false;
@@ -436,6 +492,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setRace(SrdRace r) => state = state.copyWith(
         selectedRace: r,
         selectedSubrace: null,
+        freeAsiDistribution: {},
         freePicksDistribution: {},
         chosenLanguages: [],
         chosenToolProficiencies: [],
@@ -447,6 +504,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void clearRace() => state = state.copyWith(
         selectedRace: null,
         selectedSubrace: null,
+        freeAsiDistribution: {},
         freePicksDistribution: {},
         chosenLanguages: [],
         chosenToolProficiencies: [],
@@ -458,6 +516,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setSubrace(SrdSubrace? s) =>
       state = state.copyWith(
         selectedSubrace: s,
+        freeAsiDistribution: {},
+        freePicksDistribution: {},
         featureChoicesLoaded: false,
         featureChoiceRequests: const [],
         featureChoices: const [],
@@ -500,7 +560,11 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void setRolledValues(List<int> values) =>
       state = state.copyWith(rolledValues: values);
 
-  void setFreeAsi(bool v) => state = state.copyWith(freeAsi: v);
+  void setFreeAsi(bool v) => state = state.copyWith(
+        freeAsi: v,
+        freeAsiDistribution: {},
+        freePicksDistribution: {},
+      );
 
   void setFreeAsiDistribution(Map<String, int> dist) =>
       state = state.copyWith(freeAsiDistribution: dist);
@@ -613,13 +677,22 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     return choices;
   }
 
+  String? _selectedBonusFeatName(List<CharacterFeatureChoice> choices) {
+    return choices
+        .firstWhereOrNull(
+          (choice) =>
+              choice.sourceType == FeatureChoiceSourceType.raceTrait &&
+              choice.sourceName == 'Bonus Feat' &&
+              choice.choiceId == 'feat',
+        )
+        ?.values
+        .firstOrNull;
+  }
+
   Future<Character> buildAndSave(WidgetRef ref, {String fallbackName = 'Unnamed Hero'}) async {
     final draft = state;
     final repo = ref.read(characterRepositoryProvider);
-    final attrs = draft.finalAttributes;
-
-    final con = attrs['Constitution'] ?? 10;
-    final conMod = ((con - 10) / 2).floor();
+    final attrs = Map<String, int>.from(draft.finalAttributes);
     final hitDie = draft.selectedClass!.hitDie;
 
     // Converte itens de background selecionados em EquipmentItems
@@ -634,8 +707,11 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     final itemsDb = await ref.read(srdItemsProvider.future);
     final srd = ref.read(srdDataSourceProvider);
     final allSkills = await srd.getSkills();
+    final allTools = await srd.getTools();
     final allLanguages = await srd.getLanguages();
     final allSpells = await srd.getSpells();
+    final allWeapons = await srd.getWeapons();
+    final allFeats = await srd.getFeats();
 
     final skillById = {
       for (final skill in allSkills)
@@ -645,15 +721,41 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       for (final language in allLanguages)
         FeatureChoiceOptionResolver.idFromName(language.name): language.name,
     };
+    final toolById = {
+      for (final tool in allTools)
+        FeatureChoiceOptionResolver.idFromName(tool.name): tool.name,
+      'thieves_tools': "Thieves' tools",
+    };
+    final weaponById = {
+      for (final weapon in allWeapons)
+        FeatureChoiceOptionResolver.idFromName(weapon.name): weapon.name,
+    };
     final spellByName = {
       for (final spell in allSpells) spell.name.toLowerCase(): spell,
     };
 
     final featureChoicesForSave = _featureChoicesForSave(draft);
+    final selectedBonusFeatName = _selectedBonusFeatName(featureChoicesForSave);
+    final selectedBonusFeat = selectedBonusFeatName == null
+        ? null
+        : allFeats.firstWhereOrNull((feat) => feat.name == selectedBonusFeatName);
+    final extraFeatures = <CharacterExtraFeature>[
+      if (selectedBonusFeat != null)
+        CharacterExtraFeature(
+          sourceClass: 'Feat',
+          name: selectedBonusFeat.name,
+          level: 1,
+          type: 'passive',
+          description: selectedBonusFeat.description,
+        ),
+    ];
     final skillProficiencies = <String>[
       ...draft.grantedSkills,
       ...draft.chosenSkills,
     ];
+    final skillExpertises = <String>[];
+    final featureToolProficiencies = <String>[...draft.chosenToolProficiencies];
+    final featureWeaponProficiencies = <String>[];
     final characterLanguages = <String>[
       ...draft.fixedRaceLanguages,
       ...draft.chosenLanguages,
@@ -667,22 +769,67 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       values.add(value);
     }
 
+    String unprefixedChoiceId(String value) {
+      final separator = value.indexOf(':');
+      return separator < 0 ? value : value.substring(separator + 1);
+    }
+
+    void addFeatureSpell(String value) {
+      final spell = spellByName[value.toLowerCase()];
+      if (featureSpells.any((existing) =>
+          existing.name.toLowerCase() == value.toLowerCase())) {
+        return;
+      }
+      featureSpells.add(KnownSpell(name: value, level: spell?.level ?? 0));
+    }
+
     for (final choice in featureChoicesForSave) {
       final request = draft.featureChoiceRequests.firstWhereOrNull(
         (request) => request.findIn([choice]) != null,
       );
       final type = request?.requirement.type;
       for (final value in choice.values) {
+        final id = unprefixedChoiceId(value);
         switch (type) {
+          case 'ability':
+            break;
           case 'language':
             addUniqueString(characterLanguages, languageById[value] ?? value);
             break;
           case 'skill':
             addUniqueString(skillProficiencies, skillById[value] ?? value);
             break;
+          case 'skill_expertise':
+            addUniqueString(skillExpertises, skillById[value] ?? value);
+            break;
+          case 'skill_or_tool':
+            if (value.startsWith('skill:')) {
+              addUniqueString(skillProficiencies, skillById[id] ?? id);
+            } else if (value.startsWith('tool:')) {
+              addUniqueString(featureToolProficiencies, toolById[id] ?? id);
+            }
+            break;
+          case 'skill_or_tool_expertise':
+            if (value.startsWith('skill:')) {
+              addUniqueString(skillExpertises, skillById[id] ?? id);
+            } else if (value.startsWith('tool:')) {
+              addUniqueString(featureToolProficiencies, toolById[id] ?? id);
+            }
+            break;
+          case 'tool':
+            addUniqueString(featureToolProficiencies, toolById[value] ?? value);
+            break;
+          case 'weapon':
+            addUniqueString(
+              featureWeaponProficiencies,
+              weaponById[value] ?? value,
+            );
+            break;
           case 'cantrip':
-            final spell = spellByName[value.toLowerCase()];
-            featureSpells.add(KnownSpell(name: value, level: spell?.level ?? 0));
+            addFeatureSpell(value);
+            break;
+          case 'spell':
+            addFeatureSpell(value);
             break;
           default:
             break;
@@ -783,6 +930,15 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       }
     }
 
+    final con = attrs['Constitution'] ?? 10;
+    final conMod = ((con - 10) / 2).floor();
+    final featureLabels = [
+      for (final tool in featureToolProficiencies.where((t) => t.isNotEmpty))
+        'Tool Proficiency: $tool',
+      for (final weapon in featureWeaponProficiencies.where((w) => w.isNotEmpty))
+        'Weapon Proficiency: $weapon',
+    ];
+
     var character = Character(
       id: draft.id,
       name: draft.name.trim().isEmpty ? fallbackName : draft.name.trim(),
@@ -813,7 +969,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       proficiencyBonus: 2,
       savingThrowProficiencies: draft.selectedClass!.savingThrows,
       skillProficiencies: skillProficiencies,
-      skillExpertises: [],
+      skillExpertises: skillExpertises,
       equipment: startingEquipment,
       currency: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': startingGp, 'pp': 0},
       spells: featureSpells,
@@ -821,10 +977,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         total: List.filled(9, 0),
         used: List.filled(9, 0),
       ),
-      features: draft.chosenToolProficiencies
-          .where((t) => t.isNotEmpty)
-          .map((t) => 'Tool Proficiency: $t')
-          .toList(),
+      features: featureLabels,
+      extraFeatures: extraFeatures,
       featureChoices: featureChoicesForSave,
       languages: characterLanguages,
       personality: const CharacterPersonality(

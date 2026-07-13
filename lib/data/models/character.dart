@@ -46,6 +46,7 @@ class Character {
   final List<String> features;
   final List<CharacterExtraFeature> extraFeatures;
   final List<CharacterFeatureChoice> featureChoices;
+  final Map<String, int> featureResources;
   final List<String> disabledFeatures;
   final List<String> disabledSpells;
   final List<String> languages;
@@ -93,6 +94,7 @@ class Character {
     this.features = const [],
     this.extraFeatures = const [],
     this.featureChoices = const [],
+    this.featureResources = const {},
     this.disabledFeatures = const [],
     this.disabledSpells = const [],
     this.languages = const [],
@@ -154,6 +156,7 @@ class Character {
     List<String>? features,
     List<CharacterExtraFeature>? extraFeatures,
     List<CharacterFeatureChoice>? featureChoices,
+    Map<String, int>? featureResources,
     List<String>? disabledFeatures,
     List<String>? disabledSpells,
     List<String>? languages,
@@ -203,6 +206,7 @@ class Character {
       features: features ?? this.features,
       extraFeatures: extraFeatures ?? this.extraFeatures,
       featureChoices: featureChoices ?? this.featureChoices,
+      featureResources: featureResources ?? this.featureResources,
       disabledFeatures: disabledFeatures ?? this.disabledFeatures,
       disabledSpells: disabledSpells ?? this.disabledSpells,
       languages: languages ?? this.languages,

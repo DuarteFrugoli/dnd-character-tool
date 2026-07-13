@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import '../../feature_usage_engine.dart';
 import 'srd_models.dart';
 
 /// Lê e parseia os assets SRD bundados no app.
@@ -30,6 +31,9 @@ class SrdDataSource {
   List<SrdFeat>? _feats;
   SrdFeatureChoiceCatalog? _featureChoiceCatalog;
   Future<SrdFeatureChoiceCatalog>? _featureChoiceCatalogFuture;
+  FeatureUsageCatalog? _featureUsageCatalog;
+  Future<FeatureUsageCatalog>? _featureUsageCatalogFuture;
+
   /// Guard against parsing equipment.json multiple times in parallel.
   Future<void>? _equipmentLoadFuture;
 
@@ -167,6 +171,29 @@ class SrdDataSource {
       _featureChoiceCatalogFuture = null;
       rethrow;
     }
+  }
+
+  Future<FeatureUsageCatalog> getFeatureUsageCatalog() async {
+    final cached = _featureUsageCatalog;
+    if (cached != null) return cached;
+
+    _featureUsageCatalogFuture ??= _loadFeatureUsageCatalog();
+    try {
+      return await _featureUsageCatalogFuture!;
+    } catch (_) {
+      _featureUsageCatalogFuture = null;
+      rethrow;
+    }
+  }
+
+  Future<FeatureUsageCatalog> _loadFeatureUsageCatalog() async {
+    final raw = await rootBundle.loadString(
+      'assets/data/srd/feature_usages.json',
+    );
+    final json = jsonDecode(raw) as Map<String, dynamic>;
+    final catalog = FeatureUsageCatalog.fromJson(json);
+    _featureUsageCatalog = catalog;
+    return catalog;
   }
 
   Future<SrdFeatureChoiceCatalog> _loadFeatureChoiceCatalog() async {

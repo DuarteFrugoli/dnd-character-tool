@@ -1,0 +1,222 @@
+{
+  "resources": {
+    "rage": { "name": "Rage", "max": "barbarian_rage_uses", "recharge": "long_rest" },
+    "bardic_inspiration": { "name": "Bardic Inspiration", "max": "charisma_modifier_min_1", "recharge": "bardic_inspiration_recharge" },
+    "cleric_channel_divinity": { "name": "Channel Divinity", "max": "cleric_channel_divinity_uses", "recharge": "short_rest" },
+    "divine_intervention": { "name": "Divine Intervention", "max": "1", "recharge": "long_rest" },
+    "wild_shape": { "name": "Wild Shape", "max": "druid_wild_shape_uses", "recharge": "short_rest" },
+    "second_wind": { "name": "Second Wind", "max": "1", "recharge": "short_rest" },
+    "action_surge": { "name": "Action Surge", "max": "fighter_action_surge_uses", "recharge": "short_rest" },
+    "indomitable": { "name": "Indomitable", "max": "fighter_indomitable_uses", "recharge": "long_rest" },
+    "ki": { "name": "Ki", "max": "monk_level", "recharge": "short_rest" },
+    "divine_sense": { "name": "Divine Sense", "max": "1_plus_charisma_modifier_min_1", "recharge": "long_rest" },
+    "lay_on_hands": { "name": "Lay on Hands", "max": "paladin_level_x5", "recharge": "long_rest" },
+    "paladin_channel_divinity": { "name": "Channel Divinity", "max": "1", "recharge": "short_rest" },
+    "cleansing_touch": { "name": "Cleansing Touch", "max": "charisma_modifier_min_1", "recharge": "long_rest" },
+    "stroke_of_luck": { "name": "Stroke of Luck", "max": "1", "recharge": "short_rest" },
+    "sorcery_points": { "name": "Sorcery Points", "max": "sorcerer_level", "recharge": "long_rest" },
+    "mystic_arcanum": { "name": "Mystic Arcanum", "max": "warlock_mystic_arcanum_uses", "recharge": "long_rest" },
+    "eldritch_master": { "name": "Eldritch Master", "max": "1", "recharge": "long_rest" },
+    "arcane_recovery": { "name": "Arcane Recovery", "max": "1", "recharge": "long_rest" },
+    "signature_spells": { "name": "Signature Spells", "max": "2", "recharge": "short_rest" },
+
+    "warding_flare": { "name": "Warding Flare", "max": "wisdom_modifier_min_1", "recharge": "long_rest" },
+    "wrath_of_the_storm": { "name": "Wrath of the Storm", "max": "wisdom_modifier_min_1", "recharge": "long_rest" },
+    "war_priest": { "name": "War Priest", "max": "wisdom_modifier_min_1", "recharge": "long_rest" },
+    "natural_recovery": { "name": "Natural Recovery", "max": "1", "recharge": "long_rest" },
+    "superiority_dice": { "name": "Superiority Dice", "max": "battle_master_superiority_dice", "recharge": "short_rest" },
+    "wholeness_of_body": { "name": "Wholeness of Body", "max": "1", "recharge": "long_rest" },
+    "holy_nimbus": { "name": "Holy Nimbus", "max": "1", "recharge": "long_rest" },
+    "undying_sentinel": { "name": "Undying Sentinel", "max": "1", "recharge": "long_rest" },
+    "elder_champion": { "name": "Elder Champion", "max": "1", "recharge": "long_rest" },
+    "tides_of_chaos": { "name": "Tides of Chaos", "max": "1", "recharge": "long_rest" },
+    "fey_presence": { "name": "Fey Presence", "max": "1", "recharge": "short_rest" },
+    "misty_escape": { "name": "Misty Escape", "max": "1", "recharge": "short_rest" },
+    "dark_delirium": { "name": "Dark Delirium", "max": "1", "recharge": "short_rest" },
+    "dark_ones_own_luck": { "name": "Dark One's Own Luck", "max": "1", "recharge": "short_rest" },
+    "hurl_through_hell": { "name": "Hurl Through Hell", "max": "1", "recharge": "long_rest" },
+    "entropic_ward": { "name": "Entropic Ward", "max": "1", "recharge": "short_rest" },
+    "benign_transposition": { "name": "Benign Transposition", "max": "1", "recharge": "long_rest" },
+    "portent": { "name": "Portent", "max": "wizard_portent_dice", "recharge": "long_rest" },
+    "instinctive_charm": { "name": "Instinctive Charm", "max": "1", "recharge": "long_rest" },
+    "illusory_self": { "name": "Illusory Self", "max": "1", "recharge": "short_rest" },
+    "shapechanger": { "name": "Shapechanger", "max": "1", "recharge": "short_rest" },
+
+    "lucky_points": { "name": "Luck Points", "max": "3", "recharge": "long_rest" },
+    "martial_adept_superiority_die": { "name": "Superiority Die", "max": "1", "recharge": "short_rest" },
+    "magic_initiate_spell": { "name": "Magic Initiate Spell", "max": "1", "recharge": "long_rest" },
+    "breath_weapon": { "name": "Breath Weapon", "max": "1", "recharge": "short_rest" },
+    "relentless_endurance": { "name": "Relentless Endurance", "max": "1", "recharge": "long_rest" }
+  },
+  "classFeatures": {
+    "Barbarian": {
+      "Rage": { "resourceId": "rage" }
+    },
+    "Bard": {
+      "Bardic Inspiration": { "resourceId": "bardic_inspiration" }
+    },
+    "Cleric": {
+      "Channel Divinity": { "resourceId": "cleric_channel_divinity" },
+      "Divine Intervention": { "resourceId": "divine_intervention" }
+    },
+    "Druid": {
+      "Wild Shape": { "resourceId": "wild_shape" }
+    },
+    "Fighter": {
+      "Second Wind": { "resourceId": "second_wind" },
+      "Action Surge": { "resourceId": "action_surge" },
+      "Indomitable": { "resourceId": "indomitable" }
+    },
+    "Monk": {
+      "Ki": { "resourceId": "ki" },
+      "Stunning Strike": { "resourceId": "ki", "spend": 1 },
+      "Empty Body": { "resourceId": "ki", "spend": 4 }
+    },
+    "Paladin": {
+      "Divine Sense": { "resourceId": "divine_sense" },
+      "Lay on Hands": { "resourceId": "lay_on_hands" },
+      "Channel Divinity": { "resourceId": "paladin_channel_divinity" },
+      "Cleansing Touch": { "resourceId": "cleansing_touch" }
+    },
+    "Rogue": {
+      "Stroke of Luck": { "resourceId": "stroke_of_luck" }
+    },
+    "Sorcerer": {
+      "Font of Magic": { "resourceId": "sorcery_points" }
+    },
+    "Warlock": {
+      "Mystic Arcanum": { "resourceId": "mystic_arcanum" },
+      "Eldritch Master": { "resourceId": "eldritch_master" }
+    },
+    "Wizard": {
+      "Arcane Recovery": { "resourceId": "arcane_recovery" },
+      "Signature Spells": { "resourceId": "signature_spells" }
+    }
+  },
+  "subclassFeatures": {
+    "Bard": {
+      "College of Lore": {
+        "Cutting Words": { "resourceId": "bardic_inspiration", "spend": 1 },
+        "Peerless Skill": { "resourceId": "bardic_inspiration", "spend": 1 }
+      }
+    },
+    "Cleric": {
+      "Knowledge Domain": {
+        "Channel Divinity: Knowledge of the Ages": { "resourceId": "cleric_channel_divinity", "spend": 1 },
+        "Channel Divinity: Read Thoughts": { "resourceId": "cleric_channel_divinity", "spend": 1 }
+      },
+      "Life Domain": {
+        "Channel Divinity: Preserve Life": { "resourceId": "cleric_channel_divinity", "spend": 1 }
+      },
+      "Light Domain": {
+        "Warding Flare": { "resourceId": "warding_flare" },
+        "Channel Divinity: Radiance of the Dawn": { "resourceId": "cleric_channel_divinity", "spend": 1 }
+      },
+      "Nature Domain": {
+        "Channel Divinity: Charm Animals and Plants": { "resourceId": "cleric_channel_divinity", "spend": 1 }
+      },
+      "Tempest Domain": {
+        "Wrath of the Storm": { "resourceId": "wrath_of_the_storm" },
+        "Channel Divinity: Destructive Wrath": { "resourceId": "cleric_channel_divinity", "spend": 1 }
+      },
+      "Trickery Domain": {
+        "Channel Divinity: Invoke Duplicity": { "resourceId": "cleric_channel_divinity", "spend": 1 },
+        "Channel Divinity: Cloak of Shadows": { "resourceId": "cleric_channel_divinity", "spend": 1 }
+      },
+      "War Domain": {
+        "War Priest": { "resourceId": "war_priest" },
+        "Channel Divinity: Guided Strike": { "resourceId": "cleric_channel_divinity", "spend": 1 },
+        "Channel Divinity: War God's Blessing": { "resourceId": "cleric_channel_divinity", "spend": 1 }
+      }
+    },
+    "Druid": {
+      "Circle of the Land": {
+        "Natural Recovery": { "resourceId": "natural_recovery" }
+      },
+      "Circle of the Moon": {
+        "Elemental Wild Shape": { "resourceId": "wild_shape", "spend": 2 }
+      }
+    },
+    "Fighter": {
+      "Battle Master": {
+        "Combat Superiority": { "resourceId": "superiority_dice" }
+      }
+    },
+    "Monk": {
+      "Way of the Open Hand": {
+        "Wholeness of Body": { "resourceId": "wholeness_of_body" },
+        "Quivering Palm": { "resourceId": "ki", "spend": 3 }
+      },
+      "Way of Shadow": {
+        "Shadow Arts": { "resourceId": "ki", "spend": 2 }
+      }
+    },
+    "Paladin": {
+      "Oath of Devotion": {
+        "Channel Divinity: Sacred Weapon": { "resourceId": "paladin_channel_divinity", "spend": 1 },
+        "Channel Divinity: Turn the Unholy": { "resourceId": "paladin_channel_divinity", "spend": 1 },
+        "Holy Nimbus": { "resourceId": "holy_nimbus" }
+      },
+      "Oath of the Ancients": {
+        "Channel Divinity: Nature's Wrath": { "resourceId": "paladin_channel_divinity", "spend": 1 },
+        "Channel Divinity: Turn the Faithless": { "resourceId": "paladin_channel_divinity", "spend": 1 },
+        "Undying Sentinel": { "resourceId": "undying_sentinel" },
+        "Elder Champion": { "resourceId": "elder_champion" }
+      },
+      "Oath of Vengeance": {
+        "Channel Divinity: Abjure Enemy": { "resourceId": "paladin_channel_divinity", "spend": 1 },
+        "Channel Divinity: Vow of Enmity": { "resourceId": "paladin_channel_divinity", "spend": 1 }
+      }
+    },
+    "Sorcerer": {
+      "Draconic Bloodline": {
+        "Elemental Affinity": { "resourceId": "sorcery_points", "spend": 1 },
+        "Draconic Presence": { "resourceId": "sorcery_points", "spend": 5 }
+      },
+      "Wild Magic": {
+        "Tides of Chaos": { "resourceId": "tides_of_chaos" },
+        "Bend Luck": { "resourceId": "sorcery_points", "spend": 2 }
+      }
+    },
+    "Warlock": {
+      "The Archfey": {
+        "Fey Presence": { "resourceId": "fey_presence" },
+        "Misty Escape": { "resourceId": "misty_escape" },
+        "Dark Delirium": { "resourceId": "dark_delirium" }
+      },
+      "The Fiend": {
+        "Dark One's Own Luck": { "resourceId": "dark_ones_own_luck" },
+        "Hurl Through Hell": { "resourceId": "hurl_through_hell" }
+      },
+      "The Great Old One": {
+        "Entropic Ward": { "resourceId": "entropic_ward" }
+      }
+    },
+    "Wizard": {
+      "School of Conjuration": {
+        "Benign Transposition": { "resourceId": "benign_transposition" }
+      },
+      "School of Divination": {
+        "Portent": { "resourceId": "portent" }
+      },
+      "School of Enchantment": {
+        "Instinctive Charm": { "resourceId": "instinctive_charm" }
+      },
+      "School of Illusion": {
+        "Illusory Self": { "resourceId": "illusory_self" }
+      },
+      "School of Transmutation": {
+        "Shapechanger": { "resourceId": "shapechanger" }
+      }
+    }
+  },
+  "raceTraits": {
+    "Breath Weapon": { "resourceId": "breath_weapon" },
+    "Relentless Endurance": { "resourceId": "relentless_endurance" }
+  },
+  "feats": {
+    "Lucky": { "resourceId": "lucky_points" },
+    "Martial Adept": { "resourceId": "martial_adept_superiority_die" },
+    "Magic Initiate": { "resourceId": "magic_initiate_spell" }
+  }
+}

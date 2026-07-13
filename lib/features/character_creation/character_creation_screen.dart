@@ -86,7 +86,7 @@ class _CharacterCreationScreenState
               draft.selectedSubrace != null),
       2 => draft.selectedBackground != null,
       3 => _skillsComplete(draft),
-      4 => draft.baseAttributes.length == 6,
+      4 => draft.baseAttributes.length == 6 && draft.racialAsiComplete,
       5 => true, // nome é opcional
       6 => draft.featureChoicesLoaded &&
           FeatureChoiceEngine.allComplete(

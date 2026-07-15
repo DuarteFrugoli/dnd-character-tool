@@ -185,6 +185,34 @@
     "name": "Mochila",
     "description": "Capacidad para 30 libras/1 pie cúbico."
   },
+  "Burglar's Pack": {
+    "name": "Paquete de ladrón",
+    "description": "Una mochila con rodamientos de bolas, cuerda, campana, velas, palanca, martillo, pitones, linterna con capucha, aceite, raciones, yesquero, odre y cuerda de cáñamo."
+  },
+  "Diplomat's Pack": {
+    "name": "Paquete de diplomático",
+    "description": "Un cofre con estuches para mapas o pergaminos, ropa fina, tinta, pluma, lámpara, aceite, papel, perfume, lacre y jabón."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Paquete de mazmorra",
+    "description": "Una mochila con palanca, martillo, pitones, antorchas, yesquero, raciones, odre de agua y cuerda de cáñamo."
+  },
+  "Entertainer's Pack": {
+    "name": "Paquete de animador",
+    "description": "Una mochila con petate, disfraces, velas, raciones, odre de agua y kit de disfraces."
+  },
+  "Explorer's Pack": {
+    "name": "Paquete de explorador",
+    "description": "Una mochila con petate, kit de comedor, yesquero, antorchas, raciones, odre de agua y cuerda de cáñamo."
+  },
+  "Priest's Pack": {
+    "name": "Paquete de sacerdote",
+    "description": "Una mochila con manta, velas, yesquero, caja de limosna, incienso, incensario, vestimentas, raciones y odre."
+  },
+  "Scholar's Pack": {
+    "name": "Paquete de erudito",
+    "description": "Una mochila con libro, tinta, bolígrafo, pergamino, arena y un cuchillo pequeño."
+  },
   "Ball Bearings (bag of 1000)": {
     "name": "Rodamientos de bolas (bolsa de 1000)",
     "description": "Como acción, dispersa estas pequeñas bolas de metal. Las criaturas deben superar una tirada de salvación de Destreza CD 10 o caerán boca abajo."

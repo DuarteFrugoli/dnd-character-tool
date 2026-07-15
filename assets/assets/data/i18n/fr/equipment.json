@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "Acide (flacon)",
-    "description": "As an action, you can splash the contents of this vial onto a creature within 5 feet or throw it up to 20 feet, breaking it on impact. Une créature subit 2d6 dégâts d'acide lors d'un coup."
+    "description": "Par une action, vous pouvez éclabousser le contenu de cette fiole sur une créature dans un rayon de 1,50 mètre ou la lancer jusqu'à 6 mètres, la brisant à l'impact. Une créature subit 2d6 dégâts d'acide lors d'un coup."
   },
   "Alchemist's Fire": {
     "name": "Feu de l'alchimiste",
@@ -184,6 +184,34 @@
   "Backpack": {
     "name": "Sac à dos",
     "description": "Peut contenir 30 lb/1 pied cube."
+  },
+  "Burglar's Pack": {
+    "name": "Pack du cambrioleur",
+    "description": "Un sac à dos avec des roulements à billes, de la ficelle, une cloche, des bougies, un pied-de-biche, un marteau, des pitons, une lanterne à capuchon, de l'huile, des rations, une poudrière, une outre d'eau et une corde de chanvre."
+  },
+  "Diplomat's Pack": {
+    "name": "Pack du Diplomate",
+    "description": "Un coffre contenant des étuis à cartes ou à parchemins, des vêtements raffinés, de l'encre, un stylo à encre, une lampe, de l'huile, du papier, du parfum, de la cire à cacheter et du savon."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Pack du donjon",
+    "description": "Un sac à dos avec pied de biche, marteau, pitons, torches, poudrière, rations, outre et corde de chanvre."
+  },
+  "Entertainer's Pack": {
+    "name": "Pack Animateur",
+    "description": "Un sac à dos avec un sac de couchage, des costumes, des bougies, des rations, une outre et un kit de déguisement."
+  },
+  "Explorer's Pack": {
+    "name": "Pack de l'Explorateur",
+    "description": "Un sac à dos avec un sac de couchage, une gamelle, une poudrière, des torches, des rations, une outre et une corde de chanvre."
+  },
+  "Priest's Pack": {
+    "name": "Pack du prêtre",
+    "description": "Un sac à dos avec une couverture, des bougies, une poudrière, une boîte d'aumône, de l'encens, un encensoir, des vêtements, des rations et une outre."
+  },
+  "Scholar's Pack": {
+    "name": "Pack d'érudit",
+    "description": "Un sac à dos avec un livre, de l'encre, un stylo à encre, du parchemin, du sable et un petit couteau."
   },
   "Ball Bearings (bag of 1000)": {
     "name": "Roulements à billes (sachet de 1000)",
@@ -219,7 +247,7 @@
   },
   "Bottle, glass": {
     "name": "Bouteille, verre",
-    "description": "Contient 1,5 pinte de liquide."
+    "description": "Peut contenir 1,5 pinte de liquide."
   },
   "Bucket": {
     "name": "Seau",

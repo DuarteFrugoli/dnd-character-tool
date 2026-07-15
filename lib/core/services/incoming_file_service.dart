@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-/// Singleton service that listens for `.dndchar` files opened from other apps
+/// Singleton service that listens for `.dndchar` and `.dndbackup` files opened from other apps
 /// via Android Intent / iOS URL handling.
 ///
 /// - [initialize] must be called once (in main.dart) before using.

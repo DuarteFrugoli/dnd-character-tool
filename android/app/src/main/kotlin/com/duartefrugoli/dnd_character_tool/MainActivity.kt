@@ -56,8 +56,8 @@ class MainActivity : FlutterActivity() {
             try {
                 val stream = contentResolver.openInputStream(uri) ?: return
                 val content = stream.bufferedReader().use { it.readText() }
-                // Only accept content that looks like a .dndchar file
-                if (content.contains("\"character\"")) {
+                // Only accept content that looks like a character export or backup.
+                if (content.contains("\"character\"") || content.contains("\"characters\"")) {
                     pendingFileContent = content
                 }
             } catch (_: Exception) {}

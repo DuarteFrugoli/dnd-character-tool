@@ -27,6 +27,33 @@ String _buildToken(String json) {
   return base64Url.encode(GZipCodec().encode(bytes));
 }
 
+bool _looksLikeBackupFile(String fileJson) {
+  try {
+    final decoded = jsonDecode(fileJson);
+    return decoded is Map<String, dynamic> && decoded['characters'] is List;
+  } catch (_) {
+    return false;
+  }
+}
+
+String _incomingBackupPrompt(BuildContext context) {
+  final language = Localizations.localeOf(context).languageCode;
+  return language == 'pt'
+      ? 'Importar backup do arquivo?'
+      : 'Import backup from file?';
+}
+
+String _incomingBackupSuccess(BuildContext context, int count) {
+  final language = Localizations.localeOf(context).languageCode;
+  if (language == 'pt') {
+    if (count == 1) return '1 personagem importado do backup.';
+    return '$count personagens importados do backup.';
+  }
+
+  if (count == 1) return '1 character imported from backup.';
+  return '$count characters imported from backup.';
+}
+
 class CharacterListScreen extends ConsumerStatefulWidget {
   const CharacterListScreen({super.key});
 
@@ -55,10 +82,13 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
   Future<void> _handleIncomingFile(String fileJson) async {
     if (!mounted) return;
     final l10n = AppLocalizations.of(context)!;
+    final isBackup = _looksLikeBackupFile(fileJson);
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(l10n.importFileIncoming),
+        title: Text(
+          isBackup ? _incomingBackupPrompt(ctx) : l10n.importFileIncoming,
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
@@ -79,6 +109,22 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
     if (!mounted) return;
     final l10n = AppLocalizations.of(context)!;
     try {
+      if (_looksLikeBackupFile(fileJson)) {
+        final imported = await ref
+            .read(characterRepositoryProvider)
+            .importBackupFromFileJson(fileJson);
+        ref.invalidate(characterListProvider);
+
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(_incomingBackupSuccess(context, imported.length)),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+          ),
+        );
+        return;
+      }
+
       final character = await ref
           .read(characterListProvider.notifier)
           .importCharacterFromFile(fileJson);

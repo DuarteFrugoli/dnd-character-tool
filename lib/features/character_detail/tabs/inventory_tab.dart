@@ -1220,63 +1220,66 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     Map<String, dynamic>? properties,
     double weight = 0.0,
   }) async {
-    final qtyCtrl = TextEditingController(text: '1');
-    try {
-      final confirmed = await showDialog<bool>(
-        context: context,
-        builder: (ctx) => AlertDialog(
-          title: Text(displayName ?? name),
-          content: Row(
-            children: [
-              Text(AppLocalizations.of(context)!.inventoryLabelQuantity),
-              const SizedBox(width: 12),
-              SizedBox(
-                width: 64,
-                child: TextField(
-                  controller: qtyCtrl,
-                  autofocus: true,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  textAlign: TextAlign.center,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 6,
-                    ),
+    var quantityText = '1';
+    final selectedQuantity = await showDialog<int>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(displayName ?? name),
+        content: Row(
+          children: [
+            Text(AppLocalizations.of(context)!.inventoryLabelQuantity),
+            const SizedBox(width: 12),
+            SizedBox(
+              width: 64,
+              child: TextFormField(
+                initialValue: quantityText,
+                keyboardType: TextInputType.number,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                textAlign: TextAlign.center,
+                onChanged: (value) => quantityText = value,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 6,
                   ),
                 ),
               ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: Text(AppLocalizations.of(context)!.dialogCancel),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: Text(AppLocalizations.of(context)!.dialogAdd),
             ),
           ],
         ),
-      );
-      if (confirmed == true && mounted) {
-        await _addItem(
-          EquipmentItem(
-            name: name,
-            category: category,
-            itemType: itemType,
-            quantity: int.tryParse(qtyCtrl.text) ?? 1,
-            description: description,
-            weight: weight,
-            properties: properties,
+        actions: [
+          TextButton(
+            onPressed: () {
+              FocusScope.of(ctx).unfocus();
+              Navigator.of(ctx).pop();
+            },
+            child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
-        );
-      }
-    } finally {
-      qtyCtrl.dispose();
-    }
+          FilledButton(
+            onPressed: () {
+              FocusScope.of(ctx).unfocus();
+              final quantity = int.tryParse(quantityText) ?? 1;
+              Navigator.of(ctx).pop(quantity < 1 ? 1 : quantity);
+            },
+            child: Text(AppLocalizations.of(context)!.dialogAdd),
+          ),
+        ],
+      ),
+    );
+
+    if (!mounted || selectedQuantity == null) return;
+    await _addItem(
+      EquipmentItem(
+        name: name,
+        category: category,
+        itemType: itemType,
+        quantity: selectedQuantity,
+        description: description,
+        weight: weight,
+        properties: properties,
+      ),
+    );
   }
 
   // Lista agrupada por categoria, com cabeçalhos. Ao pesquisar, exibe lista plana.
@@ -1797,6 +1800,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                   getGroup: (t) => t.category,
                   getDescription: (_) => null,
                   getItemType: (_) => ItemType.gear,
+                  getWeight: (t) => t.weight,
                   groupOrder: const [
                     'artisans_tools',
                     'gaming_sets',

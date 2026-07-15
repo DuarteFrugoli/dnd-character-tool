@@ -13,3 +13,16 @@ Future<void> exportDndCharFile(String characterName, String fileJson) async {
     subject: characterName,
   );
 }
+
+Future<void> exportDndBackupFile(String fileJson) async {
+  final dir = await getTemporaryDirectory();
+  final timestamp = DateTime.now()
+      .toIso8601String()
+      .replaceAll(RegExp(r'[:.]'), '-');
+  final file = File('${dir.path}/dnd_character_backup_$timestamp.dndbackup');
+  await file.writeAsString(fileJson);
+  await Share.shareXFiles(
+    [XFile(file.path, mimeType: 'application/octet-stream')],
+    subject: 'D&D Character Tool Backup',
+  );
+}

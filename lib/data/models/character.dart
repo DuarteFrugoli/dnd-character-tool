@@ -14,12 +14,14 @@ part 'character.g.dart';
 
 // Sentinel used to distinguish "not passed" from explicit null in copyWith.
 const _keep = Object();
+const currentCharacterDataVersion = 1;
 
 enum CreationMode { random, semiRandom, guided, manual }
 
 @JsonSerializable(explicitToJson: true)
 class Character {
   final String id;
+  final int dataVersion;
   final String name;
   final String playerName;
   final String race;
@@ -68,6 +70,7 @@ class Character {
 
   const Character({
     required this.id,
+    this.dataVersion = currentCharacterDataVersion,
     required this.name,
     this.playerName = '',
     required this.race,
@@ -130,6 +133,7 @@ class Character {
 
   Character copyWith({
     String? id,
+    int? dataVersion,
     String? name,
     String? playerName,
     String? race,
@@ -179,6 +183,7 @@ class Character {
   }) {
     return Character(
       id: id ?? this.id,
+      dataVersion: dataVersion ?? this.dataVersion,
       name: name ?? this.name,
       playerName: playerName ?? this.playerName,
       race: race ?? this.race,

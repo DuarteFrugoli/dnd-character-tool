@@ -185,9 +185,37 @@
     "name": "Zaino",
     "description": "Contiene 30 libbre/1 piede cubo."
   },
+  "Burglar's Pack": {
+    "name": "Pacchetto del ladro",
+    "description": "Uno zaino con cuscinetti a sfera, corda, campana, candele, piede di porco, martello, chiodi, lanterna con cappuccio, olio, razioni, acciarino, borraccia e corda di canapa."
+  },
+  "Diplomat's Pack": {
+    "name": "Pacchetto del diplomatico",
+    "description": "Una cassa con custodie per mappe o pergamene, vestiti pregiati, inchiostro, penna a inchiostro, lampada, olio, carta, profumo, ceralacca e sapone."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Pacchetto Dungeoneer",
+    "description": "Uno zaino con piede di porco, martello, chiodi, torce, acciarino, razioni, borraccia e corda di canapa."
+  },
+  "Entertainer's Pack": {
+    "name": "Pacchetto dell'intrattenitore",
+    "description": "Uno zaino con sacco a pelo, costumi, candele, razioni, borraccia e kit di travestimento."
+  },
+  "Explorer's Pack": {
+    "name": "Pacchetto dell'esploratore",
+    "description": "Uno zaino con sacco a pelo, kit da pasticcio, esca, torce, razioni, borraccia e corda di canapa."
+  },
+  "Priest's Pack": {
+    "name": "Pacchetto del prete",
+    "description": "Uno zaino con coperta, candele, acciarino, cassetta per l'elemosina, incenso, turibolo, paramenti, razioni e otre."
+  },
+  "Scholar's Pack": {
+    "name": "Pacchetto dello studioso",
+    "description": "Uno zaino con libro, inchiostro, penna, pergamena, sabbia e coltellino."
+  },
   "Ball Bearings (bag of 1000)": {
     "name": "Cuscinetti a sfera (confezione da 1000)",
-    "description": "Come azione, spargi queste minuscole sfere di metallo. Le creature devono superare un tiro salvezza su Destrezza con CD 10 o cadere prone."
+    "description": "Come azione, spargi queste minuscole palline di metallo. Le creature devono superare un tiro salvezza su Destrezza con CD 10 o cadere prone."
   },
   "Barrel": {
     "name": "Barile",
@@ -279,7 +307,7 @@
   },
   "Crowbar": {
     "name": "Piede di porco",
-    "description": "Concede vantaggio alle prove di Forza in cui è possibile applicare leva."
+    "description": "Concede vantaggio alle prove di Forza in cui può essere applicata la leva finanziaria."
   },
   "Druidic Focus": {
     "name": "Focus druidico",
@@ -319,7 +347,7 @@
   },
   "Hunting Trap": {
     "name": "Trappola da caccia",
-    "description": "Quando è posizionata, una creatura Grande o più piccola che calpesta la trappola deve effettuare un tiro salvezza su Destrezza con CD 13 o subire 1d4 danni perforanti e smettere di muoversi."
+    "description": "Una volta posizionata, una creatura Grande o più piccola che calpesta la trappola deve effettuare un tiro salvezza su Destrezza con CD 13 o subire 1d4 danni perforanti e smettere di muoversi."
   },
   "Ink (1 ounce bottle)": {
     "name": "Inchiostro (flacone da 1 oncia)",
@@ -351,7 +379,7 @@
   },
   "Lock": {
     "name": "Serratura",
-    "description": "Un piccolo lucchetto con chiave. Prova di Destrezza con CD 15 con strumenti da ladro per aprire senza la chiave."
+    "description": "Un piccolo lucchetto con chiave. Prova di Destrezza con CD 15 con arnesi da ladro per aprire senza la chiave."
   },
   "Magnifying Glass": {
     "name": "Lente d'ingrandimento",

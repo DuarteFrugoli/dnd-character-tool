@@ -30,7 +30,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       },
     );
 
-    final c = await ref.read(characterRepositoryProvider).getById(id);
+    final repo = ref.read(characterRepositoryProvider);
+    final c = await repo.getById(id);
     if (c == null) throw Exception('Character not found');
     return c;
   }
@@ -728,8 +729,11 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     );
     if (idx >= 0) {
       final updated = List<EquipmentItem>.from(c.equipment);
-      updated[idx] = updated[idx].copyWith(
-        quantity: updated[idx].quantity + item.quantity,
+      final existing = updated[idx];
+      updated[idx] = existing.copyWith(
+        quantity: existing.quantity + item.quantity,
+        weight: existing.weight == 0 && item.weight > 0 ? item.weight : null,
+        properties: existing.properties == null ? item.properties : null,
       );
       await _save(c.copyWith(equipment: updated));
     } else {

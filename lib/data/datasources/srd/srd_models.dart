@@ -10,22 +10,25 @@ String _titleCase(String s) =>
 
 // ── Item lookup data ─────────────────────────────────────────────────────────
 
-/// Metadata for a single SRD item loaded from assets/data/srd/equipment.json.
+/// Metadata for a single SRD item in the inventory lookup.
 class SrdItemData {
   final String
-  itemType; // "weapon", "armor", "ammunition", "equippable", "container", "gear"
+  itemType; // "weapon", "armor", "ammunition", "consumable", "equippable", "container", "gear"
   final String category;
+  final double weight;
   final Map<String, dynamic>? properties;
 
   const SrdItemData({
     required this.itemType,
     required this.category,
+    this.weight = 0.0,
     this.properties,
   });
 
   factory SrdItemData.fromJson(Map<String, dynamic> json) => SrdItemData(
     itemType: json['itemType'] as String,
     category: json['category'] as String,
+    weight: (json['weight'] as num?)?.toDouble() ?? 0.0,
     properties: json['properties'] as Map<String, dynamic>?,
   );
 
@@ -651,12 +654,18 @@ class SrdGearItem {
 class SrdTool {
   final String name;
   final String category;
+  final double weight;
 
-  const SrdTool({required this.name, required this.category});
+  const SrdTool({
+    required this.name,
+    required this.category,
+    this.weight = 0.0,
+  });
 
   factory SrdTool.fromJson(Map<String, dynamic> json) => SrdTool(
     name: (json['name'] as String?) ?? '',
     category: (json['category'] as String?) ?? '',
+    weight: (json['weight'] as num?)?.toDouble() ?? 0.0,
   );
 }
 

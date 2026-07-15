@@ -219,6 +219,7 @@ class SrdDataSource {
         final w = entry as Map<String, dynamic>;
         final rawName = (w['name'] as String).toLowerCase();
         final category = w['category'] as String;
+        final weight = (w['weight'] as num? ?? 0).toDouble();
         final props = <String, dynamic>{
           'damageDice': w['damage'],
           'damageType': w['damageType'],
@@ -227,12 +228,19 @@ class SrdDataSource {
           if (w['versatileDamage'] != null)
             'versatileDamage': w['versatileDamage'],
         };
-        final data =
-            SrdItemData(itemType: 'weapon', category: category, properties: props);
+        final data = SrdItemData(
+          itemType: 'weapon',
+          category: category,
+          weight: weight,
+          properties: props,
+        );
         result[rawName] = data;
         // Alias "Crossbow, X" → "x crossbow" to match startingEquipment strings
         final alias = _crossbowAlias(rawName);
         if (alias != null) result[alias] = data;
+        for (final alias in _weaponAliases(rawName)) {
+          result[alias] = data;
+        }
       }
 
       // ── Armor ────────────────────────────────────────────────────────
@@ -240,6 +248,7 @@ class SrdDataSource {
         final a = entry as Map<String, dynamic>;
         final rawName = (a['name'] as String).toLowerCase();
         final isShield = (a['type'] as String?) == 'shield';
+        final weight = (a['weight'] as num? ?? 0).toDouble();
         final Map<String, dynamic> props;
         if (isShield) {
           props = {'isShield': true, 'acBonus': a['acBonus']};
@@ -255,8 +264,12 @@ class SrdDataSource {
               'strengthRequirement': a['strengthRequired'],
           };
         }
-        final data =
-            SrdItemData(itemType: 'armor', category: 'armor', properties: props);
+        final data = SrdItemData(
+          itemType: 'armor',
+          category: 'armor',
+          weight: weight,
+          properties: props,
+        );
         result[rawName] = data;
         // Aliases: "leather" → "leather armor", "shield" → "wooden shield", etc.
         for (final alias in _armorAliases(rawName)) {
@@ -269,22 +282,68 @@ class SrdDataSource {
         final g = entry as Map<String, dynamic>;
         final rawName = (g['name'] as String).toLowerCase();
         final category = g['category'] as String;
+        final weight = (g['weight'] as num? ?? 0).toDouble();
         final itemType = category == 'ammunition'
             ? 'ammunition'
             : category == 'container'
                 ? 'container'
                 : 'gear';
-        result[rawName] = SrdItemData(itemType: itemType, category: category);
+        final data = SrdItemData(
+          itemType: itemType,
+          category: category,
+          weight: weight,
+        );
+        result[rawName] = data;
+        for (final alias in _gearAliases(rawName)) {
+          result[alias] = data;
+        }
         // Alias stripped names for ammo bundles:
         // "arrows (20)" → "arrows", "crossbow bolts (20)" → "bolts", etc.
         final parenIdx = rawName.indexOf(' (');
         if (parenIdx > 0) {
           final stripped = rawName.substring(0, parenIdx);
-          result[stripped] = result[rawName]!;
-          // Also add the last word as a short alias ("bolts", "arrows", "needles")
-          final lastWord = stripped.split(' ').last;
-          result[lastWord] = result[rawName]!;
+          final bundleCount = _bundleCount(rawName);
+          final aliasData = category == 'ammunition' && bundleCount != null
+              ? SrdItemData(
+                  itemType: itemType,
+                  category: category,
+                  weight: weight / bundleCount,
+                )
+              : data;
+          result[stripped] = aliasData;
+          if (category == 'ammunition') {
+            // Also add the last word as a short alias ("bolts", "arrows", "needles")
+            final lastWord = stripped.split(' ').last;
+            result[lastWord] = aliasData;
+          }
         }
+      }
+
+      final quiver = result['quiver'];
+      final arrow = result['arrows'];
+      if (quiver != null && arrow != null) {
+        result['quiver with 20 arrows'] = SrdItemData(
+          itemType: 'container',
+          category: quiver.category,
+          weight: quiver.weight + (arrow.weight * 20),
+        );
+      }
+
+      for (final tool in await getTools()) {
+        result[tool.name.toLowerCase()] = SrdItemData(
+          itemType: 'gear',
+          category: tool.category,
+          weight: tool.weight,
+        );
+      }
+
+      for (final magicItem in await getMagicItems()) {
+        result[magicItem.name.toLowerCase()] = SrdItemData(
+          itemType: magicItem.itemType.name,
+          category: magicItem.type,
+          weight: magicItem.weight,
+          properties: magicItem.properties,
+        );
       }
 
       _items = result;
@@ -399,6 +458,19 @@ String? _crossbowAlias(String lower) {
   return null;
 }
 
+List<String> _weaponAliases(String lower) {
+  switch (lower) {
+    case 'club':
+      return ['belaying pin (club)'];
+    case 'dagger':
+      return ['small knife'];
+    case 'quarterstaff':
+      return ['staff'];
+    default:
+      return [];
+  }
+}
+
 /// Returns extra index keys for armor names so that strings like
 /// "Leather armor" or "Wooden shield" hit the right entry.
 List<String> _armorAliases(String lower) {
@@ -413,4 +485,39 @@ List<String> _armorAliases(String lower) {
     case 'shield':       return ['wooden shield'];
     default:             return [];
   }
+}
+
+List<String> _gearAliases(String lower) {
+  switch (lower) {
+    case 'case, map or scroll':
+      return ['scroll case with notes'];
+    case 'clothes, common':
+      return ['common clothes', 'dark common clothes with hood'];
+    case 'clothes, costume':
+      return ['costume'];
+    case 'clothes, fine':
+      return ['fine clothes'];
+    case "clothes, traveler's":
+      return ["traveler's clothes", 'travelers clothes'];
+    case 'ink (1 ounce bottle)':
+      return ['bottle of black ink'];
+    case 'ink pen':
+      return ['quill'];
+    case 'pot, iron':
+      return ['iron pot'];
+    case 'rope, hempen (50 feet)':
+      return ['hempen rope', '50 feet of hempen rope'];
+    case 'rope, silk (50 feet)':
+      return ['silk rope', '50 feet of silk rope'];
+    case 'blanket':
+      return ['winter blanket'];
+    default:
+      return [];
+  }
+}
+
+double? _bundleCount(String lower) {
+  final match = RegExp(r'\((\d+)\)').firstMatch(lower);
+  if (match == null) return null;
+  return double.tryParse(match.group(1)!);
 }

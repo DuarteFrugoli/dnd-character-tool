@@ -185,9 +185,37 @@
     "name": "Rucksack",
     "description": "Hält 30 Pfund / 1 Kubikfuß."
   },
+  "Burglar's Pack": {
+    "name": "Einbrecherpaket",
+    "description": "Ein Rucksack mit Kugellagern, Schnur, Glocke, Kerzen, Brecheisen, Hammer, Haken, Kapuzenlaterne, Öl, Rationen, Zunderbüchse, Wasserschlauch und Hanfseil."
+  },
+  "Diplomat's Pack": {
+    "name": "Diplomatenpaket",
+    "description": "Eine Truhe mit Karten- oder Schriftrollenetuis, feiner Kleidung, Tinte, Tintenstift, Lampe, Öl, Papier, Parfüm, Siegellack und Seife."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Paket des Kerkermeisters",
+    "description": "Ein Rucksack mit Brecheisen, Hammer, Haken, Fackeln, Zunderbüchse, Verpflegung, Wasserschlauch und Hanfseil."
+  },
+  "Entertainer's Pack": {
+    "name": "Entertainer-Paket",
+    "description": "Ein Rucksack mit Bettzeug, Kostümen, Kerzen, Verpflegung, Wasserschlauch und Verkleidungsset."
+  },
+  "Explorer's Pack": {
+    "name": "Entdeckerpaket",
+    "description": "Ein Rucksack mit Schlafsack, Essgeschirr, Zunderbüchse, Fackeln, Proviant, Wasserschlauch und Hanfseil."
+  },
+  "Priest's Pack": {
+    "name": "Priesterpaket",
+    "description": "Ein Rucksack mit Decke, Kerzen, Zunderbüchse, Almosenbüchse, Weihrauch, Räuchergefäß, Gewändern, Verpflegung und Wasserschlauch."
+  },
+  "Scholar's Pack": {
+    "name": "Gelehrtenpaket",
+    "description": "Ein Rucksack mit Buch, Tinte, Tintenstift, Pergament, Sand und einem kleinen Messer."
+  },
   "Ball Bearings (bag of 1000)": {
     "name": "Kugellager (Beutel mit 1000 Stück)",
-    "description": "Streuen Sie als Aktion diese kleinen Metallkugeln. Den Kreaturen muss ein Geschicklichkeitsrettungswurf von DC 10 gelingen, sonst fallen sie hin."
+    "description": "Streuen Sie als Aktion diese kleinen Metallkugeln. Kreaturen müssen einen Geschicklichkeitsrettungswurf von DC 10 bestehen, sonst fallen sie hin."
   },
   "Barrel": {
     "name": "Fass",
@@ -331,7 +359,7 @@
   },
   "Jug or Pitcher": {
     "name": "Krug oder Krug",
-    "description": "Hält 1 Gallone Flüssigkeit."
+    "description": "Fasst 1 Gallone Flüssigkeit."
   },
   "Ladder (10-foot)": {
     "name": "Leiter (10 Fuß)",
@@ -395,7 +423,7 @@
   },
   "Poison, basic (vial)": {
     "name": "Gift, basisch (Fläschchen)",
-    "description": "Auf eine Hieb- oder Stichwaffe auftragen. Einer getroffenen Kreatur muss ein Konstitutionswurf gegen SG 10 gelingen, sonst erleidet sie 1W4 Giftschaden. Nach 1 Minute verliert das Gift seine Wirksamkeit."
+    "description": "Apply to a slashing or piercing weapon. Einer getroffenen Kreatur muss ein Konstitutionswurf gegen SG 10 gelingen, sonst erleidet sie 1W4 Giftschaden. After 1 minute the poison loses potency."
   },
   "Pole (10-foot)": {
     "name": "Stange (10 Fuß)",

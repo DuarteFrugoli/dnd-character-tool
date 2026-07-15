@@ -15,3 +15,19 @@ Future<void> exportDndCharFile(String characterName, String fileJson) async {
   anchor.click();
   web.URL.revokeObjectURL(url);
 }
+
+Future<void> exportDndBackupFile(String fileJson) async {
+  final timestamp = DateTime.now()
+      .toIso8601String()
+      .replaceAll(RegExp(r'[:.]'), '-');
+  final blob = web.Blob(
+    [fileJson.toJS].toJS,
+    web.BlobPropertyBag(type: 'application/octet-stream'),
+  );
+  final url = web.URL.createObjectURL(blob);
+  final anchor = web.document.createElement('a') as web.HTMLAnchorElement;
+  anchor.href = url;
+  anchor.download = 'dnd_character_backup_$timestamp.dndbackup';
+  anchor.click();
+  web.URL.revokeObjectURL(url);
+}

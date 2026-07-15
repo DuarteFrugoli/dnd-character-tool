@@ -848,6 +848,13 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
     void addItem(String raw) {
       final trimmed = raw.trim();
+      final lower = trimmed.toLowerCase();
+
+      if (lower == 'quiver with 20 arrows') {
+        addItem('Quiver');
+        addItem('20 arrows');
+        return;
+      }
 
       // Check if the full string is a gold amount (e.g. "15 gp") before
       // attempting quantity parsing, otherwise "15 gp" → qty=15, name="gp".
@@ -874,6 +881,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         category: data?.category ?? _categoryForItem(itemName),
         itemType: data?.asItemType ?? _itemTypeForItem(itemName),
         quantity: qty,
+        weight: data?.weight ?? 0.0,
         properties: data?.properties ?? _propertiesForItem(itemName),
       ));
     }

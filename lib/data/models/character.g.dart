@@ -8,6 +8,7 @@ part of 'character.dart';
 
 Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   id: json['id'] as String,
+  dataVersion: (json['dataVersion'] as num?)?.toInt() ?? 0,
   name: json['name'] as String,
   playerName: json['playerName'] as String? ?? '',
   race: json['race'] as String,
@@ -126,6 +127,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
 
 Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'id': instance.id,
+  'dataVersion': instance.dataVersion,
   'name': instance.name,
   'playerName': instance.playerName,
   'race': instance.race,

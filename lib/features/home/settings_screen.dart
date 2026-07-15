@@ -336,15 +336,21 @@ class _CharacterMaintenanceTile extends ConsumerStatefulWidget {
       _CharacterMaintenanceTileState();
 }
 
+enum _MaintenanceBusyTask { checking, backingUp, updating }
+
 class _CharacterMaintenanceTileState
     extends ConsumerState<_CharacterMaintenanceTile> {
   bool _busy = false;
+  _MaintenanceBusyTask? _busyTask;
   CharacterMigrationBatchReport? _preview;
 
   Future<void> _check() async {
     if (_busy) return;
 
-    setState(() => _busy = true);
+    setState(() {
+      _busy = true;
+      _busyTask = _MaintenanceBusyTask.checking;
+    });
     try {
       final report =
           await ref.read(characterRepositoryProvider).previewMigrations();
@@ -371,7 +377,12 @@ class _CharacterMaintenanceTileState
         ),
       );
     } finally {
-      if (mounted) setState(() => _busy = false);
+      if (mounted) {
+        setState(() {
+          _busy = false;
+          _busyTask = null;
+        });
+      }
     }
   }
 
@@ -380,7 +391,10 @@ class _CharacterMaintenanceTileState
 
     var preview = _preview;
     if (preview == null) {
-      setState(() => _busy = true);
+      setState(() {
+        _busy = true;
+        _busyTask = _MaintenanceBusyTask.checking;
+      });
       try {
         preview = await ref.read(characterRepositoryProvider).previewMigrations();
       } catch (_) {
@@ -394,7 +408,12 @@ class _CharacterMaintenanceTileState
         );
         return;
       } finally {
-        if (mounted) setState(() => _busy = false);
+        if (mounted) {
+          setState(() {
+            _busy = false;
+            _busyTask = null;
+          });
+        }
       }
       if (!mounted) return;
       setState(() => _preview = preview);
@@ -426,9 +445,18 @@ class _CharacterMaintenanceTileState
     );
     if (confirmed != true || !mounted) return;
 
-    setState(() => _busy = true);
+    setState(() {
+      _busy = true;
+      _busyTask = _MaintenanceBusyTask.backingUp;
+    });
     try {
       final repo = ref.read(characterRepositoryProvider);
+      final backupJson = await repo.exportBackupToFileJson();
+      await exportDndBackupFile(backupJson);
+
+      if (!mounted) return;
+      setState(() => _busyTask = _MaintenanceBusyTask.updating);
+
       final report = await repo.applyMigrations();
       final freshPreview = await repo.previewMigrations();
       ref.invalidate(characterListProvider);
@@ -451,12 +479,20 @@ class _CharacterMaintenanceTileState
       );
     } catch (_) {
       if (!mounted) return;
+      final errorMessage = _busyTask == _MaintenanceBusyTask.backingUp
+          ? l10n.settingsBackupExportError
+          : l10n.settingsMaintenanceError;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.settingsMaintenanceError)),
+        SnackBar(content: Text(errorMessage)),
       );
     } finally {
-      if (mounted) setState(() => _busy = false);
+      if (mounted) {
+        setState(() {
+          _busy = false;
+          _busyTask = null;
+        });
+      }
     }
   }
 
@@ -485,7 +521,7 @@ class _CharacterMaintenanceTileState
       ),
       subtitle: Text(
         _busy
-            ? l10n.settingsMaintenanceWorking
+            ? _busySubtitle(l10n)
             : preview == null
                 ? l10n.settingsMaintenanceCheckSubtitle
                 : preview.hasUpdates
@@ -502,6 +538,13 @@ class _CharacterMaintenanceTileState
             ),
       onTap: _busy ? null : (hasUpdates ? _apply : _check),
     );
+  }
+
+  String _busySubtitle(AppLocalizations l10n) {
+    return switch (_busyTask) {
+      _MaintenanceBusyTask.backingUp => l10n.settingsBackupExporting,
+      _ => l10n.settingsMaintenanceWorking,
+    };
   }
 }
 

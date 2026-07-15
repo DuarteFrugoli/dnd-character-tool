@@ -2218,9 +2218,9 @@ class AppLocalizationsFr extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          '$count personnages nécessitent une mise à jour. Nous recommandons d’exporter une sauvegarde avant de continuer.',
+          '$count personnages nécessitent une mise à jour. Une sauvegarde sera ouverte pour être enregistrée ou partagée avant application des changements.',
       one:
-          '1 personnage nécessite une mise à jour. Nous recommandons d’exporter une sauvegarde avant de continuer.',
+          '1 personnage nécessite une mise à jour. Une sauvegarde sera ouverte pour être enregistrée ou partagée avant application des changements.',
     );
     return '$_temp0';
   }

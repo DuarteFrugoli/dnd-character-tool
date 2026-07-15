@@ -2193,9 +2193,9 @@ class AppLocalizationsEn extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          '$count characters need updates. We recommend exporting a backup before continuing.',
+          '$count characters need updates. The app will open a backup for you to save or share before applying changes.',
       one:
-          '1 character needs an update. We recommend exporting a backup before continuing.',
+          '1 character needs an update. The app will open a backup for you to save or share before applying changes.',
     );
     return '$_temp0';
   }

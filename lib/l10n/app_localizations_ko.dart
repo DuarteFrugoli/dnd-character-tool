@@ -2172,8 +2172,8 @@ class AppLocalizationsKo extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '캐릭터 $count명에 업데이트가 필요합니다. 계속하기 전에 백업을 내보내는 것을 권장합니다.',
-      one: '캐릭터 1명에 업데이트가 필요합니다. 계속하기 전에 백업을 내보내는 것을 권장합니다.',
+      other: '캐릭터 $count명에 업데이트가 필요합니다. 변경 사항을 적용하기 전에 저장하거나 공유할 수 있는 백업을 엽니다.',
+      one: '캐릭터 1명에 업데이트가 필요합니다. 변경 사항을 적용하기 전에 저장하거나 공유할 수 있는 백업을 엽니다.',
     );
     return '$_temp0';
   }

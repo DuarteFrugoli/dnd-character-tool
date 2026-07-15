@@ -2210,9 +2210,9 @@ class AppLocalizationsPt extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          '$count personagens precisam de atualização. Recomendamos exportar um backup antes de continuar.',
+          '$count personagens precisam de atualização. O app vai abrir um backup para você salvar ou compartilhar antes de aplicar as mudanças.',
       one:
-          '1 personagem precisa de atualização. Recomendamos exportar um backup antes de continuar.',
+          '1 personagem precisa de atualização. O app vai abrir um backup para você salvar ou compartilhar antes de aplicar as mudanças.',
     );
     return '$_temp0';
   }

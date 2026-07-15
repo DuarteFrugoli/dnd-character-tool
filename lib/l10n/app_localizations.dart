@@ -4065,7 +4065,7 @@ abstract class AppLocalizations {
   /// Dialog body before applying character migrations.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1{1 character needs an update. We recommend exporting a backup before continuing.} other{{count} characters need updates. We recommend exporting a backup before continuing.}}'**
+  /// **'{count, plural, =1{1 character needs an update. The app will open a backup for you to save or share before applying changes.} other{{count} characters need updates. The app will open a backup for you to save or share before applying changes.}}'**
   String settingsMaintenanceConfirmBody(int count);
 
   /// Migration report line for checked characters.

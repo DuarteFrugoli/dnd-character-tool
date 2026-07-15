@@ -702,7 +702,7 @@
   "settingsMaintenanceConfirmTitle": "Charaktere aktualisieren?",
   "settingsMaintenanceCompleteTitle": "Aktualisierung abgeschlossen",
   "settingsMaintenanceUpdatesFound": "{count, plural, =1{1 Charakter benötigt ein Update.} other{{count} Charaktere benötigen Updates.}}",
-  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 Charakter benötigt ein Update. Wir empfehlen, vor dem Fortfahren ein Backup zu exportieren.} other{{count} Charaktere benötigen Updates. Wir empfehlen, vor dem Fortfahren ein Backup zu exportieren.}}",
+  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 Charakter benötigt ein Update. Die App öffnet ein Backup zum Speichern oder Teilen, bevor Änderungen angewendet werden.} other{{count} Charaktere benötigen Updates. Die App öffnet ein Backup zum Speichern oder Teilen, bevor Änderungen angewendet werden.}}",
   "settingsMaintenanceReportChecked": "{count, plural, =1{1 Charakter geprüft.} other{{count} Charaktere geprüft.}}",
   "settingsMaintenanceReportUpdated": "{count, plural, =1{1 Charakter aktualisiert.} other{{count} Charaktere aktualisiert.}}",
   "settingsMaintenanceReportDataChanged": "{count, plural, =1{Bei 1 Charakter wurden Daten korrigiert.} other{Bei {count} Charakteren wurden Daten korrigiert.}}",

@@ -2210,9 +2210,9 @@ class AppLocalizationsEs extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          '$count personajes necesitan actualizaciones. Recomendamos exportar una copia de seguridad antes de continuar.',
+          '$count personajes necesitan actualizaciones. La app abrirá una copia de seguridad para que la guardes o compartas antes de aplicar los cambios.',
       one:
-          '1 personaje necesita una actualización. Recomendamos exportar una copia de seguridad antes de continuar.',
+          '1 personaje necesita una actualización. La app abrirá una copia de seguridad para que la guardes o compartas antes de aplicar los cambios.',
     );
     return '$_temp0';
   }

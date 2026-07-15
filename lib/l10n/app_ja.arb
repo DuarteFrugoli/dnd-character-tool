@@ -700,7 +700,7 @@
   "settingsMaintenanceConfirmTitle": "キャラクターを更新しますか？",
   "settingsMaintenanceCompleteTitle": "更新が完了しました",
   "settingsMaintenanceUpdatesFound": "{count, plural, =1{1人のキャラクターに更新が必要です。} other{{count}人のキャラクターに更新が必要です。}}",
-  "settingsMaintenanceConfirmBody": "{count, plural, =1{1人のキャラクターに更新が必要です。続行する前にバックアップをエクスポートすることをおすすめします。} other{{count}人のキャラクターに更新が必要です。続行する前にバックアップをエクスポートすることをおすすめします。}}",
+  "settingsMaintenanceConfirmBody": "{count, plural, =1{1人のキャラクターに更新が必要です。変更を適用する前に、保存または共有できるバックアップを開きます。} other{{count}人のキャラクターに更新が必要です。変更を適用する前に、保存または共有できるバックアップを開きます。}}",
   "settingsMaintenanceReportChecked": "{count, plural, =1{1人のキャラクターを確認しました。} other{{count}人のキャラクターを確認しました。}}",
   "settingsMaintenanceReportUpdated": "{count, plural, =1{1人のキャラクターを更新しました。} other{{count}人のキャラクターを更新しました。}}",
   "settingsMaintenanceReportDataChanged": "{count, plural, =1{1人のキャラクターのデータを修正しました。} other{{count}人のキャラクターのデータを修正しました。}}",

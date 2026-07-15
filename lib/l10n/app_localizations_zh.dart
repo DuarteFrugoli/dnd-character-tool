@@ -2162,8 +2162,8 @@ class AppLocalizationsZh extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count 个角色需要更新。建议在继续前先导出备份。',
-      one: '1 个角色需要更新。建议在继续前先导出备份。',
+      other: '$count 个角色需要更新。应用更改前，应用会打开一个可保存或分享的备份。',
+      one: '1 个角色需要更新。应用更改前，应用会打开一个可保存或分享的备份。',
     );
     return '$_temp0';
   }

@@ -2213,9 +2213,9 @@ class AppLocalizationsIt extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          '$count personaggi richiedono aggiornamenti. Consigliamo di esportare un backup prima di continuare.',
+          '$count personaggi richiedono aggiornamenti. Il backup verrà aperto per salvarlo o condividerlo prima di applicare le modifiche.',
       one:
-          '1 personaggio richiede un aggiornamento. Consigliamo di esportare un backup prima di continuare.',
+          '1 personaggio richiede un aggiornamento. Il backup verrà aperto per salvarlo o condividerlo prima di applicare le modifiche.',
     );
     return '$_temp0';
   }

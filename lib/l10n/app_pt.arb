@@ -702,7 +702,7 @@
   "settingsMaintenanceConfirmTitle": "Atualizar personagens?",
   "settingsMaintenanceCompleteTitle": "Atualização concluída",
   "settingsMaintenanceUpdatesFound": "{count, plural, =1{1 personagem precisa de atualização.} other{{count} personagens precisam de atualização.}}",
-  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 personagem precisa de atualização. Recomendamos exportar um backup antes de continuar.} other{{count} personagens precisam de atualização. Recomendamos exportar um backup antes de continuar.}}",
+  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 personagem precisa de atualização. O app vai abrir um backup para você salvar ou compartilhar antes de aplicar as mudanças.} other{{count} personagens precisam de atualização. O app vai abrir um backup para você salvar ou compartilhar antes de aplicar as mudanças.}}",
   "settingsMaintenanceReportChecked": "{count, plural, =1{1 personagem verificado.} other{{count} personagens verificados.}}",
   "settingsMaintenanceReportUpdated": "{count, plural, =1{1 personagem atualizado.} other{{count} personagens atualizados.}}",
   "settingsMaintenanceReportDataChanged": "{count, plural, =1{1 personagem teve dados corrigidos.} other{{count} personagens tiveram dados corrigidos.}}",

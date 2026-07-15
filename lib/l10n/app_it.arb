@@ -702,7 +702,7 @@
   "settingsMaintenanceConfirmTitle": "Aggiornare i personaggi?",
   "settingsMaintenanceCompleteTitle": "Aggiornamento completato",
   "settingsMaintenanceUpdatesFound": "{count, plural, =1{1 personaggio richiede un aggiornamento.} other{{count} personaggi richiedono aggiornamenti.}}",
-  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 personaggio richiede un aggiornamento. Consigliamo di esportare un backup prima di continuare.} other{{count} personaggi richiedono aggiornamenti. Consigliamo di esportare un backup prima di continuare.}}",
+  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 personaggio richiede un aggiornamento. Il backup verrà aperto per salvarlo o condividerlo prima di applicare le modifiche.} other{{count} personaggi richiedono aggiornamenti. Il backup verrà aperto per salvarlo o condividerlo prima di applicare le modifiche.}}",
   "settingsMaintenanceReportChecked": "{count, plural, =1{1 personaggio controllato.} other{{count} personaggi controllati.}}",
   "settingsMaintenanceReportUpdated": "{count, plural, =1{1 personaggio aggiornato.} other{{count} personaggi aggiornati.}}",
   "settingsMaintenanceReportDataChanged": "{count, plural, =1{1 personaggio ha ricevuto correzioni ai dati.} other{{count} personaggi hanno ricevuto correzioni ai dati.}}",

@@ -2171,8 +2171,8 @@ class AppLocalizationsJa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count人のキャラクターに更新が必要です。続行する前にバックアップをエクスポートすることをおすすめします。',
-      one: '1人のキャラクターに更新が必要です。続行する前にバックアップをエクスポートすることをおすすめします。',
+      other: '$count人のキャラクターに更新が必要です。変更を適用する前に、保存または共有できるバックアップを開きます。',
+      one: '1人のキャラクターに更新が必要です。変更を適用する前に、保存または共有できるバックアップを開きます。',
     );
     return '$_temp0';
   }

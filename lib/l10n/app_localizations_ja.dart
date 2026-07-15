@@ -2086,4 +2086,166 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsChooseUnitSystem => '単位系を選択';
+
+  @override
+  String get settingsBackupSection => 'バックアップ';
+
+  @override
+  String get settingsBackupExportTitle => 'バックアップをエクスポート';
+
+  @override
+  String get settingsBackupExportSubtitle => 'すべてのキャラクターをバックアップファイルに保存します。';
+
+  @override
+  String get settingsBackupExporting => 'バックアップを作成中...';
+
+  @override
+  String get settingsBackupExportSuccess => 'バックアップをエクスポートしました。';
+
+  @override
+  String get settingsBackupExportError => 'バックアップをエクスポートできませんでした。';
+
+  @override
+  String get settingsBackupImportTitle => 'バックアップをインポート';
+
+  @override
+  String get settingsBackupImportSubtitle => '.dndbackup ファイルからキャラクターを復元します。';
+
+  @override
+  String get settingsBackupImporting => 'バックアップをインポート中...';
+
+  @override
+  String get settingsBackupImportError => 'バックアップをインポートできませんでした。';
+
+  @override
+  String settingsBackupImportSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'バックアップから$count人のキャラクターをインポートしました。',
+      one: 'バックアップから1人のキャラクターをインポートしました。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceSection => 'メンテナンス';
+
+  @override
+  String get settingsMaintenanceCheckTitle => 'キャラクター更新を確認';
+
+  @override
+  String get settingsMaintenanceCheckSubtitle => '保存データの修正を確認します。';
+
+  @override
+  String get settingsMaintenanceUpdateTitle => 'キャラクターを更新';
+
+  @override
+  String get settingsMaintenanceWorking => '更新を確認中...';
+
+  @override
+  String get settingsMaintenanceNoUpdates => 'すべてのキャラクターは最新です。';
+
+  @override
+  String get settingsMaintenanceError => 'キャラクターを更新できませんでした。';
+
+  @override
+  String get settingsMaintenanceConfirmTitle => 'キャラクターを更新しますか？';
+
+  @override
+  String get settingsMaintenanceCompleteTitle => '更新が完了しました';
+
+  @override
+  String settingsMaintenanceUpdatesFound(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count人のキャラクターに更新が必要です。',
+      one: '1人のキャラクターに更新が必要です。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceConfirmBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count人のキャラクターに更新が必要です。続行する前にバックアップをエクスポートすることをおすすめします。',
+      one: '1人のキャラクターに更新が必要です。続行する前にバックアップをエクスポートすることをおすすめします。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportChecked(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count人のキャラクターを確認しました。',
+      one: '1人のキャラクターを確認しました。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportUpdated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count人のキャラクターを更新しました。',
+      one: '1人のキャラクターを更新しました。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportDataChanged(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count人のキャラクターのデータを修正しました。',
+      one: '1人のキャラクターのデータを修正しました。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceReportVersionUpdated => 'データバージョンを更新しました。';
+
+  @override
+  String settingsMaintenanceChangeEquipmentWeights(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count個のアイテムの重量を修正しました。',
+      one: '1個のアイテムの重量を修正しました。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceChangeGeneric(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count件の変更を適用しました。',
+      one: '1件の変更を適用しました。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get incomingBackupPrompt => 'ファイルからバックアップをインポートしますか？';
+
+  @override
+  String incomingBackupSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'バックアップから$count人のキャラクターをインポートしました。',
+      one: 'バックアップから1人のキャラクターをインポートしました。',
+    );
+    return '$_temp0';
+  }
 }

@@ -2118,4 +2118,175 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get settingsChooseUnitSystem => 'Escolher Sistema de Unidades';
+
+  @override
+  String get settingsBackupSection => 'Backup';
+
+  @override
+  String get settingsBackupExportTitle => 'Exportar backup';
+
+  @override
+  String get settingsBackupExportSubtitle =>
+      'Salva todos os personagens em um arquivo de backup.';
+
+  @override
+  String get settingsBackupExporting => 'Criando backup...';
+
+  @override
+  String get settingsBackupExportSuccess => 'Backup exportado.';
+
+  @override
+  String get settingsBackupExportError => 'Não foi possível exportar o backup.';
+
+  @override
+  String get settingsBackupImportTitle => 'Importar backup';
+
+  @override
+  String get settingsBackupImportSubtitle =>
+      'Restaura personagens de um arquivo .dndbackup.';
+
+  @override
+  String get settingsBackupImporting => 'Importando backup...';
+
+  @override
+  String get settingsBackupImportError => 'Não foi possível importar o backup.';
+
+  @override
+  String settingsBackupImportSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count personagens importados do backup.',
+      one: '1 personagem importado do backup.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceSection => 'Manutenção';
+
+  @override
+  String get settingsMaintenanceCheckTitle =>
+      'Verificar atualizações de personagens';
+
+  @override
+  String get settingsMaintenanceCheckSubtitle =>
+      'Procura correções de dados salvos.';
+
+  @override
+  String get settingsMaintenanceUpdateTitle => 'Atualizar personagens';
+
+  @override
+  String get settingsMaintenanceWorking => 'Verificando atualizações...';
+
+  @override
+  String get settingsMaintenanceNoUpdates =>
+      'Todos os personagens já estão atualizados.';
+
+  @override
+  String get settingsMaintenanceError =>
+      'Não foi possível atualizar os personagens.';
+
+  @override
+  String get settingsMaintenanceConfirmTitle => 'Atualizar personagens?';
+
+  @override
+  String get settingsMaintenanceCompleteTitle => 'Atualização concluída';
+
+  @override
+  String settingsMaintenanceUpdatesFound(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count personagens precisam de atualização.',
+      one: '1 personagem precisa de atualização.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceConfirmBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          '$count personagens precisam de atualização. Recomendamos exportar um backup antes de continuar.',
+      one:
+          '1 personagem precisa de atualização. Recomendamos exportar um backup antes de continuar.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportChecked(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count personagens verificados.',
+      one: '1 personagem verificado.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportUpdated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count personagens atualizados.',
+      one: '1 personagem atualizado.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportDataChanged(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count personagens tiveram dados corrigidos.',
+      one: '1 personagem teve dados corrigidos.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceReportVersionUpdated =>
+      'Versão de dados atualizada.';
+
+  @override
+  String settingsMaintenanceChangeEquipmentWeights(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Peso de $count itens corrigido.',
+      one: 'Peso de 1 item corrigido.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceChangeGeneric(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count alterações aplicadas.',
+      one: '1 alteração aplicada.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get incomingBackupPrompt => 'Importar backup do arquivo?';
+
+  @override
+  String incomingBackupSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count personagens importados do backup.',
+      one: '1 personagem importado do backup.',
+    );
+    return '$_temp0';
+  }
 }

@@ -2087,4 +2087,166 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsChooseUnitSystem => '단위 시스템 선택';
+
+  @override
+  String get settingsBackupSection => '백업';
+
+  @override
+  String get settingsBackupExportTitle => '백업 내보내기';
+
+  @override
+  String get settingsBackupExportSubtitle => '모든 캐릭터를 백업 파일로 저장합니다.';
+
+  @override
+  String get settingsBackupExporting => '백업을 만드는 중...';
+
+  @override
+  String get settingsBackupExportSuccess => '백업을 내보냈습니다.';
+
+  @override
+  String get settingsBackupExportError => '백업을 내보낼 수 없습니다.';
+
+  @override
+  String get settingsBackupImportTitle => '백업 가져오기';
+
+  @override
+  String get settingsBackupImportSubtitle => '.dndbackup 파일에서 캐릭터를 복원합니다.';
+
+  @override
+  String get settingsBackupImporting => '백업을 가져오는 중...';
+
+  @override
+  String get settingsBackupImportError => '백업을 가져올 수 없습니다.';
+
+  @override
+  String settingsBackupImportSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '백업에서 캐릭터 $count명을 가져왔습니다.',
+      one: '백업에서 캐릭터 1명을 가져왔습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceSection => '유지 관리';
+
+  @override
+  String get settingsMaintenanceCheckTitle => '캐릭터 업데이트 확인';
+
+  @override
+  String get settingsMaintenanceCheckSubtitle => '저장된 데이터 수정 사항을 찾습니다.';
+
+  @override
+  String get settingsMaintenanceUpdateTitle => '캐릭터 업데이트';
+
+  @override
+  String get settingsMaintenanceWorking => '업데이트 확인 중...';
+
+  @override
+  String get settingsMaintenanceNoUpdates => '모든 캐릭터가 이미 최신 상태입니다.';
+
+  @override
+  String get settingsMaintenanceError => '캐릭터를 업데이트할 수 없습니다.';
+
+  @override
+  String get settingsMaintenanceConfirmTitle => '캐릭터를 업데이트할까요?';
+
+  @override
+  String get settingsMaintenanceCompleteTitle => '업데이트 완료';
+
+  @override
+  String settingsMaintenanceUpdatesFound(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '캐릭터 $count명에 업데이트가 필요합니다.',
+      one: '캐릭터 1명에 업데이트가 필요합니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceConfirmBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '캐릭터 $count명에 업데이트가 필요합니다. 계속하기 전에 백업을 내보내는 것을 권장합니다.',
+      one: '캐릭터 1명에 업데이트가 필요합니다. 계속하기 전에 백업을 내보내는 것을 권장합니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportChecked(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '캐릭터 $count명을 확인했습니다.',
+      one: '캐릭터 1명을 확인했습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportUpdated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '캐릭터 $count명을 업데이트했습니다.',
+      one: '캐릭터 1명을 업데이트했습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportDataChanged(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '캐릭터 $count명의 데이터를 수정했습니다.',
+      one: '캐릭터 1명의 데이터를 수정했습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceReportVersionUpdated => '데이터 버전을 업데이트했습니다.';
+
+  @override
+  String settingsMaintenanceChangeEquipmentWeights(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '아이템 $count개의 무게를 수정했습니다.',
+      one: '아이템 1개의 무게를 수정했습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceChangeGeneric(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '변경 사항 $count개를 적용했습니다.',
+      one: '변경 사항 1개를 적용했습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get incomingBackupPrompt => '파일에서 백업을 가져올까요?';
+
+  @override
+  String incomingBackupSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '백업에서 캐릭터 $count명을 가져왔습니다.',
+      one: '백업에서 캐릭터 1명을 가져왔습니다.',
+    );
+    return '$_temp0';
+  }
 }

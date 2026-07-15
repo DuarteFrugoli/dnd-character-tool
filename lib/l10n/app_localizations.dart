@@ -3935,6 +3935,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose Unit System'**
   String get settingsChooseUnitSystem;
+
+  /// Settings section header for backup actions.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup'**
+  String get settingsBackupSection;
+
+  /// Settings tile title for exporting a backup file.
+  ///
+  /// In en, this message translates to:
+  /// **'Export backup'**
+  String get settingsBackupExportTitle;
+
+  /// Settings tile subtitle for exporting a backup file.
+  ///
+  /// In en, this message translates to:
+  /// **'Save all characters in a backup file.'**
+  String get settingsBackupExportSubtitle;
+
+  /// Progress text shown while exporting a backup.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating backup...'**
+  String get settingsBackupExporting;
+
+  /// Snackbar shown after a backup is exported.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup exported.'**
+  String get settingsBackupExportSuccess;
+
+  /// Snackbar shown when backup export fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not export backup.'**
+  String get settingsBackupExportError;
+
+  /// Settings tile title for importing a backup file.
+  ///
+  /// In en, this message translates to:
+  /// **'Import backup'**
+  String get settingsBackupImportTitle;
+
+  /// Settings tile subtitle for importing a backup file.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore characters from a .dndbackup file.'**
+  String get settingsBackupImportSubtitle;
+
+  /// Progress text shown while importing a backup.
+  ///
+  /// In en, this message translates to:
+  /// **'Importing backup...'**
+  String get settingsBackupImporting;
+
+  /// Snackbar shown when backup import fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not import backup.'**
+  String get settingsBackupImportError;
+
+  /// Snackbar shown after backup import completes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 character imported from backup.} other{{count} characters imported from backup.}}'**
+  String settingsBackupImportSuccess(int count);
+
+  /// Settings section header for character maintenance actions.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance'**
+  String get settingsMaintenanceSection;
+
+  /// Settings tile title before checking character migrations.
+  ///
+  /// In en, this message translates to:
+  /// **'Check character updates'**
+  String get settingsMaintenanceCheckTitle;
+
+  /// Settings tile subtitle before checking character migrations.
+  ///
+  /// In en, this message translates to:
+  /// **'Look for saved data fixes.'**
+  String get settingsMaintenanceCheckSubtitle;
+
+  /// Settings tile title when character updates are available.
+  ///
+  /// In en, this message translates to:
+  /// **'Update characters'**
+  String get settingsMaintenanceUpdateTitle;
+
+  /// Progress text shown while checking or applying character migrations.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking updates...'**
+  String get settingsMaintenanceWorking;
+
+  /// Message shown when no character migrations are needed.
+  ///
+  /// In en, this message translates to:
+  /// **'All characters are already up to date.'**
+  String get settingsMaintenanceNoUpdates;
+
+  /// Message shown when character migration check or apply fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not update characters.'**
+  String get settingsMaintenanceError;
+
+  /// Dialog title before applying character migrations.
+  ///
+  /// In en, this message translates to:
+  /// **'Update characters?'**
+  String get settingsMaintenanceConfirmTitle;
+
+  /// Dialog title after applying character migrations.
+  ///
+  /// In en, this message translates to:
+  /// **'Update complete'**
+  String get settingsMaintenanceCompleteTitle;
+
+  /// Message shown when character migrations are available.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 character needs an update.} other{{count} characters need updates.}}'**
+  String settingsMaintenanceUpdatesFound(int count);
+
+  /// Dialog body before applying character migrations.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 character needs an update. We recommend exporting a backup before continuing.} other{{count} characters need updates. We recommend exporting a backup before continuing.}}'**
+  String settingsMaintenanceConfirmBody(int count);
+
+  /// Migration report line for checked characters.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 character checked.} other{{count} characters checked.}}'**
+  String settingsMaintenanceReportChecked(int count);
+
+  /// Migration report line for updated characters.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 character updated.} other{{count} characters updated.}}'**
+  String settingsMaintenanceReportUpdated(int count);
+
+  /// Migration report line for characters with data changes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 character had data fixes.} other{{count} characters had data fixes.}}'**
+  String settingsMaintenanceReportDataChanged(int count);
+
+  /// Migration report line when only the saved data version changed.
+  ///
+  /// In en, this message translates to:
+  /// **'Data version updated.'**
+  String get settingsMaintenanceReportVersionUpdated;
+
+  /// Migration report change for backfilled equipment weights.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Fixed the weight of 1 item.} other{Fixed the weight of {count} items.}}'**
+  String settingsMaintenanceChangeEquipmentWeights(int count);
+
+  /// Migration report fallback change text.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 change applied.} other{{count} changes applied.}}'**
+  String settingsMaintenanceChangeGeneric(int count);
+
+  /// Dialog title when the app receives a backup file from Android share/open with.
+  ///
+  /// In en, this message translates to:
+  /// **'Import backup from file?'**
+  String get incomingBackupPrompt;
+
+  /// Snackbar shown after importing a backup from an incoming file.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 character imported from backup.} other{{count} characters imported from backup.}}'**
+  String incomingBackupSuccess(int count);
 }
 
 class _AppLocalizationsDelegate

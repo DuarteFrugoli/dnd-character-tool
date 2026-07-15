@@ -36,24 +36,6 @@ bool _looksLikeBackupFile(String fileJson) {
   }
 }
 
-String _incomingBackupPrompt(BuildContext context) {
-  final language = Localizations.localeOf(context).languageCode;
-  return language == 'pt'
-      ? 'Importar backup do arquivo?'
-      : 'Import backup from file?';
-}
-
-String _incomingBackupSuccess(BuildContext context, int count) {
-  final language = Localizations.localeOf(context).languageCode;
-  if (language == 'pt') {
-    if (count == 1) return '1 personagem importado do backup.';
-    return '$count personagens importados do backup.';
-  }
-
-  if (count == 1) return '1 character imported from backup.';
-  return '$count characters imported from backup.';
-}
-
 class CharacterListScreen extends ConsumerStatefulWidget {
   const CharacterListScreen({super.key});
 
@@ -87,7 +69,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(
-          isBackup ? _incomingBackupPrompt(ctx) : l10n.importFileIncoming,
+          isBackup ? l10n.incomingBackupPrompt : l10n.importFileIncoming,
         ),
         actions: [
           TextButton(
@@ -118,7 +100,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(_incomingBackupSuccess(context, imported.length)),
+            content: Text(l10n.incomingBackupSuccess(imported.length)),
             backgroundColor: Theme.of(context).colorScheme.primary,
           ),
         );

@@ -2077,4 +2077,166 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsChooseUnitSystem => '选择单位制';
+
+  @override
+  String get settingsBackupSection => '备份';
+
+  @override
+  String get settingsBackupExportTitle => '导出备份';
+
+  @override
+  String get settingsBackupExportSubtitle => '将所有角色保存到备份文件。';
+
+  @override
+  String get settingsBackupExporting => '正在创建备份...';
+
+  @override
+  String get settingsBackupExportSuccess => '备份已导出。';
+
+  @override
+  String get settingsBackupExportError => '无法导出备份。';
+
+  @override
+  String get settingsBackupImportTitle => '导入备份';
+
+  @override
+  String get settingsBackupImportSubtitle => '从 .dndbackup 文件恢复角色。';
+
+  @override
+  String get settingsBackupImporting => '正在导入备份...';
+
+  @override
+  String get settingsBackupImportError => '无法导入备份。';
+
+  @override
+  String settingsBackupImportSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已从备份导入 $count 个角色。',
+      one: '已从备份导入 1 个角色。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceSection => '维护';
+
+  @override
+  String get settingsMaintenanceCheckTitle => '检查角色更新';
+
+  @override
+  String get settingsMaintenanceCheckSubtitle => '查找已保存数据的修正。';
+
+  @override
+  String get settingsMaintenanceUpdateTitle => '更新角色';
+
+  @override
+  String get settingsMaintenanceWorking => '正在检查更新...';
+
+  @override
+  String get settingsMaintenanceNoUpdates => '所有角色都已是最新状态。';
+
+  @override
+  String get settingsMaintenanceError => '无法更新角色。';
+
+  @override
+  String get settingsMaintenanceConfirmTitle => '要更新角色吗？';
+
+  @override
+  String get settingsMaintenanceCompleteTitle => '更新完成';
+
+  @override
+  String settingsMaintenanceUpdatesFound(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个角色需要更新。',
+      one: '1 个角色需要更新。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceConfirmBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个角色需要更新。建议在继续前先导出备份。',
+      one: '1 个角色需要更新。建议在继续前先导出备份。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportChecked(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已检查 $count 个角色。',
+      one: '已检查 1 个角色。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportUpdated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已更新 $count 个角色。',
+      one: '已更新 1 个角色。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceReportDataChanged(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已修正 $count 个角色的数据。',
+      one: '已修正 1 个角色的数据。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsMaintenanceReportVersionUpdated => '数据版本已更新。';
+
+  @override
+  String settingsMaintenanceChangeEquipmentWeights(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已修正 $count 个物品的重量。',
+      one: '已修正 1 个物品的重量。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceChangeGeneric(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已应用 $count 项更改。',
+      one: '已应用 1 项更改。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get incomingBackupPrompt => '要从文件导入备份吗？';
+
+  @override
+  String incomingBackupSuccess(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已从备份导入 $count 个角色。',
+      one: '已从备份导入 1 个角色。',
+    );
+    return '$_temp0';
+  }
 }

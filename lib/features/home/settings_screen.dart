@@ -152,7 +152,7 @@ class SettingsScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Text(
-              _backupLabels(context).section,
+              AppLocalizations.of(context)!.settingsBackupSection,
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
@@ -167,7 +167,7 @@ class SettingsScreen extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Text(
-              _maintenanceLabels(context).section,
+              AppLocalizations.of(context)!.settingsMaintenanceSection,
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
@@ -194,7 +194,7 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
   Future<void> _exportBackup() async {
     if (_exporting) return;
 
-    final labels = _backupLabels(context);
+    final l10n = AppLocalizations.of(context)!;
     setState(() => _exporting = true);
 
     try {
@@ -205,13 +205,13 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(labels.success)),
+        SnackBar(content: Text(l10n.settingsBackupExportSuccess)),
       );
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(labels.error)),
+        SnackBar(content: Text(l10n.settingsBackupExportError)),
       );
     } finally {
       if (mounted) {
@@ -222,7 +222,7 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
 
   @override
   Widget build(BuildContext context) {
-    final labels = _backupLabels(context);
+    final l10n = AppLocalizations.of(context)!;
 
     return ListTile(
       enabled: !_exporting,
@@ -232,8 +232,12 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
               child: CircularProgressIndicator(strokeWidth: 2),
             )
           : const Icon(Icons.backup_outlined),
-      title: Text(labels.title),
-      subtitle: Text(_exporting ? labels.exporting : labels.subtitle),
+      title: Text(l10n.settingsBackupExportTitle),
+      subtitle: Text(
+        _exporting
+            ? l10n.settingsBackupExporting
+            : l10n.settingsBackupExportSubtitle,
+      ),
       trailing: _exporting ? null : const Icon(Icons.file_download_outlined),
       onTap: _exporting ? null : _exportBackup,
     );
@@ -253,7 +257,7 @@ class _ImportBackupTileState extends ConsumerState<_ImportBackupTile> {
   Future<void> _importBackup() async {
     if (_importing) return;
 
-    final labels = _backupLabels(context);
+    final l10n = AppLocalizations.of(context)!;
     setState(() => _importing = true);
 
     try {
@@ -283,13 +287,15 @@ class _ImportBackupTileState extends ConsumerState<_ImportBackupTile> {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(_backupImportSuccess(context, imported.length))),
+        SnackBar(
+          content: Text(l10n.settingsBackupImportSuccess(imported.length)),
+        ),
       );
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(labels.importError)),
+        SnackBar(content: Text(l10n.settingsBackupImportError)),
       );
     } finally {
       if (mounted) {
@@ -300,7 +306,7 @@ class _ImportBackupTileState extends ConsumerState<_ImportBackupTile> {
 
   @override
   Widget build(BuildContext context) {
-    final labels = _backupLabels(context);
+    final l10n = AppLocalizations.of(context)!;
 
     return ListTile(
       enabled: !_importing,
@@ -310,8 +316,12 @@ class _ImportBackupTileState extends ConsumerState<_ImportBackupTile> {
               child: CircularProgressIndicator(strokeWidth: 2),
             )
           : const Icon(Icons.restore_page_outlined),
-      title: Text(labels.importTitle),
-      subtitle: Text(_importing ? labels.importing : labels.importSubtitle),
+      title: Text(l10n.settingsBackupImportTitle),
+      subtitle: Text(
+        _importing
+            ? l10n.settingsBackupImporting
+            : l10n.settingsBackupImportSubtitle,
+      ),
       trailing: _importing ? null : const Icon(Icons.file_upload_outlined),
       onTap: _importing ? null : _importBackup,
     );
@@ -341,14 +351,14 @@ class _CharacterMaintenanceTileState
       if (!mounted) return;
       setState(() => _preview = report);
 
-      final labels = _maintenanceLabels(context);
+      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
             report.hasUpdates
-                ? _maintenanceUpdatesFound(context, report.outdatedCount)
-                : labels.noUpdates,
+                ? l10n.settingsMaintenanceUpdatesFound(report.outdatedCount)
+                : l10n.settingsMaintenanceNoUpdates,
           ),
         ),
       );
@@ -356,7 +366,9 @@ class _CharacterMaintenanceTileState
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(_maintenanceLabels(context).error)),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.settingsMaintenanceError),
+        ),
       );
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -375,7 +387,10 @@ class _CharacterMaintenanceTileState
         if (!mounted) return;
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(_maintenanceLabels(context).error)),
+          SnackBar(
+            content:
+                Text(AppLocalizations.of(context)!.settingsMaintenanceError),
+          ),
         );
         return;
       } finally {
@@ -392,12 +407,11 @@ class _CharacterMaintenanceTileState
 
     final outdatedCount = preview.outdatedCount;
     final l10n = AppLocalizations.of(context)!;
-    final labels = _maintenanceLabels(context);
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(labels.confirmTitle),
-        content: Text(_maintenanceConfirmBody(ctx, outdatedCount)),
+        title: Text(l10n.settingsMaintenanceConfirmTitle),
+        content: Text(l10n.settingsMaintenanceConfirmBody(outdatedCount)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
@@ -423,7 +437,7 @@ class _CharacterMaintenanceTileState
       await showDialog<void>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text(labels.completeTitle),
+          title: Text(l10n.settingsMaintenanceCompleteTitle),
           content: SingleChildScrollView(
             child: Text(_formatMaintenanceReport(ctx, report)),
           ),
@@ -439,7 +453,7 @@ class _CharacterMaintenanceTileState
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(labels.error)),
+        SnackBar(content: Text(l10n.settingsMaintenanceError)),
       );
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -448,7 +462,7 @@ class _CharacterMaintenanceTileState
 
   @override
   Widget build(BuildContext context) {
-    final labels = _maintenanceLabels(context);
+    final l10n = AppLocalizations.of(context)!;
     final preview = _preview;
     final hasUpdates = preview?.hasUpdates == true;
 
@@ -464,18 +478,20 @@ class _CharacterMaintenanceTileState
                   ? Icons.system_update_alt_outlined
                   : Icons.manage_history_outlined,
             ),
-      title: Text(hasUpdates ? labels.updateTitle : labels.checkTitle),
+      title: Text(
+        hasUpdates
+            ? l10n.settingsMaintenanceUpdateTitle
+            : l10n.settingsMaintenanceCheckTitle,
+      ),
       subtitle: Text(
         _busy
-            ? labels.working
+            ? l10n.settingsMaintenanceWorking
             : preview == null
-                ? labels.checkSubtitle
+                ? l10n.settingsMaintenanceCheckSubtitle
                 : preview.hasUpdates
-                    ? _maintenanceUpdatesFound(
-                        context,
-                        preview.outdatedCount,
-                      )
-                    : labels.noUpdates,
+                    ? l10n
+                        .settingsMaintenanceUpdatesFound(preview.outdatedCount)
+                    : l10n.settingsMaintenanceNoUpdates,
       ),
       trailing: _busy
           ? null
@@ -489,147 +505,25 @@ class _CharacterMaintenanceTileState
   }
 }
 
-({
-  String section,
-  String title,
-  String subtitle,
-  String exporting,
-  String success,
-  String error,
-  String importTitle,
-  String importSubtitle,
-  String importing,
-  String importError,
-}) _backupLabels(BuildContext context) {
-  final language = Localizations.localeOf(context).languageCode;
-  if (language == 'pt') {
-    return (
-      section: 'Backup',
-      title: 'Exportar backup',
-      subtitle: 'Salva todos os personagens em um arquivo de backup.',
-      exporting: 'Criando backup...',
-      success: 'Backup exportado.',
-      error: 'Nao foi possivel exportar o backup.',
-      importTitle: 'Importar backup',
-      importSubtitle: 'Restaura personagens de um arquivo .dndbackup.',
-      importing: 'Importando backup...',
-      importError: 'Nao foi possivel importar o backup.',
-    );
-  }
-
-  return (
-    section: 'Backup',
-    title: 'Export backup',
-    subtitle: 'Save all characters in a backup file.',
-    exporting: 'Creating backup...',
-    success: 'Backup exported.',
-    error: 'Could not export backup.',
-    importTitle: 'Import backup',
-    importSubtitle: 'Restore characters from a .dndbackup file.',
-    importing: 'Importing backup...',
-    importError: 'Could not import backup.',
-  );
-}
-
-String _backupImportSuccess(BuildContext context, int count) {
-  final language = Localizations.localeOf(context).languageCode;
-  if (language == 'pt') {
-    if (count == 1) return '1 personagem importado do backup.';
-    return '$count personagens importados do backup.';
-  }
-
-  if (count == 1) return '1 character imported from backup.';
-  return '$count characters imported from backup.';
-}
-
-({
-  String section,
-  String checkTitle,
-  String checkSubtitle,
-  String updateTitle,
-  String working,
-  String noUpdates,
-  String error,
-  String confirmTitle,
-  String completeTitle,
-}) _maintenanceLabels(BuildContext context) {
-  final language = Localizations.localeOf(context).languageCode;
-  if (language == 'pt') {
-    return (
-      section: 'Manutencao',
-      checkTitle: 'Verificar atualizacoes de personagens',
-      checkSubtitle: 'Procura correcoes de dados salvos.',
-      updateTitle: 'Atualizar personagens',
-      working: 'Verificando atualizacoes...',
-      noUpdates: 'Todos os personagens ja estao atualizados.',
-      error: 'Nao foi possivel atualizar os personagens.',
-      confirmTitle: 'Atualizar personagens?',
-      completeTitle: 'Atualizacao concluida',
-    );
-  }
-
-  return (
-    section: 'Maintenance',
-    checkTitle: 'Check character updates',
-    checkSubtitle: 'Look for saved data fixes.',
-    updateTitle: 'Update characters',
-    working: 'Checking updates...',
-    noUpdates: 'All characters are already up to date.',
-    error: 'Could not update characters.',
-    confirmTitle: 'Update characters?',
-    completeTitle: 'Update complete',
-  );
-}
-
-String _maintenanceUpdatesFound(BuildContext context, int count) {
-  final language = Localizations.localeOf(context).languageCode;
-  if (language == 'pt') {
-    if (count == 1) return '1 personagem precisa de atualizacao.';
-    return '$count personagens precisam de atualizacao.';
-  }
-
-  if (count == 1) return '1 character needs an update.';
-  return '$count characters need updates.';
-}
-
-String _maintenanceConfirmBody(BuildContext context, int count) {
-  final language = Localizations.localeOf(context).languageCode;
-  if (language == 'pt') {
-    return '${_maintenanceUpdatesFound(context, count)} '
-        'Recomendamos exportar um backup antes de continuar.';
-  }
-
-  return '${_maintenanceUpdatesFound(context, count)} '
-      'We recommend exporting a backup before continuing.';
-}
-
 String _formatMaintenanceReport(
   BuildContext context,
   CharacterMigrationBatchReport report,
 ) {
-  final language = Localizations.localeOf(context).languageCode;
+  final l10n = AppLocalizations.of(context)!;
   final buffer = StringBuffer();
 
-  if (language == 'pt') {
-    buffer.writeln('${report.checkedCount} personagens verificados.');
-    buffer.writeln('${report.outdatedCount} personagens atualizados.');
-    buffer.writeln('${report.dataChangedCount} personagens com dados corrigidos.');
-  } else {
-    buffer.writeln('${report.checkedCount} characters checked.');
-    buffer.writeln('${report.outdatedCount} characters updated.');
-    buffer.writeln('${report.dataChangedCount} characters had data fixes.');
-  }
+  buffer.writeln(l10n.settingsMaintenanceReportChecked(report.checkedCount));
+  buffer.writeln(l10n.settingsMaintenanceReportUpdated(report.outdatedCount));
+  buffer.writeln(
+    l10n.settingsMaintenanceReportDataChanged(report.dataChangedCount),
+  );
 
   final updated = report.characters.where((entry) => entry.needsMigration);
   for (final entry in updated) {
     buffer.writeln();
     buffer.writeln(entry.original.name);
     if (entry.changes.isEmpty) {
-      buffer.writeln(
-        language == 'pt'
-            ? '- Versao de dados atualizada.'
-            : '- Data version updated.',
-      );
+      buffer.writeln('- ${l10n.settingsMaintenanceReportVersionUpdated}');
       continue;
     }
 
@@ -645,21 +539,12 @@ String _formatMaintenanceChange(
   BuildContext context,
   CharacterMigrationChange change,
 ) {
-  final language = Localizations.localeOf(context).languageCode;
+  final l10n = AppLocalizations.of(context)!;
   if (change.code == 'equipment_weights_backfilled') {
-    if (language == 'pt') {
-      if (change.count == 1) return 'Peso de 1 item corrigido.';
-      return 'Peso de ${change.count} itens corrigido.';
-    }
-
-    if (change.count == 1) return 'Fixed the weight of 1 item.';
-    return 'Fixed the weight of ${change.count} items.';
+    return l10n.settingsMaintenanceChangeEquipmentWeights(change.count);
   }
 
-  if (language == 'pt') {
-    return '${change.count} alteracoes aplicadas.';
-  }
-  return '${change.count} changes applied.';
+  return l10n.settingsMaintenanceChangeGeneric(change.count);
 }
 
 class _LanguageTile extends ConsumerWidget {

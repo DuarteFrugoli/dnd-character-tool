@@ -187,7 +187,7 @@
   },
   "Burglar's Pack": {
     "name": "Pack du cambrioleur",
-    "description": "Un sac à dos avec des roulements à billes, de la ficelle, une cloche, des bougies, un pied-de-biche, un marteau, des pitons, une lanterne à capuchon, de l'huile, des rations, une poudrière, une outre d'eau et une corde de chanvre."
+    "description": "Un sac à dos avec des roulements à billes, de la ficelle, une cloche, des bougies, un pied-de-biche, un marteau, des pitons, une lanterne à capuchon, de l'huile, des rations, une poudrière, une outre et une corde de chanvre."
   },
   "Diplomat's Pack": {
     "name": "Pack du Diplomate",
@@ -269,6 +269,10 @@
     "name": "Cas, carte ou défilement",
     "description": "Un étui cylindrique pour cartes et parchemins."
   },
+  "Censer": {
+    "name": "Encensoir",
+    "description": "Un récipient utilisé pour brûler de l'encens."
+  },
   "Chain (10 feet)": {
     "name": "Chaîne (10 pieds)",
     "description": "A 10 points de vie. Peut être éclaté avec un test de Force DD 20."
@@ -349,6 +353,14 @@
     "name": "Piège de chasse",
     "description": "Lorsqu'elle est activée, une créature de taille G ou plus petite qui marche sur le piège doit effectuer un jet de Dextérité DD 13 ou subir 1d4 dégâts perforants et arrêter de bouger."
   },
+  "Alms Box": {
+    "name": "Boîte d'aumône",
+    "description": "Une petite boîte pour recueillir l'aumône."
+  },
+  "Incense (block)": {
+    "name": "Encens (bloc)",
+    "description": "Un bloc d'encens parfumé."
+  },
   "Ink (1 ounce bottle)": {
     "name": "Encre (bouteille de 1 once)",
     "description": "Encre à écrire."
@@ -383,7 +395,7 @@
   },
   "Magnifying Glass": {
     "name": "Loupe",
-    "description": "Peut être utilisé pour allumer un feu en présence de lumière du soleil. Accorde un avantage aux tests de Perception pour examiner les moindres détails."
+    "description": "Peut être utilisé pour allumer un feu en présence de soleil. Accorde un avantage aux tests de Perception pour examiner les moindres détails."
   },
   "Manacles": {
     "name": "Fers",
@@ -407,7 +419,7 @@
   },
   "Parchment (one sheet)": {
     "name": "Parchemin (une feuille)",
-    "description": "Surface d'écriture en peau de bête."
+    "description": "Surface d'écriture en peau d'animal."
   },
   "Perfume (vial)": {
     "name": "Parfum (flacon)",
@@ -461,6 +473,10 @@
     "name": "Sac",
     "description": "Peut contenir 1 pied cube/30 lb."
   },
+  "Sand (small bag)": {
+    "name": "Sable (petit sac)",
+    "description": "Un petit sac de sable, utile pour sécher l'encre."
+  },
   "Scale, merchant's": {
     "name": "Balance de marchand",
     "description": "Une petite balance avec des plateaux pour peser les pièces de monnaie et les pierres précieuses."
@@ -497,6 +513,10 @@
     "name": "Longue-vue",
     "description": "Les objets observés à travers la lunette sont agrandis jusqu'à deux fois leur taille."
   },
+  "String (10 feet)": {
+    "name": "Corde (10 pieds)",
+    "description": "Une longueur de ficelle de 10 pieds."
+  },
   "Tent, two-person": {
     "name": "Tente, deux personnes",
     "description": "Un abri en toile simple et portable."
@@ -512,6 +532,10 @@
   "Vial": {
     "name": "Ampoule",
     "description": "Contient 4 onces de liquide."
+  },
+  "Vestments": {
+    "name": "Vêtements",
+    "description": "Vêtements religieux de cérémonie."
   },
   "Waterskin": {
     "name": "Outre",

@@ -269,6 +269,10 @@
     "name": "案例、地图或卷轴",
     "description": "用于放置地图和卷轴的圆柱形盒子。"
   },
+  "Censer": {
+    "name": "香炉",
+    "description": "用来烧香的器皿。"
+  },
   "Chain (10 feet)": {
     "name": "链条（10英尺）",
     "description": "拥有 10 点生命值。通过 DC 20 强度检定可以爆发。"
@@ -348,6 +352,14 @@
   "Hunting Trap": {
     "name": "狩猎陷阱",
     "description": "设置后，踩到陷阱的大型或小型生物必须进行 DC 13 敏捷豁免，否则会受到 1d4 穿刺伤害并停止移动。"
+  },
+  "Alms Box": {
+    "name": "施舍箱",
+    "description": "一个用来收集施舍的小盒子。"
+  },
+  "Incense (block)": {
+    "name": "香（块）",
+    "description": "一块香。"
   },
   "Ink (1 ounce bottle)": {
     "name": "墨水（1盎司瓶）",
@@ -461,6 +473,10 @@
     "name": "解雇",
     "description": "可容纳 1 立方英尺/30 磅。"
   },
+  "Sand (small bag)": {
+    "name": "沙子（小袋）",
+    "description": "一小袋沙子，可用于干燥墨水。"
+  },
   "Scale, merchant's": {
     "name": "规模、商家",
     "description": "带有平底锅的小天平，用于称量硬币和宝石。"
@@ -497,6 +513,10 @@
     "name": "望远镜",
     "description": "通过望远镜看到的物体被放大到两倍大小。"
   },
+  "String (10 feet)": {
+    "name": "绳子（10 英尺）",
+    "description": "10 英尺长的绳子。"
+  },
   "Tent, two-person": {
     "name": "帐篷，两人",
     "description": "一个简单便携的帆布庇护所。"
@@ -512,6 +532,10 @@
   "Vial": {
     "name": "小瓶",
     "description": "可容纳 4 盎司液体。"
+  },
+  "Vestments": {
+    "name": "法衣",
+    "description": "宗教仪式服装。"
   },
   "Waterskin": {
     "name": "水袋",

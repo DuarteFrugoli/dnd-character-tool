@@ -269,6 +269,10 @@
     "name": "Caso, mapa o pergamino",
     "description": "Un estuche cilíndrico para mapas y pergaminos."
   },
+  "Censer": {
+    "name": "Incensario",
+    "description": "Vasija utilizada para quemar incienso."
+  },
   "Chain (10 feet)": {
     "name": "Cadena (10 pies)",
     "description": "Tiene 10 puntos de vida. Se puede explotar con una prueba de Fuerza CD 20."
@@ -348,6 +352,14 @@
   "Hunting Trap": {
     "name": "Trampa de caza",
     "description": "Cuando está colocada, una criatura Grande o más pequeña que pise la trampa debe realizar una salvación de Destreza CD 13 o recibir 1d4 de daño perforante y dejar de moverse."
+  },
+  "Alms Box": {
+    "name": "Caja de limosna",
+    "description": "Una pequeña caja para recoger limosnas."
+  },
+  "Incense (block)": {
+    "name": "Incienso (bloque)",
+    "description": "Un bloque de incienso fragante."
   },
   "Ink (1 ounce bottle)": {
     "name": "Tinta (botella de 1 onza)",
@@ -461,6 +473,10 @@
     "name": "Bolsa",
     "description": "Capacidad para 1 pie cúbico/30 libras."
   },
+  "Sand (small bag)": {
+    "name": "Arena (bolsa pequeña)",
+    "description": "Una pequeña bolsa de arena, útil para secar la tinta."
+  },
   "Scale, merchant's": {
     "name": "Báscula de comerciante",
     "description": "Una pequeña balanza con platillos para pesar monedas y gemas."
@@ -497,6 +513,10 @@
     "name": "Catalejo",
     "description": "Los objetos vistos a través del catalejo se amplían al doble de su tamaño."
   },
+  "String (10 feet)": {
+    "name": "Cuerda (10 pies)",
+    "description": "Una cuerda de 10 pies de longitud."
+  },
   "Tent, two-person": {
     "name": "Tienda de campaña para dos personas",
     "description": "Un refugio de lona sencillo y portátil."
@@ -512,6 +532,10 @@
   "Vial": {
     "name": "Frasco",
     "description": "Tiene capacidad para 4 onzas de líquido."
+  },
+  "Vestments": {
+    "name": "Vestiduras",
+    "description": "Vestimenta religiosa ceremonial."
   },
   "Waterskin": {
     "name": "Odre",

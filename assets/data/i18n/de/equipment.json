@@ -117,7 +117,7 @@
     "name": "Leder"
   },
   "Studded Leather": {
-    "name": "Nietenbesetztes Leder"
+    "name": "Nietenleder"
   },
   "Hide": {
     "name": "Verstecken"
@@ -215,7 +215,7 @@
   },
   "Ball Bearings (bag of 1000)": {
     "name": "Kugellager (Beutel mit 1000 Stück)",
-    "description": "Streuen Sie als Aktion diese kleinen Metallkugeln. Kreaturen müssen einen Geschicklichkeitsrettungswurf von DC 10 bestehen, sonst fallen sie hin."
+    "description": "Streuen Sie als Aktion diese kleinen Metallkugeln. Den Kreaturen muss ein Geschicklichkeitsrettungswurf von DC 10 gelingen, sonst fallen sie hin."
   },
   "Barrel": {
     "name": "Fass",
@@ -268,6 +268,10 @@
   "Case, map or scroll": {
     "name": "Fall, Karte oder Schriftrolle",
     "description": "Ein zylindrischer Koffer für Karten und Schriftrollen."
+  },
+  "Censer": {
+    "name": "Räuchergefäß",
+    "description": "Ein Gefäß, das zum Verbrennen von Weihrauch verwendet wurde."
   },
   "Chain (10 feet)": {
     "name": "Kette (10 Fuß)",
@@ -349,6 +353,14 @@
     "name": "Jagdfalle",
     "description": "Wenn diese Option aktiviert ist, muss eine große oder kleinere Kreatur, die auf die Falle tritt, einen Geschicklichkeitswurf gegen SG 13 bestehen oder 1W4 Stichschaden erleiden und aufhören, sich zu bewegen."
   },
+  "Alms Box": {
+    "name": "Almosenbox",
+    "description": "Eine kleine Kiste zum Almosensammeln."
+  },
+  "Incense (block)": {
+    "name": "Weihrauch (Block)",
+    "description": "Ein Block duftenden Weihrauchs."
+  },
   "Ink (1 ounce bottle)": {
     "name": "Tinte (1-Unzen-Flasche)",
     "description": "Schreibtinte."
@@ -359,7 +371,7 @@
   },
   "Jug or Pitcher": {
     "name": "Krug oder Krug",
-    "description": "Fasst 1 Gallone Flüssigkeit."
+    "description": "Hält 1 Gallone Flüssigkeit."
   },
   "Ladder (10-foot)": {
     "name": "Leiter (10 Fuß)",
@@ -423,7 +435,7 @@
   },
   "Poison, basic (vial)": {
     "name": "Gift, basisch (Fläschchen)",
-    "description": "Apply to a slashing or piercing weapon. Einer getroffenen Kreatur muss ein Konstitutionswurf gegen SG 10 gelingen, sonst erleidet sie 1W4 Giftschaden. After 1 minute the poison loses potency."
+    "description": "Auf eine Hieb- oder Stichwaffe auftragen. Einer getroffenen Kreatur muss ein Konstitutionswurf gegen SG 10 gelingen, sonst erleidet sie 1W4 Giftschaden. Nach 1 Minute verliert das Gift seine Wirksamkeit."
   },
   "Pole (10-foot)": {
     "name": "Stange (10 Fuß)",
@@ -447,7 +459,7 @@
   },
   "Rations (1 day)": {
     "name": "Rationen (1 Tag)",
-    "description": "Trockene Lebensmittel, die für längere Reisen geeignet sind, darunter Trockenfrüchte, Trockenfrüchte, Trockenfrüchte und Nüsse."
+    "description": "Trockene Lebensmittel, die für längere Reisen geeignet sind, einschließlich Trockenfrüchte, Trockenfrüchte, Trockenfrüchte und Nüsse."
   },
   "Rope, hempen (50 feet)": {
     "name": "Seil, Hanf (50 Fuß)",
@@ -460,6 +472,10 @@
   "Sack": {
     "name": "Sack",
     "description": "Fasst 1 Kubikfuß / 30 Pfund."
+  },
+  "Sand (small bag)": {
+    "name": "Sand (kleiner Beutel)",
+    "description": "Ein kleiner Beutel Sand, nützlich zum Trocknen der Tinte."
   },
   "Scale, merchant's": {
     "name": "Waage, Händler",
@@ -497,6 +513,10 @@
     "name": "Fernglas",
     "description": "Durch das Fernglas betrachtete Objekte werden auf das Doppelte ihrer Größe vergrößert."
   },
+  "String (10 feet)": {
+    "name": "Schnur (10 Fuß)",
+    "description": "Eine 10 Fuß lange Schnur."
+  },
   "Tent, two-person": {
     "name": "Zelt, zwei Personen",
     "description": "Ein einfacher und tragbarer Zeltunterstand."
@@ -512,6 +532,10 @@
   "Vial": {
     "name": "Phiole",
     "description": "Hält 4 Unzen Flüssigkeit."
+  },
+  "Vestments": {
+    "name": "Gewänder",
+    "description": "Zeremonielle religiöse Kleidung."
   },
   "Waterskin": {
     "name": "Wasserschlauch",

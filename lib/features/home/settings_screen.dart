@@ -586,6 +586,12 @@ String _formatMaintenanceChange(
   if (change.code == 'equipment_weights_backfilled') {
     return l10n.settingsMaintenanceChangeEquipmentWeights(change.count);
   }
+  if (change.code == 'equipment_items_normalized') {
+    return l10n.settingsMaintenanceChangeEquipmentNormalized(change.count);
+  }
+  if (change.code == 'equipment_packs_expanded') {
+    return l10n.settingsMaintenanceChangeEquipmentPacksExpanded(change.count);
+  }
 
   return l10n.settingsMaintenanceChangeGeneric(change.count);
 }

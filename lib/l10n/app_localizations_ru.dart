@@ -2263,6 +2263,28 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentNormalized(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Нормализовано $count предметов снаряжения.',
+      one: 'Нормализован 1 предмет снаряжения.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceChangeEquipmentPacksExpanded(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Развернуто $count наборов снаряжения.',
+      one: 'Развернут 1 набор снаряжения.',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

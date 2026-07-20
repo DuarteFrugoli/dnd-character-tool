@@ -2266,6 +2266,28 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentNormalized(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count itens de equipamento normalizados.',
+      one: '1 item de equipamento normalizado.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceChangeEquipmentPacksExpanded(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pacotes de equipamento expandidos.',
+      one: '1 pacote de equipamento expandido.',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

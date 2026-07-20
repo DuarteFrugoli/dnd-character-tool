@@ -2226,6 +2226,28 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentNormalized(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '장비 아이템 $count개를 정규화했습니다.',
+      one: '장비 아이템 1개를 정규화했습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String settingsMaintenanceChangeEquipmentPacksExpanded(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '장비 꾸러미 $count개를 펼쳤습니다.',
+      one: '장비 꾸러미 1개를 펼쳤습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

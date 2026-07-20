@@ -708,6 +708,8 @@
   "settingsMaintenanceReportDataChanged": "{count, plural, =1{캐릭터 1명의 데이터를 수정했습니다.} other{캐릭터 {count}명의 데이터를 수정했습니다.}}",
   "settingsMaintenanceReportVersionUpdated": "데이터 버전을 업데이트했습니다.",
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{아이템 1개의 무게를 수정했습니다.} other{아이템 {count}개의 무게를 수정했습니다.}}",
+  "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{장비 아이템 1개를 정규화했습니다.} other{장비 아이템 {count}개를 정규화했습니다.}}",
+  "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{장비 꾸러미 1개를 펼쳤습니다.} other{장비 꾸러미 {count}개를 펼쳤습니다.}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{변경 사항 1개를 적용했습니다.} other{변경 사항 {count}개를 적용했습니다.}}",
   "incomingBackupPrompt": "파일에서 백업을 가져올까요?",
   "incomingBackupSuccess": "{count, plural, =1{백업에서 캐릭터 1명을 가져왔습니다.} other{백업에서 캐릭터 {count}명을 가져왔습니다.}}"

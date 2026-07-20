@@ -4098,6 +4098,18 @@ abstract class AppLocalizations {
   /// **'{count, plural, =1{Fixed the weight of 1 item.} other{Fixed the weight of {count} items.}}'**
   String settingsMaintenanceChangeEquipmentWeights(int count);
 
+  /// Migration report change for normalized equipment item data.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Normalized 1 equipment item.} other{Normalized {count} equipment items.}}'**
+  String settingsMaintenanceChangeEquipmentNormalized(int count);
+
+  /// Migration report change for expanded equipment packs.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Expanded 1 equipment pack.} other{Expanded {count} equipment packs.}}'**
+  String settingsMaintenanceChangeEquipmentPacksExpanded(int count);
+
   /// Migration report fallback change text.
   ///
   /// In en, this message translates to:

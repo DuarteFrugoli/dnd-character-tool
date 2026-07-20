@@ -269,6 +269,10 @@
     "name": "Caso, mappa o scorrimento",
     "description": "Custodia cilindrica per mappe e pergamene."
   },
+  "Censer": {
+    "name": "Incensiere",
+    "description": "Vaso usato per bruciare l'incenso."
+  },
   "Chain (10 feet)": {
     "name": "Catena (10 piedi)",
     "description": "Ha 10 punti ferita. Può essere fatto esplodere con una prova di Forza con CD 20."
@@ -348,6 +352,14 @@
   "Hunting Trap": {
     "name": "Trappola da caccia",
     "description": "Una volta posizionata, una creatura Grande o più piccola che calpesta la trappola deve effettuare un tiro salvezza su Destrezza con CD 13 o subire 1d4 danni perforanti e smettere di muoversi."
+  },
+  "Alms Box": {
+    "name": "Scatola per l'elemosina",
+    "description": "Una piccola scatola per la raccolta dell'elemosina."
+  },
+  "Incense (block)": {
+    "name": "Incenso (blocco)",
+    "description": "Un blocco di incenso profumato."
   },
   "Ink (1 ounce bottle)": {
     "name": "Inchiostro (flacone da 1 oncia)",
@@ -461,6 +473,10 @@
     "name": "Sacco",
     "description": "Contiene 1 piede cubo / 30 libbre."
   },
+  "Sand (small bag)": {
+    "name": "Sabbia (borsa piccola)",
+    "description": "Un piccolo sacchetto di sabbia, utile per asciugare l'inchiostro."
+  },
   "Scale, merchant's": {
     "name": "Scala, del commerciante",
     "description": "Piccola bilancia a piatti per pesare monete e gemme."
@@ -497,6 +513,10 @@
     "name": "Cannocchiale",
     "description": "Gli oggetti visti attraverso il cannocchiale vengono ingranditi fino al doppio della loro dimensione."
   },
+  "String (10 feet)": {
+    "name": "Corda (10 piedi)",
+    "description": "Una corda lunga 10 piedi."
+  },
   "Tent, two-person": {
     "name": "Tenda, due persone",
     "description": "Un rifugio in tela semplice e portatile."
@@ -512,6 +532,10 @@
   "Vial": {
     "name": "Fiala",
     "description": "Contiene 4 once di liquido."
+  },
+  "Vestments": {
+    "name": "Paramenti",
+    "description": "Abbigliamento religioso cerimoniale."
   },
   "Waterskin": {
     "name": "Otre d'acqua",

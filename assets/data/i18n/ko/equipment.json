@@ -195,7 +195,7 @@
   },
   "Dungeoneer's Pack": {
     "name": "던전 탐험가의 팩",
-    "description": "쇠지렛대, 망치, 못, 횃불, 부싯깃통, 식량, 물가죽, 삼베 밧줄이 들어 있는 배낭입니다."
+    "description": "쇠지렛대, 망치, 못, 횃불, 부싯깃통, 식량, 물가죽, 대마 밧줄이 들어 있는 배낭입니다."
   },
   "Entertainer's Pack": {
     "name": "연예인 팩",
@@ -269,6 +269,10 @@
     "name": "케이스, 지도 또는 스크롤",
     "description": "지도와 두루마리를 담는 원통형 케이스입니다."
   },
+  "Censer": {
+    "name": "흔들 향로",
+    "description": "향을 피우는 데 사용되는 그릇."
+  },
   "Chain (10 feet)": {
     "name": "체인(10피트)",
     "description": "체력은 10입니다. DC 20 강도 판정으로 폭발할 수 있습니다."
@@ -299,7 +303,7 @@
   },
   "Clothes, traveler's": {
     "name": "옷, 여행자의 것",
-    "description": "여행용으로 제작된 튼튼한 의류."
+    "description": "여행용으로 제작된 견고한 의류."
   },
   "Component Pouch": {
     "name": "구성품 파우치",
@@ -348,6 +352,14 @@
   "Hunting Trap": {
     "name": "사냥용 함정",
     "description": "설정되면 함정을 밟는 대형 또는 소형 생물은 DC 13 민첩 내성을 설정하거나 1d4 관통 피해를 입고 이동을 멈춰야 합니다."
+  },
+  "Alms Box": {
+    "name": "구호품 상자",
+    "description": "구호품을 모으는 작은 상자입니다."
+  },
+  "Incense (block)": {
+    "name": "향(블록)",
+    "description": "향기로운 향 블록."
   },
   "Ink (1 ounce bottle)": {
     "name": "잉크(1온스 병)",
@@ -447,7 +459,7 @@
   },
   "Rations (1 day)": {
     "name": "식량(1일)",
-    "description": "육포, 말린 과일, 딱딱한 감자, 견과류 등 장거리 여행에 적합한 건조 식품입니다."
+    "description": "육포, 말린 과일, 딱딱한 사탕, 견과류 등 장거리 여행에 적합한 건조 식품입니다."
   },
   "Rope, hempen (50 feet)": {
     "name": "밧줄, 대마(50피트)",
@@ -460,6 +472,10 @@
   "Sack": {
     "name": "해고",
     "description": "1입방피트/30파운드를 수용합니다."
+  },
+  "Sand (small bag)": {
+    "name": "모래(작은 봉지)",
+    "description": "잉크를 말리는 데 유용한 작은 모래 주머니입니다."
   },
   "Scale, merchant's": {
     "name": "저울, 상인",
@@ -497,6 +513,10 @@
     "name": "작은 망원경",
     "description": "망원경을 통해 보이는 물체는 크기의 두 배로 확대됩니다."
   },
+  "String (10 feet)": {
+    "name": "끈(10피트)",
+    "description": "10피트 길이의 끈."
+  },
   "Tent, two-person": {
     "name": "텐트, 2인용",
     "description": "간단하고 휴대 가능한 캔버스 쉼터입니다."
@@ -510,8 +530,12 @@
     "description": "1시간 동안 연소됩니다. 반경 20피트의 밝은 빛, 추가 20피트의 희미한 빛. 즉석 무기로 사용할 수 있습니다(1d4 화염 피해)."
   },
   "Vial": {
-    "name": "바이알",
+    "name": "약병",
     "description": "4온스의 액체를 담을 수 있습니다."
+  },
+  "Vestments": {
+    "name": "예복",
+    "description": "의식용 종교복."
   },
   "Waterskin": {
     "name": "워터스킨",

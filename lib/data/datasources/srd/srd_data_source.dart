@@ -283,6 +283,9 @@ class SrdDataSource {
         final rawName = (g['name'] as String).toLowerCase();
         final category = g['category'] as String;
         final weight = (g['weight'] as num? ?? 0).toDouble();
+        final contents = (g['contents'] as List<dynamic>? ?? [])
+            .map((e) => SrdPackContent.fromJson(e as Map<String, dynamic>))
+            .toList();
         final itemType = category == 'ammunition'
             ? 'ammunition'
             : category == 'container'
@@ -292,6 +295,7 @@ class SrdDataSource {
           itemType: itemType,
           category: category,
           weight: weight,
+          contents: contents,
         );
         result[rawName] = data;
         for (final alias in _gearAliases(rawName)) {
@@ -501,6 +505,8 @@ List<String> _gearAliases(String lower) {
       return ["traveler's clothes", 'travelers clothes'];
     case 'ink (1 ounce bottle)':
       return ['bottle of black ink'];
+    case 'incense (block)':
+      return ['stick of incense', 'sticks of incense'];
     case 'ink pen':
       return ['quill'];
     case 'pot, iron':

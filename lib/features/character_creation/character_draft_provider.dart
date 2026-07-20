@@ -876,6 +876,18 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       }
 
       final data = lookupItem(itemName);
+      if (data != null && data.contents.isNotEmpty) {
+        for (final content in data.contents) {
+          final contentQuantity = qty * content.quantity;
+          addItem(
+            contentQuantity == 1
+                ? content.name
+                : '$contentQuantity ${content.name}',
+          );
+        }
+        return;
+      }
+
       startingEquipment.add(EquipmentItem(
         name: itemName,
         category: data?.category ?? _categoryForItem(itemName),

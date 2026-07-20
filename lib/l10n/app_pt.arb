@@ -708,6 +708,8 @@
   "settingsMaintenanceReportDataChanged": "{count, plural, =1{1 personagem teve dados corrigidos.} other{{count} personagens tiveram dados corrigidos.}}",
   "settingsMaintenanceReportVersionUpdated": "Versão de dados atualizada.",
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{Peso de 1 item corrigido.} other{Peso de {count} itens corrigido.}}",
+  "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{1 item de equipamento normalizado.} other{{count} itens de equipamento normalizados.}}",
+  "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{1 pacote de equipamento expandido.} other{{count} pacotes de equipamento expandidos.}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 alteração aplicada.} other{{count} alterações aplicadas.}}",
   "incomingBackupPrompt": "Importar backup do arquivo?",
   "incomingBackupSuccess": "{count, plural, =1{1 personagem importado do backup.} other{{count} personagens importados do backup.}}"

@@ -17,12 +17,14 @@ class SrdItemData {
   final String category;
   final double weight;
   final Map<String, dynamic>? properties;
+  final List<SrdPackContent> contents;
 
   const SrdItemData({
     required this.itemType,
     required this.category,
     this.weight = 0.0,
     this.properties,
+    this.contents = const [],
   });
 
   factory SrdItemData.fromJson(Map<String, dynamic> json) => SrdItemData(
@@ -30,6 +32,9 @@ class SrdItemData {
     category: json['category'] as String,
     weight: (json['weight'] as num?)?.toDouble() ?? 0.0,
     properties: json['properties'] as Map<String, dynamic>?,
+    contents: (json['contents'] as List<dynamic>? ?? [])
+        .map((e) => SrdPackContent.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 
   /// Converts the string [itemType] from JSON to the [ItemType] enum.
@@ -631,6 +636,7 @@ class SrdGearItem {
   final double weight;
   final String cost;
   final String description;
+  final List<SrdPackContent> contents;
 
   const SrdGearItem({
     required this.name,
@@ -638,6 +644,7 @@ class SrdGearItem {
     required this.weight,
     required this.cost,
     required this.description,
+    this.contents = const [],
   });
 
   factory SrdGearItem.fromJson(Map<String, dynamic> json) => SrdGearItem(
@@ -646,6 +653,9 @@ class SrdGearItem {
     weight: (json['weight'] as num? ?? 0).toDouble(),
     cost: (json['cost'] as String?) ?? '',
     description: (json['description'] as String?) ?? '',
+    contents: (json['contents'] as List<dynamic>? ?? [])
+        .map((e) => SrdPackContent.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
@@ -845,6 +855,21 @@ class SrdFeatureChoiceCatalog {
     }
     return result;
   }
+}
+
+class SrdPackContent {
+  final String name;
+  final int quantity;
+
+  const SrdPackContent({
+    required this.name,
+    this.quantity = 1,
+  });
+
+  factory SrdPackContent.fromJson(Map<String, dynamic> json) => SrdPackContent(
+        name: (json['name'] as String?) ?? '',
+        quantity: (json['quantity'] as num?)?.toInt() ?? 1,
+      );
 }
 
 class SrdFeatureChoiceDefinition {

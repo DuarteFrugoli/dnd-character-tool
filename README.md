@@ -85,7 +85,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 | Framework | Flutter 3.x / Dart 3.11.5 |
 | State management | flutter_riverpod 2 |
 | Navigation | go_router |
-| Persistence | path_provider (mobile) + shared_preferences (web) |
+| Persistence | path_provider (mobile) + IndexedDB (web) |
 | Serialization | json_serializable + json_annotation |
 | Images | image_picker + image_cropper |
 | Gallery save | gal |
@@ -208,7 +208,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 | Framework | Flutter 3.x / Dart 3.11.5 |
 | Gerenciamento de estado | flutter_riverpod 2 |
 | Navegação | go_router |
-| Persistência | path_provider (mobile) + shared_preferences (web) |
+| Persistência | path_provider (mobile) + IndexedDB (web) |
 | Serialização | json_serializable + json_annotation |
 | Imagens | image_picker + image_cropper |
 | Salvar na galeria | gal |

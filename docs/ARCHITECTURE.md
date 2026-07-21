@@ -14,7 +14,7 @@ changing the project.
 | App framework | Flutter 3.x / Dart 3.x |
 | State management | Riverpod 2 (`flutter_riverpod`) |
 | Navigation | GoRouter |
-| Local persistence | JSON files on native platforms; `SharedPreferences` on web |
+| Local persistence | JSON files on native platforms; IndexedDB on web |
 | Serialization | `json_serializable` generated `*.g.dart` files |
 | UI i18n | Flutter `gen-l10n` from ARB files |
 | SRD i18n | Custom JSON overlay service (`SrdI18nService`) |
@@ -148,12 +148,14 @@ imports.
 
 ### Web
 
-`WebStorageBackend` stores each character JSON string in `SharedPreferences`
-using the `dnd_char_` prefix and keeps an ID index in `dnd_char_ids`.
+`WebStorageBackend` stores character JSON in IndexedDB under the `characters`
+object store. Character images are stored separately in the `images` object
+store, and `Character.imagePath` keeps an `indexeddb:image:<id>` reference.
 
-The web storage backend does not manage image files. Imported `.dndchar` images
-can still be preserved as `data:<mime>;base64,...` URLs stored directly in the
-character JSON.
+When exporting `.dndchar` or `.dndbackup`, the data source resolves those image
+references and embeds `imageData` plus `imageMimeType` in the exported file.
+When importing on web, embedded image data is written back to IndexedDB and the
+character receives a new local image reference.
 
 ### Repository rules
 

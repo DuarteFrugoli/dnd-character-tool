@@ -53,10 +53,17 @@ class CharacterRepository {
 
   /// Salva a imagem e retorna o personagem atualizado com o novo imagePath.
   Future<Character> saveImage(Character character, String sourcePath) async {
-    await _local.deleteImage(character.imagePath);
     final fileName = await _local.saveImage(character.id, sourcePath);
-    final updated = character.copyWith(imagePath: fileName, updatedAt: DateTime.now());
+    if (fileName == null) return character;
+
+    final updated = character.copyWith(
+      imagePath: fileName,
+      updatedAt: DateTime.now(),
+    );
     await _local.save(updated);
+    if (character.imagePath != fileName) {
+      await _local.deleteImage(character.imagePath);
+    }
     return updated;
   }
 

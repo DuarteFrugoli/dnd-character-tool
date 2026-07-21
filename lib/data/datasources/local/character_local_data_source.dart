@@ -12,7 +12,7 @@ import '../../models/models.dart';
 /// Fachada de persistência de personagens.
 /// Delega ao backend correto para cada plataforma:
 /// - nativo (Android/iOS/Windows/macOS/Linux): arquivos JSON no disco
-/// - web: shared_preferences (localStorage)
+/// - web: IndexedDB
 class CharacterLocalDataSource {
   CharacterLocalDataSource._() : _backend = createStorageBackend();
 
@@ -102,7 +102,7 @@ class CharacterLocalDataSource {
     final imagePath = character.imagePath;
     if (imagePath != null) {
       if (imagePath.startsWith('data:')) {
-        // Web: image is already a base64 data URL — extract bytes and mime type.
+        // Legacy inline image: extract bytes and mime type.
         final commaIdx = imagePath.indexOf(',');
         if (commaIdx != -1) {
           final header = imagePath.substring(

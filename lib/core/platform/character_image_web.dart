@@ -1,25 +1,33 @@
-import 'dart:convert';
 import 'dart:js_interop';
-import 'dart:typed_data';
+import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:web/web.dart' as web;
 
+import 'web_image_store.dart';
+
 ImageProvider resolveCharacterImageProvider(String path) {
   if (path.startsWith('data:')) {
-    return MemoryImage(_dataUrlBytes(path));
+    final payload = parseImageDataUrl(path);
+    if (payload != null) return MemoryImage(payload.bytes);
+  }
+  if (isIndexedDbImageReference(path)) {
+    return _IndexedDbImageProvider(path);
   }
   return NetworkImage(path);
 }
 
 Future<void> saveCharacterImage(String path, String filename) async {
-  if (!path.startsWith('data:')) {
-    throw UnsupportedError('Only data URL images can be saved on web.');
+  final payload = await readWebImagePayload(path);
+  if (payload == null) {
+    throw UnsupportedError('Image is not available on web.');
   }
 
-  final mimeType = _dataUrlMimeType(path) ?? 'image/jpeg';
-  final bytes = _dataUrlBytes(path);
-  final blob = web.Blob([bytes.toJS].toJS, web.BlobPropertyBag(type: mimeType));
+  final blob = web.Blob(
+    [payload.bytes.toJS].toJS,
+    web.BlobPropertyBag(type: payload.mimeType),
+  );
   final url = web.URL.createObjectURL(blob);
   final anchor = web.document.createElement('a') as web.HTMLAnchorElement;
   anchor.href = url;
@@ -28,11 +36,45 @@ Future<void> saveCharacterImage(String path, String filename) async {
   web.URL.revokeObjectURL(url);
 }
 
-Uint8List _dataUrlBytes(String path) => base64Decode(path.split(',').last);
+class _IndexedDbImageProvider extends ImageProvider<_IndexedDbImageProvider> {
+  const _IndexedDbImageProvider(this.path);
 
-String? _dataUrlMimeType(String path) {
-  final commaIdx = path.indexOf(',');
-  if (commaIdx == -1 || !path.startsWith('data:')) return null;
-  final header = path.substring(5, commaIdx);
-  return header.split(';').first;
+  final String path;
+
+  @override
+  Future<_IndexedDbImageProvider> obtainKey(ImageConfiguration configuration) {
+    return SynchronousFuture<_IndexedDbImageProvider>(this);
+  }
+
+  @override
+  ImageStreamCompleter loadImage(
+    _IndexedDbImageProvider key,
+    ImageDecoderCallback decode,
+  ) {
+    return MultiFrameImageStreamCompleter(
+      codec: _loadAsync(key, decode),
+      scale: 1.0,
+      debugLabel: key.path,
+    );
+  }
+
+  Future<ui.Codec> _loadAsync(
+    _IndexedDbImageProvider key,
+    ImageDecoderCallback decode,
+  ) async {
+    final payload = await readWebImagePayload(key.path);
+    if (payload == null) {
+      throw StateError('IndexedDB image not found: ${key.path}');
+    }
+    final buffer = await ui.ImmutableBuffer.fromUint8List(payload.bytes);
+    return decode(buffer);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is _IndexedDbImageProvider && other.path == path;
+  }
+
+  @override
+  int get hashCode => path.hashCode;
 }

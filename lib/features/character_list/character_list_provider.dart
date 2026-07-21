@@ -152,13 +152,8 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     if (imagePath == null) {
       // Deleta a imagem persistida e limpa o campo.
       updated = await repo.removeImage(character);
-    } else if (imagePath.startsWith('data:')) {
-      // Web: data URL já é o dado final — salva direto sem copiar.
-      updated = await repo.save(
-        character.copyWith(imagePath: imagePath, updatedAt: DateTime.now()),
-      );
     } else {
-      // Nativo: copia o arquivo temporário do cropper para a pasta persistente.
+      // Nativo copia arquivo; Web salva data URL no IndexedDB.
       updated = await repo.saveImage(character, imagePath);
     }
     state = AsyncData(current.map((c) => c.id == id ? updated : c).toList());

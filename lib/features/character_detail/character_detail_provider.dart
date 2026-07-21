@@ -935,10 +935,6 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final Character updated;
     if (newPath == null) {
       updated = await repo.removeImage(c);
-    } else if (newPath.startsWith('data:')) {
-      updated = await repo.save(
-        c.copyWith(imagePath: newPath, updatedAt: DateTime.now()),
-      );
     } else {
       updated = await repo.saveImage(c, newPath);
     }

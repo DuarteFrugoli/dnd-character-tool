@@ -30,6 +30,8 @@ Future<void> _pickAndCrop(
     cropped = await ImageCropper().cropImage(
       sourcePath: picked.path,
       aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
+      maxWidth: 512,
+      maxHeight: 512,
       compressFormat: ImageCompressFormat.jpg,
       compressQuality: 85,
       uiSettings: [
@@ -52,8 +54,8 @@ Future<void> _pickAndCrop(
 
   if (cropped == null) return;
 
-  // On web, blob URLs are temporary; convert to a base64 data URL so the
-  // image survives page refreshes and can be stored in the character JSON.
+  // On web, blob URLs are temporary; pass a data URL to the repository so the
+  // backend can store the image in IndexedDB.
   if (kIsWeb) {
     final bytes = await cropped.readAsBytes();
     final encoded = base64Encode(bytes);

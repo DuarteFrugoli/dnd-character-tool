@@ -1,78 +1,94 @@
+import 'dart:async';
 import 'dart:convert';
+import 'dart:js_interop';
 
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:web/web.dart' as web;
 
 import 'storage_backend_stub.dart' show StorageBackend;
 export 'storage_backend_stub.dart' show StorageBackend;
 
 StorageBackend createStorageBackend() => WebStorageBackend();
 
-/// Backend de storage para a web usando shared_preferences (localStorage).
-/// Imagens não são suportadas nesta plataforma (retorna null).
+/// Backend de storage para a web usando IndexedDB.
+///
+/// Personagens ficam no object store `characters` como JSON string indexado
+/// pelo ID. Os stores `images` e `metadata` ja sao criados para as proximas
+/// etapas, mas a separacao de imagens do JSON do personagem fica para o item 4
+/// do plano web.
 class WebStorageBackend implements StorageBackend {
-  static const _prefix = 'dnd_char_';
-  static const _idsKey = 'dnd_char_ids';
+  static const _dbName = 'dnd_character_tool';
+  static const _dbVersion = 1;
+  static const _charactersStore = 'characters';
+  static const _imagesStore = 'images';
+  static const _metadataStore = 'metadata';
 
-  Future<SharedPreferences> get _prefs => SharedPreferences.getInstance();
+  Future<web.IDBDatabase>? _dbFuture;
+
+  Future<web.IDBDatabase> get _db {
+    final current = _dbFuture;
+    if (current != null) return current;
+    return _dbFuture = _openDatabase();
+  }
 
   // ---- Personagens ----
 
   @override
-  Future<List<Map<String, dynamic>>> loadAllCharacters() async {
-    final prefs = await _prefs;
-    final ids = _getIds(prefs);
-    final result = <Map<String, dynamic>>[];
-    for (final id in ids) {
-      final str = prefs.getString('$_prefix$id');
-      if (str != null) {
+  Future<List<Map<String, dynamic>>> loadAllCharacters() {
+    return _withCharacterStore('readonly', (store) async {
+      final values = await _requestToFuture(store.getAll());
+      final decodedValues = values?.dartify();
+      if (decodedValues is! List) return <Map<String, dynamic>>[];
+
+      final characters = <Map<String, dynamic>>[];
+      for (final value in decodedValues) {
+        if (value is! String) continue;
         try {
-          result.add(jsonDecode(str) as Map<String, dynamic>);
+          characters.add(jsonDecode(value) as Map<String, dynamic>);
         } catch (_) {
-          // entrada corrompida — ignora
+          // Entrada corrompida: ignora para nao quebrar a lista inteira.
         }
       }
-    }
-    return result;
+      return characters;
+    });
   }
 
   @override
-  Future<Map<String, dynamic>?> loadCharacter(String id) async {
-    final prefs = await _prefs;
-    final str = prefs.getString('$_prefix$id');
-    if (str == null) return null;
-    try {
-      return jsonDecode(str) as Map<String, dynamic>;
-    } catch (_) {
-      return null;
-    }
+  Future<Map<String, dynamic>?> loadCharacter(String id) {
+    return _withCharacterStore('readonly', (store) async {
+      final value = await _requestToFuture(store.get(id.toJS));
+      final jsonString = value?.dartify();
+      if (jsonString is! String) return null;
+      try {
+        return jsonDecode(jsonString) as Map<String, dynamic>;
+      } catch (_) {
+        return null;
+      }
+    });
   }
 
   @override
-  Future<void> saveCharacter(String id, Map<String, dynamic> json) async {
-    final prefs = await _prefs;
-    await prefs.setString('$_prefix$id', jsonEncode(json));
-    final ids = _getIds(prefs);
-    if (!ids.contains(id)) {
-      ids.add(id);
-      await prefs.setString(_idsKey, jsonEncode(ids));
-    }
+  Future<void> saveCharacter(String id, Map<String, dynamic> json) {
+    return _withCharacterStore('readwrite', (store) async {
+      await _requestToFuture(store.put(jsonEncode(json).toJS, id.toJS));
+    });
   }
 
   @override
-  Future<void> deleteCharacter(String id) async {
-    final prefs = await _prefs;
-    await prefs.remove('$_prefix$id');
-    final ids = _getIds(prefs)..remove(id);
-    await prefs.setString(_idsKey, jsonEncode(ids));
+  Future<void> deleteCharacter(String id) {
+    return _withCharacterStore('readwrite', (store) async {
+      await _requestToFuture(store.delete(id.toJS));
+    });
   }
 
   @override
-  Future<bool> characterExists(String id) async {
-    final prefs = await _prefs;
-    return prefs.containsKey('$_prefix$id');
+  Future<bool> characterExists(String id) {
+    return _withCharacterStore('readonly', (store) async {
+      final value = await _requestToFuture(store.get(id.toJS));
+      return value != null;
+    });
   }
 
-  // ---- Imagens (não suportado na web por ora) ----
+  // ---- Imagens ----
 
   @override
   Future<String?> saveImage(String characterId, String sourcePath) async =>
@@ -86,13 +102,108 @@ class WebStorageBackend implements StorageBackend {
 
   // ---- Helpers ----
 
-  List<String> _getIds(SharedPreferences prefs) {
-    final str = prefs.getString(_idsKey);
-    if (str == null) return [];
+  Future<web.IDBDatabase> _openDatabase() async {
+    final request = web.window.indexedDB.open(_dbName, _dbVersion);
+
+    request.onupgradeneeded = ((web.Event _) {
+      final db = request.result as web.IDBDatabase;
+      if (!db.objectStoreNames.contains(_charactersStore)) {
+        db.createObjectStore(_charactersStore);
+      }
+      if (!db.objectStoreNames.contains(_imagesStore)) {
+        db.createObjectStore(_imagesStore);
+      }
+      if (!db.objectStoreNames.contains(_metadataStore)) {
+        db.createObjectStore(_metadataStore);
+      }
+    }).toJS;
+
     try {
-      return (jsonDecode(str) as List).cast<String>();
+      final db = await _requestToFuture(request);
+      return db as web.IDBDatabase;
     } catch (_) {
-      return [];
+      _dbFuture = null;
+      rethrow;
     }
+  }
+
+  Future<T> _withCharacterStore<T>(
+    String mode,
+    Future<T> Function(web.IDBObjectStore store) action,
+  ) async {
+    final db = await _db;
+    final tx = db.transaction(_charactersStore.toJS, mode);
+    final done = _transactionDone(tx);
+    final store = tx.objectStore(_charactersStore);
+
+    try {
+      final result = await action(store);
+      await done;
+      return result;
+    } catch (_) {
+      try {
+        tx.abort();
+      } catch (_) {}
+      rethrow;
+    }
+  }
+
+  Future<JSAny?> _requestToFuture(web.IDBRequest request) {
+    final completer = Completer<JSAny?>();
+
+    request.onsuccess = ((web.Event _) {
+      if (!completer.isCompleted) {
+        completer.complete(request.result);
+      }
+    }).toJS;
+
+    request.onerror = ((web.Event _) {
+      if (!completer.isCompleted) {
+        completer.completeError(StateError(_requestErrorMessage(request)));
+      }
+    }).toJS;
+
+    return completer.future;
+  }
+
+  Future<void> _transactionDone(web.IDBTransaction transaction) {
+    final completer = Completer<void>();
+
+    transaction.oncomplete = ((web.Event _) {
+      if (!completer.isCompleted) {
+        completer.complete();
+      }
+    }).toJS;
+
+    void completeWithError() {
+      if (!completer.isCompleted) {
+        completer.completeError(
+          StateError(_transactionErrorMessage(transaction)),
+        );
+      }
+    }
+
+    transaction.onerror = ((web.Event _) {
+      completeWithError();
+    }).toJS;
+    transaction.onabort = ((web.Event _) {
+      completeWithError();
+    }).toJS;
+
+    return completer.future;
+  }
+
+  String _requestErrorMessage(web.IDBRequest request) {
+    final message = request.error?.message;
+    return message == null || message.isEmpty
+        ? 'IndexedDB request failed.'
+        : message;
+  }
+
+  String _transactionErrorMessage(web.IDBTransaction transaction) {
+    final message = transaction.error?.message;
+    return message == null || message.isEmpty
+        ? 'IndexedDB transaction failed.'
+        : message;
   }
 }

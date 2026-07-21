@@ -43,10 +43,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get importErrorInvalidJson => 'Le JSON collé n\'est pas valide.';
 
   @override
-  String get importErrorInvalidToken =>
-      'Token invalide. Il est peut-être corrompu ou d\'une version incompatible.';
-
-  @override
   String get importFieldLockedHint =>
       'Effacez l\'autre champ pour utiliser celui-ci.';
 
@@ -1905,33 +1901,10 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get exportLabelToken => 'Jeton';
-
-  @override
-  String get exportCopyToken => 'Copier le jeton';
-
-  @override
-  String get exportHideQr => 'Masquer le QR code';
-
-  @override
-  String get exportShowQr => 'Afficher le QR code';
-
-  @override
-  String get exportQrTooLarge =>
-      'Personnage trop grand pour le QR code.\nUtilise le jeton ou le JSON pour partager.';
-
-  @override
   String get exportShowJson => 'Afficher le JSON';
 
   @override
   String get exportCopyJson => 'Copier le JSON';
-
-  @override
-  String get exportSectionQuick => 'Partage rapide';
-
-  @override
-  String get exportSectionQuickCaption =>
-      'Sans image — pour partager les stats';
 
   @override
   String get exportSectionFile => 'Fichier complet';
@@ -1947,12 +1920,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get importDialogTitle => 'Importer un personnage';
-
-  @override
-  String get importTokenHint => 'Colle le jeton ici…';
-
-  @override
-  String get importScanQr => 'Scanner le QR code';
 
   @override
   String get importUseJson => 'Utiliser le JSON directement';

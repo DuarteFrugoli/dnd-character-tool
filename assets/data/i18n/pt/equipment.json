@@ -1,27 +1,27 @@
 {
   "Club": {
-    "name": "Clube"
+    "name": "Clava"
   },
   "Dagger": {
     "name": "Punhal"
   },
   "Greatclub": {
-    "name": "Grande clube"
+    "name": "Clava grande"
   },
   "Handaxe": {
     "name": "Machado de mão"
   },
   "Javelin": {
-    "name": "Dardo"
+    "name": "Azagaia"
   },
   "Light Hammer": {
-    "name": "Martelo Leve"
+    "name": "Martelo leve"
   },
   "Mace": {
-    "name": "Mace"
+    "name": "Maça"
   },
   "Quarterstaff": {
-    "name": "Pessoal"
+    "name": "Bordão"
   },
   "Sickle": {
     "name": "Foice"
@@ -30,7 +30,7 @@
     "name": "Lança"
   },
   "Crossbow, Light": {
-    "name": "Besta, Luz"
+    "name": "Besta leve"
   },
   "Dart": {
     "name": "Dardo"
@@ -48,28 +48,28 @@
     "name": "Mangual"
   },
   "Glaive": {
-    "name": "Gládio"
+    "name": "Glaive"
   },
   "Greataxe": {
-    "name": "Machado Grande"
+    "name": "Machado grande"
   },
   "Greatsword": {
-    "name": "Espada larga"
+    "name": "Espada grande"
   },
   "Halberd": {
     "name": "Alabarda"
   },
   "Lance": {
-    "name": "Lança"
+    "name": "Lança de cavalaria"
   },
   "Longsword": {
-    "name": "Espada Longa"
+    "name": "Espada longa"
   },
   "Maul": {
-    "name": "Maul"
+    "name": "Malho"
   },
   "Morningstar": {
-    "name": "Estrela da Manhã"
+    "name": "Estrela da manhã"
   },
   "Pike": {
     "name": "Pique"
@@ -87,10 +87,10 @@
     "name": "Tridente"
   },
   "War Pick": {
-    "name": "Escolha de Guerra"
+    "name": "Picareta de guerra"
   },
   "Warhammer": {
-    "name": "Martelo de Guerra"
+    "name": "Martelo de guerra"
   },
   "Whip": {
     "name": "Chicote"
@@ -99,16 +99,16 @@
     "name": "Zarabatana"
   },
   "Crossbow, Hand": {
-    "name": "Besta, Mão"
+    "name": "Besta de mão"
   },
   "Crossbow, Heavy": {
-    "name": "Besta, Pesada"
+    "name": "Besta pesada"
   },
   "Longbow": {
     "name": "Arco longo"
   },
   "Net": {
-    "name": "Líquido"
+    "name": "Rede"
   },
   "Padded": {
     "name": "Acolchoado"
@@ -120,31 +120,31 @@
     "name": "Couro cravejado"
   },
   "Hide": {
-    "name": "Esconder"
+    "name": "Peles"
   },
   "Chain Shirt": {
-    "name": "Camisa de corrente"
+    "name": "Camisa de malha"
   },
   "Scale Mail": {
-    "name": "Escala de correio"
+    "name": "Cota de escamas"
   },
   "Breastplate": {
     "name": "Peitoral"
   },
   "Half Plate": {
-    "name": "Meia Prato"
+    "name": "Meia armadura"
   },
   "Ring Mail": {
-    "name": "Correio Anelar"
+    "name": "Cota de anéis"
   },
   "Chain Mail": {
     "name": "Cota de malha"
   },
   "Splint": {
-    "name": "Tala"
+    "name": "Cota de talas"
   },
   "Plate": {
-    "name": "Placa"
+    "name": "Armadura de placas"
   },
   "Shield": {
     "name": "Escudo"
@@ -155,14 +155,14 @@
   },
   "Acid (vial)": {
     "name": "Ácido (frasco)",
-    "description": "Com uma ação, você pode espirrar o conteúdo deste frasco em uma criatura a até 1,5 metros ou jogá-lo até 6 metros, quebrando-o com o impacto. Uma criatura sofre 2d6 de dano de ácido se acertar."
+    "description": "Com uma ação, você pode jogar o conteúdo deste frasco em uma criatura a até 1,5 metro ou arremessá-lo a até 6 metros, quebrando-o no impacto. Em um acerto, a criatura sofre 2d6 de dano ácido."
   },
   "Alchemist's Fire": {
     "name": "Fogo do Alquimista",
-    "description": "Este fluido pegajoso e adesivo inflama quando exposto ao ar. Uma criatura sofre 1d4 de dano de fogo no início de cada um de seus turnos enquanto estiver queimando. Uma ação e um teste de Destreza CD 10 o expõem."
+    "description": "Este fluido pegajoso inflama ao entrar em contato com o ar. Uma criatura sofre 1d4 de dano de fogo no início de cada um de seus turnos enquanto estiver queimando. Ela pode usar uma ação e passar em um teste de Destreza CD 10 para apagar as chamas."
   },
   "Arrows (20)": {
-    "name": "Setas (20)",
+    "name": "Flechas (20)",
     "description": "Munição para arcos curtos e longos."
   },
   "Blowgun Needles (50)": {
@@ -170,7 +170,7 @@
     "description": "Munição para zarabatanas."
   },
   "Crossbow Bolts (20)": {
-    "name": "Setas de Besta (20)",
+    "name": "Virotes de besta (20)",
     "description": "Munição para bestas."
   },
   "Sling Bullets (20)": {
@@ -187,15 +187,15 @@
   },
   "Burglar's Pack": {
     "name": "Pacote de ladrão",
-    "description": "Uma mochila com rolamentos de esferas, barbante, sino, velas, pé-de-cabra, martelo, pitons, lanterna com capuz, óleo, rações, caixa de pólvora, odre e corda de cânhamo."
+    "description": "Uma mochila com rolamentos de esferas, barbante, sino, velas, pé de cabra, martelo, pitões, lanterna coberta, óleo, rações, pederneira, odre e corda de cânhamo."
   },
   "Diplomat's Pack": {
     "name": "Pacote do Diplomata",
-    "description": "Um baú com estojos de mapas ou pergaminhos, roupas finas, tinta, caneta-tinteiro, luminária, óleo, papel, perfume, lacre e sabão."
+    "description": "Um baú com estojos para mapas ou pergaminhos, roupas finas, tinta, caneta de pena, lamparina, óleo, papel, perfume, lacre e sabão."
   },
   "Dungeoneer's Pack": {
-    "name": "Pacote do Dungeoneer",
-    "description": "Uma mochila com pé de cabra, martelo, pitons, tochas, caixa de pólvora, rações, odre de água e corda de cânhamo."
+    "name": "Pacote de explorador de masmorras",
+    "description": "Uma mochila com pé de cabra, martelo, pitões, tochas, pederneira, rações, odre e corda de cânhamo."
   },
   "Entertainer's Pack": {
     "name": "Pacote do Artista",
@@ -203,11 +203,11 @@
   },
   "Explorer's Pack": {
     "name": "Pacote do Explorador",
-    "description": "Uma mochila com saco de dormir, kit de bagunça, caixa de fogo, tochas, rações, odre e corda de cânhamo."
+    "description": "Uma mochila com saco de dormir, kit de refeição, pederneira, tochas, rações, odre e corda de cânhamo."
   },
   "Priest's Pack": {
     "name": "Pacote do Sacerdote",
-    "description": "Uma mochila com cobertor, velas, caixa de fogo, caixa de esmolas, incenso, incensário, vestimentas, rações e odre."
+    "description": "Uma mochila com cobertor, velas, pederneira, caixa de esmolas, incenso, incensário, vestimentas, rações e odre."
   },
   "Scholar's Pack": {
     "name": "Pacote Acadêmico",
@@ -238,7 +238,7 @@
     "description": "Um cobertor quente."
   },
   "Block and Tackle": {
-    "name": "Bloquear e atacar",
+    "name": "Talha e moitão",
     "description": "Conjunto de polias com cabo que reduz o esforço necessário para levantar cargas pesadas."
   },
   "Book": {
@@ -246,15 +246,15 @@
     "description": "Um livro de conhecimento, contendo informações sobre um assunto escolhido pelo Mestre."
   },
   "Bottle, glass": {
-    "name": "Garrafa, vidro",
-    "description": "Contém 1,5 litros de líquido."
+    "name": "Garrafa de vidro",
+    "description": "Contém cerca de 0,7 litro de líquido."
   },
   "Bucket": {
     "name": "Balde",
-    "description": "Comporta 3 galões."
+    "description": "Comporta cerca de 11 litros."
   },
   "Caltrops (bag of 20)": {
-    "name": "Caltrops (saco de 20)",
+    "name": "Estrepes (saco de 20)",
     "description": "Espalhe por uma área de 1,5 metro. As criaturas que se movem devem fazer um teste de resistência de Destreza CD 15 ou parar e sofrer 1 dano perfurante (velocidade reduzida em 3 metros até serem curadas)."
   },
   "Candle": {
@@ -262,11 +262,11 @@
     "description": "Ilumina um raio de 1,5 metro de luz brilhante e 1,5 metro de luz fraca por 1 hora."
   },
   "Case, crossbow bolt": {
-    "name": "Estojo, seta de besta",
+    "name": "Estojo de virotes de besta",
     "description": "Contém 20 virotes de besta."
   },
   "Case, map or scroll": {
-    "name": "Caso, mapa ou rolagem",
+    "name": "Estojo para mapa ou pergaminho",
     "description": "Uma caixa cilíndrica para mapas e pergaminhos."
   },
   "Censer": {
@@ -274,31 +274,31 @@
     "description": "Vaso usado para queimar incenso."
   },
   "Chain (10 feet)": {
-    "name": "Corrente (10 pés)",
-    "description": "Tem 10 pontos de vida. Pode ser explodido com um teste de Força CD 20."
+    "name": "Corrente (3 m)",
+    "description": "Tem 10 pontos de vida. Pode ser arrebentada com um teste de Força CD 20."
   },
   "Chalk (1 piece)": {
     "name": "Giz (1 peça)",
-    "description": "Escrevendo giz."
+    "description": "Giz para escrever."
   },
   "Chest": {
-    "name": "Peito",
-    "description": "Comporta 12 pés cúbicos/300 libras."
+    "name": "Baú",
+    "description": "Comporta 12 pés cúbicos ou 300 libras."
   },
   "Climber's Kit": {
     "name": "Kit de escalador",
     "description": "Inclui pitons especiais, pontas de botas, luvas e arnês. Concede vantagem em testes feitos para escalar."
   },
   "Clothes, common": {
-    "name": "Roupas, comuns",
+    "name": "Roupas comuns",
     "description": "Roupas simples para o dia a dia."
   },
   "Clothes, costume": {
-    "name": "Roupas, fantasia",
+    "name": "Traje de fantasia",
     "description": "Uma fantasia teatral ou disfarce."
   },
   "Clothes, fine": {
-    "name": "Roupas, tudo bem",
+    "name": "Roupas finas",
     "description": "Roupas elegantes adequadas para nobres."
   },
   "Clothes, traveler's": {
@@ -306,23 +306,23 @@
     "description": "Roupas resistentes feitas para viagens."
   },
   "Component Pouch": {
-    "name": "Bolsa de Componentes",
-    "description": "Uma bolsa pequena e estanque que possui compartimentos para guardar todos os componentes materiais de seus feitiços, exceto componentes que possuem um custo específico."
+    "name": "Bolsa de componentes",
+    "description": "Uma pequena bolsa impermeável com compartimentos para guardar os componentes materiais de suas magias, exceto aqueles que possuem um custo específico."
   },
   "Crowbar": {
     "name": "Pé de cabra",
     "description": "Concede vantagem em testes de Força onde a alavancagem pode ser aplicada."
   },
   "Druidic Focus": {
-    "name": "Foco Druídico",
-    "description": "Um ramo de visco, um totem, um cajado de madeira ou uma varinha de teixo servem como foco de lançamento de feitiços para druidas."
+    "name": "Foco druídico",
+    "description": "Um ramo de visco, um totem, um cajado de madeira ou uma varinha de teixo que serve como foco de conjuração para druidas."
   },
   "Flask or tankard": {
     "name": "Frasco ou caneca",
-    "description": "Contém 1 litro de líquido."
+    "description": "Contém cerca de 0,5 litro de líquido."
   },
   "Grappling Hook": {
-    "name": "Gancho",
+    "name": "Arpéu",
     "description": "Pode ser lançado para ancorar uma corda em uma superfície."
   },
   "Hammer": {
@@ -330,28 +330,28 @@
     "description": "Um martelo de carpinteiro."
   },
   "Hammer, sledge": {
-    "name": "Martelo, trenó",
+    "name": "Marreta",
     "description": "Uma marreta pesada."
   },
   "Healer's Kit": {
-    "name": "Kit do Curandeiro",
-    "description": "10 usos. Com uma ação, estabilize uma criatura com 0 PV sem fazer um teste de remédio."
+    "name": "Kit de curandeiro",
+    "description": "Possui 10 usos. Com uma ação, você pode estabilizar uma criatura com 0 PV sem fazer um teste de Medicina."
   },
   "Holy Symbol": {
-    "name": "Símbolo Sagrado",
-    "description": "Um amuleto, emblema ou relicário. Serve como foco de lançamento de feitiços para clérigos e paladinos."
+    "name": "Símbolo sagrado",
+    "description": "Um amuleto, emblema ou relicário que serve como foco de conjuração para clérigos e paladinos."
   },
   "Holy Water (flask)": {
-    "name": "Água Benta (frasco)",
-    "description": "Com uma ação, espalhe uma criatura em um raio de 1,5 metro ou jogue-a até 6 metros. Se acertar, um demônio ou morto-vivo sofre 2d6 de dano radiante."
+    "name": "Água benta (frasco)",
+    "description": "Com uma ação, você pode aspergir água benta em uma criatura a até 1,5 metro ou arremessá-la a até 6 metros. Em um acerto, um ínfero ou morto-vivo sofre 2d6 de dano radiante."
   },
   "Hourglass": {
     "name": "Ampulheta",
     "description": "Mede uma hora."
   },
   "Hunting Trap": {
-    "name": "Armadilha de Caça",
-    "description": "Quando ativada, uma criatura Grande ou menor que pisar na armadilha deve fazer um teste de resistência de Destreza CD 13 ou sofrerá 1d4 de dano perfurante e parar de se mover."
+    "name": "Armadilha de caça",
+    "description": "Quando armada, uma criatura Grande ou menor que pisar na armadilha deve fazer um teste de resistência de Destreza CD 13. Se falhar, sofre 1d4 de dano perfurante e para de se mover."
   },
   "Alms Box": {
     "name": "Caixa de esmolas",
@@ -366,52 +366,52 @@
     "description": "Tinta de escrever."
   },
   "Ink Pen": {
-    "name": "Caneta de tinta",
+    "name": "Caneta de pena",
     "description": "Uma caneta de pena ou cana para escrever."
   },
   "Jug or Pitcher": {
-    "name": "Jarro ou jarro",
+    "name": "Jarro ou bilha",
     "description": "Contém 1 galão de líquido."
   },
   "Ladder (10-foot)": {
-    "name": "Escada (10 pés)",
+    "name": "Escada (3 m)",
     "description": "Uma escada de madeira de 3 metros."
   },
   "Lamp": {
-    "name": "Lâmpada",
-    "description": "Queima óleo (1 litro = 6 horas). Emite luz brilhante em um raio de 4,5 metros e luz fraca por mais 9 metros adicionais."
+    "name": "Lamparina",
+    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de 4,5 metros e luz fraca por mais 9 metros."
   },
   "Lantern, bullseye": {
-    "name": "Lanterna, alvo",
-    "description": "Queima óleo (1 litro = 6 horas). Cone de 18 metros de luz brilhante, 18 metros adicionais de luz fraca."
+    "name": "Lanterna direcionável",
+    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um cone de 18 metros e luz fraca por mais 18 metros."
   },
   "Lantern, hooded": {
-    "name": "Lanterna, com capuz",
-    "description": "Queima óleo (1 litro = 6 horas). Luz brilhante com raio de 9 metros, luz fraca adicional de 9 metros. Pode ser encapuzado para reduzir a luz fraca a 1,5 metro."
+    "name": "Lanterna coberta",
+    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de 9 metros e luz fraca por mais 9 metros. Pode ser coberta para reduzir a luz a 1,5 metro."
   },
   "Lock": {
-    "name": "Trancar",
+    "name": "Cadeado",
     "description": "Um pequeno cadeado com chave. Teste de Destreza CD 15 com ferramentas de ladrão para abrir sem a chave."
   },
   "Magnifying Glass": {
     "name": "Lupa",
-    "description": "Pode ser usado para iniciar um incêndio com luz solar. Concede vantagem em testes de Percepção para examinar detalhes sutis."
+    "description": "Pode ser usada para iniciar fogo com luz solar. Concede vantagem em testes feitos para avaliar ou inspecionar objetos pequenos ou detalhados."
   },
   "Manacles": {
     "name": "Algemas",
-    "description": "Pode vincular uma criatura Pequena ou Média. Fugir requer um teste de Destreza CD 20. Quebrar requer Força CD 20. Cada conjunto vem com uma chave."
+    "description": "Podem prender uma criatura Pequena ou Média. Escapar exige um teste de Destreza CD 20. Quebrá-las exige um teste de Força CD 20. Cada conjunto vem com uma chave."
   },
   "Mess Kit": {
-    "name": "Kit de bagunça",
+    "name": "Kit de refeição",
     "description": "Uma caixa de lata com copo e utensílios simples."
   },
   "Mirror, steel": {
-    "name": "Espelho, aço",
+    "name": "Espelho de aço",
     "description": "Um pequeno espelho de mão."
   },
   "Oil (flask)": {
     "name": "Óleo (frasco)",
-    "description": "Combustível para lâmpadas (6 horas por frasco). Também pode ser incendiado e espirrado – o alvo sofre 5 de dano de fogo no próximo golpe, ou 2d6 se for incendiado."
+    "description": "Combustível para lamparinas (6 horas por frasco). Também pode ser aceso e arremessado; o alvo sofre 5 de dano de fogo no próximo acerto com fogo, ou 2d6 se o óleo for incendiado."
   },
   "Paper (one sheet)": {
     "name": "Papel (uma folha)",
@@ -426,8 +426,8 @@
     "description": "Um pequeno frasco de perfume."
   },
   "Pick, miner's": {
-    "name": "Escolha, mineiro",
-    "description": "Uma escolha pesada para mineração."
+    "name": "Picareta de minerador",
+    "description": "Uma picareta pesada para mineração."
   },
   "Piton": {
     "name": "Pitão",
@@ -438,36 +438,36 @@
     "description": "Aplicar a uma arma cortante ou perfurante. Uma criatura atingida deve ter sucesso em um teste de resistência de Constituição CD 10 ou sofrerá 1d4 de dano venenoso. Após 1 minuto o veneno perde potência."
   },
   "Pole (10-foot)": {
-    "name": "Pólo (10 pés)",
-    "description": "Um poste de madeira de 3 metros."
+    "name": "Vara (3 m)",
+    "description": "Uma vara de madeira de 3 metros."
   },
   "Pot, iron": {
-    "name": "Panela, ferro",
+    "name": "Panela de ferro",
     "description": "Uma grande panela de ferro."
   },
   "Pouch": {
     "name": "Bolsa",
-    "description": "Comporta até 20 balas de estilingue ou 50 agulhas de zarabatana, ou 6 lbs/1/5 pé cúbico de equipamento."
+    "description": "Comporta até 20 balas de funda, 50 agulhas de zarabatana ou 6 lb/1/5 pé cúbico de equipamento."
   },
   "Quiver": {
     "name": "Aljava",
     "description": "Comporta até 20 flechas."
   },
   "Ram, portable": {
-    "name": "Ram, portátil",
-    "description": "Concede +4 de bônus em testes de Força para arrombar portas. Duas pessoas podem usá-lo – uma concede vantagem."
+    "name": "Aríete portátil",
+    "description": "Concede +4 de bônus em testes de Força para arrombar portas. Duas pessoas podem usá-lo; a segunda concede vantagem."
   },
   "Rations (1 day)": {
     "name": "Rações (1 dia)",
     "description": "Alimentos secos adequados para viagens prolongadas, incluindo carne seca, frutas secas, biscoitos duros e nozes."
   },
   "Rope, hempen (50 feet)": {
-    "name": "Corda, cânhamo (50 pés)",
-    "description": "Tem 2 pontos de vida e pode explodir com um teste de Força CD 17."
+    "name": "Corda de cânhamo (15 m)",
+    "description": "Tem 2 pontos de vida e pode ser arrebentada com um teste de Força CD 17."
   },
   "Rope, silk (50 feet)": {
-    "name": "Corda, seda (50 pés)",
-    "description": "Tem 2 pontos de vida e pode explodir com um teste de Força CD 17."
+    "name": "Corda de seda (15 m)",
+    "description": "Tem 2 pontos de vida e pode ser arrebentada com um teste de Força CD 17."
   },
   "Sack": {
     "name": "Saco",
@@ -478,7 +478,7 @@
     "description": "Um pequeno saco de areia, útil para secar tinta."
   },
   "Scale, merchant's": {
-    "name": "Escala, comerciante",
+    "name": "Balança de mercador",
     "description": "Uma pequena balança com pratos para pesar moedas e pedras preciosas."
   },
   "Sealing Wax": {
@@ -502,28 +502,28 @@
     "description": "Uma barra de sabão."
   },
   "Spellbook": {
-    "name": "Livro de feitiços",
-    "description": "Essencial para magos. Contém 100 páginas para gravação de feitiços – em branco na compra."
+    "name": "Livro de magias",
+    "description": "Essencial para magos. Contém 100 páginas para registrar magias; vem em branco quando comprado."
   },
   "Spikes, iron (10)": {
-    "name": "Espigões de ferro (10)",
-    "description": "Dez pontas de ferro com um martelo."
+    "name": "Cravos de ferro (10)",
+    "description": "Dez cravos de ferro."
   },
   "Spyglass": {
     "name": "Luneta",
     "description": "Os objetos vistos através da luneta são ampliados para o dobro do seu tamanho."
   },
   "String (10 feet)": {
-    "name": "Corda (10 pés)",
-    "description": "Um comprimento de corda de 10 pés."
+    "name": "Barbante (3 m)",
+    "description": "Um pedaço de barbante de 3 metros."
   },
   "Tent, two-person": {
     "name": "Tenda para duas pessoas",
     "description": "Um abrigo de lona simples e portátil."
   },
   "Tinderbox": {
-    "name": "Caixa de fogo",
-    "description": "Contém pederneira, aço de fogo e isca. Acender uma tocha ou fogo requer 1 ação (ou 1 minuto se a isca estiver úmida)."
+    "name": "Pederneira",
+    "description": "Contém pederneira, aço e isca. Acender uma tocha ou fogo requer 1 ação, ou 1 minuto se a isca estiver úmida."
   },
   "Torch": {
     "name": "Tocha",
@@ -543,6 +543,6 @@
   },
   "Whetstone": {
     "name": "Pedra de amolar",
-    "description": "Usado para afiar lâminas."
+    "description": "Usada para afiar lâminas."
   }
 }

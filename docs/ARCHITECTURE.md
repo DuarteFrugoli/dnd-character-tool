@@ -404,18 +404,14 @@ open intents for `.dndchar` do not crash GoRouter.
 
 ## Import And Export
 
-Export from the character card prepares three user-facing representations:
+Export from the character card prepares two user-facing representations:
 
-1. A share token built in `character_list_screen.dart` from `exportToJson()`.
-   Native tokens are `base64url(gzip(json))`; web tokens are plain
-   `base64url(json)` because `dart:io` gzip is unavailable there.
-2. Plain JSON from `CharacterRepository.exportToJson()`, used by the import
-   dialog and as the source for the share token.
-3. `.dndchar` file JSON from `exportToFileJson()`, which can include base64
-   image data.
+1. `.dndchar` file JSON from `exportToFileJson()`, which can include base64
+   image data and is the primary sharing format.
+2. Plain JSON from `CharacterRepository.exportToJson()`, kept as an advanced
+   copy/paste fallback without embedded image data.
 
-Token and `.dndchar` payload encoding run in `compute()` where needed to avoid
-UI jank.
+`.dndchar` payload encoding runs in `compute()` where needed to avoid UI jank.
 
 Platform export is selected through `core/utils/file_exporter.dart`:
 
@@ -424,7 +420,7 @@ Platform export is selected through `core/utils/file_exporter.dart`:
 
 Import paths:
 
-- Token or raw JSON paste/import from the character list dialog.
+- Raw JSON paste/import from the character list dialog.
 - File picker from the character list.
 - Platform channel `dnd.character/file_import` through `IncomingFileService`
   when the app is opened from a `.dndchar` file.

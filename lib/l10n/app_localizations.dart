@@ -174,12 +174,6 @@ abstract class AppLocalizations {
   /// **'The pasted JSON is not valid.'**
   String get importErrorInvalidJson;
 
-  /// Import error: the token is not valid.
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid token. It may be corrupted or from an incompatible version.'**
-  String get importErrorInvalidToken;
-
   /// Hint shown when tapping a disabled input field during import.
   ///
   /// In en, this message translates to:
@@ -3522,36 +3516,6 @@ abstract class AppLocalizations {
   /// **'Export {name}'**
   String exportDialogTitle(String name);
 
-  /// Export dialog: token section label.
-  ///
-  /// In en, this message translates to:
-  /// **'Token'**
-  String get exportLabelToken;
-
-  /// Export dialog: copy token button.
-  ///
-  /// In en, this message translates to:
-  /// **'Copy token'**
-  String get exportCopyToken;
-
-  /// Export dialog: hide QR code button.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide QR Code'**
-  String get exportHideQr;
-
-  /// Export dialog: show QR code button.
-  ///
-  /// In en, this message translates to:
-  /// **'Show QR Code'**
-  String get exportShowQr;
-
-  /// Export dialog: character too large for QR code warning.
-  ///
-  /// In en, this message translates to:
-  /// **'Character too large for QR code.\nUse the token or JSON to share.'**
-  String get exportQrTooLarge;
-
   /// Export dialog: expand JSON section label.
   ///
   /// In en, this message translates to:
@@ -3563,18 +3527,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Copy JSON'**
   String get exportCopyJson;
-
-  /// Export dialog: quick share section heading.
-  ///
-  /// In en, this message translates to:
-  /// **'Quick share'**
-  String get exportSectionQuick;
-
-  /// Export dialog: quick share section caption.
-  ///
-  /// In en, this message translates to:
-  /// **'No image — for sharing stats'**
-  String get exportSectionQuickCaption;
 
   /// Export dialog: complete file section heading.
   ///
@@ -3605,18 +3557,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Import Character'**
   String get importDialogTitle;
-
-  /// Import dialog: token text field hint.
-  ///
-  /// In en, this message translates to:
-  /// **'Paste token here…'**
-  String get importTokenHint;
-
-  /// Import dialog: scan QR code button / AppBar title.
-  ///
-  /// In en, this message translates to:
-  /// **'Scan QR Code'**
-  String get importScanQr;
 
   /// Import dialog: expand JSON section label.
   ///

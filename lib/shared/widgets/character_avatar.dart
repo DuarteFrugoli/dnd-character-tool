@@ -1,16 +1,13 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:gal/gal.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../core/platform/character_image.dart';
 import '../../l10n/app_localizations.dart';
-import 'character_avatar_save_web_stub.dart'
-    if (dart.library.js_interop) 'character_avatar_save_web.dart';
 
 /// Directly opens the image picker + cropper and calls [onChanged] with the
 /// resulting path. No bottom sheet shown.
@@ -18,7 +15,6 @@ Future<void> _pickAndCrop(
   BuildContext context, {
   required void Function(String? path) onChanged,
 }) async {
-
   final picker = ImagePicker();
   final XFile? picked;
   try {
@@ -38,7 +34,8 @@ Future<void> _pickAndCrop(
       compressQuality: 85,
       uiSettings: [
         AndroidUiSettings(
-          toolbarTitle: AppLocalizations.of(context)?.avatarCropPhoto ?? 'Crop photo',
+          toolbarTitle:
+              AppLocalizations.of(context)?.avatarCropPhoto ?? 'Crop photo',
           lockAspectRatio: true,
           hideBottomControls: false,
         ),
@@ -55,7 +52,7 @@ Future<void> _pickAndCrop(
 
   if (cropped == null) return;
 
-  // On web, blob URLs are temporary — convert to a base64 data URL so the
+  // On web, blob URLs are temporary; convert to a base64 data URL so the
   // image survives page refreshes and can be stored in the character JSON.
   if (kIsWeb) {
     final bytes = await cropped.readAsBytes();
@@ -81,13 +78,17 @@ Future<void> showCharacterPhotoPicker(
         children: [
           ListTile(
             leading: const Icon(Icons.photo_library_outlined),
-            title: Text(AppLocalizations.of(ctx)?.avatarChoosePhoto ?? 'Choose photo'),
+            title: Text(
+              AppLocalizations.of(ctx)?.avatarChoosePhoto ?? 'Choose photo',
+            ),
             onTap: () => Navigator.pop(ctx, _AvatarAction.pick),
           ),
           if (currentImagePath != null)
             ListTile(
               leading: const Icon(Icons.delete_outline),
-              title: Text(AppLocalizations.of(ctx)?.avatarRemovePhoto ?? 'Remove photo'),
+              title: Text(
+                AppLocalizations.of(ctx)?.avatarRemovePhoto ?? 'Remove photo',
+              ),
               onTap: () => Navigator.pop(ctx, _AvatarAction.delete),
             ),
           ListTile(
@@ -106,8 +107,13 @@ Future<void> showCharacterPhotoPicker(
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmTitle ?? 'Remove photo?'),
-        content: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmBody ?? 'This action cannot be undone.'),
+        title: Text(
+          AppLocalizations.of(ctx)?.avatarRemoveConfirmTitle ?? 'Remove photo?',
+        ),
+        content: Text(
+          AppLocalizations.of(ctx)?.avatarRemoveConfirmBody ??
+              'This action cannot be undone.',
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
@@ -131,14 +137,10 @@ Future<void> showCharacterPhotoPicker(
 }
 
 /// Returns the appropriate [ImageProvider] for [path]:
-/// - base64 data URL (web storage) → [MemoryImage]
-/// - file path (mobile) → [FileImage]
+/// - base64 data URL (web storage) uses [MemoryImage]
+/// - file path (native storage) uses the platform image provider
 ImageProvider _resolveImageProvider(String path) {
-  if (path.startsWith('data:')) {
-    final base64Data = path.split(',').last;
-    return MemoryImage(base64Decode(base64Data));
-  }
-  return FileImage(File(path));
+  return resolveCharacterImageProvider(path);
 }
 
 /// A tappable circular avatar that shows the character photo (if set)
@@ -171,7 +173,9 @@ class CharacterAvatar extends StatelessWidget {
       radius: radius,
       backgroundColor: cs.primaryContainer,
       foregroundColor: cs.onPrimaryContainer,
-      backgroundImage: imagePath != null ? _resolveImageProvider(imagePath!) : null,
+      backgroundImage: imagePath != null
+          ? _resolveImageProvider(imagePath!)
+          : null,
       child: imagePath == null
           ? Text(
               name.isNotEmpty ? name[0].toUpperCase() : '?',
@@ -192,29 +196,29 @@ class CharacterAvatar extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-      onTap: () {
-        if (imagePath != null) {
-          _showPhotoViewer(
-            context,
-            imagePath: imagePath!,
-            characterName: name,
-            onImageChanged: onImageChanged!,
-          );
-        } else {
-          showCharacterPhotoPicker(
-            context,
-            currentImagePath: null,
-            onImageChanged: onImageChanged!,
-          );
-        }
-      },
-      child: interactive,
-    ),
+        onTap: () {
+          if (imagePath != null) {
+            _showPhotoViewer(
+              context,
+              imagePath: imagePath!,
+              characterName: name,
+              onImageChanged: onImageChanged!,
+            );
+          } else {
+            showCharacterPhotoPicker(
+              context,
+              currentImagePath: null,
+              onImageChanged: onImageChanged!,
+            );
+          }
+        },
+        child: interactive,
+      ),
     );
   }
 }
 
-// ── Full-screen photo viewer ─────────────────────────────────────────────────
+// Full-screen photo viewer.
 
 enum _ViewerResult { pick, remove }
 
@@ -229,7 +233,8 @@ Future<void> _showPhotoViewer(
       opaque: true,
       transitionDuration: const Duration(milliseconds: 220),
       reverseTransitionDuration: const Duration(milliseconds: 180),
-      pageBuilder: (_, _, _) => _PhotoViewerPage(imagePath: imagePath, characterName: characterName),
+      pageBuilder: (_, _, _) =>
+          _PhotoViewerPage(imagePath: imagePath, characterName: characterName),
       transitionsBuilder: (_, animation, _, child) {
         return FadeTransition(opacity: animation, child: child);
       },
@@ -242,8 +247,13 @@ Future<void> _showPhotoViewer(
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmTitle ?? 'Remove photo?'),
-        content: Text(AppLocalizations.of(ctx)?.avatarRemoveConfirmBody ?? 'This action cannot be undone.'),
+        title: Text(
+          AppLocalizations.of(ctx)?.avatarRemoveConfirmTitle ?? 'Remove photo?',
+        ),
+        content: Text(
+          AppLocalizations.of(ctx)?.avatarRemoveConfirmBody ??
+              'This action cannot be undone.',
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
@@ -266,7 +276,10 @@ Future<void> _showPhotoViewer(
 }
 
 class _PhotoViewerPage extends StatefulWidget {
-  const _PhotoViewerPage({required this.imagePath, required this.characterName});
+  const _PhotoViewerPage({
+    required this.imagePath,
+    required this.characterName,
+  });
 
   final String imagePath;
   final String characterName;
@@ -292,20 +305,20 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
   double _fittedH = 0;
   bool _clamping = false;
 
-  bool get _isZoomed =>
-      _transformController.value.getMaxScaleOnAxis() > 1.05;
+  bool get _isZoomed => _transformController.value.getMaxScaleOnAxis() > 1.05;
 
   @override
   void initState() {
     super.initState();
-    _animController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 220),
-    )..addListener(() {
-        if (_animation != null) {
-          _transformController.value = _animation!.value;
-        }
-      });
+    _animController =
+        AnimationController(
+          vsync: this,
+          duration: const Duration(milliseconds: 220),
+        )..addListener(() {
+          if (_animation != null) {
+            _transformController.value = _animation!.value;
+          }
+        });
     _transformController.addListener(() {
       _clampTransform();
       if (mounted) setState(() {});
@@ -314,16 +327,18 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
     // Load image dimensions to calculate exact boundary
     _resolveImageProvider(widget.imagePath)
         .resolve(const ImageConfiguration())
-        .addListener(ImageStreamListener((ImageInfo info, bool _) {
-      if (mounted) {
-        setState(() {
-          _imageSize = Size(
-            info.image.width.toDouble(),
-            info.image.height.toDouble(),
-          );
-        });
-      }
-    }));
+        .addListener(
+          ImageStreamListener((ImageInfo info, bool _) {
+            if (mounted) {
+              setState(() {
+                _imageSize = Size(
+                  info.image.width.toDouble(),
+                  info.image.height.toDouble(),
+                );
+              });
+            }
+          }),
+        );
   }
 
   @override
@@ -348,7 +363,12 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
       final px = _doubleTapDetails!.localPosition.dx;
       final py = _doubleTapDetails!.localPosition.dy;
       end = Matrix4.identity()
-        ..translateByDouble(px * (1 - s) + s * cx, py * (1 - s) + s * cy, 0.0, 1.0)
+        ..translateByDouble(
+          px * (1 - s) + s * cx,
+          py * (1 - s) + s * cy,
+          0.0,
+          1.0,
+        )
         ..scaleByDouble(s, s, 1.0, 1.0);
     }
     _animateTo(end);
@@ -364,8 +384,8 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
 
   /// WhatsApp-style boundary clamping, fired on every controller change.
   /// Rules applied independently per axis:
-  ///   scaledDim > screenDim  →  pan clamped to [screenDim − scaledDim, 0]
-  ///   scaledDim ≤ screenDim  →  centered (shows black bars on that axis)
+  ///   scaledDim > screenDim: pan clamped to [screenDim - scaledDim, 0]
+  ///   scaledDim <= screenDim: centered (shows black bars on that axis)
   void _clampTransform() {
     if (_clamping || _fittedW == 0 || _screenW == 0) return;
     final m = _transformController.value;
@@ -397,22 +417,10 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
     final safeName = widget.characterName.replaceAll(RegExp(r'[^\w]'), '_');
     final filename = '${safeName}_photo.jpg';
     try {
-      if (kIsWeb) {
-        final bytes = path.startsWith('data:')
-            ? base64Decode(path.split(',').last)
-            : await File(path).readAsBytes();
-        downloadImageWeb(bytes, filename);
-      } else if (path.startsWith('data:')) {
-        final bytes = base64Decode(path.split(',').last);
-        await Gal.putImageBytes(bytes);
-      } else {
-        await Gal.putImage(path);
-      }
+      await saveCharacterImage(path, filename);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n?.avatarSaveSuccess ?? 'Photo saved'),
-          ),
+          SnackBar(content: Text(l10n?.avatarSaveSuccess ?? 'Photo saved')),
         );
       }
     } catch (_) {
@@ -459,17 +467,22 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
           children: [
             _ViewerAction(
               icon: Icons.download_outlined,
-              label: AppLocalizations.of(context)?.avatarSavePhoto ?? 'Save photo',
+              label:
+                  AppLocalizations.of(context)?.avatarSavePhoto ?? 'Save photo',
               onTap: _saveToGallery,
             ),
             _ViewerAction(
               icon: Icons.edit_outlined,
-              label: AppLocalizations.of(context)?.avatarChangePhoto ?? 'Change photo',
+              label:
+                  AppLocalizations.of(context)?.avatarChangePhoto ??
+                  'Change photo',
               onTap: () => Navigator.of(context).pop(_ViewerResult.pick),
             ),
             _ViewerAction(
               icon: Icons.delete_outline,
-              label: AppLocalizations.of(context)?.avatarRemovePhoto ?? 'Remove photo',
+              label:
+                  AppLocalizations.of(context)?.avatarRemovePhoto ??
+                  'Remove photo',
               onTap: () => Navigator.of(context).pop(_ViewerResult.remove),
             ),
           ],
@@ -505,7 +518,7 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
           // set, show a static BoxFit.contain image (no distortion flash).
           if (!_transformReady) {
             if (_imageSize != null) {
-              // Dimensions known — schedule the one-time centering transform.
+              // Dimensions known; schedule the one-time centering transform.
               final tx = (screenW - fittedW) / 2;
               final ty = (screenH - fittedH) / 2;
               WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -518,25 +531,27 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
                 }
               });
             }
-            return Stack(children: [
-              Positioned.fill(
-                child: GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () => Navigator.of(context).pop(),
-                  child: Image(image: image, fit: BoxFit.contain),
+            return Stack(
+              children: [
+                Positioned.fill(
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () => Navigator.of(context).pop(),
+                    child: Image(image: image, fit: BoxFit.contain),
+                  ),
                 ),
-              ),
-              topBar,
-              bottomBar,
-            ]);
+                topBar,
+                bottomBar,
+              ],
+            );
           }
 
-          // ── Interactive viewer ───────────────────────────────────────────
+          // Interactive viewer.
           // boundaryMargin is huge so InteractiveViewer never restricts
           // movement itself.  _clampTransform() fires on every controller
           // change and enforces the real rules:
-          //   scaledDim > screenDim  →  clamp pan to [screenDim-scaledDim, 0]
-          //   scaledDim ≤ screenDim  →  center (show black bars on that axis)
+          //   scaledDim > screenDim: clamp pan to [screenDim - scaledDim, 0]
+          //   scaledDim <= screenDim: center (show black bars on that axis)
           return Stack(
             children: [
               Positioned.fill(
@@ -546,10 +561,13 @@ class _PhotoViewerPageState extends State<_PhotoViewerPage>
                       ? null
                       : (details) {
                           // Close only when tapping the black area around the image.
-                          final inv =
-                              Matrix4.inverted(_transformController.value);
+                          final inv = Matrix4.inverted(
+                            _transformController.value,
+                          );
                           final childPt = MatrixUtils.transformPoint(
-                              inv, details.localPosition);
+                            inv,
+                            details.localPosition,
+                          );
                           if (childPt.dx < 0 ||
                               childPt.dx > fittedW ||
                               childPt.dy < 0 ||

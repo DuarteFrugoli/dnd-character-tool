@@ -41,10 +41,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get importErrorInvalidJson => '貼り付けたJSONが無効です。';
 
   @override
-  String get importErrorInvalidToken =>
-      'トークンが無効です。破損しているか、互換性のないバージョンの可能性があります。';
-
-  @override
   String get importFieldLockedHint => 'このフィールドを使用するには、もう一方をクリアしてください。';
 
   @override
@@ -1870,32 +1866,10 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get exportLabelToken => 'トークン';
-
-  @override
-  String get exportCopyToken => 'トークンをコピー';
-
-  @override
-  String get exportHideQr => 'QRコードを非表示';
-
-  @override
-  String get exportShowQr => 'QRコードを表示';
-
-  @override
-  String get exportQrTooLarge =>
-      'キャラクターがQRコードに収まりません。\nトークンまたはJSONを使って共有してください。';
-
-  @override
   String get exportShowJson => 'JSONを表示';
 
   @override
   String get exportCopyJson => 'JSONをコピー';
-
-  @override
-  String get exportSectionQuick => 'クイック共有';
-
-  @override
-  String get exportSectionQuickCaption => '画像なし — ステータスを共有するため';
 
   @override
   String get exportSectionFile => '完全なファイル';
@@ -1911,12 +1885,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get importDialogTitle => 'キャラクターをインポート';
-
-  @override
-  String get importTokenHint => 'ここにトークンを貼り付け…';
-
-  @override
-  String get importScanQr => 'QRコードをスキャン';
 
   @override
   String get importUseJson => 'JSONを直接使用';

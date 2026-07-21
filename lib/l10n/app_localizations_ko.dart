@@ -41,10 +41,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get importErrorInvalidJson => '붙여넣은 JSON이 유효하지 않습니다.';
 
   @override
-  String get importErrorInvalidToken =>
-      '유효하지 않은 토큰입니다. 손상되었거나 호환되지 않는 버전일 수 있습니다.';
-
-  @override
   String get importFieldLockedHint => '이 필드를 사용하려면 다른 필드를 지우세요.';
 
   @override
@@ -1871,32 +1867,10 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get exportLabelToken => '토큰';
-
-  @override
-  String get exportCopyToken => '토큰 복사';
-
-  @override
-  String get exportHideQr => 'QR 코드 숨기기';
-
-  @override
-  String get exportShowQr => 'QR 코드 표시';
-
-  @override
-  String get exportQrTooLarge =>
-      '캐릭터가 QR 코드에 비해 너무 큽니다.\n토큰 또는 JSON을 사용하여 공유하세요.';
-
-  @override
   String get exportShowJson => 'JSON 표시';
 
   @override
   String get exportCopyJson => 'JSON 복사';
-
-  @override
-  String get exportSectionQuick => '빠른 공유';
-
-  @override
-  String get exportSectionQuickCaption => '이미지 없음 — 스탬 공유용';
 
   @override
   String get exportSectionFile => '완전한 파일';
@@ -1912,12 +1886,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get importDialogTitle => '캐릭터 가져오기';
-
-  @override
-  String get importTokenHint => '여기에 토큰 붙여넣기…';
-
-  @override
-  String get importScanQr => 'QR 코드 스캔';
 
   @override
   String get importUseJson => 'JSON 직접 사용';

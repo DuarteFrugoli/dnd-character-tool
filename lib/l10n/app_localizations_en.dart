@@ -42,10 +42,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get importErrorInvalidJson => 'The pasted JSON is not valid.';
 
   @override
-  String get importErrorInvalidToken =>
-      'Invalid token. It may be corrupted or from an incompatible version.';
-
-  @override
   String get importFieldLockedHint => 'Clear the other field to use this one.';
 
   @override
@@ -1888,32 +1884,10 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get exportLabelToken => 'Token';
-
-  @override
-  String get exportCopyToken => 'Copy token';
-
-  @override
-  String get exportHideQr => 'Hide QR Code';
-
-  @override
-  String get exportShowQr => 'Show QR Code';
-
-  @override
-  String get exportQrTooLarge =>
-      'Character too large for QR code.\nUse the token or JSON to share.';
-
-  @override
   String get exportShowJson => 'Show JSON';
 
   @override
   String get exportCopyJson => 'Copy JSON';
-
-  @override
-  String get exportSectionQuick => 'Quick share';
-
-  @override
-  String get exportSectionQuickCaption => 'No image — for sharing stats';
 
   @override
   String get exportSectionFile => 'Complete file';
@@ -1929,12 +1903,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importDialogTitle => 'Import Character';
-
-  @override
-  String get importTokenHint => 'Paste token here…';
-
-  @override
-  String get importScanQr => 'Scan QR Code';
 
   @override
   String get importUseJson => 'Use JSON directly';

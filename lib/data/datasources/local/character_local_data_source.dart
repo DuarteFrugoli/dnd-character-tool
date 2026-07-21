@@ -1,12 +1,11 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:path_provider/path_provider.dart';
 
 import 'storage_backend_stub.dart'
     if (dart.library.io) 'storage_backend_native.dart'
     if (dart.library.js_interop) 'storage_backend_web.dart';
+import 'local_image_payload.dart';
 
 import '../../models/models.dart';
 
@@ -19,10 +18,9 @@ class CharacterLocalDataSource {
 
   /// Constructor for testing: accepts a custom [StorageBackend].
   CharacterLocalDataSource.fromBackend(StorageBackend backend)
-      : _backend = backend;
+    : _backend = backend;
 
-  static final CharacterLocalDataSource instance =
-      CharacterLocalDataSource._();
+  static final CharacterLocalDataSource instance = CharacterLocalDataSource._();
 
   final StorageBackend _backend;
 
@@ -107,7 +105,10 @@ class CharacterLocalDataSource {
         // Web: image is already a base64 data URL — extract bytes and mime type.
         final commaIdx = imagePath.indexOf(',');
         if (commaIdx != -1) {
-          final header = imagePath.substring(5, commaIdx); // e.g. "image/jpeg;base64"
+          final header = imagePath.substring(
+            5,
+            commaIdx,
+          ); // e.g. "image/jpeg;base64"
           mimeType = header.split(';').first; // "image/jpeg"
           try {
             bytes = base64Decode(imagePath.substring(commaIdx + 1));
@@ -117,12 +118,9 @@ class CharacterLocalDataSource {
         // Native: resolve file path and read bytes.
         final absolutePath = await resolveImagePath(imagePath);
         if (absolutePath != null) {
-          final file = File(absolutePath);
-          if (await file.exists()) {
-            bytes = await file.readAsBytes();
-            final ext = absolutePath.split('.').last.toLowerCase();
-            mimeType = ext == 'png' ? 'image/png' : 'image/jpeg';
-          }
+          final image = await readStoredImagePayload(absolutePath);
+          bytes = image.bytes;
+          mimeType = image.mimeType;
         }
       }
     }
@@ -167,16 +165,7 @@ class CharacterLocalDataSource {
         return (bytes: null, mimeType: null);
       }
 
-      final file = File(absolutePath);
-      if (!await file.exists()) {
-        return (bytes: null, mimeType: null);
-      }
-
-      final ext = absolutePath.split('.').last.toLowerCase();
-      return (
-        bytes: await file.readAsBytes(),
-        mimeType: ext == 'png' ? 'image/png' : 'image/jpeg',
-      );
+      return readStoredImagePayload(absolutePath);
     }
 
     final characters = await loadAll();
@@ -273,7 +262,9 @@ class CharacterLocalDataSource {
       throw const FormatException('invalid_json');
     }
 
-    if (decoded is! Map<String, dynamic>) throw const FormatException('not_object');
+    if (decoded is! Map<String, dynamic>) {
+      throw const FormatException('not_object');
+    }
 
     return importFromDndCharPayload(decoded, imageOwnerId: imageOwnerId);
   }
@@ -282,14 +273,20 @@ class CharacterLocalDataSource {
     Map<String, dynamic> decoded, {
     String imageOwnerId = 'import_tmp',
   }) async {
-    if (!decoded.containsKey('character')) throw const FormatException('missing_character');
+    if (!decoded.containsKey('character')) {
+      throw const FormatException('missing_character');
+    }
 
     final characterJson = decoded['character'];
-    if (characterJson is! Map<String, dynamic>) throw const FormatException('corrupted_character');
+    if (characterJson is! Map<String, dynamic>) {
+      throw const FormatException('corrupted_character');
+    }
 
     Character character;
     try {
-      character = Character.fromJson(characterJson).copyWith(clearImagePath: true);
+      character = Character.fromJson(
+        characterJson,
+      ).copyWith(clearImagePath: true);
     } catch (_) {
       throw const FormatException('corrupted_character');
     }
@@ -300,23 +297,14 @@ class CharacterLocalDataSource {
     if (imageData != null) {
       try {
         final mimeType = imageMimeType ?? 'image/jpeg';
-        if (kIsWeb) {
-          // On web, store image as base64 data URL directly in the character JSON.
-          character = character.copyWith(
-            imagePath: 'data:$mimeType;base64,$imageData',
-          );
-        } else {
-          final bytes = base64Decode(imageData);
-          final ext = mimeType == 'image/png' ? 'png' : 'jpg';
-          final tempDir = await getTemporaryDirectory();
-          final ts = DateTime.now().microsecondsSinceEpoch;
-          final tempFile = File('${tempDir.path}/dndchar_import_$ts.$ext');
-          await tempFile.writeAsBytes(bytes);
-          final savedPath = await _backend.saveImage(imageOwnerId, tempFile.path);
-          await tempFile.delete().catchError((_) => File(''));
-          if (savedPath != null) {
-            character = character.copyWith(imagePath: savedPath);
-          }
+        final savedPath = await persistImportedImagePayload(
+          backend: _backend,
+          imageOwnerId: imageOwnerId,
+          imageData: imageData,
+          mimeType: mimeType,
+        );
+        if (savedPath != null) {
+          character = character.copyWith(imagePath: savedPath);
         }
       } catch (_) {
         // Image import failed — proceed without image
@@ -361,4 +349,3 @@ String _encodeBackupPayload(Map<String, dynamic> args) {
   };
   return const JsonEncoder.withIndent('  ').convert(payload);
 }
-

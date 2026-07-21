@@ -43,10 +43,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get importErrorInvalidJson => 'Вставленный JSON недопустим.';
 
   @override
-  String get importErrorInvalidToken =>
-      'Недействительный токен. Он может быть повреждён или от несовместимой версии.';
-
-  @override
   String get importFieldLockedHint =>
       'Очистите другое поле, чтобы использовать это.';
 
@@ -1898,33 +1894,10 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get exportLabelToken => 'Токен';
-
-  @override
-  String get exportCopyToken => 'Копировать токен';
-
-  @override
-  String get exportHideQr => 'Скрыть QR-код';
-
-  @override
-  String get exportShowQr => 'Показать QR-код';
-
-  @override
-  String get exportQrTooLarge =>
-      'Персонаж слишком большой для QR-кода.\nИспользуйте токен или JSON для обмена.';
-
-  @override
   String get exportShowJson => 'Показать JSON';
 
   @override
   String get exportCopyJson => 'Копировать JSON';
-
-  @override
-  String get exportSectionQuick => 'Быстрый обмен';
-
-  @override
-  String get exportSectionQuickCaption =>
-      'Без фото — для обмена характеристиками';
 
   @override
   String get exportSectionFile => 'Полный файл';
@@ -1940,12 +1913,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get importDialogTitle => 'Импорт персонажа';
-
-  @override
-  String get importTokenHint => 'Вставьте токен здесь…';
-
-  @override
-  String get importScanQr => 'Сканировать QR-код';
 
   @override
   String get importUseJson => 'Использовать JSON напрямую';

@@ -65,8 +65,8 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
-- Export as **JSON** or share **token** (gzip + base64url on native platforms; base64url on web)
-- Import by `.dndchar` file, token or JSON
+- Export raw **JSON** as an advanced copy/paste fallback
+- Import by `.dndchar` file or raw JSON
 - Cross-platform: characters exported on mobile import correctly on web and vice-versa
 
 ### Customization
@@ -188,8 +188,8 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
-- Exportar como **JSON** ou **token** de compartilhamento (gzip + base64url em plataformas nativas; base64url na web)
-- Importar por arquivo `.dndchar`, token ou JSON
+- Exportar **JSON** cru como fallback avançado de copiar/colar
+- Importar por arquivo `.dndchar` ou JSON cru
 - Cross-platform: personagens exportados no celular importam corretamente na web e vice-versa
 
 ### Personalização

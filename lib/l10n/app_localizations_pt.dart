@@ -43,10 +43,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get importErrorInvalidJson => 'O JSON colado não é válido.';
 
   @override
-  String get importErrorInvalidToken =>
-      'Token inválido. Pode estar corrompido ou ser de uma versão incompatível.';
-
-  @override
   String get importFieldLockedHint => 'Limpe o outro campo para usar este.';
 
   @override
@@ -1900,33 +1896,10 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get exportLabelToken => 'Token';
-
-  @override
-  String get exportCopyToken => 'Copiar token';
-
-  @override
-  String get exportHideQr => 'Ocultar QR Code';
-
-  @override
-  String get exportShowQr => 'Mostrar QR Code';
-
-  @override
-  String get exportQrTooLarge =>
-      'Personagem muito grande para QR code.\nUse o token ou JSON para compartilhar.';
-
-  @override
   String get exportShowJson => 'Mostrar JSON';
 
   @override
   String get exportCopyJson => 'Copiar JSON';
-
-  @override
-  String get exportSectionQuick => 'Compartilhamento rápido';
-
-  @override
-  String get exportSectionQuickCaption =>
-      'Sem imagem — para compartilhar stats';
 
   @override
   String get exportSectionFile => 'Arquivo completo';
@@ -1942,12 +1915,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get importDialogTitle => 'Importar Personagem';
-
-  @override
-  String get importTokenHint => 'Cole o token aqui…';
-
-  @override
-  String get importScanQr => 'Escanear QR Code';
 
   @override
   String get importUseJson => 'Usar JSON diretamente';

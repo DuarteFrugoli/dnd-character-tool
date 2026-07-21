@@ -41,9 +41,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importErrorInvalidJson => '粘贴的JSON无效。';
 
   @override
-  String get importErrorInvalidToken => '无效的令牌。它可能已损坏或来自不兼容的版本。';
-
-  @override
   String get importFieldLockedHint => '清除另一个字段才能使用此字段。';
 
   @override
@@ -1862,31 +1859,10 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get exportLabelToken => '令牌';
-
-  @override
-  String get exportCopyToken => '复制令牌';
-
-  @override
-  String get exportHideQr => '隐藏二维码';
-
-  @override
-  String get exportShowQr => '显示二维码';
-
-  @override
-  String get exportQrTooLarge => '角色太大，无法生成二维码。\n请使用令牌或JSON进行分享。';
-
-  @override
   String get exportShowJson => '显示JSON';
 
   @override
   String get exportCopyJson => '复制JSON';
-
-  @override
-  String get exportSectionQuick => '快速分享';
-
-  @override
-  String get exportSectionQuickCaption => '无图片 — 用于分享属性';
 
   @override
   String get exportSectionFile => '完整文件';
@@ -1902,12 +1878,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get importDialogTitle => '导入角色';
-
-  @override
-  String get importTokenHint => '在此粘贴令牌…';
-
-  @override
-  String get importScanQr => '扫描二维码';
 
   @override
   String get importUseJson => '直接使用JSON';

@@ -7,6 +7,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+---
+
+## [1.0.5] - 2026-07-21
+
 ### Added
 - **Web — IndexedDB para personagens**: a versão web agora usa IndexedDB como storage principal de personagens, mantendo a interface `StorageBackend` compartilhada com Android/iOS.
 - **Web — imagens no IndexedDB**: fotos de personagens agora são salvas no object store `images`, enquanto o personagem guarda apenas a referência local `indexeddb:image:<id>`.
@@ -18,6 +22,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Avatar — imagens mais leves**: fotos cortadas pelo app agora usam limite de 512x512 com JPEG 85 para reduzir peso no storage/exportação.
 - **Documentação**: README e arquitetura foram atualizados para refletir IndexedDB, adapters de plataforma, `.dndchar` como formato principal e JSON cru como fallback avançado.
 - **Traduções PT-BR de equipamentos**: nomes e descrições de equipamentos SRD foram revisados manualmente para corrigir traduções automáticas estranhas, especialmente armas, armaduras, kits e itens de aventura.
+- **Versionamento**: versão do app atualizada para `1.0.5+19`.
 
 ### Fixed
 - **Web — compatibilidade de build**: removidos imports diretos de `dart:io` de telas/datasources compartilhados, isolando APIs nativas em arquivos `_io`.

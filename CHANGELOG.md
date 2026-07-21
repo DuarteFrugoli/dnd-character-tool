@@ -12,24 +12,44 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.0.5] - 2026-07-21
 
 ### Added
+- **Usos de features e recursos**: a aba Habilidades agora rastreia recursos limitados de classe, subclasse, raça e talentos, incluindo Fúria, Inspiração de Bardo, Canalizar Divindade, Forma Selvagem, Segundo Fôlego, Surto de Ação, Ki, Sentido Divino, Cura Pelas Mãos, Pontos de Feitiçaria, Dados de Superioridade, Sorte e outros usos por descanso.
+- **Dados SRD de usos de features**: adicionado `feature_usages.json` com limites, recargas e custos de recursos, além de overlays traduzíveis por idioma.
+- **Criação — Humano Variante**: adicionada a opção de Humano Variante com bônus +1/+1 em atributos diferentes, proficiência em perícia, idioma extra e escolha de talento no nível 1.
+- **Criação — escolhas vindas de talentos**: talentos recebidos por feature, como o talento do Humano Variante, agora podem disparar suas próprias escolhas obrigatórias antes de salvar o personagem.
+- **Configurações — backup de personagens**: nova exportação/importação `.dndbackup` para compartilhar ou guardar todos os personagens de uma vez.
+- **Configurações — manutenção de personagens**: nova área para visualizar e aplicar migrações versionadas, com resumo das mudanças realizadas em personagens antigos.
 - **Web — IndexedDB para personagens**: a versão web agora usa IndexedDB como storage principal de personagens, mantendo a interface `StorageBackend` compartilhada com Android/iOS.
 - **Web — imagens no IndexedDB**: fotos de personagens agora são salvas no object store `images`, enquanto o personagem guarda apenas a referência local `indexeddb:image:<id>`.
 - **Web — adapters de plataforma**: adicionados helpers condicionais para leitura de arquivos, imagens de avatar e payloads de imagem embutidos em `.dndchar`.
 
 ### Changed
+- **Criação — bônus raciais e regra de Tasha**: distribuição de atributos raciais foi reorganizada para separar bônus fixos, escolhas livres da própria raça e a opção de redistribuição livre pela regra de Tasha.
+- **Inventário inicial — kits e packs**: kits de equipamento inicial agora têm conteúdo estruturado e são adicionados como itens individuais ao criar personagens.
+- **Migrações — backup preventivo**: aplicar atualizações de personagem agora gera um `.dndbackup` antes de alterar dados salvos.
 - **Import/export — `.dndchar` como formato principal**: `.dndchar` passa a ser o fluxo oficial de compartilhamento/importação de personagem; JSON cru fica apenas como fallback avançado sem imagem.
 - **Import/export — imagens cross-platform**: exportação de `.dndchar` e `.dndbackup` resolve imagens da Web no IndexedDB e embute `imageData`/`imageMimeType`; importações na Web recriam a imagem no IndexedDB.
 - **Avatar — imagens mais leves**: fotos cortadas pelo app agora usam limite de 512x512 com JPEG 85 para reduzir peso no storage/exportação.
 - **Documentação**: README e arquitetura foram atualizados para refletir IndexedDB, adapters de plataforma, `.dndchar` como formato principal e JSON cru como fallback avançado.
-- **Traduções PT-BR de equipamentos**: nomes e descrições de equipamentos SRD foram revisados manualmente para corrigir traduções automáticas estranhas, especialmente armas, armaduras, kits e itens de aventura.
+- **Traduções e dados SRD**: textos de equipamentos, ferramentas, usos de features, backup e manutenção foram revisados/gerados nos idiomas suportados; PT-BR recebeu revisão manual em nomes e descrições de equipamentos.
 - **Versionamento**: versão do app atualizada para `1.0.5+19`.
 
 ### Fixed
+- **Inventário — itens antigos com peso 0**: migrações versionadas preenchem pesos de itens conhecidos salvos antes da correção dos dados.
+- **Inventário — normalização de itens antigos**: itens conhecidos existentes são atualizados com tipo, categoria, peso e propriedades atuais do SRD.
+- **Inventário — kits antigos**: personagens antigos que ainda tinham packs como item único podem ser migrados para receber os itens internos.
+- **Configurações — área segura inferior**: tela de configurações recebeu espaçamento inferior para evitar que ações fiquem escondidas pela navegação do Android.
+- **Importação Android — arquivo direto**: abertura/importação de arquivos compartilhados para o app foi ajustada para aceitar os fluxos atuais de backup/personagem.
 - **Web — compatibilidade de build**: removidos imports diretos de `dart:io` de telas/datasources compartilhados, isolando APIs nativas em arquivos `_io`.
 - **Fotos — troca mais segura**: ao substituir foto, o app salva a nova imagem antes de apagar a anterior, evitando perda se a gravação falhar.
 
 ### Removed
 - **Import/export — token e QR**: removido o fluxo antigo de token/QR e suas strings l10n, reduzindo complexidade e mantendo `.dndchar` como caminho único confiável.
+
+### Internal
+- **Persistência**: personagens agora têm `dataVersion` para controlar migrações e `featureResourcesUsed` para usos rastreáveis de features.
+- **Engine de recursos**: adicionada `FeatureUsageEngine` para calcular máximos, recargas e gastos a partir de dados SRD.
+- **Migrações de personagem**: adicionadas migrações para preencher pesos, normalizar itens conhecidos e expandir packs.
+- **Ferramentas de tradução**: `tools/translate_i18n.py` agora cobre `feature_usages.json`.
 
 ---
 

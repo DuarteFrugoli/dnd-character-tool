@@ -78,10 +78,31 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
       'gp': l10n.coinGold,
       'pp': l10n.coinPlatinum,
     };
-    final ammo = character.equipment
+    final containers = character.equipment
+        .where((e) => e.itemType == ItemType.container)
+        .toList();
+    final containerIds = containers.map((e) => e.id).toSet();
+    bool isInKnownContainer(EquipmentItem item) =>
+        item.containerId != null && containerIds.contains(item.containerId);
+    final rootEquipment = character.equipment
+        .where(
+          (e) => !isInKnownContainer(e) || e.itemType == ItemType.container,
+        )
+        .toList();
+    final containerContents = {
+      for (final container in containers)
+        container.id: character.equipment
+            .where(
+              (e) =>
+                  e.containerId == container.id &&
+                  e.itemType != ItemType.container,
+            )
+            .toList(),
+    };
+    final ammo = rootEquipment
         .where((e) => e.itemType == ItemType.ammunition)
         .toList();
-    final nonAmmo = character.equipment.where(
+    final nonAmmo = rootEquipment.where(
       (e) => e.itemType != ItemType.ammunition,
     );
     final equipped = nonAmmo.where((e) => e.isEquipped).toList();
@@ -94,15 +115,17 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
         .where((e) => !e.isEquipped && equippableTypes.contains(e.itemType))
         .toList();
     final carried = nonAmmo
-        .where((e) => !e.isEquipped && !equippableTypes.contains(e.itemType))
+        .where(
+          (e) =>
+              !e.isEquipped &&
+              e.itemType != ItemType.container &&
+              !equippableTypes.contains(e.itemType),
+        )
         .toList();
 
     // Weight tracking
     final strScore = character.abilityScores.strength;
-    final totalWeight = character.equipment.fold<double>(
-      0.0,
-      (sum, item) => sum + item.weight * item.quantity,
-    );
+    final totalWeight = _inventoryTotalWeight(character.equipment);
     final maxCarry = strScore * 15.0;
     final encumberedThreshold = strScore * 5.0;
     final heavilyEncThreshold = strScore * 10.0;
@@ -237,6 +260,16 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                   const SizedBox(height: 12),
                 ],
 
+                // ── Containers ─────────────────────────────────────────────
+                if (containers.isNotEmpty) ...[
+                  _ContainersSection(
+                    containers: containers,
+                    contentsByContainer: containerContents,
+                    characterId: widget.characterId,
+                  ),
+                  const SizedBox(height: 12),
+                ],
+
                 // ── Equippable ─────────────────────────────────────────────
                 if (equippable.isNotEmpty) ...[
                   _Section(
@@ -280,7 +313,10 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
 
                 // ── Carried ────────────────────────────────────────────────
                 if (carried.isNotEmpty ||
-                    (equipped.isEmpty && equippable.isEmpty && ammo.isEmpty))
+                    (equipped.isEmpty &&
+                        equippable.isEmpty &&
+                        containers.isEmpty &&
+                        ammo.isEmpty))
                   _Section(
                     title: carried.isEmpty
                         ? l10n.inventoryInventory
@@ -425,6 +461,99 @@ Future<int?> _showRemoveQuantityDialog(
   return result;
 }
 
+Future<ContainerRemovalMode?> _showRemoveContainerDialog(
+  BuildContext context,
+  String containerName,
+  int contentsCount,
+) {
+  final l10n = AppLocalizations.of(context)!;
+  return showDialog<ContainerRemovalMode>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      title: Text(l10n.inventoryRemoveContainerTitle),
+      content: Text(
+        l10n.inventoryRemoveContainerContent(containerName, contentsCount),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(ctx),
+          child: Text(l10n.dialogCancel),
+        ),
+        TextButton(
+          onPressed: () =>
+              Navigator.pop(ctx, ContainerRemovalMode.moveContentsToInventory),
+          child: Text(l10n.inventoryRemoveContainerMoveContents),
+        ),
+        FilledButton(
+          onPressed: () =>
+              Navigator.pop(ctx, ContainerRemovalMode.deleteContents),
+          style: FilledButton.styleFrom(
+            backgroundColor: Theme.of(context).colorScheme.error,
+            foregroundColor: Theme.of(context).colorScheme.onError,
+          ),
+          child: Text(l10n.inventoryRemoveContainerDeleteContents),
+        ),
+      ],
+    ),
+  );
+}
+
+Future<void> _showMoveItemSheet(
+  BuildContext context,
+  WidgetRef ref, {
+  required EquipmentItem item,
+  required String characterId,
+  required List<EquipmentItem> containers,
+}) async {
+  final l10n = AppLocalizations.of(context)!;
+  final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+  final notifier = ref.read(characterDetailProvider(characterId).notifier);
+  final displayName = _itemDisplayName(item, i18n);
+
+  await showModalBottomSheet<void>(
+    context: context,
+    useSafeArea: true,
+    showDragHandle: true,
+    builder: (ctx) {
+      return SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+          children: [
+            Text(
+              l10n.inventoryMoveTitle(displayName),
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 8),
+            ListTile(
+              leading: const Icon(Icons.inventory_outlined),
+              title: Text(l10n.inventoryMoveToInventory),
+              selected: item.containerId == null,
+              onTap: () {
+                Navigator.pop(ctx);
+                notifier.moveItemToContainer(item.id, null);
+              },
+            ),
+            for (final container in containers)
+              ListTile(
+                leading: const Icon(Icons.inventory_2_outlined),
+                title: Text(_itemDisplayName(container, i18n)),
+                selected: item.containerId == container.id,
+                enabled: item.containerId != container.id,
+                onTap: item.containerId == container.id
+                    ? null
+                    : () {
+                        Navigator.pop(ctx);
+                        notifier.moveItemToContainer(item.id, container.id);
+                      },
+              ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
 // ── Ammunition Section ────────────────────────────────────────────────────────
 
 class _AmmunitionSection extends ConsumerWidget {
@@ -450,6 +579,14 @@ class _AmmunitionSection extends ConsumerWidget {
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final scheme = Theme.of(context).colorScheme;
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
+    final character = ref
+        .watch(characterDetailProvider(characterId))
+        .valueOrNull;
+    final containers =
+        character?.equipment
+            .where((e) => e.itemType == ItemType.container)
+            .toList() ??
+        const <EquipmentItem>[];
 
     return Card(
       child: Padding(
@@ -521,6 +658,27 @@ class _AmmunitionSection extends ConsumerWidget {
                             notifier.adjustItemQuantity(item.id, 1),
                       ),
                       // Remover
+                      if (containers.isNotEmpty)
+                        IconButton(
+                          icon: const Icon(
+                            Icons.drive_file_move_outlined,
+                            size: 18,
+                          ),
+                          color: scheme.primary,
+                          padding: EdgeInsets.zero,
+                          constraints: const BoxConstraints(
+                            minWidth: 32,
+                            minHeight: 32,
+                          ),
+                          tooltip: l10n.inventoryTooltipMove,
+                          onPressed: () => _showMoveItemSheet(
+                            context,
+                            ref,
+                            item: item,
+                            characterId: characterId,
+                            containers: containers,
+                          ),
+                        ),
                       IconButton(
                         icon: const Icon(Icons.delete_outline, size: 18),
                         color: scheme.error,
@@ -539,6 +697,200 @@ class _AmmunitionSection extends ConsumerWidget {
             }),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// ── Containers Section ───────────────────────────────────────────────────────
+
+double _itemsTotalWeight(Iterable<EquipmentItem> items) {
+  return items.fold<double>(
+    0.0,
+    (sum, item) => sum + item.weight * item.quantity,
+  );
+}
+
+double _inventoryTotalWeight(List<EquipmentItem> equipment) {
+  final weightlessContainerIds = equipment
+      .where(
+        (item) =>
+            item.itemType == ItemType.container &&
+            _containerIgnoresContentWeight(item),
+      )
+      .map((item) => item.id)
+      .toSet();
+
+  return equipment.fold<double>(0.0, (sum, item) {
+    if (item.containerId != null &&
+        weightlessContainerIds.contains(item.containerId)) {
+      return sum;
+    }
+    return sum + item.weight * item.quantity;
+  });
+}
+
+int _itemsTotalQuantity(Iterable<EquipmentItem> items) {
+  return items.fold<int>(0, (sum, item) => sum + item.quantity);
+}
+
+double? _containerCapacityWeight(EquipmentItem container) {
+  final value = container.properties?['capacityWeight'];
+  return value is num ? value.toDouble() : null;
+}
+
+bool _containerIgnoresContentWeight(EquipmentItem container) {
+  return container.properties?['contentsWeightIgnored'] == true;
+}
+
+class _ContainersSection extends ConsumerWidget {
+  const _ContainersSection({
+    required this.containers,
+    required this.contentsByContainer,
+    required this.characterId,
+  });
+
+  final List<EquipmentItem> containers;
+  final Map<String, List<EquipmentItem>> contentsByContainer;
+  final String characterId;
+
+  Future<void> _removeContainer(
+    BuildContext context,
+    WidgetRef ref,
+    EquipmentItem container,
+    String displayName,
+    List<EquipmentItem> contents,
+  ) async {
+    final notifier = ref.read(characterDetailProvider(characterId).notifier);
+    if (contents.isNotEmpty) {
+      final mode = await _showRemoveContainerDialog(
+        context,
+        displayName,
+        _itemsTotalQuantity(contents),
+      );
+      if (mode != null) {
+        await notifier.removeEquipmentQuantity(
+          container.id,
+          container.quantity,
+          containerRemovalMode: mode,
+        );
+      }
+      return;
+    }
+
+    final amount = await _showRemoveQuantityDialog(context, container);
+    if (amount != null) {
+      await notifier.removeEquipmentQuantity(container.id, amount);
+    }
+  }
+
+  String _containerSubtitle(
+    BuildContext context,
+    EquipmentItem container,
+    List<EquipmentItem> contents,
+    UnitSystem unitSystem,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    final totalQuantity = _itemsTotalQuantity(contents);
+    final usedWeight = _itemsTotalWeight(contents);
+    final capacityWeight = _containerCapacityWeight(container);
+    final contentsText = l10n.inventoryContainerContents(totalQuantity);
+    final weightText = capacityWeight == null || capacityWeight <= 0
+        ? formatWeight(usedWeight, unitSystem)
+        : '${formatWeight(usedWeight, unitSystem)} / ${formatWeight(capacityWeight, unitSystem)}';
+    return '$contentsText · $weightText';
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final unitSystem = ref.watch(unitSystemProvider);
+    final scheme = Theme.of(context).colorScheme;
+
+    return _Section(
+      title: l10n.inventoryContainersSection(containers.length),
+      child: Column(
+        children: containers.map((container) {
+          final contents = contentsByContainer[container.id] ?? const [];
+          final displayName = _itemDisplayName(container, i18n);
+          final meta = _ItemTile._itemMeta(container, i18n, l10n);
+          final capacityWeight = _containerCapacityWeight(container);
+          final usedWeight = _itemsTotalWeight(contents);
+          final overCapacity =
+              capacityWeight != null &&
+              capacityWeight > 0 &&
+              usedWeight > capacityWeight;
+
+          return Card(
+            margin: const EdgeInsets.only(bottom: 8),
+            color: overCapacity ? scheme.errorContainer : null,
+            child: ExpansionTile(
+              leading: const Icon(Icons.inventory_2_outlined),
+              title: Text(
+                container.quantity > 1
+                    ? '$displayName ×${container.quantity}'
+                    : displayName,
+                style: const TextStyle(fontWeight: FontWeight.w600),
+              ),
+              subtitle: Text(
+                _containerSubtitle(context, container, contents, unitSystem),
+                style: TextStyle(
+                  color: overCapacity
+                      ? scheme.onErrorContainer
+                      : scheme.onSurfaceVariant,
+                ),
+              ),
+              childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+              children: [
+                Row(
+                  children: [
+                    TextButton.icon(
+                      icon: const Icon(Icons.info_outline, size: 18),
+                      label: Text(l10n.inventoryDetailSummary),
+                      onPressed: () => _showItemDetailsSheet(
+                        context,
+                        ref,
+                        container,
+                        displayName,
+                        meta,
+                      ),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      icon: const Icon(Icons.delete_outline, size: 18),
+                      color: scheme.error,
+                      tooltip: l10n.inventoryTooltipRemove,
+                      onPressed: () => _removeContainer(
+                        context,
+                        ref,
+                        container,
+                        displayName,
+                        contents,
+                      ),
+                    ),
+                  ],
+                ),
+                if (contents.isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        l10n.inventoryContainerEmpty,
+                        style: TextStyle(color: scheme.onSurfaceVariant),
+                      ),
+                    ),
+                  )
+                else
+                  ...contents.map(
+                    (item) => _ItemTile(item: item, characterId: characterId),
+                  ),
+              ],
+            ),
+          );
+        }).toList(),
       ),
     );
   }
@@ -2511,8 +2863,38 @@ class _ItemTile extends ConsumerWidget {
 
   Future<void> _confirmRemoveItem(
     BuildContext context,
+    WidgetRef ref,
     CharacterDetailNotifier notifier,
   ) async {
+    final character = ref
+        .read(characterDetailProvider(characterId))
+        .valueOrNull;
+    final contents =
+        character?.equipment
+            .where(
+              (e) =>
+                  e.containerId == item.id && e.itemType != ItemType.container,
+            )
+            .toList() ??
+        const <EquipmentItem>[];
+    if (item.itemType == ItemType.container && contents.isNotEmpty) {
+      final i18n =
+          ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+      final mode = await _showRemoveContainerDialog(
+        context,
+        _itemDisplayName(item, i18n),
+        _itemsTotalQuantity(contents),
+      );
+      if (mode != null) {
+        await notifier.removeEquipmentQuantity(
+          item.id,
+          item.quantity,
+          containerRemovalMode: mode,
+        );
+      }
+      return;
+    }
+
     final amount = await _showRemoveQuantityDialog(context, item);
     if (amount != null) {
       await notifier.removeEquipmentQuantity(item.id, amount);
@@ -2659,10 +3041,22 @@ class _ItemTile extends ConsumerWidget {
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
+    final character = ref
+        .watch(characterDetailProvider(characterId))
+        .valueOrNull;
+    final containers =
+        character?.equipment
+            .where((e) => e.itemType == ItemType.container)
+            .toList() ??
+        const <EquipmentItem>[];
     final canEquip =
         item.itemType == ItemType.weapon ||
         item.itemType == ItemType.armor ||
         item.itemType == ItemType.equippable;
+    final canMove =
+        item.itemType != ItemType.container &&
+        !item.isEquipped &&
+        (item.containerId != null || containers.isNotEmpty);
     final meta = _itemMeta(item, i18n, l10n);
     final displayName = _itemDisplayName(item, i18n);
 
@@ -2728,11 +3122,29 @@ class _ItemTile extends ConsumerWidget {
               style: TextStyle(fontSize: 12, color: scheme.onSurfaceVariant),
             )
           : null,
-      trailing: IconButton(
-        icon: const Icon(Icons.delete_outline, size: 18),
-        color: scheme.error,
-        tooltip: l10n.inventoryTooltipRemove,
-        onPressed: () => _confirmRemoveItem(context, notifier),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (canMove)
+            IconButton(
+              icon: const Icon(Icons.drive_file_move_outlined, size: 18),
+              color: scheme.primary,
+              tooltip: l10n.inventoryTooltipMove,
+              onPressed: () => _showMoveItemSheet(
+                context,
+                ref,
+                item: item,
+                characterId: characterId,
+                containers: containers,
+              ),
+            ),
+          IconButton(
+            icon: const Icon(Icons.delete_outline, size: 18),
+            color: scheme.error,
+            tooltip: l10n.inventoryTooltipRemove,
+            onPressed: () => _confirmRemoveItem(context, ref, notifier),
+          ),
+        ],
       ),
     );
   }

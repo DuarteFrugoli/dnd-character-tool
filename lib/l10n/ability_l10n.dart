@@ -20,6 +20,5 @@ String abilityName(AppLocalizations l10n, String en) {
       return l10n.abilityCharisma;
     default:
       return en;
-
   }
 }

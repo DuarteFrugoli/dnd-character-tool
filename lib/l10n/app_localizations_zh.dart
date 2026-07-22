@@ -831,6 +831,30 @@ class AppLocalizationsZh extends AppLocalizations {
   String get inventoryTooltipRemove => '消除';
 
   @override
+  String get inventoryTooltipMove => '移动';
+
+  @override
+  String inventoryMoveTitle(String name) {
+    return '移动 $name';
+  }
+
+  @override
+  String get inventoryMoveToInventory => '库存';
+
+  @override
+  String inventoryContainersSection(int count) {
+    return '容器 ($count)';
+  }
+
+  @override
+  String inventoryContainerContents(int count) {
+    return '$count 个物品';
+  }
+
+  @override
+  String get inventoryContainerEmpty => '空';
+
+  @override
   String get inventoryRemoveTitle => '删除项目？';
 
   @override
@@ -842,6 +866,20 @@ class AppLocalizationsZh extends AppLocalizations {
   String inventoryRemovePartial(int count, int total) {
     return '将删除： $count 或 $total';
   }
+
+  @override
+  String get inventoryRemoveContainerTitle => '移除容器？';
+
+  @override
+  String inventoryRemoveContainerContent(String name, int count) {
+    return '$name 中有 $count 个物品。要如何处理？';
+  }
+
+  @override
+  String get inventoryRemoveContainerMoveContents => '将物品移回库存';
+
+  @override
+  String get inventoryRemoveContainerDeleteContents => '全部移除';
 
   @override
   String get inventoryLabelQuantity => '数量：';

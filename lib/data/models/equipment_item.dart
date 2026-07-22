@@ -32,6 +32,7 @@ class EquipmentItem {
   final String? description;
   final bool isEquipped;
   final double weight;
+  final String? containerId;
 
   /// Dados extras por tipo:
   /// armor  → {baseAC, addDexModifier, maxDexBonus, isShield, acBonus}
@@ -47,6 +48,7 @@ class EquipmentItem {
     this.description,
     this.isEquipped = false,
     this.weight = 0.0,
+    this.containerId,
     this.properties,
   }) : id = id ?? _uuid.v4();
 
@@ -59,6 +61,8 @@ class EquipmentItem {
     String? description,
     bool? isEquipped,
     double? weight,
+    String? containerId,
+    bool clearContainer = false,
     Map<String, dynamic>? properties,
   }) {
     return EquipmentItem(
@@ -70,6 +74,7 @@ class EquipmentItem {
       description: description ?? this.description,
       isEquipped: isEquipped ?? this.isEquipped,
       weight: weight ?? this.weight,
+      containerId: clearContainer ? null : containerId ?? this.containerId,
       properties: properties ?? this.properties,
     );
   }
@@ -82,12 +87,9 @@ class EquipmentItem {
 
 // ── Helpers de serialização ───────────────────────────────────────────────────
 
-String _idFromJson(dynamic v) =>
-    (v is String && v.isNotEmpty) ? v : _uuid.v4();
+String _idFromJson(dynamic v) => (v is String && v.isNotEmpty) ? v : _uuid.v4();
 
-ItemType _itemTypeFromJson(dynamic v) => ItemType.values.firstWhere(
-      (e) => e.name == v,
-      orElse: () => ItemType.gear,
-    );
+ItemType _itemTypeFromJson(dynamic v) =>
+    ItemType.values.firstWhere((e) => e.name == v, orElse: () => ItemType.gear);
 
 String _itemTypeToJson(ItemType t) => t.name;

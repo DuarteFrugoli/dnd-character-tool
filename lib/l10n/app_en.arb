@@ -730,6 +730,33 @@
   "inventoryTooltipRemove": "Remove",
   "@inventoryTooltipRemove": { "description": "Remove item tooltip." },
 
+  "inventoryTooltipMove": "Move",
+  "@inventoryTooltipMove": { "description": "Move inventory item tooltip." },
+
+  "inventoryMoveTitle": "Move {name}",
+  "@inventoryMoveTitle": {
+    "description": "Move inventory item sheet title.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "inventoryMoveToInventory": "Inventory",
+  "@inventoryMoveToInventory": { "description": "Move item option for the main inventory." },
+
+  "inventoryContainersSection": "Containers ({count})",
+  "@inventoryContainersSection": {
+    "description": "Inventory section title for containers.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "inventoryContainerContents": "{count, plural, =1{1 item} other{{count} items}}",
+  "@inventoryContainerContents": {
+    "description": "Short count of items stored inside a container.",
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "inventoryContainerEmpty": "Empty",
+  "@inventoryContainerEmpty": { "description": "Container empty state text." },
+
   "inventoryRemoveTitle": "Remove item?",
   "@inventoryRemoveTitle": { "description": "Remove item dialog title." },
 
@@ -747,6 +774,24 @@
       "total": { "type": "int" }
     }
   },
+
+  "inventoryRemoveContainerTitle": "Remove container?",
+  "@inventoryRemoveContainerTitle": { "description": "Remove container dialog title." },
+
+  "inventoryRemoveContainerContent": "{name} contains {count, plural, =1{1 item} other{{count} items}}. What should happen to them?",
+  "@inventoryRemoveContainerContent": {
+    "description": "Remove container dialog body when the container has contents.",
+    "placeholders": {
+      "name": { "type": "String" },
+      "count": { "type": "int" }
+    }
+  },
+
+  "inventoryRemoveContainerMoveContents": "Move items to inventory",
+  "@inventoryRemoveContainerMoveContents": { "description": "Remove container dialog action that keeps contents." },
+
+  "inventoryRemoveContainerDeleteContents": "Remove everything",
+  "@inventoryRemoveContainerDeleteContents": { "description": "Remove container dialog destructive action that removes the container contents too." },
 
   "inventoryLabelQuantity": "Quantity:",
   "@inventoryLabelQuantity": { "description": "Quantity label in item dialog." },

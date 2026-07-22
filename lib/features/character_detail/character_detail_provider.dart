@@ -16,19 +16,17 @@ final characterDetailProvider =
       CharacterDetailNotifier.new,
     );
 
+enum ContainerRemovalMode { moveContentsToInventory, deleteContents }
+
 class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   @override
   Future<Character> build(String id) async {
     // Stay in sync with updates that come from the character list
     // (e.g. image changes made from the list screen).
-    ref.listen<AsyncValue<List<Character>>>(
-      characterListProvider,
-      (_, next) {
-        final fromList =
-            next.valueOrNull?.firstWhereOrNull((c) => c.id == id);
-        if (fromList != null) state = AsyncData(fromList);
-      },
-    );
+    ref.listen<AsyncValue<List<Character>>>(characterListProvider, (_, next) {
+      final fromList = next.valueOrNull?.firstWhereOrNull((c) => c.id == id);
+      if (fromList != null) state = AsyncData(fromList);
+    });
 
     final repo = ref.read(characterRepositoryProvider);
     final c = await repo.getById(id);
@@ -214,16 +212,15 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       rested,
       FeatureUsageRest.shortRest,
     );
-    await _save(
-      rested.copyWith(featureResources: featureResources),
-    );
+    await _save(rested.copyWith(featureResources: featureResources));
   }
 
   Future<void> adjustFeatureResource(String resourceId, int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final catalog =
-        await ref.read(srdDataSourceProvider).getFeatureUsageCatalog();
+    final catalog = await ref
+        .read(srdDataSourceProvider)
+        .getFeatureUsageCatalog();
     final resource = catalog.resource(resourceId);
     if (resource == null) return;
     final max = FeatureUsageEngine.maxFor(resource, c);
@@ -232,12 +229,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final next = (current + delta).clamp(0, max).toInt();
     if (next == current) return;
     await _save(
-      c.copyWith(
-        featureResources: {
-          ...c.featureResources,
-          resourceId: next,
-        },
-      ),
+      c.copyWith(featureResources: {...c.featureResources, resourceId: next}),
     );
   }
 
@@ -281,24 +273,22 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   ) async {
     final srd = ref.read(srdDataSourceProvider);
     final catalog = await srd.getFeatureUsageCatalog();
-    final classFeatures = (await srd.getClassFeatures(c.characterClass))
-        .where((f) => f.level <= c.level)
-        .toList();
+    final classFeatures = (await srd.getClassFeatures(
+      c.characterClass,
+    )).where((f) => f.level <= c.level).toList();
     final subclassName = c.subclass ?? '';
     final subclassFeatures = subclassName.isEmpty
         ? <SrdClassFeature>[]
-        : (await srd.getSubclassFeatures(c.characterClass, subclassName))
-            .where((f) => f.level <= c.level)
-            .toList();
+        : (await srd.getSubclassFeatures(
+            c.characterClass,
+            subclassName,
+          )).where((f) => f.level <= c.level).toList();
     final races = await srd.getRaces();
     final race = races.where((r) => r.name == c.race).firstOrNull;
     final subrace = race?.subraces
         .where((s) => s.name == c.subrace)
         .firstOrNull;
-    final traits = <String>[
-      ...?race?.traits,
-      ...?subrace?.traits,
-    ];
+    final traits = <String>[...?race?.traits, ...?subrace?.traits];
     return FeatureUsageEngine.activeResources(
       character: c,
       catalog: catalog,
@@ -392,8 +382,9 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     }
 
     // 3. Apply subclass
-    final newSubclass =
-        result.subclassChosen != null ? result.subclassChosen! : c.subclass;
+    final newSubclass = result.subclassChosen != null
+        ? result.subclassChosen!
+        : c.subclass;
 
     // 4. Apply feat
     var newExtraFeatures = c.extraFeatures;
@@ -419,10 +410,15 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     // 5. Apply spell changes
     var newSpells = c.spells;
     if (result.spellSwapped != null) {
-      newSpells =
-          newSpells.where((s) => s.name != result.spellSwapped).toList();
+      newSpells = newSpells
+          .where((s) => s.name != result.spellSwapped)
+          .toList();
     }
-    newSpells = [...newSpells, ...result.cantripsLearned, ...result.spellsLearned];
+    newSpells = [
+      ...newSpells,
+      ...result.cantripsLearned,
+      ...result.spellsLearned,
+    ];
 
     var updated = c.copyWith(
       level: newLevel,
@@ -722,22 +718,48 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> addEquipmentItem(EquipmentItem item) async {
     final c = state.valueOrNull;
     if (c == null) return;
+    final itemToAdd = item.copyWith(isEquipped: false, clearContainer: true);
+
+    if (itemToAdd.itemType == ItemType.container) {
+      final quantity = itemToAdd.quantity.clamp(1, 9999).toInt();
+      final containers = List<EquipmentItem>.generate(
+        quantity,
+        (_) => EquipmentItem(
+          name: itemToAdd.name,
+          category: itemToAdd.category,
+          itemType: itemToAdd.itemType,
+          quantity: 1,
+          description: itemToAdd.description,
+          isEquipped: false,
+          weight: itemToAdd.weight,
+          properties: itemToAdd.properties,
+        ),
+      );
+      await _save(c.copyWith(equipment: [...c.equipment, ...containers]));
+      return;
+    }
+
     // Sempre adiciona em item não equipado; nunca empilha item novo em equipado.
     final idx = c.equipment.indexWhere(
       (e) =>
-          !e.isEquipped && e.name == item.name && e.itemType == item.itemType,
+          !e.isEquipped &&
+          e.containerId == null &&
+          e.name == itemToAdd.name &&
+          e.itemType == itemToAdd.itemType,
     );
     if (idx >= 0) {
       final updated = List<EquipmentItem>.from(c.equipment);
       final existing = updated[idx];
       updated[idx] = existing.copyWith(
-        quantity: existing.quantity + item.quantity,
-        weight: existing.weight == 0 && item.weight > 0 ? item.weight : null,
-        properties: existing.properties == null ? item.properties : null,
+        quantity: existing.quantity + itemToAdd.quantity,
+        weight: existing.weight == 0 && itemToAdd.weight > 0
+            ? itemToAdd.weight
+            : null,
+        properties: existing.properties == null ? itemToAdd.properties : null,
       );
       await _save(c.copyWith(equipment: updated));
     } else {
-      await _save(c.copyWith(equipment: [...c.equipment, item]));
+      await _save(c.copyWith(equipment: [...c.equipment, itemToAdd]));
     }
   }
 
@@ -745,7 +767,12 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await removeEquipmentQuantity(id, 1);
   }
 
-  Future<void> removeEquipmentQuantity(String id, int amount) async {
+  Future<void> removeEquipmentQuantity(
+    String id,
+    int amount, {
+    ContainerRemovalMode containerRemovalMode =
+        ContainerRemovalMode.moveContentsToInventory,
+  }) async {
     final c = state.valueOrNull;
     if (c == null) return;
     final updated = List<EquipmentItem>.from(c.equipment);
@@ -753,7 +780,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (idx < 0) return;
 
     final removed = updated[idx];
-    final removeAmount = amount.clamp(1, removed.quantity);
+    final removeAmount = amount.clamp(1, removed.quantity).toInt();
 
     // Em stacks, remove apenas a quantidade selecionada.
     if (removeAmount < removed.quantity) {
@@ -764,7 +791,24 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       return;
     }
 
-    updated.removeAt(idx);
+    if (removed.itemType == ItemType.container) {
+      if (containerRemovalMode ==
+          ContainerRemovalMode.moveContentsToInventory) {
+        for (var i = 0; i < updated.length; i++) {
+          if (updated[i].containerId == removed.id &&
+              updated[i].itemType != ItemType.container) {
+            updated[i] = updated[i].copyWith(clearContainer: true);
+          }
+        }
+      } else {
+        updated.removeWhere(
+          (e) =>
+              e.containerId == removed.id && e.itemType != ItemType.container,
+        );
+      }
+    }
+
+    updated.removeWhere((e) => e.id == removed.id);
     final newC = c.copyWith(equipment: updated);
 
     // Recalcula CA se a armadura removida estava equipada.
@@ -808,16 +852,20 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
             quantity: 1,
             description: target.description,
             isEquipped: true,
+            weight: target.weight,
             properties: target.properties,
           ),
         );
       } else {
-        updated[idx] = target.copyWith(isEquipped: true);
+        updated[idx] = target.copyWith(isEquipped: true, clearContainer: true);
       }
     } else {
       // Desequipar: remove a entrada equipada e devolve ao stack carregado.
       updated.removeAt(idx);
-      _mergeIntoCarried(updated, target.copyWith(isEquipped: false));
+      _mergeIntoCarried(
+        updated,
+        target.copyWith(isEquipped: false, clearContainer: true),
+      );
     }
 
     final newC = c.copyWith(equipment: updated);
@@ -849,14 +897,20 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       (e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e),
     );
     for (final armor in toUnequip) {
-      _mergeIntoCarried(items, armor.copyWith(isEquipped: false));
+      _mergeIntoCarried(
+        items,
+        armor.copyWith(isEquipped: false, clearContainer: true),
+      );
     }
   }
 
   void _mergeIntoCarried(List<EquipmentItem> items, EquipmentItem item) {
     final carryIdx = items.indexWhere(
       (e) =>
-          !e.isEquipped && e.name == item.name && e.itemType == item.itemType,
+          !e.isEquipped &&
+          e.containerId == null &&
+          e.name == item.name &&
+          e.itemType == item.itemType,
     );
     if (carryIdx >= 0) {
       items[carryIdx] = items[carryIdx].copyWith(
@@ -871,10 +925,56 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
           quantity: item.quantity,
           description: item.description,
           isEquipped: false,
+          weight: item.weight,
           properties: item.properties,
         ),
       );
     }
+  }
+
+  Future<void> moveItemToContainer(String itemId, String? containerId) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final updated = List<EquipmentItem>.from(c.equipment);
+    final idx = updated.indexWhere((e) => e.id == itemId);
+    if (idx < 0) return;
+
+    final item = updated[idx];
+    if (item.itemType == ItemType.container && containerId != null) return;
+    if (item.isEquipped && containerId != null) return;
+
+    if (containerId != null) {
+      final container = updated.where((e) => e.id == containerId).firstOrNull;
+      if (container == null || container.itemType != ItemType.container) return;
+      if (container.id == item.id) return;
+    }
+
+    updated.removeAt(idx);
+    final moved = item.copyWith(
+      containerId: containerId,
+      clearContainer: containerId == null,
+    );
+    final mergeIdx = updated.indexWhere(
+      (e) =>
+          !e.isEquipped &&
+          e.itemType != ItemType.container &&
+          e.containerId == containerId &&
+          e.name == moved.name &&
+          e.itemType == moved.itemType,
+    );
+
+    if (mergeIdx >= 0) {
+      final existing = updated[mergeIdx];
+      updated[mergeIdx] = existing.copyWith(
+        quantity: existing.quantity + moved.quantity,
+        weight: existing.weight == 0 && moved.weight > 0 ? moved.weight : null,
+        properties: existing.properties == null ? moved.properties : null,
+      );
+    } else {
+      updated.add(moved);
+    }
+
+    await _save(c.copyWith(equipment: updated));
   }
 
   Future<void> adjustItemQuantity(String id, int delta) async {
@@ -958,14 +1058,16 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     final trimmed = name.trim();
-    await _save(c.copyWith(
-      name: trimmed.isEmpty ? nameFallback : trimmed,
-      alignment: alignment.trim(),
-      playerName: playerName.trim(),
-      appearance: appearance,
-      personality: personality,
-      backstory: backstory.trim(),
-    ));
+    await _save(
+      c.copyWith(
+        name: trimmed.isEmpty ? nameFallback : trimmed,
+        alignment: alignment.trim(),
+        playerName: playerName.trim(),
+        appearance: appearance,
+        personality: personality,
+        backstory: backstory.trim(),
+      ),
+    );
   }
 
   // ── Personality & Backstory ───────────────────────────────────────────────

@@ -838,6 +838,30 @@ class AppLocalizationsJa extends AppLocalizations {
   String get inventoryTooltipRemove => '取り除く';
 
   @override
+  String get inventoryTooltipMove => '移動';
+
+  @override
+  String inventoryMoveTitle(String name) {
+    return '$nameを移動';
+  }
+
+  @override
+  String get inventoryMoveToInventory => 'インベントリ';
+
+  @override
+  String inventoryContainersSection(int count) {
+    return 'コンテナ ($count)';
+  }
+
+  @override
+  String inventoryContainerContents(int count) {
+    return '$count 個のアイテム';
+  }
+
+  @override
+  String get inventoryContainerEmpty => '空';
+
+  @override
   String get inventoryRemoveTitle => 'アイテムを削除しますか?';
 
   @override
@@ -849,6 +873,20 @@ class AppLocalizationsJa extends AppLocalizations {
   String inventoryRemovePartial(int count, int total) {
     return '削除します: $count/$total';
   }
+
+  @override
+  String get inventoryRemoveContainerTitle => 'コンテナを削除しますか?';
+
+  @override
+  String inventoryRemoveContainerContent(String name, int count) {
+    return '$name には $count 個のアイテムがあります。どうしますか?';
+  }
+
+  @override
+  String get inventoryRemoveContainerMoveContents => 'アイテムをインベントリへ移動';
+
+  @override
+  String get inventoryRemoveContainerDeleteContents => 'すべて削除';
 
   @override
   String get inventoryLabelQuantity => '量：';

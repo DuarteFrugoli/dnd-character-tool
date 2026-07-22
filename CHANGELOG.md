@@ -9,9 +9,11 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.0.5] - 2026-07-21
+## [1.0.5] - 2026-07-22
 
 ### Added
+- **Inventário — mochilas e recipientes**: itens do tipo container agora podem guardar outros itens do inventário, com visualização do conteúdo dentro do próprio recipiente.
+- **Inventário — mover itens**: itens carregados podem ser movidos para o inventário principal ou para um recipiente disponível.
 - **Usos de features e recursos**: a aba Habilidades agora rastreia recursos limitados de classe, subclasse, raça e talentos, incluindo Fúria, Inspiração de Bardo, Canalizar Divindade, Forma Selvagem, Segundo Fôlego, Surto de Ação, Ki, Sentido Divino, Cura Pelas Mãos, Pontos de Feitiçaria, Dados de Superioridade, Sorte e outros usos por descanso.
 - **Dados SRD de usos de features**: adicionado `feature_usages.json` com limites, recargas e custos de recursos, além de overlays traduzíveis por idioma.
 - **Criação — Humano Variante**: adicionada a opção de Humano Variante com bônus +1/+1 em atributos diferentes, proficiência em perícia, idioma extra e escolha de talento no nível 1.
@@ -24,18 +26,23 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Web — fallback de rotas no GitHub Pages**: adicionado `404.html` para redirecionar acessos diretos a rotas internas para o app.
 
 ### Changed
+- **Inventário — organização por recipientes**: itens guardados em mochilas/recipientes deixam de aparecer duplicados nas seções principais e passam a ser listados dentro do container.
+- **Inventário — peso em recipientes especiais**: containers marcados para ignorar peso do conteúdo agora deixam seus itens fora do peso total carregado.
+- **Avatar — limite de imagem**: fotos recortadas pelo app agora usam limite de 1024x1024 com JPEG 85 para reduzir uso de memória sem perder tanta qualidade visual.
 - **Criação — bônus raciais e regra de Tasha**: distribuição de atributos raciais foi reorganizada para separar bônus fixos, escolhas livres da própria raça e a opção de redistribuição livre pela regra de Tasha.
 - **Inventário inicial — kits e packs**: kits de equipamento inicial agora têm conteúdo estruturado e são adicionados como itens individuais ao criar personagens.
 - **Migrações — backup preventivo**: aplicar atualizações de personagem agora gera um `.dndbackup` antes de alterar dados salvos.
 - **Import/export — `.dndchar` como formato principal**: `.dndchar` passa a ser o fluxo oficial de compartilhamento/importação de personagem; JSON cru fica apenas como fallback avançado sem imagem.
 - **Import/export — imagens cross-platform**: exportação de `.dndchar` e `.dndbackup` resolve imagens da Web no IndexedDB e embute `imageData`/`imageMimeType`; importações na Web recriam a imagem no IndexedDB.
-- **Avatar — imagens mais leves**: fotos cortadas pelo app agora usam limite de 512x512 com JPEG 85 para reduzir peso no storage/exportação.
 - **PWA — metadados do app**: `index.html` e `manifest.json` agora usam nome, descrição, cor de tema e orientação adequados ao DnD Character Tool.
 - **Documentação**: README e arquitetura foram atualizados para refletir IndexedDB, adapters de plataforma, `.dndchar` como formato principal e JSON cru como fallback avançado.
 - **Traduções e dados SRD**: textos de equipamentos, ferramentas, usos de features, backup e manutenção foram revisados/gerados nos idiomas suportados; PT-BR recebeu revisão manual em nomes e descrições de equipamentos.
 - **Versionamento**: versão do app atualizada para `1.0.5+19`.
 
 ### Fixed
+- **Inventário — remoção de recipientes com conteúdo**: ao excluir uma mochila/recipiente com itens dentro, o app permite cancelar, mover o conteúdo para o inventário ou remover tudo junto.
+- **Inventário — regras de armazenamento**: containers não podem ser guardados dentro de outros containers, evitando estruturas difíceis de manter por enquanto.
+- **Android — recorte de avatar em telas grandes**: removida a orientação fixa da tela do cropper para melhorar compatibilidade com dispositivos grandes e dobráveis.
 - **Inventário — itens antigos com peso 0**: migrações versionadas preenchem pesos de itens conhecidos salvos antes da correção dos dados.
 - **Inventário — normalização de itens antigos**: itens conhecidos existentes são atualizados com tipo, categoria, peso e propriedades atuais do SRD.
 - **Inventário — kits antigos**: personagens antigos que ainda tinham packs como item único podem ser migrados para receber os itens internos.
@@ -49,6 +56,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Import/export — token e QR**: removido o fluxo antigo de token/QR e suas strings l10n, reduzindo complexidade e mantendo `.dndchar` como caminho único confiável.
 
 ### Internal
+- **Persistência de inventário**: itens agora salvam `containerId`, permitindo rastrear em qual recipiente cada item está armazenado.
 - **Persistência**: personagens agora têm `dataVersion` para controlar migrações e `featureResourcesUsed` para usos rastreáveis de features.
 - **Engine de recursos**: adicionada `FeatureUsageEngine` para calcular máximos, recargas e gastos a partir de dados SRD.
 - **Migrações de personagem**: adicionadas migrações para preencher pesos, normalizar itens conhecidos e expandir packs.

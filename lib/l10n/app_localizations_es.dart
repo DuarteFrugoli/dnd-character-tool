@@ -849,6 +849,36 @@ class AppLocalizationsEs extends AppLocalizations {
   String get inventoryTooltipRemove => 'Eliminar';
 
   @override
+  String get inventoryTooltipMove => 'Mover';
+
+  @override
+  String inventoryMoveTitle(String name) {
+    return 'Mover $name';
+  }
+
+  @override
+  String get inventoryMoveToInventory => 'Inventario';
+
+  @override
+  String inventoryContainersSection(int count) {
+    return 'Contenedores ($count)';
+  }
+
+  @override
+  String inventoryContainerContents(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count objetos',
+      one: '1 objeto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get inventoryContainerEmpty => 'Vacío';
+
+  @override
   String get inventoryRemoveTitle => '¿Quitar artículo?';
 
   @override
@@ -860,6 +890,27 @@ class AppLocalizationsEs extends AppLocalizations {
   String inventoryRemovePartial(int count, int total) {
     return 'Eliminará: $count de $total';
   }
+
+  @override
+  String get inventoryRemoveContainerTitle => '¿Eliminar contenedor?';
+
+  @override
+  String inventoryRemoveContainerContent(String name, int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count objetos',
+      one: '1 objeto',
+    );
+    return '$name contiene $_temp0. ¿Qué debe pasar con ellos?';
+  }
+
+  @override
+  String get inventoryRemoveContainerMoveContents =>
+      'Mover objetos al inventario';
+
+  @override
+  String get inventoryRemoveContainerDeleteContents => 'Eliminar todo';
 
   @override
   String get inventoryLabelQuantity => 'Cantidad:';

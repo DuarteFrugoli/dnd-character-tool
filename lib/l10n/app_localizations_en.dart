@@ -846,6 +846,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get inventoryTooltipRemove => 'Remove';
 
   @override
+  String get inventoryTooltipMove => 'Move';
+
+  @override
+  String inventoryMoveTitle(String name) {
+    return 'Move $name';
+  }
+
+  @override
+  String get inventoryMoveToInventory => 'Inventory';
+
+  @override
+  String inventoryContainersSection(int count) {
+    return 'Containers ($count)';
+  }
+
+  @override
+  String inventoryContainerContents(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get inventoryContainerEmpty => 'Empty';
+
+  @override
   String get inventoryRemoveTitle => 'Remove item?';
 
   @override
@@ -857,6 +887,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String inventoryRemovePartial(int count, int total) {
     return 'Will remove: $count of $total';
   }
+
+  @override
+  String get inventoryRemoveContainerTitle => 'Remove container?';
+
+  @override
+  String inventoryRemoveContainerContent(String name, int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return '$name contains $_temp0. What should happen to them?';
+  }
+
+  @override
+  String get inventoryRemoveContainerMoveContents => 'Move items to inventory';
+
+  @override
+  String get inventoryRemoveContainerDeleteContents => 'Remove everything';
 
   @override
   String get inventoryLabelQuantity => 'Quantity:';

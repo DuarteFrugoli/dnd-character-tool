@@ -9,6 +9,8 @@ import 'package:image_picker/image_picker.dart';
 import '../../core/platform/character_image.dart';
 import '../../l10n/app_localizations.dart';
 
+const _maxAvatarImageDimension = 1024;
+
 /// Directly opens the image picker + cropper and calls [onChanged] with the
 /// resulting path. No bottom sheet shown.
 Future<void> _pickAndCrop(
@@ -30,8 +32,8 @@ Future<void> _pickAndCrop(
     cropped = await ImageCropper().cropImage(
       sourcePath: picked.path,
       aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
-      maxWidth: 512,
-      maxHeight: 512,
+      maxWidth: _maxAvatarImageDimension,
+      maxHeight: _maxAvatarImageDimension,
       compressFormat: ImageCompressFormat.jpg,
       compressQuality: 85,
       uiSettings: [

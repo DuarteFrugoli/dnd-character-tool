@@ -1608,6 +1608,42 @@ abstract class AppLocalizations {
   /// **'Remove'**
   String get inventoryTooltipRemove;
 
+  /// Move inventory item tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Move'**
+  String get inventoryTooltipMove;
+
+  /// Move inventory item sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Move {name}'**
+  String inventoryMoveTitle(String name);
+
+  /// Move item option for the main inventory.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventory'**
+  String get inventoryMoveToInventory;
+
+  /// Inventory section title for containers.
+  ///
+  /// In en, this message translates to:
+  /// **'Containers ({count})'**
+  String inventoryContainersSection(int count);
+
+  /// Short count of items stored inside a container.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 item} other{{count} items}}'**
+  String inventoryContainerContents(int count);
+
+  /// Container empty state text.
+  ///
+  /// In en, this message translates to:
+  /// **'Empty'**
+  String get inventoryContainerEmpty;
+
   /// Remove item dialog title.
   ///
   /// In en, this message translates to:
@@ -1625,6 +1661,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Will remove: {count} of {total}'**
   String inventoryRemovePartial(int count, int total);
+
+  /// Remove container dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove container?'**
+  String get inventoryRemoveContainerTitle;
+
+  /// Remove container dialog body when the container has contents.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} contains {count, plural, =1{1 item} other{{count} items}}. What should happen to them?'**
+  String inventoryRemoveContainerContent(String name, int count);
+
+  /// Remove container dialog action that keeps contents.
+  ///
+  /// In en, this message translates to:
+  /// **'Move items to inventory'**
+  String get inventoryRemoveContainerMoveContents;
+
+  /// Remove container dialog destructive action that removes the container contents too.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove everything'**
+  String get inventoryRemoveContainerDeleteContents;
 
   /// Quantity label in item dialog.
   ///

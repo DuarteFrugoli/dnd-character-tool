@@ -839,6 +839,30 @@ class AppLocalizationsKo extends AppLocalizations {
   String get inventoryTooltipRemove => '제거하다';
 
   @override
+  String get inventoryTooltipMove => '이동';
+
+  @override
+  String inventoryMoveTitle(String name) {
+    return '$name 이동';
+  }
+
+  @override
+  String get inventoryMoveToInventory => '인벤토리';
+
+  @override
+  String inventoryContainersSection(int count) {
+    return '컨테이너 ($count)';
+  }
+
+  @override
+  String inventoryContainerContents(int count) {
+    return '$count개 항목';
+  }
+
+  @override
+  String get inventoryContainerEmpty => '비어 있음';
+
+  @override
   String get inventoryRemoveTitle => '항목을 삭제하시겠습니까?';
 
   @override
@@ -850,6 +874,20 @@ class AppLocalizationsKo extends AppLocalizations {
   String inventoryRemovePartial(int count, int total) {
     return '제거 예정: $total의 $count';
   }
+
+  @override
+  String get inventoryRemoveContainerTitle => '컨테이너를 제거하시겠습니까?';
+
+  @override
+  String inventoryRemoveContainerContent(String name, int count) {
+    return '$name에 $count개 항목이 들어 있습니다. 어떻게 할까요?';
+  }
+
+  @override
+  String get inventoryRemoveContainerMoveContents => '항목을 인벤토리로 이동';
+
+  @override
+  String get inventoryRemoveContainerDeleteContents => '모두 제거';
 
   @override
   String get inventoryLabelQuantity => '수량:';

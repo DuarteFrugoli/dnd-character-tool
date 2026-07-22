@@ -1,12 +1,13 @@
 {
     "name": "DnD Character Tool",
-    "short_name": "DnD Character Tool",
+    "short_name": "DnD Tool",
+    "description": "Create, manage, level up, import, export, and back up DnD 5e characters.",
     "start_url": ".",
+    "scope": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#121212",
+    "theme_color": "#8B0000",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {

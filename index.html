@@ -17,20 +17,36 @@
   <base href="/dnd-character-tool/">
 
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="application-name" content="DnD Character Tool">
+  <meta name="description" content="Create, manage, level up, import, export, and back up DnD 5e characters across Android, iOS, and Web.">
+  <meta name="theme-color" content="#8B0000">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="dnd_character_tool">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DnD Character Tool">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>dnd_character_tool</title>
+  <title>DnD Character Tool</title>
   <link rel="manifest" href="manifest.json">
+
+  <script>
+    (function () {
+      try {
+        var redirect = sessionStorage.getItem('dnd_character_tool_redirect');
+        if (!redirect) return;
+        sessionStorage.removeItem('dnd_character_tool_redirect');
+        history.replaceState(null, '', redirect);
+      } catch (_) {
+        // Ignore storage/history failures and let Flutter start on the base URL.
+      }
+    })();
+  </script>
 
   <!-- cropperjs - required by image_cropper web plugin -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.css" />

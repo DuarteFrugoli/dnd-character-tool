@@ -18,8 +18,9 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Dados SRD de usos de features**: adicionado `feature_usages.json` com limites, recargas e custos de recursos, além de overlays traduzíveis por idioma.
 - **Criação — Humano Variante**: adicionada a opção de Humano Variante com bônus +1/+1 em atributos diferentes, proficiência em perícia, idioma extra e escolha de talento no nível 1.
 - **Criação — escolhas vindas de talentos**: talentos recebidos por feature, como o talento do Humano Variante, agora podem disparar suas próprias escolhas obrigatórias antes de salvar o personagem.
-- **Configurações — backup de personagens**: nova exportação/importação `.dndbackup` para compartilhar ou guardar todos os personagens de uma vez.
-- **Configurações — manutenção de personagens**: nova área para visualizar e aplicar migrações versionadas, com resumo das mudanças realizadas em personagens antigos.
+- **Configurações — backup de personagens**: nova área para exportar, compartilhar/baixar e importar um `.dndbackup` com todos os personagens de uma vez.
+- **Configurações — importação de backups**: backups `.dndbackup` podem restaurar múltiplos personagens em uma única ação, preservando dados de personagem e imagens quando disponíveis.
+- **Configurações — manutenção de personagens**: nova área para verificar personagens antigos, aplicar migrações versionadas e mostrar um relatório do que foi alterado.
 - **Web — IndexedDB para personagens**: a versão web agora usa IndexedDB como storage principal de personagens, mantendo a interface `StorageBackend` compartilhada com Android/iOS.
 - **Web — imagens no IndexedDB**: fotos de personagens agora são salvas no object store `images`, enquanto o personagem guarda apenas a referência local `indexeddb:image:<id>`.
 - **Web — adapters de plataforma**: adicionados helpers condicionais para leitura de arquivos, imagens de avatar e payloads de imagem embutidos em `.dndchar`.
@@ -31,9 +32,9 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Avatar — limite de imagem**: fotos recortadas pelo app agora usam limite de 1024x1024 com JPEG 85 para reduzir uso de memória sem perder tanta qualidade visual.
 - **Criação — bônus raciais e regra de Tasha**: distribuição de atributos raciais foi reorganizada para separar bônus fixos, escolhas livres da própria raça e a opção de redistribuição livre pela regra de Tasha.
 - **Inventário inicial — kits e packs**: kits de equipamento inicial agora têm conteúdo estruturado e são adicionados como itens individuais ao criar personagens.
-- **Migrações — backup preventivo**: aplicar atualizações de personagem agora gera um `.dndbackup` antes de alterar dados salvos.
-- **Import/export — `.dndchar` como formato principal**: `.dndchar` passa a ser o fluxo oficial de compartilhamento/importação de personagem; JSON cru fica apenas como fallback avançado sem imagem.
-- **Import/export — imagens cross-platform**: exportação de `.dndchar` e `.dndbackup` resolve imagens da Web no IndexedDB e embute `imageData`/`imageMimeType`; importações na Web recriam a imagem no IndexedDB.
+- **Migrações — backup preventivo**: antes de aplicar atualizações em personagens antigos, o app abre um `.dndbackup` para o usuário salvar ou compartilhar.
+- **Import/export — `.dndchar` como formato principal**: `.dndchar` passa a ser o fluxo oficial para compartilhar/importar personagens individuais; JSON cru fica apenas como fallback avançado sem imagem.
+- **Import/export — imagens cross-platform**: exportação de `.dndchar` e `.dndbackup` resolve imagens da Web no IndexedDB e embute `imageData`/`imageMimeType`; importações no Android e na Web recriam a imagem no storage correto.
 - **PWA — metadados do app**: `index.html` e `manifest.json` agora usam nome, descrição, cor de tema e orientação adequados ao DnD Character Tool.
 - **Documentação**: README e arquitetura foram atualizados para refletir IndexedDB, adapters de plataforma, `.dndchar` como formato principal e JSON cru como fallback avançado.
 - **Traduções e dados SRD**: textos de equipamentos, ferramentas, usos de features, backup e manutenção foram revisados/gerados nos idiomas suportados; PT-BR recebeu revisão manual em nomes e descrições de equipamentos.
@@ -47,7 +48,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Inventário — normalização de itens antigos**: itens conhecidos existentes são atualizados com tipo, categoria, peso e propriedades atuais do SRD.
 - **Inventário — kits antigos**: personagens antigos que ainda tinham packs como item único podem ser migrados para receber os itens internos.
 - **Configurações — área segura inferior**: tela de configurações recebeu espaçamento inferior para evitar que ações fiquem escondidas pela navegação do Android.
-- **Importação Android — arquivo direto**: abertura/importação de arquivos compartilhados para o app foi ajustada para aceitar os fluxos atuais de backup/personagem.
+- **Importação Android — arquivo direto**: arquivos `.dndchar` e `.dndbackup` abertos por apps externos, como WhatsApp ou gerenciador de arquivos, agora entram no fluxo correto de importação.
 - **Web — acesso direto por rota**: URLs como `/create`, `/settings` e `/character/:id` agora são restauradas antes do bootstrap do Flutter no preview hospedado.
 - **Web — compatibilidade de build**: removidos imports diretos de `dart:io` de telas/datasources compartilhados, isolando APIs nativas em arquivos `_io`.
 - **Fotos — troca mais segura**: ao substituir foto, o app salva a nova imagem antes de apagar a anterior, evitando perda se a gravação falhar.

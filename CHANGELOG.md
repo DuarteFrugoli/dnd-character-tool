@@ -21,6 +21,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Web — IndexedDB para personagens**: a versão web agora usa IndexedDB como storage principal de personagens, mantendo a interface `StorageBackend` compartilhada com Android/iOS.
 - **Web — imagens no IndexedDB**: fotos de personagens agora são salvas no object store `images`, enquanto o personagem guarda apenas a referência local `indexeddb:image:<id>`.
 - **Web — adapters de plataforma**: adicionados helpers condicionais para leitura de arquivos, imagens de avatar e payloads de imagem embutidos em `.dndchar`.
+- **Web — fallback de rotas no GitHub Pages**: adicionado `404.html` para redirecionar acessos diretos a rotas internas para o app.
 
 ### Changed
 - **Criação — bônus raciais e regra de Tasha**: distribuição de atributos raciais foi reorganizada para separar bônus fixos, escolhas livres da própria raça e a opção de redistribuição livre pela regra de Tasha.
@@ -29,6 +30,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Import/export — `.dndchar` como formato principal**: `.dndchar` passa a ser o fluxo oficial de compartilhamento/importação de personagem; JSON cru fica apenas como fallback avançado sem imagem.
 - **Import/export — imagens cross-platform**: exportação de `.dndchar` e `.dndbackup` resolve imagens da Web no IndexedDB e embute `imageData`/`imageMimeType`; importações na Web recriam a imagem no IndexedDB.
 - **Avatar — imagens mais leves**: fotos cortadas pelo app agora usam limite de 512x512 com JPEG 85 para reduzir peso no storage/exportação.
+- **PWA — metadados do app**: `index.html` e `manifest.json` agora usam nome, descrição, cor de tema e orientação adequados ao DnD Character Tool.
 - **Documentação**: README e arquitetura foram atualizados para refletir IndexedDB, adapters de plataforma, `.dndchar` como formato principal e JSON cru como fallback avançado.
 - **Traduções e dados SRD**: textos de equipamentos, ferramentas, usos de features, backup e manutenção foram revisados/gerados nos idiomas suportados; PT-BR recebeu revisão manual em nomes e descrições de equipamentos.
 - **Versionamento**: versão do app atualizada para `1.0.5+19`.
@@ -39,6 +41,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Inventário — kits antigos**: personagens antigos que ainda tinham packs como item único podem ser migrados para receber os itens internos.
 - **Configurações — área segura inferior**: tela de configurações recebeu espaçamento inferior para evitar que ações fiquem escondidas pela navegação do Android.
 - **Importação Android — arquivo direto**: abertura/importação de arquivos compartilhados para o app foi ajustada para aceitar os fluxos atuais de backup/personagem.
+- **Web — acesso direto por rota**: URLs como `/create`, `/settings` e `/character/:id` agora são restauradas antes do bootstrap do Flutter no preview hospedado.
 - **Web — compatibilidade de build**: removidos imports diretos de `dart:io` de telas/datasources compartilhados, isolando APIs nativas em arquivos `_io`.
 - **Fotos — troca mais segura**: ao substituir foto, o app salva a nova imagem antes de apagar a anterior, evitando perda se a gravação falhar.
 

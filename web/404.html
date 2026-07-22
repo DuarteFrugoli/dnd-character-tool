@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>DnD Character Tool</title>
+  <script>
+    (function () {
+      try {
+        var path = window.location.pathname;
+        var base = '/dnd-character-tool/';
+        var target = path + window.location.search + window.location.hash;
+
+        if (!path.startsWith(base)) {
+          window.location.replace(base);
+          return;
+        }
+
+        sessionStorage.setItem('dnd_character_tool_redirect', target);
+        window.location.replace(base);
+      } catch (_) {
+        window.location.replace('/dnd-character-tool/');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Opening DnD Character Tool...</p>
+</body>
+</html>

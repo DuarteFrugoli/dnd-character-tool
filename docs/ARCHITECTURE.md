@@ -18,7 +18,7 @@ changing the project.
 | Serialization | `json_serializable` generated `*.g.dart` files |
 | UI i18n | Flutter `gen-l10n` from ARB files |
 | SRD i18n | Custom JSON overlay service (`SrdI18nService`) |
-| Import/export | `.dndchar` JSON payloads, `file_picker`, `share_plus`, platform channels |
+| Import/export | `.dndchar` and `.dndbackup` JSON payloads, `file_picker`, `share_plus`, platform channels |
 | Images | `image_picker`, `image_cropper`, platform-specific storage/export helpers |
 
 ---
@@ -44,6 +44,7 @@ The app starts in `lib/main.dart`.
 lib/
   core/
     locale/       Locale provider and persistence
+    platform/     Conditional platform helpers for web/native behavior
     router/       GoRouter route table
     services/     Platform-channel services, e.g. incoming .dndchar files
     theme/        Theme presets and ThemeNotifier
@@ -54,8 +55,12 @@ lib/
     datasources/
       local/      Character storage facade and platform backends
       srd/        SRD asset readers, SRD models, SRD i18n service
+    migrations/   Versioned character migrations
     models/       Persisted domain models and generated JSON serializers
     repositories/ CharacterRepository facade
+    feature_choice_engine.dart
+    feature_choice_option_resolver.dart
+    feature_usage_engine.dart
     spellcasting_engine.dart
   features/
     character_creation/
@@ -163,6 +168,53 @@ character receives a new local image reference.
 receive a new generated ID before persistence, which avoids ID conflicts and
 prevents imported files from controlling local paths.
 
+`CharacterRepository` also owns character maintenance entry points:
+
+- `previewMigrations()` loads all characters and returns a report without
+  writing changes.
+- `applyMigrations()` applies all pending migrations and saves only outdated
+  characters.
+- `exportBackupToFileJson()` exports all characters as `.dndbackup`.
+- `importBackupFromFileJson()` imports every character from a `.dndbackup`,
+  assigning new IDs just like single-character imports.
+
+The repository does not create the pre-migration backup itself. The Settings UI
+exports `.dndbackup` first, then calls `applyMigrations()` after user
+confirmation.
+
+---
+
+## Character Migrations
+
+Versioned migrations live in `lib/data/migrations/`.
+
+`Character.dataVersion` stores the last data version applied to each character.
+`currentCharacterDataVersion` in `character.dart` is the version assigned to new
+characters. The migration runner sorts migrations by `targetVersion`, skips
+anything already applied, and always bumps the character to the migration target
+version even when the data itself did not need a change.
+
+Current migrations:
+
+| Version | Migration | Purpose |
+| --- | --- | --- |
+| 1 | `BackfillEquipmentWeightsMigration` | Fills weights for known inventory items that were saved with `0`. |
+| 2 | `NormalizeEquipmentItemsMigration` | Updates known items with current type, category, weight, and SRD properties. |
+| 3 | `ExpandEquipmentPacksMigration` | Replaces known starting equipment packs with their individual contents. |
+
+Migrations are intentionally user-triggered from Settings maintenance. They are
+not applied invisibly while merely opening a character. Before applying
+migrations, the Settings UI exports a `.dndbackup`, then shows a report of what
+changed per character.
+
+When adding a persisted field:
+
+1. Give old JSON a safe default in `fromJson`/generated serializers.
+2. Add a migration only when old saved data needs to be transformed.
+3. Add a localized maintenance report string when users should be told about the
+   change.
+4. Bump `currentCharacterDataVersion` only when a new migration is added.
+
 ---
 
 ## Domain Models
@@ -179,11 +231,21 @@ Key models:
 | `EquipmentItem` | Inventory item with mechanical `ItemType`, quantity, weight, equip state, and type-specific `properties`. |
 | `KnownSpell`, `SpellSlots`, `InnateSpell` | Spell list, slot usage, and innate spell tracking. |
 | `CharacterExtraFeature` | Manually added class/subclass/feat/custom feature. |
+| `CharacterFeatureChoice` | Persisted option IDs selected for class features, subclass features, racial traits, and feats. |
 | `CharacterNote`, `CharacterAppearance`, `CharacterPersonality` | Detail-screen supporting data. |
 
 Most models use `@JsonSerializable`. Some older/simple models use manual JSON
 methods. New persisted fields should provide a default fallback in generated or
 manual `fromJson` code to keep old character files readable.
+
+Important persisted fields on `Character`:
+
+| Field | Purpose |
+| --- | --- |
+| `dataVersion` | Character data schema/version used by the migration runner. New characters default to `currentCharacterDataVersion`. |
+| `featureChoices` | Stable choices made inside feature/trait/feat rules. Values are option IDs from SRD data, not localized labels. |
+| `featureResources` | Remaining uses/points for trackable feature resources, keyed by resource ID. Missing values mean "full". |
+| `imagePath` | Native file name/path or web image reference such as `indexeddb:image:<id>`. Export formats embed image bytes separately. |
 
 `domain_constants.dart` stores string constants that are part of persisted JSON
 contracts. Do not rename those values without a migration.
@@ -212,6 +274,9 @@ Important conventions:
 - `ammunition` is handled separately in the inventory UI.
 - Custom item creation in `inventory_tab.dart` shows different inputs per
   `ItemType` and stores type-specific values in `properties`.
+- SRD equipment packs can define `contents`. Character creation expands known
+  packs into their individual items. Migrations can also expand old characters
+  that still have pack items saved as a single inventory entry.
 
 Equipment changes that can affect AC call `calcArmorClass`. Body armor is
 exclusive: equipping a new body armor unequips/merges the previous one.
@@ -283,6 +348,91 @@ Eldritch Knight and Arcane Trickster are modeled as third casters with
 UI code should ask `SpellcastingEngine` for limits and spell-list class instead
 of duplicating tables.
 
+### Feature Choices
+
+`data/feature_choice_engine.dart` turns SRD feature-choice definitions into
+runtime requests for the creation wizard, level-up wizard, and Features tab.
+
+The canonical data lives in:
+
+```text
+assets/data/srd/feature_choices.json
+assets/data/i18n/<locale>/feature_choices.json
+```
+
+`SrdFeatureChoiceCatalog` supports choices for:
+
+- class features;
+- subclass features;
+- racial traits;
+- feats;
+- shared option sources.
+
+`FeatureChoiceRequest` identifies one required choice by source type, source
+class/subclass/name, feature name, choice ID, level, and required count.
+Requests are complete when the matching `CharacterFeatureChoice` contains
+enough unique option IDs.
+
+Persisted choices use `CharacterFeatureChoice`:
+
+```text
+sourceType       classFeature | subclassFeature | raceTrait | feat
+sourceClass      class name when relevant
+sourceSubclass   subclass name when relevant
+sourceName       trait/feat source name when relevant
+featureName      feature/trait/feat display source
+choiceId         requirement ID inside feature_choices.json
+values           stable option IDs, not localized text
+```
+
+Creation uses `StepFeatureChoices` near the end of the wizard, after the
+class/race/background/skills/attributes/name steps and before review. It also
+handles choices triggered by a feat selected from another feature, such as
+Variant Human choosing a bonus feat that then has its own required options.
+
+Level up uses the same engine. The wizard asks for choices newly unlocked by
+new class features, subclass features, level-triggered counts, and the selected
+feat when an ASI is spent on a feat.
+
+The Features tab reads saved choices, shows pending choices, lets the user edit
+them later, and shows localized option descriptions through `SrdI18nService`.
+
+### Feature Usages
+
+`data/feature_usage_engine.dart` centralizes limited-use resources for class
+features, subclass features, racial traits, and feats.
+
+The canonical data lives in:
+
+```text
+assets/data/srd/feature_usages.json
+assets/data/i18n/<locale>/feature_usages.json
+```
+
+`FeatureUsageCatalog` maps feature names to `FeatureUsageRef` entries. A ref
+points to a resource ID and optionally declares how many points/uses that
+feature spends. The resource definition stores:
+
+- display name;
+- max formula;
+- recharge rule;
+- resource ID used as the persistence key.
+
+`FeatureUsageEngine.maxFor()` evaluates formulas such as Barbarian Rage uses,
+Monk level for Ki, Paladin level x5 for Lay on Hands, ability modifiers, and
+static values. `FeatureUsageEngine.rechargeFor()` handles special recharge
+rules, such as Bardic Inspiration switching to short-rest recovery at level 5.
+
+Remaining uses are stored in `Character.featureResources`. Missing entries are
+treated as full, which keeps old characters readable and avoids saving noise.
+Short and long rests call `CharacterDetailNotifier._featureResourcesAfterRest`
+to restore resources whose recharge rules apply. Manual adjustments go through
+`CharacterDetailNotifier.adjustFeatureResource()`.
+
+The Features tab renders usage controls next to any feature/trait/feat that has
+an active usage reference. It asks the engine for the current/max/spend view
+instead of duplicating formulas in UI code.
+
 ---
 
 ## SRD Data And Translation Data
@@ -299,10 +449,23 @@ Important SRD files:
 - `spells.json`
 - `equipment.json`, `magic_items.json`, `tools.json`
 - `feats.json`, `conditions.json`, `skills.json`
+- `languages.json`
+- `feature_choices.json`, `feature_usages.json`
 
 `getItems()` builds a normalized item lookup used by creation and inventory. It
 adds aliases for common starting-equipment strings, such as stripped ammunition
 names and armor suffix variants.
+
+`equipment.json` is also the source for structured pack contents. Pack contents
+are plain item references plus quantities; container nesting is not modeled yet.
+
+`feature_choices.json` stores selectable options and requirements. It should
+use stable option IDs and English source text. Locale overlays translate names
+and descriptions, but saved characters keep the stable IDs.
+
+`feature_usages.json` stores resource definitions and mappings from
+features/traits/feats to resources. UI labels are localized through
+`SrdI18nService.featureUsageResourceName()`.
 
 ### UI strings
 
@@ -357,10 +520,22 @@ Main steps:
 - skills;
 - attributes;
 - name/player;
+- feature choices;
 - review.
 
 `CharacterDraftNotifier.buildAndSave()` resolves equipment choices, starting
-gold, languages/tools, initial HP, and AC before saving the final `Character`.
+gold, languages/tools, feature choices, initial HP, and AC before saving the
+final `Character`.
+
+Race and attribute rules:
+
+- PHB-style fixed racial bonuses are read from `abilityScoreIncreases`.
+- Free racial points, such as Half-Elf and Variant Human `twoOthers`, are
+  chosen explicitly and must go to valid different attributes.
+- The optional Tasha-style toggle redistributes racial ASI increments while
+  preserving the same increment sizes.
+- Variant Human is modeled as its own race and uses feature choices for the
+  bonus skill, extra language, and level-1 feat.
 
 ### Character Detail
 
@@ -380,11 +555,26 @@ coordination. `character_detail_provider.dart` owns mutations: HP, rests, spell
 slots, prepared spells, concentration, level up, identity, stats, inventory,
 features, notes, conditions, XP, and settings flags.
 
+Feature choices and feature usages both surface mainly in `features_tab.dart`:
+
+- choices are displayed as localized chips and can be edited;
+- tapping a saved choice can show its localized option description;
+- usage resources show current/max controls and spend/recover actions;
+- rests restore usage resources through `FeatureUsageEngine`.
+
 ### Settings
 
-`features/home/settings_screen.dart` exposes theme, locale, and unit-system
-preferences. The actual state lives in `core/theme`, `core/locale`, and
-`core/units`.
+`features/home/settings_screen.dart` exposes:
+
+- theme;
+- locale;
+- unit-system preferences;
+- `.dndbackup` export/import;
+- character maintenance and migration previews/applies.
+
+Theme, locale, and unit-system state lives in `core/theme`, `core/locale`, and
+`core/units`. Backup and maintenance actions go through `CharacterRepository`.
+Settings maintenance must export a backup before applying migrations.
 
 ---
 
@@ -398,6 +588,16 @@ Routes live in `core/router/app_router.dart`.
 | `/character/:id` | Character detail |
 | `/create` | Character creation wizard |
 | `/settings` | Settings |
+
+On web, `main.dart` calls a platform-specific URL strategy helper. Native
+platforms use a no-op implementation, while web calls `usePathUrlStrategy()` so
+browser URLs use real paths instead of hash fragments.
+
+The GitHub Pages build uses `--base-href /dnd-character-tool/`. Because GitHub
+Pages does not support route rewrites, `web/404.html` stores the requested URL
+in `sessionStorage`, redirects to the app base path, and `web/index.html`
+restores the original path before Flutter boots. This keeps direct access to
+`/create`, `/settings`, and `/character/:id` working on the hosted preview.
 
 The router redirects `content://` and `file://` URIs to `/` so Android/iOS file
 open intents for `.dndchar` do not crash GoRouter.
@@ -415,15 +615,32 @@ Export from the character card prepares two user-facing representations:
 
 `.dndchar` payload encoding runs in `compute()` where needed to avoid UI jank.
 
+Settings can export a `.dndbackup` file through `exportBackupToFileJson()`.
+The backup payload contains:
+
+```text
+version
+type: dnd-character-tool-backup
+exportedAt
+characterCount
+characters[]
+```
+
+Each backup entry uses the same inner shape as a `.dndchar` payload:
+`character`, optional `imageData`, and optional `imageMimeType`. Imports assign
+fresh IDs to every character in the backup.
+
 Platform export is selected through `core/utils/file_exporter.dart`:
 
 - Native: writes a temporary `.dndchar` file and opens `share_plus`.
-- Web: creates a browser download.
+- Native backup: writes a temporary `.dndbackup` file and opens `share_plus`.
+- Web: creates a browser download for `.dndchar`, raw JSON, or `.dndbackup`.
 
 Import paths:
 
 - Raw JSON paste/import from the character list dialog.
 - File picker from the character list.
+- Backup file picker from Settings.
 - Platform channel `dnd.character/file_import` through `IncomingFileService`
   when the app is opened from a `.dndchar` file.
 
@@ -470,12 +687,12 @@ Generated files are committed:
 Common validation commands:
 
 ```powershell
-dart analyze
+flutter analyze
 flutter test
 ```
 
-Focused tests currently cover repository import/export behavior, character model
-logic, stats editing, spellcasting rules, and armor-class rules.
+Focused tests currently cover repository import/export behavior, character
+model logic, stats editing, spellcasting rules, and armor-class rules.
 
 When changing persisted models, generated serializers, or l10n keys, regenerate
 the affected files before committing.
@@ -492,9 +709,16 @@ the affected files before committing.
 | AC calculation | `data/constants/armor_class.dart` |
 | Level-up thresholds/ASI/subclass unlocks | `data/constants/level_up_rules.dart` |
 | Spellcasting slots/known/prepared/cantrips | `data/spellcasting_engine.dart` |
+| Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
+| Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/feature_usages.json`, `features/character_detail/tabs/features_tab.dart` |
+| Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |
+| Backup export/import | `CharacterRepository`, `CharacterLocalDataSource`, `features/home/settings_screen.dart`, `core/utils/file_exporter.dart` |
 | Inventory item UI and custom item forms | `features/character_detail/tabs/inventory_tab.dart` |
+| Starting equipment packs | `assets/data/srd/equipment.json`, `SrdPackContent`, `ExpandEquipmentPacksMigration` |
+| Creation racial ASI/Tasha/Variant Human | `features/character_creation/character_draft_provider.dart`, `steps/step_attributes.dart`, `steps/step_feature_choices.dart`, `assets/data/srd/races.json` |
 | SRD canonical data | `assets/data/srd/` |
 | SRD translations | `assets/data/i18n/` and `SrdI18nService` |
 | App UI strings | `lib/l10n/*.arb` |
 | Routes | `core/router/app_router.dart` |
+| Web URL strategy/PWA/GitHub Pages fallback | `core/platform/url_strategy*.dart`, `web/index.html`, `web/manifest.json`, `web/404.html` |
 | Theme/locale/unit preferences | `core/theme`, `core/locale`, `core/units` |

@@ -17,6 +17,7 @@ import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_avatar.dart';
+import '../../shared/widgets/responsive_layout.dart';
 
 bool _looksLikeBackupFile(String fileJson) {
   try {
@@ -218,7 +219,10 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
         error: (e, _) => Center(child: Text('Error: $e')),
         data: (characters) => characters.isEmpty
             ? const _EmptyState()
-            : _CharacterList(characters: characters),
+            : ResponsiveListConstraints(
+                maxWidth: 960,
+                child: _CharacterList(characters: characters),
+              ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => context.push('/create'),

@@ -111,170 +111,120 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
         children: [
-          // ── Currency ────────────────────────────────────────────────────
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.inventoryCurrency,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.labelLarge?.copyWith(color: scheme.primary),
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    children: _coins.map((c) {
-                      return Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 3),
-                          child: TextField(
-                            controller: _currencyCtrl[c],
-                            keyboardType: TextInputType.number,
-                            inputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                            textAlign: TextAlign.center,
-                            decoration: InputDecoration(
-                              labelText: coinLabels[c],
-                              border: const OutlineInputBorder(),
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 4,
-                                vertical: 8,
-                              ),
-                            ),
-                            onEditingComplete: () {
-                              _saveCurrency();
-                              FocusScope.of(context).unfocus();
-                            },
-                            onTapOutside: (_) {
-                              _saveCurrency();
-                              FocusScope.of(context).unfocus();
-                            },
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 12),
-
-          // ── Weight Tracking ─────────────────────────────────────────────
-          if (character.weightTrackingEnabled)
-            _WeightBar(
-              totalWeight: totalWeight,
-              maxCarry: maxCarry,
-              encumberedAt: encumberedThreshold,
-              heavilyEncAt: heavilyEncThreshold,
-              onDisable: () => ref
-                  .read(characterDetailProvider(widget.characterId).notifier)
-                  .toggleWeightTracking(),
-            )
-          else
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton.icon(
-                onPressed: () => ref
-                    .read(characterDetailProvider(widget.characterId).notifier)
-                    .toggleWeightTracking(),
-                icon: const Icon(Icons.monitor_weight_outlined, size: 16),
-                label: Text(l10n.weightEnableTooltip),
-                style: TextButton.styleFrom(
-                  foregroundColor: scheme.onSurfaceVariant,
-                  textStyle: Theme.of(context).textTheme.labelSmall,
-                ),
-              ),
-            ),
-          const SizedBox(height: 4),
-
-          // ── Ammunition ──────────────────────────────────────────────────
-          if (ammo.isNotEmpty) ...[
-            _AmmunitionSection(items: ammo, characterId: widget.characterId),
-            const SizedBox(height: 12),
-          ],
-
-          // ── Equipped ────────────────────────────────────────────────────
-          if (equipped.isNotEmpty) ...[
-            _Section(
-              title: l10n.inventoryEquippedSection(
-                equipped.length,
-                character.armorClass,
-              ),
-              child: Column(
-                children: equipped
-                    .map(
-                      (item) => _ItemTile(
-                        item: item,
-                        characterId: widget.characterId,
-                      ),
-                    )
-                    .toList(),
-              ),
-            ),
-            const SizedBox(height: 12),
-          ],
-
-          // ── Equippable ──────────────────────────────────────────────────
-          if (equippable.isNotEmpty) ...[
-            _Section(
-              title: l10n.inventoryEquippableSection(equippable.length),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(4, 0, 4, 6),
-                    child: Row(
+          ResponsiveTwoColumn(
+            leadingFlex: 2,
+            trailingFlex: 3,
+            leading: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // ── Currency ───────────────────────────────────────────────
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.touch_app_outlined,
-                          size: 13,
-                          color: scheme.onSurfaceVariant,
+                        Text(
+                          l10n.inventoryCurrency,
+                          style: Theme.of(context).textTheme.labelLarge
+                              ?.copyWith(color: scheme.primary),
                         ),
-                        const SizedBox(width: 4),
-                        Expanded(
-                          child: Text(
-                            l10n.inventoryEquipHint,
-                            style: TextStyle(
-                              fontSize: 11,
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
+                        const SizedBox(height: 12),
+                        Row(
+                          children: _coins.map((c) {
+                            return Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 3,
+                                ),
+                                child: TextField(
+                                  controller: _currencyCtrl[c],
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly,
+                                  ],
+                                  textAlign: TextAlign.center,
+                                  decoration: InputDecoration(
+                                    labelText: coinLabels[c],
+                                    border: const OutlineInputBorder(),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 4,
+                                      vertical: 8,
+                                    ),
+                                  ),
+                                  onEditingComplete: () {
+                                    _saveCurrency();
+                                    FocusScope.of(context).unfocus();
+                                  },
+                                  onTapOutside: (_) {
+                                    _saveCurrency();
+                                    FocusScope.of(context).unfocus();
+                                  },
+                                ),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ],
                     ),
                   ),
-                  ...equippable.map(
-                    (item) =>
-                        _ItemTile(item: item, characterId: widget.characterId),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 12),
-          ],
+                ),
+                const SizedBox(height: 12),
 
-          // ── Carried ─────────────────────────────────────────────────────
-          if (carried.isNotEmpty ||
-              (equipped.isEmpty && equippable.isEmpty && ammo.isEmpty))
-            _Section(
-              title: carried.isEmpty
-                  ? l10n.inventoryInventory
-                  : l10n.inventoryCarriedSection(carried.length),
-              child: carried.isEmpty
-                  ? Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: Text(
-                        l10n.inventoryEmpty,
-                        style: TextStyle(color: scheme.onSurfaceVariant),
+                // ── Weight Tracking ───────────────────────────────────────
+                if (character.weightTrackingEnabled)
+                  _WeightBar(
+                    totalWeight: totalWeight,
+                    maxCarry: maxCarry,
+                    encumberedAt: encumberedThreshold,
+                    heavilyEncAt: heavilyEncThreshold,
+                    onDisable: () => ref
+                        .read(
+                          characterDetailProvider(widget.characterId).notifier,
+                        )
+                        .toggleWeightTracking(),
+                  )
+                else
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton.icon(
+                      onPressed: () => ref
+                          .read(
+                            characterDetailProvider(
+                              widget.characterId,
+                            ).notifier,
+                          )
+                          .toggleWeightTracking(),
+                      icon: const Icon(Icons.monitor_weight_outlined, size: 16),
+                      label: Text(l10n.weightEnableTooltip),
+                      style: TextButton.styleFrom(
+                        foregroundColor: scheme.onSurfaceVariant,
+                        textStyle: Theme.of(context).textTheme.labelSmall,
                       ),
-                    )
-                  : Column(
-                      children: carried
+                    ),
+                  ),
+                const SizedBox(height: 12),
+
+                // ── Ammunition ─────────────────────────────────────────────
+                if (ammo.isNotEmpty)
+                  _AmmunitionSection(
+                    items: ammo,
+                    characterId: widget.characterId,
+                  ),
+              ],
+            ),
+            trailing: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // ── Equipped ───────────────────────────────────────────────
+                if (equipped.isNotEmpty) ...[
+                  _Section(
+                    title: l10n.inventoryEquippedSection(
+                      equipped.length,
+                      character.armorClass,
+                    ),
+                    child: Column(
+                      children: equipped
                           .map(
                             (item) => _ItemTile(
                               item: item,
@@ -283,7 +233,80 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                           )
                           .toList(),
                     ),
+                  ),
+                  const SizedBox(height: 12),
+                ],
+
+                // ── Equippable ─────────────────────────────────────────────
+                if (equippable.isNotEmpty) ...[
+                  _Section(
+                    title: l10n.inventoryEquippableSection(equippable.length),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(4, 0, 4, 6),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.touch_app_outlined,
+                                size: 13,
+                                color: scheme.onSurfaceVariant,
+                              ),
+                              const SizedBox(width: 4),
+                              Expanded(
+                                child: Text(
+                                  l10n.inventoryEquipHint,
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        ...equippable.map(
+                          (item) => _ItemTile(
+                            item: item,
+                            characterId: widget.characterId,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                ],
+
+                // ── Carried ────────────────────────────────────────────────
+                if (carried.isNotEmpty ||
+                    (equipped.isEmpty && equippable.isEmpty && ammo.isEmpty))
+                  _Section(
+                    title: carried.isEmpty
+                        ? l10n.inventoryInventory
+                        : l10n.inventoryCarriedSection(carried.length),
+                    child: carried.isEmpty
+                        ? Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: Text(
+                              l10n.inventoryEmpty,
+                              style: TextStyle(color: scheme.onSurfaceVariant),
+                            ),
+                          )
+                        : Column(
+                            children: carried
+                                .map(
+                                  (item) => _ItemTile(
+                                    item: item,
+                                    characterId: widget.characterId,
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                  ),
+              ],
             ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(

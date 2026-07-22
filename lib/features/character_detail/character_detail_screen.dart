@@ -1,4 +1,4 @@
-﻿import 'dart:math' as math;
+import 'dart:math' as math;
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,6 +20,7 @@ import '../../data/models/models.dart';
 import '../../data/models/domain_constants.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_avatar.dart';
+import '../../shared/widgets/responsive_layout.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/units/unit_formatter.dart';
 import 'character_detail_provider.dart';
@@ -88,7 +89,10 @@ class _EditGuard {
 
   /// Shows a discard-confirmation dialog, then calls the tab's discard function.
   /// Returns true if the user confirmed (tab exited edit mode), false otherwise.
-  Future<bool> requestCancel(BuildContext context, AppLocalizations l10n) async {
+  Future<bool> requestCancel(
+    BuildContext context,
+    AppLocalizations l10n,
+  ) async {
     final fn = _discardFn;
     if (fn == null) return true;
     final confirm = await showDialog<bool>(
@@ -209,68 +213,67 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 72,
-          leading: BackButton(onPressed: _handleBack),
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                character.name,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600,
-                ),
+      appBar: AppBar(
+        toolbarHeight: 72,
+        leading: BackButton(onPressed: _handleBack),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              character.name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+            ),
+            Text(
+              '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${i18n.subclassName(character.characterClass, character.subclass!)})' : ''}  ·  ${i18n.raceName(character.race)}'
+              '${character.subrace != null ? ' (${i18n.subraceName(character.subrace!)})' : ''}'
+              '  ·  Lv ${character.level}',
+              maxLines: 2,
+              overflow: TextOverflow.visible,
+              softWrap: true,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
-              Text(
-                '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${i18n.subclassName(character.characterClass, character.subclass!)})' : ''}  ·  ${i18n.raceName(character.race)}'
-                '${character.subrace != null ? ' (${i18n.subraceName(character.subrace!)})' : ''}'
-                '  ·  Lv ${character.level}',
-                maxLines: 2,
-                overflow: TextOverflow.visible,
-                softWrap: true,
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            if (!character.xpTrackingEnabled)
-              IconButton(
-                icon: const Icon(Icons.keyboard_double_arrow_up),
-                tooltip: AppLocalizations.of(context)!.tooltipLevelUp,
-                onPressed: () => _openLevelUpWizardSheet(
-                  context,
-                  character,
-                  widget.characterId,
-                ),
-              ),
-            IconButton(
-              icon: const Icon(Icons.hotel_outlined),
-              tooltip: AppLocalizations.of(context)!.restPickerTitle,
-              onPressed: () => _showRestPicker(character),
             ),
           ],
-          bottom: TabBar(
-            controller: _tabs,
-            isScrollable: true,
-            tabAlignment: TabAlignment.start,
-            tabs: [
-              Tab(text: AppLocalizations.of(context)!.detailTabIdentity),
-              Tab(text: AppLocalizations.of(context)!.detailTabStats),
-              Tab(text: AppLocalizations.of(context)!.detailTabSkills),
-              Tab(text: AppLocalizations.of(context)!.detailTabFeatures),
-              Tab(text: AppLocalizations.of(context)!.detailTabSpells),
-              Tab(text: AppLocalizations.of(context)!.detailTabInventory),
-              Tab(text: AppLocalizations.of(context)!.detailTabNotes),
-            ],
-          ),
         ),
-        body: TabBarView(
+        actions: [
+          if (!character.xpTrackingEnabled)
+            IconButton(
+              icon: const Icon(Icons.keyboard_double_arrow_up),
+              tooltip: AppLocalizations.of(context)!.tooltipLevelUp,
+              onPressed: () => _openLevelUpWizardSheet(
+                context,
+                character,
+                widget.characterId,
+              ),
+            ),
+          IconButton(
+            icon: const Icon(Icons.hotel_outlined),
+            tooltip: AppLocalizations.of(context)!.restPickerTitle,
+            onPressed: () => _showRestPicker(character),
+          ),
+        ],
+        bottom: TabBar(
+          controller: _tabs,
+          isScrollable: true,
+          tabAlignment: TabAlignment.start,
+          tabs: [
+            Tab(text: AppLocalizations.of(context)!.detailTabIdentity),
+            Tab(text: AppLocalizations.of(context)!.detailTabStats),
+            Tab(text: AppLocalizations.of(context)!.detailTabSkills),
+            Tab(text: AppLocalizations.of(context)!.detailTabFeatures),
+            Tab(text: AppLocalizations.of(context)!.detailTabSpells),
+            Tab(text: AppLocalizations.of(context)!.detailTabInventory),
+            Tab(text: AppLocalizations.of(context)!.detailTabNotes),
+          ],
+        ),
+      ),
+      body: ResponsiveScaffoldBody(
+        maxWidth: 1280,
+        child: TabBarView(
           controller: _tabs,
           children: [
             _IdentityTab(
@@ -283,14 +286,8 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               characterId: widget.characterId,
               editGuard: _editGuard,
             ),
-            _SkillsTab(
-              character: character,
-              characterId: widget.characterId,
-            ),
-            _FeaturesTab(
-              character: character,
-              characterId: widget.characterId,
-            ),
+            _SkillsTab(character: character, characterId: widget.characterId),
+            _FeaturesTab(character: character, characterId: widget.characterId),
             _SpellsTab(character: character, characterId: widget.characterId),
             _InventoryTab(
               character: character,
@@ -299,6 +296,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             _NotesTab(character: character, characterId: widget.characterId),
           ],
         ),
+      ),
     );
   }
 
@@ -312,8 +310,10 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
-              child: Text(l10n.restPickerTitle,
-                  style: Theme.of(ctx).textTheme.titleMedium),
+              child: Text(
+                l10n.restPickerTitle,
+                style: Theme.of(ctx).textTheme.titleMedium,
+              ),
             ),
             const Divider(height: 1),
             ListTile(
@@ -343,11 +343,15 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
 
   Future<void> _showShortRestDialog(Character character) async {
     final l10n = AppLocalizations.of(context)!;
-    final notifier = ref.read(characterDetailProvider(widget.characterId).notifier);
+    final notifier = ref.read(
+      characterDetailProvider(widget.characterId).notifier,
+    );
 
     // Fetch hit die from SRD
     final classes = await ref.read(srdDataSourceProvider).getClasses();
-    final srdClass = classes.firstWhereOrNull((c) => c.name == character.characterClass);
+    final srdClass = classes.firstWhereOrNull(
+      (c) => c.name == character.characterClass,
+    );
     final hitDie = srdClass?.hitDie ?? 8;
     final conMod = (character.abilityScores.constitution - 10) ~/ 2;
     final available = character.level - character.hitPoints.hitDiceUsed;
@@ -467,20 +471,22 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
                       icon: const Icon(Icons.remove),
                       onPressed: _hdToSpend > 1
                           ? () => setState(() {
-                                _hdToSpend--;
-                                _hasRolled = false;
-                              })
+                              _hdToSpend--;
+                              _hasRolled = false;
+                            })
                           : null,
                     ),
-                    Text('$_hdToSpend',
-                        style: Theme.of(context).textTheme.titleMedium),
+                    Text(
+                      '$_hdToSpend',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     IconButton(
                       icon: const Icon(Icons.add),
                       onPressed: _hdToSpend < widget.availableHd
                           ? () => setState(() {
-                                _hdToSpend++;
-                                _hasRolled = false;
-                              })
+                              _hdToSpend++;
+                              _hasRolled = false;
+                            })
                           : null,
                     ),
                   ],
@@ -489,8 +495,9 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
                   const SizedBox(height: 8),
                   Text(
                     '${l10n.shortRestRolled}: +$_rolledHp HP',
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: scheme.primary),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleMedium?.copyWith(color: scheme.primary),
                   ),
                 ],
               ],
@@ -501,10 +508,7 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
           child: Text(l10n.dialogCancel),
         ),
         if (!noDice && !_hasRolled)
-          FilledButton(
-            onPressed: _roll,
-            child: Text(l10n.shortRestRollButton),
-          ),
+          FilledButton(onPressed: _roll, child: Text(l10n.shortRestRollButton)),
         if (!noDice && _hasRolled)
           FilledButton(
             onPressed: () async {
@@ -513,7 +517,7 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
             },
             child: Text(l10n.shortRestButton),
           ),
-        ],
+      ],
     );
   }
 }

@@ -19,10 +19,17 @@ class _StatsTab extends ConsumerStatefulWidget {
 class _StatsTabState extends ConsumerState<_StatsTab> {
   static const _classHitDie = {
     'barbarian': 12,
-    'fighter': 10, 'paladin': 10, 'ranger': 10,
-    'bard': 8, 'cleric': 8, 'druid': 8,
-    'monk': 8, 'rogue': 8, 'warlock': 8,
-    'sorcerer': 6, 'wizard': 6,
+    'fighter': 10,
+    'paladin': 10,
+    'ranger': 10,
+    'bard': 8,
+    'cleric': 8,
+    'druid': 8,
+    'monk': 8,
+    'rogue': 8,
+    'warlock': 8,
+    'sorcerer': 6,
+    'wizard': 6,
   };
 
   // HP tracker
@@ -74,8 +81,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
             context: context,
             builder: (ctx) => AlertDialog(
               title: Text(l10n.xpLevelUpNowTitle),
-              content:
-                  Text(l10n.xpLevelUpNowMessage(character.level + 1)),
+              content: Text(l10n.xpLevelUpNowMessage(character.level + 1)),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, false),
@@ -194,9 +200,16 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         );
       }
     }
-    _hpMaxFocus.addListener(() { if (!_hpMaxFocus.hasFocus) onFocusLost(); });
-    _speedFocus.addListener(() { if (!_speedFocus.hasFocus) onFocusLost(); });
-    _xpFocus.addListener(() { if (!_xpFocus.hasFocus) onFocusLost(); });
+
+    _hpMaxFocus.addListener(() {
+      if (!_hpMaxFocus.hasFocus) onFocusLost();
+    });
+    _speedFocus.addListener(() {
+      if (!_speedFocus.hasFocus) onFocusLost();
+    });
+    _xpFocus.addListener(() {
+      if (!_xpFocus.hasFocus) onFocusLost();
+    });
   }
 
   @override
@@ -354,409 +367,437 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
           children: [
-          // ── HP Tracker ────────────────────────────────────────────────────
-          _Section(
-            title: l10n.sectionHitPoints,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      '${hp.current}',
-                      style: Theme.of(context).textTheme.displayMedium
-                          ?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: isDead
-                                ? scheme.error
-                                : isFull
-                                ? scheme.primary
-                                : null,
+            ResponsiveTwoColumn(
+              leading: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // ── HP Tracker ───────────────────────────────────────────
+                  _Section(
+                    title: l10n.sectionHitPoints,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              '${hp.current}',
+                              style: Theme.of(context).textTheme.displayMedium
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: isDead
+                                        ? scheme.error
+                                        : isFull
+                                        ? scheme.primary
+                                        : null,
+                                  ),
+                            ),
+                            Text(
+                              ' / ${hp.maximum}',
+                              style: Theme.of(context).textTheme.titleLarge,
+                            ),
+                            const SizedBox(width: 8),
+                            if (hp.temporary > 0) ...[
+                              Chip(
+                                label: Text(l10n.statsTempHpChip(hp.temporary)),
+                                backgroundColor: scheme.tertiaryContainer,
+                                labelStyle: TextStyle(
+                                  color: scheme.onTertiaryContainer,
+                                ),
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                ),
+                              ),
+                              const SizedBox(width: 4),
+                            ],
+                            SizedBox(
+                              width: 32,
+                              height: 32,
+                              child: IconButton.filledTonal(
+                                icon: const Icon(
+                                  Icons.shield_outlined,
+                                  size: 16,
+                                ),
+                                style: IconButton.styleFrom(
+                                  backgroundColor: scheme.tertiaryContainer,
+                                  foregroundColor: scheme.onTertiaryContainer,
+                                  padding: EdgeInsets.zero,
+                                  minimumSize: const Size(32, 32),
+                                  fixedSize: const Size(32, 32),
+                                ),
+                                tooltip: hp.temporary > 0
+                                    ? l10n.tooltipChangeTempHp
+                                    : l10n.tooltipAddTempHp,
+                                onPressed: () => _showSetTempHpDialog(context),
+                              ),
+                            ),
+                          ],
+                        ),
+                        if (isDead)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: Text(
+                              l10n.statUnconsciousDying,
+                              style: TextStyle(color: scheme.error),
+                            ),
                           ),
-                    ),
-                    Text(
-                      ' / ${hp.maximum}',
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    const SizedBox(width: 8),
-                    if (hp.temporary > 0) ...[
-                      Chip(
-                        label: Text(l10n.statsTempHpChip(hp.temporary)),
-                        backgroundColor: scheme.tertiaryContainer,
-                        labelStyle: TextStyle(
-                          color: scheme.onTertiaryContainer,
+                        const SizedBox(height: 12),
+                        Row(
+                          children: [
+                            IconButton.outlined(
+                              icon: const Icon(Icons.remove, size: 16),
+                              style: IconButton.styleFrom(
+                                minimumSize: const Size(36, 36),
+                                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              ),
+                              onPressed: () => _incrementAmount(-1),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                controller: _amountCtrl,
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
+                                textAlign: TextAlign.center,
+                                decoration: InputDecoration(
+                                  labelText: l10n.labelAmount,
+                                  border: const OutlineInputBorder(),
+                                  contentPadding: const EdgeInsets.symmetric(
+                                    horizontal: 8,
+                                    vertical: 8,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            IconButton.outlined(
+                              icon: const Icon(Icons.add, size: 16),
+                              style: IconButton.styleFrom(
+                                minimumSize: const Size(36, 36),
+                                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              ),
+                              onPressed: () => _incrementAmount(1),
+                            ),
+                          ],
                         ),
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                      ),
-                      const SizedBox(width: 4),
-                    ],
-                    SizedBox(
-                      width: 32,
-                      height: 32,
-                      child: IconButton.filledTonal(
-                        icon: const Icon(Icons.shield_outlined, size: 16),
-                        style: IconButton.styleFrom(
-                          backgroundColor: scheme.tertiaryContainer,
-                          foregroundColor: scheme.onTertiaryContainer,
-                          padding: EdgeInsets.zero,
-                          minimumSize: const Size(32, 32),
-                          fixedSize: const Size(32, 32),
+                        const SizedBox(height: 8),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FilledButton.tonal(
+                                style: FilledButton.styleFrom(
+                                  backgroundColor: scheme.errorContainer,
+                                  foregroundColor: scheme.onErrorContainer,
+                                ),
+                                onPressed: () {
+                                  final n = int.tryParse(_amountCtrl.text) ?? 0;
+                                  if (n > 0) notifier.adjustHp(-n);
+                                },
+                                child: Text(l10n.detailDamage),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: FilledButton.tonal(
+                                style: FilledButton.styleFrom(
+                                  backgroundColor: scheme.primaryContainer,
+                                  foregroundColor: scheme.onPrimaryContainer,
+                                ),
+                                onPressed: () {
+                                  final n = int.tryParse(_amountCtrl.text) ?? 0;
+                                  if (n > 0) notifier.adjustHp(n);
+                                },
+                                child: Text(l10n.detailHeal),
+                              ),
+                            ),
+                          ],
                         ),
-                        tooltip: hp.temporary > 0
-                            ? l10n.tooltipChangeTempHp
-                            : l10n.tooltipAddTempHp,
-                        onPressed: () => _showSetTempHpDialog(context),
-                      ),
-                    ),
-                  ],
-                ),
-                if (isDead)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 4),
-                    child: Text(
-                      l10n.statUnconsciousDying,
-                      style: TextStyle(color: scheme.error),
-                    ),
-                  ),
-                const SizedBox(height: 12),
-                // Stepper row
-                Row(
-                  children: [
-                    IconButton.outlined(
-                      icon: const Icon(Icons.remove, size: 16),
-                      style: IconButton.styleFrom(
-                        minimumSize: const Size(36, 36),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      onPressed: () => _incrementAmount(-1),
-                    ),
-                    Expanded(
-                      child: TextField(
-                        controller: _amountCtrl,
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                        ],
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                          labelText: l10n.labelAmount,
-                          border: const OutlineInputBorder(),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 8,
-                          ),
+                        const SizedBox(height: 8),
+                        Builder(
+                          builder: (context) {
+                            final hitDie =
+                                _classHitDie[character.characterClass
+                                    .toLowerCase()];
+                            if (hitDie == null) return const SizedBox.shrink();
+                            return Text(
+                              '${l10n.stepHitDieLabel}: d$hitDie × ${character.level}',
+                              style: Theme.of(context).textTheme.bodySmall
+                                  ?.copyWith(
+                                    color: Theme.of(
+                                      context,
+                                    ).colorScheme.onSurfaceVariant,
+                                  ),
+                              textAlign: TextAlign.center,
+                            );
+                          },
                         ),
-                      ),
-                    ),
-                    IconButton.outlined(
-                      icon: const Icon(Icons.add, size: 16),
-                      style: IconButton.styleFrom(
-                        minimumSize: const Size(36, 36),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      onPressed: () => _incrementAmount(1),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                // Action row
-                Row(
-                  children: [
-                    Expanded(
-                      child: FilledButton.tonal(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: scheme.errorContainer,
-                          foregroundColor: scheme.onErrorContainer,
-                        ),
-                        onPressed: () {
-                          final n = int.tryParse(_amountCtrl.text) ?? 0;
-                          if (n > 0) notifier.adjustHp(-n);
-                        },
-                        child: Text(l10n.detailDamage),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: FilledButton.tonal(
-                        style: FilledButton.styleFrom(
-                          backgroundColor: scheme.primaryContainer,
-                          foregroundColor: scheme.onPrimaryContainer,
-                        ),
-                        onPressed: () {
-                          final n = int.tryParse(_amountCtrl.text) ?? 0;
-                          if (n > 0) notifier.adjustHp(n);
-                        },
-                        child: Text(l10n.detailHeal),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Builder(builder: (context) {
-                  final hitDie = _classHitDie[
-                    character.characterClass.toLowerCase()
-                  ];
-                  if (hitDie == null) return const SizedBox.shrink();
-                  return Text(
-                    '${l10n.stepHitDieLabel}: d$hitDie × ${character.level}',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Theme.of(context)
-                              .colorScheme
-                              .onSurfaceVariant,
-                        ),
-                    textAlign: TextAlign.center,
-                  );
-                }),
-                if (_isEditing) ...[
-                  const SizedBox(height: 12),
-                  _InlineField(
-                    label: l10n.labelMaxHP,
-                    controller: _hpMaxCtrl,
-                    focusNode: _hpMaxFocus,
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  ),
-                ],
-                if (isDead) ...[
-                  const SizedBox(height: 8),
-                  _DeathSavesRow(
-                    successes: hp.deathSaveSuccesses,
-                    failures: hp.deathSaveFailures,
-                    onChanged: (s, f) => notifier.updateDeathSaves(
-                      successes: s,
-                      failures: f,
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-          const SizedBox(height: 12),
-
-          // ── Active Conditions ─────────────────────────────────────────────
-          _ConditionsSection(
-            activeConditions: character.activeConditions,
-            i18n: i18n,
-            onToggle: notifier.toggleCondition,
-            allConditions:
-                ref.watch(srdConditionsProvider).valueOrNull ?? const [],
-          ),
-          const SizedBox(height: 12),
-
-          // ── Inspiration ───────────────────────────────────────────────────
-          _InspirationBanner(
-            active: character.inspiration,
-            onTap: () => notifier.toggleInspiration(),
-            label: l10n.statInspiration,
-            activeSubtitle: l10n.inspirationGranted,
-            inactiveSubtitle: l10n.inspirationNotGranted,
-          ),
-          const SizedBox(height: 12),
-
-          // ── Combat Stats ──────────────────────────────────────────────────
-          _Section(
-            title: l10n.sectionCombat,
-            child: _isEditing
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _InlineField(
-                        label: l10n.labelSpeed,
-                        controller: _speedCtrl,
-                        focusNode: _speedFocus,
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
-                        children: [
-                          _StatChip(l10n.statAC, '${character.armorClass}'),
-                          _StatChip(l10n.statArmor, armorSummary),
-                          _StatChip(
-                            l10n.statInitiative,
-                            _sign(character.initiative),
-                          ),
-                          _StatChip(
-                            l10n.statProfBonus,
-                            _sign(character.proficiencyBonus),
-                          ),
-                          _StatChip(
-                            l10n.statPassivePerc,
-                            '${character.passivePerception}',
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
-                : Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: [
-                      _StatChip(l10n.statAC, '${character.armorClass}'),
-                      _StatChip(l10n.statArmor, armorSummary),
-                      _StatChip(
-                        l10n.statSpeed,
-                        formatDistance(character.speed, ref.watch(unitSystemProvider)),
-                      ),
-                      _StatChip(
-                        l10n.statInitiative,
-                        _sign(character.initiative),
-                      ),
-                      _StatChip(
-                        l10n.statProfBonus,
-                        _sign(character.proficiencyBonus),
-                      ),
-                      _StatChip(
-                        l10n.statPassivePerc,
-                        '${character.passivePerception}',
-                      ),
-                    ],
-                  ),
-          ),
-          const SizedBox(height: 12),
-
-          // ── Ability Scores ────────────────────────────────────────────────
-          _Section(
-            title: l10n.sectionAbilityScores,
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 480),
-                child: GridView.count(
-              crossAxisCount: 3,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              childAspectRatio: _isEditing ? 0.75 : 1.2,
-              mainAxisSpacing: 8,
-              crossAxisSpacing: 8,
-              children: [
-                _AbilityCardEdit(
-                  l10n.abilityStr,
-                  character.abilityScores.strength,
-                  'strength',
-                  notifier: notifier,
-                  isEditing: _isEditing,
-                ),
-                _AbilityCardEdit(
-                  l10n.abilityDex,
-                  character.abilityScores.dexterity,
-                  'dexterity',
-                  notifier: notifier,
-                  isEditing: _isEditing,
-                ),
-                _AbilityCardEdit(
-                  l10n.abilityCon,
-                  character.abilityScores.constitution,
-                  'constitution',
-                  notifier: notifier,
-                  isEditing: _isEditing,
-                ),
-                _AbilityCardEdit(
-                  l10n.abilityInt,
-                  character.abilityScores.intelligence,
-                  'intelligence',
-                  notifier: notifier,
-                  isEditing: _isEditing,
-                ),
-                _AbilityCardEdit(
-                  l10n.abilityWis,
-                  character.abilityScores.wisdom,
-                  'wisdom',
-                  notifier: notifier,
-                  isEditing: _isEditing,
-                ),
-                _AbilityCardEdit(
-                  l10n.abilityCha,
-                  character.abilityScores.charisma,
-                  'charisma',
-                  notifier: notifier,
-                  isEditing: _isEditing,
-                ),
-              ],
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 12),
-
-          // ── Saving Throws ─────────────────────────────────────────────────
-          _Section(
-            title: l10n.sectionSavingThrows,
-            child: _SavingThrowsList(
-              character: character,
-              l10n: l10n,
-              notifier: _isEditing ? notifier : null,
-            ),
-          ),
-          const SizedBox(height: 12),
-
-          // ── Progression ───────────────────────────────────────────────────
-          _Section(
-            title: l10n.sectionProgression,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // XP Tracking toggle — always visible
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        l10n.xpTrackingLabel,
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                    ),
-                    Switch(
-                      value: character.xpTrackingEnabled,
-                      onChanged: (v) => notifier.updateXpTracking(v),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                Opacity(
-                  opacity: character.xpTrackingEnabled ? 1.0 : 0.4,
-                  child: AbsorbPointer(
-                    absorbing: !character.xpTrackingEnabled,
-                    child: _isEditing
-                        ? _InlineField(
-                            label: l10n.statXP,
-                            controller: _xpCtrl,
-                            focusNode: _xpFocus,
+                        if (_isEditing) ...[
+                          const SizedBox(height: 12),
+                          _InlineField(
+                            label: l10n.labelMaxHP,
+                            controller: _hpMaxCtrl,
+                            focusNode: _hpMaxFocus,
                             keyboardType: TextInputType.number,
                             inputFormatters: [
                               FilteringTextInputFormatter.digitsOnly,
                             ],
+                          ),
+                        ],
+                        if (isDead) ...[
+                          const SizedBox(height: 8),
+                          _DeathSavesRow(
+                            successes: hp.deathSaveSuccesses,
+                            failures: hp.deathSaveFailures,
+                            onChanged: (s, f) => notifier.updateDeathSaves(
+                              successes: s,
+                              failures: f,
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // ── Active Conditions ────────────────────────────────────
+                  _ConditionsSection(
+                    activeConditions: character.activeConditions,
+                    i18n: i18n,
+                    onToggle: notifier.toggleCondition,
+                    allConditions:
+                        ref.watch(srdConditionsProvider).valueOrNull ??
+                        const [],
+                  ),
+                  const SizedBox(height: 12),
+
+                  // ── Inspiration ──────────────────────────────────────────
+                  _InspirationBanner(
+                    active: character.inspiration,
+                    onTap: () => notifier.toggleInspiration(),
+                    label: l10n.statInspiration,
+                    activeSubtitle: l10n.inspirationGranted,
+                    inactiveSubtitle: l10n.inspirationNotGranted,
+                  ),
+                  const SizedBox(height: 12),
+
+                  // ── Combat Stats ─────────────────────────────────────────
+                  _Section(
+                    title: l10n.sectionCombat,
+                    child: _isEditing
+                        ? Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              _InlineField(
+                                label: l10n.labelSpeed,
+                                controller: _speedCtrl,
+                                focusNode: _speedFocus,
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children: [
+                                  _StatChip(
+                                    l10n.statAC,
+                                    '${character.armorClass}',
+                                  ),
+                                  _StatChip(l10n.statArmor, armorSummary),
+                                  _StatChip(
+                                    l10n.statInitiative,
+                                    _sign(character.initiative),
+                                  ),
+                                  _StatChip(
+                                    l10n.statProfBonus,
+                                    _sign(character.proficiencyBonus),
+                                  ),
+                                  _StatChip(
+                                    l10n.statPassivePerc,
+                                    '${character.passivePerception}',
+                                  ),
+                                ],
+                              ),
+                            ],
                           )
-                        : _XpProgressionPanel(
-                            xp: character.experiencePoints,
-                            characterLevel: character.level,
-                            xpAddCtrl: _xpAddCtrl,
-                            expanded: _levelTableExpanded,
-                            onToggle: () => setState(
-                              () =>
-                                  _levelTableExpanded = !_levelTableExpanded,
-                            ),
-                            onAdd: (amount) { _addXp(amount); },
-                            xpTrackingEnabled: character.xpTrackingEnabled,
-                            isPendingLevelUp: _isPendingLevelUp(character),
-                            onLevelUpTap: () => _openLevelUpWizardSheet(
-                              context,
-                              character,
-                              widget.characterId,
-                            ),
-                            l10n: l10n,
-                            scheme: scheme,
+                        : Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              _StatChip(l10n.statAC, '${character.armorClass}'),
+                              _StatChip(l10n.statArmor, armorSummary),
+                              _StatChip(
+                                l10n.statSpeed,
+                                formatDistance(
+                                  character.speed,
+                                  ref.watch(unitSystemProvider),
+                                ),
+                              ),
+                              _StatChip(
+                                l10n.statInitiative,
+                                _sign(character.initiative),
+                              ),
+                              _StatChip(
+                                l10n.statProfBonus,
+                                _sign(character.proficiencyBonus),
+                              ),
+                              _StatChip(
+                                l10n.statPassivePerc,
+                                '${character.passivePerception}',
+                              ),
+                            ],
                           ),
                   ),
-                ),
-              ],
+                ],
+              ),
+              trailing: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // ── Ability Scores ───────────────────────────────────────
+                  _Section(
+                    title: l10n.sectionAbilityScores,
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 480),
+                        child: GridView.count(
+                          crossAxisCount: 3,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          childAspectRatio: _isEditing ? 0.75 : 1.2,
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
+                          children: [
+                            _AbilityCardEdit(
+                              l10n.abilityStr,
+                              character.abilityScores.strength,
+                              'strength',
+                              notifier: notifier,
+                              isEditing: _isEditing,
+                            ),
+                            _AbilityCardEdit(
+                              l10n.abilityDex,
+                              character.abilityScores.dexterity,
+                              'dexterity',
+                              notifier: notifier,
+                              isEditing: _isEditing,
+                            ),
+                            _AbilityCardEdit(
+                              l10n.abilityCon,
+                              character.abilityScores.constitution,
+                              'constitution',
+                              notifier: notifier,
+                              isEditing: _isEditing,
+                            ),
+                            _AbilityCardEdit(
+                              l10n.abilityInt,
+                              character.abilityScores.intelligence,
+                              'intelligence',
+                              notifier: notifier,
+                              isEditing: _isEditing,
+                            ),
+                            _AbilityCardEdit(
+                              l10n.abilityWis,
+                              character.abilityScores.wisdom,
+                              'wisdom',
+                              notifier: notifier,
+                              isEditing: _isEditing,
+                            ),
+                            _AbilityCardEdit(
+                              l10n.abilityCha,
+                              character.abilityScores.charisma,
+                              'charisma',
+                              notifier: notifier,
+                              isEditing: _isEditing,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // ── Saving Throws ────────────────────────────────────────
+                  _Section(
+                    title: l10n.sectionSavingThrows,
+                    child: _SavingThrowsList(
+                      character: character,
+                      l10n: l10n,
+                      notifier: _isEditing ? notifier : null,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // ── Progression ──────────────────────────────────────────
+                  _Section(
+                    title: l10n.sectionProgression,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                l10n.xpTrackingLabel,
+                                style: Theme.of(context).textTheme.titleSmall,
+                              ),
+                            ),
+                            Switch(
+                              value: character.xpTrackingEnabled,
+                              onChanged: (v) => notifier.updateXpTracking(v),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Opacity(
+                          opacity: character.xpTrackingEnabled ? 1.0 : 0.4,
+                          child: AbsorbPointer(
+                            absorbing: !character.xpTrackingEnabled,
+                            child: _isEditing
+                                ? _InlineField(
+                                    label: l10n.statXP,
+                                    controller: _xpCtrl,
+                                    focusNode: _xpFocus,
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      FilteringTextInputFormatter.digitsOnly,
+                                    ],
+                                  )
+                                : _XpProgressionPanel(
+                                    xp: character.experiencePoints,
+                                    characterLevel: character.level,
+                                    xpAddCtrl: _xpAddCtrl,
+                                    expanded: _levelTableExpanded,
+                                    onToggle: () => setState(
+                                      () => _levelTableExpanded =
+                                          !_levelTableExpanded,
+                                    ),
+                                    onAdd: _addXp,
+                                    xpTrackingEnabled:
+                                        character.xpTrackingEnabled,
+                                    isPendingLevelUp: _isPendingLevelUp(
+                                      character,
+                                    ),
+                                    onLevelUpTap: () => _openLevelUpWizardSheet(
+                                      context,
+                                      character,
+                                      widget.characterId,
+                                    ),
+                                    l10n: l10n,
+                                    scheme: scheme,
+                                  ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
         ),
       ),
       floatingActionButton: _isEditing
@@ -843,23 +884,23 @@ class _XpProgressionPanel extends StatelessWidget {
           children: [
             Text(
               l10n.statLevel(level),
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
             ),
             const Spacer(),
             Text(
               '$xp',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(width: 4),
             Text(
               l10n.statXP,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(color: scheme.onSurfaceVariant),
             ),
           ],
         ),
@@ -878,9 +919,9 @@ class _XpProgressionPanel extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             '${nextXp - xp} ${l10n.statXP} → ${l10n.statLevel(level + 1)}',
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
           ),
         ],
         // Pending level-up CTA
@@ -899,56 +940,58 @@ class _XpProgressionPanel extends StatelessWidget {
         if (!isPendingLevelUp) ...[
           const SizedBox(height: 12),
           Row(
-          children: [
-            IconButton.outlined(
-              icon: const Icon(Icons.remove, size: 16),
-              style: IconButton.styleFrom(
-                minimumSize: const Size(32, 32),
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            children: [
+              IconButton.outlined(
+                icon: const Icon(Icons.remove, size: 16),
+                style: IconButton.styleFrom(
+                  minimumSize: const Size(32, 32),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                onPressed: () {
+                  final v = int.tryParse(xpAddCtrl.text) ?? 0;
+                  xpAddCtrl.text = '${(v - 1).clamp(0, 999999)}';
+                },
               ),
-              onPressed: () {
-                final v = int.tryParse(xpAddCtrl.text) ?? 0;
-                xpAddCtrl.text = '${(v - 1).clamp(0, 999999)}';
-              },
-            ),
-            Expanded(
-              child: TextField(
-                controller: xpAddCtrl,
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                textAlign: TextAlign.center,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+              Expanded(
+                child: TextField(
+                  controller: xpAddCtrl,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  textAlign: TextAlign.center,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 4,
+                      vertical: 8,
+                    ),
+                  ),
                 ),
               ),
-            ),
-            IconButton.outlined(
-              icon: const Icon(Icons.add, size: 16),
-              style: IconButton.styleFrom(
-                minimumSize: const Size(32, 32),
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              ),
-              onPressed: () {
-                final v = int.tryParse(xpAddCtrl.text) ?? 0;
-                xpAddCtrl.text = '${v + 1}';
-              },
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              flex: 2,
-              child: FilledButton(
+              IconButton.outlined(
+                icon: const Icon(Icons.add, size: 16),
+                style: IconButton.styleFrom(
+                  minimumSize: const Size(32, 32),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
                 onPressed: () {
-                  final amount = int.tryParse(xpAddCtrl.text) ?? 0;
-                  if (amount > 0) {
-                    onAdd(amount);
-                  }
+                  final v = int.tryParse(xpAddCtrl.text) ?? 0;
+                  xpAddCtrl.text = '${v + 1}';
                 },
-                child: Text(l10n.tooltipAddXp),
               ),
-            ),
-          ],
+              const SizedBox(width: 8),
+              Expanded(
+                flex: 2,
+                child: FilledButton(
+                  onPressed: () {
+                    final amount = int.tryParse(xpAddCtrl.text) ?? 0;
+                    if (amount > 0) {
+                      onAdd(amount);
+                    }
+                  },
+                  child: Text(l10n.tooltipAddXp),
+                ),
+              ),
+            ],
           ),
         ],
         const SizedBox(height: 8),
@@ -981,25 +1024,24 @@ class _XpProgressionPanel extends StatelessWidget {
                     child: Text(
                       l10n.statLevel(lvl),
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontWeight: isCurrent
-                                ? FontWeight.bold
-                                : FontWeight.normal,
-                            color: isCurrent ? scheme.primary : null,
-                          ),
+                        fontWeight: isCurrent
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                        color: isCurrent ? scheme.primary : null,
+                      ),
                     ),
                   ),
                   Expanded(
                     child: Text(
                       '$threshold ${l10n.statXP}',
-                      style:
-                          Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: isCurrent
-                                    ? scheme.primary
-                                    : scheme.onSurfaceVariant,
-                                fontWeight: isCurrent
-                                    ? FontWeight.bold
-                                    : FontWeight.normal,
-                              ),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: isCurrent
+                            ? scheme.primary
+                            : scheme.onSurfaceVariant,
+                        fontWeight: isCurrent
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                      ),
                     ),
                   ),
                   if (isCurrent)
@@ -1070,11 +1112,10 @@ class _ConditionsSection extends StatelessWidget {
                     Expanded(
                       child: Text(
                         i18n.conditionName(name),
-                        style:
-                            Theme.of(ctx).textTheme.titleLarge?.copyWith(
-                                  color: scheme.error,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                        style: Theme.of(ctx).textTheme.titleLarge?.copyWith(
+                          color: scheme.error,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     IconButton(
@@ -1127,9 +1168,9 @@ class _ConditionsSection extends StatelessWidget {
       child: activeConditions.isEmpty
           ? Text(
               l10n.conditionsNone,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: scheme.onSurfaceVariant),
             )
           : Wrap(
               spacing: 8,
@@ -1140,11 +1181,8 @@ class _ConditionsSection extends StatelessWidget {
                   backgroundColor: scheme.errorContainer,
                   labelStyle: TextStyle(color: scheme.onErrorContainer),
                   deleteIconColor: scheme.onErrorContainer,
-                  onPressed: () => _showDetail(
-                    context,
-                    name,
-                    descMap[name] ?? '',
-                  ),
+                  onPressed: () =>
+                      _showDetail(context, name, descMap[name] ?? ''),
                   onDeleted: () => onToggle(name),
                 );
               }).toList(),
@@ -1191,10 +1229,7 @@ class _ConditionPickerSheetState extends State<_ConditionPickerSheet> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              widget.title,
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
+            Text(widget.title, style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 16),
             Wrap(
               spacing: 8,
@@ -1270,12 +1305,20 @@ class _SavingThrowsList extends StatelessWidget {
         .map((s) => s.toLowerCase())
         .toSet();
     final abilities = [
-      ('strength',     l10n.abilityStr, character.abilityScores.strengthModifier),
-      ('dexterity',    l10n.abilityDex, character.abilityScores.dexterityModifier),
-      ('constitution', l10n.abilityCon, character.abilityScores.constitutionModifier),
-      ('intelligence', l10n.abilityInt, character.abilityScores.intelligenceModifier),
-      ('wisdom',       l10n.abilityWis, character.abilityScores.wisdomModifier),
-      ('charisma',     l10n.abilityCha, character.abilityScores.charismaModifier),
+      ('strength', l10n.abilityStr, character.abilityScores.strengthModifier),
+      ('dexterity', l10n.abilityDex, character.abilityScores.dexterityModifier),
+      (
+        'constitution',
+        l10n.abilityCon,
+        character.abilityScores.constitutionModifier,
+      ),
+      (
+        'intelligence',
+        l10n.abilityInt,
+        character.abilityScores.intelligenceModifier,
+      ),
+      ('wisdom', l10n.abilityWis, character.abilityScores.wisdomModifier),
+      ('charisma', l10n.abilityCha, character.abilityScores.charismaModifier),
     ];
     return Column(
       children: abilities.map((entry) {
@@ -1296,17 +1339,17 @@ class _SavingThrowsList extends StatelessWidget {
                 child: Text(
                   abbr,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
-                        color: isProf ? scheme.onSurface : scheme.onSurfaceVariant,
-                      ),
+                    fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
+                    color: isProf ? scheme.onSurface : scheme.onSurfaceVariant,
+                  ),
                 ),
               ),
               Text(
                 _sign(bonus),
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
-                      color: isProf ? scheme.primary : scheme.onSurfaceVariant,
-                    ),
+                  fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
+                  color: isProf ? scheme.primary : scheme.onSurfaceVariant,
+                ),
               ),
             ],
           ),
@@ -1373,9 +1416,9 @@ class _DeathSavesRow extends StatelessWidget {
         const Divider(height: 20),
         Text(
           l10n.deathSavesTitle,
-          style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.labelLarge?.copyWith(color: scheme.onSurfaceVariant),
         ),
         const SizedBox(height: 8),
         // Successes
@@ -1401,9 +1444,9 @@ class _DeathSavesRow extends StatelessWidget {
               Text(
                 l10n.deathSavesStabilized,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: successColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: successColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ],
@@ -1432,9 +1475,9 @@ class _DeathSavesRow extends StatelessWidget {
               Text(
                 l10n.deathSavesDead,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: scheme.error,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: scheme.error,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ],
@@ -1496,21 +1539,20 @@ class _InspirationBanner extends StatelessWidget {
                     Text(
                       label,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: active
-                                ? scheme.onTertiaryContainer
-                                : scheme.onSurface,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        color: active
+                            ? scheme.onTertiaryContainer
+                            : scheme.onSurface,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                     const SizedBox(height: 2),
                     Text(
                       active ? activeSubtitle : inactiveSubtitle,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: active
-                                ? scheme.onTertiaryContainer
-                                    .withValues(alpha: 0.8)
-                                : scheme.onSurfaceVariant,
-                          ),
+                        color: active
+                            ? scheme.onTertiaryContainer.withValues(alpha: 0.8)
+                            : scheme.onSurfaceVariant,
+                      ),
                     ),
                   ],
                 ),
@@ -1518,9 +1560,7 @@ class _InspirationBanner extends StatelessWidget {
               AnimatedSwitcher(
                 duration: const Duration(milliseconds: 200),
                 child: Icon(
-                  active
-                      ? Icons.check_circle_rounded
-                      : Icons.circle_outlined,
+                  active ? Icons.check_circle_rounded : Icons.circle_outlined,
                   key: ValueKey(active),
                   color: active ? scheme.tertiary : scheme.outlineVariant,
                   size: 28,

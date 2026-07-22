@@ -14,6 +14,7 @@ import '../../core/utils/file_exporter.dart';
 import '../../data/migrations/character_migration.dart';
 import '../../data/migrations/character_migration_runner.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/widgets/responsive_layout.dart';
 import '../character_list/character_list_provider.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -87,95 +88,92 @@ class SettingsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(AppLocalizations.of(context)!.settingsTitle)),
-      body: ListView(
-        padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 32),
-        children: [
-          // ── Visual Theme ──────────────────────────────────────────────────
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
-            child: Text(
-              AppLocalizations.of(context)!.settingsSectionTheme,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall
-                  ?.copyWith(color: cs.primary),
+      body: ResponsiveScaffoldBody(
+        maxWidth: 720,
+        child: ListView(
+          padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 32),
+          children: [
+            // ── Visual Theme ──────────────────────────────────────────────────
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+              child: Text(
+                AppLocalizations.of(context)!.settingsSectionTheme,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: cs.primary),
+              ),
             ),
-          ),
-          ListTile(
-            leading: _ColorSwatch(scheme: currentScheme),
-            title: Text(current.name),
-            subtitle: Text(
-              current.brightness == Brightness.dark
-                  ? AppLocalizations.of(context)!.settingsDark
-                  : AppLocalizations.of(context)!.settingsLight,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall
-                  ?.copyWith(color: cs.onSurfaceVariant),
+            ListTile(
+              leading: _ColorSwatch(scheme: currentScheme),
+              title: Text(current.name),
+              subtitle: Text(
+                current.brightness == Brightness.dark
+                    ? AppLocalizations.of(context)!.settingsDark
+                    : AppLocalizations.of(context)!.settingsLight,
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: cs.onSurfaceVariant),
+              ),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => _openThemePicker(context, ref, current),
             ),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => _openThemePicker(context, ref, current),
-          ),
 
-          const Divider(height: 32),
+            const Divider(height: 32),
 
-          // ── Language ──────────────────────────────────────────────────────
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-            child: Text(
-              AppLocalizations.of(context)!.settingsSectionLanguage,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall
-                  ?.copyWith(color: cs.primary),
+            // ── Language ──────────────────────────────────────────────────────
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+              child: Text(
+                AppLocalizations.of(context)!.settingsSectionLanguage,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: cs.primary),
+              ),
             ),
-          ),
-          _LanguageTile(),
+            _LanguageTile(),
 
-          const Divider(height: 32),
+            const Divider(height: 32),
 
-          // ── Units ─────────────────────────────────────────────────────────
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-            child: Text(
-              AppLocalizations.of(context)!.settingsSectionUnits,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall
-                  ?.copyWith(color: cs.primary),
+            // ── Units ─────────────────────────────────────────────────────────
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+              child: Text(
+                AppLocalizations.of(context)!.settingsSectionUnits,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: cs.primary),
+              ),
             ),
-          ),
-          _UnitSystemTile(),
+            _UnitSystemTile(),
 
-          const Divider(height: 32),
+            const Divider(height: 32),
 
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-            child: Text(
-              AppLocalizations.of(context)!.settingsBackupSection,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall
-                  ?.copyWith(color: cs.primary),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+              child: Text(
+                AppLocalizations.of(context)!.settingsBackupSection,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: cs.primary),
+              ),
             ),
-          ),
-          const _BackupTile(),
-          const _ImportBackupTile(),
+            const _BackupTile(),
+            const _ImportBackupTile(),
 
-          const Divider(height: 32),
+            const Divider(height: 32),
 
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-            child: Text(
-              AppLocalizations.of(context)!.settingsMaintenanceSection,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall
-                  ?.copyWith(color: cs.primary),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+              child: Text(
+                AppLocalizations.of(context)!.settingsMaintenanceSection,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: cs.primary),
+              ),
             ),
-          ),
-          const _CharacterMaintenanceTile(),
-        ],
+            const _CharacterMaintenanceTile(),
+          ],
+        ),
       ),
     );
   }
@@ -198,21 +196,22 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
     setState(() => _exporting = true);
 
     try {
-      final backupJson =
-          await ref.read(characterRepositoryProvider).exportBackupToFileJson();
+      final backupJson = await ref
+          .read(characterRepositoryProvider)
+          .exportBackupToFileJson();
       await exportDndBackupFile(backupJson);
 
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.settingsBackupExportSuccess)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.settingsBackupExportSuccess)));
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.settingsBackupExportError)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.settingsBackupExportError)));
     } finally {
       if (mounted) {
         setState(() => _exporting = false);
@@ -294,9 +293,9 @@ class _ImportBackupTileState extends ConsumerState<_ImportBackupTile> {
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.settingsBackupImportError)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.settingsBackupImportError)));
     } finally {
       if (mounted) {
         setState(() => _importing = false);
@@ -352,8 +351,9 @@ class _CharacterMaintenanceTileState
       _busyTask = _MaintenanceBusyTask.checking;
     });
     try {
-      final report =
-          await ref.read(characterRepositoryProvider).previewMigrations();
+      final report = await ref
+          .read(characterRepositoryProvider)
+          .previewMigrations();
       if (!mounted) return;
       setState(() => _preview = report);
 
@@ -396,14 +396,17 @@ class _CharacterMaintenanceTileState
         _busyTask = _MaintenanceBusyTask.checking;
       });
       try {
-        preview = await ref.read(characterRepositoryProvider).previewMigrations();
+        preview = await ref
+            .read(characterRepositoryProvider)
+            .previewMigrations();
       } catch (_) {
         if (!mounted) return;
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-                Text(AppLocalizations.of(context)!.settingsMaintenanceError),
+            content: Text(
+              AppLocalizations.of(context)!.settingsMaintenanceError,
+            ),
           ),
         );
         return;
@@ -483,9 +486,9 @@ class _CharacterMaintenanceTileState
           ? l10n.settingsBackupExportError
           : l10n.settingsMaintenanceError;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(errorMessage)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(errorMessage)));
     } finally {
       if (mounted) {
         setState(() {
@@ -523,18 +526,15 @@ class _CharacterMaintenanceTileState
         _busy
             ? _busySubtitle(l10n)
             : preview == null
-                ? l10n.settingsMaintenanceCheckSubtitle
-                : preview.hasUpdates
-                    ? l10n
-                        .settingsMaintenanceUpdatesFound(preview.outdatedCount)
-                    : l10n.settingsMaintenanceNoUpdates,
+            ? l10n.settingsMaintenanceCheckSubtitle
+            : preview.hasUpdates
+            ? l10n.settingsMaintenanceUpdatesFound(preview.outdatedCount)
+            : l10n.settingsMaintenanceNoUpdates,
       ),
       trailing: _busy
           ? null
           : Icon(
-              hasUpdates
-                  ? Icons.chevron_right
-                  : Icons.manage_search_outlined,
+              hasUpdates ? Icons.chevron_right : Icons.manage_search_outlined,
             ),
       onTap: _busy ? null : (hasUpdates ? _apply : _check),
     );
@@ -608,10 +608,12 @@ class _LanguageTile extends ConsumerWidget {
     } else if (locale.languageCode == 'en') {
       label = 'English';
     } else if (locale.languageCode == 'pt') {
-      label = 'Português';    } else if (locale.languageCode == 'es') {
+      label = 'Português';
+    } else if (locale.languageCode == 'es') {
       label = 'Espa\u00f1ol';
     } else if (locale.languageCode == 'fr') {
-      label = 'Fran\u00e7ais';    } else {
+      label = 'Fran\u00e7ais';
+    } else {
       label = locale.languageCode;
     }
 
@@ -624,7 +626,11 @@ class _LanguageTile extends ConsumerWidget {
     );
   }
 
-  void _openLanguagePicker(BuildContext context, WidgetRef ref, Locale? current) {
+  void _openLanguagePicker(
+    BuildContext context,
+    WidgetRef ref,
+    Locale? current,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     final options = [
       (label: l10n.settingsSystemDefault, locale: null),
@@ -669,15 +675,21 @@ class _LanguageTile extends ConsumerWidget {
                     for (final opt in options)
                       ListTile(
                         title: Text(opt.label),
-                        trailing: opt.locale?.languageCode == current?.languageCode &&
+                        trailing:
+                            opt.locale?.languageCode == current?.languageCode &&
                                 !(opt.locale == null && current != null)
-                            ? Icon(Icons.check_circle,
-                                color: Theme.of(ctx).colorScheme.primary)
+                            ? Icon(
+                                Icons.check_circle,
+                                color: Theme.of(ctx).colorScheme.primary,
+                              )
                             : const SizedBox.shrink(),
-                        selected: opt.locale?.languageCode == current?.languageCode &&
+                        selected:
+                            opt.locale?.languageCode == current?.languageCode &&
                             !(opt.locale == null && current != null),
                         onTap: () {
-                          ref.read(localeProvider.notifier).setLocale(opt.locale);
+                          ref
+                              .read(localeProvider.notifier)
+                              .setLocale(opt.locale);
                           Navigator.pop(ctx);
                         },
                       ),
@@ -719,10 +731,9 @@ class _ThemeTile extends StatelessWidget {
         theme.brightness == Brightness.dark
             ? AppLocalizations.of(context)!.settingsDark
             : AppLocalizations.of(context)!.settingsLight,
-        style: Theme.of(context)
-            .textTheme
-            .bodySmall
-            ?.copyWith(color: cs.onSurfaceVariant),
+        style: Theme.of(
+          context,
+        ).textTheme.bodySmall?.copyWith(color: cs.onSurfaceVariant),
       ),
       trailing: isSelected
           ? Icon(Icons.check_circle, color: cs.primary)
@@ -771,8 +782,8 @@ class _UnitSystemTile extends ConsumerWidget {
 
     String label(UnitSystem v) => switch (v) {
       UnitSystem.imperial => l10n.settingsUnitImperial,
-      UnitSystem.metric   => l10n.settingsUnitMetric,
-      UnitSystem.squares  => l10n.settingsUnitSquares,
+      UnitSystem.metric => l10n.settingsUnitMetric,
+      UnitSystem.squares => l10n.settingsUnitSquares,
     };
 
     return ListTile(
@@ -813,8 +824,10 @@ class _UnitSystemTile extends ConsumerWidget {
               ListTile(
                 title: Text(label(v)),
                 trailing: v == current
-                    ? Icon(Icons.check_circle,
-                        color: Theme.of(ctx).colorScheme.primary)
+                    ? Icon(
+                        Icons.check_circle,
+                        color: Theme.of(ctx).colorScheme.primary,
+                      )
                     : const SizedBox.shrink(),
                 selected: v == current,
                 onTap: () {

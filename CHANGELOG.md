@@ -7,6 +7,21 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- **Notas — tags coloridas**: notas agora podem receber tags padrão ou personalizadas, com escolha de cor para organizar sessões, NPCs, missões, lugares, loot e regras.
+- **Notas — busca e filtros**: a aba Notas ganhou pesquisa por título, conteúdo e tag, além de filtro rápido por tag.
+- **Notas — fixar notas importantes**: notas podem ser fixadas no topo e aparecem em uma seção separada das demais.
+
+### Changed
+- **Notas — reordenação escalável**: a lista de notas agora usa `SliverReorderableList` com alça de arrastar, mantendo notas fixadas e não fixadas em grupos separados.
+- **Personagens — reordenação escalável**: a lista de personagens também passou para `SliverReorderableList` com alça explícita de arrastar.
+- **Personagens — persistência de ordem**: ao reordenar personagens, o app salva apenas os itens cujo `sortOrder` realmente mudou.
+- **Documentação de arquitetura**: arquitetura atualizada para refletir notas com tags/fixação/ordem explícita, containers funcionais e o padrão novo de listas reordenáveis.
+
+### Internal
+- **Persistência de notas**: `CharacterNote` agora salva `sortOrder` para manter a ordem de forma explícita e escalável.
+- **Migração de personagens**: adicionada a migração versionada `NormalizeNoteOrderMigration` (`dataVersion` 4) para preencher a ordem das notas antigas pelo fluxo de manutenção nas configurações.
+
 ---
 
 ## [1.0.5] - 2026-07-22

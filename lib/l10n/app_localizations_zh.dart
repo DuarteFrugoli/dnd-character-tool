@@ -802,6 +802,75 @@ class AppLocalizationsZh extends AppLocalizations {
   String get notesLabelContent => '内容';
 
   @override
+  String get notesSearchHint => '搜索笔记或标签';
+
+  @override
+  String get notesNoResultsTitle => '没有匹配的笔记';
+
+  @override
+  String get notesNoResultsHint => '尝试其他搜索或清除标签筛选。';
+
+  @override
+  String get notesReadMore => '阅读更多';
+
+  @override
+  String get notesTags => '标签';
+
+  @override
+  String get notesAllTags => '全部';
+
+  @override
+  String get notesCustomTag => '自定义标签';
+
+  @override
+  String get notesAddTag => '添加标签';
+
+  @override
+  String get notesTagColor => '标签颜色';
+
+  @override
+  String get notesChooseTagColor => '选择标签颜色';
+
+  @override
+  String get notesTooltipPin => '固定笔记';
+
+  @override
+  String get notesTooltipUnpin => '取消固定';
+
+  @override
+  String get notesMoveUp => '上移';
+
+  @override
+  String get notesMoveDown => '下移';
+
+  @override
+  String get notesMoreActions => '更多操作';
+
+  @override
+  String get notesPinnedSection => '已固定';
+
+  @override
+  String get notesOtherSection => '笔记';
+
+  @override
+  String get notesDefaultTagSession => '会话';
+
+  @override
+  String get notesDefaultTagNpc => 'NPC';
+
+  @override
+  String get notesDefaultTagQuest => '任务';
+
+  @override
+  String get notesDefaultTagPlace => '地点';
+
+  @override
+  String get notesDefaultTagLoot => '战利品';
+
+  @override
+  String get notesDefaultTagRule => '规则';
+
+  @override
   String get sectionPersonalityTraits => '性格特征';
 
   @override

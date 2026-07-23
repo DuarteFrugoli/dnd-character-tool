@@ -1554,6 +1554,144 @@ abstract class AppLocalizations {
   /// **'Content'**
   String get notesLabelContent;
 
+  /// Notes tab search field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search notes or tags'**
+  String get notesSearchHint;
+
+  /// Notes search empty state title.
+  ///
+  /// In en, this message translates to:
+  /// **'No matching notes'**
+  String get notesNoResultsTitle;
+
+  /// Notes search empty state hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Try another search or clear the tag filter.'**
+  String get notesNoResultsHint;
+
+  /// Note card overflow link text.
+  ///
+  /// In en, this message translates to:
+  /// **'Read more'**
+  String get notesReadMore;
+
+  /// Notes tags section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Tags'**
+  String get notesTags;
+
+  /// All notes tags filter chip.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get notesAllTags;
+
+  /// Custom note tag field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom tag'**
+  String get notesCustomTag;
+
+  /// Add custom note tag button tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Add tag'**
+  String get notesAddTag;
+
+  /// Note tag color picker label.
+  ///
+  /// In en, this message translates to:
+  /// **'Tag color'**
+  String get notesTagColor;
+
+  /// Note tag color picker dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose tag color'**
+  String get notesChooseTagColor;
+
+  /// Pin note action tooltip/menu label.
+  ///
+  /// In en, this message translates to:
+  /// **'Pin note'**
+  String get notesTooltipPin;
+
+  /// Unpin note action tooltip/menu label.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpin note'**
+  String get notesTooltipUnpin;
+
+  /// Move note up menu label.
+  ///
+  /// In en, this message translates to:
+  /// **'Move up'**
+  String get notesMoveUp;
+
+  /// Move note down menu label.
+  ///
+  /// In en, this message translates to:
+  /// **'Move down'**
+  String get notesMoveDown;
+
+  /// Note card overflow menu tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'More actions'**
+  String get notesMoreActions;
+
+  /// Notes list pinned section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pinned'**
+  String get notesPinnedSection;
+
+  /// Notes list unpinned section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notesOtherSection;
+
+  /// Default note tag: session.
+  ///
+  /// In en, this message translates to:
+  /// **'Session'**
+  String get notesDefaultTagSession;
+
+  /// Default note tag: NPC.
+  ///
+  /// In en, this message translates to:
+  /// **'NPC'**
+  String get notesDefaultTagNpc;
+
+  /// Default note tag: quest.
+  ///
+  /// In en, this message translates to:
+  /// **'Quest'**
+  String get notesDefaultTagQuest;
+
+  /// Default note tag: place.
+  ///
+  /// In en, this message translates to:
+  /// **'Place'**
+  String get notesDefaultTagPlace;
+
+  /// Default note tag: loot.
+  ///
+  /// In en, this message translates to:
+  /// **'Loot'**
+  String get notesDefaultTagLoot;
+
+  /// Default note tag: rule.
+  ///
+  /// In en, this message translates to:
+  /// **'Rule'**
+  String get notesDefaultTagRule;
+
   /// Notes tab personality traits section.
   ///
   /// In en, this message translates to:

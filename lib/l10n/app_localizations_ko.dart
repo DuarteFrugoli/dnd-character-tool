@@ -810,6 +810,75 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notesLabelContent => '콘텐츠';
 
   @override
+  String get notesSearchHint => '메모 또는 태그 검색';
+
+  @override
+  String get notesNoResultsTitle => '일치하는 메모가 없습니다';
+
+  @override
+  String get notesNoResultsHint => '다른 검색어를 입력하거나 태그 필터를 지우세요.';
+
+  @override
+  String get notesReadMore => '더 보기';
+
+  @override
+  String get notesTags => '태그';
+
+  @override
+  String get notesAllTags => '전체';
+
+  @override
+  String get notesCustomTag => '사용자 태그';
+
+  @override
+  String get notesAddTag => '태그 추가';
+
+  @override
+  String get notesTagColor => '태그 색상';
+
+  @override
+  String get notesChooseTagColor => '태그 색상 선택';
+
+  @override
+  String get notesTooltipPin => '메모 고정';
+
+  @override
+  String get notesTooltipUnpin => '고정 해제';
+
+  @override
+  String get notesMoveUp => '위로 이동';
+
+  @override
+  String get notesMoveDown => '아래로 이동';
+
+  @override
+  String get notesMoreActions => '추가 작업';
+
+  @override
+  String get notesPinnedSection => '고정됨';
+
+  @override
+  String get notesOtherSection => '메모';
+
+  @override
+  String get notesDefaultTagSession => '세션';
+
+  @override
+  String get notesDefaultTagNpc => 'NPC';
+
+  @override
+  String get notesDefaultTagQuest => '퀘스트';
+
+  @override
+  String get notesDefaultTagPlace => '장소';
+
+  @override
+  String get notesDefaultTagLoot => '전리품';
+
+  @override
+  String get notesDefaultTagRule => '규칙';
+
+  @override
   String get sectionPersonalityTraits => '성격 특성';
 
   @override

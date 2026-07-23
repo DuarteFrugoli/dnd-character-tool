@@ -817,6 +817,76 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notesLabelContent => 'Content';
 
   @override
+  String get notesSearchHint => 'Search notes or tags';
+
+  @override
+  String get notesNoResultsTitle => 'No matching notes';
+
+  @override
+  String get notesNoResultsHint =>
+      'Try another search or clear the tag filter.';
+
+  @override
+  String get notesReadMore => 'Read more';
+
+  @override
+  String get notesTags => 'Tags';
+
+  @override
+  String get notesAllTags => 'All';
+
+  @override
+  String get notesCustomTag => 'Custom tag';
+
+  @override
+  String get notesAddTag => 'Add tag';
+
+  @override
+  String get notesTagColor => 'Tag color';
+
+  @override
+  String get notesChooseTagColor => 'Choose tag color';
+
+  @override
+  String get notesTooltipPin => 'Pin note';
+
+  @override
+  String get notesTooltipUnpin => 'Unpin note';
+
+  @override
+  String get notesMoveUp => 'Move up';
+
+  @override
+  String get notesMoveDown => 'Move down';
+
+  @override
+  String get notesMoreActions => 'More actions';
+
+  @override
+  String get notesPinnedSection => 'Pinned';
+
+  @override
+  String get notesOtherSection => 'Notes';
+
+  @override
+  String get notesDefaultTagSession => 'Session';
+
+  @override
+  String get notesDefaultTagNpc => 'NPC';
+
+  @override
+  String get notesDefaultTagQuest => 'Quest';
+
+  @override
+  String get notesDefaultTagPlace => 'Place';
+
+  @override
+  String get notesDefaultTagLoot => 'Loot';
+
+  @override
+  String get notesDefaultTagRule => 'Rule';
+
+  @override
   String get sectionPersonalityTraits => 'Personality Traits';
 
   @override

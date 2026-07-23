@@ -809,6 +809,75 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notesLabelContent => 'コンテンツ';
 
   @override
+  String get notesSearchHint => 'メモまたはタグを検索';
+
+  @override
+  String get notesNoResultsTitle => '一致するメモがありません';
+
+  @override
+  String get notesNoResultsHint => '別の検索を試すか、タグフィルターを解除してください。';
+
+  @override
+  String get notesReadMore => '続きを読む';
+
+  @override
+  String get notesTags => 'タグ';
+
+  @override
+  String get notesAllTags => 'すべて';
+
+  @override
+  String get notesCustomTag => 'カスタムタグ';
+
+  @override
+  String get notesAddTag => 'タグを追加';
+
+  @override
+  String get notesTagColor => 'タグの色';
+
+  @override
+  String get notesChooseTagColor => 'タグの色を選択';
+
+  @override
+  String get notesTooltipPin => 'メモを固定';
+
+  @override
+  String get notesTooltipUnpin => '固定を解除';
+
+  @override
+  String get notesMoveUp => '上へ移動';
+
+  @override
+  String get notesMoveDown => '下へ移動';
+
+  @override
+  String get notesMoreActions => 'その他の操作';
+
+  @override
+  String get notesPinnedSection => '固定済み';
+
+  @override
+  String get notesOtherSection => 'メモ';
+
+  @override
+  String get notesDefaultTagSession => 'セッション';
+
+  @override
+  String get notesDefaultTagNpc => 'NPC';
+
+  @override
+  String get notesDefaultTagQuest => 'クエスト';
+
+  @override
+  String get notesDefaultTagPlace => '場所';
+
+  @override
+  String get notesDefaultTagLoot => '戦利品';
+
+  @override
+  String get notesDefaultTagRule => 'ルール';
+
+  @override
   String get sectionPersonalityTraits => '性格特性';
 
   @override

@@ -820,6 +820,76 @@ class AppLocalizationsEs extends AppLocalizations {
   String get notesLabelContent => 'Contenido';
 
   @override
+  String get notesSearchHint => 'Buscar notas o etiquetas';
+
+  @override
+  String get notesNoResultsTitle => 'No hay notas coincidentes';
+
+  @override
+  String get notesNoResultsHint =>
+      'Prueba otra búsqueda o borra el filtro de etiquetas.';
+
+  @override
+  String get notesReadMore => 'Leer más';
+
+  @override
+  String get notesTags => 'Etiquetas';
+
+  @override
+  String get notesAllTags => 'Todas';
+
+  @override
+  String get notesCustomTag => 'Etiqueta personalizada';
+
+  @override
+  String get notesAddTag => 'Agregar etiqueta';
+
+  @override
+  String get notesTagColor => 'Color de etiqueta';
+
+  @override
+  String get notesChooseTagColor => 'Elegir color de etiqueta';
+
+  @override
+  String get notesTooltipPin => 'Fijar nota';
+
+  @override
+  String get notesTooltipUnpin => 'Desfijar nota';
+
+  @override
+  String get notesMoveUp => 'Mover arriba';
+
+  @override
+  String get notesMoveDown => 'Mover abajo';
+
+  @override
+  String get notesMoreActions => 'Más acciones';
+
+  @override
+  String get notesPinnedSection => 'Fijadas';
+
+  @override
+  String get notesOtherSection => 'Notas';
+
+  @override
+  String get notesDefaultTagSession => 'Sesión';
+
+  @override
+  String get notesDefaultTagNpc => 'PNJ';
+
+  @override
+  String get notesDefaultTagQuest => 'Misión';
+
+  @override
+  String get notesDefaultTagPlace => 'Lugar';
+
+  @override
+  String get notesDefaultTagLoot => 'Botín';
+
+  @override
+  String get notesDefaultTagRule => 'Regla';
+
+  @override
   String get sectionPersonalityTraits => 'Rasgos de personalidad';
 
   @override

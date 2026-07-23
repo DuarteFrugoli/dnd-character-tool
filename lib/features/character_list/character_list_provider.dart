@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,12 +38,28 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
   }
 
   Future<void> togglePin(String id) async {
-    final character = await ref.read(characterRepositoryProvider).getById(id);
+    final repo = ref.read(characterRepositoryProvider);
+    final current = state.valueOrNull ?? _sorted(await repo.getAll());
+    final character = current.firstWhereOrNull((c) => c.id == id);
     if (character == null) return;
-    await ref
-        .read(characterRepositoryProvider)
-        .save(character.copyWith(isPinned: !character.isPinned));
-    await refresh();
+
+    final isPinned = !character.isPinned;
+    final groupSortOrders = current
+        .where((c) => c.id != id && c.isPinned == isPinned)
+        .map((c) => c.sortOrder);
+    final sortOrder = groupSortOrders.isEmpty
+        ? 0
+        : groupSortOrders.reduce(math.max) + 1;
+    final updated = await repo.save(
+      character.copyWith(
+        isPinned: isPinned,
+        sortOrder: sortOrder,
+      ),
+    );
+    state = AsyncData(_sorted([
+      ...current.where((c) => c.id != id),
+      updated,
+    ]));
   }
 
   Future<void> reorder(int oldIndex, int newIndex) async {
@@ -70,13 +88,17 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
       for (var i = 0; i < unpinned.length; i++)
         unpinned[i].copyWith(sortOrder: i),
     ];
+    final previousById = {for (final c in current) c.id: c};
+    final changed = allUpdated.where((character) {
+      return previousById[character.id]?.sortOrder != character.sortOrder;
+    }).toList();
 
     // Update UI immediately — no flash
     state = AsyncData(allUpdated);
 
     // Persist in the background
     final repo = ref.read(characterRepositoryProvider);
-    for (final c in allUpdated) {
+    for (final c in changed) {
       await repo.save(c);
     }
   }

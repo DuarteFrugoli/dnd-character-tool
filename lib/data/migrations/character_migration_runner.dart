@@ -2,6 +2,7 @@ import '../models/models.dart';
 import 'character_migration.dart';
 import 'migrations/backfill_equipment_weights_migration.dart';
 import 'migrations/expand_equipment_packs_migration.dart';
+import 'migrations/normalize_note_order_migration.dart';
 import 'migrations/normalize_equipment_items_migration.dart';
 
 class CharacterMigrationRunner {
@@ -13,6 +14,7 @@ class CharacterMigrationRunner {
                 BackfillEquipmentWeightsMigration(),
                 NormalizeEquipmentItemsMigration(),
                 ExpandEquipmentPacksMigration(),
+                NormalizeNoteOrderMigration(),
               ],
         );
 

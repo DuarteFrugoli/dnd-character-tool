@@ -325,27 +325,41 @@ class _CharacterList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ReorderableListView.builder(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
-      itemCount: characters.length,
-      onReorder: (oldIndex, newIndex) =>
-          ref.read(characterListProvider.notifier).reorder(oldIndex, newIndex),
-      itemBuilder: (context, index) {
-        final character = characters[index];
-        return Padding(
-          key: ValueKey(character.id),
-          padding: const EdgeInsets.only(bottom: 8),
-          child: _CharacterCard(character: character),
-        );
-      },
+    return CustomScrollView(
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
+          sliver: SliverReorderableList(
+            itemCount: characters.length,
+            onReorder: (oldIndex, newIndex) => ref
+                .read(characterListProvider.notifier)
+                .reorder(oldIndex, newIndex),
+            itemBuilder: (context, index) {
+              final character = characters[index];
+              return Padding(
+                key: ValueKey(character.id),
+                padding: const EdgeInsets.only(bottom: 8),
+                child: _CharacterCard(
+                  character: character,
+                  reorderIndex: index,
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
 
 class _CharacterCard extends ConsumerWidget {
-  const _CharacterCard({required this.character});
+  const _CharacterCard({
+    required this.character,
+    required this.reorderIndex,
+  });
 
   final Character character;
+  final int reorderIndex;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -373,6 +387,9 @@ class _CharacterCard extends ConsumerWidget {
     }
 
     final cs = Theme.of(context).colorScheme;
+    final widgetsL10n = WidgetsLocalizations.of(context);
+    final reorderTooltip =
+        '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
     return Card(
       child: ListTile(
         leading: Stack(
@@ -405,80 +422,109 @@ class _CharacterCard extends ConsumerWidget {
         subtitle: Text(
           '${i18n.raceName(character.race)} · ${i18n.className(character.characterClass)} · ${l10n.charCardLevel(character.level)}',
         ),
-        trailing: PopupMenuButton<String>(
-          onSelected: (value) async {
-            if (value == 'pin') {
-              await ref
-                  .read(characterListProvider.notifier)
-                  .togglePin(character.id);
-            }
-            if (value == 'photo') {
-              if (!context.mounted) return;
-              await showCharacterPhotoPicker(
-                context,
-                currentImagePath: character.imagePath,
-                onImageChanged: (path) => ref
-                    .read(characterListProvider.notifier)
-                    .updateImage(character.id, path),
-              );
-            }
-            if (value == 'export') {
-              await exportCharacter();
-            }
-            if (value == 'rename') {
-              if (!context.mounted) return;
-              final newName = await showDialog<String>(
-                context: context,
-                builder: (ctx) => _RenameDialog(currentName: character.name),
-              );
-              if (newName != null &&
-                  newName.trim().isNotEmpty &&
-                  context.mounted) {
-                await ref
-                    .read(characterListProvider.notifier)
-                    .rename(character.id, newName);
-              }
-            }
-            if (value == 'delete') {
-              if (!context.mounted) return;
-              final confirm = await showDialog<bool>(
-                context: context,
-                builder: (ctx) => AlertDialog(
-                  title: Text(l10n.deleteDialogTitle),
-                  content: Text(l10n.deleteDialogContent(character.name)),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(ctx, false),
-                      child: Text(l10n.dialogCancel),
-                    ),
-                    TextButton(
-                      onPressed: () => Navigator.pop(ctx, true),
-                      child: Text(l10n.charCardDelete),
-                    ),
-                  ],
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ReorderableDragStartListener(
+              index: reorderIndex,
+              child: Tooltip(
+                message: reorderTooltip,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Icon(
+                    Icons.drag_handle,
+                    size: 20,
+                    color: cs.outline,
+                  ),
                 ),
-              );
-              if (confirm == true) {
-                await ref
-                    .read(characterListProvider.notifier)
-                    .delete(character.id);
-              }
-            }
-          },
-          itemBuilder: (_) => [
-            PopupMenuItem(
-              value: 'pin',
-              child: Text(
-                character.isPinned ? l10n.charCardUnpin : l10n.charCardPin,
               ),
             ),
-            PopupMenuItem(
-              value: 'photo',
-              child: Text(l10n.charCardChangePhoto),
+            PopupMenuButton<String>(
+              onSelected: (value) async {
+                if (value == 'pin') {
+                  await ref
+                      .read(characterListProvider.notifier)
+                      .togglePin(character.id);
+                }
+                if (value == 'photo') {
+                  if (!context.mounted) return;
+                  await showCharacterPhotoPicker(
+                    context,
+                    currentImagePath: character.imagePath,
+                    onImageChanged: (path) => ref
+                        .read(characterListProvider.notifier)
+                        .updateImage(character.id, path),
+                  );
+                }
+                if (value == 'export') {
+                  await exportCharacter();
+                }
+                if (value == 'rename') {
+                  if (!context.mounted) return;
+                  final newName = await showDialog<String>(
+                    context: context,
+                    builder: (ctx) =>
+                        _RenameDialog(currentName: character.name),
+                  );
+                  if (newName != null &&
+                      newName.trim().isNotEmpty &&
+                      context.mounted) {
+                    await ref
+                        .read(characterListProvider.notifier)
+                        .rename(character.id, newName);
+                  }
+                }
+                if (value == 'delete') {
+                  if (!context.mounted) return;
+                  final confirm = await showDialog<bool>(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      title: Text(l10n.deleteDialogTitle),
+                      content: Text(l10n.deleteDialogContent(character.name)),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx, false),
+                          child: Text(l10n.dialogCancel),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx, true),
+                          child: Text(l10n.charCardDelete),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirm == true) {
+                    await ref
+                        .read(characterListProvider.notifier)
+                        .delete(character.id);
+                  }
+                }
+              },
+              itemBuilder: (_) => [
+                PopupMenuItem(
+                  value: 'pin',
+                  child: Text(
+                    character.isPinned ? l10n.charCardUnpin : l10n.charCardPin,
+                  ),
+                ),
+                PopupMenuItem(
+                  value: 'photo',
+                  child: Text(l10n.charCardChangePhoto),
+                ),
+                PopupMenuItem(
+                  value: 'rename',
+                  child: Text(l10n.charCardRename),
+                ),
+                PopupMenuItem(
+                  value: 'export',
+                  child: Text(l10n.charCardExport),
+                ),
+                PopupMenuItem(
+                  value: 'delete',
+                  child: Text(l10n.charCardDelete),
+                ),
+              ],
             ),
-            PopupMenuItem(value: 'rename', child: Text(l10n.charCardRename)),
-            PopupMenuItem(value: 'export', child: Text(l10n.charCardExport)),
-            PopupMenuItem(value: 'delete', child: Text(l10n.charCardDelete)),
           ],
         ),
         onTap: () => context.push('/character/${character.id}'),

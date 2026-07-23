@@ -826,6 +826,76 @@ class AppLocalizationsFr extends AppLocalizations {
   String get notesLabelContent => 'Contenu';
 
   @override
+  String get notesSearchHint => 'Rechercher des notes ou étiquettes';
+
+  @override
+  String get notesNoResultsTitle => 'Aucune note correspondante';
+
+  @override
+  String get notesNoResultsHint =>
+      'Essayez une autre recherche ou effacez le filtre d\'étiquette.';
+
+  @override
+  String get notesReadMore => 'Lire la suite';
+
+  @override
+  String get notesTags => 'Étiquettes';
+
+  @override
+  String get notesAllTags => 'Toutes';
+
+  @override
+  String get notesCustomTag => 'Étiquette personnalisée';
+
+  @override
+  String get notesAddTag => 'Ajouter une étiquette';
+
+  @override
+  String get notesTagColor => 'Couleur de l\'étiquette';
+
+  @override
+  String get notesChooseTagColor => 'Choisir la couleur de l\'étiquette';
+
+  @override
+  String get notesTooltipPin => 'Épingler la note';
+
+  @override
+  String get notesTooltipUnpin => 'Désépingler la note';
+
+  @override
+  String get notesMoveUp => 'Déplacer vers le haut';
+
+  @override
+  String get notesMoveDown => 'Déplacer vers le bas';
+
+  @override
+  String get notesMoreActions => 'Plus d\'actions';
+
+  @override
+  String get notesPinnedSection => 'Épinglées';
+
+  @override
+  String get notesOtherSection => 'Notes';
+
+  @override
+  String get notesDefaultTagSession => 'Session';
+
+  @override
+  String get notesDefaultTagNpc => 'PNJ';
+
+  @override
+  String get notesDefaultTagQuest => 'Quête';
+
+  @override
+  String get notesDefaultTagPlace => 'Lieu';
+
+  @override
+  String get notesDefaultTagLoot => 'Butin';
+
+  @override
+  String get notesDefaultTagRule => 'Règle';
+
+  @override
   String get sectionPersonalityTraits => 'Traits de personnalité';
 
   @override

@@ -201,6 +201,7 @@ Current migrations:
 | 1 | `BackfillEquipmentWeightsMigration` | Fills weights for known inventory items that were saved with `0`. |
 | 2 | `NormalizeEquipmentItemsMigration` | Updates known items with current type, category, weight, and SRD properties. |
 | 3 | `ExpandEquipmentPacksMigration` | Replaces known starting equipment packs with their individual contents. |
+| 4 | `NormalizeNoteOrderMigration` | Assigns explicit `sortOrder` values to old notes while preserving their saved order. |
 
 Migrations are intentionally user-triggered from Settings maintenance. They are
 not applied invisibly while merely opening a character. Before applying
@@ -228,11 +229,12 @@ Key models:
 | `Character` | Root saved object: identity, class/race, stats, HP, AC, equipment, spells, notes, features, settings. |
 | `AbilityScores` | Six ability scores and modifiers. |
 | `HitPoints` | Current/max/temp HP, hit dice usage, death saves, stabilized/dead state. |
-| `EquipmentItem` | Inventory item with mechanical `ItemType`, quantity, weight, equip state, and type-specific `properties`. |
+| `EquipmentItem` | Inventory item with mechanical `ItemType`, quantity, weight, equip state, optional `containerId`, and type-specific `properties`. |
 | `KnownSpell`, `SpellSlots`, `InnateSpell` | Spell list, slot usage, and innate spell tracking. |
 | `CharacterExtraFeature` | Manually added class/subclass/feat/custom feature. |
 | `CharacterFeatureChoice` | Persisted option IDs selected for class features, subclass features, racial traits, and feats. |
-| `CharacterNote`, `CharacterAppearance`, `CharacterPersonality` | Detail-screen supporting data. |
+| `CharacterNote` | Player notes with text, colored tags, pin state, and explicit per-group `sortOrder`. |
+| `CharacterAppearance`, `CharacterPersonality` | Detail-screen supporting data for identity and appearance. |
 
 Most models use `@JsonSerializable`. Some older/simple models use manual JSON
 methods. New persisted fields should provide a default fallback in generated or
@@ -246,6 +248,7 @@ Important persisted fields on `Character`:
 | `featureChoices` | Stable choices made inside feature/trait/feat rules. Values are option IDs from SRD data, not localized labels. |
 | `featureResources` | Remaining uses/points for trackable feature resources, keyed by resource ID. Missing values mean "full". |
 | `imagePath` | Native file name/path or web image reference such as `indexeddb:image:<id>`. Export formats embed image bytes separately. |
+| `sortOrder` | Character-list order inside the pinned or unpinned group. |
 
 `domain_constants.dart` stores string constants that are part of persisted JSON
 contracts. Do not rename those values without a migration.
@@ -269,14 +272,17 @@ Important conventions:
   distinguished by `properties['isShield']`.
 - `equippable` is for wearable/usable items that are not armor, such as rings,
   cloaks, necklaces, or other magical/custom equipment.
-- `container` is reserved for storage-style behavior and stores capacity-related
-  properties.
+- `container` items can hold other non-container items through
+  `EquipmentItem.containerId`. Containers cannot currently be stored inside
+  other containers.
 - `ammunition` is handled separately in the inventory UI.
 - Custom item creation in `inventory_tab.dart` shows different inputs per
   `ItemType` and stores type-specific values in `properties`.
 - SRD equipment packs can define `contents`. Character creation expands known
   packs into their individual items. Migrations can also expand old characters
   that still have pack items saved as a single inventory entry.
+- Removing a container with contents asks the user whether to move contents back
+  to the main inventory, delete everything, or cancel.
 
 Equipment changes that can affect AC call `calcArmorClass`. Body armor is
 exclusive: equipping a new body armor unequips/merges the previous one.
@@ -457,7 +463,9 @@ adds aliases for common starting-equipment strings, such as stripped ammunition
 names and armor suffix variants.
 
 `equipment.json` is also the source for structured pack contents. Pack contents
-are plain item references plus quantities; container nesting is not modeled yet.
+are plain item references plus quantities. Starting equipment is expanded into
+the main inventory; the user decides later which items should go into
+containers.
 
 `feature_choices.json` stores selectable options and requirements. It should
 use stable option IDs and English source text. Locale overlays translate names
@@ -506,7 +514,9 @@ handle game data that mirrors SRD asset structure.
 - avatar display and list-level image updates.
 
 The list provider keeps pinned characters first, then applies `sortOrder` and
-`updatedAt`.
+`updatedAt`. The UI uses `CustomScrollView` plus `SliverReorderableList` with an
+explicit drag handle. Reordering is limited to the current pinned/unpinned
+group; changing groups happens through pin/unpin.
 
 ### Character Creation
 
@@ -554,6 +564,12 @@ The screen is split into part files under `tabs/`:
 coordination. `character_detail_provider.dart` owns mutations: HP, rests, spell
 slots, prepared spells, concentration, level up, identity, stats, inventory,
 features, notes, conditions, XP, and settings flags.
+
+The Notes tab supports search, colored tags, pin/unpin, detail viewing, and
+drag reordering. Notes are ordered by pinned group and `CharacterNote.sortOrder`.
+The UI uses `CustomScrollView` plus `SliverReorderableList`; reordering is
+disabled while a search or tag filter is active so a filtered subset does not
+rewrite the underlying order unexpectedly.
 
 Feature choices and feature usages both surface mainly in `features_tab.dart`:
 
@@ -670,6 +686,9 @@ boundaries.
   cover controls.
 - Detail tabs should call methods on `CharacterDetailNotifier`; they should not
   persist directly.
+- For reorderable lists with headers, search, or sections, prefer
+  `CustomScrollView` with `SliverReorderableList` and explicit drag handles.
+  Avoid nested `ReorderableListView` with `shrinkWrap` for long lists.
 - Item, spell, feature, and SRD detail displays should use localized names from
   `SrdI18nService`, falling back to English.
 - Prefer existing shared widgets in `shared/widgets/` and
@@ -714,6 +733,7 @@ the affected files before committing.
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |
 | Backup export/import | `CharacterRepository`, `CharacterLocalDataSource`, `features/home/settings_screen.dart`, `core/utils/file_exporter.dart` |
 | Inventory item UI and custom item forms | `features/character_detail/tabs/inventory_tab.dart` |
+| Notes, note tags, and note ordering | `features/character_detail/tabs/notes_tab.dart`, `CharacterDetailNotifier`, `CharacterNote` |
 | Starting equipment packs | `assets/data/srd/equipment.json`, `SrdPackContent`, `ExpandEquipmentPacksMigration` |
 | Creation racial ASI/Tasha/Variant Human | `features/character_creation/character_draft_provider.dart`, `steps/step_attributes.dart`, `steps/step_feature_choices.dart`, `assets/data/srd/races.json` |
 | SRD canonical data | `assets/data/srd/` |

@@ -1002,20 +1002,121 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> addNote(CharacterNote note) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(notes: [note, ...c.notes]));
+    final ordered = _notesInDisplayOrder(c.notes);
+    final sameGroup = [
+      note.copyWith(sortOrder: 0),
+      ...ordered.where((n) => n.isPinned == note.isPinned),
+    ];
+    final otherGroup = ordered.where((n) => n.isPinned != note.isPinned);
+    final notes = note.isPinned
+        ? [...sameGroup, ...otherGroup]
+        : [...otherGroup, ...sameGroup];
+    await _save(c.copyWith(notes: _normalizeNoteSortOrders(notes)));
   }
 
   Future<void> updateNote(CharacterNote updated) async {
     final c = state.valueOrNull;
     if (c == null) return;
     final notes = c.notes.map((n) => n.id == updated.id ? updated : n).toList();
-    await _save(c.copyWith(notes: notes));
+    await _save(
+      c.copyWith(notes: _normalizeNoteSortOrders(_notesInDisplayOrder(notes))),
+    );
+  }
+
+  Future<void> toggleNotePinned(String id) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final ordered = _notesInDisplayOrder(c.notes);
+    final note = ordered.firstWhereOrNull((n) => n.id == id);
+    if (note == null) return;
+
+    final targetPinned = !note.isPinned;
+    final targetSortOrder = ordered
+        .where((n) => n.id != id && n.isPinned == targetPinned)
+        .length;
+    final notes = ordered
+        .map(
+          (n) => n.id == id
+              ? n.copyWith(
+                  isPinned: targetPinned,
+                  sortOrder: targetSortOrder,
+                )
+              : n,
+        )
+        .toList();
+    await _save(
+      c.copyWith(notes: _normalizeNoteSortOrders(_notesInDisplayOrder(notes))),
+    );
+  }
+
+  Future<void> reorderNotes({
+    required bool pinned,
+    required int oldIndex,
+    required int newIndex,
+  }) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+
+    final ordered = _notesInDisplayOrder(c.notes);
+    final group = ordered.where((n) => n.isPinned == pinned).toList();
+    if (oldIndex < 0 || oldIndex >= group.length) return;
+
+    var insertIndex = newIndex;
+    if (insertIndex > oldIndex) insertIndex--;
+    insertIndex = insertIndex.clamp(0, group.length - 1).toInt();
+    if (oldIndex == insertIndex) return;
+
+    final moved = group.removeAt(oldIndex);
+    group.insert(insertIndex, moved);
+
+    final pinnedNotes = pinned
+        ? group
+        : ordered.where((n) => n.isPinned).toList();
+    final unpinnedNotes = pinned
+        ? ordered.where((n) => !n.isPinned).toList()
+        : group;
+
+    await _save(
+      c.copyWith(
+        notes: _normalizeNoteSortOrders([...pinnedNotes, ...unpinnedNotes]),
+      ),
+    );
   }
 
   Future<void> deleteNote(String id) async {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(c.copyWith(notes: c.notes.where((n) => n.id != id).toList()));
+  }
+
+  List<CharacterNote> _notesInDisplayOrder(List<CharacterNote> notes) {
+    final indexed = notes
+        .mapIndexed((index, note) => MapEntry(index, note))
+        .toList()
+      ..sort((a, b) {
+        final noteA = a.value;
+        final noteB = b.value;
+        if (noteA.isPinned != noteB.isPinned) {
+          return noteA.isPinned ? -1 : 1;
+        }
+        final byOrder = noteA.sortOrder.compareTo(noteB.sortOrder);
+        if (byOrder != 0) return byOrder;
+        return a.key.compareTo(b.key);
+      });
+    return indexed.map((entry) => entry.value).toList();
+  }
+
+  List<CharacterNote> _normalizeNoteSortOrders(List<CharacterNote> notes) {
+    final pinned = notes.where((note) => note.isPinned).toList();
+    final unpinned = notes.where((note) => !note.isPinned).toList();
+    return [
+      for (var i = 0; i < pinned.length; i++)
+        pinned[i].sortOrder == i ? pinned[i] : pinned[i].copyWith(sortOrder: i),
+      for (var i = 0; i < unpinned.length; i++)
+        unpinned[i].sortOrder == i
+            ? unpinned[i]
+            : unpinned[i].copyWith(sortOrder: i),
+    ];
   }
 
   // ── Appearance ───────────────────────────────────────────────────────────────

@@ -823,6 +823,76 @@ class AppLocalizationsRu extends AppLocalizations {
   String get notesLabelContent => 'Содержание';
 
   @override
+  String get notesSearchHint => 'Искать заметки или теги';
+
+  @override
+  String get notesNoResultsTitle => 'Подходящих заметок нет';
+
+  @override
+  String get notesNoResultsHint =>
+      'Попробуйте другой поиск или очистите фильтр тегов.';
+
+  @override
+  String get notesReadMore => 'Читать дальше';
+
+  @override
+  String get notesTags => 'Теги';
+
+  @override
+  String get notesAllTags => 'Все';
+
+  @override
+  String get notesCustomTag => 'Свой тег';
+
+  @override
+  String get notesAddTag => 'Добавить тег';
+
+  @override
+  String get notesTagColor => 'Цвет тега';
+
+  @override
+  String get notesChooseTagColor => 'Выберите цвет тега';
+
+  @override
+  String get notesTooltipPin => 'Закрепить заметку';
+
+  @override
+  String get notesTooltipUnpin => 'Открепить заметку';
+
+  @override
+  String get notesMoveUp => 'Переместить вверх';
+
+  @override
+  String get notesMoveDown => 'Переместить вниз';
+
+  @override
+  String get notesMoreActions => 'Другие действия';
+
+  @override
+  String get notesPinnedSection => 'Закрепленные';
+
+  @override
+  String get notesOtherSection => 'Заметки';
+
+  @override
+  String get notesDefaultTagSession => 'Сессия';
+
+  @override
+  String get notesDefaultTagNpc => 'NPC';
+
+  @override
+  String get notesDefaultTagQuest => 'Задание';
+
+  @override
+  String get notesDefaultTagPlace => 'Место';
+
+  @override
+  String get notesDefaultTagLoot => 'Добыча';
+
+  @override
+  String get notesDefaultTagRule => 'Правило';
+
+  @override
   String get sectionPersonalityTraits => 'Черты личности';
 
   @override

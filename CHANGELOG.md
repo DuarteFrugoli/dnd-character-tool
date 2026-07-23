@@ -7,6 +7,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+---
+
+## [1.0.6]
+
 ### Added
 - **Notas — tags coloridas**: notas agora podem receber tags padrão ou personalizadas, com escolha de cor para organizar sessões, NPCs, missões, lugares, loot e regras.
 - **Notas — busca e filtros**: a aba Notas ganhou pesquisa por título, conteúdo e tag, além de filtro rápido por tag.

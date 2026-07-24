@@ -2332,6 +2332,17 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentOrder(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'インベントリアイテム$count個の順序を正規化しました。',
+      one: 'インベントリアイテム1個の順序を正規化しました。',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

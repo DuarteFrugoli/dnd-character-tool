@@ -16,6 +16,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Inventário — munições**: munições de pacotes como flechas agora aparecem sem o sufixo de quantidade do SRD e usam a quantidade escolhida pelo jogador ao adicionar.
 - **Inventário — organização**: itens, munições e recipientes agora podem ser reordenados com alça de arrastar; ações secundárias como mover e remover ficam no menu de três pontos.
 - **Notas — edição rápida**: o menu de três pontos das notas agora também permite editar a nota.
+- **Inventário — base interna escalável**: regras de adicionar, remover, equipar, mover, reordenar e ajustar quantidade foram centralizadas em operações puras, reduzindo risco em futuras melhorias de mochilas.
+- **Inventário — cálculo de seções**: a aba de inventário agora usa um snapshot dedicado para organizar containers, conteúdos, munições, equipados, carregados e peso total.
 
 ### Fixed
 - **Inventário — munições zeradas**: ao gastar todas as munições, o item permanece no inventário com quantidade 0 para facilitar reposição futura.
@@ -25,6 +27,9 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Internal
 - **Versionamento**: versão do app atualizada para `1.0.7+21`.
+- **Migração de inventário**: adicionada a migração versionada `NormalizeEquipmentOrderMigration` (`dataVersion` 5) para preencher ordem explícita de itens e limpar localizações inválidas.
+- **Cobertura de testes**: adicionados testes unitários para migrações, inventário, backup/importação, feature choices, usos de features, criação de personagem e busca global de itens.
+- **Documentação de arquitetura**: arquitetura atualizada para descrever operações puras de inventário, snapshot/cache de busca, migração v5 e estratégia de testes.
 
 ---
 

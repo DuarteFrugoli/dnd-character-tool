@@ -32,28 +32,6 @@ String _itemQuantityTitle(String displayName, int quantity) {
   return quantity != 1 ? '$displayName ×$quantity' : displayName;
 }
 
-class _SrdInventorySearchEntry {
-  const _SrdInventorySearchEntry({
-    required this.name,
-    required this.displayName,
-    required this.subtitle,
-    required this.category,
-    required this.itemType,
-    required this.weight,
-    this.description,
-    this.properties,
-  });
-
-  final String name;
-  final String displayName;
-  final String subtitle;
-  final String category;
-  final ItemType itemType;
-  final double weight;
-  final String? description;
-  final Map<String, dynamic>? properties;
-}
-
 class _InventoryTab extends ConsumerStatefulWidget {
   const _InventoryTab({required this.character, required this.characterId});
   final Character character;
@@ -123,6 +101,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
     final character = widget.character;
     final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
+    final inventory = InventorySnapshot.fromEquipment(character.equipment);
     final coinLabels = {
       'cp': l10n.coinCopper,
       'sp': l10n.coinSilver,
@@ -130,54 +109,10 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
       'gp': l10n.coinGold,
       'pp': l10n.coinPlatinum,
     };
-    final containers = character.equipment
-        .where((e) => e.itemType == ItemType.container)
-        .toList();
-    final containerIds = containers.map((e) => e.id).toSet();
-    bool isInKnownContainer(EquipmentItem item) =>
-        item.containerId != null && containerIds.contains(item.containerId);
-    final rootEquipment = character.equipment
-        .where(
-          (e) => !isInKnownContainer(e) || e.itemType == ItemType.container,
-        )
-        .toList();
-    final containerContents = {
-      for (final container in containers)
-        container.id: character.equipment
-            .where(
-              (e) =>
-                  e.containerId == container.id &&
-                  e.itemType != ItemType.container,
-            )
-            .toList(),
-    };
-    final ammo = rootEquipment
-        .where((e) => e.itemType == ItemType.ammunition)
-        .toList();
-    final nonAmmo = rootEquipment.where(
-      (e) => e.itemType != ItemType.ammunition,
-    );
-    final equipped = nonAmmo.where((e) => e.isEquipped).toList();
-    const equippableTypes = {
-      ItemType.weapon,
-      ItemType.armor,
-      ItemType.equippable,
-    };
-    final equippable = nonAmmo
-        .where((e) => !e.isEquipped && equippableTypes.contains(e.itemType))
-        .toList();
-    final carried = nonAmmo
-        .where(
-          (e) =>
-              !e.isEquipped &&
-              e.itemType != ItemType.container &&
-              !equippableTypes.contains(e.itemType),
-        )
-        .toList();
 
     // Weight tracking
     final strScore = character.abilityScores.strength;
-    final totalWeight = _inventoryTotalWeight(character.equipment);
+    final totalWeight = inventory.totalWeight;
     final maxCarry = strScore * 15.0;
     final encumberedThreshold = strScore * 5.0;
     final heavilyEncThreshold = strScore * 10.0;
@@ -281,9 +216,9 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                 const SizedBox(height: 12),
 
                 // ── Ammunition ─────────────────────────────────────────────
-                if (ammo.isNotEmpty)
+                if (inventory.ammunition.isNotEmpty)
                   _AmmunitionSection(
-                    items: ammo,
+                    items: inventory.ammunition,
                     characterId: widget.characterId,
                   ),
               ],
@@ -292,14 +227,14 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 // ── Equipped ───────────────────────────────────────────────
-                if (equipped.isNotEmpty) ...[
+                if (inventory.equipped.isNotEmpty) ...[
                   _Section(
                     title: l10n.inventoryEquippedSection(
-                      equipped.length,
+                      inventory.equipped.length,
                       character.armorClass,
                     ),
                     child: _InventoryReorderableItemList(
-                      items: equipped,
+                      items: inventory.equipped,
                       characterId: widget.characterId,
                       itemBuilder: (context, item, reorderIndex) => _ItemTile(
                         item: item,
@@ -312,19 +247,21 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                 ],
 
                 // ── Containers ─────────────────────────────────────────────
-                if (containers.isNotEmpty) ...[
+                if (inventory.containers.isNotEmpty) ...[
                   _ContainersSection(
-                    containers: containers,
-                    contentsByContainer: containerContents,
+                    containers: inventory.containers,
+                    contentsByContainer: inventory.contentsByContainer,
                     characterId: widget.characterId,
                   ),
                   const SizedBox(height: 12),
                 ],
 
                 // ── Equippable ─────────────────────────────────────────────
-                if (equippable.isNotEmpty) ...[
+                if (inventory.equippable.isNotEmpty) ...[
                   _Section(
-                    title: l10n.inventoryEquippableSection(equippable.length),
+                    title: l10n.inventoryEquippableSection(
+                      inventory.equippable.length,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -351,7 +288,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                           ),
                         ),
                         _InventoryReorderableItemList(
-                          items: equippable,
+                          items: inventory.equippable,
                           characterId: widget.characterId,
                           itemBuilder: (context, item, reorderIndex) =>
                               _ItemTile(
@@ -367,16 +304,14 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                 ],
 
                 // ── Carried ────────────────────────────────────────────────
-                if (carried.isNotEmpty ||
-                    (equipped.isEmpty &&
-                        equippable.isEmpty &&
-                        containers.isEmpty &&
-                        ammo.isEmpty))
+                if (inventory.carried.isNotEmpty || inventory.isEmpty)
                   _Section(
-                    title: carried.isEmpty
+                    title: inventory.carried.isEmpty
                         ? l10n.inventoryInventory
-                        : l10n.inventoryCarriedSection(carried.length),
-                    child: carried.isEmpty
+                        : l10n.inventoryCarriedSection(
+                            inventory.carried.length,
+                          ),
+                    child: inventory.carried.isEmpty
                         ? Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8),
                             child: Text(
@@ -387,7 +322,7 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                         : Column(
                             children: [
                               _InventoryReorderableItemList(
-                                items: carried,
+                                items: inventory.carried,
                                 characterId: widget.characterId,
                                 itemBuilder: (context, item, reorderIndex) =>
                                     _ItemTile(
@@ -731,11 +666,9 @@ class _AmmunitionSection extends ConsumerWidget {
     final character = ref
         .watch(characterDetailProvider(characterId))
         .valueOrNull;
-    final containers =
-        character?.equipment
-            .where((e) => e.itemType == ItemType.container)
-            .toList() ??
-        const <EquipmentItem>[];
+    final containers = character == null
+        ? const <EquipmentItem>[]
+        : InventorySnapshot.fromEquipment(character.equipment).containers;
 
     return Card(
       child: Padding(
@@ -883,45 +816,6 @@ class _AmmunitionSection extends ConsumerWidget {
 
 // ── Containers Section ───────────────────────────────────────────────────────
 
-double _itemsTotalWeight(Iterable<EquipmentItem> items) {
-  return items.fold<double>(
-    0.0,
-    (sum, item) => sum + item.weight * item.quantity,
-  );
-}
-
-double _inventoryTotalWeight(List<EquipmentItem> equipment) {
-  final weightlessContainerIds = equipment
-      .where(
-        (item) =>
-            item.itemType == ItemType.container &&
-            _containerIgnoresContentWeight(item),
-      )
-      .map((item) => item.id)
-      .toSet();
-
-  return equipment.fold<double>(0.0, (sum, item) {
-    if (item.containerId != null &&
-        weightlessContainerIds.contains(item.containerId)) {
-      return sum;
-    }
-    return sum + item.weight * item.quantity;
-  });
-}
-
-int _itemsTotalQuantity(Iterable<EquipmentItem> items) {
-  return items.fold<int>(0, (sum, item) => sum + item.quantity);
-}
-
-double? _containerCapacityWeight(EquipmentItem container) {
-  final value = container.properties?['capacityWeight'];
-  return value is num ? value.toDouble() : null;
-}
-
-bool _containerIgnoresContentWeight(EquipmentItem container) {
-  return container.properties?['contentsWeightIgnored'] == true;
-}
-
 class _ContainersSection extends ConsumerWidget {
   const _ContainersSection({
     required this.containers,
@@ -945,7 +839,7 @@ class _ContainersSection extends ConsumerWidget {
       final mode = await _showRemoveContainerDialog(
         context,
         displayName,
-        _itemsTotalQuantity(contents),
+        inventoryItemsTotalQuantity(contents),
       );
       if (mode != null) {
         await notifier.removeEquipmentQuantity(
@@ -974,9 +868,9 @@ class _ContainersSection extends ConsumerWidget {
     UnitSystem unitSystem,
   ) {
     final l10n = AppLocalizations.of(context)!;
-    final totalQuantity = _itemsTotalQuantity(contents);
-    final usedWeight = _itemsTotalWeight(contents);
-    final capacityWeight = _containerCapacityWeight(container);
+    final totalQuantity = inventoryItemsTotalQuantity(contents);
+    final usedWeight = inventoryItemsTotalWeight(contents);
+    final capacityWeight = inventoryContainerCapacityWeight(container);
     final contentsText = l10n.inventoryContainerContents(totalQuantity);
     final weightText = capacityWeight == null || capacityWeight <= 0
         ? formatWeight(usedWeight, unitSystem)
@@ -1004,8 +898,8 @@ class _ContainersSection extends ConsumerWidget {
           final widgetsL10n = WidgetsLocalizations.of(context);
           final reorderTooltip =
               '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
-          final capacityWeight = _containerCapacityWeight(container);
-          final usedWeight = _itemsTotalWeight(contents);
+          final capacityWeight = inventoryContainerCapacityWeight(container);
+          final usedWeight = inventoryItemsTotalWeight(contents);
           final overCapacity =
               capacityWeight != null &&
               capacityWeight > 0 &&
@@ -1310,6 +1204,8 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
   List<SrdGearItem>? _gear;
   List<SrdMagicItem>? _magic;
   List<SrdTool>? _tools;
+  SrdInventorySearchCatalog? _searchCatalog;
+  String? _searchCatalogKey;
   String? _loadError;
 
   List<String> _getTabLabels(BuildContext context) {
@@ -1786,6 +1682,8 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
           _gear = results[2] as List<SrdGearItem>;
           _magic = results[3] as List<SrdMagicItem>;
           _tools = results[4] as List<SrdTool>;
+          _searchCatalog = null;
+          _searchCatalogKey = null;
         });
       }
     } catch (e, st) {
@@ -1932,7 +1830,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     );
   }
 
-  List<_SrdInventorySearchEntry>? _globalSrdSearchEntries(
+  SrdInventorySearchCatalog? _globalSrdSearchCatalog(
     SrdI18nService i18n,
     AppLocalizations l10n,
   ) {
@@ -1949,104 +1847,32 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
       return null;
     }
 
-    return [
-      for (final weapon in weapons)
-        _SrdInventorySearchEntry(
-          name: weapon.name,
-          displayName: i18n.equipmentName(weapon.name),
-          subtitle:
-              '${weapon.damage} ${i18n.damageType(weapon.damageType)}  ·  ${weapon.cost}',
-          category: weapon.category,
-          itemType: ItemType.weapon,
-          weight: weapon.weight,
-          description: weapon.properties.isNotEmpty
-              ? i18n.weaponProperties(weapon.properties)
-              : null,
-          properties: {
-            'damageDice': weapon.damage,
-            'damageType': weapon.damageType,
-            if (weapon.properties.isNotEmpty)
-              'weaponProperties': weapon.properties,
-            if (weapon.versatileDamage != null)
-              'versatileDamage': weapon.versatileDamage,
-            if (weapon.range != null)
-              'range': {
-                'normal': weapon.range!.normal,
-                'long': weapon.range!.long,
-              },
-            if (weapon.cost.isNotEmpty) 'cost': weapon.cost,
-          },
-        ),
-      for (final armor in armors)
-        _SrdInventorySearchEntry(
-          name: armor.name,
-          displayName: i18n.equipmentName(armor.name),
-          subtitle: armor.isShield
-              ? '+${armor.acBonus} ${i18n.term("AC")}  ·  ${armor.cost}'
-              : '${i18n.term("AC")} ${armor.baseAC}${armor.addDexModifier ? " + ${i18n.term("DEX")}" : ""}${armor.maxDexBonus != null ? " (${l10n.inventoryDetailMaxShort} +${armor.maxDexBonus})" : ""}  ·  ${armor.cost}',
-          category: 'armor',
-          itemType: ItemType.armor,
-          weight: armor.weight,
-          description: armor.stealthDisadvantage
-              ? l10n.armorStealthDisadvantage
-              : null,
-          properties: {
-            'armorType': armor.type,
-            'baseAC': armor.baseAC,
-            'addDexModifier': armor.addDexModifier,
-            'maxDexBonus': armor.maxDexBonus,
-            'isShield': armor.isShield,
-            'acBonus': armor.acBonus,
-            if (armor.strengthRequired != null)
-              'strengthRequirement': armor.strengthRequired,
-            if (armor.stealthDisadvantage) 'stealthDisadvantage': true,
-            if (armor.cost.isNotEmpty) 'cost': armor.cost,
-          },
-        ),
-      for (final item in gear)
-        _SrdInventorySearchEntry(
-          name: item.name,
-          displayName: i18n.equipmentName(item.name),
-          subtitle: item.cost,
-          category: item.category,
-          itemType: item.category == 'ammunition'
-              ? ItemType.ammunition
-              : item.category == 'container'
-              ? ItemType.container
-              : ItemType.gear,
-          weight: item.weight,
-          description:
-              i18n.equipmentDescription(item.name) ??
-              (item.description.isNotEmpty ? item.description : null),
-          properties: {if (item.cost.isNotEmpty) 'cost': item.cost},
-        ),
-      for (final item in magic)
-        _SrdInventorySearchEntry(
-          name: item.name,
-          displayName: i18n.magicItemName(item.name),
-          subtitle:
-              '${i18n.term(item.rarity)}${item.requiresAttunement ? "  ·  ${i18n.term("attunement")}" : ""}',
-          category: item.type,
-          itemType: item.itemType,
-          weight: item.weight,
-          description: i18n.magicItemDescription(item.name) ?? item.description,
-          properties: item.properties,
-        ),
-      for (final tool in tools)
-        _SrdInventorySearchEntry(
-          name: tool.name,
-          displayName: i18n.toolName(tool.name),
-          subtitle: switch (tool.category) {
-            'artisans_tools' => l10n.inventoryGroupArtisansTools,
-            'gaming_sets' => l10n.inventoryGroupGamingSets,
-            'musical_instruments' => l10n.inventoryGroupMusicalInstruments,
-            _ => l10n.inventoryGroupOtherTools,
-          },
-          category: tool.category,
-          itemType: ItemType.gear,
-          weight: tool.weight,
-        ),
-    ];
+    final key = Object.hash(
+      i18n.locale,
+      l10n.localeName,
+      identityHashCode(weapons),
+      identityHashCode(armors),
+      identityHashCode(gear),
+      identityHashCode(magic),
+      identityHashCode(tools),
+    ).toString();
+    if (_searchCatalogKey == key && _searchCatalog != null) {
+      return _searchCatalog;
+    }
+
+    _searchCatalog = SrdInventorySearchCatalog.fromSrd(
+      weapons: weapons,
+      armors: armors,
+      gear: gear,
+      magic: magic,
+      tools: tools,
+      i18n: i18n,
+      l10n: l10n,
+      itemTypeLabel: (type) => _itemTypeLabel(type, l10n),
+      categoryLabel: (category) => _categoryLabel(category, l10n, i18n),
+    );
+    _searchCatalogKey = key;
+    return _searchCatalog;
   }
 
   Widget _buildGlobalSrdSearch(
@@ -2066,30 +1892,13 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
       );
     }
 
-    final entries = _globalSrdSearchEntries(i18n, l10n);
-    if (entries == null) {
+    final catalog = _globalSrdSearchCatalog(i18n, l10n);
+    if (catalog == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
     final q = _search.text.trim().toLowerCase();
-    final filtered = entries.where((entry) {
-      final display = _stripAmmunitionPackSuffix(
-        entry.displayName,
-        entry.itemType,
-      ).toLowerCase();
-      final english = _stripAmmunitionPackSuffix(
-        entry.name,
-        entry.itemType,
-      ).toLowerCase();
-      final type = _itemTypeLabel(entry.itemType, l10n).toLowerCase();
-      final category = _categoryLabel(entry.category, l10n, i18n).toLowerCase();
-      final description = entry.description?.toLowerCase() ?? '';
-      return display.contains(q) ||
-          english.contains(q) ||
-          type.contains(q) ||
-          category.contains(q) ||
-          description.contains(q);
-    }).toList();
+    final filtered = catalog.search(q);
 
     if (filtered.isEmpty) {
       return Center(
@@ -3352,7 +3161,7 @@ class _ItemTile extends ConsumerWidget {
       final mode = await _showRemoveContainerDialog(
         context,
         _itemDisplayName(item, i18n),
-        _itemsTotalQuantity(contents),
+        inventoryItemsTotalQuantity(contents),
       );
       if (mode != null) {
         await notifier.removeEquipmentQuantity(
@@ -3519,11 +3328,9 @@ class _ItemTile extends ConsumerWidget {
     final character = ref
         .watch(characterDetailProvider(characterId))
         .valueOrNull;
-    final containers =
-        character?.equipment
-            .where((e) => e.itemType == ItemType.container)
-            .toList() ??
-        const <EquipmentItem>[];
+    final containers = character == null
+        ? const <EquipmentItem>[]
+        : InventorySnapshot.fromEquipment(character.equipment).containers;
     final canEquip =
         item.itemType == ItemType.weapon ||
         item.itemType == ItemType.armor ||

@@ -19,6 +19,7 @@ EquipmentItem _$EquipmentItemFromJson(Map<String, dynamic> json) =>
       isEquipped: json['isEquipped'] as bool? ?? false,
       weight: (json['weight'] as num? ?? 0).toDouble(),
       containerId: json['containerId'] as String?,
+      sortOrder: (json['sortOrder'] as num?)?.toInt() ?? 0,
       properties: json['properties'] as Map<String, dynamic>?,
     );
 
@@ -33,5 +34,6 @@ Map<String, dynamic> _$EquipmentItemToJson(EquipmentItem instance) =>
       'isEquipped': instance.isEquipped,
       'weight': instance.weight,
       'containerId': instance.containerId,
+      'sortOrder': instance.sortOrder,
       'properties': instance.properties,
     };

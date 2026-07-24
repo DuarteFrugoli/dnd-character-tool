@@ -2333,6 +2333,17 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentOrder(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '인벤토리 아이템 $count개의 순서를 정규화했습니다.',
+      one: '인벤토리 아이템 1개의 순서를 정규화했습니다.',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

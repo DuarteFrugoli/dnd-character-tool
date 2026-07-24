@@ -1775,6 +1775,8 @@
   "@settingsMaintenanceChangeEquipmentNormalized": { "description": "Migration report change for normalized equipment item data.", "placeholders": { "count": { "type": "int" } } },
   "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{Expanded 1 equipment pack.} other{Expanded {count} equipment packs.}}",
   "@settingsMaintenanceChangeEquipmentPacksExpanded": { "description": "Migration report change for expanded equipment packs.", "placeholders": { "count": { "type": "int" } } },
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{Normalized the order of 1 inventory item.} other{Normalized the order of {count} inventory items.}}",
+  "@settingsMaintenanceChangeEquipmentOrder": { "description": "Migration report change for normalized equipment sort order.", "placeholders": { "count": { "type": "int" } } },
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 change applied.} other{{count} changes applied.}}",
   "@settingsMaintenanceChangeGeneric": { "description": "Migration report fallback change text.", "placeholders": { "count": { "type": "int" } } },
   "incomingBackupPrompt": "Import backup from file?",

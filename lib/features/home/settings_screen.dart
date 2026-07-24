@@ -617,6 +617,9 @@ String _formatMaintenanceChange(
   if (change.code == 'equipment_packs_expanded') {
     return l10n.settingsMaintenanceChangeEquipmentPacksExpanded(change.count);
   }
+  if (change.code == 'equipment_order_normalized') {
+    return l10n.settingsMaintenanceChangeEquipmentOrder(change.count);
+  }
 
   return l10n.settingsMaintenanceChangeGeneric(change.count);
 }

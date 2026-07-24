@@ -55,6 +55,7 @@ lib/
     datasources/
       local/      Character storage facade and platform backends
       srd/        SRD asset readers, SRD models, SRD i18n service
+    inventory/    Pure inventory mutation helpers
     migrations/   Versioned character migrations
     models/       Persisted domain models and generated JSON serializers
     repositories/ CharacterRepository facade
@@ -202,6 +203,7 @@ Current migrations:
 | 2 | `NormalizeEquipmentItemsMigration` | Updates known items with current type, category, weight, and SRD properties. |
 | 3 | `ExpandEquipmentPacksMigration` | Replaces known starting equipment packs with their individual contents. |
 | 4 | `NormalizeNoteOrderMigration` | Assigns explicit `sortOrder` values to old notes while preserving their saved order. |
+| 5 | `NormalizeEquipmentOrderMigration` | Assigns explicit per-location `sortOrder` values to inventory items and repairs invalid container locations. |
 
 Migrations are intentionally user-triggered from Settings maintenance. They are
 not applied invisibly while merely opening a character. Before applying
@@ -286,6 +288,29 @@ Important conventions:
 
 Equipment changes that can affect AC call `calcArmorClass`. Body armor is
 exclusive: equipping a new body armor unequips/merges the previous one.
+
+Inventory state is intentionally kept as a flat `List<EquipmentItem>` on the
+character. Container membership is represented by `containerId`, and visual
+order is represented by `sortOrder` within each location:
+
+- root inventory: `containerId == null`;
+- container contents: `containerId == container.id`;
+- equipped items are treated as root items even if old data contains a
+  `containerId`.
+
+Pure inventory mutations live in `data/inventory/inventory_operations.dart`.
+The provider delegates add/remove/equip/move/reorder/quantity operations to
+those helpers so the rules can be unit-tested without Riverpod or UI widgets.
+
+The detail UI builds an `InventorySnapshot` from the flat equipment list. The
+snapshot indexes items, root sections, containers, contents, ammunition,
+equipped items, carried items, and total weight in one place. This keeps
+`inventory_tab.dart` focused on rendering.
+
+Adding existing SRD items uses `SrdInventorySearchCatalog`, a cached search
+index that combines weapons, armor, adventuring gear, magic items, and tools.
+When the search field is empty, the UI can still show category tabs; when a
+query is present, it uses one global result list.
 
 ---
 
@@ -711,7 +736,17 @@ flutter test
 ```
 
 Focused tests currently cover repository import/export behavior, character
-model logic, stats editing, spellcasting rules, and armor-class rules.
+model logic, stats editing, spellcasting rules, armor-class rules, feature
+choices, feature usage resources, character draft rules, inventory operations,
+inventory snapshots/search, and character migrations.
+
+High-risk domain rules should be tested in pure Dart layers first:
+
+- inventory behavior in `data/inventory/inventory_operations.dart`;
+- character migrations in `data/migrations/`;
+- feature choices/usages in their engine files;
+- creation draft rules in `character_draft_provider.dart`;
+- import/export payload parsing in repository/data-source tests.
 
 When changing persisted models, generated serializers, or l10n keys, regenerate
 the affected files before committing.
@@ -732,6 +767,8 @@ the affected files before committing.
 | Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/feature_usages.json`, `features/character_detail/tabs/features_tab.dart` |
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |
 | Backup export/import | `CharacterRepository`, `CharacterLocalDataSource`, `features/home/settings_screen.dart`, `core/utils/file_exporter.dart` |
+| Inventory rules and ordering | `data/inventory/inventory_operations.dart`, `features/character_detail/inventory/inventory_view_model.dart` |
+| Inventory search | `features/character_detail/inventory/inventory_search_catalog.dart`, `features/character_detail/tabs/inventory_tab.dart` |
 | Inventory item UI and custom item forms | `features/character_detail/tabs/inventory_tab.dart` |
 | Notes, note tags, and note ordering | `features/character_detail/tabs/notes_tab.dart`, `CharacterDetailNotifier`, `CharacterNote` |
 | Starting equipment packs | `assets/data/srd/equipment.json`, `SrdPackContent`, `ExpandEquipmentPacksMigration` |

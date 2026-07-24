@@ -2324,6 +2324,17 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentOrder(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已规范化 $count 个库存物品的顺序。',
+      one: '已规范化 1 个库存物品的顺序。',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

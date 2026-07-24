@@ -2387,6 +2387,17 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentOrder(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Orden de $count objetos del inventario normalizado.',
+      one: 'Orden de 1 objeto del inventario normalizado.',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

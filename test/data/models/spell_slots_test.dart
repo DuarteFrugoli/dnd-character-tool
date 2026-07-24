@@ -53,10 +53,7 @@ void main() {
     });
 
     test('handles empty lists', () {
-      final slots = SpellSlots.fromJson({
-        'total': <int>[],
-        'used': <int>[],
-      });
+      final slots = SpellSlots.fromJson({'total': <int>[], 'used': <int>[]});
       expect(slots.total.length, 9);
       expect(slots.total.every((v) => v == 0), true);
     });

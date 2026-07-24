@@ -736,6 +736,7 @@
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{Исправлен вес 1 предмета.} other{Исправлен вес {count} предметов.}}",
   "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{Нормализован 1 предмет снаряжения.} other{Нормализовано {count} предметов снаряжения.}}",
   "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{Развернут 1 набор снаряжения.} other{Развернуто {count} наборов снаряжения.}}",
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{Порядок 1 предмета инвентаря нормализован.} other{Порядок {count} предметов инвентаря нормализован.}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{Применено 1 изменение.} other{Применено {count} изменений.}}",
   "incomingBackupPrompt": "Импортировать резервную копию из файла?",
   "incomingBackupSuccess": "{count, plural, =1{1 персонаж импортирован из резервной копии.} other{{count} персонажей импортировано из резервной копии.}}"

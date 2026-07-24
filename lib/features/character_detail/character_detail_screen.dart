@@ -16,6 +16,7 @@ import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import 'spell_browser_sheet.dart';
 import '../../data/datasources/srd/srd_models.dart';
+import '../../data/inventory/inventory_operations.dart';
 import '../../data/models/models.dart';
 import '../../data/models/domain_constants.dart';
 import '../../shared/providers/providers.dart';
@@ -24,6 +25,8 @@ import '../../shared/widgets/responsive_layout.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/units/unit_formatter.dart';
 import 'character_detail_provider.dart';
+import 'inventory/inventory_search_catalog.dart';
+import 'inventory/inventory_view_model.dart';
 import 'widgets/feature_choice_editor.dart';
 
 part 'tabs/identity_tab.dart';

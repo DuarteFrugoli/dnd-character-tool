@@ -33,6 +33,7 @@ class EquipmentItem {
   final bool isEquipped;
   final double weight;
   final String? containerId;
+  final int sortOrder;
 
   /// Dados extras por tipo:
   /// armor  → {baseAC, addDexModifier, maxDexBonus, isShield, acBonus}
@@ -49,6 +50,7 @@ class EquipmentItem {
     this.isEquipped = false,
     this.weight = 0.0,
     this.containerId,
+    this.sortOrder = 0,
     this.properties,
   }) : id = id ?? _uuid.v4();
 
@@ -63,6 +65,7 @@ class EquipmentItem {
     double? weight,
     String? containerId,
     bool clearContainer = false,
+    int? sortOrder,
     Map<String, dynamic>? properties,
   }) {
     return EquipmentItem(
@@ -75,6 +78,7 @@ class EquipmentItem {
       isEquipped: isEquipped ?? this.isEquipped,
       weight: weight ?? this.weight,
       containerId: clearContainer ? null : containerId ?? this.containerId,
+      sortOrder: sortOrder ?? this.sortOrder,
       properties: properties ?? this.properties,
     );
   }

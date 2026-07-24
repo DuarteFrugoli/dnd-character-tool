@@ -735,6 +735,7 @@
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{已修正 1 个物品的重量。} other{已修正 {count} 个物品的重量。}}",
   "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{已规范化 1 个装备物品。} other{已规范化 {count} 个装备物品。}}",
   "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{已展开 1 个装备包。} other{已展开 {count} 个装备包。}}",
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{已规范化 1 个库存物品的顺序。} other{已规范化 {count} 个库存物品的顺序。}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{已应用 1 项更改。} other{已应用 {count} 项更改。}}",
   "incomingBackupPrompt": "要从文件导入备份吗？",
   "incomingBackupSuccess": "{count, plural, =1{已从备份导入 1 个角色。} other{已从备份导入 {count} 个角色。}}"

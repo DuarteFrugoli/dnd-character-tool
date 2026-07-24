@@ -734,6 +734,7 @@
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{1個のアイテムの重量を修正しました。} other{{count}個のアイテムの重量を修正しました。}}",
   "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{装備アイテム1個を正規化しました。} other{装備アイテム{count}個を正規化しました。}}",
   "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{装備パック1個を展開しました。} other{装備パック{count}個を展開しました。}}",
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{インベントリアイテム1個の順序を正規化しました。} other{インベントリアイテム{count}個の順序を正規化しました。}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1件の変更を適用しました。} other{{count}件の変更を適用しました。}}",
   "incomingBackupPrompt": "ファイルからバックアップをインポートしますか？",
   "incomingBackupSuccess": "{count, plural, =1{バックアップから1人のキャラクターをインポートしました。} other{バックアップから{count}人のキャラクターをインポートしました。}}"

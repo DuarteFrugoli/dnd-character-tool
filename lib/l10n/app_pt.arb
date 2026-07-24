@@ -736,6 +736,7 @@
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{Peso de 1 item corrigido.} other{Peso de {count} itens corrigido.}}",
   "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{1 item de equipamento normalizado.} other{{count} itens de equipamento normalizados.}}",
   "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{1 pacote de equipamento expandido.} other{{count} pacotes de equipamento expandidos.}}",
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{Ordem de 1 item do inventário normalizada.} other{Ordem de {count} itens do inventário normalizada.}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 alteração aplicada.} other{{count} alterações aplicadas.}}",
   "incomingBackupPrompt": "Importar backup do arquivo?",
   "incomingBackupSuccess": "{count, plural, =1{1 personagem importado do backup.} other{{count} personagens importados do backup.}}"

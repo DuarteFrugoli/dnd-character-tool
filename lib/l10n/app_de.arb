@@ -736,6 +736,7 @@
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{Gewicht von 1 Gegenstand korrigiert.} other{Gewicht von {count} Gegenständen korrigiert.}}",
   "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{1 Ausrüstungsgegenstand normalisiert.} other{{count} Ausrüstungsgegenstände normalisiert.}}",
   "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{1 Ausrüstungspaket erweitert.} other{{count} Ausrüstungspakete erweitert.}}",
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{Reihenfolge von 1 Inventargegenstand normalisiert.} other{Reihenfolge von {count} Inventargegenständen normalisiert.}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 Änderung angewendet.} other{{count} Änderungen angewendet.}}",
   "incomingBackupPrompt": "Backup aus Datei importieren?",
   "incomingBackupSuccess": "{count, plural, =1{1 Charakter aus dem Backup importiert.} other{{count} Charaktere aus dem Backup importiert.}}"

@@ -9,14 +9,13 @@ SpellcastingEngine _engine(
   int level,
   AbilityScores scores, {
   String? subclass,
-}) =>
-    SpellcastingEngine.forClass(
-      className: cls,
-      classLevel: level,
-      abilityScores: scores,
-      proficiencyBonus: _profBonus(level),
-      subclass: subclass,
-    )!;
+}) => SpellcastingEngine.forClass(
+  className: cls,
+  classLevel: level,
+  abilityScores: scores,
+  proficiencyBonus: _profBonus(level),
+  subclass: subclass,
+)!;
 
 /// PHB proficiency bonus by total character level (proxy = class level here).
 int _profBonus(int level) {

@@ -7,6 +7,7 @@ import '../../data/feature_usage_engine.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
+import '../../data/inventory/inventory_operations.dart' as inventory_ops;
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../character_list/character_list_provider.dart';
@@ -15,8 +16,6 @@ final characterDetailProvider =
     AsyncNotifierProvider.family<CharacterDetailNotifier, Character, String>(
       CharacterDetailNotifier.new,
     );
-
-enum ContainerRemovalMode { moveContentsToInventory, deleteContents }
 
 class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   @override
@@ -718,49 +717,11 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> addEquipmentItem(EquipmentItem item) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final itemToAdd = item.copyWith(isEquipped: false, clearContainer: true);
-
-    if (itemToAdd.itemType == ItemType.container) {
-      final quantity = itemToAdd.quantity.clamp(1, 9999).toInt();
-      final containers = List<EquipmentItem>.generate(
-        quantity,
-        (_) => EquipmentItem(
-          name: itemToAdd.name,
-          category: itemToAdd.category,
-          itemType: itemToAdd.itemType,
-          quantity: 1,
-          description: itemToAdd.description,
-          isEquipped: false,
-          weight: itemToAdd.weight,
-          properties: itemToAdd.properties,
-        ),
-      );
-      await _save(c.copyWith(equipment: [...c.equipment, ...containers]));
-      return;
-    }
-
-    // Sempre adiciona em item não equipado; nunca empilha item novo em equipado.
-    final idx = c.equipment.indexWhere(
-      (e) =>
-          !e.isEquipped &&
-          e.containerId == null &&
-          e.name == itemToAdd.name &&
-          e.itemType == itemToAdd.itemType,
+    await _save(
+      c.copyWith(
+        equipment: inventory_ops.addEquipmentItem(c.equipment, item),
+      ),
     );
-    if (idx >= 0) {
-      final updated = List<EquipmentItem>.from(c.equipment);
-      final existing = updated[idx];
-      updated[idx] = existing.copyWith(
-        quantity: existing.quantity + itemToAdd.quantity,
-        weight: existing.weight == 0 && itemToAdd.weight > 0
-            ? itemToAdd.weight
-            : null,
-        properties: existing.properties == null ? itemToAdd.properties : null,
-      );
-      await _save(c.copyWith(equipment: updated));
-    } else {
-      await _save(c.copyWith(equipment: [...c.equipment, itemToAdd]));
-    }
   }
 
   Future<void> removeEquipmentItem(String id) async {
@@ -770,54 +731,23 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> removeEquipmentQuantity(
     String id,
     int amount, {
-    ContainerRemovalMode containerRemovalMode =
-        ContainerRemovalMode.moveContentsToInventory,
+    inventory_ops.ContainerRemovalMode containerRemovalMode =
+        inventory_ops.ContainerRemovalMode.moveContentsToInventory,
   }) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final updated = List<EquipmentItem>.from(c.equipment);
-    final idx = updated.indexWhere((e) => e.id == id);
+    final idx = c.equipment.indexWhere((e) => e.id == id);
     if (idx < 0) return;
 
-    final removed = updated[idx];
-    if (removed.quantity <= 0) {
-      updated.removeWhere((e) => e.id == removed.id);
-      await _save(c.copyWith(equipment: updated));
-      return;
-    }
-
-    final removeAmount = amount.clamp(1, removed.quantity).toInt();
-
-    // Em stacks, remove apenas a quantidade selecionada.
-    if (removeAmount < removed.quantity) {
-      updated[idx] = removed.copyWith(
-        quantity: removed.quantity - removeAmount,
-      );
-      await _save(c.copyWith(equipment: updated));
-      return;
-    }
-
-    if (removed.itemType == ItemType.container) {
-      if (containerRemovalMode ==
-          ContainerRemovalMode.moveContentsToInventory) {
-        for (var i = 0; i < updated.length; i++) {
-          if (updated[i].containerId == removed.id &&
-              updated[i].itemType != ItemType.container) {
-            updated[i] = updated[i].copyWith(clearContainer: true);
-          }
-        }
-      } else {
-        updated.removeWhere(
-          (e) =>
-              e.containerId == removed.id && e.itemType != ItemType.container,
-        );
-      }
-    }
-
-    updated.removeWhere((e) => e.id == removed.id);
+    final removed = c.equipment[idx];
+    final updated = inventory_ops.removeEquipmentQuantity(
+      c.equipment,
+      id,
+      amount,
+      containerRemovalMode: containerRemovalMode,
+    );
     final newC = c.copyWith(equipment: updated);
 
-    // Recalcula CA se a armadura removida estava equipada.
     if (removed.itemType == ItemType.armor && removed.isEquipped) {
       await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
     } else {
@@ -829,54 +759,20 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
 
-    final updated = List<EquipmentItem>.from(c.equipment);
-    int idx = updated.indexWhere((e) => e.id == id);
+    final idx = c.equipment.indexWhere((e) => e.id == id);
     if (idx < 0) return;
 
-    EquipmentItem target = updated[idx];
+    final target = c.equipment[idx];
     final isBodyArmor = _isBodyArmor(target);
-
-    if (!target.isEquipped) {
-      // Se for armadura corporal, só pode haver uma equipada por vez.
-      if (isBodyArmor && forceArmorSwap) {
-        _unequipOtherBodyArmors(updated, exceptId: target.id);
-
-        // O merge da armadura antiga pode alterar quantidade/posição do item alvo.
-        idx = updated.indexWhere((e) => e.id == id);
-        if (idx < 0) return;
-        target = updated[idx];
-      }
-
-      // Equipar 1 unidade de um stack: separa em entrada equipada + entrada carregada.
-      if (target.quantity > 1) {
-        updated[idx] = target.copyWith(quantity: target.quantity - 1);
-        updated.add(
-          EquipmentItem(
-            name: target.name,
-            category: target.category,
-            itemType: target.itemType,
-            quantity: 1,
-            description: target.description,
-            isEquipped: true,
-            weight: target.weight,
-            properties: target.properties,
-          ),
-        );
-      } else {
-        updated[idx] = target.copyWith(isEquipped: true, clearContainer: true);
-      }
-    } else {
-      // Desequipar: remove a entrada equipada e devolve ao stack carregado.
-      updated.removeAt(idx);
-      _mergeIntoCarried(
-        updated,
-        target.copyWith(isEquipped: false, clearContainer: true),
-      );
-    }
+    final updated = inventory_ops.toggleEquipped(
+      c.equipment,
+      id,
+      isBodyArmor: _isBodyArmor,
+      forceArmorSwap: forceArmorSwap,
+    );
 
     final newC = c.copyWith(equipment: updated);
 
-    // Recalcula CA quando há mudança relacionada a armadura.
     if (target.itemType == ItemType.armor || isBodyArmor) {
       await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
     } else {
@@ -892,95 +788,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     return props.containsKey('baseAC');
   }
 
-  void _unequipOtherBodyArmors(
-    List<EquipmentItem> items, {
-    required String exceptId,
-  }) {
-    final toUnequip = items
-        .where((e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e))
-        .toList();
-    items.removeWhere(
-      (e) => e.id != exceptId && e.isEquipped && _isBodyArmor(e),
-    );
-    for (final armor in toUnequip) {
-      _mergeIntoCarried(
-        items,
-        armor.copyWith(isEquipped: false, clearContainer: true),
-      );
-    }
-  }
-
-  void _mergeIntoCarried(List<EquipmentItem> items, EquipmentItem item) {
-    final carryIdx = items.indexWhere(
-      (e) =>
-          !e.isEquipped &&
-          e.containerId == null &&
-          e.name == item.name &&
-          e.itemType == item.itemType,
-    );
-    if (carryIdx >= 0) {
-      items[carryIdx] = items[carryIdx].copyWith(
-        quantity: items[carryIdx].quantity + item.quantity,
-      );
-    } else {
-      items.add(
-        EquipmentItem(
-          name: item.name,
-          category: item.category,
-          itemType: item.itemType,
-          quantity: item.quantity,
-          description: item.description,
-          isEquipped: false,
-          weight: item.weight,
-          properties: item.properties,
-        ),
-      );
-    }
-  }
-
   Future<void> moveItemToContainer(String itemId, String? containerId) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final updated = List<EquipmentItem>.from(c.equipment);
-    final idx = updated.indexWhere((e) => e.id == itemId);
-    if (idx < 0) return;
-
-    final item = updated[idx];
-    if (item.itemType == ItemType.container && containerId != null) return;
-    if (item.isEquipped && containerId != null) return;
-
-    if (containerId != null) {
-      final container = updated.where((e) => e.id == containerId).firstOrNull;
-      if (container == null || container.itemType != ItemType.container) return;
-      if (container.id == item.id) return;
-    }
-
-    updated.removeAt(idx);
-    final moved = item.copyWith(
-      containerId: containerId,
-      clearContainer: containerId == null,
+    await _save(
+      c.copyWith(
+        equipment: inventory_ops.moveItemToContainer(
+          c.equipment,
+          itemId,
+          containerId,
+        ),
+      ),
     );
-    final mergeIdx = updated.indexWhere(
-      (e) =>
-          !e.isEquipped &&
-          e.itemType != ItemType.container &&
-          e.containerId == containerId &&
-          e.name == moved.name &&
-          e.itemType == moved.itemType,
-    );
-
-    if (mergeIdx >= 0) {
-      final existing = updated[mergeIdx];
-      updated[mergeIdx] = existing.copyWith(
-        quantity: existing.quantity + moved.quantity,
-        weight: existing.weight == 0 && moved.weight > 0 ? moved.weight : null,
-        properties: existing.properties == null ? moved.properties : null,
-      );
-    } else {
-      updated.add(moved);
-    }
-
-    await _save(c.copyWith(equipment: updated));
   }
 
   Future<void> reorderEquipmentItems({
@@ -991,26 +810,12 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null || itemIds.length < 2) return;
 
-    final currentById = {for (final item in c.equipment) item.id: item};
-    final groupIds = itemIds
-        .where((id) => currentById.containsKey(id))
-        .toList(growable: true);
-    if (oldIndex < 0 || oldIndex >= groupIds.length) return;
-
-    var insertIndex = newIndex;
-    if (insertIndex > oldIndex) insertIndex--;
-    insertIndex = insertIndex.clamp(0, groupIds.length - 1).toInt();
-    if (oldIndex == insertIndex) return;
-
-    final movedId = groupIds.removeAt(oldIndex);
-    groupIds.insert(insertIndex, movedId);
-
-    final groupIdSet = groupIds.toSet();
-    var groupCursor = 0;
-    final reordered = c.equipment.map((item) {
-      if (!groupIdSet.contains(item.id)) return item;
-      return currentById[groupIds[groupCursor++]] ?? item;
-    }).toList();
+    final reordered = inventory_ops.reorderEquipmentItems(
+      equipment: c.equipment,
+      itemIds: itemIds,
+      oldIndex: oldIndex,
+      newIndex: newIndex,
+    );
 
     await _save(c.copyWith(equipment: reordered));
   }
@@ -1018,16 +823,9 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> adjustItemQuantity(String id, int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final updated = c.equipment.map((e) {
-      if (e.id != id) return e;
-      final newQty = (e.quantity + delta).clamp(0, 9999);
-      return e.copyWith(quantity: newQty);
-    }).toList();
     await _save(
       c.copyWith(
-        equipment: updated
-            .where((e) => e.quantity > 0 || e.itemType == ItemType.ammunition)
-            .toList(),
+        equipment: inventory_ops.adjustItemQuantity(c.equipment, id, delta),
       ),
     );
   }

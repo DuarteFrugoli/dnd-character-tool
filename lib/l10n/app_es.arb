@@ -736,6 +736,7 @@
   "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{Se corrigió el peso de 1 objeto.} other{Se corrigió el peso de {count} objetos.}}",
   "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{1 objeto de equipo normalizado.} other{{count} objetos de equipo normalizados.}}",
   "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{1 paquete de equipo expandido.} other{{count} paquetes de equipo expandidos.}}",
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{Orden de 1 objeto del inventario normalizado.} other{Orden de {count} objetos del inventario normalizado.}}",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 cambio aplicado.} other{{count} cambios aplicados.}}",
   "incomingBackupPrompt": "¿Importar copia de seguridad desde el archivo?",
   "incomingBackupSuccess": "{count, plural, =1{1 personaje importado desde la copia de seguridad.} other{{count} personajes importados desde la copia de seguridad.}}"

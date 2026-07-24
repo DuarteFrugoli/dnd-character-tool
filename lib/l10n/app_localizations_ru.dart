@@ -2387,6 +2387,17 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String settingsMaintenanceChangeEquipmentOrder(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Порядок $count предметов инвентаря нормализован.',
+      one: 'Порядок 1 предмета инвентаря нормализован.',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String settingsMaintenanceChangeGeneric(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

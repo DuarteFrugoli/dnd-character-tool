@@ -55,19 +55,18 @@ Character _baseCharacter({
   int hpCurrent = 15,
   int speed = 30,
   int xp = 1000,
-}) =>
-    Character(
-      id: _id,
-      name: 'Test Hero',
-      race: 'Human',
-      characterClass: 'Fighter',
-      abilityScores: const AbilityScores(),
-      hitPoints: HitPoints(maximum: hpMax, current: hpCurrent),
-      speed: speed,
-      experiencePoints: xp,
-      createdAt: _now,
-      updatedAt: _now,
-    );
+}) => Character(
+  id: _id,
+  name: 'Test Hero',
+  race: 'Human',
+  characterClass: 'Fighter',
+  abilityScores: const AbilityScores(),
+  hitPoints: HitPoints(maximum: hpMax, current: hpCurrent),
+  speed: speed,
+  experiencePoints: xp,
+  createdAt: _now,
+  updatedAt: _now,
+);
 
 Future<({ProviderContainer container, _CountingBackend backend})> _setup(
   Character initialCharacter,
@@ -161,7 +160,9 @@ void main() {
       final backend = _CountingBackend();
       final ds = CharacterLocalDataSource.fromBackend(backend);
       final repo = CharacterRepository(dataSource: ds);
-      await repo.save(_baseCharacter(hpMax: 20, hpCurrent: 15, speed: 30, xp: 1000));
+      await repo.save(
+        _baseCharacter(hpMax: 20, hpCurrent: 15, speed: 30, xp: 1000),
+      );
 
       final container = ProviderContainer(
         overrides: [characterRepositoryProvider.overrideWithValue(repo)],

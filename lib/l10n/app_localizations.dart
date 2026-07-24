@@ -4266,6 +4266,12 @@ abstract class AppLocalizations {
   /// **'{count, plural, =1{Expanded 1 equipment pack.} other{Expanded {count} equipment packs.}}'**
   String settingsMaintenanceChangeEquipmentPacksExpanded(int count);
 
+  /// Migration report change for normalized equipment sort order.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Normalized the order of 1 inventory item.} other{Normalized the order of {count} inventory items.}}'**
+  String settingsMaintenanceChangeEquipmentOrder(int count);
+
   /// Migration report fallback change text.
   ///
   /// In en, this message translates to:

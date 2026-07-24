@@ -17,8 +17,18 @@ import '../../shared/providers/providers.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import '../character_list/character_list_provider.dart';
 
-class SettingsScreen extends ConsumerWidget {
-  const SettingsScreen({super.key});
+class SettingsScreen extends ConsumerStatefulWidget {
+  const SettingsScreen({super.key, this.focusMaintenance = false});
+
+  final bool focusMaintenance;
+
+  @override
+  ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends ConsumerState<SettingsScreen> {
+  final _maintenanceKey = GlobalKey();
+  bool _didFocusMaintenance = false;
 
   void _openThemePicker(BuildContext context, WidgetRef ref, AppTheme current) {
     final l10n = AppLocalizations.of(context)!;
@@ -79,7 +89,21 @@ class SettingsScreen extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
+    if (widget.focusMaintenance && !_didFocusMaintenance) {
+      _didFocusMaintenance = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final maintenanceContext = _maintenanceKey.currentContext;
+        if (maintenanceContext == null) return;
+        Scrollable.ensureVisible(
+          maintenanceContext,
+          duration: const Duration(milliseconds: 350),
+          curve: Curves.easeOutCubic,
+          alignment: 0.1,
+        );
+      });
+    }
+
     final current = ref.watch(themeProvider);
     final cs = Theme.of(context).colorScheme;
     final bottomPadding = MediaQuery.of(context).viewPadding.bottom;
@@ -163,6 +187,7 @@ class SettingsScreen extends ConsumerWidget {
             const Divider(height: 32),
 
             Padding(
+              key: _maintenanceKey,
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
               child: Text(
                 AppLocalizations.of(context)!.settingsMaintenanceSection,

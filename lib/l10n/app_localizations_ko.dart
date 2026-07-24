@@ -2254,6 +2254,16 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get characterUpdateRequiredTitle => '캐릭터 업데이트 필요';
+
+  @override
+  String get characterUpdateRequiredBody =>
+      '이 캐릭터는 이전 데이터 버전으로 저장되었습니다. 편집하기 전에 설정에서 캐릭터를 업데이트하세요.';
+
+  @override
+  String get characterUpdateRequiredAction => '업데이트로 이동';
+
+  @override
   String settingsMaintenanceReportChecked(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

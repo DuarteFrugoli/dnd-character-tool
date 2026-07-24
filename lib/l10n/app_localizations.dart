@@ -4206,6 +4206,24 @@ abstract class AppLocalizations {
   /// **'{count, plural, =1{1 character needs an update. The app will open a backup for you to save or share before applying changes.} other{{count} characters need updates. The app will open a backup for you to save or share before applying changes.}}'**
   String settingsMaintenanceConfirmBody(int count);
 
+  /// Dialog title shown when opening an outdated saved character.
+  ///
+  /// In en, this message translates to:
+  /// **'Character update required'**
+  String get characterUpdateRequiredTitle;
+
+  /// Dialog body shown when opening an outdated saved character.
+  ///
+  /// In en, this message translates to:
+  /// **'This character was saved with an older data version. Update your characters in Settings before editing it.'**
+  String get characterUpdateRequiredBody;
+
+  /// Dialog action that opens Settings at the character maintenance section.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to updates'**
+  String get characterUpdateRequiredAction;
+
   /// Migration report line for checked characters.
   ///
   /// In en, this message translates to:

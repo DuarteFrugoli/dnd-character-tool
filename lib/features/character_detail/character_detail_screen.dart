@@ -137,6 +137,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
   final _editGuard = _EditGuard();
+  bool _maintenancePromptShown = false;
 
   @override
   void initState() {
@@ -210,6 +211,16 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   }
 
   Widget _buildLoaded(Character character) {
+    if (character.dataVersion >= currentCharacterDataVersion) {
+      _maintenancePromptShown = false;
+    } else if (!_maintenancePromptShown) {
+      _maintenancePromptShown = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        _showCharacterMaintenancePrompt();
+      });
+    }
+
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     return Scaffold(
@@ -298,6 +309,31 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         ),
       ),
     );
+  }
+
+  Future<void> _showCharacterMaintenancePrompt() async {
+    final l10n = AppLocalizations.of(context)!;
+    final goToMaintenance = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.characterUpdateRequiredTitle),
+        content: Text(l10n.characterUpdateRequiredBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(l10n.dialogCancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(l10n.characterUpdateRequiredAction),
+          ),
+        ],
+      ),
+    );
+
+    if (goToMaintenance == true && mounted) {
+      context.go('/settings?section=maintenance');
+    }
   }
 
   void _showRestPicker(Character character) {

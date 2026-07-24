@@ -31,7 +31,9 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/settings',
-      builder: (context, state) => const SettingsScreen(),
+      builder: (context, state) => SettingsScreen(
+        focusMaintenance: state.uri.queryParameters['section'] == 'maintenance',
+      ),
     ),
   ],
 );

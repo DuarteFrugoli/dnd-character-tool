@@ -2310,6 +2310,17 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get characterUpdateRequiredTitle =>
+      'Charakteraktualisierung erforderlich';
+
+  @override
+  String get characterUpdateRequiredBody =>
+      'Dieser Charakter wurde mit einer alten Datenversion gespeichert. Aktualisiere deine Charaktere in den Einstellungen, bevor du ihn bearbeitest.';
+
+  @override
+  String get characterUpdateRequiredAction => 'Zu den Updates';
+
+  @override
   String settingsMaintenanceReportChecked(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

@@ -2289,6 +2289,16 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get characterUpdateRequiredTitle => 'Character update required';
+
+  @override
+  String get characterUpdateRequiredBody =>
+      'This character was saved with an older data version. Update your characters in Settings before editing it.';
+
+  @override
+  String get characterUpdateRequiredAction => 'Go to updates';
+
+  @override
   String settingsMaintenanceReportChecked(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

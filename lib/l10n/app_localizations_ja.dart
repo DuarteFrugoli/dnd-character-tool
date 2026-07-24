@@ -2253,6 +2253,16 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get characterUpdateRequiredTitle => 'キャラクターの更新が必要です';
+
+  @override
+  String get characterUpdateRequiredBody =>
+      'このキャラクターは古いデータバージョンで保存されています。編集する前に設定でキャラクターを更新してください。';
+
+  @override
+  String get characterUpdateRequiredAction => '更新へ移動';
+
+  @override
   String settingsMaintenanceReportChecked(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

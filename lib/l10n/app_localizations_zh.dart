@@ -2246,6 +2246,15 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get characterUpdateRequiredTitle => '需要更新角色';
+
+  @override
+  String get characterUpdateRequiredBody => '此角色使用较旧的数据版本保存。请先在设置中更新角色，然后再编辑。';
+
+  @override
+  String get characterUpdateRequiredAction => '前往更新';
+
+  @override
   String settingsMaintenanceReportChecked(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

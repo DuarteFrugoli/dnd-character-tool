@@ -2314,6 +2314,17 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get characterUpdateRequiredTitle =>
+      'Mise à jour du personnage requise';
+
+  @override
+  String get characterUpdateRequiredBody =>
+      'Ce personnage a été enregistré avec une ancienne version des données. Mettez à jour vos personnages dans les paramètres avant de le modifier.';
+
+  @override
+  String get characterUpdateRequiredAction => 'Aller aux mises à jour';
+
+  @override
   String settingsMaintenanceReportChecked(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

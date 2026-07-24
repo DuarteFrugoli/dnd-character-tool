@@ -946,7 +946,9 @@ class _ToolProficienciesSection extends ConsumerWidget {
                     context: context,
                     builder: (ctx) => AlertDialog(
                       title: Text(l10n.featuresRemoveTitle),
-                      content: Text(l10n.featuresRemoveContent(label)),
+                      content: Text(
+                        l10n.featuresRemoveContent(i18n.toolName(label)),
+                      ),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(ctx, false),
@@ -1019,11 +1021,12 @@ class _FeatsSection extends ConsumerWidget {
             character: character,
             ref: data.featureUsageCatalog.feat(f.name),
           );
+          final displayName = i18n.featName(f.name) ?? f.name;
           return Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
               title: Text(
-                i18n.featName(f.name) ?? f.name,
+                displayName,
                 style: const TextStyle(fontWeight: FontWeight.w600),
               ),
               subtitle: Text(
@@ -1041,7 +1044,7 @@ class _FeatsSection extends ConsumerWidget {
                     context: context,
                     builder: (ctx) => AlertDialog(
                       title: Text(l10n.featuresRemoveTitle),
-                      content: Text(l10n.featuresRemoveContent(f.name)),
+                      content: Text(l10n.featuresRemoveContent(displayName)),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(ctx, false),
@@ -1167,6 +1170,10 @@ class _ExtraFeaturesSection extends ConsumerWidget {
             character: character,
             ref: usageRef,
           );
+          final displayName =
+              i18n.classFeatureName(f.sourceClass, f.name) ??
+              i18n.anySubclassFeatureName(f.sourceClass, f.name) ??
+              i18n.raceTraitName(f.name);
           return Card(
             margin: const EdgeInsets.only(bottom: 10),
             child: ExpansionTile(
@@ -1174,9 +1181,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      i18n.classFeatureName(f.sourceClass, f.name) ??
-                          i18n.anySubclassFeatureName(f.sourceClass, f.name) ??
-                          i18n.raceTraitName(f.name),
+                      displayName,
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -1204,7 +1209,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
                     context: context,
                     builder: (ctx) => AlertDialog(
                       title: Text(l10n.featuresRemoveTitle),
-                      content: Text(l10n.featuresRemoveContent(f.name)),
+                      content: Text(l10n.featuresRemoveContent(displayName)),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(ctx, false),

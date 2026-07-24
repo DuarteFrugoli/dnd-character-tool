@@ -31,7 +31,7 @@ Color _noteTagForeground(Color color) =>
 
 enum _NoteViewAction { edit, togglePinned }
 
-enum _NoteCardAction { togglePinned, delete }
+enum _NoteCardAction { edit, togglePinned, delete }
 
 class _NotesTab extends ConsumerStatefulWidget {
   const _NotesTab({required this.character, required this.characterId});
@@ -82,6 +82,7 @@ class _NotesTabState extends ConsumerState<_NotesTab> {
   }
 
   void _openNoteSheet(BuildContext context, {CharacterNote? existing}) {
+    FocusScope.of(context).unfocus();
     final notifier = ref.read(
       characterDetailProvider(widget.characterId).notifier,
     );
@@ -244,6 +245,7 @@ class _NotesTabState extends ConsumerState<_NotesTab> {
         reorderIndex: reorderIndex,
         selected: desktop && note.id == _selectedNote(notes)?.id,
         onView: () {
+          FocusScope.of(context).unfocus();
           if (desktop) {
             setState(() => _selectedNoteId = note.id);
           } else {
@@ -251,6 +253,10 @@ class _NotesTabState extends ConsumerState<_NotesTab> {
           }
         },
         onTogglePinned: () => notifier.toggleNotePinned(note.id),
+        onEdit: () {
+          FocusScope.of(context).unfocus();
+          _openNoteSheet(context, existing: note);
+        },
         onDelete: () => _deleteNote(context, note),
       );
     }
@@ -421,6 +427,7 @@ class _NotesSearchAndFilters extends StatelessWidget {
       children: [
         TextField(
           controller: searchController,
+          onTapOutside: (_) => FocusScope.of(context).unfocus(),
           decoration: InputDecoration(
             hintText: l10n.notesSearchHint,
             prefixIcon: const Icon(Icons.search),
@@ -445,7 +452,10 @@ class _NotesSearchAndFilters extends StatelessWidget {
                   child: FilterChip(
                     label: Text(l10n.notesAllTags),
                     selected: selectedTagKey == null,
-                    onSelected: (_) => onTagSelected(null),
+                    onSelected: (_) {
+                      FocusScope.of(context).unfocus();
+                      onTagSelected(null);
+                    },
                   ),
                 ),
                 ...tags.map((tag) {
@@ -460,8 +470,10 @@ class _NotesSearchAndFilters extends StatelessWidget {
                       selected: selected,
                       selectedColor: color.withValues(alpha: 0.28),
                       checkmarkColor: scheme.onSurface,
-                      onSelected: (_) =>
-                          onTagSelected(selected ? null : key),
+                      onSelected: (_) {
+                        FocusScope.of(context).unfocus();
+                        onTagSelected(selected ? null : key);
+                      },
                     ),
                   );
                 }),
@@ -1197,6 +1209,7 @@ class _NoteCard extends StatelessWidget {
     this.reorderIndex,
     required this.onView,
     required this.onTogglePinned,
+    required this.onEdit,
     required this.onDelete,
     this.selected = false,
   });
@@ -1205,6 +1218,7 @@ class _NoteCard extends StatelessWidget {
   final int? reorderIndex;
   final VoidCallback onView;
   final VoidCallback onTogglePinned;
+  final VoidCallback onEdit;
   final VoidCallback onDelete;
   final bool selected;
 
@@ -1233,7 +1247,10 @@ class _NoteCard extends StatelessWidget {
           : null,
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: onView,
+        onTap: () {
+          FocusScope.of(context).unfocus();
+          onView();
+        },
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 8, 12),
           child: Row(
@@ -1335,8 +1352,12 @@ class _NoteCard extends StatelessWidget {
                 ),
               PopupMenuButton<_NoteCardAction>(
                 tooltip: AppLocalizations.of(context)!.notesMoreActions,
+                onOpened: () => FocusScope.of(context).unfocus(),
                 onSelected: (action) {
                   switch (action) {
+                    case _NoteCardAction.edit:
+                      onEdit();
+                      break;
                     case _NoteCardAction.togglePinned:
                       onTogglePinned();
                       break;
@@ -1348,6 +1369,13 @@ class _NoteCard extends StatelessWidget {
                 itemBuilder: (ctx) {
                   final l10n = AppLocalizations.of(ctx)!;
                   return [
+                    PopupMenuItem(
+                      value: _NoteCardAction.edit,
+                      child: _NoteMenuItem(
+                        icon: Icons.edit_outlined,
+                        label: l10n.notesTooltipEdit,
+                      ),
+                    ),
                     PopupMenuItem(
                       value: _NoteCardAction.togglePinned,
                       child: _NoteMenuItem(

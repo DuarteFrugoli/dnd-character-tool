@@ -166,6 +166,8 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
   @override
   Widget build(BuildContext context) {
     final character = widget.character;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final engine = SpellcastingEngine.forClass(
       className: character.characterClass,
       classLevel: character.level,
@@ -383,8 +385,16 @@ class _SpellsTabState extends ConsumerState<_SpellsTab> {
                                         ),
                                         content: Text(
                                           isDisabled
-                                              ? AppLocalizations.of(context)!.spellsEnableContent(spell.name)
-                                              : AppLocalizations.of(context)!.spellsDisableContent(spell.name),
+                                              ? AppLocalizations.of(
+                                                  context,
+                                                )!.spellsEnableContent(
+                                                  i18n.spellName(spell.name),
+                                                )
+                                              : AppLocalizations.of(
+                                                  context,
+                                                )!.spellsDisableContent(
+                                                  i18n.spellName(spell.name),
+                                                ),
                                         ),
                                         actions: [
                                           TextButton(
@@ -970,7 +980,7 @@ class _SpellRow extends ConsumerWidget {
                   content: Text(
                     AppLocalizations.of(
                       context,
-                    )!.spellsRemoveContent(spell.name),
+                    )!.spellsRemoveContent(i18n.spellName(spell.name)),
                   ),
                   actions: [
                     TextButton(

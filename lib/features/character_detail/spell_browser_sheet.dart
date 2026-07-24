@@ -106,7 +106,6 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
   String _search = '';
   final _filters = _SpellFilters();
   SrdI18nService _i18n = SrdI18nService.english;
-  AppLocalizations? _l10n;
 
   /// True when the header chip is showing "my class only" (shortcut).
   bool get _myClassOnly =>
@@ -255,6 +254,8 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
   Future<void> _openFilterPanel() async {
     // Pass a clone so the panel can Cancel without mutating state.
     final draft = _filters.clone();
+    final i18n =
+        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final confirmed = await showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
@@ -262,7 +263,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
       builder: (_) => _FilterPanelSheet(
         filters: draft,
         maxSpellLevel: widget.maxSpellLevel,
-        characterClass: widget.characterClass,
+        i18n: i18n,
       ),
     );
     if (confirmed == true && mounted) {
@@ -278,15 +279,12 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
     }
   }
 
-  String _capitalize(String s) =>
-      s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
-
   @override
   Widget build(BuildContext context) {
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     _i18n = i18n;
-    _l10n = AppLocalizations.of(context);
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final filtered = _filtered;
     final isLoading = _allSpells == null;
@@ -318,7 +316,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
             child: Row(
               children: [
                 Text(
-                  _l10n?.spellBrowserTitle ?? 'Browse Spells',
+                  l10n.spellBrowserTitle,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const Spacer(),
@@ -331,7 +329,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                         Icons.tune,
                         color: activeFilters > 0 ? scheme.primary : null,
                       ),
-                      tooltip: _l10n?.spellBrowserFilters ?? 'Filters',
+                      tooltip: l10n.spellBrowserFilters,
                       onPressed: _openFilterPanel,
                     ),
                     if (activeFilters > 0)
@@ -377,7 +375,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                     controller: _searchCtrl,
                     textInputAction: TextInputAction.search,
                     decoration: InputDecoration(
-                      hintText: _l10n?.spellBrowserSearchHint ?? 'Search spells...',
+                      hintText: l10n.spellBrowserSearchHint,
                       prefixIcon: const Icon(Icons.search),
                       suffixIcon: _search.isNotEmpty
                           ? IconButton(
@@ -394,7 +392,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                 ),
                 const SizedBox(width: 8),
                 FilterChip(
-                  label: Text(_capitalize(widget.characterClass)),
+                  label: Text(i18n.className(widget.characterClass)),
                   selected: _myClassOnly,
                   onSelected: (v) => setState(() {
                     if (v) {
@@ -417,7 +415,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                 children: [
                   Expanded(
                     child: Text(
-                      _filterSummary(),
+                      _filterSummary(l10n, i18n),
                       style: Theme.of(
                         context,
                       ).textTheme.labelSmall?.copyWith(color: scheme.primary),
@@ -427,7 +425,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                   GestureDetector(
                     onTap: () => setState(() => _filters.reset()),
                     child: Text(
-                      _l10n?.filterClearAll ?? 'Clear all',
+                      l10n.filterClearAll,
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         color: scheme.error,
                         fontWeight: FontWeight.bold,
@@ -445,8 +443,11 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
               alignment: Alignment.centerLeft,
               child: Text(
                 isLoading
-                    ? _l10n?.loadingLabel ?? 'Loading...'
-                    : _l10n?.spellBrowserCount(filtered.length, filtered.length == 1 ? '' : 's') ?? '${filtered.length} spell${filtered.length == 1 ? '' : 's'}',
+                    ? l10n.loadingLabel
+                    : l10n.spellBrowserCount(
+                        filtered.length,
+                        filtered.length == 1 ? '' : 's',
+                      ),
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: scheme.onSurfaceVariant,
                 ),
@@ -464,7 +465,7 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
                     child: Padding(
                       padding: const EdgeInsets.all(32),
                       child: Text(
-                        _l10n?.spellBrowserEmpty ?? 'No spells match the current filters.',
+                        l10n.spellBrowserEmpty,
                         textAlign: TextAlign.center,
                         style: Theme.of(
                           context,
@@ -510,32 +511,30 @@ class _SpellBrowserSheetState extends ConsumerState<SpellBrowserSheet> {
     );
   }
 
-  String _filterSummary() {
+  String _filterSummary(AppLocalizations l10n, SrdI18nService i18n) {
     final parts = <String>[];
     if (_filters.level != null) {
-      parts.add(_filters.level == 0
-          ? (_l10n?.spellCantrip ?? 'Cantrip')
-          : (_l10n?.spellLevelN(_filters.level!) ?? 'Lvl ${_filters.level}'));
+      parts.add(
+        _filters.level == 0
+            ? l10n.spellCantrip
+            : l10n.spellLevelN(_filters.level!),
+      );
     }
-    if (_filters.school != null) parts.add(_filters.school!);
+    if (_filters.school != null) parts.add(i18n.spellSchool(_filters.school!));
     if (_filters.castingType != null) {
       final labels = {
-        'action': _l10n?.castingTimeAction ?? 'Action',
-        'bonus_action': _l10n?.castingTimeBonusAction ?? 'Bonus action',
-        'reaction': _l10n?.castingTimeReaction ?? 'Reaction',
-        'longer': _l10n?.castingTimeLonger ?? 'Longer cast',
+        'action': l10n.castingTimeAction,
+        'bonus_action': l10n.castingTimeBonusAction,
+        'reaction': l10n.castingTimeReaction,
+        'longer': l10n.castingTimeLonger,
       };
       parts.add(labels[_filters.castingType] ?? _filters.castingType!);
     }
-    if (_filters.concentration) parts.add(_l10n?.filterConcentration ?? 'Concentration');
-    if (_filters.ritual) parts.add(_l10n?.filterRitual ?? 'Ritual');
-    if (_filters.showAllLevels) parts.add(_l10n?.filterAllLevels ?? 'All levels');
+    if (_filters.concentration) parts.add(l10n.filterConcentration);
+    if (_filters.ritual) parts.add(l10n.filterRitual);
+    if (_filters.showAllLevels) parts.add(l10n.filterAllLevels);
     if (_filters.classes.isNotEmpty) {
-      parts.add(
-        _filters.classes
-            .map((c) => c[0].toUpperCase() + c.substring(1))
-            .join(', '),
-      );
+      parts.add(_filters.classes.map(i18n.className).join(', '));
     }
     return parts.join(' · ');
   }
@@ -548,12 +547,12 @@ class _FilterPanelSheet extends StatefulWidget {
   const _FilterPanelSheet({
     required this.filters,
     required this.maxSpellLevel,
-    required this.characterClass,
+    required this.i18n,
   });
 
   final _SpellFilters filters;
   final int maxSpellLevel;
-  final String characterClass;
+  final SrdI18nService i18n;
 
   @override
   State<_FilterPanelSheet> createState() => _FilterPanelSheetState();
@@ -589,8 +588,6 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
     'wizard',
     'artificer',
   ];
-
-  String _cap(String s) => s.isEmpty ? s : s[0].toUpperCase() + s.substring(1);
 
   @override
   Widget build(BuildContext context) {
@@ -660,7 +657,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                     children: [
                       for (final cls in _allClasses)
                         FilterChip(
-                          label: Text(_cap(cls)),
+                          label: Text(widget.i18n.className(cls)),
                           selected: f.classes.contains(cls),
                           onSelected: (v) => setState(() {
                             if (v) {
@@ -759,7 +756,7 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                     children: [
                       for (final school in _schools)
                         ChoiceChip(
-                          label: Text(school),
+                          label: Text(widget.i18n.spellSchool(school)),
                           selected: f.school == school,
                           onSelected: (v) =>
                               setState(() => f.school = v ? school : null),
@@ -811,7 +808,7 @@ class _SectionLabel extends StatelessWidget {
 
 // ── Spell Browser Tile ────────────────────────────────────────────────────────
 
-class _SpellBrowserTile extends StatelessWidget {
+class _SpellBrowserTile extends ConsumerWidget {
   const _SpellBrowserTile({
     required this.spell,
     required this.isKnown,
@@ -832,28 +829,16 @@ class _SpellBrowserTile extends StatelessWidget {
   final VoidCallback? onTogglePrepared;
   final String? displayName;
 
-  static String _castingLabel(String type) {
-    switch (type) {
-      case 'bonus_action':
-        return 'Bonus action';
-      case 'reaction':
-        return 'Reaction';
-      case 'minute':
-        return '1+ min';
-      case 'hour':
-        return '1+ hr';
-      case 'special':
-        return 'Special';
-      default:
-        return 'Action';
-    }
-  }
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final levelStr = spell.level == 0 ? 'Cantrip' : 'Level ${spell.level}';
-    final castStr = _castingLabel(spell.castingTimeType);
+    final levelStr = spell.level == 0
+        ? l10n.spellCantrip
+        : l10n.spellLevelN(spell.level);
+    final castStr = i18n.castingTime(spell.castingTime);
 
     final extras = [
       if (spell.concentration) 'C',
@@ -866,8 +851,8 @@ class _SpellBrowserTile extends StatelessWidget {
         style: const TextStyle(fontWeight: FontWeight.w500),
       ),
       subtitle: Text(
-        '$levelStr · ${spell.school} · $castStr'
-        '${extras.isNotEmpty ? '  ·  $extras' : ''}',
+        '$levelStr \u00B7 ${i18n.spellSchool(spell.school)} \u00B7 $castStr'
+        '${extras.isNotEmpty ? '  \u00B7  $extras' : ''}',
         style: Theme.of(
           context,
         ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
@@ -879,7 +864,9 @@ class _SpellBrowserTile extends StatelessWidget {
                 isPrepared ? Icons.check_box : Icons.check_box_outline_blank,
                 color: isPrepared ? scheme.primary : scheme.outlineVariant,
               ),
-              tooltip: isPrepared ? 'Unprepare' : 'Prepare',
+              tooltip: isPrepared
+                  ? l10n.spellActionPrepared
+                  : l10n.spellActionPrepare,
               onPressed: onTogglePrepared,
             )
           : IconButton(
@@ -887,7 +874,7 @@ class _SpellBrowserTile extends StatelessWidget {
                 isKnown ? Icons.check_circle : Icons.add_circle_outline,
                 color: scheme.primary,
               ),
-              tooltip: isKnown ? null : 'Add to character',
+              tooltip: isKnown ? null : l10n.spellActionAdd,
               onPressed: isKnown ? null : onAdd,
             ),
     );
@@ -931,13 +918,16 @@ class SpellDetailSheet extends ConsumerWidget {
   /// For prepare-all class spells: toggles prepared state.
   final VoidCallback? onTogglePrepared;
 
-  Future<void> _confirmRemove(BuildContext context) async {
+  Future<void> _confirmRemove(
+    BuildContext context,
+    SrdI18nService i18n,
+  ) async {
     final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(l10n.spellRemoveTitle),
-        content: Text(l10n.spellRemoveContent(spell.name)),
+        content: Text(l10n.spellRemoveContent(i18n.spellName(spell.name))),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
@@ -1207,7 +1197,7 @@ class SpellDetailSheet extends ConsumerWidget {
                     : l10n.spellActionAlreadyInList,
               ),
               onPressed: onRemove != null
-                  ? () => _confirmRemove(context)
+                  ? () => _confirmRemove(context, i18n)
                   : null,
             ),
           ],

@@ -2,6 +2,58 @@ part of '../character_detail_screen.dart';
 
 // ── Inventory Tab ─────────────────────────────────────────────────────────────
 
+final _numberedPackSuffixPattern = RegExp(r'\s*\((\d+)\)$');
+
+String _stripAmmunitionPackSuffix(String name, ItemType itemType) {
+  if (itemType != ItemType.ammunition) return name;
+  return name.replaceFirst(_numberedPackSuffixPattern, '').trim();
+}
+
+int? _ammunitionPackQuantity(String name, ItemType itemType) {
+  if (itemType != ItemType.ammunition) return null;
+  final match = _numberedPackSuffixPattern.firstMatch(name);
+  if (match == null) return null;
+  return int.tryParse(match.group(1)!);
+}
+
+double _inventoryUnitWeight(
+  String name,
+  ItemType itemType,
+  double packWeight,
+) {
+  final packQuantity = _ammunitionPackQuantity(name, itemType);
+  if (packQuantity == null || packQuantity <= 1 || packWeight <= 0) {
+    return packWeight;
+  }
+  return packWeight / packQuantity;
+}
+
+String _itemQuantityTitle(String displayName, int quantity) {
+  return quantity != 1 ? '$displayName ×$quantity' : displayName;
+}
+
+class _SrdInventorySearchEntry {
+  const _SrdInventorySearchEntry({
+    required this.name,
+    required this.displayName,
+    required this.subtitle,
+    required this.category,
+    required this.itemType,
+    required this.weight,
+    this.description,
+    this.properties,
+  });
+
+  final String name;
+  final String displayName;
+  final String subtitle;
+  final String category;
+  final ItemType itemType;
+  final double weight;
+  final String? description;
+  final Map<String, dynamic>? properties;
+}
+
 class _InventoryTab extends ConsumerStatefulWidget {
   const _InventoryTab({required this.character, required this.characterId});
   final Character character;
@@ -246,15 +298,14 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                       equipped.length,
                       character.armorClass,
                     ),
-                    child: Column(
-                      children: equipped
-                          .map(
-                            (item) => _ItemTile(
-                              item: item,
-                              characterId: widget.characterId,
-                            ),
-                          )
-                          .toList(),
+                    child: _InventoryReorderableItemList(
+                      items: equipped,
+                      characterId: widget.characterId,
+                      itemBuilder: (context, item, reorderIndex) => _ItemTile(
+                        item: item,
+                        characterId: widget.characterId,
+                        reorderIndex: reorderIndex,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -299,10 +350,14 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                             ],
                           ),
                         ),
-                        ...equippable.map(
-                          (item) => _ItemTile(
+                        _InventoryReorderableItemList(
+                          items: equippable,
+                          characterId: widget.characterId,
+                          itemBuilder: (context, item, reorderIndex) =>
+                              _ItemTile(
                             item: item,
                             characterId: widget.characterId,
+                            reorderIndex: reorderIndex,
                           ),
                         ),
                       ],
@@ -330,14 +385,18 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
                             ),
                           )
                         : Column(
-                            children: carried
-                                .map(
-                                  (item) => _ItemTile(
+                            children: [
+                              _InventoryReorderableItemList(
+                                items: carried,
+                                characterId: widget.characterId,
+                                itemBuilder: (context, item, reorderIndex) =>
+                                    _ItemTile(
                                     item: item,
                                     characterId: widget.characterId,
+                                    reorderIndex: reorderIndex,
                                   ),
-                                )
-                                .toList(),
+                              ),
+                            ],
                           ),
                   ),
               ],
@@ -356,15 +415,17 @@ class _InventoryTabState extends ConsumerState<_InventoryTab> {
 
 Future<int?> _showRemoveQuantityDialog(
   BuildContext context,
-  EquipmentItem item,
-) async {
+  EquipmentItem item, {
+  String? displayName,
+}) async {
+  final itemDisplayName = displayName ?? item.name;
   if (item.quantity <= 1) {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
         title: Text(AppLocalizations.of(context)!.inventoryRemoveTitle),
         content: Text(
-          AppLocalizations.of(context)!.inventoryRemoveContent(item.name),
+          AppLocalizations.of(context)!.inventoryRemoveContent(itemDisplayName),
         ),
         actions: [
           TextButton(
@@ -394,7 +455,7 @@ Future<int?> _showRemoveQuantityDialog(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(item.name),
+            Text(itemDisplayName),
             const SizedBox(height: 10),
             Text(
               AppLocalizations.of(
@@ -556,6 +617,87 @@ Future<void> _showMoveItemSheet(
 
 // ── Ammunition Section ────────────────────────────────────────────────────────
 
+enum _InventoryItemAction { move, remove }
+
+class _InventoryMenuItem extends StatelessWidget {
+  const _InventoryMenuItem({
+    required this.icon,
+    required this.label,
+    this.isDestructive = false,
+  });
+
+  final IconData icon;
+  final String label;
+  final bool isDestructive;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final color = isDestructive ? scheme.error : scheme.onSurface;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 18, color: color),
+        const SizedBox(width: 12),
+        Text(label, style: TextStyle(color: color)),
+      ],
+    );
+  }
+}
+
+class _InventoryReorderableItemList extends ConsumerWidget {
+  const _InventoryReorderableItemList({
+    required this.items,
+    required this.characterId,
+    required this.itemBuilder,
+  });
+
+  final List<EquipmentItem> items;
+  final String characterId;
+  final Widget Function(
+    BuildContext context,
+    EquipmentItem item,
+    int? reorderIndex,
+  ) itemBuilder;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    Widget buildItem(int index, {required bool reorderable}) {
+      final item = items[index];
+      return KeyedSubtree(
+        key: ValueKey('inventory-item-${item.id}'),
+        child: itemBuilder(context, item, reorderable ? index : null),
+      );
+    }
+
+    if (items.length < 2) {
+      return Column(
+        children: [
+          for (var i = 0; i < items.length; i++)
+            buildItem(i, reorderable: false),
+        ],
+      );
+    }
+
+    return ReorderableListView.builder(
+      shrinkWrap: true,
+      primary: false,
+      physics: const NeverScrollableScrollPhysics(),
+      buildDefaultDragHandles: false,
+      padding: EdgeInsets.zero,
+      itemCount: items.length,
+      onReorder: (oldIndex, newIndex) => ref
+          .read(characterDetailProvider(characterId).notifier)
+          .reorderEquipmentItems(
+            itemIds: items.map((item) => item.id).toList(),
+            oldIndex: oldIndex,
+            newIndex: newIndex,
+          ),
+      itemBuilder: (context, index) => buildItem(index, reorderable: true),
+    );
+  }
+}
+
 class _AmmunitionSection extends ConsumerWidget {
   const _AmmunitionSection({required this.items, required this.characterId});
   final List<EquipmentItem> items;
@@ -563,10 +705,17 @@ class _AmmunitionSection extends ConsumerWidget {
 
   Future<void> _confirmRemoveAmmo(
     BuildContext context,
+    WidgetRef ref,
     CharacterDetailNotifier notifier,
     EquipmentItem item,
   ) async {
-    final amount = await _showRemoveQuantityDialog(context, item);
+    final i18n =
+        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final amount = await _showRemoveQuantityDialog(
+      context,
+      item,
+      displayName: _itemDisplayName(item, i18n),
+    );
     if (amount != null) {
       await notifier.removeEquipmentQuantity(item.id, amount);
     }
@@ -601,100 +750,130 @@ class _AmmunitionSection extends ConsumerWidget {
               ).textTheme.labelLarge?.copyWith(color: scheme.primary),
             ),
             const SizedBox(height: 8),
-            ...items.map((item) {
-              final displayName = _itemDisplayName(item, i18n);
-              final meta = _ItemTile._itemMeta(item, i18n, l10n);
+            _InventoryReorderableItemList(
+              items: items,
+              characterId: characterId,
+              itemBuilder: (context, item, reorderIndex) {
+                final displayName = _itemDisplayName(item, i18n);
+                final meta = _ItemTile._itemMeta(item, i18n, l10n);
+                final widgetsL10n = WidgetsLocalizations.of(context);
+                final reorderTooltip =
+                    '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
+                final canMove =
+                    item.containerId != null || containers.isNotEmpty;
 
-              return InkWell(
-                onTap: () => _showItemDetailsSheet(
-                  context,
-                  ref,
-                  item,
-                  displayName,
-                  meta,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.arrow_upward, size: 16),
-                      const SizedBox(width: 6),
-                      Expanded(
-                        child: Text(
-                          displayName,
-                          style: const TextStyle(fontSize: 14),
-                        ),
-                      ),
-                      // Diminuir
-                      IconButton(
-                        icon: const Icon(Icons.remove, size: 18),
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(
-                          minWidth: 32,
-                          minHeight: 32,
-                        ),
-                        onPressed: () =>
-                            notifier.adjustItemQuantity(item.id, -1),
-                      ),
-                      // Quantidade
-                      SizedBox(
-                        width: 40,
-                        child: Text(
-                          '${item.quantity}',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.titleMedium
-                              ?.copyWith(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      // Aumentar
-                      IconButton(
-                        icon: const Icon(Icons.add, size: 18),
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(
-                          minWidth: 32,
-                          minHeight: 32,
-                        ),
-                        onPressed: () =>
-                            notifier.adjustItemQuantity(item.id, 1),
-                      ),
-                      // Remover
-                      if (containers.isNotEmpty)
-                        IconButton(
-                          icon: const Icon(
-                            Icons.drive_file_move_outlined,
-                            size: 18,
+                return InkWell(
+                  onTap: () => _showItemDetailsSheet(
+                    context,
+                    ref,
+                    item,
+                    displayName,
+                    meta,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.arrow_upward, size: 16),
+                        const SizedBox(width: 6),
+                        Expanded(
+                          child: Text(
+                            displayName,
+                            style: const TextStyle(fontSize: 14),
                           ),
-                          color: scheme.primary,
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.remove, size: 18),
                           padding: EdgeInsets.zero,
                           constraints: const BoxConstraints(
                             minWidth: 32,
                             minHeight: 32,
                           ),
-                          tooltip: l10n.inventoryTooltipMove,
-                          onPressed: () => _showMoveItemSheet(
-                            context,
-                            ref,
-                            item: item,
-                            characterId: characterId,
-                            containers: containers,
+                          onPressed: item.quantity <= 0
+                              ? null
+                              : () => notifier.adjustItemQuantity(item.id, -1),
+                        ),
+                        SizedBox(
+                          width: 40,
+                          child: Text(
+                            '${item.quantity}',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleMedium
+                                ?.copyWith(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      IconButton(
-                        icon: const Icon(Icons.delete_outline, size: 18),
-                        color: scheme.error,
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(
-                          minWidth: 32,
-                          minHeight: 32,
+                        IconButton(
+                          icon: const Icon(Icons.add, size: 18),
+                          padding: EdgeInsets.zero,
+                          constraints: const BoxConstraints(
+                            minWidth: 32,
+                            minHeight: 32,
+                          ),
+                          onPressed: () =>
+                              notifier.adjustItemQuantity(item.id, 1),
                         ),
-                        onPressed: () =>
-                            _confirmRemoveAmmo(context, notifier, item),
-                      ),
-                    ],
+                        if (reorderIndex != null)
+                          ReorderableDragStartListener(
+                            index: reorderIndex,
+                            child: Tooltip(
+                              message: reorderTooltip,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Icon(
+                                  Icons.drag_handle,
+                                  size: 20,
+                                  color: scheme.outline,
+                                ),
+                              ),
+                            ),
+                          ),
+                        PopupMenuButton<_InventoryItemAction>(
+                          onSelected: (action) {
+                            switch (action) {
+                              case _InventoryItemAction.move:
+                                _showMoveItemSheet(
+                                  context,
+                                  ref,
+                                  item: item,
+                                  characterId: characterId,
+                                  containers: containers,
+                                );
+                                break;
+                              case _InventoryItemAction.remove:
+                                _confirmRemoveAmmo(
+                                  context,
+                                  ref,
+                                  notifier,
+                                  item,
+                                );
+                                break;
+                            }
+                          },
+                          itemBuilder: (ctx) => [
+                            if (canMove)
+                              PopupMenuItem(
+                                value: _InventoryItemAction.move,
+                                child: _InventoryMenuItem(
+                                  icon: Icons.drive_file_move_outlined,
+                                  label: l10n.inventoryTooltipMove,
+                                ),
+                              ),
+                            PopupMenuItem(
+                              value: _InventoryItemAction.remove,
+                              child: _InventoryMenuItem(
+                                icon: Icons.delete_outline,
+                                label: l10n.inventoryTooltipRemove,
+                                isDestructive: true,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              );
-            }),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -778,7 +957,11 @@ class _ContainersSection extends ConsumerWidget {
       return;
     }
 
-    final amount = await _showRemoveQuantityDialog(context, container);
+    final amount = await _showRemoveQuantityDialog(
+      context,
+      container,
+      displayName: displayName,
+    );
     if (amount != null) {
       await notifier.removeEquipmentQuantity(container.id, amount);
     }
@@ -811,11 +994,16 @@ class _ContainersSection extends ConsumerWidget {
 
     return _Section(
       title: l10n.inventoryContainersSection(containers.length),
-      child: Column(
-        children: containers.map((container) {
+      child: _InventoryReorderableItemList(
+        items: containers,
+        characterId: characterId,
+        itemBuilder: (context, container, reorderIndex) {
           final contents = contentsByContainer[container.id] ?? const [];
           final displayName = _itemDisplayName(container, i18n);
           final meta = _ItemTile._itemMeta(container, i18n, l10n);
+          final widgetsL10n = WidgetsLocalizations.of(context);
+          final reorderTooltip =
+              '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
           final capacityWeight = _containerCapacityWeight(container);
           final usedWeight = _itemsTotalWeight(contents);
           final overCapacity =
@@ -829,9 +1017,7 @@ class _ContainersSection extends ConsumerWidget {
             child: ExpansionTile(
               leading: const Icon(Icons.inventory_2_outlined),
               title: Text(
-                container.quantity > 1
-                    ? '$displayName ×${container.quantity}'
-                    : displayName,
+                _itemQuantityTitle(displayName, container.quantity),
                 style: const TextStyle(fontWeight: FontWeight.w600),
               ),
               subtitle: Text(
@@ -841,6 +1027,54 @@ class _ContainersSection extends ConsumerWidget {
                       ? scheme.onErrorContainer
                       : scheme.onSurfaceVariant,
                 ),
+              ),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (reorderIndex != null)
+                    ReorderableDragStartListener(
+                      index: reorderIndex,
+                      child: Tooltip(
+                        message: reorderTooltip,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Icon(
+                            Icons.drag_handle,
+                            size: 20,
+                            color: scheme.outline,
+                          ),
+                        ),
+                      ),
+                    ),
+                  PopupMenuButton<_InventoryItemAction>(
+                    onSelected: (action) {
+                      switch (action) {
+                        case _InventoryItemAction.move:
+                          break;
+                        case _InventoryItemAction.remove:
+                          _removeContainer(
+                            context,
+                            ref,
+                            container,
+                            displayName,
+                            contents,
+                          );
+                          break;
+                      }
+                    },
+                    itemBuilder: (ctx) => [
+                      PopupMenuItem(
+                        value: _InventoryItemAction.remove,
+                        child: _InventoryMenuItem(
+                          icon: Icons.delete_outline,
+                          label: l10n.inventoryTooltipRemove,
+                          isDestructive: true,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Icon(Icons.expand_more),
+                ],
               ),
               childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
               children: [
@@ -857,19 +1091,6 @@ class _ContainersSection extends ConsumerWidget {
                         meta,
                       ),
                     ),
-                    const Spacer(),
-                    IconButton(
-                      icon: const Icon(Icons.delete_outline, size: 18),
-                      color: scheme.error,
-                      tooltip: l10n.inventoryTooltipRemove,
-                      onPressed: () => _removeContainer(
-                        context,
-                        ref,
-                        container,
-                        displayName,
-                        contents,
-                      ),
-                    ),
                   ],
                 ),
                 if (contents.isEmpty)
@@ -884,13 +1105,19 @@ class _ContainersSection extends ConsumerWidget {
                     ),
                   )
                 else
-                  ...contents.map(
-                    (item) => _ItemTile(item: item, characterId: characterId),
+                  _InventoryReorderableItemList(
+                    items: contents,
+                    characterId: characterId,
+                    itemBuilder: (context, item, reorderIndex) => _ItemTile(
+                      item: item,
+                      characterId: characterId,
+                      reorderIndex: reorderIndex,
+                    ),
                   ),
               ],
             ),
           );
-        }).toList(),
+        },
       ),
     );
   }
@@ -1595,11 +1822,16 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     Map<String, dynamic>? properties,
     double weight = 0.0,
   }) async {
+    final itemName = _stripAmmunitionPackSuffix(name, itemType);
+    final itemDisplayName = displayName == null
+        ? null
+        : _stripAmmunitionPackSuffix(displayName, itemType);
+    final unitWeight = _inventoryUnitWeight(name, itemType, weight);
     var quantityText = '1';
     final selectedQuantity = await showDialog<int>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(displayName ?? name),
+        title: Text(itemDisplayName ?? itemName),
         content: Row(
           children: [
             Text(AppLocalizations.of(context)!.inventoryLabelQuantity),
@@ -1646,18 +1878,252 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     if (!mounted || selectedQuantity == null) return;
     await _addItem(
       EquipmentItem(
-        name: name,
+        name: itemName,
         category: category,
         itemType: itemType,
         quantity: selectedQuantity,
         description: description,
-        weight: weight,
+        weight: unitWeight,
         properties: properties,
       ),
     );
   }
 
   // Lista agrupada por categoria, com cabeçalhos. Ao pesquisar, exibe lista plana.
+  Widget _buildSrdListTile({
+    required String name,
+    String? displayName,
+    required String subtitle,
+    required String category,
+    required ItemType itemType,
+    required String? description,
+    Map<String, dynamic>? properties,
+    double weight = 0.0,
+  }) {
+    final cleanDisplayName = _stripAmmunitionPackSuffix(
+      displayName ?? name,
+      itemType,
+    );
+    final subtitleFull = description != null && description.isNotEmpty
+        ? '$subtitle  ·  $description'
+        : subtitle;
+    return ListTile(
+      title: Text(cleanDisplayName, style: const TextStyle(fontSize: 14)),
+      subtitle: Text(
+        subtitleFull,
+        style: TextStyle(
+          fontSize: 12,
+          color: Theme.of(context).colorScheme.onSurfaceVariant,
+        ),
+      ),
+      trailing: IconButton(
+        icon: const Icon(Icons.add_circle_outline),
+        color: Theme.of(context).colorScheme.primary,
+        onPressed: () => _confirmAdd(
+          name: name,
+          displayName: displayName,
+          category: category,
+          itemType: itemType,
+          description: description,
+          properties: properties,
+          weight: weight,
+        ),
+      ),
+    );
+  }
+
+  List<_SrdInventorySearchEntry>? _globalSrdSearchEntries(
+    SrdI18nService i18n,
+    AppLocalizations l10n,
+  ) {
+    final weapons = _weapons;
+    final armors = _armors;
+    final gear = _gear;
+    final magic = _magic;
+    final tools = _tools;
+    if (weapons == null ||
+        armors == null ||
+        gear == null ||
+        magic == null ||
+        tools == null) {
+      return null;
+    }
+
+    return [
+      for (final weapon in weapons)
+        _SrdInventorySearchEntry(
+          name: weapon.name,
+          displayName: i18n.equipmentName(weapon.name),
+          subtitle:
+              '${weapon.damage} ${i18n.damageType(weapon.damageType)}  ·  ${weapon.cost}',
+          category: weapon.category,
+          itemType: ItemType.weapon,
+          weight: weapon.weight,
+          description: weapon.properties.isNotEmpty
+              ? i18n.weaponProperties(weapon.properties)
+              : null,
+          properties: {
+            'damageDice': weapon.damage,
+            'damageType': weapon.damageType,
+            if (weapon.properties.isNotEmpty)
+              'weaponProperties': weapon.properties,
+            if (weapon.versatileDamage != null)
+              'versatileDamage': weapon.versatileDamage,
+            if (weapon.range != null)
+              'range': {
+                'normal': weapon.range!.normal,
+                'long': weapon.range!.long,
+              },
+            if (weapon.cost.isNotEmpty) 'cost': weapon.cost,
+          },
+        ),
+      for (final armor in armors)
+        _SrdInventorySearchEntry(
+          name: armor.name,
+          displayName: i18n.equipmentName(armor.name),
+          subtitle: armor.isShield
+              ? '+${armor.acBonus} ${i18n.term("AC")}  ·  ${armor.cost}'
+              : '${i18n.term("AC")} ${armor.baseAC}${armor.addDexModifier ? " + ${i18n.term("DEX")}" : ""}${armor.maxDexBonus != null ? " (${l10n.inventoryDetailMaxShort} +${armor.maxDexBonus})" : ""}  ·  ${armor.cost}',
+          category: 'armor',
+          itemType: ItemType.armor,
+          weight: armor.weight,
+          description: armor.stealthDisadvantage
+              ? l10n.armorStealthDisadvantage
+              : null,
+          properties: {
+            'armorType': armor.type,
+            'baseAC': armor.baseAC,
+            'addDexModifier': armor.addDexModifier,
+            'maxDexBonus': armor.maxDexBonus,
+            'isShield': armor.isShield,
+            'acBonus': armor.acBonus,
+            if (armor.strengthRequired != null)
+              'strengthRequirement': armor.strengthRequired,
+            if (armor.stealthDisadvantage) 'stealthDisadvantage': true,
+            if (armor.cost.isNotEmpty) 'cost': armor.cost,
+          },
+        ),
+      for (final item in gear)
+        _SrdInventorySearchEntry(
+          name: item.name,
+          displayName: i18n.equipmentName(item.name),
+          subtitle: item.cost,
+          category: item.category,
+          itemType: item.category == 'ammunition'
+              ? ItemType.ammunition
+              : item.category == 'container'
+              ? ItemType.container
+              : ItemType.gear,
+          weight: item.weight,
+          description:
+              i18n.equipmentDescription(item.name) ??
+              (item.description.isNotEmpty ? item.description : null),
+          properties: {if (item.cost.isNotEmpty) 'cost': item.cost},
+        ),
+      for (final item in magic)
+        _SrdInventorySearchEntry(
+          name: item.name,
+          displayName: i18n.magicItemName(item.name),
+          subtitle:
+              '${i18n.term(item.rarity)}${item.requiresAttunement ? "  ·  ${i18n.term("attunement")}" : ""}',
+          category: item.type,
+          itemType: item.itemType,
+          weight: item.weight,
+          description: i18n.magicItemDescription(item.name) ?? item.description,
+          properties: item.properties,
+        ),
+      for (final tool in tools)
+        _SrdInventorySearchEntry(
+          name: tool.name,
+          displayName: i18n.toolName(tool.name),
+          subtitle: switch (tool.category) {
+            'artisans_tools' => l10n.inventoryGroupArtisansTools,
+            'gaming_sets' => l10n.inventoryGroupGamingSets,
+            'musical_instruments' => l10n.inventoryGroupMusicalInstruments,
+            _ => l10n.inventoryGroupOtherTools,
+          },
+          category: tool.category,
+          itemType: ItemType.gear,
+          weight: tool.weight,
+        ),
+    ];
+  }
+
+  Widget _buildGlobalSrdSearch(
+    SrdI18nService i18n,
+    AppLocalizations l10n,
+  ) {
+    if (_loadError != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            l10n.inventoryLoadItemsError(_loadError!),
+            style: TextStyle(color: Theme.of(context).colorScheme.error),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      );
+    }
+
+    final entries = _globalSrdSearchEntries(i18n, l10n);
+    if (entries == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    final q = _search.text.trim().toLowerCase();
+    final filtered = entries.where((entry) {
+      final display = _stripAmmunitionPackSuffix(
+        entry.displayName,
+        entry.itemType,
+      ).toLowerCase();
+      final english = _stripAmmunitionPackSuffix(
+        entry.name,
+        entry.itemType,
+      ).toLowerCase();
+      final type = _itemTypeLabel(entry.itemType, l10n).toLowerCase();
+      final category = _categoryLabel(entry.category, l10n, i18n).toLowerCase();
+      final description = entry.description?.toLowerCase() ?? '';
+      return display.contains(q) ||
+          english.contains(q) ||
+          type.contains(q) ||
+          category.contains(q) ||
+          description.contains(q);
+    }).toList();
+
+    if (filtered.isEmpty) {
+      return Center(
+        child: Text(
+          l10n.inventoryNoResults(q),
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+        ),
+      );
+    }
+
+    return ListView(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewPadding.bottom,
+      ),
+      children: filtered
+          .map(
+            (entry) => _buildSrdListTile(
+              name: entry.name,
+              displayName: entry.displayName,
+              subtitle:
+                  '${_itemTypeLabel(entry.itemType, l10n)}  ·  ${entry.subtitle}',
+              category: entry.category,
+              itemType: entry.itemType,
+              description: entry.description,
+              properties: entry.properties,
+              weight: entry.weight,
+            ),
+          )
+          .toList(),
+    );
+  }
+
   Widget _buildGroupedSrdList<T>({
     required List<T>? items,
     required String Function(T) getName,
@@ -1690,8 +2156,15 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final filtered = q.isEmpty
         ? items
         : items.where((e) {
-            final display = (getDisplayName ?? getName)(e).toLowerCase();
-            final english = getName(e).toLowerCase();
+            final itemType = getItemType(e);
+            final display = _stripAmmunitionPackSuffix(
+              (getDisplayName ?? getName)(e),
+              itemType,
+            ).toLowerCase();
+            final english = _stripAmmunitionPackSuffix(
+              getName(e),
+              itemType,
+            ).toLowerCase();
             return display.contains(q) || english.contains(q);
           }).toList();
 
@@ -1707,35 +2180,15 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     }
 
     Widget buildTile(T item) {
-      final desc = getDescription(item);
-      final subtitleFull = (desc != null && desc.isNotEmpty)
-          ? '${getSubtitle(item)}  ·  $desc'
-          : getSubtitle(item);
-      return ListTile(
-        title: Text(
-          (getDisplayName ?? getName)(item),
-          style: const TextStyle(fontSize: 14),
-        ),
-        subtitle: Text(
-          subtitleFull,
-          style: TextStyle(
-            fontSize: 12,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-        ),
-        trailing: IconButton(
-          icon: const Icon(Icons.add_circle_outline),
-          color: Theme.of(context).colorScheme.primary,
-          onPressed: () => _confirmAdd(
-            name: getName(item),
-            displayName: getDisplayName?.call(item),
-            category: getCategory(item),
-            itemType: getItemType(item),
-            description: getDescription(item),
-            properties: getProperties?.call(item),
-            weight: getWeight?.call(item) ?? 0.0,
-          ),
-        ),
+      return _buildSrdListTile(
+        name: getName(item),
+        displayName: getDisplayName?.call(item),
+        subtitle: getSubtitle(item),
+        category: getCategory(item),
+        itemType: getItemType(item),
+        description: getDescription(item),
+        properties: getProperties?.call(item),
+        weight: getWeight?.call(item) ?? 0.0,
       );
     }
 
@@ -1943,6 +2396,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final isCustomTab = _tabs.index == 5;
+    final isSearchingSrd = !isCustomTab && _search.text.trim().isNotEmpty;
 
     return DraggableScrollableSheet(
       initialChildSize: 0.87,
@@ -1986,9 +2440,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
               child: TextField(
                 controller: _search,
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(
-                    context,
-                  )!.hintSearchCategory(_getTabLabels(context)[_tabs.index]),
+                  hintText: l10n.hintSearch,
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: _search.text.isNotEmpty
                       ? IconButton(
@@ -2011,7 +2463,13 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
           Expanded(
             child: TabBarView(
               controller: _tabs,
-              children: [
+              children: isSearchingSrd
+                  ? [
+                      for (var i = 0; i < 5; i++)
+                        _buildGlobalSrdSearch(i18n, l10n),
+                      _buildCustomTab(),
+                    ]
+                  : [
                 // Weapons
                 _buildGroupedSrdList<SrdWeapon>(
                   items: _weapons,
@@ -2208,10 +2666,17 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
 /// equipment strings, then falls back to the original name.
 String _itemDisplayName(EquipmentItem item, SrdI18nService i18n) {
   final fromEquip = i18n.equipmentName(item.name);
-  if (fromEquip != item.name) return fromEquip;
+  if (fromEquip != item.name) {
+    return _stripAmmunitionPackSuffix(fromEquip, item.itemType);
+  }
   final fromMagic = i18n.magicItemName(item.name);
-  if (fromMagic != item.name) return fromMagic;
-  return i18n.backgroundEquipmentName(item.name);
+  if (fromMagic != item.name) {
+    return _stripAmmunitionPackSuffix(fromMagic, item.itemType);
+  }
+  return _stripAmmunitionPackSuffix(
+    i18n.backgroundEquipmentName(item.name),
+    item.itemType,
+  );
 }
 
 class _ItemDetailRow {
@@ -2808,9 +3273,7 @@ void _showItemDetailsSheet(
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Text(
-              item.quantity > 1
-                  ? '$displayName x${item.quantity}'
-                  : displayName,
+              _itemQuantityTitle(displayName, item.quantity),
               style: Theme.of(
                 context,
               ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -2857,9 +3320,15 @@ void _showItemDetailsSheet(
 }
 
 class _ItemTile extends ConsumerWidget {
-  const _ItemTile({required this.item, required this.characterId});
+  const _ItemTile({
+    required this.item,
+    required this.characterId,
+    this.reorderIndex,
+  });
+
   final EquipmentItem item;
   final String characterId;
+  final int? reorderIndex;
 
   Future<void> _confirmRemoveItem(
     BuildContext context,
@@ -2895,7 +3364,13 @@ class _ItemTile extends ConsumerWidget {
       return;
     }
 
-    final amount = await _showRemoveQuantityDialog(context, item);
+    final i18n =
+        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final amount = await _showRemoveQuantityDialog(
+      context,
+      item,
+      displayName: _itemDisplayName(item, i18n),
+    );
     if (amount != null) {
       await notifier.removeEquipmentQuantity(item.id, amount);
     }
@@ -3059,6 +3534,9 @@ class _ItemTile extends ConsumerWidget {
         (item.containerId != null || containers.isNotEmpty);
     final meta = _itemMeta(item, i18n, l10n);
     final displayName = _itemDisplayName(item, i18n);
+    final widgetsL10n = WidgetsLocalizations.of(context);
+    final reorderTooltip =
+        '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
 
     // Stealth disadvantage: stored in properties (new items) or description (old items)
     final stealthDisadv =
@@ -3111,7 +3589,7 @@ class _ItemTile extends ConsumerWidget {
             )
           : null,
       title: Text(
-        item.quantity > 1 ? '$displayName ×${item.quantity}' : displayName,
+        _itemQuantityTitle(displayName, item.quantity),
         style: const TextStyle(fontSize: 14),
       ),
       subtitle: subtitleText != null
@@ -3125,24 +3603,56 @@ class _ItemTile extends ConsumerWidget {
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (canMove)
-            IconButton(
-              icon: const Icon(Icons.drive_file_move_outlined, size: 18),
-              color: scheme.primary,
-              tooltip: l10n.inventoryTooltipMove,
-              onPressed: () => _showMoveItemSheet(
-                context,
-                ref,
-                item: item,
-                characterId: characterId,
-                containers: containers,
+          if (reorderIndex != null)
+            ReorderableDragStartListener(
+              index: reorderIndex!,
+              child: Tooltip(
+                message: reorderTooltip,
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Icon(
+                    Icons.drag_handle,
+                    size: 20,
+                    color: scheme.outline,
+                  ),
+                ),
               ),
             ),
-          IconButton(
-            icon: const Icon(Icons.delete_outline, size: 18),
-            color: scheme.error,
-            tooltip: l10n.inventoryTooltipRemove,
-            onPressed: () => _confirmRemoveItem(context, ref, notifier),
+          PopupMenuButton<_InventoryItemAction>(
+            onSelected: (action) {
+              switch (action) {
+                case _InventoryItemAction.move:
+                  _showMoveItemSheet(
+                    context,
+                    ref,
+                    item: item,
+                    characterId: characterId,
+                    containers: containers,
+                  );
+                  break;
+                case _InventoryItemAction.remove:
+                  _confirmRemoveItem(context, ref, notifier);
+                  break;
+              }
+            },
+            itemBuilder: (ctx) => [
+              if (canMove)
+                PopupMenuItem(
+                  value: _InventoryItemAction.move,
+                  child: _InventoryMenuItem(
+                    icon: Icons.drive_file_move_outlined,
+                    label: l10n.inventoryTooltipMove,
+                  ),
+                ),
+              PopupMenuItem(
+                value: _InventoryItemAction.remove,
+                child: _InventoryMenuItem(
+                  icon: Icons.delete_outline,
+                  label: l10n.inventoryTooltipRemove,
+                  isDestructive: true,
+                ),
+              ),
+            ],
           ),
         ],
       ),

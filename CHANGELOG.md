@@ -9,6 +9,25 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.0.7] - 2026-07-24
+
+### Changed
+- **Inventário — busca de itens**: a busca ao adicionar itens agora pesquisa em todas as categorias SRD ao mesmo tempo, facilitando encontrar itens sem saber previamente o tipo correto.
+- **Inventário — munições**: munições de pacotes como flechas agora aparecem sem o sufixo de quantidade do SRD e usam a quantidade escolhida pelo jogador ao adicionar.
+- **Inventário — organização**: itens, munições e recipientes agora podem ser reordenados com alça de arrastar; ações secundárias como mover e remover ficam no menu de três pontos.
+- **Notas — edição rápida**: o menu de três pontos das notas agora também permite editar a nota.
+
+### Fixed
+- **Inventário — munições zeradas**: ao gastar todas as munições, o item permanece no inventário com quantidade 0 para facilitar reposição futura.
+- **Notas — foco da pesquisa**: tocar em notas, filtros ou ações agora tira o foco do campo de pesquisa no Android.
+- **Traduções — magias e inventário**: pesquisa de magias, filtros, linhas de magia, confirmações de remoção e nomes em diálogos agora usam as traduções disponíveis em vez de textos internos do SRD.
+- **Traduções — habilidades**: confirmações de remoção de ferramentas, talentos e features extras agora mostram os nomes traduzidos.
+
+### Internal
+- **Versionamento**: versão do app atualizada para `1.0.7+21`.
+
+---
+
 ## [1.0.6]
 
 ### Added

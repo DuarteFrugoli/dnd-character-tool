@@ -780,6 +780,12 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (idx < 0) return;
 
     final removed = updated[idx];
+    if (removed.quantity <= 0) {
+      updated.removeWhere((e) => e.id == removed.id);
+      await _save(c.copyWith(equipment: updated));
+      return;
+    }
+
     final removeAmount = amount.clamp(1, removed.quantity).toInt();
 
     // Em stacks, remove apenas a quantidade selecionada.
@@ -977,6 +983,38 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(c.copyWith(equipment: updated));
   }
 
+  Future<void> reorderEquipmentItems({
+    required List<String> itemIds,
+    required int oldIndex,
+    required int newIndex,
+  }) async {
+    final c = state.valueOrNull;
+    if (c == null || itemIds.length < 2) return;
+
+    final currentById = {for (final item in c.equipment) item.id: item};
+    final groupIds = itemIds
+        .where((id) => currentById.containsKey(id))
+        .toList(growable: true);
+    if (oldIndex < 0 || oldIndex >= groupIds.length) return;
+
+    var insertIndex = newIndex;
+    if (insertIndex > oldIndex) insertIndex--;
+    insertIndex = insertIndex.clamp(0, groupIds.length - 1).toInt();
+    if (oldIndex == insertIndex) return;
+
+    final movedId = groupIds.removeAt(oldIndex);
+    groupIds.insert(insertIndex, movedId);
+
+    final groupIdSet = groupIds.toSet();
+    var groupCursor = 0;
+    final reordered = c.equipment.map((item) {
+      if (!groupIdSet.contains(item.id)) return item;
+      return currentById[groupIds[groupCursor++]] ?? item;
+    }).toList();
+
+    await _save(c.copyWith(equipment: reordered));
+  }
+
   Future<void> adjustItemQuantity(String id, int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
@@ -985,9 +1023,12 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       final newQty = (e.quantity + delta).clamp(0, 9999);
       return e.copyWith(quantity: newQty);
     }).toList();
-    // Remove se chegou a zero
     await _save(
-      c.copyWith(equipment: updated.where((e) => e.quantity > 0).toList()),
+      c.copyWith(
+        equipment: updated
+            .where((e) => e.quantity > 0 || e.itemType == ItemType.ammunition)
+            .toList(),
+      ),
     );
   }
 

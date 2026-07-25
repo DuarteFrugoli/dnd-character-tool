@@ -30,6 +30,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Migração de inventário**: adicionada a migração versionada `NormalizeEquipmentOrderMigration` (`dataVersion` 5) para preencher ordem explícita de itens e limpar localizações inválidas.
 - **Cobertura de testes**: adicionados testes unitários para migrações, inventário, backup/importação, feature choices, usos de features, criação de personagem e busca global de itens.
 - **Documentação de arquitetura**: arquitetura atualizada para descrever operações puras de inventário, snapshot/cache de busca, migração v5 e estratégia de testes.
+- **Roadmap**: roadmap reorganizado para tratar as melhorias de inventário como parte da série `1.0.7` e reservar `2.0.x` para multiclasse.
 
 ---
 

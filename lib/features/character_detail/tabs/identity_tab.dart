@@ -526,13 +526,13 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
           children: [
           // ── Identity section ─────────────────────────────────────────────
-          _Section(
+          DetailSection(
             title: l10n.sectionIdentity,
             child: _isEditing
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelName,
                         controller: _nameCtrl,
                         focusNode: _nameFocus,
@@ -576,12 +576,12 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                           ],
                         ),
                       ),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelAlignment,
                         controller: _alignCtrl,
                         focusNode: _alignFocus,
                       ),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelPlayer,
                         controller: _playerCtrl,
                         focusNode: _playerFocus,
@@ -829,21 +829,21 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                   )
                 : Column(
                     children: [
-                      _InfoRow(
+                      DetailInfoRow(
                         l10n.labelName,
                         character.name.isNotEmpty ? character.name : '—',
                       ),
-                      _InfoRow(
+                      DetailInfoRow(
                         l10n.labelLevel,
                         '${character.level}',
                       ),
                       if (character.background.isNotEmpty)
-                        _InfoRow(
+                        DetailInfoRow(
                           l10n.labelBackground,
                           i18n.backgroundName(character.background),
                         ),
                       if (character.subclass?.isNotEmpty == true)
-                        _InfoRow(
+                        DetailInfoRow(
                           l10n.labelSubclass,
                           i18n.subclassName(
                             character.characterClass,
@@ -851,10 +851,10 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                           ),
                         ),
                       if (character.alignment.isNotEmpty)
-                        _InfoRow(l10n.labelAlignment, character.alignment),
+                        DetailInfoRow(l10n.labelAlignment, character.alignment),
                       if (character.playerName.isNotEmpty)
-                        _InfoRow(l10n.labelPlayer, character.playerName),
-                      _InfoRow(
+                        DetailInfoRow(l10n.labelPlayer, character.playerName),
+                      DetailInfoRow(
                         l10n.labelLanguages,
                         character.languages.isEmpty
                             ? '—'
@@ -868,7 +868,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
           const SizedBox(height: 12),
 
           // ── Appearance section ───────────────────────────────────────────
-          _Section(
+          DetailSection(
             title: l10n.sectionAppearance,
             child: _isEditing
                 ? Column(
@@ -883,33 +883,33 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                         ),
                       ),
                       const SizedBox(height: 12),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelAge,
                         controller: _ageCtrl,
                         focusNode: _ageFocus,
                         keyboardType: TextInputType.text,
                       ),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelHeight,
                         controller: _heightCtrl,
                         focusNode: _heightFocus,
                       ),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelWeight,
                         controller: _weightCtrl,
                         focusNode: _weightFocus,
                       ),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelEyes,
                         controller: _eyesCtrl,
                         focusNode: _eyesFocus,
                       ),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelSkin,
                         controller: _skinCtrl,
                         focusNode: _skinFocus,
                       ),
-                      _InlineField(
+                      InlineEditField(
                         label: l10n.labelHair,
                         controller: _hairCtrl,
                         focusNode: _hairFocus,
@@ -945,17 +945,17 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                             return Column(
                               children: [
                                 if (app.age != null)
-                                  _InfoRow(l10n.labelAge, '${app.age}'),
+                                  DetailInfoRow(l10n.labelAge, '${app.age}'),
                                 if (app.height.isNotEmpty)
-                                  _InfoRow(l10n.labelHeight, app.height),
+                                  DetailInfoRow(l10n.labelHeight, app.height),
                                 if (app.weight.isNotEmpty)
-                                  _InfoRow(l10n.labelWeight, app.weight),
+                                  DetailInfoRow(l10n.labelWeight, app.weight),
                                 if (app.eyes.isNotEmpty)
-                                  _InfoRow(l10n.labelEyes, app.eyes),
+                                  DetailInfoRow(l10n.labelEyes, app.eyes),
                                 if (app.skin.isNotEmpty)
-                                  _InfoRow(l10n.labelSkin, app.skin),
+                                  DetailInfoRow(l10n.labelSkin, app.skin),
                                 if (app.hair.isNotEmpty)
-                                  _InfoRow(l10n.labelHair, app.hair),
+                                  DetailInfoRow(l10n.labelHair, app.hair),
                               ],
                             );
                           },
@@ -967,7 +967,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
           const SizedBox(height: 12),
 
           // ── Personality section ──────────────────────────────────────────
-          _Section(
+          DetailSection(
             title: l10n.sectionPersonality,
             child: _isEditing
                 ? Column(
@@ -1009,7 +1009,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
           const SizedBox(height: 12),
 
           // ── Backstory section ────────────────────────────────────────────
-          _Section(
+          DetailSection(
             title: l10n.sectionBackstory,
             child: _isEditing
                 ? _MultilineField(

@@ -353,10 +353,7 @@ class _CharacterList extends ConsumerWidget {
 }
 
 class _CharacterCard extends ConsumerWidget {
-  const _CharacterCard({
-    required this.character,
-    required this.reorderIndex,
-  });
+  const _CharacterCard({required this.character, required this.reorderIndex});
 
   final Character character;
   final int reorderIndex;
@@ -366,6 +363,14 @@ class _CharacterCard extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    void openCharacter() {
+      if (character.dataVersion < currentCharacterDataVersion) {
+        context.push('/settings?section=maintenance');
+        return;
+      }
+      context.push('/character/${character.id}');
+    }
+
     Future<void> exportCharacter() async {
       final results = await Future.wait([
         ref.read(characterListProvider.notifier).exportCharacter(character),
@@ -431,11 +436,7 @@ class _CharacterCard extends ConsumerWidget {
                 message: reorderTooltip,
                 child: Padding(
                   padding: const EdgeInsets.all(8),
-                  child: Icon(
-                    Icons.drag_handle,
-                    size: 20,
-                    color: cs.outline,
-                  ),
+                  child: Icon(Icons.drag_handle, size: 20, color: cs.outline),
                 ),
               ),
             ),
@@ -527,7 +528,7 @@ class _CharacterCard extends ConsumerWidget {
             ),
           ],
         ),
-        onTap: () => context.push('/character/${character.id}'),
+        onTap: openCharacter,
       ),
     );
   }

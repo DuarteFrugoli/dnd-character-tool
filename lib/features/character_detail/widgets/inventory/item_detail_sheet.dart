@@ -1,0 +1,117 @@
+part of '../../character_detail_screen.dart';
+
+class _ItemDetailSection extends StatelessWidget {
+  const _ItemDetailSection({required this.title, required this.child});
+
+  final String title;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 18),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
+              color: scheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          child,
+        ],
+      ),
+    );
+  }
+}
+
+void _showItemDetailsSheet(
+  BuildContext context,
+  WidgetRef ref,
+  EquipmentItem item,
+  String displayName,
+  String? meta,
+) {
+  final scheme = Theme.of(context).colorScheme;
+  final unitSystem = ref.read(unitSystemProvider);
+  final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+  final l10n = AppLocalizations.of(context)!;
+  final baseRows = _itemBaseDetailRows(item, unitSystem, l10n, i18n);
+  final propertyRows = _itemPropertyDetailRows(item, unitSystem, i18n, l10n);
+  final description = item.description?.trim();
+
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    builder: (_) => DraggableScrollableSheet(
+      initialChildSize: 0.62,
+      minChildSize: 0.28,
+      maxChildSize: 0.9,
+      expand: false,
+      builder: (ctx, scrollCtrl) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              width: 32,
+              height: 4,
+              decoration: BoxDecoration(
+                color: scheme.outlineVariant,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+            child: Text(
+              _itemQuantityTitle(displayName, item.quantity),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+            ),
+          ),
+          if (meta != null)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: Text(
+                meta,
+                style: TextStyle(color: scheme.primary, fontSize: 13),
+              ),
+            ),
+          const Divider(height: 1),
+          Expanded(
+            child: ListView(
+              controller: scrollCtrl,
+              padding: const EdgeInsets.all(16),
+              children: [
+                _ItemDetailSection(
+                  title: l10n.inventoryDetailSummary,
+                  child: _ItemDetailRows(rows: baseRows),
+                ),
+                if (description != null && description.isNotEmpty)
+                  _ItemDetailSection(
+                    title: l10n.inventoryDetailDescription,
+                    child: Text(
+                      description,
+                      style: const TextStyle(height: 1.6),
+                    ),
+                  ),
+                if (propertyRows.isNotEmpty)
+                  _ItemDetailSection(
+                    title: l10n.inventoryDetailAttributes,
+                    child: _ItemDetailRows(rows: propertyRows),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}

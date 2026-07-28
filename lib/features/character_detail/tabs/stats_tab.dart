@@ -372,7 +372,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   // ── HP Tracker ───────────────────────────────────────────
-                  _Section(
+                  DetailSection(
                     title: l10n.sectionHitPoints,
                     child: Column(
                       children: [
@@ -535,7 +535,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                         ),
                         if (_isEditing) ...[
                           const SizedBox(height: 12),
-                          _InlineField(
+                          InlineEditField(
                             label: l10n.labelMaxHP,
                             controller: _hpMaxCtrl,
                             focusNode: _hpMaxFocus,
@@ -583,13 +583,13 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   const SizedBox(height: 12),
 
                   // ── Combat Stats ─────────────────────────────────────────
-                  _Section(
+                  DetailSection(
                     title: l10n.sectionCombat,
                     child: _isEditing
                         ? Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              _InlineField(
+                              InlineEditField(
                                 label: l10n.labelSpeed,
                                 controller: _speedCtrl,
                                 focusNode: _speedFocus,
@@ -603,20 +603,20 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                 spacing: 8,
                                 runSpacing: 8,
                                 children: [
-                                  _StatChip(
+                                  DetailStatChip(
                                     l10n.statAC,
                                     '${character.armorClass}',
                                   ),
-                                  _StatChip(l10n.statArmor, armorSummary),
-                                  _StatChip(
+                                  DetailStatChip(l10n.statArmor, armorSummary),
+                                  DetailStatChip(
                                     l10n.statInitiative,
                                     _sign(character.initiative),
                                   ),
-                                  _StatChip(
+                                  DetailStatChip(
                                     l10n.statProfBonus,
                                     _sign(character.proficiencyBonus),
                                   ),
-                                  _StatChip(
+                                  DetailStatChip(
                                     l10n.statPassivePerc,
                                     '${character.passivePerception}',
                                   ),
@@ -628,24 +628,24 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                             spacing: 8,
                             runSpacing: 8,
                             children: [
-                              _StatChip(l10n.statAC, '${character.armorClass}'),
-                              _StatChip(l10n.statArmor, armorSummary),
-                              _StatChip(
+                              DetailStatChip(l10n.statAC, '${character.armorClass}'),
+                              DetailStatChip(l10n.statArmor, armorSummary),
+                              DetailStatChip(
                                 l10n.statSpeed,
                                 formatDistance(
                                   character.speed,
                                   ref.watch(unitSystemProvider),
                                 ),
                               ),
-                              _StatChip(
+                              DetailStatChip(
                                 l10n.statInitiative,
                                 _sign(character.initiative),
                               ),
-                              _StatChip(
+                              DetailStatChip(
                                 l10n.statProfBonus,
                                 _sign(character.proficiencyBonus),
                               ),
-                              _StatChip(
+                              DetailStatChip(
                                 l10n.statPassivePerc,
                                 '${character.passivePerception}',
                               ),
@@ -658,7 +658,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   // ── Ability Scores ───────────────────────────────────────
-                  _Section(
+                  DetailSection(
                     title: l10n.sectionAbilityScores,
                     child: Center(
                       child: ConstrainedBox(
@@ -671,42 +671,42 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           mainAxisSpacing: 8,
                           crossAxisSpacing: 8,
                           children: [
-                            _AbilityCardEdit(
+                            AbilityCardEdit(
                               l10n.abilityStr,
                               character.abilityScores.strength,
                               'strength',
                               notifier: notifier,
                               isEditing: _isEditing,
                             ),
-                            _AbilityCardEdit(
+                            AbilityCardEdit(
                               l10n.abilityDex,
                               character.abilityScores.dexterity,
                               'dexterity',
                               notifier: notifier,
                               isEditing: _isEditing,
                             ),
-                            _AbilityCardEdit(
+                            AbilityCardEdit(
                               l10n.abilityCon,
                               character.abilityScores.constitution,
                               'constitution',
                               notifier: notifier,
                               isEditing: _isEditing,
                             ),
-                            _AbilityCardEdit(
+                            AbilityCardEdit(
                               l10n.abilityInt,
                               character.abilityScores.intelligence,
                               'intelligence',
                               notifier: notifier,
                               isEditing: _isEditing,
                             ),
-                            _AbilityCardEdit(
+                            AbilityCardEdit(
                               l10n.abilityWis,
                               character.abilityScores.wisdom,
                               'wisdom',
                               notifier: notifier,
                               isEditing: _isEditing,
                             ),
-                            _AbilityCardEdit(
+                            AbilityCardEdit(
                               l10n.abilityCha,
                               character.abilityScores.charisma,
                               'charisma',
@@ -721,7 +721,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   const SizedBox(height: 12),
 
                   // ── Saving Throws ────────────────────────────────────────
-                  _Section(
+                  DetailSection(
                     title: l10n.sectionSavingThrows,
                     child: _SavingThrowsList(
                       character: character,
@@ -732,7 +732,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                   const SizedBox(height: 12),
 
                   // ── Progression ──────────────────────────────────────────
-                  _Section(
+                  DetailSection(
                     title: l10n.sectionProgression,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -757,7 +757,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                           child: AbsorbPointer(
                             absorbing: !character.xpTrackingEnabled,
                             child: _isEditing
-                                ? _InlineField(
+                                ? InlineEditField(
                                     label: l10n.statXP,
                                     controller: _xpCtrl,
                                     focusNode: _xpFocus,
@@ -1157,7 +1157,7 @@ class _ConditionsSection extends StatelessWidget {
     // Build a lookup for English descriptions
     final descMap = {for (final c in allConditions) c.name: c.description};
 
-    return _Section(
+    return DetailSection(
       title: l10n.sectionActiveConditions,
       action: IconButton(
         icon: const Icon(Icons.add, size: 20),

@@ -9,13 +9,15 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.0.7] - 2026-07-24
+## [1.1.0] - 2026-07-28
 
 ### Changed
 - **Inventário — busca de itens**: a busca ao adicionar itens agora pesquisa em todas as categorias SRD ao mesmo tempo, facilitando encontrar itens sem saber previamente o tipo correto.
 - **Inventário — munições**: munições de pacotes como flechas agora aparecem sem o sufixo de quantidade do SRD e usam a quantidade escolhida pelo jogador ao adicionar.
 - **Inventário — organização**: itens, munições e recipientes agora podem ser reordenados com alça de arrastar; ações secundárias como mover e remover ficam no menu de três pontos.
+- **Inventário — conteúdo de recipientes**: itens guardados em recipientes agora abrem em uma folha dedicada, evitando listas aninhadas dentro da lista principal do inventário.
 - **Notas — edição rápida**: o menu de três pontos das notas agora também permite editar a nota.
+- **Ficha — performance das abas**: abas pesadas de inventário, habilidades, magias e notas foram reorganizadas para reduzir recálculos e evitar remontar listas grandes sem necessidade.
 - **Inventário — base interna escalável**: regras de adicionar, remover, equipar, mover, reordenar e ajustar quantidade foram centralizadas em operações puras, reduzindo risco em futuras melhorias de mochilas.
 - **Inventário — cálculo de seções**: a aba de inventário agora usa um snapshot dedicado para organizar containers, conteúdos, munições, equipados, carregados e peso total.
 
@@ -26,11 +28,14 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Traduções — habilidades**: confirmações de remoção de ferramentas, talentos e features extras agora mostram os nomes traduzidos.
 
 ### Internal
-- **Versionamento**: versão do app atualizada para `1.0.7+21`.
+- **Versionamento**: versão do app atualizada para `1.1.0+22`.
 - **Migração de inventário**: adicionada a migração versionada `NormalizeEquipmentOrderMigration` (`dataVersion` 5) para preencher ordem explícita de itens e limpar localizações inválidas.
+- **View models de abas**: providers/view models do detalhe de personagem foram separados em arquivos menores dentro de `features/character_detail/application/`.
+- **Organização da UI de detalhe**: widgets compartilhados, sheets grandes do inventário, seções/sheets de habilidades e widgets auxiliares de magias foram movidos para arquivos menores.
+- **Performance de listas**: inventário, magias, habilidades e notas usam snapshots/providers/slivers para reduzir trabalho no build das abas.
 - **Cobertura de testes**: adicionados testes unitários para migrações, inventário, backup/importação, feature choices, usos de features, criação de personagem e busca global de itens.
 - **Documentação de arquitetura**: arquitetura atualizada para descrever operações puras de inventário, snapshot/cache de busca, migração v5 e estratégia de testes.
-- **Roadmap**: roadmap reorganizado para tratar as melhorias de inventário como parte da série `1.0.7` e reservar `2.0.x` para multiclasse.
+- **Roadmap**: roadmap reorganizado para tratar as melhorias de inventário e performance como parte da versão `1.1.0` e reservar `2.0.x` para multiclasse.
 
 ---
 

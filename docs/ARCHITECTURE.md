@@ -66,6 +66,10 @@ lib/
   features/
     character_creation/
     character_detail/
+      application/  Per-tab view models and derived providers
+      inventory/    Inventory snapshot/search view models
+      tabs/         Main tab entry widgets
+      widgets/      Detail widgets, feature sheets, inventory sheets, spell widgets
     character_list/
     export_import/      Reserved feature folder; import/export UI currently lives in character_list
     home/
@@ -119,6 +123,12 @@ Feature-specific providers:
 
 `characterDetailProvider(id)` listens to `characterListProvider` so image and
 list-level updates can propagate to an already-open detail screen.
+
+The detail screen also uses per-tab view model providers from
+`features/character_detail/application/`. These providers select only the
+fields needed by each tab before building expensive snapshots or widgets. This
+keeps unrelated edits, such as note changes or inventory changes, from forcing
+every tab to rebuild against the full `Character` object.
 
 ---
 
@@ -306,6 +316,23 @@ The detail UI builds an `InventorySnapshot` from the flat equipment list. The
 snapshot indexes items, root sections, containers, contents, ammunition,
 equipped items, carried items, and total weight in one place. This keeps
 `inventory_tab.dart` focused on rendering.
+
+The inventory UI is split by responsibility:
+
+- `tabs/inventory_tab.dart` orchestrates the tab, sections, FAB, and shared
+  inventory tile behavior.
+- `widgets/inventory/add_item_sheet.dart` owns the add/custom-item flow.
+- `widgets/inventory/container_contents_sheet.dart` shows items inside one
+  container in a dedicated bottom sheet.
+- `widgets/inventory/item_detail_sheet.dart` shows item descriptions and
+  mechanical attributes.
+- `inventory/inventory_view_model.dart` owns `InventorySnapshot`.
+- `inventory/inventory_search_catalog.dart` owns the cached SRD search index.
+
+Container contents intentionally open in a bottom sheet instead of expanding as
+a nested reorderable list inside the main inventory list. That keeps the main
+tab lighter and avoids building every stored item before the user asks for a
+specific container.
 
 Adding existing SRD items uses `SrdInventorySearchCatalog`, a cached search
 index that combines weapons, armor, adventuring gear, magic items, and tools.
@@ -575,7 +602,21 @@ Race and attribute rules:
 ### Character Detail
 
 `features/character_detail/` is the main sheet/editor for an existing character.
-The screen is split into part files under `tabs/`:
+`character_detail_screen.dart` owns the shared tab layout, app bar actions,
+rest/level-up entry points, maintenance gate, and edit-mode discard
+coordination.
+
+The detail feature is split into:
+
+- `application/`: per-tab view models and derived providers.
+- `tabs/`: main tab entry widgets.
+- `widgets/detail_widgets.dart`: reusable detail widgets imported normally.
+- `widgets/features/`: feature sections and feature add/detail sheets.
+- `widgets/inventory/`: inventory add, container-content, and detail sheets.
+- `widgets/spells/`: spell tab helper widgets.
+- `inventory/`: inventory snapshot and SRD search catalog.
+
+The tab entry files are still part files under `tabs/`:
 
 - `stats_tab.dart`
 - `skills_tab.dart`
@@ -585,10 +626,14 @@ The screen is split into part files under `tabs/`:
 - `identity_tab.dart`
 - `notes_tab.dart`
 
-`character_detail_screen.dart` owns the shared tab layout and edit-mode discard
-coordination. `character_detail_provider.dart` owns mutations: HP, rests, spell
-slots, prepared spells, concentration, level up, identity, stats, inventory,
-features, notes, conditions, XP, and settings flags.
+`character_detail_provider.dart` owns mutations: HP, rests, spell slots,
+prepared spells, concentration, level up, identity, stats, inventory, features,
+notes, conditions, XP, and settings flags.
+
+Heavy tabs use a combination of per-tab providers, cached SRD providers,
+`AutomaticKeepAliveClientMixin`, and sliver lists. The goal is to keep tab
+switching responsive and avoid rebuilding large lists when unrelated character
+data changes.
 
 The Notes tab supports search, colored tags, pin/unpin, detail viewing, and
 drag reordering. Notes are ordered by pinned group and `CharacterNote.sortOrder`.
@@ -759,17 +804,18 @@ the affected files before committing.
 | --- | --- |
 | Character save/load/import/export | `CharacterRepository`, `CharacterLocalDataSource`, storage backends |
 | Character detail mutation | `CharacterDetailNotifier` |
+| Character detail tab rebuild/performance | `features/character_detail/application/`, `_CharacterTabHost`, relevant tab file |
 | Creation wizard state | `CharacterDraftNotifier` and `features/character_creation/steps/` |
 | AC calculation | `data/constants/armor_class.dart` |
 | Level-up thresholds/ASI/subclass unlocks | `data/constants/level_up_rules.dart` |
 | Spellcasting slots/known/prepared/cantrips | `data/spellcasting_engine.dart` |
 | Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
-| Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/feature_usages.json`, `features/character_detail/tabs/features_tab.dart` |
+| Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/feature_usages.json`, `features/character_detail/widgets/features/feature_sections.dart` |
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |
 | Backup export/import | `CharacterRepository`, `CharacterLocalDataSource`, `features/home/settings_screen.dart`, `core/utils/file_exporter.dart` |
 | Inventory rules and ordering | `data/inventory/inventory_operations.dart`, `features/character_detail/inventory/inventory_view_model.dart` |
-| Inventory search | `features/character_detail/inventory/inventory_search_catalog.dart`, `features/character_detail/tabs/inventory_tab.dart` |
-| Inventory item UI and custom item forms | `features/character_detail/tabs/inventory_tab.dart` |
+| Inventory search | `features/character_detail/inventory/inventory_search_catalog.dart`, `features/character_detail/widgets/inventory/add_item_sheet.dart` |
+| Inventory item UI and custom item forms | `features/character_detail/tabs/inventory_tab.dart`, `features/character_detail/widgets/inventory/` |
 | Notes, note tags, and note ordering | `features/character_detail/tabs/notes_tab.dart`, `CharacterDetailNotifier`, `CharacterNote` |
 | Starting equipment packs | `assets/data/srd/equipment.json`, `SrdPackContent`, `ExpandEquipmentPacksMigration` |
 | Creation racial ASI/Tasha/Variant Human | `features/character_creation/character_draft_provider.dart`, `steps/step_attributes.dart`, `steps/step_feature_choices.dart`, `assets/data/srd/races.json` |

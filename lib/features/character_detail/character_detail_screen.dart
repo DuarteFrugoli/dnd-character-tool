@@ -24,9 +24,11 @@ import '../../shared/widgets/character_avatar.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/units/unit_formatter.dart';
+import 'application/character_tab_view_models.dart';
 import 'character_detail_provider.dart';
 import 'inventory/inventory_search_catalog.dart';
 import 'inventory/inventory_view_model.dart';
+import 'widgets/detail_widgets.dart';
 import 'widgets/feature_choice_editor.dart';
 
 part 'tabs/identity_tab.dart';
@@ -36,7 +38,13 @@ part 'tabs/features_tab.dart';
 part 'tabs/spells_tab.dart';
 part 'tabs/notes_tab.dart';
 part 'tabs/inventory_tab.dart';
-part 'widgets/detail_widgets.dart';
+part 'widgets/features/add_feature_sheet.dart';
+part 'widgets/features/feature_detail_sheet.dart';
+part 'widgets/features/feature_sections.dart';
+part 'widgets/inventory/add_item_sheet.dart';
+part 'widgets/inventory/container_contents_sheet.dart';
+part 'widgets/inventory/item_detail_sheet.dart';
+part 'widgets/spells/spell_widgets.dart';
 part 'level_up_wizard.dart';
 
 // ── Skill → Ability mapping ───────────────────────────────────────────────────
@@ -127,6 +135,36 @@ class _EditGuard {
 
 // ── Screen ────────────────────────────────────────────────────────────────────
 
+class _CharacterTabHost<T> extends ConsumerWidget {
+  const _CharacterTabHost({
+    required this.provider,
+    required this.builder,
+  });
+
+  final ProviderListenable<AsyncValue<T>> provider;
+  final Widget Function(BuildContext context, T value) builder;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(provider);
+    return state.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (error, _) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            AppLocalizations.of(context)!.detailErrorLoading(
+              error.toString(),
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      data: (value) => builder(context, value),
+    );
+  }
+}
+
 class CharacterDetailScreen extends ConsumerStatefulWidget {
   const CharacterDetailScreen({super.key, required this.characterId});
   final String characterId;
@@ -140,7 +178,6 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
   final _editGuard = _EditGuard();
-  bool _maintenancePromptShown = false;
 
   @override
   void initState() {
@@ -190,9 +227,25 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     _goBack();
   }
 
+  Character? _currentCharacter() {
+    return ref.read(characterDetailProvider(widget.characterId)).valueOrNull;
+  }
+
+  void _openLevelUpForCurrentCharacter() {
+    final character = _currentCharacter();
+    if (character == null) return;
+    _openLevelUpWizardSheet(context, character, widget.characterId);
+  }
+
+  void _showRestPickerForCurrentCharacter() {
+    final character = _currentCharacter();
+    if (character == null) return;
+    _showRestPicker(character);
+  }
+
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(characterDetailProvider(widget.characterId));
+    final state = ref.watch(characterHeaderVmProvider(widget.characterId));
     return state.when(
       loading: () => Scaffold(
         appBar: AppBar(leading: BackButton(onPressed: _handleBack)),
@@ -213,15 +266,9 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     );
   }
 
-  Widget _buildLoaded(Character character) {
-    if (character.dataVersion >= currentCharacterDataVersion) {
-      _maintenancePromptShown = false;
-    } else if (!_maintenancePromptShown) {
-      _maintenancePromptShown = true;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (!mounted) return;
-        _showCharacterMaintenancePrompt();
-      });
+  Widget _buildLoaded(CharacterHeaderVm header) {
+    if (header.dataVersion < currentCharacterDataVersion) {
+      return _buildMaintenanceRequired(header);
     }
 
     final i18n =
@@ -235,15 +282,15 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              character.name,
+              header.name,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             ),
             Text(
-              '${i18n.className(character.characterClass)}${character.subclass != null ? ' (${i18n.subclassName(character.characterClass, character.subclass!)})' : ''}  ·  ${i18n.raceName(character.race)}'
-              '${character.subrace != null ? ' (${i18n.subraceName(character.subrace!)})' : ''}'
-              '  ·  Lv ${character.level}',
+              '${i18n.className(header.characterClass)}${header.subclass != null ? ' (${i18n.subclassName(header.characterClass, header.subclass!)})' : ''}  ·  ${i18n.raceName(header.race)}'
+              '${header.subrace != null ? ' (${i18n.subraceName(header.subrace!)})' : ''}'
+              '  ·  Lv ${header.level}',
               maxLines: 2,
               overflow: TextOverflow.visible,
               softWrap: true,
@@ -254,20 +301,16 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           ],
         ),
         actions: [
-          if (!character.xpTrackingEnabled)
+          if (!header.xpTrackingEnabled)
             IconButton(
               icon: const Icon(Icons.keyboard_double_arrow_up),
               tooltip: AppLocalizations.of(context)!.tooltipLevelUp,
-              onPressed: () => _openLevelUpWizardSheet(
-                context,
-                character,
-                widget.characterId,
-              ),
+              onPressed: _openLevelUpForCurrentCharacter,
             ),
           IconButton(
             icon: const Icon(Icons.hotel_outlined),
             tooltip: AppLocalizations.of(context)!.restPickerTitle,
-            onPressed: () => _showRestPicker(character),
+            onPressed: _showRestPickerForCurrentCharacter,
           ),
         ],
         bottom: TabBar(
@@ -290,53 +333,118 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         child: TabBarView(
           controller: _tabs,
           children: [
-            _IdentityTab(
-              character: character,
-              characterId: widget.characterId,
-              editGuard: _editGuard,
+            _CharacterTabHost<IdentityTabVm>(
+              provider: identityTabVmProvider(widget.characterId),
+              builder: (context, vm) => _IdentityTab(
+                character: vm.character,
+                characterId: widget.characterId,
+                editGuard: _editGuard,
+              ),
             ),
-            _StatsTab(
-              character: character,
-              characterId: widget.characterId,
-              editGuard: _editGuard,
+            _CharacterTabHost<StatsTabVm>(
+              provider: statsTabVmProvider(widget.characterId),
+              builder: (context, vm) => _StatsTab(
+                character: vm.character,
+                characterId: widget.characterId,
+                editGuard: _editGuard,
+              ),
             ),
-            _SkillsTab(character: character, characterId: widget.characterId),
-            _FeaturesTab(character: character, characterId: widget.characterId),
-            _SpellsTab(character: character, characterId: widget.characterId),
-            _InventoryTab(
-              character: character,
-              characterId: widget.characterId,
+            _CharacterTabHost<SkillsTabVm>(
+              provider: skillsTabVmProvider(widget.characterId),
+              builder: (context, vm) => _SkillsTab(
+                character: vm.character,
+                characterId: widget.characterId,
+              ),
             ),
-            _NotesTab(character: character, characterId: widget.characterId),
+            _CharacterTabHost<FeaturesTabVm>(
+              provider: featuresTabVmProvider(widget.characterId),
+              builder: (context, vm) => _FeaturesTab(
+                character: vm.character,
+                characterId: widget.characterId,
+              ),
+            ),
+            _CharacterTabHost<SpellsTabVm>(
+              provider: spellsTabVmProvider(widget.characterId),
+              builder: (context, vm) => _SpellsTab(
+                character: vm.character,
+                characterId: widget.characterId,
+              ),
+            ),
+            _CharacterTabHost<InventoryTabVm>(
+              provider: inventoryTabVmProvider(widget.characterId),
+              builder: (context, vm) => _InventoryTab(
+                character: vm.character,
+                inventory: vm.snapshot,
+                strengthScore: vm.strengthScore,
+                characterId: widget.characterId,
+              ),
+            ),
+            _CharacterTabHost<NotesTabVm>(
+              provider: notesTabVmProvider(widget.characterId),
+              builder: (context, vm) => _NotesTab(
+                notes: vm.notes,
+                characterId: widget.characterId,
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Future<void> _showCharacterMaintenancePrompt() async {
+  Widget _buildMaintenanceRequired(CharacterHeaderVm character) {
     final l10n = AppLocalizations.of(context)!;
-    final goToMaintenance = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.characterUpdateRequiredTitle),
-        content: Text(l10n.characterUpdateRequiredBody),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(l10n.dialogCancel),
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+
+    return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(onPressed: _handleBack),
+        title: Text(
+          character.name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
+      body: ResponsiveScaffoldBody(
+        maxWidth: 720,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.system_update_alt_outlined,
+                  size: 48,
+                  color: scheme.primary,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  l10n.characterUpdateRequiredTitle,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.headlineSmall,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  l10n.characterUpdateRequiredBody,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 24),
+                FilledButton.icon(
+                  onPressed: () => context.go('/settings?section=maintenance'),
+                  icon: const Icon(Icons.settings_outlined),
+                  label: Text(l10n.characterUpdateRequiredAction),
+                ),
+              ],
+            ),
           ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: Text(l10n.characterUpdateRequiredAction),
-          ),
-        ],
+        ),
       ),
     );
-
-    if (goToMaintenance == true && mounted) {
-      context.go('/settings?section=maintenance');
-    }
   }
 
   void _showRestPicker(Character character) {

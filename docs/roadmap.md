@@ -5,7 +5,7 @@ Este documento resume a direcao do app por versao. Ele nao substitui o
 
 ---
 
-## Serie 1.0.x - Fundacao do app
+## Serie 1.x - Fundacao do app
 
 ### 1.0.0 - Ficha jogavel em mesa
 - [x] Rastreamento de HP, HP temporario, death saves, inspiracao e condicoes.
@@ -59,7 +59,7 @@ Este documento resume a direcao do app por versao. Ele nao substitui o
 - [x] Reordenacao escalavel de notas e personagens com alca de arrastar.
 - [x] Ordem explicita persistida em notas e personagens.
 
-### 1.0.7 - Inventario escalavel e cobertura de testes
+### 1.1.0 - Inventario escalavel, performance e cobertura de testes
 - [x] Busca global ao adicionar item, sem depender da categoria escolhida.
 - [x] Munições de pacote aparecem sem sufixo SRD como `(20)`.
 - [x] Munição zerada permanece no inventario.
@@ -72,6 +72,13 @@ Este documento resume a direcao do app por versao. Ele nao substitui o
 - [x] Operacoes puras de inventario para adicionar, remover, equipar, mover,
       reordenar e ajustar quantidade.
 - [x] Snapshot dedicado para secoes, containers, conteudos e peso total.
+- [x] Conteudo de containers aberto em bottom sheet, sem lista aninhada na
+      lista principal do inventario.
+- [x] View models derivados por aba e arquivos menores em
+      `features/character_detail/application/`.
+- [x] Abas de inventario, habilidades, magias e notas reorganizadas com
+      providers/slivers/keep-alive para reduzir rebuilds pesados.
+- [x] Widgets e sheets grandes do detalhe separados em arquivos menores.
 - [x] Migracao v5 para ordem explicita de inventario.
 - [x] Testes unitarios para inventario, migracoes, feature choices, feature
       usages, criacao de personagem, busca de inventario e backup/importacao.

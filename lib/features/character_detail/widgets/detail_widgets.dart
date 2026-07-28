@@ -1,9 +1,18 @@
-part of '../character_detail_screen.dart';
+import 'package:dnd_character_tool/l10n/app_localizations.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-// ── Shared widgets ────────────────────────────────────────────────────────────
+import '../character_detail_provider.dart';
 
-class _GroupHeader extends StatelessWidget {
-  const _GroupHeader({required this.label});
+// Shared widgets
+
+String _abilityModText(int score) {
+  final modifier = ((score - 10) / 2).floor();
+  return modifier >= 0 ? '+$modifier' : '$modifier';
+}
+
+class DetailGroupHeader extends StatelessWidget {
+  const DetailGroupHeader({required this.label});
   final String label;
 
   @override
@@ -28,8 +37,8 @@ class _GroupHeader extends StatelessWidget {
 
 // ── Section ───────────────────────────────────────────────────────────────────
 
-class _Section extends StatelessWidget {
-  const _Section({required this.title, required this.child, this.action});
+class DetailSection extends StatelessWidget {
+  const DetailSection({required this.title, required this.child, this.action});
   final String title;
   final Widget child;
   final Widget? action;
@@ -64,8 +73,8 @@ class _Section extends StatelessWidget {
   }
 }
 
-class _InfoRow extends StatelessWidget {
-  const _InfoRow(this.label, this.value);
+class DetailInfoRow extends StatelessWidget {
+  const DetailInfoRow(this.label, this.value);
   final String label;
   final String value;
 
@@ -92,8 +101,8 @@ class _InfoRow extends StatelessWidget {
   }
 }
 
-class _StatChip extends StatelessWidget {
-  const _StatChip(this.label, this.value);
+class DetailStatChip extends StatelessWidget {
+  const DetailStatChip(this.label, this.value);
   final String label;
   final String value;
 
@@ -124,8 +133,8 @@ class _StatChip extends StatelessWidget {
 
 // ── Inline Edit Field ─────────────────────────────────────────────────────────
 
-class _InlineField extends StatelessWidget {
-  const _InlineField({
+class InlineEditField extends StatelessWidget {
+  const InlineEditField({
     required this.label,
     required this.controller,
     required this.focusNode,
@@ -183,8 +192,8 @@ const _kAllAbilities = [
   'Intelligence', 'Wisdom', 'Charisma',
 ];
 
-class _SavingThrowsEditor extends StatefulWidget {
-  const _SavingThrowsEditor({
+class SavingThrowsEditor extends StatefulWidget {
+  const SavingThrowsEditor({
     required this.current,
     required this.notifier,
   });
@@ -192,10 +201,10 @@ class _SavingThrowsEditor extends StatefulWidget {
   final CharacterDetailNotifier notifier;
 
   @override
-  State<_SavingThrowsEditor> createState() => _SavingThrowsEditorState();
+  State<SavingThrowsEditor> createState() => _SavingThrowsEditorState();
 }
 
-class _SavingThrowsEditorState extends State<_SavingThrowsEditor> {
+class _SavingThrowsEditorState extends State<SavingThrowsEditor> {
   late Set<String> _selected;
 
   // Normalize stored values (may be lowercase) against canonical title-case list.
@@ -210,7 +219,7 @@ class _SavingThrowsEditorState extends State<_SavingThrowsEditor> {
   }
 
   @override
-  void didUpdateWidget(_SavingThrowsEditor old) {
+  void didUpdateWidget(SavingThrowsEditor old) {
     super.didUpdateWidget(old);
     if (old.current != widget.current) {
       _selected = _normalize(widget.current);
@@ -258,8 +267,8 @@ class _SavingThrowsEditorState extends State<_SavingThrowsEditor> {
 
 // ── Ability Card Edit ─────────────────────────────────────────────────────────
 
-class _AbilityCardEdit extends StatelessWidget {
-  const _AbilityCardEdit(this.abbr, this.score, this.key_,
+class AbilityCardEdit extends StatelessWidget {
+  const AbilityCardEdit(this.abbr, this.score, this.key_,
       {required this.notifier, required this.isEditing});
 
   final String abbr;
@@ -291,7 +300,7 @@ class _AbilityCardEdit extends StatelessWidget {
               ),
             ),
           Text(
-            _mod(score),
+            _abilityModText(score),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge

@@ -34,15 +34,16 @@ enum _NoteViewAction { edit, togglePinned }
 enum _NoteCardAction { edit, togglePinned, delete }
 
 class _NotesTab extends ConsumerStatefulWidget {
-  const _NotesTab({required this.character, required this.characterId});
-  final Character character;
+  const _NotesTab({required this.notes, required this.characterId});
+  final List<CharacterNote> notes;
   final String characterId;
 
   @override
   ConsumerState<_NotesTab> createState() => _NotesTabState();
 }
 
-class _NotesTabState extends ConsumerState<_NotesTab> {
+class _NotesTabState extends ConsumerState<_NotesTab>
+    with AutomaticKeepAliveClientMixin {
   late final TextEditingController _searchCtrl;
   String? _selectedTagKey;
   String? _selectedNoteId;
@@ -94,7 +95,7 @@ class _NotesTabState extends ConsumerState<_NotesTab> {
       builder: (ctx) => _NoteEditorSheet(
         existing: existing,
         notifier: notifier,
-        availableTags: _allTags(widget.character.notes),
+        availableTags: _allTags(widget.notes),
       ),
     );
   }
@@ -337,8 +338,12 @@ class _NotesTabState extends ConsumerState<_NotesTab> {
   }
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
-    final notes = widget.character.notes;
+    super.build(context);
+    final notes = widget.notes;
     final allTags = _allTags(notes);
     final selectedTagKey =
         _selectedTagKey != null &&

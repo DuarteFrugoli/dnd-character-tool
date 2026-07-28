@@ -72,11 +72,6 @@ const _skillAbility = <String, String>{
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-String _mod(int score) {
-  final m = ((score - 10) / 2).floor();
-  return m >= 0 ? '+$m' : '$m';
-}
-
 String _sign(int n) => n >= 0 ? '+$n' : '$n';
 
 // ── Edit Guard ─────────────────────────────────────────────────────────────────

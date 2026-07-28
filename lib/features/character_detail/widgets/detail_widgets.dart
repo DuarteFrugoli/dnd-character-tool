@@ -12,7 +12,7 @@ String _abilityModText(int score) {
 }
 
 class DetailGroupHeader extends StatelessWidget {
-  const DetailGroupHeader({required this.label});
+  const DetailGroupHeader({super.key, required this.label});
   final String label;
 
   @override
@@ -38,7 +38,12 @@ class DetailGroupHeader extends StatelessWidget {
 // ── Section ───────────────────────────────────────────────────────────────────
 
 class DetailSection extends StatelessWidget {
-  const DetailSection({required this.title, required this.child, this.action});
+  const DetailSection({
+    super.key,
+    required this.title,
+    required this.child,
+    this.action,
+  });
   final String title;
   final Widget child;
   final Widget? action;
@@ -74,7 +79,7 @@ class DetailSection extends StatelessWidget {
 }
 
 class DetailInfoRow extends StatelessWidget {
-  const DetailInfoRow(this.label, this.value);
+  const DetailInfoRow(this.label, this.value, {super.key});
   final String label;
   final String value;
 
@@ -102,7 +107,7 @@ class DetailInfoRow extends StatelessWidget {
 }
 
 class DetailStatChip extends StatelessWidget {
-  const DetailStatChip(this.label, this.value);
+  const DetailStatChip(this.label, this.value, {super.key});
   final String label;
   final String value;
 
@@ -135,6 +140,7 @@ class DetailStatChip extends StatelessWidget {
 
 class InlineEditField extends StatelessWidget {
   const InlineEditField({
+    super.key,
     required this.label,
     required this.controller,
     required this.focusNode,
@@ -194,6 +200,7 @@ const _kAllAbilities = [
 
 class SavingThrowsEditor extends StatefulWidget {
   const SavingThrowsEditor({
+    super.key,
     required this.current,
     required this.notifier,
   });
@@ -269,7 +276,7 @@ class _SavingThrowsEditorState extends State<SavingThrowsEditor> {
 
 class AbilityCardEdit extends StatelessWidget {
   const AbilityCardEdit(this.abbr, this.score, this.key_,
-      {required this.notifier, required this.isEditing});
+      {super.key, required this.notifier, required this.isEditing});
 
   final String abbr;
   final int score;

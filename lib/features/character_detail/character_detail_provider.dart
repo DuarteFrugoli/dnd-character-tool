@@ -161,10 +161,11 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     // Recover ceil(level / 2) hit dice on a long rest (PHB rules)
-    final hdRecovered = (c.level / 2).ceil();
-    final newHdUsed = (c.hitPoints.hitDiceUsed - hdRecovered)
-        .clamp(0, c.level)
+    final hdRecovered = (c.totalLevel / 2).ceil();
+    final newHdUsed = (c.totalHitDiceUsed - hdRecovered)
+        .clamp(0, c.totalHitDice)
         .toInt();
+    final newHitDicePools = _recoverHitDicePools(c.hitDicePools, hdRecovered);
     final featureResources = await _featureResourcesAfterRest(
       c,
       FeatureUsageRest.longRest,
@@ -176,6 +177,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
           temporary: 0,
           hitDiceUsed: newHdUsed,
         ),
+        hitDicePools: newHitDicePools,
         spellSlots: c.spellSlots.copyWith(used: List.filled(9, 0)),
         innateSpells: c.innateSpells
             .map((s) => s.copyWith(usedToday: 0))
@@ -198,13 +200,25 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final clampedHp = hpGained
         .clamp(0, c.hitPoints.maximum - c.hitPoints.current)
         .toInt();
-    final newHdUsed = (c.hitPoints.hitDiceUsed + hdSpent)
-        .clamp(0, c.level)
+    final newHdUsed = (c.totalHitDiceUsed + hdSpent)
+        .clamp(0, c.totalHitDice)
         .toInt();
-    final rested = c.copyWith(
+    final newHitDicePools = _spendHitDicePools(c.hitDicePools, hdSpent);
+    var rested = c.copyWith(
       hitPoints: c.hitPoints.copyWith(
         current: c.hitPoints.current + clampedHp,
         hitDiceUsed: newHdUsed,
+      ),
+      hitDicePools: newHitDicePools,
+    );
+    rested = rested.copyWith(
+      spellSlots: SpellcastingEngine.slotsAfterShortRest(
+        current: rested.spellSlots,
+        className: rested.primaryClass.className,
+        classLevel: rested.primaryClass.level,
+        abilityScores: rested.abilityScores,
+        proficiencyBonus: rested.proficiencyBonus,
+        subclass: rested.primaryClass.subclassName,
       ),
     );
     final featureResources = await _featureResourcesAfterRest(
@@ -217,12 +231,14 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> adjustFeatureResource(String resourceId, int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final catalog = await ref
-        .read(srdDataSourceProvider)
-        .getFeatureUsageCatalog();
-    final resource = catalog.resource(resourceId);
-    if (resource == null) return;
-    final max = FeatureUsageEngine.maxFor(resource, c);
+    final binding = await _activeFeatureUsageBinding(c, resourceId);
+    if (binding == null) return;
+    final resource = binding.resource;
+    final max = FeatureUsageEngine.maxFor(
+      resource,
+      c,
+      usageContext: binding.usageContext,
+    );
     if (max == null) return;
     final current = FeatureUsageEngine.currentFor(c, resource, max) ?? max;
     final next = (current + delta).clamp(0, max).toInt();
@@ -237,24 +253,35 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     FeatureUsageRest rest,
   ) async {
     final result = Map<String, int>.from(c.featureResources);
-    final resources = await _activeFeatureUsageResources(c);
-    final activeResourceIds = resources.map((resource) => resource.id).toSet();
+    final bindings = await _activeFeatureUsageBindings(c);
+    final activeResourceIds = bindings
+        .map((binding) => binding.resource.id)
+        .toSet();
     result.removeWhere((id, _) => !activeResourceIds.contains(id));
-    for (final resource in resources) {
-      final max = FeatureUsageEngine.maxFor(resource, c);
+    for (final binding in bindings) {
+      final resource = binding.resource;
+      final max = FeatureUsageEngine.maxFor(
+        resource,
+        c,
+        usageContext: binding.usageContext,
+      );
       if (max == null) {
         result.remove(resource.id);
         continue;
       }
-      final recharge = FeatureUsageEngine.rechargeFor(resource, c);
+      final recharge = FeatureUsageEngine.rechargeFor(
+        resource,
+        c,
+        usageContext: binding.usageContext,
+      );
       if (FeatureUsageEngine.restoresOn(recharge, rest)) {
         result[resource.id] = max;
         continue;
       }
       if (rest == FeatureUsageRest.shortRest &&
           resource.id == 'sorcery_points' &&
-          c.characterClass == 'Sorcerer' &&
-          c.level >= 20) {
+          binding.usageContext.sourceClass?.toLowerCase() == 'sorcerer' &&
+          binding.usageContext.effectiveClassLevel >= 20) {
         final current = FeatureUsageEngine.currentFor(c, resource, max) ?? max;
         result[resource.id] = (current + 4).clamp(0, max).toInt();
         continue;
@@ -267,28 +294,39 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     return result;
   }
 
-  Future<List<FeatureUsageResource>> _activeFeatureUsageResources(
+  Future<FeatureUsageBinding?> _activeFeatureUsageBinding(
+    Character c,
+    String resourceId,
+  ) async {
+    final bindings = await _activeFeatureUsageBindings(c);
+    return bindings.firstWhereOrNull(
+      (binding) => binding.resource.id == resourceId,
+    );
+  }
+
+  Future<List<FeatureUsageBinding>> _activeFeatureUsageBindings(
     Character c,
   ) async {
     final srd = ref.read(srdDataSourceProvider);
     final catalog = await srd.getFeatureUsageCatalog();
+    final primaryClass = c.primaryClass;
     final classFeatures = (await srd.getClassFeatures(
-      c.characterClass,
-    )).where((f) => f.level <= c.level).toList();
-    final subclassName = c.subclass ?? '';
+      primaryClass.className,
+    )).where((f) => f.level <= primaryClass.level).toList();
+    final subclassName = primaryClass.subclassName ?? '';
     final subclassFeatures = subclassName.isEmpty
         ? <SrdClassFeature>[]
         : (await srd.getSubclassFeatures(
-            c.characterClass,
+            primaryClass.className,
             subclassName,
-          )).where((f) => f.level <= c.level).toList();
+          )).where((f) => f.level <= primaryClass.level).toList();
     final races = await srd.getRaces();
     final race = races.where((r) => r.name == c.race).firstOrNull;
     final subrace = race?.subraces
         .where((s) => s.name == c.subrace)
         .firstOrNull;
     final traits = <String>[...?race?.traits, ...?subrace?.traits];
-    return FeatureUsageEngine.activeResources(
+    return FeatureUsageEngine.activeResourceBindings(
       character: c,
       catalog: catalog,
       classFeatures: classFeatures,
@@ -350,11 +388,19 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     final clamped = level.clamp(1, 20);
+    final primaryClass = c.primaryClass;
+    final updatedClasses = [
+      for (final entry in c.classEntries)
+        entry.id == primaryClass.id ? entry.copyWith(level: clamped) : entry,
+    ];
+    final updatedHitDicePools = _hitDicePoolsForLevelEdit(c, clamped);
     final newXp = c.xpTrackingEnabled
         ? levelToMinXp(clamped)
         : c.experiencePoints;
     final updated = c.copyWith(
       level: clamped,
+      classes: updatedClasses,
+      hitDicePools: updatedHitDicePools,
       proficiencyBonus: _profBonus(clamped),
       experiencePoints: newXp,
     );
@@ -367,7 +413,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
 
-    final newLevel = (c.level + 1).clamp(1, 20);
+    final newLevel = result.newTotalLevel.clamp(1, 20).toInt();
+    final newClassLevel = result.newClassLevel.clamp(1, 20).toInt();
     final newProfBonus = _profBonus(newLevel);
 
     // 1. Apply HP
@@ -381,22 +428,33 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     }
 
     // 3. Apply subclass
-    final newSubclass = result.subclassChosen != null
-        ? result.subclassChosen!
-        : c.subclass;
+    final targetEntry = c.classEntries.firstWhereOrNull(
+      (entry) => entry.id == result.targetClassEntryId,
+    );
+    final targetSubclass = result.subclassChosen ?? targetEntry?.subclassName;
+    final newClasses = _classesAfterLevelUp(
+      c,
+      result,
+      newClassLevel,
+      targetSubclass,
+    );
+    final startingClass = _startingClassEntry(newClasses);
+    final newHitDicePools = _hitDicePoolsAfterLevelUp(c, result);
 
     // 4. Apply feat
     var newExtraFeatures = c.extraFeatures;
     if (result.featChosen != null) {
       final feat = result.featChosen!;
       final alreadyHas = newExtraFeatures.any(
-        (f) => f.name == feat.name && f.sourceClass == 'Feat',
+        (f) => f.name == feat.name && f.effectiveSourceType == 'feat',
       );
       if (!alreadyHas) {
         newExtraFeatures = [
           ...newExtraFeatures,
           CharacterExtraFeature(
             sourceClass: 'Feat',
+            sourceType: FeatureChoiceSourceType.feat,
+            sourceFeature: feat.name,
             name: feat.name,
             level: newLevel,
             type: 'passive',
@@ -421,13 +479,16 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
 
     var updated = c.copyWith(
       level: newLevel,
+      characterClass: startingClass.className,
+      subclass: startingClass.subclassName,
+      classes: newClasses,
       proficiencyBonus: newProfBonus,
       hitPoints: c.hitPoints.copyWith(
         maximum: newMaxHp,
         current: newCurrentHp.clamp(0, newMaxHp),
       ),
+      hitDicePools: newHitDicePools,
       abilityScores: newScores,
-      subclass: newSubclass,
       extraFeatures: newExtraFeatures,
       featureChoices: FeatureChoiceEngine.upsertChoices(
         c.featureChoices,
@@ -455,28 +516,28 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   /// Syncs `spellSlots.total` to match the class progression for the given
   /// character's class and level. Preserves `used` counts (clamped to new totals).
   Character _applySlotSync(Character c) {
-    final engine = SpellcastingEngine.forClass(
-      className: c.characterClass,
-      classLevel: c.level,
-      abilityScores: c.abilityScores,
-      proficiencyBonus: c.proficiencyBonus,
-      subclass: c.subclass,
-    );
-    if (engine == null) return c;
-    final newTotal = engine.slotsPerLevel;
-    final newUsed = List<int>.generate(
-      9,
-      (i) => c.spellSlots.used[i].clamp(0, newTotal[i]),
-    );
     return c.copyWith(
-      spellSlots: c.spellSlots.copyWith(total: newTotal, used: newUsed),
+      spellSlots: SpellcastingEngine.syncedSlotsFor(
+        current: c.spellSlots,
+        className: c.primaryClass.className,
+        classLevel: c.primaryClass.level,
+        abilityScores: c.abilityScores,
+        proficiencyBonus: c.proficiencyBonus,
+        subclass: c.primaryClass.subclassName,
+      ),
     );
   }
 
   Future<void> updateSubclass(String subclassName) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final updated = c.copyWith(subclass: subclassName);
+    final updatedClasses = [
+      for (final entry in c.classEntries)
+        entry.id == c.primaryClass.id
+            ? entry.copyWith(subclassName: subclassName)
+            : entry,
+    ];
+    final updated = c.copyWith(subclass: subclassName, classes: updatedClasses);
     await _save(updated.copyWith(armorClass: calcArmorClass(updated)));
   }
 
@@ -610,6 +671,138 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     return 6;
   }
 
+  List<CharacterClassEntry> _classesAfterLevelUp(
+    Character c,
+    LevelUpResult result,
+    int newClassLevel,
+    String? newSubclass,
+  ) {
+    final entries = c.classEntries;
+    final updated = <CharacterClassEntry>[];
+    var foundTarget = false;
+    for (final entry in entries) {
+      if (entry.id == result.targetClassEntryId) {
+        foundTarget = true;
+        updated.add(
+          entry.copyWith(level: newClassLevel, subclassName: newSubclass),
+        );
+      } else {
+        updated.add(entry);
+      }
+    }
+
+    if (!foundTarget) {
+      updated.add(
+        CharacterClassEntry(
+          id: result.targetClassEntryId,
+          className: result.targetClassName,
+          level: newClassLevel,
+          isStartingClass: updated.isEmpty,
+        ),
+      );
+    }
+    return updated;
+  }
+
+  CharacterClassEntry _startingClassEntry(List<CharacterClassEntry> entries) {
+    for (final entry in entries) {
+      if (entry.isStartingClass) return entry;
+    }
+    return entries.first;
+  }
+
+  List<CharacterHitDiePool> _hitDicePoolsAfterLevelUp(
+    Character c,
+    LevelUpResult result,
+  ) {
+    final pools = c.hitDicePools.isEmpty
+        ? [
+            CharacterHitDiePool(
+              dieSize: result.targetHitDie,
+              total: c.totalLevel,
+              used: c.totalHitDiceUsed,
+              sourceClass: result.targetClassName,
+              sourceClassEntryId: result.targetClassEntryId,
+            ),
+          ]
+        : c.hitDicePools;
+    final updated = <CharacterHitDiePool>[];
+    var foundTarget = false;
+    for (final pool in pools) {
+      if (pool.sourceClassEntryId == result.targetClassEntryId) {
+        foundTarget = true;
+        updated.add(pool.copyWith(total: pool.total + 1));
+      } else {
+        updated.add(pool);
+      }
+    }
+    if (!foundTarget) {
+      updated.add(
+        CharacterHitDiePool(
+          dieSize: result.targetHitDie,
+          total: 1,
+          sourceClass: result.targetClassName,
+          sourceClassEntryId: result.targetClassEntryId,
+        ),
+      );
+    }
+    return updated;
+  }
+
+  List<CharacterHitDiePool> _hitDicePoolsForLevelEdit(Character c, int level) {
+    final primaryClass = c.primaryClass;
+    if (c.hitDicePools.isEmpty) {
+      return [
+        CharacterHitDiePool(
+          dieSize: levelUpHitDie(primaryClass.className),
+          total: level,
+          used: c.hitPoints.hitDiceUsed.clamp(0, level).toInt(),
+          sourceClass: primaryClass.className,
+          sourceClassEntryId: primaryClass.id,
+        ),
+      ];
+    }
+    return [
+      for (final pool in c.hitDicePools)
+        pool.sourceClassEntryId == primaryClass.id
+            ? pool.copyWith(
+                total: level,
+                used: pool.used.clamp(0, level).toInt(),
+              )
+            : pool,
+    ];
+  }
+
+  List<CharacterHitDiePool> _spendHitDicePools(
+    List<CharacterHitDiePool> pools,
+    int count,
+  ) {
+    if (pools.isEmpty || count <= 0) return pools;
+    var remaining = count;
+    final updated = <CharacterHitDiePool>[];
+    for (final pool in pools) {
+      final spend = remaining < pool.remaining ? remaining : pool.remaining;
+      updated.add(pool.copyWith(used: pool.used + spend));
+      remaining -= spend;
+    }
+    return updated;
+  }
+
+  List<CharacterHitDiePool> _recoverHitDicePools(
+    List<CharacterHitDiePool> pools,
+    int count,
+  ) {
+    if (pools.isEmpty || count <= 0) return pools;
+    var remaining = count;
+    final updated = <CharacterHitDiePool>[];
+    for (final pool in pools) {
+      final recovered = remaining < pool.used ? remaining : pool.used;
+      updated.add(pool.copyWith(used: pool.used - recovered));
+      remaining -= recovered;
+    }
+    return updated;
+  }
+
   // ── Extra Features (multiclasse / manual) ──────────────────────────────────
 
   Future<void> addExtraFeature(
@@ -623,8 +816,22 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       (f) => f.name == feature.name && f.sourceClass == sourceClass,
     );
     if (already) return;
+    final sourceType = sourceClass == c.characterClass
+        ? FeatureChoiceSourceType.classFeature
+        : sourceClass == c.subclass
+        ? FeatureChoiceSourceType.subclassFeature
+        : 'manual';
     final extra = CharacterExtraFeature(
       sourceClass: sourceClass,
+      sourceType: sourceType,
+      sourceSubclass: sourceType == FeatureChoiceSourceType.subclassFeature
+          ? sourceClass
+          : null,
+      sourceFeature: feature.name,
+      sourceClassEntryId: sourceType == 'manual'
+          ? null
+          : (c.classEntryIdFor(sourceClass) ??
+                c.classEntryIdFor(c.characterClass)),
       name: feature.name,
       level: feature.level,
       type: feature.type,
@@ -645,6 +852,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     }
     final extra = CharacterExtraFeature(
       sourceClass: sourceClass,
+      sourceType: FeatureChoiceSourceType.feat,
+      sourceFeature: feat.name,
       name: feat.name,
       level: c.level,
       type: 'passive',
@@ -718,9 +927,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(
-      c.copyWith(
-        equipment: inventory_ops.addEquipmentItem(c.equipment, item),
-      ),
+      c.copyWith(equipment: inventory_ops.addEquipmentItem(c.equipment, item)),
     );
   }
 
@@ -876,10 +1083,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final notes = ordered
         .map(
           (n) => n.id == id
-              ? n.copyWith(
-                  isPinned: targetPinned,
-                  sortOrder: targetSortOrder,
-                )
+              ? n.copyWith(isPinned: targetPinned, sortOrder: targetSortOrder)
               : n,
         )
         .toList();
@@ -929,19 +1133,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   }
 
   List<CharacterNote> _notesInDisplayOrder(List<CharacterNote> notes) {
-    final indexed = notes
-        .mapIndexed((index, note) => MapEntry(index, note))
-        .toList()
-      ..sort((a, b) {
-        final noteA = a.value;
-        final noteB = b.value;
-        if (noteA.isPinned != noteB.isPinned) {
-          return noteA.isPinned ? -1 : 1;
-        }
-        final byOrder = noteA.sortOrder.compareTo(noteB.sortOrder);
-        if (byOrder != 0) return byOrder;
-        return a.key.compareTo(b.key);
-      });
+    final indexed =
+        notes.mapIndexed((index, note) => MapEntry(index, note)).toList()
+          ..sort((a, b) {
+            final noteA = a.value;
+            final noteB = b.value;
+            if (noteA.isPinned != noteB.isPinned) {
+              return noteA.isPinned ? -1 : 1;
+            }
+            final byOrder = noteA.sortOrder.compareTo(noteB.sortOrder);
+            if (byOrder != 0) return byOrder;
+            return a.key.compareTo(b.key);
+          });
     return indexed.map((entry) => entry.value).toList();
   }
 

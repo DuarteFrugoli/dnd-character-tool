@@ -26,10 +26,10 @@ class DetailGroupHeader extends StatelessWidget {
       child: Text(
         label,
         style: Theme.of(context).textTheme.labelMedium?.copyWith(
-              color: scheme.primary,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 0.5,
-            ),
+          color: scheme.primary,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 0.5,
+        ),
       ),
     );
   }
@@ -62,8 +62,8 @@ class DetailSection extends StatelessWidget {
                   child: Text(
                     title,
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ),
                 ?action,
@@ -95,8 +95,8 @@ class DetailInfoRow extends StatelessWidget {
             child: Text(
               label,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
             ),
           ),
           Expanded(child: Text(value)),
@@ -124,10 +124,9 @@ class DetailStatChip extends StatelessWidget {
         children: [
           Text(
             value,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           Text(label, style: Theme.of(context).textTheme.labelSmall),
         ],
@@ -166,8 +165,8 @@ class InlineEditField extends StatelessWidget {
             child: Text(
               label,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
             ),
           ),
           Expanded(
@@ -180,8 +179,10 @@ class InlineEditField extends StatelessWidget {
               decoration: const InputDecoration(
                 isDense: true,
                 border: OutlineInputBorder(),
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 8,
+                ),
               ),
             ),
           ),
@@ -194,8 +195,12 @@ class InlineEditField extends StatelessWidget {
 // ── Saving Throws Editor ──────────────────────────────────────────────────────
 
 const _kAllAbilities = [
-  'Strength', 'Dexterity', 'Constitution',
-  'Intelligence', 'Wisdom', 'Charisma',
+  'Strength',
+  'Dexterity',
+  'Constitution',
+  'Intelligence',
+  'Wisdom',
+  'Charisma',
 ];
 
 class SavingThrowsEditor extends StatefulWidget {
@@ -275,8 +280,14 @@ class _SavingThrowsEditorState extends State<SavingThrowsEditor> {
 // ── Ability Card Edit ─────────────────────────────────────────────────────────
 
 class AbilityCardEdit extends StatelessWidget {
-  const AbilityCardEdit(this.abbr, this.score, this.key_,
-      {super.key, required this.notifier, required this.isEditing});
+  const AbilityCardEdit(
+    this.abbr,
+    this.score,
+    this.key_, {
+    super.key,
+    required this.notifier,
+    required this.isEditing,
+  });
 
   final String abbr;
   final int score;
@@ -290,7 +301,8 @@ class AbilityCardEdit extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-            color: isEditing ? scheme.primary : scheme.outlineVariant),
+          color: isEditing ? scheme.primary : scheme.outlineVariant,
+        ),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
@@ -302,24 +314,23 @@ class AbilityCardEdit extends StatelessWidget {
               child: IconButton(
                 icon: const Icon(Icons.add, size: 14),
                 padding: EdgeInsets.zero,
-                onPressed:
-                    score < 30 ? () => notifier.updateAbilityScore(key_, score + 1) : null,
+                onPressed: score < 30
+                    ? () => notifier.updateAbilityScore(key_, score + 1)
+                    : null,
               ),
             ),
           Text(
             _abilityModText(score),
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge
-                ?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
           ),
           Text('$score', style: Theme.of(context).textTheme.bodySmall),
           Text(
             abbr,
-            style: Theme.of(context)
-                .textTheme
-                .labelSmall
-                ?.copyWith(color: scheme.primary),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: scheme.primary),
           ),
           if (isEditing)
             SizedBox(
@@ -327,8 +338,9 @@ class AbilityCardEdit extends StatelessWidget {
               child: IconButton(
                 icon: const Icon(Icons.remove, size: 14),
                 padding: EdgeInsets.zero,
-                onPressed:
-                    score > 1 ? () => notifier.updateAbilityScore(key_, score - 1) : null,
+                onPressed: score > 1
+                    ? () => notifier.updateAbilityScore(key_, score - 1)
+                    : null,
               ),
             ),
         ],

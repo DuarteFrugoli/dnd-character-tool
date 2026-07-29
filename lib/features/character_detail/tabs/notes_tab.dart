@@ -13,6 +13,10 @@ const _noteTagPalette = <int>[
   0xFF607D8B,
 ];
 
+const _noteEditorInitialSize = 0.78;
+const _noteEditorMinSize = 0.4;
+const _noteEditorMaxSize = 0.95;
+
 String _normalizeNoteTagLabel(String label) => label.trim().toLowerCase();
 
 List<CharacterNoteTag> _defaultNoteTags(AppLocalizations l10n) => [
@@ -32,6 +36,8 @@ Color _noteTagForeground(Color color) =>
 enum _NoteViewAction { edit, togglePinned }
 
 enum _NoteCardAction { edit, togglePinned, delete }
+
+enum _NoteCloseAction { keepEditing, discard, save }
 
 class _NotesTab extends ConsumerStatefulWidget {
   const _NotesTab({required this.notes, required this.characterId});
@@ -88,8 +94,10 @@ class _NotesTabState extends ConsumerState<_NotesTab>
       characterDetailProvider(widget.characterId).notifier,
     );
 
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
+      enableDrag: false,
+      isDismissible: false,
       isScrollControlled: true,
       useSafeArea: true,
       builder: (ctx) => _NoteEditorSheet(
@@ -165,35 +173,36 @@ class _NotesTabState extends ConsumerState<_NotesTab>
     String? selectedTagKey,
   ) {
     final query = _searchCtrl.text.trim().toLowerCase();
-    return _notesInDisplayOrder(notes.where((note) {
-      final matchesQuery =
-          query.isEmpty ||
-          note.title.toLowerCase().contains(query) ||
-          note.content.toLowerCase().contains(query) ||
-          note.tags.any((tag) => tag.label.toLowerCase().contains(query));
-      final matchesTag =
-          selectedTagKey == null ||
-          note.tags.any(
-            (tag) => _normalizeNoteTagLabel(tag.label) == selectedTagKey,
-          );
-      return matchesQuery && matchesTag;
-    }));
+    return _notesInDisplayOrder(
+      notes.where((note) {
+        final matchesQuery =
+            query.isEmpty ||
+            note.title.toLowerCase().contains(query) ||
+            note.content.toLowerCase().contains(query) ||
+            note.tags.any((tag) => tag.label.toLowerCase().contains(query));
+        final matchesTag =
+            selectedTagKey == null ||
+            note.tags.any(
+              (tag) => _normalizeNoteTagLabel(tag.label) == selectedTagKey,
+            );
+        return matchesQuery && matchesTag;
+      }),
+    );
   }
 
   List<CharacterNote> _notesInDisplayOrder(Iterable<CharacterNote> notes) {
-    final indexed = notes
-        .mapIndexed((index, note) => MapEntry(index, note))
-        .toList()
-      ..sort((a, b) {
-        final noteA = a.value;
-        final noteB = b.value;
-        if (noteA.isPinned != noteB.isPinned) {
-          return noteA.isPinned ? -1 : 1;
-        }
-        final byOrder = noteA.sortOrder.compareTo(noteB.sortOrder);
-        if (byOrder != 0) return byOrder;
-        return a.key.compareTo(b.key);
-      });
+    final indexed =
+        notes.mapIndexed((index, note) => MapEntry(index, note)).toList()
+          ..sort((a, b) {
+            final noteA = a.value;
+            final noteB = b.value;
+            if (noteA.isPinned != noteB.isPinned) {
+              return noteA.isPinned ? -1 : 1;
+            }
+            final byOrder = noteA.sortOrder.compareTo(noteB.sortOrder);
+            if (byOrder != 0) return byOrder;
+            return a.key.compareTo(b.key);
+          });
     return indexed.map((entry) => entry.value).toList();
   }
 
@@ -323,12 +332,7 @@ class _NotesTabState extends ConsumerState<_NotesTab>
               ),
             ),
           SliverPadding(
-            padding: EdgeInsets.fromLTRB(
-              16,
-              pinned.isEmpty ? 12 : 0,
-              16,
-              0,
-            ),
+            padding: EdgeInsets.fromLTRB(16, pinned.isEmpty ? 12 : 0, 16, 0),
             sliver: noteGroup(unpinned, pinned: false),
           ),
         ],
@@ -556,9 +560,7 @@ class _NoteColorDot extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         shape: BoxShape.circle,
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outlineVariant,
-        ),
+        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
       ),
     );
   }
@@ -804,7 +806,11 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
   late final TextEditingController _titleCtrl;
   late final TextEditingController _contentCtrl;
   late final TextEditingController _tagCtrl;
+  late final DraggableScrollableController _sheetCtrl;
   late List<CharacterNoteTag> _tags;
+  bool _allowClose = false;
+  bool _isSaving = false;
+  bool _isClosePromptOpen = false;
   int _selectedTagColorValue = _noteTagPalette.first;
 
   @override
@@ -813,6 +819,7 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
     _titleCtrl = TextEditingController(text: widget.existing?.title ?? '');
     _contentCtrl = TextEditingController(text: widget.existing?.content ?? '');
     _tagCtrl = TextEditingController();
+    _sheetCtrl = DraggableScrollableController();
     _tags = [...?widget.existing?.tags];
     if (_tags.isNotEmpty) {
       _selectedTagColorValue = _tags.last.colorValue;
@@ -824,6 +831,7 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
     _titleCtrl.dispose();
     _contentCtrl.dispose();
     _tagCtrl.dispose();
+    _sheetCtrl.dispose();
     super.dispose();
   }
 
@@ -847,7 +855,9 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
     setState(() {
       _tags = exists
           ? _tags
-                .where((selected) => _normalizeNoteTagLabel(selected.label) != key)
+                .where(
+                  (selected) => _normalizeNoteTagLabel(selected.label) != key,
+                )
                 .toList()
           : [..._tags, tag];
     });
@@ -876,29 +886,160 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
     });
   }
 
-  void _save() {
+  bool _tagsEqual(List<CharacterNoteTag> a, List<CharacterNoteTag> b) {
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i].label != b[i].label || a[i].colorValue != b[i].colorValue) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  String _effectiveTitle(AppLocalizations l10n) {
     final title = _titleCtrl.text.trim();
-    final content = _contentCtrl.text.trim();
-    final l10n = AppLocalizations.of(context)!;
-    if (title.isEmpty && content.isEmpty) {
+    if (title.isNotEmpty) return title;
+    if (_contentCtrl.text.trim().isEmpty && _tags.isEmpty) return '';
+    return l10n.notesUntitled;
+  }
+
+  String _initialTitle(AppLocalizations l10n) {
+    final existing = widget.existing;
+    if (existing == null) return '';
+    final title = existing.title.trim();
+    if (title.isNotEmpty) return title;
+    if (existing.content.trim().isEmpty && existing.tags.isEmpty) return '';
+    return l10n.notesUntitled;
+  }
+
+  bool _hasUnsavedChanges(AppLocalizations l10n) {
+    final existing = widget.existing;
+    return _effectiveTitle(l10n) != _initialTitle(l10n) ||
+        _contentCtrl.text.trim() != (existing?.content.trim() ?? '') ||
+        !_tagsEqual(_tags, existing?.tags ?? const <CharacterNoteTag>[]);
+  }
+
+  void _closeSheet() {
+    if (_allowClose) {
       Navigator.pop(context);
       return;
     }
-    final effectiveTitle = title.isEmpty ? l10n.notesUntitled : title;
-    if (widget.existing == null) {
-      widget.notifier.addNote(
-        CharacterNote(title: effectiveTitle, content: content, tags: _tags),
-      );
-    } else {
-      widget.notifier.updateNote(
-        widget.existing!.copyWith(
-          title: effectiveTitle,
-          content: content,
-          tags: _tags,
-        ),
-      );
+    setState(() => _allowClose = true);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) Navigator.pop(context);
+    });
+  }
+
+  Future<void> _restoreSheetExtent() async {
+    if (!_sheetCtrl.isAttached) return;
+    await _sheetCtrl.animateTo(
+      _noteEditorInitialSize,
+      duration: const Duration(milliseconds: 180),
+      curve: Curves.easeOutCubic,
+    );
+  }
+
+  bool _handleSheetDragNotification(DraggableScrollableNotification event) {
+    if (!_allowClose &&
+        !_isSaving &&
+        !_isClosePromptOpen &&
+        event.extent <= _noteEditorMinSize + 0.01) {
+      _requestClose();
     }
-    Navigator.pop(context);
+    return false;
+  }
+
+  Future<void> _requestClose() async {
+    if (_isSaving || _isClosePromptOpen) return;
+    FocusScope.of(context).unfocus();
+
+    final l10n = AppLocalizations.of(context)!;
+    if (!_hasUnsavedChanges(l10n)) {
+      _closeSheet();
+      return;
+    }
+
+    _isClosePromptOpen = true;
+    final action = await showDialog<_NoteCloseAction>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.detailCancelEditTitle),
+        content: Text(l10n.detailCancelEditContent),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, _NoteCloseAction.keepEditing),
+            child: Text(l10n.dialogKeepEditing),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, _NoteCloseAction.discard),
+            style: TextButton.styleFrom(
+              foregroundColor: Theme.of(context).colorScheme.error,
+            ),
+            child: Text(l10n.dialogDiscard),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, _NoteCloseAction.save),
+            child: Text(l10n.dialogSave),
+          ),
+        ],
+      ),
+    );
+    if (!mounted) {
+      _isClosePromptOpen = false;
+      return;
+    }
+    switch (action) {
+      case _NoteCloseAction.discard:
+        _isClosePromptOpen = false;
+        _closeSheet();
+        return;
+      case _NoteCloseAction.save:
+        _isClosePromptOpen = false;
+        await _save();
+        return;
+      case _NoteCloseAction.keepEditing:
+      case null:
+        await _restoreSheetExtent();
+        if (mounted) _isClosePromptOpen = false;
+        return;
+    }
+  }
+
+  Future<void> _save() async {
+    if (_isSaving) return;
+    final title = _titleCtrl.text.trim();
+    final content = _contentCtrl.text.trim();
+    final l10n = AppLocalizations.of(context)!;
+    if (widget.existing == null &&
+        title.isEmpty &&
+        content.isEmpty &&
+        _tags.isEmpty) {
+      _closeSheet();
+      return;
+    }
+    final effectiveTitle = title.isEmpty ? l10n.notesUntitled : title;
+    setState(() => _isSaving = true);
+    try {
+      if (widget.existing == null) {
+        await widget.notifier.addNote(
+          CharacterNote(title: effectiveTitle, content: content, tags: _tags),
+        );
+      } else {
+        await widget.notifier.updateNote(
+          widget.existing!.copyWith(
+            title: effectiveTitle,
+            content: content,
+            tags: _tags,
+          ),
+        );
+      }
+      if (!mounted) return;
+      _closeSheet();
+    } finally {
+      if (mounted && !_allowClose) {
+        setState(() => _isSaving = false);
+      }
+    }
   }
 
   @override
@@ -911,189 +1052,202 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
       tagShortcuts.putIfAbsent(_normalizeNoteTagLabel(label), () => tag);
     }
 
-    return Padding(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-      ),
-      child: DraggableScrollableSheet(
-        initialChildSize: 0.78,
-        minChildSize: 0.4,
-        maxChildSize: 0.95,
-        expand: false,
-        builder: (_, scrollCtrl) => Column(
-          children: [
-            Center(
-              child: Container(
-                margin: const EdgeInsets.only(top: 12, bottom: 8),
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurfaceVariant.withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(2),
+    return PopScope(
+      canPop: _allowClose,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _requestClose();
+      },
+      child: Padding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        child: NotificationListener<DraggableScrollableNotification>(
+          onNotification: _handleSheetDragNotification,
+          child: DraggableScrollableSheet(
+            controller: _sheetCtrl,
+            initialChildSize: _noteEditorInitialSize,
+            minChildSize: _noteEditorMinSize,
+            maxChildSize: _noteEditorMaxSize,
+            shouldCloseOnMinExtent: false,
+            expand: false,
+            builder: (_, scrollCtrl) => Column(
+              children: [
+                Center(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 12, bottom: 8),
+                    width: 40,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.onSurfaceVariant.withValues(alpha: 0.4),
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-              child: Row(
-                children: [
-                  Text(
-                    widget.existing == null
-                        ? AppLocalizations.of(context)!.notesTooltipAdd
-                        : AppLocalizations.of(context)!.notesTooltipEdit,
-                    style: Theme.of(context).textTheme.titleMedium,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 4,
                   ),
-                  const Spacer(),
-                  IconButton(
-                    icon: const Icon(Icons.close),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: ListView(
-                controller: scrollCtrl,
-                padding: EdgeInsets.fromLTRB(
-                  16,
-                  0,
-                  16,
-                  32 + MediaQuery.of(context).viewPadding.bottom,
-                ),
-                children: [
-                  TextField(
-                    controller: _titleCtrl,
-                    autofocus: widget.existing == null,
-                    textCapitalization: TextCapitalization.sentences,
-                    decoration: InputDecoration(
-                      labelText: l10n.notesLabelTitle,
-                      border: const OutlineInputBorder(),
-                    ),
-                    onSubmitted: (_) => FocusScope.of(context).nextFocus(),
-                  ),
-                  const SizedBox(height: 12),
-                  TextField(
-                    controller: _contentCtrl,
-                    autofocus: false,
-                    maxLines: 10,
-                    minLines: 4,
-                    textCapitalization: TextCapitalization.sentences,
-                    decoration: InputDecoration(
-                      labelText: l10n.notesLabelContent,
-                      alignLabelWithHint: true,
-                      border: const OutlineInputBorder(),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    l10n.notesTags,
-                    style: Theme.of(context).textTheme.labelLarge,
-                  ),
-                  const SizedBox(height: 8),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: tagShortcuts.values.map((tag) {
-                      final key = _normalizeNoteTagLabel(tag.label);
-                      final selected = _tags.any(
-                        (current) =>
-                            _normalizeNoteTagLabel(current.label) == key,
-                      );
-                      return FilterChip(
-                        avatar: _NoteColorDot(
-                          color: _noteTagColor(tag),
-                          size: 12,
-                        ),
-                        label: Text(tag.label),
-                        selected: selected,
-                        onSelected: (_) => _toggleDefaultTag(tag),
-                      );
-                    }).toList(),
-                  ),
-                  if (_tags.isNotEmpty) ...[
-                    const SizedBox(height: 12),
-                    _EditableNoteTagsWrap(
-                      tags: _tags,
-                      onPressed: _chooseColorForTag,
-                      onDeleted: (tag) {
-                        final key = _normalizeNoteTagLabel(tag.label);
-                        setState(() {
-                          _tags = _tags
-                              .where(
-                                (current) =>
-                                    _normalizeNoteTagLabel(current.label) !=
-                                    key,
-                              )
-                              .toList();
-                        });
-                      },
-                    ),
-                  ],
-                  const SizedBox(height: 16),
-                  Text(
-                    l10n.notesTagColor,
-                    style: Theme.of(context).textTheme.labelMedium,
-                  ),
-                  const SizedBox(height: 8),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: _noteTagPalette
-                        .map(
-                          (colorValue) => _NoteColorChoice(
-                            colorValue: colorValue,
-                            selected: colorValue == _selectedTagColorValue,
-                            onTap: () => setState(
-                              () => _selectedTagColorValue = colorValue,
-                            ),
-                          ),
-                        )
-                        .toList(),
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
+                  child: Row(
                     children: [
-                      Expanded(
-                        child: TextField(
-                          controller: _tagCtrl,
-                          textCapitalization: TextCapitalization.words,
-                          decoration: InputDecoration(
-                            labelText: l10n.notesCustomTag,
-                            border: const OutlineInputBorder(),
-                            isDense: true,
-                          ),
-                          onSubmitted: (_) => _addCustomTag(),
-                        ),
+                      Text(
+                        widget.existing == null
+                            ? AppLocalizations.of(context)!.notesTooltipAdd
+                            : AppLocalizations.of(context)!.notesTooltipEdit,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
-                      const SizedBox(width: 8),
-                      IconButton.filled(
-                        tooltip: l10n.notesAddTag,
-                        onPressed: _addCustomTag,
-                        icon: const Icon(Icons.add),
+                      const Spacer(),
+                      IconButton(
+                        icon: const Icon(Icons.close),
+                        onPressed: _requestClose,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16),
-                  FilledButton(
-                    onPressed: _save,
-                    child: Text(
-                      widget.existing == null
-                          ? AppLocalizations.of(context)!.dialogAdd
-                          : AppLocalizations.of(context)!.dialogConfirm,
+                ),
+                Expanded(
+                  child: ListView(
+                    controller: scrollCtrl,
+                    padding: EdgeInsets.fromLTRB(
+                      16,
+                      0,
+                      16,
+                      32 + MediaQuery.of(context).viewPadding.bottom,
                     ),
+                    children: [
+                      TextField(
+                        controller: _titleCtrl,
+                        autofocus: widget.existing == null,
+                        textCapitalization: TextCapitalization.sentences,
+                        decoration: InputDecoration(
+                          labelText: l10n.notesLabelTitle,
+                          border: const OutlineInputBorder(),
+                        ),
+                        onSubmitted: (_) => FocusScope.of(context).nextFocus(),
+                      ),
+                      const SizedBox(height: 12),
+                      TextField(
+                        controller: _contentCtrl,
+                        autofocus: false,
+                        maxLines: 10,
+                        minLines: 4,
+                        textCapitalization: TextCapitalization.sentences,
+                        decoration: InputDecoration(
+                          labelText: l10n.notesLabelContent,
+                          alignLabelWithHint: true,
+                          border: const OutlineInputBorder(),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        l10n.notesTags,
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        children: tagShortcuts.values.map((tag) {
+                          final key = _normalizeNoteTagLabel(tag.label);
+                          final selected = _tags.any(
+                            (current) =>
+                                _normalizeNoteTagLabel(current.label) == key,
+                          );
+                          return FilterChip(
+                            avatar: _NoteColorDot(
+                              color: _noteTagColor(tag),
+                              size: 12,
+                            ),
+                            label: Text(tag.label),
+                            selected: selected,
+                            onSelected: (_) => _toggleDefaultTag(tag),
+                          );
+                        }).toList(),
+                      ),
+                      if (_tags.isNotEmpty) ...[
+                        const SizedBox(height: 12),
+                        _EditableNoteTagsWrap(
+                          tags: _tags,
+                          onPressed: _chooseColorForTag,
+                          onDeleted: (tag) {
+                            final key = _normalizeNoteTagLabel(tag.label);
+                            setState(() {
+                              _tags = _tags
+                                  .where(
+                                    (current) =>
+                                        _normalizeNoteTagLabel(current.label) !=
+                                        key,
+                                  )
+                                  .toList();
+                            });
+                          },
+                        ),
+                      ],
+                      const SizedBox(height: 16),
+                      Text(
+                        l10n.notesTagColor,
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        children: _noteTagPalette
+                            .map(
+                              (colorValue) => _NoteColorChoice(
+                                colorValue: colorValue,
+                                selected: colorValue == _selectedTagColorValue,
+                                onTap: () => setState(
+                                  () => _selectedTagColorValue = colorValue,
+                                ),
+                              ),
+                            )
+                            .toList(),
+                      ),
+                      const SizedBox(height: 12),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              controller: _tagCtrl,
+                              textCapitalization: TextCapitalization.words,
+                              decoration: InputDecoration(
+                                labelText: l10n.notesCustomTag,
+                                border: const OutlineInputBorder(),
+                                isDense: true,
+                              ),
+                              onSubmitted: (_) => _addCustomTag(),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          IconButton.filled(
+                            tooltip: l10n.notesAddTag,
+                            onPressed: _addCustomTag,
+                            icon: const Icon(Icons.add),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      FilledButton(
+                        onPressed: _isSaving ? null : _save,
+                        child: Text(
+                          widget.existing == null
+                              ? AppLocalizations.of(context)!.dialogAdd
+                              : AppLocalizations.of(context)!.dialogConfirm,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
-
 // ── Note View Sheet ───────────────────────────────────────────────────────────
 
 class _NoteViewSheet extends StatelessWidget {

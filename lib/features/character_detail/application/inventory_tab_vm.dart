@@ -7,13 +7,13 @@ import 'vm_reference_utils.dart';
 
 final inventoryTabVmProvider =
     Provider.family<AsyncValue<InventoryTabVm>, String>((ref, characterId) {
-  final slice = ref.watch(
-    characterDetailProvider(characterId).select(
-      (state) => state.whenData(_InventoryTabSlice.fromCharacter),
-    ),
-  );
-  return slice.whenData(InventoryTabVm._fromSlice);
-});
+      final slice = ref.watch(
+        characterDetailProvider(
+          characterId,
+        ).select((state) => state.whenData(_InventoryTabSlice.fromCharacter)),
+      );
+      return slice.whenData(InventoryTabVm._fromSlice);
+    });
 
 class _InventoryTabSlice {
   const _InventoryTabSlice({
@@ -44,12 +44,12 @@ class _InventoryTabSlice {
 
   @override
   int get hashCode => Object.hash(
-        referenceHash(character.equipment),
-        referenceHash(character.currency),
-        strengthScore,
-        character.armorClass,
-        character.weightTrackingEnabled,
-      );
+    referenceHash(character.equipment),
+    referenceHash(character.currency),
+    strengthScore,
+    character.armorClass,
+    character.weightTrackingEnabled,
+  );
 }
 
 class InventoryTabVm {

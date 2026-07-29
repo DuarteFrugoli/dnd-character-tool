@@ -1,5 +1,6 @@
+import 'package:dnd_character_tool/data/character_spellcasting_summary.dart';
 import 'package:dnd_character_tool/data/spellcasting_engine.dart';
-import 'package:dnd_character_tool/data/models/ability_scores.dart';
+import 'package:dnd_character_tool/data/models/models.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -190,6 +191,68 @@ void main() {
   });
 
   // ── Eldritch Knight (Fighter 1/3-caster) ─────────────────────────────────
+  group('slot state helpers', () {
+    test('syncs initial slots for a level 1 wizard', () {
+      final slots = SpellcastingEngine.syncedSlotsFor(
+        current: const SpellSlots(),
+        className: 'Wizard',
+        classLevel: 1,
+        abilityScores: _int18,
+        proficiencyBonus: 2,
+      );
+
+      expect(slots.total, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
+      expect(slots.used, [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    });
+
+    test('clamps used slots while syncing totals', () {
+      final slots = SpellcastingEngine.syncedSlotsFor(
+        current: const SpellSlots(
+          total: [9, 9, 9, 9, 9, 9, 9, 9, 9],
+          used: [9, 9, 9, 9, 9, 9, 9, 9, 9],
+        ),
+        className: 'Wizard',
+        classLevel: 1,
+        abilityScores: _int18,
+        proficiencyBonus: 2,
+      );
+
+      expect(slots.total, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
+      expect(slots.used, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
+    });
+
+    test('restores Warlock Pact Magic slots on a short rest', () {
+      final slots = SpellcastingEngine.slotsAfterShortRest(
+        current: const SpellSlots(
+          total: [0, 2, 0, 0, 0, 0, 0, 0, 0],
+          used: [0, 1, 0, 0, 0, 0, 0, 0, 0],
+        ),
+        className: 'Warlock',
+        classLevel: 3,
+        abilityScores: _cha14,
+        proficiencyBonus: 2,
+      );
+
+      expect(slots.total, [0, 2, 0, 0, 0, 0, 0, 0, 0]);
+      expect(slots.used, [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    });
+
+    test('does not restore regular spell slots on a short rest', () {
+      final slots = SpellcastingEngine.slotsAfterShortRest(
+        current: const SpellSlots(
+          total: [2, 0, 0, 0, 0, 0, 0, 0, 0],
+          used: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+        ),
+        className: 'Wizard',
+        classLevel: 1,
+        abilityScores: _int18,
+        proficiencyBonus: 2,
+      );
+
+      expect(slots.used, [1, 0, 0, 0, 0, 0, 0, 0, 0]);
+    });
+  });
+
   group('Eldritch Knight (Fighter subclass)', () {
     test('level 7: has 4+2 slots (1st+2nd)', () {
       final engine = SpellcastingEngine.forClass(
@@ -340,6 +403,56 @@ void main() {
       )!;
       expect(engine.spellAttack, 0);
       expect(engine.spellAttackFormatted, '+0');
+    });
+  });
+
+  group('CharacterSpellcastingSummary', () {
+    test('keeps standard slots and pact magic slots separate', () {
+      final now = DateTime(2024);
+      final character = Character(
+        id: 'caster',
+        name: 'Caster',
+        race: 'Human',
+        characterClass: 'Wizard',
+        level: 5,
+        classes: const [
+          CharacterClassEntry(
+            id: 'wizard',
+            className: 'Wizard',
+            level: 3,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(id: 'warlock', className: 'Warlock', level: 2),
+        ],
+        abilityScores: const AbilityScores(intelligence: 16, charisma: 14),
+        hitPoints: const HitPoints(maximum: 30, current: 30),
+        spellSlots: const SpellSlots(total: [4, 2, 0, 0, 0, 0, 0, 0, 0]),
+        spells: const [
+          KnownSpell(
+            name: 'Magic Missile',
+            level: 1,
+            sourceType: 'class',
+            sourceClass: 'Wizard',
+            sourceClassEntryId: 'wizard',
+          ),
+          KnownSpell(
+            name: 'Hex',
+            level: 1,
+            sourceType: 'class',
+            sourceClass: 'Warlock',
+            sourceClassEntryId: 'warlock',
+          ),
+        ],
+        createdAt: now,
+        updatedAt: now,
+      );
+
+      final summary = CharacterSpellcastingSummary.fromCharacter(character);
+
+      expect(summary.origins, hasLength(2));
+      expect(summary.standardSlots.total, [4, 2, 0, 0, 0, 0, 0, 0, 0]);
+      expect(summary.pactMagicSlots.total, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
+      expect(summary.unassignedSpells, isEmpty);
     });
   });
 }

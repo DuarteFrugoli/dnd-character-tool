@@ -16,11 +16,7 @@ int? _ammunitionPackQuantity(String name, ItemType itemType) {
   return int.tryParse(match.group(1)!);
 }
 
-double _inventoryUnitWeight(
-  String name,
-  ItemType itemType,
-  double packWeight,
-) {
+double _inventoryUnitWeight(String name, ItemType itemType, double packWeight) {
   final packQuantity = _ammunitionPackQuantity(name, itemType);
   if (packQuantity == null || packQuantity <= 1 || packWeight <= 0) {
     return packWeight;
@@ -240,12 +236,12 @@ class _InventoryTabState extends ConsumerState<_InventoryTab>
                 characterId: widget.characterId,
                 itemBuilder: (context, item, reorderIndex) =>
                     _AmmunitionItemTile(
-                  item: item,
-                  containers: inventory.containers,
-                  i18n: i18n,
-                  characterId: widget.characterId,
-                  reorderIndex: reorderIndex,
-                ),
+                      item: item,
+                      containers: inventory.containers,
+                      i18n: i18n,
+                      characterId: widget.characterId,
+                      reorderIndex: reorderIndex,
+                    ),
               ),
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 12)),
@@ -645,7 +641,8 @@ class _InventorySliverReorderableItemList extends ConsumerWidget {
     BuildContext context,
     EquipmentItem item,
     int? reorderIndex,
-  ) itemBuilder;
+  )
+  itemBuilder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -693,10 +690,7 @@ class _InventorySliverReorderableItemList extends ConsumerWidget {
 }
 
 class _InventorySliverSectionHeader extends StatelessWidget {
-  const _InventorySliverSectionHeader({
-    required this.title,
-    this.subtitle,
-  });
+  const _InventorySliverSectionHeader({required this.title, this.subtitle});
 
   final String title;
   final Widget? subtitle;
@@ -715,10 +709,7 @@ class _InventorySliverSectionHeader extends StatelessWidget {
               context,
             ).textTheme.labelLarge?.copyWith(color: scheme.primary),
           ),
-          if (subtitle != null) ...[
-            const SizedBox(height: 6),
-            subtitle!,
-          ],
+          if (subtitle != null) ...[const SizedBox(height: 6), subtitle!],
         ],
       ),
     );
@@ -791,9 +782,9 @@ class _AmmunitionItemTile extends ConsumerWidget {
               child: Text(
                 '${item.quantity}',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             IconButton(
@@ -953,12 +944,7 @@ class _ContainersSection extends ConsumerWidget {
               style: const TextStyle(fontWeight: FontWeight.w600),
             ),
             subtitle: Text(
-              _containerSubtitleText(
-                context,
-                container,
-                contents,
-                unitSystem,
-              ),
+              _containerSubtitleText(context, container, contents, unitSystem),
               style: TextStyle(
                 color: overCapacity
                     ? scheme.onErrorContainer
@@ -1037,10 +1023,8 @@ class _ContainersSection extends ConsumerWidget {
                         inventoryItemsTotalQuantity(contents),
                       ),
                     ),
-                    onPressed: () => _showContainerContentsSheet(
-                      context,
-                      container.id,
-                    ),
+                    onPressed: () =>
+                        _showContainerContentsSheet(context, container.id),
                   ),
                 ],
               ),

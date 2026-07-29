@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 // ── Minimal fake storage backend ──────────────────────────────────────────────
 
-class _InMemoryBackend implements StorageBackend {
+class _InMemoryBackend extends StorageBackend {
   final Map<String, Map<String, dynamic>> _chars = {};
 
   @override

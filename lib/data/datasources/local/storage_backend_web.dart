@@ -3,43 +3,99 @@ import 'dart:js_interop';
 
 import '../../../core/platform/app_indexed_db_web.dart';
 import '../../../core/platform/web_image_store.dart';
-import 'storage_backend_stub.dart' show StorageBackend;
-export 'storage_backend_stub.dart' show StorageBackend;
+import 'storage_backend_stub.dart'
+    show
+        StorageBackend,
+        StorageCharacterScan,
+        StorageReadException,
+        StorageReadIssue,
+        StoredCharacterJson;
+export 'storage_backend_stub.dart'
+    show
+        StorageBackend,
+        StorageCharacterScan,
+        StorageReadException,
+        StorageReadIssue,
+        StoredCharacterJson;
 
 StorageBackend createStorageBackend() => WebStorageBackend();
 
-/// Backend de storage para a web usando IndexedDB.
+/// Web storage backend backed by IndexedDB.
 ///
-/// Personagens ficam no object store `characters` como JSON string indexado
-/// pelo ID. Fotos ficam no object store `images`, e o personagem guarda apenas
-/// uma referencia `indexeddb:image:<id>`.
+/// Characters live in the `characters` object store as JSON strings keyed by
+/// ID. Photos live in the `images` object store, and characters keep only an
+/// `indexeddb:image:<id>` reference.
 class WebStorageBackend implements StorageBackend {
-  // ---- Personagens ----
+  // ---- Characters ----
 
   @override
-  Future<List<Map<String, dynamic>>> loadAllCharacters() {
+  Future<List<Map<String, dynamic>>> loadAllCharacters() async {
+    final scan = await scanCharacters();
+    return [for (final record in scan.records) record.json];
+  }
+
+  @override
+  Future<StorageCharacterScan> scanCharacters() {
     return withIndexedDbStore(appIndexedDbCharactersStore, 'readonly', (
       store,
     ) async {
       final values = await requestToFuture(store.getAll());
+      final keys = await requestToFuture(store.getAllKeys());
       final decodedValues = values?.dartify();
-      if (decodedValues is! List) return <Map<String, dynamic>>[];
+      final decodedKeys = keys?.dartify();
+      if (decodedValues is! List) return const StorageCharacterScan();
 
-      final characters = <Map<String, dynamic>>[];
-      for (final value in decodedValues) {
-        if (value is! String) continue;
+      final keyList = decodedKeys is List ? decodedKeys : const [];
+      final records = <StoredCharacterJson>[];
+      final issues = <StorageReadIssue>[];
+      for (var i = 0; i < decodedValues.length; i++) {
+        final key = i < keyList.length ? keyList[i] : null;
+        final id = key is String && key.isNotEmpty ? key : null;
+        final source = id ?? 'indexeddb:characters[$i]';
+        final value = decodedValues[i];
+        if (value is! String) {
+          issues.add(
+            StorageReadIssue(source: source, id: id, message: 'invalid_record'),
+          );
+          continue;
+        }
         try {
-          characters.add(jsonDecode(value) as Map<String, dynamic>);
+          final decoded = jsonDecode(value);
+          if (decoded is Map<String, dynamic>) {
+            final rawId = decoded['id'];
+            records.add(
+              StoredCharacterJson(
+                source: source,
+                id: rawId is String && rawId.isNotEmpty ? rawId : id,
+                json: decoded,
+              ),
+            );
+          } else {
+            issues.add(
+              StorageReadIssue(source: source, id: id, message: 'not_object'),
+            );
+          }
         } catch (_) {
-          // Entrada corrompida: ignora para nao quebrar a lista inteira.
+          issues.add(
+            StorageReadIssue(source: source, id: id, message: 'invalid_json'),
+          );
         }
       }
-      return characters;
+      return StorageCharacterScan(records: records, issues: issues);
     });
   }
 
   @override
-  Future<Map<String, dynamic>?> loadCharacter(String id) {
+  Future<Map<String, dynamic>?> loadCharacter(String id) async {
+    try {
+      return (await loadCharacterRecord(id))?.json;
+    } on StorageReadException {
+      return null;
+    }
+  }
+
+  @override
+  Future<StoredCharacterJson?> loadCharacterRecord(String id) {
     return withIndexedDbStore(appIndexedDbCharactersStore, 'readonly', (
       store,
     ) async {
@@ -47,9 +103,24 @@ class WebStorageBackend implements StorageBackend {
       final jsonString = value?.dartify();
       if (jsonString is! String) return null;
       try {
-        return jsonDecode(jsonString) as Map<String, dynamic>;
+        final decoded = jsonDecode(jsonString);
+        if (decoded is Map<String, dynamic>) {
+          final rawId = decoded['id'];
+          return StoredCharacterJson(
+            source: id,
+            id: rawId is String && rawId.isNotEmpty ? rawId : id,
+            json: decoded,
+          );
+        }
+        throw StorageReadException(
+          StorageReadIssue(source: id, id: id, message: 'not_object'),
+        );
+      } on StorageReadException {
+        rethrow;
       } catch (_) {
-        return null;
+        throw StorageReadException(
+          StorageReadIssue(source: id, id: id, message: 'invalid_json'),
+        );
       }
     });
   }
@@ -82,7 +153,7 @@ class WebStorageBackend implements StorageBackend {
     });
   }
 
-  // ---- Imagens ----
+  // ---- Images ----
 
   @override
   Future<String?> saveImage(String characterId, String sourcePath) {

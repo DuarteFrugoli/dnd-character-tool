@@ -1,7 +1,34 @@
 import 'datasources/srd/srd_models.dart';
+import 'feature_choice_engine.dart';
 import 'models/models.dart';
 
 enum FeatureUsageRest { shortRest, longRest }
+
+class FeatureUsageContext {
+  const FeatureUsageContext({
+    required this.totalCharacterLevel,
+    this.sourceClass,
+    this.sourceClassLevel,
+  });
+
+  final int totalCharacterLevel;
+  final String? sourceClass;
+  final int? sourceClassLevel;
+
+  factory FeatureUsageContext.forCharacter(
+    Character character, {
+    String? sourceClass,
+    int? sourceClassLevel,
+  }) {
+    return FeatureUsageContext(
+      totalCharacterLevel: character.level,
+      sourceClass: sourceClass,
+      sourceClassLevel: sourceClassLevel ?? character.level,
+    );
+  }
+
+  int get effectiveClassLevel => sourceClassLevel ?? totalCharacterLevel;
+}
 
 class FeatureUsageResource {
   const FeatureUsageResource({
@@ -16,10 +43,7 @@ class FeatureUsageResource {
   final String maxFormula;
   final String recharge;
 
-  factory FeatureUsageResource.fromJson(
-    String id,
-    Map<String, dynamic> json,
-  ) {
+  factory FeatureUsageResource.fromJson(String id, Map<String, dynamic> json) {
     return FeatureUsageResource(
       id: id,
       name: json['name'] as String? ?? id,
@@ -30,10 +54,7 @@ class FeatureUsageResource {
 }
 
 class FeatureUsageRef {
-  const FeatureUsageRef({
-    required this.resourceId,
-    this.spend = 1,
-  });
+  const FeatureUsageRef({required this.resourceId, this.spend = 1});
 
   final String resourceId;
   final int spend;
@@ -57,8 +78,7 @@ class FeatureUsageCatalog {
 
   final Map<String, FeatureUsageResource> resources;
   final Map<String, Map<String, FeatureUsageRef>> classFeatures;
-  final Map<String, Map<String, Map<String, FeatureUsageRef>>>
-      subclassFeatures;
+  final Map<String, Map<String, Map<String, FeatureUsageRef>>> subclassFeatures;
   final Map<String, FeatureUsageRef> raceTraits;
   final Map<String, FeatureUsageRef> feats;
 
@@ -112,8 +132,9 @@ class FeatureUsageCatalog {
     for (final entry in value.entries) {
       final raw = entry.value;
       if (raw is Map) {
-        result[entry.key.toString()] =
-            FeatureUsageRef.fromJson(raw.cast<String, dynamic>());
+        result[entry.key.toString()] = FeatureUsageRef.fromJson(
+          raw.cast<String, dynamic>(),
+        );
       }
     }
     return result;
@@ -131,7 +152,7 @@ class FeatureUsageCatalog {
   }
 
   static Map<String, Map<String, Map<String, FeatureUsageRef>>>
-      _parseDefinitionMap3(dynamic value) {
+  _parseDefinitionMap3(dynamic value) {
     final result = <String, Map<String, Map<String, FeatureUsageRef>>>{};
     if (value is! Map) return result;
     for (final entry in value.entries) {
@@ -139,8 +160,9 @@ class FeatureUsageCatalog {
       final rawSubclasses = entry.value;
       if (rawSubclasses is Map) {
         for (final subEntry in rawSubclasses.entries) {
-          nested[subEntry.key.toString()] =
-              _parseDefinitionMap1(subEntry.value);
+          nested[subEntry.key.toString()] = _parseDefinitionMap1(
+            subEntry.value,
+          );
         }
       }
       result[entry.key.toString()] = nested;
@@ -169,6 +191,18 @@ class FeatureUsageView {
   bool get canRecover => max != null && current != null && current! < max!;
 }
 
+class FeatureUsageBinding {
+  const FeatureUsageBinding({
+    required this.resource,
+    required this.ref,
+    required this.usageContext,
+  });
+
+  final FeatureUsageResource resource;
+  final FeatureUsageRef ref;
+  final FeatureUsageContext usageContext;
+}
+
 class FeatureUsageEngine {
   const FeatureUsageEngine._();
 
@@ -176,18 +210,21 @@ class FeatureUsageEngine {
     required FeatureUsageCatalog catalog,
     required Character character,
     required FeatureUsageRef? ref,
+    FeatureUsageContext? usageContext,
   }) {
     if (ref == null || ref.resourceId.isEmpty) return null;
     final resource = catalog.resource(ref.resourceId);
     if (resource == null) return null;
-    final max = maxFor(resource, character);
+    final resolvedContext =
+        usageContext ?? FeatureUsageContext.forCharacter(character);
+    final max = maxFor(resource, character, usageContext: resolvedContext);
     final current = currentFor(character, resource, max);
     return FeatureUsageView(
       resource: resource,
       current: current,
       max: max,
       spend: ref.spend < 1 ? 1 : ref.spend,
-      recharge: rechargeFor(resource, character),
+      recharge: rechargeFor(resource, character, usageContext: resolvedContext),
     );
   }
 
@@ -201,12 +238,17 @@ class FeatureUsageEngine {
     return (saved ?? max).clamp(0, max).toInt();
   }
 
-  static int? maxFor(FeatureUsageResource resource, Character character) {
+  static int? maxFor(
+    FeatureUsageResource resource,
+    Character character, {
+    FeatureUsageContext? usageContext,
+  }) {
     final formula = resource.maxFormula.trim();
     final staticValue = int.tryParse(formula);
     if (staticValue != null) return _atLeast(0, staticValue);
 
-    final level = character.level;
+    final context = usageContext ?? FeatureUsageContext.forCharacter(character);
+    final level = context.effectiveClassLevel;
     final scores = character.abilityScores;
     switch (formula) {
       case 'barbarian_rage_uses':
@@ -261,10 +303,13 @@ class FeatureUsageEngine {
 
   static String rechargeFor(
     FeatureUsageResource resource,
-    Character character,
-  ) {
+    Character character, {
+    FeatureUsageContext? usageContext,
+  }) {
     if (resource.recharge == 'bardic_inspiration_recharge') {
-      return character.level >= 5 ? 'short_rest' : 'long_rest';
+      final context =
+          usageContext ?? FeatureUsageContext.forCharacter(character);
+      return context.effectiveClassLevel >= 5 ? 'short_rest' : 'long_rest';
     }
     return resource.recharge;
   }
@@ -288,9 +333,30 @@ class FeatureUsageEngine {
     required Iterable<SrdClassFeature> subclassFeatures,
     required Iterable<String> raceTraits,
   }) sync* {
+    for (final binding in activeResourceBindings(
+      character: character,
+      catalog: catalog,
+      classFeatures: classFeatures,
+      subclassFeatures: subclassFeatures,
+      raceTraits: raceTraits,
+    )) {
+      yield binding.resource;
+    }
+  }
+
+  static Iterable<FeatureUsageBinding> activeResourceBindings({
+    required Character character,
+    required FeatureUsageCatalog catalog,
+    required Iterable<SrdClassFeature> classFeatures,
+    required Iterable<SrdClassFeature> subclassFeatures,
+    required Iterable<String> raceTraits,
+  }) sync* {
     final seen = <String>{};
 
-    FeatureUsageResource? add(FeatureUsageRef? ref) {
+    FeatureUsageBinding? add(
+      FeatureUsageRef? ref,
+      FeatureUsageContext usageContext,
+    ) {
       if (ref == null ||
           ref.resourceId.isEmpty ||
           seen.contains(ref.resourceId)) {
@@ -299,48 +365,153 @@ class FeatureUsageEngine {
       final resource = catalog.resource(ref.resourceId);
       if (resource == null) return null;
       seen.add(resource.id);
-      return resource;
-    }
-
-    for (final feature in classFeatures) {
-      final resource = add(
-        catalog.classFeature(character.characterClass, feature.name),
+      return FeatureUsageBinding(
+        resource: resource,
+        ref: ref,
+        usageContext: usageContext,
       );
-      if (resource != null) yield resource;
     }
 
-    final subclassName = character.subclass ?? '';
+    final primaryClass = character.primaryClass;
+    final classContext = FeatureUsageContext.forCharacter(
+      character,
+      sourceClass: primaryClass.className,
+      sourceClassLevel: primaryClass.level,
+    );
+    for (final feature in classFeatures) {
+      final binding = add(
+        catalog.classFeature(primaryClass.className, feature.name),
+        classContext,
+      );
+      if (binding != null) yield binding;
+    }
+
+    final subclassName = primaryClass.subclassName ?? '';
+    final subclassContext = FeatureUsageContext.forCharacter(
+      character,
+      sourceClass: primaryClass.className,
+      sourceClassLevel: primaryClass.level,
+    );
     for (final feature in subclassFeatures) {
-      final resource = add(
+      final binding = add(
         catalog.subclassFeature(
-          character.characterClass,
+          primaryClass.className,
           subclassName,
           feature.name,
         ),
+        subclassContext,
       );
-      if (resource != null) yield resource;
+      if (binding != null) yield binding;
     }
 
+    final characterContext = FeatureUsageContext.forCharacter(character);
     for (final trait in raceTraits) {
-      final resource = add(catalog.raceTrait(trait));
-      if (resource != null) yield resource;
+      final binding = add(catalog.raceTrait(trait), characterContext);
+      if (binding != null) yield binding;
     }
 
     for (final feature in character.extraFeatures) {
-      FeatureUsageRef? ref;
-      if (feature.sourceClass == 'Feat') {
-        ref = catalog.feat(feature.name);
-      } else {
-        ref = catalog.classFeature(feature.sourceClass, feature.name) ??
-            catalog.subclassFeature(
-              character.characterClass,
-              feature.sourceClass,
-              feature.name,
-            ) ??
-            catalog.raceTrait(feature.name);
+      final sourceType = feature.effectiveSourceType;
+      final sourceFeature = feature.sourceFeature ?? feature.name;
+
+      if (sourceType == FeatureChoiceSourceType.feat ||
+          feature.sourceClass == 'Feat') {
+        final binding = add(catalog.feat(feature.name), characterContext);
+        if (binding != null) yield binding;
+        continue;
       }
-      final resource = add(ref);
-      if (resource != null) yield resource;
+
+      if (sourceType == FeatureChoiceSourceType.classFeature) {
+        final classRef = catalog.classFeature(
+          feature.sourceClass,
+          sourceFeature,
+        );
+        if (classRef != null) {
+          final binding = add(
+            classRef,
+            FeatureUsageContext.forCharacter(
+              character,
+              sourceClass: feature.sourceClass,
+              sourceClassLevel: _extraFeatureSourceLevel(character, feature),
+            ),
+          );
+          if (binding != null) yield binding;
+          continue;
+        }
+      }
+
+      if (sourceType == FeatureChoiceSourceType.subclassFeature) {
+        final subclassName = feature.sourceSubclass ?? feature.sourceClass;
+        final sourceClass =
+            feature.sourceClass.isEmpty || feature.sourceClass == subclassName
+            ? character.characterClass
+            : feature.sourceClass;
+        final subclassRef = catalog.subclassFeature(
+          sourceClass,
+          subclassName,
+          sourceFeature,
+        );
+        if (subclassRef != null) {
+          final binding = add(
+            subclassRef,
+            FeatureUsageContext.forCharacter(
+              character,
+              sourceClass: sourceClass,
+            ),
+          );
+          if (binding != null) yield binding;
+          continue;
+        }
+      }
+
+      final classRef = catalog.classFeature(feature.sourceClass, feature.name);
+      if (classRef != null) {
+        final binding = add(
+          classRef,
+          FeatureUsageContext.forCharacter(
+            character,
+            sourceClass: feature.sourceClass,
+            sourceClassLevel: _extraFeatureSourceLevel(character, feature),
+          ),
+        );
+        if (binding != null) yield binding;
+        continue;
+      }
+
+      final subclassRef = catalog.subclassFeature(
+        character.characterClass,
+        feature.sourceClass,
+        feature.name,
+      );
+      if (subclassRef != null) {
+        final binding = add(
+          subclassRef,
+          FeatureUsageContext.forCharacter(
+            character,
+            sourceClass: character.characterClass,
+          ),
+        );
+        if (binding != null) yield binding;
+        continue;
+      }
+
+      final binding = add(catalog.raceTrait(feature.name), characterContext);
+      if (binding != null) yield binding;
     }
+  }
+
+  static int _extraFeatureSourceLevel(
+    Character character,
+    CharacterExtraFeature feature,
+  ) {
+    final sourceClassEntryId = feature.sourceClassEntryId;
+    if (sourceClassEntryId != null) {
+      for (final entry in character.classEntries) {
+        if (entry.id == sourceClassEntryId) return entry.level;
+      }
+    }
+    final classLevel = character.classLevel(feature.sourceClass);
+    if (classLevel > 0) return classLevel;
+    return feature.level;
   }
 }

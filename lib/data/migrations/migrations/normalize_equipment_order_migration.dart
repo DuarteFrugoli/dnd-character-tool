@@ -17,8 +17,7 @@ class NormalizeEquipmentOrderMigration extends CharacterMigration {
   String get title => 'Normalize equipment order';
 
   @override
-  String get description =>
-      'Assigns explicit order values to inventory items.';
+  String get description => 'Assigns explicit order values to inventory items.';
 
   @override
   CharacterMigrationResult migrate(
@@ -47,10 +46,7 @@ class NormalizeEquipmentOrderMigration extends CharacterMigration {
     return CharacterMigrationResult(
       character: character.copyWith(equipment: updatedEquipment),
       changes: [
-        CharacterMigrationChange(
-          code: changeCode,
-          count: changedCount,
-        ),
+        CharacterMigrationChange(code: changeCode, count: changedCount),
       ],
     );
   }

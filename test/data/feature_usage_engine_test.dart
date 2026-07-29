@@ -91,6 +91,35 @@ void main() {
       );
     });
 
+    test('class formulas can use source class level', () {
+      final character = _character(cls: 'Fighter', level: 10);
+
+      expect(
+        FeatureUsageEngine.maxFor(
+          _resource('ki', 'monk_level'),
+          character,
+          usageContext: const FeatureUsageContext(
+            totalCharacterLevel: 10,
+            sourceClass: 'Monk',
+            sourceClassLevel: 2,
+          ),
+        ),
+        2,
+      );
+      expect(
+        FeatureUsageEngine.maxFor(
+          _resource('lay_on_hands', 'paladin_level_x5'),
+          character,
+          usageContext: const FeatureUsageContext(
+            totalCharacterLevel: 10,
+            sourceClass: 'Paladin',
+            sourceClassLevel: 3,
+          ),
+        ),
+        15,
+      );
+    });
+
     test('rage scales by barbarian level and becomes unlimited at 20', () {
       expect(
         FeatureUsageEngine.maxFor(
@@ -191,6 +220,40 @@ void main() {
       );
     });
 
+    test('bardic inspiration recharge uses source class level', () {
+      final resource = _resource(
+        'bardic',
+        'charisma_modifier_min_1',
+        recharge: 'bardic_inspiration_recharge',
+      );
+      final character = _character(cls: 'Fighter', level: 10);
+
+      expect(
+        FeatureUsageEngine.rechargeFor(
+          resource,
+          character,
+          usageContext: const FeatureUsageContext(
+            totalCharacterLevel: 10,
+            sourceClass: 'Bard',
+            sourceClassLevel: 4,
+          ),
+        ),
+        'long_rest',
+      );
+      expect(
+        FeatureUsageEngine.rechargeFor(
+          resource,
+          character,
+          usageContext: const FeatureUsageContext(
+            totalCharacterLevel: 10,
+            sourceClass: 'Bard',
+            sourceClassLevel: 5,
+          ),
+        ),
+        'short_rest',
+      );
+    });
+
     test('restoresOn respects short and long rest rules', () {
       expect(
         FeatureUsageEngine.restoresOn('short_rest', FeatureUsageRest.shortRest),
@@ -274,6 +337,53 @@ void main() {
           'maneuvers',
           'luck',
         ]);
+      },
+    );
+
+    test(
+      'activeResourceBindings keeps source level for extra class features',
+      () {
+        final catalog = FeatureUsageCatalog(
+          resources: {'ki': _resource('ki', 'monk_level')},
+          classFeatures: const {
+            'Monk': {'Ki': FeatureUsageRef(resourceId: 'ki')},
+          },
+          subclassFeatures: const {},
+          raceTraits: const {},
+          feats: const {},
+        );
+        final character = _character(
+          cls: 'Fighter',
+          level: 10,
+          extraFeatures: const [
+            CharacterExtraFeature(
+              sourceClass: 'Monk',
+              name: 'Ki',
+              level: 2,
+              type: 'active',
+              description: '',
+            ),
+          ],
+        );
+
+        final binding = FeatureUsageEngine.activeResourceBindings(
+          character: character,
+          catalog: catalog,
+          classFeatures: const [],
+          subclassFeatures: const [],
+          raceTraits: const [],
+        ).single;
+
+        expect(binding.usageContext.sourceClass, 'Monk');
+        expect(binding.usageContext.sourceClassLevel, 2);
+        expect(
+          FeatureUsageEngine.maxFor(
+            binding.resource,
+            character,
+            usageContext: binding.usageContext,
+          ),
+          2,
+        );
       },
     );
   });

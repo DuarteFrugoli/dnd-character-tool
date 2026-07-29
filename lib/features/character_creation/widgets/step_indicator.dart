@@ -41,8 +41,11 @@ class StepIndicator extends StatelessWidget {
             ),
             child: Center(
               child: done
-                  ? Icon(Icons.check, size: 14,
-                      color: Theme.of(context).colorScheme.onPrimary)
+                  ? Icon(
+                      Icons.check,
+                      size: 14,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    )
                   : Text(
                       '${step + 1}',
                       style: TextStyle(

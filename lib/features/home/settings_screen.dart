@@ -449,10 +449,29 @@ class _CharacterMaintenanceTileState
             content: Text(
               report.hasUpdates
                   ? l10n.settingsMaintenanceUpdatesFound(report.outdatedCount)
+                  : report.hasReadIssues
+                  ? l10n.importErrorCorruptedCharacter
                   : l10n.settingsMaintenanceNoUpdates,
             ),
           ),
         );
+        if (report.hasReadIssues && mounted) {
+          await showDialog<void>(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: Text(l10n.settingsMaintenanceError),
+              content: SingleChildScrollView(
+                child: Text(_formatMaintenanceReport(ctx, report)),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx),
+                  child: Text(AppLocalizations.of(ctx)!.dialogClose),
+                ),
+              ],
+            ),
+          );
+        }
       }
     } catch (_) {
       if (!mounted) return;
@@ -590,6 +609,7 @@ class _CharacterMaintenanceTileState
     final l10n = AppLocalizations.of(context)!;
     final preview = _preview;
     final hasUpdates = preview?.hasUpdates == true;
+    final hasReadIssues = preview?.hasReadIssues == true;
     final showRequiredNotice =
         widget.autoCheck && (preview == null || hasUpdates);
 
@@ -621,6 +641,8 @@ class _CharacterMaintenanceTileState
                 ? l10n.settingsMaintenanceCheckSubtitle
                 : preview.hasUpdates
                 ? l10n.settingsMaintenanceUpdatesFound(preview.outdatedCount)
+                : hasReadIssues
+                ? l10n.importErrorCorruptedCharacter
                 : l10n.settingsMaintenanceNoUpdates,
           ),
           trailing: _busy
@@ -656,6 +678,16 @@ String _formatMaintenanceReport(
   buffer.writeln(
     l10n.settingsMaintenanceReportDataChanged(report.dataChangedCount),
   );
+  if (report.hasReadIssues) {
+    buffer.writeln();
+    buffer.writeln(l10n.settingsMaintenanceError);
+    for (final issue in report.readIssues) {
+      final id = issue.id == null ? '' : ' (${issue.id})';
+      buffer.writeln(
+        '- ${issue.source}$id: ${_formatMaintenanceReadIssue(context, issue)}',
+      );
+    }
+  }
 
   final updated = report.characters.where((entry) => entry.needsMigration);
   for (final entry in updated) {
@@ -672,6 +704,18 @@ String _formatMaintenanceReport(
   }
 
   return buffer.toString().trimRight();
+}
+
+String _formatMaintenanceReadIssue(
+  BuildContext context,
+  CharacterMigrationReadIssue issue,
+) {
+  final l10n = AppLocalizations.of(context)!;
+  return switch (issue.message) {
+    'invalid_json' => l10n.importErrorInvalidJson,
+    'not_object' => l10n.importErrorNotObject,
+    _ => l10n.importErrorCorruptedCharacter,
+  };
 }
 
 String _formatMaintenanceChange(

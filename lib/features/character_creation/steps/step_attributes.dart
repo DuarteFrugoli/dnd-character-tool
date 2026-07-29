@@ -49,9 +49,7 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
     super.initState();
     final existing = ref.read(characterDraftProvider).baseAttributes;
     // Inicializa Point Buy a partir do draft (ou 8 como padrão)
-    _pointBuyValues = {
-      for (final a in _attributes) a: existing[a] ?? 8,
-    };
+    _pointBuyValues = {for (final a in _attributes) a: existing[a] ?? 8};
     // Reconstrói a atribuição de índices do Standard Array a partir dos valores salvos
     _arrayAssignment = {
       for (final a in _attributes)
@@ -64,7 +62,8 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
   @override
   Widget build(BuildContext context) {
     final draft = ref.watch(characterDraftProvider);
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final method = draft.attributeMethod;
     final freeAsi = draft.freeAsi;
 
@@ -76,12 +75,16 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
       padding: const EdgeInsets.all(16),
       children: [
         // ── Lembrete de classe ───────────────────────────────────────────────
-        if (draft.selectedClass != null) ...
-          [_ClassReminder(cls: draft.selectedClass!, i18n: i18n), const SizedBox(height: 16)],
+        if (draft.selectedClass != null) ...[
+          _ClassReminder(cls: draft.selectedClass!, i18n: i18n),
+          const SizedBox(height: 16),
+        ],
 
         // ── Método ────────────────────────────────────────────────────────
-        Text(AppLocalizations.of(context)!.stepChooseMethod,
-            style: Theme.of(context).textTheme.labelLarge),
+        Text(
+          AppLocalizations.of(context)!.stepChooseMethod,
+          style: Theme.of(context).textTheme.labelLarge,
+        ),
         const SizedBox(height: 8),
         SegmentedButton<AttributeMethod>(
           segments: [
@@ -112,9 +115,10 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
         if (asiIncrements.isNotEmpty) ...[
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
-            title: Text(AppLocalizations.of(context)!.stepDistributeRacialBonuses),
-            subtitle: Text(
-                AppLocalizations.of(context)!.stepTashaRule),
+            title: Text(
+              AppLocalizations.of(context)!.stepDistributeRacialBonuses,
+            ),
+            subtitle: Text(AppLocalizations.of(context)!.stepTashaRule),
             value: freeAsi,
             onChanged: (v) =>
                 ref.read(characterDraftProvider.notifier).setFreeAsi(v),
@@ -168,9 +172,7 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
       _pointBuyValues[a] = 8;
       _rollAssignment[a] = null;
     }
-    ref
-        .read(characterDraftProvider.notifier)
-        .setBaseAttributes({});
+    ref.read(characterDraftProvider.notifier).setBaseAttributes({});
   }
 
   void _onArrayChanged(Map<String, int?> assignment) {
@@ -179,7 +181,8 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
   }
 
   void _pushArrayState() {
-    final complete = _arrayAssignment.values.every((v) => v != null) &&
+    final complete =
+        _arrayAssignment.values.every((v) => v != null) &&
         _arrayAssignment.values.toSet().length == _attributes.length;
     if (complete) {
       ref.read(characterDraftProvider.notifier).setBaseAttributes({
@@ -191,9 +194,9 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
 
   void _onPointBuyChanged(Map<String, int> values) {
     setState(() => _pointBuyValues.addAll(values));
-    ref.read(characterDraftProvider.notifier).setBaseAttributes(
-          Map<String, int>.from(_pointBuyValues),
-        );
+    ref
+        .read(characterDraftProvider.notifier)
+        .setBaseAttributes(Map<String, int>.from(_pointBuyValues));
   }
 
   void _onReroll() {
@@ -218,7 +221,8 @@ class _StepAttributesState extends ConsumerState<StepAttributes> {
   void _onRollAssignmentChanged(Map<String, int?> assignment) {
     setState(() => _rollAssignment.addAll(assignment));
     final rolled = ref.read(characterDraftProvider).rolledValues;
-    final complete = _rollAssignment.values.every((v) => v != null) &&
+    final complete =
+        _rollAssignment.values.every((v) => v != null) &&
         _rollAssignment.values.whereType<int>().toSet().length ==
             _attributes.length;
     if (complete) {
@@ -255,21 +259,28 @@ class _ClassReminder extends StatelessWidget {
           Expanded(
             child: RichText(
               text: TextSpan(
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(color: scheme.onSurface),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: scheme.onSurface),
                 children: [
                   TextSpan(
                     text: '${i18n.className(cls.name)} ',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const TextSpan(text: '— '),
-                  TextSpan(text: AppLocalizations.of(context)!.stepPrimaryAbilities),
                   TextSpan(
-                    text: cls.primaryAbility.map((a) => abilityName(AppLocalizations.of(context)!, a)).join(', '),
+                    text: AppLocalizations.of(context)!.stepPrimaryAbilities,
+                  ),
+                  TextSpan(
+                    text: cls.primaryAbility
+                        .map(
+                          (a) => abilityName(AppLocalizations.of(context)!, a),
+                        )
+                        .join(', '),
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, color: scheme.primary),
+                      fontWeight: FontWeight.bold,
+                      color: scheme.primary,
+                    ),
                   ),
                 ],
               ),
@@ -313,7 +324,11 @@ class _RolledDiceSection extends StatelessWidget {
             FilledButton.icon(
               onPressed: onRoll,
               icon: const Icon(Icons.casino_outlined, size: 18),
-              label: Text(rolledValues.isEmpty ? AppLocalizations.of(context)!.stepRollDice : AppLocalizations.of(context)!.stepReroll),
+              label: Text(
+                rolledValues.isEmpty
+                    ? AppLocalizations.of(context)!.stepRollDice
+                    : AppLocalizations.of(context)!.stepReroll,
+              ),
             ),
             if (rolledValues.isNotEmpty) ...[
               const SizedBox(width: 12),
@@ -324,13 +339,15 @@ class _RolledDiceSection extends StatelessWidget {
                   children: rolledValues.asMap().entries.map((e) {
                     final taken = usedIndices.contains(e.key);
                     return Chip(
-                      label: Text('${e.value}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: taken
-                                ? scheme.onSurface.withAlpha(80)
-                                : scheme.onPrimaryContainer,
-                          )),
+                      label: Text(
+                        '${e.value}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: taken
+                              ? scheme.onSurface.withAlpha(80)
+                              : scheme.onPrimaryContainer,
+                        ),
+                      ),
                       backgroundColor: taken
                           ? scheme.surfaceContainerHighest
                           : scheme.primaryContainer,
@@ -348,22 +365,24 @@ class _RolledDiceSection extends StatelessWidget {
             padding: const EdgeInsets.only(top: 6),
             child: Text(
               AppLocalizations.of(context)!.stepRollHint,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall
-                  ?.copyWith(color: scheme.onSurfaceVariant),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
             ),
           )
         else ...[
           const SizedBox(height: 12),
-          Text(AppLocalizations.of(context)!.stepAssignRolls,
-              style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            AppLocalizations.of(context)!.stepAssignRolls,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(height: 8),
           ..._attributes.map((attr) {
             final currentIdx = assignment[attr];
             final asi = raceAsi[attr] ?? 0;
-            final baseVal =
-                currentIdx != null ? rolledValues[currentIdx] : null;
+            final baseVal = currentIdx != null
+                ? rolledValues[currentIdx]
+                : null;
             final finalVal = baseVal != null ? baseVal + asi : null;
 
             return Padding(
@@ -372,8 +391,10 @@ class _RolledDiceSection extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 110,
-                    child: Text(abilityName(l10n, attr),
-                        style: Theme.of(context).textTheme.bodyMedium),
+                    child: Text(
+                      abilityName(l10n, attr),
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
                   ),
                   Expanded(
                     child: DropdownButton<int?>(
@@ -384,7 +405,8 @@ class _RolledDiceSection extends StatelessWidget {
                         const DropdownMenuItem(value: null, child: Text('—')),
                         ...rolledValues.asMap().entries.map((e) {
                           final taken =
-                              usedIndices.contains(e.key) && e.key != currentIdx;
+                              usedIndices.contains(e.key) &&
+                              e.key != currentIdx;
                           return DropdownMenuItem(
                             value: e.key,
                             enabled: !taken,
@@ -392,7 +414,8 @@ class _RolledDiceSection extends StatelessWidget {
                               '${e.value}',
                               style: taken
                                   ? TextStyle(
-                                      color: scheme.onSurface.withAlpha(97))
+                                      color: scheme.onSurface.withAlpha(97),
+                                    )
                                   : null,
                             ),
                           );
@@ -404,22 +427,23 @@ class _RolledDiceSection extends StatelessWidget {
                   if (asi != 0)
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
-                      child: Text(AppLocalizations.of(context)!.stepRaceBonus(asi),
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
-                              ?.copyWith(color: scheme.primary)),
+                      child: Text(
+                        AppLocalizations.of(context)!.stepRaceBonus(asi),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall?.copyWith(color: scheme.primary),
+                      ),
                     ),
                   if (finalVal != null)
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: SizedBox(
                         width: 36,
-                        child: Text('= $finalVal',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium
-                                ?.copyWith(fontWeight: FontWeight.bold)),
+                        child: Text(
+                          '= $finalVal',
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                 ],
@@ -453,14 +477,17 @@ class _StandardArraySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(AppLocalizations.of(context)!.stepAssignValues,
-            style: Theme.of(context).textTheme.bodySmall),
+        Text(
+          AppLocalizations.of(context)!.stepAssignValues,
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
         const SizedBox(height: 8),
         ..._attributes.map((attr) {
           final currentIdx = assignment[attr];
           final asi = raceAsi[attr] ?? 0;
-          final baseVal =
-              currentIdx != null ? _standardArray[currentIdx] : null;
+          final baseVal = currentIdx != null
+              ? _standardArray[currentIdx]
+              : null;
           final finalVal = baseVal != null ? baseVal + asi : null;
 
           return Padding(
@@ -469,8 +496,10 @@ class _StandardArraySection extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 110,
-                  child: Text(abilityName(l10n, attr),
-                      style: Theme.of(context).textTheme.bodyMedium),
+                  child: Text(
+                    abilityName(l10n, attr),
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ),
                 Expanded(
                   child: DropdownButton<int?>(
@@ -492,7 +521,8 @@ class _StandardArraySection extends StatelessWidget {
                                     color: Theme.of(context)
                                         .colorScheme
                                         .onSurface
-                                        .withValues(alpha: 0.38))
+                                        .withValues(alpha: 0.38),
+                                  )
                                 : null,
                           ),
                         );
@@ -504,24 +534,24 @@ class _StandardArraySection extends StatelessWidget {
                 if (asi != 0)
                   Padding(
                     padding: const EdgeInsets.only(left: 8),
-                    child: Text(AppLocalizations.of(context)!.stepRaceBonus(asi),
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall
-                            ?.copyWith(
-                                color:
-                                    Theme.of(context).colorScheme.primary)),
+                    child: Text(
+                      AppLocalizations.of(context)!.stepRaceBonus(asi),
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
                   ),
                 if (finalVal != null)
                   Padding(
                     padding: const EdgeInsets.only(left: 8),
                     child: SizedBox(
                       width: 36,
-                      child: Text('= $finalVal',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(fontWeight: FontWeight.bold)),
+                      child: Text(
+                        '= $finalVal',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
               ],
@@ -546,9 +576,8 @@ class _PointBuySection extends StatelessWidget {
   final Map<String, int> raceAsi;
   final ValueChanged<Map<String, int>> onChanged;
 
-  int get _spent => values.values
-      .map((v) => _pointBuyCost[v] ?? 0)
-      .fold(0, (a, b) => a + b);
+  int get _spent =>
+      values.values.map((v) => _pointBuyCost[v] ?? 0).fold(0, (a, b) => a + b);
 
   int get _remaining => _pointBuyTotal - _spent;
 
@@ -560,16 +589,18 @@ class _PointBuySection extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(l10n.stepPointsRemaining,
-                style: Theme.of(context).textTheme.bodySmall),
+            Text(
+              l10n.stepPointsRemaining,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
             Text(
               '$_remaining / $_pointBuyTotal',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: _remaining < 0
-                        ? Theme.of(context).colorScheme.error
-                        : null,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: _remaining < 0
+                    ? Theme.of(context).colorScheme.error
+                    : null,
+              ),
             ),
           ],
         ),
@@ -585,8 +616,10 @@ class _PointBuySection extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 110,
-                  child: Text(abilityName(l10n, attr),
-                      style: Theme.of(context).textTheme.bodyMedium),
+                  child: Text(
+                    abilityName(l10n, attr),
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.remove, size: 18),
@@ -596,29 +629,35 @@ class _PointBuySection extends StatelessWidget {
                 ),
                 SizedBox(
                   width: 28,
-                  child: Text('$val',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyMedium),
+                  child: Text(
+                    '$val',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.add, size: 18),
-                  onPressed: val < 15 &&
-                          _remaining >=
-                              (_pointBuyCost[val + 1] ?? 99) - cost
+                  onPressed:
+                      val < 15 &&
+                          _remaining >= (_pointBuyCost[val + 1] ?? 99) - cost
                       ? () => onChanged({...values, attr: val + 1})
                       : null,
                 ),
                 if (asi != 0)
-                  Text('+$asi',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Theme.of(context).colorScheme.primary)),
+                  Text(
+                    '+$asi',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
                 Padding(
                   padding: const EdgeInsets.only(left: 4),
-                  child: Text('= ${val + asi}',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall
-                          ?.copyWith(fontWeight: FontWeight.bold)),
+                  child: Text(
+                    '= ${val + asi}',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -739,15 +778,13 @@ class _FreeAsiSlotRow extends StatelessWidget {
               value: value,
               hint: Text(l10n.creationStepAttributes),
               items: [
-                const DropdownMenuItem<String?>(
-                  value: null,
-                  child: Text('-'),
-                ),
+                const DropdownMenuItem<String?>(value: null, child: Text('-')),
                 for (final attribute in _attributes)
                   DropdownMenuItem<String?>(
                     value: attribute,
                     enabled:
-                        value == attribute || !selectedAttributes.contains(attribute),
+                        value == attribute ||
+                        !selectedAttributes.contains(attribute),
                     child: Text(abilityName(l10n, attribute)),
                   ),
               ],
@@ -765,10 +802,7 @@ class _FreeAsiSlotRow extends StatelessWidget {
 /// Seletor para pontos ASI livres específicos da raça (ex: Half-Elf +1/+1).
 /// Independente do toggle de Tasha's — é parte da regra base da raça.
 class _FreePicksSection extends ConsumerWidget {
-  const _FreePicksSection({
-    required this.totalPoints,
-    required this.fixedAsi,
-  });
+  const _FreePicksSection({required this.totalPoints, required this.fixedAsi});
 
   /// Quantidade total de pontos +1 a distribuir (ex: Half-Elf = 2).
   final int totalPoints;
@@ -802,27 +836,35 @@ class _FreePicksSection extends ConsumerWidget {
           return Row(
             children: [
               SizedBox(
-                  width: 110,
-                  child: Text(abilityName(l10n, attr),
-                      style: Theme.of(context).textTheme.bodyMedium)),
+                width: 110,
+                child: Text(
+                  abilityName(l10n, attr),
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
               IconButton(
                 icon: const Icon(Icons.remove, size: 18),
                 onPressed: current > 0
                     ? () => ref
-                        .read(characterDraftProvider.notifier)
-                        .setFreePicksDistribution({...dist, attr: current - 1})
+                          .read(characterDraftProvider.notifier)
+                          .setFreePicksDistribution({
+                            ...dist,
+                            attr: current - 1,
+                          })
                     : null,
               ),
-              Text('+$current',
-                  style: Theme.of(context).textTheme.bodyMedium),
+              Text('+$current', style: Theme.of(context).textTheme.bodyMedium),
               IconButton(
                 icon: const Icon(Icons.add, size: 18),
                 // Não pode colocar em atributo com bônus fixo da raça,
                 // não pode passar de 1 por atributo, e precisa ter ponto disponível.
                 onPressed: remaining > 0 && current < 1 && !hasFixedBonus
                     ? () => ref
-                        .read(characterDraftProvider.notifier)
-                        .setFreePicksDistribution({...dist, attr: current + 1})
+                          .read(characterDraftProvider.notifier)
+                          .setFreePicksDistribution({
+                            ...dist,
+                            attr: current + 1,
+                          })
                     : null,
               ),
             ],

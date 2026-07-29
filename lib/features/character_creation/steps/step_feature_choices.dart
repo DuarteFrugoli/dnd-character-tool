@@ -40,8 +40,7 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
         }
 
         final data = snapshot.data!;
-        final i18n =
-            ref.watch(srdI18nProvider).valueOrNull ?? data.i18n;
+        final i18n = ref.watch(srdI18nProvider).valueOrNull ?? data.i18n;
         _syncRequests(draft, data.requests);
 
         if (data.requests.isEmpty) {
@@ -74,7 +73,9 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
           featureLabelBuilder: (request) =>
               _featureChoiceRequestFeatureLabel(request, i18n),
           onChanged: (choices) {
-            ref.read(characterDraftProvider.notifier).setFeatureChoices(choices);
+            ref
+                .read(characterDraftProvider.notifier)
+                .setFeatureChoices(choices);
           },
         );
       },
@@ -94,14 +95,18 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
   ) {
     final currentKeys = draft.featureChoiceRequests.map((r) => r.key).toList();
     final nextKeys = requests.map((r) => r.key).toList();
-    final sameRequests =
-        const ListEquality<String>().equals(currentKeys, nextKeys);
+    final sameRequests = const ListEquality<String>().equals(
+      currentKeys,
+      nextKeys,
+    );
     if (draft.featureChoicesLoaded && sameRequests) return;
 
     final key = _loadKey;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted || key != _loadKey) return;
-      ref.read(characterDraftProvider.notifier).setFeatureChoiceRequests(requests);
+      ref
+          .read(characterDraftProvider.notifier)
+          .setFeatureChoiceRequests(requests);
     });
   }
 
@@ -163,7 +168,8 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
     required CharacterDraft draft,
     required SrdFeatureChoiceCatalog catalog,
     required List<SrdClassFeature> classFeatures,
-    required Map<String, Map<String, List<SrdClassFeature>>> allSubclassFeatures,
+    required Map<String, Map<String, List<SrdClassFeature>>>
+    allSubclassFeatures,
     required List<SrdFeat> feats,
   }) {
     final requests = <FeatureChoiceRequest>[];
@@ -177,7 +183,9 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
 
     final selectedClass = draft.selectedClass;
     if (selectedClass != null) {
-      for (final feature in classFeatures.where((feature) => feature.level <= 1)) {
+      for (final feature in classFeatures.where(
+        (feature) => feature.level <= 1,
+      )) {
         addAll(
           FeatureChoiceEngine.requestsForClassFeature(
             catalog: catalog,
@@ -192,9 +200,10 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
       if (selectedSubclass != null && selectedClass.subclassLevel <= 1) {
         final subclassFeatures =
             allSubclassFeatures[selectedClass.name]?[selectedSubclass.name] ??
-                const <SrdClassFeature>[];
-        for (final feature
-            in subclassFeatures.where((feature) => feature.level <= 1)) {
+            const <SrdClassFeature>[];
+        for (final feature in subclassFeatures.where(
+          (feature) => feature.level <= 1,
+        )) {
           addAll(
             FeatureChoiceEngine.requestsForSubclassFeature(
               catalog: catalog,
@@ -291,10 +300,7 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
       ),
       hitPoints: const HitPoints(maximum: 1, current: 1),
       savingThrowProficiencies: draft.selectedClass?.savingThrows ?? const [],
-      skillProficiencies: [
-        ...draft.grantedSkills,
-        ...draft.chosenSkills,
-      ],
+      skillProficiencies: [...draft.grantedSkills, ...draft.chosenSkills],
       languages: [...draft.fixedRaceLanguages, ...draft.chosenLanguages],
       createdAt: now,
       updatedAt: now,
@@ -327,8 +333,9 @@ class _StepFeatureChoicesState extends ConsumerState<StepFeatureChoices> {
               request.featureName,
             ) ??
             request.featureName,
-      FeatureChoiceSourceType.raceTrait =>
-        i18n.raceTraitName(request.sourceName ?? request.featureName),
+      FeatureChoiceSourceType.raceTrait => i18n.raceTraitName(
+        request.sourceName ?? request.featureName,
+      ),
       FeatureChoiceSourceType.feat =>
         i18n.featName(request.sourceName ?? request.featureName) ??
             request.featureName,

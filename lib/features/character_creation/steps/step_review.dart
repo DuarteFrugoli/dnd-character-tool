@@ -21,7 +21,8 @@ class StepReview extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final draft = ref.watch(characterDraftProvider);
     final attrs = draft.finalAttributes;
     final abilityScores = AbilityScores(
@@ -55,77 +56,131 @@ class StepReview extends ConsumerWidget {
       shieldOnlyAc: shieldOnlyAc,
     );
 
-    final clsName = draft.selectedClass != null ? i18n.className(draft.selectedClass!.name) : null;
-    final subclassFeature = draft.selectedClass != null
-        ? (i18n.classSubclassFeatureName(draft.selectedClass!.name) ?? draft.selectedClass!.subclassFeatureName)
-        : l10n.reviewRowSubclass;
-    final subclassName = draft.selectedSubclass != null && draft.selectedClass != null
-        ? i18n.subclassName(draft.selectedClass!.name, draft.selectedSubclass!.name)
+    final clsName = draft.selectedClass != null
+        ? i18n.className(draft.selectedClass!.name)
         : null;
-    final raceName = draft.selectedRace != null ? i18n.raceName(draft.selectedRace!.name) : null;
-    final subraceName = draft.selectedSubrace != null ? i18n.subraceName(draft.selectedSubrace!.name) : null;
-    final bgName = draft.selectedBackground != null ? i18n.backgroundName(draft.selectedBackground!.name) : null;
+    final subclassFeature = draft.selectedClass != null
+        ? (i18n.classSubclassFeatureName(draft.selectedClass!.name) ??
+              draft.selectedClass!.subclassFeatureName)
+        : l10n.reviewRowSubclass;
+    final subclassName =
+        draft.selectedSubclass != null && draft.selectedClass != null
+        ? i18n.subclassName(
+            draft.selectedClass!.name,
+            draft.selectedSubclass!.name,
+          )
+        : null;
+    final raceName = draft.selectedRace != null
+        ? i18n.raceName(draft.selectedRace!.name)
+        : null;
+    final subraceName = draft.selectedSubrace != null
+        ? i18n.subraceName(draft.selectedSubrace!.name)
+        : null;
+    final bgName = draft.selectedBackground != null
+        ? i18n.backgroundName(draft.selectedBackground!.name)
+        : null;
     final bgFeatureName = draft.selectedBackground != null
-        ? (i18n.backgroundFeatureName(draft.selectedBackground!.name) ?? draft.selectedBackground!.feature.name)
+        ? (i18n.backgroundFeatureName(draft.selectedBackground!.name) ??
+              draft.selectedBackground!.feature.name)
         : null;
 
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        _ReviewSection(title: l10n.sectionIdentity, children: [
-          _Row(l10n.reviewRowName, draft.name.isEmpty ? l10n.reviewUnnamedHero : draft.name),
-          if (draft.playerName.isNotEmpty)
-            _Row(l10n.reviewRowPlayer, draft.playerName),
-        ]),
-        _ReviewSection(title: l10n.creationStepClass, children: [
-          _Row(l10n.creationStepClass, clsName ?? '—'),
-          if (subclassName != null)
-            _Row(subclassFeature, subclassName),
-          _Row(l10n.reviewRowHitDie, 'd${draft.selectedClass?.hitDie ?? '—'}'),
-          _Row(
-            l10n.reviewRowSavingThrows,
-            draft.selectedClass?.savingThrows.map((s) => abilityName(l10n, s)).join(', ') ?? '—',
-          ),
-          if (draft.selectedClass != null)
-            const _StartingGoldRow(),
-        ]),
-        _ReviewSection(title: l10n.creationStepRace, children: [
-          _Row(l10n.creationStepRace, raceName ?? '—'),
-          if (subraceName != null)
-            _Row(l10n.reviewRowSubrace, subraceName),
-          _Row(l10n.reviewRowSpeed, formatDistance(draft.selectedRace?.speed ?? 0, ref.watch(unitSystemProvider))),
-          if (draft.fixedRaceLanguages.isNotEmpty)
-            _Row(l10n.reviewRowLanguages, draft.fixedRaceLanguages.map(i18n.languageName).join(', ')),
-        ]),
-        _ReviewSection(title: l10n.creationStepBackground, children: [
-          _Row(l10n.creationStepBackground, bgName ?? '—'),
-          _Row(l10n.reviewRowFeature, bgFeatureName ?? '—'),
-        ]),
-        _ReviewSection(title: l10n.creationStepSkills, children: [
-          _Row(l10n.reviewRowFromBackground, draft.grantedSkills.map(i18n.skillName).join(', ')),
-          if (draft.chosenSkills.isNotEmpty)
-            _Row(l10n.reviewRowClassChoices, draft.chosenSkills.map(i18n.skillName).join(', ')),
-        ]),
-        _ReviewSection(title: l10n.creationStepAttributes, children: [
-          ...attrs.entries
-              .map((e) => _Row(e.key, '${e.value} (${_mod(e.value)})')),
-          _Row(l10n.reviewRowMaxHp, '$maxHp  (d$hitDie + $conMod CON)'),
-          _Row(l10n.reviewRowAcUnarmored, '$unarmoredAc'),
-          if (armorInfo != null)
-            _Row(l10n.reviewRowAcWith(armorInfo.$2), '${armorInfo.$1}'),
-          _Row(l10n.reviewRowProficiencyBonus, '+2'),
-        ]),
+        _ReviewSection(
+          title: l10n.sectionIdentity,
+          children: [
+            _Row(
+              l10n.reviewRowName,
+              draft.name.isEmpty ? l10n.reviewUnnamedHero : draft.name,
+            ),
+            if (draft.playerName.isNotEmpty)
+              _Row(l10n.reviewRowPlayer, draft.playerName),
+          ],
+        ),
+        _ReviewSection(
+          title: l10n.creationStepClass,
+          children: [
+            _Row(l10n.creationStepClass, clsName ?? '—'),
+            if (subclassName != null) _Row(subclassFeature, subclassName),
+            _Row(
+              l10n.reviewRowHitDie,
+              'd${draft.selectedClass?.hitDie ?? '—'}',
+            ),
+            _Row(
+              l10n.reviewRowSavingThrows,
+              draft.selectedClass?.savingThrows
+                      .map((s) => abilityName(l10n, s))
+                      .join(', ') ??
+                  '—',
+            ),
+            if (draft.selectedClass != null) const _StartingGoldRow(),
+          ],
+        ),
+        _ReviewSection(
+          title: l10n.creationStepRace,
+          children: [
+            _Row(l10n.creationStepRace, raceName ?? '—'),
+            if (subraceName != null) _Row(l10n.reviewRowSubrace, subraceName),
+            _Row(
+              l10n.reviewRowSpeed,
+              formatDistance(
+                draft.selectedRace?.speed ?? 0,
+                ref.watch(unitSystemProvider),
+              ),
+            ),
+            if (draft.fixedRaceLanguages.isNotEmpty)
+              _Row(
+                l10n.reviewRowLanguages,
+                draft.fixedRaceLanguages.map(i18n.languageName).join(', '),
+              ),
+          ],
+        ),
+        _ReviewSection(
+          title: l10n.creationStepBackground,
+          children: [
+            _Row(l10n.creationStepBackground, bgName ?? '—'),
+            _Row(l10n.reviewRowFeature, bgFeatureName ?? '—'),
+          ],
+        ),
+        _ReviewSection(
+          title: l10n.creationStepSkills,
+          children: [
+            _Row(
+              l10n.reviewRowFromBackground,
+              draft.grantedSkills.map(i18n.skillName).join(', '),
+            ),
+            if (draft.chosenSkills.isNotEmpty)
+              _Row(
+                l10n.reviewRowClassChoices,
+                draft.chosenSkills.map(i18n.skillName).join(', '),
+              ),
+          ],
+        ),
+        _ReviewSection(
+          title: l10n.creationStepAttributes,
+          children: [
+            ...attrs.entries.map(
+              (e) => _Row(e.key, '${e.value} (${_mod(e.value)})'),
+            ),
+            _Row(l10n.reviewRowMaxHp, '$maxHp  (d$hitDie + $conMod CON)'),
+            _Row(l10n.reviewRowAcUnarmored, '$unarmoredAc'),
+            if (armorInfo != null)
+              _Row(l10n.reviewRowAcWith(armorInfo.$2), '${armorInfo.$1}'),
+            _Row(l10n.reviewRowProficiencyBonus, '+2'),
+          ],
+        ),
         // ── Language Choices ────────────────────────────────────────────────────────
-        if (draft.languageChoicesNeeded > 0)
-          const _LanguageChoiceSection(),
+        if (draft.languageChoicesNeeded > 0) const _LanguageChoiceSection(),
         // ── Tool Proficiency Choices ─────────────────────────────────────────────────
         const _ToolProficiencySection(),
         // ── Starting Equipment ─────────────────────────────────────────────────────
         if (draft.selectedBackground != null &&
             draft.selectedBackground!.startingEquipment.isNotEmpty)
-          const _StartingEquipmentSection(),        // ── Class Equipment ────────────────────────────────────────────────────
+          const _StartingEquipmentSection(), // ── Class Equipment ────────────────────────────────────────────────────
         if (draft.selectedClass?.startingEquipment != null)
-          const _ClassEquipmentSection(),        const SizedBox(height: 16),
+          const _ClassEquipmentSection(),
+        const SizedBox(height: 16),
       ],
     );
   }
@@ -150,12 +205,12 @@ class _ReviewSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge
-                    ?.copyWith(
-                        color: Theme.of(context).colorScheme.primary)),
+            Text(
+              title,
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+            ),
             const SizedBox(height: 8),
             ...children,
           ],
@@ -179,14 +234,15 @@ class _Row extends StatelessWidget {
         children: [
           SizedBox(
             width: 140,
-            child: Text(label,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color:
-                        Theme.of(context).colorScheme.onSurfaceVariant)),
+            child: Text(
+              label,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
           ),
           Expanded(
-            child: Text(value,
-                style: Theme.of(context).textTheme.bodyMedium),
+            child: Text(value, style: Theme.of(context).textTheme.bodyMedium),
           ),
         ],
       ),
@@ -199,8 +255,7 @@ class _Row extends StatelessWidget {
 /// Parses "NdSxM" and rolls N dice of S sides, multiplied by M.
 /// Returns the total gp result.
 int _rollGoldDice(String dice) {
-  final match =
-      RegExp(r'^(\d+)d(\d+)(?:[xX\u00d7](\d+))?$').firstMatch(dice);
+  final match = RegExp(r'^(\d+)d(\d+)(?:[xX\u00d7](\d+))?$').firstMatch(dice);
   if (match == null) return 0;
   final n = int.parse(match.group(1)!);
   final s = int.parse(match.group(2)!);
@@ -222,7 +277,10 @@ class _StartingGoldRow extends ConsumerStatefulWidget {
 
 class _StartingGoldRowState extends ConsumerState<_StartingGoldRow> {
   void _roll() {
-    final dice = ref.read(characterDraftProvider).selectedClass!.startingGoldDice;
+    final dice = ref
+        .read(characterDraftProvider)
+        .selectedClass!
+        .startingGoldDice;
     final result = _rollGoldDice(dice);
     ref.read(characterDraftProvider.notifier).setRolledStartingGold(result);
   }
@@ -243,29 +301,31 @@ class _StartingGoldRowState extends ConsumerState<_StartingGoldRow> {
             width: 140,
             child: Text(
               AppLocalizations.of(context)!.reviewStartingGold,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
             ),
           ),
           Expanded(
             child: rolled != null
                 ? Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                        text: '$rolled gp',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: scheme.primary,
-                            ),
-                      ),
-                      TextSpan(
-                        text: '  (${_formatStartingGold(dice)})',
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                      ),
-                    ]),
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '$rolled gp',
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: scheme.primary,
+                              ),
+                        ),
+                        TextSpan(
+                          text: '  (${_formatStartingGold(dice)})',
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: scheme.onSurfaceVariant),
+                        ),
+                      ],
+                    ),
                   )
                 : Text(
                     _formatStartingGold(dice),
@@ -296,13 +356,16 @@ class _StartingEquipmentSection extends ConsumerWidget {
     final draft = ref.watch(characterDraftProvider);
     final notifier = ref.read(characterDraftProvider.notifier);
     final scheme = Theme.of(context).colorScheme;
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final bg = draft.selectedBackground!;
 
-    final fixedItems =
-        bg.startingEquipment.where((i) => !isEquipmentChoiceItem(i)).toList();
-    final choiceItems =
-        bg.startingEquipment.where(isEquipmentChoiceItem).toList();
+    final fixedItems = bg.startingEquipment
+        .where((i) => !isEquipmentChoiceItem(i))
+        .toList();
+    final choiceItems = bg.startingEquipment
+        .where(isEquipmentChoiceItem)
+        .toList();
     final selectedItems = draft.selectedStartingEquipment;
     final resolvedChoices = draft.resolvedEquipmentChoices;
     final allFixedSelected = fixedItems.every(selectedItems.contains);
@@ -318,10 +381,9 @@ class _StartingEquipmentSection extends ConsumerWidget {
               children: [
                 Text(
                   AppLocalizations.of(context)!.reviewStartingEquipment,
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelLarge
-                      ?.copyWith(color: scheme.primary),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelLarge?.copyWith(color: scheme.primary),
                 ),
                 const Spacer(),
                 if (fixedItems.isNotEmpty)
@@ -347,25 +409,29 @@ class _StartingEquipmentSection extends ConsumerWidget {
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                     child: Text(
-                      allFixedSelected ? AppLocalizations.of(context)!.reviewDeselectAll : AppLocalizations.of(context)!.reviewSelectAll,
+                      allFixedSelected
+                          ? AppLocalizations.of(context)!.reviewDeselectAll
+                          : AppLocalizations.of(context)!.reviewSelectAll,
                       style: TextStyle(fontSize: 12, color: scheme.primary),
                     ),
                   ),
               ],
             ),
-            if (fixedItems.isNotEmpty) ...[  
+            if (fixedItems.isNotEmpty) ...[
               const SizedBox(height: 4),
               Text(
                 AppLocalizations.of(context)!.reviewUncheckHint,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
               ),
               const SizedBox(height: 8),
               ...fixedItems.map((item) {
                 final isSelected = selectedItems.contains(item);
-                final isGold = RegExp(r'^\d+\s*gp$', caseSensitive: false)
-                    .hasMatch(item.trim());
+                final isGold = RegExp(
+                  r'^\d+\s*gp$',
+                  caseSensitive: false,
+                ).hasMatch(item.trim());
                 return CheckboxListTile(
                   dense: true,
                   contentPadding: EdgeInsets.zero,
@@ -377,28 +443,30 @@ class _StartingEquipmentSection extends ConsumerWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   secondary: isGold
-                      ? Icon(Icons.monetization_on_outlined,
-                          size: 16, color: scheme.tertiary)
+                      ? Icon(
+                          Icons.monetization_on_outlined,
+                          size: 16,
+                          color: scheme.tertiary,
+                        )
                       : null,
                 );
               }),
             ],
             // ── Equipment choices (e.g. "Musical instrument") ───────────
-            if (choiceItems.isNotEmpty) ...[  
+            if (choiceItems.isNotEmpty) ...[
               if (fixedItems.isNotEmpty) const Divider(height: 20),
               Text(
                 AppLocalizations.of(context)!.reviewEquipmentChoices,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelMedium
-                    ?.copyWith(color: scheme.secondary),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelMedium?.copyWith(color: scheme.secondary),
               ),
               const SizedBox(height: 4),
               Text(
                 AppLocalizations.of(context)!.reviewEquipmentChoicesHint,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
               ),
               const SizedBox(height: 8),
               ...choiceItems.map((item) {
@@ -415,8 +483,12 @@ class _StartingEquipmentSection extends ConsumerWidget {
                     ),
                     hint: Text(AppLocalizations.of(context)!.stepChooseOne),
                     items: options
-                        .map((o) => DropdownMenuItem(
-                            value: o, child: Text(i18n.backgroundEquipmentName(o))))
+                        .map(
+                          (o) => DropdownMenuItem(
+                            value: o,
+                            child: Text(i18n.backgroundEquipmentName(o)),
+                          ),
+                        )
                         .toList(),
                     onChanged: (v) {
                       if (v != null) notifier.setEquipmentChoice(item, v);
@@ -435,25 +507,65 @@ class _StartingEquipmentSection extends ConsumerWidget {
 // ── Language Choice Section ───────────────────────────────────────────────────
 
 const _kDndLanguages = [
-  'Abyssal', 'Celestial', 'Common', 'Deep Speech', 'Draconic',
-  'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin',
-  'Halfling', 'Infernal', 'Orc', 'Primordial', 'Sylvan', 'Undercommon',
+  'Abyssal',
+  'Celestial',
+  'Common',
+  'Deep Speech',
+  'Draconic',
+  'Dwarvish',
+  'Elvish',
+  'Giant',
+  'Gnomish',
+  'Goblin',
+  'Halfling',
+  'Infernal',
+  'Orc',
+  'Primordial',
+  'Sylvan',
+  'Undercommon',
 ];
 
 // ── Tool Proficiency constants ────────────────────────────────────────────────
 // ── Weapon constants (used for "any X weapon" sub-choices) ─────────────────
 const _kSimpleMeleeWeapons = [
-  'Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin',
-  'Light hammer', 'Mace', 'Quarterstaff', 'Sickle', 'Spear',
+  'Club',
+  'Dagger',
+  'Greatclub',
+  'Handaxe',
+  'Javelin',
+  'Light hammer',
+  'Mace',
+  'Quarterstaff',
+  'Sickle',
+  'Spear',
 ];
 const _kSimpleRangedWeapons = ['Dart', 'Light crossbow', 'Shortbow', 'Sling'];
 const _kMartialMeleeWeapons = [
-  'Battleaxe', 'Flail', 'Glaive', 'Greataxe', 'Greatsword', 'Halberd',
-  'Lance', 'Longsword', 'Maul', 'Morningstar', 'Pike', 'Rapier',
-  'Scimitar', 'Shortsword', 'Trident', 'War pick', 'Warhammer', 'Whip',
+  'Battleaxe',
+  'Flail',
+  'Glaive',
+  'Greataxe',
+  'Greatsword',
+  'Halberd',
+  'Lance',
+  'Longsword',
+  'Maul',
+  'Morningstar',
+  'Pike',
+  'Rapier',
+  'Scimitar',
+  'Shortsword',
+  'Trident',
+  'War pick',
+  'Warhammer',
+  'Whip',
 ];
 const _kMartialRangedWeapons = [
-  'Blowgun', 'Hand crossbow', 'Heavy crossbow', 'Longbow', 'Net',
+  'Blowgun',
+  'Hand crossbow',
+  'Heavy crossbow',
+  'Longbow',
+  'Net',
 ];
 
 /// Returns the selectable list for an "any X" item, or null if not applicable.
@@ -470,33 +582,58 @@ List<String>? _anyItemOptions(String item) {
   if (lower == 'any musical instrument') return _kInstruments;
   return null;
 }
+
 const _kArtisanTools = [
-  "Alchemist's supplies", "Brewer's supplies", "Calligrapher's supplies",
-  "Carpenter's tools", "Cartographer's tools", "Cobbler's tools",
-  "Cook's utensils", "Glassblower's tools", "Jeweler's tools",
-  "Leatherworker's tools", "Mason's tools", "Painter's supplies",
-  "Potter's tools", "Smith's tools", "Tinker's tools",
-  "Weaver's tools", "Woodcarver's tools",
+  "Alchemist's supplies",
+  "Brewer's supplies",
+  "Calligrapher's supplies",
+  "Carpenter's tools",
+  "Cartographer's tools",
+  "Cobbler's tools",
+  "Cook's utensils",
+  "Glassblower's tools",
+  "Jeweler's tools",
+  "Leatherworker's tools",
+  "Mason's tools",
+  "Painter's supplies",
+  "Potter's tools",
+  "Smith's tools",
+  "Tinker's tools",
+  "Weaver's tools",
+  "Woodcarver's tools",
 ];
 
 const _kGamingSets = [
-  'Dice set', 'Dragonchess set', 'Playing card set', 'Three-Dragon Ante set',
+  'Dice set',
+  'Dragonchess set',
+  'Playing card set',
+  'Three-Dragon Ante set',
 ];
 
 const _kInstruments = [
-  'Bagpipes', 'Drum', 'Dulcimer', 'Flute', 'Lute', 'Lyre',
-  'Horn', 'Pan flute', 'Shawm', 'Viol',
+  'Bagpipes',
+  'Drum',
+  'Dulcimer',
+  'Flute',
+  'Lute',
+  'Lyre',
+  'Horn',
+  'Pan flute',
+  'Shawm',
+  'Viol',
 ];
 
-const _kWordToInt = {
-  'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
-};
+const _kWordToInt = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5};
 
 class _ToolSlot {
   final String source;
   final String label;
   final List<String> options;
-  const _ToolSlot({required this.source, required this.label, required this.options});
+  const _ToolSlot({
+    required this.source,
+    required this.label,
+    required this.options,
+  });
 }
 
 List<String> _toolOptionsForEntry(String lower) {
@@ -570,8 +707,7 @@ int? _calcArmorAC(String item, int dexMod) {
   int dexMod, {
   required int shieldOnlyAc,
 }) {
-  final hasShield =
-      items.any((i) => i.toLowerCase().contains('shield'));
+  final hasShield = items.any((i) => i.toLowerCase().contains('shield'));
 
   String? bestName;
   int? bestAC;
@@ -628,8 +764,7 @@ List<String> _resolveEquipmentItems(CharacterDraft draft) {
 /// Parses a starting-gold dice string like "5d4x10" or "5d4" into a display string.
 String _formatStartingGold(String dice) {
   if (dice.isEmpty) return '—';
-  final match =
-      RegExp(r'^(\d+)d(\d+)(?:[xX×](\d+))?$').firstMatch(dice);
+  final match = RegExp(r'^(\d+)d(\d+)(?:[xX×](\d+))?$').firstMatch(dice);
   if (match == null) return '$dice gp';
   final n = int.parse(match.group(1)!);
   final s = int.parse(match.group(2)!);
@@ -640,17 +775,22 @@ String _formatStartingGold(String dice) {
 }
 
 List<_ToolSlot> _buildToolSlots(
-    CharacterDraft draft, SrdI18nService i18n, AppLocalizations l10n) {
+  CharacterDraft draft,
+  SrdI18nService i18n,
+  AppLocalizations l10n,
+) {
   final slots = <_ToolSlot>[];
 
   // Race: "Tool Proficiency" trait → one artisan's tool
   final race = draft.selectedRace;
   if (race != null && race.traits.contains('Tool Proficiency')) {
-    slots.add(_ToolSlot(
-      source: i18n.raceName(race.name),
-      label: l10n.stepToolCategoryArtisanTool,
-      options: _kArtisanTools,
-    ));
+    slots.add(
+      _ToolSlot(
+        source: i18n.raceName(race.name),
+        label: l10n.stepToolCategoryArtisanTool,
+        options: _kArtisanTools,
+      ),
+    );
   }
 
   // Background tool choices
@@ -662,13 +802,15 @@ List<_ToolSlot> _buildToolSlots(
         final label = lower.contains('gaming')
             ? l10n.stepToolCategoryGamingSet
             : lower.contains('musical')
-                ? l10n.stepToolCategoryInstrument
-                : l10n.stepToolCategoryArtisanTool;
-        slots.add(_ToolSlot(
-          source: i18n.backgroundName(bg.name),
-          label: label,
-          options: _toolOptionsForEntry(lower),
-        ));
+            ? l10n.stepToolCategoryInstrument
+            : l10n.stepToolCategoryArtisanTool;
+        slots.add(
+          _ToolSlot(
+            source: i18n.backgroundName(bg.name),
+            label: label,
+            options: _toolOptionsForEntry(lower),
+          ),
+        );
       }
     }
   }
@@ -688,8 +830,13 @@ List<_ToolSlot> _buildToolSlots(
             ? l10n.stepToolCategoryArtisanOrInstrument
             : l10n.stepToolCategoryInstrument;
         for (int i = 0; i < count; i++) {
-          slots.add(_ToolSlot(
-              source: i18n.className(cls.name), label: label, options: options));
+          slots.add(
+            _ToolSlot(
+              source: i18n.className(cls.name),
+              label: label,
+              options: options,
+            ),
+          );
         }
       }
     }
@@ -732,7 +879,8 @@ class _ToolProficiencySection extends ConsumerWidget {
     final draft = ref.watch(characterDraftProvider);
     final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     final slots = _buildToolSlots(draft, i18n, l10n);
     final fixed = _buildFixedTools(draft, i18n);
@@ -750,10 +898,9 @@ class _ToolProficiencySection extends ConsumerWidget {
           children: [
             Text(
               AppLocalizations.of(context)!.reviewToolProficiencies,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelLarge
-                  ?.copyWith(color: scheme.primary),
+              style: Theme.of(
+                context,
+              ).textTheme.labelLarge?.copyWith(color: scheme.primary),
             ),
             if (fixed.isNotEmpty) ...[
               const SizedBox(height: 8),
@@ -763,12 +910,17 @@ class _ToolProficiencySection extends ConsumerWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.handyman_outlined,
-                          size: 14, color: scheme.onSurfaceVariant),
+                      Icon(
+                        Icons.handyman_outlined,
+                        size: 14,
+                        color: scheme.onSurfaceVariant,
+                      ),
                       const SizedBox(width: 6),
                       Expanded(
-                        child: Text(t,
-                            style: Theme.of(context).textTheme.bodySmall),
+                        child: Text(
+                          t,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
                       ),
                     ],
                   ),
@@ -779,17 +931,17 @@ class _ToolProficiencySection extends ConsumerWidget {
               const SizedBox(height: 8),
               Text(
                 AppLocalizations.of(context)!.reviewChooseToolProficiency,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(color: scheme.onSurfaceVariant),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
               ),
               const SizedBox(height: 6),
               ...slots.asMap().entries.map((entry) {
                 final i = entry.key;
                 final slot = entry.value;
-                final currentVal =
-                    i < chosen.length && chosen[i].isNotEmpty ? chosen[i] : null;
+                final currentVal = i < chosen.length && chosen[i].isNotEmpty
+                    ? chosen[i]
+                    : null;
 
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8),
@@ -799,8 +951,8 @@ class _ToolProficiencySection extends ConsumerWidget {
                       Text(
                         '${slot.source} — ${slot.label}',
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
                       const SizedBox(height: 4),
                       DropdownButtonFormField<String>(
@@ -809,17 +961,25 @@ class _ToolProficiencySection extends ConsumerWidget {
                         decoration: const InputDecoration(
                           isDense: true,
                           border: OutlineInputBorder(),
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 8,
+                          ),
                         ),
-                        hint: Text(AppLocalizations.of(context)!.stepSelectTool,
-                            style: const TextStyle(fontSize: 13)),
+                        hint: Text(
+                          AppLocalizations.of(context)!.stepSelectTool,
+                          style: const TextStyle(fontSize: 13),
+                        ),
                         items: slot.options
-                            .map((tool) => DropdownMenuItem(
-                                  value: tool,
-                                  child: Text(i18n.toolName(tool),
-                                      style: const TextStyle(fontSize: 13)),
-                                ))
+                            .map(
+                              (tool) => DropdownMenuItem(
+                                value: tool,
+                                child: Text(
+                                  i18n.toolName(tool),
+                                  style: const TextStyle(fontSize: 13),
+                                ),
+                              ),
+                            )
                             .toList(),
                         onChanged: (val) {
                           if (val == null) return;
@@ -856,7 +1016,8 @@ class _ClassEquipmentSection extends ConsumerWidget {
     final notifier = ref.read(characterDraftProvider.notifier);
     final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final cls = draft.selectedClass!;
     final equip = cls.startingEquipment!;
 
@@ -869,34 +1030,34 @@ class _ClassEquipmentSection extends ConsumerWidget {
           children: [
             Text(
               l10n.reviewClassEquipmentTitle(i18n.className(cls.name)),
-              style: Theme.of(context)
-                  .textTheme
-                  .labelLarge
-                  ?.copyWith(color: scheme.primary),
+              style: Theme.of(
+                context,
+              ).textTheme.labelLarge?.copyWith(color: scheme.primary),
             ),
             // ── Fixed items ──────────────────────────────────────────────
             if (equip.fixed.isNotEmpty) ...[
               const SizedBox(height: 8),
               Text(
                 l10n.reviewEquipmentIncluded,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(color: scheme.onSurfaceVariant),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
               ),
               const SizedBox(height: 4),
               Wrap(
                 spacing: 6,
                 runSpacing: 4,
                 children: equip.fixed
-                    .map((item) => Chip(
-                          label: Text(i18n.backgroundEquipmentName(item),
-                              style: Theme.of(context).textTheme.bodySmall),
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 4),
-                        ))
+                    .map(
+                      (item) => Chip(
+                        label: Text(
+                          i18n.backgroundEquipmentName(item),
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                      ),
+                    )
                     .toList(),
               ),
             ],
@@ -904,10 +1065,9 @@ class _ClassEquipmentSection extends ConsumerWidget {
             ...equip.choices.asMap().entries.map((groupEntry) {
               final g = groupEntry.key;
               final group = groupEntry.value;
-              final selectedOptionIdx =
-                  g < draft.classEquipmentChoices.length
-                      ? draft.classEquipmentChoices[g]
-                      : null;
+              final selectedOptionIdx = g < draft.classEquipmentChoices.length
+                  ? draft.classEquipmentChoices[g]
+                  : null;
 
               // Label for a package: items joined by " + "
               String optionLabel(List<String> items) =>
@@ -919,10 +1079,9 @@ class _ClassEquipmentSection extends ConsumerWidget {
                   const SizedBox(height: 12),
                   Text(
                     AppLocalizations.of(context)!.reviewChooseOne,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.copyWith(color: scheme.onSurfaceVariant),
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Wrap(
@@ -953,43 +1112,53 @@ class _ClassEquipmentSection extends ConsumerWidget {
                     ...group.options[selectedOptionIdx]
                         .asMap()
                         .entries
-                        .where((e) =>
-                            e.value.toLowerCase().startsWith('any '))
+                        .where((e) => e.value.toLowerCase().startsWith('any '))
                         .map((e) {
-                      final i = e.key;
-                      final anyItem = e.value;
-                      final opts = _anyItemOptions(anyItem) ?? [];
-                      final current =
-                          draft.classEquipmentSpecifics['$g:$i'];
-                      return Padding(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: DropdownButtonFormField<String>(
-                          initialValue: current,
-                          isExpanded: true,
-                          decoration: InputDecoration(
-                            labelText: anyItem,
-                            border: const OutlineInputBorder(),
-                            isDense: true,
-                            contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 8),
-                          ),
-                          hint: Text(AppLocalizations.of(context)!.stepChooseOne,
-                              style: const TextStyle(fontSize: 13)),
-                          items: opts
-                              .map((o) => DropdownMenuItem(
-                                    value: o,
-                                    child: Text(i18n.backgroundEquipmentName(o),
-                                        style: const TextStyle(fontSize: 13)),
-                                  ))
-                              .toList(),
-                          onChanged: (v) {
-                            if (v != null) {
-                              notifier.setClassEquipmentSpecific('$g:$i', v);
-                            }
-                          },
-                        ),
-                      );
-                    }),
+                          final i = e.key;
+                          final anyItem = e.value;
+                          final opts = _anyItemOptions(anyItem) ?? [];
+                          final current =
+                              draft.classEquipmentSpecifics['$g:$i'];
+                          return Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: DropdownButtonFormField<String>(
+                              initialValue: current,
+                              isExpanded: true,
+                              decoration: InputDecoration(
+                                labelText: anyItem,
+                                border: const OutlineInputBorder(),
+                                isDense: true,
+                                contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 8,
+                                ),
+                              ),
+                              hint: Text(
+                                AppLocalizations.of(context)!.stepChooseOne,
+                                style: const TextStyle(fontSize: 13),
+                              ),
+                              items: opts
+                                  .map(
+                                    (o) => DropdownMenuItem(
+                                      value: o,
+                                      child: Text(
+                                        i18n.backgroundEquipmentName(o),
+                                        style: const TextStyle(fontSize: 13),
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                              onChanged: (v) {
+                                if (v != null) {
+                                  notifier.setClassEquipmentSpecific(
+                                    '$g:$i',
+                                    v,
+                                  );
+                                }
+                              },
+                            ),
+                          );
+                        }),
                 ],
               );
             }),
@@ -1031,15 +1200,16 @@ class _LanguageChoiceSectionState
       final trimmed = lang.trim();
       if (trimmed.isEmpty || chosen.contains(trimmed)) return;
       if (chosen.length >= needed) return;
-      ref
-          .read(characterDraftProvider.notifier)
-          .setChosenLanguages([...chosen, trimmed]);
+      ref.read(characterDraftProvider.notifier).setChosenLanguages([
+        ...chosen,
+        trimmed,
+      ]);
     }
 
     void removeLanguage(String lang) {
-      ref.read(characterDraftProvider.notifier).setChosenLanguages(
-            chosen.where((l) => l != lang).toList(),
-          );
+      ref
+          .read(characterDraftProvider.notifier)
+          .setChosenLanguages(chosen.where((l) => l != lang).toList());
     }
 
     return Card(
@@ -1053,91 +1223,101 @@ class _LanguageChoiceSectionState
               children: [
                 Text(
                   l10n.reviewLanguageChoices,
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelLarge
-                      ?.copyWith(color: scheme.primary),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelLarge?.copyWith(color: scheme.primary),
                 ),
                 const Spacer(),
                 Text(
                   '${chosen.length} / $needed',
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: chosen.length >= needed
-                            ? scheme.primary
-                            : scheme.error,
-                      ),
+                    color: chosen.length >= needed
+                        ? scheme.primary
+                        : scheme.error,
+                  ),
                 ),
               ],
             ),
             const SizedBox(height: 4),
             Text(
               AppLocalizations.of(context)!.reviewChooseLanguages(needed),
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall
-                  ?.copyWith(color: scheme.onSurfaceVariant),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
             ),
-            if (chosen.isNotEmpty) ...[const SizedBox(height: 8), Wrap(
-              spacing: 4,
-              runSpacing: 4,
-              children: chosen
-                  .map((lang) => Chip(
+            if (chosen.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 4,
+                runSpacing: 4,
+                children: chosen
+                    .map(
+                      (lang) => Chip(
                         label: Text(lang),
                         labelStyle: const TextStyle(fontSize: 12),
-                        materialTapTargetSize:
-                            MaterialTapTargetSize.shrinkWrap,
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 4),
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
                         onDeleted: () => removeLanguage(lang),
-                      ))
-                  .toList(),
-            )],
-            if (canAdd) ...[const SizedBox(height: 8), Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _ctrl,
-                    textCapitalization: TextCapitalization.words,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      hintText: l10n.reviewLanguageTypeHint,
-                      border: OutlineInputBorder(),
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 8),
+                      ),
+                    )
+                    .toList(),
+              ),
+            ],
+            if (canAdd) ...[
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: _ctrl,
+                      textCapitalization: TextCapitalization.words,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        hintText: l10n.reviewLanguageTypeHint,
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 8,
+                        ),
+                      ),
+                      onSubmitted: (v) {
+                        addLanguage(v);
+                        _ctrl.clear();
+                      },
                     ),
-                    onSubmitted: (v) {
-                      addLanguage(v);
+                  ),
+                  const SizedBox(width: 4),
+                  IconButton.filled(
+                    icon: const Icon(Icons.add, size: 18),
+                    onPressed: () {
+                      addLanguage(_ctrl.text);
                       _ctrl.clear();
                     },
                   ),
-                ),
-                const SizedBox(width: 4),
-                IconButton.filled(
-                  icon: const Icon(Icons.add, size: 18),
-                  onPressed: () {
-                    addLanguage(_ctrl.text);
-                    _ctrl.clear();
-                  },
-                ),
-              ],
-            ), const SizedBox(height: 8), Wrap(
-              spacing: 4,
-              runSpacing: 4,
-              children: _kDndLanguages
-                  .where((l) =>
-                      !chosen.contains(l) &&
-                      !draft.fixedRaceLanguages.contains(l))
-                  .map((lang) => ActionChip(
+                ],
+              ),
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 4,
+                runSpacing: 4,
+                children: _kDndLanguages
+                    .where(
+                      (l) =>
+                          !chosen.contains(l) &&
+                          !draft.fixedRaceLanguages.contains(l),
+                    )
+                    .map(
+                      (lang) => ActionChip(
                         label: Text(lang),
                         labelStyle: const TextStyle(fontSize: 11),
-                        materialTapTargetSize:
-                            MaterialTapTargetSize.shrinkWrap,
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 2),
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        padding: const EdgeInsets.symmetric(horizontal: 2),
                         onPressed: () => addLanguage(lang),
-                      ))
-                  .toList(),
-            )],
+                      ),
+                    )
+                    .toList(),
+              ),
+            ],
           ],
         ),
       ),

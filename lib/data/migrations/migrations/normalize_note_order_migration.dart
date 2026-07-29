@@ -16,8 +16,7 @@ class NormalizeNoteOrderMigration extends CharacterMigration {
   String get title => 'Normalize note order';
 
   @override
-  String get description =>
-      'Assigns explicit order values to character notes.';
+  String get description => 'Assigns explicit order values to character notes.';
 
   @override
   CharacterMigrationResult migrate(

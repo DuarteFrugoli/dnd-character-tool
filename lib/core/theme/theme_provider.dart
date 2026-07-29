@@ -6,7 +6,9 @@ import 'app_themes.dart';
 const _kThemeKey = 'selected_theme_id';
 
 /// Provides the currently selected [AppTheme].
-final themeProvider = NotifierProvider<ThemeNotifier, AppTheme>(ThemeNotifier.new);
+final themeProvider = NotifierProvider<ThemeNotifier, AppTheme>(
+  ThemeNotifier.new,
+);
 
 class ThemeNotifier extends Notifier<AppTheme> {
   static final _defaultTheme = appThemes[0]; // 'system_dark'

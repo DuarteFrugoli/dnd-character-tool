@@ -9,6 +9,27 @@ import 'local_image_payload.dart';
 
 import '../../models/models.dart';
 
+class CharacterStorageIssue {
+  const CharacterStorageIssue({
+    required this.source,
+    required this.message,
+    this.id,
+  });
+
+  final String source;
+  final String? id;
+  final String message;
+}
+
+class CharacterLoadReport {
+  const CharacterLoadReport({required this.characters, required this.issues});
+
+  final List<Character> characters;
+  final List<CharacterStorageIssue> issues;
+
+  bool get hasIssues => issues.isNotEmpty;
+}
+
 /// Fachada de persistência de personagens.
 /// Delega ao backend correto para cada plataforma:
 /// - nativo (Android/iOS/Windows/macOS/Linux): arquivos JSON no disco
@@ -29,29 +50,70 @@ class CharacterLocalDataSource {
   // ---------------------------------------------------------------------------
 
   Future<List<Character>> loadAll() async {
-    final jsons = await _backend.loadAllCharacters();
-    final characters = jsons
-        .map((j) {
-          try {
-            return Character.fromJson(j);
-          } catch (_) {
-            return null;
-          }
-        })
-        .whereType<Character>()
-        .toList();
+    return (await loadAllWithReport()).characters;
+  }
+
+  Future<CharacterLoadReport> loadAllWithReport() async {
+    final scan = await _backend.scanCharacters();
+    final issues = [for (final issue in scan.issues) _fromStorageIssue(issue)];
+    for (final issue in issues) {
+      _logStorageIssue(issue);
+    }
+
+    final characters = <Character>[];
+    for (final record in scan.records) {
+      try {
+        characters.add(Character.fromJson(record.json));
+      } catch (_) {
+        final issue = CharacterStorageIssue(
+          source: record.source,
+          id: record.id,
+          message: 'corrupted_character',
+        );
+        issues.add(issue);
+        _logStorageIssue(issue);
+      }
+    }
     characters.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
-    return characters;
+    return CharacterLoadReport(characters: characters, issues: issues);
   }
 
   Future<Character?> loadById(String id) async {
-    final json = await _backend.loadCharacter(id);
-    if (json == null) return null;
+    final StoredCharacterJson? record;
     try {
-      return Character.fromJson(json);
-    } catch (_) {
+      record = await _backend.loadCharacterRecord(id);
+    } on StorageReadException catch (e) {
+      _logStorageIssue(_fromStorageIssue(e.issue));
       return null;
     }
+    if (record == null) return null;
+    try {
+      return Character.fromJson(record.json);
+    } catch (_) {
+      _logStorageIssue(
+        CharacterStorageIssue(
+          source: record.source,
+          id: record.id,
+          message: 'corrupted_character',
+        ),
+      );
+      return null;
+    }
+  }
+
+  CharacterStorageIssue _fromStorageIssue(StorageReadIssue issue) {
+    return CharacterStorageIssue(
+      source: issue.source,
+      id: issue.id,
+      message: issue.message,
+    );
+  }
+
+  void _logStorageIssue(CharacterStorageIssue issue) {
+    final id = issue.id == null ? '' : ' id=${issue.id}';
+    debugPrint(
+      'Character storage issue: ${issue.message} at ${issue.source}$id',
+    );
   }
 
   Future<void> save(Character character) async {

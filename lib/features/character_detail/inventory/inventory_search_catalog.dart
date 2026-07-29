@@ -122,8 +122,9 @@ class SrdInventorySearchCatalog {
         category: 'armor',
         itemType: ItemType.armor,
         weight: armor.weight,
-        description:
-            armor.stealthDisadvantage ? l10n.armorStealthDisadvantage : null,
+        description: armor.stealthDisadvantage
+            ? l10n.armorStealthDisadvantage
+            : null,
         properties: {
           'armorType': armor.type,
           'baseAC': armor.baseAC,

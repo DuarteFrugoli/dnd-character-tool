@@ -21,9 +21,8 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/character/:id',
-      builder: (context, state) => CharacterDetailScreen(
-        characterId: state.pathParameters['id']!,
-      ),
+      builder: (context, state) =>
+          CharacterDetailScreen(characterId: state.pathParameters['id']!),
     ),
     GoRoute(
       path: '/create',

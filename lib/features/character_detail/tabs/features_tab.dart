@@ -81,9 +81,7 @@ class _FeatureUsageControls extends ConsumerWidget {
                 ),
                 Text(
                   _featureUsageRechargeLabel(context, view.recharge),
-                  style: textTheme.labelSmall?.copyWith(
-                    color: scheme.outline,
-                  ),
+                  style: textTheme.labelSmall?.copyWith(color: scheme.outline),
                 ),
               ],
             ),
@@ -94,9 +92,9 @@ class _FeatureUsageControls extends ConsumerWidget {
             visualDensity: VisualDensity.compact,
             onPressed: view.canSpend
                 ? () => notifier.adjustFeatureResource(
-                      view.resource.id,
-                      -view.spend,
-                    )
+                    view.resource.id,
+                    -view.spend,
+                  )
                 : null,
           ),
           const SizedBox(width: 6),
@@ -195,9 +193,9 @@ List<Widget> _featureChoiceWidgets({
           else
             Text(
               l10n.featureChoicesPending,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
             ),
           Align(
             alignment: Alignment.centerRight,
@@ -236,8 +234,9 @@ String _featureChoiceRequestFeatureLabel(
             request.featureName,
           ) ??
           request.featureName,
-    FeatureChoiceSourceType.raceTrait =>
-      i18n.raceTraitName(request.sourceName ?? request.featureName),
+    FeatureChoiceSourceType.raceTrait => i18n.raceTraitName(
+      request.sourceName ?? request.featureName,
+    ),
     FeatureChoiceSourceType.feat =>
       i18n.featName(request.sourceName ?? request.featureName) ??
           request.featureName,
@@ -408,102 +407,109 @@ void _openFeatureChoiceEditorSheet({
 
 final _featuresDataProvider =
     Provider.family<AsyncValue<_FeaturesData>, String>((ref, characterId) {
-  final vmState = ref.watch(featuresTabVmProvider(characterId));
-  return vmState.when(
-    loading: () => const AsyncLoading(),
-    error: (error, stackTrace) => AsyncError(error, stackTrace),
-    data: (vm) {
-      final character = vm.character;
-      final subclassName = character.subclass ?? '';
-      final classFeaturesState = ref.watch(
-        srdClassFeaturesProvider(character.characterClass),
+      final vmState = ref.watch(featuresTabVmProvider(characterId));
+      return vmState.when(
+        loading: () => const AsyncLoading(),
+        error: (error, stackTrace) => AsyncError(error, stackTrace),
+        data: (vm) {
+          final character = vm.character;
+          final primaryClass = character.primaryClass;
+          final className = primaryClass.className;
+          final classLevel = primaryClass.level;
+          final subclassName = primaryClass.subclassName ?? '';
+          final classFeaturesState = ref.watch(
+            srdClassFeaturesProvider(className),
+          );
+          final racesState = ref.watch(srdRacesProvider);
+          final backgroundsState = ref.watch(srdBackgroundsProvider);
+          final traitDescriptionsState = ref.watch(srdRaceTraitsProvider);
+          final subclassFeaturesState = ref.watch(
+            srdSubclassFeaturesProvider(
+              SrdSubclassFeatureKey(
+                className: className,
+                subclassName: subclassName,
+              ),
+            ),
+          );
+          final featureChoiceCatalogState = ref.watch(
+            srdFeatureChoiceCatalogProvider,
+          );
+          final featureUsageCatalogState = ref.watch(
+            srdFeatureUsageCatalogProvider,
+          );
+          final skillsState = ref.watch(srdSkillsProvider);
+          final toolsState = ref.watch(srdToolsProvider);
+          final spellsState = ref.watch(srdSpellsProvider);
+          final languagesState = ref.watch(srdLanguagesProvider);
+          final weaponsState = ref.watch(srdWeaponsProvider);
+          final featsState = ref.watch(srdFeatsProvider);
+
+          final pendingState = _featuresDataPendingState([
+            classFeaturesState,
+            racesState,
+            backgroundsState,
+            traitDescriptionsState,
+            subclassFeaturesState,
+            featureChoiceCatalogState,
+            featureUsageCatalogState,
+            skillsState,
+            toolsState,
+            spellsState,
+            languagesState,
+            weaponsState,
+            featsState,
+          ]);
+          if (pendingState != null) return pendingState;
+
+          final classFeatures = classFeaturesState.valueOrNull!;
+          final races = racesState.valueOrNull!;
+          final backgrounds = backgroundsState.valueOrNull!;
+          final traitDescriptions = traitDescriptionsState.valueOrNull!;
+          final subclassFeatures = subclassFeaturesState.valueOrNull!;
+          final featureChoiceCatalog = featureChoiceCatalogState.valueOrNull!;
+          final featureUsageCatalog = featureUsageCatalogState.valueOrNull!;
+          final skills = skillsState.valueOrNull!;
+          final tools = toolsState.valueOrNull!;
+          final spells = spellsState.valueOrNull!;
+          final languages = languagesState.valueOrNull!;
+          final weapons = weaponsState.valueOrNull!;
+          final srdFeats = featsState.valueOrNull!;
+
+          final race = races.where((r) => r.name == character.race).firstOrNull;
+          final subrace = race?.subraces
+              .where((s) => s.name == character.subrace)
+              .firstOrNull;
+          final bg = backgrounds
+              .where((b) => b.name == character.background)
+              .firstOrNull;
+
+          return AsyncData(
+            _FeaturesData(
+              classFeatures: classFeatures
+                  .where((f) => f.level <= classLevel)
+                  .toList(),
+              raceTraits: race?.traits ?? [],
+              subraceTraits: subrace?.traits ?? [],
+              traitDescriptions: traitDescriptions,
+              backgroundFeatureName: bg?.feature.name,
+              backgroundFeatureDescription: bg?.feature.description,
+              subclassName: subclassName,
+              subclassFeatures: subclassFeatures
+                  .where((f) => f.level <= classLevel)
+                  .toList(),
+              featureChoiceCatalog: featureChoiceCatalog,
+              featureUsageCatalog: featureUsageCatalog,
+              skills: skills,
+              tools: tools,
+              spells: spells,
+              languages: languages,
+              weapons: weapons,
+              srdFeats: srdFeats,
+            ),
+          );
+        },
       );
-      final racesState = ref.watch(srdRacesProvider);
-      final backgroundsState = ref.watch(srdBackgroundsProvider);
-      final traitDescriptionsState = ref.watch(srdRaceTraitsProvider);
-      final subclassFeaturesState = ref.watch(
-        srdSubclassFeaturesProvider(
-          SrdSubclassFeatureKey(
-            className: character.characterClass,
-            subclassName: subclassName,
-          ),
-        ),
-      );
-      final featureChoiceCatalogState =
-          ref.watch(srdFeatureChoiceCatalogProvider);
-      final featureUsageCatalogState = ref.watch(srdFeatureUsageCatalogProvider);
-      final skillsState = ref.watch(srdSkillsProvider);
-      final toolsState = ref.watch(srdToolsProvider);
-      final spellsState = ref.watch(srdSpellsProvider);
-      final languagesState = ref.watch(srdLanguagesProvider);
-      final weaponsState = ref.watch(srdWeaponsProvider);
-      final featsState = ref.watch(srdFeatsProvider);
-
-      final pendingState = _featuresDataPendingState([
-        classFeaturesState,
-        racesState,
-        backgroundsState,
-        traitDescriptionsState,
-        subclassFeaturesState,
-        featureChoiceCatalogState,
-        featureUsageCatalogState,
-        skillsState,
-        toolsState,
-        spellsState,
-        languagesState,
-        weaponsState,
-        featsState,
-      ]);
-      if (pendingState != null) return pendingState;
-
-      final classFeatures = classFeaturesState.valueOrNull!;
-      final races = racesState.valueOrNull!;
-      final backgrounds = backgroundsState.valueOrNull!;
-      final traitDescriptions = traitDescriptionsState.valueOrNull!;
-      final subclassFeatures = subclassFeaturesState.valueOrNull!;
-      final featureChoiceCatalog = featureChoiceCatalogState.valueOrNull!;
-      final featureUsageCatalog = featureUsageCatalogState.valueOrNull!;
-      final skills = skillsState.valueOrNull!;
-      final tools = toolsState.valueOrNull!;
-      final spells = spellsState.valueOrNull!;
-      final languages = languagesState.valueOrNull!;
-      final weapons = weaponsState.valueOrNull!;
-      final srdFeats = featsState.valueOrNull!;
-
-      final race = races.where((r) => r.name == character.race).firstOrNull;
-      final subrace = race?.subraces
-          .where((s) => s.name == character.subrace)
-          .firstOrNull;
-      final bg = backgrounds
-          .where((b) => b.name == character.background)
-          .firstOrNull;
-
-      return AsyncData(
-        _FeaturesData(
-          classFeatures:
-              classFeatures.where((f) => f.level <= character.level).toList(),
-          raceTraits: race?.traits ?? [],
-          subraceTraits: subrace?.traits ?? [],
-          traitDescriptions: traitDescriptions,
-          backgroundFeatureName: bg?.feature.name,
-          backgroundFeatureDescription: bg?.feature.description,
-          subclassName: subclassName,
-          subclassFeatures: subclassFeatures
-              .where((f) => f.level <= character.level)
-              .toList(),
-          featureChoiceCatalog: featureChoiceCatalog,
-          featureUsageCatalog: featureUsageCatalog,
-          skills: skills,
-          tools: tools,
-          spells: spells,
-          languages: languages,
-          weapons: weapons,
-          srdFeats: srdFeats,
-        ),
-      );
-    },
-  );
-});
+    });
 
 AsyncValue<_FeaturesData>? _featuresDataPendingState(
   List<AsyncValue<dynamic>> values,
@@ -520,10 +526,7 @@ AsyncValue<_FeaturesData>? _featuresDataPendingState(
 }
 
 class _FeaturesTab extends ConsumerStatefulWidget {
-  const _FeaturesTab({
-    required this.character,
-    required this.characterId,
-  });
+  const _FeaturesTab({required this.character, required this.characterId});
   final Character character;
   final String characterId;
 
@@ -561,9 +564,8 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab>
 
     return dataState.when(
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, _) => Center(
-        child: Text(AppLocalizations.of(context)!.featuresLoadError),
-      ),
+      error: (error, _) =>
+          Center(child: Text(AppLocalizations.of(context)!.featuresLoadError)),
       data: (data) {
         final disabledSet = widget.character.disabledFeatures.toSet();
         void toggle(String name) {
@@ -622,7 +624,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab>
                     ],
                     const SliverToBoxAdapter(child: SizedBox(height: 24)),
                     _ClassFeaturesSection(
-                      className: widget.character.characterClass,
+                      className: widget.character.primaryClass.className,
                       features: data.classFeatures,
                       disabledFeatures: disabledSet,
                       onToggle: toggle,
@@ -634,7 +636,7 @@ class _FeaturesTabState extends ConsumerState<_FeaturesTab>
                     if (data.subclassFeatures.isNotEmpty) ...[
                       const SliverToBoxAdapter(child: SizedBox(height: 24)),
                       _SubclassFeaturesSection(
-                        className: widget.character.characterClass,
+                        className: widget.character.primaryClass.className,
                         subclassName: data.subclassName,
                         features: data.subclassFeatures,
                         disabledFeatures: disabledSet,

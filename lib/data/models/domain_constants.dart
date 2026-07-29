@@ -6,5 +6,3 @@ library;
 
 /// Source key used when the user creates a custom class feature.
 const kFeatureSourceCustom = 'Custom';
-
-

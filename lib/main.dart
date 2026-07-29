@@ -27,8 +27,9 @@ void main() async {
       : appThemes[0];
 
   final savedLocaleCode = prefs.getString('selected_locale');
-  final initialLocale =
-      savedLocaleCode != null ? Locale(savedLocaleCode) : null;
+  final initialLocale = savedLocaleCode != null
+      ? Locale(savedLocaleCode)
+      : null;
 
   final savedUnitSystem = prefs.getString('unit_system');
   final initialUnitSystem = savedUnitSystem != null
@@ -38,16 +39,22 @@ void main() async {
         )
       : defaultUnitSystem(initialLocale);
 
-  runApp(ProviderScope(
-    overrides: [
-      themeProvider.overrideWith(() => ThemeNotifier.withInitial(initialTheme)),
-      localeProvider.overrideWith(
-          () => LocaleNotifier.withInitial(initialLocale)),
-      unitSystemProvider.overrideWith(
-          () => UnitSystemNotifier.withInitial(initialUnitSystem)),
-    ],
-    child: const MainApp(),
-  ));
+  runApp(
+    ProviderScope(
+      overrides: [
+        themeProvider.overrideWith(
+          () => ThemeNotifier.withInitial(initialTheme),
+        ),
+        localeProvider.overrideWith(
+          () => LocaleNotifier.withInitial(initialLocale),
+        ),
+        unitSystemProvider.overrideWith(
+          () => UnitSystemNotifier.withInitial(initialUnitSystem),
+        ),
+      ],
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends ConsumerWidget {

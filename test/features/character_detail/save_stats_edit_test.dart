@@ -11,7 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 // ── In-memory backend (counts writes) ────────────────────────────────────────
 
-class _CountingBackend implements StorageBackend {
+class _CountingBackend extends StorageBackend {
   final Map<String, Map<String, dynamic>> _store = {};
   int writeCount = 0;
 

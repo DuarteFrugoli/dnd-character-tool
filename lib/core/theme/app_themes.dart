@@ -29,19 +29,24 @@ class AppTheme {
         surface: surfaceColor,
         surfaceContainerLowest: surfaceColor,
         surfaceContainerLow: Color.alphaBlend(
-            Colors.brown.withValues(alpha: 0.06), surfaceColor!),
+          Colors.brown.withValues(alpha: 0.06),
+          surfaceColor!,
+        ),
         surfaceContainer: Color.alphaBlend(
-            Colors.brown.withValues(alpha: 0.10), surfaceColor!),
+          Colors.brown.withValues(alpha: 0.10),
+          surfaceColor!,
+        ),
         surfaceContainerHigh: Color.alphaBlend(
-            Colors.brown.withValues(alpha: 0.14), surfaceColor!),
+          Colors.brown.withValues(alpha: 0.14),
+          surfaceColor!,
+        ),
         surfaceContainerHighest: Color.alphaBlend(
-            Colors.brown.withValues(alpha: 0.18), surfaceColor!),
+          Colors.brown.withValues(alpha: 0.18),
+          surfaceColor!,
+        ),
       );
     }
-    return ThemeData(
-      colorScheme: scheme,
-      useMaterial3: true,
-    );
+    return ThemeData(colorScheme: scheme, useMaterial3: true);
   }
 }
 
@@ -107,5 +112,4 @@ const List<AppTheme> appThemes = [
     brightness: Brightness.light,
     surfaceColor: Color(0xFFF5E6C8), // bege pergaminho
   ),
-
 ];

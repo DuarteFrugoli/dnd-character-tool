@@ -8,7 +8,8 @@ import '../../../data/feature_choice_engine.dart';
 import '../../../data/feature_choice_option_resolver.dart';
 import '../../../data/models/models.dart';
 
-typedef FeatureChoiceLabelBuilder = String Function(FeatureChoiceRequest request);
+typedef FeatureChoiceLabelBuilder =
+    String Function(FeatureChoiceRequest request);
 
 class FeatureChoiceEditor extends StatefulWidget {
   const FeatureChoiceEditor({
@@ -95,7 +96,8 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
     setState(() {
       final current = List<String>.from(_values[request.key] ?? const []);
       if (selected) {
-        if (!current.contains(value) && current.length < request.requiredCount) {
+        if (!current.contains(value) &&
+            current.length < request.requiredCount) {
           current.add(value);
         }
       } else {
@@ -152,8 +154,9 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
                       request.requiredCount,
                     ),
                   ),
-                  backgroundColor:
-                      complete ? scheme.primaryContainer : scheme.errorContainer,
+                  backgroundColor: complete
+                      ? scheme.primaryContainer
+                      : scheme.errorContainer,
                 ),
               ],
             ),
@@ -163,9 +166,9 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
                 _choiceLabel(context, request.requirement),
                 request.requiredCount,
               ),
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
             ),
             const SizedBox(height: 8),
             if (options.isEmpty)
@@ -174,8 +177,8 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
                 child: Text(
                   l10n.featureChoicesChooseDependencyFirst,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
               )
             else if (request.requiredCount == 1)

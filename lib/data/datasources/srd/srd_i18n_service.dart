@@ -7,8 +7,12 @@ import 'package:flutter/services.dart';
 /// Keys are always English identifiers; values are localised strings.
 /// Returning `null` means "use the original English string".
 class SrdI18nService {
-  SrdI18nService._(this.locale, this._data, this._subraceNames,
-      this._bgEquipmentNames);
+  SrdI18nService._(
+    this.locale,
+    this._data,
+    this._subraceNames,
+    this._bgEquipmentNames,
+  );
 
   final String locale;
 
@@ -22,8 +26,12 @@ class SrdI18nService {
   final Map<String, String> _bgEquipmentNames;
 
   /// No-op service: every lookup returns null, so callers fall back to English.
-  static final SrdI18nService english =
-      SrdI18nService._('en', const {}, const {}, const {});
+  static final SrdI18nService english = SrdI18nService._(
+    'en',
+    const {},
+    const {},
+    const {},
+  );
 
   static const _files = [
     'backgrounds',
@@ -52,8 +60,9 @@ class SrdI18nService {
     final data = <String, Map<String, dynamic>>{};
     for (final file in _files) {
       try {
-        final raw =
-            await rootBundle.loadString('assets/data/i18n/$locale/$file.json');
+        final raw = await rootBundle.loadString(
+          'assets/data/i18n/$locale/$file.json',
+        );
         final decoded = jsonDecode(raw);
         if (decoded is Map<String, dynamic> && decoded.isNotEmpty) {
           data[file] = _lowercaseKeys(decoded);
@@ -67,8 +76,7 @@ class SrdI18nService {
     // so we match them by index against the SRD source.
     final subraceNames = <String, String>{};
     try {
-      final srdRaw =
-          await rootBundle.loadString('assets/data/srd/races.json');
+      final srdRaw = await rootBundle.loadString('assets/data/srd/races.json');
       final srdRaces = jsonDecode(srdRaw) as List<dynamic>;
       final i18nRaces = data['races'];
       if (i18nRaces != null) {
@@ -96,24 +104,28 @@ class SrdI18nService {
     // backgrounds with the i18n overlay (positional arrays).
     final bgEquipmentNames = <String, String>{};
     try {
-      final srdRaw =
-          await rootBundle.loadString('assets/data/srd/backgrounds.json');
+      final srdRaw = await rootBundle.loadString(
+        'assets/data/srd/backgrounds.json',
+      );
       final srdBackgrounds = jsonDecode(srdRaw) as List<dynamic>;
       final i18nBackgrounds = data['backgrounds'];
       if (i18nBackgrounds != null) {
         for (final srdBg in srdBackgrounds) {
           final bgEnName = srdBg['name'] as String?;
           if (bgEnName == null) continue;
-          final srdItems =
-              List<String>.from(srdBg['startingEquipment'] as List? ?? []);
+          final srdItems = List<String>.from(
+            srdBg['startingEquipment'] as List? ?? [],
+          );
           final i18nEntry = i18nBackgrounds[bgEnName.toLowerCase()];
           if (i18nEntry is! Map) continue;
-          final i18nItems =
-              List<dynamic>.from(i18nEntry['startingequipment'] as List? ?? []);
+          final i18nItems = List<dynamic>.from(
+            i18nEntry['startingequipment'] as List? ?? [],
+          );
           for (var i = 0; i < srdItems.length; i++) {
             final enItem = srdItems[i];
-            final translated =
-                i < i18nItems.length ? i18nItems[i] as String? : null;
+            final translated = i < i18nItems.length
+                ? i18nItems[i] as String?
+                : null;
             if (translated != null && translated != enItem) {
               bgEquipmentNames[enItem] = translated;
             }
@@ -124,8 +136,9 @@ class SrdI18nService {
 
     // Also add class starting equipment (fixed + choices) by positional cross-ref.
     try {
-      final srdClsRaw =
-          await rootBundle.loadString('assets/data/srd/classes.json');
+      final srdClsRaw = await rootBundle.loadString(
+        'assets/data/srd/classes.json',
+      );
       final srdClasses = jsonDecode(srdClsRaw) as List<dynamic>;
       final i18nClasses = data['classes'];
       if (i18nClasses != null) {
@@ -155,20 +168,24 @@ class SrdI18nService {
           );
 
           // Choice options (choices[g].options[o][i])
-          final srdChoices =
-              List<dynamic>.from(srdEquip['choices'] as List? ?? []);
-          final i18nChoices =
-              List<dynamic>.from(i18nEquip['choices'] as List? ?? []);
-          for (var g = 0;
-              g < srdChoices.length && g < i18nChoices.length;
-              g++) {
-            final srdOpts =
-                List<dynamic>.from(srdChoices[g]['options'] as List? ?? []);
-            final i18nOpts =
-                List<dynamic>.from(i18nChoices[g]['options'] as List? ?? []);
-            for (var o = 0;
-                o < srdOpts.length && o < i18nOpts.length;
-                o++) {
+          final srdChoices = List<dynamic>.from(
+            srdEquip['choices'] as List? ?? [],
+          );
+          final i18nChoices = List<dynamic>.from(
+            i18nEquip['choices'] as List? ?? [],
+          );
+          for (
+            var g = 0;
+            g < srdChoices.length && g < i18nChoices.length;
+            g++
+          ) {
+            final srdOpts = List<dynamic>.from(
+              srdChoices[g]['options'] as List? ?? [],
+            );
+            final i18nOpts = List<dynamic>.from(
+              i18nChoices[g]['options'] as List? ?? [],
+            );
+            for (var o = 0; o < srdOpts.length && o < i18nOpts.length; o++) {
               crossItems(
                 List<dynamic>.from(srdOpts[o] as List? ?? []),
                 List<dynamic>.from(i18nOpts[o] as List? ?? []),
@@ -210,11 +227,11 @@ class SrdI18nService {
   /// Recursively lowercases all [String] map keys so every lookup is
   /// case-insensitive at O(1) cost. Called once at load time.
   static Map<String, dynamic> _lowercaseKeys(Map<String, dynamic> map) => {
-        for (final e in map.entries)
-          e.key.toLowerCase(): e.value is Map<String, dynamic>
-              ? _lowercaseKeys(e.value as Map<String, dynamic>)
-              : e.value,
-      };
+    for (final e in map.entries)
+      e.key.toLowerCase(): e.value is Map<String, dynamic>
+          ? _lowercaseKeys(e.value as Map<String, dynamic>)
+          : e.value,
+  };
 
   // ── Generic helpers ────────────────────────────────────────────────────────
 
@@ -232,8 +249,7 @@ class SrdI18nService {
     return entry[field.toLowerCase()] as String?;
   }
 
-  String? _nested3(
-      String file, String k1, String k2, String k3, String field) {
+  String? _nested3(String file, String k1, String k2, String k3, String field) {
     final level1 = _data[file]?[k1.toLowerCase()];
     if (level1 is! Map) return null;
     final level2 = level1[k2.toLowerCase()];
@@ -247,7 +263,8 @@ class SrdI18nService {
 
   String raceTraitName(String en) => _str('race_traits', en, 'name') ?? en;
 
-  String? raceTraitDescription(String en) => _str('race_traits', en, 'description');
+  String? raceTraitDescription(String en) =>
+      _str('race_traits', en, 'description');
 
   // ── Skills ─────────────────────────────────────────────────────────────────
 
@@ -337,14 +354,28 @@ class SrdI18nService {
   // ── Subclass features ──────────────────────────────────────────────────────
 
   String? subclassFeatureName(
-          String className, String subclassName, String featureName) =>
-      _nested3(
-          'subclass_features', className, subclassName, featureName, 'name');
+    String className,
+    String subclassName,
+    String featureName,
+  ) => _nested3(
+    'subclass_features',
+    className,
+    subclassName,
+    featureName,
+    'name',
+  );
 
   String? subclassFeatureDescription(
-          String className, String subclassName, String featureName) =>
-      _nested3('subclass_features', className, subclassName, featureName,
-          'description');
+    String className,
+    String subclassName,
+    String featureName,
+  ) => _nested3(
+    'subclass_features',
+    className,
+    subclassName,
+    featureName,
+    'description',
+  );
 
   // ── Conditions ─────────────────────────────────────────────────────────────
 
@@ -369,11 +400,13 @@ class SrdI18nService {
     return en;
   }
 
-  String? equipmentDescription(String en) => _str('equipment', en, 'description');
+  String? equipmentDescription(String en) =>
+      _str('equipment', en, 'description');
 
   String magicItemName(String en) => _str('magic_items', en, 'name') ?? en;
 
-  String? magicItemDescription(String en) => _str('magic_items', en, 'description');
+  String? magicItemDescription(String en) =>
+      _str('magic_items', en, 'description');
 
   // ── Languages ──────────────────────────────────────────────────────────────
 
@@ -396,18 +429,17 @@ class SrdI18nService {
     required String choiceId,
     required String optionId,
     String? optionsSource,
-  }) =>
-      _featureChoiceOptionField(
-        sourceType: sourceType,
-        sourceClass: sourceClass,
-        sourceSubclass: sourceSubclass,
-        sourceName: sourceName,
-        featureName: featureName,
-        choiceId: choiceId,
-        optionId: optionId,
-        optionsSource: optionsSource,
-        field: 'name',
-      );
+  }) => _featureChoiceOptionField(
+    sourceType: sourceType,
+    sourceClass: sourceClass,
+    sourceSubclass: sourceSubclass,
+    sourceName: sourceName,
+    featureName: featureName,
+    choiceId: choiceId,
+    optionId: optionId,
+    optionsSource: optionsSource,
+    field: 'name',
+  );
 
   String? featureChoiceOptionDescription({
     required String sourceType,
@@ -418,18 +450,17 @@ class SrdI18nService {
     required String choiceId,
     required String optionId,
     String? optionsSource,
-  }) =>
-      _featureChoiceOptionField(
-        sourceType: sourceType,
-        sourceClass: sourceClass,
-        sourceSubclass: sourceSubclass,
-        sourceName: sourceName,
-        featureName: featureName,
-        choiceId: choiceId,
-        optionId: optionId,
-        optionsSource: optionsSource,
-        field: 'description',
-      );
+  }) => _featureChoiceOptionField(
+    sourceType: sourceType,
+    sourceClass: sourceClass,
+    sourceSubclass: sourceSubclass,
+    sourceName: sourceName,
+    featureName: featureName,
+    choiceId: choiceId,
+    optionId: optionId,
+    optionsSource: optionsSource,
+    field: 'description',
+  );
 
   String? _featureChoiceOptionField({
     required String sourceType,
@@ -444,34 +475,19 @@ class SrdI18nService {
   }) {
     final bySource = optionsSource == null
         ? null
-        : _featureChoiceAt([
-            'optionsources',
-            optionsSource,
-            optionId,
-            field,
-          ]);
+        : _featureChoiceAt(['optionsources', optionsSource, optionId, field]);
     if (bySource is String) return bySource;
 
     final sourcePath = switch (sourceType) {
-      'classFeature' => [
-          'classfeatures',
-          sourceClass,
-          featureName,
-        ],
+      'classFeature' => ['classfeatures', sourceClass, featureName],
       'subclassFeature' => [
-          'subclassfeatures',
-          sourceClass,
-          sourceSubclass,
-          featureName,
-        ],
-      'raceTrait' => [
-          'racetraits',
-          sourceName ?? featureName,
-        ],
-      'feat' => [
-          'feats',
-          sourceName ?? featureName,
-        ],
+        'subclassfeatures',
+        sourceClass,
+        sourceSubclass,
+        featureName,
+      ],
+      'raceTrait' => ['racetraits', sourceName ?? featureName],
+      'feat' => ['feats', sourceName ?? featureName],
       _ => const <String?>[],
     };
     if (sourcePath.isEmpty || sourcePath.any((part) => part == null)) {
@@ -576,8 +592,10 @@ class SrdI18nService {
 
   static Map<String, String>? _getTermsMap(String locale) {
     switch (locale) {
-      case 'pt': return _ptTerms;
-      default:   return null;
+      case 'pt':
+        return _ptTerms;
+      default:
+        return null;
     }
   }
 
@@ -652,7 +670,10 @@ class SrdI18nService {
   }
 
   /// Searches all classes to find a subclass feature description by subclass key alone.
-  String? anySubclassFeatureDescription(String subclassKey, String featureName) {
+  String? anySubclassFeatureDescription(
+    String subclassKey,
+    String featureName,
+  ) {
     final file = _data['subclass_features'];
     if (file == null) return null;
     for (final classEntry in file.values) {

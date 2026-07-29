@@ -684,7 +684,9 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                   _SectionLabel(l10n.spellFilterSectionLevel),
                   SwitchListTile(
                     title: Text(l10n.spellFilterShowAllLevels),
-                    subtitle: Text(l10n.spellFilterShowAllLevelsHint(widget.maxSpellLevel)),
+                    subtitle: Text(
+                      l10n.spellFilterShowAllLevelsHint(widget.maxSpellLevel),
+                    ),
                     value: f.showAllLevels,
                     onChanged: (v) => setState(() => f.showAllLevels = v),
                     dense: true,
@@ -701,7 +703,11 @@ class _FilterPanelSheetState extends State<_FilterPanelSheet> {
                         lvl++
                       )
                         ChoiceChip(
-                          label: Text(lvl == 0 ? l10n.spellFilterCantrip : l10n.spellFilterLvl(lvl)),
+                          label: Text(
+                            lvl == 0
+                                ? l10n.spellFilterCantrip
+                                : l10n.spellFilterLvl(lvl),
+                          ),
                           selected: f.level == lvl,
                           onSelected: (v) =>
                               setState(() => f.level = v ? lvl : null),
@@ -918,10 +924,7 @@ class SpellDetailSheet extends ConsumerWidget {
   /// For prepare-all class spells: toggles prepared state.
   final VoidCallback? onTogglePrepared;
 
-  Future<void> _confirmRemove(
-    BuildContext context,
-    SrdI18nService i18n,
-  ) async {
+  Future<void> _confirmRemove(BuildContext context, SrdI18nService i18n) async {
     final l10n = AppLocalizations.of(context)!;
     final confirmed = await showDialog<bool>(
       context: context,
@@ -968,29 +971,30 @@ class SpellDetailSheet extends ConsumerWidget {
       return l10n.spellRangeSelf;
     }
     return switch (spell.range) {
-      'Touch'     => l10n.spellRangeTouch,
-      'Sight'     => l10n.spellRangeSight,
-      'Special'   => l10n.spellRangeSpecial,
+      'Touch' => l10n.spellRangeTouch,
+      'Sight' => l10n.spellRangeSight,
+      'Special' => l10n.spellRangeSpecial,
       'Unlimited' => l10n.spellRangeUnlimited,
-      _           => spell.range,
+      _ => spell.range,
     };
   }
 
   String _areaType(AppLocalizations l10n, String type) => switch (type) {
-    'sphere'   => l10n.spellAreaSphere,
-    'cone'     => l10n.spellAreaCone,
-    'cube'     => l10n.spellAreaCube,
+    'sphere' => l10n.spellAreaSphere,
+    'cone' => l10n.spellAreaCone,
+    'cube' => l10n.spellAreaCube,
     'cylinder' => l10n.spellAreaCylinder,
-    'line'     => l10n.spellAreaLine,
-    'wall'     => l10n.spellAreaWall,
-    'circle'   => l10n.spellAreaCircle,
-    _          => type,
+    'line' => l10n.spellAreaLine,
+    'wall' => l10n.spellAreaWall,
+    'circle' => l10n.spellAreaCircle,
+    _ => type,
   };
 
   String _componentsStr(SrdI18nService i18n) {
     final base = spell.components.join(', ');
     if (spell.material == null) return base;
-    final translatedMaterial = i18n.spellMaterial(spell.name) ?? spell.material!;
+    final translatedMaterial =
+        i18n.spellMaterial(spell.name) ?? spell.material!;
     return '$base ($translatedMaterial)';
   }
 
@@ -1059,7 +1063,10 @@ class SpellDetailSheet extends ConsumerWidget {
             l10n.spellDetailCastingTime,
             i18n.castingTime(spell.castingTime),
           ),
-          _StatRow(l10n.spellDetailRange, _displayRange(l10n, ref.watch(unitSystemProvider))),
+          _StatRow(
+            l10n.spellDetailRange,
+            _displayRange(l10n, ref.watch(unitSystemProvider)),
+          ),
           _StatRow(
             l10n.spellDetailDuration,
             i18n.spellDuration(spell.duration),
@@ -1133,7 +1140,9 @@ class SpellDetailSheet extends ConsumerWidget {
           // ── Classes ───────────────────────────────────────────────────────
           const SizedBox(height: 16),
           Text(
-            l10n.spellDetailClasses(spell.classes.map(i18n.className).join(', ')),
+            l10n.spellDetailClasses(
+              spell.classes.map(i18n.className).join(', '),
+            ),
             style: Theme.of(
               context,
             ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
@@ -1142,65 +1151,65 @@ class SpellDetailSheet extends ConsumerWidget {
           // ── Action button ─────────────────────────────────────────────────
           const SizedBox(height: 24),
           if (!readOnly) ...[
-          if (isClassSpell) ...[
-            // Prepare-all class: show info + prepare/unprepare toggle
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.info_outline,
-                    size: 16,
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      l10n.spellActionClassSpellInfo,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+            if (isClassSpell) ...[
+              // Prepare-all class: show info + prepare/unprepare toggle
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.info_outline,
+                      size: 16,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        l10n.spellActionClassSpellInfo,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 12),
-            if (onTogglePrepared != null)
-              isPrepared
-                  ? OutlinedButton.icon(
-                      icon: const Icon(Icons.check_box),
-                      label: Text(l10n.spellActionPrepared),
-                      onPressed: onTogglePrepared,
-                    )
-                  : FilledButton.icon(
-                      icon: const Icon(Icons.check_box_outline_blank),
-                      label: Text(l10n.spellActionPrepare),
-                      onPressed: onTogglePrepared,
-                    ),
-          ] else if (!isKnown && onAdd != null)
-            FilledButton.icon(
-              icon: const Icon(Icons.add),
-              label: Text(l10n.spellActionAdd),
-              onPressed: onAdd,
-            )
-          else ...[
-            OutlinedButton.icon(
-              icon: const Icon(Icons.check),
-              label: Text(
-                onRemove != null
-                    ? l10n.spellActionInList
-                    : l10n.spellActionAlreadyInList,
+              const SizedBox(height: 12),
+              if (onTogglePrepared != null)
+                isPrepared
+                    ? OutlinedButton.icon(
+                        icon: const Icon(Icons.check_box),
+                        label: Text(l10n.spellActionPrepared),
+                        onPressed: onTogglePrepared,
+                      )
+                    : FilledButton.icon(
+                        icon: const Icon(Icons.check_box_outline_blank),
+                        label: Text(l10n.spellActionPrepare),
+                        onPressed: onTogglePrepared,
+                      ),
+            ] else if (!isKnown && onAdd != null)
+              FilledButton.icon(
+                icon: const Icon(Icons.add),
+                label: Text(l10n.spellActionAdd),
+                onPressed: onAdd,
+              )
+            else ...[
+              OutlinedButton.icon(
+                icon: const Icon(Icons.check),
+                label: Text(
+                  onRemove != null
+                      ? l10n.spellActionInList
+                      : l10n.spellActionAlreadyInList,
+                ),
+                onPressed: onRemove != null
+                    ? () => _confirmRemove(context, i18n)
+                    : null,
               ),
-              onPressed: onRemove != null
-                  ? () => _confirmRemove(context, i18n)
-                  : null,
-            ),
-          ],
+            ],
           ], // end if (!readOnly)
         ],
       ),

@@ -268,7 +268,9 @@ List<EquipmentItem> adjustItemQuantity(
       .toList();
 }
 
-List<EquipmentItem> normalizeEquipmentSortOrders(List<EquipmentItem> equipment) {
+List<EquipmentItem> normalizeEquipmentSortOrders(
+  List<EquipmentItem> equipment,
+) {
   if (equipment.isEmpty) return equipment;
 
   final containerIds = equipment
@@ -312,10 +314,7 @@ List<EquipmentItem> normalizeEquipmentSortOrders(List<EquipmentItem> equipment) 
       .toList();
 }
 
-String? _effectiveContainerId(
-  EquipmentItem item,
-  Set<String> containerIds,
-) {
+String? _effectiveContainerId(EquipmentItem item, Set<String> containerIds) {
   if (item.itemType == ItemType.container) return null;
   if (item.isEquipped) return null;
   final containerId = item.containerId;

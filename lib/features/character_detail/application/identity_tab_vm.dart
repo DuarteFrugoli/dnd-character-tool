@@ -6,12 +6,12 @@ import 'vm_reference_utils.dart';
 
 final identityTabVmProvider =
     Provider.family<AsyncValue<IdentityTabVm>, String>((ref, characterId) {
-  return ref.watch(
-    characterDetailProvider(characterId).select(
-      (state) => state.whenData(IdentityTabVm.fromCharacter),
-    ),
-  );
-});
+      return ref.watch(
+        characterDetailProvider(
+          characterId,
+        ).select((state) => state.whenData(IdentityTabVm.fromCharacter)),
+      );
+    });
 
 class IdentityTabVm {
   const IdentityTabVm(this.character);
@@ -44,20 +44,20 @@ class IdentityTabVm {
 
   @override
   int get hashCode => Object.hash(
-        character.name,
-        character.playerName,
-        character.race,
-        character.subrace,
-        character.characterClass,
-        character.subclass,
-        character.level,
-        character.background,
-        character.alignment,
-        referenceHash(character.languages),
-        referenceHash(character.personality),
-        referenceHash(character.appearance),
-        character.backstory,
-        character.imagePath,
-        character.xpTrackingEnabled,
-      );
+    character.name,
+    character.playerName,
+    character.race,
+    character.subrace,
+    character.characterClass,
+    character.subclass,
+    character.level,
+    character.background,
+    character.alignment,
+    referenceHash(character.languages),
+    referenceHash(character.personality),
+    referenceHash(character.appearance),
+    character.backstory,
+    character.imagePath,
+    character.xpTrackingEnabled,
+  );
 }

@@ -262,13 +262,13 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
   }
 
   CharacterAppearance _buildCurrentAppearance() => CharacterAppearance(
-        age: _ageCtrl.text.trim().isEmpty ? null : _ageCtrl.text.trim(),
-        height: _heightCtrl.text.trim(),
-        weight: _weightCtrl.text.trim(),
-        eyes: _eyesCtrl.text.trim(),
-        skin: _skinCtrl.text.trim(),
-        hair: _hairCtrl.text.trim(),
-      );
+    age: _ageCtrl.text.trim().isEmpty ? null : _ageCtrl.text.trim(),
+    height: _heightCtrl.text.trim(),
+    weight: _weightCtrl.text.trim(),
+    eyes: _eyesCtrl.text.trim(),
+    skin: _skinCtrl.text.trim(),
+    hair: _hairCtrl.text.trim(),
+  );
 
   Future<void> _onLevelUp(Character character) async {
     final newLevel = character.level + 1;
@@ -287,7 +287,8 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
 
     if (!mounted) return;
 
-    final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
     if (character.subclass != null && character.subclass!.isNotEmpty) {
       final picked = await _showSubclassDialog(
@@ -370,29 +371,34 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                         onChanged: (v) => setDialogState(() => selected = v),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
-                          children: srdClass.subclasses
-                              .map(
-                                (sub) {
-                                final translatedName = i18n.subclassName(srdClass.name, sub.name);
-                                final translatedDesc = i18n.subclassDescription(srdClass.name, sub.name) ?? (sub.description.isNotEmpty ? sub.description : null);
-                                return RadioListTile<String>(
-                                  title: Text(translatedName),
-                                  subtitle: translatedDesc != null
-                                      ? Text(
-                                          translatedDesc,
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: Theme.of(
-                                            ctx,
-                                          ).textTheme.bodySmall,
-                                        )
-                                      : null,
-                                  value: sub.name,
-                                  contentPadding: EdgeInsets.zero,
-                                  dense: true,
-                                );
-                              })
-                              .toList(),
+                          children: srdClass.subclasses.map((sub) {
+                            final translatedName = i18n.subclassName(
+                              srdClass.name,
+                              sub.name,
+                            );
+                            final translatedDesc =
+                                i18n.subclassDescription(
+                                  srdClass.name,
+                                  sub.name,
+                                ) ??
+                                (sub.description.isNotEmpty
+                                    ? sub.description
+                                    : null);
+                            return RadioListTile<String>(
+                              title: Text(translatedName),
+                              subtitle: translatedDesc != null
+                                  ? Text(
+                                      translatedDesc,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: Theme.of(ctx).textTheme.bodySmall,
+                                    )
+                                  : null,
+                              value: sub.name,
+                              contentPadding: EdgeInsets.zero,
+                              dense: true,
+                            );
+                          }).toList(),
                         ),
                       ),
                     ),
@@ -448,7 +454,8 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
       if (confirm != true || !mounted) return;
     }
 
-    final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final picked = await _showSubclassDialog(
       context: context,
       srdClass: srdClass,
@@ -525,267 +532,291 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
           children: [
-          // ── Identity section ─────────────────────────────────────────────
-          DetailSection(
-            title: l10n.sectionIdentity,
-            child: _isEditing
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      InlineEditField(
-                        label: l10n.labelName,
-                        controller: _nameCtrl,
-                        focusNode: _nameFocus,
-                      ),
-                      // Background picker
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 96,
-                              child: Text(
-                                l10n.labelBackground,
-                                style: Theme.of(context).textTheme.bodySmall
-                                    ?.copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Text(
-                                character.background.isNotEmpty
-                                    ? i18n.backgroundName(character.background)
-                                    : '—',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                            ),
-                            OutlinedButton.icon(
-                              icon: const Icon(Icons.swap_horiz, size: 16),
-                              label: Text(l10n.labelChange),
-                              style: OutlinedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 4,
-                                ),
-                                visualDensity: VisualDensity.compact,
-                              ),
-                              onPressed: () =>
-                                  _showBackgroundDialog(character),
-                            ),
-                          ],
+            // ── Identity section ─────────────────────────────────────────────
+            DetailSection(
+              title: l10n.sectionIdentity,
+              child: _isEditing
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InlineEditField(
+                          label: l10n.labelName,
+                          controller: _nameCtrl,
+                          focusNode: _nameFocus,
                         ),
-                      ),
-                      InlineEditField(
-                        label: l10n.labelAlignment,
-                        controller: _alignCtrl,
-                        focusNode: _alignFocus,
-                      ),
-                      InlineEditField(
-                        label: l10n.labelPlayer,
-                        controller: _playerCtrl,
-                        focusNode: _playerFocus,
-                      ),
-                      // Level row
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 96,
-                              child: Text(
-                                l10n.labelLevel,
-                                style: Theme.of(context).textTheme.bodySmall
-                                    ?.copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
-                              ),
-                            ),
-                            OutlinedButton(
-                              onPressed: character.level > 1
-                                  ? () =>
-                                      notifier.updateLevel(character.level - 1)
-                                  : null,
-                              style: OutlinedButton.styleFrom(
-                                minimumSize: const Size(36, 36),
-                                padding: EdgeInsets.zero,
-                                visualDensity: VisualDensity.compact,
-                              ),
-                              child: const Icon(Icons.remove, size: 16),
-                            ),
-                            SizedBox(
-                              width: 40,
-                              child: Text(
-                                '${character.level}',
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.titleSmall
-                                    ?.copyWith(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            if (!character.xpTrackingEnabled)
-                            OutlinedButton(
-                              onPressed: character.level < 20
-                                  ? () => _onLevelUp(character)
-                                  : null,
-                              style: OutlinedButton.styleFrom(
-                                minimumSize: const Size(36, 36),
-                                padding: EdgeInsets.zero,
-                                visualDensity: VisualDensity.compact,
-                              ),
-                              child: const Icon(Icons.add, size: 16),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.info_outline,
-                              size: 13,
-                              color: scheme.onSurfaceVariant,
-                            ),
-                            const SizedBox(width: 6),
-                            Expanded(
-                              child: Text(
-                                l10n.levelManualChangeWarning,
-                                style: Theme.of(context).textTheme.bodySmall
-                                    ?.copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // Subclass row
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 96,
-                              child: Text(
-                                l10n.labelSubclass,
-                                style: Theme.of(context).textTheme.bodySmall
-                                    ?.copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Text(
-                                character.subclass?.isNotEmpty == true
-                                    ? i18n.subclassName(
-                                        character.characterClass,
-                                        character.subclass!,
-                                      )
-                                    : '—',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                            ),
-                            OutlinedButton.icon(
-                              icon: const Icon(Icons.swap_horiz, size: 16),
-                              label: Text(
-                                character.subclass?.isNotEmpty == true
-                                    ? l10n.labelChange
-                                    : l10n.labelChoose,
-                              ),
-                              style: OutlinedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 4,
-                                ),
-                                visualDensity: VisualDensity.compact,
-                              ),
-                              onPressed: () => _onChangeSubclass(character),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // Languages
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 96,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 6),
+                        // Background picker
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 96,
                                 child: Text(
-                                  l10n.labelLanguages,
+                                  l10n.labelBackground,
                                   style: Theme.of(context).textTheme.bodySmall
                                       ?.copyWith(
                                         color: scheme.onSurfaceVariant,
                                       ),
                                 ),
                               ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  if (character.languages.isNotEmpty)
-                                    Wrap(
-                                      spacing: 4,
-                                      runSpacing: 4,
-                                      children: character.languages
-                                          .map(
-                                            (lang) => Chip(
-                                              label: Text(
-                                                i18n.languageName(lang),
-                                              ),
-                                              labelStyle: const TextStyle(
-                                                fontSize: 12,
-                                              ),
-                                              materialTapTargetSize:
-                                                  MaterialTapTargetSize
-                                                      .shrinkWrap,
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                    horizontal: 4,
-                                                  ),
-                                              onDeleted: () {
-                                                final updated =
-                                                    List<String>.from(
-                                                      character.languages,
-                                                    )..remove(lang);
-                                                notifier.updateLanguages(
-                                                  updated,
-                                                );
-                                              },
-                                            ),
-                                          )
-                                          .toList(),
-                                    ),
-                                  const SizedBox(height: 4),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: TextField(
-                                          controller: _langCtrl,
-                                          focusNode: _langFocus,
-                                          textCapitalization:
-                                              TextCapitalization.words,
-                                          decoration: InputDecoration(
-                                            isDense: true,
-                                            hintText: l10n.hintAddLanguage,
-                                            border:
-                                                const OutlineInputBorder(),
-                                            contentPadding:
-                                                const EdgeInsets.symmetric(
-                                                  horizontal: 10,
-                                                  vertical: 8,
+                              Expanded(
+                                child: Text(
+                                  character.background.isNotEmpty
+                                      ? i18n.backgroundName(
+                                          character.background,
+                                        )
+                                      : '—',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ),
+                              OutlinedButton.icon(
+                                icon: const Icon(Icons.swap_horiz, size: 16),
+                                label: Text(l10n.labelChange),
+                                style: OutlinedButton.styleFrom(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                    vertical: 4,
+                                  ),
+                                  visualDensity: VisualDensity.compact,
+                                ),
+                                onPressed: () =>
+                                    _showBackgroundDialog(character),
+                              ),
+                            ],
+                          ),
+                        ),
+                        InlineEditField(
+                          label: l10n.labelAlignment,
+                          controller: _alignCtrl,
+                          focusNode: _alignFocus,
+                        ),
+                        InlineEditField(
+                          label: l10n.labelPlayer,
+                          controller: _playerCtrl,
+                          focusNode: _playerFocus,
+                        ),
+                        // Level row
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 96,
+                                child: Text(
+                                  l10n.labelLevel,
+                                  style: Theme.of(context).textTheme.bodySmall
+                                      ?.copyWith(
+                                        color: scheme.onSurfaceVariant,
+                                      ),
+                                ),
+                              ),
+                              OutlinedButton(
+                                onPressed: character.level > 1
+                                    ? () => notifier.updateLevel(
+                                        character.level - 1,
+                                      )
+                                    : null,
+                                style: OutlinedButton.styleFrom(
+                                  minimumSize: const Size(36, 36),
+                                  padding: EdgeInsets.zero,
+                                  visualDensity: VisualDensity.compact,
+                                ),
+                                child: const Icon(Icons.remove, size: 16),
+                              ),
+                              SizedBox(
+                                width: 40,
+                                child: Text(
+                                  '${character.level}',
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context).textTheme.titleSmall
+                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              if (!character.xpTrackingEnabled)
+                                OutlinedButton(
+                                  onPressed: character.level < 20
+                                      ? () => _onLevelUp(character)
+                                      : null,
+                                  style: OutlinedButton.styleFrom(
+                                    minimumSize: const Size(36, 36),
+                                    padding: EdgeInsets.zero,
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  child: const Icon(Icons.add, size: 16),
+                                ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 4),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.info_outline,
+                                size: 13,
+                                color: scheme.onSurfaceVariant,
+                              ),
+                              const SizedBox(width: 6),
+                              Expanded(
+                                child: Text(
+                                  l10n.levelManualChangeWarning,
+                                  style: Theme.of(context).textTheme.bodySmall
+                                      ?.copyWith(
+                                        color: scheme.onSurfaceVariant,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        // Subclass row
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 96,
+                                child: Text(
+                                  l10n.labelSubclass,
+                                  style: Theme.of(context).textTheme.bodySmall
+                                      ?.copyWith(
+                                        color: scheme.onSurfaceVariant,
+                                      ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Text(
+                                  character.subclass?.isNotEmpty == true
+                                      ? i18n.subclassName(
+                                          character.characterClass,
+                                          character.subclass!,
+                                        )
+                                      : '—',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ),
+                              OutlinedButton.icon(
+                                icon: const Icon(Icons.swap_horiz, size: 16),
+                                label: Text(
+                                  character.subclass?.isNotEmpty == true
+                                      ? l10n.labelChange
+                                      : l10n.labelChoose,
+                                ),
+                                style: OutlinedButton.styleFrom(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                    vertical: 4,
+                                  ),
+                                  visualDensity: VisualDensity.compact,
+                                ),
+                                onPressed: () => _onChangeSubclass(character),
+                              ),
+                            ],
+                          ),
+                        ),
+                        // Languages
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 96,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 6),
+                                  child: Text(
+                                    l10n.labelLanguages,
+                                    style: Theme.of(context).textTheme.bodySmall
+                                        ?.copyWith(
+                                          color: scheme.onSurfaceVariant,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    if (character.languages.isNotEmpty)
+                                      Wrap(
+                                        spacing: 4,
+                                        runSpacing: 4,
+                                        children: character.languages
+                                            .map(
+                                              (lang) => Chip(
+                                                label: Text(
+                                                  i18n.languageName(lang),
                                                 ),
+                                                labelStyle: const TextStyle(
+                                                  fontSize: 12,
+                                                ),
+                                                materialTapTargetSize:
+                                                    MaterialTapTargetSize
+                                                        .shrinkWrap,
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 4,
+                                                    ),
+                                                onDeleted: () {
+                                                  final updated =
+                                                      List<String>.from(
+                                                        character.languages,
+                                                      )..remove(lang);
+                                                  notifier.updateLanguages(
+                                                    updated,
+                                                  );
+                                                },
+                                              ),
+                                            )
+                                            .toList(),
+                                      ),
+                                    const SizedBox(height: 4),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: TextField(
+                                            controller: _langCtrl,
+                                            focusNode: _langFocus,
+                                            textCapitalization:
+                                                TextCapitalization.words,
+                                            decoration: InputDecoration(
+                                              isDense: true,
+                                              hintText: l10n.hintAddLanguage,
+                                              border:
+                                                  const OutlineInputBorder(),
+                                              contentPadding:
+                                                  const EdgeInsets.symmetric(
+                                                    horizontal: 10,
+                                                    vertical: 8,
+                                                  ),
+                                            ),
+                                            onSubmitted: (v) {
+                                              final s = v.trim();
+                                              if (s.isNotEmpty &&
+                                                  !character.languages.contains(
+                                                    s,
+                                                  )) {
+                                                notifier.updateLanguages([
+                                                  ...character.languages,
+                                                  s,
+                                                ]);
+                                              }
+                                              _langCtrl.clear();
+                                              _langFocus.requestFocus();
+                                            },
                                           ),
-                                          onSubmitted: (v) {
-                                            final s = v.trim();
+                                        ),
+                                        const SizedBox(width: 4),
+                                        IconButton.filled(
+                                          icon: const Icon(Icons.add, size: 18),
+                                          tooltip: l10n.dialogAdd,
+                                          onPressed: () {
+                                            final s = _langCtrl.text.trim();
                                             if (s.isNotEmpty &&
-                                                !character.languages
-                                                    .contains(s)) {
+                                                !character.languages.contains(
+                                                  s,
+                                                )) {
                                               notifier.updateLanguages([
                                                 ...character.languages,
                                                 s,
@@ -795,240 +826,217 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
                                             _langFocus.requestFocus();
                                           },
                                         ),
-                                      ),
-                                      const SizedBox(width: 4),
-                                      IconButton.filled(
-                                        icon: const Icon(
-                                          Icons.add,
-                                          size: 18,
-                                        ),
-                                        tooltip: l10n.dialogAdd,
-                                        onPressed: () {
-                                          final s = _langCtrl.text.trim();
-                                          if (s.isNotEmpty &&
-                                              !character.languages
-                                                  .contains(s)) {
-                                            notifier.updateLanguages([
-                                              ...character.languages,
-                                              s,
-                                            ]);
-                                          }
-                                          _langCtrl.clear();
-                                          _langFocus.requestFocus();
-                                        },
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  )
-                : Column(
-                    children: [
-                      DetailInfoRow(
-                        l10n.labelName,
-                        character.name.isNotEmpty ? character.name : '—',
-                      ),
-                      DetailInfoRow(
-                        l10n.labelLevel,
-                        '${character.level}',
-                      ),
-                      if (character.background.isNotEmpty)
-                        DetailInfoRow(
-                          l10n.labelBackground,
-                          i18n.backgroundName(character.background),
-                        ),
-                      if (character.subclass?.isNotEmpty == true)
-                        DetailInfoRow(
-                          l10n.labelSubclass,
-                          i18n.subclassName(
-                            character.characterClass,
-                            character.subclass!,
+                            ],
                           ),
                         ),
-                      if (character.alignment.isNotEmpty)
-                        DetailInfoRow(l10n.labelAlignment, character.alignment),
-                      if (character.playerName.isNotEmpty)
-                        DetailInfoRow(l10n.labelPlayer, character.playerName),
-                      DetailInfoRow(
-                        l10n.labelLanguages,
-                        character.languages.isEmpty
-                            ? '—'
-                            : character.languages
-                                  .map((l) => i18n.languageName(l))
-                                  .join(', '),
-                      ),
-                    ],
-                  ),
-          ),
-          const SizedBox(height: 12),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        DetailInfoRow(
+                          l10n.labelName,
+                          character.name.isNotEmpty ? character.name : '—',
+                        ),
+                        DetailInfoRow(l10n.labelLevel, '${character.level}'),
+                        if (character.background.isNotEmpty)
+                          DetailInfoRow(
+                            l10n.labelBackground,
+                            i18n.backgroundName(character.background),
+                          ),
+                        if (character.subclass?.isNotEmpty == true)
+                          DetailInfoRow(
+                            l10n.labelSubclass,
+                            i18n.subclassName(
+                              character.characterClass,
+                              character.subclass!,
+                            ),
+                          ),
+                        if (character.alignment.isNotEmpty)
+                          DetailInfoRow(
+                            l10n.labelAlignment,
+                            character.alignment,
+                          ),
+                        if (character.playerName.isNotEmpty)
+                          DetailInfoRow(l10n.labelPlayer, character.playerName),
+                        DetailInfoRow(
+                          l10n.labelLanguages,
+                          character.languages.isEmpty
+                              ? '—'
+                              : character.languages
+                                    .map((l) => i18n.languageName(l))
+                                    .join(', '),
+                        ),
+                      ],
+                    ),
+            ),
+            const SizedBox(height: 12),
 
-          // ── Appearance section ───────────────────────────────────────────
-          DetailSection(
-            title: l10n.sectionAppearance,
-            child: _isEditing
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Center(
-                        child: CharacterAvatar(
+            // ── Appearance section ───────────────────────────────────────────
+            DetailSection(
+              title: l10n.sectionAppearance,
+              child: _isEditing
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                          child: CharacterAvatar(
+                            name: character.name,
+                            imagePath: character.imagePath,
+                            radius: 44,
+                            onImageChanged: (path) =>
+                                _notifier.updateImage(path),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        InlineEditField(
+                          label: l10n.labelAge,
+                          controller: _ageCtrl,
+                          focusNode: _ageFocus,
+                          keyboardType: TextInputType.text,
+                        ),
+                        InlineEditField(
+                          label: l10n.labelHeight,
+                          controller: _heightCtrl,
+                          focusNode: _heightFocus,
+                        ),
+                        InlineEditField(
+                          label: l10n.labelWeight,
+                          controller: _weightCtrl,
+                          focusNode: _weightFocus,
+                        ),
+                        InlineEditField(
+                          label: l10n.labelEyes,
+                          controller: _eyesCtrl,
+                          focusNode: _eyesFocus,
+                        ),
+                        InlineEditField(
+                          label: l10n.labelSkin,
+                          controller: _skinCtrl,
+                          focusNode: _skinFocus,
+                        ),
+                        InlineEditField(
+                          label: l10n.labelHair,
+                          controller: _hairCtrl,
+                          focusNode: _hairFocus,
+                        ),
+                      ],
+                    )
+                  : Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CharacterAvatar(
                           name: character.name,
                           imagePath: character.imagePath,
                           radius: 44,
                           onImageChanged: (path) => _notifier.updateImage(path),
                         ),
-                      ),
-                      const SizedBox(height: 12),
-                      InlineEditField(
-                        label: l10n.labelAge,
-                        controller: _ageCtrl,
-                        focusNode: _ageFocus,
-                        keyboardType: TextInputType.text,
-                      ),
-                      InlineEditField(
-                        label: l10n.labelHeight,
-                        controller: _heightCtrl,
-                        focusNode: _heightFocus,
-                      ),
-                      InlineEditField(
-                        label: l10n.labelWeight,
-                        controller: _weightCtrl,
-                        focusNode: _weightFocus,
-                      ),
-                      InlineEditField(
-                        label: l10n.labelEyes,
-                        controller: _eyesCtrl,
-                        focusNode: _eyesFocus,
-                      ),
-                      InlineEditField(
-                        label: l10n.labelSkin,
-                        controller: _skinCtrl,
-                        focusNode: _skinFocus,
-                      ),
-                      InlineEditField(
-                        label: l10n.labelHair,
-                        controller: _hairCtrl,
-                        focusNode: _hairFocus,
-                      ),
-                    ],
-                  )
-                : Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CharacterAvatar(
-                        name: character.name,
-                        imagePath: character.imagePath,
-                        radius: 44,
-                        onImageChanged: (path) => _notifier.updateImage(path),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: Builder(
-                          builder: (ctx) {
-                            final app = character.appearance;
-                            final hasAny = app.age != null ||
-                                app.height.isNotEmpty ||
-                                app.weight.isNotEmpty ||
-                                app.eyes.isNotEmpty ||
-                                app.skin.isNotEmpty ||
-                                app.hair.isNotEmpty;
-                            if (!hasAny) {
-                              return const Padding(
-                                padding: EdgeInsets.only(top: 8),
-                                child: Text('—'),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Builder(
+                            builder: (ctx) {
+                              final app = character.appearance;
+                              final hasAny =
+                                  app.age != null ||
+                                  app.height.isNotEmpty ||
+                                  app.weight.isNotEmpty ||
+                                  app.eyes.isNotEmpty ||
+                                  app.skin.isNotEmpty ||
+                                  app.hair.isNotEmpty;
+                              if (!hasAny) {
+                                return const Padding(
+                                  padding: EdgeInsets.only(top: 8),
+                                  child: Text('—'),
+                                );
+                              }
+                              return Column(
+                                children: [
+                                  if (app.age != null)
+                                    DetailInfoRow(l10n.labelAge, '${app.age}'),
+                                  if (app.height.isNotEmpty)
+                                    DetailInfoRow(l10n.labelHeight, app.height),
+                                  if (app.weight.isNotEmpty)
+                                    DetailInfoRow(l10n.labelWeight, app.weight),
+                                  if (app.eyes.isNotEmpty)
+                                    DetailInfoRow(l10n.labelEyes, app.eyes),
+                                  if (app.skin.isNotEmpty)
+                                    DetailInfoRow(l10n.labelSkin, app.skin),
+                                  if (app.hair.isNotEmpty)
+                                    DetailInfoRow(l10n.labelHair, app.hair),
+                                ],
                               );
-                            }
-                            return Column(
-                              children: [
-                                if (app.age != null)
-                                  DetailInfoRow(l10n.labelAge, '${app.age}'),
-                                if (app.height.isNotEmpty)
-                                  DetailInfoRow(l10n.labelHeight, app.height),
-                                if (app.weight.isNotEmpty)
-                                  DetailInfoRow(l10n.labelWeight, app.weight),
-                                if (app.eyes.isNotEmpty)
-                                  DetailInfoRow(l10n.labelEyes, app.eyes),
-                                if (app.skin.isNotEmpty)
-                                  DetailInfoRow(l10n.labelSkin, app.skin),
-                                if (app.hair.isNotEmpty)
-                                  DetailInfoRow(l10n.labelHair, app.hair),
-                              ],
-                            );
-                          },
+                            },
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-          ),
-          const SizedBox(height: 12),
+                      ],
+                    ),
+            ),
+            const SizedBox(height: 12),
 
-          // ── Personality section ──────────────────────────────────────────
-          DetailSection(
-            title: l10n.sectionPersonality,
-            child: _isEditing
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _MultilineField(
-                        label: l10n.sectionPersonalityTraits,
-                        controller: _traitsCtrl,
-                        focusNode: _traitsFocus,
-                      ),
-                      const SizedBox(height: 8),
-                      _MultilineField(
-                        label: l10n.sectionIdeals,
-                        controller: _idealsCtrl,
-                        focusNode: _idealsFocus,
-                      ),
-                      const SizedBox(height: 8),
-                      _MultilineField(
-                        label: l10n.sectionBonds,
-                        controller: _bondsCtrl,
-                        focusNode: _bondsFocus,
-                      ),
-                      const SizedBox(height: 8),
-                      _MultilineField(
-                        label: l10n.sectionFlaws,
-                        controller: _flawsCtrl,
-                        focusNode: _flawsFocus,
-                      ),
-                    ],
-                  )
-                : _PersonalityView(
-                    personality: character.personality,
-                    traitsLabel: l10n.sectionPersonalityTraits,
-                    idealsLabel: l10n.sectionIdeals,
-                    bondsLabel: l10n.sectionBonds,
-                    flawsLabel: l10n.sectionFlaws,
-                  ),
-          ),
-          const SizedBox(height: 12),
+            // ── Personality section ──────────────────────────────────────────
+            DetailSection(
+              title: l10n.sectionPersonality,
+              child: _isEditing
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _MultilineField(
+                          label: l10n.sectionPersonalityTraits,
+                          controller: _traitsCtrl,
+                          focusNode: _traitsFocus,
+                        ),
+                        const SizedBox(height: 8),
+                        _MultilineField(
+                          label: l10n.sectionIdeals,
+                          controller: _idealsCtrl,
+                          focusNode: _idealsFocus,
+                        ),
+                        const SizedBox(height: 8),
+                        _MultilineField(
+                          label: l10n.sectionBonds,
+                          controller: _bondsCtrl,
+                          focusNode: _bondsFocus,
+                        ),
+                        const SizedBox(height: 8),
+                        _MultilineField(
+                          label: l10n.sectionFlaws,
+                          controller: _flawsCtrl,
+                          focusNode: _flawsFocus,
+                        ),
+                      ],
+                    )
+                  : _PersonalityView(
+                      personality: character.personality,
+                      traitsLabel: l10n.sectionPersonalityTraits,
+                      idealsLabel: l10n.sectionIdeals,
+                      bondsLabel: l10n.sectionBonds,
+                      flawsLabel: l10n.sectionFlaws,
+                    ),
+            ),
+            const SizedBox(height: 12),
 
-          // ── Backstory section ────────────────────────────────────────────
-          DetailSection(
-            title: l10n.sectionBackstory,
-            child: _isEditing
-                ? _MultilineField(
-                    label: null,
-                    controller: _backstoryCtrl,
-                    focusNode: _backstoryFocus,
-                    minLines: 5,
-                  )
-                : character.backstory.isNotEmpty
-                    ? Text(
-                        character.backstory,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      )
-                    : Text(
-                        '—',
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-          ),
-        ],
+            // ── Backstory section ────────────────────────────────────────────
+            DetailSection(
+              title: l10n.sectionBackstory,
+              child: _isEditing
+                  ? _MultilineField(
+                      label: null,
+                      controller: _backstoryCtrl,
+                      focusNode: _backstoryFocus,
+                      minLines: 5,
+                    )
+                  : character.backstory.isNotEmpty
+                  ? Text(
+                      character.backstory,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    )
+                  : Text('—', style: Theme.of(context).textTheme.bodyMedium),
+            ),
+          ],
         ),
       ),
       floatingActionButton: _isEditing
@@ -1086,8 +1094,8 @@ class _MultilineField extends StatelessWidget {
           Text(
             label!,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                ),
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
           ),
           const SizedBox(height: 4),
         ],
@@ -1146,14 +1154,11 @@ class _PersonalityView extends StatelessWidget {
           Text(
             fields[i].$1,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                ),
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
           ),
           const SizedBox(height: 2),
-          Text(
-            fields[i].$2,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
+          Text(fields[i].$2, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ],
     );

@@ -97,7 +97,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
           if (!mounted) return;
           if (levelNow == true) {
             // Wizard will set XP to min of new level via provider.levelUp()
-            _openLevelUpWizardSheet(
+            openLevelUpWizardSheet(
               context,
               widget.character,
               widget.characterId,
@@ -628,7 +628,10 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                             spacing: 8,
                             runSpacing: 8,
                             children: [
-                              DetailStatChip(l10n.statAC, '${character.armorClass}'),
+                              DetailStatChip(
+                                l10n.statAC,
+                                '${character.armorClass}',
+                              ),
                               DetailStatChip(l10n.statArmor, armorSummary),
                               DetailStatChip(
                                 l10n.statSpeed,
@@ -781,7 +784,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                     isPendingLevelUp: _isPendingLevelUp(
                                       character,
                                     ),
-                                    onLevelUpTap: () => _openLevelUpWizardSheet(
+                                    onLevelUpTap: () => openLevelUpWizardSheet(
                                       context,
                                       character,
                                       widget.characterId,

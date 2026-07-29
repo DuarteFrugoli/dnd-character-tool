@@ -81,35 +81,38 @@ class _CharacterCreationScreenState
   bool _isStepValid(CharacterDraft draft) {
     return switch (_currentStep) {
       0 => draft.selectedClass != null,
-      1 => draft.selectedRace != null &&
-          (draft.selectedRace!.subraces.isEmpty ||
-              draft.selectedSubrace != null),
+      1 =>
+        draft.selectedRace != null &&
+            (draft.selectedRace!.subraces.isEmpty ||
+                draft.selectedSubrace != null),
       2 => draft.selectedBackground != null,
       3 => _skillsComplete(draft),
       4 => draft.baseAttributes.length == 6 && draft.racialAsiComplete,
       5 => true, // nome é opcional
-      6 => draft.featureChoicesLoaded &&
-          FeatureChoiceEngine.allComplete(
-            draft.featureChoiceRequests,
-            draft.featureChoices,
-          ),
-      7 => (draft.languageChoicesNeeded == 0 ||
-              draft.chosenLanguages.length >= draft.languageChoicesNeeded) &&
-          (draft.toolChoicesNeeded == 0 ||
-              (draft.chosenToolProficiencies.length >=
-                      draft.toolChoicesNeeded &&
-                  !draft.chosenToolProficiencies
-                      .take(draft.toolChoicesNeeded)
-                      .any((s) => s.isEmpty))) &&
-          (draft.equipmentChoicesNeeded == 0 ||
-              draft.resolvedEquipmentChoices.length >=
-                  draft.equipmentChoicesNeeded) &&
-          draft.classEquipmentComplete &&
-          draft.featureChoicesLoaded &&
-          FeatureChoiceEngine.allComplete(
-            draft.featureChoiceRequests,
-            draft.featureChoices,
-          ),
+      6 =>
+        draft.featureChoicesLoaded &&
+            FeatureChoiceEngine.allComplete(
+              draft.featureChoiceRequests,
+              draft.featureChoices,
+            ),
+      7 =>
+        (draft.languageChoicesNeeded == 0 ||
+                draft.chosenLanguages.length >= draft.languageChoicesNeeded) &&
+            (draft.toolChoicesNeeded == 0 ||
+                (draft.chosenToolProficiencies.length >=
+                        draft.toolChoicesNeeded &&
+                    !draft.chosenToolProficiencies
+                        .take(draft.toolChoicesNeeded)
+                        .any((s) => s.isEmpty))) &&
+            (draft.equipmentChoicesNeeded == 0 ||
+                draft.resolvedEquipmentChoices.length >=
+                    draft.equipmentChoicesNeeded) &&
+            draft.classEquipmentComplete &&
+            draft.featureChoicesLoaded &&
+            FeatureChoiceEngine.allComplete(
+              draft.featureChoiceRequests,
+              draft.featureChoices,
+            ),
       _ => false,
     };
   }
@@ -168,8 +171,8 @@ class _CharacterCreationScreenState
               FilledButton(
                 onPressed: _isStepValid(draft)
                     ? (_currentStep == stepTitles.length - 1
-                        ? _finishCreation
-                        : _next)
+                          ? _finishCreation
+                          : _next)
                     : null,
                 child: Text(
                   _currentStep == stepTitles.length - 1
@@ -186,10 +189,12 @@ class _CharacterCreationScreenState
 
   Future<void> _finishCreation() async {
     if (!_isStepValid(ref.read(characterDraftProvider))) return;
-    final created = await ref.read(characterDraftProvider.notifier).buildAndSave(
-      ref,
-      fallbackName: AppLocalizations.of(context)!.reviewUnnamedHero,
-    );
+    final created = await ref
+        .read(characterDraftProvider.notifier)
+        .buildAndSave(
+          ref,
+          fallbackName: AppLocalizations.of(context)!.reviewUnnamedHero,
+        );
     ref.read(characterDraftProvider.notifier).reset();
     await ref.read(characterListProvider.notifier).updateSingle(created);
     if (mounted) context.go('/');

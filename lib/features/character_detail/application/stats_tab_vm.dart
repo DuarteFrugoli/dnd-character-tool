@@ -4,12 +4,14 @@ import '../../../data/models/models.dart';
 import '../character_detail_provider.dart';
 import 'vm_reference_utils.dart';
 
-final statsTabVmProvider =
-    Provider.family<AsyncValue<StatsTabVm>, String>((ref, characterId) {
+final statsTabVmProvider = Provider.family<AsyncValue<StatsTabVm>, String>((
+  ref,
+  characterId,
+) {
   return ref.watch(
-    characterDetailProvider(characterId).select(
-      (state) => state.whenData(StatsTabVm.fromCharacter),
-    ),
+    characterDetailProvider(
+      characterId,
+    ).select((state) => state.whenData(StatsTabVm.fromCharacter)),
   );
 });
 
@@ -56,20 +58,20 @@ class StatsTabVm {
 
   @override
   int get hashCode => Object.hashAll([
-        character.characterClass,
-        character.level,
-        character.experiencePoints,
-        referenceHash(character.hitPoints),
-        referenceHash(character.equipment),
-        referenceHash(character.abilityScores),
-        character.armorClass,
-        character.speed,
-        character.proficiencyBonus,
-        referenceHash(character.savingThrowProficiencies),
-        referenceHash(character.skillProficiencies),
-        referenceHash(character.skillExpertises),
-        referenceHash(character.activeConditions),
-        character.inspiration,
-        character.xpTrackingEnabled,
-      ]);
+    character.characterClass,
+    character.level,
+    character.experiencePoints,
+    referenceHash(character.hitPoints),
+    referenceHash(character.equipment),
+    referenceHash(character.abilityScores),
+    character.armorClass,
+    character.speed,
+    character.proficiencyBonus,
+    referenceHash(character.savingThrowProficiencies),
+    referenceHash(character.skillProficiencies),
+    referenceHash(character.skillExpertises),
+    referenceHash(character.activeConditions),
+    character.inspiration,
+    character.xpTrackingEnabled,
+  ]);
 }

@@ -12,13 +12,15 @@ class ModeSelectionScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.modeSelectionTitle),
-        leading: BackButton(onPressed: () {
-          if (context.canPop()) {
-            context.pop();
-          } else {
-            context.go('/');
-          }
-        }),
+        leading: BackButton(
+          onPressed: () {
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go('/');
+            }
+          },
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.all(24),
@@ -102,17 +104,19 @@ class _ModeCard extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(title,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium),
+                          Text(
+                            title,
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
                           if (comingSoon) ...[
                             const SizedBox(width: 8),
                             Chip(
-                              label: Text(AppLocalizations.of(context)!.modeComingSoon),
-                              labelStyle: Theme.of(context)
-                                  .textTheme
-                                  .labelSmall,
+                              label: Text(
+                                AppLocalizations.of(context)!.modeComingSoon,
+                              ),
+                              labelStyle: Theme.of(
+                                context,
+                              ).textTheme.labelSmall,
                               padding: EdgeInsets.zero,
                               materialTapTargetSize:
                                   MaterialTapTargetSize.shrinkWrap,
@@ -121,12 +125,12 @@ class _ModeCard extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 4),
-                      Text(subtitle,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
-                              ?.copyWith(
-                                  color: scheme.onSurfaceVariant)),
+                      Text(
+                        subtitle,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
                     ],
                   ),
                 ),

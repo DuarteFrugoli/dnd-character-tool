@@ -158,8 +158,7 @@ class _RaceCard extends ConsumerWidget {
                       : scheme.onSurfaceVariant,
                 ),
                 tooltip: AppLocalizations.of(context)!.detailSheetInfoTooltip,
-                onPressed: () =>
-                    showRaceDetailSheet(context, race, i18n),
+                onPressed: () => showRaceDetailSheet(context, race, i18n),
               ),
               if (isSelected) Icon(Icons.check_circle, color: scheme.primary),
             ],
@@ -243,7 +242,9 @@ class _SubraceSelector extends StatelessWidget {
                               : scheme.onSurfaceVariant,
                           size: 20,
                         ),
-                        tooltip: AppLocalizations.of(context)!.detailSheetInfoTooltip,
+                        tooltip: AppLocalizations.of(
+                          context,
+                        )!.detailSheetInfoTooltip,
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
                         onPressed: () =>

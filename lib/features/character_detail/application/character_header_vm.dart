@@ -5,12 +5,12 @@ import '../character_detail_provider.dart';
 
 final characterHeaderVmProvider =
     Provider.family<AsyncValue<CharacterHeaderVm>, String>((ref, characterId) {
-  return ref.watch(
-    characterDetailProvider(characterId).select(
-      (state) => state.whenData(CharacterHeaderVm.fromCharacter),
-    ),
-  );
-});
+      return ref.watch(
+        characterDetailProvider(
+          characterId,
+        ).select((state) => state.whenData(CharacterHeaderVm.fromCharacter)),
+      );
+    });
 
 class CharacterHeaderVm {
   const CharacterHeaderVm({
@@ -61,13 +61,13 @@ class CharacterHeaderVm {
 
   @override
   int get hashCode => Object.hash(
-        dataVersion,
-        name,
-        characterClass,
-        subclass,
-        race,
-        subrace,
-        level,
-        xpTrackingEnabled,
-      );
+    dataVersion,
+    name,
+    characterClass,
+    subclass,
+    race,
+    subrace,
+    level,
+    xpTrackingEnabled,
+  );
 }

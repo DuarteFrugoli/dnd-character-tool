@@ -200,6 +200,39 @@ void main() {
       expect(result, hasLength(1));
       expect(result.single.values, ['dueling']);
     });
+
+    test(
+      'upsertChoices keeps choices from different class entries separate',
+      () {
+        const fighterChoice = CharacterFeatureChoice(
+          sourceType: FeatureChoiceSourceType.classFeature,
+          sourceClass: 'Fighter',
+          sourceClassEntryId: 'fighter-entry',
+          featureName: 'Fighting Style',
+          choiceId: 'style',
+          values: ['defense'],
+        );
+        const paladinChoice = CharacterFeatureChoice(
+          sourceType: FeatureChoiceSourceType.classFeature,
+          sourceClass: 'Fighter',
+          sourceClassEntryId: 'paladin-entry',
+          featureName: 'Fighting Style',
+          choiceId: 'style',
+          values: ['dueling'],
+        );
+
+        final result = FeatureChoiceEngine.upsertChoices(
+          const [fighterChoice],
+          const [paladinChoice],
+        );
+
+        expect(result, hasLength(2));
+        expect(result.map((choice) => choice.sourceClassEntryId), [
+          'fighter-entry',
+          'paladin-entry',
+        ]);
+      },
+    );
   });
 
   group('FeatureChoiceOptionResolver', () {

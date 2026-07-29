@@ -2,9 +2,7 @@ import '../datasources/srd/srd_models.dart';
 import '../models/models.dart';
 
 class CharacterMigrationContext {
-  const CharacterMigrationContext({
-    required this.itemsByName,
-  });
+  const CharacterMigrationContext({required this.itemsByName});
 
   final Map<String, SrdItemData> itemsByName;
 }
@@ -34,10 +32,7 @@ class CharacterMigrationResult {
 }
 
 class CharacterMigrationChange {
-  const CharacterMigrationChange({
-    required this.code,
-    required this.count,
-  });
+  const CharacterMigrationChange({required this.code, required this.count});
 
   final String code;
   final int count;

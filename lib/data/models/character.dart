@@ -2,8 +2,10 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'ability_scores.dart';
 import 'character_appearance.dart';
+import 'character_class_entry.dart';
 import 'character_extra_feature.dart';
 import 'character_feature_choice.dart';
+import 'character_hit_die_pool.dart';
 import 'character_note.dart';
 import 'character_personality.dart';
 import 'equipment_item.dart';
@@ -14,7 +16,7 @@ part 'character.g.dart';
 
 // Sentinel used to distinguish "not passed" from explicit null in copyWith.
 const _keep = Object();
-const currentCharacterDataVersion = 5;
+const currentCharacterDataVersion = 7;
 
 enum CreationMode { random, semiRandom, guided, manual }
 
@@ -29,6 +31,7 @@ class Character {
   final String characterClass;
   final String? subclass;
   final int level;
+  final List<CharacterClassEntry> classes;
   final int experiencePoints;
   final String background;
   final String alignment;
@@ -44,6 +47,7 @@ class Character {
   final Map<String, int> currency;
   final List<KnownSpell> spells;
   final SpellSlots spellSlots;
+  final List<CharacterHitDiePool> hitDicePools;
   final List<InnateSpell> innateSpells;
   final List<String> features;
   final List<CharacterExtraFeature> extraFeatures;
@@ -78,6 +82,7 @@ class Character {
     required this.characterClass,
     this.subclass,
     this.level = 1,
+    this.classes = const [],
     this.experiencePoints = 0,
     this.background = '',
     this.alignment = '',
@@ -93,6 +98,7 @@ class Character {
     this.currency = const {'cp': 0, 'sp': 0, 'ep': 0, 'gp': 0, 'pp': 0},
     this.spells = const [],
     this.spellSlots = const SpellSlots(),
+    this.hitDicePools = const [],
     this.innateSpells = const [],
     this.features = const [],
     this.extraFeatures = const [],
@@ -131,6 +137,73 @@ class Character {
   /// Initiative = dexterity modifier
   int get initiative => abilityScores.dexterityModifier;
 
+  List<CharacterClassEntry> get classEntries {
+    if (classes.isNotEmpty) return classes;
+    return [
+      CharacterClassEntry(
+        id: 'primary',
+        className: characterClass,
+        subclassName: subclass,
+        level: level,
+        isStartingClass: true,
+      ),
+    ];
+  }
+
+  int get totalLevel {
+    if (classes.isEmpty) return level;
+    return classes.fold<int>(0, (sum, entry) => sum + entry.level);
+  }
+
+  CharacterClassEntry get primaryClass {
+    for (final entry in classEntries) {
+      if (entry.isStartingClass) return entry;
+    }
+    return classEntries.first;
+  }
+
+  int classLevel(String className) {
+    final lower = className.toLowerCase();
+    var total = 0;
+    for (final entry in classEntries) {
+      if (entry.className.toLowerCase() == lower) total += entry.level;
+    }
+    return total;
+  }
+
+  String? subclassFor(String className) {
+    final lower = className.toLowerCase();
+    for (final entry in classEntries) {
+      if (entry.className.toLowerCase() == lower) return entry.subclassName;
+    }
+    return null;
+  }
+
+  Map<String, CharacterClassEntry> get classEntriesByName => {
+    for (final entry in classEntries) entry.className: entry,
+  };
+
+  String? classEntryIdFor(String className) {
+    final lower = className.toLowerCase();
+    for (final entry in classEntries) {
+      if (entry.className.toLowerCase() == lower) return entry.id;
+    }
+    return null;
+  }
+
+  int get totalHitDice {
+    if (hitDicePools.isEmpty) return level;
+    return hitDicePools.fold<int>(0, (sum, pool) => sum + pool.total);
+  }
+
+  int get totalHitDiceUsed {
+    if (hitDicePools.isEmpty) return hitPoints.hitDiceUsed;
+    return hitDicePools.fold<int>(0, (sum, pool) => sum + pool.used);
+  }
+
+  int get availableHitDice =>
+      (totalHitDice - totalHitDiceUsed).clamp(0, totalHitDice).toInt();
+
   Character copyWith({
     String? id,
     int? dataVersion,
@@ -141,6 +214,7 @@ class Character {
     String? characterClass,
     String? subclass,
     int? level,
+    List<CharacterClassEntry>? classes,
     int? experiencePoints,
     String? background,
     String? alignment,
@@ -156,6 +230,7 @@ class Character {
     Map<String, int>? currency,
     List<KnownSpell>? spells,
     SpellSlots? spellSlots,
+    List<CharacterHitDiePool>? hitDicePools,
     List<InnateSpell>? innateSpells,
     List<String>? features,
     List<CharacterExtraFeature>? extraFeatures,
@@ -191,6 +266,7 @@ class Character {
       characterClass: characterClass ?? this.characterClass,
       subclass: subclass ?? this.subclass,
       level: level ?? this.level,
+      classes: classes ?? this.classes,
       experiencePoints: experiencePoints ?? this.experiencePoints,
       background: background ?? this.background,
       alignment: alignment ?? this.alignment,
@@ -207,6 +283,7 @@ class Character {
       currency: currency ?? this.currency,
       spells: spells ?? this.spells,
       spellSlots: spellSlots ?? this.spellSlots,
+      hitDicePools: hitDicePools ?? this.hitDicePools,
       innateSpells: innateSpells ?? this.innateSpells,
       features: features ?? this.features,
       extraFeatures: extraFeatures ?? this.extraFeatures,
@@ -227,7 +304,8 @@ class Character {
       isPinned: isPinned ?? this.isPinned,
       sortOrder: sortOrder ?? this.sortOrder,
       xpTrackingEnabled: xpTrackingEnabled ?? this.xpTrackingEnabled,
-      weightTrackingEnabled: weightTrackingEnabled ?? this.weightTrackingEnabled,
+      weightTrackingEnabled:
+          weightTrackingEnabled ?? this.weightTrackingEnabled,
       activeConditions: activeConditions ?? this.activeConditions,
       concentrationSpell: concentrationSpell == _keep
           ? this.concentrationSpell

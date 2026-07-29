@@ -4,6 +4,7 @@
 class CharacterFeatureChoice {
   final String sourceType; // classFeature | subclassFeature | raceTrait | feat
   final String sourceClass;
+  final String? sourceClassEntryId;
   final String? sourceSubclass;
   final String? sourceName;
   final String featureName;
@@ -13,6 +14,7 @@ class CharacterFeatureChoice {
   const CharacterFeatureChoice({
     required this.sourceType,
     this.sourceClass = '',
+    this.sourceClassEntryId,
     this.sourceSubclass,
     this.sourceName,
     required this.featureName,
@@ -23,6 +25,7 @@ class CharacterFeatureChoice {
   bool matches({
     required String sourceType,
     String sourceClass = '',
+    String? sourceClassEntryId,
     String? sourceSubclass,
     String? sourceName,
     required String featureName,
@@ -30,6 +33,8 @@ class CharacterFeatureChoice {
   }) {
     return this.sourceType == sourceType &&
         this.sourceClass == sourceClass &&
+        (sourceClassEntryId == null ||
+            this.sourceClassEntryId == sourceClassEntryId) &&
         this.sourceSubclass == sourceSubclass &&
         this.sourceName == sourceName &&
         this.featureName == featureName &&
@@ -39,6 +44,7 @@ class CharacterFeatureChoice {
   CharacterFeatureChoice copyWith({
     String? sourceType,
     String? sourceClass,
+    String? sourceClassEntryId,
     String? sourceSubclass,
     String? sourceName,
     String? featureName,
@@ -48,6 +54,7 @@ class CharacterFeatureChoice {
     return CharacterFeatureChoice(
       sourceType: sourceType ?? this.sourceType,
       sourceClass: sourceClass ?? this.sourceClass,
+      sourceClassEntryId: sourceClassEntryId ?? this.sourceClassEntryId,
       sourceSubclass: sourceSubclass ?? this.sourceSubclass,
       sourceName: sourceName ?? this.sourceName,
       featureName: featureName ?? this.featureName,
@@ -60,11 +67,13 @@ class CharacterFeatureChoice {
     return CharacterFeatureChoice(
       sourceType: json['sourceType'] as String? ?? '',
       sourceClass: json['sourceClass'] as String? ?? '',
+      sourceClassEntryId: json['sourceClassEntryId'] as String?,
       sourceSubclass: json['sourceSubclass'] as String?,
       sourceName: json['sourceName'] as String?,
       featureName: json['featureName'] as String? ?? '',
       choiceId: json['choiceId'] as String? ?? '',
-      values: (json['values'] as List<dynamic>?)
+      values:
+          (json['values'] as List<dynamic>?)
               ?.map((e) => e.toString())
               .toList() ??
           const [],
@@ -72,12 +81,13 @@ class CharacterFeatureChoice {
   }
 
   Map<String, dynamic> toJson() => {
-        'sourceType': sourceType,
-        if (sourceClass.isNotEmpty) 'sourceClass': sourceClass,
-        if (sourceSubclass != null) 'sourceSubclass': sourceSubclass,
-        if (sourceName != null) 'sourceName': sourceName,
-        'featureName': featureName,
-        'choiceId': choiceId,
-        'values': values,
-      };
+    'sourceType': sourceType,
+    if (sourceClass.isNotEmpty) 'sourceClass': sourceClass,
+    if (sourceClassEntryId != null) 'sourceClassEntryId': sourceClassEntryId,
+    if (sourceSubclass != null) 'sourceSubclass': sourceSubclass,
+    if (sourceName != null) 'sourceName': sourceName,
+    'featureName': featureName,
+    'choiceId': choiceId,
+    'values': values,
+  };
 }

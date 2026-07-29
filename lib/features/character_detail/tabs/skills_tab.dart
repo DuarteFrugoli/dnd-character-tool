@@ -3,10 +3,7 @@ part of '../character_detail_screen.dart';
 // ── Skills Tab ────────────────────────────────────────────────────────────────
 
 class _SkillsTab extends ConsumerStatefulWidget {
-  const _SkillsTab({
-    required this.character,
-    required this.characterId,
-  });
+  const _SkillsTab({required this.character, required this.characterId});
   final Character character;
   final String characterId;
 
@@ -16,9 +13,7 @@ class _SkillsTab extends ConsumerStatefulWidget {
 
 class _SkillsTabState extends ConsumerState<_SkillsTab> {
   void _cycleSkill(String skillName) {
-    final c = ref
-        .read(characterDetailProvider(widget.characterId))
-        .valueOrNull;
+    final c = ref.read(characterDetailProvider(widget.characterId)).valueOrNull;
     if (c == null) return;
     final lower = skillName.toLowerCase();
     // Normalize to lowercase so contains/remove always match regardless of
@@ -47,7 +42,8 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
 
   @override
   Widget build(BuildContext context) {
-    final i18n = ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
     final character = widget.character;
     final abilityLabels = {
@@ -59,25 +55,29 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
       'Charisma': l10n.abilityCha,
     };
     final scheme = Theme.of(context).colorScheme;
-    final profSet =
-        character.skillProficiencies.map((s) => s.toLowerCase()).toSet();
-    final expertSet =
-        character.skillExpertises.map((s) => s.toLowerCase()).toSet();
+    final profSet = character.skillProficiencies
+        .map((s) => s.toLowerCase())
+        .toSet();
+    final expertSet = character.skillExpertises
+        .map((s) => s.toLowerCase())
+        .toSet();
 
     return Column(
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-          child: Row(children: [
-            Icon(Icons.touch_app_outlined, size: 14, color: scheme.primary),
-            const SizedBox(width: 6),
-            Text(
-              l10n.skillsEditHint,
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: scheme.primary,
-                  ),
-            ),
-          ]),
+          child: Row(
+            children: [
+              Icon(Icons.touch_app_outlined, size: 14, color: scheme.primary),
+              const SizedBox(width: 6),
+              Text(
+                l10n.skillsEditHint,
+                style: Theme.of(
+                  context,
+                ).textTheme.labelSmall?.copyWith(color: scheme.primary),
+              ),
+            ],
+          ),
         ),
         Expanded(
           child: ListView.builder(
@@ -92,12 +92,13 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
 
               final score = character.abilityScores[ability];
               final abilityMod = ((score - 10) / 2).floor();
-              final bonus = abilityMod +
+              final bonus =
+                  abilityMod +
                   (isExpert
                       ? character.proficiencyBonus * 2
                       : isProf
-                          ? character.proficiencyBonus
-                          : 0);
+                      ? character.proficiencyBonus
+                      : 0);
 
               return ListTile(
                 dense: true,
@@ -106,24 +107,24 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
                   isExpert
                       ? Icons.star_rounded
                       : isProf
-                          ? Icons.circle
-                          : Icons.circle_outlined,
+                      ? Icons.circle
+                      : Icons.circle_outlined,
                   size: 16,
                   color: isProf ? scheme.primary : scheme.outlineVariant,
                 ),
                 title: Text(i18n.skillName(skillName)),
                 subtitle: Text(
-                  abilityLabels[ability] ?? ability.substring(0, 3).toUpperCase(),
+                  abilityLabels[ability] ??
+                      ability.substring(0, 3).toUpperCase(),
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
                 trailing: Text(
-                        _sign(bonus),
-                        style: TextStyle(
-                          fontWeight:
-                              isProf ? FontWeight.bold : FontWeight.normal,
-                          color: isProf ? scheme.primary : null,
-                        ),
-                      ),
+                  _sign(bonus),
+                  style: TextStyle(
+                    fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
+                    color: isProf ? scheme.primary : null,
+                  ),
+                ),
               );
             },
           ),

@@ -58,10 +58,7 @@ class NormalizeEquipmentItemsMigration extends CharacterMigration {
     return CharacterMigrationResult(
       character: character.copyWith(equipment: updatedEquipment),
       changes: [
-        CharacterMigrationChange(
-          code: changeCode,
-          count: updatedCount,
-        ),
+        CharacterMigrationChange(code: changeCode, count: updatedCount),
       ],
     );
   }
@@ -74,10 +71,7 @@ class NormalizeEquipmentItemsMigration extends CharacterMigration {
     if (dataProperties == null || dataProperties.isEmpty) {
       return item.properties;
     }
-    return {
-      ...?item.properties,
-      ...dataProperties,
-    };
+    return {...?item.properties, ...dataProperties};
   }
 
   bool _sameItem(EquipmentItem a, EquipmentItem b) {
@@ -88,7 +82,10 @@ class NormalizeEquipmentItemsMigration extends CharacterMigration {
         mapEquality.equals(a.properties, b.properties);
   }
 
-  SrdItemData? _lookupKnownItem(CharacterMigrationContext context, String name) {
+  SrdItemData? _lookupKnownItem(
+    CharacterMigrationContext context,
+    String name,
+  ) {
     final lower = name.toLowerCase();
     return context.itemsByName[lower] ??
         (lower.endsWith('s')

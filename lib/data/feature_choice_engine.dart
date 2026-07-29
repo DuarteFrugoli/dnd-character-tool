@@ -11,6 +11,7 @@ class FeatureChoiceSourceType {
 class FeatureChoiceRequest {
   final String sourceType;
   final String sourceClass;
+  final String? sourceClassEntryId;
   final String? sourceSubclass;
   final String? sourceName;
   final String featureName;
@@ -21,6 +22,7 @@ class FeatureChoiceRequest {
   const FeatureChoiceRequest({
     required this.sourceType,
     this.sourceClass = '',
+    this.sourceClassEntryId,
     this.sourceSubclass,
     this.sourceName,
     required this.featureName,
@@ -32,23 +34,26 @@ class FeatureChoiceRequest {
   String get choiceId => requirement.id;
 
   String get key =>
-      '$sourceType|$sourceClass|${sourceSubclass ?? ''}|${sourceName ?? ''}|'
+      '$sourceType|$sourceClass|${sourceClassEntryId ?? ''}|'
+      '${sourceSubclass ?? ''}|${sourceName ?? ''}|'
       '$featureName|$choiceId';
 
   CharacterFeatureChoice emptyChoice() => CharacterFeatureChoice(
-        sourceType: sourceType,
-        sourceClass: sourceClass,
-        sourceSubclass: sourceSubclass,
-        sourceName: sourceName,
-        featureName: featureName,
-        choiceId: choiceId,
-      );
+    sourceType: sourceType,
+    sourceClass: sourceClass,
+    sourceClassEntryId: sourceClassEntryId,
+    sourceSubclass: sourceSubclass,
+    sourceName: sourceName,
+    featureName: featureName,
+    choiceId: choiceId,
+  );
 
   CharacterFeatureChoice? findIn(List<CharacterFeatureChoice> choices) {
     for (final choice in choices) {
       if (choice.matches(
         sourceType: sourceType,
         sourceClass: sourceClass,
+        sourceClassEntryId: sourceClassEntryId,
         sourceSubclass: sourceSubclass,
         sourceName: sourceName,
         featureName: featureName,
@@ -87,11 +92,14 @@ class FeatureChoiceEngine {
     required int newLevel,
     required List<SrdClassFeature> newClassFeatures,
     required List<SrdClassFeature> newSubclassFeatures,
+    String? targetClassEntryId,
+    String? targetClassName,
     String? subclassName,
     SrdFeat? featChosen,
   }) {
     final requests = <FeatureChoiceRequest>[];
     final seen = <String>{};
+    final className = targetClassName ?? character.primaryClass.className;
 
     void addAll(Iterable<FeatureChoiceRequest> items) {
       for (final item in items) {
@@ -100,45 +108,59 @@ class FeatureChoiceEngine {
     }
 
     for (final feature in newClassFeatures) {
-      addAll(requestsForClassFeature(
-        catalog: catalog,
-        className: character.characterClass,
-        featureName: feature.name,
-        level: newLevel,
-      ));
-    }
-    addAll(_levelTriggeredClassRequests(
-      catalog: catalog,
-      className: character.characterClass,
-      level: newLevel,
-    ));
-
-    final effectiveSubclass = subclassName ?? character.subclass;
-    if (effectiveSubclass != null) {
-      for (final feature in newSubclassFeatures) {
-        addAll(requestsForSubclassFeature(
+      addAll(
+        requestsForClassFeature(
           catalog: catalog,
-          className: character.characterClass,
-          subclassName: effectiveSubclass,
+          className: className,
+          sourceClassEntryId: targetClassEntryId,
           featureName: feature.name,
           level: newLevel,
-        ));
+        ),
+      );
+    }
+    addAll(
+      _levelTriggeredClassRequests(
+        catalog: catalog,
+        className: className,
+        sourceClassEntryId: targetClassEntryId,
+        level: newLevel,
+      ),
+    );
+
+    final effectiveSubclass = subclassName ?? character.subclassFor(className);
+    if (effectiveSubclass != null) {
+      for (final feature in newSubclassFeatures) {
+        addAll(
+          requestsForSubclassFeature(
+            catalog: catalog,
+            className: className,
+            sourceClassEntryId: targetClassEntryId,
+            subclassName: effectiveSubclass,
+            featureName: feature.name,
+            level: newLevel,
+          ),
+        );
       }
 
-      addAll(_levelTriggeredSubclassRequests(
-        catalog: catalog,
-        className: character.characterClass,
-        subclassName: effectiveSubclass,
-        level: newLevel,
-      ));
+      addAll(
+        _levelTriggeredSubclassRequests(
+          catalog: catalog,
+          className: className,
+          sourceClassEntryId: targetClassEntryId,
+          subclassName: effectiveSubclass,
+          level: newLevel,
+        ),
+      );
     }
 
     if (featChosen != null) {
-      addAll(requestsForFeat(
-        catalog: catalog,
-        featName: featChosen.name,
-        level: newLevel,
-      ));
+      addAll(
+        requestsForFeat(
+          catalog: catalog,
+          featName: featChosen.name,
+          level: newLevel,
+        ),
+      );
     }
 
     return requests;
@@ -147,6 +169,7 @@ class FeatureChoiceEngine {
   static List<FeatureChoiceRequest> requestsForClassFeature({
     required SrdFeatureChoiceCatalog catalog,
     required String className,
+    String? sourceClassEntryId,
     required String featureName,
     required int level,
   }) {
@@ -156,6 +179,7 @@ class FeatureChoiceEngine {
       definition: definition,
       sourceType: FeatureChoiceSourceType.classFeature,
       sourceClass: className,
+      sourceClassEntryId: sourceClassEntryId,
       featureName: featureName,
       level: level,
     );
@@ -164,17 +188,22 @@ class FeatureChoiceEngine {
   static List<FeatureChoiceRequest> requestsForSubclassFeature({
     required SrdFeatureChoiceCatalog catalog,
     required String className,
+    String? sourceClassEntryId,
     required String subclassName,
     required String featureName,
     required int level,
   }) {
-    final definition =
-        catalog.subclassFeature(className, subclassName, featureName);
+    final definition = catalog.subclassFeature(
+      className,
+      subclassName,
+      featureName,
+    );
     if (definition == null) return const [];
     return _requestsForDefinition(
       definition: definition,
       sourceType: FeatureChoiceSourceType.subclassFeature,
       sourceClass: className,
+      sourceClassEntryId: sourceClassEntryId,
       sourceSubclass: subclassName,
       featureName: featureName,
       level: level,
@@ -217,6 +246,7 @@ class FeatureChoiceEngine {
     required SrdFeatureChoiceDefinition definition,
     required String sourceType,
     String sourceClass = '',
+    String? sourceClassEntryId,
     String? sourceSubclass,
     String? sourceName,
     required String featureName,
@@ -228,6 +258,7 @@ class FeatureChoiceEngine {
           (choice) => FeatureChoiceRequest(
             sourceType: sourceType,
             sourceClass: sourceClass,
+            sourceClassEntryId: sourceClassEntryId,
             sourceSubclass: sourceSubclass,
             sourceName: sourceName,
             featureName: featureName,
@@ -243,6 +274,7 @@ class FeatureChoiceEngine {
   static List<FeatureChoiceRequest> _levelTriggeredSubclassRequests({
     required SrdFeatureChoiceCatalog catalog,
     required String className,
+    String? sourceClassEntryId,
     required String subclassName,
     required int level,
   }) {
@@ -252,15 +284,18 @@ class FeatureChoiceEngine {
     for (final entry in subMap.entries) {
       for (final choice in entry.value.choices) {
         if (!choice.countByLevel.containsKey(level)) continue;
-        requests.add(FeatureChoiceRequest(
-          sourceType: FeatureChoiceSourceType.subclassFeature,
-          sourceClass: className,
-          sourceSubclass: subclassName,
-          featureName: entry.key,
-          level: level,
-          requirement: choice,
-          requiredCount: choice.requiredCountAtLevel(level),
-        ));
+        requests.add(
+          FeatureChoiceRequest(
+            sourceType: FeatureChoiceSourceType.subclassFeature,
+            sourceClass: className,
+            sourceClassEntryId: sourceClassEntryId,
+            sourceSubclass: subclassName,
+            featureName: entry.key,
+            level: level,
+            requirement: choice,
+            requiredCount: choice.requiredCountAtLevel(level),
+          ),
+        );
       }
     }
     return requests;
@@ -269,6 +304,7 @@ class FeatureChoiceEngine {
   static List<FeatureChoiceRequest> _levelTriggeredClassRequests({
     required SrdFeatureChoiceCatalog catalog,
     required String className,
+    String? sourceClassEntryId,
     required int level,
   }) {
     final classMap = catalog.classFeatures[className];
@@ -277,14 +313,17 @@ class FeatureChoiceEngine {
     for (final entry in classMap.entries) {
       for (final choice in entry.value.choices) {
         if (!choice.countByLevel.containsKey(level)) continue;
-        requests.add(FeatureChoiceRequest(
-          sourceType: FeatureChoiceSourceType.classFeature,
-          sourceClass: className,
-          featureName: entry.key,
-          level: level,
-          requirement: choice,
-          requiredCount: choice.requiredCountAtLevel(level),
-        ));
+        requests.add(
+          FeatureChoiceRequest(
+            sourceType: FeatureChoiceSourceType.classFeature,
+            sourceClass: className,
+            sourceClassEntryId: sourceClassEntryId,
+            featureName: entry.key,
+            level: level,
+            requirement: choice,
+            requiredCount: choice.requiredCountAtLevel(level),
+          ),
+        );
       }
     }
     return requests;
@@ -307,6 +346,7 @@ class FeatureChoiceEngine {
         (choice) => choice.matches(
           sourceType: update.sourceType,
           sourceClass: update.sourceClass,
+          sourceClassEntryId: update.sourceClassEntryId,
           sourceSubclass: update.sourceSubclass,
           sourceName: update.sourceName,
           featureName: update.featureName,

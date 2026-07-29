@@ -52,116 +52,112 @@ class _RacialTraitsSection extends ConsumerWidget {
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
         SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              final trait = allTraits[index];
-              final isDisabled = disabledFeatures.contains(trait);
-              final desc = traitDescriptions[trait];
-              final usageView = FeatureUsageEngine.viewForRef(
-                catalog: data.featureUsageCatalog,
-                character: character,
-                ref: data.featureUsageCatalog.raceTrait(trait),
+          delegate: SliverChildBuilderDelegate((context, index) {
+            final trait = allTraits[index];
+            final isDisabled = disabledFeatures.contains(trait);
+            final desc = traitDescriptions[trait];
+            final usageView = FeatureUsageEngine.viewForRef(
+              catalog: data.featureUsageCatalog,
+              character: character,
+              ref: data.featureUsageCatalog.raceTrait(trait),
+            );
+            final requests = FeatureChoiceEngine.requestsForRaceTrait(
+              catalog: data.featureChoiceCatalog,
+              traitName: trait,
+              level: character.totalLevel,
+            );
+            Widget card;
+            if (desc == null || desc.isEmpty) {
+              card = Card(
+                margin: const EdgeInsets.only(bottom: 6),
+                child: Column(
+                  children: [
+                    ListTile(
+                      dense: true,
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 4,
+                      ),
+                      title: Text(
+                        i18n.raceTraitName(trait),
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      trailing: Icon(
+                        Icons.info_outline,
+                        size: 16,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                    if (usageView != null)
+                      _FeatureUsageControls(
+                        view: usageView,
+                        characterId: characterId,
+                        i18n: i18n,
+                      ),
+                    ..._featureChoiceWidgets(
+                      context: context,
+                      ref: ref,
+                      characterId: characterId,
+                      character: character,
+                      requests: requests,
+                      data: data,
+                      i18n: i18n,
+                    ),
+                  ],
+                ),
               );
-              final requests = FeatureChoiceEngine.requestsForRaceTrait(
-                catalog: data.featureChoiceCatalog,
-                traitName: trait,
-                level: character.level,
-              );
-              Widget card;
-              if (desc == null || desc.isEmpty) {
-                card = Card(
-                  margin: const EdgeInsets.only(bottom: 6),
-                  child: Column(
+            } else {
+              card = Card(
+                margin: const EdgeInsets.only(bottom: 6),
+                clipBehavior: Clip.antiAlias,
+                child: ExpansionTile(
+                  tilePadding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 2,
+                  ),
+                  childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                  title: Row(
                     children: [
-                      ListTile(
-                        dense: true,
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 4,
-                        ),
-                        title: Text(
+                      Expanded(
+                        child: Text(
                           i18n.raceTraitName(trait),
                           style: const TextStyle(fontWeight: FontWeight.w600),
                         ),
-                        trailing: Icon(
-                          Icons.info_outline,
-                          size: 16,
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                      if (usageView != null)
-                        _FeatureUsageControls(
-                          view: usageView,
-                          characterId: characterId,
-                          i18n: i18n,
-                        ),
-                      ..._featureChoiceWidgets(
-                        context: context,
-                        ref: ref,
-                        characterId: characterId,
-                        character: character,
-                        requests: requests,
-                        data: data,
-                        i18n: i18n,
                       ),
                     ],
                   ),
-                );
-              } else {
-                card = Card(
-                  margin: const EdgeInsets.only(bottom: 6),
-                  clipBehavior: Clip.antiAlias,
-                  child: ExpansionTile(
-                    tilePadding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 2,
+                  children: [
+                    ..._featureChoiceWidgets(
+                      context: context,
+                      ref: ref,
+                      characterId: characterId,
+                      character: character,
+                      requests: requests,
+                      data: data,
+                      i18n: i18n,
                     ),
-                    childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                    title: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            i18n.raceTraitName(trait),
-                            style:
-                                const TextStyle(fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ],
-                    ),
-                    children: [
-                      ..._featureChoiceWidgets(
-                        context: context,
-                        ref: ref,
+                    if (usageView != null)
+                      _FeatureUsageControls(
+                        view: usageView,
                         characterId: characterId,
-                        character: character,
-                        requests: requests,
-                        data: data,
                         i18n: i18n,
                       ),
-                      if (usageView != null)
-                        _FeatureUsageControls(
-                          view: usageView,
-                          characterId: characterId,
-                          i18n: i18n,
-                        ),
-                      Text(
-                        i18n.raceTraitDescription(trait) ?? desc,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                          height: 1.5,
-                        ),
+                    Text(
+                      i18n.raceTraitDescription(trait) ?? desc,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                        height: 1.5,
                       ),
-                    ],
-                  ),
-                );
-              }
-              return GestureDetector(
-                onLongPress: () => onToggle(trait),
-                child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
+                    ),
+                  ],
+                ),
               );
-            },
-            childCount: allTraits.length,
-          ),
+            }
+            return GestureDetector(
+              onLongPress: () => onToggle(trait),
+              child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
+            );
+          }, childCount: allTraits.length),
         ),
       ],
     );
@@ -264,63 +260,60 @@ class _ToolProficienciesSection extends ConsumerWidget {
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
         SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              final f = features[index];
-              final label = f.startsWith('Tool Proficiency: ')
-                  ? f.substring('Tool Proficiency: '.length)
-                  : f;
-              return Card(
-                margin: const EdgeInsets.only(bottom: 6),
-                child: ListTile(
-                  dense: true,
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 4,
-                  ),
-                  leading: const Icon(Icons.handyman_outlined, size: 20),
-                  title: Text(
-                    i18n.toolName(label),
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.delete_outline, size: 18),
-                    color: scheme.error,
-                    tooltip: l10n.featuresTooltipRemove,
-                    onPressed: () async {
-                      final confirm = await showDialog<bool>(
-                        context: context,
-                        builder: (ctx) => AlertDialog(
-                          title: Text(l10n.featuresRemoveTitle),
-                          content: Text(
-                            l10n.featuresRemoveContent(i18n.toolName(label)),
-                          ),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(ctx, false),
-                              child: Text(l10n.dialogCancel),
-                            ),
-                            FilledButton(
-                              onPressed: () => Navigator.pop(ctx, true),
-                              style: FilledButton.styleFrom(
-                                backgroundColor: scheme.error,
-                                foregroundColor: scheme.onError,
-                              ),
-                              child: Text(l10n.dialogRemove),
-                            ),
-                          ],
-                        ),
-                      );
-                      if (confirm == true) {
-                        await notifier.removeToolProficiency(f);
-                      }
-                    },
-                  ),
+          delegate: SliverChildBuilderDelegate((context, index) {
+            final f = features[index];
+            final label = f.startsWith('Tool Proficiency: ')
+                ? f.substring('Tool Proficiency: '.length)
+                : f;
+            return Card(
+              margin: const EdgeInsets.only(bottom: 6),
+              child: ListTile(
+                dense: true,
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 4,
                 ),
-              );
-            },
-            childCount: features.length,
-          ),
+                leading: const Icon(Icons.handyman_outlined, size: 20),
+                title: Text(
+                  i18n.toolName(label),
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                ),
+                trailing: IconButton(
+                  icon: const Icon(Icons.delete_outline, size: 18),
+                  color: scheme.error,
+                  tooltip: l10n.featuresTooltipRemove,
+                  onPressed: () async {
+                    final confirm = await showDialog<bool>(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        title: Text(l10n.featuresRemoveTitle),
+                        content: Text(
+                          l10n.featuresRemoveContent(i18n.toolName(label)),
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(ctx, false),
+                            child: Text(l10n.dialogCancel),
+                          ),
+                          FilledButton(
+                            onPressed: () => Navigator.pop(ctx, true),
+                            style: FilledButton.styleFrom(
+                              backgroundColor: scheme.error,
+                              foregroundColor: scheme.onError,
+                            ),
+                            child: Text(l10n.dialogRemove),
+                          ),
+                        ],
+                      ),
+                    );
+                    if (confirm == true) {
+                      await notifier.removeToolProficiency(f);
+                    }
+                  },
+                ),
+              ),
+            );
+          }, childCount: features.length),
         ),
       ],
     );
@@ -352,7 +345,7 @@ class _FeatsSection extends ConsumerWidget {
       final requests = FeatureChoiceEngine.requestsForFeat(
         catalog: data.featureChoiceCatalog,
         featName: f.name,
-        level: character.level,
+        level: character.totalLevel,
       );
       final usageView = FeatureUsageEngine.viewForRef(
         catalog: data.featureUsageCatalog,
@@ -437,10 +430,9 @@ class _FeatsSection extends ConsumerWidget {
         SliverToBoxAdapter(
           child: Text(
             l10n.featuresSectionFeats,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -472,28 +464,70 @@ class _ExtraFeaturesSection extends ConsumerWidget {
 
   List<FeatureChoiceRequest> _requestsForExtra(CharacterExtraFeature feature) {
     final catalog = data.featureChoiceCatalog;
+    final sourceClass = _sourceClassForExtra(feature);
+    final sourceClassLevel = _sourceClassLevelForExtra(feature);
     final classRequests = FeatureChoiceEngine.requestsForClassFeature(
       catalog: catalog,
-      className: feature.sourceClass,
+      className: sourceClass,
+      sourceClassEntryId: feature.sourceClassEntryId,
       featureName: feature.name,
-      level: feature.level,
+      level: sourceClassLevel,
     );
     if (classRequests.isNotEmpty) return classRequests;
 
     final subclassRequests = FeatureChoiceEngine.requestsForSubclassFeature(
       catalog: catalog,
-      className: character.characterClass,
-      subclassName: feature.sourceClass,
+      className: sourceClass,
+      sourceClassEntryId: feature.sourceClassEntryId,
+      subclassName: _sourceSubclassForExtra(feature),
       featureName: feature.name,
-      level: feature.level,
+      level: sourceClassLevel,
     );
     if (subclassRequests.isNotEmpty) return subclassRequests;
 
     return FeatureChoiceEngine.requestsForRaceTrait(
       catalog: catalog,
       traitName: feature.name,
-      level: character.level,
+      level: character.totalLevel,
     );
+  }
+
+  FeatureUsageContext _usageContextForExtra(CharacterExtraFeature feature) {
+    if (feature.effectiveSourceType == FeatureChoiceSourceType.feat ||
+        feature.sourceClass == 'Feat') {
+      return FeatureUsageContext.forCharacter(character);
+    }
+    return FeatureUsageContext.forCharacter(
+      character,
+      sourceClass: _sourceClassForExtra(feature),
+      sourceClassLevel: _sourceClassLevelForExtra(feature),
+    );
+  }
+
+  String _sourceClassForExtra(CharacterExtraFeature feature) {
+    final subclassName = _sourceSubclassForExtra(feature);
+    if (feature.effectiveSourceType ==
+            FeatureChoiceSourceType.subclassFeature &&
+        (feature.sourceClass.isEmpty || feature.sourceClass == subclassName)) {
+      return character.primaryClass.className;
+    }
+    if (feature.sourceClass.isEmpty) return character.primaryClass.className;
+    return feature.sourceClass;
+  }
+
+  String _sourceSubclassForExtra(CharacterExtraFeature feature) {
+    return feature.sourceSubclass ?? feature.sourceClass;
+  }
+
+  int _sourceClassLevelForExtra(CharacterExtraFeature feature) {
+    final sourceClassEntryId = feature.sourceClassEntryId;
+    if (sourceClassEntryId != null) {
+      for (final entry in character.classEntries) {
+        if (entry.id == sourceClassEntryId) return entry.level;
+      }
+    }
+    final classLevel = character.classLevel(_sourceClassForExtra(feature));
+    return classLevel > 0 ? classLevel : feature.level;
   }
 
   @override
@@ -504,13 +538,14 @@ class _ExtraFeaturesSection extends ConsumerWidget {
     final l10n2 = AppLocalizations.of(context)!;
     Widget buildExtra(CharacterExtraFeature f) {
       final requests = _requestsForExtra(f);
-      final usageRef = data.featureUsageCatalog.classFeature(
-            f.sourceClass,
+      final usageRef =
+          data.featureUsageCatalog.classFeature(
+            _sourceClassForExtra(f),
             f.name,
           ) ??
           data.featureUsageCatalog.subclassFeature(
-            character.characterClass,
-            f.sourceClass,
+            _sourceClassForExtra(f),
+            _sourceSubclassForExtra(f),
             f.name,
           ) ??
           data.featureUsageCatalog.raceTrait(f.name);
@@ -518,6 +553,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
         catalog: data.featureUsageCatalog,
         character: character,
         ref: usageRef,
+        usageContext: _usageContextForExtra(f),
       );
       final displayName =
           i18n.classFeatureName(f.sourceClass, f.name) ??
@@ -600,10 +636,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Text(
                 i18n.classFeatureDescription(f.sourceClass, f.name) ??
-                    i18n.anySubclassFeatureDescription(
-                      f.sourceClass,
-                      f.name,
-                    ) ??
+                    i18n.anySubclassFeatureDescription(f.sourceClass, f.name) ??
                     f.description,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
@@ -673,6 +706,10 @@ class _ClassFeaturesSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
+    final classEntry = character.classEntries.firstWhereOrNull(
+      (entry) => entry.className == className,
+    );
+    final classLevel = classEntry?.level ?? character.classLevel(className);
 
     if (features.isEmpty) {
       return SliverMainAxisGroup(
@@ -697,13 +734,19 @@ class _ClassFeaturesSection extends ConsumerWidget {
       final requests = FeatureChoiceEngine.requestsForClassFeature(
         catalog: data.featureChoiceCatalog,
         className: className,
+        sourceClassEntryId: classEntry?.id,
         featureName: f.name,
-        level: character.level,
+        level: classLevel,
       );
       final usageView = FeatureUsageEngine.viewForRef(
         catalog: data.featureUsageCatalog,
         character: character,
         ref: data.featureUsageCatalog.classFeature(className, f.name),
+        usageContext: FeatureUsageContext.forCharacter(
+          character,
+          sourceClass: className,
+          sourceClassLevel: classLevel,
+        ),
       );
       final card = Card(
         margin: const EdgeInsets.only(bottom: 10),
@@ -718,10 +761,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
               ),
               const SizedBox(width: 8),
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 2,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
                   color: typeColor.withAlpha(30),
                   border: Border.all(color: typeColor.withAlpha(100)),
@@ -841,15 +881,20 @@ class _SubclassFeaturesSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
+    final classEntry = character.classEntries.firstWhereOrNull(
+      (entry) => entry.className == className,
+    );
+    final classLevel = classEntry?.level ?? character.classLevel(className);
     Widget buildFeature(SrdClassFeature f) {
       final typeColor = f.type == 'active' ? scheme.primary : scheme.outline;
       final isDisabled = disabledFeatures.contains(f.name);
       final requests = FeatureChoiceEngine.requestsForSubclassFeature(
         catalog: data.featureChoiceCatalog,
         className: className,
+        sourceClassEntryId: classEntry?.id,
         subclassName: subclassName,
         featureName: f.name,
-        level: character.level,
+        level: classLevel,
       );
       final usageView = FeatureUsageEngine.viewForRef(
         catalog: data.featureUsageCatalog,
@@ -859,6 +904,11 @@ class _SubclassFeaturesSection extends ConsumerWidget {
           subclassName,
           f.name,
         ),
+        usageContext: FeatureUsageContext.forCharacter(
+          character,
+          sourceClass: className,
+          sourceClassLevel: classLevel,
+        ),
       );
       final card = Card(
         margin: const EdgeInsets.only(bottom: 10),
@@ -867,21 +917,14 @@ class _SubclassFeaturesSection extends ConsumerWidget {
             children: [
               Expanded(
                 child: Text(
-                  i18n.subclassFeatureName(
-                        className,
-                        subclassName,
-                        f.name,
-                      ) ??
+                  i18n.subclassFeatureName(className, subclassName, f.name) ??
                       f.name,
                   style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
               ),
               const SizedBox(width: 8),
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 2,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
                   color: typeColor.withAlpha(30),
                   border: Border.all(color: typeColor.withAlpha(100)),

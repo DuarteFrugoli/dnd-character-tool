@@ -7,6 +7,7 @@ import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_choice_option_resolver.dart';
 import '../../data/models/models.dart';
+import '../../data/spellcasting_engine.dart';
 import '../../shared/providers/providers.dart';
 
 // ── Estado do rascunho ────────────────────────────────────────────────────────
@@ -16,18 +17,57 @@ enum AttributeMethod { standardArray, pointBuy, rolledDice }
 // ── Equipment type detection ──────────────────────────────────────────────────
 
 const _kWeaponKeywords = [
-  'sword', 'axe', 'bow', 'crossbow', 'dagger', 'mace', 'hammer', 'spear',
-  'javelin', 'lance', 'rapier', 'scimitar', 'halberd', 'glaive', 'pike',
-  'flail', 'maul', 'quarterstaff', 'staff', 'sickle', 'club', 'trident',
-  'handaxe', 'greataxe', 'warhammer', 'morningstar', 'war pick', 'whip',
-  'blowgun', 'sling', 'dart', 'net',
+  'sword',
+  'axe',
+  'bow',
+  'crossbow',
+  'dagger',
+  'mace',
+  'hammer',
+  'spear',
+  'javelin',
+  'lance',
+  'rapier',
+  'scimitar',
+  'halberd',
+  'glaive',
+  'pike',
+  'flail',
+  'maul',
+  'quarterstaff',
+  'staff',
+  'sickle',
+  'club',
+  'trident',
+  'handaxe',
+  'greataxe',
+  'warhammer',
+  'morningstar',
+  'war pick',
+  'whip',
+  'blowgun',
+  'sling',
+  'dart',
+  'net',
 ];
 
 const _kArmorKeywords = [
-  'chain mail', 'chain shirt', 'scale mail', 'ring mail', 'leather armor',
-  'studded leather', 'padded armor', 'hide armor', 'breastplate',
-  'half plate', 'plate armor', 'splint', 'leather', 'padded',
-  'hide', 'plate',
+  'chain mail',
+  'chain shirt',
+  'scale mail',
+  'ring mail',
+  'leather armor',
+  'studded leather',
+  'padded armor',
+  'hide armor',
+  'breastplate',
+  'half plate',
+  'plate armor',
+  'splint',
+  'leather',
+  'padded',
+  'hide',
+  'plate',
 ];
 
 const _kAmmoKeywords = ['arrows', 'bolts', 'darts', 'needles'];
@@ -82,26 +122,22 @@ Map<String, dynamic>? _propertiesForItem(String name) {
 
   // Armor table: (pattern, baseAC, addDexModifier, maxDexBonus or null=unlimited)
   const armorTable = <(String, int, bool, int?)>[
-    ('half plate',      15, true,  2),
-    ('studded leather', 12, true,  null),
-    ('chain mail',      16, false, null),
-    ('ring mail',       14, false, null),
-    ('scale mail',      14, true,  2),
-    ('chain shirt',     13, true,  2),
-    ('plate',           18, false, null),
-    ('splint',          17, false, null),
-    ('breastplate',     14, true,  2),
-    ('hide',            12, true,  2),
-    ('leather',         11, true,  null),
-    ('padded',          11, true,  null),
+    ('half plate', 15, true, 2),
+    ('studded leather', 12, true, null),
+    ('chain mail', 16, false, null),
+    ('ring mail', 14, false, null),
+    ('scale mail', 14, true, 2),
+    ('chain shirt', 13, true, 2),
+    ('plate', 18, false, null),
+    ('splint', 17, false, null),
+    ('breastplate', 14, true, 2),
+    ('hide', 12, true, 2),
+    ('leather', 11, true, null),
+    ('padded', 11, true, null),
   ];
   for (final (pattern, base, addDex, maxDex) in armorTable) {
     if (lower.contains(pattern)) {
-      return {
-        'baseAC': base,
-        'addDexModifier': addDex,
-        'maxDexBonus': ?maxDex,
-      };
+      return {'baseAC': base, 'addDexModifier': addDex, 'maxDexBonus': ?maxDex};
     }
   }
   return null;
@@ -233,7 +269,8 @@ class CharacterDraft {
       attributeMethod: attributeMethod ?? this.attributeMethod,
       freeAsi: freeAsi ?? this.freeAsi,
       freeAsiDistribution: freeAsiDistribution ?? this.freeAsiDistribution,
-      freePicksDistribution: freePicksDistribution ?? this.freePicksDistribution,
+      freePicksDistribution:
+          freePicksDistribution ?? this.freePicksDistribution,
       name: name ?? this.name,
       playerName: playerName ?? this.playerName,
       selectedStartingEquipment:
@@ -356,7 +393,8 @@ class CharacterDraft {
 
   /// Quantidade total de idiomas que o jogador precisa escolher livremente.
   int get languageChoicesNeeded {
-    final raceChoices = selectedRace?.languages
+    final raceChoices =
+        selectedRace?.languages
             .where((l) => l.toLowerCase().contains('of your choice'))
             .length ??
         0;
@@ -396,6 +434,7 @@ class CharacterDraft {
       final lower = tool.toLowerCase();
       return lower.contains('one type of') || lower.contains('of your choice');
     }
+
     // Race: Tool Proficiency trait -> one artisan's tool
     if (selectedRace != null &&
         selectedRace!.traits.contains('Tool Proficiency')) {
@@ -412,11 +451,15 @@ class CharacterDraft {
       for (final tool in selectedClass!.toolProficiencies) {
         if (isChoice(tool)) {
           final lower = tool.toLowerCase();
-          final match =
-              RegExp(r'(\w+) musical instrument').firstMatch(lower);
+          final match = RegExp(r'(\w+) musical instrument').firstMatch(lower);
           final countWord = match?.group(1);
-          count += const {
-                'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+          count +=
+              const {
+                'one': 1,
+                'two': 2,
+                'three': 3,
+                'four': 4,
+                'five': 5,
               }[countWord] ??
               1;
         }
@@ -427,8 +470,10 @@ class CharacterDraft {
 
   // Verifica se o rascunho tem o mínimo para ser salvo
   bool get isComplete {
-    if (selectedClass == null || selectedRace == null ||
-        selectedBackground == null || baseAttributes.length != 6) {
+    if (selectedClass == null ||
+        selectedRace == null ||
+        selectedBackground == null ||
+        baseAttributes.length != 6) {
       return false;
     }
     // Racial ASI slots must be complete in either default or Tasha mode.
@@ -458,85 +503,83 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   void reset() => state = CharacterDraft(id: const Uuid().v4());
 
   void setClass(SrdClass c) => state = state.copyWith(
-        selectedClass: c,
-        selectedSubclass: null,
-        chosenSkills: [],
-        chosenToolProficiencies: [],
-        classEquipmentChoices: [],
-        classEquipmentSpecifics: {},
-        featureChoicesLoaded: false,
-        featureChoiceRequests: const [],
-        featureChoices: const [],
-      );
+    selectedClass: c,
+    selectedSubclass: null,
+    chosenSkills: [],
+    chosenToolProficiencies: [],
+    classEquipmentChoices: [],
+    classEquipmentSpecifics: {},
+    featureChoicesLoaded: false,
+    featureChoiceRequests: const [],
+    featureChoices: const [],
+  );
 
   void clearClass() => state = state.copyWith(
-        selectedClass: null,
-        selectedSubclass: null,
-        chosenSkills: [],
-        chosenToolProficiencies: [],
-        classEquipmentChoices: [],
-        classEquipmentSpecifics: {},
-        featureChoicesLoaded: false,
-        featureChoiceRequests: const [],
-        featureChoices: const [],
-      );
+    selectedClass: null,
+    selectedSubclass: null,
+    chosenSkills: [],
+    chosenToolProficiencies: [],
+    classEquipmentChoices: [],
+    classEquipmentSpecifics: {},
+    featureChoicesLoaded: false,
+    featureChoiceRequests: const [],
+    featureChoices: const [],
+  );
 
-  void setSubclass(SrdSubclass? s) =>
-      state = state.copyWith(
-        selectedSubclass: s,
-        featureChoicesLoaded: false,
-        featureChoiceRequests: const [],
-        featureChoices: const [],
-      );
+  void setSubclass(SrdSubclass? s) => state = state.copyWith(
+    selectedSubclass: s,
+    featureChoicesLoaded: false,
+    featureChoiceRequests: const [],
+    featureChoices: const [],
+  );
 
   void setRace(SrdRace r) => state = state.copyWith(
-        selectedRace: r,
-        selectedSubrace: null,
-        freeAsiDistribution: {},
-        freePicksDistribution: {},
-        chosenLanguages: [],
-        chosenToolProficiencies: [],
-        featureChoicesLoaded: false,
-        featureChoiceRequests: const [],
-        featureChoices: const [],
-      );
+    selectedRace: r,
+    selectedSubrace: null,
+    freeAsiDistribution: {},
+    freePicksDistribution: {},
+    chosenLanguages: [],
+    chosenToolProficiencies: [],
+    featureChoicesLoaded: false,
+    featureChoiceRequests: const [],
+    featureChoices: const [],
+  );
 
   void clearRace() => state = state.copyWith(
-        selectedRace: null,
-        selectedSubrace: null,
-        freeAsiDistribution: {},
-        freePicksDistribution: {},
-        chosenLanguages: [],
-        chosenToolProficiencies: [],
-        featureChoicesLoaded: false,
-        featureChoiceRequests: const [],
-        featureChoices: const [],
-      );
+    selectedRace: null,
+    selectedSubrace: null,
+    freeAsiDistribution: {},
+    freePicksDistribution: {},
+    chosenLanguages: [],
+    chosenToolProficiencies: [],
+    featureChoicesLoaded: false,
+    featureChoiceRequests: const [],
+    featureChoices: const [],
+  );
 
-  void setSubrace(SrdSubrace? s) =>
-      state = state.copyWith(
-        selectedSubrace: s,
-        freeAsiDistribution: {},
-        freePicksDistribution: {},
-        featureChoicesLoaded: false,
-        featureChoiceRequests: const [],
-        featureChoices: const [],
-      );
+  void setSubrace(SrdSubrace? s) => state = state.copyWith(
+    selectedSubrace: s,
+    freeAsiDistribution: {},
+    freePicksDistribution: {},
+    featureChoicesLoaded: false,
+    featureChoiceRequests: const [],
+    featureChoices: const [],
+  );
 
   void setBackground(SrdBackground b) => state = state.copyWith(
-        selectedBackground: b,
-        // Pré-seleciona apenas itens fixos (escolhas ficam no resolvedEquipmentChoices)
-        selectedStartingEquipment: b.startingEquipment
-            .where((i) => !isEquipmentChoiceItem(i))
-            .toList(),
-        // Reseta idiomas, ferramentas e escolhas de equipamento ao trocar background
-        chosenLanguages: [],
-        chosenToolProficiencies: [],
-        resolvedEquipmentChoices: {},
-        featureChoicesLoaded: false,
-        featureChoiceRequests: const [],
-        featureChoices: const [],
-      );
+    selectedBackground: b,
+    // Pré-seleciona apenas itens fixos (escolhas ficam no resolvedEquipmentChoices)
+    selectedStartingEquipment: b.startingEquipment
+        .where((i) => !isEquipmentChoiceItem(i))
+        .toList(),
+    // Reseta idiomas, ferramentas e escolhas de equipamento ao trocar background
+    chosenLanguages: [],
+    chosenToolProficiencies: [],
+    resolvedEquipmentChoices: {},
+    featureChoicesLoaded: false,
+    featureChoiceRequests: const [],
+    featureChoices: const [],
+  );
 
   void toggleStartingItem(String item) {
     final current = List<String>.from(state.selectedStartingEquipment);
@@ -561,10 +604,10 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       state = state.copyWith(rolledValues: values);
 
   void setFreeAsi(bool v) => state = state.copyWith(
-        freeAsi: v,
-        freeAsiDistribution: {},
-        freePicksDistribution: {},
-      );
+    freeAsi: v,
+    freeAsiDistribution: {},
+    freePicksDistribution: {},
+  );
 
   void setFreeAsiDistribution(Map<String, int> dist) =>
       state = state.copyWith(freeAsiDistribution: dist);
@@ -611,9 +654,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     }
     choices[groupIdx] = optionIdx;
     // Clear sub-picks for this group since option changed
-    final specifics =
-        Map<String, String>.from(state.classEquipmentSpecifics)
-          ..removeWhere((k, _) => k.startsWith('$groupIdx:'));
+    final specifics = Map<String, String>.from(state.classEquipmentSpecifics)
+      ..removeWhere((k, _) => k.startsWith('$groupIdx:'));
     state = state.copyWith(
       classEquipmentChoices: choices,
       classEquipmentSpecifics: specifics,
@@ -621,8 +663,8 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
   }
 
   void setClassEquipmentSpecific(String key, String value) {
-    final specifics =
-        Map<String, String>.from(state.classEquipmentSpecifics)..[key] = value;
+    final specifics = Map<String, String>.from(state.classEquipmentSpecifics)
+      ..[key] = value;
     state = state.copyWith(classEquipmentSpecifics: specifics);
   }
 
@@ -652,9 +694,11 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       }
     }
 
-    final raceLanguageChoices = race?.languages
-            .where((language) =>
-                language.toLowerCase().contains('of your choice'))
+    final raceLanguageChoices =
+        race?.languages
+            .where(
+              (language) => language.toLowerCase().contains('of your choice'),
+            )
             .length ??
         0;
     if (race != null &&
@@ -689,7 +733,10 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         .firstOrNull;
   }
 
-  Future<Character> buildAndSave(WidgetRef ref, {String fallbackName = 'Unnamed Hero'}) async {
+  Future<Character> buildAndSave(
+    WidgetRef ref, {
+    String fallbackName = 'Unnamed Hero',
+  }) async {
     final draft = state;
     final repo = ref.read(characterRepositoryProvider);
     final attrs = Map<String, int>.from(draft.finalAttributes);
@@ -734,15 +781,28 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       for (final spell in allSpells) spell.name.toLowerCase(): spell,
     };
 
-    final featureChoicesForSave = _featureChoicesForSave(draft);
+    const primaryClassEntryId = 'primary';
+    final featureChoicesForSave = _featureChoicesForSave(draft)
+        .map(
+          (choice) =>
+              choice.sourceType == FeatureChoiceSourceType.classFeature ||
+                  choice.sourceType == FeatureChoiceSourceType.subclassFeature
+              ? choice.copyWith(sourceClassEntryId: primaryClassEntryId)
+              : choice,
+        )
+        .toList();
     final selectedBonusFeatName = _selectedBonusFeatName(featureChoicesForSave);
     final selectedBonusFeat = selectedBonusFeatName == null
         ? null
-        : allFeats.firstWhereOrNull((feat) => feat.name == selectedBonusFeatName);
+        : allFeats.firstWhereOrNull(
+            (feat) => feat.name == selectedBonusFeatName,
+          );
     final extraFeatures = <CharacterExtraFeature>[
       if (selectedBonusFeat != null)
         CharacterExtraFeature(
           sourceClass: 'Feat',
+          sourceType: FeatureChoiceSourceType.feat,
+          sourceFeature: selectedBonusFeat.name,
           name: selectedBonusFeat.name,
           level: 1,
           type: 'passive',
@@ -763,7 +823,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     final featureSpells = <KnownSpell>[];
 
     void addUniqueString(List<String> values, String value) {
-      if (values.any((existing) => existing.toLowerCase() == value.toLowerCase())) {
+      if (values.any(
+        (existing) => existing.toLowerCase() == value.toLowerCase(),
+      )) {
         return;
       }
       values.add(value);
@@ -774,13 +836,27 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       return separator < 0 ? value : value.substring(separator + 1);
     }
 
-    void addFeatureSpell(String value) {
+    void addFeatureSpell(String value, FeatureChoiceRequest? request) {
       final spell = spellByName[value.toLowerCase()];
-      if (featureSpells.any((existing) =>
-          existing.name.toLowerCase() == value.toLowerCase())) {
+      if (featureSpells.any(
+        (existing) => existing.name.toLowerCase() == value.toLowerCase(),
+      )) {
         return;
       }
-      featureSpells.add(KnownSpell(name: value, level: spell?.level ?? 0));
+      final requestSourceClass = request?.sourceClass ?? '';
+      featureSpells.add(
+        KnownSpell(
+          name: value,
+          level: spell?.level ?? 0,
+          sourceType: request?.sourceType ?? 'feature',
+          sourceClass: request?.sourceClass,
+          sourceSubclass: request?.sourceSubclass,
+          sourceFeature: request?.featureName,
+          sourceClassEntryId: requestSourceClass.isNotEmpty
+              ? primaryClassEntryId
+              : null,
+        ),
+      );
     }
 
     for (final choice in featureChoicesForSave) {
@@ -826,10 +902,10 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
             );
             break;
           case 'cantrip':
-            addFeatureSpell(value);
+            addFeatureSpell(value, request);
             break;
           case 'spell':
-            addFeatureSpell(value);
+            addFeatureSpell(value, request);
             break;
           default:
             break;
@@ -888,14 +964,16 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
         return;
       }
 
-      startingEquipment.add(EquipmentItem(
-        name: itemName,
-        category: data?.category ?? _categoryForItem(itemName),
-        itemType: data?.asItemType ?? _itemTypeForItem(itemName),
-        quantity: qty,
-        weight: data?.weight ?? 0.0,
-        properties: data?.properties ?? _propertiesForItem(itemName),
-      ));
+      startingEquipment.add(
+        EquipmentItem(
+          name: itemName,
+          category: data?.category ?? _categoryForItem(itemName),
+          itemType: data?.asItemType ?? _itemTypeForItem(itemName),
+          quantity: qty,
+          weight: data?.weight ?? 0.0,
+          properties: data?.properties ?? _propertiesForItem(itemName),
+        ),
+      );
     }
 
     // Fixed items
@@ -955,7 +1033,9 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     final featureLabels = [
       for (final tool in featureToolProficiencies.where((t) => t.isNotEmpty))
         'Tool Proficiency: $tool',
-      for (final weapon in featureWeaponProficiencies.where((w) => w.isNotEmpty))
+      for (final weapon in featureWeaponProficiencies.where(
+        (w) => w.isNotEmpty,
+      ))
         'Weapon Proficiency: $weapon',
     ];
 
@@ -968,6 +1048,15 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       characterClass: draft.selectedClass!.name,
       subclass: draft.selectedSubclass?.name,
       level: 1,
+      classes: [
+        CharacterClassEntry(
+          id: primaryClassEntryId,
+          className: draft.selectedClass!.name,
+          subclassName: draft.selectedSubclass?.name,
+          level: 1,
+          isStartingClass: true,
+        ),
+      ],
       experiencePoints: 0,
       background: draft.selectedBackground!.name,
       alignment: '',
@@ -993,10 +1082,15 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       equipment: startingEquipment,
       currency: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': startingGp, 'pp': 0},
       spells: featureSpells,
-      spellSlots: SpellSlots(
-        total: List.filled(9, 0),
-        used: List.filled(9, 0),
-      ),
+      spellSlots: SpellSlots(total: List.filled(9, 0), used: List.filled(9, 0)),
+      hitDicePools: [
+        CharacterHitDiePool(
+          dieSize: hitDie,
+          total: 1,
+          sourceClass: draft.selectedClass!.name,
+          sourceClassEntryId: primaryClassEntryId,
+        ),
+      ],
       features: featureLabels,
       extraFeatures: extraFeatures,
       featureChoices: featureChoicesForSave,
@@ -1019,6 +1113,16 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
     );
+    character = character.copyWith(
+      spellSlots: SpellcastingEngine.syncedSlotsFor(
+        current: character.spellSlots,
+        className: character.primaryClass.className,
+        classLevel: character.primaryClass.level,
+        abilityScores: character.abilityScores,
+        proficiencyBonus: character.proficiencyBonus,
+        subclass: character.primaryClass.subclassName,
+      ),
+    );
     character = character.copyWith(armorClass: calcArmorClass(character));
 
     await repo.save(character);
@@ -1028,5 +1132,5 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
 
 final characterDraftProvider =
     NotifierProvider<CharacterDraftNotifier, CharacterDraft>(
-  CharacterDraftNotifier.new,
-);
+      CharacterDraftNotifier.new,
+    );

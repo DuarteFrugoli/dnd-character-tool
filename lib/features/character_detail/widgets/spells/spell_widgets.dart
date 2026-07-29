@@ -302,34 +302,36 @@ class _SpellRow extends ConsumerWidget {
                 _SmallBadge('C', scheme.secondary),
                 if (characterId != null) ...[
                   const SizedBox(width: 2),
-                  Builder(builder: (ctx) {
-                    final isActive = concentrationSpell == spell.name;
-                    return MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: GestureDetector(
-                        onTap: () => _onConcentrationTap(
-                          ctx,
-                          ref,
-                          spell.name,
-                          concentrationSpell,
-                          characterId!,
-                          i18n,
-                        ),
-                        child: Tooltip(
-                          message: AppLocalizations.of(
+                  Builder(
+                    builder: (ctx) {
+                      final isActive = concentrationSpell == spell.name;
+                      return MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () => _onConcentrationTap(
                             ctx,
-                          )!.concentrationTooltip,
-                          child: Icon(
-                            isActive ? Icons.gps_fixed : Icons.gps_not_fixed,
-                            size: 16,
-                            color: isActive
-                                ? scheme.primary
-                                : scheme.outlineVariant,
+                            ref,
+                            spell.name,
+                            concentrationSpell,
+                            characterId!,
+                            i18n,
+                          ),
+                          child: Tooltip(
+                            message: AppLocalizations.of(
+                              ctx,
+                            )!.concentrationTooltip,
+                            child: Icon(
+                              isActive ? Icons.gps_fixed : Icons.gps_not_fixed,
+                              size: 16,
+                              color: isActive
+                                  ? scheme.primary
+                                  : scheme.outlineVariant,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }),
+                      );
+                    },
+                  ),
                 ],
               ],
 
@@ -570,7 +572,9 @@ class _InnateSpellRow extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: isUsed ? null : scheme.primaryContainer,
                         border: Border.all(
-                          color: isUsed ? scheme.outlineVariant : scheme.primary,
+                          color: isUsed
+                              ? scheme.outlineVariant
+                              : scheme.primary,
                           width: 2,
                         ),
                       ),
@@ -630,17 +634,19 @@ class _SpellSlotRow extends StatelessWidget {
                   child: GestureDetector(
                     onTap: isUsed ? onRestore : onUse,
                     child: Container(
-                    width: 28,
-                    height: 28,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: isUsed ? null : scheme.primaryContainer,
-                      border: Border.all(
-                        color: isUsed ? scheme.outlineVariant : scheme.primary,
-                        width: 2,
+                      width: 28,
+                      height: 28,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: isUsed ? null : scheme.primaryContainer,
+                        border: Border.all(
+                          color: isUsed
+                              ? scheme.outlineVariant
+                              : scheme.primary,
+                          width: 2,
+                        ),
                       ),
                     ),
-                  ),
                   ),
                 );
               }),

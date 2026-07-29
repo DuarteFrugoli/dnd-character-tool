@@ -2,15 +2,18 @@ import 'package:dnd_character_tool/data/constants/armor_class.dart';
 import 'package:dnd_character_tool/data/models/ability_scores.dart';
 import 'package:dnd_character_tool/data/models/character.dart';
 import 'package:dnd_character_tool/data/models/character_extra_feature.dart';
+import 'package:dnd_character_tool/data/models/character_feature_choice.dart';
 import 'package:dnd_character_tool/data/models/equipment_item.dart';
 import 'package:dnd_character_tool/data/models/hit_points.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Character _character({
   String cls = 'Fighter',
+  String? subclass,
   AbilityScores scores = const AbilityScores(),
   List<EquipmentItem> equipment = const [],
   List<CharacterExtraFeature> extraFeatures = const [],
+  List<CharacterFeatureChoice> featureChoices = const [],
   List<String> disabledFeatures = const [],
 }) {
   final now = DateTime(2024);
@@ -19,10 +22,12 @@ Character _character({
     name: 'Test Hero',
     race: 'Human',
     characterClass: cls,
+    subclass: subclass,
     abilityScores: scores,
     hitPoints: const HitPoints(maximum: 10, current: 10),
     equipment: equipment,
     extraFeatures: extraFeatures,
+    featureChoices: featureChoices,
     disabledFeatures: disabledFeatures,
     createdAt: now,
     updatedAt: now,
@@ -50,6 +55,16 @@ EquipmentItem _leatherArmor() {
       'addDexModifier': true,
       'maxDexBonus': null,
     },
+  );
+}
+
+EquipmentItem _chainMail() {
+  return EquipmentItem(
+    name: 'Chain Mail',
+    category: 'armor',
+    itemType: ItemType.armor,
+    isEquipped: true,
+    properties: const {'baseAC': 16, 'addDexModifier': false},
   );
 }
 
@@ -101,6 +116,52 @@ void main() {
       );
 
       expect(calcArmorClass(c), 13);
+    });
+
+    test('Defense Fighting Style adds AC while wearing body armor', () {
+      final c = _character(
+        cls: 'Fighter',
+        equipment: [_chainMail()],
+        featureChoices: const [
+          CharacterFeatureChoice(
+            sourceType: 'classFeature',
+            sourceClass: 'Fighter',
+            featureName: 'Fighting Style',
+            choiceId: 'fighting_style',
+            values: ['defense'],
+          ),
+        ],
+      );
+
+      expect(calcArmorClass(c), 17);
+    });
+
+    test('Defense Fighting Style does not apply without body armor', () {
+      final c = _character(
+        cls: 'Fighter',
+        scores: const AbilityScores(dexterity: 14),
+        featureChoices: const [
+          CharacterFeatureChoice(
+            sourceType: 'classFeature',
+            sourceClass: 'Fighter',
+            featureName: 'Fighting Style',
+            choiceId: 'fighting_style',
+            values: ['defense'],
+          ),
+        ],
+      );
+
+      expect(calcArmorClass(c), 12);
+    });
+
+    test('Draconic Resilience uses 13 plus Dexterity without armor', () {
+      final c = _character(
+        cls: 'Sorcerer',
+        subclass: 'Draconic Bloodline',
+        scores: const AbilityScores(dexterity: 16),
+      );
+
+      expect(calcArmorClass(c), 16);
     });
 
     test('extra barbarian feature enables Unarmored Defense', () {

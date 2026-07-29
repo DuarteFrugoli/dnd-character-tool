@@ -13,7 +13,10 @@ import '../providers/providers.dart';
 // ── Public helpers ────────────────────────────────────────────────────────────
 
 void showClassDetailSheet(
-    BuildContext context, SrdClass cls, SrdI18nService i18n) {
+  BuildContext context,
+  SrdClass cls,
+  SrdI18nService i18n,
+) {
   showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -37,7 +40,10 @@ void showSubclassDetailSheet(
 }
 
 void showRaceDetailSheet(
-    BuildContext context, SrdRace race, SrdI18nService i18n) {
+  BuildContext context,
+  SrdRace race,
+  SrdI18nService i18n,
+) {
   showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -56,7 +62,8 @@ void showSubraceDetailSheet(
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    builder: (_) => _SubraceDetailSheet(race: race, subrace: subrace, i18n: i18n),
+    builder: (_) =>
+        _SubraceDetailSheet(race: race, subrace: subrace, i18n: i18n),
   );
 }
 
@@ -90,10 +97,10 @@ Widget _sectionHeader(BuildContext context, String title) {
     child: Text(
       title,
       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-            color: scheme.primary,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 0.5,
-          ),
+        color: scheme.primary,
+        fontWeight: FontWeight.bold,
+        letterSpacing: 0.5,
+      ),
     ),
   );
 }
@@ -125,8 +132,7 @@ class _FeatureTile extends StatelessWidget {
           if (badge != null) ...[
             const SizedBox(width: 8),
             Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
                 color: scheme.secondaryContainer,
                 borderRadius: BorderRadius.circular(4),
@@ -177,11 +183,15 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
   @override
   void initState() {
     super.initState();
-    ref.read(srdDataSourceProvider).getClassFeatures(widget.cls.name).then((f) {
-      if (mounted) setState(() => _features = f);
-    }).catchError((Object e) {
-      if (mounted) setState(() => _error = e.toString());
-    });
+    ref
+        .read(srdDataSourceProvider)
+        .getClassFeatures(widget.cls.name)
+        .then((f) {
+          if (mounted) setState(() => _features = f);
+        })
+        .catchError((Object e) {
+          if (mounted) setState(() => _error = e.toString());
+        });
   }
 
   @override
@@ -218,26 +228,25 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
                 children: [
                   Text(
                     clsName,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge
-                        ?.copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     '${l10n.stepHitDieLabel}: d${cls.hitDie}  ·  '
                     '${l10n.stepSavesLabel}: ${cls.savingThrows.map((s) => abilityName(l10n, s)).join(', ')}',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                   if (cls.isSpellcaster && cls.spellcastingAbility != null) ...[
                     const SizedBox(height: 2),
                     Text(
                       '${l10n.stepSpellcastingLabel}: ${abilityName(l10n, cls.spellcastingAbility!)}',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: scheme.primary,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: scheme.primary),
                     ),
                   ],
                   if (cls.armorProficiencies.isNotEmpty ||
@@ -247,8 +256,8 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
                       '${l10n.detailSheetProficiencies}: '
                       '${[...cls.armorProficiencies, ...cls.weaponProficiencies].join(', ')}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                   ],
                 ],
@@ -259,81 +268,88 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
               child: _error != null
                   ? Center(child: Text(_error!))
                   : _features == null
-                      ? const Center(child: CircularProgressIndicator())
-                      : CustomScrollView(
-                          controller: scrollCtrl,
-                          slivers: [
-                            ...levels.map(
-                              (lvl) => SliverStickyHeader(
-                                header:
-                                    _sectionHeader(context, l10n.charCardLevel(lvl)),
-                                sliver: SliverList(
-                                  delegate: SliverChildBuilderDelegate(
-                                    (_, i) {
-                                      final f = grouped[lvl]![i];
-                                      final displayName =
-                                          i18n.classFeatureName(cls.name, f.name) ??
-                                              f.name;
-                                      final displayDesc = i18n.classFeatureDescription(
-                                              cls.name, f.name) ??
-                                          f.description;
-                                      final badge =
-                                          f.type == 'subclass' ? subclassFeature : null;
-                                      return _FeatureTile(
-                                        name: displayName,
-                                        description: displayDesc,
-                                        badge: badge,
-                                      );
-                                    },
-                                    childCount: grouped[lvl]!.length,
-                                  ),
-                                ),
-                              ),
+                  ? const Center(child: CircularProgressIndicator())
+                  : CustomScrollView(
+                      controller: scrollCtrl,
+                      slivers: [
+                        ...levels.map(
+                          (lvl) => SliverStickyHeader(
+                            header: _sectionHeader(
+                              context,
+                              l10n.charCardLevel(lvl),
                             ),
-                            if (cls.subclasses.isNotEmpty) ...[
-                              SliverToBoxAdapter(
-                                child: _sectionHeader(
-                                  context,
-                                  l10n.detailSheetAvailableSubclasses(subclassFeature),
-                                ),
-                              ),
-                              SliverList(
-                                delegate: SliverChildBuilderDelegate(
-                                  (_, i) {
-                                    final sub = cls.subclasses[i];
-                                    final subName =
-                                        i18n.subclassName(cls.name, sub.name);
-                                    final subDesc =
-                                        i18n.subclassDescription(cls.name, sub.name) ??
-                                            sub.description;
-                                    return ListTile(
-                                      title: Text(
-                                        subName,
-                                        style: const TextStyle(fontSize: 14),
-                                      ),
-                                      subtitle: subDesc.isNotEmpty
-                                          ? Text(
-                                              subDesc,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodySmall,
-                                            )
-                                          : null,
-                                      dense: true,
-                                    );
-                                  },
-                                  childCount: cls.subclasses.length,
-                                ),
-                              ),
-                            ],
-                            SliverToBoxAdapter(
-                              child: SizedBox(
-                                height:
-                                    MediaQuery.of(context).viewPadding.bottom + 16,
-                              ),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate((_, i) {
+                                final f = grouped[lvl]![i];
+                                final displayName =
+                                    i18n.classFeatureName(cls.name, f.name) ??
+                                    f.name;
+                                final displayDesc =
+                                    i18n.classFeatureDescription(
+                                      cls.name,
+                                      f.name,
+                                    ) ??
+                                    f.description;
+                                final badge = f.type == 'subclass'
+                                    ? subclassFeature
+                                    : null;
+                                return _FeatureTile(
+                                  name: displayName,
+                                  description: displayDesc,
+                                  badge: badge,
+                                );
+                              }, childCount: grouped[lvl]!.length),
                             ),
-                          ],
+                          ),
                         ),
+                        if (cls.subclasses.isNotEmpty) ...[
+                          SliverToBoxAdapter(
+                            child: _sectionHeader(
+                              context,
+                              l10n.detailSheetAvailableSubclasses(
+                                subclassFeature,
+                              ),
+                            ),
+                          ),
+                          SliverList(
+                            delegate: SliverChildBuilderDelegate((_, i) {
+                              final sub = cls.subclasses[i];
+                              final subName = i18n.subclassName(
+                                cls.name,
+                                sub.name,
+                              );
+                              final subDesc =
+                                  i18n.subclassDescription(
+                                    cls.name,
+                                    sub.name,
+                                  ) ??
+                                  sub.description;
+                              return ListTile(
+                                title: Text(
+                                  subName,
+                                  style: const TextStyle(fontSize: 14),
+                                ),
+                                subtitle: subDesc.isNotEmpty
+                                    ? Text(
+                                        subDesc,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.bodySmall,
+                                      )
+                                    : null,
+                                dense: true,
+                              );
+                            }, childCount: cls.subclasses.length),
+                          ),
+                        ],
+                        SliverToBoxAdapter(
+                          child: SizedBox(
+                            height:
+                                MediaQuery.of(context).viewPadding.bottom + 16,
+                          ),
+                        ),
+                      ],
+                    ),
             ),
           ],
         );
@@ -367,13 +383,18 @@ class _SubclassDetailSheetState extends ConsumerState<_SubclassDetailSheet> {
   @override
   void initState() {
     super.initState();
-    ref.read(srdDataSourceProvider).getAllSubclassFeatures().then((all) {
-      final features =
-          all[widget.cls.name]?[widget.sub.name] ?? const <SrdClassFeature>[];
-      if (mounted) setState(() => _features = features);
-    }).catchError((Object e) {
-      if (mounted) setState(() => _error = e.toString());
-    });
+    ref
+        .read(srdDataSourceProvider)
+        .getAllSubclassFeatures()
+        .then((all) {
+          final features =
+              all[widget.cls.name]?[widget.sub.name] ??
+              const <SrdClassFeature>[];
+          if (mounted) setState(() => _features = features);
+        })
+        .catchError((Object e) {
+          if (mounted) setState(() => _error = e.toString());
+        });
   }
 
   @override
@@ -411,18 +432,17 @@ class _SubclassDetailSheetState extends ConsumerState<_SubclassDetailSheet> {
                 children: [
                   Text(
                     subName,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge
-                        ?.copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   if (subDesc.isNotEmpty) ...[
                     const SizedBox(height: 4),
                     Text(
                       subDesc,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                   ],
                 ],
@@ -433,63 +453,67 @@ class _SubclassDetailSheetState extends ConsumerState<_SubclassDetailSheet> {
               child: _error != null
                   ? Center(child: Text(_error!))
                   : _features == null
-                      ? const Center(child: CircularProgressIndicator())
-                      : levels.isEmpty
-                          ? Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(32),
-                                child: Text(
-                                  l10n.detailSheetSubclassFeaturePlaceholder,
-                                  style: Theme.of(context).textTheme.bodyMedium,
-                                ),
-                              ),
-                            )
-                          : CustomScrollView(
-                              controller: scrollCtrl,
-                              slivers: [
-                                ...levels.map(
-                                  (lvl) => SliverStickyHeader(
-                                    header: _sectionHeader(
-                                        context, l10n.charCardLevel(lvl)),
-                                    sliver: SliverList(
-                                      delegate: SliverChildBuilderDelegate(
-                                        (_, i) {
-                                          final f = grouped[lvl]![i];
-                                          final displayName =
-                                              i18n.subclassFeatureName(
-                                                      cls.name,
-                                                      sub.name,
-                                                      f.name) ??
-                                                  i18n.anySubclassFeatureName(
-                                                      sub.name, f.name) ??
-                                                  f.name;
-                                          final displayDesc =
-                                              i18n.subclassFeatureDescription(
-                                                      cls.name,
-                                                      sub.name,
-                                                      f.name) ??
-                                                  i18n.anySubclassFeatureDescription(
-                                                      sub.name, f.name) ??
-                                                  f.description;
-                                          return _FeatureTile(
-                                            name: displayName,
-                                            description: displayDesc,
-                                          );
-                                        },
-                                        childCount: grouped[lvl]!.length,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SliverToBoxAdapter(
-                                  child: SizedBox(
-                                    height:
-                                        MediaQuery.of(context).viewPadding.bottom +
-                                            16,
-                                  ),
-                                ),
-                              ],
+                  ? const Center(child: CircularProgressIndicator())
+                  : levels.isEmpty
+                  ? Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(32),
+                        child: Text(
+                          l10n.detailSheetSubclassFeaturePlaceholder,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ),
+                    )
+                  : CustomScrollView(
+                      controller: scrollCtrl,
+                      slivers: [
+                        ...levels.map(
+                          (lvl) => SliverStickyHeader(
+                            header: _sectionHeader(
+                              context,
+                              l10n.charCardLevel(lvl),
                             ),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate((_, i) {
+                                final f = grouped[lvl]![i];
+                                final displayName =
+                                    i18n.subclassFeatureName(
+                                      cls.name,
+                                      sub.name,
+                                      f.name,
+                                    ) ??
+                                    i18n.anySubclassFeatureName(
+                                      sub.name,
+                                      f.name,
+                                    ) ??
+                                    f.name;
+                                final displayDesc =
+                                    i18n.subclassFeatureDescription(
+                                      cls.name,
+                                      sub.name,
+                                      f.name,
+                                    ) ??
+                                    i18n.anySubclassFeatureDescription(
+                                      sub.name,
+                                      f.name,
+                                    ) ??
+                                    f.description;
+                                return _FeatureTile(
+                                  name: displayName,
+                                  description: displayDesc,
+                                );
+                              }, childCount: grouped[lvl]!.length),
+                            ),
+                          ),
+                        ),
+                        SliverToBoxAdapter(
+                          child: SizedBox(
+                            height:
+                                MediaQuery.of(context).viewPadding.bottom + 16,
+                          ),
+                        ),
+                      ],
+                    ),
             ),
           ],
         );
@@ -517,11 +541,15 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
   @override
   void initState() {
     super.initState();
-    ref.read(srdDataSourceProvider).getRaceTraits().then((traits) {
-      if (mounted) setState(() => _traitDescriptions = traits);
-    }).catchError((Object e) {
-      if (mounted) setState(() => _error = e.toString());
-    });
+    ref
+        .read(srdDataSourceProvider)
+        .getRaceTraits()
+        .then((traits) {
+          if (mounted) setState(() => _traitDescriptions = traits);
+        })
+        .catchError((Object e) {
+          if (mounted) setState(() => _error = e.toString());
+        });
   }
 
   @override
@@ -552,18 +580,17 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
               children: [
                 Text(
                   raceName,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge
-                      ?.copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   '${l10n.stepRaceSpeedLabel}: ${formatDistance(race.speed, ref.watch(unitSystemProvider))}  ·  '
                   '${l10n.stepRaceASILabel}: $asiText',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
               ],
             ),
@@ -573,76 +600,75 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
             child: _error != null
                 ? Center(child: Text(_error!))
                 : _traitDescriptions == null
-                    ? const Center(child: CircularProgressIndicator())
-                    : CustomScrollView(
-                        controller: scrollCtrl,
-                        slivers: [
-                          if (race.traits.isNotEmpty) ...[
-                            SliverToBoxAdapter(
-                              child:
-                                  _sectionHeader(context, l10n.detailSheetTraits),
-                            ),
-                            SliverList(
-                              delegate: SliverChildBuilderDelegate(
-                                (_, i) {
-                                  final traitKey = race.traits[i];
-                                  final displayName = i18n.raceTraitName(traitKey);
-                                  final displayDesc =
-                                      i18n.raceTraitDescription(traitKey) ??
-                                          _traitDescriptions![traitKey] ??
-                                          '';
-                                  return _FeatureTile(
-                                    name: displayName,
-                                    description: displayDesc,
-                                  );
-                                },
-                                childCount: race.traits.length,
-                              ),
-                            ),
-                          ],
-                          if (race.subraces.isNotEmpty) ...[
-                            SliverToBoxAdapter(
-                              child: _sectionHeader(
-                                  context, l10n.detailSheetAvailableSubraces),
-                            ),
-                            SliverList(
-                              delegate: SliverChildBuilderDelegate(
-                                (_, i) {
-                                  final sub = race.subraces[i];
-                                  final subName = i18n.subraceName(sub.name);
-                                  final subAsiText =
-                                      sub.abilityScoreIncreases.entries
-                                          .map((e) =>
-                                              '+${e.value} ${abilityName(l10n, e.key)}')
-                                          .join(', ');
-                                  return ListTile(
-                                    title: Text(
-                                      subName,
-                                      style: const TextStyle(fontSize: 14),
-                                    ),
-                                    subtitle: subAsiText.isNotEmpty
-                                        ? Text(
-                                            '${l10n.stepRaceASILabel}: $subAsiText',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodySmall,
-                                          )
-                                        : null,
-                                    dense: true,
-                                  );
-                                },
-                                childCount: race.subraces.length,
-                              ),
-                            ),
-                          ],
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height:
-                                  MediaQuery.of(context).viewPadding.bottom + 16,
-                            ),
+                ? const Center(child: CircularProgressIndicator())
+                : CustomScrollView(
+                    controller: scrollCtrl,
+                    slivers: [
+                      if (race.traits.isNotEmpty) ...[
+                        SliverToBoxAdapter(
+                          child: _sectionHeader(
+                            context,
+                            l10n.detailSheetTraits,
                           ),
-                        ],
+                        ),
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate((_, i) {
+                            final traitKey = race.traits[i];
+                            final displayName = i18n.raceTraitName(traitKey);
+                            final displayDesc =
+                                i18n.raceTraitDescription(traitKey) ??
+                                _traitDescriptions![traitKey] ??
+                                '';
+                            return _FeatureTile(
+                              name: displayName,
+                              description: displayDesc,
+                            );
+                          }, childCount: race.traits.length),
+                        ),
+                      ],
+                      if (race.subraces.isNotEmpty) ...[
+                        SliverToBoxAdapter(
+                          child: _sectionHeader(
+                            context,
+                            l10n.detailSheetAvailableSubraces,
+                          ),
+                        ),
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate((_, i) {
+                            final sub = race.subraces[i];
+                            final subName = i18n.subraceName(sub.name);
+                            final subAsiText = sub.abilityScoreIncreases.entries
+                                .map(
+                                  (e) =>
+                                      '+${e.value} ${abilityName(l10n, e.key)}',
+                                )
+                                .join(', ');
+                            return ListTile(
+                              title: Text(
+                                subName,
+                                style: const TextStyle(fontSize: 14),
+                              ),
+                              subtitle: subAsiText.isNotEmpty
+                                  ? Text(
+                                      '${l10n.stepRaceASILabel}: $subAsiText',
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.bodySmall,
+                                    )
+                                  : null,
+                              dense: true,
+                            );
+                          }, childCount: race.subraces.length),
+                        ),
+                      ],
+                      SliverToBoxAdapter(
+                        child: SizedBox(
+                          height:
+                              MediaQuery.of(context).viewPadding.bottom + 16,
+                        ),
                       ),
+                    ],
+                  ),
           ),
         ],
       ),
@@ -675,11 +701,15 @@ class _SubraceDetailSheetState extends ConsumerState<_SubraceDetailSheet> {
   @override
   void initState() {
     super.initState();
-    ref.read(srdDataSourceProvider).getRaceTraits().then((traits) {
-      if (mounted) setState(() => _traitDescriptions = traits);
-    }).catchError((Object e) {
-      if (mounted) setState(() => _error = e.toString());
-    });
+    ref
+        .read(srdDataSourceProvider)
+        .getRaceTraits()
+        .then((traits) {
+          if (mounted) setState(() => _traitDescriptions = traits);
+        })
+        .catchError((Object e) {
+          if (mounted) setState(() => _error = e.toString());
+        });
   }
 
   @override
@@ -708,18 +738,17 @@ class _SubraceDetailSheetState extends ConsumerState<_SubraceDetailSheet> {
               children: [
                 Text(
                   subName,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge
-                      ?.copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 if (asiText.isNotEmpty) ...[
                   const SizedBox(height: 4),
                   Text(
                     '${l10n.stepRaceASILabel}: $asiText',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                 ],
               ],
@@ -730,43 +759,37 @@ class _SubraceDetailSheetState extends ConsumerState<_SubraceDetailSheet> {
             child: _error != null
                 ? Center(child: Text(_error!))
                 : _traitDescriptions == null
-                    ? const Center(child: CircularProgressIndicator())
-                    : subrace.traits.isEmpty
-                        ? const SizedBox.shrink()
-                        : CustomScrollView(
-                            controller: scrollCtrl,
-                            slivers: [
-                              SliverToBoxAdapter(
-                                child: _sectionHeader(
-                                    context, l10n.detailSheetTraits),
-                              ),
-                              SliverList(
-                                delegate: SliverChildBuilderDelegate(
-                                  (_, i) {
-                                    final traitKey = subrace.traits[i];
-                                    final displayName =
-                                        i18n.raceTraitName(traitKey);
-                                    final displayDesc =
-                                        i18n.raceTraitDescription(traitKey) ??
-                                            _traitDescriptions![traitKey] ??
-                                            '';
-                                    return _FeatureTile(
-                                      name: displayName,
-                                      description: displayDesc,
-                                    );
-                                  },
-                                  childCount: subrace.traits.length,
-                                ),
-                              ),
-                              SliverToBoxAdapter(
-                                child: SizedBox(
-                                  height:
-                                      MediaQuery.of(context).viewPadding.bottom +
-                                          16,
-                                ),
-                              ),
-                            ],
-                          ),
+                ? const Center(child: CircularProgressIndicator())
+                : subrace.traits.isEmpty
+                ? const SizedBox.shrink()
+                : CustomScrollView(
+                    controller: scrollCtrl,
+                    slivers: [
+                      SliverToBoxAdapter(
+                        child: _sectionHeader(context, l10n.detailSheetTraits),
+                      ),
+                      SliverList(
+                        delegate: SliverChildBuilderDelegate((_, i) {
+                          final traitKey = subrace.traits[i];
+                          final displayName = i18n.raceTraitName(traitKey);
+                          final displayDesc =
+                              i18n.raceTraitDescription(traitKey) ??
+                              _traitDescriptions![traitKey] ??
+                              '';
+                          return _FeatureTile(
+                            name: displayName,
+                            description: displayDesc,
+                          );
+                        }, childCount: subrace.traits.length),
+                      ),
+                      SliverToBoxAdapter(
+                        child: SizedBox(
+                          height:
+                              MediaQuery.of(context).viewPadding.bottom + 16,
+                        ),
+                      ),
+                    ],
+                  ),
           ),
         ],
       ),

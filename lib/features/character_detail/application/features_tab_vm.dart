@@ -2,25 +2,30 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/models/models.dart';
 import '../character_detail_provider.dart';
+import 'character_feature_summary.dart';
 import 'vm_reference_utils.dart';
 
 final featuresTabVmProvider =
     Provider.family<AsyncValue<FeaturesTabVm>, String>((ref, characterId) {
-  return ref.watch(
-    characterDetailProvider(characterId).select(
-      (state) => state.whenData(FeaturesTabVm.fromCharacter),
-    ),
-  );
-});
+      return ref.watch(
+        characterDetailProvider(
+          characterId,
+        ).select((state) => state.whenData(FeaturesTabVm.fromCharacter)),
+      );
+    });
 
 class FeaturesTabVm {
-  const FeaturesTabVm(this.character);
+  const FeaturesTabVm(this.character, this.summary);
 
   factory FeaturesTabVm.fromCharacter(Character character) {
-    return FeaturesTabVm(character);
+    return FeaturesTabVm(
+      character,
+      CharacterFeatureSummary.fromCharacter(character),
+    );
   }
 
   final Character character;
+  final CharacterFeatureSummary summary;
 
   @override
   bool operator ==(Object other) {
@@ -28,6 +33,7 @@ class FeaturesTabVm {
         character.characterClass == other.character.characterClass &&
         character.subclass == other.character.subclass &&
         character.level == other.character.level &&
+        sameReference(character.classes, other.character.classes) &&
         character.race == other.character.race &&
         character.subrace == other.character.subrace &&
         character.background == other.character.background &&
@@ -51,18 +57,19 @@ class FeaturesTabVm {
 
   @override
   int get hashCode => Object.hashAll([
-        character.characterClass,
-        character.subclass,
-        character.level,
-        character.race,
-        character.subrace,
-        character.background,
-        character.proficiencyBonus,
-        referenceHash(character.abilityScores),
-        referenceHash(character.features),
-        referenceHash(character.extraFeatures),
-        referenceHash(character.featureChoices),
-        referenceHash(character.featureResources),
-        referenceHash(character.disabledFeatures),
-      ]);
+    character.characterClass,
+    character.subclass,
+    character.level,
+    referenceHash(character.classes),
+    character.race,
+    character.subrace,
+    character.background,
+    character.proficiencyBonus,
+    referenceHash(character.abilityScores),
+    referenceHash(character.features),
+    referenceHash(character.extraFeatures),
+    referenceHash(character.featureChoices),
+    referenceHash(character.featureResources),
+    referenceHash(character.disabledFeatures),
+  ]);
 }

@@ -14,9 +14,9 @@ class CharacterRepository {
     CharacterLocalDataSource? dataSource,
     SrdDataSource? srdDataSource,
     CharacterMigrationRunner? migrationRunner,
-  })  : _local = dataSource ?? CharacterLocalDataSource.instance,
-        _srd = srdDataSource ?? SrdDataSource.instance,
-        _migrationRunner = migrationRunner ?? CharacterMigrationRunner();
+  }) : _local = dataSource ?? CharacterLocalDataSource.instance,
+       _srd = srdDataSource ?? SrdDataSource.instance,
+       _migrationRunner = migrationRunner ?? CharacterMigrationRunner();
 
   final CharacterLocalDataSource _local;
   final SrdDataSource _srd;
@@ -87,15 +87,19 @@ class CharacterRepository {
   // ---------------------------------------------------------------------------
 
   Future<CharacterMigrationBatchReport> previewMigrations() async {
-    final characters = await _local.loadAll();
+    final loadReport = await _local.loadAllWithReport();
     final context = await _migrationContext();
-    return _migrationRunner.preview(characters, context);
+    return _migrationRunner
+        .preview(loadReport.characters, context)
+        .withReadIssues(_migrationReadIssues(loadReport.issues));
   }
 
   Future<CharacterMigrationBatchReport> applyMigrations() async {
-    final characters = await _local.loadAll();
+    final loadReport = await _local.loadAllWithReport();
     final context = await _migrationContext();
-    final report = _migrationRunner.preview(characters, context);
+    final report = _migrationRunner
+        .preview(loadReport.characters, context)
+        .withReadIssues(_migrationReadIssues(loadReport.issues));
 
     for (final entry in report.characters) {
       if (!entry.needsMigration) continue;
@@ -105,10 +109,21 @@ class CharacterRepository {
     return report;
   }
 
+  List<CharacterMigrationReadIssue> _migrationReadIssues(
+    List<CharacterStorageIssue> issues,
+  ) {
+    return [
+      for (final issue in issues)
+        CharacterMigrationReadIssue(
+          source: issue.source,
+          id: issue.id,
+          message: issue.message,
+        ),
+    ];
+  }
+
   Future<CharacterMigrationContext> _migrationContext() async {
-    return CharacterMigrationContext(
-      itemsByName: await _srd.getItems(),
-    );
+    return CharacterMigrationContext(itemsByName: await _srd.getItems());
   }
 
   // ---------------------------------------------------------------------------
@@ -121,8 +136,7 @@ class CharacterRepository {
   Future<String> exportToFileJson(Character character) =>
       _local.exportToFileJson(character);
 
-  Future<String> exportBackupToFileJson() =>
-      _local.exportBackupToFileJson();
+  Future<String> exportBackupToFileJson() => _local.exportBackupToFileJson();
 
   /// Importa um personagem de um JSON exportado.
   /// O personagem importado *sempre* recebe um novo ID para garantir que o ID

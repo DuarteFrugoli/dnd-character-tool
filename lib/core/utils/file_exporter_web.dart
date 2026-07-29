@@ -17,9 +17,10 @@ Future<void> exportDndCharFile(String characterName, String fileJson) async {
 }
 
 Future<void> exportDndBackupFile(String fileJson) async {
-  final timestamp = DateTime.now()
-      .toIso8601String()
-      .replaceAll(RegExp(r'[:.]'), '-');
+  final timestamp = DateTime.now().toIso8601String().replaceAll(
+    RegExp(r'[:.]'),
+    '-',
+  );
   final blob = web.Blob(
     [fileJson.toJS].toJS,
     web.BlobPropertyBag(type: 'application/octet-stream'),

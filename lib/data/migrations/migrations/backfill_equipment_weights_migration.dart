@@ -50,15 +50,15 @@ class BackfillEquipmentWeightsMigration extends CharacterMigration {
     return CharacterMigrationResult(
       character: character.copyWith(equipment: updatedEquipment),
       changes: [
-        CharacterMigrationChange(
-          code: changeCode,
-          count: updatedCount,
-        ),
+        CharacterMigrationChange(code: changeCode, count: updatedCount),
       ],
     );
   }
 
-  SrdItemData? _lookupKnownItem(CharacterMigrationContext context, String name) {
+  SrdItemData? _lookupKnownItem(
+    CharacterMigrationContext context,
+    String name,
+  ) {
     final lower = name.toLowerCase();
     return context.itemsByName[lower] ??
         (lower.endsWith('s')

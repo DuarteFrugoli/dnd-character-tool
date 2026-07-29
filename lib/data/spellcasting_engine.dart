@@ -96,6 +96,66 @@ class SpellcastingEngine {
 
   // ── Computed stats ────────────────────────────────────────────────────────
 
+  static SpellSlots syncedSlotsFor({
+    required SpellSlots current,
+    required String className,
+    required int classLevel,
+    required AbilityScores abilityScores,
+    required int proficiencyBonus,
+    String? subclass,
+  }) {
+    final engine = forClass(
+      className: className,
+      classLevel: classLevel,
+      abilityScores: abilityScores,
+      proficiencyBonus: proficiencyBonus,
+      subclass: subclass,
+    );
+    if (engine == null) return current;
+
+    final total = engine.slotsPerLevel;
+    final used = List<int>.generate(9, (i) {
+      final currentUsed = i < current.used.length ? current.used[i] : 0;
+      return currentUsed.clamp(0, total[i]).toInt();
+    });
+
+    return current.copyWith(total: total, used: used);
+  }
+
+  static SpellSlots slotsAfterShortRest({
+    required SpellSlots current,
+    required String className,
+    required int classLevel,
+    required AbilityScores abilityScores,
+    required int proficiencyBonus,
+    String? subclass,
+  }) {
+    final engine = forClass(
+      className: className,
+      classLevel: classLevel,
+      abilityScores: abilityScores,
+      proficiencyBonus: proficiencyBonus,
+      subclass: subclass,
+    );
+    if (engine == null || engine.progressionType != SpellProgressionType.pact) {
+      return current;
+    }
+
+    final total = engine.slotsPerLevel;
+    final used = List<int>.generate(9, (i) {
+      if (total[i] > 0) return 0;
+      final currentUsed = i < current.used.length ? current.used[i] : 0;
+      return currentUsed.clamp(0, total[i]).toInt();
+    });
+
+    return current.copyWith(total: total, used: used);
+  }
+
+  static List<int> slotsForMulticlassCasterLevel(int casterLevel) {
+    if (casterLevel <= 0) return List.filled(9, 0);
+    return List.from(_fullSlotTable[casterLevel.clamp(1, 20) - 1]);
+  }
+
   /// The ability modifier for the spellcasting ability.
   int get abilityModifier {
     switch (spellcastingAbility.toUpperCase()) {
@@ -228,16 +288,73 @@ class SpellcastingEngine {
   // ── Slot tables (SRD 5.1) ────────────────────────────────────────────────
 
   static const List<int> _fullCasterMaxSlot = [
-    1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
   ];
 
   static const List<int> _halfCasterMaxSlot = [
-    0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5,
+    0,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
   ];
 
   /// 1/3 caster max spell slot level (Eldritch Knight, Arcane Trickster).
   static const List<int> _thirdCasterMaxSlot = [
-    0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
   ];
 
   /// 1/3 caster slot table (levels 1-20 of the base class, 9 spell levels).
@@ -266,27 +383,122 @@ class SpellcastingEngine {
 
   /// Known spells for Eldritch Knight / Arcane Trickster (index = class level - 1).
   static const List<int> _thirdCasterKnown = [
-    0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12, 13,
+    0,
+    0,
+    3,
+    4,
+    4,
+    4,
+    5,
+    6,
+    6,
+    7,
+    8,
+    8,
+    9,
+    10,
+    10,
+    11,
+    11,
+    11,
+    12,
+    13,
   ];
 
   /// Cantrips for Eldritch Knight.
   static const List<int> _eldritchKnightCantrips = [
-    0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
   ];
 
   /// Cantrips for Arcane Trickster, including the fixed Mage Hand cantrip.
   static const List<int> _arcaneTricksterCantrips = [
-    0, 0, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+    0,
+    0,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
   ];
 
   /// Warlock Pact Magic slot level (all slots are this level).
   static const List<int> _pactMagicSlotLevel = [
-    1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
   ];
 
   /// Warlock Pact Magic number of slots per level.
   static const List<int> _pactMagicSlotCount = [
-    1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
   ];
 
   /// Full caster slot counts per spell level, per class level.
@@ -404,37 +616,136 @@ class _ClassSpellInfo {
 }
 
 const _classInfo = <String, _ClassSpellInfo>{
-  'bard':      _ClassSpellInfo('CHA', SpellcastingMechanism.known,             SpellProgressionType.full),
-  'cleric':    _ClassSpellInfo('WIS', SpellcastingMechanism.prepare,           SpellProgressionType.full),
-  'druid':     _ClassSpellInfo('WIS', SpellcastingMechanism.prepare,           SpellProgressionType.full),
-  'paladin':   _ClassSpellInfo('CHA', SpellcastingMechanism.prepareHalf,       SpellProgressionType.half),
-  'ranger':    _ClassSpellInfo('WIS', SpellcastingMechanism.known,             SpellProgressionType.half),
-  'sorcerer':  _ClassSpellInfo('CHA', SpellcastingMechanism.known,             SpellProgressionType.full),
-  'warlock':   _ClassSpellInfo('CHA', SpellcastingMechanism.pact,              SpellProgressionType.pact),
-  'wizard':    _ClassSpellInfo('INT', SpellcastingMechanism.spellbook,         SpellProgressionType.full),
-  'artificer': _ClassSpellInfo('INT', SpellcastingMechanism.prepareArtificer,  SpellProgressionType.half),
+  'bard': _ClassSpellInfo(
+    'CHA',
+    SpellcastingMechanism.known,
+    SpellProgressionType.full,
+  ),
+  'cleric': _ClassSpellInfo(
+    'WIS',
+    SpellcastingMechanism.prepare,
+    SpellProgressionType.full,
+  ),
+  'druid': _ClassSpellInfo(
+    'WIS',
+    SpellcastingMechanism.prepare,
+    SpellProgressionType.full,
+  ),
+  'paladin': _ClassSpellInfo(
+    'CHA',
+    SpellcastingMechanism.prepareHalf,
+    SpellProgressionType.half,
+  ),
+  'ranger': _ClassSpellInfo(
+    'WIS',
+    SpellcastingMechanism.known,
+    SpellProgressionType.half,
+  ),
+  'sorcerer': _ClassSpellInfo(
+    'CHA',
+    SpellcastingMechanism.known,
+    SpellProgressionType.full,
+  ),
+  'warlock': _ClassSpellInfo(
+    'CHA',
+    SpellcastingMechanism.pact,
+    SpellProgressionType.pact,
+  ),
+  'wizard': _ClassSpellInfo(
+    'INT',
+    SpellcastingMechanism.spellbook,
+    SpellProgressionType.full,
+  ),
+  'artificer': _ClassSpellInfo(
+    'INT',
+    SpellcastingMechanism.prepareArtificer,
+    SpellProgressionType.half,
+  ),
 };
 
 // ── Known-spells tables (SRD 5.1) ────────────────────────────────────────────
 // Index = class level - 1 (levels 1–20)
 
-const _warlockKnown = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15];
+const _warlockKnown = [
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  10,
+  11,
+  11,
+  12,
+  12,
+  13,
+  13,
+  14,
+  14,
+  15,
+  15,
+];
 
 const _knownSpellsTable = <String, List<int>>{
-  'bard':     [4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 15, 16, 18, 19, 19, 20, 22, 22, 22],
-  'ranger':   [2, 3, 3, 4, 4, 5,  5,  6,  6,  7,  7,  8,  8,  9,  9, 10, 10, 11, 11, 11],
-  'sorcerer': [2, 3, 4, 5, 6, 7,  8,  9, 10, 11, 12, 12, 13, 13, 14, 14, 15, 15, 15, 15],
+  'bard': [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    14,
+    15,
+    15,
+    16,
+    18,
+    19,
+    19,
+    20,
+    22,
+    22,
+    22,
+  ],
+  'ranger': [2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 11],
+  'sorcerer': [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    12,
+    13,
+    13,
+    14,
+    14,
+    15,
+    15,
+    15,
+    15,
+  ],
 };
 
 // ── Cantrip tables ────────────────────────────────────────────────────────────
 
 const _cantripsTable = <String, List<int>>{
-  'bard':      [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-  'cleric':    [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  'druid':     [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-  'sorcerer':  [4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
-  'warlock':   [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-  'wizard':    [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+  'bard': [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  'cleric': [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+  'druid': [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  'sorcerer': [4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+  'warlock': [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+  'wizard': [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
   'artificer': [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
   // Paladin and Ranger have no cantrips in base SRD.
 };

@@ -19,6 +19,7 @@ import '../../data/datasources/srd/srd_models.dart';
 import '../../data/inventory/inventory_operations.dart';
 import '../../data/models/models.dart';
 import '../../data/models/domain_constants.dart';
+import '../../data/character_spellcasting_summary.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_avatar.dart';
 import '../../shared/widgets/responsive_layout.dart';
@@ -28,6 +29,7 @@ import 'application/character_tab_view_models.dart';
 import 'character_detail_provider.dart';
 import 'inventory/inventory_search_catalog.dart';
 import 'inventory/inventory_view_model.dart';
+import 'level_up_wizard_sheet.dart';
 import 'widgets/detail_widgets.dart';
 import 'widgets/feature_choice_editor.dart';
 
@@ -45,7 +47,6 @@ part 'widgets/inventory/add_item_sheet.dart';
 part 'widgets/inventory/container_contents_sheet.dart';
 part 'widgets/inventory/item_detail_sheet.dart';
 part 'widgets/spells/spell_widgets.dart';
-part 'level_up_wizard.dart';
 
 // ── Skill → Ability mapping ───────────────────────────────────────────────────
 
@@ -131,10 +132,7 @@ class _EditGuard {
 // ── Screen ────────────────────────────────────────────────────────────────────
 
 class _CharacterTabHost<T> extends ConsumerWidget {
-  const _CharacterTabHost({
-    required this.provider,
-    required this.builder,
-  });
+  const _CharacterTabHost({required this.provider, required this.builder});
 
   final ProviderListenable<AsyncValue<T>> provider;
   final Widget Function(BuildContext context, T value) builder;
@@ -148,9 +146,7 @@ class _CharacterTabHost<T> extends ConsumerWidget {
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Text(
-            AppLocalizations.of(context)!.detailErrorLoading(
-              error.toString(),
-            ),
+            AppLocalizations.of(context)!.detailErrorLoading(error.toString()),
             textAlign: TextAlign.center,
           ),
         ),
@@ -229,7 +225,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   void _openLevelUpForCurrentCharacter() {
     final character = _currentCharacter();
     if (character == null) return;
-    _openLevelUpWizardSheet(context, character, widget.characterId);
+    openLevelUpWizardSheet(context, character, widget.characterId);
   }
 
   void _showRestPickerForCurrentCharacter() {
@@ -376,10 +372,8 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             ),
             _CharacterTabHost<NotesTabVm>(
               provider: notesTabVmProvider(widget.characterId),
-              builder: (context, vm) => _NotesTab(
-                notes: vm.notes,
-                characterId: widget.characterId,
-              ),
+              builder: (context, vm) =>
+                  _NotesTab(notes: vm.notes, characterId: widget.characterId),
             ),
           ],
         ),
@@ -494,9 +488,10 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     final srdClass = classes.firstWhereOrNull(
       (c) => c.name == character.characterClass,
     );
-    final hitDie = srdClass?.hitDie ?? 8;
+    final hitDiePool = character.hitDicePools.firstOrNull;
+    final hitDie = hitDiePool?.dieSize ?? srdClass?.hitDie ?? 8;
     final conMod = (character.abilityScores.constitution - 10) ~/ 2;
-    final available = character.level - character.hitPoints.hitDiceUsed;
+    final available = hitDiePool?.remaining ?? character.availableHitDice;
 
     if (!mounted) return;
     await showDialog(

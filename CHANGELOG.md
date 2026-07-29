@@ -9,6 +9,33 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.1] - 2026-07-29
+
+### Changed
+- **Preparação para multiclasse**: personagens agora têm estrutura interna para múltiplas classes e hit dice por classe, mantendo compatibilidade com personagens single-class atuais.
+- **Magias — origem e resumo agregado**: magias conhecidas passam a carregar origem e a aba Magias usa um resumo preparado para spellcasting agregado no futuro.
+- **Habilidades — origem e recursos**: escolhas de features, features extras e recursos rastreáveis agora carregam contexto de origem para permitir cálculos por classe quando a multiclasse for ativada.
+- **Level Up — organização interna**: estado e enums do wizard foram movidos para `application/level_up`, e o wizard virou uma biblioteca independente em vez de `part of`.
+- **Notas — proteção de edição**: fechar uma nota com alterações não salvas agora oferece continuar editando, descartar ou salvar.
+- **Configurações — manutenção**: o fluxo de atualização de personagens agora também reporta entradas salvas inválidas, com origem/ID para diagnóstico.
+
+### Fixed
+- **Criação — slots de magia**: personagens conjuradores já nascem com slots iniciais sincronizados quando a classe recebe spellcasting no nível 1.
+- **Warlock — Pact Magic**: slots de Pact Magic agora são restaurados no descanso curto.
+- **CA — bônus de features**: cálculo de Armor Class agora considera Defense Fighting Style e Draconic Resilience.
+- **Personagens antigos — dados derivados**: migrações versionadas sincronizam slots, CA, estrutura de classes, hit dice, origens de magias e origens de features.
+- **Notas — arrastar para fechar**: arrastar o editor de nota para baixo passa pela mesma confirmação de alterações não salvas.
+- **Analyzer — level up**: corrigida a importação do wizard de level up após a separação estrutural.
+
+### Internal
+- **Versionamento**: versão do app atualizada para `1.1.1+23`.
+- **Migrações**: adicionadas migrações versionadas v6 e v7 para preparar personagens antigos para a nova estrutura de regras.
+- **Storage**: `StorageBackend` ganhou leitura diagnóstica por registro para isolar personagens corrompidos sem quebrar a manutenção em lote.
+- **Feature usages**: `feature_usages.json` passa a ser a fonte canônica de usos rastreáveis; o campo `uses` foi removido dos dados de class features.
+- **Testes**: adicionados testes para sync de slots/CA, preparação estrutural de multiclasse, origem de features/magias, Pact Magic e cálculos de recursos por classe.
+
+---
+
 ## [1.1.0] - 2026-07-28
 
 ### Changed

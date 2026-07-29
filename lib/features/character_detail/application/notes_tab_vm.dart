@@ -4,12 +4,14 @@ import '../../../data/models/models.dart';
 import '../character_detail_provider.dart';
 import 'vm_reference_utils.dart';
 
-final notesTabVmProvider =
-    Provider.family<AsyncValue<NotesTabVm>, String>((ref, characterId) {
+final notesTabVmProvider = Provider.family<AsyncValue<NotesTabVm>, String>((
+  ref,
+  characterId,
+) {
   return ref.watch(
-    characterDetailProvider(characterId).select(
-      (state) => state.whenData(NotesTabVm.fromCharacter),
-    ),
+    characterDetailProvider(
+      characterId,
+    ).select((state) => state.whenData(NotesTabVm.fromCharacter)),
   );
 });
 

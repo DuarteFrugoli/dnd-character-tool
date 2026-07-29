@@ -1,5 +1,7 @@
 import 'package:dnd_character_tool/data/models/ability_scores.dart';
 import 'package:dnd_character_tool/data/models/character.dart';
+import 'package:dnd_character_tool/data/models/character_class_entry.dart';
+import 'package:dnd_character_tool/data/models/character_hit_die_pool.dart';
 import 'package:dnd_character_tool/data/models/hit_points.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -196,6 +198,52 @@ void main() {
   });
 
   // ── Character JSON round-trip ─────────────────────────────────────────────
+  group('Character multiclass structure helpers', () {
+    test('falls back to the legacy single class fields', () {
+      final c = _makeCharacter(cls: 'Wizard', level: 5);
+
+      expect(c.classEntries.single.className, 'Wizard');
+      expect(c.classEntries.single.level, 5);
+      expect(c.totalLevel, 5);
+      expect(c.primaryClass.id, 'primary');
+      expect(c.classLevel('Wizard'), 5);
+    });
+
+    test('uses persisted class entries and hit die pools when present', () {
+      final c = _makeCharacter(cls: 'Fighter', level: 5).copyWith(
+        classes: const [
+          CharacterClassEntry(
+            id: 'fighter',
+            className: 'Fighter',
+            level: 3,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(id: 'wizard', className: 'Wizard', level: 2),
+        ],
+        hitDicePools: const [
+          CharacterHitDiePool(
+            dieSize: 10,
+            total: 3,
+            used: 1,
+            sourceClassEntryId: 'fighter',
+          ),
+          CharacterHitDiePool(
+            dieSize: 6,
+            total: 2,
+            used: 0,
+            sourceClassEntryId: 'wizard',
+          ),
+        ],
+      );
+
+      expect(c.totalLevel, 5);
+      expect(c.classLevel('Wizard'), 2);
+      expect(c.totalHitDice, 5);
+      expect(c.totalHitDiceUsed, 1);
+      expect(c.availableHitDice, 4);
+    });
+  });
+
   group('Character JSON round-trip', () {
     test('serialisation preserves all basic fields', () {
       final c = _makeCharacter(

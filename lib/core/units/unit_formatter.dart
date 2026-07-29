@@ -18,12 +18,16 @@ String formatDistance(int feet, UnitSystem system) {
 String formatWeight(double lb, UnitSystem system) {
   switch (system) {
     case UnitSystem.imperial:
-      final display = lb % 1 == 0 ? lb.toInt().toString() : lb.toStringAsFixed(2);
+      final display = lb % 1 == 0
+          ? lb.toInt().toString()
+          : lb.toStringAsFixed(2);
       return '$display lb';
     case UnitSystem.metric:
     case UnitSystem.squares:
       final kg = lb * 0.453592;
-      final display = kg % 1 == 0 ? kg.round().toString() : kg.toStringAsFixed(2);
+      final display = kg % 1 == 0
+          ? kg.round().toString()
+          : kg.toStringAsFixed(2);
       return '$display kg';
   }
 }

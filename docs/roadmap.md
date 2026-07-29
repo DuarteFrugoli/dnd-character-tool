@@ -3,6 +3,16 @@
 Este documento resume a direcao do app por versao. Ele nao substitui o
 `CHANGELOG.md`: aqui entram apenas os blocos grandes de produto e arquitetura.
 
+Ordem macro planejada:
+
+1. `1.x`: ficha base, inventario, notas, web e qualidade de vida.
+2. `2.0.x`: multiclasse.
+3. `2.1.x`: notas de campanha e sessoes.
+4. `2.2.x`: mecanicas auxiliares.
+5. `2.3.x`: homebrew.
+6. `3.x`: ferramentas de mestre.
+7. `4.x`: nuvem, sync e compartilhamento.
+
 ---
 
 ## Serie 1.x - Fundacao do app
@@ -83,98 +93,108 @@ Este documento resume a direcao do app por versao. Ele nao substitui o
 - [x] Testes unitarios para inventario, migracoes, feature choices, feature
       usages, criacao de personagem, busca de inventario e backup/importacao.
 
+### 1.1.1 - Preparacao para multiclasse
+- [x] Estrutura interna de classes por personagem com `CharacterClassEntry`.
+- [x] Hit dice por classe com `CharacterHitDiePool`.
+- [x] Origem explicita em magias conhecidas, features extras e escolhas de
+      features.
+- [x] Resumo agregado de spellcasting para preparar slots combinados.
+- [x] Resumo agregado de features por origem.
+- [x] Calculo de recursos de features por contexto de origem/classe.
+- [x] Sincronizacao de slots e CA na criacao, level up, edicao manual e
+      migracoes.
+- [x] Pact Magic restaurado em descanso curto.
+- [x] CA considerando Defense Fighting Style e Draconic Resilience.
+- [x] Diagnostico de personagens invalidos no fluxo de manutencao.
+- [x] Wizard de level up separado de `part of` e com estado isolado.
+- [x] Confirmacao ao fechar notas com alteracoes nao salvas.
+
 ---
 
-## Serie 2.0.x - Multiclasse
+## Serie 2.x - Regras avancadas e conteudo da ficha
+
+### 2.0.x - Multiclasse
 
 Objetivo: permitir personagens com multiplas classes sem quebrar personagens
 existentes. Qualquer mudanca persistida deve usar migracao versionada e o fluxo
 de manutencao em Configuracoes.
 
-### 2.0.0 - Modelo e migracao
-- [ ] Adicionar estrutura de classes do personagem, como
-      `List<CharacterClassEntry>`.
-- [ ] Migrar personagem antigo de classe unica para a nova estrutura.
-- [ ] Representar hit dice por classe.
-- [ ] Separar features por classe/subclasse e nivel de classe.
-- [ ] Manter compatibilidade de leitura para personagens antigos ate a migracao.
+#### 2.0.0 - Fluxo de multiclasse
+- [ ] Escolher qual classe sobe de nivel.
+- [ ] Adicionar uma nova classe com validacao de pre-requisitos.
+- [ ] Escolher subclasse no nivel correto da classe adicionada.
+- [ ] Exibir resumo de classes como `Wizard 3 / Cleric 2`.
+- [ ] Permitir edicao posterior de classes com protecoes contra quebrar regras
+      salvas.
 
-### 2.0.1 - Spellcasting multiclass
+#### 2.0.1 - Spellcasting multiclass
 - [ ] Calcular slots combinados do PHB para full, half e third casters.
 - [ ] Manter Pact Magic separado para Warlock.
 - [ ] Preparacao/conhecimento de magias por classe.
 - [ ] Exibir origem da magia quando houver mais de uma classe conjuradora.
 
-### 2.0.2 - Level up multiclass
-- [ ] Escolher qual classe sobe de nivel.
-- [ ] Adicionar uma nova classe com validacao de pre-requisitos.
+#### 2.0.2 - Level up multiclass
 - [ ] Aplicar ASI, subclass, features, spells e choices pelo nivel daquela
       classe.
 - [ ] Atualizar HP, hit dice, proficiency e recursos derivados corretamente.
 
-### 2.0.3 - UI de ficha multiclass
+#### 2.0.3 - UI de ficha multiclass
 - [ ] Header com resumo como `Wizard 3 / Cleric 2`.
 - [ ] Abas de Habilidades e Magias agrupando origem por classe/subclasse.
 - [ ] Edicao posterior de classes com protecoes contra quebrar regras salvas.
 
----
-
-## Serie 2.1.x - Notas de campanha e sessao
+### 2.1.x - Notas de campanha e sessao
 
 Objetivo: evoluir a area de notas sem perder a simplicidade atual.
 
-### 2.1.0 - Sessoes
+#### 2.1.0 - Sessoes
 - [ ] Agrupar notas por sessao com titulo e data.
 - [ ] Criar notas soltas ou vinculadas a uma sessao.
 - [ ] Lista de sessoes com preview das notas mais recentes.
 
-### 2.1.1 - Links internos
+#### 2.1.1 - Links internos
 - [ ] Referenciar personagens, NPCs, locais e itens dentro de notas.
 - [ ] Busca global em notas, tags e sessoes.
 - [ ] Templates simples para NPC, lugar, missao e loot.
 
----
-
-## Serie 2.2.x - Mecanicas auxiliares
+### 2.2.x - Mecanicas auxiliares
 
 Objetivo: adicionar ferramentas opcionais de mesa sem sobrecarregar a ficha.
 
-### 2.2.0 - Rolagens
+#### 2.2.0 - Rolagens
 - [ ] Toggle para habilitar/desabilitar dados virtuais.
 - [ ] Rolar atributo, pericia, saving throw e ataque a partir da ficha.
 - [ ] Historico curto das ultimas rolagens.
 
-### 2.2.1 - Acessibilidade
+#### 2.2.1 - Acessibilidade
 - [ ] Tamanho de fonte configuravel.
 - [ ] Melhorias de contraste e alvos de toque.
 - [ ] Revisao de navegacao por teclado/web.
 
-### 2.2.2 - Companheiros e montarias
+#### 2.2.2 - Companheiros e montarias
 - [ ] Subficha vinculada ao personagem.
 - [ ] Casos principais: familiar, companion, montaria e summons recorrentes.
 
----
-
-## Serie 2.3.x - Homebrew
+### 2.3.x - Homebrew
 
 Objetivo: permitir conteudo criado/importado pelo usuario sem sobrescrever o
 SRD oficial.
 
-### 2.3.0 - Pacotes homebrew
+#### 2.3.0 - Pacotes homebrew
 - [ ] Definir formato JSON para classes, racas, backgrounds, magias, itens,
       features, feats e subclasses.
 - [ ] Importar pacote homebrew por arquivo.
 - [ ] Storage separado para pacotes instalados.
 - [ ] Gerenciar pacotes: listar, ver fonte, desativar/remover.
 
-### 2.3.1 - Integracao com criacao e ficha
+#### 2.3.1 - Integracao com criacao e ficha
 - [ ] Usar homebrew nas listas de criacao de personagem.
 - [ ] Usar magias, itens e features homebrew na ficha.
 - [ ] Marcar visualmente conteudo homebrew e sua origem.
 
 ---
 
-## Serie 3.0.x - Ferramentas de mestre
+## Serie 3.x - Ferramentas de mestre
 
 Objetivo: expandir o app para uso de mestre sem misturar tudo na ficha do
 jogador.
@@ -195,7 +215,7 @@ jogador.
 
 ---
 
-## Serie 4.0.x - Nuvem e compartilhamento
+## Serie 4.x - Nuvem e compartilhamento
 
 Objetivo: sincronizacao e colaboracao, mantendo uso local/offline como base.
 

@@ -25,8 +25,8 @@ class CharacterNote {
     this.tags = const [],
     this.isPinned = false,
     this.sortOrder = 0,
-  })  : id = id ?? _uuid.v4(),
-        createdAt = createdAt ?? DateTime.now();
+  }) : id = id ?? _uuid.v4(),
+       createdAt = createdAt ?? DateTime.now();
 
   CharacterNote copyWith({
     String? title,
@@ -72,5 +72,4 @@ class CharacterNoteTag {
   Map<String, dynamic> toJson() => _$CharacterNoteTagToJson(this);
 }
 
-String _idFromJson(dynamic v) =>
-    (v is String && v.isNotEmpty) ? v : _uuid.v4();
+String _idFromJson(dynamic v) => (v is String && v.isNotEmpty) ? v : _uuid.v4();

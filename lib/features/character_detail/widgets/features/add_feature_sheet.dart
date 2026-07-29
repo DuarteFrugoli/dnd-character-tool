@@ -339,18 +339,18 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           title: Text(displayName, style: const TextStyle(fontSize: 14)),
           subtitle: Text(
             subtitle,
-            style: TextStyle(
-              fontSize: 12,
-              color: scheme.onSurfaceVariant,
-            ),
+            style: TextStyle(fontSize: 12, color: scheme.onSurfaceVariant),
           ),
           trailing: alreadyAdded
               ? SizedBox(
                   width: 48,
                   height: 48,
                   child: Center(
-                    child: Icon(Icons.check_circle,
-                        color: scheme.primary, size: 24),
+                    child: Icon(
+                      Icons.check_circle,
+                      color: scheme.primary,
+                      size: 24,
+                    ),
                   ),
                 )
               : IconButton(
@@ -399,8 +399,10 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           final localizedDesc = i18n.classFeatureDescription(cls, f.name);
           if (f.name.toLowerCase().contains(q) ||
               f.description.toLowerCase().contains(q) ||
-              (localizedName != null && localizedName.toLowerCase().contains(q)) ||
-              (localizedDesc != null && localizedDesc.toLowerCase().contains(q))) {
+              (localizedName != null &&
+                  localizedName.toLowerCase().contains(q)) ||
+              (localizedDesc != null &&
+                  localizedDesc.toLowerCase().contains(q))) {
             results.add((cls, f));
           }
         }
@@ -487,14 +489,24 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
         final subMap = allSub[cls] ?? {};
         for (final subName in subMap.keys) {
           for (final f in subMap[subName]!) {
-            final localizedName = i18n.subclassFeatureName(cls, subName, f.name);
-            final localizedDesc = i18n.subclassFeatureDescription(cls, subName, f.name);
+            final localizedName = i18n.subclassFeatureName(
+              cls,
+              subName,
+              f.name,
+            );
+            final localizedDesc = i18n.subclassFeatureDescription(
+              cls,
+              subName,
+              f.name,
+            );
             final localizedSub = i18n.subclassName(cls, subName);
             if (f.name.toLowerCase().contains(q) ||
                 f.description.toLowerCase().contains(q) ||
                 subName.toLowerCase().contains(q) ||
-                (localizedName != null && localizedName.toLowerCase().contains(q)) ||
-                (localizedDesc != null && localizedDesc.toLowerCase().contains(q)) ||
+                (localizedName != null &&
+                    localizedName.toLowerCase().contains(q)) ||
+                (localizedDesc != null &&
+                    localizedDesc.toLowerCase().contains(q)) ||
                 localizedSub.toLowerCase().contains(q)) {
               results.add((cls, subName, f));
             }
@@ -596,7 +608,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           if (t.toLowerCase().contains(q) ||
               f.description.toLowerCase().contains(q) ||
               localizedName.toLowerCase().contains(q) ||
-              (localizedDesc != null && localizedDesc.toLowerCase().contains(q))) {
+              (localizedDesc != null &&
+                  localizedDesc.toLowerCase().contains(q))) {
             results.add((race.name, f));
           }
         }
@@ -608,7 +621,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
             if (t.toLowerCase().contains(q) ||
                 f.description.toLowerCase().contains(q) ||
                 localizedName.toLowerCase().contains(q) ||
-                (localizedDesc != null && localizedDesc.toLowerCase().contains(q))) {
+                (localizedDesc != null &&
+                    localizedDesc.toLowerCase().contains(q))) {
               results.add((sub.name, f));
             }
           }
@@ -753,7 +767,11 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
                       setState(() {});
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(AppLocalizations.of(context)!.featureAddedSnackbar(f.name)),
+                          content: Text(
+                            AppLocalizations.of(
+                              context,
+                            )!.featureAddedSnackbar(f.name),
+                          ),
                           behavior: SnackBarBehavior.floating,
                         ),
                       );
@@ -797,7 +815,8 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
             f.name.toLowerCase().contains(q) ||
             f.description.toLowerCase().contains(q) ||
             localizedBgName.toLowerCase().contains(q) ||
-            (localizedFeatureName != null && localizedFeatureName.toLowerCase().contains(q))) {
+            (localizedFeatureName != null &&
+                localizedFeatureName.toLowerCase().contains(q))) {
           results.add((bg.name, f));
         }
       }

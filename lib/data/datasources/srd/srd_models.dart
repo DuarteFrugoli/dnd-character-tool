@@ -87,9 +87,8 @@ class SrdLanguage {
 
   const SrdLanguage({required this.name});
 
-  factory SrdLanguage.fromJson(Map<String, dynamic> json) => SrdLanguage(
-    name: json['name'] as String? ?? '',
-  );
+  factory SrdLanguage.fromJson(Map<String, dynamic> json) =>
+      SrdLanguage(name: json['name'] as String? ?? '');
 }
 
 class SrdSubrace {
@@ -757,7 +756,7 @@ class SrdFeatureChoiceCatalog {
   final Map<String, List<SrdFeatureChoiceOption>> optionSources;
   final Map<String, Map<String, SrdFeatureChoiceDefinition>> classFeatures;
   final Map<String, Map<String, Map<String, SrdFeatureChoiceDefinition>>>
-      subclassFeatures;
+  subclassFeatures;
   final Map<String, SrdFeatureChoiceDefinition> raceTraits;
   final Map<String, SrdFeatureChoiceDefinition> feats;
 
@@ -786,8 +785,7 @@ class SrdFeatureChoiceCatalog {
     String className,
     String subclassName,
     String feature,
-  ) =>
-      subclassFeatures[className]?[subclassName]?[feature];
+  ) => subclassFeatures[className]?[subclassName]?[feature];
 
   SrdFeatureChoiceDefinition? raceTrait(String trait) => raceTraits[trait];
 
@@ -804,9 +802,9 @@ class SrdFeatureChoiceCatalog {
       if (list is! List) continue;
       result[key] = list
           .whereType<Map>()
-          .map((e) => SrdFeatureChoiceOption.fromJson(
-                e.cast<String, dynamic>(),
-              ))
+          .map(
+            (e) => SrdFeatureChoiceOption.fromJson(e.cast<String, dynamic>()),
+          )
           .toList();
     }
     return result;
@@ -828,7 +826,7 @@ class SrdFeatureChoiceCatalog {
   }
 
   static Map<String, Map<String, SrdFeatureChoiceDefinition>>
-      _parseDefinitionMap2(dynamic value) {
+  _parseDefinitionMap2(dynamic value) {
     final result = <String, Map<String, SrdFeatureChoiceDefinition>>{};
     if (value is! Map) return result;
     for (final entry in value.entries) {
@@ -838,7 +836,7 @@ class SrdFeatureChoiceCatalog {
   }
 
   static Map<String, Map<String, Map<String, SrdFeatureChoiceDefinition>>>
-      _parseDefinitionMap3(dynamic value) {
+  _parseDefinitionMap3(dynamic value) {
     final result =
         <String, Map<String, Map<String, SrdFeatureChoiceDefinition>>>{};
     if (value is! Map) return result;
@@ -847,8 +845,9 @@ class SrdFeatureChoiceCatalog {
       final subMap = entry.value;
       if (subMap is Map) {
         for (final subEntry in subMap.entries) {
-          nested[subEntry.key.toString()] =
-              _parseDefinitionMap1(subEntry.value);
+          nested[subEntry.key.toString()] = _parseDefinitionMap1(
+            subEntry.value,
+          );
         }
       }
       result[entry.key.toString()] = nested;
@@ -861,15 +860,12 @@ class SrdPackContent {
   final String name;
   final int quantity;
 
-  const SrdPackContent({
-    required this.name,
-    this.quantity = 1,
-  });
+  const SrdPackContent({required this.name, this.quantity = 1});
 
   factory SrdPackContent.fromJson(Map<String, dynamic> json) => SrdPackContent(
-        name: (json['name'] as String?) ?? '',
-        quantity: (json['quantity'] as num?)?.toInt() ?? 1,
-      );
+    name: (json['name'] as String?) ?? '',
+    quantity: (json['quantity'] as num?)?.toInt() ?? 1,
+  );
 }
 
 class SrdFeatureChoiceDefinition {
@@ -881,8 +877,10 @@ class SrdFeatureChoiceDefinition {
     return SrdFeatureChoiceDefinition(
       choices: (json['choices'] as List<dynamic>? ?? const [])
           .whereType<Map>()
-          .map((e) =>
-              SrdFeatureChoiceRequirement.fromJson(e.cast<String, dynamic>()))
+          .map(
+            (e) =>
+                SrdFeatureChoiceRequirement.fromJson(e.cast<String, dynamic>()),
+          )
           .toList(),
     );
   }
@@ -928,16 +926,16 @@ class SrdFeatureChoiceRequirement {
       optionsSource: json['optionsSource'] as String?,
       options: (json['options'] as List<dynamic>? ?? const [])
           .whereType<Map>()
-          .map((e) =>
-              SrdFeatureChoiceOption.fromJson(e.cast<String, dynamic>()))
+          .map(
+            (e) => SrdFeatureChoiceOption.fromJson(e.cast<String, dynamic>()),
+          )
           .toList(),
       spellClass: json['spellClass'] as String?,
       spellClassFromChoice: json['spellClassFromChoice'] as String?,
       spellLevel: (json['spellLevel'] as num?)?.toInt(),
       minSpellLevel: (json['minSpellLevel'] as num?)?.toInt(),
       maxSpellLevel: (json['maxSpellLevel'] as num?)?.toInt(),
-      maxSpellLevelByLevel:
-          _intMapFromJson(json['maxSpellLevelByLevel']),
+      maxSpellLevelByLevel: _intMapFromJson(json['maxSpellLevelByLevel']),
       allowThievesTools: json['allowThievesTools'] as bool? ?? false,
     );
   }
@@ -1005,42 +1003,17 @@ class SrdFeatureChoiceOption {
 
 // ── Class Features ────────────────────────────────────────────────────────────
 
-class SrdFeatureUses {
-  final String amount; // e.g. "2" or "charisma_modifier"
-  final String rechargeOn; // "short_rest" | "long_rest"
-
-  const SrdFeatureUses({required this.amount, required this.rechargeOn});
-
-  factory SrdFeatureUses.fromJson(Map<String, dynamic> json) => SrdFeatureUses(
-    amount: json['amount'].toString(),
-    rechargeOn: (json['rechargeOn'] as String?) ?? '',
-  );
-
-  String get rechargeLabel {
-    switch (rechargeOn) {
-      case 'short_rest':
-        return 'Short Rest';
-      case 'long_rest':
-        return 'Long Rest';
-      default:
-        return rechargeOn;
-    }
-  }
-}
-
 class SrdClassFeature {
   final String name;
   final int level;
   final String type; // "active" | "passive" | "subclass" | "asi"
   final String description;
-  final SrdFeatureUses? uses;
 
   const SrdClassFeature({
     required this.name,
     required this.level,
     required this.type,
     required this.description,
-    this.uses,
   });
 
   factory SrdClassFeature.fromJson(Map<String, dynamic> json) =>
@@ -1049,8 +1022,5 @@ class SrdClassFeature {
         level: (json['level'] as int?) ?? 1,
         type: (json['type'] as String?) ?? 'passive',
         description: (json['description'] as String?) ?? '',
-        uses: json['uses'] != null
-            ? SrdFeatureUses.fromJson(json['uses'] as Map<String, dynamic>)
-            : null,
       );
 }

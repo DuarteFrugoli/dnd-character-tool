@@ -65,10 +65,7 @@ class ExpandEquipmentPacksMigration extends CharacterMigration {
     return CharacterMigrationResult(
       character: character.copyWith(equipment: updatedEquipment),
       changes: [
-        CharacterMigrationChange(
-          code: changeCode,
-          count: expandedCount,
-        ),
+        CharacterMigrationChange(code: changeCode, count: expandedCount),
       ],
     );
   }
@@ -79,13 +76,17 @@ class ExpandEquipmentPacksMigration extends CharacterMigration {
       return;
     }
 
-    final index = items.indexWhere((existing) =>
-        !existing.isEquipped &&
-        existing.name == item.name &&
-        existing.category == item.category &&
-        existing.itemType == item.itemType &&
-        const DeepCollectionEquality()
-            .equals(existing.properties, item.properties));
+    final index = items.indexWhere(
+      (existing) =>
+          !existing.isEquipped &&
+          existing.name == item.name &&
+          existing.category == item.category &&
+          existing.itemType == item.itemType &&
+          const DeepCollectionEquality().equals(
+            existing.properties,
+            item.properties,
+          ),
+    );
     if (index < 0) {
       items.add(item);
       return;
@@ -99,7 +100,10 @@ class ExpandEquipmentPacksMigration extends CharacterMigration {
     );
   }
 
-  SrdItemData? _lookupKnownItem(CharacterMigrationContext context, String name) {
+  SrdItemData? _lookupKnownItem(
+    CharacterMigrationContext context,
+    String name,
+  ) {
     final lower = name.toLowerCase();
     return context.itemsByName[lower] ??
         (lower.endsWith('s')

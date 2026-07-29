@@ -3,8 +3,20 @@ import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
 
-import 'storage_backend_stub.dart' show StorageBackend;
-export 'storage_backend_stub.dart' show StorageBackend;
+import 'storage_backend_stub.dart'
+    show
+        StorageBackend,
+        StorageCharacterScan,
+        StorageReadException,
+        StorageReadIssue,
+        StoredCharacterJson;
+export 'storage_backend_stub.dart'
+    show
+        StorageBackend,
+        StorageCharacterScan,
+        StorageReadException,
+        StorageReadIssue,
+        StoredCharacterJson;
 
 StorageBackend createStorageBackend() => NativeStorageBackend();
 
@@ -27,35 +39,93 @@ class NativeStorageBackend implements StorageBackend {
     return dir;
   }
 
-  // ---- Personagens ----
+  // ---- Characters ----
 
   @override
   Future<List<Map<String, dynamic>>> loadAllCharacters() async {
-    final dir = await _charactersDir;
-    final files = dir
-        .listSync()
-        .whereType<File>()
-        .where((f) => f.path.endsWith('.json'));
+    final scan = await scanCharacters();
+    return [for (final record in scan.records) record.json];
+  }
 
-    final result = <Map<String, dynamic>>[];
+  @override
+  Future<StorageCharacterScan> scanCharacters() async {
+    final dir = await _charactersDir;
+    final files = dir.listSync().whereType<File>().where(
+      (file) => file.path.endsWith('.json'),
+    );
+
+    final records = <StoredCharacterJson>[];
+    final issues = <StorageReadIssue>[];
     for (final file in files) {
+      final fallbackId = file.uri.pathSegments.last.replaceFirst(
+        RegExp(r'\.json$'),
+        '',
+      );
       try {
-        result.add(jsonDecode(await file.readAsString()) as Map<String, dynamic>);
+        final decoded = jsonDecode(await file.readAsString());
+        if (decoded is Map<String, dynamic>) {
+          final rawId = decoded['id'];
+          records.add(
+            StoredCharacterJson(
+              source: file.path,
+              id: rawId is String && rawId.isNotEmpty ? rawId : fallbackId,
+              json: decoded,
+            ),
+          );
+        } else {
+          issues.add(
+            StorageReadIssue(
+              source: file.path,
+              id: fallbackId,
+              message: 'not_object',
+            ),
+          );
+        }
       } catch (_) {
-        // arquivo corrompido — ignora
+        issues.add(
+          StorageReadIssue(
+            source: file.path,
+            id: fallbackId,
+            message: 'invalid_json',
+          ),
+        );
       }
     }
-    return result;
+    return StorageCharacterScan(records: records, issues: issues);
   }
 
   @override
   Future<Map<String, dynamic>?> loadCharacter(String id) async {
+    try {
+      return (await loadCharacterRecord(id))?.json;
+    } on StorageReadException {
+      return null;
+    }
+  }
+
+  @override
+  Future<StoredCharacterJson?> loadCharacterRecord(String id) async {
     final file = await _fileForId(id);
     if (!await file.exists()) return null;
     try {
-      return jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+      final decoded = jsonDecode(await file.readAsString());
+      if (decoded is Map<String, dynamic>) {
+        final rawId = decoded['id'];
+        return StoredCharacterJson(
+          source: file.path,
+          id: rawId is String && rawId.isNotEmpty ? rawId : id,
+          json: decoded,
+        );
+      }
+      throw StorageReadException(
+        StorageReadIssue(source: file.path, id: id, message: 'not_object'),
+      );
+    } on StorageReadException {
+      rethrow;
     } catch (_) {
-      return null;
+      throw StorageReadException(
+        StorageReadIssue(source: file.path, id: id, message: 'invalid_json'),
+      );
     }
   }
 
@@ -86,7 +156,7 @@ class NativeStorageBackend implements StorageBackend {
     return File('${dir.path}/$id.json');
   }
 
-  // ---- Imagens ----
+  // ---- Images ----
 
   @override
   Future<String?> saveImage(String characterId, String sourcePath) async {
@@ -100,7 +170,7 @@ class NativeStorageBackend implements StorageBackend {
     final fileName = '${characterId}_$ts.$ext';
     final dest = File('${dir.path}/$fileName');
     await File(sourcePath).copy(dest.path);
-    return dest.path; // full absolute path
+    return dest.path;
   }
 
   @override

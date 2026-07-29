@@ -9,7 +9,8 @@ const indexedDbImagePrefix = 'indexeddb:image:';
 bool isIndexedDbImageReference(String path) =>
     path.startsWith(indexedDbImagePrefix);
 
-String indexedDbImageReference(String imageId) => '$indexedDbImagePrefix$imageId';
+String indexedDbImageReference(String imageId) =>
+    '$indexedDbImagePrefix$imageId';
 
 Future<String?> saveWebImageDataUrl({
   required String ownerId,
@@ -18,7 +19,8 @@ Future<String?> saveWebImageDataUrl({
   final payload = parseImageDataUrl(dataUrl);
   if (payload == null) return null;
 
-  final imageId = '${_safeId(ownerId)}_${DateTime.now().microsecondsSinceEpoch}';
+  final imageId =
+      '${_safeId(ownerId)}_${DateTime.now().microsecondsSinceEpoch}';
   final record = <String, dynamic>{
     'id': imageId,
     'ownerId': ownerId,

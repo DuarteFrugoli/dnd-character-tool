@@ -5,20 +5,23 @@ import 'migrations/expand_equipment_packs_migration.dart';
 import 'migrations/normalize_equipment_order_migration.dart';
 import 'migrations/normalize_note_order_migration.dart';
 import 'migrations/normalize_equipment_items_migration.dart';
+import 'migrations/prepare_multiclass_structure_migration.dart';
+import 'migrations/sync_spell_slots_and_armor_class_migration.dart';
 
 class CharacterMigrationRunner {
-  CharacterMigrationRunner({
-    List<CharacterMigration>? migrations,
-  }) : migrations = _sorted(
-          migrations ??
-              const [
-                BackfillEquipmentWeightsMigration(),
-                NormalizeEquipmentItemsMigration(),
-                ExpandEquipmentPacksMigration(),
-                NormalizeNoteOrderMigration(),
-                NormalizeEquipmentOrderMigration(),
-              ],
-        );
+  CharacterMigrationRunner({List<CharacterMigration>? migrations})
+    : migrations = _sorted(
+        migrations ??
+            const [
+              BackfillEquipmentWeightsMigration(),
+              NormalizeEquipmentItemsMigration(),
+              ExpandEquipmentPacksMigration(),
+              NormalizeNoteOrderMigration(),
+              NormalizeEquipmentOrderMigration(),
+              SyncSpellSlotsAndArmorClassMigration(),
+              PrepareMulticlassStructureMigration(),
+            ],
+      );
 
   final List<CharacterMigration> migrations;
 
@@ -76,10 +79,12 @@ class CharacterMigrationBatchReport {
   const CharacterMigrationBatchReport({
     required this.latestVersion,
     required this.characters,
+    this.readIssues = const [],
   });
 
   final int latestVersion;
   final List<CharacterMigrationCharacterReport> characters;
+  final List<CharacterMigrationReadIssue> readIssues;
 
   int get checkedCount => characters.length;
 
@@ -90,6 +95,32 @@ class CharacterMigrationBatchReport {
       characters.where((entry) => entry.hasDataChanges).length;
 
   bool get hasUpdates => outdatedCount > 0;
+
+  int get readIssueCount => readIssues.length;
+
+  bool get hasReadIssues => readIssues.isNotEmpty;
+
+  CharacterMigrationBatchReport withReadIssues(
+    List<CharacterMigrationReadIssue> issues,
+  ) {
+    return CharacterMigrationBatchReport(
+      latestVersion: latestVersion,
+      characters: characters,
+      readIssues: issues,
+    );
+  }
+}
+
+class CharacterMigrationReadIssue {
+  const CharacterMigrationReadIssue({
+    required this.source,
+    required this.message,
+    this.id,
+  });
+
+  final String source;
+  final String? id;
+  final String message;
 }
 
 class CharacterMigrationCharacterReport {

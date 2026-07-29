@@ -59,8 +59,7 @@ final srdRaceTraitsProvider = FutureProvider<Map<String, String>>(
   (ref) => ref.read(srdDataSourceProvider).getRaceTraits(),
 );
 
-final srdFeatureChoiceCatalogProvider =
-    FutureProvider<SrdFeatureChoiceCatalog>(
+final srdFeatureChoiceCatalogProvider = FutureProvider<SrdFeatureChoiceCatalog>(
   (ref) => ref.read(srdDataSourceProvider).getFeatureChoiceCatalog(),
 );
 
@@ -70,45 +69,45 @@ final srdFeatureUsageCatalogProvider = FutureProvider<FeatureUsageCatalog>(
 
 final srdClassFeaturesProvider =
     FutureProvider.family<List<SrdClassFeature>, String>(
-  (ref, className) => ref.read(srdDataSourceProvider).getClassFeatures(
-        className,
-      ),
-);
+      (ref, className) =>
+          ref.read(srdDataSourceProvider).getClassFeatures(className),
+    );
 
 final srdAllSubclassFeaturesProvider =
     FutureProvider<Map<String, Map<String, List<SrdClassFeature>>>>(
-  (ref) => ref.read(srdDataSourceProvider).getAllSubclassFeatures(),
-);
+      (ref) => ref.read(srdDataSourceProvider).getAllSubclassFeatures(),
+    );
 
 final srdSubclassFeaturesProvider =
     FutureProvider.family<List<SrdClassFeature>, SrdSubclassFeatureKey>(
-  (ref, key) => ref.read(srdDataSourceProvider).getSubclassFeatures(
-        key.className,
-        key.subclassName,
-      ),
-);
+      (ref, key) => ref
+          .read(srdDataSourceProvider)
+          .getSubclassFeatures(key.className, key.subclassName),
+    );
 
 final srdI18nProvider = FutureProvider<SrdI18nService>((ref) async {
   final locale = ref.watch(localeProvider);
-  final code = locale?.languageCode ??
+  final code =
+      locale?.languageCode ??
       WidgetsBinding.instance.platformDispatcher.locale.languageCode;
   return SrdI18nService.load(code);
 });
 
 final srdConditionsProvider =
     FutureProvider<List<({String name, String description})>>((ref) async {
-  final raw =
-      await rootBundle.loadString('assets/data/srd/conditions.json');
-  final list = jsonDecode(raw) as List<dynamic>;
-  return list
-      .map(
-        (e) => (
-          name: e['name'] as String,
-          description: e['description'] as String,
-        ),
-      )
-      .toList();
-});
+      final raw = await rootBundle.loadString(
+        'assets/data/srd/conditions.json',
+      );
+      final list = jsonDecode(raw) as List<dynamic>;
+      return list
+          .map(
+            (e) => (
+              name: e['name'] as String,
+              description: e['description'] as String,
+            ),
+          )
+          .toList();
+    });
 
 class SrdSubclassFeatureKey {
   const SrdSubclassFeatureKey({

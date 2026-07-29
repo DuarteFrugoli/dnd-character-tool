@@ -1,4 +1,5 @@
 export 'character_header_vm.dart';
+export 'character_feature_summary.dart';
 export 'features_tab_vm.dart';
 export 'identity_tab_vm.dart';
 export 'inventory_tab_vm.dart';

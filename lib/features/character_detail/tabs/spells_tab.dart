@@ -32,15 +32,12 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
 
   void _rebuildSpellDisplayData() {
     final character = widget.character;
-    final engine = SpellcastingEngine.forClass(
-      className: character.characterClass,
-      classLevel: character.level,
-      abilityScores: character.abilityScores,
-      proficiencyBonus: character.proficiencyBonus,
-      subclass: character.subclass,
+    final spellcastingSummary = CharacterSpellcastingSummary.fromCharacter(
+      character,
     );
+    final engine = spellcastingSummary.primaryEngine;
     final isPrepareAll =
-        engine != null && _isPrepareAllClass(character.characterClass);
+        engine != null && _isPrepareAllClass(character.primaryClass.className);
 
     List<KnownSpell> displaySpells;
     List<KnownSpell> extraSpells = [];
@@ -60,14 +57,19 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
       final classSpells = _classAllSpells!
           .where((spell) => spell.level > 0 && spell.level <= maxLevel)
           .map((spell) {
-        final isAlways = alwaysNames.contains(spell.name.toLowerCase());
-        return KnownSpell(
-          name: spell.name,
-          level: spell.level,
-          isPrepared: isAlways || preparedNames.contains(spell.name),
-          isAlwaysPrepared: isAlways,
-        );
-      }).toList();
+            final isAlways = alwaysNames.contains(spell.name.toLowerCase());
+            return KnownSpell(
+              name: spell.name,
+              level: spell.level,
+              isPrepared: isAlways || preparedNames.contains(spell.name),
+              isAlwaysPrepared: isAlways,
+              sourceType: isAlways ? 'subclassFeature' : 'class',
+              sourceClass: character.primaryClass.className,
+              sourceSubclass: character.primaryClass.subclassName,
+              sourceClassEntryId: character.primaryClass.id,
+            );
+          })
+          .toList();
       final extraSubclassSpells =
           _subclassAlwaysSpells
               ?.where(
@@ -81,6 +83,10 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                   level: spell.level,
                   isPrepared: true,
                   isAlwaysPrepared: true,
+                  sourceType: 'subclassFeature',
+                  sourceClass: character.primaryClass.className,
+                  sourceSubclass: character.primaryClass.subclassName,
+                  sourceClassEntryId: character.primaryClass.id,
                 ),
               )
               .toList() ??
@@ -124,8 +130,10 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
   @override
   void didUpdateWidget(_SpellsTab old) {
     super.didUpdateWidget(old);
-    if (old.character.characterClass != widget.character.characterClass ||
-        old.character.subclass != widget.character.subclass) {
+    if (old.character.primaryClass.className !=
+            widget.character.primaryClass.className ||
+        old.character.primaryClass.subclassName !=
+            widget.character.primaryClass.subclassName) {
       _loadSpells();
     } else if (old.character != widget.character) {
       _rebuildSpellDisplayData();
@@ -142,8 +150,9 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
     }
     if (!mounted) return;
     final character = widget.character;
-    final cls = character.characterClass.toLowerCase();
-    final subclass = character.subclass;
+    final primaryClass = character.primaryClass;
+    final cls = primaryClass.className.toLowerCase();
+    final subclass = primaryClass.subclassName;
     final isPrepareAll = _isPrepareAllClass(cls);
     setState(() {
       _spellIndex = {for (final spell in all) spell.name.toLowerCase(): spell};
@@ -179,11 +188,8 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
-      builder: (_) => SpellDetailSheet(
-        spell: spell,
-        isKnown: isKnown,
-        onRemove: onRemove,
-      ),
+      builder: (_) =>
+          SpellDetailSheet(spell: spell, isKnown: isKnown, onRemove: onRemove),
     );
   }
 
@@ -199,13 +205,10 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final engine = SpellcastingEngine.forClass(
-      className: character.characterClass,
-      classLevel: character.level,
-      abilityScores: character.abilityScores,
-      proficiencyBonus: character.proficiencyBonus,
-      subclass: character.subclass,
+    final spellcastingSummary = CharacterSpellcastingSummary.fromCharacter(
+      character,
     );
+    final engine = spellcastingSummary.primaryEngine;
     final isCaster = engine != null;
     final hasSpells = character.spells.isNotEmpty;
     final hasSlots = character.spellSlots.total.any((total) => total > 0);
@@ -243,10 +246,11 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
     }
 
     final isPrepareAll =
-        isCaster && _isPrepareAllClass(character.characterClass);
+        isCaster && _isPrepareAllClass(character.primaryClass.className);
     final levels = _byLevel.keys.toList()..sort();
     final prepares =
-        isCaster && KnownSpellCasting.classPrepares(character.characterClass);
+        isCaster &&
+        KnownSpellCasting.classPrepares(character.primaryClass.className);
     final preparedCount = character.spells
         .where(
           (spell) =>
@@ -368,128 +372,132 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                     SliverPadding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            final spell = _byLevel[level]![index];
-                            final isDisabled =
-                                character.disabledSpells.contains(spell.name);
-                            final canDisable =
-                                isPrepareAll &&
+                        delegate: SliverChildBuilderDelegate((context, index) {
+                          final spell = _byLevel[level]![index];
+                          final isDisabled = character.disabledSpells.contains(
+                            spell.name,
+                          );
+                          final canDisable =
+                              isPrepareAll &&
+                              spell.level > 0 &&
+                              !spell.isAlwaysPrepared;
+                          return _SpellRow(
+                            spell: spell,
+                            srdSpell: _spellIndex![spell.name.toLowerCase()],
+                            showPrepareToggle:
+                                prepares &&
                                 spell.level > 0 &&
-                                !spell.isAlwaysPrepared;
-                            return _SpellRow(
-                              spell: spell,
-                              srdSpell: _spellIndex![spell.name.toLowerCase()],
-                              showPrepareToggle:
-                                  prepares &&
-                                  spell.level > 0 &&
-                                  !spell.isAlwaysPrepared &&
-                                  !isDisabled,
-                              onTogglePrepared: () {
-                                final notifier = ref.read(
-                                  characterDetailProvider(
-                                    widget.characterId,
-                                  ).notifier,
-                                );
-                                if (isPrepareAll) {
-                                  if (character.spells.any(
-                                    (known) => known.name == spell.name,
-                                  )) {
-                                    notifier.removeSpell(spell.name);
-                                  } else {
-                                    notifier.addSpell(
-                                      KnownSpell(
-                                        name: spell.name,
-                                        level: spell.level,
-                                        isPrepared: true,
+                                !spell.isAlwaysPrepared &&
+                                !isDisabled,
+                            onTogglePrepared: () {
+                              final notifier = ref.read(
+                                characterDetailProvider(
+                                  widget.characterId,
+                                ).notifier,
+                              );
+                              if (isPrepareAll) {
+                                if (character.spells.any(
+                                  (known) => known.name == spell.name,
+                                )) {
+                                  notifier.removeSpell(spell.name);
+                                } else {
+                                  notifier.addSpell(
+                                    KnownSpell(
+                                      name: spell.name,
+                                      level: spell.level,
+                                      isPrepared: true,
+                                      sourceType: 'class',
+                                      sourceClass:
+                                          character.primaryClass.className,
+                                      sourceSubclass:
+                                          character.primaryClass.subclassName,
+                                      sourceClassEntryId:
+                                          character.primaryClass.id,
+                                    ),
+                                  );
+                                }
+                              } else {
+                                notifier.togglePrepared(spell.name);
+                              }
+                            },
+                            isDisabled: isDisabled,
+                            onLongPress: canDisable
+                                ? () async {
+                                    final confirmed = await showDialog<bool>(
+                                      context: context,
+                                      builder: (ctx) => AlertDialog(
+                                        title: Text(
+                                          isDisabled
+                                              ? l10n.spellsEnableTitle
+                                              : l10n.spellsDisableTitle,
+                                        ),
+                                        content: Text(
+                                          isDisabled
+                                              ? l10n.spellsEnableContent(
+                                                  i18n.spellName(spell.name),
+                                                )
+                                              : l10n.spellsDisableContent(
+                                                  i18n.spellName(spell.name),
+                                                ),
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(ctx, false),
+                                            child: Text(l10n.dialogCancel),
+                                          ),
+                                          FilledButton(
+                                            onPressed: () =>
+                                                Navigator.pop(ctx, true),
+                                            child: Text(
+                                              isDisabled
+                                                  ? l10n.spellsEnable
+                                                  : l10n.spellsDisable,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     );
-                                  }
-                                } else {
-                                  notifier.togglePrepared(spell.name);
-                                }
-                              },
-                              isDisabled: isDisabled,
-                              onLongPress: canDisable
-                                  ? () async {
-                                      final confirmed = await showDialog<bool>(
-                                        context: context,
-                                        builder: (ctx) => AlertDialog(
-                                          title: Text(
-                                            isDisabled
-                                                ? l10n.spellsEnableTitle
-                                                : l10n.spellsDisableTitle,
-                                          ),
-                                          content: Text(
-                                            isDisabled
-                                                ? l10n.spellsEnableContent(
-                                                    i18n.spellName(spell.name),
-                                                  )
-                                                : l10n.spellsDisableContent(
-                                                    i18n.spellName(spell.name),
-                                                  ),
-                                          ),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () =>
-                                                  Navigator.pop(ctx, false),
-                                              child: Text(l10n.dialogCancel),
-                                            ),
-                                            FilledButton(
-                                              onPressed: () =>
-                                                  Navigator.pop(ctx, true),
-                                              child: Text(
-                                                isDisabled
-                                                    ? l10n.spellsEnable
-                                                    : l10n.spellsDisable,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                      if (confirmed == true &&
-                                          context.mounted) {
-                                        ref
-                                            .read(
-                                              characterDetailProvider(
-                                                widget.characterId,
-                                              ).notifier,
-                                            )
-                                            .toggleDisabledSpell(spell.name);
-                                      }
+                                    if (confirmed == true && context.mounted) {
+                                      ref
+                                          .read(
+                                            characterDetailProvider(
+                                              widget.characterId,
+                                            ).notifier,
+                                          )
+                                          .toggleDisabledSpell(spell.name);
                                     }
-                                  : null,
-                              onTap: () {
-                                final srdSpell =
-                                    _spellIndex![spell.name.toLowerCase()];
-                                if (srdSpell == null) return;
-                                _showSpellDetail(
-                                  context: context,
-                                  spell: srdSpell,
-                                  isKnown: isPrepareAll
-                                      ? character.spells.any(
-                                          (known) => known.name == spell.name,
-                                        )
-                                      : true,
-                                  onRemove:
-                                      (isPrepareAll || spell.isAlwaysPrepared)
-                                          ? null
-                                          : () => ref
-                                                .read(
-                                                  characterDetailProvider(
-                                                    widget.characterId,
-                                                  ).notifier,
-                                                )
-                                                .removeSpell(spell.name),
-                                );
-                              },
-                              characterId: widget.characterId,
-                              concentrationSpell: character.concentrationSpell,
-                              i18n: i18n,
-                            );
-                          },
-                          childCount: _byLevel[level]!.length,
-                        ),
+                                  }
+                                : null,
+                            onTap: () {
+                              final srdSpell =
+                                  _spellIndex![spell.name.toLowerCase()];
+                              if (srdSpell == null) return;
+                              _showSpellDetail(
+                                context: context,
+                                spell: srdSpell,
+                                isKnown: isPrepareAll
+                                    ? character.spells.any(
+                                        (known) => known.name == spell.name,
+                                      )
+                                    : true,
+                                onRemove:
+                                    (isPrepareAll || spell.isAlwaysPrepared)
+                                    ? null
+                                    : () => ref
+                                          .read(
+                                            characterDetailProvider(
+                                              widget.characterId,
+                                            ).notifier,
+                                          )
+                                          .removeSpell(spell.name),
+                              );
+                            },
+                            characterId: widget.characterId,
+                            concentrationSpell: character.concentrationSpell,
+                            i18n: i18n,
+                          );
+                        }, childCount: _byLevel[level]!.length),
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -543,47 +551,44 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                     SliverPadding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            final spell = _extraByLevel[level]![index];
-                            return _SpellRow(
-                              spell: spell,
-                              srdSpell: _spellIndex![spell.name.toLowerCase()],
-                              showPrepareToggle:
-                                  prepares && !spell.isAlwaysPrepared,
-                              onTogglePrepared: () => ref
-                                  .read(
-                                    characterDetailProvider(
-                                      widget.characterId,
-                                    ).notifier,
-                                  )
-                                  .togglePrepared(spell.name),
-                              onTap: () {
-                                final srdSpell =
-                                    _spellIndex![spell.name.toLowerCase()];
-                                if (srdSpell == null) return;
-                                _showSpellDetail(
-                                  context: context,
-                                  spell: srdSpell,
-                                  isKnown: true,
-                                  onRemove: spell.isAlwaysPrepared
-                                      ? null
-                                      : () => ref
-                                            .read(
-                                              characterDetailProvider(
-                                                widget.characterId,
-                                              ).notifier,
-                                            )
-                                            .removeSpell(spell.name),
-                                );
-                              },
-                              characterId: widget.characterId,
-                              concentrationSpell: character.concentrationSpell,
-                              i18n: i18n,
-                            );
-                          },
-                          childCount: _extraByLevel[level]!.length,
-                        ),
+                        delegate: SliverChildBuilderDelegate((context, index) {
+                          final spell = _extraByLevel[level]![index];
+                          return _SpellRow(
+                            spell: spell,
+                            srdSpell: _spellIndex![spell.name.toLowerCase()],
+                            showPrepareToggle:
+                                prepares && !spell.isAlwaysPrepared,
+                            onTogglePrepared: () => ref
+                                .read(
+                                  characterDetailProvider(
+                                    widget.characterId,
+                                  ).notifier,
+                                )
+                                .togglePrepared(spell.name),
+                            onTap: () {
+                              final srdSpell =
+                                  _spellIndex![spell.name.toLowerCase()];
+                              if (srdSpell == null) return;
+                              _showSpellDetail(
+                                context: context,
+                                spell: srdSpell,
+                                isKnown: true,
+                                onRemove: spell.isAlwaysPrepared
+                                    ? null
+                                    : () => ref
+                                          .read(
+                                            characterDetailProvider(
+                                              widget.characterId,
+                                            ).notifier,
+                                          )
+                                          .removeSpell(spell.name),
+                              );
+                            },
+                            characterId: widget.characterId,
+                            concentrationSpell: character.concentrationSpell,
+                            i18n: i18n,
+                          );
+                        }, childCount: _extraByLevel[level]!.length),
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -612,6 +617,10 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                           name: srdSpell.name,
                           level: srdSpell.level,
                           isPrepared: false,
+                          sourceType: 'class',
+                          sourceClass: character.primaryClass.className,
+                          sourceSubclass: character.primaryClass.subclassName,
+                          sourceClassEntryId: character.primaryClass.id,
                         ),
                       ),
                   onRemoveSpell: (name) => ref
@@ -634,6 +643,11 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                                 name: name,
                                 level: level,
                                 isPrepared: true,
+                                sourceType: 'class',
+                                sourceClass: character.primaryClass.className,
+                                sourceSubclass:
+                                    character.primaryClass.subclassName,
+                                sourceClassEntryId: character.primaryClass.id,
                               ),
                             );
                           } else {

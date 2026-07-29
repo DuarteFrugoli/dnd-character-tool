@@ -9,9 +9,11 @@ import '../models/models.dart';
 /// Rules:
 /// - Body armor (non-shield) sets the base AC per its properties.
 /// - Shield adds its bonus on top.
+/// - Defense Fighting Style adds +1 while wearing body armor.
 /// - Without body armor, applies Unarmored Defense when available:
 ///   - Barbarian: 10 + DEX mod + CON mod
 ///   - Monk:      10 + DEX mod + WIS mod
+///   - Draconic Resilience: 13 + DEX mod
 ///   - Others:    10 + DEX mod
 int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
   final items = equipment ?? c.equipment;
@@ -39,15 +41,22 @@ int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
     }
   }
 
-  if (armorBase != null) return armorBase + shieldBonus;
+  if (armorBase != null) {
+    final defenseBonus = _hasDefenseFightingStyle(c.featureChoices) ? 1 : 0;
+    return armorBase + shieldBonus + defenseBonus;
+  }
 
-  return calcUnarmoredArmorClass(
+  final unarmoredAc = calcUnarmoredArmorClass(
     characterClass: c.characterClass,
     abilityScores: c.abilityScores,
     shieldBonus: shieldBonus,
     extraFeatures: c.extraFeatures,
     disabledFeatures: c.disabledFeatures,
   );
+  final draconicAc = _hasDraconicResilience(c)
+      ? 13 + dexMod + shieldBonus
+      : unarmoredAc;
+  return unarmoredAc > draconicAc ? unarmoredAc : draconicAc;
 }
 
 int calcUnarmoredArmorClass({
@@ -96,5 +105,27 @@ bool _hasUnarmoredDefense({
     (f) =>
         f.name.toLowerCase() == featureName.toLowerCase() &&
         f.sourceClass.toLowerCase() == source,
+  );
+}
+
+bool _hasDefenseFightingStyle(Iterable<CharacterFeatureChoice> choices) {
+  return choices.any(
+    (choice) =>
+        choice.choiceId == 'fighting_style' &&
+        choice.values.any((value) => value.toLowerCase() == 'defense'),
+  );
+}
+
+bool _hasDraconicResilience(Character c) {
+  const featureName = 'Draconic Resilience';
+  if (c.disabledFeatures.contains(featureName)) return false;
+
+  if (c.characterClass.toLowerCase() == 'sorcerer' &&
+      c.subclass?.toLowerCase() == 'draconic bloodline') {
+    return true;
+  }
+
+  return c.extraFeatures.any(
+    (feature) => feature.name.toLowerCase() == featureName.toLowerCase(),
   );
 }

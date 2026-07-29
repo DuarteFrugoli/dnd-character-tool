@@ -721,10 +721,7 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
     return _searchCatalog;
   }
 
-  Widget _buildGlobalSrdSearch(
-    SrdI18nService i18n,
-    AppLocalizations l10n,
-  ) {
+  Widget _buildGlobalSrdSearch(SrdI18nService i18n, AppLocalizations l10n) {
     if (_loadError != null) {
       return Center(
         child: Padding(
@@ -1125,187 +1122,196 @@ class _AddItemSheetState extends ConsumerState<_AddItemSheet>
                       _buildCustomTab(),
                     ]
                   : [
-                // Weapons
-                _buildGroupedSrdList<SrdWeapon>(
-                  items: _weapons,
-                  getName: (w) => w.name,
-                  getDisplayName: (w) => i18n.equipmentName(w.name),
-                  getSubtitle: (w) =>
-                      '${w.damage} ${i18n.damageType(w.damageType)}  ·  ${w.cost}',
-                  getCategory: (w) => w.category,
-                  getGroup: (w) => w.category,
-                  getDescription: (w) => w.properties.isNotEmpty
-                      ? i18n.weaponProperties(w.properties)
-                      : null,
-                  getItemType: (_) => ItemType.weapon,
-                  getProperties: (w) => {
-                    'damageDice': w.damage,
-                    'damageType': w.damageType,
-                    if (w.properties.isNotEmpty)
-                      'weaponProperties': w.properties,
-                    if (w.versatileDamage != null)
-                      'versatileDamage': w.versatileDamage,
-                    if (w.range != null)
-                      'range': {
-                        'normal': w.range!.normal,
-                        'long': w.range!.long,
-                      },
-                    if (w.cost.isNotEmpty) 'cost': w.cost,
-                  },
-                  getWeight: (w) => w.weight,
-                  groupOrder: const [
-                    'simple melee',
-                    'simple ranged',
-                    'martial melee',
-                    'martial ranged',
-                  ],
-                  groupLabels: {
-                    'simple melee': l10n.inventoryGroupSimpleMelee,
-                    'simple ranged': l10n.inventoryGroupSimpleRanged,
-                    'martial melee': l10n.inventoryGroupMartialMelee,
-                    'martial ranged': l10n.inventoryGroupMartialRanged,
-                  },
-                ),
-                // Armor
-                _buildGroupedSrdList<SrdArmor>(
-                  items: _armors,
-                  getName: (a) => a.name,
-                  getDisplayName: (a) => i18n.equipmentName(a.name),
-                  getSubtitle: (a) => a.isShield
-                      ? '+${a.acBonus} ${i18n.term("AC")}  ·  ${a.cost}'
-                      : '${i18n.term("AC")} ${a.baseAC}${a.addDexModifier ? " + ${i18n.term("DEX")}" : ""}${a.maxDexBonus != null ? " (${l10n.inventoryDetailMaxShort} +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
-                  getCategory: (_) => 'armor',
-                  getGroup: (a) => a.type,
-                  getDescription: (a) => a.stealthDisadvantage
-                      ? l10n.armorStealthDisadvantage
-                      : null,
-                  getItemType: (_) => ItemType.armor,
-                  getProperties: (a) => {
-                    'armorType': a.type,
-                    'baseAC': a.baseAC,
-                    'addDexModifier': a.addDexModifier,
-                    'maxDexBonus': a.maxDexBonus,
-                    'isShield': a.isShield,
-                    'acBonus': a.acBonus,
-                    if (a.strengthRequired != null)
-                      'strengthRequirement': a.strengthRequired,
-                    if (a.stealthDisadvantage) 'stealthDisadvantage': true,
-                    if (a.cost.isNotEmpty) 'cost': a.cost,
-                  },
-                  getWeight: (a) => a.weight,
-                  groupOrder: const ['light', 'medium', 'heavy', 'shield'],
-                  groupLabels: {
-                    'light': l10n.inventoryGroupLightArmor,
-                    'medium': l10n.inventoryGroupMediumArmor,
-                    'heavy': l10n.inventoryGroupHeavyArmor,
-                    'shield': l10n.inventoryGroupShields,
-                  },
-                ),
-                // Gear
-                _buildGroupedSrdList<SrdGearItem>(
-                  items: _gear,
-                  getName: (g) => g.name,
-                  getDisplayName: (g) => i18n.equipmentName(g.name),
-                  getSubtitle: (g) => g.cost,
-                  getCategory: (g) => g.category,
-                  getGroup: (g) => g.category,
-                  getDescription: (g) =>
-                      i18n.equipmentDescription(g.name) ??
-                      (g.description.isNotEmpty ? g.description : null),
-                  getItemType: (g) => g.category == 'ammunition'
-                      ? ItemType.ammunition
-                      : g.category == 'container'
-                      ? ItemType.container
-                      : ItemType.gear,
-                  getProperties: (g) => {if (g.cost.isNotEmpty) 'cost': g.cost},
-                  getWeight: (g) => g.weight,
-                  groupOrder: const [
-                    'adventuring gear',
-                    'ammunition',
-                    'arcane focus',
-                    'clothing',
-                    'container',
-                    'poison',
-                  ],
-                  groupLabels: {
-                    'adventuring gear': l10n.inventoryGroupAdventuringGear,
-                    'ammunition': l10n.inventoryGroupAmmunition,
-                    'arcane focus': l10n.inventoryGroupArcaneFocus,
-                    'clothing': l10n.inventoryGroupClothing,
-                    'container': l10n.inventoryGroupContainer,
-                    'poison': l10n.inventoryGroupPoison,
-                  },
-                ),
-                // Magic Items
-                _buildGroupedSrdList<SrdMagicItem>(
-                  items: _magic,
-                  getName: (m) => m.name,
-                  getDisplayName: (m) => i18n.magicItemName(m.name),
-                  getSubtitle: (m) =>
-                      '${i18n.term(m.rarity)}${m.requiresAttunement ? "  ·  ${i18n.term("attunement")}" : ""}',
-                  getCategory: (m) => m.type,
-                  getGroup: (m) => m.type,
-                  getDescription: (m) =>
-                      i18n.magicItemDescription(m.name) ?? m.description,
-                  getItemType: (m) => m.itemType,
-                  getProperties: (m) => m.properties,
-                  getWeight: (m) => m.weight,
-                  groupOrder: const [
-                    'potion',
-                    'ring',
-                    'wand',
-                    'weapon',
-                    'armor',
-                    'wondrous item',
-                  ],
-                  groupLabels: {
-                    'potion': l10n.inventoryGroupPotions,
-                    'ring': l10n.inventoryGroupRings,
-                    'wand': l10n.inventoryGroupWands,
-                    'weapon': l10n.inventoryGroupWeapons,
-                    'armor': l10n.inventoryGroupArmor,
-                    'wondrous item': l10n.inventoryGroupWondrousItems,
-                  },
-                ),
-                // Tools
-                _buildGroupedSrdList<SrdTool>(
-                  items: _tools,
-                  getName: (t) => t.name,
-                  getDisplayName: (t) => i18n.toolName(t.name),
-                  getSubtitle: (t) {
-                    switch (t.category) {
-                      case 'artisans_tools':
-                        return l10n.inventoryGroupArtisansTools;
-                      case 'gaming_sets':
-                        return l10n.inventoryGroupGamingSets;
-                      case 'musical_instruments':
-                        return l10n.inventoryGroupMusicalInstruments;
-                      default:
-                        return l10n.inventoryGroupOtherTools;
-                    }
-                  },
-                  getCategory: (t) => t.category,
-                  getGroup: (t) => t.category,
-                  getDescription: (_) => null,
-                  getItemType: (_) => ItemType.gear,
-                  getWeight: (t) => t.weight,
-                  groupOrder: const [
-                    'artisans_tools',
-                    'gaming_sets',
-                    'musical_instruments',
-                    'other_tools',
-                  ],
-                  groupLabels: {
-                    'artisans_tools': l10n.inventoryGroupArtisansTools,
-                    'gaming_sets': l10n.inventoryGroupGamingSets,
-                    'musical_instruments':
-                        l10n.inventoryGroupMusicalInstruments,
-                    'other_tools': l10n.inventoryGroupOtherTools,
-                  },
-                ),
-                // Custom
-                _buildCustomTab(),
-              ],
+                      // Weapons
+                      _buildGroupedSrdList<SrdWeapon>(
+                        items: _weapons,
+                        getName: (w) => w.name,
+                        getDisplayName: (w) => i18n.equipmentName(w.name),
+                        getSubtitle: (w) =>
+                            '${w.damage} ${i18n.damageType(w.damageType)}  ·  ${w.cost}',
+                        getCategory: (w) => w.category,
+                        getGroup: (w) => w.category,
+                        getDescription: (w) => w.properties.isNotEmpty
+                            ? i18n.weaponProperties(w.properties)
+                            : null,
+                        getItemType: (_) => ItemType.weapon,
+                        getProperties: (w) => {
+                          'damageDice': w.damage,
+                          'damageType': w.damageType,
+                          if (w.properties.isNotEmpty)
+                            'weaponProperties': w.properties,
+                          if (w.versatileDamage != null)
+                            'versatileDamage': w.versatileDamage,
+                          if (w.range != null)
+                            'range': {
+                              'normal': w.range!.normal,
+                              'long': w.range!.long,
+                            },
+                          if (w.cost.isNotEmpty) 'cost': w.cost,
+                        },
+                        getWeight: (w) => w.weight,
+                        groupOrder: const [
+                          'simple melee',
+                          'simple ranged',
+                          'martial melee',
+                          'martial ranged',
+                        ],
+                        groupLabels: {
+                          'simple melee': l10n.inventoryGroupSimpleMelee,
+                          'simple ranged': l10n.inventoryGroupSimpleRanged,
+                          'martial melee': l10n.inventoryGroupMartialMelee,
+                          'martial ranged': l10n.inventoryGroupMartialRanged,
+                        },
+                      ),
+                      // Armor
+                      _buildGroupedSrdList<SrdArmor>(
+                        items: _armors,
+                        getName: (a) => a.name,
+                        getDisplayName: (a) => i18n.equipmentName(a.name),
+                        getSubtitle: (a) => a.isShield
+                            ? '+${a.acBonus} ${i18n.term("AC")}  ·  ${a.cost}'
+                            : '${i18n.term("AC")} ${a.baseAC}${a.addDexModifier ? " + ${i18n.term("DEX")}" : ""}${a.maxDexBonus != null ? " (${l10n.inventoryDetailMaxShort} +${a.maxDexBonus})" : ""}  ·  ${a.cost}',
+                        getCategory: (_) => 'armor',
+                        getGroup: (a) => a.type,
+                        getDescription: (a) => a.stealthDisadvantage
+                            ? l10n.armorStealthDisadvantage
+                            : null,
+                        getItemType: (_) => ItemType.armor,
+                        getProperties: (a) => {
+                          'armorType': a.type,
+                          'baseAC': a.baseAC,
+                          'addDexModifier': a.addDexModifier,
+                          'maxDexBonus': a.maxDexBonus,
+                          'isShield': a.isShield,
+                          'acBonus': a.acBonus,
+                          if (a.strengthRequired != null)
+                            'strengthRequirement': a.strengthRequired,
+                          if (a.stealthDisadvantage)
+                            'stealthDisadvantage': true,
+                          if (a.cost.isNotEmpty) 'cost': a.cost,
+                        },
+                        getWeight: (a) => a.weight,
+                        groupOrder: const [
+                          'light',
+                          'medium',
+                          'heavy',
+                          'shield',
+                        ],
+                        groupLabels: {
+                          'light': l10n.inventoryGroupLightArmor,
+                          'medium': l10n.inventoryGroupMediumArmor,
+                          'heavy': l10n.inventoryGroupHeavyArmor,
+                          'shield': l10n.inventoryGroupShields,
+                        },
+                      ),
+                      // Gear
+                      _buildGroupedSrdList<SrdGearItem>(
+                        items: _gear,
+                        getName: (g) => g.name,
+                        getDisplayName: (g) => i18n.equipmentName(g.name),
+                        getSubtitle: (g) => g.cost,
+                        getCategory: (g) => g.category,
+                        getGroup: (g) => g.category,
+                        getDescription: (g) =>
+                            i18n.equipmentDescription(g.name) ??
+                            (g.description.isNotEmpty ? g.description : null),
+                        getItemType: (g) => g.category == 'ammunition'
+                            ? ItemType.ammunition
+                            : g.category == 'container'
+                            ? ItemType.container
+                            : ItemType.gear,
+                        getProperties: (g) => {
+                          if (g.cost.isNotEmpty) 'cost': g.cost,
+                        },
+                        getWeight: (g) => g.weight,
+                        groupOrder: const [
+                          'adventuring gear',
+                          'ammunition',
+                          'arcane focus',
+                          'clothing',
+                          'container',
+                          'poison',
+                        ],
+                        groupLabels: {
+                          'adventuring gear':
+                              l10n.inventoryGroupAdventuringGear,
+                          'ammunition': l10n.inventoryGroupAmmunition,
+                          'arcane focus': l10n.inventoryGroupArcaneFocus,
+                          'clothing': l10n.inventoryGroupClothing,
+                          'container': l10n.inventoryGroupContainer,
+                          'poison': l10n.inventoryGroupPoison,
+                        },
+                      ),
+                      // Magic Items
+                      _buildGroupedSrdList<SrdMagicItem>(
+                        items: _magic,
+                        getName: (m) => m.name,
+                        getDisplayName: (m) => i18n.magicItemName(m.name),
+                        getSubtitle: (m) =>
+                            '${i18n.term(m.rarity)}${m.requiresAttunement ? "  ·  ${i18n.term("attunement")}" : ""}',
+                        getCategory: (m) => m.type,
+                        getGroup: (m) => m.type,
+                        getDescription: (m) =>
+                            i18n.magicItemDescription(m.name) ?? m.description,
+                        getItemType: (m) => m.itemType,
+                        getProperties: (m) => m.properties,
+                        getWeight: (m) => m.weight,
+                        groupOrder: const [
+                          'potion',
+                          'ring',
+                          'wand',
+                          'weapon',
+                          'armor',
+                          'wondrous item',
+                        ],
+                        groupLabels: {
+                          'potion': l10n.inventoryGroupPotions,
+                          'ring': l10n.inventoryGroupRings,
+                          'wand': l10n.inventoryGroupWands,
+                          'weapon': l10n.inventoryGroupWeapons,
+                          'armor': l10n.inventoryGroupArmor,
+                          'wondrous item': l10n.inventoryGroupWondrousItems,
+                        },
+                      ),
+                      // Tools
+                      _buildGroupedSrdList<SrdTool>(
+                        items: _tools,
+                        getName: (t) => t.name,
+                        getDisplayName: (t) => i18n.toolName(t.name),
+                        getSubtitle: (t) {
+                          switch (t.category) {
+                            case 'artisans_tools':
+                              return l10n.inventoryGroupArtisansTools;
+                            case 'gaming_sets':
+                              return l10n.inventoryGroupGamingSets;
+                            case 'musical_instruments':
+                              return l10n.inventoryGroupMusicalInstruments;
+                            default:
+                              return l10n.inventoryGroupOtherTools;
+                          }
+                        },
+                        getCategory: (t) => t.category,
+                        getGroup: (t) => t.category,
+                        getDescription: (_) => null,
+                        getItemType: (_) => ItemType.gear,
+                        getWeight: (t) => t.weight,
+                        groupOrder: const [
+                          'artisans_tools',
+                          'gaming_sets',
+                          'musical_instruments',
+                          'other_tools',
+                        ],
+                        groupLabels: {
+                          'artisans_tools': l10n.inventoryGroupArtisansTools,
+                          'gaming_sets': l10n.inventoryGroupGamingSets,
+                          'musical_instruments':
+                              l10n.inventoryGroupMusicalInstruments,
+                          'other_tools': l10n.inventoryGroupOtherTools,
+                        },
+                      ),
+                      // Custom
+                      _buildCustomTab(),
+                    ],
             ),
           ),
         ],

@@ -370,7 +370,7 @@ changes should all recalculate AC through this helper.
 - Hit die by class.
 - `LevelUpResult`, the data object returned by the level-up wizard.
 
-`features/character_detail/level_up_wizard.dart` builds the level-up flow:
+`features/character_detail/level_up_wizard_sheet.dart` builds the level-up flow:
 
 - features summary;
 - subclass selection when needed;

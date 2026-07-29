@@ -16,6 +16,11 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   characterClass: json['characterClass'] as String,
   subclass: json['subclass'] as String?,
   level: (json['level'] as num?)?.toInt() ?? 1,
+  classes:
+      (json['classes'] as List<dynamic>?)
+          ?.map((e) => CharacterClassEntry.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
   experiencePoints: (json['experiencePoints'] as num?)?.toInt() ?? 0,
   background: json['background'] as String? ?? '',
   alignment: json['alignment'] as String? ?? '',
@@ -59,6 +64,11 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   spellSlots: json['spellSlots'] == null
       ? const SpellSlots()
       : SpellSlots.fromJson(json['spellSlots'] as Map<String, dynamic>),
+  hitDicePools:
+      (json['hitDicePools'] as List<dynamic>?)
+          ?.map((e) => CharacterHitDiePool.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
   innateSpells:
       (json['innateSpells'] as List<dynamic>?)
           ?.map((e) => InnateSpell.fromJson(e as Map<String, dynamic>))
@@ -69,7 +79,9 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
       const [],
   extraFeatures:
       (json['extraFeatures'] as List<dynamic>?)
-          ?.map((e) => CharacterExtraFeature.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) => CharacterExtraFeature.fromJson(e as Map<String, dynamic>),
+          )
           .toList() ??
       const [],
   featureChoices:
@@ -85,10 +97,14 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
       ) ??
       const {},
   disabledFeatures:
-      (json['disabledFeatures'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      (json['disabledFeatures'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
       const [],
   disabledSpells:
-      (json['disabledSpells'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      (json['disabledSpells'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
       const [],
   languages:
       (json['languages'] as List<dynamic>?)?.map((e) => e as String).toList() ??
@@ -105,9 +121,10 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
         ),
   backstory: json['backstory'] as String? ?? '',
   inspiration: json['inspiration'] as bool? ?? false,
-  notes: (json['notes'] as List<dynamic>?)
-      ?.map((e) => CharacterNote.fromJson(e as Map<String, dynamic>))
-      .toList() ??
+  notes:
+      (json['notes'] as List<dynamic>?)
+          ?.map((e) => CharacterNote.fromJson(e as Map<String, dynamic>))
+          .toList() ??
       const [],
   imagePath: json['imagePath'] as String?,
   creationMode:
@@ -119,9 +136,11 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   sortOrder: (json['sortOrder'] as num?)?.toInt() ?? 0,
   xpTrackingEnabled: json['xpTrackingEnabled'] as bool? ?? false,
   weightTrackingEnabled: json['weightTrackingEnabled'] as bool? ?? false,
-  activeConditions: (json['activeConditions'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList() ?? const [],
+  activeConditions:
+      (json['activeConditions'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      const [],
   concentrationSpell: json['concentrationSpell'] as String?,
 );
 
@@ -135,6 +154,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'characterClass': instance.characterClass,
   'subclass': instance.subclass,
   'level': instance.level,
+  'classes': instance.classes.map((e) => e.toJson()).toList(),
   'experiencePoints': instance.experiencePoints,
   'background': instance.background,
   'alignment': instance.alignment,
@@ -150,6 +170,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'currency': instance.currency,
   'spells': instance.spells.map((e) => e.toJson()).toList(),
   'spellSlots': instance.spellSlots.toJson(),
+  'hitDicePools': instance.hitDicePools.map((e) => e.toJson()).toList(),
   'innateSpells': instance.innateSpells.map((e) => e.toJson()).toList(),
   'features': instance.features,
   'extraFeatures': instance.extraFeatures.map((e) => e.toJson()).toList(),

@@ -46,8 +46,8 @@ class _StepNameState extends ConsumerState<StepName> {
           Text(
             l10n.stepNameHint,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                ),
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
           ),
           const SizedBox(height: 24),
           TextField(

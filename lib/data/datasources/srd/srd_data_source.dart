@@ -46,10 +46,7 @@ class SrdDataSource {
   }
 
   Future<List<SrdRace>> getRaces() async {
-    _races ??= await _loadList(
-      'assets/data/srd/races.json',
-      SrdRace.fromJson,
-    );
+    _races ??= await _loadList('assets/data/srd/races.json', SrdRace.fromJson);
     return _races!;
   }
 
@@ -62,8 +59,7 @@ class SrdDataSource {
       final subclassRaw = await rootBundle.loadString(
         'assets/data/srd/subclasses.json',
       );
-      final subclassMap =
-          jsonDecode(subclassRaw) as Map<String, dynamic>;
+      final subclassMap = jsonDecode(subclassRaw) as Map<String, dynamic>;
       _classes = classes.map((cls) {
         final subs = (subclassMap[cls.name] as List<dynamic>? ?? [])
             .map((e) => SrdSubclass.fromJson(e as Map<String, dynamic>))
@@ -145,18 +141,12 @@ class SrdDataSource {
   }
 
   Future<List<SrdTool>> getTools() async {
-    _tools ??= await _loadList(
-      'assets/data/srd/tools.json',
-      SrdTool.fromJson,
-    );
+    _tools ??= await _loadList('assets/data/srd/tools.json', SrdTool.fromJson);
     return _tools!;
   }
 
   Future<List<SrdFeat>> getFeats() async {
-    _feats ??= await _loadList(
-      'assets/data/srd/feats.json',
-      SrdFeat.fromJson,
-    );
+    _feats ??= await _loadList('assets/data/srd/feats.json', SrdFeat.fromJson);
     return _feats!;
   }
 
@@ -209,8 +199,7 @@ class SrdDataSource {
 
   Future<Map<String, SrdItemData>> getItems() async {
     if (_items == null) {
-      final raw =
-          await rootBundle.loadString('assets/data/srd/equipment.json');
+      final raw = await rootBundle.loadString('assets/data/srd/equipment.json');
       final json = jsonDecode(raw) as Map<String, dynamic>;
       final result = <String, SrdItemData>{};
 
@@ -289,8 +278,8 @@ class SrdDataSource {
         final itemType = category == 'ammunition'
             ? 'ammunition'
             : category == 'container'
-                ? 'container'
-                : 'gear';
+            ? 'container'
+            : 'gear';
         final data = SrdItemData(
           itemType: itemType,
           category: category,
@@ -357,7 +346,9 @@ class SrdDataSource {
 
   Future<Map<String, String>> getRaceTraits() async {
     if (_raceTraits == null) {
-      final raw = await rootBundle.loadString('assets/data/srd/race_traits.json');
+      final raw = await rootBundle.loadString(
+        'assets/data/srd/race_traits.json',
+      );
       final map = jsonDecode(raw) as Map<String, dynamic>;
       _raceTraits = map.map((k, v) => MapEntry(k, v as String));
     }
@@ -375,8 +366,7 @@ class SrdDataSource {
         final map = entry as Map<String, dynamic>;
         final name = map['class'] as String;
         final features = (map['features'] as List<dynamic>)
-            .map((e) =>
-                SrdClassFeature.fromJson(e as Map<String, dynamic>))
+            .map((e) => SrdClassFeature.fromJson(e as Map<String, dynamic>))
             .toList();
         _classFeatures![name] = features;
       }
@@ -385,7 +375,7 @@ class SrdDataSource {
   }
 
   Future<Map<String, Map<String, List<SrdClassFeature>>>>
-      getAllSubclassFeatures() async {
+  getAllSubclassFeatures() async {
     if (_subclassFeatures == null) {
       final raw = await rootBundle.loadString(
         'assets/data/srd/subclass_features.json',
@@ -447,8 +437,6 @@ class SrdDataSource {
     final list = jsonDecode(raw) as List<dynamic>;
     return list.map((e) => fromJson(e as Map<String, dynamic>)).toList();
   }
-
-
 }
 
 // ── Equipment indexing helpers ────────────────────────────────────────────────
@@ -479,15 +467,24 @@ List<String> _weaponAliases(String lower) {
 /// "Leather armor" or "Wooden shield" hit the right entry.
 List<String> _armorAliases(String lower) {
   switch (lower) {
-    case 'leather':      return ['leather armor'];
-    case 'studded leather': return ['studded leather armor'];
-    case 'hide':         return ['hide armor'];
-    case 'padded':       return ['padded armor'];
-    case 'half plate':   return ['half plate armor'];
-    case 'splint':       return ['splint armor'];
-    case 'plate':        return ['plate armor', 'plate mail'];
-    case 'shield':       return ['wooden shield'];
-    default:             return [];
+    case 'leather':
+      return ['leather armor'];
+    case 'studded leather':
+      return ['studded leather armor'];
+    case 'hide':
+      return ['hide armor'];
+    case 'padded':
+      return ['padded armor'];
+    case 'half plate':
+      return ['half plate armor'];
+    case 'splint':
+      return ['splint armor'];
+    case 'plate':
+      return ['plate armor', 'plate mail'];
+    case 'shield':
+      return ['wooden shield'];
+    default:
+      return [];
   }
 }
 

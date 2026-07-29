@@ -63,10 +63,7 @@ class FeatureChoiceOptionResolver {
       case 'skill_expertise':
         return _skillOptions(onlyProficient: true);
       case 'skill_or_tool':
-        return [
-          ..._skillOptions(prefix: true),
-          ..._toolOptions(prefix: true),
-        ];
+        return [..._skillOptions(prefix: true), ..._toolOptions(prefix: true)];
       case 'skill_or_tool_expertise':
         return [
           ..._skillOptions(onlyProficient: true, prefix: true),
@@ -109,7 +106,8 @@ class FeatureChoiceOptionResolver {
         .map(
           (option) => SrdFeatureChoiceOption(
             id: option.id,
-            name: i18n.featureChoiceOptionName(
+            name:
+                i18n.featureChoiceOptionName(
                   sourceType: request.sourceType,
                   sourceClass: request.sourceClass,
                   sourceSubclass: request.sourceSubclass,
@@ -120,7 +118,8 @@ class FeatureChoiceOptionResolver {
                   optionsSource: optionsSource,
                 ) ??
                 option.name,
-            description: i18n.featureChoiceOptionDescription(
+            description:
+                i18n.featureChoiceOptionDescription(
                   sourceType: request.sourceType,
                   sourceClass: request.sourceClass,
                   sourceSubclass: request.sourceSubclass,
@@ -144,12 +143,16 @@ class FeatureChoiceOptionResolver {
         .map((skill) => skill.toLowerCase())
         .toSet();
     final skillList = onlyProficient && proficiencies.isNotEmpty
-        ? skills.where((skill) => proficiencies.contains(skill.name.toLowerCase()))
+        ? skills.where(
+            (skill) => proficiencies.contains(skill.name.toLowerCase()),
+          )
         : skills;
     return skillList
         .map(
           (skill) => SrdFeatureChoiceOption(
-            id: prefix ? 'skill:${idFromName(skill.name)}' : idFromName(skill.name),
+            id: prefix
+                ? 'skill:${idFromName(skill.name)}'
+                : idFromName(skill.name),
             name: i18n.skillName(skill.name),
             description: skill.ability.toUpperCase(),
           ),
@@ -161,7 +164,9 @@ class FeatureChoiceOptionResolver {
     final mapped = tools
         .map(
           (tool) => SrdFeatureChoiceOption(
-            id: prefix ? 'tool:${idFromName(tool.name)}' : idFromName(tool.name),
+            id: prefix
+                ? 'tool:${idFromName(tool.name)}'
+                : idFromName(tool.name),
             name: i18n.toolName(tool.name),
             description: tool.category,
           ),
@@ -170,7 +175,8 @@ class FeatureChoiceOptionResolver {
     if (!request.requirement.allowThievesTools) return mapped;
 
     final hasThievesTools = mapped.any(
-      (option) => option.id == (prefix ? 'tool:thieves_tools' : 'thieves_tools'),
+      (option) =>
+          option.id == (prefix ? 'tool:thieves_tools' : 'thieves_tools'),
     );
     if (hasThievesTools) return mapped;
     return [...mapped, ..._thievesTools(prefix: prefix)];
@@ -201,15 +207,18 @@ class FeatureChoiceOptionResolver {
 
   List<SrdFeatureChoiceOption> _spellOptions() {
     final req = request.requirement;
-    final spellClass = req.spellClass ?? _selectedChoiceValue(req.spellClassFromChoice);
+    final spellClass =
+        req.spellClass ?? _selectedChoiceValue(req.spellClassFromChoice);
     if (spellClass == null || spellClass.isEmpty) return const [];
     final anyClass = spellClass == 'any';
     final spellLevel = req.type == 'cantrip' ? 0 : req.spellLevel;
     final minSpellLevel = req.minSpellLevel ?? (req.type == 'spell' ? 1 : 0);
     final maxSpellLevel = req.maxSpellLevelAtLevel(request.level);
     return spells
-        .where((spell) =>
-            anyClass || spell.classes.contains(spellClass.toLowerCase()))
+        .where(
+          (spell) =>
+              anyClass || spell.classes.contains(spellClass.toLowerCase()),
+        )
         .where((spell) {
           if (spellLevel != null) return spell.level == spellLevel;
           if (spell.level < minSpellLevel) return false;
@@ -235,7 +244,9 @@ class FeatureChoiceOptionResolver {
       final values = related.findIn(choices)?.values;
       if (values != null && values.isNotEmpty) return values.first;
     }
-    final direct = choices.firstWhereOrNull((choice) => choice.choiceId == choiceId);
+    final direct = choices.firstWhereOrNull(
+      (choice) => choice.choiceId == choiceId,
+    );
     return direct?.values.firstOrNull;
   }
 

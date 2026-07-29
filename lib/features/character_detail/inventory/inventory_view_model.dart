@@ -162,10 +162,7 @@ List<EquipmentItem> _sortEntries(List<_IndexedEquipmentItem> entries) {
   return entries.map((entry) => entry.item).toList();
 }
 
-String? _effectiveContainerId(
-  EquipmentItem item,
-  Set<String> containerIds,
-) {
+String? _effectiveContainerId(EquipmentItem item, Set<String> containerIds) {
   if (item.itemType == ItemType.container) return null;
   if (item.isEquipped) return null;
   final containerId = item.containerId;

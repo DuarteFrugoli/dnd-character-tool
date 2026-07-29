@@ -4,12 +4,14 @@ import '../../../data/models/models.dart';
 import '../character_detail_provider.dart';
 import 'vm_reference_utils.dart';
 
-final skillsTabVmProvider =
-    Provider.family<AsyncValue<SkillsTabVm>, String>((ref, characterId) {
+final skillsTabVmProvider = Provider.family<AsyncValue<SkillsTabVm>, String>((
+  ref,
+  characterId,
+) {
   return ref.watch(
-    characterDetailProvider(characterId).select(
-      (state) => state.whenData(SkillsTabVm.fromCharacter),
-    ),
+    characterDetailProvider(
+      characterId,
+    ).select((state) => state.whenData(SkillsTabVm.fromCharacter)),
   );
 });
 
@@ -39,9 +41,9 @@ class SkillsTabVm {
 
   @override
   int get hashCode => Object.hash(
-        referenceHash(character.abilityScores),
-        character.proficiencyBonus,
-        referenceHash(character.skillProficiencies),
-        referenceHash(character.skillExpertises),
-      );
+    referenceHash(character.abilityScores),
+    character.proficiencyBonus,
+    referenceHash(character.skillProficiencies),
+    referenceHash(character.skillExpertises),
+  );
 }

@@ -51,15 +51,9 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
         ? 0
         : groupSortOrders.reduce(math.max) + 1;
     final updated = await repo.save(
-      character.copyWith(
-        isPinned: isPinned,
-        sortOrder: sortOrder,
-      ),
+      character.copyWith(isPinned: isPinned, sortOrder: sortOrder),
     );
-    state = AsyncData(_sorted([
-      ...current.where((c) => c.id != id),
-      updated,
-    ]));
+    state = AsyncData(_sorted([...current.where((c) => c.id != id), updated]));
   }
 
   Future<void> reorder(int oldIndex, int newIndex) async {

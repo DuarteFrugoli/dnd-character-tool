@@ -540,11 +540,119 @@ abstract class AppLocalizations {
   /// **'Long Rest'**
   String get detailTooltipLongRest;
 
-  /// Character header action menu item placeholder for dice rolling.
+  /// Character header action menu item that opens the dice roller.
   ///
   /// In en, this message translates to:
   /// **'Roll dice'**
   String get characterActionRollDice;
+
+  /// Dice roller expression text field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Expression'**
+  String get diceExpressionLabel;
+
+  /// Dice roller expression text field hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Example: 1d20+5 or 4d6dl1'**
+  String get diceExpressionHint;
+
+  /// Dice roller expression help icon tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'How dice expressions work'**
+  String get diceExpressionHelpTooltip;
+
+  /// Dice roller expression help dialog title.
+  ///
+  /// In en, this message translates to:
+  /// **'Dice expressions'**
+  String get diceExpressionHelpTitle;
+
+  /// Dice roller expression help dialog body.
+  ///
+  /// In en, this message translates to:
+  /// **'Use XdY to roll dice: 2d6 rolls two six-sided dice.\nAdd or subtract modifiers: 1d20+5 or 2d6 - 1.\nUse d% or d100 for percentile dice.\nFor d20 advantage/disadvantage: 2d20kh1 keeps the highest, 2d20kl1 keeps the lowest.\nKeep/drop dice with kh, kl, dh, or dl. Example: 4d6dl1 rolls four d6 and drops the lowest.\nSpaces are optional: 2d6+1d8 and 2d6 + 1d8 both work.'**
+  String get diceExpressionHelpBody;
+
+  /// Dice roller quantity text field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get diceQuantityLabel;
+
+  /// Dice roller modifier text field label.
+  ///
+  /// In en, this message translates to:
+  /// **'Modifier'**
+  String get diceModifierLabel;
+
+  /// Dice roller primary roll button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll'**
+  String get diceRollButton;
+
+  /// Dice roller reroll button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll again'**
+  String get diceRerollButton;
+
+  /// Dice roller normal d20 mode label.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get diceModeNormal;
+
+  /// Dice roller advantage d20 mode label.
+  ///
+  /// In en, this message translates to:
+  /// **'Advantage'**
+  String get diceModeAdvantage;
+
+  /// Dice roller disadvantage d20 mode label.
+  ///
+  /// In en, this message translates to:
+  /// **'Disadvantage'**
+  String get diceModeDisadvantage;
+
+  /// Dice roller result card title.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get diceResultTitle;
+
+  /// Dice roller recent rolls section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent rolls'**
+  String get diceHistoryTitle;
+
+  /// Dice roller empty history message.
+  ///
+  /// In en, this message translates to:
+  /// **'No rolls yet.'**
+  String get diceNoRollsYet;
+
+  /// Dice roller natural one result chip.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural 1'**
+  String get diceNaturalOne;
+
+  /// Dice roller natural twenty result chip.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural 20'**
+  String get diceNaturalTwenty;
+
+  /// Dice roller invalid expression error message.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid dice expression: {message}'**
+  String diceInvalidExpression(String message);
 
   /// Cancel edit icon button tooltip.
   ///

@@ -243,6 +243,64 @@ class AppLocalizationsIt extends AppLocalizations {
   String get characterActionRollDice => 'Tirare i dadi';
 
   @override
+  String get diceExpressionLabel => 'Espressione';
+
+  @override
+  String get diceExpressionHint => 'Esempio: 1d20+5 o 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip =>
+      'Come funzionano le espressioni dei dadi';
+
+  @override
+  String get diceExpressionHelpTitle => 'Espressioni dei dadi';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'Usa XdY per tirare i dadi: 2d6 tira due dadi a 6 facce.\nAggiungi o sottrai modificatori: 1d20+5 o 2d6 - 1.\nUsa d% o d100 per i dadi percentuali.\nPer vantaggio/svantaggio con d20: 2d20kh1 tiene il più alto, 2d20kl1 tiene il più basso.\nTieni/scarta dadi con kh, kl, dh o dl. Esempio: 4d6dl1 tira quattro d6 e scarta il più basso.\nGli spazi sono opzionali: 2d6+1d8 e 2d6 + 1d8 funzionano entrambi.';
+
+  @override
+  String get diceQuantityLabel => 'Quantità';
+
+  @override
+  String get diceModifierLabel => 'Modificatore';
+
+  @override
+  String get diceRollButton => 'Tira';
+
+  @override
+  String get diceRerollButton => 'Tira di nuovo';
+
+  @override
+  String get diceModeNormal => 'Normale';
+
+  @override
+  String get diceModeAdvantage => 'Vantaggio';
+
+  @override
+  String get diceModeDisadvantage => 'Svantaggio';
+
+  @override
+  String get diceResultTitle => 'Risultato';
+
+  @override
+  String get diceHistoryTitle => 'Tiri recenti';
+
+  @override
+  String get diceNoRollsYet => 'Nessun tiro ancora.';
+
+  @override
+  String get diceNaturalOne => '1 naturale';
+
+  @override
+  String get diceNaturalTwenty => '20 naturale';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return 'Espressione dei dadi non valida: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => 'Annulla la modifica';
 
   @override

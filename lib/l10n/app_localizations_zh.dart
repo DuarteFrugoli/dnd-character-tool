@@ -233,6 +233,63 @@ class AppLocalizationsZh extends AppLocalizations {
   String get characterActionRollDice => '掷骰';
 
   @override
+  String get diceExpressionLabel => '表达式';
+
+  @override
+  String get diceExpressionHint => '示例：1d20+5 或 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip => '骰子表达式说明';
+
+  @override
+  String get diceExpressionHelpTitle => '骰子表达式';
+
+  @override
+  String get diceExpressionHelpBody =>
+      '使用 XdY 掷骰：2d6 表示掷两个六面骰。\n可以加减调整值：1d20+5 或 2d6 - 1。\n使用 d% 或 d100 表示百分骰。\nd20 的优势/劣势：2d20kh1 保留较高值，2d20kl1 保留较低值。\n使用 kh、kl、dh 或 dl 保留/丢弃骰子。示例：4d6dl1 掷四个 d6 并丢弃最低值。\n空格可选：2d6+1d8 和 2d6 + 1d8 都可以使用。';
+
+  @override
+  String get diceQuantityLabel => '数量';
+
+  @override
+  String get diceModifierLabel => '调整值';
+
+  @override
+  String get diceRollButton => '掷骰';
+
+  @override
+  String get diceRerollButton => '再次掷骰';
+
+  @override
+  String get diceModeNormal => '普通';
+
+  @override
+  String get diceModeAdvantage => '优势';
+
+  @override
+  String get diceModeDisadvantage => '劣势';
+
+  @override
+  String get diceResultTitle => '结果';
+
+  @override
+  String get diceHistoryTitle => '最近掷骰';
+
+  @override
+  String get diceNoRollsYet => '还没有掷骰。';
+
+  @override
+  String get diceNaturalOne => '自然 1';
+
+  @override
+  String get diceNaturalTwenty => '自然 20';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return '无效的骰子表达式：$message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => '取消编辑';
 
   @override

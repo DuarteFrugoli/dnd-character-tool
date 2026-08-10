@@ -239,6 +239,63 @@ class AppLocalizationsJa extends AppLocalizations {
   String get characterActionRollDice => 'ダイスを振る';
 
   @override
+  String get diceExpressionLabel => '式';
+
+  @override
+  String get diceExpressionHint => '例: 1d20+5 または 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip => 'ダイス式の使い方';
+
+  @override
+  String get diceExpressionHelpTitle => 'ダイス式';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'XdY でダイスを振ります: 2d6 は6面ダイスを2個振ります。\n修正値を足し引きできます: 1d20+5 または 2d6 - 1。\nd% または d100 はパーセンタイルダイスです。\nd20 の有利/不利: 2d20kh1 は高い方を残し、2d20kl1 は低い方を残します。\nkh、kl、dh、dl でダイスを残す/捨てることができます。例: 4d6dl1 は d6 を4個振って一番低い出目を捨てます。\nスペースは任意です: 2d6+1d8 と 2d6 + 1d8 はどちらも使えます。';
+
+  @override
+  String get diceQuantityLabel => '個数';
+
+  @override
+  String get diceModifierLabel => '修正値';
+
+  @override
+  String get diceRollButton => '振る';
+
+  @override
+  String get diceRerollButton => 'もう一度振る';
+
+  @override
+  String get diceModeNormal => '通常';
+
+  @override
+  String get diceModeAdvantage => '有利';
+
+  @override
+  String get diceModeDisadvantage => '不利';
+
+  @override
+  String get diceResultTitle => '結果';
+
+  @override
+  String get diceHistoryTitle => '最近のロール';
+
+  @override
+  String get diceNoRollsYet => 'まだロールはありません。';
+
+  @override
+  String get diceNaturalOne => 'ナチュラル1';
+
+  @override
+  String get diceNaturalTwenty => 'ナチュラル20';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return '無効なダイス式: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => '編集をキャンセルする';
 
   @override

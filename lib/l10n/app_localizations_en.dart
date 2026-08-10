@@ -243,6 +243,63 @@ class AppLocalizationsEn extends AppLocalizations {
   String get characterActionRollDice => 'Roll dice';
 
   @override
+  String get diceExpressionLabel => 'Expression';
+
+  @override
+  String get diceExpressionHint => 'Example: 1d20+5 or 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip => 'How dice expressions work';
+
+  @override
+  String get diceExpressionHelpTitle => 'Dice expressions';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'Use XdY to roll dice: 2d6 rolls two six-sided dice.\nAdd or subtract modifiers: 1d20+5 or 2d6 - 1.\nUse d% or d100 for percentile dice.\nFor d20 advantage/disadvantage: 2d20kh1 keeps the highest, 2d20kl1 keeps the lowest.\nKeep/drop dice with kh, kl, dh, or dl. Example: 4d6dl1 rolls four d6 and drops the lowest.\nSpaces are optional: 2d6+1d8 and 2d6 + 1d8 both work.';
+
+  @override
+  String get diceQuantityLabel => 'Quantity';
+
+  @override
+  String get diceModifierLabel => 'Modifier';
+
+  @override
+  String get diceRollButton => 'Roll';
+
+  @override
+  String get diceRerollButton => 'Roll again';
+
+  @override
+  String get diceModeNormal => 'Normal';
+
+  @override
+  String get diceModeAdvantage => 'Advantage';
+
+  @override
+  String get diceModeDisadvantage => 'Disadvantage';
+
+  @override
+  String get diceResultTitle => 'Result';
+
+  @override
+  String get diceHistoryTitle => 'Recent rolls';
+
+  @override
+  String get diceNoRollsYet => 'No rolls yet.';
+
+  @override
+  String get diceNaturalOne => 'Natural 1';
+
+  @override
+  String get diceNaturalTwenty => 'Natural 20';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return 'Invalid dice expression: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => 'Cancel editing';
 
   @override

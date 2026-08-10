@@ -243,6 +243,64 @@ class AppLocalizationsEs extends AppLocalizations {
   String get characterActionRollDice => 'Tirar dados';
 
   @override
+  String get diceExpressionLabel => 'Expresión';
+
+  @override
+  String get diceExpressionHint => 'Ejemplo: 1d20+5 o 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip =>
+      'Cómo funcionan las expresiones de dados';
+
+  @override
+  String get diceExpressionHelpTitle => 'Expresiones de dados';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'Usa XdY para tirar dados: 2d6 tira dos dados de 6 caras.\nSuma o resta modificadores: 1d20+5 o 2d6 - 1.\nUsa d% o d100 para dados percentiles.\nPara ventaja/desventaja con d20: 2d20kh1 conserva el mayor, 2d20kl1 conserva el menor.\nConserva/descarta dados con kh, kl, dh o dl. Ejemplo: 4d6dl1 tira cuatro d6 y descarta el menor.\nLos espacios son opcionales: 2d6+1d8 y 2d6 + 1d8 funcionan.';
+
+  @override
+  String get diceQuantityLabel => 'Cantidad';
+
+  @override
+  String get diceModifierLabel => 'Modificador';
+
+  @override
+  String get diceRollButton => 'Tirar';
+
+  @override
+  String get diceRerollButton => 'Tirar de nuevo';
+
+  @override
+  String get diceModeNormal => 'Normal';
+
+  @override
+  String get diceModeAdvantage => 'Ventaja';
+
+  @override
+  String get diceModeDisadvantage => 'Desventaja';
+
+  @override
+  String get diceResultTitle => 'Resultado';
+
+  @override
+  String get diceHistoryTitle => 'Tiradas recientes';
+
+  @override
+  String get diceNoRollsYet => 'Aún no hay tiradas.';
+
+  @override
+  String get diceNaturalOne => '1 natural';
+
+  @override
+  String get diceNaturalTwenty => '20 natural';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return 'Expresión de dados inválida: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => 'Cancelar edición';
 
   @override

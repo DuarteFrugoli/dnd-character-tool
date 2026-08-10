@@ -244,6 +244,64 @@ class AppLocalizationsPt extends AppLocalizations {
   String get characterActionRollDice => 'Rolar dados';
 
   @override
+  String get diceExpressionLabel => 'Expressão';
+
+  @override
+  String get diceExpressionHint => 'Exemplo: 1d20+5 ou 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip =>
+      'Como funcionam as expressões de dados';
+
+  @override
+  String get diceExpressionHelpTitle => 'Expressões de dados';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'Use XdY para rolar dados: 2d6 rola dois dados de 6 lados.\nAdicione ou subtraia modificadores: 1d20+5 ou 2d6 - 1.\nUse d% ou d100 para dado percentual.\nPara vantagem/desvantagem no d20: 2d20kh1 mantém o maior, 2d20kl1 mantém o menor.\nMantenha/descarte dados com kh, kl, dh ou dl. Exemplo: 4d6dl1 rola quatro d6 e descarta o menor.\nEspaços são opcionais: 2d6+1d8 e 2d6 + 1d8 funcionam.';
+
+  @override
+  String get diceQuantityLabel => 'Quantidade';
+
+  @override
+  String get diceModifierLabel => 'Modificador';
+
+  @override
+  String get diceRollButton => 'Rolar';
+
+  @override
+  String get diceRerollButton => 'Rolar novamente';
+
+  @override
+  String get diceModeNormal => 'Normal';
+
+  @override
+  String get diceModeAdvantage => 'Vantagem';
+
+  @override
+  String get diceModeDisadvantage => 'Desvantagem';
+
+  @override
+  String get diceResultTitle => 'Resultado';
+
+  @override
+  String get diceHistoryTitle => 'Rolagens recentes';
+
+  @override
+  String get diceNoRollsYet => 'Nenhuma rolagem ainda.';
+
+  @override
+  String get diceNaturalOne => '1 natural';
+
+  @override
+  String get diceNaturalTwenty => '20 natural';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return 'Expressão de dados inválida: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => 'Cancelar edição';
 
   @override

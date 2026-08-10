@@ -245,6 +245,63 @@ class AppLocalizationsDe extends AppLocalizations {
   String get characterActionRollDice => 'Würfel werfen';
 
   @override
+  String get diceExpressionLabel => 'Ausdruck';
+
+  @override
+  String get diceExpressionHint => 'Beispiel: 1d20+5 oder 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip => 'So funktionieren Würfelausdrücke';
+
+  @override
+  String get diceExpressionHelpTitle => 'Würfelausdrücke';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'Nutze XdY zum Würfeln: 2d6 würfelt zwei sechsseitige Würfel.\nAddiere oder subtrahiere Modifikatoren: 1d20+5 oder 2d6 - 1.\nNutze d% oder d100 für Prozentwürfel.\nFür Vorteil/Nachteil mit d20: 2d20kh1 behält den höchsten, 2d20kl1 behält den niedrigsten.\nBehalte/streiche Würfel mit kh, kl, dh oder dl. Beispiel: 4d6dl1 würfelt vier d6 und streicht den niedrigsten.\nLeerzeichen sind optional: 2d6+1d8 und 2d6 + 1d8 funktionieren beide.';
+
+  @override
+  String get diceQuantityLabel => 'Anzahl';
+
+  @override
+  String get diceModifierLabel => 'Modifikator';
+
+  @override
+  String get diceRollButton => 'Würfeln';
+
+  @override
+  String get diceRerollButton => 'Erneut würfeln';
+
+  @override
+  String get diceModeNormal => 'Normal';
+
+  @override
+  String get diceModeAdvantage => 'Vorteil';
+
+  @override
+  String get diceModeDisadvantage => 'Nachteil';
+
+  @override
+  String get diceResultTitle => 'Ergebnis';
+
+  @override
+  String get diceHistoryTitle => 'Letzte Würfe';
+
+  @override
+  String get diceNoRollsYet => 'Noch keine Würfe.';
+
+  @override
+  String get diceNaturalOne => 'Natürliche 1';
+
+  @override
+  String get diceNaturalTwenty => 'Natürliche 20';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return 'Ungültiger Würfelausdruck: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => 'Bearbeitung abbrechen';
 
   @override

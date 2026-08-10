@@ -245,6 +245,64 @@ class AppLocalizationsFr extends AppLocalizations {
   String get characterActionRollDice => 'Lancer les dés';
 
   @override
+  String get diceExpressionLabel => 'Expression';
+
+  @override
+  String get diceExpressionHint => 'Exemple : 1d20+5 ou 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip =>
+      'Fonctionnement des expressions de dés';
+
+  @override
+  String get diceExpressionHelpTitle => 'Expressions de dés';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'Utilisez XdY pour lancer des dés : 2d6 lance deux dés à 6 faces.\nAjoutez ou soustrayez des modificateurs : 1d20+5 ou 2d6 - 1.\nUtilisez d% ou d100 pour un dé de pourcentage.\nPour avantage/désavantage au d20 : 2d20kh1 garde le plus haut, 2d20kl1 garde le plus bas.\nGardez/retirez des dés avec kh, kl, dh ou dl. Exemple : 4d6dl1 lance quatre d6 et retire le plus bas.\nLes espaces sont facultatifs : 2d6+1d8 et 2d6 + 1d8 fonctionnent.';
+
+  @override
+  String get diceQuantityLabel => 'Quantité';
+
+  @override
+  String get diceModifierLabel => 'Modificateur';
+
+  @override
+  String get diceRollButton => 'Lancer';
+
+  @override
+  String get diceRerollButton => 'Relancer';
+
+  @override
+  String get diceModeNormal => 'Normal';
+
+  @override
+  String get diceModeAdvantage => 'Avantage';
+
+  @override
+  String get diceModeDisadvantage => 'Désavantage';
+
+  @override
+  String get diceResultTitle => 'Résultat';
+
+  @override
+  String get diceHistoryTitle => 'Lancers récents';
+
+  @override
+  String get diceNoRollsYet => 'Aucun lancer pour le moment.';
+
+  @override
+  String get diceNaturalOne => '1 naturel';
+
+  @override
+  String get diceNaturalTwenty => '20 naturel';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return 'Expression de dés invalide : $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => 'Annuler la modification';
 
   @override

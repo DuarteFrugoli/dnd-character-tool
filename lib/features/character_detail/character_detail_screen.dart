@@ -30,6 +30,7 @@ import 'character_detail_provider.dart';
 import 'inventory/inventory_search_catalog.dart';
 import 'inventory/inventory_view_model.dart';
 import 'level_up_wizard_sheet.dart';
+import 'widgets/dice/dice_roller_sheet.dart';
 import 'widgets/detail_widgets.dart';
 import 'widgets/feature_choice_editor.dart';
 
@@ -320,6 +321,10 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             onSelected: (action) {
               switch (action) {
                 case _CharacterHeaderAction.rollDice:
+                  openDiceRollerSheet(
+                    context,
+                    characterId: widget.characterId,
+                  );
                   return;
                 case _CharacterHeaderAction.levelUp:
                   _openLevelUpForCurrentCharacter();
@@ -332,7 +337,6 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             itemBuilder: (context) => [
               PopupMenuItem(
                 value: _CharacterHeaderAction.rollDice,
-                enabled: false,
                 child: _CharacterActionMenuItem(
                   icon: Icons.casino_outlined,
                   label: l10n.characterActionRollDice,

@@ -240,6 +240,63 @@ class AppLocalizationsKo extends AppLocalizations {
   String get characterActionRollDice => '주사위 굴리기';
 
   @override
+  String get diceExpressionLabel => '식';
+
+  @override
+  String get diceExpressionHint => '예: 1d20+5 또는 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip => '주사위 식 사용 방법';
+
+  @override
+  String get diceExpressionHelpTitle => '주사위 식';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'XdY로 주사위를 굴립니다: 2d6은 6면체 주사위 2개를 굴립니다.\n수정치를 더하거나 뺄 수 있습니다: 1d20+5 또는 2d6 - 1.\nd% 또는 d100은 백분율 주사위입니다.\nd20 이점/불리점: 2d20kh1은 높은 값을 남기고, 2d20kl1은 낮은 값을 남깁니다.\nkh, kl, dh, dl로 주사위를 남기거나 버릴 수 있습니다. 예: 4d6dl1은 d6 4개를 굴리고 가장 낮은 값을 버립니다.\n공백은 선택 사항입니다: 2d6+1d8과 2d6 + 1d8 모두 작동합니다.';
+
+  @override
+  String get diceQuantityLabel => '개수';
+
+  @override
+  String get diceModifierLabel => '수정치';
+
+  @override
+  String get diceRollButton => '굴리기';
+
+  @override
+  String get diceRerollButton => '다시 굴리기';
+
+  @override
+  String get diceModeNormal => '일반';
+
+  @override
+  String get diceModeAdvantage => '이점';
+
+  @override
+  String get diceModeDisadvantage => '불리점';
+
+  @override
+  String get diceResultTitle => '결과';
+
+  @override
+  String get diceHistoryTitle => '최근 굴림';
+
+  @override
+  String get diceNoRollsYet => '아직 굴림이 없습니다.';
+
+  @override
+  String get diceNaturalOne => '내추럴 1';
+
+  @override
+  String get diceNaturalTwenty => '내추럴 20';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return '잘못된 주사위 식: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => '편집 취소';
 
   @override

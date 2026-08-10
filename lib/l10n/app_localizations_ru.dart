@@ -244,6 +244,63 @@ class AppLocalizationsRu extends AppLocalizations {
   String get characterActionRollDice => 'Бросить кости';
 
   @override
+  String get diceExpressionLabel => 'Выражение';
+
+  @override
+  String get diceExpressionHint => 'Пример: 1d20+5 или 4d6dl1';
+
+  @override
+  String get diceExpressionHelpTooltip => 'Как работают выражения бросков';
+
+  @override
+  String get diceExpressionHelpTitle => 'Выражения бросков';
+
+  @override
+  String get diceExpressionHelpBody =>
+      'Используйте XdY для броска: 2d6 бросает две шестигранные кости.\nДобавляйте или вычитайте модификаторы: 1d20+5 или 2d6 - 1.\nИспользуйте d% или d100 для процентной кости.\nДля преимущества/помехи на d20: 2d20kh1 оставляет больший результат, 2d20kl1 оставляет меньший.\nОставляйте/отбрасывайте кости с kh, kl, dh или dl. Пример: 4d6dl1 бросает четыре d6 и отбрасывает меньшую.\nПробелы необязательны: 2d6+1d8 и 2d6 + 1d8 оба работают.';
+
+  @override
+  String get diceQuantityLabel => 'Количество';
+
+  @override
+  String get diceModifierLabel => 'Модификатор';
+
+  @override
+  String get diceRollButton => 'Бросить';
+
+  @override
+  String get diceRerollButton => 'Бросить снова';
+
+  @override
+  String get diceModeNormal => 'Обычно';
+
+  @override
+  String get diceModeAdvantage => 'Преимущество';
+
+  @override
+  String get diceModeDisadvantage => 'Помеха';
+
+  @override
+  String get diceResultTitle => 'Результат';
+
+  @override
+  String get diceHistoryTitle => 'Последние броски';
+
+  @override
+  String get diceNoRollsYet => 'Бросков пока нет.';
+
+  @override
+  String get diceNaturalOne => 'Натуральная 1';
+
+  @override
+  String get diceNaturalTwenty => 'Натуральная 20';
+
+  @override
+  String diceInvalidExpression(String message) {
+    return 'Недопустимое выражение броска: $message';
+  }
+
+  @override
   String get detailTooltipCancelEdit => 'Отменить редактирование';
 
   @override

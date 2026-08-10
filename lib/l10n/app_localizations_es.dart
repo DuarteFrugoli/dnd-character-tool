@@ -240,6 +240,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get detailTooltipLongRest => 'Descanso largo';
 
   @override
+  String get characterActionRollDice => 'Tirar dados';
+
+  @override
   String get detailTooltipCancelEdit => 'Cancelar edición';
 
   @override

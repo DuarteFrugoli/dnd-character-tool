@@ -71,6 +71,7 @@
   "detailLeaveAndDiscard": "Verlassen und entsorgen",
   "detailErrorLoading": "Fehler beim Laden des Zeichens: {error}",
   "detailTooltipLongRest": "Lange Pause",
+  "characterActionRollDice": "Würfel werfen",
   "detailTooltipCancelEdit": "Bearbeitung abbrechen",
   "detailTooltipDoneEditing": "Bearbeitung abgeschlossen",
   "detailTooltipEditCharacter": "Charakter bearbeiten",

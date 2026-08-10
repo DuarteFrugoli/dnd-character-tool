@@ -71,6 +71,7 @@
   "detailLeaveAndDiscard": "Lasciare e scartare",
   "detailErrorLoading": "Errore durante il caricamento del carattere: {error}",
   "detailTooltipLongRest": "Riposo lungo",
+  "characterActionRollDice": "Tirare i dadi",
   "detailTooltipCancelEdit": "Annulla la modifica",
   "detailTooltipDoneEditing": "Modifica completata",
   "detailTooltipEditCharacter": "Modifica personaggio",

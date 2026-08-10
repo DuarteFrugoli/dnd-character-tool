@@ -71,6 +71,7 @@
   "detailLeaveAndDiscard": "Оставить и выбросить",
   "detailErrorLoading": "Ошибка загрузки символа: {error}.",
   "detailTooltipLongRest": "Длительный отдых",
+  "characterActionRollDice": "Бросить кости",
   "detailTooltipCancelEdit": "Отменить редактирование",
   "detailTooltipDoneEditing": "Закончено редактирование",
   "detailTooltipEditCharacter": "Редактировать персонажа",

@@ -71,6 +71,7 @@
   "detailLeaveAndDiscard": "떠나서 버리세요",
   "detailErrorLoading": "문자 로드 중 오류 발생: {error}",
   "detailTooltipLongRest": "긴 휴식",
+  "characterActionRollDice": "주사위 굴리기",
   "detailTooltipCancelEdit": "편집 취소",
   "detailTooltipDoneEditing": "편집 완료",
   "detailTooltipEditCharacter": "캐릭터 편집",

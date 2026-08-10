@@ -71,6 +71,7 @@
   "detailLeaveAndDiscard": "放置して捨てる",
   "detailErrorLoading": "文字のロード中にエラーが発生しました: {error}",
   "detailTooltipLongRest": "長い休憩",
+  "characterActionRollDice": "ダイスを振る",
   "detailTooltipCancelEdit": "編集をキャンセルする",
   "detailTooltipDoneEditing": "編集が完了しました",
   "detailTooltipEditCharacter": "キャラクターを編集する",

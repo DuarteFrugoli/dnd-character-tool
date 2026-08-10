@@ -242,6 +242,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get detailTooltipLongRest => 'Lange Pause';
 
   @override
+  String get characterActionRollDice => 'Würfel werfen';
+
+  @override
   String get detailTooltipCancelEdit => 'Bearbeitung abbrechen';
 
   @override

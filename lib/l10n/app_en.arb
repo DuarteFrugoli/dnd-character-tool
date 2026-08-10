@@ -224,6 +224,9 @@
   "detailTooltipLongRest": "Long Rest",
   "@detailTooltipLongRest": { "description": "Long rest icon button tooltip." },
 
+  "characterActionRollDice": "Roll dice",
+  "@characterActionRollDice": { "description": "Character header action menu item placeholder for dice rolling." },
+
   "detailTooltipCancelEdit": "Cancel editing",
   "@detailTooltipCancelEdit": { "description": "Cancel edit icon button tooltip." },
 

@@ -71,6 +71,7 @@
   "detailLeaveAndDiscard": "留下并丢弃",
   "detailErrorLoading": "加载字符时出错：{error}",
   "detailTooltipLongRest": "长时间休息",
+  "characterActionRollDice": "掷骰",
   "detailTooltipCancelEdit": "取消编辑",
   "detailTooltipDoneEditing": "编辑完成",
   "detailTooltipEditCharacter": "编辑角色",

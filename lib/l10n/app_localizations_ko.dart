@@ -237,6 +237,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get detailTooltipLongRest => '긴 휴식';
 
   @override
+  String get characterActionRollDice => '주사위 굴리기';
+
+  @override
   String get detailTooltipCancelEdit => '편집 취소';
 
   @override

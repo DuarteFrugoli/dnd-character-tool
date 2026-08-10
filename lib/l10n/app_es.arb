@@ -71,6 +71,7 @@
   "detailLeaveAndDiscard": "Dejar y descartar",
   "detailErrorLoading": "Error al cargar el carácter: {error}",
   "detailTooltipLongRest": "Descanso largo",
+  "characterActionRollDice": "Tirar dados",
   "detailTooltipCancelEdit": "Cancelar edición",
   "detailTooltipDoneEditing": "Edición terminada",
   "detailTooltipEditCharacter": "Editar personaje",

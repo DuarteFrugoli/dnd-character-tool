@@ -236,6 +236,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detailTooltipLongRest => '長い休憩';
 
   @override
+  String get characterActionRollDice => 'ダイスを振る';
+
+  @override
   String get detailTooltipCancelEdit => '編集をキャンセルする';
 
   @override

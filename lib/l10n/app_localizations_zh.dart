@@ -230,6 +230,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get detailTooltipLongRest => '长时间休息';
 
   @override
+  String get characterActionRollDice => '掷骰';
+
+  @override
   String get detailTooltipCancelEdit => '取消编辑';
 
   @override

@@ -241,6 +241,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get detailTooltipLongRest => 'Длительный отдых';
 
   @override
+  String get characterActionRollDice => 'Бросить кости';
+
+  @override
   String get detailTooltipCancelEdit => 'Отменить редактирование';
 
   @override

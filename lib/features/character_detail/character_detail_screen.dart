@@ -75,6 +75,27 @@ const _skillAbility = <String, String>{
 
 String _sign(int n) => n >= 0 ? '+$n' : '$n';
 
+enum _CharacterHeaderAction { rollDice, levelUp, rest }
+
+class _CharacterActionMenuItem extends StatelessWidget {
+  const _CharacterActionMenuItem({required this.icon, required this.label});
+
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 20),
+        const SizedBox(width: 12),
+        Text(label),
+      ],
+    );
+  }
+}
+
 // ── Edit Guard ─────────────────────────────────────────────────────────────────
 // Shared object that lets the tab screen know when a child tab is in edit mode
 // and request a discard-confirmation before allowing the tab to change.
@@ -264,6 +285,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
 
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 72,
@@ -292,16 +314,47 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           ],
         ),
         actions: [
-          if (!header.xpTrackingEnabled)
-            IconButton(
-              icon: const Icon(Icons.keyboard_double_arrow_up),
-              tooltip: AppLocalizations.of(context)!.tooltipLevelUp,
-              onPressed: _openLevelUpForCurrentCharacter,
-            ),
-          IconButton(
-            icon: const Icon(Icons.hotel_outlined),
-            tooltip: AppLocalizations.of(context)!.restPickerTitle,
-            onPressed: _showRestPickerForCurrentCharacter,
+          PopupMenuButton<_CharacterHeaderAction>(
+            icon: const Icon(Icons.more_vert),
+            tooltip: MaterialLocalizations.of(context).moreButtonTooltip,
+            onSelected: (action) {
+              switch (action) {
+                case _CharacterHeaderAction.rollDice:
+                  return;
+                case _CharacterHeaderAction.levelUp:
+                  _openLevelUpForCurrentCharacter();
+                  return;
+                case _CharacterHeaderAction.rest:
+                  _showRestPickerForCurrentCharacter();
+                  return;
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: _CharacterHeaderAction.rollDice,
+                enabled: false,
+                child: _CharacterActionMenuItem(
+                  icon: Icons.casino_outlined,
+                  label: l10n.characterActionRollDice,
+                ),
+              ),
+              const PopupMenuDivider(),
+              if (!header.xpTrackingEnabled)
+                PopupMenuItem(
+                  value: _CharacterHeaderAction.levelUp,
+                  child: _CharacterActionMenuItem(
+                    icon: Icons.keyboard_double_arrow_up,
+                    label: l10n.tooltipLevelUp,
+                  ),
+                ),
+              PopupMenuItem(
+                value: _CharacterHeaderAction.rest,
+                child: _CharacterActionMenuItem(
+                  icon: Icons.hotel_outlined,
+                  label: l10n.restPickerTitle,
+                ),
+              ),
+            ],
           ),
         ],
         bottom: TabBar(

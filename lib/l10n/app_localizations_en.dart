@@ -240,6 +240,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get detailTooltipLongRest => 'Long Rest';
 
   @override
+  String get characterActionRollDice => 'Roll dice';
+
+  @override
   String get detailTooltipCancelEdit => 'Cancel editing';
 
   @override

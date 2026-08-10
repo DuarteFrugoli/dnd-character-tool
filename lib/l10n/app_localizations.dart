@@ -540,6 +540,12 @@ abstract class AppLocalizations {
   /// **'Long Rest'**
   String get detailTooltipLongRest;
 
+  /// Character header action menu item placeholder for dice rolling.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll dice'**
+  String get characterActionRollDice;
+
   /// Cancel edit icon button tooltip.
   ///
   /// In en, this message translates to:

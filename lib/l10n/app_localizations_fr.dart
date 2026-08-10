@@ -242,6 +242,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get detailTooltipLongRest => 'Long repos';
 
   @override
+  String get characterActionRollDice => 'Lancer les dés';
+
+  @override
   String get detailTooltipCancelEdit => 'Annuler la modification';
 
   @override

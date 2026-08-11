@@ -105,6 +105,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 | Web file download | package:web (dart:js_interop) |
 | UI utilities | flutter_sticky_header, uuid, collection |
 
+
 ## Platforms
 
 | Platform | Status |

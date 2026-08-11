@@ -1,4 +1,4 @@
-part of '../character_detail_screen.dart';
+import '../character_detail_dependencies.dart';
 
 // ── Notes Tab ─────────────────────────────────────────────────────────────────
 
@@ -39,16 +39,20 @@ enum _NoteCardAction { edit, togglePinned, delete }
 
 enum _NoteCloseAction { keepEditing, discard, save }
 
-class _NotesTab extends ConsumerStatefulWidget {
-  const _NotesTab({required this.notes, required this.characterId});
+class NotesTab extends ConsumerStatefulWidget {
+  const NotesTab({
+    super.key,
+    required this.notes,
+    required this.characterId,
+  });
   final List<CharacterNote> notes;
   final String characterId;
 
   @override
-  ConsumerState<_NotesTab> createState() => _NotesTabState();
+  ConsumerState<NotesTab> createState() => _NotesTabState();
 }
 
-class _NotesTabState extends ConsumerState<_NotesTab>
+class _NotesTabState extends ConsumerState<NotesTab>
     with AutomaticKeepAliveClientMixin {
   late final TextEditingController _searchCtrl;
   String? _selectedTagKey;

@@ -1,4 +1,5 @@
-part of '../../character_detail_screen.dart';
+import '../../character_detail_dependencies.dart';
+import 'inventory_display_helpers.dart';
 
 class _ItemDetailSection extends StatelessWidget {
   const _ItemDetailSection({required this.title, required this.child});
@@ -29,7 +30,7 @@ class _ItemDetailSection extends StatelessWidget {
   }
 }
 
-void _showItemDetailsSheet(
+void showItemDetailsSheet(
   BuildContext context,
   WidgetRef ref,
   EquipmentItem item,
@@ -40,8 +41,8 @@ void _showItemDetailsSheet(
   final unitSystem = ref.read(unitSystemProvider);
   final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
   final l10n = AppLocalizations.of(context)!;
-  final baseRows = _itemBaseDetailRows(item, unitSystem, l10n, i18n);
-  final propertyRows = _itemPropertyDetailRows(item, unitSystem, i18n, l10n);
+  final baseRows = itemBaseDetailRows(item, unitSystem, l10n, i18n);
+  final propertyRows = itemPropertyDetailRows(item, unitSystem, i18n, l10n);
   final description = item.description?.trim();
 
   showModalBottomSheet(
@@ -70,7 +71,7 @@ void _showItemDetailsSheet(
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
             child: Text(
-              _itemQuantityTitle(displayName, item.quantity),
+              itemQuantityTitle(displayName, item.quantity),
               style: Theme.of(
                 context,
               ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -92,7 +93,7 @@ void _showItemDetailsSheet(
               children: [
                 _ItemDetailSection(
                   title: l10n.inventoryDetailSummary,
-                  child: _ItemDetailRows(rows: baseRows),
+                  child: ItemDetailRows(rows: baseRows),
                 ),
                 if (description != null && description.isNotEmpty)
                   _ItemDetailSection(
@@ -105,7 +106,7 @@ void _showItemDetailsSheet(
                 if (propertyRows.isNotEmpty)
                   _ItemDetailSection(
                     title: l10n.inventoryDetailAttributes,
-                    child: _ItemDetailRows(rows: propertyRows),
+                    child: ItemDetailRows(rows: propertyRows),
                   ),
               ],
             ),

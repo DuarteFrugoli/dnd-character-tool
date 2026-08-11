@@ -1,4 +1,5 @@
-part of '../character_detail_screen.dart';
+import '../character_detail_dependencies.dart';
+import '../widgets/spells/spell_widgets.dart';
 
 /// Classes that have access to their full class spell list and prepare daily.
 /// Wizard is not included: it uses a spellbook and the player adds spells.
@@ -7,17 +8,21 @@ bool _isPrepareAllClass(String className) {
   return prepareAll.contains(className.toLowerCase());
 }
 
-class _SpellsTab extends ConsumerStatefulWidget {
-  const _SpellsTab({required this.character, required this.characterId});
+class SpellsTab extends ConsumerStatefulWidget {
+  const SpellsTab({
+    super.key,
+    required this.character,
+    required this.characterId,
+  });
 
   final Character character;
   final String characterId;
 
   @override
-  ConsumerState<_SpellsTab> createState() => _SpellsTabState();
+  ConsumerState<SpellsTab> createState() => _SpellsTabState();
 }
 
-class _SpellsTabState extends ConsumerState<_SpellsTab>
+class _SpellsTabState extends ConsumerState<SpellsTab>
     with AutomaticKeepAliveClientMixin {
   Map<String, SrdSpell>? _spellIndex;
   List<SrdSpell>? _classAllSpells;
@@ -128,7 +133,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
   }
 
   @override
-  void didUpdateWidget(_SpellsTab old) {
+  void didUpdateWidget(SpellsTab old) {
     super.didUpdateWidget(old);
     if (old.character.primaryClass.className !=
             widget.character.primaryClass.className ||
@@ -274,7 +279,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                   sliver: SliverList(
                     delegate: SliverChildListDelegate([
                       if (engine != null) ...[
-                        _SpellcastingBanner(
+                        SpellcastingBanner(
                           engine: engine,
                           preparedCount: prepares ? preparedCount : null,
                           maxPrepared: prepares ? engine.maxPrepared : null,
@@ -292,7 +297,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                         const SizedBox(height: 8),
                         for (int level = 1; level <= 9; level++)
                           if (character.spellSlots.total[level - 1] > 0)
-                            _SpellSlotRow(
+                            SpellSlotRow(
                               level: level,
                               total: character.spellSlots.total[level - 1],
                               used: character.spellSlots.used[level - 1],
@@ -320,7 +325,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                         ),
                         const SizedBox(height: 4),
                         for (final innate in character.innateSpells)
-                          _InnateSpellRow(
+                          InnateSpellRow(
                             spell: innate,
                             i18n: i18n,
                             onUse: innate.canUse && !innate.isAtWill
@@ -346,7 +351,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                         const SizedBox(height: 16),
                       ],
                       if (character.concentrationSpell != null)
-                        _ConcentrationBanner(
+                        ConcentrationBanner(
                           spellName: character.concentrationSpell!,
                           i18n: i18n,
                           onBreak: () => ref
@@ -365,7 +370,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                     SliverPadding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       sliver: SliverToBoxAdapter(
-                        child: _SpellLevelHeader(level: level),
+                        child: SpellLevelHeader(level: level),
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 4)),
@@ -381,7 +386,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                               isPrepareAll &&
                               spell.level > 0 &&
                               !spell.isAlwaysPrepared;
-                          return _SpellRow(
+                          return SpellRow(
                             spell: spell,
                             srdSpell: _spellIndex![spell.name.toLowerCase()],
                             showPrepareToggle:
@@ -544,7 +549,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                     SliverPadding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       sliver: SliverToBoxAdapter(
-                        child: _SpellLevelHeader(level: level),
+                        child: SpellLevelHeader(level: level),
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 4)),
@@ -553,7 +558,7 @@ class _SpellsTabState extends ConsumerState<_SpellsTab>
                       sliver: SliverList(
                         delegate: SliverChildBuilderDelegate((context, index) {
                           final spell = _extraByLevel[level]![index];
-                          return _SpellRow(
+                          return SpellRow(
                             spell: spell,
                             srdSpell: _spellIndex![spell.name.toLowerCase()],
                             showPrepareToggle:

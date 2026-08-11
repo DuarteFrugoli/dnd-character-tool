@@ -1,14 +1,16 @@
-part of '../../character_detail_screen.dart';
+import '../../character_detail_dependencies.dart';
+import 'feature_detail_sheet.dart';
+import 'feature_support.dart';
 
-class _AddFeatureSheet extends ConsumerStatefulWidget {
-  const _AddFeatureSheet({required this.characterId});
+class AddFeatureSheet extends ConsumerStatefulWidget {
+  const AddFeatureSheet({super.key, required this.characterId});
   final String characterId;
 
   @override
-  ConsumerState<_AddFeatureSheet> createState() => _AddFeatureSheetState();
+  ConsumerState<AddFeatureSheet> createState() => _AddFeatureSheetState();
 }
 
-class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
+class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
     with SingleTickerProviderStateMixin {
   final _search = TextEditingController();
   final _customNameCtrl = TextEditingController();
@@ -247,7 +249,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
     final displayName = nameTranslator?.call(feature.name) ?? feature.name;
     final displayDescription =
         descriptionTranslator?.call(feature.name) ?? feature.description;
-    final typeLabel = _featureTypeLabel(feature.type, context);
+    final typeLabel = featureTypeLabel(feature.type, context);
     final displaySubtitle =
         subtitle ??
         '${AppLocalizations.of(context)!.charCardLevel(feature.level)} · $typeLabel';
@@ -285,7 +287,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
           context: context,
           isScrollControlled: true,
           useSafeArea: true,
-          builder: (_) => _FeatureDetailSheet(
+          builder: (_) => FeatureDetailSheet(
             name: displayName,
             description: displayDescription,
             subtitle: displaySubtitle,
@@ -366,7 +368,7 @@ class _AddFeatureSheetState extends ConsumerState<_AddFeatureSheet>
               context: context,
               isScrollControlled: true,
               useSafeArea: true,
-              builder: (_) => _FeatureDetailSheet(
+              builder: (_) => FeatureDetailSheet(
                 name: displayName,
                 description: displayDesc,
                 subtitle: subtitle,

@@ -1,22 +1,23 @@
-part of '../character_detail_screen.dart';
+import '../character_detail_dependencies.dart';
 
 // ── Stats Tab ─────────────────────────────────────────────────────────────────
 
-class _StatsTab extends ConsumerStatefulWidget {
-  const _StatsTab({
+class StatsTab extends ConsumerStatefulWidget {
+  const StatsTab({
+    super.key,
     required this.character,
     required this.characterId,
     required this.editGuard,
   });
   final Character character;
   final String characterId;
-  final _EditGuard editGuard;
+  final EditGuard editGuard;
 
   @override
-  ConsumerState<_StatsTab> createState() => _StatsTabState();
+  ConsumerState<StatsTab> createState() => _StatsTabState();
 }
 
-class _StatsTabState extends ConsumerState<_StatsTab> {
+class _StatsTabState extends ConsumerState<StatsTab> {
   static const _classHitDie = {
     'barbarian': 12,
     'fighter': 10,
@@ -213,7 +214,7 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
   }
 
   @override
-  void didUpdateWidget(_StatsTab old) {
+  void didUpdateWidget(StatsTab old) {
     super.didUpdateWidget(old);
     final c = widget.character;
     if (!_hpMaxFocus.hasFocus) _hpMaxCtrl.text = '${c.hitPoints.maximum}';
@@ -610,11 +611,11 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                                   DetailStatChip(l10n.statArmor, armorSummary),
                                   DetailStatChip(
                                     l10n.statInitiative,
-                                    _sign(character.initiative),
+                                    sign(character.initiative),
                                   ),
                                   DetailStatChip(
                                     l10n.statProfBonus,
-                                    _sign(character.proficiencyBonus),
+                                    sign(character.proficiencyBonus),
                                   ),
                                   DetailStatChip(
                                     l10n.statPassivePerc,
@@ -642,11 +643,11 @@ class _StatsTabState extends ConsumerState<_StatsTab> {
                               ),
                               DetailStatChip(
                                 l10n.statInitiative,
-                                _sign(character.initiative),
+                                sign(character.initiative),
                               ),
                               DetailStatChip(
                                 l10n.statProfBonus,
-                                _sign(character.proficiencyBonus),
+                                sign(character.proficiencyBonus),
                               ),
                               DetailStatChip(
                                 l10n.statPassivePerc,
@@ -1348,7 +1349,7 @@ class _SavingThrowsList extends StatelessWidget {
                 ),
               ),
               Text(
-                _sign(bonus),
+                sign(bonus),
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
                   color: isProf ? scheme.primary : scheme.onSurfaceVariant,

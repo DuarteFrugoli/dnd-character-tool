@@ -1,7 +1,8 @@
-part of '../../character_detail_screen.dart';
+import '../../character_detail_dependencies.dart';
 
-class _SpellcastingBanner extends StatelessWidget {
-  const _SpellcastingBanner({
+class SpellcastingBanner extends StatelessWidget {
+  const SpellcastingBanner({
+    super.key,
     required this.engine,
     this.preparedCount,
     this.maxPrepared,
@@ -113,8 +114,8 @@ class _BannerStat extends StatelessWidget {
 
 // ── Spell Level Header ────────────────────────────────────────────────────────
 
-class _SpellLevelHeader extends StatelessWidget {
-  const _SpellLevelHeader({required this.level});
+class SpellLevelHeader extends StatelessWidget {
+  const SpellLevelHeader({super.key, required this.level});
   final int level;
 
   @override
@@ -135,8 +136,9 @@ class _SpellLevelHeader extends StatelessWidget {
 
 // ── Spell Row ─────────────────────────────────────────────────────────────────
 
-class _SpellRow extends ConsumerWidget {
-  const _SpellRow({
+class SpellRow extends ConsumerWidget {
+  const SpellRow({
+    super.key,
     required this.spell,
     required this.srdSpell,
     required this.showPrepareToggle,
@@ -457,8 +459,9 @@ Future<void> _onConcentrationTap(
 
 // ── Concentration Banner ──────────────────────────────────────────────────────
 
-class _ConcentrationBanner extends StatelessWidget {
-  const _ConcentrationBanner({
+class ConcentrationBanner extends StatelessWidget {
+  const ConcentrationBanner({
+    super.key,
     required this.spellName,
     required this.i18n,
     required this.onBreak,
@@ -509,8 +512,9 @@ class _ConcentrationBanner extends StatelessWidget {
 
 // ── Innate Spell Row ──────────────────────────────────────────────────────────
 
-class _InnateSpellRow extends StatelessWidget {
-  const _InnateSpellRow({
+class InnateSpellRow extends StatelessWidget {
+  const InnateSpellRow({
+    super.key,
     required this.spell,
     required this.i18n,
     required this.onUse,
@@ -592,8 +596,9 @@ class _InnateSpellRow extends StatelessWidget {
 
 // ── Spell Slot Row ────────────────────────────────────────────────────────────
 
-class _SpellSlotRow extends StatelessWidget {
-  const _SpellSlotRow({
+class SpellSlotRow extends StatelessWidget {
+  const SpellSlotRow({
+    super.key,
     required this.level,
     required this.total,
     required this.used,

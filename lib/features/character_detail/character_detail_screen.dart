@@ -1,80 +1,27 @@
 import 'dart:math' as math;
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../data/spellcasting_engine.dart';
-import '../../data/feature_choice_engine.dart';
-import '../../data/feature_choice_option_resolver.dart';
-import '../../data/feature_usage_engine.dart';
-import '../../data/constants/armor_class.dart';
-import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
-import 'spell_browser_sheet.dart';
-import '../../data/datasources/srd/srd_models.dart';
-import '../../data/inventory/inventory_operations.dart';
 import '../../data/models/models.dart';
-import '../../data/models/domain_constants.dart';
-import '../../data/character_spellcasting_summary.dart';
 import '../../shared/providers/providers.dart';
-import '../../shared/widgets/character_avatar.dart';
 import '../../shared/widgets/responsive_layout.dart';
-import '../../core/units/unit_system_provider.dart';
-import '../../core/units/unit_formatter.dart';
 import 'application/character_tab_view_models.dart';
 import 'character_detail_provider.dart';
-import 'inventory/inventory_search_catalog.dart';
-import 'inventory/inventory_view_model.dart';
 import 'level_up_wizard_sheet.dart';
+import 'tabs/features_tab.dart';
+import 'tabs/identity_tab.dart';
+import 'tabs/inventory_tab.dart';
+import 'tabs/notes_tab.dart';
+import 'tabs/skills_tab.dart';
+import 'tabs/spells_tab.dart';
+import 'tabs/stats_tab.dart';
 import 'widgets/dice/dice_roller_sheet.dart';
-import 'widgets/detail_widgets.dart';
-import 'widgets/feature_choice_editor.dart';
-
-part 'tabs/identity_tab.dart';
-part 'tabs/stats_tab.dart';
-part 'tabs/skills_tab.dart';
-part 'tabs/features_tab.dart';
-part 'tabs/spells_tab.dart';
-part 'tabs/notes_tab.dart';
-part 'tabs/inventory_tab.dart';
-part 'widgets/features/add_feature_sheet.dart';
-part 'widgets/features/feature_detail_sheet.dart';
-part 'widgets/features/feature_sections.dart';
-part 'widgets/inventory/add_item_sheet.dart';
-part 'widgets/inventory/container_contents_sheet.dart';
-part 'widgets/inventory/item_detail_sheet.dart';
-part 'widgets/spells/spell_widgets.dart';
-
-// ── Skill → Ability mapping ───────────────────────────────────────────────────
-
-const _skillAbility = <String, String>{
-  'Acrobatics': 'Dexterity',
-  'Animal Handling': 'Wisdom',
-  'Arcana': 'Intelligence',
-  'Athletics': 'Strength',
-  'Deception': 'Charisma',
-  'History': 'Intelligence',
-  'Insight': 'Wisdom',
-  'Intimidation': 'Charisma',
-  'Investigation': 'Intelligence',
-  'Medicine': 'Wisdom',
-  'Nature': 'Intelligence',
-  'Perception': 'Wisdom',
-  'Performance': 'Charisma',
-  'Persuasion': 'Charisma',
-  'Religion': 'Intelligence',
-  'Sleight of Hand': 'Dexterity',
-  'Stealth': 'Dexterity',
-  'Survival': 'Wisdom',
-};
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-String _sign(int n) => n >= 0 ? '+$n' : '$n';
+import 'widgets/detail_edit_guard.dart';
+import 'widgets/detail_tab_host.dart';
 
 enum _CharacterHeaderAction { rollDice, levelUp, rest }
 
@@ -97,87 +44,6 @@ class _CharacterActionMenuItem extends StatelessWidget {
   }
 }
 
-// ── Edit Guard ─────────────────────────────────────────────────────────────────
-// Shared object that lets the tab screen know when a child tab is in edit mode
-// and request a discard-confirmation before allowing the tab to change.
-
-class _EditGuard {
-  /// True when any tab is in edit mode.
-  bool get isEditing => _discardFn != null;
-
-  /// Registered by the tab that enters edit mode. Called only after confirmation.
-  Future<void> Function()? _discardFn;
-
-  void register(Future<void> Function() discardFn) {
-    _discardFn = discardFn;
-  }
-
-  void unregister() {
-    _discardFn = null;
-  }
-
-  /// Shows a discard-confirmation dialog, then calls the tab's discard function.
-  /// Returns true if the user confirmed (tab exited edit mode), false otherwise.
-  Future<bool> requestCancel(
-    BuildContext context,
-    AppLocalizations l10n,
-  ) async {
-    final fn = _discardFn;
-    if (fn == null) return true;
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l10n.detailCancelEditTitle),
-        content: Text(l10n.detailCancelEditContent),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(l10n.dialogKeepEditing),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            style: FilledButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.error,
-              foregroundColor: Theme.of(context).colorScheme.onError,
-            ),
-            child: Text(l10n.dialogDiscard),
-          ),
-        ],
-      ),
-    );
-    if (confirm != true) return false;
-    await fn();
-    return true;
-  }
-}
-
-// ── Screen ────────────────────────────────────────────────────────────────────
-
-class _CharacterTabHost<T> extends ConsumerWidget {
-  const _CharacterTabHost({required this.provider, required this.builder});
-
-  final ProviderListenable<AsyncValue<T>> provider;
-  final Widget Function(BuildContext context, T value) builder;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(provider);
-    return state.when(
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, _) => Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Text(
-            AppLocalizations.of(context)!.detailErrorLoading(error.toString()),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
-      data: (value) => builder(context, value),
-    );
-  }
-}
-
 class CharacterDetailScreen extends ConsumerStatefulWidget {
   const CharacterDetailScreen({super.key, required this.characterId});
   final String characterId;
@@ -190,7 +56,7 @@ class CharacterDetailScreen extends ConsumerStatefulWidget {
 class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
-  final _editGuard = _EditGuard();
+  final _editGuard = EditGuard();
 
   @override
   void initState() {
@@ -381,56 +247,56 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         child: TabBarView(
           controller: _tabs,
           children: [
-            _CharacterTabHost<IdentityTabVm>(
+            CharacterTabHost<IdentityTabVm>(
               provider: identityTabVmProvider(widget.characterId),
-              builder: (context, vm) => _IdentityTab(
+              builder: (context, vm) => IdentityTab(
                 character: vm.character,
                 characterId: widget.characterId,
                 editGuard: _editGuard,
               ),
             ),
-            _CharacterTabHost<StatsTabVm>(
+            CharacterTabHost<StatsTabVm>(
               provider: statsTabVmProvider(widget.characterId),
-              builder: (context, vm) => _StatsTab(
+              builder: (context, vm) => StatsTab(
                 character: vm.character,
                 characterId: widget.characterId,
                 editGuard: _editGuard,
               ),
             ),
-            _CharacterTabHost<SkillsTabVm>(
+            CharacterTabHost<SkillsTabVm>(
               provider: skillsTabVmProvider(widget.characterId),
-              builder: (context, vm) => _SkillsTab(
+              builder: (context, vm) => SkillsTab(
                 character: vm.character,
                 characterId: widget.characterId,
               ),
             ),
-            _CharacterTabHost<FeaturesTabVm>(
+            CharacterTabHost<FeaturesTabVm>(
               provider: featuresTabVmProvider(widget.characterId),
-              builder: (context, vm) => _FeaturesTab(
+              builder: (context, vm) => FeaturesTab(
                 character: vm.character,
                 characterId: widget.characterId,
               ),
             ),
-            _CharacterTabHost<SpellsTabVm>(
+            CharacterTabHost<SpellsTabVm>(
               provider: spellsTabVmProvider(widget.characterId),
-              builder: (context, vm) => _SpellsTab(
+              builder: (context, vm) => SpellsTab(
                 character: vm.character,
                 characterId: widget.characterId,
               ),
             ),
-            _CharacterTabHost<InventoryTabVm>(
+            CharacterTabHost<InventoryTabVm>(
               provider: inventoryTabVmProvider(widget.characterId),
-              builder: (context, vm) => _InventoryTab(
+              builder: (context, vm) => InventoryTab(
                 character: vm.character,
                 inventory: vm.snapshot,
                 strengthScore: vm.strengthScore,
                 characterId: widget.characterId,
               ),
             ),
-            _CharacterTabHost<NotesTabVm>(
+            CharacterTabHost<NotesTabVm>(
               provider: notesTabVmProvider(widget.characterId),
               builder: (context, vm) =>
-                  _NotesTab(notes: vm.notes, characterId: widget.characterId),
+                  NotesTab(notes: vm.notes, characterId: widget.characterId),
             ),
           ],
         ),

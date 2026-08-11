@@ -1,17 +1,21 @@
-part of '../character_detail_screen.dart';
+import '../character_detail_dependencies.dart';
 
 // ── Skills Tab ────────────────────────────────────────────────────────────────
 
-class _SkillsTab extends ConsumerStatefulWidget {
-  const _SkillsTab({required this.character, required this.characterId});
+class SkillsTab extends ConsumerStatefulWidget {
+  const SkillsTab({
+    super.key,
+    required this.character,
+    required this.characterId,
+  });
   final Character character;
   final String characterId;
 
   @override
-  ConsumerState<_SkillsTab> createState() => _SkillsTabState();
+  ConsumerState<SkillsTab> createState() => _SkillsTabState();
 }
 
-class _SkillsTabState extends ConsumerState<_SkillsTab> {
+class _SkillsTabState extends ConsumerState<SkillsTab> {
   void _cycleSkill(String skillName) {
     final c = ref.read(characterDetailProvider(widget.characterId)).valueOrNull;
     if (c == null) return;
@@ -82,10 +86,10 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
         Expanded(
           child: ListView.builder(
             padding: const EdgeInsets.fromLTRB(0, 8, 0, 192),
-            itemCount: _skillAbility.length,
+            itemCount: skillAbility.length,
             itemBuilder: (context, i) {
-              final skillName = _skillAbility.keys.elementAt(i);
-              final ability = _skillAbility[skillName]!;
+              final skillName = skillAbility.keys.elementAt(i);
+              final ability = skillAbility[skillName]!;
               final lower = skillName.toLowerCase();
               final isExpert = expertSet.contains(lower);
               final isProf = isExpert || profSet.contains(lower);
@@ -119,7 +123,7 @@ class _SkillsTabState extends ConsumerState<_SkillsTab> {
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
                 trailing: Text(
-                  _sign(bonus),
+                  sign(bonus),
                   style: TextStyle(
                     fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
                     color: isProf ? scheme.primary : null,

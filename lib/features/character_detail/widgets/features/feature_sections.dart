@@ -1,7 +1,9 @@
-part of '../../character_detail_screen.dart';
+import '../../character_detail_dependencies.dart';
+import 'feature_support.dart';
 
-class _RacialTraitsSection extends ConsumerWidget {
-  const _RacialTraitsSection({
+class RacialTraitsSection extends ConsumerWidget {
+  const RacialTraitsSection({
+    super.key,
     required this.raceName,
     required this.subraceName,
     required this.raceTraits,
@@ -24,7 +26,7 @@ class _RacialTraitsSection extends ConsumerWidget {
   final void Function(String) onToggle;
   final Character character;
   final String characterId;
-  final _FeaturesData data;
+  final FeaturesData data;
   final SrdI18nService i18n;
 
   @override
@@ -89,12 +91,12 @@ class _RacialTraitsSection extends ConsumerWidget {
                       ),
                     ),
                     if (usageView != null)
-                      _FeatureUsageControls(
+                      FeatureUsageControls(
                         view: usageView,
                         characterId: characterId,
                         i18n: i18n,
                       ),
-                    ..._featureChoiceWidgets(
+                    ...featureChoiceWidgets(
                       context: context,
                       ref: ref,
                       characterId: characterId,
@@ -127,7 +129,7 @@ class _RacialTraitsSection extends ConsumerWidget {
                     ],
                   ),
                   children: [
-                    ..._featureChoiceWidgets(
+                    ...featureChoiceWidgets(
                       context: context,
                       ref: ref,
                       characterId: characterId,
@@ -137,7 +139,7 @@ class _RacialTraitsSection extends ConsumerWidget {
                       i18n: i18n,
                     ),
                     if (usageView != null)
-                      _FeatureUsageControls(
+                      FeatureUsageControls(
                         view: usageView,
                         characterId: characterId,
                         i18n: i18n,
@@ -164,8 +166,9 @@ class _RacialTraitsSection extends ConsumerWidget {
   }
 }
 
-class _BackgroundFeatureSection extends ConsumerWidget {
-  const _BackgroundFeatureSection({
+class BackgroundFeatureSection extends ConsumerWidget {
+  const BackgroundFeatureSection({
+    super.key,
     required this.backgroundName,
     required this.featureName,
     required this.featureDescription,
@@ -233,8 +236,9 @@ class _BackgroundFeatureSection extends ConsumerWidget {
 
 // ── Tool Proficiencies Section ────────────────────────────────────────────────
 
-class _ToolProficienciesSection extends ConsumerWidget {
-  const _ToolProficienciesSection({
+class ToolProficienciesSection extends ConsumerWidget {
+  const ToolProficienciesSection({
+    super.key,
     required this.features,
     required this.characterId,
     required this.i18n,
@@ -320,8 +324,9 @@ class _ToolProficienciesSection extends ConsumerWidget {
   }
 }
 
-class _FeatsSection extends ConsumerWidget {
-  const _FeatsSection({
+class FeatsSection extends ConsumerWidget {
+  const FeatsSection({
+    super.key,
     required this.feats,
     required this.character,
     required this.characterId,
@@ -332,7 +337,7 @@ class _FeatsSection extends ConsumerWidget {
   final List<CharacterExtraFeature> feats;
   final Character character;
   final String characterId;
-  final _FeaturesData data;
+  final FeaturesData data;
   final SrdI18nService i18n;
 
   @override
@@ -398,7 +403,7 @@ class _FeatsSection extends ConsumerWidget {
             },
           ),
           children: [
-            ..._featureChoiceWidgets(
+            ...featureChoiceWidgets(
               context: context,
               ref: ref,
               characterId: characterId,
@@ -408,7 +413,7 @@ class _FeatsSection extends ConsumerWidget {
               i18n: i18n,
             ),
             if (usageView != null)
-              _FeatureUsageControls(
+              FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,
                 i18n: i18n,
@@ -447,8 +452,9 @@ class _FeatsSection extends ConsumerWidget {
   }
 }
 
-class _ExtraFeaturesSection extends ConsumerWidget {
-  const _ExtraFeaturesSection({
+class ExtraFeaturesSection extends ConsumerWidget {
+  const ExtraFeaturesSection({
+    super.key,
     required this.features,
     required this.characterId,
     required this.character,
@@ -459,7 +465,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
   final List<CharacterExtraFeature> features;
   final String characterId;
   final Character character;
-  final _FeaturesData data;
+  final FeaturesData data;
   final SrdI18nService i18n;
 
   List<FeatureChoiceRequest> _requestsForExtra(CharacterExtraFeature feature) {
@@ -617,7 +623,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
             },
           ),
           children: [
-            ..._featureChoiceWidgets(
+            ...featureChoiceWidgets(
               context: context,
               ref: ref,
               characterId: characterId,
@@ -627,7 +633,7 @@ class _ExtraFeaturesSection extends ConsumerWidget {
               i18n: i18n,
             ),
             if (usageView != null)
-              _FeatureUsageControls(
+              FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,
                 i18n: i18n,
@@ -668,8 +674,9 @@ class _ExtraFeaturesSection extends ConsumerWidget {
   }
 }
 
-class _ClassFeaturesSection extends ConsumerWidget {
-  const _ClassFeaturesSection({
+class ClassFeaturesSection extends ConsumerWidget {
+  const ClassFeaturesSection({
+    super.key,
     required this.className,
     required this.features,
     required this.disabledFeatures,
@@ -686,7 +693,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
   final void Function(String) onToggle;
   final Character character;
   final String characterId;
-  final _FeaturesData data;
+  final FeaturesData data;
   final SrdI18nService i18n;
 
   Color _typeColor(String type, ColorScheme scheme) {
@@ -768,7 +775,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  _featureTypeLabel(f.type, context),
+                  featureTypeLabel(f.type, context),
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: typeColor,
                     fontWeight: FontWeight.bold,
@@ -798,7 +805,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
             ],
           ),
           children: [
-            ..._featureChoiceWidgets(
+            ...featureChoiceWidgets(
               context: context,
               ref: ref,
               characterId: characterId,
@@ -808,7 +815,7 @@ class _ClassFeaturesSection extends ConsumerWidget {
               i18n: i18n,
             ),
             if (usageView != null)
-              _FeatureUsageControls(
+              FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,
                 i18n: i18n,
@@ -854,8 +861,9 @@ class _ClassFeaturesSection extends ConsumerWidget {
 
 // ── Subclass Features Section ─────────────────────────────────────────────────
 
-class _SubclassFeaturesSection extends ConsumerWidget {
-  const _SubclassFeaturesSection({
+class SubclassFeaturesSection extends ConsumerWidget {
+  const SubclassFeaturesSection({
+    super.key,
     required this.className,
     required this.subclassName,
     required this.features,
@@ -874,7 +882,7 @@ class _SubclassFeaturesSection extends ConsumerWidget {
   final void Function(String) onToggle;
   final Character character;
   final String characterId;
-  final _FeaturesData data;
+  final FeaturesData data;
   final SrdI18nService i18n;
 
   @override
@@ -963,7 +971,7 @@ class _SubclassFeaturesSection extends ConsumerWidget {
             ],
           ),
           children: [
-            ..._featureChoiceWidgets(
+            ...featureChoiceWidgets(
               context: context,
               ref: ref,
               characterId: characterId,
@@ -973,7 +981,7 @@ class _SubclassFeaturesSection extends ConsumerWidget {
               i18n: i18n,
             ),
             if (usageView != null)
-              _FeatureUsageControls(
+              FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,
                 i18n: i18n,

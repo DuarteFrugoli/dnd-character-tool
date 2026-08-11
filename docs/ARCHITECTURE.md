@@ -320,12 +320,16 @@ equipped items, carried items, and total weight in one place. This keeps
 The inventory UI is split by responsibility:
 
 - `tabs/inventory_tab.dart` orchestrates the tab, sections, FAB, and shared
-  inventory tile behavior.
+  inventory sections.
 - `widgets/inventory/add_item_sheet.dart` owns the add/custom-item flow.
 - `widgets/inventory/container_contents_sheet.dart` shows items inside one
   container in a dedicated bottom sheet.
 - `widgets/inventory/item_detail_sheet.dart` shows item descriptions and
   mechanical attributes.
+- `widgets/inventory/inventory_item_tile.dart` owns item rows, item menus,
+  reorderable sliver lists, and container/removal/move dialogs.
+- `widgets/inventory/inventory_display_helpers.dart` owns localized item names,
+  quantity titles, and item detail-row formatting.
 - `inventory/inventory_view_model.dart` owns `InventorySnapshot`.
 - `inventory/inventory_search_catalog.dart` owns the cached SRD search index.
 
@@ -610,21 +614,18 @@ The detail feature is split into:
 
 - `application/`: per-tab view models and derived providers.
 - `tabs/`: main tab entry widgets.
+- `character_detail_dependencies.dart`: local dependency barrel used by the
+  detail tabs/widgets after removing manual `part of` files.
 - `widgets/detail_widgets.dart`: reusable detail widgets imported normally.
+- `widgets/detail_edit_guard.dart` and `widgets/detail_tab_host.dart`: shared
+  edit-discard coordination and async tab host widgets.
 - `widgets/features/`: feature sections and feature add/detail sheets.
 - `widgets/inventory/`: inventory add, container-content, and detail sheets.
 - `widgets/spells/`: spell tab helper widgets.
 - `inventory/`: inventory snapshot and SRD search catalog.
 
-The tab entry files are still part files under `tabs/`:
-
-- `stats_tab.dart`
-- `skills_tab.dart`
-- `spells_tab.dart`
-- `inventory_tab.dart`
-- `features_tab.dart`
-- `identity_tab.dart`
-- `notes_tab.dart`
+Manual `part`/`part of` is not used in the character detail UI. Generated
+model serializers still use Dart `part` files as expected.
 
 `character_detail_provider.dart` owns mutations: HP, rests, spell slots,
 prepared spells, concentration, level up, identity, stats, inventory, features,

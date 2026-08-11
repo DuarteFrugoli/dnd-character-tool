@@ -1,22 +1,23 @@
-part of '../character_detail_screen.dart';
+import '../character_detail_dependencies.dart';
 
 // ── Identity Tab ──────────────────────────────────────────────────────────────
 
-class _IdentityTab extends ConsumerStatefulWidget {
-  const _IdentityTab({
+class IdentityTab extends ConsumerStatefulWidget {
+  const IdentityTab({
+    super.key,
     required this.character,
     required this.characterId,
     required this.editGuard,
   });
   final Character character;
   final String characterId;
-  final _EditGuard editGuard;
+  final EditGuard editGuard;
 
   @override
-  ConsumerState<_IdentityTab> createState() => _IdentityTabState();
+  ConsumerState<IdentityTab> createState() => _IdentityTabState();
 }
 
-class _IdentityTabState extends ConsumerState<_IdentityTab> {
+class _IdentityTabState extends ConsumerState<IdentityTab> {
   bool _isEditing = false;
   Character? _snapshot;
 
@@ -129,7 +130,7 @@ class _IdentityTabState extends ConsumerState<_IdentityTab> {
   }
 
   @override
-  void didUpdateWidget(_IdentityTab old) {
+  void didUpdateWidget(IdentityTab old) {
     super.didUpdateWidget(old);
     final c = widget.character;
     if (!_nameFocus.hasFocus) _nameCtrl.text = c.name;

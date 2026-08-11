@@ -1,7 +1,11 @@
-part of '../../character_detail_screen.dart';
+import '../../character_detail_dependencies.dart';
+import 'inventory_display_helpers.dart';
+import 'inventory_item_tile.dart';
+import 'item_detail_sheet.dart';
 
-class _ContainerContentsSheet extends ConsumerWidget {
-  const _ContainerContentsSheet({
+class ContainerContentsSheet extends ConsumerWidget {
+  const ContainerContentsSheet({
+    super.key,
     required this.characterId,
     required this.containerId,
   });
@@ -53,8 +57,8 @@ class _ContainerContentsSheet extends ConsumerWidget {
             final contents =
                 inventory.contentsByContainer[containerId] ??
                 const <EquipmentItem>[];
-            final displayName = _itemDisplayName(container, i18n);
-            final meta = _ItemTile._itemMeta(container, i18n, l10n);
+            final displayName = itemDisplayName(container, i18n);
+            final meta = ItemTile.itemMeta(container, i18n, l10n);
 
             return CustomScrollView(
               controller: scrollController,
@@ -69,7 +73,7 @@ class _ContainerContentsSheet extends ConsumerWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        _containerSubtitleText(
+                        containerSubtitleText(
                           context,
                           container,
                           contents,
@@ -83,7 +87,7 @@ class _ContainerContentsSheet extends ConsumerWidget {
                         child: TextButton.icon(
                           icon: const Icon(Icons.info_outline, size: 18),
                           label: Text(l10n.inventoryDetailSummary),
-                          onPressed: () => _showItemDetailsSheet(
+                          onPressed: () => showItemDetailsSheet(
                             context,
                             ref,
                             container,
@@ -109,10 +113,10 @@ class _ContainerContentsSheet extends ConsumerWidget {
                 else
                   SliverPadding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    sliver: _InventorySliverReorderableItemList(
+                    sliver: InventorySliverReorderableItemList(
                       items: contents,
                       characterId: characterId,
-                      itemBuilder: (context, item, reorderIndex) => _ItemTile(
+                      itemBuilder: (context, item, reorderIndex) => ItemTile(
                         item: item,
                         containers: inventory.containers,
                         i18n: i18n,

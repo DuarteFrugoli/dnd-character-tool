@@ -9,13 +9,25 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.2] - 2026-08-10
+
+
+
+---
+
 ## [1.1.1] - 2026-07-29
+
+### Added
+- **Ficha — rolagem de dados**: nova ação para abrir um rolador de dados direto da ficha do personagem.
+- **Rolagem — expressões completas**: suporte a expressões como `1d20 + 5`, `2d6 + 1d8`, modificadores, múltiplos dados, vantagem/desvantagem e espaços opcionais na expressão.
+- **Rolagem — histórico e ajuda**: o rolador mantém histórico em memória enquanto o app está aberto e inclui ajuda rápida explicando a sintaxe.
 
 ### Changed
 - **Preparação para multiclasse**: personagens agora têm estrutura interna para múltiplas classes e hit dice por classe, mantendo compatibilidade com personagens single-class atuais.
 - **Magias — origem e resumo agregado**: magias conhecidas passam a carregar origem e a aba Magias usa um resumo preparado para spellcasting agregado no futuro.
 - **Habilidades — origem e recursos**: escolhas de features, features extras e recursos rastreáveis agora carregam contexto de origem para permitir cálculos por classe quando a multiclasse for ativada.
 - **Level Up — organização interna**: estado e enums do wizard foram movidos para `application/level_up`, e o wizard virou uma biblioteca independente em vez de `part of`.
+- **Ficha — ações do cabeçalho**: level up, descanso e rolagem de dados agora ficam agrupados em um único menu de ações.
 - **Notas — proteção de edição**: fechar uma nota com alterações não salvas agora oferece continuar editando, descartar ou salvar.
 - **Configurações — manutenção**: o fluxo de atualização de personagens agora também reporta entradas salvas inválidas, com origem/ID para diagnóstico.
 
@@ -29,10 +41,14 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Internal
 - **Versionamento**: versão do app atualizada para `1.1.1+23`.
+- **Engine de rolagem**: adicionados parser, modelo de expressão e roller puros em `lib/data/dice/`.
+- **Ficha — modularização**: removido o uso manual de `part`/`part of` na UI de `character_detail`; tabs, sheets e widgets agora são bibliotecas Dart normais com imports explícitos.
+- **Ficha — helpers estruturais**: extraídos `EditGuard`, `CharacterTabHost`, helpers de detalhe, suporte de features, helpers de exibição de inventário e tiles/listas de inventário para arquivos próprios.
 - **Migrações**: adicionadas migrações versionadas v6 e v7 para preparar personagens antigos para a nova estrutura de regras.
 - **Storage**: `StorageBackend` ganhou leitura diagnóstica por registro para isolar personagens corrompidos sem quebrar a manutenção em lote.
 - **Feature usages**: `feature_usages.json` passa a ser a fonte canônica de usos rastreáveis; o campo `uses` foi removido dos dados de class features.
-- **Testes**: adicionados testes para sync de slots/CA, preparação estrutural de multiclasse, origem de features/magias, Pact Magic e cálculos de recursos por classe.
+- **Testes**: adicionados testes para sync de slots/CA, preparação estrutural de multiclasse, origem de features/magias, Pact Magic, cálculos de recursos por classe e rolagem de dados.
+- **Documentação de arquitetura**: arquitetura atualizada para refletir a estrutura modular da ficha e a ausência de `part of` manual em `character_detail`.
 
 ---
 

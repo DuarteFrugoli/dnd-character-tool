@@ -1,7 +1,8 @@
-part of '../../character_detail_screen.dart';
+import '../../character_detail_dependencies.dart';
 
-class _FeatureDetailSheet extends StatelessWidget {
-  const _FeatureDetailSheet({
+class FeatureDetailSheet extends StatelessWidget {
+  const FeatureDetailSheet({
+    super.key,
     required this.name,
     required this.description,
     required this.subtitle,

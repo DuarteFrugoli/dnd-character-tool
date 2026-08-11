@@ -189,6 +189,16 @@ void main() {
       expect(updated.imagePath, isNull);
     });
 
+    test('clearSubclass sets legacy subclass mirror to null', () {
+      final c = _makeCharacter(cls: 'Wizard').copyWith(
+        subclass: 'Evocation',
+      );
+
+      final updated = c.copyWith(clearSubclass: true);
+
+      expect(updated.subclass, isNull);
+    });
+
     test('returns a new object (immutability)', () {
       final c = _makeCharacter();
       final updated = c.copyWith(name: 'Other');
@@ -206,7 +216,10 @@ void main() {
       expect(c.classEntries.single.level, 5);
       expect(c.totalLevel, 5);
       expect(c.primaryClass.id, 'primary');
+      expect(c.primaryClassName, 'Wizard');
+      expect(c.primarySubclassName, isNull);
       expect(c.classLevel('Wizard'), 5);
+      expect(c.classLevelSummary, 'Wizard 5');
     });
 
     test('uses persisted class entries and hit die pools when present', () {
@@ -237,6 +250,9 @@ void main() {
       );
 
       expect(c.totalLevel, 5);
+      expect(c.isMulticlass, isTrue);
+      expect(c.primaryClassName, 'Fighter');
+      expect(c.classLevelSummary, 'Fighter 3 / Wizard 2');
       expect(c.classLevel('Wizard'), 2);
       expect(c.totalHitDice, 5);
       expect(c.totalHitDiceUsed, 1);

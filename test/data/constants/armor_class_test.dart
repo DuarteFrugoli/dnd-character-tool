@@ -1,6 +1,7 @@
 import 'package:dnd_character_tool/data/constants/armor_class.dart';
 import 'package:dnd_character_tool/data/models/ability_scores.dart';
 import 'package:dnd_character_tool/data/models/character.dart';
+import 'package:dnd_character_tool/data/models/character_class_entry.dart';
 import 'package:dnd_character_tool/data/models/character_extra_feature.dart';
 import 'package:dnd_character_tool/data/models/character_feature_choice.dart';
 import 'package:dnd_character_tool/data/models/equipment_item.dart';
@@ -15,6 +16,7 @@ Character _character({
   List<CharacterExtraFeature> extraFeatures = const [],
   List<CharacterFeatureChoice> featureChoices = const [],
   List<String> disabledFeatures = const [],
+  List<CharacterClassEntry> classes = const [],
 }) {
   final now = DateTime(2024);
   return Character(
@@ -23,6 +25,7 @@ Character _character({
     race: 'Human',
     characterClass: cls,
     subclass: subclass,
+    classes: classes,
     abilityScores: scores,
     hitPoints: const HitPoints(maximum: 10, current: 10),
     equipment: equipment,
@@ -180,6 +183,51 @@ void main() {
       );
 
       expect(calcArmorClass(c), 15);
+    });
+
+    test('secondary barbarian class enables Unarmored Defense', () {
+      final c = _character(
+        cls: 'Fighter',
+        scores: const AbilityScores(dexterity: 14, constitution: 16),
+        classes: const [
+          CharacterClassEntry(
+            id: 'fighter',
+            className: 'Fighter',
+            level: 1,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(
+            id: 'barbarian',
+            className: 'Barbarian',
+            level: 1,
+          ),
+        ],
+      );
+
+      expect(calcArmorClass(c), 15);
+    });
+
+    test('secondary draconic sorcerer class enables Draconic Resilience', () {
+      final c = _character(
+        cls: 'Fighter',
+        scores: const AbilityScores(dexterity: 16),
+        classes: const [
+          CharacterClassEntry(
+            id: 'fighter',
+            className: 'Fighter',
+            level: 1,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(
+            id: 'sorcerer',
+            className: 'Sorcerer',
+            subclassName: 'Draconic Bloodline',
+            level: 1,
+          ),
+        ],
+      );
+
+      expect(calcArmorClass(c), 16);
     });
 
     test('disabled Unarmored Defense falls back to normal unarmored AC', () {

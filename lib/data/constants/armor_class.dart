@@ -48,6 +48,7 @@ int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
 
   final unarmoredAc = calcUnarmoredArmorClass(
     characterClass: c.characterClass,
+    classEntries: c.classEntries,
     abilityScores: c.abilityScores,
     shieldBonus: shieldBonus,
     extraFeatures: c.extraFeatures,
@@ -61,6 +62,7 @@ int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
 
 int calcUnarmoredArmorClass({
   required String characterClass,
+  Iterable<CharacterClassEntry> classEntries = const [],
   required AbilityScores abilityScores,
   int shieldBonus = 0,
   Iterable<CharacterExtraFeature> extraFeatures = const [],
@@ -69,6 +71,7 @@ int calcUnarmoredArmorClass({
   final dexMod = abilityScores.dexterityModifier;
   if (_hasUnarmoredDefense(
     characterClass: characterClass,
+    classEntries: classEntries,
     sourceClass: 'Barbarian',
     extraFeatures: extraFeatures,
     disabledFeatures: disabledFeatures,
@@ -79,6 +82,7 @@ int calcUnarmoredArmorClass({
   if (shieldBonus == 0 &&
       _hasUnarmoredDefense(
         characterClass: characterClass,
+        classEntries: classEntries,
         sourceClass: 'Monk',
         extraFeatures: extraFeatures,
         disabledFeatures: disabledFeatures,
@@ -91,6 +95,7 @@ int calcUnarmoredArmorClass({
 
 bool _hasUnarmoredDefense({
   required String characterClass,
+  required Iterable<CharacterClassEntry> classEntries,
   required String sourceClass,
   required Iterable<CharacterExtraFeature> extraFeatures,
   required Iterable<String> disabledFeatures,
@@ -100,6 +105,9 @@ bool _hasUnarmoredDefense({
 
   final source = sourceClass.toLowerCase();
   if (characterClass.toLowerCase() == source) return true;
+  if (classEntries.any((entry) => entry.className.toLowerCase() == source)) {
+    return true;
+  }
 
   return extraFeatures.any(
     (f) =>
@@ -122,6 +130,13 @@ bool _hasDraconicResilience(Character c) {
 
   if (c.characterClass.toLowerCase() == 'sorcerer' &&
       c.subclass?.toLowerCase() == 'draconic bloodline') {
+    return true;
+  }
+  if (c.classEntries.any(
+    (entry) =>
+        entry.className.toLowerCase() == 'sorcerer' &&
+        entry.subclassName?.toLowerCase() == 'draconic bloodline',
+  )) {
     return true;
   }
 

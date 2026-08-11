@@ -15,7 +15,7 @@ class DiceParser {
   static const maxQuantity = 100;
   static const maxSides = 10000;
   static final _termPattern = RegExp(
-    r'([+-]?)(?:(\d*)d(\d+|%)(?:(kh|kl|dh|dl)(\d+))?|(\d+))',
+    r'(?:(\d*)d(\d+|%)(?:(kh|kl|dh|dl)(\d+))?|(\d+))',
     caseSensitive: false,
   );
 
@@ -24,23 +24,31 @@ class DiceParser {
     if (source.isEmpty) {
       throw const DiceParseException('empty expression');
     }
-    final normalizedSource = source.replaceAll(RegExp(r'\s+'), '');
-
     final terms = <DiceTerm>[];
     var index = 0;
-    while (index < normalizedSource.length) {
-      final match = _termPattern.matchAsPrefix(normalizedSource, index);
+    while (index < source.length) {
+      index = _skipWhitespace(source, index);
+      if (index >= source.length) break;
+
+      var sign = 1;
+      var hasExplicitSign = false;
+      final signChar = source[index];
+      if (signChar == '+' || signChar == '-') {
+        hasExplicitSign = true;
+        sign = signChar == '-' ? -1 : 1;
+        index = _skipWhitespace(source, index + 1);
+      }
+
+      if (terms.isNotEmpty && !hasExplicitSign) {
+        throw DiceParseException('expected + or - at position ${index + 1}');
+      }
+
+      final match = _termPattern.matchAsPrefix(source, index);
       if (match == null) {
         throw DiceParseException('unexpected token at position ${index + 1}');
       }
 
-      final signText = match.group(1) ?? '';
-      if (terms.isNotEmpty && signText.isEmpty) {
-        throw DiceParseException('expected + or - at position ${index + 1}');
-      }
-      final sign = signText == '-' ? -1 : 1;
-
-      final diceSides = match.group(3);
+      final diceSides = match.group(2);
       if (diceSides != null) {
         terms.add(_parseDiceTerm(match, sign));
       } else {
@@ -56,12 +64,20 @@ class DiceParser {
     return DiceExpression(source: source, terms: terms);
   }
 
+  static int _skipWhitespace(String source, int index) {
+    var current = index;
+    while (current < source.length && source[current].trim().isEmpty) {
+      current++;
+    }
+    return current;
+  }
+
   static DiceRollTerm _parseDiceTerm(Match match, int sign) {
-    final rawQuantity = match.group(2);
+    final rawQuantity = match.group(1);
     final quantity = rawQuantity == null || rawQuantity.isEmpty
         ? 1
         : int.parse(rawQuantity);
-    final sidesText = match.group(3)!;
+    final sidesText = match.group(2)!;
     final sides = sidesText == '%' ? 100 : int.parse(sidesText);
 
     if (quantity < 1) {
@@ -79,8 +95,8 @@ class DiceParser {
       throw DiceParseException('dice sides cannot be greater than $maxSides');
     }
 
-    final selector = match.group(4);
-    final selectorCountText = match.group(5);
+    final selector = match.group(3);
+    final selectorCountText = match.group(4);
     DiceSelection? selection;
     if (selector != null && selectorCountText != null) {
       final count = int.parse(selectorCountText);
@@ -96,7 +112,7 @@ class DiceParser {
   }
 
   static DiceModifierTerm _parseModifierTerm(Match match, int sign) {
-    final value = int.parse(match.group(6)!);
+    final value = int.parse(match.group(5)!);
     return DiceModifierTerm(sign: sign, value: value);
   }
 

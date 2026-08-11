@@ -28,8 +28,25 @@ class Character {
   final String playerName;
   final String race;
   final String? subrace;
+
+  /// Legacy mirror of the starting class.
+  ///
+  /// New class-rule code should use [classEntries], [primaryClass], or
+  /// [classLevel] instead. This field remains persisted so older `.dndchar`
+  /// and `.dndbackup` payloads can still be read safely.
   final String characterClass;
+
+  /// Legacy mirror of the starting class subclass.
+  ///
+  /// New subclass-rule code should use [primaryClass] or the target
+  /// [CharacterClassEntry] instead.
   final String? subclass;
+
+  /// Persisted total character level.
+  ///
+  /// Class-specific rules should use the level on the relevant
+  /// [CharacterClassEntry]. Total-level rules such as proficiency bonus and XP
+  /// can use [totalLevel] or this synchronized mirror.
   final int level;
   final List<CharacterClassEntry> classes;
   final int experiencePoints;
@@ -150,6 +167,16 @@ class Character {
     ];
   }
 
+  bool get isMulticlass => classEntries.length > 1;
+
+  String get primaryClassName => primaryClass.className;
+
+  String? get primarySubclassName => primaryClass.subclassName;
+
+  String get classLevelSummary => classEntries
+      .map((entry) => '${entry.className} ${entry.level}')
+      .join(' / ');
+
   int get totalLevel {
     if (classes.isEmpty) return level;
     return classes.fold<int>(0, (sum, entry) => sum + entry.level);
@@ -213,6 +240,7 @@ class Character {
     String? subrace,
     String? characterClass,
     String? subclass,
+    bool clearSubclass = false,
     int? level,
     List<CharacterClassEntry>? classes,
     int? experiencePoints,
@@ -264,7 +292,7 @@ class Character {
       race: race ?? this.race,
       subrace: subrace ?? this.subrace,
       characterClass: characterClass ?? this.characterClass,
-      subclass: subclass ?? this.subclass,
+      subclass: clearSubclass ? null : (subclass ?? this.subclass),
       level: level ?? this.level,
       classes: classes ?? this.classes,
       experiencePoints: experiencePoints ?? this.experiencePoints,

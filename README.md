@@ -5,7 +5,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-1.0.3-orange)
+![Version](https://img.shields.io/badge/version-1.1.1-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
@@ -13,11 +13,12 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 ## Features
 
 ### Character Creation
-- **Guided wizard** — 7 steps: class, race, background, skills, attributes, name and review
+- **Guided wizard** — class, race, background, skills, attributes, identity and review
 - **Standard Array** and **Point Buy** attribute methods
-- **Racial bonuses** applied automatically (PHB) or distributed freely (Tasha's / BG3 style)
-- Class/background starting equipment and starting gold choices resolved during review
-- Tool and instrument proficiency selection
+- Racial bonuses can use fixed SRD rules or the optional Tasha-style free assignment
+- Variant Human support with ability choices, skill proficiency, extra language and level-1 feat
+- Class/background starting equipment, packs and starting gold choices resolved during review
+- Feature, feat, tool and instrument choices are collected before the character is saved
 
 ### Character Sheet
 
@@ -30,18 +31,19 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - Active Conditions — 15 SRD conditions with descriptions; add/remove via chip picker
 - Short Rest — spend Hit Dice to recover HP
 - Concentration tracker — badge on active spell, warning on second attempt, manual end button
+- Character actions menu for level up, rests and dice rolling
 
 **Skills tab** — all 18 skills with proficiency/expertise indicators and calculated bonuses
 
-**Features tab** — racial traits, background feature, class features by level, 42 SRD feats, extra features
+**Features tab** — racial traits, background feature, class features by level, SRD feats, extra features, editable feature choices and limited-use resource tracking
 
-**Spells tab** — spell slots tracker, concentration tracking, known/prepared spells, spell browser with filters
+**Spells tab** — spell slots tracker, Pact Magic short-rest recovery, concentration tracking, known/prepared spells and spell browser with filters
 
-**Inventory tab** — equipped/carried items split into sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), tappable item details, and custom item creation with type-specific fields (weapon, armor, equippable, container, consumable, ammunition, gear)
+**Inventory tab** — global SRD item search, equipped/carried/container sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), tappable item details, reorderable items, ammunition handling and custom item creation with type-specific fields (weapon, armor, equippable, container, consumable, ammunition, gear)
 
 **Identity tab** — character photo (pick from gallery, crop 1:1, full-screen viewer with zoom/pan and save to gallery), personality traits, ideals, bonds, flaws, backstory
 
-**Notes tab** — free-form notes per character
+**Notes tab** — free-form notes with colored tags, search, tag filters, pinning, manual ordering and unsaved-change confirmation
 
 ### Level Up Wizard
 - Full level-up flow as a fullscreen modal with step indicators
@@ -49,6 +51,12 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - **Warlock spell swap** — dedicated step: choose which known spell to forget, then immediately pick the replacement in the same screen
 - Eldritch Knight and Arcane Trickster spell choices respect Wizard-list and school-restriction rules
 - **XP tracking** — optional toggle; quick-add field; full SRD XP table; auto prompt when XP threshold is reached
+
+### Dice Roller
+- Roll expressions such as `1d20 + 5`, `2d6 + 1d8` and advantage/disadvantage checks
+- Optional spaces in expressions
+- In-memory history while the app is open
+- Help sheet explaining the supported syntax
 
 ### Spell System
 - Full SRD spell list with school, casting time, concentration and ritual badges
@@ -62,12 +70,16 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - Pin characters to the top of the list
 - Drag to reorder
 - Rename, delete and export per character
+- Character maintenance flow in Settings for applying versioned data updates
+- Backup export/import for all characters at once
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
 - Export raw **JSON** as an advanced copy/paste fallback
+- Export/import **`.dndbackup`** files for all characters
 - Import by `.dndchar` file or raw JSON
 - Cross-platform: characters exported on mobile import correctly on web and vice-versa
+- Web stores characters and character images in IndexedDB; native platforms store local JSON/image files
 
 ### Customization
 - **9 color themes**: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
@@ -110,7 +122,7 @@ flutter run
 
 ## Documentation
 
-- [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, level-up rules and import/export flows.
+- [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, notes, dice rolling, level-up rules, maintenance migrations and import/export flows.
 - [Changelog](CHANGELOG.md) tracks release history.
 
 > All DnD 5e content uses the **System Reference Document (SRD)** under the Creative Commons license.
@@ -136,11 +148,12 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 ## Funcionalidades
 
 ### Criação de Personagem
-- **Assistente guiado** com 7 etapas: classe, raça, antecedente, perícias, atributos, nome e revisão
+- **Assistente guiado** com etapas de classe, raça, antecedente, perícias, atributos, identidade e revisão
 - Métodos de atributos: **Standard Array** e **Point Buy**
-- Bônus raciais aplicados automaticamente (PHB) ou distribuídos livremente (Tasha's / BG3)
-- Equipamentos iniciais de classe/antecedente e escolhas de ouro resolvidos na revisão
-- Seleção de proficiências em ferramentas e instrumentos
+- Bônus raciais por regras fixas do SRD ou distribuição livre no estilo da regra opcional de Tasha
+- Suporte a Humano Variante com escolhas de atributos, perícia, idioma extra e talento no nível 1
+- Equipamentos iniciais, kits/packs e escolhas de ouro resolvidos na revisão
+- Escolhas de features, talentos, ferramentas e instrumentos antes de salvar o personagem
 
 ### Ficha do Personagem
 
@@ -153,18 +166,19 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - Condições Ativas — 15 condições do SRD com descrições; adicionar/remover via chip picker
 - Descanso Curto — gastar Hit Dice para recuperar PV
 - Rastreador de Concentração — badge na magia ativa, aviso ao tentar uma segunda magia de concentração, botão para encerrar manualmente
+- Menu de ações da ficha para subir de nível, descansar e rolar dados
 
 **Aba Skills** — 18 perícias com indicadores de proficiência/expertise e bônus calculados
 
-**Aba Features** — traços raciais, feature do antecedente, features de classe por nível, 42 talentos do SRD, features extras
+**Aba Features** — traços raciais, feature do antecedente, features de classe por nível, talentos do SRD, features extras, escolhas editáveis e rastreamento de recursos com usos limitados
 
-**Aba Spells** — rastreador de espaços de magia, rastreamento de concentração, magias conhecidas/preparadas, browser de magias com filtros
+**Aba Spells** — rastreador de espaços de magia, recuperação de Pact Magic no descanso curto, concentração, magias conhecidas/preparadas e browser de magias com filtros
 
-**Aba Inventory** — itens equipados/carregados separados por seção, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), detalhes ao tocar e criação de itens customizados com campos por tipo (arma, armadura, equipável, container, consumível, munição, equipamento geral)
+**Aba Inventory** — busca global de itens SRD, seções de equipados/carregados/containers, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), detalhes ao tocar, itens reordenáveis, suporte a munição e criação de itens customizados com campos por tipo (arma, armadura, equipável, container, consumível, munição, equipamento geral)
 
 **Aba Identity** — foto do personagem (escolher da galeria, cortar 1:1, visualizador em tela cheia com zoom/pan e salvar na galeria), traços de personalidade, ideais, vínculos, fraquezas, história
 
-**Aba Notes** — notas livres por personagem
+**Aba Notes** — notas livres com tags coloridas, busca, filtros por tag, fixação, ordenação manual e confirmação de alterações não salvas
 
 ### Subida de Nível
 - Fluxo completo de level up como modal em tela cheia com indicadores de passo
@@ -172,6 +186,12 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - **Troca de magia do Warlock** — passo dedicado: escolha qual magia esquecer e em seguida escolha a substituta na mesma tela
 - Escolhas de magia de Eldritch Knight e Arcane Trickster respeitam lista de Wizard e restrições de escola
 - **Rastreamento de XP** — toggle opcional; campo de adição rápida; tabela completa de XP do SRD; prompt automático ao atingir o threshold
+
+### Rolagem de Dados
+- Expressões como `1d20 + 5`, `2d6 + 1d8` e rolagens com vantagem/desvantagem
+- Espaços opcionais nas expressões
+- Histórico em memória enquanto o app está aberto
+- Ajuda rápida explicando a sintaxe aceita
 
 ### Sistema de Magias
 - Lista completa de magias do SRD com badges de escola, tempo de conjuração, concentração e ritual
@@ -185,12 +205,16 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - Fixar personagens no topo da lista
 - Reordenar arrastando
 - Renomear, excluir e exportar por personagem
+- Fluxo de manutenção nas configurações para aplicar atualizações versionadas nos personagens
+- Backup geral para exportar/importar todos os personagens de uma vez
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
 - Exportar **JSON** cru como fallback avançado de copiar/colar
+- Exportar/importar arquivos **`.dndbackup`** com todos os personagens
 - Importar por arquivo `.dndchar` ou JSON cru
 - Cross-platform: personagens exportados no celular importam corretamente na web e vice-versa
+- Na web, personagens e imagens ficam no IndexedDB; nas plataformas nativas, ficam em arquivos JSON/imagem locais
 
 ### Personalização
 - **9 temas de cores**: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
@@ -233,7 +257,7 @@ flutter run
 
 ## Documentação
 
-- [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, regras de level up e fluxos de import/export.
+- [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, notas, rolagem de dados, regras de level up, migrações de manutenção e fluxos de import/export.
 - [Changelog](CHANGELOG.md) registra o histórico de versões.
 
 > Todo o conteúdo de DnD 5e utiliza o **System Reference Document (SRD)** sob a licença Creative Commons.

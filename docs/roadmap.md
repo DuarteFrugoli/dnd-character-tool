@@ -119,29 +119,30 @@ Objetivo: permitir personagens com multiplas classes sem quebrar personagens
 existentes. Qualquer mudanca persistida deve usar migracao versionada e o fluxo
 de manutencao em Configuracoes.
 
-#### 2.0.0 - Fluxo de multiclasse
-- [ ] Escolher qual classe sobe de nivel.
-- [ ] Adicionar uma nova classe com validacao de pre-requisitos.
-- [ ] Escolher subclasse no nivel correto da classe adicionada.
-- [ ] Exibir resumo de classes como `Wizard 3 / Cleric 2`.
+#### 2.0.0 - Multiclasse jogavel
+- [x] Escolher qual classe sobe de nivel.
+- [x] Adicionar uma nova classe com validacao de pre-requisitos.
+- [x] Escolher subclasse no nivel correto da classe adicionada.
+- [x] Aplicar ASI, talentos, features, spells e choices pelo nivel da classe
+      alvo.
+- [x] Atualizar HP, hit dice, proficiencia, recursos derivados e XP pelo nivel
+      correto.
+- [x] Calcular slots combinados do PHB para full, half e third casters.
+- [x] Manter Pact Magic separado para Warlock.
+- [x] Exibir origem da magia quando houver mais de uma classe conjuradora.
+- [x] Header, lista, Identidade e Stats mostram resumo/pools de classes.
+- [x] Aba Habilidades agrupa features por classe/subclasse.
+- [x] Migracoes versionadas normalizam classes, hit dice, origens, slots e CA.
+
+#### 2.0.1 - Edicao e polimento de multiclasse
+- [ ] Criar folha "Classes do personagem" para visualizar classes com mais
+      detalhe.
 - [ ] Permitir edicao posterior de classes com protecoes contra quebrar regras
       salvas.
-
-#### 2.0.1 - Spellcasting multiclass
-- [ ] Calcular slots combinados do PHB para full, half e third casters.
-- [ ] Manter Pact Magic separado para Warlock.
-- [ ] Preparacao/conhecimento de magias por classe.
-- [ ] Exibir origem da magia quando houver mais de uma classe conjuradora.
-
-#### 2.0.2 - Level up multiclass
-- [ ] Aplicar ASI, subclass, features, spells e choices pelo nivel daquela
-      classe.
-- [ ] Atualizar HP, hit dice, proficiency e recursos derivados corretamente.
-
-#### 2.0.3 - UI de ficha multiclass
-- [ ] Header com resumo como `Wizard 3 / Cleric 2`.
-- [ ] Abas de Habilidades e Magias agrupando origem por classe/subclasse.
-- [ ] Edicao posterior de classes com protecoes contra quebrar regras salvas.
+- [ ] Melhorar o descanso curto para escolher explicitamente qual pool de hit
+      die gastar quando houver mais de um tipo disponivel.
+- [ ] Adicionar testes de widget para escolha de classe alvo, requisitos,
+      header multiclass e agrupamento de features.
 
 ### 2.1.x - Notas de campanha e sessao
 

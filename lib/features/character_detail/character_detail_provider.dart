@@ -1124,7 +1124,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (c == null) return;
     int xp = c.experiencePoints;
     if (enabled) {
-      final minXp = levelToMinXp(c.level);
+      final minXp = levelToMinXp(c.totalLevel);
       if (xp < minXp) xp = minXp;
     }
     await _save(c.copyWith(xpTrackingEnabled: enabled, experiencePoints: xp));

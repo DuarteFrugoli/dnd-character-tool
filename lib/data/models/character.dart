@@ -16,7 +16,7 @@ part 'character.g.dart';
 
 // Sentinel used to distinguish "not passed" from explicit null in copyWith.
 const _keep = Object();
-const currentCharacterDataVersion = 8;
+const currentCharacterDataVersion = 9;
 
 enum CreationMode { random, semiRandom, guided, manual }
 

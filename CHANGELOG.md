@@ -11,8 +11,27 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [2.0.0] - 2026-08-11
 
-## added
-- **Multiclasse**:
+### Added
+- **Multiclasse**: o level up agora permite escolher uma classe existente para subir de nível ou adicionar uma nova classe quando os pré-requisitos são cumpridos.
+- **Pré-requisitos de multiclasse**: classes bloqueadas mostram o requisito necessário em vez de desaparecerem da lista.
+- **Ficha — resumo de classes**: cabeçalho, lista de personagens e aba Identidade exibem resumo como `Wizard 3 / Cleric 2` com nível total.
+- **Ficha — hit dice por classe**: a aba Stats mostra pools separados de dados de vida por classe.
+- **Habilidades — origem por classe**: features de classe/subclasse são agrupadas por entrada de classe, com escolhas e usos ligados à origem correta.
+- **Magias — spellcasting multiclass**: slots normais são calculados por nível de conjurador multiclass, mantendo Pact Magic separado para Warlock.
+
+### Changed
+- **Level Up**: ASI, talentos, subclasse, magias, choices, HP, proficiência, slots e CA passam a ser aplicados por uma engine de progressão centralizada.
+- **Recursos de features**: usos como Rage, Ki, Lay on Hands e Bardic Inspiration escalam pelo nível da classe de origem, não pelo nível total do personagem.
+- **Identidade**: personagens multiclasse não mostram mais controle manual cru de `+/-` de nível para evitar quebrar a soma das classes.
+
+### Fixed
+- **Personagens antigos**: nova migração versionada reconcilia `classes`, nível total, classe/subclasse espelho, hit dice, origens de magias/features, slots e CA.
+- **Warlock**: Pact Magic fica separado dos slots normais e continua restaurando no descanso curto.
+- **CA**: features desativadas por origem não derrubam outra feature de mesmo nome em uma classe diferente.
+
+### Internal
+- **Versionamento**: versão do app atualizada para `2.0.0+24` e `currentCharacterDataVersion` para `9`.
+- **Testes**: adicionada cobertura para progressão multiclasse, pré-requisitos, spellcasting/Pact Magic, usos por classe, CA por origem e migrações.
 
 ---
 

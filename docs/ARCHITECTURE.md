@@ -214,6 +214,10 @@ Current migrations:
 | 3 | `ExpandEquipmentPacksMigration` | Replaces known starting equipment packs with their individual contents. |
 | 4 | `NormalizeNoteOrderMigration` | Assigns explicit `sortOrder` values to old notes while preserving their saved order. |
 | 5 | `NormalizeEquipmentOrderMigration` | Assigns explicit per-location `sortOrder` values to inventory items and repairs invalid container locations. |
+| 6 | `SyncSpellSlotsAndArmorClassMigration` | Recalculates single-class spell slots and Armor Class for old saves. |
+| 7 | `PrepareMulticlassStructureMigration` | Creates class entries, hit die pools, and source metadata for older characters. |
+| 8 | `SyncMulticlassSpellSlotsMigration` | Separates standard spell slots from Warlock Pact Magic slots. |
+| 9 | `NormalizeMulticlassStateMigration` | Reconciles class mirrors, total level, hit dice, source metadata, slots, and Armor Class. |
 
 Migrations are intentionally user-triggered from Settings maintenance. They are
 not applied invisibly while merely opening a character. Before applying
@@ -239,6 +243,8 @@ Key models:
 | Model | Purpose |
 | --- | --- |
 | `Character` | Root saved object: identity, class/race, stats, HP, AC, equipment, spells, notes, features, settings. |
+| `CharacterClassEntry` | One class track on a character, including class name, subclass, class level, and starting-class marker. |
+| `CharacterHitDiePool` | Hit dice grouped by class entry, so multiclass characters can spend and recover the right die pools. |
 | `AbilityScores` | Six ability scores and modifiers. |
 | `HitPoints` | Current/max/temp HP, hit dice usage, death saves, stabilized/dead state. |
 | `EquipmentItem` | Inventory item with mechanical `ItemType`, quantity, weight, equip state, optional `containerId`, and type-specific `properties`. |
@@ -257,8 +263,11 @@ Important persisted fields on `Character`:
 | Field | Purpose |
 | --- | --- |
 | `dataVersion` | Character data schema/version used by the migration runner. New characters default to `currentCharacterDataVersion`. |
+| `classes` | Source of truth for class progression. Legacy `characterClass`, `subclass`, and `level` are synchronized mirrors for compatibility. |
+| `hitDicePools` | Hit dice totals/usage by class entry. Legacy `HitPoints.hitDiceUsed` is kept only as old-save fallback. |
 | `featureChoices` | Stable choices made inside feature/trait/feat rules. Values are option IDs from SRD data, not localized labels. |
 | `featureResources` | Remaining uses/points for trackable feature resources, keyed by resource ID. Missing values mean "full". |
+| `spellSlots` / `pactMagicSlots` | Standard multiclass spell slots and Warlock Pact Magic slots, tracked separately. |
 | `imagePath` | Native file name/path or web image reference such as `indexeddb:image:<id>`. Export formats embed image bytes separately. |
 | `sortOrder` | Character-list order inside the pinned or unpinned group. |
 
@@ -359,7 +368,9 @@ Rules that should not live in widgets are centralized under `lib/data/`.
   - Barbarian: `10 + DEX + CON`, shield allowed.
   - Monk: `10 + DEX + WIS`, shield not allowed.
 - Extra features can enable Unarmored Defense for multiclass/manual cases.
-- Disabling `Unarmored Defense` removes that calculation.
+- Disabling class/subclass features uses source-scoped keys when available, so
+  disabling one class feature does not accidentally disable another feature
+  with the same name from a different source.
 
 Creation, level changes, ASI/stat changes, feature changes, and equipment
 changes should all recalculate AC through this helper.
@@ -376,6 +387,8 @@ changes should all recalculate AC through this helper.
 
 `features/character_detail/level_up_wizard_sheet.dart` builds the level-up flow:
 
+- target class selection;
+- adding a new multiclass when prerequisites are met;
 - features summary;
 - subclass selection when needed;
 - ASI or feat;
@@ -385,8 +398,15 @@ changes should all recalculate AC through this helper.
 - summary/confirm.
 
 The wizard sends a `LevelUpResult` to `CharacterDetailNotifier.levelUp`, which
-applies all decisions atomically and syncs spell slots, XP, AC, and innate
-spells as needed.
+delegates to `CharacterProgressionEngine.applyLevelUp()`. The engine applies
+the selected class entry, class level, total level, HP, hit dice, ASI/feat,
+subclass, spells, feature choices, proficiency bonus, spell slots, Pact Magic,
+and AC as one atomic character update.
+
+Multiclass rules use `Character.classes` as the source of truth. Legacy
+`Character.characterClass`, `Character.subclass`, and `Character.level` remain
+persisted compatibility mirrors and should not be used as the source of new
+class-rule logic.
 
 ### Spellcasting
 
@@ -409,6 +429,12 @@ Eldritch Knight and Arcane Trickster are modeled as third casters with
 
 UI code should ask `SpellcastingEngine` for limits and spell-list class instead
 of duplicating tables.
+
+`data/character_spellcasting_summary.dart` aggregates spellcasting origins
+across `Character.classEntries`. It calculates standard multiclass caster
+levels for full/half/third casters and keeps Warlock Pact Magic separate. The
+Spells tab uses that summary to show standard slots, Pact Magic slots, and
+class-specific spell origins.
 
 ### Feature Choices
 
@@ -440,6 +466,7 @@ Persisted choices use `CharacterFeatureChoice`:
 ```text
 sourceType       classFeature | subclassFeature | raceTrait | feat
 sourceClass      class name when relevant
+sourceClassEntryId class-entry ID when relevant
 sourceSubclass   subclass name when relevant
 sourceName       trait/feat source name when relevant
 featureName      feature/trait/feat display source
@@ -458,6 +485,8 @@ feat when an ASI is spent on a feat.
 
 The Features tab reads saved choices, shows pending choices, lets the user edit
 them later, and shows localized option descriptions through `SrdI18nService`.
+For multiclass characters, class and subclass choices include
+`sourceClassEntryId` so two classes cannot accidentally share one saved choice.
 
 ### Feature Usages
 
@@ -484,6 +513,11 @@ feature spends. The resource definition stores:
 Monk level for Ki, Paladin level x5 for Lay on Hands, ability modifiers, and
 static values. `FeatureUsageEngine.rechargeFor()` handles special recharge
 rules, such as Bardic Inspiration switching to short-rest recovery at level 5.
+For class/subclass features, `FeatureUsageContext` carries both total character
+level and source class level. The provider passes a `FeatureUsageFeatureSet`
+for every class entry, so resources such as Ki, Rage, Lay on Hands, and Bardic
+Inspiration scale from their own class level instead of the total character
+level.
 
 Remaining uses are stored in `Character.featureResources`. Missing entries are
 treated as full, which keeps old characters readable and avoids saving noise.
@@ -630,6 +664,12 @@ model serializers still use Dart `part` files as expected.
 `character_detail_provider.dart` owns mutations: HP, rests, spell slots,
 prepared spells, concentration, level up, identity, stats, inventory, features,
 notes, conditions, XP, and settings flags.
+
+The detail header and character cards use shared display helpers from
+`shared/utils/character_display.dart` to show localized class summaries such as
+`Wizard 3 / Cleric 2` and total level labels. The Stats tab shows hit dice as
+class pools, while the Features tab groups class and subclass features by
+`CharacterClassEntry`.
 
 Heavy tabs use a combination of per-tab providers, cached SRD providers,
 `AutomaticKeepAliveClientMixin`, and sliver lists. The goal is to keep tab

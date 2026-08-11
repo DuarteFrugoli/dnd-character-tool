@@ -1,4 +1,5 @@
 import '../character_detail_dependencies.dart';
+import '../../../shared/utils/character_display.dart';
 
 // ── Stats Tab ─────────────────────────────────────────────────────────────────
 
@@ -18,21 +19,6 @@ class StatsTab extends ConsumerStatefulWidget {
 }
 
 class _StatsTabState extends ConsumerState<StatsTab> {
-  static const _classHitDie = {
-    'barbarian': 12,
-    'fighter': 10,
-    'paladin': 10,
-    'ranger': 10,
-    'bard': 8,
-    'cleric': 8,
-    'druid': 8,
-    'monk': 8,
-    'rogue': 8,
-    'warlock': 8,
-    'sorcerer': 6,
-    'wizard': 6,
-  };
-
   // HP tracker
   final _amountCtrl = TextEditingController(text: '1');
 
@@ -59,8 +45,8 @@ class _StatsTabState extends ConsumerState<StatsTab> {
       ref.read(characterDetailProvider(widget.characterId).notifier);
 
   bool _isPendingLevelUp(Character c) {
-    if (!c.xpTrackingEnabled || c.level >= 20) return false;
-    return c.experiencePoints >= kXpThresholds[c.level];
+    if (!c.xpTrackingEnabled || c.totalLevel >= 20) return false;
+    return c.experiencePoints >= kXpThresholds[c.totalLevel];
   }
 
   Future<void> _addXp(int amount) async {
@@ -70,8 +56,8 @@ class _StatsTabState extends ConsumerState<StatsTab> {
     setState(() => _xpAddInProgress = true);
     try {
       final newXp = (character.experiencePoints + amount).clamp(0, 999999);
-      if (character.level < 20) {
-        final nextThreshold = kXpThresholds[character.level];
+      if (character.totalLevel < 20) {
+        final nextThreshold = kXpThresholds[character.totalLevel];
         if (newXp >= nextThreshold &&
             character.experiencePoints < nextThreshold) {
           final l10n = AppLocalizations.of(context)!;
@@ -82,7 +68,9 @@ class _StatsTabState extends ConsumerState<StatsTab> {
             context: context,
             builder: (ctx) => AlertDialog(
               title: Text(l10n.xpLevelUpNowTitle),
-              content: Text(l10n.xpLevelUpNowMessage(character.level + 1)),
+              content: Text(
+                l10n.xpLevelUpNowMessage(character.totalLevel + 1),
+              ),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, false),
@@ -516,23 +504,16 @@ class _StatsTabState extends ConsumerState<StatsTab> {
                           ],
                         ),
                         const SizedBox(height: 8),
-                        Builder(
-                          builder: (context) {
-                            final hitDie =
-                                _classHitDie[character.characterClass
-                                    .toLowerCase()];
-                            if (hitDie == null) return const SizedBox.shrink();
-                            return Text(
-                              '${l10n.stepHitDieLabel}: d$hitDie × ${character.level}',
-                              style: Theme.of(context).textTheme.bodySmall
-                                  ?.copyWith(
-                                    color: Theme.of(
-                                      context,
-                                    ).colorScheme.onSurfaceVariant,
-                                  ),
-                              textAlign: TextAlign.center,
-                            );
-                          },
+                        Text(
+                          '${l10n.stepHitDieLabel}: '
+                          '${hitDicePoolSummary(character)}',
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.onSurfaceVariant,
+                              ),
+                          textAlign: TextAlign.center,
                         ),
                         if (_isEditing) ...[
                           const SizedBox(height: 12),
@@ -772,7 +753,7 @@ class _StatsTabState extends ConsumerState<StatsTab> {
                                   )
                                 : _XpProgressionPanel(
                                     xp: character.experiencePoints,
-                                    characterLevel: character.level,
+                                    characterLevel: character.totalLevel,
                                     xpAddCtrl: _xpAddCtrl,
                                     expanded: _levelTableExpanded,
                                     onToggle: () => setState(

@@ -456,6 +456,39 @@ class AppLocalizationsKo extends AppLocalizations {
   String get levelUpTitle => '레벨 업';
 
   @override
+  String get levelUpStepClassTarget => '레벨을 올릴 클래스 선택';
+
+  @override
+  String get levelUpClassTargetExisting => '현재 클래스';
+
+  @override
+  String get levelUpClassTargetAddClass => '새 클래스 추가';
+
+  @override
+  String levelUpClassTargetCurrentLevel(int level) {
+    return '현재 레벨 $level';
+  }
+
+  @override
+  String levelUpClassTargetNextClassLevel(int level) {
+    return '클래스 레벨 $level';
+  }
+
+  @override
+  String levelUpClassTargetRequirement(String requirement) {
+    return '$requirement 필요';
+  }
+
+  @override
+  String levelUpClassTargetRequirementMissing(String requirement) {
+    return '부족한 조건: $requirement';
+  }
+
+  @override
+  String get levelUpClassTargetCurrentRequirementsMissing =>
+      '현재 클래스가 멀티클래스 조건을 충족하지 않습니다.';
+
+  @override
   String get levelUpConfirm => '레벨 업 확정';
 
   @override
@@ -576,6 +609,11 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String levelUpSummaryLevel(int level) {
     return '→ 레벨 $level';
+  }
+
+  @override
+  String levelUpSummaryClassLevel(String className, int level) {
+    return '$className 레벨 $level';
   }
 
   @override
@@ -1469,6 +1507,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get spellsSlots => '주문 슬롯';
+
+  @override
+  String get spellsPactMagicSlots => '계약 마법';
 
   @override
   String get spellsSpellcasting => '주문 시전';
@@ -2402,6 +2443,19 @@ class AppLocalizationsKo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get settingsMaintenanceChangeMulticlassStructure =>
+      '멀티클래스를 위한 클래스 구조를 준비했습니다.';
+
+  @override
+  String get settingsMaintenanceChangeSpellSlots => '일반 주문 슬롯을 다시 계산했습니다.';
+
+  @override
+  String get settingsMaintenanceChangePactMagicSlots => '계약 마법 슬롯을 분리했습니다.';
+
+  @override
+  String get settingsMaintenanceChangeArmorClass => '방어도를 다시 계산했습니다.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

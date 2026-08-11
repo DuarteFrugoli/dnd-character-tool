@@ -2,12 +2,12 @@ import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../data/character_progression/character_progression.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_choice_option_resolver.dart';
 import '../../data/models/models.dart';
-import '../../data/spellcasting_engine.dart';
 import '../../shared/providers/providers.dart';
 
 // ── Estado do rascunho ────────────────────────────────────────────────────────
@@ -1113,16 +1113,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
     );
-    character = character.copyWith(
-      spellSlots: SpellcastingEngine.syncedSlotsFor(
-        current: character.spellSlots,
-        className: character.primaryClass.className,
-        classLevel: character.primaryClass.level,
-        abilityScores: character.abilityScores,
-        proficiencyBonus: character.proficiencyBonus,
-        subclass: character.primaryClass.subclassName,
-      ),
-    );
+    character = CharacterProgressionEngine.syncSpellcastingSlotsFor(character);
     character = character.copyWith(armorClass: calcArmorClass(character));
 
     await repo.save(character);

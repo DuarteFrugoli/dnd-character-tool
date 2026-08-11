@@ -1,4 +1,5 @@
 import '../character_detail_dependencies.dart';
+import '../../../shared/utils/character_display.dart';
 
 // ── Identity Tab ──────────────────────────────────────────────────────────────
 
@@ -272,11 +273,12 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
   );
 
   Future<void> _onLevelUp(Character character) async {
-    final newLevel = character.level + 1;
+    final primaryClass = character.primaryClass;
+    final newLevel = primaryClass.level + 1;
     final srd = ref.read(srdDataSourceProvider);
     final classes = await srd.getClasses();
     final srdClass = classes
-        .where((c) => c.name == character.characterClass)
+        .where((c) => c.name == primaryClass.className)
         .firstOrNull;
 
     if (srdClass == null ||
@@ -291,11 +293,12 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
     final i18n =
         ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
 
-    if (character.subclass != null && character.subclass!.isNotEmpty) {
+    if (primaryClass.subclassName != null &&
+        primaryClass.subclassName!.isNotEmpty) {
       final picked = await _showSubclassDialog(
         context: context,
         srdClass: srdClass,
-        current: character.subclass,
+        current: primaryClass.subclassName,
         isConfirm: true,
         i18n: i18n,
       );
@@ -427,14 +430,16 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
   }
 
   Future<void> _onChangeSubclass(Character character) async {
+    final primaryClass = character.primaryClass;
     final srd = ref.read(srdDataSourceProvider);
     final classes = await srd.getClasses();
     final srdClass = classes
-        .where((c) => c.name == character.characterClass)
+        .where((c) => c.name == primaryClass.className)
         .firstOrNull;
     if (srdClass == null || srdClass.subclasses.isEmpty || !mounted) return;
 
-    if (character.subclass != null && character.subclass!.isNotEmpty) {
+    if (primaryClass.subclassName != null &&
+        primaryClass.subclassName!.isNotEmpty) {
       final confirm = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
@@ -460,11 +465,11 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
     final picked = await _showSubclassDialog(
       context: context,
       srdClass: srdClass,
-      current: character.subclass,
-      isConfirm: character.subclass != null,
+      current: primaryClass.subclassName,
+      isConfirm: primaryClass.subclassName != null,
       i18n: i18n,
     );
-    if (picked != null && picked != character.subclass) {
+    if (picked != null && picked != primaryClass.subclassName) {
       await _notifier.updateSubclass(picked);
     }
   }
@@ -524,6 +529,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final character = widget.character;
+    final primaryClass = character.primaryClass;
     final scheme = Theme.of(context).colorScheme;
     final notifier = _notifier;
 
@@ -611,66 +617,85 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
                                       ),
                                 ),
                               ),
-                              OutlinedButton(
-                                onPressed: character.level > 1
-                                    ? () => notifier.updateLevel(
-                                        character.level - 1,
-                                      )
-                                    : null,
-                                style: OutlinedButton.styleFrom(
-                                  minimumSize: const Size(36, 36),
-                                  padding: EdgeInsets.zero,
-                                  visualDensity: VisualDensity.compact,
-                                ),
-                                child: const Icon(Icons.remove, size: 16),
-                              ),
-                              SizedBox(
-                                width: 40,
-                                child: Text(
-                                  '${character.level}',
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.titleSmall
-                                      ?.copyWith(fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              if (!character.xpTrackingEnabled)
+                              if (character.isMulticlass)
+                                Expanded(
+                                  child: Text(
+                                    '${character.totalLevel} · '
+                                    '${localizedClassLevelSummary(character, i18n)}',
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.bodyMedium,
+                                  ),
+                                )
+                              else ...[
                                 OutlinedButton(
-                                  onPressed: character.level < 20
-                                      ? () => _onLevelUp(character)
+                                  onPressed: character.totalLevel > 1
+                                      ? () => notifier.updateLevel(
+                                          character.totalLevel - 1,
+                                        )
                                       : null,
                                   style: OutlinedButton.styleFrom(
                                     minimumSize: const Size(36, 36),
                                     padding: EdgeInsets.zero,
                                     visualDensity: VisualDensity.compact,
                                   ),
-                                  child: const Icon(Icons.add, size: 16),
+                                  child: const Icon(Icons.remove, size: 16),
                                 ),
+                                SizedBox(
+                                  width: 40,
+                                  child: Text(
+                                    '${character.totalLevel}',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall
+                                        ?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                ),
+                                if (!character.xpTrackingEnabled)
+                                  OutlinedButton(
+                                    onPressed: character.totalLevel < 20
+                                        ? () => _onLevelUp(character)
+                                        : null,
+                                    style: OutlinedButton.styleFrom(
+                                      minimumSize: const Size(36, 36),
+                                      padding: EdgeInsets.zero,
+                                      visualDensity: VisualDensity.compact,
+                                    ),
+                                    child: const Icon(Icons.add, size: 16),
+                                  ),
+                              ],
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 4),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Icon(
-                                Icons.info_outline,
-                                size: 13,
-                                color: scheme.onSurfaceVariant,
-                              ),
-                              const SizedBox(width: 6),
-                              Expanded(
-                                child: Text(
-                                  l10n.levelManualChangeWarning,
-                                  style: Theme.of(context).textTheme.bodySmall
-                                      ?.copyWith(
-                                        color: scheme.onSurfaceVariant,
-                                      ),
+                        if (!character.isMulticlass)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.info_outline,
+                                  size: 13,
+                                  color: scheme.onSurfaceVariant,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(width: 6),
+                                Expanded(
+                                  child: Text(
+                                    l10n.levelManualChangeWarning,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall
+                                        ?.copyWith(
+                                          color: scheme.onSurfaceVariant,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
                         // Subclass row
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 4),
@@ -688,10 +713,10 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
                               ),
                               Expanded(
                                 child: Text(
-                                  character.subclass?.isNotEmpty == true
+                                  primaryClass.subclassName?.isNotEmpty == true
                                       ? i18n.subclassName(
-                                          character.characterClass,
-                                          character.subclass!,
+                                          primaryClass.className,
+                                          primaryClass.subclassName!,
                                         )
                                       : '—',
                                   style: Theme.of(context).textTheme.bodyMedium,
@@ -700,7 +725,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
                               OutlinedButton.icon(
                                 icon: const Icon(Icons.swap_horiz, size: 16),
                                 label: Text(
-                                  character.subclass?.isNotEmpty == true
+                                  primaryClass.subclassName?.isNotEmpty == true
                                       ? l10n.labelChange
                                       : l10n.labelChoose,
                                 ),
@@ -843,18 +868,25 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
                           l10n.labelName,
                           character.name.isNotEmpty ? character.name : '—',
                         ),
-                        DetailInfoRow(l10n.labelLevel, '${character.level}'),
+                        DetailInfoRow(
+                          l10n.creationStepClass,
+                          localizedClassLevelSummary(character, i18n),
+                        ),
+                        DetailInfoRow(
+                          l10n.labelLevel,
+                          '${character.totalLevel}',
+                        ),
                         if (character.background.isNotEmpty)
                           DetailInfoRow(
                             l10n.labelBackground,
                             i18n.backgroundName(character.background),
                           ),
-                        if (character.subclass?.isNotEmpty == true)
+                        if (primaryClass.subclassName?.isNotEmpty == true)
                           DetailInfoRow(
                             l10n.labelSubclass,
                             i18n.subclassName(
-                              character.characterClass,
-                              character.subclass!,
+                              primaryClass.className,
+                              primaryClass.subclassName!,
                             ),
                           ),
                         if (character.alignment.isNotEmpty)

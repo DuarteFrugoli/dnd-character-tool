@@ -32,6 +32,7 @@ class IdentityTabVm {
         character.characterClass == other.character.characterClass &&
         character.subclass == other.character.subclass &&
         character.level == other.character.level &&
+        sameReference(character.classes, other.character.classes) &&
         character.background == other.character.background &&
         character.alignment == other.character.alignment &&
         sameReference(character.languages, other.character.languages) &&
@@ -51,6 +52,7 @@ class IdentityTabVm {
     character.characterClass,
     character.subclass,
     character.level,
+    referenceHash(character.classes),
     character.background,
     character.alignment,
     referenceHash(character.languages),

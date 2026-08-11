@@ -16,6 +16,7 @@ import 'character_list_provider.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/character_avatar.dart';
 import '../../shared/widgets/responsive_layout.dart';
 
@@ -425,7 +426,9 @@ class _CharacterCard extends ConsumerWidget {
         ),
         title: Text(character.name),
         subtitle: Text(
-          '${i18n.raceName(character.race)} · ${i18n.className(character.characterClass)} · ${l10n.charCardLevel(character.level)}',
+          '${localizedRaceSummary(character, i18n)} · '
+          '${localizedClassLevelSummary(character, i18n)} · '
+          '${l10n.charCardLevel(character.totalLevel)}',
         ),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,

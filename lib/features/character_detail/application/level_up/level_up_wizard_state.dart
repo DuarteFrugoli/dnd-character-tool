@@ -4,6 +4,7 @@ import 'package:dnd_character_tool/data/models/models.dart';
 enum LevelUpAsiMode { asi, feat }
 
 enum LevelUpWizardPage {
+  classTarget,
   features,
   subclass,
   asi,
@@ -18,6 +19,8 @@ enum LevelUpWizardPage {
 class LevelUpWizardState {
   LevelUpWizardState({
     required this.newLevel,
+    this.targetClassEntryId,
+    this.targetClassName,
     this.hpGained = 0,
     this.hpChosen = false,
     this.asiMode = LevelUpAsiMode.asi,
@@ -28,6 +31,8 @@ class LevelUpWizardState {
   });
 
   final int newLevel;
+  String? targetClassEntryId;
+  String? targetClassName;
   int hpGained;
   bool hpChosen;
   LevelUpAsiMode asiMode;
@@ -41,6 +46,8 @@ class LevelUpWizardState {
   KnownSpell? swapReplacement;
 
   LevelUpWizardState copyWith({
+    Object? targetClassEntryId = _sentinel,
+    Object? targetClassName = _sentinel,
     int? hpGained,
     bool? hpChosen,
     LevelUpAsiMode? asiMode,
@@ -55,6 +62,12 @@ class LevelUpWizardState {
   }) {
     final state = LevelUpWizardState(
       newLevel: newLevel,
+      targetClassEntryId: targetClassEntryId == _sentinel
+          ? this.targetClassEntryId
+          : targetClassEntryId as String?,
+      targetClassName: targetClassName == _sentinel
+          ? this.targetClassName
+          : targetClassName as String?,
       hpGained: hpGained ?? this.hpGained,
       hpChosen: hpChosen ?? this.hpChosen,
       asiMode: asiMode ?? this.asiMode,

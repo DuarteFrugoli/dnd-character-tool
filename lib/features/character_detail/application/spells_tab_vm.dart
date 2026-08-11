@@ -35,6 +35,10 @@ class SpellsTabVm {
         character.proficiencyBonus == other.character.proficiencyBonus &&
         sameReference(character.spells, other.character.spells) &&
         sameReference(character.spellSlots, other.character.spellSlots) &&
+        sameReference(
+          character.pactMagicSlots,
+          other.character.pactMagicSlots,
+        ) &&
         sameReference(character.innateSpells, other.character.innateSpells) &&
         sameReference(
           character.disabledSpells,
@@ -53,6 +57,7 @@ class SpellsTabVm {
     character.proficiencyBonus,
     referenceHash(character.spells),
     referenceHash(character.spellSlots),
+    referenceHash(character.pactMagicSlots),
     referenceHash(character.innateSpells),
     referenceHash(character.disabledSpells),
     character.concentrationSpell,

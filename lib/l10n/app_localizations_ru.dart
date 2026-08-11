@@ -464,6 +464,39 @@ class AppLocalizationsRu extends AppLocalizations {
   String get levelUpTitle => 'Повышение уровня';
 
   @override
+  String get levelUpStepClassTarget => 'Выберите класс для повышения';
+
+  @override
+  String get levelUpClassTargetExisting => 'Текущие классы';
+
+  @override
+  String get levelUpClassTargetAddClass => 'Добавить новый класс';
+
+  @override
+  String levelUpClassTargetCurrentLevel(int level) {
+    return 'Текущий уровень $level';
+  }
+
+  @override
+  String levelUpClassTargetNextClassLevel(int level) {
+    return 'Уровень класса $level';
+  }
+
+  @override
+  String levelUpClassTargetRequirement(String requirement) {
+    return 'Требуется $requirement';
+  }
+
+  @override
+  String levelUpClassTargetRequirementMissing(String requirement) {
+    return 'Не выполнено требование: $requirement';
+  }
+
+  @override
+  String get levelUpClassTargetCurrentRequirementsMissing =>
+      'Ваш текущий класс не выполняет требование мультикласса.';
+
+  @override
   String get levelUpConfirm => 'Подтвердить повышение';
 
   @override
@@ -587,6 +620,11 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String levelUpSummaryLevel(int level) {
     return '→ Уровень $level';
+  }
+
+  @override
+  String levelUpSummaryClassLevel(String className, int level) {
+    return '$className уровень $level';
   }
 
   @override
@@ -1502,6 +1540,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get spellsSlots => 'Слоты заклинаний';
+
+  @override
+  String get spellsPactMagicSlots => 'Магия договора';
 
   @override
   String get spellsSpellcasting => 'Колдовство';
@@ -2456,6 +2497,21 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get settingsMaintenanceChangeMulticlassStructure =>
+      'Структура классов подготовлена для мультикласса.';
+
+  @override
+  String get settingsMaintenanceChangeSpellSlots =>
+      'Обычные ячейки заклинаний пересчитаны.';
+
+  @override
+  String get settingsMaintenanceChangePactMagicSlots =>
+      'Ячейки Магии договора отделены.';
+
+  @override
+  String get settingsMaintenanceChangeArmorClass => 'Класс Доспеха пересчитан.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

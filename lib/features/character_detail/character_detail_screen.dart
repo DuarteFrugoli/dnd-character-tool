@@ -6,8 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/datasources/srd/srd_i18n_service.dart';
+import '../../data/constants/level_up_rules.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import 'application/character_tab_view_models.dart';
 import 'character_detail_provider.dart';
@@ -35,11 +37,7 @@ class _CharacterActionMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, size: 20),
-        const SizedBox(width: 12),
-        Text(label),
-      ],
+      children: [Icon(icon, size: 20), const SizedBox(width: 12), Text(label)],
     );
   }
 }
@@ -153,6 +151,21 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
+    final classSummary = localizedClassEntriesSummary(
+      header.classes,
+      i18n,
+      includeSubclasses: true,
+    );
+    final raceSummary = localizedRaceSummaryFromParts(
+      race: header.race,
+      subrace: header.subrace,
+      i18n: i18n,
+    );
+    final levelLabel = l10n.charCardLevel(header.level);
+    final compactHeader = MediaQuery.sizeOf(context).width < 420;
+    final subtitle = compactHeader
+        ? '$levelLabel  ·  $classSummary  ·  $raceSummary'
+        : '$classSummary  ·  $raceSummary  ·  $levelLabel';
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 72,
@@ -168,9 +181,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             ),
             Text(
-              '${i18n.className(header.characterClass)}${header.subclass != null ? ' (${i18n.subclassName(header.characterClass, header.subclass!)})' : ''}  ·  ${i18n.raceName(header.race)}'
-              '${header.subrace != null ? ' (${i18n.subraceName(header.subrace!)})' : ''}'
-              '  ·  Lv ${header.level}',
+              subtitle,
               maxLines: 2,
               overflow: TextOverflow.visible,
               softWrap: true,
@@ -187,10 +198,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
             onSelected: (action) {
               switch (action) {
                 case _CharacterHeaderAction.rollDice:
-                  openDiceRollerSheet(
-                    context,
-                    characterId: widget.characterId,
-                  );
+                  openDiceRollerSheet(context, characterId: widget.characterId);
                   return;
                 case _CharacterHeaderAction.levelUp:
                   _openLevelUpForCurrentCharacter();
@@ -406,13 +414,11 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       characterDetailProvider(widget.characterId).notifier,
     );
 
-    // Fetch hit die from SRD
-    final classes = await ref.read(srdDataSourceProvider).getClasses();
-    final srdClass = classes.firstWhereOrNull(
-      (c) => c.name == character.characterClass,
-    );
-    final hitDiePool = character.hitDicePools.firstOrNull;
-    final hitDie = hitDiePool?.dieSize ?? srdClass?.hitDie ?? 8;
+    final hitDiePool =
+        character.hitDicePools.firstWhereOrNull((pool) => pool.remaining > 0) ??
+        character.hitDicePools.firstOrNull;
+    final hitDie =
+        hitDiePool?.dieSize ?? levelUpHitDie(character.primaryClassName);
     final conMod = (character.abilityScores.constitution - 10) ~/ 2;
     final available = hitDiePool?.remaining ?? character.availableHitDice;
 

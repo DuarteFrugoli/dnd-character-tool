@@ -35,14 +35,32 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
   Map<int, List<KnownSpell>> _byLevel = const {};
   Map<int, List<KnownSpell>> _extraByLevel = const {};
 
+  String _spellcastingLoadKey(Character character) {
+    return character.classEntries
+        .map(
+          (entry) =>
+              '${entry.id}:${entry.className}:${entry.subclassName}:${entry.level}',
+        )
+        .join('|');
+  }
+
+  bool _spellMatchesClassEntry(KnownSpell spell, CharacterClassEntry entry) {
+    if (spell.sourceClassEntryId == entry.id) return true;
+    return spell.sourceClassEntryId == null &&
+        spell.sourceClass?.toLowerCase() == entry.className.toLowerCase();
+  }
+
   void _rebuildSpellDisplayData() {
     final character = widget.character;
     final spellcastingSummary = CharacterSpellcastingSummary.fromCharacter(
       character,
     );
-    final engine = spellcastingSummary.primaryEngine;
+    final primaryOrigin = spellcastingSummary.primaryOrigin;
+    final engine = primaryOrigin?.engine;
+    final spellcastingClass =
+        primaryOrigin?.classEntry ?? character.primaryClass;
     final isPrepareAll =
-        engine != null && _isPrepareAllClass(character.primaryClass.className);
+        engine != null && _isPrepareAllClass(spellcastingClass.className);
 
     List<KnownSpell> displaySpells;
     List<KnownSpell> extraSpells = [];
@@ -69,9 +87,9 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
               isPrepared: isAlways || preparedNames.contains(spell.name),
               isAlwaysPrepared: isAlways,
               sourceType: isAlways ? 'subclassFeature' : 'class',
-              sourceClass: character.primaryClass.className,
-              sourceSubclass: character.primaryClass.subclassName,
-              sourceClassEntryId: character.primaryClass.id,
+              sourceClass: spellcastingClass.className,
+              sourceSubclass: spellcastingClass.subclassName,
+              sourceClassEntryId: spellcastingClass.id,
             );
           })
           .toList();
@@ -89,15 +107,19 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                   isPrepared: true,
                   isAlwaysPrepared: true,
                   sourceType: 'subclassFeature',
-                  sourceClass: character.primaryClass.className,
-                  sourceSubclass: character.primaryClass.subclassName,
-                  sourceClassEntryId: character.primaryClass.id,
+                  sourceClass: spellcastingClass.className,
+                  sourceSubclass: spellcastingClass.subclassName,
+                  sourceClassEntryId: spellcastingClass.id,
                 ),
               )
               .toList() ??
           [];
       final cantrips = character.spells
-          .where((spell) => spell.level == 0)
+          .where(
+            (spell) =>
+                spell.level == 0 &&
+                _spellMatchesClassEntry(spell, spellcastingClass),
+          )
           .toList();
       displaySpells = [...cantrips, ...classSpells, ...extraSubclassSpells];
       extraSpells = character.spells
@@ -135,10 +157,8 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
   @override
   void didUpdateWidget(SpellsTab old) {
     super.didUpdateWidget(old);
-    if (old.character.primaryClass.className !=
-            widget.character.primaryClass.className ||
-        old.character.primaryClass.subclassName !=
-            widget.character.primaryClass.subclassName) {
+    if (_spellcastingLoadKey(old.character) !=
+        _spellcastingLoadKey(widget.character)) {
       _loadSpells();
     } else if (old.character != widget.character) {
       _rebuildSpellDisplayData();
@@ -155,9 +175,12 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     }
     if (!mounted) return;
     final character = widget.character;
-    final primaryClass = character.primaryClass;
-    final cls = primaryClass.className.toLowerCase();
-    final subclass = primaryClass.subclassName;
+    final spellcastingOrigin = CharacterSpellcastingSummary.fromCharacter(
+      character,
+    ).primaryOrigin;
+    final spellcastingClass = spellcastingOrigin?.classEntry;
+    final cls = spellcastingClass?.className.toLowerCase() ?? '';
+    final subclass = spellcastingClass?.subclassName;
     final isPrepareAll = _isPrepareAllClass(cls);
     setState(() {
       _spellIndex = {for (final spell in all) spell.name.toLowerCase(): spell};
@@ -198,6 +221,20 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     );
   }
 
+  String? _spellOriginLabel(
+    KnownSpell spell,
+    CharacterSpellcastingSummary summary,
+    SrdI18nService i18n,
+  ) {
+    if (summary.origins.length <= 1) return null;
+    final origin = summary.origins.firstWhereOrNull((origin) {
+      return _spellMatchesClassEntry(spell, origin.classEntry);
+    });
+    final className = origin?.classEntry.className ?? spell.sourceClass;
+    if (className == null || className.isEmpty) return null;
+    return i18n.className(className);
+  }
+
   @override
   bool get wantKeepAlive => true;
 
@@ -213,10 +250,17 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     final spellcastingSummary = CharacterSpellcastingSummary.fromCharacter(
       character,
     );
-    final engine = spellcastingSummary.primaryEngine;
+    final primaryOrigin = spellcastingSummary.primaryOrigin;
+    final engine = primaryOrigin?.engine;
+    final spellcastingClass =
+        primaryOrigin?.classEntry ?? character.primaryClass;
     final isCaster = engine != null;
     final hasSpells = character.spells.isNotEmpty;
-    final hasSlots = character.spellSlots.total.any((total) => total > 0);
+    final standardSlots = spellcastingSummary.standardSlots;
+    final pactMagicSlots = spellcastingSummary.pactMagicSlots;
+    final hasStandardSlots = standardSlots.total.any((total) => total > 0);
+    final hasPactMagicSlots = pactMagicSlots.total.any((total) => total > 0);
+    final hasSlots = hasStandardSlots || hasPactMagicSlots;
     final hasInnate = character.innateSpells.isNotEmpty;
 
     if (!isCaster && !hasSlots && !hasSpells && !hasInnate) {
@@ -251,23 +295,27 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     }
 
     final isPrepareAll =
-        isCaster && _isPrepareAllClass(character.primaryClass.className);
+        isCaster && _isPrepareAllClass(spellcastingClass.className);
     final levels = _byLevel.keys.toList()..sort();
     final prepares =
         isCaster &&
-        KnownSpellCasting.classPrepares(character.primaryClass.className);
-    final preparedCount = character.spells
+        KnownSpellCasting.classPrepares(spellcastingClass.className);
+    final originSpells = primaryOrigin == null
+        ? character.spells
+        : character.spells
+              .where(
+                (spell) =>
+                    _spellMatchesClassEntry(spell, primaryOrigin.classEntry),
+              )
+              .toList();
+    final preparedCount = originSpells
         .where(
           (spell) =>
               spell.level > 0 && (spell.isPrepared || spell.isAlwaysPrepared),
         )
         .length;
-    final nonCantrips = character.spells
-        .where((spell) => spell.level > 0)
-        .toList();
-    final cantripCount = character.spells
-        .where((spell) => spell.level == 0)
-        .length;
+    final nonCantrips = originSpells.where((spell) => spell.level > 0).toList();
+    final cantripCount = originSpells.where((spell) => spell.level == 0).length;
 
     return Scaffold(
       body: _spellIndex == null
@@ -289,18 +337,18 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                         ),
                         const SizedBox(height: 12),
                       ],
-                      if (hasSlots) ...[
+                      if (hasStandardSlots) ...[
                         Text(
                           l10n.spellsSlots,
                           style: theme.textTheme.titleMedium,
                         ),
                         const SizedBox(height: 8),
                         for (int level = 1; level <= 9; level++)
-                          if (character.spellSlots.total[level - 1] > 0)
+                          if (standardSlots.total[level - 1] > 0)
                             SpellSlotRow(
                               level: level,
-                              total: character.spellSlots.total[level - 1],
-                              used: character.spellSlots.used[level - 1],
+                              total: standardSlots.total[level - 1],
+                              used: standardSlots.used[level - 1],
                               onUse: () => ref
                                   .read(
                                     characterDetailProvider(
@@ -315,6 +363,35 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                                     ).notifier,
                                   )
                                   .restoreSpellSlot(level),
+                            ),
+                        const SizedBox(height: 16),
+                      ],
+                      if (hasPactMagicSlots) ...[
+                        Text(
+                          l10n.spellsPactMagicSlots,
+                          style: theme.textTheme.titleMedium,
+                        ),
+                        const SizedBox(height: 8),
+                        for (int level = 1; level <= 9; level++)
+                          if (pactMagicSlots.total[level - 1] > 0)
+                            SpellSlotRow(
+                              level: level,
+                              total: pactMagicSlots.total[level - 1],
+                              used: pactMagicSlots.used[level - 1],
+                              onUse: () => ref
+                                  .read(
+                                    characterDetailProvider(
+                                      widget.characterId,
+                                    ).notifier,
+                                  )
+                                  .usePactMagicSlot(level),
+                              onRestore: () => ref
+                                  .read(
+                                    characterDetailProvider(
+                                      widget.characterId,
+                                    ).notifier,
+                                  )
+                                  .restorePactMagicSlot(level),
                             ),
                         const SizedBox(height: 16),
                       ],
@@ -412,12 +489,10 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                                       level: spell.level,
                                       isPrepared: true,
                                       sourceType: 'class',
-                                      sourceClass:
-                                          character.primaryClass.className,
+                                      sourceClass: spellcastingClass.className,
                                       sourceSubclass:
-                                          character.primaryClass.subclassName,
-                                      sourceClassEntryId:
-                                          character.primaryClass.id,
+                                          spellcastingClass.subclassName,
+                                      sourceClassEntryId: spellcastingClass.id,
                                     ),
                                   );
                                 }
@@ -500,6 +575,11 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                             },
                             characterId: widget.characterId,
                             concentrationSpell: character.concentrationSpell,
+                            originLabel: _spellOriginLabel(
+                              spell,
+                              spellcastingSummary,
+                              i18n,
+                            ),
                             i18n: i18n,
                           );
                         }, childCount: _byLevel[level]!.length),
@@ -591,6 +671,11 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                             },
                             characterId: widget.characterId,
                             concentrationSpell: character.concentrationSpell,
+                            originLabel: _spellOriginLabel(
+                              spell,
+                              spellcastingSummary,
+                              i18n,
+                            ),
                             i18n: i18n,
                           );
                         }, childCount: _extraByLevel[level]!.length),
@@ -623,9 +708,9 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                           level: srdSpell.level,
                           isPrepared: false,
                           sourceType: 'class',
-                          sourceClass: character.primaryClass.className,
-                          sourceSubclass: character.primaryClass.subclassName,
-                          sourceClassEntryId: character.primaryClass.id,
+                          sourceClass: spellcastingClass.className,
+                          sourceSubclass: spellcastingClass.subclassName,
+                          sourceClassEntryId: spellcastingClass.id,
                         ),
                       ),
                   onRemoveSpell: (name) => ref
@@ -649,10 +734,9 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                                 level: level,
                                 isPrepared: true,
                                 sourceType: 'class',
-                                sourceClass: character.primaryClass.className,
-                                sourceSubclass:
-                                    character.primaryClass.subclassName,
-                                sourceClassEntryId: character.primaryClass.id,
+                                sourceClass: spellcastingClass.className,
+                                sourceSubclass: spellcastingClass.subclassName,
+                                sourceClassEntryId: spellcastingClass.id,
                               ),
                             );
                           } else {

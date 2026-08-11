@@ -20,10 +20,14 @@ class FeatureUsageContext {
     String? sourceClass,
     int? sourceClassLevel,
   }) {
+    final totalLevel = character.totalLevel;
+    final resolvedSourceClassLevel =
+        sourceClassLevel ??
+        (sourceClass == null ? null : character.classLevel(sourceClass));
     return FeatureUsageContext(
-      totalCharacterLevel: character.level,
+      totalCharacterLevel: totalLevel,
       sourceClass: sourceClass,
-      sourceClassLevel: sourceClassLevel ?? character.level,
+      sourceClassLevel: resolvedSourceClassLevel,
     );
   }
 
@@ -203,6 +207,18 @@ class FeatureUsageBinding {
   final FeatureUsageContext usageContext;
 }
 
+class FeatureUsageFeatureSet {
+  const FeatureUsageFeatureSet({
+    required this.classEntry,
+    required this.classFeatures,
+    required this.subclassFeatures,
+  });
+
+  final CharacterClassEntry classEntry;
+  final Iterable<SrdClassFeature> classFeatures;
+  final Iterable<SrdClassFeature> subclassFeatures;
+}
+
 class FeatureUsageEngine {
   const FeatureUsageEngine._();
 
@@ -329,15 +345,17 @@ class FeatureUsageEngine {
   static Iterable<FeatureUsageResource> activeResources({
     required Character character,
     required FeatureUsageCatalog catalog,
-    required Iterable<SrdClassFeature> classFeatures,
-    required Iterable<SrdClassFeature> subclassFeatures,
-    required Iterable<String> raceTraits,
+    Iterable<SrdClassFeature> classFeatures = const [],
+    Iterable<SrdClassFeature> subclassFeatures = const [],
+    Iterable<FeatureUsageFeatureSet> classFeatureSets = const [],
+    Iterable<String> raceTraits = const [],
   }) sync* {
     for (final binding in activeResourceBindings(
       character: character,
       catalog: catalog,
       classFeatures: classFeatures,
       subclassFeatures: subclassFeatures,
+      classFeatureSets: classFeatureSets,
       raceTraits: raceTraits,
     )) {
       yield binding.resource;
@@ -347,9 +365,10 @@ class FeatureUsageEngine {
   static Iterable<FeatureUsageBinding> activeResourceBindings({
     required Character character,
     required FeatureUsageCatalog catalog,
-    required Iterable<SrdClassFeature> classFeatures,
-    required Iterable<SrdClassFeature> subclassFeatures,
-    required Iterable<String> raceTraits,
+    Iterable<SrdClassFeature> classFeatures = const [],
+    Iterable<SrdClassFeature> subclassFeatures = const [],
+    Iterable<FeatureUsageFeatureSet> classFeatureSets = const [],
+    Iterable<String> raceTraits = const [],
   }) sync* {
     final seen = <String>{};
 
@@ -372,36 +391,49 @@ class FeatureUsageEngine {
       );
     }
 
-    final primaryClass = character.primaryClass;
-    final classContext = FeatureUsageContext.forCharacter(
-      character,
-      sourceClass: primaryClass.className,
-      sourceClassLevel: primaryClass.level,
-    );
-    for (final feature in classFeatures) {
-      final binding = add(
-        catalog.classFeature(primaryClass.className, feature.name),
-        classContext,
-      );
-      if (binding != null) yield binding;
-    }
+    final effectiveClassFeatureSets = classFeatureSets.isNotEmpty
+        ? classFeatureSets
+        : [
+            FeatureUsageFeatureSet(
+              classEntry: character.primaryClass,
+              classFeatures: classFeatures,
+              subclassFeatures: subclassFeatures,
+            ),
+          ];
 
-    final subclassName = primaryClass.subclassName ?? '';
-    final subclassContext = FeatureUsageContext.forCharacter(
-      character,
-      sourceClass: primaryClass.className,
-      sourceClassLevel: primaryClass.level,
-    );
-    for (final feature in subclassFeatures) {
-      final binding = add(
-        catalog.subclassFeature(
-          primaryClass.className,
-          subclassName,
-          feature.name,
-        ),
-        subclassContext,
+    for (final set in effectiveClassFeatureSets) {
+      final classEntry = set.classEntry;
+      final classContext = FeatureUsageContext.forCharacter(
+        character,
+        sourceClass: classEntry.className,
+        sourceClassLevel: classEntry.level,
       );
-      if (binding != null) yield binding;
+      for (final feature in set.classFeatures) {
+        final binding = add(
+          catalog.classFeature(classEntry.className, feature.name),
+          classContext,
+        );
+        if (binding != null) yield binding;
+      }
+
+      final subclassName = classEntry.subclassName ?? '';
+      if (subclassName.isEmpty) continue;
+      final subclassContext = FeatureUsageContext.forCharacter(
+        character,
+        sourceClass: classEntry.className,
+        sourceClassLevel: classEntry.level,
+      );
+      for (final feature in set.subclassFeatures) {
+        final binding = add(
+          catalog.subclassFeature(
+            classEntry.className,
+            subclassName,
+            feature.name,
+          ),
+          subclassContext,
+        );
+        if (binding != null) yield binding;
+      }
     }
 
     final characterContext = FeatureUsageContext.forCharacter(character);
@@ -422,8 +454,9 @@ class FeatureUsageEngine {
       }
 
       if (sourceType == FeatureChoiceSourceType.classFeature) {
+        final sourceClass = _extraFeatureSourceClass(character, feature);
         final classRef = catalog.classFeature(
-          feature.sourceClass,
+          sourceClass,
           sourceFeature,
         );
         if (classRef != null) {
@@ -431,7 +464,7 @@ class FeatureUsageEngine {
             classRef,
             FeatureUsageContext.forCharacter(
               character,
-              sourceClass: feature.sourceClass,
+              sourceClass: sourceClass,
               sourceClassLevel: _extraFeatureSourceLevel(character, feature),
             ),
           );
@@ -441,11 +474,8 @@ class FeatureUsageEngine {
       }
 
       if (sourceType == FeatureChoiceSourceType.subclassFeature) {
-        final subclassName = feature.sourceSubclass ?? feature.sourceClass;
-        final sourceClass =
-            feature.sourceClass.isEmpty || feature.sourceClass == subclassName
-            ? character.characterClass
-            : feature.sourceClass;
+        final subclassName = _extraFeatureSourceSubclass(character, feature);
+        final sourceClass = _extraFeatureSourceClass(character, feature);
         final subclassRef = catalog.subclassFeature(
           sourceClass,
           subclassName,
@@ -457,6 +487,7 @@ class FeatureUsageEngine {
             FeatureUsageContext.forCharacter(
               character,
               sourceClass: sourceClass,
+              sourceClassLevel: _extraFeatureSourceLevel(character, feature),
             ),
           );
           if (binding != null) yield binding;
@@ -464,13 +495,14 @@ class FeatureUsageEngine {
         }
       }
 
-      final classRef = catalog.classFeature(feature.sourceClass, feature.name);
+      final sourceClass = _extraFeatureSourceClass(character, feature);
+      final classRef = catalog.classFeature(sourceClass, feature.name);
       if (classRef != null) {
         final binding = add(
           classRef,
           FeatureUsageContext.forCharacter(
             character,
-            sourceClass: feature.sourceClass,
+            sourceClass: sourceClass,
             sourceClassLevel: _extraFeatureSourceLevel(character, feature),
           ),
         );
@@ -479,8 +511,8 @@ class FeatureUsageEngine {
       }
 
       final subclassRef = catalog.subclassFeature(
-        character.characterClass,
-        feature.sourceClass,
+        sourceClass,
+        _extraFeatureSourceSubclass(character, feature),
         feature.name,
       );
       if (subclassRef != null) {
@@ -488,7 +520,8 @@ class FeatureUsageEngine {
           subclassRef,
           FeatureUsageContext.forCharacter(
             character,
-            sourceClass: character.characterClass,
+            sourceClass: sourceClass,
+            sourceClassLevel: _extraFeatureSourceLevel(character, feature),
           ),
         );
         if (binding != null) yield binding;
@@ -510,8 +543,45 @@ class FeatureUsageEngine {
         if (entry.id == sourceClassEntryId) return entry.level;
       }
     }
-    final classLevel = character.classLevel(feature.sourceClass);
+    final classLevel = character.classLevel(
+      _extraFeatureSourceClass(character, feature),
+    );
     if (classLevel > 0) return classLevel;
     return feature.level;
+  }
+
+  static String _extraFeatureSourceClass(
+    Character character,
+    CharacterExtraFeature feature,
+  ) {
+    final sourceClassEntryId = feature.sourceClassEntryId;
+    if (sourceClassEntryId != null) {
+      for (final entry in character.classEntries) {
+        if (entry.id == sourceClassEntryId) return entry.className;
+      }
+    }
+    final subclassName = _extraFeatureSourceSubclass(character, feature);
+    if (feature.effectiveSourceType ==
+            FeatureChoiceSourceType.subclassFeature &&
+        (feature.sourceClass.isEmpty || feature.sourceClass == subclassName)) {
+      return character.primaryClassName;
+    }
+    if (feature.sourceClass.isEmpty) return character.primaryClassName;
+    return feature.sourceClass;
+  }
+
+  static String _extraFeatureSourceSubclass(
+    Character character,
+    CharacterExtraFeature feature,
+  ) {
+    final sourceClassEntryId = feature.sourceClassEntryId;
+    if (sourceClassEntryId != null) {
+      for (final entry in character.classEntries) {
+        if (entry.id == sourceClassEntryId) {
+          return feature.sourceSubclass ?? entry.subclassName ?? '';
+        }
+      }
+    }
+    return feature.sourceSubclass ?? feature.sourceClass;
   }
 }

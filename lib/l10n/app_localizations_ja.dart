@@ -455,6 +455,39 @@ class AppLocalizationsJa extends AppLocalizations {
   String get levelUpTitle => 'レベルアップ';
 
   @override
+  String get levelUpStepClassTarget => 'レベルを上げるクラスを選択';
+
+  @override
+  String get levelUpClassTargetExisting => '現在のクラス';
+
+  @override
+  String get levelUpClassTargetAddClass => '新しいクラスを追加';
+
+  @override
+  String levelUpClassTargetCurrentLevel(int level) {
+    return '現在のレベル $level';
+  }
+
+  @override
+  String levelUpClassTargetNextClassLevel(int level) {
+    return 'クラスレベル $level';
+  }
+
+  @override
+  String levelUpClassTargetRequirement(String requirement) {
+    return '$requirement が必要';
+  }
+
+  @override
+  String levelUpClassTargetRequirementMissing(String requirement) {
+    return '不足している条件: $requirement';
+  }
+
+  @override
+  String get levelUpClassTargetCurrentRequirementsMissing =>
+      '現在のクラスがマルチクラス条件を満たしていません。';
+
+  @override
   String get levelUpConfirm => 'レベルアップ確定';
 
   @override
@@ -575,6 +608,11 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String levelUpSummaryLevel(int level) {
     return '→ レベル$level';
+  }
+
+  @override
+  String levelUpSummaryClassLevel(String className, int level) {
+    return '$className レベル $level';
   }
 
   @override
@@ -1468,6 +1506,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get spellsSlots => 'スペルスロット';
+
+  @override
+  String get spellsPactMagicSlots => '契約魔法';
 
   @override
   String get spellsSpellcasting => '呪文詠唱';
@@ -2401,6 +2442,19 @@ class AppLocalizationsJa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get settingsMaintenanceChangeMulticlassStructure =>
+      'マルチクラス用のクラス構造を準備しました。';
+
+  @override
+  String get settingsMaintenanceChangeSpellSlots => '通常の呪文スロットを再計算しました。';
+
+  @override
+  String get settingsMaintenanceChangePactMagicSlots => '契約魔法スロットを分離しました。';
+
+  @override
+  String get settingsMaintenanceChangeArmorClass => 'アーマークラスを再計算しました。';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

@@ -3,111 +3,120 @@ import '../widgets/features/add_feature_sheet.dart';
 import '../widgets/features/feature_sections.dart';
 import '../widgets/features/feature_support.dart';
 
-final _featuresDataProvider =
-    Provider.family<AsyncValue<FeaturesData>, String>((ref, characterId) {
-      final vmState = ref.watch(featuresTabVmProvider(characterId));
-      return vmState.when(
-        loading: () => const AsyncLoading(),
-        error: (error, stackTrace) => AsyncError(error, stackTrace),
-        data: (vm) {
-          final character = vm.character;
-          final primaryClass = character.primaryClass;
-          final className = primaryClass.className;
-          final classLevel = primaryClass.level;
-          final subclassName = primaryClass.subclassName ?? '';
-          final classFeaturesState = ref.watch(
-            srdClassFeaturesProvider(className),
-          );
-          final racesState = ref.watch(srdRacesProvider);
-          final backgroundsState = ref.watch(srdBackgroundsProvider);
-          final traitDescriptionsState = ref.watch(srdRaceTraitsProvider);
-          final subclassFeaturesState = ref.watch(
-            srdSubclassFeaturesProvider(
-              SrdSubclassFeatureKey(
-                className: className,
-                subclassName: subclassName,
-              ),
-            ),
-          );
-          final featureChoiceCatalogState = ref.watch(
-            srdFeatureChoiceCatalogProvider,
-          );
-          final featureUsageCatalogState = ref.watch(
-            srdFeatureUsageCatalogProvider,
-          );
-          final skillsState = ref.watch(srdSkillsProvider);
-          final toolsState = ref.watch(srdToolsProvider);
-          final spellsState = ref.watch(srdSpellsProvider);
-          final languagesState = ref.watch(srdLanguagesProvider);
-          final weaponsState = ref.watch(srdWeaponsProvider);
-          final featsState = ref.watch(srdFeatsProvider);
+final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
+  (ref, characterId) {
+    final vmState = ref.watch(featuresTabVmProvider(characterId));
+    return vmState.when(
+      loading: () => const AsyncLoading(),
+      error: (error, stackTrace) => AsyncError(error, stackTrace),
+      data: (vm) {
+        final character = vm.character;
+        final classEntries = character.classEntries;
+        final classFeatureStates = {
+          for (final entry in classEntries)
+            entry.id: ref.watch(srdClassFeaturesProvider(entry.className)),
+        };
+        final allSubclassFeaturesState = ref.watch(
+          srdAllSubclassFeaturesProvider,
+        );
+        final racesState = ref.watch(srdRacesProvider);
+        final backgroundsState = ref.watch(srdBackgroundsProvider);
+        final traitDescriptionsState = ref.watch(srdRaceTraitsProvider);
+        final featureChoiceCatalogState = ref.watch(
+          srdFeatureChoiceCatalogProvider,
+        );
+        final featureUsageCatalogState = ref.watch(
+          srdFeatureUsageCatalogProvider,
+        );
+        final skillsState = ref.watch(srdSkillsProvider);
+        final toolsState = ref.watch(srdToolsProvider);
+        final spellsState = ref.watch(srdSpellsProvider);
+        final languagesState = ref.watch(srdLanguagesProvider);
+        final weaponsState = ref.watch(srdWeaponsProvider);
+        final featsState = ref.watch(srdFeatsProvider);
 
-          final pendingState = _featuresDataPendingState([
-            classFeaturesState,
-            racesState,
-            backgroundsState,
-            traitDescriptionsState,
-            subclassFeaturesState,
-            featureChoiceCatalogState,
-            featureUsageCatalogState,
-            skillsState,
-            toolsState,
-            spellsState,
-            languagesState,
-            weaponsState,
-            featsState,
-          ]);
-          if (pendingState != null) return pendingState;
+        final pendingState = _featuresDataPendingState([
+          ...classFeatureStates.values,
+          allSubclassFeaturesState,
+          racesState,
+          backgroundsState,
+          traitDescriptionsState,
+          featureChoiceCatalogState,
+          featureUsageCatalogState,
+          skillsState,
+          toolsState,
+          spellsState,
+          languagesState,
+          weaponsState,
+          featsState,
+        ]);
+        if (pendingState != null) return pendingState;
 
-          final classFeatures = classFeaturesState.valueOrNull!;
-          final races = racesState.valueOrNull!;
-          final backgrounds = backgroundsState.valueOrNull!;
-          final traitDescriptions = traitDescriptionsState.valueOrNull!;
-          final subclassFeatures = subclassFeaturesState.valueOrNull!;
-          final featureChoiceCatalog = featureChoiceCatalogState.valueOrNull!;
-          final featureUsageCatalog = featureUsageCatalogState.valueOrNull!;
-          final skills = skillsState.valueOrNull!;
-          final tools = toolsState.valueOrNull!;
-          final spells = spellsState.valueOrNull!;
-          final languages = languagesState.valueOrNull!;
-          final weapons = weaponsState.valueOrNull!;
-          final srdFeats = featsState.valueOrNull!;
+        final allSubclassFeatures = allSubclassFeaturesState.valueOrNull!;
+        final races = racesState.valueOrNull!;
+        final backgrounds = backgroundsState.valueOrNull!;
+        final traitDescriptions = traitDescriptionsState.valueOrNull!;
+        final featureChoiceCatalog = featureChoiceCatalogState.valueOrNull!;
+        final featureUsageCatalog = featureUsageCatalogState.valueOrNull!;
+        final skills = skillsState.valueOrNull!;
+        final tools = toolsState.valueOrNull!;
+        final spells = spellsState.valueOrNull!;
+        final languages = languagesState.valueOrNull!;
+        final weapons = weaponsState.valueOrNull!;
+        final srdFeats = featsState.valueOrNull!;
 
-          final race = races.where((r) => r.name == character.race).firstOrNull;
-          final subrace = race?.subraces
-              .where((s) => s.name == character.subrace)
-              .firstOrNull;
-          final bg = backgrounds
-              .where((b) => b.name == character.background)
-              .firstOrNull;
+        final race = races.where((r) => r.name == character.race).firstOrNull;
+        final subrace = race?.subraces
+            .where((s) => s.name == character.subrace)
+            .firstOrNull;
+        final bg = backgrounds
+            .where((b) => b.name == character.background)
+            .firstOrNull;
 
-          return AsyncData(
-            FeaturesData(
-              classFeatures: classFeatures
-                  .where((f) => f.level <= classLevel)
-                  .toList(),
-              raceTraits: race?.traits ?? [],
-              subraceTraits: subrace?.traits ?? [],
-              traitDescriptions: traitDescriptions,
-              backgroundFeatureName: bg?.feature.name,
-              backgroundFeatureDescription: bg?.feature.description,
-              subclassName: subclassName,
-              subclassFeatures: subclassFeatures
-                  .where((f) => f.level <= classLevel)
-                  .toList(),
-              featureChoiceCatalog: featureChoiceCatalog,
-              featureUsageCatalog: featureUsageCatalog,
-              skills: skills,
-              tools: tools,
-              spells: spells,
-              languages: languages,
-              weapons: weapons,
-              srdFeats: srdFeats,
-            ),
-          );
-        },
-      );
-    });
+        List<SrdClassFeature> subclassFeaturesFor(
+          CharacterClassEntry entry,
+        ) {
+          final subclassName = entry.subclassName;
+          if (subclassName == null || subclassName.isEmpty) {
+            return const <SrdClassFeature>[];
+          }
+          return (allSubclassFeatures[entry.className]?[subclassName] ??
+                  const <SrdClassFeature>[])
+              .where((f) => f.level <= entry.level)
+              .toList();
+        }
+
+        return AsyncData(
+          FeaturesData(
+            classSections: [
+              for (final entry in classEntries)
+                FeaturesClassSectionData(
+                  classEntry: entry,
+                  classFeatures: classFeatureStates[entry.id]!.valueOrNull!
+                      .where((f) => f.level <= entry.level)
+                      .toList(),
+                  subclassFeatures: subclassFeaturesFor(entry),
+                ),
+            ],
+            raceTraits: race?.traits ?? [],
+            subraceTraits: subrace?.traits ?? [],
+            traitDescriptions: traitDescriptions,
+            backgroundFeatureName: bg?.feature.name,
+            backgroundFeatureDescription: bg?.feature.description,
+            featureChoiceCatalog: featureChoiceCatalog,
+            featureUsageCatalog: featureUsageCatalog,
+            skills: skills,
+            tools: tools,
+            spells: spells,
+            languages: languages,
+            weapons: weapons,
+            srdFeats: srdFeats,
+          ),
+        );
+      },
+    );
+  },
+);
 
 AsyncValue<FeaturesData>? _featuresDataPendingState(
   List<AsyncValue<dynamic>> values,
@@ -170,12 +179,16 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
           Center(child: Text(AppLocalizations.of(context)!.featuresLoadError)),
       data: (data) {
         final disabledSet = widget.character.disabledFeatures.toSet();
-        void toggle(String name) {
+        void toggle(String key, {String? legacyName}) {
           final list = List<String>.from(widget.character.disabledFeatures);
-          if (list.contains(name)) {
-            list.remove(name);
+          final isDisabled =
+              list.contains(key) ||
+              (legacyName != null && list.contains(legacyName));
+          if (isDisabled) {
+            list.remove(key);
+            if (legacyName != null) list.remove(legacyName);
           } else {
-            list.add(name);
+            list.add(key);
           }
           ref
               .read(characterDetailProvider(widget.characterId).notifier)
@@ -225,22 +238,12 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
                       ),
                     ],
                     const SliverToBoxAdapter(child: SizedBox(height: 24)),
-                    ClassFeaturesSection(
-                      className: widget.character.primaryClass.className,
-                      features: data.classFeatures,
-                      disabledFeatures: disabledSet,
-                      onToggle: toggle,
-                      character: widget.character,
-                      characterId: widget.characterId,
-                      data: data,
-                      i18n: i18n,
-                    ),
-                    if (data.subclassFeatures.isNotEmpty) ...[
-                      const SliverToBoxAdapter(child: SizedBox(height: 24)),
-                      SubclassFeaturesSection(
-                        className: widget.character.primaryClass.className,
-                        subclassName: data.subclassName,
-                        features: data.subclassFeatures,
+                    for (var i = 0; i < data.classSections.length; i++) ...[
+                      if (i > 0)
+                        const SliverToBoxAdapter(child: SizedBox(height: 24)),
+                      ClassFeaturesSection(
+                        classEntry: data.classSections[i].classEntry,
+                        features: data.classSections[i].classFeatures,
                         disabledFeatures: disabledSet,
                         onToggle: toggle,
                         character: widget.character,
@@ -248,6 +251,22 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
                         data: data,
                         i18n: i18n,
                       ),
+                      if (data.classSections[i].subclassFeatures.isNotEmpty)
+                        ...[
+                          const SliverToBoxAdapter(child: SizedBox(height: 24)),
+                          SubclassFeaturesSection(
+                            classEntry: data.classSections[i].classEntry,
+                            features: data
+                                .classSections[i]
+                                .subclassFeatures,
+                            disabledFeatures: disabledSet,
+                            onToggle: toggle,
+                            character: widget.character,
+                            characterId: widget.characterId,
+                            data: data,
+                            i18n: i18n,
+                          ),
+                        ],
                     ],
                     if (widget.character.features.isNotEmpty) ...[
                       const SliverToBoxAdapter(child: SizedBox(height: 24)),

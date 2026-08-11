@@ -6,6 +6,7 @@ import 'migrations/normalize_equipment_order_migration.dart';
 import 'migrations/normalize_note_order_migration.dart';
 import 'migrations/normalize_equipment_items_migration.dart';
 import 'migrations/prepare_multiclass_structure_migration.dart';
+import 'migrations/sync_multiclass_spell_slots_migration.dart';
 import 'migrations/sync_spell_slots_and_armor_class_migration.dart';
 
 class CharacterMigrationRunner {
@@ -20,6 +21,7 @@ class CharacterMigrationRunner {
               NormalizeEquipmentOrderMigration(),
               SyncSpellSlotsAndArmorClassMigration(),
               PrepareMulticlassStructureMigration(),
+              SyncMulticlassSpellSlotsMigration(),
             ],
       );
 

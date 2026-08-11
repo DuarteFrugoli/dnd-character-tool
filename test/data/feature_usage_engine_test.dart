@@ -9,6 +9,7 @@ Character _character({
   int level = 1,
   AbilityScores scores = const AbilityScores(),
   Map<String, int> featureResources = const {},
+  List<CharacterClassEntry> classes = const [],
   List<CharacterExtraFeature> extraFeatures = const [],
 }) {
   final now = DateTime(2024);
@@ -19,6 +20,7 @@ Character _character({
     characterClass: cls,
     subclass: subclass,
     level: level,
+    classes: classes,
     abilityScores: scores,
     hitPoints: const HitPoints(maximum: 10, current: 10),
     featureResources: featureResources,
@@ -337,6 +339,108 @@ void main() {
           'maneuvers',
           'luck',
         ]);
+      },
+    );
+
+    test(
+      'activeResourceBindings uses each class entry level for multiclass features',
+      () {
+        final catalog = FeatureUsageCatalog(
+          resources: {
+            'rage': _resource('rage', 'barbarian_rage_uses'),
+            'ki': _resource('ki', 'monk_level'),
+          },
+          classFeatures: const {
+            'Barbarian': {'Rage': FeatureUsageRef(resourceId: 'rage')},
+            'Monk': {'Ki': FeatureUsageRef(resourceId: 'ki')},
+          },
+          subclassFeatures: const {},
+          raceTraits: const {},
+          feats: const {},
+        );
+        const barbarian = CharacterClassEntry(
+          id: 'barbarian',
+          className: 'Barbarian',
+          level: 5,
+          isStartingClass: true,
+        );
+        const monk = CharacterClassEntry(
+          id: 'monk',
+          className: 'Monk',
+          level: 2,
+        );
+        final character = _character(
+          cls: 'Barbarian',
+          level: 7,
+          classes: const [
+            CharacterClassEntry(
+              id: 'barbarian',
+              className: 'Barbarian',
+              level: 5,
+              isStartingClass: true,
+            ),
+            CharacterClassEntry(id: 'monk', className: 'Monk', level: 2),
+          ],
+        );
+
+        final bindings = FeatureUsageEngine.activeResourceBindings(
+          character: character,
+          catalog: catalog,
+          classFeatureSets: const [
+            FeatureUsageFeatureSet(
+              classEntry: barbarian,
+              classFeatures: [
+                SrdClassFeature(
+                  name: 'Rage',
+                  level: 1,
+                  type: 'active',
+                  description: '',
+                ),
+              ],
+              subclassFeatures: [],
+            ),
+            FeatureUsageFeatureSet(
+              classEntry: monk,
+              classFeatures: [
+                SrdClassFeature(
+                  name: 'Ki',
+                  level: 2,
+                  type: 'active',
+                  description: '',
+                ),
+              ],
+              subclassFeatures: [],
+            ),
+          ],
+        ).toList();
+
+        final rage = bindings.singleWhere(
+          (binding) => binding.resource.id == 'rage',
+        );
+        final ki = bindings.singleWhere(
+          (binding) => binding.resource.id == 'ki',
+        );
+
+        expect(rage.usageContext.sourceClass, 'Barbarian');
+        expect(rage.usageContext.sourceClassLevel, 5);
+        expect(ki.usageContext.sourceClass, 'Monk');
+        expect(ki.usageContext.sourceClassLevel, 2);
+        expect(
+          FeatureUsageEngine.maxFor(
+            rage.resource,
+            character,
+            usageContext: rage.usageContext,
+          ),
+          3,
+        );
+        expect(
+          FeatureUsageEngine.maxFor(
+            ki.resource,
+            character,
+            usageContext: ki.usageContext,
+          ),
+          2,
+        );
       },
     );
 

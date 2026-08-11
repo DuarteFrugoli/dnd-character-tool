@@ -40,11 +40,7 @@ enum _NoteCardAction { edit, togglePinned, delete }
 enum _NoteCloseAction { keepEditing, discard, save }
 
 class NotesTab extends ConsumerStatefulWidget {
-  const NotesTab({
-    super.key,
-    required this.notes,
-    required this.characterId,
-  });
+  const NotesTab({super.key, required this.notes, required this.characterId});
   final List<CharacterNote> notes;
   final String characterId;
 

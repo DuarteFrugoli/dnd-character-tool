@@ -275,10 +275,7 @@ class _DiceRollerSheetState extends ConsumerState<DiceRollerSheet> {
                     ),
                     if (_result != null) ...[
                       const SizedBox(height: 16),
-                      _DiceResultCard(
-                        result: _result!,
-                        onReroll: _roll,
-                      ),
+                      _DiceResultCard(result: _result!, onReroll: _roll),
                     ],
                     const SizedBox(height: 20),
                     _DiceHistoryList(history: history),

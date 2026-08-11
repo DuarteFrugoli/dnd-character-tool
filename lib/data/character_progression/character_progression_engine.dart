@@ -4,7 +4,6 @@ import '../constants/level_up_rules.dart';
 import '../datasources/srd/srd_models.dart';
 import '../feature_choice_engine.dart';
 import '../models/models.dart';
-import '../spellcasting_engine.dart';
 
 class CharacterProgressionEngine {
   const CharacterProgressionEngine._();
@@ -86,7 +85,7 @@ class CharacterProgressionEngine {
       spells: spells,
     );
 
-    updated = updated.copyWith(spellSlots: syncedSpellSlotsFor(updated));
+    updated = syncSpellcastingSlotsFor(updated);
     return updated.copyWith(armorClass: calcArmorClass(updated));
   }
 
@@ -166,21 +165,15 @@ class CharacterProgressionEngine {
       );
     }
 
-    return [
-      for (final pool in updated) _normalizedHitDiePool(pool),
-    ];
+    return [for (final pool in updated) _normalizedHitDiePool(pool)];
   }
 
-  static List<CharacterClassEntry> normalizeClassEntries(
-    Character character,
-  ) {
+  static List<CharacterClassEntry> normalizeClassEntries(Character character) {
     final entries = character.classEntries;
     return _withSingleStartingClass([
       for (var i = 0; i < entries.length; i++)
         entries[i].copyWith(
-          id: entries[i].id.isEmpty
-              ? 'class_${i + 1}'
-              : entries[i].id,
+          id: entries[i].id.isEmpty ? 'class_${i + 1}' : entries[i].id,
           className: entries[i].className.isEmpty
               ? character.characterClass
               : entries[i].className,
@@ -203,24 +196,31 @@ class CharacterProgressionEngine {
   }
 
   static SpellSlots syncedSpellSlotsFor(Character character) {
+    return syncSpellcastingSlotsFor(character).spellSlots;
+  }
+
+  static Character syncSpellcastingSlotsFor(Character character) {
     final summary = CharacterSpellcastingSummary.fromCharacter(character);
-    if (!summary.hasSpellcasting) return character.spellSlots;
-    if (summary.origins.length == 1) {
-      final origin = summary.origins.single;
-      return origin.engine.progressionType == SpellProgressionType.pact
-          ? summary.pactMagicSlots
-          : summary.standardSlots;
+    if (!summary.hasSpellcasting) return character;
+    return character.copyWith(
+      spellSlots: summary.standardSlots,
+      pactMagicSlots: summary.pactMagicSlots,
+    );
+  }
+
+  static SpellSlots pactMagicSlotsAfterShortRest(Character character) {
+    final summary = CharacterSpellcastingSummary.fromCharacter(character);
+    final pactSlots = summary.pactMagicSlots;
+    if (!pactSlots.total.any((total) => total > 0)) {
+      return character.pactMagicSlots;
     }
-    if (summary.standardSlots.total.any((total) => total > 0)) {
-      return summary.standardSlots;
-    }
-    return summary.pactMagicSlots;
+    return pactSlots.copyWith(used: List<int>.filled(9, 0));
   }
 
   static String classLevelSummary(Character character) {
-    return normalizeClassEntries(character)
-        .map((entry) => '${entry.className} ${entry.level}')
-        .join(' / ');
+    return normalizeClassEntries(
+      character,
+    ).map((entry) => '${entry.className} ${entry.level}').join(' / ');
   }
 
   static String? _targetSubclassAfterLevelUp(
@@ -248,10 +248,7 @@ class CharacterProgressionEngine {
 
   static CharacterHitDiePool _normalizedHitDiePool(CharacterHitDiePool pool) {
     final total = pool.total.clamp(0, 20).toInt();
-    return pool.copyWith(
-      total: total,
-      used: pool.used.clamp(0, total).toInt(),
-    );
+    return pool.copyWith(total: total, used: pool.used.clamp(0, total).toInt());
   }
 
   static List<CharacterExtraFeature> _extraFeaturesWithFeat(
@@ -286,9 +283,7 @@ class CharacterProgressionEngine {
   ) {
     final withoutSwapped = result.spellSwapped == null
         ? current
-        : current
-              .where((spell) => spell.name != result.spellSwapped)
-              .toList();
+        : current.where((spell) => spell.name != result.spellSwapped).toList();
     return [
       ...withoutSwapped,
       ...result.cantripsLearned.map(
@@ -311,8 +306,8 @@ class CharacterProgressionEngine {
           : spell.sourceType,
       sourceClass: _emptyToNull(spell.sourceClass) ?? result.targetClassName,
       sourceSubclass: _emptyToNull(spell.sourceSubclass) ?? targetSubclass,
-      sourceClassEntryId: _emptyToNull(spell.sourceClassEntryId) ??
-          result.targetClassEntryId,
+      sourceClassEntryId:
+          _emptyToNull(spell.sourceClassEntryId) ?? result.targetClassEntryId,
     );
   }
 

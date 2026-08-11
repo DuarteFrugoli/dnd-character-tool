@@ -23,7 +23,7 @@ class RacialTraitsSection extends ConsumerWidget {
   final List<String> subraceTraits;
   final Map<String, String> traitDescriptions;
   final Set<String> disabledFeatures;
-  final void Function(String) onToggle;
+  final FeatureDisabledToggle onToggle;
   final Character character;
   final String characterId;
   final FeaturesData data;
@@ -181,7 +181,7 @@ class BackgroundFeatureSection extends ConsumerWidget {
   final String featureName;
   final String featureDescription;
   final Set<String> disabledFeatures;
-  final void Function(String) onToggle;
+  final FeatureDisabledToggle onToggle;
   final SrdI18nService i18n;
 
   @override
@@ -511,17 +511,31 @@ class ExtraFeaturesSection extends ConsumerWidget {
   }
 
   String _sourceClassForExtra(CharacterExtraFeature feature) {
+    final sourceClassEntryId = feature.sourceClassEntryId;
+    if (sourceClassEntryId != null) {
+      for (final entry in character.classEntries) {
+        if (entry.id == sourceClassEntryId) return entry.className;
+      }
+    }
     final subclassName = _sourceSubclassForExtra(feature);
     if (feature.effectiveSourceType ==
             FeatureChoiceSourceType.subclassFeature &&
         (feature.sourceClass.isEmpty || feature.sourceClass == subclassName)) {
-      return character.primaryClass.className;
+      return character.primaryClassName;
     }
-    if (feature.sourceClass.isEmpty) return character.primaryClass.className;
+    if (feature.sourceClass.isEmpty) return character.primaryClassName;
     return feature.sourceClass;
   }
 
   String _sourceSubclassForExtra(CharacterExtraFeature feature) {
+    final sourceClassEntryId = feature.sourceClassEntryId;
+    if (sourceClassEntryId != null) {
+      for (final entry in character.classEntries) {
+        if (entry.id == sourceClassEntryId) {
+          return feature.sourceSubclass ?? entry.subclassName ?? '';
+        }
+      }
+    }
     return feature.sourceSubclass ?? feature.sourceClass;
   }
 
@@ -543,15 +557,17 @@ class ExtraFeaturesSection extends ConsumerWidget {
 
     final l10n2 = AppLocalizations.of(context)!;
     Widget buildExtra(CharacterExtraFeature f) {
+      final sourceClass = _sourceClassForExtra(f);
+      final sourceSubclass = _sourceSubclassForExtra(f);
       final requests = _requestsForExtra(f);
       final usageRef =
           data.featureUsageCatalog.classFeature(
-            _sourceClassForExtra(f),
+            sourceClass,
             f.name,
           ) ??
           data.featureUsageCatalog.subclassFeature(
-            _sourceClassForExtra(f),
-            _sourceSubclassForExtra(f),
+            sourceClass,
+            sourceSubclass,
             f.name,
           ) ??
           data.featureUsageCatalog.raceTrait(f.name);
@@ -562,8 +578,8 @@ class ExtraFeaturesSection extends ConsumerWidget {
         usageContext: _usageContextForExtra(f),
       );
       final displayName =
-          i18n.classFeatureName(f.sourceClass, f.name) ??
-          i18n.anySubclassFeatureName(f.sourceClass, f.name) ??
+          i18n.classFeatureName(sourceClass, f.name) ??
+          i18n.anySubclassFeatureName(sourceClass, f.name) ??
           i18n.raceTraitName(f.name);
       return Card(
         margin: const EdgeInsets.only(bottom: 10),
@@ -578,7 +594,7 @@ class ExtraFeaturesSection extends ConsumerWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                f.sourceClass,
+                sourceClass,
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: scheme.tertiary,
                   fontWeight: FontWeight.bold,
@@ -641,8 +657,8 @@ class ExtraFeaturesSection extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Text(
-                i18n.classFeatureDescription(f.sourceClass, f.name) ??
-                    i18n.anySubclassFeatureDescription(f.sourceClass, f.name) ??
+                i18n.classFeatureDescription(sourceClass, f.name) ??
+                    i18n.anySubclassFeatureDescription(sourceClass, f.name) ??
                     f.description,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
@@ -677,7 +693,7 @@ class ExtraFeaturesSection extends ConsumerWidget {
 class ClassFeaturesSection extends ConsumerWidget {
   const ClassFeaturesSection({
     super.key,
-    required this.className,
+    required this.classEntry,
     required this.features,
     required this.disabledFeatures,
     required this.onToggle,
@@ -687,10 +703,10 @@ class ClassFeaturesSection extends ConsumerWidget {
     required this.i18n,
   });
 
-  final String className;
+  final CharacterClassEntry classEntry;
   final List<SrdClassFeature> features;
   final Set<String> disabledFeatures;
-  final void Function(String) onToggle;
+  final FeatureDisabledToggle onToggle;
   final Character character;
   final String characterId;
   final FeaturesData data;
@@ -713,17 +729,16 @@ class ClassFeaturesSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final classEntry = character.classEntries.firstWhereOrNull(
-      (entry) => entry.className == className,
-    );
-    final classLevel = classEntry?.level ?? character.classLevel(className);
+    final className = classEntry.className;
+    final classLevel = classEntry.level;
+    final classLabel = '${i18n.className(className)} $classLevel';
 
     if (features.isEmpty) {
       return SliverMainAxisGroup(
         slivers: [
           SliverToBoxAdapter(
             child: Text(
-              l10n.featuresSectionClass(i18n.className(className)),
+              l10n.featuresSectionClass(classLabel),
               style: Theme.of(
                 context,
               ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -737,11 +752,19 @@ class ClassFeaturesSection extends ConsumerWidget {
 
     Widget buildFeature(SrdClassFeature f) {
       final typeColor = _typeColor(f.type, scheme);
-      final isDisabled = disabledFeatures.contains(f.name);
+      final disabledKey = classFeatureDisabledKey(
+        classEntry: classEntry,
+        featureName: f.name,
+      );
+      final isDisabled = featureIsDisabled(
+        disabledFeatures,
+        disabledKey,
+        legacyName: f.name,
+      );
       final requests = FeatureChoiceEngine.requestsForClassFeature(
         catalog: data.featureChoiceCatalog,
         className: className,
-        sourceClassEntryId: classEntry?.id,
+        sourceClassEntryId: classEntry.id,
         featureName: f.name,
         level: classLevel,
       );
@@ -832,7 +855,7 @@ class ClassFeaturesSection extends ConsumerWidget {
         ),
       );
       return GestureDetector(
-        onLongPress: () => onToggle(f.name),
+        onLongPress: () => onToggle(disabledKey, legacyName: f.name),
         child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
       );
     }
@@ -841,7 +864,7 @@ class ClassFeaturesSection extends ConsumerWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Text(
-            l10n.featuresSectionClass(i18n.className(className)),
+            l10n.featuresSectionClass(classLabel),
             style: Theme.of(
               context,
             ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -864,8 +887,7 @@ class ClassFeaturesSection extends ConsumerWidget {
 class SubclassFeaturesSection extends ConsumerWidget {
   const SubclassFeaturesSection({
     super.key,
-    required this.className,
-    required this.subclassName,
+    required this.classEntry,
     required this.features,
     required this.disabledFeatures,
     required this.onToggle,
@@ -875,11 +897,10 @@ class SubclassFeaturesSection extends ConsumerWidget {
     required this.i18n,
   });
 
-  final String className;
-  final String subclassName;
+  final CharacterClassEntry classEntry;
   final List<SrdClassFeature> features;
   final Set<String> disabledFeatures;
-  final void Function(String) onToggle;
+  final FeatureDisabledToggle onToggle;
   final Character character;
   final String characterId;
   final FeaturesData data;
@@ -889,17 +910,28 @@ class SubclassFeaturesSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final classEntry = character.classEntries.firstWhereOrNull(
-      (entry) => entry.className == className,
-    );
-    final classLevel = classEntry?.level ?? character.classLevel(className);
+    final className = classEntry.className;
+    final subclassName = classEntry.subclassName ?? '';
+    final classLevel = classEntry.level;
+    final subclassLabel =
+        '${i18n.subclassName(className, subclassName)} '
+        '(${i18n.className(className)} $classLevel)';
     Widget buildFeature(SrdClassFeature f) {
       final typeColor = f.type == 'active' ? scheme.primary : scheme.outline;
-      final isDisabled = disabledFeatures.contains(f.name);
+      final disabledKey = subclassFeatureDisabledKey(
+        classEntry: classEntry,
+        subclassName: subclassName,
+        featureName: f.name,
+      );
+      final isDisabled = featureIsDisabled(
+        disabledFeatures,
+        disabledKey,
+        legacyName: f.name,
+      );
       final requests = FeatureChoiceEngine.requestsForSubclassFeature(
         catalog: data.featureChoiceCatalog,
         className: className,
-        sourceClassEntryId: classEntry?.id,
+        sourceClassEntryId: classEntry.id,
         subclassName: subclassName,
         featureName: f.name,
         level: classLevel,
@@ -1002,7 +1034,7 @@ class SubclassFeaturesSection extends ConsumerWidget {
         ),
       );
       return GestureDetector(
-        onLongPress: () => onToggle(f.name),
+        onLongPress: () => onToggle(disabledKey, legacyName: f.name),
         child: isDisabled ? Opacity(opacity: 0.35, child: card) : card,
       );
     }
@@ -1011,9 +1043,7 @@ class SubclassFeaturesSection extends ConsumerWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Text(
-            l10n.featuresSectionSubclass(
-              i18n.subclassName(className, subclassName),
-            ),
+            l10n.featuresSectionSubclass(subclassLabel),
             style: Theme.of(
               context,
             ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),

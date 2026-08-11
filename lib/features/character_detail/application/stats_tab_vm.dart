@@ -29,8 +29,10 @@ class StatsTabVm {
     return other is StatsTabVm &&
         character.characterClass == other.character.characterClass &&
         character.level == other.character.level &&
+        sameReference(character.classes, other.character.classes) &&
         character.experiencePoints == other.character.experiencePoints &&
         sameReference(character.hitPoints, other.character.hitPoints) &&
+        sameReference(character.hitDicePools, other.character.hitDicePools) &&
         sameReference(character.equipment, other.character.equipment) &&
         sameReference(character.abilityScores, other.character.abilityScores) &&
         character.armorClass == other.character.armorClass &&
@@ -60,8 +62,10 @@ class StatsTabVm {
   int get hashCode => Object.hashAll([
     character.characterClass,
     character.level,
+    referenceHash(character.classes),
     character.experiencePoints,
     referenceHash(character.hitPoints),
+    referenceHash(character.hitDicePools),
     referenceHash(character.equipment),
     referenceHash(character.abilityScores),
     character.armorClass,

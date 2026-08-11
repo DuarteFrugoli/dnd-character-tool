@@ -381,10 +381,7 @@ List<ItemDetailRow> itemBaseDetailRows(
   SrdI18nService i18n,
 ) {
   final rows = <ItemDetailRow>[
-    ItemDetailRow(
-      l10n.inventoryLabelType,
-      itemTypeLabel(item.itemType, l10n),
-    ),
+    ItemDetailRow(l10n.inventoryLabelType, itemTypeLabel(item.itemType, l10n)),
     if (item.category.trim().isNotEmpty)
       ItemDetailRow(
         l10n.inventoryLabelCategory,

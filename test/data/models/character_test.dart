@@ -190,9 +190,7 @@ void main() {
     });
 
     test('clearSubclass sets legacy subclass mirror to null', () {
-      final c = _makeCharacter(cls: 'Wizard').copyWith(
-        subclass: 'Evocation',
-      );
+      final c = _makeCharacter(cls: 'Wizard').copyWith(subclass: 'Evocation');
 
       final updated = c.copyWith(clearSubclass: true);
 

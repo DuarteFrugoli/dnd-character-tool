@@ -127,7 +127,15 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
         .watch(characterDetailProvider(widget.characterId))
         .valueOrNull;
     final existingKeys = {
-      ...?character?.extraFeatures.map((f) => '${f.sourceClass}:${f.name}'),
+      for (final feature
+          in character?.extraFeatures ?? const <CharacterExtraFeature>[])
+        ...[
+          '${feature.sourceClass}:${feature.name}',
+          if (feature.sourceSubclass != null)
+            '${feature.sourceSubclass}:${feature.name}',
+          if (feature.sourceClassEntryId != null)
+            '${feature.sourceClassEntryId}:${feature.name}',
+        ],
     };
 
     return DraggableScrollableSheet(

@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/spellcasting_engine.dart';
+import '../../data/character_progression/character_progression.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_usage_engine.dart';
 import '../../data/constants/armor_class.dart';
@@ -130,6 +130,30 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(c.copyWith(spellSlots: slots.copyWith(used: newUsed)));
   }
 
+  Future<void> usePactMagicSlot(int level) async {
+    if (level < 1 || level > 9) return;
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final slots = c.pactMagicSlots;
+    final idx = level - 1;
+    if (slots.used[idx] >= slots.total[idx]) return;
+    final newUsed = List<int>.from(slots.used);
+    newUsed[idx]++;
+    await _save(c.copyWith(pactMagicSlots: slots.copyWith(used: newUsed)));
+  }
+
+  Future<void> restorePactMagicSlot(int level) async {
+    if (level < 1 || level > 9) return;
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final slots = c.pactMagicSlots;
+    final idx = level - 1;
+    if (slots.used[idx] <= 0) return;
+    final newUsed = List<int>.from(slots.used);
+    newUsed[idx]--;
+    await _save(c.copyWith(pactMagicSlots: slots.copyWith(used: newUsed)));
+  }
+
   Future<void> addSpell(KnownSpell spell) async {
     final c = state.valueOrNull;
     if (c == null) return;
@@ -179,6 +203,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         ),
         hitDicePools: newHitDicePools,
         spellSlots: c.spellSlots.copyWith(used: List.filled(9, 0)),
+        pactMagicSlots: c.pactMagicSlots.copyWith(used: List.filled(9, 0)),
         innateSpells: c.innateSpells
             .map((s) => s.copyWith(usedToday: 0))
             .toList(),
@@ -211,16 +236,11 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       ),
       hitDicePools: newHitDicePools,
     );
-    rested = rested.copyWith(
-      spellSlots: SpellcastingEngine.slotsAfterShortRest(
-        current: rested.spellSlots,
-        className: rested.primaryClass.className,
-        classLevel: rested.primaryClass.level,
-        abilityScores: rested.abilityScores,
-        proficiencyBonus: rested.proficiencyBonus,
-        subclass: rested.primaryClass.subclassName,
-      ),
-    );
+    rested = CharacterProgressionEngine.syncSpellcastingSlotsFor(rested)
+        .copyWith(
+          pactMagicSlots:
+              CharacterProgressionEngine.pactMagicSlotsAfterShortRest(rested),
+        );
     final featureResources = await _featureResourcesAfterRest(
       rested,
       FeatureUsageRest.shortRest,
@@ -309,17 +329,26 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   ) async {
     final srd = ref.read(srdDataSourceProvider);
     final catalog = await srd.getFeatureUsageCatalog();
-    final primaryClass = c.primaryClass;
-    final classFeatures = (await srd.getClassFeatures(
-      primaryClass.className,
-    )).where((f) => f.level <= primaryClass.level).toList();
-    final subclassName = primaryClass.subclassName ?? '';
-    final subclassFeatures = subclassName.isEmpty
-        ? <SrdClassFeature>[]
-        : (await srd.getSubclassFeatures(
-            primaryClass.className,
-            subclassName,
-          )).where((f) => f.level <= primaryClass.level).toList();
+    final classFeatureSets = <FeatureUsageFeatureSet>[];
+    for (final classEntry in c.classEntries) {
+      final classFeatures = (await srd.getClassFeatures(
+        classEntry.className,
+      )).where((f) => f.level <= classEntry.level).toList();
+      final subclassName = classEntry.subclassName ?? '';
+      final subclassFeatures = subclassName.isEmpty
+          ? <SrdClassFeature>[]
+          : (await srd.getSubclassFeatures(
+              classEntry.className,
+              subclassName,
+            )).where((f) => f.level <= classEntry.level).toList();
+      classFeatureSets.add(
+        FeatureUsageFeatureSet(
+          classEntry: classEntry,
+          classFeatures: classFeatures,
+          subclassFeatures: subclassFeatures,
+        ),
+      );
+    }
     final races = await srd.getRaces();
     final race = races.where((r) => r.name == c.race).firstOrNull;
     final subrace = race?.subraces
@@ -329,8 +358,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     return FeatureUsageEngine.activeResourceBindings(
       character: c,
       catalog: catalog,
-      classFeatures: classFeatures,
-      subclassFeatures: subclassFeatures,
+      classFeatureSets: classFeatureSets,
       raceTraits: traits,
     ).toList();
   }
@@ -413,119 +441,25 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
 
-    final newLevel = result.newTotalLevel.clamp(1, 20).toInt();
-    final newClassLevel = result.newClassLevel.clamp(1, 20).toInt();
-    final newProfBonus = _profBonus(newLevel);
+    var updated = CharacterProgressionEngine.applyLevelUp(c, result);
 
-    // 1. Apply HP
-    final newMaxHp = c.hitPoints.maximum + result.hpGained;
-    final newCurrentHp = c.hitPoints.current + result.hpGained;
-
-    // 2. Apply ASI
-    var newScores = c.abilityScores;
-    for (final entry in result.asiChanges.entries) {
-      newScores = newScores.increment(entry.key, entry.value);
-    }
-
-    // 3. Apply subclass
-    final targetEntry = c.classEntries.firstWhereOrNull(
-      (entry) => entry.id == result.targetClassEntryId,
-    );
-    final targetSubclass = result.subclassChosen ?? targetEntry?.subclassName;
-    final newClasses = _classesAfterLevelUp(
-      c,
-      result,
-      newClassLevel,
-      targetSubclass,
-    );
-    final startingClass = _startingClassEntry(newClasses);
-    final newHitDicePools = _hitDicePoolsAfterLevelUp(c, result);
-
-    // 4. Apply feat
-    var newExtraFeatures = c.extraFeatures;
-    if (result.featChosen != null) {
-      final feat = result.featChosen!;
-      final alreadyHas = newExtraFeatures.any(
-        (f) => f.name == feat.name && f.effectiveSourceType == 'feat',
-      );
-      if (!alreadyHas) {
-        newExtraFeatures = [
-          ...newExtraFeatures,
-          CharacterExtraFeature(
-            sourceClass: 'Feat',
-            sourceType: FeatureChoiceSourceType.feat,
-            sourceFeature: feat.name,
-            name: feat.name,
-            level: newLevel,
-            type: 'passive',
-            description: feat.description,
-          ),
-        ];
-      }
-    }
-
-    // 5. Apply spell changes
-    var newSpells = c.spells;
-    if (result.spellSwapped != null) {
-      newSpells = newSpells
-          .where((s) => s.name != result.spellSwapped)
-          .toList();
-    }
-    newSpells = [
-      ...newSpells,
-      ...result.cantripsLearned,
-      ...result.spellsLearned,
-    ];
-
-    var updated = c.copyWith(
-      level: newLevel,
-      characterClass: startingClass.className,
-      subclass: startingClass.subclassName,
-      classes: newClasses,
-      proficiencyBonus: newProfBonus,
-      hitPoints: c.hitPoints.copyWith(
-        maximum: newMaxHp,
-        current: newCurrentHp.clamp(0, newMaxHp),
-      ),
-      hitDicePools: newHitDicePools,
-      abilityScores: newScores,
-      extraFeatures: newExtraFeatures,
-      featureChoices: FeatureChoiceEngine.upsertChoices(
-        c.featureChoices,
-        result.featureChoices,
-      ),
-      spells: newSpells,
-    );
-
-    // 6. Sync XP to minimum for new level when tracking is enabled
     if (c.xpTrackingEnabled) {
-      updated = updated.copyWith(experiencePoints: levelToMinXp(newLevel));
+      updated = updated.copyWith(
+        experiencePoints: levelToMinXp(updated.totalLevel),
+      );
     }
 
-    updated = updated.copyWith(armorClass: calcArmorClass(updated));
+    await _save(updated);
 
-    // 7. Sync spell slots to new level
-    await _save(_applySlotSync(updated));
-
-    // 8. Sync innate spells if subclass changed
     if (result.subclassChosen != null) {
       await syncInnateSpells();
     }
   }
 
-  /// Syncs `spellSlots.total` to match the class progression for the given
-  /// character's class and level. Preserves `used` counts (clamped to new totals).
+  /// Syncs standard and Pact Magic slot totals to the character progression.
+  /// Preserves `used` counts when they still fit in the recalculated totals.
   Character _applySlotSync(Character c) {
-    return c.copyWith(
-      spellSlots: SpellcastingEngine.syncedSlotsFor(
-        current: c.spellSlots,
-        className: c.primaryClass.className,
-        classLevel: c.primaryClass.level,
-        abilityScores: c.abilityScores,
-        proficiencyBonus: c.proficiencyBonus,
-        subclass: c.primaryClass.subclassName,
-      ),
-    );
+    return CharacterProgressionEngine.syncSpellcastingSlotsFor(c);
   }
 
   Future<void> updateSubclass(String subclassName) async {
@@ -671,84 +605,6 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     return 6;
   }
 
-  List<CharacterClassEntry> _classesAfterLevelUp(
-    Character c,
-    LevelUpResult result,
-    int newClassLevel,
-    String? newSubclass,
-  ) {
-    final entries = c.classEntries;
-    final updated = <CharacterClassEntry>[];
-    var foundTarget = false;
-    for (final entry in entries) {
-      if (entry.id == result.targetClassEntryId) {
-        foundTarget = true;
-        updated.add(
-          entry.copyWith(level: newClassLevel, subclassName: newSubclass),
-        );
-      } else {
-        updated.add(entry);
-      }
-    }
-
-    if (!foundTarget) {
-      updated.add(
-        CharacterClassEntry(
-          id: result.targetClassEntryId,
-          className: result.targetClassName,
-          level: newClassLevel,
-          isStartingClass: updated.isEmpty,
-        ),
-      );
-    }
-    return updated;
-  }
-
-  CharacterClassEntry _startingClassEntry(List<CharacterClassEntry> entries) {
-    for (final entry in entries) {
-      if (entry.isStartingClass) return entry;
-    }
-    return entries.first;
-  }
-
-  List<CharacterHitDiePool> _hitDicePoolsAfterLevelUp(
-    Character c,
-    LevelUpResult result,
-  ) {
-    final pools = c.hitDicePools.isEmpty
-        ? [
-            CharacterHitDiePool(
-              dieSize: result.targetHitDie,
-              total: c.totalLevel,
-              used: c.totalHitDiceUsed,
-              sourceClass: result.targetClassName,
-              sourceClassEntryId: result.targetClassEntryId,
-            ),
-          ]
-        : c.hitDicePools;
-    final updated = <CharacterHitDiePool>[];
-    var foundTarget = false;
-    for (final pool in pools) {
-      if (pool.sourceClassEntryId == result.targetClassEntryId) {
-        foundTarget = true;
-        updated.add(pool.copyWith(total: pool.total + 1));
-      } else {
-        updated.add(pool);
-      }
-    }
-    if (!foundTarget) {
-      updated.add(
-        CharacterHitDiePool(
-          dieSize: result.targetHitDie,
-          total: 1,
-          sourceClass: result.targetClassName,
-          sourceClassEntryId: result.targetClassEntryId,
-        ),
-      );
-    }
-    return updated;
-  }
-
   List<CharacterHitDiePool> _hitDicePoolsForLevelEdit(Character c, int level) {
     final primaryClass = c.primaryClass;
     if (c.hitDicePools.isEmpty) {
@@ -811,27 +667,35 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   ) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    // Evita duplicatas
-    final already = c.extraFeatures.any(
-      (f) => f.name == feature.name && f.sourceClass == sourceClass,
+    final classEntry = c.classEntries.firstWhereOrNull(
+      (entry) => entry.className == sourceClass,
     );
-    if (already) return;
-    final sourceType = sourceClass == c.characterClass
+    final subclassEntry = c.classEntries.firstWhereOrNull(
+      (entry) => entry.subclassName == sourceClass,
+    );
+    final resolvedSourceClass =
+        classEntry?.className ?? subclassEntry?.className ?? sourceClass;
+    final sourceSubclass = subclassEntry?.subclassName;
+    final sourceClassEntryId = classEntry?.id ?? subclassEntry?.id;
+    final sourceType = classEntry != null
         ? FeatureChoiceSourceType.classFeature
-        : sourceClass == c.subclass
+        : subclassEntry != null
         ? FeatureChoiceSourceType.subclassFeature
         : 'manual';
+
+    final already = c.extraFeatures.any(
+      (f) =>
+          f.name == feature.name &&
+          f.sourceClass == resolvedSourceClass &&
+          f.sourceSubclass == sourceSubclass,
+    );
+    if (already) return;
     final extra = CharacterExtraFeature(
-      sourceClass: sourceClass,
+      sourceClass: resolvedSourceClass,
       sourceType: sourceType,
-      sourceSubclass: sourceType == FeatureChoiceSourceType.subclassFeature
-          ? sourceClass
-          : null,
+      sourceSubclass: sourceSubclass,
       sourceFeature: feature.name,
-      sourceClassEntryId: sourceType == 'manual'
-          ? null
-          : (c.classEntryIdFor(sourceClass) ??
-                c.classEntryIdFor(c.characterClass)),
+      sourceClassEntryId: sourceClassEntryId,
       name: feature.name,
       level: feature.level,
       type: feature.type,
@@ -855,7 +719,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       sourceType: FeatureChoiceSourceType.feat,
       sourceFeature: feat.name,
       name: feat.name,
-      level: c.level,
+      level: c.totalLevel,
       type: 'passive',
       description: feat.description,
     );

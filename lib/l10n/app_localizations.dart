@@ -966,6 +966,54 @@ abstract class AppLocalizations {
   /// **'Level Up'**
   String get levelUpTitle;
 
+  /// Level Up wizard step: choose which class gains the level.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose class to level'**
+  String get levelUpStepClassTarget;
+
+  /// Level Up wizard class target section for existing classes.
+  ///
+  /// In en, this message translates to:
+  /// **'Current classes'**
+  String get levelUpClassTargetExisting;
+
+  /// Level Up wizard class target section for new multiclass options.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a new class'**
+  String get levelUpClassTargetAddClass;
+
+  /// Current class level label.
+  ///
+  /// In en, this message translates to:
+  /// **'Current level {level}'**
+  String levelUpClassTargetCurrentLevel(int level);
+
+  /// Target class level after this level up.
+  ///
+  /// In en, this message translates to:
+  /// **'Class level {level}'**
+  String levelUpClassTargetNextClassLevel(int level);
+
+  /// Multiclass prerequisite summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Requires {requirement}'**
+  String levelUpClassTargetRequirement(String requirement);
+
+  /// Disabled multiclass option when target class prerequisite is missing.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing requirement: {requirement}'**
+  String levelUpClassTargetRequirementMissing(String requirement);
+
+  /// Disabled multiclass option when an existing class does not meet multiclass prerequisites.
+  ///
+  /// In en, this message translates to:
+  /// **'Your current class does not meet its multiclass requirement.'**
+  String get levelUpClassTargetCurrentRequirementsMissing;
+
   /// Level Up wizard confirm button.
   ///
   /// In en, this message translates to:
@@ -1163,6 +1211,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'→ Level {level}'**
   String levelUpSummaryLevel(int level);
+
+  /// Level Up summary: target class and class level.
+  ///
+  /// In en, this message translates to:
+  /// **'{className} level {level}'**
+  String levelUpSummaryClassLevel(String className, int level);
 
   /// Level Up summary: HP gained.
   ///
@@ -2802,6 +2856,12 @@ abstract class AppLocalizations {
   /// **'Spell Slots'**
   String get spellsSlots;
 
+  /// Pact Magic spell slots section header.
+  ///
+  /// In en, this message translates to:
+  /// **'Pact Magic'**
+  String get spellsPactMagicSlots;
+
   /// Spellcasting banner title word.
   ///
   /// In en, this message translates to:
@@ -4385,6 +4445,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =1{Normalized the order of 1 inventory item.} other{Normalized the order of {count} inventory items.}}'**
   String settingsMaintenanceChangeEquipmentOrder(int count);
+
+  /// Migration report change for preparing class entries for multiclass.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepared the character\'s class structure for multiclass.'**
+  String get settingsMaintenanceChangeMulticlassStructure;
+
+  /// Migration report change for synced standard spell slots.
+  ///
+  /// In en, this message translates to:
+  /// **'Recalculated standard spell slots.'**
+  String get settingsMaintenanceChangeSpellSlots;
+
+  /// Migration report change for synced Pact Magic slots.
+  ///
+  /// In en, this message translates to:
+  /// **'Separated Pact Magic slots.'**
+  String get settingsMaintenanceChangePactMagicSlots;
+
+  /// Migration report change for recalculated armor class.
+  ///
+  /// In en, this message translates to:
+  /// **'Recalculated Armor Class.'**
+  String get settingsMaintenanceChangeArmorClass;
 
   /// Migration report fallback change text.
   ///

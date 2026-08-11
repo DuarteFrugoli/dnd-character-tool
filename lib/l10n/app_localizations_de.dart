@@ -464,6 +464,39 @@ class AppLocalizationsDe extends AppLocalizations {
   String get levelUpTitle => 'Level Up';
 
   @override
+  String get levelUpStepClassTarget => 'Klasse für den Stufenaufstieg wählen';
+
+  @override
+  String get levelUpClassTargetExisting => 'Aktuelle Klassen';
+
+  @override
+  String get levelUpClassTargetAddClass => 'Neue Klasse hinzufügen';
+
+  @override
+  String levelUpClassTargetCurrentLevel(int level) {
+    return 'Aktuelle Stufe $level';
+  }
+
+  @override
+  String levelUpClassTargetNextClassLevel(int level) {
+    return 'Klassenstufe $level';
+  }
+
+  @override
+  String levelUpClassTargetRequirement(String requirement) {
+    return 'Benötigt $requirement';
+  }
+
+  @override
+  String levelUpClassTargetRequirementMissing(String requirement) {
+    return 'Voraussetzung fehlt: $requirement';
+  }
+
+  @override
+  String get levelUpClassTargetCurrentRequirementsMissing =>
+      'Deine aktuelle Klasse erfüllt ihre Multiklassen-Voraussetzung nicht.';
+
+  @override
   String get levelUpConfirm => 'Level Up bestätigen';
 
   @override
@@ -586,6 +619,11 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String levelUpSummaryLevel(int level) {
     return '→ Stufe $level';
+  }
+
+  @override
+  String levelUpSummaryClassLevel(String className, int level) {
+    return '$className Stufe $level';
   }
 
   @override
@@ -1500,6 +1538,9 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get spellsSlots => 'Zauberslots';
+
+  @override
+  String get spellsPactMagicSlots => 'Paktmagie';
 
   @override
   String get spellsSpellcasting => 'Zauberei';
@@ -2460,6 +2501,22 @@ class AppLocalizationsDe extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get settingsMaintenanceChangeMulticlassStructure =>
+      'Klassenstruktur für Multiklassen vorbereitet.';
+
+  @override
+  String get settingsMaintenanceChangeSpellSlots =>
+      'Standard-Zauberslots neu berechnet.';
+
+  @override
+  String get settingsMaintenanceChangePactMagicSlots =>
+      'Paktmagie-Slots getrennt.';
+
+  @override
+  String get settingsMaintenanceChangeArmorClass =>
+      'Rüstungsklasse neu berechnet.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

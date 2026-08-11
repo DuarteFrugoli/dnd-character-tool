@@ -31,12 +31,14 @@ class CharacterSpellcastingSummary {
 
   bool get hasSpellcasting => origins.isNotEmpty;
 
-  SpellcastingEngine? get primaryEngine {
+  CharacterSpellcastingOrigin? get primaryOrigin {
     for (final origin in origins) {
-      if (origin.classEntry.isStartingClass) return origin.engine;
+      if (origin.classEntry.isStartingClass) return origin;
     }
-    return origins.isEmpty ? null : origins.first.engine;
+    return origins.isEmpty ? null : origins.first;
   }
+
+  SpellcastingEngine? get primaryEngine => primaryOrigin?.engine;
 
   factory CharacterSpellcastingSummary.fromCharacter(Character character) {
     final origins = <CharacterSpellcastingOrigin>[];
@@ -126,10 +128,12 @@ class CharacterSpellcastingSummary {
         total[i] += slots[i];
       }
     }
-    if (pactOrigins.length == 1 && origins.length == 1) {
-      return _withUsedClamped(character.spellSlots, total);
-    }
-    return SpellSlots(total: total, used: List<int>.filled(9, 0));
+    final current = character.pactMagicSlots.total.any((slot) => slot > 0)
+        ? character.pactMagicSlots
+        : pactOrigins.length == 1 && origins.length == 1
+        ? character.spellSlots
+        : const SpellSlots();
+    return _withUsedClamped(current, total);
   }
 
   static int _multiclassCasterLevelContribution(SpellcastingEngine engine) {

@@ -239,5 +239,54 @@ void main() {
 
       expect(calcArmorClass(c), 12);
     });
+
+    test('source-scoped disabled Unarmored Defense affects AC', () {
+      final c = _character(
+        cls: 'Fighter',
+        scores: const AbilityScores(dexterity: 14, constitution: 16),
+        classes: const [
+          CharacterClassEntry(
+            id: 'fighter',
+            className: 'Fighter',
+            level: 1,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(
+            id: 'barbarian',
+            className: 'Barbarian',
+            level: 1,
+          ),
+        ],
+        disabledFeatures: const ['class:barbarian:Unarmored Defense'],
+      );
+
+      expect(calcArmorClass(c), 12);
+    });
+
+    test('source-scoped disabled Draconic Resilience affects AC', () {
+      final c = _character(
+        cls: 'Fighter',
+        scores: const AbilityScores(dexterity: 16),
+        classes: const [
+          CharacterClassEntry(
+            id: 'fighter',
+            className: 'Fighter',
+            level: 1,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(
+            id: 'sorcerer',
+            className: 'Sorcerer',
+            subclassName: 'Draconic Bloodline',
+            level: 1,
+          ),
+        ],
+        disabledFeatures: const [
+          'subclass:sorcerer:Draconic Bloodline:Draconic Resilience',
+        ],
+      );
+
+      expect(calcArmorClass(c), 13);
+    });
   });
 }

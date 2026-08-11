@@ -13,6 +13,8 @@ Character _character({
   List<CharacterClassEntry> classes = const [],
   List<CharacterHitDiePool> hitDicePools = const [],
   List<KnownSpell> spells = const [],
+  SpellSlots spellSlots = const SpellSlots(),
+  SpellSlots pactMagicSlots = const SpellSlots(),
   List<CharacterExtraFeature> extraFeatures = const [],
 }) {
   final now = DateTime(2024);
@@ -28,6 +30,8 @@ Character _character({
     hitPoints: hp,
     hitDicePools: hitDicePools,
     spells: spells,
+    spellSlots: spellSlots,
+    pactMagicSlots: pactMagicSlots,
     extraFeatures: extraFeatures,
     createdAt: now,
     updatedAt: now,
@@ -152,9 +156,7 @@ void main() {
           newClassLevel: 1,
           targetHitDie: 6,
           hpGained: 4,
-          cantripsLearned: const [
-            KnownSpell(name: 'Fire Bolt', level: 0),
-          ],
+          cantripsLearned: const [KnownSpell(name: 'Fire Bolt', level: 0)],
         ),
       );
 
@@ -167,9 +169,9 @@ void main() {
       expect(updated.classLevel('Wizard'), 1);
       expect(updated.hitDicePools, hasLength(2));
       expect(
-        updated.hitDicePools.singleWhere(
-          (pool) => pool.sourceClassEntryId == 'wizard',
-        ).dieSize,
+        updated.hitDicePools
+            .singleWhere((pool) => pool.sourceClassEntryId == 'wizard')
+            .dieSize,
         6,
       );
       expect(updated.spells.single.sourceClassEntryId, 'wizard');
@@ -237,9 +239,7 @@ void main() {
           newClassLevel: 3,
           targetHitDie: 8,
           spellSwapped: 'Hex',
-          spellsLearned: const [
-            KnownSpell(name: 'Misty Step', level: 2),
-          ],
+          spellsLearned: const [KnownSpell(name: 'Misty Step', level: 2)],
         ),
       );
 
@@ -247,8 +247,58 @@ void main() {
         'Armor of Agathys',
         'Misty Step',
       ]);
-      expect(updated.spellSlots.total[1], 2);
+      expect(updated.spellSlots.total.every((total) => total == 0), isTrue);
+      expect(updated.pactMagicSlots.total[1], 2);
     });
+
+    test(
+      'keeps standard and pact magic slots separate after multiclassing',
+      () {
+        final character = _character(
+          cls: 'Wizard',
+          level: 3,
+          classes: const [
+            CharacterClassEntry(
+              id: 'wizard',
+              className: 'Wizard',
+              level: 3,
+              isStartingClass: true,
+            ),
+          ],
+          hitDicePools: const [
+            CharacterHitDiePool(
+              dieSize: 6,
+              total: 3,
+              sourceClass: 'Wizard',
+              sourceClassEntryId: 'wizard',
+            ),
+          ],
+          spellSlots: const SpellSlots(
+            total: [4, 2, 0, 0, 0, 0, 0, 0, 0],
+            used: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+          ),
+        );
+
+        final updated = CharacterProgressionEngine.applyLevelUp(
+          character,
+          _levelUpResult(
+            targetClassEntryId: 'warlock',
+            targetClassName: 'Warlock',
+            oldTotalLevel: 3,
+            newTotalLevel: 4,
+            oldClassLevel: 0,
+            newClassLevel: 1,
+            targetHitDie: 8,
+            hpGained: 5,
+          ),
+        );
+
+        expect(updated.spellSlots.total, [4, 2, 0, 0, 0, 0, 0, 0, 0]);
+        expect(updated.spellSlots.used[0], 1);
+        expect(updated.pactMagicSlots.total, [1, 0, 0, 0, 0, 0, 0, 0, 0]);
+        expect(updated.pactMagicSlots.used, List<int>.filled(9, 0));
+      },
+    );
   });
 
   group('CharacterProgressionEngine helpers', () {

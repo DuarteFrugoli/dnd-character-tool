@@ -96,22 +96,25 @@ void main() {
       expect(check.failedResults.single.className, 'Wizard');
     });
 
-    test('allows adding a class when current and target requirements are met', () {
-      final character = _character(
-        cls: 'Wizard',
-        level: 3,
-        scores: const AbilityScores(intelligence: 13, wisdom: 13),
-      );
+    test(
+      'allows adding a class when current and target requirements are met',
+      () {
+        final character = _character(
+          cls: 'Wizard',
+          level: 3,
+          scores: const AbilityScores(intelligence: 13, wisdom: 13),
+        );
 
-      final check = MulticlassPrerequisites.validateAddClass(
-        character: character,
-        targetClass: 'Cleric',
-      );
+        final check = MulticlassPrerequisites.validateAddClass(
+          character: character,
+          targetClass: 'Cleric',
+        );
 
-      expect(check.currentClassesMeetRequirements, isTrue);
-      expect(check.targetClassResult.isMet, isTrue);
-      expect(check.canAddClass, isTrue);
-    });
+        expect(check.currentClassesMeetRequirements, isTrue);
+        expect(check.targetClassResult.isMet, isTrue);
+        expect(check.canAddClass, isTrue);
+      },
+    );
 
     test('blocks adding the same class twice', () {
       final character = _character(
@@ -140,11 +143,7 @@ void main() {
             level: 3,
             isStartingClass: true,
           ),
-          CharacterClassEntry(
-            id: 'fighter-2',
-            className: 'Fighter',
-            level: 1,
-          ),
+          CharacterClassEntry(id: 'fighter-2', className: 'Fighter', level: 1),
         ],
       );
 

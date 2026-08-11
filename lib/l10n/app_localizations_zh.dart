@@ -449,6 +449,38 @@ class AppLocalizationsZh extends AppLocalizations {
   String get levelUpTitle => '升级';
 
   @override
+  String get levelUpStepClassTarget => '选择要升级的职业';
+
+  @override
+  String get levelUpClassTargetExisting => '当前职业';
+
+  @override
+  String get levelUpClassTargetAddClass => '添加新职业';
+
+  @override
+  String levelUpClassTargetCurrentLevel(int level) {
+    return '当前等级 $level';
+  }
+
+  @override
+  String levelUpClassTargetNextClassLevel(int level) {
+    return '职业等级 $level';
+  }
+
+  @override
+  String levelUpClassTargetRequirement(String requirement) {
+    return '需要 $requirement';
+  }
+
+  @override
+  String levelUpClassTargetRequirementMissing(String requirement) {
+    return '缺少条件：$requirement';
+  }
+
+  @override
+  String get levelUpClassTargetCurrentRequirementsMissing => '你的当前职业不满足兼职条件。';
+
+  @override
   String get levelUpConfirm => '确认升级';
 
   @override
@@ -569,6 +601,11 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String levelUpSummaryLevel(int level) {
     return '→ $level级';
+  }
+
+  @override
+  String levelUpSummaryClassLevel(String className, int level) {
+    return '$className $level级';
   }
 
   @override
@@ -1461,6 +1498,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get spellsSlots => '法术槽';
+
+  @override
+  String get spellsPactMagicSlots => '契约魔法';
 
   @override
   String get spellsSpellcasting => '施法';
@@ -2393,6 +2433,18 @@ class AppLocalizationsZh extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get settingsMaintenanceChangeMulticlassStructure => '已为兼职准备职业结构。';
+
+  @override
+  String get settingsMaintenanceChangeSpellSlots => '已重新计算标准法术槽。';
+
+  @override
+  String get settingsMaintenanceChangePactMagicSlots => '已分离契约魔法法术槽。';
+
+  @override
+  String get settingsMaintenanceChangeArmorClass => '已重新计算护甲等级。';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

@@ -55,10 +55,7 @@ void main() {
         () => DiceParser.parse('1d20 5'),
         throwsA(isA<DiceParseException>()),
       );
-      expect(
-        () => DiceParser.parse('1d1'),
-        throwsA(isA<DiceParseException>()),
-      );
+      expect(() => DiceParser.parse('1d1'), throwsA(isA<DiceParseException>()));
       expect(
         () => DiceParser.parse('1d20dl1'),
         throwsA(isA<DiceParseException>()),

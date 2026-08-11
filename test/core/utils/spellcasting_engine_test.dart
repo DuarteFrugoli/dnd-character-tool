@@ -407,6 +407,35 @@ void main() {
   });
 
   group('CharacterSpellcastingSummary', () {
+    Character characterWith({
+      required List<CharacterClassEntry> classes,
+      AbilityScores abilityScores = const AbilityScores(
+        strength: 16,
+        dexterity: 16,
+        intelligence: 16,
+        wisdom: 16,
+        charisma: 16,
+      ),
+      SpellSlots spellSlots = const SpellSlots(),
+      SpellSlots pactMagicSlots = const SpellSlots(),
+    }) {
+      final now = DateTime(2024);
+      return Character(
+        id: 'caster',
+        name: 'Caster',
+        race: 'Human',
+        characterClass: classes.first.className,
+        level: classes.fold<int>(0, (sum, entry) => sum + entry.level),
+        classes: classes,
+        abilityScores: abilityScores,
+        hitPoints: const HitPoints(maximum: 30, current: 30),
+        spellSlots: spellSlots,
+        pactMagicSlots: pactMagicSlots,
+        createdAt: now,
+        updatedAt: now,
+      );
+    }
+
     test('keeps standard slots and pact magic slots separate', () {
       final now = DateTime(2024);
       final character = Character(
@@ -453,6 +482,103 @@ void main() {
       expect(summary.standardSlots.total, [4, 2, 0, 0, 0, 0, 0, 0, 0]);
       expect(summary.pactMagicSlots.total, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
       expect(summary.unassignedSpells, isEmpty);
+    });
+
+    test('combines full caster levels for Wizard 3 / Cleric 2', () {
+      final character = characterWith(
+        classes: const [
+          CharacterClassEntry(
+            id: 'wizard',
+            className: 'Wizard',
+            level: 3,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(id: 'cleric', className: 'Cleric', level: 2),
+        ],
+      );
+
+      final summary = CharacterSpellcastingSummary.fromCharacter(character);
+
+      expect(summary.standardSlots.total, [4, 3, 2, 0, 0, 0, 0, 0, 0]);
+      expect(summary.pactMagicSlots.total, List<int>.filled(9, 0));
+    });
+
+    test('combines half and full caster levels for Paladin 5 / Sorcerer 3', () {
+      final character = characterWith(
+        classes: const [
+          CharacterClassEntry(
+            id: 'paladin',
+            className: 'Paladin',
+            level: 5,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(id: 'sorcerer', className: 'Sorcerer', level: 3),
+        ],
+      );
+
+      final summary = CharacterSpellcastingSummary.fromCharacter(character);
+
+      expect(summary.standardSlots.total, [4, 3, 2, 0, 0, 0, 0, 0, 0]);
+    });
+
+    test(
+      'combines third and full caster levels for Eldritch Knight 3 / Wizard 2',
+      () {
+        final character = characterWith(
+          classes: const [
+            CharacterClassEntry(
+              id: 'fighter',
+              className: 'Fighter',
+              subclassName: 'Eldritch Knight',
+              level: 3,
+              isStartingClass: true,
+            ),
+            CharacterClassEntry(id: 'wizard', className: 'Wizard', level: 2),
+          ],
+        );
+
+        final summary = CharacterSpellcastingSummary.fromCharacter(character);
+
+        expect(summary.standardSlots.total, [4, 2, 0, 0, 0, 0, 0, 0, 0]);
+      },
+    );
+
+    test('keeps Warlock 2 / Bard 3 Pact Magic separated', () {
+      final character = characterWith(
+        classes: const [
+          CharacterClassEntry(
+            id: 'warlock',
+            className: 'Warlock',
+            level: 2,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(id: 'bard', className: 'Bard', level: 3),
+        ],
+      );
+
+      final summary = CharacterSpellcastingSummary.fromCharacter(character);
+
+      expect(summary.standardSlots.total, [4, 2, 0, 0, 0, 0, 0, 0, 0]);
+      expect(summary.pactMagicSlots.total, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
+    });
+
+    test('uses spellcaster slots for Fighter 2 / Wizard 1', () {
+      final character = characterWith(
+        classes: const [
+          CharacterClassEntry(
+            id: 'fighter',
+            className: 'Fighter',
+            level: 2,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(id: 'wizard', className: 'Wizard', level: 1),
+        ],
+      );
+
+      final summary = CharacterSpellcastingSummary.fromCharacter(character);
+
+      expect(summary.standardSlots.total, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
+      expect(summary.pactMagicSlots.total, List<int>.filled(9, 0));
     });
   });
 }

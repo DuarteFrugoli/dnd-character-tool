@@ -106,9 +106,8 @@ class DiceRollTermResult extends DiceTermResult {
   final List<DiceRoll> rolls;
 
   @override
-  int get subtotal => rolls
-      .where((roll) => roll.kept)
-      .fold(0, (sum, roll) => sum + roll.value);
+  int get subtotal =>
+      rolls.where((roll) => roll.kept).fold(0, (sum, roll) => sum + roll.value);
 }
 
 class DiceModifierTermResult extends DiceTermResult {

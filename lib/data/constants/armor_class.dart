@@ -104,10 +104,19 @@ bool _hasUnarmoredDefense({
   if (disabledFeatures.contains(featureName)) return false;
 
   final source = sourceClass.toLowerCase();
-  if (characterClass.toLowerCase() == source) return true;
-  if (classEntries.any((entry) => entry.className.toLowerCase() == source)) {
-    return true;
+  var hasClassEntries = false;
+  for (final entry in classEntries) {
+    hasClassEntries = true;
+    if (entry.className.toLowerCase() == source &&
+        !_classFeatureDisabled(
+          disabledFeatures,
+          entry.id,
+          featureName,
+        )) {
+      return true;
+    }
   }
+  if (!hasClassEntries && characterClass.toLowerCase() == source) return true;
 
   return extraFeatures.any(
     (f) =>
@@ -128,19 +137,39 @@ bool _hasDraconicResilience(Character c) {
   const featureName = 'Draconic Resilience';
   if (c.disabledFeatures.contains(featureName)) return false;
 
-  if (c.characterClass.toLowerCase() == 'sorcerer' &&
-      c.subclass?.toLowerCase() == 'draconic bloodline') {
-    return true;
-  }
-  if (c.classEntries.any(
-    (entry) =>
-        entry.className.toLowerCase() == 'sorcerer' &&
-        entry.subclassName?.toLowerCase() == 'draconic bloodline',
-  )) {
-    return true;
+  for (final entry in c.classEntries) {
+    if (entry.className.toLowerCase() == 'sorcerer' &&
+        entry.subclassName?.toLowerCase() == 'draconic bloodline' &&
+        !_subclassFeatureDisabled(
+          c.disabledFeatures,
+          entry.id,
+          entry.subclassName ?? '',
+          featureName,
+        )) {
+      return true;
+    }
   }
 
   return c.extraFeatures.any(
     (feature) => feature.name.toLowerCase() == featureName.toLowerCase(),
+  );
+}
+
+bool _classFeatureDisabled(
+  Iterable<String> disabledFeatures,
+  String classEntryId,
+  String featureName,
+) {
+  return disabledFeatures.contains('class:$classEntryId:$featureName');
+}
+
+bool _subclassFeatureDisabled(
+  Iterable<String> disabledFeatures,
+  String classEntryId,
+  String subclassName,
+  String featureName,
+) {
+  return disabledFeatures.contains(
+    'subclass:$classEntryId:$subclassName:$featureName',
   );
 }

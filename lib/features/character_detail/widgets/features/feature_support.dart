@@ -31,6 +31,33 @@ String featureUsageRechargeLabel(BuildContext context, String recharge) {
   }
 }
 
+typedef FeatureDisabledToggle =
+    void Function(String key, {String? legacyName});
+
+String classFeatureDisabledKey({
+  required CharacterClassEntry classEntry,
+  required String featureName,
+}) {
+  return 'class:${classEntry.id}:$featureName';
+}
+
+String subclassFeatureDisabledKey({
+  required CharacterClassEntry classEntry,
+  required String subclassName,
+  required String featureName,
+}) {
+  return 'subclass:${classEntry.id}:$subclassName:$featureName';
+}
+
+bool featureIsDisabled(
+  Set<String> disabledFeatures,
+  String key, {
+  String? legacyName,
+}) {
+  return disabledFeatures.contains(key) ||
+      (legacyName != null && disabledFeatures.contains(legacyName));
+}
+
 class FeatureUsageControls extends ConsumerWidget {
   const FeatureUsageControls({
     super.key,
@@ -406,16 +433,29 @@ void openFeatureChoiceEditorSheet({
   );
 }
 
+class FeaturesClassSectionData {
+  final CharacterClassEntry classEntry;
+  final List<SrdClassFeature> classFeatures;
+  final List<SrdClassFeature> subclassFeatures;
+
+  const FeaturesClassSectionData({
+    required this.classEntry,
+    required this.classFeatures,
+    required this.subclassFeatures,
+  });
+
+  String get className => classEntry.className;
+  String get subclassName => classEntry.subclassName ?? '';
+  int get classLevel => classEntry.level;
+}
 
 class FeaturesData {
-  final List<SrdClassFeature> classFeatures;
+  final List<FeaturesClassSectionData> classSections;
   final List<String> raceTraits;
   final List<String> subraceTraits;
   final Map<String, String> traitDescriptions;
   final String? backgroundFeatureName;
   final String? backgroundFeatureDescription;
-  final String subclassName;
-  final List<SrdClassFeature> subclassFeatures;
   final SrdFeatureChoiceCatalog featureChoiceCatalog;
   final FeatureUsageCatalog featureUsageCatalog;
   final List<SrdSkill> skills;
@@ -426,14 +466,12 @@ class FeaturesData {
   final List<SrdFeat> srdFeats;
 
   const FeaturesData({
-    required this.classFeatures,
+    required this.classSections,
     required this.raceTraits,
     required this.subraceTraits,
     required this.traitDescriptions,
     this.backgroundFeatureName,
     this.backgroundFeatureDescription,
-    required this.subclassName,
-    required this.subclassFeatures,
     required this.featureChoiceCatalog,
     required this.featureUsageCatalog,
     required this.skills,

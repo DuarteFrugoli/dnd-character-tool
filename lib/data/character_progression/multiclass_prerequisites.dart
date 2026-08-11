@@ -88,8 +88,7 @@ class MulticlassPrerequisites {
     return MulticlassPrerequisiteResult(
       className: className,
       options: options,
-      isMet: options.isEmpty ||
-          options.any((option) => option.isMetBy(scores)),
+      isMet: options.isEmpty || options.any((option) => option.isMetBy(scores)),
     );
   }
 

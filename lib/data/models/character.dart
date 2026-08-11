@@ -16,7 +16,7 @@ part 'character.g.dart';
 
 // Sentinel used to distinguish "not passed" from explicit null in copyWith.
 const _keep = Object();
-const currentCharacterDataVersion = 7;
+const currentCharacterDataVersion = 8;
 
 enum CreationMode { random, semiRandom, guided, manual }
 
@@ -64,6 +64,7 @@ class Character {
   final Map<String, int> currency;
   final List<KnownSpell> spells;
   final SpellSlots spellSlots;
+  final SpellSlots pactMagicSlots;
   final List<CharacterHitDiePool> hitDicePools;
   final List<InnateSpell> innateSpells;
   final List<String> features;
@@ -115,6 +116,7 @@ class Character {
     this.currency = const {'cp': 0, 'sp': 0, 'ep': 0, 'gp': 0, 'pp': 0},
     this.spells = const [],
     this.spellSlots = const SpellSlots(),
+    this.pactMagicSlots = const SpellSlots(),
     this.hitDicePools = const [],
     this.innateSpells = const [],
     this.features = const [],
@@ -258,6 +260,7 @@ class Character {
     Map<String, int>? currency,
     List<KnownSpell>? spells,
     SpellSlots? spellSlots,
+    SpellSlots? pactMagicSlots,
     List<CharacterHitDiePool>? hitDicePools,
     List<InnateSpell>? innateSpells,
     List<String>? features,
@@ -311,6 +314,7 @@ class Character {
       currency: currency ?? this.currency,
       spells: spells ?? this.spells,
       spellSlots: spellSlots ?? this.spellSlots,
+      pactMagicSlots: pactMagicSlots ?? this.pactMagicSlots,
       hitDicePools: hitDicePools ?? this.hitDicePools,
       innateSpells: innateSpells ?? this.innateSpells,
       features: features ?? this.features,

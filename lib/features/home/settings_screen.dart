@@ -735,6 +735,19 @@ String _formatMaintenanceChange(
   if (change.code == 'equipment_order_normalized') {
     return l10n.settingsMaintenanceChangeEquipmentOrder(change.count);
   }
+  if (change.code == 'multiclass_structure_prepared') {
+    return l10n.settingsMaintenanceChangeMulticlassStructure;
+  }
+  if (change.code == 'spell_slots_synced' ||
+      change.code == 'standard_spell_slots_synced') {
+    return l10n.settingsMaintenanceChangeSpellSlots;
+  }
+  if (change.code == 'pact_magic_slots_synced') {
+    return l10n.settingsMaintenanceChangePactMagicSlots;
+  }
+  if (change.code == 'armor_class_recalculated') {
+    return l10n.settingsMaintenanceChangeArmorClass;
+  }
 
   return l10n.settingsMaintenanceChangeGeneric(change.count);
 }

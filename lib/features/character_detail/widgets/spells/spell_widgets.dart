@@ -148,6 +148,7 @@ class SpellRow extends ConsumerWidget {
     this.onLongPress,
     this.characterId,
     this.concentrationSpell,
+    this.originLabel,
     required this.i18n,
   });
 
@@ -164,6 +165,7 @@ class SpellRow extends ConsumerWidget {
 
   /// The currently active concentration spell name (from character state).
   final String? concentrationSpell;
+  final String? originLabel;
   final SrdI18nService i18n;
 
   static Color _schoolColor(String school) {
@@ -279,6 +281,14 @@ class SpellRow extends ConsumerWidget {
                 ),
               ),
 
+              if (originLabel != null && originLabel!.isNotEmpty) ...[
+                const SizedBox(width: 4),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 96),
+                  child: _SourceBadge(originLabel!),
+                ),
+              ],
+
               // School badge
               if (srd != null) ...[
                 const SizedBox(width: 4),
@@ -377,6 +387,33 @@ class _SchoolBadge extends StatelessWidget {
       ),
     ),
   );
+}
+
+class _SourceBadge extends StatelessWidget {
+  const _SourceBadge(this.label);
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: scheme.secondaryContainer,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Text(
+        label,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+          color: scheme.onSecondaryContainer,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
+  }
 }
 
 class _SmallBadge extends StatelessWidget {

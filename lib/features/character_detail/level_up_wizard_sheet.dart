@@ -384,7 +384,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     _state.featureChoices = _featureChoicesForRequests(featureChoiceRequests);
 
     _pages = [
-      LevelUpWizardPage.classTarget,
+      if (_hasClassTargetChoice()) LevelUpWizardPage.classTarget,
       LevelUpWizardPage.features,
       if (needsSubclass) LevelUpWizardPage.subclass,
       if (needsAsi) LevelUpWizardPage.asi,
@@ -405,6 +405,25 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     _newClassFeatures = newFeatures;
     _newSubclassFeatures = newSubclassFeatures;
     _featureChoiceRequests = featureChoiceRequests;
+  }
+
+  bool _hasClassTargetChoice() {
+    if (widget.character.classEntries.length > 1) return true;
+
+    final existingClassNames = {
+      for (final entry in widget.character.classEntries)
+        entry.className.toLowerCase(),
+    };
+
+    return _classes.any((srdClass) {
+      if (existingClassNames.contains(srdClass.name.toLowerCase())) {
+        return false;
+      }
+      return MulticlassPrerequisites.validateAddClass(
+        character: widget.character,
+        targetClass: srdClass.name,
+      ).canAddClass;
+    });
   }
 
   List<CharacterFeatureChoice> _featureChoicesForRequests(

@@ -191,6 +191,7 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
 
     return Scaffold(
       body: CustomScrollView(
+        key: PageStorageKey('inventory-${widget.characterId}'),
         slivers: [
           SliverPadding(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),

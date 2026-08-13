@@ -21,26 +21,10 @@ import 'tabs/notes_tab.dart';
 import 'tabs/skills_tab.dart';
 import 'tabs/spells_tab.dart';
 import 'tabs/stats_tab.dart';
+import 'widgets/character_detail_shell.dart';
 import 'widgets/dice/dice_roller_sheet.dart';
 import 'widgets/detail_edit_guard.dart';
 import 'widgets/detail_tab_host.dart';
-
-enum _CharacterHeaderAction { rollDice, levelUp, rest }
-
-class _CharacterActionMenuItem extends StatelessWidget {
-  const _CharacterActionMenuItem({required this.icon, required this.label});
-
-  final IconData icon;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [Icon(icon, size: 20), const SizedBox(width: 12), Text(label)],
-    );
-  }
-}
 
 class CharacterDetailScreen extends ConsumerStatefulWidget {
   const CharacterDetailScreen({super.key, required this.characterId});
@@ -166,149 +150,68 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     final subtitle = compactHeader
         ? '$levelLabel  ·  $classSummary  ·  $raceSummary'
         : '$classSummary  ·  $raceSummary  ·  $levelLabel';
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 72,
-        leading: BackButton(onPressed: _handleBack),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              header.name,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-            ),
-            Text(
-              subtitle,
-              maxLines: 2,
-              overflow: TextOverflow.visible,
-              softWrap: true,
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          PopupMenuButton<_CharacterHeaderAction>(
-            icon: const Icon(Icons.more_vert),
-            tooltip: MaterialLocalizations.of(context).moreButtonTooltip,
-            onSelected: (action) {
-              switch (action) {
-                case _CharacterHeaderAction.rollDice:
-                  openDiceRollerSheet(context, characterId: widget.characterId);
-                  return;
-                case _CharacterHeaderAction.levelUp:
-                  _openLevelUpForCurrentCharacter();
-                  return;
-                case _CharacterHeaderAction.rest:
-                  _showRestPickerForCurrentCharacter();
-                  return;
-              }
-            },
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                value: _CharacterHeaderAction.rollDice,
-                child: _CharacterActionMenuItem(
-                  icon: Icons.casino_outlined,
-                  label: l10n.characterActionRollDice,
-                ),
-              ),
-              const PopupMenuDivider(),
-              if (!header.xpTrackingEnabled)
-                PopupMenuItem(
-                  value: _CharacterHeaderAction.levelUp,
-                  child: _CharacterActionMenuItem(
-                    icon: Icons.keyboard_double_arrow_up,
-                    label: l10n.tooltipLevelUp,
-                  ),
-                ),
-              PopupMenuItem(
-                value: _CharacterHeaderAction.rest,
-                child: _CharacterActionMenuItem(
-                  icon: Icons.hotel_outlined,
-                  label: l10n.restPickerTitle,
-                ),
-              ),
-            ],
+    return CharacterDetailShell(
+      header: header,
+      subtitle: subtitle,
+      tabs: _tabs,
+      onBack: _handleBack,
+      onRollDice: () =>
+          openDiceRollerSheet(context, characterId: widget.characterId),
+      onLevelUp: _openLevelUpForCurrentCharacter,
+      onRest: _showRestPickerForCurrentCharacter,
+      children: [
+        CharacterTabHost<IdentityTabVm>(
+          provider: identityTabVmProvider(widget.characterId),
+          builder: (context, vm) => IdentityTab(
+            character: vm.character,
+            characterId: widget.characterId,
+            editGuard: _editGuard,
           ),
-        ],
-        bottom: TabBar(
-          controller: _tabs,
-          isScrollable: true,
-          tabAlignment: TabAlignment.start,
-          tabs: [
-            Tab(text: AppLocalizations.of(context)!.detailTabIdentity),
-            Tab(text: AppLocalizations.of(context)!.detailTabStats),
-            Tab(text: AppLocalizations.of(context)!.detailTabSkills),
-            Tab(text: AppLocalizations.of(context)!.detailTabFeatures),
-            Tab(text: AppLocalizations.of(context)!.detailTabSpells),
-            Tab(text: AppLocalizations.of(context)!.detailTabInventory),
-            Tab(text: AppLocalizations.of(context)!.detailTabNotes),
-          ],
         ),
-      ),
-      body: ResponsiveScaffoldBody(
-        maxWidth: 1280,
-        child: TabBarView(
-          controller: _tabs,
-          children: [
-            CharacterTabHost<IdentityTabVm>(
-              provider: identityTabVmProvider(widget.characterId),
-              builder: (context, vm) => IdentityTab(
-                character: vm.character,
-                characterId: widget.characterId,
-                editGuard: _editGuard,
-              ),
-            ),
-            CharacterTabHost<StatsTabVm>(
-              provider: statsTabVmProvider(widget.characterId),
-              builder: (context, vm) => StatsTab(
-                character: vm.character,
-                characterId: widget.characterId,
-                editGuard: _editGuard,
-              ),
-            ),
-            CharacterTabHost<SkillsTabVm>(
-              provider: skillsTabVmProvider(widget.characterId),
-              builder: (context, vm) => SkillsTab(
-                character: vm.character,
-                characterId: widget.characterId,
-              ),
-            ),
-            CharacterTabHost<FeaturesTabVm>(
-              provider: featuresTabVmProvider(widget.characterId),
-              builder: (context, vm) => FeaturesTab(
-                character: vm.character,
-                characterId: widget.characterId,
-              ),
-            ),
-            CharacterTabHost<SpellsTabVm>(
-              provider: spellsTabVmProvider(widget.characterId),
-              builder: (context, vm) => SpellsTab(
-                character: vm.character,
-                characterId: widget.characterId,
-              ),
-            ),
-            CharacterTabHost<InventoryTabVm>(
-              provider: inventoryTabVmProvider(widget.characterId),
-              builder: (context, vm) => InventoryTab(
-                character: vm.character,
-                inventory: vm.snapshot,
-                strengthScore: vm.strengthScore,
-                characterId: widget.characterId,
-              ),
-            ),
-            CharacterTabHost<NotesTabVm>(
-              provider: notesTabVmProvider(widget.characterId),
-              builder: (context, vm) =>
-                  NotesTab(notes: vm.notes, characterId: widget.characterId),
-            ),
-          ],
+        CharacterTabHost<StatsTabVm>(
+          provider: statsTabVmProvider(widget.characterId),
+          builder: (context, vm) => StatsTab(
+            character: vm.character,
+            characterId: widget.characterId,
+            editGuard: _editGuard,
+          ),
         ),
-      ),
+        CharacterTabHost<SkillsTabVm>(
+          provider: skillsTabVmProvider(widget.characterId),
+          builder: (context, vm) => SkillsTab(
+            character: vm.character,
+            characterId: widget.characterId,
+          ),
+        ),
+        CharacterTabHost<FeaturesTabVm>(
+          provider: featuresTabVmProvider(widget.characterId),
+          builder: (context, vm) => FeaturesTab(
+            character: vm.character,
+            characterId: widget.characterId,
+          ),
+        ),
+        CharacterTabHost<SpellsTabVm>(
+          provider: spellsTabVmProvider(widget.characterId),
+          builder: (context, vm) => SpellsTab(
+            character: vm.character,
+            characterId: widget.characterId,
+          ),
+        ),
+        CharacterTabHost<InventoryTabVm>(
+          provider: inventoryTabVmProvider(widget.characterId),
+          builder: (context, vm) => InventoryTab(
+            character: vm.character,
+            inventory: vm.snapshot,
+            strengthScore: vm.strengthScore,
+            characterId: widget.characterId,
+          ),
+        ),
+        CharacterTabHost<NotesTabVm>(
+          provider: notesTabVmProvider(widget.characterId),
+          builder: (context, vm) =>
+              NotesTab(notes: vm.notes, characterId: widget.characterId),
+        ),
+      ],
     );
   }
 

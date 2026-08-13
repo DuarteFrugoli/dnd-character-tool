@@ -85,6 +85,7 @@ class _SkillsTabState extends ConsumerState<SkillsTab> {
         ),
         Expanded(
           child: ListView.builder(
+            key: PageStorageKey('skills-${widget.characterId}'),
             padding: const EdgeInsets.fromLTRB(0, 8, 0, 192),
             itemCount: skillAbility.length,
             itemBuilder: (context, i) {

@@ -197,6 +197,7 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
 
         return Scaffold(
           body: CustomScrollView(
+            key: PageStorageKey('features-${widget.characterId}'),
             slivers: [
               SliverPadding(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),

@@ -294,6 +294,7 @@ class _NotesTabState extends ConsumerState<NotesTab>
     }
 
     return CustomScrollView(
+      key: PageStorageKey('notes-${widget.characterId}'),
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),

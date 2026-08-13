@@ -321,6 +321,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
       body: _spellIndex == null
           ? const Center(child: CircularProgressIndicator())
           : CustomScrollView(
+              key: PageStorageKey('spells-${widget.characterId}'),
               slivers: [
                 SliverPadding(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),

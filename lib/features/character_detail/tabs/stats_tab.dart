@@ -354,6 +354,7 @@ class _StatsTabState extends ConsumerState<StatsTab> {
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: ListView(
+          key: PageStorageKey('stats-${widget.characterId}'),
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
           children: [
             ResponsiveTwoColumn(

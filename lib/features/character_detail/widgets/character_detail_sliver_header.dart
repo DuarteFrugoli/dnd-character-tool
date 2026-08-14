@@ -278,17 +278,18 @@ class _CharacterActionMenu extends StatelessWidget {
             ),
           ),
         PopupMenuItem(
-          value: _CharacterHeaderAction.resetLevels,
-          child: _CharacterActionMenuItem(
-            icon: Icons.restart_alt,
-            label: l10n.characterActionResetLevels,
-          ),
-        ),
-        PopupMenuItem(
           value: _CharacterHeaderAction.rest,
           child: _CharacterActionMenuItem(
             icon: Icons.hotel_outlined,
             label: l10n.restPickerTitle,
+          ),
+        ),
+        const PopupMenuDivider(),
+        PopupMenuItem(
+          value: _CharacterHeaderAction.resetLevels,
+          child: _CharacterActionMenuItem(
+            icon: Icons.restart_alt,
+            label: l10n.characterActionResetLevels,
           ),
         ),
       ],

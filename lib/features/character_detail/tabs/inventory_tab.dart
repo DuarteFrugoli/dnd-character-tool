@@ -610,7 +610,7 @@ class _ContainersSection extends ConsumerWidget {
           color: overCapacity ? scheme.errorContainer : null,
           child: ExpansionTile(
             key: PageStorageKey<String>(
-              'inventory-container-expansion-${characterId}-${container.id}',
+              'inventory-container-expansion-$characterId-${container.id}',
             ),
             leading: const Icon(Icons.inventory_2_outlined),
             title: Text(

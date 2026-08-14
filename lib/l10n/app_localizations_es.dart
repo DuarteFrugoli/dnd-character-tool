@@ -2383,6 +2383,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get settingsChooseUnitSystem => 'Elegir sistema de unidades';
 
   @override
+  String get settingsSectionCharacterSheet => 'Hoja de personaje';
+
+  @override
+  String get settingsKeepScreenOnTitle => 'Mantener pantalla encendida';
+
+  @override
+  String get settingsKeepScreenOnSubtitle =>
+      'Evita que la pantalla se apague mientras ves una hoja de personaje.';
+
+  @override
   String get settingsBackupSection => 'Copia de seguridad';
 
   @override

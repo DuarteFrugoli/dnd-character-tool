@@ -2370,6 +2370,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsChooseUnitSystem => 'Choose Unit System';
 
   @override
+  String get settingsSectionCharacterSheet => 'Character Sheet';
+
+  @override
+  String get settingsKeepScreenOnTitle => 'Keep screen on';
+
+  @override
+  String get settingsKeepScreenOnSubtitle =>
+      'Prevent the screen from sleeping while viewing a character sheet.';
+
+  @override
   String get settingsBackupSection => 'Backup';
 
   @override

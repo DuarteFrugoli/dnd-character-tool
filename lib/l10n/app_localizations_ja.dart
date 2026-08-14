@@ -2337,6 +2337,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get settingsChooseUnitSystem => '単位系を選択';
 
   @override
+  String get settingsSectionCharacterSheet => 'キャラクターシート';
+
+  @override
+  String get settingsKeepScreenOnTitle => '画面をオンのままにする';
+
+  @override
+  String get settingsKeepScreenOnSubtitle =>
+      'キャラクターシートを表示している間、画面がスリープしないようにします。';
+
+  @override
   String get settingsBackupSection => 'バックアップ';
 
   @override

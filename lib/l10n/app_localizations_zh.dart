@@ -2328,6 +2328,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsChooseUnitSystem => '选择单位制';
 
   @override
+  String get settingsSectionCharacterSheet => '角色卡';
+
+  @override
+  String get settingsKeepScreenOnTitle => '保持屏幕常亮';
+
+  @override
+  String get settingsKeepScreenOnSubtitle => '查看角色卡时防止屏幕休眠。';
+
+  @override
   String get settingsBackupSection => '备份';
 
   @override

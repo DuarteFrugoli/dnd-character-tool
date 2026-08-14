@@ -27,6 +27,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Recursos de features**: usos como Rage, Ki, Lay on Hands e Bardic Inspiration escalam pelo nível da classe de origem, não pelo nível total do personagem.
 - **Identidade**: personagens multiclasse não mostram mais controle manual cru de `+/-` de nível para evitar quebrar a soma das classes.
 - **Ficha — cabeçalho**: informações grandes do personagem colapsam ao rolar a tela, deixando mais espaço para as abas.
+- **Ficha — tela ligada**: configurações ganharam uma opção para impedir que a tela apague enquanto uma ficha de personagem está aberta.
 
 ### Fixed
 - **Personagens antigos**: nova migração versionada reconcilia `classes`, nível total, classe/subclasse espelho, hit dice, origens de magias/features, slots e CA.

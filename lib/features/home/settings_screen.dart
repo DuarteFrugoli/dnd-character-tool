@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 
+import '../../core/display/keep_screen_on_provider.dart';
 import '../../core/locale/locale_provider.dart';
 import '../../core/theme/app_themes.dart';
 import '../../core/theme/theme_provider.dart';
@@ -169,6 +170,19 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               ),
             ),
             _UnitSystemTile(),
+
+            const Divider(height: 32),
+
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+              child: Text(
+                AppLocalizations.of(context)!.settingsSectionCharacterSheet,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: cs.primary),
+              ),
+            ),
+            const _KeepScreenOnTile(),
 
             const Divider(height: 32),
 
@@ -995,6 +1009,26 @@ class _UnitSystemTile extends ConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _KeepScreenOnTile extends ConsumerWidget {
+  const _KeepScreenOnTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final enabled = ref.watch(keepScreenOnCharacterSheetProvider);
+    final l10n = AppLocalizations.of(context)!;
+
+    return SwitchListTile.adaptive(
+      secondary: const Icon(Icons.screen_lock_portrait_outlined),
+      title: Text(l10n.settingsKeepScreenOnTitle),
+      subtitle: Text(l10n.settingsKeepScreenOnSubtitle),
+      value: enabled,
+      onChanged: (value) {
+        ref.read(keepScreenOnCharacterSheetProvider.notifier).setEnabled(value);
+      },
     );
   }
 }

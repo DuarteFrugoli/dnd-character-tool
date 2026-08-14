@@ -2390,6 +2390,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settingsChooseUnitSystem => 'Choisir le système d\'unités';
 
   @override
+  String get settingsSectionCharacterSheet => 'Fiche de personnage';
+
+  @override
+  String get settingsKeepScreenOnTitle => 'Garder l\'écran allumé';
+
+  @override
+  String get settingsKeepScreenOnSubtitle =>
+      'Empêche l\'écran de se mettre en veille pendant la consultation d\'une fiche de personnage.';
+
+  @override
   String get settingsBackupSection => 'Sauvegarde';
 
   @override

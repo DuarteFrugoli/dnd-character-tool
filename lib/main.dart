@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/locale/locale_provider.dart';
+import 'core/display/keep_screen_on_provider.dart';
 import 'core/platform/url_strategy.dart';
 import 'core/router/app_router.dart';
 import 'core/services/incoming_file_service.dart';
@@ -38,6 +39,8 @@ void main() async {
           orElse: () => defaultUnitSystem(initialLocale),
         )
       : defaultUnitSystem(initialLocale);
+  final initialKeepScreenOnCharacterSheet =
+      prefs.getBool(keepScreenOnCharacterSheetPrefsKey) ?? false;
 
   runApp(
     ProviderScope(
@@ -50,6 +53,11 @@ void main() async {
         ),
         unitSystemProvider.overrideWith(
           () => UnitSystemNotifier.withInitial(initialUnitSystem),
+        ),
+        keepScreenOnCharacterSheetProvider.overrideWith(
+          () => KeepScreenOnCharacterSheetNotifier.withInitial(
+            initialKeepScreenOnCharacterSheet,
+          ),
         ),
       ],
       child: const MainApp(),

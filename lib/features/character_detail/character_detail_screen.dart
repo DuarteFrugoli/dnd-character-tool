@@ -1,9 +1,12 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/display/keep_screen_on_provider.dart';
+import '../../core/platform/keep_screen_on.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/models/models.dart';
@@ -39,6 +42,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabs;
   final _editGuard = EditGuard();
+  bool? _keepScreenOnApplied;
 
   @override
   void initState() {
@@ -49,6 +53,9 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
 
   @override
   void dispose() {
+    if (_keepScreenOnApplied == true) {
+      unawaited(KeepScreenOn.setEnabled(false));
+    }
     _tabs.removeListener(_onTabChanging);
     _tabs.dispose();
     super.dispose();
@@ -112,6 +119,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
 
   @override
   Widget build(BuildContext context) {
+    _syncKeepScreenOn(ref.watch(keepScreenOnCharacterSheetProvider));
     final state = ref.watch(characterHeaderVmProvider(widget.characterId));
     return state.when(
       loading: () => Scaffold(
@@ -131,6 +139,12 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       ),
       data: _buildLoaded,
     );
+  }
+
+  void _syncKeepScreenOn(bool enabled) {
+    if (_keepScreenOnApplied == enabled) return;
+    _keepScreenOnApplied = enabled;
+    unawaited(KeepScreenOn.setEnabled(enabled));
   }
 
   Widget _buildLoaded(CharacterHeaderVm header) {

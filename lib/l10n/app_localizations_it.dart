@@ -2389,6 +2389,16 @@ class AppLocalizationsIt extends AppLocalizations {
   String get settingsChooseUnitSystem => 'Scegli il sistema di unità';
 
   @override
+  String get settingsSectionCharacterSheet => 'Scheda personaggio';
+
+  @override
+  String get settingsKeepScreenOnTitle => 'Mantieni lo schermo acceso';
+
+  @override
+  String get settingsKeepScreenOnSubtitle =>
+      'Impedisce allo schermo di spegnersi mentre visualizzi una scheda personaggio.';
+
+  @override
   String get settingsBackupSection => 'Backup';
 
   @override

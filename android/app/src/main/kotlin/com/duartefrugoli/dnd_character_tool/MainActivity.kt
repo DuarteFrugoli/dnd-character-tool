@@ -2,12 +2,14 @@ package com.duartefrugoli.dnd_character_tool
 
 import android.content.Intent
 import android.net.Uri
+import android.view.WindowManager
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity() {
-    private val channelName = "dnd.character/file_import"
+    private val fileChannelName = "dnd.character/file_import"
+    private val screenChannelName = "dnd.character/screen"
     private var pendingFileContent: String? = null
 
     // Prevent FlutterActivity from using the content:// URI as the initial route,
@@ -19,12 +21,29 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, channelName)
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, fileChannelName)
             .setMethodCallHandler { call, result ->
                 when (call.method) {
                     "getPendingFile" -> {
                         result.success(pendingFileContent)
                         pendingFileContent = null
+                    }
+                    else -> result.notImplemented()
+                }
+            }
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, screenChannelName)
+            .setMethodCallHandler { call, result ->
+                when (call.method) {
+                    "setKeepScreenOn" -> {
+                        val enabled = call.argument<Boolean>("enabled") ?: false
+                        runOnUiThread {
+                            if (enabled) {
+                                window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                            } else {
+                                window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                            }
+                        }
+                        result.success(null)
                     }
                     else -> result.notImplemented()
                 }
@@ -41,7 +60,7 @@ class MainActivity : FlutterActivity() {
             flutterEngine?.dartExecutor?.binaryMessenger?.let { messenger ->
                 val content = pendingFileContent
                 if (content != null) {
-                    MethodChannel(messenger, channelName).invokeMethod("onFileReceived", content)
+                    MethodChannel(messenger, fileChannelName).invokeMethod("onFileReceived", content)
                     pendingFileContent = null
                 }
             }

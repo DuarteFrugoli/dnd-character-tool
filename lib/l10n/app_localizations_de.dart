@@ -2387,6 +2387,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get settingsChooseUnitSystem => 'Einheitensystem wählen';
 
   @override
+  String get settingsSectionCharacterSheet => 'Charakterbogen';
+
+  @override
+  String get settingsKeepScreenOnTitle => 'Bildschirm eingeschaltet lassen';
+
+  @override
+  String get settingsKeepScreenOnSubtitle =>
+      'Verhindert, dass der Bildschirm beim Anzeigen eines Charakterbogens in den Ruhezustand wechselt.';
+
+  @override
   String get settingsBackupSection => 'Backup';
 
   @override

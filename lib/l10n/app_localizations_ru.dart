@@ -2386,6 +2386,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get settingsChooseUnitSystem => 'Выбрать систему единиц';
 
   @override
+  String get settingsSectionCharacterSheet => 'Лист персонажа';
+
+  @override
+  String get settingsKeepScreenOnTitle => 'Не выключать экран';
+
+  @override
+  String get settingsKeepScreenOnSubtitle =>
+      'Не дает экрану гаснуть во время просмотра листа персонажа.';
+
+  @override
   String get settingsBackupSection => 'Резервная копия';
 
   @override

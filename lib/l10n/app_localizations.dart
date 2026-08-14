@@ -4356,6 +4356,24 @@ abstract class AppLocalizations {
   /// **'Choose Unit System'**
   String get settingsChooseUnitSystem;
 
+  /// Settings section header for character sheet behavior.
+  ///
+  /// In en, this message translates to:
+  /// **'Character Sheet'**
+  String get settingsSectionCharacterSheet;
+
+  /// Settings tile title for keeping the device screen awake while viewing a character sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep screen on'**
+  String get settingsKeepScreenOnTitle;
+
+  /// Settings tile subtitle for keeping the device screen awake while viewing a character sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Prevent the screen from sleeping while viewing a character sheet.'**
+  String get settingsKeepScreenOnSubtitle;
+
   /// Settings section header for backup actions.
   ///
   /// In en, this message translates to:

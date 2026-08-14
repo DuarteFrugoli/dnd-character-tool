@@ -2338,6 +2338,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get settingsChooseUnitSystem => '단위 시스템 선택';
 
   @override
+  String get settingsSectionCharacterSheet => '캐릭터 시트';
+
+  @override
+  String get settingsKeepScreenOnTitle => '화면 켜진 상태 유지';
+
+  @override
+  String get settingsKeepScreenOnSubtitle => '캐릭터 시트를 보는 동안 화면이 꺼지지 않게 합니다.';
+
+  @override
   String get settingsBackupSection => '백업';
 
   @override

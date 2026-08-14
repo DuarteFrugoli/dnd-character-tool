@@ -152,6 +152,8 @@ por reset/rebuild explicito, nunca por edicao manual crua de nivel.
       necessario para resets ainda mais precisos.
 - [ ] Avaliar edicao protegida de classes apenas se reset/rebuild nao cobrir
       bem os fluxos reais dos usuarios.
+- [ ] Revisar temas para reduzir duplicatas visuais e dar identidade mais clara
+      a cada paleta.
 - [ ] Adicionar testes de widget para escolha de classe alvo, requisitos,
       header multiclass e agrupamento de features.
 

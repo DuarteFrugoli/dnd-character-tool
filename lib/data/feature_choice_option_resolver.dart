@@ -106,18 +106,7 @@ class FeatureChoiceOptionResolver {
         .map(
           (option) => SrdFeatureChoiceOption(
             id: option.id,
-            name:
-                i18n.featureChoiceOptionName(
-                  sourceType: request.sourceType,
-                  sourceClass: request.sourceClass,
-                  sourceSubclass: request.sourceSubclass,
-                  sourceName: request.sourceName,
-                  featureName: request.featureName,
-                  choiceId: request.choiceId,
-                  optionId: option.id,
-                  optionsSource: optionsSource,
-                ) ??
-                option.name,
+            name: _explicitOptionName(option, optionsSource),
             description:
                 i18n.featureChoiceOptionDescription(
                   sourceType: request.sourceType,
@@ -133,6 +122,29 @@ class FeatureChoiceOptionResolver {
           ),
         )
         .toList();
+  }
+
+  String _explicitOptionName(
+    SrdFeatureChoiceOption option,
+    String? optionsSource,
+  ) {
+    final translated = i18n.featureChoiceOptionName(
+      sourceType: request.sourceType,
+      sourceClass: request.sourceClass,
+      sourceSubclass: request.sourceSubclass,
+      sourceName: request.sourceName,
+      featureName: request.featureName,
+      choiceId: request.choiceId,
+      optionId: option.id,
+      optionsSource: optionsSource,
+    );
+    if (translated != null) return translated;
+    return switch (request.requirement.type) {
+      'skill' || 'skill_expertise' => i18n.skillName(option.name),
+      'tool' => i18n.toolName(option.name),
+      'weapon' => i18n.equipmentName(option.name),
+      _ => option.name,
+    };
   }
 
   List<SrdFeatureChoiceOption> _skillOptions({

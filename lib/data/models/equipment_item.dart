@@ -1,6 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import '../json_helpers.dart';
+
 part 'equipment_item.g.dart';
 
 const _uuid = Uuid();
@@ -30,6 +32,7 @@ class EquipmentItem {
 
   final int quantity;
   final String? description;
+  @JsonKey(fromJson: readBool)
   final bool isEquipped;
   final double weight;
   final String? containerId;

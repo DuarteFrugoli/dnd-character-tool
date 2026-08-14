@@ -2,6 +2,8 @@ import 'package:dnd_character_tool/data/datasources/local/character_local_data_s
 import 'package:dnd_character_tool/data/datasources/local/storage_backend_stub.dart';
 import 'package:dnd_character_tool/data/models/ability_scores.dart';
 import 'package:dnd_character_tool/data/models/character.dart';
+import 'package:dnd_character_tool/data/models/character_class_entry.dart';
+import 'package:dnd_character_tool/data/models/character_hit_die_pool.dart';
 import 'package:dnd_character_tool/data/models/hit_points.dart';
 import 'package:dnd_character_tool/data/repositories/character_repository.dart';
 import 'package:dnd_character_tool/features/character_detail/character_detail_provider.dart';
@@ -96,6 +98,8 @@ Future<({ProviderContainer container, _CountingBackend backend})> _setup(
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   // ── saveStatsEdit: HP clamping ────────────────────────────────────────────
   group('saveStatsEdit – HP clamping', () {
     test('reducing hpMax below currentHp clamps currentHp', () async {
@@ -228,6 +232,65 @@ void main() {
 
       final updated = container.read(characterDetailProvider(_id)).valueOrNull!;
       expect(updated.speed, 0);
+    });
+  });
+
+  group('shortRest - hit dice pools', () {
+    test('spends hit dice from the selected class pools', () async {
+      final character = _baseCharacter(hpMax: 30, hpCurrent: 10).copyWith(
+        level: 3,
+        classes: const [
+          CharacterClassEntry(
+            id: 'fighter',
+            className: 'Fighter',
+            level: 1,
+            isStartingClass: true,
+          ),
+          CharacterClassEntry(id: 'wizard', className: 'Wizard', level: 2),
+        ],
+        hitPoints: const HitPoints(
+          maximum: 30,
+          current: 10,
+          hitDiceUsed: 1,
+        ),
+        hitDicePools: const [
+          CharacterHitDiePool(
+            dieSize: 10,
+            total: 1,
+            sourceClass: 'Fighter',
+            sourceClassEntryId: 'fighter',
+          ),
+          CharacterHitDiePool(
+            dieSize: 6,
+            total: 2,
+            used: 1,
+            sourceClass: 'Wizard',
+            sourceClassEntryId: 'wizard',
+          ),
+        ],
+      );
+      final (:container, :backend) = await _setup(character);
+
+      await container.read(characterDetailProvider(_id).notifier).shortRest(
+        hitDiceSpentByPool: const [1, 1],
+        hpGained: 12,
+      );
+
+      final updated = container.read(characterDetailProvider(_id)).valueOrNull!;
+      expect(updated.hitPoints.current, 22);
+      expect(updated.hitPoints.hitDiceUsed, 3);
+      expect(
+        updated.hitDicePools
+            .singleWhere((pool) => pool.sourceClassEntryId == 'fighter')
+            .used,
+        1,
+      );
+      expect(
+        updated.hitDicePools
+            .singleWhere((pool) => pool.sourceClassEntryId == 'wizard')
+            .used,
+        2,
+      );
     });
   });
 }

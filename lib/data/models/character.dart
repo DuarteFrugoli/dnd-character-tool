@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../json_helpers.dart';
 import 'ability_scores.dart';
 import 'character_appearance.dart';
 import 'character_class_entry.dart';
@@ -77,15 +78,19 @@ class Character {
   final CharacterPersonality personality;
   final CharacterAppearance appearance;
   final String backstory;
+  @JsonKey(fromJson: readBool)
   final bool inspiration;
   final List<CharacterNote> notes;
   final String? imagePath;
   final CreationMode creationMode;
   final DateTime createdAt;
   final DateTime updatedAt;
+  @JsonKey(fromJson: readBool)
   final bool isPinned;
   final int sortOrder;
+  @JsonKey(fromJson: readBool)
   final bool xpTrackingEnabled;
+  @JsonKey(fromJson: readBool)
   final bool weightTrackingEnabled;
   final List<String> activeConditions;
   final String? concentrationSpell;

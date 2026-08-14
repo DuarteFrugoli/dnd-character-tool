@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../json_helpers.dart';
+
 part 'spell.g.dart';
 
 const _knownSpellKeep = Object();
@@ -48,7 +50,9 @@ class SpellSlots {
 class KnownSpell {
   final String name;
   final int level;
+  @JsonKey(fromJson: readBool)
   final bool isPrepared;
+  @JsonKey(fromJson: readBool)
   final bool isAlwaysPrepared;
   final String sourceType;
   final String? sourceClass;

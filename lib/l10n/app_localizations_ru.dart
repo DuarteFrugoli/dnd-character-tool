@@ -244,6 +244,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get characterActionRollDice => 'Бросить кости';
 
   @override
+  String get characterActionResetLevels => 'Сбросить уровни';
+
+  @override
   String get diceExpressionLabel => 'Выражение';
 
   @override
@@ -452,10 +455,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get labelLevel => 'Уровень';
-
-  @override
-  String get levelManualChangeWarning =>
-      'Только способности и ячейки заклинаний обновляются автоматически. Для полного повышения уровня (HP, характеристики, черты, заклинания) используйте кнопку «Повышение» на верхней панели.';
 
   @override
   String get tooltipLevelUp => 'Повышение';
@@ -689,6 +688,82 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String levelUpSpellSubtitle(int level, String school) {
     return 'Ур $level $school';
+  }
+
+  @override
+  String get resetLevelsTitle => 'Сбросить уровни';
+
+  @override
+  String get resetLevelsConfirmBody =>
+      'Это сбросит классовую прогрессию до 1 уровня. Заметки, инвентарь, контейнеры, валюта, изображение, история, внешность, раса, предыстория и характеристики сохранятся.\n\nУровни класса, классовые заклинания, выборы класса/подкласса, ресурсы прогрессии и черты ASI будут удалены или пересчитаны. Если нужна дополнительная копия, сначала экспортируйте резервную копию.';
+
+  @override
+  String resetLevelsCountdown(int seconds) {
+    return 'Подождите $secondsс';
+  }
+
+  @override
+  String get resetLevelsIntro =>
+      'Выберите новые данные класса 1 уровня. Сброс сохранится только после нажатия последней кнопки.';
+
+  @override
+  String get resetLevelsSubclassRequired =>
+      'Этот класс выбирает подкласс на 1 уровне.';
+
+  @override
+  String resetLevelsInitialHp(int hp) {
+    return 'Начальные HP: $hp';
+  }
+
+  @override
+  String resetLevelsSelectSkills(int count) {
+    return 'Выберите $count классовых навыков.';
+  }
+
+  @override
+  String get resetLevelsFixedTools => 'Выдается автоматически:';
+
+  @override
+  String resetLevelsSelectTools(int count) {
+    return 'Выберите $count владений инструментами.';
+  }
+
+  @override
+  String get resetLevelsApply => 'Сбросить до 1 уровня';
+
+  @override
+  String resetLevelsApplyAndRebuild(int level) {
+    return 'Сбросить и восстановить до $level уровня';
+  }
+
+  @override
+  String get resetLevelsIncomplete => 'Завершите обязательные выборы';
+
+  @override
+  String get resetLevelsApplied => 'Уровни сброшены.';
+
+  @override
+  String resetLevelsRebuildTitle(int level) {
+    return 'Восстановить до $level уровня';
+  }
+
+  @override
+  String resetLevelsRebuildSubtitle(int level) {
+    return 'После выбора 1 уровня приложение откроет шаги повышения уровня до $level уровня. Если отменить до конца, ничего не сохранится.';
+  }
+
+  @override
+  String resetLevelsRebuildStep(int level, int targetLevel) {
+    return 'Восстановление уровня $level из $targetLevel';
+  }
+
+  @override
+  String get resetLevelsRebuildCancelled =>
+      'Сброс отменен. Изменения не сохранены.';
+
+  @override
+  String resetLevelsRebuiltApplied(int level) {
+    return 'Уровни сброшены и восстановлены до $level уровня.';
   }
 
   @override

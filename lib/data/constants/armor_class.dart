@@ -1,3 +1,4 @@
+import '../json_helpers.dart';
 import '../models/models.dart';
 
 /// Calculates armor class for [c].
@@ -27,11 +28,11 @@ int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
     final props = item.properties;
     if (props == null) continue;
 
-    if (props['isShield'] == true) {
+    if (readBool(props['isShield'])) {
       shieldBonus = (props['acBonus'] as num?)?.toInt() ?? 2;
     } else {
       final baseAC = (props['baseAC'] as num?)?.toInt() ?? 10;
-      final addDex = props['addDexModifier'] as bool? ?? true;
+      final addDex = readBool(props['addDexModifier'], defaultValue: true);
       final maxDex = (props['maxDexBonus'] as num?)?.toInt();
       var ac = baseAC;
       if (addDex) {

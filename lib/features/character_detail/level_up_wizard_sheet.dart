@@ -43,26 +43,32 @@ String _featureChoiceRequestFeatureLabel(
     FeatureChoiceSourceType.feat =>
       i18n.featName(request.sourceName ?? request.featureName) ??
           request.featureName,
+    FeatureChoiceSourceType.multiclassProficiency =>
+      i18n.className(request.sourceClass),
     _ => request.featureName,
   };
 }
 
-void openLevelUpWizardSheet(
+Future<LevelUpResult?> openLevelUpWizardSheet(
   BuildContext context,
   Character character,
-  String characterId,
-) {
+  String characterId, {
+  bool applyOnConfirm = true,
+}) {
   final newLevel = character.totalLevel + 1;
   if (newLevel > 20) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(AppLocalizations.of(context)!.levelUpMaxLevel)),
     );
-    return;
+    return Future.value(null);
   }
-  Navigator.of(context).push(
-    PageRouteBuilder<void>(
-      pageBuilder: (context, _, _) =>
-          _LevelUpWizard(character: character, characterId: characterId),
+  return Navigator.of(context).push<LevelUpResult>(
+    PageRouteBuilder<LevelUpResult>(
+      pageBuilder: (context, _, _) => _LevelUpWizard(
+        character: character,
+        characterId: characterId,
+        applyOnConfirm: applyOnConfirm,
+      ),
       transitionsBuilder: (_, animation, _, child) {
         final slide = Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
             .animate(
@@ -81,10 +87,15 @@ void openLevelUpWizardSheet(
 }
 
 class _LevelUpWizard extends ConsumerStatefulWidget {
-  const _LevelUpWizard({required this.character, required this.characterId});
+  const _LevelUpWizard({
+    required this.character,
+    required this.characterId,
+    required this.applyOnConfirm,
+  });
 
   final Character character;
   final String characterId;
+  final bool applyOnConfirm;
 
   @override
   ConsumerState<_LevelUpWizard> createState() => _LevelUpWizardState();
@@ -366,7 +377,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         !_isAddingClass &&
         engineNew?.mechanism == SpellcastingMechanism.pact &&
         _knownSpellsForTarget(includeCantrips: false).isNotEmpty;
-    final featureChoiceRequests = _featureChoiceCatalog == null
+    final featureChoiceRequestsFromFeatures = _featureChoiceCatalog == null
         ? <FeatureChoiceRequest>[]
         : FeatureChoiceEngine.requestsForLevelUp(
             catalog: _featureChoiceCatalog!,
@@ -381,6 +392,10 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
                 ? _state.featChosen
                 : null,
           );
+    final featureChoiceRequests = [
+      ...featureChoiceRequestsFromFeatures,
+      ..._multiclassProficiencyRequests(),
+    ];
     _state.featureChoices = _featureChoicesForRequests(featureChoiceRequests);
 
     _pages = [
@@ -437,6 +452,214 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
     ];
   }
 
+  List<FeatureChoiceRequest> _multiclassProficiencyRequests() {
+    if (!_isAddingClass) return const [];
+    final srdClass = _srdClass;
+    if (srdClass == null) return const [];
+
+    final rule = multiclassProficiencyRuleFor(_targetClassName);
+    final requests = <FeatureChoiceRequest>[];
+
+    if (rule.skillChoices > 0) {
+      final skillOptions = _multiclassSkillOptionsFor(srdClass);
+      if (skillOptions.isNotEmpty) {
+        requests.add(
+          FeatureChoiceRequest(
+            sourceType: FeatureChoiceSourceType.multiclassProficiency,
+            sourceClass: _targetClassName,
+            sourceClassEntryId: _targetClassEntryId,
+            featureName: _targetClassName,
+            level: _newClassLevel,
+            requiredCount: rule.skillChoices,
+            requirement: SrdFeatureChoiceRequirement(
+              id: 'multiclass_skill',
+              type: 'skill',
+              count: rule.skillChoices,
+              options: skillOptions,
+            ),
+          ),
+        );
+      }
+    }
+
+    if (rule.musicalInstrumentChoices > 0) {
+      final instrumentOptions = _musicalInstrumentOptions();
+      if (instrumentOptions.isNotEmpty) {
+        requests.add(
+          FeatureChoiceRequest(
+            sourceType: FeatureChoiceSourceType.multiclassProficiency,
+            sourceClass: _targetClassName,
+            sourceClassEntryId: _targetClassEntryId,
+            featureName: _targetClassName,
+            level: _newClassLevel,
+            requiredCount: rule.musicalInstrumentChoices,
+            requirement: SrdFeatureChoiceRequirement(
+              id: 'multiclass_musical_instrument',
+              type: 'tool',
+              count: rule.musicalInstrumentChoices,
+              options: instrumentOptions,
+            ),
+          ),
+        );
+      }
+    }
+
+    return requests;
+  }
+
+  List<SrdFeatureChoiceOption> _multiclassSkillOptionsFor(SrdClass srdClass) {
+    final currentSkills = {
+      for (final skill in widget.character.skillProficiencies)
+        skill.toLowerCase(),
+    };
+    final allowedSkillNames = srdClass.skillChoices.from.contains('any')
+        ? _skills.map((skill) => skill.name)
+        : srdClass.skillChoices.from;
+
+    return [
+      for (final skillName in allowedSkillNames)
+        if (!currentSkills.contains(skillName.toLowerCase()))
+          SrdFeatureChoiceOption(
+            id: skillName,
+            name: skillName,
+            description: _skills
+                .firstWhereOrNull(
+                  (skill) => skill.name.toLowerCase() == skillName.toLowerCase(),
+                )
+                ?.ability
+                .toUpperCase(),
+          ),
+    ];
+  }
+
+  List<SrdFeatureChoiceOption> _musicalInstrumentOptions() {
+    final existingTools = _existingToolProficiencies();
+    return [
+      for (final tool in _tools)
+        if (tool.category == 'musical_instruments' &&
+            !existingTools.contains(_normalizeProficiency(tool.name)))
+          SrdFeatureChoiceOption(
+            id: tool.name,
+            name: tool.name,
+            description: tool.category,
+          ),
+    ];
+  }
+
+  List<String> _multiclassSkillProficienciesGained() {
+    if (!_isAddingClass) return const [];
+    return _multiclassChoiceValues('multiclass_skill');
+  }
+
+  List<String> _multiclassProficiencyFeatureLabelsGained() {
+    if (!_isAddingClass) return const [];
+    return [
+      ..._multiclassFixedProficiencyFeatureLabelsGained(),
+      for (final tool in _multiclassChoiceValues(
+        'multiclass_musical_instrument',
+      ))
+        _proficiencyFeatureLabel('Tool', tool),
+    ];
+  }
+
+  List<String> _multiclassFixedProficiencyFeatureLabelsGained() {
+    if (!_isAddingClass) return const [];
+    final rule = multiclassProficiencyRuleFor(_targetClassName);
+    final existingArmor = _existingArmorProficiencies();
+    final existingWeapons = _existingWeaponProficiencies();
+    final existingTools = _existingToolProficiencies();
+    return [
+      for (final armor in rule.armorProficiencies)
+        if (!existingArmor.contains(_normalizeArmorProficiency(armor)))
+          _proficiencyFeatureLabel('Armor', armor),
+      for (final weapon in rule.weaponProficiencies)
+        if (!existingWeapons.contains(_normalizeWeaponProficiency(weapon)))
+          _proficiencyFeatureLabel('Weapon', weapon),
+      for (final tool in rule.toolProficiencies)
+        if (!existingTools.contains(_normalizeProficiency(tool)))
+          _proficiencyFeatureLabel('Tool', tool),
+    ];
+  }
+
+  List<String> _multiclassChoiceValues(String choiceId) {
+    return _state.featureChoices
+            .firstWhereOrNull(
+              (choice) =>
+                  choice.sourceType ==
+                      FeatureChoiceSourceType.multiclassProficiency &&
+                  choice.sourceClassEntryId == _targetClassEntryId &&
+                  choice.choiceId == choiceId,
+            )
+            ?.values ??
+        const [];
+  }
+
+  String _proficiencyFeatureLabel(String type, String value) =>
+      '$type Proficiency: $value';
+
+  Set<String> _existingArmorProficiencies() {
+    return {
+      for (final srdClass in _existingSrdClasses())
+        for (final proficiency in srdClass.armorProficiencies)
+          _normalizeArmorProficiency(proficiency),
+      ..._featureProficiencies('Armor').map(_normalizeArmorProficiency),
+    };
+  }
+
+  Set<String> _existingWeaponProficiencies() {
+    return {
+      for (final srdClass in _existingSrdClasses())
+        for (final proficiency in srdClass.weaponProficiencies)
+          _normalizeWeaponProficiency(proficiency),
+      ..._featureProficiencies('Weapon').map(_normalizeWeaponProficiency),
+    };
+  }
+
+  Set<String> _existingToolProficiencies() {
+    return {
+      for (final srdClass in _existingSrdClasses())
+        for (final proficiency in srdClass.toolProficiencies)
+          _normalizeProficiency(proficiency),
+      ..._featureProficiencies('Tool').map(_normalizeProficiency),
+    };
+  }
+
+  Iterable<SrdClass> _existingSrdClasses() sync* {
+    for (final entry in widget.character.classEntries) {
+      final srdClass = _classes.firstWhereOrNull(
+        (srdClass) =>
+            srdClass.name.toLowerCase() == entry.className.toLowerCase(),
+      );
+      if (srdClass != null) yield srdClass;
+    }
+  }
+
+  Iterable<String> _featureProficiencies(String type) sync* {
+    final prefix = '$type Proficiency:'.toLowerCase();
+    for (final feature in widget.character.features) {
+      final lower = feature.toLowerCase();
+      if (!lower.startsWith(prefix)) continue;
+      yield feature.substring(prefix.length).trim();
+    }
+  }
+
+  String _normalizeArmorProficiency(String value) {
+    final lower = _normalizeProficiency(value);
+    if (lower == 'light armor') return 'light';
+    if (lower == 'medium armor') return 'medium';
+    if (lower == 'heavy armor') return 'heavy';
+    return lower;
+  }
+
+  String _normalizeWeaponProficiency(String value) {
+    final lower = _normalizeProficiency(value);
+    if (lower == 'simple weapons') return 'simple';
+    if (lower == 'martial weapons') return 'martial';
+    return lower;
+  }
+
+  String _normalizeProficiency(String value) => value.trim().toLowerCase();
+
   void _nextPage() {
     _pageController.nextPage(
       duration: const Duration(milliseconds: 300),
@@ -463,6 +686,11 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       );
     }
 
+    final multiclassSkillProficiencies =
+        _multiclassSkillProficienciesGained();
+    final multiclassProficiencyFeatureLabels =
+        _multiclassProficiencyFeatureLabelsGained();
+
     final result = LevelUpResult(
       targetClassEntryId: targetClassEntry.id,
       targetClassName: targetClassEntry.className,
@@ -486,8 +714,15 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       ],
       spellSwapped: _state.spellSwapped,
       featureChoices: _state.featureChoices,
+      skillProficienciesGained: multiclassSkillProficiencies,
+      proficiencyFeatureLabelsGained: multiclassProficiencyFeatureLabels,
     );
-    Navigator.pop(context);
+    if (!widget.applyOnConfirm) {
+      Navigator.pop(context, result);
+      return;
+    }
+
+    Navigator.pop(context, result);
     await ref
         .read(characterDetailProvider(widget.characterId).notifier)
         .levelUp(result);
@@ -833,6 +1068,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           targetClassName: _targetClassName,
           targetClassLevel: _newClassLevel,
           fixedCantripsLearned: _fixedCantripsLearned,
+          proficiencyFeatureLabels:
+              _multiclassFixedProficiencyFeatureLabelsGained(),
           featureChoiceRequests: _featureChoiceRequests,
           featureChoiceCatalog: _featureChoiceCatalog,
           i18n:
@@ -1905,6 +2142,7 @@ class _SummaryPage extends StatelessWidget {
     required this.targetClassName,
     required this.targetClassLevel,
     required this.fixedCantripsLearned,
+    required this.proficiencyFeatureLabels,
     required this.featureChoiceRequests,
     required this.featureChoiceCatalog,
     required this.i18n,
@@ -1920,6 +2158,7 @@ class _SummaryPage extends StatelessWidget {
   final String targetClassName;
   final int targetClassLevel;
   final List<KnownSpell> fixedCantripsLearned;
+  final List<String> proficiencyFeatureLabels;
   final List<FeatureChoiceRequest> featureChoiceRequests;
   final SrdFeatureChoiceCatalog? featureChoiceCatalog;
   final SrdI18nService i18n;
@@ -1958,6 +2197,14 @@ class _SummaryPage extends StatelessWidget {
         text: l10n.levelUpSummaryHp(wizardState.hpGained),
       ),
     );
+    if (proficiencyFeatureLabels.isNotEmpty) {
+      rows.add(
+        _SummaryRow(
+          icon: Icons.shield_outlined,
+          text: proficiencyFeatureLabels.join(', '),
+        ),
+      );
+    }
     if (wizardState.subclassChosen != null) {
       rows.add(
         _SummaryRow(
@@ -2046,12 +2293,18 @@ class _SummaryPage extends StatelessWidget {
               );
             })
             .join(', ');
+        final featureLabel = request == null
+            ? choice.featureName
+            : _featureChoiceRequestFeatureLabel(request, i18n);
         rows.add(
           _SummaryRow(
             icon: Icons.checklist,
-            text: request == null
-                ? '${choice.featureName}: $labels'
-                : '${choice.featureName} - ${request.choiceId}: $labels',
+            text:
+                request == null ||
+                    request.sourceType ==
+                        FeatureChoiceSourceType.multiclassProficiency
+                ? '$featureLabel: $labels'
+                : '$featureLabel - ${request.choiceId}: $labels',
           ),
         );
       }

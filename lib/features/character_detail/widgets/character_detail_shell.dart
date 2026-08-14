@@ -14,6 +14,7 @@ class CharacterDetailShell extends StatelessWidget {
     required this.onBack,
     required this.onRollDice,
     required this.onLevelUp,
+    required this.onResetLevels,
     required this.onRest,
   });
 
@@ -24,6 +25,7 @@ class CharacterDetailShell extends StatelessWidget {
   final VoidCallback onBack;
   final VoidCallback onRollDice;
   final VoidCallback onLevelUp;
+  final VoidCallback onResetLevels;
   final VoidCallback onRest;
 
   @override
@@ -39,6 +41,7 @@ class CharacterDetailShell extends StatelessWidget {
             onBack: onBack,
             onRollDice: onRollDice,
             onLevelUp: onLevelUp,
+            onResetLevels: onResetLevels,
             onRest: onRest,
           ),
         ],

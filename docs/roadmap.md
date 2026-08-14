@@ -6,7 +6,7 @@ Este documento resume a direcao do app por versao. Ele nao substitui o
 Ordem macro planejada:
 
 1. `1.x`: ficha base, inventario, notas, web e qualidade de vida.
-2. `2.0.x`: multiclasse.
+2. `2.0.x`: multiclasse e reset seguro de progressao.
 3. `2.1.x`: notas de campanha e sessoes.
 4. `2.2.x`: mecanicas auxiliares.
 5. `2.3.x`: homebrew.
@@ -117,7 +117,8 @@ Ordem macro planejada:
 
 Objetivo: permitir personagens com multiplas classes sem quebrar personagens
 existentes. Qualquer mudanca persistida deve usar migracao versionada e o fluxo
-de manutencao em Configuracoes.
+de manutencao em Configuracoes. Mudancas destrutivas de progressao devem passar
+por reset/rebuild explicito, nunca por edicao manual crua de nivel.
 
 #### 2.0.0 - Multiclasse jogavel
 - [x] Escolher qual classe sobe de nivel.
@@ -127,20 +128,27 @@ de manutencao em Configuracoes.
       alvo.
 - [x] Atualizar HP, hit dice, proficiencia, recursos derivados e XP pelo nivel
       correto.
+- [x] Escolher explicitamente quais pools de hit dice gastar no descanso curto.
 - [x] Calcular slots combinados do PHB para full, half e third casters.
 - [x] Manter Pact Magic separado para Warlock.
 - [x] Exibir origem da magia quando houver mais de uma classe conjuradora.
 - [x] Header, lista, Identidade e Stats mostram resumo/pools de classes.
 - [x] Aba Habilidades agrupa features por classe/subclasse.
 - [x] Migracoes versionadas normalizam classes, hit dice, origens, slots e CA.
+- [x] Remover edicao manual crua de nivel da ficha.
+- [x] Reiniciar niveis com confirmacao, nova classe inicial e rebuild opcional
+      pelo wizard de level up.
+- [x] Testes unitarios para hit dice por pool, proficiencias de multiclasse e
+      reset/rebuild.
 
-#### 2.0.1 - Edicao e polimento de multiclasse
-- [ ] Criar folha "Classes do personagem" para visualizar classes com mais
-      detalhe.
-- [ ] Permitir edicao posterior de classes com protecoes contra quebrar regras
-      salvas.
-- [ ] Melhorar o descanso curto para escolher explicitamente qual pool de hit
-      die gastar quando houver mais de um tipo disponivel.
+#### 2.0.1 - Polimento pos-lancamento de multiclasse
+- [ ] Validar manualmente combinacoes reais como Fighter/Wizard,
+      Paladin/Sorcerer, Warlock/Bard, Eldritch Knight/Wizard e
+      Arcane Trickster/Wizard.
+- [ ] Melhorar origem persistida de proficiencias antigas quando isso for
+      necessario para resets ainda mais precisos.
+- [ ] Avaliar edicao protegida de classes apenas se reset/rebuild nao cobrir
+      bem os fluxos reais dos usuarios.
 - [ ] Adicionar testes de widget para escolha de classe alvo, requisitos,
       header multiclass e agrupamento de features.
 
@@ -162,10 +170,11 @@ Objetivo: evoluir a area de notas sem perder a simplicidade atual.
 
 Objetivo: adicionar ferramentas opcionais de mesa sem sobrecarregar a ficha.
 
-#### 2.2.0 - Rolagens
+#### 2.2.0 - Rolagens contextuais
+- [x] Rolador manual com expressoes, ajuda rapida e historico em memoria.
 - [ ] Toggle para habilitar/desabilitar dados virtuais.
 - [ ] Rolar atributo, pericia, saving throw e ataque a partir da ficha.
-- [ ] Historico curto das ultimas rolagens.
+- [ ] Presets e contexto de rolagem a partir da ficha.
 
 #### 2.2.1 - Acessibilidade
 - [ ] Tamanho de fonte configuravel.

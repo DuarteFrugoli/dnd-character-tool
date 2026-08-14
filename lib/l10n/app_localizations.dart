@@ -546,6 +546,12 @@ abstract class AppLocalizations {
   /// **'Roll dice'**
   String get characterActionRollDice;
 
+  /// Character header action menu item that opens the level reset flow.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset levels'**
+  String get characterActionResetLevels;
+
   /// Dice roller expression text field label.
   ///
   /// In en, this message translates to:
@@ -948,12 +954,6 @@ abstract class AppLocalizations {
   /// **'Level'**
   String get labelLevel;
 
-  /// Warning shown near the manual level control in edit mode.
-  ///
-  /// In en, this message translates to:
-  /// **'Only features and spell slots are updated automatically. For a full level up (HP, ability scores, feats, spell choices), use the Level Up button in the top bar.'**
-  String get levelManualChangeWarning;
-
   /// Tooltip for the Level Up button in the AppBar.
   ///
   /// In en, this message translates to:
@@ -1307,6 +1307,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Lv {level} {school}'**
   String levelUpSpellSubtitle(int level, String school);
+
+  /// Title for the level reset flow.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset levels'**
+  String get resetLevelsTitle;
+
+  /// Confirmation dialog body before opening the level reset flow.
+  ///
+  /// In en, this message translates to:
+  /// **'This will reset class progression to level 1. Your notes, inventory, containers, currency, image, story, appearance, race, background and ability scores will be kept.\n\nClass levels, class spells, class/subclass choices, progression resources and ASI feats will be removed or recalculated. Export a backup first if you want an extra copy.'**
+  String get resetLevelsConfirmBody;
+
+  /// Disabled confirmation button label while waiting before level reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Wait {seconds}s'**
+  String resetLevelsCountdown(int seconds);
+
+  /// Introductory warning text in the level reset flow.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the new level 1 class data. The reset is only saved when you press the final button.'**
+  String get resetLevelsIntro;
+
+  /// Helper text for required level 1 subclass selection.
+  ///
+  /// In en, this message translates to:
+  /// **'This class chooses a subclass at level 1.'**
+  String get resetLevelsSubclassRequired;
+
+  /// Level reset summary row for recalculated level 1 HP.
+  ///
+  /// In en, this message translates to:
+  /// **'Initial HP: {hp}'**
+  String resetLevelsInitialHp(int hp);
+
+  /// Prompt for class skill choices during level reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} class skills.'**
+  String resetLevelsSelectSkills(int count);
+
+  /// Label before fixed tool proficiencies in the level reset flow.
+  ///
+  /// In en, this message translates to:
+  /// **'Granted automatically:'**
+  String get resetLevelsFixedTools;
+
+  /// Prompt for tool choices during level reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} tool proficiencies.'**
+  String resetLevelsSelectTools(int count);
+
+  /// Final button that applies the level reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset to level 1'**
+  String get resetLevelsApply;
+
+  /// Final button that resets levels and then rebuilds the character through level up steps.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset and rebuild to level {level}'**
+  String resetLevelsApplyAndRebuild(int level);
+
+  /// Disabled final button label when the level reset flow has missing choices.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete required choices'**
+  String get resetLevelsIncomplete;
+
+  /// Snackbar shown after level reset succeeds.
+  ///
+  /// In en, this message translates to:
+  /// **'Levels reset.'**
+  String get resetLevelsApplied;
+
+  /// Switch title for rebuilding a character back to its old total level after reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Rebuild to level {level}'**
+  String resetLevelsRebuildTitle(int level);
+
+  /// Switch subtitle explaining the atomic rebuild after level reset.
+  ///
+  /// In en, this message translates to:
+  /// **'After choosing level 1, the app will open level up steps until level {level}. If you cancel before the end, nothing is saved.'**
+  String resetLevelsRebuildSubtitle(int level);
+
+  /// Snackbar shown before each level up step in a reset rebuild.
+  ///
+  /// In en, this message translates to:
+  /// **'Rebuilding level {level} of {targetLevel}'**
+  String resetLevelsRebuildStep(int level, int targetLevel);
+
+  /// Snackbar shown when the user cancels a reset rebuild before it is saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset canceled. No changes were saved.'**
+  String get resetLevelsRebuildCancelled;
+
+  /// Snackbar shown after a reset rebuild succeeds.
+  ///
+  /// In en, this message translates to:
+  /// **'Levels reset and rebuilt to level {level}.'**
+  String resetLevelsRebuiltApplied(int level);
 
   /// Subclass field label.
   ///

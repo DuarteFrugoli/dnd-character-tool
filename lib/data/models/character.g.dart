@@ -123,7 +123,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
           json['appearance'] as Map<String, dynamic>,
         ),
   backstory: json['backstory'] as String? ?? '',
-  inspiration: json['inspiration'] as bool? ?? false,
+  inspiration: readBool(json['inspiration']),
   notes:
       (json['notes'] as List<dynamic>?)
           ?.map((e) => CharacterNote.fromJson(e as Map<String, dynamic>))
@@ -135,10 +135,10 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
       CreationMode.manual,
   createdAt: DateTime.parse(json['createdAt'] as String),
   updatedAt: DateTime.parse(json['updatedAt'] as String),
-  isPinned: json['isPinned'] as bool? ?? false,
+  isPinned: readBool(json['isPinned']),
   sortOrder: (json['sortOrder'] as num?)?.toInt() ?? 0,
-  xpTrackingEnabled: json['xpTrackingEnabled'] as bool? ?? false,
-  weightTrackingEnabled: json['weightTrackingEnabled'] as bool? ?? false,
+  xpTrackingEnabled: readBool(json['xpTrackingEnabled']),
+  weightTrackingEnabled: readBool(json['weightTrackingEnabled']),
   activeConditions:
       (json['activeConditions'] as List<dynamic>?)
           ?.map((e) => e as String)

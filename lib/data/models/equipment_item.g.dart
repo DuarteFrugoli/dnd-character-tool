@@ -16,7 +16,7 @@ EquipmentItem _$EquipmentItemFromJson(Map<String, dynamic> json) =>
           : _itemTypeFromJson(json['itemType']),
       quantity: (json['quantity'] as num?)?.toInt() ?? 1,
       description: json['description'] as String?,
-      isEquipped: json['isEquipped'] as bool? ?? false,
+      isEquipped: readBool(json['isEquipped']),
       weight: (json['weight'] as num? ?? 0).toDouble(),
       containerId: json['containerId'] as String?,
       sortOrder: (json['sortOrder'] as num?)?.toInt() ?? 0,

@@ -1,3 +1,5 @@
+import '../json_helpers.dart';
+
 class CharacterClassEntry {
   final String id;
   final String className;
@@ -37,7 +39,7 @@ class CharacterClassEntry {
       className: json['className'] as String? ?? '',
       subclassName: json['subclassName'] as String?,
       level: (json['level'] as num?)?.toInt() ?? 1,
-      isStartingClass: json['isStartingClass'] as bool? ?? false,
+      isStartingClass: readBool(json['isStartingClass']),
     );
   }
 

@@ -2,7 +2,8 @@
 ///
 /// Values store stable option IDs from SRD data, never localized display text.
 class CharacterFeatureChoice {
-  final String sourceType; // classFeature | subclassFeature | raceTrait | feat
+  // classFeature | subclassFeature | raceTrait | feat | multiclassProficiency
+  final String sourceType;
   final String sourceClass;
   final String? sourceClassEntryId;
   final String? sourceSubclass;

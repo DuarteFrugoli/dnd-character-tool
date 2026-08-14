@@ -1,6 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import '../json_helpers.dart';
+
 part 'character_note.g.dart';
 
 const _uuid = Uuid();
@@ -14,6 +16,7 @@ class CharacterNote {
   final String content;
   final DateTime createdAt;
   final List<CharacterNoteTag> tags;
+  @JsonKey(fromJson: readBool)
   final bool isPinned;
   final int sortOrder;
 

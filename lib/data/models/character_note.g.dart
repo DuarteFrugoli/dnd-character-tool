@@ -19,7 +19,7 @@ CharacterNote _$CharacterNoteFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CharacterNoteTag.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      isPinned: json['isPinned'] as bool? ?? false,
+      isPinned: readBool(json['isPinned']),
       sortOrder: (json['sortOrder'] as num?)?.toInt() ?? 0,
     );
 

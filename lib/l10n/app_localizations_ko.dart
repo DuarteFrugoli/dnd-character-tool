@@ -240,6 +240,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get characterActionRollDice => '주사위 굴리기';
 
   @override
+  String get characterActionResetLevels => '레벨 초기화';
+
+  @override
   String get diceExpressionLabel => '식';
 
   @override
@@ -444,10 +447,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get labelLevel => '수준';
-
-  @override
-  String get levelManualChangeWarning =>
-      '클래스 특성과 주문 슬롯만 자동 업데이트됩니다. 전체 레벨 업(HP, 능력치, 특기, 주문)은 상단 바의 레벨 업 버튼을 사용하세요.';
 
   @override
   String get tooltipLevelUp => '레벨 업';
@@ -677,6 +676,80 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String levelUpSpellSubtitle(int level, String school) {
     return '레벨 $level $school';
+  }
+
+  @override
+  String get resetLevelsTitle => '레벨 초기화';
+
+  @override
+  String get resetLevelsConfirmBody =>
+      '클래스 진행을 레벨 1로 초기화합니다. 메모, 인벤토리, 컨테이너, 화폐, 이미지, 이야기, 외형, 종족, 배경, 능력치는 유지됩니다.\n\n클래스 레벨, 클래스 주문, 클래스/하위 클래스 선택, 진행 자원, ASI 특기는 제거되거나 다시 계산됩니다. 추가 사본이 필요하면 먼저 백업을 내보내세요.';
+
+  @override
+  String resetLevelsCountdown(int seconds) {
+    return '$seconds초 대기';
+  }
+
+  @override
+  String get resetLevelsIntro =>
+      '새 레벨 1 클래스 정보를 선택하세요. 마지막 버튼을 누를 때만 초기화가 저장됩니다.';
+
+  @override
+  String get resetLevelsSubclassRequired => '이 클래스는 레벨 1에서 하위 클래스를 선택합니다.';
+
+  @override
+  String resetLevelsInitialHp(int hp) {
+    return '초기 HP: $hp';
+  }
+
+  @override
+  String resetLevelsSelectSkills(int count) {
+    return '클래스 기술 $count개를 선택하세요.';
+  }
+
+  @override
+  String get resetLevelsFixedTools => '자동 부여:';
+
+  @override
+  String resetLevelsSelectTools(int count) {
+    return '도구 숙련 $count개를 선택하세요.';
+  }
+
+  @override
+  String get resetLevelsApply => '레벨 1로 초기화';
+
+  @override
+  String resetLevelsApplyAndRebuild(int level) {
+    return '초기화하고 레벨 $level까지 재구성';
+  }
+
+  @override
+  String get resetLevelsIncomplete => '필수 선택을 완료하세요';
+
+  @override
+  String get resetLevelsApplied => '레벨이 초기화되었습니다.';
+
+  @override
+  String resetLevelsRebuildTitle(int level) {
+    return '레벨 $level까지 재구성';
+  }
+
+  @override
+  String resetLevelsRebuildSubtitle(int level) {
+    return '레벨 1을 선택한 뒤 레벨 $level까지 레벨 업 단계를 엽니다. 끝나기 전에 취소하면 아무것도 저장되지 않습니다.';
+  }
+
+  @override
+  String resetLevelsRebuildStep(int level, int targetLevel) {
+    return '레벨 $level/$targetLevel 재구성 중';
+  }
+
+  @override
+  String get resetLevelsRebuildCancelled => '초기화가 취소되었습니다. 변경 사항은 저장되지 않았습니다.';
+
+  @override
+  String resetLevelsRebuiltApplied(int level) {
+    return '레벨을 초기화하고 레벨 $level까지 재구성했습니다.';
   }
 
   @override

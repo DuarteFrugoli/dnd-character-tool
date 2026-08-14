@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../data/character_progression/character_progression.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_usage_engine.dart';
+import '../../data/json_helpers.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
@@ -219,16 +220,23 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(c.copyWith(concentrationSpell: spellName));
   }
 
-  Future<void> shortRest({required int hdSpent, required int hpGained}) async {
+  Future<void> shortRest({
+    required List<int> hitDiceSpentByPool,
+    required int hpGained,
+  }) async {
     final c = state.valueOrNull;
     if (c == null) return;
     final clampedHp = hpGained
         .clamp(0, c.hitPoints.maximum - c.hitPoints.current)
         .toInt();
-    final newHdUsed = (c.totalHitDiceUsed + hdSpent)
-        .clamp(0, c.totalHitDice)
-        .toInt();
-    final newHitDicePools = _spendHitDicePools(c.hitDicePools, hdSpent);
+    final newHitDicePools = _spendHitDicePoolsByIndex(
+      c.hitDicePools,
+      hitDiceSpentByPool,
+    );
+    final hdSpent = _hitDiceSpent(c.hitDicePools, hitDiceSpentByPool);
+    final newHdUsed = newHitDicePools.isEmpty
+        ? (c.totalHitDiceUsed + hdSpent).clamp(0, c.totalHitDice).toInt()
+        : newHitDicePools.fold<int>(0, (sum, pool) => sum + pool.used);
     var rested = c.copyWith(
       hitPoints: c.hitPoints.copyWith(
         current: c.hitPoints.current + clampedHp,
@@ -412,30 +420,6 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(c.copyWith(name: trimmed.isEmpty ? fallback : trimmed));
   }
 
-  Future<void> updateLevel(int level) async {
-    final c = state.valueOrNull;
-    if (c == null) return;
-    final clamped = level.clamp(1, 20);
-    final primaryClass = c.primaryClass;
-    final updatedClasses = [
-      for (final entry in c.classEntries)
-        entry.id == primaryClass.id ? entry.copyWith(level: clamped) : entry,
-    ];
-    final updatedHitDicePools = _hitDicePoolsForLevelEdit(c, clamped);
-    final newXp = c.xpTrackingEnabled
-        ? levelToMinXp(clamped)
-        : c.experiencePoints;
-    final updated = c.copyWith(
-      level: clamped,
-      classes: updatedClasses,
-      hitDicePools: updatedHitDicePools,
-      proficiencyBonus: _profBonus(clamped),
-      experiencePoints: newXp,
-    );
-    final synced = _applySlotSync(updated);
-    await _save(synced.copyWith(armorClass: calcArmorClass(synced)));
-  }
-
   /// Applies all decisions from the Level Up Wizard atomically.
   Future<void> levelUp(LevelUpResult result) async {
     final c = state.valueOrNull;
@@ -456,10 +440,22 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     }
   }
 
-  /// Syncs standard and Pact Magic slot totals to the character progression.
-  /// Preserves `used` counts when they still fit in the recalculated totals.
-  Character _applySlotSync(Character c) {
-    return CharacterProgressionEngine.syncSpellcastingSlotsFor(c);
+  /// Resets class progression to a new level 1 starting class.
+  Future<void> resetLevels(CharacterLevelResetResult result) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(CharacterLevelResetEngine.resetToLevelOne(c, result));
+  }
+
+  /// Saves a character rebuilt by the level reset flow after all choices are done.
+  Future<void> saveRebuiltLevels(
+    Character character, {
+    bool syncInnateSpellsAfterSave = false,
+  }) async {
+    await _save(character);
+    if (syncInnateSpellsAfterSave) {
+      await syncInnateSpells();
+    }
   }
 
   Future<void> updateSubclass(String subclassName) async {
@@ -597,49 +593,33 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
   }
 
-  static int _profBonus(int level) {
-    if (level <= 4) return 2;
-    if (level <= 8) return 3;
-    if (level <= 12) return 4;
-    if (level <= 16) return 5;
-    return 6;
-  }
-
-  List<CharacterHitDiePool> _hitDicePoolsForLevelEdit(Character c, int level) {
-    final primaryClass = c.primaryClass;
-    if (c.hitDicePools.isEmpty) {
-      return [
-        CharacterHitDiePool(
-          dieSize: levelUpHitDie(primaryClass.className),
-          total: level,
-          used: c.hitPoints.hitDiceUsed.clamp(0, level).toInt(),
-          sourceClass: primaryClass.className,
-          sourceClassEntryId: primaryClass.id,
-        ),
-      ];
+  int _hitDiceSpent(List<CharacterHitDiePool> pools, List<int> spendByPool) {
+    if (spendByPool.isEmpty) return 0;
+    if (pools.isEmpty) {
+      return spendByPool.fold<int>(
+        0,
+        (sum, count) => sum + count.clamp(0, 20).toInt(),
+      );
     }
-    return [
-      for (final pool in c.hitDicePools)
-        pool.sourceClassEntryId == primaryClass.id
-            ? pool.copyWith(
-                total: level,
-                used: pool.used.clamp(0, level).toInt(),
-              )
-            : pool,
-    ];
+    var spent = 0;
+    for (var i = 0; i < pools.length; i++) {
+      final requested = i < spendByPool.length ? spendByPool[i] : 0;
+      spent += requested.clamp(0, pools[i].remaining).toInt();
+    }
+    return spent;
   }
 
-  List<CharacterHitDiePool> _spendHitDicePools(
+  List<CharacterHitDiePool> _spendHitDicePoolsByIndex(
     List<CharacterHitDiePool> pools,
-    int count,
+    List<int> spendByPool,
   ) {
-    if (pools.isEmpty || count <= 0) return pools;
-    var remaining = count;
+    if (pools.isEmpty || spendByPool.isEmpty) return pools;
     final updated = <CharacterHitDiePool>[];
-    for (final pool in pools) {
-      final spend = remaining < pool.remaining ? remaining : pool.remaining;
+    for (var i = 0; i < pools.length; i++) {
+      final pool = pools[i];
+      final requested = i < spendByPool.length ? spendByPool[i] : 0;
+      final spend = requested.clamp(0, pool.remaining).toInt();
       updated.add(pool.copyWith(used: pool.used + spend));
-      remaining -= spend;
     }
     return updated;
   }
@@ -855,7 +835,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (item.itemType != ItemType.armor) return false;
     final props = item.properties;
     if (props == null) return false;
-    if (props['isShield'] == true) return false;
+    if (readBool(props['isShield'])) return false;
     return props.containsKey('baseAC');
   }
 

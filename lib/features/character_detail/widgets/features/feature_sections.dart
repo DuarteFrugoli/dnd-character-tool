@@ -1,6 +1,18 @@
 import '../../character_detail_dependencies.dart';
 import 'feature_support.dart';
 
+PageStorageKey<String> _featureExpansionKey(
+  String scope,
+  List<Object?> parts,
+) {
+  final keyParts = [
+    'featureExpansion',
+    scope,
+    for (final part in parts) part?.toString() ?? '',
+  ];
+  return PageStorageKey<String>(keyParts.join('|'));
+}
+
 class RacialTraitsSection extends ConsumerWidget {
   const RacialTraitsSection({
     super.key,
@@ -113,6 +125,11 @@ class RacialTraitsSection extends ConsumerWidget {
                 margin: const EdgeInsets.only(bottom: 6),
                 clipBehavior: Clip.antiAlias,
                 child: ExpansionTile(
+                  key: _featureExpansionKey('race', [
+                    raceName,
+                    subraceName,
+                    trait,
+                  ]),
                   tilePadding: const EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 2,
@@ -189,6 +206,10 @@ class BackgroundFeatureSection extends ConsumerWidget {
     final isDisabled = disabledFeatures.contains(featureName);
     final card = Card(
       child: ExpansionTile(
+        key: _featureExpansionKey('background', [
+          backgroundName,
+          featureName,
+        ]),
         title: Row(
           children: [
             Expanded(
@@ -361,6 +382,7 @@ class FeatsSection extends ConsumerWidget {
       return Card(
         margin: const EdgeInsets.only(bottom: 10),
         child: ExpansionTile(
+          key: _featureExpansionKey('feat', [f.name]),
           title: Text(
             displayName,
             style: const TextStyle(fontWeight: FontWeight.w600),
@@ -584,6 +606,13 @@ class ExtraFeaturesSection extends ConsumerWidget {
       return Card(
         margin: const EdgeInsets.only(bottom: 10),
         child: ExpansionTile(
+          key: _featureExpansionKey('extra', [
+            f.effectiveSourceType,
+            f.sourceClassEntryId,
+            f.sourceClass,
+            f.sourceSubclass,
+            f.name,
+          ]),
           title: Row(
             children: [
               Expanded(
@@ -781,6 +810,7 @@ class ClassFeaturesSection extends ConsumerWidget {
       final card = Card(
         margin: const EdgeInsets.only(bottom: 10),
         child: ExpansionTile(
+          key: _featureExpansionKey('class', [classEntry.id, f.name]),
           title: Row(
             children: [
               Expanded(
@@ -953,6 +983,11 @@ class SubclassFeaturesSection extends ConsumerWidget {
       final card = Card(
         margin: const EdgeInsets.only(bottom: 10),
         child: ExpansionTile(
+          key: _featureExpansionKey('subclass', [
+            classEntry.id,
+            subclassName,
+            f.name,
+          ]),
           title: Row(
             children: [
               Expanded(

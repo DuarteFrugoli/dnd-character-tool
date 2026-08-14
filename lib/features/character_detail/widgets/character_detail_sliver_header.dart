@@ -14,6 +14,7 @@ class CharacterDetailSliverHeader extends StatelessWidget {
     required this.onBack,
     required this.onRollDice,
     required this.onLevelUp,
+    required this.onResetLevels,
     required this.onRest,
   });
 
@@ -24,6 +25,7 @@ class CharacterDetailSliverHeader extends StatelessWidget {
   final VoidCallback onBack;
   final VoidCallback onRollDice;
   final VoidCallback onLevelUp;
+  final VoidCallback onResetLevels;
   final VoidCallback onRest;
 
   @override
@@ -43,6 +45,7 @@ class CharacterDetailSliverHeader extends StatelessWidget {
         onBack: onBack,
         onRollDice: onRollDice,
         onLevelUp: onLevelUp,
+        onResetLevels: onResetLevels,
         onRest: onRest,
       ),
       bottom: CharacterDetailTabBar(controller: tabs),
@@ -50,7 +53,7 @@ class CharacterDetailSliverHeader extends StatelessWidget {
   }
 }
 
-enum _CharacterHeaderAction { rollDice, levelUp, rest }
+enum _CharacterHeaderAction { rollDice, levelUp, resetLevels, rest }
 
 class _CharacterDetailFlexibleHeader extends StatelessWidget {
   const _CharacterDetailFlexibleHeader({
@@ -59,6 +62,7 @@ class _CharacterDetailFlexibleHeader extends StatelessWidget {
     required this.onBack,
     required this.onRollDice,
     required this.onLevelUp,
+    required this.onResetLevels,
     required this.onRest,
   });
 
@@ -67,6 +71,7 @@ class _CharacterDetailFlexibleHeader extends StatelessWidget {
   final VoidCallback onBack;
   final VoidCallback onRollDice;
   final VoidCallback onLevelUp;
+  final VoidCallback onResetLevels;
   final VoidCallback onRest;
 
   @override
@@ -120,6 +125,7 @@ class _CharacterDetailFlexibleHeader extends StatelessWidget {
                           onBack: onBack,
                           onRollDice: onRollDice,
                           onLevelUp: onLevelUp,
+                          onResetLevels: onResetLevels,
                           onRest: onRest,
                         ),
                       ),
@@ -142,6 +148,7 @@ class _ExpandedHeaderContent extends StatelessWidget {
     required this.onBack,
     required this.onRollDice,
     required this.onLevelUp,
+    required this.onResetLevels,
     required this.onRest,
   });
 
@@ -150,6 +157,7 @@ class _ExpandedHeaderContent extends StatelessWidget {
   final VoidCallback onBack;
   final VoidCallback onRollDice;
   final VoidCallback onLevelUp;
+  final VoidCallback onResetLevels;
   final VoidCallback onRest;
 
   @override
@@ -205,6 +213,7 @@ class _ExpandedHeaderContent extends StatelessWidget {
               xpTrackingEnabled: header.xpTrackingEnabled,
               onRollDice: onRollDice,
               onLevelUp: onLevelUp,
+              onResetLevels: onResetLevels,
               onRest: onRest,
             ),
           ],
@@ -219,12 +228,14 @@ class _CharacterActionMenu extends StatelessWidget {
     required this.xpTrackingEnabled,
     required this.onRollDice,
     required this.onLevelUp,
+    required this.onResetLevels,
     required this.onRest,
   });
 
   final bool xpTrackingEnabled;
   final VoidCallback onRollDice;
   final VoidCallback onLevelUp;
+  final VoidCallback onResetLevels;
   final VoidCallback onRest;
 
   @override
@@ -240,6 +251,9 @@ class _CharacterActionMenu extends StatelessWidget {
             return;
           case _CharacterHeaderAction.levelUp:
             onLevelUp();
+            return;
+          case _CharacterHeaderAction.resetLevels:
+            onResetLevels();
             return;
           case _CharacterHeaderAction.rest:
             onRest();
@@ -263,6 +277,13 @@ class _CharacterActionMenu extends StatelessWidget {
               label: l10n.tooltipLevelUp,
             ),
           ),
+        PopupMenuItem(
+          value: _CharacterHeaderAction.resetLevels,
+          child: _CharacterActionMenuItem(
+            icon: Icons.restart_alt,
+            label: l10n.characterActionResetLevels,
+          ),
+        ),
         PopupMenuItem(
           value: _CharacterHeaderAction.rest,
           child: _CharacterActionMenuItem(

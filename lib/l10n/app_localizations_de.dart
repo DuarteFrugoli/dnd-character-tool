@@ -245,6 +245,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get characterActionRollDice => 'Würfel werfen';
 
   @override
+  String get characterActionResetLevels => 'Stufen zurücksetzen';
+
+  @override
   String get diceExpressionLabel => 'Ausdruck';
 
   @override
@@ -452,10 +455,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get labelLevel => 'Ebene';
-
-  @override
-  String get levelManualChangeWarning =>
-      'Nur Fähigkeiten und Zauberplätze werden automatisch aktualisiert. Für ein vollständiges Stufen-Up (HP, Attribute, Talente, Zauber) nutze den Aufsteigen-Button in der Titelleiste.';
 
   @override
   String get tooltipLevelUp => 'Aufsteigen';
@@ -688,6 +687,82 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String levelUpSpellSubtitle(int level, String school) {
     return 'Std $level $school';
+  }
+
+  @override
+  String get resetLevelsTitle => 'Stufen zurücksetzen';
+
+  @override
+  String get resetLevelsConfirmBody =>
+      'Dies setzt den Klassenfortschritt auf Stufe 1 zurück. Notizen, Inventar, Behälter, Geld, Bild, Geschichte, Aussehen, Volk, Hintergrund und Attributswerte bleiben erhalten.\n\nKlassenstufen, Klassenzauber, Klassen-/Unterklassenentscheidungen, Fortschrittsressourcen und ASI-Talente werden entfernt oder neu berechnet. Exportiere vorher ein Backup, wenn du eine zusätzliche Kopie möchtest.';
+
+  @override
+  String resetLevelsCountdown(int seconds) {
+    return '${seconds}s warten';
+  }
+
+  @override
+  String get resetLevelsIntro =>
+      'Wähle die neuen Klassendaten für Stufe 1. Das Zurücksetzen wird erst gespeichert, wenn du den letzten Button drückst.';
+
+  @override
+  String get resetLevelsSubclassRequired =>
+      'Diese Klasse wählt auf Stufe 1 eine Unterklasse.';
+
+  @override
+  String resetLevelsInitialHp(int hp) {
+    return 'Anfangs-TP: $hp';
+  }
+
+  @override
+  String resetLevelsSelectSkills(int count) {
+    return 'Wähle $count Klassenfertigkeiten.';
+  }
+
+  @override
+  String get resetLevelsFixedTools => 'Automatisch gewährt:';
+
+  @override
+  String resetLevelsSelectTools(int count) {
+    return 'Wähle $count Werkzeugübungen.';
+  }
+
+  @override
+  String get resetLevelsApply => 'Auf Stufe 1 zurücksetzen';
+
+  @override
+  String resetLevelsApplyAndRebuild(int level) {
+    return 'Zurücksetzen und bis Stufe $level neu aufbauen';
+  }
+
+  @override
+  String get resetLevelsIncomplete => 'Pflichtauswahlen abschließen';
+
+  @override
+  String get resetLevelsApplied => 'Stufen zurückgesetzt.';
+
+  @override
+  String resetLevelsRebuildTitle(int level) {
+    return 'Bis Stufe $level neu aufbauen';
+  }
+
+  @override
+  String resetLevelsRebuildSubtitle(int level) {
+    return 'Nach der Auswahl von Stufe 1 öffnet die App die Stufenaufstiegsschritte bis Stufe $level. Wenn du vorher abbrichst, wird nichts gespeichert.';
+  }
+
+  @override
+  String resetLevelsRebuildStep(int level, int targetLevel) {
+    return 'Stufe $level von $targetLevel wird neu aufgebaut';
+  }
+
+  @override
+  String get resetLevelsRebuildCancelled =>
+      'Zurücksetzen abgebrochen. Es wurden keine Änderungen gespeichert.';
+
+  @override
+  String resetLevelsRebuiltApplied(int level) {
+    return 'Stufen zurückgesetzt und bis Stufe $level neu aufgebaut.';
   }
 
   @override

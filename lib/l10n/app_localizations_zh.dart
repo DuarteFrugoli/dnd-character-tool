@@ -233,6 +233,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get characterActionRollDice => '掷骰';
 
   @override
+  String get characterActionResetLevels => '重置等级';
+
+  @override
   String get diceExpressionLabel => '表达式';
 
   @override
@@ -437,10 +440,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get labelLevel => '等级';
-
-  @override
-  String get levelManualChangeWarning =>
-      '仅职业特性和法术位会自动更新。如需完整升级（HP、属性、专长、法术），请使用顶部栏的「升级」按鈕。';
 
   @override
   String get tooltipLevelUp => '升级';
@@ -669,6 +668,79 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String levelUpSpellSubtitle(int level, String school) {
     return '$level环 $school';
+  }
+
+  @override
+  String get resetLevelsTitle => '重置等级';
+
+  @override
+  String get resetLevelsConfirmBody =>
+      '这会将职业进度重置为 1 级。笔记、物品栏、容器、货币、图片、故事、外观、种族、背景和属性值会保留。\n\n职业等级、职业法术、职业/子职业选择、进度资源和 ASI 专长会被移除或重新计算。如果想保留额外副本，请先导出备份。';
+
+  @override
+  String resetLevelsCountdown(int seconds) {
+    return '等待 $seconds 秒';
+  }
+
+  @override
+  String get resetLevelsIntro => '选择新的 1 级职业数据。只有按下最后的按钮后才会保存重置。';
+
+  @override
+  String get resetLevelsSubclassRequired => '该职业在 1 级选择子职业。';
+
+  @override
+  String resetLevelsInitialHp(int hp) {
+    return '初始 HP：$hp';
+  }
+
+  @override
+  String resetLevelsSelectSkills(int count) {
+    return '选择 $count 个职业技能。';
+  }
+
+  @override
+  String get resetLevelsFixedTools => '自动获得：';
+
+  @override
+  String resetLevelsSelectTools(int count) {
+    return '选择 $count 个工具熟练项。';
+  }
+
+  @override
+  String get resetLevelsApply => '重置到 1 级';
+
+  @override
+  String resetLevelsApplyAndRebuild(int level) {
+    return '重置并重建到 $level 级';
+  }
+
+  @override
+  String get resetLevelsIncomplete => '完成必选项';
+
+  @override
+  String get resetLevelsApplied => '等级已重置。';
+
+  @override
+  String resetLevelsRebuildTitle(int level) {
+    return '重建到 $level 级';
+  }
+
+  @override
+  String resetLevelsRebuildSubtitle(int level) {
+    return '选择 1 级后，应用会打开升级步骤直到 $level 级。如果中途取消，不会保存任何更改。';
+  }
+
+  @override
+  String resetLevelsRebuildStep(int level, int targetLevel) {
+    return '正在重建 $level/$targetLevel 级';
+  }
+
+  @override
+  String get resetLevelsRebuildCancelled => '重置已取消。没有保存任何更改。';
+
+  @override
+  String resetLevelsRebuiltApplied(int level) {
+    return '等级已重置并重建到 $level 级。';
   }
 
   @override

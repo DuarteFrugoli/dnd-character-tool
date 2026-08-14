@@ -1,4 +1,5 @@
 import '../../character_detail_dependencies.dart';
+import '../../../../data/json_helpers.dart';
 import 'inventory_display_helpers.dart';
 import 'item_detail_sheet.dart';
 
@@ -389,7 +390,7 @@ class ItemTile extends ConsumerWidget {
     }
 
     if (item.itemType == ItemType.armor && props != null) {
-      final isShield = props['isShield'] == true;
+      final isShield = readBool(props['isShield']);
       if (isShield) {
         final bonus = (props['acBonus'] as num?)?.toInt() ?? 2;
         return '${i18n?.term('shield') ?? 'Shield'}  ·  +$bonus ${i18n?.term('AC') ?? 'AC'}';
@@ -397,7 +398,7 @@ class ItemTile extends ConsumerWidget {
 
       final baseAc = (props['baseAC'] as num?)?.toInt();
       if (baseAc != null) {
-        final addDex = props['addDexModifier'] as bool? ?? true;
+        final addDex = readBool(props['addDexModifier'], defaultValue: true);
         final maxDex = (props['maxDexBonus'] as num?)?.toInt();
         final ac = i18n?.term('AC') ?? 'AC';
         final dex = i18n?.term('DEX') ?? 'DEX';
@@ -435,7 +436,7 @@ class ItemTile extends ConsumerWidget {
     if (item.itemType != ItemType.armor) return false;
     final props = item.properties;
     if (props == null) return false;
-    if (props['isShield'] == true) return false;
+    if (readBool(props['isShield'])) return false;
     return props.containsKey('baseAC');
   }
 
@@ -525,7 +526,7 @@ class ItemTile extends ConsumerWidget {
     // Stealth disadvantage: stored in properties (new items) or description (old items)
     final stealthDisadv =
         item.itemType == ItemType.armor &&
-        (item.properties?['stealthDisadvantage'] == true ||
+        (readBool(item.properties?['stealthDisadvantage']) ||
             (item.description?.toLowerCase().contains('stealth') == true));
 
     String? subtitleText;

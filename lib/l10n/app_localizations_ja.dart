@@ -239,6 +239,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get characterActionRollDice => 'ダイスを振る';
 
   @override
+  String get characterActionResetLevels => 'レベルをリセット';
+
+  @override
   String get diceExpressionLabel => '式';
 
   @override
@@ -443,10 +446,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get labelLevel => 'レベル';
-
-  @override
-  String get levelManualChangeWarning =>
-      'クラス特徴と呪文スロットのみ自動更新されます。レベルアップ全体（HP・能力値・特技・呪文）はトップバーの「レベルアップ」ボタンを使ってください。';
 
   @override
   String get tooltipLevelUp => 'レベルアップ';
@@ -676,6 +675,80 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String levelUpSpellSubtitle(int level, String school) {
     return 'Lv$level $school';
+  }
+
+  @override
+  String get resetLevelsTitle => 'レベルをリセット';
+
+  @override
+  String get resetLevelsConfirmBody =>
+      'クラス進行をレベル1に戻します。メモ、インベントリ、コンテナ、通貨、画像、物語、外見、種族、背景、能力値は保持されます。\n\nクラスレベル、クラス呪文、クラス/サブクラスの選択、進行リソース、ASIで選んだ特技は削除または再計算されます。追加のコピーが必要なら先にバックアップをエクスポートしてください。';
+
+  @override
+  String resetLevelsCountdown(int seconds) {
+    return '$seconds秒待機';
+  }
+
+  @override
+  String get resetLevelsIntro =>
+      '新しいレベル1のクラス情報を選んでください。最後のボタンを押すまでリセットは保存されません。';
+
+  @override
+  String get resetLevelsSubclassRequired => 'このクラスはレベル1でサブクラスを選びます。';
+
+  @override
+  String resetLevelsInitialHp(int hp) {
+    return '初期HP: $hp';
+  }
+
+  @override
+  String resetLevelsSelectSkills(int count) {
+    return '$count個のクラス技能を選んでください。';
+  }
+
+  @override
+  String get resetLevelsFixedTools => '自動で付与:';
+
+  @override
+  String resetLevelsSelectTools(int count) {
+    return '$count個の道具習熟を選んでください。';
+  }
+
+  @override
+  String get resetLevelsApply => 'レベル1にリセット';
+
+  @override
+  String resetLevelsApplyAndRebuild(int level) {
+    return 'リセットしてレベル$levelまで再構築';
+  }
+
+  @override
+  String get resetLevelsIncomplete => '必須の選択を完了してください';
+
+  @override
+  String get resetLevelsApplied => 'レベルをリセットしました。';
+
+  @override
+  String resetLevelsRebuildTitle(int level) {
+    return 'レベル$levelまで再構築';
+  }
+
+  @override
+  String resetLevelsRebuildSubtitle(int level) {
+    return 'レベル1を選んだ後、レベル$levelまでレベルアップ手順を開きます。途中でキャンセルすると何も保存されません。';
+  }
+
+  @override
+  String resetLevelsRebuildStep(int level, int targetLevel) {
+    return 'レベル$level/$targetLevelを再構築中';
+  }
+
+  @override
+  String get resetLevelsRebuildCancelled => 'リセットをキャンセルしました。変更は保存されていません。';
+
+  @override
+  String resetLevelsRebuiltApplied(int level) {
+    return 'レベルをリセットし、レベル$levelまで再構築しました。';
   }
 
   @override

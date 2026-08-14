@@ -22,6 +22,8 @@ class LevelUpResult {
     this.spellsLearned = const [],
     this.spellSwapped,
     this.featureChoices = const [],
+    this.skillProficienciesGained = const [],
+    this.proficiencyFeatureLabelsGained = const [],
   });
 
   final String targetClassEntryId;
@@ -49,6 +51,9 @@ class LevelUpResult {
 
   /// Feature/feat choices made during this level up.
   final List<CharacterFeatureChoice> featureChoices;
+
+  final List<String> skillProficienciesGained;
+  final List<String> proficiencyFeatureLabelsGained;
 }
 
 // ── XP Thresholds (SRD 5.1) ──────────────────────────────────────────────────
@@ -137,6 +142,71 @@ const Map<String, int> hitDieByClass = {
   'Sorcerer': 6,
   'Wizard': 6,
 };
+
+class MulticlassProficiencyRule {
+  const MulticlassProficiencyRule({
+    this.armorProficiencies = const [],
+    this.weaponProficiencies = const [],
+    this.skillChoices = 0,
+    this.musicalInstrumentChoices = 0,
+    this.toolProficiencies = const [],
+  });
+
+  final List<String> armorProficiencies;
+  final List<String> weaponProficiencies;
+  final int skillChoices;
+  final int musicalInstrumentChoices;
+  final List<String> toolProficiencies;
+}
+
+const Map<String, MulticlassProficiencyRule> multiclassProficienciesByClass = {
+  'Barbarian': MulticlassProficiencyRule(
+    armorProficiencies: ['shields'],
+    weaponProficiencies: ['simple weapons', 'martial weapons'],
+  ),
+  'Bard': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor'],
+    skillChoices: 1,
+    musicalInstrumentChoices: 1,
+  ),
+  'Cleric': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor', 'medium armor', 'shields'],
+  ),
+  'Druid': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor', 'medium armor', 'shields'],
+  ),
+  'Fighter': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor', 'medium armor', 'shields'],
+    weaponProficiencies: ['simple weapons', 'martial weapons'],
+  ),
+  'Monk': MulticlassProficiencyRule(
+    weaponProficiencies: ['simple weapons', 'shortswords'],
+  ),
+  'Paladin': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor', 'medium armor', 'shields'],
+    weaponProficiencies: ['simple weapons', 'martial weapons'],
+  ),
+  'Ranger': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor', 'medium armor', 'shields'],
+    weaponProficiencies: ['simple weapons', 'martial weapons'],
+    skillChoices: 1,
+  ),
+  'Rogue': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor'],
+    skillChoices: 1,
+    toolProficiencies: ["Thieves' tools"],
+  ),
+  'Sorcerer': MulticlassProficiencyRule(),
+  'Warlock': MulticlassProficiencyRule(
+    armorProficiencies: ['light armor'],
+    weaponProficiencies: ['simple weapons'],
+  ),
+  'Wizard': MulticlassProficiencyRule(),
+};
+
+MulticlassProficiencyRule multiclassProficiencyRuleFor(String className) =>
+    multiclassProficienciesByClass[className] ??
+    const MulticlassProficiencyRule();
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 

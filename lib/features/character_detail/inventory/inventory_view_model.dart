@@ -1,5 +1,6 @@
 import 'package:collection/collection.dart';
 
+import '../../../data/json_helpers.dart';
 import '../../../data/models/models.dart';
 
 const inventoryEquippableTypes = {
@@ -150,7 +151,7 @@ double? inventoryContainerCapacityWeight(EquipmentItem container) {
 }
 
 bool inventoryContainerIgnoresContentWeight(EquipmentItem container) {
-  return container.properties?['contentsWeightIgnored'] == true;
+  return readBool(container.properties?['contentsWeightIgnored']);
 }
 
 List<EquipmentItem> _sortEntries(List<_IndexedEquipmentItem> entries) {

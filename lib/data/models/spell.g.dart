@@ -25,8 +25,8 @@ Map<String, dynamic> _$SpellSlotsToJson(SpellSlots instance) =>
 KnownSpell _$KnownSpellFromJson(Map<String, dynamic> json) => KnownSpell(
   name: json['name'] as String,
   level: (json['level'] as num).toInt(),
-  isPrepared: json['isPrepared'] as bool? ?? false,
-  isAlwaysPrepared: json['isAlwaysPrepared'] as bool? ?? false,
+  isPrepared: readBool(json['isPrepared']),
+  isAlwaysPrepared: readBool(json['isAlwaysPrepared']),
   sourceType: json['sourceType'] as String? ?? 'manual',
   sourceClass: json['sourceClass'] as String?,
   sourceSubclass: json['sourceSubclass'] as String?,

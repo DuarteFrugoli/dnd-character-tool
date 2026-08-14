@@ -2,6 +2,7 @@
 /// serialização reversa, portanto usam fromJson manual sem build_runner.
 library;
 
+import '../../json_helpers.dart';
 import '../../models/equipment_item.dart';
 
 /// Capitalizes the first letter of a string (e.g. "dexterity" → "Dexterity").
@@ -510,15 +511,15 @@ class SrdSpell {
       school: json['school'] as String,
       castingTime: json['castingTime'] as String,
       castingTimeType: json['castingTimeType'] as String? ?? 'action',
-      ritual: json['ritual'] as bool? ?? false,
+      ritual: readBool(json['ritual']),
       range: range,
       rangeInFeet: _parseRangeInFeet(range),
       components: List<String>.from(json['components']),
       material: json['material'] as String?,
       materialCost: json['materialCost'] as int?,
-      materialConsumed: json['materialConsumed'] as bool? ?? false,
+      materialConsumed: readBool(json['materialConsumed']),
       duration: json['duration'] as String,
-      concentration: json['concentration'] as bool,
+      concentration: readBool(json['concentration']),
       areaOfEffect: json['areaOfEffect'] != null
           ? SpellAreaOfEffect.fromJson(
               json['areaOfEffect'] as Map<String, dynamic>,
@@ -620,9 +621,9 @@ class SrdArmor {
     type: (json['type'] as String?) ?? '',
     baseAC: json['baseAC'] as int?,
     acBonus: json['acBonus'] as int?,
-    addDexModifier: json['addDexModifier'] as bool? ?? false,
+    addDexModifier: readBool(json['addDexModifier']),
     maxDexBonus: json['maxDexBonus'] as int?,
-    stealthDisadvantage: json['stealthDisadvantage'] as bool? ?? false,
+    stealthDisadvantage: readBool(json['stealthDisadvantage']),
     strengthRequired: json['strengthRequired'] as int?,
     weight: (json['weight'] as num? ?? 0).toDouble(),
     cost: (json['cost'] as String?) ?? '',
@@ -703,7 +704,7 @@ class SrdMagicItem {
 
   factory SrdMagicItem.fromJson(Map<String, dynamic> json) {
     final rarity = (json['rarity'] as String?) ?? '';
-    final requiresAttunement = json['requiresAttunement'] as bool? ?? false;
+    final requiresAttunement = readBool(json['requiresAttunement']);
     final cost = (json['cost'] as String?) ?? '';
     final props = <String, dynamic>{
       if (rarity.isNotEmpty) 'rarity': rarity,
@@ -936,7 +937,7 @@ class SrdFeatureChoiceRequirement {
       minSpellLevel: (json['minSpellLevel'] as num?)?.toInt(),
       maxSpellLevel: (json['maxSpellLevel'] as num?)?.toInt(),
       maxSpellLevelByLevel: _intMapFromJson(json['maxSpellLevelByLevel']),
-      allowThievesTools: json['allowThievesTools'] as bool? ?? false,
+      allowThievesTools: readBool(json['allowThievesTools']),
     );
   }
 

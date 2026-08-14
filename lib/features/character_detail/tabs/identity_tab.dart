@@ -272,54 +272,6 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
     hair: _hairCtrl.text.trim(),
   );
 
-  Future<void> _onLevelUp(Character character) async {
-    final primaryClass = character.primaryClass;
-    final newLevel = primaryClass.level + 1;
-    final srd = ref.read(srdDataSourceProvider);
-    final classes = await srd.getClasses();
-    final srdClass = classes
-        .where((c) => c.name == primaryClass.className)
-        .firstOrNull;
-
-    if (srdClass == null ||
-        srdClass.subclasses.isEmpty ||
-        newLevel != srdClass.subclassLevel) {
-      await _notifier.updateLevel(newLevel);
-      return;
-    }
-
-    if (!mounted) return;
-
-    final i18n =
-        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
-
-    if (primaryClass.subclassName != null &&
-        primaryClass.subclassName!.isNotEmpty) {
-      final picked = await _showSubclassDialog(
-        context: context,
-        srdClass: srdClass,
-        current: primaryClass.subclassName,
-        isConfirm: true,
-        i18n: i18n,
-      );
-      if (!mounted) return;
-      if (picked != null) await _notifier.updateSubclass(picked);
-      await _notifier.updateLevel(newLevel);
-      return;
-    }
-
-    final picked = await _showSubclassDialog(
-      context: context,
-      srdClass: srdClass,
-      current: null,
-      isConfirm: false,
-      i18n: i18n,
-    );
-    if (!mounted) return;
-    if (picked != null) await _notifier.updateSubclass(picked);
-    await _notifier.updateLevel(newLevel);
-  }
-
   Future<String?> _showSubclassDialog({
     required BuildContext context,
     required SrdClass srdClass,
@@ -618,85 +570,19 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
                                       ),
                                 ),
                               ),
-                              if (character.isMulticlass)
-                                Expanded(
-                                  child: Text(
-                                    '${character.totalLevel} · '
-                                    '${localizedClassLevelSummary(character, i18n)}',
-                                    style: Theme.of(
-                                      context,
-                                    ).textTheme.bodyMedium,
-                                  ),
-                                )
-                              else ...[
-                                OutlinedButton(
-                                  onPressed: character.totalLevel > 1
-                                      ? () => notifier.updateLevel(
-                                          character.totalLevel - 1,
-                                        )
-                                      : null,
-                                  style: OutlinedButton.styleFrom(
-                                    minimumSize: const Size(36, 36),
-                                    padding: EdgeInsets.zero,
-                                    visualDensity: VisualDensity.compact,
-                                  ),
-                                  child: const Icon(Icons.remove, size: 16),
+                              // Level changes go through the Level Up wizard.
+                              Expanded(
+                                child: Text(
+                                  character.isMulticlass
+                                      ? '${character.totalLevel} · '
+                                            '${localizedClassLevelSummary(character, i18n)}'
+                                      : '${character.totalLevel}',
+                                  style: Theme.of(context).textTheme.bodyMedium,
                                 ),
-                                SizedBox(
-                                  width: 40,
-                                  child: Text(
-                                    '${character.totalLevel}',
-                                    textAlign: TextAlign.center,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleSmall
-                                        ?.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                ),
-                                if (!character.xpTrackingEnabled)
-                                  OutlinedButton(
-                                    onPressed: character.totalLevel < 20
-                                        ? () => _onLevelUp(character)
-                                        : null,
-                                    style: OutlinedButton.styleFrom(
-                                      minimumSize: const Size(36, 36),
-                                      padding: EdgeInsets.zero,
-                                      visualDensity: VisualDensity.compact,
-                                    ),
-                                    child: const Icon(Icons.add, size: 16),
-                                  ),
-                              ],
+                              ),
                             ],
                           ),
                         ),
-                        if (!character.isMulticlass)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 4),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Icon(
-                                  Icons.info_outline,
-                                  size: 13,
-                                  color: scheme.onSurfaceVariant,
-                                ),
-                                const SizedBox(width: 6),
-                                Expanded(
-                                  child: Text(
-                                    l10n.levelManualChangeWarning,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall
-                                        ?.copyWith(
-                                          color: scheme.onSurfaceVariant,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
                         // Subclass row
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 4),

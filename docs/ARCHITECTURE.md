@@ -51,14 +51,17 @@ lib/
     units/        Unit-system provider and formatting helpers
     utils/        Platform-aware file export helpers
   data/
-    constants/    Domain rules derived from D&D 5e/SRD (AC, level up)
+    character_progression/ Pure level-up, reset, and multiclass progression engines
+    constants/    Static D&D 5e/SRD tables and rule constants
     datasources/
       local/      Character storage facade and platform backends
       srd/        SRD asset readers, SRD models, SRD i18n service
+    dice/         Pure dice expression parser and roller
     inventory/    Pure inventory mutation helpers
     migrations/   Versioned character migrations
     models/       Persisted domain models and generated JSON serializers
     repositories/ CharacterRepository facade
+    json_helpers.dart
     feature_choice_engine.dart
     feature_choice_option_resolver.dart
     feature_usage_engine.dart
@@ -258,6 +261,12 @@ Most models use `@JsonSerializable`. Some older/simple models use manual JSON
 methods. New persisted fields should provide a default fallback in generated or
 manual `fromJson` code to keep old character files readable.
 
+`data/json_helpers.dart` contains compatibility readers for persisted JSON.
+Use helpers such as `readBool()` when a field may have been saved by older
+code, external JSON tooling, or a platform decoder as `true/false`, `1/0`,
+`1.0/0.0`, or a string. This avoids fragile runtime casts when loading old
+characters.
+
 Important persisted fields on `Character`:
 
 | Field | Purpose |
@@ -372,8 +381,8 @@ Rules that should not live in widgets are centralized under `lib/data/`.
   disabling one class feature does not accidentally disable another feature
   with the same name from a different source.
 
-Creation, level changes, ASI/stat changes, feature changes, and equipment
-changes should all recalculate AC through this helper.
+Creation, level up, level reset, ASI/stat changes, feature changes, and
+equipment changes should all recalculate AC through this helper.
 
 ### Level Up
 
@@ -389,6 +398,7 @@ changes should all recalculate AC through this helper.
 
 - target class selection;
 - adding a new multiclass when prerequisites are met;
+- blocked multiclass options with the missing prerequisite shown;
 - features summary;
 - subclass selection when needed;
 - ASI or feat;
@@ -407,6 +417,42 @@ Multiclass rules use `Character.classes` as the source of truth. Legacy
 `Character.characterClass`, `Character.subclass`, and `Character.level` remain
 persisted compatibility mirrors and should not be used as the source of new
 class-rule logic.
+
+The progression package contains the pure rule entry points:
+
+- `character_progression_engine.dart`: applies level ups and synchronizes
+  class entries, hit dice, HP, spells, slots, features, proficiency bonus, and
+  AC.
+- `character_level_reset_engine.dart`: rebuilds a character back to level 1
+  for a selected starting class while preserving narrative data, inventory,
+  notes, image, currency, attributes, and user settings.
+- `multiclass_prerequisites.dart`: checks whether a character can add a new
+  class and explains missing ability-score requirements.
+
+The old raw level editor is intentionally not part of the UI anymore. Level
+changes should happen through level up or through the reset/rebuild flow.
+
+### Level Reset
+
+`features/character_detail/level_reset_sheet.dart` owns the user-facing reset
+flow. It is opened from the character action menu and first shows a destructive
+confirmation with a countdown.
+
+The reset flow:
+
+- asks for the new level-1 class;
+- asks for the level-1 subclass when the selected class grants one;
+- asks for starting skill/tool choices when needed;
+- can optionally rebuild the character back to the previous total level by
+  running the normal level-up wizard repeatedly in memory;
+- saves atomically only after every required rebuild step is complete.
+
+If the user cancels during rebuild, the original character is left unchanged.
+Class/subclass spells, class feature choices, class feature resources,
+disabled class features/spells, concentration, and ASI feats are removed as
+progression data. Narrative fields, inventory, containers, notes, image,
+currency, attributes, and level-1 feat choices such as Variant Human are
+preserved.
 
 ### Spellcasting
 
@@ -436,6 +482,21 @@ levels for full/half/third casters and keeps Warlock Pact Magic separate. The
 Spells tab uses that summary to show standard slots, Pact Magic slots, and
 class-specific spell origins.
 
+### Dice
+
+`data/dice/` contains the pure dice engine:
+
+- `dice_parser.dart` parses expressions such as `1d20 + 5` or `2d6 + 1d8`,
+  allowing optional spaces.
+- `dice_expression.dart` stores parsed expressions and roll terms.
+- `dice_roller.dart` evaluates expressions, including advantage/disadvantage
+  where supported by the UI.
+
+`features/character_detail/widgets/dice/dice_roller_sheet.dart` is the current
+UI entry point. It is opened from the character action menu. Roll history is
+kept in memory while the app process is alive; it is not persisted into
+`.dndchar`/`.dndbackup`.
+
 ### Feature Choices
 
 `data/feature_choice_engine.dart` turns SRD feature-choice definitions into
@@ -464,7 +525,7 @@ enough unique option IDs.
 Persisted choices use `CharacterFeatureChoice`:
 
 ```text
-sourceType       classFeature | subclassFeature | raceTrait | feat
+sourceType       classFeature | subclassFeature | raceTrait | feat | multiclassProficiency
 sourceClass      class name when relevant
 sourceClassEntryId class-entry ID when relevant
 sourceSubclass   subclass name when relevant
@@ -641,7 +702,7 @@ Race and attribute rules:
 
 `features/character_detail/` is the main sheet/editor for an existing character.
 `character_detail_screen.dart` owns the shared tab layout, app bar actions,
-rest/level-up entry points, maintenance gate, and edit-mode discard
+rest/level-up/reset/dice entry points, maintenance gate, and edit-mode discard
 coordination.
 
 The detail feature is split into:
@@ -655,6 +716,7 @@ The detail feature is split into:
   edit-discard coordination and async tab host widgets.
 - `widgets/features/`: feature sections and feature add/detail sheets.
 - `widgets/inventory/`: inventory add, container-content, and detail sheets.
+- `widgets/dice/`: dice roller sheet and expression help UI.
 - `widgets/spells/`: spell tab helper widgets.
 - `inventory/`: inventory snapshot and SRD search catalog.
 
@@ -662,8 +724,8 @@ Manual `part`/`part of` is not used in the character detail UI. Generated
 model serializers still use Dart `part` files as expected.
 
 `character_detail_provider.dart` owns mutations: HP, rests, spell slots,
-prepared spells, concentration, level up, identity, stats, inventory, features,
-notes, conditions, XP, and settings flags.
+prepared spells, concentration, level up, level reset, identity, stats,
+inventory, features, notes, conditions, XP, and settings flags.
 
 The detail header and character cards use shared display helpers from
 `shared/utils/character_display.dart` to show localized class summaries such as
@@ -671,10 +733,21 @@ The detail header and character cards use shared display helpers from
 class pools, while the Features tab groups class and subclass features by
 `CharacterClassEntry`.
 
+The detail header uses a sliver layout so identity/class information can
+collapse while scrolling. Header actions are grouped in a single action menu
+for dice, level up, reset levels, and rest, keeping the title area usable on
+small screens.
+
 Heavy tabs use a combination of per-tab providers, cached SRD providers,
 `AutomaticKeepAliveClientMixin`, and sliver lists. The goal is to keep tab
 switching responsive and avoid rebuilding large lists when unrelated character
 data changes.
+
+Scroll views and expansion widgets must use distinct storage keys. Each detail
+tab uses a tab-level `PageStorageKey`, and `ExpansionTile` widgets inside those
+scroll views need their own stable keys. Otherwise Flutter can reuse a saved
+scroll offset (`double`) as an expansion state (`bool`) and throw runtime type
+errors.
 
 The Notes tab supports search, colored tags, pin/unpin, detail viewing, and
 drag reordering. Notes are ordered by pinned group and `CharacterNote.sortOrder`.
@@ -800,6 +873,9 @@ boundaries.
 - For reorderable lists with headers, search, or sections, prefer
   `CustomScrollView` with `SliverReorderableList` and explicit drag handles.
   Avoid nested `ReorderableListView` with `shrinkWrap` for long lists.
+- When using `ExpansionTile` inside a scrollable detail tab, give each tile a
+  stable namespaced `PageStorageKey` that is distinct from the scroll view key.
+  This preserves expansion state without colliding with saved scroll offsets.
 - Item, spell, feature, and SRD detail displays should use localized names from
   `SrdI18nService`, falling back to English.
 - Prefer existing shared widgets in `shared/widgets/` and
@@ -829,6 +905,8 @@ inventory snapshots/search, and character migrations.
 High-risk domain rules should be tested in pure Dart layers first:
 
 - inventory behavior in `data/inventory/inventory_operations.dart`;
+- character progression/reset behavior in `data/character_progression/`;
+- dice parsing/rolling behavior in `data/dice/`;
 - character migrations in `data/migrations/`;
 - feature choices/usages in their engine files;
 - creation draft rules in `character_draft_provider.dart`;
@@ -849,7 +927,11 @@ the affected files before committing.
 | Creation wizard state | `CharacterDraftNotifier` and `features/character_creation/steps/` |
 | AC calculation | `data/constants/armor_class.dart` |
 | Level-up thresholds/ASI/subclass unlocks | `data/constants/level_up_rules.dart` |
+| Level-up/multiclass application | `data/character_progression/character_progression_engine.dart`, `features/character_detail/level_up_wizard_sheet.dart` |
+| Multiclass prerequisites | `data/character_progression/multiclass_prerequisites.dart`, `data/constants/level_up_rules.dart` |
+| Level reset/rebuild | `data/character_progression/character_level_reset_engine.dart`, `features/character_detail/level_reset_sheet.dart` |
 | Spellcasting slots/known/prepared/cantrips | `data/spellcasting_engine.dart` |
+| Dice parser/roller | `data/dice/`, `features/character_detail/widgets/dice/dice_roller_sheet.dart` |
 | Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
 | Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/feature_usages.json`, `features/character_detail/widgets/features/feature_sections.dart` |
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |

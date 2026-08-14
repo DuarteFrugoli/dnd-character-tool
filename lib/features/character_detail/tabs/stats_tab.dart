@@ -1,4 +1,5 @@
 import '../character_detail_dependencies.dart';
+import '../../../data/json_helpers.dart';
 import '../../../shared/utils/character_display.dart';
 
 // ── Stats Tab ─────────────────────────────────────────────────────────────────
@@ -341,10 +342,10 @@ class _StatsTabState extends ConsumerState<StatsTab> {
         .where((e) => e.itemType == ItemType.armor && e.isEquipped)
         .toList();
     final bodyArmor = equippedArmor
-        .where((e) => e.properties?['isShield'] != true)
+        .where((e) => !readBool(e.properties?['isShield']))
         .toList();
     final usingShield = equippedArmor.any(
-      (e) => e.properties?['isShield'] == true,
+      (e) => readBool(e.properties?['isShield']),
     );
     final armorSummary = bodyArmor.isEmpty
         ? (usingShield ? l10n.statNoArmorShield : l10n.statNoArmor)

@@ -6,6 +6,7 @@ class FeatureChoiceSourceType {
   static const subclassFeature = 'subclassFeature';
   static const raceTrait = 'raceTrait';
   static const feat = 'feat';
+  static const multiclassProficiency = 'multiclassProficiency';
 }
 
 class FeatureChoiceRequest {

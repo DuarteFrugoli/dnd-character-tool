@@ -243,6 +243,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get characterActionRollDice => 'Tirar dados';
 
   @override
+  String get characterActionResetLevels => 'Reiniciar niveles';
+
+  @override
   String get diceExpressionLabel => 'Expresión';
 
   @override
@@ -451,10 +454,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get labelLevel => 'Nivel';
-
-  @override
-  String get levelManualChangeWarning =>
-      'Solo las aptitudes y ranuras de conjuros se actualizan automáticamente. Para subir de nivel completo (PV, atributos, talentos, conjuros), usa el botón Subir Nivel en la barra superior.';
 
   @override
   String get tooltipLevelUp => 'Subir Nivel';
@@ -687,6 +686,82 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String levelUpSpellSubtitle(int level, String school) {
     return 'Nv $level $school';
+  }
+
+  @override
+  String get resetLevelsTitle => 'Reiniciar niveles';
+
+  @override
+  String get resetLevelsConfirmBody =>
+      'Esto reiniciará la progresión de clase al nivel 1. Se conservarán tus notas, inventario, contenedores, monedas, imagen, historia, apariencia, raza, trasfondo y puntuaciones de característica.\n\nLos niveles de clase, conjuros de clase, elecciones de clase/subclase, recursos de progresión y dotes de ASI se eliminarán o recalcularán. Exporta una copia de seguridad antes si quieres una copia extra.';
+
+  @override
+  String resetLevelsCountdown(int seconds) {
+    return 'Espera ${seconds}s';
+  }
+
+  @override
+  String get resetLevelsIntro =>
+      'Elige los nuevos datos de clase de nivel 1. El reinicio solo se guarda cuando presionas el botón final.';
+
+  @override
+  String get resetLevelsSubclassRequired =>
+      'Esta clase elige una subclase en nivel 1.';
+
+  @override
+  String resetLevelsInitialHp(int hp) {
+    return 'PG iniciales: $hp';
+  }
+
+  @override
+  String resetLevelsSelectSkills(int count) {
+    return 'Elige $count habilidades de clase.';
+  }
+
+  @override
+  String get resetLevelsFixedTools => 'Concedido automáticamente:';
+
+  @override
+  String resetLevelsSelectTools(int count) {
+    return 'Elige $count competencias con herramientas.';
+  }
+
+  @override
+  String get resetLevelsApply => 'Reiniciar a nivel 1';
+
+  @override
+  String resetLevelsApplyAndRebuild(int level) {
+    return 'Reiniciar y reconstruir hasta nivel $level';
+  }
+
+  @override
+  String get resetLevelsIncomplete => 'Completa las elecciones obligatorias';
+
+  @override
+  String get resetLevelsApplied => 'Niveles reiniciados.';
+
+  @override
+  String resetLevelsRebuildTitle(int level) {
+    return 'Reconstruir hasta nivel $level';
+  }
+
+  @override
+  String resetLevelsRebuildSubtitle(int level) {
+    return 'Después de elegir el nivel 1, la app abrirá los pasos de subida de nivel hasta el nivel $level. Si cancelas antes del final, no se guarda nada.';
+  }
+
+  @override
+  String resetLevelsRebuildStep(int level, int targetLevel) {
+    return 'Reconstruyendo nivel $level de $targetLevel';
+  }
+
+  @override
+  String get resetLevelsRebuildCancelled =>
+      'Reinicio cancelado. No se guardó ningún cambio.';
+
+  @override
+  String resetLevelsRebuiltApplied(int level) {
+    return 'Niveles reiniciados y reconstruidos hasta nivel $level.';
   }
 
   @override

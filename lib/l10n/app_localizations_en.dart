@@ -243,6 +243,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get characterActionRollDice => 'Roll dice';
 
   @override
+  String get characterActionResetLevels => 'Reset levels';
+
+  @override
   String get diceExpressionLabel => 'Expression';
 
   @override
@@ -448,10 +451,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get labelLevel => 'Level';
-
-  @override
-  String get levelManualChangeWarning =>
-      'Only features and spell slots are updated automatically. For a full level up (HP, ability scores, feats, spell choices), use the Level Up button in the top bar.';
 
   @override
   String get tooltipLevelUp => 'Level Up';
@@ -683,6 +682,82 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String levelUpSpellSubtitle(int level, String school) {
     return 'Lv $level $school';
+  }
+
+  @override
+  String get resetLevelsTitle => 'Reset levels';
+
+  @override
+  String get resetLevelsConfirmBody =>
+      'This will reset class progression to level 1. Your notes, inventory, containers, currency, image, story, appearance, race, background and ability scores will be kept.\n\nClass levels, class spells, class/subclass choices, progression resources and ASI feats will be removed or recalculated. Export a backup first if you want an extra copy.';
+
+  @override
+  String resetLevelsCountdown(int seconds) {
+    return 'Wait ${seconds}s';
+  }
+
+  @override
+  String get resetLevelsIntro =>
+      'Choose the new level 1 class data. The reset is only saved when you press the final button.';
+
+  @override
+  String get resetLevelsSubclassRequired =>
+      'This class chooses a subclass at level 1.';
+
+  @override
+  String resetLevelsInitialHp(int hp) {
+    return 'Initial HP: $hp';
+  }
+
+  @override
+  String resetLevelsSelectSkills(int count) {
+    return 'Choose $count class skills.';
+  }
+
+  @override
+  String get resetLevelsFixedTools => 'Granted automatically:';
+
+  @override
+  String resetLevelsSelectTools(int count) {
+    return 'Choose $count tool proficiencies.';
+  }
+
+  @override
+  String get resetLevelsApply => 'Reset to level 1';
+
+  @override
+  String resetLevelsApplyAndRebuild(int level) {
+    return 'Reset and rebuild to level $level';
+  }
+
+  @override
+  String get resetLevelsIncomplete => 'Complete required choices';
+
+  @override
+  String get resetLevelsApplied => 'Levels reset.';
+
+  @override
+  String resetLevelsRebuildTitle(int level) {
+    return 'Rebuild to level $level';
+  }
+
+  @override
+  String resetLevelsRebuildSubtitle(int level) {
+    return 'After choosing level 1, the app will open level up steps until level $level. If you cancel before the end, nothing is saved.';
+  }
+
+  @override
+  String resetLevelsRebuildStep(int level, int targetLevel) {
+    return 'Rebuilding level $level of $targetLevel';
+  }
+
+  @override
+  String get resetLevelsRebuildCancelled =>
+      'Reset canceled. No changes were saved.';
+
+  @override
+  String resetLevelsRebuiltApplied(int level) {
+    return 'Levels reset and rebuilt to level $level.';
   }
 
   @override

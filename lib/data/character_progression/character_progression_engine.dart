@@ -66,6 +66,14 @@ class CharacterProgressionEngine {
       character.featureChoices,
       result.featureChoices,
     );
+    final skillProficiencies = _withUniqueStrings(
+      character.skillProficiencies,
+      result.skillProficienciesGained,
+    );
+    final features = _withUniqueStrings(
+      character.features,
+      result.proficiencyFeatureLabelsGained,
+    );
 
     var updated = character.copyWith(
       level: totalLevel,
@@ -80,6 +88,8 @@ class CharacterProgressionEngine {
       ),
       hitDicePools: hitDicePools,
       abilityScores: abilityScores,
+      skillProficiencies: skillProficiencies,
+      features: features,
       extraFeatures: extraFeatures,
       featureChoices: featureChoices,
       spells: spells,
@@ -293,6 +303,21 @@ class CharacterProgressionEngine {
         (spell) => _withTargetSpellSource(spell, result, targetSubclass),
       ),
     ];
+  }
+
+  static List<String> _withUniqueStrings(
+    List<String> existing,
+    List<String> additions,
+  ) {
+    if (additions.isEmpty) return existing;
+    final result = List<String>.from(existing);
+    final seen = {for (final value in result) value.toLowerCase()};
+    for (final value in additions) {
+      final trimmed = value.trim();
+      if (trimmed.isEmpty) continue;
+      if (seen.add(trimmed.toLowerCase())) result.add(trimmed);
+    }
+    return result;
   }
 
   static KnownSpell _withTargetSpellSource(

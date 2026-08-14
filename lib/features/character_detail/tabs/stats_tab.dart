@@ -249,52 +249,54 @@ class _StatsTabState extends ConsumerState<StatsTab> {
                   ? AppLocalizations.of(context)!.tempHpDialogTitleReplace
                   : AppLocalizations.of(context)!.tempHpDialogTitle,
             ),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                if (currentTemp > 0)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: Text(
-                      AppLocalizations.of(ctx)!.tempHpCurrent(currentTemp),
-                      style: TextStyle(
-                        color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+            content: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (currentTemp > 0)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Text(
+                        AppLocalizations.of(ctx)!.tempHpCurrent(currentTemp),
+                        style: TextStyle(
+                          color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+                        ),
                       ),
                     ),
+                  TextField(
+                    controller: ctrl,
+                    autofocus: true,
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      labelText: AppLocalizations.of(ctx)!.labelTempHP,
+                      border: const OutlineInputBorder(),
+                    ),
+                    onChanged: (_) => setLocal(() {}),
+                    onSubmitted: (_) {
+                      final n = int.tryParse(ctrl.text);
+                      if (n != null &&
+                          n > 0 &&
+                          (currentTemp == 0 || n > currentTemp)) {
+                        Navigator.pop(ctx, n);
+                      }
+                    },
                   ),
-                TextField(
-                  controller: ctrl,
-                  autofocus: true,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    labelText: AppLocalizations.of(ctx)!.labelTempHP,
-                    border: const OutlineInputBorder(),
-                  ),
-                  onChanged: (_) => setLocal(() {}),
-                  onSubmitted: (_) {
-                    final n = int.tryParse(ctrl.text);
-                    if (n != null &&
-                        n > 0 &&
-                        (currentTemp == 0 || n > currentTemp)) {
-                      Navigator.pop(ctx, n);
-                    }
-                  },
-                ),
-                if (currentTemp > 0)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Text(
-                      AppLocalizations.of(ctx)!.tempHpNoStack,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+                  if (currentTemp > 0)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(
+                        AppLocalizations.of(ctx)!.tempHpNoStack,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+                        ),
                       ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
             actions: [
               if (currentTemp > 0)

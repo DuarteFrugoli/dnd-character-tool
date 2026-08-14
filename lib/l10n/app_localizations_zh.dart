@@ -2378,6 +2378,18 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get settingsSectionApp => '应用';
+
+  @override
+  String get settingsReviewTitle => '在 Play 商店评分';
+
+  @override
+  String get settingsReviewSubtitle => '打开应用页面留下评分或评论。';
+
+  @override
+  String get settingsReviewOpenError => '无法打开 Play 商店。';
+
+  @override
   String get settingsMaintenanceSection => '维护';
 
   @override

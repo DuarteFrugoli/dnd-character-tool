@@ -9,7 +9,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [2.0.0] - 2026-08-13
+## [2.0.0] - 2026-08-14
 
 ### Added
 - **Multiclasse**: o level up agora permite escolher uma classe existente para subir de nível ou adicionar uma nova classe quando os pré-requisitos são cumpridos.
@@ -20,6 +20,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Habilidades — origem por classe**: features de classe/subclasse são agrupadas por entrada de classe, com escolhas e usos ligados à origem correta.
 - **Magias — spellcasting multiclass**: slots normais são calculados por nível de conjurador multiclass, mantendo Pact Magic separado para Warlock.
 - **Ficha — reiniciar níveis**: novo fluxo seguro para reconstruir o personagem a partir do nível 1, com confirmação, escolha de classe inicial e reconstrução opcional pelo wizard de level up.
+- **Play Store — avaliação do app**: adicionados botão manual nas configurações e pedido automático discreto após uso real do app.
 
 ### Changed
 - **Level Up**: ASI, talentos, subclasse, magias, choices, HP, proficiência, slots e CA passam a ser aplicados por uma engine de progressão centralizada.
@@ -39,8 +40,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Internal
 - **Versionamento**: versão do app atualizada para `2.0.0+24` e `currentCharacterDataVersion` para `9`.
 - **Engine de reset**: adicionada `CharacterLevelResetEngine` para aplicar respec/rebuild sem depender da UI.
+- **Review do app**: adicionados `AppReviewService`, `ReviewPromptPolicy` e persistência em `SharedPreferences` para controlar quando pedir avaliação na Play Store.
 - **Testes**: adicionada cobertura para progressão multiclasse, pré-requisitos, spellcasting/Pact Magic, usos por classe, CA por origem, hit dice por pool, reset/rebuild de níveis e migrações.
-- **Documentação de arquitetura**: arquitetura atualizada com multiclasse, reset de níveis, dice engine, chaves de estado em abas e helpers de JSON.
+- **Testes — review**: adicionada cobertura para a política de pedido de avaliação, incluindo limites de abertura, tempo, cooldown e versão.
+- **Documentação de arquitetura**: arquitetura atualizada com multiclasse, reset de níveis, dice engine, review Play Store, preferência de tela ligada, chaves de estado em abas e helpers de JSON.
 
 ---
 

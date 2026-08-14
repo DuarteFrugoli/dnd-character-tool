@@ -2388,6 +2388,18 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get settingsSectionApp => '앱';
+
+  @override
+  String get settingsReviewTitle => 'Play 스토어에서 평가';
+
+  @override
+  String get settingsReviewSubtitle => '앱 페이지를 열어 평가나 댓글을 남깁니다.';
+
+  @override
+  String get settingsReviewOpenError => 'Play 스토어를 열 수 없습니다.';
+
+  @override
   String get settingsMaintenanceSection => '유지 관리';
 
   @override

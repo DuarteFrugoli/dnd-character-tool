@@ -4440,6 +4440,30 @@ abstract class AppLocalizations {
   /// **'{count, plural, =1{1 character imported from backup.} other{{count} characters imported from backup.}}'**
   String settingsBackupImportSuccess(int count);
 
+  /// Settings section header for app-level actions.
+  ///
+  /// In en, this message translates to:
+  /// **'App'**
+  String get settingsSectionApp;
+
+  /// Settings tile title to open the app's Play Store rating page.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate on the Play Store'**
+  String get settingsReviewTitle;
+
+  /// Settings tile subtitle to open the app's Play Store rating page.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the app page to leave a rating or comment.'**
+  String get settingsReviewSubtitle;
+
+  /// Snackbar shown when the Play Store page cannot be opened.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the Play Store.'**
+  String get settingsReviewOpenError;
+
   /// Settings section header for character maintenance actions.
   ///
   /// In en, this message translates to:

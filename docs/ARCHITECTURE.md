@@ -20,6 +20,7 @@ changing the project.
 | SRD i18n | Custom JSON overlay service (`SrdI18nService`) |
 | Import/export | `.dndchar` and `.dndbackup` JSON payloads, `file_picker`, `share_plus`, platform channels |
 | Images | `image_picker`, `image_cropper`, platform-specific storage/export helpers |
+| Store review | `in_app_review`, `package_info_plus`, `SharedPreferences` prompt state |
 
 ---
 
@@ -31,9 +32,12 @@ The app starts in `lib/main.dart`.
 2. `IncomingFileService.instance.initialize()` wires the platform channel used
    when Android/iOS opens a `.dndchar` file from outside the app.
 3. `SharedPreferences` is read before the first frame.
-4. Theme, locale, and unit-system providers are overridden in `ProviderScope`
-   with their persisted initial state, avoiding a flash of default UI.
-5. `MaterialApp.router` uses `appRouter`, generated localizations, and the
+4. Theme, locale, unit-system, and character-sheet display providers are
+   overridden in `ProviderScope` with their persisted initial state, avoiding a
+   flash of default UI.
+5. `AppReviewService.recordAppOpen()` records an app-open count used by the
+   Play Store review prompt policy.
+6. `MaterialApp.router` uses `appRouter`, generated localizations, and the
    currently selected theme/locale.
 
 ---
@@ -43,8 +47,10 @@ The app starts in `lib/main.dart`.
 ```text
 lib/
   core/
+    display/      Display behavior preferences, e.g. keep screen on in sheets
     locale/       Locale provider and persistence
     platform/     Conditional platform helpers for web/native behavior
+    review/       Play Store review prompt policy/service
     router/       GoRouter route table
     services/     Platform-channel services, e.g. incoming .dndchar files
     theme/        Theme presets and ThemeNotifier
@@ -115,6 +121,8 @@ Shared providers live mostly in `lib/shared/providers/providers.dart`.
 | `themeProvider` | Persists and exposes the active app theme. |
 | `localeProvider` | Persists and exposes the active UI locale. |
 | `unitSystemProvider` | Persists and exposes Imperial, Metric, or Squares display mode. |
+| `keepScreenOnCharacterSheetProvider` | Persists whether Android should keep the screen awake while a character sheet is open. |
+| `appReviewServiceProvider` | Exposes the Play Store review service and prompt policy. |
 
 Feature-specific providers:
 
@@ -769,12 +777,51 @@ Feature choices and feature usages both surface mainly in `features_tab.dart`:
 - theme;
 - locale;
 - unit-system preferences;
+- character-sheet display behavior, including keeping the Android screen awake;
 - `.dndbackup` export/import;
+- manual Play Store rating action on supported Android builds;
 - character maintenance and migration previews/applies.
 
-Theme, locale, and unit-system state lives in `core/theme`, `core/locale`, and
-`core/units`. Backup and maintenance actions go through `CharacterRepository`.
-Settings maintenance must export a backup before applying migrations.
+Theme, locale, unit-system, and display preference state lives in `core/theme`,
+`core/locale`, `core/units`, and `core/display`. Backup and maintenance actions
+go through `CharacterRepository`. Settings maintenance must export a backup
+before applying migrations.
+
+`core/platform/keep_screen_on.dart` uses the Android platform channel
+`dnd.character/screen` to set or clear `FLAG_KEEP_SCREEN_ON`. The detail screen
+applies the flag only while a character sheet route is mounted and clears it on
+dispose so the rest of the app does not keep the device awake.
+
+### Play Store Review Prompt
+
+Play Store review logic lives in `lib/core/review/`.
+
+- `ReviewPromptState` describes the persisted counters/dates stored in
+  `SharedPreferences`.
+- `ReviewPromptPolicy` is pure/testable and decides whether a prompt is allowed.
+- `AppReviewService` records app opens/significant milestones, reads the
+  package version with `package_info_plus`, and calls `in_app_review`.
+- `InAppReviewGateway` wraps the plugin so policy/service behavior can be
+  tested without invoking platform UI.
+
+The automatic prompt is intentionally rare. It currently requires:
+
+- Android platform and available in-app review API;
+- at least one saved character;
+- at least four app opens;
+- at least three days since the review system first saw the user;
+- at least one significant action;
+- at least 60 days since the last attempt;
+- no previous attempt on the current app version.
+
+Current automatic milestones:
+
+- normal backup export from Settings;
+- successful level up.
+
+The Settings tile opens the Play Store listing directly. It does not call the
+in-app review dialog because that API is quota-limited and may choose not to
+show UI.
 
 ---
 
@@ -907,6 +954,7 @@ High-risk domain rules should be tested in pure Dart layers first:
 - inventory behavior in `data/inventory/inventory_operations.dart`;
 - character progression/reset behavior in `data/character_progression/`;
 - dice parsing/rolling behavior in `data/dice/`;
+- Play Store review prompt decisions in `core/review/review_prompt_policy.dart`;
 - character migrations in `data/migrations/`;
 - feature choices/usages in their engine files;
 - creation draft rules in `character_draft_provider.dart`;
@@ -948,3 +996,5 @@ the affected files before committing.
 | Routes | `core/router/app_router.dart` |
 | Web URL strategy/PWA/GitHub Pages fallback | `core/platform/url_strategy*.dart`, `web/index.html`, `web/manifest.json`, `web/404.html` |
 | Theme/locale/unit preferences | `core/theme`, `core/locale`, `core/units` |
+| Keep-screen-on sheet preference | `core/display/keep_screen_on_provider.dart`, `core/platform/keep_screen_on.dart`, Android `MainActivity.kt` |
+| Play Store review prompt | `core/review/`, `features/home/settings_screen.dart`, `CharacterDetailNotifier.levelUp()` |

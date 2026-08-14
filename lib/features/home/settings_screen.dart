@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
@@ -8,6 +9,7 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 
 import '../../core/display/keep_screen_on_provider.dart';
 import '../../core/locale/locale_provider.dart';
+import '../../core/review/app_review_service.dart';
 import '../../core/theme/app_themes.dart';
 import '../../core/theme/theme_provider.dart';
 import '../../core/units/unit_system_provider.dart';
@@ -200,6 +202,20 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
             const Divider(height: 32),
 
+            if (AppReviewService.isPlayStoreReviewSupported) ...[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                child: Text(
+                  AppLocalizations.of(context)!.settingsSectionApp,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                ),
+              ),
+              const _ReviewAppTile(),
+              const Divider(height: 32),
+            ],
+
             Padding(
               key: _maintenanceKey,
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
@@ -235,16 +251,29 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
     setState(() => _exporting = true);
 
     try {
-      final backupJson = await ref
-          .read(characterRepositoryProvider)
-          .exportBackupToFileJson();
+      final repo = ref.read(characterRepositoryProvider);
+      final cachedCharacterCount = ref
+          .read(characterListProvider)
+          .valueOrNull
+          ?.length;
+      final backupJson = await repo.exportBackupToFileJson();
       await exportDndBackupFile(backupJson);
+      final characterCount =
+          cachedCharacterCount ?? (await repo.getAll()).length;
 
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text(l10n.settingsBackupExportSuccess)));
+      unawaited(
+        ref
+            .read(appReviewServiceProvider)
+            .recordMilestoneAndMaybeRequest(
+              milestone: ReviewMilestone.backupExported,
+              characterCount: characterCount,
+            ),
+      );
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
@@ -362,6 +391,56 @@ class _ImportBackupTileState extends ConsumerState<_ImportBackupTile> {
       ),
       trailing: _importing ? null : const Icon(Icons.file_upload_outlined),
       onTap: _importing ? null : _importBackup,
+    );
+  }
+}
+
+class _ReviewAppTile extends ConsumerStatefulWidget {
+  const _ReviewAppTile();
+
+  @override
+  ConsumerState<_ReviewAppTile> createState() => _ReviewAppTileState();
+}
+
+class _ReviewAppTileState extends ConsumerState<_ReviewAppTile> {
+  bool _opening = false;
+
+  Future<void> _openStoreListing() async {
+    if (_opening) return;
+    final l10n = AppLocalizations.of(context)!;
+    setState(() => _opening = true);
+    try {
+      final opened = await ref
+          .read(appReviewServiceProvider)
+          .openStoreListing();
+      if (!mounted) return;
+      if (!opened) {
+        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.settingsReviewOpenError)));
+      }
+    } finally {
+      if (mounted) setState(() => _opening = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
+    return ListTile(
+      enabled: !_opening,
+      leading: _opening
+          ? const SizedBox.square(
+              dimension: 24,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            )
+          : const Icon(Icons.star_outline),
+      title: Text(l10n.settingsReviewTitle),
+      subtitle: Text(l10n.settingsReviewSubtitle),
+      trailing: _opening ? null : const Icon(Icons.open_in_new_outlined),
+      onTap: _opening ? null : _openStoreListing,
     );
   }
 }

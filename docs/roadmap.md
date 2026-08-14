@@ -140,6 +140,9 @@ por reset/rebuild explicito, nunca por edicao manual crua de nivel.
       pelo wizard de level up.
 - [x] Testes unitarios para hit dice por pool, proficiencias de multiclasse e
       reset/rebuild.
+- [x] Configuracao para manter a tela ligada enquanto a ficha esta aberta.
+- [x] Pedido discreto de avaliacao na Play Store apos uso real do app, com
+      botao manual nas Configuracoes.
 
 #### 2.0.1 - Polimento pos-lancamento de multiclasse
 - [ ] Validar manualmente combinacoes reais como Fighter/Wizard,

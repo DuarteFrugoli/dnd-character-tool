@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/locale/locale_provider.dart';
 import 'core/display/keep_screen_on_provider.dart';
 import 'core/platform/url_strategy.dart';
+import 'core/review/app_review_service.dart';
 import 'core/router/app_router.dart';
 import 'core/services/incoming_file_service.dart';
 import 'core/theme/app_themes.dart';
@@ -41,6 +42,7 @@ void main() async {
       : defaultUnitSystem(initialLocale);
   final initialKeepScreenOnCharacterSheet =
       prefs.getBool(keepScreenOnCharacterSheetPrefsKey) ?? false;
+  await AppReviewService(sharedPreferences: prefs).recordAppOpen();
 
   runApp(
     ProviderScope(

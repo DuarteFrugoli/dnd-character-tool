@@ -2442,6 +2442,19 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String get settingsSectionApp => 'App';
+
+  @override
+  String get settingsReviewTitle => 'Valuta sul Play Store';
+
+  @override
+  String get settingsReviewSubtitle =>
+      'Apri la pagina dell\'app per lasciare una valutazione o un commento.';
+
+  @override
+  String get settingsReviewOpenError => 'Impossibile aprire il Play Store.';
+
+  @override
   String get settingsMaintenanceSection => 'Manutenzione';
 
   @override

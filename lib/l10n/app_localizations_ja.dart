@@ -2388,6 +2388,18 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get settingsSectionApp => 'アプリ';
+
+  @override
+  String get settingsReviewTitle => 'Play ストアで評価';
+
+  @override
+  String get settingsReviewSubtitle => 'アプリのページを開いて評価やコメントを残します。';
+
+  @override
+  String get settingsReviewOpenError => 'Play ストアを開けませんでした。';
+
+  @override
   String get settingsMaintenanceSection => 'メンテナンス';
 
   @override

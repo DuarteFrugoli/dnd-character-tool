@@ -2423,6 +2423,19 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get settingsSectionApp => 'App';
+
+  @override
+  String get settingsReviewTitle => 'Rate on the Play Store';
+
+  @override
+  String get settingsReviewSubtitle =>
+      'Open the app page to leave a rating or comment.';
+
+  @override
+  String get settingsReviewOpenError => 'Could not open the Play Store.';
+
+  @override
   String get settingsMaintenanceSection => 'Maintenance';
 
   @override

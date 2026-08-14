@@ -2441,6 +2441,19 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get settingsSectionApp => 'Приложение';
+
+  @override
+  String get settingsReviewTitle => 'Оценить в Play Store';
+
+  @override
+  String get settingsReviewSubtitle =>
+      'Откройте страницу приложения, чтобы оставить оценку или комментарий.';
+
+  @override
+  String get settingsReviewOpenError => 'Не удалось открыть Play Store.';
+
+  @override
   String get settingsMaintenanceSection => 'Обслуживание';
 
   @override

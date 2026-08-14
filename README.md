@@ -5,7 +5,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-1.1.1-orange)
+![Version](https://img.shields.io/badge/version-2.0.0-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
@@ -32,6 +32,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - Short Rest — spend Hit Dice to recover HP
 - Concentration tracker — badge on active spell, warning on second attempt, manual end button
 - Character actions menu for level up, rests and dice rolling
+- Optional setting to keep the Android screen awake while a character sheet is open
 
 **Skills tab** — all 18 skills with proficiency/expertise indicators and calculated bonuses
 
@@ -47,10 +48,13 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 
 ### Level Up Wizard
 - Full level-up flow as a fullscreen modal with step indicators
+- Multiclass support: level an existing class or add a new class when prerequisites are met
+- Multiclass spell slots combine full, half and third caster levels while keeping Warlock Pact Magic separate
 - Steps: new class features, subclass selection, ASI / Feat choice, HP roll or average, cantrip/spell selection, spell swap (Warlocks), summary
 - **Warlock spell swap** — dedicated step: choose which known spell to forget, then immediately pick the replacement in the same screen
 - Eldritch Knight and Arcane Trickster spell choices respect Wizard-list and school-restriction rules
 - **XP tracking** — optional toggle; quick-add field; full SRD XP table; auto prompt when XP threshold is reached
+- Safe level reset/rebuild flow for restarting class progression from level 1
 
 ### Dice Roller
 - Roll expressions such as `1d20 + 5`, `2d6 + 1d8` and advantage/disadvantage checks
@@ -72,6 +76,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - Rename, delete and export per character
 - Character maintenance flow in Settings for applying versioned data updates
 - Backup export/import for all characters at once
+- Manual Play Store rating action in Settings, plus a rare automatic in-app review request after real app usage
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
@@ -103,6 +108,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 | Gallery save | gal |
 | Export / Import | share_plus + file_picker |
 | Web file download | package:web (dart:js_interop) |
+| Store review | in_app_review + package_info_plus |
 | UI utilities | flutter_sticky_header, uuid, collection |
 
 
@@ -123,7 +129,7 @@ flutter run
 
 ## Documentation
 
-- [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, notes, dice rolling, level-up rules, maintenance migrations and import/export flows.
+- [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, notes, dice rolling, level-up rules, review prompts, display preferences, maintenance migrations and import/export flows.
 - [Changelog](CHANGELOG.md) tracks release history.
 
 > All DnD 5e content uses the **System Reference Document (SRD)** under the Creative Commons license.
@@ -168,6 +174,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - Descanso Curto — gastar Hit Dice para recuperar PV
 - Rastreador de Concentração — badge na magia ativa, aviso ao tentar uma segunda magia de concentração, botão para encerrar manualmente
 - Menu de ações da ficha para subir de nível, descansar e rolar dados
+- Opção para manter a tela do Android ligada enquanto uma ficha está aberta
 
 **Aba Skills** — 18 perícias com indicadores de proficiência/expertise e bônus calculados
 
@@ -183,10 +190,13 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 
 ### Subida de Nível
 - Fluxo completo de level up como modal em tela cheia com indicadores de passo
+- Suporte a multiclasse: subir uma classe existente ou adicionar uma nova quando os pré-requisitos são cumpridos
+- Slots de magia multiclasse combinam níveis de conjurador completo, meio e terço, mantendo Pact Magic de Warlock separado
 - Passos: features novas, seleção de subclasse, ASI / Talento, rolagem de HP, escolha de truques/magias, troca de magia (Warlocks), resumo
 - **Troca de magia do Warlock** — passo dedicado: escolha qual magia esquecer e em seguida escolha a substituta na mesma tela
 - Escolhas de magia de Eldritch Knight e Arcane Trickster respeitam lista de Wizard e restrições de escola
 - **Rastreamento de XP** — toggle opcional; campo de adição rápida; tabela completa de XP do SRD; prompt automático ao atingir o threshold
+- Fluxo seguro para reiniciar/reconstruir níveis a partir do nível 1
 
 ### Rolagem de Dados
 - Expressões como `1d20 + 5`, `2d6 + 1d8` e rolagens com vantagem/desvantagem
@@ -208,6 +218,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - Renomear, excluir e exportar por personagem
 - Fluxo de manutenção nas configurações para aplicar atualizações versionadas nos personagens
 - Backup geral para exportar/importar todos os personagens de uma vez
+- Ação manual para avaliar na Play Store nas configurações, além de pedido automático raro após uso real do app
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
@@ -239,6 +250,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 | Salvar na galeria | gal |
 | Export / Import | share_plus + file_picker |
 | Download web | package:web (dart:js_interop) |
+| Avaliação na loja | in_app_review + package_info_plus |
 | Utilitários de UI | flutter_sticky_header, uuid, collection |
 
 ## Plataformas
@@ -258,7 +270,7 @@ flutter run
 
 ## Documentação
 
-- [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, notas, rolagem de dados, regras de level up, migrações de manutenção e fluxos de import/export.
+- [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, notas, rolagem de dados, regras de level up, pedidos de avaliação, preferências de tela, migrações de manutenção e fluxos de import/export.
 - [Changelog](CHANGELOG.md) registra o histórico de versões.
 
 > Todo o conteúdo de DnD 5e utiliza o **System Reference Document (SRD)** sob a licença Creative Commons.

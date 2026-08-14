@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/review/app_review_service.dart';
 import '../../data/character_progression/character_progression.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_usage_engine.dart';
@@ -438,6 +441,15 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (result.subclassChosen != null) {
       await syncInnateSpells();
     }
+
+    unawaited(
+      ref
+          .read(appReviewServiceProvider)
+          .recordMilestoneAndMaybeRequest(
+            milestone: ReviewMilestone.levelUpCompleted,
+            characterCount: 1,
+          ),
+    );
   }
 
   /// Resets class progression to a new level 1 starting class.

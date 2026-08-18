@@ -7,6 +7,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- **Lista de personagens**: adicionada opcao de duplicar personagem pelo menu de tres pontos, criando copia independente com novo ID, imagem propria e nome sem conflito.
+- **Temas**: adicionada lista final com 10 temas: `Crimson`, `Light`, `Parchment`, `Arcane`, `Forest`, `Elven Forest`, `Sea`, `Celestial`, `Sacred` e `Shadow`.
+
+### Changed
+- **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos sem alterar layout ou componentes.
+- **Temas**: o tema padrao agora e `Crimson`, e os IDs internos antigos foram substituidos por nomes canonicos com fallback para o tema padrao.
+
+### Fixed
+- **Inventario**: recipientes com quantidade total zero agora exibem `Vazio` em vez de `1 item`.
+
 ---
 
 ## [2.0.0] - 2026-08-14

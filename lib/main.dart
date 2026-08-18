@@ -24,9 +24,7 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
 
   final savedThemeId = prefs.getString('selected_theme_id');
-  final initialTheme = savedThemeId != null
-      ? appThemes.where((t) => t.id == savedThemeId).firstOrNull ?? appThemes[0]
-      : appThemes[0];
+  final initialTheme = appThemeByIdOrDefault(savedThemeId);
 
   final savedLocaleCode = prefs.getString('selected_locale');
   final initialLocale = savedLocaleCode != null

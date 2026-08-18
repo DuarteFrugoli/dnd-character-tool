@@ -543,7 +543,7 @@ class _ContainersSection extends ConsumerWidget {
     List<EquipmentItem> contents,
   ) async {
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
-    if (contents.isNotEmpty) {
+    if (containerHasCountedContents(contents)) {
       final mode = await showRemoveContainerDialog(
         context,
         displayName,
@@ -593,6 +593,7 @@ class _ContainersSection extends ConsumerWidget {
       characterId: characterId,
       itemBuilder: (context, container, reorderIndex) {
         final contents = contentsByContainer[container.id] ?? const [];
+        final hasStoredItems = contents.isNotEmpty;
         final displayName = itemDisplayName(container, i18n);
         final meta = ItemTile.itemMeta(container, i18n, l10n);
         final widgetsL10n = WidgetsLocalizations.of(context);
@@ -690,29 +691,26 @@ class _ContainersSection extends ConsumerWidget {
                       meta,
                     ),
                   ),
-                  TextButton.icon(
-                    icon: const Icon(Icons.inventory_2_outlined, size: 18),
-                    label: Text(
-                      l10n.inventoryContainerContents(
-                        inventoryItemsTotalQuantity(contents),
+                  if (hasStoredItems)
+                    TextButton.icon(
+                      icon: const Icon(Icons.inventory_2_outlined, size: 18),
+                      label: Text(containerContentsLabel(l10n, contents)),
+                      onPressed: () =>
+                          _showContainerContentsSheet(context, container.id),
+                    )
+                  else
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 10,
+                      ),
+                      child: Text(
+                        l10n.inventoryContainerEmpty,
+                        style: TextStyle(color: scheme.onSurfaceVariant),
                       ),
                     ),
-                    onPressed: () =>
-                        _showContainerContentsSheet(context, container.id),
-                  ),
                 ],
               ),
-              if (contents.isEmpty)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      l10n.inventoryContainerEmpty,
-                      style: TextStyle(color: scheme.onSurfaceVariant),
-                    ),
-                  ),
-                ),
             ],
           ),
         );

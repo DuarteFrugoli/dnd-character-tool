@@ -35,7 +35,15 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String charListDuplicatedSuccess(String name) {
+    return '$name复制成功！';
+  }
+
+  @override
   String get charListImportError => '导入时出现意外错误。请再试一次。';
+
+  @override
+  String get charListDuplicateError => '无法复制角色。请再试一次。';
 
   @override
   String get importErrorInvalidJson => '粘贴的JSON无效。';
@@ -70,10 +78,23 @@ class AppLocalizationsZh extends AppLocalizations {
   String get charCardRename => '重命名';
 
   @override
+  String get charCardDuplicate => '复制';
+
+  @override
   String get charCardExport => '出口';
 
   @override
   String get charCardDelete => '删除';
+
+  @override
+  String charDuplicateName(String name) {
+    return '$name（副本）';
+  }
+
+  @override
+  String charDuplicateNameNumbered(String name, int number) {
+    return '$name（副本 $number）';
+  }
 
   @override
   String get renameDialogTitle => '重命名角色';

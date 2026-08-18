@@ -162,11 +162,23 @@ abstract class AppLocalizations {
   /// **'{name} imported successfully!'**
   String charListImportedSuccess(String name);
 
+  /// Snackbar after duplicating a character.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} duplicated successfully!'**
+  String charListDuplicatedSuccess(String name);
+
   /// Generic import error snackbar.
   ///
   /// In en, this message translates to:
   /// **'Unexpected error while importing. Please try again.'**
   String get charListImportError;
+
+  /// Generic duplicate character error snackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not duplicate character. Please try again.'**
+  String get charListDuplicateError;
 
   /// Import error: pasted JSON is not valid.
   ///
@@ -231,6 +243,12 @@ abstract class AppLocalizations {
   /// Popup menu item.
   ///
   /// In en, this message translates to:
+  /// **'Duplicate'**
+  String get charCardDuplicate;
+
+  /// Popup menu item.
+  ///
+  /// In en, this message translates to:
   /// **'Export'**
   String get charCardExport;
 
@@ -239,6 +257,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Delete'**
   String get charCardDelete;
+
+  /// Default name for a duplicated character.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} (copy)'**
+  String charDuplicateName(String name);
+
+  /// Default name for a duplicated character when the basic copy name already exists.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} (copy {number})'**
+  String charDuplicateNameNumbered(String name, int number);
 
   /// Rename dialog title.
   ///

@@ -105,6 +105,57 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     }
   }
 
+  Future<Character?> duplicate(String id, {required String name}) async {
+    final repo = ref.read(characterRepositoryProvider);
+    final current = state.valueOrNull ?? _sorted(await repo.getAll());
+    final source = current.firstWhereOrNull((c) => c.id == id);
+    if (source == null) return null;
+
+    final group = current
+        .where((character) => character.isPinned == source.isPinned)
+        .toList();
+    final otherGroup = current
+        .where((character) => character.isPinned != source.isPinned)
+        .toList();
+    final sourceIndex = group.indexWhere((character) => character.id == id);
+    final insertIndex = sourceIndex < 0 ? group.length : sourceIndex + 1;
+
+    final duplicate = await repo.duplicate(
+      source,
+      name: name,
+      isPinned: source.isPinned,
+      sortOrder: insertIndex,
+    );
+
+    group.insert(insertIndex, duplicate);
+    final normalizedGroup = [
+      for (var i = 0; i < group.length; i++) group[i].copyWith(sortOrder: i),
+    ];
+    final normalizedDuplicate = normalizedGroup.firstWhere(
+      (character) => character.id == duplicate.id,
+    );
+
+    state = AsyncData(_sorted([...normalizedGroup, ...otherGroup]));
+
+    final previousById = {
+      for (final character in current) character.id: character,
+    };
+    for (final character in normalizedGroup) {
+      final previous = previousById[character.id];
+      if (previous == null) {
+        if (character.sortOrder != duplicate.sortOrder) {
+          await repo.save(character);
+        }
+        continue;
+      }
+      if (previous.sortOrder != character.sortOrder) {
+        await repo.save(character);
+      }
+    }
+
+    return normalizedDuplicate;
+  }
+
   Future<String> exportCharacter(Character character) {
     return ref.read(characterRepositoryProvider).exportToJson(character);
   }

@@ -35,8 +35,17 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String charListDuplicatedSuccess(String name) {
+    return '$name duplicato con successo!';
+  }
+
+  @override
   String get charListImportError =>
       'Errore imprevisto durante l\'importazione. Per favore riprova.';
+
+  @override
+  String get charListDuplicateError =>
+      'Impossibile duplicare il personaggio. Riprova.';
 
   @override
   String get importErrorInvalidJson => 'Il JSON incollato non è valido.';
@@ -74,10 +83,23 @@ class AppLocalizationsIt extends AppLocalizations {
   String get charCardRename => 'Rinominare';
 
   @override
+  String get charCardDuplicate => 'Duplica';
+
+  @override
   String get charCardExport => 'Esportare';
 
   @override
   String get charCardDelete => 'Eliminare';
+
+  @override
+  String charDuplicateName(String name) {
+    return '$name (copia)';
+  }
+
+  @override
+  String charDuplicateNameNumbered(String name, int number) {
+    return '$name (copia $number)';
+  }
 
   @override
   String get renameDialogTitle => 'Rinominare il personaggio';

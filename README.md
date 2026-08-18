@@ -87,7 +87,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - Web stores characters and character images in IndexedDB; native platforms store local JSON/image files
 
 ### Customization
-- **9 color themes**: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
+- **10 color themes**: Crimson, Light, Parchment, Arcane, Forest, Elven Forest, Sea, Celestial, Sacred, Shadow
 - **Unit system** — Imperial (ft / lb), Metric (m / kg) or Squares; applied to movement speed, carry weight and all distances throughout the app; defaults to device locale
 
 ### Internationalization
@@ -229,7 +229,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - Na web, personagens e imagens ficam no IndexedDB; nas plataformas nativas, ficam em arquivos JSON/imagem locais
 
 ### Personalização
-- **9 temas de cores**: System Dark, System Light, Arcane, Nature, Sacred, Sea, Elven Forest, Celestial, Parchment
+- **10 temas de cores**: Crimson, Light, Parchment, Arcane, Forest, Elven Forest, Sea, Celestial, Sacred, Shadow
 - **Sistema de unidades** — Imperial (ft / lb), Métrico (m / kg) ou Quadrados; aplicado a deslocamento, peso e todas as distâncias no app; padrão conforme o locale do dispositivo
 
 ### Internacionalização

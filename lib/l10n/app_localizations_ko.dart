@@ -35,7 +35,15 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String charListDuplicatedSuccess(String name) {
+    return '$name 복제 완료!';
+  }
+
+  @override
   String get charListImportError => '가져오는 동안 예상치 못한 오류가 발생했습니다. 다시 시도해 주세요.';
+
+  @override
+  String get charListDuplicateError => '캐릭터를 복제할 수 없습니다. 다시 시도해 주세요.';
 
   @override
   String get importErrorInvalidJson => '붙여넣은 JSON이 유효하지 않습니다.';
@@ -72,10 +80,23 @@ class AppLocalizationsKo extends AppLocalizations {
   String get charCardRename => '이름 바꾸기';
 
   @override
+  String get charCardDuplicate => '복제';
+
+  @override
   String get charCardExport => '내보내다';
 
   @override
   String get charCardDelete => '삭제';
+
+  @override
+  String charDuplicateName(String name) {
+    return '$name (복사본)';
+  }
+
+  @override
+  String charDuplicateNameNumbered(String name, int number) {
+    return '$name (복사본 $number)';
+  }
 
   @override
   String get renameDialogTitle => '캐릭터 이름 바꾸기';

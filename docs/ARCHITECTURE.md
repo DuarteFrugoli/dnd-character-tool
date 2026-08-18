@@ -787,6 +787,12 @@ Theme, locale, unit-system, and display preference state lives in `core/theme`,
 go through `CharacterRepository`. Settings maintenance must export a backup
 before applying migrations.
 
+`AppTheme` defines explicit Material `ColorScheme` palettes instead of relying
+on a single generated seed color. Theme ids use the current canonical theme
+names, such as `crimson`, `light`, and `forest`. If a saved preference points
+to an old or removed theme id, startup resolves it through
+`appThemeByIdOrDefault()` and falls back to the default `Crimson` theme.
+
 `core/platform/keep_screen_on.dart` uses the Android platform channel
 `dnd.character/screen` to set or clear `FLAG_KEEP_SCREEN_ON`. The detail screen
 applies the flag only while a character sheet route is mounted and clears it on

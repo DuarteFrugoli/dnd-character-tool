@@ -11,7 +11,7 @@ final themeProvider = NotifierProvider<ThemeNotifier, AppTheme>(
 );
 
 class ThemeNotifier extends Notifier<AppTheme> {
-  static final _defaultTheme = appThemes[0]; // 'system_dark'
+  static final _defaultTheme = defaultAppTheme;
 
   ThemeNotifier([this._initial]);
   final AppTheme? _initial;

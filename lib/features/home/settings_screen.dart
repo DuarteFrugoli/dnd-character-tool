@@ -969,7 +969,7 @@ class _ThemeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    // Preview swatch — use the real generated scheme so overrides (e.g. surfaceColor) are reflected
+    // Preview the same explicit ColorScheme used by the full app theme.
     final previewScheme = theme.toThemeData().colorScheme;
 
     return ListTile(

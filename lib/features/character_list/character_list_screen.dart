@@ -29,6 +29,21 @@ bool _looksLikeBackupFile(String fileJson) {
   }
 }
 
+String _duplicateCharacterName(
+  AppLocalizations l10n,
+  String sourceName,
+  Iterable<String> existingNames,
+) {
+  final names = existingNames.map((name) => name.trim()).toSet();
+  for (var copyNumber = 1; copyNumber < 10000; copyNumber++) {
+    final candidate = copyNumber == 1
+        ? l10n.charDuplicateName(sourceName)
+        : l10n.charDuplicateNameNumbered(sourceName, copyNumber);
+    if (!names.contains(candidate.trim())) return candidate;
+  }
+  return l10n.charDuplicateNameNumbered(sourceName, 10000);
+}
+
 class CharacterListScreen extends ConsumerStatefulWidget {
   const CharacterListScreen({super.key});
 
@@ -392,6 +407,37 @@ class _CharacterCard extends ConsumerWidget {
       );
     }
 
+    Future<void> duplicateCharacter() async {
+      final characters =
+          ref.read(characterListProvider).valueOrNull ?? const <Character>[];
+      final duplicateName = _duplicateCharacterName(
+        l10n,
+        character.name,
+        characters.map((character) => character.name),
+      );
+
+      try {
+        final duplicate = await ref
+            .read(characterListProvider.notifier)
+            .duplicate(character.id, name: duplicateName);
+        if (!context.mounted || duplicate == null) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.charListDuplicatedSuccess(duplicate.name)),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+          ),
+        );
+      } catch (_) {
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.charListDuplicateError),
+            backgroundColor: Theme.of(context).colorScheme.error,
+          ),
+        );
+      }
+    }
+
     final cs = Theme.of(context).colorScheme;
     final widgetsL10n = WidgetsLocalizations.of(context);
     final reorderTooltip =
@@ -463,6 +509,9 @@ class _CharacterCard extends ConsumerWidget {
                 if (value == 'export') {
                   await exportCharacter();
                 }
+                if (value == 'duplicate') {
+                  await duplicateCharacter();
+                }
                 if (value == 'rename') {
                   if (!context.mounted) return;
                   final newName = await showDialog<String>(
@@ -518,6 +567,10 @@ class _CharacterCard extends ConsumerWidget {
                 PopupMenuItem(
                   value: 'rename',
                   child: Text(l10n.charCardRename),
+                ),
+                PopupMenuItem(
+                  value: 'duplicate',
+                  child: Text(l10n.charCardDuplicate),
                 ),
                 PopupMenuItem(
                   value: 'export',

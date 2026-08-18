@@ -214,14 +214,25 @@ String containerSubtitleText(
   UnitSystem unitSystem,
 ) {
   final l10n = AppLocalizations.of(context)!;
-  final totalQuantity = inventoryItemsTotalQuantity(contents);
   final usedWeight = inventoryItemsTotalWeight(contents);
   final capacityWeight = inventoryContainerCapacityWeight(container);
-  final contentsText = l10n.inventoryContainerContents(totalQuantity);
+  final contentsText = containerContentsLabel(l10n, contents);
   final weightText = capacityWeight == null || capacityWeight <= 0
       ? formatWeight(usedWeight, unitSystem)
       : '${formatWeight(usedWeight, unitSystem)} / ${formatWeight(capacityWeight, unitSystem)}';
   return '$contentsText - $weightText';
+}
+
+bool containerHasCountedContents(Iterable<EquipmentItem> contents) =>
+    inventoryItemsTotalQuantity(contents) > 0;
+
+String containerContentsLabel(
+  AppLocalizations l10n,
+  Iterable<EquipmentItem> contents,
+) {
+  final totalQuantity = inventoryItemsTotalQuantity(contents);
+  if (totalQuantity <= 0) return l10n.inventoryContainerEmpty;
+  return l10n.inventoryContainerContents(totalQuantity);
 }
 
 enum InventoryItemAction { move, remove }

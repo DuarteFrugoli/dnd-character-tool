@@ -36,8 +36,17 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String charListDuplicatedSuccess(String name) {
+    return '$name успешно продублирован!';
+  }
+
+  @override
   String get charListImportError =>
       'Непредвиденная ошибка при импорте. Пожалуйста, попробуйте еще раз.';
+
+  @override
+  String get charListDuplicateError =>
+      'Не удалось продублировать персонажа. Пожалуйста, попробуйте еще раз.';
 
   @override
   String get importErrorInvalidJson => 'Вставленный JSON недопустим.';
@@ -75,10 +84,23 @@ class AppLocalizationsRu extends AppLocalizations {
   String get charCardRename => 'Переименовать';
 
   @override
+  String get charCardDuplicate => 'Дублировать';
+
+  @override
   String get charCardExport => 'Экспорт';
 
   @override
   String get charCardDelete => 'Удалить';
+
+  @override
+  String charDuplicateName(String name) {
+    return '$name (копия)';
+  }
+
+  @override
+  String charDuplicateNameNumbered(String name, int number) {
+    return '$name (копия $number)';
+  }
 
   @override
   String get renameDialogTitle => 'Переименовать персонажа';

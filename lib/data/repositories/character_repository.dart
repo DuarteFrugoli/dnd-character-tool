@@ -47,6 +47,32 @@ class CharacterRepository {
     await _local.deleteImage(character?.imagePath);
   }
 
+  Future<Character> duplicate(
+    Character source, {
+    required String name,
+    required bool isPinned,
+    required int sortOrder,
+  }) async {
+    final id = _generateId();
+    final fileJson = await _local.exportToFileJson(source);
+    final imported = await _local.importFromDndCharFile(
+      fileJson,
+      imageOwnerId: id,
+    );
+    final now = DateTime.now();
+    final duplicate = imported.copyWith(
+      id: id,
+      name: name,
+      createdAt: now,
+      updatedAt: now,
+      isPinned: isPinned,
+      sortOrder: sortOrder,
+    );
+
+    await _local.save(duplicate);
+    return duplicate;
+  }
+
   // ---------------------------------------------------------------------------
   // Imagem
   // ---------------------------------------------------------------------------

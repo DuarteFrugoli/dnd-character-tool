@@ -27,8 +27,17 @@
     "placeholders": { "name": { "type": "String" } }
   },
 
+  "charListDuplicatedSuccess": "{name} duplicated successfully!",
+  "@charListDuplicatedSuccess": {
+    "description": "Snackbar after duplicating a character.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
   "charListImportError": "Unexpected error while importing. Please try again.",
   "@charListImportError": { "description": "Generic import error snackbar." },
+
+  "charListDuplicateError": "Could not duplicate character. Please try again.",
+  "@charListDuplicateError": { "description": "Generic duplicate character error snackbar." },
 
   "importErrorInvalidJson": "The pasted JSON is not valid.",
   "@importErrorInvalidJson": { "description": "Import error: pasted JSON is not valid." },
@@ -62,11 +71,29 @@
   "charCardRename": "Rename",
   "@charCardRename": { "description": "Popup menu item." },
 
+  "charCardDuplicate": "Duplicate",
+  "@charCardDuplicate": { "description": "Popup menu item." },
+
   "charCardExport": "Export",
   "@charCardExport": { "description": "Popup menu item." },
 
   "charCardDelete": "Delete",
   "@charCardDelete": { "description": "Popup menu item." },
+
+  "charDuplicateName": "{name} (copy)",
+  "@charDuplicateName": {
+    "description": "Default name for a duplicated character.",
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "charDuplicateNameNumbered": "{name} (copy {number})",
+  "@charDuplicateNameNumbered": {
+    "description": "Default name for a duplicated character when the basic copy name already exists.",
+    "placeholders": {
+      "name": { "type": "String" },
+      "number": { "type": "int" }
+    }
+  },
 
   "renameDialogTitle": "Rename character",
   "@renameDialogTitle": { "description": "Rename dialog title." },

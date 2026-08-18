@@ -788,10 +788,12 @@ go through `CharacterRepository`. Settings maintenance must export a backup
 before applying migrations.
 
 `AppTheme` defines explicit Material `ColorScheme` palettes instead of relying
-on a single generated seed color. Theme ids use the current canonical theme
-names, such as `crimson`, `light`, and `forest`. If a saved preference points
-to an old or removed theme id, startup resolves it through
-`appThemeByIdOrDefault()` and falls back to the default `Crimson` theme.
+on a single generated seed color. Theme ids use canonical snake_case names that
+match the current theme identity, such as `classic_dark`, `crimson`, `light`,
+and `forest`. Startup resolves saved preferences through
+`appThemeByIdOrDefault()`, which tolerates old spacing/case variants when
+possible and falls back to the default `Classic Dark` theme when no theme
+matches.
 
 `core/platform/keep_screen_on.dart` uses the Android platform channel
 `dnd.character/screen` to set or clear `FLAG_KEEP_SCREEN_ON`. The detail screen

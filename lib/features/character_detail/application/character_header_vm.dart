@@ -16,7 +16,9 @@ final characterHeaderVmProvider =
 class CharacterHeaderVm {
   const CharacterHeaderVm({
     required this.dataVersion,
+    required this.id,
     required this.name,
+    required this.imagePath,
     required this.classes,
     required this.race,
     required this.subrace,
@@ -27,7 +29,9 @@ class CharacterHeaderVm {
   factory CharacterHeaderVm.fromCharacter(Character character) {
     return CharacterHeaderVm(
       dataVersion: character.dataVersion,
+      id: character.id,
       name: character.name,
+      imagePath: character.imagePath,
       classes: character.classEntries,
       race: character.race,
       subrace: character.subrace,
@@ -37,7 +41,9 @@ class CharacterHeaderVm {
   }
 
   final int dataVersion;
+  final String id;
   final String name;
+  final String? imagePath;
   final List<CharacterClassEntry> classes;
   final String race;
   final String? subrace;
@@ -48,7 +54,9 @@ class CharacterHeaderVm {
   bool operator ==(Object other) {
     return other is CharacterHeaderVm &&
         dataVersion == other.dataVersion &&
+        id == other.id &&
         name == other.name &&
+        imagePath == other.imagePath &&
         sameReference(classes, other.classes) &&
         race == other.race &&
         subrace == other.subrace &&
@@ -59,7 +67,9 @@ class CharacterHeaderVm {
   @override
   int get hashCode => Object.hash(
     dataVersion,
+    id,
     name,
+    imagePath,
     referenceHash(classes),
     race,
     subrace,

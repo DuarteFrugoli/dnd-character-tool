@@ -159,11 +159,13 @@ class CharacterAvatar extends StatelessWidget {
     this.imagePath,
     this.radius = 24,
     this.onImageChanged,
+    this.heroTag,
   });
 
   final String name;
   final String? imagePath;
   final double radius;
+  final Object? heroTag;
 
   /// Called with the new file path after picking/cropping, or `null` when
   /// the photo is deleted. If null, the avatar is not interactive.
@@ -193,8 +195,10 @@ class CharacterAvatar extends StatelessWidget {
 
     if (onImageChanged == null) return avatar;
 
-    final interactive = imagePath != null
-        ? Hero(tag: 'character_avatar_$imagePath', child: avatar)
+    final resolvedHeroTag =
+        heroTag ?? (imagePath != null ? 'character_avatar_$imagePath' : null);
+    final interactive = resolvedHeroTag != null
+        ? Hero(tag: resolvedHeroTag, child: avatar)
         : avatar;
 
     return MouseRegion(

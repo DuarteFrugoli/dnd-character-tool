@@ -128,16 +128,37 @@ Color _blend(Color overlay, Color base, double alpha) =>
 
 AppTheme get defaultAppTheme => appThemes.first;
 
+String _normalizeThemeId(String id) =>
+    id.trim().toLowerCase().replaceAll('_', ' ');
+
 AppTheme appThemeByIdOrDefault(String? id) {
   if (id == null) return defaultAppTheme;
+  final normalizedId = _normalizeThemeId(id);
   for (final theme in appThemes) {
-    if (theme.id == id) return theme;
+    if (_normalizeThemeId(theme.id) == normalizedId) return theme;
   }
   return defaultAppTheme;
 }
 
 /// All available themes, in display order.
 const List<AppTheme> appThemes = [
+  AppTheme(
+    id: 'classic_dark',
+    name: 'Classic Dark',
+    brightness: Brightness.dark,
+    primary: Color(0xFFD65A65),
+    secondary: Color(0xFFB98C58),
+    tertiary: Color(0xFF8FB0C4),
+    surface: Color(0xFF101114),
+    surfaceContainerLowest: Color(0xFF08090B),
+    surfaceContainerLow: Color(0xFF17191E),
+    surfaceContainer: Color(0xFF20232A),
+    surfaceContainerHigh: Color(0xFF2A2D36),
+    surfaceContainerHighest: Color(0xFF353946),
+    primaryContainer: Color(0xFF561820),
+    secondaryContainer: Color(0xFF46321D),
+    tertiaryContainer: Color(0xFF213E4E),
+  ),
   AppTheme(
     id: 'crimson',
     name: 'Crimson',
@@ -273,6 +294,25 @@ const List<AppTheme> appThemes = [
     primaryContainer: Color(0xFFD8E2FF),
     secondaryContainer: Color(0xFFFFE0A1),
     tertiaryContainer: Color(0xFFE8DDFF),
+  ),
+  AppTheme(
+    id: 'high_contrast',
+    name: 'High Contrast',
+    brightness: Brightness.dark,
+    primary: Color(0xFFFFDD55),
+    secondary: Color(0xFF79E6FF),
+    tertiary: Color(0xFFFF92BE),
+    surface: Color(0xFF060A12),
+    surfaceContainerLowest: Color(0xFF02050A),
+    surfaceContainerLow: Color(0xFF0C1422),
+    surfaceContainer: Color(0xFF142033),
+    surfaceContainerHigh: Color(0xFF1D2C45),
+    surfaceContainerHighest: Color(0xFF2A3A56),
+    primaryContainer: Color(0xFF5A4300),
+    secondaryContainer: Color(0xFF004E60),
+    tertiaryContainer: Color(0xFF662542),
+    outline: Color(0xFFB9C8E6),
+    outlineVariant: Color(0xFF596986),
   ),
   AppTheme(
     id: 'sacred',

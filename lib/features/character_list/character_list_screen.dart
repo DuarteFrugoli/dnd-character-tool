@@ -213,9 +213,15 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
   Widget build(BuildContext context) {
     final state = ref.watch(characterListProvider);
     final l10n = AppLocalizations.of(context)!;
+    final cs = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.alphaBlend(
+          cs.primary.withValues(alpha: 0.08),
+          cs.surface,
+        ),
+        surfaceTintColor: cs.primary,
         title: Text(l10n.charListTitle),
         actions: [
           IconButton(
@@ -230,15 +236,28 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
           ),
         ],
       ),
-      body: state.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Error: $e')),
-        data: (characters) => characters.isEmpty
-            ? const _EmptyState()
-            : ResponsiveListConstraints(
-                maxWidth: 960,
-                child: _CharacterList(characters: characters),
-              ),
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.alphaBlend(cs.primary.withValues(alpha: 0.08), cs.surface),
+              cs.surface,
+              cs.surface,
+            ],
+          ),
+        ),
+        child: state.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(child: Text('Error: $e')),
+          data: (characters) => characters.isEmpty
+              ? const _EmptyState()
+              : ResponsiveListConstraints(
+                  maxWidth: 960,
+                  child: _CharacterList(characters: characters),
+                ),
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => context.push('/create'),
@@ -307,28 +326,66 @@ class _EmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.shield_outlined,
-            size: 80,
-            color: Theme.of(context).colorScheme.outline,
-          ),
-          const SizedBox(height: 16),
-          Text(
-            l10n.charListEmpty,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            l10n.charListEmptyHint,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.outline,
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 108,
+              height: 108,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [cs.primaryContainer, cs.secondaryContainer],
+                ),
+                border: Border.all(
+                  color: cs.primary.withValues(alpha: 0.40),
+                  width: 1.4,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: cs.primary.withValues(alpha: 0.16),
+                    blurRadius: 28,
+                    offset: const Offset(0, 12),
+                  ),
+                ],
+              ),
+              child: Icon(
+                Icons.shield_outlined,
+                size: 58,
+                color: cs.onPrimaryContainer,
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 22),
+            Text(
+              l10n.charListEmpty,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              l10n.charListEmptyHint,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: cs.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 20),
+            FilledButton.icon(
+              onPressed: () => context.push('/create'),
+              icon: const Icon(Icons.add),
+              label: Text(l10n.charListNewCharacter),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -442,39 +499,77 @@ class _CharacterCard extends ConsumerWidget {
     final widgetsL10n = WidgetsLocalizations.of(context);
     final reorderTooltip =
         '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
+    final cardColor = cs.surfaceContainerLow;
+    final borderColor = character.isPinned
+        ? cs.primary.withValues(alpha: 0.62)
+        : cs.outlineVariant.withValues(alpha: 0.82);
     return Card(
+      elevation: 0,
+      color: cardColor,
+      surfaceTintColor: cs.primary,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(14),
+        side: BorderSide(color: borderColor),
+      ),
       child: ListTile(
+        contentPadding: const EdgeInsets.fromLTRB(14, 8, 8, 8),
         leading: Stack(
           clipBehavior: Clip.none,
           children: [
-            CharacterAvatar(
-              name: character.name,
-              imagePath: character.imagePath,
-              radius: 22,
-              onImageChanged: (path) => ref
-                  .read(characterListProvider.notifier)
-                  .updateImage(character.id, path),
+            Container(
+              padding: const EdgeInsets.all(2.5),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [cs.primary, cs.tertiary.withValues(alpha: 0.85)],
+                ),
+              ),
+              child: CharacterAvatar(
+                name: character.name,
+                imagePath: character.imagePath,
+                radius: 22,
+                heroTag: 'character_avatar_${character.id}',
+                onImageChanged: (path) => ref
+                    .read(characterListProvider.notifier)
+                    .updateImage(character.id, path),
+              ),
             ),
             if (character.isPinned)
               Positioned(
                 right: -4,
                 top: -4,
                 child: Container(
-                  padding: const EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(3),
                   decoration: BoxDecoration(
                     color: cs.primary,
                     shape: BoxShape.circle,
+                    border: Border.all(color: cardColor, width: 1.5),
                   ),
                   child: Icon(Icons.push_pin, size: 10, color: cs.onPrimary),
                 ),
               ),
           ],
         ),
-        title: Text(character.name),
+        title: Text(
+          character.name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
+        ),
         subtitle: Text(
           '${localizedRaceSummary(character, i18n)} · '
           '${localizedClassLevelSummary(character, i18n)} · '
           '${l10n.charCardLevel(character.totalLevel)}',
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: Theme.of(
+            context,
+          ).textTheme.bodySmall?.copyWith(color: cs.onSurfaceVariant),
         ),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
@@ -485,7 +580,11 @@ class _CharacterCard extends ConsumerWidget {
                 message: reorderTooltip,
                 child: Padding(
                   padding: const EdgeInsets.all(8),
-                  child: Icon(Icons.drag_handle, size: 20, color: cs.outline),
+                  child: Icon(
+                    Icons.drag_handle,
+                    size: 20,
+                    color: cs.onSurfaceVariant,
+                  ),
                 ),
               ),
             ),

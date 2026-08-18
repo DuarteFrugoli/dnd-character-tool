@@ -35,6 +35,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
   void _openThemePicker(BuildContext context, WidgetRef ref, AppTheme current) {
     final l10n = AppLocalizations.of(context)!;
+    final bottomPadding = MediaQuery.viewPaddingOf(context).bottom;
     showModalBottomSheet<void>(
       context: context,
       useSafeArea: true,
@@ -71,6 +72,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             Expanded(
               child: ListView.builder(
                 controller: controller,
+                padding: EdgeInsets.only(bottom: bottomPadding + 24),
                 itemCount: appThemes.length,
                 itemBuilder: (_, i) {
                   final theme = appThemes[i];
@@ -114,120 +116,135 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final currentScheme = current.toThemeData().colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalizations.of(context)!.settingsTitle)),
-      body: ResponsiveScaffoldBody(
-        maxWidth: 720,
-        child: ListView(
-          padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 32),
-          children: [
-            // ── Visual Theme ──────────────────────────────────────────────────
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
-              child: Text(
-                AppLocalizations.of(context)!.settingsSectionTheme,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleSmall?.copyWith(color: cs.primary),
-              ),
-            ),
-            ListTile(
-              leading: _ColorSwatch(scheme: currentScheme),
-              title: Text(current.name),
-              subtitle: Text(
-                current.brightness == Brightness.dark
-                    ? AppLocalizations.of(context)!.settingsDark
-                    : AppLocalizations.of(context)!.settingsLight,
-                style: Theme.of(
-                  context,
-                ).textTheme.bodySmall?.copyWith(color: cs.onSurfaceVariant),
-              ),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => _openThemePicker(context, ref, current),
-            ),
-
-            const Divider(height: 32),
-
-            // ── Language ──────────────────────────────────────────────────────
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-              child: Text(
-                AppLocalizations.of(context)!.settingsSectionLanguage,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleSmall?.copyWith(color: cs.primary),
-              ),
-            ),
-            _LanguageTile(),
-
-            const Divider(height: 32),
-
-            // ── Units ─────────────────────────────────────────────────────────
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-              child: Text(
-                AppLocalizations.of(context)!.settingsSectionUnits,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleSmall?.copyWith(color: cs.primary),
-              ),
-            ),
-            _UnitSystemTile(),
-
-            const Divider(height: 32),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-              child: Text(
-                AppLocalizations.of(context)!.settingsSectionCharacterSheet,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleSmall?.copyWith(color: cs.primary),
-              ),
-            ),
-            const _KeepScreenOnTile(),
-
-            const Divider(height: 32),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-              child: Text(
-                AppLocalizations.of(context)!.settingsBackupSection,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleSmall?.copyWith(color: cs.primary),
-              ),
-            ),
-            const _BackupTile(),
-            const _ImportBackupTile(),
-
-            const Divider(height: 32),
-
-            if (AppReviewService.isPlayStoreReviewSupported) ...[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-                child: Text(
-                  AppLocalizations.of(context)!.settingsSectionApp,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.titleSmall?.copyWith(color: cs.primary),
-                ),
-              ),
-              const _ReviewAppTile(),
-              const Divider(height: 32),
+      appBar: AppBar(
+        backgroundColor: Color.alphaBlend(
+          cs.primary.withValues(alpha: 0.08),
+          cs.surface,
+        ),
+        surfaceTintColor: cs.primary,
+        title: Text(AppLocalizations.of(context)!.settingsTitle),
+      ),
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.alphaBlend(cs.primary.withValues(alpha: 0.07), cs.surface),
+              cs.surface,
+              cs.surface,
             ],
+          ),
+        ),
+        child: ResponsiveScaffoldBody(
+          maxWidth: 720,
+          child: ListTileTheme.merge(
+            iconColor: cs.primary,
+            textColor: cs.onSurface,
+            child: ListView(
+              padding: EdgeInsets.only(top: 8, bottom: bottomPadding + 32),
+              children: [
+                // Visual theme
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+                  child: Text(
+                    AppLocalizations.of(context)!.settingsSectionTheme,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                  ),
+                ),
+                _ThemePreferencePanel(
+                  theme: current,
+                  scheme: currentScheme,
+                  onTap: () => _openThemePicker(context, ref, current),
+                ),
 
-            Padding(
-              key: _maintenanceKey,
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-              child: Text(
-                AppLocalizations.of(context)!.settingsMaintenanceSection,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleSmall?.copyWith(color: cs.primary),
-              ),
+                const Divider(height: 32),
+
+                // Language
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                  child: Text(
+                    AppLocalizations.of(context)!.settingsSectionLanguage,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                  ),
+                ),
+                _LanguageTile(),
+
+                const Divider(height: 32),
+
+                // Units
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                  child: Text(
+                    AppLocalizations.of(context)!.settingsSectionUnits,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                  ),
+                ),
+                _UnitSystemTile(),
+
+                const Divider(height: 32),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                  child: Text(
+                    AppLocalizations.of(context)!.settingsSectionCharacterSheet,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                  ),
+                ),
+                const _KeepScreenOnTile(),
+
+                const Divider(height: 32),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                  child: Text(
+                    AppLocalizations.of(context)!.settingsBackupSection,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                  ),
+                ),
+                const _BackupTile(),
+                const _ImportBackupTile(),
+
+                const Divider(height: 32),
+
+                if (AppReviewService.isPlayStoreReviewSupported) ...[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                    child: Text(
+                      AppLocalizations.of(context)!.settingsSectionApp,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                    ),
+                  ),
+                  const _ReviewAppTile(),
+                  const Divider(height: 32),
+                ],
+
+                Padding(
+                  key: _maintenanceKey,
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                  child: Text(
+                    AppLocalizations.of(context)!.settingsMaintenanceSection,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: cs.primary),
+                  ),
+                ),
+                _CharacterMaintenanceTile(autoCheck: widget.focusMaintenance),
+              ],
             ),
-            _CharacterMaintenanceTile(autoCheck: widget.focusMaintenance),
-          ],
+          ),
         ),
       ),
     );
@@ -954,6 +971,172 @@ class _LanguageTile extends ConsumerWidget {
   }
 }
 
+class _ThemePreferencePanel extends StatelessWidget {
+  const _ThemePreferencePanel({
+    required this.theme,
+    required this.scheme,
+    required this.onTap,
+  });
+
+  final AppTheme theme;
+  final ColorScheme scheme;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final appScheme = Theme.of(context).colorScheme;
+    final modeLabel = theme.brightness == Brightness.dark
+        ? l10n.settingsDark
+        : l10n.settingsLight;
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(18),
+          child: Ink(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  scheme.surfaceContainerHighest,
+                  scheme.surface,
+                  Color.alphaBlend(
+                    scheme.primary.withValues(alpha: 0.18),
+                    scheme.surface,
+                  ),
+                ],
+              ),
+              border: Border.all(
+                color: scheme.primary.withValues(alpha: 0.42),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: scheme.primary.withValues(alpha: 0.12),
+                  blurRadius: 24,
+                  offset: const Offset(0, 12),
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  _ThemeMiniPreview(scheme: scheme, size: 88),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          theme.name,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(
+                                color: scheme.onSurface,
+                                fontWeight: FontWeight.w800,
+                              ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          modeLabel,
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: scheme.onSurfaceVariant),
+                        ),
+                        const SizedBox(height: 12),
+                        _ColorSwatch(scheme: scheme, size: 36),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Icon(Icons.chevron_right, color: appScheme.primary),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ThemeMiniPreview extends StatelessWidget {
+  const _ThemeMiniPreview({required this.scheme, required this.size});
+
+  final ColorScheme scheme;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox.square(
+      dimension: size,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: scheme.surface,
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: scheme.outlineVariant),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(size * 0.12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: size * 0.22,
+                    height: size * 0.22,
+                    decoration: BoxDecoration(
+                      color: scheme.primary,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                  Expanded(
+                    child: Container(
+                      height: size * 0.08,
+                      decoration: BoxDecoration(
+                        color: scheme.onSurface,
+                        borderRadius: BorderRadius.circular(99),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Spacer(),
+              Container(
+                height: size * 0.12,
+                decoration: BoxDecoration(
+                  color: scheme.secondaryContainer,
+                  borderRadius: BorderRadius.circular(99),
+                ),
+              ),
+              SizedBox(height: size * 0.08),
+              FractionallySizedBox(
+                widthFactor: 0.72,
+                child: Container(
+                  height: size * 0.12,
+                  decoration: BoxDecoration(
+                    color: scheme.tertiaryContainer,
+                    borderRadius: BorderRadius.circular(99),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _ThemeTile extends StatelessWidget {
   const _ThemeTile({
     required this.theme,
@@ -967,34 +1150,48 @@ class _ThemeTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
-
     // Preview the same explicit ColorScheme used by the full app theme.
     final previewScheme = theme.toThemeData().colorScheme;
 
-    return ListTile(
-      onTap: onTap,
-      leading: _ColorSwatch(scheme: previewScheme),
-      title: Text(theme.name),
-      subtitle: Text(
-        theme.brightness == Brightness.dark
-            ? AppLocalizations.of(context)!.settingsDark
-            : AppLocalizations.of(context)!.settingsLight,
-        style: Theme.of(
-          context,
-        ).textTheme.bodySmall?.copyWith(color: cs.onSurfaceVariant),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+      child: Material(
+        color: Color.alphaBlend(
+          previewScheme.primary.withValues(alpha: 0.08),
+          previewScheme.surfaceContainerLow,
+        ),
+        borderRadius: BorderRadius.circular(16),
+        clipBehavior: Clip.antiAlias,
+        child: ListTile(
+          onTap: onTap,
+          leading: _ThemeMiniPreview(scheme: previewScheme, size: 58),
+          textColor: previewScheme.onSurface,
+          iconColor: previewScheme.primary,
+          selectedColor: previewScheme.primary,
+          title: Text(theme.name),
+          subtitle: Text(
+            theme.brightness == Brightness.dark
+                ? AppLocalizations.of(context)!.settingsDark
+                : AppLocalizations.of(context)!.settingsLight,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: previewScheme.onSurfaceVariant,
+            ),
+          ),
+          trailing: isSelected
+              ? Icon(Icons.check_circle, color: previewScheme.primary)
+              : const SizedBox.shrink(),
+          selected: isSelected,
+        ),
       ),
-      trailing: isSelected
-          ? Icon(Icons.check_circle, color: cs.primary)
-          : const SizedBox.shrink(),
-      selected: isSelected,
     );
   }
 }
 
 class _ColorSwatch extends StatelessWidget {
-  const _ColorSwatch({required this.scheme});
+  const _ColorSwatch({required this.scheme, this.size = 44});
+
   final ColorScheme scheme;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
@@ -1006,15 +1203,31 @@ class _ColorSwatch extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(width: 22, height: 22, color: scheme.primary),
-              Container(width: 22, height: 22, color: scheme.secondary),
+              Container(
+                width: size / 2,
+                height: size / 2,
+                color: scheme.primary,
+              ),
+              Container(
+                width: size / 2,
+                height: size / 2,
+                color: scheme.secondary,
+              ),
             ],
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(width: 22, height: 22, color: scheme.tertiary),
-              Container(width: 22, height: 22, color: scheme.surface),
+              Container(
+                width: size / 2,
+                height: size / 2,
+                color: scheme.tertiary,
+              ),
+              Container(
+                width: size / 2,
+                height: size / 2,
+                color: scheme.surface,
+              ),
             ],
           ),
         ],

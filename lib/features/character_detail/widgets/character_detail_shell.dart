@@ -16,6 +16,7 @@ class CharacterDetailShell extends StatelessWidget {
     required this.onLevelUp,
     required this.onResetLevels,
     required this.onRest,
+    required this.onImageChanged,
   });
 
   final CharacterHeaderVm header;
@@ -27,6 +28,7 @@ class CharacterDetailShell extends StatelessWidget {
   final VoidCallback onLevelUp;
   final VoidCallback onResetLevels;
   final VoidCallback onRest;
+  final ValueChanged<String?> onImageChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class CharacterDetailShell extends StatelessWidget {
             onLevelUp: onLevelUp,
             onResetLevels: onResetLevels,
             onRest: onRest,
+            onImageChanged: onImageChanged,
           ),
         ],
         body: ResponsiveScaffoldBody(

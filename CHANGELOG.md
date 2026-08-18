@@ -9,14 +9,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - **Lista de personagens**: adicionada opcao de duplicar personagem pelo menu de tres pontos, criando copia independente com novo ID, imagem propria e nome sem conflito.
-- **Temas**: adicionada lista final com 10 temas: `Crimson`, `Light`, `Parchment`, `Arcane`, `Forest`, `Elven Forest`, `Sea`, `Celestial`, `Sacred` e `Shadow`.
+- **Temas**: adicionada lista final com 12 temas: `Classic Dark`, `Crimson`, `Light`, `Parchment`, `Arcane`, `Forest`, `Elven Forest`, `Sea`, `Celestial`, `High Contrast`, `Sacred` e `Shadow`.
 
 ### Changed
-- **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos sem alterar layout ou componentes.
-- **Temas**: o tema padrao agora e `Crimson`, e os IDs internos antigos foram substituidos por nomes canonicos com fallback para o tema padrao.
+- **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos.
+- **Temas**: o tema padrao agora e `Classic Dark`, deixando `Crimson` como opcao mais intensa; IDs internos antigos foram substituidos por IDs canonicos do tema atual, com fallback para o tema padrao.
+- **Visual**: tela inicial, seletor de temas em configuracoes e cabecalho da ficha receberam previews, gradientes e acentos mais fortes para reforcar a identidade visual do app.
 
 ### Fixed
 - **Inventario**: recipientes com quantidade total zero agora exibem `Vazio` em vez de `1 item`.
+- **Ficha**: imagem do personagem no cabecalho agora usa o mesmo fluxo de visualizar, ampliar, trocar e remover foto da aba Identidade, e a transicao da lista passa a mirar o avatar do cabecalho.
 
 ---
 

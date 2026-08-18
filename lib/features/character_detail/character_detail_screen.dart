@@ -180,6 +180,11 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       onLevelUp: _openLevelUpForCurrentCharacter,
       onResetLevels: _openLevelResetForCurrentCharacter,
       onRest: _showRestPickerForCurrentCharacter,
+      onImageChanged: (path) {
+        ref
+            .read(characterDetailProvider(widget.characterId).notifier)
+            .updateImage(path);
+      },
       children: [
         CharacterTabHost<IdentityTabVm>(
           provider: identityTabVmProvider(widget.characterId),

@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/character_spellcasting_summary.dart';
 import '../../../data/models/models.dart';
 import '../character_detail_provider.dart';
 import 'vm_reference_utils.dart';
@@ -16,13 +17,22 @@ final spellsTabVmProvider = Provider.family<AsyncValue<SpellsTabVm>, String>((
 });
 
 class SpellsTabVm {
-  const SpellsTabVm(this.character);
+  const SpellsTabVm({
+    required this.character,
+    required this.spellcastingSummary,
+  });
 
   factory SpellsTabVm.fromCharacter(Character character) {
-    return SpellsTabVm(character);
+    return SpellsTabVm(
+      character: character,
+      spellcastingSummary: CharacterSpellcastingSummary.fromCharacter(
+        character,
+      ),
+    );
   }
 
   final Character character;
+  final CharacterSpellcastingSummary spellcastingSummary;
 
   @override
   bool operator ==(Object other) {

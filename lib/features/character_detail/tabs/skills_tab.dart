@@ -5,17 +5,18 @@ import '../character_detail_dependencies.dart';
 class SkillsTab extends ConsumerStatefulWidget {
   const SkillsTab({
     super.key,
-    required this.character,
+    required this.skillRows,
     required this.characterId,
   });
-  final Character character;
+  final List<SkillRowVm> skillRows;
   final String characterId;
 
   @override
   ConsumerState<SkillsTab> createState() => _SkillsTabState();
 }
 
-class _SkillsTabState extends ConsumerState<SkillsTab> {
+class _SkillsTabState extends ConsumerState<SkillsTab>
+    with AutomaticKeepAliveClientMixin {
   void _cycleSkill(String skillName) {
     final c = ref.read(characterDetailProvider(widget.characterId)).valueOrNull;
     if (c == null) return;
@@ -46,10 +47,11 @@ class _SkillsTabState extends ConsumerState<SkillsTab> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
-    final character = widget.character;
+    final rows = widget.skillRows;
     final abilityLabels = {
       'Strength': l10n.abilityStr,
       'Dexterity': l10n.abilityDex,
@@ -59,12 +61,6 @@ class _SkillsTabState extends ConsumerState<SkillsTab> {
       'Charisma': l10n.abilityCha,
     };
     final scheme = Theme.of(context).colorScheme;
-    final profSet = character.skillProficiencies
-        .map((s) => s.toLowerCase())
-        .toSet();
-    final expertSet = character.skillExpertises
-        .map((s) => s.toLowerCase())
-        .toSet();
 
     return Column(
       children: [
@@ -87,23 +83,13 @@ class _SkillsTabState extends ConsumerState<SkillsTab> {
           child: ListView.builder(
             key: PageStorageKey('skills-${widget.characterId}'),
             padding: const EdgeInsets.fromLTRB(0, 8, 0, 192),
-            itemCount: skillAbility.length,
+            itemCount: rows.length,
             itemBuilder: (context, i) {
-              final skillName = skillAbility.keys.elementAt(i);
-              final ability = skillAbility[skillName]!;
-              final lower = skillName.toLowerCase();
-              final isExpert = expertSet.contains(lower);
-              final isProf = isExpert || profSet.contains(lower);
-
-              final score = character.abilityScores[ability];
-              final abilityMod = ((score - 10) / 2).floor();
-              final bonus =
-                  abilityMod +
-                  (isExpert
-                      ? character.proficiencyBonus * 2
-                      : isProf
-                      ? character.proficiencyBonus
-                      : 0);
+              final row = rows[i];
+              final skillName = row.skillName;
+              final ability = row.ability;
+              final isExpert = row.isExpert;
+              final isProf = row.isProficient;
 
               return ListTile(
                 dense: true,
@@ -124,7 +110,7 @@ class _SkillsTabState extends ConsumerState<SkillsTab> {
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
                 trailing: Text(
-                  sign(bonus),
+                  sign(row.bonus),
                   style: TextStyle(
                     fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
                     color: isProf ? scheme.primary : null,
@@ -137,4 +123,7 @@ class _SkillsTabState extends ConsumerState<SkillsTab> {
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

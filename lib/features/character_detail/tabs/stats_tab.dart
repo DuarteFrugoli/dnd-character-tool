@@ -19,7 +19,8 @@ class StatsTab extends ConsumerStatefulWidget {
   ConsumerState<StatsTab> createState() => _StatsTabState();
 }
 
-class _StatsTabState extends ConsumerState<StatsTab> {
+class _StatsTabState extends ConsumerState<StatsTab>
+    with AutomaticKeepAliveClientMixin {
   // HP tracker
   final _amountCtrl = TextEditingController(text: '1');
 
@@ -331,6 +332,7 @@ class _StatsTabState extends ConsumerState<StatsTab> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
@@ -818,6 +820,9 @@ class _StatsTabState extends ConsumerState<StatsTab> {
             ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 // ── XP / Progression ─────────────────────────────────────────────────────────

@@ -14,7 +14,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos.
 - **Temas**: o tema padrao agora e `Classic Dark`, deixando `Crimson` como opcao mais intensa; IDs internos antigos foram substituidos por IDs canonicos do tema atual, com fallback para o tema padrao.
-- **Visual**: tela inicial, seletor de temas em configuracoes e cabecalho da ficha receberam previews, gradientes e acentos mais fortes para reforcar a identidade visual do app.
+- **Visual**: tela inicial, seletor de temas, cabecalho e barra de abas da ficha receberam previews, gradientes e acentos mais fortes para reforcar a identidade visual do app.
+- **Ficha**: abas principais mantem estado e pre-aquecem dados vizinhos para reduzir travadas na primeira troca entre abas.
 
 ### Fixed
 - **Inventario**: recipientes com quantidade total zero agora exibem `Vazio` em vez de `1 item`.

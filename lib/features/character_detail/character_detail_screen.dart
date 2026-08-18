@@ -40,15 +40,24 @@ class CharacterDetailScreen extends ConsumerStatefulWidget {
 
 class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     with SingleTickerProviderStateMixin {
+  static const _detailTabCount = 7;
+
   late final TabController _tabs;
   final _editGuard = EditGuard();
   bool? _keepScreenOnApplied;
+  bool _tabWarmupScheduled = false;
+  int? _lastWarmedTabIndex;
 
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 7, vsync: this);
+    _tabs = TabController(length: _detailTabCount, vsync: this);
     _tabs.addListener(_onTabChanging);
+    _tabs.addListener(_onTabWarmupRequested);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      _scheduleTabWarmup(_tabs.index);
+    });
   }
 
   @override
@@ -57,12 +66,95 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       unawaited(KeepScreenOn.setEnabled(false));
     }
     _tabs.removeListener(_onTabChanging);
+    _tabs.removeListener(_onTabWarmupRequested);
     _tabs.dispose();
     super.dispose();
   }
 
   int _lastTabIndex = 0;
   bool _isIntercepting = false;
+
+  void _onTabWarmupRequested() {
+    _scheduleTabWarmup(_tabs.index);
+  }
+
+  void _scheduleTabWarmup(int centerIndex) {
+    if (_tabWarmupScheduled) return;
+    _tabWarmupScheduled = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _tabWarmupScheduled = false;
+      if (!mounted) return;
+      _warmTabsAround(centerIndex);
+    });
+  }
+
+  void _warmTabsAround(int centerIndex) {
+    if (_lastWarmedTabIndex == centerIndex) return;
+    _lastWarmedTabIndex = centerIndex;
+    for (final tabIndex in <int>{
+      centerIndex - 1,
+      centerIndex,
+      centerIndex + 1,
+    }) {
+      if (tabIndex < 0 || tabIndex >= _detailTabCount) continue;
+      _warmTabData(tabIndex);
+    }
+  }
+
+  void _warmTabData(int tabIndex) {
+    switch (tabIndex) {
+      case 0:
+        ref.read(identityTabVmProvider(widget.characterId));
+        ref.read(srdI18nProvider);
+        return;
+      case 1:
+        ref.read(statsTabVmProvider(widget.characterId));
+        ref.read(srdI18nProvider);
+        ref.read(srdConditionsProvider);
+        return;
+      case 2:
+        ref.read(skillsTabVmProvider(widget.characterId));
+        ref.read(srdI18nProvider);
+        return;
+      case 3:
+        ref.read(featuresTabVmProvider(widget.characterId));
+        ref.read(srdI18nProvider);
+        ref.read(srdAllSubclassFeaturesProvider);
+        ref.read(srdRacesProvider);
+        ref.read(srdBackgroundsProvider);
+        ref.read(srdRaceTraitsProvider);
+        ref.read(srdFeatureChoiceCatalogProvider);
+        ref.read(srdFeatureUsageCatalogProvider);
+        ref.read(srdSkillsProvider);
+        ref.read(srdToolsProvider);
+        ref.read(srdSpellsProvider);
+        ref.read(srdLanguagesProvider);
+        ref.read(srdWeaponsProvider);
+        ref.read(srdFeatsProvider);
+        final character = _currentCharacter();
+        if (character != null) {
+          for (final entry in character.classEntries) {
+            ref.read(srdClassFeaturesProvider(entry.className));
+          }
+        }
+        return;
+      case 4:
+        ref.read(spellsTabVmProvider(widget.characterId));
+        ref.read(srdI18nProvider);
+        ref.read(srdSpellsProvider);
+        return;
+      case 5:
+        ref.read(inventoryTabVmProvider(widget.characterId));
+        ref.read(srdI18nProvider);
+        ref.read(srdItemsProvider);
+        ref.read(srdWeaponsProvider);
+        ref.read(srdToolsProvider);
+        return;
+      case 6:
+        ref.read(notesTabVmProvider(widget.characterId));
+        return;
+    }
+  }
 
   void _onTabChanging() {
     // Only act when the tab index actually changes (not animation updates).
@@ -205,7 +297,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         CharacterTabHost<SkillsTabVm>(
           provider: skillsTabVmProvider(widget.characterId),
           builder: (context, vm) => SkillsTab(
-            character: vm.character,
+            skillRows: vm.rows,
             characterId: widget.characterId,
           ),
         ),
@@ -220,6 +312,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           provider: spellsTabVmProvider(widget.characterId),
           builder: (context, vm) => SpellsTab(
             character: vm.character,
+            spellcastingSummary: vm.spellcastingSummary,
             characterId: widget.characterId,
           ),
         ),

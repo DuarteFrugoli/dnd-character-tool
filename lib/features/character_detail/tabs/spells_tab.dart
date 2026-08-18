@@ -12,10 +12,12 @@ class SpellsTab extends ConsumerStatefulWidget {
   const SpellsTab({
     super.key,
     required this.character,
+    required this.spellcastingSummary,
     required this.characterId,
   });
 
   final Character character;
+  final CharacterSpellcastingSummary spellcastingSummary;
   final String characterId;
 
   @override
@@ -52,9 +54,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
 
   void _rebuildSpellDisplayData() {
     final character = widget.character;
-    final spellcastingSummary = CharacterSpellcastingSummary.fromCharacter(
-      character,
-    );
+    final spellcastingSummary = widget.spellcastingSummary;
     final primaryOrigin = spellcastingSummary.primaryOrigin;
     final engine = primaryOrigin?.engine;
     final spellcastingClass =
@@ -175,9 +175,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     }
     if (!mounted) return;
     final character = widget.character;
-    final spellcastingOrigin = CharacterSpellcastingSummary.fromCharacter(
-      character,
-    ).primaryOrigin;
+    final spellcastingOrigin = widget.spellcastingSummary.primaryOrigin;
     final spellcastingClass = spellcastingOrigin?.classEntry;
     final cls = spellcastingClass?.className.toLowerCase() ?? '';
     final subclass = spellcastingClass?.subclassName;
@@ -247,9 +245,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final spellcastingSummary = CharacterSpellcastingSummary.fromCharacter(
-      character,
-    );
+    final spellcastingSummary = widget.spellcastingSummary;
     final primaryOrigin = spellcastingSummary.primaryOrigin;
     final engine = primaryOrigin?.engine;
     final spellcastingClass =

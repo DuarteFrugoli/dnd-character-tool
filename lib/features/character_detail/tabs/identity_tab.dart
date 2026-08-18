@@ -18,7 +18,8 @@ class IdentityTab extends ConsumerStatefulWidget {
   ConsumerState<IdentityTab> createState() => _IdentityTabState();
 }
 
-class _IdentityTabState extends ConsumerState<IdentityTab> {
+class _IdentityTabState extends ConsumerState<IdentityTab>
+    with AutomaticKeepAliveClientMixin {
   bool _isEditing = false;
   Character? _snapshot;
 
@@ -477,6 +478,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
@@ -988,6 +990,9 @@ class _IdentityTabState extends ConsumerState<IdentityTab> {
             ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 // ── Multiline text field ──────────────────────────────────────────────────────

@@ -152,7 +152,7 @@ ImageProvider _resolveImageProvider(String path) {
 ///
 /// When tapped, shows a bottom sheet to pick a new photo or delete the
 /// existing one. The cropped file path is returned via [onImageChanged].
-class CharacterAvatar extends StatelessWidget {
+class CharacterAvatar extends StatefulWidget {
   const CharacterAvatar({
     super.key,
     required this.name,
@@ -172,55 +172,166 @@ class CharacterAvatar extends StatelessWidget {
   final void Function(String? path)? onImageChanged;
 
   @override
-  Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+  State<CharacterAvatar> createState() => _CharacterAvatarState();
+}
 
-    final avatar = CircleAvatar(
-      radius: radius,
-      backgroundColor: cs.primaryContainer,
-      foregroundColor: cs.onPrimaryContainer,
-      backgroundImage: imagePath != null
-          ? _resolveImageProvider(imagePath!)
-          : null,
-      child: imagePath == null
-          ? Text(
-              name.isNotEmpty ? name[0].toUpperCase() : '?',
-              style: TextStyle(
-                fontSize: radius * 0.75,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          : null,
+class _CharacterAvatarState extends State<CharacterAvatar> {
+  String? _precachedImagePath;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _precacheCurrentImage();
+  }
+
+  @override
+  void didUpdateWidget(CharacterAvatar oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.imagePath != widget.imagePath) {
+      _precacheCurrentImage();
+    }
+  }
+
+  void _precacheCurrentImage() {
+    final path = widget.imagePath;
+    if (path == null || path == _precachedImagePath) return;
+    _precachedImagePath = path;
+    final image = _resolveImageProvider(path);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || widget.imagePath != path) return;
+      precacheImage(image, context).catchError((_) {
+        image.evict();
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final avatar = _AvatarCircle(
+      name: widget.name,
+      imagePath: widget.imagePath,
+      radius: widget.radius,
     );
 
-    if (onImageChanged == null) return avatar;
+    if (widget.onImageChanged == null) return avatar;
 
     final resolvedHeroTag =
-        heroTag ?? (imagePath != null ? 'character_avatar_$imagePath' : null);
+        widget.heroTag ??
+        (widget.imagePath != null
+            ? 'character_avatar_${widget.imagePath}'
+            : null);
     final interactive = resolvedHeroTag != null
-        ? Hero(tag: resolvedHeroTag, child: avatar)
+        ? Hero(
+            tag: resolvedHeroTag,
+            placeholderBuilder: (_, heroSize, _) => _AvatarCircle.fromHeroSize(
+              name: widget.name,
+              imagePath: widget.imagePath,
+              heroSize: heroSize,
+            ),
+            flightShuttleBuilder: (_, _, _, _, _) => Material(
+              type: MaterialType.transparency,
+              child: _AvatarCircle(
+                name: widget.name,
+                imagePath: widget.imagePath,
+                radius: widget.radius,
+              ),
+            ),
+            child: avatar,
+          )
         : avatar;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          if (imagePath != null) {
+          if (widget.imagePath != null) {
             _showPhotoViewer(
               context,
-              imagePath: imagePath!,
-              characterName: name,
-              onImageChanged: onImageChanged!,
+              imagePath: widget.imagePath!,
+              characterName: widget.name,
+              onImageChanged: widget.onImageChanged!,
             );
           } else {
             showCharacterPhotoPicker(
               context,
               currentImagePath: null,
-              onImageChanged: onImageChanged!,
+              onImageChanged: widget.onImageChanged!,
             );
           }
         },
         child: interactive,
+      ),
+    );
+  }
+}
+
+class _AvatarCircle extends StatelessWidget {
+  const _AvatarCircle({
+    required this.name,
+    required this.imagePath,
+    required this.radius,
+  });
+
+  factory _AvatarCircle.fromHeroSize({
+    required String name,
+    required String? imagePath,
+    required Size heroSize,
+  }) {
+    final shortestSide = math.min(heroSize.width, heroSize.height);
+    return _AvatarCircle(
+      name: name,
+      imagePath: imagePath,
+      radius: shortestSide / 2,
+    );
+  }
+
+  final String name;
+  final String? imagePath;
+  final double radius;
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final diameter = radius * 2;
+    final image = imagePath != null ? _resolveImageProvider(imagePath!) : null;
+
+    return SizedBox(
+      width: diameter,
+      height: diameter,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: cs.primaryContainer,
+          shape: BoxShape.circle,
+        ),
+        child: ClipOval(
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Center(
+                child: Text(
+                  name.isNotEmpty ? name[0].toUpperCase() : '?',
+                  style: TextStyle(
+                    color: cs.onPrimaryContainer,
+                    fontSize: radius * 0.75,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              if (image != null)
+                Image(
+                  key: ValueKey(imagePath),
+                  image: image,
+                  fit: BoxFit.cover,
+                  gaplessPlayback: true,
+                  filterQuality: FilterQuality.medium,
+                  errorBuilder: (_, _, _) {
+                    image.evict();
+                    return const SizedBox.shrink();
+                  },
+                ),
+            ],
+          ),
+        ),
       ),
     );
   }

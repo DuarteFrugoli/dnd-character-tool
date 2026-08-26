@@ -20,6 +20,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 - **Inventario**: recipientes com quantidade total zero agora exibem `Vazio` em vez de `1 item`.
+- **Lista de personagens**: avatar da ficha ficou mais resistente a recarregamento e transicoes `Hero`, evitando area vazia ao voltar da ficha.
 - **Ficha**: imagem do personagem no cabecalho agora usa o mesmo fluxo de visualizar, ampliar, trocar e remover foto da aba Identidade, e a transicao da lista passa a mirar o avatar do cabecalho.
 
 ---

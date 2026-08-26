@@ -9,6 +9,7 @@ import 'character_feature_choice.dart';
 import 'character_hit_die_pool.dart';
 import 'character_note.dart';
 import 'character_personality.dart';
+import 'character_sheet_preferences.dart';
 import 'equipment_item.dart';
 import 'hit_points.dart';
 import 'spell.dart';
@@ -18,6 +19,14 @@ part 'character.g.dart';
 // Sentinel used to distinguish "not passed" from explicit null in copyWith.
 const _keep = Object();
 const currentCharacterDataVersion = 9;
+
+CharacterSheetPreferences _characterSheetPreferencesFromJson(Object? json) =>
+    CharacterSheetPreferences.fromJson(json);
+
+Map<String, dynamic> _characterSheetPreferencesToJson(
+  CharacterSheetPreferences value,
+) =>
+    value.toJson();
 
 enum CreationMode { random, semiRandom, guided, manual }
 
@@ -81,6 +90,11 @@ class Character {
   @JsonKey(fromJson: readBool)
   final bool inspiration;
   final List<CharacterNote> notes;
+  @JsonKey(
+    fromJson: _characterSheetPreferencesFromJson,
+    toJson: _characterSheetPreferencesToJson,
+  )
+  final CharacterSheetPreferences sheetPreferences;
   final String? imagePath;
   final CreationMode creationMode;
   final DateTime createdAt;
@@ -136,6 +150,7 @@ class Character {
     this.backstory = '',
     this.inspiration = false,
     this.notes = const [],
+    this.sheetPreferences = const CharacterSheetPreferences(),
     this.imagePath,
     this.creationMode = CreationMode.manual,
     required this.createdAt,
@@ -280,6 +295,7 @@ class Character {
     String? backstory,
     bool? inspiration,
     List<CharacterNote>? notes,
+    CharacterSheetPreferences? sheetPreferences,
     String? imagePath,
     bool clearImagePath = false,
     CreationMode? creationMode,
@@ -334,6 +350,7 @@ class Character {
       backstory: backstory ?? this.backstory,
       inspiration: inspiration ?? this.inspiration,
       notes: notes ?? this.notes,
+      sheetPreferences: sheetPreferences ?? this.sheetPreferences,
       imagePath: clearImagePath ? null : (imagePath ?? this.imagePath),
       creationMode: creationMode ?? this.creationMode,
       createdAt: createdAt ?? this.createdAt,

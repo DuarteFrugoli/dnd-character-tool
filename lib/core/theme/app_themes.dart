@@ -296,8 +296,8 @@ const List<AppTheme> appThemes = [
     tertiaryContainer: Color(0xFFE8DDFF),
   ),
   AppTheme(
-    id: 'high_contrast',
-    name: 'High Contrast',
+    id: 'eclipse',
+    name: 'Eclipse',
     brightness: Brightness.dark,
     primary: Color(0xFFFFDD55),
     secondary: Color(0xFF79E6FF),

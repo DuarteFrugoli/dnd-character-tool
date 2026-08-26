@@ -7,6 +7,7 @@ export 'character_feature_choice.dart';
 export 'character_hit_die_pool.dart';
 export 'character_note.dart';
 export 'character_personality.dart';
+export 'character_sheet_preferences.dart';
 export 'equipment_item.dart';
 export 'hit_points.dart';
 export 'spell.dart';

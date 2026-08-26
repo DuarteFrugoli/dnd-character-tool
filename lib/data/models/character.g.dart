@@ -129,6 +129,9 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
           ?.map((e) => CharacterNote.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
+  sheetPreferences: _characterSheetPreferencesFromJson(
+    json['sheetPreferences'],
+  ),
   imagePath: json['imagePath'] as String?,
   creationMode:
       $enumDecodeNullable(_$CreationModeEnumMap, json['creationMode']) ??
@@ -188,6 +191,9 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'backstory': instance.backstory,
   'inspiration': instance.inspiration,
   'notes': instance.notes.map((e) => e.toJson()).toList(),
+  'sheetPreferences': _characterSheetPreferencesToJson(
+    instance.sheetPreferences,
+  ),
   'imagePath': instance.imagePath,
   'creationMode': _$CreationModeEnumMap[instance.creationMode]!,
   'createdAt': instance.createdAt.toIso8601String(),

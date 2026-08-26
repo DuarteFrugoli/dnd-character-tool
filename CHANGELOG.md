@@ -9,11 +9,13 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - **Lista de personagens**: adicionada opcao de duplicar personagem pelo menu de tres pontos, criando copia independente com novo ID, imagem propria e nome sem conflito.
-- **Temas**: adicionada lista final com 12 temas: `Classic Dark`, `Crimson`, `Light`, `Parchment`, `Arcane`, `Forest`, `Elven Forest`, `Sea`, `Celestial`, `High Contrast`, `Sacred` e `Shadow`.
+- **Temas**: adicionada lista final com 12 temas: `Classic Dark`, `Crimson`, `Light`, `Parchment`, `Arcane`, `Forest`, `Elven Forest`, `Sea`, `Celestial`, `Eclipse`, `Sacred` e `Shadow`.
+- **Ficha - preferencias**: adicionada base interna para preferencias visuais por personagem, preparando ordenacao customizavel de pericias, inventario e atalhos de magias.
 
 ### Changed
 - **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos.
 - **Temas**: o tema padrao agora e `Classic Dark`, deixando `Crimson` como opcao mais intensa; IDs internos antigos foram substituidos por IDs canonicos do tema atual, com fallback para o tema padrao.
+- **Temas**: o tema `High Contrast` atual foi renomeado para `Eclipse`, mantendo as mesmas cores e usando `eclipse` como ID canonico.
 - **Visual**: tela inicial, seletor de temas, cabecalho e barra de abas da ficha receberam previews, gradientes e acentos mais fortes para reforcar a identidade visual do app.
 - **Ficha - abas**: identidade, stats, pericias, habilidades, magias, inventario e notas receberam cards, headers, estados vazios e acentos visuais mais consistentes com os novos temas.
 - **Ficha**: abas principais mantem estado e pre-aquecem dados vizinhos para reduzir travadas na primeira troca entre abas.

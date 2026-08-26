@@ -109,16 +109,34 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
     final heavilyEncThreshold = strScore * 10.0;
     Widget buildCurrencyCard() {
       return Card(
+        elevation: 0,
+        color: scheme.surfaceContainerLow,
+        surfaceTintColor: scheme.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(color: scheme.outlineVariant.withValues(alpha: 0.72)),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                l10n.inventoryCurrency,
-                style: Theme.of(
-                  context,
-                ).textTheme.labelLarge?.copyWith(color: scheme.primary),
+              Row(
+                children: [
+                  Icon(
+                    Icons.paid_outlined,
+                    size: 18,
+                    color: scheme.primary,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    l10n.inventoryCurrency,
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: scheme.primary,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 12),
               Row(
@@ -208,6 +226,8 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
             SliverToBoxAdapter(
               child: _InventorySliverSectionHeader(
                 title: l10n.inventoryAmmunition,
+                icon: Icons.arrow_upward,
+                accentColor: scheme.tertiary,
               ),
             ),
             SliverPadding(
@@ -234,6 +254,8 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                   inventory.equipped.length,
                   character.armorClass,
                 ),
+                icon: Icons.check_circle_outline,
+                accentColor: scheme.primary,
               ),
             ),
             SliverPadding(
@@ -258,6 +280,8 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                 title: l10n.inventoryContainersSection(
                   inventory.containers.length,
                 ),
+                icon: Icons.inventory_2_outlined,
+                accentColor: scheme.secondary,
               ),
             ),
             SliverPadding(
@@ -277,6 +301,8 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                 title: l10n.inventoryEquippableSection(
                   inventory.equippable.length,
                 ),
+                icon: Icons.checkroom_outlined,
+                accentColor: scheme.tertiary,
                 subtitle: Row(
                   children: [
                     Icon(
@@ -320,15 +346,18 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                 title: inventory.carried.isEmpty
                     ? l10n.inventoryInventory
                     : l10n.inventoryCarriedSection(inventory.carried.length),
+                icon: Icons.backpack_outlined,
+                accentColor: scheme.primary,
               ),
             ),
             if (inventory.carried.isEmpty)
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 sliver: SliverToBoxAdapter(
-                  child: Text(
-                    l10n.inventoryEmpty,
-                    style: TextStyle(color: scheme.onSurfaceVariant),
+                  child: DetailEmptyState(
+                    icon: Icons.inventory_2_outlined,
+                    title: l10n.inventoryEmpty,
+                    padding: const EdgeInsets.fromLTRB(16, 20, 16, 28),
                   ),
                 ),
               )
@@ -361,28 +390,25 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
 }
 
 class _InventorySliverSectionHeader extends StatelessWidget {
-  const _InventorySliverSectionHeader({required this.title, this.subtitle});
+  const _InventorySliverSectionHeader({
+    required this.title,
+    this.subtitle,
+    this.icon,
+    this.accentColor,
+  });
 
   final String title;
   final Widget? subtitle;
+  final IconData? icon;
+  final Color? accentColor;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: Theme.of(
-              context,
-            ).textTheme.labelLarge?.copyWith(color: scheme.primary),
-          ),
-          if (subtitle != null) ...[const SizedBox(height: 6), subtitle!],
-        ],
-      ),
+    return DetailSectionHeader(
+      title: title,
+      subtitle: subtitle,
+      icon: icon,
+      accentColor: accentColor,
     );
   }
 }
@@ -429,93 +455,125 @@ class _AmmunitionItemTile extends ConsumerWidget {
         '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
     final canMove = item.containerId != null || containers.isNotEmpty;
 
-    return InkWell(
-      onTap: () => showItemDetailsSheet(context, ref, item, displayName, meta),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4),
-        child: Row(
-          children: [
-            const Icon(Icons.arrow_upward, size: 16),
-            const SizedBox(width: 6),
-            Expanded(
-              child: Text(displayName, style: const TextStyle(fontSize: 14)),
-            ),
-            IconButton(
-              icon: const Icon(Icons.remove, size: 18),
-              padding: EdgeInsets.zero,
-              constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-              onPressed: item.quantity <= 0
-                  ? null
-                  : () => notifier.adjustItemQuantity(item.id, -1),
-            ),
-            SizedBox(
-              width: 40,
-              child: Text(
-                '${item.quantity}',
-                textAlign: TextAlign.center,
-                style: Theme.of(
-                  context,
-                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Material(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(10),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(10),
+          onTap: () => showItemDetailsSheet(
+            context,
+            ref,
+            item,
+            displayName,
+            meta,
+          ),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                color: scheme.tertiary.withValues(alpha: 0.22),
               ),
             ),
-            IconButton(
-              icon: const Icon(Icons.add, size: 18),
-              padding: EdgeInsets.zero,
-              constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-              onPressed: () => notifier.adjustItemQuantity(item.id, 1),
-            ),
-            if (reorderIndex != null)
-              ReorderableDragStartListener(
-                index: reorderIndex!,
-                child: Tooltip(
-                  message: reorderTooltip,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Icon(
-                      Icons.drag_handle,
-                      size: 20,
-                      color: scheme.outline,
+            child: Row(
+              children: [
+                Icon(Icons.arrow_upward, size: 16, color: scheme.tertiary),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    displayName,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
-              ),
-            PopupMenuButton<InventoryItemAction>(
-              onSelected: (action) {
-                switch (action) {
-                  case InventoryItemAction.move:
-                    showMoveItemSheet(
-                      context,
-                      ref,
-                      item: item,
-                      characterId: characterId,
-                      containers: containers,
-                    );
-                    break;
-                  case InventoryItemAction.remove:
-                    _confirmRemoveAmmo(context, ref, notifier);
-                    break;
-                }
-              },
-              itemBuilder: (ctx) => [
-                if (canMove)
-                  PopupMenuItem(
-                    value: InventoryItemAction.move,
-                    child: InventoryMenuItem(
-                      icon: Icons.drive_file_move_outlined,
-                      label: l10n.inventoryTooltipMove,
+                IconButton(
+                  icon: const Icon(Icons.remove, size: 18),
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(
+                    minWidth: 32,
+                    minHeight: 32,
+                  ),
+                  onPressed: item.quantity <= 0
+                      ? null
+                      : () => notifier.adjustItemQuantity(item.id, -1),
+                ),
+                SizedBox(
+                  width: 40,
+                  child: Text(
+                    '${item.quantity}',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                PopupMenuItem(
-                  value: InventoryItemAction.remove,
-                  child: InventoryMenuItem(
-                    icon: Icons.delete_outline,
-                    label: l10n.inventoryTooltipRemove,
-                    isDestructive: true,
+                ),
+                IconButton(
+                  icon: const Icon(Icons.add, size: 18),
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(
+                    minWidth: 32,
+                    minHeight: 32,
                   ),
+                  onPressed: () => notifier.adjustItemQuantity(item.id, 1),
+                ),
+                if (reorderIndex != null)
+                  ReorderableDragStartListener(
+                    index: reorderIndex!,
+                    child: Tooltip(
+                      message: reorderTooltip,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Icon(
+                          Icons.drag_handle,
+                          size: 20,
+                          color: scheme.outline,
+                        ),
+                      ),
+                    ),
+                  ),
+                PopupMenuButton<InventoryItemAction>(
+                  onSelected: (action) {
+                    switch (action) {
+                      case InventoryItemAction.move:
+                        showMoveItemSheet(
+                          context,
+                          ref,
+                          item: item,
+                          characterId: characterId,
+                          containers: containers,
+                        );
+                        break;
+                      case InventoryItemAction.remove:
+                        _confirmRemoveAmmo(context, ref, notifier);
+                        break;
+                    }
+                  },
+                  itemBuilder: (ctx) => [
+                    if (canMove)
+                      PopupMenuItem(
+                        value: InventoryItemAction.move,
+                        child: InventoryMenuItem(
+                          icon: Icons.drive_file_move_outlined,
+                          label: l10n.inventoryTooltipMove,
+                        ),
+                      ),
+                    PopupMenuItem(
+                      value: InventoryItemAction.remove,
+                      child: InventoryMenuItem(
+                        icon: Icons.delete_outline,
+                        label: l10n.inventoryTooltipRemove,
+                        isDestructive: true,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -608,7 +666,20 @@ class _ContainersSection extends ConsumerWidget {
 
         return Card(
           margin: const EdgeInsets.only(bottom: 8),
-          color: overCapacity ? scheme.errorContainer : null,
+          elevation: 0,
+          color: overCapacity
+              ? scheme.errorContainer
+              : scheme.surfaceContainerLow,
+          surfaceTintColor: overCapacity ? scheme.error : scheme.secondary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(
+              color: overCapacity
+                  ? scheme.error
+                  : scheme.secondary.withValues(alpha: 0.22),
+            ),
+          ),
+          clipBehavior: Clip.antiAlias,
           child: ExpansionTile(
             key: PageStorageKey<String>(
               'inventory-container-expansion-$characterId-${container.id}',
@@ -761,6 +832,13 @@ class _WeightBar extends ConsumerWidget {
 
     return Card(
       margin: EdgeInsets.zero,
+      elevation: 0,
+      color: scheme.surfaceContainerLow,
+      surfaceTintColor: barColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(color: barColor.withValues(alpha: 0.24)),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         child: Column(

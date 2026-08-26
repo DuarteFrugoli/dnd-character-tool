@@ -33,7 +33,13 @@ class SpellcastingBanner extends StatelessWidget {
         : '${engine.abilityModifier}';
 
     return Card(
-      color: scheme.primaryContainer.withAlpha(80),
+      elevation: 0,
+      color: scheme.primary.withValues(alpha: 0.10),
+      surfaceTintColor: scheme.primary,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(color: scheme.primary.withValues(alpha: 0.24)),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         child: Column(
@@ -120,16 +126,13 @@ class SpellLevelHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 4, bottom: 2),
-      child: Text(
-        level == 0
-            ? AppLocalizations.of(context)!.spellsCantrips
-            : AppLocalizations.of(context)!.spellsLevelN(level),
-        style: Theme.of(
-          context,
-        ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
-      ),
+    final scheme = Theme.of(context).colorScheme;
+    return DetailSectionHeader(
+      title: level == 0
+          ? AppLocalizations.of(context)!.spellsCantrips
+          : AppLocalizations.of(context)!.spellsLevelN(level),
+      icon: level == 0 ? Icons.auto_fix_high_outlined : Icons.menu_book,
+      accentColor: level == 0 ? scheme.tertiary : scheme.primary,
     );
   }
 }
@@ -237,10 +240,29 @@ class SpellRow extends ConsumerWidget {
     // Dimmed: DM-disabled always, or not-prepared in a prepare class
     final dimmed = isDisabled || (showPrepareToggle && !isPrepared);
 
+    final accentColor = spell.isAlwaysPrepared
+        ? scheme.tertiary
+        : isPrepared
+        ? scheme.primary
+        : scheme.outline;
     Widget card = Card(
-      margin: const EdgeInsets.only(bottom: 4),
+      margin: const EdgeInsets.only(bottom: 8),
+      elevation: 0,
+      color: dimmed
+          ? scheme.surfaceContainerLow.withValues(alpha: 0.70)
+          : accentColor.withValues(alpha: 0.08),
+      surfaceTintColor: accentColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(
+          color: dimmed
+              ? scheme.outlineVariant.withValues(alpha: 0.58)
+              : accentColor.withValues(alpha: 0.24),
+        ),
+      ),
+      clipBehavior: Clip.antiAlias,
       child: InkWell(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(10),
         onTap: onTap,
         onLongPress: onLongPress,
         child: Padding(
@@ -373,11 +395,11 @@ class _SchoolBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+    padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
     decoration: BoxDecoration(
-      color: color.withAlpha(30),
-      border: Border.all(color: color.withAlpha(100)),
-      borderRadius: BorderRadius.circular(8),
+      color: color.withValues(alpha: 0.12),
+      border: Border.all(color: color.withValues(alpha: 0.28)),
+      borderRadius: BorderRadius.circular(999),
     ),
     child: Text(
       label,
@@ -400,15 +422,16 @@ class _SourceBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
-        color: scheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(8),
+        color: scheme.secondary.withValues(alpha: 0.12),
+        border: Border.all(color: scheme.secondary.withValues(alpha: 0.28)),
+        borderRadius: BorderRadius.circular(999),
       ),
       child: Text(
         label,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-          color: scheme.onSecondaryContainer,
+          color: scheme.secondary,
           fontWeight: FontWeight.w600,
         ),
       ),
@@ -427,8 +450,8 @@ class _SmallBadge extends StatelessWidget {
     height: 16,
     decoration: BoxDecoration(
       shape: BoxShape.circle,
-      color: color.withAlpha(40),
-      border: Border.all(color: color.withAlpha(150)),
+      color: color.withValues(alpha: 0.14),
+      border: Border.all(color: color.withValues(alpha: 0.38)),
     ),
     child: Center(
       child: Text(
@@ -513,7 +536,13 @@ class ConcentrationBanner extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     return Card(
-      color: scheme.primaryContainer,
+      elevation: 0,
+      color: scheme.primary.withValues(alpha: 0.12),
+      surfaceTintColor: scheme.primary,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(color: scheme.primary.withValues(alpha: 0.28)),
+      ),
       margin: const EdgeInsets.only(bottom: 12),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -655,15 +684,24 @@ class SpellSlotRow extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final remaining = total - used;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.68)),
+      ),
       child: Row(
         children: [
           SizedBox(
-            width: 56,
+            width: 60,
             child: Text(
               l10n.spellsSlotLevel(level),
-              style: Theme.of(context).textTheme.labelMedium,
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                color: scheme.primary,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
           Expanded(
@@ -680,7 +718,9 @@ class SpellSlotRow extends StatelessWidget {
                       height: 28,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: isUsed ? null : scheme.primaryContainer,
+                        color: isUsed
+                            ? scheme.surfaceContainerHighest
+                            : scheme.primary.withValues(alpha: 0.16),
                         border: Border.all(
                           color: isUsed
                               ? scheme.outlineVariant
@@ -696,7 +736,10 @@ class SpellSlotRow extends StatelessWidget {
           ),
           Text(
             '$remaining/$total',
-            style: Theme.of(context).textTheme.labelSmall,
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+              color: scheme.onSurfaceVariant,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ],
       ),

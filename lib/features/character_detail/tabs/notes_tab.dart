@@ -207,28 +207,12 @@ class _NotesTabState extends ConsumerState<NotesTab>
   }
 
   Widget _emptyState(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
 
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.note_outlined, size: 64, color: scheme.outlineVariant),
-          const SizedBox(height: 16),
-          Text(
-            l10n.notesEmptyTitle,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            l10n.notesEmptyHint,
-            style: Theme.of(
-              context,
-            ).textTheme.bodyMedium?.copyWith(color: scheme.outline),
-          ),
-        ],
-      ),
+    return DetailEmptyState(
+      icon: Icons.note_outlined,
+      title: l10n.notesEmptyTitle,
+      message: l10n.notesEmptyHint,
     );
   }
 
@@ -329,7 +313,10 @@ class _NotesTabState extends ConsumerState<NotesTab>
             SliverPadding(
               padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
               sliver: SliverToBoxAdapter(
-                child: _NoteListSectionHeader(label: l10n.notesOtherSection),
+                child: _NoteListSectionHeader(
+                  label: l10n.notesOtherSection,
+                  icon: Icons.notes_outlined,
+                ),
               ),
             ),
           SliverPadding(
@@ -435,20 +422,34 @@ class _NotesSearchAndFilters extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        TextField(
-          controller: searchController,
-          onTapOutside: (_) => FocusScope.of(context).unfocus(),
-          decoration: InputDecoration(
-            hintText: l10n.notesSearchHint,
-            prefixIcon: const Icon(Icons.search),
-            suffixIcon: searchController.text.isEmpty
-                ? null
-                : IconButton(
-                    icon: const Icon(Icons.clear),
-                    onPressed: searchController.clear,
-                  ),
-            border: const OutlineInputBorder(),
-            isDense: true,
+        Card(
+          elevation: 0,
+          color: scheme.surfaceContainerLow,
+          surfaceTintColor: scheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(
+              color: scheme.outlineVariant.withValues(alpha: 0.72),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: TextField(
+              controller: searchController,
+              onTapOutside: (_) => FocusScope.of(context).unfocus(),
+              decoration: InputDecoration(
+                hintText: l10n.notesSearchHint,
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: searchController.text.isEmpty
+                    ? null
+                    : IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: searchController.clear,
+                      ),
+                border: InputBorder.none,
+                isDense: true,
+              ),
+            ),
           ),
         ),
         if (tags.isNotEmpty) ...[
@@ -502,47 +503,31 @@ class _NotesNoResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Padding(
+    return DetailEmptyState(
+      icon: Icons.search_off_outlined,
+      title: l10n.notesNoResultsTitle,
+      message: l10n.notesNoResultsHint,
       padding: const EdgeInsets.symmetric(vertical: 48),
-      child: Column(
-        children: [
-          Icon(Icons.search_off_outlined, size: 48, color: scheme.outline),
-          const SizedBox(height: 12),
-          Text(
-            l10n.notesNoResultsTitle,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          const SizedBox(height: 6),
-          Text(
-            l10n.notesNoResultsHint,
-            textAlign: TextAlign.center,
-            style: Theme.of(
-              context,
-            ).textTheme.bodyMedium?.copyWith(color: scheme.outline),
-          ),
-        ],
-      ),
     );
   }
 }
 
 class _NoteListSectionHeader extends StatelessWidget {
-  const _NoteListSectionHeader({required this.label});
+  const _NoteListSectionHeader({
+    required this.label,
+    this.icon = Icons.push_pin_outlined,
+  });
 
   final String label;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(4, 4, 4, 8),
-      child: Text(
-        label,
-        style: Theme.of(context).textTheme.labelLarge?.copyWith(
-          color: Theme.of(context).colorScheme.primary,
-          fontWeight: FontWeight.w700,
-        ),
-      ),
+    final scheme = Theme.of(context).colorScheme;
+    return DetailSectionHeader(
+      title: label,
+      icon: icon,
+      accentColor: scheme.primary,
     );
   }
 }
@@ -1385,6 +1370,11 @@ class _NoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final cardAccent = selected
+        ? scheme.secondary
+        : note.isPinned
+        ? scheme.primary
+        : scheme.outlineVariant;
     final contentStyle = Theme.of(
       context,
     ).textTheme.bodyMedium?.copyWith(color: scheme.onSurfaceVariant);
@@ -1397,16 +1387,23 @@ class _NoteCard extends StatelessWidget {
         '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
 
     return Card(
-      color: selected ? scheme.secondaryContainer : null,
+      elevation: 0,
+      color: selected
+          ? scheme.secondary.withValues(alpha: 0.10)
+          : scheme.surfaceContainerLow,
+      surfaceTintColor: cardAccent,
       margin: const EdgeInsets.only(bottom: 8),
-      shape: selected
-          ? RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-              side: BorderSide(color: scheme.secondary),
-            )
-          : null,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(
+          color: cardAccent.withValues(
+            alpha: selected || note.isPinned ? 0.48 : 0.68,
+          ),
+        ),
+      ),
+      clipBehavior: Clip.antiAlias,
       child: InkWell(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(10),
         onTap: () {
           FocusScope.of(context).unfocus();
           onView();

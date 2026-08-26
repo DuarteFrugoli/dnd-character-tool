@@ -260,31 +260,10 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
 
     if (!isCaster && !hasSlots && !hasSpells && !hasInnate) {
       return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.auto_fix_high_outlined,
-                size: 64,
-                color: scheme.outlineVariant,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                l10n.spellsNoSpellcasting,
-                style: theme.textTheme.titleMedium,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                l10n.spellsNoSpellcastingDesc,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: scheme.outline,
-                ),
-              ),
-            ],
-          ),
+        child: DetailEmptyState(
+          icon: Icons.auto_fix_high_outlined,
+          title: l10n.spellsNoSpellcasting,
+          message: l10n.spellsNoSpellcastingDesc,
         ),
       );
     }
@@ -334,9 +313,10 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                         const SizedBox(height: 12),
                       ],
                       if (hasStandardSlots) ...[
-                        Text(
-                          l10n.spellsSlots,
-                          style: theme.textTheme.titleMedium,
+                        DetailSectionHeader(
+                          title: l10n.spellsSlots,
+                          icon: Icons.circle_outlined,
+                          accentColor: scheme.primary,
                         ),
                         const SizedBox(height: 8),
                         for (int level = 1; level <= 9; level++)
@@ -363,9 +343,10 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                         const SizedBox(height: 16),
                       ],
                       if (hasPactMagicSlots) ...[
-                        Text(
-                          l10n.spellsPactMagicSlots,
-                          style: theme.textTheme.titleMedium,
+                        DetailSectionHeader(
+                          title: l10n.spellsPactMagicSlots,
+                          icon: Icons.auto_awesome_outlined,
+                          accentColor: scheme.tertiary,
                         ),
                         const SizedBox(height: 8),
                         for (int level = 1; level <= 9; level++)
@@ -392,9 +373,10 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                         const SizedBox(height: 16),
                       ],
                       if (character.innateSpells.isNotEmpty) ...[
-                        Text(
-                          l10n.spellsInnateHeader,
-                          style: theme.textTheme.titleMedium,
+                        DetailSectionHeader(
+                          title: l10n.spellsInnateHeader,
+                          icon: Icons.auto_fix_high_outlined,
+                          accentColor: scheme.secondary,
                         ),
                         const SizedBox(height: 4),
                         for (final innate in character.innateSpells)
@@ -440,11 +422,8 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                 ),
                 if (_displaySpells.isNotEmpty)
                   for (final level in levels) ...[
-                    SliverPadding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      sliver: SliverToBoxAdapter(
-                        child: SpellLevelHeader(level: level),
-                      ),
+                    SliverToBoxAdapter(
+                      child: SpellLevelHeader(level: level),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 4)),
                     SliverPadding(
@@ -622,11 +601,8 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                   ),
                   const SliverToBoxAdapter(child: SizedBox(height: 8)),
                   for (final level in _extraByLevel.keys.toList()..sort()) ...[
-                    SliverPadding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      sliver: SliverToBoxAdapter(
-                        child: SpellLevelHeader(level: level),
-                      ),
+                    SliverToBoxAdapter(
+                      child: SpellLevelHeader(level: level),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 4)),
                     SliverPadding(

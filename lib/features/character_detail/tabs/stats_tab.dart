@@ -369,6 +369,8 @@ class _StatsTabState extends ConsumerState<StatsTab>
                   // ── HP Tracker ───────────────────────────────────────────
                   DetailSection(
                     title: l10n.sectionHitPoints,
+                    icon: Icons.favorite_border,
+                    accentColor: isDead ? scheme.error : scheme.primary,
                     child: Column(
                       children: [
                         Row(
@@ -573,6 +575,8 @@ class _StatsTabState extends ConsumerState<StatsTab>
                   // ── Combat Stats ─────────────────────────────────────────
                   DetailSection(
                     title: l10n.sectionCombat,
+                    icon: Icons.shield_outlined,
+                    accentColor: scheme.secondary,
                     child: _isEditing
                         ? Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -594,19 +598,32 @@ class _StatsTabState extends ConsumerState<StatsTab>
                                   DetailStatChip(
                                     l10n.statAC,
                                     '${character.armorClass}',
+                                    icon: Icons.shield_outlined,
+                                    accentColor: scheme.primary,
                                   ),
-                                  DetailStatChip(l10n.statArmor, armorSummary),
+                                  DetailStatChip(
+                                    l10n.statArmor,
+                                    armorSummary,
+                                    icon: Icons.security_outlined,
+                                    accentColor: scheme.secondary,
+                                  ),
                                   DetailStatChip(
                                     l10n.statInitiative,
                                     sign(character.initiative),
+                                    icon: Icons.bolt_outlined,
+                                    accentColor: scheme.tertiary,
                                   ),
                                   DetailStatChip(
                                     l10n.statProfBonus,
                                     sign(character.proficiencyBonus),
+                                    icon: Icons.stars_outlined,
+                                    accentColor: scheme.primary,
                                   ),
                                   DetailStatChip(
                                     l10n.statPassivePerc,
                                     '${character.passivePerception}',
+                                    icon: Icons.visibility_outlined,
+                                    accentColor: scheme.secondary,
                                   ),
                                 ],
                               ),
@@ -619,26 +636,41 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               DetailStatChip(
                                 l10n.statAC,
                                 '${character.armorClass}',
+                                icon: Icons.shield_outlined,
+                                accentColor: scheme.primary,
                               ),
-                              DetailStatChip(l10n.statArmor, armorSummary),
+                              DetailStatChip(
+                                l10n.statArmor,
+                                armorSummary,
+                                icon: Icons.security_outlined,
+                                accentColor: scheme.secondary,
+                              ),
                               DetailStatChip(
                                 l10n.statSpeed,
                                 formatDistance(
                                   character.speed,
                                   ref.watch(unitSystemProvider),
                                 ),
+                                icon: Icons.directions_run,
+                                accentColor: scheme.tertiary,
                               ),
                               DetailStatChip(
                                 l10n.statInitiative,
                                 sign(character.initiative),
+                                icon: Icons.bolt_outlined,
+                                accentColor: scheme.primary,
                               ),
                               DetailStatChip(
                                 l10n.statProfBonus,
                                 sign(character.proficiencyBonus),
+                                icon: Icons.stars_outlined,
+                                accentColor: scheme.secondary,
                               ),
                               DetailStatChip(
                                 l10n.statPassivePerc,
                                 '${character.passivePerception}',
+                                icon: Icons.visibility_outlined,
+                                accentColor: scheme.tertiary,
                               ),
                             ],
                           ),
@@ -651,6 +683,8 @@ class _StatsTabState extends ConsumerState<StatsTab>
                   // ── Ability Scores ───────────────────────────────────────
                   DetailSection(
                     title: l10n.sectionAbilityScores,
+                    icon: Icons.grid_view_outlined,
+                    accentColor: scheme.primary,
                     child: Center(
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(maxWidth: 480),
@@ -714,6 +748,8 @@ class _StatsTabState extends ConsumerState<StatsTab>
                   // ── Saving Throws ────────────────────────────────────────
                   DetailSection(
                     title: l10n.sectionSavingThrows,
+                    icon: Icons.verified_user_outlined,
+                    accentColor: scheme.tertiary,
                     child: _SavingThrowsList(
                       character: character,
                       l10n: l10n,
@@ -725,6 +761,8 @@ class _StatsTabState extends ConsumerState<StatsTab>
                   // ── Progression ──────────────────────────────────────────
                   DetailSection(
                     title: l10n.sectionProgression,
+                    icon: Icons.trending_up,
+                    accentColor: scheme.secondary,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -1153,6 +1191,8 @@ class _ConditionsSection extends StatelessWidget {
 
     return DetailSection(
       title: l10n.sectionActiveConditions,
+      icon: Icons.warning_amber_outlined,
+      accentColor: scheme.error,
       action: IconButton(
         icon: const Icon(Icons.add, size: 20),
         tooltip: l10n.conditionsAdd,

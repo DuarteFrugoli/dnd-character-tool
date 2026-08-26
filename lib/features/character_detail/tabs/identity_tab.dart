@@ -497,6 +497,8 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
             // ── Identity section ─────────────────────────────────────────────
             DetailSection(
               title: l10n.sectionIdentity,
+              icon: Icons.badge_outlined,
+              accentColor: scheme.primary,
               child: _IdentityPanel(
                 child: _isEditing
                     ? Column(
@@ -814,6 +816,8 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
             // ── Appearance section ───────────────────────────────────────────
             DetailSection(
               title: l10n.sectionAppearance,
+              icon: Icons.face_retouching_natural_outlined,
+              accentColor: scheme.secondary,
               child: _isEditing
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -920,6 +924,8 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
             // ── Personality section ──────────────────────────────────────────
             DetailSection(
               title: l10n.sectionPersonality,
+              icon: Icons.psychology_outlined,
+              accentColor: scheme.tertiary,
               child: _isEditing
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -962,6 +968,8 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
             // ── Backstory section ────────────────────────────────────────────
             DetailSection(
               title: l10n.sectionBackstory,
+              icon: Icons.menu_book_outlined,
+              accentColor: scheme.primary,
               child: _isEditing
                   ? _MultilineField(
                       label: null,

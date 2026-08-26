@@ -13,6 +13,21 @@ PageStorageKey<String> _featureExpansionKey(
   return PageStorageKey<String>(keyParts.join('|'));
 }
 
+RoundedRectangleBorder _featureCardShape({required Color accentColor}) {
+  return RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(10),
+    side: BorderSide(color: accentColor.withValues(alpha: 0.24)),
+  );
+}
+
+Widget _featureTypePill({
+  required BuildContext context,
+  required String label,
+  required Color color,
+}) {
+  return DetailPill(label: label, color: color, dense: true);
+}
+
 class RacialTraitsSection extends ConsumerWidget {
   const RacialTraitsSection({
     super.key,
@@ -57,11 +72,10 @@ class RacialTraitsSection extends ConsumerWidget {
     return SliverMainAxisGroup(
       slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            l10n.featuresSectionRacialTraits(title),
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          child: DetailSectionHeader(
+            title: l10n.featuresSectionRacialTraits(title),
+            icon: Icons.diversity_3_outlined,
+            accentColor: scheme.primary,
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -84,6 +98,10 @@ class RacialTraitsSection extends ConsumerWidget {
             if (desc == null || desc.isEmpty) {
               card = Card(
                 margin: const EdgeInsets.only(bottom: 6),
+                elevation: 0,
+                color: scheme.surfaceContainerLow,
+                surfaceTintColor: scheme.primary,
+                shape: _featureCardShape(accentColor: scheme.primary),
                 child: Column(
                   children: [
                     ListTile(
@@ -123,6 +141,10 @@ class RacialTraitsSection extends ConsumerWidget {
             } else {
               card = Card(
                 margin: const EdgeInsets.only(bottom: 6),
+                elevation: 0,
+                color: scheme.surfaceContainerLow,
+                surfaceTintColor: scheme.primary,
+                shape: _featureCardShape(accentColor: scheme.primary),
                 clipBehavior: Clip.antiAlias,
                 child: ExpansionTile(
                   key: _featureExpansionKey('race', [
@@ -203,8 +225,14 @@ class BackgroundFeatureSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
     final isDisabled = disabledFeatures.contains(featureName);
     final card = Card(
+      elevation: 0,
+      color: scheme.surfaceContainerLow,
+      surfaceTintColor: scheme.secondary,
+      shape: _featureCardShape(accentColor: scheme.secondary),
       child: ExpansionTile(
         key: _featureExpansionKey('background', [
           backgroundName,
@@ -232,15 +260,15 @@ class BackgroundFeatureSection extends ConsumerWidget {
         ],
       ),
     );
-    final l10n = AppLocalizations.of(context)!;
     return SliverMainAxisGroup(
       slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            l10n.featuresSectionBackground(i18n.backgroundName(backgroundName)),
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          child: DetailSectionHeader(
+            title: l10n.featuresSectionBackground(
+              i18n.backgroundName(backgroundName),
+            ),
+            icon: Icons.history_edu_outlined,
+            accentColor: scheme.secondary,
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -276,11 +304,10 @@ class ToolProficienciesSection extends ConsumerWidget {
     return SliverMainAxisGroup(
       slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            l10n.featuresSectionTools,
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          child: DetailSectionHeader(
+            title: l10n.featuresSectionTools,
+            icon: Icons.handyman_outlined,
+            accentColor: scheme.secondary,
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -292,6 +319,10 @@ class ToolProficienciesSection extends ConsumerWidget {
                 : f;
             return Card(
               margin: const EdgeInsets.only(bottom: 6),
+              elevation: 0,
+              color: scheme.surfaceContainerLow,
+              surfaceTintColor: scheme.secondary,
+              shape: _featureCardShape(accentColor: scheme.secondary),
               child: ListTile(
                 dense: true,
                 contentPadding: const EdgeInsets.symmetric(
@@ -381,6 +412,11 @@ class FeatsSection extends ConsumerWidget {
       final displayName = i18n.featName(f.name) ?? f.name;
       return Card(
         margin: const EdgeInsets.only(bottom: 10),
+        elevation: 0,
+        color: scheme.surfaceContainerLow,
+        surfaceTintColor: scheme.tertiary,
+        shape: _featureCardShape(accentColor: scheme.tertiary),
+        clipBehavior: Clip.antiAlias,
         child: ExpansionTile(
           key: _featureExpansionKey('feat', [f.name]),
           title: Text(
@@ -455,11 +491,10 @@ class FeatsSection extends ConsumerWidget {
     return SliverMainAxisGroup(
       slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            l10n.featuresSectionFeats,
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          child: DetailSectionHeader(
+            title: l10n.featuresSectionFeats,
+            icon: Icons.workspace_premium_outlined,
+            accentColor: scheme.tertiary,
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -605,6 +640,11 @@ class ExtraFeaturesSection extends ConsumerWidget {
           i18n.raceTraitName(f.name);
       return Card(
         margin: const EdgeInsets.only(bottom: 10),
+        elevation: 0,
+        color: scheme.surfaceContainerLow,
+        surfaceTintColor: scheme.primary,
+        shape: _featureCardShape(accentColor: scheme.primary),
+        clipBehavior: Clip.antiAlias,
         child: ExpansionTile(
           key: _featureExpansionKey('extra', [
             f.effectiveSourceType,
@@ -622,12 +662,10 @@ class ExtraFeaturesSection extends ConsumerWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Text(
-                sourceClass,
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: scheme.tertiary,
-                  fontWeight: FontWeight.bold,
-                ),
+              DetailPill(
+                label: i18n.className(sourceClass),
+                color: scheme.tertiary,
+                dense: true,
               ),
             ],
           ),
@@ -700,11 +738,10 @@ class ExtraFeaturesSection extends ConsumerWidget {
     return SliverMainAxisGroup(
       slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            l10n2.featuresSectionExtra,
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          child: DetailSectionHeader(
+            title: l10n2.featuresSectionExtra,
+            icon: Icons.auto_awesome_outlined,
+            accentColor: scheme.primary,
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -766,11 +803,10 @@ class ClassFeaturesSection extends ConsumerWidget {
       return SliverMainAxisGroup(
         slivers: [
           SliverToBoxAdapter(
-            child: Text(
-              l10n.featuresSectionClass(classLabel),
-              style: Theme.of(
-                context,
-              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+            child: DetailSectionHeader(
+              title: l10n.featuresSectionClass(classLabel),
+              icon: Icons.shield_outlined,
+              accentColor: scheme.primary,
             ),
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -809,6 +845,11 @@ class ClassFeaturesSection extends ConsumerWidget {
       );
       final card = Card(
         margin: const EdgeInsets.only(bottom: 10),
+        elevation: 0,
+        color: scheme.surfaceContainerLow,
+        surfaceTintColor: typeColor,
+        shape: _featureCardShape(accentColor: typeColor),
+        clipBehavior: Clip.antiAlias,
         child: ExpansionTile(
           key: _featureExpansionKey('class', [classEntry.id, f.name]),
           title: Row(
@@ -820,20 +861,10 @@ class ClassFeaturesSection extends ConsumerWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                decoration: BoxDecoration(
-                  color: typeColor.withAlpha(30),
-                  border: Border.all(color: typeColor.withAlpha(100)),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  featureTypeLabel(f.type, context),
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: typeColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+              _featureTypePill(
+                context: context,
+                label: featureTypeLabel(f.type, context),
+                color: typeColor,
               ),
             ],
           ),
@@ -893,11 +924,10 @@ class ClassFeaturesSection extends ConsumerWidget {
     return SliverMainAxisGroup(
       slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            l10n.featuresSectionClass(classLabel),
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          child: DetailSectionHeader(
+            title: l10n.featuresSectionClass(classLabel),
+            icon: Icons.shield_outlined,
+            accentColor: scheme.primary,
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -982,6 +1012,11 @@ class SubclassFeaturesSection extends ConsumerWidget {
       );
       final card = Card(
         margin: const EdgeInsets.only(bottom: 10),
+        elevation: 0,
+        color: scheme.surfaceContainerLow,
+        surfaceTintColor: typeColor,
+        shape: _featureCardShape(accentColor: typeColor),
+        clipBehavior: Clip.antiAlias,
         child: ExpansionTile(
           key: _featureExpansionKey('subclass', [
             classEntry.id,
@@ -998,22 +1033,12 @@ class SubclassFeaturesSection extends ConsumerWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                decoration: BoxDecoration(
-                  color: typeColor.withAlpha(30),
-                  border: Border.all(color: typeColor.withAlpha(100)),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  f.type == 'active'
-                      ? AppLocalizations.of(context)!.labelActive
-                      : AppLocalizations.of(context)!.labelPassive,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: typeColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+              _featureTypePill(
+                context: context,
+                label: f.type == 'active'
+                    ? AppLocalizations.of(context)!.labelActive
+                    : AppLocalizations.of(context)!.labelPassive,
+                color: typeColor,
               ),
             ],
           ),
@@ -1077,11 +1102,10 @@ class SubclassFeaturesSection extends ConsumerWidget {
     return SliverMainAxisGroup(
       slivers: [
         SliverToBoxAdapter(
-          child: Text(
-            l10n.featuresSectionSubclass(subclassLabel),
-            style: Theme.of(
-              context,
-            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          child: DetailSectionHeader(
+            title: l10n.featuresSectionSubclass(subclassLabel),
+            icon: Icons.account_tree_outlined,
+            accentColor: scheme.tertiary,
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 8)),

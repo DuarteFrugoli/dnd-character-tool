@@ -555,102 +555,118 @@ class ItemTile extends ConsumerWidget {
           : l10n.armorStealthDisadvantage;
     }
 
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      onTap: () => showItemDetailsSheet(context, ref, item, displayName, meta),
-      leading: canEquip
-          ? MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => _onEquipTap(context, ref, notifier),
+    final accentColor = item.isEquipped ? scheme.primary : scheme.outline;
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: ListTile(
+        tileColor: item.isEquipped
+            ? scheme.primary.withValues(alpha: 0.10)
+            : scheme.surfaceContainerLow,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(
+            color: item.isEquipped
+                ? scheme.primary.withValues(alpha: 0.36)
+                : scheme.outlineVariant.withValues(alpha: 0.68),
+          ),
+        ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+        onTap: () => showItemDetailsSheet(context, ref, item, displayName, meta),
+        leading: canEquip
+            ? MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () => _onEquipTap(context, ref, notifier),
+                  child: Tooltip(
+                    message: item.isEquipped
+                        ? l10n.inventoryTooltipUnequip
+                        : l10n.inventoryTooltipEquip,
+                    child: CircleAvatar(
+                      radius: 16,
+                      backgroundColor: item.isEquipped
+                          ? scheme.primary
+                          : accentColor.withValues(alpha: 0.10),
+                      child: Icon(
+                        _leadingIcon(item.itemType, item.isEquipped),
+                        size: 16,
+                        color: item.isEquipped
+                            ? scheme.onPrimary
+                            : scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            : null,
+        title: Text(
+          itemQuantityTitle(displayName, item.quantity),
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+        ),
+        subtitle: subtitleText != null
+            ? Text(
+                subtitleText,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 12, color: scheme.onSurfaceVariant),
+              )
+            : null,
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (reorderIndex != null)
+              ReorderableDragStartListener(
+                index: reorderIndex!,
                 child: Tooltip(
-                  message: item.isEquipped
-                      ? l10n.inventoryTooltipUnequip
-                      : l10n.inventoryTooltipEquip,
-                  child: CircleAvatar(
-                    radius: 16,
-                    backgroundColor: item.isEquipped
-                        ? scheme.primary
-                        : scheme.surfaceContainerHighest,
+                  message: reorderTooltip,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
                     child: Icon(
-                      _leadingIcon(item.itemType, item.isEquipped),
-                      size: 16,
-                      color: item.isEquipped
-                          ? scheme.onPrimary
-                          : scheme.onSurfaceVariant,
+                      Icons.drag_handle,
+                      size: 20,
+                      color: scheme.outline,
                     ),
                   ),
                 ),
               ),
-            )
-          : null,
-      title: Text(
-        itemQuantityTitle(displayName, item.quantity),
-        style: const TextStyle(fontSize: 14),
-      ),
-      subtitle: subtitleText != null
-          ? Text(
-              subtitleText,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 12, color: scheme.onSurfaceVariant),
-            )
-          : null,
-      trailing: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (reorderIndex != null)
-            ReorderableDragStartListener(
-              index: reorderIndex!,
-              child: Tooltip(
-                message: reorderTooltip,
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Icon(
-                    Icons.drag_handle,
-                    size: 20,
-                    color: scheme.outline,
+            PopupMenuButton<InventoryItemAction>(
+              onSelected: (action) {
+                switch (action) {
+                  case InventoryItemAction.move:
+                    showMoveItemSheet(
+                      context,
+                      ref,
+                      item: item,
+                      characterId: characterId,
+                      containers: containers,
+                    );
+                    break;
+                  case InventoryItemAction.remove:
+                    _confirmRemoveItem(context, ref, notifier);
+                    break;
+                }
+              },
+              itemBuilder: (ctx) => [
+                if (canMove)
+                  PopupMenuItem(
+                    value: InventoryItemAction.move,
+                    child: InventoryMenuItem(
+                      icon: Icons.drive_file_move_outlined,
+                      label: l10n.inventoryTooltipMove,
+                    ),
                   ),
-                ),
-              ),
-            ),
-          PopupMenuButton<InventoryItemAction>(
-            onSelected: (action) {
-              switch (action) {
-                case InventoryItemAction.move:
-                  showMoveItemSheet(
-                    context,
-                    ref,
-                    item: item,
-                    characterId: characterId,
-                    containers: containers,
-                  );
-                  break;
-                case InventoryItemAction.remove:
-                  _confirmRemoveItem(context, ref, notifier);
-                  break;
-              }
-            },
-            itemBuilder: (ctx) => [
-              if (canMove)
                 PopupMenuItem(
-                  value: InventoryItemAction.move,
+                  value: InventoryItemAction.remove,
                   child: InventoryMenuItem(
-                    icon: Icons.drive_file_move_outlined,
-                    label: l10n.inventoryTooltipMove,
+                    icon: Icons.delete_outline,
+                    label: l10n.inventoryTooltipRemove,
+                    isDestructive: true,
                   ),
                 ),
-              PopupMenuItem(
-                value: InventoryItemAction.remove,
-                child: InventoryMenuItem(
-                  icon: Icons.delete_outline,
-                  label: l10n.inventoryTooltipRemove,
-                  isDestructive: true,
-                ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

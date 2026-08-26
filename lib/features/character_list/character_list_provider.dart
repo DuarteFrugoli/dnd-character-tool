@@ -1,9 +1,11 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/review/app_review_service.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 
@@ -16,6 +18,11 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
   @override
   Future<List<Character>> build() async {
     final chars = await ref.read(characterRepositoryProvider).getAll();
+    unawaited(
+      ref
+          .read(appReviewServiceProvider)
+          .maybeRequestReview(characterCount: chars.length),
+    );
     return _sorted(chars);
   }
 

@@ -7,8 +7,8 @@ void main() {
     const policy = ReviewPromptPolicy();
     final now = DateTime(2026, 8, 14, 12);
     final eligibleState = ReviewPromptState(
-      firstSeenAt: now.subtract(const Duration(days: 4)),
-      appOpenCount: 4,
+      firstSeenAt: now.subtract(const Duration(days: 2)),
+      appOpenCount: 2,
       significantActionCount: 1,
     );
 
@@ -46,18 +46,18 @@ void main() {
       expect(shouldRequest(characterCount: 0), isFalse);
     });
 
-    test('blocks before four app opens', () {
+    test('blocks before two app opens', () {
       expect(
-        shouldRequest(state: eligibleState.copyWith(appOpenCount: 3)),
+        shouldRequest(state: eligibleState.copyWith(appOpenCount: 1)),
         isFalse,
       );
     });
 
-    test('blocks before three days of usage', () {
+    test('blocks before one day of usage', () {
       expect(
         shouldRequest(
           state: eligibleState.copyWith(
-            firstSeenAt: now.subtract(const Duration(days: 2, hours: 23)),
+            firstSeenAt: now.subtract(const Duration(hours: 23)),
           ),
         ),
         isFalse,

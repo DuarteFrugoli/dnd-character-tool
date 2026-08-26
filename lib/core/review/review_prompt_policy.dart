@@ -14,8 +14,8 @@ enum ReviewPromptBlockReason {
 
 class ReviewPromptPolicy {
   const ReviewPromptPolicy({
-    this.minAppOpenCount = 4,
-    this.minUsageAge = const Duration(days: 3),
+    this.minAppOpenCount = 2,
+    this.minUsageAge = const Duration(days: 1),
     this.promptCooldown = const Duration(days: 60),
     this.minSignificantActionCount = 1,
   });

@@ -816,14 +816,16 @@ The automatic prompt is intentionally rare. It currently requires:
 
 - Android platform and available in-app review API;
 - at least one saved character;
-- at least four app opens;
-- at least three days since the review system first saw the user;
+- at least two app opens;
+- at least one day since the review system first saw the user;
 - at least one significant action;
 - at least 60 days since the last attempt;
 - no previous attempt on the current app version.
 
 Current automatic milestones:
 
+- first character created;
+- note saved;
 - normal backup export from Settings;
 - successful level up.
 

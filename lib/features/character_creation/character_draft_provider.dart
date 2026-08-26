@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../core/review/app_review_service.dart';
 import '../../data/character_progression/character_progression.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/datasources/srd/srd_models.dart';
@@ -1117,6 +1120,14 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     character = character.copyWith(armorClass: calcArmorClass(character));
 
     await repo.save(character);
+    unawaited(
+      ref
+          .read(appReviewServiceProvider)
+          .recordMilestoneAndMaybeRequest(
+            milestone: ReviewMilestone.characterCreated,
+            characterCount: 1,
+          ),
+    );
     return character;
   }
 }

@@ -95,14 +95,18 @@ class AppReviewService {
     required ReviewMilestone milestone,
     required int characterCount,
   }) async {
+    if (!_isAndroid || characterCount <= 0) return false;
     await recordSignificantAction(milestone);
     return maybeRequestReview(characterCount: characterCount);
   }
 
   Future<bool> maybeRequestReview({required int characterCount}) async {
-    final isAndroid = _isAndroid;
-    final isReviewAvailable = isAndroid && await _safeIsAvailable();
-    final currentVersion = isAndroid ? await _safeCurrentVersion() : null;
+    if (!_isAndroid || characterCount <= 0) return false;
+
+    final isReviewAvailable = await _safeIsAvailable();
+    if (!isReviewAvailable) return false;
+
+    final currentVersion = await _safeCurrentVersion();
     final prefs = await _prefs();
     final state = _loadState(prefs);
     final now = _now();
@@ -110,7 +114,7 @@ class AppReviewService {
     final canRequest = _policy.shouldRequest(
       state: state,
       now: now,
-      isAndroid: isAndroid,
+      isAndroid: true,
       isReviewAvailable: isReviewAvailable,
       characterCount: characterCount,
       currentVersion: currentVersion,

@@ -914,6 +914,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         ? [...sameGroup, ...otherGroup]
         : [...otherGroup, ...sameGroup];
     await _save(c.copyWith(notes: _normalizeNoteSortOrders(notes)));
+    _recordNoteSavedMilestone();
   }
 
   Future<void> updateNote(CharacterNote updated) async {
@@ -922,6 +923,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final notes = c.notes.map((n) => n.id == updated.id ? updated : n).toList();
     await _save(
       c.copyWith(notes: _normalizeNoteSortOrders(_notesInDisplayOrder(notes))),
+    );
+    _recordNoteSavedMilestone();
+  }
+
+  void _recordNoteSavedMilestone() {
+    unawaited(
+      ref
+          .read(appReviewServiceProvider)
+          .recordMilestoneAndMaybeRequest(
+            milestone: ReviewMilestone.noteSaved,
+            characterCount: 1,
+          ),
     );
   }
 

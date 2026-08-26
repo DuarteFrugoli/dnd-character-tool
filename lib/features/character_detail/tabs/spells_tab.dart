@@ -174,7 +174,6 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
       return;
     }
     if (!mounted) return;
-    final character = widget.character;
     final spellcastingOrigin = widget.spellcastingSummary.primaryOrigin;
     final spellcastingClass = spellcastingOrigin?.classEntry;
     final cls = spellcastingClass?.className.toLowerCase() ?? '';

@@ -6047,7 +6047,7 @@
       }
     ],
     "raceSpells": [],
-    "description": "Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in the area into difficult terrain. When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be restrained by the tentacles until the spell ends.",
+    "description": "Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, the area is difficult terrain. When a creature enters the affected area for the first time on a turn or starts its turn there, it must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be restrained by the tentacles until the spell ends. A creature that starts its turn in the area and is already restrained by the tentacles takes 3d6 bludgeoning damage. A restrained creature can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself.",
     "higherLevels": null
   },
   {
@@ -6732,7 +6732,7 @@
     ],
     "subclassSpells": [],
     "raceSpells": [],
-    "description": "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects. You can't animate any object larger than Huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points.",
+    "description": "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, and Huge targets count as eight objects. You can't animate an object larger than Huge. Each target becomes a creature under your control until the spell ends or until reduced to 0 hit points. As a bonus action, you can mentally command any animated objects within 500 feet. If you command an object to attack, it makes one melee attack within 5 feet. Its attack bonus and bludgeoning damage depend on its size: Tiny +8 to hit, 1d4 + 4 damage; Small +6 to hit, 1d8 + 2; Medium +5 to hit, 2d6 + 1; Large +6 to hit, 2d10 + 2; Huge +8 to hit, 2d12 + 4. The GM might rule that a specific object deals slashing or piercing damage instead. Animated objects are constructs with AC and hit points by size: Tiny AC 18 HP 20; Small AC 16 HP 25; Medium AC 13 HP 40; Large AC 10 HP 50; Huge AC 10 HP 80.",
     "higherLevels": "If you cast this spell using a spell slot of 6th level or higher, you can animate two additional objects for each slot level above 5th."
   },
   {
@@ -7170,7 +7170,7 @@
     ],
     "subclassSpells": [],
     "raceSpells": [],
-    "description": "This spell shapes a creature's dreams. Choose a creature known to you as the target of this spell. The target must be on the same plane of existence as you. Creatures that don't sleep, such as elves, can't be contacted by this spell. You, or a willing creature you touch, enters a trance state, acting as a messenger. While in the trance, the messenger is aware of his or her surroundings, but can't take actions or move.",
+    "description": "This spell shapes a creature's dreams. Choose a creature known to you on the same plane of existence. Creatures that don't sleep, such as elves, can't be contacted. You, or a willing creature you touch, enters a trance and acts as a messenger. While in the trance, the messenger appears in the target's dreams and can converse with it for as long as it remains asleep. You can make the messenger seem monstrous and terrifying. If you do, the messenger can deliver a message of up to ten words, then the target must make a Wisdom saving throw. On a failed save, the target takes 3d6 psychic damage when it wakes and gains no benefit from that rest. If you have a body part, lock of hair, nail clipping, or similar portion of the target's body, the target has disadvantage on the save.",
     "higherLevels": null
   },
   {
@@ -8840,8 +8840,8 @@
     ],
     "subclassSpells": [],
     "raceSpells": [],
-    "description": "You create a wall of ice on a solid surface within range. The wall is 1 foot thick and up to 30 feet long and 10 feet high, or it's a hemispherical dome up to 20 feet in diameter. The wall remains in place for the duration. Each 10-foot section of the wall has AC 5 and 30 hit points. If a section is destroyed, it leaves behind a sheet of frigid air in the space the wall occupied. A creature moving through the sheet of frigid air for the first time on a turn must make a Constitution saving throw or take 5d6 cold damage.",
-    "higherLevels": "When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6 and the damage from passing through the sheet of frigid air increases by 1d6, for each slot level above 6th."
+    "description": "You create a wall of ice on a solid surface within range. You can form it into a hemispherical dome or sphere with a radius of up to 10 feet, or into a flat surface made of ten 10-foot-square panels. Each panel must be contiguous with another panel, and the wall is 1 foot thick. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall and must make a Dexterity saving throw. On a failed save, it takes 10d6 cold damage; on a success, it takes half as much damage. Each 10-foot section has AC 12, 30 hit points, and vulnerability to fire damage. Reducing a section to 0 hit points destroys it and leaves a sheet of frigid air in its space. The first time a creature moves through the sheet on a turn, it must make a Constitution saving throw, taking 5d6 cold damage on a failed save, or half as much on a successful one.",
+    "higherLevels": "When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6 and the damage from passing through the sheet of frigid air increases by 1d6 for each slot level above 6th."
   },
   {
     "name": "Wall of Thorns",
@@ -9624,7 +9624,7 @@
     ],
     "subclassSpells": [],
     "raceSpells": [],
-    "description": "A whirlwind howls down to a point on the ground you specify. The whirlwind is a 10-foot-radius, 30-foot-high cylinder centered on that point. Until the spell ends, you can use your action to move the whirlwind up to 30 feet in any direction along the ground. The whirlwind sucks up any Medium or smaller objects that aren't secured to anything and that aren't worn or carried. A creature must make a Dexterity saving throw the first time on a turn that it enters the whirlwind or that the whirlwind enters its space.",
+    "description": "A whirlwind howls down to a point on the ground you specify. It is a 10-foot-radius, 30-foot-high cylinder. Until the spell ends, you can use your action to move it up to 30 feet along the ground. The whirlwind sucks up Medium or smaller unsecured objects. A creature must make a Dexterity saving throw the first time on a turn that it enters the whirlwind's space, the whirlwind enters its space, or the whirlwind appears in its space. On a failed save, the creature takes 10d6 bludgeoning damage; on a success, it takes half as much. A Large or smaller creature that fails the save must also succeed on a Strength saving throw or be restrained in the whirlwind. A restrained creature is pulled 5 feet higher at the start of each of its turns, moves with the whirlwind, and falls when the spell ends unless it can stop the fall. A restrained creature can use its action to make a Strength or Dexterity check against your spell save DC. On a success, it escapes and is hurled 3d6 x 10 feet in a random direction.",
     "higherLevels": null
   },
   {
@@ -9852,7 +9852,7 @@
     ],
     "subclassSpells": [],
     "raceSpells": [],
-    "description": "You create a seismic disturbance at a point on the ground you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point. Each creature on the ground in that area must make a Dexterity saving throw. On a failed save, the creature is knocked prone. The area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature's concentration is broken.",
+    "description": "You create a seismic disturbance at a point on the ground you can see within range. For the duration, intense tremors shake the ground in a 100-foot-radius circle. The area is difficult terrain, and each creature concentrating in the area must make a Constitution saving throw to maintain concentration. When you cast the spell and at the end of each of your turns while you concentrate on it, each creature on the ground in the area must make a Dexterity saving throw or fall prone. The GM can add terrain effects such as fissures. On the turn after you cast the spell, 1d6 fissures can open in the area. A creature standing where a fissure opens must succeed on a Dexterity saving throw or fall in. The tremor deals 50 bludgeoning damage to structures in contact with the ground when you cast the spell and at the start of each of your turns until the spell ends. If a structure drops to 0 hit points, it collapses. A creature close enough to a collapsing structure must make a Dexterity saving throw, taking 5d6 bludgeoning damage, falling prone, and being buried on a failure, or taking half damage without falling prone or being buried on a success. A buried creature can escape with a DC 20 Strength (Athletics) check.",
     "higherLevels": null
   },
   {
@@ -9943,9 +9943,7 @@
     },
     "attackType": null,
     "saveAttribute": "CON",
-    "damageTypes": [
-      "radiant"
-    ],
+    "damageTypes": [],
     "classes": [
       "cleric"
     ],
@@ -10468,7 +10466,7 @@
     ],
     "subclassSpells": [],
     "raceSpells": [],
-    "description": "A shimmering, multicolored plane of light forms a vertical opaque wall — up to 90 feet long, 30 feet high, and 1 inch thick — centered on a point you can see within range. Alternatively, you can shape the wall into a sphere up to 30 feet in diameter centered on a point you choose within range. The wall remains in place for the duration. If you position the wall so that it passes through a space occupied by a creature, the spell fails, and your action and the spell slot are wasted.",
+    "description": "A shimmering, multicolored plane of light forms an opaque wall or sphere within range. The wall sheds bright light, and creatures near it when it appears can be blinded on a failed Constitution saving throw. The wall has seven layers in order from red to violet. When a creature tries to pass through the wall, it makes a Dexterity saving throw for each layer still present. Red deals 10d6 fire damage, or half on a success, and blocks nonmagical ranged attacks; it is destroyed by at least 25 cold damage. Orange deals 10d6 acid damage and blocks magical ranged attacks; it is destroyed by a strong wind. Yellow deals 10d6 lightning damage; it is destroyed by at least 60 force damage. Green deals 10d6 poison damage; it is destroyed by a passwall spell or another spell of equal or higher level that opens a portal on a solid surface. Blue deals 10d6 cold damage; it is destroyed by at least 25 fire damage. Indigo can restrain a creature; the creature makes Constitution saves at the end of its turns, ending the effect after three successes or becoming petrified after three failures. Indigo also blocks spells and is destroyed by bright light from a daylight spell or a similar spell of equal or higher level. Violet can blind a creature; on a failed Wisdom saving throw after the blindness, the creature is transported to another plane. Violet is destroyed by dispel magic or a similar spell of equal or higher level that can end spells and magical effects.",
     "higherLevels": null
   },
   {

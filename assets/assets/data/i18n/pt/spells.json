@@ -890,7 +890,7 @@
   },
   "Spirit Guardians": {
     "name": "Guardiões Espirituais",
-    "description": "Você invoca espíritos para protegê-lo. Eles flutuam ao seu redor a uma distância de 4,5 m pela duração. Se você for bom ou neutro, a forma espectral deles parece angelical ou feérica, à sua escolha. Se você for mau, eles parecem infernais. Quando conjura esta magia, pode designar qualquer número de criaturas que possa ver para não serem afetadas por ela. O deslocamento de uma criatura afetada é reduzido pela metade na área, e quando a criatura entra na área pela primeira vez em um turno ou começa seu turno nela, deve fazer um teste de resistência de Sabedoria.",
+    "description": "Você invoca espíritos para protegê-lo. Eles flutuam ao seu redor a uma distância de 4,5 m pela duração. Se você for bom ou neutro, a forma espectral deles parece angelical ou feérica, à sua escolha. Se você for mau, eles parecem infernais. Quando conjura esta magia, pode designar qualquer número de criaturas que possa ver para não serem afetadas. A velocidade de uma criatura afetada é reduzida pela metade na área. Quando uma criatura entra na área pela primeira vez em um turno ou começa o turno nela, ela faz um teste de resistência de Sabedoria. Em uma falha, sofre 3d8 de dano radiante se você for bom ou neutro, ou 3d8 de dano necrótico se você for mau. Em um sucesso, sofre metade desse dano.",
     "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 4º nível ou superior, o dano aumenta em 1d8 para cada nível do espaço acima do 3º.",
     "material": "um símbolo sagrado"
   },
@@ -1094,7 +1094,7 @@
   },
   "Animate Objects": {
     "name": "Animar Objetos",
-    "description": "Objetos ganham vida ao seu comando. Escolha até dez objetos não mágicos dentro do alcance que não estejam sendo vestidos ou carregados. Alvos Médios contam como dois objetos, alvos Grandes contam como quatro objetos e alvos Enormes contam como oito objetos. Você não pode animar nenhum objeto maior que Enorme. Cada alvo se anima e se torna uma criatura sob seu controle até a magia terminar ou até ser reduzido a 0 pontos de vida.",
+    "description": "Objetos ganham vida ao seu comando. Escolha até dez objetos não mágicos dentro do alcance que não estejam sendo vestidos ou carregados. Alvos Médios contam como dois objetos, Grandes como quatro e Enormes como oito; nenhum pode ser maior que Enorme. Cada alvo vira uma criatura sob seu controle até a magia acabar ou chegar a 0 PV. Como ação bônus, você comanda mentalmente objetos animados a até 150 m. Se mandar atacar, cada objeto faz um ataque corpo a corpo a até 1,5 m. Ataque e dano de concussão por tamanho: Miúdo +8, 1d4 + 4; Pequeno +6, 1d8 + 2; Médio +5, 2d6 + 1; Grande +6, 2d10 + 2; Enorme +8, 2d12 + 4. O mestre pode decidir que um objeto específico causa dano cortante ou perfurante. CA/PV por tamanho: Miúdo 18/20; Pequeno 16/25; Médio 13/40; Grande 10/50; Enorme 10/80.",
     "higherLevels": "Se você conjura esta magia usando um espaço de magia de 6º nível ou superior, pode animar dois objetos adicionais para cada nível do espaço acima do 5º."
   },
   "Antilife Shell": {
@@ -1165,7 +1165,7 @@
   },
   "Dream": {
     "name": "Sonho",
-    "description": "Esta magia molda os sonhos de uma criatura. Escolha uma criatura conhecida por você como alvo desta magia. O alvo deve estar no mesmo plano de existência que você. Criaturas que não dormem, como elfos, não podem ser contatadas por esta magia. Você, ou uma criatura voluntária que você toca, entra em estado de transe, atuando como mensageiro. Enquanto estiver em transe, o mensageiro percebe seus arredores, mas não pode realizar ações nem se mover.",
+    "description": "Esta magia molda os sonhos de uma criatura. Escolha uma criatura conhecida por você no mesmo plano de existência. Criaturas que não dormem, como elfos, não podem ser contatadas. Você, ou uma criatura voluntária que você toca, entra em transe e atua como mensageiro. Durante o transe, o mensageiro aparece nos sonhos do alvo e pode conversar com ele enquanto ele dormir. Você pode fazer o mensageiro parecer monstruoso e aterrorizante. Nesse caso, o mensageiro pode entregar uma mensagem de até dez palavras, e então o alvo deve fazer um teste de resistência de Sabedoria. Em uma falha, o alvo sofre 3d6 de dano psíquico ao acordar e não recebe benefício daquele descanso. Se você tiver uma parte do corpo, mecha de cabelo, unha ou porção semelhante do corpo do alvo, ele tem desvantagem nesse teste.",
     "higherLevels": null,
     "material": "um punhado de areia, um pouco de tinta e uma pena de escrever arrancada de um pássaro adormecido"
   },
@@ -1413,9 +1413,9 @@
     "description": "Um globo frígido de energia fria dispara das pontas dos seus dedos até um ponto à sua escolha dentro do alcance, onde explode em uma esfera de 18 m de raio. Cada criatura dentro da área deve fazer um teste de resistência de Constituição. Em uma falha, sofre 10d6 de dano de frio, ou metade desse dano em um sucesso. Se o globo atingir um corpo de água ou líquido composto principalmente de água, ele congela o líquido até uma profundidade de 15 cm em uma área de 9 m quadrados.",
     "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 7º nível ou superior, o dano aumenta em 1d6 para cada nível do espaço acima do 6º."
   },
-  "Otto's Irresistible Dance": {
-    "name": "Dança Irresistível de Otto",
-    "description": "Escolha uma criatura que você possa ver dentro do alcance. O alvo começa uma dança cômica no lugar: arrastando os pés, batendo os pés no chão e saltitando pela duração. Criaturas que não podem ser enfeitiçadas são imunes a esta magia. Uma criatura dançante deve usar todo seu movimento para dançar sem sair do espaço e tem desvantagem em testes de resistência de Destreza e jogadas de ataque. Enquanto o alvo estiver afetado, outras criaturas têm vantagem nas jogadas de ataque contra ele.",
+  "Irresistible Dance": {
+    "name": "Dança Irresistível",
+    "description": "Escolha uma criatura que você possa ver dentro do alcance. O alvo começa uma dança cômica no lugar pela duração. Criaturas que não podem ser enfeitiçadas são imunes. Uma criatura dançante deve usar todo seu movimento para dançar sem sair do espaço e tem desvantagem em testes de resistência de Destreza e jogadas de ataque. Enquanto o alvo estiver afetado, outras criaturas têm vantagem em jogadas de ataque contra ele. Como ação, uma criatura dançante pode fazer um teste de resistência de Sabedoria para recuperar o controle. Em um sucesso, a magia termina.",
     "higherLevels": null
   },
   "Planar Ally": {
@@ -1448,8 +1448,8 @@
   },
   "Wall of Ice": {
     "name": "Muralha de Gelo",
-    "description": "Você cria uma muralha de gelo sobre uma superfície sólida dentro do alcance. Pode fazê-la ter até 18 m de comprimento, 3 m de altura e 1,5 m de espessura, ou ser um círculo com 6 m de diâmetro, até 6 m de altura e 1,5 m de espessura. A muralha bloqueia linha de visão. Quando a muralha aparece, cada criatura em sua área deve fazer um teste de resistência de Destreza. Em uma falha, uma criatura sofre 10d6 de dano de frio, ou metade em um sucesso. Ao destruir uma seção da muralha, uma folha de ar congelante permanece no espaço ocupado por ela.",
-    "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 7º nível ou superior, ambos os tipos de dano aumentam em 1d8 para cada nível do espaço acima do 6º.",
+    "description": "Você cria uma muralha de gelo sobre uma superfície sólida dentro do alcance. Ela pode ser uma cúpula hemisférica ou esfera com raio de até 3 m, ou uma superfície plana formada por dez painéis de 3 m por 3 m. Cada painel deve tocar outro painel, e a muralha tem 30 cm de espessura. Se a muralha atravessa o espaço de uma criatura ao aparecer, a criatura é empurrada para um lado e faz um teste de resistência de Destreza. Em uma falha, sofre 10d6 de dano frio; em um sucesso, sofre metade. Cada seção de 3 m tem CA 12, 30 PV e vulnerabilidade a dano de fogo. Reduzir uma seção a 0 PV a destrói e deixa uma lâmina de ar gélido no espaço dela. A primeira vez que uma criatura atravessa essa lâmina em um turno, faz um teste de resistência de Constituição; em uma falha, sofre 5d6 de dano frio, ou metade em um sucesso.",
+    "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 7º nível ou superior, o dano causado quando a muralha aparece aumenta em 2d6, e o dano ao atravessar a lâmina de ar gélido aumenta em 1d6, para cada nível do espaço acima do 6º.",
     "material": "um pequeno pedaço de quartzo"
   },
   "Wall of Thorns": {
@@ -1583,7 +1583,7 @@
   },
   "Whirlwind": {
     "name": "Redemoinho",
-    "description": "Um redemoinho desce uivando até um ponto no chão que você especificar. O redemoinho é um cilindro de 3 m de raio e 9 m de altura centrado nesse ponto. Até a magia terminar, você pode usar sua ação para mover o redemoinho até 9 m em qualquer direção pelo chão. O redemoinho suga quaisquer objetos Médios ou menores que não estejam presos a nada e que não estejam sendo vestidos ou carregados. Uma criatura deve fazer um teste de resistência de Destreza na primeira vez em um turno que entra no redemoinho ou que o redemoinho entra no espaço dela.",
+    "description": "Um redemoinho desce uivando até um ponto no chão que você especificar. Ele é um cilindro de 3 m de raio e 9 m de altura. Até a magia terminar, você pode usar sua ação para movê-lo até 9 m pelo chão. O redemoinho suga objetos Médios ou menores que não estejam presos. Uma criatura faz um teste de resistência de Destreza na primeira vez em um turno que entra no espaço do redemoinho, que o redemoinho entra no espaço dela, ou que o redemoinho aparece no espaço dela. Em uma falha, sofre 10d6 de dano de concussão; em um sucesso, sofre metade. Uma criatura Grande ou menor que falhe também deve ser bem-sucedida em um teste de resistência de Força ou fica impedida no redemoinho. Uma criatura impedida é puxada 1,5 m para cima no início de cada turno dela, move-se com o redemoinho e cai quando a magia termina se não puder impedir a queda. Ela pode usar sua ação para fazer um teste de Força ou Destreza contra a CD das suas magias. Em um sucesso, escapa e é arremessada 3d6 x 3 m em uma direção aleatória.",
     "higherLevels": null,
     "material": "um pedaço de palha"
   },
@@ -1623,7 +1623,7 @@
   },
   "Earthquake": {
     "name": "Terremoto",
-    "description": "Você cria um distúrbio sísmico em um ponto no chão que possa ver dentro do alcance. Pela duração, um tremor intenso rasga o chão em um círculo de 30 m de raio centrado nesse ponto. Cada criatura no chão nessa área deve fazer um teste de resistência de Destreza. Em uma falha, a criatura cai no chão. A área se torna terreno difícil. Cada criatura no chão que esteja se concentrando deve fazer um teste de resistência de Constituição. Em uma falha, a concentração da criatura é quebrada.",
+    "description": "Você cria um distúrbio sísmico em um ponto no chão que possa ver dentro do alcance. Pela duração, tremores intensos sacodem o chão em um círculo de 30 m de raio. A área é terreno difícil, e cada criatura concentrando-se ali deve fazer um teste de resistência de Constituição para manter a concentração. Quando você conjura a magia e ao fim de cada um dos seus turnos enquanto se concentra nela, cada criatura no chão da área deve fazer um teste de resistência de Destreza ou cair no chão. O mestre pode adicionar efeitos de terreno, como fissuras. No turno após conjurar a magia, 1d6 fissuras podem se abrir na área. Uma criatura onde uma fissura se abre deve ser bem-sucedida em um teste de resistência de Destreza ou cai dentro dela. O tremor causa 50 de dano de concussão a estruturas em contato com o chão quando você conjura a magia e no início de cada um dos seus turnos até ela terminar. Se uma estrutura cair a 0 PV, ela desaba. Uma criatura perto de uma estrutura desabando deve fazer um teste de resistência de Destreza; em uma falha, sofre 5d6 de dano de concussão, cai no chão e fica soterrada. Em um sucesso, sofre metade do dano e não cai nem fica soterrada. Uma criatura soterrada pode escapar com um teste de Força (Atletismo) CD 20.",
     "higherLevels": null,
     "material": "uma pitada de terra, um pedaço de pedra e um pedaço de argila"
   },
@@ -1727,7 +1727,7 @@
   },
   "Prismatic Wall": {
     "name": "Muralha Prismática",
-    "description": "Um plano cintilante e multicolorido de luz forma uma muralha vertical opaca — com até 27 m de comprimento, 9 m de altura e 2,5 cm de espessura — centrada em um ponto que você possa ver dentro do alcance. Alternativamente, você pode moldar a muralha em uma esfera de até 9 m de diâmetro centrada em um ponto à sua escolha dentro do alcance. A muralha permanece no lugar pela duração. Se você posicionar a muralha de forma que ela atravesse um espaço ocupado por uma criatura, a magia falha, e sua ação e o espaço de magia são desperdiçados.",
+    "description": "Um plano cintilante e multicolorido de luz forma uma muralha ou esfera opaca dentro do alcance. A muralha emite luz plena, e criaturas próximas quando ela aparece podem ficar cegas em uma falha em teste de resistência de Constituição. A muralha tem sete camadas, do vermelho ao violeta. Quando uma criatura tenta atravessá-la, faz um teste de resistência de Destreza para cada camada ainda presente. Vermelho causa 10d6 de dano de fogo, ou metade em um sucesso, e bloqueia ataques à distância não mágicos; é destruído por pelo menos 25 de dano frio. Laranja causa 10d6 de dano ácido e bloqueia ataques à distância mágicos; é destruído por vento forte. Amarelo causa 10d6 de dano elétrico; é destruído por pelo menos 60 de dano de força. Verde causa 10d6 de dano venenoso; é destruído por uma magia passwall ou outra magia de nível igual ou superior que abra um portal em uma superfície sólida. Azul causa 10d6 de dano frio; é destruído por pelo menos 25 de dano de fogo. Índigo pode impedir uma criatura; ela faz testes de resistência de Constituição ao fim dos turnos dela, encerrando o efeito com três sucessos ou ficando petrificada com três falhas. Índigo também bloqueia magias e é destruído por luz plena de daylight ou magia semelhante de nível igual ou superior. Violeta pode cegar uma criatura; em uma falha em teste de resistência de Sabedoria após a cegueira, a criatura é transportada para outro plano. Violeta é destruído por dispel magic ou magia semelhante de nível igual ou superior que possa encerrar magias e efeitos mágicos.",
     "higherLevels": null
   },
   "Shapechange": {
@@ -1769,9 +1769,15 @@
     "higherLevels": null
   },
   "Conjure Woodland Beings": {
+    "name": "Conjurar Seres da Floresta",
+    "description": "Você invoca criaturas feéricas que aparecem em espaços desocupados que possa ver dentro do alcance. Escolha uma opção: uma criatura feérica de nível de desafio 2 ou menor; duas de ND 1 ou menor; quatro de ND 1/2 ou menor; ou oito de ND 1/4 ou menor. As criaturas são amistosas a você e seus companheiros, rolam iniciativa como grupo e obedecem aos seus comandos verbais. Elas desaparecem quando caem a 0 PV ou quando a magia termina. O mestre escolhe as estatísticas das criaturas.",
+    "higherLevels": "Quando você conjura esta magia usando certos espaços de magia de nível superior, escolhe uma das opções acima e mais criaturas aparecem: o dobro com um espaço de 6º nível e o triplo com um espaço de 8º nível.",
     "material": "uma baga de azevinho por criatura convocada"
   },
   "Evard's Black Tentacles": {
+    "name": "Tentáculos Negros de Evard",
+    "description": "Tentáculos negros e retorcidos preenchem um quadrado de 6 m no chão que você possa ver dentro do alcance. Pela duração, a área é terreno difícil. Quando uma criatura entra na área afetada pela primeira vez em um turno ou começa o turno nela, deve ser bem-sucedida em um teste de resistência de Destreza ou sofre 3d6 de dano de concussão e fica impedida pelos tentáculos até a magia terminar. Uma criatura que começa o turno na área e já está impedida pelos tentáculos sofre 3d6 de dano de concussão. Uma criatura impedida pode usar sua ação para fazer um teste de Força ou Destreza, à escolha dela, contra a CD das suas magias. Em um sucesso, ela se liberta.",
+    "higherLevels": null,
     "material": "um pedaço de tentáculo de um polvo gigante ou de uma lula gigante"
   }
 }

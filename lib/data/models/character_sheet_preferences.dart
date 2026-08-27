@@ -23,8 +23,8 @@ class InventorySectionId {
   static const defaults = [
     ammunition,
     equipped,
-    containers,
     equippable,
+    containers,
     carried,
   ];
 }

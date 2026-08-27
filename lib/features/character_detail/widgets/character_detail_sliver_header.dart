@@ -345,7 +345,7 @@ class _CharacterActionMenu extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           border: Border.all(color: scheme.primary.withValues(alpha: 0.42)),
         ),
-        child: Icon(Icons.auto_awesome_outlined, color: scheme.primary),
+        child: Icon(Icons.more_vert, color: scheme.primary),
       ),
       tooltip: MaterialLocalizations.of(context).moreButtonTooltip,
       onSelected: (action) {

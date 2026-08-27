@@ -274,27 +274,6 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 12)),
           ],
-          if (inventory.containers.isNotEmpty) ...[
-            SliverToBoxAdapter(
-              child: _InventorySliverSectionHeader(
-                title: l10n.inventoryContainersSection(
-                  inventory.containers.length,
-                ),
-                icon: Icons.inventory_2_outlined,
-                accentColor: scheme.secondary,
-              ),
-            ),
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              sliver: _ContainersSection(
-                containers: inventory.containers,
-                contentsByContainer: inventory.contentsByContainer,
-                i18n: i18n,
-                characterId: widget.characterId,
-              ),
-            ),
-            const SliverToBoxAdapter(child: SizedBox(height: 12)),
-          ],
           if (inventory.equippable.isNotEmpty) ...[
             SliverToBoxAdapter(
               child: _InventorySliverSectionHeader(
@@ -336,6 +315,27 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                   characterId: widget.characterId,
                   reorderIndex: reorderIndex,
                 ),
+              ),
+            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 12)),
+          ],
+          if (inventory.containers.isNotEmpty) ...[
+            SliverToBoxAdapter(
+              child: _InventorySliverSectionHeader(
+                title: l10n.inventoryContainersSection(
+                  inventory.containers.length,
+                ),
+                icon: Icons.inventory_2_outlined,
+                accentColor: scheme.secondary,
+              ),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              sliver: _ContainersSection(
+                containers: inventory.containers,
+                contentsByContainer: inventory.contentsByContainer,
+                i18n: i18n,
+                characterId: widget.characterId,
               ),
             ),
             const SliverToBoxAdapter(child: SizedBox(height: 12)),

@@ -18,6 +18,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Temas**: o tema `High Contrast` atual foi renomeado para `Eclipse`, mantendo as mesmas cores e usando `eclipse` como ID canonico.
 - **Visual**: tela inicial, seletor de temas, cabecalho e barra de abas da ficha receberam previews, gradientes e acentos mais fortes para reforcar a identidade visual do app.
 - **Ficha - abas**: identidade, stats, pericias, habilidades, magias, inventario e notas receberam cards, headers, estados vazios e acentos visuais mais consistentes com os novos temas.
+- **Inventario - ordem**: a ordem padrao passou a priorizar municao, itens equipados, itens equipaveis nao equipados, recipientes e demais itens.
 - **Ficha**: abas principais mantem estado e pre-aquecem dados vizinhos para reduzir travadas na primeira troca entre abas.
 - **Play Store**: pedido automatico de avaliacao agora pode aparecer mais cedo, apos dois usos, um dia de uso e acoes como criar personagem ou salvar nota.
 

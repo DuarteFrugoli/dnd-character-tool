@@ -7,6 +7,7 @@ import '../../../data/datasources/srd/srd_models.dart';
 import '../../../data/feature_choice_engine.dart';
 import '../../../data/feature_choice_option_resolver.dart';
 import '../../../data/models/models.dart';
+import 'feature_choice_display_helpers.dart';
 
 typedef FeatureChoiceLabelBuilder =
     String Function(FeatureChoiceRequest request);
@@ -190,14 +191,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
                 child: Column(
                   children: [
                     for (final option in options)
-                      RadioListTile<String>(
-                        value: option.id,
-                        dense: true,
-                        title: Text(option.name),
-                        subtitle: option.description == null
-                            ? null
-                            : Text(option.description!),
-                      ),
+                      _buildRadioOption(context, request, option),
                   ],
                 ),
               )
@@ -205,18 +199,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
               Column(
                 children: [
                   for (final option in options)
-                    CheckboxListTile(
-                      value: values.contains(option.id),
-                      dense: true,
-                      controlAffinity: ListTileControlAffinity.leading,
-                      title: Text(option.name),
-                      subtitle: option.description == null
-                          ? null
-                          : Text(option.description!),
-                      onChanged: (checked) {
-                        _toggle(request, option.id, checked ?? false);
-                      },
-                    ),
+                    _buildCheckboxOption(context, request, option, values),
                 ],
               ),
           ],
@@ -240,6 +223,49 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
       relatedRequests: widget.requests,
       choices: _currentChoices,
     ).options;
+  }
+
+  Widget _buildRadioOption(
+    BuildContext context,
+    FeatureChoiceRequest request,
+    SrdFeatureChoiceOption option,
+  ) {
+    final subtitle = featureChoiceOptionSubtitle(
+      context: context,
+      request: request,
+      option: option,
+      i18n: widget.i18n,
+    );
+    return RadioListTile<String>(
+      value: option.id,
+      dense: true,
+      title: Text(option.name),
+      subtitle: subtitle == null ? null : Text(subtitle),
+    );
+  }
+
+  Widget _buildCheckboxOption(
+    BuildContext context,
+    FeatureChoiceRequest request,
+    SrdFeatureChoiceOption option,
+    List<String> values,
+  ) {
+    final subtitle = featureChoiceOptionSubtitle(
+      context: context,
+      request: request,
+      option: option,
+      i18n: widget.i18n,
+    );
+    return CheckboxListTile(
+      value: values.contains(option.id),
+      dense: true,
+      controlAffinity: ListTileControlAffinity.leading,
+      title: Text(option.name),
+      subtitle: subtitle == null ? null : Text(subtitle),
+      onChanged: (checked) {
+        _toggle(request, option.id, checked ?? false);
+      },
+    );
   }
 
   String _choiceLabel(

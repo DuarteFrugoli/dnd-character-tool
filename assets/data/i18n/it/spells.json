@@ -870,8 +870,8 @@
   },
   "Spirit Guardians": {
     "name": "Guardiani dello Spirito",
-    "description": "Evochi gli spiriti per proteggerti. Volano attorno a te fino a una distanza di 4,5 metri per tutta la durata. Se sei buono o neutrale, la loro forma spettrale apparirà angelica o fatata (a tua scelta). Se sei malvagio, appaiono diabolici. Quando lanci questo incantesimo, puoi designare un qualsiasi numero di creature che puoi vedere come immuni da esso. La velocità di una creatura influenzata nell'area viene dimezzata e quando la creatura entra nell'area per la prima volta in un turno o inizia il suo turno lì, deve effettuare un tiro salvezza su Saggezza. Se il Tiro Salvezza fallisce, la creatura subisce 3d8 danni radiosi (se si è buoni o neutrali) o 3d8 danni necrotici (se si è malvagi). Se il tiro salvezza riesce, la creatura subisce la metà dei danni.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 4° livello o superiore, il danno aumenta di 1d8 per ogni livello dello slot superiore al 3°.",
+    "description": "Invochi spiriti che ti proteggono. Svolazzano intorno a te entro 4,5 m per la durata. Se sei buono o neutrale, la loro forma spettrale appare angelica o fatata, a tua scelta; se sei malvagio, appare immonda. Quando lanci l'incantesimo, puoi designare quante creature visibili desideri perché non ne siano influenzate. La velocità di una creatura influenzata è dimezzata nell'area. Quando una creatura entra nell'area per la prima volta in un turno o vi inizia il turno, effettua un tiro salvezza su Saggezza. Se fallisce, subisce 3d8 danni radiosi se sei buono o neutrale, oppure 3d8 danni necrotici se sei malvagio. Se riesce, subisce metà danni.",
+    "higherLevels": "Quando lanci questo incantesimo usando uno slot di 4° livello o superiore, i danni aumentano di 1d8 per ogni livello dello slot oltre il 3°.",
     "material": "un simbolo sacro"
   },
   "Stinking Cloud": {
@@ -977,7 +977,7 @@
   },
   "Evard's Black Tentacles": {
     "name": "I tentacoli neri di Evard",
-    "description": "Tentacoli d'ebano che si contorcono riempiono un quadrato di 6 metri di terreno visibile entro gittata. Per la durata, questi tentacoli trasformano il terreno nell'area in terreno difficile. Quando una creatura entra nell'area influenzata per la prima volta in un turno o inizia il suo turno lì, deve riuscire un tiro salvezza su Destrezza o subire 3d6 danni contundenti ed essere trattenuta dai tentacoli fino al termine dell'incantesimo.",
+    "description": "Tentacoli neri e contorti riempiono un quadrato di 6 m sul terreno che puoi vedere entro gittata. Per la durata, l'area è terreno difficile. Quando una creatura entra nell'area influenzata per la prima volta in un turno o vi inizia il turno, deve superare un tiro salvezza su Destrezza o subire 3d6 danni contundenti ed essere trattenuta dai tentacoli fino al termine dell'incantesimo. Una creatura che inizia il turno nell'area ed è già trattenuta dai tentacoli subisce 3d6 danni contundenti. Una creatura trattenuta può usare la sua azione per effettuare una prova di Forza o Destrezza, a sua scelta, contro la CD del tuo tiro salvezza degli incantesimi. Se riesce, si libera.",
     "higherLevels": null,
     "material": "un pezzo di tentacolo di un polipo gigante o di un calamaro gigante"
   },
@@ -1086,8 +1086,8 @@
   },
   "Animate Objects": {
     "name": "Animare oggetti",
-    "description": "Gli oggetti prendono vita al tuo comando. Scegli fino a dieci oggetti non magici entro il raggio d'azione che non vengono indossati o trasportati. I bersagli medi contano come due oggetti, i bersagli grandi contano come quattro oggetti, i bersagli enormi contano come otto oggetti. Non puoi animare nessun oggetto più grande di Enorme. Ogni bersaglio si anima e diventa una creatura sotto il tuo controllo finché l'incantesimo non termina o finché non viene ridotto a 0 punti ferita.",
-    "higherLevels": "Se lanci questo incantesimo utilizzando uno slot incantesimo di 6° livello o superiore, puoi animare due oggetti aggiuntivi per ogni livello di slot superiore al 5°."
+    "description": "Gli oggetti prendono vita al tuo comando. Scegli fino a dieci oggetti non magici entro gittata che non siano indossati o trasportati. I bersagli Medi contano come due oggetti, quelli Grandi come quattro e quelli Enormi come otto; non puoi animare oggetti più grandi di Enormi. Ogni bersaglio diventa una creatura sotto il tuo controllo finché l'incantesimo termina o finché scende a 0 punti ferita. Come azione bonus, puoi comandare mentalmente qualsiasi oggetto animato entro 150 m. Se ordini a un oggetto di attaccare, esso effettua un attacco in mischia entro 1,5 m. Bonus d'attacco e danni contundenti dipendono dalla taglia: Minuscolo +8, 1d4 + 4; Piccolo +6, 1d8 + 2; Medio +5, 2d6 + 1; Grande +6, 2d10 + 2; Enorme +8, 2d12 + 4. Il DM può decidere che un oggetto specifico infligga invece danni taglienti o perforanti. CA/PF per taglia: Minuscolo 18/20; Piccolo 16/25; Medio 13/40; Grande 10/50; Enorme 10/80.",
+    "higherLevels": "Se lanci questo incantesimo usando uno slot di 6° livello o superiore, puoi animare due oggetti aggiuntivi per ogni livello dello slot oltre il 5°."
   },
   "Antilife Shell": {
     "name": "Guscio Antivita",
@@ -1157,7 +1157,7 @@
   },
   "Dream": {
     "name": "Sogno",
-    "description": "Questo incantesimo modella i sogni di una creatura. Scegli una creatura a te nota come bersaglio di questo incantesimo. Il bersaglio deve trovarsi sul tuo stesso piano di esistenza. Le creature che non dormono, come gli elfi, non possono essere contattate da questo incantesimo. Tu, o una creatura consenziente che tocchi, entri in uno stato di trance, agendo come un messaggero. Mentre è in trance, il messaggero è consapevole di ciò che lo circonda, ma non può intraprendere azioni o muoversi.",
+    "description": "Questo incantesimo plasma i sogni di una creatura. Scegli una creatura che conosci sullo stesso piano di esistenza. Le creature che non dormono, come gli elfi, non possono essere contattate. Tu, o una creatura consenziente che tocchi, entri in trance e agisci da messaggero. Durante la trance, il messaggero appare nei sogni del bersaglio e può conversare con lui finché dorme. Puoi rendere il messaggero mostruoso e terrificante. Se lo fai, può consegnare un messaggio di massimo dieci parole, poi il bersaglio effettua un tiro salvezza su Saggezza. Se fallisce, il bersaglio subisce 3d6 danni psichici al risveglio e non ottiene benefici da quel riposo. Se possiedi una parte del corpo, una ciocca di capelli, un'unghia o una porzione simile del bersaglio, questi ha svantaggio al tiro salvezza.",
     "higherLevels": null,
     "material": "una manciata di sabbia, una goccia d'inchiostro e una penna per scrivere strappata a un uccello addormentato"
   },
@@ -1435,8 +1435,8 @@
   },
   "Wall of Ice": {
     "name": "Muro di ghiaccio",
-    "description": "Crei un muro di ghiaccio su una superficie solida entro la gittata. Il muro è spesso 30 cm, lungo fino a 9 metri e alto 3 metri, oppure è una cupola emisferica fino a 20 piedi di diametro. Il muro rimane al suo posto per tutta la durata. Ogni sezione di 3 metri del muro ha CA 5 e 30 punti ferita. Se una sezione viene distrutta, lascia dietro di sé uno strato di aria gelida nello spazio occupato dal muro. Una creatura che si muove attraverso la cortina di aria gelida per la prima volta in un turno deve effettuare un tiro salvezza su Costituzione o subire 5d6 danni da freddo.",
-    "higherLevels": "Quando esegui questo incantesimo utilizzando uno slot incantesimo di 7° livello o superiore, il danno inflitto dal muro quando appare aumenta di 2d6 e il danno derivante dal passaggio attraverso la cortina di aria gelida aumenta di 1d6, per ogni livello dello slot superiore al 6°.",
+    "description": "Crei un muro di ghiaccio su una superficie solida entro gittata. Puoi formarlo come una cupola emisferica o una sfera con raggio massimo di 3 m, oppure come una superficie piana composta da dieci pannelli di 3 m per 3 m. Ogni pannello deve essere contiguo a un altro, e il muro ha spessore 30 cm. Se il muro attraversa lo spazio di una creatura quando appare, la creatura è spinta da un lato ed effettua un tiro salvezza su Destrezza. Se fallisce, subisce 10d6 danni da freddo; se riesce, metà danni. Ogni sezione di 3 m ha CA 12, 30 punti ferita e vulnerabilità ai danni da fuoco. Ridurre una sezione a 0 punti ferita la distrugge e lascia una lastra di aria gelida nel suo spazio. La prima volta che una creatura attraversa quella lastra in un turno, effettua un tiro salvezza su Costituzione; se fallisce, subisce 5d6 danni da freddo, o metà se riesce.",
+    "higherLevels": "Quando lanci questo incantesimo usando uno slot di 7° livello o superiore, i danni che il muro infligge quando appare aumentano di 2d6 e i danni dell'aria gelida aumentano di 1d6 per ogni livello dello slot oltre il 6°.",
     "material": "un piccolo pezzo di quarzo"
   },
   "Wall of Thorns": {
@@ -1570,7 +1570,7 @@
   },
   "Whirlwind": {
     "name": "Vortice",
-    "description": "Un turbine ulula fino a un punto del terreno specificato. Il turbine è un cilindro del raggio di 3 metri e alto 9 metri centrato su quel punto. Fino al termine dell'incantesimo, puoi usare la tua azione per spostare il turbine fino a 9 metri in qualsiasi direzione lungo il terreno. Il turbine risucchia qualsiasi oggetto di taglia Media o inferiore che non sia fissato a nulla e che non venga indossato o trasportato. Una creatura deve effettuare un tiro salvezza su Destrezza la prima volta in un turno in cui entra nel turbine o in cui il turbine entra nel suo spazio.",
+    "description": "Un turbine scende ululando su un punto del terreno che specifichi. È un cilindro con raggio di 3 m e altezza di 9 m. Fino al termine dell'incantesimo, puoi usare la tua azione per muoverlo fino a 9 m lungo il terreno. Il turbine risucchia oggetti Medi o più piccoli non fissati. Una creatura effettua un tiro salvezza su Destrezza la prima volta in un turno che entra nello spazio del turbine, che il turbine entra nel suo spazio, o che appare nel suo spazio. Se fallisce, subisce 10d6 danni contundenti; se riesce, metà danni. Una creatura Grande o più piccola che fallisce deve anche superare un tiro salvezza su Forza o essere trattenuta nel turbine. Una creatura trattenuta viene trascinata 1,5 m più in alto all'inizio di ogni suo turno, si muove con il turbine e cade quando l'incantesimo termina se non può fermare la caduta. Può usare la sua azione per effettuare una prova di Forza o Destrezza contro la CD del tuo tiro salvezza degli incantesimi. Se riesce, fugge ed è scagliata di 3d6 x 3 m in una direzione casuale.",
     "higherLevels": null,
     "material": "un pezzo di paglia"
   },
@@ -1610,7 +1610,7 @@
   },
   "Earthquake": {
     "name": "Terremoto",
-    "description": "Crei un disturbo sismico in un punto del terreno che puoi vedere e che si trova a gittata. Per tutta la durata, un intenso tremore squarcia il terreno in un cerchio di 30 metri di raggio centrato su quel punto. Ogni creatura a terra in quell'area deve effettuare un tiro salvezza su Destrezza. Se il tiro salvezza fallisce, la creatura cade prona. L'area diventa terreno difficile. Ogni creatura a terra che si sta concentrando deve effettuare un tiro salvezza su Costituzione. Se il Tiro Salvezza fallisce, la concentrazione della creatura viene interrotta.",
+    "description": "Crei un disturbo sismico in un punto del terreno che puoi vedere entro gittata. Per la durata, tremori intensi scuotono il terreno in un cerchio con raggio di 30 m. L'area è terreno difficile, e ogni creatura che mantiene concentrazione nell'area deve effettuare un tiro salvezza su Costituzione per mantenerla. Quando lanci l'incantesimo e alla fine di ogni tuo turno mentre ti concentri, ogni creatura a terra nell'area deve effettuare un tiro salvezza su Destrezza o cadere prona. Il DM può aggiungere effetti del terreno, come spaccature. Nel turno dopo il lancio, possono aprirsi 1d6 spaccature nell'area. Una creatura nel punto in cui si apre una spaccatura deve superare un tiro salvezza su Destrezza o cadervi dentro. Il tremore infligge 50 danni contundenti alle strutture a contatto con il terreno quando lanci l'incantesimo e all'inizio di ogni tuo turno finché termina. Se una struttura scende a 0 punti ferita, crolla. Una creatura abbastanza vicina a una struttura che crolla deve effettuare un tiro salvezza su Destrezza; se fallisce, subisce 5d6 danni contundenti, cade prona e viene sepolta. Se riesce, subisce metà danni e non cade prona né viene sepolta. Una creatura sepolta può fuggire con una prova di Forza (Atletica) CD 20.",
     "higherLevels": null,
     "material": "un pizzico di terra, un pezzo di roccia e un pezzo di argilla"
   },
@@ -1714,7 +1714,7 @@
   },
   "Prismatic Wall": {
     "name": "Muro Prismatico",
-    "description": "Un piano di luce scintillante e multicolore forma un muro opaco verticale, lungo fino a 90 piedi, alto 9 metri e spesso 2,5 cm, centrato su un punto a gittata visibile. In alternativa, puoi modellare il muro in una sfera fino a 9 metri di diametro centrata su un punto a tua scelta entro gittata. Il muro rimane al suo posto per tutta la durata. Se posizioni il muro in modo che passi attraverso uno spazio occupato da una creatura, l'incantesimo fallisce e la tua azione e lo slot incantesimo vengono sprecati.",
+    "description": "Un piano scintillante e multicolore di luce forma un muro o una sfera opaca entro gittata. Il muro emette luce intensa, e le creature vicine quando appare possono essere accecate se falliscono un tiro salvezza su Costituzione. Il muro ha sette strati, dal rosso al viola. Quando una creatura tenta di attraversarlo, effettua un tiro salvezza su Destrezza per ogni strato ancora presente. Rosso infligge 10d6 danni da fuoco, o metà se il tiro riesce, e blocca attacchi a distanza non magici; è distrutto da almeno 25 danni da freddo. Arancione infligge 10d6 danni da acido e blocca attacchi a distanza magici; è distrutto da vento forte. Giallo infligge 10d6 danni da fulmine; è distrutto da almeno 60 danni da forza. Verde infligge 10d6 danni da veleno; è distrutto da passwall o da un incantesimo di livello pari o superiore che apra un portale in una superficie solida. Blu infligge 10d6 danni da freddo; è distrutto da almeno 25 danni da fuoco. Indaco può trattenere una creatura; essa effettua tiri salvezza su Costituzione alla fine dei suoi turni, terminando l'effetto con tre successi o diventando pietrificata con tre fallimenti. Indaco blocca anche gli incantesimi ed è distrutto dalla luce intensa di daylight o di un incantesimo simile di livello pari o superiore. Viola può accecare una creatura; se poi fallisce un tiro salvezza su Saggezza, viene trasportata su un altro piano. Viola è distrutto da dispel magic o da un incantesimo simile di livello pari o superiore capace di porre fine a incantesimi ed effetti magici.",
     "higherLevels": null
   },
   "Shapechange": {

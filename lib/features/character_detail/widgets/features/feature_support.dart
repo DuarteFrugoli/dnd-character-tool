@@ -1,4 +1,5 @@
 import '../../character_detail_dependencies.dart';
+import '../feature_choice_display_helpers.dart';
 
 // ── Features Tab ──────────────────────────────────────────────────────────────
 
@@ -31,8 +32,7 @@ String featureUsageRechargeLabel(BuildContext context, String recharge) {
   }
 }
 
-typedef FeatureDisabledToggle =
-    void Function(String key, {String? legacyName});
+typedef FeatureDisabledToggle = void Function(String key, {String? legacyName});
 
 String classFeatureDisabledKey({
   required CharacterClassEntry classEntry,
@@ -176,8 +176,16 @@ List<Widget> featureChoiceWidgets({
     );
     chips.addAll(
       choice.values.map((value) {
-        final label = resolver.labelFor(value) ?? value;
-        final description = resolver.descriptionFor(value);
+        final option = resolver.optionFor(value);
+        final label = option?.name ?? resolver.labelFor(value) ?? value;
+        final description = option == null
+            ? null
+            : featureChoiceOptionSubtitle(
+                context: context,
+                request: request,
+                option: option,
+                i18n: i18n,
+              );
         if (description == null || description.trim().isEmpty) {
           return Chip(label: Text(label));
         }

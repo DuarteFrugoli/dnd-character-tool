@@ -870,8 +870,8 @@
   },
   "Spirit Guardians": {
     "name": "Guardianes espirituales",
-    "description": "Invocas espíritus para que te protejan. Revolotean a tu alrededor a una distancia de 15 pies mientras dura. Si eres bueno o neutral, su forma espectral parece angelical o feérica (tú eliges). Si eres malvado, ellos parecen diabólicos. Cuando lanzas este hechizo, puedes designar cualquier número de criaturas que veas que no se verán afectadas por él. La velocidad de una criatura afectada se reduce a la mitad en el área, y cuando la criatura ingresa al área por primera vez en un turno o comienza su turno allí, debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, la criatura sufre 3d8 de daño radiante (si eres bueno o neutral) o 3d8 de daño necrótico (si eres malvado). Con una salvación exitosa, la criatura sufre la mitad de daño.",
-    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 4º nivel o superior, el daño aumenta en 1d8 por cada nivel de espacio por encima del 3º.",
+    "description": "Invocas espíritus para protegerte. Revolotean a tu alrededor hasta 15 pies durante la duración. Si eres bueno o neutral, su forma espectral parece angelical o feérica, a tu elección; si eres maligno, parece infernal. Al lanzar el conjuro, puedes designar cualquier número de criaturas que veas para que no se vean afectadas. La velocidad de una criatura afectada se reduce a la mitad en el área. Cuando una criatura entra en el área por primera vez en un turno o empieza su turno allí, hace una tirada de salvación de Sabiduría. Si falla, sufre 3d8 de daño radiante si eres bueno o neutral, o 3d8 de daño necrótico si eres maligno. Si tiene éxito, sufre la mitad.",
+    "higherLevels": "Cuando lanzas este conjuro usando un espacio de conjuro de nivel 4 o superior, el daño aumenta en 1d8 por cada nivel del espacio por encima del 3.",
     "material": "un símbolo sagrado"
   },
   "Stinking Cloud": {
@@ -977,7 +977,7 @@
   },
   "Evard's Black Tentacles": {
     "name": "Tentáculos negros de Evard",
-    "description": "Los tentáculos de ébano que se retuercen llenan un cuadrado de 20 pies en el suelo que puedes ver dentro del alcance. Mientras duran, estos tentáculos convierten el suelo de la zona en un terreno difícil. Cuando una criatura entra en el área afectada por primera vez en un turno o comienza su turno allí, la criatura debe superar una tirada de salvación de Destreza o sufrir 3d6 de daño contundente y ser restringida por los tentáculos hasta que termine el hechizo.",
+    "description": "Tentáculos negros y retorcidos llenan un cuadrado de 20 pies en el suelo que puedas ver dentro del alcance. Durante la duración, el área es terreno difícil. Cuando una criatura entra en el área afectada por primera vez en un turno o empieza su turno allí, debe superar una salvación de Destreza o sufrir 3d6 de daño contundente y quedar apresada por los tentáculos hasta que el conjuro termine. Una criatura que empieza su turno en el área y ya está apresada por los tentáculos sufre 3d6 de daño contundente. Una criatura apresada puede usar su acción para hacer una prueba de Fuerza o Destreza, a su elección, contra tu CD de salvación de conjuros. Si tiene éxito, se libera.",
     "higherLevels": null,
     "material": "un trozo de tentáculo de un pulpo gigante o de un calamar gigante"
   },
@@ -1086,8 +1086,8 @@
   },
   "Animate Objects": {
     "name": "Animar objetos",
-    "description": "Los objetos cobran vida a tus órdenes. Elija hasta diez objetos no mágicos dentro del alcance que no estén siendo usados ​​ni transportados. Los objetivos medianos cuentan como dos objetos, los objetivos grandes cuentan como cuatro objetos y los objetivos enormes cuentan como ocho objetos. No puedes animar ningún objeto más grande que Huge. Cada objetivo se anima y se convierte en una criatura bajo tu control hasta que finaliza el hechizo o hasta que se reduce a 0 puntos de vida.",
-    "higherLevels": "Si lanzas este hechizo usando un espacio de hechizo de 6.º nivel o superior, puedes animar dos objetos adicionales para cada nivel de espacio por encima del 5.º."
+    "description": "Los objetos cobran vida a tu orden. Elige hasta diez objetos no mágicos dentro del alcance que no estén siendo vestidos ni transportados. Los objetivos Medianos cuentan como dos objetos, los Grandes como cuatro y los Enormes como ocho; no puedes animar un objeto mayor que Enorme. Cada objetivo se convierte en una criatura bajo tu control hasta que el conjuro termine o sea reducido a 0 puntos de golpe. Como acción adicional, puedes dar órdenes mentales a cualquier objeto animado a 500 pies. Si le ordenas atacar, hace un ataque cuerpo a cuerpo a 5 pies. Su bonificador de ataque y daño contundente dependen del tamaño: Diminuto +8, 1d4 + 4; Pequeño +6, 1d8 + 2; Mediano +5, 2d6 + 1; Grande +6, 2d10 + 2; Enorme +8, 2d12 + 4. El DM puede decidir que un objeto concreto cause daño cortante o perforante. CA/PG por tamaño: Diminuto 18/20; Pequeño 16/25; Mediano 13/40; Grande 10/50; Enorme 10/80.",
+    "higherLevels": "Si lanzas este conjuro usando un espacio de conjuro de nivel 6 o superior, puedes animar dos objetos adicionales por cada nivel del espacio por encima del 5."
   },
   "Antilife Shell": {
     "name": "Caparazón antivida",
@@ -1157,7 +1157,7 @@
   },
   "Dream": {
     "name": "Sueño",
-    "description": "Este hechizo da forma a los sueños de una criatura. Elige una criatura que conozcas como objetivo de este hechizo. El objetivo debe estar en el mismo plano de existencia que tú. Este hechizo no puede contactar con las criaturas que no duermen, como los elfos. Tú, o una criatura dispuesta a tocar, entras en un estado de trance, actuando como mensajero. Mientras está en trance, el mensajero es consciente de su entorno, pero no puede realizar acciones ni moverse.",
+    "description": "Este conjuro moldea los sueños de una criatura. Elige una criatura que conozcas y que esté en el mismo plano de existencia. Las criaturas que no duermen, como los elfos, no pueden ser contactadas. Tú, o una criatura voluntaria que toques, entra en trance y actúa como mensajero. Mientras está en trance, el mensajero aparece en los sueños del objetivo y puede conversar con él mientras duerme. Puedes hacer que el mensajero parezca monstruoso y aterrador. Si lo haces, puede entregar un mensaje de hasta diez palabras y el objetivo debe hacer una salvación de Sabiduría. Si falla, el objetivo sufre 3d6 de daño psíquico al despertar y no obtiene beneficio de ese descanso. Si tienes una parte del cuerpo, un mechón de pelo, una uña u otra porción similar del objetivo, este tiene desventaja en la salvación.",
     "higherLevels": null,
     "material": "un puñado de arena, un poco de tinta y una pluma arrancada de un pájaro dormido"
   },
@@ -1435,8 +1435,8 @@
   },
   "Wall of Ice": {
     "name": "Muro de Hielo",
-    "description": "Creas una pared de hielo sobre una superficie sólida dentro del alcance. La pared tiene 1 pie de espesor y hasta 30 pies de largo y 10 pies de alto, o es una cúpula hemisférica de hasta 20 pies de diámetro. El muro permanece en su lugar mientras dure. Cada sección de 10 pies de la pared tiene CA 5 y 30 puntos de vida. Si una sección se destruye, deja una capa de aire helado en el espacio que ocupaba la pared. Una criatura que se mueve a través de la capa de aire helado por primera vez en un turno debe realizar una tirada de salvación de Constitución o sufrir 5d6 de daño por frío.",
-    "higherLevels": "Cuando lanzas este hechizo usando un espacio de hechizo de 7º nivel o superior, el daño que inflige el muro cuando aparece aumenta en 2d6 y el daño al atravesar la lámina de aire gélido aumenta en 1d6, por cada nivel de espacio por encima del 6º.",
+    "description": "Creas un muro de hielo sobre una superficie sólida dentro del alcance. Puedes formarlo como una cúpula hemisférica o esfera de hasta 10 pies de radio, o como una superficie plana formada por diez paneles de 10 pies por 10 pies. Cada panel debe estar unido a otro, y el muro tiene 1 pie de grosor. Si el muro atraviesa el espacio de una criatura al aparecer, la criatura es empujada a un lado y hace una salvación de Destreza. Si falla, sufre 10d6 de daño de frío; si tiene éxito, la mitad. Cada sección de 10 pies tiene CA 12, 30 puntos de golpe y vulnerabilidad al daño de fuego. Reducir una sección a 0 puntos de golpe la destruye y deja una lámina de aire gélido en su espacio. La primera vez que una criatura atraviesa esa lámina en un turno, hace una salvación de Constitución; si falla, sufre 5d6 de daño de frío, o la mitad si tiene éxito.",
+    "higherLevels": "Cuando lanzas este conjuro usando un espacio de nivel 7 o superior, el daño que causa el muro al aparecer aumenta en 2d6 y el daño al atravesar la lámina de aire gélido aumenta en 1d6 por cada nivel del espacio por encima del 6.",
     "material": "un pequeño trozo de cuarzo"
   },
   "Wall of Thorns": {
@@ -1570,7 +1570,7 @@
   },
   "Whirlwind": {
     "name": "Torbellino",
-    "description": "Un torbellino aúlla hasta un punto del terreno que usted especifique. El torbellino es un cilindro de 10 pies de radio y 30 pies de alto centrado en ese punto. Hasta que finalice el hechizo, puedes usar tu acción para mover el torbellino hasta 30 pies en cualquier dirección a lo largo del suelo. El torbellino aspira cualquier objeto mediano o más pequeño que no esté sujeto a nada y que no esté usado ni transportado. Una criatura debe realizar una tirada de salvación de Destreza la primera vez en un turno en el que entra en el torbellino o en que el torbellino entra en su espacio.",
+    "description": "Un torbellino desciende aullando hasta un punto del suelo que especificas. Es un cilindro de 10 pies de radio y 30 pies de alto. Hasta que el conjuro termine, puedes usar tu acción para moverlo hasta 30 pies por el suelo. El torbellino absorbe objetos Medianos o menores que no estén asegurados. Una criatura hace una salvación de Destreza la primera vez en un turno que entra en el espacio del torbellino, que el torbellino entra en su espacio, o que aparece en su espacio. Si falla, sufre 10d6 de daño contundente; si tiene éxito, la mitad. Una criatura Grande o menor que falle también debe superar una salvación de Fuerza o quedar apresada en el torbellino. Una criatura apresada sube 5 pies al inicio de cada uno de sus turnos, se mueve con el torbellino y cae cuando el conjuro termina si no puede detener la caída. Puede usar su acción para hacer una prueba de Fuerza o Destreza contra tu CD de salvación de conjuros. Si tiene éxito, escapa y es arrojada 3d6 x 10 pies en una dirección aleatoria.",
     "higherLevels": null,
     "material": "un trozo de paja"
   },
@@ -1610,7 +1610,7 @@
   },
   "Earthquake": {
     "name": "Terremoto",
-    "description": "Creas una perturbación sísmica en un punto del suelo que puedes ver dentro del alcance. Mientras dura, un intenso temblor atraviesa el suelo en un círculo de 100 pies de radio centrado en ese punto. Cada criatura en el suelo en esa área debe realizar una tirada de salvación de Destreza. Si falla la salvación, la criatura queda tumbada. La zona se vuelve terreno difícil. Cada criatura en el suelo que esté concentrada debe realizar una tirada de salvación de Constitución. Si falla la salvación, la concentración de la criatura se rompe.",
+    "description": "Creas una perturbación sísmica en un punto del suelo que puedas ver dentro del alcance. Durante la duración, temblores intensos sacuden el suelo en un círculo de 100 pies de radio. El área es terreno difícil, y cada criatura que se esté concentrando allí debe hacer una salvación de Constitución para mantener la concentración. Cuando lanzas el conjuro y al final de cada uno de tus turnos mientras te concentras en él, cada criatura en el suelo del área debe hacer una salvación de Destreza o caer derribada. El DM puede añadir efectos de terreno, como fisuras. En el turno después de lanzar el conjuro, pueden abrirse 1d6 fisuras en el área. Una criatura en el lugar donde se abre una fisura debe superar una salvación de Destreza o caer dentro. El temblor causa 50 de daño contundente a estructuras en contacto con el suelo cuando lanzas el conjuro y al inicio de cada uno de tus turnos hasta que termine. Si una estructura cae a 0 puntos de golpe, se derrumba. Una criatura lo bastante cerca de una estructura que se derrumba debe hacer una salvación de Destreza; si falla, sufre 5d6 de daño contundente, cae derribada y queda sepultada. Si tiene éxito, sufre la mitad del daño y no cae ni queda sepultada. Una criatura sepultada puede escapar con una prueba de Fuerza (Atletismo) CD 20.",
     "higherLevels": null,
     "material": "una pizca de tierra, un trozo de roca y un trozo de arcilla"
   },
@@ -1714,7 +1714,7 @@
   },
   "Prismatic Wall": {
     "name": "Muro prismático",
-    "description": "Un plano de luz multicolor y brillante forma una pared vertical opaca (de hasta 90 pies de largo, 30 pies de alto y 1 pulgada de espesor) centrada en un punto que se puede ver dentro del alcance. Alternativamente, puede darle forma a la pared en una esfera de hasta 30 pies de diámetro centrada en un punto que elija dentro del alcance. El muro permanece en su lugar mientras dure. Si colocas la pared de manera que atraviese un espacio ocupado por una criatura, el hechizo falla y tu acción y el espacio del hechizo se desperdician.",
+    "description": "Un plano de luz brillante y multicolor forma un muro o esfera opaca dentro del alcance. El muro emite luz brillante, y las criaturas cercanas cuando aparece pueden quedar cegadas si fallan una salvación de Constitución. El muro tiene siete capas en orden del rojo al violeta. Cuando una criatura intenta atravesarlo, hace una salvación de Destreza por cada capa que siga presente. Rojo causa 10d6 de daño de fuego, o la mitad con éxito, y bloquea ataques a distancia no mágicos; se destruye con al menos 25 de daño de frío. Naranja causa 10d6 de daño ácido y bloquea ataques a distancia mágicos; se destruye con viento fuerte. Amarillo causa 10d6 de daño de relámpago; se destruye con al menos 60 de daño de fuerza. Verde causa 10d6 de daño de veneno; se destruye con passwall u otro conjuro de igual o mayor nivel que abra un portal en una superficie sólida. Azul causa 10d6 de daño de frío; se destruye con al menos 25 de daño de fuego. Índigo puede apresar a una criatura; esta hace salvaciones de Constitución al final de sus turnos, terminando el efecto con tres éxitos o quedando petrificada con tres fallos. Índigo también bloquea conjuros y se destruye con luz brillante de daylight o un conjuro similar de igual o mayor nivel. Violeta puede cegar a una criatura; si falla una salvación de Sabiduría después de la ceguera, es transportada a otro plano. Violeta se destruye con dispel magic o un conjuro similar de igual o mayor nivel que pueda terminar conjuros y efectos mágicos.",
     "higherLevels": null
   },
   "Shapechange": {

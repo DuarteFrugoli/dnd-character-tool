@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/models/domain_constants.dart';
@@ -20,6 +21,7 @@ class SkillsTabVm {
   const SkillsTabVm({
     required this.character,
     required this.rows,
+    required this.preferences,
   });
 
   factory SkillsTabVm.fromCharacter(Character character) {
@@ -39,11 +41,16 @@ class SkillsTabVm {
           expertSkills: expertSet,
         ),
     ];
-    return SkillsTabVm(character: character, rows: rows);
+    return SkillsTabVm(
+      character: character,
+      rows: rows,
+      preferences: character.sheetPreferences.skills,
+    );
   }
 
   final Character character;
   final List<SkillRowVm> rows;
+  final SkillDisplayPreferences preferences;
 
   @override
   bool operator ==(Object other) {
@@ -57,6 +64,13 @@ class SkillsTabVm {
         sameReference(
           character.skillExpertises,
           other.character.skillExpertises,
+        ) &&
+        preferences.mode == other.preferences.mode &&
+        preferences.proficientFirstInsideGroups ==
+            other.preferences.proficientFirstInsideGroups &&
+        const ListEquality<String>().equals(
+          preferences.abilityOrder,
+          other.preferences.abilityOrder,
         );
   }
 
@@ -66,6 +80,9 @@ class SkillsTabVm {
     character.proficiencyBonus,
     referenceHash(character.skillProficiencies),
     referenceHash(character.skillExpertises),
+    preferences.mode,
+    preferences.proficientFirstInsideGroups,
+    Object.hashAll(preferences.abilityOrder),
   );
 }
 

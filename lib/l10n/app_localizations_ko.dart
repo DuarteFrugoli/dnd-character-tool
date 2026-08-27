@@ -351,6 +351,42 @@ class AppLocalizationsKo extends AppLocalizations {
   String get skillsEditHint => '길게 눌러 전환: 없음 → 숙련 → 전문가';
 
   @override
+  String get skillsOrganizeTooltip => '정리';
+
+  @override
+  String get skillsDisplayTitle => '기술 표시';
+
+  @override
+  String get skillsDisplayModeLabel => '레이아웃';
+
+  @override
+  String get skillsDisplayByAbility => '능력치별';
+
+  @override
+  String get skillsDisplayProficiencyFirst => '숙련 우선';
+
+  @override
+  String get skillsDisplayAlphabetical => '가나다순';
+
+  @override
+  String get skillsDisplayAbilityOrder => '능력치 순서';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups => '그룹 안에서 숙련 우선';
+
+  @override
+  String get skillsDisplayRestoreDefault => '기본값 복원';
+
+  @override
+  String get skillsDisplayProficientSection => '숙련';
+
+  @override
+  String get skillsDisplayOtherSection => '다른 기술';
+
+  @override
+  String get skillsDisplayAllSection => '모든 기술';
+
+  @override
   String get detailTabStats => '통계';
 
   @override

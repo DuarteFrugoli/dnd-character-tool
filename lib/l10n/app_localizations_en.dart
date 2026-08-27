@@ -355,6 +355,43 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillsEditHint => 'Hold to toggle: none → proficient → expert';
 
   @override
+  String get skillsOrganizeTooltip => 'Organize';
+
+  @override
+  String get skillsDisplayTitle => 'Skill display';
+
+  @override
+  String get skillsDisplayModeLabel => 'Layout';
+
+  @override
+  String get skillsDisplayByAbility => 'By ability';
+
+  @override
+  String get skillsDisplayProficiencyFirst => 'Proficient first';
+
+  @override
+  String get skillsDisplayAlphabetical => 'Alphabetical';
+
+  @override
+  String get skillsDisplayAbilityOrder => 'Ability order';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups =>
+      'Proficient first inside groups';
+
+  @override
+  String get skillsDisplayRestoreDefault => 'Restore default';
+
+  @override
+  String get skillsDisplayProficientSection => 'Proficient';
+
+  @override
+  String get skillsDisplayOtherSection => 'Other skills';
+
+  @override
+  String get skillsDisplayAllSection => 'All skills';
+
+  @override
   String get detailTabStats => 'Stats';
 
   @override

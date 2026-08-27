@@ -26,6 +26,8 @@ class SpellsTab extends ConsumerStatefulWidget {
 
 class _SpellsTabState extends ConsumerState<SpellsTab>
     with AutomaticKeepAliveClientMixin {
+  final _spellLevelKeys = <int, GlobalKey>{};
+
   Map<String, SrdSpell>? _spellIndex;
   List<SrdSpell>? _classAllSpells;
 
@@ -218,6 +220,34 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     );
   }
 
+  GlobalKey _keyForSpellLevel(int level) {
+    return _spellLevelKeys.putIfAbsent(level, () => GlobalKey());
+  }
+
+  Future<void> _scrollToSpellLevel(int level) async {
+    final targetContext = _spellLevelKeys[level]?.currentContext;
+    if (targetContext == null) return;
+
+    await Scrollable.ensureVisible(
+      targetContext,
+      duration: const Duration(milliseconds: 180),
+      curve: Curves.easeOutCubic,
+      alignment: 0.02,
+    );
+    if (!mounted) return;
+    await WidgetsBinding.instance.endOfFrame;
+    if (!mounted) return;
+
+    final settledContext = _spellLevelKeys[level]?.currentContext;
+    if (settledContext == null) return;
+    await Scrollable.ensureVisible(
+      settledContext,
+      duration: const Duration(milliseconds: 220),
+      curve: Curves.easeOutCubic,
+      alignment: 0.02,
+    );
+  }
+
   String? _spellOriginLabel(
     KnownSpell spell,
     CharacterSpellcastingSummary summary,
@@ -271,6 +301,11 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     final isPrepareAll =
         isCaster && _isPrepareAllClass(spellcastingClass.className);
     final levels = _byLevel.keys.toList()..sort();
+    final levelSet = {..._byLevel.keys, ..._extraByLevel.keys};
+    final shortcutLevels = levelSet.toList()..sort();
+    final showLevelShortcuts =
+        character.sheetPreferences.spells.showLevelShortcuts &&
+        shortcutLevels.length > 1;
     final prepares =
         isCaster &&
         KnownSpellCasting.classPrepares(spellcastingClass.className);
@@ -372,6 +407,13 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                             ),
                         const SizedBox(height: 16),
                       ],
+                      if (showLevelShortcuts) ...[
+                        SpellLevelShortcuts(
+                          levels: shortcutLevels,
+                          onLevelSelected: _scrollToSpellLevel,
+                        ),
+                        const SizedBox(height: 16),
+                      ],
                       if (character.innateSpells.isNotEmpty) ...[
                         DetailSectionHeader(
                           title: l10n.spellsInnateHeader,
@@ -423,7 +465,10 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                 if (_displaySpells.isNotEmpty)
                   for (final level in levels) ...[
                     SliverToBoxAdapter(
-                      child: SpellLevelHeader(level: level),
+                      child: KeyedSubtree(
+                        key: _keyForSpellLevel(level),
+                        child: SpellLevelHeader(level: level),
+                      ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 4)),
                     SliverPadding(
@@ -602,7 +647,12 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                   const SliverToBoxAdapter(child: SizedBox(height: 8)),
                   for (final level in _extraByLevel.keys.toList()..sort()) ...[
                     SliverToBoxAdapter(
-                      child: SpellLevelHeader(level: level),
+                      child: KeyedSubtree(
+                        key: _byLevel.containsKey(level)
+                            ? null
+                            : _keyForSpellLevel(level),
+                        child: SpellLevelHeader(level: level),
+                      ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 4)),
                     SliverPadding(

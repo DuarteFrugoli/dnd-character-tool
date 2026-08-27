@@ -144,7 +144,21 @@ por reset/rebuild explicito, nunca por edicao manual crua de nivel.
 - [x] Pedido discreto de avaliacao na Play Store apos uso real do app, com
       botao manual nas Configuracoes.
 
-#### 2.0.1 - Polimento pos-lancamento de multiclasse
+#### 2.0.1 - Polimento visual e preferencias da ficha
+- [x] Lista final com 12 temas e paletas mais distintas.
+- [x] Tema High Contrast renomeado para Eclipse, mantendo as cores.
+- [x] Tela inicial, Configuracoes, cabecalho e barra de abas com identidade
+      visual renovada.
+- [x] Duplicar personagem pelo menu de tres pontos.
+- [x] Avatar da lista mais resistente a recarregamentos ao voltar da ficha.
+- [x] Organizacao da aba Pericias por atributo, proficientes primeiro ou ordem
+      alfabetica, com ordem customizavel dos atributos.
+- [x] Atalhos por nivel na aba Magias.
+- [x] Ajustes no pedido automatico de avaliacao da Play Store.
+- [x] Correcoes visuais em recipientes vazios, atalhos de magia e busca de
+      notas.
+
+#### 2.0.2 - Polimento tecnico pos-multiclasse
 - [ ] Validar manualmente combinacoes reais como Fighter/Wizard,
       Paladin/Sorcerer, Warlock/Bard, Eldritch Knight/Wizard e
       Arcane Trickster/Wizard.
@@ -152,8 +166,6 @@ por reset/rebuild explicito, nunca por edicao manual crua de nivel.
       necessario para resets ainda mais precisos.
 - [ ] Avaliar edicao protegida de classes apenas se reset/rebuild nao cobrir
       bem os fluxos reais dos usuarios.
-- [ ] Revisar temas para reduzir duplicatas visuais e dar identidade mais clara
-      a cada paleta.
 - [ ] Adicionar testes de widget para escolha de classe alvo, requisitos,
       header multiclass e agrupamento de features.
 

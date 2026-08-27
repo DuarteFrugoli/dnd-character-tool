@@ -5,7 +5,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-2.0.0-orange)
+![Version](https://img.shields.io/badge/version-2.0.1-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
@@ -34,11 +34,11 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - Character actions menu for level up, rests and dice rolling
 - Optional setting to keep the Android screen awake while a character sheet is open
 
-**Skills tab** — all 18 skills with proficiency/expertise indicators and calculated bonuses
+**Skills tab** — all 18 skills with proficiency/expertise indicators, calculated bonuses and per-character display organization
 
 **Features tab** — racial traits, background feature, class features by level, SRD feats, extra features, editable feature choices and limited-use resource tracking
 
-**Spells tab** — spell slots tracker, Pact Magic short-rest recovery, concentration tracking, known/prepared spells and spell browser with filters
+**Spells tab** — spell slots tracker, Pact Magic short-rest recovery, concentration tracking, known/prepared spells, level shortcuts and spell browser with filters
 
 **Inventory tab** — global SRD item search, equipped/carried/container sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), tappable item details, reorderable items, ammunition handling and custom item creation with type-specific fields (weapon, armor, equippable, container, consumable, ammunition, gear)
 
@@ -176,11 +176,11 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - Menu de ações da ficha para subir de nível, descansar e rolar dados
 - Opção para manter a tela do Android ligada enquanto uma ficha está aberta
 
-**Aba Skills** — 18 perícias com indicadores de proficiência/expertise e bônus calculados
+**Aba Skills** — 18 perícias com indicadores de proficiência/expertise, bônus calculados e organização visual por personagem
 
 **Aba Features** — traços raciais, feature do antecedente, features de classe por nível, talentos do SRD, features extras, escolhas editáveis e rastreamento de recursos com usos limitados
 
-**Aba Spells** — rastreador de espaços de magia, recuperação de Pact Magic no descanso curto, concentração, magias conhecidas/preparadas e browser de magias com filtros
+**Aba Spells** — rastreador de espaços de magia, recuperação de Pact Magic no descanso curto, concentração, magias conhecidas/preparadas, atalhos de nível e browser de magias com filtros
 
 **Aba Inventory** — busca global de itens SRD, seções de equipados/carregados/containers, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), detalhes ao tocar, itens reordenáveis, suporte a munição e criação de itens customizados com campos por tipo (arma, armadura, equipável, container, consumível, munição, equipamento geral)
 

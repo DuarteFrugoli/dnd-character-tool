@@ -325,6 +325,42 @@
   "skillsEditHint": "Hold to toggle: none \u2192 proficient \u2192 expert",
   "@skillsEditHint": { "description": "Skills long-press hint text." },
 
+  "skillsOrganizeTooltip": "Organize",
+  "@skillsOrganizeTooltip": { "description": "Skills tab button label and tooltip that opens display organization settings." },
+
+  "skillsDisplayTitle": "Skill display",
+  "@skillsDisplayTitle": { "description": "Skills display settings sheet title." },
+
+  "skillsDisplayModeLabel": "Layout",
+  "@skillsDisplayModeLabel": { "description": "Skills display settings mode section label." },
+
+  "skillsDisplayByAbility": "By ability",
+  "@skillsDisplayByAbility": { "description": "Skills display mode that groups skills by ability score." },
+
+  "skillsDisplayProficiencyFirst": "Proficient first",
+  "@skillsDisplayProficiencyFirst": { "description": "Skills display mode that shows proficient and expert skills before the others." },
+
+  "skillsDisplayAlphabetical": "Alphabetical",
+  "@skillsDisplayAlphabetical": { "description": "Skills display mode that sorts all skills alphabetically." },
+
+  "skillsDisplayAbilityOrder": "Ability order",
+  "@skillsDisplayAbilityOrder": { "description": "Skills display settings label for reordering ability score groups." },
+
+  "skillsDisplayProficientFirstInsideGroups": "Proficient first inside groups",
+  "@skillsDisplayProficientFirstInsideGroups": { "description": "Skills display setting that puts proficient and expert skills first inside each ability group." },
+
+  "skillsDisplayRestoreDefault": "Restore default",
+  "@skillsDisplayRestoreDefault": { "description": "Button that restores default skill display preferences." },
+
+  "skillsDisplayProficientSection": "Proficient",
+  "@skillsDisplayProficientSection": { "description": "Skills section title for proficient and expert skills." },
+
+  "skillsDisplayOtherSection": "Other skills",
+  "@skillsDisplayOtherSection": { "description": "Skills section title for non-proficient skills." },
+
+  "skillsDisplayAllSection": "All skills",
+  "@skillsDisplayAllSection": { "description": "Skills section title for the alphabetical display mode." },
+
   "detailTabStats": "Stats",
   "@detailTabStats": { "description": "Stats tab label." },
 

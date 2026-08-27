@@ -359,6 +359,43 @@ class AppLocalizationsPt extends AppLocalizations {
       'Segure para alternar: nenhum → proficiente → experiente';
 
   @override
+  String get skillsOrganizeTooltip => 'Organizar';
+
+  @override
+  String get skillsDisplayTitle => 'Exibição de perícias';
+
+  @override
+  String get skillsDisplayModeLabel => 'Layout';
+
+  @override
+  String get skillsDisplayByAbility => 'Por atributo';
+
+  @override
+  String get skillsDisplayProficiencyFirst => 'Proficientes primeiro';
+
+  @override
+  String get skillsDisplayAlphabetical => 'Alfabética';
+
+  @override
+  String get skillsDisplayAbilityOrder => 'Ordem dos atributos';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups =>
+      'Proficientes primeiro dentro dos grupos';
+
+  @override
+  String get skillsDisplayRestoreDefault => 'Restaurar padrão';
+
+  @override
+  String get skillsDisplayProficientSection => 'Proficientes';
+
+  @override
+  String get skillsDisplayOtherSection => 'Outras perícias';
+
+  @override
+  String get skillsDisplayAllSection => 'Todas as perícias';
+
+  @override
   String get detailTabStats => 'Status';
 
   @override

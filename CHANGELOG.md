@@ -7,10 +7,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+---
+
+## [2.0.1] - 2026-08-27
+
 ### Added
 - **Lista de personagens**: adicionada opcao de duplicar personagem pelo menu de tres pontos, criando copia independente com novo ID, imagem propria e nome sem conflito.
 - **Temas**: adicionada lista final com 12 temas: `Classic Dark`, `Crimson`, `Light`, `Parchment`, `Arcane`, `Forest`, `Elven Forest`, `Sea`, `Celestial`, `Eclipse`, `Sacred` e `Shadow`.
 - **Ficha - preferencias**: adicionada base interna para preferencias visuais por personagem, preparando ordenacao customizavel de pericias, inventario e atalhos de magias.
+- **Pericias**: adicionada organizacao visual por atributo, proficientes primeiro ou ordem alfabetica, com ordem customizavel dos atributos.
+- **Magias**: adicionados atalhos de nivel para rolar rapidamente ate truques e niveis de magia visiveis.
 
 ### Changed
 - **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos.
@@ -24,8 +30,13 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 - **Inventario**: recipientes com quantidade total zero agora exibem `Vazio` em vez de `1 item`.
+- **Magias**: atalhos de nivel agora preservam o movimento do cabecalho colapsavel e rolam corretamente mesmo a partir do topo da aba.
+- **Notas**: campo de busca por texto e tags teve o alinhamento ajustado.
 - **Lista de personagens**: avatar da ficha ficou mais resistente a recarregamento e transicoes `Hero`, evitando area vazia ao voltar da ficha.
 - **Ficha**: imagem do personagem no cabecalho agora usa o mesmo fluxo de visualizar, ampliar, trocar e remover foto da aba Identidade, e a transicao da lista passa a mirar o avatar do cabecalho.
+
+### Internal
+- **Versionamento**: versao do app atualizada para `2.0.1+25`.
 
 ---
 

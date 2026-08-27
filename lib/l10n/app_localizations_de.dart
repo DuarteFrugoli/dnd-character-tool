@@ -357,6 +357,43 @@ class AppLocalizationsDe extends AppLocalizations {
   String get skillsEditHint => 'Halten zum Wechseln: kein → geübt → Experte';
 
   @override
+  String get skillsOrganizeTooltip => 'Organisieren';
+
+  @override
+  String get skillsDisplayTitle => 'Fertigkeitsanzeige';
+
+  @override
+  String get skillsDisplayModeLabel => 'Layout';
+
+  @override
+  String get skillsDisplayByAbility => 'Nach Attribut';
+
+  @override
+  String get skillsDisplayProficiencyFirst => 'Geübte zuerst';
+
+  @override
+  String get skillsDisplayAlphabetical => 'Alphabetisch';
+
+  @override
+  String get skillsDisplayAbilityOrder => 'Attributreihenfolge';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups =>
+      'Geübte zuerst innerhalb der Gruppen';
+
+  @override
+  String get skillsDisplayRestoreDefault => 'Standard wiederherstellen';
+
+  @override
+  String get skillsDisplayProficientSection => 'Geübt';
+
+  @override
+  String get skillsDisplayOtherSection => 'Andere Fertigkeiten';
+
+  @override
+  String get skillsDisplayAllSection => 'Alle Fertigkeiten';
+
+  @override
   String get detailTabStats => 'Statistiken';
 
   @override

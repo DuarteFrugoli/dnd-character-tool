@@ -115,6 +115,18 @@
   "@skillsEditHint": {
     "description": "Skills long-press hint text."
   },
+  "skillsOrganizeTooltip": "정리",
+  "skillsDisplayTitle": "기술 표시",
+  "skillsDisplayModeLabel": "레이아웃",
+  "skillsDisplayByAbility": "능력치별",
+  "skillsDisplayProficiencyFirst": "숙련 우선",
+  "skillsDisplayAlphabetical": "가나다순",
+  "skillsDisplayAbilityOrder": "능력치 순서",
+  "skillsDisplayProficientFirstInsideGroups": "그룹 안에서 숙련 우선",
+  "skillsDisplayRestoreDefault": "기본값 복원",
+  "skillsDisplayProficientSection": "숙련",
+  "skillsDisplayOtherSection": "다른 기술",
+  "skillsDisplayAllSection": "모든 기술",
   "detailTabStats": "통계",
   "detailTabSkills": "기술",
   "detailTabFeatures": "특징",

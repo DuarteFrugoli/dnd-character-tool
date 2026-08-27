@@ -115,6 +115,18 @@
   "@skillsEditHint": {
     "description": "Skills long-press hint text."
   },
+  "skillsOrganizeTooltip": "Organizar",
+  "skillsDisplayTitle": "Vista de habilidades",
+  "skillsDisplayModeLabel": "Diseño",
+  "skillsDisplayByAbility": "Por característica",
+  "skillsDisplayProficiencyFirst": "Competentes primero",
+  "skillsDisplayAlphabetical": "Alfabética",
+  "skillsDisplayAbilityOrder": "Orden de características",
+  "skillsDisplayProficientFirstInsideGroups": "Competentes primero dentro de los grupos",
+  "skillsDisplayRestoreDefault": "Restaurar predeterminado",
+  "skillsDisplayProficientSection": "Competentes",
+  "skillsDisplayOtherSection": "Otras habilidades",
+  "skillsDisplayAllSection": "Todas las habilidades",
   "detailTabStats": "Estadísticas",
   "detailTabSkills": "Habilidades",
   "detailTabFeatures": "Características",

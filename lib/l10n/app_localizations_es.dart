@@ -357,6 +357,43 @@ class AppLocalizationsEs extends AppLocalizations {
       'Mantén para alternar: ninguno → competente → experto';
 
   @override
+  String get skillsOrganizeTooltip => 'Organizar';
+
+  @override
+  String get skillsDisplayTitle => 'Vista de habilidades';
+
+  @override
+  String get skillsDisplayModeLabel => 'Diseño';
+
+  @override
+  String get skillsDisplayByAbility => 'Por característica';
+
+  @override
+  String get skillsDisplayProficiencyFirst => 'Competentes primero';
+
+  @override
+  String get skillsDisplayAlphabetical => 'Alfabética';
+
+  @override
+  String get skillsDisplayAbilityOrder => 'Orden de características';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups =>
+      'Competentes primero dentro de los grupos';
+
+  @override
+  String get skillsDisplayRestoreDefault => 'Restaurar predeterminado';
+
+  @override
+  String get skillsDisplayProficientSection => 'Competentes';
+
+  @override
+  String get skillsDisplayOtherSection => 'Otras habilidades';
+
+  @override
+  String get skillsDisplayAllSection => 'Todas las habilidades';
+
+  @override
   String get detailTabStats => 'Estadísticas';
 
   @override

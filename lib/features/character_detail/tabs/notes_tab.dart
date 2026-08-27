@@ -437,17 +437,27 @@ class _NotesSearchAndFilters extends StatelessWidget {
             child: TextField(
               controller: searchController,
               onTapOutside: (_) => FocusScope.of(context).unfocus(),
+              textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
                 hintText: l10n.notesSearchHint,
                 prefixIcon: const Icon(Icons.search),
+                prefixIconConstraints: const BoxConstraints(
+                  minWidth: 44,
+                  minHeight: 44,
+                ),
                 suffixIcon: searchController.text.isEmpty
                     ? null
                     : IconButton(
                         icon: const Icon(Icons.clear),
                         onPressed: searchController.clear,
                       ),
+                suffixIconConstraints: const BoxConstraints(
+                  minWidth: 44,
+                  minHeight: 44,
+                ),
                 border: InputBorder.none,
                 isDense: true,
+                contentPadding: const EdgeInsets.symmetric(vertical: 12),
               ),
             ),
           ),

@@ -115,6 +115,18 @@
   "@skillsEditHint": {
     "description": "Skills long-press hint text."
   },
+  "skillsOrganizeTooltip": "Organisieren",
+  "skillsDisplayTitle": "Fertigkeitsanzeige",
+  "skillsDisplayModeLabel": "Layout",
+  "skillsDisplayByAbility": "Nach Attribut",
+  "skillsDisplayProficiencyFirst": "Geübte zuerst",
+  "skillsDisplayAlphabetical": "Alphabetisch",
+  "skillsDisplayAbilityOrder": "Attributreihenfolge",
+  "skillsDisplayProficientFirstInsideGroups": "Geübte zuerst innerhalb der Gruppen",
+  "skillsDisplayRestoreDefault": "Standard wiederherstellen",
+  "skillsDisplayProficientSection": "Geübt",
+  "skillsDisplayOtherSection": "Andere Fertigkeiten",
+  "skillsDisplayAllSection": "Alle Fertigkeiten",
   "detailTabStats": "Statistiken",
   "detailTabSkills": "Fähigkeiten",
   "detailTabFeatures": "Merkmale",

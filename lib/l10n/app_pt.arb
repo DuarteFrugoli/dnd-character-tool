@@ -115,6 +115,18 @@
   "@skillsEditHint": {
     "description": "Skills long-press hint text."
   },
+  "skillsOrganizeTooltip": "Organizar",
+  "skillsDisplayTitle": "Exibição de perícias",
+  "skillsDisplayModeLabel": "Layout",
+  "skillsDisplayByAbility": "Por atributo",
+  "skillsDisplayProficiencyFirst": "Proficientes primeiro",
+  "skillsDisplayAlphabetical": "Alfabética",
+  "skillsDisplayAbilityOrder": "Ordem dos atributos",
+  "skillsDisplayProficientFirstInsideGroups": "Proficientes primeiro dentro dos grupos",
+  "skillsDisplayRestoreDefault": "Restaurar padrão",
+  "skillsDisplayProficientSection": "Proficientes",
+  "skillsDisplayOtherSection": "Outras perícias",
+  "skillsDisplayAllSection": "Todas as perícias",
   "detailTabStats": "Status",
   "detailTabSkills": "Perícias",
   "detailTabFeatures": "Habilidades",

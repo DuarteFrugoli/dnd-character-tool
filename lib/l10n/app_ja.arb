@@ -115,6 +115,18 @@
   "@skillsEditHint": {
     "description": "Skills long-press hint text."
   },
+  "skillsOrganizeTooltip": "整理",
+  "skillsDisplayTitle": "スキル表示",
+  "skillsDisplayModeLabel": "レイアウト",
+  "skillsDisplayByAbility": "能力値別",
+  "skillsDisplayProficiencyFirst": "習熟を先に表示",
+  "skillsDisplayAlphabetical": "アルファベット順",
+  "skillsDisplayAbilityOrder": "能力値の順序",
+  "skillsDisplayProficientFirstInsideGroups": "グループ内で習熟を先に表示",
+  "skillsDisplayRestoreDefault": "初期設定に戻す",
+  "skillsDisplayProficientSection": "習熟",
+  "skillsDisplayOtherSection": "その他のスキル",
+  "skillsDisplayAllSection": "すべてのスキル",
   "detailTabStats": "統計",
   "detailTabSkills": "スキル",
   "detailTabFeatures": "特徴",

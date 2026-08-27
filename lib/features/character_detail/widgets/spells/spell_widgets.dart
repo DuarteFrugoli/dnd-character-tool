@@ -139,6 +139,49 @@ class SpellLevelHeader extends StatelessWidget {
 
 // ── Spell Row ─────────────────────────────────────────────────────────────────
 
+class SpellLevelShortcuts extends StatelessWidget {
+  const SpellLevelShortcuts({
+    super.key,
+    required this.levels,
+    required this.onLevelSelected,
+  });
+
+  final List<int> levels;
+  final ValueChanged<int> onLevelSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    return SizedBox(
+      height: 42,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        itemCount: levels.length,
+        separatorBuilder: (_, _) => const SizedBox(width: 8),
+        itemBuilder: (context, index) {
+          final level = levels[index];
+          final isCantrip = level == 0;
+          final color = isCantrip ? scheme.tertiary : scheme.primary;
+          return ActionChip(
+            avatar: Icon(
+              isCantrip ? Icons.auto_fix_high_outlined : Icons.menu_book,
+              size: 16,
+              color: color,
+            ),
+            label: Text(
+              isCantrip ? l10n.spellsCantrips : l10n.spellsSlotLevel(level),
+            ),
+            side: BorderSide(color: color.withValues(alpha: 0.34)),
+            backgroundColor: color.withValues(alpha: 0.10),
+            onPressed: () => onLevelSelected(level),
+          );
+        },
+      ),
+    );
+  }
+}
+
 class SpellRow extends ConsumerWidget {
   const SpellRow({
     super.key,
@@ -690,7 +733,9 @@ class SpellSlotRow extends StatelessWidget {
       decoration: BoxDecoration(
         color: scheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.68)),
+        border: Border.all(
+          color: scheme.outlineVariant.withValues(alpha: 0.68),
+        ),
       ),
       child: Row(
         children: [

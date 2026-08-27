@@ -298,6 +298,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           provider: skillsTabVmProvider(widget.characterId),
           builder: (context, vm) => SkillsTab(
             skillRows: vm.rows,
+            preferences: vm.preferences,
             characterId: widget.characterId,
           ),
         ),
@@ -547,7 +548,9 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
   void initState() {
     super.initState();
     _diceToSpend = List.filled(widget.pools.length, 0);
-    final firstAvailable = widget.pools.indexWhere((pool) => pool.remaining > 0);
+    final firstAvailable = widget.pools.indexWhere(
+      (pool) => pool.remaining > 0,
+    );
     if (firstAvailable >= 0) _diceToSpend[firstAvailable] = 1;
   }
 

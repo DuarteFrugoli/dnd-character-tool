@@ -344,6 +344,42 @@ class AppLocalizationsZh extends AppLocalizations {
   String get skillsEditHint => '长按切换: 无 → 熟练 → 专精';
 
   @override
+  String get skillsOrganizeTooltip => '整理';
+
+  @override
+  String get skillsDisplayTitle => '技能显示';
+
+  @override
+  String get skillsDisplayModeLabel => '布局';
+
+  @override
+  String get skillsDisplayByAbility => '按属性';
+
+  @override
+  String get skillsDisplayProficiencyFirst => '熟练优先';
+
+  @override
+  String get skillsDisplayAlphabetical => '按字母顺序';
+
+  @override
+  String get skillsDisplayAbilityOrder => '属性顺序';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups => '组内熟练优先';
+
+  @override
+  String get skillsDisplayRestoreDefault => '恢复默认';
+
+  @override
+  String get skillsDisplayProficientSection => '熟练';
+
+  @override
+  String get skillsDisplayOtherSection => '其他技能';
+
+  @override
+  String get skillsDisplayAllSection => '全部技能';
+
+  @override
   String get detailTabStats => '统计数据';
 
   @override

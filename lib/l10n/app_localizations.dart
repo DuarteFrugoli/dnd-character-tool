@@ -750,6 +750,78 @@ abstract class AppLocalizations {
   /// **'Hold to toggle: none → proficient → expert'**
   String get skillsEditHint;
 
+  /// Skills tab button label and tooltip that opens display organization settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Organize'**
+  String get skillsOrganizeTooltip;
+
+  /// Skills display settings sheet title.
+  ///
+  /// In en, this message translates to:
+  /// **'Skill display'**
+  String get skillsDisplayTitle;
+
+  /// Skills display settings mode section label.
+  ///
+  /// In en, this message translates to:
+  /// **'Layout'**
+  String get skillsDisplayModeLabel;
+
+  /// Skills display mode that groups skills by ability score.
+  ///
+  /// In en, this message translates to:
+  /// **'By ability'**
+  String get skillsDisplayByAbility;
+
+  /// Skills display mode that shows proficient and expert skills before the others.
+  ///
+  /// In en, this message translates to:
+  /// **'Proficient first'**
+  String get skillsDisplayProficiencyFirst;
+
+  /// Skills display mode that sorts all skills alphabetically.
+  ///
+  /// In en, this message translates to:
+  /// **'Alphabetical'**
+  String get skillsDisplayAlphabetical;
+
+  /// Skills display settings label for reordering ability score groups.
+  ///
+  /// In en, this message translates to:
+  /// **'Ability order'**
+  String get skillsDisplayAbilityOrder;
+
+  /// Skills display setting that puts proficient and expert skills first inside each ability group.
+  ///
+  /// In en, this message translates to:
+  /// **'Proficient first inside groups'**
+  String get skillsDisplayProficientFirstInsideGroups;
+
+  /// Button that restores default skill display preferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore default'**
+  String get skillsDisplayRestoreDefault;
+
+  /// Skills section title for proficient and expert skills.
+  ///
+  /// In en, this message translates to:
+  /// **'Proficient'**
+  String get skillsDisplayProficientSection;
+
+  /// Skills section title for non-proficient skills.
+  ///
+  /// In en, this message translates to:
+  /// **'Other skills'**
+  String get skillsDisplayOtherSection;
+
+  /// Skills section title for the alphabetical display mode.
+  ///
+  /// In en, this message translates to:
+  /// **'All skills'**
+  String get skillsDisplayAllSection;
+
   /// Stats tab label.
   ///
   /// In en, this message translates to:

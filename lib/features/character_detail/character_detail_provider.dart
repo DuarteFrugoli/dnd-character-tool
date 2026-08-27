@@ -569,6 +569,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     );
   }
 
+  Future<void> updateSkillDisplayPreferences(
+    SkillDisplayPreferences preferences,
+  ) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    await _save(
+      c.copyWith(
+        sheetPreferences: c.sheetPreferences.copyWith(skills: preferences),
+      ),
+    );
+  }
+
   Future<void> updateDisabledFeatures(List<String> disabled) async {
     final c = state.valueOrNull;
     if (c == null) return;

@@ -115,6 +115,18 @@
   "@skillsEditHint": {
     "description": "Skills long-press hint text."
   },
+  "skillsOrganizeTooltip": "整理",
+  "skillsDisplayTitle": "技能显示",
+  "skillsDisplayModeLabel": "布局",
+  "skillsDisplayByAbility": "按属性",
+  "skillsDisplayProficiencyFirst": "熟练优先",
+  "skillsDisplayAlphabetical": "按字母顺序",
+  "skillsDisplayAbilityOrder": "属性顺序",
+  "skillsDisplayProficientFirstInsideGroups": "组内熟练优先",
+  "skillsDisplayRestoreDefault": "恢复默认",
+  "skillsDisplayProficientSection": "熟练",
+  "skillsDisplayOtherSection": "其他技能",
+  "skillsDisplayAllSection": "全部技能",
   "detailTabStats": "统计数据",
   "detailTabSkills": "技能",
   "detailTabFeatures": "特征",

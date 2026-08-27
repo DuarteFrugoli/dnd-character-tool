@@ -350,6 +350,42 @@ class AppLocalizationsJa extends AppLocalizations {
   String get skillsEditHint => '長押して切替: なし→習熟→熟達';
 
   @override
+  String get skillsOrganizeTooltip => '整理';
+
+  @override
+  String get skillsDisplayTitle => 'スキル表示';
+
+  @override
+  String get skillsDisplayModeLabel => 'レイアウト';
+
+  @override
+  String get skillsDisplayByAbility => '能力値別';
+
+  @override
+  String get skillsDisplayProficiencyFirst => '習熟を先に表示';
+
+  @override
+  String get skillsDisplayAlphabetical => 'アルファベット順';
+
+  @override
+  String get skillsDisplayAbilityOrder => '能力値の順序';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups => 'グループ内で習熟を先に表示';
+
+  @override
+  String get skillsDisplayRestoreDefault => '初期設定に戻す';
+
+  @override
+  String get skillsDisplayProficientSection => '習熟';
+
+  @override
+  String get skillsDisplayOtherSection => 'その他のスキル';
+
+  @override
+  String get skillsDisplayAllSection => 'すべてのスキル';
+
+  @override
   String get detailTabStats => '統計';
 
   @override

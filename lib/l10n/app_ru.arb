@@ -115,6 +115,18 @@
   "@skillsEditHint": {
     "description": "Skills long-press hint text."
   },
+  "skillsOrganizeTooltip": "Упорядочить",
+  "skillsDisplayTitle": "Отображение навыков",
+  "skillsDisplayModeLabel": "Макет",
+  "skillsDisplayByAbility": "По характеристике",
+  "skillsDisplayProficiencyFirst": "Владение сначала",
+  "skillsDisplayAlphabetical": "По алфавиту",
+  "skillsDisplayAbilityOrder": "Порядок характеристик",
+  "skillsDisplayProficientFirstInsideGroups": "Владение сначала внутри групп",
+  "skillsDisplayRestoreDefault": "Восстановить по умолчанию",
+  "skillsDisplayProficientSection": "С владением",
+  "skillsDisplayOtherSection": "Другие навыки",
+  "skillsDisplayAllSection": "Все навыки",
   "detailTabStats": "Статистика",
   "detailTabSkills": "Навыки",
   "detailTabFeatures": "Функции",

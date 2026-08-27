@@ -286,6 +286,7 @@ Important persisted fields on `Character`:
 | `featureResources` | Remaining uses/points for trackable feature resources, keyed by resource ID. Missing values mean "full". |
 | `spellSlots` / `pactMagicSlots` | Standard multiclass spell slots and Warlock Pact Magic slots, tracked separately. |
 | `imagePath` | Native file name/path or web image reference such as `indexeddb:image:<id>`. Export formats embed image bytes separately. |
+| `sheetPreferences` | Per-character sheet display preferences, such as skill organization and spell level shortcut visibility. |
 | `sortOrder` | Character-list order inside the pinned or unpinned group. |
 
 `domain_constants.dart` stores string constants that are part of persisted JSON
@@ -751,6 +752,14 @@ Heavy tabs use a combination of per-tab providers, cached SRD providers,
 switching responsive and avoid rebuilding large lists when unrelated character
 data changes.
 
+`Character.sheetPreferences` stores per-character visual preferences for the
+sheet itself. Current active preferences include Skills tab organization
+(`byAbility`, `proficiencyFirst`, or `alphabetical`), custom ability section
+order, whether proficient skills appear first inside ability groups, and
+Spells tab level shortcuts. Inventory display preferences exist in the model
+for future use, but the current inventory UI uses the fixed default section
+order.
+
 Scroll views and expansion widgets must use distinct storage keys. Each detail
 tab uses a tab-level `PageStorageKey`, and `ExpansionTile` widgets inside those
 scroll views need their own stable keys. Otherwise Flutter can reuse a saved
@@ -998,6 +1007,9 @@ the affected files before committing.
 | Inventory search | `features/character_detail/inventory/inventory_search_catalog.dart`, `features/character_detail/widgets/inventory/add_item_sheet.dart` |
 | Inventory item UI and custom item forms | `features/character_detail/tabs/inventory_tab.dart`, `features/character_detail/widgets/inventory/` |
 | Notes, note tags, and note ordering | `features/character_detail/tabs/notes_tab.dart`, `CharacterDetailNotifier`, `CharacterNote` |
+| Character sheet visual preferences | `data/models/character_sheet_preferences.dart`, `CharacterDetailNotifier.updateSkillDisplayPreferences()`, relevant detail tab |
+| Skill organization | `features/character_detail/tabs/skills_tab.dart`, `features/character_detail/application/skills_tab_vm.dart` |
+| Spell level shortcuts | `features/character_detail/tabs/spells_tab.dart`, `features/character_detail/widgets/spells/spell_widgets.dart` |
 | Starting equipment packs | `assets/data/srd/equipment.json`, `SrdPackContent`, `ExpandEquipmentPacksMigration` |
 | Creation racial ASI/Tasha/Variant Human | `features/character_creation/character_draft_provider.dart`, `steps/step_attributes.dart`, `steps/step_feature_choices.dart`, `assets/data/srd/races.json` |
 | SRD canonical data | `assets/data/srd/` |

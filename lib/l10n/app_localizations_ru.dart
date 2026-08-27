@@ -357,6 +357,43 @@ class AppLocalizationsRu extends AppLocalizations {
       'Удерживайте для переключения: нет → владение → экспертиза';
 
   @override
+  String get skillsOrganizeTooltip => 'Упорядочить';
+
+  @override
+  String get skillsDisplayTitle => 'Отображение навыков';
+
+  @override
+  String get skillsDisplayModeLabel => 'Макет';
+
+  @override
+  String get skillsDisplayByAbility => 'По характеристике';
+
+  @override
+  String get skillsDisplayProficiencyFirst => 'Владение сначала';
+
+  @override
+  String get skillsDisplayAlphabetical => 'По алфавиту';
+
+  @override
+  String get skillsDisplayAbilityOrder => 'Порядок характеристик';
+
+  @override
+  String get skillsDisplayProficientFirstInsideGroups =>
+      'Владение сначала внутри групп';
+
+  @override
+  String get skillsDisplayRestoreDefault => 'Восстановить по умолчанию';
+
+  @override
+  String get skillsDisplayProficientSection => 'С владением';
+
+  @override
+  String get skillsDisplayOtherSection => 'Другие навыки';
+
+  @override
+  String get skillsDisplayAllSection => 'Все навыки';
+
+  @override
   String get detailTabStats => 'Статистика';
 
   @override

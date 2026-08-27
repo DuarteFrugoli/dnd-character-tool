@@ -239,7 +239,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     if (!mounted) return;
 
     final settledContext = _spellLevelKeys[level]?.currentContext;
-    if (settledContext == null) return;
+    if (settledContext == null || !settledContext.mounted) return;
     await Scrollable.ensureVisible(
       settledContext,
       duration: const Duration(milliseconds: 220),

@@ -71046,7 +71046,7 @@ return A.l($.a7.ganw(),$async$Io)
 case 4:if(p.c==null){s=1
 break}n=n.i(0,a)
 o=n==null?null:$.a7.aj$.x.i(0,n)
-if(o==null){s=1
+if(o==null||o.e==null){s=1
 break}s=5
 return A.l(A.a5d(o,0.02,B.n_,B.e6,B.oX),$async$Io)
 case 5:case 1:return A.r(q,r)}})

@@ -54,19 +54,20 @@ class CharacterRepository {
     required int sortOrder,
   }) async {
     final id = _generateId();
-    final fileJson = await _local.exportToFileJson(source);
-    final imported = await _local.importFromDndCharFile(
-      fileJson,
+    final copiedImagePath = await _local.copyImageForCharacter(
+      source,
       imageOwnerId: id,
     );
     final now = DateTime.now();
-    final duplicate = imported.copyWith(
+    final duplicate = source.copyWith(
       id: id,
       name: name,
       createdAt: now,
       updatedAt: now,
       isPinned: isPinned,
       sortOrder: sortOrder,
+      imagePath: copiedImagePath,
+      clearImagePath: copiedImagePath == null,
     );
 
     await _local.save(duplicate);
@@ -168,10 +169,13 @@ class CharacterRepository {
   /// O personagem importado *sempre* recebe um novo ID para garantir que o ID
   /// persistido seja gerado localmente (previne path traversal e conflitos).
   Future<Character> importFromJson(String jsonString) async {
-    final imported = _local.importFromJson(jsonString);
-
+    final id = _generateId();
+    final imported = await _local.importFromDndCharFile(
+      jsonString,
+      imageOwnerId: id,
+    );
     final character = imported.copyWith(
-      id: _generateId(),
+      id: id,
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
     );

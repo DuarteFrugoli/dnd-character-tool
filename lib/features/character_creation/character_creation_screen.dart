@@ -53,6 +53,7 @@ class _CharacterCreationScreenState
   int _currentStep = 0;
   bool _isAdvancing = false;
   String? _featureChoiceLoadErrorKey;
+  final _reviewKey = GlobalKey<StepReviewState>();
 
   List<_CreationStep> _stepsForDraft(
     AppLocalizations l10n,
@@ -98,7 +99,7 @@ class _CharacterCreationScreenState
       _CreationStep(
         id: _CreationStepId.review,
         title: l10n.creationStepReview,
-        child: StepReview(onFinish: _finishCreation),
+        child: StepReview(key: _reviewKey),
       ),
     ];
   }
@@ -142,6 +143,15 @@ class _CharacterCreationScreenState
 
   int _clampedStep(List<_CreationStep> steps) {
     return _currentStep.clamp(0, steps.length - 1).toInt();
+  }
+
+  void _goToStep(_CreationStepId stepId) {
+    final l10n = AppLocalizations.of(context)!;
+    final draft = ref.read(characterDraftProvider);
+    final steps = _stepsForDraft(l10n, draft);
+    final target = steps.indexWhere((step) => step.id == stepId);
+    if (target < 0) return;
+    setState(() => _currentStep = target);
   }
 
   Future<void> _loadFeatureChoicesBeforeReview(CharacterDraft draft) async {
@@ -212,24 +222,37 @@ class _CharacterCreationScreenState
               draft.featureChoices,
             ),
       _CreationStepId.review =>
-        (draft.languageChoicesNeeded == 0 ||
-                draft.chosenLanguages.length >= draft.languageChoicesNeeded) &&
-            (draft.toolChoicesNeeded == 0 ||
-                (draft.chosenToolProficiencies.length >=
-                        draft.toolChoicesNeeded &&
-                    !draft.chosenToolProficiencies
-                        .take(draft.toolChoicesNeeded)
-                        .any((s) => s.isEmpty))) &&
-            (draft.equipmentChoicesNeeded == 0 ||
-                draft.resolvedEquipmentChoices.length >=
-                    draft.equipmentChoicesNeeded) &&
-            draft.classEquipmentComplete &&
+        creationReviewFieldsComplete(draft) &&
             draft.featureChoicesLoaded &&
             FeatureChoiceEngine.allComplete(
               draft.featureChoiceRequests,
               draft.featureChoices,
             ),
     };
+  }
+
+  _CreationStepId? _firstIncompleteStep(CharacterDraft draft) {
+    if (draft.selectedClass == null) return _CreationStepId.characterClass;
+    if (draft.selectedRace == null ||
+        (draft.selectedRace!.subraces.isNotEmpty &&
+            draft.selectedSubrace == null)) {
+      return _CreationStepId.race;
+    }
+    if (draft.selectedBackground == null) return _CreationStepId.background;
+    if (!_skillsComplete(draft)) return _CreationStepId.skills;
+    if (draft.baseAttributes.length != 6 || !draft.racialAsiComplete) {
+      return _CreationStepId.attributes;
+    }
+    if (!draft.featureChoicesLoaded) return _CreationStepId.featureChoices;
+    if (draft.featureChoiceRequests.isNotEmpty &&
+        !FeatureChoiceEngine.allComplete(
+          draft.featureChoiceRequests,
+          draft.featureChoices,
+        )) {
+      return _CreationStepId.featureChoices;
+    }
+    if (!creationReviewFieldsComplete(draft)) return _CreationStepId.review;
+    return null;
   }
 
   bool _skillsComplete(CharacterDraft draft) {
@@ -257,10 +280,7 @@ class _CharacterCreationScreenState
       ),
       body: Column(
         children: [
-          StepIndicator(
-            totalSteps: steps.length,
-            currentStep: currentStep,
-          ),
+          StepIndicator(totalSteps: steps.length, currentStep: currentStep),
           Expanded(child: current.child),
         ],
       ),
@@ -276,7 +296,10 @@ class _CharacterCreationScreenState
                 ),
               const Spacer(),
               FilledButton(
-                onPressed: !_isAdvancing && _isStepValid(draft, current.id)
+                onPressed:
+                    !_isAdvancing &&
+                        (current.id == _CreationStepId.review ||
+                            _isStepValid(draft, current.id))
                     ? (current.id == _CreationStepId.review
                           ? _finishCreation
                           : _next)
@@ -296,7 +319,20 @@ class _CharacterCreationScreenState
 
   Future<void> _finishCreation() async {
     final draft = ref.read(characterDraftProvider);
-    if (!_isStepValid(draft, _CreationStepId.review)) return;
+    final incompleteStep = _firstIncompleteStep(draft);
+    if (incompleteStep != null) {
+      if (incompleteStep == _CreationStepId.review) {
+        _reviewKey.currentState?.focusFirstPendingIssue();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.resetLevelsIncomplete),
+          ),
+        );
+      } else {
+        _goToStep(incompleteStep);
+      }
+      return;
+    }
     final created = await ref
         .read(characterDraftProvider.notifier)
         .buildAndSave(

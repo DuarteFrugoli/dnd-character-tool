@@ -3,7 +3,6 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -156,7 +155,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
 
   Future<void> _importCharacter() async {
     final l10n = AppLocalizations.of(context)!;
-    final result = await showDialog<String>(
+    await showDialog<void>(
       context: context,
       builder: (ctx) => _ImportDialog(
         onFileImported: (character) {
@@ -170,43 +169,6 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
         },
       ),
     );
-
-    if (result == null || !mounted) return;
-    try {
-      final character = await ref
-          .read(characterListProvider.notifier)
-          .importCharacter(result);
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(l10n.charListImportedSuccess(character.name)),
-          backgroundColor: Theme.of(context).colorScheme.primary,
-        ),
-      );
-    } on FormatException catch (e) {
-      if (!mounted) return;
-      final msg = switch (e.message) {
-        'invalid_json' => l10n.importErrorInvalidJson,
-        'not_object' => l10n.importErrorNotObject,
-        'missing_character' => l10n.importErrorMissingCharacter,
-        'corrupted_character' => l10n.importErrorCorruptedCharacter,
-        _ => l10n.charListImportError,
-      };
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(msg),
-          backgroundColor: Theme.of(context).colorScheme.error,
-        ),
-      );
-    } catch (_) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(l10n.charListImportError),
-          backgroundColor: Theme.of(context).colorScheme.error,
-        ),
-      );
-    }
   }
 
   @override
@@ -445,20 +407,14 @@ class _CharacterCard extends ConsumerWidget {
     }
 
     Future<void> exportCharacter() async {
-      final results = await Future.wait([
-        ref.read(characterListProvider.notifier).exportCharacter(character),
-        ref
-            .read(characterListProvider.notifier)
-            .exportCharacterToFile(character),
-      ]);
-      final json = results[0];
-      final fileJson = results[1];
+      final fileJson = await ref
+          .read(characterListProvider.notifier)
+          .exportCharacterToFile(character);
       if (!context.mounted) return;
       await showDialog<void>(
         context: context,
         builder: (ctx) => _ExportDialog(
           characterName: character.name,
-          json: json,
           fileJson: fileJson,
         ),
       );
@@ -694,12 +650,10 @@ class _CharacterCard extends ConsumerWidget {
 class _ExportDialog extends StatefulWidget {
   const _ExportDialog({
     required this.characterName,
-    required this.json,
     required this.fileJson,
   });
 
   final String characterName;
-  final String json;
   final String fileJson;
 
   @override
@@ -707,16 +661,7 @@ class _ExportDialog extends StatefulWidget {
 }
 
 class _ExportDialogState extends State<_ExportDialog> {
-  bool _jsonExpanded = false;
   bool _sharingFile = false;
-
-  Future<void> _copy(BuildContext ctx, String text, String label) async {
-    await Clipboard.setData(ClipboardData(text: text));
-    if (!ctx.mounted) return;
-    ScaffoldMessenger.of(ctx).showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(ctx)!.exportCopied(label))),
-    );
-  }
 
   Future<void> _shareFile() async {
     setState(() => _sharingFile = true);
@@ -764,58 +709,6 @@ class _ExportDialogState extends State<_ExportDialog> {
                 label: Text(l10n.exportShareFile),
                 onPressed: _sharingFile ? null : _shareFile,
               ),
-              const SizedBox(height: 16),
-              // Advanced raw JSON fallback.
-              InkWell(
-                onTap: () => setState(() => _jsonExpanded = !_jsonExpanded),
-                borderRadius: BorderRadius.circular(6),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Row(
-                    children: [
-                      Icon(
-                        _jsonExpanded
-                            ? Icons.keyboard_arrow_up
-                            : Icons.keyboard_arrow_down,
-                        size: 18,
-                        color: scheme.onSurfaceVariant,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        l10n.exportShowJson,
-                        style: Theme.of(context).textTheme.labelMedium
-                            ?.copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              if (_jsonExpanded) ...[
-                const SizedBox(height: 6),
-                Container(
-                  height: 180,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerHighest,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Text(
-                      widget.json,
-                      style: const TextStyle(
-                        fontFamily: 'monospace',
-                        fontSize: 11,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 6),
-                FilledButton.icon(
-                  icon: const Icon(Icons.copy, size: 16),
-                  label: Text(l10n.exportCopyJson),
-                  onPressed: () => _copy(context, widget.json, 'JSON'),
-                ),
-              ],
             ],
           ),
         ),
@@ -842,21 +735,7 @@ class _ImportDialog extends ConsumerStatefulWidget {
 }
 
 class _ImportDialogState extends ConsumerState<_ImportDialog> {
-  final _jsonCtrl = TextEditingController();
-  bool _jsonExpanded = false;
   bool _pickingFile = false;
-
-  @override
-  void dispose() {
-    _jsonCtrl.dispose();
-    super.dispose();
-  }
-
-  String? _resolveInput() {
-    final rawJson = _jsonCtrl.text.trim();
-    if (rawJson.isNotEmpty) return rawJson;
-    return null;
-  }
 
   Future<void> _pickFile(BuildContext ctx) async {
     setState(() => _pickingFile = true);
@@ -916,90 +795,32 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
       title: Text(l10n.importDialogTitle),
       content: SizedBox(
         width: 520,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Flexible(
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Main .dndchar import path.
-                    OutlinedButton.icon(
-                      onPressed: _pickingFile ? null : () => _pickFile(context),
-                      icon: _pickingFile
-                          ? const SizedBox(
-                              width: 16,
-                              height: 16,
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            )
-                          : const Icon(Icons.folder_open, size: 18),
-                      label: Text(l10n.importPickFile),
-                    ),
-                    const SizedBox(height: 8),
-                    // Advanced raw JSON fallback.
-                    InkWell(
-                      onTap: () =>
-                          setState(() => _jsonExpanded = !_jsonExpanded),
-                      borderRadius: BorderRadius.circular(6),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
-                        child: Row(
-                          children: [
-                            Icon(
-                              _jsonExpanded
-                                  ? Icons.keyboard_arrow_up
-                                  : Icons.keyboard_arrow_down,
-                              size: 18,
-                              color: scheme.onSurfaceVariant,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              l10n.importUseJson,
-                              style: Theme.of(context).textTheme.labelMedium
-                                  ?.copyWith(color: scheme.onSurfaceVariant),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    if (_jsonExpanded) ...[
-                      const SizedBox(height: 6),
-                      TextField(
-                        controller: _jsonCtrl,
-                        maxLines: 8,
-                        decoration: InputDecoration(
-                          hintText: l10n.importJsonHint,
-                          border: const OutlineInputBorder(),
-                        ),
-                        onChanged: (_) => setState(() {}),
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-            ),
-          ],
+        child: Align(
+          alignment: Alignment.centerLeft,
+          heightFactor: 1,
+          widthFactor: 1,
+          child: OutlinedButton.icon(
+            onPressed: _pickingFile ? null : () => _pickFile(context),
+            icon: _pickingFile
+                ? const SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.folder_open, size: 18),
+            label: Text(l10n.importPickFile),
+          ),
         ),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
           child: Text(l10n.dialogCancel),
-        ),
-        FilledButton(
-          onPressed: _resolveInput() != null
-              ? () => Navigator.pop(context, _resolveInput())
-              : null,
-          child: Text(l10n.dialogImport),
         ),
       ],
     );

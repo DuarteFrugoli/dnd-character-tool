@@ -144,97 +144,73 @@ class CharacterLocalDataSource {
     await _backend.deleteImage(fileName);
   }
 
+  Future<({Uint8List? bytes, String? mimeType})> readImagePayload(
+    Character character,
+  ) {
+    return _readImagePayload(character.imagePath);
+  }
+
+  Future<String?> copyImageForCharacter(
+    Character source, {
+    required String imageOwnerId,
+  }) async {
+    final imagePath = source.imagePath;
+    if (imagePath == null) return null;
+
+    final resolvedPath = await _tryResolveImagePath(imagePath);
+    final directCopyCandidates = <String>[
+      ?resolvedPath,
+      if (resolvedPath != imagePath) imagePath,
+    ];
+    for (final candidate in directCopyCandidates) {
+      try {
+        final copiedPath = await saveImage(imageOwnerId, candidate);
+        if (copiedPath != null && copiedPath != imagePath) {
+          return copiedPath;
+        }
+      } catch (_) {}
+    }
+
+    final image = await _readImagePayload(imagePath);
+    final bytes = image.bytes;
+    if (bytes != null) {
+      try {
+        return await persistImportedImagePayload(
+          backend: _backend,
+          imageOwnerId: imageOwnerId,
+          imageData: base64Encode(bytes),
+          mimeType: image.mimeType ?? 'image/jpeg',
+        );
+      } catch (_) {}
+    }
+    return null;
+  }
+
   // ---------------------------------------------------------------------------
   // Export / Import JSON
   // ---------------------------------------------------------------------------
 
-  Future<String> exportToJson(Character character) async {
-    final payload = {
-      'version': '1.0',
-      'exportedAt': DateTime.now().toIso8601String(),
-      'character': character.copyWith(clearImagePath: true).toJson(),
-    };
-    return const JsonEncoder.withIndent('  ').convert(payload);
+  Future<String> exportToJson(Character character) {
+    return exportToFileJson(character);
   }
 
   Future<String> exportToFileJson(Character character) async {
-    Uint8List? bytes;
-    String? mimeType;
-
-    final imagePath = character.imagePath;
-    if (imagePath != null) {
-      if (imagePath.startsWith('data:')) {
-        // Legacy inline image: extract bytes and mime type.
-        final commaIdx = imagePath.indexOf(',');
-        if (commaIdx != -1) {
-          final header = imagePath.substring(
-            5,
-            commaIdx,
-          ); // e.g. "image/jpeg;base64"
-          mimeType = header.split(';').first; // "image/jpeg"
-          try {
-            bytes = base64Decode(imagePath.substring(commaIdx + 1));
-          } catch (_) {}
-        }
-      } else {
-        // Native: resolve file path and read bytes.
-        final absolutePath = await resolveImagePath(imagePath);
-        if (absolutePath != null) {
-          final image = await readStoredImagePayload(absolutePath);
-          bytes = image.bytes;
-          mimeType = image.mimeType;
-        }
-      }
-    }
+    final image = await readImagePayload(character);
 
     return compute(_encodeExportPayload, {
       'character': character.copyWith(clearImagePath: true).toJson(),
-      'bytes': bytes,
-      'mimeType': mimeType,
+      'bytes': image.bytes,
+      'mimeType': image.mimeType,
       'exportedAt': DateTime.now().toIso8601String(),
     });
   }
 
   Future<String> exportBackupToFileJson() async {
-    Future<({Uint8List? bytes, String? mimeType})> readImage(
-      Character character,
-    ) async {
-      final imagePath = character.imagePath;
-      if (imagePath == null) {
-        return (bytes: null, mimeType: null);
-      }
-
-      if (imagePath.startsWith('data:')) {
-        final commaIdx = imagePath.indexOf(',');
-        if (commaIdx == -1) {
-          return (bytes: null, mimeType: null);
-        }
-
-        final header = imagePath.substring(5, commaIdx);
-        final mimeType = header.split(';').first;
-        try {
-          return (
-            bytes: base64Decode(imagePath.substring(commaIdx + 1)),
-            mimeType: mimeType,
-          );
-        } catch (_) {
-          return (bytes: null, mimeType: null);
-        }
-      }
-
-      final absolutePath = await resolveImagePath(imagePath);
-      if (absolutePath == null) {
-        return (bytes: null, mimeType: null);
-      }
-
-      return readStoredImagePayload(absolutePath);
-    }
-
     final characters = await loadAll();
     final exportedCharacters = <Map<String, dynamic>>[];
 
     for (final character in characters) {
-      final image = await readImage(character);
+      final image = await readImagePayload(character);
       final exportedCharacter = <String, dynamic>{
         'character': character.copyWith(clearImagePath: true).toJson(),
       };
@@ -374,6 +350,54 @@ class CharacterLocalDataSource {
     }
 
     return character;
+  }
+
+  Future<({Uint8List? bytes, String? mimeType})> _readImagePayload(
+    String? imagePath,
+  ) async {
+    if (imagePath == null) {
+      return (bytes: null, mimeType: null);
+    }
+
+    if (imagePath.startsWith('data:')) {
+      final commaIdx = imagePath.indexOf(',');
+      if (commaIdx == -1) {
+        return (bytes: null, mimeType: null);
+      }
+
+      final header = imagePath.substring(5, commaIdx);
+      final mimeType = header.split(';').first;
+      try {
+        return (
+          bytes: base64Decode(imagePath.substring(commaIdx + 1)),
+          mimeType: mimeType,
+        );
+      } catch (_) {
+        return (bytes: null, mimeType: null);
+      }
+    }
+
+    final resolvedPath = await _tryResolveImagePath(imagePath);
+    final candidates = <String>[
+      ?resolvedPath,
+      if (resolvedPath != imagePath) imagePath,
+    ];
+    for (final candidate in candidates) {
+      try {
+        final image = await readStoredImagePayload(candidate);
+        if (image.bytes != null) return image;
+      } catch (_) {}
+    }
+
+    return (bytes: null, mimeType: null);
+  }
+
+  Future<String?> _tryResolveImagePath(String imagePath) async {
+    try {
+      return await resolveImagePath(imagePath);
+    } catch (_) {
+      return null;
+    }
   }
 }
 

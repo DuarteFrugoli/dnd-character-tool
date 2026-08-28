@@ -1,8 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
-
-import 'package:path_provider/path_provider.dart';
 
 import 'storage_backend_stub.dart' show StorageBackend;
 
@@ -15,9 +12,15 @@ Future<({Uint8List? bytes, String? mimeType})> readStoredImagePayload(
   }
 
   final ext = absolutePath.split('.').last.toLowerCase();
+  final mimeType = switch (ext) {
+    'png' => 'image/png',
+    'webp' => 'image/webp',
+    'gif' => 'image/gif',
+    _ => 'image/jpeg',
+  };
   return (
     bytes: await file.readAsBytes(),
-    mimeType: ext == 'png' ? 'image/png' : 'image/jpeg',
+    mimeType: mimeType,
   );
 }
 
@@ -27,18 +30,5 @@ Future<String?> persistImportedImagePayload({
   required String imageData,
   required String mimeType,
 }) async {
-  final bytes = base64Decode(imageData);
-  final ext = mimeType == 'image/png' ? 'png' : 'jpg';
-  final tempDir = await getTemporaryDirectory();
-  final ts = DateTime.now().microsecondsSinceEpoch;
-  final tempFile = File('${tempDir.path}/dndchar_import_$ts.$ext');
-
-  try {
-    await tempFile.writeAsBytes(bytes);
-    return backend.saveImage(imageOwnerId, tempFile.path);
-  } finally {
-    try {
-      if (await tempFile.exists()) await tempFile.delete();
-    } catch (_) {}
-  }
+  return backend.saveImage(imageOwnerId, 'data:$mimeType;base64,$imageData');
 }

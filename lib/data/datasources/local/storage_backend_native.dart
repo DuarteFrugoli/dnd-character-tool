@@ -161,29 +161,84 @@ class NativeStorageBackend implements StorageBackend {
   @override
   Future<String?> saveImage(String characterId, String sourcePath) async {
     final dir = await _imagesDir;
-    final ext = sourcePath.contains('.')
-        ? sourcePath.split('.').last.toLowerCase()
-        : 'jpg';
+    final dataUrl = _decodeImageDataUrl(sourcePath);
+    final ext = dataUrl == null
+        ? _extensionForPath(sourcePath)
+        : _extensionForMimeType(dataUrl.mimeType);
     // Use a timestamp so the path always changes on update, preventing
     // Flutter's FileImage cache from serving the stale image.
     final ts = DateTime.now().millisecondsSinceEpoch;
     final fileName = '${characterId}_$ts.$ext';
     final dest = File('${dir.path}/$fileName');
-    await File(sourcePath).copy(dest.path);
+    if (dataUrl != null) {
+      await dest.writeAsBytes(dataUrl.bytes);
+    } else {
+      await File(_normalizeFilePath(sourcePath)).copy(dest.path);
+    }
     return dest.path;
   }
 
   @override
   Future<String?> resolveImagePath(String? fileName) async {
     if (fileName == null) return null;
-    final file = File(fileName);
+    final file = File(_normalizeFilePath(fileName));
     return await file.exists() ? file.path : null;
   }
 
   @override
   Future<void> deleteImage(String? fileName) async {
     if (fileName == null) return;
-    final file = File(fileName);
+    final file = File(_normalizeFilePath(fileName));
     if (await file.exists()) await file.delete();
+  }
+
+  String _normalizeFilePath(String path) {
+    if (path.startsWith('file://')) {
+      try {
+        return Uri.parse(path).toFilePath();
+      } catch (_) {}
+    }
+    return path;
+  }
+
+  String _extensionForPath(String path) {
+    final cleanPath = _normalizeFilePath(path);
+    final lastSegment = cleanPath.split(RegExp(r'[\\/]')).last;
+    if (!lastSegment.contains('.')) return 'jpg';
+    final ext = lastSegment.split('.').last.toLowerCase();
+    return switch (ext) {
+      'png' => 'png',
+      'webp' => 'webp',
+      'gif' => 'gif',
+      'jpeg' => 'jpg',
+      'jpg' => 'jpg',
+      _ => 'jpg',
+    };
+  }
+
+  String _extensionForMimeType(String mimeType) {
+    return switch (mimeType.toLowerCase()) {
+      'image/png' => 'png',
+      'image/webp' => 'webp',
+      'image/gif' => 'gif',
+      _ => 'jpg',
+    };
+  }
+
+  ({List<int> bytes, String mimeType})? _decodeImageDataUrl(String dataUrl) {
+    if (!dataUrl.startsWith('data:')) return null;
+    final commaIdx = dataUrl.indexOf(',');
+    if (commaIdx == -1) return null;
+    final header = dataUrl.substring(5, commaIdx);
+    final mimeType = header.split(';').first;
+    if (!mimeType.startsWith('image/')) return null;
+    try {
+      return (
+        bytes: base64Decode(dataUrl.substring(commaIdx + 1)),
+        mimeType: mimeType,
+      );
+    } catch (_) {
+      return null;
+    }
   }
 }

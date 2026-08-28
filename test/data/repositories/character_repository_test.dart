@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dnd_character_tool/data/datasources/local/character_local_data_source.dart';
 import 'package:dnd_character_tool/data/datasources/local/storage_backend_stub.dart';
@@ -10,6 +11,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 class _InMemoryBackend extends StorageBackend {
   final Map<String, Map<String, dynamic>> _chars = {};
+  final Directory _imageDir = Directory.systemTemp.createTempSync(
+    'dnd_character_repository_test_images_',
+  );
+  int _imageCounter = 0;
 
   @override
   Future<List<Map<String, dynamic>>> loadAllCharacters() async =>
@@ -30,14 +35,56 @@ class _InMemoryBackend extends StorageBackend {
   Future<bool> characterExists(String id) async => _chars.containsKey(id);
 
   @override
-  Future<String?> saveImage(String characterId, String sourcePath) async =>
-      null;
+  Future<String?> saveImage(String characterId, String sourcePath) async {
+    if (sourcePath.startsWith('data:')) {
+      final commaIdx = sourcePath.indexOf(',');
+      if (commaIdx == -1) return null;
+      final header = sourcePath.substring(5, commaIdx);
+      final mimeType = header.split(';').first;
+      final ext = mimeType == 'image/png' ? 'png' : 'jpg';
+      final path = '${_imageDir.path}/${characterId}_${_imageCounter++}.$ext';
+      await File(
+        path,
+      ).writeAsBytes(base64Decode(sourcePath.substring(commaIdx + 1)));
+      return path;
+    }
+    final source = File(sourcePath);
+    if (!await source.exists()) return null;
+    final ext = sourcePath.contains('.')
+        ? sourcePath.split('.').last.toLowerCase()
+        : 'jpg';
+    final path = '${_imageDir.path}/${characterId}_${_imageCounter++}.$ext';
+    await source.copy(path);
+    return path;
+  }
 
   @override
-  Future<String?> resolveImagePath(String? fileName) async => null;
+  Future<String?> resolveImagePath(String? fileName) async {
+    if (fileName == null) return null;
+    return await File(fileName).exists() ? fileName : null;
+  }
 
   @override
-  Future<void> deleteImage(String? fileName) async {}
+  Future<void> deleteImage(String? fileName) async {
+    if (fileName == null) return;
+    final file = File(fileName);
+    if (await file.exists()) await file.delete();
+  }
+
+  Future<String> writeImage(
+    List<int> bytes, {
+    String name = 'source.jpg',
+  }) async {
+    final file = File('${_imageDir.path}/$name');
+    await file.writeAsBytes(bytes);
+    return file.path;
+  }
+
+  void dispose() {
+    if (_imageDir.existsSync()) {
+      _imageDir.deleteSync(recursive: true);
+    }
+  }
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -45,6 +92,7 @@ class _InMemoryBackend extends StorageBackend {
 Character _makeCharacter({
   String id = 'original-id',
   String name = 'Test Hero',
+  String? imagePath,
 }) {
   final now = DateTime(2024);
   return Character(
@@ -54,6 +102,7 @@ Character _makeCharacter({
     characterClass: 'Fighter',
     abilityScores: const AbilityScores(),
     hitPoints: const HitPoints(maximum: 10, current: 10),
+    imagePath: imagePath,
     createdAt: now,
     updatedAt: now,
   );
@@ -74,6 +123,10 @@ void main() {
     backend = _InMemoryBackend();
     final ds = CharacterLocalDataSource.fromBackend(backend);
     repo = CharacterRepository(dataSource: ds);
+  });
+
+  tearDown(() {
+    backend.dispose();
   });
 
   group('importFromJson', () {
@@ -127,6 +180,61 @@ void main() {
       final retrieved = await repo.getById(imported.id);
       expect(retrieved, isNotNull);
       expect(retrieved!.id, equals(imported.id));
+    });
+
+    test('exportToJson includes readable character images', () async {
+      final sourceImagePath = await backend.writeImage(
+        [2, 4, 6, 8],
+        name: 'json-source.jpg',
+      );
+      final original = _makeCharacter(
+        id: 'with-image',
+        imagePath: sourceImagePath,
+      );
+
+      final jsonStr = await _exportCharacter(repo, original);
+      final decoded = jsonDecode(jsonStr) as Map<String, dynamic>;
+
+      expect(decoded['imageData'], base64Encode([2, 4, 6, 8]));
+      expect(decoded['imageMimeType'], 'image/jpeg');
+    });
+
+    test(
+      'preserves embedded image data when the payload includes it',
+      () async {
+        final exported = _makeCharacter(id: 'exported-id', name: 'With Image');
+        final payload = jsonEncode({
+          'version': '1.0',
+          'character': exported.toJson(),
+          'imageData': base64Encode([1, 2, 3, 4]),
+          'imageMimeType': 'image/png',
+        });
+
+        final imported = await repo.importFromJson(payload);
+
+        expect(imported.imagePath, isNotNull);
+        expect(await File(imported.imagePath!).readAsBytes(), [1, 2, 3, 4]);
+      },
+    );
+
+    test('duplicate copies the image into a new local image path', () async {
+      final sourceImagePath = await backend.writeImage([5, 6, 7, 8]);
+      final original = _makeCharacter(
+        id: 'original-id',
+        imagePath: sourceImagePath,
+      );
+      await repo.save(original);
+
+      final duplicate = await repo.duplicate(
+        original,
+        name: 'Test Hero Copy',
+        isPinned: false,
+        sortOrder: 1,
+      );
+
+      expect(duplicate.imagePath, isNotNull);
+      expect(duplicate.imagePath, isNot(sourceImagePath));
+      expect(await File(duplicate.imagePath!).readAsBytes(), [5, 6, 7, 8]);
     });
 
     test('throws FormatException for invalid JSON', () async {
@@ -184,6 +292,57 @@ void main() {
     });
 
     test(
+      'importBackupFromFileJson preserves embedded character images',
+      () async {
+        final exported = _makeCharacter(id: 'exported-a', name: 'A');
+        final payload = jsonEncode({
+          'type': 'dnd-character-tool-backup',
+          'characters': [
+            {
+              'character': exported.toJson(),
+              'imageData': base64Encode([9, 8, 7, 6]),
+              'imageMimeType': 'image/jpeg',
+            },
+          ],
+        });
+
+        final imported = await repo.importBackupFromFileJson(payload);
+
+        expect(imported.single.imagePath, isNotNull);
+        expect(await File(imported.single.imagePath!).readAsBytes(), [
+          9,
+          8,
+          7,
+          6,
+        ]);
+      },
+    );
+
+    test('exportBackupToFileJson embeds readable character images', () async {
+      final sourceImagePath = await backend.writeImage([
+        4,
+        3,
+        2,
+        1,
+      ], name: 'backup-source.png');
+      await repo.save(
+        _makeCharacter(
+          id: 'with-image',
+          name: 'With Image',
+          imagePath: sourceImagePath,
+        ),
+      );
+
+      final backupJson = await repo.exportBackupToFileJson();
+      final decoded = jsonDecode(backupJson) as Map<String, dynamic>;
+      final entries = decoded['characters'] as List<dynamic>;
+      final exported = entries.single as Map<String, dynamic>;
+
+      expect(exported['imageData'], base64Encode([4, 3, 2, 1]));
+      expect(exported['imageMimeType'], 'image/png');
+    });
+
+    test(
       'importBackupFromFileJson rejects a single-character payload',
       () async {
         final payload = await repo.exportToJson(_makeCharacter());
@@ -197,6 +356,29 @@ void main() {
   });
 
   group('dndchar file import', () {
+    test('export and import preserves the embedded character image', () async {
+      final sourceImagePath = await backend.writeImage([
+        3,
+        1,
+        4,
+        1,
+      ], name: 'dndchar-source.jpg');
+      final exported = _makeCharacter(
+        id: 'exported-id',
+        name: 'With Image',
+        imagePath: sourceImagePath,
+      );
+
+      final fileJson = await repo.exportToFileJson(exported);
+      final decoded = jsonDecode(fileJson) as Map<String, dynamic>;
+      final imported = await repo.importFromDndCharFile(fileJson);
+
+      expect(decoded['imageData'], base64Encode([3, 1, 4, 1]));
+      expect(imported.imagePath, isNotNull);
+      expect(imported.imagePath, isNot(sourceImagePath));
+      expect(await File(imported.imagePath!).readAsBytes(), [3, 1, 4, 1]);
+    });
+
     test(
       'importFromDndCharFile assigns a new ID and ignores broken image data',
       () async {

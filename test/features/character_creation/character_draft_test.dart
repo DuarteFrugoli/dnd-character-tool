@@ -84,6 +84,7 @@ CharacterDraft _draft({
   bool featureChoicesLoaded = true,
   List<FeatureChoiceRequest> featureChoiceRequests = const [],
   List<CharacterFeatureChoice> featureChoices = const [],
+  int? rolledStartingGold = 100,
 }) {
   return CharacterDraft(
     id: 'draft-id',
@@ -97,6 +98,7 @@ CharacterDraft _draft({
     featureChoicesLoaded: featureChoicesLoaded,
     featureChoiceRequests: featureChoiceRequests,
     featureChoices: featureChoices,
+    rolledStartingGold: rolledStartingGold,
   );
 }
 
@@ -188,6 +190,7 @@ void main() {
           'Charisma': 10,
         },
         featureChoicesLoaded: true,
+        rolledStartingGold: 100,
         featureChoices: const [
           CharacterFeatureChoice(
             sourceType: FeatureChoiceSourceType.feat,
@@ -251,6 +254,22 @@ void main() {
         ],
       );
 
+      expect(draft.isComplete, isTrue);
+    });
+  });
+
+  group('CharacterDraft review requirements', () {
+    test('requires starting gold to be rolled before completion', () {
+      final draft = _draft(rolledStartingGold: null);
+
+      expect(draft.isComplete, isFalse);
+      expect(firstCreationReviewIssue(draft), CreationReviewIssue.startingGold);
+    });
+
+    test('is complete when review requirements are filled', () {
+      final draft = _draft(rolledStartingGold: 80);
+
+      expect(firstCreationReviewIssue(draft), isNull);
       expect(draft.isComplete, isTrue);
     });
   });

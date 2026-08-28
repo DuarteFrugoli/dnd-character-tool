@@ -16,13 +16,59 @@ import '../character_draft_provider.dart';
 import '../widgets/review_equipment_preview.dart';
 import '../widgets/review_equipment_widgets.dart';
 
-class StepReview extends ConsumerWidget {
-  const StepReview({super.key, required this.onFinish});
-
-  final VoidCallback onFinish;
+class StepReview extends ConsumerStatefulWidget {
+  const StepReview({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<StepReview> createState() => StepReviewState();
+}
+
+class StepReviewState extends ConsumerState<StepReview> {
+  final _scrollController = ScrollController();
+  final _startingGoldKey = GlobalKey();
+  final _languageChoicesKey = GlobalKey();
+  final _toolChoicesKey = GlobalKey();
+  final _startingEquipmentKey = GlobalKey();
+  final _classEquipmentKey = GlobalKey();
+  bool _showValidation = false;
+
+  bool focusFirstPendingIssue() {
+    final issue = firstCreationReviewIssue(ref.read(characterDraftProvider));
+    setState(() => _showValidation = true);
+    if (issue == null) return false;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final context = _keyForIssue(issue).currentContext;
+      if (context == null) return;
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 260),
+        curve: Curves.easeOutCubic,
+        alignment: 0.08,
+      );
+    });
+    return true;
+  }
+
+  GlobalKey _keyForIssue(CreationReviewIssue issue) {
+    return switch (issue) {
+      CreationReviewIssue.startingGold => _startingGoldKey,
+      CreationReviewIssue.languages => _languageChoicesKey,
+      CreationReviewIssue.tools => _toolChoicesKey,
+      CreationReviewIssue.backgroundEquipment => _startingEquipmentKey,
+      CreationReviewIssue.classEquipment => _classEquipmentKey,
+    };
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
@@ -88,6 +134,7 @@ class StepReview extends ConsumerWidget {
         : null;
 
     return ListView(
+      controller: _scrollController,
       padding: const EdgeInsets.all(16),
       children: [
         _ReviewSection(
@@ -117,9 +164,13 @@ class StepReview extends ConsumerWidget {
                       .join(', ') ??
                   '—',
             ),
-            if (draft.selectedClass != null) const _StartingGoldRow(),
           ],
         ),
+        if (draft.selectedClass != null)
+          _StartingGoldSection(
+            key: _startingGoldKey,
+            showValidation: _showValidation,
+          ),
         _ReviewSection(
           title: l10n.creationStepRace,
           children: [
@@ -174,15 +225,28 @@ class StepReview extends ConsumerWidget {
           ],
         ),
         // ── Language Choices ────────────────────────────────────────────────────────
-        if (draft.languageChoicesNeeded > 0) const _LanguageChoiceSection(),
+        if (draft.languageChoicesNeeded > 0)
+          _LanguageChoiceSection(
+            key: _languageChoicesKey,
+            showValidation: _showValidation,
+          ),
         // ── Tool Proficiency Choices ─────────────────────────────────────────────────
-        const _ToolProficiencySection(),
+        _ToolProficiencySection(
+          key: _toolChoicesKey,
+          showValidation: _showValidation,
+        ),
         // ── Starting Equipment ─────────────────────────────────────────────────────
         if (draft.selectedBackground != null &&
             draft.selectedBackground!.startingEquipment.isNotEmpty)
-          const _StartingEquipmentSection(), // ── Class Equipment ────────────────────────────────────────────────────
+          _StartingEquipmentSection(
+            key: _startingEquipmentKey,
+            showValidation: _showValidation,
+          ), // ── Class Equipment ────────────────────────────────────────────────────
         if (draft.selectedClass?.startingEquipment != null)
-          const _ClassEquipmentSection(),
+          _ClassEquipmentSection(
+            key: _classEquipmentKey,
+            showValidation: _showValidation,
+          ),
         const SizedBox(height: 16),
       ],
     );
@@ -270,79 +334,123 @@ int _rollGoldDice(String dice) {
   return total * mult;
 }
 
-class _StartingGoldRow extends ConsumerStatefulWidget {
-  const _StartingGoldRow();
+class _StartingGoldSection extends ConsumerWidget {
+  const _StartingGoldSection({super.key, required this.showValidation});
+
+  final bool showValidation;
 
   @override
-  ConsumerState<_StartingGoldRow> createState() => _StartingGoldRowState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    void roll() {
+      final dice = ref
+          .read(characterDraftProvider)
+          .selectedClass!
+          .startingGoldDice;
+      final result = _rollGoldDice(dice);
+      ref.read(characterDraftProvider.notifier).setRolledStartingGold(result);
+    }
 
-class _StartingGoldRowState extends ConsumerState<_StartingGoldRow> {
-  void _roll() {
-    final dice = ref
-        .read(characterDraftProvider)
-        .selectedClass!
-        .startingGoldDice;
-    final result = _rollGoldDice(dice);
-    ref.read(characterDraftProvider.notifier).setRolledStartingGold(result);
-  }
-
-  @override
-  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final draft = ref.watch(characterDraftProvider);
     final dice = draft.selectedClass!.startingGoldDice;
     final rolled = draft.rolledStartingGold;
     final scheme = Theme.of(context).colorScheme;
+    final isMissing = rolled == null;
+    final showError = showValidation && isMissing;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: 140,
-            child: Text(
-              AppLocalizations.of(context)!.reviewStartingGold,
-              style: Theme.of(
-                context,
-              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
-            ),
-          ),
-          Expanded(
-            child: rolled != null
-                ? Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '$rolled gp',
-                          style: Theme.of(context).textTheme.bodyMedium
-                              ?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: scheme.primary,
-                              ),
-                        ),
-                        TextSpan(
-                          text: '  (${_formatStartingGold(dice)})',
-                          style: Theme.of(context).textTheme.bodySmall
-                              ?.copyWith(color: scheme.onSurfaceVariant),
-                        ),
-                      ],
+    return Card(
+      margin: const EdgeInsets.only(bottom: 12),
+      shape: _reviewCardShape(context, showError),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.payments_outlined, size: 20, color: scheme.primary),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    l10n.reviewStartingGold,
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: showError ? scheme.error : scheme.primary,
                     ),
-                  )
-                : Text(
-                    _formatStartingGold(dice),
-                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
-          ),
-          const SizedBox(width: 8),
-          FilledButton.tonal(
-            style: FilledButton.styleFrom(
-              padding: const EdgeInsets.all(10),
-              visualDensity: VisualDensity.compact,
-              minimumSize: const Size(40, 40),
+                ),
+                if (showError)
+                  _PendingReviewChip(label: l10n.featureChoicesPending),
+              ],
             ),
-            onPressed: _roll,
-            child: const Icon(Icons.casino_outlined, size: 18),
+            const SizedBox(height: 10),
+            Text(
+              rolled == null ? _formatStartingGold(dice) : '$rolled gp',
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: rolled == null ? scheme.onSurface : scheme.primary,
+              ),
+            ),
+            if (rolled != null) ...[
+              const SizedBox(height: 2),
+              Text(
+                _formatStartingGold(dice),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
+              ),
+            ],
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: roll,
+                icon: const Icon(Icons.casino_outlined, size: 18),
+                label: Text(
+                  rolled == null ? l10n.diceRollButton : l10n.diceRerollButton,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+ShapeBorder? _reviewCardShape(BuildContext context, bool showError) {
+  if (!showError) return null;
+  final scheme = Theme.of(context).colorScheme;
+  return RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(12),
+    side: BorderSide(color: scheme.error, width: 1.2),
+  );
+}
+
+class _PendingReviewChip extends StatelessWidget {
+  const _PendingReviewChip({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      decoration: BoxDecoration(
+        color: scheme.errorContainer,
+        borderRadius: BorderRadius.circular(999),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.error_outline, size: 14, color: scheme.onErrorContainer),
+          const SizedBox(width: 4),
+          Text(
+            label,
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+              color: scheme.onErrorContainer,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ],
       ),
@@ -351,7 +459,9 @@ class _StartingGoldRowState extends ConsumerState<_StartingGoldRow> {
 }
 
 class _StartingEquipmentSection extends ConsumerWidget {
-  const _StartingEquipmentSection();
+  const _StartingEquipmentSection({super.key, required this.showValidation});
+
+  final bool showValidation;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -375,9 +485,12 @@ class _StartingEquipmentSection extends ConsumerWidget {
     final selectedItems = draft.selectedStartingEquipment;
     final resolvedChoices = draft.resolvedEquipmentChoices;
     final allFixedSelected = fixedItems.every(selectedItems.contains);
+    final showError =
+        showValidation && !creationBackgroundEquipmentChoicesComplete(draft);
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
+      shape: _reviewCardShape(context, showError),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -387,9 +500,9 @@ class _StartingEquipmentSection extends ConsumerWidget {
               children: [
                 Text(
                   l10n.reviewStartingEquipment,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.labelLarge?.copyWith(color: scheme.primary),
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    color: showError ? scheme.error : scheme.primary,
+                  ),
                 ),
                 const Spacer(),
                 if (fixedItems.isNotEmpty)
@@ -423,6 +536,10 @@ class _StartingEquipmentSection extends ConsumerWidget {
                   ),
               ],
             ),
+            if (showError) ...[
+              const SizedBox(height: 8),
+              _PendingReviewChip(label: l10n.featureChoicesPending),
+            ],
             if (fixedItems.isNotEmpty) ...[
               const SizedBox(height: 4),
               Text(
@@ -487,8 +604,9 @@ class _StartingEquipmentSection extends ConsumerWidget {
                         i18n: i18n,
                         l10n: l10n,
                       );
-                final currentDetailsPreview =
-                    currentPreview?.hasDetails == true ? currentPreview : null;
+                final currentDetailsPreview = currentPreview?.hasDetails == true
+                    ? currentPreview
+                    : null;
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: DropdownButtonFormField<String>(
@@ -509,40 +627,31 @@ class _StartingEquipmentSection extends ConsumerWidget {
                             ),
                     ),
                     hint: Text(l10n.stepChooseOne),
-                    selectedItemBuilder: (context) => options
-                        .map(
-                          (o) {
-                            final label = equipmentPreviewLabel(
-                              rawName: o,
-                              itemsByName: itemsByName,
-                              i18n: i18n,
-                              l10n: l10n,
-                            );
-                            return Text(
-                              label,
-                              overflow: TextOverflow.ellipsis,
-                            );
-                          },
-                        )
-                        .toList(),
-                    items: options
-                        .map((o) {
-                          final preview = equipmentPreviewFor(
-                            rawName: o,
-                            itemsByName: itemsByName,
-                            i18n: i18n,
-                            l10n: l10n,
-                          );
-                          return DropdownMenuItem(
-                            value: o,
-                            child: EquipmentDropdownOption(
-                              preview: preview,
-                              label: i18n.backgroundEquipmentName(o),
-                              i18n: i18n,
-                            ),
-                          );
-                        })
-                        .toList(),
+                    selectedItemBuilder: (context) => options.map((o) {
+                      final label = equipmentPreviewLabel(
+                        rawName: o,
+                        itemsByName: itemsByName,
+                        i18n: i18n,
+                        l10n: l10n,
+                      );
+                      return Text(label, overflow: TextOverflow.ellipsis);
+                    }).toList(),
+                    items: options.map((o) {
+                      final preview = equipmentPreviewFor(
+                        rawName: o,
+                        itemsByName: itemsByName,
+                        i18n: i18n,
+                        l10n: l10n,
+                      );
+                      return DropdownMenuItem(
+                        value: o,
+                        child: EquipmentDropdownOption(
+                          preview: preview,
+                          label: i18n.backgroundEquipmentName(o),
+                          i18n: i18n,
+                        ),
+                      );
+                    }).toList(),
                     onChanged: (v) {
                       if (v != null) notifier.setEquipmentChoice(item, v);
                     },
@@ -925,7 +1034,9 @@ List<String> _buildFixedTools(CharacterDraft draft, SrdI18nService i18n) {
 // ── Tool Proficiency Section ──────────────────────────────────────────────────
 
 class _ToolProficiencySection extends ConsumerWidget {
-  const _ToolProficiencySection();
+  const _ToolProficiencySection({super.key, required this.showValidation});
+
+  final bool showValidation;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -941,9 +1052,11 @@ class _ToolProficiencySection extends ConsumerWidget {
     if (slots.isEmpty && fixed.isEmpty) return const SizedBox.shrink();
 
     final chosen = draft.chosenToolProficiencies;
+    final showError = showValidation && !creationToolChoicesComplete(draft);
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
+      shape: _reviewCardShape(context, showError),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -951,10 +1064,14 @@ class _ToolProficiencySection extends ConsumerWidget {
           children: [
             Text(
               AppLocalizations.of(context)!.reviewToolProficiencies,
-              style: Theme.of(
-                context,
-              ).textTheme.labelLarge?.copyWith(color: scheme.primary),
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                color: showError ? scheme.error : scheme.primary,
+              ),
             ),
+            if (showError) ...[
+              const SizedBox(height: 8),
+              _PendingReviewChip(label: l10n.featureChoicesPending),
+            ],
             if (fixed.isNotEmpty) ...[
               const SizedBox(height: 8),
               ...fixed.map(
@@ -1061,7 +1178,9 @@ class _ToolProficiencySection extends ConsumerWidget {
 // ── Class Equipment Section ───────────────────────────────────────────────────
 
 class _ClassEquipmentSection extends ConsumerWidget {
-  const _ClassEquipmentSection();
+  const _ClassEquipmentSection({super.key, required this.showValidation});
+
+  final bool showValidation;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -1076,6 +1195,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
         const <String, SrdItemData>{};
     final cls = draft.selectedClass!;
     final equip = cls.startingEquipment!;
+    final showError = showValidation && !draft.classEquipmentComplete;
 
     ReviewEquipmentPreview? previewFor(String rawName) {
       return equipmentPreviewFor(
@@ -1099,6 +1219,7 @@ class _ClassEquipmentSection extends ConsumerWidget {
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
+      shape: _reviewCardShape(context, showError),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -1106,10 +1227,14 @@ class _ClassEquipmentSection extends ConsumerWidget {
           children: [
             Text(
               l10n.reviewClassEquipmentTitle(i18n.className(cls.name)),
-              style: Theme.of(
-                context,
-              ).textTheme.labelLarge?.copyWith(color: scheme.primary),
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                color: showError ? scheme.error : scheme.primary,
+              ),
             ),
+            if (showError) ...[
+              const SizedBox(height: 8),
+              _PendingReviewChip(label: l10n.featureChoicesPending),
+            ],
             // ── Fixed items ──────────────────────────────────────────────
             if (equip.fixed.isNotEmpty) ...[
               const SizedBox(height: 8),
@@ -1123,26 +1248,24 @@ class _ClassEquipmentSection extends ConsumerWidget {
               Wrap(
                 spacing: 6,
                 runSpacing: 4,
-                children: equip.fixed
-                    .map((item) {
-                      final preview = previewFor(item);
-                      final detailsPreview = preview?.hasDetails == true
-                          ? preview
-                          : null;
-                      return ReviewEquipmentChip(
-                        rawName: item,
-                        preview: preview,
-                        i18n: i18n,
-                        onDetails: detailsPreview == null
-                            ? null
-                            : () => showEquipmentPreviewDetails(
-                                context,
-                                ref,
-                                detailsPreview,
-                              ),
-                      );
-                    })
-                    .toList(),
+                children: equip.fixed.map((item) {
+                  final preview = previewFor(item);
+                  final detailsPreview = preview?.hasDetails == true
+                      ? preview
+                      : null;
+                  return ReviewEquipmentChip(
+                    rawName: item,
+                    preview: preview,
+                    i18n: i18n,
+                    onDetails: detailsPreview == null
+                        ? null
+                        : () => showEquipmentPreviewDetails(
+                            context,
+                            ref,
+                            detailsPreview,
+                          ),
+                  );
+                }).toList(),
               ),
             ],
             // ── Choice groups ─────────────────────────────────────────────
@@ -1235,46 +1358,40 @@ class _ClassEquipmentSection extends ConsumerWidget {
                                     : EquipmentInfoButton(
                                         onPressed: () =>
                                             showEquipmentPreviewDetails(
-                                          context,
-                                          ref,
-                                          currentDetailsPreview,
-                                        ),
+                                              context,
+                                              ref,
+                                              currentDetailsPreview,
+                                            ),
                                       ),
                               ),
                               hint: Text(
                                 l10n.stepChooseOne,
                                 style: const TextStyle(fontSize: 13),
                               ),
-                              selectedItemBuilder: (context) => opts
-                                  .map(
-                                    (o) {
-                                      final label = equipmentPreviewLabel(
-                                        rawName: o,
-                                        itemsByName: itemsByName,
-                                        i18n: i18n,
-                                        l10n: l10n,
-                                      );
-                                      return Text(
-                                        label,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: const TextStyle(fontSize: 13),
-                                      );
-                                    },
-                                  )
-                                  .toList(),
-                              items: opts
-                                  .map((o) {
-                                    final preview = previewFor(o);
-                                    return DropdownMenuItem(
-                                      value: o,
-                                      child: EquipmentDropdownOption(
-                                        preview: preview,
-                                        label: i18n.backgroundEquipmentName(o),
-                                        i18n: i18n,
-                                      ),
-                                    );
-                                  })
-                                  .toList(),
+                              selectedItemBuilder: (context) => opts.map((o) {
+                                final label = equipmentPreviewLabel(
+                                  rawName: o,
+                                  itemsByName: itemsByName,
+                                  i18n: i18n,
+                                  l10n: l10n,
+                                );
+                                return Text(
+                                  label,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(fontSize: 13),
+                                );
+                              }).toList(),
+                              items: opts.map((o) {
+                                final preview = previewFor(o);
+                                return DropdownMenuItem(
+                                  value: o,
+                                  child: EquipmentDropdownOption(
+                                    preview: preview,
+                                    label: i18n.backgroundEquipmentName(o),
+                                    i18n: i18n,
+                                  ),
+                                );
+                              }).toList(),
                               onChanged: (v) {
                                 if (v != null) {
                                   notifier.setClassEquipmentSpecific(
@@ -1297,7 +1414,9 @@ class _ClassEquipmentSection extends ConsumerWidget {
 }
 
 class _LanguageChoiceSection extends ConsumerStatefulWidget {
-  const _LanguageChoiceSection();
+  const _LanguageChoiceSection({super.key, required this.showValidation});
+
+  final bool showValidation;
 
   @override
   ConsumerState<_LanguageChoiceSection> createState() =>
@@ -1322,6 +1441,8 @@ class _LanguageChoiceSectionState
     final needed = draft.languageChoicesNeeded;
     final chosen = draft.chosenLanguages;
     final canAdd = chosen.length < needed;
+    final showError =
+        widget.showValidation && !creationLanguageChoicesComplete(draft);
 
     void addLanguage(String lang) {
       final trimmed = lang.trim();
@@ -1341,6 +1462,7 @@ class _LanguageChoiceSectionState
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
+      shape: _reviewCardShape(context, showError),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -1350,9 +1472,9 @@ class _LanguageChoiceSectionState
               children: [
                 Text(
                   l10n.reviewLanguageChoices,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.labelLarge?.copyWith(color: scheme.primary),
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    color: showError ? scheme.error : scheme.primary,
+                  ),
                 ),
                 const Spacer(),
                 Text(
@@ -1365,6 +1487,10 @@ class _LanguageChoiceSectionState
                 ),
               ],
             ),
+            if (showError) ...[
+              const SizedBox(height: 8),
+              _PendingReviewChip(label: l10n.featureChoicesPending),
+            ],
             const SizedBox(height: 4),
             Text(
               AppLocalizations.of(context)!.reviewChooseLanguages(needed),

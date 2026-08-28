@@ -163,10 +163,6 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     return normalizedDuplicate;
   }
 
-  Future<String> exportCharacter(Character character) {
-    return ref.read(characterRepositoryProvider).exportToJson(character);
-  }
-
   Future<String> exportCharacterToFile(Character character) {
     return ref.read(characterRepositoryProvider).exportToFileJson(character);
   }
@@ -183,14 +179,6 @@ class CharacterListNotifier extends AsyncNotifier<List<Character>> {
     }
     final withoutOld = current.where((c) => c.id != character.id).toList();
     state = AsyncData(_sorted([character, ...withoutOld]));
-  }
-
-  Future<Character> importCharacter(String jsonString) async {
-    final character = await ref
-        .read(characterRepositoryProvider)
-        .importFromJson(jsonString);
-    await updateSingle(character);
-    return character;
   }
 
   Future<Character> importCharacterFromFile(String fileJson) async {

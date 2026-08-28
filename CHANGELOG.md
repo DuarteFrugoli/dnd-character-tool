@@ -16,6 +16,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - **Criacao - revisao**: escolhas de equipamento inicial agora mostram detalhes de itens, dano de armas, propriedades e conteudo de packs antes de finalizar o personagem; packs tambem podem exibir seus itens incluidos no sheet de detalhes.
+- **Criacao - revisao**: ouro inicial agora precisa ser rolado antes de salvar o personagem, com destaque visual maior e foco automatico no primeiro campo pendente ao tentar finalizar.
 - **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos.
 - **Temas**: o tema padrao agora e `Classic Dark`, deixando `Crimson` como opcao mais intensa; IDs internos antigos foram substituidos por IDs canonicos do tema atual, com fallback para o tema padrao.
 - **Temas**: o tema `High Contrast` atual foi renomeado para `Eclipse`, mantendo as mesmas cores e usando `eclipse` como ID canonico.
@@ -34,9 +35,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Notas**: campo de busca por texto e tags teve o alinhamento ajustado.
 - **Lista de personagens**: avatar da ficha ficou mais resistente a recarregamento e transicoes `Hero`, evitando area vazia ao voltar da ficha.
 - **Ficha**: imagem do personagem no cabecalho agora usa o mesmo fluxo de visualizar, ampliar, trocar e remover foto da aba Identidade, e a transicao da lista passa a mirar o avatar do cabecalho.
+- **Importacao/exportacao**: fluxo manual de copiar/colar JSON cru foi removido da UI; personagens individuais usam `.dndchar` e backups usam `.dndbackup`.
+- **Lista de personagens**: duplicar personagem agora copia a imagem para um arquivo proprio do novo personagem, evitando copia sem foto ou referencia compartilhada.
 
 ### Internal
 - **Versionamento**: versao do app atualizada para `2.0.1+25`.
+- **Testes**: adicionada cobertura para duplicacao, exportacao de backup, `.dndchar` e JSON interno preservando imagens de personagens.
 
 ---
 

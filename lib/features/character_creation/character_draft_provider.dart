@@ -490,8 +490,73 @@ class CharacterDraft {
     )) {
       return false;
     }
+    if (!creationReviewFieldsComplete(this)) return false;
     return true;
   }
+}
+
+enum CreationReviewIssue {
+  startingGold,
+  languages,
+  tools,
+  backgroundEquipment,
+  classEquipment,
+}
+
+bool creationStartingGoldComplete(CharacterDraft draft) {
+  return draft.selectedClass == null || draft.rolledStartingGold != null;
+}
+
+bool creationLanguageChoicesComplete(CharacterDraft draft) {
+  return draft.languageChoicesNeeded == 0 ||
+      draft.chosenLanguages.length >= draft.languageChoicesNeeded;
+}
+
+bool creationToolChoicesComplete(CharacterDraft draft) {
+  if (draft.toolChoicesNeeded == 0) return true;
+  return draft.chosenToolProficiencies.length >= draft.toolChoicesNeeded &&
+      !draft.chosenToolProficiencies
+          .take(draft.toolChoicesNeeded)
+          .any((tool) => tool.isEmpty);
+}
+
+bool creationBackgroundEquipmentChoicesComplete(CharacterDraft draft) {
+  if (draft.equipmentChoicesNeeded == 0) return true;
+  final choiceItems =
+      draft.selectedBackground?.startingEquipment
+          .where(isEquipmentChoiceItem)
+          .toList() ??
+      const <String>[];
+  return choiceItems.every(
+    (item) => draft.resolvedEquipmentChoices[item] != null,
+  );
+}
+
+bool creationReviewFieldsComplete(CharacterDraft draft) {
+  return creationStartingGoldComplete(draft) &&
+      creationLanguageChoicesComplete(draft) &&
+      creationToolChoicesComplete(draft) &&
+      creationBackgroundEquipmentChoicesComplete(draft) &&
+      draft.classEquipmentComplete;
+}
+
+CreationReviewIssue? firstCreationReviewIssue(CharacterDraft draft) {
+  if (!creationStartingGoldComplete(draft)) {
+    return CreationReviewIssue.startingGold;
+  }
+  if (!creationLanguageChoicesComplete(draft)) {
+    return CreationReviewIssue.languages;
+  }
+  if (!creationToolChoicesComplete(draft)) {
+    return CreationReviewIssue.tools;
+  }
+  if (!creationBackgroundEquipmentChoicesComplete(draft)) {
+    return CreationReviewIssue.backgroundEquipment;
+  }
+  if (!draft.classEquipmentComplete) {
+    return CreationReviewIssue.classEquipment;
+  }
+  return null;
 }
 
 // Sentinel para distinguir null intencional de "não passado"
@@ -512,6 +577,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     chosenToolProficiencies: [],
     classEquipmentChoices: [],
     classEquipmentSpecifics: {},
+    rolledStartingGold: null,
     featureChoicesLoaded: false,
     featureChoiceRequests: const [],
     featureChoices: const [],
@@ -524,6 +590,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     chosenToolProficiencies: [],
     classEquipmentChoices: [],
     classEquipmentSpecifics: {},
+    rolledStartingGold: null,
     featureChoicesLoaded: false,
     featureChoiceRequests: const [],
     featureChoices: const [],
@@ -642,7 +709,7 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       state = state.copyWith(featureChoices: choices);
 
   void setRolledStartingGold(int? gp) =>
-      state = state.copyWith(rolledStartingGold: gp ?? _sentinel);
+      state = state.copyWith(rolledStartingGold: gp);
 
   void setEquipmentChoice(String generic, String specific) {
     final updated = Map<String, String>.from(state.resolvedEquipmentChoices)

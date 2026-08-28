@@ -7,6 +7,9 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Criacao - revisao**: escolhas de equipamento inicial agora mostram detalhes de itens, dano de armas, propriedades e conteudo de packs antes de finalizar o personagem; packs tambem podem exibir seus itens incluidos no sheet de detalhes.
+
 ---
 
 ## [2.0.1] - 2026-08-27

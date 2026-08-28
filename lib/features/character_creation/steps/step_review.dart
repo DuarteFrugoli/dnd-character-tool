@@ -7,11 +7,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/constants/armor_class.dart';
 import '../../../data/datasources/srd/srd_i18n_service.dart';
+import '../../../data/datasources/srd/srd_models.dart';
 import '../../../data/models/ability_scores.dart';
 import '../../../shared/providers/providers.dart';
 import '../../../core/units/unit_system_provider.dart';
 import '../../../core/units/unit_formatter.dart';
 import '../character_draft_provider.dart';
+import '../widgets/review_equipment_preview.dart';
+import '../widgets/review_equipment_widgets.dart';
 
 class StepReview extends ConsumerWidget {
   const StepReview({super.key, required this.onFinish});
@@ -250,8 +253,7 @@ class _Row extends StatelessWidget {
   }
 }
 
-// ── Starting Gold Roll ────────────────────────────────────────────────────────
-
+// Starting gold helpers
 /// Parses "NdSxM" and rolls N dice of S sides, multiplied by M.
 /// Returns the total gp result.
 int _rollGoldDice(String dice) {
@@ -356,8 +358,12 @@ class _StartingEquipmentSection extends ConsumerWidget {
     final draft = ref.watch(characterDraftProvider);
     final notifier = ref.read(characterDraftProvider.notifier);
     final scheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final itemsByName =
+        ref.watch(srdItemsProvider).valueOrNull ??
+        const <String, SrdItemData>{};
     final bg = draft.selectedBackground!;
 
     final fixedItems = bg.startingEquipment
@@ -380,7 +386,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
             Row(
               children: [
                 Text(
-                  AppLocalizations.of(context)!.reviewStartingEquipment,
+                  l10n.reviewStartingEquipment,
                   style: Theme.of(
                     context,
                   ).textTheme.labelLarge?.copyWith(color: scheme.primary),
@@ -410,8 +416,8 @@ class _StartingEquipmentSection extends ConsumerWidget {
                     ),
                     child: Text(
                       allFixedSelected
-                          ? AppLocalizations.of(context)!.reviewDeselectAll
-                          : AppLocalizations.of(context)!.reviewSelectAll,
+                          ? l10n.reviewDeselectAll
+                          : l10n.reviewSelectAll,
                       style: TextStyle(fontSize: 12, color: scheme.primary),
                     ),
                   ),
@@ -420,7 +426,7 @@ class _StartingEquipmentSection extends ConsumerWidget {
             if (fixedItems.isNotEmpty) ...[
               const SizedBox(height: 4),
               Text(
-                AppLocalizations.of(context)!.reviewUncheckHint,
+                l10n.reviewUncheckHint,
                 style: Theme.of(
                   context,
                 ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
@@ -428,27 +434,28 @@ class _StartingEquipmentSection extends ConsumerWidget {
               const SizedBox(height: 8),
               ...fixedItems.map((item) {
                 final isSelected = selectedItems.contains(item);
-                final isGold = RegExp(
-                  r'^\d+\s*gp$',
-                  caseSensitive: false,
-                ).hasMatch(item.trim());
-                return CheckboxListTile(
-                  dense: true,
-                  contentPadding: EdgeInsets.zero,
-                  controlAffinity: ListTileControlAffinity.leading,
-                  value: isSelected,
+                final preview = equipmentPreviewFor(
+                  rawName: item,
+                  itemsByName: itemsByName,
+                  i18n: i18n,
+                  l10n: l10n,
+                );
+                final detailsPreview = preview?.hasDetails == true
+                    ? preview
+                    : null;
+                return ReviewEquipmentCheckboxTile(
+                  rawName: item,
+                  preview: preview,
+                  i18n: i18n,
+                  isSelected: isSelected,
                   onChanged: (_) => notifier.toggleStartingItem(item),
-                  title: Text(
-                    i18n.backgroundEquipmentName(item),
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                  secondary: isGold
-                      ? Icon(
-                          Icons.monetization_on_outlined,
-                          size: 16,
-                          color: scheme.tertiary,
-                        )
-                      : null,
+                  onDetails: detailsPreview == null
+                      ? null
+                      : () => showEquipmentPreviewDetails(
+                          context,
+                          ref,
+                          detailsPreview,
+                        ),
                 );
               }),
             ],
@@ -456,14 +463,14 @@ class _StartingEquipmentSection extends ConsumerWidget {
             if (choiceItems.isNotEmpty) ...[
               if (fixedItems.isNotEmpty) const Divider(height: 20),
               Text(
-                AppLocalizations.of(context)!.reviewEquipmentChoices,
+                l10n.reviewEquipmentChoices,
                 style: Theme.of(
                   context,
                 ).textTheme.labelMedium?.copyWith(color: scheme.secondary),
               ),
               const SizedBox(height: 4),
               Text(
-                AppLocalizations.of(context)!.reviewEquipmentChoicesHint,
+                l10n.reviewEquipmentChoicesHint,
                 style: Theme.of(
                   context,
                 ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
@@ -472,23 +479,69 @@ class _StartingEquipmentSection extends ConsumerWidget {
               ...choiceItems.map((item) {
                 final options = _equipmentChoiceOptions(item) ?? [];
                 final current = resolvedChoices[item];
+                final currentPreview = current == null
+                    ? null
+                    : equipmentPreviewFor(
+                        rawName: current,
+                        itemsByName: itemsByName,
+                        i18n: i18n,
+                        l10n: l10n,
+                      );
+                final currentDetailsPreview =
+                    currentPreview?.hasDetails == true ? currentPreview : null;
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: DropdownButtonFormField<String>(
                     initialValue: current,
+                    isExpanded: true,
                     decoration: InputDecoration(
                       labelText: i18n.backgroundEquipmentName(item),
                       border: const OutlineInputBorder(),
                       isDense: true,
+                      suffixIcon: currentDetailsPreview == null
+                          ? null
+                          : EquipmentInfoButton(
+                              onPressed: () => showEquipmentPreviewDetails(
+                                context,
+                                ref,
+                                currentDetailsPreview,
+                              ),
+                            ),
                     ),
-                    hint: Text(AppLocalizations.of(context)!.stepChooseOne),
-                    items: options
+                    hint: Text(l10n.stepChooseOne),
+                    selectedItemBuilder: (context) => options
                         .map(
-                          (o) => DropdownMenuItem(
-                            value: o,
-                            child: Text(i18n.backgroundEquipmentName(o)),
-                          ),
+                          (o) {
+                            final label = equipmentPreviewLabel(
+                              rawName: o,
+                              itemsByName: itemsByName,
+                              i18n: i18n,
+                              l10n: l10n,
+                            );
+                            return Text(
+                              label,
+                              overflow: TextOverflow.ellipsis,
+                            );
+                          },
                         )
+                        .toList(),
+                    items: options
+                        .map((o) {
+                          final preview = equipmentPreviewFor(
+                            rawName: o,
+                            itemsByName: itemsByName,
+                            i18n: i18n,
+                            l10n: l10n,
+                          );
+                          return DropdownMenuItem(
+                            value: o,
+                            child: EquipmentDropdownOption(
+                              preview: preview,
+                              label: i18n.backgroundEquipmentName(o),
+                              i18n: i18n,
+                            ),
+                          );
+                        })
                         .toList(),
                     onChanged: (v) {
                       if (v != null) notifier.setEquipmentChoice(item, v);
@@ -1018,8 +1071,31 @@ class _ClassEquipmentSection extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final itemsByName =
+        ref.watch(srdItemsProvider).valueOrNull ??
+        const <String, SrdItemData>{};
     final cls = draft.selectedClass!;
     final equip = cls.startingEquipment!;
+
+    ReviewEquipmentPreview? previewFor(String rawName) {
+      return equipmentPreviewFor(
+        rawName: rawName,
+        itemsByName: itemsByName,
+        i18n: i18n,
+        l10n: l10n,
+      );
+    }
+
+    String optionLabel(List<String> items) {
+      return items
+          .map((item) {
+            final preview = previewFor(item);
+            return preview == null
+                ? i18n.backgroundEquipmentName(item)
+                : equipmentPreviewTitle(preview);
+          })
+          .join(' + ');
+    }
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
@@ -1048,16 +1124,24 @@ class _ClassEquipmentSection extends ConsumerWidget {
                 spacing: 6,
                 runSpacing: 4,
                 children: equip.fixed
-                    .map(
-                      (item) => Chip(
-                        label: Text(
-                          i18n.backgroundEquipmentName(item),
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                      ),
-                    )
+                    .map((item) {
+                      final preview = previewFor(item);
+                      final detailsPreview = preview?.hasDetails == true
+                          ? preview
+                          : null;
+                      return ReviewEquipmentChip(
+                        rawName: item,
+                        preview: preview,
+                        i18n: i18n,
+                        onDetails: detailsPreview == null
+                            ? null
+                            : () => showEquipmentPreviewDetails(
+                                context,
+                                ref,
+                                detailsPreview,
+                              ),
+                      );
+                    })
                     .toList(),
               ),
             ],
@@ -1068,10 +1152,6 @@ class _ClassEquipmentSection extends ConsumerWidget {
               final selectedOptionIdx = g < draft.classEquipmentChoices.length
                   ? draft.classEquipmentChoices[g]
                   : null;
-
-              // Label for a package: items joined by " + "
-              String optionLabel(List<String> items) =>
-                  items.map((i) => i18n.backgroundEquipmentName(i)).join(' + ');
 
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1084,26 +1164,35 @@ class _ClassEquipmentSection extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  Wrap(
-                    spacing: 6,
-                    runSpacing: 6,
+                  Column(
                     children: group.options.asMap().entries.map((optEntry) {
                       final optIdx = optEntry.key;
                       final option = optEntry.value;
                       final isSelected = selectedOptionIdx == optIdx;
-                      return ChoiceChip(
-                        label: Text(
-                          optionLabel(option),
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: isSelected
-                                ? scheme.onSecondaryContainer
-                                : null,
-                          ),
-                        ),
+                      final label = optionLabel(option);
+                      final previews = option
+                          .map(previewFor)
+                          .whereType<ReviewEquipmentPreview>()
+                          .toList();
+                      final hasDetails = previews.any(
+                        (preview) => preview.hasDetails,
+                      );
+                      return ClassEquipmentOptionTile(
+                        label: label,
+                        previews: previews,
+                        i18n: i18n,
                         selected: isSelected,
-                        onSelected: (_) =>
+                        onSelected: () =>
                             notifier.setClassEquipmentChoice(g, optIdx),
+                        onDetails: hasDetails
+                            ? () => showEquipmentPackageDetails(
+                                context,
+                                ref,
+                                previews,
+                                label,
+                                i18n,
+                              )
+                            : null,
                       );
                     }).toList(),
                   ),
@@ -1119,34 +1208,72 @@ class _ClassEquipmentSection extends ConsumerWidget {
                           final opts = _anyItemOptions(anyItem) ?? [];
                           final current =
                               draft.classEquipmentSpecifics['$g:$i'];
+                          final currentPreview = current == null
+                              ? null
+                              : previewFor(current);
+                          final currentDetailsPreview =
+                              currentPreview?.hasDetails == true
+                              ? currentPreview
+                              : null;
                           return Padding(
                             padding: const EdgeInsets.only(top: 8),
                             child: DropdownButtonFormField<String>(
                               initialValue: current,
                               isExpanded: true,
                               decoration: InputDecoration(
-                                labelText: anyItem,
+                                labelText: i18n.backgroundEquipmentName(
+                                  anyItem,
+                                ),
                                 border: const OutlineInputBorder(),
                                 isDense: true,
                                 contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 10,
                                   vertical: 8,
                                 ),
+                                suffixIcon: currentDetailsPreview == null
+                                    ? null
+                                    : EquipmentInfoButton(
+                                        onPressed: () =>
+                                            showEquipmentPreviewDetails(
+                                          context,
+                                          ref,
+                                          currentDetailsPreview,
+                                        ),
+                                      ),
                               ),
                               hint: Text(
-                                AppLocalizations.of(context)!.stepChooseOne,
+                                l10n.stepChooseOne,
                                 style: const TextStyle(fontSize: 13),
                               ),
-                              items: opts
+                              selectedItemBuilder: (context) => opts
                                   .map(
-                                    (o) => DropdownMenuItem(
-                                      value: o,
-                                      child: Text(
-                                        i18n.backgroundEquipmentName(o),
+                                    (o) {
+                                      final label = equipmentPreviewLabel(
+                                        rawName: o,
+                                        itemsByName: itemsByName,
+                                        i18n: i18n,
+                                        l10n: l10n,
+                                      );
+                                      return Text(
+                                        label,
+                                        overflow: TextOverflow.ellipsis,
                                         style: const TextStyle(fontSize: 13),
-                                      ),
-                                    ),
+                                      );
+                                    },
                                   )
+                                  .toList(),
+                              items: opts
+                                  .map((o) {
+                                    final preview = previewFor(o);
+                                    return DropdownMenuItem(
+                                      value: o,
+                                      child: EquipmentDropdownOption(
+                                        preview: preview,
+                                        label: i18n.backgroundEquipmentName(o),
+                                        i18n: i18n,
+                                      ),
+                                    );
+                                  })
                                   .toList(),
                               onChanged: (v) {
                                 if (v != null) {

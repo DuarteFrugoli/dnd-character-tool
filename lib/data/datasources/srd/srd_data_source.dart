@@ -206,7 +206,8 @@ class SrdDataSource {
       // ── Weapons ──────────────────────────────────────────────────────
       for (final entry in (json['weapons'] as List<dynamic>)) {
         final w = entry as Map<String, dynamic>;
-        final rawName = (w['name'] as String).toLowerCase();
+        final name = w['name'] as String;
+        final rawName = name.toLowerCase();
         final category = w['category'] as String;
         final weight = (w['weight'] as num? ?? 0).toDouble();
         final props = <String, dynamic>{
@@ -216,8 +217,10 @@ class SrdDataSource {
           if (w['range'] != null) 'range': w['range'],
           if (w['versatileDamage'] != null)
             'versatileDamage': w['versatileDamage'],
+          if ((w['cost'] as String? ?? '').isNotEmpty) 'cost': w['cost'],
         };
         final data = SrdItemData(
+          name: name,
           itemType: 'weapon',
           category: category,
           weight: weight,
@@ -235,7 +238,8 @@ class SrdDataSource {
       // ── Armor ────────────────────────────────────────────────────────
       for (final entry in (json['armor'] as List<dynamic>)) {
         final a = entry as Map<String, dynamic>;
-        final rawName = (a['name'] as String).toLowerCase();
+        final name = a['name'] as String;
+        final rawName = name.toLowerCase();
         final isShield = (a['type'] as String?) == 'shield';
         final weight = (a['weight'] as num? ?? 0).toDouble();
         final Map<String, dynamic> props;
@@ -253,7 +257,11 @@ class SrdDataSource {
               'strengthRequirement': a['strengthRequired'],
           };
         }
+        if ((a['cost'] as String? ?? '').isNotEmpty) {
+          props['cost'] = a['cost'];
+        }
         final data = SrdItemData(
+          name: name,
           itemType: 'armor',
           category: 'armor',
           weight: weight,
@@ -269,9 +277,11 @@ class SrdDataSource {
       // ── Gear / Ammunition ────────────────────────────────────────────
       for (final entry in (json['gear'] as List<dynamic>)) {
         final g = entry as Map<String, dynamic>;
-        final rawName = (g['name'] as String).toLowerCase();
+        final name = g['name'] as String;
+        final rawName = name.toLowerCase();
         final category = g['category'] as String;
         final weight = (g['weight'] as num? ?? 0).toDouble();
+        final cost = g['cost'] as String? ?? '';
         final contents = (g['contents'] as List<dynamic>? ?? [])
             .map((e) => SrdPackContent.fromJson(e as Map<String, dynamic>))
             .toList();
@@ -281,9 +291,12 @@ class SrdDataSource {
             ? 'container'
             : 'gear';
         final data = SrdItemData(
+          name: name,
           itemType: itemType,
           category: category,
           weight: weight,
+          description: (g['description'] as String?) ?? '',
+          properties: {if (cost.isNotEmpty) 'cost': cost},
           contents: contents,
         );
         result[rawName] = data;
@@ -298,9 +311,12 @@ class SrdDataSource {
           final bundleCount = _bundleCount(rawName);
           final aliasData = category == 'ammunition' && bundleCount != null
               ? SrdItemData(
+                  name: name,
                   itemType: itemType,
                   category: category,
                   weight: weight / bundleCount,
+                  description: (g['description'] as String?) ?? '',
+                  properties: {if (cost.isNotEmpty) 'cost': cost},
                 )
               : data;
           result[stripped] = aliasData;
@@ -316,14 +332,20 @@ class SrdDataSource {
       final arrow = result['arrows'];
       if (quiver != null && arrow != null) {
         result['quiver with 20 arrows'] = SrdItemData(
+          name: 'Quiver with 20 arrows',
           itemType: 'container',
           category: quiver.category,
           weight: quiver.weight + (arrow.weight * 20),
+          contents: const [
+            SrdPackContent(name: 'Quiver'),
+            SrdPackContent(name: 'Arrows', quantity: 20),
+          ],
         );
       }
 
       for (final tool in await getTools()) {
         result[tool.name.toLowerCase()] = SrdItemData(
+          name: tool.name,
           itemType: 'gear',
           category: tool.category,
           weight: tool.weight,
@@ -332,9 +354,11 @@ class SrdDataSource {
 
       for (final magicItem in await getMagicItems()) {
         result[magicItem.name.toLowerCase()] = SrdItemData(
+          name: magicItem.name,
           itemType: magicItem.itemType.name,
           category: magicItem.type,
           weight: magicItem.weight,
+          description: magicItem.description,
           properties: magicItem.properties,
         );
       }

@@ -1,4 +1,5 @@
 import '../../character_detail_dependencies.dart';
+import '../../../../data/json_helpers.dart';
 
 final _numberedPackSuffixPattern = RegExp(r'\s*\((\d+)\)$');
 
@@ -27,6 +28,46 @@ String itemQuantityTitle(String displayName, int quantity) {
 }
 
 // ── Item Tile ─────────────────────────────────────────────────────────────────
+
+String? inventoryItemMeta(
+  EquipmentItem item, [
+  SrdI18nService? i18n,
+  AppLocalizations? l10n,
+]) {
+  final props = item.properties;
+
+  if (item.itemType == ItemType.weapon && props != null) {
+    final dice = (props['damageDice'] ?? props['damage'])?.toString();
+    final type = props['damageType']?.toString();
+    if (dice != null && dice.isNotEmpty && type != null && type.isNotEmpty) {
+      return '$dice ${i18n?.damageType(type) ?? type}';
+    }
+    if (dice != null && dice.isNotEmpty) return dice;
+  }
+
+  if (item.itemType == ItemType.armor && props != null) {
+    final isShield = readBool(props['isShield']);
+    if (isShield) {
+      final bonus = (props['acBonus'] as num?)?.toInt() ?? 2;
+      return '${i18n?.term('shield') ?? 'Shield'}  ·  +$bonus ${i18n?.term('AC') ?? 'AC'}';
+    }
+
+    final baseAc = (props['baseAC'] as num?)?.toInt();
+    if (baseAc != null) {
+      final addDex = readBool(props['addDexModifier'], defaultValue: true);
+      final maxDex = (props['maxDexBonus'] as num?)?.toInt();
+      final ac = i18n?.term('AC') ?? 'AC';
+      final dex = i18n?.term('DEX') ?? 'DEX';
+      if (!addDex) return '$ac $baseAc';
+      if (maxDex != null) {
+        return '$ac $baseAc + $dex (${l10n?.inventoryDetailMaxShort ?? 'max'} +$maxDex)';
+      }
+      return '$ac $baseAc + $dex';
+    }
+  }
+
+  return null;
+}
 
 /// Returns a localised display name for [item].
 /// Tries equipment overlay, then magic_items overlay, then background

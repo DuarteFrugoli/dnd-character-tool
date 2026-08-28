@@ -13,25 +13,31 @@ String _titleCase(String s) =>
 
 /// Metadata for a single SRD item in the inventory lookup.
 class SrdItemData {
-  final String
-  itemType; // "weapon", "armor", "ammunition", "consumable", "equippable", "container", "gear"
+  final String name;
+  // "weapon", "armor", "ammunition", "consumable", "equippable", "container", "gear"
+  final String itemType;
   final String category;
   final double weight;
+  final String description;
   final Map<String, dynamic>? properties;
   final List<SrdPackContent> contents;
 
   const SrdItemData({
+    this.name = '',
     required this.itemType,
     required this.category,
     this.weight = 0.0,
+    this.description = '',
     this.properties,
     this.contents = const [],
   });
 
   factory SrdItemData.fromJson(Map<String, dynamic> json) => SrdItemData(
+    name: json['name'] as String? ?? '',
     itemType: json['itemType'] as String,
     category: json['category'] as String,
     weight: (json['weight'] as num?)?.toDouble() ?? 0.0,
+    description: json['description'] as String? ?? '',
     properties: json['properties'] as Map<String, dynamic>?,
     contents: (json['contents'] as List<dynamic>? ?? [])
         .map((e) => SrdPackContent.fromJson(e as Map<String, dynamic>))

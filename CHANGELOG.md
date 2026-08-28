@@ -5,13 +5,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [Unreleased]
-
-### Changed
-- **Criacao - revisao**: escolhas de equipamento inicial agora mostram detalhes de itens, dano de armas, propriedades e conteudo de packs antes de finalizar o personagem; packs tambem podem exibir seus itens incluidos no sheet de detalhes.
-
----
-
 ## [2.0.1] - 2026-08-27
 
 ### Added
@@ -22,6 +15,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Magias**: adicionados atalhos de nivel para rolar rapidamente ate truques e niveis de magia visiveis.
 
 ### Changed
+- **Criacao - revisao**: escolhas de equipamento inicial agora mostram detalhes de itens, dano de armas, propriedades e conteudo de packs antes de finalizar o personagem; packs tambem podem exibir seus itens incluidos no sheet de detalhes.
 - **Temas**: paletas de cores redesenhadas com `ColorScheme` explicito para deixar os temas mais distintos.
 - **Temas**: o tema padrao agora e `Classic Dark`, deixando `Crimson` como opcao mais intensa; IDs internos antigos foram substituidos por IDs canonicos do tema atual, com fallback para o tema padrao.
 - **Temas**: o tema `High Contrast` atual foi renomeado para `Eclipse`, mantendo as mesmas cores e usando `eclipse` como ID canonico.
@@ -32,6 +26,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Play Store**: pedido automatico de avaliacao agora pode aparecer mais cedo, apos dois usos, um dia de uso e acoes como criar personagem ou salvar nota.
 
 ### Fixed
+- **Criacao**: etapa de escolhas de habilidades agora e pulada quando nao ha nenhuma escolha real para fazer.
 - **Criacao/level up**: escolhas de especializacao, pericias, ferramentas e armas agora exibem subtitulos traduzidos e legiveis, sem vazar valores tecnicos como `DEXTERITY` ou `other_tools`.
 - **Inventario**: recipientes com quantidade total zero agora exibem `Vazio` em vez de `1 item`.
 - **Magias**: descricoes de magias com efeitos importantes incompletos agora incluem os danos e regras essenciais no SRD base e nos overlays de traducao.

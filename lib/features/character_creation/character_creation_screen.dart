@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../data/feature_choice_engine.dart';
 import 'character_draft_provider.dart';
+import 'creation_feature_choice_loader.dart';
 import '../character_list/character_list_provider.dart';
 import 'steps/step_class.dart';
 import 'steps/step_race.dart';
@@ -16,16 +17,28 @@ import 'steps/step_feature_choices.dart';
 import 'steps/step_review.dart';
 import 'widgets/step_indicator.dart';
 
-List<String> _getStepTitles(AppLocalizations l10n) => [
-  l10n.creationStepClass,
-  l10n.creationStepRace,
-  l10n.creationStepBackground,
-  l10n.creationStepSkills,
-  l10n.creationStepAttributes,
-  l10n.creationStepName,
-  l10n.featureChoicesTitle,
-  l10n.creationStepReview,
-];
+enum _CreationStepId {
+  characterClass,
+  race,
+  background,
+  skills,
+  attributes,
+  name,
+  featureChoices,
+  review,
+}
+
+class _CreationStep {
+  const _CreationStep({
+    required this.id,
+    required this.title,
+    required this.child,
+  });
+
+  final _CreationStepId id;
+  final String title;
+  final Widget child;
+}
 
 class CharacterCreationScreen extends ConsumerStatefulWidget {
   const CharacterCreationScreen({super.key});
@@ -38,18 +51,120 @@ class CharacterCreationScreen extends ConsumerStatefulWidget {
 class _CharacterCreationScreenState
     extends ConsumerState<CharacterCreationScreen> {
   int _currentStep = 0;
+  bool _isAdvancing = false;
+  String? _featureChoiceLoadErrorKey;
 
-  List<String> get _stepTitles => _getStepTitles(AppLocalizations.of(context)!);
+  List<_CreationStep> _stepsForDraft(
+    AppLocalizations l10n,
+    CharacterDraft draft,
+  ) {
+    return [
+      _CreationStep(
+        id: _CreationStepId.characterClass,
+        title: l10n.creationStepClass,
+        child: const StepClass(),
+      ),
+      _CreationStep(
+        id: _CreationStepId.race,
+        title: l10n.creationStepRace,
+        child: const StepRace(),
+      ),
+      _CreationStep(
+        id: _CreationStepId.background,
+        title: l10n.creationStepBackground,
+        child: const StepBackground(),
+      ),
+      _CreationStep(
+        id: _CreationStepId.skills,
+        title: l10n.creationStepSkills,
+        child: const StepSkills(),
+      ),
+      _CreationStep(
+        id: _CreationStepId.attributes,
+        title: l10n.creationStepAttributes,
+        child: const StepAttributes(),
+      ),
+      _CreationStep(
+        id: _CreationStepId.name,
+        title: l10n.creationStepName,
+        child: const StepName(),
+      ),
+      if (_shouldShowFeatureChoiceStep(draft))
+        _CreationStep(
+          id: _CreationStepId.featureChoices,
+          title: l10n.featureChoicesTitle,
+          child: const StepFeatureChoices(),
+        ),
+      _CreationStep(
+        id: _CreationStepId.review,
+        title: l10n.creationStepReview,
+        child: StepReview(onFinish: _finishCreation),
+      ),
+    ];
+  }
 
-  void _next() {
-    if (_currentStep < _stepTitles.length - 1) {
-      setState(() => _currentStep++);
+  bool _shouldShowFeatureChoiceStep(CharacterDraft draft) {
+    if (draft.featureChoicesLoaded) {
+      return draft.featureChoiceRequests.isNotEmpty;
+    }
+    return _featureChoiceLoadErrorKey == creationFeatureChoiceDraftKey(draft);
+  }
+
+  Future<void> _next() async {
+    final l10n = AppLocalizations.of(context)!;
+    var draft = ref.read(characterDraftProvider);
+    var steps = _stepsForDraft(l10n, draft);
+    final currentStep = _clampedStep(steps);
+    final current = steps[currentStep];
+
+    if (!_isStepValid(draft, current.id)) return;
+
+    if (current.id == _CreationStepId.name) {
+      await _loadFeatureChoicesBeforeReview(draft);
+      if (!mounted) return;
+      draft = ref.read(characterDraftProvider);
+      steps = _stepsForDraft(l10n, draft);
+    }
+
+    if (currentStep < steps.length - 1) {
+      setState(() => _currentStep = currentStep + 1);
     }
   }
 
   void _back() {
-    if (_currentStep > 0) {
-      setState(() => _currentStep--);
+    final l10n = AppLocalizations.of(context)!;
+    final draft = ref.read(characterDraftProvider);
+    final currentStep = _clampedStep(_stepsForDraft(l10n, draft));
+    if (currentStep > 0) {
+      setState(() => _currentStep = currentStep - 1);
+    }
+  }
+
+  int _clampedStep(List<_CreationStep> steps) {
+    return _currentStep.clamp(0, steps.length - 1).toInt();
+  }
+
+  Future<void> _loadFeatureChoicesBeforeReview(CharacterDraft draft) async {
+    if (draft.featureChoicesLoaded || _isAdvancing) return;
+    var loadFailed = false;
+    setState(() => _isAdvancing = true);
+    try {
+      final data = await loadCreationFeatureChoiceData(ref, draft);
+      if (!mounted) return;
+      ref
+          .read(characterDraftProvider.notifier)
+          .setFeatureChoiceRequests(data.requests);
+    } catch (_) {
+      loadFailed = true;
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isAdvancing = false;
+          _featureChoiceLoadErrorKey = loadFailed
+              ? creationFeatureChoiceDraftKey(draft)
+              : null;
+        });
+      }
     }
   }
 
@@ -78,24 +193,25 @@ class _CharacterCreationScreenState
     }
   }
 
-  bool _isStepValid(CharacterDraft draft) {
-    return switch (_currentStep) {
-      0 => draft.selectedClass != null,
-      1 =>
+  bool _isStepValid(CharacterDraft draft, _CreationStepId step) {
+    return switch (step) {
+      _CreationStepId.characterClass => draft.selectedClass != null,
+      _CreationStepId.race =>
         draft.selectedRace != null &&
             (draft.selectedRace!.subraces.isEmpty ||
                 draft.selectedSubrace != null),
-      2 => draft.selectedBackground != null,
-      3 => _skillsComplete(draft),
-      4 => draft.baseAttributes.length == 6 && draft.racialAsiComplete,
-      5 => true, // nome é opcional
-      6 =>
+      _CreationStepId.background => draft.selectedBackground != null,
+      _CreationStepId.skills => _skillsComplete(draft),
+      _CreationStepId.attributes =>
+        draft.baseAttributes.length == 6 && draft.racialAsiComplete,
+      _CreationStepId.name => true,
+      _CreationStepId.featureChoices =>
         draft.featureChoicesLoaded &&
             FeatureChoiceEngine.allComplete(
               draft.featureChoiceRequests,
               draft.featureChoices,
             ),
-      7 =>
+      _CreationStepId.review =>
         (draft.languageChoicesNeeded == 0 ||
                 draft.chosenLanguages.length >= draft.languageChoicesNeeded) &&
             (draft.toolChoicesNeeded == 0 ||
@@ -113,7 +229,6 @@ class _CharacterCreationScreenState
               draft.featureChoiceRequests,
               draft.featureChoices,
             ),
-      _ => false,
     };
   }
 
@@ -127,21 +242,13 @@ class _CharacterCreationScreenState
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final draft = ref.watch(characterDraftProvider);
-    final stepTitles = _getStepTitles(l10n);
-    final steps = [
-      const StepClass(),
-      const StepRace(),
-      const StepBackground(),
-      const StepSkills(),
-      const StepAttributes(),
-      const StepName(),
-      const StepFeatureChoices(),
-      StepReview(onFinish: _finishCreation),
-    ];
+    final steps = _stepsForDraft(l10n, draft);
+    final currentStep = _clampedStep(steps);
+    final current = steps[currentStep];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(stepTitles[_currentStep]),
+        title: Text(current.title),
         leading: IconButton(
           icon: const Icon(Icons.close),
           tooltip: l10n.creationTooltipCancel,
@@ -151,10 +258,10 @@ class _CharacterCreationScreenState
       body: Column(
         children: [
           StepIndicator(
-            totalSteps: stepTitles.length,
-            currentStep: _currentStep,
+            totalSteps: steps.length,
+            currentStep: currentStep,
           ),
-          Expanded(child: steps[_currentStep]),
+          Expanded(child: current.child),
         ],
       ),
       bottomNavigationBar: SafeArea(
@@ -162,20 +269,20 @@ class _CharacterCreationScreenState
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           child: Row(
             children: [
-              if (_currentStep > 0)
+              if (currentStep > 0)
                 OutlinedButton(
                   onPressed: _back,
                   child: Text(l10n.creationBack),
                 ),
               const Spacer(),
               FilledButton(
-                onPressed: _isStepValid(draft)
-                    ? (_currentStep == stepTitles.length - 1
+                onPressed: !_isAdvancing && _isStepValid(draft, current.id)
+                    ? (current.id == _CreationStepId.review
                           ? _finishCreation
                           : _next)
                     : null,
                 child: Text(
-                  _currentStep == stepTitles.length - 1
+                  current.id == _CreationStepId.review
                       ? l10n.creationCreateCharacter
                       : l10n.dialogContinue,
                 ),
@@ -188,7 +295,8 @@ class _CharacterCreationScreenState
   }
 
   Future<void> _finishCreation() async {
-    if (!_isStepValid(ref.read(characterDraftProvider))) return;
+    final draft = ref.read(characterDraftProvider);
+    if (!_isStepValid(draft, _CreationStepId.review)) return;
     final created = await ref
         .read(characterDraftProvider.notifier)
         .buildAndSave(

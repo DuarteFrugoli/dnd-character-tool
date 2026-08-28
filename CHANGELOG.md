@@ -29,6 +29,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 - **Criacao**: etapa de escolhas de habilidades agora e pulada quando nao ha nenhuma escolha real para fazer.
 - **Criacao/level up**: escolhas de especializacao, pericias, ferramentas e armas agora exibem subtitulos traduzidos e legiveis, sem vazar valores tecnicos como `DEXTERITY` ou `other_tools`.
+- **Stats**: campo de deslocamento em modo de edicao agora respeita o sistema de unidades selecionado, exibindo e convertendo metros, feet ou quadrados corretamente.
 - **Inventario**: recipientes com quantidade total zero agora exibem `Vazio` em vez de `1 item`.
 - **Magias**: descricoes de magias com efeitos importantes incompletos agora incluem os danos e regras essenciais no SRD base e nos overlays de traducao.
 - **Magias**: atalhos de nivel agora preservam o movimento do cabecalho colapsavel e rolam corretamente mesmo a partir do topo da aba.

@@ -2,15 +2,50 @@ import 'unit_system_provider.dart';
 
 /// Converts and formats distances stored internally as feet.
 String formatDistance(int feet, UnitSystem system) {
+  final value = feetToDisplayDistance(feet, system);
   switch (system) {
     case UnitSystem.imperial:
-      return '$feet ft';
+      return '$value ft';
     case UnitSystem.metric:
-      final meters = (feet * 0.3048).round();
-      return '$meters m';
+      return '$value m';
     case UnitSystem.squares:
-      final squares = (feet / 5).round();
-      return '$squares sq';
+      return '$value sq';
+  }
+}
+
+/// The distance suffix label for input fields (e.g. 'ft', 'm' or 'sq').
+String distanceSuffix(UnitSystem system) {
+  switch (system) {
+    case UnitSystem.imperial:
+      return 'ft';
+    case UnitSystem.metric:
+      return 'm';
+    case UnitSystem.squares:
+      return 'sq';
+  }
+}
+
+/// Converts an internally stored feet value to the current system's input unit.
+int feetToDisplayDistance(int feet, UnitSystem system) {
+  switch (system) {
+    case UnitSystem.imperial:
+      return feet;
+    case UnitSystem.metric:
+      return (feet * 0.3048).round();
+    case UnitSystem.squares:
+      return (feet / 5).round();
+  }
+}
+
+/// Converts a user-entered distance value to the internal storage unit (feet).
+int displayDistanceToFeet(int value, UnitSystem system) {
+  switch (system) {
+    case UnitSystem.imperial:
+      return value;
+    case UnitSystem.metric:
+      return (value / 0.3048).round();
+    case UnitSystem.squares:
+      return value * 5;
   }
 }
 

@@ -46,6 +46,22 @@ class _StatsTabState extends ConsumerState<StatsTab>
   CharacterDetailNotifier get _notifier =>
       ref.read(characterDetailProvider(widget.characterId).notifier);
 
+  String _speedTextFor(Character character) {
+    return '${feetToDisplayDistance(character.speed, ref.read(unitSystemProvider))}';
+  }
+
+  int? _speedInputToFeet() {
+    final text = _speedCtrl.text.trim();
+    final value = int.tryParse(text);
+    if (value == null) return null;
+    if (text == _speedTextFor(widget.character)) return widget.character.speed;
+    return displayDistanceToFeet(value, ref.read(unitSystemProvider));
+  }
+
+  void _syncSpeedController(Character character) {
+    _speedCtrl.text = _speedTextFor(character);
+  }
+
   bool _isPendingLevelUp(Character c) {
     if (!c.xpTrackingEnabled || c.totalLevel >= 20) return false;
     return c.experiencePoints >= kXpThresholds[c.totalLevel];
@@ -112,6 +128,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
       _isEditing = true;
       _snapshot = widget.character;
     });
+    _syncSpeedController(widget.character);
   }
 
   /// Called by the guard after the user confirms discard (no additional dialog).
@@ -167,7 +184,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
     FocusScope.of(context).unfocus();
     _notifier.saveStatsEdit(
       hpMax: int.tryParse(_hpMaxCtrl.text),
-      speed: int.tryParse(_speedCtrl.text),
+      speed: _speedInputToFeet(),
       xp: int.tryParse(_xpCtrl.text),
     );
   }
@@ -177,7 +194,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
     super.initState();
     final c = widget.character;
     _hpMaxCtrl = TextEditingController(text: '${c.hitPoints.maximum}');
-    _speedCtrl = TextEditingController(text: '${c.speed}');
+    _speedCtrl = TextEditingController(text: _speedTextFor(c));
     _xpCtrl = TextEditingController(text: '${c.experiencePoints}');
 
     // Use a single atomic save when any field loses focus to avoid
@@ -186,7 +203,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
       if (_isEditing) {
         _notifier.saveStatsEdit(
           hpMax: int.tryParse(_hpMaxCtrl.text),
-          speed: int.tryParse(_speedCtrl.text),
+          speed: _speedInputToFeet(),
           xp: int.tryParse(_xpCtrl.text),
         );
       }
@@ -208,7 +225,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
     super.didUpdateWidget(old);
     final c = widget.character;
     if (!_hpMaxFocus.hasFocus) _hpMaxCtrl.text = '${c.hitPoints.maximum}';
-    if (!_speedFocus.hasFocus) _speedCtrl.text = '${c.speed}';
+    if (!_speedFocus.hasFocus) _syncSpeedController(c);
     if (!_xpFocus.hasFocus) _xpCtrl.text = '${c.experiencePoints}';
   }
 
@@ -342,6 +359,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
     final isFull = hp.current >= hp.maximum;
     final scheme = Theme.of(context).colorScheme;
     final notifier = _notifier;
+    final unitSystem = ref.watch(unitSystemProvider);
     final equippedArmor = character.equipment
         .where((e) => e.itemType == ItemType.armor && e.isEquipped)
         .toList();
@@ -582,7 +600,8 @@ class _StatsTabState extends ConsumerState<StatsTab>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               InlineEditField(
-                                label: l10n.labelSpeed,
+                                label:
+                                    '${l10n.statSpeed} (${distanceSuffix(unitSystem)})',
                                 controller: _speedCtrl,
                                 focusNode: _speedFocus,
                                 keyboardType: TextInputType.number,
@@ -647,10 +666,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               ),
                               DetailStatChip(
                                 l10n.statSpeed,
-                                formatDistance(
-                                  character.speed,
-                                  ref.watch(unitSystemProvider),
-                                ),
+                                formatDistance(character.speed, unitSystem),
                                 icon: Icons.directions_run,
                                 accentColor: scheme.tertiary,
                               ),

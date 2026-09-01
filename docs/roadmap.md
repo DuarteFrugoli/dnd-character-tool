@@ -3,15 +3,36 @@
 Este documento resume a direcao do app por versao. Ele nao substitui o
 `CHANGELOG.md`: aqui entram apenas os blocos grandes de produto e arquitetura.
 
+Principios atuais:
+
+- A ficha de jogador continua generosa: personagens ilimitados, uso offline,
+  importacao/exportacao e recursos essenciais sem travas artificiais.
+- Recursos de mestre entram como produto pago porque economizam tempo e criam
+  valor extra, sem punir quem so quer jogar com a propria ficha.
+- Recursos com custo recorrente, como nuvem, comunidade e IA, ficam em plano
+  por assinatura.
+- Recursos locais/offline de mestre entram como compra unica vitalicia, porque
+  nao dependem de servidor ou custo mensal para funcionar.
+- IA deve usar creditos: o Pro pode incluir uma pequena cota mensal, mas uso
+  pesado e imagens precisam pagar o proprio custo com creditos extras.
+- Conteudo publico de comunidade e IA exigem backend, politicas, denuncia e
+  moderacao antes de serem lancados.
+- Quando houver iOS/web pagos, compras feitas por Play Billing, StoreKit ou web
+  checkout devem virar direitos de uso na conta do usuario, para evitar logica
+  duplicada por plataforma.
+
 Ordem macro planejada:
 
 1. `1.x`: ficha base, inventario, notas, web e qualidade de vida.
-2. `2.0.x`: multiclasse e reset seguro de progressao.
-3. `2.1.x`: notas de campanha e sessoes.
-4. `2.2.x`: mecanicas auxiliares.
-5. `2.3.x`: homebrew.
-6. `3.x`: ferramentas de mestre.
-7. `4.x`: nuvem, sync e compartilhamento.
+2. `2.0.x`: multiclasse, reset seguro de progressao, polimento visual inicial
+   e compatibilidade Android/Play Console.
+3. `2.1.x`: fechamento do rework visual e rolagem contextual.
+4. `2.2.x`: D&D 2024 / SRD 5.2.1 como modo de regras separado.
+5. `2.3.x`: GM Local vitalicio, com ferramentas offline de mestre e homebrew
+   local.
+6. `2.4.x`: GM Pro por assinatura, com conta, cloud, comunidade e creditos de
+   IA.
+7. `3.x`: mesa/campanha online mais completa.
 
 ---
 
@@ -19,7 +40,7 @@ Ordem macro planejada:
 
 ### 1.0.0 - Ficha jogavel em mesa
 - [x] Rastreamento de HP, HP temporario, death saves, inspiracao e condicoes.
-- [x] Concentração de magias com aviso ao tentar manter duas magias.
+- [x] Concentracao de magias com aviso ao tentar manter duas magias.
 - [x] Descanso curto e longo com recuperacao de HP, hit dice, slots e recursos.
 - [x] Peso do inventario, capacidade de carga e sistema de unidades.
 - [x] Internacionalizacao de interface, magias, unidades e termos principais.
@@ -71,9 +92,9 @@ Ordem macro planejada:
 
 ### 1.1.0 - Inventario escalavel, performance e cobertura de testes
 - [x] Busca global ao adicionar item, sem depender da categoria escolhida.
-- [x] Munições de pacote aparecem sem sufixo SRD como `(20)`.
-- [x] Munição zerada permanece no inventario.
-- [x] Reordenacao de itens, munições e containers no inventario.
+- [x] Municoes de pacote aparecem sem sufixo SRD como `(20)`.
+- [x] Municao zerada permanece no inventario.
+- [x] Reordenacao de itens, municoes e containers no inventario.
 - [x] Acoes secundarias de inventario movidas para menu de tres pontos.
 - [x] Containers/mochilas guardam itens, mostram conteudo e respeitam a regra
       atual de nao guardar container dentro de container.
@@ -111,16 +132,9 @@ Ordem macro planejada:
 
 ---
 
-## Serie 2.x - Regras avancadas e conteudo da ficha
+## Serie 2.x - Regras modernas, rolagens e produto GM
 
-### 2.0.x - Multiclasse
-
-Objetivo: permitir personagens com multiplas classes sem quebrar personagens
-existentes. Qualquer mudanca persistida deve usar migracao versionada e o fluxo
-de manutencao em Configuracoes. Mudancas destrutivas de progressao devem passar
-por reset/rebuild explicito, nunca por edicao manual crua de nivel.
-
-#### 2.0.0 - Multiclasse jogavel
+### 2.0.0 - Multiclasse jogavel
 - [x] Escolher qual classe sobe de nivel.
 - [x] Adicionar uma nova classe com validacao de pre-requisitos.
 - [x] Escolher subclasse no nivel correto da classe adicionada.
@@ -144,7 +158,7 @@ por reset/rebuild explicito, nunca por edicao manual crua de nivel.
 - [x] Pedido discreto de avaliacao na Play Store apos uso real do app, com
       botao manual nas Configuracoes.
 
-#### 2.0.1 - Polimento visual e preferencias da ficha
+### 2.0.1 - Polimento visual e revisao da ficha
 - [x] Lista final com 12 temas e paletas mais distintas.
 - [x] Tema High Contrast renomeado para Eclipse, mantendo as cores.
 - [x] Tela inicial, Configuracoes, cabecalho e barra de abas com identidade
@@ -155,117 +169,130 @@ por reset/rebuild explicito, nunca por edicao manual crua de nivel.
       alfabetica, com ordem customizavel dos atributos.
 - [x] Atalhos por nivel na aba Magias.
 - [x] Ajustes no pedido automatico de avaliacao da Play Store.
-- [x] Correcoes visuais em recipientes vazios, atalhos de magia e busca de
-      notas.
+- [x] Revisao da criacao com detalhes de itens, dano de armas, propriedades e
+      conteudo de packs.
+- [x] Correcoes em importacao/exportacao de imagens, recipientes vazios,
+      descricoes de magias, textos tecnicos e sistema de unidades.
 
-#### 2.0.2 - Polimento tecnico pos-multiclasse
-- [ ] Validar manualmente combinacoes reais como Fighter/Wizard,
-      Paladin/Sorcerer, Warlock/Bard, Eldritch Knight/Wizard e
-      Arcane Trickster/Wizard.
-- [ ] Melhorar origem persistida de proficiencias antigas quando isso for
-      necessario para resets ainda mais precisos.
-- [ ] Avaliar edicao protegida de classes apenas se reset/rebuild nao cobrir
-      bem os fluxos reais dos usuarios.
-- [ ] Adicionar testes de widget para escolha de classe alvo, requisitos,
-      header multiclass e agrupamento de features.
+### 2.0.2 - Compatibilidade Android 15 e Play Console
 
-### 2.1.x - Notas de campanha e sessao
+Objetivo: lancar uma versao tecnica curta para resolver os avisos de
+edge-to-edge da Play Console antes de continuar a `2.1.0`.
 
-Objetivo: evoluir a area de notas sem perder a simplicidade atual.
+- [ ] Habilitar edge-to-edge corretamente na `MainActivity` para compatibilidade
+      com Android 15/API 35 e versoes anteriores.
+- [ ] Revisar temas Android nativos para remover ou evitar parametros
+      descontinuados de status/navigation bar.
+- [ ] Conferir se telas principais, bottom sheets e formularios respeitam as
+      areas seguras em navegacao por gestos e por tres botoes.
+- [ ] Testar manualmente em Android real antes do envio.
+- [ ] Atualizar versao para `2.0.2+26`, changelog e notas curtas da Play Store.
 
-#### 2.1.0 - Sessoes
-- [ ] Agrupar notas por sessao com titulo e data.
-- [ ] Criar notas soltas ou vinculadas a uma sessao.
-- [ ] Lista de sessoes com preview das notas mais recentes.
+### 2.1.0 - Fechamento visual e rolagem contextual
 
-#### 2.1.1 - Links internos
-- [ ] Referenciar personagens, NPCs, locais e itens dentro de notas.
-- [ ] Busca global em notas, tags e sessoes.
-- [ ] Templates simples para NPC, lugar, missao e loot.
+Objetivo: fechar a renovacao visual iniciada em `2.0.1` e transformar o
+rolador em uma ferramenta integrada a ficha.
 
-### 2.2.x - Mecanicas auxiliares
-
-Objetivo: adicionar ferramentas opcionais de mesa sem sobrecarregar a ficha.
-
-#### 2.2.0 - Rolagens contextuais
+- [ ] Finalizar ajustes visuais pendentes nas abas do personagem.
+- [ ] Revisar consistencia visual entre tela inicial, ficha, sheets e
+      Configuracoes.
+- [ ] Melhorar microinteracoes e estados vazios que ainda parecam antigos.
 - [x] Rolador manual com expressoes, ajuda rapida e historico em memoria.
 - [ ] Toggle para habilitar/desabilitar dados virtuais.
-- [ ] Rolar atributo, pericia, saving throw e ataque a partir da ficha.
-- [ ] Presets e contexto de rolagem a partir da ficha.
+- [ ] Rolar atributo, pericia, saving throw, iniciativa e ataque a partir da
+      ficha.
+- [ ] Rolar dano de arma e magias com base nos dados existentes.
+- [ ] Criar presets contextuais por personagem sem poluir a ficha.
+- [ ] Preparar estrutura futura para bonus temporarios em CA, iniciativa,
+      deslocamento e outros valores derivados.
 
-#### 2.2.1 - Acessibilidade
-- [ ] Tamanho de fonte configuravel.
-- [ ] Melhorias de contraste e alvos de toque.
-- [ ] Revisao de navegacao por teclado/web.
+### 2.2.0 - D&D 2024 / SRD 5.2.1
 
-#### 2.2.2 - Companheiros e montarias
-- [ ] Subficha vinculada ao personagem.
-- [ ] Casos principais: familiar, companion, montaria e summons recorrentes.
+Objetivo: suportar a versao moderna de D&D como modo de regras separado, sem
+misturar silenciosamente com personagens criados no SRD atual.
 
-### 2.3.x - Homebrew
+- [ ] Definir `ruleset` do personagem: `5e_2014` e `5e_2024`.
+- [ ] Separar catalogos SRD por ruleset sem duplicar toda a infraestrutura.
+- [ ] Adicionar dados do SRD 5.2.1: classes, subclasses, especies, backgrounds,
+      feats, magias, equipamentos e regras necessarias.
+- [ ] Adaptar criacao de personagem para escolher o ruleset antes das listas.
+- [ ] Ajustar level up/progressao para regras de 2024 quando aplicavel.
+- [ ] Garantir que personagens antigos continuem como `5e_2014`.
+- [ ] Adicionar testes de progressao e criacao para os dois rulesets.
+- [ ] Atualizar textos de UI para deixar claro qual ruleset esta em uso.
 
-Objetivo: permitir conteudo criado/importado pelo usuario sem sobrescrever o
-SRD oficial.
+### 2.3.0 - GM Local
 
-#### 2.3.0 - Pacotes homebrew
-- [ ] Definir formato JSON para classes, racas, backgrounds, magias, itens,
-      features, feats e subclasses.
-- [ ] Importar pacote homebrew por arquivo.
-- [ ] Storage separado para pacotes instalados.
-- [ ] Gerenciar pacotes: listar, ver fonte, desativar/remover.
+Objetivo: criar a primeira camada paga de mestre como compra unica vitalicia,
+focada em recursos offline e sem custo recorrente obrigatorio para o app.
 
-#### 2.3.1 - Integracao com criacao e ficha
-- [ ] Usar homebrew nas listas de criacao de personagem.
-- [ ] Usar magias, itens e features homebrew na ficha.
+Modelo de negocio planejado:
+
+- GM Local vitalicio: compra unica mais cara para desbloquear os recursos locais
+  sem cloud, comunidade publica ou IA ilimitada.
+
+Escopo de produto:
+
+- [ ] Estrutura de licenca premium local via Play Billing.
+- [ ] Tela "Mestre" separada da ficha de jogador.
+- [ ] Criacao local de homebrews: itens, magias, features, feats, especies,
+      backgrounds, subclasses e classes quando a base estiver pronta.
+- [ ] Importar/exportar pacotes de homebrew por arquivo.
+- [ ] Gerenciar pacotes instalados: listar, ver fonte, desativar/remover.
+- [ ] Usar homebrew nas listas de criacao, ficha, inventario e magias.
 - [ ] Marcar visualmente conteudo homebrew e sua origem.
+- [ ] Monstros/NPCs salvos localmente.
+- [ ] Geradores locais simples para NPCs, encontros, loot e notas de sessao.
 
----
+### 2.4.0 - GM Pro
 
-## Serie 3.x - Ferramentas de mestre
+Objetivo: adicionar recursos com custo recorrente real usando assinatura mais
+cara que o GM Local.
 
-Objetivo: expandir o app para uso de mestre sem misturar tudo na ficha do
-jogador.
-
-### 3.0.0 - Area de NPCs
-- [ ] Navegacao principal com Personagens e NPCs.
-- [ ] Modelo de NPC reutilizando partes de Character quando fizer sentido.
-- [ ] NPCs fixados, pesquisaveis e organizados por campanha/sessao.
-
-### 3.1.0 - Gerador de NPCs
-- [ ] Geracao rapida de NPC com nome, atributos basicos, AC e HP.
-- [ ] Geracao com filtros de raca, classe, nivel e importancia.
-- [ ] Modo figurante, secundario e importante.
-
-### 3.2.0 - Campanhas
-- [ ] Agrupar personagens, NPCs e notas por campanha.
-- [ ] Tela de campanha com resumo de party, sessoes, NPCs e pendencias.
-
----
-
-## Serie 4.x - Nuvem e compartilhamento
-
-Objetivo: sincronizacao e colaboracao, mantendo uso local/offline como base.
-
-### 4.0.0 - Conta e sync
-- [ ] Backend para conta de usuario.
-- [ ] Sincronizacao em nuvem de personagens, notas e imagens.
+- [ ] Conta de usuario e backend.
+- [ ] Sistema de direitos por conta para reconhecer compras vindas do Android,
+      iOS e web quando essas plataformas forem suportadas.
+- [ ] Sync em nuvem de personagens, campanhas, notas, imagens e homebrews.
 - [ ] Resolucao de conflitos entre dispositivos.
+- [ ] Compartilhar personagem/campanha por link.
+- [ ] Publicar homebrews em biblioteca da comunidade.
+- [ ] Denunciar, ocultar, bloquear e moderar conteudos/usuarios da comunidade.
+- [ ] Fila administrativa para revisar denuncias e conteudos escondidos.
+- [ ] IA com creditos mensais para historia, NPCs, encontros, loot e descricoes.
+- [ ] Geracao de imagem por IA com limite separado ou creditos extras.
+- [ ] Pacotes de creditos extras para uso pesado de IA.
+- [ ] Relatorio dentro do app para conteudo ofensivo gerado por IA.
 
-### 4.1.0 - Compartilhamento
-- [ ] Compartilhar personagem por link.
-- [ ] Permissoes de leitura/copia.
-- [ ] Export/import continuando funcional sem conta.
+---
 
-### 4.2.0 - Imagens geradas
-- [ ] Gerar imagem do personagem a partir de raca, classe e aparencia.
-- [ ] Permitir editar prompt antes de gerar.
-- [ ] Salvar imagem gerada como avatar local/sincronizado.
+## Serie 3.x - Mesa compartilhada e ferramentas avancadas
+
+Objetivo: expandir para uma experiencia de mestre e mesa online sem perder a
+base offline do app.
+
+### 3.0.0 - Campanhas compartilhadas
+- [ ] Campanhas com jogadores convidados.
+- [ ] Jogadores entram e controlam seus proprios personagens.
+- [ ] Permissoes por jogador/personagem.
+- [ ] Sincronizacao simples de HP, condicoes, recursos e notas compartilhadas.
+
+### 3.1.0 - Grid 2D simples
+- [ ] Grid de batalha 2D leve, com tokens de personagens, NPCs e monstros.
+- [ ] Medidas, posicao, iniciativa e estados simples.
+- [ ] Funcionar bem em tablet, web e mobile.
+
+### 3.2.0 - Ferramentas de encontro
+- [ ] Encontros salvos por campanha.
+- [ ] Monstros prontos e homebrew.
+- [ ] Iniciativa compartilhada.
+- [ ] Loot e recompensas aleatorias.
 
 ---
 
 ## Ideias futuras
 
-- Companheiro de IA para narrar, resumir sessoes ou sugerir acoes.
-- Bestiario com monstros prontos.
-- Modo campanha compartilhada em tempo real.
+- Notas de campanha com sessoes, links internos e templates avancados.
+- Acessibilidade: tamanho de fonte, contraste e navegacao por teclado/web.
+- Companheiros, montarias, familiares e summons recorrentes.
+- Biblioteca publica de conteudo aprovado/destacado.
 - Suporte a outros sistemas de RPG alem de D&D 5e.

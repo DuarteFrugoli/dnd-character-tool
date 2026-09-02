@@ -28,11 +28,11 @@ Ordem macro planejada:
    e compatibilidade Android/Play Console.
 3. `2.1.x`: fechamento do rework visual e rolagem contextual.
 4. `2.2.x`: D&D 2024 / SRD 5.2.1 como modo de regras separado.
-5. `2.3.x`: GM Local vitalicio, com ferramentas offline de mestre e homebrew
+5. `3.0.x`: GM Local vitalicio, com ferramentas offline de mestre e homebrew
    local.
-6. `2.4.x`: GM Pro por assinatura, com conta, cloud, comunidade e creditos de
+6. `3.1.x`: GM Pro por assinatura, com conta, cloud, comunidade e creditos de
    IA.
-7. `3.x`: mesa/campanha online mais completa.
+7. `4.x`: mesa/campanha online mais completa.
 
 ---
 
@@ -132,7 +132,7 @@ Ordem macro planejada:
 
 ---
 
-## Serie 2.x - Regras modernas, rolagens e produto GM
+## Serie 2.x - Regras modernas e rolagens
 
 ### 2.0.0 - Multiclasse jogavel
 - [x] Escolher qual classe sobe de nivel.
@@ -221,7 +221,14 @@ misturar silenciosamente com personagens criados no SRD atual.
 - [ ] Adicionar testes de progressao e criacao para os dois rulesets.
 - [ ] Atualizar textos de UI para deixar claro qual ruleset esta em uso.
 
-### 2.3.0 - GM Local
+---
+
+## Serie 3.x - Produto GM
+
+Objetivo: transformar ferramentas de mestre em produto pago separado, mantendo
+a ficha de jogador generosa e offline.
+
+### 3.0.0 - GM Local
 
 Objetivo: criar a primeira camada paga de mestre como compra unica vitalicia,
 focada em recursos offline e sem custo recorrente obrigatorio para o app.
@@ -244,7 +251,7 @@ Escopo de produto:
 - [ ] Monstros/NPCs salvos localmente.
 - [ ] Geradores locais simples para NPCs, encontros, loot e notas de sessao.
 
-### 2.4.0 - GM Pro
+### 3.1.0 - GM Pro
 
 Objetivo: adicionar recursos com custo recorrente real usando assinatura mais
 cara que o GM Local.
@@ -265,23 +272,23 @@ cara que o GM Local.
 
 ---
 
-## Serie 3.x - Mesa compartilhada e ferramentas avancadas
+## Serie 4.x - Mesa compartilhada e ferramentas avancadas
 
 Objetivo: expandir para uma experiencia de mestre e mesa online sem perder a
 base offline do app.
 
-### 3.0.0 - Campanhas compartilhadas
+### 4.0.0 - Campanhas compartilhadas
 - [ ] Campanhas com jogadores convidados.
 - [ ] Jogadores entram e controlam seus proprios personagens.
 - [ ] Permissoes por jogador/personagem.
 - [ ] Sincronizacao simples de HP, condicoes, recursos e notas compartilhadas.
 
-### 3.1.0 - Grid 2D simples
+### 4.1.0 - Grid 2D simples
 - [ ] Grid de batalha 2D leve, com tokens de personagens, NPCs e monstros.
 - [ ] Medidas, posicao, iniciativa e estados simples.
 - [ ] Funcionar bem em tablet, web e mobile.
 
-### 3.2.0 - Ferramentas de encontro
+### 4.2.0 - Ferramentas de encontro
 - [ ] Encontros salvos por campanha.
 - [ ] Monstros prontos e homebrew.
 - [ ] Iniciativa compartilhada.

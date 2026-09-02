@@ -5,6 +5,22 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.0.2] - 2026-09-02
+
+### Added
+- **Tela inicial**: adicionado gesto de puxar para baixo para recarregar a lista de personagens.
+
+### Changed
+- **Importacao**: botao de importacao da tela inicial agora aceita arquivos `.dndchar` e `.dndbackup`.
+
+### Fixed
+- **Android/Play Console**: habilitado edge-to-edge nativo via AndroidX para melhorar a compatibilidade com Android 15/API 35 e resolver avisos de exibicao de ponta a ponta.
+
+### Internal
+- **Versionamento**: versao do app atualizada para `2.0.2+26`.
+
+---
+
 ## [2.0.1] - 2026-08-27
 
 ### Added

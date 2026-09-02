@@ -15,7 +15,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get charListTitle => 'Personagens DnD';
 
   @override
-  String get charListImportTooltip => 'Importar JSON';
+  String get charListImportTooltip => 'Importar personagem ou backup';
 
   @override
   String get charListSettingsTooltip => 'Configurações';
@@ -2271,7 +2271,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get dialogClose => 'Fechar';
 
   @override
-  String get importDialogTitle => 'Importar Personagem';
+  String get importDialogTitle => 'Importar personagem ou backup';
 
   @override
   String get importUseJson => 'Usar JSON diretamente';
@@ -2280,10 +2280,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get importJsonHint => 'Cole o JSON aqui…';
 
   @override
-  String get importPickFile => 'Escolher arquivo .dndchar';
+  String get importPickFile => 'Escolher arquivo .dndchar ou .dndbackup';
 
   @override
-  String get importFileError => 'Arquivo .dndchar inválido ou corrompido';
+  String get importFileError =>
+      'Arquivo .dndchar/.dndbackup inválido ou corrompido';
 
   @override
   String get importFileIncoming => 'Importar personagem do arquivo?';

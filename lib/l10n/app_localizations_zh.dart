@@ -15,7 +15,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get charListTitle => '龙与地下城角色';
 
   @override
-  String get charListImportTooltip => '导入 JSON';
+  String get charListImportTooltip => '导入角色或备份';
 
   @override
   String get charListSettingsTooltip => '设置';
@@ -2213,7 +2213,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get dialogClose => '关闭';
 
   @override
-  String get importDialogTitle => '导入角色';
+  String get importDialogTitle => '导入角色或备份';
 
   @override
   String get importUseJson => '直接使用JSON';
@@ -2222,10 +2222,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importJsonHint => '在此粘贴JSON…';
 
   @override
-  String get importPickFile => '选择 .dndchar 文件';
+  String get importPickFile => '选择 .dndchar 或 .dndbackup 文件';
 
   @override
-  String get importFileError => '无效或损坏的 .dndchar 文件';
+  String get importFileError => '无效或损坏的 .dndchar/.dndbackup 文件';
 
   @override
   String get importFileIncoming => '从文件导入角色？';

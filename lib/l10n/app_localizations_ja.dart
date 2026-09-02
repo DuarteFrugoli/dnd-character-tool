@@ -15,7 +15,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get charListTitle => 'DnDのキャラクター';
 
   @override
-  String get charListImportTooltip => 'JSONをインポートする';
+  String get charListImportTooltip => 'キャラクターまたはバックアップをインポート';
 
   @override
   String get charListSettingsTooltip => '設定';
@@ -2222,7 +2222,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dialogClose => '閉じる';
 
   @override
-  String get importDialogTitle => 'キャラクターをインポート';
+  String get importDialogTitle => 'キャラクターまたはバックアップをインポート';
 
   @override
   String get importUseJson => 'JSONを直接使用';
@@ -2231,10 +2231,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get importJsonHint => 'ここにJSONを貼り付け…';
 
   @override
-  String get importPickFile => '.dndcharファイルを選択';
+  String get importPickFile => '.dndcharまたは.dndbackupファイルを選択';
 
   @override
-  String get importFileError => '無効または破損した.dndcharファイル';
+  String get importFileError => '無効または破損した.dndchar/.dndbackupファイル';
 
   @override
   String get importFileIncoming => 'ファイルからキャラクターをインポートしますか？';

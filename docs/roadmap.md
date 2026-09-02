@@ -179,14 +179,16 @@ Ordem macro planejada:
 Objetivo: lancar uma versao tecnica curta para resolver os avisos de
 edge-to-edge da Play Console antes de continuar a `2.1.0`.
 
-- [ ] Habilitar edge-to-edge corretamente na `MainActivity` para compatibilidade
+- [x] Habilitar edge-to-edge corretamente na `MainActivity` para compatibilidade
       com Android 15/API 35 e versoes anteriores.
-- [ ] Revisar temas Android nativos para remover ou evitar parametros
+- [x] Revisar temas Android nativos para remover ou evitar parametros
       descontinuados de status/navigation bar.
-- [ ] Conferir se telas principais, bottom sheets e formularios respeitam as
+- [x] Conferir se telas principais, bottom sheets e formularios respeitam as
       areas seguras em navegacao por gestos e por tres botoes.
-- [ ] Testar manualmente em Android real antes do envio.
-- [ ] Atualizar versao para `2.0.2+26`, changelog e notas curtas da Play Store.
+- [x] Testar manualmente em Android real antes do envio.
+- [x] Atualizar versao para `2.0.2+26` e changelog.
+- [x] Preparar notas curtas da Play Store se a versao for enviada para
+      producao.
 
 ### 2.1.0 - Fechamento visual e rolagem contextual
 

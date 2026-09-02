@@ -15,7 +15,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get charListTitle => 'DnD 캐릭터';
 
   @override
-  String get charListImportTooltip => 'JSON 가져오기';
+  String get charListImportTooltip => '캐릭터 또는 백업 가져오기';
 
   @override
   String get charListSettingsTooltip => '설정';
@@ -2223,7 +2223,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dialogClose => '닫기';
 
   @override
-  String get importDialogTitle => '캐릭터 가져오기';
+  String get importDialogTitle => '캐릭터 또는 백업 가져오기';
 
   @override
   String get importUseJson => 'JSON 직접 사용';
@@ -2232,10 +2232,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get importJsonHint => '여기에 JSON 붙여넣기…';
 
   @override
-  String get importPickFile => '.dndchar 파일 선택';
+  String get importPickFile => '.dndchar 또는 .dndbackup 파일 선택';
 
   @override
-  String get importFileError => '잘못되거나 손상된 .dndchar 파일';
+  String get importFileError => '잘못되거나 손상된 .dndchar/.dndbackup 파일';
 
   @override
   String get importFileIncoming => '파일에서 캐릭터를 가져오시겠습니까?';

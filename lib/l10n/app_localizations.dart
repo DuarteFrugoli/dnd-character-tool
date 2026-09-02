@@ -126,10 +126,10 @@ abstract class AppLocalizations {
   /// **'DnD Characters'**
   String get charListTitle;
 
-  /// Tooltip for import button.
+  /// Tooltip for the character list import button. It accepts .dndchar and .dndbackup files.
   ///
   /// In en, this message translates to:
-  /// **'Import JSON'**
+  /// **'Import character or backup'**
   String get charListImportTooltip;
 
   /// Tooltip for settings button.
@@ -4134,10 +4134,10 @@ abstract class AppLocalizations {
   /// **'Close'**
   String get dialogClose;
 
-  /// Import dialog title.
+  /// Import dialog title for .dndchar and .dndbackup files.
   ///
   /// In en, this message translates to:
-  /// **'Import Character'**
+  /// **'Import Character or Backup'**
   String get importDialogTitle;
 
   /// Import dialog: expand JSON section label.
@@ -4152,16 +4152,16 @@ abstract class AppLocalizations {
   /// **'Paste JSON here…'**
   String get importJsonHint;
 
-  /// Import dialog: button to open a .dndchar file from storage.
+  /// Import dialog: button to open a .dndchar or .dndbackup file from storage.
   ///
   /// In en, this message translates to:
-  /// **'Pick .dndchar file'**
+  /// **'Pick .dndchar or .dndbackup file'**
   String get importPickFile;
 
   /// Import dialog: error shown when picked file is invalid.
   ///
   /// In en, this message translates to:
-  /// **'Invalid or corrupted .dndchar file'**
+  /// **'Invalid or corrupted .dndchar/.dndbackup file'**
   String get importFileError;
 
   /// Confirmation dialog title when app is opened with a .dndchar file.

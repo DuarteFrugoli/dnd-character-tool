@@ -2,7 +2,9 @@ package com.duartefrugoli.dnd_character_tool
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import android.view.WindowManager
+import androidx.core.view.WindowCompat
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -11,6 +13,11 @@ class MainActivity : FlutterActivity() {
     private val fileChannelName = "dnd.character/file_import"
     private val screenChannelName = "dnd.character/screen"
     private var pendingFileContent: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        WindowCompat.enableEdgeToEdge(window)
+    }
 
     // Prevent FlutterActivity from using the content:// URI as the initial route,
     // which would cause go_router to navigate to "content://..." and crash.

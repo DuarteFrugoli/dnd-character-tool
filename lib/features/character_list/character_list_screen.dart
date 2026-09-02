@@ -153,22 +153,17 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
     }
   }
 
-  Future<void> _importCharacter() async {
-    final l10n = AppLocalizations.of(context)!;
-    await showDialog<void>(
+  Future<void> _refreshCharacters() {
+    return ref.read(characterListProvider.notifier).refresh();
+  }
+
+  Future<void> _importFile() async {
+    final fileJson = await showDialog<String>(
       context: context,
-      builder: (ctx) => _ImportDialog(
-        onFileImported: (character) {
-          if (!mounted) return;
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l10n.charListImportedSuccess(character.name)),
-              backgroundColor: Theme.of(context).colorScheme.primary,
-            ),
-          );
-        },
-      ),
+      builder: (ctx) => const _ImportDialog(),
     );
+    if (fileJson == null || !mounted) return;
+    await _importFromFileJson(fileJson);
   }
 
   @override
@@ -188,7 +183,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
         actions: [
           IconButton(
             tooltip: l10n.charListImportTooltip,
-            onPressed: _importCharacter,
+            onPressed: _importFile,
             icon: const Icon(Icons.upload_file),
           ),
           IconButton(
@@ -210,15 +205,42 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
             ],
           ),
         ),
-        child: state.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => Center(child: Text('Error: $e')),
-          data: (characters) => characters.isEmpty
-              ? const _EmptyState()
-              : ResponsiveListConstraints(
-                  maxWidth: 960,
-                  child: _CharacterList(characters: characters),
+        child: RefreshIndicator(
+          onRefresh: _refreshCharacters,
+          child: state.when(
+            loading: () => const CustomScrollView(
+              physics: AlwaysScrollableScrollPhysics(),
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(child: CircularProgressIndicator()),
                 ),
+              ],
+            ),
+            error: (e, _) => CustomScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Center(child: Text('Error: $e')),
+                ),
+              ],
+            ),
+            data: (characters) => characters.isEmpty
+                ? const CustomScrollView(
+                    physics: AlwaysScrollableScrollPhysics(),
+                    slivers: [
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: _EmptyState(),
+                      ),
+                    ],
+                  )
+                : ResponsiveListConstraints(
+                    maxWidth: 960,
+                    child: _CharacterList(characters: characters),
+                  ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
@@ -361,6 +383,7 @@ class _CharacterList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CustomScrollView(
+      physics: const AlwaysScrollableScrollPhysics(),
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
@@ -725,16 +748,14 @@ class _ExportDialogState extends State<_ExportDialog> {
 
 // Import dialog.
 
-class _ImportDialog extends ConsumerStatefulWidget {
-  const _ImportDialog({required this.onFileImported});
-
-  final void Function(Character character) onFileImported;
+class _ImportDialog extends StatefulWidget {
+  const _ImportDialog();
 
   @override
-  ConsumerState<_ImportDialog> createState() => _ImportDialogState();
+  State<_ImportDialog> createState() => _ImportDialogState();
 }
 
-class _ImportDialogState extends ConsumerState<_ImportDialog> {
+class _ImportDialogState extends State<_ImportDialog> {
   bool _pickingFile = false;
 
   Future<void> _pickFile(BuildContext ctx) async {
@@ -751,7 +772,10 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
       final picked = result.files.single;
 
       // Validate filename (name is always available on all platforms).
-      if (!picked.name.endsWith('.dndchar')) {
+      final fileName = picked.name.toLowerCase();
+      final isSupportedFile =
+          fileName.endsWith('.dndchar') || fileName.endsWith('.dndbackup');
+      if (!isSupportedFile) {
         if (!ctx.mounted) return;
         ScaffoldMessenger.of(ctx).showSnackBar(
           SnackBar(
@@ -766,12 +790,7 @@ class _ImportDialogState extends ConsumerState<_ImportDialog> {
       if (fileJson == null) return;
 
       if (!ctx.mounted) return;
-      final character = await ref
-          .read(characterListProvider.notifier)
-          .importCharacterFromFile(fileJson);
-      if (!ctx.mounted) return;
-      Navigator.pop(ctx);
-      widget.onFileImported(character);
+      Navigator.pop(ctx, fileJson);
     } on FormatException {
       if (!ctx.mounted) return;
       ScaffoldMessenger.of(ctx).showSnackBar(

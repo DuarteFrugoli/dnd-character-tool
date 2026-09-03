@@ -800,24 +800,69 @@ class _ImportDialogState extends State<_ImportDialog> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
     return AlertDialog(
       title: Text(l10n.importDialogTitle),
       content: SizedBox(
         width: 520,
-        child: Align(
-          alignment: Alignment.centerLeft,
-          heightFactor: 1,
-          widthFactor: 1,
-          child: OutlinedButton.icon(
-            onPressed: _pickingFile ? null : () => _pickFile(context),
-            icon: _pickingFile
-                ? const SizedBox(
-                    width: 16,
-                    height: 16,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  )
-                : const Icon(Icons.folder_open, size: 18),
-            label: Text(l10n.importPickFile),
+        child: Material(
+          color: Color.alphaBlend(
+            cs.primary.withValues(alpha: 0.06),
+            cs.surface,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+            side: BorderSide(color: cs.outlineVariant),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: _pickingFile ? null : () => _pickFile(context),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+              child: Row(
+                children: [
+                  _pickingFile
+                      ? SizedBox(
+                          width: 22,
+                          height: 22,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: cs.primary,
+                          ),
+                        )
+                      : Icon(Icons.folder_open_outlined, color: cs.primary),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.dialogImport,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          '.dndchar / .dndbackup',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: cs.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Icon(Icons.chevron_right, color: cs.onSurfaceVariant),
+                ],
+              ),
+            ),
           ),
         ),
       ),

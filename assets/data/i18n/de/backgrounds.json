@@ -40,7 +40,7 @@
     }
   },
   "Entertainer": {
-    "name": "Entertainer",
+    "name": "Unterhaltungskünstler",
     "startingEquipment": [
       "Musikinstrument",
       "Die Gunst eines Bewunderers",
@@ -107,7 +107,7 @@
     }
   },
   "Outlander": {
-    "name": "Outlander",
+    "name": "Wanderer",
     "startingEquipment": [
       "Personal",
       "Jagdfalle",
@@ -138,10 +138,10 @@
   "Sailor": {
     "name": "Seemann",
     "startingEquipment": [
-      "Sicherungsstift (Schläger)",
+      "Belegnagel (Knüppel)",
       "50 Fuß Seidenseil",
       "Glücksbringer",
-      "Gemeinsame Kleidung",
+      "Gewöhnliche Kleidung",
       "10 GM"
     ],
     "feature": {
@@ -164,7 +164,7 @@
     }
   },
   "Urchin": {
-    "name": "Urchin",
+    "name": "Straßenkind",
     "startingEquipment": [
       "Kleines Messer",
       "Karte Ihrer Heimatstadt",

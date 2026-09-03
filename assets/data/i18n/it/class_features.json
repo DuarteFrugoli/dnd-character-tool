@@ -114,7 +114,7 @@
     },
     "Channel Divinity": {
       "name": "Divinità del canale",
-      "description": "Ottieni la capacità di incanalare l'energia divina direttamente dalla tua divinità, usando quell'energia per alimentare effetti magici. Inizi con due di questi effetti: Scaccia Non Morti e un effetto determinato dal tuo dominio. Quando usi Channel Divinity, scegli quale effetto creare."
+      "description": "Ottieni la capacità di incanalare l'energia divina direttamente dalla tua divinità, usando quell'energia per alimentare effetti magici. Inizi con due di questi effetti: Scaccia Non Morti e un effetto determinato dal tuo dominio. Quando usi Incanalare Divinità, scegli quale effetto creare."
     },
     "Ability Score Improvement": {
       "name": "Miglioramento del punteggio di abilità",
@@ -278,7 +278,7 @@
     },
     "Channel Divinity": {
       "name": "Divinità del canale",
-      "description": "Il tuo giuramento ti consente di incanalare l'energia divina per alimentare effetti magici. Quando usi Channel Divinity, scegli quale opzione usare. Recuperi gli usi spesi quando termini un riposo breve o lungo."
+      "description": "Il tuo giuramento ti consente di incanalare l'energia divina per alimentare effetti magici. Quando usi Incanalare Divinità, scegli quale opzione usare. Recuperi gli usi spesi quando termini un riposo breve o lungo."
     },
     "Ability Score Improvement": {
       "name": "Miglioramento del punteggio di abilità",
@@ -461,7 +461,7 @@
       "description": "Il tuo protettore ti concede un segreto magico chiamato arcano. Scegli un incantesimo di 6° livello dalla lista degli incantesimi dello stregone come questo arcano. Puoi lanciare il tuo incantesimo arcano una volta senza spendere uno slot incantesimo. Devi terminare un riposo lungo prima di farlo di nuovo."
     },
     "Eldritch Master": {
-      "name": "Maestro Eldritch",
+      "name": "Maestro occulto",
       "description": "Puoi attingere alla tua riserva interiore di potere mistico mentre supplichi il tuo patrono di riguadagnare gli slot incantesimo esauriti. Puoi spendere 1 minuto supplicando il tuo patrono di chiedere aiuto per recuperare tutti gli slot incantesimo spesi dalla tua funzione Patto Magico. Una volta recuperati gli slot incantesimo con questo privilegio, è necessario terminare un riposo lungo prima di poterlo fare di nuovo."
     }
   },

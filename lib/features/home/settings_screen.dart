@@ -1012,9 +1012,7 @@ class _ThemePreferencePanel extends StatelessWidget {
                   ),
                 ],
               ),
-              border: Border.all(
-                color: scheme.primary.withValues(alpha: 0.42),
-              ),
+              border: Border.all(color: scheme.primary.withValues(alpha: 0.42)),
               boxShadow: [
                 BoxShadow(
                   color: scheme.primary.withValues(alpha: 0.12),

@@ -138,11 +138,11 @@
   "Sailor": {
     "name": "Marin",
     "startingEquipment": [
-      "Goupille d'assurage (club)",
-      "50 pieds de corde de soie",
-      "Porte-bonheur",
-      "Vêtements communs",
-      "10 pièces d'or"
+      "Cabillot (gourdin)",
+      "15 mètres de corde de soie",
+      "porte-bonheur",
+      "vêtements courants",
+      "10 po"
     ],
     "feature": {
       "name": "Passage du navire",

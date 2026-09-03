@@ -18,10 +18,7 @@ Future<({Uint8List? bytes, String? mimeType})> readStoredImagePayload(
     'gif' => 'image/gif',
     _ => 'image/jpeg',
   };
-  return (
-    bytes: await file.readAsBytes(),
-    mimeType: mimeType,
-  );
+  return (bytes: await file.readAsBytes(), mimeType: mimeType);
 }
 
 Future<String?> persistImportedImagePayload({

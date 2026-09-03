@@ -1,12 +1,12 @@
 {
   "Club": {
-    "name": "俱乐部"
+    "name": "短棍"
   },
   "Dagger": {
     "name": "匕首"
   },
   "Greatclub": {
-    "name": "伟大的俱乐部"
+    "name": "大棒"
   },
   "Handaxe": {
     "name": "手斧"
@@ -18,10 +18,10 @@
     "name": "轻锤"
   },
   "Mace": {
-    "name": "锤"
+    "name": "硬头锤"
   },
   "Quarterstaff": {
-    "name": "军需人员"
+    "name": "长棍"
   },
   "Sickle": {
     "name": "镰刀"
@@ -30,7 +30,7 @@
     "name": "矛"
   },
   "Crossbow, Light": {
-    "name": "十字弓，轻"
+    "name": "轻弩"
   },
   "Dart": {
     "name": "镖"
@@ -39,7 +39,7 @@
     "name": "短弓"
   },
   "Sling": {
-    "name": "吊带"
+    "name": "投石索"
   },
   "Battleaxe": {
     "name": "战斧"
@@ -66,16 +66,16 @@
     "name": "长剑"
   },
   "Maul": {
-    "name": "打伤"
+    "name": "大锤"
   },
   "Morningstar": {
-    "name": "晨星公司"
+    "name": "晨星锤"
   },
   "Pike": {
-    "name": "派克"
+    "name": "长枪"
   },
   "Rapier": {
-    "name": "剑杆"
+    "name": "刺剑"
   },
   "Scimitar": {
     "name": "弯刀"
@@ -87,7 +87,7 @@
     "name": "三叉戟"
   },
   "War Pick": {
-    "name": "战争选择"
+    "name": "战镐"
   },
   "Warhammer": {
     "name": "战锤"
@@ -96,7 +96,7 @@
     "name": "鞭"
   },
   "Blowgun": {
-    "name": "吹气枪"
+    "name": "吹箭筒"
   },
   "Crossbow, Hand": {
     "name": "手弩"
@@ -111,19 +111,19 @@
     "name": "网"
   },
   "Padded": {
-    "name": "带衬垫"
+    "name": "布甲"
   },
   "Leather": {
-    "name": "皮革"
+    "name": "皮甲"
   },
   "Studded Leather": {
-    "name": "镶钉皮革"
+    "name": "镶钉皮甲"
   },
   "Hide": {
-    "name": "隐藏"
+    "name": "兽皮甲"
   },
   "Chain Shirt": {
-    "name": "链条衬衫"
+    "name": "链甲衫"
   },
   "Scale Mail": {
     "name": "鳞甲"
@@ -132,19 +132,19 @@
     "name": "胸甲"
   },
   "Half Plate": {
-    "name": "半盘"
+    "name": "半身板甲"
   },
   "Ring Mail": {
-    "name": "环形邮件"
+    "name": "环甲"
   },
   "Chain Mail": {
     "name": "锁子甲"
   },
   "Splint": {
-    "name": "夹板"
+    "name": "板条甲"
   },
   "Plate": {
-    "name": "盘子"
+    "name": "板甲"
   },
   "Shield": {
     "name": "盾"
@@ -214,7 +214,7 @@
     "description": "一个背包，里面有书、墨水、墨水笔、羊皮纸、沙子和小刀。"
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "滚珠轴承（每袋 1000 个）",
+    "name": "滚珠（1000枚）",
     "description": "作为一个动作，将这些小金属球散开。生物必须成功通过 DC 10 敏捷豁免检定，否则就会摔倒。"
   },
   "Barrel": {
@@ -254,7 +254,7 @@
     "description": "可容纳 3 加仑。"
   },
   "Caltrops (bag of 20)": {
-    "name": "菱角（20粒装）",
+    "name": "铁蒺藜（20枚）",
     "description": "分散在 5 英尺的区域内。穿过的生物必须进行 DC 15 敏捷豁免，否则会停止并受到 1 点穿刺伤害（速度降低 10 英尺，直至痊愈）。"
   },
   "Candle": {
@@ -312,6 +312,9 @@
   "Crowbar": {
     "name": "撬棍",
     "description": "在可以应用杠杆的力量检查中赋予优势。"
+  },
+  "Disguise kit": {
+    "name": "伪装套件"
   },
   "Druidic Focus": {
     "name": "德鲁伊焦点",
@@ -402,7 +405,7 @@
     "description": "可以束缚小型或中型生物。逃脱需要 DC 20 敏捷检定。破坏需要 DC 20 强度。每套都配有一把钥匙。"
   },
   "Mess Kit": {
-    "name": "混乱套件",
+    "name": "餐具套装",
     "description": "一个铁盒，里面有一个杯子和简单的器皿。"
   },
   "Mirror, steel": {
@@ -430,7 +433,7 @@
     "description": "采矿用的重型镐。"
   },
   "Piton": {
-    "name": "皮顿",
+    "name": "岩钉",
     "description": "用于攀爬和锚定的铁钉。"
   },
   "Poison, basic (vial)": {
@@ -522,11 +525,11 @@
     "description": "一个简单便携的帆布庇护所。"
   },
   "Tinderbox": {
-    "name": "火药盒",
+    "name": "火绒盒",
     "description": "包含燧石、火钢和火绒。点燃火把或火需要 1 个动作（如果火绒潮湿则需要 1 分钟）。"
   },
   "Torch": {
-    "name": "火炬",
+    "name": "火把",
     "description": "燃烧1小时。 20 英尺半径内有亮光，另外 20 英尺内有暗光。可用作简易武器（1d4 火焰伤害）。"
   },
   "Vial": {

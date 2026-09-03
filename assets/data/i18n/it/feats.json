@@ -50,7 +50,7 @@
     "description": "Quando ottieni questo talento, scegli uno dei seguenti tipi di danno: acido, freddo, fuoco, fulmine o tuono. Gli incantesimi lanciati ignorano la resistenza ai danni del tipo scelto. Inoltre, quando tiri i danni per un incantesimo che lanci che infligge danni di quel tipo, puoi considerare qualsiasi 1 su un dado di danno come un 2.\nPuoi selezionare questo talento più volte. Ogni volta che lo fai, devi scegliere un tipo di danno diverso."
   },
   "Grappler": {
-    "name": "Grappler",
+    "name": "Lottatore",
     "prerequisite": "Forza 13 o superiore",
     "description": "Hai sviluppato le abilità necessarie per resistere nelle prese ravvicinate. Ottieni i seguenti vantaggi:\n• Hai vantaggio ai tiri per colpire contro una creatura con cui stai lottando.\n• Puoi usare la tua azione per cercare di immobilizzare una creatura afferrata da te. Per farlo, effettua un'altra prova di lotta. Se hai successo, tu e la creatura siete entrambi trattenuti fino al termine della lotta."
   },

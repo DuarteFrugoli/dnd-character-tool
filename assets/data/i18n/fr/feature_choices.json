@@ -165,55 +165,55 @@
     "favored_enemies": {
       "aberrations": {
         "name": "Aberrations",
-        "description": "Choisissez les aberrations comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les aberrations comme l’un de vos types d’ennemis jurés."
       },
       "beasts": {
         "name": "Bêtes",
-        "description": "Choisissez les bêtes comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les bêtes comme l’un de vos types d’ennemis jurés."
       },
       "celestials": {
         "name": "Célestes",
-        "description": "Choisissez les célestes comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les célestes comme l’un de vos types d’ennemis jurés."
       },
       "constructs": {
-        "name": "Constructions",
-        "description": "Choisissez les constructions comme l’un de vos types d’ennemis préférés."
+        "name": "Créatures artificielles",
+        "description": "Choisissez les créatures artificielles comme l’un de vos types d’ennemis jurés."
       },
       "dragons": {
         "name": "Dragons",
-        "description": "Choisissez les dragons comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les dragons comme l’un de vos types d’ennemis jurés."
       },
       "elementals": {
         "name": "Élémentaires",
-        "description": "Choisissez les élémentaires comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les élémentaires comme l’un de vos types d’ennemis jurés."
       },
       "fey": {
-        "name": "Fée",
-        "description": "Choisissez Fey comme l’un de vos types d’ennemis préférés."
+        "name": "Fées",
+        "description": "Choisissez les fées comme l’un de vos types d’ennemis jurés."
       },
       "fiends": {
-        "name": "Démons",
-        "description": "Choisissez les démons comme l’un de vos types d’ennemis préférés."
+        "name": "Fiélons",
+        "description": "Choisissez les fiélons comme l’un de vos types d’ennemis jurés."
       },
       "giants": {
         "name": "Géants",
-        "description": "Choisissez les géants comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les géants comme l’un de vos types d’ennemis jurés."
       },
       "monstrosities": {
         "name": "Monstruosités",
-        "description": "Choisissez les monstruosités comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les monstruosités comme l’un de vos types d’ennemis jurés."
       },
       "oozes": {
-        "name": "suinte",
-        "description": "Choisissez les limons comme l’un de vos types d’ennemis préférés."
+        "name": "Vases",
+        "description": "Choisissez les vases comme l’un de vos types d’ennemis jurés."
       },
       "plants": {
         "name": "Plantes",
-        "description": "Choisissez les plantes comme l’un de vos types d’ennemis préférés."
+        "description": "Choisissez les plantes comme l’un de vos types d’ennemis jurés."
       },
       "undead": {
-        "name": "Mort-vivant",
-        "description": "Choisissez les morts-vivants comme l’un de vos types d’ennemis préférés."
+        "name": "Morts-vivants",
+        "description": "Choisissez les morts-vivants comme l’un de vos types d’ennemis jurés."
       }
     },
     "favored_terrain": {
@@ -473,7 +473,7 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Les outils de Smith",
+              "name": "Outils de forgeron",
               "description": "Maîtrisez les outils du forgeron."
             },
             "brewers_supplies": {

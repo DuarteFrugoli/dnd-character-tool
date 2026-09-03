@@ -114,7 +114,9 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
         surfaceTintColor: scheme.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(color: scheme.outlineVariant.withValues(alpha: 0.72)),
+          side: BorderSide(
+            color: scheme.outlineVariant.withValues(alpha: 0.72),
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -123,11 +125,7 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
             children: [
               Row(
                 children: [
-                  Icon(
-                    Icons.paid_outlined,
-                    size: 18,
-                    color: scheme.primary,
-                  ),
+                  Icon(Icons.paid_outlined, size: 18, color: scheme.primary),
                   const SizedBox(width: 8),
                   Text(
                     l10n.inventoryCurrency,
@@ -462,13 +460,8 @@ class _AmmunitionItemTile extends ConsumerWidget {
         borderRadius: BorderRadius.circular(10),
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
-          onTap: () => showItemDetailsSheet(
-            context,
-            ref,
-            item,
-            displayName,
-            meta,
-          ),
+          onTap: () =>
+              showItemDetailsSheet(context, ref, item, displayName, meta),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
             decoration: BoxDecoration(

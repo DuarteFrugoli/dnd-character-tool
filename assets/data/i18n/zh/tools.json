@@ -3,7 +3,7 @@
     "name": "炼金术士的用品"
   },
   "Brewer's supplies": {
-    "name": "酿酒厂用品"
+    "name": "酿酒工具"
   },
   "Calligrapher's supplies": {
     "name": "书法家用品"
@@ -30,19 +30,19 @@
     "name": "制革工具"
   },
   "Mason's tools": {
-    "name": "梅森的工具"
+    "name": "石匠工具"
   },
   "Painter's supplies": {
     "name": "画家用品"
   },
   "Potter's tools": {
-    "name": "波特的工具"
+    "name": "陶工工具"
   },
   "Smith's tools": {
-    "name": "史密斯的工具"
+    "name": "铁匠工具"
   },
   "Tinker's tools": {
-    "name": "修补匠的工具"
+    "name": "修补匠工具"
   },
   "Weaver's tools": {
     "name": "织工的工具"
@@ -96,7 +96,7 @@
     "name": "伪装套件"
   },
   "Forgery kit": {
-    "name": "防伪套件"
+    "name": "伪造工具"
   },
   "Thieves' tools": {
     "name": "盗贼的工具"

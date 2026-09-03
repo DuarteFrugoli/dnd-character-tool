@@ -1,121 +1,121 @@
 {
   "resources": {
     "rage": {
-      "name": "愤怒"
+      "name": "狂暴"
     },
     "bardic_inspiration": {
-      "name": "吟游诗人的灵感"
+      "name": "吟游激励"
     },
     "cleric_channel_divinity": {
-      "name": "渠道神性"
+      "name": "引导神力"
     },
     "divine_intervention": {
       "name": "神圣干预"
     },
     "wild_shape": {
-      "name": "狂野造型"
+      "name": "荒野形态"
     },
     "second_wind": {
-      "name": "第二次风"
+      "name": "回气"
     },
     "action_surge": {
-      "name": "行动激增"
+      "name": "动作如潮"
     },
     "indomitable": {
-      "name": "不屈不挠"
+      "name": "不屈"
     },
     "ki": {
-      "name": "基"
+      "name": "气"
     },
     "divine_sense": {
-      "name": "神识"
+      "name": "神圣感知"
     },
     "lay_on_hands": {
-      "name": "放在手上"
+      "name": "圣疗"
     },
     "paladin_channel_divinity": {
-      "name": "渠道神性"
+      "name": "引导神力"
     },
     "cleansing_touch": {
-      "name": "清洁触感"
+      "name": "净化之触"
     },
     "stroke_of_luck": {
-      "name": "幸运之击"
+      "name": "幸运一击"
     },
     "sorcery_points": {
-      "name": "魔法点"
+      "name": "术法点"
     },
     "mystic_arcanum": {
-      "name": "神秘奥秘"
+      "name": "秘法奥秘"
     },
     "eldritch_master": {
-      "name": "邪术大师"
+      "name": "异界大师"
     },
     "arcane_recovery": {
       "name": "奥术恢复"
     },
     "signature_spells": {
-      "name": "签名咒语"
+      "name": "招牌法术"
     },
     "warding_flare": {
-      "name": "警戒照明弹"
+      "name": "守护闪光"
     },
     "wrath_of_the_storm": {
       "name": "风暴之怒"
     },
     "war_priest": {
-      "name": "战争牧师"
+      "name": "战争祭司"
     },
     "natural_recovery": {
       "name": "自然恢复"
     },
     "superiority_dice": {
-      "name": "优势骰子"
+      "name": "卓越骰"
     },
     "wholeness_of_body": {
-      "name": "身体的完整性"
+      "name": "身心完满"
     },
     "holy_nimbus": {
-      "name": "神圣雨云"
+      "name": "神圣光轮"
     },
     "undying_sentinel": {
-      "name": "不朽哨兵"
+      "name": "不朽哨卫"
     },
     "elder_champion": {
-      "name": "长老冠军"
+      "name": "远古勇士"
     },
     "tides_of_chaos": {
       "name": "混沌之潮"
     },
     "fey_presence": {
-      "name": "妖精存在"
+      "name": "妖精威仪"
     },
     "misty_escape": {
-      "name": "迷雾逃亡"
+      "name": "迷雾遁走"
     },
     "dark_delirium": {
       "name": "黑暗谵妄"
     },
     "dark_ones_own_luck": {
-      "name": "黑暗者自己的运气"
+      "name": "黑暗者的幸运"
     },
     "hurl_through_hell": {
-      "name": "投掷地狱"
+      "name": "掷入地狱"
     },
     "entropic_ward": {
-      "name": "熵病房"
+      "name": "熵能守护"
     },
     "benign_transposition": {
-      "name": "良性转位"
+      "name": "良性传送"
     },
     "portent": {
       "name": "预兆"
     },
     "instinctive_charm": {
-      "name": "本能魅力"
+      "name": "本能魅惑"
     },
     "illusory_self": {
-      "name": "虚幻的自我"
+      "name": "幻象自我"
     },
     "shapechanger": {
       "name": "变形者"
@@ -124,16 +124,16 @@
       "name": "幸运点"
     },
     "martial_adept_superiority_die": {
-      "name": "模具优势"
+      "name": "卓越骰"
     },
     "magic_initiate_spell": {
-      "name": "魔法启动咒语"
+      "name": "魔法入门法术"
     },
     "breath_weapon": {
-      "name": "呼吸武器"
+      "name": "吐息武器"
     },
     "relentless_endurance": {
-      "name": "不懈的耐力"
+      "name": "坚韧不屈"
     }
   }
 }

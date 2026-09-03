@@ -73,9 +73,7 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
             .where((b) => b.name == character.background)
             .firstOrNull;
 
-        List<SrdClassFeature> subclassFeaturesFor(
-          CharacterClassEntry entry,
-        ) {
+        List<SrdClassFeature> subclassFeaturesFor(CharacterClassEntry entry) {
           final subclassName = entry.subclassName;
           if (subclassName == null || subclassName.isEmpty) {
             return const <SrdClassFeature>[];
@@ -252,22 +250,22 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
                         data: data,
                         i18n: i18n,
                       ),
-                      if (data.classSections[i].subclassFeatures.isNotEmpty)
-                        ...[
-                          const SliverToBoxAdapter(child: SizedBox(height: 24)),
-                          SubclassFeaturesSection(
-                            classEntry: data.classSections[i].classEntry,
-                            features: data
-                                .classSections[i]
-                                .subclassFeatures,
-                            disabledFeatures: disabledSet,
-                            onToggle: toggle,
-                            character: widget.character,
-                            characterId: widget.characterId,
-                            data: data,
-                            i18n: i18n,
-                          ),
-                        ],
+                      if (data
+                          .classSections[i]
+                          .subclassFeatures
+                          .isNotEmpty) ...[
+                        const SliverToBoxAdapter(child: SizedBox(height: 24)),
+                        SubclassFeaturesSection(
+                          classEntry: data.classSections[i].classEntry,
+                          features: data.classSections[i].subclassFeatures,
+                          disabledFeatures: disabledSet,
+                          onToggle: toggle,
+                          character: widget.character,
+                          characterId: widget.characterId,
+                          data: data,
+                          i18n: i18n,
+                        ),
+                      ],
                     ],
                     if (widget.character.features.isNotEmpty) ...[
                       const SliverToBoxAdapter(child: SizedBox(height: 24)),

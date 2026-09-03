@@ -164,56 +164,56 @@
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "像差",
-        "description": "选择畸变作为你最喜欢的敌人类型之一。"
+        "name": "异怪",
+        "description": "选择异怪作为你的宿敌类型之一。"
       },
       "beasts": {
         "name": "野兽",
-        "description": "选择野兽作为你最喜欢的敌人类型之一。"
+        "description": "选择野兽作为你的宿敌类型之一。"
       },
       "celestials": {
-        "name": "天神",
-        "description": "选择天体作为你最喜欢的敌人类型之一。"
+        "name": "天界生物",
+        "description": "选择天界生物作为你的宿敌类型之一。"
       },
       "constructs": {
-        "name": "构造",
-        "description": "选择构造体作为你最喜欢的敌人类型之一。"
+        "name": "构装体",
+        "description": "选择构装体作为你的宿敌类型之一。"
       },
       "dragons": {
         "name": "龙",
-        "description": "选择龙作为你最喜欢的敌人类型之一。"
+        "description": "选择龙作为你的宿敌类型之一。"
       },
       "elementals": {
         "name": "元素生物",
-        "description": "选择元素作为你最喜欢的敌人类型之一。"
+        "description": "选择元素生物作为你的宿敌类型之一。"
       },
       "fey": {
-        "name": "费伊",
-        "description": "选择精类作为你最喜欢的敌人类型之一。"
+        "name": "妖精",
+        "description": "选择妖精作为你的宿敌类型之一。"
       },
       "fiends": {
-        "name": "恶魔",
-        "description": "选择恶魔作为你最喜欢的敌人类型之一。"
+        "name": "邪魔",
+        "description": "选择邪魔作为你的宿敌类型之一。"
       },
       "giants": {
-        "name": "巨人队",
-        "description": "选择巨人作为你最喜欢的敌人类型之一。"
+        "name": "巨人",
+        "description": "选择巨人作为你的宿敌类型之一。"
       },
       "monstrosities": {
-        "name": "怪物",
-        "description": "选择怪物作为你最喜欢的敌人类型之一。"
+        "name": "怪兽",
+        "description": "选择怪兽作为你的宿敌类型之一。"
       },
       "oozes": {
-        "name": "软泥",
-        "description": "选择软泥怪作为你最喜欢的敌人类型之一。"
+        "name": "软泥怪",
+        "description": "选择软泥怪作为你的宿敌类型之一。"
       },
       "plants": {
         "name": "植物",
-        "description": "选择植物作为你最喜欢的敌人类型之一。"
+        "description": "选择植物作为你的宿敌类型之一。"
       },
       "undead": {
-        "name": "亡灵",
-        "description": "选择不死生物作为你最喜欢的敌人类型之一。"
+        "name": "不死生物",
+        "description": "选择不死生物作为你的宿敌类型之一。"
       }
     },
     "favored_terrain": {
@@ -473,7 +473,7 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "史密斯的工具",
+              "name": "铁匠工具",
               "description": "熟练使用史密斯的工具。"
             },
             "brewers_supplies": {
@@ -481,7 +481,7 @@
               "description": "熟练使用啤酒厂的用品。"
             },
             "masons_tools": {
-              "name": "梅森的工具",
+              "name": "石匠工具",
               "description": "熟练使用梅森的工具。"
             }
           }

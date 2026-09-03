@@ -46,6 +46,25 @@ void main() {
       expect(snapshot.carried.map((item) => item.id), ['torch']);
     });
 
+    test('keeps empty containers with an empty contents list', () {
+      final waterskin = _item(
+        id: 'waterskin',
+        name: 'Waterskin',
+        type: ItemType.container,
+      );
+
+      final snapshot = InventorySnapshot.fromEquipment([waterskin]);
+
+      expect(snapshot.containers.single.id, waterskin.id);
+      expect(snapshot.contentsByContainer[waterskin.id], isEmpty);
+      expect(
+        inventoryItemsTotalQuantity(
+          snapshot.contentsByContainer[waterskin.id]!,
+        ),
+        0,
+      );
+    });
+
     test('shows invalid container items at root without mutating them', () {
       final item = _item(
         id: 'lost',

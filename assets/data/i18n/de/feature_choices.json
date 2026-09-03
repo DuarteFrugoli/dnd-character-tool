@@ -165,55 +165,55 @@
     "favored_enemies": {
       "aberrations": {
         "name": "Aberrationen",
-        "description": "Wählen Sie Aberrationen als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Aberrationen als einen deiner bevorzugten Feindtypen."
       },
       "beasts": {
         "name": "Bestien",
-        "description": "Wählen Sie Bestien als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Bestien als einen deiner bevorzugten Feindtypen."
       },
       "celestials": {
         "name": "Himmlische",
-        "description": "Wählen Sie Himmlische als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Himmlische als einen deiner bevorzugten Feindtypen."
       },
       "constructs": {
         "name": "Konstrukte",
-        "description": "Wählen Sie Konstrukte als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Konstrukte als einen deiner bevorzugten Feindtypen."
       },
       "dragons": {
         "name": "Drachen",
-        "description": "Wählen Sie Drachen als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Drachen als einen deiner bevorzugten Feindtypen."
       },
       "elementals": {
         "name": "Elementare",
-        "description": "Wählen Sie Elementare als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Elementare als einen deiner bevorzugten Feindtypen."
       },
       "fey": {
-        "name": "Fey",
-        "description": "Wählen Sie Feen als einen Ihrer bevorzugten Feindtypen."
+        "name": "Feenwesen",
+        "description": "Wähle Feenwesen als einen deiner bevorzugten Feindtypen."
       },
       "fiends": {
         "name": "Unholde",
-        "description": "Wählen Sie Unholde als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Unholde als einen deiner bevorzugten Feindtypen."
       },
       "giants": {
         "name": "Riesen",
-        "description": "Wählen Sie Riesen als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Riesen als einen deiner bevorzugten Feindtypen."
       },
       "monstrosities": {
         "name": "Monstrositäten",
-        "description": "Wählen Sie Monstrositäten als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Monstrositäten als einen deiner bevorzugten Feindtypen."
       },
       "oozes": {
-        "name": "Sickert",
-        "description": "Wählen Sie Schlamm als einen Ihrer bevorzugten Feindtypen."
+        "name": "Schlicke",
+        "description": "Wähle Schlicke als einen deiner bevorzugten Feindtypen."
       },
       "plants": {
         "name": "Pflanzen",
-        "description": "Wählen Sie Pflanzen als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Pflanzen als einen deiner bevorzugten Feindtypen."
       },
       "undead": {
         "name": "Untote",
-        "description": "Wählen Sie Untote als einen Ihrer bevorzugten Feindtypen."
+        "description": "Wähle Untote als einen deiner bevorzugten Feindtypen."
       }
     },
     "favored_terrain": {
@@ -246,7 +246,7 @@
         "description": "Wählen Sie Sumpfgelände als eines Ihrer bevorzugten Gebiete."
       },
       "underdark": {
-        "name": "Underdark",
+        "name": "Unterreich",
         "description": "Wählen Sie das Unterreich als eines Ihrer bevorzugten Gebiete."
       }
     },
@@ -349,7 +349,7 @@
             "options": {
               "pact_of_the_chain": {
                 "name": "Pakt der Kette",
-                "description": "Sie lernen, Vertrautes als Ritual zu finden. Wenn du es wirkst, kannst du einen normalen Vertrauten oder eine dieser Sonderformen wählen: Kobold, Pseudodrache, Quasit oder Kobold."
+                "description": "Du lernst, Vertrauten finden als Ritual zu wirken. Wenn du die Magie wirkst, kannst du einen normalen Vertrauten oder eine dieser besonderen Formen wählen: Imp, Pseudodrache, Quasit oder Sprite."
               },
               "pact_of_the_blade": {
                 "name": "Pakt der Klinge",
@@ -433,7 +433,7 @@
             "multiattack": {
               "options": {
                 "volley": {
-                  "name": "Volley",
+                  "name": "Salve",
                   "description": "Nutzen Sie Ihre Aktion, um einen Fernangriff gegen eine beliebige Anzahl von Kreaturen innerhalb eines kleinen Bereichs in Reichweite durchzuführen."
                 },
                 "whirlwind_attack": {
@@ -473,7 +473,7 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Smiths Werkzeuge",
+              "name": "Schmiedewerkzeug",
               "description": "Erwerben Sie Kenntnisse im Umgang mit Schmiedewerkzeugen."
             },
             "brewers_supplies": {

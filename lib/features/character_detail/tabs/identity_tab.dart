@@ -1075,10 +1075,7 @@ class _IdentityAvatarFrame extends StatelessWidget {
 }
 
 class _DetailChipRow extends StatelessWidget {
-  const _DetailChipRow({
-    required this.label,
-    required this.children,
-  });
+  const _DetailChipRow({required this.label, required this.children});
 
   final String label;
   final List<Widget> children;

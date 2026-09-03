@@ -185,28 +185,29 @@ void main() {
     });
 
     test('adds multiclass proficiencies without duplicates', () {
-      final character = _character(
-        level: 3,
-        classes: const [
-          CharacterClassEntry(
-            id: 'fighter',
-            className: 'Fighter',
+      final character =
+          _character(
             level: 3,
-            isStartingClass: true,
-          ),
-        ],
-        hitDicePools: const [
-          CharacterHitDiePool(
-            dieSize: 10,
-            total: 3,
-            sourceClass: 'Fighter',
-            sourceClassEntryId: 'fighter',
-          ),
-        ],
-      ).copyWith(
-        skillProficiencies: const ['athletics'],
-        features: const ['Armor Proficiency: light armor'],
-      );
+            classes: const [
+              CharacterClassEntry(
+                id: 'fighter',
+                className: 'Fighter',
+                level: 3,
+                isStartingClass: true,
+              ),
+            ],
+            hitDicePools: const [
+              CharacterHitDiePool(
+                dieSize: 10,
+                total: 3,
+                sourceClass: 'Fighter',
+                sourceClassEntryId: 'fighter',
+              ),
+            ],
+          ).copyWith(
+            skillProficiencies: const ['athletics'],
+            features: const ['Armor Proficiency: light armor'],
+          );
 
       final updated = CharacterProgressionEngine.applyLevelUp(
         character,
@@ -371,127 +372,128 @@ void main() {
         itemType: ItemType.container,
         weight: 5,
       );
-      final character = _character(
-        cls: 'Wizard',
-        subclass: 'School of Evocation',
-        level: 5,
-        scores: const AbilityScores(dexterity: 16, constitution: 14),
-        hp: const HitPoints(maximum: 32, current: 20, hitDiceUsed: 2),
-        classes: const [
-          CharacterClassEntry(
-            id: 'primary',
-            className: 'Wizard',
-            subclassName: 'School of Evocation',
+      final character =
+          _character(
+            cls: 'Wizard',
+            subclass: 'School of Evocation',
             level: 5,
-            isStartingClass: true,
-          ),
-        ],
-        hitDicePools: const [
-          CharacterHitDiePool(
-            dieSize: 6,
-            total: 5,
-            used: 2,
-            sourceClass: 'Wizard',
-            sourceClassEntryId: 'primary',
-          ),
-        ],
-        spells: const [
-          KnownSpell(
-            name: 'Magic Missile',
-            level: 1,
-            sourceType: 'class',
-            sourceClass: 'Wizard',
-            sourceClassEntryId: 'primary',
-          ),
-          KnownSpell(
-            name: 'Dancing Lights',
-            level: 0,
-            sourceType: 'raceTrait',
-            sourceFeature: 'Drow Magic',
-          ),
-        ],
-        extraFeatures: const [
-          CharacterExtraFeature(
-            sourceClass: 'Wizard',
-            sourceType: 'classFeature',
-            sourceClassEntryId: 'primary',
-            name: 'Arcane Recovery',
-            level: 1,
-            type: 'active',
-            description: 'Recover spell slots.',
-          ),
-          CharacterExtraFeature(
-            sourceClass: 'Feat',
-            sourceType: 'feat',
-            sourceFeature: 'Alert',
-            name: 'Alert',
-            level: 4,
-            type: 'passive',
-            description: 'ASI feat.',
-          ),
-          CharacterExtraFeature(
-            sourceClass: 'Feat',
-            sourceType: 'feat',
-            sourceFeature: 'Lucky',
-            name: 'Lucky',
-            level: 1,
-            type: 'passive',
-            description: 'Racial feat.',
-          ),
-          CharacterExtraFeature(
-            sourceClass: 'Custom',
-            sourceType: 'manual',
-            name: 'Campaign Gift',
-            level: 1,
-            type: 'passive',
-            description: 'A manual feature.',
-          ),
-        ],
-      ).copyWith(
-        equipment: [backpack],
-        currency: const {'cp': 1, 'sp': 2, 'ep': 3, 'gp': 4, 'pp': 5},
-        notes: [note],
-        imagePath: 'indexeddb:image:abc',
-        skillProficiencies: const ['arcana'],
-        features: const ['Manual marker'],
-        featureChoices: const [
-          CharacterFeatureChoice(
-            sourceType: 'classFeature',
-            sourceClass: 'Wizard',
-            sourceClassEntryId: 'primary',
-            featureName: 'Arcane Recovery',
-            choiceId: 'recovery',
-            values: ['slot'],
-          ),
-          CharacterFeatureChoice(
-            sourceType: 'subclassFeature',
-            sourceClass: 'Wizard',
-            sourceClassEntryId: 'primary',
-            sourceSubclass: 'School of Evocation',
-            featureName: 'Savant',
-            choiceId: 'school',
-            values: ['evocation'],
-          ),
-          CharacterFeatureChoice(
-            sourceType: 'raceTrait',
-            sourceName: 'Variant Human',
-            featureName: 'Feat',
-            choiceId: 'feat',
-            values: ['lucky'],
-          ),
-          CharacterFeatureChoice(
-            sourceType: 'feat',
-            sourceName: 'Lucky',
-            featureName: 'Lucky',
-            choiceId: 'luck_source',
-            values: ['variant_human'],
-          ),
-        ],
-        featureResources: const {'Arcane Recovery': 1},
-        disabledFeatures: const ['class:primary:Arcane Recovery'],
-        disabledSpells: const ['Magic Missile'],
-        concentrationSpell: 'Magic Missile',
-      );
+            scores: const AbilityScores(dexterity: 16, constitution: 14),
+            hp: const HitPoints(maximum: 32, current: 20, hitDiceUsed: 2),
+            classes: const [
+              CharacterClassEntry(
+                id: 'primary',
+                className: 'Wizard',
+                subclassName: 'School of Evocation',
+                level: 5,
+                isStartingClass: true,
+              ),
+            ],
+            hitDicePools: const [
+              CharacterHitDiePool(
+                dieSize: 6,
+                total: 5,
+                used: 2,
+                sourceClass: 'Wizard',
+                sourceClassEntryId: 'primary',
+              ),
+            ],
+            spells: const [
+              KnownSpell(
+                name: 'Magic Missile',
+                level: 1,
+                sourceType: 'class',
+                sourceClass: 'Wizard',
+                sourceClassEntryId: 'primary',
+              ),
+              KnownSpell(
+                name: 'Dancing Lights',
+                level: 0,
+                sourceType: 'raceTrait',
+                sourceFeature: 'Drow Magic',
+              ),
+            ],
+            extraFeatures: const [
+              CharacterExtraFeature(
+                sourceClass: 'Wizard',
+                sourceType: 'classFeature',
+                sourceClassEntryId: 'primary',
+                name: 'Arcane Recovery',
+                level: 1,
+                type: 'active',
+                description: 'Recover spell slots.',
+              ),
+              CharacterExtraFeature(
+                sourceClass: 'Feat',
+                sourceType: 'feat',
+                sourceFeature: 'Alert',
+                name: 'Alert',
+                level: 4,
+                type: 'passive',
+                description: 'ASI feat.',
+              ),
+              CharacterExtraFeature(
+                sourceClass: 'Feat',
+                sourceType: 'feat',
+                sourceFeature: 'Lucky',
+                name: 'Lucky',
+                level: 1,
+                type: 'passive',
+                description: 'Racial feat.',
+              ),
+              CharacterExtraFeature(
+                sourceClass: 'Custom',
+                sourceType: 'manual',
+                name: 'Campaign Gift',
+                level: 1,
+                type: 'passive',
+                description: 'A manual feature.',
+              ),
+            ],
+          ).copyWith(
+            equipment: [backpack],
+            currency: const {'cp': 1, 'sp': 2, 'ep': 3, 'gp': 4, 'pp': 5},
+            notes: [note],
+            imagePath: 'indexeddb:image:abc',
+            skillProficiencies: const ['arcana'],
+            features: const ['Manual marker'],
+            featureChoices: const [
+              CharacterFeatureChoice(
+                sourceType: 'classFeature',
+                sourceClass: 'Wizard',
+                sourceClassEntryId: 'primary',
+                featureName: 'Arcane Recovery',
+                choiceId: 'recovery',
+                values: ['slot'],
+              ),
+              CharacterFeatureChoice(
+                sourceType: 'subclassFeature',
+                sourceClass: 'Wizard',
+                sourceClassEntryId: 'primary',
+                sourceSubclass: 'School of Evocation',
+                featureName: 'Savant',
+                choiceId: 'school',
+                values: ['evocation'],
+              ),
+              CharacterFeatureChoice(
+                sourceType: 'raceTrait',
+                sourceName: 'Variant Human',
+                featureName: 'Feat',
+                choiceId: 'feat',
+                values: ['lucky'],
+              ),
+              CharacterFeatureChoice(
+                sourceType: 'feat',
+                sourceName: 'Lucky',
+                featureName: 'Lucky',
+                choiceId: 'luck_source',
+                values: ['variant_human'],
+              ),
+            ],
+            featureResources: const {'Arcane Recovery': 1},
+            disabledFeatures: const ['class:primary:Arcane Recovery'],
+            disabledSpells: const ['Magic Missile'],
+            concentrationSpell: 'Magic Missile',
+          );
 
       final updated = CharacterLevelResetEngine.resetToLevelOne(
         character,
@@ -533,18 +535,15 @@ void main() {
         'Manual marker',
         "Tool Proficiency: Smith's tools",
       ]);
-      expect(
-        updated.spells.map((spell) => spell.name),
-        ['Dancing Lights'],
-      );
-      expect(
-        updated.extraFeatures.map((feature) => feature.name),
-        ['Lucky', 'Campaign Gift'],
-      );
-      expect(
-        updated.featureChoices.map((choice) => choice.sourceType),
-        ['raceTrait', 'feat'],
-      );
+      expect(updated.spells.map((spell) => spell.name), ['Dancing Lights']);
+      expect(updated.extraFeatures.map((feature) => feature.name), [
+        'Lucky',
+        'Campaign Gift',
+      ]);
+      expect(updated.featureChoices.map((choice) => choice.sourceType), [
+        'raceTrait',
+        'feat',
+      ]);
       expect(updated.featureChoices.last.sourceName, 'Lucky');
       expect(updated.featureResources, isEmpty);
       expect(updated.disabledFeatures, isEmpty);

@@ -38,7 +38,7 @@
   },
   "Bard": {
     "name": "Barde",
-    "subclassFeatureName": "Bard College",
+    "subclassFeatureName": "Bardenkolleg",
     "weaponProficiencies": [
       "einfach",
       "Handarmbrust",
@@ -106,7 +106,7 @@
               "Keule"
             ],
             [
-              "Warhammer"
+              "Kriegshammer"
             ]
           ]
         },
@@ -151,15 +151,15 @@
     "name": "Druide",
     "subclassFeatureName": "Druidenkreis",
     "weaponProficiencies": [
-      "Vereine",
+      "Knüppel",
       "Dolche",
-      "Darts",
+      "Wurfpfeile",
       "Speere",
       "Streitkolben",
-      "Quartierstäbe",
+      "Kampfstäbe",
       "Krummsäbel",
       "Sicheln",
-      "Schlingen",
+      "Schleudern",
       "Speere"
     ],
     "startingEquipment": {
@@ -255,7 +255,7 @@
     "name": "Mönch",
     "subclassFeatureName": "Klostertradition",
     "weaponProficiencies": [
-      "einfach",
+      "einfache Waffen",
       "Kurzschwerter"
     ],
     "startingEquipment": {
@@ -386,11 +386,11 @@
     "name": "Schurke",
     "subclassFeatureName": "Schelmischer Archetyp",
     "weaponProficiencies": [
-      "einfach",
-      "Handarmbrust",
-      "Langschwert",
-      "Rapier",
-      "Kurzschwert"
+      "einfache Waffen",
+      "Handarmbrüste",
+      "Langschwerter",
+      "Rapiere",
+      "Kurzschwerter"
     ],
     "startingEquipment": {
       "fixed": [

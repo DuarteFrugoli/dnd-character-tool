@@ -248,11 +248,7 @@ void main() {
           ),
           CharacterClassEntry(id: 'wizard', className: 'Wizard', level: 2),
         ],
-        hitPoints: const HitPoints(
-          maximum: 30,
-          current: 10,
-          hitDiceUsed: 1,
-        ),
+        hitPoints: const HitPoints(maximum: 30, current: 10, hitDiceUsed: 1),
         hitDicePools: const [
           CharacterHitDiePool(
             dieSize: 10,
@@ -271,10 +267,9 @@ void main() {
       );
       final (:container, :backend) = await _setup(character);
 
-      await container.read(characterDetailProvider(_id).notifier).shortRest(
-        hitDiceSpentByPool: const [1, 1],
-        hpGained: 12,
-      );
+      await container
+          .read(characterDetailProvider(_id).notifier)
+          .shortRest(hitDiceSpentByPool: const [1, 1], hpGained: 12);
 
       final updated = container.read(characterDetailProvider(_id)).valueOrNull!;
       expect(updated.hitPoints.current, 22);

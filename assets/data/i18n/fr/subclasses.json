@@ -104,7 +104,7 @@
   "Ranger": {
     "Hunter": {
       "name": "Chasseur",
-      "description": "Maître traqueur et prédateur. Choisissez parmi les options Hunter's Prey (Colossus Slayer, Giant Killer, Horde Breaker) et les tactiques défensives pour faire face à n'importe quelle menace."
+      "description": "Maître traqueur et prédateur. Choisissez parmi les options Proie du chasseur (Tueur de colosses, Tueur de géants, Briseur de hordes) et les tactiques défensives pour faire face à n'importe quelle menace."
     },
     "Beast Master": {
       "name": "Maître des bêtes",
@@ -122,7 +122,7 @@
     },
     "Arcane Trickster": {
       "name": "Filou des arcanes",
-      "description": "Un voyou lanceur de sorts qui transforme la magie en ruse. Apprenez les sorts d’illusion et d’enchantement, utilisez Mage Hand Legerdemain et volez éventuellement les effets des sorts aux autres lanceurs."
+      "description": "Un voyou lanceur de sorts qui transforme la magie en ruse. Apprenez les sorts d’illusion et d’enchantement, utilisez main de mage améliorée et volez éventuellement les effets des sorts aux autres lanceurs."
     }
   },
   "Sorcerer": {
@@ -138,11 +138,11 @@
   "Warlock": {
     "The Archfey": {
       "name": "L'Archfey",
-      "description": "Un seigneur féerique d'émotion et de glamour. Fey Presence pour charmer ou effrayer les créatures proches, Misty Escape pour disparaître lorsqu'elle est touchée et une magie axée sur l'enchantement."
+      "description": "Un seigneur féerique d'émotion et de glamour. Présence féerique pour charmer ou effrayer les créatures proches, Évasion brumeuse pour disparaître lorsqu'elle est touchée et une magie axée sur l'enchantement."
     },
     "The Fiend": {
       "name": "Le démon",
-      "description": "Un diable ou un démon puissant. La Bénédiction du Ténébreux accorde des points de vie temporaires lorsque vous tuez, ainsi qu'une suite de sorts de feu et de nécrotiques se terminant par Hurl Through Hell."
+      "description": "Un diable ou un démon puissant. La Bénédiction du Ténébreux accorde des points de vie temporaires lorsque vous tuez, ainsi qu'une suite de sorts de feu et de nécrotiques se terminant par Projection en enfer."
     },
     "The Great Old One": {
       "name": "Le Grand Ancien",

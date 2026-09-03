@@ -24,8 +24,8 @@ Principios atuais:
 Ordem macro planejada:
 
 1. `1.x`: ficha base, inventario, notas, web e qualidade de vida.
-2. `2.0.x`: multiclasse, reset seguro de progressao, polimento visual inicial
-   e compatibilidade Android/Play Console.
+2. `2.0.x`: multiclasse, reset seguro de progressao, polimento visual inicial,
+   compatibilidade Android/Play Console e revisoes de traducao.
 3. `2.1.x`: fechamento do rework visual e rolagem contextual.
 4. `2.2.x`: D&D 2024 / SRD 5.2.1 como modo de regras separado.
 5. `3.0.x`: GM Local vitalicio, com ferramentas offline de mestre e homebrew
@@ -189,6 +189,22 @@ edge-to-edge da Play Console antes de continuar a `2.1.0`.
 - [x] Atualizar versao para `2.0.2+26` e changelog.
 - [x] Preparar notas curtas da Play Store se a versao for enviada para
       producao.
+
+### 2.0.3 - Revisao de traducoes
+
+Objetivo: lancar uma versao curta de qualidade para corrigir traducoes
+automaticas ruins, entradas ausentes e textos inconsistentes antes do proximo
+pacote visual/rolagem.
+
+- [x] Revisar nomes e descricoes de equipamentos, ferramentas, magias,
+      habilidades, talentos, racas, idiomas e escolhas em todos os idiomas.
+- [x] Corrigir entradas criticas ausentes como kits, opcoes de humano variante,
+      escolhas de pericia/talento e descricoes essenciais.
+- [x] Melhorar a exibicao de escolhas traduzidas na criacao e evitar termos
+      tecnicos visiveis ao usuario.
+- [x] Adicionar cobertura para encontrar entradas criticas ausentes nos overlays
+      de traducao.
+- [x] Atualizar versao para `2.0.3+27` e changelog.
 
 ### 2.1.0 - Fechamento visual e rolagem contextual
 

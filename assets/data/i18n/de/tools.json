@@ -1,9 +1,9 @@
 {
   "Alchemist's supplies": {
-    "name": "Vorräte des Alchemisten"
+    "name": "Alchemistenbedarf"
   },
   "Brewer's supplies": {
-    "name": "Brauereibedarf"
+    "name": "Brauerbedarf"
   },
   "Calligrapher's supplies": {
     "name": "Kalligraphenbedarf"
@@ -12,7 +12,7 @@
     "name": "Zimmermannswerkzeuge"
   },
   "Cartographer's tools": {
-    "name": "Werkzeuge des Kartographen"
+    "name": "Kartographenwerkzeug"
   },
   "Cobbler's tools": {
     "name": "Schusterwerkzeuge"
@@ -21,13 +21,13 @@
     "name": "Kochutensilien"
   },
   "Glassblower's tools": {
-    "name": "Werkzeuge des Glasbläsers"
+    "name": "Glasbläserwerkzeug"
   },
   "Jeweler's tools": {
     "name": "Juwelierwerkzeuge"
   },
   "Leatherworker's tools": {
-    "name": "Werkzeuge des Lederarbeiters"
+    "name": "Lederverarbeiterwerkzeug"
   },
   "Mason's tools": {
     "name": "Maurerwerkzeuge"
@@ -36,13 +36,13 @@
     "name": "Malerbedarf"
   },
   "Potter's tools": {
-    "name": "Potters Werkzeuge"
+    "name": "Töpferwerkzeug"
   },
   "Smith's tools": {
-    "name": "Smiths Werkzeuge"
+    "name": "Schmiedewerkzeug"
   },
   "Tinker's tools": {
-    "name": "Bastelwerkzeuge"
+    "name": "Tüftlerwerkzeug"
   },
   "Weaver's tools": {
     "name": "Weberwerkzeuge"
@@ -99,7 +99,7 @@
     "name": "Fälschungsset"
   },
   "Thieves' tools": {
-    "name": "Werkzeuge der Diebe"
+    "name": "Diebeswerkzeug"
   },
   "Herbalism kit": {
     "name": "Kräuterkunde-Set"

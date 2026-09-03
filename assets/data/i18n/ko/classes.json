@@ -151,12 +151,12 @@
     "name": "드루이드",
     "subclassFeatureName": "드루이드 서클",
     "weaponProficiencies": [
-      "클럽",
+      "곤봉",
       "단검",
       "다트",
       "투창",
       "메이스",
-      "육척봉",
+      "쿼터스태프",
       "시미터",
       "낫",
       "슬링",
@@ -255,8 +255,8 @@
     "name": "수도사",
     "subclassFeatureName": "수도원 전통",
     "weaponProficiencies": [
-      "단순한",
-      "단검"
+      "단순 무기",
+      "소검"
     ],
     "startingEquipment": {
       "fixed": [
@@ -386,11 +386,11 @@
     "name": "악당",
     "subclassFeatureName": "악성 원형",
     "weaponProficiencies": [
-      "단순한",
-      "손 석궁",
+      "단순 무기",
+      "손쇠뇌",
       "장검",
       "레이피어",
-      "쇼트소드"
+      "소검"
     ],
     "startingEquipment": {
       "fixed": [

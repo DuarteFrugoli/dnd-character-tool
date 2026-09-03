@@ -15,7 +15,7 @@
     "description": "Hábil em mímica e dramatização, você ganha os seguintes benefícios:\n• Aumente seu valor de Carisma em 1, até um máximo de 20.\n• Você tem vantagem em testes de Carisma (Enganação) e Carisma (Desempenho) ao tentar se passar por uma pessoa diferente.\n• Você pode imitar a fala de outra pessoa ou os sons produzidos por outras criaturas. Você deve ter ouvido a pessoa falando, ou ouvido a criatura fazer o som, por pelo menos 1 minuto. Um teste bem-sucedido de Sabedoria (Intuição) contestado por seu teste de Carisma (Enganação) permite ao ouvinte determinar que o efeito é falso."
   },
   "Charger": {
-    "name": "Carregador",
+    "name": "Investida",
     "prerequisite": null,
     "description": "Quando você usa sua ação para Correr, você pode usar uma ação bônus para fazer um ataque corpo a corpo com arma ou empurrar uma criatura. Se você se mover pelo menos 3 metros em linha reta imediatamente antes de realizar esta ação bônus, você ganha +5 de bônus na jogada de dano do ataque (se você escolheu fazer um ataque corpo a corpo e acertar) ou empurra o alvo até 3 metros de distância de você (se você escolheu empurrar e tiver sucesso)."
   },
@@ -30,7 +30,7 @@
     "description": "Quando você estiver empunhando uma arma de destreza com a qual você é proficiente e outra criatura atingir você com um ataque corpo a corpo, você pode usar sua reação para adicionar seu bônus de proficiência à sua CA para esse ataque, potencialmente fazendo com que o ataque erre você."
   },
   "Dual Wielder": {
-    "name": "Portador Duplo",
+    "name": "Combatente com Duas Armas",
     "prerequisite": null,
     "description": "Você domina a luta com duas armas, ganhando os seguintes benefícios:\n• Você ganha um bônus de +1 na CA enquanto estiver empunhando uma arma corpo a corpo separada em cada mão.\n• Você pode usar o combate com duas armas mesmo quando as armas corpo a corpo de uma mão que você está empunhando não são leves.\n• Você pode sacar ou guardar duas armas de uma mão quando normalmente só conseguiria sacar ou guardar uma."
   },
@@ -46,8 +46,8 @@
   },
   "Elemental Adept": {
     "name": "Adepto Elemental",
-    "prerequisite": "A capacidade de lançar pelo menos um feitiço",
-    "description": "Quando você ganha esse talento, escolha um dos seguintes tipos de dano: ácido, frio, fogo, raio ou trovão. Os feitiços que você lança ignoram a resistência ao dano do tipo escolhido. Além disso, quando você rola dano para uma magia que você lançou que causa dano daquele tipo, você pode tratar qualquer 1 em um dado de dano como 2.\nVocê pode selecionar esse talento várias vezes. Cada vez que fizer isso, você deverá escolher um tipo de dano diferente."
+    "prerequisite": "A capacidade de conjurar pelo menos uma magia",
+    "description": "Quando você ganha esse talento, escolha um dos seguintes tipos de dano: ácido, frio, fogo, raio ou trovão. As magias que você conjura ignoram a resistência ao dano do tipo escolhido. Além disso, quando você rola dano para uma magia que você conjurou que causa dano daquele tipo, você pode tratar qualquer 1 em um dado de dano como 2.\nVocê pode selecionar esse talento várias vezes. Cada vez que fizer isso, você deverá escolher um tipo de dano diferente."
   },
   "Grappler": {
     "name": "Lutador",
@@ -65,7 +65,7 @@
     "description": "Você é um médico competente, permitindo curar ferimentos rapidamente e trazer seus aliados de volta à luta. Você ganha os seguintes benefícios:\n• Quando você usa um kit de curandeiro para estabilizar uma criatura moribunda, essa criatura também recupera 1 ponto de vida.\n• Como uma ação, você pode usar um kit de curandeiro para cuidar de uma criatura e restaurar 1d6 + 4 pontos de vida a ela, mais pontos de vida adicionais iguais ao número máximo de Dados de Vida da criatura. A criatura não pode recuperar pontos de vida deste talento novamente até terminar um descanso curto ou longo."
   },
   "Heavily Armored": {
-    "name": "Fortemente Blindado",
+    "name": "Treinado em Armaduras Pesadas",
     "prerequisite": "Proficiência com armadura média",
     "description": "Você treinou para dominar o uso de armaduras pesadas, ganhando os seguintes benefícios:\n• Aumente seu valor de Força em 1, até um máximo de 20.\n• Você ganha proficiência com armaduras pesadas."
   },
@@ -85,7 +85,7 @@
     "description": "Você tem uma mente que pode acompanhar o tempo, a direção e os detalhes com uma precisão incrível. Você ganha os seguintes benefícios:\n• Aumente seu valor de Inteligência em 1, até um máximo de 20.\n• Você sempre sabe qual é o norte.\n• Você sempre sabe quantas horas faltam para o próximo nascer ou pôr do sol.\n• Você consegue se lembrar com precisão de tudo o que viu ou ouviu no último mês."
   },
   "Lightly Armored": {
-    "name": "Levemente Blindado",
+    "name": "Treinado em Armaduras Leves",
     "prerequisite": null,
     "description": "Você treinou para dominar o uso de armaduras leves, ganhando os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Você ganha proficiência com armaduras leves."
   },
@@ -107,7 +107,7 @@
   "Magic Initiate": {
     "name": "Iniciado Mágico",
     "prerequisite": null,
-    "description": "Escolha uma classe: bardo, clérigo, druida, feiticeiro, feiticeiro ou mago. Você aprende dois truques à sua escolha da lista de magias daquela classe.\nAlém disso, escolha uma magia de 1º nível da mesma lista. Você aprende essa magia e pode lançá-la em seu nível mais baixo. Depois de conjurá-lo, você deve terminar um descanso longo antes de poder conjurá-lo novamente usando este talento.\nSua habilidade de conjurar essas magias depende da classe que você escolheu: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago."
+    "description": "Escolha uma classe: bardo, clérigo, druida, feiticeiro, bruxo ou mago. Você aprende dois truques à sua escolha da lista de magias daquela classe.\nAlém disso, escolha uma magia de 1º nível da mesma lista. Você aprende essa magia e pode conjurá-la em seu nível mais baixo. Depois de conjurá-la, você deve terminar um descanso longo antes de poder conjurá-la novamente usando este talento.\nSua habilidade de conjurar essas magias depende da classe que você escolheu: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago."
   },
   "Martial Adept": {
     "name": "Adepto Marcial",
@@ -125,7 +125,7 @@
     "description": "Você é excepcionalmente rápido e ágil. Você ganha os seguintes benefícios:\n• Sua velocidade aumenta em 3 metros.\n• Quando você usa a ação Correr, terreno difícil não custa movimento extra naquele turno.\n• Quando você realiza um ataque corpo a corpo contra uma criatura, você não provoca ataques de oportunidade daquela criatura pelo resto do turno, independentemente de o ataque acertar ou não."
   },
   "Moderately Armored": {
-    "name": "Moderadamente Blindado",
+    "name": "Treinado em Armaduras Médias",
     "prerequisite": "Proficiência com armadura leve",
     "description": "Você treinou para dominar o uso de armaduras e escudos médios, obtendo os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Você ganha proficiência com armaduras e escudos médios."
   },
@@ -152,7 +152,7 @@
   "Ritual Caster": {
     "name": "Conjurador Ritual",
     "prerequisite": "Inteligência ou Sabedoria 13 ou superior",
-    "description": "Você aprendeu vários feitiços que pode lançar como rituais. Esses feitiços estão escritos em um livro de rituais, que você deve ter em mãos ao lançar um deles.\nAo escolher este talento, você adquire um livro ritual contendo duas magias de 1º nível à sua escolha. Escolha uma das seguintes classes: bardo, clérigo, druida, feiticeiro, bruxo ou mago. Você deve escolher suas magias na lista de magias daquela classe, e as magias que você escolher devem ter a etiqueta ritual. A classe que você escolhe também determina sua habilidade de lançar magias para estas magias: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago.\nSe você encontrar um feitiço escrito, como um pergaminho de feitiço mágico ou um livro de feitiços de um mago, poderá adicioná-lo ao seu livro de rituais. A magia deve estar na lista de magias da classe que você escolheu, o nível da magia não pode ser superior à metade do seu nível (arredondado para cima) e deve ter a etiqueta ritual. O processo de copiar a magia em seu livro de rituais leva 2 horas por nível da magia e custa 50 po por nível. O custo representa os componentes materiais que você gasta ao experimentar a magia para dominá-la, bem como as tintas finas necessárias para registrá-la."
+    "description": "Você aprendeu várias magias que pode conjurar como rituais. Essas magias estão escritas em um livro de rituais, que você deve ter em mãos ao conjurar uma delas.\nAo escolher este talento, você adquire um livro de rituais contendo duas magias de 1º nível à sua escolha. Escolha uma das seguintes classes: bardo, clérigo, druida, feiticeiro, bruxo ou mago. Você deve escolher suas magias na lista de magias daquela classe, e as magias que você escolher devem ter a etiqueta ritual. A classe que você escolhe também determina sua habilidade de conjuração para estas magias: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago.\nSe você encontrar uma magia escrita, como um pergaminho mágico ou o grimório de um mago, poderá adicioná-la ao seu livro de rituais. A magia deve estar na lista de magias da classe que você escolheu, o nível da magia não pode ser superior à metade do seu nível (arredondado para cima) e deve ter a etiqueta ritual. O processo de copiar a magia em seu livro de rituais leva 2 horas por nível da magia e custa 50 po por nível. O custo representa os componentes materiais que você gasta ao experimentar a magia para dominá-la, bem como as tintas finas necessárias para registrá-la."
   },
   "Savage Attacker": {
     "name": "Atacante Selvagem",
@@ -185,9 +185,9 @@
     "description": "Você é especialista em se esgueirar pelas sombras. Você ganha os seguintes benefícios:\n• Você pode tentar se esconder quando estiver levemente obscurecido pela criatura da qual está se escondendo.\n• Quando você está escondido de uma criatura e erra um ataque com arma de longo alcance, fazer o ataque não revela sua posição.\n• A penumbra não impõe desvantagem em seus testes de Sabedoria (Percepção) baseados na visão."
   },
   "Spell Sniper": {
-    "name": "Feitiço Atirador",
-    "prerequisite": "A capacidade de lançar pelo menos um feitiço",
-    "description": "Você aprendeu técnicas para aprimorar seus ataques com certos tipos de feitiços, obtendo os seguintes benefícios:\n• Quando você lança um feitiço que exige que você faça uma jogada de ataque, o alcance do feitiço é duplicado.\n• Seus ataques mágicos à distância ignoram meia cobertura e três quartos de cobertura.\n• Você aprende um truque que requer uma jogada de ataque. Escolha o truque na lista de magias de bardo, clérigo, druida, feiticeiro, bruxo ou mago. Sua habilidade de lançar feitiços para este truque depende da lista de feitiços que você escolheu: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago."
+    "name": "Atirador de Magias",
+    "prerequisite": "A capacidade de conjurar pelo menos uma magia",
+    "description": "Você aprendeu técnicas para aprimorar seus ataques com certos tipos de magia, obtendo os seguintes benefícios:\n• Quando você conjura uma magia que exige que você faça uma jogada de ataque, o alcance da magia é duplicado.\n• Seus ataques mágicos à distância ignoram meia cobertura e três quartos de cobertura.\n• Você aprende um truque que requer uma jogada de ataque. Escolha o truque na lista de magias de bardo, clérigo, druida, feiticeiro, bruxo ou mago. Sua habilidade de conjuração para este truque depende da lista de magias que você escolheu: Carisma para bardo, feiticeiro ou bruxo; Sabedoria para clérigo ou druida; ou Inteligência para mago."
   },
   "Tavern Brawler": {
     "name": "Lutador de Taverna",
@@ -201,8 +201,8 @@
   },
   "War Caster": {
     "name": "Conjurador de Guerra",
-    "prerequisite": "A capacidade de lançar pelo menos um feitiço",
-    "description": "Você praticou lançar feitiços no meio do combate, aprendendo técnicas que lhe concedem os seguintes benefícios:\n• Você tem vantagem nos testes de resistência de Constituição que você faz para manter sua concentração em uma magia quando sofre dano.\n• Você pode executar os componentes somáticos dos feitiços mesmo quando tiver armas ou escudo em uma ou ambas as mãos.\n• Quando o movimento de uma criatura hostil provoca um ataque de oportunidade de sua parte, você pode usar sua reação para lançar uma magia na criatura, em vez de fazer um ataque de oportunidade. A magia deve ter um tempo de lançamento de 1 ação e deve ter como alvo apenas aquela criatura."
+    "prerequisite": "A capacidade de conjurar pelo menos uma magia",
+    "description": "Você praticou conjurar magias no meio do combate, aprendendo técnicas que lhe concedem os seguintes benefícios:\n• Você tem vantagem nos testes de resistência de Constituição que você faz para manter sua concentração em uma magia quando sofre dano.\n• Você pode executar os componentes somáticos das magias mesmo quando tiver armas ou escudo em uma ou ambas as mãos.\n• Quando o movimento de uma criatura hostil provoca um ataque de oportunidade de sua parte, você pode usar sua reação para conjurar uma magia na criatura, em vez de fazer um ataque de oportunidade. A magia deve ter um tempo de conjuração de 1 ação e deve ter como alvo apenas aquela criatura."
   },
   "Weapon Master": {
     "name": "Mestre de Armas",

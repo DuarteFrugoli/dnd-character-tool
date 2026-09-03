@@ -104,7 +104,7 @@
   "Ranger": {
     "Hunter": {
       "name": "사냥꾼",
-      "description": "마스터 추적자이자 포식자입니다. Hunter's Prey 옵션(Colossus Slayer, Giant Killer, Horde Breaker)과 방어 전술 중에서 선택하여 모든 위협에 대처하세요."
+      "description": "숙련된 추적자이자 사냥꾼입니다. 사냥꾼의 먹잇감 선택지(거상 처단자, 거인 살해자, 무리 파괴자)와 방어 전술을 골라 어떤 위협에도 대응합니다."
     },
     "Beast Master": {
       "name": "비스트 마스터",
@@ -122,7 +122,7 @@
     },
     "Arcane Trickster": {
       "name": "신비한 사기꾼",
-      "description": "마법을 속임수로 엮는 주문 시전 도적입니다. 환상과 마법 주문을 배우고, Mage Hand Legerdemain을 사용하고, 결국 다른 캐스터의 주문 효과를 훔칩니다."
+      "description": "마법을 속임수와 엮어 쓰는 주문 시전 도적입니다. 환상과 정신계 주문을 배우고, 마법사의 손 손재주를 사용하며, 결국 다른 시전자의 주문 효과까지 훔칩니다."
     }
   },
   "Sorcerer": {
@@ -138,11 +138,11 @@
   "Warlock": {
     "The Archfey": {
       "name": "더 아치페이",
-      "description": "감정과 매력을 겸비한 요정의 군주. 주변 생물을 매혹하거나 겁을 주는 Fey Presence, 맞으면 사라지는 Misty Escape, 마법에 초점을 맞춘 마법입니다."
+      "description": "감정과 매혹을 다루는 요정 군주를 후원자로 삼습니다. 요정의 존재감으로 주변 생물을 매혹하거나 겁주고, 안개 탈출로 공격받았을 때 사라지며, 매혹 중심의 마법을 다룹니다."
     },
     "The Fiend": {
       "name": "악마",
-      "description": "강력한 악마 또는 악마. Dark One's Blessing은 처치 시 일시적인 체력을 부여하고 Hurl Through Hell로 끝나는 일련의 불과 괴사 주문을 제공합니다."
+      "description": "강력한 악마나 마족을 후원자로 삼습니다. 어둠의 존재의 축복은 적을 쓰러뜨릴 때 임시 체력을 주며, 화염과 사령 계열 주문을 거쳐 지옥으로 내던지기에 이릅니다."
     },
     "The Great Old One": {
       "name": "그레이트 올드 원",

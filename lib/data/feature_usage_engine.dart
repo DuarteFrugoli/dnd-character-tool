@@ -455,10 +455,7 @@ class FeatureUsageEngine {
 
       if (sourceType == FeatureChoiceSourceType.classFeature) {
         final sourceClass = _extraFeatureSourceClass(character, feature);
-        final classRef = catalog.classFeature(
-          sourceClass,
-          sourceFeature,
-        );
+        final classRef = catalog.classFeature(sourceClass, sourceFeature);
         if (classRef != null) {
           final binding = add(
             classRef,

@@ -1,27 +1,27 @@
 {
   "Club": {
-    "name": "Verein"
+    "name": "Knüppel"
   },
   "Dagger": {
     "name": "Dolch"
   },
   "Greatclub": {
-    "name": "Toller Club"
+    "name": "Großer Knüppel"
   },
   "Handaxe": {
     "name": "Handaxt"
   },
   "Javelin": {
-    "name": "Speer"
+    "name": "Wurfspeer"
   },
   "Light Hammer": {
     "name": "Leichter Hammer"
   },
   "Mace": {
-    "name": "Keule"
+    "name": "Streitkolben"
   },
   "Quarterstaff": {
-    "name": "Quartierstab"
+    "name": "Kampfstab"
   },
   "Sickle": {
     "name": "Sichel"
@@ -30,16 +30,16 @@
     "name": "Speer"
   },
   "Crossbow, Light": {
-    "name": "Armbrust, Licht"
+    "name": "Leichte Armbrust"
   },
   "Dart": {
-    "name": "Pfeil"
+    "name": "Wurfpfeil"
   },
   "Shortbow": {
     "name": "Kurzbogen"
   },
   "Sling": {
-    "name": "Schlinge"
+    "name": "Schleuder"
   },
   "Battleaxe": {
     "name": "Streitaxt"
@@ -66,7 +66,7 @@
     "name": "Langschwert"
   },
   "Maul": {
-    "name": "Maul"
+    "name": "Zweihandhammer"
   },
   "Morningstar": {
     "name": "Morgenstern"
@@ -87,10 +87,10 @@
     "name": "Dreizack"
   },
   "War Pick": {
-    "name": "Kriegsauswahl"
+    "name": "Kriegspickel"
   },
   "Warhammer": {
-    "name": "Warhammer"
+    "name": "Kriegshammer"
   },
   "Whip": {
     "name": "Peitsche"
@@ -99,28 +99,28 @@
     "name": "Blasrohr"
   },
   "Crossbow, Hand": {
-    "name": "Armbrust, Hand"
+    "name": "Handarmbrust"
   },
   "Crossbow, Heavy": {
-    "name": "Armbrust, schwer"
+    "name": "Schwere Armbrust"
   },
   "Longbow": {
     "name": "Langbogen"
   },
   "Net": {
-    "name": "Netto"
+    "name": "Netz"
   },
   "Padded": {
-    "name": "Gepolstert"
+    "name": "Wattierte Rüstung"
   },
   "Leather": {
-    "name": "Leder"
+    "name": "Lederrüstung"
   },
   "Studded Leather": {
-    "name": "Nietenleder"
+    "name": "Beschlagene Lederrüstung"
   },
   "Hide": {
-    "name": "Verstecken"
+    "name": "Fellrüstung"
   },
   "Chain Shirt": {
     "name": "Kettenhemd"
@@ -132,19 +132,19 @@
     "name": "Brustplatte"
   },
   "Half Plate": {
-    "name": "Halber Teller"
+    "name": "Halbplatte"
   },
   "Ring Mail": {
-    "name": "Ringmail"
+    "name": "Ringpanzer"
   },
   "Chain Mail": {
     "name": "Kettenhemd"
   },
   "Splint": {
-    "name": "Schiene"
+    "name": "Schienenpanzer"
   },
   "Plate": {
-    "name": "Platte"
+    "name": "Plattenrüstung"
   },
   "Shield": {
     "name": "Schild"
@@ -214,7 +214,7 @@
     "description": "Ein Rucksack mit Buch, Tinte, Tintenstift, Pergament, Sand und einem kleinen Messer."
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "Kugellager (Beutel mit 1000 Stück)",
+    "name": "Kugeln (Beutel mit 1000 Stück)",
     "description": "Streuen Sie als Aktion diese kleinen Metallkugeln. Den Kreaturen muss ein Geschicklichkeitsrettungswurf von DC 10 gelingen, sonst fallen sie hin."
   },
   "Barrel": {
@@ -254,7 +254,7 @@
     "description": "Fasst 3 Gallonen."
   },
   "Caltrops (bag of 20)": {
-    "name": "Caltrops (Beutel mit 20 Stück)",
+    "name": "Krähenfüße (Beutel mit 20 Stück)",
     "description": "Über eine Fläche von 1,50 m verteilen. Kreaturen, die sich hindurchbewegen, müssen einen Geschicklichkeitswurf gegen SG 15 schaffen oder anhalten und 1 Stichschaden erleiden (die Geschwindigkeit wird bis zur Heilung um 10 Fuß verringert)."
   },
   "Candle": {
@@ -312,6 +312,9 @@
   "Crowbar": {
     "name": "Brecheisen",
     "description": "Gewährt einen Vorteil bei Stärkewürfen, bei denen Hebel eingesetzt werden können."
+  },
+  "Disguise kit": {
+    "name": "Verkleidungsset"
   },
   "Druidic Focus": {
     "name": "Druidischer Fokus",
@@ -506,7 +509,7 @@
     "description": "Unverzichtbar für Zauberer. Enthält 100 Seiten zum Aufzeichnen von Zaubersprüchen – beim Kauf leer."
   },
   "Spikes, iron (10)": {
-    "name": "Spikes, Eisen (10)",
+    "name": "Eisenstifte (10)",
     "description": "Zehn Eisenspitzen mit einem Hammer."
   },
   "Spyglass": {

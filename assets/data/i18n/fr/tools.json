@@ -12,16 +12,16 @@
     "name": "Outils de menuisier"
   },
   "Cartographer's tools": {
-    "name": "Les outils du cartographe"
+    "name": "Outils de cartographe"
   },
   "Cobbler's tools": {
-    "name": "Les outils du cordonnier"
+    "name": "Outils de cordonnier"
   },
   "Cook's utensils": {
     "name": "Ustensiles de cuisine"
   },
   "Glassblower's tools": {
-    "name": "Les outils du souffleur de verre"
+    "name": "Outils de souffleur de verre"
   },
   "Jeweler's tools": {
     "name": "Outils de bijoutier"
@@ -30,22 +30,22 @@
     "name": "Outils du maroquinier"
   },
   "Mason's tools": {
-    "name": "Les outils du maçon"
+    "name": "Outils de maçon"
   },
   "Painter's supplies": {
     "name": "Fournitures de peintre"
   },
   "Potter's tools": {
-    "name": "Les outils du potier"
+    "name": "Outils de potier"
   },
   "Smith's tools": {
-    "name": "Les outils de Smith"
+    "name": "Outils de forgeron"
   },
   "Tinker's tools": {
-    "name": "Les outils du bricoleur"
+    "name": "Outils de bricoleur"
   },
   "Weaver's tools": {
-    "name": "Les outils du tisserand"
+    "name": "Outils de tisserand"
   },
   "Woodcarver's tools": {
     "name": "Outils du sculpteur sur bois"
@@ -96,10 +96,10 @@
     "name": "Trousse de déguisement"
   },
   "Forgery kit": {
-    "name": "Kit de contrefaçon"
+    "name": "Kit de falsification"
   },
   "Thieves' tools": {
-    "name": "Les outils des voleurs"
+    "name": "Outils de voleur"
   },
   "Herbalism kit": {
     "name": "Kit d'herboristerie"

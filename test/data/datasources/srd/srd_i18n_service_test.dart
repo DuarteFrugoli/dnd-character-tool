@@ -96,5 +96,22 @@ void main() {
       // Must be the same singleton
       expect(identical(svc, SrdI18nService.english), isTrue);
     });
+
+    test("load('pt') translates known skills and tools", () async {
+      TestWidgetsFlutterBinding.ensureInitialized();
+      final svc = await SrdI18nService.load('pt');
+
+      expect(svc.skillName('Acrobatics'), 'Acrobacia');
+      expect(svc.toolName("Thieves' tools"), contains('Ferramentas'));
+      expect(svc.toolName("Thieves' tools").toLowerCase(), contains('ladr'));
+    });
+
+    test("load('pt') translates class equipment aliases", () async {
+      TestWidgetsFlutterBinding.ensureInitialized();
+      final svc = await SrdI18nService.load('pt');
+
+      expect(svc.backgroundEquipmentName("Thieves' tools"), contains('ladr'));
+      expect(svc.backgroundEquipmentName('Arrows'), isNot('Arrows'));
+    });
   });
 }

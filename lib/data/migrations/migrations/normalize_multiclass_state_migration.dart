@@ -43,7 +43,9 @@ class NormalizeMulticlassStateMigration extends CharacterMigration {
         .map((feature) => _normalizeExtraFeature(feature, classes))
         .toList();
     final featureChoices = character.featureChoices
-        .map((choice) => _normalizeFeatureChoice(choice, classes, startingClass))
+        .map(
+          (choice) => _normalizeFeatureChoice(choice, classes, startingClass),
+        )
         .toList();
     final expectedProficiency =
         CharacterProgressionEngine.proficiencyBonusForTotalLevel(totalLevel);
@@ -210,7 +212,8 @@ class NormalizeMulticlassStateMigration extends CharacterMigration {
     }
     for (var i = 0; i < pools.length; i++) {
       if (usedPoolIndexes.contains(i)) continue;
-      if (pools[i].sourceClass?.toLowerCase() == entry.className.toLowerCase()) {
+      if (pools[i].sourceClass?.toLowerCase() ==
+          entry.className.toLowerCase()) {
         return i;
       }
     }
@@ -270,7 +273,8 @@ class NormalizeMulticlassStateMigration extends CharacterMigration {
     }
 
     final isSubclassFeature =
-        feature.effectiveSourceType == FeatureChoiceSourceType.subclassFeature ||
+        feature.effectiveSourceType ==
+            FeatureChoiceSourceType.subclassFeature ||
         (entry.subclassName != null &&
             feature.sourceClass == entry.subclassName);
     return feature.copyWith(

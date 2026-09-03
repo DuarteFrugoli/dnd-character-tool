@@ -36,9 +36,7 @@ Character _staleCharacter() {
         sourceClass: 'Wizard',
       ),
     ],
-    spells: const [
-      KnownSpell(name: 'Shield', level: 1, sourceClass: 'Wizard'),
-    ],
+    spells: const [KnownSpell(name: 'Shield', level: 1, sourceClass: 'Wizard')],
     extraFeatures: const [
       CharacterExtraFeature(
         sourceClass: 'Wizard',

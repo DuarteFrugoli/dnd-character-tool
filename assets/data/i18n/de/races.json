@@ -2,7 +2,7 @@
   "Dwarf": {
     "name": "Zwerg",
     "languages": [
-      "Gemeinsam",
+      "Gemeinsprache",
       "Zwergisch"
     ],
     "subraces": [
@@ -17,7 +17,7 @@
   "Elf": {
     "name": "Elf",
     "languages": [
-      "Gemeinsam",
+      "Gemeinsprache",
       "Elbisch"
     ],
     "subraces": [
@@ -35,30 +35,38 @@
   "Halfling": {
     "name": "Halbling",
     "languages": [
-      "Gemeinsam",
-      "Halbling"
+      "Gemeinsprache",
+      "Halblingisch"
     ],
     "subraces": [
       {
         "name": "Leichtfuß"
       },
       {
-        "name": "Stout"
+        "name": "Stämmig"
       }
     ]
   },
   "Human": {
-    "name": "Menschlich",
+    "name": "Mensch",
     "languages": [
-      "Gemeinsam",
-      "ein Extra Ihrer Wahl"
+      "Gemeinsprache",
+      "eine weitere Sprache deiner Wahl"
+    ],
+    "subraces": []
+  },
+  "Variant Human": {
+    "name": "Variantenmensch",
+    "languages": [
+      "Gemeinsprache",
+      "eine weitere Sprache deiner Wahl"
     ],
     "subraces": []
   },
   "Dragonborn": {
-    "name": "Drachengeborenes",
+    "name": "Drachengeborener",
     "languages": [
-      "Gemeinsam",
+      "Gemeinsprache",
       "Drakonisch"
     ],
     "subraces": [
@@ -97,39 +105,39 @@
   "Gnome": {
     "name": "Gnom",
     "languages": [
-      "Gemeinsam",
+      "Gemeinsprache",
       "Gnomisch"
     ],
     "subraces": [
       {
-        "name": "Waldzwerg"
+        "name": "Waldgnom"
       },
       {
-        "name": "Felszwerg"
+        "name": "Felsgnom"
       }
     ]
   },
   "Half-Elf": {
     "name": "Halbelf",
     "languages": [
-      "Gemeinsam",
+      "Gemeinsprache",
       "Elbisch",
-      "ein Extra Ihrer Wahl"
+      "eine weitere Sprache deiner Wahl"
     ],
     "subraces": []
   },
   "Half-Orc": {
     "name": "Halb-Ork",
     "languages": [
-      "Gemeinsam",
-      "Ork"
+      "Gemeinsprache",
+      "Orkisch"
     ],
     "subraces": []
   },
   "Tiefling": {
     "name": "Tiefling",
     "languages": [
-      "Gemeinsam",
+      "Gemeinsprache",
       "Höllisch"
     ],
     "subraces": []

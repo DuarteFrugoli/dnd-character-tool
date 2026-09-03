@@ -183,10 +183,12 @@ void main() {
     });
 
     test('exportToJson includes readable character images', () async {
-      final sourceImagePath = await backend.writeImage(
-        [2, 4, 6, 8],
-        name: 'json-source.jpg',
-      );
+      final sourceImagePath = await backend.writeImage([
+        2,
+        4,
+        6,
+        8,
+      ], name: 'json-source.jpg');
       final original = _makeCharacter(
         id: 'with-image',
         imagePath: sourceImagePath,

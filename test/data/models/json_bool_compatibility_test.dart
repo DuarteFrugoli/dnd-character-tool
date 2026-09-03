@@ -52,9 +52,7 @@ void main() {
             isEquipped: true,
           ),
         ],
-        spells: const [
-          KnownSpell(name: 'Shield', level: 1, isPrepared: true),
-        ],
+        spells: const [KnownSpell(name: 'Shield', level: 1, isPrepared: true)],
         notes: [
           CharacterNote(title: 'Note', content: 'Content', isPinned: true),
         ],

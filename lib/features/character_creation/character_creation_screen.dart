@@ -90,7 +90,10 @@ class _CharacterCreationScreenState
         title: l10n.creationStepName,
         child: const StepName(),
       ),
-      if (_shouldShowFeatureChoiceStep(draft))
+      if (shouldShowCreationFeatureChoiceStep(
+        draft,
+        featureChoiceLoadErrorKey: _featureChoiceLoadErrorKey,
+      ))
         _CreationStep(
           id: _CreationStepId.featureChoices,
           title: l10n.featureChoicesTitle,
@@ -102,13 +105,6 @@ class _CharacterCreationScreenState
         child: StepReview(key: _reviewKey),
       ),
     ];
-  }
-
-  bool _shouldShowFeatureChoiceStep(CharacterDraft draft) {
-    if (draft.featureChoicesLoaded) {
-      return draft.featureChoiceRequests.isNotEmpty;
-    }
-    return _featureChoiceLoadErrorKey == creationFeatureChoiceDraftKey(draft);
   }
 
   Future<void> _next() async {

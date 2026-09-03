@@ -80,11 +80,7 @@ void showEquipmentPackageDetails(
                   preview: preview,
                   i18n: i18n,
                   onTap: preview.hasDetails
-                      ? () => showEquipmentPreviewDetails(
-                          context,
-                          ref,
-                          preview,
-                        )
+                      ? () => showEquipmentPreviewDetails(context, ref, preview)
                       : null,
                 );
               },

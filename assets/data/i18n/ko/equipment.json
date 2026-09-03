@@ -1,18 +1,18 @@
 {
   "Club": {
-    "name": "클럽"
+    "name": "곤봉"
   },
   "Dagger": {
     "name": "단검"
   },
   "Greatclub": {
-    "name": "그레이트클럽"
+    "name": "대형 곤봉"
   },
   "Handaxe": {
     "name": "손도끼"
   },
   "Javelin": {
-    "name": "던지는 창"
+    "name": "투창"
   },
   "Light Hammer": {
     "name": "라이트 해머"
@@ -30,7 +30,7 @@
     "name": "창"
   },
   "Crossbow, Light": {
-    "name": "석궁, 라이트"
+    "name": "경쇠뇌"
   },
   "Dart": {
     "name": "다트"
@@ -66,7 +66,7 @@
     "name": "장검"
   },
   "Maul": {
-    "name": "큰 나무 망치"
+    "name": "대형 망치"
   },
   "Morningstar": {
     "name": "모닝스타"
@@ -99,10 +99,10 @@
     "name": "블로우건"
   },
   "Crossbow, Hand": {
-    "name": "석궁, 손"
+    "name": "손쇠뇌"
   },
   "Crossbow, Heavy": {
-    "name": "석궁, 헤비"
+    "name": "중쇠뇌"
   },
   "Longbow": {
     "name": "큰 활"
@@ -111,19 +111,19 @@
     "name": "그물"
   },
   "Padded": {
-    "name": "패딩 처리된"
+    "name": "누비 갑옷"
   },
   "Leather": {
-    "name": "가죽"
+    "name": "가죽 갑옷"
   },
   "Studded Leather": {
-    "name": "스터드 가죽"
+    "name": "징 박힌 가죽 갑옷"
   },
   "Hide": {
-    "name": "숨다"
+    "name": "생가죽 갑옷"
   },
   "Chain Shirt": {
-    "name": "체인 셔츠"
+    "name": "사슬 셔츠"
   },
   "Scale Mail": {
     "name": "스케일 메일"
@@ -141,10 +141,10 @@
     "name": "체인 메일"
   },
   "Splint": {
-    "name": "부목"
+    "name": "스플린트 아머"
   },
   "Plate": {
-    "name": "그릇"
+    "name": "판금 갑옷"
   },
   "Shield": {
     "name": "방패"
@@ -310,8 +310,11 @@
     "description": "특정 비용이 있는 구성 요소를 제외하고 주문에 필요한 모든 재료 구성 요소를 담을 수 있는 칸이 있는 작은 방수 주머니입니다."
   },
   "Crowbar": {
-    "name": "바",
+    "name": "쇠지렛대",
     "description": "레버리지를 적용할 수 있는 강도 검사에 이점을 부여합니다."
+  },
+  "Disguise kit": {
+    "name": "변장 키트"
   },
   "Druidic Focus": {
     "name": "드루이드 집중",
@@ -402,7 +405,7 @@
     "description": "소형 또는 중형 생물을 묶을 수 있습니다. 탈출하려면 DC 20 민첩성 검사가 필요합니다. 파괴에는 DC 20의 힘이 필요합니다. 각 세트에는 하나의 키가 함께 제공됩니다."
   },
   "Mess Kit": {
-    "name": "엉망 키트",
+    "name": "식기 세트",
     "description": "컵과 간단한 도구가 담긴 주석 상자입니다."
   },
   "Mirror, steel": {
@@ -526,7 +529,7 @@
     "description": "부싯돌, 불용 강철, 부싯깃이 들어 있습니다. 횃불이나 불을 밝히는 데는 1개의 행동이 필요합니다(또는 틴더가 축축한 경우 1분)."
   },
   "Torch": {
-    "name": "토치",
+    "name": "횃불",
     "description": "1시간 동안 연소됩니다. 반경 20피트의 밝은 빛, 추가 20피트의 희미한 빛. 즉석 무기로 사용할 수 있습니다(1d4 화염 피해)."
   },
   "Vial": {
@@ -538,7 +541,7 @@
     "description": "의식용 종교복."
   },
   "Waterskin": {
-    "name": "워터스킨",
+    "name": "물주머니",
     "description": "4파인트의 액체를 담을 수 있습니다. 가득 찼을 때 무게는 5파운드입니다."
   },
   "Whetstone": {

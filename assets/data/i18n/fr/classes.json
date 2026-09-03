@@ -151,15 +151,15 @@
     "name": "Druide",
     "subclassFeatureName": "Cercle des Druides",
     "weaponProficiencies": [
-      "clubs",
-      "poignards",
+      "gourdins",
+      "dagues",
       "fléchettes",
-      "javelots",
+      "javelines",
       "masses",
       "bâtons",
       "cimeterres",
       "faucilles",
-      "élingues",
+      "frondes",
       "lances"
     ],
     "startingEquipment": {
@@ -255,7 +255,7 @@
     "name": "Moine",
     "subclassFeatureName": "Tradition monastique",
     "weaponProficiencies": [
-      "simple",
+      "armes courantes",
       "épées courtes"
     ],
     "startingEquipment": {
@@ -386,11 +386,11 @@
     "name": "Voyou",
     "subclassFeatureName": "Archétype espiègle",
     "weaponProficiencies": [
-      "simple",
-      "arbalète à main",
-      "épée longue",
-      "rapière",
-      "épée courte"
+      "armes courantes",
+      "arbalètes de poing",
+      "épées longues",
+      "rapières",
+      "épées courtes"
     ],
     "startingEquipment": {
       "fixed": [

@@ -128,14 +128,13 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
         .valueOrNull;
     final existingKeys = {
       for (final feature
-          in character?.extraFeatures ?? const <CharacterExtraFeature>[])
-        ...[
-          '${feature.sourceClass}:${feature.name}',
-          if (feature.sourceSubclass != null)
-            '${feature.sourceSubclass}:${feature.name}',
-          if (feature.sourceClassEntryId != null)
-            '${feature.sourceClassEntryId}:${feature.name}',
-        ],
+          in character?.extraFeatures ?? const <CharacterExtraFeature>[]) ...[
+        '${feature.sourceClass}:${feature.name}',
+        if (feature.sourceSubclass != null)
+          '${feature.sourceSubclass}:${feature.name}',
+        if (feature.sourceClassEntryId != null)
+          '${feature.sourceClassEntryId}:${feature.name}',
+      ],
     };
 
     return DraggableScrollableSheet(

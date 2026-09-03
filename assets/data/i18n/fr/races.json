@@ -43,7 +43,7 @@
         "name": "Pied léger"
       },
       {
-        "name": "Gros"
+        "name": "Robuste"
       }
     ]
   },
@@ -51,12 +51,20 @@
     "name": "Humain",
     "languages": [
       "Commun",
-      "un extra au choix"
+      "une langue supplémentaire au choix"
+    ],
+    "subraces": []
+  },
+  "Variant Human": {
+    "name": "Humain variant",
+    "languages": [
+      "Commun",
+      "une langue supplémentaire au choix"
     ],
     "subraces": []
   },
   "Dragonborn": {
-    "name": "Enfant de Dragon",
+    "name": "Drakéide",
     "languages": [
       "Commun",
       "Draconique"
@@ -114,7 +122,7 @@
     "languages": [
       "Commun",
       "Elfique",
-      "un extra au choix"
+      "une langue supplémentaire au choix"
     ],
     "subraces": []
   },

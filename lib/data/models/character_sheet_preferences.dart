@@ -104,13 +104,8 @@ class SkillDisplayPreferences {
         map['mode'],
         SkillDisplayMode.byAbility,
       ),
-      abilityOrder: _normalizedOrder(
-        map['abilityOrder'],
-        defaultAbilityOrder,
-      ),
-      proficientFirstInsideGroups: readBool(
-        map['proficientFirstInsideGroups'],
-      ),
+      abilityOrder: _normalizedOrder(map['abilityOrder'], defaultAbilityOrder),
+      proficientFirstInsideGroups: readBool(map['proficientFirstInsideGroups']),
     );
   }
 
@@ -198,9 +193,7 @@ class SpellDisplayPreferences {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    'showLevelShortcuts': showLevelShortcuts,
-  };
+  Map<String, dynamic> toJson() => {'showLevelShortcuts': showLevelShortcuts};
 }
 
 T _enumByName<T extends Enum>(List<T> values, Object? value, T fallback) {

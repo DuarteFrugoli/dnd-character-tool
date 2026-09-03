@@ -4,16 +4,16 @@
       "name": "Ярость"
     },
     "bardic_inspiration": {
-      "name": "Бардское вдохновение"
+      "name": "Вдохновение барда"
     },
     "cleric_channel_divinity": {
-      "name": "Канал Божественность"
+      "name": "Божественный канал"
     },
     "divine_intervention": {
       "name": "Божественное вмешательство"
     },
     "wild_shape": {
-      "name": "Дикая форма"
+      "name": "Дикий облик"
     },
     "second_wind": {
       "name": "Второе дыхание"
@@ -28,34 +28,34 @@
       "name": "Ки"
     },
     "divine_sense": {
-      "name": "Божественное чувство"
+      "name": "Божественное чутьё"
     },
     "lay_on_hands": {
       "name": "Возложение рук"
     },
     "paladin_channel_divinity": {
-      "name": "Канал Божественность"
+      "name": "Божественный канал"
     },
     "cleansing_touch": {
       "name": "Очищающее прикосновение"
     },
     "stroke_of_luck": {
-      "name": "Удача"
+      "name": "Удачный ход"
     },
     "sorcery_points": {
-      "name": "Волшебные очки"
+      "name": "Очки чародейства"
     },
     "mystic_arcanum": {
-      "name": "Мистический Арканум"
+      "name": "Мистический арканум"
     },
     "eldritch_master": {
-      "name": "Жуткий мастер"
+      "name": "Потусторонний мастер"
     },
     "arcane_recovery": {
-      "name": "Тайное восстановление"
+      "name": "Магическое восстановление"
     },
     "signature_spells": {
-      "name": "Сигнатурные заклинания"
+      "name": "Фирменные заклинания"
     },
     "warding_flare": {
       "name": "Защитная вспышка"
@@ -64,28 +64,28 @@
       "name": "Гнев бури"
     },
     "war_priest": {
-      "name": "Военный священник"
+      "name": "Жрец войны"
     },
     "natural_recovery": {
       "name": "Естественное восстановление"
     },
     "superiority_dice": {
-      "name": "Кубик превосходства"
+      "name": "Кости превосходства"
     },
     "wholeness_of_body": {
       "name": "Целостность тела"
     },
     "holy_nimbus": {
-      "name": "Святой Нимб"
+      "name": "Святой нимб"
     },
     "undying_sentinel": {
       "name": "Бессмертный страж"
     },
     "elder_champion": {
-      "name": "Старейшина Чемпион"
+      "name": "Древний чемпион"
     },
     "tides_of_chaos": {
-      "name": "Приливы Хаоса"
+      "name": "Волны хаоса"
     },
     "fey_presence": {
       "name": "Присутствие фей"
@@ -94,46 +94,46 @@
       "name": "Туманный побег"
     },
     "dark_delirium": {
-      "name": "Темный бред"
+      "name": "Тёмный бред"
     },
     "dark_ones_own_luck": {
-      "name": "Удача Темного"
+      "name": "Удача Тёмного"
     },
     "hurl_through_hell": {
-      "name": "Брось сквозь ад"
+      "name": "Бросок через ад"
     },
     "entropic_ward": {
-      "name": "Энтропийный страж"
+      "name": "Энтропийная защита"
     },
     "benign_transposition": {
-      "name": "Доброкачественная транспозиция"
+      "name": "Благотворная транспозиция"
     },
     "portent": {
-      "name": "предзнаменование"
+      "name": "Предзнаменование"
     },
     "instinctive_charm": {
-      "name": "Инстинктивное обаяние"
+      "name": "Инстинктивное очарование"
     },
     "illusory_self": {
       "name": "Иллюзорное Я"
     },
     "shapechanger": {
-      "name": "Изменитель формы"
+      "name": "Оборотень"
     },
     "lucky_points": {
       "name": "Очки удачи"
     },
     "martial_adept_superiority_die": {
-      "name": "Кубок превосходства"
+      "name": "Кость превосходства"
     },
     "magic_initiate_spell": {
-      "name": "Заклинание посвящения магии"
+      "name": "Заклинание Посвящённого в магию"
     },
     "breath_weapon": {
-      "name": "Дыхательное оружие"
+      "name": "Оружие дыхания"
     },
     "relentless_endurance": {
-      "name": "Неумолимая выносливость"
+      "name": "Неумолимая стойкость"
     }
   }
 }

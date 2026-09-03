@@ -109,11 +109,7 @@ bool _hasUnarmoredDefense({
   for (final entry in classEntries) {
     hasClassEntries = true;
     if (entry.className.toLowerCase() == source &&
-        !_classFeatureDisabled(
-          disabledFeatures,
-          entry.id,
-          featureName,
-        )) {
+        !_classFeatureDisabled(disabledFeatures, entry.id, featureName)) {
       return true;
     }
   }

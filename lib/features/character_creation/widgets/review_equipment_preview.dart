@@ -35,10 +35,7 @@ class _ParsedEquipmentName {
 }
 
 bool isGoldEquipmentEntry(String rawName) {
-  return RegExp(
-    r'^\d+\s*gp$',
-    caseSensitive: false,
-  ).hasMatch(rawName.trim());
+  return RegExp(r'^\d+\s*gp$', caseSensitive: false).hasMatch(rawName.trim());
 }
 
 ReviewEquipmentPreview? equipmentPreviewFor({

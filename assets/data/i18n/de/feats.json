@@ -50,7 +50,7 @@
     "description": "Wenn Sie dieses Talent erlangen, wählen Sie eine der folgenden Schadensarten: Säure, Kälte, Feuer, Blitz oder Donner. Zauber, die du wirkst, ignorieren den Schadenswiderstand des gewählten Typs. Wenn du außerdem Schaden für einen von dir gewirkten Zauber würfelst, der Schaden dieser Art verursacht, kannst du jede 1 auf einem Schadenswürfel als 2 behandeln.\nSie können dieses Talent mehrmals auswählen. Jedes Mal, wenn Sie dies tun, müssen Sie eine andere Schadensart auswählen."
   },
   "Grappler": {
-    "name": "Grappler",
+    "name": "Ringkämpfer",
     "prerequisite": "Stärke 13 oder höher",
     "description": "Du hast die nötigen Fähigkeiten entwickelt, um im Nahkampf zu bestehen. Sie profitieren von folgenden Vorteilen:\n• Sie haben einen Vorteil bei Angriffswürfen gegen eine Kreatur, mit der Sie ringen.\n• Du kannst mit deiner Aktion versuchen, eine von dir gepackte Kreatur festzunageln. Führen Sie dazu einen weiteren Grapple-Check durch. Wenn Sie Erfolg haben, werden Sie und die Kreatur beide zurückgehalten, bis der Kampf endet."
   },
@@ -90,7 +90,7 @@
     "description": "Sie haben gelernt, den Umgang mit leichter Rüstung zu meistern und haben folgende Vorteile erlangt:\n• Erhöhen Sie Ihren Stärke- oder Geschicklichkeitswert um 1 auf maximal 20.\n• Sie erlangen Kenntnisse im Umgang mit leichter Rüstung."
   },
   "Linguist": {
-    "name": "Linguist",
+    "name": "Sprachkundiger",
     "prerequisite": null,
     "description": "Sie haben Sprachen und Codes studiert und daraus folgende Vorteile gezogen:\n• Erhöhen Sie Ihren Intelligenzwert um 1 auf maximal 20.\n• Sie lernen drei Sprachen Ihrer Wahl.\n• Sie können geschickt schriftliche Chiffren erstellen. Andere können einen von Ihnen erstellten Code nicht entschlüsseln, es sei denn, Sie bringen es ihnen bei, sie haben einen erfolgreichen Intelligenzwurf (SG entspricht Ihrem Intelligenzwert + Ihrem Fähigkeitsbonus) oder sie verwenden Magie, um ihn zu entschlüsseln."
   },

@@ -1,6 +1,6 @@
 {
   "Common": {
-    "name": "一般"
+    "name": "共通語"
   },
   "Dwarvish": {
     "name": "ドワーフ語"
@@ -9,45 +9,45 @@
     "name": "エルフ語"
   },
   "Halfling": {
-    "name": "ハーフリング"
+    "name": "ハーフリング語"
   },
   "Draconic": {
-    "name": "ドラコニック"
+    "name": "竜語"
   },
   "Gnomish": {
-    "name": "ノーミッシュ"
+    "name": "ノーム語"
   },
   "Orc": {
-    "name": "オーク"
+    "name": "オーク語"
   },
   "Infernal": {
-    "name": "地獄の"
+    "name": "地獄語"
   },
   "Abyssal": {
     "name": "アビサル"
   },
   "Celestial": {
-    "name": "天体"
+    "name": "天上語"
   },
   "Deep Speech": {
-    "name": "ディープスピーチ"
+    "name": "深淵語"
   },
   "Giant": {
-    "name": "巨人"
+    "name": "巨人語"
   },
   "Gnoll": {
-    "name": "ノール"
+    "name": "ノール語"
   },
   "Goblin": {
-    "name": "ゴブリン"
+    "name": "ゴブリン語"
   },
   "Primordial": {
-    "name": "原始的な"
+    "name": "始原語"
   },
   "Sylvan": {
-    "name": "シルバン"
+    "name": "森語"
   },
   "Undercommon": {
-    "name": "アンダーコモン"
+    "name": "地下共通語"
   }
 }

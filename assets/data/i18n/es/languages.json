@@ -3,19 +3,19 @@
     "name": "Común"
   },
   "Dwarvish": {
-    "name": "enano"
+    "name": "Enano"
   },
   "Elvish": {
-    "name": "Mágico"
+    "name": "Élfico"
   },
   "Halfling": {
     "name": "Mediano"
   },
   "Draconic": {
-    "name": "dracónico"
+    "name": "Dracónico"
   },
   "Gnomish": {
-    "name": "gnomo"
+    "name": "Gnómico"
   },
   "Orc": {
     "name": "Orco"
@@ -30,16 +30,16 @@
     "name": "Celestial"
   },
   "Deep Speech": {
-    "name": "discurso profundo"
+    "name": "Habla profunda"
   },
   "Giant": {
     "name": "Gigante"
   },
   "Gnoll": {
-    "name": "gnoll"
+    "name": "Gnoll"
   },
   "Goblin": {
-    "name": "Duende"
+    "name": "Goblin"
   },
   "Primordial": {
     "name": "Primordial"
@@ -48,6 +48,6 @@
     "name": "Selvático"
   },
   "Undercommon": {
-    "name": "poco común"
+    "name": "Infracomún"
   }
 }

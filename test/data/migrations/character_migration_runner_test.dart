@@ -55,6 +55,16 @@ void main() {
   );
 
   group('CharacterMigrationRunner', () {
+    test(
+      'default latestVersion matches the current character data version',
+      () {
+        expect(
+          CharacterMigrationRunner().latestVersion,
+          currentCharacterDataVersion,
+        );
+      },
+    );
+
     test('sorts and applies migrations by target version', () {
       final runner = CharacterMigrationRunner(
         migrations: const [

@@ -25,8 +25,7 @@ CharacterSheetPreferences _characterSheetPreferencesFromJson(Object? json) =>
 
 Map<String, dynamic> _characterSheetPreferencesToJson(
   CharacterSheetPreferences value,
-) =>
-    value.toJson();
+) => value.toJson();
 
 enum CreationMode { random, semiRandom, guided, manual }
 
@@ -190,6 +189,8 @@ class Character {
   }
 
   bool get isMulticlass => classEntries.length > 1;
+
+  bool get needsDataUpdate => dataVersion < currentCharacterDataVersion;
 
   String get primaryClassName => primaryClass.className;
 

@@ -86,9 +86,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
             context: context,
             builder: (ctx) => AlertDialog(
               title: Text(l10n.xpLevelUpNowTitle),
-              content: Text(
-                l10n.xpLevelUpNowMessage(character.totalLevel + 1),
-              ),
+              content: Text(l10n.xpLevelUpNowMessage(character.totalLevel + 1)),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, false),

@@ -23,6 +23,14 @@
     "name": "Maîtrise des outils",
     "description": "Vous maîtrisez les outils d'artisan de votre choix : outils de forgeron, fournitures de brasseur ou outils de maçon."
   },
+  "Skill Proficiency": {
+    "name": "Maîtrise de compétence",
+    "description": "Vous gagnez la maîtrise d'une compétence de votre choix."
+  },
+  "Bonus Feat": {
+    "name": "Don supplémentaire",
+    "description": "Vous gagnez un don de votre choix."
+  },
   "Dwarven Toughness": {
     "name": "Robustesse naine",
     "description": "Votre maximum de points de vie augmente de 1, et il augmente de 1 à chaque fois que vous gagnez un niveau."

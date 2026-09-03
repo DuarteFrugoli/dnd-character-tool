@@ -44,11 +44,12 @@ class CharacterDetailTabBar extends StatelessWidget
             dividerColor: Colors.transparent,
             labelColor: scheme.onSurface,
             unselectedLabelColor: scheme.onSurfaceVariant,
-            labelStyle: Theme.of(context).textTheme.labelLarge?.copyWith(
-              fontWeight: FontWeight.w800,
-            ),
-            unselectedLabelStyle: Theme.of(context).textTheme.labelLarge
-                ?.copyWith(fontWeight: FontWeight.w600),
+            labelStyle: Theme.of(
+              context,
+            ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w800),
+            unselectedLabelStyle: Theme.of(
+              context,
+            ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w600),
             labelPadding: const EdgeInsets.symmetric(horizontal: 14),
             indicatorPadding: const EdgeInsets.symmetric(
               horizontal: 5,
@@ -57,9 +58,7 @@ class CharacterDetailTabBar extends StatelessWidget
             indicator: BoxDecoration(
               color: indicatorColor,
               borderRadius: BorderRadius.circular(999),
-              border: Border.all(
-                color: scheme.primary.withValues(alpha: 0.38),
-              ),
+              border: Border.all(color: scheme.primary.withValues(alpha: 0.38)),
             ),
             overlayColor: WidgetStatePropertyAll(
               scheme.primary.withValues(alpha: 0.08),

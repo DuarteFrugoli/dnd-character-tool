@@ -258,6 +258,24 @@ void main() {
     });
   });
 
+  group('Character data version', () {
+    test('marks only older saved data as needing an update', () {
+      final outdated = _makeCharacter().copyWith(
+        dataVersion: currentCharacterDataVersion - 1,
+      );
+      final current = _makeCharacter().copyWith(
+        dataVersion: currentCharacterDataVersion,
+      );
+      final future = _makeCharacter().copyWith(
+        dataVersion: currentCharacterDataVersion + 1,
+      );
+
+      expect(outdated.needsDataUpdate, isTrue);
+      expect(current.needsDataUpdate, isFalse);
+      expect(future.needsDataUpdate, isFalse);
+    });
+  });
+
   group('Character JSON round-trip', () {
     test('serialisation preserves all basic fields', () {
       final c = _makeCharacter(

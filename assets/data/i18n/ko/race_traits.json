@@ -23,6 +23,14 @@
     "name": "도구 숙련도",
     "description": "대장장이 도구, 양조업자 용품, 석공 도구 등 장인이 선택한 도구를 사용하여 숙련도를 얻습니다."
   },
+  "Skill Proficiency": {
+    "name": "기술 숙련",
+    "description": "선택한 기술 하나에 숙련을 얻습니다."
+  },
+  "Bonus Feat": {
+    "name": "추가 재주",
+    "description": "선택한 재주 하나를 얻습니다."
+  },
   "Dwarven Toughness": {
     "name": "드워프의 강인함",
     "description": "최대 체력은 1씩 증가하며, 레벨이 오를 때마다 1씩 증가합니다."

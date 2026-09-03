@@ -23,6 +23,14 @@
     "name": "工具熟练程度",
     "description": "你可以熟练使用你选择的工匠工具：铁匠工具、酿酒师工具或泥瓦匠工具。"
   },
+  "Skill Proficiency": {
+    "name": "技能熟练",
+    "description": "你获得一项自选技能的熟练项。"
+  },
+  "Bonus Feat": {
+    "name": "额外专长",
+    "description": "你获得一项自选专长。"
+  },
   "Dwarven Toughness": {
     "name": "矮人韧性",
     "description": "你的最大生命值增加 1，并且每升一级，生命值就会增加 1。"

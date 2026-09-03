@@ -75,6 +75,16 @@ String creationFeatureChoiceDraftKey(CharacterDraft draft) {
   ].join('|');
 }
 
+bool shouldShowCreationFeatureChoiceStep(
+  CharacterDraft draft, {
+  String? featureChoiceLoadErrorKey,
+}) {
+  if (draft.featureChoicesLoaded) {
+    return draft.featureChoiceRequests.isNotEmpty;
+  }
+  return featureChoiceLoadErrorKey == creationFeatureChoiceDraftKey(draft);
+}
+
 String creationFeatureChoiceRequestFeatureLabel(
   FeatureChoiceRequest request,
   SrdI18nService i18n,
@@ -118,7 +128,9 @@ List<FeatureChoiceRequest> _requestsForDraft({
 
   final selectedClass = draft.selectedClass;
   if (selectedClass != null) {
-    for (final feature in classFeatures.where((feature) => feature.level <= 1)) {
+    for (final feature in classFeatures.where(
+      (feature) => feature.level <= 1,
+    )) {
       addAll(
         FeatureChoiceEngine.requestsForClassFeature(
           catalog: catalog,

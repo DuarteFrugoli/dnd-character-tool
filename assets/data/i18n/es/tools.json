@@ -3,49 +3,49 @@
     "name": "Suministros de alquimista"
   },
   "Brewer's supplies": {
-    "name": "Suministros de cervecería"
+    "name": "Suministros de cervecero"
   },
   "Calligrapher's supplies": {
     "name": "Suministros de calígrafo"
   },
   "Carpenter's tools": {
-    "name": "herramientas de carpintero"
+    "name": "Herramientas de carpintero"
   },
   "Cartographer's tools": {
-    "name": "herramientas del cartógrafo"
+    "name": "Herramientas de cartógrafo"
   },
   "Cobbler's tools": {
-    "name": "herramientas de zapatero"
+    "name": "Herramientas de zapatero"
   },
   "Cook's utensils": {
-    "name": "utensilios de cocina"
+    "name": "Utensilios de cocina"
   },
   "Glassblower's tools": {
     "name": "Herramientas de soplador de vidrio"
   },
   "Jeweler's tools": {
-    "name": "herramientas de joyero"
+    "name": "Herramientas de joyero"
   },
   "Leatherworker's tools": {
     "name": "Herramientas de peletero"
   },
   "Mason's tools": {
-    "name": "herramientas de albañil"
+    "name": "Herramientas de albañil"
   },
   "Painter's supplies": {
-    "name": "suministros de pintor"
+    "name": "Suministros de pintor"
   },
   "Potter's tools": {
-    "name": "herramientas de alfarero"
+    "name": "Herramientas de alfarero"
   },
   "Smith's tools": {
-    "name": "herramientas de smith"
+    "name": "Herramientas de herrero"
   },
   "Tinker's tools": {
-    "name": "herramientas de tinker"
+    "name": "Herramientas de hojalatero"
   },
   "Weaver's tools": {
-    "name": "herramientas de tejedor"
+    "name": "Herramientas de tejedor"
   },
   "Woodcarver's tools": {
     "name": "Herramientas de tallador de madera"
@@ -93,13 +93,13 @@
     "name": "viola"
   },
   "Disguise kit": {
-    "name": "kit de disfraz"
+    "name": "Kit de disfraz"
   },
   "Forgery kit": {
-    "name": "kit de falsificación"
+    "name": "Kit de falsificación"
   },
   "Thieves' tools": {
-    "name": "herramientas de ladrones"
+    "name": "Herramientas de ladrón"
   },
   "Herbalism kit": {
     "name": "kit de herboristería"

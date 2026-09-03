@@ -164,56 +164,56 @@
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "収差",
-        "description": "好みの敵のタイプの 1 つとして異常を選択してください。"
+        "name": "異形",
+        "description": "異形を得意な敵の種類の1つとして選択します。"
       },
       "beasts": {
-        "name": "獣",
-        "description": "好きな敵のタイプの 1 つとして獣を選択してください。"
+        "name": "野獣",
+        "description": "野獣を得意な敵の種類の1つとして選択します。"
       },
       "celestials": {
-        "name": "天体",
-        "description": "好みの敵のタイプの 1 つとして天体を選択してください。"
+        "name": "セレスチャル",
+        "description": "セレスチャルを得意な敵の種類の1つとして選択します。"
       },
       "constructs": {
-        "name": "構築物",
-        "description": "好きな敵のタイプの 1 つとして構築物を選択してください。"
+        "name": "人造",
+        "description": "人造を得意な敵の種類の1つとして選択します。"
       },
       "dragons": {
-        "name": "ドラゴンズ",
-        "description": "好きな敵のタイプの 1 つとしてドラゴンを選択してください。"
+        "name": "ドラゴン",
+        "description": "ドラゴンを得意な敵の種類の1つとして選択します。"
       },
       "elementals": {
-        "name": "エレメンタルズ",
-        "description": "好みの敵のタイプの 1 つとしてエレメンタルを選択します。"
+        "name": "エレメンタル",
+        "description": "エレメンタルを得意な敵の種類の1つとして選択します。"
       },
       "fey": {
         "name": "フェイ",
-        "description": "お気に入りの敵のタイプの 1 つとしてフェイを選択してください。"
+        "description": "フェイを得意な敵の種類の1つとして選択します。"
       },
       "fiends": {
         "name": "フィーンド",
-        "description": "好みの敵のタイプの 1 つとして悪魔を選択してください。"
+        "description": "フィーンドを得意な敵の種類の1つとして選択します。"
       },
       "giants": {
-        "name": "ジャイアンツ",
-        "description": "好きな敵のタイプの 1 つとして巨人を選択してください。"
+        "name": "巨人",
+        "description": "巨人を得意な敵の種類の1つとして選択します。"
       },
       "monstrosities": {
         "name": "怪物",
-        "description": "お気に入りの敵のタイプの 1 つとして怪物を選択してください。"
+        "description": "怪物を得意な敵の種類の1つとして選択します。"
       },
       "oozes": {
-        "name": "にじみ出る",
-        "description": "好みの敵のタイプの 1 つとして軟泥を選択してください。"
+        "name": "粘体",
+        "description": "粘体を得意な敵の種類の1つとして選択します。"
       },
       "plants": {
         "name": "植物",
-        "description": "好みの敵のタイプの 1 つとして植物を選択してください。"
+        "description": "植物を得意な敵の種類の1つとして選択します。"
       },
       "undead": {
         "name": "アンデッド",
-        "description": "好きな敵のタイプの 1 つとしてアンデッドを選択してください。"
+        "description": "アンデッドを得意な敵の種類の1つとして選択します。"
       }
     },
     "favored_terrain": {
@@ -473,7 +473,7 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "スミスのツール",
+              "name": "鍛冶道具",
               "description": "鍛冶屋の道具の扱いに習熟します。"
             },
             "brewers_supplies": {

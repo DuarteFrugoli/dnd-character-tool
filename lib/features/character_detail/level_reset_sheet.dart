@@ -57,8 +57,7 @@ class _ResetLevelsConfirmDialog extends StatefulWidget {
       _ResetLevelsConfirmDialogState();
 }
 
-class _ResetLevelsConfirmDialogState
-    extends State<_ResetLevelsConfirmDialog> {
+class _ResetLevelsConfirmDialogState extends State<_ResetLevelsConfirmDialog> {
   static const _initialDelaySeconds = 3;
   Timer? _timer;
   int _secondsRemaining = _initialDelaySeconds;
@@ -109,10 +108,7 @@ class _ResetLevelsConfirmDialogState
 }
 
 class _LevelResetFlow extends ConsumerStatefulWidget {
-  const _LevelResetFlow({
-    required this.character,
-    required this.characterId,
-  });
+  const _LevelResetFlow({required this.character, required this.characterId});
 
   final Character character;
   final String characterId;
@@ -161,7 +157,8 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
   int get _initialHp {
     final srdClass = _selectedClass;
     if (srdClass == null) return 1;
-    return (srdClass.hitDie + widget.character.abilityScores.constitutionModifier)
+    return (srdClass.hitDie +
+            widget.character.abilityScores.constitutionModifier)
         .clamp(1, 9999)
         .toInt();
   }
@@ -445,9 +442,7 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context)!.detailErrorLoading(
-              error.toString(),
-            ),
+            AppLocalizations.of(context)!.detailErrorLoading(error.toString()),
           ),
         ),
       );
@@ -462,19 +457,20 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
     final targetLevel = _targetRebuildLevel;
     final messenger = ScaffoldMessenger.of(context);
 
-    for (var nextLevel = current.totalLevel + 1;
-        nextLevel <= targetLevel;
-        nextLevel++) {
+    for (
+      var nextLevel = current.totalLevel + 1;
+      nextLevel <= targetLevel;
+      nextLevel++
+    ) {
       messenger
         ..hideCurrentSnackBar()
         ..showSnackBar(
           SnackBar(
             duration: const Duration(seconds: 2),
             content: Text(
-              AppLocalizations.of(context)!.resetLevelsRebuildStep(
-                nextLevel,
-                targetLevel,
-              ),
+              AppLocalizations.of(
+                context,
+              )!.resetLevelsRebuildStep(nextLevel, targetLevel),
             ),
           ),
         );
@@ -750,8 +746,7 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
             ),
           ],
           for (var i = 0; i < choiceRequests.length; i++) ...[
-            if (fixedTools.isNotEmpty || i > 0)
-              const SizedBox(height: 12),
+            if (fixedTools.isNotEmpty || i > 0) const SizedBox(height: 12),
             _buildToolChoice(context, data, choiceRequests[i]),
           ],
         ],
@@ -950,8 +945,9 @@ String _featureChoiceRequestFeatureLabel(
     FeatureChoiceSourceType.feat =>
       i18n.featName(request.sourceName ?? request.featureName) ??
           request.featureName,
-    FeatureChoiceSourceType.multiclassProficiency =>
-      i18n.className(request.sourceClass),
+    FeatureChoiceSourceType.multiclassProficiency => i18n.className(
+      request.sourceClass,
+    ),
     _ => request.featureName,
   };
 }
@@ -1027,12 +1023,13 @@ class _CountChip extends StatelessWidget {
     final complete = current >= total;
     return Chip(
       label: Text(
-        AppLocalizations.of(context)!.featureChoicesSelectedCount(
-          current,
-          total,
-        ),
+        AppLocalizations.of(
+          context,
+        )!.featureChoicesSelectedCount(current, total),
       ),
-      backgroundColor: complete ? scheme.primaryContainer : scheme.errorContainer,
+      backgroundColor: complete
+          ? scheme.primaryContainer
+          : scheme.errorContainer,
     );
   }
 }

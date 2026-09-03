@@ -43,8 +43,9 @@ String _featureChoiceRequestFeatureLabel(
     FeatureChoiceSourceType.feat =>
       i18n.featName(request.sourceName ?? request.featureName) ??
           request.featureName,
-    FeatureChoiceSourceType.multiclassProficiency =>
-      i18n.className(request.sourceClass),
+    FeatureChoiceSourceType.multiclassProficiency => i18n.className(
+      request.sourceClass,
+    ),
     _ => request.featureName,
   };
 }
@@ -524,7 +525,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
             name: skillName,
             description: _skills
                 .firstWhereOrNull(
-                  (skill) => skill.name.toLowerCase() == skillName.toLowerCase(),
+                  (skill) =>
+                      skill.name.toLowerCase() == skillName.toLowerCase(),
                 )
                 ?.ability
                 .toUpperCase(),
@@ -686,8 +688,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       );
     }
 
-    final multiclassSkillProficiencies =
-        _multiclassSkillProficienciesGained();
+    final multiclassSkillProficiencies = _multiclassSkillProficienciesGained();
     final multiclassProficiencyFeatureLabels =
         _multiclassProficiencyFeatureLabelsGained();
 

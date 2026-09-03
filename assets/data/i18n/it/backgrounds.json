@@ -138,10 +138,10 @@
   "Sailor": {
     "name": "Marinaio",
     "startingEquipment": [
-      "Perno di assicurazione (mazza)",
-      "50 piedi di corda di seta",
-      "Fascino fortunato",
-      "Abiti comuni",
+      "Caviglia d'ormeggio (randello)",
+      "15 metri di corda di seta",
+      "portafortuna",
+      "abiti comuni",
       "10 mo"
     ],
     "feature": {

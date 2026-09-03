@@ -1,8 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-const keepScreenOnCharacterSheetPrefsKey =
-    'keep_screen_on_character_sheet';
+const keepScreenOnCharacterSheetPrefsKey = 'keep_screen_on_character_sheet';
 
 final keepScreenOnCharacterSheetProvider =
     NotifierProvider<KeepScreenOnCharacterSheetNotifier, bool>(

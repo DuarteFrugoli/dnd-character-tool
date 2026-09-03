@@ -165,55 +165,55 @@
     "favored_enemies": {
       "aberrations": {
         "name": "Aberraciones",
-        "description": "Elige las aberraciones como uno de tus tipos de enemigos favoritos."
+        "description": "Elige aberraciones como uno de tus tipos de enemigo predilecto."
       },
       "beasts": {
-        "name": "Ganado",
-        "description": "Elige bestias como uno de tus tipos de enemigos favoritos."
+        "name": "Bestias",
+        "description": "Elige bestias como uno de tus tipos de enemigo predilecto."
       },
       "celestials": {
         "name": "Celestiales",
-        "description": "Elige a los celestiales como uno de tus tipos de enemigos favoritos."
+        "description": "Elige celestiales como uno de tus tipos de enemigo predilecto."
       },
       "constructs": {
-        "name": "Construcciones",
-        "description": "Elige construcciones como uno de tus tipos de enemigos favoritos."
+        "name": "Constructos",
+        "description": "Elige constructos como uno de tus tipos de enemigo predilecto."
       },
       "dragons": {
-        "name": "dragones",
-        "description": "Elige dragones como uno de tus tipos de enemigos favoritos."
+        "name": "Dragones",
+        "description": "Elige dragones como uno de tus tipos de enemigo predilecto."
       },
       "elementals": {
         "name": "Elementales",
-        "description": "Elige elementales como uno de tus tipos de enemigos favoritos."
+        "description": "Elige elementales como uno de tus tipos de enemigo predilecto."
       },
       "fey": {
-        "name": "Vidente",
-        "description": "Elige a los hadas como uno de tus tipos de enemigos favoritos."
+        "name": "Feéricos",
+        "description": "Elige feéricos como uno de tus tipos de enemigo predilecto."
       },
       "fiends": {
-        "name": "Demonios",
-        "description": "Elige demonios como uno de tus tipos de enemigos favoritos."
+        "name": "Infernales",
+        "description": "Elige infernales como uno de tus tipos de enemigo predilecto."
       },
       "giants": {
         "name": "Gigantes",
-        "description": "Elige gigantes como uno de tus tipos de enemigos favoritos."
+        "description": "Elige gigantes como uno de tus tipos de enemigo predilecto."
       },
       "monstrosities": {
         "name": "Monstruosidades",
-        "description": "Elige monstruosidades como uno de tus tipos de enemigos favoritos."
+        "description": "Elige monstruosidades como uno de tus tipos de enemigo predilecto."
       },
       "oozes": {
-        "name": "Rezuma",
-        "description": "Elige los mocos como uno de tus tipos de enemigos favoritos."
+        "name": "Cienos",
+        "description": "Elige cienos como uno de tus tipos de enemigo predilecto."
       },
       "plants": {
         "name": "Plantas",
-        "description": "Elige plantas como uno de tus tipos de enemigos favoritos."
+        "description": "Elige plantas como uno de tus tipos de enemigo predilecto."
       },
       "undead": {
-        "name": "no-muertos",
-        "description": "Elige a los muertos vivientes como uno de tus tipos de enemigos favoritos."
+        "name": "Muertos vivientes",
+        "description": "Elige muertos vivientes como uno de tus tipos de enemigo predilecto."
       }
     },
     "favored_terrain": {
@@ -473,7 +473,7 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Herramientas de Smith",
+              "name": "Herramientas de herrero",
               "description": "Adquiera competencia con las herramientas de herrería."
             },
             "brewers_supplies": {

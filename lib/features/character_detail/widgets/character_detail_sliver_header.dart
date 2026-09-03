@@ -120,9 +120,7 @@ class _CharacterDetailFlexibleHeader extends StatelessWidget {
               right: 0,
               bottom: CharacterDetailTabBar.height,
               height: 1,
-              child: ColoredBox(
-                color: scheme.primary.withValues(alpha: 0.28),
-              ),
+              child: ColoredBox(color: scheme.primary.withValues(alpha: 0.28)),
             ),
             Positioned(
               left: 0,

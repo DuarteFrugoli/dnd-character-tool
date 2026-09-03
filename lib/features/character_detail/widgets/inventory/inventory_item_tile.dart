@@ -538,7 +538,8 @@ class ItemTile extends ConsumerWidget {
           ),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-        onTap: () => showItemDetailsSheet(context, ref, item, displayName, meta),
+        onTap: () =>
+            showItemDetailsSheet(context, ref, item, displayName, meta),
         leading: canEquip
             ? MouseRegion(
                 cursor: SystemMouseCursors.click,

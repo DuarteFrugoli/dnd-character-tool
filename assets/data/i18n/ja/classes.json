@@ -152,15 +152,15 @@
     "subclassFeatureName": "ドルイドサークル",
     "weaponProficiencies": [
       "クラブ",
-      "短剣",
+      "ダガー",
       "ダーツ",
-      "やり投げ",
+      "ジャヴェリン",
       "メイス",
       "クォータースタッフ",
       "シミター",
-      "鎌",
+      "シックル",
       "スリング",
-      "槍"
+      "スピア"
     ],
     "startingEquipment": {
       "fixed": [
@@ -255,7 +255,7 @@
     "name": "モンク",
     "subclassFeatureName": "修道院の伝統",
     "weaponProficiencies": [
-      "単純",
+      "単純武器",
       "ショートソード"
     ],
     "startingEquipment": {
@@ -386,9 +386,9 @@
     "name": "ローグ",
     "subclassFeatureName": "ローギッシュのアーキタイプ",
     "weaponProficiencies": [
-      "単純",
-      "ハンドクロスボウ",
-      "長剣",
+      "単純武器",
+      "ハンド・クロスボウ",
+      "ロングソード",
       "レイピア",
       "ショートソード"
     ],

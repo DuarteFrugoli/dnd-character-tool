@@ -5,7 +5,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-2.0.1-orange)
+![Version](https://img.shields.io/badge/version-2.0.3-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
@@ -80,9 +80,8 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
-- Export raw **JSON** as an advanced copy/paste fallback
 - Export/import **`.dndbackup`** files for all characters
-- Import by `.dndchar` file or raw JSON
+- Import by `.dndchar` or `.dndbackup` file
 - Cross-platform: characters exported on mobile import correctly on web and vice-versa
 - Web stores characters and character images in IndexedDB; native platforms store local JSON/image files
 
@@ -222,9 +221,8 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
-- Exportar **JSON** cru como fallback avançado de copiar/colar
 - Exportar/importar arquivos **`.dndbackup`** com todos os personagens
-- Importar por arquivo `.dndchar` ou JSON cru
+- Importar por arquivo `.dndchar` ou `.dndbackup`
 - Cross-platform: personagens exportados no celular importam corretamente na web e vice-versa
 - Na web, personagens e imagens ficam no IndexedDB; nas plataformas nativas, ficam em arquivos JSON/imagem locais
 

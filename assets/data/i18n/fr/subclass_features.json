@@ -86,11 +86,11 @@
         "description": "Au 1er niveau, vous apprenez deux langues de votre choix. Vous maîtrisez également deux des compétences suivantes : Arcanes, Histoire, Nature ou Religion. Votre bonus de maîtrise est doublé pour tout test de capacité que vous effectuez et qui utilise l'une de ces compétences."
       },
       "Channel Divinity: Knowledge of the Ages": {
-        "name": "Channel Divinity : Connaissance des âges",
+        "name": "Canalisation divine : Connaissance des âges",
         "description": "À partir du niveau 2, vous pouvez utiliser votre canal divinité pour puiser dans un puits divin de connaissances. En tant qu'action, vous choisissez une compétence ou un outil. Pendant 10 minutes, vous maîtrisez la compétence ou l’outil choisi."
       },
       "Channel Divinity: Read Thoughts": {
-        "name": "Channel Divinity : lire les pensées",
+        "name": "Canalisation divine : lire les pensées",
         "description": "Au niveau 6, vous pouvez utiliser votre canal divinité pour lire les pensées d'une créature. Vous lancez la détection des pensées (le DD de sauvegarde est égal à votre DD de sauvegarde de lancement de sorts de clerc) sans aucun emplacement de sort ni composant requis. La cible qui rate son jet de sauvegarde est alors charmée par vous pendant 1 minute ou jusqu'à ce que vous lui infligiez des dégâts."
       },
       "Potent Spellcasting": {
@@ -112,7 +112,7 @@
         "description": "Dès le niveau 1 également, vos sorts de soins sont plus efficaces. À chaque fois que vous utilisez un sort de niveau 1 ou supérieur pour redonner des points de vie à une créature, la créature récupère des points de vie supplémentaires égaux à 2 + le niveau du sort."
       },
       "Channel Divinity: Preserve Life": {
-        "name": "Channel Divinity : Préserver la vie",
+        "name": "Canalisation divine : Préserver la vie",
         "description": "À partir du niveau 2, par une action, vous présentez votre symbole sacré et évoquez une énergie de guérison qui peut restaurer un nombre de points de vie égal à cinq fois votre niveau de clerc. Choisissez n'importe quelle créature à moins de 9 mètres de vous et répartissez ces points de vie entre elles. Cette fonctionnalité ne peut restaurer une créature qu'à la moitié de son maximum de points de vie."
       },
       "Blessed Healer": {
@@ -138,7 +138,7 @@
         "description": "Également au 1er niveau, lorsque vous êtes attaqué par une créature que vous pouvez voir à moins de 9 mètres de vous, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque, provoquant un éclat de lumière devant l'attaquant. Vous pouvez utiliser cette fonctionnalité un nombre de fois égal à votre modificateur de Sagesse (au minimum une fois), et retrouver toutes les utilisations lors d'un repos long."
       },
       "Channel Divinity: Radiance of the Dawn": {
-        "name": "Channel Divinity : Radiance de l'aube",
+        "name": "Canalisation divine : Radiance de l'aube",
         "description": "À partir du niveau 2, par une action, vous présentez votre symbole sacré et toute obscurité magique dans un rayon de 9 mètres autour de vous est dissipée. De plus, chaque créature hostile dans un rayon de 9 mètres doit effectuer un jet de sauvegarde de Constitution, subissant 2d10 + votre niveau de prêtre en dégâts radiants en cas d'échec, ou la moitié en cas de réussite."
       },
       "Improved Flare": {
@@ -164,7 +164,7 @@
         "description": "Au niveau 1 également, vous maîtrisez le maniement des armures lourdes."
       },
       "Channel Divinity: Charm Animals and Plants": {
-        "name": "Channel Divinity : Charmer les animaux et les plantes",
+        "name": "Canalisation divine : Charmer les animaux et les plantes",
         "description": "À partir du niveau 2, par une action, vous présentez votre symbole sacré et invoquez le nom de votre divinité. Chaque bête ou créature végétale qui peut vous voir dans un rayon de 9 mètres doit effectuer un jet de sauvegarde de Sagesse. S'il échoue, vous le charmez pendant 1 minute ou jusqu'à ce qu'il subisse des dégâts."
       },
       "Dampen Elements": {
@@ -190,7 +190,7 @@
         "description": "Également au 1er niveau, lorsqu'une créature à moins de 1,50 mètre de vous et que vous pouvez voir vous frappe avec une attaque, vous pouvez utiliser votre réaction pour amener la créature à effectuer un jet de sauvegarde de Dextérité. Il subit 2d8 dégâts de foudre ou de tonnerre (au choix) en cas d'échec, ou la moitié en cas de réussite. Vous pouvez utiliser cette fonctionnalité un nombre de fois égal à votre modificateur de Sagesse (au minimum une fois) et retrouver toutes les utilisations lors d'un repos long."
       },
       "Channel Divinity: Destructive Wrath": {
-        "name": "Channel Divinity : Colère Destructrice",
+        "name": "Canalisation divine : Colère Destructrice",
         "description": "À partir du niveau 2, lorsque vous lancez des dégâts de foudre ou de tonnerre, vous pouvez utiliser votre canal divinité pour infliger un maximum de dégâts au lieu de lancer."
       },
       "Thunderbolt Strike": {
@@ -212,11 +212,11 @@
         "description": "À partir du choix de ce domaine au niveau 1, vous pouvez utiliser votre action pour toucher une créature volontaire autre que vous afin de lui donner un avantage aux tests de Dextérité (Discrétion). Cette bénédiction dure 1 heure ou jusqu'à ce que vous utilisiez à nouveau cette fonctionnalité."
       },
       "Channel Divinity: Invoke Duplicity": {
-        "name": "Channel Divinity : Invoquer la duplicité",
+        "name": "Canalisation divine : Invoquer la duplicité",
         "description": "À partir du niveau 2, par une action, vous créez une copie illusoire parfaite de vous-même qui dure 1 minute. L'illusion apparaît dans un espace inoccupé que vous pouvez voir à moins de 9 mètres de vous. Par une action bonus pendant votre tour, vous pouvez déplacer l'illusion jusqu'à 9 mètres. Vous pouvez lancer des sorts comme si vous étiez dans l'espace de l'illusion, mais vous devez utiliser vos propres sens."
       },
       "Channel Divinity: Cloak of Shadows": {
-        "name": "Channel Divinity : Cape des ombres",
+        "name": "Canalisation divine : Cape des ombres",
         "description": "À partir du niveau 6, par une action, vous devenez invisible jusqu'à la fin de votre prochain tour. Vous devenez visible si vous attaquez ou lancez un sort."
       },
       "Divine Strike": {
@@ -238,11 +238,11 @@
         "description": "Dès le niveau 1, lorsque vous utilisez l'action Attaque, vous pouvez effectuer une attaque avec une arme en guise d'action bonus. Vous pouvez utiliser cette fonctionnalité un nombre de fois égal à votre modificateur de Sagesse (au minimum une fois) et retrouver toutes les utilisations lors d'un repos long."
       },
       "Channel Divinity: Guided Strike": {
-        "name": "Channel Divinity : Frappe guidée",
+        "name": "Canalisation divine : Frappe guidée",
         "description": "À partir du niveau 2, lorsque vous effectuez un jet d'attaque, vous pouvez utiliser votre Canal Divinité pour gagner un bonus de +10 au jet. Vous faites ce choix avant ou après avoir vu le jet, mais avant que les effets ne soient appliqués."
       },
       "Channel Divinity: War God's Blessing": {
-        "name": "Channel Divinity : La bénédiction de Dieu de la guerre",
+        "name": "Canalisation divine : La bénédiction de Dieu de la guerre",
         "description": "Au niveau 6, lorsqu'une créature à moins de 9 mètres de vous effectue un jet d'attaque, vous pouvez utiliser votre réaction pour accorder à cette créature un bonus de +10 au jet en utilisant votre Canal Divinité."
       },
       "Divine Strike": {
@@ -424,11 +424,11 @@
   "Paladin": {
     "Oath of Devotion": {
       "Channel Divinity: Sacred Weapon": {
-        "name": "Channel Divinity : Arme sacrée",
-        "description": "Par une action, vous pouvez imprégner une arme que vous tenez d’énergie positive, en utilisant votre Channel Divinity. Pendant 1 minute, vous ajoutez votre modificateur de Charisme aux jets d'attaque effectués avec cette arme (minimum +1). L'arme émet également une lumière vive dans un rayon de 20 pieds et une lumière faible 20 pieds au-delà. Si l’arme n’est pas déjà magique, elle le devient pour la durée."
+        "name": "Canalisation divine : Arme sacrée",
+        "description": "Par une action, vous pouvez imprégner une arme que vous tenez d’énergie positive, en utilisant votre Canalisation divine. Pendant 1 minute, vous ajoutez votre modificateur de Charisme aux jets d'attaque effectués avec cette arme (minimum +1). L'arme émet également une lumière vive dans un rayon de 20 pieds et une lumière faible 20 pieds au-delà. Si l’arme n’est pas déjà magique, elle le devient pour la durée."
       },
       "Channel Divinity: Turn the Unholy": {
-        "name": "Channel Divinity : Transformez l'Impie",
+        "name": "Canalisation divine : Transformez l'Impie",
         "description": "En guise d'action, vous présentez votre symbole sacré et prononcez une prière censurant les démons et les morts-vivants, en utilisant votre canal divinité. Chaque démon ou mort-vivant qui peut vous voir ou vous entendre dans un rayon de 9 mètres doit effectuer un jet de sauvegarde de Sagesse. En cas d'échec, la créature est retournée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts."
       },
       "Aura of Devotion": {
@@ -446,11 +446,11 @@
     },
     "Oath of the Ancients": {
       "Channel Divinity: Nature's Wrath": {
-        "name": "Channel Divinity : la colère de la nature",
+        "name": "Canalisation divine : la colère de la nature",
         "description": "Par une action, vous pouvez faire surgir des vignes spectrales et atteindre une créature à moins de 3 mètres de vous que vous pouvez voir. La créature doit réussir un jet de sauvegarde de Force ou de Dextérité (au choix) ou être retenue. Bien qu'elle soit retenue par les vignes, la créature répète le jet de sauvegarde à la fin de chacun de ses tours. En cas de succès, il se libère et les vignes disparaissent."
       },
       "Channel Divinity: Turn the Faithless": {
-        "name": "Channel Divinity : Transformez les infidèles",
+        "name": "Canalisation divine : Transformez les infidèles",
         "description": "Par une action, vous présentez votre symbole sacré, et chaque fée ou démon à moins de 9 mètres de vous et qui peut vous entendre doit effectuer un jet de sauvegarde de Sagesse. En cas d'échec de la sauvegarde, la créature est retournée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts."
       },
       "Aura of Warding": {
@@ -468,11 +468,11 @@
     },
     "Oath of Vengeance": {
       "Channel Divinity: Abjure Enemy": {
-        "name": "Channel Divinity : abjurer l'ennemi",
+        "name": "Canalisation divine : abjurer l'ennemi",
         "description": "En guise d'action, vous présentez votre symbole sacré et prononcez une prière de dénonciation, en utilisant votre Divinité Canal. Choisissez une créature à moins de 60 pieds de vous et que vous pouvez voir. Cette créature doit réussir un jet de sauvegarde de Sagesse. Les démons et les morts-vivants sont désavantagés lors de ce jet de sauvegarde. En cas d'échec, la créature est effrayée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts. Tant qu'elle est effrayée, la vitesse de la créature est de 0 et elle ne peut bénéficier d'aucun bonus à sa vitesse."
       },
       "Channel Divinity: Vow of Enmity": {
-        "name": "Channel Divinity : Vœu d'inimitié",
+        "name": "Canalisation divine : Vœu d'inimitié",
         "description": "Par une action bonus, vous pouvez prononcer un vœu d'inimitié contre une créature que vous pouvez voir à moins de 3 mètres de vous, en utilisant votre Canal Divinité. Vous bénéficiez d'un avantage aux jets d'attaque contre la créature pendant 1 minute ou jusqu'à ce qu'elle tombe à 0 point de vie ou tombe inconsciente."
       },
       "Relentless Avenger": {
@@ -493,7 +493,7 @@
     "Hunter": {
       "Hunter's Prey": {
         "name": "La proie du chasseur",
-        "description": "Au niveau 3, vous gagnez l'une des fonctionnalités suivantes de votre choix. Tueur de colosses : lorsque vous touchez une créature avec une attaque avec une arme, la créature subit 1d8 dégâts supplémentaires si elle est inférieure à son maximum de points de vie. Vous ne pouvez infliger ces dégâts supplémentaires qu’une seule fois par tour. Tueur de géant : lorsqu'une créature de grande taille ou plus à moins de 1,50 mètre de vous vous frappe ou vous manque avec une attaque, vous pouvez utiliser votre réaction pour attaquer cette créature immédiatement après. Horde Breaker : Une fois à chacun de vos tours, lorsque vous effectuez une attaque avec une arme, vous pouvez effectuer une autre attaque avec la même arme contre une créature différente qui se trouve à moins de 1,50 mètre de la cible d'origine."
+        "description": "Au niveau 3, vous gagnez l'une des fonctionnalités suivantes de votre choix. Tueur de colosses : lorsque vous touchez une créature avec une attaque avec une arme, la créature subit 1d8 dégâts supplémentaires si elle est inférieure à son maximum de points de vie. Vous ne pouvez infliger ces dégâts supplémentaires qu’une seule fois par tour. Tueur de géant : lorsqu'une créature de grande taille ou plus à moins de 1,50 mètre de vous vous frappe ou vous manque avec une attaque, vous pouvez utiliser votre réaction pour attaquer cette créature immédiatement après. Briseur de hordes : Une fois à chacun de vos tours, lorsque vous effectuez une attaque avec une arme, vous pouvez effectuer une autre attaque avec la même arme contre une créature différente qui se trouve à moins de 1,50 mètre de la cible d'origine."
       },
       "Defensive Tactics": {
         "name": "Tactiques défensives",
@@ -578,7 +578,7 @@
         "description": "Lorsque vous atteignez le niveau 3, vous augmentez vos capacités espiègles avec des capacités magiques. L'intelligence est votre capacité à lancer des sorts pour vos sorts de sorcier. Vous connaissez trois sorts de sorcier (main de mage plus deux autres de votre choix) et trois sorts de sorcier de 1er niveau, dont au moins deux doivent provenir des écoles d'enchantement et d'illusion."
       },
       "Mage Hand Legerdemain": {
-        "name": "Legerdemain de la main du mage",
+        "name": "Main du mage améliorée",
         "description": "À partir du niveau 3, lorsque vous lancez Main de mage, vous pouvez rendre la main spectrale invisible et effectuer des tâches supplémentaires avec elle : ranger ou récupérer des objets dans des conteneurs portés par une autre créature, ou utiliser des outils de voleur pour crocheter des serrures et désamorcer des pièges à distance. Vous pouvez le faire sans vous faire remarquer si vous réussissez un test de prestidigitation contesté par le test de perception de la créature."
       },
       "Magical Ambush": {

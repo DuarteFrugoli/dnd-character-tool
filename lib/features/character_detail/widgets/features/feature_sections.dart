@@ -1,10 +1,7 @@
 import '../../character_detail_dependencies.dart';
 import 'feature_support.dart';
 
-PageStorageKey<String> _featureExpansionKey(
-  String scope,
-  List<Object?> parts,
-) {
+PageStorageKey<String> _featureExpansionKey(String scope, List<Object?> parts) {
   final keyParts = [
     'featureExpansion',
     scope,
@@ -234,10 +231,7 @@ class BackgroundFeatureSection extends ConsumerWidget {
       surfaceTintColor: scheme.secondary,
       shape: _featureCardShape(accentColor: scheme.secondary),
       child: ExpansionTile(
-        key: _featureExpansionKey('background', [
-          backgroundName,
-          featureName,
-        ]),
+        key: _featureExpansionKey('background', [backgroundName, featureName]),
         title: Row(
           children: [
             Expanded(
@@ -618,10 +612,7 @@ class ExtraFeaturesSection extends ConsumerWidget {
       final sourceSubclass = _sourceSubclassForExtra(f);
       final requests = _requestsForExtra(f);
       final usageRef =
-          data.featureUsageCatalog.classFeature(
-            sourceClass,
-            f.name,
-          ) ??
+          data.featureUsageCatalog.classFeature(sourceClass, f.name) ??
           data.featureUsageCatalog.subclassFeature(
             sourceClass,
             sourceSubclass,

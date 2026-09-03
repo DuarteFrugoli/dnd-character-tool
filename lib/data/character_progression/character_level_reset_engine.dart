@@ -59,16 +59,16 @@ class CharacterLevelResetEngine {
     );
     final preservedFeatureChoices = character.featureChoices
         .where(
-          (choice) => _shouldPreserveFeatureChoice(
-            choice,
-            preservedLevelOneFeatNames,
-          ),
+          (choice) =>
+              _shouldPreserveFeatureChoice(choice, preservedLevelOneFeatNames),
         )
         .toList();
     final preservedExtraFeatures = character.extraFeatures
         .where(_shouldPreserveExtraFeature)
         .toList();
-    final preservedSpells = character.spells.where(_shouldPreserveSpell).toList();
+    final preservedSpells = character.spells
+        .where(_shouldPreserveSpell)
+        .toList();
 
     var updated = character.copyWith(
       dataVersion: currentCharacterDataVersion,
@@ -78,9 +78,8 @@ class CharacterLevelResetEngine {
       level: 1,
       classes: classes,
       experiencePoints: 0,
-      proficiencyBonus: CharacterProgressionEngine.proficiencyBonusForTotalLevel(
-        1,
-      ),
+      proficiencyBonus:
+          CharacterProgressionEngine.proficiencyBonusForTotalLevel(1),
       hitPoints: HitPoints(maximum: safeMaximumHp, current: safeMaximumHp),
       hitDicePools: [
         CharacterHitDiePool(
@@ -90,9 +89,7 @@ class CharacterLevelResetEngine {
           sourceClassEntryId: primaryClassEntryId,
         ),
       ],
-      savingThrowProficiencies: _uniqueStrings(
-        result.savingThrowProficiencies,
-      ),
+      savingThrowProficiencies: _uniqueStrings(result.savingThrowProficiencies),
       skillProficiencies: _uniqueStrings([
         ...character.skillProficiencies,
         ...result.skillProficiencies,
@@ -101,10 +98,7 @@ class CharacterLevelResetEngine {
         ...character.features,
         ...result.proficiencyFeatureLabels,
       ]),
-      extraFeatures: [
-        ...preservedExtraFeatures,
-        ...result.extraFeatures,
-      ],
+      extraFeatures: [...preservedExtraFeatures, ...result.extraFeatures],
       featureChoices: FeatureChoiceEngine.upsertChoices(
         preservedFeatureChoices,
         result.featureChoices,
@@ -143,7 +137,9 @@ class CharacterLevelResetEngine {
         final sourceName = choice.sourceName?.toLowerCase();
         return (sourceName != null &&
                 preservedLevelOneFeatNames.contains(sourceName)) ||
-            preservedLevelOneFeatNames.contains(choice.featureName.toLowerCase());
+            preservedLevelOneFeatNames.contains(
+              choice.featureName.toLowerCase(),
+            );
       default:
         return true;
     }

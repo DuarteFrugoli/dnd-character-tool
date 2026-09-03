@@ -240,7 +240,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   }
 
   Widget _buildLoaded(CharacterHeaderVm header) {
-    if (header.dataVersion < currentCharacterDataVersion) {
+    if (header.needsDataUpdate) {
       return _buildMaintenanceRequired(header);
     }
 

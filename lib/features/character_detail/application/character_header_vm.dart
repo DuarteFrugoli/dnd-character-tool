@@ -50,6 +50,8 @@ class CharacterHeaderVm {
   final int level;
   final bool xpTrackingEnabled;
 
+  bool get needsDataUpdate => dataVersion < currentCharacterDataVersion;
+
   @override
   bool operator ==(Object other) {
     return other is CharacterHeaderVm &&

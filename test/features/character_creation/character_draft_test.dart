@@ -2,6 +2,7 @@ import 'package:dnd_character_tool/data/datasources/srd/srd_models.dart';
 import 'package:dnd_character_tool/data/feature_choice_engine.dart';
 import 'package:dnd_character_tool/data/models/models.dart';
 import 'package:dnd_character_tool/features/character_creation/character_draft_provider.dart';
+import 'package:dnd_character_tool/features/character_creation/creation_feature_choice_loader.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _baseAttributes = {
@@ -25,6 +26,31 @@ const _fighter = SrdClass(
   subclassLevel: 3,
   subclassFeatureName: 'Martial Archetype',
   startingGoldDice: '5d4',
+);
+
+const _fighterWithEquipmentChoices = SrdClass(
+  name: 'Fighter',
+  hitDie: 10,
+  primaryAbility: ['Strength'],
+  savingThrows: ['Strength', 'Constitution'],
+  armorProficiencies: [],
+  weaponProficiencies: [],
+  toolProficiencies: [],
+  skillChoices: SrdSkillChoice(count: 0, from: []),
+  subclassLevel: 3,
+  subclassFeatureName: 'Martial Archetype',
+  startingGoldDice: '5d4',
+  startingEquipment: SrdClassStartingEquipment(
+    fixed: [],
+    choices: [
+      SrdEquipmentChoiceGroup(
+        options: [
+          ['Longsword'],
+          ['Shortsword'],
+        ],
+      ),
+    ],
+  ),
 );
 
 const _background = SrdBackground(
@@ -77,6 +103,7 @@ const _variantHuman = SrdRace(
 );
 
 CharacterDraft _draft({
+  SrdClass selectedClass = _fighter,
   SrdRace race = _human,
   bool freeAsi = false,
   Map<String, int> freeAsiDistribution = const {},
@@ -84,11 +111,12 @@ CharacterDraft _draft({
   bool featureChoicesLoaded = true,
   List<FeatureChoiceRequest> featureChoiceRequests = const [],
   List<CharacterFeatureChoice> featureChoices = const [],
+  List<int?> classEquipmentChoices = const [],
   int? rolledStartingGold = 100,
 }) {
   return CharacterDraft(
     id: 'draft-id',
-    selectedClass: _fighter,
+    selectedClass: selectedClass,
     selectedRace: race,
     selectedBackground: _background,
     baseAttributes: _baseAttributes,
@@ -98,6 +126,7 @@ CharacterDraft _draft({
     featureChoicesLoaded: featureChoicesLoaded,
     featureChoiceRequests: featureChoiceRequests,
     featureChoices: featureChoices,
+    classEquipmentChoices: classEquipmentChoices,
     rolledStartingGold: rolledStartingGold,
   );
 }
@@ -256,6 +285,43 @@ void main() {
 
       expect(draft.isComplete, isTrue);
     });
+
+    test('hides the creation step when loaded requests are empty', () {
+      final draft = _draft(
+        featureChoicesLoaded: true,
+        featureChoiceRequests: const [],
+      );
+
+      expect(shouldShowCreationFeatureChoiceStep(draft), isFalse);
+    });
+
+    test('shows the creation step when loaded requests are pending', () {
+      final draft = _draft(
+        featureChoicesLoaded: true,
+        featureChoiceRequests: const [featRequest],
+      );
+
+      expect(shouldShowCreationFeatureChoiceStep(draft), isTrue);
+    });
+
+    test('keeps the creation step visible after a matching load error', () {
+      final draft = _draft(featureChoicesLoaded: false);
+
+      expect(
+        shouldShowCreationFeatureChoiceStep(
+          draft,
+          featureChoiceLoadErrorKey: creationFeatureChoiceDraftKey(draft),
+        ),
+        isTrue,
+      );
+      expect(
+        shouldShowCreationFeatureChoiceStep(
+          draft,
+          featureChoiceLoadErrorKey: 'other-draft',
+        ),
+        isFalse,
+      );
+    });
   });
 
   group('CharacterDraft review requirements', () {
@@ -271,6 +337,24 @@ void main() {
 
       expect(firstCreationReviewIssue(draft), isNull);
       expect(draft.isComplete, isTrue);
+    });
+
+    test('reports class equipment choices as a review requirement', () {
+      final draft = _draft(selectedClass: _fighterWithEquipmentChoices);
+
+      expect(creationReviewFieldsComplete(draft), isFalse);
+      expect(
+        firstCreationReviewIssue(draft),
+        CreationReviewIssue.classEquipment,
+      );
+
+      final complete = _draft(
+        selectedClass: _fighterWithEquipmentChoices,
+        classEquipmentChoices: const [0],
+      );
+
+      expect(firstCreationReviewIssue(complete), isNull);
+      expect(creationReviewFieldsComplete(complete), isTrue);
     });
   });
 }

@@ -3,7 +3,7 @@
     "name": "연금술사의 보급품"
   },
   "Brewer's supplies": {
-    "name": "브루어의 소모품"
+    "name": "양조가의 도구"
   },
   "Calligrapher's supplies": {
     "name": "서예가의 용품"
@@ -15,13 +15,13 @@
     "name": "지도 제작자의 도구"
   },
   "Cobbler's tools": {
-    "name": "코블러의 도구"
+    "name": "구두장이의 도구"
   },
   "Cook's utensils": {
     "name": "요리사의 도구"
   },
   "Glassblower's tools": {
-    "name": "Glassblower의 도구"
+    "name": "유리공의 도구"
   },
   "Jeweler's tools": {
     "name": "보석상 도구"
@@ -30,22 +30,22 @@
     "name": "가죽세공인의 도구"
   },
   "Mason's tools": {
-    "name": "메이슨의 도구"
+    "name": "석공의 도구"
   },
   "Painter's supplies": {
     "name": "화가의 용품"
   },
   "Potter's tools": {
-    "name": "포터의 도구"
+    "name": "도공의 도구"
   },
   "Smith's tools": {
-    "name": "스미스의 도구"
+    "name": "대장장이의 도구"
   },
   "Tinker's tools": {
-    "name": "Tinker의 도구"
+    "name": "땜장이의 도구"
   },
   "Weaver's tools": {
-    "name": "위버의 도구"
+    "name": "직조공의 도구"
   },
   "Woodcarver's tools": {
     "name": "목각가의 도구"
@@ -99,7 +99,7 @@
     "name": "위조 키트"
   },
   "Thieves' tools": {
-    "name": "도둑의 도구"
+    "name": "도둑 도구"
   },
   "Herbalism kit": {
     "name": "약초학 키트"

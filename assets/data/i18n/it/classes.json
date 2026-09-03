@@ -106,7 +106,7 @@
               "Mazza"
             ],
             [
-              "Warhammer"
+              "Martello da guerra"
             ]
           ]
         },
@@ -151,15 +151,15 @@
     "name": "druido",
     "subclassFeatureName": "Circolo dei Druidi",
     "weaponProficiencies": [
-      "club",
+      "randelli",
       "pugnali",
-      "freccette",
+      "dardi",
       "giavellotti",
       "mazze",
-      "quarti",
+      "bastoni ferrati",
       "scimitarre",
       "falci",
-      "imbracature",
+      "fionde",
       "lance"
     ],
     "startingEquipment": {
@@ -255,7 +255,7 @@
     "name": "Monaco",
     "subclassFeatureName": "Tradizione monastica",
     "weaponProficiencies": [
-      "semplice",
+      "armi semplici",
       "spade corte"
     ],
     "startingEquipment": {
@@ -386,11 +386,11 @@
     "name": "Briccone",
     "subclassFeatureName": "Archetipo Ladro",
     "weaponProficiencies": [
-      "semplice",
-      "balestra a mano",
-      "spada lunga",
-      "stocco",
-      "spada corta"
+      "armi semplici",
+      "balestre a mano",
+      "spade lunghe",
+      "stocchi",
+      "spade corte"
     ],
     "startingEquipment": {
       "fixed": [

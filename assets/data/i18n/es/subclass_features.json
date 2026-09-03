@@ -63,7 +63,7 @@
     "College of Valor": {
       "Bonus Proficiencies": {
         "name": "Competencias adicionales",
-        "description": "Cuando te unes al College of Valor en el nivel 3, adquieres competencia con armaduras medianas, escudos y armas marciales."
+        "description": "Cuando te unes al Colegio del Valor en el nivel 3, adquieres competencia con armaduras medianas, escudos y armas marciales."
       },
       "Combat Inspiration": {
         "name": "Inspiración de combate",
@@ -242,7 +242,7 @@
         "description": "A partir del nivel 2, cuando haces una tirada de ataque, puedes usar tu Canalizar Divinidad para obtener una bonificación de +10 a la tirada. Haces esta elección antes o después de ver la tirada, pero antes de que se aplique cualquier efecto."
       },
       "Channel Divinity: War God's Blessing": {
-        "name": "Channel Divinity: La bendición del dios de la guerra",
+        "name": "Canalizar Divinidad: La bendición del dios de la guerra",
         "description": "En el nivel 6, cuando una criatura a 30 pies de ti realiza una tirada de ataque, puedes usar tu reacción para otorgarle a esa criatura una bonificación de +10 a la tirada usando tu Canalizar Divinidad."
       },
       "Divine Strike": {
@@ -440,7 +440,7 @@
         "description": "A partir del nivel 15, siempre estás bajo los efectos de un hechizo de protección contra el mal y el bien."
       },
       "Holy Nimbus": {
-        "name": "Santo Nimbo",
+        "name": "Nimbo sagrado",
         "description": "En el nivel 20, como acción, puedes emanar un aura de luz solar. Durante 1 minuto, una luz brillante brilla desde usted en un radio de 30 pies y una luz tenue brilla 30 pies más allá de ese radio. Cada vez que una criatura enemiga comienza su turno en la luz brillante, la criatura sufre 10 de daño radiante. Además, tienes ventaja en las tiradas de salvación contra hechizos lanzados por demonios o no-muertos. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso prolongado."
       }
     },
@@ -493,7 +493,7 @@
     "Hunter": {
       "Hunter's Prey": {
         "name": "La presa del cazador",
-        "description": "En el nivel 3, obtienes una de las siguientes características de tu elección. Colossus Slayer: cuando golpeas a una criatura con un ataque con arma, la criatura sufre 1d8 de daño adicional si está por debajo de su máximo de puntos de vida. Puedes infligir este daño adicional solo una vez por turno. Asesino de gigantes: cuando una criatura grande o más grande a 5 pies de ti te golpea o falla con un ataque, puedes usar tu reacción para atacar a esa criatura inmediatamente después. Rompehordas: una vez en cada uno de tus turnos, cuando realizas un ataque con arma, puedes realizar otro ataque con la misma arma contra una criatura diferente que esté a 5 pies del objetivo original."
+        "description": "En el nivel 3, obtienes una de las siguientes características de tu elección. Matador de colosos: cuando golpeas a una criatura con un ataque con arma, la criatura sufre 1d8 de daño adicional si está por debajo de su máximo de puntos de vida. Puedes infligir este daño adicional solo una vez por turno. Asesino de gigantes: cuando una criatura grande o más grande a 5 pies de ti te golpea o falla con un ataque, puedes usar tu reacción para atacar a esa criatura inmediatamente después. Rompehordas: una vez en cada uno de tus turnos, cuando realizas un ataque con arma, puedes realizar otro ataque con la misma arma contra una criatura diferente que esté a 5 pies del objetivo original."
       },
       "Defensive Tactics": {
         "name": "Tácticas defensivas",

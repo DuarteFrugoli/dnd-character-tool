@@ -1,12 +1,11 @@
 import 'dart:async';
-import 'dart:convert';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../data/character_file_payload.dart';
 import '../../core/services/incoming_file_service.dart';
 import '../../core/platform/picked_file_reader.dart';
 import '../../core/utils/file_exporter.dart';
@@ -18,15 +17,6 @@ import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/character_avatar.dart';
 import '../../shared/widgets/responsive_layout.dart';
-
-bool _looksLikeBackupFile(String fileJson) {
-  try {
-    final decoded = jsonDecode(fileJson);
-    return decoded is Map<String, dynamic> && decoded['characters'] is List;
-  } catch (_) {
-    return false;
-  }
-}
 
 String _duplicateCharacterName(
   AppLocalizations l10n,
@@ -74,7 +64,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
   Future<void> _handleIncomingFile(String fileJson) async {
     if (!mounted) return;
     final l10n = AppLocalizations.of(context)!;
-    final isBackup = _looksLikeBackupFile(fileJson);
+    final isBackup = looksLikeDndBackupFileJson(fileJson);
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -101,7 +91,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
     if (!mounted) return;
     final l10n = AppLocalizations.of(context)!;
     try {
-      if (_looksLikeBackupFile(fileJson)) {
+      if (looksLikeDndBackupFileJson(fileJson)) {
         final imported = await ref
             .read(characterRepositoryProvider)
             .importBackupFromFileJson(fileJson);
@@ -422,7 +412,7 @@ class _CharacterCard extends ConsumerWidget {
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     void openCharacter() {
-      if (character.dataVersion < currentCharacterDataVersion) {
+      if (character.needsDataUpdate) {
         context.push('/settings?section=maintenance');
         return;
       }
@@ -436,10 +426,8 @@ class _CharacterCard extends ConsumerWidget {
       if (!context.mounted) return;
       await showDialog<void>(
         context: context,
-        builder: (ctx) => _ExportDialog(
-          characterName: character.name,
-          fileJson: fileJson,
-        ),
+        builder: (ctx) =>
+            _ExportDialog(characterName: character.name, fileJson: fileJson),
       );
     }
 
@@ -671,10 +659,7 @@ class _CharacterCard extends ConsumerWidget {
 // Export dialog.
 
 class _ExportDialog extends StatefulWidget {
-  const _ExportDialog({
-    required this.characterName,
-    required this.fileJson,
-  });
+  const _ExportDialog({required this.characterName, required this.fileJson});
 
   final String characterName;
   final String fileJson;

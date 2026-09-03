@@ -1,28 +1,28 @@
 {
   "resources": {
     "rage": {
-      "name": "Wut"
+      "name": "Kampfrausch"
     },
     "bardic_inspiration": {
       "name": "Bardische Inspiration"
     },
     "cleric_channel_divinity": {
-      "name": "Kanal-Göttlichkeit"
+      "name": "Göttliche Macht fokussieren"
     },
     "divine_intervention": {
       "name": "Göttliches Eingreifen"
     },
     "wild_shape": {
-      "name": "Wilde Form"
+      "name": "Tiergestalt"
     },
     "second_wind": {
-      "name": "Zweiter Wind"
+      "name": "Zweiter Atem"
     },
     "action_surge": {
-      "name": "Aktionsschub"
+      "name": "Tatendrang"
     },
     "indomitable": {
-      "name": "Unbezwingbar"
+      "name": "Unbeugsam"
     },
     "ki": {
       "name": "Ki"
@@ -31,25 +31,25 @@
       "name": "Göttlicher Sinn"
     },
     "lay_on_hands": {
-      "name": "Auf die Hände legen"
+      "name": "Handauflegen"
     },
     "paladin_channel_divinity": {
-      "name": "Kanal-Göttlichkeit"
+      "name": "Göttliche Macht fokussieren"
     },
     "cleansing_touch": {
       "name": "Reinigende Berührung"
     },
     "stroke_of_luck": {
-      "name": "Glücksfall"
+      "name": "Glücksgriff"
     },
     "sorcery_points": {
-      "name": "Zauberpunkte"
+      "name": "Zaubereipunkte"
     },
     "mystic_arcanum": {
       "name": "Mystisches Arkanum"
     },
     "eldritch_master": {
-      "name": "Eldritch-Meister"
+      "name": "Okkulter Meister"
     },
     "arcane_recovery": {
       "name": "Arkane Erholung"
@@ -58,7 +58,7 @@
       "name": "Signaturzauber"
     },
     "warding_flare": {
-      "name": "Abwehrsignal"
+      "name": "Schützendes Aufleuchten"
     },
     "wrath_of_the_storm": {
       "name": "Zorn des Sturms"
@@ -73,7 +73,7 @@
       "name": "Überlegenheitswürfel"
     },
     "wholeness_of_body": {
-      "name": "Ganzheit des Körpers"
+      "name": "Unversehrtheit des Körpers"
     },
     "holy_nimbus": {
       "name": "Heiliger Nimbus"
@@ -82,40 +82,40 @@
       "name": "Unsterblicher Wächter"
     },
     "elder_champion": {
-      "name": "Älterer Champion"
+      "name": "Uralter Champion"
     },
     "tides_of_chaos": {
-      "name": "Fluten des Chaos"
+      "name": "Gezeiten des Chaos"
     },
     "fey_presence": {
       "name": "Feenpräsenz"
     },
     "misty_escape": {
-      "name": "Misty Escape"
+      "name": "Neblige Flucht"
     },
     "dark_delirium": {
       "name": "Dunkles Delirium"
     },
     "dark_ones_own_luck": {
-      "name": "Das eigene Glück des Dunklen"
+      "name": "Glück des Dunklen"
     },
     "hurl_through_hell": {
       "name": "Durch die Hölle schleudern"
     },
     "entropic_ward": {
-      "name": "Entropischer Bezirk"
+      "name": "Entropischer Schutz"
     },
     "benign_transposition": {
-      "name": "Gutartige Umsetzung"
+      "name": "Gutartige Transposition"
     },
     "portent": {
-      "name": "Zeichen"
+      "name": "Omen"
     },
     "instinctive_charm": {
-      "name": "Instinktiver Charme"
+      "name": "Instinktiver Zauber"
     },
     "illusory_self": {
-      "name": "Illusionäres Selbst"
+      "name": "Illusorisches Selbst"
     },
     "shapechanger": {
       "name": "Gestaltwandler"
@@ -127,10 +127,10 @@
       "name": "Überlegenheitswürfel"
     },
     "magic_initiate_spell": {
-      "name": "Magischer Initiationszauber"
+      "name": "Zauber des Magischen Initiaten"
     },
     "breath_weapon": {
-      "name": "Atemwaffe"
+      "name": "Odemwaffe"
     },
     "relentless_endurance": {
       "name": "Unerbittliche Ausdauer"

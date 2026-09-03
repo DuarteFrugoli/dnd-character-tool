@@ -1,139 +1,139 @@
 {
   "resources": {
     "rage": {
-      "name": "怒り"
+      "name": "激怒"
     },
     "bardic_inspiration": {
-      "name": "吟遊詩人のインスピレーション"
+      "name": "バードの鼓舞"
     },
     "cleric_channel_divinity": {
-      "name": "チャンネル神性"
+      "name": "神性伝導"
     },
     "divine_intervention": {
-      "name": "神の介入"
+      "name": "神性介入"
     },
     "wild_shape": {
-      "name": "ワイルドシェイプ"
+      "name": "野生の形態"
     },
     "second_wind": {
-      "name": "セカンドウィンド"
+      "name": "底力"
     },
     "action_surge": {
-      "name": "アクションサージ"
+      "name": "怒涛のアクション"
     },
     "indomitable": {
-      "name": "不屈の"
+      "name": "不屈"
     },
     "ki": {
-      "name": "キ"
+      "name": "気"
     },
     "divine_sense": {
-      "name": "神聖な感覚"
+      "name": "神聖感知"
     },
     "lay_on_hands": {
-      "name": "手を置いて"
+      "name": "癒しの手"
     },
     "paladin_channel_divinity": {
-      "name": "チャンネル神性"
+      "name": "神性伝導"
     },
     "cleansing_touch": {
-      "name": "クレンジングタッチ"
+      "name": "清めの接触"
     },
     "stroke_of_luck": {
-      "name": "幸運のストローク"
+      "name": "幸運の一撃"
     },
     "sorcery_points": {
-      "name": "ソーサリーポイント"
+      "name": "魔力点"
     },
     "mystic_arcanum": {
-      "name": "ミスティックアルカナム"
+      "name": "秘奥義"
     },
     "eldritch_master": {
-      "name": "異界のマスター"
+      "name": "異界の達人"
     },
     "arcane_recovery": {
-      "name": "秘術の回復"
+      "name": "秘術回復"
     },
     "signature_spells": {
-      "name": "シグネチャースペル"
+      "name": "得意呪文"
     },
     "warding_flare": {
-      "name": "ウォーディングフレア"
+      "name": "防護の閃光"
     },
     "wrath_of_the_storm": {
       "name": "嵐の怒り"
     },
     "war_priest": {
-      "name": "ウォープリースト"
+      "name": "戦の司祭"
     },
     "natural_recovery": {
       "name": "自然回復"
     },
     "superiority_dice": {
-      "name": "優位性ダイス"
+      "name": "戦技ダイス"
     },
     "wholeness_of_body": {
-      "name": "体の全体性"
+      "name": "肉体の完成"
     },
     "holy_nimbus": {
-      "name": "ホーリーニンバス"
+      "name": "聖なる光輪"
     },
     "undying_sentinel": {
-      "name": "不死の番兵"
+      "name": "不滅の番人"
     },
     "elder_champion": {
-      "name": "エルダーチャンピオン"
+      "name": "古き英雄"
     },
     "tides_of_chaos": {
       "name": "混沌の潮流"
     },
     "fey_presence": {
-      "name": "フェイの存在"
+      "name": "フェイの威風"
     },
     "misty_escape": {
-      "name": "ミスティ エスケープ"
+      "name": "霧の脱出"
     },
     "dark_delirium": {
-      "name": "ダークデリリウム"
+      "name": "暗き幻惑"
     },
     "dark_ones_own_luck": {
-      "name": "闇の者自身の幸運"
+      "name": "暗き者の幸運"
     },
     "hurl_through_hell": {
-      "name": "地獄を投げ抜けろ"
+      "name": "地獄送り"
     },
     "entropic_ward": {
-      "name": "エントロピック病棟"
+      "name": "エントロピーの守り"
     },
     "benign_transposition": {
-      "name": "良性転位"
+      "name": "穏やかな転移"
     },
     "portent": {
-      "name": "前兆"
+      "name": "予兆"
     },
     "instinctive_charm": {
-      "name": "本能的な魅力"
+      "name": "本能的魅了"
     },
     "illusory_self": {
-      "name": "幻想的な自己"
+      "name": "幻の自己"
     },
     "shapechanger": {
-      "name": "シェイプチェンジャー"
+      "name": "変身能力"
     },
     "lucky_points": {
-      "name": "幸運ポイント"
+      "name": "幸運点"
     },
     "martial_adept_superiority_die": {
-      "name": "優位性のダイ"
+      "name": "戦技ダイス"
     },
     "magic_initiate_spell": {
-      "name": "マジックイニシエイトスペル"
+      "name": "魔法入門の呪文"
     },
     "breath_weapon": {
-      "name": "ブレスウェポン"
+      "name": "ブレス攻撃"
     },
     "relentless_endurance": {
-      "name": "容赦ない耐久力"
+      "name": "しぶとい持久力"
     }
   }
 }

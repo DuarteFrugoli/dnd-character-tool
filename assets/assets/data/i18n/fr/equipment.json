@@ -1,12 +1,12 @@
 {
   "Club": {
-    "name": "Club"
+    "name": "Gourdin"
   },
   "Dagger": {
     "name": "Poignard"
   },
   "Greatclub": {
-    "name": "Grand club"
+    "name": "Grand gourdin"
   },
   "Handaxe": {
     "name": "Hachette"
@@ -66,13 +66,13 @@
     "name": "Épée longue"
   },
   "Maul": {
-    "name": "Malmener"
+    "name": "Maillet d'armes"
   },
   "Morningstar": {
     "name": "Étoile du matin"
   },
   "Pike": {
-    "name": "Brochet"
+    "name": "Pique"
   },
   "Rapier": {
     "name": "Rapière"
@@ -87,7 +87,7 @@
     "name": "Trident"
   },
   "War Pick": {
-    "name": "Choix de guerre"
+    "name": "Pic de guerre"
   },
   "Warhammer": {
     "name": "Marteau de guerre"
@@ -99,10 +99,10 @@
     "name": "Sarbacane"
   },
   "Crossbow, Hand": {
-    "name": "Arbalète, à main"
+    "name": "Arbalète de poing"
   },
   "Crossbow, Heavy": {
-    "name": "Arbalète, lourde"
+    "name": "Arbalète lourde"
   },
   "Longbow": {
     "name": "Arc"
@@ -111,40 +111,40 @@
     "name": "Filet"
   },
   "Padded": {
-    "name": "Rembourré"
+    "name": "Armure matelassée"
   },
   "Leather": {
-    "name": "Cuir"
+    "name": "Armure de cuir"
   },
   "Studded Leather": {
-    "name": "Cuir clouté"
+    "name": "Armure de cuir clouté"
   },
   "Hide": {
-    "name": "Cacher"
+    "name": "Armure de peaux"
   },
   "Chain Shirt": {
-    "name": "Chemise à chaîne"
+    "name": "Chemise de mailles"
   },
   "Scale Mail": {
-    "name": "Courrier à l'échelle"
+    "name": "Armure d'écailles"
   },
   "Breastplate": {
-    "name": "Pectoral"
+    "name": "Cuirasse"
   },
   "Half Plate": {
-    "name": "Demi-assiette"
+    "name": "Demi-plate"
   },
   "Ring Mail": {
-    "name": "Courrier en anneau"
+    "name": "Broigne"
   },
   "Chain Mail": {
     "name": "Cotte de mailles"
   },
   "Splint": {
-    "name": "Éclisse"
+    "name": "Clibanion"
   },
   "Plate": {
-    "name": "Plaque"
+    "name": "Armure de plates"
   },
   "Shield": {
     "name": "Bouclier"
@@ -214,7 +214,7 @@
     "description": "Un sac à dos avec un livre, de l'encre, un stylo à encre, du parchemin, du sable et un petit couteau."
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "Roulements à billes (sachet de 1000)",
+    "name": "Billes (sachet de 1000)",
     "description": "En guise d'action, dispersez ces petites boules métalliques. Les créatures doivent réussir un jet de sauvegarde de Dextérité DD 10 ou tomber à terre."
   },
   "Barrel": {
@@ -254,7 +254,7 @@
     "description": "Peut contenir 3 gallons."
   },
   "Caltrops (bag of 20)": {
-    "name": "Caltrops (sachet de 20)",
+    "name": "Chausse-trapes (sachet de 20)",
     "description": "Dispersez-vous sur une zone de 5 pieds. Les créatures qui se déplacent doivent réussir un jet de Dextérité DD 15 ou s'arrêter et subir 1 dégât perforant (vitesse réduite de 10 pieds jusqu'à ce qu'elles soient guéries)."
   },
   "Candle": {
@@ -312,6 +312,9 @@
   "Crowbar": {
     "name": "Pied de biche",
     "description": "Accorde un avantage sur les tests de Force où l'effet de levier peut être appliqué."
+  },
+  "Disguise kit": {
+    "name": "Trousse de déguisement"
   },
   "Druidic Focus": {
     "name": "Concentration druidique",
@@ -402,7 +405,7 @@
     "description": "Peut lier une créature de taille petite ou moyenne. L'évasion nécessite un test de Dextérité DD 20. La rupture nécessite un DD de Force 20. Chaque ensemble est livré avec une clé."
   },
   "Mess Kit": {
-    "name": "Trousse de mess",
+    "name": "Gamelle",
     "description": "Une boîte en fer blanc avec une tasse et des ustensiles simples."
   },
   "Mirror, steel": {
@@ -522,7 +525,7 @@
     "description": "Un abri en toile simple et portable."
   },
   "Tinderbox": {
-    "name": "Poudrière",
+    "name": "Boîte d'amadou",
     "description": "Contient du silex, de l'acier à feu et de l'amadou. Allumer une torche ou un feu nécessite 1 action (ou 1 minute si l'amadou est humide)."
   },
   "Torch": {

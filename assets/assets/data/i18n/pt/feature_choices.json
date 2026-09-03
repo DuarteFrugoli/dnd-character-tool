@@ -165,55 +165,55 @@
     "favored_enemies": {
       "aberrations": {
         "name": "Aberrações",
-        "description": "Escolha aberrações como um dos seus tipos de inimigos favoritos."
+        "description": "Escolha aberrações como um dos seus tipos de inimigo favorito."
       },
       "beasts": {
         "name": "Bestas",
-        "description": "Escolha feras como um de seus tipos de inimigos favoritos."
+        "description": "Escolha bestas como um dos seus tipos de inimigo favorito."
       },
       "celestials": {
         "name": "Celestiais",
-        "description": "Escolha celestiais como um de seus tipos de inimigos favoritos."
+        "description": "Escolha celestiais como um dos seus tipos de inimigo favorito."
       },
       "constructs": {
-        "name": "Construções",
-        "description": "Escolha construções como um de seus tipos de inimigos favoritos."
+        "name": "Constructos",
+        "description": "Escolha constructos como um dos seus tipos de inimigo favorito."
       },
       "dragons": {
         "name": "Dragões",
-        "description": "Escolha dragões como um de seus tipos de inimigos favoritos."
+        "description": "Escolha dragões como um dos seus tipos de inimigo favorito."
       },
       "elementals": {
         "name": "Elementais",
-        "description": "Escolha elementais como um de seus tipos de inimigos favoritos."
+        "description": "Escolha elementais como um dos seus tipos de inimigo favorito."
       },
       "fey": {
-        "name": "Fey",
-        "description": "Escolha fey como um de seus tipos de inimigos favoritos."
+        "name": "Fadas",
+        "description": "Escolha fadas como um dos seus tipos de inimigo favorito."
       },
       "fiends": {
         "name": "Ínferos",
-        "description": "Escolha ínferos como um dos seus tipos de inimigos favoritos."
+        "description": "Escolha ínferos como um dos seus tipos de inimigo favorito."
       },
       "giants": {
         "name": "Gigantes",
-        "description": "Escolha gigantes como um de seus tipos de inimigos favoritos."
+        "description": "Escolha gigantes como um dos seus tipos de inimigo favorito."
       },
       "monstrosities": {
         "name": "Monstruosidades",
-        "description": "Escolha monstruosidades como um de seus tipos de inimigos favoritos."
+        "description": "Escolha monstruosidades como um dos seus tipos de inimigo favorito."
       },
       "oozes": {
         "name": "Limos",
-        "description": "Escolha oozes como um de seus tipos de inimigos favoritos."
+        "description": "Escolha limos como um dos seus tipos de inimigo favorito."
       },
       "plants": {
         "name": "Plantas",
-        "description": "Escolha plantas como um de seus tipos de inimigos favoritos."
+        "description": "Escolha plantas como um dos seus tipos de inimigo favorito."
       },
       "undead": {
-        "name": "Morto-vivo",
-        "description": "Escolha mortos-vivos como um de seus tipos de inimigos favoritos."
+        "name": "Mortos-vivos",
+        "description": "Escolha mortos-vivos como um dos seus tipos de inimigo favorito."
       }
     },
     "favored_terrain": {

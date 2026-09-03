@@ -63,7 +63,7 @@
     "College of Valor": {
       "Bonus Proficiencies": {
         "name": "Bonuskenntnisse",
-        "description": "Wenn Sie dem College of Valor auf der 3. Stufe beitreten, erwerben Sie Kenntnisse im Umgang mit mittleren Rüstungen, Schilden und Kampfwaffen."
+        "description": "Wenn Sie dem Kolleg der Tapferkeit auf der 3. Stufe beitreten, erwerben Sie Kenntnisse im Umgang mit mittleren Rüstungen, Schilden und Kampfwaffen."
       },
       "Combat Inspiration": {
         "name": "Kampfinspiration",
@@ -86,7 +86,7 @@
         "description": "Auf der 1. Stufe lernen Sie zwei Sprachen Ihrer Wahl. Sie beherrschen außerdem zwei der folgenden Fertigkeiten: Arkana, Geschichte, Natur oder Religion. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine dieser Fähigkeiten zum Einsatz kommt."
       },
       "Channel Divinity: Knowledge of the Ages": {
-        "name": "Channel Divinity: Wissen der Zeitalter",
+        "name": "Göttliche Macht fokussieren: Wissen der Zeitalter",
         "description": "Ab der 2. Stufe können Sie Ihren Göttlichkeitskanal nutzen, um auf eine göttliche Wissensquelle zuzugreifen. Als Aktion wählt man eine Fertigkeit oder ein Werkzeug. Für 10 Minuten verfügen Sie über Kenntnisse im Umgang mit der gewählten Fertigkeit oder dem gewählten Werkzeug."
       },
       "Channel Divinity: Read Thoughts": {
@@ -112,7 +112,7 @@
         "description": "Auch ab der 1. Stufe sind Ihre Heilzauber wirksamer. Immer wenn du einen Zauber der 1. Stufe oder höher verwendest, um die Trefferpunkte einer Kreatur wiederherzustellen, erhält die Kreatur zusätzliche Trefferpunkte in Höhe von 2 + der Stufe des Zaubers zurück."
       },
       "Channel Divinity: Preserve Life": {
-        "name": "Channel Divinity: Leben bewahren",
+        "name": "Göttliche Macht fokussieren: Leben bewahren",
         "description": "Ab der 2. Stufe präsentieren Sie als Aktion Ihr heiliges Symbol und rufen Heilenergie hervor, die eine Anzahl an Trefferpunkten wiederherstellen kann, die dem Fünffachen Ihrer Klerikerstufe entspricht. Wählen Sie beliebige Kreaturen in einem Umkreis von 30 Fuß um Sie aus und teilen Sie diese Trefferpunkte unter ihnen auf. Mit dieser Funktion kann eine Kreatur höchstens die Hälfte ihrer maximalen Trefferpunkte wiederherstellen."
       },
       "Blessed Healer": {
@@ -138,7 +138,7 @@
         "description": "Wenn Sie auf der 1. Stufe außerdem von einer Kreatur in einem Umkreis von 30 Fuß um Sie angegriffen werden, die Sie sehen können, können Sie Ihre Reaktion nutzen, um den Angriffswurf zu benachteiligen, sodass Licht vor dem Angreifer aufflackert. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Anwendungen wiedererlangen."
       },
       "Channel Divinity: Radiance of the Dawn": {
-        "name": "Channel Divinity: Radiance of the Dawn",
+        "name": "Göttliche Macht fokussieren: Glanz der Morgenröte",
         "description": "Ab der 2. Stufe präsentierst du als Aktion dein heiliges Symbol und jegliche magische Dunkelheit im Umkreis von 30 Fuß um dich wird vertrieben. Darüber hinaus muss jede feindliche Kreatur im Umkreis von 30 Fuß einen Konstitutionsrettungswurf durchführen und bei einem fehlgeschlagenen Rettungswurf 2W10 + Strahlungsschaden Ihrer Klerikerstufe oder halb so viel bei einem Erfolg erleiden."
       },
       "Improved Flare": {
@@ -164,7 +164,7 @@
         "description": "Außerdem erwerben Sie auf der 1. Stufe Kenntnisse im Umgang mit schwerer Rüstung."
       },
       "Channel Divinity: Charm Animals and Plants": {
-        "name": "Channel Divinity: Bezaubere Tiere und Pflanzen",
+        "name": "Göttliche Macht fokussieren: Bezaubere Tiere und Pflanzen",
         "description": "Ab der 2. Ebene präsentieren Sie als Aktion Ihr heiliges Symbol und rufen den Namen Ihrer Gottheit an. Jedes Tier oder jede Pflanzenkreatur, die dich im Umkreis von 30 Fuß sehen kann, muss einen Weisheitsrettungswurf machen. Wenn dies fehlschlägt, wird es 1 Minute lang oder bis es Schaden erleidet, von Ihnen verzaubert."
       },
       "Dampen Elements": {
@@ -190,7 +190,7 @@
         "description": "Auch auf der 1. Stufe können Sie, wenn eine Kreatur in einem Umkreis von 5 Fuß um Sie herum, die Sie sehen können, Sie mit einem Angriff trifft, Ihre Reaktion nutzen, um die Kreatur zu einem Geschicklichkeitsrettungswurf zu veranlassen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 2W8 Blitz- oder Donnerschaden (Ihrer Wahl), bei einem Erfolg halb so viel. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Nutzungsmöglichkeiten wiedererlangen."
       },
       "Channel Divinity: Destructive Wrath": {
-        "name": "Channel Divinity: Zerstörerischer Zorn",
+        "name": "Göttliche Macht fokussieren: Zerstörerischer Zorn",
         "description": "Ab der 2. Stufe können Sie beim Würfeln von Blitz- oder Donnerschaden Ihre Kanalgöttlichkeit verwenden, um maximalen Schaden zu verursachen, anstatt zu würfeln."
       },
       "Thunderbolt Strike": {
@@ -216,7 +216,7 @@
         "description": "Ab der 2. Stufe erstellen Sie als Aktion ein perfektes illusorisches Duplikat Ihrer selbst, das 1 Minute lang anhält. Die Illusion erscheint in einem unbesetzten Raum, den Sie in einem Umkreis von 30 Fuß um Sie sehen können. Als Bonusaktion in Ihrem Zug können Sie die Illusion bis zu 30 Fuß weit bewegen. Sie können Zauber wirken, als wären Sie im Raum der Illusion, müssen aber Ihre eigenen Sinne nutzen."
       },
       "Channel Divinity: Cloak of Shadows": {
-        "name": "Channel Divinity: Umhang der Schatten",
+        "name": "Göttliche Macht fokussieren: Umhang der Schatten",
         "description": "Ab der 6. Stufe werden Sie als Aktion bis zum Ende Ihres nächsten Zuges unsichtbar. Du wirst sichtbar, wenn du angreifst oder einen Zauber wirkst."
       },
       "Divine Strike": {
@@ -238,11 +238,11 @@
         "description": "Ab der 1. Stufe können Sie bei Verwendung der Angriffsaktion einen Waffenangriff als Bonusaktion durchführen. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Nutzungsmöglichkeiten wiedererlangen."
       },
       "Channel Divinity: Guided Strike": {
-        "name": "Channel Divinity: Geführter Schlag",
+        "name": "Göttliche Macht fokussieren: Geführter Schlag",
         "description": "Ab der 2. Stufe können Sie bei einem Angriffswurf Ihre Kanalgöttlichkeit nutzen, um einen Bonus von +10 auf den Wurf zu erhalten. Sie treffen diese Wahl, bevor oder nachdem Sie den Wurf gesehen haben, aber bevor irgendwelche Effekte angewendet werden."
       },
       "Channel Divinity: War God's Blessing": {
-        "name": "Channel Divinity: War God's Blessing",
+        "name": "Göttliche Macht fokussieren: Segen des Kriegsgottes",
         "description": "Wenn auf der 6. Stufe eine Kreatur in einem Umkreis von 30 Fuß um dich einen Angriffswurf ausführt, kannst du mithilfe deiner Reaktion dieser Kreatur mithilfe deiner Kanalgöttlichkeit einen Bonus von +10 auf den Wurf gewähren."
       },
       "Divine Strike": {
@@ -424,11 +424,11 @@
   "Paladin": {
     "Oath of Devotion": {
       "Channel Divinity: Sacred Weapon": {
-        "name": "Channel Divinity: Heilige Waffe",
+        "name": "Göttliche Macht fokussieren: Heilige Waffe",
         "description": "Als Aktion kannst du eine Waffe, die du in der Hand hältst, mithilfe deiner Channel-Göttlichkeit mit positiver Energie erfüllen. 1 Minute lang addierst du deinen Charisma-Modifikator zu Angriffswürfen mit dieser Waffe (mindestens +1). Die Waffe strahlt außerdem helles Licht in einem Radius von 20 Fuß und gedämpftes Licht in einem Radius von 20 Fuß darüber hinaus aus. Wenn die Waffe nicht bereits magisch ist, wird sie für die Dauer magisch."
       },
       "Channel Divinity: Turn the Unholy": {
-        "name": "Channel Divinity: Verwandle das Unheilige",
+        "name": "Göttliche Macht fokussieren: Verwandle das Unheilige",
         "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Gebet, in dem Sie Untote und Untote tadeln, indem Sie Ihre Kanalgöttlichkeit nutzen. Jeder Untote oder Untote, der dich im Umkreis von 30 Fuß sehen oder hören kann, muss einen Weisheitsrettungswurf machen. Bei einem Fehlschlag wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, gedreht."
       },
       "Aura of Devotion": {
@@ -446,11 +446,11 @@
     },
     "Oath of the Ancients": {
       "Channel Divinity: Nature's Wrath": {
-        "name": "Channel Divinity: Der Zorn der Natur",
+        "name": "Göttliche Macht fokussieren: Der Zorn der Natur",
         "description": "Als Aktion kannst du Spektralranken aufsteigen lassen und nach einer Kreatur in einem Umkreis von 10 Fuß um dich greifen, die du sehen kannst. Der Kreatur muss ein Kraft- oder Geschicklichkeitsrettungswurf (nach Wahl) gelingen oder sie wird zurückgehalten. Während die Kreatur von den Ranken zurückgehalten wird, wiederholt sie den Rettungswurf am Ende jedes ihrer Züge. Bei Erfolg befreit es sich und die Ranken verschwinden."
       },
       "Channel Divinity: Turn the Faithless": {
-        "name": "Channel Divinity: Verwandle die Ungläubigen",
+        "name": "Göttliche Macht fokussieren: Verwandle die Ungläubigen",
         "description": "Als Aktion präsentierst du dein heiliges Symbol und jeder Fee oder Unhold im Umkreis von 30 Fuß um dich, der dich hören kann, muss einen Weisheitsrettungswurf machen. Bei einem fehlgeschlagenen Rettungswurf wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, umgedreht."
       },
       "Aura of Warding": {
@@ -463,16 +463,16 @@
       },
       "Elder Champion": {
         "name": "Älterer Champion",
-        "description": "Auf der 20. Stufe nimmst du als Aktion für 1 Minute die Gestalt einer uralten Naturgewalt an. Du erhältst folgende Vorteile: Zu Beginn jedes deiner Züge erhältst du 10 Trefferpunkte zurück; Immer wenn du einen Paladin-Zauber mit einer Zauberzeit von 1 Aktion wirkst, kannst du ihn stattdessen mit einer Bonusaktion wirken; Feindliche Kreaturen im Umkreis von 10 Fuß um dich herum haben einen Nachteil bei Rettungswürfen gegen deine Paladin-Zauber und Channel Divinity-Optionen."
+        "description": "Auf der 20. Stufe nimmst du als Aktion für 1 Minute die Gestalt einer uralten Naturgewalt an. Du erhältst folgende Vorteile: Zu Beginn jedes deiner Züge erhältst du 10 Trefferpunkte zurück; Immer wenn du einen Paladin-Zauber mit einer Zauberzeit von 1 Aktion wirkst, kannst du ihn stattdessen mit einer Bonusaktion wirken; Feindliche Kreaturen im Umkreis von 10 Fuß um dich herum haben einen Nachteil bei Rettungswürfen gegen deine Paladin-Zauber und Göttliche Macht fokussieren-Optionen."
       }
     },
     "Oath of Vengeance": {
       "Channel Divinity: Abjure Enemy": {
-        "name": "Channel Divinity: Feind abschwören",
+        "name": "Göttliche Macht fokussieren: Feind abschwören",
         "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Denunziationsgebet, indem Sie Ihre Kanalgöttlichkeit nutzen. Wählen Sie eine Kreatur im Umkreis von 60 Fuß um Sie aus, die Sie sehen können. Diese Kreatur muss einen Weisheitsrettungswurf machen. Unterweltler und Untote sind bei diesem Rettungswurf im Nachteil. Bei einem fehlgeschlagenen Rettungswurf ist die Kreatur 1 Minute lang oder bis sie Schaden erleidet, verängstigt. Während die Kreatur verängstigt ist, ist ihre Geschwindigkeit 0 und sie kann von keinem Geschwindigkeitsbonus profitieren."
       },
       "Channel Divinity: Vow of Enmity": {
-        "name": "Channel Divinity: Gelübde der Feindschaft",
+        "name": "Göttliche Macht fokussieren: Gelübde der Feindschaft",
         "description": "Als Bonusaktion kannst du mithilfe deiner Kanalgöttlichkeit einen Feindschaftsschwur gegen eine Kreatur ablegen, die du in einem Umkreis von 10 Fuß um dich herum sehen kannst. Du erhältst einen Vorteil bei Angriffswürfen gegen die Kreatur für 1 Minute oder bis sie auf 0 Trefferpunkte sinkt oder bewusstlos wird."
       },
       "Relentless Avenger": {
@@ -578,7 +578,7 @@
         "description": "Wenn Sie die 3. Stufe erreichen, erweitern Sie Ihre schurkischen Fähigkeiten durch magische. Intelligenz ist Ihre Zauberfähigkeit für Ihre Zaubersprüche. Sie kennen drei Zaubertricks (Magierhand plus zwei weitere Ihrer Wahl) und drei Zaubersprüche der ersten Stufe, von denen mindestens zwei aus den Schulen der Verzauberung und Illusion stammen müssen."
       },
       "Mage Hand Legerdemain": {
-        "name": "Magierhand-Legerdemain",
+        "name": "Geschickte Magierhand",
         "description": "Ab der 3. Stufe können Sie, wenn Sie die Magierhand wirken, die Spektralhand unsichtbar machen und zusätzliche Aufgaben damit ausführen: Gegenstände verstauen oder aus Behältern holen, die von einer anderen Kreatur getragen werden, oder Diebeswerkzeuge verwenden, um Schlösser zu knacken und Fallen aus der Ferne zu entschärfen. Sie können dies unbemerkt tun, wenn Ihnen ein Fertigkeitswurf für Fingerfertigkeit gelingt, der durch den Wahrnehmungswurf der Kreatur angefochten wird."
       },
       "Magical Ambush": {
@@ -788,7 +788,7 @@
     },
     "School of Evocation": {
       "Evocation Savant": {
-        "name": "Evokations-Savant",
+        "name": "Spezialist der Hervorrufung",
         "description": "Ab der Auswahl dieser Schule auf der 2. Stufe werden das Gold und die Zeit, die Sie aufwenden müssen, um einen Evokationszauber in Ihr Zauberbuch zu kopieren, halbiert."
       },
       "Sculpt Spells": {

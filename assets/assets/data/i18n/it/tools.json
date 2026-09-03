@@ -1,6 +1,6 @@
 {
   "Alchemist's supplies": {
-    "name": "Le scorte dell'alchimista"
+    "name": "Strumenti da alchimista"
   },
   "Brewer's supplies": {
     "name": "Forniture del birraio"
@@ -36,13 +36,13 @@
     "name": "Forniture per pittori"
   },
   "Potter's tools": {
-    "name": "Gli strumenti di Potter"
+    "name": "Strumenti da vasaio"
   },
   "Smith's tools": {
-    "name": "Gli strumenti di Smith"
+    "name": "Strumenti da fabbro"
   },
   "Tinker's tools": {
-    "name": "Gli strumenti di Tinker"
+    "name": "Strumenti da stagnino"
   },
   "Weaver's tools": {
     "name": "Gli strumenti del tessitore"
@@ -99,7 +99,7 @@
     "name": "Kit di falsificazione"
   },
   "Thieves' tools": {
-    "name": "Strumenti dei ladri"
+    "name": "Strumenti da ladro"
   },
   "Herbalism kit": {
     "name": "Kit di erboristeria"

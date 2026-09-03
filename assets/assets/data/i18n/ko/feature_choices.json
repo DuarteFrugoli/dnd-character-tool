@@ -164,56 +164,56 @@
     },
     "favored_enemies": {
       "aberrations": {
-        "name": "수차",
-        "description": "선호하는 적 유형 중 하나로 수차를 선택하세요."
+        "name": "괴이체",
+        "description": "괴이체를 선호하는 적 유형 중 하나로 선택합니다."
       },
       "beasts": {
-        "name": "수류",
-        "description": "선호하는 적 유형 중 하나로 짐승을 선택하세요."
+        "name": "야수",
+        "description": "야수를 선호하는 적 유형 중 하나로 선택합니다."
       },
       "celestials": {
-        "name": "천체",
-        "description": "선호하는 적 유형 중 하나로 천체를 선택하세요."
+        "name": "천상체",
+        "description": "천상체를 선호하는 적 유형 중 하나로 선택합니다."
       },
       "constructs": {
-        "name": "구조물",
-        "description": "선호하는 적 유형 중 하나로 구조물을 선택하세요."
+        "name": "구조체",
+        "description": "구조체를 선호하는 적 유형 중 하나로 선택합니다."
       },
       "dragons": {
         "name": "용",
-        "description": "선호하는 적 유형 중 하나로 드래곤을 선택하세요."
+        "description": "용을 선호하는 적 유형 중 하나로 선택합니다."
       },
       "elementals": {
         "name": "정령",
-        "description": "선호하는 적 유형 중 하나로 정령을 선택하세요."
+        "description": "정령을 선호하는 적 유형 중 하나로 선택합니다."
       },
       "fey": {
-        "name": "이상한",
-        "description": "선호하는 적 유형 중 하나로 페이를 선택하세요."
+        "name": "페이",
+        "description": "페이를 선호하는 적 유형 중 하나로 선택합니다."
       },
       "fiends": {
         "name": "악마",
-        "description": "당신이 선호하는 적 유형 중 하나로 악마를 선택하세요."
+        "description": "악마를 선호하는 적 유형 중 하나로 선택합니다."
       },
       "giants": {
-        "name": "자이언츠",
-        "description": "선호하는 적 유형 중 하나로 거인을 선택하세요."
+        "name": "거인",
+        "description": "거인을 선호하는 적 유형 중 하나로 선택합니다."
       },
       "monstrosities": {
         "name": "괴물",
-        "description": "선호하는 적 유형 중 하나로 괴물을 선택하세요."
+        "description": "괴물을 선호하는 적 유형 중 하나로 선택합니다."
       },
       "oozes": {
-        "name": "수액",
-        "description": "선호하는 적 유형 중 하나로 수액을 선택하세요."
+        "name": "점액체",
+        "description": "점액체를 선호하는 적 유형 중 하나로 선택합니다."
       },
       "plants": {
         "name": "식물",
-        "description": "선호하는 적 유형 중 하나로 식물을 선택하세요."
+        "description": "식물을 선호하는 적 유형 중 하나로 선택합니다."
       },
       "undead": {
         "name": "언데드",
-        "description": "선호하는 적 유형 중 하나로 언데드를 선택하세요."
+        "description": "언데드를 선호하는 적 유형 중 하나로 선택합니다."
       }
     },
     "favored_terrain": {
@@ -473,7 +473,7 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "스미스의 도구",
+              "name": "대장장이의 도구",
               "description": "대장장이의 도구를 능숙하게 사용해 보세요."
             },
             "brewers_supplies": {
@@ -481,7 +481,7 @@
               "description": "양조용품에 대한 숙련도를 얻으세요."
             },
             "masons_tools": {
-              "name": "메이슨의 도구",
+              "name": "석공의 도구",
               "description": "메이슨의 도구를 능숙하게 사용해 보세요."
             }
           }

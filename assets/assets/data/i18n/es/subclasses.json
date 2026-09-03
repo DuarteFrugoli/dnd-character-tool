@@ -104,7 +104,7 @@
   "Ranger": {
     "Hunter": {
       "name": "Cazador",
-      "description": "Maestro rastreador y depredador. Elige entre las opciones de Hunter's Prey (Colossus Slayer, Giant Killer, Horde Breaker) y Tácticas defensivas para enfrentar cualquier amenaza."
+      "description": "Maestro rastreador y depredador. Elige entre las opciones de Presa del cazador (Matador de colosos, Matagigantes, Rompehordas) y Tácticas defensivas para enfrentar cualquier amenaza."
     },
     "Beast Master": {
       "name": "Maestro de las Bestias",
@@ -138,11 +138,11 @@
   "Warlock": {
     "The Archfey": {
       "name": "El Archifey",
-      "description": "Un señor feérico de la emoción y el glamour. Presencia Fey para encantar o asustar a las criaturas cercanas, Misty Escape para desaparecer cuando es golpeado y magia centrada en encantamientos."
+      "description": "Un señor feérico de la emoción y el glamour. Presencia Fey para encantar o asustar a las criaturas cercanas, Escape brumoso para desaparecer cuando es golpeado y magia centrada en encantamientos."
     },
     "The Fiend": {
       "name": "el demonio",
-      "description": "Un diablo o demonio poderoso. Dark One's Blessing otorga puntos de vida temporales cuando matas, y un conjunto de hechizos de fuego y necróticos que terminan en Hurl Through Hell."
+      "description": "Un diablo o demonio poderoso. Bendición del Oscuro otorga puntos de vida temporales cuando matas, y un conjunto de hechizos de fuego y necróticos que terminan en Arrojar al Infierno."
     },
     "The Great Old One": {
       "name": "El gran viejo",

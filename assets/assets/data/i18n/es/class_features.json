@@ -114,7 +114,7 @@
     },
     "Channel Divinity": {
       "name": "Canalizar la Divinidad",
-      "description": "Obtienes la capacidad de canalizar energía divina directamente desde tu deidad, usando esa energía para alimentar efectos mágicos. Comienzas con dos de esos efectos: convertir a los no muertos y un efecto determinado por tu dominio. Cuando usas tu Channel Divinity, eliges qué efecto crear."
+      "description": "Obtienes la capacidad de canalizar energía divina directamente desde tu deidad, usando esa energía para alimentar efectos mágicos. Comienzas con dos de esos efectos: convertir a los no muertos y un efecto determinado por tu dominio. Cuando usas tu Canalizar Divinidad, eliges qué efecto crear."
     },
     "Ability Score Improvement": {
       "name": "Mejora de la puntuación de habilidad",
@@ -203,7 +203,7 @@
       "description": "Tu práctica de artes marciales te permitirá dominar los estilos de combate que utilizan ataques desarmados y armas de monje. Puedes usar Destreza en lugar de Fuerza para las tiradas de ataque y daño. Tu dado de Artes Marciales por un golpe desarmado o arma de monje es d4 en los niveles de monje 1-4, d6 en los niveles 5-10, d8 en los niveles 11-16 y d10 en los niveles 17-20. Cuando usas la acción de Ataque con un golpe desarmado o con un arma de monje, puedes realizar un golpe desarmado como acción adicional."
     },
     "Ki": {
-      "name": "ki",
+      "name": "Ki",
       "description": "Tu entrenamiento te permite aprovechar la energía mística del ki. Tu acceso a esta energía está representado por una cantidad de puntos de ki igual a tu nivel de monje. Puedes gastar puntos de ki para alimentar funciones de ki: Ráfaga de golpes, Defensa del paciente, Paso del viento."
     },
     "Unarmored Movement": {
@@ -278,7 +278,7 @@
     },
     "Channel Divinity": {
       "name": "Canalizar la Divinidad",
-      "description": "Tu juramento te permite canalizar energía divina para alimentar efectos mágicos. Cuando usas tu Channel Divinity, eliges qué opción usar. Recuperas los usos gastados cuando terminas un descanso corto o largo."
+      "description": "Tu juramento te permite canalizar energía divina para alimentar efectos mágicos. Cuando usas tu Canalizar Divinidad, eliges qué opción usar. Recuperas los usos gastados cuando terminas un descanso corto o largo."
     },
     "Ability Score Improvement": {
       "name": "Mejora de la puntuación de habilidad",

@@ -1,9 +1,9 @@
 {
   "Alchemist's supplies": {
-    "name": "錬金術師の必需品"
+    "name": "錬金術用品"
   },
   "Brewer's supplies": {
-    "name": "醸造所の備品"
+    "name": "醸造用品"
   },
   "Calligrapher's supplies": {
     "name": "書道家用品"
@@ -15,7 +15,7 @@
     "name": "地図製作者のツール"
   },
   "Cobbler's tools": {
-    "name": "コブラーの道具"
+    "name": "靴職人の道具"
   },
   "Cook's utensils": {
     "name": "調理器具"
@@ -30,7 +30,7 @@
     "name": "革細工師の道具"
   },
   "Mason's tools": {
-    "name": "メイソンの道具"
+    "name": "石工の道具"
   },
   "Painter's supplies": {
     "name": "画家の消耗品"
@@ -39,10 +39,10 @@
     "name": "陶芸道具"
   },
   "Smith's tools": {
-    "name": "スミスの道具"
+    "name": "鍛冶道具"
   },
   "Tinker's tools": {
-    "name": "ティンカーの道具"
+    "name": "修理屋の道具"
   },
   "Weaver's tools": {
     "name": "織り手の道具"

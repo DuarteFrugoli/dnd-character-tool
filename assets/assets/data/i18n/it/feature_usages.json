@@ -1,25 +1,25 @@
 {
   "resources": {
     "rage": {
-      "name": "Rabbia"
+      "name": "Ira"
     },
     "bardic_inspiration": {
       "name": "Ispirazione bardica"
     },
     "cleric_channel_divinity": {
-      "name": "Divinità del canale"
+      "name": "Incanalare Divinità"
     },
     "divine_intervention": {
-      "name": "Intervento Divino"
+      "name": "Intervento divino"
     },
     "wild_shape": {
-      "name": "Forma selvaggia"
+      "name": "Forma selvatica"
     },
     "second_wind": {
-      "name": "Secondo vento"
+      "name": "Recuperare energie"
     },
     "action_surge": {
-      "name": "Aumento d'azione"
+      "name": "Azione impetuosa"
     },
     "indomitable": {
       "name": "Indomabile"
@@ -28,13 +28,13 @@
       "name": "Ki"
     },
     "divine_sense": {
-      "name": "Senso Divino"
+      "name": "Percezione del divino"
     },
     "lay_on_hands": {
-      "name": "Imporre le mani"
+      "name": "Imposizione delle mani"
     },
     "paladin_channel_divinity": {
-      "name": "Divinità del canale"
+      "name": "Incanalare Divinità"
     },
     "cleansing_touch": {
       "name": "Tocco purificatore"
@@ -46,13 +46,13 @@
       "name": "Punti stregoneria"
     },
     "mystic_arcanum": {
-      "name": "Arcano mistico"
+      "name": "Arcanum mistico"
     },
     "eldritch_master": {
-      "name": "Maestro Eldritch"
+      "name": "Maestro occulto"
     },
     "arcane_recovery": {
-      "name": "Recupero Arcano"
+      "name": "Recupero arcano"
     },
     "signature_spells": {
       "name": "Incantesimi distintivi"
@@ -61,7 +61,7 @@
       "name": "Bagliore protettivo"
     },
     "wrath_of_the_storm": {
-      "name": "L'ira della tempesta"
+      "name": "Ira della tempesta"
     },
     "war_priest": {
       "name": "Sacerdote di guerra"
@@ -70,70 +70,70 @@
       "name": "Recupero naturale"
     },
     "superiority_dice": {
-      "name": "Dadi di Superiorità"
+      "name": "Dadi di superiorità"
     },
     "wholeness_of_body": {
-      "name": "Interezza del corpo"
+      "name": "Integrità del corpo"
     },
     "holy_nimbus": {
-      "name": "Santo Nimbo"
+      "name": "Nimbo sacro"
     },
     "undying_sentinel": {
       "name": "Sentinella immortale"
     },
     "elder_champion": {
-      "name": "Campione anziano"
+      "name": "Campione antico"
     },
     "tides_of_chaos": {
       "name": "Maree del caos"
     },
     "fey_presence": {
-      "name": "Presenza Fatata"
+      "name": "Presenza fatata"
     },
     "misty_escape": {
       "name": "Fuga nebbiosa"
     },
     "dark_delirium": {
-      "name": "Delirio Oscuro"
+      "name": "Delirio oscuro"
     },
     "dark_ones_own_luck": {
-      "name": "La fortuna dell'Oscuro"
+      "name": "Fortuna dell’Oscuro"
     },
     "hurl_through_hell": {
-      "name": "Lanciati attraverso l'inferno"
+      "name": "Scagliare attraverso l’inferno"
     },
     "entropic_ward": {
-      "name": "Reparto entropico"
+      "name": "Protezione entropica"
     },
     "benign_transposition": {
-      "name": "Trasposizione benigna"
+      "name": "Trasposizione benevola"
     },
     "portent": {
-      "name": "Portento"
+      "name": "Presagio"
     },
     "instinctive_charm": {
-      "name": "Fascino Istintivo"
+      "name": "Fascino istintivo"
     },
     "illusory_self": {
-      "name": "Sé Illusorio"
+      "name": "Sé illusorio"
     },
     "shapechanger": {
-      "name": "Cambiaforma"
+      "name": "Mutaforma"
     },
     "lucky_points": {
       "name": "Punti fortuna"
     },
     "martial_adept_superiority_die": {
-      "name": "La superiorità muore"
+      "name": "Dado di superiorità"
     },
     "magic_initiate_spell": {
-      "name": "Incantesimo dell'Iniziato Magico"
+      "name": "Incantesimo di Iniziato alla magia"
     },
     "breath_weapon": {
       "name": "Arma a soffio"
     },
     "relentless_endurance": {
-      "name": "Resistenza implacabile"
+      "name": "Tenacia implacabile"
     }
   }
 }

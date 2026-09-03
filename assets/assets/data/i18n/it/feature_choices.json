@@ -50,7 +50,7 @@
         "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Se il bersaglio è Grande o più piccolo, deve effettuare un tiro salvezza sulla Forza o essere spinto fino a 4,5 metri lontano da te."
       },
       "rally": {
-        "name": "Rally",
+        "name": "Rincuorare",
         "description": "Durante il tuo turno, spendi un'azione bonus e un dado superiorità per dare a un alleato che può vederti o sentirti punti ferita temporanei pari al tiro di dado + il tuo modificatore di Carisma."
       },
       "riposte": {
@@ -165,55 +165,55 @@
     "favored_enemies": {
       "aberrations": {
         "name": "Aberrazioni",
-        "description": "Scegli le aberrazioni come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli aberrazioni come uno dei tuoi tipi di nemico prescelto."
       },
       "beasts": {
         "name": "Bestie",
-        "description": "Scegli le bestie come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli bestie come uno dei tuoi tipi di nemico prescelto."
       },
       "celestials": {
         "name": "Celestiali",
-        "description": "Scegli i celestiali come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli celestiali come uno dei tuoi tipi di nemico prescelto."
       },
       "constructs": {
         "name": "Costrutti",
-        "description": "Scegli i costrutti come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli costrutti come uno dei tuoi tipi di nemico prescelto."
       },
       "dragons": {
         "name": "Draghi",
-        "description": "Scegli i draghi come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli draghi come uno dei tuoi tipi di nemico prescelto."
       },
       "elementals": {
         "name": "Elementali",
-        "description": "Scegli gli elementali come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli elementali come uno dei tuoi tipi di nemico prescelto."
       },
       "fey": {
-        "name": "Fey",
-        "description": "Scegli il folletto come uno dei tuoi tipi di nemici preferiti."
+        "name": "Fatati",
+        "description": "Scegli fatati come uno dei tuoi tipi di nemico prescelto."
       },
       "fiends": {
-        "name": "Demoni",
-        "description": "Scegli i demoni come uno dei tuoi tipi di nemici preferiti."
+        "name": "Immondi",
+        "description": "Scegli immondi come uno dei tuoi tipi di nemico prescelto."
       },
       "giants": {
         "name": "Giganti",
-        "description": "Scegli i giganti come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli giganti come uno dei tuoi tipi di nemico prescelto."
       },
       "monstrosities": {
         "name": "Mostruosità",
-        "description": "Scegli le mostruosità come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli mostruosità come uno dei tuoi tipi di nemico prescelto."
       },
       "oozes": {
-        "name": "Trasuda",
-        "description": "Scegli le melme come uno dei tuoi tipi di nemici preferiti."
+        "name": "Melme",
+        "description": "Scegli melme come uno dei tuoi tipi di nemico prescelto."
       },
       "plants": {
         "name": "Piante",
-        "description": "Scegli le piante come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli piante come uno dei tuoi tipi di nemico prescelto."
       },
       "undead": {
         "name": "Non morti",
-        "description": "Scegli i non morti come uno dei tuoi tipi di nemici preferiti."
+        "description": "Scegli non morti come uno dei tuoi tipi di nemico prescelto."
       }
     },
     "favored_terrain": {
@@ -433,7 +433,7 @@
             "multiattack": {
               "options": {
                 "volley": {
-                  "name": "Volley",
+                  "name": "Raffica",
                   "description": "Usa la tua azione per effettuare un attacco a distanza contro un qualsiasi numero di creature all'interno di una piccola area nel raggio d'azione."
                 },
                 "whirlwind_attack": {
@@ -473,7 +473,7 @@
         "artisan_tool": {
           "options": {
             "smiths_tools": {
-              "name": "Gli strumenti di Smith",
+              "name": "Strumenti da fabbro",
               "description": "Acquisisci competenza con gli strumenti del fabbro."
             },
             "brewers_supplies": {
@@ -481,7 +481,7 @@
               "description": "Acquisisci competenza con le forniture del birrificio."
             },
             "masons_tools": {
-              "name": "Gli strumenti del muratore",
+              "name": "Strumenti da muratore",
               "description": "Acquisisci competenza con gli strumenti da muratore."
             }
           }

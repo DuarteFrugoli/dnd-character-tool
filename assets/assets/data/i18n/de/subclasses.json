@@ -15,7 +15,7 @@
       "description": "Ein Meister des Wissens und der Geheimnisse. Erwerben Sie Kenntnisse in drei zusätzlichen Fertigkeiten: Wörter schneiden, um Feinde zu behindern, und die Fähigkeit, magische Geheimnisse von anderen Klassen zu stehlen."
     },
     "College of Valor": {
-      "name": "College of Valor",
+      "name": "Kolleg der Tapferkeit",
       "description": "Ein kampfbereiter Künstler, der Verbündete im Kampf inspiriert. Erwerben Sie Kenntnisse im Umgang mit mittleren Rüstungen, Schilden und Kampfwaffen und gewähren Sie Verbündeten schließlich mit Ihrer bardischen Inspiration einen zusätzlichen Angriff."
     }
   },
@@ -104,7 +104,7 @@
   "Ranger": {
     "Hunter": {
       "name": "Jäger",
-      "description": "Meister-Tracker und Raubtier. Wählen Sie aus Jäger-Beute-Optionen (Colossus Slayer, Giant Killer, Horde Breaker) und Defensive Tactics, um jeder Bedrohung zu begegnen."
+      "description": "Meisterlicher Fährtenleser und Jäger. Wählen Sie aus den Optionen von Jägerbeute (Kolosstöter, Riesentöter, Hordenbrecher) und Verteidigungstaktiken, um jeder Bedrohung zu begegnen."
     },
     "Beast Master": {
       "name": "Bestienmeister",

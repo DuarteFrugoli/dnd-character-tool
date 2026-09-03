@@ -3,7 +3,7 @@
     "name": "Enano",
     "languages": [
       "Común",
-      "enano"
+      "Enano"
     ],
     "subraces": [
       {
@@ -15,10 +15,10 @@
     ]
   },
   "Elf": {
-    "name": "Duende",
+    "name": "Elfo",
     "languages": [
       "Común",
-      "Mágico"
+      "Élfico"
     ],
     "subraces": [
       {
@@ -43,7 +43,7 @@
         "name": "Pie ligero"
       },
       {
-        "name": "Cerveza negra"
+        "name": "Fornido"
       }
     ]
   },
@@ -51,15 +51,23 @@
     "name": "Humano",
     "languages": [
       "Común",
-      "uno extra de tu elección"
+      "una lengua adicional de tu elección"
+    ],
+    "subraces": []
+  },
+  "Variant Human": {
+    "name": "Humano variante",
+    "languages": [
+      "Común",
+      "una lengua adicional de tu elección"
     ],
     "subraces": []
   },
   "Dragonborn": {
-    "name": "nacido de dragón",
+    "name": "Dracónido",
     "languages": [
       "Común",
-      "dracónico"
+      "Dracónico"
     ],
     "subraces": [
       {
@@ -98,7 +106,7 @@
     "name": "Gnomo",
     "languages": [
       "Común",
-      "gnomo"
+      "Gnómico"
     ],
     "subraces": [
       {
@@ -113,8 +121,8 @@
     "name": "Semielfo",
     "languages": [
       "Común",
-      "Mágico",
-      "uno extra de tu elección"
+      "Élfico",
+      "una lengua adicional de tu elección"
     ],
     "subraces": []
   },
@@ -127,7 +135,7 @@
     "subraces": []
   },
   "Tiefling": {
-    "name": "tiflin",
+    "name": "Tiefling",
     "languages": [
       "Común",
       "Infernal"

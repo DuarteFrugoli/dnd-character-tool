@@ -180,7 +180,7 @@
     "description": "Vous maîtrisez n’importe quelle combinaison de trois compétences ou outils de votre choix."
   },
   "Skulker": {
-    "name": "Skulker",
+    "name": "Furtif",
     "prerequisite": "Dextérité 13 ou plus",
     "description": "Vous êtes expert dans l’art de vous faufiler dans les ombres. Vous bénéficiez des avantages suivants :\n• Vous pouvez essayer de vous cacher lorsque vous êtes légèrement caché de la créature dont vous vous cachez.\n• Lorsque vous êtes caché d'une créature et que vous la manquez avec une attaque avec une arme à distance, l'attaque ne révèle pas votre position.\n• Une faible lumière n'impose pas de désavantage à vos tests de Sagesse (Perception) basés sur la vue."
   },

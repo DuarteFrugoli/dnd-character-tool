@@ -1,19 +1,53 @@
 {
-  "Common": { "name": "Comum" },
-  "Dwarvish": { "name": "Anão" },
-  "Elvish": { "name": "Élfico" },
-  "Halfling": { "name": "Halfling" },
-  "Draconic": { "name": "Dracônico" },
-  "Gnomish": { "name": "Gnômico" },
-  "Orc": { "name": "Orc" },
-  "Infernal": { "name": "Infernal" },
-  "Abyssal": { "name": "Abissal" },
-  "Celestial": { "name": "Celestial" },
-  "Deep Speech": { "name": "Língua Profunda" },
-  "Giant": { "name": "Gigante" },
-  "Gnoll": { "name": "Gnoll" },
-  "Goblin": { "name": "Goblin" },
-  "Primordial": { "name": "Primordial" },
-  "Sylvan": { "name": "Silvano" },
-  "Undercommon": { "name": "Subcomum" }
+  "Common": {
+    "name": "Comum"
+  },
+  "Dwarvish": {
+    "name": "Anão"
+  },
+  "Elvish": {
+    "name": "Élfico"
+  },
+  "Halfling": {
+    "name": "Halfling"
+  },
+  "Draconic": {
+    "name": "Dracônico"
+  },
+  "Gnomish": {
+    "name": "Gnômico"
+  },
+  "Orc": {
+    "name": "Órquico"
+  },
+  "Infernal": {
+    "name": "Infernal"
+  },
+  "Abyssal": {
+    "name": "Abissal"
+  },
+  "Celestial": {
+    "name": "Celestial"
+  },
+  "Deep Speech": {
+    "name": "Língua Profunda"
+  },
+  "Giant": {
+    "name": "Gigante"
+  },
+  "Gnoll": {
+    "name": "Gnoll"
+  },
+  "Goblin": {
+    "name": "Goblin"
+  },
+  "Primordial": {
+    "name": "Primordial"
+  },
+  "Sylvan": {
+    "name": "Silvano"
+  },
+  "Undercommon": {
+    "name": "Subcomum"
+  }
 }

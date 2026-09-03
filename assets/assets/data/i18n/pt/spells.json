@@ -39,7 +39,7 @@
     "name": "Amizade",
     "description": "Pela duração, você tem vantagem em todos os testes de Carisma direcionados a uma criatura à sua escolha que não seja hostil a você. Quando a magia termina, a criatura percebe que você usou magia para influenciar seu humor e se torna hostil a você. Uma criatura propensa à violência pode atacá-lo. Outra criatura pode buscar retaliação de outras formas, a critério do Mestre, dependendo da natureza da interação.",
     "higherLevels": null,
-    "material": "uma pequena quantidade de maquiagem aplicada no rosto enquanto este feitiço é lançado"
+    "material": "uma pequena quantidade de maquiagem aplicada no rosto enquanto esta magia é conjurada"
   },
   "Guidance": {
     "name": "Orientação",
@@ -316,7 +316,7 @@
     "name": "Escrita Ilusória",
     "description": "Você escreve em pergaminho, papel ou outro material adequado para escrita e o imbui com uma poderosa ilusão que dura pela duração. Para você e quaisquer criaturas que designar ao conjurar a magia, a escrita parece normal. Para todas as outras criaturas, a escrita parece ter sido feita em um idioma desconhecido ou mágico.",
     "higherLevels": null,
-    "material": "uma tinta à base de chumbo valendo pelo menos 10 po, que o feitiço consome"
+    "material": "uma tinta à base de chumbo valendo pelo menos 10 po, que a magia consome"
   },
   "Inflict Wounds": {
     "name": "Infligir Ferimentos",
@@ -350,7 +350,7 @@
     "name": "Proteção contra o Bem e o Mal",
     "description": "Até a magia terminar, uma criatura voluntária que você tocar fica protegida contra certos tipos de criaturas: aberrações, celestiais, elementais, fadas, ínferos e mortos-vivos. A proteção concede vários benefícios: criaturas desses tipos têm desvantagem em jogadas de ataque contra o alvo; o alvo não pode ser enfeitiçado, amedrontado ou possuído por elas; e, se já estiver sob esse efeito, tem vantagem em novos testes de resistência contra ele.",
     "higherLevels": null,
-    "material": "água benta ou prata e ferro em pó, que o feitiço consome"
+    "material": "água benta ou prata e ferro em pó, que a magia consome"
   },
   "Purify Food and Drink": {
     "name": "Purificar Alimentos e Bebidas",
@@ -449,7 +449,7 @@
     "name": "Tranca Arcana",
     "description": "Você toca uma porta, janela, portão, baú ou outra entrada fechada, e ela fica trancada pela duração. Você e as criaturas que designar quando conjura esta magia podem abrir o objeto normalmente. Você também pode definir uma senha que, quando pronunciada a até 1,5 m do objeto, suprime esta magia por 1 minuto. Caso contrário, ele fica intransponível até ser quebrado, ou até a magia ser dissipada ou suprimida.",
     "higherLevels": null,
-    "material": "pó de ouro valendo pelo menos 25 po, que o feitiço consome"
+    "material": "pó de ouro valendo pelo menos 25 po, que a magia consome"
   },
   "Augury": {
     "name": "Augúrio",
@@ -488,7 +488,7 @@
     "name": "Chama Contínua",
     "description": "Uma chama, equivalente em brilho a uma tocha, surge de um objeto que você toca. O efeito parece uma chama comum, mas não produz calor e não consome oxigênio. Uma chama contínua pode ser coberta ou escondida, mas não abafada nem apagada.",
     "higherLevels": null,
-    "material": "pó de rubi no valor de 50 po, que o feitiço consome"
+    "material": "pó de rubi no valor de 50 po, que a magia consome"
   },
   "Crown of Madness": {
     "name": "Coroa da Loucura",
@@ -609,7 +609,7 @@
     "name": "Boca Mágica",
     "description": "Você implanta uma mensagem em um objeto dentro do alcance, uma mensagem que é pronunciada quando uma condição de ativação é cumprida. Escolha um objeto que você possa ver e que não esteja sendo vestido ou carregado por outra criatura. Então fale a mensagem, que deve ter 25 palavras ou menos, embora possa ser transmitida ao longo de até 10 minutos. Por fim, determine a circunstância que fará a magia entregar sua mensagem.",
     "higherLevels": null,
-    "material": "um pequeno pedaço de favo de mel e pó de jade no valor de pelo menos 10 po, que o feitiço consome"
+    "material": "um pequeno pedaço de favo de mel e pó de jade no valor de pelo menos 10 po, que a magia consome"
   },
   "Magic Weapon": {
     "name": "Arma Mágica",
@@ -796,7 +796,7 @@
     "name": "Glifo de Proteção",
     "description": "Quando conjura esta magia, você inscreve um glifo que prejudica outras criaturas, seja sobre uma superfície, como uma mesa ou uma seção de piso ou parede, seja dentro de um objeto que possa ser fechado, como um livro, pergaminho ou baú de tesouro, para ocultar o glifo. Quando ativado, o glifo irrompe com energia mágica em uma esfera de 6 m de raio. Cada criatura na área deve fazer um teste de resistência de Destreza. Uma criatura sofre 5d8 de dano em uma falha, ou metade desse dano em um sucesso.",
     "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 4º nível ou superior, o dano de um glifo de runas explosivas aumenta em 1d8 para cada nível do espaço acima do 3º.",
-    "material": "incenso e diamante em pó valendo pelo menos 200 po, que o feitiço consome"
+    "material": "incenso e diamante em pó valendo pelo menos 200 po, que a magia consome"
   },
   "Haste": {
     "name": "Velocidade",
@@ -836,7 +836,7 @@
     "name": "Indetectável",
     "description": "Pela duração, você oculta da magia de adivinhação um alvo que toca. O alvo pode ser uma criatura voluntária, um local ou um objeto que não seja maior que 3 m em qualquer dimensão. O alvo não pode ser escolhido como alvo por nenhuma magia de adivinhação nem percebido por sensores mágicos de vidência.",
     "higherLevels": null,
-    "material": "uma pitada de pó de diamante no valor de 25 PO espalhada sobre o alvo, que o feitiço consome"
+    "material": "uma pitada de pó de diamante no valor de 25 po espalhada sobre o alvo, que a magia consome"
   },
   "Plant Growth": {
     "name": "Ampliar Plantas",
@@ -857,7 +857,7 @@
     "name": "Reviver",
     "description": "Você toca uma criatura que morreu no último minuto. Essa criatura retorna à vida com 1 ponto de vida. Esta magia não pode devolver à vida uma criatura que morreu de velhice, nem restaurar partes do corpo perdidas.",
     "higherLevels": null,
-    "material": "diamantes no valor de 300 po, que o feitiço consome"
+    "material": "diamantes no valor de 300 po, que a magia consome"
   },
   "Sending": {
     "name": "Enviar Mensagem",
@@ -982,7 +982,7 @@
     "name": "Adivinhação",
     "description": "Sua magia e uma oferenda colocam você em contato com um deus ou seus servos. Você faz uma única pergunta relacionada a um objetivo, evento ou atividade específica que ocorrerá dentro de 7 dias. O Mestre oferece uma resposta verdadeira, que pode ser uma frase curta, uma rima enigmática ou um presságio.",
     "higherLevels": null,
-    "material": "incenso e uma oferta de sacrifício apropriada à sua religião, valendo juntos pelo menos 25 po, que o feitiço consome"
+    "material": "incenso e uma oferta de sacrifício apropriada à sua religião, valendo juntos pelo menos 25 po, que a magia consome"
   },
   "Dominate Beast": {
     "name": "Dominar Besta",
@@ -1084,7 +1084,7 @@
     "name": "Pele de Pedra",
     "description": "Esta magia torna a carne de uma criatura voluntária que você toca dura como pedra. Até a magia terminar, o alvo tem resistência a dano não mágico de concussão, perfurante e cortante.",
     "higherLevels": null,
-    "material": "pó de diamante no valor de 100 po, que o feitiço consome"
+    "material": "pó de diamante no valor de 100 po, que a magia consome"
   },
   "Wall of Fire": {
     "name": "Muralha de Fogo",
@@ -1184,7 +1184,7 @@
     "name": "Restauração Maior",
     "description": "Você imbui uma criatura que toca com energia positiva para desfazer um efeito debilitante. Você pode reduzir o nível de exaustão do alvo em um, ou encerrar um dos seguintes efeitos no alvo: um efeito que enfeitiçou ou petrificou o alvo; uma maldição, incluindo a sintonia do alvo com um item mágico amaldiçoado; qualquer redução em um dos valores de habilidade do alvo; ou um efeito que esteja reduzindo o máximo de pontos de vida do alvo.",
     "higherLevels": null,
-    "material": "pó de diamante valendo pelo menos 100 po, que o feitiço consome"
+    "material": "pó de diamante valendo pelo menos 100 po, que a magia consome"
   },
   "Hold Monster": {
     "name": "Imobilizar Monstro",
@@ -1202,7 +1202,7 @@
     "name": "Conhecimento Lendário",
     "description": "Nomeie ou descreva uma pessoa, lugar ou objeto. A magia traz à sua mente um breve resumo de conhecimento significativo sobre aquilo que você nomeou. Esse conhecimento pode consistir em histórias atuais, relatos esquecidos ou até conhecimento secreto que nunca foi amplamente conhecido. Se aquilo que você nomeou não tiver importância lendária, você não obtém informação.",
     "higherLevels": null,
-    "material": "incenso valendo pelo menos 250 po, que o feitiço consome, e quatro tiras de marfim valendo pelo menos 50 po cada"
+    "material": "incenso valendo pelo menos 250 po, que a magia consome, e quatro tiras de marfim valendo pelo menos 50 po cada"
   },
   "Mass Cure Wounds": {
     "name": "Curar Ferimentos em Massa",
@@ -1229,19 +1229,19 @@
     "name": "Vínculo Planar",
     "description": "Com esta magia, você tenta vincular um celestial, elemental, fada ou ínfero ao seu serviço. A criatura deve permanecer dentro do alcance durante toda a conjuração da magia. Normalmente, a criatura é primeiro invocada no centro de um círculo mágico invertido para mantê-la presa enquanto esta magia é conjurada. Ao fim da conjuração, o alvo deve fazer um teste de resistência de Carisma. Em uma falha, ele fica vinculado a servi-lo pela duração.",
     "higherLevels": "Quando você conjura esta magia usando um espaço de magia de nível superior, a duração aumenta para 10 dias (6º nível), 30 dias (7º nível), 180 dias (8º nível) ou 1 ano e 1 dia (9º nível).",
-    "material": "uma joia valendo pelo menos 1.000 po, que o feitiço consome"
+    "material": "uma joia valendo pelo menos 1.000 po, que a magia consome"
   },
   "Raise Dead": {
     "name": "Reviver os Mortos",
     "description": "Você devolve à vida uma criatura morta que toca, desde que ela esteja morta há no máximo 10 dias. Se a alma da criatura estiver disposta e livre para retornar ao corpo, a criatura volta à vida com 1 ponto de vida. Esta magia também neutraliza venenos e cura doenças não mágicas que afetavam a criatura no momento da morte. No entanto, esta magia não remove doenças mágicas, maldições ou efeitos semelhantes. A magia não pode devolver um morto-vivo à vida.",
     "higherLevels": null,
-    "material": "um diamante valendo pelo menos 500 po, que o feitiço consome"
+    "material": "um diamante valendo pelo menos 500 po, que a magia consome"
   },
   "Reincarnate": {
     "name": "Reencarnar",
     "description": "Você toca um humanoide morto ou uma parte de um humanoide morto. Desde que a criatura esteja morta há no máximo 10 dias, a magia forma um novo corpo adulto para ela e então chama a alma para entrar nesse corpo. Se a alma do alvo não estiver livre ou disposta a fazer isso, a magia falha. A magia molda um novo corpo para a criatura habitar, o que provavelmente faz com que a raça da criatura mude.",
     "higherLevels": null,
-    "material": "óleos e unguentos raros valendo pelo menos 1.000 po, que o feitiço consome"
+    "material": "óleos e unguentos raros valendo pelo menos 1.000 po, que a magia consome"
   },
   "Rary's Telepathic Bond": {
     "name": "Vínculo Telepático de Rary",
@@ -1269,7 +1269,7 @@
     "name": "Círculo de Teletransporte",
     "description": "Enquanto conjura a magia, você desenha um círculo de 3 m de diâmetro no chão, inscrito com sigilos que conectam sua localização a um círculo de teletransporte permanente à sua escolha, cuja sequência de sigilos você conhece e que esteja no mesmo plano de existência que você. Um portal cintilante se abre dentro do círculo desenhado e permanece aberto até o fim do seu próximo turno. Qualquer criatura que entrar no portal aparece instantaneamente a até 1,5 m do círculo de destino, ou no espaço desocupado mais próximo se esse espaço estiver ocupado.",
     "higherLevels": null,
-    "material": "giz raro e tintas infundidas com gemas preciosas no valor de 50 po, que o feitiço consome"
+    "material": "giz raro e tintas infundidas com gemas preciosas no valor de 50 po, que a magia consome"
   },
   "Tree Stride": {
     "name": "Passo Arbóreo",
@@ -1359,14 +1359,14 @@
   "Forbiddance": {
     "name": "Interdição",
     "description": "Você cria uma proteção contra viagem mágica em uma área de até 3.600 m² de piso e até 9 m de altura. Pela duração, criaturas não podem se teleportar para dentro da área nem usar portais, como os criados pela magia portal, para entrar nela. A magia protege a área contra viagem planar. Além disso, a magia causa dano a tipos de criaturas que você escolher quando a conjura: celestiais, elementais, fadas, ínferos ou mortos-vivos. Quando uma criatura escolhida entra na área pela primeira vez em um turno ou começa seu turno nela, sofre 5d10 de dano radiante ou necrótico, à sua escolha.",
-    "higherLevels": null,
+    "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 7º nível ou superior, pode manter a proteção por até 2 dias com um espaço de 7º nível, 10 dias com um espaço de 8º nível ou 30 dias com um espaço de 9º nível.",
     "material": "uma pitada de água benta, incenso raro e pó de rubi no valor de pelo menos 1.000 PO"
   },
   "Globe of Invulnerability": {
     "name": "Globo de Invulnerabilidade",
     "description": "Uma barreira imóvel e levemente cintilante surge em um raio de 3 m ao seu redor e permanece pela duração. Qualquer magia de 5º nível ou inferior conjurada de fora da barreira não pode afetar criaturas ou objetos dentro dela, mesmo que a magia seja conjurada usando um espaço de magia de nível superior. Essa magia pode mirar criaturas e objetos dentro da barreira, mas não tem efeito sobre eles. Da mesma forma, a área dentro da barreira é excluída das áreas afetadas por essas magias.",
     "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 7º nível ou superior, a barreira bloqueia magias de um nível maior para cada nível do espaço acima do 6º.",
-    "material": "uma conta de vidro ou cristal que se estilhaça quando o feitiço termina"
+    "material": "uma conta de vidro ou cristal que se estilhaça quando a magia termina"
   },
   "Guards and Wards": {
     "name": "Guardas e Proteções",
@@ -1388,7 +1388,7 @@
     "name": "Banquete dos Heróis",
     "description": "Você cria um grande banquete, incluindo comida e bebida magníficas. O banquete leva 1 hora para ser consumido e desaparece ao fim desse tempo; seus efeitos benéficos não entram em ação até essa hora terminar. Até doze criaturas podem participar. Uma criatura que participe do banquete recebe vários benefícios: é curada de todas as doenças e venenos, fica imune a veneno e a ficar amedrontada, tem vantagem em todos os testes de resistência de Sabedoria e seu máximo de pontos de vida aumenta em 2d10.",
     "higherLevels": null,
-    "material": "uma tigela incrustada de pedras preciosas valendo pelo menos 1.000 po, que o feitiço consome"
+    "material": "uma tigela incrustada de pedras preciosas valendo pelo menos 1.000 po, que a magia consome"
   },
   "Magic Jar": {
     "name": "Jarra Mágica",
@@ -1444,7 +1444,7 @@
     "name": "Visão Verdadeira",
     "description": "Esta magia concede a uma criatura voluntária que você toca a capacidade de ver as coisas como realmente são. Pela duração, a criatura possui visão verdadeira, percebe portas secretas ocultas por magia e pode ver no Plano Etéreo, tudo até um alcance de 36 m.",
     "higherLevels": null,
-    "material": "uma pomada para os olhos que custa 25 PO; é feito de cogumelo em pó, açafrão e gordura; e é consumido pelo feitiço"
+    "material": "uma pomada para os olhos que custa 25 po; é feita de cogumelo em pó, açafrão e gordura; e é consumida pela magia"
   },
   "Wall of Ice": {
     "name": "Muralha de Gelo",
@@ -1550,7 +1550,7 @@
     "name": "Ressurreição",
     "description": "Você toca uma criatura morta há no máximo um século, que não tenha morrido de velhice e que não seja morto-vivo. Se a alma dela estiver livre e disposta, o alvo retorna à vida com todos os seus pontos de vida. Esta magia neutraliza venenos e cura doenças normais que afligiam a criatura quando ela morreu. No entanto, ela não remove doenças mágicas, maldições e efeitos semelhantes. A magia pode até fornecer um novo corpo se o original não existir mais; nesse caso, você deve pronunciar o nome da criatura.",
     "higherLevels": null,
-    "material": "um diamante valendo pelo menos 1.000 po, que o feitiço consome"
+    "material": "um diamante valendo pelo menos 1.000 po, que a magia consome"
   },
   "Reverse Gravity": {
     "name": "Inverter Gravidade",
@@ -1562,19 +1562,19 @@
     "name": "Sequestrar",
     "description": "Por meio desta magia, uma criatura voluntária ou um objeto pode ser escondido, ficando seguro contra detecção pela duração. Quando você conjura a magia e toca o alvo, ele fica invisível e não pode ser escolhido como alvo por magias de adivinhação nem percebido por sensores de vidência criados por magias de adivinhação. Se o alvo for uma criatura, ela cai em um estado de animação suspensa. O tempo deixa de fluir para ela, e ela não envelhece.",
     "higherLevels": null,
-    "material": "um pó composto de pó de diamante, esmeralda, rubi e safira no valor de pelo menos 5.000 po, que o feitiço consome"
+    "material": "um pó composto de pó de diamante, esmeralda, rubi e safira no valor de pelo menos 5.000 po, que a magia consome"
   },
   "Simulacrum": {
     "name": "Simulacro",
     "description": "Você molda uma duplicata ilusória de uma besta ou humanoide que esteja dentro do alcance durante todo o tempo de conjuração da magia. A duplicata é uma criatura, parcialmente real e formada de gelo ou neve, e pode realizar ações e ser afetada como uma criatura normal. Ela parece igual ao original, mas possui metade do máximo de pontos de vida da criatura e é formada sem equipamento. Fora isso, a ilusão usa todas as estatísticas da criatura duplicada, exceto que é um constructo.",
     "higherLevels": null,
-    "material": "neve ou gelo em quantidade suficiente para fazer uma cópia em tamanho real da criatura duplicada; algum cabelo, aparas de unhas ou outro pedaço do corpo daquela criatura colocado dentro da neve ou gelo; e rubi em pó no valor de 1.500 po, espalhado sobre a duplicata e consumido pelo feitiço"
+    "material": "neve ou gelo em quantidade suficiente para fazer uma cópia em tamanho real da criatura duplicada; algum cabelo, aparas de unhas ou outro pedaço do corpo daquela criatura colocado dentro da neve ou gelo; e rubi em pó no valor de 1.500 po, espalhado sobre a duplicata e consumido pela magia"
   },
   "Symbol": {
     "name": "Símbolo",
     "description": "Quando conjura esta magia, você inscreve um glifo prejudicial sobre uma superfície, como uma seção de piso, parede ou mesa, ou dentro de um objeto que possa ser fechado para ocultar o glifo, como um livro, pergaminho ou baú de tesouro. O glifo pode cobrir uma área de no máximo 3 m de diâmetro. Você decide o que ativa o glifo ao conjurar a magia. Quando ativado, o glifo irrompe com energia mágica em uma esfera de 18 m de raio centrada nele. A esfera se espalha por cantos. Cada criatura na área deve fazer um teste de resistência, cujo tipo depende do efeito escolhido: Morte, Discórdia, Medo, Desespero, Insanidade, Dor, Sono ou Atordoamento.",
     "higherLevels": null,
-    "material": "mercúrio, fósforo e diamante em pó e opala com um valor total de pelo menos 1.000 po, que o feitiço consome"
+    "material": "mercúrio, fósforo e diamante em pó e opala com um valor total de pelo menos 1.000 po, que a magia consome"
   },
   "Teleport": {
     "name": "Teletransporte",
@@ -1603,7 +1603,7 @@
     "name": "Clone",
     "description": "Esta magia faz crescer uma duplicata inerte de uma criatura viva como proteção contra a morte. Esse clone se forma dentro de um recipiente selado e cresce até o tamanho e maturidade completos após 120 dias; você também pode escolher que o clone seja uma versão mais jovem da mesma criatura. Ele permanece inerte e dura indefinidamente, desde que seu recipiente permaneça intacto. A qualquer momento depois que o clone amadurece, se a criatura original morrer, sua alma se transfere para o clone, desde que a alma esteja livre e disposta a retornar.",
     "higherLevels": null,
-    "material": "um diamante valendo pelo menos 1.000 po e pelo menos 1 polegada cúbica de carne da criatura que será clonada, que o feitiço consome, e um recipiente valendo pelo menos 2.000 po que tenha uma tampa selável e seja grande o suficiente para conter uma criatura Média, como uma enorme urna, caixão, cisto cheio de lama no chão ou recipiente de cristal cheio de água salgada"
+    "material": "um diamante valendo pelo menos 1.000 po e pelo menos 1 polegada cúbica de carne da criatura que será clonada, que a magia consome, e um recipiente valendo pelo menos 2.000 po que tenha uma tampa selável e seja grande o suficiente para conter uma criatura Média, como uma enorme urna, caixão, cisto cheio de lama no chão ou recipiente de cristal cheio de água salgada"
   },
   "Control Weather": {
     "name": "Controlar Clima",
@@ -1703,7 +1703,7 @@
     "name": "Aprisionamento",
     "description": "Você cria uma restrição mágica para manter presa uma criatura que possa ver dentro do alcance. O alvo deve ser bem-sucedido em um teste de resistência de Sabedoria ou ficará preso pela magia; se tiver sucesso, fica imune a esta magia se você a conjurar novamente. Enquanto estiver afetada, a criatura não precisa respirar, comer ou beber, e não envelhece. Magias de adivinhação não podem localizar nem perceber o alvo. Você escolhe uma das seguintes formas de aprisionamento: Sepultamento, Correntes, Prisão Cercada, Contenção Mínima ou Sono.",
     "higherLevels": null,
-    "material": "uma representação de pergaminho ou uma estatueta esculpida à semelhança do alvo, e um componente especial que varia de acordo com a versão do feitiço que você escolher, valendo pelo menos 500 po por Dado de Vida do alvo"
+    "material": "uma representação de pergaminho ou uma estatueta esculpida à semelhança do alvo, e um componente especial que varia de acordo com a versão da magia que você escolher, valendo pelo menos 500 po por Dado de Vida do alvo"
   },
   "Mass Heal": {
     "name": "Cura em Massa",
@@ -1734,7 +1734,7 @@
     "name": "Alterar Forma",
     "description": "Você assume a forma de uma criatura diferente pela duração. A nova forma pode ser de qualquer criatura com nível de desafio igual ou menor que seu nível. A criatura não pode ser um constructo nem um morto-vivo, e você deve ter visto esse tipo de criatura pelo menos uma vez. Você se transforma em um exemplar médio dessa criatura, sem níveis de classe nem a característica Conjuração. Suas estatísticas de jogo são substituídas pelas estatísticas da criatura escolhida.",
     "higherLevels": null,
-    "material": "uma tiara de jade no valor de pelo menos 1.500 po, que você deve colocar em sua cabeça antes de lançar o feitiço"
+    "material": "uma tiara de jade no valor de pelo menos 1.500 po, que você deve colocar em sua cabeça antes de conjurar a magia"
   },
   "Storm of Vengeance": {
     "name": "Tempestade da Vingança",
@@ -1756,7 +1756,7 @@
     "name": "Ressurreição Verdadeira",
     "description": "Você toca uma criatura que está morta há no máximo 200 anos e que morreu por qualquer motivo exceto velhice. Se a alma da criatura estiver livre e disposta, ela é restaurada à vida com todos os seus pontos de vida. Esta magia fecha todos os ferimentos, neutraliza qualquer veneno, cura todas as doenças e remove quaisquer maldições que afetavam a criatura quando ela morreu. A magia substitui órgãos e membros danificados ou ausentes. Se a criatura era morta-viva, ela é restaurada à sua forma não morta-viva.",
     "higherLevels": null,
-    "material": "uma pitada de água benta e diamantes no valor de pelo menos 25.000 po, que o feitiço consome"
+    "material": "uma pitada de água benta e diamantes no valor de pelo menos 25.000 po, que a magia consome"
   },
   "Weird": {
     "name": "Estranheza",

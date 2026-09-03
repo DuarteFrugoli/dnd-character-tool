@@ -1664,7 +1664,7 @@
     "material": "un par de anillos de plata unidos"
   },
   "Tsunami": {
-    "name": "tsunami",
+    "name": "Tsunami",
     "description": "Una pared de agua surge en el punto que elijas dentro del alcance. Puede hacer que la pared tenga hasta 300 pies de largo, 300 pies de alto y 50 pies de espesor. El muro dura todo el tiempo. Cuando aparece el muro, cada criatura dentro de su área debe realizar una tirada de salvación de Fuerza. En una salvación fallida, una criatura sufre 6d10 de daño contundente, o la mitad en una salvación exitosa. Al comienzo de cada uno de tus turnos, después de que aparece el muro, el muro, junto con las criaturas que hay en él, se aleja 50 pies de ti.",
     "higherLevels": null
   },

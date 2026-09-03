@@ -1,12 +1,12 @@
 {
   "Club": {
-    "name": "Club"
+    "name": "Garrote"
   },
   "Dagger": {
     "name": "Daga"
   },
   "Greatclub": {
-    "name": "gran club"
+    "name": "Garrote grande"
   },
   "Handaxe": {
     "name": "hacha de mano"
@@ -21,7 +21,7 @@
     "name": "Maza"
   },
   "Quarterstaff": {
-    "name": "Barra"
+    "name": "Bastón"
   },
   "Sickle": {
     "name": "Hoz"
@@ -30,7 +30,7 @@
     "name": "Lanza"
   },
   "Crossbow, Light": {
-    "name": "Ballesta, Luz"
+    "name": "Ballesta ligera"
   },
   "Dart": {
     "name": "Dardo"
@@ -51,7 +51,7 @@
     "name": "guja"
   },
   "Greataxe": {
-    "name": "gran hacha"
+    "name": "Gran hacha"
   },
   "Greatsword": {
     "name": "Gran espada"
@@ -63,16 +63,16 @@
     "name": "Lanza"
   },
   "Longsword": {
-    "name": "espada larga"
+    "name": "Espada larga"
   },
   "Maul": {
     "name": "Mazo"
   },
   "Morningstar": {
-    "name": "estrella de la mañana"
+    "name": "Estrella del alba"
   },
   "Pike": {
-    "name": "Lucio"
+    "name": "Pica"
   },
   "Rapier": {
     "name": "Estoque"
@@ -87,7 +87,7 @@
     "name": "Tridente"
   },
   "War Pick": {
-    "name": "Selección de guerra"
+    "name": "Pico de guerra"
   },
   "Warhammer": {
     "name": "martillo de guerra"
@@ -99,52 +99,52 @@
     "name": "Cerbatana"
   },
   "Crossbow, Hand": {
-    "name": "Ballesta, Mano"
+    "name": "Ballesta de mano"
   },
   "Crossbow, Heavy": {
-    "name": "Ballesta, Pesada"
+    "name": "Ballesta pesada"
   },
   "Longbow": {
     "name": "Arco"
   },
   "Net": {
-    "name": "Neto"
+    "name": "Red"
   },
   "Padded": {
-    "name": "Acolchado"
+    "name": "Armadura acolchada"
   },
   "Leather": {
-    "name": "Cuero"
+    "name": "Armadura de cuero"
   },
   "Studded Leather": {
-    "name": "Cuero tachonado"
+    "name": "Armadura de cuero tachonado"
   },
   "Hide": {
-    "name": "Esconder"
+    "name": "Armadura de pieles"
   },
   "Chain Shirt": {
-    "name": "Camisa de cadena"
+    "name": "Camisote de malla"
   },
   "Scale Mail": {
-    "name": "Correo a escala"
+    "name": "Cota de escamas"
   },
   "Breastplate": {
     "name": "Coraza"
   },
   "Half Plate": {
-    "name": "Medio plato"
+    "name": "Media armadura"
   },
   "Ring Mail": {
-    "name": "Correo anular"
+    "name": "Cota de anillas"
   },
   "Chain Mail": {
-    "name": "Correo en cadena"
+    "name": "Cota de malla"
   },
   "Splint": {
-    "name": "Entablillar"
+    "name": "Armadura de tablillas"
   },
   "Plate": {
-    "name": "Lámina"
+    "name": "Armadura de placas"
   },
   "Shield": {
     "name": "Blindaje"
@@ -214,7 +214,7 @@
     "description": "Una mochila con libro, tinta, bolígrafo, pergamino, arena y un cuchillo pequeño."
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "Rodamientos de bolas (bolsa de 1000)",
+    "name": "Bolas de metal (bolsa de 1000)",
     "description": "Como acción, dispersa estas pequeñas bolas de metal. Las criaturas deben superar una tirada de salvación de Destreza CD 10 o caerán boca abajo."
   },
   "Barrel": {
@@ -313,6 +313,9 @@
     "name": "Palanca",
     "description": "Otorga ventaja en pruebas de Fuerza donde se puede aplicar apalancamiento."
   },
+  "Disguise kit": {
+    "name": "kit de disfraz"
+  },
   "Druidic Focus": {
     "name": "Enfoque druídico",
     "description": "Una ramita de muérdago, un tótem, un bastón de madera o una varita de tejo sirven como foco de lanzamiento de hechizos para los druidas."
@@ -402,7 +405,7 @@
     "description": "Puede unir a una criatura Pequeña o Mediana. Escapar requiere una prueba de Destreza CD 20. Romper requiere Fuerza CD 20. Cada juego viene con una llave."
   },
   "Mess Kit": {
-    "name": "Kit de desorden",
+    "name": "Kit de comida",
     "description": "Una caja de hojalata con una taza y utensilios sencillos."
   },
   "Mirror, steel": {
@@ -522,7 +525,7 @@
     "description": "Un refugio de lona sencillo y portátil."
   },
   "Tinderbox": {
-    "name": "yesquero",
+    "name": "Yesquero",
     "description": "Contiene pedernal, acero para fuego y yesca. Encender una antorcha o fuego requiere 1 acción (o 1 minuto si la yesca está húmeda)."
   },
   "Torch": {

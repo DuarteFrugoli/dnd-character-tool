@@ -2,12 +2,12 @@
   "Dwarf": {
     "name": "矮人",
     "languages": [
-      "常见的",
+      "通用语",
       "矮人语"
     ],
     "subraces": [
       {
-        "name": "山矮人"
+        "name": "丘陵矮人"
       },
       {
         "name": "山矮人"
@@ -17,7 +17,7 @@
   "Elf": {
     "name": "精灵",
     "languages": [
-      "常见的",
+      "通用语",
       "精灵语"
     ],
     "subraces": [
@@ -35,30 +35,38 @@
   "Halfling": {
     "name": "半身人",
     "languages": [
-      "常见的",
-      "半身人"
+      "通用语",
+      "半身人语"
     ],
     "subraces": [
       {
-        "name": "莱特富特"
+        "name": "轻足"
       },
       {
-        "name": "肥硕"
+        "name": "壮心"
       }
     ]
   },
   "Human": {
     "name": "人类",
     "languages": [
-      "常见的",
-      "您可以额外选择一项"
+      "通用语",
+      "一种自选额外语言"
+    ],
+    "subraces": []
+  },
+  "Variant Human": {
+    "name": "变体人类",
+    "languages": [
+      "通用语",
+      "一种自选额外语言"
     ],
     "subraces": []
   },
   "Dragonborn": {
     "name": "龙裔",
     "languages": [
-      "常见的",
+      "通用语",
       "龙语"
     ],
     "subraces": [
@@ -87,18 +95,18 @@
         "name": "红色（火）"
       },
       {
-        "name": "银（冷）"
+        "name": "银色（寒冷）"
       },
       {
-        "name": "白色（冷）"
+        "name": "白色（寒冷）"
       }
     ]
   },
   "Gnome": {
     "name": "侏儒",
     "languages": [
-      "常见的",
-      "侏儒"
+      "通用语",
+      "侏儒语"
     ],
     "subraces": [
       {
@@ -112,25 +120,25 @@
   "Half-Elf": {
     "name": "半精灵",
     "languages": [
-      "常见的",
+      "通用语",
       "精灵语",
-      "您可以额外选择一项"
+      "一种自选额外语言"
     ],
     "subraces": []
   },
   "Half-Orc": {
     "name": "半兽人",
     "languages": [
-      "常见的",
-      "兽人"
+      "通用语",
+      "兽人语"
     ],
     "subraces": []
   },
   "Tiefling": {
     "name": "提夫林",
     "languages": [
-      "常见的",
-      "地狱"
+      "通用语",
+      "炼狱语"
     ],
     "subraces": []
   }

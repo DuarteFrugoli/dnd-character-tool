@@ -114,7 +114,7 @@
     },
     "Channel Divinity": {
       "name": "Canal Divinité",
-      "description": "Vous obtenez la capacité de canaliser l’énergie divine directement depuis votre divinité, en utilisant cette énergie pour alimenter des effets magiques. Vous commencez avec deux de ces effets : Turn Undead et un effet déterminé par votre domaine. Lorsque vous utilisez votre Channel Divinity, vous choisissez l'effet à créer."
+      "description": "Vous obtenez la capacité de canaliser l’énergie divine directement depuis votre divinité, en utilisant cette énergie pour alimenter des effets magiques. Vous commencez avec deux de ces effets : Turn Undead et un effet déterminé par votre domaine. Lorsque vous utilisez votre Canalisation divine, vous choisissez l'effet à créer."
     },
     "Ability Score Improvement": {
       "name": "Amélioration du score de capacité",
@@ -278,7 +278,7 @@
     },
     "Channel Divinity": {
       "name": "Canal Divinité",
-      "description": "Votre serment vous permet de canaliser l'énergie divine pour alimenter des effets magiques. Lorsque vous utilisez votre Channel Divinity, vous choisissez quelle option utiliser. Vous récupérez les utilisations dépensées lorsque vous terminez un repos court ou long."
+      "description": "Votre serment vous permet de canaliser l'énergie divine pour alimenter des effets magiques. Lorsque vous utilisez votre Canalisation divine, vous choisissez quelle option utiliser. Vous récupérez les utilisations dépensées lorsque vous terminez un repos court ou long."
     },
     "Ability Score Improvement": {
       "name": "Amélioration du score de capacité",

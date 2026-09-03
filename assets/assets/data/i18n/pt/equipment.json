@@ -313,6 +313,9 @@
     "name": "Pé de cabra",
     "description": "Concede vantagem em testes de Força onde a alavancagem pode ser aplicada."
   },
+  "Disguise kit": {
+    "name": "Kit de disfarce"
+  },
   "Druidic Focus": {
     "name": "Foco druídico",
     "description": "Um ramo de visco, um totem, um cajado de madeira ou uma varinha de teixo que serve como foco de conjuração para druidas."

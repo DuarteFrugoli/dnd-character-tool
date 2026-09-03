@@ -69,7 +69,7 @@
       "description": "Genio tattico. Usa i dadi superiorità per eseguire una serie di manovre di combattimento (sgambettare, disarmare, parare e dirigere gli alleati) e recuperali con un riposo breve."
     },
     "Eldritch Knight": {
-      "name": "Cavaliere Eldritch",
+      "name": "Cavaliere mistico",
       "description": "Una lama magica che unisce l'addestramento marziale al potere arcano. Impara incantesimi di abiurazione ed evocazione, lega armi alla tua mano ed eventualmente lancia incantesimi come azione bonus."
     }
   },
@@ -122,7 +122,7 @@
     },
     "Arcane Trickster": {
       "name": "Imbroglione arcano",
-      "description": "Un ladro incantatore che intreccia la magia con l'inganno. Impara incantesimi di illusione e incantesimo, usa Mage Hand Legerdemain e infine ruba gli effetti degli incantesimi ad altri incantatori."
+      "description": "Un ladro incantatore che intreccia la magia con l'inganno. Impara incantesimi di illusione e incantesimo, usa Prestidigitazione della mano magica e infine ruba gli effetti degli incantesimi ad altri incantatori."
     }
   },
   "Sorcerer": {
@@ -138,7 +138,7 @@
   "Warlock": {
     "The Archfey": {
       "name": "L'Arcifey",
-      "description": "Un signore delle fate pieno di emozioni e glamour. Fey Presence per incantare o spaventare le creature vicine, Misty Escape per svanire quando viene colpito e magia incentrata sull'incantesimo."
+      "description": "Un signore delle fate pieno di emozioni e glamour. Presenza fatata per incantare o spaventare le creature vicine, Fuga nebbiosa per svanire quando viene colpito e magia incentrata sull'incantesimo."
     },
     "The Fiend": {
       "name": "Il Demone",

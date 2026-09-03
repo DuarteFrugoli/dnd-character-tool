@@ -1,53 +1,53 @@
 {
   "Common": {
-    "name": "흔한"
+    "name": "공용어"
   },
   "Dwarvish": {
     "name": "드워프어"
   },
   "Elvish": {
-    "name": "꼬마 요정 같은"
+    "name": "엘프어"
   },
   "Halfling": {
-    "name": "하플링"
+    "name": "하플링어"
   },
   "Draconic": {
-    "name": "드라코닉"
+    "name": "드라코닉어"
   },
   "Gnomish": {
-    "name": "노움"
+    "name": "노움어"
   },
   "Orc": {
-    "name": "오크"
+    "name": "오크어"
   },
   "Infernal": {
-    "name": "지독한"
+    "name": "지옥어"
   },
   "Abyssal": {
-    "name": "심연"
+    "name": "심연어"
   },
   "Celestial": {
-    "name": "중국인"
+    "name": "천상어"
   },
   "Deep Speech": {
-    "name": "깊은 연설"
+    "name": "심층어"
   },
   "Giant": {
-    "name": "거대한"
+    "name": "거인어"
   },
   "Gnoll": {
-    "name": "놀"
+    "name": "놀어"
   },
   "Goblin": {
-    "name": "고블린"
+    "name": "고블린어"
   },
   "Primordial": {
-    "name": "원시"
+    "name": "원시어"
   },
   "Sylvan": {
-    "name": "실반"
+    "name": "실반어"
   },
   "Undercommon": {
-    "name": "언더커먼"
+    "name": "언더커먼어"
   }
 }

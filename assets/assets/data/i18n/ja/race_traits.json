@@ -23,6 +23,14 @@
     "name": "ツールの習熟度",
     "description": "あなたは、鍛冶屋の道具、醸造所の備品、または石工の道具など、自分で選んだ職人の道具の熟練度を獲得します。"
   },
+  "Skill Proficiency": {
+    "name": "技能習熟",
+    "description": "任意の技能1つに習熟します。"
+  },
+  "Bonus Feat": {
+    "name": "追加特技",
+    "description": "任意の特技1つを得ます。"
+  },
   "Dwarven Toughness": {
     "name": "ドワーフのタフネス",
     "description": "ヒットポイントの最大値は 1 ずつ増加し、レベルが上がるたびに 1 ずつ増加します。"

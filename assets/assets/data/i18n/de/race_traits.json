@@ -23,6 +23,14 @@
     "name": "Werkzeugkenntnisse",
     "description": "Sie erwerben Kenntnisse im Umgang mit den Handwerkswerkzeugen Ihrer Wahl: Schmiedewerkzeuge, Brauerbedarf oder Maurerwerkzeuge."
   },
+  "Skill Proficiency": {
+    "name": "Fertigkeitskompetenz",
+    "description": "Sie erhalten Übung in einer Fertigkeit Ihrer Wahl."
+  },
+  "Bonus Feat": {
+    "name": "Bonustalent",
+    "description": "Sie erhalten ein Talent Ihrer Wahl."
+  },
   "Dwarven Toughness": {
     "name": "Zwergische Zähigkeit",
     "description": "Dein Trefferpunktmaximum erhöht sich um 1 und jedes Mal, wenn du ein Level aufsteigst, um 1."

@@ -7,7 +7,7 @@
       "name": "Inspiration bardique"
     },
     "cleric_channel_divinity": {
-      "name": "Canal Divinité"
+      "name": "Canalisation divine"
     },
     "divine_intervention": {
       "name": "Intervention divine"
@@ -16,10 +16,10 @@
       "name": "Forme sauvage"
     },
     "second_wind": {
-      "name": "Deuxième souffle"
+      "name": "Second souffle"
     },
     "action_surge": {
-      "name": "Déferlement d'action"
+      "name": "Sursaut d’action"
     },
     "indomitable": {
       "name": "Indomptable"
@@ -31,13 +31,13 @@
       "name": "Sens divin"
     },
     "lay_on_hands": {
-      "name": "Imposer les mains"
+      "name": "Imposition des mains"
     },
     "paladin_channel_divinity": {
-      "name": "Canal Divinité"
+      "name": "Canalisation divine"
     },
     "cleansing_touch": {
-      "name": "Touche Nettoyante"
+      "name": "Toucher purificateur"
     },
     "stroke_of_luck": {
       "name": "Coup de chance"
@@ -49,16 +49,16 @@
       "name": "Arcane mystique"
     },
     "eldritch_master": {
-      "name": "Maître surnaturel"
+      "name": "Maître occulte"
     },
     "arcane_recovery": {
-      "name": "Récupération des arcanes"
+      "name": "Récupération arcanique"
     },
     "signature_spells": {
-      "name": "Sorts de signature"
+      "name": "Sorts de prédilection"
     },
     "warding_flare": {
-      "name": "Fusée de protection"
+      "name": "Lueur protectrice"
     },
     "wrath_of_the_storm": {
       "name": "Colère de la tempête"
@@ -73,16 +73,16 @@
       "name": "Dés de supériorité"
     },
     "wholeness_of_body": {
-      "name": "Intégrité du corps"
+      "name": "Intégrité corporelle"
     },
     "holy_nimbus": {
-      "name": "Nimbus sacré"
+      "name": "Nimbe sacré"
     },
     "undying_sentinel": {
-      "name": "Sentinelle éternelle"
+      "name": "Sentinelle immortelle"
     },
     "elder_champion": {
-      "name": "Champion aîné"
+      "name": "Champion ancien"
     },
     "tides_of_chaos": {
       "name": "Marées du chaos"
@@ -97,13 +97,13 @@
       "name": "Délire sombre"
     },
     "dark_ones_own_luck": {
-      "name": "La chance du Ténébreux"
+      "name": "Chance du Ténébreux"
     },
     "hurl_through_hell": {
-      "name": "Traversez l'enfer"
+      "name": "Projeter en enfer"
     },
     "entropic_ward": {
-      "name": "Salle entropique"
+      "name": "Protection entropique"
     },
     "benign_transposition": {
       "name": "Transposition bénigne"
@@ -115,10 +115,10 @@
       "name": "Charme instinctif"
     },
     "illusory_self": {
-      "name": "Soi illusoire"
+      "name": "Moi illusoire"
     },
     "shapechanger": {
-      "name": "Changeur de forme"
+      "name": "Changeforme"
     },
     "lucky_points": {
       "name": "Points de chance"
@@ -127,10 +127,10 @@
       "name": "Dé de supériorité"
     },
     "magic_initiate_spell": {
-      "name": "Sort d'initiation magique"
+      "name": "Sort d’Initié à la magie"
     },
     "breath_weapon": {
-      "name": "Souffle"
+      "name": "Souffle draconique"
     },
     "relentless_endurance": {
       "name": "Endurance implacable"

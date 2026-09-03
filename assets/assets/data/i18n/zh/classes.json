@@ -151,15 +151,15 @@
     "name": "德鲁伊",
     "subclassFeatureName": "德鲁伊圆环",
     "weaponProficiencies": [
-      "俱乐部",
+      "短棍",
       "匕首",
       "飞镖",
       "标枪",
-      "狼牙棒",
-      "军需人员",
+      "硬头锤",
+      "长棍",
       "弯刀",
       "镰刀",
-      "吊索",
+      "投石索",
       "矛"
     ],
     "startingEquipment": {
@@ -255,7 +255,7 @@
     "name": "僧",
     "subclassFeatureName": "修道院传统",
     "weaponProficiencies": [
-      "简单的",
+      "简易武器",
       "短剑"
     ],
     "startingEquipment": {
@@ -386,10 +386,10 @@
     "name": "流氓",
     "subclassFeatureName": "流氓原型",
     "weaponProficiencies": [
-      "简单的",
+      "简易武器",
       "手弩",
       "长剑",
-      "剑杆",
+      "刺剑",
       "短剑"
     ],
     "startingEquipment": {

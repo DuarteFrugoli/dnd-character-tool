@@ -1,13 +1,13 @@
 {
   "resources": {
     "rage": {
-      "name": "Raiva"
+      "name": "Fúria"
     },
     "bardic_inspiration": {
       "name": "Inspiração Bárdica"
     },
     "cleric_channel_divinity": {
-      "name": "Divindade do Canal"
+      "name": "Canalizar Divindade"
     },
     "divine_intervention": {
       "name": "Intervenção Divina"
@@ -19,7 +19,7 @@
       "name": "Segundo Vento"
     },
     "action_surge": {
-      "name": "Surto de ação"
+      "name": "Surto de Ação"
     },
     "indomitable": {
       "name": "Indomável"
@@ -31,16 +31,16 @@
       "name": "Sentido Divino"
     },
     "lay_on_hands": {
-      "name": "Coloque as mãos"
+      "name": "Imposição de Mãos"
     },
     "paladin_channel_divinity": {
-      "name": "Divindade do Canal"
+      "name": "Canalizar Divindade"
     },
     "cleansing_touch": {
-      "name": "Toque de limpeza"
+      "name": "Toque Purificador"
     },
     "stroke_of_luck": {
-      "name": "Golpe de sorte"
+      "name": "Golpe de Sorte"
     },
     "sorcery_points": {
       "name": "Pontos de Feitiçaria"
@@ -49,16 +49,16 @@
       "name": "Arcano Místico"
     },
     "eldritch_master": {
-      "name": "Mestre Eldritch"
+      "name": "Mestre Místico"
     },
     "arcane_recovery": {
       "name": "Recuperação Arcana"
     },
     "signature_spells": {
-      "name": "Feitiços de Assinatura"
+      "name": "Magias de Assinatura"
     },
     "warding_flare": {
-      "name": "Sinalizador de Proteção"
+      "name": "Clarão Protetor"
     },
     "wrath_of_the_storm": {
       "name": "Ira da Tempestade"
@@ -73,10 +73,10 @@
       "name": "Dados de Superioridade"
     },
     "wholeness_of_body": {
-      "name": "Totalidade do Corpo"
+      "name": "Integridade Corporal"
     },
     "holy_nimbus": {
-      "name": "Santo Nimbo"
+      "name": "Nimbo Sagrado"
     },
     "undying_sentinel": {
       "name": "Sentinela Imortal"
@@ -97,13 +97,13 @@
       "name": "Delírio Sombrio"
     },
     "dark_ones_own_luck": {
-      "name": "A própria sorte do Dark One"
+      "name": "Sorte do Senhor Sombrio"
     },
     "hurl_through_hell": {
       "name": "Arremessar pelo Inferno"
     },
     "entropic_ward": {
-      "name": "Ala Entrópica"
+      "name": "Proteção Entrópica"
     },
     "benign_transposition": {
       "name": "Transposição Benigna"
@@ -121,19 +121,19 @@
       "name": "Metamorfo"
     },
     "lucky_points": {
-      "name": "Pontos de sorte"
+      "name": "Pontos de Sorte"
     },
     "martial_adept_superiority_die": {
       "name": "Dado de Superioridade"
     },
     "magic_initiate_spell": {
-      "name": "Feitiço de Iniciação Mágica"
+      "name": "Magia de Iniciado em Magia"
     },
     "breath_weapon": {
-      "name": "Arma de sopro"
+      "name": "Arma de Sopro"
     },
     "relentless_endurance": {
-      "name": "Resistência implacável"
+      "name": "Resistência Implacável"
     }
   }
 }

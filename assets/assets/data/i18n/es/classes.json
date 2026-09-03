@@ -151,7 +151,7 @@
     "name": "druida",
     "subclassFeatureName": "Círculo druida",
     "weaponProficiencies": [
-      "clubs",
+      "garrotes",
       "dagas",
       "dardos",
       "jabalinas",
@@ -159,7 +159,7 @@
       "bastones",
       "cimitarras",
       "hoces",
-      "eslingas",
+      "hondas",
       "lanzas"
     ],
     "startingEquipment": {
@@ -255,7 +255,7 @@
     "name": "Monje",
     "subclassFeatureName": "Tradición monástica",
     "weaponProficiencies": [
-      "simple",
+      "armas simples",
       "espadas cortas"
     ],
     "startingEquipment": {
@@ -386,11 +386,11 @@
     "name": "Pícaro",
     "subclassFeatureName": "Arquetipo pícaro",
     "weaponProficiencies": [
-      "simple",
-      "ballesta de mano",
-      "espada larga",
-      "estoque",
-      "espada corta"
+      "armas simples",
+      "ballestas de mano",
+      "espadas largas",
+      "estoques",
+      "espadas cortas"
     ],
     "startingEquipment": {
       "fixed": [

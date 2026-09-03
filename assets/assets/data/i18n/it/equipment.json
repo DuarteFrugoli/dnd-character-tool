@@ -1,12 +1,12 @@
 {
   "Club": {
-    "name": "Club"
+    "name": "Randello"
   },
   "Dagger": {
     "name": "Pugnale"
   },
   "Greatclub": {
-    "name": "Grande club"
+    "name": "Randello pesante"
   },
   "Handaxe": {
     "name": "Ascia"
@@ -30,7 +30,7 @@
     "name": "Lancia"
   },
   "Crossbow, Light": {
-    "name": "Balestra, leggera"
+    "name": "Balestra leggera"
   },
   "Dart": {
     "name": "Dardo"
@@ -72,7 +72,7 @@
     "name": "Stella del mattino"
   },
   "Pike": {
-    "name": "Luccio"
+    "name": "Picca"
   },
   "Rapier": {
     "name": "Stocco"
@@ -87,10 +87,10 @@
     "name": "Tridente"
   },
   "War Pick": {
-    "name": "Scelta di guerra"
+    "name": "Piccone da guerra"
   },
   "Warhammer": {
-    "name": "Warhammer"
+    "name": "Martello da guerra"
   },
   "Whip": {
     "name": "Frusta"
@@ -99,52 +99,52 @@
     "name": "Cerbottana"
   },
   "Crossbow, Hand": {
-    "name": "Balestra, mano"
+    "name": "Balestra a mano"
   },
   "Crossbow, Heavy": {
-    "name": "Balestra, pesante"
+    "name": "Balestra pesante"
   },
   "Longbow": {
     "name": "Arco lungo"
   },
   "Net": {
-    "name": "Netto"
+    "name": "Rete"
   },
   "Padded": {
-    "name": "Imbottito"
+    "name": "Armatura imbottita"
   },
   "Leather": {
-    "name": "Pelle"
+    "name": "Armatura di cuoio"
   },
   "Studded Leather": {
-    "name": "Pelle borchiata"
+    "name": "Armatura di cuoio borchiato"
   },
   "Hide": {
-    "name": "Nascondere"
+    "name": "Armatura di pelle grezza"
   },
   "Chain Shirt": {
-    "name": "Camicia a catena"
+    "name": "Giaco di maglia"
   },
   "Scale Mail": {
     "name": "Posta in scala"
   },
   "Breastplate": {
-    "name": "Pettorale"
+    "name": "Corazza"
   },
   "Half Plate": {
-    "name": "Mezzo piatto"
+    "name": "Mezza armatura"
   },
   "Ring Mail": {
-    "name": "Chiama la posta"
+    "name": "Cotta ad anelli"
   },
   "Chain Mail": {
     "name": "Cotta di maglia"
   },
   "Splint": {
-    "name": "Stecca"
+    "name": "Corazza a strisce"
   },
   "Plate": {
-    "name": "Piatto"
+    "name": "Armatura completa"
   },
   "Shield": {
     "name": "Scudo"
@@ -214,7 +214,7 @@
     "description": "Uno zaino con libro, inchiostro, penna, pergamena, sabbia e coltellino."
   },
   "Ball Bearings (bag of 1000)": {
-    "name": "Cuscinetti a sfera (confezione da 1000)",
+    "name": "Sfere metalliche (sacchetto da 1000)",
     "description": "Come azione, spargi queste minuscole palline di metallo. Le creature devono superare un tiro salvezza su Destrezza con CD 10 o cadere prone."
   },
   "Barrel": {
@@ -313,6 +313,9 @@
     "name": "Piede di porco",
     "description": "Concede vantaggio alle prove di Forza in cui può essere applicata la leva finanziaria."
   },
+  "Disguise kit": {
+    "name": "Kit di travestimento"
+  },
   "Druidic Focus": {
     "name": "Focus druidico",
     "description": "Un rametto di vischio, un totem, un bastone di legno o una bacchetta di tasso servono come punto focale per gli incantesimi dei druidi."
@@ -322,7 +325,7 @@
     "description": "Contiene 1 litro di liquido."
   },
   "Grappling Hook": {
-    "name": "Gancio di presa",
+    "name": "Rampino",
     "description": "Può essere lanciato per ancorare una corda a una superficie."
   },
   "Hammer": {
@@ -402,7 +405,7 @@
     "description": "Può vincolare una creatura Piccola o Media. Per fuggire è necessaria una prova di Destrezza con CD 20. Per rompersi è necessaria una Forza con CD 20. Ogni set viene fornito con una chiave."
   },
   "Mess Kit": {
-    "name": "Kit pasticcio",
+    "name": "Gavetta",
     "description": "Una scatola di latta con una tazza e semplici utensili."
   },
   "Mirror, steel": {
@@ -522,7 +525,7 @@
     "description": "Un rifugio in tela semplice e portatile."
   },
   "Tinderbox": {
-    "name": "Scatola esca",
+    "name": "Acciarino",
     "description": "Contiene selce, acciaio refrattario ed esca. Accendere una torcia o un fuoco richiede 1 azione (o 1 minuto se l'esca è umida)."
   },
   "Torch": {

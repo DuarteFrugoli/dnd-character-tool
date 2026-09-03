@@ -10,7 +10,7 @@
     "higherLevels": null
   },
   "Chill Touch": {
-    "name": "Chill Touch",
+    "name": "Totenberührung",
     "description": "Du erschaffst eine geisterhafte Skeletthand im Raum einer Kreatur in Reichweite. Führen Sie einen Fernkampfangriff gegen die Kreatur durch. Bei einem Treffer erleidet das Ziel 1W8 nekrotischen Schaden und kann bis zum Beginn Ihres nächsten Zuges keine Trefferpunkte wiedererlangen. Bis dahin klammert sich die Hand an das Ziel. Wenn du ein untotes Ziel triffst, hat es bis zum Ende deines nächsten Zuges auch einen Nachteil bei Angriffswürfen gegen dich. Der Schaden dieses Zaubers erhöht sich um 1W8, wenn Sie die 5. Stufe (2W8), die 11. Stufe (3W8) und die 17. Stufe (4W8) erreichen.",
     "higherLevels": null
   },
@@ -415,7 +415,7 @@
     "material": "pulverisiertes Rhabarberblatt und ein Natternmagen"
   },
   "Alter Self": {
-    "name": "Alter Self",
+    "name": "Selbstveränderung",
     "description": "Du nimmst eine andere Form an. Wenn Sie den Zauber wirken, wählen Sie eine der folgenden Optionen, deren Wirkung für die Dauer anhält: Wasseranpassung, Aussehen ändern oder Natürliche Waffen (Ihre unbewaffneten Schläge verursachen 1W6 Knüppel-, Stich- oder Hiebschaden).",
     "higherLevels": null
   },
@@ -432,7 +432,7 @@
     "material": "Goldstaub im Wert von mindestens 25 GM, den der Zauber verbraucht"
   },
   "Augury": {
-    "name": "Augury",
+    "name": "Vorahnung",
     "description": "Indem Sie mit Edelsteinen besetzte Stöcke werfen, Drachenknochen rollen, verzierte Karten auslegen oder ein anderes Wahrsagungswerkzeug verwenden, erhalten Sie von einem jenseitigen Wesen ein Omen über die Ergebnisse einer bestimmten Vorgehensweise, die Sie innerhalb der nächsten 30 Minuten durchführen möchten. Der DM wählt aus den folgenden möglichen Vorzeichen: Wohl (gute Ergebnisse), Wehe (schlechte Ergebnisse), Wohl und Wehe (gute und schlechte Ergebnisse) oder Nichts (Ergebnisse, die nicht besonders gut oder schlecht sind).",
     "higherLevels": null,
     "material": "speziell gekennzeichnete Stöcke, Knochen oder ähnliche Spielsteine ​​im Wert von mindestens 25 GM"
@@ -602,7 +602,7 @@
     "higherLevels": null
   },
   "Misty Step": {
-    "name": "Misty Step",
+    "name": "Nebelschritt",
     "description": "Kurzzeitig von silbrigem Nebel umgeben, teleportieren Sie sich bis zu 30 Fuß weit zu einem unbesetzten Raum, den Sie sehen können.",
     "higherLevels": null
   },
@@ -1101,7 +1101,7 @@
     "material": "eine Eierschale und ein Handschuh aus Schlangenleder"
   },
   "Cloudkill": {
-    "name": "Cloudkill",
+    "name": "Todeswolke",
     "description": "Sie erschaffen eine Kugel aus giftigem, gelbgrünem Nebel mit einem Radius von 20 Fuß, die auf einem von Ihnen gewählten Punkt in Reichweite zentriert ist. Der Nebel breitet sich um die Ecken aus. Es dauert so lange oder bis ein starker Wind den Nebel zerstreut und den Zauber beendet. Sein Bereich ist stark verdeckt. Wenn eine Kreatur zum ersten Mal in einem Zug den Wirkungsbereich des Zaubers betritt oder ihren Zug dort beginnt, muss diese Kreatur einen Konstitutionsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf erleidet die Kreatur 5W8 Giftschaden, bei einem erfolgreichen Rettungswurf halb so viel.",
     "higherLevels": "Wenn Sie diesen Zauber mit einem Zauberslot der 6. Stufe oder höher wirken, erhöht sich der Schaden um 1W8 für jede Slotstufe über der 5. Stufe."
   },

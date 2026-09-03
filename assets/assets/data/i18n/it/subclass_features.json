@@ -242,7 +242,7 @@
         "description": "A partire dal 2° livello, quando effettui un tiro per colpire, puoi usare Incanalare Divinità per ottenere un bonus di +10 al tiro. Si effettua questa scelta prima o dopo aver visto il tiro, ma prima che venga applicato qualsiasi effetto."
       },
       "Channel Divinity: War God's Blessing": {
-        "name": "Channel Divinity: Benedizione del Dio della Guerra",
+        "name": "Incanalare Divinità: Benedizione del Dio della Guerra",
         "description": "Al 6° livello, quando una creatura entro 9 metri da te effettua un tiro per colpire, puoi usare la tua reazione per concedere a quella creatura un bonus di +10 al tiro usando Incanalare Divinità."
       },
       "Divine Strike": {
@@ -360,7 +360,7 @@
         "description": "A partire dal 7° livello, quando usi la tua azione per lanciare un trucchetto, puoi effettuare un attacco con l'arma come azione bonus."
       },
       "Eldritch Strike": {
-        "name": "Colpo Eldritch",
+        "name": "Colpo mistico",
         "description": "Al 10° livello, quando colpisci una creatura con un attacco con arma, quella creatura ha svantaggio al successivo tiro salvezza che effettua contro un incantesimo da te lanciato prima della fine del tuo turno successivo."
       },
       "Arcane Charge": {
@@ -440,7 +440,7 @@
         "description": "A partire dal 15° livello, sei sempre sotto gli effetti dell'incantesimo protezione dal bene e dal male."
       },
       "Holy Nimbus": {
-        "name": "Santo Nimbo",
+        "name": "Nimbo sacro",
         "description": "Al 20° livello, come azione, puoi emanare un'aura di luce solare. Per 1 minuto, la luce intensa risplende da te in un raggio di 9 metri, e la luce fioca risplende per 9 metri oltre. Ogni volta che una creatura nemica inizia il suo turno in piena luce, subisce 10 danni radiosi. Inoltre, hai vantaggio ai tiri salvezza contro gli incantesimi lanciati da immondi o non morti. Una volta utilizzata questa capacità, non potrai utilizzarla nuovamente finché non avrai terminato un riposo lungo."
       }
     },
@@ -578,7 +578,7 @@
         "description": "Quando raggiungi il 3° livello, aumenti le tue abilità furfanti con abilità magiche. L'intelligenza è la tua abilità da incantatore per gli incantesimi da mago. Conosci tre trucchetti da mago (mano magica più altri due a tua scelta) e tre incantesimi da mago di 1° livello, almeno due dei quali devono provenire dalle scuole di Ammaliamento e Illusione."
       },
       "Mage Hand Legerdemain": {
-        "name": "Legerdemain della Mano Magia",
+        "name": "Prestidigitazione della mano magica",
         "description": "A partire dal 3° livello, quando lanci Mano Magica, puoi rendere invisibile la mano spettrale e con essa puoi eseguire compiti aggiuntivi: riporre o recuperare oggetti da contenitori indossati da un'altra creatura, o usare strumenti da ladro per scassinare serrature e disinnescare trappole a distanza. Puoi farlo senza essere notato se riesci in una prova di Rapidità di Mano contestata dalla prova di Percezione della creatura."
       },
       "Magical Ambush": {
@@ -804,7 +804,7 @@
         "description": "A partire dal 10° livello, puoi aggiungere il tuo modificatore di Intelligenza a un tiro per i danni di qualsiasi incantesimo di evocazione da mago che lanci."
       },
       "Overchannel": {
-        "name": "Overchannel",
+        "name": "Canalizzazione eccessiva",
         "description": "A partire dal 14° livello, quando lanci un incantesimo da mago dal 1° al 5° livello che infligge danni, puoi infliggere il massimo danno con quell'incantesimo. La prima volta che lo fai, non subisci alcun effetto negativo. Se usi nuovamente questo privilegio prima di terminare un riposo lungo, subisci 2d12 danni necrotici per ogni livello dell'incantesimo, immediatamente dopo averlo lanciato. Questo danno ignora la resistenza e l'immunità."
       }
     },

@@ -23,6 +23,14 @@
     "name": "Competenza negli strumenti",
     "description": "Ottieni competenza con gli strumenti da artigiano di tua scelta: strumenti da fabbro, forniture da birraio o strumenti da muratore."
   },
+  "Skill Proficiency": {
+    "name": "Competenza in abilità",
+    "description": "Ottieni competenza in un'abilità a tua scelta."
+  },
+  "Bonus Feat": {
+    "name": "Talento bonus",
+    "description": "Ottieni un talento a tua scelta."
+  },
   "Dwarven Toughness": {
     "name": "Robustezza nanica",
     "description": "I tuoi punti ferita massimi aumentano di 1 e aumentano di 1 ogni volta che guadagni un livello."

@@ -55,6 +55,14 @@
     ],
     "subraces": []
   },
+  "Variant Human": {
+    "name": "Umano variante",
+    "languages": [
+      "Comune",
+      "una lingua aggiuntiva a tua scelta"
+    ],
+    "subraces": []
+  },
   "Dragonborn": {
     "name": "Sangue di Drago",
     "languages": [

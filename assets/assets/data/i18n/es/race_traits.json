@@ -23,6 +23,14 @@
     "name": "Competencia con la herramienta",
     "description": "Obtienes competencia con las herramientas de artesano de tu elección: herramientas de herrero, suministros de cervecería o herramientas de albañil."
   },
+  "Skill Proficiency": {
+    "name": "Competencia en habilidad",
+    "description": "Obtienes competencia en una habilidad de tu elección."
+  },
+  "Bonus Feat": {
+    "name": "Dote adicional",
+    "description": "Obtienes una dote de tu elección."
+  },
   "Dwarven Toughness": {
     "name": "Dureza enana",
     "description": "Tu máximo de puntos de vida aumenta en 1 y aumenta en 1 cada vez que subes de nivel."

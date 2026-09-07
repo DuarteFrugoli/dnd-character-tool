@@ -10,11 +10,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 - **Traducoes SRD**: revisadas traducoes de equipamentos, ferramentas, magias, habilidades, talentos, idiomas, racas e escolhas em todos os idiomas suportados.
 - **Criacao de personagem**: escolhas de proficiencia, especializacao, ferramentas, armas e equipamentos agora exibem nomes mais legiveis e consistentes, sem vazar termos tecnicos como `snake_case`.
+- **Criacao de personagem**: escolhas livres de idioma agora exibem os nomes traduzidos na lista e nos chips selecionados.
 - **Magias e habilidades**: corrigidas descricoes incompletas, textos quebrados e traducoes inconsistentes em conteudos importantes do SRD.
 
 ### Internal
 - **Validacao de i18n**: adicionada e ampliada cobertura para detectar entradas criticas ausentes nos overlays de traducao.
-- **Versionamento**: versao do app atualizada para `2.0.3+27`.
+- **Versionamento**: versao do app atualizada para `2.0.3+28`.
 
 ---
 

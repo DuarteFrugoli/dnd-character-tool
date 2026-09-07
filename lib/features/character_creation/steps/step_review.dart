@@ -1436,6 +1436,8 @@ class _LanguageChoiceSectionState
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final i18n =
+        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final draft = ref.watch(characterDraftProvider);
     final scheme = Theme.of(context).colorScheme;
     final needed = draft.languageChoicesNeeded;
@@ -1506,7 +1508,7 @@ class _LanguageChoiceSectionState
                 children: chosen
                     .map(
                       (lang) => Chip(
-                        label: Text(lang),
+                        label: Text(i18n.languageName(lang)),
                         labelStyle: const TextStyle(fontSize: 12),
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -1561,7 +1563,7 @@ class _LanguageChoiceSectionState
                     )
                     .map(
                       (lang) => ActionChip(
-                        label: Text(lang),
+                        label: Text(i18n.languageName(lang)),
                         labelStyle: const TextStyle(fontSize: 11),
                         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         padding: const EdgeInsets.symmetric(horizontal: 2),

@@ -202,9 +202,10 @@ pacote visual/rolagem.
       escolhas de pericia/talento e descricoes essenciais.
 - [x] Melhorar a exibicao de escolhas traduzidas na criacao e evitar termos
       tecnicos visiveis ao usuario.
+- [x] Exibir idiomas traduzidos nas escolhas livres de idioma da criacao.
 - [x] Adicionar cobertura para encontrar entradas criticas ausentes nos overlays
       de traducao.
-- [x] Atualizar versao para `2.0.3+27` e changelog.
+- [x] Atualizar versao para `2.0.3+28` e changelog.
 
 ### 2.1.0 - Fechamento visual e rolagem contextual
 

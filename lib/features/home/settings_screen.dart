@@ -17,6 +17,7 @@ import '../../core/utils/file_exporter.dart';
 import '../../data/migrations/character_migration.dart';
 import '../../data/migrations/character_migration_runner.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import '../character_list/character_list_provider.dart';
 
@@ -576,6 +577,7 @@ class _CharacterMaintenanceTileState
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(ctx),
+                  style: neutralDialogTextButtonStyle(ctx),
                   child: Text(AppLocalizations.of(ctx)!.dialogClose),
                 ),
               ],
@@ -652,6 +654,7 @@ class _CharacterMaintenanceTileState
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogCancel),
           ),
           FilledButton(
@@ -690,6 +693,7 @@ class _CharacterMaintenanceTileState
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
+              style: neutralDialogTextButtonStyle(ctx),
               child: Text(AppLocalizations.of(ctx)!.dialogClose),
             ),
           ],

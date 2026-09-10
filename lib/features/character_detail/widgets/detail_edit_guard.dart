@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../../shared/widgets/confirmation_dialog_styles.dart';
 
 class EditGuard {
   bool get isEditing => _discardFn != null;
@@ -29,14 +30,12 @@ class EditGuard {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogKeepEditing),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            style: FilledButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.error,
-              foregroundColor: Theme.of(context).colorScheme.onError,
-            ),
+            style: destructiveDialogFilledButtonStyle(ctx),
             child: Text(l10n.dialogDiscard),
           ),
         ],

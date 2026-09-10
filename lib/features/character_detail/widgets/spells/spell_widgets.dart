@@ -546,6 +546,7 @@ Future<void> _onConcentrationTap(
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx, false),
+          style: neutralDialogTextButtonStyle(ctx),
           child: Text(l10n.dialogCancel),
         ),
         FilledButton(

@@ -126,13 +126,12 @@ class _NotesTabState extends ConsumerState<NotesTab>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            style: FilledButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.error,
-            ),
+            style: destructiveDialogFilledButtonStyle(ctx),
             child: Text(AppLocalizations.of(context)!.dialogRemove),
           ),
         ],
@@ -690,6 +689,7 @@ class _TagColorDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
+          style: neutralDialogTextButtonStyle(context),
           child: Text(l10n.dialogCancel),
         ),
       ],
@@ -964,13 +964,12 @@ class _NoteEditorSheetState extends State<_NoteEditorSheet> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, _NoteCloseAction.keepEditing),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogKeepEditing),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, _NoteCloseAction.discard),
-            style: TextButton.styleFrom(
-              foregroundColor: Theme.of(context).colorScheme.error,
-            ),
+            style: destructiveDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogDiscard),
           ),
           FilledButton(

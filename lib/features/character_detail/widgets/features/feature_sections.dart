@@ -343,14 +343,12 @@ class ToolProficienciesSection extends ConsumerWidget {
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(ctx, false),
+                            style: neutralDialogTextButtonStyle(ctx),
                             child: Text(l10n.dialogCancel),
                           ),
                           FilledButton(
                             onPressed: () => Navigator.pop(ctx, true),
-                            style: FilledButton.styleFrom(
-                              backgroundColor: scheme.error,
-                              foregroundColor: scheme.onError,
-                            ),
+                            style: destructiveDialogFilledButtonStyle(ctx),
                             child: Text(l10n.dialogRemove),
                           ),
                         ],
@@ -436,14 +434,12 @@ class FeatsSection extends ConsumerWidget {
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(ctx, false),
+                      style: neutralDialogTextButtonStyle(ctx),
                       child: Text(l10n.dialogCancel),
                     ),
                     FilledButton(
                       onPressed: () => Navigator.pop(ctx, true),
-                      style: FilledButton.styleFrom(
-                        backgroundColor: scheme.error,
-                        foregroundColor: scheme.onError,
-                      ),
+                      style: destructiveDialogFilledButtonStyle(ctx),
                       child: Text(l10n.dialogRemove),
                     ),
                   ],
@@ -678,14 +674,12 @@ class ExtraFeaturesSection extends ConsumerWidget {
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(ctx, false),
+                      style: neutralDialogTextButtonStyle(ctx),
                       child: Text(l10n.dialogCancel),
                     ),
                     FilledButton(
                       onPressed: () => Navigator.pop(ctx, true),
-                      style: FilledButton.styleFrom(
-                        backgroundColor: scheme.error,
-                        foregroundColor: scheme.onError,
-                      ),
+                      style: destructiveDialogFilledButtonStyle(ctx),
                       child: Text(l10n.dialogRemove),
                     ),
                   ],

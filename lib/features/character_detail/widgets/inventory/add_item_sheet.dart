@@ -606,6 +606,7 @@ class _AddItemSheetState extends ConsumerState<AddItemSheet>
               FocusScope.of(ctx).unfocus();
               Navigator.of(ctx).pop();
             },
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
           FilledButton(

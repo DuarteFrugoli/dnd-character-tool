@@ -323,6 +323,7 @@ void showFeatureChoiceValueDetails(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () => Navigator.pop(context),
+                    style: neutralDialogTextButtonStyle(context),
                     child: Text(l10n.dialogClose),
                   ),
                 ),
@@ -400,6 +401,9 @@ void openFeatureChoiceEditorSheet({
                           Expanded(
                             child: TextButton(
                               onPressed: () => Navigator.pop(sheetContext),
+                              style: neutralDialogTextButtonStyle(
+                                sheetContext,
+                              ),
                               child: Text(
                                 AppLocalizations.of(context)!.dialogCancel,
                               ),

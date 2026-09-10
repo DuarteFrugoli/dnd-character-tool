@@ -12,6 +12,7 @@ import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import 'character_detail_provider.dart';
 import 'level_up_wizard_sheet.dart';
@@ -90,12 +91,14 @@ class _ResetLevelsConfirmDialogState extends State<_ResetLevelsConfirmDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),
+          style: neutralDialogTextButtonStyle(context),
           child: Text(l10n.dialogCancel),
         ),
-        FilledButton.tonal(
+        FilledButton(
           onPressed: _secondsRemaining == 0
               ? () => Navigator.of(context).pop(true)
               : null,
+          style: destructiveDialogFilledButtonStyle(context),
           child: Text(
             _secondsRemaining == 0
                 ? l10n.dialogContinue

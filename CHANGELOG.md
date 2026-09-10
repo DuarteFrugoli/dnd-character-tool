@@ -5,6 +5,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.0.5] - 2026-09-10
+
+### Fixed
+- **Confirmacoes**: botoes seguros como cancelar, fechar e continuar editando agora usam cor neutra, enquanto descartar, remover, excluir e reiniciar niveis usam cor destrutiva clara.
+
+### Internal
+- **Versionamento**: versao do app atualizada para `2.0.5+30`.
+
+---
+
 ## [2.0.4] - 2026-09-10
 
 ### Fixed

@@ -154,14 +154,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogKeepEditing),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            style: FilledButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.error,
-              foregroundColor: Theme.of(context).colorScheme.onError,
-            ),
+            style: destructiveDialogFilledButtonStyle(ctx),
             child: Text(l10n.dialogDiscard),
           ),
         ],
@@ -318,10 +316,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
               if (currentTemp > 0)
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, 0),
+                  style: destructiveDialogTextButtonStyle(ctx),
                   child: Text(AppLocalizations.of(ctx)!.dialogRemove),
                 ),
               TextButton(
                 onPressed: () => Navigator.pop(ctx),
+                style: neutralDialogTextButtonStyle(ctx),
                 child: Text(AppLocalizations.of(ctx)!.dialogCancel),
               ),
               FilledButton(

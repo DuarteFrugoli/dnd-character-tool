@@ -16,6 +16,7 @@ import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/character_avatar.dart';
+import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
 
 String _duplicateCharacterName(
@@ -74,6 +75,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogCancel),
           ),
           FilledButton(
@@ -283,6 +285,7 @@ class _RenameDialogState extends State<_RenameDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
+          style: neutralDialogTextButtonStyle(context),
           child: Text(l10n.dialogCancel),
         ),
         FilledButton(
@@ -603,10 +606,12 @@ class _CharacterCard extends ConsumerWidget {
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(ctx, false),
+                          style: neutralDialogTextButtonStyle(ctx),
                           child: Text(l10n.dialogCancel),
                         ),
-                        TextButton(
+                        FilledButton(
                           onPressed: () => Navigator.pop(ctx, true),
+                          style: destructiveDialogFilledButtonStyle(ctx),
                           child: Text(l10n.charCardDelete),
                         ),
                       ],
@@ -724,6 +729,7 @@ class _ExportDialogState extends State<_ExportDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
+          style: neutralDialogTextButtonStyle(context),
           child: Text(l10n.dialogClose),
         ),
       ],
@@ -869,6 +875,7 @@ class _ImportDialogState extends State<_ImportDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
+          style: neutralDialogTextButtonStyle(context),
           child: Text(l10n.dialogCancel),
         ),
       ],

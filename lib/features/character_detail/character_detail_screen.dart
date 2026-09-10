@@ -12,6 +12,7 @@ import '../../data/constants/level_up_rules.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
+import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import 'application/character_tab_view_models.dart';
 import 'character_detail_provider.dart';
@@ -492,6 +493,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogCancel),
           ),
           FilledButton(
@@ -650,6 +652,7 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
+          style: neutralDialogTextButtonStyle(context),
           child: Text(l10n.dialogCancel),
         ),
         if (!noDice && !_hasRolled)

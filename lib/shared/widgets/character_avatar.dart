@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../core/platform/character_image.dart';
 import '../../l10n/app_localizations.dart';
+import 'confirmation_dialog_styles.dart';
 
 const _maxAvatarImageDimension = 1024;
 
@@ -132,13 +133,14 @@ Future<void> showCharacterPhotoPicker(
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(AppLocalizations.of(ctx)?.dialogCancel ?? 'Cancel'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
+            style: destructiveDialogTextButtonStyle(ctx),
             child: Text(
               AppLocalizations.of(ctx)?.avatarRemovePhoto ?? 'Remove',
-              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
             ),
           ),
         ],
@@ -392,13 +394,14 @@ Future<void> _showPhotoViewer(
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(AppLocalizations.of(ctx)?.dialogCancel ?? 'Cancel'),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
+            style: destructiveDialogTextButtonStyle(ctx),
             child: Text(
               AppLocalizations.of(ctx)?.avatarRemovePhoto ?? 'Remove',
-              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
             ),
           ),
         ],

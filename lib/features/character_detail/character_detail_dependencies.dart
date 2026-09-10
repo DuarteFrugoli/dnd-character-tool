@@ -21,6 +21,7 @@ export '../../data/spellcasting_engine.dart';
 export '../../l10n/app_localizations.dart';
 export '../../shared/providers/providers.dart';
 export '../../shared/widgets/character_avatar.dart';
+export '../../shared/widgets/confirmation_dialog_styles.dart';
 export '../../shared/widgets/responsive_layout.dart';
 export 'application/character_tab_view_models.dart';
 export 'character_detail_provider.dart';

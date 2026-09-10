@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dnd_character_tool/data/dice/dice.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 
+import '../../../../shared/widgets/confirmation_dialog_styles.dart';
+
 final diceRollHistoryProvider =
     StateProvider.family<List<DiceRollResult>, String>(
       (ref, _) => const <DiceRollResult>[],
@@ -147,6 +149,7 @@ class _DiceRollerSheetState extends ConsumerState<DiceRollerSheet> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
+            style: neutralDialogTextButtonStyle(context),
             child: Text(l10n.dialogClose),
           ),
         ],

@@ -221,14 +221,12 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogKeepEditing),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
-            style: FilledButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.error,
-              foregroundColor: Theme.of(context).colorScheme.onError,
-            ),
+            style: destructiveDialogFilledButtonStyle(ctx),
             child: Text(l10n.dialogDiscard),
           ),
         ],
@@ -367,6 +365,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
               if (isConfirm)
                 TextButton(
                   onPressed: () => Navigator.pop(ctx, current),
+                  style: neutralDialogTextButtonStyle(ctx),
                   child: Text(AppLocalizations.of(ctx)!.subclassKeepCurrent),
                 ),
               FilledButton(
@@ -401,6 +400,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx, false),
+              style: neutralDialogTextButtonStyle(ctx),
               child: Text(AppLocalizations.of(ctx)!.dialogCancel),
             ),
             FilledButton(
@@ -459,6 +459,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
+              style: neutralDialogTextButtonStyle(ctx),
               child: Text(AppLocalizations.of(ctx)!.dialogCancel),
             ),
             FilledButton(

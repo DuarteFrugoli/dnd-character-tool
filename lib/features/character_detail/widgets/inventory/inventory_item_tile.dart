@@ -20,10 +20,12 @@ Future<int?> showRemoveQuantityDialog(
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
+            style: destructiveDialogFilledButtonStyle(ctx),
             child: Text(AppLocalizations.of(context)!.dialogRemove),
           ),
         ],
@@ -97,10 +99,12 @@ Future<int?> showRemoveQuantityDialog(
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(AppLocalizations.of(context)!.dialogCancel),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, selected),
+            style: destructiveDialogFilledButtonStyle(ctx),
             child: Text(AppLocalizations.of(context)!.dialogRemove),
           ),
         ],
@@ -128,20 +132,19 @@ Future<ContainerRemovalMode?> showRemoveContainerDialog(
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx),
+          style: neutralDialogTextButtonStyle(ctx),
           child: Text(l10n.dialogCancel),
         ),
         TextButton(
           onPressed: () =>
               Navigator.pop(ctx, ContainerRemovalMode.moveContentsToInventory),
+          style: neutralDialogTextButtonStyle(ctx),
           child: Text(l10n.inventoryRemoveContainerMoveContents),
         ),
         FilledButton(
           onPressed: () =>
               Navigator.pop(ctx, ContainerRemovalMode.deleteContents),
-          style: FilledButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.error,
-            foregroundColor: Theme.of(context).colorScheme.onError,
-          ),
+          style: destructiveDialogFilledButtonStyle(ctx),
           child: Text(l10n.inventoryRemoveContainerDeleteContents),
         ),
       ],
@@ -462,6 +465,7 @@ class ItemTile extends ConsumerWidget {
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(ctx, false),
+                style: neutralDialogTextButtonStyle(ctx),
                 child: Text(l10n.dialogCancel),
               ),
               FilledButton(

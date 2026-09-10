@@ -544,6 +544,10 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                                           TextButton(
                                             onPressed: () =>
                                                 Navigator.pop(ctx, false),
+                                            style:
+                                                neutralDialogTextButtonStyle(
+                                                  ctx,
+                                                ),
                                             child: Text(l10n.dialogCancel),
                                           ),
                                           FilledButton(

@@ -52,7 +52,7 @@ class AppTheme {
     final effectiveError =
         error ??
         (brightness == Brightness.dark
-            ? const Color(0xFFFFB4AB)
+            ? const Color(0xFFFF5449)
             : const Color(0xFFBA1A1A));
     final errorContainer = _blend(
       effectiveError,

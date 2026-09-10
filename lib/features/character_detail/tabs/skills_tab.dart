@@ -499,6 +499,7 @@ class _SkillDisplaySettingsSheetState
                 ),
                 TextButton(
                   onPressed: () => Navigator.pop(context),
+                  style: neutralDialogTextButtonStyle(context),
                   child: Text(l10n.dialogCancel),
                 ),
                 FilledButton(onPressed: _save, child: Text(l10n.dialogSave)),

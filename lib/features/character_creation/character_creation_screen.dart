@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/feature_choice_engine.dart';
+import '../../shared/widgets/confirmation_dialog_styles.dart';
 import 'character_draft_provider.dart';
 import 'creation_feature_choice_loader.dart';
 import '../character_list/character_list_provider.dart';
@@ -184,10 +185,12 @@ class _CharacterCreationScreenState
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(l10n.dialogKeepEditing),
           ),
-          TextButton(
+          FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
+            style: destructiveDialogFilledButtonStyle(ctx),
             child: Text(l10n.dialogDiscard),
           ),
         ],

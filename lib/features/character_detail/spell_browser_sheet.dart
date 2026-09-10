@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/spell.dart';
 import '../../core/units/unit_formatter.dart';
@@ -934,14 +935,13 @@ class SpellDetailSheet extends ConsumerWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
+            style: neutralDialogTextButtonStyle(ctx),
             child: Text(AppLocalizations.of(ctx)!.dialogCancel),
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: Text(
-              AppLocalizations.of(ctx)!.dialogRemove,
-              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
-            ),
+            style: destructiveDialogTextButtonStyle(ctx),
+            child: Text(AppLocalizations.of(ctx)!.dialogRemove),
           ),
         ],
       ),

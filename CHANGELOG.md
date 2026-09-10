@@ -5,6 +5,18 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.0.4] - 2026-09-10
+
+### Fixed
+- **Avatares**: fotos escolhidas e imagens pequenas de personagem agora usam limites de tamanho/decode baseados no uso real, reduzindo memoria ao mostrar listas, cabecalho e fotos circulares.
+- **Android/Play Console**: build release agora ativa R8, minificacao e reducao de recursos para melhorar memoria e performance do app.
+
+### Internal
+- **Android**: adicionado `proguard-rules.pro` do app para regras especificas futuras de R8.
+- **Versionamento**: versao do app atualizada para `2.0.4+29`.
+
+---
+
 ## [2.0.3] - 2026-09-03
 
 ### Fixed

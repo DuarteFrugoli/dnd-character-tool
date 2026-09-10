@@ -11,6 +11,12 @@ import '../../l10n/app_localizations.dart';
 
 const _maxAvatarImageDimension = 1024;
 
+int _avatarDecodeSize(BuildContext context, double logicalDiameter) {
+  final targetPixels =
+      (logicalDiameter * MediaQuery.devicePixelRatioOf(context)).ceil();
+  return math.min(_maxAvatarImageDimension, math.max(64, targetPixels));
+}
+
 /// Directly opens the image picker + cropper and calls [onChanged] with the
 /// resulting path. No bottom sheet shown.
 Future<void> _pickAndCrop(
@@ -20,7 +26,12 @@ Future<void> _pickAndCrop(
   final picker = ImagePicker();
   final XFile? picked;
   try {
-    picked = await picker.pickImage(source: ImageSource.gallery);
+    picked = await picker.pickImage(
+      source: ImageSource.gallery,
+      maxWidth: _maxAvatarImageDimension.toDouble(),
+      maxHeight: _maxAvatarImageDimension.toDouble(),
+      imageQuality: 85,
+    );
   } catch (_) {
     return;
   }
@@ -294,6 +305,7 @@ class _AvatarCircle extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
     final diameter = radius * 2;
     final image = imagePath != null ? _resolveImageProvider(imagePath!) : null;
+    final decodeSize = _avatarDecodeSize(context, diameter);
 
     return SizedBox(
       width: diameter,
@@ -320,7 +332,11 @@ class _AvatarCircle extends StatelessWidget {
               if (image != null)
                 Image(
                   key: ValueKey(imagePath),
-                  image: image,
+                  image: ResizeImage.resizeIfNeeded(
+                    decodeSize,
+                    decodeSize,
+                    image,
+                  ),
                   fit: BoxFit.cover,
                   gaplessPlayback: true,
                   filterQuality: FilterQuality.medium,

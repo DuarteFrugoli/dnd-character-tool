@@ -25,7 +25,8 @@ Ordem macro planejada:
 
 1. `1.x`: ficha base, inventario, notas, web e qualidade de vida.
 2. `2.0.x`: multiclasse, reset seguro de progressao, polimento visual inicial,
-   compatibilidade Android/Play Console e revisoes de traducao.
+   compatibilidade Android/Play Console, performance de memoria e revisoes de
+   traducao.
 3. `2.1.x`: fechamento do rework visual e rolagem contextual.
 4. `2.2.x`: D&D 2024 / SRD 5.2.1 como modo de regras separado.
 5. `3.0.x`: GM Local vitalicio, com ferramentas offline de mestre e homebrew
@@ -206,6 +207,19 @@ pacote visual/rolagem.
 - [x] Adicionar cobertura para encontrar entradas criticas ausentes nos overlays
       de traducao.
 - [x] Atualizar versao para `2.0.3+28` e changelog.
+
+### 2.0.4 - Performance Android e Play Console
+
+Objetivo: lancar uma versao tecnica curta para resolver os avisos restantes da
+Play Console sobre memoria/performance antes de continuar a `2.1.0`.
+
+- [x] Limitar fotos escolhidas pela galeria antes do recorte final.
+- [x] Reduzir decode de imagens pequenas de avatar usando o tamanho real
+      exibido na UI.
+- [x] Manter o limite de 1024x1024/JPEG 85 para fotos recortadas pelo app.
+- [x] Ativar R8, minificacao e reducao de recursos na build Android release.
+- [x] Adicionar arquivo `proguard-rules.pro` para regras especificas futuras.
+- [x] Atualizar versao para `2.0.4+29` e changelog.
 
 ### 2.1.0 - Fechamento visual e rolagem contextual
 

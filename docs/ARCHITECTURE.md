@@ -30,7 +30,8 @@ The app starts in `lib/main.dart`.
 
 1. Flutter bindings are initialized.
 2. `IncomingFileService.instance.initialize()` wires the platform channel used
-   when Android/iOS opens a `.dndchar` file from outside the app.
+   when Android/iOS opens a `.dndchar` or `.dndbackup` file from outside the
+   app.
 3. `SharedPreferences` is read before the first frame.
 4. Theme, locale, unit-system, and character-sheet display providers are
    overridden in `ProviderScope` with their persisted initial state, avoiding a
@@ -172,6 +173,14 @@ ApplicationDocumentsDirectory/dnd_character_tool/images/
 Image paths are stored in `Character.imagePath`. The native backend validates
 character IDs before creating file paths to prevent path traversal from crafted
 imports.
+
+User-picked character photos ask `image_picker` for a 1024px/JPEG 85 source
+before the cropper opens. The final crop is also limited to a square 1024x1024
+image with JPEG 85 quality. Small avatar widgets still point at the stored
+image, but wrap the image provider with `ResizeImage.resizeIfNeeded()` using a
+target size based on the displayed avatar diameter and device pixel ratio. This
+keeps list/header avatars from decoding a larger bitmap than the UI needs,
+while the full-screen photo viewer can still use the stored image.
 
 ### Web
 
@@ -866,18 +875,15 @@ restores the original path before Flutter boots. This keeps direct access to
 `/create`, `/settings`, and `/character/:id` working on the hosted preview.
 
 The router redirects `content://` and `file://` URIs to `/` so Android/iOS file
-open intents for `.dndchar` do not crash GoRouter.
+open intents for `.dndchar` and `.dndbackup` do not crash GoRouter.
 
 ---
 
 ## Import And Export
 
-Export from the character card prepares two user-facing representations:
-
-1. `.dndchar` file JSON from `exportToFileJson()`, which can include base64
-   image data and is the primary sharing format.
-2. Plain JSON from `CharacterRepository.exportToJson()`, kept as an advanced
-   copy/paste fallback without embedded image data.
+Export from the character card prepares a `.dndchar` file JSON from
+`exportToFileJson()`, which can include base64 image data and is the primary
+sharing format for one character.
 
 `.dndchar` payload encoding runs in `compute()` where needed to avoid UI jank.
 
@@ -900,15 +906,14 @@ Platform export is selected through `core/utils/file_exporter.dart`:
 
 - Native: writes a temporary `.dndchar` file and opens `share_plus`.
 - Native backup: writes a temporary `.dndbackup` file and opens `share_plus`.
-- Web: creates a browser download for `.dndchar`, raw JSON, or `.dndbackup`.
+- Web: creates a browser download for `.dndchar` or `.dndbackup`.
 
 Import paths:
 
-- Raw JSON paste/import from the character list dialog.
 - File picker from the character list.
 - Backup file picker from Settings.
 - Platform channel `dnd.character/file_import` through `IncomingFileService`
-  when the app is opened from a `.dndchar` file.
+  when the app is opened from a `.dndchar` or `.dndbackup` file.
 
 Imported characters are assigned fresh IDs before saving.
 
@@ -946,6 +951,23 @@ boundaries.
   `SrdI18nService`, falling back to English.
 - Prefer existing shared widgets in `shared/widgets/` and
   `character_detail/widgets/` before adding new one-off components.
+
+---
+
+## Android Release Build
+
+Android release builds enable R8 minification and resource shrinking in
+`android/app/build.gradle.kts`:
+
+- `isMinifyEnabled = true`
+- `isShrinkResources = true`
+- `proguard-android-optimize.txt`
+- `android/app/proguard-rules.pro`
+
+`proguard-rules.pro` should stay small. Add project rules only when a native
+dependency uses reflection or dynamic lookup that R8 cannot infer. Flutter
+assets and SRD JSON data are not Android resources, so resource shrinking does
+not remove them.
 
 ---
 

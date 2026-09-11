@@ -149,6 +149,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         ref.read(srdI18nProvider);
         ref.read(srdItemsProvider);
         ref.read(srdWeaponsProvider);
+        ref.read(srdClassesProvider);
         ref.read(srdToolsProvider);
         return;
       case 6:

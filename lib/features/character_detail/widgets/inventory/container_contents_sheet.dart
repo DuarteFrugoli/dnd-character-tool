@@ -18,6 +18,7 @@ class ContainerContentsSheet extends ConsumerWidget {
     final state = ref.watch(inventoryTabVmProvider(characterId));
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final srdClasses = ref.watch(srdClassesProvider).valueOrNull;
     final unitSystem = ref.watch(unitSystemProvider);
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
@@ -121,6 +122,8 @@ class ContainerContentsSheet extends ConsumerWidget {
                         containers: inventory.containers,
                         i18n: i18n,
                         characterId: characterId,
+                        character: vm.character,
+                        srdClasses: srdClasses,
                         reorderIndex: reorderIndex,
                       ),
                     ),

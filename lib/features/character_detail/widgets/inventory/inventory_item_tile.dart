@@ -1,5 +1,6 @@
 import '../../character_detail_dependencies.dart';
 import '../../../../data/json_helpers.dart';
+import '../dice/contextual_roll_sheet.dart';
 import 'inventory_display_helpers.dart';
 import 'item_detail_sheet.dart';
 
@@ -238,7 +239,7 @@ String containerContentsLabel(
   return l10n.inventoryContainerContents(totalQuantity);
 }
 
-enum InventoryItemAction { move, remove }
+enum InventoryItemAction { details, move, remove }
 
 class InventoryMenuItem extends StatelessWidget {
   const InventoryMenuItem({
@@ -336,6 +337,8 @@ class ItemTile extends ConsumerWidget {
     required this.containers,
     required this.i18n,
     required this.characterId,
+    required this.character,
+    required this.srdClasses,
     this.reorderIndex,
   });
 
@@ -343,6 +346,8 @@ class ItemTile extends ConsumerWidget {
   final List<EquipmentItem> containers;
   final SrdI18nService i18n;
   final String characterId;
+  final Character character;
+  final List<SrdClass>? srdClasses;
   final int? reorderIndex;
 
   Future<void> _confirmRemoveItem(
@@ -500,6 +505,19 @@ class ItemTile extends ConsumerWidget {
         (item.containerId != null || containers.isNotEmpty);
     final meta = itemMeta(item, i18n, l10n);
     final displayName = itemDisplayName(item, i18n);
+    final classes = srdClasses;
+    final rollRequest = classes == null
+        ? null
+        : ContextualWeaponRollBuilder.build(
+            character: character,
+            item: item,
+            displayName: displayName,
+            attackLabel: l10n.spellsAttack,
+            damageLabel: l10n.inventoryDetailDamage,
+            extraDamageLabel: l10n.inventoryDetailExtraDamage,
+            classes: classes,
+            subtitle: meta,
+          );
     final widgetsL10n = WidgetsLocalizations.of(context);
     final reorderTooltip =
         '${widgetsL10n.reorderItemUp} / ${widgetsL10n.reorderItemDown}';
@@ -542,8 +560,18 @@ class ItemTile extends ConsumerWidget {
           ),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-        onTap: () =>
-            showItemDetailsSheet(context, ref, item, displayName, meta),
+        onTap: () {
+          final request = rollRequest;
+          if (request == null) {
+            showItemDetailsSheet(context, ref, item, displayName, meta);
+            return;
+          }
+          openContextualRollSheet(
+            context,
+            characterId: characterId,
+            request: request,
+          );
+        },
         leading: canEquip
             ? MouseRegion(
                 cursor: SystemMouseCursors.click,
@@ -570,9 +598,29 @@ class ItemTile extends ConsumerWidget {
                 ),
               )
             : null,
-        title: Text(
-          itemQuantityTitle(displayName, item.quantity),
-          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+        title: Row(
+          children: [
+            Expanded(
+              child: Text(
+                itemQuantityTitle(displayName, item.quantity),
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            if (rollRequest != null) ...[
+              const SizedBox(width: 6),
+              Tooltip(
+                message: l10n.characterActionRollDice,
+                child: Icon(
+                  Icons.casino_outlined,
+                  size: 16,
+                  color: scheme.primary,
+                ),
+              ),
+            ],
+          ],
         ),
         subtitle: subtitleText != null
             ? Text(
@@ -603,6 +651,9 @@ class ItemTile extends ConsumerWidget {
             PopupMenuButton<InventoryItemAction>(
               onSelected: (action) {
                 switch (action) {
+                  case InventoryItemAction.details:
+                    showItemDetailsSheet(context, ref, item, displayName, meta);
+                    break;
                   case InventoryItemAction.move:
                     showMoveItemSheet(
                       context,
@@ -618,6 +669,14 @@ class ItemTile extends ConsumerWidget {
                 }
               },
               itemBuilder: (ctx) => [
+                if (rollRequest != null)
+                  PopupMenuItem(
+                    value: InventoryItemAction.details,
+                    child: InventoryMenuItem(
+                      icon: Icons.info_outline,
+                      label: l10n.detailSheetInfoTooltip,
+                    ),
+                  ),
                 if (canMove)
                   PopupMenuItem(
                     value: InventoryItemAction.move,

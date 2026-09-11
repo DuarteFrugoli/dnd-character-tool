@@ -35,6 +35,10 @@ final srdBackgroundsProvider = FutureProvider<List<SrdBackground>>(
   (ref) => ref.read(srdDataSourceProvider).getBackgrounds(),
 );
 
+final srdClassesProvider = FutureProvider<List<SrdClass>>(
+  (ref) => ref.read(srdDataSourceProvider).getClasses(),
+);
+
 final srdSpellsProvider = FutureProvider<List<SrdSpell>>(
   (ref) => ref.read(srdDataSourceProvider).getSpells(),
 );

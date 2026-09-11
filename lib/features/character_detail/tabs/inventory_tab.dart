@@ -93,6 +93,7 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
     final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final srdClasses = ref.watch(srdClassesProvider).valueOrNull;
     final coinLabels = {
       'cp': l10n.coinCopper,
       'sp': l10n.coinSilver,
@@ -266,6 +267,8 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                   containers: inventory.containers,
                   i18n: i18n,
                   characterId: widget.characterId,
+                  character: character,
+                  srdClasses: srdClasses,
                   reorderIndex: reorderIndex,
                 ),
               ),
@@ -311,6 +314,8 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                   containers: inventory.containers,
                   i18n: i18n,
                   characterId: widget.characterId,
+                  character: character,
+                  srdClasses: srdClasses,
                   reorderIndex: reorderIndex,
                 ),
               ),
@@ -370,6 +375,8 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                     containers: inventory.containers,
                     i18n: i18n,
                     characterId: widget.characterId,
+                    character: character,
+                    srdClasses: srdClasses,
                     reorderIndex: reorderIndex,
                   ),
                 ),
@@ -531,6 +538,8 @@ class _AmmunitionItemTile extends ConsumerWidget {
                 PopupMenuButton<InventoryItemAction>(
                   onSelected: (action) {
                     switch (action) {
+                      case InventoryItemAction.details:
+                        break;
                       case InventoryItemAction.move:
                         showMoveItemSheet(
                           context,
@@ -711,6 +720,8 @@ class _ContainersSection extends ConsumerWidget {
                 PopupMenuButton<InventoryItemAction>(
                   onSelected: (action) {
                     switch (action) {
+                      case InventoryItemAction.details:
+                        break;
                       case InventoryItemAction.move:
                         break;
                       case InventoryItemAction.remove:

@@ -1464,56 +1464,100 @@ class _SavingThrowsList extends StatelessWidget {
         character.abilityScores.charismaModifier,
       ),
     ];
-    return Column(
-      children: abilities.map((entry) {
-        final (key, abbr, label, abilityMod) = entry;
-        final isProf = profSet.contains(key);
-        final bonus = abilityMod + (isProf ? character.proficiencyBonus : 0);
-        final row = Padding(
-          padding: const EdgeInsets.symmetric(vertical: 2),
-          child: Row(
-            children: [
-              Icon(
-                isProf ? Icons.circle : Icons.circle_outlined,
-                size: 10,
-                color: isProf ? scheme.primary : scheme.outlineVariant,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final itemWidth = constraints.maxWidth >= 280
+            ? (constraints.maxWidth - 8) / 2
+            : constraints.maxWidth;
+        return Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: abilities.map((entry) {
+            final (key, abbr, label, abilityMod) = entry;
+            final isProf = profSet.contains(key);
+            final bonus = abilityMod + (isProf ? character.proficiencyBonus : 0);
+            final borderRadius = BorderRadius.circular(10);
+            final color = isProf ? scheme.primary : scheme.outline;
+            final content = Container(
+              width: itemWidth,
+              constraints: const BoxConstraints(minHeight: 52),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              decoration: BoxDecoration(
+                color: isProf
+                    ? scheme.primary.withValues(alpha: 0.10)
+                    : scheme.surfaceContainerHighest.withValues(alpha: 0.42),
+                borderRadius: borderRadius,
+                border: Border.all(
+                  color: isProf
+                      ? scheme.primary.withValues(alpha: 0.36)
+                      : scheme.outlineVariant.withValues(alpha: 0.80),
+                ),
               ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  abbr,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
-                    color: isProf ? scheme.onSurface : scheme.onSurfaceVariant,
+              child: Row(
+                children: [
+                  Icon(
+                    isProf ? Icons.circle : Icons.circle_outlined,
+                    size: 10,
+                    color: color,
                   ),
-                ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          abbr,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.labelLarge
+                              ?.copyWith(
+                                fontWeight: FontWeight.w800,
+                                color: isProf
+                                    ? scheme.onSurface
+                                    : scheme.onSurfaceVariant,
+                              ),
+                        ),
+                        Text(
+                          label,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(color: scheme.onSurfaceVariant),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    sign(bonus),
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w800,
+                      color: isProf ? scheme.primary : scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                sign(bonus),
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontWeight: isProf ? FontWeight.bold : FontWeight.normal,
-                  color: isProf ? scheme.primary : scheme.onSurfaceVariant,
-                ),
+            );
+            VoidCallback? onTap;
+            if (isEditing) {
+              onTap = () => _toggle(context, key);
+            } else if (onRoll != null) {
+              onTap = () => onRoll(key, label, bonus);
+            }
+            if (onTap == null) return content;
+            return Material(
+              color: Colors.transparent,
+              borderRadius: borderRadius,
+              child: InkWell(
+                borderRadius: borderRadius,
+                onTap: onTap,
+                child: content,
               ),
-            ],
-          ),
+            );
+          }).toList(),
         );
-        if (isEditing) {
-          return InkWell(
-            borderRadius: BorderRadius.circular(4),
-            onTap: () => _toggle(context, key),
-            child: row,
-          );
-        }
-        if (onRoll != null) {
-          return InkWell(
-            borderRadius: BorderRadius.circular(4),
-            onTap: () => onRoll(key, label, bonus),
-            child: row,
-          );
-        }
-        return row;
-      }).toList(),
+      },
     );
   }
 }

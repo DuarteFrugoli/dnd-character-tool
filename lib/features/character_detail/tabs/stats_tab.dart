@@ -1,4 +1,5 @@
 import '../character_detail_dependencies.dart';
+import '../widgets/dice/contextual_roll_sheet.dart';
 import '../../../data/json_helpers.dart';
 import '../../../shared/utils/character_display.dart';
 
@@ -241,6 +242,26 @@ class _StatsTabState extends ConsumerState<StatsTab>
   void _incrementAmount(int delta) {
     final v = int.tryParse(_amountCtrl.text) ?? 1;
     _amountCtrl.text = '${(v + delta).clamp(1, 9999)}';
+  }
+
+  void _openD20Roll({
+    required String key,
+    required String title,
+    String? subtitle,
+    required int modifier,
+  }) {
+    openContextualRollSheet(
+      context,
+      characterId: widget.characterId,
+      request: ContextualRollRequest(
+        key: key,
+        title: title,
+        subtitle: subtitle,
+        parts: [
+          ContextualRollPart.d20(label: title, d20Modifier: modifier),
+        ],
+      ),
+    );
   }
 
   Future<void> _showSetTempHpDialog(BuildContext context) async {
@@ -673,6 +694,11 @@ class _StatsTabState extends ConsumerState<StatsTab>
                                 sign(character.initiative),
                                 icon: Icons.bolt_outlined,
                                 accentColor: scheme.primary,
+                                onTap: () => _openD20Roll(
+                                  key: 'stat:initiative',
+                                  title: l10n.statInitiative,
+                                  modifier: character.initiative,
+                                ),
                               ),
                               DetailStatChip(
                                 l10n.statProfBonus,
@@ -716,6 +742,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               'strength',
                               notifier: notifier,
                               isEditing: _isEditing,
+                              onTap: () => _openD20Roll(
+                                key: 'ability:strength',
+                                title: l10n.abilityStrength,
+                                modifier:
+                                    character.abilityScores.strengthModifier,
+                              ),
                             ),
                             AbilityCardEdit(
                               l10n.abilityDex,
@@ -723,6 +755,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               'dexterity',
                               notifier: notifier,
                               isEditing: _isEditing,
+                              onTap: () => _openD20Roll(
+                                key: 'ability:dexterity',
+                                title: l10n.abilityDexterity,
+                                modifier:
+                                    character.abilityScores.dexterityModifier,
+                              ),
                             ),
                             AbilityCardEdit(
                               l10n.abilityCon,
@@ -730,6 +768,14 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               'constitution',
                               notifier: notifier,
                               isEditing: _isEditing,
+                              onTap: () => _openD20Roll(
+                                key: 'ability:constitution',
+                                title: l10n.abilityConstitution,
+                                modifier:
+                                    character
+                                        .abilityScores
+                                        .constitutionModifier,
+                              ),
                             ),
                             AbilityCardEdit(
                               l10n.abilityInt,
@@ -737,6 +783,14 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               'intelligence',
                               notifier: notifier,
                               isEditing: _isEditing,
+                              onTap: () => _openD20Roll(
+                                key: 'ability:intelligence',
+                                title: l10n.abilityIntelligence,
+                                modifier:
+                                    character
+                                        .abilityScores
+                                        .intelligenceModifier,
+                              ),
                             ),
                             AbilityCardEdit(
                               l10n.abilityWis,
@@ -744,6 +798,11 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               'wisdom',
                               notifier: notifier,
                               isEditing: _isEditing,
+                              onTap: () => _openD20Roll(
+                                key: 'ability:wisdom',
+                                title: l10n.abilityWisdom,
+                                modifier: character.abilityScores.wisdomModifier,
+                              ),
                             ),
                             AbilityCardEdit(
                               l10n.abilityCha,
@@ -751,6 +810,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               'charisma',
                               notifier: notifier,
                               isEditing: _isEditing,
+                              onTap: () => _openD20Roll(
+                                key: 'ability:charisma',
+                                title: l10n.abilityCharisma,
+                                modifier:
+                                    character.abilityScores.charismaModifier,
+                              ),
                             ),
                           ],
                         ),
@@ -768,6 +833,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
                       character: character,
                       l10n: l10n,
                       notifier: _isEditing ? notifier : null,
+                      onRoll: (key, label, bonus) => _openD20Roll(
+                        key: 'save:$key',
+                        title: label,
+                        subtitle: l10n.reviewRowSavingThrows,
+                        modifier: bonus,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -1329,10 +1400,12 @@ class _SavingThrowsList extends StatelessWidget {
     required this.character,
     required this.l10n,
     this.notifier,
+    this.onRoll,
   });
   final Character character;
   final AppLocalizations l10n;
   final CharacterDetailNotifier? notifier;
+  final void Function(String key, String label, int bonus)? onRoll;
 
   void _toggle(BuildContext context, String key) {
     final current = List<String>.from(character.savingThrowProficiencies);
@@ -1349,28 +1422,51 @@ class _SavingThrowsList extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isEditing = notifier != null;
+    final onRoll = this.onRoll;
     final profSet = character.savingThrowProficiencies
         .map((s) => s.toLowerCase())
         .toSet();
     final abilities = [
-      ('strength', l10n.abilityStr, character.abilityScores.strengthModifier),
-      ('dexterity', l10n.abilityDex, character.abilityScores.dexterityModifier),
+      (
+        'strength',
+        l10n.abilityStr,
+        l10n.abilityStrength,
+        character.abilityScores.strengthModifier,
+      ),
+      (
+        'dexterity',
+        l10n.abilityDex,
+        l10n.abilityDexterity,
+        character.abilityScores.dexterityModifier,
+      ),
       (
         'constitution',
         l10n.abilityCon,
+        l10n.abilityConstitution,
         character.abilityScores.constitutionModifier,
       ),
       (
         'intelligence',
         l10n.abilityInt,
+        l10n.abilityIntelligence,
         character.abilityScores.intelligenceModifier,
       ),
-      ('wisdom', l10n.abilityWis, character.abilityScores.wisdomModifier),
-      ('charisma', l10n.abilityCha, character.abilityScores.charismaModifier),
+      (
+        'wisdom',
+        l10n.abilityWis,
+        l10n.abilityWisdom,
+        character.abilityScores.wisdomModifier,
+      ),
+      (
+        'charisma',
+        l10n.abilityCha,
+        l10n.abilityCharisma,
+        character.abilityScores.charismaModifier,
+      ),
     ];
     return Column(
       children: abilities.map((entry) {
-        final (key, abbr, abilityMod) = entry;
+        final (key, abbr, label, abilityMod) = entry;
         final isProf = profSet.contains(key);
         final bonus = abilityMod + (isProf ? character.proficiencyBonus : 0);
         final row = Padding(
@@ -1402,12 +1498,21 @@ class _SavingThrowsList extends StatelessWidget {
             ],
           ),
         );
-        if (!isEditing) return row;
-        return InkWell(
-          borderRadius: BorderRadius.circular(4),
-          onTap: () => _toggle(context, key),
-          child: row,
-        );
+        if (isEditing) {
+          return InkWell(
+            borderRadius: BorderRadius.circular(4),
+            onTap: () => _toggle(context, key),
+            child: row,
+          );
+        }
+        if (onRoll != null) {
+          return InkWell(
+            borderRadius: BorderRadius.circular(4),
+            onTap: () => onRoll(key, label, bonus),
+            child: row,
+          );
+        }
+        return row;
       }).toList(),
     );
   }

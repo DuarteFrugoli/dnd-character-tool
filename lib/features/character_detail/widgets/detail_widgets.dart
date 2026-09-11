@@ -220,22 +220,25 @@ class DetailStatChip extends StatelessWidget {
     super.key,
     this.icon,
     this.accentColor,
+    this.onTap,
   });
   final String label;
   final String value;
   final IconData? icon;
   final Color? accentColor;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final color = accentColor ?? scheme.primary;
-    return Container(
+    final borderRadius = BorderRadius.circular(10);
+    final content = Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.10),
         border: Border.all(color: color.withValues(alpha: 0.22)),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: borderRadius,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -259,6 +262,13 @@ class DetailStatChip extends StatelessWidget {
           ),
         ],
       ),
+    );
+    final onTap = this.onTap;
+    if (onTap == null) return content;
+    return Material(
+      color: Colors.transparent,
+      borderRadius: borderRadius,
+      child: InkWell(onTap: onTap, borderRadius: borderRadius, child: content),
     );
   }
 }
@@ -621,6 +631,7 @@ class AbilityCardEdit extends StatelessWidget {
     super.key,
     required this.notifier,
     required this.isEditing,
+    this.onTap,
   });
 
   final String abbr;
@@ -628,12 +639,14 @@ class AbilityCardEdit extends StatelessWidget {
   final String key_;
   final CharacterDetailNotifier notifier;
   final bool isEditing;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final color = isEditing ? scheme.primary : scheme.secondary;
-    return Container(
+    final borderRadius = BorderRadius.circular(10);
+    final content = Container(
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.08),
         border: Border.all(
@@ -641,7 +654,7 @@ class AbilityCardEdit extends StatelessWidget {
               ? scheme.primary.withValues(alpha: 0.70)
               : scheme.outlineVariant.withValues(alpha: 0.80),
         ),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: borderRadius,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -690,6 +703,13 @@ class AbilityCardEdit extends StatelessWidget {
             ),
         ],
       ),
+    );
+    final onTap = isEditing ? null : this.onTap;
+    if (onTap == null) return content;
+    return Material(
+      color: Colors.transparent,
+      borderRadius: borderRadius,
+      child: InkWell(onTap: onTap, borderRadius: borderRadius, child: content),
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:dnd_character_tool/data/dice/dice.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 
 import '../../../../shared/widgets/confirmation_dialog_styles.dart';
+import 'dice_result_formatting.dart';
 
 final diceRollHistoryProvider =
     StateProvider.family<List<DiceRollResult>, String>(
@@ -434,7 +435,7 @@ class _DiceResultCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              _formatResultBreakdown(result),
+              formatDiceResultBreakdown(result),
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
@@ -471,7 +472,7 @@ class _DiceHistoryList extends StatelessWidget {
               dense: true,
               contentPadding: EdgeInsets.zero,
               title: Text(result.expression.normalized),
-              subtitle: Text(_formatResultBreakdown(result)),
+              subtitle: Text(formatDiceResultBreakdown(result)),
               trailing: Text(
                 result.total.toString(),
                 style: Theme.of(context).textTheme.titleMedium,
@@ -480,26 +481,4 @@ class _DiceHistoryList extends StatelessWidget {
       ],
     );
   }
-}
-
-String _formatResultBreakdown(DiceRollResult result) {
-  final parts = <String>[];
-  for (var i = 0; i < result.terms.length; i++) {
-    final term = result.terms[i];
-    final prefix = term.term.sign < 0
-        ? '-'
-        : i == 0
-        ? ''
-        : '+';
-    switch (term) {
-      case DiceRollTermResult():
-        final rolls = term.rolls
-            .map((roll) => roll.kept ? '${roll.value}' : '(${roll.value})')
-            .join(', ');
-        parts.add('$prefix${term.term.notation} [$rolls]');
-      case DiceModifierTermResult():
-        parts.add('$prefix${term.subtotal}');
-    }
-  }
-  return parts.join(' ');
 }

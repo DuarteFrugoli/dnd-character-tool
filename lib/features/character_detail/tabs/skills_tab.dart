@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import '../character_detail_dependencies.dart';
+import '../widgets/dice/contextual_roll_sheet.dart';
 
 // ── Skills Tab ────────────────────────────────────────────────────────────────
 
@@ -139,6 +140,21 @@ class _SkillsTabState extends ConsumerState<SkillsTab>
                         row: row,
                         label: i18n.skillName(row.skillName),
                         accentColor: section.accentColor,
+                        onTap: () => openContextualRollSheet(
+                          context,
+                          characterId: widget.characterId,
+                          request: ContextualRollRequest(
+                            key: 'skill:${row.skillName.toLowerCase()}',
+                            title: i18n.skillName(row.skillName),
+                            subtitle: _abilityFullLabel(l10n, row.ability),
+                            parts: [
+                              ContextualRollPart.d20(
+                                label: i18n.skillName(row.skillName),
+                                d20Modifier: row.bonus,
+                              ),
+                            ],
+                          ),
+                        ),
                         onLongPress: () => _cycleSkill(row.skillName),
                       );
                     },
@@ -619,12 +635,14 @@ class _SkillCard extends StatelessWidget {
     required this.row,
     required this.label,
     required this.accentColor,
+    required this.onTap,
     required this.onLongPress,
   });
 
   final SkillRowVm row;
   final String label;
   final Color accentColor;
+  final VoidCallback onTap;
   final VoidCallback onLongPress;
 
   @override
@@ -649,6 +667,7 @@ class _SkillCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
+        onTap: onTap,
         onLongPress: onLongPress,
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),

@@ -315,6 +315,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get diceNaturalTwenty => 'ナチュラル20';
 
   @override
+  String get contextualRollCriticalApplied => 'クリティカル適用';
+
+  @override
   String diceInvalidExpression(String message) {
     return '無効なダイス式: $message';
   }
@@ -2402,6 +2405,29 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'キャラクターシートを表示している間、画面がスリープしないようにします。';
+
+  @override
+  String get settingsContextualRollAskTitle => '状況別ロールのオプションを表示';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'シートから振る前に、有利や不利など必要な選択肢を表示します。';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => 'クリティカルヒットのルール';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      '攻撃ロールでナチュラル20が出たときに自動で使われます。';
+
+  @override
+  String get settingsContextualCriticalRuleChoose => 'クリティカルヒットのルールを選択';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice => 'ダメージダイスを2倍振る';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage => 'ダメージ合計を2倍にする';
 
   @override
   String get settingsBackupSection => 'バックアップ';

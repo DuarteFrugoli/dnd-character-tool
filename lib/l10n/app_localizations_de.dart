@@ -322,6 +322,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get diceNaturalTwenty => 'Natürliche 20';
 
   @override
+  String get contextualRollCriticalApplied => 'Kritisch angewendet';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Ungültiger Würfelausdruck: $message';
   }
@@ -2455,6 +2458,34 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'Verhindert, dass der Bildschirm beim Anzeigen eines Charakterbogens in den Ruhezustand wechselt.';
+
+  @override
+  String get settingsContextualRollAskTitle =>
+      'Optionen für kontextuelle Würfe anzeigen';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'Fragt vor Würfen vom Bogen nach relevanten Optionen wie Vorteil oder Nachteil.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle =>
+      'Regel für kritische Treffer';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      'Wird automatisch verwendet, wenn ein Angriffswurf eine natürliche 20 erzielt.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose =>
+      'Regel für kritische Treffer wählen';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice =>
+      'Doppelt so viele Schadenswürfel würfeln';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage =>
+      'Gesamtschaden verdoppeln';
 
   @override
   String get settingsBackupSection => 'Backup';

@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 
+import '../../core/dice/contextual_roll_preferences_provider.dart';
 import '../../core/display/keep_screen_on_provider.dart';
 import '../../core/locale/locale_provider.dart';
 import '../../core/review/app_review_service.dart';
@@ -14,6 +15,7 @@ import '../../core/theme/app_themes.dart';
 import '../../core/theme/theme_provider.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/utils/file_exporter.dart';
+import '../../data/dice/dice.dart';
 import '../../data/migrations/character_migration.dart';
 import '../../data/migrations/character_migration_runner.dart';
 import '../../shared/providers/providers.dart';
@@ -201,6 +203,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ),
                 ),
                 const _KeepScreenOnTile(),
+                const _ContextualRollAskTile(),
+                const _ContextualCriticalRuleTile(),
 
                 const Divider(height: 32),
 
@@ -1324,5 +1328,122 @@ class _KeepScreenOnTile extends ConsumerWidget {
         ref.read(keepScreenOnCharacterSheetProvider.notifier).setEnabled(value);
       },
     );
+  }
+}
+
+class _ContextualRollAskTile extends ConsumerWidget {
+  const _ContextualRollAskTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final preferences = ref.watch(contextualRollPreferencesProvider);
+    final l10n = AppLocalizations.of(context)!;
+
+    return SwitchListTile.adaptive(
+      secondary: const Icon(Icons.tune_outlined),
+      title: Text(l10n.settingsContextualRollAskTitle),
+      subtitle: Text(l10n.settingsContextualRollAskSubtitle),
+      value: preferences.askBeforeRolling,
+      onChanged: (value) {
+        ref
+            .read(contextualRollPreferencesProvider.notifier)
+            .setAskBeforeRolling(value);
+      },
+    );
+  }
+}
+
+class _ContextualCriticalRuleTile extends ConsumerWidget {
+  const _ContextualCriticalRuleTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final preferences = ref.watch(contextualRollPreferencesProvider);
+    final l10n = AppLocalizations.of(context)!;
+    final currentLabel = _criticalModeLabel(l10n, preferences.criticalMode);
+
+    return ListTile(
+      leading: const Icon(Icons.auto_awesome_outlined),
+      title: Text(l10n.settingsContextualCriticalRuleTitle),
+      subtitle: Text(
+        '${l10n.settingsContextualCriticalRuleSubtitle}\n$currentLabel',
+      ),
+      isThreeLine: true,
+      onTap: () => _showCriticalRulePicker(
+        context,
+        ref,
+        preferences.criticalMode,
+      ),
+    );
+  }
+
+  Future<void> _showCriticalRulePicker(
+    BuildContext context,
+    WidgetRef ref,
+    ContextualCriticalMode current,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    return showModalBottomSheet<void>(
+      context: context,
+      showDragHandle: true,
+      useSafeArea: true,
+      builder: (ctx) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              title: Text(l10n.settingsContextualCriticalRuleChoose),
+            ),
+            ListTile(
+              title: Text(l10n.settingsContextualCriticalRuleDoubleDice),
+              trailing: current == ContextualCriticalMode.doubleDice
+                  ? const Icon(Icons.check)
+                  : null,
+              selected: current == ContextualCriticalMode.doubleDice,
+              onTap: () => _selectCriticalMode(
+                ctx,
+                ref,
+                ContextualCriticalMode.doubleDice,
+              ),
+            ),
+            ListTile(
+              title: Text(l10n.settingsContextualCriticalRuleDoubleDamage),
+              trailing: current == ContextualCriticalMode.doubleTotal
+                  ? const Icon(Icons.check)
+                  : null,
+              selected: current == ContextualCriticalMode.doubleTotal,
+              onTap: () => _selectCriticalMode(
+                ctx,
+                ref,
+                ContextualCriticalMode.doubleTotal,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _selectCriticalMode(
+    BuildContext context,
+    WidgetRef ref,
+    ContextualCriticalMode value,
+  ) {
+    ref.read(contextualRollPreferencesProvider.notifier).setCriticalMode(value);
+    Navigator.pop(context);
+  }
+
+  String _criticalModeLabel(
+    AppLocalizations l10n,
+    ContextualCriticalMode mode,
+  ) {
+    return switch (mode) {
+      ContextualCriticalMode.doubleDice =>
+        l10n.settingsContextualCriticalRuleDoubleDice,
+      ContextualCriticalMode.doubleTotal =>
+        l10n.settingsContextualCriticalRuleDoubleDamage,
+      ContextualCriticalMode.none =>
+        l10n.settingsContextualCriticalRuleDoubleDice,
+    };
   }
 }

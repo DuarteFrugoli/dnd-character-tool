@@ -322,6 +322,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get diceNaturalTwenty => '20 natural';
 
   @override
+  String get contextualRollCriticalApplied => 'Crítico aplicado';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Expressão de dados inválida: $message';
   }
@@ -2453,6 +2456,33 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'Impede que a tela apague enquanto você visualiza uma ficha de personagem.';
+
+  @override
+  String get settingsContextualRollAskTitle =>
+      'Mostrar opções de rolagem contextual';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'Pergunta escolhas relevantes, como vantagem ou desvantagem, antes de rolar pela ficha.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => 'Regra de acerto crítico';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      'Usada automaticamente quando uma rolagem de ataque tira 20 natural.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose =>
+      'Escolha a regra de acerto crítico';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice =>
+      'Rolar o dobro de dados de dano';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage =>
+      'Dobrar o total do dano';
 
   @override
   String get settingsBackupSection => 'Backup';

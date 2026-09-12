@@ -42,6 +42,7 @@ class ContextualWeaponRollBuilder {
         ContextualRollPart.expression(
           label: damageLabel,
           expression: _withModifier(damageDice, abilityModifier + magicBonus),
+          critical: true,
         ),
       );
     }
@@ -54,6 +55,7 @@ class ContextualWeaponRollBuilder {
         ContextualRollPart.expression(
           label: extraDamageLabel,
           expression: extraDamage,
+          critical: true,
         ),
       );
     }

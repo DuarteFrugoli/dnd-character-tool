@@ -322,6 +322,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get diceNaturalTwenty => 'Натуральная 20';
 
   @override
+  String get contextualRollCriticalApplied => 'Критический удар применен';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Недопустимое выражение броска: $message';
   }
@@ -2455,6 +2458,34 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'Не дает экрану гаснуть во время просмотра листа персонажа.';
+
+  @override
+  String get settingsContextualRollAskTitle =>
+      'Показывать параметры контекстного броска';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'Спрашивает о подходящих вариантах, например преимуществе или помехе, перед броском из листа.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle =>
+      'Правило критического удара';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      'Используется автоматически, когда бросок атаки дает натуральную 20.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose =>
+      'Выберите правило критического удара';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice =>
+      'Бросать вдвое больше костей урона';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage =>
+      'Удваивать итоговый урон';
 
   @override
   String get settingsBackupSection => 'Резервная копия';

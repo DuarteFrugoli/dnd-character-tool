@@ -81,6 +81,136 @@ void main() {
       expect(result.parts.map((part) => part.result.total), [21, 10]);
     });
 
+    test('natural 20 applies double dice critical damage', () {
+      final engine = ContextualRollEngine(roller: _rollerWith([20, 4, 5]));
+      const request = ContextualRollRequest(
+        key: 'weapon:longsword',
+        title: 'Longsword',
+        parts: [
+          ContextualRollPart.d20(label: 'Attack', d20Modifier: 6),
+          ContextualRollPart.expression(
+            label: 'Damage',
+            expression: '1d8+3',
+            critical: true,
+          ),
+        ],
+      );
+
+      final result = engine.roll(
+        request,
+        options: const ContextualRollOptions(
+          criticalMode: ContextualCriticalMode.doubleDice,
+        ),
+      );
+      final attack = result.parts[0];
+      final damage = result.parts[1];
+
+      expect(attack.result.hasNaturalTwenty, isTrue);
+      expect(damage.criticalApplied, isTrue);
+      expect(damage.result.expression.normalized, '2d8+3');
+      expect(damage.result.total, 12);
+      expect(damage.total, 12);
+    });
+
+    test('natural 20 applies double total critical damage', () {
+      final engine = ContextualRollEngine(roller: _rollerWith([20, 4]));
+      const request = ContextualRollRequest(
+        key: 'weapon:longsword',
+        title: 'Longsword',
+        parts: [
+          ContextualRollPart.d20(label: 'Attack', d20Modifier: 6),
+          ContextualRollPart.expression(
+            label: 'Damage',
+            expression: '1d8+3',
+            critical: true,
+          ),
+        ],
+      );
+
+      final result = engine.roll(
+        request,
+        options: const ContextualRollOptions(
+          criticalMode: ContextualCriticalMode.doubleTotal,
+        ),
+      );
+      final attack = result.parts[0];
+      final damage = result.parts[1];
+
+      expect(attack.result.hasNaturalTwenty, isTrue);
+      expect(damage.criticalApplied, isTrue);
+      expect(damage.result.expression.normalized, '1d8+3');
+      expect(damage.result.total, 7);
+      expect(damage.total, 14);
+    });
+
+    test('non-critical attacks do not apply critical damage', () {
+      final engine = ContextualRollEngine(roller: _rollerWith([19, 4]));
+      const request = ContextualRollRequest(
+        key: 'weapon:longsword',
+        title: 'Longsword',
+        parts: [
+          ContextualRollPart.d20(label: 'Attack', d20Modifier: 6),
+          ContextualRollPart.expression(
+            label: 'Damage',
+            expression: '1d8+3',
+            critical: true,
+          ),
+        ],
+      );
+
+      final result = engine.roll(
+        request,
+        options: const ContextualRollOptions(
+          criticalMode: ContextualCriticalMode.doubleDice,
+        ),
+      );
+      final damage = result.parts[1];
+
+      expect(damage.criticalApplied, isFalse);
+      expect(damage.result.expression.normalized, '1d8+3');
+      expect(damage.total, 7);
+    });
+
+    test('critical state resets when another d20 attack is rolled', () {
+      final engine = ContextualRollEngine(
+        roller: _rollerWith([20, 4, 5, 19, 6]),
+      );
+      const request = ContextualRollRequest(
+        key: 'weapon:multiattack',
+        title: 'Multiattack',
+        parts: [
+          ContextualRollPart.d20(label: 'Attack 1', d20Modifier: 6),
+          ContextualRollPart.expression(
+            label: 'Damage 1',
+            expression: '1d8+3',
+            critical: true,
+          ),
+          ContextualRollPart.d20(label: 'Attack 2', d20Modifier: 6),
+          ContextualRollPart.expression(
+            label: 'Damage 2',
+            expression: '1d8+3',
+            critical: true,
+          ),
+        ],
+      );
+
+      final result = engine.roll(
+        request,
+        options: const ContextualRollOptions(
+          criticalMode: ContextualCriticalMode.doubleDice,
+        ),
+      );
+      final firstDamage = result.parts[1];
+      final secondDamage = result.parts[3];
+
+      expect(firstDamage.criticalApplied, isTrue);
+      expect(firstDamage.result.expression.normalized, '2d8+3');
+      expect(firstDamage.total, 12);
+      expect(secondDamage.criticalApplied, isFalse);
+      expect(secondDamage.result.expression.normalized, '1d8+3');
+      expect(secondDamage.total, 9);
+    });
+
     test('contextual history keeps the latest entries first and clamps size', () {
       const request = ContextualRollRequest(
         key: 'skill:stealth',

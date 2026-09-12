@@ -320,6 +320,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get diceNaturalTwenty => 'Natural 20';
 
   @override
+  String get contextualRollCriticalApplied => 'Critical applied';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Invalid dice expression: $message';
   }
@@ -2437,6 +2440,31 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'Prevent the screen from sleeping while viewing a character sheet.';
+
+  @override
+  String get settingsContextualRollAskTitle => 'Show contextual roll options';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'Ask for relevant choices, such as advantage or disadvantage, before rolling from the sheet.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => 'Critical hit rule';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      'Used automatically when an attack roll gets a natural 20.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose => 'Choose critical hit rule';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice =>
+      'Roll twice as many damage dice';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage =>
+      'Double the damage total';
 
   @override
   String get settingsBackupSection => 'Backup';

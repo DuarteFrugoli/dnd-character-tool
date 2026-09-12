@@ -2,10 +2,16 @@ import 'dice_roller.dart';
 
 enum ContextualD20Mode { disadvantage, normal, advantage }
 
+enum ContextualCriticalMode { none, doubleDice, doubleTotal }
+
 class ContextualRollOptions {
-  const ContextualRollOptions({this.d20Mode = ContextualD20Mode.normal});
+  const ContextualRollOptions({
+    this.d20Mode = ContextualD20Mode.normal,
+    this.criticalMode = ContextualCriticalMode.none,
+  });
 
   final ContextualD20Mode d20Mode;
+  final ContextualCriticalMode criticalMode;
 }
 
 class ContextualRollRequest {
@@ -22,6 +28,8 @@ class ContextualRollRequest {
   final List<ContextualRollPart> parts;
 
   bool get supportsD20Mode => parts.any((part) => part.supportsD20Mode);
+
+  bool get supportsCritical => parts.any((part) => part.supportsCritical);
 }
 
 sealed class ContextualRollPart {
@@ -30,6 +38,7 @@ sealed class ContextualRollPart {
   const factory ContextualRollPart.expression({
     required String label,
     required String expression,
+    bool? critical,
   }) = ContextualExpressionRollPart;
 
   const factory ContextualRollPart.d20({
@@ -40,18 +49,26 @@ sealed class ContextualRollPart {
   final String label;
 
   bool get supportsD20Mode;
+
+  bool get supportsCritical;
 }
 
 class ContextualExpressionRollPart extends ContextualRollPart {
   const ContextualExpressionRollPart({
     required super.label,
     required this.expression,
-  }) : super._();
+    bool? critical,
+  }) : critical = critical ?? false,
+       super._();
 
   final String expression;
+  final bool critical;
 
   @override
   bool get supportsD20Mode => false;
+
+  @override
+  bool get supportsCritical => critical;
 }
 
 class ContextualD20RollPart extends ContextualRollPart {
@@ -64,16 +81,25 @@ class ContextualD20RollPart extends ContextualRollPart {
 
   @override
   bool get supportsD20Mode => true;
+
+  @override
+  bool get supportsCritical => false;
 }
 
 class ContextualRollPartResult {
   const ContextualRollPartResult({
     required this.label,
     required this.result,
+    this.criticalApplied = false,
+    this.totalMultiplier = 1,
   });
 
   final String label;
   final DiceRollResult result;
+  final bool criticalApplied;
+  final int totalMultiplier;
+
+  int get total => result.total * totalMultiplier;
 }
 
 class ContextualRollResult {

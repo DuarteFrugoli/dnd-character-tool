@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/dice/contextual_roll_preferences_provider.dart';
 import '../../../../data/dice/dice.dart';
 import '../../../../l10n/app_localizations.dart';
 import 'dice_result_formatting.dart';
@@ -79,7 +80,8 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
   @override
   void initState() {
     super.initState();
-    if (widget.rollImmediately) {
+    final preferences = ref.read(contextualRollPreferencesProvider);
+    if (widget.rollImmediately || !preferences.askBeforeRolling) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _roll();
       });
@@ -87,9 +89,13 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
   }
 
   void _roll() {
+    final preferences = ref.read(contextualRollPreferencesProvider);
     final result = _engine.roll(
       widget.request,
-      options: ContextualRollOptions(d20Mode: _d20Mode),
+      options: ContextualRollOptions(
+        d20Mode: _d20Mode,
+        criticalMode: preferences.criticalMode,
+      ),
     );
     final history = ref.read(contextualRollHistoryProvider(_historyKey));
     ref.read(contextualRollHistoryProvider(_historyKey).notifier).state =
@@ -102,6 +108,9 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
     final history = ref.watch(contextualRollHistoryProvider(_historyKey));
     final latest = history.isEmpty ? null : history.first;
     final scheme = Theme.of(context).colorScheme;
+    final preferences = ref.watch(contextualRollPreferencesProvider);
+    final showOptions = preferences.askBeforeRolling || widget.rollImmediately;
+    final showD20Options = showOptions && widget.request.supportsD20Mode;
 
     return DraggableScrollableSheet(
       expand: false,
@@ -148,7 +157,7 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
               ),
             ],
           ),
-          if (widget.request.supportsD20Mode) ...[
+          if (showD20Options) ...[
             const SizedBox(height: 16),
             SegmentedButton<ContextualD20Mode>(
               showSelectedIcon: false,
@@ -223,7 +232,7 @@ class _ContextualRollResultCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    part.result.total.toString(),
+                    part.total.toString(),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       color: scheme.primary,
                       fontWeight: FontWeight.w800,
@@ -242,6 +251,14 @@ class _ContextualRollResultCard extends StatelessWidget {
                 formatDiceResultBreakdown(part.result),
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
+              if (part.criticalApplied)
+                Padding(
+                  padding: const EdgeInsets.only(top: 6),
+                  child: Chip(
+                    label: Text(l10n.contextualRollCriticalApplied),
+                    avatar: const Icon(Icons.auto_awesome, size: 18),
+                  ),
+                ),
               if (part.result.hasNaturalTwenty || part.result.hasNaturalOne)
                 Padding(
                   padding: const EdgeInsets.only(top: 6),
@@ -306,7 +323,7 @@ class _ContextualRollHistoryList extends StatelessWidget {
                     .join(' | '),
               ),
               trailing: Text(
-                result.parts.map((part) => part.result.total).join(' / '),
+                result.parts.map((part) => part.total).join(' / '),
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),

@@ -84,6 +84,8 @@ void main() {
 
       expect(attack.d20Modifier, 5);
       expect(damage.expression, '1d8+3');
+      expect(damage.critical, isTrue);
+      expect(request.supportsCritical, isTrue);
     });
 
     test('uses the better Strength or Dexterity modifier for finesse weapons', () {

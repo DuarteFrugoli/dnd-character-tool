@@ -1,4 +1,5 @@
 import 'contextual_roll.dart';
+import 'dice_expression.dart';
 import 'dice_parser.dart';
 import 'dice_roller.dart';
 
@@ -11,13 +12,16 @@ class ContextualRollEngine {
     ContextualRollRequest request, {
     ContextualRollOptions options = const ContextualRollOptions(),
   }) {
-    final parts = [
-      for (final part in request.parts)
-        ContextualRollPartResult(
-          label: part.label,
-          result: _roller.roll(DiceParser.parse(_expressionFor(part, options))),
-        ),
-    ];
+    final parts = <ContextualRollPartResult>[];
+    var criticalTriggered = false;
+
+    for (final part in request.parts) {
+      final result = _rollPart(part, options, criticalTriggered);
+      parts.add(result);
+      if (part.supportsD20Mode) {
+        criticalTriggered = result.result.hasNaturalTwenty;
+      }
+    }
 
     return ContextualRollResult(
       requestKey: request.key,
@@ -28,12 +32,39 @@ class ContextualRollEngine {
     );
   }
 
+  ContextualRollPartResult _rollPart(
+    ContextualRollPart part,
+    ContextualRollOptions options,
+    bool criticalTriggered,
+  ) {
+    final criticalApplied =
+        criticalTriggered &&
+        part.supportsCritical &&
+        options.criticalMode != ContextualCriticalMode.none;
+    final doublesTotal =
+        criticalApplied &&
+        options.criticalMode == ContextualCriticalMode.doubleTotal;
+    final expression = _expressionFor(part, options, criticalApplied);
+    return ContextualRollPartResult(
+      label: part.label,
+      result: _roller.roll(DiceParser.parse(expression)),
+      criticalApplied: criticalApplied,
+      totalMultiplier: doublesTotal ? 2 : 1,
+    );
+  }
+
   String _expressionFor(
     ContextualRollPart part,
     ContextualRollOptions options,
+    bool criticalApplied,
   ) {
     return switch (part) {
-      ContextualExpressionRollPart(:final expression) => expression,
+      ContextualExpressionRollPart(:final expression, :final critical) =>
+        critical &&
+            criticalApplied &&
+            options.criticalMode == ContextualCriticalMode.doubleDice
+            ? _doubleDiceExpression(expression)
+            : expression,
       ContextualD20RollPart(:final d20Modifier) => _withModifier(
         switch (options.d20Mode) {
           ContextualD20Mode.disadvantage => '2d20kl1',
@@ -43,6 +74,23 @@ class ContextualRollEngine {
         d20Modifier,
       ),
     };
+  }
+
+  String _doubleDiceExpression(String expression) {
+    final parsed = DiceParser.parse(expression);
+    final terms = [
+      for (final term in parsed.terms)
+        switch (term) {
+          DiceRollTerm() => DiceRollTerm(
+            sign: term.sign,
+            quantity: term.quantity * 2,
+            sides: term.sides,
+            selection: term.selection,
+          ),
+          DiceModifierTerm() => term,
+        },
+    ];
+    return DiceExpression(source: expression, terms: terms).normalized;
   }
 
   String _withModifier(String dice, int modifier) {

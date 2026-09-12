@@ -684,6 +684,12 @@ abstract class AppLocalizations {
   /// **'Natural 20'**
   String get diceNaturalTwenty;
 
+  /// Contextual roll result chip shown when critical damage rules were applied.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical applied'**
+  String get contextualRollCriticalApplied;
+
   /// Dice roller invalid expression error message.
   ///
   /// In en, this message translates to:
@@ -4475,6 +4481,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Prevent the screen from sleeping while viewing a character sheet.'**
   String get settingsKeepScreenOnSubtitle;
+
+  /// Settings tile title for showing options before contextual rolls.
+  ///
+  /// In en, this message translates to:
+  /// **'Show contextual roll options'**
+  String get settingsContextualRollAskTitle;
+
+  /// Settings tile subtitle for showing options before contextual rolls.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask for relevant choices, such as advantage or disadvantage, before rolling from the sheet.'**
+  String get settingsContextualRollAskSubtitle;
+
+  /// Settings tile title for choosing how contextual critical rolls are calculated.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical hit rule'**
+  String get settingsContextualCriticalRuleTitle;
+
+  /// Settings tile subtitle for choosing how contextual critical rolls are calculated.
+  ///
+  /// In en, this message translates to:
+  /// **'Used automatically when an attack roll gets a natural 20.'**
+  String get settingsContextualCriticalRuleSubtitle;
+
+  /// Bottom sheet title for choosing the contextual critical roll rule.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose critical hit rule'**
+  String get settingsContextualCriticalRuleChoose;
+
+  /// Critical hit option that doubles only damage dice.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll twice as many damage dice'**
+  String get settingsContextualCriticalRuleDoubleDice;
+
+  /// Critical hit option that doubles the final damage total.
+  ///
+  /// In en, this message translates to:
+  /// **'Double the damage total'**
+  String get settingsContextualCriticalRuleDoubleDamage;
 
   /// Settings section header for backup actions.
   ///

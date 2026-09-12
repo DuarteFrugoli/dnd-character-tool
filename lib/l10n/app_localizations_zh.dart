@@ -309,6 +309,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get diceNaturalTwenty => '自然 20';
 
   @override
+  String get contextualRollCriticalApplied => '已应用重击';
+
+  @override
   String diceInvalidExpression(String message) {
     return '无效的骰子表达式：$message';
   }
@@ -2392,6 +2395,27 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsKeepScreenOnSubtitle => '查看角色卡时防止屏幕休眠。';
+
+  @override
+  String get settingsContextualRollAskTitle => '显示情境掷骰选项';
+
+  @override
+  String get settingsContextualRollAskSubtitle => '从角色卡掷骰前显示相关选项，例如优势或劣势。';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => '重击规则';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle => '当攻击掷骰掷出自然 20 时自动使用。';
+
+  @override
+  String get settingsContextualCriticalRuleChoose => '选择重击规则';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice => '掷双倍伤害骰';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage => '伤害总值翻倍';
 
   @override
   String get settingsBackupSection => '备份';

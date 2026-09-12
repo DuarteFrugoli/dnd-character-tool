@@ -316,6 +316,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get diceNaturalTwenty => '내추럴 20';
 
   @override
+  String get contextualRollCriticalApplied => '치명타 적용됨';
+
+  @override
   String diceInvalidExpression(String message) {
     return '잘못된 주사위 식: $message';
   }
@@ -2402,6 +2405,29 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsKeepScreenOnSubtitle => '캐릭터 시트를 보는 동안 화면이 꺼지지 않게 합니다.';
+
+  @override
+  String get settingsContextualRollAskTitle => '상황별 굴림 옵션 표시';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      '시트에서 굴리기 전에 이점이나 불리점 같은 관련 선택지를 표시합니다.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => '치명타 규칙';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      '공격 굴림에서 자연 20이 나오면 자동으로 사용됩니다.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose => '치명타 규칙 선택';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice => '피해 주사위를 두 배로 굴리기';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage => '피해 총합 두 배';
 
   @override
   String get settingsBackupSection => '백업';

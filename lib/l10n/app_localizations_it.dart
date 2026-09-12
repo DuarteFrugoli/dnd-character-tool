@@ -321,6 +321,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get diceNaturalTwenty => '20 naturale';
 
   @override
+  String get contextualRollCriticalApplied => 'Critico applicato';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Espressione dei dadi non valida: $message';
   }
@@ -2457,6 +2460,33 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'Impedisce allo schermo di spegnersi mentre visualizzi una scheda personaggio.';
+
+  @override
+  String get settingsContextualRollAskTitle =>
+      'Mostra opzioni dei tiri contestuali';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'Chiede le opzioni rilevanti, come vantaggio o svantaggio, prima di tirare dalla scheda.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => 'Regola del colpo critico';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      'Usata automaticamente quando un tiro per colpire ottiene un 20 naturale.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose =>
+      'Scegli la regola del colpo critico';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice =>
+      'Tira il doppio dei dadi di danno';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage =>
+      'Raddoppia il totale dei danni';
 
   @override
   String get settingsBackupSection => 'Backup';

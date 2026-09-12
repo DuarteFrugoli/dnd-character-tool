@@ -324,6 +324,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get diceNaturalTwenty => '20 naturel';
 
   @override
+  String get contextualRollCriticalApplied => 'Critique appliqué';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Expression de dés invalide : $message';
   }
@@ -2459,6 +2462,33 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'Empêche l\'écran de se mettre en veille pendant la consultation d\'une fiche de personnage.';
+
+  @override
+  String get settingsContextualRollAskTitle =>
+      'Afficher les options de jet contextuel';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'Demande les choix pertinents, comme avantage ou désavantage, avant de lancer depuis la fiche.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => 'Règle de coup critique';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      'Utilisée automatiquement quand un jet d\'attaque obtient un 20 naturel.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose =>
+      'Choisir la règle de coup critique';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice =>
+      'Lancer deux fois plus de dés de dégâts';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage =>
+      'Doubler le total des dégâts';
 
   @override
   String get settingsBackupSection => 'Sauvegarde';

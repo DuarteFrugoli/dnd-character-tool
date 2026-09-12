@@ -321,6 +321,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get diceNaturalTwenty => '20 natural';
 
   @override
+  String get contextualRollCriticalApplied => 'Crítico aplicado';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Expresión de dados inválida: $message';
   }
@@ -2451,6 +2454,33 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get settingsKeepScreenOnSubtitle =>
       'Evita que la pantalla se apague mientras ves una hoja de personaje.';
+
+  @override
+  String get settingsContextualRollAskTitle =>
+      'Mostrar opciones de tirada contextual';
+
+  @override
+  String get settingsContextualRollAskSubtitle =>
+      'Pregunta por opciones relevantes, como ventaja o desventaja, antes de tirar desde la hoja.';
+
+  @override
+  String get settingsContextualCriticalRuleTitle => 'Regla de golpe crítico';
+
+  @override
+  String get settingsContextualCriticalRuleSubtitle =>
+      'Se usa automáticamente cuando una tirada de ataque obtiene un 20 natural.';
+
+  @override
+  String get settingsContextualCriticalRuleChoose =>
+      'Elige la regla de golpe crítico';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDice =>
+      'Tirar el doble de dados de daño';
+
+  @override
+  String get settingsContextualCriticalRuleDoubleDamage =>
+      'Duplicar el total de daño';
 
   @override
   String get settingsBackupSection => 'Copia de seguridad';

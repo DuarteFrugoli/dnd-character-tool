@@ -3,8 +3,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'core/locale/locale_provider.dart';
+import 'core/dice/contextual_roll_preferences_provider.dart';
 import 'core/display/keep_screen_on_provider.dart';
+import 'core/locale/locale_provider.dart';
 import 'core/platform/url_strategy.dart';
 import 'core/review/app_review_service.dart';
 import 'core/router/app_router.dart';
@@ -40,6 +41,13 @@ void main() async {
       : defaultUnitSystem(initialLocale);
   final initialKeepScreenOnCharacterSheet =
       prefs.getBool(keepScreenOnCharacterSheetPrefsKey) ?? false;
+  final initialContextualRollPreferences = ContextualRollPreferences(
+    askBeforeRolling:
+        prefs.getBool(contextualRollAskBeforeRollingPrefsKey) ?? true,
+    criticalMode: contextualCriticalModeFromPrefs(
+      prefs.getString(contextualRollCriticalModePrefsKey),
+    ),
+  );
   await AppReviewService(sharedPreferences: prefs).recordAppOpen();
 
   runApp(
@@ -57,6 +65,11 @@ void main() async {
         keepScreenOnCharacterSheetProvider.overrideWith(
           () => KeepScreenOnCharacterSheetNotifier.withInitial(
             initialKeepScreenOnCharacterSheet,
+          ),
+        ),
+        contextualRollPreferencesProvider.overrideWith(
+          () => ContextualRollPreferencesNotifier.withInitial(
+            initialContextualRollPreferences,
           ),
         ),
       ],

@@ -71,6 +71,7 @@ class ContextualRollSheet extends ConsumerStatefulWidget {
 class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
   final _engine = ContextualRollEngine();
   ContextualD20Mode _d20Mode = ContextualD20Mode.normal;
+  Map<String, String> _expressionChoices = const {};
 
   ContextualRollHistoryKey get _historyKey => ContextualRollHistoryKey(
     characterId: widget.characterId,
@@ -80,12 +81,23 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
   @override
   void initState() {
     super.initState();
+    _expressionChoices = _initialExpressionChoices();
     final preferences = ref.read(contextualRollPreferencesProvider);
     if (widget.rollImmediately || !preferences.askBeforeRolling) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _roll();
       });
     }
+  }
+
+  Map<String, String> _initialExpressionChoices() {
+    final selectedChoices = <String, String>{};
+    for (final part in widget.request.parts) {
+      if (part is ContextualExpressionRollPart && part.choices.isNotEmpty) {
+        selectedChoices[part.id] = part.choices.first.key;
+      }
+    }
+    return selectedChoices;
   }
 
   void _roll() {
@@ -95,6 +107,7 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
       options: ContextualRollOptions(
         d20Mode: _d20Mode,
         criticalMode: preferences.criticalMode,
+        expressionChoices: _expressionChoices,
       ),
     );
     final history = ref.read(contextualRollHistoryProvider(_historyKey));
@@ -111,10 +124,24 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
     final preferences = ref.watch(contextualRollPreferencesProvider);
     final showOptions = preferences.askBeforeRolling || widget.rollImmediately;
     final showD20Options = showOptions && widget.request.supportsD20Mode;
+    final expressionChoiceParts = widget.request.parts
+        .whereType<ContextualExpressionRollPart>()
+        .where((part) => part.choices.isNotEmpty)
+        .toList();
+    final showExpressionChoices =
+        showOptions && expressionChoiceParts.isNotEmpty;
+    final double initialChildSize;
+    if (latest != null) {
+      initialChildSize = 0.66;
+    } else if (showExpressionChoices) {
+      initialChildSize = 0.52;
+    } else {
+      initialChildSize = 0.42;
+    }
 
     return DraggableScrollableSheet(
       expand: false,
-      initialChildSize: latest == null ? 0.42 : 0.66,
+      initialChildSize: initialChildSize,
       minChildSize: 0.32,
       maxChildSize: 0.9,
       builder: (context, scrollCtrl) => ListView(
@@ -181,6 +208,36 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
               },
             ),
           ],
+          if (showExpressionChoices)
+            for (final part in expressionChoiceParts) ...[
+              const SizedBox(height: 12),
+              Text(
+                part.choiceLabel ?? part.label,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              const SizedBox(height: 8),
+              SegmentedButton<String>(
+                showSelectedIcon: false,
+                segments: [
+                  for (final choice in part.choices)
+                    ButtonSegment(
+                      value: choice.key,
+                      label: Text(choice.label),
+                    ),
+                ],
+                selected: {
+                  _expressionChoices[part.id] ?? part.choices.first.key,
+                },
+                onSelectionChanged: (selection) {
+                  setState(() {
+                    _expressionChoices = {
+                      ..._expressionChoices,
+                      part.id: selection.single,
+                    };
+                  });
+                },
+              ),
+            ],
           const SizedBox(height: 16),
           FilledButton.icon(
             onPressed: _roll,

@@ -902,6 +902,7 @@ class SpellDetailSheet extends ConsumerWidget {
     this.onAdd,
     this.onRemove,
     this.onTogglePrepared,
+    this.onRoll,
   });
 
   final SrdSpell spell;
@@ -924,6 +925,9 @@ class SpellDetailSheet extends ConsumerWidget {
 
   /// For prepare-all class spells: toggles prepared state.
   final VoidCallback? onTogglePrepared;
+
+  /// Opens a contextual roll sheet for spells with structured roll data.
+  final VoidCallback? onRoll;
 
   Future<void> _confirmRemove(BuildContext context, SrdI18nService i18n) async {
     final l10n = AppLocalizations.of(context)!;
@@ -1004,6 +1008,7 @@ class SpellDetailSheet extends ConsumerWidget {
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
+    final roll = onRoll;
 
     return DraggableScrollableSheet(
       expand: false,
@@ -1150,6 +1155,17 @@ class SpellDetailSheet extends ConsumerWidget {
 
           // ── Action button ─────────────────────────────────────────────────
           const SizedBox(height: 24),
+          if (roll != null) ...[
+            FilledButton.icon(
+              icon: const Icon(Icons.casino_outlined),
+              label: Text(l10n.characterActionRollDice),
+              onPressed: () {
+                Navigator.pop(context);
+                roll();
+              },
+            ),
+            const SizedBox(height: 12),
+          ],
           if (!readOnly) ...[
             if (isClassSpell) ...[
               // Prepare-all class: show info + prepare/unprepare toggle

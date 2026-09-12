@@ -515,6 +515,9 @@ class ItemTile extends ConsumerWidget {
             attackLabel: l10n.spellsAttack,
             damageLabel: l10n.inventoryDetailDamage,
             extraDamageLabel: l10n.inventoryDetailExtraDamage,
+            versatileGripLabel: l10n.contextualRollVersatileGrip,
+            versatileOneHandedLabel: l10n.contextualRollVersatileOneHanded,
+            versatileTwoHandedLabel: l10n.contextualRollVersatileTwoHanded,
             classes: classes,
             subtitle: meta,
           );

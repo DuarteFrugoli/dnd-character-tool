@@ -325,6 +325,15 @@ class AppLocalizationsRu extends AppLocalizations {
   String get contextualRollCriticalApplied => 'Критический удар применен';
 
   @override
+  String get contextualRollVersatileGrip => 'Хват оружия';
+
+  @override
+  String get contextualRollVersatileOneHanded => 'Одной рукой';
+
+  @override
+  String get contextualRollVersatileTwoHanded => 'Двумя руками';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Недопустимое выражение броска: $message';
   }

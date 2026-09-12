@@ -8,10 +8,12 @@ class ContextualRollOptions {
   const ContextualRollOptions({
     this.d20Mode = ContextualD20Mode.normal,
     this.criticalMode = ContextualCriticalMode.none,
+    this.expressionChoices = const {},
   });
 
   final ContextualD20Mode d20Mode;
   final ContextualCriticalMode criticalMode;
+  final Map<String, String> expressionChoices;
 }
 
 class ContextualRollRequest {
@@ -33,19 +35,24 @@ class ContextualRollRequest {
 }
 
 sealed class ContextualRollPart {
-  const ContextualRollPart._({required this.label});
+  const ContextualRollPart._({required this.id, required this.label});
 
   const factory ContextualRollPart.expression({
+    String? id,
     required String label,
     required String expression,
     bool? critical,
+    String? choiceLabel,
+    List<ContextualRollExpressionChoice>? choices,
   }) = ContextualExpressionRollPart;
 
   const factory ContextualRollPart.d20({
+    String? id,
     required String label,
     required int d20Modifier,
   }) = ContextualD20RollPart;
 
+  final String id;
   final String label;
 
   bool get supportsD20Mode;
@@ -53,16 +60,34 @@ sealed class ContextualRollPart {
   bool get supportsCritical;
 }
 
+class ContextualRollExpressionChoice {
+  const ContextualRollExpressionChoice({
+    required this.key,
+    required this.label,
+    required this.expression,
+  });
+
+  final String key;
+  final String label;
+  final String expression;
+}
+
 class ContextualExpressionRollPart extends ContextualRollPart {
   const ContextualExpressionRollPart({
+    String? id,
     required super.label,
     required this.expression,
     bool? critical,
+    this.choiceLabel,
+    List<ContextualRollExpressionChoice>? choices,
   }) : critical = critical ?? false,
-       super._();
+       choices = choices ?? const [],
+       super._(id: id ?? label);
 
   final String expression;
   final bool critical;
+  final String? choiceLabel;
+  final List<ContextualRollExpressionChoice> choices;
 
   @override
   bool get supportsD20Mode => false;
@@ -73,9 +98,10 @@ class ContextualExpressionRollPart extends ContextualRollPart {
 
 class ContextualD20RollPart extends ContextualRollPart {
   const ContextualD20RollPart({
+    String? id,
     required super.label,
     required this.d20Modifier,
-  }) : super._();
+  }) : super._(id: id ?? label);
 
   final int d20Modifier;
 

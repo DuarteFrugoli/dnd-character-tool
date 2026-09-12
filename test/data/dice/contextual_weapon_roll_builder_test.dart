@@ -66,6 +66,9 @@ ContextualRollRequest? _build(
     attackLabel: 'Attack',
     damageLabel: 'Damage',
     extraDamageLabel: 'Extra damage',
+    versatileGripLabel: 'Grip',
+    versatileOneHandedLabel: 'One-handed',
+    versatileTwoHandedLabel: 'Two-handed',
     classes: classes,
   );
 }
@@ -86,6 +89,37 @@ void main() {
       expect(damage.expression, '1d8+3');
       expect(damage.critical, isTrue);
       expect(request.supportsCritical, isTrue);
+    });
+
+    test('adds formula choices for versatile weapons', () {
+      final request = _build(
+        _character(),
+        _weapon(
+          properties: const {
+            'damageDice': '1d8',
+            'versatileDamage': '1d10',
+            'weaponProperties': ['versatile'],
+          },
+        ),
+        [_srdClass('Fighter', const ['simple', 'martial'])],
+      )!;
+
+      final damage = request.parts[1] as ContextualExpressionRollPart;
+
+      expect(damage.expression, '1d8+3');
+      expect(damage.choiceLabel, 'Grip');
+      expect(damage.choices.map((choice) => choice.key), [
+        'one_handed',
+        'two_handed',
+      ]);
+      expect(damage.choices.map((choice) => choice.label), [
+        'One-handed (1d8)',
+        'Two-handed (1d10)',
+      ]);
+      expect(damage.choices.map((choice) => choice.expression), [
+        '1d8+3',
+        '1d10+3',
+      ]);
     });
 
     test('uses the better Strength or Dexterity modifier for finesse weapons', () {

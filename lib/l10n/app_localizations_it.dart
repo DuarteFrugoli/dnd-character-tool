@@ -324,6 +324,15 @@ class AppLocalizationsIt extends AppLocalizations {
   String get contextualRollCriticalApplied => 'Critico applicato';
 
   @override
+  String get contextualRollVersatileGrip => 'Impugnatura dell\'arma';
+
+  @override
+  String get contextualRollVersatileOneHanded => 'Una mano';
+
+  @override
+  String get contextualRollVersatileTwoHanded => 'Due mani';
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Espressione dei dadi non valida: $message';
   }

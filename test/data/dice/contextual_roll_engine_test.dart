@@ -171,6 +171,46 @@ void main() {
       expect(damage.total, 7);
     });
 
+    test('uses selected expression choices for roll parts', () {
+      final engine = ContextualRollEngine(roller: _rollerWith([19, 8]));
+      const request = ContextualRollRequest(
+        key: 'weapon:longsword',
+        title: 'Longsword',
+        parts: [
+          ContextualRollPart.d20(label: 'Attack', d20Modifier: 6),
+          ContextualRollPart.expression(
+            id: 'damage',
+            label: 'Damage',
+            expression: '1d8+3',
+            critical: true,
+            choices: [
+              ContextualRollExpressionChoice(
+                key: 'one_handed',
+                label: 'One-handed',
+                expression: '1d8+3',
+              ),
+              ContextualRollExpressionChoice(
+                key: 'two_handed',
+                label: 'Two-handed',
+                expression: '1d10+3',
+              ),
+            ],
+          ),
+        ],
+      );
+
+      final result = engine.roll(
+        request,
+        options: const ContextualRollOptions(
+          expressionChoices: {'damage': 'two_handed'},
+        ),
+      );
+      final damage = result.parts[1];
+
+      expect(damage.result.expression.normalized, '1d10+3');
+      expect(damage.total, 11);
+    });
+
     test('critical state resets when another d20 attack is rolled', () {
       final engine = ContextualRollEngine(
         roller: _rollerWith([20, 4, 5, 19, 6]),

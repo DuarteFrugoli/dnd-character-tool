@@ -312,6 +312,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get contextualRollCriticalApplied => '已应用重击';
 
   @override
+  String get contextualRollVersatileGrip => '武器握持';
+
+  @override
+  String get contextualRollVersatileOneHanded => '单手';
+
+  @override
+  String get contextualRollVersatileTwoHanded => '双手';
+
+  @override
   String diceInvalidExpression(String message) {
     return '无效的骰子表达式：$message';
   }

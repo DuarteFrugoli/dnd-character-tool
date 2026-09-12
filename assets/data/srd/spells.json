@@ -22,6 +22,20 @@
     "damageTypes": [
       "acid"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d6",
+        "damageType": "acid",
+        "characterLevelScaling": {
+          "5": "2d6",
+          "11": "3d6",
+          "17": "4d6"
+        }
+      }
+    ],
     "classes": [
       "sorcerer",
       "wizard"
@@ -85,6 +99,26 @@
     "saveAttribute": null,
     "damageTypes": [
       "necrotic"
+    ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d8",
+        "damageType": "necrotic",
+        "critical": true,
+        "characterLevelScaling": {
+          "5": "2d8",
+          "11": "3d8",
+          "17": "4d8"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -210,6 +244,26 @@
     "saveAttribute": null,
     "damageTypes": [
       "fire"
+    ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d10",
+        "damageType": "fire",
+        "critical": true,
+        "characterLevelScaling": {
+          "5": "2d10",
+          "11": "3d10",
+          "17": "4d10"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -467,6 +521,20 @@
     "damageTypes": [
       "poison"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d12",
+        "damageType": "poison",
+        "characterLevelScaling": {
+          "5": "2d12",
+          "11": "3d12",
+          "17": "4d12"
+        }
+      }
+    ],
     "classes": [
       "druid",
       "sorcerer",
@@ -533,6 +601,26 @@
     "damageTypes": [
       "fire"
     ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d8",
+        "damageType": "fire",
+        "critical": true,
+        "characterLevelScaling": {
+          "5": "2d8",
+          "11": "3d8",
+          "17": "4d8"
+        }
+      }
+    ],
     "classes": [
       "druid"
     ],
@@ -563,6 +651,26 @@
     "saveAttribute": null,
     "damageTypes": [
       "cold"
+    ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d8",
+        "damageType": "cold",
+        "critical": true,
+        "characterLevelScaling": {
+          "5": "2d8",
+          "11": "3d8",
+          "17": "4d8"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -627,6 +735,20 @@
     "damageTypes": [
       "radiant"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d8",
+        "damageType": "radiant",
+        "characterLevelScaling": {
+          "5": "2d8",
+          "11": "3d8",
+          "17": "4d8"
+        }
+      }
+    ],
     "classes": [
       "cleric"
     ],
@@ -687,6 +809,26 @@
     "saveAttribute": null,
     "damageTypes": [
       "lightning"
+    ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d8",
+        "damageType": "lightning",
+        "critical": true,
+        "characterLevelScaling": {
+          "5": "2d8",
+          "11": "3d8",
+          "17": "4d8"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -806,6 +948,20 @@
     "saveAttribute": "WIS",
     "damageTypes": [
       "psychic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "1d4",
+        "damageType": "psychic",
+        "characterLevelScaling": {
+          "5": "2d4",
+          "11": "3d4",
+          "17": "4d4"
+        }
+      }
     ],
     "classes": [
       "bard"
@@ -980,6 +1136,25 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "fire"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d6",
+        "damageType": "fire",
+        "slotLevelScaling": {
+          "2": "4d6",
+          "3": "5d6",
+          "4": "6d6",
+          "5": "7d6",
+          "6": "8d6",
+          "7": "9d6",
+          "8": "10d6",
+          "9": "11d6"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -1704,6 +1879,31 @@
     "damageTypes": [
       "radiant"
     ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "4d6",
+        "damageType": "radiant",
+        "critical": true,
+        "slotLevelScaling": {
+          "2": "5d6",
+          "3": "6d6",
+          "4": "7d6",
+          "5": "8d6",
+          "6": "9d6",
+          "7": "10d6",
+          "8": "11d6",
+          "9": "12d6"
+        }
+      }
+    ],
     "classes": [
       "cleric"
     ],
@@ -1764,6 +1964,25 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "fire"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "2d10",
+        "damageType": "fire",
+        "slotLevelScaling": {
+          "2": "3d10",
+          "3": "4d10",
+          "4": "5d10",
+          "5": "6d10",
+          "6": "7d10",
+          "7": "8d10",
+          "8": "9d10",
+          "9": "10d10"
+        }
+      }
     ],
     "classes": [
       "warlock"
@@ -1957,6 +2176,31 @@
     "saveAttribute": null,
     "damageTypes": [
       "necrotic"
+    ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d10",
+        "damageType": "necrotic",
+        "critical": true,
+        "slotLevelScaling": {
+          "2": "4d10",
+          "3": "5d10",
+          "4": "6d10",
+          "5": "7d10",
+          "6": "8d10",
+          "7": "9d10",
+          "8": "10d10",
+          "9": "11d10"
+        }
+      }
     ],
     "classes": [
       "cleric"
@@ -2373,6 +2617,25 @@
     "damageTypes": [
       "thunder"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "2d8",
+        "damageType": "thunder",
+        "slotLevelScaling": {
+          "2": "3d8",
+          "3": "4d8",
+          "4": "5d8",
+          "5": "6d8",
+          "6": "7d8",
+          "7": "8d8",
+          "8": "9d8",
+          "9": "10d8"
+        }
+      }
+    ],
     "classes": [
       "bard",
       "druid",
@@ -2444,6 +2707,38 @@
     "saveAttribute": null,
     "damageTypes": [
       "lightning"
+    ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "initial_damage",
+        "label": "Initial Damage",
+        "kind": "damage",
+        "formula": "1d12",
+        "damageType": "lightning",
+        "critical": true,
+        "slotLevelScaling": {
+          "2": "2d12",
+          "3": "3d12",
+          "4": "4d12",
+          "5": "5d12",
+          "6": "6d12",
+          "7": "7d12",
+          "8": "8d12",
+          "9": "9d12"
+        }
+      },
+      {
+        "id": "sustained_damage",
+        "label": "Sustained Damage",
+        "kind": "damage",
+        "formula": "1d12",
+        "damageType": "lightning"
+      }
     ],
     "classes": [
       "sorcerer",
@@ -2810,6 +3105,24 @@
     "damageTypes": [
       "slashing"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "4d4",
+        "damageType": "slashing",
+        "slotLevelScaling": {
+          "3": "6d4",
+          "4": "8d4",
+          "5": "10d4",
+          "6": "12d4",
+          "7": "14d4",
+          "8": "16d4",
+          "9": "18d4"
+        }
+      }
+    ],
     "classes": [
       "bard",
       "sorcerer",
@@ -3136,6 +3449,29 @@
     "damageTypes": [
       "fire"
     ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d6",
+        "damageType": "fire",
+        "critical": true,
+        "slotLevelScaling": {
+          "4": "4d6",
+          "5": "4d6",
+          "6": "5d6",
+          "7": "5d6",
+          "8": "6d6",
+          "9": "6d6"
+        }
+      }
+    ],
     "classes": [
       "druid"
     ],
@@ -3170,6 +3506,24 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "fire"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "2d6",
+        "damageType": "fire",
+        "slotLevelScaling": {
+          "3": "3d6",
+          "4": "4d6",
+          "5": "5d6",
+          "6": "6d6",
+          "7": "7d6",
+          "8": "8d6",
+          "9": "9d6"
+        }
+      }
     ],
     "classes": [
       "druid",
@@ -3279,6 +3633,24 @@
     "saveAttribute": "CON",
     "damageTypes": [
       "fire"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "2d8",
+        "damageType": "fire",
+        "slotLevelScaling": {
+          "3": "3d8",
+          "4": "4d8",
+          "5": "5d8",
+          "6": "6d8",
+          "7": "7d8",
+          "8": "8d8",
+          "9": "9d8"
+        }
+      }
     ],
     "classes": [
       "bard",
@@ -3700,6 +4072,24 @@
     "damageTypes": [
       "radiant"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "2d10",
+        "damageType": "radiant",
+        "slotLevelScaling": {
+          "3": "3d10",
+          "4": "4d10",
+          "5": "5d10",
+          "6": "6d10",
+          "7": "7d10",
+          "8": "8d10",
+          "9": "9d10"
+        }
+      }
+    ],
     "classes": [
       "druid"
     ],
@@ -3998,6 +4388,24 @@
     "saveAttribute": "CON",
     "damageTypes": [
       "thunder"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d8",
+        "damageType": "thunder",
+        "slotLevelScaling": {
+          "3": "4d8",
+          "4": "5d8",
+          "5": "6d8",
+          "6": "7d8",
+          "7": "8d8",
+          "8": "9d8",
+          "9": "10d8"
+        }
+      }
     ],
     "classes": [
       "bard",
@@ -4318,6 +4726,23 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "lightning"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d10",
+        "damageType": "lightning",
+        "slotLevelScaling": {
+          "4": "4d10",
+          "5": "5d10",
+          "6": "6d10",
+          "7": "7d10",
+          "8": "8d10",
+          "9": "9d10"
+        }
+      }
     ],
     "classes": [
       "druid"
@@ -4641,6 +5066,23 @@
     "damageTypes": [
       "fire"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "8d6",
+        "damageType": "fire",
+        "slotLevelScaling": {
+          "4": "9d6",
+          "5": "10d6",
+          "6": "11d6",
+          "7": "12d6",
+          "8": "13d6",
+          "9": "14d6"
+        }
+      }
+    ],
     "classes": [
       "sorcerer",
       "wizard"
@@ -4886,6 +5328,23 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "lightning"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "8d6",
+        "damageType": "lightning",
+        "slotLevelScaling": {
+          "4": "9d6",
+          "5": "10d6",
+          "6": "11d6",
+          "7": "12d6",
+          "8": "13d6",
+          "9": "14d6"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -5357,6 +5816,26 @@
       "radiant",
       "necrotic"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d8",
+        "damageTypes": [
+          "radiant",
+          "necrotic"
+        ],
+        "slotLevelScaling": {
+          "4": "4d8",
+          "5": "5d8",
+          "6": "6d8",
+          "7": "7d8",
+          "8": "8d8",
+          "9": "9d8"
+        }
+      }
+    ],
     "classes": [
       "cleric"
     ],
@@ -5466,6 +5945,29 @@
     "damageTypes": [
       "necrotic"
     ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d6",
+        "damageType": "necrotic",
+        "critical": true,
+        "slotLevelScaling": {
+          "4": "4d6",
+          "5": "5d6",
+          "6": "6d6",
+          "7": "7d6",
+          "8": "8d6",
+          "9": "9d6"
+        }
+      }
+    ],
     "classes": [
       "warlock",
       "wizard"
@@ -5567,6 +6069,15 @@
     "saveAttribute": "STR",
     "damageTypes": [
       "bludgeoning"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d8",
+        "damageType": "bludgeoning"
+      }
     ],
     "classes": [
       "druid",
@@ -5678,6 +6189,22 @@
     "saveAttribute": "CON",
     "damageTypes": [
       "necrotic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "8d8",
+        "damageType": "necrotic",
+        "slotLevelScaling": {
+          "5": "9d8",
+          "6": "10d8",
+          "7": "11d8",
+          "8": "12d8",
+          "9": "13d8"
+        }
+      }
     ],
     "classes": [
       "druid",
@@ -6037,6 +6564,15 @@
     "damageTypes": [
       "bludgeoning"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d6",
+        "damageType": "bludgeoning"
+      }
+    ],
     "classes": [
       "wizard"
     ],
@@ -6103,6 +6639,18 @@
     "damageTypes": [
       "fire",
       "cold"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "2d8",
+        "damageTypes": [
+          "fire",
+          "cold"
+        ]
+      }
     ],
     "classes": [
       "wizard"
@@ -6331,6 +6879,29 @@
       "bludgeoning",
       "cold"
     ],
+    "rolls": [
+      {
+        "id": "bludgeoning_damage",
+        "label": "Bludgeoning Damage",
+        "kind": "damage",
+        "formula": "2d8",
+        "damageType": "bludgeoning",
+        "slotLevelScaling": {
+          "5": "3d8",
+          "6": "4d8",
+          "7": "5d8",
+          "8": "6d8",
+          "9": "7d8"
+        }
+      },
+      {
+        "id": "cold_damage",
+        "label": "Cold Damage",
+        "kind": "damage",
+        "formula": "4d6",
+        "damageType": "cold"
+      }
+    ],
     "classes": [
       "druid",
       "sorcerer",
@@ -6505,6 +7076,22 @@
     "saveAttribute": "WIS",
     "damageTypes": [
       "psychic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "4d10",
+        "damageType": "psychic",
+        "slotLevelScaling": {
+          "5": "5d10",
+          "6": "6d10",
+          "7": "7d10",
+          "8": "8d10",
+          "9": "9d10"
+        }
+      }
     ],
     "classes": [
       "wizard"
@@ -6683,6 +7270,22 @@
     "damageTypes": [
       "fire"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "5d8",
+        "damageType": "fire",
+        "slotLevelScaling": {
+          "5": "6d8",
+          "6": "7d8",
+          "7": "8d8",
+          "8": "9d8",
+          "9": "10d8"
+        }
+      }
+    ],
     "classes": [
       "druid",
       "sorcerer",
@@ -6826,6 +7429,21 @@
     "damageTypes": [
       "poison"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "5d8",
+        "damageType": "poison",
+        "slotLevelScaling": {
+          "6": "6d8",
+          "7": "7d8",
+          "8": "8d8",
+          "9": "9d8"
+        }
+      }
+    ],
     "classes": [
       "sorcerer",
       "wizard"
@@ -6932,6 +7550,21 @@
     "damageTypes": [
       "cold"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "8d8",
+        "damageType": "cold",
+        "slotLevelScaling": {
+          "6": "9d8",
+          "7": "10d8",
+          "8": "11d8",
+          "9": "12d8"
+        }
+      }
+    ],
     "classes": [
       "sorcerer",
       "wizard"
@@ -6993,6 +7626,15 @@
     "saveAttribute": "INT",
     "damageTypes": [
       "psychic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "6d6",
+        "damageType": "psychic"
+      }
     ],
     "classes": [
       "warlock",
@@ -7163,6 +7805,15 @@
     "damageTypes": [
       "psychic"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d6",
+        "damageType": "psychic"
+      }
+    ],
     "classes": [
       "bard",
       "warlock",
@@ -7247,6 +7898,15 @@
     "saveAttribute": "WIS",
     "damageTypes": [
       "psychic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "5d10",
+        "damageType": "psychic"
+      }
     ],
     "classes": [
       "bard",
@@ -7360,6 +8020,21 @@
     "saveAttribute": "CON",
     "damageTypes": [
       "piercing"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "4d10",
+        "damageType": "piercing",
+        "slotLevelScaling": {
+          "6": "5d10",
+          "7": "6d10",
+          "8": "7d10",
+          "9": "8d10"
+        }
+      }
     ],
     "classes": [
       "cleric",
@@ -7995,6 +8670,15 @@
     "damageTypes": [
       "slashing"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "6d10",
+        "damageType": "slashing"
+      }
+    ],
     "classes": [
       "cleric"
     ],
@@ -8026,6 +8710,15 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "lightning"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "10d8",
+        "damageType": "lightning"
+      }
     ],
     "classes": [
       "sorcerer",
@@ -8062,6 +8755,20 @@
     "saveAttribute": "CON",
     "damageTypes": [
       "necrotic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "8d6",
+        "damageType": "necrotic",
+        "slotLevelScaling": {
+          "7": "10d6",
+          "8": "12d6",
+          "9": "14d6"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -8188,6 +8895,20 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "force"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "10d6+40",
+        "damageType": "force",
+        "slotLevelScaling": {
+          "7": "13d6+40",
+          "8": "16d6+40",
+          "9": "19d6+40"
+        }
+      }
     ],
     "classes": [
       "sorcerer",
@@ -8351,6 +9072,18 @@
       "radiant",
       "necrotic"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "5d10",
+        "damageTypes": [
+          "radiant",
+          "necrotic"
+        ]
+      }
+    ],
     "classes": [
       "cleric"
     ],
@@ -8449,6 +9182,15 @@
     "saveAttribute": "CON",
     "damageTypes": [
       "necrotic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "14d6",
+        "damageType": "necrotic"
+      }
     ],
     "classes": [
       "cleric"
@@ -8735,6 +9477,15 @@
     "damageTypes": [
       "radiant"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "6d8",
+        "damageType": "radiant"
+      }
+    ],
     "classes": [
       "druid",
       "sorcerer",
@@ -8992,6 +9743,19 @@
     "damageTypes": [
       "fire"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "12d6",
+        "damageType": "fire",
+        "slotLevelScaling": {
+          "8": "13d6",
+          "9": "14d6"
+        }
+      }
+    ],
     "classes": [
       "sorcerer",
       "wizard"
@@ -9085,6 +9849,15 @@
     "damageTypes": [
       "necrotic"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "7d8+30",
+        "damageType": "necrotic"
+      }
+    ],
     "classes": [
       "sorcerer",
       "warlock",
@@ -9120,6 +9893,15 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "fire"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "7d10",
+        "damageType": "fire"
+      }
     ],
     "classes": [
       "cleric",
@@ -9254,6 +10036,21 @@
     "saveAttribute": null,
     "damageTypes": [
       "force"
+    ],
+    "rolls": [
+      {
+        "id": "attack",
+        "label": "Attack",
+        "kind": "spell_attack"
+      },
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "3d10",
+        "damageType": "force",
+        "critical": true
+      }
     ],
     "classes": [
       "bard",
@@ -9617,6 +10414,15 @@
     "damageTypes": [
       "bludgeoning"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "10d6",
+        "damageType": "bludgeoning"
+      }
+    ],
     "classes": [
       "druid",
       "sorcerer",
@@ -9879,6 +10685,15 @@
     "damageTypes": [
       "psychic"
     ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "4d6",
+        "damageType": "psychic"
+      }
+    ],
     "classes": [
       "bard",
       "druid",
@@ -9977,6 +10792,15 @@
     "saveAttribute": "DEX",
     "damageTypes": [
       "fire"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "10d8",
+        "damageType": "fire"
+      }
     ],
     "classes": [
       "sorcerer",
@@ -10103,6 +10927,15 @@
     "saveAttribute": "CON",
     "damageTypes": [
       "radiant"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "12d6",
+        "damageType": "radiant"
+      }
     ],
     "classes": [
       "druid",
@@ -10361,6 +11194,22 @@
     "damageTypes": [
       "fire",
       "bludgeoning"
+    ],
+    "rolls": [
+      {
+        "id": "fire_damage",
+        "label": "Fire Damage",
+        "kind": "damage",
+        "formula": "20d6",
+        "damageType": "fire"
+      },
+      {
+        "id": "bludgeoning_damage",
+        "label": "Bludgeoning Damage",
+        "kind": "damage",
+        "formula": "20d6",
+        "damageType": "bludgeoning"
+      }
     ],
     "classes": [
       "sorcerer",
@@ -10654,6 +11503,15 @@
     "saveAttribute": "WIS",
     "damageTypes": [
       "psychic"
+    ],
+    "rolls": [
+      {
+        "id": "damage",
+        "label": "Damage",
+        "kind": "damage",
+        "formula": "4d10",
+        "damageType": "psychic"
+      }
     ],
     "classes": [
       "warlock",

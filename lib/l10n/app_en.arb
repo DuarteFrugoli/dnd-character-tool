@@ -291,6 +291,12 @@
   "@diceNaturalTwenty": { "description": "Dice roller natural twenty result chip." },
   "contextualRollCriticalApplied": "Critical applied",
   "@contextualRollCriticalApplied": { "description": "Contextual roll result chip shown when critical damage rules were applied." },
+  "contextualRollVersatileGrip": "Weapon grip",
+  "@contextualRollVersatileGrip": { "description": "Contextual roll option group label for choosing one-handed or two-handed versatile weapon damage." },
+  "contextualRollVersatileOneHanded": "One-handed",
+  "@contextualRollVersatileOneHanded": { "description": "Contextual roll option label for one-handed versatile weapon damage." },
+  "contextualRollVersatileTwoHanded": "Two-handed",
+  "@contextualRollVersatileTwoHanded": { "description": "Contextual roll option label for two-handed versatile weapon damage." },
   "diceInvalidExpression": "Invalid dice expression: {message}",
   "@diceInvalidExpression": {
     "description": "Dice roller invalid expression error message.",

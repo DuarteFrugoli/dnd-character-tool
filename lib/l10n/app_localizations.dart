@@ -690,6 +690,24 @@ abstract class AppLocalizations {
   /// **'Critical applied'**
   String get contextualRollCriticalApplied;
 
+  /// Contextual roll option group label for choosing one-handed or two-handed versatile weapon damage.
+  ///
+  /// In en, this message translates to:
+  /// **'Weapon grip'**
+  String get contextualRollVersatileGrip;
+
+  /// Contextual roll option label for one-handed versatile weapon damage.
+  ///
+  /// In en, this message translates to:
+  /// **'One-handed'**
+  String get contextualRollVersatileOneHanded;
+
+  /// Contextual roll option label for two-handed versatile weapon damage.
+  ///
+  /// In en, this message translates to:
+  /// **'Two-handed'**
+  String get contextualRollVersatileTwoHanded;
+
   /// Dice roller invalid expression error message.
   ///
   /// In en, this message translates to:

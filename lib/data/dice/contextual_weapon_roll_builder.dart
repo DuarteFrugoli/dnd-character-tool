@@ -12,6 +12,9 @@ class ContextualWeaponRollBuilder {
     required String attackLabel,
     required String damageLabel,
     required String extraDamageLabel,
+    required String versatileGripLabel,
+    required String versatileOneHandedLabel,
+    required String versatileTwoHandedLabel,
     required List<SrdClass> classes,
     String? subtitle,
   }) {
@@ -38,11 +41,38 @@ class ContextualWeaponRollBuilder {
     ];
 
     if (!_isZeroExpression(damageDice)) {
+      final baseDamageExpression = _withModifier(
+        damageDice,
+        abilityModifier + magicBonus,
+      );
+      final versatileDamage = _propertyText(item, 'versatileDamage');
+      final choices = versatileDamage != null &&
+              versatileDamage.isNotEmpty &&
+              !_isZeroExpression(versatileDamage)
+          ? [
+              ContextualRollExpressionChoice(
+                key: 'one_handed',
+                label: '$versatileOneHandedLabel ($damageDice)',
+                expression: baseDamageExpression,
+              ),
+              ContextualRollExpressionChoice(
+                key: 'two_handed',
+                label: '$versatileTwoHandedLabel ($versatileDamage)',
+                expression: _withModifier(
+                  versatileDamage,
+                  abilityModifier + magicBonus,
+                ),
+              ),
+            ]
+          : const <ContextualRollExpressionChoice>[];
       parts.add(
         ContextualRollPart.expression(
+          id: 'damage',
           label: damageLabel,
-          expression: _withModifier(damageDice, abilityModifier + magicBonus),
+          expression: baseDamageExpression,
           critical: true,
+          choiceLabel: choices.isEmpty ? null : versatileGripLabel,
+          choices: choices,
         ),
       );
     }
@@ -53,6 +83,7 @@ class ContextualWeaponRollBuilder {
         !_isZeroExpression(extraDamage)) {
       parts.add(
         ContextualRollPart.expression(
+          id: 'extra_damage',
           label: extraDamageLabel,
           expression: extraDamage,
           critical: true,

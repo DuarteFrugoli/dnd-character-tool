@@ -59,12 +59,12 @@ class ContextualRollEngine {
     bool criticalApplied,
   ) {
     return switch (part) {
-      ContextualExpressionRollPart(:final expression, :final critical) =>
+      ContextualExpressionRollPart(:final critical) =>
         critical &&
             criticalApplied &&
             options.criticalMode == ContextualCriticalMode.doubleDice
-            ? _doubleDiceExpression(expression)
-            : expression,
+            ? _doubleDiceExpression(_expressionChoiceFor(part, options))
+            : _expressionChoiceFor(part, options),
       ContextualD20RollPart(:final d20Modifier) => _withModifier(
         switch (options.d20Mode) {
           ContextualD20Mode.disadvantage => '2d20kl1',
@@ -74,6 +74,18 @@ class ContextualRollEngine {
         d20Modifier,
       ),
     };
+  }
+
+  String _expressionChoiceFor(
+    ContextualExpressionRollPart part,
+    ContextualRollOptions options,
+  ) {
+    final selectedKey = options.expressionChoices[part.id];
+    if (selectedKey == null) return part.expression;
+    for (final choice in part.choices) {
+      if (choice.key == selectedKey) return choice.expression;
+    }
+    return part.expression;
   }
 
   String _doubleDiceExpression(String expression) {

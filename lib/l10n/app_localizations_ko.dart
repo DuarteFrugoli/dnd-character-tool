@@ -319,6 +319,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get contextualRollCriticalApplied => '치명타 적용됨';
 
   @override
+  String get contextualRollVersatileGrip => '무기 사용 방식';
+
+  @override
+  String get contextualRollVersatileOneHanded => '한 손';
+
+  @override
+  String get contextualRollVersatileTwoHanded => '두 손';
+
+  @override
   String diceInvalidExpression(String message) {
     return '잘못된 주사위 식: $message';
   }

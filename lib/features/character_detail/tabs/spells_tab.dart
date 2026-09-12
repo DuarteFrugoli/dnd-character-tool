@@ -1,4 +1,5 @@
 import '../character_detail_dependencies.dart';
+import '../widgets/dice/contextual_roll_sheet.dart';
 import '../widgets/spells/spell_widgets.dart';
 
 /// Classes that have access to their full class spell list and prepare daily.
@@ -209,15 +210,86 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
     required BuildContext context,
     required SrdSpell spell,
     required bool isKnown,
+    KnownSpell? knownSpell,
     VoidCallback? onRemove,
   }) {
+    final l10n = AppLocalizations.of(context)!;
+    final i18n =
+        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final origin = _spellcastingOriginFor(spell, knownSpell: knownSpell);
+    final rollRequest = ContextualSpellRollBuilder.build(
+      character: widget.character,
+      spell: spell,
+      displayName: i18n.spellName(spell.name),
+      attackLabel: l10n.spellsAttack,
+      damageLabel: l10n.inventoryDetailDamage,
+      spellSlotChoiceLabel: l10n.spellsSlots,
+      slotLevelLabel: l10n.spellsSlotLevel,
+      damageTypeLabel: i18n.damageType,
+      spellcastingEngine: origin?.engine,
+      availableSlotLevels: _availableSlotLevels(widget.spellcastingSummary),
+      subtitle: origin == null
+          ? null
+          : i18n.className(origin.classEntry.className),
+    );
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
-      builder: (_) =>
-          SpellDetailSheet(spell: spell, isKnown: isKnown, onRemove: onRemove),
+      builder: (_) => SpellDetailSheet(
+        spell: spell,
+        isKnown: isKnown,
+        onRemove: onRemove,
+        onRoll: rollRequest == null
+            ? null
+            : () {
+                if (!mounted) return;
+                openContextualRollSheet(
+                  this.context,
+                  characterId: widget.characterId,
+                  request: rollRequest,
+                );
+              },
+      ),
     );
+  }
+
+  CharacterSpellcastingOrigin? _spellcastingOriginFor(
+    SrdSpell spell, {
+    KnownSpell? knownSpell,
+  }) {
+    final summary = widget.spellcastingSummary;
+    if (knownSpell != null) {
+      final exact = summary.origins.firstWhereOrNull(
+        (origin) => _spellMatchesClassEntry(knownSpell, origin.classEntry),
+      );
+      if (exact != null) return exact;
+    }
+
+    final spellClassNames = spell.classes
+        .map((className) => className.toLowerCase())
+        .toSet();
+    return summary.origins.firstWhereOrNull(
+          (origin) =>
+              spellClassNames.contains(origin.engine.spellListClass) ||
+              spellClassNames.contains(
+                origin.classEntry.className.toLowerCase(),
+              ),
+        ) ??
+        summary.primaryOrigin;
+  }
+
+  Set<int> _availableSlotLevels(CharacterSpellcastingSummary summary) {
+    final levels = <int>{};
+    void addSlots(SpellSlots slots) {
+      for (var i = 0; i < slots.total.length; i++) {
+        if (slots.total[i] > 0) levels.add(i + 1);
+      }
+    }
+
+    addSlots(summary.standardSlots);
+    addSlots(summary.pactMagicSlots);
+    return levels;
   }
 
   GlobalKey _keyForSpellLevel(int level) {
@@ -585,6 +657,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                                         (known) => known.name == spell.name,
                                       )
                                     : true,
+                                knownSpell: spell,
                                 onRemove:
                                     (isPrepareAll || spell.isAlwaysPrepared)
                                     ? null
@@ -684,6 +757,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
                                 context: context,
                                 spell: srdSpell,
                                 isKnown: true,
+                                knownSpell: spell,
                                 onRemove: spell.isAlwaysPrepared
                                     ? null
                                     : () => ref

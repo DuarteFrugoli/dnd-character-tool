@@ -415,6 +415,55 @@ class SrdInnateSpellDef {
 
 // ── SrdSpell ─────────────────────────────────────────────────────────────────
 
+class SrdSpellRoll {
+  final String id;
+  final String label;
+  final String kind;
+  final String? formula;
+  final String? damageType;
+  final List<String> damageTypes;
+  final bool critical;
+  final Map<int, String> characterLevelScaling;
+  final Map<int, String> slotLevelScaling;
+
+  const SrdSpellRoll({
+    required this.id,
+    required this.label,
+    required this.kind,
+    this.formula,
+    this.damageType,
+    this.damageTypes = const [],
+    this.critical = false,
+    this.characterLevelScaling = const {},
+    this.slotLevelScaling = const {},
+  });
+
+  factory SrdSpellRoll.fromJson(Map<String, dynamic> json) {
+    final damageType = json['damageType'] as String?;
+    return SrdSpellRoll(
+      id: json['id'] as String,
+      label: json['label'] as String? ?? json['id'] as String,
+      kind: json['kind'] as String,
+      formula: json['formula'] as String?,
+      damageType: damageType,
+      damageTypes: [
+        ?damageType,
+        ...List<String>.from(json['damageTypes'] ?? const []),
+      ],
+      critical: readBool(json['critical']),
+      characterLevelScaling: _intStringMap(json['characterLevelScaling']),
+      slotLevelScaling: _intStringMap(json['slotLevelScaling']),
+    );
+  }
+
+  static Map<int, String> _intStringMap(Object? value) {
+    if (value is! Map) return const {};
+    return value.map(
+      (key, entry) => MapEntry(int.parse(key.toString()), entry.toString()),
+    );
+  }
+}
+
 class SrdSpell {
   final String name;
   final int level;
@@ -456,6 +505,7 @@ class SrdSpell {
   final String? saveAttribute;
 
   final List<String> damageTypes;
+  final List<SrdSpellRoll> rolls;
   final String description;
 
   /// Text describing upcast behaviour; null if the spell doesn't scale.
@@ -490,6 +540,7 @@ class SrdSpell {
     this.attackType,
     this.saveAttribute,
     required this.damageTypes,
+    this.rolls = const [],
     required this.description,
     this.higherLevels,
     required this.classes,
@@ -534,6 +585,9 @@ class SrdSpell {
       attackType: json['attackType'] as String?,
       saveAttribute: json['saveAttribute'] as String?,
       damageTypes: List<String>.from(json['damageTypes'] ?? []),
+      rolls: (json['rolls'] as List<dynamic>? ?? [])
+          .map((e) => SrdSpellRoll.fromJson(e as Map<String, dynamic>))
+          .toList(),
       description: json['description'] as String,
       higherLevels: json['higherLevels'] as String?,
       classes: List<String>.from(json['classes']),

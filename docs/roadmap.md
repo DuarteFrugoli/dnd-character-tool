@@ -232,9 +232,11 @@ rolador em uma ferramenta integrada a ficha.
 - [ ] Melhorar microinteracoes e estados vazios que ainda parecam antigos.
 - [x] Rolador manual com expressoes, ajuda rapida e historico em memoria.
 - [ ] Toggle para habilitar/desabilitar dados virtuais.
-- [ ] Rolar atributo, pericia, saving throw, iniciativa e ataque a partir da
+- [x] Rolar atributo, pericia, saving throw, iniciativa e ataque a partir da
       ficha.
-- [ ] Rolar dano de arma e magias com base nos dados existentes.
+- [x] Rolar dano de arma e magias simples com base nos dados estruturados.
+- [x] Configuracoes para mostrar opcoes antes da rolagem contextual e escolher
+      regra de critico.
 - [ ] Criar presets contextuais por personagem sem poluir a ficha.
 - [ ] Preparar estrutura futura para bonus temporarios em CA, iniciativa,
       deslocamento e outros valores derivados.

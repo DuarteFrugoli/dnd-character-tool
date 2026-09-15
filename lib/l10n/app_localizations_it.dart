@@ -30,6 +30,42 @@ class AppLocalizationsIt extends AppLocalizations {
   String get charListEmptyHint => 'Tocca + per creare il tuo primo personaggio';
 
   @override
+  String get whatsNewTitle => 'Novità';
+
+  @override
+  String whatsNewVersionSubtitle(String version) {
+    return 'Versione $version';
+  }
+
+  @override
+  String get whatsNewIntro =>
+      'Alcuni miglioramenti utili sono pronti per la tua prossima sessione.';
+
+  @override
+  String get whatsNewContextualRollsTitle => 'Tiri contestuali';
+
+  @override
+  String get whatsNewContextualRollsBody =>
+      'Tira caratteristiche, abilità, tiri salvezza, armi e incantesimi semplici direttamente dalla scheda.';
+
+  @override
+  String get whatsNewCriticalsTitle => 'Opzioni per i critici';
+
+  @override
+  String get whatsNewCriticalsBody =>
+      'Scegli come calcolare i danni critici, con opzioni di vantaggio e svantaggio quando servono.';
+
+  @override
+  String get whatsNewConfirmationsTitle => 'Conferme più chiare';
+
+  @override
+  String get whatsNewConfirmationsBody =>
+      'Le azioni sicure e quelle distruttive ora sono più facili da distinguere.';
+
+  @override
+  String get whatsNewDone => 'Capito';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name importato con successo!';
   }

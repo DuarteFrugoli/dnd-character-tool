@@ -32,6 +32,42 @@ class AppLocalizationsRu extends AppLocalizations {
       'Нажмите +, чтобы создать своего первого персонажа.';
 
   @override
+  String get whatsNewTitle => 'Что нового';
+
+  @override
+  String whatsNewVersionSubtitle(String version) {
+    return 'Версия $version';
+  }
+
+  @override
+  String get whatsNewIntro =>
+      'Несколько полезных улучшений готовы к вашей следующей игре.';
+
+  @override
+  String get whatsNewContextualRollsTitle => 'Контекстные броски';
+
+  @override
+  String get whatsNewContextualRollsBody =>
+      'Бросайте характеристики, навыки, спасброски, оружие и простые заклинания прямо из листа.';
+
+  @override
+  String get whatsNewCriticalsTitle => 'Настройки критов';
+
+  @override
+  String get whatsNewCriticalsBody =>
+      'Выберите, как считать критический урон, с подсказками для преимущества и помехи, когда они нужны.';
+
+  @override
+  String get whatsNewConfirmationsTitle => 'Более понятные подтверждения';
+
+  @override
+  String get whatsNewConfirmationsBody =>
+      'Безопасные и разрушительные действия теперь легче отличить друг от друга.';
+
+  @override
+  String get whatsNewDone => 'Понятно';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name успешно импортирован!';
   }

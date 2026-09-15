@@ -5,6 +5,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.1.1] - 2026-09-14
+
+### Added
+- **Novidades no app**: adicionada tela visual de novidades ao abrir o app, mostrando os principais recursos recentes de forma localizada e amigavel.
+
+### Internal
+- **Novidades no app**: aviso versionado por identificador interno e salvo localmente para aparecer apenas uma vez por novidade.
+- **Versionamento**: versao do app atualizada para `2.1.1+31`.
+
+---
+
 ## [2.1.0] - 2026-09-14
 
 ### Added

@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/character_file_payload.dart';
+import '../../core/whats_new/whats_new_service.dart';
 import '../../core/services/incoming_file_service.dart';
 import '../../core/platform/picked_file_reader.dart';
 import '../../core/utils/file_exporter.dart';
@@ -18,6 +19,7 @@ import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/character_avatar.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
+import '../../shared/widgets/whats_new_dialog.dart';
 
 String _duplicateCharacterName(
   AppLocalizations l10n,
@@ -53,6 +55,7 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
     );
     WidgetsBinding.instance.addPostFrameCallback((_) {
       IncomingFileService.instance.checkPendingFile();
+      unawaited(_maybeShowWhatsNew());
     });
   }
 
@@ -147,6 +150,23 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
 
   Future<void> _refreshCharacters() {
     return ref.read(characterListProvider.notifier).refresh();
+  }
+
+  Future<void> _maybeShowWhatsNew() async {
+    await Future<void>.delayed(const Duration(milliseconds: 450));
+    if (!mounted || ModalRoute.of(context)?.isCurrent != true) return;
+
+    try {
+      final info = await ref.read(whatsNewServiceProvider).pendingInfo();
+      if (info == null || !mounted) return;
+      if (ModalRoute.of(context)?.isCurrent != true) return;
+
+      await showWhatsNewDialog(context, version: info.version);
+      if (!mounted) return;
+      await ref.read(whatsNewServiceProvider).markSeen(info.id);
+    } catch (_) {
+      // A release note prompt should never block the home screen.
+    }
   }
 
   Future<void> _importFile() async {

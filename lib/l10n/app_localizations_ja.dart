@@ -30,6 +30,39 @@ class AppLocalizationsJa extends AppLocalizations {
   String get charListEmptyHint => '+ をタップして最初のキャラクターを作成します';
 
   @override
+  String get whatsNewTitle => '新機能';
+
+  @override
+  String whatsNewVersionSubtitle(String version) {
+    return 'バージョン $version';
+  }
+
+  @override
+  String get whatsNewIntro => '次のセッションに役立つ改善が追加されました。';
+
+  @override
+  String get whatsNewContextualRollsTitle => 'コンテキストロール';
+
+  @override
+  String get whatsNewContextualRollsBody =>
+      '能力値、技能、セーヴ、武器、シンプルな呪文をキャラクターシートから直接ロールできます。';
+
+  @override
+  String get whatsNewCriticalsTitle => 'クリティカル設定';
+
+  @override
+  String get whatsNewCriticalsBody => 'クリティカル時のダメージ計算を選べ、必要なときは有利・不利も確認できます。';
+
+  @override
+  String get whatsNewConfirmationsTitle => 'より分かりやすい確認';
+
+  @override
+  String get whatsNewConfirmationsBody => '安全な操作と取り消せない操作の違いが分かりやすくなりました。';
+
+  @override
+  String get whatsNewDone => '了解';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name は正常にインポートされました。';
   }

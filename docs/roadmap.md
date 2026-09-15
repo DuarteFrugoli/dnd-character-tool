@@ -241,6 +241,17 @@ rolador em uma ferramenta integrada a ficha.
 - [ ] Preparar estrutura futura para bonus temporarios em CA, iniciativa,
       deslocamento e outros valores derivados.
 
+### 2.1.1 - Avisos de novidades
+
+Objetivo: comunicar melhor mudancas importantes dentro do proprio app, sem
+depender apenas das notas da Play Store.
+
+- [x] Mostrar um aviso visual de novidades ao abrir o app.
+- [x] Internacionalizar o aviso em todos os idiomas suportados.
+- [x] Salvar localmente o aviso visto para nao incomodar o usuario de novo.
+- [x] Manter o aviso versionado por identificador interno para futuras
+      campanhas de comunicacao.
+
 ### 2.2.0 - D&D 2024 / SRD 5.2.1
 
 Objetivo: suportar a versao moderna de D&D como modo de regras separado, sem

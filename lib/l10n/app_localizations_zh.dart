@@ -30,6 +30,38 @@ class AppLocalizationsZh extends AppLocalizations {
   String get charListEmptyHint => '点击+创建你的第一个角色';
 
   @override
+  String get whatsNewTitle => '新功能';
+
+  @override
+  String whatsNewVersionSubtitle(String version) {
+    return '版本 $version';
+  }
+
+  @override
+  String get whatsNewIntro => '一些实用改进已经准备好用于你的下一场游戏。';
+
+  @override
+  String get whatsNewContextualRollsTitle => '情境掷骰';
+
+  @override
+  String get whatsNewContextualRollsBody => '可直接从角色卡掷属性、技能、豁免、武器和简单法术。';
+
+  @override
+  String get whatsNewCriticalsTitle => '重击选项';
+
+  @override
+  String get whatsNewCriticalsBody => '选择重击伤害的计算方式，并在需要时使用优势和劣势选项。';
+
+  @override
+  String get whatsNewConfirmationsTitle => '更清晰的确认';
+
+  @override
+  String get whatsNewConfirmationsBody => '安全操作和破坏性操作现在更容易区分。';
+
+  @override
+  String get whatsNewDone => '知道了';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name导入成功！';
   }

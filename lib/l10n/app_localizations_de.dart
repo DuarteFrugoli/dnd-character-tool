@@ -31,6 +31,42 @@ class AppLocalizationsDe extends AppLocalizations {
       'Tippen Sie auf +, um Ihren ersten Charakter zu erstellen';
 
   @override
+  String get whatsNewTitle => 'Neuigkeiten';
+
+  @override
+  String whatsNewVersionSubtitle(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get whatsNewIntro =>
+      'Ein paar nützliche Verbesserungen sind bereit für Ihre nächste Runde.';
+
+  @override
+  String get whatsNewContextualRollsTitle => 'Kontextwürfe';
+
+  @override
+  String get whatsNewContextualRollsBody =>
+      'Würfeln Sie Attribute, Fertigkeiten, Rettungswürfe, Waffen und einfache Zauber direkt vom Charakterbogen.';
+
+  @override
+  String get whatsNewCriticalsTitle => 'Optionen für kritische Treffer';
+
+  @override
+  String get whatsNewCriticalsBody =>
+      'Wählen Sie, wie kritischer Schaden berechnet wird, mit Abfragen für Vorteil und Nachteil, wenn Sie sie brauchen.';
+
+  @override
+  String get whatsNewConfirmationsTitle => 'Klarere Bestätigungen';
+
+  @override
+  String get whatsNewConfirmationsBody =>
+      'Sichere Aktionen und zerstörerische Aktionen sind jetzt leichter zu unterscheiden.';
+
+  @override
+  String get whatsNewDone => 'Verstanden';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name erfolgreich importiert!';
   }

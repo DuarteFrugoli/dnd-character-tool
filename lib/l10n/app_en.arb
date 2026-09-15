@@ -21,6 +21,39 @@
   "charListEmptyHint": "Tap + to create your first character",
   "@charListEmptyHint": { "description": "Empty state subtitle." },
 
+  "whatsNewTitle": "What's new",
+  "@whatsNewTitle": { "description": "Title for the release notes dialog shown after an app update." },
+
+  "whatsNewVersionSubtitle": "Version {version}",
+  "@whatsNewVersionSubtitle": {
+    "description": "Subtitle for the release notes dialog showing the app version.",
+    "placeholders": { "version": { "type": "String" } }
+  },
+
+  "whatsNewIntro": "A few useful updates are ready for your next session.",
+  "@whatsNewIntro": { "description": "Intro text for the release notes dialog." },
+
+  "whatsNewContextualRollsTitle": "Contextual rolls",
+  "@whatsNewContextualRollsTitle": { "description": "Release note title for contextual dice rolls." },
+
+  "whatsNewContextualRollsBody": "Roll abilities, skills, saves, weapons, and simple spells directly from the sheet.",
+  "@whatsNewContextualRollsBody": { "description": "Release note body for contextual dice rolls." },
+
+  "whatsNewCriticalsTitle": "Critical hit options",
+  "@whatsNewCriticalsTitle": { "description": "Release note title for critical hit options." },
+
+  "whatsNewCriticalsBody": "Choose how critical damage is calculated, with advantage and disadvantage prompts when you need them.",
+  "@whatsNewCriticalsBody": { "description": "Release note body for critical hit options." },
+
+  "whatsNewConfirmationsTitle": "Clearer confirmations",
+  "@whatsNewConfirmationsTitle": { "description": "Release note title for safer confirmation dialogs." },
+
+  "whatsNewConfirmationsBody": "Safe actions and destructive actions now look more distinct.",
+  "@whatsNewConfirmationsBody": { "description": "Release note body for safer confirmation dialogs." },
+
+  "whatsNewDone": "Got it",
+  "@whatsNewDone": { "description": "Dismiss button for the release notes dialog." },
+
   "charListImportedSuccess": "{name} imported successfully!",
   "@charListImportedSuccess": {
     "description": "Snackbar after successful import.",

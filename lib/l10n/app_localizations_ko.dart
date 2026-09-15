@@ -30,6 +30,41 @@ class AppLocalizationsKo extends AppLocalizations {
   String get charListEmptyHint => '+를 탭하여 첫 번째 캐릭터를 생성하세요';
 
   @override
+  String get whatsNewTitle => '새로운 기능';
+
+  @override
+  String whatsNewVersionSubtitle(String version) {
+    return '버전 $version';
+  }
+
+  @override
+  String get whatsNewIntro => '다음 세션에 유용한 개선 사항이 준비되었습니다.';
+
+  @override
+  String get whatsNewContextualRollsTitle => '상황별 굴림';
+
+  @override
+  String get whatsNewContextualRollsBody =>
+      '능력치, 기술, 내성, 무기, 단순 주문을 캐릭터 시트에서 바로 굴릴 수 있습니다.';
+
+  @override
+  String get whatsNewCriticalsTitle => '치명타 옵션';
+
+  @override
+  String get whatsNewCriticalsBody =>
+      '치명타 피해 계산 방식을 선택하고, 필요할 때 이점과 불리점 옵션을 확인할 수 있습니다.';
+
+  @override
+  String get whatsNewConfirmationsTitle => '더 명확한 확인';
+
+  @override
+  String get whatsNewConfirmationsBody =>
+      '안전한 작업과 삭제 같은 위험한 작업을 더 쉽게 구분할 수 있습니다.';
+
+  @override
+  String get whatsNewDone => '확인';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name를 성공적으로 가져왔습니다!';
   }

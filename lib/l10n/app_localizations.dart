@@ -156,6 +156,66 @@ abstract class AppLocalizations {
   /// **'Tap + to create your first character'**
   String get charListEmptyHint;
 
+  /// Title for the release notes dialog shown after an app update.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s new'**
+  String get whatsNewTitle;
+
+  /// Subtitle for the release notes dialog showing the app version.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String whatsNewVersionSubtitle(String version);
+
+  /// Intro text for the release notes dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'A few useful updates are ready for your next session.'**
+  String get whatsNewIntro;
+
+  /// Release note title for contextual dice rolls.
+  ///
+  /// In en, this message translates to:
+  /// **'Contextual rolls'**
+  String get whatsNewContextualRollsTitle;
+
+  /// Release note body for contextual dice rolls.
+  ///
+  /// In en, this message translates to:
+  /// **'Roll abilities, skills, saves, weapons, and simple spells directly from the sheet.'**
+  String get whatsNewContextualRollsBody;
+
+  /// Release note title for critical hit options.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical hit options'**
+  String get whatsNewCriticalsTitle;
+
+  /// Release note body for critical hit options.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how critical damage is calculated, with advantage and disadvantage prompts when you need them.'**
+  String get whatsNewCriticalsBody;
+
+  /// Release note title for safer confirmation dialogs.
+  ///
+  /// In en, this message translates to:
+  /// **'Clearer confirmations'**
+  String get whatsNewConfirmationsTitle;
+
+  /// Release note body for safer confirmation dialogs.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe actions and destructive actions now look more distinct.'**
+  String get whatsNewConfirmationsBody;
+
+  /// Dismiss button for the release notes dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get whatsNewDone;
+
   /// Snackbar after successful import.
   ///
   /// In en, this message translates to:

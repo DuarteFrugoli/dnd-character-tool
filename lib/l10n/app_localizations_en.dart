@@ -30,6 +30,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get charListEmptyHint => 'Tap + to create your first character';
 
   @override
+  String get whatsNewTitle => 'What\'s new';
+
+  @override
+  String whatsNewVersionSubtitle(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get whatsNewIntro =>
+      'A few useful updates are ready for your next session.';
+
+  @override
+  String get whatsNewContextualRollsTitle => 'Contextual rolls';
+
+  @override
+  String get whatsNewContextualRollsBody =>
+      'Roll abilities, skills, saves, weapons, and simple spells directly from the sheet.';
+
+  @override
+  String get whatsNewCriticalsTitle => 'Critical hit options';
+
+  @override
+  String get whatsNewCriticalsBody =>
+      'Choose how critical damage is calculated, with advantage and disadvantage prompts when you need them.';
+
+  @override
+  String get whatsNewConfirmationsTitle => 'Clearer confirmations';
+
+  @override
+  String get whatsNewConfirmationsBody =>
+      'Safe actions and destructive actions now look more distinct.';
+
+  @override
+  String get whatsNewDone => 'Got it';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name imported successfully!';
   }

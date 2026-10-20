@@ -241,23 +241,17 @@ rolador em uma ferramenta integrada a ficha.
 - [ ] Preparar estrutura futura para bonus temporarios em CA, iniciativa,
       deslocamento e outros valores derivados.
 
-### 2.1.1 - Avisos de novidades
-
-Objetivo: comunicar melhor mudancas importantes dentro do proprio app, sem
-depender apenas das notas da Play Store.
-
-- [x] Mostrar um aviso visual de novidades ao abrir o app.
-- [x] Internacionalizar o aviso em todos os idiomas suportados.
-- [x] Salvar localmente o aviso visto para nao incomodar o usuario de novo.
-- [x] Manter o aviso versionado por identificador interno para futuras
-      campanhas de comunicacao.
-
 ### 2.2.0 - D&D 2024 / SRD 5.2.1
 
 Objetivo: suportar a versao moderna de D&D como modo de regras separado, sem
-misturar silenciosamente com personagens criados no SRD atual.
+misturar silenciosamente com personagens criados no SRD atual. Inclui tambem
+o aviso de novidades ja preparado e ainda nao lancado.
 
-- [ ] Definir `ruleset` do personagem: `5e_2014` e `5e_2024`.
+- [x] Mostrar um aviso visual e localizado de novidades ao abrir o app, salvo
+      localmente e versionado por identificador interno.
+
+- [x] Definir os IDs `rulesetId` (`dnd_2014` e `dnd_2024`) e
+      `contentPackId` (`srd_5_1` e `srd_5_2_1`) no modelo do personagem.
 - [ ] Separar catalogos SRD por ruleset sem duplicar toda a infraestrutura.
 - [ ] Adicionar dados do SRD 5.2.1: classes, subclasses, especies, backgrounds,
       feats, magias, equipamentos e regras necessarias.

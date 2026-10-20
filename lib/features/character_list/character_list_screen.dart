@@ -17,6 +17,7 @@ import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/character_avatar.dart';
+import '../../shared/widgets/character_update_dialog.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import '../../shared/widgets/whats_new_dialog.dart';
@@ -434,10 +435,11 @@ class _CharacterCard extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
-    void openCharacter() {
+    Future<void> openCharacter() async {
       if (character.needsDataUpdate) {
-        context.push('/settings?section=maintenance');
-        return;
+        final updated = await showCharacterUpdateDialog(context);
+        if (!context.mounted || !updated) return;
+        ref.invalidate(characterListProvider);
       }
       context.push('/character/${character.id}');
     }

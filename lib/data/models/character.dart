@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../json_helpers.dart';
+import '../rulesets/ruleset_ids.dart';
 import 'ability_scores.dart';
 import 'character_appearance.dart';
 import 'character_class_entry.dart';
@@ -18,7 +19,7 @@ part 'character.g.dart';
 
 // Sentinel used to distinguish "not passed" from explicit null in copyWith.
 const _keep = Object();
-const currentCharacterDataVersion = 9;
+const currentCharacterDataVersion = 10;
 
 CharacterSheetPreferences _characterSheetPreferencesFromJson(Object? json) =>
     CharacterSheetPreferences.fromJson(json);
@@ -33,6 +34,11 @@ enum CreationMode { random, semiRandom, guided, manual }
 class Character {
   final String id;
   final int dataVersion;
+  // Parsed by the wrapper so only pre-v10 saves may omit these IDs.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final RulesetId rulesetId;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final ContentPackId contentPackId;
   final String name;
   final String playerName;
   final String race;
@@ -111,6 +117,8 @@ class Character {
   const Character({
     required this.id,
     this.dataVersion = currentCharacterDataVersion,
+    this.rulesetId = RulesetId.dnd2014,
+    this.contentPackId = ContentPackId.srd51,
     required this.name,
     this.playerName = '',
     required this.race,
@@ -192,6 +200,9 @@ class Character {
 
   bool get needsDataUpdate => dataVersion < currentCharacterDataVersion;
 
+  // The existing dataVersion is the persisted character schema version.
+  int get schemaVersion => dataVersion;
+
   String get primaryClassName => primaryClass.className;
 
   String? get primarySubclassName => primaryClass.subclassName;
@@ -257,6 +268,8 @@ class Character {
   Character copyWith({
     String? id,
     int? dataVersion,
+    RulesetId? rulesetId,
+    ContentPackId? contentPackId,
     String? name,
     String? playerName,
     String? race,
@@ -312,6 +325,8 @@ class Character {
     return Character(
       id: id ?? this.id,
       dataVersion: dataVersion ?? this.dataVersion,
+      rulesetId: rulesetId ?? this.rulesetId,
+      contentPackId: contentPackId ?? this.contentPackId,
       name: name ?? this.name,
       playerName: playerName ?? this.playerName,
       race: race ?? this.race,
@@ -368,8 +383,26 @@ class Character {
     );
   }
 
-  factory Character.fromJson(Map<String, dynamic> json) =>
-      _$CharacterFromJson(json);
+  factory Character.fromJson(Map<String, dynamic> json) {
+    final character = _$CharacterFromJson(json);
+    final legacy = character.dataVersion < 10;
+    final rulesetId = RulesetId.parse(
+      json['rulesetId'],
+      allowLegacyDefault: legacy,
+    );
+    final contentPackId = ContentPackId.parse(
+      json['contentPackId'],
+      allowLegacyDefault: legacy,
+    );
+    if (contentPackId.rulesetId != rulesetId) {
+      throw const FormatException('Character ruleset and content pack differ.');
+    }
+    return character.copyWith(rulesetId: rulesetId, contentPackId: contentPackId);
+  }
 
-  Map<String, dynamic> toJson() => _$CharacterToJson(this);
+  Map<String, dynamic> toJson() => {
+    ..._$CharacterToJson(this),
+    'rulesetId': rulesetId.value,
+    'contentPackId': contentPackId.value,
+  };
 }

@@ -2,9 +2,9 @@
 """
 Patch spell i18n JSON files with translated 'material' field only.
 
-Reads assets/data/srd/spells.json for spells that have a material component,
+Reads assets/data/srd/5.1/spells.json for spells that have a material component,
 then for each locale, translates only the missing 'material' field and merges
-it into the existing assets/data/i18n/{locale}/spells.json without touching
+it into the existing assets/data/i18n/{locale}/5.1/spells.json without touching
 any other field (name, description, higherLevels, etc.).
 
 Usage:
@@ -29,7 +29,7 @@ except ImportError:
     sys.exit(1)
 
 ROOT     = Path(__file__).resolve().parent.parent
-SRD_DIR  = ROOT / "assets" / "data" / "srd"
+SRD_DIR  = ROOT / "assets" / "data" / "srd" / "5.1"
 I18N_DIR = ROOT / "assets" / "data" / "i18n"
 
 LOCALE_LANG = {
@@ -66,7 +66,7 @@ def _translate(text: str, tgt: str) -> str:
 
 
 def patch_locale(locale: str, tgt_lang: str, force: bool):
-    spells_path = I18N_DIR / locale / "spells.json"
+    spells_path = I18N_DIR / locale / "5.1" / "spells.json"
     srd_spells  = json.loads((SRD_DIR / "spells.json").read_text(encoding="utf-8"))
 
     # Load existing i18n file or start empty

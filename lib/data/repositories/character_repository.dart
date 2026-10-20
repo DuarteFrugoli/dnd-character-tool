@@ -127,6 +127,9 @@ class CharacterRepository {
     final report = _migrationRunner
         .preview(loadReport.characters, context)
         .withReadIssues(_migrationReadIssues(loadReport.issues));
+    if (report.hasReadIssues) {
+      throw StateError('Cannot migrate while character reads have errors.');
+    }
 
     for (final entry in report.characters) {
       if (!entry.needsMigration) continue;

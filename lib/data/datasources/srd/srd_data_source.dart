@@ -3,14 +3,26 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import '../../feature_usage_engine.dart';
+import '../../rulesets/ruleset_ids.dart';
+import '../../rulesets/srd_content_pack.dart';
 import 'srd_models.dart';
 
 /// Lê e parseia os assets SRD bundados no app.
 /// Os dados são carregados sob demanda e cacheados em memória após a primeira leitura.
 class SrdDataSource {
-  SrdDataSource._();
+  SrdDataSource._(this.pack);
 
-  static final SrdDataSource instance = SrdDataSource._();
+  static final Map<ContentPackId, SrdDataSource> _byPack = {};
+
+  static SrdDataSource forPack(SrdContentPack pack) =>
+      _byPack.putIfAbsent(pack.id, () => SrdDataSource._(pack));
+
+  static final SrdDataSource instance =
+      forPack(SrdContentPackRegistry.srd51);
+
+  final SrdContentPack pack;
+
+  String _asset(String fileName) => pack.srdAsset(fileName);
 
   List<SrdSkill>? _skills;
   List<SrdRace>? _races;
@@ -39,25 +51,25 @@ class SrdDataSource {
 
   Future<List<SrdSkill>> getSkills() async {
     _skills ??= await _loadList(
-      'assets/data/srd/skills.json',
+      _asset('skills'),
       SrdSkill.fromJson,
     );
     return _skills!;
   }
 
   Future<List<SrdRace>> getRaces() async {
-    _races ??= await _loadList('assets/data/srd/races.json', SrdRace.fromJson);
+    _races ??= await _loadList(_asset('races'), SrdRace.fromJson);
     return _races!;
   }
 
   Future<List<SrdClass>> getClasses() async {
     if (_classes == null) {
       final classes = await _loadList(
-        'assets/data/srd/classes.json',
+        _asset('classes'),
         SrdClass.fromJson,
       );
       final subclassRaw = await rootBundle.loadString(
-        'assets/data/srd/subclasses.json',
+        _asset('subclasses'),
       );
       final subclassMap = jsonDecode(subclassRaw) as Map<String, dynamic>;
       _classes = classes.map((cls) {
@@ -88,7 +100,7 @@ class SrdDataSource {
 
   Future<List<SrdBackground>> getBackgrounds() async {
     _backgrounds ??= await _loadList(
-      'assets/data/srd/backgrounds.json',
+      _asset('backgrounds'),
       SrdBackground.fromJson,
     );
     return _backgrounds!;
@@ -96,7 +108,7 @@ class SrdDataSource {
 
   Future<List<SrdSpell>> getSpells() async {
     _spells ??= await _loadList(
-      'assets/data/srd/spells.json',
+      _asset('spells'),
       SrdSpell.fromJson,
     );
     return _spells!;
@@ -104,7 +116,7 @@ class SrdDataSource {
 
   Future<List<SrdLanguage>> getLanguages() async {
     _languages ??= await _loadList(
-      'assets/data/srd/languages.json',
+      _asset('languages'),
       SrdLanguage.fromJson,
     );
     return _languages!;
@@ -134,19 +146,19 @@ class SrdDataSource {
 
   Future<List<SrdMagicItem>> getMagicItems() async {
     _magicItems ??= await _loadList(
-      'assets/data/srd/magic_items.json',
+      _asset('magic_items'),
       SrdMagicItem.fromJson,
     );
     return _magicItems!;
   }
 
   Future<List<SrdTool>> getTools() async {
-    _tools ??= await _loadList('assets/data/srd/tools.json', SrdTool.fromJson);
+    _tools ??= await _loadList(_asset('tools'), SrdTool.fromJson);
     return _tools!;
   }
 
   Future<List<SrdFeat>> getFeats() async {
-    _feats ??= await _loadList('assets/data/srd/feats.json', SrdFeat.fromJson);
+    _feats ??= await _loadList(_asset('feats'), SrdFeat.fromJson);
     return _feats!;
   }
 
@@ -178,7 +190,7 @@ class SrdDataSource {
 
   Future<FeatureUsageCatalog> _loadFeatureUsageCatalog() async {
     final raw = await rootBundle.loadString(
-      'assets/data/srd/feature_usages.json',
+      _asset('feature_usages'),
     );
     final json = jsonDecode(raw) as Map<String, dynamic>;
     final catalog = FeatureUsageCatalog.fromJson(json);
@@ -188,7 +200,7 @@ class SrdDataSource {
 
   Future<SrdFeatureChoiceCatalog> _loadFeatureChoiceCatalog() async {
     final raw = await rootBundle.loadString(
-      'assets/data/srd/feature_choices.json',
+      _asset('feature_choices'),
     );
     final catalog = SrdFeatureChoiceCatalog.fromJson(
       jsonDecode(raw) as Map<String, dynamic>,
@@ -199,7 +211,7 @@ class SrdDataSource {
 
   Future<Map<String, SrdItemData>> getItems() async {
     if (_items == null) {
-      final raw = await rootBundle.loadString('assets/data/srd/equipment.json');
+      final raw = await rootBundle.loadString(_asset('equipment'));
       final json = jsonDecode(raw) as Map<String, dynamic>;
       final result = <String, SrdItemData>{};
 
@@ -371,7 +383,7 @@ class SrdDataSource {
   Future<Map<String, String>> getRaceTraits() async {
     if (_raceTraits == null) {
       final raw = await rootBundle.loadString(
-        'assets/data/srd/race_traits.json',
+        _asset('race_traits'),
       );
       final map = jsonDecode(raw) as Map<String, dynamic>;
       _raceTraits = map.map((k, v) => MapEntry(k, v as String));
@@ -382,7 +394,7 @@ class SrdDataSource {
   Future<List<SrdClassFeature>> getClassFeatures(String className) async {
     if (_classFeatures == null) {
       final raw = await rootBundle.loadString(
-        'assets/data/srd/class_features.json',
+        _asset('class_features'),
       );
       final list = jsonDecode(raw) as List<dynamic>;
       _classFeatures = {};
@@ -402,7 +414,7 @@ class SrdDataSource {
   getAllSubclassFeatures() async {
     if (_subclassFeatures == null) {
       final raw = await rootBundle.loadString(
-        'assets/data/srd/subclass_features.json',
+        _asset('subclass_features'),
       );
       final list = jsonDecode(raw) as List<dynamic>;
       _subclassFeatures = {};
@@ -440,7 +452,7 @@ class SrdDataSource {
   }
 
   Future<void> _doLoadEquipment() async {
-    final raw = await rootBundle.loadString('assets/data/srd/equipment.json');
+    final raw = await rootBundle.loadString(_asset('equipment'));
     final json = jsonDecode(raw) as Map<String, dynamic>;
     _weapons = (json['weapons'] as List<dynamic>)
         .map((e) => SrdWeapon.fromJson(e as Map<String, dynamic>))

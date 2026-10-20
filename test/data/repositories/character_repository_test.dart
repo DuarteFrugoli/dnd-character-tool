@@ -264,6 +264,11 @@ void main() {
           (decoded['characters'] as List<dynamic>).first,
           containsPair('character', isA<Map<String, dynamic>>()),
         );
+        final firstEntry = (decoded['characters'] as List<dynamic>).first
+            as Map<String, dynamic>;
+        final savedCharacter = firstEntry['character'] as Map<String, dynamic>;
+        expect(savedCharacter['rulesetId'], 'dnd_2014');
+        expect(savedCharacter['contentPackId'], 'srd_5_1');
       },
     );
 
@@ -290,6 +295,8 @@ void main() {
         isNot(contains('exported-b')),
       );
       expect(await repo.getById(imported.first.id), isNotNull);
+      expect(imported.first.toJson()['rulesetId'], 'dnd_2014');
+      expect(imported.first.toJson()['contentPackId'], 'srd_5_1');
       expect(backend._chars, hasLength(2));
     });
 
@@ -376,6 +383,9 @@ void main() {
       final imported = await repo.importFromDndCharFile(fileJson);
 
       expect(decoded['imageData'], base64Encode([3, 1, 4, 1]));
+      final savedCharacter = decoded['character'] as Map<String, dynamic>;
+      expect(savedCharacter['rulesetId'], 'dnd_2014');
+      expect(savedCharacter['contentPackId'], 'srd_5_1');
       expect(imported.imagePath, isNotNull);
       expect(imported.imagePath, isNot(sourceImagePath));
       expect(await File(imported.imagePath!).readAsBytes(), [3, 1, 4, 1]);
@@ -407,5 +417,15 @@ void main() {
         throwsA(isA<FormatException>()),
       );
     });
+  });
+
+  test('migration does not update a partial character scan', () async {
+    await repo.save(_makeCharacter().copyWith(dataVersion: 9));
+    backend._chars['broken'] = {'id': 'broken', 'name': 1};
+
+    final preview = await repo.previewMigrations();
+    expect(preview.hasReadIssues, isTrue);
+    await expectLater(repo.applyMigrations(), throwsA(isA<StateError>()));
+    expect((await repo.getById('original-id'))?.dataVersion, 9);
   });
 }

@@ -10,13 +10,20 @@ import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/repositories/character_repository.dart';
+import '../../data/rulesets/ruleset_ids.dart';
+import '../../data/rulesets/srd_content_pack.dart';
 
 final characterRepositoryProvider = Provider<CharacterRepository>(
   (ref) => CharacterRepository(),
 );
 
+final srdDataSourceForPackProvider = Provider.family<SrdDataSource, ContentPackId>(
+  (ref, packId) =>
+      SrdDataSource.forPack(SrdContentPackRegistry.forId(packId)),
+);
+
 final srdDataSourceProvider = Provider<SrdDataSource>(
-  (ref) => SrdDataSource.instance,
+  (ref) => ref.watch(srdDataSourceForPackProvider(ContentPackId.srd51)),
 );
 
 final srdItemsProvider = FutureProvider<Map<String, SrdItemData>>(
@@ -89,18 +96,28 @@ final srdSubclassFeaturesProvider =
           .getSubclassFeatures(key.className, key.subclassName),
     );
 
-final srdI18nProvider = FutureProvider<SrdI18nService>((ref) async {
+final srdI18nForPackProvider =
+    FutureProvider.family<SrdI18nService, ContentPackId>((ref, packId) {
   final locale = ref.watch(localeProvider);
   final code =
       locale?.languageCode ??
       WidgetsBinding.instance.platformDispatcher.locale.languageCode;
-  return SrdI18nService.load(code);
+  return SrdI18nService.load(
+    code,
+    pack: SrdContentPackRegistry.forId(packId),
+  );
 });
 
-final srdConditionsProvider =
-    FutureProvider<List<({String name, String description})>>((ref) async {
+final srdI18nProvider = FutureProvider<SrdI18nService>(
+  (ref) => ref.watch(srdI18nForPackProvider(ContentPackId.srd51).future),
+);
+
+final srdConditionsForPackProvider = FutureProvider.family<
+  List<({String name, String description})>,
+  ContentPackId
+>((ref, packId) async {
       final raw = await rootBundle.loadString(
-        'assets/data/srd/conditions.json',
+        SrdContentPackRegistry.forId(packId).srdAsset('conditions'),
       );
       final list = jsonDecode(raw) as List<dynamic>;
       return list
@@ -112,6 +129,12 @@ final srdConditionsProvider =
           )
           .toList();
     });
+
+final srdConditionsProvider =
+    FutureProvider<List<({String name, String description})>>(
+      (ref) =>
+          ref.watch(srdConditionsForPackProvider(ContentPackId.srd51).future),
+    );
 
 class SrdSubclassFeatureKey {
   const SrdSubclassFeatureKey({

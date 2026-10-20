@@ -2651,10 +2651,19 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Dieser Charakter wurde mit einer alten Datenversion gespeichert. Aktualisiere deine Charaktere in den Einstellungen, bevor du ihn bearbeitest.';
+      'Dieser Charakter muss vor dem Öffnen aktualisiert werden. Du kannst deine Charaktere sichern oder jetzt alle aktualisieren. Vor der Aktualisierung wird ein Backup geöffnet.';
 
   @override
-  String get characterUpdateRequiredAction => 'Zu den Updates';
+  String get characterUpdateRequiredAction => 'Update-Optionen';
+
+  @override
+  String get characterUpdateBackupAction => 'Charaktere sichern';
+
+  @override
+  String get characterUpdateAllAction => 'Alle Charaktere aktualisieren';
+
+  @override
+  String get characterUpdateApplying => 'Charaktere werden aktualisiert...';
 
   @override
   String settingsMaintenanceReportChecked(int count) {
@@ -2752,6 +2761,10 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeArmorClass =>
       'Rüstungsklasse neu berechnet.';
+
+  @override
+  String get settingsMaintenanceChangeRuleset2014 =>
+      'Dieser Charakter wurde den Regeln von 2014 (SRD 5.1) zugeordnet.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

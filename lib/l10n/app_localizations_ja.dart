@@ -2578,10 +2578,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'このキャラクターは古いデータバージョンで保存されています。編集する前に設定でキャラクターを更新してください。';
+      'このキャラクターを開くには更新が必要です。キャラクターをバックアップするか、すべて更新できます。更新前にバックアップ画面が開きます。';
 
   @override
-  String get characterUpdateRequiredAction => '更新へ移動';
+  String get characterUpdateRequiredAction => '更新オプション';
+
+  @override
+  String get characterUpdateBackupAction => 'キャラクターをバックアップ';
+
+  @override
+  String get characterUpdateAllAction => 'すべてのキャラクターを更新';
+
+  @override
+  String get characterUpdateApplying => 'キャラクターを更新しています...';
 
   @override
   String settingsMaintenanceReportChecked(int count) {
@@ -2675,6 +2684,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get settingsMaintenanceChangeArmorClass => 'アーマークラスを再計算しました。';
+
+  @override
+  String get settingsMaintenanceChangeRuleset2014 =>
+      'このキャラクターに2014年版ルール（SRD 5.1）を設定しました。';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

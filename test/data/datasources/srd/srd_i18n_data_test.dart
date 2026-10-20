@@ -191,9 +191,9 @@ void main() {
     for (final locale in _locales) {
       test('$locale has names for critical SRD lookup entries', () {
         for (final fileName in ['skills', 'tools', 'equipment', 'spells']) {
-          final srd = _readJson('assets/data/srd/$fileName.json');
+          final srd = _readJson('assets/data/srd/5.1/$fileName.json');
           final localized = _readJsonMap(
-            'assets/data/i18n/$locale/$fileName.json',
+            'assets/data/i18n/$locale/5.1/$fileName.json',
           );
           final missing = _collectNamedEntries(srd).where((name) {
             final entry = _asMap(localized[name]);
@@ -205,7 +205,7 @@ void main() {
             missing,
             isEmpty,
             reason:
-                'assets/data/i18n/$locale/$fileName.json is missing names: '
+                'assets/data/i18n/$locale/5.1/$fileName.json is missing names: '
                 '${missing.join(', ')}',
           );
         }
@@ -213,9 +213,9 @@ void main() {
 
       test('$locale has descriptions for SRD spells and equipment', () {
         for (final fileName in ['equipment', 'spells']) {
-          final srd = _readJson('assets/data/srd/$fileName.json');
+          final srd = _readJson('assets/data/srd/5.1/$fileName.json');
           final localized = _readJsonMap(
-            'assets/data/i18n/$locale/$fileName.json',
+            'assets/data/i18n/$locale/5.1/$fileName.json',
           );
           final missing = _collectEntriesWithDescriptions(srd).where((name) {
             final entry = _asMap(localized[name]);
@@ -227,16 +227,16 @@ void main() {
             missing,
             isEmpty,
             reason:
-                'assets/data/i18n/$locale/$fileName.json is missing '
+                'assets/data/i18n/$locale/5.1/$fileName.json is missing '
                 'descriptions: ${missing.join(', ')}',
           );
         }
       });
 
       test('$locale has feature choice option names and descriptions', () {
-        final srd = _readJsonMap('assets/data/srd/feature_choices.json');
+        final srd = _readJsonMap('assets/data/srd/5.1/feature_choices.json');
         final localized = _readJsonMap(
-          'assets/data/i18n/$locale/feature_choices.json',
+          'assets/data/i18n/$locale/5.1/feature_choices.json',
         );
         final issues = <String>[];
 
@@ -263,7 +263,7 @@ void main() {
           issues,
           isEmpty,
           reason:
-              'assets/data/i18n/$locale/feature_choices.json is missing: '
+              'assets/data/i18n/$locale/5.1/feature_choices.json is missing: '
               '${issues.join(', ')}',
         );
       });

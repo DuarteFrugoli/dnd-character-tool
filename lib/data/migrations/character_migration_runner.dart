@@ -1,5 +1,6 @@
 import '../models/models.dart';
 import 'character_migration.dart';
+import 'migrations/assign_2014_ruleset_migration.dart';
 import 'migrations/backfill_equipment_weights_migration.dart';
 import 'migrations/expand_equipment_packs_migration.dart';
 import 'migrations/normalize_multiclass_state_migration.dart';
@@ -24,6 +25,7 @@ class CharacterMigrationRunner {
               PrepareMulticlassStructureMigration(),
               SyncMulticlassSpellSlotsMigration(),
               NormalizeMulticlassStateMigration(),
+              Assign2014RulesetMigration(),
             ],
       );
 

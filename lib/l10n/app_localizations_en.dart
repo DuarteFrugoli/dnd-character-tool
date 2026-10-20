@@ -2624,10 +2624,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'This character was saved with an older data version. Update your characters in Settings before editing it.';
+      'This character needs an update before it can open. You can back up your characters or update them all now. A backup opens before any update is applied.';
 
   @override
-  String get characterUpdateRequiredAction => 'Go to updates';
+  String get characterUpdateRequiredAction => 'Update options';
+
+  @override
+  String get characterUpdateBackupAction => 'Back up characters';
+
+  @override
+  String get characterUpdateAllAction => 'Update all characters';
+
+  @override
+  String get characterUpdateApplying => 'Updating characters...';
 
   @override
   String settingsMaintenanceReportChecked(int count) {
@@ -2723,6 +2732,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsMaintenanceChangeArmorClass => 'Recalculated Armor Class.';
+
+  @override
+  String get settingsMaintenanceChangeRuleset2014 =>
+      'Marked this character as using the 2014 rules (SRD 5.1).';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

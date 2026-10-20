@@ -79,29 +79,13 @@ flutter:
   generate: true
 
   assets:
-    - assets/data/srd/races.json
-    - assets/data/srd/classes.json
-    - assets/data/srd/subclasses.json
-    - assets/data/srd/backgrounds.json
-    - assets/data/srd/skills.json
-    - assets/data/srd/languages.json
-    - assets/data/srd/spells.json
-    - assets/data/srd/equipment.json
-    - assets/data/srd/class_features.json
-    - assets/data/srd/magic_items.json
-    - assets/data/srd/race_traits.json
-    - assets/data/srd/subclass_features.json
-    - assets/data/srd/tools.json
-    - assets/data/srd/feats.json
-    - assets/data/srd/conditions.json
-    - assets/data/srd/feature_choices.json
-    - assets/data/srd/feature_usages.json
-    - assets/data/i18n/de/
-    - assets/data/i18n/es/
-    - assets/data/i18n/fr/
-    - assets/data/i18n/it/
-    - assets/data/i18n/ja/
-    - assets/data/i18n/ko/
-    - assets/data/i18n/pt/
-    - assets/data/i18n/ru/
-    - assets/data/i18n/zh/
+    - assets/data/srd/5.1/
+    - assets/data/i18n/de/5.1/
+    - assets/data/i18n/es/5.1/
+    - assets/data/i18n/fr/5.1/
+    - assets/data/i18n/it/5.1/
+    - assets/data/i18n/ja/5.1/
+    - assets/data/i18n/ko/5.1/
+    - assets/data/i18n/pt/5.1/
+    - assets/data/i18n/ru/5.1/
+    - assets/data/i18n/zh/5.1/

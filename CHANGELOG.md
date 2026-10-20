@@ -5,14 +5,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [2.1.1] - 2026-09-14
+## [2.2.0] - Unreleased
 
 ### Added
 - **Novidades no app**: adicionada tela visual de novidades ao abrir o app, mostrando os principais recursos recentes de forma localizada e amigavel.
 
+### Changed
+- **Atualizacao de personagens**: fichas antigas agora mostram opcoes de backup, atualizacao de todos os personagens ou cancelamento em um dialogo, sem redirecionar para Configuracoes.
+
 ### Internal
 - **Novidades no app**: aviso versionado por identificador interno e salvo localmente para aparecer apenas uma vez por novidade.
-- **Versionamento**: versao do app atualizada para `2.1.1+31`.
 
 ---
 

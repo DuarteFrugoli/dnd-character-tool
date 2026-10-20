@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import '../../rulesets/srd_content_pack.dart';
+
 /// Provides translated SRD strings for a given locale.
 ///
 /// Keys are always English identifiers; values are localised strings.
@@ -9,12 +11,14 @@ import 'package:flutter/services.dart';
 class SrdI18nService {
   SrdI18nService._(
     this.locale,
+    this.pack,
     this._data,
     this._subraceNames,
     this._bgEquipmentNames,
   );
 
   final String locale;
+  final SrdContentPack pack;
 
   // filename (without .json) → englishKey → { "name": ..., "description": ..., ... }
   final Map<String, Map<String, dynamic>> _data;
@@ -28,6 +32,7 @@ class SrdI18nService {
   /// No-op service: every lookup returns null, so callers fall back to English.
   static final SrdI18nService english = SrdI18nService._(
     'en',
+    SrdContentPackRegistry.srd51,
     const {},
     const {},
     const {},
@@ -55,14 +60,19 @@ class SrdI18nService {
 
   /// Loads the i18n overlay for [locale] from bundled assets.
   /// Gracefully skips files that are missing, empty, or malformed.
-  static Future<SrdI18nService> load(String locale) async {
-    if (locale == 'en') return english;
+  static Future<SrdI18nService> load(
+    String locale, {
+    SrdContentPack pack = SrdContentPackRegistry.srd51,
+  }) async {
+    if (locale == 'en') {
+      return pack.id == SrdContentPackRegistry.srd51.id
+          ? english
+          : SrdI18nService._('en', pack, const {}, const {}, const {});
+    }
     final data = <String, Map<String, dynamic>>{};
     for (final file in _files) {
       try {
-        final raw = await rootBundle.loadString(
-          'assets/data/i18n/$locale/$file.json',
-        );
+        final raw = await rootBundle.loadString(pack.i18nAsset(locale, file));
         final decoded = jsonDecode(raw);
         if (decoded is Map<String, dynamic> && decoded.isNotEmpty) {
           data[file] = _lowercaseKeys(decoded);
@@ -76,7 +86,7 @@ class SrdI18nService {
     // so we match them by index against the SRD source.
     final subraceNames = <String, String>{};
     try {
-      final srdRaw = await rootBundle.loadString('assets/data/srd/races.json');
+      final srdRaw = await rootBundle.loadString(pack.srdAsset('races'));
       final srdRaces = jsonDecode(srdRaw) as List<dynamic>;
       final i18nRaces = data['races'];
       if (i18nRaces != null) {
@@ -104,9 +114,7 @@ class SrdI18nService {
     // backgrounds with the i18n overlay (positional arrays).
     final bgEquipmentNames = <String, String>{};
     try {
-      final srdRaw = await rootBundle.loadString(
-        'assets/data/srd/backgrounds.json',
-      );
+      final srdRaw = await rootBundle.loadString(pack.srdAsset('backgrounds'));
       final srdBackgrounds = jsonDecode(srdRaw) as List<dynamic>;
       final i18nBackgrounds = data['backgrounds'];
       if (i18nBackgrounds != null) {
@@ -136,9 +144,7 @@ class SrdI18nService {
 
     // Also add class starting equipment (fixed + choices) by positional cross-ref.
     try {
-      final srdClsRaw = await rootBundle.loadString(
-        'assets/data/srd/classes.json',
-      );
+      final srdClsRaw = await rootBundle.loadString(pack.srdAsset('classes'));
       final srdClasses = jsonDecode(srdClsRaw) as List<dynamic>;
       final i18nClasses = data['classes'];
       if (i18nClasses != null) {
@@ -219,7 +225,7 @@ class SrdI18nService {
       equipData.addAll(aliases);
     }
 
-    return SrdI18nService._(locale, data, subraceNames, bgEquipmentNames);
+    return SrdI18nService._(locale, pack, data, subraceNames, bgEquipmentNames);
   }
 
   // ── Key normalisation ──────────────────────────────────────────────────────

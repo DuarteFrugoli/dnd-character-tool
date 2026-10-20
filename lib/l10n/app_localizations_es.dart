@@ -2646,10 +2646,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Este personaje se guardó con una versión antigua de los datos. Actualiza tus personajes en Ajustes antes de editarlo.';
+      'Este personaje debe actualizarse antes de abrirlo. Puedes hacer una copia de seguridad o actualizar todos los personajes ahora. Se abrirá una copia de seguridad antes de aplicar los cambios.';
 
   @override
-  String get characterUpdateRequiredAction => 'Ir a actualizaciones';
+  String get characterUpdateRequiredAction => 'Opciones de actualización';
+
+  @override
+  String get characterUpdateBackupAction => 'Hacer copia de seguridad';
+
+  @override
+  String get characterUpdateAllAction => 'Actualizar todos los personajes';
+
+  @override
+  String get characterUpdateApplying => 'Actualizando personajes...';
 
   @override
   String settingsMaintenanceReportChecked(int count) {
@@ -2747,6 +2756,10 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeArmorClass =>
       'Clase de Armadura recalculada.';
+
+  @override
+  String get settingsMaintenanceChangeRuleset2014 =>
+      'Se asignaron a este personaje las reglas de 2014 (SRD 5.1).';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

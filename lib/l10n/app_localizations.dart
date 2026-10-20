@@ -4767,14 +4767,32 @@ abstract class AppLocalizations {
   /// Dialog body shown when opening an outdated saved character.
   ///
   /// In en, this message translates to:
-  /// **'This character was saved with an older data version. Update your characters in Settings before editing it.'**
+  /// **'This character needs an update before it can open. You can back up your characters or update them all now. A backup opens before any update is applied.'**
   String get characterUpdateRequiredBody;
 
-  /// Dialog action that opens Settings at the character maintenance section.
+  /// Action on a directly opened outdated character to show the update dialog.
   ///
   /// In en, this message translates to:
-  /// **'Go to updates'**
+  /// **'Update options'**
   String get characterUpdateRequiredAction;
+
+  /// Exports a backup without updating characters in the update dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up characters'**
+  String get characterUpdateBackupAction;
+
+  /// Applies pending migrations to all characters after opening a backup.
+  ///
+  /// In en, this message translates to:
+  /// **'Update all characters'**
+  String get characterUpdateAllAction;
+
+  /// Progress text while character migrations are being applied.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating characters...'**
+  String get characterUpdateApplying;
 
   /// Migration report line for checked characters.
   ///
@@ -4847,6 +4865,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recalculated Armor Class.'**
   String get settingsMaintenanceChangeArmorClass;
+
+  /// Migration report change for assigning the existing character to the 2014 ruleset.
+  ///
+  /// In en, this message translates to:
+  /// **'Marked this character as using the 2014 rules (SRD 5.1).'**
+  String get settingsMaintenanceChangeRuleset2014;
 
   /// Migration report fallback change text.
   ///

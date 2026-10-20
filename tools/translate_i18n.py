@@ -3,7 +3,7 @@
 Generate SRD i18n overlay JSON files and Flutter ARB locale files for all locales
 by translating directly from English source data using Google Translate.
 
-Usage (SRD overlays — assets/data/i18n/):
+Usage (SRD overlays — assets/data/i18n/{locale}/{pack}/):
   python tools/translate_i18n.py                              # translate to ALL locales
   python tools/translate_i18n.py es fr de                     # translate to specific locales
   python tools/translate_i18n.py es --force                   # overwrite existing non-empty files
@@ -11,6 +11,7 @@ Usage (SRD overlays — assets/data/i18n/):
   python tools/translate_i18n.py --file class_features.json --file feature_usages.json --force
   python tools/translate_i18n.py es --file equipment.json --force  # overwrite equipment.json for es
   python tools/translate_i18n.py pt --file feature_choices.json --force  # feature choice option labels
+  python tools/translate_i18n.py --pack 5.2.1 --file spells.json  # after English 5.2.1 is complete
 
 Usage (ARB locale files — lib/l10n/):
   python tools/translate_i18n.py --arb                        # generate ARBs for ALL locales
@@ -28,6 +29,8 @@ import time
 import random
 from pathlib import Path
 
+from validate_srd_pack import validate as validate_srd_pack
+
 try:
     from deep_translator import GoogleTranslator
 except ImportError:
@@ -37,7 +40,7 @@ except ImportError:
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 ROOT     = Path(__file__).resolve().parent.parent
-SRD_DIR  = ROOT / "assets" / "data" / "srd"
+SRD_DIR  = ROOT / "assets" / "data" / "srd" / "5.1"
 I18N_DIR = ROOT / "assets" / "data" / "i18n"
 L10N_DIR = ROOT / "lib" / "l10n"
 
@@ -353,7 +356,11 @@ def _translate_node(node, tgt_lang: str):
     None / bool / int / float — kept as-is.
     """
     if isinstance(node, dict):
-        return {k: _translate_node(v, tgt_lang) for k, v in node.items()}
+        return {
+            k: v if k in {"id", "type", "resourceId", "optionsSource", "formula"}
+            else _translate_node(v, tgt_lang)
+            for k, v in node.items()
+        }
     if isinstance(node, list):
         return [_translate_node(item, tgt_lang) for item in node]
     if isinstance(node, str):
@@ -464,10 +471,23 @@ def translate_arb(locale: str, tgt_lang: str, force: bool):
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
+    global SRD_DIR
     raw_args = sys.argv[1:]
     force    = "--force" in raw_args
     arb_mode = "--arb"   in raw_args
     args     = [a for a in raw_args if a not in ("--force", "--arb")]
+
+    pack = "5.1"
+    if "--pack" in args:
+        idx = args.index("--pack")
+        if idx + 1 >= len(args):
+            print("--pack requires 5.1 or 5.2.1")
+            sys.exit(1)
+        pack = args[idx + 1]
+        args = args[:idx] + args[idx + 2:]
+    if pack not in ("5.1", "5.2.1"):
+        print("--pack must be 5.1 or 5.2.1")
+        sys.exit(1)
 
     # --file equipment.json  → translate only that SRD file
     file_filters = []
@@ -509,6 +529,13 @@ def main():
         return
 
     # ── SRD overlay mode ──────────────────────────────────────────────────────
+    SRD_DIR = ROOT / "assets" / "data" / "srd" / pack
+    integrity_errors = validate_srd_pack(pack)
+    if integrity_errors:
+        print("English SRD pack failed validation:")
+        for error in integrity_errors:
+            print(f"  {error}")
+        sys.exit(1)
     filenames = sorted(EXTRACTORS.keys())
     if file_filters:
         unknown_files = [f for f in file_filters if f not in EXTRACTORS]
@@ -520,13 +547,18 @@ def main():
             sys.exit(1)
         filenames = list(dict.fromkeys(file_filters))
 
+    missing_sources = [name for name in filenames if not (SRD_DIR / name).is_file()]
+    if missing_sources:
+        print(f"Missing English SRD files for {pack}: {', '.join(missing_sources)}")
+        sys.exit(1)
+
     print(f"Source : {SRD_DIR} (English SRD)")
     print(f"Targets: {', '.join(target_locales)}")
     print(f"Force  : {force}\n")
 
     for locale in target_locales:
         tgt_lang = LOCALE_LANG[locale]
-        tgt_dir  = I18N_DIR / locale
+        tgt_dir  = I18N_DIR / locale / pack
         print(f"{'='*60}")
         print(f"Translating to '{locale}' ({tgt_lang})")
         print(f"{'='*60}")

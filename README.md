@@ -1,11 +1,11 @@
 # DnD Character Tool
 
-A cross-platform app for creating and managing DnD 5e characters — built with Flutter.
+A cross-platform app for creating and managing DnD 5e (2014) characters, built with Flutter.
 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-2.0.4-orange)
+![Version](https://img.shields.io/badge/version-2.1.1-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
@@ -38,9 +38,9 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 
 **Features tab** — racial traits, background feature, class features by level, SRD feats, extra features, editable feature choices and limited-use resource tracking
 
-**Spells tab** — spell slots tracker, Pact Magic short-rest recovery, concentration tracking, known/prepared spells, level shortcuts and spell browser with filters
+**Spells tab** — spell slots tracker, Pact Magic short-rest recovery, concentration tracking, known/prepared spells, level shortcuts, filtered spell browser and contextual rolls for supported spells
 
-**Inventory tab** — global SRD item search, equipped/carried/container sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), tappable item details, reorderable items, ammunition handling and custom item creation with type-specific fields (weapon, armor, equippable, container, consumable, ammunition, gear)
+**Inventory tab** — global SRD item search, equipped/carried/container sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), item details, reorderable items, ammunition handling and custom item creation with type-specific fields (weapon, armor, equippable, container, consumable, ammunition, gear). Tapping a supported weapon rolls its attack and damage; its details remain available from the item menu.
 
 **Identity tab** — character photo (pick from gallery, crop 1:1, full-screen viewer with zoom/pan and save to gallery), personality traits, ideals, bonds, flaws, backstory
 
@@ -61,6 +61,9 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 - Optional spaces in expressions
 - In-memory history while the app is open
 - Help sheet explaining the supported syntax
+- Contextual rolls from abilities, skills, saving throws, initiative, supported weapons and supported spells; results can be rerolled from the in-memory history
+- Weapon rolls combine attack and damage, with advantage/disadvantage, automatic critical damage and versatile-weapon choices; supported spells offer attack, damage and slot-level choices where applicable
+- Settings to choose whether contextual rolls ask for options first and whether critical hits double damage dice or the damage total
 
 ### Spell System
 - Full SRD spell list with school, casting time, concentration and ritual badges
@@ -73,10 +76,11 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 ### Character Management
 - Pin characters to the top of the list
 - Drag to reorder
-- Rename, delete and export per character
+- Rename, duplicate (including the photo), delete and export per character
 - Character maintenance flow in Settings for applying versioned data updates
 - Backup export/import for all characters at once
 - Manual Play Store rating action in Settings, plus a rare automatic in-app review request after real app usage
+- A localized What's New dialog presents recent changes once per announcement
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
@@ -116,7 +120,7 @@ A cross-platform app for creating and managing DnD 5e characters — built with 
 | Platform | Status |
 |---|---|
 | Android | ✅ Supported — [Google Play](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool) |
-| iOS | ✅ Supported |
+| iOS | Project included; release build not validated in CI |
 | Web | ⚠️ [Preview (GitHub Pages)](https://duartefrugoli.github.io/dnd-character-tool/) |
 
 ## Getting Started
@@ -131,7 +135,7 @@ flutter run
 - [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, notes, dice rolling, level-up rules, review prompts, display preferences, maintenance migrations and import/export flows.
 - [Changelog](CHANGELOG.md) tracks release history.
 
-> All DnD 5e content uses the **System Reference Document (SRD)** under the Creative Commons license.
+> The built-in rules currently target DnD 5e (2014) and include material from **SRD 5.1**.
 
 ## License
 
@@ -149,7 +153,7 @@ This project is not affiliated with, endorsed, sponsored, or specifically approv
 
 # DnD Character Tool (Português)
 
-Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feito com Flutter.
+Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e (2014), feito com Flutter.
 
 ## Funcionalidades
 
@@ -179,9 +183,9 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 
 **Aba Features** — traços raciais, feature do antecedente, features de classe por nível, talentos do SRD, features extras, escolhas editáveis e rastreamento de recursos com usos limitados
 
-**Aba Spells** — rastreador de espaços de magia, recuperação de Pact Magic no descanso curto, concentração, magias conhecidas/preparadas, atalhos de nível e browser de magias com filtros
+**Aba Spells** — rastreador de espaços de magia, recuperação de Pact Magic no descanso curto, concentração, magias conhecidas/preparadas, atalhos de nível, busca com filtros e rolagens contextuais para magias suportadas
 
-**Aba Inventory** — busca global de itens SRD, seções de equipados/carregados/containers, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), detalhes ao tocar, itens reordenáveis, suporte a munição e criação de itens customizados com campos por tipo (arma, armadura, equipável, container, consumível, munição, equipamento geral)
+**Aba Inventory** — busca global de itens SRD, seções de equipados/carregados/containers, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), detalhes dos itens, itens reordenáveis, suporte a munição e criação de itens customizados com campos por tipo (arma, armadura, equipável, container, consumível, munição, equipamento geral). Tocar em uma arma suportada rola acerto e dano; seus detalhes continuam no menu do item.
 
 **Aba Identity** — foto do personagem (escolher da galeria, cortar 1:1, visualizador em tela cheia com zoom/pan e salvar na galeria), traços de personalidade, ideais, vínculos, fraquezas, história
 
@@ -202,6 +206,9 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 - Espaços opcionais nas expressões
 - Histórico em memória enquanto o app está aberto
 - Ajuda rápida explicando a sintaxe aceita
+- Rolagens contextuais de atributos, perícias, salvaguardas, iniciativa, armas e magias suportadas; é possível repetir a rolagem pelo histórico em memória
+- Rolagens de arma combinam acerto e dano, com vantagem/desvantagem, crítico automático e escolha para armas versáteis; magias suportadas oferecem acerto, dano e escolha de nível do slot quando aplicável
+- Configurações para mostrar ou não as opções antes da rolagem e para dobrar os dados ou o total de dano no crítico
 
 ### Sistema de Magias
 - Lista completa de magias do SRD com badges de escola, tempo de conjuração, concentração e ritual
@@ -214,10 +221,11 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 ### Gerenciamento de Personagens
 - Fixar personagens no topo da lista
 - Reordenar arrastando
-- Renomear, excluir e exportar por personagem
+- Renomear, duplicar (incluindo a foto), excluir e exportar por personagem
 - Fluxo de manutenção nas configurações para aplicar atualizações versionadas nos personagens
 - Backup geral para exportar/importar todos os personagens de uma vez
 - Ação manual para avaliar na Play Store nas configurações, além de pedido automático raro após uso real do app
+- Tela localizada de novidades exibida uma vez por anúncio
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo
@@ -256,7 +264,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e — feit
 | Plataforma | Status |
 |---|---|
 | Android | ✅ Suportado — [Google Play](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool) |
-| iOS | ✅ Suportado |
+| iOS | Projeto incluído; build de lançamento não validado no CI |
 | Web | ⚠️ [Preview (GitHub Pages)](https://duartefrugoli.github.io/dnd-character-tool/) |
 
 ## Como rodar
@@ -271,7 +279,7 @@ flutter run
 - [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, notas, rolagem de dados, regras de level up, pedidos de avaliação, preferências de tela, migrações de manutenção e fluxos de import/export.
 - [Changelog](CHANGELOG.md) registra o histórico de versões.
 
-> Todo o conteúdo de DnD 5e utiliza o **System Reference Document (SRD)** sob a licença Creative Commons.
+> As regras incluídas atualmente são voltadas a DnD 5e (2014) e incluem material do **SRD 5.1**.
 
 ## Licença
 

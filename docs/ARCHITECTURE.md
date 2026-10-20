@@ -68,6 +68,7 @@ lib/
     migrations/   Versioned character migrations
     models/       Persisted domain models and generated JSON serializers
     repositories/ CharacterRepository facade
+    rulesets/     Ruleset IDs, content-pack registry, typed SRD references
     json_helpers.dart
     feature_choice_engine.dart
     feature_choice_option_resolver.dart
@@ -90,8 +91,8 @@ lib/
 
 assets/
   data/
-    srd/          Canonical English SRD/game data JSON
-    i18n/         Per-locale translation overlays for SRD data
+    srd/5.1/      Canonical English SRD 5.1/game data JSON
+    i18n/         Per-locale, per-pack translation overlays for SRD data
 
 tools/            Translation/patch scripts for data assets
 docs/             Project documentation
@@ -115,10 +116,13 @@ Shared providers live mostly in `lib/shared/providers/providers.dart`.
 | Provider | Responsibility |
 | --- | --- |
 | `characterRepositoryProvider` | Creates the `CharacterRepository` facade. |
-| `srdDataSourceProvider` | Exposes the singleton `SrdDataSource`. |
+| `srdDataSourceProvider` | Exposes the SRD 5.1 data source for the current 2014-only UI. |
+| `srdDataSourceForPackProvider` | Exposes a cached data source keyed by content pack. |
 | `srdItemsProvider` | Loads the normalized item lookup used by creation/inventory. |
-| `srdI18nProvider` | Loads SRD translation overlays for the active locale. |
-| `srdConditionsProvider` | Loads raw condition names/descriptions from SRD assets. |
+| `srdI18nProvider` | Loads SRD 5.1 translation overlays for the active locale. |
+| `srdI18nForPackProvider` | Loads overlays keyed by content pack and locale. |
+| `srdConditionsProvider` | Loads SRD 5.1 condition names/descriptions. |
+| `srdConditionsForPackProvider` | Loads conditions keyed by content pack. |
 | `themeProvider` | Persists and exposes the active app theme. |
 | `localeProvider` | Persists and exposes the active UI locale. |
 | `unitSystemProvider` | Persists and exposes Imperial, Metric, or Squares display mode. |
@@ -209,9 +213,9 @@ prevents imported files from controlling local paths.
 - `importBackupFromFileJson()` imports every character from a `.dndbackup`,
   assigning new IDs just like single-character imports.
 
-The repository does not create the pre-migration backup itself. The Settings UI
-exports `.dndbackup` first, then calls `applyMigrations()` after user
-confirmation.
+The repository does not create the pre-migration backup itself. Both the
+character-update dialog and manual Settings maintenance export `.dndbackup`
+before calling `applyMigrations()`. Backing up alone does not migrate data.
 
 ---
 
@@ -238,11 +242,14 @@ Current migrations:
 | 7 | `PrepareMulticlassStructureMigration` | Creates class entries, hit die pools, and source metadata for older characters. |
 | 8 | `SyncMulticlassSpellSlotsMigration` | Separates standard spell slots from Warlock Pact Magic slots. |
 | 9 | `NormalizeMulticlassStateMigration` | Reconciles class mirrors, total level, hit dice, source metadata, slots, and Armor Class. |
+| 10 | `Assign2014RulesetMigration` | Marks existing characters as 2014/SRD 5.1 through explicit user-triggered maintenance. |
 
-Migrations are intentionally user-triggered from Settings maintenance. They are
-not applied invisibly while merely opening a character. Before applying
-migrations, the Settings UI exports a `.dndbackup`, then shows a report of what
-changed per character.
+Migrations are intentionally user-triggered, never applied invisibly while
+opening a character. Tapping an outdated character blocks entry and shows an
+overlay with backup, update-all, and cancel actions; Settings also offers
+manual maintenance. Before applying migrations, the selected flow exports a
+`.dndbackup`, then shows a report of what changed per character. A direct link
+to an outdated character remains blocked and offers the same update dialog.
 
 When adding a persisted field:
 
@@ -289,6 +296,7 @@ Important persisted fields on `Character`:
 | Field | Purpose |
 | --- | --- |
 | `dataVersion` | Character data schema/version used by the migration runner. New characters default to `currentCharacterDataVersion`. |
+| `rulesetId` / `contentPackId` | Persisted rules and catalog identities, currently `dnd_2014` / `srd_5_1`. `schemaVersion` aliases `dataVersion`; it is not a second migration counter. |
 | `classes` | Source of truth for class progression. Legacy `characterClass`, `subclass`, and `level` are synchronized mirrors for compatibility. |
 | `hitDicePools` | Hit dice totals/usage by class entry. Legacy `HitPoints.hitDiceUsed` is kept only as old-save fallback. |
 | `featureChoices` | Stable choices made inside feature/trait/feat rules. Values are option IDs from SRD data, not localized labels. |
@@ -523,8 +531,8 @@ runtime requests for the creation wizard, level-up wizard, and Features tab.
 The canonical data lives in:
 
 ```text
-assets/data/srd/feature_choices.json
-assets/data/i18n/<locale>/feature_choices.json
+assets/data/srd/5.1/feature_choices.json
+assets/data/i18n/<locale>/5.1/feature_choices.json
 ```
 
 `SrdFeatureChoiceCatalog` supports choices for:
@@ -575,8 +583,8 @@ features, subclass features, racial traits, and feats.
 The canonical data lives in:
 
 ```text
-assets/data/srd/feature_usages.json
-assets/data/i18n/<locale>/feature_usages.json
+assets/data/srd/5.1/feature_usages.json
+assets/data/i18n/<locale>/5.1/feature_usages.json
 ```
 
 `FeatureUsageCatalog` maps feature names to `FeatureUsageRef` entries. A ref
@@ -612,8 +620,12 @@ instead of duplicating formulas in UI code.
 
 ## SRD Data And Translation Data
 
-`SrdDataSource` loads canonical English JSON assets from `assets/data/srd/`.
-It parses data into `Srd*` models and caches loaded lists/maps in memory.
+`SrdContentPackRegistry` resolves asset paths by content-pack ID. At present,
+only `srd_5_1` is bundled; asking for SRD 5.2.1 fails rather than silently
+loading 2014 rules. `SrdDataSource` loads canonical English JSON assets from
+`assets/data/srd/5.1/`, parses them into `Srd*` models, and caches them by pack.
+`SrdContentRef` represents a catalog reference as pack, kind, and English ID.
+Existing character content IDs are not converted to those references yet.
 
 Important SRD files:
 
@@ -658,11 +670,17 @@ AppLocalizations.of(context)!
 SRD/game content uses translation overlays in:
 
 ```text
-assets/data/i18n/<locale>/
+assets/data/i18n/<locale>/5.1/
 ```
 
-`SrdI18nService.load(locale)` loads those overlays and normalizes lookup keys to
+`SrdI18nService.load(locale, pack: ...)` loads those overlays and normalizes lookup keys to
 lowercase. Missing translations fall back to English SRD values in the UI.
+
+`tools/validate_srd_pack.py 5.1` checks English pack structure and basic
+references. `tools/translate_i18n.py` uses Google Translate for initial
+overlays, defaults to pack 5.1, and accepts `--pack 5.2.1` once its English
+catalog is complete and validated. IDs and mechanics remain in the English
+source; translated overlays require a later human review.
 
 This split is intentional: ARB handles app chrome and controls; JSON overlays
 handle game data that mirrors SRD asset structure.
@@ -802,8 +820,8 @@ Feature choices and feature usages both surface mainly in `features_tab.dart`:
 
 Theme, locale, unit-system, and display preference state lives in `core/theme`,
 `core/locale`, `core/units`, and `core/display`. Backup and maintenance actions
-go through `CharacterRepository`. Settings maintenance must export a backup
-before applying migrations.
+go through `CharacterRepository`. Settings maintenance and the character-update
+dialog both export a backup before applying migrations.
 
 `AppTheme` defines explicit Material `ColorScheme` palettes instead of relying
 on a single generated seed color. Theme ids use canonical snake_case names that
@@ -1021,8 +1039,8 @@ the affected files before committing.
 | Level reset/rebuild | `data/character_progression/character_level_reset_engine.dart`, `features/character_detail/level_reset_sheet.dart` |
 | Spellcasting slots/known/prepared/cantrips | `data/spellcasting_engine.dart` |
 | Dice parser/roller | `data/dice/`, `features/character_detail/widgets/dice/dice_roller_sheet.dart` |
-| Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
-| Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/feature_usages.json`, `features/character_detail/widgets/features/feature_sections.dart` |
+| Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/5.1/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
+| Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/5.1/feature_usages.json`, `features/character_detail/widgets/features/feature_sections.dart` |
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |
 | Backup export/import | `CharacterRepository`, `CharacterLocalDataSource`, `features/home/settings_screen.dart`, `core/utils/file_exporter.dart` |
 | Inventory rules and ordering | `data/inventory/inventory_operations.dart`, `features/character_detail/inventory/inventory_view_model.dart` |
@@ -1032,9 +1050,9 @@ the affected files before committing.
 | Character sheet visual preferences | `data/models/character_sheet_preferences.dart`, `CharacterDetailNotifier.updateSkillDisplayPreferences()`, relevant detail tab |
 | Skill organization | `features/character_detail/tabs/skills_tab.dart`, `features/character_detail/application/skills_tab_vm.dart` |
 | Spell level shortcuts | `features/character_detail/tabs/spells_tab.dart`, `features/character_detail/widgets/spells/spell_widgets.dart` |
-| Starting equipment packs | `assets/data/srd/equipment.json`, `SrdPackContent`, `ExpandEquipmentPacksMigration` |
-| Creation racial ASI/Tasha/Variant Human | `features/character_creation/character_draft_provider.dart`, `steps/step_attributes.dart`, `steps/step_feature_choices.dart`, `assets/data/srd/races.json` |
-| SRD canonical data | `assets/data/srd/` |
+| Starting equipment packs | `assets/data/srd/5.1/equipment.json`, `SrdPackContent`, `ExpandEquipmentPacksMigration` |
+| Creation racial ASI/Tasha/Variant Human | `features/character_creation/character_draft_provider.dart`, `steps/step_attributes.dart`, `steps/step_feature_choices.dart`, `assets/data/srd/5.1/races.json` |
+| SRD canonical data | `assets/data/srd/5.1/` |
 | SRD translations | `assets/data/i18n/` and `SrdI18nService` |
 | App UI strings | `lib/l10n/*.arb` |
 | Routes | `core/router/app_router.dart` |

@@ -2647,10 +2647,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Этот персонаж сохранен в старой версии данных. Обновите персонажей в настройках перед редактированием.';
+      'Перед открытием этого персонажа требуется обновление. Вы можете сохранить резервную копию или обновить всех персонажей. Перед обновлением откроется создание резервной копии.';
 
   @override
-  String get characterUpdateRequiredAction => 'К обновлениям';
+  String get characterUpdateRequiredAction => 'Параметры обновления';
+
+  @override
+  String get characterUpdateBackupAction => 'Сохранить копию персонажей';
+
+  @override
+  String get characterUpdateAllAction => 'Обновить всех персонажей';
+
+  @override
+  String get characterUpdateApplying => 'Обновление персонажей...';
 
   @override
   String settingsMaintenanceReportChecked(int count) {
@@ -2747,6 +2756,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsMaintenanceChangeArmorClass => 'Класс Доспеха пересчитан.';
+
+  @override
+  String get settingsMaintenanceChangeRuleset2014 =>
+      'Персонажу назначены правила 2014 года (SRD 5.1).';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

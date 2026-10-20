@@ -16,26 +16,21 @@ import '../../core/theme/theme_provider.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/utils/file_exporter.dart';
 import '../../data/dice/dice.dart';
-import '../../data/migrations/character_migration.dart';
 import '../../data/migrations/character_migration_runner.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/widgets/character_maintenance_report.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import '../character_list/character_list_provider.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
-  const SettingsScreen({super.key, this.focusMaintenance = false});
-
-  final bool focusMaintenance;
+  const SettingsScreen({super.key});
 
   @override
   ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends ConsumerState<SettingsScreen> {
-  final _maintenanceKey = GlobalKey();
-  bool _didFocusMaintenance = false;
-
   void _openThemePicker(BuildContext context, WidgetRef ref, AppTheme current) {
     final l10n = AppLocalizations.of(context)!;
     final bottomPadding = MediaQuery.viewPaddingOf(context).bottom;
@@ -98,20 +93,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.focusMaintenance && !_didFocusMaintenance) {
-      _didFocusMaintenance = true;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        final maintenanceContext = _maintenanceKey.currentContext;
-        if (maintenanceContext == null) return;
-        Scrollable.ensureVisible(
-          maintenanceContext,
-          duration: const Duration(milliseconds: 350),
-          curve: Curves.easeOutCubic,
-          alignment: 0.1,
-        );
-      });
-    }
-
     final current = ref.watch(themeProvider);
     final cs = Theme.of(context).colorScheme;
     final bottomPadding = MediaQuery.of(context).viewPadding.bottom;
@@ -237,7 +218,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 ],
 
                 Padding(
-                  key: _maintenanceKey,
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
                   child: Text(
                     AppLocalizations.of(context)!.settingsMaintenanceSection,
@@ -246,7 +226,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     ).textTheme.titleSmall?.copyWith(color: cs.primary),
                   ),
                 ),
-                _CharacterMaintenanceTile(autoCheck: widget.focusMaintenance),
+                const _CharacterMaintenanceTile(),
               ],
             ),
           ),
@@ -467,45 +447,8 @@ class _ReviewAppTileState extends ConsumerState<_ReviewAppTile> {
   }
 }
 
-class _CharacterUpdateRequiredNotice extends StatelessWidget {
-  const _CharacterUpdateRequiredNotice();
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final scheme = Theme.of(context).colorScheme;
-
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-      child: Card(
-        margin: EdgeInsets.zero,
-        color: scheme.errorContainer,
-        child: ListTile(
-          leading: Icon(
-            Icons.system_update_alt_outlined,
-            color: scheme.onErrorContainer,
-          ),
-          title: Text(
-            l10n.characterUpdateRequiredTitle,
-            style: TextStyle(
-              color: scheme.onErrorContainer,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          subtitle: Text(
-            l10n.characterUpdateRequiredBody,
-            style: TextStyle(color: scheme.onErrorContainer),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class _CharacterMaintenanceTile extends ConsumerStatefulWidget {
-  const _CharacterMaintenanceTile({this.autoCheck = false});
-
-  final bool autoCheck;
+  const _CharacterMaintenanceTile();
 
   @override
   ConsumerState<_CharacterMaintenanceTile> createState() =>
@@ -519,30 +462,8 @@ class _CharacterMaintenanceTileState
   bool _busy = false;
   _MaintenanceBusyTask? _busyTask;
   CharacterMigrationBatchReport? _preview;
-  bool _autoCheckScheduled = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _scheduleAutoCheckIfNeeded();
-  }
-
-  @override
-  void didUpdateWidget(covariant _CharacterMaintenanceTile oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    _scheduleAutoCheckIfNeeded();
-  }
-
-  void _scheduleAutoCheckIfNeeded() {
-    if (!widget.autoCheck || _autoCheckScheduled) return;
-    _autoCheckScheduled = true;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      _check(showSnackBar: false);
-    });
-  }
-
-  Future<void> _check({bool showSnackBar = true}) async {
+  Future<void> _check() async {
     if (_busy) return;
 
     setState(() {
@@ -556,38 +477,36 @@ class _CharacterMaintenanceTileState
       if (!mounted) return;
       setState(() => _preview = report);
 
-      if (showSnackBar) {
-        final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).hideCurrentSnackBar();
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              report.hasUpdates
-                  ? l10n.settingsMaintenanceUpdatesFound(report.outdatedCount)
-                  : report.hasReadIssues
-                  ? l10n.importErrorCorruptedCharacter
-                  : l10n.settingsMaintenanceNoUpdates,
+      final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            report.hasUpdates
+                ? l10n.settingsMaintenanceUpdatesFound(report.outdatedCount)
+                : report.hasReadIssues
+                ? l10n.importErrorCorruptedCharacter
+                : l10n.settingsMaintenanceNoUpdates,
+          ),
+        ),
+      );
+      if (report.hasReadIssues && mounted) {
+        await showDialog<void>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l10n.settingsMaintenanceError),
+            content: SingleChildScrollView(
+              child: Text(formatCharacterMaintenanceReport(ctx, report)),
             ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                style: neutralDialogTextButtonStyle(ctx),
+                child: Text(AppLocalizations.of(ctx)!.dialogClose),
+              ),
+            ],
           ),
         );
-        if (report.hasReadIssues && mounted) {
-          await showDialog<void>(
-            context: context,
-            builder: (ctx) => AlertDialog(
-              title: Text(l10n.settingsMaintenanceError),
-              content: SingleChildScrollView(
-                child: Text(_formatMaintenanceReport(ctx, report)),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(ctx),
-                  style: neutralDialogTextButtonStyle(ctx),
-                  child: Text(AppLocalizations.of(ctx)!.dialogClose),
-                ),
-              ],
-            ),
-          );
-        }
       }
     } catch (_) {
       if (!mounted) return;
@@ -647,6 +566,10 @@ class _CharacterMaintenanceTileState
       await _check();
       return;
     }
+    if (preview.hasReadIssues) {
+      await _check();
+      return;
+    }
 
     final outdatedCount = preview.outdatedCount;
     final l10n = AppLocalizations.of(context)!;
@@ -663,6 +586,10 @@ class _CharacterMaintenanceTileState
           ),
           FilledButton(
             onPressed: () => Navigator.pop(ctx, true),
+            style: FilledButton.styleFrom(
+              backgroundColor: Theme.of(ctx).colorScheme.tertiary,
+              foregroundColor: Theme.of(ctx).colorScheme.onTertiary,
+            ),
             child: Text(l10n.dialogConfirm),
           ),
         ],
@@ -692,7 +619,7 @@ class _CharacterMaintenanceTileState
         builder: (ctx) => AlertDialog(
           title: Text(l10n.settingsMaintenanceCompleteTitle),
           content: SingleChildScrollView(
-            child: Text(_formatMaintenanceReport(ctx, report)),
+            child: Text(formatCharacterMaintenanceReport(ctx, report)),
           ),
           actions: [
             TextButton(
@@ -725,54 +652,47 @@ class _CharacterMaintenanceTileState
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
     final preview = _preview;
     final hasUpdates = preview?.hasUpdates == true;
     final hasReadIssues = preview?.hasReadIssues == true;
-    final showRequiredNotice =
-        widget.autoCheck && (preview == null || hasUpdates);
-
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (showRequiredNotice) const _CharacterUpdateRequiredNotice(),
-        ListTile(
-          enabled: !_busy,
-          leading: _busy
-              ? const SizedBox.square(
-                  dimension: 24,
-                  child: CircularProgressIndicator(strokeWidth: 2),
-                )
-              : Icon(
-                  hasUpdates
-                      ? Icons.system_update_alt_outlined
-                      : Icons.manage_history_outlined,
-                ),
-          title: Text(
-            hasUpdates
-                ? l10n.settingsMaintenanceUpdateTitle
-                : l10n.settingsMaintenanceCheckTitle,
-          ),
-          subtitle: Text(
-            _busy
-                ? _busySubtitle(l10n)
-                : preview == null
-                ? l10n.settingsMaintenanceCheckSubtitle
-                : preview.hasUpdates
-                ? l10n.settingsMaintenanceUpdatesFound(preview.outdatedCount)
-                : hasReadIssues
-                ? l10n.importErrorCorruptedCharacter
-                : l10n.settingsMaintenanceNoUpdates,
-          ),
-          trailing: _busy
-              ? null
-              : Icon(
-                  hasUpdates
-                      ? Icons.chevron_right
-                      : Icons.manage_search_outlined,
-                ),
-          onTap: _busy ? null : (hasUpdates ? _apply : _check),
-        ),
-      ],
+    return ListTile(
+      enabled: !_busy,
+      leading: _busy
+          ? const SizedBox.square(
+              dimension: 24,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            )
+          : Icon(
+              hasUpdates
+                  ? Icons.system_update_alt_outlined
+                  : Icons.manage_history_outlined,
+              color: hasUpdates ? scheme.tertiary : null,
+            ),
+      title: Text(
+        hasUpdates
+            ? l10n.settingsMaintenanceUpdateTitle
+            : l10n.settingsMaintenanceCheckTitle,
+      ),
+      subtitle: Text(
+        _busy
+            ? _busySubtitle(l10n)
+            : preview == null
+            ? l10n.settingsMaintenanceCheckSubtitle
+            : hasReadIssues
+            ? l10n.importErrorCorruptedCharacter
+            : preview.hasUpdates
+            ? l10n.settingsMaintenanceUpdatesFound(preview.outdatedCount)
+            : l10n.settingsMaintenanceNoUpdates,
+      ),
+      trailing: _busy
+          ? null
+          : Icon(
+              hasUpdates
+                  ? Icons.chevron_right
+                  : Icons.manage_search_outlined,
+            ),
+      onTap: _busy ? null : (hasUpdates && !hasReadIssues ? _apply : _check),
     );
   }
 
@@ -782,92 +702,6 @@ class _CharacterMaintenanceTileState
       _ => l10n.settingsMaintenanceWorking,
     };
   }
-}
-
-String _formatMaintenanceReport(
-  BuildContext context,
-  CharacterMigrationBatchReport report,
-) {
-  final l10n = AppLocalizations.of(context)!;
-  final buffer = StringBuffer();
-
-  buffer.writeln(l10n.settingsMaintenanceReportChecked(report.checkedCount));
-  buffer.writeln(l10n.settingsMaintenanceReportUpdated(report.outdatedCount));
-  buffer.writeln(
-    l10n.settingsMaintenanceReportDataChanged(report.dataChangedCount),
-  );
-  if (report.hasReadIssues) {
-    buffer.writeln();
-    buffer.writeln(l10n.settingsMaintenanceError);
-    for (final issue in report.readIssues) {
-      final id = issue.id == null ? '' : ' (${issue.id})';
-      buffer.writeln(
-        '- ${issue.source}$id: ${_formatMaintenanceReadIssue(context, issue)}',
-      );
-    }
-  }
-
-  final updated = report.characters.where((entry) => entry.needsMigration);
-  for (final entry in updated) {
-    buffer.writeln();
-    buffer.writeln(entry.original.name);
-    if (entry.changes.isEmpty) {
-      buffer.writeln('- ${l10n.settingsMaintenanceReportVersionUpdated}');
-      continue;
-    }
-
-    for (final change in entry.changes) {
-      buffer.writeln('- ${_formatMaintenanceChange(context, change)}');
-    }
-  }
-
-  return buffer.toString().trimRight();
-}
-
-String _formatMaintenanceReadIssue(
-  BuildContext context,
-  CharacterMigrationReadIssue issue,
-) {
-  final l10n = AppLocalizations.of(context)!;
-  return switch (issue.message) {
-    'invalid_json' => l10n.importErrorInvalidJson,
-    'not_object' => l10n.importErrorNotObject,
-    _ => l10n.importErrorCorruptedCharacter,
-  };
-}
-
-String _formatMaintenanceChange(
-  BuildContext context,
-  CharacterMigrationChange change,
-) {
-  final l10n = AppLocalizations.of(context)!;
-  if (change.code == 'equipment_weights_backfilled') {
-    return l10n.settingsMaintenanceChangeEquipmentWeights(change.count);
-  }
-  if (change.code == 'equipment_items_normalized') {
-    return l10n.settingsMaintenanceChangeEquipmentNormalized(change.count);
-  }
-  if (change.code == 'equipment_packs_expanded') {
-    return l10n.settingsMaintenanceChangeEquipmentPacksExpanded(change.count);
-  }
-  if (change.code == 'equipment_order_normalized') {
-    return l10n.settingsMaintenanceChangeEquipmentOrder(change.count);
-  }
-  if (change.code == 'multiclass_structure_prepared') {
-    return l10n.settingsMaintenanceChangeMulticlassStructure;
-  }
-  if (change.code == 'spell_slots_synced' ||
-      change.code == 'standard_spell_slots_synced') {
-    return l10n.settingsMaintenanceChangeSpellSlots;
-  }
-  if (change.code == 'pact_magic_slots_synced') {
-    return l10n.settingsMaintenanceChangePactMagicSlots;
-  }
-  if (change.code == 'armor_class_recalculated') {
-    return l10n.settingsMaintenanceChangeArmorClass;
-  }
-
-  return l10n.settingsMaintenanceChangeGeneric(change.count);
 }
 
 class _LanguageTile extends ConsumerWidget {

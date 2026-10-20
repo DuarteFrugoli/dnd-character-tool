@@ -2580,10 +2580,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      '이 캐릭터는 이전 데이터 버전으로 저장되었습니다. 편집하기 전에 설정에서 캐릭터를 업데이트하세요.';
+      '이 캐릭터를 열기 전에 업데이트해야 합니다. 캐릭터를 백업하거나 모두 업데이트할 수 있습니다. 업데이트를 적용하기 전에 백업 화면이 열립니다.';
 
   @override
-  String get characterUpdateRequiredAction => '업데이트로 이동';
+  String get characterUpdateRequiredAction => '업데이트 옵션';
+
+  @override
+  String get characterUpdateBackupAction => '캐릭터 백업';
+
+  @override
+  String get characterUpdateAllAction => '모든 캐릭터 업데이트';
+
+  @override
+  String get characterUpdateApplying => '캐릭터 업데이트 중...';
 
   @override
   String settingsMaintenanceReportChecked(int count) {
@@ -2677,6 +2686,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get settingsMaintenanceChangeArmorClass => '방어도를 다시 계산했습니다.';
+
+  @override
+  String get settingsMaintenanceChangeRuleset2014 =>
+      '이 캐릭터에 2014년 규칙(SRD 5.1)을 지정했습니다.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

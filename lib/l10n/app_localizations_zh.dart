@@ -2564,10 +2564,20 @@ class AppLocalizationsZh extends AppLocalizations {
   String get characterUpdateRequiredTitle => '需要更新角色';
 
   @override
-  String get characterUpdateRequiredBody => '此角色使用较旧的数据版本保存。请先在设置中更新角色，然后再编辑。';
+  String get characterUpdateRequiredBody =>
+      '打开此角色前需要更新。你可以先备份角色，或立即更新所有角色。应用更新前会打开备份界面。';
 
   @override
-  String get characterUpdateRequiredAction => '前往更新';
+  String get characterUpdateRequiredAction => '更新选项';
+
+  @override
+  String get characterUpdateBackupAction => '备份角色';
+
+  @override
+  String get characterUpdateAllAction => '更新所有角色';
+
+  @override
+  String get characterUpdateApplying => '正在更新角色...';
 
   @override
   String settingsMaintenanceReportChecked(int count) {
@@ -2660,6 +2670,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsMaintenanceChangeArmorClass => '已重新计算护甲等级。';
+
+  @override
+  String get settingsMaintenanceChangeRuleset2014 =>
+      '已将此角色设为使用 2014 年规则（SRD 5.1）。';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

@@ -13,6 +13,7 @@ import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
+import '../../shared/widgets/character_update_dialog.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import 'application/character_tab_view_models.dart';
 import 'character_detail_provider.dart';
@@ -380,8 +381,16 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
                 ),
                 const SizedBox(height: 24),
                 FilledButton.icon(
-                  onPressed: () => context.go('/settings?section=maintenance'),
-                  icon: const Icon(Icons.settings_outlined),
+                  onPressed: () async {
+                    final updated = await showCharacterUpdateDialog(context);
+                    if (!mounted || !updated) return;
+                    ref.invalidate(characterDetailProvider(widget.characterId));
+                  },
+                  style: FilledButton.styleFrom(
+                    backgroundColor: scheme.tertiary,
+                    foregroundColor: scheme.onTertiary,
+                  ),
+                  icon: const Icon(Icons.system_update_alt_outlined),
                   label: Text(l10n.characterUpdateRequiredAction),
                 ),
               ],

@@ -1,0 +1,33 @@
+{
+  "resources": {
+    "magic_initiate_spell": {
+      "name": "Magic Initiate Spell",
+      "max": "1",
+      "recharge": "long_rest"
+    },
+    "dragonborn_breath_weapon": {"name": "Breath Weapon", "max": "proficiency_bonus", "recharge": "long_rest"},
+    "draconic_flight": {"name": "Draconic Flight", "max": "1", "recharge": "long_rest"},
+    "stonecunning": {"name": "Stonecunning", "max": "proficiency_bonus", "recharge": "long_rest"},
+    "forest_gnome_speak_with_animals": {"name": "Speak with Animals", "max": "proficiency_bonus", "recharge": "long_rest"},
+    "giant_ancestry": {"name": "Giant Ancestry", "max": "proficiency_bonus", "recharge": "long_rest"},
+    "large_form": {"name": "Large Form", "max": "1", "recharge": "long_rest"},
+    "adrenaline_rush": {"name": "Adrenaline Rush", "max": "proficiency_bonus", "recharge": "short_or_long_rest"},
+    "relentless_endurance": {"name": "Relentless Endurance", "max": "1", "recharge": "long_rest"}
+  },
+  "raceTraits": {
+    "Breath Weapon": {"resourceId": "dragonborn_breath_weapon"},
+    "Draconic Flight": {"resourceId": "draconic_flight"},
+    "Stonecunning": {"resourceId": "stonecunning"},
+    "Forest Gnome Speak with Animals": {"resourceId": "forest_gnome_speak_with_animals"},
+    "Giant Ancestry": {"resourceId": "giant_ancestry"},
+    "Large Form": {"resourceId": "large_form"},
+    "Adrenaline Rush": {"resourceId": "adrenaline_rush"},
+    "Relentless Endurance": {"resourceId": "relentless_endurance"}
+  },
+  "feats": {
+    "Magic Initiate": {
+      "resourceId": "magic_initiate_spell",
+      "instanceKeyFromChoice": "spell_class"
+    }
+  }
+}

@@ -1,0 +1,139 @@
+[
+  {
+    "id": "alert",
+    "name": "Alert",
+    "category": "origin",
+    "prerequisite": null,
+    "repeatable": false,
+    "description": "Add your Proficiency Bonus to Initiative rolls. Immediately after rolling Initiative, you can exchange your result with a willing ally in the same combat if neither of you is Incapacitated."
+  },
+  {
+    "id": "magic_initiate",
+    "name": "Magic Initiate",
+    "category": "origin",
+    "prerequisite": null,
+    "repeatable": true,
+    "uniqueByChoice": "spell_class",
+    "description": "Choose the Cleric, Druid, or Wizard spell list. Learn two cantrips and prepare one level 1 spell from that list. Choose Intelligence, Wisdom, or Charisma for these spells. Cast the level 1 spell once without a slot per Long Rest, or cast it with a slot. On gaining a level, you can replace one chosen spell with another of the same level from that list. Each repeat selection must use a different list."
+  },
+  {
+    "id": "savage_attacker",
+    "name": "Savage Attacker",
+    "category": "origin",
+    "prerequisite": null,
+    "repeatable": false,
+    "description": "Once per turn when you hit with a weapon, roll its damage dice twice and use either result."
+  },
+  {
+    "id": "skilled",
+    "name": "Skilled",
+    "category": "origin",
+    "prerequisite": null,
+    "repeatable": true,
+    "description": "Gain proficiency in three skills, tools, or a mix of both. You can take this feat more than once."
+  },
+  {
+    "id": "ability_score_improvement",
+    "name": "Ability Score Improvement",
+    "category": "general",
+    "prerequisite": {"minLevel": 4},
+    "repeatable": true,
+    "description": "Increase one ability score by 2 or two ability scores by 1 each, to a maximum of 20. This feat can be taken more than once."
+  },
+  {
+    "id": "grappler",
+    "name": "Grappler",
+    "category": "general",
+    "prerequisite": {"minLevel": 4, "anyAbilityAtLeast": {"strength": 13, "dexterity": 13}},
+    "repeatable": false,
+    "description": "Increase Strength or Dexterity by 1, to a maximum of 20. Once per turn, an Unarmed Strike made as part of the Attack action can both deal damage and grapple. You have Advantage on attacks against creatures you grapple, and moving a grappled creature your size or smaller costs no extra movement."
+  },
+  {
+    "id": "archery",
+    "name": "Archery",
+    "category": "fighting_style",
+    "prerequisite": {"feature": "Fighting Style"},
+    "repeatable": false,
+    "description": "Gain a +2 bonus to attack rolls with Ranged weapons."
+  },
+  {
+    "id": "defense",
+    "name": "Defense",
+    "category": "fighting_style",
+    "prerequisite": {"feature": "Fighting Style"},
+    "repeatable": false,
+    "description": "Gain +1 Armor Class while wearing Light, Medium, or Heavy armor."
+  },
+  {
+    "id": "great_weapon_fighting",
+    "name": "Great Weapon Fighting",
+    "category": "fighting_style",
+    "prerequisite": {"feature": "Fighting Style"},
+    "repeatable": false,
+    "description": "When you roll damage for a Melee weapon attack while holding a Two-Handed or Versatile weapon in both hands, treat each damage die result of 1 or 2 as 3."
+  },
+  {
+    "id": "two_weapon_fighting",
+    "name": "Two-Weapon Fighting",
+    "category": "fighting_style",
+    "prerequisite": {"feature": "Fighting Style"},
+    "repeatable": false,
+    "description": "When the Light property grants an extra attack, add your ability modifier to that attack's damage if it is not already included."
+  },
+  {
+    "id": "boon_of_combat_prowess",
+    "name": "Boon of Combat Prowess",
+    "category": "epic_boon",
+    "prerequisite": {"minLevel": 19},
+    "repeatable": false,
+    "description": "Increase one ability score by 1, to a maximum of 30. When an attack roll misses, you can make it hit instead; you regain this benefit at the start of your next turn."
+  },
+  {
+    "id": "boon_of_dimensional_travel",
+    "name": "Boon of Dimensional Travel",
+    "category": "epic_boon",
+    "prerequisite": {"minLevel": 19},
+    "repeatable": false,
+    "description": "Increase one ability score by 1, to a maximum of 30. Immediately after taking the Attack or Magic action, you can teleport up to 30 feet to an unoccupied space you can see."
+  },
+  {
+    "id": "boon_of_fate",
+    "name": "Boon of Fate",
+    "category": "epic_boon",
+    "prerequisite": {"minLevel": 19},
+    "repeatable": false,
+    "description": "Increase one ability score by 1, to a maximum of 30. When you or a creature within 60 feet succeeds or fails a D20 Test, roll 2d4 and apply the total as a bonus or penalty to that roll. Recharge when you roll Initiative or finish a Short or Long Rest."
+  },
+  {
+    "id": "boon_of_irresistible_offense",
+    "name": "Boon of Irresistible Offense",
+    "category": "epic_boon",
+    "prerequisite": {"minLevel": 19},
+    "repeatable": false,
+    "description": "Increase Strength or Dexterity by 1, to a maximum of 30. Your Bludgeoning, Piercing, and Slashing damage ignores Resistance. On a natural 20 attack roll, deal extra damage equal to the ability score increased by this feat, of the attack's damage type."
+  },
+  {
+    "id": "boon_of_spell_recall",
+    "name": "Boon of Spell Recall",
+    "category": "epic_boon",
+    "prerequisite": {"minLevel": 19, "feature": "Spellcasting"},
+    "repeatable": false,
+    "description": "Increase Intelligence, Wisdom, or Charisma by 1, to a maximum of 30. Whenever you cast a spell with a level 1-4 spell slot, roll 1d4; if it matches the slot level, the slot is not expended."
+  },
+  {
+    "id": "boon_of_the_night_spirit",
+    "name": "Boon of the Night Spirit",
+    "category": "epic_boon",
+    "prerequisite": {"minLevel": 19},
+    "repeatable": false,
+    "description": "Increase one ability score by 1, to a maximum of 30. In Dim Light or Darkness, you can become Invisible as a Bonus Action until you take an action, Bonus Action, or Reaction. In those lighting conditions, you have Resistance to all damage except Psychic and Radiant."
+  },
+  {
+    "id": "boon_of_truesight",
+    "name": "Boon of Truesight",
+    "category": "epic_boon",
+    "prerequisite": {"minLevel": 19},
+    "repeatable": false,
+    "description": "Increase one ability score by 1, to a maximum of 30. Gain Truesight out to 60 feet."
+  }
+]

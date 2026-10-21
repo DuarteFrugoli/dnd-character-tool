@@ -1,0 +1,86 @@
+{
+  "Barbarian": [
+    {
+      "id": "path_of_the_berserker",
+      "name": "Path of the Berserker",
+      "description": "Turn Rage into relentless offense. Reckless attacks can add Frenzy damage, while later features strengthen your resolve, let you retaliate, and terrify foes."
+    }
+  ],
+  "Bard": [
+    {
+      "id": "college_of_lore",
+      "name": "College of Lore",
+      "description": "Gather knowledge from many traditions. Gain additional skills, hinder enemies with Cutting Words, and discover spells beyond the Bard list."
+    }
+  ],
+  "Cleric": [
+    {
+      "id": "life_domain",
+      "name": "Life Domain",
+      "description": "Channel divine power to protect and restore life. Your domain provides healing spells, improves healing, and helps preserve allies in danger."
+    }
+  ],
+  "Druid": [
+    {
+      "id": "circle_of_the_land",
+      "name": "Circle of the Land",
+      "description": "Draw magic from a chosen landscape. Change your land after a Long Rest to gain its circle spells, and later gain nature-based protection and sanctuary."
+    }
+  ],
+  "Fighter": [
+    {
+      "id": "champion",
+      "name": "Champion",
+      "description": "Pursue physical excellence in combat. Improve your critical-hit range, athleticism, Fighting Style options, and resilience."
+    }
+  ],
+  "Monk": [
+    {
+      "id": "warrior_of_the_open_hand",
+      "name": "Warrior of the Open Hand",
+      "description": "Master unarmed combat. Your Flurry of Blows can disrupt enemies, and later features improve recovery, mobility, and focused strikes."
+    }
+  ],
+  "Paladin": [
+    {
+      "id": "oath_of_devotion",
+      "name": "Oath of Devotion",
+      "description": "Uphold justice and protect the vulnerable. Empower a weapon with Channel Divinity and gain oath spells and a protective aura."
+    }
+  ],
+  "Ranger": [
+    {
+      "id": "hunter",
+      "name": "Hunter",
+      "description": "Study marked prey and choose hunting techniques. Learn a target's defenses, adapt your offense and defense, and improve your attacks against marked foes."
+    }
+  ],
+  "Rogue": [
+    {
+      "id": "thief",
+      "name": "Thief",
+      "description": "Excel at infiltration, exploration, and using treasure. Gain swift object interactions and mobility, then learn to make greater use of magic items."
+    }
+  ],
+  "Sorcerer": [
+    {
+      "id": "draconic_sorcery",
+      "name": "Draconic Sorcery",
+      "description": "Manifest magic linked to dragons. Gain draconic resilience and spells, then develop greater elemental power and draconic abilities."
+    }
+  ],
+  "Warlock": [
+    {
+      "id": "fiend_patron",
+      "name": "Fiend Patron",
+      "description": "Draw power from a mighty fiend of the Lower Planes. Gain patron spells, temporary vitality, protection, and other infernal gifts."
+    }
+  ],
+  "Wizard": [
+    {
+      "id": "evoker",
+      "name": "Evoker",
+      "description": "Specialize in evocation magic. Shape destructive spells around allies and strengthen the damage of your evocations."
+    }
+  ]
+}

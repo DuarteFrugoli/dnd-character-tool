@@ -1,0 +1,21 @@
+[
+  {"name": "Common", "category": "standard"},
+  {"name": "Common Sign Language", "category": "standard"},
+  {"name": "Draconic", "category": "standard"},
+  {"name": "Dwarvish", "category": "standard"},
+  {"name": "Elvish", "category": "standard"},
+  {"name": "Giant", "category": "standard"},
+  {"name": "Gnomish", "category": "standard"},
+  {"name": "Goblin", "category": "standard"},
+  {"name": "Halfling", "category": "standard"},
+  {"name": "Orc", "category": "standard"},
+  {"name": "Abyssal", "category": "rare"},
+  {"name": "Celestial", "category": "rare"},
+  {"name": "Deep Speech", "category": "rare"},
+  {"name": "Druidic", "category": "rare"},
+  {"name": "Infernal", "category": "rare"},
+  {"name": "Primordial", "category": "rare", "dialects": ["Aquan", "Auran", "Ignan", "Terran"]},
+  {"name": "Sylvan", "category": "rare"},
+  {"name": "Thieves' Cant", "category": "rare"},
+  {"name": "Undercommon", "category": "rare"}
+]

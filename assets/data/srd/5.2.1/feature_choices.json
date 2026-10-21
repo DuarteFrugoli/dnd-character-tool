@@ -1,0 +1,46 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": [
+      {"id": "cleric", "name": "Cleric", "description": "Choose cantrips and a level 1 spell from the Cleric list."},
+      {"id": "druid", "name": "Druid", "description": "Choose cantrips and a level 1 spell from the Druid list."},
+      {"id": "wizard", "name": "Wizard", "description": "Choose cantrips and a level 1 spell from the Wizard list."}
+    ],
+    "magic_initiate_abilities": [
+      {"id": "intelligence", "name": "Intelligence", "description": "Use Intelligence as the spellcasting ability for this feat."},
+      {"id": "wisdom", "name": "Wisdom", "description": "Use Wisdom as the spellcasting ability for this feat."},
+      {"id": "charisma", "name": "Charisma", "description": "Use Charisma as the spellcasting ability for this feat."}
+    ]
+  },
+  "feats": {
+    "Ability Score Improvement": {
+      "choices": [
+        {"id": "ability_increases", "type": "ability_score_increase", "count": 1, "patterns": [[2], [1, 1]], "maximum": 20}
+      ]
+    },
+    "Grappler": {
+      "choices": [
+        {"id": "ability_increase", "type": "ability", "count": 1, "options": ["strength", "dexterity"], "increase": 1, "maximum": 20}
+      ]
+    },
+    "Magic Initiate": {
+      "choices": [
+        {"id": "spell_class", "type": "option", "count": 1, "optionsSource": "magic_initiate_spell_lists"},
+        {"id": "spellcasting_ability", "type": "ability", "count": 1, "optionsSource": "magic_initiate_abilities"},
+        {"id": "cantrips", "type": "cantrip", "count": 2, "spellClassFromChoice": "spell_class"},
+        {"id": "spell", "type": "spell", "count": 1, "spellLevel": 1, "spellClassFromChoice": "spell_class"}
+      ]
+    },
+    "Skilled": {
+      "choices": [
+        {"id": "skills_or_tools", "type": "skill_or_tool", "count": 3}
+      ]
+    },
+    "Boon of Combat Prowess": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
+    "Boon of Dimensional Travel": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
+    "Boon of Fate": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
+    "Boon of Irresistible Offense": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "options": ["strength", "dexterity"], "increase": 1, "maximum": 30}]},
+    "Boon of Spell Recall": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "options": ["intelligence", "wisdom", "charisma"], "increase": 1, "maximum": 30}]},
+    "Boon of the Night Spirit": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
+    "Boon of Truesight": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]}
+  }
+}

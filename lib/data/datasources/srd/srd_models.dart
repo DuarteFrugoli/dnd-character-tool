@@ -797,17 +797,20 @@ class SrdFeat {
   final String name;
   final String? prerequisite;
   final String description;
+  final String category;
 
   const SrdFeat({
     required this.name,
     this.prerequisite,
     required this.description,
+    this.category = 'general',
   });
 
   factory SrdFeat.fromJson(Map<String, dynamic> json) => SrdFeat(
     name: json['name'] as String,
     prerequisite: json['prerequisite'] as String?,
     description: json['description'] as String,
+    category: json['category'] as String? ?? 'general',
   );
 }
 
@@ -955,12 +958,19 @@ class SrdFeatureChoiceRequirement {
   final String? optionsSource;
   final List<SrdFeatureChoiceOption> options;
   final String? spellClass;
+  final List<String> spellClasses;
   final String? spellClassFromChoice;
+  final String? spellSchool;
+  final String? whenChoiceId;
+  final String? whenOptionId;
+  final String? featCategory;
   final int? spellLevel;
   final int? minSpellLevel;
   final int? maxSpellLevel;
   final Map<int, int> maxSpellLevelByLevel;
   final bool allowThievesTools;
+  final bool ritualOnly;
+  final bool excludePreparedSpells;
 
   const SrdFeatureChoiceRequirement({
     required this.id,
@@ -970,12 +980,19 @@ class SrdFeatureChoiceRequirement {
     this.optionsSource,
     this.options = const [],
     this.spellClass,
+    this.spellClasses = const [],
     this.spellClassFromChoice,
+    this.spellSchool,
+    this.whenChoiceId,
+    this.whenOptionId,
+    this.featCategory,
     this.spellLevel,
     this.minSpellLevel,
     this.maxSpellLevel,
     this.maxSpellLevelByLevel = const {},
     this.allowThievesTools = false,
+    this.ritualOnly = false,
+    this.excludePreparedSpells = false,
   });
 
   factory SrdFeatureChoiceRequirement.fromJson(Map<String, dynamic> json) {
@@ -992,12 +1009,21 @@ class SrdFeatureChoiceRequirement {
           )
           .toList(),
       spellClass: json['spellClass'] as String?,
+      spellClasses: (json['spellClasses'] as List<dynamic>? ?? const [])
+          .whereType<String>()
+          .toList(),
       spellClassFromChoice: json['spellClassFromChoice'] as String?,
+      spellSchool: json['spellSchool'] as String?,
+      whenChoiceId: json['whenChoiceId'] as String?,
+      whenOptionId: json['whenOptionId'] as String?,
+      featCategory: json['featCategory'] as String?,
       spellLevel: (json['spellLevel'] as num?)?.toInt(),
       minSpellLevel: (json['minSpellLevel'] as num?)?.toInt(),
       maxSpellLevel: (json['maxSpellLevel'] as num?)?.toInt(),
       maxSpellLevelByLevel: _intMapFromJson(json['maxSpellLevelByLevel']),
       allowThievesTools: readBool(json['allowThievesTools']),
+      ritualOnly: readBool(json['ritualOnly']),
+      excludePreparedSpells: readBool(json['excludePreparedSpells']),
     );
   }
 
@@ -1046,11 +1072,19 @@ class SrdFeatureChoiceOption {
   final String id;
   final String name;
   final String? description;
+  final int? minClassLevel;
+  final List<String> requiresInvocations;
+  final String? target;
+  final bool repeatableWithDifferentTarget;
 
   const SrdFeatureChoiceOption({
     required this.id,
     required this.name,
     this.description,
+    this.minClassLevel,
+    this.requiresInvocations = const [],
+    this.target,
+    this.repeatableWithDifferentTarget = false,
   });
 
   factory SrdFeatureChoiceOption.fromJson(Map<String, dynamic> json) {
@@ -1058,6 +1092,12 @@ class SrdFeatureChoiceOption {
       id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
       description: json['description'] as String?,
+      minClassLevel: (json['minClassLevel'] as num?)?.toInt(),
+      requiresInvocations: (json['requiresInvocations'] as List<dynamic>? ?? const [])
+          .whereType<String>()
+          .toList(),
+      target: json['target'] as String?,
+      repeatableWithDifferentTarget: readBool(json['repeatableWithDifferentTarget']),
     );
   }
 }
@@ -1067,7 +1107,7 @@ class SrdFeatureChoiceOption {
 class SrdClassFeature {
   final String name;
   final int level;
-  final String type; // "active" | "passive" | "subclass" | "asi"
+  final String type; // "active" | "passive" | "subclass" | "asi" | "epic_boon"
   final String description;
 
   const SrdClassFeature({

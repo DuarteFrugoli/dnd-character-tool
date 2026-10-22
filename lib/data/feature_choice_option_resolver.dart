@@ -102,7 +102,32 @@ class FeatureChoiceOptionResolver {
     Iterable<SrdFeatureChoiceOption> options, {
     String? optionsSource,
   }) {
+    final proficiencyNames = character?.skillProficiencies
+        .map((name) => name.toLowerCase())
+        .toSet();
+    final selectedIds = request.findIn(choices)?.values.toSet() ?? const <String>{};
     return options
+        .where((option) {
+          if (!selectedIds.contains(option.id)) {
+            if (option.minClassLevel != null && request.level < option.minClassLevel!) {
+              return false;
+            }
+            if (!selectedIds.containsAll(option.requiresInvocations)) {
+              return false;
+            }
+          }
+          if (proficiencyNames == null || selectedIds.contains(option.id)) {
+            return true;
+          }
+          final skill = option.name.toLowerCase();
+          if (request.requirement.type == 'skill') {
+            return !proficiencyNames.contains(skill);
+          }
+          if (request.requirement.type == 'skill_expertise') {
+            return proficiencyNames.contains(skill);
+          }
+          return true;
+        })
         .map(
           (option) => SrdFeatureChoiceOption(
             id: option.id,
@@ -119,6 +144,10 @@ class FeatureChoiceOptionResolver {
                   optionsSource: optionsSource,
                 ) ??
                 option.description,
+            minClassLevel: option.minClassLevel,
+            requiresInvocations: option.requiresInvocations,
+            target: option.target,
+            repeatableWithDifferentTarget: option.repeatableWithDifferentTarget,
           ),
         )
         .toList();
@@ -196,6 +225,9 @@ class FeatureChoiceOptionResolver {
 
   List<SrdFeatureChoiceOption> _featOptions() {
     return feats
+        .where((feat) =>
+            request.requirement.featCategory == null ||
+            feat.category == request.requirement.featCategory)
         .map(
           (feat) => SrdFeatureChoiceOption(
             id: feat.name,
@@ -221,7 +253,9 @@ class FeatureChoiceOptionResolver {
     final req = request.requirement;
     final spellClass =
         req.spellClass ?? _selectedChoiceValue(req.spellClassFromChoice);
-    if (spellClass == null || spellClass.isEmpty) return const [];
+    if ((spellClass == null || spellClass.isEmpty) && req.spellClasses.isEmpty) {
+      return const [];
+    }
     final anyClass = spellClass == 'any';
     final spellLevel = req.type == 'cantrip' ? 0 : req.spellLevel;
     final minSpellLevel = req.minSpellLevel ?? (req.type == 'spell' ? 1 : 0);
@@ -229,8 +263,17 @@ class FeatureChoiceOptionResolver {
     return spells
         .where(
           (spell) =>
-              anyClass || spell.classes.contains(spellClass.toLowerCase()),
+              anyClass ||
+              (spellClass != null && spell.classes.contains(spellClass.toLowerCase())) ||
+              req.spellClasses.any((name) => spell.classes.contains(name.toLowerCase())),
         )
+        .where((spell) => !req.ritualOnly || spell.ritual)
+        .where((spell) => !req.excludePreparedSpells ||
+            !(character?.spells.any((known) =>
+                known.name == spell.name &&
+                (known.isPrepared || known.isAlwaysPrepared)) ?? false))
+        .where((spell) => req.spellSchool == null ||
+            spell.school.toLowerCase() == req.spellSchool!.toLowerCase())
         .where((spell) {
           if (spellLevel != null) return spell.level == spellLevel;
           if (spell.level < minSpellLevel) return false;

@@ -40,12 +40,14 @@ class FeatureUsageResource {
     required this.name,
     required this.maxFormula,
     required this.recharge,
+    this.maxByLevel = const {},
   });
 
   final String id;
   final String name;
   final String maxFormula;
   final String recharge;
+  final Map<int, int> maxByLevel;
 
   factory FeatureUsageResource.fromJson(String id, Map<String, dynamic> json) {
     return FeatureUsageResource(
@@ -53,21 +55,59 @@ class FeatureUsageResource {
       name: json['name'] as String? ?? id,
       maxFormula: json['max']?.toString() ?? '1',
       recharge: json['recharge'] as String? ?? 'long_rest',
+      maxByLevel: _parseMaxByLevel(json['maxByLevel']),
     );
+  }
+
+  static Map<int, int> _parseMaxByLevel(dynamic value) {
+    if (value is! Map) return const {};
+    final result = <int, int>{};
+    for (final entry in value.entries) {
+      final level = int.tryParse(entry.key.toString());
+      if (level != null && entry.value is num) {
+        result[level] = (entry.value as num).toInt();
+      }
+    }
+    return result;
   }
 }
 
 class FeatureUsageRef {
-  const FeatureUsageRef({required this.resourceId, this.spend = 1});
+  const FeatureUsageRef({
+    required this.resourceId,
+    this.spend = 1,
+    this.minClassLevel,
+    this.minCharacterLevel,
+    this.additionalResources = const [],
+  });
 
   final String resourceId;
   final int spend;
+  final int? minClassLevel;
+  final int? minCharacterLevel;
+  final List<FeatureUsageRef> additionalResources;
 
   factory FeatureUsageRef.fromJson(Map<String, dynamic> json) {
     return FeatureUsageRef(
       resourceId: json['resourceId'] as String? ?? '',
       spend: (json['spend'] as num?)?.toInt() ?? 1,
+      minClassLevel: (json['minClassLevel'] as num?)?.toInt(),
+      minCharacterLevel: (json['minCharacterLevel'] as num?)?.toInt(),
+      additionalResources: (json['additionalResources'] as List<dynamic>? ?? const [])
+          .whereType<Map>()
+          .map((entry) => FeatureUsageRef.fromJson(entry.cast<String, dynamic>()))
+          .toList(),
     );
+  }
+
+  Iterable<FeatureUsageRef> eligibleRefs(FeatureUsageContext context) sync* {
+    if ((minClassLevel == null || context.effectiveClassLevel >= minClassLevel!) &&
+        (minCharacterLevel == null || context.totalCharacterLevel >= minCharacterLevel!)) {
+      yield this;
+    }
+    for (final ref in additionalResources) {
+      yield* ref.eligibleRefs(context);
+    }
   }
 }
 
@@ -228,20 +268,40 @@ class FeatureUsageEngine {
     required FeatureUsageRef? ref,
     FeatureUsageContext? usageContext,
   }) {
-    if (ref == null || ref.resourceId.isEmpty) return null;
-    final resource = catalog.resource(ref.resourceId);
-    if (resource == null) return null;
     final resolvedContext =
         usageContext ?? FeatureUsageContext.forCharacter(character);
+    final eligibleRef = ref?.eligibleRefs(resolvedContext).firstOrNull;
+    if (eligibleRef == null || eligibleRef.resourceId.isEmpty) return null;
+    final resource = catalog.resource(eligibleRef.resourceId);
+    if (resource == null) return null;
     final max = maxFor(resource, character, usageContext: resolvedContext);
     final current = currentFor(character, resource, max);
     return FeatureUsageView(
       resource: resource,
       current: current,
       max: max,
-      spend: ref.spend < 1 ? 1 : ref.spend,
+      spend: eligibleRef.spend < 1 ? 1 : eligibleRef.spend,
       recharge: rechargeFor(resource, character, usageContext: resolvedContext),
     );
+  }
+
+  static List<FeatureUsageView> viewsForRef({
+    required FeatureUsageCatalog catalog,
+    required Character character,
+    required FeatureUsageRef? ref,
+    FeatureUsageContext? usageContext,
+  }) {
+    final context = usageContext ?? FeatureUsageContext.forCharacter(character);
+    if (ref == null) return const [];
+    return [
+      for (final eligibleRef in ref.eligibleRefs(context))
+        ?viewForRef(
+          catalog: catalog,
+          character: character,
+          ref: eligibleRef,
+          usageContext: context,
+        ),
+    ];
   }
 
   static int? currentFor(
@@ -259,11 +319,19 @@ class FeatureUsageEngine {
     Character character, {
     FeatureUsageContext? usageContext,
   }) {
+    final context = usageContext ?? FeatureUsageContext.forCharacter(character);
+    if (resource.maxByLevel.isNotEmpty) {
+      final level = context.effectiveClassLevel;
+      final eligible = resource.maxByLevel.keys.where((key) => key <= level);
+      if (eligible.isNotEmpty) {
+        final threshold = eligible.reduce((a, b) => a > b ? a : b);
+        return resource.maxByLevel[threshold];
+      }
+    }
     final formula = resource.maxFormula.trim();
     final staticValue = int.tryParse(formula);
     if (staticValue != null) return _atLeast(0, staticValue);
 
-    final context = usageContext ?? FeatureUsageContext.forCharacter(character);
     final level = context.effectiveClassLevel;
     final scores = character.abilityScores;
     switch (formula) {
@@ -300,6 +368,8 @@ class FeatureUsageEngine {
       case 'monk_level':
       case 'sorcerer_level':
         return level;
+      case 'proficiency_bonus':
+        return character.proficiencyBonus;
       case 'paladin_level_x5':
         return level * 5;
       case 'charisma_modifier_min_1':
@@ -334,12 +404,25 @@ class FeatureUsageEngine {
     switch (recharge) {
       case 'short_rest':
       case 'short_or_long_rest':
+      case 'short_rest_one':
         return true;
       case 'long_rest':
         return rest == FeatureUsageRest.longRest;
       default:
         return false;
     }
+  }
+
+  static int restoredCurrent({
+    required String recharge,
+    required FeatureUsageRest rest,
+    required int current,
+    required int max,
+  }) {
+    if (recharge == 'short_rest_one' && rest == FeatureUsageRest.shortRest) {
+      return (current + 1).clamp(0, max).toInt();
+    }
+    return restoresOn(recharge, rest) ? max : current.clamp(0, max).toInt();
   }
 
   static Iterable<FeatureUsageResource> activeResources({
@@ -372,23 +455,24 @@ class FeatureUsageEngine {
   }) sync* {
     final seen = <String>{};
 
-    FeatureUsageBinding? add(
+    Iterable<FeatureUsageBinding> add(
       FeatureUsageRef? ref,
       FeatureUsageContext usageContext,
-    ) {
-      if (ref == null ||
-          ref.resourceId.isEmpty ||
-          seen.contains(ref.resourceId)) {
-        return null;
+    ) sync* {
+      if (ref == null) return;
+      for (final eligibleRef in ref.eligibleRefs(usageContext)) {
+        if (eligibleRef.resourceId.isEmpty || seen.contains(eligibleRef.resourceId)) {
+          continue;
+        }
+        final resource = catalog.resource(eligibleRef.resourceId);
+        if (resource == null) continue;
+        seen.add(resource.id);
+        yield FeatureUsageBinding(
+          resource: resource,
+          ref: eligibleRef,
+          usageContext: usageContext,
+        );
       }
-      final resource = catalog.resource(ref.resourceId);
-      if (resource == null) return null;
-      seen.add(resource.id);
-      return FeatureUsageBinding(
-        resource: resource,
-        ref: ref,
-        usageContext: usageContext,
-      );
     }
 
     final effectiveClassFeatureSets = classFeatureSets.isNotEmpty
@@ -409,11 +493,10 @@ class FeatureUsageEngine {
         sourceClassLevel: classEntry.level,
       );
       for (final feature in set.classFeatures) {
-        final binding = add(
+        yield* add(
           catalog.classFeature(classEntry.className, feature.name),
           classContext,
         );
-        if (binding != null) yield binding;
       }
 
       final subclassName = classEntry.subclassName ?? '';
@@ -424,7 +507,7 @@ class FeatureUsageEngine {
         sourceClassLevel: classEntry.level,
       );
       for (final feature in set.subclassFeatures) {
-        final binding = add(
+        yield* add(
           catalog.subclassFeature(
             classEntry.className,
             subclassName,
@@ -432,14 +515,12 @@ class FeatureUsageEngine {
           ),
           subclassContext,
         );
-        if (binding != null) yield binding;
       }
     }
 
     final characterContext = FeatureUsageContext.forCharacter(character);
     for (final trait in raceTraits) {
-      final binding = add(catalog.raceTrait(trait), characterContext);
-      if (binding != null) yield binding;
+      yield* add(catalog.raceTrait(trait), characterContext);
     }
 
     for (final feature in character.extraFeatures) {
@@ -448,8 +529,7 @@ class FeatureUsageEngine {
 
       if (sourceType == FeatureChoiceSourceType.feat ||
           feature.sourceClass == 'Feat') {
-        final binding = add(catalog.feat(feature.name), characterContext);
-        if (binding != null) yield binding;
+        yield* add(catalog.feat(feature.name), characterContext);
         continue;
       }
 
@@ -457,7 +537,7 @@ class FeatureUsageEngine {
         final sourceClass = _extraFeatureSourceClass(character, feature);
         final classRef = catalog.classFeature(sourceClass, sourceFeature);
         if (classRef != null) {
-          final binding = add(
+          yield* add(
             classRef,
             FeatureUsageContext.forCharacter(
               character,
@@ -465,7 +545,6 @@ class FeatureUsageEngine {
               sourceClassLevel: _extraFeatureSourceLevel(character, feature),
             ),
           );
-          if (binding != null) yield binding;
           continue;
         }
       }
@@ -479,7 +558,7 @@ class FeatureUsageEngine {
           sourceFeature,
         );
         if (subclassRef != null) {
-          final binding = add(
+          yield* add(
             subclassRef,
             FeatureUsageContext.forCharacter(
               character,
@@ -487,7 +566,6 @@ class FeatureUsageEngine {
               sourceClassLevel: _extraFeatureSourceLevel(character, feature),
             ),
           );
-          if (binding != null) yield binding;
           continue;
         }
       }
@@ -495,7 +573,7 @@ class FeatureUsageEngine {
       final sourceClass = _extraFeatureSourceClass(character, feature);
       final classRef = catalog.classFeature(sourceClass, feature.name);
       if (classRef != null) {
-        final binding = add(
+        yield* add(
           classRef,
           FeatureUsageContext.forCharacter(
             character,
@@ -503,7 +581,6 @@ class FeatureUsageEngine {
             sourceClassLevel: _extraFeatureSourceLevel(character, feature),
           ),
         );
-        if (binding != null) yield binding;
         continue;
       }
 
@@ -513,7 +590,7 @@ class FeatureUsageEngine {
         feature.name,
       );
       if (subclassRef != null) {
-        final binding = add(
+        yield* add(
           subclassRef,
           FeatureUsageContext.forCharacter(
             character,
@@ -521,12 +598,10 @@ class FeatureUsageEngine {
             sourceClassLevel: _extraFeatureSourceLevel(character, feature),
           ),
         );
-        if (binding != null) yield binding;
         continue;
       }
 
-      final binding = add(catalog.raceTrait(feature.name), characterContext);
-      if (binding != null) yield binding;
+      yield* add(catalog.raceTrait(feature.name), characterContext);
     }
   }
 

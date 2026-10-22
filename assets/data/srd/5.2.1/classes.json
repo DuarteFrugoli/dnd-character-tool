@@ -3,243 +3,4823 @@
     "id": "barbarian",
     "name": "Barbarian",
     "hitDie": 12,
-    "primaryAbility": ["strength"],
-    "savingThrows": ["strength", "constitution"],
-    "armorProficiencies": ["light", "medium", "shields"],
-    "weaponProficiencies": ["simple", "martial"],
+    "primaryAbility": [
+      "strength"
+    ],
+    "savingThrows": [
+      "strength",
+      "constitution"
+    ],
+    "armorProficiencies": [
+      "light",
+      "medium",
+      "shields"
+    ],
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 2, "from": ["animal handling", "athletics", "intimidation", "nature", "perception", "survival"]},
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "animal handling",
+        "athletics",
+        "intimidation",
+        "nature",
+        "perception",
+        "survival"
+      ]
+    },
     "spellcastingAbility": null,
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Barbarian Subclass",
-    "multiclassProficiencies": {"armor": ["shields"], "weapons": ["martial"], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [
+        "shields"
+      ],
+      "weapons": [
+        "martial"
+      ],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Greataxe", "quantity": 1}, {"name": "Handaxe", "quantity": 4}, {"name": "Explorer's Pack", "quantity": 1}], "gp": 15},
-      {"id": "b", "items": [], "gp": 75}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Greataxe",
+            "quantity": 1
+          },
+          {
+            "name": "Handaxe",
+            "quantity": 4
+          },
+          {
+            "name": "Explorer's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 15
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 75
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Rage",
+          "Unarmored Defense",
+          "Weapon Mastery"
+        ],
+        "rageUses": 2,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Danger Sense",
+          "Reckless Attack"
+        ],
+        "rageUses": 2,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Barbarian Subclass",
+          "Primal Knowledge"
+        ],
+        "rageUses": 3,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "rageUses": 3,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Extra Attack",
+          "Fast Movement"
+        ],
+        "rageUses": 3,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "rageUses": 4,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Feral Instinct",
+          "Instinctive Pounce"
+        ],
+        "rageUses": 4,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "rageUses": 4,
+        "rageDamageBonus": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Brutal Strike"
+        ],
+        "rageUses": 4,
+        "rageDamageBonus": 3,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "rageUses": 4,
+        "rageDamageBonus": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [
+          "Relentless Rage"
+        ],
+        "rageUses": 4,
+        "rageDamageBonus": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "rageUses": 5,
+        "rageDamageBonus": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [
+          "Improved Brutal Strike"
+        ],
+        "rageUses": 5,
+        "rageDamageBonus": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "rageUses": 5,
+        "rageDamageBonus": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Persistent Rage"
+        ],
+        "rageUses": 5,
+        "rageDamageBonus": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "rageUses": 5,
+        "rageDamageBonus": 4,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Improved Brutal Strike"
+        ],
+        "rageUses": 6,
+        "rageDamageBonus": 4,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Indomitable Might"
+        ],
+        "rageUses": 6,
+        "rageDamageBonus": 4,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "rageUses": 6,
+        "rageDamageBonus": 4,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Primal Champion"
+        ],
+        "rageUses": 6,
+        "rageDamageBonus": 4,
+        "weaponMasteryCount": 4
+      }
     ]
   },
   {
     "id": "bard",
     "name": "Bard",
     "hitDie": 8,
-    "primaryAbility": ["charisma"],
-    "savingThrows": ["dexterity", "charisma"],
-    "armorProficiencies": ["light"],
-    "weaponProficiencies": ["simple"],
+    "primaryAbility": [
+      "charisma"
+    ],
+    "savingThrows": [
+      "dexterity",
+      "charisma"
+    ],
+    "armorProficiencies": [
+      "light"
+    ],
+    "weaponProficiencies": [
+      "simple"
+    ],
     "toolProficiencies": [],
-    "toolProficiencyChoices": [{"category": "musical_instruments", "count": 3}],
-    "skillChoices": {"count": 3, "from": ["any"]},
+    "toolProficiencyChoices": [
+      {
+        "category": "musical_instruments",
+        "count": 3
+      }
+    ],
+    "skillChoices": {
+      "count": 3,
+      "from": [
+        "any"
+      ]
+    },
     "spellcastingAbility": "charisma",
     "spellcastingType": "full",
     "subclassLevel": 3,
     "subclassFeatureName": "Bard Subclass",
-    "multiclassProficiencies": {"armor": ["light"], "weapons": [], "tools": [], "toolChoices": [{"category": "musical_instruments", "count": 1}], "skills": {"count": 1, "from": ["any"]}},
+    "multiclassProficiencies": {
+      "armor": [
+        "light"
+      ],
+      "weapons": [],
+      "tools": [],
+      "toolChoices": [
+        {
+          "category": "musical_instruments",
+          "count": 1
+        }
+      ],
+      "skills": {
+        "count": 1,
+        "from": [
+          "any"
+        ]
+      }
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Leather Armor", "quantity": 1}, {"name": "Dagger", "quantity": 2}, {"category": "musical_instruments", "quantity": 1}, {"name": "Entertainer's Pack", "quantity": 1}], "gp": 19},
-      {"id": "b", "items": [], "gp": 90}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Leather Armor",
+            "quantity": 1
+          },
+          {
+            "name": "Dagger",
+            "quantity": 2
+          },
+          {
+            "category": "musical_instruments",
+            "quantity": 1
+          },
+          {
+            "name": "Entertainer's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 19
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 90
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Bardic Inspiration",
+          "Spellcasting"
+        ],
+        "bardicDie": "d6",
+        "cantripsKnown": 2,
+        "preparedSpells": 4,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Expertise",
+          "Jack of All Trades"
+        ],
+        "bardicDie": "d6",
+        "cantripsKnown": 2,
+        "preparedSpells": 5,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Bard Subclass"
+        ],
+        "bardicDie": "d6",
+        "cantripsKnown": 2,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "bardicDie": "d6",
+        "cantripsKnown": 3,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Font of Inspiration"
+        ],
+        "bardicDie": "d8",
+        "cantripsKnown": 3,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "bardicDie": "d8",
+        "cantripsKnown": 3,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Countercharm"
+        ],
+        "bardicDie": "d8",
+        "cantripsKnown": 3,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "bardicDie": "d8",
+        "cantripsKnown": 3,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Expertise"
+        ],
+        "bardicDie": "d8",
+        "cantripsKnown": 3,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Magical Secrets"
+        ],
+        "bardicDie": "d10",
+        "cantripsKnown": 4,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [],
+        "bardicDie": "d10",
+        "cantripsKnown": 4,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "bardicDie": "d10",
+        "cantripsKnown": 4,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [],
+        "bardicDie": "d10",
+        "cantripsKnown": 4,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "bardicDie": "d10",
+        "cantripsKnown": 4,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [],
+        "bardicDie": "d12",
+        "cantripsKnown": 4,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "bardicDie": "d12",
+        "cantripsKnown": 4,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [],
+        "bardicDie": "d12",
+        "cantripsKnown": 4,
+        "preparedSpells": 19,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Superior Inspiration"
+        ],
+        "bardicDie": "d12",
+        "cantripsKnown": 4,
+        "preparedSpells": 20,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "bardicDie": "d12",
+        "cantripsKnown": 4,
+        "preparedSpells": 21,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Words of Creation"
+        ],
+        "bardicDie": "d12",
+        "cantripsKnown": 4,
+        "preparedSpells": 22,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
     ]
   },
   {
     "id": "cleric",
     "name": "Cleric",
     "hitDie": 8,
-    "primaryAbility": ["wisdom"],
-    "savingThrows": ["wisdom", "charisma"],
-    "armorProficiencies": ["light", "medium", "shields"],
-    "weaponProficiencies": ["simple"],
+    "primaryAbility": [
+      "wisdom"
+    ],
+    "savingThrows": [
+      "wisdom",
+      "charisma"
+    ],
+    "armorProficiencies": [
+      "light",
+      "medium",
+      "shields"
+    ],
+    "weaponProficiencies": [
+      "simple"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 2, "from": ["history", "insight", "medicine", "persuasion", "religion"]},
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "history",
+        "insight",
+        "medicine",
+        "persuasion",
+        "religion"
+      ]
+    },
     "spellcastingAbility": "wisdom",
     "spellcastingType": "full",
     "subclassLevel": 3,
     "subclassFeatureName": "Cleric Subclass",
-    "multiclassProficiencies": {"armor": ["light", "medium", "shields"], "weapons": [], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [
+        "light",
+        "medium",
+        "shields"
+      ],
+      "weapons": [],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Chain Shirt", "quantity": 1}, {"name": "Shield", "quantity": 1}, {"name": "Mace", "quantity": 1}, {"name": "Holy Symbol", "quantity": 1}, {"name": "Priest's Pack", "quantity": 1}], "gp": 7},
-      {"id": "b", "items": [], "gp": 110}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Chain Shirt",
+            "quantity": 1
+          },
+          {
+            "name": "Shield",
+            "quantity": 1
+          },
+          {
+            "name": "Mace",
+            "quantity": 1
+          },
+          {
+            "name": "Holy Symbol",
+            "quantity": 1
+          },
+          {
+            "name": "Priest's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 7
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 110
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Spellcasting",
+          "Divine Order"
+        ],
+        "channelDivinityUses": 0,
+        "cantripsKnown": 3,
+        "preparedSpells": 4,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Channel Divinity"
+        ],
+        "channelDivinityUses": 2,
+        "cantripsKnown": 3,
+        "preparedSpells": 5,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Cleric Subclass"
+        ],
+        "channelDivinityUses": 2,
+        "cantripsKnown": 3,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 2,
+        "cantripsKnown": 4,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Sear Undead"
+        ],
+        "channelDivinityUses": 2,
+        "cantripsKnown": 4,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Blessed Strikes"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Divine Intervention"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Improved Blessed Strikes"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Subclass feature"
+        ],
+        "channelDivinityUses": 3,
+        "cantripsKnown": 5,
+        "preparedSpells": 19,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [],
+        "channelDivinityUses": 4,
+        "cantripsKnown": 5,
+        "preparedSpells": 20,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "channelDivinityUses": 4,
+        "cantripsKnown": 5,
+        "preparedSpells": 21,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Greater Divine Intervention"
+        ],
+        "channelDivinityUses": 4,
+        "cantripsKnown": 5,
+        "preparedSpells": 22,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
     ]
   },
   {
     "id": "druid",
     "name": "Druid",
     "hitDie": 8,
-    "primaryAbility": ["wisdom"],
-    "savingThrows": ["intelligence", "wisdom"],
-    "armorProficiencies": ["light", "shields"],
-    "weaponProficiencies": ["simple"],
-    "toolProficiencies": ["Herbalism Kit"],
-    "skillChoices": {"count": 2, "from": ["animal handling", "arcana", "insight", "medicine", "nature", "perception", "religion", "survival"]},
+    "primaryAbility": [
+      "wisdom"
+    ],
+    "savingThrows": [
+      "intelligence",
+      "wisdom"
+    ],
+    "armorProficiencies": [
+      "light",
+      "shields"
+    ],
+    "weaponProficiencies": [
+      "simple"
+    ],
+    "toolProficiencies": [
+      "Herbalism Kit"
+    ],
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "animal handling",
+        "arcana",
+        "insight",
+        "medicine",
+        "nature",
+        "perception",
+        "religion",
+        "survival"
+      ]
+    },
     "spellcastingAbility": "wisdom",
     "spellcastingType": "full",
     "subclassLevel": 3,
     "subclassFeatureName": "Druid Subclass",
-    "multiclassProficiencies": {"armor": ["light", "shields"], "weapons": [], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [
+        "light",
+        "shields"
+      ],
+      "weapons": [],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Leather Armor", "quantity": 1}, {"name": "Shield", "quantity": 1}, {"name": "Sickle", "quantity": 1}, {"name": "Druidic Focus", "variant": "quarterstaff", "quantity": 1}, {"name": "Explorer's Pack", "quantity": 1}, {"name": "Herbalism Kit", "quantity": 1}], "gp": 9},
-      {"id": "b", "items": [], "gp": 50}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Leather Armor",
+            "quantity": 1
+          },
+          {
+            "name": "Shield",
+            "quantity": 1
+          },
+          {
+            "name": "Sickle",
+            "quantity": 1
+          },
+          {
+            "name": "Druidic Focus",
+            "variant": "quarterstaff",
+            "quantity": 1
+          },
+          {
+            "name": "Explorer's Pack",
+            "quantity": 1
+          },
+          {
+            "name": "Herbalism Kit",
+            "quantity": 1
+          }
+        ],
+        "gp": 9
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 50
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Spellcasting",
+          "Druidic",
+          "Primal Order"
+        ],
+        "wildShapeUses": 0,
+        "cantripsKnown": 2,
+        "preparedSpells": 4,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Wild Shape",
+          "Wild Companion"
+        ],
+        "wildShapeUses": 2,
+        "cantripsKnown": 2,
+        "preparedSpells": 5,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Druid Subclass"
+        ],
+        "wildShapeUses": 2,
+        "cantripsKnown": 2,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "wildShapeUses": 2,
+        "cantripsKnown": 3,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Wild Resurgence"
+        ],
+        "wildShapeUses": 2,
+        "cantripsKnown": 3,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 3,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Elemental Fury"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 3,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 3,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [],
+        "wildShapeUses": 3,
+        "cantripsKnown": 3,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [],
+        "wildShapeUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [],
+        "wildShapeUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Improved Elemental Fury"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "wildShapeUses": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [],
+        "wildShapeUses": 4,
+        "cantripsKnown": 4,
+        "preparedSpells": 19,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Beast Spells"
+        ],
+        "wildShapeUses": 4,
+        "cantripsKnown": 4,
+        "preparedSpells": 20,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "wildShapeUses": 4,
+        "cantripsKnown": 4,
+        "preparedSpells": 21,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Archdruid"
+        ],
+        "wildShapeUses": 4,
+        "cantripsKnown": 4,
+        "preparedSpells": 22,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
     ]
   },
   {
     "id": "fighter",
     "name": "Fighter",
     "hitDie": 10,
-    "primaryAbility": ["strength", "dexterity"],
-    "savingThrows": ["strength", "constitution"],
-    "armorProficiencies": ["light", "medium", "heavy", "shields"],
-    "weaponProficiencies": ["simple", "martial"],
+    "primaryAbility": [
+      "strength",
+      "dexterity"
+    ],
+    "savingThrows": [
+      "strength",
+      "constitution"
+    ],
+    "armorProficiencies": [
+      "light",
+      "medium",
+      "heavy",
+      "shields"
+    ],
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 2, "from": ["acrobatics", "animal handling", "athletics", "history", "insight", "intimidation", "persuasion", "perception", "survival"]},
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "acrobatics",
+        "animal handling",
+        "athletics",
+        "history",
+        "insight",
+        "intimidation",
+        "persuasion",
+        "perception",
+        "survival"
+      ]
+    },
     "spellcastingAbility": null,
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Fighter Subclass",
-    "multiclassProficiencies": {"armor": ["light", "medium", "shields"], "weapons": ["martial"], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [
+        "light",
+        "medium",
+        "shields"
+      ],
+      "weapons": [
+        "martial"
+      ],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Chain Mail", "quantity": 1}, {"name": "Greatsword", "quantity": 1}, {"name": "Flail", "quantity": 1}, {"name": "Javelin", "quantity": 8}, {"name": "Dungeoneer's Pack", "quantity": 1}], "gp": 4},
-      {"id": "b", "items": [{"name": "Studded Leather Armor", "quantity": 1}, {"name": "Scimitar", "quantity": 1}, {"name": "Shortsword", "quantity": 1}, {"name": "Longbow", "quantity": 1}, {"name": "Arrow", "quantity": 20}, {"name": "Quiver", "quantity": 1}, {"name": "Dungeoneer's Pack", "quantity": 1}], "gp": 11},
-      {"id": "c", "items": [], "gp": 155}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Chain Mail",
+            "quantity": 1
+          },
+          {
+            "name": "Greatsword",
+            "quantity": 1
+          },
+          {
+            "name": "Flail",
+            "quantity": 1
+          },
+          {
+            "name": "Javelin",
+            "quantity": 8
+          },
+          {
+            "name": "Dungeoneer's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 4
+      },
+      {
+        "id": "b",
+        "items": [
+          {
+            "name": "Studded Leather Armor",
+            "quantity": 1
+          },
+          {
+            "name": "Scimitar",
+            "quantity": 1
+          },
+          {
+            "name": "Shortsword",
+            "quantity": 1
+          },
+          {
+            "name": "Longbow",
+            "quantity": 1
+          },
+          {
+            "name": "Arrow",
+            "quantity": 20
+          },
+          {
+            "name": "Quiver",
+            "quantity": 1
+          },
+          {
+            "name": "Dungeoneer's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 11
+      },
+      {
+        "id": "c",
+        "items": [],
+        "gp": 155
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Fighting Style",
+          "Second Wind",
+          "Weapon Mastery"
+        ],
+        "secondWindUses": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Action Surge (one use)",
+          "Tactical Mind"
+        ],
+        "secondWindUses": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Fighter Subclass"
+        ],
+        "secondWindUses": 2,
+        "weaponMasteryCount": 3
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "secondWindUses": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Extra Attack",
+          "Tactical Shift"
+        ],
+        "secondWindUses": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "secondWindUses": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "secondWindUses": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "secondWindUses": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Indomitable (one use)",
+          "Tactical Master"
+        ],
+        "secondWindUses": 3,
+        "weaponMasteryCount": 4
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 5
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [
+          "Two Extra Attacks"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 5
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 5
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [
+          "Indomitable (two uses)",
+          "Studied Attacks"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 5
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 5
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 5
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 6
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Action Surge (two uses)",
+          "Indomitable (three uses)"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 6
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Subclass feature"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 6
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 6
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Three Extra Attacks"
+        ],
+        "secondWindUses": 4,
+        "weaponMasteryCount": 6
+      }
     ]
   },
   {
     "id": "monk",
     "name": "Monk",
     "hitDie": 8,
-    "primaryAbility": ["dexterity", "wisdom"],
-    "savingThrows": ["strength", "dexterity"],
+    "primaryAbility": [
+      "dexterity",
+      "wisdom"
+    ],
+    "savingThrows": [
+      "strength",
+      "dexterity"
+    ],
     "armorProficiencies": [],
-    "weaponProficiencies": ["simple", "martial_light"],
+    "weaponProficiencies": [
+      "simple",
+      "martial_light"
+    ],
     "toolProficiencies": [],
-    "toolProficiencyChoices": [{"categories": ["artisans_tools", "musical_instruments"], "count": 1}],
-    "skillChoices": {"count": 2, "from": ["acrobatics", "athletics", "history", "insight", "religion", "stealth"]},
+    "toolProficiencyChoices": [
+      {
+        "categories": [
+          "artisans_tools",
+          "musical_instruments"
+        ],
+        "count": 1
+      }
+    ],
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "acrobatics",
+        "athletics",
+        "history",
+        "insight",
+        "religion",
+        "stealth"
+      ]
+    },
     "spellcastingAbility": null,
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Monk Subclass",
-    "multiclassProficiencies": {"armor": [], "weapons": [], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [],
+      "weapons": [],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Spear", "quantity": 1}, {"name": "Dagger", "quantity": 5}, {"selection": "proficient_tool", "quantity": 1}, {"name": "Explorer's Pack", "quantity": 1}], "gp": 11},
-      {"id": "b", "items": [], "gp": 50}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Spear",
+            "quantity": 1
+          },
+          {
+            "name": "Dagger",
+            "quantity": 5
+          },
+          {
+            "selection": "proficient_tool",
+            "quantity": 1
+          },
+          {
+            "name": "Explorer's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 11
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 50
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Martial Arts",
+          "Unarmored Defense"
+        ],
+        "martialArtsDie": "1d6",
+        "focusPoints": 0,
+        "unarmoredMovementBonusFeet": 0
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Monk's Focus",
+          "Unarmored Movement",
+          "Uncanny Metabolism"
+        ],
+        "martialArtsDie": "1d6",
+        "focusPoints": 2,
+        "unarmoredMovementBonusFeet": 10
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Deflect Attacks",
+          "Monk Subclass"
+        ],
+        "martialArtsDie": "1d6",
+        "focusPoints": 3,
+        "unarmoredMovementBonusFeet": 10
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement",
+          "Slow Fall"
+        ],
+        "martialArtsDie": "1d6",
+        "focusPoints": 4,
+        "unarmoredMovementBonusFeet": 10
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Extra Attack",
+          "Stunning Strike"
+        ],
+        "martialArtsDie": "1d8",
+        "focusPoints": 5,
+        "unarmoredMovementBonusFeet": 10
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Empowered Strikes",
+          "Subclass feature"
+        ],
+        "martialArtsDie": "1d8",
+        "focusPoints": 6,
+        "unarmoredMovementBonusFeet": 15
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Evasion"
+        ],
+        "martialArtsDie": "1d8",
+        "focusPoints": 7,
+        "unarmoredMovementBonusFeet": 15
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "martialArtsDie": "1d8",
+        "focusPoints": 8,
+        "unarmoredMovementBonusFeet": 15
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Acrobatic Movement"
+        ],
+        "martialArtsDie": "1d8",
+        "focusPoints": 9,
+        "unarmoredMovementBonusFeet": 15
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Heightened Focus",
+          "Self-Restoration"
+        ],
+        "martialArtsDie": "1d8",
+        "focusPoints": 10,
+        "unarmoredMovementBonusFeet": 20
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "martialArtsDie": "1d10",
+        "focusPoints": 11,
+        "unarmoredMovementBonusFeet": 20
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "martialArtsDie": "1d10",
+        "focusPoints": 12,
+        "unarmoredMovementBonusFeet": 20
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [
+          "Deflect Energy"
+        ],
+        "martialArtsDie": "1d10",
+        "focusPoints": 13,
+        "unarmoredMovementBonusFeet": 20
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Disciplined Survivor"
+        ],
+        "martialArtsDie": "1d10",
+        "focusPoints": 14,
+        "unarmoredMovementBonusFeet": 25
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Perfect Focus"
+        ],
+        "martialArtsDie": "1d10",
+        "focusPoints": 15,
+        "unarmoredMovementBonusFeet": 25
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "martialArtsDie": "1d10",
+        "focusPoints": 16,
+        "unarmoredMovementBonusFeet": 25
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Subclass feature"
+        ],
+        "martialArtsDie": "1d12",
+        "focusPoints": 17,
+        "unarmoredMovementBonusFeet": 25
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Superior Defense"
+        ],
+        "martialArtsDie": "1d12",
+        "focusPoints": 18,
+        "unarmoredMovementBonusFeet": 30
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "martialArtsDie": "1d12",
+        "focusPoints": 19,
+        "unarmoredMovementBonusFeet": 30
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Body and Mind"
+        ],
+        "martialArtsDie": "1d12",
+        "focusPoints": 20,
+        "unarmoredMovementBonusFeet": 30
+      }
     ]
   },
   {
     "id": "paladin",
     "name": "Paladin",
     "hitDie": 10,
-    "primaryAbility": ["strength", "charisma"],
-    "savingThrows": ["wisdom", "charisma"],
-    "armorProficiencies": ["light", "medium", "heavy", "shields"],
-    "weaponProficiencies": ["simple", "martial"],
+    "primaryAbility": [
+      "strength",
+      "charisma"
+    ],
+    "savingThrows": [
+      "wisdom",
+      "charisma"
+    ],
+    "armorProficiencies": [
+      "light",
+      "medium",
+      "heavy",
+      "shields"
+    ],
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 2, "from": ["athletics", "insight", "intimidation", "medicine", "persuasion", "religion"]},
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "athletics",
+        "insight",
+        "intimidation",
+        "medicine",
+        "persuasion",
+        "religion"
+      ]
+    },
     "spellcastingAbility": "charisma",
     "spellcastingType": "half",
     "subclassLevel": 3,
     "subclassFeatureName": "Paladin Subclass",
-    "multiclassProficiencies": {"armor": ["light", "medium", "shields"], "weapons": ["martial"], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [
+        "light",
+        "medium",
+        "shields"
+      ],
+      "weapons": [
+        "martial"
+      ],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Chain Mail", "quantity": 1}, {"name": "Shield", "quantity": 1}, {"name": "Longsword", "quantity": 1}, {"name": "Javelin", "quantity": 6}, {"name": "Holy Symbol", "quantity": 1}, {"name": "Priest's Pack", "quantity": 1}], "gp": 9},
-      {"id": "b", "items": [], "gp": 150}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Chain Mail",
+            "quantity": 1
+          },
+          {
+            "name": "Shield",
+            "quantity": 1
+          },
+          {
+            "name": "Longsword",
+            "quantity": 1
+          },
+          {
+            "name": "Javelin",
+            "quantity": 6
+          },
+          {
+            "name": "Holy Symbol",
+            "quantity": 1
+          },
+          {
+            "name": "Priest's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 9
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 150
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Lay On Hands",
+          "Spellcasting",
+          "Weapon Mastery"
+        ],
+        "channelDivinityUses": 0,
+        "preparedSpells": 2,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Fighting Style",
+          "Paladin's Smite"
+        ],
+        "channelDivinityUses": 0,
+        "preparedSpells": 3,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Channel Divinity",
+          "Paladin Subclass"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 4,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 5,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Extra Attack",
+          "Faithful Steed"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Aura of Protection"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Abjure Foes"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Aura of Courage"
+        ],
+        "channelDivinityUses": 2,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [
+          "Radiant Strikes"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [],
+        "channelDivinityUses": 3,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Restoring Touch"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [],
+        "channelDivinityUses": 3,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Aura Expansion"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Subclass feature"
+        ],
+        "channelDivinityUses": 3,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2
+        ],
+        "weaponMasteryCount": 2
+      }
     ]
   },
   {
     "id": "ranger",
     "name": "Ranger",
     "hitDie": 10,
-    "primaryAbility": ["dexterity", "wisdom"],
-    "savingThrows": ["strength", "dexterity"],
-    "armorProficiencies": ["light", "medium", "shields"],
-    "weaponProficiencies": ["simple", "martial"],
+    "primaryAbility": [
+      "dexterity",
+      "wisdom"
+    ],
+    "savingThrows": [
+      "strength",
+      "dexterity"
+    ],
+    "armorProficiencies": [
+      "light",
+      "medium",
+      "shields"
+    ],
+    "weaponProficiencies": [
+      "simple",
+      "martial"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 3, "from": ["animal handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"]},
+    "skillChoices": {
+      "count": 3,
+      "from": [
+        "animal handling",
+        "athletics",
+        "insight",
+        "investigation",
+        "nature",
+        "perception",
+        "stealth",
+        "survival"
+      ]
+    },
     "spellcastingAbility": "wisdom",
     "spellcastingType": "half",
     "subclassLevel": 3,
     "subclassFeatureName": "Ranger Subclass",
-    "multiclassProficiencies": {"armor": ["light", "medium", "shields"], "weapons": ["martial"], "tools": [], "skills": {"count": 1, "from": ["animal handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"]}},
+    "multiclassProficiencies": {
+      "armor": [
+        "light",
+        "medium",
+        "shields"
+      ],
+      "weapons": [
+        "martial"
+      ],
+      "tools": [],
+      "skills": {
+        "count": 1,
+        "from": [
+          "animal handling",
+          "athletics",
+          "insight",
+          "investigation",
+          "nature",
+          "perception",
+          "stealth",
+          "survival"
+        ]
+      }
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Studded Leather Armor", "quantity": 1}, {"name": "Scimitar", "quantity": 1}, {"name": "Shortsword", "quantity": 1}, {"name": "Longbow", "quantity": 1}, {"name": "Arrow", "quantity": 20}, {"name": "Quiver", "quantity": 1}, {"name": "Druidic Focus", "variant": "sprig of mistletoe", "quantity": 1}, {"name": "Explorer's Pack", "quantity": 1}], "gp": 7},
-      {"id": "b", "items": [], "gp": 150}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Studded Leather Armor",
+            "quantity": 1
+          },
+          {
+            "name": "Scimitar",
+            "quantity": 1
+          },
+          {
+            "name": "Shortsword",
+            "quantity": 1
+          },
+          {
+            "name": "Longbow",
+            "quantity": 1
+          },
+          {
+            "name": "Arrow",
+            "quantity": 20
+          },
+          {
+            "name": "Quiver",
+            "quantity": 1
+          },
+          {
+            "name": "Druidic Focus",
+            "variant": "sprig of mistletoe",
+            "quantity": 1
+          },
+          {
+            "name": "Explorer's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 7
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 150
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Spellcasting",
+          "Favored Enemy",
+          "Weapon Mastery"
+        ],
+        "favoredEnemyFreeCasts": 2,
+        "preparedSpells": 2,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Deft Explorer",
+          "Fighting Style"
+        ],
+        "favoredEnemyFreeCasts": 2,
+        "preparedSpells": 3,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ranger Subclass"
+        ],
+        "favoredEnemyFreeCasts": 2,
+        "preparedSpells": 4,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "favoredEnemyFreeCasts": 2,
+        "preparedSpells": 5,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Extra Attack"
+        ],
+        "favoredEnemyFreeCasts": 3,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Roving"
+        ],
+        "favoredEnemyFreeCasts": 3,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "favoredEnemyFreeCasts": 3,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "favoredEnemyFreeCasts": 3,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Expertise"
+        ],
+        "favoredEnemyFreeCasts": 4,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Tireless"
+        ],
+        "favoredEnemyFreeCasts": 4,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "favoredEnemyFreeCasts": 4,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "favoredEnemyFreeCasts": 4,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [
+          "Relentless Hunter"
+        ],
+        "favoredEnemyFreeCasts": 5,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Nature's Veil"
+        ],
+        "favoredEnemyFreeCasts": 5,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "favoredEnemyFreeCasts": 5,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "favoredEnemyFreeCasts": 5,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Precise Hunter"
+        ],
+        "favoredEnemyFreeCasts": 6,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Feral Senses"
+        ],
+        "favoredEnemyFreeCasts": 6,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "favoredEnemyFreeCasts": 6,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2
+        ],
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Foe Slayer"
+        ],
+        "favoredEnemyFreeCasts": 6,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2
+        ],
+        "weaponMasteryCount": 2
+      }
     ]
   },
   {
     "id": "rogue",
     "name": "Rogue",
     "hitDie": 8,
-    "primaryAbility": ["dexterity"],
-    "savingThrows": ["dexterity", "intelligence"],
-    "armorProficiencies": ["light"],
-    "weaponProficiencies": ["simple", "martial_finesse_or_light"],
-    "toolProficiencies": ["Thieves' Tools"],
-    "skillChoices": {"count": 4, "from": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "persuasion", "sleight of hand", "stealth"]},
+    "primaryAbility": [
+      "dexterity"
+    ],
+    "savingThrows": [
+      "dexterity",
+      "intelligence"
+    ],
+    "armorProficiencies": [
+      "light"
+    ],
+    "weaponProficiencies": [
+      "simple",
+      "martial_finesse_or_light"
+    ],
+    "toolProficiencies": [
+      "Thieves' Tools"
+    ],
+    "skillChoices": {
+      "count": 4,
+      "from": [
+        "acrobatics",
+        "athletics",
+        "deception",
+        "insight",
+        "intimidation",
+        "investigation",
+        "perception",
+        "persuasion",
+        "sleight of hand",
+        "stealth"
+      ]
+    },
     "spellcastingAbility": null,
     "spellcastingType": null,
     "subclassLevel": 3,
     "subclassFeatureName": "Rogue Subclass",
-    "multiclassProficiencies": {"armor": ["light"], "weapons": [], "tools": ["Thieves' Tools"], "skills": {"count": 1, "from": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "persuasion", "sleight of hand", "stealth"]}},
+    "multiclassProficiencies": {
+      "armor": [
+        "light"
+      ],
+      "weapons": [],
+      "tools": [
+        "Thieves' Tools"
+      ],
+      "skills": {
+        "count": 1,
+        "from": [
+          "acrobatics",
+          "athletics",
+          "deception",
+          "insight",
+          "intimidation",
+          "investigation",
+          "perception",
+          "persuasion",
+          "sleight of hand",
+          "stealth"
+        ]
+      }
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Leather Armor", "quantity": 1}, {"name": "Dagger", "quantity": 2}, {"name": "Shortsword", "quantity": 1}, {"name": "Shortbow", "quantity": 1}, {"name": "Arrow", "quantity": 20}, {"name": "Quiver", "quantity": 1}, {"name": "Thieves' Tools", "quantity": 1}, {"name": "Burglar's Pack", "quantity": 1}], "gp": 8},
-      {"id": "b", "items": [], "gp": 100}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Leather Armor",
+            "quantity": 1
+          },
+          {
+            "name": "Dagger",
+            "quantity": 2
+          },
+          {
+            "name": "Shortsword",
+            "quantity": 1
+          },
+          {
+            "name": "Shortbow",
+            "quantity": 1
+          },
+          {
+            "name": "Arrow",
+            "quantity": 20
+          },
+          {
+            "name": "Quiver",
+            "quantity": 1
+          },
+          {
+            "name": "Thieves' Tools",
+            "quantity": 1
+          },
+          {
+            "name": "Burglar's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 8
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 100
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Expertise",
+          "Sneak Attack",
+          "Thieves' Cant",
+          "Weapon Mastery"
+        ],
+        "sneakAttackDice": "1d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Cunning Action"
+        ],
+        "sneakAttackDice": "1d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Rogue Subclass",
+          "Steady Aim"
+        ],
+        "sneakAttackDice": "2d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sneakAttackDice": "2d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Cunning Strike",
+          "Uncanny Dodge"
+        ],
+        "sneakAttackDice": "3d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Expertise"
+        ],
+        "sneakAttackDice": "3d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Evasion",
+          "Reliable Talent"
+        ],
+        "sneakAttackDice": "4d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sneakAttackDice": "4d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "sneakAttackDice": "5d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sneakAttackDice": "5d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [
+          "Improved Cunning Strike"
+        ],
+        "sneakAttackDice": "6d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sneakAttackDice": "6d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "sneakAttackDice": "7d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Devious Strikes"
+        ],
+        "sneakAttackDice": "7d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Slippery Mind"
+        ],
+        "sneakAttackDice": "8d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sneakAttackDice": "8d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Subclass feature"
+        ],
+        "sneakAttackDice": "9d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Elusive"
+        ],
+        "sneakAttackDice": "9d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "sneakAttackDice": "10d6",
+        "weaponMasteryCount": 2
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Stroke of Luck"
+        ],
+        "sneakAttackDice": "10d6",
+        "weaponMasteryCount": 2
+      }
     ]
   },
   {
     "id": "sorcerer",
     "name": "Sorcerer",
     "hitDie": 6,
-    "primaryAbility": ["charisma"],
-    "savingThrows": ["constitution", "charisma"],
+    "primaryAbility": [
+      "charisma"
+    ],
+    "savingThrows": [
+      "constitution",
+      "charisma"
+    ],
     "armorProficiencies": [],
-    "weaponProficiencies": ["simple"],
+    "weaponProficiencies": [
+      "simple"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 2, "from": ["arcana", "deception", "insight", "intimidation", "persuasion", "religion"]},
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "arcana",
+        "deception",
+        "insight",
+        "intimidation",
+        "persuasion",
+        "religion"
+      ]
+    },
     "spellcastingAbility": "charisma",
     "spellcastingType": "full",
     "subclassLevel": 3,
     "subclassFeatureName": "Sorcerer Subclass",
-    "multiclassProficiencies": {"armor": [], "weapons": [], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [],
+      "weapons": [],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Spear", "quantity": 1}, {"name": "Dagger", "quantity": 2}, {"name": "Arcane Focus", "variant": "crystal", "quantity": 1}, {"name": "Dungeoneer's Pack", "quantity": 1}], "gp": 28},
-      {"id": "b", "items": [], "gp": 50}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Spear",
+            "quantity": 1
+          },
+          {
+            "name": "Dagger",
+            "quantity": 2
+          },
+          {
+            "name": "Arcane Focus",
+            "variant": "crystal",
+            "quantity": 1
+          },
+          {
+            "name": "Dungeoneer's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 28
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 50
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Spellcasting",
+          "Innate Sorcery"
+        ],
+        "sorceryPoints": 0,
+        "cantripsKnown": 4,
+        "preparedSpells": 2,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Font of Magic",
+          "Metamagic"
+        ],
+        "sorceryPoints": 2,
+        "cantripsKnown": 4,
+        "preparedSpells": 4,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Sorcerer Subclass"
+        ],
+        "sorceryPoints": 3,
+        "cantripsKnown": 4,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sorceryPoints": 4,
+        "cantripsKnown": 5,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Sorcerous Restoration"
+        ],
+        "sorceryPoints": 5,
+        "cantripsKnown": 5,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "sorceryPoints": 6,
+        "cantripsKnown": 5,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [
+          "Sorcery Incarnate"
+        ],
+        "sorceryPoints": 7,
+        "cantripsKnown": 5,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sorceryPoints": 8,
+        "cantripsKnown": 5,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [],
+        "sorceryPoints": 9,
+        "cantripsKnown": 5,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Metamagic"
+        ],
+        "sorceryPoints": 10,
+        "cantripsKnown": 6,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [],
+        "sorceryPoints": 11,
+        "cantripsKnown": 6,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sorceryPoints": 12,
+        "cantripsKnown": 6,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [],
+        "sorceryPoints": 13,
+        "cantripsKnown": 6,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "sorceryPoints": 14,
+        "cantripsKnown": 6,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [],
+        "sorceryPoints": 15,
+        "cantripsKnown": 6,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "sorceryPoints": 16,
+        "cantripsKnown": 6,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Metamagic"
+        ],
+        "sorceryPoints": 17,
+        "cantripsKnown": 6,
+        "preparedSpells": 19,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Subclass feature"
+        ],
+        "sorceryPoints": 18,
+        "cantripsKnown": 6,
+        "preparedSpells": 20,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "sorceryPoints": 19,
+        "cantripsKnown": 6,
+        "preparedSpells": 21,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Arcane Apotheosis"
+        ],
+        "sorceryPoints": 20,
+        "cantripsKnown": 6,
+        "preparedSpells": 22,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
     ]
   },
   {
     "id": "warlock",
     "name": "Warlock",
     "hitDie": 8,
-    "primaryAbility": ["charisma"],
-    "savingThrows": ["wisdom", "charisma"],
-    "armorProficiencies": ["light"],
-    "weaponProficiencies": ["simple"],
+    "primaryAbility": [
+      "charisma"
+    ],
+    "savingThrows": [
+      "wisdom",
+      "charisma"
+    ],
+    "armorProficiencies": [
+      "light"
+    ],
+    "weaponProficiencies": [
+      "simple"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 2, "from": ["arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"]},
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "arcana",
+        "deception",
+        "history",
+        "intimidation",
+        "investigation",
+        "nature",
+        "religion"
+      ]
+    },
     "spellcastingAbility": "charisma",
     "spellcastingType": "warlock",
     "subclassLevel": 3,
     "subclassFeatureName": "Warlock Subclass",
-    "multiclassProficiencies": {"armor": ["light"], "weapons": [], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [
+        "light"
+      ],
+      "weapons": [],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Leather Armor", "quantity": 1}, {"name": "Sickle", "quantity": 1}, {"name": "Dagger", "quantity": 2}, {"name": "Arcane Focus", "variant": "orb", "quantity": 1}, {"name": "Book", "variant": "occult lore", "quantity": 1}, {"name": "Scholar's Pack", "quantity": 1}], "gp": 15},
-      {"id": "b", "items": [], "gp": 100}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Leather Armor",
+            "quantity": 1
+          },
+          {
+            "name": "Sickle",
+            "quantity": 1
+          },
+          {
+            "name": "Dagger",
+            "quantity": 2
+          },
+          {
+            "name": "Arcane Focus",
+            "variant": "orb",
+            "quantity": 1
+          },
+          {
+            "name": "Book",
+            "variant": "occult lore",
+            "quantity": 1
+          },
+          {
+            "name": "Scholar's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 15
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 100
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Eldritch Invocations",
+          "Pact Magic"
+        ],
+        "eldritchInvocationsKnown": 1,
+        "cantripsKnown": 2,
+        "preparedSpells": 2,
+        "pactMagicSlots": 1,
+        "pactMagicSlotLevel": 1
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Magical Cunning"
+        ],
+        "eldritchInvocationsKnown": 3,
+        "cantripsKnown": 2,
+        "preparedSpells": 3,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 1
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Warlock Subclass"
+        ],
+        "eldritchInvocationsKnown": 3,
+        "cantripsKnown": 2,
+        "preparedSpells": 4,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 2
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "eldritchInvocationsKnown": 3,
+        "cantripsKnown": 3,
+        "preparedSpells": 5,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 2
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [],
+        "eldritchInvocationsKnown": 5,
+        "cantripsKnown": 3,
+        "preparedSpells": 6,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 3
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "eldritchInvocationsKnown": 5,
+        "cantripsKnown": 3,
+        "preparedSpells": 7,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 3
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [],
+        "eldritchInvocationsKnown": 6,
+        "cantripsKnown": 3,
+        "preparedSpells": 8,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 4
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "eldritchInvocationsKnown": 6,
+        "cantripsKnown": 3,
+        "preparedSpells": 9,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 4
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [
+          "Contact Patron"
+        ],
+        "eldritchInvocationsKnown": 7,
+        "cantripsKnown": 3,
+        "preparedSpells": 10,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "eldritchInvocationsKnown": 7,
+        "cantripsKnown": 4,
+        "preparedSpells": 10,
+        "pactMagicSlots": 2,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [
+          "Mystic Arcanum (level 6 spell)"
+        ],
+        "eldritchInvocationsKnown": 7,
+        "cantripsKnown": 4,
+        "preparedSpells": 11,
+        "pactMagicSlots": 3,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "eldritchInvocationsKnown": 8,
+        "cantripsKnown": 4,
+        "preparedSpells": 11,
+        "pactMagicSlots": 3,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [
+          "Mystic Arcanum (level 7 spell)"
+        ],
+        "eldritchInvocationsKnown": 8,
+        "cantripsKnown": 4,
+        "preparedSpells": 12,
+        "pactMagicSlots": 3,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "eldritchInvocationsKnown": 8,
+        "cantripsKnown": 4,
+        "preparedSpells": 12,
+        "pactMagicSlots": 3,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [
+          "Mystic Arcanum (level 8 spell)"
+        ],
+        "eldritchInvocationsKnown": 9,
+        "cantripsKnown": 4,
+        "preparedSpells": 13,
+        "pactMagicSlots": 3,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "eldritchInvocationsKnown": 9,
+        "cantripsKnown": 4,
+        "preparedSpells": 13,
+        "pactMagicSlots": 3,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [
+          "Mystic Arcanum (level 9 spell)"
+        ],
+        "eldritchInvocationsKnown": 9,
+        "cantripsKnown": 4,
+        "preparedSpells": 14,
+        "pactMagicSlots": 4,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [],
+        "eldritchInvocationsKnown": 10,
+        "cantripsKnown": 4,
+        "preparedSpells": 14,
+        "pactMagicSlots": 4,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "eldritchInvocationsKnown": 10,
+        "cantripsKnown": 4,
+        "preparedSpells": 15,
+        "pactMagicSlots": 4,
+        "pactMagicSlotLevel": 5
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Eldritch Master"
+        ],
+        "eldritchInvocationsKnown": 10,
+        "cantripsKnown": 4,
+        "preparedSpells": 15,
+        "pactMagicSlots": 4,
+        "pactMagicSlotLevel": 5
+      }
     ]
   },
   {
     "id": "wizard",
     "name": "Wizard",
     "hitDie": 6,
-    "primaryAbility": ["intelligence"],
-    "savingThrows": ["intelligence", "wisdom"],
+    "primaryAbility": [
+      "intelligence"
+    ],
+    "savingThrows": [
+      "intelligence",
+      "wisdom"
+    ],
     "armorProficiencies": [],
-    "weaponProficiencies": ["simple"],
+    "weaponProficiencies": [
+      "simple"
+    ],
     "toolProficiencies": [],
-    "skillChoices": {"count": 2, "from": ["arcana", "history", "insight", "investigation", "medicine", "nature", "religion"]},
+    "skillChoices": {
+      "count": 2,
+      "from": [
+        "arcana",
+        "history",
+        "insight",
+        "investigation",
+        "medicine",
+        "nature",
+        "religion"
+      ]
+    },
     "spellcastingAbility": "intelligence",
     "spellcastingType": "full",
     "subclassLevel": 3,
     "subclassFeatureName": "Wizard Subclass",
-    "multiclassProficiencies": {"armor": [], "weapons": [], "tools": [], "skills": null},
+    "multiclassProficiencies": {
+      "armor": [],
+      "weapons": [],
+      "tools": [],
+      "skills": null
+    },
     "equipmentChoices": [
-      {"id": "a", "items": [{"name": "Dagger", "quantity": 2}, {"name": "Arcane Focus", "variant": "quarterstaff", "quantity": 1}, {"name": "Robe", "quantity": 1}, {"name": "Spellbook", "quantity": 1}, {"name": "Scholar's Pack", "quantity": 1}], "gp": 5},
-      {"id": "b", "items": [], "gp": 55}
+      {
+        "id": "a",
+        "items": [
+          {
+            "name": "Dagger",
+            "quantity": 2
+          },
+          {
+            "name": "Arcane Focus",
+            "variant": "quarterstaff",
+            "quantity": 1
+          },
+          {
+            "name": "Robe",
+            "quantity": 1
+          },
+          {
+            "name": "Spellbook",
+            "quantity": 1
+          },
+          {
+            "name": "Scholar's Pack",
+            "quantity": 1
+          }
+        ],
+        "gp": 5
+      },
+      {
+        "id": "b",
+        "items": [],
+        "gp": 55
+      }
+    ],
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "features": [
+          "Spellcasting",
+          "Ritual Adept",
+          "Arcane Recovery"
+        ],
+        "cantripsKnown": 3,
+        "preparedSpells": 4,
+        "spellSlots": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "features": [
+          "Scholar"
+        ],
+        "cantripsKnown": 3,
+        "preparedSpells": 5,
+        "spellSlots": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "features": [
+          "Wizard Subclass"
+        ],
+        "cantripsKnown": 3,
+        "preparedSpells": 6,
+        "spellSlots": [
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "cantripsKnown": 4,
+        "preparedSpells": 7,
+        "spellSlots": [
+          4,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "features": [
+          "Memorize Spell"
+        ],
+        "cantripsKnown": 4,
+        "preparedSpells": 9,
+        "spellSlots": [
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "features": [
+          "Subclass feature"
+        ],
+        "cantripsKnown": 4,
+        "preparedSpells": 10,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "features": [],
+        "cantripsKnown": 4,
+        "preparedSpells": 11,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "cantripsKnown": 4,
+        "preparedSpells": 12,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "features": [],
+        "cantripsKnown": 4,
+        "preparedSpells": 14,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "features": [
+          "Subclass feature"
+        ],
+        "cantripsKnown": 5,
+        "preparedSpells": 15,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "features": [],
+        "cantripsKnown": 5,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "cantripsKnown": 5,
+        "preparedSpells": 16,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "features": [],
+        "cantripsKnown": 5,
+        "preparedSpells": 17,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "features": [
+          "Subclass feature"
+        ],
+        "cantripsKnown": 5,
+        "preparedSpells": 18,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "features": [],
+        "cantripsKnown": 5,
+        "preparedSpells": 19,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "features": [
+          "Ability Score Improvement"
+        ],
+        "cantripsKnown": 5,
+        "preparedSpells": 21,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "features": [],
+        "cantripsKnown": 5,
+        "preparedSpells": 22,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "features": [
+          "Spell Mastery"
+        ],
+        "cantripsKnown": 5,
+        "preparedSpells": 23,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "features": [
+          "Epic Boon"
+        ],
+        "cantripsKnown": 5,
+        "preparedSpells": 24,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "features": [
+          "Signature Spells"
+        ],
+        "cantripsKnown": 5,
+        "preparedSpells": 25,
+        "spellSlots": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
     ]
   }
 ]

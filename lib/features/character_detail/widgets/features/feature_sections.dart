@@ -81,7 +81,7 @@ class RacialTraitsSection extends ConsumerWidget {
             final trait = allTraits[index];
             final isDisabled = disabledFeatures.contains(trait);
             final desc = traitDescriptions[trait];
-            final usageView = FeatureUsageEngine.viewForRef(
+            final usageViews = FeatureUsageEngine.viewsForRef(
               catalog: data.featureUsageCatalog,
               character: character,
               ref: data.featureUsageCatalog.raceTrait(trait),
@@ -117,7 +117,7 @@ class RacialTraitsSection extends ConsumerWidget {
                         color: scheme.onSurfaceVariant,
                       ),
                     ),
-                    if (usageView != null)
+                    for (final usageView in usageViews)
                       FeatureUsageControls(
                         view: usageView,
                         characterId: characterId,
@@ -174,7 +174,7 @@ class RacialTraitsSection extends ConsumerWidget {
                       data: data,
                       i18n: i18n,
                     ),
-                    if (usageView != null)
+                    for (final usageView in usageViews)
                       FeatureUsageControls(
                         view: usageView,
                         characterId: characterId,
@@ -396,7 +396,7 @@ class FeatsSection extends ConsumerWidget {
         featName: f.name,
         level: character.totalLevel,
       );
-      final usageView = FeatureUsageEngine.viewForRef(
+      final usageViews = FeatureUsageEngine.viewsForRef(
         catalog: data.featureUsageCatalog,
         character: character,
         ref: data.featureUsageCatalog.feat(f.name),
@@ -460,7 +460,7 @@ class FeatsSection extends ConsumerWidget {
               data: data,
               i18n: i18n,
             ),
-            if (usageView != null)
+            for (final usageView in usageViews)
               FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,
@@ -615,7 +615,7 @@ class ExtraFeaturesSection extends ConsumerWidget {
             f.name,
           ) ??
           data.featureUsageCatalog.raceTrait(f.name);
-      final usageView = FeatureUsageEngine.viewForRef(
+      final usageViews = FeatureUsageEngine.viewsForRef(
         catalog: data.featureUsageCatalog,
         character: character,
         ref: usageRef,
@@ -700,7 +700,7 @@ class ExtraFeaturesSection extends ConsumerWidget {
               data: data,
               i18n: i18n,
             ),
-            if (usageView != null)
+            for (final usageView in usageViews)
               FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,
@@ -818,7 +818,7 @@ class ClassFeaturesSection extends ConsumerWidget {
         featureName: f.name,
         level: classLevel,
       );
-      final usageView = FeatureUsageEngine.viewForRef(
+      final usageViews = FeatureUsageEngine.viewsForRef(
         catalog: data.featureUsageCatalog,
         character: character,
         ref: data.featureUsageCatalog.classFeature(className, f.name),
@@ -862,10 +862,10 @@ class ClassFeaturesSection extends ConsumerWidget {
                 l10n.charCardLevel(f.level),
                 style: Theme.of(context).textTheme.bodySmall,
               ),
-              if (usageView != null && !usageView.isUnlimited) ...[
+              if (usageViews.length == 1 && !usageViews.first.isUnlimited) ...[
                 Text(
                   '${l10n.inventoryDetailUses}: '
-                  '${usageView.current}/${usageView.max}',
+                  '${usageViews.first.current}/${usageViews.first.max}',
                   style: Theme.of(
                     context,
                   ).textTheme.bodySmall?.copyWith(color: scheme.primary),
@@ -883,7 +883,7 @@ class ClassFeaturesSection extends ConsumerWidget {
               data: data,
               i18n: i18n,
             ),
-            if (usageView != null)
+            for (final usageView in usageViews)
               FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,
@@ -981,7 +981,7 @@ class SubclassFeaturesSection extends ConsumerWidget {
         featureName: f.name,
         level: classLevel,
       );
-      final usageView = FeatureUsageEngine.viewForRef(
+      final usageViews = FeatureUsageEngine.viewsForRef(
         catalog: data.featureUsageCatalog,
         character: character,
         ref: data.featureUsageCatalog.subclassFeature(
@@ -1036,10 +1036,10 @@ class SubclassFeaturesSection extends ConsumerWidget {
                 l10n.charCardLevel(f.level),
                 style: Theme.of(context).textTheme.bodySmall,
               ),
-              if (usageView != null && !usageView.isUnlimited) ...[
+              if (usageViews.length == 1 && !usageViews.first.isUnlimited) ...[
                 Text(
                   '${l10n.inventoryDetailUses}: '
-                  '${usageView.current}/${usageView.max}',
+                  '${usageViews.first.current}/${usageViews.first.max}',
                   style: Theme.of(
                     context,
                   ).textTheme.bodySmall?.copyWith(color: scheme.primary),
@@ -1057,7 +1057,7 @@ class SubclassFeaturesSection extends ConsumerWidget {
               data: data,
               i18n: i18n,
             ),
-            if (usageView != null)
+            for (final usageView in usageViews)
               FeatureUsageControls(
                 view: usageView,
                 characterId: characterId,

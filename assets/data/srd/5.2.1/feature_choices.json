@@ -1,46 +1,1941 @@
 {
   "optionSources": {
     "magic_initiate_spell_lists": [
-      {"id": "cleric", "name": "Cleric", "description": "Choose cantrips and a level 1 spell from the Cleric list."},
-      {"id": "druid", "name": "Druid", "description": "Choose cantrips and a level 1 spell from the Druid list."},
-      {"id": "wizard", "name": "Wizard", "description": "Choose cantrips and a level 1 spell from the Wizard list."}
+      {
+        "id": "cleric",
+        "name": "Cleric",
+        "description": "Choose two Cleric cantrips and one level 1 Cleric spell."
+      },
+      {
+        "id": "druid",
+        "name": "Druid",
+        "description": "Choose two Druid cantrips and one level 1 Druid spell."
+      },
+      {
+        "id": "wizard",
+        "name": "Wizard",
+        "description": "Choose two Wizard cantrips and one level 1 Wizard spell."
+      }
     ],
     "magic_initiate_abilities": [
-      {"id": "intelligence", "name": "Intelligence", "description": "Use Intelligence as the spellcasting ability for this feat."},
-      {"id": "wisdom", "name": "Wisdom", "description": "Use Wisdom as the spellcasting ability for this feat."},
-      {"id": "charisma", "name": "Charisma", "description": "Use Charisma as the spellcasting ability for this feat."}
+      {
+        "id": "intelligence",
+        "name": "Intelligence",
+        "description": "Use Intelligence as the spellcasting ability for these spells."
+      },
+      {
+        "id": "wisdom",
+        "name": "Wisdom",
+        "description": "Use Wisdom as the spellcasting ability for these spells."
+      },
+      {
+        "id": "charisma",
+        "name": "Charisma",
+        "description": "Use Charisma as the spellcasting ability for these spells."
+      }
+    ],
+    "fighting_styles_2024": [
+      {
+        "id": "archery",
+        "name": "Archery",
+        "description": "Gain a +2 bonus to attack rolls with Ranged weapons."
+      },
+      {
+        "id": "defense",
+        "name": "Defense",
+        "description": "Gain +1 AC while wearing Light, Medium, or Heavy armor."
+      },
+      {
+        "id": "great_weapon_fighting",
+        "name": "Great Weapon Fighting",
+        "description": "Treat damage die results of 1 or 2 as 3 with a Two-Handed or Versatile Melee weapon held in both hands."
+      },
+      {
+        "id": "two_weapon_fighting",
+        "name": "Two-Weapon Fighting",
+        "description": "Add your ability modifier to the extra attack's damage when using the Light property."
+      }
+    ],
+    "paladin_fighting_styles_2024": [
+      {
+        "id": "archery",
+        "name": "Archery",
+        "description": "Gain a +2 bonus to attack rolls with Ranged weapons."
+      },
+      {
+        "id": "defense",
+        "name": "Defense",
+        "description": "Gain +1 AC while wearing Light, Medium, or Heavy armor."
+      },
+      {
+        "id": "great_weapon_fighting",
+        "name": "Great Weapon Fighting",
+        "description": "Treat damage die results of 1 or 2 as 3 with a Two-Handed or Versatile Melee weapon held in both hands."
+      },
+      {
+        "id": "two_weapon_fighting",
+        "name": "Two-Weapon Fighting",
+        "description": "Add your ability modifier to the extra attack's damage when using the Light property."
+      },
+      {
+        "id": "blessed_warrior",
+        "name": "Blessed Warrior",
+        "description": "Learn two Cleric cantrips that count as Paladin spells for you."
+      }
+    ],
+    "ranger_fighting_styles_2024": [
+      {
+        "id": "archery",
+        "name": "Archery",
+        "description": "Gain a +2 bonus to attack rolls with Ranged weapons."
+      },
+      {
+        "id": "defense",
+        "name": "Defense",
+        "description": "Gain +1 AC while wearing Light, Medium, or Heavy armor."
+      },
+      {
+        "id": "great_weapon_fighting",
+        "name": "Great Weapon Fighting",
+        "description": "Treat damage die results of 1 or 2 as 3 with a Two-Handed or Versatile Melee weapon held in both hands."
+      },
+      {
+        "id": "two_weapon_fighting",
+        "name": "Two-Weapon Fighting",
+        "description": "Add your ability modifier to the extra attack's damage when using the Light property."
+      },
+      {
+        "id": "druidic_warrior",
+        "name": "Druidic Warrior",
+        "description": "Learn two Druid cantrips that count as Ranger spells for you."
+      }
+    ],
+    "divine_orders": [
+      {
+        "id": "protector",
+        "name": "Protector",
+        "description": "Gain Martial weapon proficiency and Heavy armor training."
+      },
+      {
+        "id": "thaumaturge",
+        "name": "Thaumaturge",
+        "description": "Learn one extra Cleric cantrip and add your Wisdom modifier (minimum +1) to Arcana or Religion checks."
+      }
+    ],
+    "primal_orders": [
+      {
+        "id": "magician",
+        "name": "Magician",
+        "description": "Learn one extra Druid cantrip and add your Wisdom modifier (minimum +1) to Arcana or Nature checks."
+      },
+      {
+        "id": "warden",
+        "name": "Warden",
+        "description": "Gain Martial weapon proficiency and Medium armor training."
+      }
+    ],
+    "cleric_blessed_strikes": [
+      {
+        "id": "divine_strike",
+        "name": "Divine Strike",
+        "description": "Once per turn, add 1d8 Radiant or Necrotic damage to a weapon hit; 2d8 from Cleric level 14."
+      },
+      {
+        "id": "potent_spellcasting",
+        "name": "Potent Spellcasting",
+        "description": "Add your Wisdom modifier to Cleric cantrip damage; from level 14, a damaging cantrip can also grant Temporary HP."
+      }
+    ],
+    "druid_elemental_fury": [
+      {
+        "id": "potent_spellcasting",
+        "name": "Potent Spellcasting",
+        "description": "Add your Wisdom modifier to Druid cantrip damage; gain extended cantrip range at Druid level 15."
+      },
+      {
+        "id": "primal_strike",
+        "name": "Primal Strike",
+        "description": "Once per turn, add 1d8 Cold, Fire, Lightning, or Thunder damage to a weapon or Beast-form hit; 2d8 at level 15."
+      }
+    ],
+    "barbarian_primal_skills": [
+      {
+        "id": "animal_handling",
+        "name": "Animal Handling"
+      },
+      {
+        "id": "athletics",
+        "name": "Athletics"
+      },
+      {
+        "id": "intimidation",
+        "name": "Intimidation"
+      },
+      {
+        "id": "nature",
+        "name": "Nature"
+      },
+      {
+        "id": "perception",
+        "name": "Perception"
+      },
+      {
+        "id": "survival",
+        "name": "Survival"
+      }
+    ],
+    "wizard_scholar_skills": [
+      {
+        "id": "arcana",
+        "name": "Arcana"
+      },
+      {
+        "id": "history",
+        "name": "History"
+      },
+      {
+        "id": "investigation",
+        "name": "Investigation"
+      },
+      {
+        "id": "medicine",
+        "name": "Medicine"
+      },
+      {
+        "id": "nature",
+        "name": "Nature"
+      },
+      {
+        "id": "religion",
+        "name": "Religion"
+      }
+    ],
+    "metamagic_2024": [
+      {
+        "id": "careful_spell",
+        "name": "Careful Spell",
+        "description": "Spend 1 Sorcery Point. Choose up to your Charisma modifier (minimum one) creatures; they automatically succeed on the spell's save and take no damage if success would normally halve it."
+      },
+      {
+        "id": "distant_spell",
+        "name": "Distant Spell",
+        "description": "Spend 1 Sorcery Point to double a spell's range of at least 5 feet, or make its Touch range 30 feet."
+      },
+      {
+        "id": "empowered_spell",
+        "name": "Empowered Spell",
+        "description": "Spend 1 Sorcery Point to reroll damage dice up to your Charisma modifier (minimum one); use the new rolls. Can combine with another Metamagic."
+      },
+      {
+        "id": "extended_spell",
+        "name": "Extended Spell",
+        "description": "Spend 1 Sorcery Point to double duration up to 24 hours and gain Advantage on saves to maintain Concentration on the spell."
+      },
+      {
+        "id": "heightened_spell",
+        "name": "Heightened Spell",
+        "description": "Spend 2 Sorcery Points to give a target Disadvantage on saving throws against the spell."
+      },
+      {
+        "id": "quickened_spell",
+        "name": "Quickened Spell",
+        "description": "Spend 2 Sorcery Points to cast an action spell as a Bonus Action. You cannot use this after casting a level 1+ spell on the same turn or cast one afterward."
+      },
+      {
+        "id": "seeking_spell",
+        "name": "Seeking Spell",
+        "description": "Spend 1 Sorcery Point to reroll a missed spell attack; use the new roll. Can combine with another Metamagic."
+      },
+      {
+        "id": "subtle_spell",
+        "name": "Subtle Spell",
+        "description": "Spend 1 Sorcery Point to cast without Verbal, Somatic, or unconsumed, cost-free Material components."
+      },
+      {
+        "id": "transmuted_spell",
+        "name": "Transmuted Spell",
+        "description": "Spend 1 Sorcery Point to change Acid, Cold, Fire, Lightning, Poison, or Thunder spell damage to another type from that list."
+      },
+      {
+        "id": "twinned_spell",
+        "name": "Twinned Spell",
+        "description": "Spend 1 Sorcery Point to increase by one the effective level of a spell that can target another creature when upcast."
+      }
+    ],
+    "land_terrains": [
+      {
+        "id": "arid",
+        "name": "Arid"
+      },
+      {
+        "id": "polar",
+        "name": "Polar"
+      },
+      {
+        "id": "temperate",
+        "name": "Temperate"
+      },
+      {
+        "id": "tropical",
+        "name": "Tropical"
+      }
+    ],
+    "hunter_prey": [
+      {
+        "id": "colossus_slayer",
+        "name": "Colossus Slayer",
+        "description": "Once per turn, a weapon hit against a creature missing HP deals +1d8 damage."
+      },
+      {
+        "id": "horde_breaker",
+        "name": "Horde Breaker",
+        "description": "Once on your turn, attack a different nearby creature with your weapon."
+      }
+    ],
+    "hunter_defensive_tactics": [
+      {
+        "id": "escape_the_horde",
+        "name": "Escape the Horde",
+        "description": "Opportunity Attacks against you have Disadvantage."
+      },
+      {
+        "id": "multiattack_defense",
+        "name": "Multiattack Defense",
+        "description": "After a creature hits you, its other attack rolls against you this turn have Disadvantage."
+      }
+    ],
+    "draconic_damage_types": [
+      {
+        "id": "acid",
+        "name": "Acid"
+      },
+      {
+        "id": "cold",
+        "name": "Cold"
+      },
+      {
+        "id": "fire",
+        "name": "Fire"
+      },
+      {
+        "id": "lightning",
+        "name": "Lightning"
+      },
+      {
+        "id": "poison",
+        "name": "Poison"
+      }
+    ],
+    "fiend_resistances": [
+      {
+        "id": "acid",
+        "name": "Acid"
+      },
+      {
+        "id": "bludgeoning",
+        "name": "Bludgeoning"
+      },
+      {
+        "id": "cold",
+        "name": "Cold"
+      },
+      {
+        "id": "fire",
+        "name": "Fire"
+      },
+      {
+        "id": "lightning",
+        "name": "Lightning"
+      },
+      {
+        "id": "necrotic",
+        "name": "Necrotic"
+      },
+      {
+        "id": "piercing",
+        "name": "Piercing"
+      },
+      {
+        "id": "poison",
+        "name": "Poison"
+      },
+      {
+        "id": "psychic",
+        "name": "Psychic"
+      },
+      {
+        "id": "radiant",
+        "name": "Radiant"
+      },
+      {
+        "id": "slashing",
+        "name": "Slashing"
+      },
+      {
+        "id": "thunder",
+        "name": "Thunder"
+      }
+    ],
+    "dragonborn_ancestries": [
+      {
+        "id": "black",
+        "name": "Black",
+        "description": "Acid"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "description": "Lightning"
+      },
+      {
+        "id": "brass",
+        "name": "Brass",
+        "description": "Fire"
+      },
+      {
+        "id": "bronze",
+        "name": "Bronze",
+        "description": "Lightning"
+      },
+      {
+        "id": "copper",
+        "name": "Copper",
+        "description": "Acid"
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "description": "Fire"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "description": "Poison"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "description": "Fire"
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "description": "Cold"
+      },
+      {
+        "id": "white",
+        "name": "White",
+        "description": "Cold"
+      }
+    ],
+    "elven_lineages": [
+      {
+        "id": "drow",
+        "name": "Drow",
+        "description": "Dancing Lights; Faerie Fire at level 3 and Darkness at level 5."
+      },
+      {
+        "id": "high_elf",
+        "name": "High Elf",
+        "description": "Prestidigitation; Detect Magic at level 3 and Misty Step at level 5."
+      },
+      {
+        "id": "wood_elf",
+        "name": "Wood Elf",
+        "description": "Speed increase and Druidcraft; Longstrider at level 3 and Pass without Trace at level 5."
+      }
+    ],
+    "gnomish_lineages": [
+      {
+        "id": "forest_gnome",
+        "name": "Forest Gnome",
+        "description": "Minor Illusion and Speak with Animals."
+      },
+      {
+        "id": "rock_gnome",
+        "name": "Rock Gnome",
+        "description": "Mending, Prestidigitation, and clockwork devices."
+      }
+    ],
+    "giant_ancestries": [
+      {
+        "id": "cloud",
+        "name": "Cloud's Jaunt",
+        "description": "Teleport up to 30 feet as a Bonus Action."
+      },
+      {
+        "id": "fire",
+        "name": "Fire's Burn",
+        "description": "Deal an extra 1d10 Fire damage on a hit."
+      },
+      {
+        "id": "frost",
+        "name": "Frost's Chill",
+        "description": "Deal an extra 1d6 Cold damage and reduce Speed on a hit."
+      },
+      {
+        "id": "hill",
+        "name": "Hill's Tumble",
+        "description": "Knock a Large or smaller target Prone on a hit."
+      },
+      {
+        "id": "stone",
+        "name": "Stone's Endurance",
+        "description": "Reduce damage you take by 1d12 + Constitution modifier as a Reaction."
+      },
+      {
+        "id": "storm",
+        "name": "Storm's Thunder",
+        "description": "Deal 1d8 Thunder damage to a creature that damages you."
+      }
+    ],
+    "tiefling_legacies": [
+      {
+        "id": "abyssal",
+        "name": "Abyssal",
+        "description": "Poison resistance, Poison Spray; Ray of Sickness at level 3 and Hold Person at level 5."
+      },
+      {
+        "id": "chthonic",
+        "name": "Chthonic",
+        "description": "Necrotic resistance, Chill Touch; False Life at level 3 and Ray of Enfeeblement at level 5."
+      },
+      {
+        "id": "infernal",
+        "name": "Infernal",
+        "description": "Fire resistance, Fire Bolt; Hellish Rebuke at level 3 and Darkness at level 5."
+      }
+    ],
+    "keen_senses_skills": [
+      {
+        "id": "insight",
+        "name": "Insight"
+      },
+      {
+        "id": "perception",
+        "name": "Perception"
+      },
+      {
+        "id": "survival",
+        "name": "Survival"
+      }
+    ],
+    "weapon_mastery_melee_2024": [
+      {
+        "id": "club",
+        "name": "Club",
+        "description": "Simple Melee weapon; Slow mastery."
+      },
+      {
+        "id": "dagger",
+        "name": "Dagger",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "greatclub",
+        "name": "Greatclub",
+        "description": "Simple Melee weapon; Push mastery."
+      },
+      {
+        "id": "handaxe",
+        "name": "Handaxe",
+        "description": "Simple Melee weapon; Vex mastery."
+      },
+      {
+        "id": "javelin",
+        "name": "Javelin",
+        "description": "Simple Melee weapon; Slow mastery."
+      },
+      {
+        "id": "light_hammer",
+        "name": "Light Hammer",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "mace",
+        "name": "Mace",
+        "description": "Simple Melee weapon; Sap mastery."
+      },
+      {
+        "id": "quarterstaff",
+        "name": "Quarterstaff",
+        "description": "Simple Melee weapon; Topple mastery."
+      },
+      {
+        "id": "sickle",
+        "name": "Sickle",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "spear",
+        "name": "Spear",
+        "description": "Simple Melee weapon; Sap mastery."
+      },
+      {
+        "id": "battleaxe",
+        "name": "Battleaxe",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "flail",
+        "name": "Flail",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "glaive",
+        "name": "Glaive",
+        "description": "Martial Melee weapon; Graze mastery."
+      },
+      {
+        "id": "greataxe",
+        "name": "Greataxe",
+        "description": "Martial Melee weapon; Cleave mastery."
+      },
+      {
+        "id": "greatsword",
+        "name": "Greatsword",
+        "description": "Martial Melee weapon; Graze mastery."
+      },
+      {
+        "id": "halberd",
+        "name": "Halberd",
+        "description": "Martial Melee weapon; Cleave mastery."
+      },
+      {
+        "id": "lance",
+        "name": "Lance",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "longsword",
+        "name": "Longsword",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "maul",
+        "name": "Maul",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "morningstar",
+        "name": "Morningstar",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "pike",
+        "name": "Pike",
+        "description": "Martial Melee weapon; Push mastery."
+      },
+      {
+        "id": "rapier",
+        "name": "Rapier",
+        "description": "Martial Melee weapon; Vex mastery."
+      },
+      {
+        "id": "scimitar",
+        "name": "Scimitar",
+        "description": "Martial Melee weapon; Nick mastery."
+      },
+      {
+        "id": "shortsword",
+        "name": "Shortsword",
+        "description": "Martial Melee weapon; Vex mastery."
+      },
+      {
+        "id": "trident",
+        "name": "Trident",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "warhammer",
+        "name": "Warhammer",
+        "description": "Martial Melee weapon; Push mastery."
+      },
+      {
+        "id": "war_pick",
+        "name": "War Pick",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "whip",
+        "name": "Whip",
+        "description": "Martial Melee weapon; Slow mastery."
+      }
+    ],
+    "weapon_mastery_proficient_2024": [
+      {
+        "id": "club",
+        "name": "Club",
+        "description": "Simple Melee weapon; Slow mastery."
+      },
+      {
+        "id": "dagger",
+        "name": "Dagger",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "greatclub",
+        "name": "Greatclub",
+        "description": "Simple Melee weapon; Push mastery."
+      },
+      {
+        "id": "handaxe",
+        "name": "Handaxe",
+        "description": "Simple Melee weapon; Vex mastery."
+      },
+      {
+        "id": "javelin",
+        "name": "Javelin",
+        "description": "Simple Melee weapon; Slow mastery."
+      },
+      {
+        "id": "light_hammer",
+        "name": "Light Hammer",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "mace",
+        "name": "Mace",
+        "description": "Simple Melee weapon; Sap mastery."
+      },
+      {
+        "id": "quarterstaff",
+        "name": "Quarterstaff",
+        "description": "Simple Melee weapon; Topple mastery."
+      },
+      {
+        "id": "sickle",
+        "name": "Sickle",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "spear",
+        "name": "Spear",
+        "description": "Simple Melee weapon; Sap mastery."
+      },
+      {
+        "id": "dart",
+        "name": "Dart",
+        "description": "Simple Ranged weapon; Vex mastery."
+      },
+      {
+        "id": "light_crossbow",
+        "name": "Light Crossbow",
+        "description": "Simple Ranged weapon; Slow mastery."
+      },
+      {
+        "id": "shortbow",
+        "name": "Shortbow",
+        "description": "Simple Ranged weapon; Vex mastery."
+      },
+      {
+        "id": "sling",
+        "name": "Sling",
+        "description": "Simple Ranged weapon; Slow mastery."
+      },
+      {
+        "id": "battleaxe",
+        "name": "Battleaxe",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "flail",
+        "name": "Flail",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "glaive",
+        "name": "Glaive",
+        "description": "Martial Melee weapon; Graze mastery."
+      },
+      {
+        "id": "greataxe",
+        "name": "Greataxe",
+        "description": "Martial Melee weapon; Cleave mastery."
+      },
+      {
+        "id": "greatsword",
+        "name": "Greatsword",
+        "description": "Martial Melee weapon; Graze mastery."
+      },
+      {
+        "id": "halberd",
+        "name": "Halberd",
+        "description": "Martial Melee weapon; Cleave mastery."
+      },
+      {
+        "id": "lance",
+        "name": "Lance",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "longsword",
+        "name": "Longsword",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "maul",
+        "name": "Maul",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "morningstar",
+        "name": "Morningstar",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "pike",
+        "name": "Pike",
+        "description": "Martial Melee weapon; Push mastery."
+      },
+      {
+        "id": "rapier",
+        "name": "Rapier",
+        "description": "Martial Melee weapon; Vex mastery."
+      },
+      {
+        "id": "scimitar",
+        "name": "Scimitar",
+        "description": "Martial Melee weapon; Nick mastery."
+      },
+      {
+        "id": "shortsword",
+        "name": "Shortsword",
+        "description": "Martial Melee weapon; Vex mastery."
+      },
+      {
+        "id": "trident",
+        "name": "Trident",
+        "description": "Martial Melee weapon; Topple mastery."
+      },
+      {
+        "id": "warhammer",
+        "name": "Warhammer",
+        "description": "Martial Melee weapon; Push mastery."
+      },
+      {
+        "id": "war_pick",
+        "name": "War Pick",
+        "description": "Martial Melee weapon; Sap mastery."
+      },
+      {
+        "id": "whip",
+        "name": "Whip",
+        "description": "Martial Melee weapon; Slow mastery."
+      },
+      {
+        "id": "blowgun",
+        "name": "Blowgun",
+        "description": "Martial Ranged weapon; Vex mastery."
+      },
+      {
+        "id": "hand_crossbow",
+        "name": "Hand Crossbow",
+        "description": "Martial Ranged weapon; Vex mastery."
+      },
+      {
+        "id": "heavy_crossbow",
+        "name": "Heavy Crossbow",
+        "description": "Martial Ranged weapon; Push mastery."
+      },
+      {
+        "id": "longbow",
+        "name": "Longbow",
+        "description": "Martial Ranged weapon; Slow mastery."
+      },
+      {
+        "id": "musket",
+        "name": "Musket",
+        "description": "Martial Ranged weapon; Slow mastery."
+      },
+      {
+        "id": "pistol",
+        "name": "Pistol",
+        "description": "Martial Ranged weapon; Vex mastery."
+      }
+    ],
+    "weapon_mastery_rogue_2024": [
+      {
+        "id": "club",
+        "name": "Club",
+        "description": "Simple Melee weapon; Slow mastery."
+      },
+      {
+        "id": "dagger",
+        "name": "Dagger",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "greatclub",
+        "name": "Greatclub",
+        "description": "Simple Melee weapon; Push mastery."
+      },
+      {
+        "id": "handaxe",
+        "name": "Handaxe",
+        "description": "Simple Melee weapon; Vex mastery."
+      },
+      {
+        "id": "javelin",
+        "name": "Javelin",
+        "description": "Simple Melee weapon; Slow mastery."
+      },
+      {
+        "id": "light_hammer",
+        "name": "Light Hammer",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "mace",
+        "name": "Mace",
+        "description": "Simple Melee weapon; Sap mastery."
+      },
+      {
+        "id": "quarterstaff",
+        "name": "Quarterstaff",
+        "description": "Simple Melee weapon; Topple mastery."
+      },
+      {
+        "id": "sickle",
+        "name": "Sickle",
+        "description": "Simple Melee weapon; Nick mastery."
+      },
+      {
+        "id": "spear",
+        "name": "Spear",
+        "description": "Simple Melee weapon; Sap mastery."
+      },
+      {
+        "id": "dart",
+        "name": "Dart",
+        "description": "Simple Ranged weapon; Vex mastery."
+      },
+      {
+        "id": "light_crossbow",
+        "name": "Light Crossbow",
+        "description": "Simple Ranged weapon; Slow mastery."
+      },
+      {
+        "id": "shortbow",
+        "name": "Shortbow",
+        "description": "Simple Ranged weapon; Vex mastery."
+      },
+      {
+        "id": "sling",
+        "name": "Sling",
+        "description": "Simple Ranged weapon; Slow mastery."
+      },
+      {
+        "id": "rapier",
+        "name": "Rapier",
+        "description": "Martial Melee weapon; Vex mastery."
+      },
+      {
+        "id": "scimitar",
+        "name": "Scimitar",
+        "description": "Martial Melee weapon; Nick mastery."
+      },
+      {
+        "id": "shortsword",
+        "name": "Shortsword",
+        "description": "Martial Melee weapon; Vex mastery."
+      },
+      {
+        "id": "whip",
+        "name": "Whip",
+        "description": "Martial Melee weapon; Slow mastery."
+      },
+      {
+        "id": "hand_crossbow",
+        "name": "Hand Crossbow",
+        "description": "Martial Ranged weapon; Vex mastery."
+      }
+    ],
+    "eldritch_invocations_2024": [
+      {
+        "id": "agonizing_blast",
+        "name": "Agonizing Blast",
+        "description": "Choose one of your known Warlock cantrips that deals damage. You can add your Charisma modifier to that spell's damage rolls.",
+        "minClassLevel": 2,
+        "target": "warlock_damage_cantrip",
+        "repeatableWithDifferentTarget": true
+      },
+      {
+        "id": "armor_of_shadows",
+        "name": "Armor of Shadows",
+        "description": "You can cast Mage Armor on yourself without expending a spell slot."
+      },
+      {
+        "id": "ascendant_step",
+        "name": "Ascendant Step",
+        "description": "You can cast Levitate on yourself without expending a spell slot.",
+        "minClassLevel": 5
+      },
+      {
+        "id": "devils_sight",
+        "name": "Devil's Sight",
+        "description": "You can see normally in Dim Light and Darkness both magical and nonmagical \u2014 within 120 feet of yourself.",
+        "minClassLevel": 2
+      },
+      {
+        "id": "devouring_blade",
+        "name": "Devouring Blade",
+        "description": "The Extra Attack of your Thirsting Blade invocation confers two extra attacks rather than one.",
+        "minClassLevel": 12,
+        "requiresInvocations": [
+          "thirsting_blade"
+        ]
+      },
+      {
+        "id": "eldritch_mind",
+        "name": "Eldritch Mind",
+        "description": "You have Advantage on Constitution saving throws that you make to maintain Concentration."
+      },
+      {
+        "id": "eldritch_smite",
+        "name": "Eldritch Smite",
+        "description": "Once per turn when you hit a creature with your pact weapon, you can expend a Pact Magic spell slot to deal an extra 1d8 Force damage to the target, plus another 1d8 per level of the spell slot, and you can give the target the Prone condition if it is Huge or smaller.",
+        "minClassLevel": 5,
+        "requiresInvocations": [
+          "pact_of_the_blade"
+        ]
+      },
+      {
+        "id": "eldritch_spear",
+        "name": "Eldritch Spear",
+        "description": "Choose one of your known Warlock cantrips that deals damage and has a range of 10+ feet. When you cast that spell, its range increases by a number of feet equal to 30 times your Warlock level.",
+        "minClassLevel": 2,
+        "target": "warlock_ranged_damage_cantrip",
+        "repeatableWithDifferentTarget": true
+      },
+      {
+        "id": "fiendish_vigor",
+        "name": "Fiendish Vigor",
+        "description": "You can cast False Life on yourself without expending a spell slot. When you cast the spell with this feature, you don't roll the die for the Temporary Hit Points; you automatically get the highest number on the die.",
+        "minClassLevel": 2
+      },
+      {
+        "id": "gaze_of_two_minds",
+        "name": "Gaze of Two Minds",
+        "description": "You can use a Bonus Action to touch a willing creature and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can take a Bonus Action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. The connection ends if you don't maintain it in this way.\n\nWhile perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you can cast spells as if you were in your space or the other creature's space if the two of you are within 60 feet of each other.",
+        "minClassLevel": 5
+      },
+      {
+        "id": "gift_of_the_depths",
+        "name": "Gift of the Depths",
+        "description": "You can breathe underwater, and you gain a Swim Speed equal to your Speed.\n\nYou can also cast Water Breathing once without expending a spell slot. You regain the ability to cast it in this way again when you finish a Long Rest.",
+        "minClassLevel": 5
+      },
+      {
+        "id": "gift_of_the_protectors",
+        "name": "Gift of the Protectors",
+        "description": "A new page appears in your Book of Shadows when you conjure it. With your permission, a creature can take an action to write its name on that page, which can contain a number of names equal to your Charisma modifier (minimum of one name).\n\nWhen any creature whose name is on the page is reduced to 0 Hit Points but not killed outright, the creature magically drops to 1 Hit Point instead. Once this magic is triggered, no creature can benefit from it until you finish a Long Rest.\n\nAs a Magic action, you can erase a name on the page by touching it.",
+        "minClassLevel": 9,
+        "requiresInvocations": [
+          "pact_of_the_tome"
+        ]
+      },
+      {
+        "id": "investment_of_the_chain_master",
+        "name": "Investment of the Chain Master",
+        "description": "When you cast Find Familiar, you infuse the summoned familiar with a measure of your eldritch power, granting the creature the following benefits.\n\nAerial or Aquatic. The familiar gains either a Fly Speed or a Swim Speed (your choice) of 40 feet.\n\nQuick Attack. As a Bonus Action, you can command the familiar to take the Attack action.\n\nNecrotic or Radiant Damage. Whenever the familiar deals Bludgeoning, Piercing, or Slashing damage, you can make it deal Necrotic or Radiant damage instead.\n\nYour Save DC. If the familiar forces a creature to make a saving throw, it uses your spell save DC.\n\nResistance. When the familiar takes damage, you can take a Reaction to grant it Resistance against that damage.",
+        "minClassLevel": 5,
+        "requiresInvocations": [
+          "pact_of_the_chain"
+        ]
+      },
+      {
+        "id": "lessons_of_the_first_ones",
+        "name": "Lessons of the First Ones",
+        "description": "You have received knowledge from an elder entity of the multiverse, allowing you to gain one Origin feat of your choice (see \"Feats\").",
+        "minClassLevel": 2,
+        "target": "origin_feat",
+        "repeatableWithDifferentTarget": true
+      },
+      {
+        "id": "lifedrinker",
+        "name": "Lifedrinker",
+        "description": "Once per turn when you hit a creature with your pact weapon, you can deal an extra 1d6 Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your Hit Point Dice to roll it and regain a number of Hit Points equal to the roll plus your Constitution modifier (minimum of 1 Hit Point).",
+        "minClassLevel": 9,
+        "requiresInvocations": [
+          "pact_of_the_blade"
+        ]
+      },
+      {
+        "id": "mask_of_many_faces",
+        "name": "Mask of Many Faces",
+        "description": "You can cast Disguise Self without expending a spell slot.",
+        "minClassLevel": 2
+      },
+      {
+        "id": "master_of_myriad_forms",
+        "name": "Master of Myriad Forms",
+        "description": "You can cast Alter Self without expending a spell slot.",
+        "minClassLevel": 5
+      },
+      {
+        "id": "misty_visions",
+        "name": "Misty Visions",
+        "description": "You can cast Silent Image without expending a spell slot.",
+        "minClassLevel": 2
+      },
+      {
+        "id": "one_with_shadows",
+        "name": "One with Shadows",
+        "description": "While you're in an area of Dim Light or Darkness, you can cast Invisibility on yourself without expending a spell slot.",
+        "minClassLevel": 5
+      },
+      {
+        "id": "otherworldly_leap",
+        "name": "Otherworldly Leap",
+        "description": "You can cast Jump on yourself without expending a spell slot.",
+        "minClassLevel": 2
+      },
+      {
+        "id": "pact_of_the_blade",
+        "name": "Pact of the Blade",
+        "description": "As a Bonus Action, you can conjure a pact weapon in your hand \u2014 a Simple or Martial Melee weapon of your choice with which you bond \u2014 or create a bond with a magic weapon you touch; you can't bond with a magic weapon if someone else is attuned to it or another Warlock is bonded with it. Until the bond ends, you have proficiency with the weapon, and you can use it as a Spellcasting Focus.\n\nWhenever you attack with the bonded weapon, you can use your Charisma modifier for the attack and damage rolls instead of using Strength or Dexterity; and you can cause the weapon to deal Necrotic, Psychic, or Radiant damage or its normal damage type.\n\nYour bond with the weapon ends if you use this feature's Bonus Action again, if the weapon is more than 5 feet away from you for 1 minute or more, or if you die. A conjured weapon disappears when the bond ends."
+      },
+      {
+        "id": "pact_of_the_chain",
+        "name": "Pact of the Chain",
+        "description": "You learn the Find Familiar spell and can cast it as a Magic action without expending a spell slot.\n\nWhen you cast the spell, you choose one of the normal forms for your familiar or one of the following special forms: Imp, Pseudodragon, Quasit, Skeleton, Sphinx of Wonder, Sprite, or Venomous Snake (see \"Monsters\" for the familiar's stat block).\n\nAdditionally, when you take the Attack action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its Reaction."
+      },
+      {
+        "id": "pact_of_the_tome",
+        "name": "Pact of the Tome",
+        "description": "Stitching together strands of shadow, you conjure forth a book in your hand at the end of a Short or Long Rest. This Book of Shadows (you determine its appearance) contains eldritch magic that only you can access, granting you the benefits below. The book disappears if you conjure another book with this feature or if you die.\n\nCantrips and Rituals. When the book appears, choose three cantrips, and choose two level 1 spells that have the Ritual tag. The spells can be from any class's spell list, and they must be spells you don't already have prepared. While the book is on your person, you have the chosen spells prepared, and they function as Warlock spells for you.\n\nSpellcasting Focus. You can use the book as a Spellcasting Focus."
+      },
+      {
+        "id": "repelling_blast",
+        "name": "Repelling Blast",
+        "description": "Choose one of your known Warlock cantrips that requires an attack roll. When you hit a Large or smaller creature with that cantrip, you can push the creature up to 10 feet straight away from you.",
+        "minClassLevel": 2,
+        "target": "warlock_attack_cantrip",
+        "repeatableWithDifferentTarget": true
+      },
+      {
+        "id": "thirsting_blade",
+        "name": "Thirsting Blade",
+        "description": "You gain the Extra Attack feature for your pact weapon only. With that feature, you can attack twice with the weapon instead of once when you take the Attack action on your turn.",
+        "minClassLevel": 5,
+        "requiresInvocations": [
+          "pact_of_the_blade"
+        ]
+      },
+      {
+        "id": "visions_of_distant_realms",
+        "name": "Visions of Distant Realms",
+        "description": "You can cast Arcane Eye without expending a spell slot.",
+        "minClassLevel": 9
+      },
+      {
+        "id": "whispers_of_the_grave",
+        "name": "Whispers of the Grave",
+        "description": "You can cast Speak with Dead without expending a spell slot.",
+        "minClassLevel": 7
+      },
+      {
+        "id": "witch_sight",
+        "name": "Witch Sight",
+        "description": "You have Truesight with a range of 30 feet.",
+        "minClassLevel": 15
+      }
     ]
+  },
+  "classFeatures": {
+    "Barbarian": {
+      "Primal Knowledge": {
+        "choices": [
+          {
+            "id": "skill",
+            "type": "skill",
+            "count": 1,
+            "optionsSource": "barbarian_primal_skills"
+          }
+        ]
+      },
+      "Weapon Mastery": {
+        "choices": [
+          {
+            "id": "weapon_masteries",
+            "type": "weapon",
+            "countByLevel": {
+              "1": 2,
+              "4": 1,
+              "10": 1
+            },
+            "optionsSource": "weapon_mastery_melee_2024",
+            "replaceOneOnLongRest": true,
+            "replaceAllOnLongRest": false
+          }
+        ]
+      }
+    },
+    "Bard": {
+      "Expertise": {
+        "choices": [
+          {
+            "id": "expertise",
+            "type": "skill_expertise",
+            "countByLevel": {
+              "2": 2,
+              "9": 2
+            }
+          }
+        ]
+      }
+    },
+    "Cleric": {
+      "Divine Order": {
+        "choices": [
+          {
+            "id": "order",
+            "type": "option",
+            "count": 1,
+            "optionsSource": "divine_orders"
+          },
+          {
+            "id": "thaumaturge_cantrip",
+            "type": "cantrip",
+            "count": 1,
+            "spellClass": "cleric",
+            "whenChoiceId": "order",
+            "whenOptionId": "thaumaturge"
+          }
+        ]
+      },
+      "Blessed Strikes": {
+        "choices": [
+          {
+            "id": "blessed_strikes",
+            "type": "option",
+            "count": 1,
+            "optionsSource": "cleric_blessed_strikes"
+          }
+        ]
+      }
+    },
+    "Druid": {
+      "Primal Order": {
+        "choices": [
+          {
+            "id": "order",
+            "type": "option",
+            "count": 1,
+            "optionsSource": "primal_orders"
+          },
+          {
+            "id": "magician_cantrip",
+            "type": "cantrip",
+            "count": 1,
+            "spellClass": "druid",
+            "whenChoiceId": "order",
+            "whenOptionId": "magician"
+          }
+        ]
+      },
+      "Elemental Fury": {
+        "choices": [
+          {
+            "id": "elemental_fury",
+            "type": "option",
+            "count": 1,
+            "optionsSource": "druid_elemental_fury"
+          }
+        ]
+      }
+    },
+    "Fighter": {
+      "Fighting Style": {
+        "choices": [
+          {
+            "id": "fighting_style",
+            "type": "option",
+            "count": 1,
+            "optionsSource": "fighting_styles_2024"
+          }
+        ]
+      },
+      "Weapon Mastery": {
+        "choices": [
+          {
+            "id": "weapon_masteries",
+            "type": "weapon",
+            "countByLevel": {
+              "1": 3,
+              "4": 1,
+              "10": 1,
+              "16": 1
+            },
+            "optionsSource": "weapon_mastery_proficient_2024",
+            "replaceOneOnLongRest": true,
+            "replaceAllOnLongRest": false
+          }
+        ]
+      }
+    },
+    "Paladin": {
+      "Fighting Style": {
+        "choices": [
+          {
+            "id": "fighting_style",
+            "type": "option",
+            "count": 1,
+            "optionsSource": "paladin_fighting_styles_2024"
+          },
+          {
+            "id": "blessed_warrior_cantrips",
+            "type": "cantrip",
+            "count": 2,
+            "spellClass": "cleric",
+            "whenChoiceId": "fighting_style",
+            "whenOptionId": "blessed_warrior"
+          }
+        ]
+      },
+      "Weapon Mastery": {
+        "choices": [
+          {
+            "id": "weapon_masteries",
+            "type": "weapon",
+            "countByLevel": {
+              "1": 2
+            },
+            "optionsSource": "weapon_mastery_proficient_2024",
+            "replaceOneOnLongRest": false,
+            "replaceAllOnLongRest": true
+          }
+        ]
+      }
+    },
+    "Ranger": {
+      "Deft Explorer": {
+        "choices": [
+          {
+            "id": "expertise",
+            "type": "skill_expertise",
+            "count": 1
+          },
+          {
+            "id": "languages",
+            "type": "language",
+            "count": 2
+          }
+        ]
+      },
+      "Fighting Style": {
+        "choices": [
+          {
+            "id": "fighting_style",
+            "type": "option",
+            "count": 1,
+            "optionsSource": "ranger_fighting_styles_2024"
+          },
+          {
+            "id": "druidic_warrior_cantrips",
+            "type": "cantrip",
+            "count": 2,
+            "spellClass": "druid",
+            "whenChoiceId": "fighting_style",
+            "whenOptionId": "druidic_warrior"
+          }
+        ]
+      },
+      "Expertise": {
+        "choices": [
+          {
+            "id": "expertise",
+            "type": "skill_expertise",
+            "count": 2
+          }
+        ]
+      },
+      "Weapon Mastery": {
+        "choices": [
+          {
+            "id": "weapon_masteries",
+            "type": "weapon",
+            "countByLevel": {
+              "1": 2
+            },
+            "optionsSource": "weapon_mastery_proficient_2024",
+            "replaceOneOnLongRest": false,
+            "replaceAllOnLongRest": true
+          }
+        ]
+      }
+    },
+    "Rogue": {
+      "Expertise": {
+        "choices": [
+          {
+            "id": "expertise",
+            "type": "skill_or_tool_expertise",
+            "countByLevel": {
+              "1": 2,
+              "6": 2
+            },
+            "allowThievesTools": true
+          }
+        ]
+      },
+      "Thieves' Cant": {
+        "choices": [
+          {
+            "id": "additional_language",
+            "type": "language",
+            "count": 1
+          }
+        ]
+      },
+      "Weapon Mastery": {
+        "choices": [
+          {
+            "id": "weapon_masteries",
+            "type": "weapon",
+            "countByLevel": {
+              "1": 2
+            },
+            "optionsSource": "weapon_mastery_rogue_2024",
+            "replaceOneOnLongRest": false,
+            "replaceAllOnLongRest": true
+          }
+        ]
+      }
+    },
+    "Sorcerer": {
+      "Metamagic": {
+        "choices": [
+          {
+            "id": "metamagic",
+            "type": "option",
+            "countByLevel": {
+              "2": 2,
+              "10": 2,
+              "17": 2
+            },
+            "optionsSource": "metamagic_2024"
+          }
+        ]
+      }
+    },
+    "Warlock": {
+      "Mystic Arcanum": {
+        "choices": [
+          {
+            "id": "level_6_spell",
+            "type": "spell",
+            "spellClass": "warlock",
+            "spellLevel": 6,
+            "countByLevel": {
+              "11": 1
+            }
+          },
+          {
+            "id": "level_7_spell",
+            "type": "spell",
+            "spellClass": "warlock",
+            "spellLevel": 7,
+            "countByLevel": {
+              "13": 1
+            }
+          },
+          {
+            "id": "level_8_spell",
+            "type": "spell",
+            "spellClass": "warlock",
+            "spellLevel": 8,
+            "countByLevel": {
+              "15": 1
+            }
+          },
+          {
+            "id": "level_9_spell",
+            "type": "spell",
+            "spellClass": "warlock",
+            "spellLevel": 9,
+            "countByLevel": {
+              "17": 1
+            }
+          }
+        ]
+      },
+      "Eldritch Invocations": {
+        "choices": [
+          {
+            "id": "invocations",
+            "type": "option",
+            "countByLevel": {
+              "1": 1,
+              "2": 2,
+              "5": 2,
+              "7": 1,
+              "9": 1,
+              "12": 1,
+              "15": 1,
+              "18": 1
+            },
+            "optionsSource": "eldritch_invocations_2024",
+            "replaceOneOnLevelUp": true
+          },
+          {
+            "id": "tome_cantrips",
+            "type": "cantrip",
+            "count": 3,
+            "spellClass": "any",
+            "whenChoiceId": "invocations",
+            "whenOptionId": "pact_of_the_tome",
+            "replaceOnShortOrLongRest": true
+          },
+          {
+            "id": "tome_rituals",
+            "type": "spell",
+            "count": 2,
+            "spellClass": "any",
+            "spellLevel": 1,
+            "ritualOnly": true,
+            "excludePreparedSpells": true,
+            "whenChoiceId": "invocations",
+            "whenOptionId": "pact_of_the_tome",
+            "replaceOnShortOrLongRest": true
+          }
+        ]
+      }
+    },
+    "Wizard": {
+      "Scholar": {
+        "choices": [
+          {
+            "id": "scholar_skill",
+            "type": "skill_expertise",
+            "count": 1,
+            "optionsSource": "wizard_scholar_skills"
+          }
+        ]
+      },
+      "Spell Mastery": {
+        "choices": [
+          {
+            "id": "level_1_spell",
+            "type": "spell",
+            "spellClass": "wizard",
+            "spellLevel": 1,
+            "count": 1
+          },
+          {
+            "id": "level_2_spell",
+            "type": "spell",
+            "spellClass": "wizard",
+            "spellLevel": 2,
+            "count": 1
+          }
+        ]
+      },
+      "Signature Spells": {
+        "choices": [
+          {
+            "id": "signature_spells",
+            "type": "spell",
+            "spellClass": "wizard",
+            "spellLevel": 3,
+            "count": 2
+          }
+        ]
+      }
+    }
+  },
+  "subclassFeatures": {
+    "Bard": {
+      "College of Lore": {
+        "Bonus Proficiencies": {
+          "choices": [
+            {
+              "id": "skills",
+              "type": "skill",
+              "count": 3
+            }
+          ]
+        },
+        "Magical Discoveries": {
+          "choices": [
+            {
+              "id": "spells",
+              "type": "spell",
+              "count": 2,
+              "spellClasses": [
+                "cleric",
+                "druid",
+                "wizard"
+              ],
+              "minSpellLevel": 0,
+              "maxSpellLevel": 3
+            }
+          ]
+        }
+      }
+    },
+    "Druid": {
+      "Circle of the Land": {
+        "Circle of the Land Spells": {
+          "choices": [
+            {
+              "id": "land",
+              "type": "option",
+              "count": 1,
+              "optionsSource": "land_terrains",
+              "replaceOnLongRest": true
+            }
+          ]
+        }
+      }
+    },
+    "Fighter": {
+      "Champion": {
+        "Additional Fighting Style": {
+          "choices": [
+            {
+              "id": "additional_fighting_style",
+              "type": "option",
+              "count": 1,
+              "optionsSource": "fighting_styles_2024"
+            }
+          ]
+        }
+      }
+    },
+    "Ranger": {
+      "Hunter": {
+        "Hunter's Prey": {
+          "choices": [
+            {
+              "id": "prey",
+              "type": "option",
+              "count": 1,
+              "optionsSource": "hunter_prey",
+              "replaceOnShortOrLongRest": true
+            }
+          ]
+        },
+        "Defensive Tactics": {
+          "choices": [
+            {
+              "id": "defensive_tactics",
+              "type": "option",
+              "count": 1,
+              "optionsSource": "hunter_defensive_tactics"
+            }
+          ]
+        }
+      }
+    },
+    "Sorcerer": {
+      "Draconic Sorcery": {
+        "Elemental Affinity": {
+          "choices": [
+            {
+              "id": "damage_type",
+              "type": "damageType",
+              "count": 1,
+              "optionsSource": "draconic_damage_types"
+            }
+          ]
+        }
+      }
+    },
+    "Warlock": {
+      "Fiend Patron": {
+        "Fiendish Resilience": {
+          "choices": [
+            {
+              "id": "resistance",
+              "type": "damageType",
+              "count": 1,
+              "optionsSource": "fiend_resistances"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "raceTraits": {
+    "Draconic Ancestry": {
+      "choices": [
+        {
+          "id": "ancestor",
+          "type": "option",
+          "count": 1,
+          "optionsSource": "dragonborn_ancestries"
+        }
+      ]
+    },
+    "Elven Lineage": {
+      "choices": [
+        {
+          "id": "lineage",
+          "type": "option",
+          "count": 1,
+          "optionsSource": "elven_lineages"
+        },
+        {
+          "id": "spellcasting_ability",
+          "type": "ability",
+          "count": 1,
+          "optionsSource": "magic_initiate_abilities"
+        }
+      ]
+    },
+    "Keen Senses": {
+      "choices": [
+        {
+          "id": "skill",
+          "type": "skill",
+          "count": 1,
+          "optionsSource": "keen_senses_skills"
+        }
+      ]
+    },
+    "Gnomish Lineage": {
+      "choices": [
+        {
+          "id": "lineage",
+          "type": "option",
+          "count": 1,
+          "optionsSource": "gnomish_lineages"
+        },
+        {
+          "id": "spellcasting_ability",
+          "type": "ability",
+          "count": 1,
+          "optionsSource": "magic_initiate_abilities"
+        }
+      ]
+    },
+    "Giant Ancestry": {
+      "choices": [
+        {
+          "id": "boon",
+          "type": "option",
+          "count": 1,
+          "optionsSource": "giant_ancestries"
+        }
+      ]
+    },
+    "Skillful": {
+      "choices": [
+        {
+          "id": "skill",
+          "type": "skill",
+          "count": 1
+        }
+      ]
+    },
+    "Versatile": {
+      "choices": [
+        {
+          "id": "origin_feat",
+          "type": "feat",
+          "count": 1,
+          "featCategory": "origin"
+        }
+      ]
+    },
+    "Fiendish Legacy": {
+      "choices": [
+        {
+          "id": "legacy",
+          "type": "option",
+          "count": 1,
+          "optionsSource": "tiefling_legacies"
+        },
+        {
+          "id": "spellcasting_ability",
+          "type": "ability",
+          "count": 1,
+          "optionsSource": "magic_initiate_abilities"
+        }
+      ]
+    }
   },
   "feats": {
     "Ability Score Improvement": {
       "choices": [
-        {"id": "ability_increases", "type": "ability_score_increase", "count": 1, "patterns": [[2], [1, 1]], "maximum": 20}
+        {
+          "id": "ability_increases",
+          "type": "ability_score_increase",
+          "count": 1,
+          "patterns": [
+            [
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "maximum": 20
+        }
       ]
     },
     "Grappler": {
       "choices": [
-        {"id": "ability_increase", "type": "ability", "count": 1, "options": ["strength", "dexterity"], "increase": 1, "maximum": 20}
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "options": [
+            {
+              "id": "strength",
+              "name": "Strength"
+            },
+            {
+              "id": "dexterity",
+              "name": "Dexterity"
+            }
+          ],
+          "increase": 1,
+          "maximum": 20
+        }
       ]
     },
     "Magic Initiate": {
       "choices": [
-        {"id": "spell_class", "type": "option", "count": 1, "optionsSource": "magic_initiate_spell_lists"},
-        {"id": "spellcasting_ability", "type": "ability", "count": 1, "optionsSource": "magic_initiate_abilities"},
-        {"id": "cantrips", "type": "cantrip", "count": 2, "spellClassFromChoice": "spell_class"},
-        {"id": "spell", "type": "spell", "count": 1, "spellLevel": 1, "spellClassFromChoice": "spell_class"}
+        {
+          "id": "spell_class",
+          "type": "option",
+          "count": 1,
+          "optionsSource": "magic_initiate_spell_lists"
+        },
+        {
+          "id": "spellcasting_ability",
+          "type": "ability",
+          "count": 1,
+          "optionsSource": "magic_initiate_abilities"
+        },
+        {
+          "id": "cantrips",
+          "type": "cantrip",
+          "count": 2,
+          "spellClassFromChoice": "spell_class"
+        },
+        {
+          "id": "spell",
+          "type": "spell",
+          "count": 1,
+          "spellLevel": 1,
+          "spellClassFromChoice": "spell_class"
+        }
       ]
     },
     "Skilled": {
       "choices": [
-        {"id": "skills_or_tools", "type": "skill_or_tool", "count": 3}
+        {
+          "id": "skills_or_tools",
+          "type": "skill_or_tool",
+          "count": 3
+        }
       ]
     },
-    "Boon of Combat Prowess": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
-    "Boon of Dimensional Travel": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
-    "Boon of Fate": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
-    "Boon of Irresistible Offense": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "options": ["strength", "dexterity"], "increase": 1, "maximum": 30}]},
-    "Boon of Spell Recall": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "options": ["intelligence", "wisdom", "charisma"], "increase": 1, "maximum": 30}]},
-    "Boon of the Night Spirit": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]},
-    "Boon of Truesight": {"choices": [{"id": "ability_increase", "type": "ability", "count": 1, "increase": 1, "maximum": 30}]}
+    "Boon of Combat Prowess": {
+      "choices": [
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "increase": 1,
+          "maximum": 30
+        }
+      ]
+    },
+    "Boon of Dimensional Travel": {
+      "choices": [
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "increase": 1,
+          "maximum": 30
+        }
+      ]
+    },
+    "Boon of Fate": {
+      "choices": [
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "increase": 1,
+          "maximum": 30
+        }
+      ]
+    },
+    "Boon of Irresistible Offense": {
+      "choices": [
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "options": [
+            {
+              "id": "strength",
+              "name": "Strength"
+            },
+            {
+              "id": "dexterity",
+              "name": "Dexterity"
+            }
+          ],
+          "increase": 1,
+          "maximum": 30
+        }
+      ]
+    },
+    "Boon of Spell Recall": {
+      "choices": [
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "options": [
+            {
+              "id": "intelligence",
+              "name": "Intelligence"
+            },
+            {
+              "id": "wisdom",
+              "name": "Wisdom"
+            },
+            {
+              "id": "charisma",
+              "name": "Charisma"
+            }
+          ],
+          "increase": 1,
+          "maximum": 30
+        }
+      ]
+    },
+    "Boon of the Night Spirit": {
+      "choices": [
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "increase": 1,
+          "maximum": 30
+        }
+      ]
+    },
+    "Boon of Truesight": {
+      "choices": [
+        {
+          "id": "ability_increase",
+          "type": "ability",
+          "count": 1,
+          "increase": 1,
+          "maximum": 30
+        }
+      ]
+    }
   }
 }

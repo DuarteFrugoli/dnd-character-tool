@@ -66,7 +66,27 @@ class FeatureChoiceRequest {
     return null;
   }
 
+  bool isApplicable(List<CharacterFeatureChoice> choices) {
+    final parentId = requirement.whenChoiceId;
+    final optionId = requirement.whenOptionId;
+    if (parentId == null || optionId == null) return true;
+    return choices.any(
+      (choice) =>
+          choice.matches(
+            sourceType: sourceType,
+            sourceClass: sourceClass,
+            sourceClassEntryId: sourceClassEntryId,
+            sourceSubclass: sourceSubclass,
+            sourceName: sourceName,
+            featureName: featureName,
+            choiceId: parentId,
+          ) &&
+          choice.values.contains(optionId),
+    );
+  }
+
   bool isComplete(List<CharacterFeatureChoice> choices) {
+    if (!isApplicable(choices)) return true;
     return _uniqueValues(findIn(choices)?.values ?? const []).length >=
         requiredCount;
   }

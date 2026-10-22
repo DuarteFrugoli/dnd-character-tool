@@ -1,0 +1,132 @@
+[
+  {
+    "class": "Barbarian",
+    "subclass": "Path of the Berserker",
+    "features": [
+      {"name":"Frenzy","level":3,"type":"passive","description":"While Raging, if you use Reckless Attack, the first target you hit on your turn with a Strength-based attack takes extra damage equal to a number of d6s equal to your Rage Damage bonus. The damage type matches the attack."},
+      {"name":"Mindless Rage","level":6,"type":"passive","description":"While Raging, you are immune to the Charmed and Frightened conditions. Entering Rage ends either condition on you."},
+      {"name":"Retaliation","level":10,"type":"active","description":"When a creature within 5 feet damages you, you can use your Reaction to make one melee attack against it with a weapon or Unarmed Strike."},
+      {"name":"Intimidating Presence","level":14,"type":"active","description":"As a Bonus Action, creatures of your choice in a 30-foot Emanation make a Wisdom save (DC 8 + Strength modifier + Proficiency Bonus) or are Frightened for 1 minute; they repeat the save at the end of each turn. Once per Long Rest, or expend a Rage use to restore this feature."}
+    ]
+  },
+  {
+    "class": "Bard",
+    "subclass": "College of Lore",
+    "features": [
+      {"name":"Bonus Proficiencies","level":3,"type":"passive","description":"Gain proficiency in three skills of your choice."},
+      {"name":"Cutting Words","level":3,"type":"active","description":"When a creature you can see within 60 feet rolls damage or succeeds on an ability check or attack roll, use your Reaction and one Bardic Inspiration. Subtract a roll of your Bardic Inspiration die from the result, potentially turning success into failure."},
+      {"name":"Magical Discoveries","level":6,"type":"passive","description":"Choose two cantrips or spells from the Cleric, Druid, or Wizard spell lists, of levels you can cast. They are always prepared. Whenever you gain a Bard level, you may replace one with another eligible spell."},
+      {"name":"Peerless Skill","level":14,"type":"active","description":"When you fail an ability check or attack roll, expend Bardic Inspiration and add its die to the d20, potentially succeeding. If the roll still fails, the Bardic Inspiration use is not expended."}
+    ]
+  },
+  {
+    "class": "Cleric",
+    "subclass": "Life Domain",
+    "features": [
+      {"name":"Disciple of Life","level":3,"type":"passive","description":"When a spell you cast with a spell slot restores Hit Points, the target regains an additional 2 + the slot level Hit Points on the turn you cast it."},
+      {"name":"Life Domain Spells","level":3,"type":"passive","description":"Always prepared: level 3 Aid, Bless, Cure Wounds, Lesser Restoration; level 5 Mass Healing Word, Revivify; level 7 Aura of Life, Death Ward; level 9 Greater Restoration, Mass Cure Wounds."},
+      {"name":"Preserve Life","level":3,"type":"active","description":"As a Magic action, expend Channel Divinity to restore a total of 5 times your Cleric level Hit Points, divided among Bloodied creatures within 30 feet (including yourself). No creature can be healed above half its Hit Point maximum this way."},
+      {"name":"Blessed Healer","level":6,"type":"passive","description":"After you cast a spell with a spell slot that restores Hit Points to someone other than yourself, you regain 2 + the slot level Hit Points."},
+      {"name":"Supreme Healing","level":17,"type":"passive","description":"When a spell or Channel Divinity would roll dice to restore Hit Points, use the maximum result for every healing die instead."}
+    ]
+  },
+  {
+    "class": "Druid",
+    "subclass": "Circle of the Land",
+    "features": [
+      {"name":"Circle of the Land Spells","level":3,"type":"passive","description":"After each Long Rest, choose Arid, Polar, Temperate, or Tropical land; its spells for your level and below are always prepared. Arid: level 3 Blur, Burning Hands, Fire Bolt; 5 Fireball; 7 Blight; 9 Wall of Stone. Polar: 3 Fog Cloud, Hold Person, Ray of Frost; 5 Sleet Storm; 7 Ice Storm; 9 Cone of Cold. Temperate: 3 Misty Step, Shocking Grasp, Sleep; 5 Lightning Bolt; 7 Freedom of Movement; 9 Tree Stride. Tropical: 3 Acid Splash, Ray of Sickness, Web; 5 Stinking Cloud; 7 Polymorph; 9 Insect Plague."},
+      {"name":"Land's Aid","level":3,"type":"active","description":"As a Magic action, expend Wild Shape to create a 10-foot-radius Sphere within 60 feet. Chosen creatures there make a Constitution save, taking 2d6 Necrotic damage on failure or half on success; one creature there also heals 2d6. Both dice increase to 3d6 at Druid level 10 and 4d6 at level 14."},
+      {"name":"Natural Recovery","level":6,"type":"active","description":"Once per Long Rest, cast a prepared level 1+ Circle spell without a slot. Also once per Long Rest, when you finish a Short Rest, recover expended slots with combined levels up to half your Druid level (round up); none may be level 6 or higher."},
+      {"name":"Nature's Ward","level":10,"type":"passive","description":"You are immune to the Poisoned condition and resist a damage type based on your current land: Arid Fire, Polar Cold, Temperate Lightning, Tropical Poison."},
+      {"name":"Nature's Sanctuary","level":14,"type":"active","description":"As a Magic action, expend Wild Shape to create a 15-foot Cube on the ground within 120 feet for 1 minute, ending if you are Incapacitated or die. You and allies in it have Half Cover; allies also gain your Nature's Ward resistance. As a Bonus Action, move the Cube up to 60 feet to ground within 120 feet."}
+    ]
+  },
+  {
+    "class": "Fighter",
+    "subclass": "Champion",
+    "features": [
+      {"name":"Improved Critical","level":3,"type":"passive","description":"Your weapon and Unarmed Strike attack rolls score a Critical Hit on a d20 roll of 19 or 20."},
+      {"name":"Remarkable Athlete","level":3,"type":"passive","description":"You have Advantage on Initiative rolls and Strength (Athletics) checks. After you score a Critical Hit, you can move up to half your Speed without provoking Opportunity Attacks."},
+      {"name":"Additional Fighting Style","level":7,"type":"passive","description":"Gain another Fighting Style feat of your choice."},
+      {"name":"Heroic Warrior","level":10,"type":"passive","description":"During combat, if you start your turn without Heroic Inspiration, you can give yourself Heroic Inspiration."},
+      {"name":"Superior Critical","level":15,"type":"passive","description":"Your weapon and Unarmed Strike attack rolls now score a Critical Hit on a d20 roll of 18-20."},
+      {"name":"Survivor","level":18,"type":"passive","description":"You have Advantage on Death Saving Throws; a roll of 18-20 counts as rolling a 20. At the start of your turn, if you are Bloodied and have at least 1 Hit Point, regain 5 + Constitution modifier Hit Points."}
+    ]
+  },
+  {
+    "class": "Monk",
+    "subclass": "Warrior of the Open Hand",
+    "features": [
+      {"name":"Open Hand Technique","level":3,"type":"passive","description":"When a Flurry of Blows attack hits, choose one: prevent the target from making Opportunity Attacks until its next turn; push it up to 15 feet on a failed Strength save; or knock it Prone on a failed Dexterity save."},
+      {"name":"Wholeness of Body","level":6,"type":"active","description":"As a Bonus Action, regain Hit Points equal to one Martial Arts die roll + Wisdom modifier (minimum 1). Use a number of times equal to your Wisdom modifier (minimum once) per Long Rest."},
+      {"name":"Fleet Step","level":11,"type":"passive","description":"When you take a Bonus Action other than Step of the Wind, you can also use Step of the Wind immediately afterward."},
+      {"name":"Quivering Palm","level":17,"type":"active","description":"When an Unarmed Strike hits, spend 4 Focus Points to place vibrations lasting Monk level days. Take an action, or forgo one attack in the Attack action, to end them on the same plane; the target makes a Constitution save, taking 10d12 Force damage on failure or half on success. Only one target can be affected at a time."}
+    ]
+  },
+  {
+    "class": "Paladin",
+    "subclass": "Oath of Devotion",
+    "features": [
+      {"name":"Oath of Devotion Spells","level":3,"type":"passive","description":"Always prepared: level 3 Protection from Evil and Good, Shield of Faith; level 5 Aid, Zone of Truth; level 9 Beacon of Hope, Dispel Magic; level 13 Freedom of Movement, Guardian of Faith; level 17 Commune, Flame Strike."},
+      {"name":"Sacred Weapon","level":3,"type":"active","description":"When taking the Attack action, expend Channel Divinity to empower one held Melee weapon for 10 minutes. Add your Charisma modifier (minimum +1) to its attack rolls; each hit may deal its normal damage type or Radiant. It sheds Bright Light 20 feet and Dim Light another 20 feet; the effect ends if you stop carrying it."},
+      {"name":"Aura of Devotion","level":7,"type":"passive","description":"You and allies in your Aura of Protection are immune to Charmed; the condition has no effect on a Charmed ally while in the aura."},
+      {"name":"Smite of Protection","level":15,"type":"passive","description":"Whenever you cast Divine Smite, you and allies in your Aura of Protection gain Half Cover until the start of your next turn."},
+      {"name":"Holy Nimbus","level":20,"type":"active","description":"As a Bonus Action, empower your Aura of Protection for 10 minutes. You have Advantage on saves forced by Fiends or Undead; enemies starting turns in the aura take Radiant damage equal to Charisma modifier + Proficiency Bonus; its Bright Light is sunlight. Once per Long Rest, or spend a level 5 spell slot to restore its use."}
+    ]
+  },
+  {
+    "class": "Ranger",
+    "subclass": "Hunter",
+    "features": [
+      {"name":"Hunter's Lore","level":3,"type":"passive","description":"While a creature is marked by your Hunter's Mark, you learn whether it has damage Immunities, Resistances, or Vulnerabilities and what they are."},
+      {"name":"Hunter's Prey","level":3,"type":"passive","description":"Choose an option, changeable after a Short or Long Rest. Colossus Slayer: once per turn, a weapon hit against a creature missing Hit Points deals +1d8 damage. Horde Breaker: once on your turn when you attack with a weapon, attack a different creature within 5 feet of the original target, in range, that you have not attacked this turn."},
+      {"name":"Defensive Tactics","level":7,"type":"passive","description":"Choose an option, changeable after a Short or Long Rest. Escape the Horde: Opportunity Attacks against you have Disadvantage. Multiattack Defense: after a creature hits you, its other attack rolls against you this turn have Disadvantage."},
+      {"name":"Superior Hunter's Prey","level":11,"type":"passive","description":"Once per turn when you damage a creature marked by Hunter's Mark, deal the spell's extra damage to a different creature you can see within 30 feet of the marked creature."},
+      {"name":"Superior Hunter's Defense","level":15,"type":"active","description":"When you take damage, use your Reaction to gain Resistance to that damage and other damage of the same type until the end of the current turn."}
+    ]
+  },
+  {
+    "class": "Rogue",
+    "subclass": "Thief",
+    "features": [
+      {"name":"Fast Hands","level":3,"type":"active","description":"As a Bonus Action, make a Dexterity (Sleight of Hand) check to pick a lock or disarm a trap with Thieves' Tools or pick a pocket; take the Utilize action; or take the Magic action to use a magic item that requires it."},
+      {"name":"Second-Story Work","level":3,"type":"passive","description":"Your Climb Speed equals your Speed, and you can use Dexterity instead of Strength to determine jump distance."},
+      {"name":"Supreme Sneak","level":9,"type":"passive","description":"Gain Stealth Attack as a Cunning Strike option (cost 1d6). When attacking while Invisible from Hide, you keep that condition if you end the turn behind Three-Quarters Cover or Total Cover."},
+      {"name":"Use Magic Device","level":13,"type":"passive","description":"You can attune to four magic items. When you expend item charges, roll 1d6; on a 6, no charges are spent. You can use any Spell Scroll with Intelligence as the casting ability; for a spell above level 1, first pass an Intelligence (Arcana) check (DC 10 + spell level), or the scroll disintegrates."},
+      {"name":"Thief's Reflexes","level":17,"type":"passive","description":"Take two turns in the first round of combat, at your normal Initiative and at your Initiative minus 10."}
+    ]
+  },
+  {
+    "class": "Sorcerer",
+    "subclass": "Draconic Sorcery",
+    "features": [
+      {"name":"Draconic Resilience","level":3,"type":"passive","description":"Your Hit Point maximum increases by 3 at Sorcerer level 3 and by 1 at each later Sorcerer level. Without armor, your base Armor Class is 10 + Dexterity modifier + Charisma modifier."},
+      {"name":"Draconic Spells","level":3,"type":"passive","description":"Always prepared: level 3 Alter Self, Chromatic Orb, Command, Dragon's Breath; level 5 Fear, Fly; level 7 Arcane Eye, Charm Monster; level 9 Legend Lore, Summon Dragon."},
+      {"name":"Elemental Affinity","level":6,"type":"passive","description":"Choose Acid, Cold, Fire, Lightning, or Poison. You resist that damage type and can add your Charisma modifier to one damage roll of a spell that deals that type."},
+      {"name":"Dragon Wings","level":14,"type":"active","description":"As a Bonus Action, gain wings and a Fly Speed of 60 feet for 1 hour, until dismissed. Once per Long Rest, or spend 3 Sorcery Points to restore the use."},
+      {"name":"Dragon Companion","level":18,"type":"active","description":"Cast Summon Dragon without its Material component and once without a slot per Long Rest. When casting it, you can remove its Concentration requirement; that casting lasts 1 minute."}
+    ]
+  },
+  {
+    "class": "Warlock",
+    "subclass": "Fiend Patron",
+    "features": [
+      {"name":"Dark One's Blessing","level":3,"type":"passive","description":"When you reduce an enemy to 0 Hit Points, gain Temporary Hit Points equal to your Charisma modifier + Warlock level (minimum 1). You also gain them when someone else reduces an enemy within 10 feet of you to 0 Hit Points."},
+      {"name":"Fiend Spells","level":3,"type":"passive","description":"Always prepared: level 3 Burning Hands, Command, Scorching Ray, Suggestion; level 5 Fireball, Stinking Cloud; level 7 Fire Shield, Wall of Fire; level 9 Geas, Insect Plague."},
+      {"name":"Dark One's Own Luck","level":6,"type":"active","description":"After seeing an ability check or saving throw, but before its effects occur, add 1d10 to the roll. Use up to your Charisma modifier (minimum once) per Long Rest, no more than once per roll."},
+      {"name":"Fiendish Resilience","level":10,"type":"passive","description":"After a Short or Long Rest, choose any damage type except Force. You resist it until you choose a different type with this feature."},
+      {"name":"Hurl Through Hell","level":14,"type":"active","description":"Once per turn after you hit a creature with an attack roll, it makes a Charisma save against your spell save DC. On failure, it vanishes, is Incapacitated until the end of your next turn, and returns to its former space or the nearest free one; if not a Fiend, it takes 8d10 Psychic damage. Once per Long Rest, or spend a Pact Magic slot to restore the use."}
+    ]
+  },
+  {
+    "class": "Wizard",
+    "subclass": "Evoker",
+    "features": [
+      {"name":"Evocation Savant","level":3,"type":"passive","description":"Add two level 1 or 2 Evocation Wizard spells to your spellbook for free. Whenever you gain access to a new spell slot level in this class, add one Evocation Wizard spell of a level you can cast for free."},
+      {"name":"Potent Cantrip","level":3,"type":"passive","description":"When your damaging cantrip misses its attack roll or the target succeeds on its saving throw, the target still takes half the cantrip's damage but none of its other effects."},
+      {"name":"Sculpt Spells","level":6,"type":"passive","description":"When you cast an Evocation spell affecting creatures you can see, choose up to 1 + the spell's level of them. They automatically succeed on their saves and take no damage if a successful save would normally halve it."},
+      {"name":"Empowered Evocation","level":10,"type":"passive","description":"Add your Intelligence modifier to one damage roll of a Wizard Evocation spell you cast."},
+      {"name":"Overchannel","level":14,"type":"active","description":"When you cast a damaging Wizard spell using a level 1-5 slot, maximize its damage on the casting turn. The first use after a Long Rest is safe; later uses deal you 2d12 Necrotic damage per slot level, increasing by 1d12 per slot level for each additional use before the next Long Rest. This damage ignores Resistance and Immunity."}
+    ]
+  }
+]

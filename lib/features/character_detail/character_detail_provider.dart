@@ -306,7 +306,12 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         usageContext: binding.usageContext,
       );
       if (FeatureUsageEngine.restoresOn(recharge, rest)) {
-        result[resource.id] = max;
+        result[resource.id] = FeatureUsageEngine.restoredCurrent(
+          recharge: recharge,
+          rest: rest,
+          current: result[resource.id] ?? max,
+          max: max,
+        );
         continue;
       }
       if (rest == FeatureUsageRest.shortRest &&

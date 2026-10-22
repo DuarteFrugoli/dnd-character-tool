@@ -90,6 +90,7 @@ SrdSpell _spell({
   required int level,
   required String school,
   required List<String> classes,
+  bool ritual = false,
 }) {
   return SrdSpell(
     name: name,
@@ -97,7 +98,7 @@ SrdSpell _spell({
     school: school,
     castingTime: '1 action',
     castingTimeType: 'action',
-    ritual: false,
+    ritual: ritual,
     range: '30 feet',
     components: const ['V'],
     materialConsumed: false,
@@ -113,6 +114,46 @@ SrdSpell _spell({
 
 void main() {
   group('FeatureChoiceEngine', () {
+    test('dependent 2024 choice is required only for its selected option', () {
+      const parent = FeatureChoiceRequest(
+        sourceType: FeatureChoiceSourceType.classFeature,
+        sourceClass: 'Paladin',
+        featureName: 'Fighting Style',
+        level: 2,
+        requirement: SrdFeatureChoiceRequirement(
+          id: 'fighting_style',
+          type: 'option',
+        ),
+        requiredCount: 1,
+      );
+      const cantrips = FeatureChoiceRequest(
+        sourceType: FeatureChoiceSourceType.classFeature,
+        sourceClass: 'Paladin',
+        featureName: 'Fighting Style',
+        level: 2,
+        requirement: SrdFeatureChoiceRequirement(
+          id: 'blessed_warrior_cantrips',
+          type: 'cantrip',
+          count: 2,
+          whenChoiceId: 'fighting_style',
+          whenOptionId: 'blessed_warrior',
+        ),
+        requiredCount: 2,
+      );
+
+      expect(cantrips.isComplete([parent.toChoice(['defense'])]), isTrue);
+      expect(
+        cantrips.isComplete([parent.toChoice(['blessed_warrior'])]),
+        isFalse,
+      );
+      expect(
+        cantrips.isComplete([
+          parent.toChoice(['blessed_warrior']),
+          cantrips.toChoice(['guidance', 'resistance']),
+        ]),
+        isTrue,
+      );
+    });
     test('creates a request for a class feature choice', () {
       final requests = FeatureChoiceEngine.requestsForClassFeature(
         catalog: _catalog(),
@@ -236,6 +277,170 @@ void main() {
   });
 
   group('FeatureChoiceOptionResolver', () {
+    test('Pact of the Tome offers only level 1 rituals', () {
+      const request = FeatureChoiceRequest(
+        sourceType: FeatureChoiceSourceType.classFeature,
+        sourceClass: 'Warlock',
+        featureName: 'Eldritch Invocations',
+        level: 1,
+        requirement: SrdFeatureChoiceRequirement(
+          id: 'tome_rituals',
+          type: 'spell',
+          count: 2,
+          spellClass: 'any',
+          spellLevel: 1,
+          ritualOnly: true,
+        ),
+        requiredCount: 2,
+      );
+      final resolver = FeatureChoiceOptionResolver(
+        request: request,
+        catalog: _catalog(),
+        i18n: SrdI18nService.english,
+        skills: const [],
+        tools: const [],
+        spells: [
+          _spell(name: 'Comprehend Languages', level: 1, school: 'divination', classes: const ['wizard'], ritual: true),
+          _spell(name: 'Magic Missile', level: 1, school: 'evocation', classes: const ['wizard']),
+          _spell(name: 'Water Breathing', level: 3, school: 'transmutation', classes: const ['druid'], ritual: true),
+        ],
+        languages: const [],
+        weapons: const [],
+        feats: const [],
+      );
+
+      expect(resolver.options.map((option) => option.id), ['Comprehend Languages']);
+    });
+    test('gates invocations by Warlock level and selected prerequisites', () {
+      const request = FeatureChoiceRequest(
+        sourceType: FeatureChoiceSourceType.classFeature,
+        sourceClass: 'Warlock',
+        featureName: 'Eldritch Invocations',
+        level: 5,
+        requirement: SrdFeatureChoiceRequirement(
+          id: 'invocations',
+          type: 'option',
+          count: 2,
+          optionsSource: 'invocations',
+        ),
+        requiredCount: 2,
+      );
+      const catalog = SrdFeatureChoiceCatalog(
+        optionSources: {
+          'invocations': [
+            SrdFeatureChoiceOption(id: 'pact_of_the_blade', name: 'Pact of the Blade'),
+            SrdFeatureChoiceOption(
+              id: 'thirsting_blade',
+              name: 'Thirsting Blade',
+              minClassLevel: 5,
+              requiresInvocations: ['pact_of_the_blade'],
+            ),
+            SrdFeatureChoiceOption(
+              id: 'devouring_blade',
+              name: 'Devouring Blade',
+              minClassLevel: 12,
+              requiresInvocations: ['thirsting_blade'],
+            ),
+          ],
+        },
+        classFeatures: {},
+        subclassFeatures: {},
+        raceTraits: {},
+        feats: {},
+      );
+      FeatureChoiceOptionResolver resolver(List<CharacterFeatureChoice> choices) =>
+          FeatureChoiceOptionResolver(
+            request: request,
+            catalog: catalog,
+            i18n: SrdI18nService.english,
+            skills: const [],
+            tools: const [],
+            spells: const [],
+            languages: const [],
+            weapons: const [],
+            feats: const [],
+            choices: choices,
+          );
+
+      expect(resolver(const []).options.map((option) => option.id), ['pact_of_the_blade']);
+      expect(
+        resolver(const [
+          CharacterFeatureChoice(
+            sourceType: FeatureChoiceSourceType.classFeature,
+            sourceClass: 'Warlock',
+            featureName: 'Eldritch Invocations',
+            choiceId: 'invocations',
+            values: ['pact_of_the_blade'],
+          ),
+        ]).options.map((option) => option.id),
+        ['pact_of_the_blade', 'thirsting_blade'],
+      );
+    });
+    test('Human Versatile offers only Origin feats', () {
+      const request = FeatureChoiceRequest(
+        sourceType: FeatureChoiceSourceType.raceTrait,
+        sourceName: 'Versatile',
+        featureName: 'Versatile',
+        level: 1,
+        requirement: SrdFeatureChoiceRequirement(
+          id: 'origin_feat',
+          type: 'feat',
+          featCategory: 'origin',
+        ),
+        requiredCount: 1,
+      );
+      final resolver = FeatureChoiceOptionResolver(
+        request: request,
+        catalog: _catalog(),
+        i18n: SrdI18nService.english,
+        skills: const [],
+        tools: const [],
+        spells: const [],
+        languages: const [],
+        weapons: const [],
+        feats: const [
+          SrdFeat(name: 'Alert', description: '', category: 'origin'),
+          SrdFeat(name: 'Grappler', description: '', category: 'general'),
+        ],
+      );
+
+      expect(resolver.options.map((option) => option.id), ['Alert']);
+    });
+    test('can select spells from multiple 2024 class lists', () {
+      const request = FeatureChoiceRequest(
+        sourceType: FeatureChoiceSourceType.subclassFeature,
+        sourceClass: 'Bard',
+        sourceSubclass: 'College of Lore',
+        featureName: 'Magical Discoveries',
+        level: 6,
+        requirement: SrdFeatureChoiceRequirement(
+          id: 'spells',
+          type: 'spell',
+          count: 2,
+          spellClasses: ['cleric', 'druid', 'wizard'],
+          minSpellLevel: 0,
+          maxSpellLevel: 3,
+        ),
+        requiredCount: 2,
+      );
+      final resolver = FeatureChoiceOptionResolver(
+        request: request,
+        catalog: _catalog(),
+        i18n: SrdI18nService.english,
+        skills: const [],
+        tools: const [],
+        spells: [
+          _spell(name: 'Guidance', level: 0, school: 'divination', classes: const ['cleric']),
+          _spell(name: 'Fireball', level: 3, school: 'evocation', classes: const ['wizard']),
+          _spell(name: 'Hex', level: 1, school: 'enchantment', classes: const ['warlock']),
+        ],
+        languages: const [],
+        weapons: const [],
+        feats: const [],
+      );
+
+      expect(resolver.options.map((option) => option.id), ['Fireball', 'Guidance']);
+    });
     test('resolves option sources with descriptions', () {
       final request = FeatureChoiceEngine.requestsForClassFeature(
         catalog: _catalog(),

@@ -7,7 +7,7 @@ class CharacterExtraFeature {
   final String? sourceClassEntryId;
   final String name;
   final int level;
-  final String type; // "active" | "passive" | "subclass" | "asi"
+  final String type; // "active" | "passive" | "subclass" | "asi" | "epic_boon"
   final String description;
 
   const CharacterExtraFeature({

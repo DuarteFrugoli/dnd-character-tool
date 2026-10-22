@@ -25,6 +25,8 @@ String featureUsageRechargeLabel(BuildContext context, String recharge) {
     case 'short_rest':
     case 'short_or_long_rest':
       return l10n.restPickerShort;
+    case 'short_rest_one':
+      return '+1 / ${l10n.restPickerShort}';
     case 'long_rest':
       return l10n.restPickerLong;
     default:

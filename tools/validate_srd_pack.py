@@ -99,6 +99,38 @@ def validate_2024_classes(data, errors):
                 errors.append(f"{location}: subclass must begin at level 3")
             if entry.get("spellcastingType") not in (None, "full", "half", "warlock"):
                 errors.append(f"{location}: invalid spellcasting type")
+            progression = entry.get("progression")
+            if not isinstance(progression, list) or len(progression) != 20:
+                errors.append(f"{location}: expected 20 progression levels")
+            else:
+                for level, row in enumerate(progression, 1):
+                    row_location = f"{location}.progression[{level - 1}]"
+                    if not isinstance(row, dict) or row.get("level") != level:
+                        errors.append(f"{row_location}: invalid level")
+                        continue
+                    if row.get("proficiencyBonus") != 2 + (level - 1) // 4:
+                        errors.append(f"{row_location}: invalid proficiency bonus")
+                    if not isinstance(row.get("features"), list) or any(
+                        not isinstance(name, str) or not name.strip() or name in ("\u2014", "-")
+                        for name in row["features"]
+                    ):
+                        errors.append(f"{row_location}: missing class features")
+                    if entry.get("name") in {"Barbarian", "Fighter", "Paladin", "Ranger", "Rogue"} and (
+                        type(row.get("weaponMasteryCount")) is not int or row["weaponMasteryCount"] < 2
+                    ):
+                        errors.append(f"{row_location}: missing weapon mastery count")
+                    if entry.get("name") == "Warlock" and (
+                        type(row.get("eldritchInvocationsKnown")) is not int
+                        or row["eldritchInvocationsKnown"] < 1
+                    ):
+                        errors.append(f"{row_location}: missing invocation count")
+                    slots = row.get("spellSlots")
+                    slot_count = {"full": 9, "half": 5}.get(entry.get("spellcastingType"))
+                    if slot_count is not None and (
+                        not isinstance(slots, list) or len(slots) != slot_count
+                        or any(type(count) is not int or count < 0 for count in slots)
+                    ):
+                        errors.append(f"{row_location}: invalid spell slots")
             multiclass = entry.get("multiclassProficiencies")
             if not isinstance(multiclass, dict) or any(
                 not isinstance(multiclass.get(key), list)
@@ -213,6 +245,252 @@ def validate_2024_spells(data, errors):
             for roll in rolls
         ):
             errors.append(f"{location}: invalid rolls")
+
+
+def validate_2024_features(data, errors):
+    expected_counts = {
+        "class_features": {
+            "Barbarian": 20, "Bard": 12, "Cleric": 11, "Druid": 13,
+            "Fighter": 15, "Monk": 22, "Paladin": 17, "Ranger": 17,
+            "Rogue": 18, "Sorcerer": 10, "Warlock": 9, "Wizard": 10,
+        },
+        "subclass_features": {
+            "Barbarian": 4, "Bard": 4, "Cleric": 5, "Druid": 5,
+            "Fighter": 6, "Monk": 4, "Paladin": 5, "Ranger": 5,
+            "Rogue": 5, "Sorcerer": 5, "Warlock": 5, "Wizard": 5,
+        },
+    }
+    for filename, counts in expected_counts.items():
+        rows = data.get(filename)
+        if rows is None:
+            continue
+        found = set()
+        for index, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            location = f"{filename}[{index}]"
+            class_name = row.get("class")
+            if not isinstance(class_name, str):
+                errors.append(f"{location}: missing class")
+                continue
+            if class_name in found:
+                errors.append(f"{location}: duplicate class {class_name!r}")
+            found.add(class_name)
+            features = row.get("features")
+            if not isinstance(features, list):
+                continue
+            if class_name in counts and len(features) != counts[class_name]:
+                errors.append(
+                    f"{location}: expected {counts[class_name]} features, found {len(features)}"
+                )
+            for feature_index, feature in enumerate(features):
+                feature_location = f"{location}.features[{feature_index}]"
+                if not isinstance(feature, dict):
+                    errors.append(f"{feature_location}: expected object")
+                    continue
+                if not isinstance(feature.get("name"), str) or not feature["name"].strip():
+                    errors.append(f"{feature_location}: missing name")
+                if type(feature.get("level")) is not int or not 1 <= feature["level"] <= 20:
+                    errors.append(f"{feature_location}: invalid level")
+                if feature.get("type") not in ("active", "passive", "subclass", "asi", "epic_boon"):
+                    errors.append(f"{feature_location}: invalid type")
+                if filename == "class_features" and (
+                    (feature.get("name") == "Epic Boon")
+                    != (feature.get("level") == 19 and feature.get("type") == "epic_boon")
+                ):
+                    errors.append(f"{feature_location}: invalid Epic Boon milestone")
+                if not isinstance(feature.get("description"), str) or not feature["description"].strip():
+                    errors.append(f"{feature_location}: missing description")
+        if found != set(counts):
+            errors.append(f"{filename}: missing or unexpected SRD classes: {sorted(set(counts) ^ found)}")
+
+    if "classes" in data and "class_features" in data:
+        classes_by_name = {
+            entry["name"]: entry for entry in data["classes"]
+            if isinstance(entry, dict) and isinstance(entry.get("name"), str)
+        }
+        for row in data["class_features"]:
+            if not isinstance(row, dict) or row.get("class") not in classes_by_name:
+                continue
+            marker = classes_by_name[row["class"]].get("subclassFeatureName")
+            if not any(
+                isinstance(feature, dict) and feature.get("name") == marker
+                and feature.get("level") == 3 and feature.get("type") == "subclass"
+                for feature in (row.get("features") or [])
+            ):
+                errors.append(f"class_features.{row['class']}: missing level 3 subclass marker")
+
+    if "subclasses" in data and "subclass_features" in data:
+        for row in data["subclass_features"]:
+            if not isinstance(row, dict):
+                continue
+            entries = data["subclasses"].get(row.get("class"), [])
+            if not isinstance(entries, list) or row.get("subclass") not in {
+                entry.get("name") for entry in entries if isinstance(entry, dict)
+            }:
+                errors.append(f"subclass_features.{row.get('class')}: unknown subclass")
+            if not any(
+                isinstance(feature, dict) and feature.get("level") == 3
+                for feature in (row.get("features") or [])
+            ):
+                errors.append(f"subclass_features.{row.get('class')}: missing level 3 feature")
+
+
+def validate_2024_feature_catalogs(data, errors):
+    class_rows = {
+        row["class"]: {feature["name"] for feature in row["features"]}
+        for row in data.get("class_features", [])
+        if isinstance(row, dict) and isinstance(row.get("features"), list)
+    }
+    subclass_rows = {
+        (row["class"], row["subclass"]): {
+            feature["name"] for feature in row["features"]
+        }
+        for row in data.get("subclass_features", [])
+        if isinstance(row, dict) and isinstance(row.get("features"), list)
+    }
+    for filename in ("feature_choices", "feature_usages"):
+        catalog = data.get(filename)
+        if catalog is None:
+            continue
+        if class_rows:
+            for class_name, definitions in catalog.get("classFeatures", {}).items():
+                for feature_name in definitions:
+                    if feature_name not in class_rows.get(class_name, set()):
+                        errors.append(
+                            f"{filename}.classFeatures.{class_name}: unknown feature {feature_name!r}"
+                        )
+        if subclass_rows:
+            for class_name, subclasses in catalog.get("subclassFeatures", {}).items():
+                for subclass_name, definitions in subclasses.items():
+                    for feature_name in definitions:
+                        if feature_name not in subclass_rows.get((class_name, subclass_name), set()):
+                            errors.append(
+                                f"{filename}.subclassFeatures.{class_name}.{subclass_name}: "
+                                f"unknown feature {feature_name!r}"
+                            )
+        if "race_traits" in data:
+            for trait_name in catalog.get("raceTraits", {}):
+                if trait_name not in data["race_traits"]:
+                    errors.append(f"{filename}.raceTraits: unknown trait {trait_name!r}")
+
+    choices = data.get("feature_choices", {})
+    sources = choices.get("optionSources", {})
+    invocations = sources.get("eldritch_invocations_2024", [])
+    invocation_ids = {option.get("id") for option in invocations if isinstance(option, dict)}
+    if "feature_choices" in data and (len(invocations) != 28 or len(invocation_ids) != 28):
+        errors.append("feature_choices: expected 28 distinct Warlock invocations")
+    for option in invocations:
+        if not isinstance(option, dict):
+            errors.append("feature_choices: invalid invocation")
+            continue
+        if any(required not in invocation_ids for required in option.get("requiresInvocations", [])):
+            errors.append(f"feature_choices: unknown prerequisite for {option.get('id')!r}")
+        if option.get("repeatableWithDifferentTarget") and not option.get("target"):
+            errors.append(f"feature_choices: repeatable invocation without target {option.get('id')!r}")
+    for class_name in (("Barbarian", "Fighter", "Paladin", "Ranger", "Rogue") if "feature_choices" in data else ()):
+        mastery = choices.get("classFeatures", {}).get(class_name, {}).get("Weapon Mastery", {})
+        requirements = mastery.get("choices", [])
+        if len(requirements) != 1 or requirements[0].get("optionsSource") not in sources:
+            errors.append(f"feature_choices: missing {class_name} weapon mastery")
+    invocations_choice = choices.get("classFeatures", {}).get("Warlock", {}).get("Eldritch Invocations", {})
+    if "feature_choices" in data and len(invocations_choice.get("choices", [])) != 3:
+        errors.append("feature_choices: missing Warlock invocations choice")
+    classes_by_name = {entry["name"]: entry for entry in data.get("classes", []) if isinstance(entry, dict)}
+    for class_name, feature_name, column in [
+        *((name, "Weapon Mastery", "weaponMasteryCount") for name in
+          ("Barbarian", "Fighter", "Paladin", "Ranger", "Rogue")),
+        ("Warlock", "Eldritch Invocations", "eldritchInvocationsKnown"),
+    ]:
+        entry = classes_by_name.get(class_name)
+        requirements = choices.get("classFeatures", {}).get(class_name, {}).get(feature_name, {}).get("choices", [])
+        if entry is None or not requirements:
+            continue
+        increases = requirements[0].get("countByLevel", {})
+        for row in entry.get("progression", []):
+            if not isinstance(row, dict):
+                continue
+            expected = row.get(column)
+            actual = sum(count for threshold, count in increases.items() if int(threshold) <= row["level"])
+            if expected != actual:
+                errors.append(f"feature_choices: {class_name} {feature_name} count disagrees at level {row['level']}")
+    for section in ("classFeatures", "subclassFeatures", "raceTraits", "feats"):
+        def check_definitions(node, location):
+            if not isinstance(node, dict):
+                return
+            if "choices" not in node:
+                for key, child in node.items():
+                    check_definitions(child, f"{location}.{key}")
+                return
+            requirements = node["choices"]
+            by_id = {item.get("id"): item for item in requirements if isinstance(item, dict)}
+            for requirement in requirements:
+                if not isinstance(requirement, dict):
+                    continue
+                parent_id = requirement.get("whenChoiceId")
+                if parent_id is not None:
+                    parent = by_id.get(parent_id)
+                    if parent is None or parent is requirement:
+                        errors.append(f"{location}: invalid conditional choice {parent_id!r}")
+                    else:
+                        options = parent.get("options", sources.get(parent.get("optionsSource"), []))
+                        if requirement.get("whenOptionId") not in {
+                            option.get("id") for option in options if isinstance(option, dict)
+                        }:
+                            errors.append(f"{location}: unknown conditional option")
+                spell_classes = requirement.get("spellClasses", [])
+                if not isinstance(spell_classes, list) or any(
+                    not isinstance(name, str) for name in spell_classes
+                ) or set(spell_classes) - {
+                    "bard", "cleric", "druid", "paladin", "ranger",
+                    "sorcerer", "warlock", "wizard",
+                }:
+                    errors.append(f"{location}: invalid spellClasses")
+                if requirement.get("featCategory") not in (
+                    None, "origin", "general", "fighting_style", "epic_boon"
+                ):
+                    errors.append(f"{location}: invalid featCategory")
+                for field in ("countByLevel", "maxSpellLevelByLevel"):
+                    tiers = requirement.get(field, {})
+                    if not isinstance(tiers, dict) or any(
+                        not str(level).isdigit() or int(level) < 1
+                        or type(amount) is not int or amount < 0
+                        for level, amount in tiers.items()
+                    ):
+                        errors.append(f"{location}: invalid {field}")
+
+        check_definitions(choices.get(section, {}), f"feature_choices.{section}")
+
+    usages = data.get("feature_usages", {})
+    for feature_name in (("Mystic Arcanum", "Signature Spells") if "feature_usages" in data else ()):
+        owner = "Warlock" if feature_name == "Mystic Arcanum" else "Wizard"
+        if not usages.get("classFeatures", {}).get(owner, {}).get(feature_name, {}).get("additionalResources"):
+            errors.append(f"feature_usages: missing independent uses for {feature_name}")
+    if "feature_usages" in data and not usages.get("subclassFeatures", {}).get("Druid", {}).get("Circle of the Land", {}).get("Natural Recovery", {}).get("additionalResources"):
+        errors.append("feature_usages: missing independent Natural Recovery uses")
+    supported_recharges = {
+        "short_rest", "short_or_long_rest", "short_rest_one",
+        "long_rest", "bardic_inspiration_recharge",
+    }
+    supported_formulas = {
+        "charisma_modifier_min_1", "wisdom_modifier_min_1",
+        "fighter_action_surge_uses", "fighter_indomitable_uses",
+        "monk_level", "sorcerer_level", "paladin_level_x5",
+        "proficiency_bonus",
+    }
+    for resource_id, resource in usages.get("resources", {}).items():
+        if resource.get("recharge") not in supported_recharges:
+            errors.append(f"feature_usages.resources.{resource_id}: unsupported recharge")
+        maximum = str(resource.get("max", ""))
+        if not maximum.isdigit() and maximum not in supported_formulas:
+            errors.append(f"feature_usages.resources.{resource_id}: unsupported max formula")
+        tiers = resource.get("maxByLevel", {})
+        if not isinstance(tiers, dict) or any(
+            not str(level).isdigit() or int(level) < 1
+            or type(amount) is not int or amount < 0
+            for level, amount in tiers.items()
+        ):
+            errors.append(f"feature_usages.resources.{resource_id}: invalid maxByLevel")
 
 
 def validate_2024_origins(data, errors):
@@ -478,6 +756,82 @@ def validate(pack, only=None):
                     }:
                         errors.append(f"equipment.weapons[{index}]: unknown ammunition")
 
+            items = {
+                item["name"]: item
+                for section in ("weapons", "armor", "gear")
+                for item in equipment.get(section, [])
+                if isinstance(item, dict) and isinstance(item.get("name"), str)
+            }
+            for index, gear in enumerate(equipment.get("gear", [])):
+                if not isinstance(gear, dict):
+                    continue
+                location = f"equipment.gear[{index}]"
+                weight = gear.get("weight")
+                if weight is not None and (not isinstance(weight, (int, float)) or weight < 0):
+                    errors.append(f"{location}: invalid weight")
+                contents = gear.get("contents")
+                if gear.get("category") == "pack" and not contents:
+                    errors.append(f"{location}: pack has no contents")
+                if contents is None:
+                    continue
+                if not isinstance(contents, list):
+                    errors.append(f"{location}: contents must be a list")
+                    continue
+                contents_weight = 0.0
+                for content_index, content in enumerate(contents):
+                    content_location = f"{location}.contents[{content_index}]"
+                    if not isinstance(content, dict) or content.get("name") not in items:
+                        errors.append(f"{content_location}: unknown item")
+                        continue
+                    quantity = content.get("quantity", 1)
+                    if not isinstance(quantity, int) or isinstance(quantity, bool) or quantity < 1:
+                        errors.append(f"{content_location}: invalid quantity")
+                        continue
+                    contents_weight += (items[content["name"]].get("weight") or 0) * quantity
+                if gear.get("category") == "pack" and isinstance(weight, (int, float)):
+                    if abs(weight - contents_weight) > 0.001:
+                        errors.append(f"{location}: pack weight does not match contents")
+
+            if "tools" in data:
+                known_items = set(items) | {
+                    tool["name"] for tool in data["tools"] if isinstance(tool, dict) and "name" in tool
+                }
+                for filename in ("classes", "backgrounds"):
+                    for row in data.get(filename, []):
+                        for choice in row.get("equipmentChoices", []):
+                            for item in choice.get("items", []):
+                                name = item.get("name")
+                                if name and not item.get("choiceFrom") and name not in known_items:
+                                    errors.append(f"{filename}.{row.get('name')}: unknown equipment {name!r}")
+
+    if "magic_items" in data:
+        magic_items = data["magic_items"]
+        minimum = 262 if pack == "5.1" else 270
+        if len(magic_items) < minimum:
+            errors.append(f"magic_items: expected at least {minimum} SRD {pack} records")
+        categories = {"armor", "weapon", "wondrous item", "potion", "ring", "rod", "scroll", "staff", "wand"}
+        item_types = {"ammunition", "armor", "consumable", "container", "equippable", "gear", "weapon"}
+        rarities = {"common", "uncommon", "rare", "very rare", "legendary", "artifact", "varies"}
+        for index, item in enumerate(magic_items):
+            location = f"magic_items[{index}]"
+            if not isinstance(item, dict):
+                errors.append(f"{location}: expected object")
+                continue
+            if item.get("type") not in categories or item.get("itemType") not in item_types:
+                errors.append(f"{location}: invalid category or item type")
+            if item.get("rarity") not in rarities:
+                errors.append(f"{location}: invalid rarity")
+            if not isinstance(item.get("requiresAttunement"), bool):
+                errors.append(f"{location}: invalid attunement flag")
+            if not isinstance(item.get("description"), str) or not item["description"].strip():
+                errors.append(f"{location}: missing description")
+            weight = item.get("weight")
+            if weight is not None and (isinstance(weight, bool) or not isinstance(weight, (int, float)) or weight < 0):
+                errors.append(f"{location}: invalid weight")
+            cost = item.get("cost")
+            if cost is not None and not isinstance(cost, str):
+                errors.append(f"{location}: invalid cost")
+
     choices = data.get("feature_choices", {})
     choice_sources = choices.get("optionSources", {})
     for source_name, options in choice_sources.items():
@@ -541,6 +895,8 @@ def validate(pack, only=None):
                         errors.append("manifest.json: pending catalogs require in_progress status")
         validate_2024_origins(data, errors)
         validate_2024_classes(data, errors)
+        validate_2024_features(data, errors)
+        validate_2024_feature_catalogs(data, errors)
         validate_2024_spells(data, errors)
 
     return errors

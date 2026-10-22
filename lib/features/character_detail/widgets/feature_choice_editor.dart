@@ -76,9 +76,13 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
   }
 
   List<CharacterFeatureChoice> get _currentChoices {
-    return [
+    final choices = [
       for (final request in widget.requests)
         request.toChoice(_values[request.key] ?? const []),
+    ];
+    return [
+      for (var index = 0; index < widget.requests.length; index++)
+        if (widget.requests[index].isApplicable(choices)) choices[index],
     ];
   }
 
@@ -120,7 +124,9 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 12),
-        for (final request in widget.requests) _buildRequest(context, request),
+        for (final request in widget.requests)
+          if (request.isApplicable(_currentChoices))
+            _buildRequest(context, request),
       ],
     );
   }

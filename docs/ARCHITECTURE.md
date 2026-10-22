@@ -678,9 +678,12 @@ lowercase. Missing translations fall back to English SRD values in the UI.
 
 `tools/validate_srd_pack.py 5.1` checks English pack structure and basic
 references. `tools/translate_i18n.py` uses Google Translate for initial
-overlays, defaults to pack 5.1, and accepts `--pack 5.2.1` once its English
-catalog is complete and validated. IDs and mechanics remain in the English
-source; translated overlays require a later human review.
+overlays and defaults to pack 5.1. `--pack 5.2.1` selects the 2024 catalog;
+`--merge` fills missing text without replacing reviewed translations, and
+`--dry-run` reports the remaining work without network access. The translation
+can be resumed by rerunning `--merge`, while `tools/check_srd_i18n.py` checks
+text coverage per pack. IDs and mechanics remain in the English source;
+translated overlays still require human review.
 
 This split is intentional: ARB handles app chrome and controls; JSON overlays
 handle game data that mirrors SRD asset structure.

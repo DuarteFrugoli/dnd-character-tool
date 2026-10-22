@@ -81,6 +81,55 @@ void main() {
       expect(catalog.raceTrait('Lucky')!.resourceId, 'luck');
       expect(catalog.feat('Lucky')!.resourceId, 'luck');
     });
+
+    test('parses independent resources with class-level gates', () {
+      final catalog = FeatureUsageCatalog.fromJson({
+        'resources': {
+          'arcanum_6': {'name': 'Arcanum 6', 'max': '1', 'recharge': 'long_rest'},
+          'arcanum_7': {'name': 'Arcanum 7', 'max': '1', 'recharge': 'long_rest'},
+        },
+        'classFeatures': {
+          'Warlock': {
+            'Mystic Arcanum': {
+              'resourceId': 'arcanum_6',
+              'minClassLevel': 11,
+              'additionalResources': [
+                {'resourceId': 'arcanum_7', 'minClassLevel': 13},
+              ],
+            },
+          },
+        },
+      });
+      final ref = catalog.classFeature('Warlock', 'Mystic Arcanum');
+      final character = _character(cls: 'Warlock', level: 13);
+
+      expect(
+        FeatureUsageEngine.viewsForRef(
+          catalog: catalog,
+          character: character,
+          ref: ref,
+          usageContext: const FeatureUsageContext(
+            totalCharacterLevel: 13,
+            sourceClass: 'Warlock',
+            sourceClassLevel: 12,
+          ),
+        ).map((view) => view.resource.id),
+        ['arcanum_6'],
+      );
+      expect(
+        FeatureUsageEngine.viewsForRef(
+          catalog: catalog,
+          character: character,
+          ref: ref,
+          usageContext: const FeatureUsageContext(
+            totalCharacterLevel: 13,
+            sourceClass: 'Warlock',
+            sourceClassLevel: 13,
+          ),
+        ).map((view) => view.resource.id),
+        ['arcanum_6', 'arcanum_7'],
+      );
+    });
   });
 
   group('FeatureUsageEngine.maxFor', () {
@@ -166,6 +215,41 @@ void main() {
         3,
       );
     });
+
+    test('2024 resource limits use source class level tiers', () {
+      final resource = FeatureUsageResource.fromJson('2024_rage', {
+        'name': 'Rage',
+        'max': '2',
+        'maxByLevel': {'1': 2, '3': 3, '6': 4, '12': 5, '17': 6},
+        'recharge': 'short_rest_one',
+      });
+      final character = _character(cls: 'Fighter', level: 10);
+
+      expect(
+        FeatureUsageEngine.maxFor(
+          resource,
+          character,
+          usageContext: const FeatureUsageContext(
+            totalCharacterLevel: 10,
+            sourceClass: 'Barbarian',
+            sourceClassLevel: 3,
+          ),
+        ),
+        3,
+      );
+      expect(FeatureUsageEngine.maxFor(resource, _character(level: 20)), 6);
+    });
+
+    test('species uses can scale with total proficiency bonus', () {
+      final character = _character(level: 9).copyWith(proficiencyBonus: 4);
+      expect(
+        FeatureUsageEngine.maxFor(
+          _resource('breath_weapon', 'proficiency_bonus'),
+          character,
+        ),
+        4,
+      );
+    });
   });
 
   group('FeatureUsageEngine.currentFor', () {
@@ -199,6 +283,26 @@ void main() {
   });
 
   group('FeatureUsageEngine recharge', () {
+    test('2024 partial short rest recovers one use and long rest fills', () {
+      expect(
+        FeatureUsageEngine.restoredCurrent(
+          recharge: 'short_rest_one',
+          rest: FeatureUsageRest.shortRest,
+          current: 0,
+          max: 4,
+        ),
+        1,
+      );
+      expect(
+        FeatureUsageEngine.restoredCurrent(
+          recharge: 'short_rest_one',
+          rest: FeatureUsageRest.longRest,
+          current: 1,
+          max: 4,
+        ),
+        4,
+      );
+    });
     test('bardic inspiration moves to short rest at level 5', () {
       final resource = _resource(
         'bardic',

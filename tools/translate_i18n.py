@@ -11,7 +11,9 @@ Usage (SRD overlays — assets/data/i18n/{locale}/{pack}/):
   python tools/translate_i18n.py --file class_features.json --file feature_usages.json --force
   python tools/translate_i18n.py es --file equipment.json --force  # overwrite equipment.json for es
   python tools/translate_i18n.py pt --file feature_choices.json --force  # feature choice option labels
-  python tools/translate_i18n.py --pack 5.2.1 --file spells.json  # after English 5.2.1 is complete
+  python tools/translate_i18n.py --pack 5.1 --file magic_items.json --merge
+  python tools/translate_i18n.py --pack 5.2.1 --merge
+  python tools/translate_i18n.py --pack 5.2.1 --merge --dry-run
 
 Usage (ARB locale files — lib/l10n/):
   python tools/translate_i18n.py --arb                        # generate ARBs for ALL locales
@@ -23,6 +25,7 @@ Requires:
 """
 
 import json
+import os
 import re
 import sys
 import time
@@ -34,8 +37,7 @@ from validate_srd_pack import validate as validate_srd_pack
 try:
     from deep_translator import GoogleTranslator
 except ImportError:
-    print("ERROR: deep-translator not installed. Run: pip install deep-translator")
-    sys.exit(1)
+    GoogleTranslator = None
 
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
@@ -61,6 +63,9 @@ LOCALE_LANG = {
 DELAY_BASE   = 0.3
 DELAY_JITTER = 0.15
 MAX_RETRIES  = 3
+_CLIENTS = {}
+_TEXT_CACHE = {}
+TECHNICAL_FIELDS = {"id", "type", "resourceId", "optionsSource", "formula"}
 
 
 # ── SRD extractors ─────────────────────────────────────────────────────────────
@@ -80,7 +85,8 @@ def extract_skills() -> dict:
 def extract_equipment() -> dict:
     # srd: { weapons: [...], armor: [...], gear: [...] }
     out = {}
-    for category in _srd("equipment.json").values():
+    source = _srd("equipment.json")
+    for category in source.values():
         if isinstance(category, list):
             for item in category:
                 if isinstance(item, dict) and "name" in item:
@@ -88,6 +94,11 @@ def extract_equipment() -> dict:
                     if item.get("description"):
                         entry["description"] = item["description"]
                     out[item["name"]] = entry
+    if SRD_DIR.name == "5.2.1":
+        out["weaponMasteries"] = {
+            mastery: {"name": mastery.title(), "description": description}
+            for mastery, description in source.get("weaponMasteries", {}).items()
+        }
     return out
 
 
@@ -108,11 +119,14 @@ def extract_races() -> dict:
     # srd: [{ name, languages: [...], subraces: [{ name }] }]
     out = {}
     for race in _srd("races.json"):
-        out[race["name"]] = {
-            "name": race["name"],
-            "languages": race.get("languages", []),
-            "subraces": [{"name": sr["name"]} for sr in race.get("subraces", [])],
-        }
+        if SRD_DIR.name == "5.2.1":
+            out[race["name"]] = {"name": race["name"]}
+        else:
+            out[race["name"]] = {
+                "name": race["name"],
+                "languages": race.get("languages", []),
+                "subraces": [{"name": sr["name"]} for sr in race.get("subraces", [])],
+            }
     return out
 
 
@@ -120,6 +134,9 @@ def extract_backgrounds() -> dict:
     # srd: [{ name, startingEquipment: [...], feature: { name, description } }]
     out = {}
     for bg in _srd("backgrounds.json"):
+        if SRD_DIR.name == "5.2.1":
+            out[bg["name"]] = {"name": bg["name"]}
+            continue
         entry = {
             "name": bg["name"],
             "startingEquipment": bg.get("startingEquipment", []),
@@ -138,6 +155,12 @@ def extract_classes() -> dict:
     #         startingEquipment: { fixed: [...], choices: [{ options: [[...]] }] } }]
     out = {}
     for cls in _srd("classes.json"):
+        if SRD_DIR.name == "5.2.1":
+            out[cls["name"]] = {
+                "name": cls["name"],
+                "subclassFeatureName": cls.get("subclassFeatureName", ""),
+            }
+            continue
         entry = {
             "name": cls["name"],
             "subclassFeatureName": cls.get("subclassFeatureName", ""),
@@ -150,7 +173,7 @@ def extract_classes() -> dict:
 
 def extract_spells() -> dict:
     # srd: [{ name, description, higherLevels, material, … }]
-    return {
+    out = {
         spell["name"]: {
             "name": spell["name"],
             "description": spell.get("description", ""),
@@ -159,6 +182,20 @@ def extract_spells() -> dict:
         }
         for spell in _srd("spells.json")
     }
+    if SRD_DIR.name == "5.2.1":
+        for spell in _srd("spells.json"):
+            entry = out[spell["name"]]
+            for field in ("castingTime", "range", "duration"):
+                if spell.get(field):
+                    entry[field] = spell[field]
+            labels = {
+                roll["id"]: {"label": roll["label"]}
+                for roll in spell.get("rolls", [])
+                if roll.get("label")
+            }
+            if labels:
+                entry["rolls"] = labels
+    return out
 
 
 def extract_subclasses() -> dict:
@@ -206,14 +243,13 @@ def extract_tools() -> dict:
 
 def extract_feats() -> dict:
     # srd: [{ name, prerequisite, description }]
-    return {
-        feat["name"]: {
-            "name": feat["name"],
-            "prerequisite": feat.get("prerequisite"),
-            "description": feat.get("description", ""),
-        }
-        for feat in _srd("feats.json")
-    }
+    out = {}
+    for feat in _srd("feats.json"):
+        entry = {"name": feat["name"], "description": feat.get("description", "")}
+        if SRD_DIR.name == "5.1":
+            entry["prerequisite"] = feat.get("prerequisite")
+        out[feat["name"]] = entry
+    return out
 
 
 def extract_conditions() -> dict:
@@ -332,53 +368,142 @@ EXTRACTORS = {
 
 # ── Translation helpers ────────────────────────────────────────────────────────
 
+def _translation_chunks(text: str, limit: int = 4500) -> list[str]:
+    if len(text) <= limit:
+        return [text]
+    parts = re.split(r"(\n\n|(?<=[.!?])\s+)", text)
+    chunks = []
+    current = ""
+    for part in parts:
+        if len(current) + len(part) > limit and current:
+            chunks.append(current)
+            current = ""
+        if len(part) > limit:
+            words = re.split(r"(\s+)", part)
+            for word in words:
+                if len(current) + len(word) > limit and current:
+                    chunks.append(current)
+                    current = ""
+                current += word
+        else:
+            current += part
+    if current:
+        chunks.append(current)
+    return chunks
+
+
 def _translate(text: str, tgt: str) -> str:
     """Translate an English string to tgt language with retries."""
     if not text or not text.strip():
         return text
+    if GoogleTranslator is None:
+        raise RuntimeError("deep-translator is required: pip install deep-translator")
+    if len(text) > 4500:
+        paragraphs = text.split("\n\n")
+        if len(paragraphs) > 1:
+            return "\n\n".join(_translate(part, tgt) for part in paragraphs)
+        return " ".join(_translate(chunk.strip(), tgt) for chunk in _translation_chunks(text))
+    cache_key = (tgt, text)
+    if cache_key in _TEXT_CACHE:
+        return _TEXT_CACHE[cache_key]
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             time.sleep(DELAY_BASE + random.uniform(0, DELAY_JITTER))
-            result = GoogleTranslator(source="en", target=tgt).translate(text)
-            return result if result else text
+            if tgt not in _CLIENTS:
+                _CLIENTS[tgt] = GoogleTranslator(source="en", target=tgt)
+            client = _CLIENTS[tgt]
+            result = client.translate(text)
+            if not result:
+                raise RuntimeError("translation service returned an empty result")
+            _TEXT_CACHE[cache_key] = result
+            return result
         except Exception as exc:
             wait = 2 ** attempt
             print(f"\n    [retry {attempt}/{MAX_RETRIES}] {exc} — waiting {wait}s")
             time.sleep(wait)
-    print(f"\n    [WARN] Giving up on: {text[:60]!r}")
-    return text
-
-
-def _translate_node(node, tgt_lang: str):
-    """
-    Recursively translate all string VALUES from English.
-    Dict KEYS are English identifiers — never translated.
-    None / bool / int / float — kept as-is.
-    """
-    if isinstance(node, dict):
-        return {
-            k: v if k in {"id", "type", "resourceId", "optionsSource", "formula"}
-            else _translate_node(v, tgt_lang)
-            for k, v in node.items()
-        }
-    if isinstance(node, list):
-        return [_translate_node(item, tgt_lang) for item in node]
-    if isinstance(node, str):
-        return _translate(node, tgt_lang)
-    return node  # None, bool, int, float
+    raise RuntimeError(f"Translation failed after {MAX_RETRIES} attempts: {text[:60]!r}")
 
 
 # ── File handling ──────────────────────────────────────────────────────────────
 
-def translate_file(filename: str, dst_path: Path, tgt_lang: str):
-    extractor = EXTRACTORS[filename]
-    en_overlay = extractor()
-    translated = _translate_node(en_overlay, tgt_lang)
-    dst_path.parent.mkdir(parents=True, exist_ok=True)
-    dst_path.write_text(
-        json.dumps(translated, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+def _merge_translations(source, existing, tgt_lang: str):
+    if isinstance(source, dict):
+        result = dict(existing) if isinstance(existing, dict) else {}
+        for key, value in source.items():
+            result[key] = (
+                value if key in TECHNICAL_FIELDS
+                else _merge_translations(value, result.get(key), tgt_lang)
+            )
+        return result
+    if isinstance(source, list):
+        result = list(existing) if isinstance(existing, list) else []
+        for index, value in enumerate(source):
+            old = result[index] if index < len(result) else None
+            merged = _merge_translations(value, old, tgt_lang)
+            if index < len(result):
+                result[index] = merged
+            else:
+                result.append(merged)
+        return result
+    if isinstance(source, str):
+        if isinstance(existing, str) and existing.strip():
+            return existing
+        return _translate(source, tgt_lang)
+    return existing if existing is not None else source
+
+
+def _missing_text_count(source, existing) -> int:
+    if isinstance(source, dict):
+        old = existing if isinstance(existing, dict) else {}
+        return sum(
+            _missing_text_count(value, old.get(key))
+            for key, value in source.items() if key not in TECHNICAL_FIELDS
+        )
+    if isinstance(source, list):
+        old = existing if isinstance(existing, list) else []
+        return sum(
+            _missing_text_count(value, old[index] if index < len(old) else None)
+            for index, value in enumerate(source)
+        )
+    return int(isinstance(source, str) and bool(source.strip()) and
+               (not isinstance(existing, str) or not existing.strip()))
+
+
+def _write_json(path: Path, value) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    os.replace(temporary, path)
+
+
+def translate_file(filename: str, dst_path: Path, tgt_lang: str, *, merge: bool = False):
+    source = EXTRACTORS[filename]()
+    existing = json.loads(dst_path.read_text(encoding="utf-8")) if merge and dst_path.exists() else {}
+    if not isinstance(existing, dict):
+        raise ValueError(f"Expected an object in {dst_path}")
+    result = dict(existing)
+    for key, value in source.items():
+        previous = result.get(key)
+        if merge and filename in {
+            "class_features.json", "subclass_features.json",
+            "feature_choices.json", "feature_usages.json",
+        } and isinstance(value, dict):
+            group = dict(previous) if isinstance(previous, dict) else {}
+            for child_key, child_value in value.items():
+                old = group.get(child_key)
+                if _missing_text_count(child_value, old) == 0:
+                    continue
+                group[child_key] = _merge_translations(child_value, old, tgt_lang)
+                result[key] = group
+                _write_json(dst_path, result)
+            continue
+        if merge and _missing_text_count(value, previous) == 0:
+            continue
+        result[key] = _merge_translations(value, previous if merge else None, tgt_lang)
+        if merge:
+            _write_json(dst_path, result)
+    if not merge or not dst_path.exists():
+        _write_json(dst_path, result)
 
 
 def is_empty(path: Path) -> bool:
@@ -475,7 +600,15 @@ def main():
     raw_args = sys.argv[1:]
     force    = "--force" in raw_args
     arb_mode = "--arb"   in raw_args
-    args     = [a for a in raw_args if a not in ("--force", "--arb")]
+    merge    = "--merge" in raw_args
+    dry_run  = "--dry-run" in raw_args
+    args     = [a for a in raw_args if a not in ("--force", "--arb", "--merge", "--dry-run")]
+    if force and merge:
+        print("Use either --force (replace translations) or --merge (keep existing translations)")
+        sys.exit(1)
+    if arb_mode and (merge or dry_run):
+        print("--merge and --dry-run are only available for SRD overlays")
+        sys.exit(1)
 
     pack = "5.1"
     if "--pack" in args:
@@ -554,7 +687,8 @@ def main():
 
     print(f"Source : {SRD_DIR} (English SRD)")
     print(f"Targets: {', '.join(target_locales)}")
-    print(f"Force  : {force}\n")
+    print(f"Mode   : {'force' if force else 'merge' if merge else 'skip existing'}")
+    print(f"Dry run: {dry_run}\n")
 
     for locale in target_locales:
         tgt_lang = LOCALE_LANG[locale]
@@ -565,15 +699,20 @@ def main():
 
         for filename in filenames:
             dst_file = tgt_dir / filename
-            if not force and not is_empty(dst_file):
+            if not force and not merge and not is_empty(dst_file):
                 print(f"  {filename:<30} SKIP (use --force to overwrite)")
                 continue
+            if dry_run:
+                existing = json.loads(dst_file.read_text(encoding="utf-8")) if merge and dst_file.exists() else {}
+                missing = _missing_text_count(EXTRACTORS[filename](), existing)
+                print(f"  {filename:<30} {missing} text fields to translate")
+                continue
             print(f"  {filename:<30} ", end="", flush=True)
-            translate_file(filename, dst_file, tgt_lang)
+            translate_file(filename, dst_file, tgt_lang, merge=merge)
             print("done")
 
     print(f"\n{'='*60}")
-    print("All translations complete.")
+    print("Dry run complete; no translations written." if dry_run else "All translations complete.")
 
 
 if __name__ == "__main__":

@@ -15,6 +15,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Internal
 - **Novidades no app**: aviso versionado por identificador interno e salvo localmente para aparecer apenas uma vez por novidade.
+- **Pacotes de regras**: dados SRD e traducoes separados por versao; fichas existentes recebem a identificacao 2014/5.1 apenas pela atualizacao explicita de personagens.
+- **SRD 5.2.1**: preparados em ingles os catalogos de classes, subclasses, especies, antecedentes, talentos, equipamentos, magias, itens magicos e caracteristicas, com tabelas de progressao por classe. Escolhas e usos de habilidades ainda exigem integracao ao fluxo 2024.
+- **SRD 5.1**: ampliado o catalogo ingles de itens magicos, preparando a traducao das entradas que faltavam nos outros idiomas.
+- **Traducoes SRD**: ferramenta agora permite completar overlays por pacote sem sobrescrever textos revisados, retomar traducoes interrompidas e verificar campos ausentes antes da revisao manual.
 
 ---
 

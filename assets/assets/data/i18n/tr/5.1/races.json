@@ -1,0 +1,67 @@
+{
+  "Dwarf": {
+    "name": "Cüce",
+    "languages": ["Ortak Dil", "Cüce Dili"],
+    "subraces": [{"name": "Tepe Cücesi"}, {"name": "Dağ Cücesi"}]
+  },
+  "Elf": {
+    "name": "Elf",
+    "languages": ["Ortak Dil", "Elfçe"],
+    "subraces": [
+      {"name": "Yüce Elf"},
+      {"name": "Orman Elfi"},
+      {"name": "Kara Elf (Drow)"}
+    ]
+  },
+  "Halfling": {
+    "name": "Buçukluk",
+    "languages": ["Ortak Dil", "Buçukluk Dili"],
+    "subraces": [{"name": "Hafifayak"}, {"name": "Sağlam"}]
+  },
+  "Human": {
+    "name": "İnsan",
+    "languages": ["Ortak Dil", "seçtiğiniz bir ek dil"],
+    "subraces": []
+  },
+  "Variant Human": {
+    "name": "Varyant İnsan",
+    "languages": ["Ortak Dil", "seçtiğiniz bir ek dil"],
+    "subraces": []
+  },
+  "Dragonborn": {
+    "name": "Ejderdoğan",
+    "languages": ["Ortak Dil", "Ejder Dili"],
+    "subraces": [
+      {"name": "Siyah (Asit)"},
+      {"name": "Mavi (Yıldırım)"},
+      {"name": "Pirinç (Ateş)"},
+      {"name": "Bronz (Yıldırım)"},
+      {"name": "Bakır (Asit)"},
+      {"name": "Altın (Ateş)"},
+      {"name": "Yeşil (Zehir)"},
+      {"name": "Kırmızı (Ateş)"},
+      {"name": "Gümüş (Soğuk)"},
+      {"name": "Beyaz (Soğuk)"}
+    ]
+  },
+  "Gnome": {
+    "name": "Gnom",
+    "languages": ["Ortak Dil", "Gnom Dili"],
+    "subraces": [{"name": "Orman Gnomu"}, {"name": "Kaya Gnomu"}]
+  },
+  "Half-Elf": {
+    "name": "Yarı Elf",
+    "languages": ["Ortak Dil", "Elfçe", "seçtiğiniz bir ek dil"],
+    "subraces": []
+  },
+  "Half-Orc": {
+    "name": "Yarı Ork",
+    "languages": ["Ortak Dil", "Ork Dili"],
+    "subraces": []
+  },
+  "Tiefling": {
+    "name": "Tiefling",
+    "languages": ["Ortak Dil", "Cehennem Dili"],
+    "subraces": []
+  }
+}

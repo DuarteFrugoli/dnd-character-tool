@@ -1,0 +1,162 @@
+{
+  "Darkvision": {
+    "name": "Karanlıkta Görüş",
+    "description": "Yeraltı yaşamına alışkın olduğunuz için loş ışıkta ve karanlıkta üstün görüşünüz vardır. 60 fit yakınınızdaki loş ışığı parlak ışık, karanlığı ise loş ışık gibi görürsünüz. Karanlıkta renkleri değil, yalnızca gri tonlarını ayırt edebilirsiniz."
+  },
+  "Superior Darkvision": {
+    "name": "Üstün Karanlıkta Görüş",
+    "description": "Karanlıkta görüşünüzün menzili 120 fittir."
+  },
+  "Dwarven Resilience": {
+    "name": "Cüce Dayanıklılığı",
+    "description": "Zehre karşı kurtarma atışlarında Avantajınız, zehir hasarına karşı Direnciniz vardır."
+  },
+  "Dwarven Combat Training": {
+    "name": "Cüce Savaş Eğitimi",
+    "description": "Savaş baltası, el baltası, hafif çekiç ve savaş çekici kullanmada yetkinsiniz."
+  },
+  "Stonecunning": {
+    "name": "Taş Bilgisi",
+    "description": "Taş işçiliğinin kökeniyle ilgili bir Zekâ (Tarih) kontrolü yaptığınızda Tarih becerisinde yetkin sayılır ve kontrole yetkinlik bonusunuzun iki katını eklersiniz."
+  },
+  "Tool Proficiency": {
+    "name": "Alet Yetkinliği",
+    "description": "Seçtiğiniz bir zanaatkâr aletinde yetkinlik kazanırsınız: demirci aletleri, bira üreticisi malzemeleri veya taş ustası aletleri."
+  },
+  "Skill Proficiency": {
+    "name": "Beceri Yetkinliği",
+    "description": "Seçtiğiniz bir beceride yetkinlik kazanırsınız."
+  },
+  "Bonus Feat": {
+    "name": "Ek Hüner",
+    "description": "Seçtiğiniz bir hüneri kazanırsınız."
+  },
+  "Dwarven Toughness": {
+    "name": "Cüce Sağlamlığı",
+    "description": "Azami can puanınız 1 artar ve her seviye kazandığınızda 1 daha artar."
+  },
+  "Dwarven Armor Training": {
+    "name": "Cüce Zırh Eğitimi",
+    "description": "Hafif ve orta zırh kullanmada yetkinsiniz."
+  },
+  "Keen Senses": {
+    "name": "Keskin Duyular",
+    "description": "Algı becerisinde yetkinsiniz."
+  },
+  "Fey Ancestry": {
+    "name": "Peri Soyu",
+    "description": "Büyülenmeye karşı kurtarma atışlarında Avantajınız vardır ve büyü sizi uyutamaz."
+  },
+  "Trance": {
+    "name": "Trans",
+    "description": "Elflerin uyuması gerekmez. Bunun yerine günde 4 saat derin bir meditasyon yapar ve yarı bilinçli kalırlar. Meditasyon sırasında bir tür rüya görebilirler; bunlar yıllar süren uygulamayla refleks hâline gelmiş zihinsel alıştırmalardır. Böyle dinlendikten sonra bir insanın 8 saatlik uykudan elde ettiği faydayı kazanırsınız."
+  },
+  "Elf Weapon Training": {
+    "name": "Elf Silah Eğitimi",
+    "description": "Uzun kılıç, kısa kılıç, kısa yay ve uzun yay kullanmada yetkinsiniz."
+  },
+  "Cantrip": {
+    "name": "Küçük Büyü",
+    "description": "Büyücü büyü listesinden seçtiğiniz bir küçük büyüyü bilirsiniz. Bu büyü için büyü yapma özelliğiniz Zekâdır."
+  },
+  "Extra Language": {
+    "name": "Ek Dil",
+    "description": "Seçtiğiniz bir ek dili konuşabilir, okuyabilir ve yazabilirsiniz."
+  },
+  "Fleet of Foot": {
+    "name": "Hızlı Adımlar",
+    "description": "Temel yürüme hızınız 35 fite yükselir."
+  },
+  "Mask of the Wild": {
+    "name": "Doğanın Örtüsü",
+    "description": "Bitki örtüsü, şiddetli yağmur, yağan kar, sis veya başka doğal olaylar sizi yalnızca hafifçe gizlese bile Saklanmayı deneyebilirsiniz."
+  },
+  "Sunlight Sensitivity": {
+    "name": "Güneş Işığı Hassasiyeti",
+    "description": "Siz, saldırı hedefiniz veya görmeye çalıştığınız şey doğrudan güneş ışığındaysa saldırı atışlarınızda ve görmeye dayalı Bilgelik (Algı) kontrollerinizde Dezavantajınız vardır."
+  },
+  "Drow Magic": {
+    "name": "Drow Büyüsü",
+    "description": "Dans Eden Işıklar küçük büyüsünü bilirsiniz. 3. seviyeye ulaştığınızda Peri Ateşi büyüsünü günde bir kez yapabilirsiniz. 5. seviyeye ulaştığınızda Karanlık büyüsünü de günde bir kez yapabilirsiniz. Bu büyüler için büyü yapma özelliğiniz Karizmadır."
+  },
+  "Drow Weapon Training": {
+    "name": "Drow Silah Eğitimi",
+    "description": "Meç, kısa kılıç ve el arbaleti kullanmada yetkinsiniz."
+  },
+  "Lucky": {
+    "name": "Şanslı",
+    "description": "Bir saldırı atışı, özellik kontrolü veya kurtarma atışı için attığınız d20'de 1 gelirse zarı yeniden atabilir, ancak yeni sonucu kullanmak zorundasınız."
+  },
+  "Brave": {
+    "name": "Cesur",
+    "description": "Korkmaya karşı kurtarma atışlarında Avantajınız vardır."
+  },
+  "Halfling Nimbleness": {
+    "name": "Buçukluk Çevikliği",
+    "description": "Sizden daha büyük boyutlu herhangi bir yaratığın bulunduğu alandan geçebilirsiniz."
+  },
+  "Naturally Stealthy": {
+    "name": "Doğuştan Gizli",
+    "description": "Sizden en az bir boyut daha büyük bir yaratık sizi yalnızca kısmen gizlese bile Saklanmayı deneyebilirsiniz."
+  },
+  "Stout Resilience": {
+    "name": "Sağlam Dayanıklılığı",
+    "description": "Zehre karşı kurtarma atışlarında Avantajınız, zehir hasarına karşı Direnciniz vardır."
+  },
+  "Draconic Ancestry": {
+    "name": "Ejder Soyu",
+    "description": "Belirli bir ejder türünün soyundan gelirsiniz. Ejder Soyu tablosundan bir ejder türü seçin. Nefes Silahınız ve hasar Direnciniz seçtiğiniz türe göre belirlenir."
+  },
+  "Breath Weapon": {
+    "name": "Nefes Silahı",
+    "description": "Yıkıcı bir enerji püskürtmek için Eyleminizi kullanabilirsiniz. Etkinin boyutu, şekli ve hasar türü ejder soyunuza bağlıdır. Nefes Silahınızı kullandığınızda etki alanındaki her yaratık bir kurtarma atışı yapmalıdır (zorluk derecesi = 8 + Dayanıklılık değiştiriciniz + yetkinlik bonusunuz). Başarısız olan yaratık 2d6 hasar alır; başarılı olan bunun yarısını alır. Nefes Silahınızı her kısa veya uzun dinlenme arasında bir kez kullanabilirsiniz."
+  },
+  "Damage Resistance": {
+    "name": "Hasar Direnci",
+    "description": "Ejder soyunuzla ilişkili hasar türüne karşı Direnciniz vardır."
+  },
+  "Gnome Cunning": {
+    "name": "Gnom Kurnazlığı",
+    "description": "Büyüye karşı yaptığınız tüm Zekâ, Bilgelik ve Karizma kurtarma atışlarında Avantajınız vardır."
+  },
+  "Natural Illusionist": {
+    "name": "Doğal Yanılsamacı",
+    "description": "Küçük Yanılsama küçük büyüsünü bilirsiniz. Bu büyü için büyü yapma özelliğiniz Zekâdır."
+  },
+  "Speak with Small Beasts": {
+    "name": "Küçük Hayvanlarla Konuşma",
+    "description": "Sesler ve hareketlerle Küçük veya daha küçük hayvanlara basit düşünceler aktarabilirsiniz. Orman gnomları hayvanları sever; sincapları, porsukları, tavşanları, köstebekleri, ağaçkakanları ve başka canlıları sık sık sevgili evcil hayvanları olarak beslerler."
+  },
+  "Artificer's Lore": {
+    "name": "Zanaatkâr Bilgisi",
+    "description": "Büyülü eşyalar, simyasal nesneler veya teknolojik aygıtlarla ilgili bir Zekâ (Tarih) kontrolü yaptığınızda normalde ekleyeceğiniz yetkinlik bonusu yerine bunun iki katını ekleyebilirsiniz."
+  },
+  "Tinker": {
+    "name": "Tamircilik",
+    "description": "Zanaatkâr aletlerinde (tamirci aletleri) yetkinsiniz. Bu aletlerle 1 saat ve 10 altın sikke değerinde malzeme harcayarak Minik bir saat mekanizmalı aygıt (Zırh Sınıfı 5, 1 can puanı) yapabilirsiniz. Onarmak için 1 saat harcamazsanız aygıt 24 saat sonra çalışmayı bırakır. Aynı anda en fazla üç aygıtınız etkin olabilir."
+  },
+  "Skill Versatility": {
+    "name": "Beceri Çok Yönlülüğü",
+    "description": "Seçtiğiniz iki beceride yetkinlik kazanırsınız."
+  },
+  "Menacing": {
+    "name": "Korkutucu",
+    "description": "Gözdağı becerisinde yetkinlik kazanırsınız."
+  },
+  "Relentless Endurance": {
+    "name": "Amansız Dayanıklılık",
+    "description": "Can puanınız 0'a düştüğünde, ancak anında ölmediğinizde, bunun yerine 1 can puanına düşebilirsiniz. Uzun dinlenmeyi bitirene kadar bu özelliği yeniden kullanamazsınız."
+  },
+  "Savage Attacks": {
+    "name": "Vahşi Saldırılar",
+    "description": "Yakın dövüş silahıyla kritik vuruş yaptığınızda silahın hasar zarlarından birini bir kez daha atıp sonucu kritik vuruşun ek hasarına katabilirsiniz."
+  },
+  "Hellish Resistance": {
+    "name": "Cehennem Direnci",
+    "description": "Ateş hasarına karşı Direnciniz vardır."
+  },
+  "Infernal Legacy": {
+    "name": "Cehennem Mirası",
+    "description": "Taumaturji küçük büyüsünü bilirsiniz. 3. seviyeye ulaştığınızda Cehennem Azarı büyüsünü 2. seviye büyü olarak bu özellikle bir kez yapabilir, bunu yeniden yapma hakkını uzun dinlenmeyi bitirdiğinizde geri kazanırsınız. 5. seviyeye ulaştığınızda Karanlık büyüsünü bu özellikle bir kez yapabilir, bunu yeniden yapma hakkını uzun dinlenmeyi bitirdiğinizde geri kazanırsınız. Bu büyüler için büyü yapma özelliğiniz Karizmadır."
+  }
+}

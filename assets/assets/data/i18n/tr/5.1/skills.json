@@ -1,0 +1,20 @@
+{
+  "Acrobatics": {"name": "Akrobasi"},
+  "Animal Handling": {"name": "Hayvan İdaresi"},
+  "Arcana": {"name": "Büyü Bilgisi"},
+  "Athletics": {"name": "Atletizm"},
+  "Deception": {"name": "Aldatma"},
+  "History": {"name": "Tarih"},
+  "Insight": {"name": "Sezgi"},
+  "Intimidation": {"name": "Gözdağı"},
+  "Investigation": {"name": "Araştırma"},
+  "Medicine": {"name": "Tıp"},
+  "Nature": {"name": "Doğa"},
+  "Perception": {"name": "Algı"},
+  "Performance": {"name": "Gösteri"},
+  "Persuasion": {"name": "İkna"},
+  "Religion": {"name": "Din"},
+  "Sleight of Hand": {"name": "El Çabukluğu"},
+  "Stealth": {"name": "Gizlilik"},
+  "Survival": {"name": "Hayatta Kalma"}
+}

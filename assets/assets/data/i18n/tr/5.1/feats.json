@@ -1,0 +1,212 @@
+{
+  "Alert": {
+    "name": "Tetikte",
+    "prerequisite": null,
+    "description": "Tehlikeye karşı her zaman dikkatlisiniz ve şu faydaları kazanırsınız:\n• İnisiyatifinize +5 bonus.\n• Bilinciniz açıkken şaşırılamazsınız.\n• Başka yaratıklar, onları göremediğiniz için size karşı yaptıkları saldırı atışlarında Avantaj kazanmaz."
+  },
+  "Athlete": {
+    "name": "Atlet",
+    "prerequisite": null,
+    "description": "Yoğun fiziksel eğitim sayesinde şu faydaları kazanırsınız:\n• Güç veya Çeviklik puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Yere düşmüşken ayağa kalkmak yalnızca 5 fit hareket harcar.\n• Tırmanmak ek hareket harcamaz.\n• Koşarak uzun veya yüksek atlayış yapmak için 10 fit yerine yalnızca 5 fit yürümeniz yeterlidir."
+  },
+  "Actor": {
+    "name": "Oyuncu",
+    "prerequisite": null,
+    "description": "Taklit ve sahne sanatlarında ustasınız; şu faydaları kazanırsınız:\n• Karizma puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Kendinizi başka biri gibi göstermeye çalışırken Karizma (Aldatma) ve Karizma (Gösteri) kontrollerinde Avantajınız vardır.\n• Başka birinin konuşmasını veya başka yaratıkların çıkardığı sesleri taklit edebilirsiniz. Kişinin konuşmasını ya da yaratığın sesini en az 1 dakika duymuş olmanız gerekir. Karizma (Aldatma) kontrolünüze karşı yapılan başarılı bir Bilgelik (Sezgi) kontrolü, dinleyenin taklidi fark etmesini sağlar."
+  },
+  "Charger": {
+    "name": "Hücumcu",
+    "prerequisite": null,
+    "description": "Eyleminizi Atılma için kullandığınızda, bonus eylem olarak bir yakın dövüş silahı saldırısı yapabilir veya bir yaratığı itebilirsiniz. Bu bonus eylemden hemen önce düz bir çizgide en az 10 fit hareket ettiyseniz, yakın dövüş saldırısını seçip isabet ettirdiğinizde hasar atışına +5 bonus alırsınız; itişi seçip başarırsanız hedefi kendinizden en fazla 10 fit uzağa itersiniz."
+  },
+  "Crossbow Expert": {
+    "name": "Arbalet Uzmanı",
+    "prerequisite": null,
+    "description": "Arbaletle kapsamlı çalışma sayesinde şu faydaları kazanırsınız:\n• Yetkin olduğunuz arbaletlerin doldurma özelliğini yok sayarsınız.\n• Düşman bir yaratığın 5 fit yakınında bulunmak, menzilli saldırı atışlarınızda Dezavantaj yaratmaz.\n• Saldırı Eylemini kullanıp tek elle kullanılan bir silahla saldırdığınızda, tuttuğunuz el arbaletiyle bonus eylem olarak saldırabilirsiniz."
+  },
+  "Defensive Duelist": {
+    "name": "Savunmacı Düellocu",
+    "prerequisite": "Çeviklik 13 veya üzeri",
+    "description": "Yetkin olduğunuz incelikli bir silahı kullanırken başka bir yaratık size yakın dövüş saldırısıyla isabet ettirirse Tepkinizi kullanarak o saldırıya karşı Zırh Sınıfınıza yetkinlik bonusunuzu ekleyebilir, saldırının ıskalamasını sağlayabilirsiniz."
+  },
+  "Dual Wielder": {
+    "name": "Çift Silah Ustası",
+    "prerequisite": null,
+    "description": "İki silahla dövüşmede ustalaştınız ve şu faydaları kazanırsınız:\n• Her elinizde ayrı bir yakın dövüş silahı tutarken Zırh Sınıfınıza +1 bonus alırsınız.\n• Kullandığınız tek elli yakın dövüş silahları hafif olmasa bile iki silahla dövüşebilirsiniz.\n• Normalde yalnızca bir tek elli silahı çekip kaldırabileceğiniz durumda iki tanesini çekip kaldırabilirsiniz."
+  },
+  "Dungeon Delver": {
+    "name": "Zindan Kâşifi",
+    "prerequisite": null,
+    "description": "Zindanlardaki gizli tuzaklara ve kapılara karşı tetiktesiniz; şu faydaları kazanırsınız:\n• Gizli kapıları bulmak için yaptığınız Bilgelik (Algı) ve Zekâ (Araştırma) kontrollerinde Avantajınız vardır.\n• Tuzaklardan kaçınmak veya onlara direnmek için yaptığınız kurtarma atışlarında Avantajınız vardır.\n• Tuzakların verdiği hasara karşı Direnciniz vardır.\n• Hızlı seyahat etmek, pasif Bilgelik (Algı) puanınıza normalde uygulanan −5 cezayı getirmez."
+  },
+  "Durable": {
+    "name": "Dayanıklı",
+    "prerequisite": null,
+    "description": "Sağlam ve dirençlisiniz; şu faydaları kazanırsınız:\n• Dayanıklılık puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Can puanı geri kazanmak için Can Zarı attığınızda, atıştan geri kazandığınız asgari can puanı Dayanıklılık değiştiricinizin iki katına eşittir (en az 2)."
+  },
+  "Elemental Adept": {
+    "name": "Element Ustası",
+    "prerequisite": "En az bir büyü yapabilme yeteneği",
+    "description": "Bu hüneri kazandığınızda şu hasar türlerinden birini seçin: asit, soğuk, ateş, yıldırım veya gök gürültüsü. Yaptığınız büyüler, seçilen hasar türüne karşı Direnci yok sayar. Ayrıca o türde hasar veren bir büyünün hasarını attığınızda, hasar zarındaki her 1 sonucunu 2 sayabilirsiniz.\nBu hüneri birden çok kez seçebilirsiniz; her seferinde farklı bir hasar türü seçmelisiniz."
+  },
+  "Grappler": {
+    "name": "Güreşçi",
+    "prerequisite": "Güç 13 veya üzeri",
+    "description": "Yakın mesafede rakipleri kavramada ustalaştınız ve şu faydaları kazanırsınız:\n• Kavradığınız bir yaratığa karşı saldırı atışlarında Avantajınız vardır.\n• Kavradığınız bir yaratığı sabitlemeyi denemek için Eyleminizi kullanabilirsiniz. Bunun için başka bir kavrama kontrolü yapın. Başarılı olursanız kavrama bitene kadar hem siz hem de yaratık Kısıtlanmış olursunuz."
+  },
+  "Great Weapon Master": {
+    "name": "Büyük Silah Ustası",
+    "prerequisite": null,
+    "description": "Silahın ağırlığını ve ivmesini saldırılarınızda kullanmayı öğrendiniz; şu faydaları kazanırsınız:\n• Turunuzda bir yakın dövüş silahıyla kritik vuruş yaptığınızda veya bir yaratığın can puanını böyle bir silahla 0'a düşürdüğünüzde bonus eylem olarak bir yakın dövüş silahı saldırısı yapabilirsiniz.\n• Yetkin olduğunuz ağır bir silahla yakın dövüş saldırısı yapmadan önce saldırı atışına −5 ceza almayı seçebilirsiniz. Saldırı isabet ederse hasar atışına +10 eklersiniz."
+  },
+  "Healer": {
+    "name": "Şifacı",
+    "prerequisite": null,
+    "description": "Yaraları hızla tedavi edebilen bir hekim olarak şu faydaları kazanırsınız:\n• Ölmekte olan bir yaratığı şifacı setiyle dengelediğinizde yaratık ayrıca 1 can puanı geri kazanır.\n• Bir Eylem olarak şifacı setinin bir kullanımını harcayıp bir yaratığı tedavi edebilir ve ona 1d6 + 4 can puanı, ayrıca yaratığın azami Can Zarı sayısı kadar ek can puanı geri kazandırabilirsiniz. Yaratık kısa veya uzun dinlenmeyi bitirene kadar bu hünerden yeniden can puanı kazanamaz."
+  },
+  "Heavily Armored": {
+    "name": "Ağır Zırhlı",
+    "prerequisite": "Orta zırh yetkinliği",
+    "description": "Ağır zırh kullanmak üzere eğitim aldınız ve şu faydaları kazanırsınız:\n• Güç puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Ağır zırh kullanmada yetkinlik kazanırsınız."
+  },
+  "Heavy Armor Master": {
+    "name": "Ağır Zırh Ustası",
+    "prerequisite": "Ağır zırh yetkinliği",
+    "description": "Zırhınızla ölümcül darbeleri savuşturabilirsiniz; şu faydaları kazanırsınız:\n• Güç puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Ağır zırh giyerken büyüsüz silahlardan aldığınız ezici, delici ve kesici hasar 3 azalır."
+  },
+  "Inspiring Leader": {
+    "name": "İlham Veren Lider",
+    "prerequisite": "Karizma 13 veya üzeri",
+    "description": "Yoldaşlarınızı savaşmaya teşvik etmek için 10 dakika harcayabilirsiniz. Bunu yaptığınızda 30 fit yakınınızda sizi görebilen veya duyabilen ve anlayabilen en fazla altı dost yaratık seçin (kendiniz de dâhil). Her biri seviyeniz + Karizma değiştiriciniz kadar geçici can puanı kazanabilir. Bir yaratık kısa veya uzun dinlenmeyi bitirene kadar bu hünerden yeniden geçici can puanı kazanamaz."
+  },
+  "Keen Mind": {
+    "name": "Keskin Zihin",
+    "prerequisite": null,
+    "description": "Zamanı, yönü ve ayrıntıları olağanüstü kesinlikle izlersiniz; şu faydaları kazanırsınız:\n• Zekâ puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Kuzeyin hangi yönde olduğunu her zaman bilirsiniz.\n• Bir sonraki gün doğumuna veya gün batımına kaç saat kaldığını her zaman bilirsiniz.\n• Son bir ay içinde gördüğünüz veya duyduğunuz her şeyi doğru biçimde hatırlayabilirsiniz."
+  },
+  "Lightly Armored": {
+    "name": "Hafif Zırhlı",
+    "prerequisite": null,
+    "description": "Hafif zırh kullanmak üzere eğitim aldınız ve şu faydaları kazanırsınız:\n• Güç veya Çeviklik puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Hafif zırh kullanmada yetkinlik kazanırsınız."
+  },
+  "Linguist": {
+    "name": "Dil Bilimci",
+    "prerequisite": null,
+    "description": "Dilleri ve şifreleri incelediniz; şu faydaları kazanırsınız:\n• Zekâ puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Seçtiğiniz üç dili öğrenirsiniz.\n• Yazılı şifreler hazırlayabilirsiniz. Başkaları, siz öğretmedikçe, Zekâ puanınız + yetkinlik bonusunuza eşit zorluk derecesine karşı bir Zekâ kontrolünde başarılı olmadıkça veya büyü kullanmadıkça şifrelerinizi çözemez."
+  },
+  "Lucky": {
+    "name": "Şanslı",
+    "prerequisite": null,
+    "description": "Tam gerektiği anda ortaya çıkan açıklanamaz bir şansınız vardır.\n3 Şans Puanınız vardır. Saldırı atışı, özellik kontrolü veya kurtarma atışı yaptığınızda bir Şans Puanı harcayarak ek bir d20 atabilirsiniz. Puanı, zarı attıktan sonra ama sonuç belirlenmeden önce harcamayı seçebilirsiniz. Saldırı atışı, özellik kontrolü veya kurtarma atışı için hangi d20'nin kullanılacağını siz seçersiniz.\nSize karşı saldırı atışı yapıldığında da bir Şans Puanı harcayabilirsiniz. Bir d20 atın; saldırganın atışının mı yoksa sizin atışınızın mı kullanılacağını seçin. Birden fazla yaratık aynı atışın sonucunu etkilemek için Şans Puanı harcarsa puanlar birbirini etkisizleştirir.\nHarcanan Şans Puanlarınızı uzun dinlenmeyi bitirdiğinizde geri kazanırsınız."
+  },
+  "Mage Slayer": {
+    "name": "Büyücü Avcısı",
+    "prerequisite": null,
+    "description": "Büyü yapanlarla yakın dövüşmek için teknikler geliştirdiniz; şu faydaları kazanırsınız:\n• 5 fit yakınınızdaki bir yaratık büyü yaptığında Tepkinizi kullanarak ona yakın dövüş silahı saldırısı yapabilirsiniz.\n• Büyüye konsantre olan bir yaratığa hasar verdiğinizde, konsantrasyonunu korumak için yaptığı kurtarma atışında Dezavantajı olur.\n• 5 fit yakınınızdaki yaratıkların yaptığı büyülere karşı kurtarma atışlarınızda Avantajınız vardır."
+  },
+  "Magic Initiate": {
+    "name": "Büyü Çırağı",
+    "prerequisite": null,
+    "description": "Bir sınıf seçin: ozan, rahip, druid, doğuştan büyücü, pakt büyücüsü veya büyücü. O sınıfın büyü listesinden seçtiğiniz iki küçük büyüyü öğrenirsiniz.\nAyrıca aynı listeden bir 1. seviye büyü seçin. Bu büyüyü öğrenir ve en düşük seviyesinde yapabilirsiniz. Bu hüneri kullanarak büyüyü yeniden yapabilmek için uzun dinlenmeyi bitirmeniz gerekir.\nBu büyüler için büyü yapma özelliğiniz seçtiğiniz sınıfa bağlıdır: ozan, doğuştan büyücü veya pakt büyücüsü için Karizma; rahip veya druid için Bilgelik; büyücü için Zekâ."
+  },
+  "Martial Adept": {
+    "name": "Savaş Hünerlisi",
+    "prerequisite": null,
+    "description": "Özel savaş manevraları yapmanızı sağlayan bir eğitim aldınız; şu faydaları kazanırsınız:\n• Savaşçı sınıfının Savaş Ustası arketipine açık manevralardan seçtiğiniz ikisini öğrenirsiniz. Kullandığınız bir manevra, hedefinizin etkisine direnmek için kurtarma atışı yapmasını gerektiriyorsa zorluk derecesi 8 + yetkinlik bonusunuz + seçtiğiniz Güç veya Çeviklik değiştiricinizdir.\n• Bir d6 olan bir Üstünlük Zarı kazanırsınız (bu zar, başka kaynaktan gelen Üstünlük Zarlarınıza eklenir). Manevralarınızı kullanmak için bu zarı harcarsınız. Kısa veya uzun dinlenmeyi bitirdiğinizde harcadığınız Üstünlük Zarlarını geri kazanırsınız."
+  },
+  "Medium Armor Master": {
+    "name": "Orta Zırh Ustası",
+    "prerequisite": "Orta zırh yetkinliği",
+    "description": "Orta zırhla hareket etme çalışmaları sayesinde şu faydaları kazanırsınız:\n• Orta zırh giymek Çeviklik (Gizlilik) kontrollerinizde Dezavantaj yaratmaz.\n• Çeviklik puanınız 16 veya üzeriyse orta zırh giyerken Zırh Sınıfınıza 2 yerine 3 ekleyebilirsiniz."
+  },
+  "Mobile": {
+    "name": "Hareketli",
+    "prerequisite": null,
+    "description": "Olağanüstü hızlı ve çeviksiniz; şu faydaları kazanırsınız:\n• Hızınız 10 fit artar.\n• Atılma Eylemini kullandığınız turda zorlu arazi ek hareket harcatmaz.\n• Bir yaratığa yakın dövüş saldırısı yaptığınızda, isabet etseniz de etmeseniz de turun geri kalanında o yaratıktan fırsat saldırısı tetiklemezsiniz."
+  },
+  "Moderately Armored": {
+    "name": "Orta Zırhlı",
+    "prerequisite": "Hafif zırh yetkinliği",
+    "description": "Orta zırh ve kalkan kullanmak üzere eğitim aldınız; şu faydaları kazanırsınız:\n• Güç veya Çeviklik puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Orta zırh ve kalkan kullanmada yetkinlik kazanırsınız."
+  },
+  "Mounted Combatant": {
+    "name": "Binekli Savaşçı",
+    "prerequisite": null,
+    "description": "Binek üzerindeyken tehlikeli bir rakipsiniz. Bineğinize binmiş ve Eylemsiz değilken şu faydaları kazanırsınız:\n• Bineğinizden küçük, bineksiz yaratıklara karşı yakın dövüş saldırılarında Avantajınız vardır.\n• Bineğinizi hedef alan bir saldırının bunun yerine sizi hedeflemesini sağlayabilirsiniz.\n• Bineğiniz yalnızca yarım hasar almak için Çeviklik kurtarma atışı yapabileceği bir etkiye maruz kalırsa başarılı atışta hiç hasar, başarısız atışta yalnızca yarım hasar alır."
+  },
+  "Observant": {
+    "name": "Dikkatli",
+    "prerequisite": null,
+    "description": "Çevrenizdeki ayrıntıları hızla fark edersiniz; şu faydaları kazanırsınız:\n• Zekâ veya Bilgelik puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Anladığınız bir dili konuşan yaratığın ağzını görebiliyorsanız dudaklarını okuyarak söylediklerini anlayabilirsiniz.\n• Pasif Bilgelik (Algı) ve pasif Zekâ (Araştırma) puanlarınıza +5 bonus alırsınız."
+  },
+  "Polearm Master": {
+    "name": "Sırıklı Silah Ustası",
+    "prerequisite": null,
+    "description": "Uzun menzilli silahlarla düşmanlarınızı uzakta tutabilirsiniz; şu faydaları kazanırsınız:\n• Saldırı Eylemini yalnızca glaive, teber, kargı veya dövüş asasıyla saldırmak için kullandığınızda bonus eylem olarak silahın öteki ucuyla yakın dövüş saldırısı yapabilirsiniz. Bu saldırı, asıl saldırıyla aynı özellik değiştiricisini kullanır; hasar zarı d4'tür ve ezici hasar verir.\n• Glaive, teber, kargı veya dövüş asası kullanırken başka yaratıklar silahınızın erişim alanına girdiklerinde sizden fırsat saldırısı tetikler."
+  },
+  "Resilient": {
+    "name": "Dirençli",
+    "prerequisite": null,
+    "description": "Bir özellik puanı seçin. Şu faydaları kazanırsınız:\n• Seçilen özellik puanını, en fazla 20 olacak şekilde 1 artırın.\n• Seçilen özelliğin kurtarma atışlarında yetkinlik kazanırsınız."
+  },
+  "Ritual Caster": {
+    "name": "Ritüel Büyücüsü",
+    "prerequisite": "Zekâ veya Bilgelik 13 veya üzeri",
+    "description": "Ritüel olarak yapabileceğiniz büyüler öğrendiniz. Bu büyüler bir ritüel kitabında yazılıdır; bunlardan birini yaparken kitap elinizde olmalıdır.\nBu hüneri seçtiğinizde, seçtiğiniz iki 1. seviye büyüyü içeren bir ritüel kitabı edinirsiniz. Şu sınıflardan birini seçin: ozan, rahip, druid, doğuştan büyücü, pakt büyücüsü veya büyücü. Büyüleri o sınıfın büyü listesinden seçmelisiniz ve büyüler ritüel etiketini taşımalıdır. Seçtiğiniz sınıf bu büyüler için büyü yapma özelliğinizi de belirler: ozan, doğuştan büyücü veya pakt büyücüsü için Karizma; rahip veya druid için Bilgelik; büyücü için Zekâ.\nBüyülü bir büyü tomarında veya bir büyücünün büyü kitabında olduğu gibi yazılı bir büyü bulursanız onu ritüel kitabınıza ekleyebilirsiniz. Büyü seçtiğiniz sınıfın listesinde olmalı, seviyesi sizin seviyenizin yarısından (yukarı yuvarlanmış) yüksek olmamalı ve ritüel etiketini taşımalıdır. Büyüyü ritüel kitabınıza kopyalamak büyü seviyesi başına 2 saat ve 50 altın sikke gerektirir. Bu bedel büyüyü öğrenmek için denemelerinizde harcadığınız malzemeleri ve onu kaydetmek için gereken kaliteli mürekkepleri karşılar."
+  },
+  "Savage Attacker": {
+    "name": "Vahşi Saldırgan",
+    "prerequisite": null,
+    "description": "Tur başına bir kez, yakın dövüş silahı saldırısının hasarını attığınızda silahın hasar zarlarını yeniden atabilir ve iki toplamdan istediğinizi kullanabilirsiniz."
+  },
+  "Sentinel": {
+    "name": "Nöbetçi",
+    "prerequisite": null,
+    "description": "Düşmanın savunmasındaki her açığı değerlendirmeyi öğrendiniz; şu faydaları kazanırsınız:\n• Bir yaratığa fırsat saldırısıyla isabet ettirdiğinizde yaratığın hızı turun geri kalanında 0 olur.\n• Yaratıklar, erişiminizden çıkmadan önce Çatışmadan Ayrılma Eylemini kullansalar bile sizden fırsat saldırısı tetikler.\n• 5 fit yakınınızdaki bir yaratık sizden başka bir hedefe saldırırsa ve o hedefte bu hüner yoksa Tepkinizi kullanarak saldıran yaratığa yakın dövüş silahı saldırısı yapabilirsiniz."
+  },
+  "Sharpshooter": {
+    "name": "Keskin Nişancı",
+    "prerequisite": null,
+    "description": "Menzilli silahlarda ustalaştınız ve başkalarına imkânsız görünen atışlar yapabilirsiniz; şu faydaları kazanırsınız:\n• Uzun menzilden saldırmak, menzilli silah saldırı atışlarınızda Dezavantaj yaratmaz.\n• Menzilli silah saldırılarınız yarım ve dörtte üç siperi yok sayar.\n• Yetkin olduğunuz bir menzilli silahla saldırmadan önce saldırı atışına −5 ceza almayı seçebilirsiniz. Saldırı isabet ederse hasar atışına +10 eklersiniz."
+  },
+  "Shield Master": {
+    "name": "Kalkan Ustası",
+    "prerequisite": null,
+    "description": "Kalkanı yalnızca savunma için değil saldırı için de kullanırsınız. Kalkan tutarken şu faydaları kazanırsınız:\n• Turunuzda Saldırı Eylemini kullanırsanız bonus eylem olarak 5 fit yakınınızdaki bir yaratığı kalkanınızla itmeyi deneyebilirsiniz.\n• Eylemsiz değilseniz yalnızca sizi hedef alan bir büyü veya başka zararlı etkiye karşı yaptığınız Çeviklik kurtarma atışına kalkanınızın Zırh Sınıfı bonusunu ekleyebilirsiniz.\n• Yalnızca yarım hasar almak için Çeviklik kurtarma atışı yapmanıza izin veren bir etkiye maruz kalırsanız, başarılı atışta hiç hasar almamak için Tepkinizi kullanıp kalkanınızı etkiyle aranıza koyabilirsiniz."
+  },
+  "Skilled": {
+    "name": "Çok Yetenekli",
+    "prerequisite": null,
+    "description": "Toplam üç tane olmak üzere seçtiğiniz beceri ve aletlerde yetkinlik kazanırsınız."
+  },
+  "Skulker": {
+    "name": "Gölgelerde Gizlenen",
+    "prerequisite": "Çeviklik 13 veya üzeri",
+    "description": "Gölgelerde fark edilmeden ilerlemede uzmansınız; şu faydaları kazanırsınız:\n• Saklandığınız yaratığa karşı yalnızca hafifçe gizlenmiş olsanız bile Saklanmayı deneyebilirsiniz.\n• Bir yaratıktan gizlenirken ona menzilli silah saldırısı yapıp ıskalarsanız saldırı konumunuzu açığa çıkarmaz.\n• Loş ışık, görmeye dayalı Bilgelik (Algı) kontrollerinizde Dezavantaj yaratmaz."
+  },
+  "Spell Sniper": {
+    "name": "Büyü Keskin Nişancısı",
+    "prerequisite": "En az bir büyü yapabilme yeteneği",
+    "description": "Belirli saldırı büyülerini geliştirmeyi öğrendiniz; şu faydaları kazanırsınız:\n• Saldırı atışı gerektiren bir büyü yaptığınızda büyünün menzili iki katına çıkar.\n• Menzilli büyü saldırılarınız yarım ve dörtte üç siperi yok sayar.\n• Saldırı atışı gerektiren bir küçük büyü öğrenirsiniz. Bunu ozan, rahip, druid, doğuştan büyücü, pakt büyücüsü veya büyücü büyü listesinden seçin. Bu küçük büyü için büyü yapma özelliğiniz seçtiğiniz listeye bağlıdır: ozan, doğuştan büyücü veya pakt büyücüsü için Karizma; rahip veya druid için Bilgelik; büyücü için Zekâ."
+  },
+  "Tavern Brawler": {
+    "name": "Meyhane Dövüşçüsü",
+    "prerequisite": null,
+    "description": "Elinizdeki herhangi bir nesneyle kaba saba dövüşmeye alışkınsınız; şu faydaları kazanırsınız:\n• Güç veya Dayanıklılık puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Doğaçlama silahları kullanmada yetkinsiniz.\n• Silahsız saldırınızın hasar zarı d4'tür.\n• Turunuzda bir yaratığa silahsız saldırıyla veya doğaçlama silahla isabet ettirdiğinizde bonus eylem olarak hedefi kavramayı deneyebilirsiniz."
+  },
+  "Tough": {
+    "name": "Sağlam",
+    "prerequisite": null,
+    "description": "Bu hüneri kazandığınızda azami can puanınız seviyenizin iki katı kadar artar. Sonrasında her seviye kazandığınızda azami can puanınız 2 daha artar."
+  },
+  "War Caster": {
+    "name": "Savaş Büyücüsü",
+    "prerequisite": "En az bir büyü yapabilme yeteneği",
+    "description": "Çatışmanın ortasında büyü yapma teknikleri geliştirdiniz; şu faydaları kazanırsınız:\n• Hasar aldığınızda bir büyüye konsantrasyonunuzu korumak için yaptığınız Dayanıklılık kurtarma atışlarında Avantajınız vardır.\n• Bir veya iki elinizde silah ya da kalkan tutarken bile büyülerin bedensel bileşenlerini yerine getirebilirsiniz.\n• Düşman bir yaratığın hareketi sizden fırsat saldırısı tetiklediğinde Tepkinizi kullanarak fırsat saldırısı yapmak yerine o yaratığa bir büyü yapabilirsiniz. Büyünün yapım süresi 1 Eylem olmalı ve yalnızca o yaratığı hedeflemelidir."
+  },
+  "Weapon Master": {
+    "name": "Silah Ustası",
+    "prerequisite": null,
+    "description": "Çeşitli silahlarla kapsamlı eğitim aldınız; şu faydaları kazanırsınız:\n• Güç veya Çeviklik puanınızı, en fazla 20 olacak şekilde 1 artırın.\n• Seçtiğiniz dört silahta yetkinlik kazanırsınız. Her biri basit veya savaş silahı olmalıdır."
+  }
+}

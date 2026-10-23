@@ -1,0 +1,19 @@
+{
+  "Common": {"name": "Ortak Dil"},
+  "Dwarvish": {"name": "Cüce Dili"},
+  "Elvish": {"name": "Elfçe"},
+  "Halfling": {"name": "Buçukluk Dili"},
+  "Draconic": {"name": "Ejder Dili"},
+  "Gnomish": {"name": "Gnom Dili"},
+  "Orc": {"name": "Ork Dili"},
+  "Infernal": {"name": "Cehennem Dili"},
+  "Abyssal": {"name": "Uçurum Dili"},
+  "Celestial": {"name": "Göksel Dil"},
+  "Deep Speech": {"name": "Derin Konuşma"},
+  "Giant": {"name": "Dev Dili"},
+  "Gnoll": {"name": "Gnoll Dili"},
+  "Goblin": {"name": "Goblin Dili"},
+  "Primordial": {"name": "İlkel Dil"},
+  "Sylvan": {"name": "Peri Dili"},
+  "Undercommon": {"name": "Yeraltı Ortak Dili"}
+}

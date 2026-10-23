@@ -1,0 +1,50 @@
+{
+  "Barbarian": {
+    "name": "바바리안",
+    "subclassFeatureName": "바바리안 하위 직업"
+  },
+  "Bard": {
+    "name": "바드",
+    "subclassFeatureName": "바드 하위 직업"
+  },
+  "Cleric": {
+    "name": "클레릭",
+    "subclassFeatureName": "클레릭 하위 직업"
+  },
+  "Druid": {
+    "name": "드루이드",
+    "subclassFeatureName": "드루이드 하위 직업"
+  },
+  "Fighter": {
+    "name": "전사",
+    "subclassFeatureName": "전사 하위 직업"
+  },
+  "Monk": {
+    "name": "수도사",
+    "subclassFeatureName": "수도사 하위 직업"
+  },
+  "Paladin": {
+    "name": "성기사",
+    "subclassFeatureName": "성기사 하위 직업"
+  },
+  "Ranger": {
+    "name": "레인저",
+    "subclassFeatureName": "레인저 하위 직업"
+  },
+  "Rogue": {
+    "name": "로그",
+    "subclassFeatureName": "로그 하위 직업"
+  },
+  "Sorcerer": {
+    "name": "소서러",
+    "subclassFeatureName": "소서러 하위 직업"
+  },
+  "Warlock": {
+    "name": "워락",
+    "subclassFeatureName": "워락 하위 직업"
+  },
+  "Wizard": {
+    "name": "위저드",
+    "subclassFeatureName": "위저드 하위 직업"
+  }
+}

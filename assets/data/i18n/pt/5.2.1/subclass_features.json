@@ -1,0 +1,282 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Frenesi",
+        "description": "Enquanto estiver em Fúria, se usar Ataque Descuidado, o primeiro alvo que você acertar no turno com um ataque baseado em Força sofre dano adicional: um número de d6 igual ao seu bônus de Dano de Fúria. O tipo de dano é o mesmo do ataque."
+      },
+      "Mindless Rage": {
+        "name": "Fúria Inconsciente",
+        "description": "Enquanto estiver em Fúria, você é imune às condições Enfeitiçado e Amedrontado. Entrar em Fúria encerra qualquer uma dessas condições em você."
+      },
+      "Retaliation": {
+        "name": "Retaliação",
+        "description": "Quando uma criatura a até 5 pés lhe causar dano, você pode usar sua Reação para fazer um ataque corpo a corpo contra ela com uma arma ou Golpe Desarmado."
+      },
+      "Intimidating Presence": {
+        "name": "Presença Intimidadora",
+        "description": "Com uma Ação Bônus, criaturas à sua escolha em uma Emanação de 30 pés fazem um teste de resistência de Sabedoria (CD 8 + modificador de Força + Bônus de Proficiência) ou ficam Amedrontadas por 1 minuto; repetem o teste ao fim de cada turno. Uma vez por Descanso Longo, ou gaste um uso de Fúria para recuperar esta característica."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Proficiências Adicionais",
+        "description": "Ganhe proficiência em três perícias à sua escolha."
+      },
+      "Cutting Words": {
+        "name": "Palavras Cortantes",
+        "description": "Quando uma criatura que você possa ver a até 60 pés rolar dano ou obtiver sucesso em um teste de habilidade ou jogada de ataque, use sua Reação e uma Inspiração de Bardo. Subtraia uma rolagem do seu dado de Inspiração de Bardo do resultado, possivelmente transformando sucesso em falha."
+      },
+      "Magical Discoveries": {
+        "name": "Descobertas Mágicas",
+        "description": "Escolha dois truques ou magias das listas de Clérigo, Druida ou Mago, de níveis que você possa conjurar. Elas estão sempre preparadas. Ao ganhar um nível de Bardo, você pode substituir uma por outra magia elegível."
+      },
+      "Peerless Skill": {
+        "name": "Perícia Inigualável",
+        "description": "Quando falhar em um teste de habilidade ou jogada de ataque, gaste uma Inspiração de Bardo e adicione o dado ao d20, possivelmente obtendo sucesso. Se ainda falhar, o uso da Inspiração de Bardo não é gasto."
+      }
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "Disciple of Life": {
+        "name": "Discípulo da Vida",
+        "description": "Quando uma magia conjurada com um espaço restaurar Pontos de Vida, o alvo recupera 2 + o nível do espaço Pontos de Vida adicionais no turno da conjuração."
+      },
+      "Life Domain Spells": {
+        "name": "Magias do Domínio da Vida",
+        "description": "Sempre preparadas: nível 3: Ajuda, Bênção, Curar Ferimentos, Restauração Menor; nível 5: Palavra Curativa em Massa, Reviver; nível 7: Aura de Vida, Proteção contra a Morte; nível 9: Restauração Maior, Curar Ferimentos em Massa."
+      },
+      "Preserve Life": {
+        "name": "Preservar a Vida",
+        "description": "Com uma ação Magia, gaste Canalizar Divindade para restaurar um total de Pontos de Vida igual a 5 vezes seu nível de Clérigo, dividido entre criaturas Ensanguentadas a até 30 pés (inclusive você). Ninguém pode ser curado acima da metade de seus Pontos de Vida máximos dessa forma."
+      },
+      "Blessed Healer": {
+        "name": "Curandeiro Abençoado",
+        "description": "Depois de conjurar uma magia com espaço que restaure Pontos de Vida de alguém que não seja você, recupere 2 + o nível do espaço Pontos de Vida."
+      },
+      "Supreme Healing": {
+        "name": "Cura Suprema",
+        "description": "Quando uma magia ou Canalizar Divindade rolar dados para restaurar Pontos de Vida, use o resultado máximo de cada dado de cura."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Circle of the Land Spells": {
+        "name": "Magias do Círculo da Terra",
+        "description": "Após cada Descanso Longo, escolha terra Árida, Polar, Temperada ou Tropical; as magias dessa terra de níveis até o seu ficam sempre preparadas. Árida: nível 3 Desfoque, Mãos Flamejantes, Raio de Fogo; 5 Bola de Fogo; 7 Definhar; 9 Muralha de Pedra. Polar: 3 Névoa Obscurecente, Imobilizar Pessoa, Raio de Gelo; 5 Tempestade de Granizo; 7 Tempestade de Gelo; 9 Cone de Frio. Temperada: 3 Passo Nebuloso, Toque Chocante, Sono; 5 Relâmpago; 7 Movimentação Livre; 9 Caminhar em Árvores. Tropical: 3 Rajada Ácida, Raio de Doença, Teia; 5 Nuvem Fétida; 7 Metamorfose; 9 Praga de Insetos."
+      },
+      "Land's Aid": {
+        "name": "Auxílio da Terra",
+        "description": "Com uma ação Magia, gaste Forma Selvagem para criar uma Esfera de 10 pés de raio a até 60 pés. Criaturas escolhidas na área fazem um teste de resistência de Constituição, sofrendo 2d6 de dano Necrótico se falharem ou metade se passarem; uma criatura na área também recupera 2d6 Pontos de Vida. Ambos os dados aumentam para 3d6 no nível 10 de Druida e 4d6 no nível 14."
+      },
+      "Natural Recovery": {
+        "name": "Recuperação Natural",
+        "description": "Uma vez por Descanso Longo, conjure sem espaço uma magia preparada do Círculo de nível 1 ou superior. Também uma vez por Descanso Longo, ao terminar um Descanso Curto, recupere espaços gastos cuja soma de níveis seja até metade do seu nível de Druida (arredondado para cima); nenhum pode ser de nível 6 ou superior."
+      },
+      "Nature's Ward": {
+        "name": "Proteção da Natureza",
+        "description": "Você é imune à condição Envenenado e tem Resistência a um tipo de dano conforme sua terra atual: Árida, Fogo; Polar, Frio; Temperada, Elétrico; Tropical, Veneno."
+      },
+      "Nature's Sanctuary": {
+        "name": "Santuário da Natureza",
+        "description": "Com uma ação Magia, gaste Forma Selvagem para criar um Cubo de 15 pés no chão a até 120 pés por 1 minuto, terminando se você ficar Incapacitado ou morrer. Você e aliados nele têm Meia Cobertura; aliados também ganham sua Resistência da Proteção da Natureza. Com uma Ação Bônus, mova o Cubo até 60 pés para outro ponto no chão a até 120 pés."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Crítico Aprimorado",
+        "description": "Suas jogadas de ataque com armas e Golpes Desarmados causam Acerto Crítico quando o d20 mostra 19 ou 20."
+      },
+      "Remarkable Athlete": {
+        "name": "Atleta Extraordinário",
+        "description": "Você tem Vantagem em jogadas de Iniciativa e testes de Força (Atletismo). Após obter um Acerto Crítico, pode se mover até metade de seu Deslocamento sem provocar Ataques de Oportunidade."
+      },
+      "Additional Fighting Style": {
+        "name": "Estilo de Luta Adicional",
+        "description": "Ganhe outro talento de Estilo de Luta à sua escolha."
+      },
+      "Heroic Warrior": {
+        "name": "Guerreiro Heroico",
+        "description": "Durante o combate, se começar seu turno sem Inspiração Heroica, você pode concedê-la a si mesmo."
+      },
+      "Superior Critical": {
+        "name": "Crítico Superior",
+        "description": "Suas jogadas de ataque com armas e Golpes Desarmados agora causam Acerto Crítico quando o d20 mostra de 18 a 20."
+      },
+      "Survivor": {
+        "name": "Sobrevivente",
+        "description": "Você tem Vantagem em testes de resistência contra morte; um resultado de 18 a 20 conta como 20. No início do seu turno, se estiver Ensanguentado e tiver ao menos 1 Ponto de Vida, recupere 5 + seu modificador de Constituição Pontos de Vida."
+      }
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Técnica da Mão Aberta",
+        "description": "Quando um ataque de Rajada de Golpes acertar, escolha um efeito: o alvo não pode fazer Ataques de Oportunidade até o próximo turno dele; ele é empurrado até 15 pés se falhar em um teste de resistência de Força; ou fica Caído se falhar em um teste de resistência de Destreza."
+      },
+      "Wholeness of Body": {
+        "name": "Integridade Corporal",
+        "description": "Com uma Ação Bônus, recupere Pontos de Vida iguais a uma rolagem de dado de Artes Marciais + modificador de Sabedoria (mínimo 1). Usos iguais ao seu modificador de Sabedoria (mínimo uma vez) por Descanso Longo."
+      },
+      "Fleet Step": {
+        "name": "Passo Veloz",
+        "description": "Quando realizar uma Ação Bônus que não seja Passo do Vento, você também pode usar Passo do Vento imediatamente depois."
+      },
+      "Quivering Palm": {
+        "name": "Palma Vibrante",
+        "description": "Ao acertar um Golpe Desarmado, gaste 4 Pontos de Foco para criar vibrações que duram um número de dias igual ao seu nível de Monge. Use uma ação ou abra mão de um ataque da ação Atacar para encerrá-las no mesmo plano; o alvo faz um teste de resistência de Constituição, sofrendo 10d12 de dano de Energia se falhar ou metade se passar. Apenas um alvo pode ser afetado por vez."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Oath of Devotion Spells": {
+        "name": "Magias do Juramento da Devoção",
+        "description": "Sempre preparadas: nível 3 Proteção contra o Bem e o Mal, Escudo da Fé; nível 5 Ajuda, Zona da Verdade; nível 9 Farol da Esperança, Dissipar Magia; nível 13 Movimentação Livre, Guardião da Fé; nível 17 Comunhão, Coluna de Chamas."
+      },
+      "Sacred Weapon": {
+        "name": "Arma Sagrada",
+        "description": "Ao realizar a ação Atacar, gaste Canalizar Divindade para fortalecer uma arma corpo a corpo que esteja segurando por 10 minutos. Adicione seu modificador de Carisma (mínimo +1) às jogadas de ataque; cada acerto pode causar o tipo normal de dano ou Radiante. Emite Luz Plena por 20 pés e Penumbra por mais 20 pés; o efeito termina se você deixar de carregá-la."
+      },
+      "Aura of Devotion": {
+        "name": "Aura de Devoção",
+        "description": "Você e seus aliados em sua Aura de Proteção são imunes a Enfeitiçado; essa condição não afeta um aliado Enfeitiçado enquanto estiver na aura."
+      },
+      "Smite of Protection": {
+        "name": "Golpe Protetor",
+        "description": "Sempre que conjurar Destruição Divina, você e seus aliados em sua Aura de Proteção ganham Meia Cobertura até o início do seu próximo turno."
+      },
+      "Holy Nimbus": {
+        "name": "Resplendor Sagrado",
+        "description": "Com uma Ação Bônus, fortaleça sua Aura de Proteção por 10 minutos. Você tem Vantagem em testes de resistência impostos por Ínferos ou Mortos-vivos; inimigos que iniciem o turno na aura sofrem dano Radiante igual ao modificador de Carisma + Bônus de Proficiência; sua Luz Plena é luz solar. Uma vez por Descanso Longo, ou gaste um espaço de magia de nível 5 para recuperar o uso."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Lore": {
+        "name": "Conhecimento do Caçador",
+        "description": "Enquanto uma criatura estiver marcada por sua Marca do Caçador, você descobre se ela tem Imunidades, Resistências ou Vulnerabilidades a dano e quais são."
+      },
+      "Hunter's Prey": {
+        "name": "Presa do Caçador",
+        "description": "Escolha uma opção, que pode mudar após um Descanso Curto ou Longo. Matador de Colossos: uma vez por turno, um acerto com arma contra criatura com Pontos de Vida perdidos causa +1d8 de dano. Destruidor de Hordas: uma vez no seu turno ao atacar com arma, ataque outra criatura a até 5 pés do alvo original, no alcance e que você ainda não tenha atacado nesse turno."
+      },
+      "Defensive Tactics": {
+        "name": "Táticas Defensivas",
+        "description": "Escolha uma opção, que pode mudar após um Descanso Curto ou Longo. Escapar da Horda: Ataques de Oportunidade contra você têm Desvantagem. Defesa contra Ataques Múltiplos: após uma criatura acertar você, as demais jogadas de ataque dela contra você nesse turno têm Desvantagem."
+      },
+      "Superior Hunter's Prey": {
+        "name": "Presa Superior do Caçador",
+        "description": "Uma vez por turno, quando você causar dano a uma criatura marcada por Marca do Caçador, cause o dano adicional da magia a outra criatura que possa ver a até 30 pés da criatura marcada."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Defesa Superior do Caçador",
+        "description": "Ao sofrer dano, use sua Reação para ganhar Resistência a esse dano e a outros danos do mesmo tipo até o fim do turno atual."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Mãos Rápidas",
+        "description": "Com uma Ação Bônus, faça um teste de Destreza (Prestidigitação) para abrir uma fechadura ou desarmar uma armadilha com Ferramentas de Ladrão, ou para bater carteira; realize a ação Utilizar; ou realize a ação Magia para usar um item mágico que a exija."
+      },
+      "Second-Story Work": {
+        "name": "Trabalho no Segundo Andar",
+        "description": "Seu Deslocamento de Escalada é igual ao seu Deslocamento, e você pode usar Destreza em vez de Força para determinar a distância de salto."
+      },
+      "Supreme Sneak": {
+        "name": "Furtividade Suprema",
+        "description": "Ganhe Ataque Furtivo como opção de Golpe Astuto (custo de 1d6). Ao atacar enquanto estiver Invisível por se Esconder, você mantém essa condição se terminar o turno atrás de Cobertura de Três Quartos ou Cobertura Total."
+      },
+      "Use Magic Device": {
+        "name": "Usar Dispositivo Mágico",
+        "description": "Você pode se sintonizar com quatro itens mágicos. Ao gastar cargas de um item, role 1d6; com 6, nenhuma carga é gasta. Você pode usar qualquer Pergaminho de Magia usando Inteligência como habilidade de conjuração; para magia acima do nível 1, primeiro passe em um teste de Inteligência (Arcanismo) (CD 10 + nível da magia), ou o pergaminho se desintegra."
+      },
+      "Thief's Reflexes": {
+        "name": "Reflexos de Ladrão",
+        "description": "Realize dois turnos na primeira rodada do combate, na sua Iniciativa normal e na sua Iniciativa menos 10."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "Draconic Resilience": {
+        "name": "Resiliência Dracônica",
+        "description": "Seu máximo de Pontos de Vida aumenta em 3 no nível 3 de Feiticeiro e em 1 a cada nível posterior de Feiticeiro. Sem armadura, sua Classe de Armadura base é 10 + modificador de Destreza + modificador de Carisma."
+      },
+      "Draconic Spells": {
+        "name": "Magias Dracônicas",
+        "description": "Sempre preparadas: nível 3 Alterar-se, Orbe Cromática, Comando, Sopro do Dragão; nível 5 Medo, Voo; nível 7 Olho Arcano, Enfeitiçar Monstro; nível 9 Conhecimento Lendário, Invocar Dragão."
+      },
+      "Elemental Affinity": {
+        "name": "Afinidade Elemental",
+        "description": "Escolha Ácido, Frio, Fogo, Elétrico ou Veneno. Você tem Resistência a esse tipo de dano e pode adicionar seu modificador de Carisma a uma rolagem de dano de uma magia que cause esse tipo."
+      },
+      "Dragon Wings": {
+        "name": "Asas de Dragão",
+        "description": "Com uma Ação Bônus, ganhe asas e Deslocamento de Voo de 60 pés por 1 hora ou até dispensá-las. Uma vez por Descanso Longo, ou gaste 3 Pontos de Feitiçaria para recuperar o uso."
+      },
+      "Dragon Companion": {
+        "name": "Companheiro Dragão",
+        "description": "Conjure Invocar Dragão sem seu componente Material e uma vez sem espaço por Descanso Longo. Ao conjurá-la, você pode remover a exigência de Concentração; essa conjuração dura 1 minuto."
+      }
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "Dark One's Blessing": {
+        "name": "Bênção do Senhor das Trevas",
+        "description": "Ao reduzir um inimigo a 0 Pontos de Vida, ganhe Pontos de Vida Temporários iguais ao seu modificador de Carisma + nível de Bruxo (mínimo 1). Você também os ganha quando outra pessoa reduz um inimigo a até 10 pés de você a 0 Pontos de Vida."
+      },
+      "Fiend Spells": {
+        "name": "Magias do Ínfero",
+        "description": "Sempre preparadas: nível 3 Mãos Flamejantes, Comando, Raio Ardente, Sugestão; nível 5 Bola de Fogo, Nuvem Fétida; nível 7 Escudo de Fogo, Muralha de Fogo; nível 9 Missão, Praga de Insetos."
+      },
+      "Dark One's Own Luck": {
+        "name": "Sorte do Senhor das Trevas",
+        "description": "Após ver um teste de habilidade ou teste de resistência, mas antes de seus efeitos, adicione 1d10 à jogada. Usos iguais ao seu modificador de Carisma (mínimo um) por Descanso Longo, no máximo uma vez por jogada."
+      },
+      "Fiendish Resilience": {
+        "name": "Resiliência Ínfera",
+        "description": "Após um Descanso Curto ou Longo, escolha qualquer tipo de dano exceto Energia. Você tem Resistência a ele até escolher outro tipo com esta característica."
+      },
+      "Hurl Through Hell": {
+        "name": "Lançar no Inferno",
+        "description": "Uma vez por turno, após acertar uma criatura com uma jogada de ataque, ela faz um teste de resistência de Carisma contra sua CD de resistência de magia. Se falhar, desaparece, fica Incapacitada até o fim do seu próximo turno e retorna ao espaço anterior ou ao desocupado mais próximo; se não for Ínfera, sofre 8d10 de dano Psíquico. Uma vez por Descanso Longo, ou gaste um espaço de Magia de Pacto para recuperar o uso."
+      }
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "Evocation Savant": {
+        "name": "Erudito em Evocação",
+        "description": "Adicione gratuitamente ao grimório duas magias de Evocação de Mago de nível 1 ou 2. Sempre que ganhar acesso a um novo nível de espaço de magia nesta classe, adicione gratuitamente uma magia de Evocação de Mago de um nível que possa conjurar."
+      },
+      "Potent Cantrip": {
+        "name": "Truque Potente",
+        "description": "Quando seu truque que causa dano errar a jogada de ataque ou o alvo passar no teste de resistência, ele ainda sofre metade do dano do truque, mas nenhum de seus outros efeitos."
+      },
+      "Sculpt Spells": {
+        "name": "Esculpir Magias",
+        "description": "Ao conjurar uma magia de Evocação que afete criaturas que você possa ver, escolha até 1 + o nível da magia delas. Elas passam automaticamente nos testes de resistência e não sofrem dano se um sucesso normalmente reduziria o dano à metade."
+      },
+      "Empowered Evocation": {
+        "name": "Evocação Potencializada",
+        "description": "Adicione seu modificador de Inteligência a uma rolagem de dano de uma magia de Evocação de Mago que você conjurar."
+      },
+      "Overchannel": {
+        "name": "Canalizar Poder",
+        "description": "Ao conjurar uma magia de Mago que cause dano usando um espaço de nível 1 a 5, maximize seu dano no turno da conjuração. O primeiro uso após um Descanso Longo é seguro; usos posteriores causam a você 2d12 de dano Necrótico por nível do espaço, aumentando em 1d12 por nível do espaço a cada uso adicional antes do próximo Descanso Longo. Esse dano ignora Resistência e Imunidade."
+      }
+    }
+  }
+}

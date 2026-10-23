@@ -1,0 +1,3759 @@
+{
+  "@@locale": "tr",
+  "appTitle": "DnD Character Tool",
+  "@appTitle": {
+    "description": "The application title."
+  },
+  "charListTitle": "DnD Karakterleri",
+  "@charListTitle": {
+    "description": "AppBar title on the character list screen."
+  },
+  "charListImportTooltip": "Karakter veya yedek içe aktar",
+  "@charListImportTooltip": {
+    "description": "Tooltip for the character list import button. It accepts .dndchar and .dndbackup files."
+  },
+  "charListSettingsTooltip": "Ayarlar",
+  "@charListSettingsTooltip": {
+    "description": "Tooltip for settings button."
+  },
+  "charListNewCharacter": "Yeni Karakter",
+  "@charListNewCharacter": {
+    "description": "FAB label."
+  },
+  "charListEmpty": "Henüz karakter yok",
+  "@charListEmpty": {
+    "description": "Empty state headline."
+  },
+  "charListEmptyHint": "İlk karakterinizi oluşturmak için + düğmesine dokunun",
+  "@charListEmptyHint": {
+    "description": "Empty state subtitle."
+  },
+  "whatsNewTitle": "Yenilikler",
+  "@whatsNewTitle": {
+    "description": "Title for the release notes dialog shown after an app update."
+  },
+  "whatsNewVersionSubtitle": "Sürüm {version}",
+  "@whatsNewVersionSubtitle": {
+    "description": "Subtitle for the release notes dialog showing the app version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "whatsNewIntro": "Bir sonraki oyun oturumunuz için yararlı yenilikler hazır.",
+  "@whatsNewIntro": {
+    "description": "Intro text for the release notes dialog."
+  },
+  "whatsNewContextualRollsTitle": "Bağlamsal zar atışları",
+  "@whatsNewContextualRollsTitle": {
+    "description": "Release note title for contextual dice rolls."
+  },
+  "whatsNewContextualRollsBody": "Özellik, beceri, kurtarma atışı, silah ve basit büyü zarlarını doğrudan karakter sayfasından atın.",
+  "@whatsNewContextualRollsBody": {
+    "description": "Release note body for contextual dice rolls."
+  },
+  "whatsNewCriticalsTitle": "Kritik vuruş seçenekleri",
+  "@whatsNewCriticalsTitle": {
+    "description": "Release note title for critical hit options."
+  },
+  "whatsNewCriticalsBody": "Kritik hasarın nasıl hesaplanacağını seçin; gerektiğinde avantaj ve dezavantaj seçeneklerini kullanın.",
+  "@whatsNewCriticalsBody": {
+    "description": "Release note body for critical hit options."
+  },
+  "whatsNewConfirmationsTitle": "Daha anlaşılır onaylar",
+  "@whatsNewConfirmationsTitle": {
+    "description": "Release note title for safer confirmation dialogs."
+  },
+  "whatsNewConfirmationsBody": "Güvenli ve geri alınamaz işlemler artık daha kolay ayırt ediliyor.",
+  "@whatsNewConfirmationsBody": {
+    "description": "Release note body for safer confirmation dialogs."
+  },
+  "whatsNewDone": "Anladım",
+  "@whatsNewDone": {
+    "description": "Dismiss button for the release notes dialog."
+  },
+  "charListImportedSuccess": "{name} başarıyla içe aktarıldı!",
+  "@charListImportedSuccess": {
+    "description": "Snackbar after successful import.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "charListDuplicatedSuccess": "{name} başarıyla çoğaltıldı!",
+  "@charListDuplicatedSuccess": {
+    "description": "Snackbar after duplicating a character.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "charListImportError": "İçe aktarılırken beklenmeyen bir hata oluştu. Lütfen yeniden deneyin.",
+  "@charListImportError": {
+    "description": "Generic import error snackbar."
+  },
+  "charListDuplicateError": "Karakter çoğaltılamadı. Lütfen yeniden deneyin.",
+  "@charListDuplicateError": {
+    "description": "Generic duplicate character error snackbar."
+  },
+  "importErrorInvalidJson": "Yapıştırılan JSON geçerli değil.",
+  "@importErrorInvalidJson": {
+    "description": "Import error: pasted JSON is not valid."
+  },
+  "importFieldLockedHint": "Bu alanı kullanmak için diğer alanı temizleyin.",
+  "@importFieldLockedHint": {
+    "description": "Hint shown when tapping a disabled input field during import."
+  },
+  "importErrorNotObject": "Geçersiz biçim: JSON nesnesi bekleniyordu.",
+  "@importErrorNotObject": {
+    "description": "Import error: expected object."
+  },
+  "importErrorMissingCharacter": "Geçersiz JSON: 'character' alanı bulunamadı.",
+  "@importErrorMissingCharacter": {
+    "description": "Import error: missing character field."
+  },
+  "importErrorCorruptedCharacter": "Karakter okunamadı. JSON eksik veya uyumsuz bir sürümden olabilir.",
+  "@importErrorCorruptedCharacter": {
+    "description": "Import error: character field corrupted."
+  },
+  "charCardLevel": "Seviye {level}",
+  "@charCardLevel": {
+    "description": "Level label on character card subtitle.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "charCardPin": "Üste sabitle",
+  "@charCardPin": {
+    "description": "Popup menu item."
+  },
+  "charCardUnpin": "Sabitlemeyi kaldır",
+  "@charCardUnpin": {
+    "description": "Popup menu item."
+  },
+  "charCardChangePhoto": "Fotoğrafı değiştir",
+  "@charCardChangePhoto": {
+    "description": "Popup menu item."
+  },
+  "charCardRename": "Yeniden adlandır",
+  "@charCardRename": {
+    "description": "Popup menu item."
+  },
+  "charCardDuplicate": "Çoğalt",
+  "@charCardDuplicate": {
+    "description": "Popup menu item."
+  },
+  "charCardExport": "Dışa aktar",
+  "@charCardExport": {
+    "description": "Popup menu item."
+  },
+  "charCardDelete": "Sil",
+  "@charCardDelete": {
+    "description": "Popup menu item."
+  },
+  "charDuplicateName": "{name} (kopya)",
+  "@charDuplicateName": {
+    "description": "Default name for a duplicated character.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "charDuplicateNameNumbered": "{name} (kopya {number})",
+  "@charDuplicateNameNumbered": {
+    "description": "Default name for a duplicated character when the basic copy name already exists.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "renameDialogTitle": "Karakteri yeniden adlandır",
+  "@renameDialogTitle": {
+    "description": "Rename dialog title."
+  },
+  "renameDialogLabel": "Ad",
+  "@renameDialogLabel": {
+    "description": "Text field label in rename dialog."
+  },
+  "dialogCancel": "İptal",
+  "@dialogCancel": {
+    "description": "Generic cancel button."
+  },
+  "dialogSave": "Kaydet",
+  "@dialogSave": {
+    "description": "Generic save button."
+  },
+  "deleteDialogTitle": "Karakter silinsin mi?",
+  "@deleteDialogTitle": {
+    "description": "Delete confirmation dialog title."
+  },
+  "deleteDialogContent": "{name} karakterini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+  "@deleteDialogContent": {
+    "description": "Delete confirmation dialog body.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dialogConfirm": "Onayla",
+  "@dialogConfirm": {
+    "description": "Generic confirm button."
+  },
+  "dialogDiscard": "Vazgeç",
+  "@dialogDiscard": {
+    "description": "Generic discard button."
+  },
+  "dialogContinue": "Devam et",
+  "@dialogContinue": {
+    "description": "Generic continue button."
+  },
+  "dialogKeepEditing": "Düzenlemeye devam et",
+  "@dialogKeepEditing": {
+    "description": "Generic keep editing button."
+  },
+  "dialogRemove": "Kaldır",
+  "@dialogRemove": {
+    "description": "Generic remove button."
+  },
+  "dialogAdd": "Ekle",
+  "@dialogAdd": {
+    "description": "Generic add button."
+  },
+  "dialogDone": "Bitti",
+  "@dialogDone": {
+    "description": "Generic done button."
+  },
+  "settingsTitle": "Ayarlar",
+  "@settingsTitle": {
+    "description": "Settings screen AppBar title."
+  },
+  "settingsSectionTheme": "Görsel Tema",
+  "@settingsSectionTheme": {
+    "description": "Settings section header for themes."
+  },
+  "settingsDark": "Koyu",
+  "@settingsDark": {
+    "description": "Dark brightness label."
+  },
+  "settingsLight": "Açık",
+  "@settingsLight": {
+    "description": "Light brightness label."
+  },
+  "settingsChooseTheme": "Tema Seç",
+  "@settingsChooseTheme": {
+    "description": "Theme picker bottom sheet title."
+  },
+  "settingsSectionLanguage": "Dil",
+  "@settingsSectionLanguage": {
+    "description": "Settings section header for language."
+  },
+  "settingsAppLanguage": "Uygulama dili",
+  "@settingsAppLanguage": {
+    "description": "Language tile title."
+  },
+  "settingsChooseLanguage": "Dil Seç",
+  "@settingsChooseLanguage": {
+    "description": "Language picker bottom sheet title."
+  },
+  "settingsSystemDefault": "Sistem varsayılanı",
+  "@settingsSystemDefault": {
+    "description": "System default locale option."
+  },
+  "modeSelectionTitle": "Yeni Karakter",
+  "@modeSelectionTitle": {
+    "description": "Mode selection screen AppBar title."
+  },
+  "modeSelectionQuestion": "Karakterinizi nasıl oluşturmak istersiniz?",
+  "@modeSelectionQuestion": {
+    "description": "Mode selection prompt."
+  },
+  "modeGuidedTitle": "Rehberli",
+  "@modeGuidedTitle": {
+    "description": "Guided creation mode title."
+  },
+  "modeGuidedSubtitle": "Adım adım sihirbaz. Sınıfı, türü, geçmişi, becerileri ve nitelikleri tek tek seçin. Yeni oyuncular için önerilir.",
+  "@modeGuidedSubtitle": {
+    "description": "Guided creation mode description."
+  },
+  "modeManualTitle": "Elle",
+  "@modeManualTitle": {
+    "description": "Manual creation mode title."
+  },
+  "modeManualSubtitle": "Her şeyi kendiniz doldurun. Tüm alanlar serbesttir ve değerler sizin yerinize hesaplanmaz. Deneyimli oyuncular için uygundur.",
+  "@modeManualSubtitle": {
+    "description": "Manual creation mode description."
+  },
+  "modeRandomTitle": "Rastgele",
+  "@modeRandomTitle": {
+    "description": "Random creation mode title."
+  },
+  "modeRandomSubtitle": "Tür, sınıf, geçmiş ve nitelikler sizin için rastgele belirlenir. Meydan okumalar veya tek oturumluk oyunlar için idealdir.",
+  "@modeRandomSubtitle": {
+    "description": "Random creation mode description."
+  },
+  "modeSemiRandomTitle": "Yarı rastgele",
+  "@modeSemiRandomTitle": {
+    "description": "Semi-random creation mode title."
+  },
+  "modeSemiRandomSubtitle": "Önemli seçimleri siz yaparsınız; geri kalanı rastgele belirlenir. Bir karakter fikriniz varsa ama sürpriz de istiyorsanız uygundur.",
+  "@modeSemiRandomSubtitle": {
+    "description": "Semi-random creation mode description."
+  },
+  "modeComingSoon": "Yakında",
+  "@modeComingSoon": {
+    "description": "Coming soon chip label."
+  },
+  "creationStepClass": "Sınıf",
+  "@creationStepClass": {
+    "description": "Step title for class selection."
+  },
+  "creationStepRace": "Tür",
+  "@creationStepRace": {
+    "description": "Step title for race selection."
+  },
+  "creationStepBackground": "Geçmiş",
+  "@creationStepBackground": {
+    "description": "Step title for background selection."
+  },
+  "creationStepSkills": "Beceriler",
+  "@creationStepSkills": {
+    "description": "Step title for skill selection."
+  },
+  "creationStepAttributes": "Nitelikler",
+  "@creationStepAttributes": {
+    "description": "Step title for attribute assignment."
+  },
+  "creationStepName": "Ad",
+  "@creationStepName": {
+    "description": "Step title for naming the character."
+  },
+  "creationStepReview": "Gözden Geçir",
+  "@creationStepReview": {
+    "description": "Step title for review."
+  },
+  "creationDiscardTitle": "Karakter oluşturma iptal edilsin mi?",
+  "@creationDiscardTitle": {
+    "description": "Discard creation dialog title."
+  },
+  "creationDiscardContent": "Tüm ilerleme kaybolacak. Emin misiniz?",
+  "@creationDiscardContent": {
+    "description": "Discard creation dialog body."
+  },
+  "creationTooltipCancel": "İptal",
+  "@creationTooltipCancel": {
+    "description": "Cancel creation tooltip."
+  },
+  "creationBack": "Geri",
+  "@creationBack": {
+    "description": "Back button in creation wizard."
+  },
+  "creationCreateCharacter": "Karakter Oluştur",
+  "@creationCreateCharacter": {
+    "description": "Final step button."
+  },
+  "detailLeaveWithoutSaving": "Kaydetmeden çıkılsın mı?",
+  "@detailLeaveWithoutSaving": {
+    "description": "Dialog title when leaving edit mode with unsaved changes."
+  },
+  "detailChangesWillBeDiscarded": "Değişiklikler silinecek. Kaydetmek için sağ üstteki ✓ düğmesini kullanın.",
+  "@detailChangesWillBeDiscarded": {
+    "description": "Dialog body when leaving with unsaved changes."
+  },
+  "detailLeaveAndDiscard": "Çık ve değişiklikleri sil",
+  "@detailLeaveAndDiscard": {
+    "description": "Button to leave and discard changes."
+  },
+  "detailErrorLoading": "Karakter yüklenirken hata oluştu: {error}",
+  "@detailErrorLoading": {
+    "description": "Error state body.",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "detailTooltipLongRest": "Uzun Dinlenme",
+  "@detailTooltipLongRest": {
+    "description": "Long rest icon button tooltip."
+  },
+  "characterActionRollDice": "Zar at",
+  "@characterActionRollDice": {
+    "description": "Character header action menu item that opens the dice roller."
+  },
+  "characterActionResetLevels": "Seviyeleri sıfırla",
+  "@characterActionResetLevels": {
+    "description": "Character header action menu item that opens the level reset flow."
+  },
+  "diceExpressionLabel": "İfade",
+  "@diceExpressionLabel": {
+    "description": "Dice roller expression text field label."
+  },
+  "diceExpressionHint": "Örnek: 1d20+5 veya 4d6dl1",
+  "@diceExpressionHint": {
+    "description": "Dice roller expression text field hint."
+  },
+  "diceExpressionHelpTooltip": "Zar ifadeleri nasıl çalışır?",
+  "@diceExpressionHelpTooltip": {
+    "description": "Dice roller expression help icon tooltip."
+  },
+  "diceExpressionHelpTitle": "Zar ifadeleri",
+  "@diceExpressionHelpTitle": {
+    "description": "Dice roller expression help dialog title."
+  },
+  "diceExpressionHelpBody": "Zar atmak için XdY kullanın: 2d6, altı yüzlü iki zar atar.\nDeğiştirici ekleyin veya çıkarın: 1d20+5 ya da 2d6 - 1.\nYüzdelik zar için d% veya d100 kullanın.\nd20 avantaj/dezavantajı için: 2d20kh1 yüksek olanı, 2d20kl1 düşük olanı tutar.\nkh, kl, dh veya dl ile zarları tutun ya da çıkarın. Örnek: 4d6dl1 dört d6 atar ve en düşük olanı çıkarır.\nBoşluklar isteğe bağlıdır: 2d6+1d8 ve 2d6 + 1d8 aynı şekilde çalışır.",
+  "@diceExpressionHelpBody": {
+    "description": "Dice roller expression help dialog body."
+  },
+  "diceQuantityLabel": "Adet",
+  "@diceQuantityLabel": {
+    "description": "Dice roller quantity text field label."
+  },
+  "diceModifierLabel": "Değiştirici",
+  "@diceModifierLabel": {
+    "description": "Dice roller modifier text field label."
+  },
+  "diceRollButton": "At",
+  "@diceRollButton": {
+    "description": "Dice roller primary roll button label."
+  },
+  "diceRerollButton": "Tekrar at",
+  "@diceRerollButton": {
+    "description": "Dice roller reroll button label."
+  },
+  "diceModeNormal": "Normal",
+  "@diceModeNormal": {
+    "description": "Dice roller normal d20 mode label."
+  },
+  "diceModeAdvantage": "Avantaj",
+  "@diceModeAdvantage": {
+    "description": "Dice roller advantage d20 mode label."
+  },
+  "diceModeDisadvantage": "Dezavantaj",
+  "@diceModeDisadvantage": {
+    "description": "Dice roller disadvantage d20 mode label."
+  },
+  "diceResultTitle": "Sonuç",
+  "@diceResultTitle": {
+    "description": "Dice roller result card title."
+  },
+  "diceHistoryTitle": "Son atışlar",
+  "@diceHistoryTitle": {
+    "description": "Dice roller recent rolls section title."
+  },
+  "diceNoRollsYet": "Henüz zar atılmadı.",
+  "@diceNoRollsYet": {
+    "description": "Dice roller empty history message."
+  },
+  "diceNaturalOne": "Doğal 1",
+  "@diceNaturalOne": {
+    "description": "Dice roller natural one result chip."
+  },
+  "diceNaturalTwenty": "Doğal 20",
+  "@diceNaturalTwenty": {
+    "description": "Dice roller natural twenty result chip."
+  },
+  "contextualRollCriticalApplied": "Kritik uygulandı",
+  "@contextualRollCriticalApplied": {
+    "description": "Contextual roll result chip shown when critical damage rules were applied."
+  },
+  "contextualRollVersatileGrip": "Silah tutuşu",
+  "@contextualRollVersatileGrip": {
+    "description": "Contextual roll option group label for choosing one-handed or two-handed versatile weapon damage."
+  },
+  "contextualRollVersatileOneHanded": "Tek elle",
+  "@contextualRollVersatileOneHanded": {
+    "description": "Contextual roll option label for one-handed versatile weapon damage."
+  },
+  "contextualRollVersatileTwoHanded": "İki elle",
+  "@contextualRollVersatileTwoHanded": {
+    "description": "Contextual roll option label for two-handed versatile weapon damage."
+  },
+  "diceInvalidExpression": "Geçersiz zar ifadesi: {message}",
+  "@diceInvalidExpression": {
+    "description": "Dice roller invalid expression error message.",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "detailTooltipCancelEdit": "Düzenlemeyi iptal et",
+  "@detailTooltipCancelEdit": {
+    "description": "Cancel edit icon button tooltip."
+  },
+  "detailTooltipDoneEditing": "Düzenlemeyi bitir",
+  "@detailTooltipDoneEditing": {
+    "description": "Done editing icon button tooltip."
+  },
+  "detailTooltipEditCharacter": "Karakteri düzenle",
+  "@detailTooltipEditCharacter": {
+    "description": "Edit character icon button tooltip."
+  },
+  "detailCancelEditTitle": "Düzenleme iptal edilsin mi?",
+  "@detailCancelEditTitle": {
+    "description": "Cancel edit dialog title."
+  },
+  "detailCancelEditContent": "Tüm değişiklikler silinecek.",
+  "@detailCancelEditContent": {
+    "description": "Cancel edit dialog body."
+  },
+  "detailFinishEditTitle": "Düzenleme bitirilsin mi?",
+  "@detailFinishEditTitle": {
+    "description": "Finish edit dialog title."
+  },
+  "detailFinishEditContent": "Değişiklikler kaydedilecek.",
+  "@detailFinishEditContent": {
+    "description": "Finish edit dialog body."
+  },
+  "detailTabIdentity": "Kimlik",
+  "@detailTabIdentity": {
+    "description": "Identity tab label."
+  },
+  "detailEditButton": "Düzenle",
+  "@detailEditButton": {
+    "description": "Edit mode toggle button label."
+  },
+  "skillsEditHint": "Değiştirmek için basılı tutun: yok → yetkin → uzman",
+  "@skillsEditHint": {
+    "description": "Skills long-press hint text."
+  },
+  "skillsOrganizeTooltip": "Düzenle",
+  "@skillsOrganizeTooltip": {
+    "description": "Skills tab button label and tooltip that opens display organization settings."
+  },
+  "skillsDisplayTitle": "Beceri görünümü",
+  "@skillsDisplayTitle": {
+    "description": "Skills display settings sheet title."
+  },
+  "skillsDisplayModeLabel": "Düzen",
+  "@skillsDisplayModeLabel": {
+    "description": "Skills display settings mode section label."
+  },
+  "skillsDisplayByAbility": "Niteliğe göre",
+  "@skillsDisplayByAbility": {
+    "description": "Skills display mode that groups skills by ability score."
+  },
+  "skillsDisplayProficiencyFirst": "Önce yetkin olanlar",
+  "@skillsDisplayProficiencyFirst": {
+    "description": "Skills display mode that shows proficient and expert skills before the others."
+  },
+  "skillsDisplayAlphabetical": "Alfabetik",
+  "@skillsDisplayAlphabetical": {
+    "description": "Skills display mode that sorts all skills alphabetically."
+  },
+  "skillsDisplayAbilityOrder": "Nitelik sırası",
+  "@skillsDisplayAbilityOrder": {
+    "description": "Skills display settings label for reordering ability score groups."
+  },
+  "skillsDisplayProficientFirstInsideGroups": "Gruplarda önce yetkin olanlar",
+  "@skillsDisplayProficientFirstInsideGroups": {
+    "description": "Skills display setting that puts proficient and expert skills first inside each ability group."
+  },
+  "skillsDisplayRestoreDefault": "Varsayılanı geri yükle",
+  "@skillsDisplayRestoreDefault": {
+    "description": "Button that restores default skill display preferences."
+  },
+  "skillsDisplayProficientSection": "Yetkin",
+  "@skillsDisplayProficientSection": {
+    "description": "Skills section title for proficient and expert skills."
+  },
+  "skillsDisplayOtherSection": "Diğer beceriler",
+  "@skillsDisplayOtherSection": {
+    "description": "Skills section title for non-proficient skills."
+  },
+  "skillsDisplayAllSection": "Tüm beceriler",
+  "@skillsDisplayAllSection": {
+    "description": "Skills section title for the alphabetical display mode."
+  },
+  "detailTabStats": "İstatistikler",
+  "@detailTabStats": {
+    "description": "Stats tab label."
+  },
+  "detailTabSkills": "Beceriler",
+  "@detailTabSkills": {
+    "description": "Skills tab label."
+  },
+  "detailTabFeatures": "Özellikler",
+  "@detailTabFeatures": {
+    "description": "Features tab label."
+  },
+  "detailTabSpells": "Büyüler",
+  "@detailTabSpells": {
+    "description": "Spells tab label."
+  },
+  "detailTabInventory": "Envanter",
+  "@detailTabInventory": {
+    "description": "Inventory tab label."
+  },
+  "detailTabNotes": "Notlar",
+  "@detailTabNotes": {
+    "description": "Notes tab label."
+  },
+  "longRestTitle": "Uzun Dinlenme",
+  "@longRestTitle": {
+    "description": "Long rest dialog title."
+  },
+  "longRestContent": "Canı en yüksek değere çıkarıp tüm büyü yuvalarını geri kazanmak istiyor musunuz?",
+  "@longRestContent": {
+    "description": "Long rest dialog body."
+  },
+  "longRestButton": "Dinlen",
+  "@longRestButton": {
+    "description": "Long rest confirm button."
+  },
+  "restPickerTitle": "Dinlenme",
+  "@restPickerTitle": {
+    "description": "Rest type picker title."
+  },
+  "restPickerShort": "Kısa Dinlenme",
+  "@restPickerShort": {
+    "description": "Short rest option label."
+  },
+  "restPickerShortCaption": "Can yenilemek için Can Zarlarını harca",
+  "@restPickerShortCaption": {
+    "description": "Short rest option caption."
+  },
+  "restPickerLong": "Uzun Dinlenme",
+  "@restPickerLong": {
+    "description": "Long rest option label."
+  },
+  "restPickerLongCaption": "Tüm canı ve büyü yuvalarını yenile",
+  "@restPickerLongCaption": {
+    "description": "Long rest option caption."
+  },
+  "shortRestTitle": "Kısa Dinlenme",
+  "@shortRestTitle": {
+    "description": "Short rest dialog title."
+  },
+  "shortRestAvailableDice": "Kullanılabilir Can Zarları",
+  "@shortRestAvailableDice": {
+    "description": "Short rest dialog available HD label."
+  },
+  "shortRestSpend": "Harca",
+  "@shortRestSpend": {
+    "description": "Short rest dialog spend label."
+  },
+  "shortRestRolled": "Yenilenen can",
+  "@shortRestRolled": {
+    "description": "Short rest dialog HP result label."
+  },
+  "shortRestRollButton": "At",
+  "@shortRestRollButton": {
+    "description": "Short rest roll dice button."
+  },
+  "shortRestButton": "Dinlen",
+  "@shortRestButton": {
+    "description": "Short rest confirm button."
+  },
+  "shortRestNoDice": "Can Zarı kalmadı",
+  "@shortRestNoDice": {
+    "description": "Short rest: no HD available message."
+  },
+  "concentrationBannerLabel": "Konsantre olunan:",
+  "@concentrationBannerLabel": {
+    "description": "Concentration banner prefix label."
+  },
+  "concentrationBreakButton": "Bitir",
+  "@concentrationBreakButton": {
+    "description": "Button to break concentration."
+  },
+  "concentrationReplaceTitle": "Konsantrasyon değiştirilsin mi?",
+  "@concentrationReplaceTitle": {
+    "description": "Dialog title when replacing active concentration."
+  },
+  "concentrationReplaceBody": "Şu anda {current} büyüsüne konsantresiniz. {next} başlatılırsa mevcut konsantrasyonunuz sona erecek.",
+  "@concentrationReplaceBody": {
+    "description": "Dialog body when replacing concentration.",
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "next": {
+        "type": "String"
+      }
+    }
+  },
+  "concentrationReplaceConfirm": "Değiştir",
+  "@concentrationReplaceConfirm": {
+    "description": "Confirm button to replace concentration."
+  },
+  "concentrationTooltip": "Konsantrasyon ayarla",
+  "@concentrationTooltip": {
+    "description": "Tooltip for the concentration icon button on a spell card."
+  },
+  "sectionIdentity": "Kimlik",
+  "@sectionIdentity": {
+    "description": "Stats tab identity section title."
+  },
+  "sectionHitPoints": "Can Puanı",
+  "@sectionHitPoints": {
+    "description": "Stats tab hit points section title."
+  },
+  "sectionCombat": "Savaş",
+  "@sectionCombat": {
+    "description": "Stats tab combat section title."
+  },
+  "sectionProgression": "İlerleme",
+  "@sectionProgression": {
+    "description": "Stats tab XP/progression section title."
+  },
+  "sectionAbilityScores": "Nitelik Puanları",
+  "@sectionAbilityScores": {
+    "description": "Stats tab ability scores section title."
+  },
+  "sectionSavingThrows": "Kurtarma Atışı Yetkinlikleri",
+  "@sectionSavingThrows": {
+    "description": "Stats tab saving throws section title."
+  },
+  "labelName": "Ad",
+  "@labelName": {
+    "description": "Name field label."
+  },
+  "labelBackground": "Geçmiş",
+  "@labelBackground": {
+    "description": "Background field label."
+  },
+  "labelChange": "Değiştir",
+  "@labelChange": {
+    "description": "Change button label."
+  },
+  "labelAlignment": "Hizalanma",
+  "@labelAlignment": {
+    "description": "Alignment field label."
+  },
+  "labelPlayer": "Oyuncu",
+  "@labelPlayer": {
+    "description": "Player name field label."
+  },
+  "labelLevel": "Seviye",
+  "@labelLevel": {
+    "description": "Level field label."
+  },
+  "tooltipLevelUp": "Seviye Atla",
+  "@tooltipLevelUp": {
+    "description": "Tooltip for the Level Up button in the AppBar."
+  },
+  "levelUpTitle": "Seviye Atlama",
+  "@levelUpTitle": {
+    "description": "Level Up wizard bottom sheet title."
+  },
+  "levelUpStepClassTarget": "Seviye atlatılacak sınıfı seçin",
+  "@levelUpStepClassTarget": {
+    "description": "Level Up wizard step: choose which class gains the level."
+  },
+  "levelUpClassTargetExisting": "Mevcut sınıflar",
+  "@levelUpClassTargetExisting": {
+    "description": "Level Up wizard class target section for existing classes."
+  },
+  "levelUpClassTargetAddClass": "Yeni sınıf ekle",
+  "@levelUpClassTargetAddClass": {
+    "description": "Level Up wizard class target section for new multiclass options."
+  },
+  "levelUpClassTargetCurrentLevel": "Mevcut seviye {level}",
+  "@levelUpClassTargetCurrentLevel": {
+    "description": "Current class level label.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpClassTargetNextClassLevel": "Sınıf seviyesi {level}",
+  "@levelUpClassTargetNextClassLevel": {
+    "description": "Target class level after this level up.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpClassTargetRequirement": "Gerekli: {requirement}",
+  "@levelUpClassTargetRequirement": {
+    "description": "Multiclass prerequisite summary.",
+    "placeholders": {
+      "requirement": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpClassTargetRequirementMissing": "Koşul karşılanmıyor: {requirement}",
+  "@levelUpClassTargetRequirementMissing": {
+    "description": "Disabled multiclass option when target class prerequisite is missing.",
+    "placeholders": {
+      "requirement": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpClassTargetCurrentRequirementsMissing": "Mevcut sınıfınız çok sınıflılık koşulunu karşılamıyor.",
+  "@levelUpClassTargetCurrentRequirementsMissing": {
+    "description": "Disabled multiclass option when an existing class does not meet multiclass prerequisites."
+  },
+  "levelUpConfirm": "Seviye Atlamayı Onayla",
+  "@levelUpConfirm": {
+    "description": "Level Up wizard confirm button."
+  },
+  "levelUpCancel": "İptal",
+  "@levelUpCancel": {
+    "description": "Level Up wizard cancel button."
+  },
+  "levelUpStepFeatures": "Yeni Özellikler",
+  "@levelUpStepFeatures": {
+    "description": "Level Up wizard step: new features."
+  },
+  "levelUpStepSubclass": "{feature} seç",
+  "@levelUpStepSubclass": {
+    "description": "Level Up wizard step: subclass.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpStepAsi": "Nitelik Puanı Artışı",
+  "@levelUpStepAsi": {
+    "description": "Level Up wizard step: ASI."
+  },
+  "levelUpStepHp": "Can Puanı",
+  "@levelUpStepHp": {
+    "description": "Level Up wizard step: HP."
+  },
+  "levelUpStepCantrips": "Yeni Sihirbazlıklar",
+  "@levelUpStepCantrips": {
+    "description": "Level Up wizard step: cantrips."
+  },
+  "levelUpStepSpells": "Yeni Büyüler",
+  "@levelUpStepSpells": {
+    "description": "Level Up wizard step: spells."
+  },
+  "levelUpStepSummary": "Özet",
+  "@levelUpStepSummary": {
+    "description": "Level Up wizard step: summary."
+  },
+  "levelUpNoNewFeatures": "Bu seviyede yeni sınıf özelliği yok.",
+  "@levelUpNoNewFeatures": {
+    "description": "Level Up wizard: no features message."
+  },
+  "featureChoicesTitle": "Özellik Seçimleri",
+  "@featureChoicesTitle": {
+    "description": "Title for the reusable feature choice editor."
+  },
+  "featureChoicesPending": "Bekleyen seçim",
+  "@featureChoicesPending": {
+    "description": "Chip/text shown when a feature has incomplete required choices."
+  },
+  "featureChoicesEdit": "Seçimleri düzenle",
+  "@featureChoicesEdit": {
+    "description": "Button label to edit saved feature choices."
+  },
+  "featureChoicesChooseDependencyFirst": "Önce gerekli önceki seçeneği seçin.",
+  "@featureChoicesChooseDependencyFirst": {
+    "description": "Message shown when a dependent feature choice cannot be selected yet."
+  },
+  "featureChoicesChooseCount": "{count} {kind} seçin.",
+  "@featureChoicesChooseCount": {
+    "description": "Instruction to choose a number of feature options.",
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "featureChoicesSelectedCount": "{selected}/{count} seçildi",
+  "@featureChoicesSelectedCount": {
+    "description": "Selected/required count for a feature choice.",
+    "placeholders": {
+      "selected": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpHpRoll": "At",
+  "@levelUpHpRoll": {
+    "description": "Level Up wizard HP: roll button."
+  },
+  "levelUpHpAverage": "Ortalama",
+  "@levelUpHpAverage": {
+    "description": "Level Up wizard HP: average button."
+  },
+  "levelUpHpGained": "+{n} Can",
+  "@levelUpHpGained": {
+    "description": "Level Up wizard HP gained label.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpHpFormula": "d{die} + CON ({mod})",
+  "@levelUpHpFormula": {
+    "description": "Level Up wizard HP formula hint.",
+    "placeholders": {
+      "die": {
+        "type": "int"
+      },
+      "mod": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpAsiOption": "Nitelik Puanı Artışı",
+  "@levelUpAsiOption": {
+    "description": "Level Up wizard ASI: ASI option label."
+  },
+  "levelUpFeatOption": "Bir Marifet Seç",
+  "@levelUpFeatOption": {
+    "description": "Level Up wizard ASI: feat option label."
+  },
+  "levelUpAsiPointsLeft": "Kalan puan: {n}",
+  "@levelUpAsiPointsLeft": {
+    "description": "Level Up wizard ASI: points remaining.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSpellsToLearn": "Öğrenmek için {n} büyü seçin",
+  "@levelUpSpellsToLearn": {
+    "description": "Level Up wizard spells: how many to pick.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSpellRestrictedSection": "Okul koşulu",
+  "@levelUpSpellRestrictedSection": {
+    "description": "Level Up spell pick section title for required spell schools."
+  },
+  "levelUpSpellFreeSection": "Serbest seçim",
+  "@levelUpSpellFreeSection": {
+    "description": "Level Up spell pick section title for unrestricted spell choices."
+  },
+  "levelUpSpellRestrictedInstruction": "{schools} okullarından {count} büyü seçin.",
+  "@levelUpSpellRestrictedInstruction": {
+    "description": "Instruction for spell choices restricted to specific schools.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "schools": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpSpellFreeInstruction": "Herhangi bir okuldan {count} büyü seçin.",
+  "@levelUpSpellFreeInstruction": {
+    "description": "Instruction for unrestricted spell choices.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSpellFreeLocked": "Önce okul koşulunu tamamlayın.",
+  "@levelUpSpellFreeLocked": {
+    "description": "Message shown when unrestricted spell choices are locked until required school choices are complete."
+  },
+  "levelUpCantripsToLearn": "{n} sihirbazlık seçin",
+  "@levelUpCantripsToLearn": {
+    "description": "Level Up wizard cantrips: how many to pick.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSpellSwap": "Bilinen bir büyüyü değiştir (isteğe bağlı)",
+  "@levelUpSpellSwap": {
+    "description": "Level Up wizard: Warlock spell swap section."
+  },
+  "levelUpSpellSwapCurrent": "Şu anda: {name}",
+  "@levelUpSpellSwapCurrent": {
+    "description": "Level Up wizard: currently swapped spell label.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpSummaryLevel": "→ Seviye {level}",
+  "@levelUpSummaryLevel": {
+    "description": "Level Up summary: new level.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSummaryClassLevel": "{className} seviye {level}",
+  "@levelUpSummaryClassLevel": {
+    "description": "Level Up summary: target class and class level.",
+    "placeholders": {
+      "className": {
+        "type": "String"
+      },
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSummaryHp": "Maksimum Can +{n}",
+  "@levelUpSummaryHp": {
+    "description": "Level Up summary: HP gained.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSummaryAsi": "Nitelik Puanı Artışı: {changes}",
+  "@levelUpSummaryAsi": {
+    "description": "Level Up summary: ASI changes.",
+    "placeholders": {
+      "changes": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpSummaryFeat": "Marifet: {name}",
+  "@levelUpSummaryFeat": {
+    "description": "Level Up summary: feat chosen.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpSummarySubclass": "Alt sınıf: {name}",
+  "@levelUpSummarySubclass": {
+    "description": "Level Up summary: subclass chosen.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpSummarySpellsLearned": "Öğrenilen büyüler: {count}",
+  "@levelUpSummarySpellsLearned": {
+    "description": "Level Up summary: spells learned.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSummaryCantripsLearned": "Öğrenilen sihirbazlıklar: {count}",
+  "@levelUpSummaryCantripsLearned": {
+    "description": "Level Up summary: cantrips learned.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpSubclassAlreadyHas": "Mevcut alt sınıf: {name}",
+  "@levelUpSubclassAlreadyHas": {
+    "description": "Level Up subclass step: warning when character already has a subclass.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpMaxLevel": "Zaten en yüksek seviyede (20).",
+  "@levelUpMaxLevel": {
+    "description": "Level Up: shown when character is already level 20."
+  },
+  "levelUpHpReroll": "Yeniden at / değiştir",
+  "@levelUpHpReroll": {
+    "description": "Level Up HP step: reroll button label."
+  },
+  "levelUpSpellSwapPickReplacement": "Şimdi yerine geçecek büyüyü seçin",
+  "@levelUpSpellSwapPickReplacement": {
+    "description": "Level Up wizard: prompt to pick replacement spell after warlock swap."
+  },
+  "levelUpSpellSwapReplaceWith": "Yerine geçecek büyü",
+  "@levelUpSpellSwapReplaceWith": {
+    "description": "Level Up wizard Warlock swap page: section header for replacement spell."
+  },
+  "levelUpSpellSwapNone": "Yok",
+  "@levelUpSpellSwapNone": {
+    "description": "Level Up spell swap: no swap option."
+  },
+  "levelUpSpellAlreadyKnown": "Zaten biliniyor",
+  "@levelUpSpellAlreadyKnown": {
+    "description": "Level Up spell pick: tooltip for already-known spells."
+  },
+  "levelUpSpellCantripSubtitle": "{school} sihirbazlığı",
+  "@levelUpSpellCantripSubtitle": {
+    "description": "Level Up cantrip subtitle.",
+    "placeholders": {
+      "school": {
+        "type": "String"
+      }
+    }
+  },
+  "levelUpSpellSubtitle": "Sv {level} {school}",
+  "@levelUpSpellSubtitle": {
+    "description": "Level Up spell subtitle.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      },
+      "school": {
+        "type": "String"
+      }
+    }
+  },
+  "resetLevelsTitle": "Seviyeleri sıfırla",
+  "@resetLevelsTitle": {
+    "description": "Title for the level reset flow."
+  },
+  "resetLevelsConfirmBody": "Bu işlem sınıf ilerlemesini 1. seviyeye sıfırlar. Notlarınız, envanteriniz, kaplarınız, paranız, görseliniz, hikâyeniz, görünüşünüz, türünüz, geçmişiniz ve nitelik puanlarınız korunur.\n\nSınıf seviyeleri, sınıf büyüleri, sınıf ve alt sınıf seçimleri, ilerleme kaynakları ve nitelik artışı marifetleri kaldırılır veya yeniden hesaplanır. Ek bir kopya istiyorsanız önce yedek dışa aktarın.",
+  "@resetLevelsConfirmBody": {
+    "description": "Confirmation dialog body before opening the level reset flow."
+  },
+  "resetLevelsCountdown": "{seconds} sn bekleyin",
+  "@resetLevelsCountdown": {
+    "description": "Disabled confirmation button label while waiting before level reset.",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsIntro": "Yeni 1. seviye sınıf bilgilerini seçin. Sıfırlama yalnızca son düğmeye bastığınızda kaydedilir.",
+  "@resetLevelsIntro": {
+    "description": "Introductory warning text in the level reset flow."
+  },
+  "resetLevelsSubclassRequired": "Bu sınıf 1. seviyede alt sınıf seçer.",
+  "@resetLevelsSubclassRequired": {
+    "description": "Helper text for required level 1 subclass selection."
+  },
+  "resetLevelsInitialHp": "Başlangıç Canı: {hp}",
+  "@resetLevelsInitialHp": {
+    "description": "Level reset summary row for recalculated level 1 HP.",
+    "placeholders": {
+      "hp": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsSelectSkills": "{count} sınıf becerisi seçin.",
+  "@resetLevelsSelectSkills": {
+    "description": "Prompt for class skill choices during level reset.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsFixedTools": "Otomatik olarak kazanılanlar:",
+  "@resetLevelsFixedTools": {
+    "description": "Label before fixed tool proficiencies in the level reset flow."
+  },
+  "resetLevelsSelectTools": "{count} araç yetkinliği seçin.",
+  "@resetLevelsSelectTools": {
+    "description": "Prompt for tool choices during level reset.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsApply": "1. seviyeye sıfırla",
+  "@resetLevelsApply": {
+    "description": "Final button that applies the level reset."
+  },
+  "resetLevelsApplyAndRebuild": "Sıfırla ve {level}. seviyeye kadar yeniden oluştur",
+  "@resetLevelsApplyAndRebuild": {
+    "description": "Final button that resets levels and then rebuilds the character through level up steps.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsIncomplete": "Gerekli seçimleri tamamlayın",
+  "@resetLevelsIncomplete": {
+    "description": "Disabled final button label when the level reset flow has missing choices."
+  },
+  "resetLevelsApplied": "Seviyeler sıfırlandı.",
+  "@resetLevelsApplied": {
+    "description": "Snackbar shown after level reset succeeds."
+  },
+  "resetLevelsRebuildTitle": "{level}. seviyeye kadar yeniden oluştur",
+  "@resetLevelsRebuildTitle": {
+    "description": "Switch title for rebuilding a character back to its old total level after reset.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsRebuildSubtitle": "1. seviyeyi seçtikten sonra uygulama {level}. seviyeye kadar seviye atlama adımlarını açacak. Bitmeden iptal ederseniz hiçbir şey kaydedilmez.",
+  "@resetLevelsRebuildSubtitle": {
+    "description": "Switch subtitle explaining the atomic rebuild after level reset.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsRebuildStep": "{targetLevel} seviyeden {level}. seviye yeniden oluşturuluyor",
+  "@resetLevelsRebuildStep": {
+    "description": "Snackbar shown before each level up step in a reset rebuild.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      },
+      "targetLevel": {
+        "type": "int"
+      }
+    }
+  },
+  "resetLevelsRebuildCancelled": "Sıfırlama iptal edildi. Değişiklik kaydedilmedi.",
+  "@resetLevelsRebuildCancelled": {
+    "description": "Snackbar shown when the user cancels a reset rebuild before it is saved."
+  },
+  "resetLevelsRebuiltApplied": "Seviyeler sıfırlandı ve {level}. seviyeye kadar yeniden oluşturuldu.",
+  "@resetLevelsRebuiltApplied": {
+    "description": "Snackbar shown after a reset rebuild succeeds.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "labelSubclass": "Alt sınıf",
+  "@labelSubclass": {
+    "description": "Subclass field label."
+  },
+  "labelLanguages": "Diller",
+  "@labelLanguages": {
+    "description": "Languages field label."
+  },
+  "hintAddLanguage": "Dil ekle…",
+  "@hintAddLanguage": {
+    "description": "Language input hint."
+  },
+  "labelChoose": "Seç",
+  "@labelChoose": {
+    "description": "Choose button label."
+  },
+  "sectionAppearance": "Görünüş",
+  "@sectionAppearance": {
+    "description": "Identity tab appearance section title."
+  },
+  "labelAge": "Yaş",
+  "@labelAge": {
+    "description": "Appearance age field label."
+  },
+  "labelHeight": "Boy",
+  "@labelHeight": {
+    "description": "Appearance height field label."
+  },
+  "labelWeight": "Kilo",
+  "@labelWeight": {
+    "description": "Appearance weight field label."
+  },
+  "labelEyes": "Gözler",
+  "@labelEyes": {
+    "description": "Appearance eye color field label."
+  },
+  "labelSkin": "Ten",
+  "@labelSkin": {
+    "description": "Appearance skin color field label."
+  },
+  "labelHair": "Saç",
+  "@labelHair": {
+    "description": "Appearance hair color field label."
+  },
+  "labelMaxHP": "Maksimum Can",
+  "@labelMaxHP": {
+    "description": "Max HP inline field label."
+  },
+  "labelTempHP": "Geçici Can",
+  "@labelTempHP": {
+    "description": "Temporary HP field label."
+  },
+  "labelAmount": "Miktar",
+  "@labelAmount": {
+    "description": "Amount field label for HP tracker."
+  },
+  "labelSpeed": "Hız (ft)",
+  "@labelSpeed": {
+    "description": "Speed inline field label."
+  },
+  "detailDamage": "Hasar",
+  "@detailDamage": {
+    "description": "Damage button in HP tracker."
+  },
+  "detailHeal": "İyileştir",
+  "@detailHeal": {
+    "description": "Heal button in HP tracker."
+  },
+  "detailNone": "Yok",
+  "@detailNone": {
+    "description": "None placeholder (e.g. no concentration spell)."
+  },
+  "tempHpDialogTitle": "Geçici Can Ekle",
+  "@tempHpDialogTitle": {
+    "description": "Temp HP dialog title when no temp HP."
+  },
+  "tempHpDialogTitleReplace": "Geçici Can",
+  "@tempHpDialogTitleReplace": {
+    "description": "Temp HP dialog title when temp HP exists."
+  },
+  "tempHpCurrent": "Mevcut: +{n} geçici Can",
+  "@tempHpCurrent": {
+    "description": "Current temp HP display.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tempHpNoStack": "Geçici Can birikmez; yalnızca daha yüksek değer mevcut değerin yerini alır.",
+  "@tempHpNoStack": {
+    "description": "Temp HP stacking note."
+  },
+  "tempHpReplace": "Değiştir",
+  "@tempHpReplace": {
+    "description": "Replace temp HP button."
+  },
+  "statsTempHpChip": "+{n} geçici",
+  "@statsTempHpChip": {
+    "description": "Temporary HP chip label in HP row.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "subclassConfirmTitle": "{feature} onayla",
+  "@subclassConfirmTitle": {
+    "description": "Subclass dialog title when confirming existing choice.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "subclassChooseTitle": "{feature} seç",
+  "@subclassChooseTitle": {
+    "description": "Subclass dialog title when choosing for the first time.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "subclassConfirmBody": "{level}. seviyeye ulaştınız. {feature} seçiminizi onaylayın veya değiştirin.",
+  "@subclassConfirmBody": {
+    "description": "Subclass confirm dialog body.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      },
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "subclassChooseBody": "{level}. seviyeye ulaştınız! {feature} seçin.",
+  "@subclassChooseBody": {
+    "description": "Subclass choose dialog body.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      },
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "subclassKeepCurrent": "Mevcut seçimi koru",
+  "@subclassKeepCurrent": {
+    "description": "Keep current subclass button."
+  },
+  "subclassChangeTitle": "Alt sınıfı değiştir",
+  "@subclassChangeTitle": {
+    "description": "Change subclass warning dialog title."
+  },
+  "subclassChangeWarning": "Uyarı: Önceki alt sınıfın kazandırdığı büyüler ve yetkinlikler otomatik kaldırılmaz. Bunları elle düzenlemeniz gerekir.",
+  "@subclassChangeWarning": {
+    "description": "Change subclass warning dialog body."
+  },
+  "backgroundChooseTitle": "Geçmiş Seç",
+  "@backgroundChooseTitle": {
+    "description": "Background picker dialog title."
+  },
+  "featuresTooltipAdd": "Özellik ekle",
+  "@featuresTooltipAdd": {
+    "description": "Add feature FAB tooltip."
+  },
+  "featuresTooltipRemove": "Kaldır",
+  "@featuresTooltipRemove": {
+    "description": "Remove feature tooltip."
+  },
+  "featuresTooltipEnable": "Etkinleştir",
+  "@featuresTooltipEnable": {
+    "description": "Enable feature tooltip."
+  },
+  "featuresTooltipDisable": "Devre dışı bırak",
+  "@featuresTooltipDisable": {
+    "description": "Disable feature tooltip."
+  },
+  "featuresTabFeats": "Marifetler",
+  "@featuresTabFeats": {
+    "description": "Add feature sheet: Feats tab label."
+  },
+  "featPrerequisite": "Ön koşul: {req}",
+  "@featPrerequisite": {
+    "description": "Feat prerequisite label.",
+    "placeholders": {
+      "req": {
+        "type": "String"
+      }
+    }
+  },
+  "featuresSectionFeats": "Marifetler",
+  "@featuresSectionFeats": {
+    "description": "Feats section header in Features tab."
+  },
+  "featuresTabClass": "Sınıf",
+  "@featuresTabClass": {
+    "description": "Add feature sheet: Class tab label."
+  },
+  "featuresTabRacial": "Irksal",
+  "@featuresTabRacial": {
+    "description": "Add feature sheet: Racial tab label."
+  },
+  "featuresTabCustom": "Özel",
+  "@featuresTabCustom": {
+    "description": "Add feature sheet: Custom tab label."
+  },
+  "featuresTabTools": "Araçlar",
+  "@featuresTabTools": {
+    "description": "Add feature sheet: Tools tab label."
+  },
+  "featuresRemoveTitle": "Özellik kaldırılsın mı?",
+  "@featuresRemoveTitle": {
+    "description": "Remove feature dialog title."
+  },
+  "featuresRemoveContent": "\"{name}\" kaldırılacak.",
+  "@featuresRemoveContent": {
+    "description": "Remove feature dialog body.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "featuresNoneAvailable": "Kullanılabilir özellik yok.",
+  "@featuresNoneAvailable": {
+    "description": "Empty state for features."
+  },
+  "featuresAddLabel": "Özellik Ekle",
+  "@featuresAddLabel": {
+    "description": "Add feature FAB label."
+  },
+  "featuresLoadError": "Özellikler yüklenirken hata oluştu.",
+  "@featuresLoadError": {
+    "description": "Features tab error state."
+  },
+  "hintSearch": "Ara...",
+  "@hintSearch": {
+    "description": "Generic search hint."
+  },
+  "labelFeatureName": "Ad",
+  "@labelFeatureName": {
+    "description": "Feature name field label."
+  },
+  "labelFeatureDescription": "Açıklama (isteğe bağlı)",
+  "@labelFeatureDescription": {
+    "description": "Feature description field label."
+  },
+  "labelFeatureType": "Tür:",
+  "@labelFeatureType": {
+    "description": "Feature type label."
+  },
+  "labelPassive": "Pasif",
+  "@labelPassive": {
+    "description": "Passive feature type."
+  },
+  "labelActive": "Etkin",
+  "@labelActive": {
+    "description": "Active feature type."
+  },
+  "spellsTooltipAdd": "Büyü ekle",
+  "@spellsTooltipAdd": {
+    "description": "Add spell button tooltip."
+  },
+  "spellsRemoveTitle": "Büyü kaldırılsın mı?",
+  "@spellsRemoveTitle": {
+    "description": "Remove spell dialog title."
+  },
+  "spellsRemoveContent": "\"{name}\" büyü listenizden kaldırılsın mı?",
+  "@spellsRemoveContent": {
+    "description": "Remove spell dialog body.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "spellsAtWill": "İstendiğinde",
+  "@spellsAtWill": {
+    "description": "At-will spell slot label."
+  },
+  "notesTooltipAdd": "Not ekle",
+  "@notesTooltipAdd": {
+    "description": "Add note FAB tooltip."
+  },
+  "notesTooltipEdit": "Notu düzenle",
+  "@notesTooltipEdit": {
+    "description": "Edit note tooltip."
+  },
+  "notesTooltipDelete": "Notu sil",
+  "@notesTooltipDelete": {
+    "description": "Delete note tooltip."
+  },
+  "notesEmptyTitle": "Henüz not yok",
+  "@notesEmptyTitle": {
+    "description": "Notes tab empty state title."
+  },
+  "notesEmptyHint": "İlk notunuzu oluşturmak için + düğmesine dokunun.",
+  "@notesEmptyHint": {
+    "description": "Notes tab empty state subtitle."
+  },
+  "notesUntitled": "Başlıksız",
+  "@notesUntitled": {
+    "description": "Default title for a note with no title."
+  },
+  "notesDeleteTitle": "Not silinsin mi?",
+  "@notesDeleteTitle": {
+    "description": "Delete note dialog title."
+  },
+  "notesDeleteContentNamed": "\"{title}\" kalıcı olarak silinecek.",
+  "@notesDeleteContentNamed": {
+    "description": "Delete note dialog body when note has a title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notesDeleteContent": "Bu not kalıcı olarak silinecek.",
+  "@notesDeleteContent": {
+    "description": "Delete note dialog body when note has no title."
+  },
+  "notesLabelTitle": "Başlık",
+  "@notesLabelTitle": {
+    "description": "Note title field label."
+  },
+  "notesLabelContent": "İçerik",
+  "@notesLabelContent": {
+    "description": "Note content field label."
+  },
+  "notesSearchHint": "Notlarda veya etiketlerde ara",
+  "@notesSearchHint": {
+    "description": "Notes tab search field hint."
+  },
+  "notesNoResultsTitle": "Eşleşen not yok",
+  "@notesNoResultsTitle": {
+    "description": "Notes search empty state title."
+  },
+  "notesNoResultsHint": "Başka bir arama deneyin veya etiket filtresini temizleyin.",
+  "@notesNoResultsHint": {
+    "description": "Notes search empty state hint."
+  },
+  "notesReadMore": "Devamını oku",
+  "@notesReadMore": {
+    "description": "Note card overflow link text."
+  },
+  "notesTags": "Etiketler",
+  "@notesTags": {
+    "description": "Notes tags section label."
+  },
+  "notesAllTags": "Tümü",
+  "@notesAllTags": {
+    "description": "All notes tags filter chip."
+  },
+  "notesCustomTag": "Özel etiket",
+  "@notesCustomTag": {
+    "description": "Custom note tag field label."
+  },
+  "notesAddTag": "Etiket ekle",
+  "@notesAddTag": {
+    "description": "Add custom note tag button tooltip."
+  },
+  "notesTagColor": "Etiket rengi",
+  "@notesTagColor": {
+    "description": "Note tag color picker label."
+  },
+  "notesChooseTagColor": "Etiket rengini seç",
+  "@notesChooseTagColor": {
+    "description": "Note tag color picker dialog title."
+  },
+  "notesTooltipPin": "Notu sabitle",
+  "@notesTooltipPin": {
+    "description": "Pin note action tooltip/menu label."
+  },
+  "notesTooltipUnpin": "Notun sabitlemesini kaldır",
+  "@notesTooltipUnpin": {
+    "description": "Unpin note action tooltip/menu label."
+  },
+  "notesMoveUp": "Yukarı taşı",
+  "@notesMoveUp": {
+    "description": "Move note up menu label."
+  },
+  "notesMoveDown": "Aşağı taşı",
+  "@notesMoveDown": {
+    "description": "Move note down menu label."
+  },
+  "notesMoreActions": "Diğer işlemler",
+  "@notesMoreActions": {
+    "description": "Note card overflow menu tooltip."
+  },
+  "notesPinnedSection": "Sabitlenenler",
+  "@notesPinnedSection": {
+    "description": "Notes list pinned section title."
+  },
+  "notesOtherSection": "Notlar",
+  "@notesOtherSection": {
+    "description": "Notes list unpinned section title."
+  },
+  "notesDefaultTagSession": "Oturum",
+  "@notesDefaultTagSession": {
+    "description": "Default note tag: session."
+  },
+  "notesDefaultTagNpc": "NPC",
+  "@notesDefaultTagNpc": {
+    "description": "Default note tag: NPC."
+  },
+  "notesDefaultTagQuest": "Görev",
+  "@notesDefaultTagQuest": {
+    "description": "Default note tag: quest."
+  },
+  "notesDefaultTagPlace": "Yer",
+  "@notesDefaultTagPlace": {
+    "description": "Default note tag: place."
+  },
+  "notesDefaultTagLoot": "Ganimet",
+  "@notesDefaultTagLoot": {
+    "description": "Default note tag: loot."
+  },
+  "notesDefaultTagRule": "Kural",
+  "@notesDefaultTagRule": {
+    "description": "Default note tag: rule."
+  },
+  "sectionPersonalityTraits": "Kişilik Özellikleri",
+  "@sectionPersonalityTraits": {
+    "description": "Notes tab personality traits section."
+  },
+  "sectionPersonality": "Kişilik",
+  "@sectionPersonality": {
+    "description": "Personality section header."
+  },
+  "sectionIdeals": "İdealler",
+  "@sectionIdeals": {
+    "description": "Notes tab ideals section."
+  },
+  "sectionBonds": "Bağlar",
+  "@sectionBonds": {
+    "description": "Notes tab bonds section."
+  },
+  "sectionFlaws": "Kusurlar",
+  "@sectionFlaws": {
+    "description": "Notes tab flaws section."
+  },
+  "sectionBackstory": "Geçmiş Hikâyesi",
+  "@sectionBackstory": {
+    "description": "Notes tab backstory section."
+  },
+  "inventoryEquippedSection": "Kuşanılanlar ({count})  ·  ZS {ac}",
+  "@inventoryEquippedSection": {
+    "description": "Equipped items section title.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "ac": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryTooltipAdd": "Eşya ekle",
+  "@inventoryTooltipAdd": {
+    "description": "Add item FAB tooltip."
+  },
+  "inventoryTooltipRemove": "Kaldır",
+  "@inventoryTooltipRemove": {
+    "description": "Remove item tooltip."
+  },
+  "inventoryTooltipMove": "Taşı",
+  "@inventoryTooltipMove": {
+    "description": "Move inventory item tooltip."
+  },
+  "inventoryMoveTitle": "{name} taşı",
+  "@inventoryMoveTitle": {
+    "description": "Move inventory item sheet title.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryMoveToInventory": "Envanter",
+  "@inventoryMoveToInventory": {
+    "description": "Move item option for the main inventory."
+  },
+  "inventoryContainersSection": "Kaplar ({count})",
+  "@inventoryContainersSection": {
+    "description": "Inventory section title for containers.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryContainerContents": "{count, plural, =1{1 eşya} other{{count} eşya}}",
+  "@inventoryContainerContents": {
+    "description": "Short count of items stored inside a container.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryContainerEmpty": "Boş",
+  "@inventoryContainerEmpty": {
+    "description": "Container empty state text."
+  },
+  "inventoryRemoveTitle": "Eşya kaldırılsın mı?",
+  "@inventoryRemoveTitle": {
+    "description": "Remove item dialog title."
+  },
+  "inventoryRemoveContent": "{name} envanterden kaldırılsın mı?",
+  "@inventoryRemoveContent": {
+    "description": "Remove item dialog body (single).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryRemovePartial": "Kaldırılacak: {total} eşyanın {count} tanesi",
+  "@inventoryRemovePartial": {
+    "description": "Partial removal display.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryRemoveContainerTitle": "Kap silinsin mi?",
+  "@inventoryRemoveContainerTitle": {
+    "description": "Remove container dialog title."
+  },
+  "inventoryRemoveContainerContent": "{name} içinde {count, plural, =1{1 eşya} other{{count} eşya}} var. Bunlara ne yapılsın?",
+  "@inventoryRemoveContainerContent": {
+    "description": "Remove container dialog body when the container has contents.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryRemoveContainerMoveContents": "Eşyaları envantere taşı",
+  "@inventoryRemoveContainerMoveContents": {
+    "description": "Remove container dialog action that keeps contents."
+  },
+  "inventoryRemoveContainerDeleteContents": "Hepsini kaldır",
+  "@inventoryRemoveContainerDeleteContents": {
+    "description": "Remove container dialog destructive action that removes the container contents too."
+  },
+  "inventoryLabelQuantity": "Adet:",
+  "@inventoryLabelQuantity": {
+    "description": "Quantity label in item dialog."
+  },
+  "inventoryLabelQuantityToRemove": "Kaldırılacak adet",
+  "@inventoryLabelQuantityToRemove": {
+    "description": "Quantity to remove field label."
+  },
+  "inventoryAddCustomItem": "Özel Eşya Ekle",
+  "@inventoryAddCustomItem": {
+    "description": "Add custom item button."
+  },
+  "inventoryAddItem": "Eşya Ekle",
+  "@inventoryAddItem": {
+    "description": "Add item browser title."
+  },
+  "inventoryLabelItemName": "Ad *",
+  "@inventoryLabelItemName": {
+    "description": "Custom item name field label."
+  },
+  "inventoryLabelType": "Tür",
+  "@inventoryLabelType": {
+    "description": "Custom item type field label."
+  },
+  "inventoryLabelCategory": "Kategori",
+  "@inventoryLabelCategory": {
+    "description": "Custom item category field label."
+  },
+  "inventoryLabelItemQuantity": "Adet",
+  "@inventoryLabelItemQuantity": {
+    "description": "Custom item quantity field label."
+  },
+  "inventoryLabelWeight": "Ağırlık",
+  "@inventoryLabelWeight": {
+    "description": "Custom item weight field label (in lb)."
+  },
+  "weightCarried": "Taşınan",
+  "@weightCarried": {
+    "description": "Weight tracking: label for current carried weight."
+  },
+  "weightCapacity": "Kapasite",
+  "@weightCapacity": {
+    "description": "Weight tracking: label for max carry capacity."
+  },
+  "weightEncumbered": "Yük altında",
+  "@weightEncumbered": {
+    "description": "Weight tracking: encumbered status label."
+  },
+  "weightHeavilyEncumbered": "Ağır yük altında",
+  "@weightHeavilyEncumbered": {
+    "description": "Weight tracking: heavily encumbered status label."
+  },
+  "weightEnableTooltip": "Ağırlık takibini aç",
+  "@weightEnableTooltip": {
+    "description": "Tooltip for the weight tracking toggle button."
+  },
+  "weightDisableTooltip": "Ağırlık takibini kapat",
+  "@weightDisableTooltip": {
+    "description": "Tooltip for the weight tracking disable button."
+  },
+  "inventoryLabelDescription": "Açıklama (isteğe bağlı)",
+  "@inventoryLabelDescription": {
+    "description": "Custom item description field label."
+  },
+  "inventoryTypeWeapon": "Silah",
+  "@inventoryTypeWeapon": {
+    "description": "Item type: weapon."
+  },
+  "inventoryTypeArmor": "Zırh",
+  "@inventoryTypeArmor": {
+    "description": "Item type: armor."
+  },
+  "inventoryTypeConsumable": "Tüketilebilir",
+  "@inventoryTypeConsumable": {
+    "description": "Item type: consumable."
+  },
+  "inventoryTypeGear": "Ekipman",
+  "@inventoryTypeGear": {
+    "description": "Item type: gear."
+  },
+  "inventoryTypeEquippable": "Kuşanılabilir",
+  "@inventoryTypeEquippable": {
+    "description": "Item type: generic item that can be equipped without counting as armor."
+  },
+  "inventoryTypeContainer": "Kap",
+  "@inventoryTypeContainer": {
+    "description": "Item type: container that can hold other inventory items."
+  },
+  "inventoryAddItemError": "Eşya eklenemedi.",
+  "@inventoryAddItemError": {
+    "description": "Snackbar shown when adding an inventory item fails."
+  },
+  "inventoryLoadItemsError": "Eşyalar yüklenirken hata oluştu:\n{error}",
+  "@inventoryLoadItemsError": {
+    "description": "Inventory item browser load error.",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryNoResults": "\"{query}\" için sonuç yok",
+  "@inventoryNoResults": {
+    "description": "Inventory item browser empty search result.",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryTooltipEquip": "Kuşan",
+  "@inventoryTooltipEquip": {
+    "description": "Tooltip for equipping an inventory item."
+  },
+  "inventoryTooltipUnequip": "Çıkar",
+  "@inventoryTooltipUnequip": {
+    "description": "Tooltip for unequipping an inventory item."
+  },
+  "inventoryCustomDamageDice": "Hasar (ör. 1d8)",
+  "@inventoryCustomDamageDice": {
+    "description": "Custom item field label for weapon damage dice."
+  },
+  "inventoryCustomDamageType": "Hasar türü",
+  "@inventoryCustomDamageType": {
+    "description": "Custom item field label for weapon damage type."
+  },
+  "inventoryCustomWeaponProperties": "Özellikler (virgülle ayırın)",
+  "@inventoryCustomWeaponProperties": {
+    "description": "Custom item field label for comma-separated weapon properties."
+  },
+  "inventoryCustomRangeNormal": "Normal menzil",
+  "@inventoryCustomRangeNormal": {
+    "description": "Custom item field label for normal weapon range."
+  },
+  "inventoryCustomRangeLong": "Uzun menzil",
+  "@inventoryCustomRangeLong": {
+    "description": "Custom item field label for long weapon range."
+  },
+  "inventoryCustomAddDexToAc": "ZS'ye ÇEV ekle",
+  "@inventoryCustomAddDexToAc": {
+    "description": "Custom armor checkbox label for adding Dexterity modifier to AC."
+  },
+  "inventoryCustomEquipSlot": "Konum (ör. yüzük, boyun)",
+  "@inventoryCustomEquipSlot": {
+    "description": "Custom item field label for an equippable item's body slot."
+  },
+  "inventoryCustomCompatibleWith": "Uyumlu olduğu şeyler (virgülle ayırın)",
+  "@inventoryCustomCompatibleWith": {
+    "description": "Custom ammunition field label for compatible weapons or ammunition users."
+  },
+  "inventoryDetailYes": "Evet",
+  "@inventoryDetailYes": {
+    "description": "Boolean yes value in inventory item details."
+  },
+  "inventoryDetailNo": "Hayır",
+  "@inventoryDetailNo": {
+    "description": "Boolean no value in inventory item details."
+  },
+  "inventoryDetailMaxShort": "en fazla",
+  "@inventoryDetailMaxShort": {
+    "description": "Short label for maximum value, used in AC and Dexterity summaries."
+  },
+  "inventoryDetailDamage": "Hasar",
+  "@inventoryDetailDamage": {
+    "description": "Inventory item detail label for damage."
+  },
+  "inventoryDetailDamageType": "Hasar türü",
+  "@inventoryDetailDamageType": {
+    "description": "Inventory item detail label for damage type."
+  },
+  "inventoryDetailWeaponProperties": "Özellikler",
+  "@inventoryDetailWeaponProperties": {
+    "description": "Inventory item detail label for weapon properties."
+  },
+  "inventoryDetailVersatileDamage": "Çok yönlü hasar",
+  "@inventoryDetailVersatileDamage": {
+    "description": "Inventory item detail label for versatile weapon damage."
+  },
+  "inventoryDetailRange": "Menzil",
+  "@inventoryDetailRange": {
+    "description": "Inventory item detail label for weapon range."
+  },
+  "inventoryDetailRangeNormal": "normal",
+  "@inventoryDetailRangeNormal": {
+    "description": "Inventory item detail value label for normal range."
+  },
+  "inventoryDetailRangeLong": "uzun",
+  "@inventoryDetailRangeLong": {
+    "description": "Inventory item detail value label for long range."
+  },
+  "inventoryDetailArmorType": "Zırh türü",
+  "@inventoryDetailArmorType": {
+    "description": "Inventory item detail label for armor type."
+  },
+  "inventoryDetailShield": "Kalkan",
+  "@inventoryDetailShield": {
+    "description": "Inventory item detail label for shield flag."
+  },
+  "inventoryDetailBaseAc": "Temel ZS",
+  "@inventoryDetailBaseAc": {
+    "description": "Inventory item detail label for base armor class."
+  },
+  "inventoryDetailAcBonus": "ZS bonusu",
+  "@inventoryDetailAcBonus": {
+    "description": "Inventory item detail label for armor class bonus."
+  },
+  "inventoryDetailAddDexToAc": "ZS'ye ÇEV ekler",
+  "@inventoryDetailAddDexToAc": {
+    "description": "Inventory item detail label indicating whether Dexterity is added to AC."
+  },
+  "inventoryDetailMaxDex": "Azami ÇEV",
+  "@inventoryDetailMaxDex": {
+    "description": "Inventory item detail label for maximum Dexterity bonus."
+  },
+  "inventoryDetailStrengthMinimum": "Asgari Güç",
+  "@inventoryDetailStrengthMinimum": {
+    "description": "Inventory item detail label for minimum Strength requirement."
+  },
+  "inventoryDetailEquipSlot": "Konum",
+  "@inventoryDetailEquipSlot": {
+    "description": "Inventory item detail label for equipment slot."
+  },
+  "inventoryDetailRequiresAttunement": "Uyumlanma gerektirir",
+  "@inventoryDetailRequiresAttunement": {
+    "description": "Inventory item detail label for attunement requirement."
+  },
+  "inventoryDetailCapacityWeight": "Ağırlık kapasitesi",
+  "@inventoryDetailCapacityWeight": {
+    "description": "Inventory item detail label for container weight capacity."
+  },
+  "inventoryDetailCapacityVolume": "Hacim",
+  "@inventoryDetailCapacityVolume": {
+    "description": "Inventory item detail label for container volume."
+  },
+  "inventoryDetailCapacityVolumeUnit": "Hacim birimi",
+  "@inventoryDetailCapacityVolumeUnit": {
+    "description": "Inventory item detail label for container volume unit."
+  },
+  "inventoryDetailIgnoreContentWeight": "İçindekilerin ağırlığını yok sayar",
+  "@inventoryDetailIgnoreContentWeight": {
+    "description": "Inventory item detail label for containers that ignore contained item weight."
+  },
+  "inventoryDetailEffect": "Etki",
+  "@inventoryDetailEffect": {
+    "description": "Inventory item detail label for item effect."
+  },
+  "inventoryDetailUses": "Kullanım",
+  "@inventoryDetailUses": {
+    "description": "Inventory item detail label for item uses."
+  },
+  "inventoryDetailAction": "Eylem",
+  "@inventoryDetailAction": {
+    "description": "Inventory item detail label for action type."
+  },
+  "inventoryDetailAmmoType": "Mühimmat türü",
+  "@inventoryDetailAmmoType": {
+    "description": "Inventory item detail label for ammunition type."
+  },
+  "inventoryDetailCompatibleWith": "Uyumlu olduğu şeyler",
+  "@inventoryDetailCompatibleWith": {
+    "description": "Inventory item detail label for compatible weapons or item types."
+  },
+  "inventoryDetailBonus": "Bonus",
+  "@inventoryDetailBonus": {
+    "description": "Inventory item detail label for numeric bonus."
+  },
+  "inventoryDetailExtraDamage": "Ek hasar",
+  "@inventoryDetailExtraDamage": {
+    "description": "Inventory item detail label for extra damage."
+  },
+  "inventoryDetailExtraDamageType": "Ek hasar türü",
+  "@inventoryDetailExtraDamageType": {
+    "description": "Inventory item detail label for extra damage type."
+  },
+  "inventoryDetailSubtype": "Alt tür",
+  "@inventoryDetailSubtype": {
+    "description": "Inventory item detail label for item subtype."
+  },
+  "inventoryDetailCost": "Fiyat",
+  "@inventoryDetailCost": {
+    "description": "Inventory item detail label for item cost."
+  },
+  "inventoryDetailRarity": "Nadirlik",
+  "@inventoryDetailRarity": {
+    "description": "Inventory item detail label for magic item rarity."
+  },
+  "inventoryDetailFeatures": "Özellikler",
+  "@inventoryDetailFeatures": {
+    "description": "Inventory item detail label for item features."
+  },
+  "inventoryDetailWeightEach": "Eşya başına ağırlık",
+  "@inventoryDetailWeightEach": {
+    "description": "Inventory item detail label for per-item weight."
+  },
+  "inventoryDetailWeightTotal": "Toplam ağırlık",
+  "@inventoryDetailWeightTotal": {
+    "description": "Inventory item detail label for total stack weight."
+  },
+  "inventoryDetailState": "Durum",
+  "@inventoryDetailState": {
+    "description": "Inventory item detail label for equipped state."
+  },
+  "inventoryDetailEquipped": "Kuşanılmış",
+  "@inventoryDetailEquipped": {
+    "description": "Inventory item detail value for equipped items."
+  },
+  "inventoryDetailNotEquipped": "Kuşanılmamış",
+  "@inventoryDetailNotEquipped": {
+    "description": "Inventory item detail value for unequipped items."
+  },
+  "inventoryDetailSummary": "Özet",
+  "@inventoryDetailSummary": {
+    "description": "Inventory item detail section title for summary rows."
+  },
+  "inventoryDetailDescription": "Açıklama",
+  "@inventoryDetailDescription": {
+    "description": "Inventory item detail section title for description text."
+  },
+  "inventoryDetailAttributes": "Nitelikler",
+  "@inventoryDetailAttributes": {
+    "description": "Inventory item detail section title for item attributes."
+  },
+  "inventoryReplaceArmorTitle": "Kuşanılmış zırh değiştirilsin mi?",
+  "@inventoryReplaceArmorTitle": {
+    "description": "Replace armor confirmation dialog title."
+  },
+  "inventoryTabWeapons": "Silahlar",
+  "@inventoryTabWeapons": {
+    "description": "Inventory browser weapons tab."
+  },
+  "inventoryTabArmor": "Zırh",
+  "@inventoryTabArmor": {
+    "description": "Inventory browser armor tab."
+  },
+  "inventoryTabGear": "Ekipman",
+  "@inventoryTabGear": {
+    "description": "Inventory browser gear tab."
+  },
+  "inventoryTabMagic": "Büyülü",
+  "@inventoryTabMagic": {
+    "description": "Inventory browser magic tab."
+  },
+  "inventoryTabTools": "Araçlar",
+  "@inventoryTabTools": {
+    "description": "Inventory browser tools tab."
+  },
+  "inventoryTabCustom": "Özel",
+  "@inventoryTabCustom": {
+    "description": "Inventory browser custom tab."
+  },
+  "hintSearchCategory": "{category} ara...",
+  "@hintSearchCategory": {
+    "description": "Search hint with category name.",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "stepChooseMethod": "Yönteminizi seçin:",
+  "@stepChooseMethod": {
+    "description": "Attributes step method selector label."
+  },
+  "stepStandardArray": "Standart Dizi",
+  "@stepStandardArray": {
+    "description": "Standard Array method chip."
+  },
+  "stepPointBuy": "Puan Satın Alma",
+  "@stepPointBuy": {
+    "description": "Point Buy method chip."
+  },
+  "stepRoll4d6": "4d6 At",
+  "@stepRoll4d6": {
+    "description": "Roll 4d6 method chip."
+  },
+  "stepDistributeRacialBonuses": "Irksal bonusları serbestçe dağıt",
+  "@stepDistributeRacialBonuses": {
+    "description": "Tasha's optional rule switch label."
+  },
+  "stepAssignRolls": "Her zar sonucunu bir niteliğe ata:",
+  "@stepAssignRolls": {
+    "description": "Rolled dice assignment label."
+  },
+  "stepAssignValues": "Her değeri bir niteliğe ata:",
+  "@stepAssignValues": {
+    "description": "Standard array assignment label."
+  },
+  "stepPointsRemaining": "Kalan puan: ",
+  "@stepPointsRemaining": {
+    "description": "Point buy remaining points label."
+  },
+  "stepRaceBonus": "+{n} ırk",
+  "@stepRaceBonus": {
+    "description": "Race ASI bonus label.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "stepChooseSubrace": "Alt ırk seçin:",
+  "@stepChooseSubrace": {
+    "description": "Subrace selector label."
+  },
+  "stepGrantedByBackground": "Geçmişten kazanılan:",
+  "@stepGrantedByBackground": {
+    "description": "Background skill grant label."
+  },
+  "stepClassSkillChoices": "Sınıf becerisi seçimleri ({count}):",
+  "@stepClassSkillChoices": {
+    "description": "Class skill choices label.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stepChooseOne": "Birini seçin",
+  "@stepChooseOne": {
+    "description": "Generic choose one dropdown hint."
+  },
+  "stepSelectTool": "Araç seçin…",
+  "@stepSelectTool": {
+    "description": "Tool proficiency dropdown hint."
+  },
+  "statAC": "ZS",
+  "@statAC": {
+    "description": "Armor Class stat chip label."
+  },
+  "statArmor": "Zırh",
+  "@statArmor": {
+    "description": "Armor stat chip label."
+  },
+  "statNoArmor": "Zırhsız",
+  "@statNoArmor": {
+    "description": "Armor summary when no armor equipped."
+  },
+  "statNoArmorShield": "Zırhsız + Kalkan",
+  "@statNoArmorShield": {
+    "description": "Armor summary when only shield equipped."
+  },
+  "statShieldSuffix": " + Kalkan",
+  "@statShieldSuffix": {
+    "description": "Shield suffix appended to armor name."
+  },
+  "statSpeed": "Hız",
+  "@statSpeed": {
+    "description": "Speed stat chip label."
+  },
+  "statInitiative": "Girişim",
+  "@statInitiative": {
+    "description": "Initiative stat chip label."
+  },
+  "statProfBonus": "Yetkinlik Bonusu",
+  "@statProfBonus": {
+    "description": "Proficiency bonus stat chip label."
+  },
+  "statPassivePerc": "Pasif Algı",
+  "@statPassivePerc": {
+    "description": "Passive perception stat chip label."
+  },
+  "statInspiration": "İlham",
+  "@statInspiration": {
+    "description": "Inspiration toggle label."
+  },
+  "statXP": "XP",
+  "@statXP": {
+    "description": "Experience points label."
+  },
+  "inspirationGranted": "Verildi",
+  "@inspirationGranted": {
+    "description": "Inspiration active subtitle."
+  },
+  "inspirationNotGranted": "Verilmedi",
+  "@inspirationNotGranted": {
+    "description": "Inspiration inactive subtitle."
+  },
+  "statLevel": "Seviye {level}",
+  "@statLevel": {
+    "description": "Level label with number.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "tooltipAddXp": "XP Ekle",
+  "@tooltipAddXp": {
+    "description": "Add XP quick-action button."
+  },
+  "labelLevelTable": "Seviye Tablosu",
+  "@labelLevelTable": {
+    "description": "Level/XP table toggle label."
+  },
+  "statUnconsciousDying": "Bilinçsiz / Ölmek Üzere",
+  "@statUnconsciousDying": {
+    "description": "Status label when HP reaches 0."
+  },
+  "deathSavesTitle": "Ölüm Kurtarma Atışları",
+  "@deathSavesTitle": {
+    "description": "Death saves section header in Stats tab."
+  },
+  "deathSavesSuccesses": "Başarılar",
+  "@deathSavesSuccesses": {
+    "description": "Death save successes label."
+  },
+  "deathSavesFailures": "Başarısızlıklar",
+  "@deathSavesFailures": {
+    "description": "Death save failures label."
+  },
+  "deathSavesStabilized": "Stabil",
+  "@deathSavesStabilized": {
+    "description": "Message when 3 death save successes are reached."
+  },
+  "deathSavesDead": "Ölü",
+  "@deathSavesDead": {
+    "description": "Message when 3 death save failures are reached."
+  },
+  "sectionActiveConditions": "Etkin Durumlar",
+  "@sectionActiveConditions": {
+    "description": "Stats tab active conditions section title."
+  },
+  "conditionsNone": "Etkin durum yok",
+  "@conditionsNone": {
+    "description": "Shown when no conditions are active."
+  },
+  "conditionsAdd": "Durum ekle",
+  "@conditionsAdd": {
+    "description": "Tooltip/button to open condition picker."
+  },
+  "conditionsPickTitle": "Durum Uygula",
+  "@conditionsPickTitle": {
+    "description": "Title of the condition picker bottom sheet."
+  },
+  "conditionsRemove": "Durumu kaldır",
+  "@conditionsRemove": {
+    "description": "Button to remove an active condition."
+  },
+  "tooltipAddTempHp": "Geçici Can ekle",
+  "@tooltipAddTempHp": {
+    "description": "Temp HP button tooltip when none."
+  },
+  "tooltipChangeTempHp": "Geçici Canı değiştir",
+  "@tooltipChangeTempHp": {
+    "description": "Temp HP button tooltip when some exists."
+  },
+  "abilityStr": "GÜÇ",
+  "@abilityStr": {
+    "description": "Strength abbreviation."
+  },
+  "abilityDex": "ÇEV",
+  "@abilityDex": {
+    "description": "Dexterity abbreviation."
+  },
+  "abilityCon": "DAY",
+  "@abilityCon": {
+    "description": "Constitution abbreviation."
+  },
+  "abilityInt": "ZEK",
+  "@abilityInt": {
+    "description": "Intelligence abbreviation."
+  },
+  "abilityWis": "BİL",
+  "@abilityWis": {
+    "description": "Wisdom abbreviation."
+  },
+  "abilityCha": "KAR",
+  "@abilityCha": {
+    "description": "Charisma abbreviation."
+  },
+  "featuresSectionRacialTraits": "Irksal Özellikler — {name}",
+  "@featuresSectionRacialTraits": {
+    "description": "Features tab racial traits section header.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "featuresSectionBackground": "Geçmiş Özelliği — {name}",
+  "@featuresSectionBackground": {
+    "description": "Features tab background feature section header.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "featuresSectionClass": "Sınıf Özellikleri — {name}",
+  "@featuresSectionClass": {
+    "description": "Features tab class features section header.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "featuresSectionSubclass": "Alt Sınıf Özellikleri — {name}",
+  "@featuresSectionSubclass": {
+    "description": "Features tab subclass features section header.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "featuresSectionTools": "Araç Yetkinlikleri",
+  "@featuresSectionTools": {
+    "description": "Features tab tool proficiencies section header."
+  },
+  "featuresSectionExtra": "Ek Özellikler",
+  "@featuresSectionExtra": {
+    "description": "Features tab extra features section header."
+  },
+  "spellsNoSpellcasting": "Büyü Kullanımı Yok",
+  "@spellsNoSpellcasting": {
+    "description": "Empty state headline when class has no spellcasting."
+  },
+  "spellsNoSpellcastingDesc": "Bu sınıfın büyü kullanma özelliği yok.",
+  "@spellsNoSpellcastingDesc": {
+    "description": "Empty state body when class has no spellcasting."
+  },
+  "spellsSlots": "Büyü Yuvaları",
+  "@spellsSlots": {
+    "description": "Spell slots section header."
+  },
+  "spellsPactMagicSlots": "Pakt Büyüsü",
+  "@spellsPactMagicSlots": {
+    "description": "Pact Magic spell slots section header."
+  },
+  "spellsSpellcasting": "Büyü Kullanımı",
+  "@spellsSpellcasting": {
+    "description": "Spellcasting banner title word."
+  },
+  "spellsAttack": "Saldırı",
+  "@spellsAttack": {
+    "description": "Spell attack banner stat label."
+  },
+  "spellsSaveDC": "Kurtarma ZS",
+  "@spellsSaveDC": {
+    "description": "Save DC banner stat label."
+  },
+  "spellsCantrips": "Sihirbazlıklar",
+  "@spellsCantrips": {
+    "description": "Cantrips label (banner + level header)."
+  },
+  "spellsPrepared": "Hazırlanmış",
+  "@spellsPrepared": {
+    "description": "Prepared spells banner stat label."
+  },
+  "spellsKnown": "Bilinen",
+  "@spellsKnown": {
+    "description": "Known spells banner stat label."
+  },
+  "spellsEmpty": "Henüz büyü eklenmedi.\nBüyülere göz atmak için + düğmesine dokunun.",
+  "@spellsEmpty": {
+    "description": "Empty state when no spells added and not prepare-all."
+  },
+  "spellsSlotLevel": "Sv {level}",
+  "@spellsSlotLevel": {
+    "description": "Spell slot row level label.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "spellsLevelN": "Seviye {level}",
+  "@spellsLevelN": {
+    "description": "Spell list level group header.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "spellsInnateHeader": "Irksal Büyüler",
+  "@spellsInnateHeader": {
+    "description": "Innate/racial spells section header."
+  },
+  "spellsDisableTitle": "Büyü devre dışı bırakılsın mı?",
+  "@spellsDisableTitle": {
+    "description": "Dialog title when disabling a spell."
+  },
+  "spellsEnableTitle": "Büyü etkinleştirilsin mi?",
+  "@spellsEnableTitle": {
+    "description": "Dialog title when re-enabling a spell."
+  },
+  "spellsDisableContent": "\"{name}\" devre dışı bırakılsın mı? Gri görünecek ve hazırlanamayacak.",
+  "@spellsDisableContent": {
+    "description": "Dialog body when disabling a spell.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "spellsEnableContent": "\"{name}\" etkinleştirilsin mi? Yeniden normal görünecek.",
+  "@spellsEnableContent": {
+    "description": "Dialog body when re-enabling a spell.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "spellsDisable": "Devre dışı bırak",
+  "@spellsDisable": {
+    "description": "Disable button in spell disable dialog."
+  },
+  "spellsEnable": "Etkinleştir",
+  "@spellsEnable": {
+    "description": "Enable button in spell re-enable dialog."
+  },
+  "spellsExtrasHeader": "Ek Büyüler",
+  "@spellsExtrasHeader": {
+    "description": "Header for extra spells added to a prepare-all caster."
+  },
+  "spellFilterTitle": "Filtreler",
+  "@spellFilterTitle": {
+    "description": "Spell filter sheet title."
+  },
+  "spellFilterReset": "Sıfırla",
+  "@spellFilterReset": {
+    "description": "Reset filters button."
+  },
+  "spellFilterApply": "Filtreleri Uygula",
+  "@spellFilterApply": {
+    "description": "Apply filters button."
+  },
+  "spellFilterSectionClasses": "Sınıflar",
+  "@spellFilterSectionClasses": {
+    "description": "Filter section: classes."
+  },
+  "spellFilterClassesHint": "Sınıf seçilmezse tüm sınıflar gösterilir",
+  "@spellFilterClassesHint": {
+    "description": "Hint below class filter chips."
+  },
+  "spellFilterSectionLevel": "Büyü Seviyesi",
+  "@spellFilterSectionLevel": {
+    "description": "Filter section: spell level."
+  },
+  "spellFilterShowAllLevels": "Tüm büyü seviyelerini göster",
+  "@spellFilterShowAllLevels": {
+    "description": "Switch label to show all spell levels."
+  },
+  "spellFilterShowAllLevelsHint": "Mevcut üst sınırınızın (Sv {max}) üzerindeki büyüleri de dahil et",
+  "@spellFilterShowAllLevelsHint": {
+    "description": "Subtitle for show-all-levels switch.",
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "spellFilterCantrip": "Sihirbazlık",
+  "@spellFilterCantrip": {
+    "description": "Cantrip chip label in level filter."
+  },
+  "spellFilterLvl": "Sv {n}",
+  "@spellFilterLvl": {
+    "description": "Spell level chip label.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "spellFilterSectionCastingTime": "Büyü Yapma Süresi",
+  "@spellFilterSectionCastingTime": {
+    "description": "Filter section: casting time."
+  },
+  "spellFilterCastAction": "Eylem",
+  "@spellFilterCastAction": {
+    "description": "Casting time filter: action."
+  },
+  "spellFilterCastBonus": "Ek eylem",
+  "@spellFilterCastBonus": {
+    "description": "Casting time filter: bonus action."
+  },
+  "spellFilterCastReaction": "Tepki",
+  "@spellFilterCastReaction": {
+    "description": "Casting time filter: reaction."
+  },
+  "spellFilterCastLonger": "Uzun süreli büyü (1 dk+)",
+  "@spellFilterCastLonger": {
+    "description": "Casting time filter: 1+ min."
+  },
+  "spellFilterSectionProperties": "Özellikler",
+  "@spellFilterSectionProperties": {
+    "description": "Filter section: spell properties."
+  },
+  "spellFilterConcentration": "Konsantrasyon",
+  "@spellFilterConcentration": {
+    "description": "Concentration checkbox label."
+  },
+  "spellFilterConcentrationHint": "Yalnızca konsantrasyon gerektiren büyüler",
+  "@spellFilterConcentrationHint": {
+    "description": "Concentration checkbox subtitle."
+  },
+  "spellFilterRitual": "Ritüel",
+  "@spellFilterRitual": {
+    "description": "Ritual checkbox label."
+  },
+  "spellFilterRitualHint": "Yalnızca ritüel olarak yapılabilen büyüler",
+  "@spellFilterRitualHint": {
+    "description": "Ritual checkbox subtitle."
+  },
+  "spellFilterSectionSchool": "Büyü Okulu",
+  "@spellFilterSectionSchool": {
+    "description": "Filter section: school of magic."
+  },
+  "spellRemoveTitle": "Büyüyü kaldır",
+  "@spellRemoveTitle": {
+    "description": "Remove spell dialog title."
+  },
+  "spellRemoveContent": "\"{name}\" büyü listenizden kaldırılsın mı?",
+  "@spellRemoveContent": {
+    "description": "Remove spell dialog content.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "spellActionPrepared": "Hazırlandı — hazırlamayı kaldırmak için dokunun",
+  "@spellActionPrepared": {
+    "description": "Button label: spell is prepared, tap to unprepare."
+  },
+  "spellActionPrepare": "Bugün için hazırla",
+  "@spellActionPrepare": {
+    "description": "Button label: prepare spell for today."
+  },
+  "spellActionAdd": "Karaktere ekle",
+  "@spellActionAdd": {
+    "description": "Button label: add spell to character."
+  },
+  "spellActionInList": "Büyü listenizde — kaldırmak için dokunun",
+  "@spellActionInList": {
+    "description": "Button label: spell already in list, tap to remove."
+  },
+  "spellActionAlreadyInList": "Zaten büyü listenizde",
+  "@spellActionAlreadyInList": {
+    "description": "Button label: spell already in list, no remove action."
+  },
+  "spellActionClassSpellInfo": "Bu büyü zaten sınıf listenizin parçası; ayrıca öğrenilmesi gerekmiyor.",
+  "@spellActionClassSpellInfo": {
+    "description": "Info text for prepare-all class spells."
+  },
+  "inventoryCurrency": "Para",
+  "@inventoryCurrency": {
+    "description": "Currency card section header."
+  },
+  "inventoryCarriedSection": "Taşınanlar ({count})",
+  "@inventoryCarriedSection": {
+    "description": "Carried items section title.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryEquippableSection": "Kuşanılabilirler ({count})",
+  "@inventoryEquippableSection": {
+    "description": "Equippable items (weapons/armor not yet equipped) section title.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryEquipHint": "Kuşanmak veya çıkarmak için soldaki daire simgesine dokunun",
+  "@inventoryEquipHint": {
+    "description": "Hint below the equippable items section."
+  },
+  "inventoryInventory": "Envanter",
+  "@inventoryInventory": {
+    "description": "Inventory section title when all sections empty."
+  },
+  "inventoryEmpty": "Henüz eşya yok. Eklemek için + düğmesine dokunun.",
+  "@inventoryEmpty": {
+    "description": "Inventory empty state text."
+  },
+  "inventoryAmmunition": "Mühimmat",
+  "@inventoryAmmunition": {
+    "description": "Ammunition section header."
+  },
+  "coinCopper": "Bakır",
+  "@coinCopper": {
+    "description": "Copper coin label."
+  },
+  "coinSilver": "Gümüş",
+  "@coinSilver": {
+    "description": "Silver coin label."
+  },
+  "coinElectrum": "Elektrum",
+  "@coinElectrum": {
+    "description": "Electrum coin label."
+  },
+  "coinGold": "Altın",
+  "@coinGold": {
+    "description": "Gold coin label."
+  },
+  "coinPlatinum": "Platin",
+  "@coinPlatinum": {
+    "description": "Platinum coin label."
+  },
+  "inventoryGroupSimpleMelee": "Basit Yakın Dövüş",
+  "@inventoryGroupSimpleMelee": {
+    "description": "Weapon browser group: simple melee."
+  },
+  "inventoryGroupSimpleRanged": "Basit Menzilli",
+  "@inventoryGroupSimpleRanged": {
+    "description": "Weapon browser group: simple ranged."
+  },
+  "inventoryGroupMartialMelee": "Savaş Yakın Dövüş",
+  "@inventoryGroupMartialMelee": {
+    "description": "Weapon browser group: martial melee."
+  },
+  "inventoryGroupMartialRanged": "Savaş Menzilli",
+  "@inventoryGroupMartialRanged": {
+    "description": "Weapon browser group: martial ranged."
+  },
+  "inventoryGroupLightArmor": "Hafif Zırh",
+  "@inventoryGroupLightArmor": {
+    "description": "Armor browser group: light armor."
+  },
+  "inventoryGroupMediumArmor": "Orta Zırh",
+  "@inventoryGroupMediumArmor": {
+    "description": "Armor browser group: medium armor."
+  },
+  "inventoryGroupHeavyArmor": "Ağır Zırh",
+  "@inventoryGroupHeavyArmor": {
+    "description": "Armor browser group: heavy armor."
+  },
+  "inventoryGroupShields": "Kalkanlar",
+  "@inventoryGroupShields": {
+    "description": "Armor browser group: shields."
+  },
+  "inventoryGroupAdventuringGear": "Maceracı Ekipmanı",
+  "@inventoryGroupAdventuringGear": {
+    "description": "Gear browser group: adventuring gear."
+  },
+  "inventoryGroupAmmunition": "Mühimmat",
+  "@inventoryGroupAmmunition": {
+    "description": "Gear browser group: ammunition."
+  },
+  "inventoryGroupArcaneFocus": "Büyü Odağı",
+  "@inventoryGroupArcaneFocus": {
+    "description": "Gear browser group: arcane focus."
+  },
+  "inventoryGroupClothing": "Giysiler",
+  "@inventoryGroupClothing": {
+    "description": "Gear browser group: clothing."
+  },
+  "inventoryGroupContainer": "Kap",
+  "@inventoryGroupContainer": {
+    "description": "Gear browser group: container."
+  },
+  "inventoryGroupPoison": "Zehir",
+  "@inventoryGroupPoison": {
+    "description": "Gear browser group: poison."
+  },
+  "inventoryGroupPotions": "İksirler",
+  "@inventoryGroupPotions": {
+    "description": "Magic item browser group: potions."
+  },
+  "inventoryGroupRings": "Yüzükler",
+  "@inventoryGroupRings": {
+    "description": "Magic item browser group: rings."
+  },
+  "inventoryGroupWands": "Asalar",
+  "@inventoryGroupWands": {
+    "description": "Magic item browser group: wands."
+  },
+  "inventoryGroupWeapons": "Silahlar",
+  "@inventoryGroupWeapons": {
+    "description": "Magic item browser group: weapons."
+  },
+  "inventoryGroupArmor": "Zırh",
+  "@inventoryGroupArmor": {
+    "description": "Magic item browser group: armor."
+  },
+  "inventoryGroupWondrousItems": "Harikulade Eşyalar",
+  "@inventoryGroupWondrousItems": {
+    "description": "Magic item browser group: wondrous items."
+  },
+  "inventoryGroupArtisansTools": "Zanaatkâr Araçları",
+  "@inventoryGroupArtisansTools": {
+    "description": "Tools browser group: artisan's tools."
+  },
+  "inventoryGroupGamingSets": "Oyun Setleri",
+  "@inventoryGroupGamingSets": {
+    "description": "Tools browser group: gaming sets."
+  },
+  "inventoryGroupMusicalInstruments": "Müzik Aletleri",
+  "@inventoryGroupMusicalInstruments": {
+    "description": "Tools browser group: musical instruments."
+  },
+  "inventoryGroupOtherTools": "Diğer Araçlar",
+  "@inventoryGroupOtherTools": {
+    "description": "Tools browser group: other tools."
+  },
+  "armorStealthDisadvantage": "Gizlilikte dezavantaj",
+  "@armorStealthDisadvantage": {
+    "description": "Label shown when armor imposes stealth disadvantage."
+  },
+  "spellDetailCastingTime": "Büyü yapma süresi",
+  "@spellDetailCastingTime": {
+    "description": "Spell detail label: casting time."
+  },
+  "spellDetailRange": "Menzil",
+  "@spellDetailRange": {
+    "description": "Spell detail label: range."
+  },
+  "spellRangeSelf": "Kendisi",
+  "spellRangeTouch": "Dokunma",
+  "spellRangeSight": "Görüş",
+  "spellRangeSpecial": "Özel",
+  "spellRangeUnlimited": "Sınırsız",
+  "spellAreaSphere": "küre",
+  "spellAreaCone": "koni",
+  "spellAreaCube": "küp",
+  "spellAreaCylinder": "silindir",
+  "spellAreaLine": "çizgi",
+  "spellAreaWall": "duvar",
+  "spellAreaCircle": "daire",
+  "spellDetailDuration": "Süre",
+  "@spellDetailDuration": {
+    "description": "Spell detail label: duration."
+  },
+  "spellDetailComponents": "Bileşenler",
+  "@spellDetailComponents": {
+    "description": "Spell detail label: components."
+  },
+  "spellDetailConcentration": "Konsantrasyon gerektirir",
+  "@spellDetailConcentration": {
+    "description": "Spell detail badge: requires concentration."
+  },
+  "spellDetailRitual": "Ritüel olarak yapılabilir",
+  "@spellDetailRitual": {
+    "description": "Spell detail badge: can be cast as a ritual."
+  },
+  "spellDetailAtHigherLevels": "Daha Yüksek Seviyelerde. ",
+  "@spellDetailAtHigherLevels": {
+    "description": "Spell detail section heading: at higher levels."
+  },
+  "spellDetailClasses": "Sınıflar: {classes}",
+  "@spellDetailClasses": {
+    "description": "Spell detail classes line.",
+    "placeholders": {
+      "classes": {
+        "type": "String"
+      }
+    }
+  },
+  "spellDetailLevelSchool": "{ordinal}. seviye {school}",
+  "@spellDetailLevelSchool": {
+    "description": "Spell level + school descriptor.",
+    "placeholders": {
+      "ordinal": {
+        "type": "String"
+      },
+      "school": {
+        "type": "String"
+      }
+    }
+  },
+  "spellDetailCantrip": "{school} sihirbazlığı",
+  "@spellDetailCantrip": {
+    "description": "Cantrip school descriptor.",
+    "placeholders": {
+      "school": {
+        "type": "String"
+      }
+    }
+  },
+  "armorSwapCurrent": "Mevcut: {name}",
+  "@armorSwapCurrent": {
+    "description": "Armor swap dialog: current armor name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "armorSwapAcNow": "Şimdiki ZS: {ac}",
+  "@armorSwapAcNow": {
+    "description": "Armor swap dialog: current AC value.",
+    "placeholders": {
+      "ac": {
+        "type": "int"
+      }
+    }
+  },
+  "armorSwapAcAfter": "Sonraki ZS: {ac}",
+  "@armorSwapAcAfter": {
+    "description": "Armor swap dialog: AC after swap.",
+    "placeholders": {
+      "ac": {
+        "type": "int"
+      }
+    }
+  },
+  "armorSwapButton": "Zırhı değiştir",
+  "@armorSwapButton": {
+    "description": "Armor swap confirm button."
+  },
+  "reviewRowName": "Ad",
+  "@reviewRowName": {
+    "description": "Review step: name row label."
+  },
+  "reviewUnnamedHero": "Adsız Kahraman",
+  "@reviewUnnamedHero": {
+    "description": "Review step: placeholder when character has no name."
+  },
+  "reviewRowPlayer": "Oyuncu",
+  "@reviewRowPlayer": {
+    "description": "Review step: player row label."
+  },
+  "reviewRowSubclass": "Alt sınıf",
+  "@reviewRowSubclass": {
+    "description": "Review step: subclass row label fallback."
+  },
+  "reviewRowHitDie": "Can Zarı",
+  "@reviewRowHitDie": {
+    "description": "Review step: hit die row label."
+  },
+  "reviewRowSavingThrows": "Kurtarma Atışları",
+  "@reviewRowSavingThrows": {
+    "description": "Review step: saving throws row label."
+  },
+  "reviewRowSubrace": "Alt ırk",
+  "@reviewRowSubrace": {
+    "description": "Review step: subrace row label."
+  },
+  "reviewRowSpeed": "Hız",
+  "@reviewRowSpeed": {
+    "description": "Review step: speed row label."
+  },
+  "reviewRowLanguages": "Diller",
+  "@reviewRowLanguages": {
+    "description": "Review step: languages row label."
+  },
+  "reviewRowFeature": "Özellik",
+  "@reviewRowFeature": {
+    "description": "Review step: background feature row label."
+  },
+  "reviewRowFromBackground": "Geçmişten",
+  "@reviewRowFromBackground": {
+    "description": "Review step: skills from background row label."
+  },
+  "reviewRowClassChoices": "Sınıf seçimleri",
+  "@reviewRowClassChoices": {
+    "description": "Review step: class skill choices row label."
+  },
+  "reviewRowMaxHp": "Maksimum Can",
+  "@reviewRowMaxHp": {
+    "description": "Review step: max HP row label."
+  },
+  "reviewRowAcUnarmored": "ZS (Zırhsız)",
+  "@reviewRowAcUnarmored": {
+    "description": "Review step: AC unarmored row label."
+  },
+  "reviewRowAcWith": "{name} ile ZS",
+  "@reviewRowAcWith": {
+    "description": "Review step: AC with armor row label.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewRowProficiencyBonus": "Yetkinlik Bonusu",
+  "@reviewRowProficiencyBonus": {
+    "description": "Review step: proficiency bonus row label."
+  },
+  "reviewStartingGold": "Başlangıç Altını",
+  "@reviewStartingGold": {
+    "description": "Review step: starting gold row label."
+  },
+  "reviewStartingEquipment": "Başlangıç Ekipmanı",
+  "@reviewStartingEquipment": {
+    "description": "Review step: starting equipment section title."
+  },
+  "reviewDeselectAll": "Tüm seçimleri kaldır",
+  "@reviewDeselectAll": {
+    "description": "Review step: deselect all button."
+  },
+  "reviewSelectAll": "Tümünü seç",
+  "@reviewSelectAll": {
+    "description": "Review step: select all button."
+  },
+  "reviewUncheckHint": "Envanterinize eklemek istemediğiniz eşyaların işaretini kaldırın.",
+  "@reviewUncheckHint": {
+    "description": "Review step: hint below starting equipment list."
+  },
+  "reviewEquipmentChoices": "Ekipman Seçimleri",
+  "@reviewEquipmentChoices": {
+    "description": "Review step: equipment choices subsection title."
+  },
+  "reviewEquipmentChoicesHint": "Her yer için belirli bir eşya seçin.",
+  "@reviewEquipmentChoicesHint": {
+    "description": "Review step: equipment choices hint."
+  },
+  "reviewToolProficiencies": "Araç Yetkinlikleri",
+  "@reviewToolProficiencies": {
+    "description": "Review step: tool proficiencies section title."
+  },
+  "reviewChooseToolProficiency": "Araç yetkinliğinizi seçin:",
+  "@reviewChooseToolProficiency": {
+    "description": "Review step: choose tool proficiency label."
+  },
+  "reviewChooseLanguages": "Irkınızın veya geçmişinizin kazandırdığı {count} dil seçin.",
+  "@reviewChooseLanguages": {
+    "description": "Review step: choose languages hint.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewChooseOne": "Birini seçin:",
+  "@reviewChooseOne": {
+    "description": "Review step: choose one option label."
+  },
+  "stepTashaRule": "Tasha'nın isteğe bağlı kuralı — nitelik artışı puanlarını istediğiniz niteliğe verin",
+  "@stepTashaRule": {
+    "description": "Attributes step: Tasha's optional rule subtitle."
+  },
+  "stepRollDice": "Zar at",
+  "@stepRollDice": {
+    "description": "Attributes step: roll dice button label."
+  },
+  "stepReroll": "Yeniden at",
+  "@stepReroll": {
+    "description": "Attributes step: reroll button label."
+  },
+  "stepRollHint": "6 değer üretmek için zar atın (4d6, en düşüğü çıkarın)",
+  "@stepRollHint": {
+    "description": "Attributes step: roll hint when no values rolled yet."
+  },
+  "stepPrimaryAbilities": "öncelikli nitelikler: ",
+  "@stepPrimaryAbilities": {
+    "description": "Attributes step: class reminder primary abilities label."
+  },
+  "stepNameTitle": "Karakterinize bir ad verin.",
+  "@stepNameTitle": {
+    "description": "Name step: page title."
+  },
+  "stepNameHint": "Bunu daha sonra değiştirebilirsiniz.",
+  "@stepNameHint": {
+    "description": "Name step: subtitle hint."
+  },
+  "stepNameCharLabel": "Karakter adı",
+  "@stepNameCharLabel": {
+    "description": "Name step: character name field label."
+  },
+  "stepNamePlayerLabel": "Oyuncu adı (isteğe bağlı)",
+  "@stepNamePlayerLabel": {
+    "description": "Name step: player name field label."
+  },
+  "stepHitDieLabel": "Can zarı",
+  "@stepHitDieLabel": {
+    "description": "Class card: hit die label."
+  },
+  "stepSavesLabel": "Kurtarmalar",
+  "@stepSavesLabel": {
+    "description": "Class card: saving throws label."
+  },
+  "stepSpellcastingLabel": "Büyü kullanımı",
+  "@stepSpellcastingLabel": {
+    "description": "Class card: spellcasting ability label."
+  },
+  "stepOptionsLabel": "seçenekler",
+  "@stepOptionsLabel": {
+    "description": "Class card: subclass options count suffix."
+  },
+  "stepChooseSubclassPrompt": "{feature} seçin (Sv {level}):",
+  "@stepChooseSubclassPrompt": {
+    "description": "Class step: subclass selector prompt.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      },
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "stepRaceSpeedLabel": "Hız",
+  "@stepRaceSpeedLabel": {
+    "description": "Race card: speed label."
+  },
+  "stepRaceASILabel": "Nitelik Artışı",
+  "@stepRaceASILabel": {
+    "description": "Race card: ability score increase label."
+  },
+  "stepRaceSubracesAvailable": "Kullanılabilir alt ırk: {count}",
+  "@stepRaceSubracesAvailable": {
+    "description": "Race card: subraces count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stepChooseSkillsHint": "Sınıf listenizden {count} beceri seçin.",
+  "@stepChooseSkillsHint": {
+    "description": "Skills step: prompt to choose skills.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "abilityStrength": "Güç",
+  "@abilityStrength": {
+    "description": "Full name of the Strength ability score."
+  },
+  "abilityDexterity": "Çeviklik",
+  "@abilityDexterity": {
+    "description": "Full name of the Dexterity ability score."
+  },
+  "abilityConstitution": "Dayanıklılık",
+  "@abilityConstitution": {
+    "description": "Full name of the Constitution ability score."
+  },
+  "abilityIntelligence": "Zekâ",
+  "@abilityIntelligence": {
+    "description": "Full name of the Intelligence ability score."
+  },
+  "abilityWisdom": "Bilgelik",
+  "@abilityWisdom": {
+    "description": "Full name of the Wisdom ability score."
+  },
+  "abilityCharisma": "Karizma",
+  "@abilityCharisma": {
+    "description": "Full name of the Charisma ability score."
+  },
+  "stepFreeAsiRemaining": "Irksal nitelik artışı puanlarını serbestçe dağıtın ({remaining} kaldı):",
+  "@stepFreeAsiRemaining": {
+    "description": "Attributes step: Tasha free ASI distribution label.",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "stepFreePicksRemaining": "Irksal serbest nitelik artışı: {total} niteliğe +1 verin ({remaining} kaldı):",
+  "@stepFreePicksRemaining": {
+    "description": "Attributes step: Half-Elf style free picks label.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "stepFreePicksNoStack": "Zaten ırksal bonus alan niteliklere atanamaz.",
+  "@stepFreePicksNoStack": {
+    "description": "Attributes step: free picks constraint hint."
+  },
+  "reviewClassEquipmentTitle": "Sınıf Ekipmanı — {name}",
+  "@reviewClassEquipmentTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewEquipmentIncluded": "Dahil olanlar:",
+  "stepToolCategoryGamingSet": "Oyun seti",
+  "stepToolCategoryInstrument": "Müzik aleti",
+  "stepToolCategoryArtisanTool": "Zanaatkâr aracı",
+  "stepToolCategoryArtisanOrInstrument": "Zanaatkâr aracı veya müzik aleti",
+  "exportCopied": "{label} kopyalandı!",
+  "@exportCopied": {
+    "description": "Snackbar shown after copying to clipboard.",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "exportDialogTitle": "{name} Dışa Aktar",
+  "@exportDialogTitle": {
+    "description": "Export dialog title.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "exportShowJson": "JSON'u Göster",
+  "@exportShowJson": {
+    "description": "Export dialog: expand JSON section label."
+  },
+  "exportCopyJson": "JSON'u Kopyala",
+  "@exportCopyJson": {
+    "description": "Export dialog: copy JSON button."
+  },
+  "exportSectionFile": "Tam dosya",
+  "@exportSectionFile": {
+    "description": "Export dialog: complete file section heading."
+  },
+  "exportSectionFileCaption": "Karakter fotoğrafını içerir",
+  "@exportSectionFileCaption": {
+    "description": "Export dialog: complete file section caption."
+  },
+  "exportShareFile": ".dndchar paylaş",
+  "@exportShareFile": {
+    "description": "Export dialog: share .dndchar file button."
+  },
+  "dialogClose": "Kapat",
+  "@dialogClose": {
+    "description": "Generic dialog close button."
+  },
+  "importDialogTitle": "Karakter veya Yedek İçe Aktar",
+  "@importDialogTitle": {
+    "description": "Import dialog title for .dndchar and .dndbackup files."
+  },
+  "importUseJson": "Doğrudan JSON kullan",
+  "@importUseJson": {
+    "description": "Import dialog: expand JSON section label."
+  },
+  "importJsonHint": "JSON'u buraya yapıştırın…",
+  "@importJsonHint": {
+    "description": "Import dialog: JSON text field hint."
+  },
+  "importPickFile": ".dndchar veya .dndbackup dosyası seç",
+  "@importPickFile": {
+    "description": "Import dialog: button to open a .dndchar or .dndbackup file from storage."
+  },
+  "importFileError": "Geçersiz veya bozuk .dndchar/.dndbackup dosyası",
+  "@importFileError": {
+    "description": "Import dialog: error shown when picked file is invalid."
+  },
+  "importFileIncoming": "Dosyadan karakter içe aktarılsın mı?",
+  "@importFileIncoming": {
+    "description": "Confirmation dialog title when app is opened with a .dndchar file."
+  },
+  "dialogImport": "İçe Aktar",
+  "@dialogImport": {
+    "description": "Import dialog: import button."
+  },
+  "spellBrowserTitle": "Büyülere Göz At",
+  "@spellBrowserTitle": {
+    "description": "Spell browser sheet title."
+  },
+  "spellBrowserFilters": "Filtreler",
+  "@spellBrowserFilters": {
+    "description": "Spell browser: filter icon button tooltip."
+  },
+  "spellBrowserSearchHint": "Büyü ara...",
+  "@spellBrowserSearchHint": {
+    "description": "Spell browser: search field hint."
+  },
+  "filterClearAll": "Tümünü temizle",
+  "@filterClearAll": {
+    "description": "Filter panel: clear all filters button."
+  },
+  "loadingLabel": "Yükleniyor...",
+  "@loadingLabel": {
+    "description": "Generic loading label."
+  },
+  "spellBrowserCount": "{count} büyü",
+  "@spellBrowserCount": {
+    "description": "Spell browser: result count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "s": {
+        "type": "String"
+      }
+    }
+  },
+  "spellBrowserEmpty": "Geçerli filtrelerle eşleşen büyü yok.",
+  "@spellBrowserEmpty": {
+    "description": "Spell browser: empty state message."
+  },
+  "spellCantrip": "Sihirbazlık",
+  "@spellCantrip": {
+    "description": "Spell level 0 label."
+  },
+  "spellLevelN": "Sv {n}",
+  "@spellLevelN": {
+    "description": "Spell level N label.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "castingTimeAction": "Eylem",
+  "@castingTimeAction": {
+    "description": "Casting time: action."
+  },
+  "castingTimeBonusAction": "Ek eylem",
+  "@castingTimeBonusAction": {
+    "description": "Casting time: bonus action."
+  },
+  "castingTimeReaction": "Tepki",
+  "@castingTimeReaction": {
+    "description": "Casting time: reaction."
+  },
+  "castingTimeLonger": "Uzun süreli büyü",
+  "@castingTimeLonger": {
+    "description": "Casting time: longer than one round."
+  },
+  "filterConcentration": "Konsantrasyon",
+  "@filterConcentration": {
+    "description": "Filter label: concentration."
+  },
+  "filterRitual": "Ritüel",
+  "@filterRitual": {
+    "description": "Filter label: ritual."
+  },
+  "filterAllLevels": "Tüm seviyeler",
+  "@filterAllLevels": {
+    "description": "Filter label: show all spell levels."
+  },
+  "avatarChoosePhoto": "Fotoğraf seç",
+  "@avatarChoosePhoto": {
+    "description": "Character avatar: choose photo option."
+  },
+  "avatarRemovePhoto": "Fotoğrafı kaldır",
+  "@avatarRemovePhoto": {
+    "description": "Character avatar: remove photo option."
+  },
+  "avatarCropPhoto": "Fotoğrafı kırp",
+  "@avatarCropPhoto": {
+    "description": "Character avatar: crop photo toolbar title."
+  },
+  "avatarChangePhoto": "Fotoğrafı değiştir",
+  "@avatarChangePhoto": {
+    "description": "Character avatar: change photo action in full-screen viewer."
+  },
+  "avatarSavePhoto": "Fotoğrafı kaydet",
+  "@avatarSavePhoto": {
+    "description": "Character avatar: save photo to device gallery action."
+  },
+  "avatarSaveSuccess": "Fotoğraf galeriye kaydedildi",
+  "@avatarSaveSuccess": {
+    "description": "Character avatar: snackbar shown after saving photo to gallery."
+  },
+  "avatarSaveError": "Fotoğraf kaydedilemedi",
+  "@avatarSaveError": {
+    "description": "Character avatar: snackbar shown when saving photo to gallery fails."
+  },
+  "featureAddedSnackbar": "{name} eklendi!",
+  "@featureAddedSnackbar": {
+    "description": "Features tab: snackbar shown after adding a custom feature.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "featureAddButton": "Özellik Ekle",
+  "@featureAddButton": {
+    "description": "Features tab: add custom feature button label."
+  },
+  "reviewLanguageChoices": "Dil Seçimleri",
+  "@reviewLanguageChoices": {
+    "description": "Review step: language choices section title."
+  },
+  "reviewLanguageTypeHint": "Bir dil yazın…",
+  "@reviewLanguageTypeHint": {
+    "description": "Review step: language text field hint."
+  },
+  "avatarRemoveConfirmTitle": "Fotoğraf kaldırılsın mı?",
+  "@avatarRemoveConfirmTitle": {
+    "description": "Avatar: confirmation dialog title when removing photo."
+  },
+  "avatarRemoveConfirmBody": "Bu işlem geri alınamaz.",
+  "@avatarRemoveConfirmBody": {
+    "description": "Avatar: confirmation dialog body when removing photo."
+  },
+  "editModeBanner": "Düzenleniyor",
+  "@editModeBanner": {
+    "description": "Banner shown at the top of the stats tab when in edit mode."
+  },
+  "detailSheetInfoTooltip": "Ayrıntılar",
+  "@detailSheetInfoTooltip": {
+    "description": "Tooltip for the info button on class/race cards in character creation."
+  },
+  "detailSheetProficiencies": "Yetkinlikler",
+  "@detailSheetProficiencies": {
+    "description": "Detail sheet: proficiencies section label."
+  },
+  "detailSheetTraits": "Özellikler",
+  "@detailSheetTraits": {
+    "description": "Detail sheet: racial traits section label."
+  },
+  "detailSheetSubclassFeaturePlaceholder": "Alt Sınıf Özelliği",
+  "@detailSheetSubclassFeaturePlaceholder": {
+    "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained."
+  },
+  "detailSheetAvailableSubclasses": "Kullanılabilir {feature}",
+  "@detailSheetAvailableSubclasses": {
+    "description": "Detail sheet: available subclasses section label.",
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "detailSheetAvailableSubraces": "Alt ırklar",
+  "@detailSheetAvailableSubraces": {
+    "description": "Detail sheet: available subraces section label."
+  },
+  "xpTrackingLabel": "XP'yi takip et",
+  "@xpTrackingLabel": {
+    "description": "Label for the XP tracking toggle switch."
+  },
+  "xpReadyToLevelUp": "Seviye atlamaya hazır!",
+  "@xpReadyToLevelUp": {
+    "description": "CTA button shown when XP reaches the next level threshold."
+  },
+  "xpLevelUpNowTitle": "Seviye atlansın mı?",
+  "@xpLevelUpNowTitle": {
+    "description": "Dialog title shown when XP reaches a new level threshold."
+  },
+  "xpLevelUpNowMessage": "{level}. seviyeye ulaşmak için yeterli XP'niz var. Şimdi seviye atlamak ister misiniz?",
+  "@xpLevelUpNowMessage": {
+    "description": "Dialog message shown when XP reaches a new level threshold.",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "xpLevelUpLater": "Sonra",
+  "@xpLevelUpLater": {
+    "description": "Dialog button to postpone leveling up."
+  },
+  "settingsSectionUnits": "Birimler",
+  "@settingsSectionUnits": {
+    "description": "Settings section header for unit system."
+  },
+  "settingsUnitSystem": "Birim sistemi",
+  "@settingsUnitSystem": {
+    "description": "Unit system tile title."
+  },
+  "settingsUnitImperial": "İmparatorluk (ft / lb)",
+  "@settingsUnitImperial": {
+    "description": "Imperial unit system option."
+  },
+  "settingsUnitMetric": "Metrik (m / kg)",
+  "@settingsUnitMetric": {
+    "description": "Metric unit system option."
+  },
+  "settingsUnitSquares": "Kare (kare / kg)",
+  "@settingsUnitSquares": {
+    "description": "Squares unit system option."
+  },
+  "settingsChooseUnitSystem": "Birim Sistemini Seç",
+  "@settingsChooseUnitSystem": {
+    "description": "Unit system picker bottom sheet title."
+  },
+  "settingsSectionCharacterSheet": "Karakter Sayfası",
+  "@settingsSectionCharacterSheet": {
+    "description": "Settings section header for character sheet behavior."
+  },
+  "settingsKeepScreenOnTitle": "Ekranı açık tut",
+  "@settingsKeepScreenOnTitle": {
+    "description": "Settings tile title for keeping the device screen awake while viewing a character sheet."
+  },
+  "settingsKeepScreenOnSubtitle": "Karakter sayfası açıkken ekranın uykuya geçmesini önle.",
+  "@settingsKeepScreenOnSubtitle": {
+    "description": "Settings tile subtitle for keeping the device screen awake while viewing a character sheet."
+  },
+  "settingsContextualRollAskTitle": "Bağlamsal zar seçeneklerini göster",
+  "@settingsContextualRollAskTitle": {
+    "description": "Settings tile title for showing options before contextual rolls."
+  },
+  "settingsContextualRollAskSubtitle": "Sayfadan zar atmadan önce avantaj veya dezavantaj gibi ilgili seçimleri sor.",
+  "@settingsContextualRollAskSubtitle": {
+    "description": "Settings tile subtitle for showing options before contextual rolls."
+  },
+  "settingsContextualCriticalRuleTitle": "Kritik vuruş kuralı",
+  "@settingsContextualCriticalRuleTitle": {
+    "description": "Settings tile title for choosing how contextual critical rolls are calculated."
+  },
+  "settingsContextualCriticalRuleSubtitle": "Saldırı zarında doğal 20 gelince otomatik uygulanır.",
+  "@settingsContextualCriticalRuleSubtitle": {
+    "description": "Settings tile subtitle for choosing how contextual critical rolls are calculated."
+  },
+  "settingsContextualCriticalRuleChoose": "Kritik vuruş kuralını seç",
+  "@settingsContextualCriticalRuleChoose": {
+    "description": "Bottom sheet title for choosing the contextual critical roll rule."
+  },
+  "settingsContextualCriticalRuleDoubleDice": "Hasar zarlarını iki kat sayıda at",
+  "@settingsContextualCriticalRuleDoubleDice": {
+    "description": "Critical hit option that doubles only damage dice."
+  },
+  "settingsContextualCriticalRuleDoubleDamage": "Toplam hasarı ikiye katla",
+  "@settingsContextualCriticalRuleDoubleDamage": {
+    "description": "Critical hit option that doubles the final damage total."
+  },
+  "settingsBackupSection": "Yedekleme",
+  "@settingsBackupSection": {
+    "description": "Settings section header for backup actions."
+  },
+  "settingsBackupExportTitle": "Yedeği dışa aktar",
+  "@settingsBackupExportTitle": {
+    "description": "Settings tile title for exporting a backup file."
+  },
+  "settingsBackupExportSubtitle": "Tüm karakterleri bir yedek dosyasına kaydet.",
+  "@settingsBackupExportSubtitle": {
+    "description": "Settings tile subtitle for exporting a backup file."
+  },
+  "settingsBackupExporting": "Yedek oluşturuluyor...",
+  "@settingsBackupExporting": {
+    "description": "Progress text shown while exporting a backup."
+  },
+  "settingsBackupExportSuccess": "Yedek dışa aktarıldı.",
+  "@settingsBackupExportSuccess": {
+    "description": "Snackbar shown after a backup is exported."
+  },
+  "settingsBackupExportError": "Yedek dışa aktarılamadı.",
+  "@settingsBackupExportError": {
+    "description": "Snackbar shown when backup export fails."
+  },
+  "settingsBackupImportTitle": "Yedeği içe aktar",
+  "@settingsBackupImportTitle": {
+    "description": "Settings tile title for importing a backup file."
+  },
+  "settingsBackupImportSubtitle": "Karakterleri bir .dndbackup dosyasından geri yükle.",
+  "@settingsBackupImportSubtitle": {
+    "description": "Settings tile subtitle for importing a backup file."
+  },
+  "settingsBackupImporting": "Yedek içe aktarılıyor...",
+  "@settingsBackupImporting": {
+    "description": "Progress text shown while importing a backup."
+  },
+  "settingsBackupImportError": "Yedek içe aktarılamadı.",
+  "@settingsBackupImportError": {
+    "description": "Snackbar shown when backup import fails."
+  },
+  "settingsBackupImportSuccess": "{count, plural, =1{Yedekten 1 karakter içe aktarıldı.} other{Yedekten {count} karakter içe aktarıldı.}}",
+  "@settingsBackupImportSuccess": {
+    "description": "Snackbar shown after backup import completes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsSectionApp": "Uygulama",
+  "@settingsSectionApp": {
+    "description": "Settings section header for app-level actions."
+  },
+  "settingsReviewTitle": "Play Store'da değerlendir",
+  "@settingsReviewTitle": {
+    "description": "Settings tile title to open the app's Play Store rating page."
+  },
+  "settingsReviewSubtitle": "Puan veya yorum bırakmak için uygulama sayfasını aç.",
+  "@settingsReviewSubtitle": {
+    "description": "Settings tile subtitle to open the app's Play Store rating page."
+  },
+  "settingsReviewOpenError": "Play Store açılamadı.",
+  "@settingsReviewOpenError": {
+    "description": "Snackbar shown when the Play Store page cannot be opened."
+  },
+  "settingsMaintenanceSection": "Bakım",
+  "@settingsMaintenanceSection": {
+    "description": "Settings section header for character maintenance actions."
+  },
+  "settingsMaintenanceCheckTitle": "Karakter güncellemelerini denetle",
+  "@settingsMaintenanceCheckTitle": {
+    "description": "Settings tile title before checking character migrations."
+  },
+  "settingsMaintenanceCheckSubtitle": "Kaydedilmiş verilerdeki düzeltmeleri ara.",
+  "@settingsMaintenanceCheckSubtitle": {
+    "description": "Settings tile subtitle before checking character migrations."
+  },
+  "settingsMaintenanceUpdateTitle": "Karakterleri güncelle",
+  "@settingsMaintenanceUpdateTitle": {
+    "description": "Settings tile title when character updates are available."
+  },
+  "settingsMaintenanceWorking": "Güncellemeler denetleniyor...",
+  "@settingsMaintenanceWorking": {
+    "description": "Progress text shown while checking or applying character migrations."
+  },
+  "settingsMaintenanceNoUpdates": "Tüm karakterler zaten güncel.",
+  "@settingsMaintenanceNoUpdates": {
+    "description": "Message shown when no character migrations are needed."
+  },
+  "settingsMaintenanceError": "Karakterler güncellenemedi.",
+  "@settingsMaintenanceError": {
+    "description": "Message shown when character migration check or apply fails."
+  },
+  "settingsMaintenanceConfirmTitle": "Karakterler güncellensin mi?",
+  "@settingsMaintenanceConfirmTitle": {
+    "description": "Dialog title before applying character migrations."
+  },
+  "settingsMaintenanceCompleteTitle": "Güncelleme tamamlandı",
+  "@settingsMaintenanceCompleteTitle": {
+    "description": "Dialog title after applying character migrations."
+  },
+  "settingsMaintenanceUpdatesFound": "{count, plural, =1{1 karakterin güncellenmesi gerekiyor.} other{{count} karakterin güncellenmesi gerekiyor.}}",
+  "@settingsMaintenanceUpdatesFound": {
+    "description": "Message shown when character migrations are available.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 karakterin güncellenmesi gerekiyor. Değişiklikler uygulanmadan önce kaydetmeniz veya paylaşmanız için bir yedek açılacak.} other{{count} karakterin güncellenmesi gerekiyor. Değişiklikler uygulanmadan önce kaydetmeniz veya paylaşmanız için bir yedek açılacak.}}",
+  "@settingsMaintenanceConfirmBody": {
+    "description": "Dialog body before applying character migrations.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "characterUpdateRequiredTitle": "Karakter güncellemesi gerekli",
+  "@characterUpdateRequiredTitle": {
+    "description": "Dialog title shown when opening an outdated saved character."
+  },
+  "characterUpdateRequiredBody": "Bu karakter açılmadan önce güncellenmeli. Şimdi karakterlerinizi yedekleyebilir veya hepsini güncelleyebilirsiniz. Herhangi bir güncelleme uygulanmadan önce bir yedek açılır.",
+  "@characterUpdateRequiredBody": {
+    "description": "Dialog body shown when opening an outdated saved character."
+  },
+  "characterUpdateRequiredAction": "Güncelleme seçenekleri",
+  "@characterUpdateRequiredAction": {
+    "description": "Action on a directly opened outdated character to show the update dialog."
+  },
+  "characterUpdateBackupAction": "Karakterleri yedekle",
+  "@characterUpdateBackupAction": {
+    "description": "Exports a backup without updating characters in the update dialog."
+  },
+  "characterUpdateAllAction": "Tüm karakterleri güncelle",
+  "@characterUpdateAllAction": {
+    "description": "Applies pending migrations to all characters after opening a backup."
+  },
+  "characterUpdateApplying": "Karakterler güncelleniyor...",
+  "@characterUpdateApplying": {
+    "description": "Progress text while character migrations are being applied."
+  },
+  "settingsMaintenanceReportChecked": "{count, plural, =1{1 karakter denetlendi.} other{{count} karakter denetlendi.}}",
+  "@settingsMaintenanceReportChecked": {
+    "description": "Migration report line for checked characters.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceReportUpdated": "{count, plural, =1{1 karakter güncellendi.} other{{count} karakter güncellendi.}}",
+  "@settingsMaintenanceReportUpdated": {
+    "description": "Migration report line for updated characters.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceReportDataChanged": "{count, plural, =1{1 karakterin verileri düzeltildi.} other{{count} karakterin verileri düzeltildi.}}",
+  "@settingsMaintenanceReportDataChanged": {
+    "description": "Migration report line for characters with data changes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceReportVersionUpdated": "Veri sürümü güncellendi.",
+  "@settingsMaintenanceReportVersionUpdated": {
+    "description": "Migration report line when only the saved data version changed."
+  },
+  "settingsMaintenanceChangeEquipmentWeights": "{count, plural, =1{1 eşyanın ağırlığı düzeltildi.} other{{count} eşyanın ağırlığı düzeltildi.}}",
+  "@settingsMaintenanceChangeEquipmentWeights": {
+    "description": "Migration report change for backfilled equipment weights.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceChangeEquipmentNormalized": "{count, plural, =1{1 ekipman eşyası standartlaştırıldı.} other{{count} ekipman eşyası standartlaştırıldı.}}",
+  "@settingsMaintenanceChangeEquipmentNormalized": {
+    "description": "Migration report change for normalized equipment item data.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceChangeEquipmentPacksExpanded": "{count, plural, =1{1 ekipman paketi açıldı.} other{{count} ekipman paketi açıldı.}}",
+  "@settingsMaintenanceChangeEquipmentPacksExpanded": {
+    "description": "Migration report change for expanded equipment packs.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceChangeEquipmentOrder": "{count, plural, =1{1 envanter eşyasının sırası standartlaştırıldı.} other{{count} envanter eşyasının sırası standartlaştırıldı.}}",
+  "@settingsMaintenanceChangeEquipmentOrder": {
+    "description": "Migration report change for normalized equipment sort order.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsMaintenanceChangeMulticlassStructure": "Karakterin sınıf yapısı çok sınıflılık için hazırlandı.",
+  "@settingsMaintenanceChangeMulticlassStructure": {
+    "description": "Migration report change for preparing class entries for multiclass."
+  },
+  "settingsMaintenanceChangeSpellSlots": "Standart büyü yuvaları yeniden hesaplandı.",
+  "@settingsMaintenanceChangeSpellSlots": {
+    "description": "Migration report change for synced standard spell slots."
+  },
+  "settingsMaintenanceChangePactMagicSlots": "Pakt Büyüsü yuvaları ayrıldı.",
+  "@settingsMaintenanceChangePactMagicSlots": {
+    "description": "Migration report change for synced Pact Magic slots."
+  },
+  "settingsMaintenanceChangeArmorClass": "Zırh Sınıfı yeniden hesaplandı.",
+  "@settingsMaintenanceChangeArmorClass": {
+    "description": "Migration report change for recalculated armor class."
+  },
+  "settingsMaintenanceChangeRuleset2014": "Bu karakter 2014 kurallarını (SRD 5.1) kullanıyor olarak işaretlendi.",
+  "@settingsMaintenanceChangeRuleset2014": {
+    "description": "Migration report change for assigning the existing character to the 2014 ruleset."
+  },
+  "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 değişiklik uygulandı.} other{{count} değişiklik uygulandı.}}",
+  "@settingsMaintenanceChangeGeneric": {
+    "description": "Migration report fallback change text.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "incomingBackupPrompt": "Dosyadan yedek içe aktarılsın mı?",
+  "@incomingBackupPrompt": {
+    "description": "Dialog title when the app receives a backup file from Android share/open with."
+  },
+  "incomingBackupSuccess": "{count, plural, =1{Yedekten 1 karakter içe aktarıldı.} other{Yedekten {count} karakter içe aktarıldı.}}",
+  "@incomingBackupSuccess": {
+    "description": "Snackbar shown after importing a backup from an incoming file.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

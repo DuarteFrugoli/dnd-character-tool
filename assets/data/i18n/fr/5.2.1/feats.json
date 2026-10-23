@@ -1,0 +1,70 @@
+{
+  "Alert": {
+    "name": "Alerte",
+    "description": "Ajoutez votre bonus de maîtrise aux jets d'Initiative. Immédiatement après avoir lancé l'Initiative, vous pouvez échanger votre résultat avec celui d'un allié consentant participant au même combat, si aucun de vous n'est Neutralisé."
+  },
+  "Magic Initiate": {
+    "name": "Initié à la magie",
+    "description": "Choisissez la liste de sorts du Clerc, du Druide ou du Magicien. Apprenez deux sorts mineurs et préparez un sort de niveau 1 de cette liste. Choisissez Intelligence, Sagesse ou Charisme pour ces sorts. Vous pouvez lancer le sort de niveau 1 une fois sans emplacement par Repos long ou le lancer avec un emplacement. Quand vous gagnez un niveau, vous pouvez remplacer un sort choisi par un autre du même niveau et de la même liste. Chaque nouvelle sélection de ce don doit utiliser une liste différente."
+  },
+  "Savage Attacker": {
+    "name": "Attaquant sauvage",
+    "description": "Une fois par tour, quand vous touchez avec une arme, lancez deux fois ses dés de dégâts et utilisez l'un des résultats."
+  },
+  "Skilled": {
+    "name": "Doué",
+    "description": "Vous gagnez la maîtrise de trois compétences, outils ou d'une combinaison des deux. Vous pouvez choisir ce don plusieurs fois."
+  },
+  "Ability Score Improvement": {
+    "name": "Amélioration de caractéristique",
+    "description": "Augmentez une valeur de caractéristique de 2 ou deux valeurs de 1 chacune, jusqu'à un maximum de 20. Vous pouvez choisir ce don plusieurs fois."
+  },
+  "Grappler": {
+    "name": "Lutteur",
+    "description": "Augmentez votre Force ou votre Dextérité de 1, jusqu'à un maximum de 20. Une fois par tour, une Frappe à mains nues effectuée dans le cadre de l'action Attaquer peut à la fois infliger des dégâts et agripper. Vous avez l'Avantage aux attaques contre les créatures que vous agrippez ; déplacer une créature agrippée de votre taille ou plus petite ne coûte pas de déplacement supplémentaire."
+  },
+  "Archery": {
+    "name": "Tir à l'arc",
+    "description": "Vous gagnez un bonus de +2 aux jets d'attaque avec des armes à distance."
+  },
+  "Defense": {
+    "name": "Défense",
+    "description": "Vous gagnez +1 à la Classe d'armure tant que vous portez une armure légère, intermédiaire ou lourde."
+  },
+  "Great Weapon Fighting": {
+    "name": "Combat à l'arme lourde",
+    "description": "Quand vous lancez les dégâts d'une attaque d'arme de corps à corps en tenant à deux mains une arme à Deux mains ou Polyvalente, traitez chaque résultat de 1 ou 2 obtenu sur un dé de dégâts comme un 3."
+  },
+  "Two-Weapon Fighting": {
+    "name": "Combat à deux armes",
+    "description": "Quand la propriété Légère vous accorde une attaque supplémentaire, ajoutez votre modificateur de caractéristique aux dégâts de cette attaque s'il n'est pas déjà inclus."
+  },
+  "Boon of Combat Prowess": {
+    "name": "Faveur de prouesse martiale",
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Quand un jet d'attaque rate, vous pouvez le faire toucher à la place ; vous retrouvez ce bénéfice au début de votre prochain tour."
+  },
+  "Boon of Dimensional Travel": {
+    "name": "Faveur de voyage dimensionnel",
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Immédiatement après l'action Attaquer ou Magie, vous pouvez vous téléporter sur une distance maximale de 30 pieds vers un espace inoccupé que vous voyez."
+  },
+  "Boon of Fate": {
+    "name": "Faveur du destin",
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Quand vous ou une créature située à 60 pieds ou moins réussissez ou échouez à un Test de D20, lancez 2d4 et appliquez le total comme bonus ou malus au jet. Vous retrouvez l'usage de cet avantage quand vous lancez l'Initiative ou terminez un Repos court ou long."
+  },
+  "Boon of Irresistible Offense": {
+    "name": "Faveur d'offensive irrésistible",
+    "description": "Augmentez votre Force ou votre Dextérité de 1, jusqu'à un maximum de 30. Vos dégâts contondants, perforants et tranchants ignorent la Résistance. Sur un 20 naturel au jet d'attaque, infligez des dégâts supplémentaires du type de l'attaque égaux à la valeur de caractéristique augmentée par ce don."
+  },
+  "Boon of Spell Recall": {
+    "name": "Faveur de rappel des sorts",
+    "description": "Augmentez votre Intelligence, Sagesse ou Charisme de 1, jusqu'à un maximum de 30. Chaque fois que vous lancez un sort avec un emplacement de niveau 1 à 4, lancez 1d4 ; si le résultat correspond au niveau de l'emplacement, celui-ci n'est pas dépensé."
+  },
+  "Boon of the Night Spirit": {
+    "name": "Faveur de l'esprit nocturne",
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. En lumière faible ou dans l'obscurité, vous pouvez devenir Invisible par une Action bonus jusqu'à ce que vous effectuiez une action, une Action bonus ou une Réaction. Dans ces conditions de luminosité, vous avez la Résistance à tous les dégâts sauf psychiques et radiants."
+  },
+  "Boon of Truesight": {
+    "name": "Faveur de vision véritable",
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Vous obtenez la Vision véritable sur une distance de 60 pieds."
+  }
+}

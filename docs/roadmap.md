@@ -27,7 +27,7 @@ Ordem macro planejada:
 2. `2.0.x`: multiclasse, reset seguro de progressao, polimento visual inicial,
    compatibilidade Android/Play Console, performance de memoria e revisoes de
    traducao.
-3. `2.1.x`: fechamento do rework visual e rolagem contextual.
+3. `2.1.x`: fechamento do rework visual, rolagem contextual, novidades e turco.
 4. `2.2.x`: D&D 2024 / SRD 5.2.1 como modo de regras separado.
 5. `3.0.x`: GM Local vitalicio, com ferramentas offline de mestre e homebrew
    local.
@@ -241,20 +241,29 @@ rolador em uma ferramenta integrada a ficha.
 - [ ] Preparar estrutura futura para bonus temporarios em CA, iniciativa,
       deslocamento e outros valores derivados.
 
+### 2.1.1 - Turco e novidades
+
+Objetivo: entregar o idioma turco e uma forma localizada de apresentar novidades
+enquanto o suporte a D&D 2024 continua em desenvolvimento.
+
+- [x] Traduzir a interface e os overlays do SRD 5.1 para turco.
+- [x] Incluir turco no seletor de idiomas e nos assets do app.
+- [x] Mostrar um aviso visual e localizado de novidades ao abrir o app, salvo
+      localmente e versionado por identificador interno.
+- [x] Pedir backup ou atualizacao de personagens antigos sem abrir a ficha nem
+      redirecionar automaticamente para Configuracoes.
+
 ### 2.2.0 - D&D 2024 / SRD 5.2.1
 
 Objetivo: suportar a versao moderna de D&D como modo de regras separado, sem
-misturar silenciosamente com personagens criados no SRD atual. Inclui tambem
-o aviso de novidades ja preparado e ainda nao lancado.
-
-- [x] Mostrar um aviso visual e localizado de novidades ao abrir o app, salvo
-      localmente e versionado por identificador interno.
+misturar silenciosamente com personagens criados no SRD atual.
 
 - [x] Definir os IDs `rulesetId` (`dnd_2014` e `dnd_2024`) e
       `contentPackId` (`srd_5_1` e `srd_5_2_1`) no modelo do personagem.
 - [ ] Separar catalogos SRD por ruleset sem duplicar toda a infraestrutura.
-- [ ] Adicionar dados do SRD 5.2.1: classes, subclasses, especies, backgrounds,
-      feats, magias, equipamentos e regras necessarias.
+- [ ] Concluir e revisar os dados e traducoes do SRD 5.2.1: classes,
+      subclasses, especies, antecedentes, talentos, magias, equipamentos e
+      regras necessarias. Os catalogos em ingles ja estao preparados.
 - [ ] Adaptar criacao de personagem para escolher o ruleset antes das listas.
 - [ ] Ajustar level up/progressao para regras de 2024 quando aplicavel.
 - [ ] Garantir que personagens antigos continuem como `5e_2014`.

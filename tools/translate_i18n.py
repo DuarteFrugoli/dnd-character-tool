@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate SRD i18n overlay JSON files and Flutter ARB locale files for all locales
-by translating directly from English source data using Google Translate.
+by translating English source data with Google Translate or a local Ollama model.
 
 Usage (SRD overlays — assets/data/i18n/{locale}/{pack}/):
   python tools/translate_i18n.py                              # translate to ALL locales
@@ -13,31 +13,43 @@ Usage (SRD overlays — assets/data/i18n/{locale}/{pack}/):
   python tools/translate_i18n.py pt --file feature_choices.json --force  # feature choice option labels
   python tools/translate_i18n.py --pack 5.1 --file magic_items.json --merge
   python tools/translate_i18n.py --pack 5.2.1 --merge
+  python tools/translate_i18n.py tr --pack 5.1 --merge
   python tools/translate_i18n.py --pack 5.2.1 --merge --dry-run
+  python tools/translate_i18n.py pt --pack 5.2.1 --file conditions.json --force --provider ollama
+  python tools/translate_i18n.py pt --pack 5.2.1 --file conditions.json --merge --provider ollama --output-dir docs/private/translation-review
+  python tools/translate_i18n.py pt --pack 5.2.1 --file spells.json --merge --provider ollama
+  python tools/translate_i18n.py --pack 5.2.1 --merge --provider ollama --model qwen3.5:4b
 
 Usage (ARB locale files — lib/l10n/):
   python tools/translate_i18n.py --arb                        # generate ARBs for ALL locales
   python tools/translate_i18n.py es fr --arb                  # generate ARBs for specific locales
   python tools/translate_i18n.py es --arb --force             # overwrite existing ARBs
 
-Requires:
-  pip install deep-translator
+Google provider requires: pip install deep-translator
+Ollama provider requires: Ollama running locally with the selected model pulled.
 """
 
 import json
 import os
+import random
 import re
 import sys
 import time
-import random
+from collections import Counter
 from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 from validate_srd_pack import validate as validate_srd_pack
 
 try:
     from deep_translator import GoogleTranslator
+    from deep_translator.exceptions import TooManyRequests
 except ImportError:
     GoogleTranslator = None
+
+    class TooManyRequests(Exception):
+        pass
 
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
@@ -56,8 +68,40 @@ LOCALE_LANG = {
     "ja": "ja",    # Japanese
     "ko": "ko",    # Korean
     "ru": "ru",    # Russian
+    "tr": "tr",    # Turkish
     "zh": "zh-CN", # Chinese (Simplified)
 }
+
+OLLAMA_LANG = {
+    "pt": "Brazilian Portuguese (pt-BR)",
+    "es": "Latin American Spanish (es-419)",
+    "fr": "French (fr-FR)",
+    "de": "German (de-DE)",
+    "it": "Italian (it-IT)",
+    "ja": "Japanese (ja-JP)",
+    "ko": "Korean (ko-KR)",
+    "ru": "Russian (ru-RU)",
+    "tr": "Turkish (tr-TR)",
+    "zh-CN": "Simplified Chinese (zh-Hans)",
+}
+
+TRANSLATEGEMMA_LANG = {
+    "pt": ("Brazilian Portuguese", "pt-BR"),
+    "es": ("Spanish", "es-MX"),
+    "fr": ("French", "fr-FR"),
+    "de": ("German", "de-DE"),
+    "it": ("Italian", "it-IT"),
+    "ja": ("Japanese", "ja-JP"),
+    "ko": ("Korean", "ko-KR"),
+    "ru": ("Russian", "ru-RU"),
+    "tr": ("Turkish", "tr-TR"),
+    "zh-CN": ("Simplified Chinese", "zh-Hans"),
+}
+
+TRANSLATION_PROVIDER = "google"
+DEFAULT_OLLAMA_MODEL = "translategemma:4b"
+OLLAMA_MODEL = DEFAULT_OLLAMA_MODEL
+OLLAMA_API_URL = "http://127.0.0.1:11434/api/chat"
 
 # Delay between API calls (seconds). Increase if you hit rate limits.
 DELAY_BASE   = 0.3
@@ -66,6 +110,23 @@ MAX_RETRIES  = 3
 _CLIENTS = {}
 _TEXT_CACHE = {}
 TECHNICAL_FIELDS = {"id", "type", "resourceId", "optionsSource", "formula"}
+
+
+class TranslationRateLimitError(RuntimeError):
+    pass
+
+
+class OllamaTranslationError(RuntimeError):
+    def __init__(
+        self, message: str, *, source: str | None = None,
+        candidate: str | None = None, field: str | None = None,
+        preview=None,
+    ):
+        super().__init__(message)
+        self.source = source
+        self.candidate = candidate
+        self.field = field
+        self.preview = preview
 
 
 # ── SRD extractors ─────────────────────────────────────────────────────────────
@@ -392,20 +453,121 @@ def _translation_chunks(text: str, limit: int = 4500) -> list[str]:
     return chunks
 
 
+def _protected_tokens(text: str):
+    return (
+        Counter(re.findall(r"\{[^{}]+\}", text)),
+        Counter(
+            token.lower()
+            for token in re.findall(r"\b(?:[0-9]+)?d[0-9]+\b", text, re.I)
+        ),
+        Counter(re.findall(r"[0-9]+", text)),
+        Counter(re.findall(r"XARBPHX[0-9]+X", text)),
+    )
+
+
+def _ollama_prompt(text: str, tgt: str) -> str:
+    if OLLAMA_MODEL.lower().split(":", 1)[0] == "translategemma":
+        language, code = TRANSLATEGEMMA_LANG[tgt]
+        return (
+            f"You are a professional English (en) to {language} ({code}) translator. "
+            "Your goal is to accurately convey the meaning and nuances of the original "
+            f"English text while adhering to {language} grammar, vocabulary, and cultural "
+            f"sensitivities. Produce only the {language} translation, without any "
+            "additional explanations or commentary. Please translate the following "
+            f"English text into {language}:\n\n\n{text}"
+        )
+    language = OLLAMA_LANG[tgt]
+    return (
+        f"Translate this Dungeons & Dragons SRD text from English to {language}. "
+        "Return only the translation, without quotes or commentary. "
+        "Preserve every number, dice expression (such as 2d6), placeholder, "
+        "XARBPHX token, and line break exactly. Do not add or remove rules.\n\n"
+        f"{text}"
+    )
+
+
+def _translate_ollama(text: str, tgt: str) -> str:
+    payload_data = {
+        "model": OLLAMA_MODEL,
+        "messages": [{"role": "user", "content": _ollama_prompt(text, tgt)}],
+        "stream": False,
+        "options": {"temperature": 0, "num_ctx": 4096},
+    }
+    if OLLAMA_MODEL.lower().split(":", 1)[0] != "translategemma":
+        payload_data["think"] = False
+    payload = json.dumps(payload_data, ensure_ascii=False).encode("utf-8")
+    request = Request(
+        OLLAMA_API_URL,
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urlopen(request, timeout=180) as response:
+            result = json.load(response)
+    except HTTPError as exc:
+        if exc.code == 404:
+            raise OllamaTranslationError(
+                f"Ollama could not find {OLLAMA_MODEL!r}. Run: ollama pull {OLLAMA_MODEL}"
+            ) from exc
+        raise OllamaTranslationError(f"Ollama returned HTTP {exc.code}") from exc
+    except (URLError, TimeoutError) as exc:
+        raise OllamaTranslationError(
+            "Cannot reach Ollama at 127.0.0.1:11434 or the request timed out. "
+            "Start the Ollama app first."
+        ) from exc
+    except (ValueError, UnicodeError) as exc:
+        raise OllamaTranslationError("Ollama returned invalid JSON") from exc
+
+    message = result.get("message") if isinstance(result, dict) else None
+    translated = message.get("content") if isinstance(message, dict) else None
+    if not isinstance(translated, str) or not translated.strip():
+        raise OllamaTranslationError("Ollama returned an empty translation")
+    if result.get("done_reason") == "length":
+        raise OllamaTranslationError("Ollama truncated the translation")
+    translated = translated.strip()
+    original_tokens = _protected_tokens(text)
+    translated_tokens = _protected_tokens(translated)
+    if translated_tokens != original_tokens:
+        labels = ("placeholders", "dice", "numbers", "ARB tokens")
+        changed = ", ".join(
+            label for label, before, after in zip(
+                labels, original_tokens, translated_tokens
+            ) if before != after
+        )
+        raise OllamaTranslationError(
+            f"Ollama changed protected {changed}; this entry was not saved.\n"
+            f"Source: {text}\nCandidate: {translated}\n"
+            "Correct the entry manually, then resume with --merge.",
+            source=text,
+            candidate=translated,
+        )
+    return translated
+
+
 def _translate(text: str, tgt: str) -> str:
-    """Translate an English string to tgt language with retries."""
+    """Translate an English string using the selected provider."""
     if not text or not text.strip():
         return text
-    if GoogleTranslator is None:
-        raise RuntimeError("deep-translator is required: pip install deep-translator")
     if len(text) > 4500:
         paragraphs = text.split("\n\n")
         if len(paragraphs) > 1:
             return "\n\n".join(_translate(part, tgt) for part in paragraphs)
         return " ".join(_translate(chunk.strip(), tgt) for chunk in _translation_chunks(text))
-    cache_key = (tgt, text)
+    cache_key = (
+        TRANSLATION_PROVIDER,
+        OLLAMA_MODEL if TRANSLATION_PROVIDER == "ollama" else None,
+        tgt,
+        text,
+    )
     if cache_key in _TEXT_CACHE:
         return _TEXT_CACHE[cache_key]
+    if TRANSLATION_PROVIDER == "ollama":
+        result = _translate_ollama(text, tgt)
+        _TEXT_CACHE[cache_key] = result
+        return result
+    if GoogleTranslator is None:
+        raise RuntimeError("deep-translator is required: pip install deep-translator")
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             time.sleep(DELAY_BASE + random.uniform(0, DELAY_JITTER))
@@ -417,6 +579,12 @@ def _translate(text: str, tgt: str) -> str:
                 raise RuntimeError("translation service returned an empty result")
             _TEXT_CACHE[cache_key] = result
             return result
+        except TooManyRequests as exc:
+            raise TranslationRateLimitError(
+                "Google Translate blocked the request (HTTP 429). "
+                "The free deep-translator endpoint is not reliable for a full SRD pack. "
+                "No in-progress entry was saved; rerun --merge after choosing a scalable translator."
+            ) from exc
         except Exception as exc:
             wait = 2 ** attempt
             print(f"\n    [retry {attempt}/{MAX_RETRIES}] {exc} — waiting {wait}s")
@@ -426,20 +594,35 @@ def _translate(text: str, tgt: str) -> str:
 
 # ── File handling ──────────────────────────────────────────────────────────────
 
-def _merge_translations(source, existing, tgt_lang: str):
+def _merge_translations(source, existing, tgt_lang: str, path: tuple = ()):
     if isinstance(source, dict):
         result = dict(existing) if isinstance(existing, dict) else {}
         for key, value in source.items():
-            result[key] = (
-                value if key in TECHNICAL_FIELDS
-                else _merge_translations(value, result.get(key), tgt_lang)
-            )
+            try:
+                result[key] = (
+                    value if key in TECHNICAL_FIELDS
+                    else _merge_translations(value, result.get(key), tgt_lang, (*path, key))
+                )
+            except OllamaTranslationError as exc:
+                if exc.preview is not None:
+                    result[key] = exc.preview
+                exc.preview = result
+                raise
         return result
     if isinstance(source, list):
         result = list(existing) if isinstance(existing, list) else []
         for index, value in enumerate(source):
             old = result[index] if index < len(result) else None
-            merged = _merge_translations(value, old, tgt_lang)
+            try:
+                merged = _merge_translations(value, old, tgt_lang, (*path, index))
+            except OllamaTranslationError as exc:
+                if exc.preview is not None:
+                    if index < len(result):
+                        result[index] = exc.preview
+                    else:
+                        result.append(exc.preview)
+                exc.preview = result
+                raise
             if index < len(result):
                 result[index] = merged
             else:
@@ -448,25 +631,35 @@ def _merge_translations(source, existing, tgt_lang: str):
     if isinstance(source, str):
         if isinstance(existing, str) and existing.strip():
             return existing
-        return _translate(source, tgt_lang)
+        try:
+            return _translate(source, tgt_lang)
+        except OllamaTranslationError as exc:
+            field = ".".join(map(str, path))
+            raise OllamaTranslationError(
+                f"Field {field}: {exc}", source=exc.source,
+                candidate=exc.candidate, field=field, preview=exc.candidate,
+            ) from exc
     return existing if existing is not None else source
 
 
-def _missing_text_count(source, existing) -> int:
+def _missing_text_values(source, existing):
     if isinstance(source, dict):
         old = existing if isinstance(existing, dict) else {}
-        return sum(
-            _missing_text_count(value, old.get(key))
-            for key, value in source.items() if key not in TECHNICAL_FIELDS
-        )
-    if isinstance(source, list):
+        for key, value in source.items():
+            if key not in TECHNICAL_FIELDS:
+                yield from _missing_text_values(value, old.get(key))
+    elif isinstance(source, list):
         old = existing if isinstance(existing, list) else []
-        return sum(
-            _missing_text_count(value, old[index] if index < len(old) else None)
-            for index, value in enumerate(source)
-        )
-    return int(isinstance(source, str) and bool(source.strip()) and
-               (not isinstance(existing, str) or not existing.strip()))
+        for index, value in enumerate(source):
+            yield from _missing_text_values(value, old[index] if index < len(old) else None)
+    elif isinstance(source, str) and source.strip() and (
+        not isinstance(existing, str) or not existing.strip()
+    ):
+        yield source
+
+
+def _missing_text_count(source, existing) -> int:
+    return sum(1 for _ in _missing_text_values(source, existing))
 
 
 def _write_json(path: Path, value) -> None:
@@ -493,13 +686,25 @@ def translate_file(filename: str, dst_path: Path, tgt_lang: str, *, merge: bool 
                 old = group.get(child_key)
                 if _missing_text_count(child_value, old) == 0:
                     continue
-                group[child_key] = _merge_translations(child_value, old, tgt_lang)
+                try:
+                    group[child_key] = _merge_translations(
+                        child_value, old, tgt_lang, (child_key,)
+                    )
+                except OllamaTranslationError as exc:
+                    exc.preview = {key: {child_key: exc.preview}}
+                    raise
                 result[key] = group
                 _write_json(dst_path, result)
             continue
         if merge and _missing_text_count(value, previous) == 0:
             continue
-        result[key] = _merge_translations(value, previous if merge else None, tgt_lang)
+        try:
+            result[key] = _merge_translations(
+                value, previous if merge else None, tgt_lang, (key,)
+            )
+        except OllamaTranslationError as exc:
+            exc.preview = {key: exc.preview}
+            raise
         if merge:
             _write_json(dst_path, result)
     if not merge or not dst_path.exists():
@@ -582,7 +787,13 @@ def translate_arb(locale: str, tgt_lang: str, force: bool):
             # Skip all metadata blocks — Flutter reads them from app_en.arb
             continue
         if isinstance(value, str):
-            out[key] = _translate_arb_string(value, tgt_lang)
+            try:
+                out[key] = _translate_arb_string(value, tgt_lang)
+            except OllamaTranslationError as exc:
+                raise OllamaTranslationError(
+                    f"ARB key {key}: {exc}", source=exc.source,
+                    candidate=exc.candidate, field=key,
+                ) from exc
         else:
             out[key] = value
 
@@ -596,7 +807,7 @@ def translate_arb(locale: str, tgt_lang: str, force: bool):
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
-    global SRD_DIR
+    global SRD_DIR, TRANSLATION_PROVIDER, OLLAMA_MODEL
     raw_args = sys.argv[1:]
     force    = "--force" in raw_args
     arb_mode = "--arb"   in raw_args
@@ -609,6 +820,47 @@ def main():
     if arb_mode and (merge or dry_run):
         print("--merge and --dry-run are only available for SRD overlays")
         sys.exit(1)
+
+    provider = "google"
+    if "--provider" in args:
+        idx = args.index("--provider")
+        if idx + 1 >= len(args) or args[idx + 1].startswith("--"):
+            print("--provider requires google or ollama")
+            sys.exit(1)
+        provider = args[idx + 1]
+        args = args[:idx] + args[idx + 2:]
+    if provider not in ("google", "ollama"):
+        print("--provider must be google or ollama")
+        sys.exit(1)
+
+    model = DEFAULT_OLLAMA_MODEL
+    if "--model" in args:
+        idx = args.index("--model")
+        if idx + 1 >= len(args) or args[idx + 1].startswith("--"):
+            print("--model requires an Ollama model name")
+            sys.exit(1)
+        model = args[idx + 1]
+        args = args[:idx] + args[idx + 2:]
+        if provider != "ollama":
+            print("--model requires --provider ollama")
+            sys.exit(1)
+    if provider == "ollama" and model.endswith(":cloud"):
+        print("Only local Ollama models are supported by this translation tool")
+        sys.exit(1)
+    TRANSLATION_PROVIDER = provider
+    OLLAMA_MODEL = model
+
+    output_dir = I18N_DIR
+    if "--output-dir" in args:
+        idx = args.index("--output-dir")
+        if idx + 1 >= len(args) or args[idx + 1].startswith("--"):
+            print("--output-dir requires a directory path")
+            sys.exit(1)
+        output_dir = Path(args[idx + 1])
+        args = args[:idx] + args[idx + 2:]
+        if arb_mode:
+            print("--output-dir is only available for SRD overlays")
+            sys.exit(1)
 
     pack = "5.1"
     if "--pack" in args:
@@ -650,6 +902,7 @@ def main():
     if arb_mode:
         print(f"Source : {L10N_DIR / 'app_en.arb'}")
         print(f"Targets: {', '.join(target_locales)}")
+        print(f"Provider: {provider}{f' ({model})' if provider == 'ollama' else ''}")
         print(f"Force  : {force}\n")
         for locale in target_locales:
             tgt_lang = LOCALE_LANG[locale]
@@ -686,13 +939,14 @@ def main():
         sys.exit(1)
 
     print(f"Source : {SRD_DIR} (English SRD)")
-    print(f"Targets: {', '.join(target_locales)}")
+    print(f"Targets: {', '.join(target_locales)} in {output_dir}")
+    print(f"Provider: {provider}{f' ({model})' if provider == 'ollama' else ''}")
     print(f"Mode   : {'force' if force else 'merge' if merge else 'skip existing'}")
     print(f"Dry run: {dry_run}\n")
 
     for locale in target_locales:
         tgt_lang = LOCALE_LANG[locale]
-        tgt_dir  = I18N_DIR / locale / pack
+        tgt_dir  = output_dir / locale / pack
         print(f"{'='*60}")
         print(f"Translating to '{locale}' ({tgt_lang})")
         print(f"{'='*60}")
@@ -704,11 +958,32 @@ def main():
                 continue
             if dry_run:
                 existing = json.loads(dst_file.read_text(encoding="utf-8")) if merge and dst_file.exists() else {}
-                missing = _missing_text_count(EXTRACTORS[filename](), existing)
-                print(f"  {filename:<30} {missing} text fields to translate")
+                texts = _missing_text_values(EXTRACTORS[filename](), existing)
+                count = characters = 0
+                for value in texts:
+                    count += 1
+                    characters += len(value)
+                print(f"  {filename:<30} {count} text fields / {characters} characters")
                 continue
             print(f"  {filename:<30} ", end="", flush=True)
-            translate_file(filename, dst_file, tgt_lang, merge=merge)
+            try:
+                translate_file(filename, dst_file, tgt_lang, merge=merge)
+            except OllamaTranslationError as exc:
+                review_root = (
+                    output_dir if output_dir != I18N_DIR
+                    else ROOT / "docs" / "private" / "translation-review"
+                )
+                review_path = review_root / locale / pack / f"{Path(filename).stem}.review.json"
+                _write_json(review_path, {
+                    "file": filename,
+                    "field": exc.field,
+                    "reason": str(exc).splitlines()[0],
+                    "source": exc.source,
+                    "candidate": exc.candidate,
+                    "json_entry_to_review": exc.preview,
+                })
+                print(f"\nReview saved: {review_path.resolve()}", file=sys.stderr, flush=True)
+                raise
             print("done")
 
     print(f"\n{'='*60}")
@@ -716,4 +991,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (TranslationRateLimitError, OllamaTranslationError) as exc:
+        print(f"\nERROR: {exc}", file=sys.stderr)
+        sys.exit(2)

@@ -13,7 +13,7 @@ Set<String> _arbKeys(String path) {
 void main() {
   // Project root = cwd when running `flutter test`.
   const arbDir = 'lib/l10n';
-  const locales = ['pt', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh'];
+  const locales = ['pt', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'tr', 'zh'];
 
   late Set<String> enKeys;
 

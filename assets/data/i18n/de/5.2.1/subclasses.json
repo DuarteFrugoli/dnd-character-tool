@@ -1,0 +1,74 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "Pfad des Berserkers",
+      "description": "Verwandle deine Wut in einen unaufhaltsamen Angriff. Rücksichtslose Angriffe können zusätzlichen Raserei-Schaden verursachen; spätere Merkmale stärken deine Entschlossenheit, lassen dich zurückschlagen und Feinde in Schrecken versetzen."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "Kolleg des Wissens",
+      "description": "Sammle Wissen aus vielen Traditionen. Erhalte zusätzliche Fertigkeiten, behindere Gegner mit Schneidenden Worten und entdecke Zauber außerhalb der Bardenliste."
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "name": "Domäne des Lebens",
+      "description": "Lenke göttliche Macht, um Leben zu schützen und wiederherzustellen. Deine Domäne gewährt Heilzauber, verbessert Heilung und hilft, Verbündete in Gefahr zu bewahren."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Zirkel des Landes",
+      "description": "Schöpfe Magie aus einer gewählten Landschaft. Wechsle dein Land nach einer Langen Rast, um dessen Zirkelzauber zu erhalten; später gewinnst du naturgebundenen Schutz und Zuflucht."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Champion",
+      "description": "Strebe im Kampf nach körperlicher Vollkommenheit. Erweitere deinen Bereich für kritische Treffer und verbessere deine Athletik, deine Kampfstil-Optionen und deine Widerstandskraft."
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "name": "Krieger der Offenen Hand",
+      "description": "Meistere den unbewaffneten Kampf. Dein Schlaghagel kann Gegner aus dem Gleichgewicht bringen; spätere Merkmale verbessern Erholung, Beweglichkeit und gezielte Schläge."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Schwur der Hingabe",
+      "description": "Stehe für Gerechtigkeit ein und schütze die Schwachen. Stärke eine Waffe mit Göttlicher Macht und erhalte Schwurzauber sowie eine schützende Aura."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Jäger",
+      "description": "Studiere markierte Beute und wähle Jagdtechniken. Erfahre mehr über die Verteidigung eines Ziels, passe Angriff und Verteidigung an und verbessere deine Angriffe gegen markierte Feinde."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Dieb",
+      "description": "Glänze bei Infiltration, Erkundung und dem Einsatz von Schätzen. Erhalte schnelle Objektinteraktionen und mehr Beweglichkeit; später lernst du, magische Gegenstände besser einzusetzen."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "name": "Drachenmagie",
+      "description": "Entfalte Magie, die mit Drachen verbunden ist. Erhalte drachenhafte Widerstandskraft und Zauber; später entwickelst du größere elementare Macht und drachenhafte Fähigkeiten."
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "name": "Unhold-Patron",
+      "description": "Beziehe Macht von einem mächtigen Unhold der Unteren Ebenen. Erhalte Patronzauber, vorübergehende Lebenskraft, Schutz und weitere infernalische Gaben."
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "name": "Evokator",
+      "description": "Spezialisiere dich auf Evokationsmagie. Lenke zerstörerische Zauber um Verbündete herum und verstärke den Schaden deiner Evokationen."
+    }
+  }
+}

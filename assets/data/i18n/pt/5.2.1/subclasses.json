@@ -1,0 +1,74 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "Caminho do Berserker",
+      "description": "Transforme a Fúria em uma ofensiva implacável. Ataques imprudentes podem acrescentar dano de Frenesi; habilidades posteriores fortalecem sua determinação, permitem contra-atacar e aterrorizam os inimigos."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "Colégio do Conhecimento",
+      "description": "Reúna conhecimento de muitas tradições. Ganhe perícias adicionais, atrapalhe inimigos com Palavras Cortantes e descubra magias além da lista de Bardo."
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "name": "Domínio da Vida",
+      "description": "Canalize o poder divino para proteger e restaurar a vida. Seu domínio concede magias de cura, aprimora a cura e ajuda a preservar aliados em perigo."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Círculo da Terra",
+      "description": "Extraia magia de uma paisagem escolhida. Mude sua terra após um Descanso Longo para obter as magias do círculo correspondentes; mais tarde, ganhe proteção e santuário ligados à natureza."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Campeão",
+      "description": "Busque a excelência física em combate. Amplie a faixa de acerto crítico e aprimore seu atletismo, suas opções de Estilo de Luta e sua resistência."
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "name": "Guerreiro da Mão Aberta",
+      "description": "Domine o combate desarmado. Sua Rajada de Golpes pode perturbar inimigos, e habilidades posteriores melhoram sua recuperação, mobilidade e golpes precisos."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Juramento da Devoção",
+      "description": "Defenda a justiça e proteja os vulneráveis. Fortaleça uma arma com Canalizar Divindade e receba magias do juramento e uma aura protetora."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Caçador",
+      "description": "Estude presas marcadas e escolha técnicas de caça. Descubra as defesas de um alvo, adapte seu ataque e sua defesa e aprimore seus ataques contra inimigos marcados."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Ladrão",
+      "description": "Destaque-se em infiltração, exploração e no uso de tesouros. Ganhe interações rápidas com objetos e mobilidade; depois, aprenda a aproveitar melhor itens mágicos."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "name": "Feitiçaria Dracônica",
+      "description": "Manifeste magia ligada aos dragões. Ganhe resistência dracônica e magias; depois, desenvolva maior poder elemental e habilidades dracônicas."
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "name": "Patrono Ínfero",
+      "description": "Obtenha poder de um ínfero poderoso dos Planos Inferiores. Ganhe magias do patrono, vitalidade temporária, proteção e outros dons infernais."
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "name": "Evocador",
+      "description": "Especialize-se em magia de evocação. Molde magias destrutivas para poupar aliados e aumente o dano de suas evocações."
+    }
+  }
+}

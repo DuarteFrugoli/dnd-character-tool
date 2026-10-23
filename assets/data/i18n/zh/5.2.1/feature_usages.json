@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "狂暴"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "持续狂暴恢复"
+    },
+    "2024_bardic_inspiration": {
+      "name": "吟游激励"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "引导神力"
+    },
+    "2024_divine_intervention": {
+      "name": "神圣干预"
+    },
+    "2024_wild_shape": {
+      "name": "荒野形态"
+    },
+    "2024_wild_resurgence": {
+      "name": "野性复苏法术位"
+    },
+    "2024_archdruid": {
+      "name": "大德鲁伊法术位"
+    },
+    "2024_second_wind": {
+      "name": "回气"
+    },
+    "2024_action_surge": {
+      "name": "动作如潮"
+    },
+    "2024_indomitable": {
+      "name": "不屈"
+    },
+    "2024_focus_points": {
+      "name": "专注点"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "超常代谢"
+    },
+    "2024_lay_on_hands": {
+      "name": "圣疗"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "引导神力"
+    },
+    "2024_paladins_smite": {
+      "name": "至圣斩（免费施法）"
+    },
+    "2024_faithful_steed": {
+      "name": "寻找坐骑（免费施法）"
+    },
+    "2024_hunters_mark": {
+      "name": "猎人印记（免费施法次数）"
+    },
+    "2024_tireless": {
+      "name": "不知疲倦"
+    },
+    "2024_natures_veil": {
+      "name": "自然帷幕"
+    },
+    "2024_stroke_of_luck": {
+      "name": "幸运一击"
+    },
+    "2024_innate_sorcery": {
+      "name": "天赋巫术"
+    },
+    "2024_sorcery_points": {
+      "name": "术法点"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "巫术恢复"
+    },
+    "2024_magical_cunning": {
+      "name": "魔法巧思"
+    },
+    "2024_contact_patron": {
+      "name": "联络宗主（免费施法）"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "玄奥秘法（6级）"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "玄奥秘法（7级）"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "玄奥秘法（8级）"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "玄奥秘法（9级）"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "水下呼吸（免费施法）"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "守护者之礼"
+    },
+    "2024_arcane_recovery": {
+      "name": "奥术恢复"
+    },
+    "2024_signature_spell_1": {
+      "name": "招牌法术1（免费施法）"
+    },
+    "2024_signature_spell_2": {
+      "name": "招牌法术2（免费施法）"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "德鲁伊结社法术（免费施法）"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "自然恢复（法术位）"
+    },
+    "2024_wholeness_of_body": {
+      "name": "身心完满"
+    },
+    "2024_intimidating_presence": {
+      "name": "威吓气场（免费使用）"
+    },
+    "2024_holy_nimbus": {
+      "name": "神圣光环（免费使用）"
+    },
+    "2024_dragon_wings": {
+      "name": "龙翼（免费使用）"
+    },
+    "2024_dragon_companion": {
+      "name": "龙之伙伴（免费施法）"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "黑暗者的幸运"
+    },
+    "2024_hurl_through_hell": {
+      "name": "掷入地狱（免费使用）"
+    },
+    "2024_safe_overchannel": {
+      "name": "超限引导（安全使用）"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "魔法学徒法术（免费施法）"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "吐息武器"
+    },
+    "2024_draconic_flight": {
+      "name": "龙裔飞行"
+    },
+    "2024_stonecunning": {
+      "name": "石之巧识"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "动物交谈"
+    },
+    "2024_giant_ancestry": {
+      "name": "巨人血统"
+    },
+    "2024_large_form": {
+      "name": "巨大形态"
+    },
+    "2024_adrenaline_rush": {
+      "name": "肾上腺素冲刺"
+    },
+    "2024_relentless_endurance": {
+      "name": "坚韧不屈"
+    },
+    "2024_boon_of_fate": {
+      "name": "命运赐福"
+    },
+    "2024_elven_lineage_3": {
+      "name": "精灵血统（角色3级获得的法术）"
+    },
+    "2024_elven_lineage_5": {
+      "name": "精灵血统（角色5级获得的法术）"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "邪魔遗产（角色3级获得的法术）"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "邪魔遗产（角色5级获得的法术）"
+    }
+  }
+}

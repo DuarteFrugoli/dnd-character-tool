@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
-const _locales = ['de', 'es', 'fr', 'it', 'ja', 'ko', 'pt', 'ru', 'zh'];
+const _locales = ['de', 'es', 'fr', 'it', 'ja', 'ko', 'pt', 'ru', 'tr', 'zh'];
 
 Map<String, dynamic> _readJsonMap(String path) {
   return (jsonDecode(File(path).readAsStringSync()) as Map)

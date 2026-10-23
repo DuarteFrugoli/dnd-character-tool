@@ -1,0 +1,70 @@
+{
+  "Alert": {
+    "name": "Alerta",
+    "description": "Añade tu Bonificador por Competencia a las tiradas de Iniciativa. Justo después de tirar Iniciativa, puedes intercambiar tu resultado con el de un aliado dispuesto en el mismo combate si ninguno de los dos está Incapacitado."
+  },
+  "Magic Initiate": {
+    "name": "Iniciado en la Magia",
+    "description": "Elige la lista de conjuros de Clérigo, Druida o Mago. Aprende dos trucos y prepara un conjuro de nivel 1 de esa lista. Elige Inteligencia, Sabiduría o Carisma para esos conjuros. Puedes lanzar el conjuro de nivel 1 una vez sin gastar espacio por Descanso Largo o lanzarlo usando un espacio. Al subir de nivel, puedes sustituir un conjuro elegido por otro del mismo nivel y de la misma lista. Cada vez que elijas de nuevo este talento, debes elegir una lista distinta."
+  },
+  "Savage Attacker": {
+    "name": "Atacante Salvaje",
+    "description": "Una vez por turno, cuando impactes con un arma, tira dos veces sus dados de daño y utiliza cualquiera de los resultados."
+  },
+  "Skilled": {
+    "name": "Competente",
+    "description": "Obtén competencia en tres habilidades, herramientas o una combinación de ambas. Puedes elegir este talento más de una vez."
+  },
+  "Ability Score Improvement": {
+    "name": "Mejora de Característica",
+    "description": "Aumenta una puntuación de característica en 2 o dos puntuaciones en 1 cada una, hasta un máximo de 20. Puedes elegir este talento más de una vez."
+  },
+  "Grappler": {
+    "name": "Luchador",
+    "description": "Aumenta Fuerza o Destreza en 1, hasta un máximo de 20. Una vez por turno, un Golpe sin Armas realizado como parte de la acción Atacar puede infligir daño y agarrar a la vez. Tienes Ventaja en los ataques contra criaturas que estés agarrando; mover a una criatura agarrada de tu tamaño o menor no cuesta movimiento adicional."
+  },
+  "Archery": {
+    "name": "Tiro con Arco",
+    "description": "Obtienes un bonificador de +2 a las tiradas de ataque con armas a distancia."
+  },
+  "Defense": {
+    "name": "Defensa",
+    "description": "Obtienes +1 a la Clase de Armadura mientras llevas armadura ligera, media o pesada."
+  },
+  "Great Weapon Fighting": {
+    "name": "Combate con Armas Grandes",
+    "description": "Al tirar el daño de un ataque con arma cuerpo a cuerpo sujetando con ambas manos un arma de Dos Manos o Versátil, considera que cada dado de daño que muestre 1 o 2 ha obtenido un 3."
+  },
+  "Two-Weapon Fighting": {
+    "name": "Combate con Dos Armas",
+    "description": "Cuando la propiedad Ligera te conceda un ataque adicional, añade tu modificador de característica al daño de ese ataque si aún no está incluido."
+  },
+  "Boon of Combat Prowess": {
+    "name": "Don de Destreza en Combate",
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Cuando una tirada de ataque falle, puedes hacer que impacte; recuperas este beneficio al inicio de tu siguiente turno."
+  },
+  "Boon of Dimensional Travel": {
+    "name": "Don del Viaje Dimensional",
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Justo después de realizar la acción Atacar o Magia, puedes teletransportarte hasta 30 pies a un espacio desocupado que puedas ver."
+  },
+  "Boon of Fate": {
+    "name": "Don del Destino",
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Cuando tú o una criatura a un máximo de 60 pies tenga éxito o falle en una Prueba de D20, tira 2d4 y aplica el total como bonificador o penalizador a la tirada. Recuperas el uso cuando tiras Iniciativa o terminas un Descanso Corto o Largo."
+  },
+  "Boon of Irresistible Offense": {
+    "name": "Don de la Ofensiva Irresistible",
+    "description": "Aumenta Fuerza o Destreza en 1, hasta un máximo de 30. Tu daño contundente, perforante y cortante ignora la Resistencia. Si obtienes un 20 natural en una tirada de ataque, infliges daño adicional del mismo tipo que el ataque igual a la puntuación de característica aumentada por este talento."
+  },
+  "Boon of Spell Recall": {
+    "name": "Don del Recuerdo de Conjuros",
+    "description": "Aumenta Inteligencia, Sabiduría o Carisma en 1, hasta un máximo de 30. Siempre que lances un conjuro con un espacio de nivel 1 a 4, tira 1d4; si el resultado coincide con el nivel del espacio, este no se gasta."
+  },
+  "Boon of the Night Spirit": {
+    "name": "Don del Espíritu Nocturno",
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. En Luz Tenue u Oscuridad, puedes volverte Invisible como Acción Adicional hasta que realices una acción, Acción Adicional o Reacción. En esas condiciones de iluminación, tienes Resistencia a todo el daño salvo el psíquico y el radiante."
+  },
+  "Boon of Truesight": {
+    "name": "Don de la Visión Verdadera",
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Obtienes Visión Verdadera hasta 60 pies."
+  }
+}

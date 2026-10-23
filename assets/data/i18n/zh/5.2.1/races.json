@@ -1,0 +1,29 @@
+{
+  "Dragonborn": {
+    "name": "龙裔"
+  },
+  "Dwarf": {
+    "name": "矮人"
+  },
+  "Elf": {
+    "name": "精灵"
+  },
+  "Gnome": {
+    "name": "侏儒"
+  },
+  "Goliath": {
+    "name": "歌利亚"
+  },
+  "Halfling": {
+    "name": "半身人"
+  },
+  "Human": {
+    "name": "人类"
+  },
+  "Orc": {
+    "name": "兽人"
+  },
+  "Tiefling": {
+    "name": "提夫林"
+  }
+}

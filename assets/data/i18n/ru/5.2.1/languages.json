@@ -1,0 +1,59 @@
+{
+  "Common": {
+    "name": "Общий"
+  },
+  "Common Sign Language": {
+    "name": "Общий язык жестов"
+  },
+  "Draconic": {
+    "name": "Драконий"
+  },
+  "Dwarvish": {
+    "name": "Дварфийский"
+  },
+  "Elvish": {
+    "name": "Эльфийский"
+  },
+  "Giant": {
+    "name": "Великанский"
+  },
+  "Gnomish": {
+    "name": "Гномий"
+  },
+  "Goblin": {
+    "name": "Гоблин"
+  },
+  "Halfling": {
+    "name": "Халфлингский"
+  },
+  "Orc": {
+    "name": "Орочий"
+  },
+  "Abyssal": {
+    "name": "Абиссальный"
+  },
+  "Celestial": {
+    "name": "Небесный"
+  },
+  "Deep Speech": {
+    "name": "Глубокая речь"
+  },
+  "Druidic": {
+    "name": "Друидический"
+  },
+  "Infernal": {
+    "name": "Адский"
+  },
+  "Primordial": {
+    "name": "Первозданный"
+  },
+  "Sylvan": {
+    "name": "Сильван"
+  },
+  "Thieves' Cant": {
+    "name": "Воровской жаргон"
+  },
+  "Undercommon": {
+    "name": "Подземный общий"
+  }
+}

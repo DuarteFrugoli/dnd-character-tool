@@ -659,7 +659,9 @@ features/traits/feats to resources. UI labels are localized through
 ### UI strings
 
 UI strings are generated from ARB files in `lib/l10n/` through Flutter
-`gen-l10n`. App widgets access them with:
+`gen-l10n`. The app supports eleven locales, including Turkish (`tr`), listed
+in `core/locale/locale_provider.dart` and the language picker. App widgets
+access the generated strings with:
 
 ```dart
 AppLocalizations.of(context)!
@@ -675,14 +677,20 @@ assets/data/i18n/<locale>/5.1/
 
 `SrdI18nService.load(locale, pack: ...)` loads those overlays and normalizes lookup keys to
 lowercase. Missing translations fall back to English SRD values in the UI.
+The bundled 5.1 overlays include Turkish. The 5.2.1 English catalogs and
+translation overlays are still being prepared; 5.2.1 is not bundled as a
+selectable ruleset yet.
 
 `tools/validate_srd_pack.py 5.1` checks English pack structure and basic
-references. `tools/translate_i18n.py` uses Google Translate for initial
-overlays and defaults to pack 5.1. `--pack 5.2.1` selects the 2024 catalog;
+references. `tools/translate_i18n.py` can use a configured translation
+provider for initial overlays and defaults to pack 5.1. `--pack 5.2.1`
+selects the 2024 catalog;
 `--merge` fills missing text without replacing reviewed translations, and
 `--dry-run` reports the remaining work without network access. The translation
 can be resumed by rerunning `--merge`, while `tools/check_srd_i18n.py` checks
-text coverage per pack. IDs and mechanics remain in the English source;
+text coverage per pack. `tools/reuse_pack_translations.py` reuses 5.1 overlays
+only when the entire English source record matches the 5.2.1 record. IDs and
+mechanics remain in the English source;
 translated overlays still require human review.
 
 This split is intentional: ARB handles app chrome and controls; JSON overlays

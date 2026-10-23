@@ -1,0 +1,146 @@
+{
+  "Darkvision": {
+    "name": "Dunkelsicht",
+    "description": "Du siehst in dämmrigem Licht innerhalb der Reichweite dieses Merkmals wie in hellem Licht und in Dunkelheit wie in dämmrigem Licht, dort jedoch nur Graustufen. Die Reichweite beträgt 120 Fuß für Zwerge, Orks und Drow-Elfen und 60 Fuß für die übrigen aufgeführten Spezies."
+  },
+  "Draconic Ancestry": {
+    "name": "Drachenabstammung",
+    "description": "Wähle einen Drachenvorfahren. Seine Schadensart bestimmt den Schaden deiner Odemwaffe und deine Schadensresistenz."
+  },
+  "Breath Weapon": {
+    "name": "Odemwaffe",
+    "description": "Bei der Angriffsaktion kannst du einen Angriff durch einen 15 Fuß langen Kegel oder eine 30 Fuß lange und 5 Fuß breite Linie ersetzen. Kreaturen darin legen einen Geschicklichkeitsrettungswurf gegen SG 8 + deinen Konstitutionsmodifikator + Übungsbonus ab. Bei Misserfolg erleiden sie Schaden der Abstammungsart, bei Erfolg die Hälfte. Der Schaden beträgt 1W10, steigt auf 2W10 auf Charakterstufe 5, 3W10 auf Stufe 11 und 4W10 auf Stufe 17. Nutzungen in Höhe deines Übungsbonus pro Langer Rast."
+  },
+  "Damage Resistance": {
+    "name": "Schadensresistenz",
+    "description": "Du hast Resistenz gegen die Schadensart deiner Drachenabstammung."
+  },
+  "Draconic Flight": {
+    "name": "Drachenflug",
+    "description": "Ab Charakterstufe 5 kannst du als Bonusaktion spektrale Flügel und eine Flugbewegungsrate in Höhe deiner Bewegungsrate für 10 Minuten erhalten. Sie verschwinden früher, wenn du sie auflöst oder kampfunfähig wirst. Einmal pro Langer Rast."
+  },
+  "Dwarven Resilience": {
+    "name": "Zwergische Widerstandskraft",
+    "description": "Du hast Resistenz gegen Giftschaden und Vorteil auf Rettungswürfe, um den Zustand Vergiftet zu vermeiden oder zu beenden."
+  },
+  "Dwarven Toughness": {
+    "name": "Zwergische Zähigkeit",
+    "description": "Dein Trefferpunktemaximum steigt jetzt um 1 und jedes Mal um 1, wenn du eine Stufe aufsteigst."
+  },
+  "Stonecunning": {
+    "name": "Steingespür",
+    "description": "Während du Stein berührst oder darauf stehst, kannst du als Bonusaktion für 10 Minuten Erschütterungssinn auf 60 Fuß erhalten. Nutzungen in Höhe deines Übungsbonus pro Langer Rast."
+  },
+  "Elven Lineage": {
+    "name": "Elfische Abstammung",
+    "description": "Wähle Drow, Hochelf oder Waldelf. Erhalte dessen anfänglichen Vorteil und die angegebenen Zauber auf den Charakterstufen 3 und 5. Jeder höhergradige Zauber ist immer vorbereitet und kann einmal ohne Zauberplatz pro Langer Rast oder mit einem geeigneten Platz gewirkt werden. Wähle Intelligenz, Weisheit oder Charisma als Zauberattribut."
+  },
+  "Fey Ancestry": {
+    "name": "Feenabstammung",
+    "description": "Du hast Vorteil auf Rettungswürfe, um den Zustand Bezaubert zu vermeiden oder zu beenden."
+  },
+  "Keen Senses": {
+    "name": "Scharfe Sinne",
+    "description": "Erhalte Übung in Motiv erkennen, Wahrnehmung oder Überlebenskunst."
+  },
+  "Trance": {
+    "name": "Trance",
+    "description": "Du musst nicht schlafen und Magie kann dich nicht einschläfern. Eine bewusste Trance von 4 Stunden kann deine Lange Rast abschließen."
+  },
+  "Gnomish Cunning": {
+    "name": "Gnomische Gerissenheit",
+    "description": "Du hast Vorteil auf Rettungswürfe mit Intelligenz, Weisheit und Charisma."
+  },
+  "Gnomish Lineage": {
+    "name": "Gnomische Abstammung",
+    "description": "Wähle Wald- oder Felsengnom und Intelligenz, Weisheit oder Charisma als Zauberattribut dieses Merkmals. Waldgnome kennen Kleine Illusion und haben Mit Tieren sprechen stets vorbereitet; sie können es pro Langer Rast so oft ohne Zauberplatz wirken, wie ihr Übungsbonus beträgt. Felsengnome kennen Ausbessern und Zaubertrick und können Uhrwerkgeräte herstellen."
+  },
+  "Forest Gnome Speak with Animals": {
+    "name": "Mit Tieren sprechen des Waldgnoms",
+    "description": "Du hast Mit Tieren sprechen stets vorbereitet. Wirke es pro Langer Rast so oft ohne Zauberplatz, wie dein Übungsbonus beträgt, oder verwende einen Zauberplatz."
+  },
+  "Clockwork Device": {
+    "name": "Uhrwerkgerät",
+    "description": "Verbringe 10 Minuten damit, Zaubertrick zu wirken, um ein winziges Gerät mit RK 5 und 1 TP herzustellen. Es erzeugt einen gewählten Effekt des Zaubers, wenn es durch Berührung als Bonusaktion aktiviert wird. Du kannst bis zu drei Geräte besitzen; jedes hält 8 Stunden oder bis es durch Berührung mit der Aktion Benutzen zerlegt wird."
+  },
+  "Giant Ancestry": {
+    "name": "Riesenabstammung",
+    "description": "Wähle eine Riesengabe. Die Zahl ihrer Nutzungen pro Langer Rast entspricht deinem Übungsbonus."
+  },
+  "Cloud's Jaunt": {
+    "name": "Wolkensprung",
+    "description": "Teleportiere dich als Bonusaktion bis zu 30 Fuß zu einem freien Ort, den du sehen kannst."
+  },
+  "Fire's Burn": {
+    "name": "Feuerbrand",
+    "description": "Wenn ein Angriffswurf trifft und Schaden verursacht, verursachst du zusätzlich 1W10 Feuerschaden."
+  },
+  "Frost's Chill": {
+    "name": "Frostkälte",
+    "description": "Wenn ein Angriffswurf trifft und Schaden verursacht, verursachst du zusätzlich 1W6 Kälteschaden und verringerst die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um 10 Fuß."
+  },
+  "Hill's Tumble": {
+    "name": "Hügelsturz",
+    "description": "Wenn ein Angriffswurf eine große oder kleinere Kreatur trifft und verletzt, wird sie Liegend."
+  },
+  "Stone's Endurance": {
+    "name": "Steinausdauer",
+    "description": "Wenn du Schaden erleidest, kannst du ihn als Reaktion um 1W12 plus deinen Konstitutionsmodifikator verringern."
+  },
+  "Storm's Thunder": {
+    "name": "Sturmdonner",
+    "description": "Wenn eine Kreatur innerhalb von 60 Fuß dir Schaden zufügt, kannst du ihr als Reaktion 1W8 Schallschaden zufügen."
+  },
+  "Large Form": {
+    "name": "Große Gestalt",
+    "description": "Ab Charakterstufe 5 kannst du als Bonusaktion für bis zu 10 Minuten Groß werden, wenn genug Platz vorhanden ist. Du hast Vorteil auf Stärkeproben und deine Bewegungsrate steigt um 10 Fuß. Einmal pro Langer Rast."
+  },
+  "Powerful Build": {
+    "name": "Kräftiger Körperbau",
+    "description": "Du hast Vorteil auf Proben, um den Zustand Gepackt zu beenden, und zählst bei der Traglast als eine Größenkategorie größer."
+  },
+  "Brave": {
+    "name": "Mutig",
+    "description": "Du hast Vorteil auf Rettungswürfe, um den Zustand Verängstigt zu vermeiden oder zu beenden."
+  },
+  "Halfling Nimbleness": {
+    "name": "Halblingsgewandtheit",
+    "description": "Du kannst dich durch den Raum einer größeren Kreatur bewegen, aber dort nicht stehen bleiben."
+  },
+  "Luck": {
+    "name": "Glück",
+    "description": "Wenn du bei einer W20-Probe eine 1 auf dem W20 würfelst, würfle erneut und verwende das neue Ergebnis."
+  },
+  "Naturally Stealthy": {
+    "name": "Von Natur aus verstohlen",
+    "description": "Du kannst die Aktion Verstecken ausführen, wenn du nur durch eine Kreatur verdeckt bist, die mindestens eine Größenkategorie größer ist als du."
+  },
+  "Resourceful": {
+    "name": "Einfallsreich",
+    "description": "Erhalte Heldenhafte Inspiration, wenn du eine Lange Rast beendest."
+  },
+  "Skillful": {
+    "name": "Geschickt",
+    "description": "Erhalte Übung in einer Fertigkeit deiner Wahl."
+  },
+  "Versatile": {
+    "name": "Vielseitig",
+    "description": "Erhalte ein Herkunftstalent deiner Wahl."
+  },
+  "Adrenaline Rush": {
+    "name": "Adrenalinschub",
+    "description": "Führe als Bonusaktion die Aktion Spurt aus und erhalte temporäre Trefferpunkte in Höhe deines Übungsbonus. Nutzungen in Höhe deines Übungsbonus; du erhältst sie nach einer Kurzen oder Langen Rast zurück."
+  },
+  "Relentless Endurance": {
+    "name": "Unbeugsame Ausdauer",
+    "description": "Wenn deine Trefferpunkte auf 0 fallen, ohne dass du sofort stirbst, bleiben sie stattdessen bei 1. Einmal pro Langer Rast."
+  },
+  "Fiendish Legacy": {
+    "name": "Unhold-Erbe",
+    "description": "Wähle Abyssisch, Chthonisch oder Infernalisch. Erhalte die Resistenz und den Zaubertrick auf Stufe 1 sowie die angegebenen Zauber auf den Charakterstufen 3 und 5. Jeder höhergradige Zauber ist stets vorbereitet und kann einmal ohne Zauberplatz pro Langer Rast oder mit einem geeigneten Platz gewirkt werden. Wähle Intelligenz, Weisheit oder Charisma als Zauberattribut."
+  },
+  "Otherworldly Presence": {
+    "name": "Übernatürliche Präsenz",
+    "description": "Du kennst den Zaubertrick Thaumaturgie und verwendest dafür das beim Unhold-Erbe gewählte Zauberattribut."
+  }
+}

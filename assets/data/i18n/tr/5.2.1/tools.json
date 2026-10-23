@@ -1,0 +1,113 @@
+{
+  "Alchemist's Supplies": {
+    "name": "Simyacı malzemeleri"
+  },
+  "Brewer's Supplies": {
+    "name": "Bira üreticisi malzemeleri"
+  },
+  "Calligrapher's Supplies": {
+    "name": "Hattat malzemeleri"
+  },
+  "Carpenter's Tools": {
+    "name": "Marangoz aletleri"
+  },
+  "Cartographer's Tools": {
+    "name": "Haritacı aletleri"
+  },
+  "Cobbler's Tools": {
+    "name": "Ayakkabıcı aletleri"
+  },
+  "Cook's Utensils": {
+    "name": "Aşçı gereçleri"
+  },
+  "Glassblower's Tools": {
+    "name": "Cam üfleyici aletleri"
+  },
+  "Jeweler's Tools": {
+    "name": "Kuyumcu aletleri"
+  },
+  "Leatherworker's Tools": {
+    "name": "Deri işçisi aletleri"
+  },
+  "Mason's Tools": {
+    "name": "Taş ustası aletleri"
+  },
+  "Painter's Supplies": {
+    "name": "Ressam malzemeleri"
+  },
+  "Potter's Tools": {
+    "name": "Çömlekçi aletleri"
+  },
+  "Smith's Tools": {
+    "name": "Demirci aletleri"
+  },
+  "Tinker's Tools": {
+    "name": "Tamirci aletleri"
+  },
+  "Weaver's Tools": {
+    "name": "Dokumacı aletleri"
+  },
+  "Woodcarver's Tools": {
+    "name": "Ahşap oymacı aletleri"
+  },
+  "Disguise Kit": {
+    "name": "Kılık değiştirme seti"
+  },
+  "Forgery Kit": {
+    "name": "Sahtecilik seti"
+  },
+  "Dice": {
+    "name": "Zar"
+  },
+  "Dragonchess": {
+    "name": "Ejder Satrancı"
+  },
+  "Playing Cards": {
+    "name": "Oyun Kâğıtları"
+  },
+  "Three-Dragon Ante": {
+    "name": "Üç Ejder Ante"
+  },
+  "Herbalism Kit": {
+    "name": "Bitkicilik seti"
+  },
+  "Bagpipes": {
+    "name": "Gayda"
+  },
+  "Drum": {
+    "name": "Davul"
+  },
+  "Dulcimer": {
+    "name": "Santur"
+  },
+  "Flute": {
+    "name": "Flüt"
+  },
+  "Horn": {
+    "name": "Borazan"
+  },
+  "Lute": {
+    "name": "Lavta"
+  },
+  "Lyre": {
+    "name": "Lir"
+  },
+  "Pan Flute": {
+    "name": "Pan flütü"
+  },
+  "Shawm": {
+    "name": "Şavm"
+  },
+  "Viol": {
+    "name": "Viyol"
+  },
+  "Navigator's Tools": {
+    "name": "Seyrüsefer aletleri"
+  },
+  "Poisoner's Kit": {
+    "name": "Zehirci seti"
+  },
+  "Thieves' Tools": {
+    "name": "Hırsız aletleri"
+  }
+}

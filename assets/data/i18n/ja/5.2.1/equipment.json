@@ -1,0 +1,569 @@
+{
+  "Club": {
+    "name": "クラブ"
+  },
+  "Dagger": {
+    "name": "ダガー"
+  },
+  "Greatclub": {
+    "name": "グレートクラブ"
+  },
+  "Handaxe": {
+    "name": "ハンドアックス"
+  },
+  "Javelin": {
+    "name": "ジャヴェリン"
+  },
+  "Light Hammer": {
+    "name": "ライト・ハンマー"
+  },
+  "Mace": {
+    "name": "メイス"
+  },
+  "Quarterstaff": {
+    "name": "クォータースタッフ"
+  },
+  "Sickle": {
+    "name": "シックル"
+  },
+  "Spear": {
+    "name": "スピア"
+  },
+  "Dart": {
+    "name": "ダート"
+  },
+  "Light Crossbow": {
+    "name": "ライト・クロスボウ"
+  },
+  "Shortbow": {
+    "name": "ショートボウ"
+  },
+  "Sling": {
+    "name": "スリング"
+  },
+  "Battleaxe": {
+    "name": "バトルアックス"
+  },
+  "Flail": {
+    "name": "フレイル"
+  },
+  "Glaive": {
+    "name": "グレイヴ"
+  },
+  "Greataxe": {
+    "name": "グレートアックス"
+  },
+  "Greatsword": {
+    "name": "グレートソード"
+  },
+  "Halberd": {
+    "name": "ハルバード"
+  },
+  "Lance": {
+    "name": "ランス"
+  },
+  "Longsword": {
+    "name": "ロングソード"
+  },
+  "Maul": {
+    "name": "モール"
+  },
+  "Morningstar": {
+    "name": "モーニングスター"
+  },
+  "Pike": {
+    "name": "パイク"
+  },
+  "Rapier": {
+    "name": "レイピア"
+  },
+  "Scimitar": {
+    "name": "シミター"
+  },
+  "Shortsword": {
+    "name": "ショートソード"
+  },
+  "Trident": {
+    "name": "トライデント"
+  },
+  "Warhammer": {
+    "name": "ウォーハンマー"
+  },
+  "War Pick": {
+    "name": "ウォー・ピック"
+  },
+  "Whip": {
+    "name": "ウィップ"
+  },
+  "Blowgun": {
+    "name": "ブロウガン"
+  },
+  "Hand Crossbow": {
+    "name": "ハンド・クロスボウ"
+  },
+  "Heavy Crossbow": {
+    "name": "ヘヴィ・クロスボウ"
+  },
+  "Longbow": {
+    "name": "ロングボウ"
+  },
+  "Musket": {
+    "name": "マスケット"
+  },
+  "Pistol": {
+    "name": "ピストル"
+  },
+  "Padded Armor": {
+    "name": "パデッド・アーマー"
+  },
+  "Leather Armor": {
+    "name": "レザー・アーマー"
+  },
+  "Studded Leather Armor": {
+    "name": "スタデッド・レザー・アーマー"
+  },
+  "Hide Armor": {
+    "name": "ハイド・アーマー"
+  },
+  "Chain Shirt": {
+    "name": "チェイン・シャツ"
+  },
+  "Scale Mail": {
+    "name": "スケイル・メイル"
+  },
+  "Breastplate": {
+    "name": "ブレストプレート"
+  },
+  "Half Plate Armor": {
+    "name": "ハーフ・プレート"
+  },
+  "Ring Mail": {
+    "name": "リング・メイル"
+  },
+  "Chain Mail": {
+    "name": "チェイン・メイル"
+  },
+  "Splint Armor": {
+    "name": "スプリント・アーマー"
+  },
+  "Plate Armor": {
+    "name": "プレート・アーマー"
+  },
+  "Shield": {
+    "name": "シールド"
+  },
+  "Arrow": {
+    "name": "矢",
+    "description": "弓の弾薬。20本束で販売。攻撃ごとに1本使い、戦闘後は使用した弾薬の半分を1分で回収できる。"
+  },
+  "Bolt": {
+    "name": "ボルト",
+    "description": "クロスボウの弾薬。20本束で販売。"
+  },
+  "Bullet": {
+    "name": "銃弾",
+    "description": "火器の弾薬。10発束で販売。"
+  },
+  "Sling Bullet": {
+    "name": "スリング弾",
+    "description": "スリングの弾薬。20個束で販売。"
+  },
+  "Needle": {
+    "name": "吹き矢",
+    "description": "ブロウガンの弾薬。50本束で販売。"
+  },
+  "Acid": {
+    "name": "酸",
+    "description": "1回の攻撃の代わりに20フィート以内の目標へ小瓶を投げる。目標が【敏捷力】セーヴ（難易度8＋【敏捷力】修正値＋習熟ボーナス）に失敗すると、2d6の酸ダメージを受ける。"
+  },
+  "Alchemist's Fire": {
+    "name": "錬金術師の火",
+    "description": "1回の攻撃の代わりに20フィート以内の目標へフラスコを投げる。目標が【敏捷力】セーヴ（難易度8＋【敏捷力】修正値＋習熟ボーナス）に失敗すると、1d4の火ダメージを受けて燃え始める。"
+  },
+  "Antitoxin": {
+    "name": "解毒剤",
+    "description": "ボーナス・アクションで飲むと、1時間、毒状態を避けるか終わらせるセーヴに有利を得る。"
+  },
+  "Arcane Focus": {
+    "name": "秘術焦点具",
+    "description": "ソーサラー、ウォーロック、ウィザード用の呪文焦点具。クリスタル、オーブ、ロッド、スタッフ、ワンドから選ぶ。"
+  },
+  "Arcane Focus, Crystal": {
+    "name": "秘術焦点具：クリスタル",
+    "description": "秘術呪文の焦点具となるクリスタル。"
+  },
+  "Arcane Focus, Orb": {
+    "name": "秘術焦点具：オーブ",
+    "description": "秘術呪文の焦点具となるオーブ。"
+  },
+  "Arcane Focus, Rod": {
+    "name": "秘術焦点具：ロッド",
+    "description": "秘術呪文の焦点具となるロッド。"
+  },
+  "Arcane Focus, Staff": {
+    "name": "秘術焦点具：スタッフ",
+    "description": "クォータースタッフとしても使える秘術呪文焦点具。"
+  },
+  "Arcane Focus, Wand": {
+    "name": "秘術焦点具：ワンド",
+    "description": "秘術呪文の焦点具となるワンド。"
+  },
+  "Backpack": {
+    "name": "背負い袋",
+    "description": "1立方フィートの空間に最大30ポンド収納できる。鞍袋にもなる。"
+  },
+  "Ball Bearings": {
+    "name": "金属球",
+    "description": "使用アクションで10フィート以内の平らな一辺10フィートの正方形に撒く。そこへ入った者は難易度10の【敏捷力】セーヴに失敗すると伏せ状態になる。回収に10分かかる。"
+  },
+  "Barrel": {
+    "name": "樽",
+    "description": "液体を最大40ガロン、乾いた物を最大4立方フィート収納。"
+  },
+  "Basket": {
+    "name": "籠",
+    "description": "2立方フィートの空間に最大40ポンド収納。"
+  },
+  "Bedroll": {
+    "name": "寝袋",
+    "description": "小型か中型のクリーチャー1体が寝られる。中にいる間、極寒に対するセーヴに自動成功する。"
+  },
+  "Bell": {
+    "name": "鐘",
+    "description": "使用アクションで鳴らすと60フィート先まで聞こえる。"
+  },
+  "Blanket": {
+    "name": "毛布",
+    "description": "くるまっている間、極寒に対するセーヴに有利を得る。"
+  },
+  "Block and Tackle": {
+    "name": "滑車",
+    "description": "通常持ち上げられる重量の4倍を吊り上げられる。"
+  },
+  "Book": {
+    "name": "本",
+    "description": "内容が正確な実用書を参照すると、その主題に関する【知力】〈魔法学・歴史・自然・宗教〉判定に＋5を得る。"
+  },
+  "Bottle, Glass": {
+    "name": "ガラス瓶",
+    "description": "最大1.5パイント収納。"
+  },
+  "Bucket": {
+    "name": "バケツ",
+    "description": "最大0.5立方フィート収納。"
+  },
+  "Burglar's Pack": {
+    "name": "盗賊の装備一式",
+    "description": "潜入用の道具一式。"
+  },
+  "Caltrops": {
+    "name": "まきびし",
+    "description": "使用アクションで一辺5フィートの正方形に撒く。そこへ入った者は難易度15の【敏捷力】セーヴに失敗すると刺突ダメージ1を受け、次のターンまで移動速度0になる。回収に10分。"
+  },
+  "Candle": {
+    "name": "ろうそく",
+    "description": "1時間燃え、5フィートを明るく、さらに5フィートを薄暗く照らす。"
+  },
+  "Case, Crossbow Bolt": {
+    "name": "ボルト入れ",
+    "description": "ボルトを最大20本収納。"
+  },
+  "Case, Map or Scroll": {
+    "name": "地図・巻物入れ",
+    "description": "紙を最大10枚、または羊皮紙を最大5枚収納。"
+  },
+  "Chain": {
+    "name": "鎖",
+    "description": "つかみ、無力または拘束状態の者を【筋力】〈運動〉難易度13で縛れる。脱出は【敏捷力】〈軽業〉難易度18、引きちぎるには【筋力】〈運動〉難易度20。"
+  },
+  "Chest": {
+    "name": "箱",
+    "description": "最大12立方フィート収納。"
+  },
+  "Climber's Kit": {
+    "name": "登攀用具",
+    "description": "靴先金具、手袋、ピトン、ハーネスを含む。使用アクションで固定すると落下が25フィート以内、固定点からの移動が25フィート以内に制限される。"
+  },
+  "Clothes, Fine": {
+    "name": "上等な服",
+    "description": "正式な催しや場所にふさわしい高価な服。"
+  },
+  "Clothes, Traveler's": {
+    "name": "旅人の服",
+    "description": "さまざまな環境での旅に適した丈夫な服。"
+  },
+  "Component Pouch": {
+    "name": "呪文構成要素ポーチ",
+    "description": "無料の物質構成要素を入れる仕切り付きの防水袋。"
+  },
+  "Costume": {
+    "name": "衣装",
+    "description": "着用中、表す人物や役柄になりすます能力値判定に有利を得る。"
+  },
+  "Crowbar": {
+    "name": "バール",
+    "description": "てこの作用を利用できる【筋力】判定に有利を得る。"
+  },
+  "Diplomat's Pack": {
+    "name": "外交官の装備一式",
+    "description": "正式な旅と文通に使う道具一式。"
+  },
+  "Druidic Focus": {
+    "name": "ドルイドの焦点具",
+    "description": "ドルイドかレンジャー用の呪文焦点具。ヤドリギ、木の杖、イチイのワンドから選ぶ。"
+  },
+  "Druidic Focus, Sprig of Mistletoe": {
+    "name": "ドルイドの焦点具：ヤドリギ",
+    "description": "始原呪文の焦点具となるヤドリギ。"
+  },
+  "Druidic Focus, Wooden Staff": {
+    "name": "ドルイドの焦点具：木の杖",
+    "description": "クォータースタッフにもなる始原呪文焦点具。"
+  },
+  "Druidic Focus, Yew Wand": {
+    "name": "ドルイドの焦点具：イチイのワンド",
+    "description": "始原呪文の焦点具となるイチイのワンド。"
+  },
+  "Dungeoneer's Pack": {
+    "name": "地下探検家の装備一式",
+    "description": "地下迷宮の探検用品。"
+  },
+  "Entertainer's Pack": {
+    "name": "芸人の装備一式",
+    "description": "旅芸人の用品。"
+  },
+  "Explorer's Pack": {
+    "name": "探検家の装備一式",
+    "description": "野外の探検用品。"
+  },
+  "Flask": {
+    "name": "フラスコ",
+    "description": "最大1パイント収納。"
+  },
+  "Grappling Hook": {
+    "name": "かぎ爪",
+    "description": "使用アクションで50フィート以内の引っかかる場所へ投げる。【敏捷力】〈軽業〉難易度13で固定でき、結んだロープを登れる。"
+  },
+  "Healer's Kit": {
+    "name": "治療用具",
+    "description": "10回分のうち1回を使用アクションで消費し、HP0の気絶状態の者を〈医術〉判定なしで容体安定化する。"
+  },
+  "Holy Symbol": {
+    "name": "聖印",
+    "description": "クレリックかパラディン用の呪文焦点具。アミュレット、エンブレム、聖遺物箱から選ぶ。"
+  },
+  "Holy Symbol, Amulet": {
+    "name": "聖印：アミュレット",
+    "description": "身に着けるか手に持てる神聖呪文焦点具。"
+  },
+  "Holy Symbol, Emblem": {
+    "name": "聖印：エンブレム",
+    "description": "布やシールドに付ける神聖呪文焦点具。"
+  },
+  "Holy Symbol, Reliquary": {
+    "name": "聖印：聖遺物箱",
+    "description": "手に持つ必要がある神聖呪文焦点具。"
+  },
+  "Holy Water": {
+    "name": "聖水",
+    "description": "1回の攻撃の代わりに20フィート以内の者へフラスコを投げる。フィーンドかアンデッドが【敏捷力】セーヴ（難易度8＋【敏捷力】修正値＋習熟ボーナス）に失敗すると、2d8の光輝ダメージを受ける。"
+  },
+  "Hunting Trap": {
+    "name": "狩猟罠",
+    "description": "仕掛けた罠を踏んだ者は難易度13の【敏捷力】セーヴに失敗すると1d4の刺突ダメージを受け、次のターンまで移動速度0になる。解放には【筋力】〈運動〉難易度13。"
+  },
+  "Ink": {
+    "name": "インク",
+    "description": "1オンス瓶で約500ページ分のインク。"
+  },
+  "Ink Pen": {
+    "name": "ペン",
+    "description": "インクとともに書写や描画に使う。"
+  },
+  "Jug": {
+    "name": "水差し",
+    "description": "最大1ガロン収納。"
+  },
+  "Ladder": {
+    "name": "梯子",
+    "description": "長さ10フィートの梯子。"
+  },
+  "Lamp": {
+    "name": "ランプ",
+    "description": "油を燃やし、15フィートを明るく、さらに30フィートを薄暗く照らす。"
+  },
+  "Lantern, Bullseye": {
+    "name": "集光ランタン",
+    "description": "油を燃やし、60フィートの円錐を明るく、さらに60フィートを薄暗く照らす。"
+  },
+  "Lantern, Hooded": {
+    "name": "覆い付きランタン",
+    "description": "油を燃やし、30フィートを明るく、さらに30フィートを薄暗く照らす。覆いを下げると5フィートの薄暗い光だけになる。"
+  },
+  "Lock": {
+    "name": "錠前",
+    "description": "鍵付き。鍵なしの開錠には盗賊道具と【敏捷力】〈手先の早業〉難易度15が必要。"
+  },
+  "Magnifying Glass": {
+    "name": "虫眼鏡",
+    "description": "細部の鑑定や観察の判定に有利を得る。日光下で約5分かけて火を起こせる。"
+  },
+  "Manacles": {
+    "name": "手枷",
+    "description": "つかみ、無力または拘束状態の小型か中型の者を【敏捷力】〈手先の早業〉難易度13で拘束できる。脱出は難易度20、壊すには【筋力】〈運動〉難易度25。"
+  },
+  "Map": {
+    "name": "地図",
+    "description": "正確な地図は描かれた地域での道案内の【判断力】〈生存〉判定に＋5を与える。"
+  },
+  "Mirror": {
+    "name": "鏡",
+    "description": "角の向こうを見るか反射光で合図するのに役立つ携帯用の鋼の鏡。"
+  },
+  "Net": {
+    "name": "網",
+    "description": "1回の攻撃の代わりに15フィート以内の者へ投げる。【敏捷力】セーヴ（難易度8＋【敏捷力】修正値＋習熟ボーナス）に失敗すると拘束状態。超大型以上は自動成功。脱出は【筋力】〈運動〉難易度10。"
+  },
+  "Oil": {
+    "name": "油",
+    "description": "1瓶でランプかランタンが6時間燃える。生物や物体にかけると1分以内に次に受ける火ダメージが5増える場合がある。地面で燃える油は火ダメージ5。"
+  },
+  "Paper": {
+    "name": "紙",
+    "description": "1枚に約250語を手書きできる。"
+  },
+  "Parchment": {
+    "name": "羊皮紙",
+    "description": "1枚に約250語を手書きできる。"
+  },
+  "Perfume": {
+    "name": "香水",
+    "description": "4オンス瓶。塗布後1時間、5フィート以内の無関心な人型生物を説得する【魅力】〈説得〉判定に有利を得る。"
+  },
+  "Poison, Basic": {
+    "name": "基本毒",
+    "description": "ボーナス・アクションで武器1つか弾薬3個までに塗る。1分以内またはダメージを与えるまで、刺突か斬撃ダメージに追加で1d4の毒ダメージを与える。"
+  },
+  "Pole": {
+    "name": "棒",
+    "description": "長さ10フィートの棒。棒高跳びに使うと高跳びか幅跳びの【筋力】〈運動〉判定に有利を得る。"
+  },
+  "Pot, Iron": {
+    "name": "鉄鍋",
+    "description": "最大1ガロン収納。"
+  },
+  "Pouch": {
+    "name": "小袋",
+    "description": "5分の1立方フィートに最大6ポンド収納。"
+  },
+  "Priest's Pack": {
+    "name": "司祭の装備一式",
+    "description": "旅と宗教活動の用品。"
+  },
+  "Quiver": {
+    "name": "矢筒",
+    "description": "矢を最大20本収納。"
+  },
+  "Ram, Portable": {
+    "name": "携帯用破城槌",
+    "description": "扉を破る【筋力】判定に＋4。別のキャラクターが助けて有利を与えられる。"
+  },
+  "Rations": {
+    "name": "保存食",
+    "description": "干し果物、干し肉、堅パン、ナッツなど、旅用の1日分の食料。"
+  },
+  "Robe": {
+    "name": "ローブ",
+    "description": "職業的または儀礼的な意味を持つ衣服。"
+  },
+  "Rope": {
+    "name": "ロープ",
+    "description": "結び目は【敏捷力】〈手先の早業〉難易度10、ロープを切るには【筋力】〈運動〉難易度20。縛られた者は【敏捷力】〈軽業〉難易度15で脱出。"
+  },
+  "Sack": {
+    "name": "袋",
+    "description": "1立方フィートに最大30ポンド収納。"
+  },
+  "Scholar's Pack": {
+    "name": "学者の装備一式",
+    "description": "学習と書写の用品。"
+  },
+  "Shovel": {
+    "name": "シャベル",
+    "description": "土などを1時間掘ると、一辺5フィートの立方体の空間ができる。"
+  },
+  "Signal Whistle": {
+    "name": "信号笛",
+    "description": "使用アクションで吹くと600フィート先まで聞こえる。"
+  },
+  "Spellbook": {
+    "name": "呪文書",
+    "description": "ウィザード専用の100ページの本。レベル1以上の呪文を記す。持ち主かアイデンティファイを発動した者しか読めず、ウィザードの呪文焦点具にもなる。"
+  },
+  "Spikes, Iron": {
+    "name": "鉄の釘",
+    "description": "扉を固定したり、ロープや鎖を留めたりする10本束の鉄釘。"
+  },
+  "Spyglass": {
+    "name": "望遠鏡",
+    "description": "見ている物体を2倍の大きさに見せる。"
+  },
+  "String": {
+    "name": "紐",
+    "description": "長さ10フィートの紐。結び目を作るには使用アクション。"
+  },
+  "Tent": {
+    "name": "テント",
+    "description": "小型か中型の者が最大2体眠れる。"
+  },
+  "Tinderbox": {
+    "name": "火口箱",
+    "description": "火打石、火打ち金、火口。露出した燃料への着火はボーナス・アクション、別の火を起こすには1分。"
+  },
+  "Torch": {
+    "name": "たいまつ",
+    "description": "1時間燃え、20フィートを明るく、さらに20フィートを薄暗く照らす。単純近接武器としても使え、命中時に火ダメージ1。"
+  },
+  "Vial": {
+    "name": "小瓶",
+    "description": "最大4オンス収納。"
+  },
+  "Waterskin": {
+    "name": "水袋",
+    "description": "水を最大4パイント収納。記載重量は満水時。"
+  },
+  "weaponMasteries": {
+    "cleave": {
+      "name": "薙ぎ払い",
+      "description": "各ターンに1回、近接攻撃の命中後、最初の目標から5フィート以内かつ自分の間合いにいる別の者を同じ武器で攻撃する。命中時、正の能力修正値を加えずに武器ダメージを与える。"
+    },
+    "graze": {
+      "name": "かすり傷",
+      "description": "外れたとき、攻撃に使った能力修正値に等しい武器種別のダメージを与える。この修正値の増加以外ではダメージは増えない。"
+    },
+    "nick": {
+      "name": "素早い攻撃",
+      "description": "各ターンに1回、軽武器の特性による追加攻撃をボーナス・アクションではなく攻撃アクションの一部として行う。"
+    },
+    "push": {
+      "name": "押し出し",
+      "description": "命中時、大型以下の者を自分から直線で最大10フィート押す。"
+    },
+    "sap": {
+      "name": "弱体化",
+      "description": "命中時、目標は次の自分のターン開始までに行う次の攻撃ロールに不利を受ける。"
+    },
+    "slow": {
+      "name": "減速",
+      "description": "ダメージを与えた命中時、次の自分のターン開始まで目標の移動速度を10フィート減らす。複数回当てても減少は重ならない。"
+    },
+    "topple": {
+      "name": "転倒",
+      "description": "命中時、目標は難易度8＋攻撃の能力修正値＋自分の習熟ボーナスの【耐久力】セーヴを行う。失敗すると伏せ状態。"
+    },
+    "vex": {
+      "name": "翻弄",
+      "description": "ダメージを与えた命中時、次の自分のターン終了までにその相手への次の攻撃ロールに有利を得る。"
+    }
+  }
+}

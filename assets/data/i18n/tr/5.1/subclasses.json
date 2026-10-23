@@ -1,0 +1,186 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "Çılgının Yolu",
+      "description": "Öfkenizi vahşi bir hiddete dönüştürün. Öfkelendiğinizde çılgınlığa kapılıp her tur bonus eylem olarak ek bir yakın dövüş saldırısı yapabilirsiniz; bunun bedeli, sonrasında bitkinlik çekmenizdir."
+    },
+    "Path of the Totem Warrior": {
+      "name": "Totem Savaşçısının Yolu",
+      "description": "Rehberiniz olarak bir hayvan ruhuyla bağ kurup büyülü güçler kazanın. Ayı (tüm hasarlara direnç), Kartal (bonus eylem olarak Çatışmadan Ayrılma) veya Kurt (müttefikleriniz, yakınınızdaki düşmanlara karşı yakın dövüş saldırılarında Avantaj kazanır) arasından seçim yapın."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "Bilgi Koleji",
+      "description": "Bilgi ve sırların ustasısınız. Üç ek beceride yetkinlik, düşmanları engelleyen Keskin Sözler ve diğer sınıflardan büyülü sırlar öğrenme yeteneği kazanırsınız."
+    },
+    "College of Valor": {
+      "name": "Yiğitlik Koleji",
+      "description": "Savaşta müttefiklerine ilham veren, dövüşe hazır bir sanatçısınız. Orta zırh, kalkan ve savaş silahlarında yetkinlik kazanır; ileride Ozan İlhamınızla müttefiklerinize ek bir saldırı yapma olanağı verirsiniz."
+    }
+  },
+  "Cleric": {
+    "Knowledge Domain": {
+      "name": "Bilgi Alanı",
+      "description": "Sırların ve ilahi bilgeliğin araştırmacısısınız. İki ek beceri ve iki ek dil öğrenir, nesnelerin anılarını okur ve başkalarının düşüncelerini öğrenirsiniz."
+    },
+    "Life Domain": {
+      "name": "Yaşam Alanı",
+      "description": "Yaşam tanrılarının kutsadığı bir şifacı ve koruyucusunuz. Ağır zırh yetkinliği, güçlendirilmiş iyileştirme ve ölümün eşiğindeki yaşamları koruma yeteneği kazanırsınız."
+    },
+    "Light Domain": {
+      "name": "Işık Alanı",
+      "description": "Karanlığa karşı ilahi alevi yönlendirirsiniz. Ek bir ateş cantrip'i, saldırganları engelleyen Koruyucu Parıltı ve yüksek seviyelerde parlak bir Işık Halesi kazanırsınız."
+    },
+    "Nature Domain": {
+      "name": "Doğa Alanı",
+      "description": "Vahşi yerlerin ve büyüyen canlıların koruyucususunuz. Ağır zırh yetkinliği, ek bir druid cantrip'i ve hayvanlarla bitkileri büyüleme yeteneği kazanırsınız."
+    },
+    "Tempest Domain": {
+      "name": "Fırtına Alanı",
+      "description": "Fırtınanın ve denizin gazabını taşırsınız. Ağır zırh ve savaş silahlarında yetkinlik, saldırganları cezalandıran Fırtınanın Gazabı ve yıkıcı rüzgâr ile yıldırım büyüleri kazanırsınız."
+    },
+    "Trickery Domain": {
+      "name": "Hile Alanı",
+      "description": "Aldatma ve yanılsama ilahının yolundan gidersiniz. İkizini Çağırma ile kendinizin yanılsamalı bir kopyasını oluşturur, yanıltma ve gizliliğe yönelik çeşitli büyülere erişirsiniz."
+    },
+    "War Domain": {
+      "name": "Savaş Alanı",
+      "description": "Tanrıların savaşçısısınız. Ağır zırh ve savaş silahlarında yetkinlik, Savaş Rahibi özelliğiyle bonus eylem olarak ek saldırılar ve güçlü savaş büyüleri kazanırsınız."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Toprak Çemberi",
+      "description": "Kadim geleneklerin ve doğanın sırlarının koruyucususunuz. Kısa dinlenmede büyü yuvalarınızı yeniler, peri varlıkları ve elementallerin büyüleme ve korkutma etkilerine direnir, seçtiğiniz araziye göre ek büyüler kazanırsınız."
+    },
+    "Circle of the Moon": {
+      "name": "Ay Çemberi",
+      "description": "Güçlü bir şekil değiştiricisiniz. CR 1'den başlayarak (yüksek seviyelerde CR 6'ya kadar) savaşabilecek hayvanların Vahşi Biçimine girer, ileride elemental biçimlere dönüşürsünüz."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Şampiyon",
+      "description": "Kusursuz savaşçısınız. Geliştirilmiş Kritik (19–20), fiziksel zorluklar için Olağanüstü Atlet ve ileride ikinci bir dövüş stili kazanırsınız; bu, en sade ve en güçlü savaş arketipidir."
+    },
+    "Battle Master": {
+      "name": "Savaş Ustası",
+      "description": "Taktik dehasısınız. Düşmanı düşürmek veya silahsızlandırmak, saldırıyı savuşturmak ve müttefikleri yönlendirmek gibi savaş manevraları için Üstünlük Zarları kullanır; bunları kısa dinlenmede geri kazanırsınız."
+    },
+    "Eldritch Knight": {
+      "name": "Arkan Şövalye",
+      "description": "Savaş eğitimini arkan güçle birleştiren büyülü bir kılıç ustasısınız. Koruma ve Yıkım ekollerinden büyüler öğrenir, silahlarınızı kendinize bağlar ve ileride bonus eylem olarak büyü yaparsınız."
+    }
+  },
+  "Monk": {
+    "Way of the Open Hand": {
+      "name": "Açık Elin Yolu",
+      "description": "Silahsız dövüşün ustasısınız. Açık El Tekniği ile düşmanları yere düşürür, iter veya Tepki vermelerini engellersiniz; Titreşen Avuç ileride tek dokunuşla çok büyük hasar verir."
+    },
+    "Way of Shadow": {
+      "name": "Gölgenin Yolu",
+      "description": "Dövüş sanatlarını gölge büyüsüyle birleştiren ninja benzeri bir savaşçısınız. Ki harcayarak karanlık, sessizlik ve iz bırakmadan geçiş büyüleri yapar, ardından gölgeler arasında ışınlanırsınız."
+    },
+    "Way of the Four Elements": {
+      "name": "Dört Elementin Yolu",
+      "description": "Elementlerin gücünü yönlendirirsiniz. Ki harcayarak ateş savuran, suyu kontrol eden, taş duvarlar oluşturan ve rüzgâra hükmeden element disiplinlerini kullanırsınız."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Adanmışlık Yemini",
+      "description": "Adalet ve düzenin klasik şövalyesisiniz. Kutsal Silah saldırılarınızı güçlendirir, Kutsal Hale iblislere ve hortlaklara hasar verir; güçlü koruma ve ilahi darbe büyüleri kazanırsınız."
+    },
+    "Oath of the Ancients": {
+      "name": "Kadimlerin Yemini",
+      "description": "Işığın ve doğal dünyanın koruyucususunuz. Doğanın Gazabı düşmanları kısıtlar; Kadim Şampiyon dönüşümü ile elemental ve büyülü hasara karşı koruma kazanırsınız."
+    },
+    "Oath of Vengeance": {
+      "name": "İntikam Yemini",
+      "description": "Büyük kötülüklerin peşini bırakmayan bir cezalandırıcısınız. Düşmanlık Yemini saldırılarda Avantaj, İntikam Meleği dönüşümü ve kötüleri avlamak için takip büyüleri kazanırsınız."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Avcı",
+      "description": "İz sürme ve avlanma ustasısınız. Her tehditle baş etmek için Avcının Avı seçenekleri (Dev Avcısı, Dev Katili, Sürü Dağıtıcı) ve Savunma Taktikleri arasından seçim yaparsınız."
+    },
+    "Beast Master": {
+      "name": "Hayvan Ustası",
+      "description": "Yanınızda savaşan bir hayvan yoldaşla güçlü bir bağ kurarsınız. Hayvan sizin turunuzda hareket eder ve seviye atladıkça güçlenir."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Hırsız",
+      "description": "Usta bir soyguncu ve fırsatçısınız. Hızlı Eller ile bonus eylem olarak eşya kullanır, İkinci Kat Çalışması ile daha hızlı tırmanır ve yüksek seviyelerde Büyülü Aygıt Kullanma kazanırsınız."
+    },
+    "Assassin": {
+      "name": "Suikastçı",
+      "description": "Ölümcül bir pusu ustasısınız. Şaşırmış hedeflere karşı Avantaj ve ek hasar, her gün yeni bir sahte kimlik ve herhangi bir yaratığın konuşmasını taklit etme yeteneği kazanırsınız."
+    },
+    "Arcane Trickster": {
+      "name": "Arkan Düzenbaz",
+      "description": "Hilelerine büyü katan bir haydutsunuz. Yanılsama ve büyüleme büyüleri öğrenir, Büyücü Eli Hünerini kullanır ve ileride diğer büyücülerin büyü etkilerini çalarsınız."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Bloodline": {
+      "name": "Ejder Soyu",
+      "description": "Gücünüz ejder atalarınızdan gelir. Ek can puanları, doğal zırh (zırh giymezken Zırh Sınıfı 13 + Çeviklik değiştiricisi), hasara yönelik elemental yakınlık ve yüksek seviyelerde ejder kanatları kazanırsınız."
+    },
+    "Wild Magic": {
+      "name": "Vahşi Büyü",
+      "description": "Öngörülemez gücün kaotik patlamalarıyla donatılmışsınız. Kaos Dalgaları bir atışta Avantaj, Vahşi Büyü Patlaması rastgele etkiler ve gerektiğinde müttefiklerin büyücülük puanlarını geri kazanmalarına yardım etme yeteneği sağlar."
+    }
+  },
+  "Warlock": {
+    "The Archfey": {
+      "name": "Baş Peri",
+      "description": "Duygu ve büyüleyici görünüşün efendisi bir peri varlığıyla anlaşmanız vardır. Peri Varlığı yakındaki yaratıkları büyüler veya korkutur, Sisli Kaçış darbe aldığınızda kaybolmanızı sağlar; ayrıca büyüleme odaklı sihir kazanırsınız."
+    },
+    "The Fiend": {
+      "name": "İblis",
+      "description": "Güçlü bir şeytan veya iblisle anlaşmanız vardır. Karanlık Olan'ın Kutsaması bir yaratığı öldürdüğünüzde geçici can puanları verir; ateş ve nekrotik büyüleriniz Cehenneme Savurma ile doruğa ulaşır."
+    },
+    "The Great Old One": {
+      "name": "Kadim Yüce Varlık",
+      "description": "Anlaşılmaz, yabancı bir kozmik varlıkla bağınız vardır. Telepatik iletişim, zihinler arasında konuşmak için Uyanmış Zihin ve ileride zihinleri ve gerçekliği çarpıtan büyüler kazanırsınız."
+    }
+  },
+  "Wizard": {
+    "School of Abjuration": {
+      "name": "Koruma Ekolü",
+      "description": "Koruyucu büyülerin ustasısınız. Arkan Koruma sizin yerinize hasarı emer, Yansıtılmış Koruma müttefikleri de korur ve koruma büyüleriniz en yüksek verimle çalışır."
+    },
+    "School of Conjuration": {
+      "name": "Çağırma Ekolü",
+      "description": "Çağırma ve taşıma büyülerinin ustasısınız. Zararsız Yer Değiştirme ile ışınlanır veya çağırdığınız bir yaratıkla yer değiştirir, Odaklı Çağırma ile konsantrasyonunuzu korur ve dayanıklı çağrılmış yaratıklar elde edersiniz."
+    },
+    "School of Divination": {
+      "name": "Kehanet Ekolü",
+      "description": "Görücüsünüz. Kehanet, şafakta iki d20 atmanıza ve oyundaki herhangi bir atışı bunlardan biriyle değiştirmenize olanak verir; bu, kritik anların sonucunu değiştirebilir."
+    },
+    "School of Enchantment": {
+      "name": "Büyüleme Ekolü",
+      "description": "Zihin ve duyguların ustasısınız. Hipnotik Bakış ile her tur bir yaratığı sersemletir, Şüphe Uyandırma ile Dezavantaj uygular ve ileride Anıları Değiştirme ile düşmanların yaşadıklarını hafızalarından silersiniz."
+    },
+    "School of Evocation": {
+      "name": "Yıkım Ekolü",
+      "description": "Yıkıcı büyülerin ustasısınız. Büyüleri Şekillendirme müttefikleri alan etkilerinizden korur, Güçlü Cantrip kurtarma atışında yarım hasar verir ve Güçlendirilmiş Yıkım bir hasar atışını en yüksek sonuca ulaştırır."
+    },
+    "School of Illusion": {
+      "name": "Yanılsama Ekolü",
+      "description": "Aldatma ve sahte gerçekliklerin ustasısınız. Geliştirilmiş Küçük Yanılsama, yanılsamalarınızı anlık olarak değiştiren Biçimlenebilir Yanılsamalar ve saldırılara karşı kalkan olan Yanılsamalı Benlik kazanırsınız."
+    },
+    "School of Necromancy": {
+      "name": "Ölüm Büyüsü Ekolü",
+      "description": "Ölüm büyüsünün ustasısınız. Korkunç Hasat, büyülerle öldürdüğünüzde can puanlarınızı yeniler; Ölümsüz Hizmetkârlar daha güçlü ölümsüz yandaşlar sağlar ve yüksek seviyelerde Ölümsüzlere Hükmetme kazanırsınız."
+    },
+    "School of Transmutation": {
+      "name": "Dönüşüm Ekolü",
+      "description": "Dönüşümün ustasısınız. Dönüşüm Taşı sürekli faydalar sağlar, Şekil Değiştirici kendinizi başka bir biçime sokar ve Usta Dönüştürücü taşınızı harcayarak mucizevi etkiler yaratır."
+    }
+  }
+}

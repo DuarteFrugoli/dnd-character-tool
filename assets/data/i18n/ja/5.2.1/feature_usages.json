@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "激怒"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "持続する激怒の回復"
+    },
+    "2024_bardic_inspiration": {
+      "name": "バードの鼓舞"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "神性伝導"
+    },
+    "2024_divine_intervention": {
+      "name": "神性介入"
+    },
+    "2024_wild_shape": {
+      "name": "野生の形態"
+    },
+    "2024_wild_resurgence": {
+      "name": "野生の再生による呪文スロット"
+    },
+    "2024_archdruid": {
+      "name": "大ドルイドの呪文スロット"
+    },
+    "2024_second_wind": {
+      "name": "底力"
+    },
+    "2024_action_surge": {
+      "name": "怒涛のアクション"
+    },
+    "2024_indomitable": {
+      "name": "不屈"
+    },
+    "2024_focus_points": {
+      "name": "集中点"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "超常的な代謝"
+    },
+    "2024_lay_on_hands": {
+      "name": "癒しの手"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "神性伝導"
+    },
+    "2024_paladins_smite": {
+      "name": "神聖なる一撃（無料発動）"
+    },
+    "2024_faithful_steed": {
+      "name": "駿馬召喚（無料発動）"
+    },
+    "2024_hunters_mark": {
+      "name": "狩人の印（無料発動）"
+    },
+    "2024_tireless": {
+      "name": "疲れ知らず"
+    },
+    "2024_natures_veil": {
+      "name": "自然の帳"
+    },
+    "2024_stroke_of_luck": {
+      "name": "幸運の一撃"
+    },
+    "2024_innate_sorcery": {
+      "name": "生来の魔法"
+    },
+    "2024_sorcery_points": {
+      "name": "魔力点"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "魔力の回復"
+    },
+    "2024_magical_cunning": {
+      "name": "魔法の機転"
+    },
+    "2024_contact_patron": {
+      "name": "契約相手への接触（無料発動）"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "秘奥魔法（レベル6）"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "秘奥魔法（レベル7）"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "秘奥魔法（レベル8）"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "秘奥魔法（レベル9）"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "水中呼吸（無料発動）"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "守護者の贈り物"
+    },
+    "2024_arcane_recovery": {
+      "name": "秘術回復"
+    },
+    "2024_signature_spell_1": {
+      "name": "得意呪文1（無料発動）"
+    },
+    "2024_signature_spell_2": {
+      "name": "得意呪文2（無料発動）"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "サークル呪文（無料発動）"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "自然回復（呪文スロット）"
+    },
+    "2024_wholeness_of_body": {
+      "name": "肉体の完成"
+    },
+    "2024_intimidating_presence": {
+      "name": "威圧的存在（無料使用）"
+    },
+    "2024_holy_nimbus": {
+      "name": "聖なる光輪（無料使用）"
+    },
+    "2024_dragon_wings": {
+      "name": "竜の翼（無料使用）"
+    },
+    "2024_dragon_companion": {
+      "name": "竜の相棒（無料発動）"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "暗き者の幸運"
+    },
+    "2024_hurl_through_hell": {
+      "name": "地獄送り（無料使用）"
+    },
+    "2024_safe_overchannel": {
+      "name": "オーバーチャネル（安全な使用）"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "魔法の素質の呪文（無料発動）"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "ブレス攻撃"
+    },
+    "2024_draconic_flight": {
+      "name": "竜の飛翔"
+    },
+    "2024_stonecunning": {
+      "name": "石の知識"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "動物との会話"
+    },
+    "2024_giant_ancestry": {
+      "name": "巨人の血統"
+    },
+    "2024_large_form": {
+      "name": "巨体化"
+    },
+    "2024_adrenaline_rush": {
+      "name": "アドレナリンの奔流"
+    },
+    "2024_relentless_endurance": {
+      "name": "しぶとい持久力"
+    },
+    "2024_boon_of_fate": {
+      "name": "運命の恩恵"
+    },
+    "2024_elven_lineage_3": {
+      "name": "エルフの血統（キャラクター・レベル3で得る呪文）"
+    },
+    "2024_elven_lineage_5": {
+      "name": "エルフの血統（キャラクター・レベル5で得る呪文）"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "魔族の遺産（キャラクター・レベル3で得る呪文）"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "魔族の遺産（キャラクター・レベル5で得る呪文）"
+    }
+  }
+}

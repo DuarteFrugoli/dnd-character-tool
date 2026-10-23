@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "Fúria"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "Recuperação da Fúria Persistente"
+    },
+    "2024_bardic_inspiration": {
+      "name": "Inspiração Bárdica"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "Canalizar Divindade"
+    },
+    "2024_divine_intervention": {
+      "name": "Intervenção Divina"
+    },
+    "2024_wild_shape": {
+      "name": "Forma Selvagem"
+    },
+    "2024_wild_resurgence": {
+      "name": "Espaço de Magia da Ressurgência Selvagem"
+    },
+    "2024_archdruid": {
+      "name": "Espaço de Magia do Arquedruida"
+    },
+    "2024_second_wind": {
+      "name": "Segundo Vento"
+    },
+    "2024_action_surge": {
+      "name": "Surto de Ação"
+    },
+    "2024_indomitable": {
+      "name": "Indomável"
+    },
+    "2024_focus_points": {
+      "name": "Pontos de Foco"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "Metabolismo Sobrenatural"
+    },
+    "2024_lay_on_hands": {
+      "name": "Imposição de Mãos"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "Canalizar Divindade"
+    },
+    "2024_paladins_smite": {
+      "name": "Destruição Divina (Conjuração Gratuita)"
+    },
+    "2024_faithful_steed": {
+      "name": "Encontrar Montaria (Conjuração Gratuita)"
+    },
+    "2024_hunters_mark": {
+      "name": "Marca do Caçador (Conjurações Gratuitas)"
+    },
+    "2024_tireless": {
+      "name": "Incansável"
+    },
+    "2024_natures_veil": {
+      "name": "Véu da Natureza"
+    },
+    "2024_stroke_of_luck": {
+      "name": "Golpe de Sorte"
+    },
+    "2024_innate_sorcery": {
+      "name": "Feitiçaria Inata"
+    },
+    "2024_sorcery_points": {
+      "name": "Pontos de Feitiçaria"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "Restauração Feiticeira"
+    },
+    "2024_magical_cunning": {
+      "name": "Astúcia Mágica"
+    },
+    "2024_contact_patron": {
+      "name": "Contatar Patrono (Conjuração Gratuita)"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "Arcano Místico (Nível 6)"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "Arcano Místico (Nível 7)"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "Arcano Místico (Nível 8)"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "Arcano Místico (Nível 9)"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "Respirar na Água (Conjuração Gratuita)"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "Dádiva dos Protetores"
+    },
+    "2024_arcane_recovery": {
+      "name": "Recuperação Arcana"
+    },
+    "2024_signature_spell_1": {
+      "name": "Magia de Assinatura 1 (Conjuração Gratuita)"
+    },
+    "2024_signature_spell_2": {
+      "name": "Magia de Assinatura 2 (Conjuração Gratuita)"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "Magia do Círculo (Conjuração Gratuita)"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "Recuperação Natural (Espaços de Magia)"
+    },
+    "2024_wholeness_of_body": {
+      "name": "Integridade Corporal"
+    },
+    "2024_intimidating_presence": {
+      "name": "Presença Intimidadora (Uso Gratuito)"
+    },
+    "2024_holy_nimbus": {
+      "name": "Nimbo Sagrado (Uso Gratuito)"
+    },
+    "2024_dragon_wings": {
+      "name": "Asas de Dragão (Uso Gratuito)"
+    },
+    "2024_dragon_companion": {
+      "name": "Companheiro Dracônico (Conjuração Gratuita)"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "Sorte do Senhor Sombrio"
+    },
+    "2024_hurl_through_hell": {
+      "name": "Arremessar pelo Inferno (Uso Gratuito)"
+    },
+    "2024_safe_overchannel": {
+      "name": "Sobrecarga (Uso Seguro)"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "Magia de Iniciado Mágico (Conjuração Gratuita)"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "Arma de Sopro"
+    },
+    "2024_draconic_flight": {
+      "name": "Voo Dracônico"
+    },
+    "2024_stonecunning": {
+      "name": "Conhecimento das Rochas"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "Falar com Animais"
+    },
+    "2024_giant_ancestry": {
+      "name": "Ascendência Gigante"
+    },
+    "2024_large_form": {
+      "name": "Forma Grande"
+    },
+    "2024_adrenaline_rush": {
+      "name": "Corrida de Adrenalina"
+    },
+    "2024_relentless_endurance": {
+      "name": "Resistência Implacável"
+    },
+    "2024_boon_of_fate": {
+      "name": "Dádiva do Destino"
+    },
+    "2024_elven_lineage_3": {
+      "name": "Linhagem Élfica (Magia Recebida no Nível 3)"
+    },
+    "2024_elven_lineage_5": {
+      "name": "Linhagem Élfica (Magia Recebida no Nível 5)"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "Legado Infernal (Magia Recebida no Nível 3)"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "Legado Infernal (Magia Recebida no Nível 5)"
+    }
+  }
+}

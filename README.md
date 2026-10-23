@@ -94,7 +94,7 @@ A cross-platform app for creating and managing DnD 5e (2014) characters, built w
 - **Unit system** — Imperial (ft / lb), Metric (m / kg) or Squares; applied to movement speed, carry weight and all distances throughout the app; defaults to device locale
 
 ### Internationalization
-- **10 languages**: English, Portuguese, German, Spanish, French, Italian, Japanese, Korean, Russian, Chinese
+- **11 languages**: English, Portuguese, German, Spanish, French, Italian, Japanese, Korean, Russian, Turkish, Chinese
 - UI strings via ARB / `AppLocalizations`
 - SRD content (spell names/descriptions/materials, class features, races, items, conditions, feats) via locale overlay JSONs in `assets/data/i18n/`
 
@@ -239,7 +239,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e (2014), 
 - **Sistema de unidades** — Imperial (ft / lb), Métrico (m / kg) ou Quadrados; aplicado a deslocamento, peso e todas as distâncias no app; padrão conforme o locale do dispositivo
 
 ### Internacionalização
-- **10 idiomas**: Inglês, Português, Alemão, Espanhol, Francês, Italiano, Japonês, Coreano, Russo, Chinês
+- **11 idiomas**: Inglês, Português, Alemão, Espanhol, Francês, Italiano, Japonês, Coreano, Russo, Turco, Chinês
 - Strings da UI via ARB / `AppLocalizations`
 - Conteúdo SRD (nomes/descrições/materiais de magias, features de classe, raças, itens, condições, talentos) via JSONs de overlay em `assets/data/i18n/`
 

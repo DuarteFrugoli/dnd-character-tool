@@ -1,0 +1,14 @@
+{
+  "Acolyte": {
+    "name": "Accolito"
+  },
+  "Criminal": {
+    "name": "Criminale"
+  },
+  "Sage": {
+    "name": "Saggio"
+  },
+  "Soldier": {
+    "name": "Soldato"
+  }
+}

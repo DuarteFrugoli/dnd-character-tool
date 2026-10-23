@@ -1,0 +1,70 @@
+{
+  "Alert": {
+    "name": "Alerta",
+    "description": "Adicione seu Bônus de Proficiência às jogadas de Iniciativa. Imediatamente após rolar Iniciativa, você pode trocar seu resultado pelo de um aliado voluntário no mesmo combate, desde que nenhum dos dois esteja Incapacitado."
+  },
+  "Magic Initiate": {
+    "name": "Iniciado Mágico",
+    "description": "Escolha a lista de magias de Clérigo, Druida ou Mago. Aprenda dois truques e prepare uma magia de nível 1 dessa lista. Escolha Inteligência, Sabedoria ou Carisma para essas magias. Você pode conjurar a magia de nível 1 uma vez sem gastar espaço por Descanso Longo ou conjurá-la usando um espaço. Ao ganhar um nível, você pode substituir uma magia escolhida por outra do mesmo nível e da mesma lista. Cada escolha repetida deste talento deve usar uma lista diferente."
+  },
+  "Savage Attacker": {
+    "name": "Atacante Selvagem",
+    "description": "Uma vez por turno, ao atingir um alvo com uma arma, role os dados de dano da arma duas vezes e use qualquer um dos resultados."
+  },
+  "Skilled": {
+    "name": "Habilidoso",
+    "description": "Ganhe proficiência em três perícias, ferramentas ou uma combinação delas. Você pode escolher este talento mais de uma vez."
+  },
+  "Ability Score Improvement": {
+    "name": "Aumento no Valor de Habilidade",
+    "description": "Aumente um valor de habilidade em 2 ou dois valores de habilidade em 1 cada, até o máximo de 20. Você pode escolher este talento mais de uma vez."
+  },
+  "Grappler": {
+    "name": "Agarrador",
+    "description": "Aumente Força ou Destreza em 1, até o máximo de 20. Uma vez por turno, um Golpe Desarmado realizado como parte da ação Atacar pode causar dano e agarrar ao mesmo tempo. Você tem Vantagem em ataques contra criaturas que esteja agarrando, e mover uma criatura agarrada do seu tamanho ou menor não custa deslocamento adicional."
+  },
+  "Archery": {
+    "name": "Arquearia",
+    "description": "Receba um bônus de +2 nas jogadas de ataque com armas à distância."
+  },
+  "Defense": {
+    "name": "Defesa",
+    "description": "Receba +1 na Classe de Armadura enquanto estiver usando armadura leve, média ou pesada."
+  },
+  "Great Weapon Fighting": {
+    "name": "Combate com Armas Grandes",
+    "description": "Ao rolar o dano de um ataque com arma corpo a corpo segurando uma arma de Duas Mãos ou Versátil com ambas as mãos, trate cada resultado 1 ou 2 nos dados de dano como 3."
+  },
+  "Two-Weapon Fighting": {
+    "name": "Combate com Duas Armas",
+    "description": "Quando a propriedade Leve conceder um ataque adicional, adicione seu modificador de habilidade ao dano desse ataque, caso ele ainda não esteja incluído."
+  },
+  "Boon of Combat Prowess": {
+    "name": "Dádiva da Proeza em Combate",
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Quando uma jogada de ataque errar, você pode fazê-la acertar; recupera esse benefício no início do seu próximo turno."
+  },
+  "Boon of Dimensional Travel": {
+    "name": "Dádiva da Viagem Dimensional",
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Imediatamente após realizar a ação Atacar ou Magia, você pode se teleportar até 30 pés para um espaço desocupado que consiga ver."
+  },
+  "Boon of Fate": {
+    "name": "Dádiva do Destino",
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Quando você ou uma criatura a até 60 pés obtiver sucesso ou falhar em um Teste de D20, role 2d4 e aplique o total como bônus ou penalidade à jogada. Recupere o uso ao rolar Iniciativa ou terminar um Descanso Curto ou Longo."
+  },
+  "Boon of Irresistible Offense": {
+    "name": "Dádiva da Ofensiva Irresistível",
+    "description": "Aumente Força ou Destreza em 1, até o máximo de 30. Seu dano de concussão, perfuração e corte ignora Resistência. Ao obter 20 natural em uma jogada de ataque, cause dano adicional do mesmo tipo do ataque, igual ao valor de habilidade aumentado por este talento."
+  },
+  "Boon of Spell Recall": {
+    "name": "Dádiva da Recuperação de Magias",
+    "description": "Aumente Inteligência, Sabedoria ou Carisma em 1, até o máximo de 30. Sempre que conjurar uma magia usando um espaço de nível 1 a 4, role 1d4; se o resultado for igual ao nível do espaço, ele não é gasto."
+  },
+  "Boon of the Night Spirit": {
+    "name": "Dádiva do Espírito Noturno",
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Sob Penumbra ou Escuridão, você pode ficar Invisível com uma Ação Bônus até realizar uma ação, Ação Bônus ou Reação. Nessas condições de iluminação, você tem Resistência a todos os tipos de dano, exceto psíquico e radiante."
+  },
+  "Boon of Truesight": {
+    "name": "Dádiva da Visão Verdadeira",
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Ganhe Visão Verdadeira com alcance de 60 pés."
+  }
+}

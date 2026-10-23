@@ -16,6 +16,7 @@ const supportedLocales = [
   Locale('ja'),
   Locale('ko'),
   Locale('ru'),
+  Locale('tr'),
   Locale('zh'),
 ];
 

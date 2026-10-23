@@ -1,0 +1,50 @@
+{
+  "Barbarian": {
+    "name": "Barbaro",
+    "subclassFeatureName": "Sottoclasse: Barbaro"
+  },
+  "Bard": {
+    "name": "Bardo",
+    "subclassFeatureName": "Sottoclasse: Bardo"
+  },
+  "Cleric": {
+    "name": "Chierico",
+    "subclassFeatureName": "Sottoclasse: Chierico"
+  },
+  "Druid": {
+    "name": "Druido",
+    "subclassFeatureName": "Sottoclasse: Druido"
+  },
+  "Fighter": {
+    "name": "Guerriero",
+    "subclassFeatureName": "Sottoclasse: Guerriero"
+  },
+  "Monk": {
+    "name": "Monaco",
+    "subclassFeatureName": "Sottoclasse: Monaco"
+  },
+  "Paladin": {
+    "name": "Paladino",
+    "subclassFeatureName": "Sottoclasse: Paladino"
+  },
+  "Ranger": {
+    "name": "Ranger",
+    "subclassFeatureName": "Sottoclasse: Ranger"
+  },
+  "Rogue": {
+    "name": "Ladro",
+    "subclassFeatureName": "Sottoclasse: Ladro"
+  },
+  "Sorcerer": {
+    "name": "Stregone",
+    "subclassFeatureName": "Sottoclasse: Stregone"
+  },
+  "Warlock": {
+    "name": "Warlock",
+    "subclassFeatureName": "Sottoclasse: Warlock"
+  },
+  "Wizard": {
+    "name": "Mago",
+    "subclassFeatureName": "Sottoclasse: Mago"
+  }
+}

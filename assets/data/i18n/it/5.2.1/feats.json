@@ -1,0 +1,70 @@
+{
+  "Alert": {
+    "name": "Allerta",
+    "description": "Aggiungi il tuo Bonus di Competenza ai tiri di Iniziativa. Subito dopo aver tirato l'Iniziativa, puoi scambiare il tuo risultato con quello di un alleato consenziente nello stesso combattimento, purché nessuno dei due sia Incapacitato."
+  },
+  "Magic Initiate": {
+    "name": "Iniziato alla Magia",
+    "description": "Scegli la lista di incantesimi del Chierico, Druido o Mago. Impara due trucchetti e prepara un incantesimo di livello 1 da quella lista. Scegli Intelligenza, Saggezza o Carisma per questi incantesimi. Puoi lanciare l'incantesimo di livello 1 una volta senza slot per Riposo Lungo oppure usando uno slot. Quando sali di livello, puoi sostituire un incantesimo scelto con un altro dello stesso livello e della stessa lista. Ogni nuova scelta di questo talento deve usare una lista diversa."
+  },
+  "Savage Attacker": {
+    "name": "Attaccante Selvaggio",
+    "description": "Una volta per turno, quando colpisci con un'arma, tira due volte i suoi dadi di danno e usa uno dei due risultati."
+  },
+  "Skilled": {
+    "name": "Abile",
+    "description": "Ottieni competenza in tre abilità, strumenti o una combinazione dei due. Puoi scegliere questo talento più volte."
+  },
+  "Ability Score Improvement": {
+    "name": "Aumento del Punteggio di Caratteristica",
+    "description": "Aumenta un punteggio di caratteristica di 2 oppure due punteggi di 1 ciascuno, fino a un massimo di 20. Puoi scegliere questo talento più volte."
+  },
+  "Grappler": {
+    "name": "Lottatore",
+    "description": "Aumenta Forza o Destrezza di 1, fino a un massimo di 20. Una volta per turno, un Colpo Senz'Armi effettuato come parte dell'azione Attaccare può infliggere danni e afferrare insieme. Hai Vantaggio agli attacchi contro le creature che stai afferrando; spostare una creatura afferrata della tua taglia o più piccola non costa movimento aggiuntivo."
+  },
+  "Archery": {
+    "name": "Tiro con l'Arco",
+    "description": "Ottieni un bonus di +2 ai tiri per colpire con armi a distanza."
+  },
+  "Defense": {
+    "name": "Difesa",
+    "description": "Ottieni +1 alla Classe Armatura mentre indossi un'armatura leggera, media o pesante."
+  },
+  "Great Weapon Fighting": {
+    "name": "Combattere con Armi Possenti",
+    "description": "Quando tiri i danni di un attacco con arma da mischia impugnando con entrambe le mani un'arma a Due Mani o Versatile, considera ogni risultato di 1 o 2 su un dado di danno come un 3."
+  },
+  "Two-Weapon Fighting": {
+    "name": "Combattere con Due Armi",
+    "description": "Quando la proprietà Leggera ti concede un attacco aggiuntivo, aggiungi il tuo modificatore di caratteristica ai danni di quell'attacco se non è già incluso."
+  },
+  "Boon of Combat Prowess": {
+    "name": "Dono dell'Abilità in Combattimento",
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Quando un tiro per colpire manca il bersaglio, puoi farlo colpire; recuperi questo beneficio all'inizio del tuo turno successivo."
+  },
+  "Boon of Dimensional Travel": {
+    "name": "Dono del Viaggio Dimensionale",
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Subito dopo aver effettuato l'azione Attaccare o Magia, puoi teletrasportarti fino a 30 piedi in uno spazio libero che riesci a vedere."
+  },
+  "Boon of Fate": {
+    "name": "Dono del Destino",
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Quando tu o una creatura entro 60 piedi superate o fallite una Prova di D20, tira 2d4 e applica il totale come bonus o penalità al tiro. Recuperi l'uso quando tiri l'Iniziativa o termini un Riposo Breve o Lungo."
+  },
+  "Boon of Irresistible Offense": {
+    "name": "Dono dell'Offensiva Irresistibile",
+    "description": "Aumenta Forza o Destrezza di 1, fino a un massimo di 30. I tuoi danni contundenti, perforanti e taglienti ignorano la Resistenza. Con un 20 naturale a un tiro per colpire, infliggi danni aggiuntivi dello stesso tipo dell'attacco pari al punteggio di caratteristica aumentato da questo talento."
+  },
+  "Boon of Spell Recall": {
+    "name": "Dono del Recupero degli Incantesimi",
+    "description": "Aumenta Intelligenza, Saggezza o Carisma di 1, fino a un massimo di 30. Ogni volta che lanci un incantesimo con uno slot di livello da 1 a 4, tira 1d4; se il risultato corrisponde al livello dello slot, questo non viene speso."
+  },
+  "Boon of the Night Spirit": {
+    "name": "Dono dello Spirito Notturno",
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. In Luce Fioca o nell'Oscurità puoi diventare Invisibile con un'Azione Bonus finché non effettui un'azione, un'Azione Bonus o una Reazione. In tali condizioni di luce hai Resistenza a tutti i danni tranne quelli psichici e radiosi."
+  },
+  "Boon of Truesight": {
+    "name": "Dono della Vista Pura",
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Ottieni Vista Pura entro 60 piedi."
+  }
+}

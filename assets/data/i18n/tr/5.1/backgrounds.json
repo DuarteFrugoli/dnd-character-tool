@@ -1,0 +1,106 @@
+{
+  "Acolyte": {
+    "name": "Mürit",
+    "startingEquipment": ["Kutsal sembol", "Dua kitabı veya dua çarkı", "5 tütsü çubuğu", "Dini giysiler", "Sıradan giysiler", "15 altın sikke"],
+    "feature": {
+      "name": "İnananların Sığınağı",
+      "description": "Siz ve yoldaşlarınız, inancınıza ait tapınaklarda ücretsiz şifa ve bakım görebilir, rahiplerden yardım isteyebilirsiniz."
+    }
+  },
+  "Charlatan": {
+    "name": "Şarlatan",
+    "startingEquipment": ["Şık giysiler", "Kılık değiştirme seti", "Seçtiğiniz dolandırıcılığın araçları", "15 altın sikke"],
+    "feature": {
+      "name": "Sahte Kimlik",
+      "description": "Belgeleri, tanıdıkları ve kılıklarıyla birlikte ikinci bir kimlik oluşturdunuz."
+    }
+  },
+  "Criminal": {
+    "name": "Suçlu",
+    "startingEquipment": ["Levye", "Kapüşonlu koyu renk sıradan giysiler", "15 altın sikke"],
+    "feature": {
+      "name": "Suç Dünyası Bağlantısı",
+      "description": "Bir suç ağıyla aranızda aracılık eden güvenilir bir bağlantınız var."
+    }
+  },
+  "Entertainer": {
+    "name": "Gösterici",
+    "startingEquipment": ["Müzik aleti", "Bir hayranın armağanı", "Sahne kostümü", "15 altın sikke"],
+    "feature": {
+      "name": "Halkın Talebiyle",
+      "description": "Gösteri yapacak bir yer her zaman bulabilir, mütevazı düzeyde ücretsiz konaklama ve yiyecek elde edebilirsiniz."
+    }
+  },
+  "Folk Hero": {
+    "name": "Halk Kahramanı",
+    "startingEquipment": ["Zanaatkâr aletleri", "Kürek", "Demir tencere", "Sıradan giysiler", "10 altın sikke"],
+    "feature": {
+      "name": "Kırsal Misafirperverlik",
+      "description": "Sıradan insanlar sizi ve yoldaşlarınızı barındırıp saklar ve size ihanet etmez."
+    }
+  },
+  "Guild Artisan": {
+    "name": "Lonca Zanaatkârı",
+    "startingEquipment": ["Zanaatkâr aletleri", "Loncanızdan tanıtım mektubu", "Yolcu giysileri", "15 altın sikke"],
+    "feature": {
+      "name": "Lonca Üyeliği",
+      "description": "Loncanız konaklama, hukuki yardım ve destek sağlar; karşılığında aidat ve sadakat bekler."
+    }
+  },
+  "Hermit": {
+    "name": "Münzevi",
+    "startingEquipment": ["Notlarla dolu tomar kabı", "Kış battaniyesi", "Sıradan giysiler", "Bitkicilik seti", "5 altın sikke"],
+    "feature": {
+      "name": "Keşif",
+      "description": "Yalnızlık döneminiz size büyük bir gerçek, sır veya gizli bir yer gibi eşsiz bir keşif kazandırdı."
+    }
+  },
+  "Noble": {
+    "name": "Soylu",
+    "startingEquipment": ["Şık giysiler", "Mühür yüzüğü", "Soy kütüğü tomarı", "25 altın sikke"],
+    "feature": {
+      "name": "Ayrıcalıklı Konum",
+      "description": "İnsanlar sizin hakkınızda iyi şeyler varsayar. Yüksek sosyetede kabul görür ve yerel bir soyluyla görüşme sağlayabilirsiniz."
+    }
+  },
+  "Outlander": {
+    "name": "Yabancı Diyar Gezgini",
+    "startingEquipment": ["Asa", "Av tuzağı", "Bir hayvandan alınmış hatıra", "Yolcu giysileri", "10 altın sikke"],
+    "feature": {
+      "name": "Gezgin",
+      "description": "Her gün kendiniz ve en fazla 5 kişi için yiyecek ve temiz su bulabilir, arazinin genel düzenini hatırlayabilirsiniz."
+    }
+  },
+  "Sage": {
+    "name": "Bilgin",
+    "startingEquipment": ["Siyah mürekkep şişesi", "Tüy kalem", "Küçük bıçak", "Ölmüş bir meslektaştan mektup", "Sıradan giysiler", "10 altın sikke"],
+    "feature": {
+      "name": "Araştırmacı",
+      "description": "Az bilinen bilgileri nerede bulacağınızı bilirsiniz. Siz bilmiyorsanız, bilen kişiyi tanırsınız."
+    }
+  },
+  "Sailor": {
+    "name": "Denizci",
+    "startingEquipment": ["Bağlama pimi (sopa)", "50 fit ipek halat", "Uğur tılsımı", "Sıradan giysiler", "10 altın sikke"],
+    "feature": {
+      "name": "Gemi Yolculuğu",
+      "description": "Çalışma karşılığında kendiniz ve yoldaşlarınız için yelkenli gemilerde ücretsiz yolculuk ayarlayabilirsiniz."
+    }
+  },
+  "Soldier": {
+    "name": "Asker",
+    "startingEquipment": ["Rütbe nişanı", "Düşmüş bir düşmandan alınmış hatıra", "Oyun kartları destesi veya zarlar", "Sıradan giysiler", "10 altın sikke"],
+    "feature": {
+      "name": "Askerî Rütbe",
+      "description": "Eski birliğinize sadık askerler rütbenizi tanır. Etki kazanmak ve askerî kamplara girmek için rütbenizi kullanabilirsiniz."
+    }
+  },
+  "Urchin": {
+    "name": "Sokak Çocuğu",
+    "startingEquipment": ["Küçük bıçak", "Memleketinizin haritası", "Evcil fare", "Ailenizden kalma hatıra", "Sıradan giysiler", "10 altın sikke"],
+    "feature": {
+      "name": "Şehir Sırları",
+      "description": "Şehirlerin gizli düzenini bilirsiniz ve kentsel alanlarda normalden iki kat hızlı geçit bulabilirsiniz."
+    }
+  }
+}

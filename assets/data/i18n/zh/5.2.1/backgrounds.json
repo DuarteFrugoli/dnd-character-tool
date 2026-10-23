@@ -1,0 +1,14 @@
+{
+  "Acolyte": {
+    "name": "侍僧"
+  },
+  "Criminal": {
+    "name": "罪犯"
+  },
+  "Sage": {
+    "name": "贤者"
+  },
+  "Soldier": {
+    "name": "士兵"
+  }
+}

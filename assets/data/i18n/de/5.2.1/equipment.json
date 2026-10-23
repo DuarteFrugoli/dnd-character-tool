@@ -1,0 +1,569 @@
+{
+  "Club": {
+    "name": "Knüppel"
+  },
+  "Dagger": {
+    "name": "Dolch"
+  },
+  "Greatclub": {
+    "name": "Großer Knüppel"
+  },
+  "Handaxe": {
+    "name": "Handaxt"
+  },
+  "Javelin": {
+    "name": "Wurfspeer"
+  },
+  "Light Hammer": {
+    "name": "Leichter Hammer"
+  },
+  "Mace": {
+    "name": "Streitkolben"
+  },
+  "Quarterstaff": {
+    "name": "Kampfstab"
+  },
+  "Sickle": {
+    "name": "Sichel"
+  },
+  "Spear": {
+    "name": "Speer"
+  },
+  "Dart": {
+    "name": "Wurfpfeil"
+  },
+  "Light Crossbow": {
+    "name": "Leichte Armbrust"
+  },
+  "Shortbow": {
+    "name": "Kurzbogen"
+  },
+  "Sling": {
+    "name": "Schleuder"
+  },
+  "Battleaxe": {
+    "name": "Streitaxt"
+  },
+  "Flail": {
+    "name": "Flegel"
+  },
+  "Glaive": {
+    "name": "Gleve"
+  },
+  "Greataxe": {
+    "name": "Zweihandaxt"
+  },
+  "Greatsword": {
+    "name": "Zweihandschwert"
+  },
+  "Halberd": {
+    "name": "Hellebarde"
+  },
+  "Lance": {
+    "name": "Lanze"
+  },
+  "Longsword": {
+    "name": "Langschwert"
+  },
+  "Maul": {
+    "name": "Kriegshammer"
+  },
+  "Morningstar": {
+    "name": "Morgenstern"
+  },
+  "Pike": {
+    "name": "Pike"
+  },
+  "Rapier": {
+    "name": "Rapier"
+  },
+  "Scimitar": {
+    "name": "Krummsäbel"
+  },
+  "Shortsword": {
+    "name": "Kurzschwert"
+  },
+  "Trident": {
+    "name": "Dreizack"
+  },
+  "Warhammer": {
+    "name": "Zweihandhammer"
+  },
+  "War Pick": {
+    "name": "Kriegspicke"
+  },
+  "Whip": {
+    "name": "Peitsche"
+  },
+  "Blowgun": {
+    "name": "Blasrohr"
+  },
+  "Hand Crossbow": {
+    "name": "Handarmbrust"
+  },
+  "Heavy Crossbow": {
+    "name": "Schwere Armbrust"
+  },
+  "Longbow": {
+    "name": "Langbogen"
+  },
+  "Musket": {
+    "name": "Muskete"
+  },
+  "Pistol": {
+    "name": "Pistole"
+  },
+  "Padded Armor": {
+    "name": "Wattierte Rüstung"
+  },
+  "Leather Armor": {
+    "name": "Lederrüstung"
+  },
+  "Studded Leather Armor": {
+    "name": "Beschlagene Lederrüstung"
+  },
+  "Hide Armor": {
+    "name": "Fellrüstung"
+  },
+  "Chain Shirt": {
+    "name": "Kettenhemd"
+  },
+  "Scale Mail": {
+    "name": "Schuppenpanzer"
+  },
+  "Breastplate": {
+    "name": "Brustplatte"
+  },
+  "Half Plate Armor": {
+    "name": "Halbplatte"
+  },
+  "Ring Mail": {
+    "name": "Ringpanzer"
+  },
+  "Chain Mail": {
+    "name": "Kettenpanzer"
+  },
+  "Splint Armor": {
+    "name": "Schienenpanzer"
+  },
+  "Plate Armor": {
+    "name": "Plattenrüstung"
+  },
+  "Shield": {
+    "name": "Schild"
+  },
+  "Arrow": {
+    "name": "Pfeil",
+    "description": "Bogenmunition in Bündeln zu zwanzig. Jeder Angriff verbraucht einen Pfeil; nach einem Kampf kann die Hälfte der verbrauchten Munition in 1 Minute geborgen werden."
+  },
+  "Bolt": {
+    "name": "Bolzen",
+    "description": "Armbrustmunition in Bündeln zu zwanzig."
+  },
+  "Bullet": {
+    "name": "Kugel",
+    "description": "Schusswaffenmunition in Bündeln zu zehn."
+  },
+  "Sling Bullet": {
+    "name": "Schleuderkugel",
+    "description": "Schleudermunition in Bündeln zu zwanzig."
+  },
+  "Needle": {
+    "name": "Nadel",
+    "description": "Blasrohrmunition in Bündeln zu fünfzig."
+  },
+  "Acid": {
+    "name": "Säure",
+    "description": "Ersetze einen Angriff durch den Wurf einer Phiole auf ein Ziel innerhalb von 20 Fuß. Misslingt sein Geschicklichkeitsrettungswurf (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet es 2W6 Säureschaden."
+  },
+  "Alchemist's Fire": {
+    "name": "Alchemistenfeuer",
+    "description": "Ersetze einen Angriff durch den Wurf einer Flasche auf ein Ziel innerhalb von 20 Fuß. Misslingt sein Geschicklichkeitsrettungswurf (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet es 1W4 Feuerschaden und beginnt zu brennen."
+  },
+  "Antitoxin": {
+    "name": "Gegengift",
+    "description": "Trinke es als Bonusaktion, um für 1 Stunde Vorteil auf Rettungswürfe zu erhalten, die den Zustand Vergiftet vermeiden oder beenden."
+  },
+  "Arcane Focus": {
+    "name": "Arkaner Fokus",
+    "description": "Zauberfokus für Zauberer, Hexenmeister oder Magier. Wähle einen Kristall, eine Kugel, einen Stab, einen Kampfstab oder einen Zauberstab."
+  },
+  "Arcane Focus, Crystal": {
+    "name": "Arkaner Fokus, Kristall",
+    "description": "Ein Kristall als arkaner Zauberfokus."
+  },
+  "Arcane Focus, Orb": {
+    "name": "Arkaner Fokus, Kugel",
+    "description": "Eine Kugel als arkaner Zauberfokus."
+  },
+  "Arcane Focus, Rod": {
+    "name": "Arkaner Fokus, Stab",
+    "description": "Ein Stab als arkaner Zauberfokus."
+  },
+  "Arcane Focus, Staff": {
+    "name": "Arkaner Fokus, Kampfstab",
+    "description": "Arkaner Zauberfokus, der auch als Kampfstab dient."
+  },
+  "Arcane Focus, Wand": {
+    "name": "Arkaner Fokus, Zauberstab",
+    "description": "Ein Zauberstab als arkaner Zauberfokus."
+  },
+  "Backpack": {
+    "name": "Rucksack",
+    "description": "Fasst bis zu 30 Pfund in 1 Kubikfuß; kann auch als Satteltasche dienen."
+  },
+  "Ball Bearings": {
+    "name": "Kugellager",
+    "description": "Verteile sie mit der Aktion Benutzen innerhalb von 10 Fuß auf einem ebenen Quadrat von 10 Fuß Kantenlänge. Eintretende Kreaturen müssen einen Geschicklichkeitsrettungswurf SG 10 schaffen oder werden Liegend. Das Aufsammeln dauert 10 Minuten."
+  },
+  "Barrel": {
+    "name": "Fass",
+    "description": "Fasst bis zu 40 Gallonen Flüssigkeit oder 4 Kubikfuß trockene Güter."
+  },
+  "Basket": {
+    "name": "Korb",
+    "description": "Fasst bis zu 40 Pfund in 2 Kubikfuß."
+  },
+  "Bedroll": {
+    "name": "Schlafsack",
+    "description": "Eine kleine oder mittelgroße Kreatur kann darin schlafen; im Schlafsack gelingen Rettungswürfe gegen extreme Kälte automatisch."
+  },
+  "Bell": {
+    "name": "Glocke",
+    "description": "Mit der Aktion Benutzen geläutet, ist sie bis zu 60 Fuß weit hörbar."
+  },
+  "Blanket": {
+    "name": "Decke",
+    "description": "In die Decke gehüllt hast du Vorteil auf Rettungswürfe gegen extreme Kälte."
+  },
+  "Block and Tackle": {
+    "name": "Flaschenzug",
+    "description": "Damit kannst du das Vierfache des Gewichts heben, das du normalerweise stemmen könntest."
+  },
+  "Book": {
+    "name": "Buch",
+    "description": "Ein sachlich korrektes Sachbuch gewährt +5 auf Intelligenzproben (Arkane Kunde, Geschichte, Naturkunde oder Religion) zu seinem Thema."
+  },
+  "Bottle, Glass": {
+    "name": "Glasflasche",
+    "description": "Fasst bis zu 1,5 Pinten."
+  },
+  "Bucket": {
+    "name": "Eimer",
+    "description": "Fasst bis zu einem halben Kubikfuß."
+  },
+  "Burglar's Pack": {
+    "name": "Einbrecherpaket",
+    "description": "Sammlung von Ausrüstung für Einbrüche."
+  },
+  "Caltrops": {
+    "name": "Krähenfüße",
+    "description": "Verteile sie mit der Aktion Benutzen auf einem Quadrat von 5 Fuß Kantenlänge. Eintretende Kreaturen müssen einen Geschicklichkeitsrettungswurf SG 15 schaffen oder erleiden 1 Stichschaden und haben bis zu ihrem nächsten Zug Bewegungsrate 0. Das Aufsammeln dauert 10 Minuten."
+  },
+  "Candle": {
+    "name": "Kerze",
+    "description": "Brennt 1 Stunde und spendet 5 Fuß helles Licht und weitere 5 Fuß dämmriges Licht."
+  },
+  "Case, Crossbow Bolt": {
+    "name": "Bolzenbehälter",
+    "description": "Fasst bis zu 20 Bolzen."
+  },
+  "Case, Map or Scroll": {
+    "name": "Karten- oder Schriftrollenbehälter",
+    "description": "Fasst bis zu 10 Blätter Papier oder 5 Blätter Pergament."
+  },
+  "Chain": {
+    "name": "Kette",
+    "description": "Kann eine gepackte, kampfunfähige oder festgesetzte Kreatur mit Stärke (Athletik) SG 13 fesseln. Entkommen erfordert Geschicklichkeit (Akrobatik) SG 18; Zerreißen Stärke (Athletik) SG 20."
+  },
+  "Chest": {
+    "name": "Truhe",
+    "description": "Fasst bis zu 12 Kubikfuß."
+  },
+  "Climber's Kit": {
+    "name": "Kletterausrüstung",
+    "description": "Enthält Stiefelspitzen, Handschuhe, Kletterhaken und Gurt. Das Sichern mit der Aktion Benutzen begrenzt einen Sturz auf 25 Fuß und die Entfernung vom Anker auf 25 Fuß."
+  },
+  "Clothes, Fine": {
+    "name": "Feine Kleidung",
+    "description": "Teure Kleidung für formelle Anlässe und Orte."
+  },
+  "Clothes, Traveler's": {
+    "name": "Reisekleidung",
+    "description": "Widerstandsfähige Kleidung für Reisen in verschiedenen Umgebungen."
+  },
+  "Component Pouch": {
+    "name": "Komponentenbeutel",
+    "description": "Wasserdichter Beutel mit Fächern für kostenlose materielle Komponenten deiner Zauber."
+  },
+  "Costume": {
+    "name": "Kostüm",
+    "description": "Beim Tragen hast du Vorteil auf Attributsproben, um die dargestellte Person oder Rolle vorzutäuschen."
+  },
+  "Crowbar": {
+    "name": "Brechstange",
+    "description": "Gewährt Vorteil auf Stärkeproben, wenn Hebelwirkung anwendbar ist."
+  },
+  "Diplomat's Pack": {
+    "name": "Diplomatenpaket",
+    "description": "Ausrüstung für förmliche Reisen und Korrespondenz."
+  },
+  "Druidic Focus": {
+    "name": "Druidischer Fokus",
+    "description": "Zauberfokus für Druiden oder Waldläufer. Wähle Mistelzweig, Holzstab oder Eibenstab."
+  },
+  "Druidic Focus, Sprig of Mistletoe": {
+    "name": "Druidischer Fokus, Mistelzweig",
+    "description": "Mistelzweig als ursprünglicher Zauberfokus."
+  },
+  "Druidic Focus, Wooden Staff": {
+    "name": "Druidischer Fokus, Holzstab",
+    "description": "Ursprünglicher Zauberfokus, der auch als Kampfstab dient."
+  },
+  "Druidic Focus, Yew Wand": {
+    "name": "Druidischer Fokus, Eibenstab",
+    "description": "Eibenstab als ursprünglicher Zauberfokus."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Gewölbeforscherpaket",
+    "description": "Ausrüstung für Gewölbeerforschung."
+  },
+  "Entertainer's Pack": {
+    "name": "Unterhalterpaket",
+    "description": "Ausrüstung für reisende Künstler."
+  },
+  "Explorer's Pack": {
+    "name": "Entdeckerpaket",
+    "description": "Ausrüstung für Überlandreisen."
+  },
+  "Flask": {
+    "name": "Flasche",
+    "description": "Fasst bis zu 1 Pinte."
+  },
+  "Grappling Hook": {
+    "name": "Wurfhaken",
+    "description": "Wirf ihn mit der Aktion Benutzen an einen Halt innerhalb von 50 Fuß. Mit Geschicklichkeit (Akrobatik) SG 13 wird er befestigt; ein daran gebundenes Seil kann dann erklettert werden."
+  },
+  "Healer's Kit": {
+    "name": "Heilerausrüstung",
+    "description": "Verbrauche eine von zehn Nutzungen mit der Aktion Benutzen, um eine bewusstlose Kreatur mit 0 Trefferpunkten ohne Heilkundeprobe zu stabilisieren."
+  },
+  "Holy Symbol": {
+    "name": "Heiliges Symbol",
+    "description": "Zauberfokus für Kleriker oder Paladine. Wähle Amulett, Emblem oder Reliquiar."
+  },
+  "Holy Symbol, Amulet": {
+    "name": "Heiliges Symbol, Amulett",
+    "description": "Göttlicher Zauberfokus, der getragen oder gehalten werden kann."
+  },
+  "Holy Symbol, Emblem": {
+    "name": "Heiliges Symbol, Emblem",
+    "description": "Göttlicher Zauberfokus auf Stoff oder Schild."
+  },
+  "Holy Symbol, Reliquary": {
+    "name": "Heiliges Symbol, Reliquiar",
+    "description": "Göttlicher Zauberfokus, der gehalten werden muss."
+  },
+  "Holy Water": {
+    "name": "Weihwasser",
+    "description": "Ersetze einen Angriff durch den Wurf einer Flasche auf eine Kreatur innerhalb von 20 Fuß. Ein Unhold oder Untoter, dessen Geschicklichkeitsrettungswurf misslingt (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet 2W8 gleißenden Schaden."
+  },
+  "Hunting Trap": {
+    "name": "Jagdfalle",
+    "description": "Eine Kreatur, die auf die aufgestellte Falle tritt, muss einen Geschicklichkeitsrettungswurf SG 13 schaffen oder erleidet 1W4 Stichschaden und hat bis zu ihrem nächsten Zug Bewegungsrate 0. Befreien erfordert Stärke (Athletik) SG 13."
+  },
+  "Ink": {
+    "name": "Tinte",
+    "description": "Eine Flasche von 1 Unze enthält Tinte für ungefähr 500 Seiten."
+  },
+  "Ink Pen": {
+    "name": "Schreibfeder",
+    "description": "Wird zum Schreiben oder Zeichnen mit Tinte verwendet."
+  },
+  "Jug": {
+    "name": "Krug",
+    "description": "Fasst bis zu 1 Gallone."
+  },
+  "Ladder": {
+    "name": "Leiter",
+    "description": "Eine 10 Fuß lange Leiter."
+  },
+  "Lamp": {
+    "name": "Lampe",
+    "description": "Verbrennt Öl und spendet 15 Fuß helles Licht und weitere 30 Fuß dämmriges Licht."
+  },
+  "Lantern, Bullseye": {
+    "name": "Bullaugenlaterne",
+    "description": "Verbrennt Öl und spendet in einem 60-Fuß-Kegel helles Licht und weitere 60 Fuß dämmriges Licht."
+  },
+  "Lantern, Hooded": {
+    "name": "Abblendlaterne",
+    "description": "Verbrennt Öl und spendet 30 Fuß helles Licht und weitere 30 Fuß dämmriges Licht. Mit geschlossener Blende spendet sie nur 5 Fuß dämmriges Licht."
+  },
+  "Lock": {
+    "name": "Schloss",
+    "description": "Kommt mit Schlüssel. Ohne ihn braucht man Diebeswerkzeug und Geschicklichkeit (Fingerfertigkeit) SG 15, um es zu knacken."
+  },
+  "Magnifying Glass": {
+    "name": "Vergrößerungsglas",
+    "description": "Gewährt Vorteil auf Proben zum Schätzen oder Prüfen feiner Einzelheiten; kann nach etwa 5 Minuten im Sonnenlicht ein Feuer entzünden."
+  },
+  "Manacles": {
+    "name": "Handschellen",
+    "description": "Können eine gepackte, kampfunfähige oder festgesetzte kleine oder mittelgroße Kreatur mit Geschicklichkeit (Fingerfertigkeit) SG 13 fesseln. Entkommen erfordert SG 20; Zerbrechen Stärke (Athletik) SG 25."
+  },
+  "Map": {
+    "name": "Karte",
+    "description": "Eine genaue Karte gewährt +5 auf Weisheitsproben (Überlebenskunst) zur Orientierung im dargestellten Gebiet."
+  },
+  "Mirror": {
+    "name": "Spiegel",
+    "description": "Handspiegel aus Stahl, nützlich zum Blick um Ecken oder zum Signalisieren mit reflektiertem Licht."
+  },
+  "Net": {
+    "name": "Netz",
+    "description": "Ersetze einen Angriff durch einen Wurf auf eine Kreatur innerhalb von 15 Fuß. Sie wird bei misslungenem Geschicklichkeitsrettungswurf festgesetzt (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus); riesige oder größere Kreaturen bestehen automatisch. Entkommen erfordert Stärke (Athletik) SG 10."
+  },
+  "Oil": {
+    "name": "Öl",
+    "description": "Eine Flasche versorgt eine Lampe oder Laterne 6 Stunden. Eine übergossene Kreatur oder ein Objekt kann beim nächsten Feuerschaden innerhalb von 1 Minute 5 zusätzlichen Feuerschaden erleiden; brennendes Öl am Boden verursacht 5 Feuerschaden."
+  },
+  "Paper": {
+    "name": "Papier",
+    "description": "Ein Blatt fasst etwa 250 handgeschriebene Wörter."
+  },
+  "Parchment": {
+    "name": "Pergament",
+    "description": "Ein Blatt fasst etwa 250 handgeschriebene Wörter."
+  },
+  "Perfume": {
+    "name": "Parfüm",
+    "description": "Phiole mit 4 Unzen. Nach dem Auftragen hast du 1 Stunde Vorteil auf Charismaproben (Überzeugen), um einen gleichgültigen Humanoiden innerhalb von 5 Fuß zu beeinflussen."
+  },
+  "Poison, Basic": {
+    "name": "Einfaches Gift",
+    "description": "Bestreiche als Bonusaktion eine Waffe oder bis zu drei Geschosse. Ihr Stich- oder Hiebschaden verursacht innerhalb von 1 Minute oder bis der Schaden zugefügt wurde zusätzlich 1W4 Giftschaden."
+  },
+  "Pole": {
+    "name": "Stange",
+    "description": "Eine 10 Fuß lange Stange. Beim Stabhochsprung gewährt sie Vorteil auf Stärkeproben (Athletik) für Hoch- oder Weitsprünge."
+  },
+  "Pot, Iron": {
+    "name": "Eisentopf",
+    "description": "Fasst bis zu 1 Gallone."
+  },
+  "Pouch": {
+    "name": "Beutel",
+    "description": "Fasst bis zu 6 Pfund in einem Fünftel Kubikfuß."
+  },
+  "Priest's Pack": {
+    "name": "Priesterpaket",
+    "description": "Reise- und Religionsausrüstung."
+  },
+  "Quiver": {
+    "name": "Köcher",
+    "description": "Fasst bis zu 20 Pfeile."
+  },
+  "Ram, Portable": {
+    "name": "Tragbarer Rammbock",
+    "description": "Gewährt +4 auf Stärkeproben zum Aufbrechen von Türen; eine andere Figur kann helfen und Vorteil gewähren."
+  },
+  "Rations": {
+    "name": "Rationen",
+    "description": "Reisefertige Nahrung für einen Tag, etwa Trockenobst, Trockenfleisch, Zwieback und Nüsse."
+  },
+  "Robe": {
+    "name": "Robe",
+    "description": "Kleidungsstück mit beruflicher oder zeremonieller Bedeutung."
+  },
+  "Rope": {
+    "name": "Seil",
+    "description": "Ein Knoten erfordert Geschicklichkeit (Fingerfertigkeit) SG 10; das Seil zerreißen Stärke (Athletik) SG 20. Eine gefesselte Kreatur kann mit Geschicklichkeit (Akrobatik) SG 15 entkommen."
+  },
+  "Sack": {
+    "name": "Sack",
+    "description": "Fasst bis zu 30 Pfund in 1 Kubikfuß."
+  },
+  "Scholar's Pack": {
+    "name": "Gelehrtenpaket",
+    "description": "Ausrüstung zum Lernen und Schreiben."
+  },
+  "Shovel": {
+    "name": "Schaufel",
+    "description": "Eine Stunde Graben in Erde oder ähnlichem Material schafft einen freien Würfel mit 5 Fuß Kantenlänge."
+  },
+  "Signal Whistle": {
+    "name": "Signalpfeife",
+    "description": "Mit der Aktion Benutzen hineingeblasen, ist der Ton bis zu 600 Fuß weit hörbar."
+  },
+  "Spellbook": {
+    "name": "Zauberbuch",
+    "description": "Einzigartiges 100-seitiges Buch eines Magiers für Zauber ab Grad 1. Nur sein Eigentümer oder jemand, der Identifizieren wirkt, kann es lesen; es kann auch als Magierfokus dienen."
+  },
+  "Spikes, Iron": {
+    "name": "Eisennägel",
+    "description": "Zehn Eisennägel zum Blockieren einer Tür oder Befestigen von Seil oder Kette."
+  },
+  "Spyglass": {
+    "name": "Fernrohr",
+    "description": "Vergrößert betrachtete Gegenstände auf das Doppelte."
+  },
+  "String": {
+    "name": "Schnur",
+    "description": "10 Fuß lange Schnur; einen Knoten zu machen ist eine Aktion Benutzen."
+  },
+  "Tent": {
+    "name": "Zelt",
+    "description": "Bietet Schlafplatz für bis zu zwei kleine oder mittelgroße Kreaturen."
+  },
+  "Tinderbox": {
+    "name": "Zunderbüchse",
+    "description": "Feuerstein, Feuereisen und Zunder. Freiliegenden Brennstoff anzünden erfordert eine Bonusaktion; ein anderes Feuer anzünden dauert 1 Minute."
+  },
+  "Torch": {
+    "name": "Fackel",
+    "description": "Brennt 1 Stunde, spendet 20 Fuß helles Licht und weitere 20 Fuß dämmriges Licht. Kann als einfache Nahkampfwaffe bei Treffer 1 Feuerschaden verursachen."
+  },
+  "Vial": {
+    "name": "Phiole",
+    "description": "Fasst bis zu 4 Unzen."
+  },
+  "Waterskin": {
+    "name": "Wasserschlauch",
+    "description": "Fasst bis zu 4 Pinten Wasser; angegebenes Gewicht gilt für den vollen Schlauch."
+  },
+  "weaponMasteries": {
+    "cleave": {
+      "name": "Spalten",
+      "description": "Einmal pro Zug nach einem Nahkampftreffer greifst du mit derselben Waffe eine andere Kreatur innerhalb von 5 Fuß zum ersten Ziel und in deiner Reichweite an. Bei Treffer verursachst du den Waffenschaden ohne positiven Attributsmodifikator."
+    },
+    "graze": {
+      "name": "Streifen",
+      "description": "Bei einem Fehlschlag verursachst du Schaden der Waffenart in Höhe des verwendeten Attributsmodifikators. Nur eine Erhöhung dieses Modifikators kann den Schaden steigern."
+    },
+    "nick": {
+      "name": "Flott",
+      "description": "Einmal pro Zug führst du den zusätzlichen Angriff der Eigenschaft Leicht als Teil der Angriffsaktion statt als Bonusaktion aus."
+    },
+    "push": {
+      "name": "Stoßen",
+      "description": "Bei Treffer schiebst du eine große oder kleinere Kreatur bis zu 10 Fuß gerade von dir weg."
+    },
+    "sap": {
+      "name": "Schwächen",
+      "description": "Bei Treffer hat das Ziel Nachteil auf seinen nächsten Angriffswurf vor Beginn deines nächsten Zuges."
+    },
+    "slow": {
+      "name": "Verlangsamen",
+      "description": "Bei einem schadenverursachenden Treffer verringerst du die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um 10 Fuß. Mehrere Treffer addieren sich nicht."
+    },
+    "topple": {
+      "name": "Niederwerfen",
+      "description": "Bei Treffer legt das Ziel einen Konstitutionsrettungswurf gegen SG 8 + Angriffsattributsmodifikator + deinen Übungsbonus ab; bei Misserfolg wird es Liegend."
+    },
+    "vex": {
+      "name": "Bedrängen",
+      "description": "Bei einem schadenverursachenden Treffer hast du vor Ende deines nächsten Zuges Vorteil auf deinen nächsten Angriffswurf gegen diese Kreatur."
+    }
+  }
+}

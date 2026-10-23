@@ -1,0 +1,146 @@
+{
+  "Darkvision": {
+    "name": "Visão no Escuro",
+    "description": "Você enxerga na Penumbra dentro do alcance desta característica como se fosse Luz Plena e na Escuridão como se fosse Penumbra, distinguindo apenas tons de cinza na escuridão. O alcance é 120 pés para anões e orcs, 60 pés para as demais espécies listadas e 120 pés para elfos drow."
+  },
+  "Draconic Ancestry": {
+    "name": "Ancestralidade Dracônica",
+    "description": "Escolha um ancestral dragão. O tipo de dano dele determina o dano de sua Arma de Sopro e sua Resistência a Dano."
+  },
+  "Breath Weapon": {
+    "name": "Arma de Sopro",
+    "description": "Ao realizar a ação Atacar, substitua um ataque por um Cone de 15 pés ou uma Linha de 30 pés de comprimento por 5 pés de largura. Criaturas na área fazem um teste de resistência de Destreza contra CD 8 + seu modificador de Constituição + Bônus de Proficiência; sofrem dano do tipo da ancestralidade se falharem, ou metade se passarem. O dano é 1d10, aumentando para 2d10 no nível 5 de personagem, 3d10 no 11 e 4d10 no 17. Usos iguais ao seu Bônus de Proficiência por Descanso Longo."
+  },
+  "Damage Resistance": {
+    "name": "Resistência a Dano",
+    "description": "Você tem Resistência ao tipo de dano concedido por sua Ancestralidade Dracônica."
+  },
+  "Draconic Flight": {
+    "name": "Voo Dracônico",
+    "description": "A partir do nível 5 de personagem, use uma Ação Bônus para ganhar asas espectrais e Deslocamento de Voo igual ao seu Deslocamento por 10 minutos. Elas desaparecem antes se você as dispensar ou ficar Incapacitado. Uma vez por Descanso Longo."
+  },
+  "Dwarven Resilience": {
+    "name": "Resiliência Anã",
+    "description": "Você tem Resistência a dano de Veneno e Vantagem em testes de resistência para evitar ou encerrar a condição Envenenado."
+  },
+  "Dwarven Toughness": {
+    "name": "Robustez Anã",
+    "description": "Seu máximo de Pontos de Vida aumenta em 1 agora e em 1 sempre que você ganha um nível."
+  },
+  "Stonecunning": {
+    "name": "Senso das Pedras",
+    "description": "Enquanto toca uma pedra ou está sobre ela, use uma Ação Bônus para ganhar Sentido Sísmico com alcance de 60 pés por 10 minutos. Usos iguais ao seu Bônus de Proficiência por Descanso Longo."
+  },
+  "Elven Lineage": {
+    "name": "Linhagem Élfica",
+    "description": "Escolha drow, elfo alto ou elfo da floresta. Ganhe o benefício inicial da linhagem e suas magias indicadas nos níveis 3 e 5 de personagem. Cada magia de nível está sempre preparada e pode ser conjurada uma vez sem espaço por Descanso Longo ou com um espaço adequado. Escolha Inteligência, Sabedoria ou Carisma como habilidade de conjuração."
+  },
+  "Fey Ancestry": {
+    "name": "Ancestralidade Feérica",
+    "description": "Você tem Vantagem em testes de resistência para evitar ou encerrar a condição Enfeitiçado."
+  },
+  "Keen Senses": {
+    "name": "Sentidos Aguçados",
+    "description": "Ganhe proficiência em Intuição, Percepção ou Sobrevivência."
+  },
+  "Trance": {
+    "name": "Transe",
+    "description": "Você não precisa dormir, e magia não pode fazê-lo dormir. Um transe consciente de 4 horas pode completar seu Descanso Longo."
+  },
+  "Gnomish Cunning": {
+    "name": "Astúcia Gnômica",
+    "description": "Você tem Vantagem em testes de resistência de Inteligência, Sabedoria e Carisma."
+  },
+  "Gnomish Lineage": {
+    "name": "Linhagem Gnômica",
+    "description": "Escolha gnomo da floresta ou das rochas e Inteligência, Sabedoria ou Carisma como habilidade de conjuração das magias desta característica. Gnomos da floresta conhecem Ilusão Menor e sempre preparam Falar com Animais, que podem conjurar sem espaço um número de vezes igual ao Bônus de Proficiência por Descanso Longo. Gnomos das rochas conhecem Consertar e Prestidigitação e podem criar dispositivos mecânicos."
+  },
+  "Forest Gnome Speak with Animals": {
+    "name": "Falar com Animais do Gnomo da Floresta",
+    "description": "Você sempre tem Falar com Animais preparado. Conjure essa magia sem espaço um número de vezes igual ao seu Bônus de Proficiência por Descanso Longo ou usando um espaço de magia."
+  },
+  "Clockwork Device": {
+    "name": "Dispositivo Mecânico",
+    "description": "Gaste 10 minutos conjurando Prestidigitação para criar um dispositivo Miúdo com CA 5 e 1 PV que produz um efeito escolhido dessa magia quando ativado por toque com uma Ação Bônus. Você pode ter até três dispositivos; cada um dura 8 horas ou até ser desmontado com um toque usando a ação Utilizar."
+  },
+  "Giant Ancestry": {
+    "name": "Ancestralidade Gigante",
+    "description": "Escolha uma dádiva de gigante. Você pode usar a dádiva escolhida um número de vezes igual ao seu Bônus de Proficiência por Descanso Longo."
+  },
+  "Cloud's Jaunt": {
+    "name": "Passo da Nuvem",
+    "description": "Com uma Ação Bônus, teleporte-se até 30 pés para um espaço desocupado que consiga ver."
+  },
+  "Fire's Burn": {
+    "name": "Queimadura do Fogo",
+    "description": "Quando uma jogada de ataque acertar e causar dano, cause 1d10 de dano de Fogo adicional."
+  },
+  "Frost's Chill": {
+    "name": "Frio da Geada",
+    "description": "Quando uma jogada de ataque acertar e causar dano, cause 1d6 de dano de Frio adicional e reduza o Deslocamento do alvo em 10 pés até o início do seu próximo turno."
+  },
+  "Hill's Tumble": {
+    "name": "Queda da Colina",
+    "description": "Quando uma jogada de ataque acertar e causar dano a uma criatura Grande ou menor, deixe-a Caída."
+  },
+  "Stone's Endurance": {
+    "name": "Resistência da Pedra",
+    "description": "Quando sofrer dano, use uma Reação para reduzi-lo em 1d12 + seu modificador de Constituição."
+  },
+  "Storm's Thunder": {
+    "name": "Trovão da Tempestade",
+    "description": "Quando uma criatura a até 60 pés causar dano a você, use uma Reação para causar 1d8 de dano Trovejante a ela."
+  },
+  "Large Form": {
+    "name": "Forma Grande",
+    "description": "A partir do nível 5 de personagem, use uma Ação Bônus para se tornar Grande por até 10 minutos, se houver espaço. Você tem Vantagem em testes de Força e seu Deslocamento aumenta em 10 pés. Uma vez por Descanso Longo."
+  },
+  "Powerful Build": {
+    "name": "Porte Poderoso",
+    "description": "Você tem Vantagem em testes para encerrar a condição Agarrado e conta como uma categoria de tamanho maior para capacidade de carga."
+  },
+  "Brave": {
+    "name": "Corajoso",
+    "description": "Você tem Vantagem em testes de resistência para evitar ou encerrar a condição Amedrontado."
+  },
+  "Halfling Nimbleness": {
+    "name": "Agilidade Halfling",
+    "description": "Você pode atravessar o espaço de uma criatura maior que você, mas não pode parar ali."
+  },
+  "Luck": {
+    "name": "Sorte",
+    "description": "Quando tirar 1 no d20 em um Teste de D20, role novamente e use o novo resultado."
+  },
+  "Naturally Stealthy": {
+    "name": "Naturalmente Furtivo",
+    "description": "Você pode realizar a ação Esconder-se enquanto estiver obscurecido apenas por uma criatura ao menos uma categoria de tamanho maior que você."
+  },
+  "Resourceful": {
+    "name": "Engenhoso",
+    "description": "Ganhe Inspiração Heroica sempre que terminar um Descanso Longo."
+  },
+  "Skillful": {
+    "name": "Habilidoso",
+    "description": "Ganhe proficiência em uma perícia à sua escolha."
+  },
+  "Versatile": {
+    "name": "Versátil",
+    "description": "Ganhe um talento de Origem à sua escolha."
+  },
+  "Adrenaline Rush": {
+    "name": "Ímpeto de Adrenalina",
+    "description": "Realize a ação Disparada com uma Ação Bônus e ganhe Pontos de Vida Temporários iguais ao seu Bônus de Proficiência. Usos iguais ao seu Bônus de Proficiência, recuperados em um Descanso Curto ou Longo."
+  },
+  "Relentless Endurance": {
+    "name": "Resistência Implacável",
+    "description": "Quando seus Pontos de Vida forem reduzidos a 0 sem que você morra instantaneamente, fique com 1 Ponto de Vida em vez disso. Uma vez por Descanso Longo."
+  },
+  "Fiendish Legacy": {
+    "name": "Legado Ínfero",
+    "description": "Escolha Abissal, Ctônico ou Infernal. Ganhe a Resistência e o truque de nível 1 dessa linhagem e as magias indicadas nos níveis 3 e 5 de personagem. Cada magia de nível está sempre preparada e pode ser conjurada uma vez sem espaço por Descanso Longo ou com um espaço adequado. Escolha Inteligência, Sabedoria ou Carisma como habilidade de conjuração."
+  },
+  "Otherworldly Presence": {
+    "name": "Presença Extraplanar",
+    "description": "Conheça o truque Taumaturgia, usando a habilidade de conjuração escolhida para Legado Ínfero."
+  }
+}

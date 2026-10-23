@@ -1,0 +1,282 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Çılgınlık",
+        "description": "Öfkeliyken Gözü Kara Saldırı kullanırsan, turunda Güce dayalı saldırıyla vurduğun ilk hedef, Öfke Hasarı bonusun kadar d6 ek hasar alır. Hasar türü saldırınınkiyle aynıdır."
+      },
+      "Mindless Rage": {
+        "name": "Akılsız Öfke",
+        "description": "Öfkeliyken Büyülenmiş ve Korkmuş durumlarına bağışıksın. Öfkeye girmek üzerindeki bu durumlardan birini sona erdirir."
+      },
+      "Retaliation": {
+        "name": "Misilleme",
+        "description": "5 fit içindeki bir yaratık sana hasar verdiğinde Tepki kullanarak ona bir silah veya Silahsız Vuruşla yakın dövüş saldırısı yapabilirsin."
+      },
+      "Intimidating Presence": {
+        "name": "Korkutucu Varlık",
+        "description": "Bonus Eylemle 30 fitlik Yayılımındaki seçtiğin yaratıklar Bilgelik kurtarma atışı yapar (SG 8 + Güç değiştiricisi + Yeterlilik Bonusu), başarısız olanlar 1 dakika Korkmuş olur; her turun sonunda yeniden denerler. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için bir Öfke kullanımı harca."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Ek Yeterlilikler",
+        "description": "Seçtiğin üç beceride yeterlilik kazan."
+      },
+      "Cutting Words": {
+        "name": "Keskin Sözler",
+        "description": "60 fit içindeki görebildiğin bir yaratık hasar attığında veya nitelik kontrolü ya da saldırı atışında başarılı olduğunda Tepki ve bir Ozan İlhamı kullan. İlham zarını atıp sonuçtan çıkar; başarıyı başarısızlığa çevirebilirsin."
+      },
+      "Magical Discoveries": {
+        "name": "Büyülü Keşifler",
+        "description": "Rahip, Druid veya Büyücü listelerinden yapabildiğin seviyelerde iki basit büyü ya da büyü seç. Her zaman hazırdırlar. Her Ozan seviyesi kazandığında birini uygun başka büyüyle değiştirebilirsin."
+      },
+      "Peerless Skill": {
+        "name": "Eşsiz Beceri",
+        "description": "Bir nitelik kontrolü veya saldırı atışında başarısız olduğunda Ozan İlhamı harcayıp zarını d20'ye ekle; başarılı olabilirsin. Yine başarısız olursan kullanım harcanmaz."
+      }
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "Disciple of Life": {
+        "name": "Yaşam Müridi",
+        "description": "Büyü yuvasıyla yaptığın bir büyü Can Puanı yenilerse, hedef büyüyü yaptığın turda 2 + yuva seviyesi kadar ek Can Puanı kazanır."
+      },
+      "Life Domain Spells": {
+        "name": "Yaşam Alanı Büyüleri",
+        "description": "Her zaman hazır: seviye 3 Yardım, Kutsama, Yaraları İyileştir, Küçük Onarım; seviye 5 Toplu İyileştirici Söz, Diriltme; seviye 7 Yaşam Aurası, Ölüm Koruması; seviye 9 Büyük Onarım, Toplu Yaraları İyileştir."
+      },
+      "Preserve Life": {
+        "name": "Yaşamı Koru",
+        "description": "Büyü eylemiyle Kutsal Güç Aktarmayı harcayarak Rahip seviyenin 5 katı toplam Can Puanını 30 fit içindeki Yaralı yaratıklara, kendin dahil, paylaştır. Bu yolla hiçbiri azami Can Puanının yarısının üstüne iyileştirilemez."
+      },
+      "Blessed Healer": {
+        "name": "Kutsanmış Şifacı",
+        "description": "Yuva kullanarak kendinden başka birine Can Puanı yenileyen büyü yaptıktan sonra 2 + yuva seviyesi kadar Can Puanı yenile."
+      },
+      "Supreme Healing": {
+        "name": "Yüce Şifa",
+        "description": "Bir büyü veya Kutsal Güç Aktarma Can Puanı yenilemek için zar atacaksa her iyileştirme zarının azami sonucunu kullan."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Circle of the Land Spells": {
+        "name": "Toprak Çemberi Büyüleri",
+        "description": "Her Uzun Dinlenmeden sonra Kurak, Kutup, Ilıman veya Tropik toprak seç; seviyene kadar olan büyüleri her zaman hazırdır. Kurak: seviye 3 Bulanıklık, Yanan Eller, Ateş Oku; 5 Ateş Topu; 7 Soldurma; 9 Taş Duvar. Kutup: 3 Sis Bulutu, Kişiyi Tut, Don Işını; 5 Sulu Kar Fırtınası; 7 Buz Fırtınası; 9 Soğuk Konisi. Ilıman: 3 Sisli Adım, Şok Tutuşu, Uyku; 5 Şimşek; 7 Hareket Özgürlüğü; 9 Ağaçlar Arası Geçiş. Tropik: 3 Asit Sıçraması, Hastalık Işını, Ağ; 5 Kokuşmuş Bulut; 7 Dönüşüm; 9 Böcek Sürüsü."
+      },
+      "Land's Aid": {
+        "name": "Toprağın Yardımı",
+        "description": "Büyü eylemiyle Vahşi Biçim harcayıp 60 fit içinde yarıçapı 10 fit olan Küre oluştur. Seçtiğin yaratıklar Dayanıklılık kurtarma atışında başarısızsa 2d6 Nekrotik hasar, başarılıysa yarısını alır; oradaki bir yaratık da 2d6 Can Puanı yeniler. Her ikisi Druid seviyesi 10'da 3d6, 14'te 4d6 olur."
+      },
+      "Natural Recovery": {
+        "name": "Doğal İyileşme",
+        "description": "Uzun Dinlenme başına bir kez, hazırladığın 1+ seviyeli Çember büyüsünü yuvasız yap. Ayrıca Uzun Dinlenme başına bir kez, Kısa Dinlenme sonunda toplam seviyeleri Druid seviyenin yarısını (yukarı yuvarla) aşmayan kullanılmış yuvaları geri al; hiçbiri seviye 6 veya üstü olamaz."
+      },
+      "Nature's Ward": {
+        "name": "Doğanın Koruması",
+        "description": "Zehirlenmiş durumuna bağışıksın ve güncel toprağına göre bir hasar türüne Direncin var: Kurak Ateş, Kutup Soğuk, Ilıman Yıldırım, Tropik Zehir."
+      },
+      "Nature's Sanctuary": {
+        "name": "Doğanın Sığınağı",
+        "description": "Büyü eylemiyle Vahşi Biçim harcayıp 120 fit içinde zeminde 15 fitlik bir Küpü 1 dakikalığına oluştur; Etkisiz olursan veya ölürsen biter. İçindeki sen ve müttefiklerin Yarım Siper kazanır; müttefikler Doğanın Koruması Direncini de kazanır. Bonus Eylemle Küpü 120 fit içindeki zemine 60 fite kadar taşı."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Geliştirilmiş Kritik",
+        "description": "Silah ve Silahsız Vuruş saldırıların d20'de 19 veya 20 ile Kritik Vuruş yapar."
+      },
+      "Remarkable Athlete": {
+        "name": "Olağanüstü Atlet",
+        "description": "İnisiyatif atışlarında ve Güç (Atletizm) kontrollerinde Avantajın var. Kritik Vuruştan sonra Fırsat Saldırısı tetiklemeden Hızının yarısı kadar hareket edebilirsin."
+      },
+      "Additional Fighting Style": {
+        "name": "Ek Dövüş Tarzı",
+        "description": "Seçtiğin başka bir Dövüş Tarzı yeteneği kazan."
+      },
+      "Heroic Warrior": {
+        "name": "Kahraman Savaşçı",
+        "description": "Çatışmada turuna Kahramanca İlhamın olmadan başlarsan kendine Kahramanca İlham verebilirsin."
+      },
+      "Superior Critical": {
+        "name": "Üstün Kritik",
+        "description": "Silah ve Silahsız Vuruş saldırıların artık d20'de 18–20 ile Kritik Vuruş yapar."
+      },
+      "Survivor": {
+        "name": "Hayatta Kalan",
+        "description": "Ölüm kurtarma atışlarında Avantajın var; 18–20 atmak 20 sayılır. Turunun başında Yaralıysan ve en az 1 Can Puanın varsa 5 + Dayanıklılık değiştiricin kadar Can Puanı yenile."
+      }
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Açık El Tekniği",
+        "description": "Darbe Sağanağı isabet ettiğinde seç: hedef sonraki turuna kadar Fırsat Saldırısı yapamaz; Güç kurtarma atışında başarısızsa onu 15 fite kadar it; ya da Çeviklik kurtarma atışında başarısızsa Yere Düşmüş olur."
+      },
+      "Wholeness of Body": {
+        "name": "Beden Bütünlüğü",
+        "description": "Bonus Eylemle bir Dövüş Sanatı zarı + Bilgelik değiştiricisi (en az 1) kadar Can Puanı yenile. Uzun Dinlenme başına kullanım sayısı Bilgelik değiştiricine eşit (en az bir)."
+      },
+      "Fleet Step": {
+        "name": "Hızlı Adım",
+        "description": "Rüzgâr Adımı dışındaki bir Bonus Eylemi yaptığında hemen ardından Rüzgâr Adımını da kullanabilirsin."
+      },
+      "Quivering Palm": {
+        "name": "Titreşen Avuç",
+        "description": "Silahsız Vuruşla isabet ettiğinde 4 Odak Puanı harcayıp Keşiş seviyen kadar gün süren titreşimler yerleştir. Aynı düzlemde onları bitirmek için bir eylem yap veya Saldırı eylemindeki bir saldırıdan vazgeç; hedef Dayanıklılık kurtarma atışında başarısızsa 10d12 Kuvvet hasarı, başarılıysa yarısını alır. Aynı anda tek hedef."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Oath of Devotion Spells": {
+        "name": "Bağlılık Yemini Büyüleri",
+        "description": "Her zaman hazır: seviye 3 İyi ve Kötüden Korunma, İnanç Kalkanı; seviye 5 Yardım, Gerçek Bölgesi; seviye 9 Umut Feneri, Büyü Boz; seviye 13 Hareket Özgürlüğü, İnanç Koruyucusu; seviye 17 Haberleşme, Alev Darbesi."
+      },
+      "Sacred Weapon": {
+        "name": "Kutsal Silah",
+        "description": "Saldırı eyleminde tuttuğun Yakın Dövüş silahını 10 dakikalığına güçlendirmek için Kutsal Güç Aktarmayı harca. Saldırı atışlarına Karizma değiştiricini (en az +1) ekle; her isabet normal türde veya Işınsal hasar verebilir. 20 fit Parlak Işık ve ek 20 fit Loş Işık yayar; taşımayı bırakırsan biter."
+      },
+      "Aura of Devotion": {
+        "name": "Bağlılık Aurası",
+        "description": "Koruma Aurandaki sen ve müttefiklerin Büyülenmiş durumuna bağışıktır; daha önce Büyülenmiş bir müttefik aura içindeyken etkilenmez."
+      },
+      "Smite of Protection": {
+        "name": "Koruyucu Darbe",
+        "description": "İlahi Darbe büyüsünü her yaptığında sen ve Koruma Aurandaki müttefiklerin sonraki turunun başına kadar Yarım Siper kazanır."
+      },
+      "Holy Nimbus": {
+        "name": "Kutsal Işıltı",
+        "description": "Bonus Eylemle Koruma Auranı 10 dakikalığına güçlendir. İfrit veya Hortlak kaynaklı kurtarma atışlarında Avantajın var; aurada turuna başlayan düşmanlar Karizma değiştiricisi + Yeterlilik Bonusu kadar Işınsal hasar alır; Parlak Işık güneş ışığıdır. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için seviye 5 yuva harca."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Lore": {
+        "name": "Avcının Bilgisi",
+        "description": "Bir yaratık Avcı İşaretinle işaretliyken hasar Bağışıklığı, Direnci veya Zayıflığı olup olmadığını ve türlerini öğrenirsin."
+      },
+      "Hunter's Prey": {
+        "name": "Avcının Avı",
+        "description": "Kısa veya Uzun Dinlenmeden sonra değiştirilebilen seçenek seç. Dev Katili: tur başına bir kez Can Puanı eksilmiş yaratığa silah isabeti +1d8 hasar verir. Sürü Kıran: turunda bir kez silahla saldırdığında ilk hedefin 5 fit yakınında, erişimindeki ve bu tur saldırmadığın farklı bir yaratığa saldır."
+      },
+      "Defensive Tactics": {
+        "name": "Savunma Taktikleri",
+        "description": "Kısa veya Uzun Dinlenmeden sonra değiştirilebilen seçenek seç. Sürüden Kaçış: sana karşı Fırsat Saldırıları Dezavantajlıdır. Çoklu Saldırı Savunması: bir yaratık sana isabet ettikten sonra aynı turdaki diğer saldırıları Dezavantajlıdır."
+      },
+      "Superior Hunter's Prey": {
+        "name": "Üstün Avcı Avı",
+        "description": "Tur başına bir kez Avcı İşaretiyle işaretli yaratığa hasar verdiğinde, büyünün ek hasarını işaretlinin 30 fit içindeki görebildiğin farklı bir yaratığa ver."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Üstün Avcı Savunması",
+        "description": "Hasar aldığında Tepki kullanarak mevcut turun sonuna kadar o hasara ve aynı türdeki diğer hasarlara Direnç kazan."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Hızlı Eller",
+        "description": "Bonus Eylemle Hırsız Aletleriyle kilit açma veya tuzak etkisizleştirme ya da cep karıştırma için Çeviklik (El Çabukluğu) kontrolü yap; Kullan eylemi yap; ya da bunu gerektiren büyülü eşya için Büyü eylemi yap."
+      },
+      "Second-Story Work": {
+        "name": "İkinci Kat Çalışması",
+        "description": "Tırmanma Hızın Hızına eşittir ve atlama mesafesi için Güç yerine Çeviklik kullanabilirsin."
+      },
+      "Supreme Sneak": {
+        "name": "Üstün Gizlilik",
+        "description": "Sinsi Saldırıyı Kurnaz Vuruş seçeneği olarak kazan (maliyet 1d6). Saklanmadan Gelen Görünmezlik sırasında saldırırsan, turu Dörtte Üç veya Tam Siper ardında bitirdiğinde Görünmez kalırsın."
+      },
+      "Use Magic Device": {
+        "name": "Büyülü Cihaz Kullanımı",
+        "description": "Dört büyülü eşyaya uyumlanabilirsin. Eşya yükü harcadığında 1d6 at; 6 gelirse yük harcanmaz. Her Büyü Tomarını Zekâyı büyü yapma niteliği olarak kullanarak kullanabilirsin; seviye 1 üstü büyüde önce SG 10 + büyü seviyesi Zekâ (Gizem) kontrolünde başarılı ol, yoksa tomar dağılır."
+      },
+      "Thief's Reflexes": {
+        "name": "Hırsız Refleksleri",
+        "description": "Çatışmanın ilk raundunda normal İnisiyatifinde ve İnisiyatifin eksi 10'da iki tur yap."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "Draconic Resilience": {
+        "name": "Ejderha Dayanıklılığı",
+        "description": "Azami Can Puanın Büyücü seviyesi 3'te 3, sonraki her Büyücü seviyesinde 1 artar. Zırhsızken temel Zırh Sınıfın 10 + Çeviklik değiştiricisi + Karizma değiştiricisidir."
+      },
+      "Draconic Spells": {
+        "name": "Ejderha Büyüleri",
+        "description": "Her zaman hazır: seviye 3 Kendini Değiştir, Renkli Küre, Emir, Ejderha Nefesi; seviye 5 Korku, Uçuş; seviye 7 Gizemli Göz, Canavarı Büyüle; seviye 9 Efsane Bilgisi, Ejderha Çağır."
+      },
+      "Elemental Affinity": {
+        "name": "Elemental Yakınlık",
+        "description": "Asit, Soğuk, Ateş, Yıldırım veya Zehir seç. Bu hasar türüne Direncin olur ve o türde hasar veren büyünün bir hasar atışına Karizma değiştiricini ekleyebilirsin."
+      },
+      "Dragon Wings": {
+        "name": "Ejderha Kanatları",
+        "description": "Bonus Eylemle kanatlar ve 1 saatliğine veya kaldırana kadar 60 fit Uçuş Hızı kazan. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için 3 Büyücülük Puanı harca."
+      },
+      "Dragon Companion": {
+        "name": "Ejderha Yoldaş",
+        "description": "Ejderha Çağır büyüsünü Maddi bileşeni olmadan ve Uzun Dinlenme başına bir kez yuvasız yap. Yaparken Konsantrasyon şartını kaldırabilirsin; bu kullanım 1 dakika sürer."
+      }
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "Dark One's Blessing": {
+        "name": "Karanlık Efendinin Kutsaması",
+        "description": "Bir düşmanı 0 Can Puanına düşürdüğünde Karizma değiştiricin + Warlock seviyen kadar Geçici Can Puanı kazan (en az 1). 10 fit içindeki düşmanı başka biri 0'a düşürürse de kazanırsın."
+      },
+      "Fiend Spells": {
+        "name": "İfrit Büyüleri",
+        "description": "Her zaman hazır: seviye 3 Yanan Eller, Emir, Kavuran Işın, Öneri; seviye 5 Ateş Topu, Kokuşmuş Bulut; seviye 7 Ateş Kalkanı, Ateş Duvarı; seviye 9 Geas, Böcek Sürüsü."
+      },
+      "Dark One's Own Luck": {
+        "name": "Karanlık Efendinin Şansı",
+        "description": "Nitelik kontrolü veya kurtarma atışını gördükten fakat etkilerinden önce atışa 1d10 ekle. Uzun Dinlenme başına Karizma değiştiricin kadar (en az bir), atış başına en fazla bir kez."
+      },
+      "Fiendish Resilience": {
+        "name": "İfrit Dayanıklılığı",
+        "description": "Kısa veya Uzun Dinlenmeden sonra Kuvvet dışındaki bir hasar türü seç. Bu özellikle başka tür seçene kadar ona Direncin var."
+      },
+      "Hurl Through Hell": {
+        "name": "Cehenneme Fırlat",
+        "description": "Tur başına bir kez saldırı atışıyla isabetten sonra hedef büyü kurtarma SG'ne karşı Karizma kurtarma atışı yapar. Başarısızsa kaybolur, sonraki turunun sonuna kadar Etkisiz olur ve eski ya da en yakın boş alana döner; İfrit değilse 8d10 Psişik hasar alır. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için Pakt Büyüsü yuvası harca."
+      }
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "Evocation Savant": {
+        "name": "Çağırma Ustası",
+        "description": "Büyü kitabına ücretsiz iki seviye 1 veya 2 Büyücü Çağırma büyüsü ekle. Bu sınıfta yeni yuva seviyesine eriştiğinde yapabildiğin seviyede bir Büyücü Çağırma büyüsünü ücretsiz ekle."
+      },
+      "Potent Cantrip": {
+        "name": "Güçlü Basit Büyü",
+        "description": "Hasar veren basit büyün saldırıda ıskalarsa veya hedef kurtarma atışında başarılı olursa hedef yine de büyü hasarının yarısını alır, başka etkilerini almaz."
+      },
+      "Sculpt Spells": {
+        "name": "Büyüleri Şekillendir",
+        "description": "Görebildiğin yaratıkları etkileyen Çağırma büyüsü yaptığında en fazla 1 + büyü seviyesi kadarını seç. Kurtarma atışlarında otomatik başarılı olur ve başarı normalde hasarı yarıya indirecekse hiç hasar almazlar."
+      },
+      "Empowered Evocation": {
+        "name": "Güçlendirilmiş Çağırma",
+        "description": "Yaptığın Büyücü Çağırma büyüsünün bir hasar atışına Zekâ değiştiricini ekle."
+      },
+      "Overchannel": {
+        "name": "Aşırı Kanalize Et",
+        "description": "Seviye 1–5 yuvasıyla hasar veren Büyücü büyüsü yaptığında yapıldığı turdaki hasarı azami kıl. Uzun Dinlenmeden sonraki ilk kullanım güvenlidir; sonrakiler sana yuva seviyesi başına 2d12 Nekrotik hasar verir, sonraki her ek kullanım için seviye başına 1d12 daha artar. Hasar Direnç ve Bağışıklığı yok sayar."
+      }
+    }
+  }
+}

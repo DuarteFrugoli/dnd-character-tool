@@ -1,0 +1,29 @@
+{
+  "Dragonborn": {
+    "name": "ドラゴンボーン"
+  },
+  "Dwarf": {
+    "name": "ドワーフ"
+  },
+  "Elf": {
+    "name": "エルフ"
+  },
+  "Gnome": {
+    "name": "ノーム"
+  },
+  "Goliath": {
+    "name": "ゴライアス"
+  },
+  "Halfling": {
+    "name": "ハーフリング"
+  },
+  "Human": {
+    "name": "人間"
+  },
+  "Orc": {
+    "name": "オーク"
+  },
+  "Tiefling": {
+    "name": "ティーフリング"
+  }
+}

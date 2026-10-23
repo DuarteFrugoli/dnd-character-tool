@@ -1,0 +1,113 @@
+{
+  "Alchemist's Supplies": {
+    "name": "연금술사의 보급품"
+  },
+  "Brewer's Supplies": {
+    "name": "양조가의 도구"
+  },
+  "Calligrapher's Supplies": {
+    "name": "서예가의 용품"
+  },
+  "Carpenter's Tools": {
+    "name": "목수의 도구"
+  },
+  "Cartographer's Tools": {
+    "name": "지도 제작자의 도구"
+  },
+  "Cobbler's Tools": {
+    "name": "구두장이의 도구"
+  },
+  "Cook's Utensils": {
+    "name": "요리사의 도구"
+  },
+  "Glassblower's Tools": {
+    "name": "유리공의 도구"
+  },
+  "Jeweler's Tools": {
+    "name": "보석상 도구"
+  },
+  "Leatherworker's Tools": {
+    "name": "가죽세공인의 도구"
+  },
+  "Mason's Tools": {
+    "name": "석공의 도구"
+  },
+  "Painter's Supplies": {
+    "name": "화가의 용품"
+  },
+  "Potter's Tools": {
+    "name": "도공의 도구"
+  },
+  "Smith's Tools": {
+    "name": "대장장이의 도구"
+  },
+  "Tinker's Tools": {
+    "name": "땜장이의 도구"
+  },
+  "Weaver's Tools": {
+    "name": "직조공의 도구"
+  },
+  "Woodcarver's Tools": {
+    "name": "목각가의 도구"
+  },
+  "Disguise Kit": {
+    "name": "변장 키트"
+  },
+  "Forgery Kit": {
+    "name": "위조 키트"
+  },
+  "Dice": {
+    "name": "주사위"
+  },
+  "Dragonchess": {
+    "name": "드래곤 체스"
+  },
+  "Playing Cards": {
+    "name": "카드패"
+  },
+  "Three-Dragon Ante": {
+    "name": "쓰리 드래곤 앤티"
+  },
+  "Herbalism Kit": {
+    "name": "약초학 키트"
+  },
+  "Bagpipes": {
+    "name": "백파이프"
+  },
+  "Drum": {
+    "name": "북"
+  },
+  "Dulcimer": {
+    "name": "덜시머"
+  },
+  "Flute": {
+    "name": "플루트"
+  },
+  "Horn": {
+    "name": "뿔"
+  },
+  "Lute": {
+    "name": "류트"
+  },
+  "Lyre": {
+    "name": "리라"
+  },
+  "Pan Flute": {
+    "name": "팬 플루트"
+  },
+  "Shawm": {
+    "name": "숌"
+  },
+  "Viol": {
+    "name": "비올"
+  },
+  "Navigator's Tools": {
+    "name": "항해 도구"
+  },
+  "Poisoner's Kit": {
+    "name": "독살자 키트"
+  },
+  "Thieves' Tools": {
+    "name": "도둑 도구"
+  }
+}

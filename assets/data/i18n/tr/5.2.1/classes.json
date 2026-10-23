@@ -1,0 +1,50 @@
+{
+  "Barbarian": {
+    "name": "Barbar",
+    "subclassFeatureName": "Barbar Alt Sınıfı"
+  },
+  "Bard": {
+    "name": "Ozan",
+    "subclassFeatureName": "Ozan Alt Sınıfı"
+  },
+  "Cleric": {
+    "name": "Rahip",
+    "subclassFeatureName": "Rahip Alt Sınıfı"
+  },
+  "Druid": {
+    "name": "Druid",
+    "subclassFeatureName": "Druid Alt Sınıfı"
+  },
+  "Fighter": {
+    "name": "Savaşçı",
+    "subclassFeatureName": "Savaşçı Alt Sınıfı"
+  },
+  "Monk": {
+    "name": "Keşiş",
+    "subclassFeatureName": "Keşiş Alt Sınıfı"
+  },
+  "Paladin": {
+    "name": "Paladin",
+    "subclassFeatureName": "Paladin Alt Sınıfı"
+  },
+  "Ranger": {
+    "name": "Korucu",
+    "subclassFeatureName": "Korucu Alt Sınıfı"
+  },
+  "Rogue": {
+    "name": "Haydut",
+    "subclassFeatureName": "Haydut Alt Sınıfı"
+  },
+  "Sorcerer": {
+    "name": "Doğuştan Büyücü",
+    "subclassFeatureName": "Doğuştan Büyücü Alt Sınıfı"
+  },
+  "Warlock": {
+    "name": "Pakt Büyücüsü",
+    "subclassFeatureName": "Pakt Büyücüsü Alt Sınıfı"
+  },
+  "Wizard": {
+    "name": "Büyücü",
+    "subclassFeatureName": "Büyücü Alt Sınıfı"
+  }
+}

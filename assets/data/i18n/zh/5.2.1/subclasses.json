@@ -1,0 +1,74 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "狂战士之道",
+      "description": "将狂怒化为不息的攻势。鲁莽攻击可以增加狂暴伤害；后续特性会强化你的意志，让你反击并使敌人心生恐惧。"
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "逸闻学院",
+      "description": "汇集多种传统的知识。获得额外技能，以尖刻话语干扰敌人，并发现吟游诗人法术列表之外的法术。"
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "name": "生命领域",
+      "description": "引导神圣力量保护并恢复生命。此领域提供治疗法术、强化治疗效果，并帮助你保全身处险境的盟友。"
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "大地结社",
+      "description": "从选定的地貌汲取魔法。长休后可更换你的土地，获得对应的结社法术；之后还会获得源于自然的防护与庇护。"
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "冠军勇士",
+      "description": "在战斗中追求体能的极致。扩大重击范围，并提升运动能力、战斗风格选项与坚韧程度。"
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "name": "散打宗武僧",
+      "description": "精通徒手战斗。你的连击能够干扰敌人；后续特性会改善恢复能力、机动性与精准打击。"
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "奉献誓言",
+      "description": "维护正义并保护弱者。以引导神力强化武器，并获得誓言法术及防护灵光。"
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "猎人",
+      "description": "研究被标记的猎物并选择狩猎技巧。了解目标的防御，调整攻防方式，强化对被标记敌人的攻击。"
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "窃贼",
+      "description": "擅长潜入、探索和运用宝物。更快地操作物品并提升机动性；之后还能更好地使用魔法物品。"
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "name": "龙族魔法",
+      "description": "展现与巨龙相连的魔法。获得龙族的坚韧与法术，之后发展更强的元素力量和龙族能力。"
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "name": "邪魔宗主",
+      "description": "从下层位面的强大邪魔处汲取力量。获得宗主法术、临时生命力、防护及其他炼狱馈赠。"
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "name": "塑能师",
+      "description": "专精塑能魔法。让破坏性法术避开盟友，并提高塑能法术的伤害。"
+    }
+  }
+}

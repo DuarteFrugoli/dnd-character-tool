@@ -1,0 +1,282 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Frénésie",
+        "description": "En Rage, si vous utilisez Attaque téméraire, la première cible touchée pendant votre tour par une attaque fondée sur la Force subit des dégâts supplémentaires : autant de d6 que votre bonus de dégâts de Rage. Le type de dégâts est celui de l'attaque."
+      },
+      "Mindless Rage": {
+        "name": "Rage insensée",
+        "description": "En Rage, vous êtes immunisé aux états Charmé et Effrayé. Entrer en Rage met fin à l'un ou l'autre de ces états sur vous."
+      },
+      "Retaliation": {
+        "name": "Représailles",
+        "description": "Quand une créature à 5 pieds ou moins vous blesse, vous pouvez utiliser votre Réaction pour lui porter une attaque de corps à corps avec une arme ou une Frappe à mains nues."
+      },
+      "Intimidating Presence": {
+        "name": "Présence intimidante",
+        "description": "Par une Action bonus, les créatures de votre choix dans une Émanation de 30 pieds effectuent une sauvegarde de Sagesse (DD 8 + modificateur de Force + bonus de maîtrise) ou sont Effrayées pendant 1 minute ; elles la répètent à la fin de chacun de leurs tours. Une fois par Repos long, ou dépensez une utilisation de Rage pour retrouver ce pouvoir."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Maîtrises supplémentaires",
+        "description": "Gagnez la maîtrise de trois compétences de votre choix."
+      },
+      "Cutting Words": {
+        "name": "Mots cinglants",
+        "description": "Quand une créature visible à 60 pieds ou moins lance des dégâts ou réussit un test de caractéristique ou jet d'attaque, utilisez votre Réaction et une Inspiration bardique. Soustrayez le résultat de votre dé d'Inspiration bardique, pouvant transformer la réussite en échec."
+      },
+      "Magical Discoveries": {
+        "name": "Découvertes magiques",
+        "description": "Choisissez deux sorts mineurs ou sorts des listes du Clerc, du Druide ou du Magicien, de niveaux que vous pouvez lancer. Ils sont toujours préparés. À chaque niveau de Barde, vous pouvez en remplacer un par un autre sort admissible."
+      },
+      "Peerless Skill": {
+        "name": "Talent incomparable",
+        "description": "Quand vous ratez un test de caractéristique ou jet d'attaque, dépensez une Inspiration bardique et ajoutez son dé au d20 ; vous pourriez réussir. Si vous échouez encore, l'utilisation n'est pas dépensée."
+      }
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "Disciple of Life": {
+        "name": "Disciple de la vie",
+        "description": "Quand un de vos sorts lancé avec un emplacement rend des points de vie, la cible récupère 2 + niveau de l'emplacement points de vie supplémentaires pendant le tour de lancement."
+      },
+      "Life Domain Spells": {
+        "name": "Sorts du Domaine de la Vie",
+        "description": "Toujours préparés : niveau 3 Aide, Bénédiction, Soins, Restauration partielle ; niveau 5 Mot de guérison de groupe, Rappel à la vie ; niveau 7 Aura de vie, Protection contre la mort ; niveau 9 Restauration suprême, Soins de groupe."
+      },
+      "Preserve Life": {
+        "name": "Préservation de la vie",
+        "description": "Par l'action Magie, dépensez Canalisation d'énergie divine pour restaurer un total de points de vie égal à 5 fois votre niveau de Clerc, réparti entre des créatures Ensanglantées à 30 pieds ou moins, vous compris. Aucune ne peut ainsi dépasser la moitié de ses points de vie maximums."
+      },
+      "Blessed Healer": {
+        "name": "Guérisseur béni",
+        "description": "Après avoir lancé avec un emplacement un sort qui rend des points de vie à une autre personne, récupérez 2 + niveau de l'emplacement points de vie."
+      },
+      "Supreme Healing": {
+        "name": "Guérison suprême",
+        "description": "Si un sort ou une Canalisation d'énergie divine ferait lancer des dés pour rendre des points de vie, utilisez le maximum de chaque dé de soin."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Circle of the Land Spells": {
+        "name": "Sorts du Cercle de la Terre",
+        "description": "Après chaque Repos long, choisissez Terre aride, polaire, tempérée ou tropicale ; les sorts de cette terre de votre niveau ou inférieur sont toujours préparés. Aride : niveau 3 Flou, Mains brûlantes, Trait de feu ; 5 Boule de feu ; 7 Flétrissement ; 9 Mur de pierre. Polaire : 3 Nappe de brouillard, Immobilisation de personne, Rayon de givre ; 5 Tempête de neige ; 7 Tempête de grêle ; 9 Cône de froid. Tempérée : 3 Pas brumeux, Poigne électrique, Sommeil ; 5 Éclair ; 7 Liberté de mouvement ; 9 Passage par les arbres. Tropicale : 3 Aspersion acide, Rayon affaiblissant, Toile d'araignée ; 5 Nuage nauséabond ; 7 Métamorphose ; 9 Nuée d'insectes."
+      },
+      "Land's Aid": {
+        "name": "Aide de la terre",
+        "description": "Par l'action Magie, dépensez Forme sauvage pour créer une Sphère de 10 pieds de rayon à 60 pieds ou moins. Les créatures choisies dans la zone effectuent une sauvegarde de Constitution : 2d6 dégâts Nécrotiques en cas d'échec, moitié en cas de réussite ; une créature dans la zone récupère aussi 2d6 points de vie. Les deux valeurs deviennent 3d6 au niveau 10 de Druide et 4d6 au niveau 14."
+      },
+      "Natural Recovery": {
+        "name": "Récupération naturelle",
+        "description": "Une fois par Repos long, lancez sans emplacement un sort du Cercle préparé de niveau 1 ou plus. Également une fois par Repos long, après un Repos court, récupérez des emplacements dépensés dont les niveaux cumulés atteignent au plus la moitié de votre niveau de Druide (arrondie au supérieur) ; aucun ne peut être de niveau 6 ou plus."
+      },
+      "Nature's Ward": {
+        "name": "Protection de la nature",
+        "description": "Vous êtes immunisé à l'état Empoisonné et résistez à un type de dégâts selon votre terre actuelle : aride, Feu ; polaire, Froid ; tempérée, Foudre ; tropicale, Poison."
+      },
+      "Nature's Sanctuary": {
+        "name": "Sanctuaire de la nature",
+        "description": "Par l'action Magie, dépensez Forme sauvage pour créer au sol un Cube de 15 pieds à 120 pieds ou moins pendant 1 minute ; il prend fin si vous êtes Neutralisé ou mourez. Vous et vos alliés à l'intérieur bénéficiez d'un Abri partiel ; les alliés gagnent aussi votre Résistance de Protection de la nature. Par une Action bonus, déplacez le Cube de 60 pieds au maximum vers le sol à 120 pieds ou moins."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Critique amélioré",
+        "description": "Vos jets d'attaque avec des armes et vos Frappes à mains nues réalisent un coup critique sur 19 ou 20 au d20."
+      },
+      "Remarkable Athlete": {
+        "name": "Athlète remarquable",
+        "description": "Vous avez l'Avantage aux jets d'Initiative et aux tests de Force (Athlétisme). Après un coup critique, vous pouvez vous déplacer jusqu'à la moitié de votre Vitesse sans provoquer d'attaques d'opportunité."
+      },
+      "Additional Fighting Style": {
+        "name": "Style de combat supplémentaire",
+        "description": "Gagnez un autre don de Style de combat de votre choix."
+      },
+      "Heroic Warrior": {
+        "name": "Guerrier héroïque",
+        "description": "Pendant un combat, si vous commencez votre tour sans Inspiration héroïque, vous pouvez vous en accorder une."
+      },
+      "Superior Critical": {
+        "name": "Critique supérieur",
+        "description": "Vos jets d'attaque avec des armes et vos Frappes à mains nues réalisent désormais un coup critique sur 18 à 20 au d20."
+      },
+      "Survivor": {
+        "name": "Survivant",
+        "description": "Vous avez l'Avantage aux sauvegardes contre la mort ; un résultat de 18 à 20 compte comme un 20. Au début de votre tour, si vous êtes Ensanglanté et avez au moins 1 point de vie, récupérez 5 + modificateur de Constitution points de vie."
+      }
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Technique de la main ouverte",
+        "description": "Quand une attaque de Déluge de coups touche, choisissez : empêcher la cible de faire des attaques d'opportunité jusqu'à son prochain tour ; la repousser de 15 pieds au plus si elle rate une sauvegarde de Force ; ou la mettre À terre si elle rate une sauvegarde de Dextérité."
+      },
+      "Wholeness of Body": {
+        "name": "Plénitude du corps",
+        "description": "Par une Action bonus, récupérez des points de vie égaux à un jet de dé d'Arts martiaux + modificateur de Sagesse (minimum 1). Utilisations égales à votre modificateur de Sagesse (minimum une) par Repos long."
+      },
+      "Fleet Step": {
+        "name": "Pas rapide",
+        "description": "Quand vous effectuez une Action bonus autre que Pas du vent, vous pouvez aussi utiliser Pas du vent immédiatement après."
+      },
+      "Quivering Palm": {
+        "name": "Paume vibratoire",
+        "description": "Quand une Frappe à mains nues touche, dépensez 4 points de Focus pour placer des vibrations durant autant de jours que votre niveau de Moine. Utilisez une action, ou renoncez à une attaque de l'action Attaquer, pour les terminer sur le même plan ; la cible effectue une sauvegarde de Constitution et subit 10d12 dégâts de Force en cas d'échec, moitié en cas de réussite. Une seule cible peut être affectée."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Oath of Devotion Spells": {
+        "name": "Sorts du Serment de Dévotion",
+        "description": "Toujours préparés : niveau 3 Protection contre le Mal et le Bien, Bouclier de la foi ; niveau 5 Aide, Zone de vérité ; niveau 9 Lueur d'espoir, Dissipation de la magie ; niveau 13 Liberté de mouvement, Gardien de la foi ; niveau 17 Communion, Colonne de flamme."
+      },
+      "Sacred Weapon": {
+        "name": "Arme sacrée",
+        "description": "Lors de l'action Attaquer, dépensez Canalisation d'énergie divine pour renforcer pendant 10 minutes une arme de corps à corps tenue. Ajoutez votre modificateur de Charisme (minimum +1) aux jets d'attaque ; chaque coup peut infliger son type de dégâts normal ou Radiant. Elle produit une Lumière vive sur 20 pieds et faible sur 20 pieds de plus ; l'effet cesse si vous ne la portez plus."
+      },
+      "Aura of Devotion": {
+        "name": "Aura de dévotion",
+        "description": "Vous et vos alliés dans votre Aura de protection êtes immunisés à Charmé ; cet état n'affecte pas un allié déjà Charmé tant qu'il reste dans l'aura."
+      },
+      "Smite of Protection": {
+        "name": "Châtiment protecteur",
+        "description": "Chaque fois que vous lancez Châtiment divin, vous et vos alliés dans votre Aura de protection gagnez un Abri partiel jusqu'au début de votre prochain tour."
+      },
+      "Holy Nimbus": {
+        "name": "Halo sacré",
+        "description": "Par une Action bonus, renforcez votre Aura de protection pendant 10 minutes. Vous avez l'Avantage aux sauvegardes imposées par des Fiélons ou Morts-vivants ; les ennemis débutant leur tour dans l'aura subissent des dégâts Radiants égaux à modificateur de Charisme + bonus de maîtrise ; sa Lumière vive est solaire. Une fois par Repos long, ou dépensez un emplacement de niveau 5 pour récupérer l'utilisation."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Lore": {
+        "name": "Savoir du chasseur",
+        "description": "Tant qu'une créature est marquée par votre Marque du chasseur, vous apprenez si elle a des Immunités, Résistances ou Vulnérabilités aux dégâts, et lesquelles."
+      },
+      "Hunter's Prey": {
+        "name": "Proie du chasseur",
+        "description": "Choisissez une option, modifiable après un Repos court ou long. Tueur de colosses : une fois par tour, un coup d'arme sur une créature ayant perdu des points de vie inflige +1d8 dégâts. Briseur de hordes : une fois pendant votre tour en attaquant avec une arme, attaquez une autre créature à 5 pieds ou moins de la cible initiale, à portée, non encore attaquée pendant ce tour."
+      },
+      "Defensive Tactics": {
+        "name": "Tactiques défensives",
+        "description": "Choisissez une option, modifiable après un Repos court ou long. Échapper à la horde : les attaques d'opportunité contre vous ont le Désavantage. Défense contre les attaques multiples : après qu'une créature vous touche, ses autres jets d'attaque contre vous pendant ce tour ont le Désavantage."
+      },
+      "Superior Hunter's Prey": {
+        "name": "Proie supérieure du chasseur",
+        "description": "Une fois par tour, quand vous blessez une créature marquée par Marque du chasseur, infligez les dégâts supplémentaires du sort à une autre créature visible à 30 pieds ou moins de la créature marquée."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Défense supérieure du chasseur",
+        "description": "Lorsque vous subissez des dégâts, utilisez votre Réaction pour gagner la Résistance à ces dégâts et aux autres dégâts du même type jusqu'à la fin du tour en cours."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Mains rapides",
+        "description": "Par une Action bonus, faites un test de Dextérité (Escamotage) pour crocheter une serrure ou désamorcer un piège avec des Outils de voleur, ou faire les poches ; effectuez l'action Utiliser ; ou l'action Magie pour employer un objet magique qui la requiert."
+      },
+      "Second-Story Work": {
+        "name": "Travail à l'étage",
+        "description": "Votre Vitesse d'escalade égale votre Vitesse, et vous pouvez utiliser Dextérité plutôt que Force pour déterminer la distance de saut."
+      },
+      "Supreme Sneak": {
+        "name": "Discrétion suprême",
+        "description": "Gagnez Attaque furtive comme option de Coup rusé (coût 1d6). En attaquant tout en étant Invisible grâce à Se cacher, vous gardez cet état si vous terminez le tour derrière un Abri aux trois quarts ou total."
+      },
+      "Use Magic Device": {
+        "name": "Utilisation d'objet magique",
+        "description": "Vous pouvez vous harmoniser avec quatre objets magiques. Quand vous dépensez des charges d'objet, lancez 1d6 ; sur un 6, aucune charge n'est dépensée. Vous pouvez utiliser tout Parchemin de sort avec Intelligence comme caractéristique d'incantation ; pour un sort supérieur au niveau 1, réussissez d'abord Intelligence (Arcanes) (DD 10 + niveau du sort), sinon le parchemin se désintègre."
+      },
+      "Thief's Reflexes": {
+        "name": "Réflexes de voleur",
+        "description": "Jouez deux tours au premier round du combat, à votre Initiative normale et à votre Initiative moins 10."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "Draconic Resilience": {
+        "name": "Résilience draconique",
+        "description": "Votre maximum de points de vie augmente de 3 au niveau 3 d'Ensorceleur puis de 1 à chaque niveau ultérieur d'Ensorceleur. Sans armure, votre Classe d'armure de base est 10 + modificateur de Dextérité + modificateur de Charisme."
+      },
+      "Draconic Spells": {
+        "name": "Sorts draconiques",
+        "description": "Toujours préparés : niveau 3 Modification d'apparence, Orbe chromatique, Injonction, Souffle du dragon ; niveau 5 Terreur, Vol ; niveau 7 Œil magique, Charme-monstre ; niveau 9 Légende, Invocation de dragon."
+      },
+      "Elemental Affinity": {
+        "name": "Affinité élémentaire",
+        "description": "Choisissez Acide, Froid, Feu, Foudre ou Poison. Vous résistez à ce type de dégâts et pouvez ajouter votre modificateur de Charisme à un jet de dégâts d'un sort de ce type."
+      },
+      "Dragon Wings": {
+        "name": "Ailes de dragon",
+        "description": "Par une Action bonus, gagnez des ailes et une Vitesse de vol de 60 pieds pendant 1 heure ou jusqu'à leur révocation. Une fois par Repos long, ou dépensez 3 points de Sorcellerie pour récupérer l'utilisation."
+      },
+      "Dragon Companion": {
+        "name": "Compagnon dragon",
+        "description": "Lancez Invocation de dragon sans sa composante Matérielle et une fois sans emplacement par Repos long. Lors du lancement, vous pouvez supprimer l'exigence de Concentration ; cette incantation dure 1 minute."
+      }
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "Dark One's Blessing": {
+        "name": "Bénédiction du Ténébreux",
+        "description": "Quand vous réduisez un ennemi à 0 point de vie, gagnez des points de vie temporaires égaux à votre modificateur de Charisme + niveau d'Occultiste (minimum 1). Vous les gagnez aussi si une autre personne réduit à 0 point de vie un ennemi à 10 pieds ou moins de vous."
+      },
+      "Fiend Spells": {
+        "name": "Sorts du Fiélon",
+        "description": "Toujours préparés : niveau 3 Mains brûlantes, Injonction, Rayon ardent, Suggestion ; niveau 5 Boule de feu, Nuage nauséabond ; niveau 7 Bouclier de feu, Mur de feu ; niveau 9 Quête, Nuée d'insectes."
+      },
+      "Dark One's Own Luck": {
+        "name": "Chance du Ténébreux",
+        "description": "Après avoir vu un test de caractéristique ou une sauvegarde, mais avant ses effets, ajoutez 1d10 au jet. Utilisations égales à votre modificateur de Charisme (minimum une) par Repos long, au plus une fois par jet."
+      },
+      "Fiendish Resilience": {
+        "name": "Résilience fiélonne",
+        "description": "Après un Repos court ou long, choisissez un type de dégâts sauf Force. Vous y résistez jusqu'à ce que vous choisissiez un autre type avec ce trait."
+      },
+      "Hurl Through Hell": {
+        "name": "Traversée des enfers",
+        "description": "Une fois par tour après avoir touché une créature avec un jet d'attaque, elle effectue une sauvegarde de Charisme contre le DD de vos sorts. En cas d'échec, elle disparaît, est Neutralisée jusqu'à la fin de votre prochain tour et revient à sa place ou dans l'espace libre le plus proche ; si ce n'est pas un Fiélon, elle subit 8d10 dégâts Psychiques. Une fois par Repos long, ou dépensez un emplacement de Magie du pacte pour récupérer l'utilisation."
+      }
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "Evocation Savant": {
+        "name": "Prodige de l'évocation",
+        "description": "Ajoutez gratuitement à votre grimoire deux sorts d'Évocation de Magicien de niveau 1 ou 2. Chaque fois que cette classe vous donne accès à un nouveau niveau d'emplacement, ajoutez gratuitement un sort d'Évocation de Magicien d'un niveau que vous pouvez lancer."
+      },
+      "Potent Cantrip": {
+        "name": "Sort mineur puissant",
+        "description": "Quand votre sort mineur infligeant des dégâts manque son attaque ou que sa cible réussit sa sauvegarde, elle subit tout de même la moitié des dégâts du sort, mais aucun autre effet."
+      },
+      "Sculpt Spells": {
+        "name": "Façonner les sorts",
+        "description": "Quand vous lancez un sort d'Évocation affectant des créatures visibles, choisissez-en jusqu'à 1 + niveau du sort. Elles réussissent automatiquement leurs sauvegardes et ne subissent aucun dégât si une sauvegarde réussie réduirait normalement les dégâts de moitié."
+      },
+      "Empowered Evocation": {
+        "name": "Évocation renforcée",
+        "description": "Ajoutez votre modificateur d'Intelligence à un jet de dégâts d'un sort d'Évocation de Magicien que vous lancez."
+      },
+      "Overchannel": {
+        "name": "Canalisation suprême",
+        "description": "Quand vous lancez un sort de Magicien infligeant des dégâts avec un emplacement de niveau 1 à 5, maximisez ses dégâts pendant le tour de lancement. Le premier usage après un Repos long est sûr ; les suivants vous infligent 2d12 dégâts Nécrotiques par niveau d'emplacement, plus 1d12 par niveau pour chaque usage supplémentaire avant le prochain Repos long. Ces dégâts ignorent Résistance et Immunité."
+      }
+    }
+  }
+}

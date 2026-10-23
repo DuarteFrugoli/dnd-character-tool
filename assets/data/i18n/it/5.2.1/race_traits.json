@@ -1,0 +1,146 @@
+{
+  "Darkvision": {
+    "name": "Scurovisione",
+    "description": "Vedi nella Luce Fioca entro la gittata del tratto come se fosse Luce Intensa e nell'Oscurità come se fosse Luce Fioca, distinguendo lì solo sfumature di grigio. La gittata è 120 piedi per Nani, Orchi ed Elfi drow e 60 piedi per le altre specie indicate."
+  },
+  "Draconic Ancestry": {
+    "name": "Ascendenza Draconica",
+    "description": "Scegli un antenato drago. Il suo tipo di danno determina i danni della tua Arma a Soffio e la tua Resistenza ai Danni."
+  },
+  "Breath Weapon": {
+    "name": "Arma a Soffio",
+    "description": "Quando effettui l'azione Attaccare, sostituisci un attacco con un Cono di 15 piedi o una Linea lunga 30 piedi e larga 5 piedi. Le creature nell'area effettuano un tiro salvezza su Destrezza contro CD 8 + il tuo modificatore di Costituzione + Bonus di Competenza; subiscono danni del tipo della tua ascendenza se falliscono o la metà se riescono. I danni sono 1d10, aumentano a 2d10 al livello 5 del personaggio, 3d10 all'11 e 4d10 al 17. Utilizzi pari al tuo Bonus di Competenza per Riposo Lungo."
+  },
+  "Damage Resistance": {
+    "name": "Resistenza ai Danni",
+    "description": "Hai Resistenza al tipo di danno conferito dalla tua Ascendenza Draconica."
+  },
+  "Draconic Flight": {
+    "name": "Volo Draconico",
+    "description": "Dal livello 5 del personaggio, usa un'Azione Bonus per ottenere ali spettrali e Velocità di Volare pari alla tua Velocità per 10 minuti. Terminano prima se le congedi o diventi Incapacitato. Una volta per Riposo Lungo."
+  },
+  "Dwarven Resilience": {
+    "name": "Resilienza Nanica",
+    "description": "Hai Resistenza ai danni da Veleno e Vantaggio ai tiri salvezza per evitare o terminare la condizione Avvelenato."
+  },
+  "Dwarven Toughness": {
+    "name": "Robustezza Nanica",
+    "description": "Il tuo massimo di Punti Ferita aumenta di 1 ora e di 1 ogni volta che ottieni un livello."
+  },
+  "Stonecunning": {
+    "name": "Conoscenza della Pietra",
+    "description": "Mentre tocchi la pietra o vi stai sopra, usa un'Azione Bonus per ottenere percezione tellurica entro 60 piedi per 10 minuti. Utilizzi pari al tuo Bonus di Competenza per Riposo Lungo."
+  },
+  "Elven Lineage": {
+    "name": "Lignaggio Elfico",
+    "description": "Scegli Drow, Elfo Alto o Elfo dei Boschi. Ottieni il suo beneficio iniziale e i suoi incantesimi indicati ai livelli 3 e 5 del personaggio. Ogni incantesimo di livello è sempre preparato e può essere lanciato una volta senza slot per Riposo Lungo o con uno slot adatto. Scegli Intelligenza, Saggezza o Carisma come caratteristica da incantatore."
+  },
+  "Fey Ancestry": {
+    "name": "Ascendenza Fatata",
+    "description": "Hai Vantaggio ai tiri salvezza per evitare o terminare la condizione Affascinato."
+  },
+  "Keen Senses": {
+    "name": "Sensi Acuti",
+    "description": "Ottieni competenza in Intuizione, Percezione o Sopravvivenza."
+  },
+  "Trance": {
+    "name": "Trance",
+    "description": "Non hai bisogno di dormire e la magia non può addormentarti. Una trance cosciente di 4 ore può completare il tuo Riposo Lungo."
+  },
+  "Gnomish Cunning": {
+    "name": "Astuzia Gnomesca",
+    "description": "Hai Vantaggio ai tiri salvezza su Intelligenza, Saggezza e Carisma."
+  },
+  "Gnomish Lineage": {
+    "name": "Lignaggio Gnomesco",
+    "description": "Scegli Gnomo delle Foreste o delle Rocce e Intelligenza, Saggezza o Carisma come caratteristica da incantatore per gli incantesimi del tratto. Gli Gnomi delle Foreste conoscono Illusione Minore e preparano sempre Parlare con gli Animali, che possono lanciare senza slot un numero di volte pari al Bonus di Competenza per Riposo Lungo. Gli Gnomi delle Rocce conoscono Riparare e Prestidigitazione e possono creare dispositivi meccanici."
+  },
+  "Forest Gnome Speak with Animals": {
+    "name": "Parlare con gli Animali dello Gnomo delle Foreste",
+    "description": "Hai sempre preparato Parlare con gli Animali. Lancialo senza slot un numero di volte pari al tuo Bonus di Competenza per Riposo Lungo, oppure usando uno slot incantesimo."
+  },
+  "Clockwork Device": {
+    "name": "Dispositivo Meccanico",
+    "description": "Dedica 10 minuti a lanciare Prestidigitazione per creare un dispositivo Minuscolo con CA 5 e 1 PF che produca un effetto scelto dell'incantesimo quando viene attivato al tocco con un'Azione Bonus. Puoi avere fino a tre dispositivi; ciascuno dura 8 ore o finché non viene smontato al tocco con l'azione Utilizzare."
+  },
+  "Giant Ancestry": {
+    "name": "Ascendenza Gigante",
+    "description": "Scegli un dono dei Giganti. Gli utilizzi del dono scelto sono pari al tuo Bonus di Competenza per Riposo Lungo."
+  },
+  "Cloud's Jaunt": {
+    "name": "Balzo della Nuvola",
+    "description": "Con un'Azione Bonus, teletrasportati fino a 30 piedi in uno spazio libero che puoi vedere."
+  },
+  "Fire's Burn": {
+    "name": "Ustione del Fuoco",
+    "description": "Quando un tiro per colpire colpisce e infligge danni, infliggi 1d10 danni da Fuoco aggiuntivi."
+  },
+  "Frost's Chill": {
+    "name": "Gelo del Freddo",
+    "description": "Quando un tiro per colpire colpisce e infligge danni, infliggi 1d6 danni da Freddo aggiuntivi e riduci la Velocità del bersaglio di 10 piedi fino all'inizio del tuo prossimo turno."
+  },
+  "Hill's Tumble": {
+    "name": "Caduta della Collina",
+    "description": "Quando un tiro per colpire colpisce e danneggia una creatura Grande o più piccola, essa diventa Prona."
+  },
+  "Stone's Endurance": {
+    "name": "Resistenza della Pietra",
+    "description": "Quando subisci danni, usa una Reazione per ridurli di 1d12 più il tuo modificatore di Costituzione."
+  },
+  "Storm's Thunder": {
+    "name": "Tuono della Tempesta",
+    "description": "Quando una creatura entro 60 piedi ti infligge danni, usa una Reazione per infliggerle 1d8 danni da Tuono."
+  },
+  "Large Form": {
+    "name": "Forma Grande",
+    "description": "Dal livello 5 del personaggio, usa un'Azione Bonus per diventare Grande per un massimo di 10 minuti, se lo spazio lo consente. Hai Vantaggio alle prove di Forza e la tua Velocità aumenta di 10 piedi. Una volta per Riposo Lungo."
+  },
+  "Powerful Build": {
+    "name": "Corporatura Possente",
+    "description": "Hai Vantaggio alle prove per terminare la condizione Afferrato e conti come una taglia più grande per la capacità di trasporto."
+  },
+  "Brave": {
+    "name": "Coraggioso",
+    "description": "Hai Vantaggio ai tiri salvezza per evitare o terminare la condizione Spaventato."
+  },
+  "Halfling Nimbleness": {
+    "name": "Agilità Halfling",
+    "description": "Puoi attraversare lo spazio di una creatura più grande di te, ma non fermarti al suo interno."
+  },
+  "Luck": {
+    "name": "Fortunato",
+    "description": "Quando ottieni 1 sul d20 di una Prova di D20, ritiralo e usa il nuovo risultato."
+  },
+  "Naturally Stealthy": {
+    "name": "Furtivo per Natura",
+    "description": "Puoi effettuare l'azione Nascondersi quando sei oscurato soltanto da una creatura almeno una taglia più grande di te."
+  },
+  "Resourceful": {
+    "name": "Intraprendente",
+    "description": "Ottieni Ispirazione Eroica ogni volta che completi un Riposo Lungo."
+  },
+  "Skillful": {
+    "name": "Abile",
+    "description": "Ottieni competenza in un'abilità a tua scelta."
+  },
+  "Versatile": {
+    "name": "Versatile",
+    "description": "Ottieni un talento di Origine a tua scelta."
+  },
+  "Adrenaline Rush": {
+    "name": "Scarica di Adrenalina",
+    "description": "Effettua l'azione Scattare con un'Azione Bonus e ottieni Punti Ferita Temporanei pari al tuo Bonus di Competenza. Utilizzi pari al tuo Bonus di Competenza, recuperati con un Riposo Breve o Lungo."
+  },
+  "Relentless Endurance": {
+    "name": "Tenacia Implacabile",
+    "description": "Quando scendi a 0 Punti Ferita senza morire all'istante, rimani a 1 Punto Ferita invece. Una volta per Riposo Lungo."
+  },
+  "Fiendish Legacy": {
+    "name": "Retaggio Immondo",
+    "description": "Scegli Abissale, Ctonio o Infernale. Ottieni la sua Resistenza e il trucchetto del livello 1 e gli incantesimi indicati ai livelli 3 e 5 del personaggio. Ogni incantesimo di livello è sempre preparato e può essere lanciato una volta senza slot per Riposo Lungo o con uno slot adatto. Scegli Intelligenza, Saggezza o Carisma come caratteristica da incantatore."
+  },
+  "Otherworldly Presence": {
+    "name": "Presenza Ultraterrena",
+    "description": "Conosci il trucchetto Taumaturgia, usando la caratteristica da incantatore scelta per Retaggio Immondo."
+  }
+}

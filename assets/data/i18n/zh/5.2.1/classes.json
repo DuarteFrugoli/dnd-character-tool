@@ -1,0 +1,50 @@
+{
+  "Barbarian": {
+    "name": "野蛮人",
+    "subclassFeatureName": "野蛮人子职业"
+  },
+  "Bard": {
+    "name": "吟游诗人",
+    "subclassFeatureName": "吟游诗人子职业"
+  },
+  "Cleric": {
+    "name": "牧师",
+    "subclassFeatureName": "牧师子职业"
+  },
+  "Druid": {
+    "name": "德鲁伊",
+    "subclassFeatureName": "德鲁伊子职业"
+  },
+  "Fighter": {
+    "name": "战士",
+    "subclassFeatureName": "战士子职业"
+  },
+  "Monk": {
+    "name": "武僧",
+    "subclassFeatureName": "武僧子职业"
+  },
+  "Paladin": {
+    "name": "圣骑士",
+    "subclassFeatureName": "圣骑士子职业"
+  },
+  "Ranger": {
+    "name": "游侠",
+    "subclassFeatureName": "游侠子职业"
+  },
+  "Rogue": {
+    "name": "游荡者",
+    "subclassFeatureName": "游荡者子职业"
+  },
+  "Sorcerer": {
+    "name": "术士",
+    "subclassFeatureName": "术士子职业"
+  },
+  "Warlock": {
+    "name": "邪术师",
+    "subclassFeatureName": "邪术师子职业"
+  },
+  "Wizard": {
+    "name": "法师",
+    "subclassFeatureName": "法师子职业"
+  }
+}

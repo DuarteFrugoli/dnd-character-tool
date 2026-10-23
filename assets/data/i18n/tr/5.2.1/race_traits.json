@@ -1,0 +1,146 @@
+{
+  "Darkvision": {
+    "name": "Karanlık Görüş",
+    "description": "Bu özelliğin menzili içinde Loş Işığı Parlak Işık, Karanlığı Loş Işık gibi görürsün; karanlıkta yalnızca gri tonları ayırt edersin. Menzil Cüceler, Orklar ve Drow Elfleri için 120 fit, listelenen diğer türler için 60 fittir."
+  },
+  "Draconic Ancestry": {
+    "name": "Ejderha Soyu",
+    "description": "Bir ejderha atası seç. Onun hasar türü Nefes Silahının hasarını ve Hasar Direncini belirler."
+  },
+  "Breath Weapon": {
+    "name": "Nefes Silahı",
+    "description": "Saldırı eyleminde bir saldırını 15 fitlik Koni veya 30 fit uzunluğunda, 5 fit genişliğinde Çizgi ile değiştir. Alandaki yaratıklar SG 8 + Dayanıklılık değiştiricin + Yeterlilik Bonusuna karşı Çeviklik kurtarma atışı yapar; başarısızlıkta soyunun türünde hasarın tamamını, başarıda yarısını alır. Hasar 1d10'dur; karakter seviyesi 5'te 2d10, 11'de 3d10 ve 17'de 4d10 olur. Uzun Dinlenme başına kullanım sayısı Yeterlilik Bonusuna eşittir."
+  },
+  "Damage Resistance": {
+    "name": "Hasar Direnci",
+    "description": "Ejderha Soyunun sağladığı hasar türüne karşı Direncin vardır."
+  },
+  "Draconic Flight": {
+    "name": "Ejderha Uçuşu",
+    "description": "Karakter seviyesi 5'ten itibaren Bonus Eylemle hayaletimsi kanatlar ve Hızına eşit Uçuş Hızı kazanırsın; 10 dakika sürer. Kanatları kaldırırsan veya Etkisiz duruma düşersen daha erken biter. Uzun Dinlenme başına bir kez."
+  },
+  "Dwarven Resilience": {
+    "name": "Cüce Dayanıklılığı",
+    "description": "Zehir hasarına karşı Direncin ve Zehirlenmiş durumundan kaçınma veya onu bitirme kurtarma atışlarında Avantajın vardır."
+  },
+  "Dwarven Toughness": {
+    "name": "Cüce Sağlamlığı",
+    "description": "Azami Can Puanın şimdi 1 ve her seviye kazandığında 1 daha artar."
+  },
+  "Stonecunning": {
+    "name": "Taş Bilgisi",
+    "description": "Taşa dokunurken veya üzerinde dururken Bonus Eylemle 10 dakikalığına 60 fitlik titreşim algısı kazan. Uzun Dinlenme başına kullanım sayısı Yeterlilik Bonusuna eşittir."
+  },
+  "Elven Lineage": {
+    "name": "Elf Soyu",
+    "description": "Drow, Yüksek Elf veya Orman Elfi seç. İlk faydasını ve karakter seviyesi 3 ile 5'te belirtilen büyülerini kazan. Her seviyeli büyü her zaman hazırdır; Uzun Dinlenme başına bir kez yuva harcamadan veya uygun yuvayla yapılabilir. Büyü yapma niteliği olarak Zekâ, Bilgelik veya Karizma seç."
+  },
+  "Fey Ancestry": {
+    "name": "Peri Soyu",
+    "description": "Büyülenmiş durumundan kaçınma veya onu bitirme kurtarma atışlarında Avantajın vardır."
+  },
+  "Keen Senses": {
+    "name": "Keskin Duyular",
+    "description": "Sezgi, Algı veya Hayatta Kalma becerisinde yeterlilik kazan."
+  },
+  "Trance": {
+    "name": "Trans",
+    "description": "Uykuya ihtiyacın yoktur ve büyü seni uyutamaz. Bilincin açıkken geçirdiğin 4 saatlik trans Uzun Dinlenmeni tamamlayabilir."
+  },
+  "Gnomish Cunning": {
+    "name": "Gnom Kurnazlığı",
+    "description": "Zekâ, Bilgelik ve Karizma kurtarma atışlarında Avantajın vardır."
+  },
+  "Gnomish Lineage": {
+    "name": "Gnom Soyu",
+    "description": "Orman veya Kaya Gnomu seç; bu özelliğin büyü yapma niteliği olarak Zekâ, Bilgelik veya Karizma belirle. Orman Gnomları Küçük Yanılsamayı bilir ve Hayvanlarla Konuşmayı her zaman hazır tutar; bunu Uzun Dinlenme başına Yeterlilik Bonusu kadar yuva harcamadan yapabilir. Kaya Gnomları Onarma ve El Çabukluğunu bilir ve saat mekanizmalı cihazlar yaratabilir."
+  },
+  "Forest Gnome Speak with Animals": {
+    "name": "Orman Gnomunun Hayvanlarla Konuşması",
+    "description": "Hayvanlarla Konuşma büyüsünü her zaman hazır tutarsın. Uzun Dinlenme başına Yeterlilik Bonusun kadar yuva harcamadan veya bir büyü yuvası kullanarak yapabilirsin."
+  },
+  "Clockwork Device": {
+    "name": "Saat Mekanizmalı Cihaz",
+    "description": "10 dakika El Çabukluğu büyüsü yaparak ZS 5 ve 1 CP'li Minik bir cihaz üret. Bonus Eylemle dokunularak etkinleştirildiğinde büyünün seçtiğin bir etkisini üretir. En fazla üç cihazın olabilir; her biri 8 saat sürer veya Kullan eylemiyle dokunularak sökülene kadar kalır."
+  },
+  "Giant Ancestry": {
+    "name": "Dev Soyu",
+    "description": "Bir Dev lütfu seç. Seçilen lütfun Uzun Dinlenme başına kullanım sayısı Yeterlilik Bonusuna eşittir."
+  },
+  "Cloud's Jaunt": {
+    "name": "Bulut Sıçrayışı",
+    "description": "Bonus Eylemle görebildiğin boş bir alana 30 fite kadar ışınlan."
+  },
+  "Fire's Burn": {
+    "name": "Ateş Yanığı",
+    "description": "Bir saldırı atışı isabet edip hasar verdiğinde ek 1d10 Ateş hasarı ver."
+  },
+  "Frost's Chill": {
+    "name": "Don Soğuğu",
+    "description": "Bir saldırı atışı isabet edip hasar verdiğinde ek 1d6 Soğuk hasarı ver ve hedefin Hızını bir sonraki turunun başına kadar 10 fit azalt."
+  },
+  "Hill's Tumble": {
+    "name": "Tepe Devrilmesi",
+    "description": "Bir saldırı atışı Büyük veya daha küçük bir yaratığa isabet edip hasar verdiğinde hedefi Yere Düşmüş duruma getir."
+  },
+  "Stone's Endurance": {
+    "name": "Taş Dayanıklılığı",
+    "description": "Hasar aldığında Tepki kullanarak hasarı 1d12 + Dayanıklılık değiştiricin kadar azalt."
+  },
+  "Storm's Thunder": {
+    "name": "Fırtına Gök Gürültüsü",
+    "description": "60 fit içindeki bir yaratık sana hasar verdiğinde Tepki kullanarak ona 1d8 Gök Gürültüsü hasarı ver."
+  },
+  "Large Form": {
+    "name": "Büyük Biçim",
+    "description": "Karakter seviyesi 5'ten itibaren yer varsa Bonus Eylemle en fazla 10 dakika Büyük ol. Güç kontrollerinde Avantajın olur ve Hızın 10 fit artar. Uzun Dinlenme başına bir kez."
+  },
+  "Powerful Build": {
+    "name": "Güçlü Yapı",
+    "description": "Yakalanmış durumunu bitirme kontrollerinde Avantajın vardır; taşıma kapasitesi için bir boy daha büyük sayılırsın."
+  },
+  "Brave": {
+    "name": "Cesur",
+    "description": "Korkmuş durumundan kaçınma veya onu bitirme kurtarma atışlarında Avantajın vardır."
+  },
+  "Halfling Nimbleness": {
+    "name": "Buçukluk Çevikliği",
+    "description": "Senden büyük bir yaratığın alanından geçebilirsin ama orada duramazsın."
+  },
+  "Luck": {
+    "name": "Şans",
+    "description": "Bir D20 Testinde d20 üzerinde 1 attığında yeniden at ve yeni sonucu kullan."
+  },
+  "Naturally Stealthy": {
+    "name": "Doğuştan Gizli",
+    "description": "Senden en az bir boy büyük bir yaratık tarafından yalnızca kısmen gizlenmiş olsan bile Saklan eylemini yapabilirsin."
+  },
+  "Resourceful": {
+    "name": "Kaynak Becerisi",
+    "description": "Her Uzun Dinlenmeyi bitirdiğinde Kahramanca İlham kazan."
+  },
+  "Skillful": {
+    "name": "Becerikli",
+    "description": "Seçtiğin bir beceride yeterlilik kazan."
+  },
+  "Versatile": {
+    "name": "Çok Yönlü",
+    "description": "Seçtiğin bir Köken yeteneğini kazan."
+  },
+  "Adrenaline Rush": {
+    "name": "Adrenalin Hücumu",
+    "description": "Bonus Eylemle Atılma eylemi yap ve Yeterlilik Bonusuna eşit Geçici Can Puanı kazan. Kullanım sayısı Yeterlilik Bonusuna eşittir; Kısa veya Uzun Dinlenmede yenilenir."
+  },
+  "Relentless Endurance": {
+    "name": "Amansız Dayanıklılık",
+    "description": "Doğrudan ölmeden Can Puanın 0'a düşerse bunun yerine 1 Can Puanında kal. Uzun Dinlenme başına bir kez."
+  },
+  "Fiendish Legacy": {
+    "name": "İfrit Mirası",
+    "description": "Uçurum, Ktonik veya Cehennem seç. Seviye 1 Direncini ve basit büyüsünü, ayrıca karakter seviyesi 3 ve 5'te belirtilen büyülerini kazan. Her seviyeli büyü her zaman hazırdır; Uzun Dinlenme başına bir kez yuva harcamadan veya uygun yuvayla yapılabilir. Büyü yapma niteliği olarak Zekâ, Bilgelik veya Karizma seç."
+  },
+  "Otherworldly Presence": {
+    "name": "Öte Dünyalı Varlık",
+    "description": "İfrit Mirası için seçilen büyü yapma niteliğini kullanarak Mucize basit büyüsünü bilirsin."
+  }
+}

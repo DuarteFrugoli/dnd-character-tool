@@ -1,0 +1,50 @@
+{
+  "Barbarian": {
+    "name": "バーバリアン",
+    "subclassFeatureName": "バーバリアンのサブクラス"
+  },
+  "Bard": {
+    "name": "吟遊詩人",
+    "subclassFeatureName": "吟遊詩人のサブクラス"
+  },
+  "Cleric": {
+    "name": "クレリック",
+    "subclassFeatureName": "クレリックのサブクラス"
+  },
+  "Druid": {
+    "name": "ドルイド",
+    "subclassFeatureName": "ドルイドのサブクラス"
+  },
+  "Fighter": {
+    "name": "ファイター",
+    "subclassFeatureName": "ファイターのサブクラス"
+  },
+  "Monk": {
+    "name": "モンク",
+    "subclassFeatureName": "モンクのサブクラス"
+  },
+  "Paladin": {
+    "name": "パラディン",
+    "subclassFeatureName": "パラディンのサブクラス"
+  },
+  "Ranger": {
+    "name": "レンジャー",
+    "subclassFeatureName": "レンジャーのサブクラス"
+  },
+  "Rogue": {
+    "name": "ローグ",
+    "subclassFeatureName": "ローグのサブクラス"
+  },
+  "Sorcerer": {
+    "name": "ソーサラー",
+    "subclassFeatureName": "ソーサラーのサブクラス"
+  },
+  "Warlock": {
+    "name": "ウォーロック",
+    "subclassFeatureName": "ウォーロックのサブクラス"
+  },
+  "Wizard": {
+    "name": "ウィザード",
+    "subclassFeatureName": "ウィザードのサブクラス"
+  }
+}

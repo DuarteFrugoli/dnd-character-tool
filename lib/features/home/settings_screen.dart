@@ -751,6 +751,7 @@ class _LanguageTile extends ConsumerWidget {
       (label: '日本語', locale: const Locale('ja')),
       (label: '한국어', locale: const Locale('ko')),
       (label: 'Русский', locale: const Locale('ru')),
+      (label: 'Türkçe', locale: const Locale('tr')),
       (label: '中文', locale: const Locale('zh')),
     ];
 

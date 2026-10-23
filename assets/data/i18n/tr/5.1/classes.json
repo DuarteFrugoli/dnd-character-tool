@@ -1,0 +1,158 @@
+{
+  "Barbarian": {
+    "name": "Barbar",
+    "subclassFeatureName": "İlkel Yol",
+    "weaponProficiencies": ["basit silahlar", "savaş silahları"],
+    "startingEquipment": {
+      "fixed": ["Kaşif paketi", "4 cirit"],
+      "choices": [
+        {"options": [["Büyük balta"], ["herhangi bir yakın dövüş savaş silahı"]]},
+        {"options": [["El baltası", "El baltası"], ["herhangi bir basit silah"]]}
+      ]
+    }
+  },
+  "Bard": {
+    "name": "Ozan",
+    "subclassFeatureName": "Ozan Koleji",
+    "weaponProficiencies": ["basit silahlar", "el arbaleti", "uzun kılıç", "meç", "kısa kılıç"],
+    "startingEquipment": {
+      "fixed": ["Deri zırh", "Hançer"],
+      "choices": [
+        {"options": [["Meç"], ["Uzun kılıç"], ["herhangi bir basit silah"]]},
+        {"options": [["Diplomat paketi"], ["Gösterici paketi"]]},
+        {"options": [["Lavta"], ["herhangi bir müzik aleti"]]}
+      ]
+    }
+  },
+  "Cleric": {
+    "name": "Rahip",
+    "subclassFeatureName": "İlahi Alan",
+    "weaponProficiencies": ["basit silahlar"],
+    "startingEquipment": {
+      "fixed": ["Kalkan", "Kutsal sembol"],
+      "choices": [
+        {"options": [["Topuz"], ["Savaş çekici"]]},
+        {"options": [["Pullu zırh"], ["Deri zırh"], ["Zincir zırh"]]},
+        {"options": [["Hafif arbalet", "20 arbalet oku"], ["herhangi bir basit silah"]]},
+        {"options": [["Rahip paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  },
+  "Druid": {
+    "name": "Druid",
+    "subclassFeatureName": "Druid Çemberi",
+    "weaponProficiencies": ["sopalar", "hançerler", "dartlar", "ciritler", "topuzlar", "dövüş asaları", "palalar", "oraklar", "sapanlar", "mızraklar"],
+    "startingEquipment": {
+      "fixed": ["Deri zırh", "Kaşif paketi", "Druid odağı"],
+      "choices": [
+        {"options": [["Ahşap kalkan"], ["herhangi bir basit silah"]]},
+        {"options": [["Pala"], ["herhangi bir yakın dövüş basit silahı"]]}
+      ]
+    }
+  },
+  "Fighter": {
+    "name": "Savaşçı",
+    "subclassFeatureName": "Savaş Arketipi",
+    "weaponProficiencies": ["basit silahlar", "savaş silahları"],
+    "startingEquipment": {
+      "fixed": [],
+      "choices": [
+        {"options": [["Zincir zırh"], ["Deri zırh", "Uzun yay", "20 ok"]]},
+        {"options": [["herhangi bir savaş silahı", "Kalkan"], ["herhangi bir savaş silahı", "herhangi bir savaş silahı"]]},
+        {"options": [["Hafif arbalet", "20 arbalet oku"], ["El baltası", "El baltası"]]},
+        {"options": [["Zindancı paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  },
+  "Monk": {
+    "name": "Keşiş",
+    "subclassFeatureName": "Manastır Geleneği",
+    "weaponProficiencies": ["basit silahlar", "kısa kılıçlar"],
+    "startingEquipment": {
+      "fixed": ["10 dart"],
+      "choices": [
+        {"options": [["Kısa kılıç"], ["herhangi bir basit silah"]]},
+        {"options": [["Zindancı paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  },
+  "Paladin": {
+    "name": "Paladin",
+    "subclassFeatureName": "Kutsal Yemin",
+    "weaponProficiencies": ["basit silahlar", "savaş silahları"],
+    "startingEquipment": {
+      "fixed": ["Zincir zırh", "Kutsal sembol"],
+      "choices": [
+        {"options": [["herhangi bir savaş silahı", "Kalkan"], ["herhangi bir savaş silahı", "herhangi bir savaş silahı"]]},
+        {"options": [["5 cirit"], ["herhangi bir yakın dövüş basit silahı"]]},
+        {"options": [["Rahip paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  },
+  "Ranger": {
+    "name": "Korucu",
+    "subclassFeatureName": "Korucu Arketipi",
+    "weaponProficiencies": ["basit silahlar", "savaş silahları"],
+    "startingEquipment": {
+      "fixed": ["Uzun yay", "20 oklu sadak"],
+      "choices": [
+        {"options": [["Pullu zırh"], ["Deri zırh"]]},
+        {"options": [["Kısa kılıç", "Kısa kılıç"], ["herhangi bir yakın dövüş basit silahı", "herhangi bir yakın dövüş basit silahı"]]},
+        {"options": [["Zindancı paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  },
+  "Rogue": {
+    "name": "Haydut",
+    "subclassFeatureName": "Haydut Arketipi",
+    "weaponProficiencies": ["basit silahlar", "el arbaleti", "uzun kılıç", "meç", "kısa kılıç"],
+    "startingEquipment": {
+      "fixed": ["Deri zırh", "Hançer", "Hançer", "Hırsız aletleri"],
+      "choices": [
+        {"options": [["Meç"], ["Kısa kılıç"]]},
+        {"options": [["Kısa yay", "20 oklu sadak"], ["Kısa kılıç"]]},
+        {"options": [["Hırsız paketi"], ["Zindancı paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  },
+  "Sorcerer": {
+    "name": "Doğuştan Büyücü",
+    "subclassFeatureName": "Doğuştan Büyü Kökeni",
+    "weaponProficiencies": ["hançerler", "dartlar", "sapanlar", "dövüş asaları", "hafif arbaletler"],
+    "startingEquipment": {
+      "fixed": ["Hançer", "Hançer"],
+      "choices": [
+        {"options": [["Hafif arbalet", "20 arbalet oku"], ["herhangi bir basit silah"]]},
+        {"options": [["Bileşen kesesi"], ["Büyü odağı"]]},
+        {"options": [["Zindancı paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  },
+  "Warlock": {
+    "name": "Pakt Büyücüsü",
+    "subclassFeatureName": "Öte Dünyalı Hami",
+    "weaponProficiencies": ["basit silahlar"],
+    "startingEquipment": {
+      "fixed": ["Deri zırh", "Hançer", "Hançer"],
+      "choices": [
+        {"options": [["Hafif arbalet", "20 arbalet oku"], ["herhangi bir basit silah"]]},
+        {"options": [["Bileşen kesesi"], ["Büyü odağı"]]},
+        {"options": [["Bilgin paketi"], ["Zindancı paketi"]]},
+        {"options": [["herhangi bir basit silah"]]}
+      ]
+    }
+  },
+  "Wizard": {
+    "name": "Büyücü",
+    "subclassFeatureName": "Gizemli Gelenek",
+    "weaponProficiencies": ["hançerler", "dartlar", "sapanlar", "dövüş asaları", "hafif arbaletler"],
+    "startingEquipment": {
+      "fixed": ["Büyü kitabı"],
+      "choices": [
+        {"options": [["Dövüş asası"], ["Hançer"]]},
+        {"options": [["Bileşen kesesi"], ["Büyü odağı"]]},
+        {"options": [["Bilgin paketi"], ["Kaşif paketi"]]}
+      ]
+    }
+  }
+}

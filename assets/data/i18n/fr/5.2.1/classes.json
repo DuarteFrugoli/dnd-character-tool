@@ -1,0 +1,50 @@
+{
+  "Barbarian": {
+    "name": "Barbare",
+    "subclassFeatureName": "Sous-classe : Barbare"
+  },
+  "Bard": {
+    "name": "Barde",
+    "subclassFeatureName": "Sous-classe : Barde"
+  },
+  "Cleric": {
+    "name": "Clerc",
+    "subclassFeatureName": "Sous-classe : Clerc"
+  },
+  "Druid": {
+    "name": "Druide",
+    "subclassFeatureName": "Sous-classe : Druide"
+  },
+  "Fighter": {
+    "name": "Guerrier",
+    "subclassFeatureName": "Sous-classe : Guerrier"
+  },
+  "Monk": {
+    "name": "Moine",
+    "subclassFeatureName": "Sous-classe : Moine"
+  },
+  "Paladin": {
+    "name": "Paladin",
+    "subclassFeatureName": "Sous-classe : Paladin"
+  },
+  "Ranger": {
+    "name": "Rôdeur",
+    "subclassFeatureName": "Sous-classe : Rôdeur"
+  },
+  "Rogue": {
+    "name": "Roublard",
+    "subclassFeatureName": "Sous-classe : Roublard"
+  },
+  "Sorcerer": {
+    "name": "Ensorceleur",
+    "subclassFeatureName": "Sous-classe : Ensorceleur"
+  },
+  "Warlock": {
+    "name": "Occultiste",
+    "subclassFeatureName": "Sous-classe : Occultiste"
+  },
+  "Wizard": {
+    "name": "Magicien",
+    "subclassFeatureName": "Sous-classe : Magicien"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "Acrobatics": {
+    "name": "Акробатика"
+  },
+  "Animal Handling": {
+    "name": "Обращение с животными"
+  },
+  "Arcana": {
+    "name": "Магия"
+  },
+  "Athletics": {
+    "name": "Атлетика"
+  },
+  "Deception": {
+    "name": "Обман"
+  },
+  "History": {
+    "name": "История"
+  },
+  "Insight": {
+    "name": "Проницательность"
+  },
+  "Intimidation": {
+    "name": "Запугивание"
+  },
+  "Investigation": {
+    "name": "Расследование"
+  },
+  "Medicine": {
+    "name": "Медицина"
+  },
+  "Nature": {
+    "name": "Природа"
+  },
+  "Perception": {
+    "name": "Восприятие"
+  },
+  "Performance": {
+    "name": "Выступление"
+  },
+  "Persuasion": {
+    "name": "Убеждение"
+  },
+  "Religion": {
+    "name": "Религия"
+  },
+  "Sleight of Hand": {
+    "name": "Ловкость рук"
+  },
+  "Stealth": {
+    "name": "Скрытность"
+  },
+  "Survival": {
+    "name": "Выживание"
+  }
+}

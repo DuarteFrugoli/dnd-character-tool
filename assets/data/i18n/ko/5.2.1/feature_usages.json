@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "격노"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "지속 격노 회복"
+    },
+    "2024_bardic_inspiration": {
+      "name": "바드의 고양감"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "신성 변환"
+    },
+    "2024_divine_intervention": {
+      "name": "신성한 개입"
+    },
+    "2024_wild_shape": {
+      "name": "야생 변신"
+    },
+    "2024_wild_resurgence": {
+      "name": "야생의 재생 주문 슬롯"
+    },
+    "2024_archdruid": {
+      "name": "대드루이드 주문 슬롯"
+    },
+    "2024_second_wind": {
+      "name": "재기의 바람"
+    },
+    "2024_action_surge": {
+      "name": "행동 연쇄"
+    },
+    "2024_indomitable": {
+      "name": "불굴"
+    },
+    "2024_focus_points": {
+      "name": "집중점"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "비범한 신진대사"
+    },
+    "2024_lay_on_hands": {
+      "name": "안수 치료"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "신성 변환"
+    },
+    "2024_paladins_smite": {
+      "name": "신성한 강타 (무료 시전)"
+    },
+    "2024_faithful_steed": {
+      "name": "군마 찾기 (무료 시전)"
+    },
+    "2024_hunters_mark": {
+      "name": "사냥꾼의 표식 (무료 시전)"
+    },
+    "2024_tireless": {
+      "name": "지치지 않음"
+    },
+    "2024_natures_veil": {
+      "name": "자연의 장막"
+    },
+    "2024_stroke_of_luck": {
+      "name": "행운의 한 수"
+    },
+    "2024_innate_sorcery": {
+      "name": "타고난 마법"
+    },
+    "2024_sorcery_points": {
+      "name": "소서리 포인트"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "소서리 회복"
+    },
+    "2024_magical_cunning": {
+      "name": "마법의 기지"
+    },
+    "2024_contact_patron": {
+      "name": "후원자 접촉 (무료 시전)"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "신비 비전 (6레벨)"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "신비 비전 (7레벨)"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "신비 비전 (8레벨)"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "신비 비전 (9레벨)"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "수중 호흡 (무료 시전)"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "수호자의 선물"
+    },
+    "2024_arcane_recovery": {
+      "name": "비전 회복"
+    },
+    "2024_signature_spell_1": {
+      "name": "대표 주문 1 (무료 시전)"
+    },
+    "2024_signature_spell_2": {
+      "name": "대표 주문 2 (무료 시전)"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "서클 주문 (무료 시전)"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "자연 회복 (주문 슬롯)"
+    },
+    "2024_wholeness_of_body": {
+      "name": "신체 완전성"
+    },
+    "2024_intimidating_presence": {
+      "name": "위압적인 존재 (무료 사용)"
+    },
+    "2024_holy_nimbus": {
+      "name": "신성한 광휘 (무료 사용)"
+    },
+    "2024_dragon_wings": {
+      "name": "용의 날개 (무료 사용)"
+    },
+    "2024_dragon_companion": {
+      "name": "용 동료 (무료 시전)"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "어둠의 존재의 행운"
+    },
+    "2024_hurl_through_hell": {
+      "name": "지옥으로 던지기 (무료 사용)"
+    },
+    "2024_safe_overchannel": {
+      "name": "과충전 (안전한 사용)"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "마법 입문 주문 (무료 시전)"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "숨결 무기"
+    },
+    "2024_draconic_flight": {
+      "name": "용의 비행"
+    },
+    "2024_stonecunning": {
+      "name": "돌의 지혜"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "동물과 대화"
+    },
+    "2024_giant_ancestry": {
+      "name": "거인의 혈통"
+    },
+    "2024_large_form": {
+      "name": "거대화"
+    },
+    "2024_adrenaline_rush": {
+      "name": "아드레날린 질주"
+    },
+    "2024_relentless_endurance": {
+      "name": "끈질긴 인내"
+    },
+    "2024_boon_of_fate": {
+      "name": "운명의 은혜"
+    },
+    "2024_elven_lineage_3": {
+      "name": "엘프 혈통 (캐릭터 3레벨에 얻는 주문)"
+    },
+    "2024_elven_lineage_5": {
+      "name": "엘프 혈통 (캐릭터 5레벨에 얻는 주문)"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "악마의 유산 (캐릭터 3레벨에 얻는 주문)"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "악마의 유산 (캐릭터 5레벨에 얻는 주문)"
+    }
+  }
+}

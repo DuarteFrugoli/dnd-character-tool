@@ -1,0 +1,143 @@
+{
+  "Barbarian": {
+    "Rage": { "name": "Öfke", "description": "Savaşta ilkel bir vahşilikle dövüşürsün. Turunda bonus eylem olarak öfkeye girebilirsin. Öfkeliyken Kuvvet kontrollerinde ve kurtulma atışlarında avantaj kazanırsın, Kuvvet kullanan yakın dövüş hasar atışlarına bonus eklersin (barbar seviyeleri 1-8 için +2, 9-15 için +3 ve 16-20 için +4) ve ezici, delici ve kesici hasara direnç kazanırsın. Öfken 1 dakika sürer. Bilincini kaybedersen veya turunu bitirdiğinde önceki turundan beri düşman bir yaratığa saldırmamış ve hasar almamışsan erken sona erer." },
+    "Unarmored Defense": { "name": "Zırhsız Savunma", "description": "Zırh giymediğinde Zırh Sınıfın 10 + Çeviklik değiştiricin + Dayanıklılık değiştiricine eşittir. Kalkan kullansan da bu faydayı kazanırsın." },
+    "Reckless Attack": { "name": "Pervasız Saldırı", "description": "Turundaki ilk saldırını yaparken pervasızca saldırmayı seçebilirsin. Bu tur Kuvvet kullanan yakın dövüş silah saldırıların avantajlı olur, fakat sonraki turuna kadar sana karşı yapılan saldırı atışları da avantajlı olur." },
+    "Danger Sense": { "name": "Tehlike Sezgisi", "description": "Yakın çevrende bir şeylerin yolunda gitmediğini sezersin. Tuzaklar ve büyüler gibi görebildiğin etkilere karşı Çeviklik kurtulma atışlarında avantaj kazanırsın. Bunun için kör, sağır veya etkisiz hâlde olmamalısın." },
+    "Primal Path": { "name": "İlkel Yol", "description": "Öfkenin doğasını biçimlendiren bir yol seçersin." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Extra Attack": { "name": "Ek Saldırı", "description": "Turunda Saldırı eylemini yaptığında bir kez yerine iki kez saldırabilirsin." },
+    "Fast Movement": { "name": "Hızlı Hareket", "description": "Ağır zırh giymediğinde hızın 10 fit artar." },
+    "Feral Instinct": { "name": "Vahşi İçgüdü", "description": "İçgüdülerin öylesine keskinleşir ki inisiyatif atışlarında avantaj kazanırsın. Ayrıca savaşın başında şaşırmışsan ve etkisiz hâlde değilsen, o tur başka bir şey yapmadan önce öfkeye girmen koşuluyla ilk turunda normal davranabilirsin." },
+    "Brutal Critical": { "name": "Vahşi Kritik", "description": "Yakın dövüş saldırısında kritik isabetin ek hasarını belirlerken bir silah hasar zarı daha atabilirsin. Bu sayı 13. seviyede iki, 17. seviyede üç ek zara çıkar." },
+    "Relentless Rage": { "name": "Yılmayan Öfke", "description": "Öfken ağır yaralara rağmen savaşmayı sürdürmeni sağlar. Öfkeliyken can puanın 0'a düşer ve anında ölmezsen ZS 10 Dayanıklılık kurtulma atışı yapabilirsin. Başarılı olursan bunun yerine 1 can puanına düşersin. İlk kullanımdan sonraki her kullanımda ZS 5 artar. Kısa veya uzun dinlenme bitirdiğinde ZS yeniden 10 olur." },
+    "Persistent Rage": { "name": "Dinmeyen Öfke", "description": "Öfken öyle güçlüdür ki yalnızca bilincini kaybedersen veya kendin bitirmeyi seçersen erken sona erer." },
+    "Indomitable Might": { "name": "Dizginlenemez Güç", "description": "Kuvvet kontrolünün toplamı Kuvvet puanından düşükse toplam yerine Kuvvet puanını kullanabilirsin." },
+    "Primal Champion": { "name": "İlkel Şampiyon", "description": "Vahşi doğanın gücünü bedeninde taşırsın. Kuvvet ve Dayanıklılık puanların 4 artar. Bu puanların azami değeri artık 24'tür." }
+  },
+  "Bard": {
+    "Spellcasting": { "name": "Büyü Yapma", "description": "Gerçekliğin dokusunu dileklerin ve müziğinle uyum içinde çözmeyi ve yeniden örmeyi öğrendin. Büyü yapma niteliğin Karizmadır." },
+    "Bardic Inspiration": { "name": "Ozan İlhamı", "description": "Coşkulu sözlerin veya müziğinle başkalarına ilham verebilirsin. Bonus eylem olarak kendin dışında bir yaratığa Ozan İlhamı zarı verirsin. Zar, ozan seviyeleri 1-4 için d6, 5-9 için d8, 10-14 için d10 ve 15-20 için d12'dir. Sonraki 10 dakika içinde yaratık bu zarı bir kez atıp sonucunu yaptığı bir nitelik kontrolüne, saldırı atışına veya kurtulma atışına ekleyebilir." },
+    "Jack of All Trades": { "name": "Her İşin Ustası", "description": "Yetkinlik bonusunu zaten içermeyen her nitelik kontrolüne, yetkinlik bonusunun aşağı yuvarlanmış yarısını ekleyebilirsin." },
+    "Song of Rest": { "name": "Dinlenme Şarkısı", "description": "Kısa dinlenmede yatıştırıcı müzik veya sözlerle yaralı dostlarına yardım edebilirsin. Dinlenme sonunda sen veya performansını duyabilen dost bir yaratık bir ya da daha fazla Can Zarı harcayarak can puanı yenilerse ayrıca 1d6 can puanı daha yeniler." },
+    "Bard College": { "name": "Ozan Koleji", "description": "Seçtiğin ozan kolejinin ileri tekniklerini öğrenirsin." },
+    "Expertise": { "name": "Uzmanlık", "description": "Yetkin olduğun iki beceriyi seç. Bunlardan biriyle yaptığın nitelik kontrollerinde yetkinlik bonusun iki katına çıkar." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Font of Inspiration": { "name": "İlham Kaynağı", "description": "Kısa veya uzun dinlenme bitirdiğinde harcadığın tüm Ozan İlhamı kullanımlarını geri kazanırsın." },
+    "Countercharm": { "name": "Karşı Ezgi", "description": "Zihni etkileyen güçleri bozmak için müzik veya güçlü sözler kullanabilirsin. Bir eylem olarak bir sonraki turunun sonuna kadar süren bir performans başlatırsın. Bu süre boyunca sen ve 30 fit içindeki dost yaratıklar korkma veya büyülenmeye karşı kurtulma atışlarında avantaj kazanırsınız." },
+    "Magical Secrets": { "name": "Büyülü Sırlar", "description": "Çeşitli disiplinlerden büyü bilgisi edindin. Bu sınıf dâhil herhangi bir sınıftan iki büyü seç. Seçtiğin büyüler yapabildiğin bir seviyede olmalıdır. Senin için ozan büyüsü sayılırlar." },
+    "Superior Inspiration": { "name": "Üstün İlham", "description": "İnisiyatif attığında Ozan İlhamı kullanımın kalmamışsa bir kullanım geri kazanırsın." }
+  },
+  "Cleric": {
+    "Spellcasting": { "name": "Büyü Yapma", "description": "İlahi gücün aracısı olarak rahip büyüleri yapabilirsin. Büyü yapma niteliğin Bilgeliktir." },
+    "Divine Domain": { "name": "İlahi Alan", "description": "Tanrınla ilişkili bir alan seç. Seçimin sana alan büyüleri ve başka özellikler kazandırır." },
+    "Channel Divinity": { "name": "İlahi Gücü Yönlendirme", "description": "Tanrından gelen ilahi enerjiyi doğrudan yönlendirip büyülü etkileri güçlendirebilirsin. Başlangıçta iki etkin vardır: Ölümsüzleri Kovma ve seçtiğin alanın belirlediği etki. İlahi Gücü Yönlendirme kullandığında hangi etkiyi yaratacağını seçersin." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Destroy Undead": { "name": "Ölümsüzleri Yok Etme", "description": "Bir ölümsüz Ölümsüzleri Kovma özelliğine karşı kurtulma atışında başarısız olursa meydan okuma derecesi yeterince düşükse anında yok olur: rahip seviyesi 5'te MD 1/2, 8'de MD 1, 11'de MD 2, 14'te MD 3 ve 17'de MD 4." },
+    "Divine Intervention": { "name": "İlahi Müdahale", "description": "İhtiyacın büyük olduğunda tanrından yardım isteyebilirsin. Bir eylem olarak nasıl bir yardım istediğini anlat ve yüzdelik zar at. Sonuç rahip seviyene eşit veya ondan düşükse tanrın müdahale eder." }
+  },
+  "Druid": {
+    "Druidic": { "name": "Druid Dili", "description": "Druidlerin gizli dili olan Druid dilini bilirsin. Konuşabilir ve onunla gizli mesajlar bırakabilirsin." },
+    "Spellcasting": { "name": "Büyü Yapma", "description": "Doğanın ilahi özünden güç alarak onu isteğine göre biçimlendiren büyüler yapabilirsin. Büyü yapma niteliğin Bilgeliktir." },
+    "Wild Shape": { "name": "Vahşi Biçim", "description": "2. seviyeden itibaren eylemini kullanarak daha önce gördüğün bir hayvanın biçimine büyüyle dönüşebilirsin. Bu özelliği iki kez kullanabilirsin. Harcadığın kullanımları kısa veya uzun dinlenme bitirdiğinde geri kazanırsın." },
+    "Druid Circle": { "name": "Druid Çemberi", "description": "Katılacağın druid çemberini seçersin." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Timeless Body": { "name": "Zamansız Beden", "description": "Kullandığın ilkel büyü daha yavaş yaşlanmanı sağlar. Geçen her 10 yıl için bedenin yalnızca 1 yıl yaşlanır." },
+    "Beast Spells": { "name": "Hayvan Biçiminde Büyüler", "description": "Vahşi Biçimle aldığın herhangi bir biçimde pek çok druid büyüsü yapabilirsin. Hayvan biçimindeyken büyünün sözlü ve el hareketi bileşenlerini sağlayabilirsin, fakat maddi bileşenleri sağlayamazsın." },
+    "Archdruid": { "name": "Başdruid", "description": "Vahşi Biçimi sınırsız sayıda kullanabilirsin. Ayrıca druid büyülerinin sözlü ve el hareketi bileşenlerini ve bedeli olmayan, büyü tarafından tüketilmeyen maddi bileşenlerini yok sayabilirsin." }
+  },
+  "Fighter": {
+    "Fighting Style": { "name": "Dövüş Tarzı", "description": "Belirli bir dövüş tarzını uzmanlık alanın olarak benimsersin. Şunlardan birini seç: Okçuluk, Savunma, Düello, Büyük Silahla Dövüş, Koruma veya İki Silahla Dövüş." },
+    "Second Wind": { "name": "İkinci Nefes", "description": "Kendini zarardan korumak için başvurabileceğin sınırlı bir dayanıklılık kaynağın vardır. Turunda bonus eylem kullanarak 1d10 + savaşçı seviyen kadar can puanı yenileyebilirsin." },
+    "Action Surge": { "name": "Eylem Patlaması", "description": "2. seviyeden itibaren kısa bir an için normal sınırlarını aşabilirsin. Turunda normal eylemine ve olası bonus eylemine ek olarak bir eylem daha yapabilirsin." },
+    "Martial Archetype": { "name": "Savaş Arketipi", "description": "Dövüş tarzında ve tekniklerinde örnek alacağın bir arketip seçersin." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Extra Attack": { "name": "Ek Saldırı", "description": "Turunda Saldırı eylemini yaptığında bir kez yerine iki kez saldırabilirsin." },
+    "Indomitable": { "name": "Yılmazlık", "description": "Başarısız olduğun bir kurtulma atışını yeniden atabilirsin. Yeni sonucu kullanmalısın. Uzun dinlenmeyi bitirmeden bu özelliği yeniden kullanamazsın." }
+  },
+  "Monk": {
+    "Unarmored Defense": { "name": "Zırhsız Savunma", "description": "Zırh giymiyor ve kalkan kullanmıyorsan Zırh Sınıfın 10 + Çeviklik değiştiricin + Bilgelik değiştiricine eşittir." },
+    "Martial Arts": { "name": "Dövüş Sanatları", "description": "Dövüş sanatı eğitimin silahsız vuruşları ve keşiş silahlarını kullanan tarzlarda ustalaşmanı sağlar. Saldırı ve hasar atışlarında Kuvvet yerine Çeviklik kullanabilirsin. Silahsız vuruş veya keşiş silahı için Dövüş Sanatları zarın keşiş seviyeleri 1-4 için d4, 5-10 için d6, 11-16 için d8 ve 17-20 için d10'dur. Silahsız vuruş veya keşiş silahıyla Saldırı eylemini yaptığında bonus eylem olarak bir silahsız vuruş yapabilirsin." },
+    "Ki": { "name": "Ki", "description": "Eğitimin, ki'nin gizemli enerjisini kullanmanı sağlar. Keşiş seviyene eşit sayıda ki puanın vardır. Ki puanlarını Darbe Sağanağı, Sabırlı Savunma ve Rüzgâr Adımı gibi özellikleri güçlendirmek için harcayabilirsin." },
+    "Unarmored Movement": { "name": "Zırhsız Hareket", "description": "Zırh giymiyor ve kalkan kullanmıyorsan hızın artar: keşiş seviyesi 2'de +10 fit, 6'da +15 fit, 10'da +20 fit, 14'te +25 fit ve 18'de +30 fit." },
+    "Monastic Tradition": { "name": "Manastır Geleneği", "description": "Kendini bir manastır geleneğine adarsın." },
+    "Deflect Missiles": { "name": "Mermileri Saptırma", "description": "Menzilli silah saldırısı sana isabet ettiğinde tepkini kullanarak mühimmatı saptırabilir veya yakalayabilirsin. Saldırıdan aldığın hasar 1d10 + Çeviklik değiştiricin + keşiş seviyen kadar azalır." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Slow Fall": { "name": "Yavaş Düşüş", "description": "Düşerken tepkini kullanarak düşme hasarını keşiş seviyenin beş katı kadar azaltabilirsin." },
+    "Extra Attack": { "name": "Ek Saldırı", "description": "Turunda Saldırı eylemini yaptığında bir kez yerine iki kez saldırabilirsin." },
+    "Stunning Strike": { "name": "Sersemletici Vuruş", "description": "Rakibinin bedenindeki ki akışını bozabilirsin. Yakın dövüş silah saldırın başka bir yaratığa isabet ettiğinde 1 ki puanı harcayarak sersemletici vuruş deneyebilirsin. Hedef Dayanıklılık kurtulma atışında başarılı olmazsa bir sonraki turunun sonuna kadar sersemler." },
+    "Stillness of Mind": { "name": "Zihin Dinginliği", "description": "Eylemini kullanarak üzerindeki büyülenme veya korkma etkilerinden birini sonlandırabilirsin." },
+    "Timeless Body": { "name": "Zamansız Beden", "description": "Ki seni destekler; yaşlılığın güçsüzleştirici etkilerine uğramaz ve büyüyle yaşlandırılamazsın. Yine de yaşlılıktan ölebilirsin. Ayrıca artık yiyecek veya suya ihtiyaç duymazsın." },
+    "Empty Body": { "name": "Boş Beden", "description": "Eylemini kullanıp 4 ki puanı harcayarak 1 dakika görünmez olabilirsin. Bu sürede kuvvet hasarı dışındaki tüm hasarlara direnç kazanırsın." },
+    "Perfect Self": { "name": "Kusursuz Benlik", "description": "İnisiyatif attığında hiç ki puanın kalmamışsa 4 ki puanı geri kazanırsın." }
+  },
+  "Paladin": {
+    "Divine Sense": { "name": "İlahi Sezgi", "description": "Güçlü kötülüğün varlığını kötü bir koku, güçlü iyiliği ise göksel müzik gibi hissedersin. Eylemini kullanarak bu güçleri sezebilirsin. Bir sonraki turunun sonuna kadar, tam siper arkasında olmayan ve 60 fit içindeki göksel, iblisî veya ölümsüz yaratıkların konumunu bilirsin." },
+    "Lay on Hands": { "name": "Şifa Veren Eller", "description": "Kutsanmış dokunuşun yaraları iyileştirir. Uzun dinlenmede yenilenen bir iyileştirme havuzun vardır. Bununla paladin seviyenin 5 katı kadar can puanını toplamda yenileyebilirsin." },
+    "Fighting Style": { "name": "Dövüş Tarzı", "description": "Belirli bir dövüş tarzını uzmanlık alanın olarak benimse. Şunlardan birini seç: Savunma, Düello, Büyük Silahla Dövüş veya Koruma." },
+    "Spellcasting": { "name": "Büyü Yapma", "description": "Meditasyon ve dua yoluyla ilahi büyüden güç alıp büyü yapmayı öğrendin. Büyü yapma niteliğin Karizmadır." },
+    "Divine Smite": { "name": "İlahi Darbe", "description": "Yakın dövüş silah saldırın bir yaratığa isabet ettiğinde silah hasarına ek olarak hedefe ışınım hasarı vermek için bir büyü yuvası harcayabilirsin. Ek hasar 1. seviye yuva için 2d8'dir; 1. seviyenin üzerindeki her yuva seviyesi için 1d8 artar, en fazla 5d8 olur." },
+    "Sacred Oath": { "name": "Kutsal Yemin", "description": "Seni sonsuza kadar paladin olarak bağlayacak yemini edersin. Buraya kadar henüz yemini etmemiş, fakat yoluna bağlı bir hazırlık dönemindeydin." },
+    "Channel Divinity": { "name": "İlahi Gücü Yönlendirme", "description": "Yeminin büyülü etkileri güçlendirmek için ilahi enerjiyi yönlendirmeni sağlar. Kullandığında hangi seçeneği uygulayacağını belirlersin. Harcadığın kullanımları kısa veya uzun dinlenme bitirdiğinde geri kazanırsın." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Extra Attack": { "name": "Ek Saldırı", "description": "Turunda Saldırı eylemini yaptığında bir kez yerine iki kez saldırabilirsin." },
+    "Aura of Protection": { "name": "Koruma Aurası", "description": "Sen veya 10 fit içindeki dost bir yaratık kurtulma atışı yaptığında atışa Karizma değiştiricine eşit bir bonus (en az +1) ekler. Bu bonusu verebilmen için bilincin açık olmalıdır." },
+    "Aura of Courage": { "name": "Cesaret Aurası", "description": "Bilincin açıkken sen ve 10 fit içindeki dost yaratıklar korkamazsınız." },
+    "Cleansing Touch": { "name": "Arındırıcı Dokunuş", "description": "Eylemini kullanarak kendin veya dokunduğun istekli bir yaratık üzerindeki bir büyüyü sona erdirebilirsin." }
+  },
+  "Ranger": {
+    "Favored Enemy": { "name": "Gözde Düşman", "description": "Belirli düşmanları inceleme, izleme, avlama ve onlarla konuşma konusunda önemli deneyimin vardır. Korucu seviyesi 1'de, 6'da ve 14'te birer gözde düşman türü seç: sapkın yaratıklar, hayvanlar, göksel yaratıklar, yapılar, ejderhalar, elementaller, periler, iblisî yaratıklar, devler, canavarlar, sümüksü yaratıklar, bitkiler veya ölümsüzler. Gözde düşmanlarının izini sürmek için Bilgelik (Hayatta Kalma) ve onlar hakkında bilgi hatırlamak için Zekâ kontrollerinde avantaj kazanırsın." },
+    "Natural Explorer": { "name": "Doğal Kâşif", "description": "Bir doğal çevre türünü çok iyi tanır, böyle bölgelerde yolculuk edip hayatta kalmakta ustalaşırsın. Korucu seviyesi 1'de, 6'da ve 10'da birer gözde arazi seç: kutup, kıyı, çöl, orman, otlak, dağ, bataklık veya Yeraltı Diyarı." },
+    "Fighting Style": { "name": "Dövüş Tarzı", "description": "Belirli bir dövüş tarzını uzmanlık alanın olarak benimse. Şunlardan birini seç: Okçuluk, Savunma, Düello veya İki Silahla Dövüş." },
+    "Spellcasting": { "name": "Büyü Yapma", "description": "Doğanın büyülü özünü kullanarak büyü yapmayı öğrendin. Büyü yapma niteliğin Bilgeliktir." },
+    "Ranger Archetype": { "name": "Korucu Arketipi", "description": "Örnek alacağın bir arketip seçersin." },
+    "Primeval Awareness": { "name": "İlkel Farkındalık", "description": "Eylemini kullanıp bir korucu büyü yuvası harcayarak çevrene odaklanabilirsin. Harcadığın yuvanın seviyesi başına 1 dakika boyunca 1 mil içinde sapkın, göksel, ejderha, elemental, peri, iblisî veya ölümsüz yaratık olup olmadığını sezebilirsin." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Extra Attack": { "name": "Ek Saldırı", "description": "Turunda Saldırı eylemini yaptığında bir kez yerine iki kez saldırabilirsin." },
+    "Land's Stride": { "name": "Arazi Adımları", "description": "Büyülü olmayan zorlu arazide hareket etmek ek hareket harcatmaz. Büyülü olmayan bitkilerin arasından yavaşlamadan geçebilir, dikenleri veya benzer tehlikeleri olsa bile onlardan hasar almazsın." },
+    "Hide in Plain Sight": { "name": "Göz Önünde Gizlenme", "description": "1 dakika harcayarak kendine kamuflaj hazırlayabilirsin. Bunun için taze çamur, toprak, bitki, is ve benzeri doğal maddelere erişimin olmalıdır. Kamufle olduktan sonra en az senin kadar yüksek ve geniş bir ağaç veya duvar gibi katı bir yüzeye yaslanıp gizlenmeyi deneyebilirsin. Orada hareket etmeden veya eylem yapmadan kaldığın sürece Çeviklik (Gizlilik) kontrollerine +10 bonus kazanırsın." },
+    "Vanish": { "name": "Gözden Kaybolma", "description": "Turunda Gizlenme eylemini bonus eylem olarak yapabilirsin. Ayrıca iz bırakmayı seçmedikçe büyülü olmayan yöntemlerle izlenemezsin." },
+    "Feral Senses": { "name": "Vahşi Duyular", "description": "Göremediğin yaratıklarla dövüşmene yardımcı olan olağanüstü duyular kazanırsın. Göremediğin bir yaratığa saldırırken onu göremiyor olman saldırı atışına dezavantaj vermez." },
+    "Foe Slayer": { "name": "Düşman Avcısı", "description": "Düşmanlarının rakipsiz avcısı olursun. Her turunda bir kez, gözde düşmanlarından birine yaptığın saldırının saldırı veya hasar atışına Bilgelik değiştiricini ekleyebilirsin." }
+  },
+  "Rogue": {
+    "Expertise": { "name": "Uzmanlık", "description": "Yetkin olduğun iki beceriyi veya yetkin olduğun bir beceriyle hırsız aletlerindeki yetkinliğini seç. Bunlardan biriyle yaptığın nitelik kontrollerinde yetkinlik bonusun iki katına çıkar." },
+    "Sneak Attack": { "name": "Sinsi Saldırı", "description": "Düşmanın dikkat dağınıklığından yararlanarak incelikle vurmayı bilirsin. Tur başına bir kez, saldırı atışında avantajın varsa isabet ettirdiğin bir yaratığa fazladan hasar verebilirsin. Saldırı çevik veya menzilli bir silahla yapılmalıdır. Hedefin başka bir düşmanı hedefe 5 fit uzaklıktaysa, o düşman etkisiz hâlde değilse ve senin atışında dezavantaj yoksa avantaja ihtiyacın yoktur. Ek hasar haydut seviyeleri 1-2 için 1d6'dır ve her iki haydut seviyesinde bir 1d6 artar: seviye 3'te 2d6, 5'te 3d6, 7'de 4d6, 9'da 5d6, 11'de 6d6, 13'te 7d6, 15'te 8d6, 17'de 9d6 ve 19'da 10d6." },
+    "Thieves' Cant": { "name": "Hırsız Argosu", "description": "Haydutluk eğitimin sırasında sıradan konuşmalara gizli mesajlar yerleştirmeyi sağlayan lehçe, jargon ve şifre karışımı Hırsız Argosunu öğrendin." },
+    "Cunning Action": { "name": "Kurnaz Eylem", "description": "Hızlı düşünmen ve çevikliğin çabuk hareket edip davranmanı sağlar. Savaşta her turunda bir bonus eylem yapabilirsin. Bunu yalnızca Atılma, Çekilme veya Gizlenme eylemi için kullanabilirsin." },
+    "Roguish Archetype": { "name": "Haydut Arketipi", "description": "Haydut yeteneklerini kullanırken örnek alacağın bir arketip seçersin." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Uncanny Dodge": { "name": "Olağanüstü Kaçınma", "description": "Görebildiğin bir saldırgan sana isabet ettiğinde tepkini kullanarak saldırının sana verdiği hasarı yarıya indirebilirsin." },
+    "Evasion": { "name": "Sıyrılma", "description": "Normalde başarılı Çeviklik kurtulma atışıyla yarım hasar almanı sağlayan bir etkiye uğradığında, başarılı olursan hiç hasar, başarısız olursan yalnızca yarım hasar alırsın." },
+    "Reliable Talent": { "name": "Güvenilir Yetenek", "description": "Seçtiğin becerileri mükemmele yakın hâle getirdin. Yetkinlik bonusunu ekleyebildiğin bir nitelik kontrolünde d20 sonucu 9 veya daha düşükse bunu 10 sayabilirsin." },
+    "Blindsense": { "name": "Kör Sezgi", "description": "Duyabiliyorsan 10 fit içindeki gizlenmiş veya görünmez yaratıkların konumunu bilirsin." },
+    "Slippery Mind": { "name": "Kaygan Zihin", "description": "Zihinsel dayanıklılığın artar. Bilgelik kurtulma atışlarında yetkinlik kazanırsın." },
+    "Elusive": { "name": "Ele Avuca Sığmaz", "description": "Öylesine kaçınaksın ki saldırganlar sana karşı nadiren üstünlük kurar. Etkisiz hâlde olmadığın sürece sana karşı hiçbir saldırı atışı avantajlı olamaz." },
+    "Stroke of Luck": { "name": "Şanslı Hamle", "description": "Gerektiğinde başarılı olma konusunda olağanüstü bir yeteneğin vardır. Menzil içindeki bir hedefe saldırın ıskalarsa bunu isabete dönüştürebilirsin. Bunun yerine bir nitelik kontrolünde başarısız olursan d20 sonucunu 20 sayabilirsin." }
+  },
+  "Sorcerer": {
+    "Spellcasting": { "name": "Büyü Yapma", "description": "Geçmişindeki veya bir ebeveyninin ya da atanın yaşamındaki bir olay, seni arkan büyüyle dolduran silinmez bir iz bıraktı. Büyü yapma niteliğin Karizmadır." },
+    "Sorcerous Origin": { "name": "Doğuştan Büyü Kökeni", "description": "Doğuştan gelen büyülü gücünün kaynağını açıklayan bir köken seç." },
+    "Font of Magic": { "name": "Büyü Kaynağı", "description": "İçindeki derin büyü kaynağından güç alırsın. Çeşitli büyülü etkiler yaratmanı sağlayan büyücülük puanların vardır. 2. seviyede 2 büyücülük puanın olur ve 2. seviyeden sonraki her seviyede 1 puan daha kazanırsın." },
+    "Metamagic": { "name": "Metabüyü", "description": "Büyülerini ihtiyacına göre değiştirmeyi öğrenirsin. Şu seçeneklerden ikisini seç: Dikkatli Büyü, Uzak Büyü, Güçlendirilmiş Büyü, Uzatılmış Büyü, Yükseltilmiş Büyü, Hızlandırılmış Büyü, Gizli Büyü veya İkiz Büyü." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Sorcerous Restoration": { "name": "Büyücülük Yenilenmesi", "description": "Kısa dinlenme bitirdiğinde harcadığın 4 büyücülük puanını geri kazanırsın." }
+  },
+  "Warlock": {
+    "Otherworldly Patron": { "name": "Öte Dünyalı Hami", "description": "Baş Peri, İblis veya Kadim Yüce Varlık gibi seçtiğin öte dünyalı bir varlıkla anlaşma yaptın; bunların her biri sınıf açıklamasının sonunda ayrıntılandırılır." },
+    "Pact Magic": { "name": "Pakt Büyüsü", "description": "Arkan araştırmaların ve haminin verdiği büyü, büyü yapmanı sağlar. Büyü yapma niteliğin Karizmadır. Diğer büyü kullanıcılarından farklı olarak harcadığın tüm büyü yuvaları kısa veya uzun dinlenmede yenilenir." },
+    "Eldritch Invocations": { "name": "Gizemli Yakarılar", "description": "Gizemli bilgileri araştırırken sana kalıcı büyülü yetenek veren yasak bilgi parçaları olan yakarıları keşfettin. Seçtiğin iki gizemli yakarıyı kazanırsın." },
+    "Pact Boon": { "name": "Pakt Armağanı", "description": "Öte dünyalı hamin sadık hizmetine karşılık sana bir armağan verir. Şu özelliklerden birini seç: Zincir Ahdi, Kılıç Ahdi veya Kitap Ahdi." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Mystic Arcanum": { "name": "Mistik Arkanum", "description": "Hamin sana arkanum adı verilen büyülü bir sır verir. Pakt büyücüsü büyü listesinden bir 6. seviye büyü seç. Bu arkanum büyüsünü büyü yuvası harcamadan bir kez yapabilirsin. Yeniden yapmak için uzun dinlenmeyi bitirmelisin." },
+    "Eldritch Master": { "name": "Gizemli Güçlerin Efendisi", "description": "Harcadığın büyü yuvalarını geri kazanmak için haminden yardım isterken içindeki gizemli güç kaynağına başvurabilirsin. Haminden 1 dakika boyunca yardım isteyerek Pakt Büyüsü özelliğiyle harcadığın tüm büyü yuvalarını geri kazanırsın. Bunu yaptıktan sonra uzun dinlenmeyi bitirmeden yeniden kullanamazsın." }
+  },
+  "Wizard": {
+    "Spellcasting": { "name": "Büyü Yapma", "description": "Arkan büyü öğrencisi olarak, seçtiğin altı 1. seviye büyüyü içeren bir büyü kitabın vardır. Büyü yapma niteliğin Zekâdır." },
+    "Arcane Recovery": { "name": "Arkan Yenilenme", "description": "Büyü kitabını inceleyerek büyülü enerjinin bir kısmını geri kazanmayı öğrendin. Günde bir kez, kısa dinlenme bitirdiğinde harcadığın büyü yuvalarından bazılarını geri kazanabilirsin. Yuvaların toplam seviyesi, büyücü seviyenin yukarı yuvarlanmış yarısını aşamaz ve hiçbir yuva 6. seviye veya daha yüksek olamaz." },
+    "Arcane Tradition": { "name": "Arkan Gelenek", "description": "Büyü pratiğini şu ekollerden biriyle biçimlendiren bir arkan gelenek seçersin: Koruma, Çağırma, Kehanet, Büyüleme, Yıkım, Yanılsama, Ölüm Büyüsü veya Dönüşüm." },
+    "Ability Score Improvement": { "name": "Nitelik Puanı Artışı", "description": "Bir nitelik puanını 2 veya iki nitelik puanını 1 artır. Hiçbiri 20'yi aşamaz." },
+    "Spell Mastery": { "name": "Büyü Ustalığı", "description": "Belirli büyülerde öyle ustalaştın ki onları istediğin zaman yapabilirsin. Büyü kitabındaki bir 1. seviye ve bir 2. seviye büyücü büyüsü seç. Hazırladığın sürece bunları büyü yuvası harcamadan en düşük seviyelerinde yapabilirsin." },
+    "Signature Spells": { "name": "Ustalık Büyüleri", "description": "İki güçlü büyüde ustalaşır ve onları az çabayla yapabilirsin. Büyü kitabındaki iki 3. seviye büyücü büyüsünü ustalık büyülerin olarak seç. Bunlar her zaman hazırlanmıştır ve hazırlayabildiğin büyü sayısına dâhil olmaz; her birini 3. seviyede büyü yuvası harcamadan bir kez yapabilirsin. Böyle yaptıktan sonra kısa veya uzun dinlenmeyi bitirmeden aynı büyüyü yeniden bu şekilde yapamazsın." }
+  }
+}

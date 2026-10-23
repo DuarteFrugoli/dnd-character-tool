@@ -1,0 +1,163 @@
+{
+  "optionSources": {
+    "battle_master_maneuvers": {
+      "commanders_strike": { "name": "Komutanın Vuruşu", "description": "Saldırı eylemini yaptığında bir saldırından vazgeçip bonus eylem kullanarak seni görebilen veya duyabilen bir müttefiğinin tepkisiyle bir silah saldırısı yapmasını sağlayabilirsin. İsabet ederse üstünlük zarını saldırının hasarına ekle." },
+      "disarming_attack": { "name": "Silahsızlandıran Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef, Kuvvet kurtulma atışında başarılı olmazsa elinde tuttuğu ve senin seçtiğin bir eşyayı düşürür." },
+      "distracting_strike": { "name": "Dikkat Dağıtan Vuruş", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Bir sonraki turunun başlangıcından önce, senin dışındaki bir yaratığın hedefe yaptığı ilk saldırı atışı avantajlıdır." },
+      "evasive_footwork": { "name": "Kaçamak Adımlar", "description": "Hareket ederken bir üstünlük zarı harcayıp zar sonucunu hareketin bitene kadar Zırh Sınıfına ekleyebilirsin." },
+      "feinting_attack": { "name": "Aldatma Saldırısı", "description": "5 fit içindeki bir yaratığa aldatma hareketi yapmak için bonus eylem ve bir üstünlük zarı harca. Bu tur ona yapacağın sonraki saldırıda avantaj kazanırsın; saldırı isabet ederse üstünlük zarını hasara ekle." },
+      "goading_attack": { "name": "Kışkırtan Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Bilgelik kurtulma atışında başarılı olmazsa bir sonraki turunun sonuna kadar senden başkalarına yaptığı saldırılarda dezavantajlı olur." },
+      "lunging_attack": { "name": "Hamle Saldırısı", "description": "Yakın dövüş silah saldırısı yaparken o saldırının erişimini 5 fit artırmak için bir üstünlük zarı harca. İsabet ederse üstünlük zarını hasara ekle." },
+      "maneuvering_attack": { "name": "Yönlendiren Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Seni görebilen veya duyabilen bir müttefik seç; müttefik tepkisini kullanarak hedefin fırsat saldırılarını tetiklemeden hızının yarısına kadar hareket edebilir." },
+      "menacing_attack": { "name": "Tehditkâr Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Bilgelik kurtulma atışında başarılı olmazsa bir sonraki turunun sonuna kadar senden korkar." },
+      "parry": { "name": "Savuşturma", "description": "Başka bir yaratık yakın dövüş saldırısıyla sana hasar verdiğinde tepkini kullanıp bir üstünlük zarı harcayarak hasarı zar sonucu + Çeviklik değiştiricin kadar azalt." },
+      "precision_attack": { "name": "Kesin Saldırı", "description": "Silah saldırısı atışı yaptığında bir üstünlük zarı harcayıp zar sonucunu atışa ekleyebilirsin." },
+      "pushing_attack": { "name": "İtme Saldırısı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Büyük veya daha küçükse Kuvvet kurtulma atışında başarılı olmazsa senden 15 fite kadar uzağa itilir." },
+      "rally": { "name": "Moral Verme", "description": "Turunda bonus eylem ve bir üstünlük zarı harcayarak seni görebilen veya duyabilen bir müttefiğe zar sonucu + Karizma değiştiricin kadar geçici can puanı ver." },
+      "riposte": { "name": "Karşılık Verme", "description": "Bir yaratık yakın dövüş saldırısıyla seni ıskaladığında tepkini kullanıp bir üstünlük zarı harcayarak ona yakın dövüş silah saldırısı yap. İsabet ederse üstünlük zarını hasara ekle." },
+      "sweeping_attack": { "name": "Süpürme Saldırısı", "description": "Yakın dövüş silah saldırın isabet ettiğinde, asıl hedefin 5 fit içindeki ve senin erişimindeki başka bir yaratığa hasar vermek için bir üstünlük zarı harca. İlk saldırı atışın ikinci yaratığa da isabet edecekse ona üstünlük zarı kadar hasar verirsin." },
+      "trip_attack": { "name": "Çelme Saldırısı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Büyük veya daha küçükse Kuvvet kurtulma atışında başarılı olmazsa yere düşer." }
+    },
+    "fighting_styles_fighter": {
+      "archery": { "name": "Okçuluk", "description": "Menzilli silahlarla yaptığın saldırı atışlarına +2 bonus kazanırsın." },
+      "defense": { "name": "Savunma", "description": "Zırh giyerken Zırh Sınıfına +1 bonus kazanırsın." },
+      "dueling": { "name": "Düello", "description": "Bir elinde yakın dövüş silahı tutarken başka silah tutmuyorsan o silahla yaptığın hasar atışlarına +2 bonus kazanırsın." },
+      "great_weapon_fighting": { "name": "Büyük Silahla Dövüş", "description": "İki elle tuttuğun bir yakın dövüş silahının hasar zarında 1 veya 2 atarsan zarı yeniden atıp yeni sonucu kullanırsın. Silah iki elli veya çok yönlü olmalıdır." },
+      "protection": { "name": "Koruma", "description": "Bir yaratık 5 fit içindeki senden başka bir hedefe saldırdığında, tepkini kullanarak saldırı atışına dezavantaj verebilirsin. Kalkan tutuyor olmalısın." },
+      "two_weapon_fighting": { "name": "İki Silahla Dövüş", "description": "İki silahla dövüşürken ikinci silah saldırısının hasarına ilgili nitelik değiştiricini eklersin." }
+    },
+    "fighting_styles_paladin": {
+      "defense": { "name": "Savunma", "description": "Zırh giyerken Zırh Sınıfına +1 bonus kazanırsın." },
+      "dueling": { "name": "Düello", "description": "Bir elinde yakın dövüş silahı tutarken başka silah tutmuyorsan o silahla yaptığın hasar atışlarına +2 bonus kazanırsın." },
+      "great_weapon_fighting": { "name": "Büyük Silahla Dövüş", "description": "İki elle tuttuğun bir yakın dövüş silahının hasar zarında 1 veya 2 atarsan zarı yeniden atıp yeni sonucu kullanırsın. Silah iki elli veya çok yönlü olmalıdır." },
+      "protection": { "name": "Koruma", "description": "Bir yaratık 5 fit içindeki senden başka bir hedefe saldırdığında, tepkini kullanarak saldırı atışına dezavantaj verebilirsin. Kalkan tutuyor olmalısın." }
+    },
+    "fighting_styles_ranger": {
+      "archery": { "name": "Okçuluk", "description": "Menzilli silahlarla yaptığın saldırı atışlarına +2 bonus kazanırsın." },
+      "defense": { "name": "Savunma", "description": "Zırh giyerken Zırh Sınıfına +1 bonus kazanırsın." },
+      "dueling": { "name": "Düello", "description": "Bir elinde yakın dövüş silahı tutarken başka silah tutmuyorsan o silahla yaptığın hasar atışlarına +2 bonus kazanırsın." },
+      "two_weapon_fighting": { "name": "İki Silahla Dövüş", "description": "İki silahla dövüşürken ikinci silah saldırısının hasarına ilgili nitelik değiştiricini eklersin." }
+    },
+    "metamagic_options": {
+      "careful_spell": { "name": "Dikkatli Büyü", "description": "1 büyücülük puanı harcayıp Karizma değiştiricin kadar (en az 1) yaratık seç. Seçilen yaratıklar büyünün kurtulma atışında otomatik olarak başarılı olur." },
+      "distant_spell": { "name": "Uzak Büyü", "description": "Menzili 5 fit veya daha fazla olan bir büyünün menzilini ikiye katlamak için 1 büyücülük puanı harca. Büyünün menzili dokunmaysa menzili 30 fit olur." },
+      "empowered_spell": { "name": "Güçlendirilmiş Büyü", "description": "1 büyücülük puanı harcayarak büyünün Karizma değiştiricin kadar (en az 1) hasar zarını yeniden at. Yeni sonuçları kullanmalısın." },
+      "extended_spell": { "name": "Uzatılmış Büyü", "description": "En az 1 dakika süren bir büyünün süresini en fazla 24 saate kadar ikiye katlamak için 1 büyücülük puanı harca." },
+      "heightened_spell": { "name": "Yükseltilmiş Büyü", "description": "Bir hedefin büyüye karşı ilk kurtulma atışına dezavantaj vermek için 3 büyücülük puanı harca." },
+      "quickened_spell": { "name": "Hızlandırılmış Büyü", "description": "Yapılması 1 eylem süren bir büyüyü bonus eylem olarak yapmak için 2 büyücülük puanı harca." },
+      "subtle_spell": { "name": "Gizli Büyü", "description": "Büyüyü el hareketi veya sözlü bileşen olmadan yapmak için 1 büyücülük puanı harca." },
+      "twinned_spell": { "name": "İkiz Büyü", "description": "Normalde yalnızca bir yaratığı hedefleyen ve menzili 'kendin' olmayan bir büyüyü ikinci bir yaratığa da yöneltmek için büyü seviyesi kadar, bir basit büyü içinse 1 büyücülük puanı harca." }
+    },
+    "favored_enemies": {
+      "aberrations": { "name": "Sapkın yaratıklar", "description": "Sapkın yaratıkları gözde düşman türlerinden biri olarak seç." },
+      "beasts": { "name": "Hayvanlar", "description": "Hayvanları gözde düşman türlerinden biri olarak seç." },
+      "celestials": { "name": "Göksel yaratıklar", "description": "Göksel yaratıkları gözde düşman türlerinden biri olarak seç." },
+      "constructs": { "name": "Yapılar", "description": "Yapıları gözde düşman türlerinden biri olarak seç." },
+      "dragons": { "name": "Ejderhalar", "description": "Ejderhaları gözde düşman türlerinden biri olarak seç." },
+      "elementals": { "name": "Elementaller", "description": "Elementalleri gözde düşman türlerinden biri olarak seç." },
+      "fey": { "name": "Periler", "description": "Perileri gözde düşman türlerinden biri olarak seç." },
+      "fiends": { "name": "İblisî yaratıklar", "description": "İblisî yaratıkları gözde düşman türlerinden biri olarak seç." },
+      "giants": { "name": "Devler", "description": "Devleri gözde düşman türlerinden biri olarak seç." },
+      "monstrosities": { "name": "Canavarlar", "description": "Canavarları gözde düşman türlerinden biri olarak seç." },
+      "oozes": { "name": "Sümüksü yaratıklar", "description": "Sümüksü yaratıkları gözde düşman türlerinden biri olarak seç." },
+      "plants": { "name": "Bitkiler", "description": "Bitkileri gözde düşman türlerinden biri olarak seç." },
+      "undead": { "name": "Ölümsüzler", "description": "Ölümsüzleri gözde düşman türlerinden biri olarak seç." }
+    },
+    "favored_terrain": {
+      "arctic": { "name": "Kutup", "description": "Kutup bölgesini gözde arazilerinden biri olarak seç." },
+      "coast": { "name": "Kıyı", "description": "Kıyıyı gözde arazilerinden biri olarak seç." },
+      "desert": { "name": "Çöl", "description": "Çölü gözde arazilerinden biri olarak seç." },
+      "forest": { "name": "Orman", "description": "Ormanı gözde arazilerinden biri olarak seç." },
+      "grassland": { "name": "Otlak", "description": "Otlakları gözde arazilerinden biri olarak seç." },
+      "mountain": { "name": "Dağ", "description": "Dağları gözde arazilerinden biri olarak seç." },
+      "swamp": { "name": "Bataklık", "description": "Bataklığı gözde arazilerinden biri olarak seç." },
+      "underdark": { "name": "Yeraltı Diyarı", "description": "Yeraltı Diyarı'nı gözde arazilerinden biri olarak seç." }
+    },
+    "damage_types_elemental": {
+      "acid": { "name": "Asit", "description": "Bu özelliğin etkilediği hasar türü olarak asidi seç." },
+      "cold": { "name": "Soğuk", "description": "Bu özelliğin etkilediği hasar türü olarak soğuğu seç." },
+      "fire": { "name": "Ateş", "description": "Bu özelliğin etkilediği hasar türü olarak ateşi seç." },
+      "lightning": { "name": "Yıldırım", "description": "Bu özelliğin etkilediği hasar türü olarak yıldırımı seç." },
+      "thunder": { "name": "Gök gürültüsü", "description": "Bu özelliğin etkilediği hasar türü olarak gök gürültüsünü seç." }
+    },
+    "ability_scores": {
+      "strength": { "name": "Kuvvet", "description": "Bu özelliğin nitelik artışı, yetkinliği veya kurtulma atışı zorluk sınıfı için Kuvveti seç." },
+      "dexterity": { "name": "Çeviklik", "description": "Bu özelliğin nitelik artışı, yetkinliği veya kurtulma atışı zorluk sınıfı için Çevikliği seç." },
+      "constitution": { "name": "Dayanıklılık", "description": "Bu özelliğin nitelik artışı, yetkinliği veya kurtulma atışı zorluk sınıfı için Dayanıklılığı seç." },
+      "intelligence": { "name": "Zekâ", "description": "Bu özelliğin nitelik artışı, yetkinliği veya kurtulma atışı zorluk sınıfı için Zekâyı seç." },
+      "wisdom": { "name": "Bilgelik", "description": "Bu özelliğin nitelik artışı, yetkinliği veya kurtulma atışı zorluk sınıfı için Bilgeliği seç." },
+      "charisma": { "name": "Karizma", "description": "Bu özelliğin nitelik artışı, yetkinliği veya kurtulma atışı zorluk sınıfı için Karizmayı seç." }
+    },
+    "draconic_ancestry": {
+      "black": { "name": "Siyah", "description": "Asit hasarıyla ilişkili siyah ejderha soyunu seç." },
+      "blue": { "name": "Mavi", "description": "Yıldırım hasarıyla ilişkili mavi ejderha soyunu seç." },
+      "brass": { "name": "Pirinç", "description": "Ateş hasarıyla ilişkili pirinç ejderha soyunu seç." },
+      "bronze": { "name": "Bronz", "description": "Yıldırım hasarıyla ilişkili bronz ejderha soyunu seç." },
+      "copper": { "name": "Bakır", "description": "Asit hasarıyla ilişkili bakır ejderha soyunu seç." },
+      "gold": { "name": "Altın", "description": "Ateş hasarıyla ilişkili altın ejderha soyunu seç." },
+      "green": { "name": "Yeşil", "description": "Zehir hasarıyla ilişkili yeşil ejderha soyunu seç." },
+      "red": { "name": "Kırmızı", "description": "Ateş hasarıyla ilişkili kırmızı ejderha soyunu seç." },
+      "silver": { "name": "Gümüş", "description": "Soğuk hasarıyla ilişkili gümüş ejderha soyunu seç." },
+      "white": { "name": "Beyaz", "description": "Soğuk hasarıyla ilişkili beyaz ejderha soyunu seç." }
+    }
+  },
+  "classFeatures": {
+    "Warlock": {
+      "Pact Boon": { "choices": { "pact_boon": { "options": {
+        "pact_of_the_chain": { "name": "Zincir Ahdi", "description": "Tanıdık bul büyüsünü ritüel olarak öğrenirsin. Büyüyü yaparken sıradan bir tanıdık veya şu özel biçimlerden birini seçebilirsin: imp, sahte ejderha, quasit ya da peri." },
+        "pact_of_the_blade": { "name": "Kılıç Ahdi", "description": "Boş elinde bir ahit silahı yarat veya büyülü bir silahı ahit silahın olarak bağla." },
+        "pact_of_the_tome": { "name": "Kitap Ahdi", "description": "Herhangi bir sınıfın büyü listesinden üç basit büyü içeren bir Gölgeler Kitabı kazan." }
+      } } } }
+    }
+  },
+  "subclassFeatures": {
+    "Fighter": { "Battle Master": { "Combat Superiority": { "choices": { "maneuver_dc_ability": { "options": {
+      "strength": { "name": "Kuvvet", "description": "Manevralarının kurtulma atışı zorluk sınıfını hesaplamak için Kuvveti kullan." },
+      "dexterity": { "name": "Çeviklik", "description": "Manevralarının kurtulma atışı zorluk sınıfını hesaplamak için Çevikliği kullan." }
+    } } } } } },
+    "Ranger": { "Hunter": {
+      "Hunter's Prey": { "choices": { "hunters_prey": { "options": {
+        "colossus_slayer": { "name": "Dev Avcısı", "description": "Her turunda bir kez, azami can puanının altında olan bir yaratığa silah saldırınla isabet ettiğinde saldırı fazladan 1d8 hasar verir." },
+        "giant_killer": { "name": "Dev Katili", "description": "Yakınındaki Büyük veya daha büyük bir yaratık sana saldırdığında, saldırısından sonra tepkini kullanarak ona saldır." },
+        "horde_breaker": { "name": "Sürü Dağıtıcı", "description": "Her turunda bir kez, ilk hedefinin yakınındaki farklı bir yaratığa fazladan bir silah saldırısı yap." }
+      } } } },
+      "Defensive Tactics": { "choices": { "defensive_tactics": { "options": {
+        "escape_the_horde": { "name": "Sürüden Sıyrılma", "description": "Sana karşı yapılan fırsat saldırıları dezavantajlıdır." },
+        "multiattack_defense": { "name": "Çoklu Saldırı Savunması", "description": "Bir yaratığın saldırısı sana isabet ettiğinde, turun geri kalanında aynı yaratığın sonraki bütün saldırılarına karşı Zırh Sınıfına +4 bonus kazanırsın." },
+        "steel_will": { "name": "Çelik İrade", "description": "Korkmaya karşı kurtulma atışlarında avantaj kazanırsın." }
+      } } } },
+      "Multiattack": { "choices": { "multiattack": { "options": {
+        "volley": { "name": "Ok Yağmuru", "description": "Eylemini kullanarak menzil içindeki küçük bir alanda bulunan istediğin sayıda yaratığa menzilli saldırı yap." },
+        "whirlwind_attack": { "name": "Kasırga Saldırısı", "description": "Eylemini kullanarak 5 fit içindeki istediğin sayıda yaratığa yakın dövüş saldırısı yap." }
+      } } } },
+      "Superior Hunter's Defense": { "choices": { "superior_hunters_defense": { "options": {
+        "evasion": { "name": "Sıyrılma", "description": "Normalde başarılı bir Çeviklik kurtulma atışında yarım hasar veren bir etkiden hiç hasar alma." },
+        "stand_against_the_tide": { "name": "Akıntıya Karşı Durma", "description": "Düşman bir yaratık yakın dövüş saldırısıyla seni ıskaladığında saldırıyı başka bir yaratığa yönlendir." },
+        "uncanny_dodge": { "name": "Olağanüstü Kaçınma", "description": "Görebildiğin bir saldırgan sana isabet ettiğinde tepkini kullanarak saldırının hasarını yarıya indir." }
+      } } } }
+    } }
+  },
+  "raceTraits": { "Tool Proficiency": { "choices": { "artisan_tool": { "options": {
+    "smiths_tools": { "name": "Demirci aletleri", "description": "Demirci aletlerinde yetkinlik kazan." },
+    "brewers_supplies": { "name": "Bira üretim araçları", "description": "Bira üretim araçlarında yetkinlik kazan." },
+    "masons_tools": { "name": "Duvarcı aletleri", "description": "Duvarcı aletlerinde yetkinlik kazan." }
+  } } } } },
+  "feats": {
+    "Magic Initiate": { "choices": { "spell_class": { "options": {
+      "bard": { "name": "Ozan", "description": "Bu hünerin basit büyüleri ve büyüsü için kaynak sınıf olarak Ozanı seç." },
+      "cleric": { "name": "Rahip", "description": "Bu hünerin basit büyüleri ve büyüsü için kaynak sınıf olarak Rahibi seç." },
+      "druid": { "name": "Druid", "description": "Bu hünerin basit büyüleri ve büyüsü için kaynak sınıf olarak Druidi seç." },
+      "sorcerer": { "name": "Doğuştan Büyücü", "description": "Bu hünerin basit büyüleri ve büyüsü için kaynak sınıf olarak Doğuştan Büyücüyü seç." },
+      "warlock": { "name": "Pakt Büyücüsü", "description": "Bu hünerin basit büyüleri ve büyüsü için kaynak sınıf olarak Pakt Büyücüsünü seç." },
+      "wizard": { "name": "Büyücü", "description": "Bu hünerin basit büyüleri ve büyüsü için kaynak sınıf olarak Büyücüyü seç." }
+    } } } },
+    "Martial Adept": { "choices": { "maneuver_dc_ability": { "options": {
+      "strength": { "name": "Kuvvet", "description": "Manevralarının kurtulma atışı zorluk sınıfını hesaplamak için Kuvveti kullan." },
+      "dexterity": { "name": "Çeviklik", "description": "Manevralarının kurtulma atışı zorluk sınıfını hesaplamak için Çevikliği kullan." }
+    } } } },
+    "Weapon Master": { "choices": { "ability": { "options": {
+      "strength": { "name": "Kuvvet", "description": "Bu hüner için Kuvvet puanını artır." },
+      "dexterity": { "name": "Çeviklik", "description": "Bu hüner için Çeviklik puanını artır." }
+    } } } }
+  }
+}

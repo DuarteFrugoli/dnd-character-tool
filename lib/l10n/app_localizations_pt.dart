@@ -67,6 +67,47 @@ class AppLocalizationsPt extends AppLocalizations {
   String get whatsNewDone => 'Entendi';
 
   @override
+  String get whatsNewSummary =>
+      'O turco chegou, o catálogo de itens mágicos do SRD 5.1 cresceu e a atualização de personagens ficou mais clara. O suporte a D&D 2024 está em desenvolvimento.';
+
+  @override
+  String get whatsNewTurkishTitle => 'Agora em turco';
+
+  @override
+  String get whatsNewTurkishBody =>
+      'A interface do app e o conteúdo de jogo do SRD 5.1 agora estão disponíveis em turco.';
+
+  @override
+  String get whatsNewMagicItemsTitle => 'Mais itens mágicos';
+
+  @override
+  String get whatsNewMagicItemsBody =>
+      'Explore mais itens mágicos do SRD 5.1. Também adicionamos traduções que faltavam nos idiomas disponíveis.';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle =>
+      'Atualização de personagens mais clara';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      'Quando um personagem precisa ser atualizado, você pode fazer um backup dos personagens, atualizar todos ou cancelar. A ficha permanece fechada até ser atualizada.';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024 em desenvolvimento';
+
+  @override
+  String get whatsNew2024Body =>
+      'Estamos criando um modo separado para as regras de 2024, com classes, subclasses, espécies, magias, equipamentos e itens mágicos atualizados, mantendo os personagens de 2014 jogáveis. Planejamos uma conversão guiada opcional; a criação e a conversão de personagens para 2024 ainda não estão disponíveis.';
+
+  @override
+  String get whatsNewSettingsSubtitle =>
+      'Leia novamente as novidades mais recentes.';
+
+  @override
+  String get whatsNewThanks =>
+      'Obrigado por jogar e compartilhar suas sugestões. Suas ideias ajudam a decidir o que vem a seguir.';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name importado com sucesso!';
   }

@@ -68,6 +68,46 @@ class AppLocalizationsFr extends AppLocalizations {
   String get whatsNewDone => 'Compris';
 
   @override
+  String get whatsNewSummary =>
+      'Le turc est disponible, le catalogue d\'objets magiques du SRD 5.1 s\'est enrichi et la mise à jour des personnages est plus claire. La prise en charge de D&D 2024 est en cours de développement.';
+
+  @override
+  String get whatsNewTurkishTitle => 'Maintenant en turc';
+
+  @override
+  String get whatsNewTurkishBody =>
+      'L\'interface de l\'application et le contenu du SRD 5.1 sont désormais disponibles en turc.';
+
+  @override
+  String get whatsNewMagicItemsTitle => 'Plus d\'objets magiques';
+
+  @override
+  String get whatsNewMagicItemsBody =>
+      'Découvrez davantage d\'objets magiques du SRD 5.1. Des traductions manquantes ont également été ajoutées dans les langues prises en charge.';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle =>
+      'Mise à jour des personnages plus claire';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      'Lorsqu\'un personnage doit être mis à jour, vous pouvez sauvegarder vos personnages, tous les mettre à jour ou annuler. La fiche reste fermée tant qu\'elle n\'a pas été mise à jour.';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024 est en développement';
+
+  @override
+  String get whatsNew2024Body =>
+      'Nous préparons un mode de règles 2024 distinct, avec des classes, sous-classes, espèces, sorts, équipements et objets magiques mis à jour, tout en conservant la possibilité de jouer avec les personnages de 2014. Une conversion guidée facultative est prévue ; la création et la conversion de personnages pour 2024 ne sont pas encore disponibles.';
+
+  @override
+  String get whatsNewSettingsSubtitle => 'Relire les dernières nouveautés.';
+
+  @override
+  String get whatsNewThanks =>
+      'Merci de jouer et de nous faire part de vos commentaires. Vos idées nous aident à préparer la suite.';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name importé avec succès !';
   }

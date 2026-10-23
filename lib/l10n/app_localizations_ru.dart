@@ -68,6 +68,45 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whatsNewDone => 'Понятно';
 
   @override
+  String get whatsNewSummary =>
+      'Теперь доступен турецкий язык, каталог магических предметов SRD 5.1 расширился, а обновление персонажей стало понятнее. Поддержка D&D 2024 находится в разработке.';
+
+  @override
+  String get whatsNewTurkishTitle => 'Теперь на турецком';
+
+  @override
+  String get whatsNewTurkishBody =>
+      'Интерфейс приложения и игровые материалы SRD 5.1 теперь доступны на турецком языке.';
+
+  @override
+  String get whatsNewMagicItemsTitle => 'Больше магических предметов';
+
+  @override
+  String get whatsNewMagicItemsBody =>
+      'В каталог добавлены новые магические предметы SRD 5.1, а также недостающие переводы на поддерживаемые языки.';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle => 'Понятнее обновление персонажей';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      'Если персонажа нужно обновить, вы можете создать резервную копию персонажей, обновить их всех или отменить действие. Лист персонажа останется закрытым до обновления.';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024 в разработке';
+
+  @override
+  String get whatsNew2024Body =>
+      'Мы создаём отдельный режим правил 2024 года с обновлёнными классами, подклассами, видами, заклинаниями, снаряжением и магическими предметами. При этом персонажи по правилам 2014 года останутся доступными. Планируется необязательный пошаговый переход; создание и перенос персонажей на правила 2024 года пока недоступны.';
+
+  @override
+  String get whatsNewSettingsSubtitle => 'Прочитать последние новости ещё раз.';
+
+  @override
+  String get whatsNewThanks =>
+      'Спасибо, что играете и делитесь отзывами. Ваши идеи помогают определить, что будет дальше.';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name успешно импортирован!';
   }

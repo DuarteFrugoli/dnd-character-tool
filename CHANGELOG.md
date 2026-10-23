@@ -19,7 +19,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - **Turco**: interface e conteudo SRD 5.1 disponiveis em turco.
-- **Novidades no app**: adicionada tela visual localizada ao abrir o app, mostrando recursos recentes uma vez por aviso.
+- **Novidades no app**: adicionada tela visual ao abrir o app, com resumo da 2.1.1 e previa do suporte a D&D 2024 ainda em desenvolvimento; pode ser reaberta pelas Configuracoes. As mensagens estao traduzidas em todos os idiomas do app.
 
 ### Changed
 - **Atualizacao de personagens**: fichas antigas agora mostram opcoes de backup, atualizacao de todos os personagens ou cancelamento em um dialogo, sem redirecionar para Configuracoes.

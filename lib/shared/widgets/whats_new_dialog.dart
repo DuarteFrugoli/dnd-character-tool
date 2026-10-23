@@ -107,27 +107,42 @@ class _WhatsNewDialog extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 20, 24, 12),
                 child: Text(
-                  l10n.whatsNewIntro,
+                  l10n.whatsNewSummary,
                   style: theme.textTheme.bodyLarge?.copyWith(
-                    color: cs.onSurfaceVariant,
+                    color: cs.onSurface,
+                    fontWeight: FontWeight.w600,
                     height: 1.35,
                   ),
                 ),
               ),
               _WhatsNewItem(
-                icon: Icons.casino_outlined,
-                title: l10n.whatsNewContextualRollsTitle,
-                body: l10n.whatsNewContextualRollsBody,
+                icon: Icons.translate_outlined,
+                title: l10n.whatsNewTurkishTitle,
+                body: l10n.whatsNewTurkishBody,
               ),
               _WhatsNewItem(
-                icon: Icons.adjust_outlined,
-                title: l10n.whatsNewCriticalsTitle,
-                body: l10n.whatsNewCriticalsBody,
+                icon: Icons.inventory_2_outlined,
+                title: l10n.whatsNewMagicItemsTitle,
+                body: l10n.whatsNewMagicItemsBody,
               ),
               _WhatsNewItem(
                 icon: Icons.verified_user_outlined,
-                title: l10n.whatsNewConfirmationsTitle,
-                body: l10n.whatsNewConfirmationsBody,
+                title: l10n.whatsNewCharacterUpdatesTitle,
+                body: l10n.whatsNewCharacterUpdatesBody,
+              ),
+              _WhatsNewItem(
+                icon: Icons.menu_book_outlined,
+                title: l10n.whatsNew2024Title,
+                body: l10n.whatsNew2024Body,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24, 16, 24, 0),
+                child: Text(
+                  l10n.whatsNewThanks,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 14, 24, 24),

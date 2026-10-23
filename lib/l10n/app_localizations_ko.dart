@@ -65,6 +65,44 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whatsNewDone => '확인';
 
   @override
+  String get whatsNewSummary =>
+      '이제 터키어를 지원하고, SRD 5.1 마법 아이템이 늘었으며, 캐릭터 업데이트 과정도 더 명확해졌습니다. D&D 2024 지원은 개발 중입니다.';
+
+  @override
+  String get whatsNewTurkishTitle => '터키어 지원';
+
+  @override
+  String get whatsNewTurkishBody => '앱 화면과 SRD 5.1 게임 콘텐츠를 터키어로 이용할 수 있습니다.';
+
+  @override
+  String get whatsNewMagicItemsTitle => '마법 아이템 추가';
+
+  @override
+  String get whatsNewMagicItemsBody =>
+      'SRD 5.1 마법 아이템이 추가되었고, 지원 언어에서 누락되었던 번역도 보완했습니다.';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle => '더 명확해진 캐릭터 업데이트';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      '캐릭터를 업데이트해야 할 때는 먼저 캐릭터를 백업한 뒤 모두 업데이트하거나 취소할 수 있습니다. 업데이트를 마칠 때까지 해당 캐릭터 시트는 열리지 않습니다.';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024 개발 중';
+
+  @override
+  String get whatsNew2024Body =>
+      '2014년 규칙의 캐릭터를 계속 사용할 수 있도록 하면서, 클래스, 서브클래스, 종족, 주문, 장비, 마법 아이템을 업데이트한 별도의 2024년 규칙 모드를 개발하고 있습니다. 선택형 안내 변환 기능도 계획 중입니다. 2024년 규칙으로 캐릭터를 생성하거나 변환하는 기능은 아직 제공되지 않습니다.';
+
+  @override
+  String get whatsNewSettingsSubtitle => '최신 소식을 다시 읽어보세요.';
+
+  @override
+  String get whatsNewThanks =>
+      '게임을 즐기고 의견을 나눠 주셔서 감사합니다. 여러분의 아이디어가 앞으로의 개발에 큰 도움이 됩니다.';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name를 성공적으로 가져왔습니다!';
   }

@@ -80,7 +80,7 @@ A cross-platform app for creating and managing DnD 5e (2014) characters, built w
 - Character maintenance flow in Settings for applying versioned data updates
 - Backup export/import for all characters at once
 - Manual Play Store rating action in Settings, plus a rare automatic in-app review request after real app usage
-- A localized What's New dialog presents recent changes once per announcement
+- A What's New dialog presents recent changes once per announcement and can be reopened from Settings
 
 ### Export & Import
 - Export as **`.dndchar`** portable file (includes photo), shareable via the system share sheet
@@ -225,7 +225,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e (2014), 
 - Fluxo de manutenção nas configurações para aplicar atualizações versionadas nos personagens
 - Backup geral para exportar/importar todos os personagens de uma vez
 - Ação manual para avaliar na Play Store nas configurações, além de pedido automático raro após uso real do app
-- Tela localizada de novidades exibida uma vez por anúncio
+- Tela de novidades exibida uma vez por anúncio, com opção de reabrir nas Configurações
 
 ### Export & Import
 - Exportar como arquivo **`.dndchar`** portátil (inclui foto), compartilhável via sistema de compartilhamento do dispositivo

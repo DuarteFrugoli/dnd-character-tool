@@ -32,6 +32,10 @@ class WhatsNewService {
       return null;
     }
 
+    return currentInfo();
+  }
+
+  Future<WhatsNewInfo> currentInfo() async {
     final info = await _packageInfo();
     final version = info.version.trim();
     return WhatsNewInfo(

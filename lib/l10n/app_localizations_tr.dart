@@ -67,6 +67,46 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whatsNewDone => 'Anladım';
 
   @override
+  String get whatsNewSummary =>
+      'Türkçe desteği geldi, SRD 5.1 büyülü eşya kataloğu genişledi ve karakter güncellemeleri daha anlaşılır hâle geldi. D&D 2024 desteği geliştiriliyor.';
+
+  @override
+  String get whatsNewTurkishTitle => 'Artık Türkçe';
+
+  @override
+  String get whatsNewTurkishBody =>
+      'Uygulama arayüzü ve SRD 5.1 oyun içeriği artık Türkçe olarak kullanılabilir.';
+
+  @override
+  String get whatsNewMagicItemsTitle => 'Daha fazla büyülü eşya';
+
+  @override
+  String get whatsNewMagicItemsBody =>
+      'Daha fazla SRD 5.1 büyülü eşyayı keşfedin. Desteklenen dillerde eksik olan çeviriler de eklendi.';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle =>
+      'Daha anlaşılır karakter güncellemeleri';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      'Bir karakterin güncellenmesi gerektiğinde karakterlerinizi yedekleyebilir, hepsini güncelleyebilir veya işlemi iptal edebilirsiniz. Güncellenene kadar karakter sayfası açılmaz.';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024 geliştiriliyor';
+
+  @override
+  String get whatsNew2024Body =>
+      '2014 kurallarına göre oluşturulmuş karakterleri oynanabilir tutarken güncellenmiş sınıflar, alt sınıflar, türler, büyüler, ekipman ve büyülü eşyalar içeren ayrı bir 2024 kural modu geliştiriyoruz. İsteğe bağlı rehberli dönüştürme planlanıyor; 2024 kurallarıyla karakter oluşturma ve dönüştürme henüz kullanılamıyor.';
+
+  @override
+  String get whatsNewSettingsSubtitle => 'Son duyuruyu yeniden oku.';
+
+  @override
+  String get whatsNewThanks =>
+      'Oynadığınız ve görüşlerinizi paylaştığınız için teşekkür ederiz. Fikirleriniz sonraki adımlarımıza yön veriyor.';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name başarıyla içe aktarıldı!';
   }

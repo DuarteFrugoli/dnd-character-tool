@@ -218,6 +218,72 @@ abstract class AppLocalizations {
   /// **'Got it'**
   String get whatsNewDone;
 
+  /// Short summary at the top of the 2.1.1 What's New dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Turkish is here, the SRD 5.1 magic-item catalog has grown, and character updates are clearer. D&D 2024 support is in development.'**
+  String get whatsNewSummary;
+
+  /// Title for Turkish language support in the 2.1.1 announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'Now in Turkish'**
+  String get whatsNewTurkishTitle;
+
+  /// Details about Turkish language support in the 2.1.1 announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'The app interface and SRD 5.1 game content are now available in Turkish.'**
+  String get whatsNewTurkishBody;
+
+  /// Title for expanded SRD 5.1 magic items in the 2.1.1 announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'More magic items'**
+  String get whatsNewMagicItemsTitle;
+
+  /// Details about SRD 5.1 magic-item additions in the 2.1.1 announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore more SRD 5.1 magic items, with previously missing translations added across the supported languages.'**
+  String get whatsNewMagicItemsBody;
+
+  /// Title for the character update flow in the 2.1.1 announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'Clearer character updates'**
+  String get whatsNewCharacterUpdatesTitle;
+
+  /// Details about the character update flow in the 2.1.1 announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'When a character needs an update, you can back up your characters, update them all, or cancel. The sheet stays closed until it is updated.'**
+  String get whatsNewCharacterUpdatesBody;
+
+  /// Title for the future D&D 2024 rules mode in the 2.1.1 announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D 2024 is in development'**
+  String get whatsNew2024Title;
+
+  /// Preview of planned D&D 2024 support; must not imply it is available in 2.1.1.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re building a separate 2024 rules mode with updated classes, subclasses, species, spells, equipment, and magic items, while keeping 2014 characters playable. Optional guided conversion is planned; 2024 creation and conversion are not available yet.'**
+  String get whatsNew2024Body;
+
+  /// Subtitle for the What's New entry in Settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the latest announcement again.'**
+  String get whatsNewSettingsSubtitle;
+
+  /// Thank-you message at the end of the What's New dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for playing and sharing your feedback. Your ideas help shape what comes next.'**
+  String get whatsNewThanks;
+
   /// Snackbar after successful import.
   ///
   /// In en, this message translates to:

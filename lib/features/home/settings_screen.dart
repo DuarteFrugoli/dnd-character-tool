@@ -15,12 +15,14 @@ import '../../core/theme/app_themes.dart';
 import '../../core/theme/theme_provider.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/utils/file_exporter.dart';
+import '../../core/whats_new/whats_new_service.dart';
 import '../../data/dice/dice.dart';
 import '../../data/migrations/character_migration_runner.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_maintenance_report.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
+import '../../shared/widgets/whats_new_dialog.dart';
 import '../character_list/character_list_provider.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -203,19 +205,19 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
                 const Divider(height: 32),
 
-                if (AppReviewService.isPlayStoreReviewSupported) ...[
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-                    child: Text(
-                      AppLocalizations.of(context)!.settingsSectionApp,
-                      style: Theme.of(
-                        context,
-                      ).textTheme.titleSmall?.copyWith(color: cs.primary),
-                    ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                  child: Text(
+                    AppLocalizations.of(context)!.settingsSectionApp,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: cs.primary),
                   ),
+                ),
+                const _WhatsNewTile(),
+                if (AppReviewService.isPlayStoreReviewSupported)
                   const _ReviewAppTile(),
-                  const Divider(height: 32),
-                ],
+                const Divider(height: 32),
 
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
@@ -232,6 +234,29 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _WhatsNewTile extends ConsumerWidget {
+  const _WhatsNewTile();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+
+    return ListTile(
+      leading: const Icon(Icons.campaign_outlined),
+      title: Text(l10n.whatsNewTitle),
+      subtitle: Text(l10n.whatsNewSettingsSubtitle),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () async {
+        final service = ref.read(whatsNewServiceProvider);
+        final info = await service.currentInfo();
+        if (!context.mounted) return;
+        await showWhatsNewDialog(context, version: info.version);
+        await service.markSeen(info.id);
+      },
     );
   }
 }

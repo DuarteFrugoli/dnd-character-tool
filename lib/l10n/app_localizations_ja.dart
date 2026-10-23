@@ -63,6 +63,45 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whatsNewDone => '了解';
 
   @override
+  String get whatsNewSummary =>
+      'トルコ語に対応し、SRD 5.1の魔法のアイテムが増え、キャラクターの更新手順も分かりやすくなりました。D&D 2024への対応は開発中です。';
+
+  @override
+  String get whatsNewTurkishTitle => 'トルコ語に対応';
+
+  @override
+  String get whatsNewTurkishBody =>
+      'アプリの画面とSRD 5.1のゲームコンテンツがトルコ語で利用できるようになりました。';
+
+  @override
+  String get whatsNewMagicItemsTitle => '魔法のアイテムを追加';
+
+  @override
+  String get whatsNewMagicItemsBody =>
+      'SRD 5.1の魔法のアイテムを追加し、対応言語で不足していた翻訳も補いました。';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle => 'キャラクターの更新がより明確に';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      'キャラクターの更新が必要な場合、バックアップを作成してから全員を更新するか、キャンセルできます。更新が終わるまで、そのキャラクターシートは開きません。';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024に向けて開発中';
+
+  @override
+  String get whatsNew2024Body =>
+      '2014年版のキャラクターを引き続き使えるようにしながら、クラス、サブクラス、種族、呪文、装備、魔法のアイテムを更新した2024年版の独立したルールモードを開発中です。任意で使えるガイド付き変換も予定しています。2024年版のキャラクター作成と変換は、まだ利用できません。';
+
+  @override
+  String get whatsNewSettingsSubtitle => '最新のお知らせをもう一度読む。';
+
+  @override
+  String get whatsNewThanks =>
+      '遊んでいただき、またご意見をお寄せいただきありがとうございます。皆さんのアイデアが今後の開発につながります。';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name は正常にインポートされました。';
   }

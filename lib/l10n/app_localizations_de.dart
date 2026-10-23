@@ -67,6 +67,47 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whatsNewDone => 'Verstanden';
 
   @override
+  String get whatsNewSummary =>
+      'Türkisch ist da, der Katalog magischer Gegenstände aus dem SRD 5.1 ist gewachsen und die Aktualisierung von Charakteren ist verständlicher. Die Unterstützung für D&D 2024 ist in Entwicklung.';
+
+  @override
+  String get whatsNewTurkishTitle => 'Jetzt auf Türkisch';
+
+  @override
+  String get whatsNewTurkishBody =>
+      'Die Benutzeroberfläche und die Spielinhalte des SRD 5.1 sind jetzt auf Türkisch verfügbar.';
+
+  @override
+  String get whatsNewMagicItemsTitle => 'Mehr magische Gegenstände';
+
+  @override
+  String get whatsNewMagicItemsBody =>
+      'Entdecke weitere magische Gegenstände aus dem SRD 5.1. Bisher fehlende Übersetzungen wurden für die unterstützten Sprachen ergänzt.';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle =>
+      'Verständlichere Charakteraktualisierung';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      'Wenn ein Charakter aktualisiert werden muss, kannst du zuerst eine Sicherung deiner Charaktere erstellen, alle aktualisieren oder abbrechen. Der Charakterbogen bleibt bis zur Aktualisierung geschlossen.';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024 ist in Entwicklung';
+
+  @override
+  String get whatsNew2024Body =>
+      'Wir entwickeln einen separaten Regelmodus für 2024 mit aktualisierten Klassen, Unterklassen, Spezies, Zaubern, Ausrüstung und magischen Gegenständen. Charaktere nach den Regeln von 2014 bleiben spielbar. Eine optionale, geführte Umstellung ist geplant; die Erstellung und Umstellung von Charakteren nach den Regeln von 2024 sind noch nicht verfügbar.';
+
+  @override
+  String get whatsNewSettingsSubtitle =>
+      'Die neuesten Ankündigungen erneut lesen.';
+
+  @override
+  String get whatsNewThanks =>
+      'Danke, dass du spielst und uns Feedback gibst. Deine Ideen helfen uns bei den nächsten Schritten.';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name erfolgreich importiert!';
   }

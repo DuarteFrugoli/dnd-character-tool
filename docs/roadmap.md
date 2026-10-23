@@ -248,8 +248,9 @@ enquanto o suporte a D&D 2024 continua em desenvolvimento.
 
 - [x] Traduzir a interface e os overlays do SRD 5.1 para turco.
 - [x] Incluir turco no seletor de idiomas e nos assets do app.
-- [x] Mostrar um aviso visual e localizado de novidades ao abrir o app, salvo
-      localmente e versionado por identificador interno.
+- [x] Mostrar um aviso visual de novidades ao abrir o app, salvo
+      localmente e versionado por identificador interno; permitir reabri-lo
+      pelas Configuracoes.
 - [x] Pedir backup ou atualizacao de personagens antigos sem abrir a ficha nem
       redirecionar automaticamente para Configuracoes.
 

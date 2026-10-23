@@ -62,6 +62,42 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whatsNewDone => '知道了';
 
   @override
+  String get whatsNewSummary =>
+      '现已支持土耳其语，SRD 5.1 魔法物品目录更加丰富，角色更新流程也更加清晰。D&D 2024 支持功能仍在开发中。';
+
+  @override
+  String get whatsNewTurkishTitle => '现已支持土耳其语';
+
+  @override
+  String get whatsNewTurkishBody => '应用界面和 SRD 5.1 游戏内容现已提供土耳其语版本。';
+
+  @override
+  String get whatsNewMagicItemsTitle => '更多魔法物品';
+
+  @override
+  String get whatsNewMagicItemsBody => '探索更多 SRD 5.1 魔法物品。我们还补齐了支持语言中此前缺失的翻译。';
+
+  @override
+  String get whatsNewCharacterUpdatesTitle => '更清晰的角色更新流程';
+
+  @override
+  String get whatsNewCharacterUpdatesBody =>
+      '如果角色需要更新，你可以先备份角色、更新所有角色，或取消操作。更新完成前，该角色卡不会打开。';
+
+  @override
+  String get whatsNew2024Title => 'D&D 2024 正在开发中';
+
+  @override
+  String get whatsNew2024Body =>
+      '我们正在开发独立的 2024 规则模式，包含更新后的职业、子职业、物种、法术、装备和魔法物品，同时保留对 2014 规则角色的支持。我们计划提供可选的引导式转换；目前还不能创建或转换 2024 规则角色。';
+
+  @override
+  String get whatsNewSettingsSubtitle => '再次阅读最新公告。';
+
+  @override
+  String get whatsNewThanks => '感谢你使用本应用并分享反馈。你的建议将帮助我们决定接下来做什么。';
+
+  @override
   String charListImportedSuccess(String name) {
     return '$name导入成功！';
   }

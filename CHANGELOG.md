@@ -28,7 +28,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Novidades no app**: aviso versionado por identificador interno e salvo localmente para aparecer apenas uma vez por novidade.
 - **SRD 5.1**: ampliado o catalogo ingles de itens magicos, preparando a traducao das entradas que faltavam nos outros idiomas.
 - **Traducoes SRD 5.1**: completadas as entradas faltantes de itens magicos nos idiomas existentes e a cobertura dos catalogos em turco.
-- **Versionamento**: versao do app preparada como `2.1.1+31`.
+- **Versionamento**: versao do app preparada como `2.1.1+32`.
 
 ---
 

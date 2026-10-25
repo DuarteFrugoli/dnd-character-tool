@@ -1,0 +1,2993 @@
+{
+  "Acid Splash": {
+    "name": "酸液飞溅",
+    "description": "你使60英尺内一个半径5英尺的球状区域迸发酸液。区域内的生物须进行敏捷豁免，失败则受到1d6酸蚀伤害。角色达到5、11、17级时，伤害分别变为2d6、3d6、4d6。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Chill Touch": {
+    "name": "冷触",
+    "description": "进行一次近战法术攻击。命中时，目标受到1d10黯蚀伤害，且直到你的下一回合结束前无法恢复生命值。角色达到5、11、17级时，伤害分别变为2d10、3d10、4d10。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Dancing Lights": {
+    "name": "舞光术",
+    "description": "创造至多四团悬浮的微光，每团照亮半径10英尺的范围；也可将它们合成一个中型类人生物的轮廓。你可用附赠动作将光团移动至多60英尺，但它们彼此须保持在20英尺内。",
+    "material": "少量磷",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Druidcraft": {
+    "name": "德鲁伊伎俩",
+    "description": "制造一种微小的自然现象：预示当地次日天气、使植物开花、产生无害的感官效果，或点燃、熄灭蜡烛、火把或营火。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "立即"
+  },
+  "Eldritch Blast": {
+    "name": "魔能爆",
+    "description": "每道射线分别进行一次远程法术攻击。命中造成1d10力场伤害。角色达到5、11、17级时，射线分别增加至两道、三道、四道；每道射线可选择不同目标，并分别进行攻击检定。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Elementalism": {
+    "name": "元素戏法",
+    "description": "在30英尺内制造一种微小的元素现象：搅动空气或尘土、在沙上显现文字、产生无害的烟雾或余烬，或短暂改变水的形状、颜色或流动。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "立即"
+  },
+  "Fire Bolt": {
+    "name": "火焰箭",
+    "description": "对一个生物或物件进行一次远程法术攻击。命中造成1d10火焰伤害，并点燃无人持有的易燃物。角色达到5、11、17级时，伤害分别变为2d10、3d10、4d10。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Guidance": {
+    "name": "神导术",
+    "description": "触碰一个自愿生物并选择一项技能。在至多1分钟内，该生物使用该技能进行属性检定时可加上1d4。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1分钟"
+  },
+  "Light": {
+    "name": "光亮术",
+    "description": "触碰一个无人持有、体型不超过大型的物件。接下来的1小时，它向外20英尺发出明亮光照，再向外20英尺发出微光；不透明遮盖物可阻挡光线。",
+    "material": "一只萤火虫或一些磷光苔藓",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Mage Hand": {
+    "name": "法师之手",
+    "description": "创造一只持续1分钟的幽灵手。它可操纵物件、打开未上锁的门或容器，并搬运至多10磅重物，但不能攻击或启动魔法物品。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "1分钟"
+  },
+  "Mending": {
+    "name": "修复术",
+    "description": "修复所触碰物件上一处不超过1英尺的破损或裂口。它可修复魔法物品的物理损伤，却无法恢复其魔法。",
+    "material": "两块磁石",
+    "castingTime": "1分钟",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Message": {
+    "name": "传讯术",
+    "description": "向120英尺内的一个生物低语；只有它能听到，并可低语回复。若你熟悉目标，信息可穿过障碍，但魔法沉默、足够厚的固体材料或铅会阻断它。",
+    "material": "一段铜线",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "1轮"
+  },
+  "Minor Illusion": {
+    "name": "次级幻影",
+    "description": "创造一种声音，或一个不超过边长5英尺立方体的物件影像，持续1分钟。影像无法产生声音、光、气味或物理效果；生物可用研习动作进行对抗你法术豁免DC的调查检定来识破它。",
+    "material": "少量羊毛",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "1分钟"
+  },
+  "Poison Spray": {
+    "name": "毒气喷溅",
+    "description": "对30英尺内的一个生物进行一次远程法术攻击。命中造成1d12毒素伤害；角色达到5、11、17级时，伤害分别变为2d12、3d12、4d12。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Prestidigitation": {
+    "name": "魔法伎俩",
+    "description": "在10英尺内制造一种微小的魔法效果：无害的感官现象、点燃或熄灭小火、清洁或弄脏小物件、改变温度或味道、留下记号，或创造微小饰物。至多三种持续效果可同时存在。",
+    "castingTime": "动作",
+    "range": "10英尺",
+    "duration": "至多1小时"
+  },
+  "Produce Flame": {
+    "name": "生火术",
+    "description": "用附赠动作创造一团持续10分钟的火焰，向外20英尺发出明亮光照，再向外20英尺发出微光。期间你可用魔法动作将其投掷至多60英尺；远程法术攻击命中造成1d8火焰伤害，伤害在5、11、17级时提高。",
+    "castingTime": "附赠动作",
+    "range": "自身",
+    "duration": "10分钟",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Ray of Frost": {
+    "name": "冰霜射线",
+    "description": "进行一次远程法术攻击。命中造成1d8寒冷伤害，并使目标速度减少10英尺，直到你的下一回合开始。角色达到5、11、17级时，伤害分别变为2d8、3d8、4d8。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Resistance": {
+    "name": "抗性术",
+    "description": "触碰一个自愿生物，并选择酸蚀、钝击、寒冷、火焰、闪电、黯蚀、穿刺、毒素、光耀、挥砍或雷鸣伤害。至多1分钟内，该生物每回合受到一次所选类型伤害时可减少1d4。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1分钟"
+  },
+  "Sacred Flame": {
+    "name": "圣焰术",
+    "description": "60英尺内一个你能看见的生物须进行敏捷豁免，失败则受到1d8光耀伤害；半身掩护和四分之三掩护对此豁免无效。角色达到5、11、17级时，伤害分别变为2d8、3d8、4d8。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Shillelagh": {
+    "name": "橡棍术",
+    "description": "使手持的短棍或长棍获得强化，持续1分钟。其近战攻击和伤害检定可使用你的施法属性；伤害骰变为d8，且可造成力场伤害而非通常伤害。角色达到5、11、17级时，伤害骰分别变为d10、d12、2d6。",
+    "material": "槲寄生",
+    "castingTime": "附赠动作",
+    "range": "自身",
+    "duration": "1分钟"
+  },
+  "Shocking Grasp": {
+    "name": "电爪术",
+    "description": "进行一次近战法术攻击。命中造成1d8闪电伤害，且目标直到其下一回合开始前无法进行借机攻击。角色达到5、11、17级时，伤害分别变为2d8、3d8、4d8。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Sorcerous Burst": {
+    "name": "术法爆发",
+    "description": "对一个生物或物件进行一次远程法术攻击。命中造成1d8酸蚀、寒冷、火焰、闪电、毒素、心灵或雷鸣伤害。每个掷出8的伤害骰可额外增加一枚d8，额外骰数上限为你的施法属性调整值。角色达到5、11、17级时，基础伤害骰分别变为2d8、3d8、4d8。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "立即"
+  },
+  "Spare the Dying": {
+    "name": "稳定伤势",
+    "description": "使一个生命值为0但尚未死亡的生物进入稳定状态。射程为15英尺，并在角色达到5、11、17级时依次翻倍为30、60、120英尺。",
+    "castingTime": "动作",
+    "range": "15英尺",
+    "duration": "立即"
+  },
+  "Starry Wisp": {
+    "name": "星光微芒",
+    "description": "进行一次远程法术攻击。命中造成1d8光耀伤害；直到你的下一回合结束，目标向外10英尺发出微光，且无法受益于隐形状态。角色达到5、11、17级时，伤害分别变为2d8、3d8、4d8。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Thaumaturgy": {
+    "name": "奇术",
+    "description": "在30英尺内创造一种微小奇迹，例如改变眼睛外观、以洪亮声音说话并在威吓检定中获得优势、改变火焰、打开或关闭门、制造幻音或引发震颤。至多三种持续效果可同时存在。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "至多1分钟"
+  },
+  "True Strike": {
+    "name": "真实打击",
+    "description": "使用一把你擅长、价值至少1铜币的武器进行一次攻击，并以施法属性进行攻击和伤害检定。伤害可为光耀伤害或武器通常的类型；角色达到5、11、17级时，额外造成1d6、2d6、3d6光耀伤害。",
+    "material": "一把你擅长且价值至少1铜币的武器",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Vicious Mockery": {
+    "name": "恶言相讥",
+    "description": "60英尺内一个你能看见或听见的生物须进行感知豁免，失败则受到1d6心灵伤害，且直到其下一回合结束前的下一次攻击具有劣势。角色达到5、11、17级时，伤害分别变为2d6、3d6、4d6。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Alarm": {
+    "name": "警报术",
+    "description": "为一扇门、窗或至多边长20英尺的立方区域设置8小时警报。你可指定不会触发警报的生物，并选择入侵时发出心灵警报或可听见的铃声。",
+    "material": "一只铃铛和一段银线",
+    "castingTime": "1分钟或仪式",
+    "range": "30英尺",
+    "duration": "8小时"
+  },
+  "Animal Friendship": {
+    "name": "动物交友术",
+    "description": "你能看见的一只野兽须进行感知豁免。失败时，它受你魅惑24小时；若你或盟友伤害它，效果提前结束。使用更高环阶法术位时，每高一环可增加一只野兽作为目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "material": "一小口食物",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "24小时"
+  },
+  "Bane": {
+    "name": "灾祸术",
+    "description": "至多三个你能看见的生物须进行魅力豁免。失败的目标在至多1分钟内，攻击检定和豁免检定均减去1d4。使用高于1环的法术位时，每高一环可增加一个目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "material": "一滴血",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Bless": {
+    "name": "祝福术",
+    "description": "至多三个生物在至多1分钟内，攻击检定和豁免检定均可加上1d4。使用高于1环的法术位时，每高一环可增加一个目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "material": "一枚价值至少5金币的圣徽",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Burning Hands": {
+    "name": "燃烧之手",
+    "description": "火焰从你身上喷出，充满15英尺锥状区域。区域内生物须进行敏捷豁免，失败受到3d6火焰伤害，成功则受到一半伤害。无人持有的易燃物会被点燃；更高环阶法术位每高一环增加1d6伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d6伤害。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Charm Person": {
+    "name": "魅惑人类",
+    "description": "一个你能看见的类人生物须进行感知豁免；若你或盟友正与其交战，它进行豁免时具有优势。失败时，它受你魅惑并对你友善1小时；若你或盟友伤害它，效果提前结束。法术结束后，它知道自己曾被魅惑。更高环阶法术位可增加目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "1小时"
+  },
+  "Chromatic Orb": {
+    "name": "繁彩法球",
+    "description": "进行一次远程法术攻击，造成3d8酸蚀、寒冷、火焰、闪电、毒素或雷鸣伤害。若伤害骰出现相同点数，法球可跳向30英尺内另一目标；更高环阶法术位增加1d8伤害，且最多可跳跃相当于法术位环阶的次数。同一目标不能被命中两次。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d8伤害。",
+    "material": "一颗价值至少50金币的钻石",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Color Spray": {
+    "name": "七彩喷射",
+    "description": "15英尺锥状区域内的生物须进行体质豁免，失败则陷入目盲，直到你的下一回合结束。",
+    "material": "一撮彩色沙子",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Command": {
+    "name": "命令术",
+    "description": "一个你能看见的生物须进行感知豁免，以抵抗你发出的单词命令。失败时，它在下一回合按命令接近你、丢下手持物、逃离、倒地或停住。更高环阶法术位可增加目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Comprehend Languages": {
+    "name": "通晓语言",
+    "description": "在1小时内，你能理解口语或手语的字面意思，以及触碰到的文字。阅读一页约需1分钟；密语和暗码仍无法破译。",
+    "material": "一撮烟灰和盐",
+    "castingTime": "动作或仪式",
+    "range": "自身",
+    "duration": "1小时"
+  },
+  "Create or Destroy Water": {
+    "name": "造水／毁水术",
+    "description": "在敞开的容器中创造或移除至多10加仑水，或在边长30英尺的立方区域内降雨或驱散雾气。更高环阶法术位可增加水量或扩大区域。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加10加仑水，或使立方区域边长增加5英尺。",
+    "material": "水与沙的混合物",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "立即"
+  },
+  "Cure Wounds": {
+    "name": "疗伤术",
+    "description": "一个你触碰的生物恢复2d8加上你的施法属性调整值的生命值。使用高于1环的法术位时，每高一环额外恢复2d8生命值。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加2d8。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Detect Evil and Good": {
+    "name": "侦测善恶",
+    "description": "在至多10分钟内，感知30英尺内的异怪、天界生物、元素、妖精、邪魔和不死生物，以及范围内生效的圣居术效果。厚实的障碍物会阻挡感知。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Detect Magic": {
+    "name": "侦测魔法",
+    "description": "在至多10分钟内感知30英尺内的魔法效果。你可用魔法动作看见魔法灵光并辨识法术学派；足够厚的障碍物会阻挡探测。",
+    "castingTime": "动作或仪式",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Detect Poison and Disease": {
+    "name": "侦测毒素与疾病",
+    "description": "在至多10分钟内感知30英尺内毒物、有毒生物和魔法传染病的位置及种类。厚实的障碍物会阻挡感知。",
+    "material": "一片紫杉叶",
+    "castingTime": "动作或仪式",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Disguise Self": {
+    "name": "伪装自我",
+    "description": "在1小时内改变自己身体和携带装备的外观，但外形结构须大致相同。幻象无法经受实物触碰检查。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "1小时"
+  },
+  "Dissonant Whispers": {
+    "name": "不谐低语",
+    "description": "一个你能看见的生物须进行感知豁免。失败时受到3d6心灵伤害，若能使用反应则必须安全地逃离；成功则伤害减半。更高环阶法术位每高一环增加1d6伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d6伤害。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Divine Favor": {
+    "name": "神圣恩赐",
+    "description": "在1分钟内，你的每次武器攻击命中都会额外造成1d4光耀伤害。",
+    "castingTime": "附赠动作",
+    "range": "自身",
+    "duration": "1分钟"
+  },
+  "Divine Smite": {
+    "name": "神圣惩击",
+    "description": "以近战武器或徒手打击命中后立即使用附赠动作，额外造成2d8光耀伤害；若目标为邪魔或不死生物，再增加1d8。使用高于1环的法术位时，每高一环再增加1d8。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "以近战武器或徒手打击命中目标后立即使用的附赠动作",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Ensnaring Strike": {
+    "name": "诱捕打击",
+    "description": "武器攻击命中后立即使藤蔓缠住目标，迫使其进行力量豁免。失败则陷入束缚，持续至多1分钟，并在每回合开始时受到1d6穿刺伤害，直到脱困或法术结束。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d6伤害。",
+    "castingTime": "以武器命中生物后立即使用的附赠动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Entangle": {
+    "name": "纠缠术",
+    "description": "植物覆盖一块边长20英尺的方形区域，使之在至多1分钟内成为困难地形。施法时区域内的生物须进行力量豁免，失败则陷入束缚；它们可用动作尝试挣脱。",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Expeditious Retreat": {
+    "name": "迅捷撤退",
+    "description": "施法时立即进行疾走；在接下来至多10分钟内，你可在之后的回合用附赠动作再次疾走。",
+    "castingTime": "附赠动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Faerie Fire": {
+    "name": "仙火",
+    "description": "边长20英尺立方区域内豁免失败的生物发出光芒，持续至多1分钟。它们无法受益于隐形，且能看见它们的攻击者对其攻击具有优势。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "False Life": {
+    "name": "虚假生命",
+    "description": "获得2d4+4点临时生命值。使用高于1环的法术位时，每高一环再获得5点临时生命值。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加5点临时生命值。",
+    "material": "一滴酒精",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Feather Fall": {
+    "name": "羽落术",
+    "description": "当生物坠落时使用反应，使至多五个坠落生物在1分钟内以每轮60英尺的速度下降。若在法术结束前落地，它们不受坠落伤害。",
+    "material": "一根小羽毛或少量绒羽",
+    "castingTime": "你或60英尺内你能看见的生物坠落时使用的反应",
+    "range": "60英尺",
+    "duration": "1分钟"
+  },
+  "Find Familiar": {
+    "name": "召唤魔宠",
+    "description": "召唤一个以挑战等级0的野兽形态出现的天界、妖精或邪魔精魂。它独立行动但不能攻击；在100英尺内，你可与其心灵交流、透过其感官感知，或让它用反应传递触碰法术。你可暂时遣返并再次召唤它。",
+    "material": "价值至少10金币的燃烧熏香，施法时消耗",
+    "castingTime": "1小时或仪式",
+    "range": "10英尺",
+    "duration": "立即"
+  },
+  "Floating Disk": {
+    "name": "浮碟术",
+    "description": "创造一个直径3英尺的悬浮圆盘，可承载至多500磅，持续1小时。当你与它相距超过20英尺时，它会跟随你移动。",
+    "material": "一滴水银",
+    "castingTime": "动作或仪式",
+    "range": "30英尺",
+    "duration": "1小时"
+  },
+  "Fog Cloud": {
+    "name": "云雾术",
+    "description": "创造半径20英尺、持续至多1小时的浓雾球状区域，使其中视野处于重度遮蔽。强风会驱散它；使用高于1环的法术位时，每高一环半径增加20英尺。",
+    "higherLevels": "使用高于1环的法术位时，每高一环使雾气半径增加20英尺。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Goodberry": {
+    "name": "神莓术",
+    "description": "创造十颗持续24小时的魔法浆果。生物可用附赠动作吃下一颗，恢复1点生命值，并获得一天所需的营养。",
+    "material": "一小枝槲寄生",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "24小时"
+  },
+  "Grease": {
+    "name": "油腻术",
+    "description": "以不易燃的油脂覆盖边长10英尺的方形区域，持续1分钟，使之成为困难地形。油脂出现时在区域内、进入区域或在其中结束回合的生物须进行敏捷豁免，失败则倒地。",
+    "material": "少量猪油或黄油",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "1分钟"
+  },
+  "Guiding Bolt": {
+    "name": "曳光弹",
+    "description": "进行一次远程法术攻击。命中造成4d6光耀伤害；在你的下一回合结束前，对目标进行的下一次攻击具有优势。更高环阶法术位每高一环增加1d6伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d6伤害。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "1轮",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Healing Word": {
+    "name": "治愈真言",
+    "description": "60英尺内一个你能看见的生物恢复2d4加上你的施法属性调整值的生命值。使用高于1环的法术位时，每高一环额外恢复2d4。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加2d4。",
+    "castingTime": "附赠动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Hellish Rebuke": {
+    "name": "炼狱叱喝",
+    "description": "在60英尺内一个你能看见的生物伤害你后使用反应。该生物须进行敏捷豁免，失败受到2d10火焰伤害，成功减半；更高环阶法术位每高一环增加1d10伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d10。",
+    "castingTime": "你受到60英尺内可见生物造成的伤害时使用的反应",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Heroism": {
+    "name": "英勇术",
+    "description": "触碰一个自愿生物，使其免疫恐慌，并在至多1分钟内每回合开始时获得等于你施法属性调整值的临时生命值。更高环阶法术位可增加目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1分钟"
+  },
+  "Hex": {
+    "name": "巫术诅咒",
+    "description": "诅咒一个你能看见的生物，持续至多1小时。你以攻击检定命中它时额外造成1d6黯蚀伤害，且它使用你所选属性进行检定时具有劣势。目标生命值降至0后，你可用附赠动作转移诅咒。",
+    "higherLevels": "使用2环法术位时可专注至多4小时；3至4环至多8小时；5环或更高至多24小时。",
+    "material": "一只石化蝾螈的眼睛",
+    "castingTime": "附赠动作",
+    "range": "90英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Hideous Laughter": {
+    "name": "狂笑术",
+    "description": "一个你能看见的生物若感知豁免失败，便倒地并陷入失能，持续至多1分钟。它受到伤害后以及每回合结束时均可再次豁免。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "material": "一块馅饼和一根羽毛",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Hunter's Mark": {
+    "name": "猎人印记",
+    "description": "标记一个你能看见的生物，持续至多1小时。你的攻击命中它时额外造成1d6力场伤害，且你为寻找它所做的察觉或求生检定具有优势。目标生命值降至0后，你可用附赠动作转移标记。",
+    "higherLevels": "使用3至4环法术位时可专注至多8小时；5环或更高至多24小时。",
+    "castingTime": "附赠动作",
+    "range": "90英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Ice Knife": {
+    "name": "冰刃术",
+    "description": "对一个生物进行远程法术攻击，命中造成1d10穿刺伤害。无论是否命中，冰刃都会爆裂，目标及其5英尺内的生物须进行敏捷豁免，失败受到2d6寒冷伤害；更高环阶法术位可提高寒冷伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d6寒冷伤害。",
+    "material": "一滴水或一块冰",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "piercing": {
+        "label": "穿刺伤害"
+      },
+      "burst": {
+        "label": "爆发伤害"
+      }
+    }
+  },
+  "Identify": {
+    "name": "鉴定术",
+    "description": "施法期间触碰物件，获知其魔法属性、同调要求、充能以及当前生效的法术；或触碰生物，获知作用于它的法术。需要一颗价值至少100金币的珍珠。",
+    "material": "一颗价值至少100金币的珍珠",
+    "castingTime": "1分钟或仪式",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Illusory Script": {
+    "name": "幻文术",
+    "description": "写下一则讯息；指定读者会看到正常文字，其他人则会看到无法理解或误导性的内容，持续10天。价值至少10金币的墨水会被消耗。",
+    "material": "价值至少10金币的墨水，施法时消耗",
+    "castingTime": "1分钟或仪式",
+    "range": "触碰",
+    "duration": "10天"
+  },
+  "Inflict Wounds": {
+    "name": "造成伤害术",
+    "description": "一个你触碰的生物须进行体质豁免，失败受到2d10黯蚀伤害，成功则减半。使用高于1环的法术位时，每高一环增加1d10伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d10。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Jump": {
+    "name": "跳跃术",
+    "description": "一个你触碰的自愿生物在1分钟内每回合可花费10英尺移动距离跳跃至多30英尺。更高环阶法术位每高一环可增加一个目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "material": "一条蚱蜢的后腿",
+    "castingTime": "附赠动作",
+    "range": "触碰",
+    "duration": "1分钟"
+  },
+  "Longstrider": {
+    "name": "大步奔行",
+    "description": "一个你触碰的生物在1小时内速度增加10英尺。使用高于1环的法术位时，每高一环可增加一个目标。",
+    "higherLevels": "使用高于1环的法术位时，每高一环可增加一个目标。",
+    "material": "一撮泥土",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Mage Armor": {
+    "name": "法师铠甲",
+    "description": "在8小时内，一个你触碰、未穿护甲的自愿生物基础护甲等级变为13加其敏捷调整值。穿上护甲会使法术结束。",
+    "material": "一块鞣制皮革",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "8小时"
+  },
+  "Magic Missile": {
+    "name": "魔法飞弹",
+    "description": "三枚力场飞弹自动命中你选定的可见生物，每枚造成1d4+1力场伤害。飞弹同时命中；更高环阶法术位每高一环增加一枚飞弹。",
+    "higherLevels": "使用高于1环的法术位时，每高一环额外创造一枚飞弹。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "立即"
+  },
+  "Protection from Evil and Good": {
+    "name": "防护善恶",
+    "description": "在至多10分钟内，一个自愿生物受到对异怪、天界生物、元素、妖精、邪魔和不死生物的防护：这些生物对它的攻击具有劣势，且无法附身、魅惑或恐吓它。",
+    "material": "一瓶价值至少25金币的圣水，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多10分钟"
+  },
+  "Purify Food and Drink": {
+    "name": "净化食粮",
+    "description": "净化10英尺内一个半径5英尺球状区域中的非魔法食物和饮料，清除毒素与腐败。",
+    "castingTime": "动作或仪式",
+    "range": "10英尺",
+    "duration": "立即"
+  },
+  "Ray of Sickness": {
+    "name": "疫病射线",
+    "description": "进行一次远程法术攻击。命中造成2d8毒素伤害，并使目标中毒至你的下一回合结束；更高环阶法术位每高一环增加1d8伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Sanctuary": {
+    "name": "庇护术",
+    "description": "保护一个生物1分钟。攻击者或施法者若想以其为目标，须先通过感知豁免，否则必须选择其他目标或失去此次尝试。受保护者若攻击、施法或造成伤害，效果即结束。",
+    "material": "一片镜子碎玻璃",
+    "castingTime": "附赠动作",
+    "range": "30英尺",
+    "duration": "1分钟"
+  },
+  "Searing Smite": {
+    "name": "灼热惩击",
+    "description": "以近战武器或徒手打击命中后立即额外造成1d6火焰伤害。此后目标在每回合开始时受到1d6火焰伤害，直到体质豁免成功；更高环阶法术位会提高两部分伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环使每次伤害掷骰增加1d6。",
+    "castingTime": "以近战武器或徒手打击命中目标后立即使用的附赠动作",
+    "range": "自身",
+    "duration": "1分钟"
+  },
+  "Shield": {
+    "name": "护盾术",
+    "description": "因受到攻击命中或成为魔法飞弹目标而使用反应，使护甲等级增加5，持续至你下一回合开始，且适用于触发此次反应的攻击；你也不会受到魔法飞弹的伤害。",
+    "castingTime": "你被攻击检定命中或成为魔法飞弹目标时使用的反应",
+    "range": "自身",
+    "duration": "1轮"
+  },
+  "Shield of Faith": {
+    "name": "虔诚护盾",
+    "description": "60英尺内的一个生物在你保持专注的至多10分钟内，护甲等级增加2。",
+    "material": "一卷祷文卷轴",
+    "castingTime": "附赠动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Silent Image": {
+    "name": "无声影像",
+    "description": "创造一个不超过边长15英尺立方体的纯视觉影像，持续至多10分钟。你可用魔法动作移动影像；实体接触会揭穿幻象。",
+    "material": "少量羊毛",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Sleep": {
+    "name": "睡眠术",
+    "description": "你选定的、位于半径5英尺球状区域内的生物须进行感知豁免。失败则失能至其下一回合结束；若第二次豁免仍失败，则昏迷至多1分钟。受到伤害或被摇醒会结束效果；不需要睡眠的生物自动豁免成功。",
+    "material": "一撮沙子或玫瑰花瓣",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Speak with Animals": {
+    "name": "与动物交谈",
+    "description": "在10分钟内理解野兽的话并与之交谈；你还可对它们使用影响动作，并询问附近地点或生物的情况。",
+    "castingTime": "动作或仪式",
+    "range": "自身",
+    "duration": "10分钟"
+  },
+  "Thunderwave": {
+    "name": "雷鸣波",
+    "description": "一个边长15英尺的雷鸣立方区域从你身上迸发。区域内生物须进行体质豁免，失败受到2d8雷鸣伤害并被推开10英尺，成功则伤害减半。更高环阶法术位每高一环增加1d8伤害。",
+    "higherLevels": "使用高于1环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Unseen Servant": {
+    "name": "隐形仆役",
+    "description": "创造一股持续1小时、不可见且没有心智的力量。它不能攻击，但能执行你用附赠动作下达的简单任务。",
+    "material": "少量绳子和木头",
+    "castingTime": "动作或仪式",
+    "range": "60英尺",
+    "duration": "1小时"
+  },
+  "Acid Arrow": {
+    "name": "强酸箭",
+    "description": "对一个目标进行远程法术攻击。命中时立即造成4d4酸蚀伤害，并在其下一回合结束时再造成2d4；未命中时仅造成初始伤害的一半。更高环阶法术位使两次伤害各增加1d4。",
+    "higherLevels": "使用高于2环的法术位时，每高一环使两次伤害掷骰各增加1d4。",
+    "material": "大黄叶粉末",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "立即"
+  },
+  "Aid": {
+    "name": "援助术",
+    "description": "30英尺内至多三个生物的当前生命值与生命值上限均增加5，持续8小时。使用高于2环的法术位时，每高一环再增加5点生命值。",
+    "higherLevels": "使用高于2环的法术位时，每高一环使当前生命值和生命值上限各增加5。",
+    "material": "一条白布",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "8小时"
+  },
+  "Alter Self": {
+    "name": "变身术",
+    "description": "在至多1小时内选择一种变化：适应水中环境（可水下呼吸并获得游泳速度）、改变外貌但不改变数据，或获得以施法属性造成1d6伤害的天生武器。你可用魔法动作切换选项。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1小时"
+  },
+  "Animal Messenger": {
+    "name": "动物使者",
+    "description": "一只挑战等级0的超微型野兽若魅力豁免失败，便携带至多25个词的讯息前往你曾去过的地点。它每天行进约25英里，若会飞则为50英里，持续24小时；更高环阶法术位每高一环延长48小时。",
+    "higherLevels": "使用高于2环的法术位时，每高一环使持续时间延长48小时。",
+    "material": "一小口食物",
+    "castingTime": "动作或仪式",
+    "range": "30英尺",
+    "duration": "24小时"
+  },
+  "Arcane Lock": {
+    "name": "秘法锁",
+    "description": "魔法锁住一扇关闭的门、窗、门扉、容器或舱盖，直到法术被解除。你指定的生物或说出密码的人可以打开它；施法消耗价值至少25金币的金粉。",
+    "material": "价值至少25金币的金粉，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "直到被解除"
+  },
+  "Arcanist's Magic Aura": {
+    "name": "秘法师魔法灵光",
+    "description": "为一个物件赋予虚假的魔法灵光，或掩盖自愿生物看起来所属的类型，持续24小时。若连续30天每天对同一目标施法，幻象将持续到被解除。",
+    "material": "一小块方形丝绸",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "24小时"
+  },
+  "Augury": {
+    "name": "卜筮术",
+    "description": "获知你计划在接下来30分钟内采取的行动可能带来好运、厄运、两者兼有或无明显结果。每次长休前第一次施法之后，每次再次施法都有累积25%的几率得不到答复。",
+    "material": "价值至少25金币、带特殊标记的木签、骨头、卡牌或其他占卜器具",
+    "castingTime": "1分钟或仪式",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Barkskin": {
+    "name": "树肤术",
+    "description": "一个你触碰的自愿生物在1小时内，只要其正常护甲等级低于17，便改为17。",
+    "material": "一把树皮",
+    "castingTime": "附赠动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Blindness/Deafness": {
+    "name": "目盲／耳聋术",
+    "description": "一个你能看见的生物须进行体质豁免，失败则目盲或耳聋1分钟。它在每回合结束时可再次豁免；更高环阶法术位每高一环可增加一个目标。",
+    "higherLevels": "使用高于2环的法术位时，每高一环可增加一个目标。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "1分钟"
+  },
+  "Blur": {
+    "name": "朦胧术",
+    "description": "在至多1分钟内，攻击者对你的攻击检定具有劣势，除非它能以盲视或真实视觉感知你。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Calm Emotions": {
+    "name": "安定心神",
+    "description": "半径20英尺球状区域内的类人生物须进行魅力豁免。对豁免失败者，你可在至多1分钟内压制其魅惑或恐慌状态，或使其对原本敌视的生物保持冷漠。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Continual Flame": {
+    "name": "不灭明焰",
+    "description": "在一个物件上创造无需燃料、没有热量的火焰，向外20英尺发出明亮光照，再向外20英尺发出微光，直到被解除。施法消耗价值至少50金币的红宝石粉末。",
+    "material": "价值至少50金币的红宝石粉末，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "直到被解除"
+  },
+  "Darkness": {
+    "name": "黑暗",
+    "description": "创造一个半径15英尺、持续至多10分钟的魔法黑暗球状区域，或将其中心设于无人持有的物件上。普通光线无法照亮它，黑暗视觉也无法看透它。",
+    "material": "蝙蝠毛和一块煤",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Darkvision": {
+    "name": "黑暗视觉",
+    "description": "一个你触碰的自愿生物获得150英尺的黑暗视觉，持续8小时。",
+    "material": "一根干胡萝卜",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "8小时"
+  },
+  "Detect Thoughts": {
+    "name": "侦测思想",
+    "description": "在至多1分钟内，感知附近会思考的生物，或读取一个可见生物的表层思绪。你可用魔法动作切换效果；探查更深层思绪须使目标进行感知豁免，并会令其察觉。",
+    "material": "一枚铜币",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Dragon's Breath": {
+    "name": "龙息术",
+    "description": "一个你触碰的自愿生物可用魔法动作喷吐15英尺锥状的酸蚀、寒冷、火焰、闪电或毒素。区域内生物须进行敏捷豁免，失败受到3d6伤害，成功减半；更高环阶法术位每高一环增加1d6。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d6伤害。",
+    "material": "一颗辣椒",
+    "castingTime": "附赠动作",
+    "range": "触碰",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Enhance Ability": {
+    "name": "强化属性",
+    "description": "一个你触碰的生物在至多1小时内，使用你所选的一项非体质属性进行检定时具有优势。更高环阶法术位可增加目标。",
+    "higherLevels": "使用高于2环的法术位时，每高一环可增加一个目标。",
+    "material": "少量毛发或一根羽毛",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1小时"
+  },
+  "Enlarge/Reduce": {
+    "name": "放大/缩小",
+    "description": "在至多1分钟内放大或缩小一个生物或无人持有的物件；不自愿的生物可进行体质豁免抵抗。其体型、重量和武器伤害相应改变。",
+    "material": "一撮铁粉",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Enthrall": {
+    "name": "迷心术",
+    "description": "你能看见且未与你交战的生物须进行感知豁免，失败则在至多1分钟内察觉检定与被动察觉均受到-10减值。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Find Steed": {
+    "name": "召唤坐骑",
+    "description": "在30英尺内一处空间召唤一匹忠诚的异界坐骑。它使用异界坐骑数据，可呈现天界、妖精或邪魔形态。",
+    "higherLevels": "坐骑数据的法术环阶取决于所用法术位环阶。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "立即"
+  },
+  "Find Traps": {
+    "name": "侦测陷阱",
+    "description": "探测120英尺内、处于视线中的刻意设置的陷阱，并获知其大致危险程度，但无法得知确切位置。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "立即"
+  },
+  "Flame Blade": {
+    "name": "火焰之刃",
+    "description": "召唤一把持续至多10分钟的火焰刀刃。你可用魔法动作以其进行近战法术攻击，命中造成3d6火焰伤害加你的施法属性调整值；更高环阶法术位可增加伤害。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d6伤害。",
+    "material": "一片漆树叶",
+    "castingTime": "附赠动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Flaming Sphere": {
+    "name": "火焰球体",
+    "description": "创造一个持续至多1分钟、直径5英尺的火焰球体。附近生物须进行敏捷豁免，失败受到2d6火焰伤害，成功减半；你可用附赠动作移动球体，并迫使生物再次豁免。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d6伤害。",
+    "material": "一团蜡",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Gentle Repose": {
+    "name": "遗体防腐",
+    "description": "保存一具尸体或遗骸10天，防止腐烂和转化为不死生物。受保护的时间不计入复活法术的时限；施法消耗两枚铜币。",
+    "material": "两枚铜币，施法时消耗",
+    "castingTime": "动作或仪式",
+    "range": "触碰",
+    "duration": "10天"
+  },
+  "Gust of Wind": {
+    "name": "造风术",
+    "description": "一道长60英尺、宽10英尺的强风持续至多1分钟，将力量豁免失败的生物向远离你的方向推开15英尺，并阻碍它们向你移动。",
+    "material": "一颗豆科植物种子",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Heat Metal": {
+    "name": "灼热金属",
+    "description": "加热一个你能看见的人造金属物件，持续至多1分钟。接触它的生物立即受到2d8火焰伤害；之后你每回合用附赠动作也可再次造成该伤害。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d8伤害。",
+    "material": "一块铁和一团火焰",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Hold Person": {
+    "name": "人类定身术",
+    "description": "一个你能看见的类人生物须进行感知豁免，失败则麻痹至多1分钟，并在每回合结束时再次豁免。更高环阶法术位每高一环可增加一个类人生物目标。",
+    "higherLevels": "使用高于2环的法术位时，每高一环可增加一个目标。",
+    "material": "一根笔直的铁条",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Invisibility": {
+    "name": "隐形",
+    "description": "一个你触碰的生物隐形至多1小时。攻击、造成伤害或施法会使效果提前结束；更高环阶法术位可增加目标。",
+    "higherLevels": "使用高于2环的法术位时，每高一环可增加一个目标。",
+    "material": "阿拉伯胶中的一根睫毛",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1小时"
+  },
+  "Knock": {
+    "name": "敲击术",
+    "description": "打开60英尺内一个可见物件上的锁或门闩，包括会暂时失效的魔法锁。开启时会发出附近可听见的响亮敲击声。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Lesser Restoration": {
+    "name": "次级复原术",
+    "description": "通过触碰，结束一个生物身上的一种状态：目盲、耳聋、麻痹或中毒。",
+    "castingTime": "附赠动作",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Levitate": {
+    "name": "悬浮",
+    "description": "在至多10分钟内，将一个可见生物或松散物件升起至多20英尺。不自愿的生物可进行体质豁免抵抗；移动时须借助表面牵引。",
+    "material": "一根金属弹簧",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Locate Animals or Plants": {
+    "name": "寻觅动物或植物",
+    "description": "说出一种野兽、植物生物或非魔法植物的名称，获知5英里内最近个体的方向与距离。",
+    "material": "一束寻血猎犬的毛",
+    "castingTime": "动作或仪式",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Locate Object": {
+    "name": "物件定位术",
+    "description": "在至多10分钟内感知1,000英尺内一个你熟悉的物件的方向，包括它的移动方向。厚实的铅制屏障会阻挡效果。",
+    "material": "一根分叉树枝",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Magic Mouth": {
+    "name": "魔嘴",
+    "description": "将至多25个词的语音讯息置于物件内。当你指定的可观察条件发生时，它便会说出讯息，直到法术被解除；施法消耗价值至少10金币的翡翠粉末。",
+    "material": "价值至少10金币的翡翠粉末，施法时消耗",
+    "castingTime": "1分钟或仪式",
+    "range": "30英尺",
+    "duration": "直到被解除"
+  },
+  "Magic Weapon": {
+    "name": "魔化武器",
+    "description": "一个你触碰的非魔法武器在1小时内变为魔法武器，攻击及伤害检定获得+1加值。使用3至5环法术位时加值为+2；6环或更高则为+3。",
+    "higherLevels": "使用3至5环法术位时加值变为+2；使用6环或更高法术位时变为+3。",
+    "castingTime": "附赠动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Mind Spike": {
+    "name": "心灵尖刺",
+    "description": "一个你能看见的生物须进行感知豁免，失败受到3d8心灵伤害，成功减半。若它失败，在至多1小时内只要位于同一位面，你就知道它的位置。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1小时",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Mirror Image": {
+    "name": "镜像",
+    "description": "三个你的幻象分身出现，持续1分钟。当攻击命中你时，为剩余分身掷骰；若分身检定成功，其中一个分身代你承受攻击。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "1分钟"
+  },
+  "Misty Step": {
+    "name": "迷踪步",
+    "description": "用附赠动作传送至30英尺内一个你能看见的无人占据空间。",
+    "castingTime": "附赠动作",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Moonbeam": {
+    "name": "月华之光",
+    "description": "一道半径5英尺、高40英尺的光柱持续至多1分钟，你可用魔法动作将其移动60英尺。进入光柱或在其中结束回合的生物须进行体质豁免，失败受到2d10光耀伤害，成功减半；豁免失败还会结束其变形效果。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d10伤害。",
+    "material": "一片月籽草叶",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Pass without Trace": {
+    "name": "行动无踪",
+    "description": "在至多1小时内，你选定的、位于你30英尺灵光内的生物进行隐匿检定时获得+10加值，且不会留下踪迹。",
+    "material": "燃烧槲寄生所得的灰烬",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1小时"
+  },
+  "Phantasmal Force": {
+    "name": "幻象之力",
+    "description": "一个智力豁免失败的生物在至多1分钟内感知到仅对其存在、不超过边长10英尺立方体的幻象。它可用研习动作识破幻象；危险的幻象可在你的每回合对其造成2d8心灵伤害。",
+    "material": "少量羊毛",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Prayer of Healing": {
+    "name": "治疗祷言",
+    "description": "施法10分钟后，射程内至多五个生物获得短休益处，并恢复2d8生命值。每个生物每次长休前只能受益一次；更高环阶法术位每高一环增加1d8治疗量。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d8治疗量。",
+    "castingTime": "10分钟",
+    "range": "30英尺",
+    "duration": "立即"
+  },
+  "Protection from Poison": {
+    "name": "防护毒素",
+    "description": "结束一个你触碰的生物身上的中毒状态。接下来1小时，它对毒素伤害具有抗性，且为避免陷入或持续中毒状态而进行的豁免具有优势。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Ray of Enfeeblement": {
+    "name": "虚弱射线",
+    "description": "一个生物须进行体质豁免。成功时，它在你的下一回合前进行的下一次攻击检定具有劣势。失败时，它使用力量进行的D20检定具有劣势，伤害掷骰结果减少1d8，持续至多1分钟，并在每回合再次豁免。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Rope Trick": {
+    "name": "魔绳术",
+    "description": "触碰一条绳索，在绳索上端开启一个持续1小时、不可见的异次元空间。至多八个中型或更小的生物可躲入其中。",
+    "material": "一段绳索",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Scorching Ray": {
+    "name": "灼热射线",
+    "description": "发射三道射线，每道分别进行远程法术攻击，命中造成2d6火焰伤害。更高环阶法术位每高一环增加一道射线。",
+    "higherLevels": "使用高于2环的法术位时，每高一环额外创造一道射线。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "立即"
+  },
+  "See Invisibility": {
+    "name": "识破隐形",
+    "description": "在1小时内正常看见隐形生物和物件，并能感知以太位面。",
+    "material": "一撮滑石粉",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "1小时"
+  },
+  "Shatter": {
+    "name": "粉碎",
+    "description": "半径10英尺球状区域内的生物须进行体质豁免，失败受到3d8雷鸣伤害，成功减半；构装生物豁免时具有劣势。更高环阶法术位每高一环增加1d8伤害。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d8伤害。",
+    "material": "一小片云母",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Shining Smite": {
+    "name": "辉光惩击",
+    "description": "以近战武器或徒手打击命中后立即额外造成2d6光耀伤害。目标在至多1分钟内发光、无法受益于隐形，且对它的攻击具有优势。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d6伤害。",
+    "castingTime": "以近战武器或徒手打击命中生物后立即使用的附赠动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Silence": {
+    "name": "沉默",
+    "description": "创造一个半径20英尺的球状区域，至多10分钟内声音无法在其中传播。完全位于其中的生物耳聋、免疫雷鸣伤害，且无法施放具有言语成分的法术。",
+    "castingTime": "动作或仪式",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Spider Climb": {
+    "name": "蛛行术",
+    "description": "一个你触碰的自愿生物获得等于其速度的攀爬速度，并可在至多1小时内无需用手沿墙壁和天花板行走。更高环阶法术位可增加目标。",
+    "higherLevels": "使用高于2环的法术位时，每高一环可增加一个目标。",
+    "material": "一滴沥青和一只蜘蛛",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1小时"
+  },
+  "Spike Growth": {
+    "name": "荆棘丛生",
+    "description": "半径20英尺的区域在至多10分钟内变为伪装过的困难地形。生物在其中每移动5英尺便受到2d4穿刺伤害。",
+    "material": "七根刺",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Spiritual Weapon": {
+    "name": "灵体武器",
+    "description": "创造一把持续至多1分钟的悬浮力场武器。它出现时，以及之后的回合中你用附赠动作时，可进行一次近战法术攻击；命中造成1d8加你的施法属性调整值的力场伤害。",
+    "higherLevels": "使用高于2环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "附赠动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Suggestion": {
+    "name": "暗示术",
+    "description": "一个能听见并理解至多25个词、合理且不会伤害自己的建议的生物须进行感知豁免。失败则受魅惑并遵循建议至多8小时；受到伤害或完成建议后效果提前结束。",
+    "material": "一滴蜂蜜",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多8小时"
+  },
+  "Warding Bond": {
+    "name": "守护连结",
+    "description": "你与一个佩戴所需铂金戒指的自愿生物建立连结。只要它在60英尺内，其护甲等级和豁免检定获得+1加值，并对所有伤害具有抗性，但你也会受到等同于它所受的伤害。",
+    "material": "一对每枚价值至少50金币的铂金戒指，法术持续期间你与目标须各戴一枚",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Web": {
+    "name": "蛛网术",
+    "description": "黏稠蛛网填满边长20英尺的立方区域，持续至多1小时，使之成为困难地形并受到轻度遮蔽。进入蛛网或在其中开始回合的生物须进行敏捷豁免，失败则受束缚；它可用力量（运动）检定作为动作挣脱。燃烧的蛛网造成2d4火焰伤害。",
+    "material": "少量蛛网",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Zone of Truth": {
+    "name": "诚实之域",
+    "description": "创造一个半径15英尺、持续10分钟的球状区域。进入区域或在其中开始回合的生物须进行魅力豁免；失败者不能故意说谎，你也知道每个生物的豁免结果。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "10分钟"
+  },
+  "Animate Dead": {
+    "name": "操纵死尸",
+    "description": "使一具中型或小型类人生物尸体成为僵尸，或使其骸骨成为骷髅。你可用附赠动作指挥60英尺内的不死生物；控制持续24小时，并可在期限前重新维持。",
+    "higherLevels": "使用高于3环的法术位时，每高一环可额外复活或重新控制两个不死生物。",
+    "material": "一滴血、一块肉和一撮骨粉",
+    "castingTime": "1分钟",
+    "range": "10英尺",
+    "duration": "立即"
+  },
+  "Beacon of Hope": {
+    "name": "希望信标",
+    "description": "选择30英尺内任意数量的生物。至多1分钟内，它们的感知豁免与死亡豁免具有优势，且受到治疗时总是恢复该治疗可提供的最高生命值。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Bestow Curse": {
+    "name": "降咒术",
+    "description": "一个你触碰的生物须进行感知豁免。失败时选择一种诅咒：一种属性的检定和豁免具有劣势；攻击你时具有劣势；每回合须通过感知豁免，否则必须闪避；或当你以攻击或法术伤害它时，额外受到1d8黯蚀伤害。",
+    "higherLevels": "使用4环法术位时专注可持续10分钟；5至6环无需专注，持续8小时；7至8环持续24小时；9环持续到被解除。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1分钟"
+  },
+  "Blink": {
+    "name": "闪现术",
+    "description": "在1分钟内，每回合结束时掷1d6。若结果为4至6，你进入以太位面直到下一回合开始，再返回距原处10英尺内的空位。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "1分钟"
+  },
+  "Call Lightning": {
+    "name": "召雷术",
+    "description": "在头顶创造风暴云。施法时及之后每回合使用魔法动作时，可在云下某点引下闪电；该点5英尺内的生物须进行敏捷豁免，失败受到3d10闪电伤害，成功减半。若已有风暴，再增加1d10伤害。",
+    "higherLevels": "使用高于3环的法术位时，每高一环增加1d10伤害。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Clairvoyance": {
+    "name": "鹰眼术",
+    "description": "在1英里内一处你熟悉或显而易见的地点放置一个不可见、固定的感知点。你可从该点观察或聆听至多10分钟，并用附赠动作切换感官。",
+    "material": "价值至少100金币的法器：用于聆听的镶宝石角，或用于观察的玻璃眼",
+    "castingTime": "10分钟",
+    "range": "1英里",
+    "duration": "专注，至多10分钟"
+  },
+  "Conjure Animals": {
+    "name": "召唤动物",
+    "description": "召唤一群无形的大型动物精魂，持续至多10分钟。它们可随你移动30英尺；你在其5英尺内进行力量豁免时具有优势。它们还可每回合一次迫使10英尺内的生物进行敏捷豁免，失败受到3d10挥砍伤害。",
+    "higherLevels": "使用高于3环的法术位时，每高一环增加1d10伤害。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Counterspell": {
+    "name": "反制法术",
+    "description": "当你看见60英尺内的生物施放具有成分的法术时使用反应。施法者须进行体质豁免；失败则该法术无效，施法动作失去，但法术位不消耗。",
+    "castingTime": "你看见60英尺内生物施放具有言语、姿势或材料成分的法术时使用的反应",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Create Food and Water": {
+    "name": "创造食粮",
+    "description": "在30英尺内创造45磅有营养的食物和30加仑洁净水。食物在24小时后腐坏。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "立即"
+  },
+  "Daylight": {
+    "name": "日光",
+    "description": "使半径60英尺的球状区域充满阳光，外围再向外60英尺为微光，持续1小时；也可将中心设于无人持有的物件上。与之重叠的3环或更低环阶法术造成的魔法黑暗被解除。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "1小时"
+  },
+  "Dispel Magic": {
+    "name": "驱散魔法",
+    "description": "结束120英尺内一个生物、物件或魔法效果上的所有3环或更低环阶法术。对于每个更高环阶的法术，进行施法属性检定，DC为10加该法术环阶。",
+    "higherLevels": "使用更高环阶法术位时，目标身上环阶不高于该法术位的法术自动结束。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "立即"
+  },
+  "Fear": {
+    "name": "恐惧术",
+    "description": "30英尺锥状区域内的生物须进行感知豁免，失败则丢下手持物并陷入恐慌至多1分钟。只要能够行动，它们必须疾走远离你；若某回合结束时看不见你，可再次豁免。",
+    "material": "一根白色羽毛",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Fireball": {
+    "name": "火球术",
+    "description": "150英尺内一点迸发半径20英尺的火焰球。区域内生物须进行敏捷豁免，失败受到8d6火焰伤害，成功减半。无人持有的易燃物会被点燃。",
+    "higherLevels": "使用高于3环的法术位时，每高一环增加1d6伤害。",
+    "material": "一团蝙蝠粪和硫磺",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Fly": {
+    "name": "飞行术",
+    "description": "一个你触碰的自愿生物获得60英尺飞行速度并可悬停，持续至多10分钟。法术结束时若无法阻止坠落，它便会坠下。",
+    "higherLevels": "使用高于3环的法术位时，每高一环可额外指定一个生物。",
+    "material": "一根羽毛",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多10分钟"
+  },
+  "Gaseous Form": {
+    "name": "气化形体",
+    "description": "一个你触碰的自愿生物化为雾气，持续至多1小时。它能以10英尺速度飞行、穿过狭小缝隙，对钝击、穿刺和挥砍伤害具有抗性，但不能攻击、施法、说话或操纵物件。",
+    "higherLevels": "使用高于3环的法术位时，每高一环可额外指定一个生物。",
+    "material": "少量纱布",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1小时"
+  },
+  "Glyph of Warding": {
+    "name": "守护雕文",
+    "description": "在表面或可关闭的物件上铭刻隐藏符文。触发条件发生时，它会在半径20英尺的球状区域爆发5d8酸蚀、寒冷、火焰、闪电或雷鸣伤害（敏捷豁免成功减半），或释放储存的法术。符文被移动超过10英尺即失效。",
+    "higherLevels": "使用高于3环的法术位时，每高一环使爆炸伤害增加1d8；储存的法术环阶可至多为施放符文所用法术位环阶。",
+    "material": "价值至少200金币的钻石粉末，施法时消耗",
+    "castingTime": "1小时",
+    "range": "触碰",
+    "duration": "直到被解除或触发"
+  },
+  "Haste": {
+    "name": "急速",
+    "description": "一个自愿生物在至多1分钟内速度加倍、护甲等级+2、敏捷豁免具有优势，并且每回合获得一个用途受限的额外动作。法术结束后，它失能且速度为0，直到其下一回合结束。",
+    "material": "一小片甘草根",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Hypnotic Pattern": {
+    "name": "催眠图纹",
+    "description": "看见边长30英尺立方区域内图案的生物须进行感知豁免，失败则受魅惑、失能且无法移动，持续至多1分钟。受到伤害或被其他生物用动作摇醒会结束该目标身上的效果。",
+    "material": "一撮彩纸屑",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Lightning Bolt": {
+    "name": "闪电束",
+    "description": "一道长100英尺、宽5英尺的闪电直线从你身上迸发。线内生物须进行敏捷豁免，失败受到8d6闪电伤害，成功减半。",
+    "higherLevels": "使用高于3环的法术位时，每高一环增加1d6伤害。",
+    "material": "少量毛皮和一根水晶棒",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Magic Circle": {
+    "name": "魔法阵",
+    "description": "创造一个半径10英尺、高20英尺的圆柱区域，持续1小时。选定的天界生物、元素、妖精、邪魔与不死生物通常无法进入；它们攻击区域内生物时具有劣势，也无法魅惑、恐吓或附身其中的生物。屏障也可反向用于困住它们。",
+    "higherLevels": "使用高于3环的法术位时，每高一环使持续时间增加1小时。",
+    "material": "价值至少100金币的盐和银粉，施法时消耗",
+    "castingTime": "1分钟",
+    "range": "10英尺",
+    "duration": "1小时"
+  },
+  "Major Image": {
+    "name": "高等幻影",
+    "description": "创造一个兼具可信外观、声音、气味和温度、不超过边长20英尺立方体的幻象，持续至多10分钟。它不能造成伤害或状态；实体接触会揭穿它。你可用魔法动作移动并改变幻象。",
+    "higherLevels": "使用4环或更高法术位时，幻象持续到被解除，且无需专注。",
+    "material": "少量羊毛",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Mass Healing Word": {
+    "name": "群体治愈真言",
+    "description": "用附赠动作使60英尺内至多六个你能看见的生物各恢复2d4加你的施法属性调整值的生命值。",
+    "higherLevels": "使用高于3环的法术位时，每高一环增加1d4治疗量。",
+    "castingTime": "附赠动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Meld into Stone": {
+    "name": "融身入石",
+    "description": "将自己和装备融入足够大的石质物件，持续至多8小时。你可花费5英尺移动距离离开；石头受到伤害或被摧毁可能将你弹出并造成伤害。",
+    "castingTime": "动作或仪式",
+    "range": "触碰",
+    "duration": "8小时"
+  },
+  "Nondetection": {
+    "name": "回避侦测",
+    "description": "在8小时内，一个自愿生物、地点或不超过10英尺的物件不能成为预言法术的目标，也无法被魔法探知传感器感知。",
+    "material": "一撮价值至少25金币的钻石粉末，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "8小时"
+  },
+  "Phantom Steed": {
+    "name": "幻影驹",
+    "description": "创造一匹持续1小时、似真似幻的骑乘马。它的速度为100英尺，一小时可行进13英里；法术结束后它在1分钟内逐渐消散，受到伤害则提前消失。",
+    "castingTime": "1分钟或仪式",
+    "range": "30英尺",
+    "duration": "1小时"
+  },
+  "Plant Growth": {
+    "name": "植物生长",
+    "description": "选择过度生长，使半径100英尺球状区域内的普通植物令每行进1英尺消耗4英尺移动距离，你可排除指定区域。或花费8小时滋养半英里范围内的植物，使其接下来365天的收成翻倍。",
+    "castingTime": "动作（过度生长）或8小时（滋养）",
+    "range": "150英尺",
+    "duration": "立即"
+  },
+  "Protection from Energy": {
+    "name": "防护能量伤害",
+    "description": "一个你触碰的自愿生物在至多1小时内对你所选的酸蚀、寒冷、火焰、闪电或雷鸣伤害具有抗性。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1小时"
+  },
+  "Remove Curse": {
+    "name": "解除诅咒",
+    "description": "结束一个你触碰的生物或物件受到的所有诅咒。对于被诅咒的魔法物品，法术会解除持有者的同调，使物品可以被移除，但物品本身的诅咒仍在。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Revivify": {
+    "name": "回生术",
+    "description": "触碰一个在过去1分钟内死亡的生物。它以1点生命值复活。此法术不能恢复缺失的身体部位，也不能复活因年老而死者。",
+    "material": "一颗价值至少300金币的钻石，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Sending": {
+    "name": "短讯术",
+    "description": "向一个你见过或由见过它的人描述过的生物发送至多25个词的讯息。它可立即回复。跨位面发送有5%几率失败；收信者可屏蔽你8小时。",
+    "material": "一段铜线",
+    "castingTime": "动作",
+    "range": "无限",
+    "duration": "立即"
+  },
+  "Sleet Storm": {
+    "name": "雨雪风暴",
+    "description": "创造半径20英尺、高40英尺的圆柱区域，持续至多1分钟，使之成为重度遮蔽和困难地形。进入区域或在其中开始回合的生物须进行敏捷豁免，失败则倒地并失去专注。",
+    "material": "一把微型雨伞",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Slow": {
+    "name": "缓慢术",
+    "description": "边长40英尺立方区域内至多六个生物须进行感知豁免。失败者速度减半、护甲等级和敏捷豁免均受-2减值、不能使用反应、每回合最多攻击一次且只能使用动作或附赠动作；具有姿势成分的法术有25%几率失败。每回合可再次豁免。",
+    "material": "一滴糖蜜",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Speak with Dead": {
+    "name": "死者交谈",
+    "description": "在10分钟内向一具仍有嘴的尸体提出至多五个问题。它只知道生前所知，且不必如实回答；过去10天内曾受此法术作用的尸体不能再次被询问。",
+    "material": "燃烧的熏香",
+    "castingTime": "动作",
+    "range": "10英尺",
+    "duration": "10分钟"
+  },
+  "Speak with Plants": {
+    "name": "植物交谈",
+    "description": "在10分钟内，距你30英尺的植物可讲述过去一天的情况并遵从简单命令。你可将有植物覆盖的地面变为困难地形或恢复正常，并与植物生物交流。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "10分钟"
+  },
+  "Spirit Guardians": {
+    "name": "灵体守卫",
+    "description": "精魂在你周围15英尺的散发区域内盘旋，持续至多10分钟。你可选定不受影响的生物。其他生物在其中速度减半；当区域进入其空间，或其进入、在其中结束回合时，须进行感知豁免，失败受到3d8光耀或黯蚀伤害，成功减半，每回合最多一次。",
+    "higherLevels": "使用高于3环的法术位时，每高一环增加1d8伤害。",
+    "material": "一卷祷文卷轴",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Stinking Cloud": {
+    "name": "臭云",
+    "description": "创造一个半径20英尺、重度遮蔽的毒气球状区域，持续至多1分钟。在其中开始回合的生物须进行体质豁免，失败则中毒且该回合不能采取动作或附赠动作。强风会驱散毒气。",
+    "material": "一颗臭鸡蛋",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Tiny Hut": {
+    "name": "微型庇护所",
+    "description": "创造一个固定的10英尺散发庇护所，持续8小时。施法时位于其中的生物和物件可穿过它，其他对象则不能。3环或更低环阶法术无法穿过。你离开或再次施放此法术时，它便结束。",
+    "material": "一颗水晶珠",
+    "castingTime": "1分钟或仪式",
+    "range": "自身",
+    "duration": "8小时"
+  },
+  "Tongues": {
+    "name": "巧言术",
+    "description": "一个你触碰的生物在1小时内能理解任何口语或手语。任何懂得一种语言的生物都能理解目标的言语或手语。",
+    "material": "一座微型金字形神塔",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Vampiric Touch": {
+    "name": "吸血鬼之触",
+    "description": "进行一次近战法术攻击，命中造成3d6黯蚀伤害，并恢复等于所造成黯蚀伤害一半的生命值。至多1分钟内，你每回合可用魔法动作再次进行该攻击。",
+    "higherLevels": "使用高于3环的法术位时，每高一环增加1d6伤害。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "attack": {
+        "label": "攻击"
+      },
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Water Breathing": {
+    "name": "水下呼吸",
+    "description": "30英尺内至多十个自愿生物在24小时内能够水下呼吸，同时保留原本的呼吸能力。",
+    "material": "一根短芦苇",
+    "castingTime": "动作或仪式",
+    "range": "30英尺",
+    "duration": "24小时"
+  },
+  "Water Walk": {
+    "name": "水上漫步",
+    "description": "30英尺内至多十个自愿生物在1小时内可像踏在固体地面上一样走过液体表面。它们可用附赠动作在水面和水下之间移动。",
+    "material": "一小块软木",
+    "castingTime": "动作或仪式",
+    "range": "30英尺",
+    "duration": "1小时"
+  },
+  "Wind Wall": {
+    "name": "风墙",
+    "description": "创造一道长至多50英尺、高15英尺、厚1英尺的风墙，持续至多1分钟。位于风墙中的生物须进行力量豁免，失败受到4d8钝击伤害，成功减半。风墙阻挡气体、小型飞行生物和普通投射物。",
+    "material": "一把扇子和一根羽毛",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Arcane Eye": {
+    "name": "秘法眼",
+    "description": "创造一只不可见、无法受伤的悬浮眼，持续至多1小时。你可透过它观察各方向，包含30英尺黑暗视觉；用附赠动作可使它移动30英尺，并穿过至少1英寸宽的缝隙。",
+    "material": "少量蝙蝠毛",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Aura of Life": {
+    "name": "生命灵光",
+    "description": "在至多10分钟内，你周围30英尺散发区域使你和盟友对黯蚀伤害具有抗性，且生命值上限不会减少。在其中以0生命值开始回合的盟友恢复1点生命值。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Banishment": {
+    "name": "放逐术",
+    "description": "一个你能看见的生物须进行魅力豁免，失败则被送往一个无害的半位面并陷入失能，持续至多1分钟。法术结束时它会返回；但若异怪、天界生物、元素、妖精或邪魔被放逐满1分钟，则不会返回。",
+    "higherLevels": "使用高于4环的法术位时，每高一环可额外指定一个生物。",
+    "material": "一枚五芒星符",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Black Tentacles": {
+    "name": "黑色触手",
+    "description": "一块边长20英尺的方形区域在至多1分钟内成为困难地形。区域内生物须进行力量豁免，失败受到3d6钝击伤害并陷入束缚；生物进入或在其中结束回合时再次豁免，每回合最多一次。受束缚者可用运动检定作为动作挣脱。",
+    "material": "一根触手",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Blight": {
+    "name": "枯萎术",
+    "description": "30英尺内一个你能看见的生物须进行体质豁免，失败受到8d8黯蚀伤害，成功减半。植物生物自动失败；无人持有的非魔法植物则枯萎死亡。",
+    "higherLevels": "使用高于4环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Charm Monster": {
+    "name": "魅惑怪物",
+    "description": "一个你能看见的生物须进行感知豁免；若你或盟友正与其交战，它豁免时具有优势。失败则受你魅惑并对你友善1小时；若你或盟友伤害它，效果提前结束。之后它知道自己被你魅惑过。",
+    "higherLevels": "使用高于4环的法术位时，每高一环可额外指定一个生物。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "1小时"
+  },
+  "Compulsion": {
+    "name": "强迫术",
+    "description": "30英尺内你选定的可见生物须进行感知豁免，失败则受魅惑至多1分钟。你可用附赠动作指定一个水平方向；受影响生物在下一回合沿最安全路线向该方向移动，然后再次豁免。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Confusion": {
+    "name": "困惑术",
+    "description": "半径10英尺球状区域内的生物须进行感知豁免。失败者不能使用附赠动作或反应，并在每回合掷1d10决定自己会随机移动、无所作为、攻击附近随机生物或正常行动。它们每回合可再次豁免。",
+    "higherLevels": "使用高于4环的法术位时，每高一环使球状区域半径增加5英尺。",
+    "material": "三个坚果壳",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Conjure Minor Elementals": {
+    "name": "召唤次级元素",
+    "description": "在至多10分钟内，精魂充满你周围15英尺散发区域。敌人将其中地面视为困难地形；你命中其中生物的攻击额外造成2d8酸蚀、寒冷、火焰或闪电伤害。",
+    "higherLevels": "使用高于4环的法术位时，每高一环使额外伤害增加1d8。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Conjure Woodland Beings": {
+    "name": "召唤林地生物",
+    "description": "自然精魂充满你周围10英尺散发区域，持续至多10分钟。进入区域、在其中结束回合，或被区域覆盖的生物可被迫进行感知豁免，失败受到5d8力场伤害，成功减半，每回合最多一次。你可用附赠动作撤离。",
+    "higherLevels": "使用高于4环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多10分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Control Water": {
+    "name": "控水术",
+    "description": "在至多10分钟内控制一个边长至多100英尺立方区域内的水。泛滥会抬升水位或激起波浪；分水会开辟通道；改道会改变流向；漩涡会把生物拉向中心，并可能造成2d8钝击伤害。",
+    "material": "水与尘土的混合物",
+    "castingTime": "动作",
+    "range": "300英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Death Ward": {
+    "name": "防死结界",
+    "description": "在8小时内，一个你触碰的生物第一次本应降至0生命值时改为降至1。若某效果会在不造成伤害的情况下立即杀死它，则改为抵消该效果。之后法术结束。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "8小时"
+  },
+  "Dimension Door": {
+    "name": "次元门",
+    "description": "将自己传送至500英尺内指定地点，也可带上一名距你5英尺内的自愿生物。若目的地被占据或没有空间，传送失败，且每位旅行者受到4d6力场伤害。",
+    "castingTime": "动作",
+    "range": "500英尺",
+    "duration": "立即"
+  },
+  "Divination": {
+    "name": "神谕术",
+    "description": "向神祇或其仆从询问关于未来7天内某事或目标的一个问题，获得真实但可能隐晦的答复。每次长休前额外施放时，有累积25%的几率得不到答复。",
+    "material": "价值至少25金币的熏香，施法时消耗",
+    "castingTime": "动作或仪式",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Dominate Beast": {
+    "name": "支配野兽",
+    "description": "一个你能看见的野兽须进行感知豁免，失败则受魅惑至多1分钟。你可无需动作以心灵感应向它下令；它每次受到伤害都可再次豁免。若你正与它交战，它初次豁免具有优势。",
+    "higherLevels": "使用5环法术位时专注可持续10分钟；6环持续1小时；7环或更高持续8小时。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Fabricate": {
+    "name": "创造术",
+    "description": "将原材料变成一个大型或更小的物件；若使用金属、石头或其他矿物，则为中型或更小。制作武器、护甲等精细物品需要相应工匠工具熟练项；不能创造生物或魔法物品。",
+    "castingTime": "10分钟",
+    "range": "120英尺",
+    "duration": "立即"
+  },
+  "Faithful Hound": {
+    "name": "忠诚猎犬",
+    "description": "召唤一只不可见、无法受伤的守卫猎犬，持续8小时。未经允许的生物靠近至30英尺内时它会吠叫；它具有30英尺真实视觉，并在你的每回合开始时咬击5英尺内一个敌人，使其敏捷豁免失败时受到4d8力场伤害。",
+    "material": "一只银哨",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "8小时",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Fire Shield": {
+    "name": "火盾",
+    "description": "温暖或寒冷的护盾环绕你10分钟。温暖护盾使你对寒冷伤害具有抗性，并在附近生物以近战命中你时反击造成2d8火焰伤害；寒冷护盾则使你对火焰伤害具有抗性，反击造成2d8寒冷伤害。",
+    "material": "少量磷或一只萤火虫",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "10分钟"
+  },
+  "Freedom of Movement": {
+    "name": "行动自如",
+    "description": "一个你触碰的自愿生物在1小时内无视困难地形，以及降低速度或造成麻痹、束缚的魔法效果。它获得等于其速度的游泳速度，并可花费5英尺移动距离挣脱非魔法束缚。",
+    "higherLevels": "使用高于4环的法术位时，每高一环可额外指定一个生物。",
+    "material": "一条皮带",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Giant Insect": {
+    "name": "巨型昆虫",
+    "description": "在60英尺内一处空间召唤一只巨型蜈蚣、蜘蛛或黄蜂，持续至多10分钟。它在你的回合后立即行动、服从口头命令，并使用巨型昆虫数据；形态决定其能力。",
+    "higherLevels": "召唤昆虫的法术环阶及其随环阶变化的数据取决于所用法术位。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Greater Invisibility": {
+    "name": "高等隐形术",
+    "description": "一个你触碰的生物隐形至多1分钟，包括攻击或施法期间。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1分钟"
+  },
+  "Guardian of Faith": {
+    "name": "信仰守卫",
+    "description": "召唤一个无法受伤的大型守护者，持续至多8小时。进入或在距它10英尺内开始回合的敌人须进行敏捷豁免，失败受到20点光耀伤害，成功减半。它累计造成60点伤害后消失。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "8小时"
+  },
+  "Hallucinatory Terrain": {
+    "name": "幻景术",
+    "description": "使边长150英尺立方区域内的自然地形在24小时内看起来、听起来、闻起来像另一种自然地形。建筑、装备和生物不受影响；触碰或成功的调查检定可识破幻象。",
+    "material": "一朵蘑菇",
+    "castingTime": "10分钟",
+    "range": "300英尺",
+    "duration": "24小时"
+  },
+  "Ice Storm": {
+    "name": "冰风暴",
+    "description": "冰雹打击半径20英尺、高40英尺的圆柱区域。生物须进行敏捷豁免，失败受到2d10钝击及4d6寒冷伤害，成功减半。地面成为困难地形，直到你的下一回合结束。",
+    "higherLevels": "使用高于4环的法术位时，每高一环使钝击伤害增加1d10。",
+    "material": "一只连指手套",
+    "castingTime": "动作",
+    "range": "300英尺",
+    "duration": "立即"
+  },
+  "Locate Creature": {
+    "name": "生物定位术",
+    "description": "在至多1小时内，感知1,000英尺内一个你熟悉且知道名字的生物的方向，或一种你近距离见过的生物中最近个体的方向。变化的形态或铅制屏障会阻断感知。",
+    "material": "一束寻血猎犬的毛",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1小时"
+  },
+  "Phantasmal Killer": {
+    "name": "恐惧幻影",
+    "description": "一个你能看见的生物须对自己最深的恐惧进行感知豁免。失败受到4d10心灵伤害，且检定与攻击具有劣势；成功受到一半伤害且法术结束。每回合可再次豁免，失败再受4d10伤害。",
+    "higherLevels": "使用高于4环的法术位时，每高一环增加1d10伤害。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Polymorph": {
+    "name": "变形术",
+    "description": "一个你能看见的生物须进行感知豁免，失败则在至多1小时内变为挑战等级不高于其原挑战等级或角色等级的野兽。它使用野兽数据，但保留原生命值和生命骰，并获得等于野兽生命值的临时生命值；这些临时生命值耗尽时法术结束。",
+    "material": "一个毛毛虫茧",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Private Sanctum": {
+    "name": "私人圣所",
+    "description": "在24小时内保护一个边长5至100英尺的立方区域。你可选择阻隔声音、视线、预言传感器及其目标指定、传送或位面旅行。若连续365天每天在同一地点施法，效果将永久持续。",
+    "higherLevels": "使用高于4环的法术位时，每高一环使立方区域最大边长增加100英尺。",
+    "material": "一片薄铅片",
+    "castingTime": "10分钟",
+    "range": "120英尺",
+    "duration": "24小时"
+  },
+  "Resilient Sphere": {
+    "name": "坚韧法球",
+    "description": "将一个大型或更小的生物或物件封入无法受伤的球体，持续至多1分钟；不自愿的生物须进行敏捷豁免。任何东西都无法穿过球体，但内部生物可以呼吸；球体可被滚动或移动。",
+    "material": "一颗玻璃球",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Secret Chest": {
+    "name": "秘藏箱",
+    "description": "将一只特制的长3英尺、宽2英尺、高2英尺的箱子及其中至多12立方英尺物品藏于以太位面。你可触碰其微型复制品并使用魔法动作将箱子召回或送回。60天后，每一天都有累积5%的几率使法术结束。",
+    "material": "一只由价值至少5,000金币的稀有材料制成、长3英尺宽2英尺高2英尺的箱子，以及由相同材料制成、价值至少50金币的超微型复制品",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "直到被解除"
+  },
+  "Stone Shape": {
+    "name": "塑石术",
+    "description": "将一个中型或更小的石质物件，或一段最宽不超过5英尺的石块，塑成你选择的形状。可以形成简单的开口、门或容器，但不能制造精密机械。",
+    "material": "软陶土",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Stoneskin": {
+    "name": "石肤",
+    "description": "一个你触碰的自愿生物在至多1小时内对钝击、穿刺和挥砍伤害具有抗性。",
+    "material": "价值至少100金币的钻石粉末，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "专注，至多1小时"
+  },
+  "Vitriolic Sphere": {
+    "name": "强酸法球",
+    "description": "150英尺内迸发半径20英尺的酸液球状区域。生物须进行敏捷豁免；失败时立即受到10d4酸蚀伤害，并在下一回合结束时再受5d4；成功时仅将初始伤害减半。",
+    "higherLevels": "使用高于4环的法术位时，每高一环使初始伤害增加2d4。",
+    "material": "一滴胆汁",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "立即"
+  },
+  "Wall of Fire": {
+    "name": "火墙",
+    "description": "创造一道长至多60英尺、高20英尺的火墙，或一个直径至多20英尺的火环，持续至多1分钟。墙内生物须进行敏捷豁免，失败受到5d8火焰伤害，成功减半。你选定的一侧还会对进入火墙或在该侧距墙10英尺内结束回合的生物造成5d8伤害。",
+    "higherLevels": "使用高于4环的法术位时，每高一环增加1d8伤害。",
+    "material": "一块木炭",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Animate Objects": {
+    "name": "操纵物件",
+    "description": "赋予至多相当于你施法属性调整值数量的无人持有、非魔法物件生命：中型或更小算一个，大型算两个，巨型算三个。每个物件变为友方构装生物（护甲等级15；生命值依体型为10、20或40），在你之后行动，并服从你在500英尺内用附赠动作下达的命令。其近战猛击使用你的法术攻击加值，伤害依体型分别为1d4+3力场、2d6+3加你的施法属性调整值，或2d12+3加你的调整值。",
+    "higherLevels": "使用高于5环的法术位时，每高一环使中型或更小物件的猛击伤害增加1d4，大型增加1d6，巨型增加1d12。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Antilife Shell": {
+    "name": "反生命护罩",
+    "description": "在至多1小时内，你周围10英尺散发区域阻止构装和不死生物以外的生物穿过或伸手越过屏障。它们仍能施法，或以远程及触及武器穿过屏障攻击。强迫这类生物越过屏障会使法术结束。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1小时"
+  },
+  "Arcane Hand": {
+    "name": "秘法巨手",
+    "description": "创造一只大型魔法巨手（护甲等级20，生命值等于你的生命值），持续至多1分钟。施法时及之后使用附赠动作时，你可将其移动至多60英尺，并选择一种效果：以近战法术攻击造成5d8力场伤害、推挤、擒抱并挤压造成4d6加你的施法属性调整值的伤害，或提供半身掩护。",
+    "higherLevels": "使用高于5环的法术位时，每高一环使握拳伤害增加2d8，擒握巨手伤害增加2d6。",
+    "material": "一个蛋壳和一只手套",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Awaken": {
+    "name": "启蒙术",
+    "description": "施法8小时后，使智力不高于3的野兽、植物生物或天然植物获得10点智力及一种你掌握的语言。天然植物会成为能够移动的植物生物。目标受你魅惑30天，或直到你或盟友伤害它。",
+    "material": "一块价值至少1,000金币的玛瑙，施法时消耗",
+    "castingTime": "8小时",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Cloudkill": {
+    "name": "死云术",
+    "description": "创造半径20英尺、重度遮蔽的毒雾球状区域，持续至多10分钟；它每回合向远离你的方向移动10英尺。雾气出现、移经生物，或生物进入、在其中结束回合时，生物须进行体质豁免，失败受到5d8毒素伤害，成功减半，每回合最多一次。",
+    "higherLevels": "使用高于5环的法术位时，每高一环增加1d8伤害。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Commune": {
+    "name": "通神术",
+    "description": "在1分钟内向神祇或其代理者提出至多三个是非问题，并获得真实但可能是“不明”的回答。每次长休前的额外施法各增加累积25%的几率得不到答复。",
+    "material": "熏香",
+    "castingTime": "1分钟或仪式",
+    "range": "自身",
+    "duration": "1分钟"
+  },
+  "Commune with Nature": {
+    "name": "通晓自然",
+    "description": "获知周围自然区域的三项情况：聚落、位面传送门、重要异界生物、主要植物、矿物或野兽，或水域。户外半径3英里，地下半径300英尺；在人工建造区域中无效。",
+    "castingTime": "1分钟或仪式",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Cone of Cold": {
+    "name": "寒冰锥",
+    "description": "一道60英尺的寒冷锥状区域迫使生物进行体质豁免。失败受到8d8寒冷伤害，成功减半；因此法术而死的生物会冻结，直到融化。",
+    "higherLevels": "使用高于5环的法术位时，每高一环增加1d8伤害。",
+    "material": "一个小水晶锥或玻璃锥",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Conjure Elemental": {
+    "name": "召唤元素生物",
+    "description": "召唤一个大型无形精魂，持续至多10分钟。选择空气（闪电）、土（雷鸣）、火（火焰）或水（寒冷）。它可在生物接近或进入时迫使其进行敏捷豁免；失败者受到8d8对应伤害并陷入束缚，此后束缚期间每次豁免失败再受4d8伤害。",
+    "higherLevels": "使用高于5环的法术位时，每高一环使初始伤害增加1d8。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Contact Other Plane": {
+    "name": "异界探知",
+    "description": "进行一次DC 15的智力豁免，尝试联系异位面智慧。成功时可在1分钟内提出至多五个问题，并得到简短答案。失败时受到6d6心灵伤害并失能，直到完成长休或受到高等复原术。",
+    "castingTime": "1分钟或仪式",
+    "range": "自身",
+    "duration": "1分钟"
+  },
+  "Contagion": {
+    "name": "疫病术",
+    "description": "一个你触碰的生物须进行体质豁免。失败受到11d8黯蚀伤害并陷入中毒，对你选定的一项属性的豁免具有劣势。它每回合再次豁免；累计三次成功则法术结束，累计三次失败则持续7天。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "7天",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Creation": {
+    "name": "造物术",
+    "description": "用你见过的影质创造一个不超过边长5英尺立方体的物件。植物材料持续24小时、石头或水晶12小时、贵金属1小时、宝石10分钟、精金或秘银1分钟。该物件不能用作其他法术的材料成分。",
+    "higherLevels": "使用高于5环的法术位时，每高一环使立方区域最大边长增加5英尺。",
+    "material": "一支画笔",
+    "castingTime": "1分钟",
+    "range": "30英尺",
+    "duration": "特殊"
+  },
+  "Dispel Evil and Good": {
+    "name": "驱除恶与善",
+    "description": "在至多1分钟内，天界生物、元素、妖精、邪魔和不死生物对你的攻击具有劣势。你可结束法术，使一个触碰到的生物摆脱它们造成的附身、魅惑或恐慌，或迫使5英尺内的一个此类生物进行魅力豁免，失败则返回其原属位面。",
+    "material": "银粉和铁粉",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Dominate Person": {
+    "name": "支配人类",
+    "description": "一个你能看见的类人生物须进行感知豁免，失败则受魅惑至多1分钟。你可无需动作经由心灵连结向它下令；它受到伤害时再次豁免。若你正与它交战，初次豁免具有优势。",
+    "higherLevels": "使用6环法术位时专注可持续10分钟；7环持续1小时；8环或更高持续8小时。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Dream": {
+    "name": "梦境术",
+    "description": "一名自愿信使进入同一位面某个已知生物的梦境，在其睡眠时交谈。可怕的梦境版本可传达至多十个词；目标须进行感知豁免，失败则此次休息无效，并在醒来时受到3d6心灵伤害。",
+    "material": "一把沙子",
+    "castingTime": "1分钟",
+    "range": "特殊",
+    "duration": "8小时"
+  },
+  "Flame Strike": {
+    "name": "焰击术",
+    "description": "半径10英尺、高40英尺的圆柱区域迫使生物进行敏捷豁免。失败受到5d6火焰及5d6光耀伤害，成功则两种伤害均减半。",
+    "higherLevels": "使用高于5环的法术位时，每高一环使火焰与光耀伤害各增加1d6。",
+    "material": "一撮硫磺",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "fire_damage": {
+        "label": "伤害"
+      },
+      "radiant_damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Geas": {
+    "name": "指使术",
+    "description": "一个能理解你命令的生物须进行感知豁免，失败则受魅惑30天。若直接违抗命令，它受到5d10心灵伤害，每天最多一次。自杀性的命令会使法术结束。",
+    "higherLevels": "使用7或8环法术位时持续365天；9环则持续到被移除诅咒、高等复原术或祈愿术结束。",
+    "castingTime": "1分钟",
+    "range": "60英尺",
+    "duration": "30天"
+  },
+  "Greater Restoration": {
+    "name": "高等复原术",
+    "description": "触碰一个生物，移除一级力竭、魅惑或石化状态、诅咒或受诅咒物品的同调、一项属性值减损，或生命值上限降低。",
+    "material": "价值至少100金币的钻石粉末，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Hallow": {
+    "name": "圣居术",
+    "description": "保护半径至多60英尺的区域，直到被解除。所选的异怪、天界生物、元素、妖精、邪魔或不死生物无法自愿进入；它们造成的附身、魅惑或恐慌在区域内受压制。另选一种效果，例如光照、黑暗、沉默、抗性、易伤、勇气、恐惧、通晓语言或阻止传送。",
+    "material": "价值至少1,000金币的熏香，施法时消耗",
+    "castingTime": "24小时",
+    "range": "触碰",
+    "duration": "直到被解除"
+  },
+  "Hold Monster": {
+    "name": "怪物定身术",
+    "description": "一个你能看见的生物须进行感知豁免，失败则麻痹至多1分钟，并在每回合结束时再次豁免。",
+    "higherLevels": "使用高于5环的法术位时，每高一环可额外指定一个生物。",
+    "material": "一根笔直的铁条",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Insect Plague": {
+    "name": "虫群瘟疫",
+    "description": "蝗群充满半径20英尺的球状区域，持续至多10分钟，使之受到轻度遮蔽且成为困难地形。蝗群出现，或生物进入、在其中结束回合时，生物须进行体质豁免，失败受到4d10穿刺伤害，成功减半，每回合最多一次。",
+    "higherLevels": "使用高于5环的法术位时，每高一环增加1d10伤害。",
+    "material": "一只蝗虫",
+    "castingTime": "动作",
+    "range": "300英尺",
+    "duration": "专注，至多10分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Legend Lore": {
+    "name": "通晓传奇",
+    "description": "获知某位名人、著名地点或物件的重要传说，以真实但可能含有比喻的摘要呈现。你越了解目标，得到的细节越多；目标若不著名，法术无效。",
+    "material": "价值至少250金币的熏香，施法时消耗；另需四条每条价值至少50金币的象牙片",
+    "castingTime": "10分钟",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Mass Cure Wounds": {
+    "name": "群体疗伤术",
+    "description": "选择60英尺内一个可见点周围半径30英尺球状区域中的至多六个生物。每个生物恢复5d8加你的施法属性调整值的生命值。",
+    "higherLevels": "使用高于5环的法术位时，每高一环增加1d8治疗量。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Mislead": {
+    "name": "误导术",
+    "description": "你隐形，并在原处创造一个幻象分身，持续至多1小时。若你攻击、造成伤害或施法，隐形效果结束。你可用魔法动作移动无实体的分身，并透过它观看和聆听。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1小时"
+  },
+  "Modify Memory": {
+    "name": "修改记忆",
+    "description": "一个你能看见的生物须进行感知豁免；若正与你交战则具有优势。失败时它受魅惑并失能。你可描述一段发生于过去24小时、持续不超过10分钟的事件，改写其记忆；受到伤害或另一法术作用会在记忆改变前结束此效果。",
+    "higherLevels": "使用6环法术位时可修改过去7天内的记忆；7环为30天；8环为365天；9环则可追溯到任意时间。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Passwall": {
+    "name": "穿墙术",
+    "description": "在30英尺内的木、灰泥或石头中开出一条宽至多5英尺、高8英尺、深20英尺的通道，持续1小时。通道关闭时，里面的生物会安全地被推出。",
+    "material": "一撮芝麻",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "1小时"
+  },
+  "Planar Binding": {
+    "name": "异界誓缚",
+    "description": "在持续1小时的施法过程中，将留在60英尺内的一个天界生物、元素、妖精或邪魔束缚。它须进行魅力豁免，失败则为你服务24小时；召唤它的法术持续时间会延长至与束缚相同。",
+    "higherLevels": "使用6环法术位时持续10天；7环30天；8环180天；9环366天。",
+    "material": "一颗价值至少1,000金币的宝石，施法时消耗",
+    "castingTime": "1小时",
+    "range": "60英尺",
+    "duration": "24小时"
+  },
+  "Raise Dead": {
+    "name": "死而复生",
+    "description": "使死亡不超过10天的生物复活，但不包括以不死生物身份死亡者。它以1点生命值苏醒，并在D20检定中受-4减值；每次长休后减值减少1。若缺少关键身体部位，法术失败。",
+    "material": "一颗价值至少500金币的钻石，施法时消耗",
+    "castingTime": "1小时",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Reincarnate": {
+    "name": "转生术",
+    "description": "使死亡不超过10天的类人生物在新形成的身体中复活。依照法术表格或由主持人决定新的可用物种；它保留记忆和其他能力，但以新物种特质取代原物种特质。",
+    "material": "价值至少1,000金币的珍贵香油，施法时消耗",
+    "castingTime": "1小时",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Scrying": {
+    "name": "探知术",
+    "description": "若同一位面的一个生物感知豁免失败，你可透过会移动的隐形传感器观看并聆听它，持续至多10分钟。若仅间接认识目标，豁免调整值为+5；曾见面为+0；熟识为-5；肖像再减2、其持有物减4、身体部分减10。豁免成功后，你24小时内无法再以此法术指定它。你也可在曾见过的地点放置固定传感器。",
+    "material": "价值至少1,000金币的法器，例如水晶球、镜子或盛水的圣水盆",
+    "castingTime": "10分钟",
+    "range": "自身",
+    "duration": "专注，至多10分钟"
+  },
+  "Seeming": {
+    "name": "伪装术",
+    "description": "使30英尺内你选定的每个可见生物获得幻象外貌，持续8小时。不自愿的目标可进行魅力豁免。实体检查或对抗你法术豁免DC的调查检定成功可揭穿伪装。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "8小时"
+  },
+  "Summon Dragon": {
+    "name": "召唤龙灵",
+    "description": "召唤一个龙精魂，持续至多1小时。其护甲等级为14加法术位环阶，生命值为50加每高于5环一环的10点，飞行速度60英尺，并在你之后立即行动。它以你的法术攻击加值进行法术位环阶除以2向下取整次撕裂攻击，每次命中造成1d6+4加法术位环阶的穿刺伤害。其30英尺锥状吐息造成2d6酸蚀、寒冷、火焰、闪电或毒素伤害（敏捷豁免成功减半）。你在持续时间内共享其一种伤害抗性。",
+    "higherLevels": "使用的法术位环阶决定精魂的护甲等级、生命值及其他随环阶变化的数据。",
+    "material": "一件刻有龙形图案、价值至少500金币的物件",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Telekinesis": {
+    "name": "心灵传动",
+    "description": "在至多10分钟内，每回合可用魔法动作移动或操纵60英尺内一个巨型或更小的生物或物件。生物须进行力量豁免，失败则被移动至多30英尺，并受束缚至你的下一回合结束。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Telepathic Bond": {
+    "name": "心灵连结",
+    "description": "在30英尺内连结至多八个自愿生物，持续1小时。它们无论是否有共同语言，都可在同一位面的任意距离以心灵感应交流。",
+    "material": "两颗蛋",
+    "castingTime": "动作或仪式",
+    "range": "30英尺",
+    "duration": "1小时"
+  },
+  "Teleportation Circle": {
+    "name": "传送阵",
+    "description": "画出一个半径5英尺的临时传送门，通往同一位面、你知道符文序列的永久传送法阵。传送门保持开启至你的下一回合结束。若连续365天每天在同一地点施放，即可创造永久法阵。",
+    "material": "价值至少50金币的珍稀墨水，施法时消耗",
+    "castingTime": "1分钟",
+    "range": "10英尺",
+    "duration": "1轮"
+  },
+  "Tree Stride": {
+    "name": "树间传送",
+    "description": "在至多1分钟内，你可进入一棵活树，并从500英尺内另一棵同种活树走出；进入和走出各消耗5英尺移动距离。每回合最多这样旅行一次，且回合结束时必须在树外。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Wall of Force": {
+    "name": "力之墙",
+    "description": "创造一道由十块相连、每块边长10英尺的面板组成的不可见、无法受伤的墙，或半径至多10英尺的穹顶或球体，持续至多10分钟。实体无法穿过它；解除魔法无效，但解离术可摧毁它。",
+    "material": "一片玻璃碎片",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Wall of Stone": {
+    "name": "石墙",
+    "description": "创造十块相连的石板，每块边长10英尺、厚6英寸；或长20英尺、高10英尺、厚3英寸。被围住的生物可进行敏捷豁免逃开。每块石板护甲等级15，每英寸厚度有30点生命值；若专注满10分钟，墙永久存在。",
+    "material": "一块花岗岩",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Blade Barrier": {
+    "name": "剑刃障壁",
+    "description": "创造一道长至多100英尺、高20英尺的魔法刀刃墙，或直径60英尺的环，持续至多10分钟。其空间是困难地形，并提供四分之三掩护。刀墙出现，或生物进入、在其中结束回合时，须进行敏捷豁免，失败受到6d10力场伤害，成功减半，每回合最多一次。",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多10分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Chain Lightning": {
+    "name": "连环闪电",
+    "description": "闪电命中150英尺内一个可见目标，并跳向距它30英尺内至多另外三个目标。每个目标须进行敏捷豁免，失败受到10d8闪电伤害，成功减半；同一目标不能被命中两次。",
+    "higherLevels": "使用高于6环的法术位时，每高一环可额外跳跃至一个新目标。",
+    "material": "三根银针",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Circle of Death": {
+    "name": "死亡法阵",
+    "description": "半径60英尺的负能量球状区域迫使生物进行体质豁免，失败受到8d8黯蚀伤害，成功减半。",
+    "higherLevels": "使用高于6环的法术位时，每高一环增加2d8伤害。",
+    "material": "一颗价值至少500金币的黑珍珠磨成的粉末",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Conjure Fey": {
+    "name": "召唤妖精",
+    "description": "召唤一个中型妖精精魂，持续至多10分钟。它出现时，从其空间进行近战法术攻击；命中造成3d12加你的施法属性调整值的心灵伤害，并使目标恐慌至你的下一回合。之后你可用附赠动作使精魂传送30英尺并重复攻击。",
+    "higherLevels": "使用高于6环的法术位时，每高一环增加1d12伤害。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Contingency": {
+    "name": "应急术",
+    "description": "施放此法术时，同时施放一个预备好的、施法时间为一个动作且能以你为目标的5环或更低环阶法术，消耗两个法术位。第二个法术等待你选定的触发条件，至多10天，触发后只影响你。同一时间只能有一个应急法术生效；失去所需小雕像会结束法术。",
+    "material": "一座镶宝石、价值至少1,500金币的你的雕像",
+    "castingTime": "10分钟",
+    "range": "自身",
+    "duration": "10天"
+  },
+  "Create Undead": {
+    "name": "创造不死生物",
+    "description": "只能在夜间，将至多三具中型或小型类人生物尸体变为食尸鬼；每具尸体需一块价值至少150金币的黑玛瑙。你可用附赠动作指挥120英尺内的它们。控制持续24小时，必须在期限前重新维持。",
+    "higherLevels": "使用7环法术位时可控制四只食尸鬼；8环可控制五只食尸鬼或两只妖鬼／尸妖；9环可控制六只食尸鬼、三只妖鬼／尸妖或两具木乃伊。",
+    "material": "每具尸体一块价值至少150金币的黑玛瑙",
+    "castingTime": "1分钟",
+    "range": "10英尺",
+    "duration": "立即"
+  },
+  "Disintegrate": {
+    "name": "解离术",
+    "description": "一个你能看见的生物须进行敏捷豁免，失败受到10d6+40力场伤害。生命值因此降至0的生物会被解离；大型或更小的非魔法物件或魔法力场造物则自动被解离。",
+    "higherLevels": "使用高于6环的法术位时，每高一环增加3d6伤害。",
+    "material": "一块磁石和少量尘土",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Eyebite": {
+    "name": "摄魂目光",
+    "description": "在至多1分钟内，迫使60英尺内一个可见生物进行感知豁免，然后选择昏睡（昏迷）、惊恐（恐慌并被迫逃离）或恶心（中毒）。之后每回合可用魔法动作指定尚未对此次施法豁免成功的另一生物。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Find the Path": {
+    "name": "寻路术",
+    "description": "在至多1天内，感知通往当前位面上一处你熟悉且位置固定的地点的最直接实体路线。旅行时你知道方向与距离；对模糊或移动的目的地无效。",
+    "material": "一套价值至少100金币的占卜工具，例如卡牌或符文石",
+    "castingTime": "1分钟",
+    "range": "自身",
+    "duration": "专注，至多1天"
+  },
+  "Flesh to Stone": {
+    "name": "血肉化石",
+    "description": "一个你能看见的生物须进行体质豁免。失败则受束缚；成功则速度变为0，直到你的下一回合。受束缚者每回合再次豁免：累计三次成功结束法术，累计三次失败则石化。若专注满1分钟，石化将持续存在。",
+    "material": "一根鸡蛇兽羽毛",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Forbiddance": {
+    "name": "禁制术",
+    "description": "保护至多40,000平方英尺的地面及其上方30英尺，阻止传送和位面旅行，持续1天。你选定的异怪、天界生物、元素、妖精、邪魔或不死生物若进入或在其中结束回合，受到5d10光耀或黯蚀伤害，除非说出你的密码。连续30天每天施放可使效果永久存在，最后一次施法消耗红宝石粉末。",
+    "material": "价值至少1,000金币的红宝石粉末",
+    "castingTime": "10分钟或仪式",
+    "range": "触碰",
+    "duration": "1天"
+  },
+  "Freezing Sphere": {
+    "name": "冰封法球",
+    "description": "半径60英尺的寒冷球状区域迫使生物进行体质豁免，失败受到10d6寒冷伤害，成功减半。命中的水面会结冰，并可能束缚在水面游泳的生物。你也可持有冰球至多1分钟，之后再将它投掷引爆。",
+    "higherLevels": "使用高于6环的法术位时，每高一环增加1d6伤害。",
+    "material": "一颗微型水晶球",
+    "castingTime": "动作",
+    "range": "300英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Globe of Invulnerability": {
+    "name": "法术无效结界",
+    "description": "一个以你为中心、固定不动的10英尺散发区域在至多1分钟内阻止从外部施放的5环或更低环阶法术影响内部任何事物。",
+    "higherLevels": "使用高于6环的法术位时，每高一环使可阻挡的最高法术环阶增加1。",
+    "material": "一颗玻璃珠",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Guards and Wards": {
+    "name": "防护结界",
+    "description": "保护至多2,500平方英尺、高20英尺的区域24小时。指定豁免的生物和密码。走廊充满遮蔽视线的雾气并可误导旅人；门受到秘法锁保护，至多十扇门看似墙壁，楼梯填满会再生的蛛网。你还可在指定位置设置舞光术、魔嘴术、臭云术、造风术或暗示术。连续365天每天施放会使防护永久存在。",
+    "material": "一根价值至少10金币的银棒",
+    "castingTime": "1小时",
+    "range": "触碰",
+    "duration": "24小时"
+  },
+  "Harm": {
+    "name": "重伤术",
+    "description": "一个你能看见的生物须进行体质豁免。失败受到14d6黯蚀伤害，生命值上限也减少所受伤害，但不会低于1；成功则伤害减半，生命值上限不变。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Heal": {
+    "name": "医疗术",
+    "description": "60英尺内一个你能看见的生物恢复70点生命值，并解除目盲、耳聋及中毒状态。",
+    "higherLevels": "使用高于6环的法术位时，每高一环增加10点治疗量。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Heroes' Feast": {
+    "name": "英雄盛宴",
+    "description": "召唤一场可供至多十二个生物用1小时享用的宴席。接下来24小时，每个用餐者对毒素伤害具有抗性，免疫恐慌和中毒，并使当前生命值与生命值上限增加2d10。",
+    "material": "一只镶宝石、价值至少1,000金币的碗，施法时消耗",
+    "castingTime": "10分钟",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Instant Summons": {
+    "name": "即时召唤",
+    "description": "用一块价值至少1,000金币的蓝宝石标记一件不超过10磅重、6英尺长的物件。之后你可捏碎蓝宝石并使用魔法动作，无论距离或位面都将物件召至手中。若它正被其他生物持有，你改为获知该生物是谁及其所在位置。",
+    "material": "一颗价值至少1,000金币的蓝宝石",
+    "castingTime": "1分钟或仪式",
+    "range": "触碰",
+    "duration": "直到被解除"
+  },
+  "Irresistible Dance": {
+    "name": "狂舞术",
+    "description": "一个你能看见的生物须进行感知豁免。即使成功，它也必须花费全部移动距离跳舞，直到其下一回合结束。失败时还会受魅惑，敏捷豁免与攻击具有劣势，其他生物对其攻击具有优势；它可用动作再次豁免。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Magic Jar": {
+    "name": "魔法罐",
+    "description": "将灵魂放入价值至少500金币的容器，使身体陷入无意识状态。你可从容器中尝试附身100英尺内一个可见类人生物；它须进行魅力豁免。失败则由你控制其身体，其灵魂被困于容器。若在不适当的时刻失去你的身体或容器，你或宿主可能死亡。",
+    "material": "一颗价值至少500金币的宝石、水晶或圣物匣",
+    "castingTime": "1分钟",
+    "range": "自身",
+    "duration": "直到被解除"
+  },
+  "Mass Suggestion": {
+    "name": "群体暗示术",
+    "description": "向60英尺内至多十二个听得懂你的生物提出至多25个词、合理且不会伤害自身的行动建议。每个生物须进行感知豁免，失败则受魅惑并执行建议至多24小时；完成行动或受到你或盟友伤害会提前结束效果。",
+    "higherLevels": "使用7环法术位时持续10天；8环30天；9环366天。",
+    "material": "一条蛇舌",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "24小时"
+  },
+  "Move Earth": {
+    "name": "移土术",
+    "description": "重塑一块边长至多40英尺的泥土、沙或黏土区域。每次变化耗时10分钟，可抬高或降低地势、挖掘或填埋壕沟，或建造高度不超过区域最大边长一半的墙与柱。至多2小时内，你每10分钟可选择新的区域。",
+    "material": "一把微型铲子",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多2小时"
+  },
+  "Planar Ally": {
+    "name": "位面盟友",
+    "description": "向异界力量请求一名天界生物、元素或邪魔盟友。它出现在60英尺内，但没有义务相助；你须协商服务报酬，通常约为每分钟100金币、每小时1,000金币或每天10,000金币，具体由主持人决定。",
+    "castingTime": "10分钟",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Programmed Illusion": {
+    "name": "预设幻影",
+    "description": "创造一个不超过边长30英尺立方体的隐藏幻象。30英尺内的视觉或听觉触发条件会启动预设的影像与声音，持续至多5分钟。经过10分钟休眠后，它可再次触发，直到被解除。",
+    "material": "价值至少25金币的翡翠粉末",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "直到被解除"
+  },
+  "Sunbeam": {
+    "name": "阳光射线",
+    "description": "从你身上发出一道长60英尺、宽5英尺的阳光直线。生物须进行体质豁免，失败受到6d8光耀伤害并目盲至你的下一回合，成功则伤害减半且不目盲。在至多1分钟内，你每回合可用魔法动作再发射一道光束。",
+    "material": "一面放大镜",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Transport via Plants": {
+    "name": "植物传送",
+    "description": "将10英尺内一株大型或更大的非活化植物，与同一位面上任意距离、你曾见过或触碰过的另一株植物连结。1分钟内，生物可花费5英尺移动距离进入第一株植物，并从第二株植物走出。",
+    "castingTime": "动作",
+    "range": "10英尺",
+    "duration": "1分钟"
+  },
+  "True Seeing": {
+    "name": "真实视觉",
+    "description": "一个你触碰的自愿生物获得120英尺真实视觉，持续1小时。",
+    "material": "价值至少25金币的蘑菇粉，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Wall of Ice": {
+    "name": "冰墙",
+    "description": "创造一个厚1英尺、半径至多10英尺的冰穹顶或球体，或十块相连、每块边长10英尺的冰板，持续至多10分钟。冰墙出现时被挤开的生物须进行敏捷豁免，失败受到10d6寒冷伤害。被摧毁的冰板留下寒气，穿过时体质豁免失败受到5d6寒冷伤害。",
+    "higherLevels": "使用高于6环的法术位时，每高一环使冰墙出现时的伤害增加2d6，残留寒气伤害增加1d6。",
+    "material": "一块石英",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Wall of Thorns": {
+    "name": "荆棘之墙",
+    "description": "创造一道长至多60英尺、高10英尺的荆棘墙，或直径20英尺的环，持续至多10分钟。出现时，墙内生物须进行敏捷豁免，失败受到7d8穿刺伤害。在墙中每移动1英尺消耗4英尺移动距离；进入或在其中结束回合时，敏捷豁免失败受到7d8挥砍伤害，每回合最多一次。",
+    "higherLevels": "使用高于6环的法术位时，每高一环使两种伤害各增加1d8。",
+    "material": "一把荆棘",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Wind Walk": {
+    "name": "风行",
+    "description": "你和至多十个自愿生物化为云雾，持续8小时，获得300英尺飞行速度、悬停能力、免疫倒地，并对钝击、穿刺和挥砍伤害具有抗性。云雾形态只能疾走或开始用1分钟恢复正常形态；恢复期间生物陷入震慑。",
+    "material": "一根蜡烛",
+    "castingTime": "1分钟",
+    "range": "30英尺",
+    "duration": "8小时"
+  },
+  "Word of Recall": {
+    "name": "回返真言",
+    "description": "将自己和5英尺内至多五个自愿生物传送到你先前在该处施放此法术指定的圣所。若没有事先准备圣所，法术无效。",
+    "castingTime": "动作",
+    "range": "5英尺",
+    "duration": "立即"
+  },
+  "Arcane Sword": {
+    "name": "秘法剑",
+    "description": "创造一把悬浮的力场剑，持续至多1分钟。对距剑5英尺内一个目标进行近战法术攻击，命中造成4d12加你的施法属性调整值的力场伤害。之后你可用附赠动作使剑移动至多30英尺并再次攻击。",
+    "material": "一把价值至少250金币的微型剑",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Conjure Celestial": {
+    "name": "召唤天界生物",
+    "description": "天界存在充满半径10英尺、高40英尺的圆柱区域，持续至多10分钟。区域内每个可见生物可恢复4d12加你的施法属性调整值的生命值，或进行敏捷豁免，失败受到6d12光耀伤害，成功减半。你在回合中移动时，可使区域移动至多30英尺。进入或在其中结束回合的生物也会受影响，但每个生物每回合最多一次。",
+    "higherLevels": "使用高于7环的法术位时，每高一环使治疗量和伤害各增加1d12。",
+    "castingTime": "动作",
+    "range": "90英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Delayed Blast Fireball": {
+    "name": "延时爆裂火球",
+    "description": "一颗发光珠子在150英尺内一点等待，持续至多1分钟。专注结束时，半径20英尺球状区域内生物须进行敏捷豁免，失败受到12d6火焰伤害，成功减半。你每保持专注一个回合，回合结束时伤害增加1d6。生物可通过敏捷豁免捡起或投掷珠子，失败则立即引爆。",
+    "higherLevels": "使用高于7环的法术位时，每高一环使初始伤害增加1d6。",
+    "material": "一团蝙蝠粪和硫磺",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Divine Word": {
+    "name": "神言",
+    "description": "选择30英尺内你能看见的生物，各自进行魅力豁免。失败且生命值不超过20者死亡；21至30者目盲、耳聋并震慑1小时；31至40者目盲并耳聋10分钟；41至50者耳聋1分钟。豁免失败的天界生物、元素、妖精或邪魔还会被放逐回原属位面至少24小时。",
+    "castingTime": "附赠动作",
+    "range": "30英尺",
+    "duration": "立即"
+  },
+  "Etherealness": {
+    "name": "以太化",
+    "description": "进入以太边境，持续至多8小时。你可穿过主物质位面的生物和物件，但无法影响它们。法术结束时，你返回最近的空位；你也可提前结束法术。",
+    "higherLevels": "使用高于7环的法术位时，每高一环可携带10英尺内另外三个自愿生物。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "至多8小时"
+  },
+  "Finger of Death": {
+    "name": "死亡一指",
+    "description": "60英尺内一个你能看见的生物须进行体质豁免，失败受到7d8+30黯蚀伤害，成功减半。被此法术杀死的类人生物在你的下一回合开始时变成僵尸，并遵从你的口头命令。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Fire Storm": {
+    "name": "火焰风暴",
+    "description": "在150英尺内创造至多十个相连、每个边长10英尺的火焰立方区域。区域内生物须进行敏捷豁免，失败受到7d10火焰伤害，成功减半。你可指定不受影响的植物。",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Forcecage": {
+    "name": "力笼",
+    "description": "在专注的至多1小时内，以边长至多20英尺的力场牢笼，或边长至多10英尺的实心盒子囚禁生物。被困者无法以非魔法手段离开；传送或位面旅行须通过魅力豁免。解除魔法无法结束牢笼。",
+    "material": "价值至少1,500金币的红宝石粉末，施法时消耗",
+    "castingTime": "动作",
+    "range": "100英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Magnificent Mansion": {
+    "name": "华丽府邸",
+    "description": "创造一座持续24小时的异次元住所，入口在300英尺内。内有至多五十个边长10英尺的房间、供100位宾客享用的食物及至多100名仆役；只有你指定的生物可进入。",
+    "material": "一扇价值至少15金币的微型门",
+    "castingTime": "1分钟",
+    "range": "300英尺",
+    "duration": "24小时"
+  },
+  "Mirage Arcane": {
+    "name": "秘法海市蜃楼",
+    "description": "在10天内改变面积至多1平方英里的地形的外观、声音、气味与触感。你可添加或改变建筑，使地形更难或更易通行，但不能伪装或创造生物。真实视觉能看见原地形，但不会消除幻象的实体效果。",
+    "castingTime": "10分钟",
+    "range": "视线内",
+    "duration": "10天"
+  },
+  "Plane Shift": {
+    "name": "位面转移",
+    "description": "借助已同调的叉状金属棒，将你和至多八个手拉手的自愿生物送往另一位面。说出大致目的地，是否到达其中或附近由主持人决定；也可前往该位面上你知道符文序列的传送法阵。",
+    "material": "一根价值至少250金币、与目标位面同调的叉状金属棒",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Prismatic Spray": {
+    "name": "虹光喷射",
+    "description": "60英尺锥状区域内的生物须进行敏捷豁免，并为每个目标分别掷1d8。结果1至5分别造成12d6火焰、酸蚀、闪电、毒素或寒冷伤害（豁免成功减半）；6造成束缚，三次体质豁免失败则石化；7造成目盲，并可能在感知豁免后被放逐；8则同时受到两道不同射线。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "Project Image": {
+    "name": "投影术",
+    "description": "在至多500英里外创造一个你的幻象复制体，专注持续至多1天。它与你外貌和声音相同，你可透过它观看、聆听，并用魔法动作使它移动至多60英尺。实体接触或成功的调查检定可识破幻象。",
+    "material": "一座价值至少5金币的你的雕像",
+    "castingTime": "动作",
+    "range": "500英里",
+    "duration": "专注，至多1天"
+  },
+  "Regenerate": {
+    "name": "再生",
+    "description": "一个你触碰的生物立即恢复4d8+15生命值，并在接下来1小时内每回合开始时恢复1点生命值。断离的身体部位在2分钟后重新长出。",
+    "material": "一只祈祷轮",
+    "castingTime": "1分钟",
+    "range": "触碰",
+    "duration": "1小时"
+  },
+  "Resurrection": {
+    "name": "复活",
+    "description": "使死亡不超过100年的生物以满生命值复活。它不能因年老而死，也不能在死亡时是不死生物；毒素会被清除，缺失的身体部位会恢复。它在D20检定中受-4减值，每次长休后减少1。若已死亡至少365天，你直到下次长休前无法施法，且D20检定具有劣势。",
+    "material": "一颗价值至少1,000金币的钻石，施法时消耗",
+    "castingTime": "1小时",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Reverse Gravity": {
+    "name": "反重力",
+    "description": "在至多1分钟内，使半径50英尺、高100英尺的圆柱区域内重力反转。生物和物件向上坠落，除非生物成功通过敏捷豁免抓住固定物；法术结束时它们会再次坠落。",
+    "material": "一块磁石和少量铁屑",
+    "castingTime": "动作",
+    "range": "100英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Sequester": {
+    "name": "隔离",
+    "description": "使一个自愿生物或物件隐形且无法被魔法探测，直到你设定的条件达成或目标受到伤害。受影响生物昏迷、不衰老，也无需食物、水或空气。",
+    "material": "价值至少5,000金币的宝石粉末，施法时消耗",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "直到被解除"
+  },
+  "Simulacrum": {
+    "name": "拟像",
+    "description": "施法12小时后，以雪或冰创造一个野兽或类人生物的构装复制体。它的生命值上限为原体一半，不能升级，也不能通过休息恢复已用能力，且不能施放拟像术。长休期间修复时，每恢复1点生命值消耗价值100金币的材料。你同时只能维持一个拟像。",
+    "material": "价值至少1,500金币的红宝石粉末，施法时消耗",
+    "castingTime": "12小时",
+    "range": "触碰",
+    "duration": "直到被解除"
+  },
+  "Symbol": {
+    "name": "徽记术",
+    "description": "铭刻一个几乎不可见、具有你设定触发条件的符文。触发后，它在10分钟内影响半径60英尺球状区域内的生物，效果可选死亡（体质豁免，失败受到10d10黯蚀伤害，成功减半）、纷争、恐惧、痛苦、睡眠或震慑，各有对应豁免和状态。每个生物每回合最多受影响一次。",
+    "material": "价值至少1,000金币的钻石粉末，施法时消耗",
+    "castingTime": "1分钟",
+    "range": "触碰",
+    "duration": "直到被解除或触发"
+  },
+  "Teleport": {
+    "name": "传送",
+    "description": "将自己和10英尺内至多八个自愿生物，或一个大型或更小的物件，传送至同一位面上的已知地点。主持人根据熟悉程度掷d100：永久法阵或近期关联物品必定准确到达；其他地点可能出现意外（受到3d10力场伤害并重掷）、到达相似地区或偏离目标。",
+    "castingTime": "动作",
+    "range": "10英尺",
+    "duration": "立即"
+  },
+  "Animal Shapes": {
+    "name": "动物形态",
+    "description": "30英尺内任意数量的可见自愿生物在24小时内化为挑战等级不高于4的大型或更小野兽。它们保留生命值、生命骰、心智属性、交流能力和生物类型，但不能施法或使用融入形态的装备。各自获得等于初次形态生命值的临时生命值。你可用魔法动作再次改变它们的形态；目标可用附赠动作结束自己的变形。",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "24小时"
+  },
+  "Antimagic Field": {
+    "name": "反魔场",
+    "description": "以你为中心的10英尺散发区域在专注的至多1小时内压制法术和其他魔法效果。它阻止区域内及进入区域的施法与魔法旅行，压制魔法物品，并阻挡大多数魔法区域和召唤生物，但神器或神祇的魔法除外。",
+    "material": "少量铁屑",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1小时"
+  },
+  "Antipathy/Sympathy": {
+    "name": "嫌恶／同情术",
+    "description": "在10天内使一个生物或物件排斥或吸引你指定的一类生物。该类生物进入120英尺内须进行感知豁免：排斥令其恐慌并远离，吸引令其受魅惑并靠近。重复豁免可结束该生物身上的效果。",
+    "material": "醋与蜂蜜的混合物",
+    "castingTime": "1小时",
+    "range": "60英尺",
+    "duration": "10天"
+  },
+  "Befuddlement": {
+    "name": "迷乱术",
+    "description": "150英尺内一个生物须进行智力豁免，失败受到10d12心灵伤害，成功减半。失败时还无法施法或采取魔法动作。它每30天再次豁免；高等复原术、医疗术或祈愿术可结束效果。",
+    "material": "一个没有钥匙的钥匙圈",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Clone": {
+    "name": "克隆",
+    "description": "用活体生物的一块血肉培育一个无意识复制体。120天后，若原体死亡且其灵魂自愿并自由，灵魂会进入可能更年轻的克隆体。施法消耗一颗价值1,000金币的钻石，另需价值至少2,000金币的可密封容器。",
+    "material": "一颗价值至少1,000金币的钻石，施法时消耗；另需一只足以容纳被克隆生物、价值至少2,000金币的可密封容器",
+    "castingTime": "1小时",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Control Weather": {
+    "name": "控制天气",
+    "description": "在户外专注至多8小时，控制5英里内的天气。你可逐级改变降水、温度和风力；每次调整经过1d4×10分钟后生效。",
+    "material": "燃烧的熏香",
+    "castingTime": "10分钟",
+    "range": "自身",
+    "duration": "专注，至多8小时"
+  },
+  "Demiplane": {
+    "name": "半位面",
+    "description": "开启一扇通往边长30英尺异次元房间的阴影之门，持续1小时。它可通往新半位面、你曾创造的半位面，或你知道其性质和内部情况的其他半位面。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "1小时"
+  },
+  "Dominate Monster": {
+    "name": "支配怪物",
+    "description": "60英尺内一个生物须进行感知豁免，失败则受魅惑并在你专注的至多1小时内受心灵控制。你可下令或直接操纵它；它受到伤害时可再次豁免以结束法术。",
+    "higherLevels": "使用9环法术位时，可专注至多8小时。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1小时"
+  },
+  "Earthquake": {
+    "name": "地震",
+    "description": "在至多1分钟内，震动使半径100英尺圆形区域内地面成为困难地形。施法时及之后每回合，区域内生物须进行敏捷豁免，失败则倒地并失去专注。法术造成1d6道裂缝，每回合对建筑造成50点钝击伤害；坍塌建筑可造成12d6钝击伤害（敏捷豁免成功减半）。",
+    "material": "一块碎裂的石头",
+    "castingTime": "动作",
+    "range": "500英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Glibness": {
+    "name": "雄辩术",
+    "description": "在1小时内，任何魅力检定掷骰若不超过14，均按15计算。检测你是否说真话的魔法也会将你的话视为真实。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "1小时"
+  },
+  "Holy Aura": {
+    "name": "圣洁灵光",
+    "description": "在至多1分钟内，你周围30英尺散发区域内指定生物的所有豁免检定具有优势，其他生物对它们的攻击具有劣势。邪魔或不死生物以近战命中受保护者时，须进行体质豁免，失败则目盲。",
+    "material": "一只价值至少1,000金币的圣物匣",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1分钟"
+  },
+  "Incendiary Cloud": {
+    "name": "燃烧云",
+    "description": "150英尺内出现一个半径20英尺、重度遮蔽的烟云球状区域，每回合向远离你的方向移动10英尺。出现时云内的生物，以及云移经、进入或在其中结束回合的生物须进行敏捷豁免，失败受到10d8火焰伤害，成功减半；每回合最多豁免一次。专注持续至多1分钟。",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "专注，至多1分钟",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Maze": {
+    "name": "迷宫",
+    "description": "将60英尺内一个生物放逐到迷宫，专注持续至多10分钟；初始没有豁免。它可用研习动作进行DC 20的智力（调查）检定逃离，否则在法术结束时返回。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多10分钟"
+  },
+  "Mind Blank": {
+    "name": "心灵屏障",
+    "description": "在24小时内使一个生物免疫心灵伤害、魅惑状态、读心、思想操纵，以及会影响它或收集其信息的预言魔法。此防护也能阻止为这些目的施放的祈愿术。",
+    "castingTime": "动作",
+    "range": "触碰",
+    "duration": "24小时"
+  },
+  "Power Word Stun": {
+    "name": "震慑真言",
+    "description": "60英尺内一个你能看见、生命值不超过150的生物陷入震慑；若生命值高于150，其速度改为0，直到你的下一回合开始。受震慑者每回合结束时可进行体质豁免以结束效果。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Sunburst": {
+    "name": "阳炎爆",
+    "description": "150英尺内迸发半径60英尺的阳光球状区域。生物须进行体质豁免，失败受到12d6光耀伤害，成功减半；失败者还会目盲1分钟，并在每回合结束时再次豁免。阳光会解除区域内的魔法黑暗。",
+    "material": "一块太阳石",
+    "castingTime": "动作",
+    "range": "150英尺",
+    "duration": "立即",
+    "rolls": {
+      "damage": {
+        "label": "伤害"
+      }
+    }
+  },
+  "Tsunami": {
+    "name": "海啸",
+    "description": "升起一道长和高均至多300英尺、厚50英尺的水墙，持续至多六轮。区域内生物须进行力量豁免，失败受到6d10钝击伤害，成功减半。水墙每轮推进50英尺；被卷入的巨型或更小生物须再次进行力量豁免，以抵抗5d10钝击伤害。水墙高度和后续伤害逐轮降低。",
+    "castingTime": "1分钟",
+    "range": "1英里",
+    "duration": "专注，至多6轮"
+  },
+  "Astral Projection": {
+    "name": "星界投影",
+    "description": "将你和至多八个自愿生物投射至星界，留下昏迷且不会衰老的身体。每个星界形体都有银线；银线被切断，目标便会死亡。离开星界时，身体会被牵引至新位面。目标身体或星界形体生命值降至0，或你解除法术时，该目标的效果结束。每个目标需价值1,000金币的红锆石及价值100金币的银条，两者均会消耗。",
+    "material": "法术每个目标各需一块价值至少1,000金币的红锆石和一根价值至少100金币的银条，全部在施法时消耗",
+    "castingTime": "1小时",
+    "range": "10英尺",
+    "duration": "直到被解除"
+  },
+  "Foresight": {
+    "name": "预知术",
+    "description": "一个你触碰的自愿生物在8小时内进行D20检定时具有优势，针对它的攻击检定具有劣势。若你再次施放此法术，原效果结束。",
+    "material": "一根蜂鸟羽毛",
+    "castingTime": "1分钟",
+    "range": "触碰",
+    "duration": "8小时"
+  },
+  "Gate": {
+    "name": "异界之门",
+    "description": "开启一个直径5至20英尺、通往另一位面确切地点的传送门，持续至多1分钟。生物可从任一位面的门正面穿过。开启时你可说出另一位面某个特定生物的名字，将其立即带到身边，但无法控制它。",
+    "material": "一颗价值至少5,000金币的钻石",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Imprisonment": {
+    "name": "禁锢术",
+    "description": "30英尺内一个生物须进行感知豁免，失败则被囚禁，直到被解除或你设定的条件触发。选择埋葬、锁链、隔绝牢狱、缩小囚禁或沉眠。目标不衰老、无需维生、无法传送，也无法被预言魔法定位。豁免成功者在24小时内免疫此法术；只有9环解除魔法能提前结束囚禁。",
+    "material": "一座价值至少5,000金币的目标雕像",
+    "castingTime": "1分钟",
+    "range": "30英尺",
+    "duration": "直到被解除"
+  },
+  "Mass Heal": {
+    "name": "群体医疗术",
+    "description": "在60英尺内你能看见的任意生物之间分配至多700点治疗生命值。每个获得治疗的生物同时解除目盲、耳聋和中毒状态。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Meteor Swarm": {
+    "name": "流星爆",
+    "description": "四颗流星分别撞击1英里内不同地点。每处形成半径40英尺球状区域；其中生物须进行敏捷豁免，失败受到20d6火焰加20d6钝击伤害，成功减半。重叠区域中的生物只受一次伤害。",
+    "castingTime": "动作",
+    "range": "1英里",
+    "duration": "立即"
+  },
+  "Power Word Heal": {
+    "name": "治疗真言",
+    "description": "60英尺内一个生物恢复全部生命值，并解除魅惑、恐慌、麻痹、中毒和震慑状态。若它倒地，可用反应站起。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Power Word Kill": {
+    "name": "死亡真言",
+    "description": "60英尺内一个生物若生命值不超过100便死亡；若超过100，则受到12d12心灵伤害。没有豁免检定。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "立即"
+  },
+  "Prismatic Wall": {
+    "name": "虹光法墙",
+    "description": "创造一面七层墙，长至多90英尺、高30英尺，或直径至多30英尺的球体，持续10分钟。附近未受保护的生物可能目盲；穿越每层均须进行敏捷豁免。前五层分别造成12d6火焰、酸蚀、闪电、毒素或寒冷伤害（成功减半）；第六层可能石化，第七层可能放逐。每层有各自的破解方式；反魔法力场无法压制此墙。",
+    "castingTime": "动作",
+    "range": "60英尺",
+    "duration": "10分钟"
+  },
+  "Shapechange": {
+    "name": "变形",
+    "description": "在至多1小时内，变为你见过、挑战等级不高于你的等级或挑战等级的生物，但不能是构装或不死生物。获得等于初次形态生命值的临时生命值并使用其数据，但保留原生命值、生命骰、心智属性、熟练项、生物类型、交流能力和施法特性。你可用魔法动作变为另一合格形态。",
+    "material": "一顶价值至少1,500金币的翡翠头冠",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "专注，至多1小时"
+  },
+  "Storm of Vengeance": {
+    "name": "复仇风暴",
+    "description": "半径300英尺的风暴持续至多1分钟。开始时，云下生物须进行体质豁免，失败受到2d6雷鸣伤害并耳聋。第2回合造成4d6酸蚀伤害；第3回合降下六道闪电，每道10d6闪电伤害（敏捷豁免成功减半）；第4回合造成2d6钝击伤害；第5至10回合每回合造成1d6寒冷伤害，并使区域重度遮蔽且难以通行。",
+    "castingTime": "动作",
+    "range": "1英里",
+    "duration": "专注，至多1分钟"
+  },
+  "Time Stop": {
+    "name": "时间停止",
+    "description": "在其他生物的时间静止期间，你获得1d4+1个额外回合。若你影响另一生物或它穿戴、携带的物件，或距施法地点移动超过1,000英尺，效果提前结束。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即"
+  },
+  "True Polymorph": {
+    "name": "完全变形术",
+    "description": "将生物变为另一生物或非魔法物件，或将无人穿戴的非魔法物件变为生物。不自愿的生物可进行感知豁免抵抗。生物形态挑战等级不能高于原目标的等级或挑战等级；物件可变为挑战等级不高于9的生物。若专注满1小时，变化将持续到被解除。",
+    "material": "一滴水银、一团阿拉伯胶和一缕烟",
+    "castingTime": "动作",
+    "range": "30英尺",
+    "duration": "专注，至多1小时"
+  },
+  "True Resurrection": {
+    "name": "完全复活术",
+    "description": "使死亡不超过200年、且并非因年老死亡的生物以满生命值复活。恢复失去的器官与肢体，清除毒素、传染病和诅咒，并使不死生物恢复原本形态。若原身体已不存在，说出其名字即可创造新身体。施法消耗价值25,000金币的钻石。",
+    "material": "价值至少25,000金币的钻石，施法时消耗",
+    "castingTime": "1小时",
+    "range": "触碰",
+    "duration": "立即"
+  },
+  "Weird": {
+    "name": "恐惧幻景",
+    "description": "半径30英尺球状区域内你选定的生物须进行感知豁免，失败受到10d10心灵伤害，成功减半。失败者还会恐慌至多1分钟，并在每回合结束时再次豁免：失败再受5d10心灵伤害，成功则结束自身效果。",
+    "castingTime": "动作",
+    "range": "120英尺",
+    "duration": "专注，至多1分钟"
+  },
+  "Wish": {
+    "name": "祈愿术",
+    "description": "可复制任意8环或更低环阶法术，无需满足其施法要求。其他用途包括创造价值至多25,000金币的非魔法物件、使至多20个生物恢复全部生命值、赋予永久伤害抗性或暂时法术免疫、替换合格专长，或重掷上一轮的一个骰子。更宏大的愿望由主持人裁定。任何非复制用途都会造成魔法反噬：长休前施法会造成伤害，力量变为3持续2d4天，且有33%几率永远无法再次施放祈愿术。",
+    "castingTime": "动作",
+    "range": "自身",
+    "duration": "立即"
+  }
+}

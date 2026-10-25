@@ -27,7 +27,8 @@ Ordem macro planejada:
 2. `2.0.x`: multiclasse, reset seguro de progressao, polimento visual inicial,
    compatibilidade Android/Play Console, performance de memoria e revisoes de
    traducao.
-3. `2.1.x`: fechamento do rework visual, rolagem contextual, novidades e turco.
+3. `2.1.x`: fechamento do rework visual, rolagem contextual, novidades, turco e
+   correcoes de traducao.
 4. `2.2.x`: D&D 2024 / SRD 5.2.1 como modo de regras separado.
 5. `3.0.x`: GM Local vitalicio, com ferramentas offline de mestre e homebrew
    local.
@@ -253,6 +254,13 @@ enquanto o suporte a D&D 2024 continua em desenvolvimento.
       pelas Configuracoes.
 - [x] Pedir backup ou atualizacao de personagens antigos sem abrir a ficha nem
       redirecionar automaticamente para Configuracoes.
+
+### 2.1.2 - Revisao do italiano
+
+- [x] Corrigir traducoes italianas do SRD 5.1 em classes, habilidades, magias
+      e demais catalogos usados pelos personagens existentes.
+- [x] Revisar textos italianos da interface afetados pelas mesmas
+      inconsistencias.
 
 ### 2.2.0 - D&D 2024 / SRD 5.2.1
 

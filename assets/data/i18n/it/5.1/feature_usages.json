@@ -49,7 +49,7 @@
       "name": "Arcanum mistico"
     },
     "eldritch_master": {
-      "name": "Maestro occulto"
+      "name": "Maestro dell'Occulto"
     },
     "arcane_recovery": {
       "name": "Recupero arcano"
@@ -58,10 +58,10 @@
       "name": "Incantesimi distintivi"
     },
     "warding_flare": {
-      "name": "Bagliore protettivo"
+      "name": "Lampo di interdizione"
     },
     "wrath_of_the_storm": {
-      "name": "Ira della tempesta"
+      "name": "Collera della tempesta"
     },
     "war_priest": {
       "name": "Sacerdote di guerra"
@@ -79,10 +79,10 @@
       "name": "Nimbo sacro"
     },
     "undying_sentinel": {
-      "name": "Sentinella immortale"
+      "name": "Sentinella imperitura"
     },
     "elder_champion": {
-      "name": "Campione antico"
+      "name": "Campione degli Antichi"
     },
     "tides_of_chaos": {
       "name": "Maree del caos"
@@ -97,25 +97,25 @@
       "name": "Delirio oscuro"
     },
     "dark_ones_own_luck": {
-      "name": "Fortuna dell’Oscuro"
+      "name": "Fortuna dell'Oscuro"
     },
     "hurl_through_hell": {
-      "name": "Scagliare attraverso l’inferno"
+      "name": "Scagliare all'inferno"
     },
     "entropic_ward": {
-      "name": "Protezione entropica"
+      "name": "Interdizione entropica"
     },
     "benign_transposition": {
       "name": "Trasposizione benevola"
     },
     "portent": {
-      "name": "Presagio"
+      "name": "Portento"
     },
     "instinctive_charm": {
       "name": "Fascino istintivo"
     },
     "illusory_self": {
-      "name": "Sé illusorio"
+      "name": "Sé Illusorio"
     },
     "shapechanger": {
       "name": "Mutaforma"
@@ -127,7 +127,7 @@
       "name": "Dado di superiorità"
     },
     "magic_initiate_spell": {
-      "name": "Incantesimo di Iniziato alla magia"
+      "name": "Incantesimo dell'Iniziato alla Magia"
     },
     "breath_weapon": {
       "name": "Arma a soffio"

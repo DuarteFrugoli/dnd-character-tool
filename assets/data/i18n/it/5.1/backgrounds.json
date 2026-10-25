@@ -3,179 +3,179 @@
     "name": "Accolito",
     "startingEquipment": [
       "Simbolo sacro",
-      "Libro di preghiere o ruota di preghiera",
+      "Libro di preghiere o ruota della preghiera",
       "5 bastoncini di incenso",
-      "Paramenti",
+      "Abiti talari",
       "Abiti comuni",
       "15 mo"
     ],
     "feature": {
-      "name": "Il rifugio dei fedeli",
-      "description": "Tu e i tuoi compagni potete ricevere cure e cure gratuite nei templi della vostra fede e potete chiedere aiuto ai sacerdoti."
+      "name": "Rifugio dei Fedeli",
+      "description": "Tu e i tuoi compagni potete ricevere gratuitamente cure e assistenza nei luoghi di culto della tua fede, ma le componenti materiali degli incantesimi restano a tuo carico. I fedeli possono provvedere alle tue necessità modeste e i sacerdoti del tuo tempio possono aiutarti, purché tu sia in buoni rapporti con loro."
     }
   },
   "Charlatan": {
     "name": "Ciarlatano",
     "startingEquipment": [
-      "Bei vestiti",
-      "Kit di travestimento",
-      "Strumenti del truffatore di tua scelta",
+      "Abiti pregiati",
+      "Trucchi per il camuffamento",
+      "Oggetti per una truffa a scelta",
       "15 mo"
     ],
     "feature": {
-      "name": "Falsa identità",
-      "description": "Hai creato una seconda identità, inclusa documentazione, conoscenze consolidate e travestimenti."
+      "name": "Falsa Identità",
+      "description": "Possiedi una seconda identità completa di documenti, conoscenze e travestimenti. Puoi inoltre falsificare documenti e lettere, purché tu abbia visto un esempio dell'originale."
     }
   },
   "Criminal": {
-    "name": "Penale",
+    "name": "Criminale",
     "startingEquipment": [
       "Piede di porco",
       "Abiti comuni scuri con cappuccio",
       "15 mo"
     ],
     "feature": {
-      "name": "Contatto criminale",
-      "description": "Hai un contatto affidabile che funge da collegamento con una rete di criminali."
+      "name": "Contatto Criminale",
+      "description": "Hai un contatto fidato che ti collega a una rete criminale. Conosci i metodi per inviare e ricevere messaggi attraverso questa rete, anche a grandi distanze."
     }
   },
   "Entertainer": {
     "name": "Intrattenitore",
     "startingEquipment": [
-      "Strumento musicale",
-      "Il favore di un ammiratore",
+      "Strumento musicale a scelta",
+      "Pegno di un ammiratore",
       "Costume",
       "15 mo"
     ],
     "feature": {
-      "name": "A grande richiesta",
-      "description": "Puoi sempre trovare un posto dove esibirti e ricevere alloggio gratuito e cibo di modesta qualità."
+      "name": "A Grande Richiesta",
+      "description": "Puoi trovare facilmente un luogo in cui esibirti, come una locanda, una taverna o un teatro. In cambio di esibizioni regolari, puoi ricevere gratuitamente vitto e alloggio di livello modesto o confortevole, a seconda del locale."
     }
   },
   "Folk Hero": {
-    "name": "Eroe popolare",
+    "name": "Eroe Popolare",
     "startingEquipment": [
-      "Gli strumenti dell'artigiano",
+      "Strumenti da artigiano a scelta",
       "Pala",
-      "Pentola in ferro",
+      "Vaso di ferro",
       "Abiti comuni",
       "10 mo"
     ],
     "feature": {
-      "name": "Ospitalità rustica",
-      "description": "La gente comune proteggerà te e i tuoi compagni, ti nasconderà e non ti tradirà."
+      "name": "Ospitalità Rurale",
+      "description": "Tra la gente comune puoi trovare rifugio, riposo e ospitalità. I popolani sono disposti a nascondere te e i tuoi compagni e a proteggervi da chi vi cerca, purché non debbano mettere a rischio la propria vita."
     }
   },
   "Guild Artisan": {
     "name": "Artigiano della Gilda",
     "startingEquipment": [
-      "Gli strumenti dell'artigiano",
+      "Strumenti da artigiano a scelta",
       "Lettera di presentazione della tua gilda",
       "Abiti da viaggiatore",
       "15 mo"
     ],
     "feature": {
-      "name": "Iscrizione alla gilda",
-      "description": "La tua gilda offre alloggio, assistenza legale e assistenza e si aspetta in cambio quote e lealtà."
+      "name": "Appartenenza alla Gilda",
+      "description": "La tua gilda può offrirti vitto e alloggio, sostegno legale e contatti influenti. In cambio, devi rispettare i suoi obblighi e versare una quota di 5 mo al mese."
     }
   },
   "Hermit": {
     "name": "Eremita",
     "startingEquipment": [
-      "Custodia a scorrimento con note",
+      "Custodia per pergamene piena di appunti",
       "Coperta invernale",
       "Abiti comuni",
-      "Kit di erboristeria",
+      "Borsa da erborista",
       "5 mo"
     ],
     "feature": {
       "name": "Scoperta",
-      "description": "La tua solitudine ha prodotto una scoperta unica: una grande verità, un segreto o un luogo nascosto."
+      "description": "Durante il tuo isolamento hai fatto una scoperta importante e unica, come una verità nascosta, un segreto dimenticato o un luogo sconosciuto. Il significato della scoperta viene definito insieme al Dungeon Master."
     }
   },
   "Noble": {
     "name": "Nobile",
     "startingEquipment": [
-      "Bei vestiti",
+      "Abiti pregiati",
       "Anello con sigillo",
-      "Pergamena dell'albero genealogico",
+      "Pergamena con il tuo albero genealogico",
       "25 mo"
     ],
     "feature": {
-      "name": "Posizione di privilegio",
-      "description": "Le persone danno per scontato il meglio di te. Sei il benvenuto nell'alta società e puoi assicurarti un'udienza con un nobile locale."
+      "name": "Posizione Privilegiata",
+      "description": "Grazie al tuo rango, le persone tendono a presumere che tu abbia buone intenzioni. Sei accolto nell'alta società e puoi ottenere un'udienza con un nobile locale."
     }
   },
   "Outlander": {
-    "name": "Straniero",
+    "name": "Forestiero",
     "startingEquipment": [
-      "Personale",
-      "Trappola da caccia",
-      "Trofeo di un animale",
+      "Bastone",
+      "Tagliola",
+      "Trofeo di un animale ucciso",
       "Abiti da viaggiatore",
       "10 mo"
     ],
     "feature": {
-      "name": "Vagabondo",
-      "description": "Puoi trovare cibo e acqua fresca per te e per un massimo di altri 5 ogni giorno e ricordare la disposizione generale del terreno."
+      "name": "Viandante",
+      "description": "Hai un'eccellente memoria geografica e ricordi la disposizione generale dei territori, degli insediamenti e dei punti di riferimento. Puoi inoltre trovare ogni giorno cibo e acqua fresca per te e fino ad altre cinque persone, purché il territorio offra risorse sufficienti."
     }
   },
   "Sage": {
-    "name": "Saggio",
+    "name": "Sapiente",
     "startingEquipment": [
-      "Flacone di inchiostro nero",
+      "Calamaio di inchiostro nero",
       "Penna d'oca",
-      "Piccolo coltello",
-      "Lettera di un collega morto",
+      "Coltellino",
+      "Lettera di un collega defunto",
       "Abiti comuni",
       "10 mo"
     ],
     "feature": {
       "name": "Ricercatore",
-      "description": "Sai dove trovare informazioni oscure. Se non lo sai, sai chi lo sa."
+      "description": "Quando cerchi un'informazione che non conosci, generalmente sai dove trovarla o a chi rivolgerti per ottenerla. Alcune conoscenze potrebbero comunque essere custodite in luoghi difficili da raggiungere."
     }
   },
   "Sailor": {
     "name": "Marinaio",
     "startingEquipment": [
-      "Caviglia d'ormeggio (randello)",
+      "Caviglia da ormeggio (randello)",
       "15 metri di corda di seta",
-      "portafortuna",
-      "abiti comuni",
+      "Portafortuna",
+      "Abiti comuni",
       "10 mo"
     ],
     "feature": {
-      "name": "Passaggio della nave",
-      "description": "Puoi garantire il passaggio gratuito sulle navi a vela per te e i tuoi compagni in cambio di manodopera."
+      "name": "Passaggio Via Nave",
+      "description": "Grazie alla tua esperienza e ai tuoi contatti tra i marinai, puoi trovare un passaggio gratuito su una nave per te e i tuoi compagni. Durante il viaggio potrebbe esservi richiesto di aiutare l'equipaggio."
     }
   },
   "Soldier": {
     "name": "Soldato",
     "startingEquipment": [
-      "Insegne di rango",
+      "Insegne di grado",
       "Trofeo di un nemico caduto",
-      "Mazzo di carte o dadi",
+      "Set di dadi d'osso o mazzo di carte",
       "Abiti comuni",
       "10 mo"
     ],
     "feature": {
-      "name": "Grado militare",
-      "description": "I soldati fedeli alla tua precedente fazione riconoscono il tuo grado. Puoi invocare il tuo grado per ottenere influenza e accesso ai campi militari."
+      "name": "Grado Militare",
+      "description": "I soldati della tua precedente organizzazione militare riconoscono il tuo grado. Puoi esercitare la tua autorità sui militari, ottenere accesso ad accampamenti e fortezze amiche e richiedere temporaneamente equipaggiamento o cavalli."
     }
   },
   "Urchin": {
     "name": "Monello",
     "startingEquipment": [
-      "Piccolo coltello",
+      "Coltellino",
       "Mappa della tua città natale",
-      "Topo domestico",
-      "Segno dei tuoi genitori",
+      "Topolino addomesticato",
+      "Ricordo dei tuoi genitori",
       "Abiti comuni",
       "10 mo"
     ],
     "feature": {
-      "name": "Segreti della città",
-      "description": "Conosci gli schemi segreti delle città e puoi trovare passaggi attraverso le aree urbane due volte più velocemente del normale."
+      "name": "Segreti Cittadini",
+      "description": "Conosci i vicoli nascosti, le scorciatoie e i passaggi segreti delle città. Fuori dal combattimento, tu e i compagni che guidi potete spostarvi tra due luoghi della stessa città al doppio della velocità normale."
     }
   }
 }

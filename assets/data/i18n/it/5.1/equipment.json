@@ -51,7 +51,7 @@
     "name": "Falcione"
   },
   "Greataxe": {
-    "name": "Grande ascia"
+    "name": "Ascia bipenne"
   },
   "Greatsword": {
     "name": "Spadone"
@@ -126,7 +126,7 @@
     "name": "Giaco di maglia"
   },
   "Scale Mail": {
-    "name": "Posta in scala"
+    "name": "Corazza a scaglie"
   },
   "Breastplate": {
     "name": "Corazza"
@@ -170,7 +170,7 @@
     "description": "Munizioni per cerbottane."
   },
   "Crossbow Bolts (20)": {
-    "name": "Dardi della balestra (20)",
+    "name": "Quadrelli da balestra (20)",
     "description": "Munizioni per balestre."
   },
   "Sling Bullets (20)": {
@@ -186,31 +186,31 @@
     "description": "Contiene 30 libbre/1 piede cubo."
   },
   "Burglar's Pack": {
-    "name": "Pacchetto del ladro",
+    "name": "Dotazione da scassinatore",
     "description": "Uno zaino con cuscinetti a sfera, corda, campana, candele, piede di porco, martello, chiodi, lanterna con cappuccio, olio, razioni, acciarino, borraccia e corda di canapa."
   },
   "Diplomat's Pack": {
-    "name": "Pacchetto del diplomatico",
+    "name": "Dotazione da diplomatico",
     "description": "Una cassa con custodie per mappe o pergamene, vestiti pregiati, inchiostro, penna a inchiostro, lampada, olio, carta, profumo, ceralacca e sapone."
   },
   "Dungeoneer's Pack": {
-    "name": "Pacchetto Dungeoneer",
+    "name": "Dotazione da speleologo",
     "description": "Uno zaino con piede di porco, martello, chiodi, torce, acciarino, razioni, borraccia e corda di canapa."
   },
   "Entertainer's Pack": {
-    "name": "Pacchetto dell'intrattenitore",
+    "name": "Dotazione da intrattenitore",
     "description": "Uno zaino con sacco a pelo, costumi, candele, razioni, borraccia e kit di travestimento."
   },
   "Explorer's Pack": {
-    "name": "Pacchetto dell'esploratore",
+    "name": "Dotazione da esploratore",
     "description": "Uno zaino con sacco a pelo, kit da pasticcio, esca, torce, razioni, borraccia e corda di canapa."
   },
   "Priest's Pack": {
-    "name": "Pacchetto del prete",
+    "name": "Dotazione da sacerdote",
     "description": "Uno zaino con coperta, candele, acciarino, cassetta per l'elemosina, incenso, turibolo, paramenti, razioni e otre."
   },
   "Scholar's Pack": {
-    "name": "Pacchetto dello studioso",
+    "name": "Dotazione da studioso",
     "description": "Uno zaino con libro, inchiostro, penna, pergamena, sabbia e coltellino."
   },
   "Ball Bearings (bag of 1000)": {

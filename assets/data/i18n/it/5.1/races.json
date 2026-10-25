@@ -3,14 +3,14 @@
     "name": "Nano",
     "languages": [
       "Comune",
-      "Nanesco"
+      "Nanico"
     ],
     "subraces": [
       {
-        "name": "Nano delle colline"
+        "name": "Nano delle Colline"
       },
       {
-        "name": "Nano di montagna"
+        "name": "Nano delle Montagne"
       }
     ]
   },
@@ -22,10 +22,10 @@
     ],
     "subraces": [
       {
-        "name": "Alto Elfo"
+        "name": "Elfo Alto"
       },
       {
-        "name": "Elfo dei boschi"
+        "name": "Elfo dei Boschi"
       },
       {
         "name": "Elfo Oscuro (Drow)"
@@ -33,17 +33,17 @@
     ]
   },
   "Halfling": {
-    "name": "Mezzuomo",
+    "name": "Halfling",
     "languages": [
       "Comune",
-      "Mezzuomo"
+      "Halfling"
     ],
     "subraces": [
       {
-        "name": "Piede leggero"
+        "name": "Piedelesto"
       },
       {
-        "name": "Robusto"
+        "name": "Tozzo"
       }
     ]
   },
@@ -51,20 +51,20 @@
     "name": "Umano",
     "languages": [
       "Comune",
-      "uno in più a tua scelta"
+      "Una lingua aggiuntiva a scelta"
     ],
     "subraces": []
   },
   "Variant Human": {
-    "name": "Umano variante",
+    "name": "Umano (variante)",
     "languages": [
       "Comune",
-      "una lingua aggiuntiva a tua scelta"
+      "Una lingua aggiuntiva a scelta"
     ],
     "subraces": []
   },
   "Dragonborn": {
-    "name": "Sangue di Drago",
+    "name": "Dragonide",
     "languages": [
       "Comune",
       "Draconico"
@@ -77,22 +77,22 @@
         "name": "Blu (fulmine)"
       },
       {
-        "name": "Ottone (Fuoco)"
+        "name": "Ottone (fuoco)"
       },
       {
-        "name": "Bronzo (Fulmine)"
+        "name": "Bronzo (fulmine)"
       },
       {
         "name": "Rame (acido)"
       },
       {
-        "name": "Oro (Fuoco)"
+        "name": "Oro (fuoco)"
       },
       {
         "name": "Verde (veleno)"
       },
       {
-        "name": "Rosso (Fuoco)"
+        "name": "Rosso (fuoco)"
       },
       {
         "name": "Argento (freddo)"
@@ -110,10 +110,10 @@
     ],
     "subraces": [
       {
-        "name": "Gnomo della foresta"
+        "name": "Gnomo delle Foreste"
       },
       {
-        "name": "Gnomo delle rocce"
+        "name": "Gnomo delle Rocce"
       }
     ]
   },
@@ -122,7 +122,7 @@
     "languages": [
       "Comune",
       "Elfico",
-      "uno in più a tua scelta"
+      "Una lingua aggiuntiva a scelta"
     ],
     "subraces": []
   },
@@ -130,7 +130,7 @@
     "name": "Mezzorco",
     "languages": [
       "Comune",
-      "Orco"
+      "Orchesco"
     ],
     "subraces": []
   },

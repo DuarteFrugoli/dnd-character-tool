@@ -12,7 +12,7 @@
   "Actor": {
     "name": "Attore",
     "prerequisite": null,
-    "description": "Abile nella mimica e nella drammaticità, ottieni i seguenti benefici:\n• Aumenta il tuo punteggio di Carisma di 1, fino a un massimo di 20.\n• Hai vantaggio sulle prove di Carisma (Inganno) e Carisma (Prestazione) quando cerchi di farti passare per una persona diversa.\n• Puoi imitare il discorso di un'altra persona o i suoni prodotti da altre creature. Devi aver sentito la persona parlare, o aver sentito la creatura emettere il suono, per almeno 1 minuto. Una prova riuscita di Saggezza (Intuizione) contestata dalla tua prova di Carisma (Inganno) consente a un ascoltatore di determinare che l'effetto è falso."
+    "description": "Abile nella mimica e nella recitazione, ottieni i seguenti benefici:\n• Aumenta il tuo punteggio di Carisma di 1, fino a un massimo di 20.\n• Hai vantaggio sulle prove di Carisma (Inganno) e Carisma (Intrattenere) quando cerchi di farti passare per un'altra persona.\n• Puoi imitare la voce di un'altra persona o i suoni prodotti da altre creature. Devi averli ascoltati per almeno 1 minuto. Un ascoltatore può riconoscere l'imitazione superando una prova di Saggezza (Intuizione) contrapposta alla tua prova di Carisma (Inganno)."
   },
   "Charger": {
     "name": "Caricabatterie",

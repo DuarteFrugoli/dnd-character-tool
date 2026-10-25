@@ -77,7 +77,7 @@
   },
   "Drow Magic": {
     "name": "Magia drow",
-    "description": "Conosci il trucchetto delle luci danzanti. Quando raggiungi il 3° livello, puoi lanciare l'incantesimo Fuoco Fatato una volta al giorno. Quando raggiungi il 5° livello, puoi anche lanciare l'incantesimo oscurità una volta al giorno. Il carisma è la tua abilità da incantatore per questi incantesimi."
+    "description": "Conosci il trucchetto Luci Danzanti. Dal 3° livello puoi lanciare Luminescenza una volta al giorno. Dal 5° livello puoi lanciare anche Oscurità una volta al giorno. Carisma è la tua caratteristica da incantatore per questi incantesimi."
   },
   "Drow Weapon Training": {
     "name": "Addestramento con le armi dei drow",
@@ -141,7 +141,7 @@
   },
   "Menacing": {
     "name": "Minaccioso",
-    "description": "Ottieni competenza nell'abilità Intimidazione."
+    "description": "Ottieni competenza nell'abilità Intimidire."
   },
   "Relentless Endurance": {
     "name": "Resistenza implacabile",

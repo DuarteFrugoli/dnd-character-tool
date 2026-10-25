@@ -3,13 +3,13 @@
     "name": "Comune"
   },
   "Dwarvish": {
-    "name": "Nanesco"
+    "name": "Nanico"
   },
   "Elvish": {
     "name": "Elfico"
   },
   "Halfling": {
-    "name": "Mezzuomo"
+    "name": "Halfling"
   },
   "Draconic": {
     "name": "Draconico"
@@ -18,7 +18,7 @@
     "name": "Gnomesco"
   },
   "Orc": {
-    "name": "Orco"
+    "name": "Orchesco"
   },
   "Infernal": {
     "name": "Infernale"
@@ -27,10 +27,10 @@
     "name": "Abissale"
   },
   "Celestial": {
-    "name": "Celeste"
+    "name": "Celestiale"
   },
   "Deep Speech": {
-    "name": "Discorso profondo"
+    "name": "Gergo delle Profondità"
   },
   "Giant": {
     "name": "Gigante"
@@ -45,7 +45,7 @@
     "name": "Primordiale"
   },
   "Sylvan": {
-    "name": "Silvestre"
+    "name": "Silvano"
   },
   "Undercommon": {
     "name": "Sottocomune"

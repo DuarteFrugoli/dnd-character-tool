@@ -503,7 +503,7 @@
               "description": "Scegli Chierico come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "druid": {
-              "name": "druido",
+              "name": "Druido",
               "description": "Scegli Druido come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "sorcerer": {
@@ -511,11 +511,11 @@
               "description": "Scegli lo Stregone come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "warlock": {
-              "name": "Stregone",
+              "name": "Warlock",
               "description": "Scegli Warlock come classe sorgente per i trucchetti e gli incantesimi di questo talento."
             },
             "wizard": {
-              "name": "Procedura guidata",
+              "name": "Mago",
               "description": "Scegli il Mago come classe di origine per i trucchetti e gli incantesimi di questo talento."
             }
           }

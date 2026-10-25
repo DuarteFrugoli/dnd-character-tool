@@ -1,17 +1,17 @@
 {
   "Barbarian": {
     "Path of the Berserker": {
-      "name": "Sentiero del Berserker",
-      "description": "Incanala la tua rabbia in una furia selvaggia. Quando sei in ira, puoi entrare in frenesia, effettuando un attacco in mischia extra ogni turno come azione bonus, al costo dell'esaurimento successivo."
+      "name": "Cammino del Berserker",
+      "description": "Incanala la tua ira in una furia selvaggia. Durante l'ira puoi entrare in frenesia, ottenendo un attacco in mischia aggiuntivo come azione bonus nei turni successivi, ma subisci un livello di indebolimento quando l'ira termina."
     },
     "Path of the Totem Warrior": {
-      "name": "Sentiero del Guerriero Totem",
+      "name": "Cammino del Guerriero Totemico",
       "description": "Legati con uno spirito animale come guida e ottieni poteri magici. Scegli tra Orso (resistenza a tutti i danni), Aquila (disimpegno come azione bonus) o Lupo (gli alleati ottengono vantaggio sugli attacchi in mischia contro i nemici vicino a te)."
     }
   },
   "Bard": {
     "College of Lore": {
-      "name": "Collegio delle Lore",
+      "name": "Collegio della Sapienza",
       "description": "Un maestro della conoscenza e dei segreti. Ottieni competenza in tre abilità extra, parole taglienti per ostacolare i nemici e la capacità di rubare segreti magici da altre classi."
     },
     "College of Valor": {
@@ -29,7 +29,7 @@
       "description": "Guaritore e protettore benedetto dagli dei della vita. Competenza nelle armature pesanti, guarigione migliorata e capacità di preservare la vita sull'orlo della morte."
     },
     "Light Domain": {
-      "name": "Dominio leggero",
+      "name": "Dominio della Luce",
       "description": "Canalizza la fiamma divina contro l'oscurità. Trucchetto di fuoco bonus, bagliore di protezione per ostacolare gli aggressori e una brillante corona di luce agli alti livelli."
     },
     "Nature Domain": {
@@ -51,11 +51,11 @@
   },
   "Druid": {
     "Circle of the Land": {
-      "name": "Cerchio della Terra",
+      "name": "Circolo della Terra",
       "description": "Custode di antiche tradizioni e segreti naturali. Recupera gli slot degli incantesimi con un riposo breve, resisti al fascino e alla paura di folletti ed elementali e ottieni incantesimi extra in base al terreno scelto."
     },
     "Circle of the Moon": {
-      "name": "Cerchio della Luna",
+      "name": "Circolo della Luna",
       "description": "Potente mutaforma. Forma selvatica in bestie pronte al combattimento a partire da GS 1 (che sale a GS 6 ai livelli più alti) per poi trasformarsi in forme elementali."
     }
   },
@@ -70,7 +70,7 @@
     },
     "Eldritch Knight": {
       "name": "Cavaliere mistico",
-      "description": "Una lama magica che unisce l'addestramento marziale al potere arcano. Impara incantesimi di abiurazione ed evocazione, lega armi alla tua mano ed eventualmente lancia incantesimi come azione bonus."
+      "description": "Un guerriero che unisce l'addestramento marziale alla magia arcana. Impara incantesimi di Abiurazione e Invocazione, vincola le armi a sé e combina il lancio di trucchetti con gli attacchi con le armi."
     }
   },
   "Monk": {
@@ -113,16 +113,16 @@
   },
   "Rogue": {
     "Thief": {
-      "name": "Ladro",
-      "description": "Maestro ladro e opportunista. Mani veloci per un utilizzo rapido degli oggetti come azione bonus, Lavoro del secondo piano per una velocità di arrampicata superiore e Usa dispositivo magico ai livelli più alti."
+      "name": "Furfante",
+      "description": "Esperto di furti e opportunismo. Mani veloci permette di usare oggetti come azione bonus; Lavoro al secondo piano migliora le arrampicate e Utilizzare Oggetti Magici amplia le opzioni ai livelli più alti."
     },
     "Assassin": {
       "name": "Assassino",
       "description": "Agguato mortale. Vantaggio e danni bonus contro bersagli sorpresi, una nuova identità travestita ogni giorno e la capacità di imitare il linguaggio di qualsiasi creatura."
     },
     "Arcane Trickster": {
-      "name": "Imbroglione arcano",
-      "description": "Un ladro incantatore che intreccia la magia con l'inganno. Impara incantesimi di illusione e incantesimo, usa Prestidigitazione della mano magica e infine ruba gli effetti degli incantesimi ad altri incantatori."
+      "name": "Mistificatore Arcano",
+      "description": "Un ladro che unisce magia e inganno. Impara incantesimi di ammaliamento e illusione, usa la Mano Magica per agire di nascosto e infine può sottrarre gli incantesimi diretti contro di lui."
     }
   },
   "Sorcerer": {
@@ -137,12 +137,12 @@
   },
   "Warlock": {
     "The Archfey": {
-      "name": "L'Arcifey",
-      "description": "Un signore delle fate pieno di emozioni e glamour. Presenza fatata per incantare o spaventare le creature vicine, Fuga nebbiosa per svanire quando viene colpito e magia incentrata sull'incantesimo."
+      "name": "Il Sovrano Fatato",
+      "description": "Un potente signore del mondo fatato. La sua Presenza Fatata può affascinare o spaventare le creature vicine; Fuga Nebbiosa permette di scomparire quando subisci danni."
     },
     "The Fiend": {
-      "name": "Il Demone",
-      "description": "Un potente diavolo o demone. La Benedizione dell'Oscuro garantisce punti ferita temporanei quando uccidi e una serie di incantesimi di fuoco e necrotici che terminano con Scagliarsi attraverso l'inferno."
+      "name": "L'Immondo",
+      "description": "Un potente diavolo o demone. La Benedizione dell'Oscuro concede punti ferita temporanei quando riduci un nemico a 0 punti ferita; il patrono offre anche magia di fuoco e poteri infernali."
     },
     "The Great Old One": {
       "name": "Il Grande Vecchio",
@@ -167,8 +167,8 @@
       "description": "Maestro della mente e delle emozioni. Sguardo ipnotico per stordire una creatura ogni turno, Instillare il dubbio per imporre uno svantaggio e infine Alterare ricordi per cancellare ciò che i nemici hanno vissuto."
     },
     "School of Evocation": {
-      "name": "Scuola di Evocazione",
-      "description": "Il blaster arcano. Scolpisci incantesimi per escludere gli alleati dai tuoi effetti ad area, potente trucchetto per dimezzare i danni ai tiri salvezza ed evocazione potenziata per massimizzare un tiro di danno."
+      "name": "Scuola di Invocazione",
+      "description": "Specialista della magia offensiva. Plasmare Incantesimi protegge gli alleati dagli effetti ad area, Trucchetto Potente infligge danni anche quando il bersaglio supera il tiro salvezza e Invocazione Potente aggiunge Intelligenza ai danni."
     },
     "School of Illusion": {
       "name": "Scuola dell'illusione",

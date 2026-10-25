@@ -256,28 +256,28 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get modeGuidedSubtitle =>
-      'Procedura guidata passo dopo passo. Scegli classe, razza, background, abilità e attributi uno alla volta. Consigliato per i nuovi giocatori.';
+      'Procedura guidata passo dopo passo. Scegli classe, razza, background, abilità e caratteristiche una alla volta. Consigliata ai nuovi giocatori.';
 
   @override
   String get modeManualTitle => 'Manuale';
 
   @override
   String get modeManualSubtitle =>
-      'Compila tutto da solo. Tutti i campi sono gratuiti e nessun valore viene calcolato per te. Ideale per giocatori esperti.';
+      'Compila tutto manualmente. Tutti i campi sono liberi e nessun valore viene calcolato automaticamente. Ideale per i giocatori esperti.';
 
   @override
   String get modeRandomTitle => 'Casuale';
 
   @override
   String get modeRandomSubtitle =>
-      'Tutto è pensato per te: razza, classe, background e attributi. Ottimo per una sfida o un colpo singolo.';
+      'Razza, classe, background e caratteristiche vengono scelti per te. Ideale per una sfida o un\'avventura autoconclusiva.';
 
   @override
   String get modeSemiRandomTitle => 'Semi-casuale';
 
   @override
   String get modeSemiRandomSubtitle =>
-      'Scegli tu le scelte importanti; tutto il resto viene arrotolato. Buono per quando hai un\'idea ma vuoi sorprese.';
+      'Scegli le opzioni principali; tutto il resto viene determinato dai dadi. Ideale se hai già un\'idea per il personaggio ma vuoi qualche sorpresa.';
 
   @override
   String get modeComingSoon => 'Presto';
@@ -286,7 +286,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get creationStepClass => 'Classe';
 
   @override
-  String get creationStepRace => 'Gara';
+  String get creationStepRace => 'Razza';
 
   @override
   String get creationStepBackground => 'Sfondo';
@@ -295,7 +295,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get creationStepSkills => 'Competenze';
 
   @override
-  String get creationStepAttributes => 'Attributi';
+  String get creationStepAttributes => 'Caratteristiche';
 
   @override
   String get creationStepName => 'Nome';
@@ -489,7 +489,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get detailTabSkills => 'Competenze';
 
   @override
-  String get detailTabFeatures => 'Caratteristiche';
+  String get detailTabFeatures => 'Privilegi';
 
   @override
   String get detailTabSpells => 'Incantesimi';
@@ -580,7 +580,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get sectionProgression => 'Progressione';
 
   @override
-  String get sectionAbilityScores => 'Punteggi di abilità';
+  String get sectionAbilityScores => 'Punteggi di caratteristica';
 
   @override
   String get sectionSavingThrows => 'Competenze nei tiri salvezza';
@@ -649,7 +649,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get levelUpCancel => 'Annulla';
 
   @override
-  String get levelUpStepFeatures => 'Nuove abilità';
+  String get levelUpStepFeatures => 'Nuovi privilegi';
 
   @override
   String levelUpStepSubclass(String feature) {
@@ -779,7 +779,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String levelUpSummaryAsi(String changes) {
-    return 'MPC: $changes';
+    return 'Caratteristiche: $changes';
   }
 
   @override
@@ -841,7 +841,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'Questo reimposterà la progressione di classe al livello 1. Note, inventario, contenitori, valuta, immagine, storia, aspetto, razza, background e punteggi caratteristica saranno mantenuti.\n\nLivelli di classe, incantesimi di classe, scelte di classe/sottoclasse, risorse di progressione e talenti da ASI saranno rimossi o ricalcolati. Esporta prima un backup se vuoi una copia extra.';
+      'Questo reimposterà la progressione di classe al livello 1. Note, inventario, contenitori, valuta, immagine, storia, aspetto, razza, background e punteggi di caratteristica saranno mantenuti.\n\nLivelli di classe, incantesimi di classe, scelte di classe/sottoclasse, risorse di progressione e talenti ottenuti con l\'aumento dei punteggi di caratteristica saranno rimossi o ricalcolati. Esporta prima un backup se vuoi una copia extra.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -1581,7 +1581,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get stepStandardArray => 'Matrice standard';
 
   @override
-  String get stepPointBuy => 'Punto Acquista';
+  String get stepPointBuy => 'Acquisto di punti';
 
   @override
   String get stepRoll4d6 => 'Tira 4d6';
@@ -1591,17 +1591,17 @@ class AppLocalizationsIt extends AppLocalizations {
       'Distribuisci liberamente i bonus razziali';
 
   @override
-  String get stepAssignRolls => 'Assegna ogni tiro a un attributo:';
+  String get stepAssignRolls => 'Assegna ogni tiro a una caratteristica:';
 
   @override
-  String get stepAssignValues => 'Assegna ciascun valore a un attributo:';
+  String get stepAssignValues => 'Assegna ogni valore a una caratteristica:';
 
   @override
   String get stepPointsRemaining => 'Punti rimanenti:';
 
   @override
   String stepRaceBonus(int n) {
-    return '+ Gara $n';
+    return 'Bonus razziale: +$n';
   }
 
   @override
@@ -1745,7 +1745,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String featuresSectionSubclass(String name) {
-    return 'Caratteristiche della sottoclasse: $name';
+    return 'Privilegi della sottoclasse: $name';
   }
 
   @override
@@ -2158,7 +2158,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get reviewRowLanguages => 'Lingue';
 
   @override
-  String get reviewRowFeature => 'Caratteristica';
+  String get reviewRowFeature => 'Privilegio';
 
   @override
   String get reviewRowFromBackground => 'Dallo sfondo';
@@ -2220,7 +2220,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get stepTashaRule =>
-      'Regola facoltativa di Tasha: assegna punti ASI a qualsiasi attributo';
+      'Regola facoltativa di Tasha: assegna i bonus razziali a qualsiasi caratteristica';
 
   @override
   String get stepRollDice => 'Lancia i dadi';
@@ -2233,7 +2233,7 @@ class AppLocalizationsIt extends AppLocalizations {
       'Tira per generare 6 valori (4d6, lascia cadere il più basso)';
 
   @override
-  String get stepPrimaryAbilities => 'abilità primarie:';
+  String get stepPrimaryAbilities => 'caratteristiche principali:';
 
   @override
   String get stepNameTitle => 'Dai un nome al tuo personaggio.';
@@ -2277,7 +2277,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String stepChooseSkillsHint(int count) {
-    return 'Scegli $count abilità dall\'elenco delle tue lezioni.';
+    return 'Scegli $count abilità dall\'elenco della tua classe.';
   }
 
   @override
@@ -2305,12 +2305,12 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return 'ASI senza razza: assegna +1 a $total attributi ($remaining rimanenti):';
+    return 'Bonus razziali: assegna +1 a $total caratteristiche ($remaining rimanenti):';
   }
 
   @override
   String get stepFreePicksNoStack =>
-      'Non è possibile assegnare attributi che già ricevono un bonus razziale.';
+      'Non puoi scegliere caratteristiche che ricevono già un bonus razziale.';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -2463,7 +2463,7 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get featureAddButton => 'Aggiungi caratteristica';
+  String get featureAddButton => 'Aggiungi privilegio';
 
   @override
   String get reviewLanguageChoices => 'Scelte linguistiche';

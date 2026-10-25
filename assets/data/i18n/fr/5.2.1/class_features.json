@@ -1,0 +1,718 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Rage",
+      "description": "Entrez en Rage par une Action bonus sans porter d'armure lourde. Pendant la Rage, vous résistez aux dégâts contondants, perforants et tranchants, avez l'Avantage aux tests et sauvegardes de Force et ajoutez vos Dégâts de Rage aux dégâts d'armes ou de Frappes à mains nues basés sur la Force (+2 aux niveaux 1-8, +3 aux niveaux 9-15, +4 aux niveaux 16-20). Vous ne pouvez ni lancer de sorts ni maintenir votre Concentration. La Rage dure jusqu'à la fin de votre prochain tour et peut être prolongée à chaque tour en attaquant, en forçant un ennemi à effectuer une sauvegarde ou en utilisant une Action bonus, pendant 10 minutes au maximum. Utilisations : 2 aux niveaux 1-2, 3 aux niveaux 3-5, 4 aux niveaux 6-11, 5 aux niveaux 12-16 et 6 à partir du niveau 17. Vous récupérez une utilisation après un Repos court et toutes après un Repos long."
+    },
+    "Unarmored Defense": {
+      "name": "Défense sans armure",
+      "description": "Sans armure, votre CA de base est égale à 10 + votre modificateur de Dextérité + votre modificateur de Constitution. Vous pouvez tout de même utiliser un bouclier."
+    },
+    "Weapon Mastery": {
+      "name": "Maîtrise des armes",
+      "description": "Choisissez deux types d'armes courantes ou de guerre de corps à corps dont vous pouvez utiliser les propriétés de maîtrise. Remplacez un choix après un Repos long. Le nombre de types choisis passe à trois au niveau 4 et à quatre au niveau 10."
+    },
+    "Danger Sense": {
+      "name": "Sens du danger",
+      "description": "Vous avez l'Avantage aux sauvegardes de Dextérité, sauf si vous êtes Incapable d'agir."
+    },
+    "Reckless Attack": {
+      "name": "Attaque téméraire",
+      "description": "Lors de votre premier jet d'attaque d'un tour, vous pouvez attaquer de façon téméraire. Vos jets d'attaque basés sur la Force ont l'Avantage jusqu'à votre prochain tour, mais les attaques contre vous aussi."
+    },
+    "Barbarian Subclass": {
+      "name": "Sous-classe de barbare",
+      "description": "Choisissez une sous-classe de barbare ; vous recevez ses aptitudes aux niveaux de barbare indiqués."
+    },
+    "Primal Knowledge": {
+      "name": "Savoir primordial",
+      "description": "Vous gagnez la maîtrise d'une compétence supplémentaire de la liste de niveau 1 du barbare. Pendant la Rage, vous pouvez utiliser la Force pour les tests d'Acrobaties, d'Intimidation, de Perception, de Discrétion ou de Survie."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de barbare."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous attaquez deux fois lorsque vous effectuez l'action Attaquer."
+    },
+    "Fast Movement": {
+      "name": "Déplacement rapide",
+      "description": "Votre Vitesse augmente de 10 pieds tant que vous ne portez pas d'armure lourde."
+    },
+    "Feral Instinct": {
+      "name": "Instinct sauvage",
+      "description": "Vous avez l'Avantage aux jets d'Initiative."
+    },
+    "Instinctive Pounce": {
+      "name": "Bond instinctif",
+      "description": "Dans le cadre de l'Action bonus utilisée pour entrer en Rage, déplacez-vous jusqu'à la moitié de votre Vitesse."
+    },
+    "Brutal Strike": {
+      "name": "Frappe brutale",
+      "description": "Quand vous utilisez Attaque téméraire, renoncez à l'Avantage qu'elle procure pour une attaque basée sur la Force et sans Désavantage. Si elle touche, ajoutez 1d10 dégâts du type de l'attaque et choisissez un effet de Frappe brutale : Coup puissant repousse la cible de 15 pieds et vous permet de la suivre sur une distance allant jusqu'à la moitié de votre Vitesse sans provoquer d'attaques d'opportunité ; Coup aux jarrets réduit sa Vitesse de 15 pieds jusqu'à votre prochain tour."
+    },
+    "Relentless Rage": {
+      "name": "Rage implacable",
+      "description": "Si votre Rage est active et que vous devriez tomber à 0 point de vie sans mourir sur le coup, effectuez une sauvegarde de Constitution DD 10. En cas de réussite, vos points de vie deviennent égaux au double de votre niveau de barbare. Le DD augmente de 5 après chaque utilisation et revient à sa valeur initiale après un Repos court ou long."
+    },
+    "Improved Brutal Strike": {
+      "name": "Frappe brutale améliorée",
+      "description": "Vous gagnez deux autres effets de Frappe brutale : Coup déstabilisant impose le Désavantage à la prochaine sauvegarde de la cible et l'empêche d'effectuer des attaques d'opportunité jusqu'à votre prochain tour ; Coup fracassant accorde +5 au jet d'attaque de la prochaine autre créature qui l'attaque avant votre prochain tour. Au niveau 17, les dégâts supplémentaires de Frappe brutale passent à 2d10 et vous pouvez appliquer deux effets différents au même coup."
+    },
+    "Persistent Rage": {
+      "name": "Rage persistante",
+      "description": "Une fois par Repos long, lorsque vous lancez l'Initiative, récupérez toutes les utilisations dépensées de Rage. La Rage ne nécessite plus d'action pour être prolongée ; elle dure au plus 10 minutes et ne prend fin prématurément que si vous devenez Inconscient ou portez une armure lourde."
+    },
+    "Indomitable Might": {
+      "name": "Puissance indomptable",
+      "description": "Si le total d'un test ou d'une sauvegarde de Force est inférieur à votre valeur de Force, utilisez cette valeur à la place."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Primal Champion": {
+      "name": "Champion primordial",
+      "description": "Augmentez chacun de vos scores de Force et de Constitution de 4 ; leur maximum devient 25."
+    }
+  },
+  "Bard": {
+    "Bardic Inspiration": {
+      "name": "Inspiration bardique",
+      "description": "Par une Action bonus, donnez un dé d'Inspiration bardique à une créature située à 60 pieds ou moins et capable de vous voir ou de vous entendre. Pendant 1 heure, après avoir raté un test de d20, elle peut lancer ce dé et l'ajouter au test. Une créature ne peut détenir qu'un tel dé. Votre nombre d'utilisations est égal à votre modificateur de Charisme (minimum 1), et vous les récupérez après un Repos long. Taille du dé : d6 aux niveaux 1-4, d8 aux niveaux 5-9, d10 aux niveaux 10-14 et d12 à partir du niveau 15."
+    },
+    "Spellcasting": {
+      "name": "Incantation",
+      "description": "Le Charisme est votre caractéristique d'incantation de barde ; un instrument de musique peut servir de focaliseur. Vous connaissez deux tours de magie de barde au niveau 1, puis un autre aux niveaux 4 et 10. Au niveau 1, préparez quatre sorts de barde de niveau 1 ; votre limite de préparation et vos emplacements de sort augmentent avec votre niveau de barde. Quand vous gagnez un niveau de barde, vous pouvez remplacer un sort préparé et un tour de magie par des sorts de barde admissibles. Les sorts toujours préparés par d'autres aptitudes ne comptent pas dans la limite."
+    },
+    "Expertise": {
+      "name": "Expertise",
+      "description": "Vous gagnez l'Expertise dans deux compétences que vous maîtrisez et dans deux autres au niveau 9 de barde."
+    },
+    "Jack of All Trades": {
+      "name": "Touche-à-tout",
+      "description": "Ajoutez la moitié de votre bonus de maîtrise, arrondie à l'inférieur, à un test de caractéristique fondé sur une compétence que vous ne maîtrisez pas et qui n'emploie pas autrement ce bonus."
+    },
+    "Bard Subclass": {
+      "name": "Sous-classe de barde",
+      "description": "Choisissez une sous-classe de barde ; vous recevez ses aptitudes aux niveaux de barde indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de barde."
+    },
+    "Font of Inspiration": {
+      "name": "Source d'inspiration",
+      "description": "Vous récupérez toutes vos utilisations d'Inspiration bardique après un Repos court ou long. Vous pouvez dépenser un emplacement de sort, sans action, pour récupérer une utilisation."
+    },
+    "Countercharm": {
+      "name": "Contre-charme",
+      "description": "Par une Réaction, lorsque vous ou une créature à 30 pieds ou moins ratez une sauvegarde contre l'état Charmé ou Effrayé, vous pouvez faire relancer cette sauvegarde avec l'Avantage."
+    },
+    "Magical Secrets": {
+      "name": "Secrets magiques",
+      "description": "Lorsque votre limite de sorts préparés augmente, les nouveaux sorts peuvent provenir des listes du barde, du clerc, du druide ou du magicien et comptent comme des sorts de barde. Vous pouvez également remplacer un sort de barde préparé par un sort de ces listes."
+    },
+    "Superior Inspiration": {
+      "name": "Inspiration supérieure",
+      "description": "Lorsque vous lancez l'Initiative avec moins de deux utilisations d'Inspiration bardique disponibles, vous en récupérez assez pour en avoir deux."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Words of Creation": {
+      "name": "Paroles de création",
+      "description": "Mot de pouvoir guérisseur et Mot de pouvoir mortel sont toujours préparés. Lorsque vous lancez l'un ou l'autre, vous pouvez cibler une seconde créature à 10 pieds ou moins de la première."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Incantation",
+      "description": "La Sagesse est votre caractéristique d'incantation de clerc ; un symbole sacré peut servir de focaliseur. Vous connaissez trois tours de magie de clerc au niveau 1, puis un autre aux niveaux 4 et 10. Au niveau 1, préparez quatre sorts de clerc de niveau 1 ; votre limite de préparation et vos emplacements de sort augmentent avec votre niveau de clerc. Après chaque Repos long, vous pouvez remplacer n'importe quels sorts de clerc préparés par des sorts de niveaux que vous pouvez lancer. Les sorts toujours préparés ne comptent pas dans la limite."
+    },
+    "Divine Order": {
+      "name": "Ordre divin",
+      "description": "Choisissez Protecteur pour gagner la maîtrise des armes de guerre et la formation aux armures lourdes, ou Thaumaturge pour apprendre un tour de magie de clerc supplémentaire et ajouter votre modificateur de Sagesse (minimum +1) aux tests d'Arcanes ou de Religion."
+    },
+    "Channel Divinity": {
+      "name": "Canalisation divine",
+      "description": "Vous obtenez Étincelle divine et Renvoi des morts-vivants, ainsi que les options de votre sous-classe. Vous pouvez utiliser la Canalisation divine deux fois au niveau 2, trois fois au niveau 6 et quatre fois au niveau 18 ; vous récupérez une utilisation après un Repos court et toutes après un Repos long. Par une action de Magie, Étincelle divine soigne une autre créature visible à 30 pieds ou moins de 1d8 + votre modificateur de Sagesse, ou lui inflige autant de dégâts nécrotiques ou radiants si elle rate une sauvegarde de Constitution (la moitié en cas de réussite) ; les dés passent à 2d8 au niveau 7, 3d8 au niveau 13 et 4d8 au niveau 18. Par une action de Magie, Renvoi des morts-vivants oblige les morts-vivants choisis à 30 pieds ou moins à effectuer une sauvegarde de Sagesse sous peine d'être Effrayés et Incapables d'agir pendant 1 minute ; ils cherchent à s'éloigner et l'effet prend fin s'ils subissent des dégâts ou si vous devenez Incapable d'agir ou mourez."
+    },
+    "Cleric Subclass": {
+      "name": "Sous-classe de clerc",
+      "description": "Choisissez une sous-classe de clerc ; vous recevez ses aptitudes aux niveaux de clerc indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de clerc."
+    },
+    "Sear Undead": {
+      "name": "Brûlure des morts-vivants",
+      "description": "Quand vous utilisez Renvoi des morts-vivants, chaque mort-vivant qui rate sa sauvegarde subit également des dégâts radiants égaux au résultat d'un nombre de d8 égal à votre modificateur de Sagesse (minimum 1d8)."
+    },
+    "Blessed Strikes": {
+      "name": "Frappes bénies",
+      "description": "Choisissez Frappe divine pour ajouter 1d8 dégâts nécrotiques ou radiants à un coup d'arme qui touche à chacun de vos tours, ou Incantation puissante pour ajouter votre modificateur de Sagesse aux dégâts de vos tours de magie de clerc."
+    },
+    "Divine Intervention": {
+      "name": "Intervention divine",
+      "description": "Une fois par Repos long, utilisez une action de Magie pour lancer sans emplacement de sort ni composantes matérielles un sort de clerc de niveau 5 ou inférieur qui n'exige pas de Réaction."
+    },
+    "Improved Blessed Strikes": {
+      "name": "Frappes bénies améliorées",
+      "description": "Les dégâts supplémentaires de Frappe divine passent à 2d8. Si vous avez choisi Incantation puissante, infliger des dégâts à une créature avec un tour de magie de clerc peut accorder à vous-même ou à un allié à 60 pieds ou moins des points de vie temporaires égaux au double de votre modificateur de Sagesse."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Greater Divine Intervention": {
+      "name": "Intervention divine supérieure",
+      "description": "Intervention divine peut lancer Souhait. Si vous choisissez Souhait, vous ne pouvez plus utiliser Intervention divine avant d'avoir terminé 2d4 Repos longs."
+    }
+  },
+  "Druid": {
+    "Spellcasting": {
+      "name": "Incantation",
+      "description": "La Sagesse est votre caractéristique d'incantation de druide ; un focaliseur druidique peut vous servir de focaliseur. Vous connaissez deux tours de magie de druide au niveau 1, puis un autre aux niveaux 4 et 10. Au niveau 1, préparez quatre sorts de druide de niveau 1 ; votre limite de préparation et vos emplacements de sort augmentent avec votre niveau de druide. Après chaque Repos long, vous pouvez remplacer des sorts de druide préparés par d'autres de niveaux que vous pouvez lancer. Les sorts toujours préparés ne comptent pas dans la limite."
+    },
+    "Druidic": {
+      "name": "Druidique",
+      "description": "Vous connaissez la langue secrète des druides et avez toujours Communication avec les animaux préparé. Vous pouvez laisser des messages cachés en druidique ; les autres druides les remarquent automatiquement, tandis que les autres créatures doivent réussir un test d'Investigation DD 15 pour les repérer, sans pouvoir les déchiffrer sans magie."
+    },
+    "Primal Order": {
+      "name": "Ordre primordial",
+      "description": "Choisissez Magicien pour apprendre un tour de magie de druide supplémentaire et ajouter votre modificateur de Sagesse (minimum +1) aux tests d'Arcanes ou de Nature, ou Gardien pour gagner la maîtrise des armes de guerre et la formation aux armures intermédiaires."
+    },
+    "Wild Shape": {
+      "name": "Forme sauvage",
+      "description": "Par une Action bonus, prenez l'une de vos formes de bête connues pendant un nombre d'heures égal à la moitié de votre niveau de druide. Vous commencez avec quatre formes de FP 1/4 ou moins, sans Vitesse de vol ; au niveau 4, vous connaissez six formes de FP 1/2 ou moins et, au niveau 8, huit formes de FP 1 ou moins, désormais avec possibilité de voler. Remplacez une forme connue après un Repos long. Vous conservez vos points de vie, dés de vie, caractéristiques mentales, aptitudes de classe, langues et maîtrises ; vous gagnez des points de vie temporaires égaux à votre niveau de druide. Vous ne pouvez pas lancer de sorts sous forme de bête, mais pouvez maintenir votre Concentration. Vous commencez avec deux utilisations ; récupérez-en une après un Repos court et toutes après un Repos long. Vous en avez trois au niveau 6 et quatre au niveau 17."
+    },
+    "Wild Companion": {
+      "name": "Compagnon sauvage",
+      "description": "Dépensez un emplacement de sort ou une utilisation de Forme sauvage par une action de Magie pour lancer Appel de familier sans composantes matérielles. Le familier est une fée et disparaît après votre prochain Repos long."
+    },
+    "Druid Subclass": {
+      "name": "Sous-classe de druide",
+      "description": "Choisissez une sous-classe de druide ; vous recevez ses aptitudes aux niveaux de druide indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de druide."
+    },
+    "Wild Resurgence": {
+      "name": "Résurgence sauvage",
+      "description": "Une fois par tour, si vous n'avez plus d'utilisation de Forme sauvage, dépensez un emplacement de sort pour en récupérer une. Une fois par Repos long, dépensez une utilisation de Forme sauvage pour récupérer un emplacement de sort de niveau 1."
+    },
+    "Elemental Fury": {
+      "name": "Fureur élémentaire",
+      "description": "Choisissez Incantation puissante pour ajouter votre modificateur de Sagesse aux dégâts des tours de magie de druide, ou Frappe primordiale pour ajouter 1d8 dégâts de froid, de feu, de foudre ou de tonnerre à un coup d'arme ou de bête en Forme sauvage qui touche à chacun de vos tours."
+    },
+    "Improved Elemental Fury": {
+      "name": "Fureur élémentaire améliorée",
+      "description": "Incantation puissante ajoute 300 pieds à la portée d'un tour de magie de druide qui atteint normalement au moins 10 pieds. Les dégâts supplémentaires de Frappe primordiale passent à 2d8."
+    },
+    "Beast Spells": {
+      "name": "Sorts en forme de bête",
+      "description": "Vous pouvez lancer des sorts sous Forme sauvage, sauf ceux dont une composante matérielle a un prix ou est consommée par le sort."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Archdruid": {
+      "name": "Archidruide",
+      "description": "Lorsque vous lancez l'Initiative sans utilisation de Forme sauvage restante, vous en récupérez une. Une fois par Repos long, convertissez des utilisations non dépensées de Forme sauvage en un seul emplacement de sort, à raison de deux niveaux de sort par utilisation. Vous ne vieillissez aussi que d'un an tous les dix ans."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Style de combat",
+      "description": "Vous gagnez un don de Style de combat de votre choix. Chaque fois que vous gagnez un niveau de guerrier, vous pouvez le remplacer par un autre don de Style de combat."
+    },
+    "Second Wind": {
+      "name": "Second souffle",
+      "description": "Par une Action bonus, récupérez 1d10 + votre niveau de guerrier points de vie. Vous commencez avec deux utilisations, en obtenez une troisième au niveau 4 et une quatrième au niveau 10. Vous récupérez une utilisation après un Repos court et toutes après un Repos long."
+    },
+    "Weapon Mastery": {
+      "name": "Maîtrise des armes",
+      "description": "Choisissez trois types d'armes courantes ou de guerre dont vous pouvez utiliser les propriétés de maîtrise. Changez un choix après un Repos long. Le nombre passe à quatre au niveau 4, cinq au niveau 10 et six au niveau 16."
+    },
+    "Action Surge": {
+      "name": "Sursaut d'activité",
+      "description": "À votre tour, effectuez une action supplémentaire autre qu'une action de Magie. Vous récupérez cette capacité après un Repos court ou long. Au niveau 17, vous disposez de deux utilisations par repos, mais ne pouvez en employer qu'une par tour."
+    },
+    "Tactical Mind": {
+      "name": "Esprit tactique",
+      "description": "Après avoir raté un test de caractéristique, dépensez une utilisation de Second souffle pour ajouter 1d10 au résultat. Si le test est toujours raté, l'utilisation n'est pas dépensée."
+    },
+    "Fighter Subclass": {
+      "name": "Sous-classe de guerrier",
+      "description": "Choisissez une sous-classe de guerrier ; vous recevez ses aptitudes aux niveaux de guerrier indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 6, 8, 12, 14 et 16 de guerrier."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous attaquez deux fois lorsque vous effectuez l'action Attaquer. Cela s'améliore aux niveaux 11 et 20 de guerrier."
+    },
+    "Tactical Shift": {
+      "name": "Déplacement tactique",
+      "description": "Lorsque vous activez Second souffle par une Action bonus, déplacez-vous jusqu'à la moitié de votre Vitesse sans provoquer d'attaques d'opportunité."
+    },
+    "Indomitable": {
+      "name": "Indomptable",
+      "description": "Après avoir raté une sauvegarde, relancez-la avec un bonus égal à votre niveau de guerrier ; utilisez le nouveau résultat. Une utilisation par Repos long au niveau 9, deux au niveau 13 et trois au niveau 17."
+    },
+    "Tactical Master": {
+      "name": "Maître tactique",
+      "description": "Lorsque vous attaquez avec une arme dont vous pouvez utiliser la maîtrise, remplacez sa propriété de maîtrise pour cette attaque par Repousser, Affaiblir ou Ralentir."
+    },
+    "Two Extra Attacks": {
+      "name": "Deux attaques supplémentaires",
+      "description": "Vous attaquez trois fois, au lieu d'une, chaque fois que vous effectuez l'action Attaquer."
+    },
+    "Studied Attacks": {
+      "name": "Attaques étudiées",
+      "description": "Après avoir raté une créature avec un jet d'attaque, vous avez l'Avantage au prochain jet d'attaque contre elle avant la fin de votre prochain tour."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Three Extra Attacks": {
+      "name": "Trois attaques supplémentaires",
+      "description": "Vous attaquez quatre fois, au lieu d'une, chaque fois que vous effectuez l'action Attaquer."
+    }
+  },
+  "Monk": {
+    "Martial Arts": {
+      "name": "Arts martiaux",
+      "description": "Tant que vous ne portez ni armure ni bouclier et que vous êtes à mains nues ou ne maniez que des armes de moine (armes courantes de corps à corps ou armes de guerre de corps à corps Légères), vous pouvez porter une Frappe à mains nues par une Action bonus, utiliser la Dextérité pour ses jets d'attaque et de dégâts ainsi que pour le DD de sauvegarde de vos agrippements et bousculades, et remplacer ses dégâts normaux par votre dé d'Arts martiaux. Ce dé est un d6 aux niveaux 1-4, un d8 aux niveaux 5-10, un d10 aux niveaux 11-16 et un d12 à partir du niveau 17."
+    },
+    "Unarmored Defense": {
+      "name": "Défense sans armure",
+      "description": "Sans armure ni bouclier, votre CA de base est égale à 10 + votre modificateur de Dextérité + votre modificateur de Sagesse."
+    },
+    "Monk's Focus": {
+      "name": "Focalisation du moine",
+      "description": "Vous disposez d'autant de points de focalisation que votre niveau de moine et les récupérez après un Repos court ou long ; le DD de sauvegarde de votre focalisation est égal à 8 + votre modificateur de Sagesse + votre bonus de maîtrise. Dépensez 1 point pour effectuer Déluge de coups (deux Frappes à mains nues par une Action bonus), ou effectuez Se désengager ou Foncer par une Action bonus gratuitement. Dépensez 1 point pour combiner Se désengager avec Esquiver (Défense patiente) ou Foncer (Pas du vent, qui double aussi votre distance de saut) par une Action bonus."
+    },
+    "Unarmored Movement": {
+      "name": "Déplacement sans armure",
+      "description": "Sans armure ni bouclier, votre Vitesse augmente de 10 pieds aux niveaux 2-5, de 15 pieds aux niveaux 6-9, de 20 pieds aux niveaux 10-13, de 25 pieds aux niveaux 14-17 et de 30 pieds à partir du niveau 18."
+    },
+    "Uncanny Metabolism": {
+      "name": "Métabolisme extraordinaire",
+      "description": "Une fois par Repos long, lorsque vous lancez l'Initiative, récupérez tous vos points de focalisation et soignez-vous d'un nombre de points de vie égal à votre niveau de moine + le résultat d'un dé d'Arts martiaux."
+    },
+    "Deflect Attacks": {
+      "name": "Déviation des attaques",
+      "description": "Par une Réaction lorsqu'une attaque vous touche et inflige des dégâts contondants, perforants ou tranchants, réduisez les dégâts totaux de 1d10 + votre modificateur de Dextérité + votre niveau de moine. S'ils sont réduits à 0, dépensez 1 point de focalisation pour les rediriger : une créature visible à 5 pieds ou moins pour une attaque de corps à corps, ou à 60 pieds ou moins sans abri total pour une attaque à distance, effectue une sauvegarde de Dextérité sous peine de subir des dégâts du type de l'attaque égaux à deux dés d'Arts martiaux + votre modificateur de Dextérité."
+    },
+    "Monk Subclass": {
+      "name": "Sous-classe de moine",
+      "description": "Choisissez une sous-classe de moine ; vous recevez ses aptitudes aux niveaux de moine indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de moine."
+    },
+    "Slow Fall": {
+      "name": "Chute ralentie",
+      "description": "Par une Réaction lorsque vous tombez, réduisez les dégâts de chute d'un montant égal à cinq fois votre niveau de moine."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous attaquez deux fois lorsque vous effectuez l'action Attaquer."
+    },
+    "Stunning Strike": {
+      "name": "Frappe étourdissante",
+      "description": "Une fois par tour, après avoir touché avec une arme de moine ou une Frappe à mains nues, dépensez 1 point de focalisation. La cible effectue une sauvegarde de Constitution : en cas d'échec, elle est Étourdie jusqu'au début de votre prochain tour ; en cas de réussite, sa Vitesse est divisée par deux et la prochaine attaque contre elle a l'Avantage d'ici là."
+    },
+    "Empowered Strikes": {
+      "name": "Frappes renforcées",
+      "description": "Votre Frappe à mains nues peut infliger des dégâts de force au lieu de son type habituel."
+    },
+    "Evasion": {
+      "name": "Esquive totale",
+      "description": "Lors d'une sauvegarde de Dextérité visant à réduire des dégâts de moitié, vous ne subissez aucun dégât en cas de réussite et la moitié en cas d'échec, sauf si vous êtes Incapable d'agir."
+    },
+    "Acrobatic Movement": {
+      "name": "Déplacement acrobatique",
+      "description": "Sans armure ni bouclier, vous pouvez vous déplacer sur des surfaces verticales et des liquides pendant votre tour sans tomber au cours de ce déplacement."
+    },
+    "Heightened Focus": {
+      "name": "Focalisation renforcée",
+      "description": "Pour 1 point de focalisation, Déluge de coups permet trois Frappes à mains nues ; Défense patiente accorde aussi des points de vie temporaires égaux à deux dés d'Arts martiaux ; Pas du vent peut transporter une créature consentante de taille G ou inférieure située à 5 pieds ou moins sans provoquer d'attaques d'opportunité."
+    },
+    "Self-Restoration": {
+      "name": "Restauration de soi",
+      "description": "À la fin de chacun de vos tours, mettez fin sur vous-même aux états Charmé, Effrayé ou Empoisonné. Vous ne gagnez plus de niveaux d'Épuisement faute de nourriture ou de boisson."
+    },
+    "Deflect Energy": {
+      "name": "Déviation de l'énergie",
+      "description": "Déviation des attaques fonctionne désormais contre les attaques de tout type de dégâts."
+    },
+    "Disciplined Survivor": {
+      "name": "Survivant discipliné",
+      "description": "Vous gagnez la maîtrise de toutes les sauvegardes. Lorsque vous en ratez une, dépensez 1 point de focalisation pour la relancer et utilisez le nouveau résultat."
+    },
+    "Perfect Focus": {
+      "name": "Focalisation parfaite",
+      "description": "Lorsque vous lancez l'Initiative sans utiliser Métabolisme extraordinaire, si vous avez trois points de focalisation ou moins, récupérez-en jusqu'à en avoir quatre."
+    },
+    "Superior Defense": {
+      "name": "Défense supérieure",
+      "description": "Au début de votre tour, dépensez 3 points de focalisation pour obtenir la Résistance à tous les dégâts sauf ceux de force pendant 1 minute ou jusqu'à devenir Incapable d'agir."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Body and Mind": {
+      "name": "Corps et esprit",
+      "description": "Augmentez chacun de vos scores de Dextérité et de Sagesse de 4 ; leur maximum devient 25."
+    }
+  },
+  "Paladin": {
+    "Lay On Hands": {
+      "name": "Imposition des mains",
+      "description": "Une réserve de soins égale à 5 fois votre niveau de paladin se reconstitue après un Repos long. Par une Action bonus, touchez une créature, vous compris, pour lui rendre des points de vie de cette réserve ; vous pouvez à la place dépenser 5 points de la réserve pour mettre fin à l'état Empoisonné."
+    },
+    "Spellcasting": {
+      "name": "Incantation",
+      "description": "Le Charisme est votre caractéristique d'incantation de paladin ; un symbole sacré peut servir de focaliseur. Au niveau 1, préparez deux sorts de paladin de niveau 1 ; votre limite de préparation et vos emplacements de sort augmentent avec votre niveau de paladin. Après un Repos long, vous pouvez remplacer un sort de paladin préparé par un autre d'un niveau que vous pouvez lancer. Les sorts toujours préparés ne comptent pas dans la limite."
+    },
+    "Weapon Mastery": {
+      "name": "Maîtrise des armes",
+      "description": "Choisissez deux types d'armes que vous maîtrisez et dont vous pouvez utiliser les propriétés de maîtrise. Vous pouvez changer les deux choix après un Repos long."
+    },
+    "Fighting Style": {
+      "name": "Style de combat",
+      "description": "Vous gagnez un don de Style de combat ou choisissez Guerrier béni pour apprendre deux tours de magie de clerc qui comptent comme des sorts de paladin et utilisent le Charisme. Vous pouvez remplacer un tour de magie de Guerrier béni lorsque vous gagnez un niveau de paladin."
+    },
+    "Paladin's Smite": {
+      "name": "Châtiment du paladin",
+      "description": "Châtiment divin est toujours préparé et vous pouvez le lancer une fois sans emplacement de sort par Repos long."
+    },
+    "Channel Divinity": {
+      "name": "Canalisation divine",
+      "description": "Vous obtenez Sens divin et les options de Canalisation divine de votre sous-classe. Vous commencez avec deux utilisations, qui passent à trois au niveau 11 de paladin ; vous en récupérez une après un Repos court et toutes après un Repos long. Sens divin est une Action bonus révélant pendant 10 minutes les célestes, fiélons, morts-vivants et lieux ou objets consacrés ou profanés à 60 pieds ou moins, jusqu'à ce que vous deveniez Incapable d'agir."
+    },
+    "Paladin Subclass": {
+      "name": "Sous-classe de paladin",
+      "description": "Choisissez une sous-classe de paladin ; vous recevez ses aptitudes aux niveaux de paladin indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de paladin."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous attaquez deux fois chaque fois que vous effectuez l'action Attaquer."
+    },
+    "Faithful Steed": {
+      "name": "Destrier fidèle",
+      "description": "Appel de destrier est toujours préparé. Lancez-le une fois sans emplacement de sort par Repos long."
+    },
+    "Aura of Protection": {
+      "name": "Aura de protection",
+      "description": "Vous et vos alliés dans votre émanation de 10 pieds gagnez un bonus aux sauvegardes égal à votre modificateur de Charisme (minimum +1) tant que vous n'êtes pas Incapable d'agir. Une créature ne bénéficie que d'une seule Aura de protection de paladin à la fois."
+    },
+    "Abjure Foes": {
+      "name": "Abjuration des ennemis",
+      "description": "Par une action de Magie, dépensez une utilisation de Canalisation divine pour cibler au plus autant de créatures que votre modificateur de Charisme (minimum une) à 60 pieds ou moins. Chacune effectue une sauvegarde de Sagesse sous peine d'être Effrayée pendant 1 minute ou jusqu'à subir des dégâts ; à chacun de ses tours, elle peut se déplacer, effectuer une action ou une Action bonus, mais une seule de ces options."
+    },
+    "Aura of Courage": {
+      "name": "Aura de courage",
+      "description": "Vous et vos alliés dans votre Aura de protection êtes immunisés contre l'état Effrayé ; cet état est suspendu pour un allié affecté tant qu'il s'y trouve."
+    },
+    "Radiant Strikes": {
+      "name": "Frappes radiantes",
+      "description": "Chaque coup porté avec une arme de corps à corps ou une Frappe à mains nues inflige 1d8 dégâts radiants supplémentaires."
+    },
+    "Restoring Touch": {
+      "name": "Toucher restaurateur",
+      "description": "Lorsque vous utilisez Imposition des mains, dépensez 5 points de la réserve de soins par état supprimé : Aveuglé, Charmé, Assourdi, Effrayé, Paralysé ou Étourdi. Ces points ne rendent pas de points de vie."
+    },
+    "Aura Expansion": {
+      "name": "Extension d'aura",
+      "description": "Votre Aura de protection devient une émanation de 30 pieds."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    }
+  },
+  "Ranger": {
+    "Spellcasting": {
+      "name": "Incantation",
+      "description": "La Sagesse est votre caractéristique d'incantation de rôdeur ; un focaliseur druidique peut servir de focaliseur. Au niveau 1, préparez deux sorts de rôdeur de niveau 1 ; votre limite de préparation et vos emplacements de sort augmentent avec votre niveau de rôdeur. Après un Repos long, vous pouvez remplacer un sort de rôdeur préparé par un autre d'un niveau que vous pouvez lancer. Les sorts toujours préparés ne comptent pas dans la limite."
+    },
+    "Favored Enemy": {
+      "name": "Ennemi juré",
+      "description": "Marque du chasseur est toujours préparé. Lancez-le sans emplacement de sort deux fois aux niveaux 1-4, trois fois aux niveaux 5-8, quatre fois aux niveaux 9-12, cinq fois aux niveaux 13-16 et six fois à partir du niveau 17. Vous récupérez ces utilisations gratuites après un Repos long."
+    },
+    "Weapon Mastery": {
+      "name": "Maîtrise des armes",
+      "description": "Choisissez deux types d'armes que vous maîtrisez et dont vous pouvez utiliser les propriétés de maîtrise. Changez les deux choix après un Repos long."
+    },
+    "Deft Explorer": {
+      "name": "Explorateur habile",
+      "description": "Vous gagnez l'Expertise dans une compétence que vous maîtrisez et dans laquelle vous ne l'avez pas encore, et apprenez deux langues de votre choix."
+    },
+    "Fighting Style": {
+      "name": "Style de combat",
+      "description": "Vous gagnez un don de Style de combat ou choisissez Guerrier druidique pour apprendre deux tours de magie de druide qui comptent comme des sorts de rôdeur et utilisent la Sagesse. Vous pouvez remplacer un tour de magie de Guerrier druidique lorsque vous gagnez un niveau de rôdeur."
+    },
+    "Ranger Subclass": {
+      "name": "Sous-classe de rôdeur",
+      "description": "Choisissez une sous-classe de rôdeur ; vous recevez ses aptitudes aux niveaux de rôdeur indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de rôdeur."
+    },
+    "Extra Attack": {
+      "name": "Attaque supplémentaire",
+      "description": "Vous attaquez deux fois chaque fois que vous effectuez l'action Attaquer."
+    },
+    "Roving": {
+      "name": "Marcheur",
+      "description": "Votre Vitesse augmente de 10 pieds tant que vous ne portez pas d'armure lourde. Vous gagnez une Vitesse d'escalade et une Vitesse de nage égales à votre Vitesse."
+    },
+    "Expertise": {
+      "name": "Expertise",
+      "description": "Vous gagnez l'Expertise dans deux autres compétences que vous maîtrisez et dans lesquelles vous ne l'avez pas encore."
+    },
+    "Tireless": {
+      "name": "Infatigable",
+      "description": "Par une action de Magie, gagnez 1d8 + votre modificateur de Sagesse points de vie temporaires (minimum 1), un nombre de fois égal à votre modificateur de Sagesse (minimum une) par Repos long. Un Repos court réduit également votre niveau d'Épuisement de un."
+    },
+    "Relentless Hunter": {
+      "name": "Chasseur implacable",
+      "description": "Subir des dégâts ne peut pas interrompre votre Concentration sur Marque du chasseur."
+    },
+    "Nature's Veil": {
+      "name": "Voile de la nature",
+      "description": "Par une Action bonus, devenez Invisible jusqu'à la fin de votre prochain tour. Vous pouvez utiliser cette aptitude autant de fois que votre modificateur de Sagesse (minimum une) par Repos long."
+    },
+    "Precise Hunter": {
+      "name": "Chasseur précis",
+      "description": "Vous avez l'Avantage aux attaques contre la créature marquée par votre Marque du chasseur."
+    },
+    "Feral Senses": {
+      "name": "Sens sauvages",
+      "description": "Vous gagnez la Vision aveugle dans un rayon de 30 pieds."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Foe Slayer": {
+      "name": "Pourfendeur d'ennemis",
+      "description": "Le dé de dégâts de Marque du chasseur devient un d10 au lieu d'un d6."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Expertise",
+      "description": "Vous gagnez l'Expertise dans deux compétences que vous maîtrisez, puis dans deux autres au niveau 6 de roublard."
+    },
+    "Sneak Attack": {
+      "name": "Attaque sournoise",
+      "description": "Une fois par tour, infligez des dégâts supplémentaires avec une attaque d'arme de Finesse ou à distance lorsque l'attaque a l'Avantage. L'Avantage n'est pas nécessaire si un allié se trouve à 5 pieds ou moins de la cible, n'est pas Incapable d'agir et que votre jet n'a pas le Désavantage. Les dégâts supplémentaires sont de 1d6 au niveau 1 et augmentent de 1d6 à chaque niveau impair de roublard, jusqu'à 10d6 au niveau 19."
+    },
+    "Thieves' Cant": {
+      "name": "Argot des voleurs",
+      "description": "Vous connaissez l'Argot des voleurs et une autre langue de votre choix."
+    },
+    "Weapon Mastery": {
+      "name": "Maîtrise des armes",
+      "description": "Choisissez deux types d'armes que vous maîtrisez et dont vous pouvez utiliser les propriétés de maîtrise. Changez les deux choix après un Repos long."
+    },
+    "Cunning Action": {
+      "name": "Action rusée",
+      "description": "À votre tour, effectuez Foncer, Se désengager ou Se cacher par une Action bonus."
+    },
+    "Rogue Subclass": {
+      "name": "Sous-classe de roublard",
+      "description": "Choisissez une sous-classe de roublard ; vous recevez ses aptitudes aux niveaux de roublard indiqués."
+    },
+    "Steady Aim": {
+      "name": "Visée stable",
+      "description": "Par une Action bonus avant de vous déplacer, gagnez l'Avantage à votre prochain jet d'attaque de ce tour ; votre Vitesse devient ensuite 0 pour le reste du tour."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 10, 12 et 16 de roublard."
+    },
+    "Cunning Strike": {
+      "name": "Frappe rusée",
+      "description": "Quand vous infligez des dégâts d'Attaque sournoise, renoncez à 1d6 pour ajouter un effet après les dégâts : Empoisonner (nécessite un nécessaire d'empoisonneur sur vous ; sauvegarde de Constitution sous peine d'être Empoisonné pendant 1 minute, avec une nouvelle sauvegarde à la fin de chaque tour), Faire tomber (sauvegarde de Dextérité sous peine de mettre À terre une cible de taille G ou inférieure) ou Repli (déplacez-vous jusqu'à la moitié de votre Vitesse sans provoquer d'attaques d'opportunité). Le DD de sauvegarde est égal à 8 + votre modificateur de Dextérité + votre bonus de maîtrise."
+    },
+    "Uncanny Dodge": {
+      "name": "Esquive instinctive",
+      "description": "Par une Réaction lorsqu'un attaquant visible vous touche avec un jet d'attaque, réduisez de moitié les dégâts de cette attaque contre vous, en arrondissant à l'inférieur."
+    },
+    "Evasion": {
+      "name": "Esquive totale",
+      "description": "Lors d'une sauvegarde de Dextérité visant à réduire des dégâts de moitié, vous ne subissez aucun dégât en cas de réussite et la moitié en cas d'échec, sauf si vous êtes Incapable d'agir."
+    },
+    "Reliable Talent": {
+      "name": "Talent fiable",
+      "description": "Quand un test de caractéristique utilise votre maîtrise d'une compétence ou d'un outil, considérez un résultat de 9 ou moins sur le d20 comme un 10."
+    },
+    "Improved Cunning Strike": {
+      "name": "Frappe rusée améliorée",
+      "description": "Appliquez jusqu'à deux effets de Frappe rusée à une même Attaque sournoise en payant le coût en dés de chacun."
+    },
+    "Devious Strikes": {
+      "name": "Frappes retorses",
+      "description": "Vous gagnez de nouvelles options de Frappe rusée : Hébéter coûte 2d6 (sauvegarde de Constitution sous peine de ne pouvoir que se déplacer, effectuer une action ou une Action bonus au prochain tour) ; Assommer coûte 6d6 (sauvegarde de Constitution sous peine d'être Inconscient pendant 1 minute au maximum) ; Aveugler coûte 3d6 (sauvegarde de Dextérité sous peine d'être Aveuglé jusqu'à la fin du prochain tour de la cible)."
+    },
+    "Slippery Mind": {
+      "name": "Esprit fuyant",
+      "description": "Vous gagnez la maîtrise des sauvegardes de Sagesse et de Charisme."
+    },
+    "Elusive": {
+      "name": "Insaisissable",
+      "description": "Les jets d'attaque contre vous ne peuvent pas avoir l'Avantage, sauf si vous êtes Incapable d'agir."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Stroke of Luck": {
+      "name": "Coup de chance",
+      "description": "Une fois par Repos court ou long, transformez un test de d20 raté en un résultat de 20."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Incantation",
+      "description": "Le Charisme est votre caractéristique d'incantation d'ensorceleur ; un focaliseur arcanique peut vous servir de focaliseur. Vous connaissez quatre tours de magie d'ensorceleur au niveau 1, puis un autre aux niveaux 4 et 10. Au niveau 1, préparez deux sorts d'ensorceleur de niveau 1 ; votre limite de préparation et vos emplacements de sort augmentent avec votre niveau d'ensorceleur. Quand vous gagnez un niveau d'ensorceleur, vous pouvez remplacer un sort préparé et un tour de magie par des sorts d'ensorceleur admissibles."
+    },
+    "Innate Sorcery": {
+      "name": "Sorcellerie innée",
+      "description": "Par une Action bonus, libérez votre magie innée pendant 1 minute : le DD de sauvegarde de vos sorts d'ensorceleur augmente de 1 et vous avez l'Avantage aux jets d'attaque avec ces sorts. Deux utilisations par Repos long."
+    },
+    "Font of Magic": {
+      "name": "Source de magie",
+      "description": "Vous gagnez autant de points de sorcellerie que votre niveau d'ensorceleur et les récupérez après un Repos long. Échangez un emplacement de sort contre autant de points que son niveau sans dépenser d'action, ou dépensez des points par une Action bonus pour créer un emplacement de niveau 5 au maximum. Coûts : niveau 1, 2 points ; niveau 2, 3 ; niveau 3, 5 ; niveau 4, 6 ; niveau 5, 7. Les emplacements créés disparaissent après un Repos long. Vous devez avoir le niveau d'ensorceleur minimal requis pour l'emplacement créé."
+    },
+    "Metamagic": {
+      "name": "Métamagie",
+      "description": "Choisissez deux options de Métamagie et dépensez des points de sorcellerie pour modifier des sorts. Normalement, une seule option peut affecter un sort. Remplacez une option chaque fois que vous gagnez un niveau d'ensorceleur. Apprenez deux autres options au niveau 10 et encore deux au niveau 17."
+    },
+    "Sorcerer Subclass": {
+      "name": "Sous-classe d'ensorceleur",
+      "description": "Choisissez une sous-classe d'ensorceleur ; vous recevez ses aptitudes aux niveaux d'ensorceleur indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 d'ensorceleur."
+    },
+    "Sorcerous Restoration": {
+      "name": "Restauration magique",
+      "description": "Une fois par Repos long, après avoir terminé un Repos court, récupérez des points de sorcellerie dépensés, jusqu'à la moitié de votre niveau d'ensorceleur arrondie à l'inférieur."
+    },
+    "Sorcery Incarnate": {
+      "name": "Sorcellerie incarnée",
+      "description": "Si vous n'avez plus d'utilisation de Sorcellerie innée, dépensez 2 points de sorcellerie en l'activant. Tant qu'elle est active, appliquez jusqu'à deux options de Métamagie à chaque sort."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Arcane Apotheosis": {
+      "name": "Apothéose arcanique",
+      "description": "Tant que Sorcellerie innée est active, une option de Métamagie utilisée à chacun de vos tours ne coûte aucun point de sorcellerie."
+    }
+  },
+  "Warlock": {
+    "Eldritch Invocations": {
+      "name": "Invocations occultes",
+      "description": "Apprenez une Invocation occulte dont vous remplissez les conditions au niveau 1. Chaque fois que vous gagnez un niveau d'occultiste, vous pouvez remplacer une invocation si cela ne vous fait pas perdre les conditions requises pour une autre. Le nombre d'invocations connues augmente avec votre niveau d'occultiste et atteint dix au niveau 18 ; vous ne pouvez pas choisir deux fois la même invocation, sauf si elle le permet."
+    },
+    "Pact Magic": {
+      "name": "Magie de pacte",
+      "description": "Le Charisme est votre caractéristique d'incantation d'occultiste ; un focaliseur arcanique peut vous servir de focaliseur. Vous connaissez deux tours de magie d'occultiste au niveau 1, puis un autre aux niveaux 4 et 10. Au niveau 1, préparez deux sorts d'occultiste de niveau 1 ; votre limite de préparation et le niveau commun de vos emplacements de Magie de pacte augmentent avec votre niveau d'occultiste. Récupérez vos emplacements de Magie de pacte après un Repos court ou long. Remplacez un sort préparé et un tour de magie lorsque vous gagnez un niveau d'occultiste."
+    },
+    "Magical Cunning": {
+      "name": "Ruse magique",
+      "description": "Une fois par Repos long, accomplissez un rite de 1 minute pour récupérer des emplacements de Magie de pacte dépensés, jusqu'à la moitié de votre nombre maximal, arrondie au supérieur."
+    },
+    "Warlock Subclass": {
+      "name": "Sous-classe d'occultiste",
+      "description": "Choisissez une sous-classe d'occultiste ; vous recevez ses aptitudes aux niveaux d'occultiste indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 d'occultiste."
+    },
+    "Contact Patron": {
+      "name": "Contacter le protecteur",
+      "description": "Contact avec un autre plan est toujours préparé. Une fois par Repos long, lancez-le sans emplacement de sort pour contacter votre protecteur et réussissez automatiquement son jet de sauvegarde."
+    },
+    "Mystic Arcanum": {
+      "name": "Arcanum mystique",
+      "description": "Choisissez un sort d'occultiste de niveau 6 que vous pouvez lancer une fois par Repos long sans emplacement. Vous gagnez un arcanum distinct de niveau 7 au niveau 13 d'occultiste, un de niveau 8 au niveau 15 et un de niveau 9 au niveau 17, chacun avec sa propre utilisation gratuite. Quand vous gagnez un niveau d'occultiste, remplacez un arcanum par un autre sort d'occultiste admissible du même niveau."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Eldritch Master": {
+      "name": "Maître occulte",
+      "description": "Ruse magique récupère désormais tous vos emplacements de Magie de pacte dépensés."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Incantation",
+      "description": "L'Intelligence est votre caractéristique d'incantation de magicien ; un focaliseur arcanique ou votre grimoire peuvent vous servir de focaliseur. Vous connaissez trois tours de magie de magicien au niveau 1, puis un autre aux niveaux 4 et 10 ; remplacez-en un après un Repos long. Votre grimoire contient initialement six sorts de magicien de niveau 1 et reçoit deux sorts de magicien admissibles à chaque niveau de magicien. Au niveau 1, préparez quatre sorts du grimoire ; votre limite et vos emplacements de sort augmentent avec le niveau. Après un Repos long, vous pouvez remplacer n'importe quels sorts préparés par des sorts admissibles de votre grimoire."
+    },
+    "Ritual Adept": {
+      "name": "Adepte des rituels",
+      "description": "Lancez comme Rituel un sort de magicien portant l'étiquette Rituel depuis votre grimoire sans l'avoir préparé, tout en lisant le grimoire."
+    },
+    "Arcane Recovery": {
+      "name": "Récupération arcanique",
+      "description": "Une fois par Repos long, après un Repos court, récupérez des emplacements de sort dont la somme des niveaux ne dépasse pas la moitié de votre niveau de magicien, arrondie au supérieur ; aucun emplacement récupéré ne peut être de niveau 6 ou plus."
+    },
+    "Scholar": {
+      "name": "Érudit",
+      "description": "Vous gagnez l'Expertise dans une compétence que vous maîtrisez, à choisir entre Arcanes, Histoire, Investigation, Médecine, Nature ou Religion."
+    },
+    "Wizard Subclass": {
+      "name": "Sous-classe de magicien",
+      "description": "Choisissez une sous-classe de magicien ; vous recevez ses aptitudes aux niveaux de magicien indiqués."
+    },
+    "Ability Score Improvement": {
+      "name": "Amélioration de caractéristique",
+      "description": "Vous gagnez le don Amélioration de caractéristique ou un autre don dont vous remplissez les conditions. Vous recevez à nouveau cette aptitude aux niveaux 8, 12 et 16 de magicien."
+    },
+    "Memorize Spell": {
+      "name": "Mémorisation de sort",
+      "description": "Après un Repos court, remplacez un sort de magicien préparé de niveau 1 ou plus par un autre sort de niveau 1 ou plus de votre grimoire."
+    },
+    "Spell Mastery": {
+      "name": "Maîtrise des sorts",
+      "description": "Choisissez dans votre grimoire un sort de niveau 1 et un sort de niveau 2 qui se lancent par une action. Ils sont toujours préparés et chacun peut être lancé à son niveau minimal sans emplacement. Après un Repos long, remplacez l'un de ces choix par un autre sort admissible de même niveau."
+    },
+    "Epic Boon": {
+      "name": "Don épique",
+      "description": "Vous gagnez un don épique ou un autre don dont vous remplissez les conditions."
+    },
+    "Signature Spells": {
+      "name": "Sorts signatures",
+      "description": "Choisissez deux sorts de niveau 3 de votre grimoire. Ils sont toujours préparés, et chacun peut être lancé une fois au niveau 3 sans emplacement par Repos court ou long."
+    }
+  }
+}

@@ -1,0 +1,2993 @@
+{
+  "Acid Splash": {
+    "name": "Salpicadura de ácido",
+    "description": "El ácido estalla en una esfera de 5 pies de radio a 60 pies de ti. Las criaturas en ella realizan una tirada de salvación de Destreza o sufren 1d6 de daño de ácido. El daño pasa a 2d6, 3d6 y 4d6 en los niveles de personaje 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Chill Touch": {
+    "name": "Toque frío",
+    "description": "Realiza un ataque de conjuro cuerpo a cuerpo. Si impacta, causa 1d10 de daño necrótico e impide que el objetivo recupere puntos de golpe hasta el final de tu siguiente turno. El daño aumenta a 2d10, 3d10 y 4d10 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Dancing Lights": {
+    "name": "Luces danzantes",
+    "description": "Crea hasta cuatro luces tenues flotantes, cada una de las cuales ilumina un radio de 10 pies, o combínalas en una figura humanoide Mediana. Como acción adicional, mueve las luces hasta 60 pies, manteniéndolas a no más de 20 pies entre sí.",
+    "material": "un poco de fósforo",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Druidcraft": {
+    "name": "Druidismo",
+    "description": "Produce un pequeño efecto natural: predice el clima local del día siguiente, haz florecer una planta, crea un efecto sensorial inofensivo o enciende o apaga una vela, antorcha u hoguera.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea"
+  },
+  "Eldritch Blast": {
+    "name": "Explosión sobrenatural",
+    "description": "Realiza un ataque de conjuro a distancia por cada rayo. Cada impacto causa 1d10 de daño de fuerza. Creas dos rayos en el nivel 5, tres en el 11 y cuatro en el 17; elige los objetivos y tira cada ataque por separado.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Elementalism": {
+    "name": "Elementalismo",
+    "description": "Crea un efecto elemental menor a 30 pies: agita el aire o el polvo, haz aparecer una palabra en la arena, produce humo o ascuas inofensivas, o da forma, color o movimiento al agua brevemente.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea"
+  },
+  "Fire Bolt": {
+    "name": "Rayo de fuego",
+    "description": "Realiza un ataque de conjuro a distancia contra una criatura u objeto. Si impacta, causa 1d10 de daño de fuego y prende los objetos inflamables que nadie lleve. El daño aumenta a 2d10, 3d10 y 4d10 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Guidance": {
+    "name": "Guía",
+    "description": "Toca a una criatura voluntaria y elige una habilidad. Durante un máximo de 1 minuto, añade 1d4 a sus pruebas de característica que usen esa habilidad.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Light": {
+    "name": "Luz",
+    "description": "Toca un objeto Grande o más pequeño que nadie lleve. Durante 1 hora emite luz brillante en 20 pies y luz tenue otros 20 pies; una cubierta opaca bloquea la luz.",
+    "material": "una luciérnaga o musgo fosforescente",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Mage Hand": {
+    "name": "Mano de mago",
+    "description": "Crea una mano espectral durante 1 minuto. Puede manipular objetos, abrir puertas o recipientes sin cerrar con llave y transportar hasta 10 libras, pero no puede atacar ni activar objetos mágicos.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "1 minuto"
+  },
+  "Mending": {
+    "name": "Remendar",
+    "description": "Repara una sola rotura o rasgadura de no más de 1 pie en un objeto que toques. Puede reparar físicamente un objeto mágico, pero no restaurar su magia.",
+    "material": "dos piedras imán",
+    "castingTime": "1 minuto",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Message": {
+    "name": "Mensaje",
+    "description": "Susurra a una criatura a 120 pies; solo ella te oye y puede responderte en un susurro. Si conoces al objetivo, el mensaje atraviesa barreras, pero el silencio mágico, suficiente material sólido o el plomo lo bloquean.",
+    "material": "un alambre de cobre",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "1 asalto"
+  },
+  "Minor Illusion": {
+    "name": "Ilusión menor",
+    "description": "Crea un sonido o la imagen de un objeto de no más de un cubo de 5 pies durante 1 minuto. La imagen no produce sonidos, luz, olores ni efectos físicos; una criatura puede descubrir la ilusión con la acción Estudiar y una prueba de Investigación contra la CD de salvación de tus conjuros.",
+    "material": "un poco de vellón",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "1 minuto"
+  },
+  "Poison Spray": {
+    "name": "Rociada venenosa",
+    "description": "Realiza un ataque de conjuro a distancia contra una criatura a 30 pies. Si impacta, causa 1d12 de daño de veneno, que aumenta a 2d12, 3d12 y 4d12 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Prestidigitation": {
+    "name": "Prestidigitación",
+    "description": "Crea un pequeño efecto mágico a 10 pies: un efecto sensorial inofensivo, encender o apagar una llama pequeña, limpiar o ensuciar un objeto pequeño, alterar su temperatura o sabor, dejar una marca o crear una baratija minúscula. Pueden coexistir hasta tres efectos duraderos.",
+    "castingTime": "Acción",
+    "range": "10 pies",
+    "duration": "Hasta 1 hora"
+  },
+  "Produce Flame": {
+    "name": "Producir llama",
+    "description": "Como acción adicional, crea durante 10 minutos una llama que emite luz brillante en 20 pies y luz tenue otros 20 pies. Durante ese tiempo, puedes lanzarla hasta 60 pies con una acción de Magia; un ataque de conjuro a distancia causa 1d8 de daño de fuego si impacta, y aumenta en los niveles 5, 11 y 17.",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "10 minutos",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Ray of Frost": {
+    "name": "Rayo de escarcha",
+    "description": "Realiza un ataque de conjuro a distancia. Si impacta, causa 1d8 de daño de frío y reduce en 10 pies la velocidad del objetivo hasta el comienzo de tu siguiente turno. El daño aumenta a 2d8, 3d8 y 4d8 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Resistance": {
+    "name": "Resistencia",
+    "description": "Toca a una criatura voluntaria y elige ácido, contundente, frío, fuego, relámpago, necrótico, perforante, veneno, radiante, cortante o trueno. Una vez por turno, reduce en 1d4 el daño de ese tipo que recibe durante un máximo de 1 minuto.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Sacred Flame": {
+    "name": "Llama Sagrada",
+    "description": "Una criatura visible a 60 pies realiza una tirada de salvación de Destreza o sufre 1d8 de daño radiante; la cobertura media y la cobertura de tres cuartos no la ayudan en la tirada. El daño aumenta a 2d8, 3d8 y 4d8 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Shillelagh": {
+    "name": "Garrote mágico",
+    "description": "Potencia una maza o un bastón que sostengas durante 1 minuto. Usa tu característica para lanzar conjuros en sus tiradas de ataque y daño cuerpo a cuerpo; su dado de daño pasa a ser d8 y el daño puede ser de fuerza en vez de su tipo normal. El dado pasa a d10 en el nivel 5, d12 en el 11 y 2d6 en el 17.",
+    "material": "muérdago",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "1 minuto"
+  },
+  "Shocking Grasp": {
+    "name": "Agarre electrizante",
+    "description": "Realiza un ataque de conjuro cuerpo a cuerpo. Si impacta, causa 1d8 de daño de relámpago e impide que el objetivo realice ataques de oportunidad hasta el comienzo de su siguiente turno. El daño aumenta a 2d8, 3d8 y 4d8 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Sorcerous Burst": {
+    "name": "Estallido de hechicería",
+    "description": "Realiza un ataque de conjuro a distancia contra una criatura u objeto. Si impacta, causa 1d8 de daño de ácido, frío, fuego, relámpago, veneno, psíquico o trueno. Cada dado de daño que muestre un 8 puede añadir otro d8, hasta un máximo de dados adicionales igual a tu modificador para lanzar conjuros. Los dados básicos pasan a 2d8, 3d8 y 4d8 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea"
+  },
+  "Spare the Dying": {
+    "name": "Salvar a los moribundos",
+    "description": "Una criatura con 0 puntos de golpe que no esté muerta queda estabilizada. El alcance es de 15 pies y se duplica en los niveles 5, 11 y 17, hasta 30, 60 y 120 pies.",
+    "castingTime": "Acción",
+    "range": "15 pies",
+    "duration": "Instantánea"
+  },
+  "Starry Wisp": {
+    "name": "Destello estelar",
+    "description": "Realiza un ataque de conjuro a distancia. Si impacta, causa 1d8 de daño radiante; hasta el final de tu siguiente turno, el objetivo emite luz tenue en un radio de 10 pies y no puede beneficiarse de la condición Invisible. El daño aumenta a 2d8, 3d8 y 4d8 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Thaumaturgy": {
+    "name": "Taumaturgia",
+    "description": "Crea una pequeña maravilla a 30 pies, como alterar tus ojos, una voz retumbante que concede ventaja en pruebas de Intimidación, cambiar las llamas, abrir o cerrar una puerta, un sonido fantasmagórico o un temblor. Pueden coexistir hasta tres efectos duraderos.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Hasta 1 minuto"
+  },
+  "True Strike": {
+    "name": "Golpe verdadero",
+    "description": "Realiza un ataque con un arma con la que seas competente y que valga al menos 1 PC, usando tu característica para lanzar conjuros en las tiradas de ataque y daño. El daño puede ser radiante o del tipo normal del arma, más 1d6, 2d6 o 3d6 de daño radiante en los niveles 5, 11 o 17.",
+    "material": "un arma con la que tengas competencia y que valga al menos 1 PC",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Vicious Mockery": {
+    "name": "Burla cruel",
+    "description": "Una criatura que puedas ver u oír a 60 pies realiza una tirada de salvación de Sabiduría o sufre 1d6 de daño psíquico y tiene desventaja en su siguiente ataque antes del final de su próximo turno. El daño aumenta a 2d6, 3d6 y 4d6 en los niveles 5, 11 y 17.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Alarm": {
+    "name": "Alarma",
+    "description": "Protege una puerta, ventana o área de hasta un cubo de 20 pies durante 8 horas. Elige las criaturas que no activan la alarma y si un intruso provoca una alerta mental o el sonido de una campana.",
+    "material": "una campana y un alambre de plata",
+    "castingTime": "1 minuto o ritual",
+    "range": "30 pies",
+    "duration": "8 horas"
+  },
+  "Animal Friendship": {
+    "name": "Amistad Animal",
+    "description": "Una bestia que puedas ver realiza una tirada de salvación de Sabiduría. Si falla, queda hechizada por ti durante 24 horas; el efecto termina si tú o un aliado le causáis daño. Un espacio de nivel superior añade una bestia por nivel.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "material": "un bocado de comida",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "24 horas"
+  },
+  "Bane": {
+    "name": "Perdición",
+    "description": "Hasta tres criaturas visibles realizan tiradas de salvación de Carisma. Un objetivo que falle resta 1d4 a sus tiradas de ataque y de salvación durante un máximo de 1 minuto. Cada nivel de espacio por encima del 1 añade un objetivo.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "material": "una gota de sangre",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Bless": {
+    "name": "Bendecir",
+    "description": "Hasta tres criaturas añaden 1d4 a sus tiradas de ataque y de salvación durante un máximo de 1 minuto. Cada nivel de espacio por encima del 1 añade un objetivo.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "material": "un símbolo sagrado que valga al menos 5 PO",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Burning Hands": {
+    "name": "Manos ardientes",
+    "description": "El fuego llena un cono de 15 pies que parte de ti. Las criaturas realizan tiradas de salvación de Destreza; sufren 3d6 de daño de fuego si fallan, o la mitad si tienen éxito. Los objetos inflamables que nadie lleve arden; los espacios superiores añaden 1d6 de daño por nivel.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d6.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Charm Person": {
+    "name": "Hechizar persona",
+    "description": "Un humanoide visible realiza una tirada de salvación de Sabiduría, con ventaja si tú o tus aliados lucháis contra él. Si falla, queda hechizado y amistoso durante 1 hora; el efecto termina antes si tú o un aliado lo dañáis. Después sabe que lo hechizaste.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "1 hora"
+  },
+  "Chromatic Orb": {
+    "name": "Orbe cromático",
+    "description": "Realiza un ataque de conjuro a distancia que causa 3d8 de daño de ácido, frío, fuego, relámpago, veneno o trueno. Si los dados de daño muestran resultados iguales, el orbe puede saltar a otro objetivo a 30 pies; un espacio superior añade 1d8 de daño y permite tantos saltos como el nivel del espacio. Ningún objetivo puede ser alcanzado dos veces.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d8.",
+    "material": "un diamante que valga al menos 50 PO",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Color Spray": {
+    "name": "Rociada de color",
+    "description": "Las criaturas en un cono de 15 pies realizan tiradas de salvación de Constitución. Las que fallan quedan cegadas hasta el final de tu siguiente turno.",
+    "material": "una pizca de arena de colores",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Command": {
+    "name": "Orden",
+    "description": "Una criatura que puedas ver realiza una tirada de salvación de Sabiduría contra una orden de una palabra. Si falla, en su siguiente turno se acerca a ti, suelta lo que sostiene, huye, cae derribada o se detiene, según la orden elegida. Los espacios superiores añaden objetivos.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Comprehend Languages": {
+    "name": "Comprender idiomas",
+    "description": "Durante 1 hora, comprendes el significado literal de los idiomas hablados o de señas y de los escritos que tocas. Leer una página lleva alrededor de un minuto; los mensajes cifrados siguen siendo indescifrables.",
+    "material": "una pizca de hollín y sal",
+    "castingTime": "Acción o ritual",
+    "range": "Personal",
+    "duration": "1 hora"
+  },
+  "Create or Destroy Water": {
+    "name": "Crear o destruir agua",
+    "description": "Crea o elimina hasta 10 galones de agua en un recipiente abierto, o provoca lluvia o disipa niebla en un cubo de 30 pies. Los espacios superiores añaden 10 galones o agrandan el cubo.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 10 galones o aumenta en 5 pies el lado del cubo.",
+    "material": "una mezcla de agua y arena",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea"
+  },
+  "Cure Wounds": {
+    "name": "Curar heridas",
+    "description": "Una criatura que toques recupera 2d8 más tu modificador por característica para lanzar conjuros en puntos de golpe. Cada nivel de espacio por encima del 1 añade 2d8 de curación.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 2d8.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Detect Evil and Good": {
+    "name": "Detectar el mal y el bien",
+    "description": "Durante un máximo de 10 minutos, detectas aberraciones, celestiales, elementales, feéricos, infernales y muertos vivientes a 30 pies, además de cualquier efecto activo de Consagrar en la zona. Las barreras gruesas bloquean esta percepción.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Detect Magic": {
+    "name": "Detectar magia",
+    "description": "Durante un máximo de 10 minutos, detectas efectos mágicos a 30 pies. Una acción de Magia revela auras mágicas visibles y la escuela de un conjuro; las barreras suficientemente gruesas impiden la detección.",
+    "castingTime": "Acción o ritual",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Detect Poison and Disease": {
+    "name": "Detectar veneno y enfermedades",
+    "description": "Durante un máximo de 10 minutos, detectas la ubicación y el tipo de venenos, criaturas venenosas y contagios mágicos a 30 pies. Las barreras gruesas impiden la detección.",
+    "material": "una hoja de tejo",
+    "castingTime": "Acción o ritual",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Disguise Self": {
+    "name": "Disfrazarse",
+    "description": "Altera durante 1 hora el aspecto aparente de tu cuerpo y del equipo que llevas, manteniendo una estructura corporal aproximadamente similar. La ilusión no resiste una inspección física.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "1 hora"
+  },
+  "Dissonant Whispers": {
+    "name": "Susurros disonantes",
+    "description": "Una criatura que puedas ver realiza una tirada de salvación de Sabiduría. Si falla, sufre 3d6 de daño psíquico y usa su reacción, si está disponible, para huir de forma segura; si tiene éxito, sufre la mitad del daño. Los espacios superiores añaden 1d6.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d6.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Divine Favor": {
+    "name": "Favor divino",
+    "description": "Durante 1 minuto, cada impacto de uno de tus ataques con arma causa 1d4 de daño radiante adicional.",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "1 minuto"
+  },
+  "Divine Smite": {
+    "name": "Castigo divino",
+    "description": "Inmediatamente después de impactar con un arma cuerpo a cuerpo o un golpe sin armas, usa una acción adicional para causar 2d8 de daño radiante adicional; añade 1d8 contra un infernal o muerto viviente y 1d8 por cada nivel de espacio por encima del 1.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d8.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a un objetivo con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Ensnaring Strike": {
+    "name": "Golpe atrapador",
+    "description": "Inmediatamente después de impactar con un arma, unas enredaderas obligan al objetivo a realizar una tirada de salvación de Fuerza. Si falla, queda apresado durante un máximo de 1 minuto y sufre 1d6 de daño perforante al comienzo de cada turno hasta que escape o termine el conjuro.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d6.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a una criatura con un arma",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Entangle": {
+    "name": "Enredar",
+    "description": "Las plantas llenan un cuadrado de 20 pies y lo convierten en terreno difícil durante un máximo de 1 minuto. Las criaturas presentes cuando lanzas el conjuro realizan tiradas de salvación de Fuerza o quedan apresadas; pueden usar una acción para escapar.",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Expeditious Retreat": {
+    "name": "Retirada expeditiva",
+    "description": "Realiza la acción Correr al lanzar este conjuro; durante un máximo de 10 minutos, puedes volver a Correr como acción adicional en los turnos posteriores.",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Faerie Fire": {
+    "name": "Fuego de hadas",
+    "description": "Las criaturas en un cubo de 20 pies que fallen tiradas de salvación de Destreza brillan durante un máximo de 1 minuto. No pueden beneficiarse de la invisibilidad, y los atacantes que puedan verlas tienen ventaja contra ellas.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "False Life": {
+    "name": "Vida falsa",
+    "description": "Obtienes 2d4 + 4 puntos de golpe temporales. Cada nivel de espacio por encima del 1 concede 5 puntos de golpe temporales adicionales.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 5 puntos de golpe temporales.",
+    "material": "una gota de alcohol",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Feather Fall": {
+    "name": "Caída de pluma",
+    "description": "Como reacción cuando unas criaturas caen, reduce la velocidad de caída de hasta cinco de ellas a 60 pies por asalto durante 1 minuto. No sufren daño de caída si aterrizan antes de que termine el conjuro.",
+    "material": "una pluma pequeña o un poco de plumón",
+    "castingTime": "Reacción, que realizas cuando tú o una criatura que puedas ver a 60 pies de ti cae",
+    "range": "60 pies",
+    "duration": "1 minuto"
+  },
+  "Find Familiar": {
+    "name": "Encontrar familiar",
+    "description": "Invoca un espíritu celestial, feérico o infernal con forma de bestia de VD 0. Actúa de manera independiente y no puede atacar; a 100 pies puedes comunicarte telepáticamente con él, percibir a través de sus sentidos o hacer que entregue un conjuro de toque usando su reacción. Puedes despedirlo y volver a invocarlo.",
+    "material": "incienso encendido que valga al menos 10 PO, consumido por el conjuro",
+    "castingTime": "1 hora o ritual",
+    "range": "10 pies",
+    "duration": "Instantánea"
+  },
+  "Floating Disk": {
+    "name": "Disco flotante",
+    "description": "Crea un disco flotante de 3 pies que transporta hasta 500 libras durante 1 hora y te sigue cuando te alejas más de 20 pies de él.",
+    "material": "una gota de mercurio",
+    "castingTime": "Acción o ritual",
+    "range": "30 pies",
+    "duration": "1 hora"
+  },
+  "Fog Cloud": {
+    "name": "Nube de niebla",
+    "description": "Crea una esfera de niebla de 20 pies de radio, fuertemente oscurecida, durante un máximo de 1 hora. Un viento fuerte la dispersa; cada nivel de espacio por encima del 1 aumenta su radio en 20 pies.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 aumenta en 20 pies el radio de la niebla.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Goodberry": {
+    "name": "Bayas buenas",
+    "description": "Crea diez bayas mágicas que duran 24 horas. Comer una como acción adicional restaura 1 punto de golpe y proporciona alimento para un día.",
+    "material": "una ramita de muérdago",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "24 horas"
+  },
+  "Grease": {
+    "name": "Grasa",
+    "description": "Cubre un cuadrado de 10 pies con grasa no inflamable durante 1 minuto, convirtiéndolo en terreno difícil. Las criaturas presentes cuando aparece, o que entren o terminen un turno allí, realizan tiradas de salvación de Destreza o caen derribadas.",
+    "material": "un poco de corteza de cerdo o mantequilla",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "1 minuto"
+  },
+  "Guiding Bolt": {
+    "name": "Proyectil guía",
+    "description": "Realiza un ataque de conjuro a distancia. Si impacta, causa 4d6 de daño radiante y concede ventaja al siguiente ataque contra el objetivo antes del final de tu siguiente turno. Los espacios superiores añaden 1d6.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d6.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "1 asalto",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Healing Word": {
+    "name": "Palabra curativa",
+    "description": "Una criatura que puedas ver a 60 pies recupera 2d4 más tu modificador por característica para lanzar conjuros en puntos de golpe. Cada nivel de espacio por encima del 1 añade 2d4 de curación.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 2d4.",
+    "castingTime": "Acción adicional",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Hellish Rebuke": {
+    "name": "Reprimenda infernal",
+    "description": "Usa tu reacción después de que una criatura visible a 60 pies te cause daño. Realiza una tirada de salvación de Destreza; sufre 2d10 de daño de fuego si falla, o la mitad si tiene éxito. Los espacios superiores añaden 1d10.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d10.",
+    "castingTime": "Reacción, que realizas al recibir daño de una criatura que puedas ver a 60 pies de ti",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Heroism": {
+    "name": "Heroísmo",
+    "description": "Una criatura voluntaria que toques es inmune al estado asustado y obtiene puntos de golpe temporales iguales a tu modificador por característica para lanzar conjuros al comienzo de cada turno durante un máximo de 1 minuto. Los espacios superiores añaden objetivos.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Hex": {
+    "name": "Maleficio",
+    "description": "Maldice a una criatura visible durante un máximo de 1 hora. Tus tiradas de ataque que la impacten le causan 1d6 de daño necrótico adicional y tiene desventaja en pruebas de una característica elegida. Puedes trasladar la maldición con una acción adicional cuando llegue a 0 puntos de golpe.",
+    "higherLevels": "Un espacio de nivel 2 permite concentrarse hasta 4 horas; uno de nivel 3 a 4, hasta 8 horas; y uno de nivel 5 o superior, hasta 24 horas.",
+    "material": "el ojo petrificado de un tritón",
+    "castingTime": "Acción adicional",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Hideous Laughter": {
+    "name": "Risa horrenda",
+    "description": "Una criatura visible que falle una tirada de salvación de Sabiduría cae derribada y queda incapacitada durante un máximo de 1 minuto. Repite la tirada de salvación después de sufrir daño y al final de cada uno de sus turnos.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "material": "una tartaleta y una pluma",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Hunter's Mark": {
+    "name": "Marca del cazador",
+    "description": "Marca a una criatura visible durante un máximo de 1 hora. Tus ataques que la impacten causan 1d6 de daño de fuerza adicional y tienes ventaja en pruebas de Percepción o Supervivencia para encontrarla. Puedes trasladar la marca con una acción adicional cuando el objetivo llegue a 0 puntos de golpe.",
+    "higherLevels": "Un espacio de nivel 3 a 4 permite concentrarse hasta 8 horas; uno de nivel 5 o superior, hasta 24 horas.",
+    "castingTime": "Acción adicional",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Ice Knife": {
+    "name": "Cuchillo de hielo",
+    "description": "Realiza un ataque de conjuro a distancia contra una criatura; si impacta, causa 1d10 de daño perforante. Impacte o no, el fragmento estalla y el objetivo y las criaturas a 5 pies realizan tiradas de salvación de Destreza o sufren 2d6 de daño de frío; los espacios superiores aumentan el daño de frío.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d6 de daño de frío.",
+    "material": "una gota de agua o un trozo de hielo",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "piercing": {
+        "label": "Daño perforante"
+      },
+      "burst": {
+        "label": "Daño de la explosión"
+      }
+    }
+  },
+  "Identify": {
+    "name": "Identificar",
+    "description": "Toca un objeto al lanzar el conjuro para conocer sus propiedades mágicas, sintonización, cargas y conjuros activos, o toca una criatura para conocer los conjuros que la afectan. Requiere una perla que valga al menos 100 PO.",
+    "material": "una perla que valga al menos 100 PO",
+    "castingTime": "1 minuto o ritual",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Illusory Script": {
+    "name": "Escritura ilusoria",
+    "description": "Escribe un mensaje que los lectores designados ven con normalidad mientras los demás ven un texto incomprensible o engañoso durante 10 días. Se consume la tinta que vale al menos 10 PO.",
+    "material": "tinta que valga al menos 10 PO, consumida por el conjuro",
+    "castingTime": "1 minuto o ritual",
+    "range": "Toque",
+    "duration": "10 días"
+  },
+  "Inflict Wounds": {
+    "name": "Infligir heridas",
+    "description": "Una criatura que toques realiza una tirada de salvación de Constitución; sufre 2d10 de daño necrótico si falla, o la mitad si tiene éxito. Cada nivel de espacio por encima del 1 añade 1d10.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d10.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Jump": {
+    "name": "Saltar",
+    "description": "Una criatura voluntaria que toques puede saltar hasta 30 pies una vez por turno gastando 10 pies de movimiento durante 1 minuto. Los espacios superiores añaden un objetivo por nivel.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "material": "una pata trasera de saltamontes",
+    "castingTime": "Acción adicional",
+    "range": "Toque",
+    "duration": "1 minuto"
+  },
+  "Longstrider": {
+    "name": "Zancada larga",
+    "description": "Una criatura que toques gana 10 pies de velocidad durante 1 hora. Cada nivel de espacio por encima del 1 añade un objetivo.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 permite un objetivo adicional.",
+    "material": "una pizca de tierra",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Mage Armor": {
+    "name": "Armadura de mago",
+    "description": "Durante 8 horas, una criatura voluntaria sin armadura que toques tiene una CA base de 13 más su modificador de Destreza. Ponerse una armadura termina el conjuro.",
+    "material": "un trozo de cuero curtido",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "8 horas"
+  },
+  "Magic Missile": {
+    "name": "Misiles mágicos",
+    "description": "Tres dardos de fuerza alcanzan automáticamente a criaturas visibles que elijas; cada uno causa 1d4 + 1 de daño de fuerza. Todos impactan simultáneamente; los espacios superiores crean un dardo adicional por nivel.",
+    "higherLevels": "Crea un dardo adicional por cada nivel de espacio por encima del 1.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea"
+  },
+  "Protection from Evil and Good": {
+    "name": "Protección contra el mal y el bien",
+    "description": "Durante un máximo de 10 minutos, una criatura voluntaria recibe protección contra aberraciones, celestiales, elementales, feéricos, infernales y muertos vivientes: sus ataques tienen desventaja y no pueden poseerla, hechizarla ni asustarla.",
+    "material": "un frasco de agua bendita que valga al menos 25 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración hasta 10 minutos"
+  },
+  "Purify Food and Drink": {
+    "name": "Purificar comida y bebida",
+    "description": "Elimina el veneno y la putrefacción de comida y bebida no mágicas en una esfera de 5 pies de radio a 10 pies.",
+    "castingTime": "Acción o ritual",
+    "range": "10 pies",
+    "duration": "Instantánea"
+  },
+  "Ray of Sickness": {
+    "name": "Rayo de enfermedad",
+    "description": "Realiza un ataque de conjuro a distancia. Si impacta, causa 2d8 de daño de veneno y deja envenenado al objetivo hasta el final de tu siguiente turno; los espacios superiores añaden 1d8 de daño.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d8.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Sanctuary": {
+    "name": "Santuario",
+    "description": "Protege a una criatura durante 1 minuto. Quien la ataque o le lance un conjuro como objetivo debe superar una tirada de salvación de Sabiduría o elegir otro objetivo o perder el intento. La protección termina si la criatura protegida ataca, lanza un conjuro o causa daño.",
+    "material": "un fragmento de vidrio de un espejo",
+    "castingTime": "Acción adicional",
+    "range": "30 pies",
+    "duration": "1 minuto"
+  },
+  "Searing Smite": {
+    "name": "Castigo abrasador",
+    "description": "Inmediatamente después de impactar con un arma cuerpo a cuerpo o un golpe sin armas, causa 1d6 de daño de fuego adicional. Luego el objetivo sufre 1d6 de daño de fuego al comienzo de cada turno hasta superar una tirada de salvación de Constitución; los espacios superiores aumentan ambos daños.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d6 a cada tirada de daño.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a un objetivo con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "1 minuto"
+  },
+  "Shield": {
+    "name": "Escudo",
+    "description": "Usa tu reacción cuando te impacte un ataque o te alcance Misiles mágicos para ganar +5 a la CA hasta el comienzo de tu siguiente turno, incluso contra el ataque desencadenante, y no sufrir daño de Misiles mágicos.",
+    "castingTime": "Reacción, que realizas cuando te impacta una tirada de ataque o eres objetivo del conjuro Misiles mágicos",
+    "range": "Personal",
+    "duration": "1 asalto"
+  },
+  "Shield of Faith": {
+    "name": "Escudo de fe",
+    "description": "Una criatura a 60 pies gana +2 a la CA durante un máximo de 10 minutos mientras mantienes la concentración.",
+    "material": "un pergamino de oración",
+    "castingTime": "Acción adicional",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Silent Image": {
+    "name": "Imagen silenciosa",
+    "description": "Crea una imagen puramente visual de hasta un cubo de 15 pies durante un máximo de 10 minutos. Puedes moverla con una acción de Magia; la interacción física revela la ilusión.",
+    "material": "un poco de vellón",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Sleep": {
+    "name": "Dormir",
+    "description": "Las criaturas elegidas en una esfera de 5 pies de radio realizan tiradas de salvación de Sabiduría. Si fallan, quedan incapacitadas hasta el final de su siguiente turno; una segunda tirada fallida las deja inconscientes durante un máximo de 1 minuto. Sufrir daño o ser sacudidas termina el efecto; las criaturas que no duermen superan la tirada automáticamente.",
+    "material": "una pizca de arena o pétalos de rosa",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Speak with Animals": {
+    "name": "Hablar con los animales",
+    "description": "Durante 10 minutos, comprendes y hablas con bestias. Puedes usar la acción Influir con ellas y preguntarles por lugares o criaturas cercanos.",
+    "castingTime": "Acción o ritual",
+    "range": "Personal",
+    "duration": "10 minutos"
+  },
+  "Thunderwave": {
+    "name": "Onda de trueno",
+    "description": "Un cubo de trueno de 15 pies estalla desde ti. Las criaturas realizan tiradas de salvación de Constitución; sufren 2d8 de daño de trueno y son empujadas 10 pies si fallan, o la mitad del daño si tienen éxito. Los espacios superiores añaden 1d8 de daño.",
+    "higherLevels": "Cada nivel de espacio por encima del 1 añade 1d8.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Unseen Servant": {
+    "name": "Sirviente invisible",
+    "description": "Crea una fuerza invisible y sin mente durante 1 hora. No puede atacar, pero sí realizar tareas sencillas que le ordenes con una acción adicional.",
+    "material": "un poco de cuerda y madera",
+    "castingTime": "Acción o ritual",
+    "range": "60 pies",
+    "duration": "1 hora"
+  },
+  "Acid Arrow": {
+    "name": "Flecha ácida",
+    "description": "Realiza un ataque de conjuro a distancia contra un objetivo. Si impacta, causa 4d4 de daño de ácido de inmediato y otros 2d4 al final de su siguiente turno; si falla, causa solo la mitad del daño inicial. Los espacios superiores añaden 1d4 a ambas tiradas de daño.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d4 a ambas tiradas de daño.",
+    "material": "hoja de ruibarbo pulverizada",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Instantánea"
+  },
+  "Aid": {
+    "name": "Auxilio",
+    "description": "Hasta tres criaturas a 30 pies aumentan en 5 sus puntos de golpe actuales y máximos durante 8 horas. Cada nivel de espacio por encima del 2 añade otros 5 puntos de golpe.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 5 a los puntos de golpe actuales y máximos.",
+    "material": "una tira de tela blanca",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "8 horas"
+  },
+  "Alter Self": {
+    "name": "Alterar el propio aspecto",
+    "description": "Durante un máximo de 1 hora, elige adaptación acuática (respirar bajo el agua y velocidad de nado), cambiar tu aspecto sin alterar tus estadísticas o armas naturales que causan 1d6 de daño usando tu característica para lanzar conjuros. Puedes cambiar la opción con una acción de Magia.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Animal Messenger": {
+    "name": "Mensajero de animales",
+    "description": "Una bestia Diminuta de VD 0 que falle una tirada de salvación de Carisma lleva un mensaje de hasta 25 palabras hacia un lugar que hayas visitado. Recorre unas 25 millas al día, o 50 si vuela, durante 24 horas; cada espacio superior añade 48 horas.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 prolonga la duración 48 horas.",
+    "material": "un bocado de comida",
+    "castingTime": "Acción o ritual",
+    "range": "30 pies",
+    "duration": "24 horas"
+  },
+  "Arcane Lock": {
+    "name": "Cerradura arcana",
+    "description": "Cierra mágicamente una puerta, ventana, portón, recipiente o escotilla hasta que se disipe el conjuro. Las criaturas designadas o quien diga tu contraseña pueden abrirlo; el lanzamiento consume polvo de oro que vale al menos 25 PO.",
+    "material": "polvo de oro que valga al menos 25 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Hasta que se disipe"
+  },
+  "Arcanist's Magic Aura": {
+    "name": "Aura mágica del arcanista",
+    "description": "Coloca una falsa aura mágica en un objeto u oculta el tipo aparente de una criatura voluntaria durante 24 horas. Lanzar el conjuro diariamente sobre el mismo objetivo durante 30 días hace que la ilusión dure hasta que se disipe.",
+    "material": "un pequeño cuadrado de seda",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "24 horas"
+  },
+  "Augury": {
+    "name": "Augurio",
+    "description": "Descubre si una acción prevista para los próximos 30 minutos probablemente tendrá consecuencias buenas, malas, mixtas o neutras. Cada lanzamiento después del primero antes de un descanso largo tiene una probabilidad acumulativa del 25 por ciento de no dar respuesta.",
+    "material": "varillas, huesos, cartas u otras fichas adivinatorias marcadas especialmente que valgan al menos 25 PO",
+    "castingTime": "1 minuto o ritual",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Barkskin": {
+    "name": "Piel de corteza",
+    "description": "Una criatura voluntaria que toques tiene CA 17 cuando su CA normal sería inferior durante 1 hora.",
+    "material": "un puñado de corteza de árbol",
+    "castingTime": "Acción adicional",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Blindness/Deafness": {
+    "name": "Ceguera/Sordera",
+    "description": "Una criatura visible realiza una tirada de salvación de Constitución o queda cegada o ensordecida durante 1 minuto. Repite la tirada al final de cada turno; los espacios superiores añaden un objetivo por nivel.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 permite un objetivo adicional.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "1 minuto"
+  },
+  "Blur": {
+    "name": "Difuminar",
+    "description": "Durante un máximo de 1 minuto, los atacantes tienen desventaja en sus tiradas de ataque contra ti, a menos que te perciban con vista ciega o visión verdadera.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Calm Emotions": {
+    "name": "Calmar las emociones",
+    "description": "Los humanoides en una esfera de 20 pies de radio realizan tiradas de salvación de Carisma. Si fallan, puedes suprimir sus estados hechizado o asustado o volverlos indiferentes hacia criaturas a las que eran hostiles durante un máximo de 1 minuto.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Continual Flame": {
+    "name": "Llama continua",
+    "description": "Crea en un objeto una llama fría que no consume combustible y emite luz brillante en 20 pies y luz tenue otros 20 pies hasta que se disipe. El lanzamiento consume polvo de rubí que vale al menos 50 PO.",
+    "material": "polvo de rubí que valga al menos 50 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Hasta que se disipe"
+  },
+  "Darkness": {
+    "name": "Oscuridad",
+    "description": "Crea una esfera de oscuridad mágica de 15 pies de radio durante un máximo de 10 minutos, o céntrala en un objeto que nadie lleve. La luz normal no puede iluminarla y la visión en la oscuridad no permite ver a través de ella.",
+    "material": "pelo de murciélago y un trozo de carbón",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Darkvision": {
+    "name": "Visión oscura",
+    "description": "Una criatura voluntaria que toques obtiene visión en la oscuridad hasta 150 pies durante 8 horas.",
+    "material": "una zanahoria seca",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "8 horas"
+  },
+  "Detect Thoughts": {
+    "name": "Detectar pensamientos",
+    "description": "Durante un máximo de 1 minuto, detecta criaturas pensantes cercanas o lee los pensamientos superficiales de una criatura visible. Puedes cambiar de efecto con una acción de Magia; sondear más profundamente requiere una tirada de salvación de Sabiduría y alerta al objetivo.",
+    "material": "1 pieza de cobre",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Dragon's Breath": {
+    "name": "Aliento de dragón",
+    "description": "Una criatura voluntaria que toques puede usar una acción de Magia para exhalar un cono de 15 pies de ácido, frío, fuego, relámpago o veneno. Las criaturas en él realizan tiradas de salvación de Destreza contra 3d6 de daño; sufren la mitad si tienen éxito. Los espacios superiores añaden 1d6.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d6 de daño.",
+    "material": "un pimiento picante",
+    "castingTime": "Acción adicional",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Enhance Ability": {
+    "name": "Mejorar característica",
+    "description": "Una criatura tocada tiene ventaja en pruebas de característica que usen una característica elegida que no sea Constitución durante un máximo de 1 hora. Los espacios superiores añaden objetivos.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 permite un objetivo adicional.",
+    "material": "pelo o una pluma",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Enlarge/Reduce": {
+    "name": "Agrandar/Reducir",
+    "description": "Aumenta o reduce el tamaño de una criatura o un objeto que nadie lleve durante un máximo de 1 minuto; una criatura que no quiera el efecto puede resistirse con una tirada de salvación de Constitución. Su tamaño, peso y daño de armas cambian según corresponda.",
+    "material": "una pizca de hierro pulverizado",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Enthrall": {
+    "name": "Cautivar",
+    "description": "Las criaturas visibles con las que no estés luchando realizan tiradas de salvación de Sabiduría o reciben una penalización de -10 a las pruebas de Percepción y a la Percepción pasiva durante un máximo de 1 minuto.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Find Steed": {
+    "name": "Encontrar corcel",
+    "description": "Invoca un corcel leal de otro mundo en un espacio a 30 pies. Usa el bloque de estadísticas de Corcel de Otro Mundo y puede adoptar forma celestial, feérica o infernal.",
+    "higherLevels": "Usa el nivel del espacio de conjuro para las estadísticas del corcel.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea"
+  },
+  "Find Traps": {
+    "name": "Encontrar trampas",
+    "description": "Detecta si hay una trampa creada deliberadamente a 120 pies y en tu línea de visión, y descubre su peligro general, pero no su ubicación exacta.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea"
+  },
+  "Flame Blade": {
+    "name": "Espada flamígera",
+    "description": "Conjura una espada ardiente durante un máximo de 10 minutos. Con una acción de Magia, realiza un ataque de conjuro cuerpo a cuerpo con ella; si impacta, causa 3d6 de daño de fuego más tu modificador por característica para lanzar conjuros. Los espacios superiores aumentan el daño.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d6 de daño.",
+    "material": "una hoja de zumaque",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Flaming Sphere": {
+    "name": "Esfera llameante",
+    "description": "Crea una esfera de fuego de 5 pies durante un máximo de 1 minuto. Las criaturas cercanas realizan tiradas de salvación de Destreza contra 2d6 de daño de fuego, o la mitad si tienen éxito; una acción adicional mueve la esfera y puede exigir otra tirada.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d6 de daño.",
+    "material": "una bola de cera",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Gentle Repose": {
+    "name": "Reposo apacible",
+    "description": "Conserva un cadáver o sus restos durante 10 días, impidiendo su descomposición y que se convierta en muerto viviente. El tiempo protegido no cuenta para los límites de resurrección; el conjuro consume dos piezas de cobre.",
+    "material": "2 piezas de cobre, consumidas por el conjuro",
+    "castingTime": "Acción o ritual",
+    "range": "Toque",
+    "duration": "10 días"
+  },
+  "Gust of Wind": {
+    "name": "Ráfaga de viento",
+    "description": "Una línea de viento de 60 pies de largo y 10 pies de ancho empuja 15 pies a las criaturas que fallen tiradas de salvación de Fuerza y dificulta que avancen hacia ti durante un máximo de 1 minuto.",
+    "material": "una semilla de leguminosa",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Heat Metal": {
+    "name": "Calentar metales",
+    "description": "Calienta un objeto de metal manufacturado que puedas ver durante un máximo de 1 minuto. Una criatura que lo toque sufre 2d8 de daño de fuego de inmediato y de nuevo cuando usas una acción adicional en los turnos posteriores.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d8 de daño.",
+    "material": "un trozo de hierro y una llama",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Hold Person": {
+    "name": "Inmovilizar persona",
+    "description": "Un humanoide visible realiza una tirada de salvación de Sabiduría o queda paralizado durante un máximo de 1 minuto, y repite la tirada al final de cada turno. Los espacios superiores añaden un humanoide por nivel.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 permite un objetivo adicional.",
+    "material": "un trozo recto de hierro",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Invisibility": {
+    "name": "Invisibilidad",
+    "description": "Una criatura tocada queda invisible durante un máximo de 1 hora. Atacar, causar daño o lanzar un conjuro termina el efecto antes; los espacios superiores añaden objetivos.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 permite un objetivo adicional.",
+    "material": "una pestaña en goma arábiga",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Knock": {
+    "name": "Golpear",
+    "description": "Abre una cerradura o retira la tranca de un objeto visible a 60 pies, incluso si la cerradura es mágica, en cuyo caso queda suprimida brevemente. La apertura produce un golpe fuerte audible en las cercanías.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Lesser Restoration": {
+    "name": "Restauración menor",
+    "description": "Con un toque, termina uno de estos estados en una criatura: cegado, ensordecido, paralizado o envenenado.",
+    "castingTime": "Acción adicional",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Levitate": {
+    "name": "Levitar",
+    "description": "Eleva a una criatura visible o un objeto suelto hasta 20 pies durante un máximo de 10 minutos. Una criatura que no quiera el efecto puede resistirse con una tirada de salvación de Constitución; para desplazarse debe impulsarse contra una superficie.",
+    "material": "un muelle de metal",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Locate Animals or Plants": {
+    "name": "Localizar animales o plantas",
+    "description": "Nombra una clase de bestia, criatura planta o planta no mágica y descubre la dirección y distancia a la más cercana a 5 millas.",
+    "material": "pelo de un sabueso",
+    "castingTime": "Acción o ritual",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Locate Object": {
+    "name": "Localizar objeto",
+    "description": "Durante un máximo de 10 minutos, percibe la dirección de un objeto familiar a 1.000 pies, incluso si se mueve. Las barreras gruesas de plomo bloquean el efecto.",
+    "material": "una ramita bifurcada",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Magic Mouth": {
+    "name": "Boca Mágica",
+    "description": "Deposita en un objeto un mensaje hablado de hasta 25 palabras. El objeto lo pronuncia cuando ocurre el desencadenante observable que elijas, hasta que se disipe el conjuro; el lanzamiento consume polvo de jade que vale al menos 10 PO.",
+    "material": "polvo de jade que valga al menos 10 PO, consumido por el conjuro",
+    "castingTime": "1 minuto o ritual",
+    "range": "30 pies",
+    "duration": "Hasta que se disipe"
+  },
+  "Magic Weapon": {
+    "name": "Arma mágica",
+    "description": "Un arma no mágica que toques se vuelve mágica y gana +1 a las tiradas de ataque y daño durante 1 hora. Un espacio de nivel 3 a 5 aumenta el bonificador a +2; uno de nivel 6 o superior lo aumenta a +3.",
+    "higherLevels": "El bonificador pasa a +2 con un espacio de nivel 3 a 5 y a +3 con uno de nivel 6 o superior.",
+    "castingTime": "Acción adicional",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Mind Spike": {
+    "name": "Púa mental",
+    "description": "Una criatura visible realiza una tirada de salvación de Sabiduría; sufre 3d8 de daño psíquico si falla, o la mitad si tiene éxito. Si falla, conoces su ubicación en el mismo plano durante un máximo de 1 hora.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d8 de daño.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 hora",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Mirror Image": {
+    "name": "Imagen múltiple",
+    "description": "Aparecen tres duplicados ilusorios durante 1 minuto. Cuando un ataque te impacta, tira por los duplicados restantes; si la tirada del duplicado tiene éxito, uno de ellos recibe el impacto en tu lugar.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "1 minuto"
+  },
+  "Misty Step": {
+    "name": "Paso brumoso",
+    "description": "Como acción adicional, teletranspórtate hasta 30 pies a un espacio desocupado que puedas ver.",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Moonbeam": {
+    "name": "Rayo de luna",
+    "description": "Un rayo de 5 pies de radio y 40 pies de altura dura hasta 1 minuto y puede moverse 60 pies con una acción de Magia. Las criaturas que entren o terminen un turno en él realizan tiradas de salvación de Constitución contra 2d10 de daño radiante, o la mitad si tienen éxito; una tirada fallida también termina un cambio de forma.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d10 de daño.",
+    "material": "una hoja de semilla lunar",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Pass without Trace": {
+    "name": "Pasar sin rastro",
+    "description": "Durante un máximo de 1 hora, las criaturas elegidas dentro de tu aura de 30 pies ganan +10 a las pruebas de Sigilo y no dejan rastros.",
+    "material": "cenizas de muérdago quemado",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Phantasmal Force": {
+    "name": "Fuerza fantasmal",
+    "description": "Una criatura que falle una tirada de salvación de Inteligencia percibe una ilusión personal de hasta un cubo de 10 pies durante un máximo de 1 minuto. Puede usar la acción Estudiar para dejar de creer en ella; una ilusión peligrosa puede causarle 2d8 de daño psíquico en cada uno de tus turnos.",
+    "material": "un poco de vellón",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Prayer of Healing": {
+    "name": "Oración de curación",
+    "description": "Tras lanzar el conjuro durante 10 minutos, hasta cinco criaturas dentro del alcance reciben los beneficios de un descanso corto y recuperan 2d8 puntos de golpe. Cada una solo puede beneficiarse una vez por descanso largo; los espacios superiores añaden 1d8 de curación.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d8 de curación.",
+    "castingTime": "10 minutos",
+    "range": "30 pies",
+    "duration": "Instantánea"
+  },
+  "Protection from Poison": {
+    "name": "Protección contra el veneno",
+    "description": "Termina el estado envenenado en una criatura tocada. Durante 1 hora tiene resistencia al daño de veneno y ventaja en las tiradas de salvación para evitar quedar o seguir envenenada.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Ray of Enfeeblement": {
+    "name": "Rayo de debilitamiento",
+    "description": "Una criatura realiza una tirada de salvación de Constitución. Si tiene éxito, su siguiente tirada de ataque tiene desventaja hasta tu siguiente turno. Si falla, tiene desventaja en pruebas de D20 basadas en Fuerza y resta 1d8 de sus tiradas de daño durante un máximo de 1 minuto; repite la tirada de salvación cada turno.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Rope Trick": {
+    "name": "Truco de la cuerda",
+    "description": "Toca una cuerda para abrir un espacio extradimensional invisible en su extremo superior durante 1 hora. Hasta ocho criaturas Medianas o más pequeñas pueden ocultarse dentro.",
+    "material": "un trozo de cuerda",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Scorching Ray": {
+    "name": "Rayo abrasador",
+    "description": "Dispara tres rayos, cada uno con un ataque de conjuro a distancia que causa 2d6 de daño de fuego si impacta. Los espacios superiores crean un rayo adicional por nivel.",
+    "higherLevels": "Crea un rayo adicional por cada nivel de espacio por encima del 2.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea"
+  },
+  "See Invisibility": {
+    "name": "Ver Invisibilidad",
+    "description": "Durante 1 hora, ves normalmente a las criaturas y objetos invisibles y percibes el Plano Etéreo.",
+    "material": "una pizca de talco",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "1 hora"
+  },
+  "Shatter": {
+    "name": "Estallar",
+    "description": "Las criaturas en una esfera de 10 pies de radio realizan tiradas de salvación de Constitución; sufren 3d8 de daño de trueno si fallan, o la mitad si tienen éxito. Los constructos realizan la tirada con desventaja. Los espacios superiores añaden 1d8.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d8 de daño.",
+    "material": "una esquirla de mica",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Shining Smite": {
+    "name": "Castigo resplandeciente",
+    "description": "Inmediatamente después de impactar con un arma cuerpo a cuerpo o un golpe sin armas, causa 2d6 de daño radiante adicional. Durante un máximo de 1 minuto, el objetivo brilla, no puede beneficiarse de la invisibilidad y los ataques contra él tienen ventaja.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d6 de daño.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a una criatura con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Silence": {
+    "name": "Silencio",
+    "description": "Crea durante un máximo de 10 minutos una esfera de 20 pies de radio por la que no pasa ningún sonido. Las criaturas enteramente dentro quedan ensordecidas, son inmunes al daño de trueno y no pueden lanzar conjuros con componentes verbales.",
+    "castingTime": "Acción o ritual",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Spider Climb": {
+    "name": "Escalada de araña",
+    "description": "Una criatura voluntaria que toques gana una velocidad de trepar igual a su velocidad y puede recorrer paredes y techos sin usar las manos durante un máximo de 1 hora. Los espacios superiores añaden objetivos.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 permite un objetivo adicional.",
+    "material": "una gota de betún y una araña",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Spike Growth": {
+    "name": "Crecimiento de espinas",
+    "description": "Un área de 20 pies de radio se convierte en terreno difícil camuflado durante un máximo de 10 minutos. Una criatura que se mueva por ella sufre 2d4 de daño perforante por cada 5 pies recorridos.",
+    "material": "siete espinas",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Spiritual Weapon": {
+    "name": "Arma espiritual",
+    "description": "Crea un arma flotante de fuerza durante un máximo de 1 minuto. Realiza un ataque de conjuro cuerpo a cuerpo al aparecer y, en los turnos posteriores, con una acción adicional; si impacta, causa 1d8 de daño de fuerza más tu modificador por característica para lanzar conjuros.",
+    "higherLevels": "Cada nivel de espacio por encima del 2 añade 1d8 de daño.",
+    "castingTime": "Acción adicional",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Suggestion": {
+    "name": "Sugerencia",
+    "description": "Una criatura que escuche y comprenda una sugerencia plausible y no perjudicial de hasta 25 palabras realiza una tirada de salvación de Sabiduría. Si falla, queda hechizada y sigue la actividad durante un máximo de 8 horas; termina antes si resulta dañada o la completa.",
+    "material": "una gota de miel",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 8 horas"
+  },
+  "Warding Bond": {
+    "name": "Vínculo protector",
+    "description": "Te vinculas a una criatura voluntaria que lleve uno de los anillos de platino requeridos. Mientras estéis a 60 pies, gana +1 a la CA y a las tiradas de salvación, además de resistencia a todo el daño, pero tú sufres el mismo daño que ella.",
+    "material": "un par de anillos de platino que valgan al menos 50 PO cada uno y que tú y el objetivo debéis llevar durante toda la duración",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Web": {
+    "name": "Telaraña",
+    "description": "Unas telarañas pegajosas llenan un cubo de 20 pies durante un máximo de 1 hora, creando terreno difícil y oscurecimiento ligero. Una criatura que entre o comience allí su turno realiza una tirada de salvación de Destreza o queda apresada; puede escapar con una acción de Fuerza (Atletismo). Las telarañas en llamas causan 2d4 de daño de fuego.",
+    "material": "un poco de telaraña",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Zone of Truth": {
+    "name": "Zona de la verdad",
+    "description": "Crea una esfera de 15 pies de radio durante 10 minutos. Las criaturas que entren o comiencen allí su turno realizan tiradas de salvación de Carisma; las que fallen no pueden mentir deliberadamente, y tú sabes si cada criatura tuvo éxito.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "10 minutos"
+  },
+  "Animate Dead": {
+    "name": "Animar a los muertos",
+    "description": "Anima un cadáver de humanoide Mediano o Pequeño como zombi, o sus huesos como esqueleto. Ordena a tus muertos vivientes a 60 pies con una acción adicional; el control dura 24 horas y puede renovarse antes de que termine.",
+    "higherLevels": "Un espacio superior al nivel 3 anima o reafirma el control sobre dos muertos vivientes adicionales por cada nivel extra de espacio.",
+    "material": "una gota de sangre, un trozo de carne y una pizca de polvo de hueso",
+    "castingTime": "1 minuto",
+    "range": "10 pies",
+    "duration": "Instantánea"
+  },
+  "Beacon of Hope": {
+    "name": "Faro de esperanza",
+    "description": "Elige cualquier número de criaturas a 30 pies. Durante un máximo de 1 minuto tienen ventaja en las tiradas de salvación de Sabiduría y contra la muerte y recuperan la máxima cantidad posible de puntos de golpe cuando reciben curación.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Bestow Curse": {
+    "name": "Otorgar maldición",
+    "description": "Una criatura que toques realiza una tirada de salvación de Sabiduría. Si falla, elige una maldición: desventaja en pruebas y tiradas de salvación de una característica; desventaja en ataques contra ti; una tirada de salvación de Sabiduría por turno o deberá Esquivar; o 1d8 de daño necrótico adicional cuando le causes daño con un ataque o conjuro.",
+    "higherLevels": "Un espacio de nivel 4 amplía la concentración a 10 minutos; uno de nivel 5 a 6 elimina la concentración y dura 8 horas; uno de nivel 7 a 8 dura 24 horas; y uno de nivel 9 dura hasta que se disipe.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Blink": {
+    "name": "Parpadeo",
+    "description": "Durante 1 minuto, tira 1d6 al final de cada turno. Con un resultado de 4 a 6, pasas al Plano Etéreo hasta el comienzo de tu siguiente turno y vuelves a un espacio libre a 10 pies del lugar donde estabas.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "1 minuto"
+  },
+  "Call Lightning": {
+    "name": "Llamar relámpago",
+    "description": "Crea una nube de tormenta sobre ti. Al lanzar el conjuro y, en turnos posteriores, con una acción de Magia, haz caer un rayo sobre un punto bajo ella; las criaturas a 5 pies realizan una tirada de salvación de Destreza contra 3d10 de daño de relámpago, o la mitad si tienen éxito. Una tormenta existente añade 1d10.",
+    "higherLevels": "El daño aumenta en 1d10 por cada nivel de espacio por encima del 3.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Clairvoyance": {
+    "name": "Clarividencia",
+    "description": "Sitúa un punto sensorial invisible e inmóvil en un lugar familiar o evidente a 1 milla. Ve u oye a través de él durante un máximo de 10 minutos; alterna los sentidos con una acción adicional.",
+    "material": "un foco que valga al menos 100 PO: un cuerno adornado con gemas para oír o un ojo de vidrio para ver",
+    "castingTime": "10 minutos",
+    "range": "1 milla",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Conjure Animals": {
+    "name": "Conjurar animales",
+    "description": "Invoca una manada intangible Grande de espíritus animales durante un máximo de 10 minutos. Puede moverse 30 pies contigo, concede ventaja en tiradas de salvación de Fuerza mientras estés a 5 pies y puede obligar a criaturas a 10 pies a realizar una tirada de salvación de Destreza o sufrir 3d10 de daño cortante, una vez por turno.",
+    "higherLevels": "El daño aumenta en 1d10 por cada nivel de espacio por encima del 3.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Counterspell": {
+    "name": "Contrahechizo",
+    "description": "Usa tu reacción cuando veas a una criatura a 60 pies lanzar un conjuro con componentes. El lanzador realiza una tirada de salvación de Constitución; si falla, su conjuro no tiene efecto y pierde la acción de lanzamiento, pero no gasta el espacio de conjuro.",
+    "castingTime": "Reacción, que realizas cuando ves a una criatura a 60 pies de ti lanzar un conjuro con componentes verbales, somáticos o materiales",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Create Food and Water": {
+    "name": "Crear comida y agua",
+    "description": "Crea 45 libras de comida nutritiva y 30 galones de agua limpia a 30 pies. La comida se estropea después de 24 horas.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea"
+  },
+  "Daylight": {
+    "name": "Luz del día",
+    "description": "Llena una esfera de 60 pies de radio con luz solar y otros 60 pies de luz tenue durante 1 hora, o céntrala en un objeto que nadie lleve. Se disipa la oscuridad mágica superpuesta de un conjuro de nivel 3 o inferior.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "1 hora"
+  },
+  "Dispel Magic": {
+    "name": "Disipar magia",
+    "description": "Termina todos los conjuros de nivel 3 o inferior que afecten a una criatura, objeto o efecto mágico a 120 pies. Por cada conjuro de nivel superior, realiza una prueba de tu característica para lanzar conjuros contra CD 10 más el nivel del conjuro.",
+    "higherLevels": "Usar un espacio superior termina automáticamente los conjuros sobre el objetivo de nivel no superior al del espacio usado.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea"
+  },
+  "Fear": {
+    "name": "Miedo",
+    "description": "Las criaturas en un cono de 30 pies realizan una tirada de salvación de Sabiduría o sueltan los objetos que sostienen y quedan asustadas durante un máximo de 1 minuto. Deben Correr para alejarse mientras puedan; pueden repetir la tirada al final de un turno sin línea de visión hacia ti.",
+    "material": "una pluma blanca",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Fireball": {
+    "name": "Bola de fuego",
+    "description": "Un punto a 150 pies estalla en una esfera de 20 pies de radio. Las criaturas realizan una tirada de salvación de Destreza; sufren 8d6 de daño de fuego si fallan, o la mitad si tienen éxito. Los objetos inflamables que nadie lleve se prenden.",
+    "higherLevels": "El daño aumenta en 1d6 por cada nivel de espacio por encima del 3.",
+    "material": "una bola de guano de murciélago y azufre",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Fly": {
+    "name": "Volar",
+    "description": "Una criatura voluntaria que toques gana una velocidad de vuelo de 60 pies y puede mantenerse suspendida durante un máximo de 10 minutos. Cae cuando termina el conjuro, salvo que pueda impedir la caída.",
+    "higherLevels": "Elige una criatura adicional como objetivo por cada nivel de espacio por encima del 3.",
+    "material": "una pluma",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Gaseous Form": {
+    "name": "Forma gaseosa",
+    "description": "Una criatura voluntaria que toques se convierte en niebla durante un máximo de 1 hora. Vuela a 10 pies, atraviesa aberturas estrechas, tiene resistencia al daño contundente, perforante y cortante, y no puede atacar, lanzar conjuros, hablar ni manipular objetos.",
+    "higherLevels": "Elige una criatura adicional como objetivo por cada nivel de espacio por encima del 3.",
+    "material": "un poco de gasa",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Glyph of Warding": {
+    "name": "Glifo de protección",
+    "description": "Inscribes un glifo oculto en una superficie u objeto que pueda cerrarse. El desencadenante elegido lo hace explotar, causando 5d8 de daño de ácido, frío, fuego, relámpago o trueno en una esfera de 20 pies de radio (tirada de salvación de Destreza para sufrir la mitad), o libera un conjuro almacenado. Moverlo más de 10 pies lo rompe.",
+    "higherLevels": "El daño de la explosión aumenta en 1d8 por cada nivel de espacio por encima del 3; el conjuro almacenado puede tener hasta el nivel del espacio usado para el glifo.",
+    "material": "diamante pulverizado que valga al menos 200 PO, consumido por el conjuro",
+    "castingTime": "1 hora",
+    "range": "Toque",
+    "duration": "Hasta que se disipe o se active"
+  },
+  "Haste": {
+    "name": "Prisa",
+    "description": "Una criatura voluntaria gana el doble de velocidad, +2 a la CA, ventaja en tiradas de salvación de Destreza y una acción adicional limitada por turno durante un máximo de 1 minuto. Cuando termina, el objetivo queda incapacitado y con velocidad 0 hasta el final de su siguiente turno.",
+    "material": "una viruta de raíz de regaliz",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Hypnotic Pattern": {
+    "name": "Patrón hipnótico",
+    "description": "Las criaturas que vean un patrón en un cubo de 30 pies realizan tiradas de salvación de Sabiduría o quedan hechizadas, incapacitadas e inmóviles durante un máximo de 1 minuto. Sufrir daño o que otra criatura use una acción para sacudir al objetivo termina el efecto en él.",
+    "material": "una pizca de confeti",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Lightning Bolt": {
+    "name": "Rayo relampagueante",
+    "description": "Una línea de relámpago de 100 pies de largo y 5 pies de ancho sale de ti. Las criaturas en ella realizan tiradas de salvación de Destreza; sufren 8d6 de daño de relámpago si fallan, o la mitad si tienen éxito.",
+    "higherLevels": "El daño aumenta en 1d6 por cada nivel de espacio por encima del 3.",
+    "material": "un poco de pelo y una varilla de cristal",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Magic Circle": {
+    "name": "Círculo mágico",
+    "description": "Crea durante 1 hora un cilindro de 10 pies de radio y 20 pies de altura. Celestiales, elementales, feéricos, infernales y muertos vivientes elegidos normalmente no pueden entrar, tienen desventaja en ataques hacia su interior y no pueden hechizar, asustar ni poseer a las criaturas dentro. También puedes usar la barrera para atraparlos.",
+    "higherLevels": "La duración aumenta 1 hora por cada nivel de espacio por encima del 3.",
+    "material": "sal y plata pulverizada que valgan al menos 100 PO, consumidas por el conjuro",
+    "castingTime": "1 minuto",
+    "range": "10 pies",
+    "duration": "1 hora"
+  },
+  "Major Image": {
+    "name": "Imagen mayor",
+    "description": "Crea una ilusión convincente de apariencia, sonido, olor y temperatura de algo de no más de un cubo de 20 pies durante un máximo de 10 minutos. No puede causar daño ni estados; la interacción física la revela. Puedes moverla y modificarla con una acción de Magia.",
+    "higherLevels": "Con un espacio de nivel 4 o superior, la ilusión dura hasta que se disipe y no requiere concentración.",
+    "material": "un poco de vellón",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Mass Healing Word": {
+    "name": "Palabra de curación en masa",
+    "description": "Como acción adicional, hasta seis criaturas visibles a 60 pies recuperan cada una 2d4 más tu modificador por característica para lanzar conjuros en puntos de golpe.",
+    "higherLevels": "La curación aumenta en 1d4 por cada nivel de espacio por encima del 3.",
+    "castingTime": "Acción adicional",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Meld into Stone": {
+    "name": "Fundirse con la piedra",
+    "description": "Fúndete con tu equipo en un objeto de piedra lo bastante grande durante un máximo de 8 horas. Puedes salir gastando 5 pies de movimiento; el daño o destrucción de la piedra puede expulsarte y herirte.",
+    "castingTime": "Acción o ritual",
+    "range": "Toque",
+    "duration": "8 horas"
+  },
+  "Nondetection": {
+    "name": "Indetectable",
+    "description": "Durante 8 horas, una criatura voluntaria, lugar u objeto de no más de 10 pies no puede ser objetivo de conjuros de Adivinación ni percibirse mediante sensores mágicos de escudriñamiento.",
+    "material": "una pizca de polvo de diamante que valga al menos 25 PO, consumida por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "8 horas"
+  },
+  "Phantom Steed": {
+    "name": "Corcel fantasmal",
+    "description": "Crea un caballo de monta casi real durante 1 hora. Tiene una velocidad de 100 pies y puede recorrer 13 millas en una hora; desaparece gradualmente durante 1 minuto cuando termina el conjuro y antes si recibe daño.",
+    "castingTime": "1 minuto o ritual",
+    "range": "30 pies",
+    "duration": "1 hora"
+  },
+  "Plant Growth": {
+    "name": "Crecimiento vegetal",
+    "description": "Elige crecimiento exuberante para que las plantas normales en una esfera de 100 pies de radio exijan 4 pies de movimiento por cada pie recorrido, excepto en las zonas que elijas. O bien dedica 8 horas a enriquecer las plantas en media milla de radio para duplicar la cosecha durante 365 días.",
+    "castingTime": "Acción (crecimiento exuberante) u 8 horas (enriquecimiento)",
+    "range": "150 pies",
+    "duration": "Instantánea"
+  },
+  "Protection from Energy": {
+    "name": "Protección contra la energía",
+    "description": "Una criatura voluntaria que toques tiene resistencia al daño de ácido, frío, fuego, relámpago o trueno (a tu elección) durante un máximo de 1 hora.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Remove Curse": {
+    "name": "Quitar maldición",
+    "description": "Termina todas las maldiciones que afecten a una criatura u objeto tocado. En un objeto mágico maldito, rompe la sintonización del propietario para que pueda quitárselo, pero la maldición del objeto permanece.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Revivify": {
+    "name": "Revivificar",
+    "description": "Toca a una criatura que haya muerto en el último minuto. Vuelve con 1 punto de golpe. El conjuro no restaura partes del cuerpo perdidas ni revive a quien murió de vejez.",
+    "material": "un diamante que valga al menos 300 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Sending": {
+    "name": "Envío",
+    "description": "Envía hasta 25 palabras a una criatura que hayas conocido o que te haya descrito alguien que la conoció. Puede responder de inmediato. Hay un 5% de probabilidad de que el mensaje no llegue a otro plano; el destinatario puede bloquearte durante 8 horas.",
+    "material": "un alambre de cobre",
+    "castingTime": "Acción",
+    "range": "Ilimitado",
+    "duration": "Instantánea"
+  },
+  "Sleet Storm": {
+    "name": "Tormenta de aguanieve",
+    "description": "Un cilindro de 20 pies de radio y 40 pies de altura queda fuertemente oscurecido y se convierte en terreno difícil durante un máximo de 1 minuto. Las criaturas que entren o comiencen allí su turno realizan una tirada de salvación de Destreza o caen derribadas y pierden la concentración.",
+    "material": "un paraguas en miniatura",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Slow": {
+    "name": "Ralentizar",
+    "description": "Hasta seis criaturas en un cubo de 40 pies realizan tiradas de salvación de Sabiduría. Las que fallen tienen la mitad de velocidad, -2 a la CA y a las tiradas de salvación de Destreza, no pueden usar reacciones, realizan como máximo un ataque y eligen entre acción o acción adicional cada turno; los conjuros con componentes somáticos tienen un 25% de probabilidad de fallar. Repiten la tirada cada turno.",
+    "material": "una gota de melaza",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Speak with Dead": {
+    "name": "Hablar con los muertos",
+    "description": "Haz hasta cinco preguntas en 10 minutos a un cadáver con boca. Solo sabe lo que sabía en vida y no está obligado a responder con sinceridad; un cadáver afectado en los últimos 10 días no puede volver a ser interrogado.",
+    "material": "incienso encendido",
+    "castingTime": "Acción",
+    "range": "10 pies",
+    "duration": "10 minutos"
+  },
+  "Speak with Plants": {
+    "name": "Hablar con las plantas",
+    "description": "Las plantas en una emanación de 30 pies pueden informar de lo ocurrido el día anterior y obedecer órdenes sencillas durante 10 minutos. Puedes convertir suelo cubierto de plantas en terreno difícil o dejar de hacerlo, y comunicarte con criaturas planta.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "10 minutos"
+  },
+  "Spirit Guardians": {
+    "name": "Guardianes espirituales",
+    "description": "Los espíritus llenan una emanación de 15 pies a tu alrededor durante un máximo de 10 minutos. Elige las criaturas que no resultan afectadas. Las demás tienen la mitad de velocidad en la zona y realizan una tirada de salvación de Sabiduría cuando la emanación entra en su espacio o cuando entran o terminan un turno en ella; sufren 3d8 de daño radiante o necrótico si fallan, o la mitad si tienen éxito, una vez por turno.",
+    "higherLevels": "El daño aumenta en 1d8 por cada nivel de espacio por encima del 3.",
+    "material": "un pergamino de oración",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Stinking Cloud": {
+    "name": "Nube apestosa",
+    "description": "Crea una esfera de gas de 20 pies de radio fuertemente oscurecida durante un máximo de 1 minuto. Una criatura que comience su turno en ella realiza una tirada de salvación de Constitución o queda envenenada y no puede usar una acción ni una acción adicional ese turno. Un viento fuerte dispersa la nube.",
+    "material": "un huevo podrido",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Tiny Hut": {
+    "name": "Cabaña diminuta",
+    "description": "Crea un refugio estacionario en una emanación de 10 pies durante 8 horas. Las criaturas y objetos presentes al lanzarlo pueden atravesarlo; los demás no. Los conjuros de nivel 3 o inferior no pueden atravesarlo. Termina si sales o vuelves a lanzarlo.",
+    "material": "una cuenta de cristal",
+    "castingTime": "1 minuto o ritual",
+    "range": "Personal",
+    "duration": "8 horas"
+  },
+  "Tongues": {
+    "name": "Don de lenguas",
+    "description": "Una criatura tocada comprende durante 1 hora cualquier idioma hablado o de señas. Cualquier criatura que conozca un idioma puede entender el habla o las señas del objetivo.",
+    "material": "un zigurat en miniatura",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Vampiric Touch": {
+    "name": "Toque vampírico",
+    "description": "Realiza un ataque de conjuro cuerpo a cuerpo que causa 3d6 de daño necrótico si impacta y recupera puntos de golpe iguales a la mitad del daño necrótico causado. Puedes repetir el ataque con una acción de Magia cada turno durante un máximo de 1 minuto.",
+    "higherLevels": "El daño aumenta en 1d6 por cada nivel de espacio por encima del 3.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Water Breathing": {
+    "name": "Respirar bajo el agua",
+    "description": "Hasta diez criaturas voluntarias a 30 pies pueden respirar bajo el agua durante 24 horas sin perder su capacidad normal de respirar.",
+    "material": "un junco corto",
+    "castingTime": "Acción o ritual",
+    "range": "30 pies",
+    "duration": "24 horas"
+  },
+  "Water Walk": {
+    "name": "Caminar sobre el agua",
+    "description": "Hasta diez criaturas voluntarias a 30 pies pueden caminar sobre superficies líquidas como si fueran suelo firme durante 1 hora. Pueden usar una acción adicional para pasar entre la superficie y el líquido inferior.",
+    "material": "un trozo de corcho",
+    "castingTime": "Acción o ritual",
+    "range": "30 pies",
+    "duration": "1 hora"
+  },
+  "Wind Wall": {
+    "name": "Muro de viento",
+    "description": "Crea una barrera de viento de hasta 50 pies de largo, 15 pies de alto y 1 pie de grosor durante un máximo de 1 minuto. Las criaturas en su espacio realizan una tirada de salvación de Fuerza contra 4d8 de daño contundente, o la mitad si tienen éxito. Bloquea gases, criaturas voladoras pequeñas y proyectiles corrientes.",
+    "material": "un abanico y una pluma",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Arcane Eye": {
+    "name": "Ojo arcano",
+    "description": "Crea un ojo flotante invisible e invulnerable durante un máximo de 1 hora. Ve a través de él en todas direcciones, incluso con visión en la oscuridad de 30 pies; muévelo 30 pies con una acción adicional, incluso por aberturas de al menos 1 pulgada.",
+    "material": "un poco de pelo de murciélago",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Aura of Life": {
+    "name": "Aura de vida",
+    "description": "Durante un máximo de 10 minutos, una emanación de 30 pies a tu alrededor os concede a ti y a tus aliados resistencia al daño necrótico e impide que se reduzca el máximo de puntos de golpe. Un aliado que comience un turno en ella con 0 puntos de golpe recupera 1 punto de golpe.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Banishment": {
+    "name": "Destierro",
+    "description": "Una criatura visible realiza una tirada de salvación de Carisma o es enviada a un semiplano inofensivo, donde queda incapacitada, durante un máximo de 1 minuto. Regresa cuando termina el conjuro, salvo que sea una aberración, celestial, elemental, feérico o infernal y transcurra el minuto completo.",
+    "higherLevels": "Elige una criatura adicional como objetivo por cada nivel de espacio por encima del 4.",
+    "material": "un pentáculo",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Black Tentacles": {
+    "name": "Tentáculos negros",
+    "description": "Un área cuadrada de 20 pies se convierte en terreno difícil durante un máximo de 1 minuto. Las criaturas allí realizan tiradas de salvación de Fuerza o sufren 3d6 de daño contundente y quedan apresadas; repiten la tirada cuando entran o terminan un turno en la zona, una vez por turno. Un objetivo apresado puede escapar con una acción de Atletismo.",
+    "material": "un tentáculo",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Blight": {
+    "name": "Plaga",
+    "description": "Una criatura visible a 30 pies realiza una tirada de salvación de Constitución; sufre 8d8 de daño necrótico si falla, o la mitad si tiene éxito. Las plantas fallan automáticamente; una planta no mágica que nadie lleve se marchita y muere.",
+    "higherLevels": "El daño aumenta en 1d8 por cada nivel de espacio por encima del 4.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Charm Monster": {
+    "name": "Hechizar monstruo",
+    "description": "Una criatura visible realiza una tirada de salvación de Sabiduría, con ventaja si tú o un aliado lucháis contra ella. Si falla, queda hechizada y amistosa durante 1 hora; el efecto termina antes si tú o un aliado la dañáis. Después sabe que la hechizaste.",
+    "higherLevels": "Elige una criatura adicional como objetivo por cada nivel de espacio por encima del 4.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "1 hora"
+  },
+  "Compulsion": {
+    "name": "Compulsión",
+    "description": "Las criaturas visibles elegidas a 30 pies realizan tiradas de salvación de Sabiduría o quedan hechizadas durante un máximo de 1 minuto. Como acción adicional, señala una dirección horizontal; las criaturas afectadas se mueven en esa dirección por la ruta más segura en sus siguientes turnos y luego repiten la tirada.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Confusion": {
+    "name": "Confusión",
+    "description": "Las criaturas en una esfera de 10 pies de radio realizan tiradas de salvación de Sabiduría. Las que fallan no pueden usar acciones adicionales ni reacciones y tiran 1d10 cada turno para determinar si se mueven al azar, no hacen nada, atacan a una criatura cercana al azar o actúan normalmente. Repiten la tirada cada turno.",
+    "higherLevels": "El radio de la esfera aumenta en 5 pies por cada nivel de espacio por encima del 4.",
+    "material": "tres cáscaras de nuez",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Conjure Minor Elementals": {
+    "name": "Conjurar elementales menores",
+    "description": "Durante un máximo de 10 minutos, unos espíritus llenan una emanación de 15 pies a tu alrededor. Los enemigos tratan el suelo allí como terreno difícil y tus ataques que impacten a una criatura en la zona causan 2d8 de daño adicional de ácido, frío, fuego o relámpago.",
+    "higherLevels": "El daño adicional aumenta en 1d8 por cada nivel de espacio por encima del 4.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Conjure Woodland Beings": {
+    "name": "Conjurar seres del bosque",
+    "description": "Los espíritus de la naturaleza llenan una emanación de 10 pies a tu alrededor durante un máximo de 10 minutos. Puedes obligar a las criaturas que entren o terminen un turno allí, o cuyo espacio alcance la emanación, a realizar una tirada de salvación de Sabiduría contra 5d8 de daño de fuerza, o la mitad si tienen éxito, una vez por turno. Puedes Destrabarte como acción adicional.",
+    "higherLevels": "El daño aumenta en 1d8 por cada nivel de espacio por encima del 4.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Control Water": {
+    "name": "Controlar el agua",
+    "description": "Controla el agua en un cubo de hasta 100 pies de lado durante un máximo de 10 minutos. Inundación eleva el agua o envía una ola, Partir aguas abre un paso, Redirigir el flujo cambia su curso y Remolino arrastra a las criaturas hacia el centro y puede causar 2d8 de daño contundente.",
+    "material": "una mezcla de agua y polvo",
+    "castingTime": "Acción",
+    "range": "300 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Death Ward": {
+    "name": "Protección contra la muerte",
+    "description": "Durante 8 horas, la primera vez que una criatura tocada fuera a caer a 0 puntos de golpe, cae a 1 en su lugar. Si un efecto la mataría de inmediato sin causar daño, el efecto se anula. Entonces termina el conjuro.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "8 horas"
+  },
+  "Dimension Door": {
+    "name": "Puerta dimensional",
+    "description": "Teletranspórtate a un punto designado a 500 pies, opcionalmente llevando contigo a una criatura voluntaria a 5 pies. Si el destino está ocupado o lleno, el teletransporte falla y cada viajero sufre 4d6 de daño de fuerza.",
+    "castingTime": "Acción",
+    "range": "500 pies",
+    "duration": "Instantánea"
+  },
+  "Divination": {
+    "name": "Adivinación",
+    "description": "Pregunta a una deidad o a sus servidores por un acontecimiento u objetivo de los próximos 7 días y recibe una respuesta verdadera, aunque posiblemente críptica. Cada lanzamiento adicional antes de un descanso largo tiene una probabilidad acumulativa del 25% de no dar respuesta.",
+    "material": "incienso que valga al menos 25 PO, consumido por el conjuro",
+    "castingTime": "Acción o ritual",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Dominate Beast": {
+    "name": "Dominar bestia",
+    "description": "Una bestia visible realiza una tirada de salvación de Sabiduría o queda hechizada durante un máximo de 1 minuto. Puedes ordenarle algo telepáticamente sin usar una acción; repite la tirada cada vez que recibe daño. Tiene ventaja en la tirada inicial si estás luchando contra ella.",
+    "higherLevels": "Un espacio de nivel 5 amplía la concentración a 10 minutos; uno de nivel 6, a 1 hora; y uno de nivel 7 o superior, a 8 horas.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Fabricate": {
+    "name": "Fabricar",
+    "description": "Transforma materias primas en un objeto Grande o menor, o Mediano o menor si es de metal, piedra u otro mineral. Necesitas competencia en las herramientas de artesano apropiadas para objetos elaborados como armas o armaduras; no puedes crear criaturas ni objetos mágicos.",
+    "castingTime": "10 minutos",
+    "range": "120 pies",
+    "duration": "Instantánea"
+  },
+  "Faithful Hound": {
+    "name": "Sabueso fiel",
+    "description": "Conjura un perro guardián invisible e invulnerable durante 8 horas. Ladra cuando una criatura no autorizada se acerca a 30 pies, tiene visión verdadera de 30 pies y, al comienzo de cada uno de tus turnos, muerde a un enemigo a 5 pies, causándole 4d8 de daño de fuerza si falla una tirada de salvación de Destreza.",
+    "material": "un silbato de plata",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "8 horas",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Fire Shield": {
+    "name": "Escudo de fuego",
+    "description": "Un escudo cálido o frío te rodea durante 10 minutos. El cálido concede resistencia al frío y causa 2d8 de daño de fuego como represalia cuando una criatura cercana te impacta cuerpo a cuerpo; el frío concede resistencia al fuego y causa 2d8 de daño de frío.",
+    "material": "un poco de fósforo o una luciérnaga",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "10 minutos"
+  },
+  "Freedom of Movement": {
+    "name": "Libertad de movimiento",
+    "description": "Una criatura voluntaria que toques ignora el terreno difícil y los efectos mágicos que reduzcan la velocidad o causen los estados paralizado o apresado durante 1 hora. Gana velocidad de nado igual a su velocidad y puede gastar 5 pies de movimiento para escapar de ataduras no mágicas.",
+    "higherLevels": "Elige una criatura adicional como objetivo por cada nivel de espacio por encima del 4.",
+    "material": "una tira de cuero",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Giant Insect": {
+    "name": "Insecto gigante",
+    "description": "Invoca una ciempiés, araña o avispa gigante en un espacio a 60 pies durante un máximo de 10 minutos. Actúa inmediatamente después de tu turno, obedece órdenes verbales y usa el bloque de estadísticas de Insecto Gigante; la forma modifica sus capacidades.",
+    "higherLevels": "Usa el nivel del espacio para determinar el nivel de conjuro y las estadísticas que aumentan del insecto invocado.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Greater Invisibility": {
+    "name": "Invisibilidad superior",
+    "description": "Una criatura que toques tiene el estado invisible durante un máximo de 1 minuto, incluso mientras ataca o lanza conjuros.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Guardian of Faith": {
+    "name": "Guardián de la fe",
+    "description": "Invoca un guardián Grande e invulnerable durante un máximo de 8 horas. Los enemigos que entren o comiencen un turno a 10 pies realizan una tirada de salvación de Destreza; sufren 20 de daño radiante si fallan, o la mitad si tienen éxito. Desaparece tras causar 60 de daño en total.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "8 horas"
+  },
+  "Hallucinatory Terrain": {
+    "name": "Terreno alucinatorio",
+    "description": "Haz que un cubo de 150 pies de terreno natural parezca, suene y huela como otro terreno natural durante 24 horas. Las estructuras, el equipo y las criaturas no cambian; tocarlo o superar una prueba de Investigación puede revelar la ilusión.",
+    "material": "un hongo",
+    "castingTime": "10 minutos",
+    "range": "300 pies",
+    "duration": "24 horas"
+  },
+  "Ice Storm": {
+    "name": "Tormenta de hielo",
+    "description": "El granizo cae sobre un cilindro de 20 pies de radio y 40 pies de altura. Las criaturas realizan tiradas de salvación de Destreza contra 2d10 de daño contundente más 4d6 de daño de frío, o la mitad si tienen éxito. El suelo se convierte en terreno difícil hasta el final de tu siguiente turno.",
+    "higherLevels": "El daño contundente aumenta en 1d10 por cada nivel de espacio por encima del 4.",
+    "material": "una manopla",
+    "castingTime": "Acción",
+    "range": "300 pies",
+    "duration": "Instantánea"
+  },
+  "Locate Creature": {
+    "name": "Localizar criatura",
+    "description": "Durante un máximo de 1 hora, percibe la dirección de una criatura conocida por su nombre a 1.000 pies, o de la criatura más cercana de un tipo que hayas visto de cerca. Una forma alterada o una barrera de plomo bloquea el efecto.",
+    "material": "pelo de un sabueso",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Phantasmal Killer": {
+    "name": "Asesino fantasmal",
+    "description": "Una criatura visible realiza una tirada de salvación de Sabiduría contra su peor miedo. Si falla, sufre 4d10 de daño psíquico y tiene desventaja en pruebas y ataques; si tiene éxito, sufre la mitad y termina el conjuro. Repite la tirada cada turno y vuelve a sufrir 4d10 si falla.",
+    "higherLevels": "El daño aumenta en 1d10 por cada nivel de espacio por encima del 4.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Polymorph": {
+    "name": "Polimorfar",
+    "description": "Una criatura que puedas ver realiza una tirada de salvación de Sabiduría o se convierte en una bestia cuyo VD no supere su VD o nivel durante un máximo de 1 hora. Usa las estadísticas de la bestia, pero conserva sus puntos y dados de golpe y gana puntos de golpe temporales iguales a los puntos de golpe de la bestia; el conjuro termina cuando se agotan esos puntos temporales.",
+    "material": "un capullo de oruga",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Private Sanctum": {
+    "name": "Santuario privado",
+    "description": "Protege un cubo de entre 5 y 100 pies por lado durante 24 horas. Elige barreras contra el sonido o la visión, los sensores y objetivos de Adivinación, el teletransporte o el viaje planar. Lanzar el conjuro diariamente en el mismo lugar durante 365 días lo vuelve permanente.",
+    "higherLevels": "El tamaño máximo del cubo aumenta en 100 pies por cada nivel de espacio por encima del 4.",
+    "material": "una lámina fina de plomo",
+    "castingTime": "10 minutos",
+    "range": "120 pies",
+    "duration": "24 horas"
+  },
+  "Resilient Sphere": {
+    "name": "Esfera resistente",
+    "description": "Encierra a una criatura u objeto Grande o menor en una esfera invulnerable durante un máximo de 1 minuto; una criatura que no quiera el efecto realiza una tirada de salvación de Destreza. Nada puede atravesarla, aunque quienes están dentro pueden respirar; la esfera puede rodar o moverse.",
+    "material": "una esfera de vidrio",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Secret Chest": {
+    "name": "Cofre secreto",
+    "description": "Esconde en el Plano Etéreo un cofre fabricado especialmente de 3 por 2 por 2 pies y hasta 12 pies cúbicos de contenido. Toca su réplica diminuta con una acción de Magia para hacerlo volver o enviarlo de nuevo. Después de 60 días, cada día hay una probabilidad acumulativa del 5% de que termine el conjuro.",
+    "material": "un cofre de 3 por 2 por 2 pies, construido con materiales raros que valgan al menos 5.000 PO, y una réplica Diminuta de los mismos materiales que valga al menos 50 PO",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Hasta que se disipe"
+  },
+  "Stone Shape": {
+    "name": "Moldear piedra",
+    "description": "Remodela un objeto de piedra Mediano o menor, o una sección de piedra de no más de 5 pies de ancho, con la forma que elijas. Puede crear una abertura, puerta o recipiente sencillo, pero no maquinaria delicada.",
+    "material": "arcilla blanda",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Stoneskin": {
+    "name": "Piel de piedra",
+    "description": "Una criatura voluntaria que toques tiene resistencia al daño contundente, perforante y cortante durante un máximo de 1 hora.",
+    "material": "polvo de diamante que valga al menos 100 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Vitriolic Sphere": {
+    "name": "Esfera vitriólica",
+    "description": "Una esfera de ácido de 20 pies de radio estalla a 150 pies. Las criaturas realizan tiradas de salvación de Destreza; si fallan, sufren 10d4 de daño de ácido de inmediato y 5d4 al final de su siguiente turno. Si tienen éxito, solo reciben la mitad del daño inicial.",
+    "higherLevels": "El daño inicial aumenta en 2d4 por cada nivel de espacio por encima del 4.",
+    "material": "una gota de bilis",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea"
+  },
+  "Wall of Fire": {
+    "name": "Muro de fuego",
+    "description": "Crea una barrera de fuego de hasta 60 pies de largo y 20 pies de alto, o un anillo de hasta 20 pies de diámetro, durante un máximo de 1 minuto. Las criaturas en su espacio realizan tiradas de salvación de Destreza contra 5d8 de daño de fuego, o la mitad si tienen éxito. El lado elegido también causa 5d8 a criaturas que entren en la barrera o terminen a 10 pies de ella.",
+    "higherLevels": "El daño aumenta en 1d8 por cada nivel de espacio por encima del 4.",
+    "material": "un trozo de carbón vegetal",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Animate Objects": {
+    "name": "Animar objetos",
+    "description": "Anima tantos objetos no mágicos que nadie lleve como tu modificador por característica para lanzar conjuros; los Medianos o menores cuentan como uno, los Grandes como dos y los Enormes como tres. Cada uno se vuelve un constructo aliado (CA 15; PG 10/20/40 según tamaño), actúa después de ti y obedece tus órdenes dadas con una acción adicional a 500 pies. Su ataque cuerpo a cuerpo usa tu bonificador de ataque de conjuro y causa 1d4+3 de daño de fuerza (Mediano o menor), 2d6+3+tu modificador para lanzar conjuros (Grande) o 2d12+3+tu modificador (Enorme).",
+    "higherLevels": "Cada nivel de espacio por encima del 5 añade 1d4 de daño de golpe a los objetos Medianos o menores, 1d6 a los Grandes o 1d12 a los Enormes.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Antilife Shell": {
+    "name": "Caparazón antivida",
+    "description": "Una emanación de 10 pies a tu alrededor impide que las criaturas, salvo constructos y muertos vivientes, pasen o alcancen algo a través de ella durante un máximo de 1 hora. Aun pueden lanzar conjuros o atacar a través de la barrera con armas a distancia o con alcance. Forzar el paso de una de ellas termina el conjuro.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Arcane Hand": {
+    "name": "Mano arcana",
+    "description": "Crea una mano mágica Grande (CA 20, puntos de golpe iguales a los tuyos) durante un máximo de 1 minuto. Muévela hasta 60 pies al lanzarla y después con una acción adicional; elige un efecto: un ataque de conjuro cuerpo a cuerpo de 5d8 de daño de fuerza, empujar, agarrar y aplastar causando 4d6 más tu modificador para lanzar conjuros, o conceder cobertura media.",
+    "higherLevels": "Cada nivel de espacio por encima del 5 añade 2d8 al daño de Puño cerrado y 2d6 al de Mano prensil.",
+    "material": "una cáscara de huevo y un guante",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Awaken": {
+    "name": "Despertar",
+    "description": "Tras 8 horas, concede Inteligencia 10 y un idioma que conozcas a una bestia o criatura planta con Inteligencia 3 o menor, o a una planta natural. Una planta natural se vuelve una criatura planta móvil. El objetivo queda hechizado por ti durante 30 días o hasta que tú o un aliado le causéis daño.",
+    "material": "un ágata que valga al menos 1.000 PO, consumida por el conjuro",
+    "castingTime": "8 horas",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Cloudkill": {
+    "name": "Nube mortal",
+    "description": "Crea una esfera de niebla de 20 pies de radio fuertemente oscurecida durante un máximo de 10 minutos; se aleja 10 pies de ti cada turno. Las criaturas en ella realizan tiradas de salvación de Constitución contra 5d8 de daño de veneno, o la mitad si tienen éxito, cuando aparece, pasa por encima de ellas o cuando entran o terminan un turno allí, una vez por turno.",
+    "higherLevels": "El daño aumenta en 1d8 por cada nivel de espacio por encima del 5.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Commune": {
+    "name": "Comunión",
+    "description": "Haz hasta tres preguntas de sí o no a una deidad o representante en 1 minuto y recibe respuestas veraces, que pueden ser 'incierto'. Cada lanzamiento adicional antes de un descanso largo añade una probabilidad acumulativa del 25% de no recibir respuesta.",
+    "material": "incienso",
+    "castingTime": "1 minuto o ritual",
+    "range": "Personal",
+    "duration": "1 minuto"
+  },
+  "Commune with Nature": {
+    "name": "Comunión con la naturaleza",
+    "description": "Conoce tres hechos sobre el área natural circundante: asentamientos, portales planares, una criatura extraplanar importante, plantas/minerales/bestias predominantes o masas de agua. El radio es de 3 millas al aire libre o 300 pies bajo tierra; el conjuro falla en zonas construidas.",
+    "castingTime": "1 minuto o ritual",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Cone of Cold": {
+    "name": "Cono de frío",
+    "description": "Un cono de frío de 60 pies exige tiradas de salvación de Constitución. Las criaturas sufren 8d8 de daño de frío si fallan, o la mitad si tienen éxito; las que mueren por este daño quedan congeladas hasta que se descongelen.",
+    "higherLevels": "El daño aumenta en 1d8 por cada nivel de espacio por encima del 5.",
+    "material": "un pequeño cono de cristal o vidrio",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Conjure Elemental": {
+    "name": "Conjurar elemental",
+    "description": "Conjura un espíritu Grande e intangible durante un máximo de 10 minutos. Elige aire (relámpago), tierra (trueno), fuego (fuego) o agua (frío). Puede apresar a una criatura cercana o en su espacio tras una tirada de salvación de Destreza; una tirada fallida causa 8d8 de daño y las posteriores fallidas causan 4d8 mientras esté apresada.",
+    "higherLevels": "El daño inicial aumenta en 1d8 por cada nivel de espacio por encima del 5.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Contact Other Plane": {
+    "name": "Contactar con otro plano",
+    "description": "Realiza una tirada de salvación de Inteligencia CD 15 para contactar con una inteligencia extraplanar. Si tienes éxito, haz hasta cinco preguntas en 1 minuto; las respuestas son breves. Si fallas, sufres 6d6 de daño psíquico y quedas incapacitado hasta un descanso largo o una Restauración mayor.",
+    "castingTime": "1 minuto o ritual",
+    "range": "Personal",
+    "duration": "1 minuto"
+  },
+  "Contagion": {
+    "name": "Contagio",
+    "description": "Una criatura tocada realiza una tirada de salvación de Constitución. Si falla, sufre 11d8 de daño necrótico y queda envenenada, con desventaja en tiradas de salvación que usen una característica elegida. Repite la tirada cada turno hasta que tres éxitos terminen el conjuro o tres fallos hagan que dure 7 días.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "7 días",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Creation": {
+    "name": "Creación",
+    "description": "Crea un objeto de hasta un cubo de 5 pies con materia sombría que hayas visto. El material vegetal dura 24 horas; la piedra o el cristal, 12 horas; los metales preciosos, 1 hora; las gemas, 10 minutos; y el adamantino o mitral, 1 minuto. El objeto no puede servir como componente material de otro conjuro.",
+    "higherLevels": "El cubo máximo aumenta en 5 pies por cada nivel de espacio por encima del 5.",
+    "material": "un pincel",
+    "castingTime": "1 minuto",
+    "range": "30 pies",
+    "duration": "Especial"
+  },
+  "Dispel Evil and Good": {
+    "name": "Disipar el mal y el bien",
+    "description": "Durante un máximo de 1 minuto, los celestiales, elementales, feéricos, infernales y muertos vivientes tienen desventaja en ataques contra ti. Termina el conjuro para liberar a una criatura tocada de la posesión, el hechizo o el miedo causados por ellos, o para obligar a uno a 5 pies a realizar una tirada de salvación de Carisma o regresar a su plano natal.",
+    "material": "plata y hierro pulverizados",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Dominate Person": {
+    "name": "Dominar persona",
+    "description": "Un humanoide visible realiza una tirada de salvación de Sabiduría o queda hechizado durante un máximo de 1 minuto. Ordénale cosas mediante un vínculo telepático sin gastar una acción; repite la tirada cuando recibe daño. Tiene ventaja en la tirada inicial si estás luchando contra él.",
+    "higherLevels": "La concentración puede durar 10 minutos con un espacio de nivel 6, 1 hora con uno de nivel 7 u 8 horas con uno de nivel 8 o superior.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Dream": {
+    "name": "Sueño",
+    "description": "Un mensajero voluntario entra en los sueños de una criatura conocida en el mismo plano y habla con ella mientras duerme. Una versión aterradora transmite hasta diez palabras; el objetivo realiza una tirada de salvación de Sabiduría o no obtiene beneficios de su descanso y sufre 3d6 de daño psíquico al despertar.",
+    "material": "un puñado de arena",
+    "castingTime": "1 minuto",
+    "range": "Especial",
+    "duration": "8 horas"
+  },
+  "Flame Strike": {
+    "name": "Golpe de llamas",
+    "description": "Un cilindro de 10 pies de radio y 40 pies de altura exige tiradas de salvación de Destreza. Las criaturas sufren 5d6 de daño de fuego más 5d6 de daño radiante si fallan, o la mitad de cada uno si tienen éxito.",
+    "higherLevels": "Los daños de fuego y radiante aumentan ambos en 1d6 por cada nivel de espacio por encima del 5.",
+    "material": "una pizca de azufre",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "fire_damage": {
+        "label": "Daño"
+      },
+      "radiant_damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Geas": {
+    "name": "Geas",
+    "description": "Una criatura que comprenda tu orden realiza una tirada de salvación de Sabiduría o queda hechizada durante 30 días. Actuar directamente contra la orden causa 5d10 de daño psíquico, como máximo una vez al día. Las órdenes suicidas terminan el conjuro.",
+    "higherLevels": "Un espacio de nivel 7 u 8 dura 365 días; uno de nivel 9 dura hasta que lo terminen Quitar maldición, Restauración mayor o Deseo.",
+    "castingTime": "1 minuto",
+    "range": "60 pies",
+    "duration": "30 días"
+  },
+  "Greater Restoration": {
+    "name": "Restauración mayor",
+    "description": "Toca a una criatura para eliminar un nivel de agotamiento, los estados hechizado o petrificado, una maldición o sintonización con un objeto maldito, la reducción de una puntuación de característica o la reducción del máximo de puntos de golpe.",
+    "material": "polvo de diamante que valga al menos 100 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Hallow": {
+    "name": "Consagrar",
+    "description": "Protege un área de hasta 60 pies de radio hasta que se disipe el conjuro. Aberraciones, celestiales, elementales, feéricos, infernales o muertos vivientes elegidos no pueden entrar voluntariamente, y su posesión, hechizo o miedo quedan suprimidos dentro. Elige un efecto adicional, como luz, oscuridad, silencio, resistencia, vulnerabilidad, valor, miedo, idiomas o bloqueo del teletransporte.",
+    "material": "incienso que valga al menos 1.000 PO, consumido por el conjuro",
+    "castingTime": "24 horas",
+    "range": "Toque",
+    "duration": "Hasta que se disipe"
+  },
+  "Hold Monster": {
+    "name": "Inmovilizar monstruo",
+    "description": "Una criatura visible realiza una tirada de salvación de Sabiduría o queda paralizada durante un máximo de 1 minuto, repitiendo la tirada al final de cada turno.",
+    "higherLevels": "Elige una criatura adicional como objetivo por cada nivel de espacio por encima del 5.",
+    "material": "un trozo recto de hierro",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Insect Plague": {
+    "name": "Plaga de insectos",
+    "description": "Unas langostas llenan una esfera de 20 pies de radio durante un máximo de 10 minutos, dejándola ligeramente oscurecida y convirtiéndola en terreno difícil. Las criaturas realizan tiradas de salvación de Constitución contra 4d10 de daño perforante, o la mitad si tienen éxito, cuando aparece la plaga o cuando entran o terminan un turno allí, una vez por turno.",
+    "higherLevels": "El daño aumenta en 1d10 por cada nivel de espacio por encima del 5.",
+    "material": "una langosta",
+    "castingTime": "Acción",
+    "range": "300 pies",
+    "duration": "Concentración, hasta 10 minutos",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Legend Lore": {
+    "name": "Saber legendario",
+    "description": "Recuerda un resumen veraz, aunque quizá figurado, de conocimientos importantes sobre una persona, lugar u objeto famoso. Cuanto más sepas del tema, más detalles obtienes; el conjuro falla si no es famoso.",
+    "material": "incienso que valga al menos 250 PO, consumido por el conjuro, y cuatro tiras de marfil que valgan al menos 50 PO cada una",
+    "castingTime": "10 minutos",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Mass Cure Wounds": {
+    "name": "Curar heridas en masa",
+    "description": "Elige hasta seis criaturas en una esfera de 30 pies de radio alrededor de un punto visible a 60 pies. Cada una recupera 5d8 más tu modificador por característica para lanzar conjuros en puntos de golpe.",
+    "higherLevels": "La curación aumenta en 1d8 por cada nivel de espacio por encima del 5.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Mislead": {
+    "name": "Engañar",
+    "description": "Quedas invisible y creas un doble ilusorio en tu posición durante un máximo de 1 hora. Tu invisibilidad termina si atacas, causas daño o lanzas un conjuro. Mueve el doble intangible con una acción de Magia y ve y oye a través de él.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Modify Memory": {
+    "name": "Modificar memoria",
+    "description": "Una criatura visible realiza una tirada de salvación de Sabiduría (con ventaja si lucha contra ti) o queda hechizada e incapacitada. Describe un recuerdo alterado de un suceso de las últimas 24 horas que duró como máximo 10 minutos; recibir daño u otro conjuro termina el efecto sin alterar el recuerdo.",
+    "higherLevels": "Un espacio de nivel 6 alcanza 7 días en el pasado; uno de nivel 7, 30 días; uno de nivel 8, 365 días; y uno de nivel 9, cualquier momento.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Passwall": {
+    "name": "Muro de paso",
+    "description": "Abre durante 1 hora un pasadizo a través de madera, yeso o piedra a 30 pies, de hasta 5 pies de ancho, 8 de alto y 20 de profundidad. Cuando se cierra, quienes están dentro son expulsados sin daño.",
+    "material": "una pizca de semillas de sésamo",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "1 hora"
+  },
+  "Planar Binding": {
+    "name": "Ligadura planar",
+    "description": "Vincula a un celestial, elemental, feérico o infernal que permanezca a 60 pies durante la hora de lanzamiento. Realiza una tirada de salvación de Carisma o te sirve durante 24 horas; la duración de un conjuro de invocación se prolonga para coincidir con la vinculación.",
+    "higherLevels": "La duración pasa a 10 días con un espacio de nivel 6, 30 días con uno de nivel 7, 180 días con uno de nivel 8 o 366 días con uno de nivel 9.",
+    "material": "una joya que valga al menos 1.000 PO, consumida por el conjuro",
+    "castingTime": "1 hora",
+    "range": "60 pies",
+    "duration": "24 horas"
+  },
+  "Raise Dead": {
+    "name": "Alzar a los muertos",
+    "description": "Revive a una criatura muerta hace no más de 10 días, salvo una que muriera como muerto viviente. Regresa con 1 punto de golpe y una penalización de -4 en pruebas de D20, que se reduce en 1 después de cada descanso largo. El conjuro falla si faltan partes vitales del cuerpo.",
+    "material": "un diamante que valga al menos 500 PO, consumido por el conjuro",
+    "castingTime": "1 hora",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Reincarnate": {
+    "name": "Reencarnar",
+    "description": "Revive a un humanoide muerto hace no más de 10 días en un cuerpo recién formado. Determina una nueva especie jugable mediante la tabla del conjuro o la elección del director de juego; conserva sus recuerdos y otras capacidades, pero reemplaza los rasgos de su antigua especie.",
+    "material": "aceites raros que valgan al menos 1.000 PO, consumidos por el conjuro",
+    "castingTime": "1 hora",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Scrying": {
+    "name": "Escudriñar",
+    "description": "Ve y oye a una criatura de tu plano durante un máximo de 10 minutos mediante un sensor invisible móvil si falla una tirada de salvación de Sabiduría. El modificador de la tirada es +5 si la conoces de oídas, +0 si la has conocido o -5 si la conoces bien; después, -2 por una imagen, -4 por una pertenencia o -10 por una parte del cuerpo. Si tiene éxito, no puedes usar Escudriñar contra ella durante 24 horas. También puedes situar un sensor inmóvil en un lugar que hayas visto.",
+    "material": "un foco que valga al menos 1.000 PO, como una bola de cristal, un espejo o una pila llena de agua",
+    "castingTime": "10 minutos",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Seeming": {
+    "name": "Apariencia",
+    "description": "Da una apariencia ilusoria durante 8 horas a cada criatura elegida que veas a 30 pies. Los objetivos que no quieran el efecto pueden realizar tiradas de salvación de Carisma. Una inspección física o una prueba de Investigación exitosa contra la CD de salvación de tus conjuros revela el disfraz.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "8 horas"
+  },
+  "Summon Dragon": {
+    "name": "Invocar dragón",
+    "description": "Invoca un espíritu dracónico durante un máximo de 1 hora. Tiene CA 14 más el nivel del espacio, PG 50 más 10 por nivel de espacio superior al 5, vuelo de 60 pies y actúa inmediatamente después de ti. Realiza tantos ataques Desgarrar como la mitad del nivel del espacio, redondeada hacia abajo, usando tu bonificador de ataque de conjuro; cada impacto causa 1d6+4+el nivel del espacio de daño perforante. Su aliento en cono de 30 pies causa 2d6 de daño de ácido, frío, fuego, relámpago o veneno (tirada de salvación de Destreza para sufrir la mitad). Elige una de sus resistencias para compartirla mientras dura el conjuro.",
+    "higherLevels": "Usa el nivel del espacio para determinar la CA, los puntos de golpe y las demás estadísticas que aumentan del espíritu.",
+    "material": "un objeto con la imagen de un dragón grabada que valga al menos 500 PO",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Telekinesis": {
+    "name": "Telequinesia",
+    "description": "Durante un máximo de 10 minutos, usa una acción de Magia cada turno para mover o manipular una criatura u objeto Enorme o menor a 60 pies. Una criatura realiza una tirada de salvación de Fuerza o se mueve hasta 30 pies y queda apresada hasta el final de tu siguiente turno.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Telepathic Bond": {
+    "name": "Vínculo telepático",
+    "description": "Vincula hasta ocho criaturas voluntarias a 30 pies durante 1 hora. Se comunican telepáticamente a cualquier distancia en el mismo plano, incluso si no comparten idiomas.",
+    "material": "dos huevos",
+    "castingTime": "Acción o ritual",
+    "range": "30 pies",
+    "duration": "1 hora"
+  },
+  "Teleportation Circle": {
+    "name": "Círculo de teletransportación",
+    "description": "Dibuja un portal temporal de 5 pies de radio que conduce a un círculo permanente del mismo plano cuyos sigilos conoces. Permanece abierto hasta el final de tu siguiente turno. Lanzar el conjuro diariamente en el mismo lugar durante 365 días crea un círculo permanente.",
+    "material": "tintas raras que valgan al menos 50 PO, consumidas por el conjuro",
+    "castingTime": "1 minuto",
+    "range": "10 pies",
+    "duration": "1 asalto"
+  },
+  "Tree Stride": {
+    "name": "Zancada arbórea",
+    "description": "Durante un máximo de 1 minuto, entra en un árbol vivo y sal de otro árbol vivo de la misma especie a 500 pies, gastando 5 pies de movimiento al entrar y otros 5 al salir. Usa este viaje una vez por turno y termina cada turno fuera del árbol.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Wall of Force": {
+    "name": "Muro de fuerza",
+    "description": "Crea una barrera invisible e invulnerable de diez paneles contiguos de 10 pies o una cúpula o esfera de hasta 10 pies de radio durante un máximo de 10 minutos. Nada físico la atraviesa; Disipar magia no puede terminarla, pero Desintegrar la destruye.",
+    "material": "un fragmento de vidrio",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Wall of Stone": {
+    "name": "Muro de piedra",
+    "description": "Crea diez paneles de piedra contiguos, cada uno de 10 pies de lado y 6 pulgadas de grosor, o paneles de 10 por 20 pies con 3 pulgadas de grosor. Una criatura cercada puede realizar una tirada de salvación de Destreza para apartarse. Cada panel tiene CA 15 y 30 puntos de golpe por pulgada de grosor; mantener la concentración durante los 10 minutos completos hace permanente la barrera.",
+    "material": "un cubo de granito",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Blade Barrier": {
+    "name": "Barrera de cuchillas",
+    "description": "Crea una barrera de hojas mágicas de hasta 100 pies de largo y 20 de alto, o un anillo de 60 pies de diámetro, durante un máximo de 10 minutos. Su espacio es terreno difícil y concede cobertura de tres cuartos. Las criaturas en él realizan tiradas de salvación de Destreza contra 6d10 de daño de fuerza, o la mitad si tienen éxito, cuando aparece o cuando entran o terminan un turno allí, una vez por turno.",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 10 minutos",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Chain Lightning": {
+    "name": "Cadena de relámpagos",
+    "description": "Un relámpago alcanza a un objetivo visible a 150 pies y salta a hasta otros tres a 30 pies de él. Cada objetivo realiza una tirada de salvación de Destreza contra 10d8 de daño de relámpago, o la mitad si tiene éxito; ninguno es alcanzado dos veces.",
+    "higherLevels": "Un rayo adicional salta a otro objetivo por cada nivel de espacio por encima del 6.",
+    "material": "tres alfileres de plata",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Circle of Death": {
+    "name": "Círculo de la muerte",
+    "description": "Una esfera de energía negativa de 60 pies de radio exige tiradas de salvación de Constitución; causa 8d8 de daño necrótico si se falla, o la mitad si se tiene éxito.",
+    "higherLevels": "El daño aumenta en 2d8 por cada nivel de espacio por encima del 6.",
+    "material": "el polvo de una perla negra triturada que valga al menos 500 PO",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Conjure Fey": {
+    "name": "Conjurar hadas",
+    "description": "Invoca un espíritu feérico Mediano durante un máximo de 10 minutos. Al aparecer, realiza un ataque de conjuro cuerpo a cuerpo desde su espacio; si impacta, causa 3d12 más tu modificador por característica para lanzar conjuros en daño psíquico y asusta al objetivo hasta tu siguiente turno. Después puedes usar una acción adicional para teletransportar al espíritu 30 pies y repetir el ataque.",
+    "higherLevels": "El daño aumenta en 1d12 por cada nivel de espacio por encima del 6.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Contingency": {
+    "name": "Contingencia",
+    "description": "Lanza este conjuro y otro preparado de nivel 5 o inferior que requiera una acción y pueda tenerte como objetivo, gastando ambos espacios. El segundo conjuro espera hasta 10 días al desencadenante elegido y entonces solo te afecta a ti. Solo puedes tener una Contingencia activa; perder la estatuilla requerida la termina.",
+    "material": "una estatuilla tuya incrustada de gemas que valga al menos 1.500 PO",
+    "castingTime": "10 minutos",
+    "range": "Personal",
+    "duration": "10 días"
+  },
+  "Create Undead": {
+    "name": "Crear muertos vivientes",
+    "description": "Solo por la noche, anima hasta tres cadáveres de humanoides Medianos o Pequeños como necrófagos, usando una piedra de ónice negro que valga al menos 150 PO por cadáver. Ordénales cosas a 120 pies con una acción adicional. El control dura 24 horas y debes renovarlo antes de que termine.",
+    "higherLevels": "Un espacio de nivel 7 controla cuatro necrófagos; uno de nivel 8 controla cinco necrófagos o dos necrófagos fétidos o tumularios; uno de nivel 9 controla seis necrófagos, tres necrófagos fétidos o tumularios, o dos momias.",
+    "material": "una piedra de ónice negro que valga al menos 150 PO por cada cadáver",
+    "castingTime": "1 minuto",
+    "range": "10 pies",
+    "duration": "Instantánea"
+  },
+  "Disintegrate": {
+    "name": "Desintegrar",
+    "description": "Una criatura visible realiza una tirada de salvación de Destreza o sufre 10d6 + 40 de daño de fuerza. Una criatura reducida a 0 puntos de golpe se desintegra; un objeto no mágico Grande o menor o una creación de fuerza mágica se desintegra automáticamente.",
+    "higherLevels": "El daño aumenta en 3d6 por cada nivel de espacio por encima del 6.",
+    "material": "una piedra imán y polvo",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Eyebite": {
+    "name": "Mirada penetrante",
+    "description": "Durante un máximo de 1 minuto, obliga a una criatura visible a 60 pies a realizar una tirada de salvación de Sabiduría y elige Dormida (inconsciente), Aterrada (asustada y obligada a huir) o Enferma (envenenada). En los turnos posteriores, puedes usar una acción de Magia para afectar a otra criatura que no haya superado una tirada contra este lanzamiento.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Find the Path": {
+    "name": "Encontrar el camino",
+    "description": "Durante un máximo de 1 día, percibe la ruta física más directa hacia un lugar fijo y familiar de tu plano actual. Conoce su dirección y distancia mientras viajas; el conjuro falla con destinos vagos o móviles.",
+    "material": "un conjunto de herramientas de adivinación, como cartas o runas, que valga al menos 100 PO",
+    "castingTime": "1 minuto",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 día"
+  },
+  "Flesh to Stone": {
+    "name": "De carne a piedra",
+    "description": "Una criatura visible realiza una tirada de salvación de Constitución. Si falla, queda apresada; si tiene éxito, su velocidad queda en 0 hasta tu siguiente turno. Un objetivo apresado repite la tirada cada turno: tres éxitos terminan el conjuro y tres fallos lo petrifican. Mantener la concentración durante todo el minuto hace persistir la petrificación.",
+    "material": "una pluma de cocatriz",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Forbiddance": {
+    "name": "Prohibición",
+    "description": "Protege hasta 40.000 pies cuadrados de suelo y 30 pies por encima contra el teletransporte y los viajes planares durante 1 día. Aberraciones, celestiales, elementales, feéricos, infernales o muertos vivientes elegidos sufren 5d10 de daño radiante o necrótico al entrar o terminar un turno allí, salvo que digan tu contraseña. Lanzar el conjuro diariamente durante 30 días lo vuelve permanente y consume el polvo de rubí en el último lanzamiento.",
+    "material": "polvo de rubí que valga al menos 1.000 PO",
+    "castingTime": "10 minutos o ritual",
+    "range": "Toque",
+    "duration": "1 día"
+  },
+  "Freezing Sphere": {
+    "name": "Esfera congelante",
+    "description": "Una esfera de 60 pies de radio exige tiradas de salvación de Constitución contra 10d6 de daño de frío, o la mitad si se tiene éxito. El agua alcanzada se congela y puede apresar a nadadores de la superficie. También puedes sostener el globo durante un máximo de 1 minuto y lanzarlo después antes de que estalle.",
+    "higherLevels": "El daño aumenta en 1d6 por cada nivel de espacio por encima del 6.",
+    "material": "una esfera de cristal en miniatura",
+    "castingTime": "Acción",
+    "range": "300 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Globe of Invulnerability": {
+    "name": "Globo de invulnerabilidad",
+    "description": "Una emanación inmóvil de 10 pies a tu alrededor impide que los conjuros de nivel 5 o inferior lanzados desde fuera afecten a cualquier cosa dentro durante un máximo de 1 minuto.",
+    "higherLevels": "El nivel máximo de conjuro bloqueado aumenta en 1 por cada nivel de espacio por encima del 6.",
+    "material": "una cuenta de vidrio",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Guards and Wards": {
+    "name": "Guardas y barreras",
+    "description": "Protege hasta 2.500 pies cuadrados y 20 pies de altura durante 24 horas. Elige criaturas exentas y una contraseña. Los pasillos se llenan de niebla oscurecedora y pueden desorientar; las puertas reciben Cerradura arcana, hasta diez puertas parecen paredes y las escaleras se llenan de Telaraña que vuelve a crecer. También coloca Luces danzantes, Boca mágica, Nube apestosa, Ráfaga de viento o Sugerencia en lugares concretos. Lanzarlo diariamente durante 365 días vuelve permanente la protección.",
+    "material": "una varilla de plata que valga al menos 10 PO",
+    "castingTime": "1 hora",
+    "range": "Toque",
+    "duration": "24 horas"
+  },
+  "Harm": {
+    "name": "Dañar",
+    "description": "Una criatura visible realiza una tirada de salvación de Constitución. Si falla, sufre 14d6 de daño necrótico y su máximo de puntos de golpe se reduce en la cantidad de daño recibido, pero nunca por debajo de 1. Si tiene éxito, sufre la mitad del daño sin reducir el máximo.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Heal": {
+    "name": "Sanar",
+    "description": "Una criatura visible a 60 pies recupera 70 puntos de golpe y deja de estar cegada, ensordecida y envenenada.",
+    "higherLevels": "La curación aumenta en 10 puntos de golpe por cada nivel de espacio por encima del 6.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Heroes' Feast": {
+    "name": "Fiesta de los héroes",
+    "description": "Conjura un festín que hasta doce criaturas consumen durante 1 hora. En las siguientes 24 horas, cada comensal tiene resistencia al daño de veneno, inmunidad a los estados asustado y envenenado, y aumenta en 2d10 sus puntos de golpe actuales y máximos.",
+    "material": "un cuenco incrustado de gemas que valga al menos 1.000 PO, consumido por el conjuro",
+    "castingTime": "10 minutos",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Instant Summons": {
+    "name": "Invocación instantánea",
+    "description": "Marca un objeto de hasta 10 libras y 6 pies de largo con un zafiro que valga al menos 1.000 PO. Después, aplasta el zafiro con una acción de Magia para invocar el objeto a tu mano desde cualquier distancia o plano. Si otra criatura lo sostiene, descubres quién es y dónde está.",
+    "material": "un zafiro que valga al menos 1.000 PO",
+    "castingTime": "1 minuto o ritual",
+    "range": "Toque",
+    "duration": "Hasta que se disipe"
+  },
+  "Irresistible Dance": {
+    "name": "Danza irresistible",
+    "description": "Una criatura visible realiza una tirada de salvación de Sabiduría. Incluso si tiene éxito, debe gastar todo su movimiento bailando hasta el final de su siguiente turno. Si falla, también queda hechizada, tiene desventaja en tiradas de salvación de Destreza y ataques, y concede ventaja a los ataques contra ella; puede usar una acción para repetir la tirada.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Magic Jar": {
+    "name": "Recipiente mágico",
+    "description": "Coloca tu alma en un recipiente que valga al menos 500 PO, dejando tu cuerpo catatónico. Desde él, intenta poseer a un humanoide visible a 100 pies; realiza una tirada de salvación de Carisma. Si falla, controlas su cuerpo mientras su alma queda atrapada en el recipiente. Perder tu cuerpo o el recipiente en el momento equivocado puede mataros a ti o al anfitrión.",
+    "material": "una gema, cristal o relicario que valga al menos 500 PO",
+    "castingTime": "1 minuto",
+    "range": "Personal",
+    "duration": "Hasta que se disipe"
+  },
+  "Mass Suggestion": {
+    "name": "Sugerencia masiva",
+    "description": "Propón una acción plausible y no perjudicial de hasta 25 palabras a hasta doce criaturas a 60 pies que te entiendan. Cada una realiza una tirada de salvación de Sabiduría o queda hechizada y sigue el plan durante un máximo de 24 horas; termina antes si lo completa o si tú o un aliado la dañáis.",
+    "higherLevels": "La duración pasa a 10 días con un espacio de nivel 7, 30 días con uno de nivel 8 o 366 días con uno de nivel 9.",
+    "material": "una lengua de serpiente",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "24 horas"
+  },
+  "Move Earth": {
+    "name": "Mover la tierra",
+    "description": "Remodela un área de tierra, arena o arcilla de hasta 40 pies de lado. Cada cambio lleva 10 minutos y puede elevar o bajar el terreno, excavar o rellenar zanjas, o construir muros y pilares de hasta la mitad de la mayor dimensión del área. Puedes elegir una nueva área cada 10 minutos durante un máximo de 2 horas.",
+    "material": "una pala en miniatura",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 2 horas"
+  },
+  "Planar Ally": {
+    "name": "Aliado planar",
+    "description": "Solicita un celestial, elemental o infernal a un poder de otro mundo. Aparece a 60 pies, pero no está obligado a ayudar; negocia un servicio, generalmente por unos 100 PO por minuto, 1.000 PO por hora o 10.000 PO por día, según el director de juego.",
+    "castingTime": "10 minutos",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Programmed Illusion": {
+    "name": "Ilusión programada",
+    "description": "Crea una ilusión oculta de no más de un cubo de 30 pies. Un estímulo visual o audible a 30 pies activa una escena de imágenes y sonidos de hasta 5 minutos. Tras un intervalo de 10 minutos, puede activarse de nuevo hasta que se disipe.",
+    "material": "polvo de jade que valga al menos 25 PO",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Hasta que se disipe"
+  },
+  "Sunbeam": {
+    "name": "Rayo de sol",
+    "description": "Emite desde ti una línea de luz solar de 60 pies de largo y 5 de ancho. Las criaturas realizan tiradas de salvación de Constitución contra 6d8 de daño radiante y quedan cegadas hasta tu siguiente turno; si tienen éxito, sufren la mitad y evitan el estado. Puedes usar una acción de Magia para emitir otro rayo cada turno durante un máximo de 1 minuto.",
+    "material": "una lupa",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Transport via Plants": {
+    "name": "Transporte a través de plantas",
+    "description": "Conecta una planta inanimada Grande o mayor a 10 pies con otra planta que hayas visto o tocado en el mismo plano, a cualquier distancia. Durante 1 minuto, las criaturas pueden gastar 5 pies de movimiento para entrar en la primera y salir de la segunda.",
+    "castingTime": "Acción",
+    "range": "10 pies",
+    "duration": "1 minuto"
+  },
+  "True Seeing": {
+    "name": "Visión verdadera",
+    "description": "Una criatura voluntaria que toques obtiene visión verdadera hasta 120 pies durante 1 hora.",
+    "material": "polvo de hongo que valga al menos 25 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Wall of Ice": {
+    "name": "Muro de Hielo",
+    "description": "Crea una cúpula o esfera de hielo de 1 pie de grosor y hasta 10 pies de radio, o diez paneles contiguos de 10 pies, durante un máximo de 10 minutos. Una criatura desplazada por su aparición realiza una tirada de salvación de Destreza contra 10d6 de daño de frío. Los paneles destruidos dejan aire gélido que causa 5d6 de daño de frío a quien lo atraviese y falle una tirada de salvación de Constitución.",
+    "higherLevels": "El daño al aparecer aumenta en 2d6 y el daño del aire gélido en 1d6 por cada nivel de espacio por encima del 6.",
+    "material": "un trozo de cuarzo",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Wall of Thorns": {
+    "name": "Muro de espinas",
+    "description": "Crea una barrera de espinas de hasta 60 pies de largo y 10 de alto, o un anillo de 20 pies de diámetro, durante un máximo de 10 minutos. Las criaturas en su espacio realizan tiradas de salvación de Destreza contra 7d8 de daño perforante al aparecer. Avanzar por ella cuesta 4 pies por cada pie recorrido; entrar o terminar un turno allí causa 7d8 de daño cortante si se falla una tirada de salvación de Destreza, una vez por turno.",
+    "higherLevels": "Ambos tipos de daño aumentan en 1d8 por cada nivel de espacio por encima del 6.",
+    "material": "un puñado de espinas",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Wind Walk": {
+    "name": "Caminar con el viento",
+    "description": "Tú y hasta diez criaturas voluntarias os convertís en nubes durante 8 horas y obtenéis velocidad de vuelo de 300 pies, capacidad de flotar, inmunidad a quedar derribados y resistencia al daño contundente, perforante y cortante. En forma de nube solo podéis Correr o comenzar a recuperar la forma normal, proceso de 1 minuto durante el cual la criatura queda aturdida.",
+    "material": "una vela",
+    "castingTime": "1 minuto",
+    "range": "30 pies",
+    "duration": "8 horas"
+  },
+  "Word of Recall": {
+    "name": "Palabra de recuerdo",
+    "description": "Teletranspórtate con hasta cinco criaturas voluntarias a 5 pies al santuario que designaste previamente al lanzar este conjuro allí. Sin un santuario preparado, el conjuro no tiene efecto.",
+    "castingTime": "Acción",
+    "range": "5 pies",
+    "duration": "Instantánea"
+  },
+  "Arcane Sword": {
+    "name": "Espada arcana",
+    "description": "Crea una espada flotante de fuerza durante un máximo de 1 minuto. Realiza un ataque de conjuro cuerpo a cuerpo contra un objetivo a 5 pies de ella; si impacta, causa 4d12 más tu modificador por característica para lanzar conjuros en daño de fuerza. Como acción adicional en los turnos posteriores, mueve la espada hasta 30 pies y vuelve a atacar.",
+    "material": "una espada en miniatura que valga al menos 250 PO",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Conjure Celestial": {
+    "name": "Conjurar celestial",
+    "description": "Una presencia celestial llena un cilindro de 10 pies de radio y 40 pies de altura durante un máximo de 10 minutos. Cada criatura visible en él puede recibir curación de 4d12 más tu modificador por característica para lanzar conjuros o realizar una tirada de salvación de Destreza contra 6d12 de daño radiante (la mitad si tiene éxito). Cuando te mueves en tu turno, el cilindro puede moverse hasta 30 pies. Puede afectar a criaturas que entren o terminen un turno allí; cada una solo resulta afectada una vez por turno.",
+    "higherLevels": "La curación aumenta en 1d12 y el daño en 1d12 por cada nivel de espacio por encima del 7.",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Delayed Blast Fireball": {
+    "name": "Bola de fuego retardada",
+    "description": "Una cuenta brillante espera en un punto a 150 pies durante un máximo de 1 minuto. Cuando termina la concentración, las criaturas en una esfera de 20 pies de radio realizan una tirada de salvación de Destreza contra 12d6 de daño de fuego, o la mitad si tienen éxito. El daño aumenta en 1d6 al final de cada uno de tus turnos mientras te concentras. Una criatura puede recoger o lanzar la cuenta con una tirada de salvación de Destreza; si falla, explota.",
+    "higherLevels": "El daño inicial aumenta en 1d6 por cada nivel de espacio por encima del 7.",
+    "material": "una bola de guano de murciélago y azufre",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Divine Word": {
+    "name": "Palabra Divina",
+    "description": "Elige criaturas que puedas ver a 30 pies; cada una realiza una tirada de salvación de Carisma. Si falla y tiene 20 puntos de golpe o menos, muere; con 21-30 PG queda cegada, ensordecida y aturdida durante 1 hora; con 31-40 PG queda cegada y ensordecida durante 10 minutos; con 41-50 PG queda ensordecida durante 1 minuto. Un celestial, elemental, feérico o infernal que falle también es desterrado a su plano natal durante al menos 24 horas.",
+    "castingTime": "Acción adicional",
+    "range": "30 pies",
+    "duration": "Instantánea"
+  },
+  "Etherealness": {
+    "name": "Forma etérea",
+    "description": "Entra en la Frontera Etérea durante un máximo de 8 horas. Puedes atravesar criaturas y objetos del Plano Material, pero no afectarlos. Cuando termina el conjuro, vuelves al espacio desocupado más cercano; puedes terminarlo antes si lo decides.",
+    "higherLevels": "Por cada nivel de espacio por encima del 7 puedes llevar a tres criaturas voluntarias adicionales a 10 pies.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Hasta 8 horas"
+  },
+  "Finger of Death": {
+    "name": "Dedo de la muerte",
+    "description": "Una criatura visible a 60 pies realiza una tirada de salvación de Constitución contra 7d8 + 30 de daño necrótico, o la mitad si tiene éxito. Un humanoide muerto por este conjuro se alza como zombi al comienzo de tu siguiente turno y obedece tus órdenes verbales.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Fire Storm": {
+    "name": "Tormenta de fuego",
+    "description": "Crea hasta diez cubos contiguos de llamas de 10 pies cada uno a 150 pies. Las criaturas allí realizan una tirada de salvación de Destreza contra 7d10 de daño de fuego, o la mitad si tienen éxito. Puedes excluir las plantas que elijas.",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Forcecage": {
+    "name": "Jaula de fuerza",
+    "description": "Durante un máximo de 1 hora de concentración, aprisiona criaturas en una jaula de fuerza de hasta 20 pies de lado o una caja sólida de hasta 10 pies de lado. Una criatura atrapada no puede salir por medios no mágicos; teletransportarse o viajar entre planos exige superar una tirada de salvación de Carisma. Disipar magia no termina la jaula.",
+    "material": "polvo de rubí que valga al menos 1.500 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "100 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Magnificent Mansion": {
+    "name": "Mansión magnífica",
+    "description": "Crea una vivienda extradimensional durante 24 horas, con una puerta a 300 pies. Contiene hasta cincuenta cubos de 10 pies, comida para 100 invitados y hasta 100 sirvientes; solo pueden entrar las criaturas que designes.",
+    "material": "una puerta en miniatura que valga al menos 15 PO",
+    "castingTime": "1 minuto",
+    "range": "300 pies",
+    "duration": "24 horas"
+  },
+  "Mirage Arcane": {
+    "name": "Espejismo Arcano",
+    "description": "Durante 10 días, cambia la apariencia, sonido, olor y tacto del terreno en un área de hasta 1 milla cuadrada. Puedes añadir o modificar estructuras y hacer que el terreno sea más fácil o difícil de recorrer, pero no disfrazar ni crear criaturas. La visión verdadera revela el terreno original sin eliminar los efectos físicos de la ilusión.",
+    "castingTime": "10 minutos",
+    "range": "Vista",
+    "duration": "10 días"
+  },
+  "Plane Shift": {
+    "name": "Cambio de plano",
+    "description": "Transpórtate junto a hasta ocho criaturas voluntarias cogidas de la mano a otro plano usando una varilla metálica bifurcada sintonizada. Nombra un destino general y llegad a él o cerca de él, según decida el director de juego, o viajáis a un círculo de teletransporte de ese plano cuya secuencia de sigilos conozcas.",
+    "material": "una varilla metálica bifurcada que valga al menos 250 PO y esté sintonizada con un plano de existencia",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Prismatic Spray": {
+    "name": "Rociada prismática",
+    "description": "Las criaturas en un cono de 60 pies realizan tiradas de salvación de Destreza; tira 1d8 por separado para cada objetivo. Los resultados 1 a 5 causan 12d6 de daño de fuego, ácido, relámpago, veneno o frío (la mitad si la tirada tiene éxito); el 6 deja apresado y tres tiradas fallidas de Constitución causan petrificación; el 7 ciega y puede desterrar tras una tirada de Sabiduría; el 8 golpea con dos rayos diferentes.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Project Image": {
+    "name": "Proyectar imagen",
+    "description": "Crea una copia ilusoria de ti a 500 millas durante un máximo de 1 día de concentración. Tiene tu apariencia y voz; puedes ver y oír a través de ella y moverla hasta 60 pies con una acción de Magia. La interacción física o una prueba de Investigación exitosa pueden revelar la ilusión.",
+    "material": "una estatuilla tuya que valga al menos 5 PO",
+    "castingTime": "Acción",
+    "range": "500 millas",
+    "duration": "Concentración, hasta 1 día"
+  },
+  "Regenerate": {
+    "name": "Regenerar",
+    "description": "Una criatura que toques recupera de inmediato 4d8 + 15 puntos de golpe y después recupera 1 punto de golpe al comienzo de cada uno de sus turnos durante 1 hora. Las partes del cuerpo amputadas vuelven a crecer en 2 minutos.",
+    "material": "una rueda de oraciones",
+    "castingTime": "1 minuto",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Resurrection": {
+    "name": "Resurrección",
+    "description": "Devuelve a la vida con todos sus puntos de golpe a una criatura muerta hace no más de 100 años. No puede haber muerto de vejez ni haber sido muerto viviente al morir; se eliminan los venenos y se restauran las partes del cuerpo perdidas. Sufre una penalización de -4 en pruebas de D20, reducida en 1 después de cada descanso largo. Si llevaba muerta al menos 365 días, no puedes lanzar conjuros y tienes desventaja en pruebas de D20 hasta tu siguiente descanso largo.",
+    "material": "un diamante que valga al menos 1.000 PO, consumido por el conjuro",
+    "castingTime": "1 hora",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Reverse Gravity": {
+    "name": "Gravedad inversa",
+    "description": "Invierte la gravedad en un cilindro de 50 pies de radio y 100 pies de altura durante un máximo de 1 minuto. Criaturas y objetos caen hacia arriba, a menos que una criatura supere una tirada de salvación de Destreza para agarrarse a algo fijo; vuelven a caer cuando termina el conjuro.",
+    "material": "una piedra imán y limaduras de hierro",
+    "castingTime": "Acción",
+    "range": "100 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Sequester": {
+    "name": "Ocultar",
+    "description": "Vuelve a una criatura voluntaria u objeto invisible e indetectable mediante magia hasta que una condición que establezcas termine el conjuro o el objetivo reciba daño. Una criatura afectada queda inconsciente, no envejece y no necesita comida, agua ni aire.",
+    "material": "polvo de gemas que valga al menos 5.000 PO, consumido por el conjuro",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Hasta que se disipe"
+  },
+  "Simulacrum": {
+    "name": "Simulacro",
+    "description": "Después de 12 horas, crea con nieve o hielo un duplicado constructo de una bestia o humanoide. Tiene la mitad del máximo de puntos de golpe del original, no puede ganar niveles ni recuperar capacidades gastadas descansando y no puede lanzar Simulacro. Repararlo durante un descanso largo cuesta 100 PO en materiales por punto de golpe restaurado. Solo puedes tener un simulacro activo.",
+    "material": "polvo de rubí que valga al menos 1.500 PO, consumido por el conjuro",
+    "castingTime": "12 horas",
+    "range": "Toque",
+    "duration": "Hasta que se disipe"
+  },
+  "Symbol": {
+    "name": "Símbolo",
+    "description": "Inscribe un glifo casi invisible con un desencadenante que definas. Al activarse, afecta durante 10 minutos a criaturas en una esfera de 60 pies de radio con un efecto elegido: Muerte (tirada de salvación de Constitución, 10d10 de daño necrótico, la mitad si tiene éxito), Discordia, Miedo, Dolor, Sueño o Aturdimiento, cada uno con su propia tirada y estado. Una criatura resulta afectada como máximo una vez por turno.",
+    "material": "polvo de diamante que valga al menos 1.000 PO, consumido por el conjuro",
+    "castingTime": "1 minuto",
+    "range": "Toque",
+    "duration": "Hasta que se disipe o se active"
+  },
+  "Teleport": {
+    "name": "Teletransporte",
+    "description": "Teletranspórtate con hasta ocho criaturas voluntarias a 10 pies, o un objeto Grande o menor, a un lugar conocido del mismo plano. El director de juego tira d100 según tu familiaridad: un círculo permanente o un objeto vinculado recientemente siempre llega al destino; otros destinos pueden causar un percance (3d10 de daño de fuerza y otra tirada), llegar a una zona similar o desviarse.",
+    "castingTime": "Acción",
+    "range": "10 pies",
+    "duration": "Instantánea"
+  },
+  "Animal Shapes": {
+    "name": "Formas animales",
+    "description": "Cualquier número de criaturas voluntarias que puedas ver a 30 pies se convierten durante 24 horas en bestias Grandes o menores de VD 4 o inferior. Cada una conserva sus puntos y dados de golpe, puntuaciones de características mentales, comunicación y tipo de criatura, pero no puede lanzar conjuros ni usar equipo fusionado con la forma. Gana puntos de golpe temporales iguales a los puntos de golpe de la primera forma. Puedes volver a cambiar sus formas con una acción de Magia; cada objetivo puede terminar la suya con una acción adicional.",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "24 horas"
+  },
+  "Antimagic Field": {
+    "name": "Campo antimagia",
+    "description": "Una emanación de 10 pies centrada en ti suprime conjuros y otros efectos mágicos durante un máximo de 1 hora de concentración. Impide lanzar conjuros y viajar mágicamente hacia la zona o dentro de ella, suprime objetos mágicos y bloquea la mayoría de zonas mágicas y criaturas invocadas, pero no la magia de artefactos ni deidades.",
+    "material": "limaduras de hierro",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Antipathy/Sympathy": {
+    "name": "Antipatía/Simpatía",
+    "description": "Durante 10 días, haz que una criatura u objeto repela o atraiga a un tipo de criatura que especifiques. Una criatura de ese tipo a 120 pies realiza una tirada de salvación de Sabiduría: Antipatía la asusta y la aleja, mientras que Simpatía la hechiza y la atrae. Las tiradas repetidas pueden terminar el efecto para una criatura.",
+    "material": "una mezcla de vinagre y miel",
+    "castingTime": "1 hora",
+    "range": "60 pies",
+    "duration": "10 días"
+  },
+  "Befuddlement": {
+    "name": "Aturdimiento mental",
+    "description": "Una criatura a 150 pies realiza una tirada de salvación de Inteligencia contra 10d12 de daño psíquico, o la mitad si tiene éxito. Si falla, tampoco puede lanzar conjuros ni realizar la acción de Magia. Repite la tirada cada 30 días; Restauración mayor, Sanar o Deseo pueden terminar el efecto.",
+    "material": "un llavero sin llaves",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Clone": {
+    "name": "Clon",
+    "description": "Crea un duplicado inerte de una criatura viva a partir de un trozo de su carne. Tras 120 días, si el original muere y su alma está libre y dispuesta, entra en el clon, que puede ser más joven. Se requiere un diamante de 1.000 PO consumido por el conjuro y un recipiente que pueda sellarse y valga al menos 2.000 PO.",
+    "material": "un diamante que valga al menos 1.000 PO, consumido por el conjuro, y un recipiente sellable que valga al menos 2.000 PO y sea suficientemente grande para contener a la criatura clonada",
+    "castingTime": "1 hora",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Control Weather": {
+    "name": "Controlar el clima",
+    "description": "Durante un máximo de 8 horas de concentración al aire libre, controla el clima en un radio de 5 millas. Puedes cambiar la precipitación, temperatura y viento un nivel a la vez; cada ajuste tarda 1d4 x 10 minutos en surtir efecto.",
+    "material": "incienso encendido",
+    "castingTime": "10 minutos",
+    "range": "Personal",
+    "duration": "Concentración, hasta 8 horas"
+  },
+  "Demiplane": {
+    "name": "Semiplano",
+    "description": "Abre durante 1 hora una puerta sombría a una habitación extradimensional cúbica de 30 pies. Puedes conectarla con un semiplano nuevo, uno que creaste antes u otro cuya naturaleza y contenido conozcas.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "1 hora"
+  },
+  "Dominate Monster": {
+    "name": "Dominar Monstruo",
+    "description": "Una criatura a 60 pies realiza una tirada de salvación de Sabiduría o queda hechizada y bajo tu control telepático durante un máximo de 1 hora de concentración. Puedes darle órdenes y asumir el control directo; cuando sufre daño puede repetir la tirada para terminar el conjuro.",
+    "higherLevels": "Con un espacio de nivel 9, la concentración puede durar hasta 8 horas.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Earthquake": {
+    "name": "Terremoto",
+    "description": "Durante un máximo de 1 minuto, los temblores convierten el suelo de un círculo de 100 pies de radio en terreno difícil. Las criaturas allí realizan tiradas de salvación de Destreza al lanzar el conjuro y cada turno o caen derribadas y pierden la concentración. El conjuro abre 1d6 grietas y causa 50 de daño contundente a las estructuras cada turno; una estructura que se derrumba puede causar 12d6 de daño contundente (tirada de salvación de Destreza para sufrir la mitad).",
+    "material": "una roca agrietada",
+    "castingTime": "Acción",
+    "range": "500 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Glibness": {
+    "name": "Labia",
+    "description": "Durante 1 hora, trata como 15 cualquier resultado de 14 o menos en una prueba de Carisma. La magia que comprueba si dices la verdad considera ciertas tus palabras.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "1 hora"
+  },
+  "Holy Aura": {
+    "name": "Aura Sagrada",
+    "description": "Durante un máximo de 1 minuto, las criaturas elegidas en una emanación de 30 pies a tu alrededor tienen ventaja en todas las tiradas de salvación y las demás criaturas tienen desventaja en ataques contra ellas. Un infernal o muerto viviente que impacte a una criatura protegida cuerpo a cuerpo debe realizar una tirada de salvación de Constitución o queda cegado.",
+    "material": "un relicario que valga al menos 1.000 PO",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Incendiary Cloud": {
+    "name": "Nube incendiaria",
+    "description": "Una esfera de humo de 20 pies de radio, fuertemente oscurecida, aparece a 150 pies y se aleja 10 pies de ti cada turno. Las criaturas en ella cuando aparece, o a las que alcanza o que entren o terminen allí un turno, realizan una tirada de salvación de Destreza contra 10d8 de daño de fuego, o la mitad si tienen éxito; cada una tira solo una vez por turno. La nube dura un máximo de 1 minuto de concentración.",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Maze": {
+    "name": "Laberinto",
+    "description": "Destierra a una criatura a 60 pies a un laberinto durante un máximo de 10 minutos de concentración; no hay tirada de salvación inicial. Puede usar una acción Estudiar para escapar con una prueba de Inteligencia (Investigación) CD 20; si no, vuelve cuando termina el conjuro.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Mind Blank": {
+    "name": "Mente en blanco",
+    "description": "Durante 24 horas, vuelve a una criatura inmune al daño psíquico, al estado hechizado, a la lectura o manipulación de pensamientos y a la Adivinación que la afectaría o revelaría información sobre ella. La protección también frustra Deseo usado con esos fines.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "24 horas"
+  },
+  "Power Word Stun": {
+    "name": "Palabra de poder: aturdir",
+    "description": "Una criatura visible a 60 pies queda aturdida si tiene 150 puntos de golpe o menos; en caso contrario, su velocidad pasa a 0 hasta el comienzo de tu siguiente turno. Un objetivo aturdido repite una tirada de salvación de Constitución al final de cada uno de sus turnos para terminar el efecto.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Sunburst": {
+    "name": "Explosión solar",
+    "description": "La luz solar estalla en una esfera de 60 pies de radio a 150 pies. Las criaturas realizan una tirada de salvación de Constitución contra 12d6 de daño radiante, o la mitad si tienen éxito; las que fallan también quedan cegadas durante 1 minuto y pueden repetir la tirada al final de cada turno. La luz disipa la oscuridad mágica en la zona.",
+    "material": "un trozo de piedra solar",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Tsunami": {
+    "name": "Tsunami",
+    "description": "Levanta una barrera de agua de hasta 300 pies de largo y de alto y 50 de grosor durante un máximo de seis asaltos. Las criaturas en la zona realizan una tirada de salvación de Fuerza contra 6d10 de daño contundente, o la mitad si tienen éxito. Cada asalto avanza 50 pies; las criaturas Enormes o menores atrapadas deben realizar otra tirada de Fuerza contra 5d10 de daño contundente. Su altura y daño posterior disminuyen cada asalto.",
+    "castingTime": "1 minuto",
+    "range": "1 milla",
+    "duration": "Concentración, hasta 6 asaltos"
+  },
+  "Astral Projection": {
+    "name": "Proyección astral",
+    "description": "Proyéctate junto a hasta ocho criaturas voluntarias al Plano Astral y dejad atrás cuerpos inconscientes que no envejecen. Cada forma astral tiene un cordón de plata; cortarlo mata al objetivo. Al salir del Plano Astral, el cuerpo es arrastrado al nuevo plano. El conjuro termina para un objetivo si su cuerpo o forma astral llega a 0 puntos de golpe o si lo cancelas. Cada objetivo requiere un jacinto de 1.000 PO y una barra de plata de 100 PO, ambos consumidos.",
+    "material": "por cada objetivo del conjuro, un jacinto que valga al menos 1.000 PO y una barra de plata que valga al menos 100 PO, todos consumidos por el conjuro",
+    "castingTime": "1 hora",
+    "range": "10 pies",
+    "duration": "Hasta que se disipe"
+  },
+  "Foresight": {
+    "name": "Presciencia",
+    "description": "Durante 8 horas, una criatura voluntaria que toques tiene ventaja en pruebas de D20 y las tiradas de ataque contra ella tienen desventaja. El conjuro termina si lo vuelves a lanzar.",
+    "material": "una pluma de colibrí",
+    "castingTime": "1 minuto",
+    "range": "Toque",
+    "duration": "8 horas"
+  },
+  "Gate": {
+    "name": "Portal",
+    "description": "Abre durante un máximo de 1 minuto un portal de entre 5 y 20 pies de diámetro a un lugar preciso de otro plano. Las criaturas pueden atravesar la parte frontal del portal desde cualquiera de los dos planos. Al abrirlo puedes nombrar a una criatura concreta de otro plano para traerla inmediatamente a tu lado; no obtienes control sobre ella.",
+    "material": "un diamante que valga al menos 5.000 PO",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Imprisonment": {
+    "name": "Aprisionamiento",
+    "description": "Una criatura a 30 pies realiza una tirada de salvación de Sabiduría o queda aprisionada hasta que se disipe el conjuro o se cumpla un desencadenante que establezcas. Elige Enterramiento, Encadenamiento, Prisión rodeada, Contención mínima o Sueño. No envejece ni necesita sustento, no puede teletransportarse ni localizarse mediante Adivinación. Si tiene éxito en la tirada, queda inmune a este conjuro durante 24 horas; solo Disipar magia de nivel 9 puede terminarlo antes.",
+    "material": "una estatuilla del objetivo que valga al menos 5.000 PO",
+    "castingTime": "1 minuto",
+    "range": "30 pies",
+    "duration": "Hasta que se disipe"
+  },
+  "Mass Heal": {
+    "name": "Curación masiva",
+    "description": "Reparte hasta 700 puntos de golpe de curación entre las criaturas que puedas ver a 60 pies. Cada criatura curada también deja de estar cegada, ensordecida y envenenada.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Meteor Swarm": {
+    "name": "Lluvia de meteoritos",
+    "description": "Cuatro meteoros alcanzan puntos distintos a 1 milla. Cada uno crea una esfera de 40 pies de radio; las criaturas allí realizan una tirada de salvación de Destreza contra 20d6 de daño de fuego más 20d6 de daño contundente, o la mitad si tienen éxito. Las zonas superpuestas solo dañan una vez a cada criatura.",
+    "castingTime": "Acción",
+    "range": "1 milla",
+    "duration": "Instantánea"
+  },
+  "Power Word Heal": {
+    "name": "Palabra de poder: sanar",
+    "description": "Una criatura a 60 pies recupera todos sus puntos de golpe y deja de estar hechizada, asustada, paralizada, envenenada y aturdida. Un objetivo derribado puede usar su reacción para levantarse.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Power Word Kill": {
+    "name": "Palabra de poder: matar",
+    "description": "Una criatura a 60 pies muere si tiene 100 puntos de golpe o menos. Si tiene más de 100, sufre 12d12 de daño psíquico; no hay tirada de salvación.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Prismatic Wall": {
+    "name": "Muro prismático",
+    "description": "Crea durante 10 minutos una barrera de siete capas de hasta 90 por 30 pies o una esfera de hasta 30 pies de diámetro. Las criaturas desprotegidas cercanas pueden quedar cegadas; atravesar cada capa exige una tirada de salvación de Destreza. Cada una de las cinco primeras causa 12d6 de daño de fuego, ácido, relámpago, veneno o frío (la mitad si se tiene éxito); la sexta puede petrificar y la séptima desterrar. Cada capa tiene su propia contramedida; Campo antimagia no puede suprimir la barrera.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "10 minutos"
+  },
+  "Shapechange": {
+    "name": "Cambio de forma",
+    "description": "Durante un máximo de 1 hora, conviértete en una criatura que hayas visto cuyo VD no supere tu nivel o VD, salvo un constructo o muerto viviente. Ganas puntos de golpe temporales iguales a los puntos de golpe de la primera forma y usas sus estadísticas, pero conservas tus puntos y dados de golpe, características mentales, competencias, tipo de criatura, comunicación y rasgo Lanzamiento de conjuros. Puedes usar una acción de Magia para adoptar otra forma válida.",
+    "material": "una diadema de jade que valga al menos 1.500 PO",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Storm of Vengeance": {
+    "name": "Tormenta de venganza",
+    "description": "Una tormenta de 300 pies de radio dura un máximo de 1 minuto. Primero, las criaturas bajo ella realizan una tirada de salvación de Constitución o sufren 2d6 de daño de trueno y quedan ensordecidas. El turno 2 causa 4d6 de daño de ácido; el 3 invoca seis rayos de 10d6 de daño de relámpago cada uno (tirada de salvación de Destreza para sufrir la mitad); el 4 causa 2d6 de daño contundente; los turnos 5 a 10 causan 1d6 de daño de frío cada uno y dejan la zona fuertemente oscurecida y difícil de cruzar.",
+    "castingTime": "Acción",
+    "range": "1 milla",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Time Stop": {
+    "name": "Detener el tiempo",
+    "description": "Realiza 1d4 + 1 turnos adicionales mientras el tiempo se detiene para las demás criaturas. El efecto termina antes si afectas a otra criatura o a algo que vista o lleve, o si te alejas más de 1.000 pies del lugar donde lanzaste el conjuro.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "True Polymorph": {
+    "name": "Polimorfia verdadera",
+    "description": "Transforma una criatura en otra criatura o en un objeto no mágico, o un objeto no mágico que nadie lleve en una criatura. Una criatura que no quiera el efecto puede realizar una tirada de salvación de Sabiduría. La forma de criatura tiene un VD no superior al nivel o VD del original; un objeto puede volverse una criatura de VD 9 o menor. Mantener la concentración durante la hora completa hace que el cambio dure hasta que se disipe.",
+    "material": "una gota de mercurio, una porción de goma arábiga y una voluta de humo",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "True Resurrection": {
+    "name": "Resurrección verdadera",
+    "description": "Devuelve a la vida con todos sus puntos de golpe a una criatura muerta hace no más de 200 años, salvo si murió de vejez. Restaura órganos y miembros perdidos, elimina venenos, contagios y maldiciones, y devuelve a los muertos vivientes su forma original. Si el cuerpo ya no existe, decir su nombre crea uno nuevo. Consume diamantes por valor de 25.000 PO.",
+    "material": "diamantes que valgan al menos 25.000 PO, consumidos por el conjuro",
+    "castingTime": "1 hora",
+    "range": "Toque",
+    "duration": "Instantánea"
+  },
+  "Weird": {
+    "name": "Terror sobrenatural",
+    "description": "Las criaturas que elijas en una esfera de 30 pies de radio realizan una tirada de salvación de Sabiduría contra 10d10 de daño psíquico; si tienen éxito, sufren la mitad. Una criatura que falle también queda asustada durante un máximo de 1 minuto y repite la tirada al final de cada turno: un fallo causa 5d10 de daño psíquico y un éxito termina el conjuro para ella.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Wish": {
+    "name": "Deseo",
+    "description": "Duplica cualquier conjuro de nivel 8 o inferior sin cumplir sus requisitos de lanzamiento. Otros usos incluyen crear un objeto no mágico de hasta 25.000 PO, devolver a hasta 20 criaturas toda su salud, conceder resistencia permanente a un tipo de daño o inmunidad temporal a un conjuro, sustituir una dote válida o repetir una tirada de la última ronda. Los deseos mayores dependen del director de juego. Cualquier uso que no sea duplicar un conjuro causa estrés mágico: daño al lanzar conjuros hasta un descanso largo, Fuerza 3 durante 2d4 días y un 33% de probabilidad de no volver a lanzar Deseo.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea"
+  }
+}

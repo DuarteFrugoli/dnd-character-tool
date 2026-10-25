@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "Clérigo",
+        "description": "Escolha dois truques de Clérigo e uma magia de Clérigo de nível 1."
+      },
+      "druid": {
+        "name": "Druida",
+        "description": "Escolha dois truques de Druida e uma magia de Druida de nível 1."
+      },
+      "wizard": {
+        "name": "Mago",
+        "description": "Escolha dois truques de Mago e uma magia de Mago de nível 1."
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "Inteligência",
+        "description": "Use Inteligência como atributo de conjuração para essas magias."
+      },
+      "wisdom": {
+        "name": "Sabedoria",
+        "description": "Use Sabedoria como atributo de conjuração para essas magias."
+      },
+      "charisma": {
+        "name": "Carisma",
+        "description": "Use Carisma como atributo de conjuração para essas magias."
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "Arquearia",
+        "description": "Receba um bônus de +2 nas jogadas de ataque com armas à distância."
+      },
+      "defense": {
+        "name": "Defesa",
+        "description": "Receba +1 na CA enquanto estiver usando armadura Leve, Média ou Pesada."
+      },
+      "great_weapon_fighting": {
+        "name": "Combate com Armas Grandes",
+        "description": "Considere resultados de 1 ou 2 nos dados de dano como 3 ao empunhar com as duas mãos uma arma corpo a corpo de Duas Mãos ou Versátil."
+      },
+      "two_weapon_fighting": {
+        "name": "Combate com Duas Armas",
+        "description": "Adicione seu modificador de atributo ao dano do ataque extra ao usar a propriedade Leve."
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "Arquearia",
+        "description": "Receba um bônus de +2 nas jogadas de ataque com armas à distância."
+      },
+      "defense": {
+        "name": "Defesa",
+        "description": "Receba +1 na CA enquanto estiver usando armadura Leve, Média ou Pesada."
+      },
+      "great_weapon_fighting": {
+        "name": "Combate com Armas Grandes",
+        "description": "Considere resultados de 1 ou 2 nos dados de dano como 3 ao empunhar com as duas mãos uma arma corpo a corpo de Duas Mãos ou Versátil."
+      },
+      "two_weapon_fighting": {
+        "name": "Combate com Duas Armas",
+        "description": "Adicione seu modificador de atributo ao dano do ataque extra ao usar a propriedade Leve."
+      },
+      "blessed_warrior": {
+        "name": "Guerreiro Abençoado",
+        "description": "Aprenda dois truques de Clérigo que contam como magias de Paladino para você."
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "Arquearia",
+        "description": "Receba um bônus de +2 nas jogadas de ataque com armas à distância."
+      },
+      "defense": {
+        "name": "Defesa",
+        "description": "Receba +1 na CA enquanto estiver usando armadura Leve, Média ou Pesada."
+      },
+      "great_weapon_fighting": {
+        "name": "Combate com Armas Grandes",
+        "description": "Considere resultados de 1 ou 2 nos dados de dano como 3 ao empunhar com as duas mãos uma arma corpo a corpo de Duas Mãos ou Versátil."
+      },
+      "two_weapon_fighting": {
+        "name": "Combate com Duas Armas",
+        "description": "Adicione seu modificador de atributo ao dano do ataque extra ao usar a propriedade Leve."
+      },
+      "druidic_warrior": {
+        "name": "Guerreiro Druídico",
+        "description": "Aprenda dois truques de Druida que contam como magias de Patrulheiro para você."
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "Protetor",
+        "description": "Receba proficiência com armas Marciais e treinamento com armaduras Pesadas."
+      },
+      "thaumaturge": {
+        "name": "Taumaturgo",
+        "description": "Aprenda um truque adicional de Clérigo e adicione seu modificador de Sabedoria (mínimo +1) aos testes de Arcanismo ou Religião."
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "Mago",
+        "description": "Aprenda um truque adicional de Druida e adicione seu modificador de Sabedoria (mínimo +1) aos testes de Arcanismo ou Natureza."
+      },
+      "warden": {
+        "name": "Guardião",
+        "description": "Receba proficiência com armas Marciais e treinamento com armaduras Médias."
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "Golpe Divino",
+        "description": "Uma vez por turno, adicione 1d8 de dano Radiante ou Necrótico a um acerto com arma; 2d8 a partir do nível 14 de Clérigo."
+      },
+      "potent_spellcasting": {
+        "name": "Conjuração Potente",
+        "description": "Adicione seu modificador de Sabedoria ao dano de truques de Clérigo; a partir do nível 14, um truque que cause dano também pode conceder Pontos de Vida Temporários."
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "Conjuração Potente",
+        "description": "Adicione seu modificador de Sabedoria ao dano de truques de Druida; no nível 15 de Druida, o alcance dos truques aumenta."
+      },
+      "primal_strike": {
+        "name": "Golpe Primordial",
+        "description": "Uma vez por turno, adicione 1d8 de dano de Frio, Fogo, Elétrico ou Trovejante a um acerto com arma ou em forma de Fera; 2d8 no nível 15."
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "Adestrar Animais"
+      },
+      "athletics": {
+        "name": "Atletismo"
+      },
+      "intimidation": {
+        "name": "Intimidação"
+      },
+      "nature": {
+        "name": "Natureza"
+      },
+      "perception": {
+        "name": "Percepção"
+      },
+      "survival": {
+        "name": "Sobrevivência"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "Arcanismo"
+      },
+      "history": {
+        "name": "História"
+      },
+      "investigation": {
+        "name": "Investigação"
+      },
+      "medicine": {
+        "name": "Medicina"
+      },
+      "nature": {
+        "name": "Natureza"
+      },
+      "religion": {
+        "name": "Religião"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "Magia Cautelosa",
+        "description": "Gaste 1 Ponto de Feitiçaria. Escolha até um número de criaturas igual ao seu modificador de Carisma (mínimo de uma); elas passam automaticamente no teste de resistência da magia e não sofrem dano se o sucesso normalmente reduziria o dano pela metade."
+      },
+      "distant_spell": {
+        "name": "Magia Distante",
+        "description": "Gaste 1 Ponto de Feitiçaria para dobrar o alcance de uma magia com alcance de pelo menos 5 pés, ou para tornar o alcance Toque igual a 30 pés."
+      },
+      "empowered_spell": {
+        "name": "Magia Potencializada",
+        "description": "Gaste 1 Ponto de Feitiçaria para rolar novamente até um número de dados de dano igual ao seu modificador de Carisma (mínimo de um); use os novos resultados. Pode ser combinada com outra Metamagia."
+      },
+      "extended_spell": {
+        "name": "Magia Estendida",
+        "description": "Gaste 1 Ponto de Feitiçaria para dobrar a duração de uma magia, até o máximo de 24 horas, e obter Vantagem nos testes de resistência para manter a Concentração nela."
+      },
+      "heightened_spell": {
+        "name": "Magia Intensificada",
+        "description": "Gaste 2 Pontos de Feitiçaria para impor Desvantagem a um alvo nos testes de resistência contra a magia."
+      },
+      "quickened_spell": {
+        "name": "Magia Acelerada",
+        "description": "Gaste 2 Pontos de Feitiçaria para lançar uma magia de ação como Ação Bônus. Você não pode fazer isso depois de lançar uma magia de nível 1 ou superior no mesmo turno, nem lançar uma depois."
+      },
+      "seeking_spell": {
+        "name": "Magia Perseguidora",
+        "description": "Gaste 1 Ponto de Feitiçaria para rolar novamente um ataque mágico que errou; use o novo resultado. Pode ser combinada com outra Metamagia."
+      },
+      "subtle_spell": {
+        "name": "Magia Sutil",
+        "description": "Gaste 1 Ponto de Feitiçaria para lançar uma magia sem componentes Verbais, Somáticos ou Materiais sem custo que não sejam consumidos."
+      },
+      "transmuted_spell": {
+        "name": "Magia Transmutada",
+        "description": "Gaste 1 Ponto de Feitiçaria para trocar o dano Ácido, de Frio, de Fogo, Elétrico, Venenoso ou Trovejante da magia por outro tipo dessa lista."
+      },
+      "twinned_spell": {
+        "name": "Magia Geminada",
+        "description": "Gaste 1 Ponto de Feitiçaria para aumentar em um o nível efetivo de uma magia que, quando lançada em nível superior, pode afetar outra criatura."
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "Árido"
+      },
+      "polar": {
+        "name": "Polar"
+      },
+      "temperate": {
+        "name": "Temperado"
+      },
+      "tropical": {
+        "name": "Tropical"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "Matador de Colossos",
+        "description": "Uma vez por turno, um acerto com arma contra uma criatura que já perdeu PV causa +1d8 de dano."
+      },
+      "horde_breaker": {
+        "name": "Destruidor de Hordas",
+        "description": "Uma vez no seu turno, ataque com sua arma outra criatura próxima."
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "Escapar da Horda",
+        "description": "Ataques de Oportunidade contra você têm Desvantagem."
+      },
+      "multiattack_defense": {
+        "name": "Defesa contra Ataques Múltiplos",
+        "description": "Depois que uma criatura acerta você, as demais jogadas de ataque dela contra você nesse turno têm Desvantagem."
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "Ácido"
+      },
+      "cold": {
+        "name": "Frio"
+      },
+      "fire": {
+        "name": "Fogo"
+      },
+      "lightning": {
+        "name": "Elétrico"
+      },
+      "poison": {
+        "name": "Veneno"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "Ácido"
+      },
+      "bludgeoning": {
+        "name": "Concussão"
+      },
+      "cold": {
+        "name": "Frio"
+      },
+      "fire": {
+        "name": "Fogo"
+      },
+      "lightning": {
+        "name": "Elétrico"
+      },
+      "necrotic": {
+        "name": "Necrótico"
+      },
+      "piercing": {
+        "name": "Perfurante"
+      },
+      "poison": {
+        "name": "Veneno"
+      },
+      "psychic": {
+        "name": "Psíquico"
+      },
+      "radiant": {
+        "name": "Radiante"
+      },
+      "slashing": {
+        "name": "Cortante"
+      },
+      "thunder": {
+        "name": "Trovejante"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "Negro",
+        "description": "Ácido"
+      },
+      "blue": {
+        "name": "Azul",
+        "description": "Elétrico"
+      },
+      "brass": {
+        "name": "Latão",
+        "description": "Fogo"
+      },
+      "bronze": {
+        "name": "Bronze",
+        "description": "Elétrico"
+      },
+      "copper": {
+        "name": "Cobre",
+        "description": "Ácido"
+      },
+      "gold": {
+        "name": "Ouro",
+        "description": "Fogo"
+      },
+      "green": {
+        "name": "Verde",
+        "description": "Veneno"
+      },
+      "red": {
+        "name": "Vermelho",
+        "description": "Fogo"
+      },
+      "silver": {
+        "name": "Prata",
+        "description": "Frio"
+      },
+      "white": {
+        "name": "Branco",
+        "description": "Frio"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "Drow",
+        "description": "Luzes Dançantes; Fogo das Fadas no nível 3 e Escuridão no nível 5."
+      },
+      "high_elf": {
+        "name": "Elfo Alto",
+        "description": "Prestidigitação; Detectar Magia no nível 3 e Passo Nebuloso no nível 5."
+      },
+      "wood_elf": {
+        "name": "Elfo da Floresta",
+        "description": "Aumento de Deslocamento e Arte Druídica; Passos Longos no nível 3 e Passos sem Pegadas no nível 5."
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "Gnomo da Floresta",
+        "description": "Ilusão Menor e Falar com Animais."
+      },
+      "rock_gnome": {
+        "name": "Gnomo das Rochas",
+        "description": "Consertar, Prestidigitação e dispositivos mecânicos."
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "Passo das Nuvens",
+        "description": "Teleporte-se até 30 pés como Ação Bônus."
+      },
+      "fire": {
+        "name": "Queimadura do Fogo",
+        "description": "Cause 1d10 de dano de Fogo adicional ao acertar."
+      },
+      "frost": {
+        "name": "Frio da Geada",
+        "description": "Cause 1d6 de dano de Frio adicional e reduza o Deslocamento ao acertar."
+      },
+      "hill": {
+        "name": "Tombo da Colina",
+        "description": "Derrube um alvo Grande ou menor ao acertar."
+      },
+      "stone": {
+        "name": "Resistência da Pedra",
+        "description": "Como Reação, reduza o dano sofrido em 1d12 + seu modificador de Constituição."
+      },
+      "storm": {
+        "name": "Trovão da Tempestade",
+        "description": "Cause 1d8 de dano Trovejante a uma criatura que causar dano a você."
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "Abissal",
+        "description": "Resistência a Veneno, Rajada de Veneno; Raio de Enfermidade no nível 3 e Imobilizar Pessoa no nível 5."
+      },
+      "chthonic": {
+        "name": "Ctônico",
+        "description": "Resistência a dano Necrótico, Toque Arrepiante; Vitalidade Falsa no nível 3 e Raio de Enfraquecimento no nível 5."
+      },
+      "infernal": {
+        "name": "Infernal",
+        "description": "Resistência a Fogo, Raio de Fogo; Repreensão Infernal no nível 3 e Escuridão no nível 5."
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "Intuição"
+      },
+      "perception": {
+        "name": "Percepção"
+      },
+      "survival": {
+        "name": "Sobrevivência"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "Clava",
+        "description": "Arma Simples corpo a corpo; maestria Lentidão."
+      },
+      "dagger": {
+        "name": "Adaga",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "greatclub": {
+        "name": "Clava Grande",
+        "description": "Arma Simples corpo a corpo; maestria Empurrão."
+      },
+      "handaxe": {
+        "name": "Machadinha",
+        "description": "Arma Simples corpo a corpo; maestria Perturbação."
+      },
+      "javelin": {
+        "name": "Azagaia",
+        "description": "Arma Simples corpo a corpo; maestria Lentidão."
+      },
+      "light_hammer": {
+        "name": "Martelo Leve",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "mace": {
+        "name": "Maça",
+        "description": "Arma Simples corpo a corpo; maestria Debilitação."
+      },
+      "quarterstaff": {
+        "name": "Bordão",
+        "description": "Arma Simples corpo a corpo; maestria Derrubar."
+      },
+      "sickle": {
+        "name": "Foice",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "spear": {
+        "name": "Lança",
+        "description": "Arma Simples corpo a corpo; maestria Debilitação."
+      },
+      "battleaxe": {
+        "name": "Machado de Batalha",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "flail": {
+        "name": "Mangual",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "glaive": {
+        "name": "Glaive",
+        "description": "Arma Marcial corpo a corpo; maestria Raspar."
+      },
+      "greataxe": {
+        "name": "Machado Grande",
+        "description": "Arma Marcial corpo a corpo; maestria Talhar."
+      },
+      "greatsword": {
+        "name": "Espada Grande",
+        "description": "Arma Marcial corpo a corpo; maestria Raspar."
+      },
+      "halberd": {
+        "name": "Alabarda",
+        "description": "Arma Marcial corpo a corpo; maestria Talhar."
+      },
+      "lance": {
+        "name": "Lança de Cavalaria",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "longsword": {
+        "name": "Espada Longa",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "maul": {
+        "name": "Malho",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "morningstar": {
+        "name": "Maça-estrela",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "pike": {
+        "name": "Pique",
+        "description": "Arma Marcial corpo a corpo; maestria Empurrão."
+      },
+      "rapier": {
+        "name": "Rapieira",
+        "description": "Arma Marcial corpo a corpo; maestria Perturbação."
+      },
+      "scimitar": {
+        "name": "Cimitarra",
+        "description": "Arma Marcial corpo a corpo; maestria Golpe Rápido."
+      },
+      "shortsword": {
+        "name": "Espada Curta",
+        "description": "Arma Marcial corpo a corpo; maestria Perturbação."
+      },
+      "trident": {
+        "name": "Tridente",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "warhammer": {
+        "name": "Martelo de Guerra",
+        "description": "Arma Marcial corpo a corpo; maestria Empurrão."
+      },
+      "war_pick": {
+        "name": "Picareta de Guerra",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "whip": {
+        "name": "Chicote",
+        "description": "Arma Marcial corpo a corpo; maestria Lentidão."
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "Clava",
+        "description": "Arma Simples corpo a corpo; maestria Lentidão."
+      },
+      "dagger": {
+        "name": "Adaga",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "greatclub": {
+        "name": "Clava Grande",
+        "description": "Arma Simples corpo a corpo; maestria Empurrão."
+      },
+      "handaxe": {
+        "name": "Machadinha",
+        "description": "Arma Simples corpo a corpo; maestria Perturbação."
+      },
+      "javelin": {
+        "name": "Azagaia",
+        "description": "Arma Simples corpo a corpo; maestria Lentidão."
+      },
+      "light_hammer": {
+        "name": "Martelo Leve",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "mace": {
+        "name": "Maça",
+        "description": "Arma Simples corpo a corpo; maestria Debilitação."
+      },
+      "quarterstaff": {
+        "name": "Bordão",
+        "description": "Arma Simples corpo a corpo; maestria Derrubar."
+      },
+      "sickle": {
+        "name": "Foice",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "spear": {
+        "name": "Lança",
+        "description": "Arma Simples corpo a corpo; maestria Debilitação."
+      },
+      "dart": {
+        "name": "Dardo",
+        "description": "Arma Simples à distância; maestria Perturbação."
+      },
+      "light_crossbow": {
+        "name": "Besta Leve",
+        "description": "Arma Simples à distância; maestria Lentidão."
+      },
+      "shortbow": {
+        "name": "Arco Curto",
+        "description": "Arma Simples à distância; maestria Perturbação."
+      },
+      "sling": {
+        "name": "Funda",
+        "description": "Arma Simples à distância; maestria Lentidão."
+      },
+      "battleaxe": {
+        "name": "Machado de Batalha",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "flail": {
+        "name": "Mangual",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "glaive": {
+        "name": "Glaive",
+        "description": "Arma Marcial corpo a corpo; maestria Raspar."
+      },
+      "greataxe": {
+        "name": "Machado Grande",
+        "description": "Arma Marcial corpo a corpo; maestria Talhar."
+      },
+      "greatsword": {
+        "name": "Espada Grande",
+        "description": "Arma Marcial corpo a corpo; maestria Raspar."
+      },
+      "halberd": {
+        "name": "Alabarda",
+        "description": "Arma Marcial corpo a corpo; maestria Talhar."
+      },
+      "lance": {
+        "name": "Lança de Cavalaria",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "longsword": {
+        "name": "Espada Longa",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "maul": {
+        "name": "Malho",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "morningstar": {
+        "name": "Maça-estrela",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "pike": {
+        "name": "Pique",
+        "description": "Arma Marcial corpo a corpo; maestria Empurrão."
+      },
+      "rapier": {
+        "name": "Rapieira",
+        "description": "Arma Marcial corpo a corpo; maestria Perturbação."
+      },
+      "scimitar": {
+        "name": "Cimitarra",
+        "description": "Arma Marcial corpo a corpo; maestria Golpe Rápido."
+      },
+      "shortsword": {
+        "name": "Espada Curta",
+        "description": "Arma Marcial corpo a corpo; maestria Perturbação."
+      },
+      "trident": {
+        "name": "Tridente",
+        "description": "Arma Marcial corpo a corpo; maestria Derrubar."
+      },
+      "warhammer": {
+        "name": "Martelo de Guerra",
+        "description": "Arma Marcial corpo a corpo; maestria Empurrão."
+      },
+      "war_pick": {
+        "name": "Picareta de Guerra",
+        "description": "Arma Marcial corpo a corpo; maestria Debilitação."
+      },
+      "whip": {
+        "name": "Chicote",
+        "description": "Arma Marcial corpo a corpo; maestria Lentidão."
+      },
+      "blowgun": {
+        "name": "Zarabatana",
+        "description": "Arma Marcial à distância; maestria Perturbação."
+      },
+      "hand_crossbow": {
+        "name": "Besta de Mão",
+        "description": "Arma Marcial à distância; maestria Perturbação."
+      },
+      "heavy_crossbow": {
+        "name": "Besta Pesada",
+        "description": "Arma Marcial à distância; maestria Empurrão."
+      },
+      "longbow": {
+        "name": "Arco Longo",
+        "description": "Arma Marcial à distância; maestria Lentidão."
+      },
+      "musket": {
+        "name": "Mosquete",
+        "description": "Arma Marcial à distância; maestria Lentidão."
+      },
+      "pistol": {
+        "name": "Pistola",
+        "description": "Arma Marcial à distância; maestria Perturbação."
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "Clava",
+        "description": "Arma Simples corpo a corpo; maestria Lentidão."
+      },
+      "dagger": {
+        "name": "Adaga",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "greatclub": {
+        "name": "Clava Grande",
+        "description": "Arma Simples corpo a corpo; maestria Empurrão."
+      },
+      "handaxe": {
+        "name": "Machadinha",
+        "description": "Arma Simples corpo a corpo; maestria Perturbação."
+      },
+      "javelin": {
+        "name": "Azagaia",
+        "description": "Arma Simples corpo a corpo; maestria Lentidão."
+      },
+      "light_hammer": {
+        "name": "Martelo Leve",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "mace": {
+        "name": "Maça",
+        "description": "Arma Simples corpo a corpo; maestria Debilitação."
+      },
+      "quarterstaff": {
+        "name": "Bordão",
+        "description": "Arma Simples corpo a corpo; maestria Derrubar."
+      },
+      "sickle": {
+        "name": "Foice",
+        "description": "Arma Simples corpo a corpo; maestria Golpe Rápido."
+      },
+      "spear": {
+        "name": "Lança",
+        "description": "Arma Simples corpo a corpo; maestria Debilitação."
+      },
+      "dart": {
+        "name": "Dardo",
+        "description": "Arma Simples à distância; maestria Perturbação."
+      },
+      "light_crossbow": {
+        "name": "Besta Leve",
+        "description": "Arma Simples à distância; maestria Lentidão."
+      },
+      "shortbow": {
+        "name": "Arco Curto",
+        "description": "Arma Simples à distância; maestria Perturbação."
+      },
+      "sling": {
+        "name": "Funda",
+        "description": "Arma Simples à distância; maestria Lentidão."
+      },
+      "rapier": {
+        "name": "Rapieira",
+        "description": "Arma Marcial corpo a corpo; maestria Perturbação."
+      },
+      "scimitar": {
+        "name": "Cimitarra",
+        "description": "Arma Marcial corpo a corpo; maestria Golpe Rápido."
+      },
+      "shortsword": {
+        "name": "Espada Curta",
+        "description": "Arma Marcial corpo a corpo; maestria Perturbação."
+      },
+      "whip": {
+        "name": "Chicote",
+        "description": "Arma Marcial corpo a corpo; maestria Lentidão."
+      },
+      "hand_crossbow": {
+        "name": "Besta de Mão",
+        "description": "Arma Marcial à distância; maestria Perturbação."
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "Rajada Agonizante",
+        "description": "Escolha um dos seus truques de Bruxo conhecidos que cause dano. Você pode adicionar seu modificador de Carisma às jogadas de dano desse truque."
+      },
+      "armor_of_shadows": {
+        "name": "Armadura das Sombras",
+        "description": "Você pode lançar Armadura Arcana em si mesmo sem gastar um espaço de magia."
+      },
+      "ascendant_step": {
+        "name": "Passo Ascendente",
+        "description": "Você pode lançar Levitar em si mesmo sem gastar um espaço de magia."
+      },
+      "devils_sight": {
+        "name": "Visão Diabólica",
+        "description": "Você enxerga normalmente em Luz Fraca e Escuridão, mágicas ou não mágicas, a até 120 pés de você."
+      },
+      "devouring_blade": {
+        "name": "Lâmina Devoradora",
+        "description": "O Ataque Extra da sua invocação Lâmina Sedenta concede dois ataques extras em vez de um."
+      },
+      "eldritch_mind": {
+        "name": "Mente Mística",
+        "description": "Você tem Vantagem nos testes de resistência de Constituição para manter a Concentração."
+      },
+      "eldritch_smite": {
+        "name": "Destruição Mística",
+        "description": "Uma vez por turno, quando você acerta uma criatura com sua arma do pacto, pode gastar um espaço de magia de Magia de Pacto para causar 1d8 de dano de Energia adicional ao alvo, mais 1d8 por nível do espaço. Você também pode deixá-lo Caído se ele for Enorme ou menor."
+      },
+      "eldritch_spear": {
+        "name": "Lança Mística",
+        "description": "Escolha um dos seus truques de Bruxo conhecidos que cause dano e tenha alcance de 10 pés ou mais. Ao lançá-lo, seu alcance aumenta em um número de pés igual a 30 vezes seu nível de Bruxo."
+      },
+      "fiendish_vigor": {
+        "name": "Vigor Infernal",
+        "description": "Você pode lançar Vitalidade Falsa em si mesmo sem gastar um espaço de magia. Ao lançá-la com esta habilidade, não role o dado de Pontos de Vida Temporários; você recebe automaticamente o valor máximo do dado."
+      },
+      "gaze_of_two_minds": {
+        "name": "Olhar de Duas Mentes",
+        "description": "Como Ação Bônus, toque uma criatura voluntária para perceber por meio dos sentidos dela até o fim do seu próximo turno. Enquanto ela estiver no mesmo plano de existência que você, use uma Ação Bônus nos turnos seguintes para manter a conexão até o fim do seu próximo turno. A conexão termina se você não a mantiver assim.\n\nEnquanto percebe por meio dos sentidos da criatura, você se beneficia dos sentidos especiais dela e pode lançar magias como se estivesse no seu espaço ou no espaço dela, desde que ambos estejam a até 60 pés um do outro."
+      },
+      "gift_of_the_depths": {
+        "name": "Dádiva das Profundezas",
+        "description": "Você pode respirar debaixo d'água e recebe Deslocamento de Natação igual ao seu Deslocamento.\n\nVocê também pode lançar Respirar na Água uma vez sem gastar um espaço de magia. Recupera essa capacidade ao terminar um Descanso Longo."
+      },
+      "gift_of_the_protectors": {
+        "name": "Dádiva dos Protetores",
+        "description": "Uma nova página aparece no seu Livro das Sombras quando você o conjura. Com sua permissão, uma criatura pode usar uma ação para escrever seu nome na página, que pode conter um número de nomes igual ao seu modificador de Carisma (mínimo de um nome).\n\nQuando uma criatura cujo nome está na página cai a 0 Pontos de Vida sem morrer imediatamente, ela fica magicamente com 1 Ponto de Vida. Depois que essa magia é ativada, nenhuma criatura pode se beneficiar dela até você terminar um Descanso Longo.\n\nComo ação de Magia, você pode apagar um nome da página tocando-a."
+      },
+      "investment_of_the_chain_master": {
+        "name": "Investidura do Mestre da Corrente",
+        "description": "Quando você lança Encontrar Familiar, infunde o familiar invocado com parte do seu poder místico, concedendo-lhe os seguintes benefícios.\n\nAéreo ou Aquático. O familiar recebe Deslocamento de Voo ou de Natação (à sua escolha) de 40 pés.\n\nAtaque Rápido. Como Ação Bônus, você pode ordenar que o familiar realize a ação Atacar.\n\nDano Necrótico ou Radiante. Sempre que o familiar causar dano de Concussão, Perfurante ou Cortante, você pode fazer com que cause dano Necrótico ou Radiante em vez disso.\n\nSua CD de Resistência. Se o familiar obrigar uma criatura a fazer um teste de resistência, usa sua CD de resistência de magia.\n\nResistência. Quando o familiar sofre dano, você pode usar uma Reação para conceder a ele Resistência a esse dano."
+      },
+      "lessons_of_the_first_ones": {
+        "name": "Lições dos Primeiros",
+        "description": "Você recebeu conhecimento de uma entidade ancestral do multiverso, o que lhe permite receber um talento de Origem à sua escolha (veja \"Talentos\")."
+      },
+      "lifedrinker": {
+        "name": "Bebedor de Vida",
+        "description": "Uma vez por turno, ao acertar uma criatura com sua arma do pacto, você pode causar 1d6 de dano Necrótico, Psíquico ou Radiante adicional (à sua escolha) e gastar um dos seus Dados de Vida para rolá-lo e recuperar Pontos de Vida iguais ao resultado + seu modificador de Constituição (mínimo de 1 Ponto de Vida)."
+      },
+      "mask_of_many_faces": {
+        "name": "Máscara das Muitas Faces",
+        "description": "Você pode lançar Disfarçar-se sem gastar um espaço de magia."
+      },
+      "master_of_myriad_forms": {
+        "name": "Mestre das Inúmeras Formas",
+        "description": "Você pode lançar Alterar-se sem gastar um espaço de magia."
+      },
+      "misty_visions": {
+        "name": "Visões Enevoadas",
+        "description": "Você pode lançar Imagem Silenciosa sem gastar um espaço de magia."
+      },
+      "one_with_shadows": {
+        "name": "Uno com as Sombras",
+        "description": "Enquanto estiver em uma área de Luz Fraca ou Escuridão, você pode lançar Invisibilidade em si mesmo sem gastar um espaço de magia."
+      },
+      "otherworldly_leap": {
+        "name": "Salto Sobrenatural",
+        "description": "Você pode lançar Salto em si mesmo sem gastar um espaço de magia."
+      },
+      "pact_of_the_blade": {
+        "name": "Pacto da Lâmina",
+        "description": "Como Ação Bônus, você pode conjurar em sua mão uma arma do pacto — uma arma Simples ou Marcial corpo a corpo à sua escolha, com a qual cria um vínculo — ou vincular-se a uma arma mágica que tocar. Você não pode criar vínculo com uma arma mágica sintonizada com outra pessoa ou vinculada a outro Bruxo. Enquanto o vínculo durar, você tem proficiência com a arma e pode usá-la como Foco de Conjuração.\n\nAo atacar com a arma vinculada, você pode usar seu modificador de Carisma nas jogadas de ataque e dano em vez de Força ou Destreza; também pode fazer a arma causar dano Necrótico, Psíquico ou Radiante, ou seu tipo de dano normal.\n\nO vínculo termina se você usar novamente a Ação Bônus desta habilidade, se a arma ficar a mais de 5 pés de você por 1 minuto ou mais, ou se você morrer. Uma arma conjurada desaparece quando o vínculo termina."
+      },
+      "pact_of_the_chain": {
+        "name": "Pacto da Corrente",
+        "description": "Você aprende a magia Encontrar Familiar e pode lançá-la como ação de Magia sem gastar um espaço de magia.\n\nAo lançá-la, escolha uma das formas normais do familiar ou uma destas formas especiais: Diabrete, Pseudodragão, Quasit, Esqueleto, Esfinge Maravilhosa, Sprite ou Cobra Venenosa (veja o bloco de estatísticas do familiar em \"Monstros\").\n\nAlém disso, ao realizar a ação Atacar, você pode abrir mão de um dos seus ataques para permitir que seu familiar faça um ataque próprio usando a Reação dele."
+      },
+      "pact_of_the_tome": {
+        "name": "Pacto do Tomo",
+        "description": "Unindo fios de sombra, você conjura um livro em sua mão ao fim de um Descanso Curto ou Longo. Esse Livro das Sombras (cuja aparência você determina) contém magia mística acessível apenas a você e concede os benefícios abaixo. O livro desaparece se você conjurar outro com esta habilidade ou morrer.\n\nTruques e Rituais. Quando o livro aparece, escolha três truques e duas magias de nível 1 com a etiqueta Ritual. Elas podem pertencer à lista de qualquer classe e não podem ser magias que você já tenha preparadas. Enquanto carregar o livro, você terá essas magias preparadas e elas funcionarão como magias de Bruxo para você.\n\nFoco de Conjuração. Você pode usar o livro como Foco de Conjuração."
+      },
+      "repelling_blast": {
+        "name": "Rajada Repulsora",
+        "description": "Escolha um dos seus truques de Bruxo conhecidos que exija uma jogada de ataque. Ao acertar uma criatura Grande ou menor com o truque, você pode empurrá-la até 10 pés diretamente para longe de você."
+      },
+      "thirsting_blade": {
+        "name": "Lâmina Sedenta",
+        "description": "Você recebe a habilidade Ataque Extra apenas para sua arma do pacto. Com ela, pode atacar duas vezes com essa arma, em vez de uma, ao realizar a ação Atacar no seu turno."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visões de Reinos Distantes",
+        "description": "Você pode lançar Olho Arcano sem gastar um espaço de magia."
+      },
+      "whispers_of_the_grave": {
+        "name": "Sussurros do Túmulo",
+        "description": "Você pode lançar Falar com os Mortos sem gastar um espaço de magia."
+      },
+      "witch_sight": {
+        "name": "Visão de Bruxa",
+        "description": "Você tem Visão Verdadeira com alcance de 30 pés."
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Força"
+            },
+            "dexterity": {
+              "name": "Destreza"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Força"
+            },
+            "dexterity": {
+              "name": "Destreza"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "Inteligência"
+            },
+            "wisdom": {
+              "name": "Sabedoria"
+            },
+            "charisma": {
+              "name": "Carisma"
+            }
+          }
+        }
+      }
+    }
+  }
+}

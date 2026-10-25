@@ -1,0 +1,718 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Fúria",
+      "description": "Entre em Fúria como Ação Bônus, desde que não esteja usando armadura Pesada. Durante a Fúria, você tem Resistência a dano de Concussão, Perfurante e Cortante; Vantagem em testes de atributo e de resistência de Força; e adiciona o Dano de Fúria ao dano de armas ou Golpes Desarmados baseados em Força (+2 nos níveis 1–8, +3 nos níveis 9–15 e +4 nos níveis 16–20). Você não pode lançar magias nem se concentrar. A Fúria dura até o fim do seu próximo turno e pode ser prolongada a cada rodada ao atacar, forçar um inimigo a fazer um teste de resistência ou usar uma Ação Bônus, até o máximo de 10 minutos. Usos: 2 nos níveis 1–2, 3 nos níveis 3–5, 4 nos níveis 6–11, 5 nos níveis 12–16 e 6 a partir do nível 17. Recupere um uso após um Descanso Curto e todos após um Descanso Longo."
+    },
+    "Unarmored Defense": {
+      "name": "Defesa sem Armadura",
+      "description": "Sem armadura, sua CA base é 10 + modificador de Destreza + modificador de Constituição. Você ainda pode usar um Escudo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria em Armas",
+      "description": "Escolha dois tipos de armas Simples ou Marciais corpo a corpo cujas propriedades de maestria você pode usar. Troque uma escolha após um Descanso Longo. O número de tipos escolhidos aumenta para três no nível 4 e quatro no nível 10."
+    },
+    "Danger Sense": {
+      "name": "Sentido de Perigo",
+      "description": "Você tem Vantagem nos testes de resistência de Destreza, a menos que esteja Incapacitado."
+    },
+    "Reckless Attack": {
+      "name": "Ataque Descuidado",
+      "description": "Na sua primeira jogada de ataque de um turno, você pode decidir atacar de modo descuidado. Suas jogadas de ataque baseadas em Força têm Vantagem até seu próximo turno, mas os ataques contra você também têm Vantagem."
+    },
+    "Barbarian Subclass": {
+      "name": "Subclasse de Bárbaro",
+      "description": "Escolha uma subclasse de Bárbaro; receba as habilidades dela nos níveis de Bárbaro indicados."
+    },
+    "Primal Knowledge": {
+      "name": "Conhecimento Primitivo",
+      "description": "Receba proficiência em mais uma perícia da lista de nível 1 do Bárbaro. Durante a Fúria, você pode usar Força em testes de Acrobacia, Intimidação, Percepção, Furtividade ou Sobrevivência."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Bárbaro."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Ataque duas vezes ao realizar a ação Atacar."
+    },
+    "Fast Movement": {
+      "name": "Movimento Rápido",
+      "description": "Seu Deslocamento aumenta em 10 pés enquanto você não estiver usando armadura Pesada."
+    },
+    "Feral Instinct": {
+      "name": "Instinto Selvagem",
+      "description": "Você tem Vantagem nas jogadas de Iniciativa."
+    },
+    "Instinctive Pounce": {
+      "name": "Salto Instintivo",
+      "description": "Como parte da Ação Bônus usada para entrar em Fúria, mova-se até metade do seu Deslocamento."
+    },
+    "Brutal Strike": {
+      "name": "Golpe Brutal",
+      "description": "Ao usar Ataque Descuidado, abra mão da Vantagem dele em um ataque baseado em Força que não tenha Desvantagem. Se acertar, adicione 1d10 de dano do mesmo tipo do ataque e escolha um efeito de Golpe Brutal: Golpe Impulsor empurra o alvo 15 pés e permite que você o siga por até metade do seu Deslocamento sem provocar Ataques de Oportunidade; Golpe Tendinoso reduz o Deslocamento do alvo em 15 pés até seu próximo turno."
+    },
+    "Relentless Rage": {
+      "name": "Fúria Implacável",
+      "description": "Se estiver em Fúria e cairia a 0 PV sem morrer imediatamente, faça um teste de resistência de Constituição CD 10. Se passar, seus PV passam a ser o dobro do seu nível de Bárbaro. A CD aumenta em 5 após cada uso e reinicia após um Descanso Curto ou Longo."
+    },
+    "Improved Brutal Strike": {
+      "name": "Golpe Brutal Aprimorado",
+      "description": "Receba mais dois efeitos de Golpe Brutal: Golpe Atordoante impõe Desvantagem ao próximo teste de resistência do alvo e impede Ataques de Oportunidade até seu próximo turno; Golpe Dilacerador concede +5 na jogada de ataque da próxima outra criatura a atacá-lo antes do seu próximo turno. No nível 17, o dano adicional de Golpe Brutal passa a 2d10 e você pode aplicar dois efeitos diferentes ao mesmo acerto."
+    },
+    "Persistent Rage": {
+      "name": "Fúria Persistente",
+      "description": "Uma vez por Descanso Longo, ao rolar Iniciativa, recupere todos os usos de Fúria gastos. A Fúria não exige mais ações para ser prolongada; dura até 10 minutos e só termina antes se você ficar Inconsciente ou usar armadura Pesada."
+    },
+    "Indomitable Might": {
+      "name": "Poder Indomável",
+      "description": "Se o total de um teste de Força ou de um teste de resistência de Força for menor que seu valor de Força, use esse valor no lugar do total."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Primal Champion": {
+      "name": "Campeão Primitivo",
+      "description": "Aumente Força e Constituição em 4 cada; o máximo de ambos passa a 25."
+    }
+  },
+  "Bard": {
+    "Bardic Inspiration": {
+      "name": "Inspiração de Bardo",
+      "description": "Como Ação Bônus, conceda um dado de Inspiração de Bardo a uma criatura a até 60 pés que possa ver ou ouvir você. Até 1 hora após falhar em um Teste de D20, ela pode rolar o dado e somá-lo ao teste. Uma criatura pode ter apenas um desses dados. O número de usos é igual ao seu modificador de Carisma (mínimo 1), recuperados após um Descanso Longo. Tamanho do dado: d6 nos níveis 1–4, d8 nos níveis 5–9, d10 nos níveis 10–14 e d12 a partir do nível 15."
+    },
+    "Spellcasting": {
+      "name": "Conjuração",
+      "description": "Carisma é seu atributo de conjuração de Bardo; um Instrumento Musical pode ser seu foco. Você conhece dois truques de Bardo no nível 1 e aprende mais um nos níveis 4 e 10. Prepare quatro magias de Bardo de nível 1 no nível 1; o número de magias preparadas e de espaços cresce com seu nível de Bardo. Ao ganhar um nível de Bardo, você pode substituir uma magia preparada e um truque por magias de Bardo elegíveis. Magias sempre preparadas por outras habilidades não contam para o limite."
+    },
+    "Expertise": {
+      "name": "Especialização",
+      "description": "Receba Especialização em duas perícias nas quais você é proficiente; receba Especialização em mais duas no nível 9 de Bardo."
+    },
+    "Jack of All Trades": {
+      "name": "Pau para Toda Obra",
+      "description": "Adicione metade do seu Bônus de Proficiência, arredondada para baixo, a um teste de atributo baseado em perícia que não use esse bônus se você não tiver proficiência na perícia."
+    },
+    "Bard Subclass": {
+      "name": "Subclasse de Bardo",
+      "description": "Escolha uma subclasse de Bardo; receba as habilidades dela nos níveis de Bardo indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Bardo."
+    },
+    "Font of Inspiration": {
+      "name": "Fonte de Inspiração",
+      "description": "Recupere todos os usos de Inspiração de Bardo após um Descanso Curto ou Longo. Você pode gastar um espaço de magia, sem usar uma ação, para recuperar um uso."
+    },
+    "Countercharm": {
+      "name": "Contracanção",
+      "description": "Como Reação, quando você ou uma criatura a até 30 pés falhar em um teste de resistência contra a condição Enfeitiçado ou Amedrontado, faça com que o teste seja repetido com Vantagem."
+    },
+    "Magical Secrets": {
+      "name": "Segredos Mágicos",
+      "description": "Quando seu limite de magias preparadas aumentar, as novas magias podem vir das listas de Bardo, Clérigo, Druida ou Mago e contam como magias de Bardo. Você também pode substituir uma magia de Bardo preparada por uma dessas listas."
+    },
+    "Superior Inspiration": {
+      "name": "Inspiração Superior",
+      "description": "Quando rolar Iniciativa com menos de dois usos de Inspiração de Bardo restantes, recupere usos suficientes para ficar com dois."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Words of Creation": {
+      "name": "Palavras de Criação",
+      "description": "Palavra de Poder: Curar e Palavra de Poder: Matar estão sempre preparadas. Ao lançar uma delas, você pode escolher uma segunda criatura a até 10 pés da primeira como alvo."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Conjuração",
+      "description": "Sabedoria é seu atributo de conjuração de Clérigo; um Símbolo Sagrado pode ser seu foco. Você conhece três truques de Clérigo no nível 1 e aprende mais um nos níveis 4 e 10. Prepare quatro magias de Clérigo de nível 1 no nível 1; o limite de magias preparadas e os espaços crescem com seu nível de Clérigo. Após cada Descanso Longo, você pode trocar quaisquer magias de Clérigo preparadas por outras de níveis que possa lançar. Magias sempre preparadas não contam para o limite."
+    },
+    "Divine Order": {
+      "name": "Ordem Divina",
+      "description": "Escolha Protetor para receber proficiência com armas Marciais e treinamento com armaduras Pesadas, ou Taumaturgo para aprender um truque adicional de Clérigo e adicionar seu modificador de Sabedoria (mínimo +1) aos testes de Arcanismo ou Religião."
+    },
+    "Channel Divinity": {
+      "name": "Canalizar Divindade",
+      "description": "Receba Faísca Divina e Expulsar Mortos-Vivos, além de opções da sua subclasse. Use Canalizar Divindade duas vezes no nível 2, três no nível 6 e quatro no nível 18; recupere um uso após um Descanso Curto e todos após um Descanso Longo. Como ação de Magia, Faísca Divina cura outra criatura visível a até 30 pés em 1d8 + seu modificador de Sabedoria ou causa esse valor em dano Necrótico ou Radiante se ela falhar em um teste de resistência de Constituição (metade no sucesso); os dados aumentam para 2d8 no nível 7, 3d8 no 13 e 4d8 no 18. Como ação de Magia, Expulsar Mortos-Vivos obriga Mortos-Vivos escolhidos a até 30 pés a fazer testes de resistência de Sabedoria; em caso de falha, ficam Amedrontados e Incapacitados por 1 minuto e tentam se afastar. O efeito termina se sofrerem dano ou se você ficar Incapacitado ou morrer."
+    },
+    "Cleric Subclass": {
+      "name": "Subclasse de Clérigo",
+      "description": "Escolha uma subclasse de Clérigo; receba as habilidades dela nos níveis de Clérigo indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Clérigo."
+    },
+    "Sear Undead": {
+      "name": "Queimar Mortos-Vivos",
+      "description": "Ao usar Expulsar Mortos-Vivos, cada Morto-Vivo que falhar no teste de resistência também sofre dano Radiante igual a uma rolagem de dados d8 em número igual ao seu modificador de Sabedoria (mínimo 1d8)."
+    },
+    "Blessed Strikes": {
+      "name": "Golpes Abençoados",
+      "description": "Escolha Golpe Divino para adicionar 1d8 de dano Necrótico ou Radiante a um acerto com arma em cada um dos seus turnos, ou Conjuração Potente para adicionar seu modificador de Sabedoria ao dano dos seus truques de Clérigo."
+    },
+    "Divine Intervention": {
+      "name": "Intervenção Divina",
+      "description": "Uma vez por Descanso Longo, use uma ação de Magia para lançar uma magia de Clérigo de nível 5 ou inferior que não exija uma Reação, sem gastar espaço de magia nem componentes Materiais."
+    },
+    "Improved Blessed Strikes": {
+      "name": "Golpes Abençoados Aprimorados",
+      "description": "O dano adicional de Golpe Divino passa a 2d8. Se você escolheu Conjuração Potente, causar dano a uma criatura com um truque de Clérigo pode conceder a você ou a um aliado a até 60 pés Pontos de Vida Temporários iguais ao dobro do seu modificador de Sabedoria."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Greater Divine Intervention": {
+      "name": "Intervenção Divina Maior",
+      "description": "Intervenção Divina pode lançar Desejo. Se escolher Desejo, você não poderá usar Intervenção Divina novamente até terminar 2d4 Descansos Longos."
+    }
+  },
+  "Druid": {
+    "Spellcasting": {
+      "name": "Conjuração",
+      "description": "Sabedoria é seu atributo de conjuração de Druida; um Foco Druídico pode ser seu foco. Você conhece dois truques de Druida no nível 1 e aprende mais um nos níveis 4 e 10. Prepare quatro magias de Druida de nível 1 no nível 1; o limite de magias preparadas e os espaços crescem com seu nível de Druida. Após cada Descanso Longo, você pode substituir magias de Druida preparadas por outras de níveis que possa lançar. Magias sempre preparadas não contam para o limite."
+    },
+    "Druidic": {
+      "name": "Druídico",
+      "description": "Você conhece a língua secreta Druídica e sempre tem Falar com Animais preparada. Pode deixar mensagens ocultas em Druídico; outros Druidas as percebem automaticamente, enquanto os demais precisam passar em um teste de Investigação CD 15 para encontrá-las, mas não conseguem decifrá-las sem magia."
+    },
+    "Primal Order": {
+      "name": "Ordem Primordial",
+      "description": "Escolha Mago para aprender um truque adicional de Druida e adicionar seu modificador de Sabedoria (mínimo +1) aos testes de Arcanismo ou Natureza, ou Guardião para receber proficiência com armas Marciais e treinamento com armaduras Médias."
+    },
+    "Wild Shape": {
+      "name": "Forma Selvagem",
+      "description": "Como Ação Bônus, assuma uma das formas de Fera que você conhece por um número de horas igual à metade do seu nível de Druida. Comece conhecendo quatro formas com ND 1/4 ou inferior e sem Deslocamento de Voo; no nível 4, conheça seis formas até ND 1/2 e, no nível 8, oito formas até ND 1, podendo então escolher formas com Deslocamento de Voo. Substitua uma forma conhecida após um Descanso Longo. Mantenha seus PV, Dados de Vida, atributos mentais, habilidades de classe, idiomas e proficiências; receba Pontos de Vida Temporários iguais ao seu nível de Druida. Você não pode lançar magias na forma de Fera, mas pode manter a Concentração. Comece com dois usos; recupere um após um Descanso Curto e todos após um Descanso Longo. Os usos aumentam para três no nível 6 e quatro no nível 17."
+    },
+    "Wild Companion": {
+      "name": "Companheiro Selvagem",
+      "description": "Gaste um espaço de magia ou um uso de Forma Selvagem como ação de Magia para lançar Encontrar Familiar sem componentes Materiais. O familiar é Feérico e desaparece após seu próximo Descanso Longo."
+    },
+    "Druid Subclass": {
+      "name": "Subclasse de Druida",
+      "description": "Escolha uma subclasse de Druida; receba as habilidades dela nos níveis de Druida indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Druida."
+    },
+    "Wild Resurgence": {
+      "name": "Ressurgimento Selvagem",
+      "description": "Uma vez por turno, quando não tiver usos de Forma Selvagem, gaste um espaço de magia para recuperar um uso. Uma vez por Descanso Longo, gaste um uso de Forma Selvagem para recuperar um espaço de magia de nível 1."
+    },
+    "Elemental Fury": {
+      "name": "Fúria Elemental",
+      "description": "Escolha Conjuração Potente para adicionar seu modificador de Sabedoria ao dano dos truques de Druida, ou Golpe Primordial para adicionar 1d8 de dano de Frio, Fogo, Elétrico ou Trovejante a um acerto com arma ou com ataque de Fera da Forma Selvagem em cada um dos seus turnos."
+    },
+    "Improved Elemental Fury": {
+      "name": "Fúria Elemental Aprimorada",
+      "description": "Conjuração Potente aumenta em 300 pés o alcance de um truque de Druida que normalmente alcance pelo menos 10 pés. O dano adicional de Golpe Primordial passa a 2d8."
+    },
+    "Beast Spells": {
+      "name": "Magias da Fera",
+      "description": "Você pode lançar magias enquanto estiver em Forma Selvagem, exceto magias com componentes Materiais que tenham custo indicado ou sejam consumidos pela magia."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Archdruid": {
+      "name": "Arquidruida",
+      "description": "Quando rolar Iniciativa sem usos de Forma Selvagem restantes, recupere um. Uma vez por Descanso Longo, converta usos de Forma Selvagem não gastos em um único espaço de magia, recebendo dois níveis de magia por uso. Além disso, você envelhece apenas um ano a cada dez anos que passam."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Estilo de Luta",
+      "description": "Receba um talento Estilo de Luta à sua escolha. Sempre que ganhar um nível de Guerreiro, você pode substituí-lo por outro talento Estilo de Luta."
+    },
+    "Second Wind": {
+      "name": "Retomar o Fôlego",
+      "description": "Como Ação Bônus, recupere 1d10 + seu nível de Guerreiro em Pontos de Vida. Comece com dois usos; receba um terceiro no nível 4 e um quarto no nível 10. Recupere um uso após um Descanso Curto e todos após um Descanso Longo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria em Armas",
+      "description": "Escolha três tipos de armas Simples ou Marciais cujas propriedades de maestria você pode usar. Troque uma escolha após um Descanso Longo. O número aumenta para quatro no nível 4, cinco no nível 10 e seis no nível 16."
+    },
+    "Action Surge": {
+      "name": "Surto de Ação",
+      "description": "No seu turno, realize uma ação adicional que não seja a ação de Magia. Recupere o uso após um Descanso Curto ou Longo. No nível 17, você tem dois usos por descanso, mas pode usar a habilidade apenas uma vez por turno."
+    },
+    "Tactical Mind": {
+      "name": "Mente Tática",
+      "description": "Após falhar em um teste de atributo, gaste um uso de Retomar o Fôlego para adicionar 1d10 ao teste. Se ainda falhar, o uso não é gasto."
+    },
+    "Fighter Subclass": {
+      "name": "Subclasse de Guerreiro",
+      "description": "Escolha uma subclasse de Guerreiro; receba as habilidades dela nos níveis de Guerreiro indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 6, 8, 12, 14 e 16 de Guerreiro."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Ataque duas vezes ao realizar a ação Atacar. Isso melhora nos níveis 11 e 20 de Guerreiro."
+    },
+    "Tactical Shift": {
+      "name": "Deslocamento Tático",
+      "description": "Ao ativar Retomar o Fôlego como Ação Bônus, mova-se até metade do seu Deslocamento sem provocar Ataques de Oportunidade."
+    },
+    "Indomitable": {
+      "name": "Indomável",
+      "description": "Após falhar em um teste de resistência, role-o novamente com um bônus igual ao seu nível de Guerreiro e use o novo resultado. Você tem um uso por Descanso Longo no nível 9, dois no nível 13 e três no nível 17."
+    },
+    "Tactical Master": {
+      "name": "Mestre Tático",
+      "description": "Ao atacar com uma arma cuja maestria você pode usar, substitua a propriedade de maestria desse ataque por Empurrão (Push), Debilitação (Sap) ou Lentidão (Slow)."
+    },
+    "Two Extra Attacks": {
+      "name": "Dois Ataques Extras",
+      "description": "Realize três ataques, em vez de um, sempre que realizar a ação Atacar."
+    },
+    "Studied Attacks": {
+      "name": "Ataques Estudados",
+      "description": "Após errar uma criatura com uma jogada de ataque, você tem Vantagem na próxima jogada de ataque contra ela antes do fim do seu próximo turno."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Three Extra Attacks": {
+      "name": "Três Ataques Extras",
+      "description": "Realize quatro ataques, em vez de um, sempre que realizar a ação Atacar."
+    }
+  },
+  "Monk": {
+    "Martial Arts": {
+      "name": "Artes Marciais",
+      "description": "Enquanto estiver sem armadura e sem Escudo, desarmado ou empunhando apenas armas de Monge (armas Simples corpo a corpo ou armas Marciais corpo a corpo Leves), você pode realizar um Golpe Desarmado como Ação Bônus, usar Destreza nas jogadas de ataque e dano e na CD de resistência de Agarrar/Empurrar, e substituir o dano normal pelo seu dado de Artes Marciais. O dado é d6 nos níveis 1–4, d8 nos níveis 5–10, d10 nos níveis 11–16 e d12 a partir do nível 17."
+    },
+    "Unarmored Defense": {
+      "name": "Defesa sem Armadura",
+      "description": "Sem armadura nem Escudo, sua CA base é 10 + modificador de Destreza + modificador de Sabedoria."
+    },
+    "Monk's Focus": {
+      "name": "Foco de Monge",
+      "description": "Você tem Pontos de Foco em número igual ao seu nível de Monge, recuperados após um Descanso Curto ou Longo; a CD de resistência do Foco é 8 + modificador de Sabedoria + Bônus de Proficiência. Gaste 1 ponto para Rajada de Golpes (dois Golpes Desarmados como Ação Bônus), ou use Desengajar ou Correr como Ação Bônus gratuitamente. Gaste 1 ponto para combinar Desengajar com Esquivar (Defesa Paciente) ou Correr (Passo do Vento, que também dobra a distância dos saltos) como Ação Bônus."
+    },
+    "Unarmored Movement": {
+      "name": "Movimento sem Armadura",
+      "description": "Sem armadura nem Escudo, seu Deslocamento aumenta em 10 pés nos níveis 2–5, 15 pés nos níveis 6–9, 20 pés nos níveis 10–13, 25 pés nos níveis 14–17 e 30 pés a partir do nível 18."
+    },
+    "Uncanny Metabolism": {
+      "name": "Metabolismo Sobrenatural",
+      "description": "Uma vez por Descanso Longo, quando rolar Iniciativa, recupere todos os Pontos de Foco e cure um valor igual ao seu nível de Monge + uma rolagem do dado de Artes Marciais."
+    },
+    "Deflect Attacks": {
+      "name": "Desviar Ataques",
+      "description": "Como Reação, quando um ataque acertar você e incluir dano de Concussão, Perfurante ou Cortante, reduza o dano total em 1d10 + seu modificador de Destreza + seu nível de Monge. Se reduzi-lo a 0, gaste 1 Ponto de Foco para redirecioná-lo: uma criatura visível a até 5 pés, se o ataque foi corpo a corpo, ou a até 60 pés e sem Cobertura Total, se foi à distância, faz um teste de resistência de Destreza ou sofre dano do tipo do ataque igual a dois dados de Artes Marciais + seu modificador de Destreza."
+    },
+    "Monk Subclass": {
+      "name": "Subclasse de Monge",
+      "description": "Escolha uma subclasse de Monge; receba as habilidades dela nos níveis de Monge indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Monge."
+    },
+    "Slow Fall": {
+      "name": "Queda Lenta",
+      "description": "Como Reação enquanto cai, reduza o dano de queda em cinco vezes seu nível de Monge."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Ataque duas vezes sempre que realizar a ação Atacar."
+    },
+    "Stunning Strike": {
+      "name": "Golpe Atordoante",
+      "description": "Uma vez por turno, após acertar com uma arma de Monge ou Golpe Desarmado, gaste 1 Ponto de Foco. O alvo faz um teste de resistência de Constituição: se falhar, fica Atordoado até o início do seu próximo turno; se passar, seu Deslocamento é reduzido à metade e o próximo ataque contra ele tem Vantagem até então."
+    },
+    "Empowered Strikes": {
+      "name": "Golpes Potencializados",
+      "description": "Seu Golpe Desarmado pode causar dano de Energia em vez do tipo de dano normal."
+    },
+    "Evasion": {
+      "name": "Evasão",
+      "description": "Em um teste de resistência de Destreza para sofrer metade do dano, você não sofre dano se passar e sofre metade se falhar, a menos que esteja Incapacitado."
+    },
+    "Acrobatic Movement": {
+      "name": "Movimento Acrobático",
+      "description": "Sem armadura nem Escudo, você pode se mover por superfícies verticais e líquidos durante seu turno sem cair enquanto estiver em movimento."
+    },
+    "Heightened Focus": {
+      "name": "Foco Elevado",
+      "description": "Por 1 Ponto de Foco, Rajada de Golpes realiza três Golpes Desarmados; Defesa Paciente também concede Pontos de Vida Temporários iguais a dois dados de Artes Marciais; Passo do Vento pode transportar uma criatura voluntária Grande ou menor a até 5 pés sem provocar Ataques de Oportunidade."
+    },
+    "Self-Restoration": {
+      "name": "Autorreparação",
+      "description": "Ao fim de cada um dos seus turnos, encerre em si mesmo as condições Enfeitiçado, Amedrontado ou Envenenado. Você também não recebe Exaustão por ficar sem comida ou bebida."
+    },
+    "Deflect Energy": {
+      "name": "Desviar Energia",
+      "description": "Desviar Ataques agora funciona contra ataques de qualquer tipo de dano."
+    },
+    "Disciplined Survivor": {
+      "name": "Sobrevivente Disciplinado",
+      "description": "Receba proficiência em todos os testes de resistência. Ao falhar em um deles, gaste 1 Ponto de Foco para rolá-lo novamente e usar o novo resultado."
+    },
+    "Perfect Focus": {
+      "name": "Foco Perfeito",
+      "description": "Quando rolar Iniciativa sem usar Metabolismo Sobrenatural, se tiver três ou menos Pontos de Foco, recupere pontos até ficar com quatro."
+    },
+    "Superior Defense": {
+      "name": "Defesa Superior",
+      "description": "No início do seu turno, gaste 3 Pontos de Foco para receber Resistência a todos os tipos de dano, exceto Energia, por 1 minuto ou até ficar Incapacitado."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Body and Mind": {
+      "name": "Corpo e Mente",
+      "description": "Aumente Destreza e Sabedoria em 4 cada; o máximo de ambos passa a 25."
+    }
+  },
+  "Paladin": {
+    "Lay On Hands": {
+      "name": "Imposição das Mãos",
+      "description": "Uma reserva de cura igual a 5 vezes seu nível de paladino é recuperada após um Descanso Longo. Como Ação Bônus, toque uma criatura, inclusive você, para restaurar Pontos de Vida da reserva; em vez disso, gaste 5 pontos da reserva para remover a condição Envenenado."
+    },
+    "Spellcasting": {
+      "name": "Conjuração",
+      "description": "Carisma é seu atributo de conjuração de paladino; um Símbolo Sagrado pode ser seu foco. No nível 1, prepare duas magias de paladino de nível 1; o limite de preparação e os espaços de magia aumentam com seu nível de paladino. Após um Descanso Longo, você pode substituir uma magia de paladino preparada por outra de um nível que possa conjurar. Magias sempre preparadas não contam para o limite."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria com Armas",
+      "description": "Escolha dois tipos de arma com os quais você tenha proficiência para usar suas propriedades de maestria. Você pode mudar as duas escolhas após um Descanso Longo."
+    },
+    "Fighting Style": {
+      "name": "Estilo de Luta",
+      "description": "Receba um talento de Estilo de Luta ou escolha Guerreiro Abençoado para aprender dois truques de clérigo, que contam como magias de paladino e usam Carisma. Você pode substituir um truque de Guerreiro Abençoado ao ganhar um nível de paladino."
+    },
+    "Paladin's Smite": {
+      "name": "Destruição do Paladino",
+      "description": "Destruição Divina está sempre preparada, e você pode conjurá-la uma vez sem gastar espaço de magia por Descanso Longo."
+    },
+    "Channel Divinity": {
+      "name": "Canalizar Divindade",
+      "description": "Receba Sentido Divino e as opções de Canalizar Divindade da sua subclasse. Você começa com dois usos, que aumentam para três no nível 11 de paladino; recupera um uso após um Descanso Curto e todos após um Descanso Longo. Sentido Divino é uma Ação Bônus que revela Celestiais, Ínferos, Mortos-Vivos e lugares ou objetos consagrados ou profanados a até 60 pés por 10 minutos, até que você fique Incapacitado."
+    },
+    "Paladin Subclass": {
+      "name": "Subclasse de Paladino",
+      "description": "Escolha uma subclasse de paladino; receba suas características nos níveis de paladino indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de paladino."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Sempre que realizar a ação Atacar, você pode atacar duas vezes."
+    },
+    "Faithful Steed": {
+      "name": "Corcel Fiel",
+      "description": "Encontrar Corcel está sempre preparada. Conjure-a uma vez sem gastar espaço de magia por Descanso Longo."
+    },
+    "Aura of Protection": {
+      "name": "Aura de Proteção",
+      "description": "Você e aliados na sua emanação de 10 pés recebem um bônus nas salvaguardas igual ao seu modificador de Carisma (mínimo +1) enquanto você não estiver Incapacitado. Uma criatura se beneficia de apenas uma Aura de Proteção de paladino por vez."
+    },
+    "Abjure Foes": {
+      "name": "Abjurar Inimigos",
+      "description": "Como ação Mágica, gaste um uso de Canalizar Divindade para escolher até um número de criaturas igual ao seu modificador de Carisma (mínimo uma) a até 60 pés. Cada uma faz uma salvaguarda de Sabedoria ou fica Amedrontada por 1 minuto ou até sofrer dano; em cada um de seus turnos, ela pode se mover, realizar uma ação ou realizar uma Ação Bônus, mas apenas uma dessas opções."
+    },
+    "Aura of Courage": {
+      "name": "Aura de Coragem",
+      "description": "Você e aliados na sua Aura de Proteção são imunes à condição Amedrontado; a condição fica suprimida para um aliado afetado enquanto ele estiver na aura."
+    },
+    "Radiant Strikes": {
+      "name": "Golpes Radiantes",
+      "description": "Cada acerto com uma arma corpo a corpo ou Golpe Desarmado causa 1d8 de dano Radiante adicional."
+    },
+    "Restoring Touch": {
+      "name": "Toque Restaurador",
+      "description": "Ao usar Imposição das Mãos, gaste 5 pontos da reserva de cura por condição removida: Cego, Enfeitiçado, Surdo, Amedrontado, Paralisado ou Atordoado. Esses pontos não restauram Pontos de Vida."
+    },
+    "Aura Expansion": {
+      "name": "Expansão da Aura",
+      "description": "Sua Aura de Proteção passa a ser uma emanação de 30 pés."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento de Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    }
+  },
+  "Ranger": {
+    "Spellcasting": {
+      "name": "Conjuração",
+      "description": "Sabedoria é seu atributo de conjuração de patrulheiro; um Foco Druídico pode ser seu foco. No nível 1, prepare duas magias de patrulheiro de nível 1; o limite de preparação e os espaços de magia aumentam com seu nível de patrulheiro. Após um Descanso Longo, você pode substituir uma magia de patrulheiro preparada por outra de um nível que possa conjurar. Magias sempre preparadas não contam para o limite."
+    },
+    "Favored Enemy": {
+      "name": "Inimigo Predileto",
+      "description": "Marca do Caçador está sempre preparada. Conjure-a sem gastar espaço de magia duas vezes nos níveis 1 a 4, três vezes nos níveis 5 a 8, quatro vezes nos níveis 9 a 12, cinco vezes nos níveis 13 a 16 e seis vezes a partir do nível 17. Recupere os usos gratuitos após um Descanso Longo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria com Armas",
+      "description": "Escolha dois tipos de arma com os quais você tenha proficiência para usar suas propriedades de maestria. Você pode mudar as duas escolhas após um Descanso Longo."
+    },
+    "Deft Explorer": {
+      "name": "Explorador Hábil",
+      "description": "Receba Especialização em uma perícia na qual tenha proficiência e ainda não tenha Especialização, e aprenda dois idiomas à sua escolha."
+    },
+    "Fighting Style": {
+      "name": "Estilo de Luta",
+      "description": "Receba um talento de Estilo de Luta ou escolha Guerreiro Druídico para aprender dois truques de druida, que contam como magias de patrulheiro e usam Sabedoria. Você pode substituir um truque de Guerreiro Druídico ao ganhar um nível de patrulheiro."
+    },
+    "Ranger Subclass": {
+      "name": "Subclasse de Patrulheiro",
+      "description": "Escolha uma subclasse de patrulheiro; receba suas características nos níveis de patrulheiro indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de patrulheiro."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Sempre que realizar a ação Atacar, você pode atacar duas vezes."
+    },
+    "Roving": {
+      "name": "Andarilho",
+      "description": "Seu Deslocamento aumenta em 10 pés enquanto você não usar armadura Pesada. Você recebe Deslocamentos de Escalada e Natação iguais ao seu Deslocamento."
+    },
+    "Expertise": {
+      "name": "Especialização",
+      "description": "Receba Especialização em mais duas perícias nas quais tenha proficiência e ainda não tenha Especialização."
+    },
+    "Tireless": {
+      "name": "Incansável",
+      "description": "Como ação Mágica, receba Pontos de Vida Temporários iguais a 1d8 + seu modificador de Sabedoria (mínimo 1), um número de vezes igual ao seu modificador de Sabedoria (mínimo uma) por Descanso Longo. Um Descanso Curto também reduz seu nível de Exaustão em um."
+    },
+    "Relentless Hunter": {
+      "name": "Caçador Implacável",
+      "description": "Sofrer dano não pode interromper sua concentração em Marca do Caçador."
+    },
+    "Nature's Veil": {
+      "name": "Véu da Natureza",
+      "description": "Como Ação Bônus, fique Invisível até o fim do seu próximo turno. Você pode usar esta característica um número de vezes igual ao seu modificador de Sabedoria (mínimo uma) por Descanso Longo."
+    },
+    "Precise Hunter": {
+      "name": "Caçador Preciso",
+      "description": "Você tem Vantagem nos ataques contra a criatura marcada por sua Marca do Caçador."
+    },
+    "Feral Senses": {
+      "name": "Sentidos Feral",
+      "description": "Você recebe Percepção às Cegas com alcance de 30 pés."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento de Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Foe Slayer": {
+      "name": "Matador de Inimigos",
+      "description": "O dado de dano de Marca do Caçador passa a ser um d10 em vez de um d6."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Especialização",
+      "description": "Receba Especialização em duas perícias nas quais tenha proficiência; receba Especialização em mais duas no nível 6 de ladino."
+    },
+    "Sneak Attack": {
+      "name": "Ataque Furtivo",
+      "description": "Uma vez por turno, cause dano adicional com um ataque de arma com a propriedade Acuidade ou de arma de longo alcance quando tiver Vantagem no ataque. Você não precisa de Vantagem se um aliado estiver a até 5 pés do alvo, não estiver Incapacitado e sua jogada não tiver Desvantagem. O dano adicional é 1d6 no nível 1 e aumenta em 1d6 a cada nível ímpar de ladino, até chegar a 10d6 no nível 19."
+    },
+    "Thieves' Cant": {
+      "name": "Gíria de Ladrão",
+      "description": "Você conhece a Gíria de Ladrão e mais um idioma à sua escolha."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria com Armas",
+      "description": "Escolha dois tipos de arma com os quais você tenha proficiência para usar suas propriedades de maestria. Você pode mudar as duas escolhas após um Descanso Longo."
+    },
+    "Cunning Action": {
+      "name": "Ação Ardilosa",
+      "description": "No seu turno, você pode realizar Disparada, Desengajar ou Esconder-se como Ação Bônus."
+    },
+    "Rogue Subclass": {
+      "name": "Subclasse de Ladino",
+      "description": "Escolha uma subclasse de ladino; receba suas características nos níveis de ladino indicados."
+    },
+    "Steady Aim": {
+      "name": "Mira Firme",
+      "description": "Como Ação Bônus antes de se mover, receba Vantagem na próxima jogada de ataque que fizer neste turno; seu Deslocamento passa a ser 0 pelo restante do turno."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 10, 12 e 16 de ladino."
+    },
+    "Cunning Strike": {
+      "name": "Golpe Ardiloso",
+      "description": "Ao causar dano de Ataque Furtivo, renuncie a 1d6 para adicionar um efeito após o dano: Envenenar (exige um Kit de Envenenador com você; salvaguarda de Constituição ou Envenenado por 1 minuto, repetindo a salvaguarda no fim de cada turno), Derrubar (salvaguarda de Destreza ou um alvo Grande ou menor cai Caído) ou Recuar (mova-se até metade do seu Deslocamento sem provocar Ataques de Oportunidade). A CD da salvaguarda é 8 + seu modificador de Destreza + seu Bônus de Proficiência."
+    },
+    "Uncanny Dodge": {
+      "name": "Esquiva Sobrenatural",
+      "description": "Como Reação quando um atacante que você possa ver acertar você com uma jogada de ataque, reduza pela metade o dano desse ataque contra você, arredondando para baixo."
+    },
+    "Evasion": {
+      "name": "Evasão",
+      "description": "Em uma salvaguarda de Destreza para reduzir dano à metade, você não sofre dano se obtiver sucesso e sofre metade se falhar, a menos que esteja Incapacitado."
+    },
+    "Reliable Talent": {
+      "name": "Talento Confiável",
+      "description": "Quando um teste de atributo usar sua proficiência em perícia ou ferramenta, trate uma jogada de d20 de 9 ou menos como 10."
+    },
+    "Improved Cunning Strike": {
+      "name": "Golpe Ardiloso Aprimorado",
+      "description": "Aplique até dois efeitos de Golpe Ardiloso a um mesmo Ataque Furtivo, pagando o custo em dados de cada efeito."
+    },
+    "Devious Strikes": {
+      "name": "Golpes Desleais",
+      "description": "Receba mais opções de Golpe Ardiloso: Atordoar custa 2d6 (salvaguarda de Constituição ou, no próximo turno, o alvo só pode se mover, realizar uma ação ou uma Ação Bônus); Nocautear custa 6d6 (salvaguarda de Constituição ou Inconsciente por até 1 minuto); Obscurecer custa 3d6 (salvaguarda de Destreza ou Cego até o fim do próximo turno do alvo)."
+    },
+    "Slippery Mind": {
+      "name": "Mente Escorregadia",
+      "description": "Receba proficiência nas salvaguardas de Sabedoria e Carisma."
+    },
+    "Elusive": {
+      "name": "Elusivo",
+      "description": "Jogadas de ataque contra você não podem ter Vantagem, a menos que você esteja Incapacitado."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento de Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Stroke of Luck": {
+      "name": "Golpe de Sorte",
+      "description": "Uma vez por Descanso Curto ou Longo, transforme um Teste de d20 fracassado em uma jogada de 20."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Conjuração",
+      "description": "Carisma é seu atributo de conjuração de feiticeiro; um Foco Arcano pode ser seu foco. Você conhece quatro truques de feiticeiro no nível 1 e aprende mais um nos níveis 4 e 10. No nível 1, prepare duas magias de feiticeiro de nível 1; o limite de preparação e os espaços de magia aumentam com seu nível de feiticeiro. Ao ganhar um nível de feiticeiro, você pode substituir uma magia preparada e um truque por magias de feiticeiro válidas."
+    },
+    "Innate Sorcery": {
+      "name": "Feitiçaria Inata",
+      "description": "Como Ação Bônus, libere sua magia inata por 1 minuto: a CD das salvaguardas contra suas magias de feiticeiro aumenta em 1 e você tem Vantagem nas jogadas de ataque com magias de feiticeiro. Dois usos por Descanso Longo."
+    },
+    "Font of Magic": {
+      "name": "Fonte de Magia",
+      "description": "Receba Pontos de Feitiçaria iguais ao seu nível de feiticeiro, recuperados após um Descanso Longo. Troque um espaço de magia por pontos iguais ao nível do espaço sem gastar ação ou gaste pontos como Ação Bônus para criar um espaço de até nível 5. Custos dos espaços: nível 1 custa 2 pontos, nível 2 custa 3, nível 3 custa 5, nível 4 custa 6 e nível 5 custa 7; espaços criados desaparecem após um Descanso Longo. Você deve ter o nível mínimo de feiticeiro exigido para o espaço criado."
+    },
+    "Metamagic": {
+      "name": "Metamagia",
+      "description": "Escolha duas opções de Metamagia e gaste Pontos de Feitiçaria para modificar magias. Normalmente, apenas uma opção pode afetar uma magia. Substitua uma opção sempre que ganhar um nível de feiticeiro. Aprenda mais duas opções no nível 10 e outras duas no nível 17."
+    },
+    "Sorcerer Subclass": {
+      "name": "Subclasse de Feiticeiro",
+      "description": "Escolha uma subclasse de feiticeiro; receba suas características nos níveis de feiticeiro indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de feiticeiro."
+    },
+    "Sorcerous Restoration": {
+      "name": "Restauração Mágica",
+      "description": "Uma vez por Descanso Longo, após terminar um Descanso Curto, recupere Pontos de Feitiçaria gastos até a metade do seu nível de feiticeiro, arredondada para baixo."
+    },
+    "Sorcery Incarnate": {
+      "name": "Feitiçaria Encarnada",
+      "description": "Se não tiver usos de Feitiçaria Inata, gaste 2 Pontos de Feitiçaria ao ativá-la. Enquanto Feitiçaria Inata estiver ativa, aplique até duas opções de Metamagia a cada magia."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento de Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Arcane Apotheosis": {
+      "name": "Apoteose Arcana",
+      "description": "Enquanto Feitiçaria Inata estiver ativa, uma opção de Metamagia em cada um dos seus turnos não custa Pontos de Feitiçaria."
+    }
+  },
+  "Warlock": {
+    "Eldritch Invocations": {
+      "name": "Invocações Místicas",
+      "description": "Aprenda uma Invocação Mística para a qual cumpra os pré-requisitos no nível 1. Sempre que ganhar um nível de bruxo, você pode substituir uma invocação, desde que isso não invalide o pré-requisito de outra. O número de invocações conhecidas aumenta com seu nível de bruxo, chegando a dez no nível 18; você não pode escolher a mesma invocação duas vezes, a menos que ela permita."
+    },
+    "Pact Magic": {
+      "name": "Magia de Pacto",
+      "description": "Carisma é seu atributo de conjuração de bruxo; um Foco Arcano pode ser seu foco. Você conhece dois truques de bruxo no nível 1 e aprende mais um nos níveis 4 e 10. No nível 1, prepare duas magias de bruxo de nível 1; o limite de preparação e o nível uniforme dos espaços de Magia de Pacto aumentam com seu nível de bruxo. Recupere seus espaços de Magia de Pacto após um Descanso Curto ou Longo. Substitua uma magia preparada e um truque ao ganhar um nível de bruxo."
+    },
+    "Magical Cunning": {
+      "name": "Astúcia Mágica",
+      "description": "Uma vez por Descanso Longo, realize um ritual de 1 minuto para recuperar espaços de Magia de Pacto gastos, até a metade do seu número máximo de espaços, arredondada para cima."
+    },
+    "Warlock Subclass": {
+      "name": "Subclasse de Bruxo",
+      "description": "Escolha uma subclasse de bruxo; receba suas características nos níveis de bruxo indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de bruxo."
+    },
+    "Contact Patron": {
+      "name": "Contatar Patrono",
+      "description": "Contato com Outro Plano está sempre preparada. Uma vez por Descanso Longo, conjure-a sem gastar espaço de magia para contatar seu patrono e obtenha sucesso automaticamente na salvaguarda da magia."
+    },
+    "Mystic Arcanum": {
+      "name": "Arcana Mística",
+      "description": "Escolha uma magia de bruxo de nível 6 para conjurar uma vez por Descanso Longo sem gastar espaço de magia. Receba uma arcana separada de nível 7 no nível 13 de bruxo, uma de nível 8 no nível 15 e uma de nível 9 no nível 17, cada uma com sua própria conjuração gratuita. Ao ganhar um nível de bruxo, substitua uma arcana por outra magia de bruxo válida do mesmo nível."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento de Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Eldritch Master": {
+      "name": "Mestre Místico",
+      "description": "Astúcia Mágica agora restaura todos os seus espaços de Magia de Pacto gastos."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Conjuração",
+      "description": "Inteligência é seu atributo de conjuração de mago; um Foco Arcano ou seu grimório pode ser seu foco. Você conhece três truques de mago no nível 1 e aprende mais um nos níveis 4 e 10; substitua um após um Descanso Longo. Seu grimório começa com seis magias de mago de nível 1 e recebe duas magias de mago válidas a cada nível de mago. No nível 1, prepare quatro magias do grimório; o limite e os espaços de magia aumentam com o nível. Após um Descanso Longo, você pode substituir quaisquer magias preparadas por magias válidas do seu grimório."
+    },
+    "Ritual Adept": {
+      "name": "Adepto em Rituais",
+      "description": "Conjure como Ritual uma magia de mago com a marca Ritual presente no seu grimório, sem prepará-la, enquanto lê o grimório."
+    },
+    "Arcane Recovery": {
+      "name": "Recuperação Arcana",
+      "description": "Uma vez por Descanso Longo, após um Descanso Curto, recupere espaços de magia cuja soma dos níveis não exceda metade do seu nível de mago, arredondada para cima; nenhum espaço recuperado pode ser de nível 6 ou superior."
+    },
+    "Scholar": {
+      "name": "Estudioso",
+      "description": "Receba Especialização em uma perícia na qual tenha proficiência, escolhida entre Arcanismo, História, Investigação, Medicina, Natureza ou Religião."
+    },
+    "Wizard Subclass": {
+      "name": "Subclasse de Mago",
+      "description": "Escolha uma subclasse de mago; receba suas características nos níveis de mago indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento no Valor de Atributo",
+      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de mago."
+    },
+    "Memorize Spell": {
+      "name": "Memorizar Magia",
+      "description": "Após um Descanso Curto, substitua uma magia de mago preparada de nível 1 ou superior por outra magia de nível 1 ou superior do seu grimório."
+    },
+    "Spell Mastery": {
+      "name": "Maestria em Magias",
+      "description": "Escolha no seu grimório uma magia de nível 1 e uma de nível 2 que sejam conjuradas com uma ação. Elas estão sempre preparadas, e você pode conjurar cada uma no nível mínimo sem gastar espaço de magia. Após um Descanso Longo, substitua uma das escolhas por outra magia válida do mesmo nível."
+    },
+    "Epic Boon": {
+      "name": "Dádiva Épica",
+      "description": "Receba um talento de Dádiva Épica ou outro talento para o qual cumpra os pré-requisitos."
+    },
+    "Signature Spells": {
+      "name": "Magias Características",
+      "description": "Escolha duas magias de nível 3 do seu grimório. Elas estão sempre preparadas, e você pode conjurar cada uma uma vez no nível 3 sem gastar espaço de magia por Descanso Curto ou Longo."
+    }
+  }
+}

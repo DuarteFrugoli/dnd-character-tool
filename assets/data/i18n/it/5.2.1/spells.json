@@ -1,0 +1,2993 @@
+{
+  "Acid Splash": {
+    "name": "Spruzzo acido",
+    "description": "L'acido esplode in una sfera di raggio 5 piedi entro 60 piedi. Le creature al suo interno effettuano un tiro salvezza su Destrezza o subiscono 1d6 danni da acido. I danni diventano 2d6, 3d6 e 4d6 ai livelli del personaggio 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Chill Touch": {
+    "name": "Tocco freddo",
+    "description": "Effettui un attacco con incantesimo in mischia. Se colpisce, infligge 1d10 danni necrotici e impedisce al bersaglio di recuperare punti ferita fino alla fine del tuo turno successivo. I danni aumentano a 2d10, 3d10 e 4d10 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Dancing Lights": {
+    "name": "Luci danzanti",
+    "description": "Crei fino a quattro luci fioche sospese, ognuna delle quali illumina un raggio di 10 piedi, oppure le unisci in una figura umanoide Media. Con un'azione bonus puoi spostare le luci fino a 60 piedi, mantenendole entro 20 piedi l'una dall'altra.",
+    "material": "un po' di fosforo",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Druidcraft": {
+    "name": "Arte druidica",
+    "description": "Produci un piccolo effetto naturale: prevedi il tempo locale del giorno seguente, fai sbocciare una pianta, crei un effetto sensoriale innocuo oppure accendi o spegni una candela, una torcia o un falò.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Istantanea"
+  },
+  "Eldritch Blast": {
+    "name": "Esplosione mistica",
+    "description": "Effettui un attacco con incantesimo a distanza per ciascun raggio. Se colpisce, infligge 1d10 danni da forza. Crei due raggi al livello 5, tre all'11 e quattro al 17; scegli i bersagli e tiri per colpire separatamente.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Elementalism": {
+    "name": "Elementalismo",
+    "description": "Crei un piccolo effetto elementale entro 30 piedi: muovi aria o polvere, fai apparire una parola sulla sabbia, produci fumo o braci innocui oppure modelli, colori o muovi brevemente l'acqua.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Istantanea"
+  },
+  "Fire Bolt": {
+    "name": "Dardo di fuoco",
+    "description": "Effettui un attacco con incantesimo a distanza contro una creatura o un oggetto. Se colpisce, infligge 1d10 danni da fuoco e incendia gli oggetti infiammabili incustoditi. I danni aumentano a 2d10, 3d10 e 4d10 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Guidance": {
+    "name": "Guida",
+    "description": "Tocchi una creatura consenziente e scegli un'abilità. Per un massimo di 1 minuto, aggiunge 1d4 alle prove di caratteristica che usano quell'abilità.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Light": {
+    "name": "Luce",
+    "description": "Tocchi un oggetto incustodito di taglia Grande o inferiore. Per 1 ora emette luce intensa entro 20 piedi e luce fioca per altri 20 piedi; una copertura opaca la blocca.",
+    "material": "una lucciola o del muschio fosforescente",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Mage Hand": {
+    "name": "Mano magica",
+    "description": "Crei una mano spettrale per 1 minuto. Può manipolare oggetti, aprire porte o contenitori non chiusi a chiave e trasportare fino a 10 libbre, ma non può attaccare o attivare oggetti magici.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "1 minuto"
+  },
+  "Mending": {
+    "name": "Rammendo",
+    "description": "Ripari una singola rottura o lacerazione lunga non più di 1 piede in un oggetto che tocchi. Può riparare fisicamente un oggetto magico, ma non ripristinarne la magia.",
+    "material": "due calamite",
+    "castingTime": "1 minuto",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Message": {
+    "name": "Messaggio",
+    "description": "Sussurri a una creatura entro 120 piedi; solo lei ti sente e può sussurrare una risposta. La familiarità permette al messaggio di attraversare barriere, ma il silenzio magico, uno spessore sufficiente di materiale solido o il piombo lo bloccano.",
+    "material": "un filo di rame",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "1 round"
+  },
+  "Minor Illusion": {
+    "name": "Illusione minore",
+    "description": "Crei un suono oppure l'immagine di un oggetto non più grande di un cubo di 5 piedi per 1 minuto. L'immagine non produce suoni, luce, odori o effetti fisici; una creatura può riconoscerla con l'azione Studiare e una prova di Investigazione contro la CD del tiro salvezza dei tuoi incantesimi.",
+    "material": "un po' di vello",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "1 minuto"
+  },
+  "Poison Spray": {
+    "name": "Spruzzo velenoso",
+    "description": "Effettui un attacco con incantesimo a distanza contro una creatura entro 30 piedi. Se colpisce, infligge 1d12 danni da veleno, che aumentano a 2d12, 3d12 e 4d12 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Prestidigitation": {
+    "name": "Prestidigitazione",
+    "description": "Crei un piccolo effetto magico entro 10 piedi: un effetto sensoriale innocuo, accendi o spegni una piccola fiamma, pulisci o sporchi un piccolo oggetto, ne cambi temperatura o sapore, lasci un segno o crei un minuscolo gingillo. Possono coesistere fino a tre effetti duraturi.",
+    "castingTime": "Azione",
+    "range": "10 piedi",
+    "duration": "Fino a 1 ora"
+  },
+  "Produce Flame": {
+    "name": "Produrre fiamma",
+    "description": "Con un'azione bonus crei una fiamma che emette luce intensa entro 20 piedi e luce fioca per altri 20 piedi per 10 minuti. Durante questo tempo puoi lanciarla fino a 60 piedi con un'azione Magia; un attacco con incantesimo a distanza infligge 1d8 danni da fuoco se colpisce, che aumentano ai livelli 5, 11 e 17.",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "10 minuti",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Ray of Frost": {
+    "name": "Raggio di gelo",
+    "description": "Effettui un attacco con incantesimo a distanza. Se colpisce, infligge 1d8 danni da freddo e riduce la velocità del bersaglio di 10 piedi fino all'inizio del tuo turno successivo. I danni aumentano a 2d8, 3d8 e 4d8 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Resistance": {
+    "name": "Resistenza",
+    "description": "Tocchi una creatura consenziente e scegli acido, contundente, freddo, fuoco, fulmine, necrotico, perforante, veleno, radiante, tagliente o tuono. Una volta per turno, riduce di 1d4 i danni di quel tipo per un massimo di 1 minuto.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Sacred Flame": {
+    "name": "Fiamma sacra",
+    "description": "Una creatura visibile entro 60 piedi effettua un tiro salvezza su Destrezza o subisce 1d8 danni radianti; la copertura parziale o per tre quarti non aiuta nel tiro. I danni aumentano a 2d8, 3d8 e 4d8 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Shillelagh": {
+    "name": "Shillelagh",
+    "description": "Potenzi una clava o un bastone ferrato che impugni per 1 minuto. Usi la tua caratteristica da incantatore per i tiri per colpire e i danni in mischia; il dado di danno diventa d8 e i danni possono essere da forza invece del tipo normale. Il dado diventa d10 al livello 5, d12 all'11 e 2d6 al 17.",
+    "material": "vischio",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "1 minuto"
+  },
+  "Shocking Grasp": {
+    "name": "Stretta folgorante",
+    "description": "Effettui un attacco con incantesimo in mischia. Se colpisce, infligge 1d8 danni da fulmine e impedisce al bersaglio di effettuare attacchi di opportunità fino all'inizio del suo turno successivo. I danni aumentano a 2d8, 3d8 e 4d8 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Sorcerous Burst": {
+    "name": "Esplosione stregonesca",
+    "description": "Effettui un attacco con incantesimo a distanza contro una creatura o un oggetto. Se colpisce, infligge 1d8 danni da acido, freddo, fuoco, fulmine, veleno, psichici o da tuono. Ogni dado di danno che mostra 8 può aggiungere un altro d8, fino a un massimo di dadi aggiuntivi pari al tuo modificatore da incantatore. I dadi base diventano 2d8, 3d8 e 4d8 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Istantanea"
+  },
+  "Spare the Dying": {
+    "name": "Stabilizzare",
+    "description": "Una creatura con 0 punti ferita che non è morta diventa stabile. La gittata è di 15 piedi e raddoppia ai livelli 5, 11 e 17 fino a 30, 60 e 120 piedi.",
+    "castingTime": "Azione",
+    "range": "15 piedi",
+    "duration": "Istantanea"
+  },
+  "Starry Wisp": {
+    "name": "Bagliore stellare",
+    "description": "Effettui un attacco con incantesimo a distanza. Se colpisce, infligge 1d8 danni radianti; fino alla fine del tuo turno successivo, il bersaglio emette luce fioca entro 10 piedi e non può beneficiare della condizione Invisibile. I danni aumentano a 2d8, 3d8 e 4d8 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Thaumaturgy": {
+    "name": "Taumaturgia",
+    "description": "Crei una piccola meraviglia entro 30 piedi, come occhi alterati, una voce tonante che concede vantaggio alle prove di Intimidire, fiamme cambiate, una porta che si apre o si chiude, un suono fantasma o un tremore. Possono coesistere fino a tre effetti duraturi.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Fino a 1 minuto"
+  },
+  "True Strike": {
+    "name": "Colpo accurato",
+    "description": "Effettui un attacco con un'arma che padroneggi e valga almeno 1 moneta di rame, usando la tua caratteristica da incantatore per il tiro per colpire e i danni. I danni possono essere radianti o del tipo normale dell'arma, più 1d6, 2d6 o 3d6 danni radianti ai livelli 5, 11 o 17.",
+    "material": "un'arma che padroneggi del valore di almeno 1 moneta di rame",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Vicious Mockery": {
+    "name": "Insulto tagliente",
+    "description": "Una creatura che vedi o senti entro 60 piedi effettua un tiro salvezza su Saggezza o subisce 1d6 danni psichici e ha svantaggio al suo prossimo attacco prima della fine del suo turno successivo. I danni aumentano a 2d6, 3d6 e 4d6 ai livelli 5, 11 e 17.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Alarm": {
+    "name": "Allarme",
+    "description": "Proteggi per 8 ore una porta, una finestra o un'area grande al massimo quanto un cubo di 20 piedi. Scegli le creature che non lo attivano e se un intruso provoca un avviso mentale o un campanello udibile.",
+    "material": "un campanello e un filo d'argento",
+    "castingTime": "1 minuto o Rituale",
+    "range": "30 piedi",
+    "duration": "8 ore"
+  },
+  "Animal Friendship": {
+    "name": "Amicizia animale",
+    "description": "Una bestia che vedi effettua un tiro salvezza su Saggezza. Se fallisce, è affascinata da te per 24 ore; l'effetto termina se tu o un alleato la danneggiate. Un incantesimo di livello superiore aggiunge una bestia per livello.",
+    "material": "un boccone di cibo",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "24 ore"
+  },
+  "Bane": {
+    "name": "Anatema",
+    "description": "Fino a tre creature visibili effettuano tiri salvezza su Carisma. Un bersaglio che fallisce sottrae 1d4 ai tiri per colpire e ai tiri salvezza per un massimo di 1 minuto. Ogni livello di slot oltre il 1° aggiunge un bersaglio.",
+    "material": "una goccia di sangue",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Bless": {
+    "name": "Benedizione",
+    "description": "Fino a tre creature aggiungono 1d4 ai tiri per colpire e ai tiri salvezza per un massimo di 1 minuto. Ogni livello di slot oltre il 1° aggiunge un bersaglio.",
+    "material": "un simbolo sacro del valore di almeno 5 mo",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Burning Hands": {
+    "name": "Mani brucianti",
+    "description": "Il fuoco riempie un cono di 15 piedi che parte da te. Le creature effettuano un tiro salvezza su Destrezza, subendo 3d6 danni da fuoco se falliscono o la metà se riescono. Gli oggetti infiammabili incustoditi prendono fuoco; gli slot superiori aggiungono 1d6 danni per livello.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d6.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Charm Person": {
+    "name": "Charme su persone",
+    "description": "Un umanoide visibile effettua un tiro salvezza su Saggezza, con vantaggio se tu o i tuoi alleati lo state combattendo. Se fallisce, è affascinato e amichevole per 1 ora; l'effetto termina prima se tu o un alleato lo ferite. Al termine sa di essere stato affascinato.",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "1 ora"
+  },
+  "Chromatic Orb": {
+    "name": "Globo cromatico",
+    "description": "Effettui un attacco con incantesimo a distanza che infligge 3d8 danni da acido, freddo, fuoco, fulmine, veleno o tuono. Se i dadi di danno mostrano lo stesso risultato, la sfera può saltare a un altro bersaglio entro 30 piedi; uno slot superiore aggiunge 1d8 danni e consente un numero massimo di salti pari al livello dello slot. Nessun bersaglio può essere colpito due volte.",
+    "material": "un diamante del valore di almeno 50 mo",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d8.",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Color Spray": {
+    "name": "Spruzzo colorato",
+    "description": "Le creature in un cono di 15 piedi effettuano tiri salvezza su Costituzione. Quelle che falliscono sono accecate fino alla fine del tuo turno successivo.",
+    "material": "un pizzico di sabbia colorata",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Command": {
+    "name": "Comando",
+    "description": "Una creatura che vedi effettua un tiro salvezza su Saggezza contro un ordine di una parola. Se fallisce, nel suo turno successivo si avvicina a te, lascia cadere ciò che impugna, fugge, cade prona o si ferma, secondo l'ordine scelto. Gli slot superiori aggiungono bersagli.",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Comprehend Languages": {
+    "name": "Comprendere le lingue",
+    "description": "Per 1 ora comprendi il significato letterale delle lingue parlate o segnate e degli scritti che tocchi. Leggere una pagina richiede circa un minuto; i messaggi cifrati restano indecifrabili.",
+    "material": "un pizzico di fuliggine e sale",
+    "castingTime": "Azione o Rituale",
+    "range": "Personale",
+    "duration": "1 ora"
+  },
+  "Create or Destroy Water": {
+    "name": "Creare o distruggere acqua",
+    "description": "Crei o rimuovi fino a 10 galloni d'acqua in un contenitore aperto, oppure fai piovere o disperdi la nebbia in un cubo di 30 piedi. Gli slot superiori aggiungono 10 galloni o ingrandiscono il cubo.",
+    "material": "una miscela di acqua e sabbia",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 10 galloni o aumenta di 5 piedi il lato del cubo.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Istantanea"
+  },
+  "Cure Wounds": {
+    "name": "Cura ferite",
+    "description": "Una creatura che tocchi recupera un numero di punti ferita pari a 2d8 più il tuo modificatore di caratteristica da incantatore. Ogni livello di slot oltre il 1° aggiunge 2d8 punti ferita recuperati.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 2d8.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Detect Evil and Good": {
+    "name": "Individuazione del bene e del male",
+    "description": "Per un massimo di 10 minuti percepisci aberrazioni, celestiali, elementali, folletti, immondi e non morti entro 30 piedi, oltre a qualsiasi effetto attivo di Consacrare nell'area. Barriere spesse bloccano questa percezione.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Detect Magic": {
+    "name": "Individuazione del magico",
+    "description": "Per un massimo di 10 minuti percepisci gli effetti magici entro 30 piedi. Un'azione Magia rivela le aure magiche visibili e la scuola di un incantesimo; barriere sufficientemente spesse impediscono di individuarle.",
+    "castingTime": "Azione o Rituale",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Detect Poison and Disease": {
+    "name": "Individuazione dei veleni e delle malattie",
+    "description": "Per un massimo di 10 minuti percepisci posizione e tipo di veleni, creature velenose e contagi magici entro 30 piedi. Barriere spesse impediscono di individuarli.",
+    "material": "una foglia di tasso",
+    "castingTime": "Azione o Rituale",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Disguise Self": {
+    "name": "Camuffare se stesso",
+    "description": "Modifichi per 1 ora l'aspetto apparente del tuo corpo e dell'equipaggiamento che trasporti, mantenendo una forma corporea grossomodo simile. L'illusione non resiste a un'ispezione fisica.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "1 ora"
+  },
+  "Dissonant Whispers": {
+    "name": "Sussurri dissonanti",
+    "description": "Una creatura che vedi effettua un tiro salvezza su Saggezza. Se fallisce, subisce 3d6 danni psichici e usa la sua reazione, se disponibile, per fuggire in sicurezza; se riesce, subisce la metà dei danni. Gli slot superiori aggiungono 1d6.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d6.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Divine Favor": {
+    "name": "Favore divino",
+    "description": "Per 1 minuto, ogni tuo attacco con un'arma che colpisce infligge 1d4 danni radianti extra.",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "1 minuto"
+  },
+  "Divine Smite": {
+    "name": "Punizione divina",
+    "description": "Subito dopo aver colpito con un'arma da mischia o un colpo senz'armi, spendi un'azione bonus per infliggere 2d8 danni radianti extra; aggiungi 1d8 contro un immondo o non morto e 1d8 per ogni livello di slot oltre il 1°.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d8.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito un bersaglio con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Ensnaring Strike": {
+    "name": "Colpo intrappolante",
+    "description": "Subito dopo aver colpito con un'arma, delle liane costringono il bersaglio a effettuare un tiro salvezza su Forza. Se fallisce, è trattenuto per un massimo di 1 minuto e subisce 1d6 danni perforanti all'inizio di ogni suo turno finché non si libera o l'incantesimo termina.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d6.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito una creatura con un'arma",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Entangle": {
+    "name": "Intralciare",
+    "description": "Le piante riempiono un quadrato di 20 piedi, rendendolo terreno difficile per un massimo di 1 minuto. Le creature presenti al momento del lancio effettuano tiri salvezza su Forza o diventano trattenute; possono usare un'azione per liberarsi.",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Expeditious Retreat": {
+    "name": "Ritiro rapido",
+    "description": "Usi Scatto quando lanci l'incantesimo; per un massimo di 10 minuti puoi usare di nuovo Scatto come azione bonus nei turni successivi.",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Faerie Fire": {
+    "name": "Fuoco fatato",
+    "description": "Le creature in un cubo di 20 piedi che falliscono un tiro salvezza su Destrezza brillano per un massimo di 1 minuto. Non possono beneficiare dell'Invisibilità e gli attaccanti che le vedono hanno vantaggio contro di loro.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "False Life": {
+    "name": "Falsa vita",
+    "description": "Ottieni 2d4 + 4 punti ferita temporanei. Ogni livello di slot oltre il 1° concede altri 5 punti ferita temporanei.",
+    "material": "una goccia di alcol",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 5 punti ferita temporanei.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Feather Fall": {
+    "name": "Caduta morbida",
+    "description": "Con una reazione quando delle creature cadono, rallenti fino a cinque creature in caduta a 60 piedi per round per 1 minuto. Non subiscono danni da caduta se atterrano prima che l'incantesimo termini.",
+    "material": "una piccola piuma o un po' di piumino",
+    "castingTime": "Reazione, da compiere quando tu o una creatura che vedi entro 60 piedi cadete",
+    "range": "60 piedi",
+    "duration": "1 minuto"
+  },
+  "Find Familiar": {
+    "name": "Trova famiglio",
+    "description": "Evochi uno spirito celestiale, folletto o immondo nella forma di una bestia con GS 0. Agisce autonomamente e non può attaccare; entro 100 piedi puoi comunicare telepaticamente, vedere attraverso i suoi sensi o fargli trasmettere un incantesimo a contatto usando la sua reazione. Puoi congedarlo e rievocarlo.",
+    "material": "incenso acceso del valore di almeno 10 mo, consumato dall'incantesimo",
+    "castingTime": "1 ora o Rituale",
+    "range": "10 piedi",
+    "duration": "Istantanea"
+  },
+  "Floating Disk": {
+    "name": "Disco fluttuante",
+    "description": "Crei un disco fluttuante di 3 piedi che trasporta fino a 500 libbre per 1 ora e ti segue quando ti allontani di più di 20 piedi.",
+    "material": "una goccia di mercurio",
+    "castingTime": "Azione o Rituale",
+    "range": "30 piedi",
+    "duration": "1 ora"
+  },
+  "Fog Cloud": {
+    "name": "Nube di nebbia",
+    "description": "Crei una sfera di nebbia di raggio 20 piedi che oscura completamente la visuale per un massimo di 1 ora. Un vento forte la disperde; ogni livello di slot oltre il 1° aumenta il raggio di 20 piedi.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aumenta di 20 piedi il raggio della nebbia.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Goodberry": {
+    "name": "Bacche benefiche",
+    "description": "Crei dieci bacche magiche che durano 24 ore. Mangiarne una con un'azione bonus ripristina 1 punto ferita e fornisce nutrimento per un giorno.",
+    "material": "un rametto di vischio",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "24 ore"
+  },
+  "Grease": {
+    "name": "Unto",
+    "description": "Ricopri un quadrato di 10 piedi con grasso non infiammabile per 1 minuto, rendendolo terreno difficile. Le creature presenti alla sua comparsa, o che vi entrano o vi terminano un turno, effettuano tiri salvezza su Destrezza o cadono prone.",
+    "material": "un po' di cotenna di maiale o burro",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "1 minuto"
+  },
+  "Guiding Bolt": {
+    "name": "Dardo tracciante",
+    "description": "Effettui un attacco con incantesimo a distanza. Se colpisce, infligge 4d6 danni radianti e concede vantaggio al prossimo attacco contro il bersaglio prima della fine del tuo turno successivo. Gli slot superiori aggiungono 1d6.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d6.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "1 round",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Healing Word": {
+    "name": "Parola guaritrice",
+    "description": "Una creatura che vedi entro 60 piedi recupera un numero di punti ferita pari a 2d4 più il tuo modificatore di caratteristica da incantatore. Ogni livello di slot oltre il 1° aggiunge 2d4 punti ferita recuperati.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 2d4.",
+    "castingTime": "Azione bonus",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Hellish Rebuke": {
+    "name": "Rimprovero infernale",
+    "description": "Reagisci dopo che una creatura visibile entro 60 piedi ti ha danneggiato. La creatura effettua un tiro salvezza su Destrezza, subendo 2d10 danni da fuoco se fallisce o la metà se riesce; gli slot superiori aggiungono 1d10.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d10.",
+    "castingTime": "Reazione, da compiere quando subisci danni da una creatura che vedi entro 60 piedi",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Heroism": {
+    "name": "Eroismo",
+    "description": "Una creatura consenziente che tocchi è immune alla condizione Spaventato e ottiene punti ferita temporanei pari al tuo modificatore di caratteristica da incantatore all'inizio di ogni suo turno per un massimo di 1 minuto. Gli slot superiori aggiungono bersagli.",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Hex": {
+    "name": "Maleficio",
+    "description": "Maledici una creatura visibile per un massimo di 1 ora. Quando la colpisci con un tiro per colpire le infliggi 1d6 danni necrotici extra, e ha svantaggio alle prove con una caratteristica scelta. Con un'azione bonus puoi spostare la maledizione dopo che scende a 0 punti ferita.",
+    "material": "l'occhio pietrificato di un tritone",
+    "higherLevels": "Uno slot di livello 2 permette fino a 4 ore di concentrazione, di livello 3-4 fino a 8 ore e di livello 5 o superiore fino a 24 ore.",
+    "castingTime": "Azione bonus",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Hideous Laughter": {
+    "name": "Risata incontenibile",
+    "description": "Una creatura visibile che fallisce un tiro salvezza su Saggezza cade prona e diventa incapacitata per un massimo di 1 minuto. Ripete il tiro dopo aver subito danni e alla fine di ogni suo turno.",
+    "material": "una tortina e una piuma",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Hunter's Mark": {
+    "name": "Marchio del cacciatore",
+    "description": "Marchi una creatura visibile per un massimo di 1 ora. I tuoi attacchi che la colpiscono infliggono 1d6 danni da forza extra e hai vantaggio alle prove di Percezione o Sopravvivenza per trovarla. Con un'azione bonus puoi spostare il marchio dopo che il bersaglio scende a 0 punti ferita.",
+    "higherLevels": "Uno slot di livello 3-4 permette fino a 8 ore di concentrazione e di livello 5 o superiore fino a 24 ore.",
+    "castingTime": "Azione bonus",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Ice Knife": {
+    "name": "Coltello di ghiaccio",
+    "description": "Effettui un attacco con incantesimo a distanza contro una creatura che infligge 1d10 danni perforanti se colpisce. Che colpisca o manchi, il frammento esplode e il bersaglio e le creature entro 5 piedi effettuano tiri salvezza su Destrezza o subiscono 2d6 danni da freddo; gli slot superiori aumentano i danni da freddo.",
+    "material": "una goccia d'acqua o un pezzo di ghiaccio",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d6 danni da freddo.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "piercing": {
+        "label": "Danni perforanti"
+      },
+      "burst": {
+        "label": "Danni dell'esplosione"
+      }
+    }
+  },
+  "Identify": {
+    "name": "Identificare",
+    "description": "Tocchi un oggetto durante il lancio per conoscerne proprietà magiche, sintonia, cariche e incantesimi attivi, oppure tocchi una creatura per conoscere gli incantesimi che la influenzano. Richiede una perla del valore di almeno 100 mo.",
+    "material": "una perla del valore di almeno 100 mo",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Illusory Script": {
+    "name": "Scrittura illusoria",
+    "description": "Scrivi un messaggio che i lettori designati vedono normalmente, mentre gli altri vedono testo incomprensibile o fuorviante per 10 giorni. L'inchiostro del valore di almeno 10 mo viene consumato.",
+    "material": "inchiostro del valore di almeno 10 mo, consumato dall'incantesimo",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Contatto",
+    "duration": "10 giorni"
+  },
+  "Inflict Wounds": {
+    "name": "Infliggere ferite",
+    "description": "Una creatura che tocchi effettua un tiro salvezza su Costituzione, subendo 2d10 danni necrotici se fallisce o la metà se riesce. Ogni livello di slot oltre il 1° aggiunge 1d10.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d10.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Jump": {
+    "name": "Salto",
+    "description": "Una creatura consenziente che tocchi può saltare fino a 30 piedi una volta per turno spendendo 10 piedi di movimento per 1 minuto. Gli slot superiori aggiungono un bersaglio per livello.",
+    "material": "una zampa posteriore di cavalletta",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione bonus",
+    "range": "Contatto",
+    "duration": "1 minuto"
+  },
+  "Longstrider": {
+    "name": "Lungopasso",
+    "description": "Una creatura che tocchi guadagna 10 piedi di velocità per 1 ora. Ogni livello di slot oltre il 1° aggiunge un bersaglio.",
+    "material": "un pizzico di terra",
+    "higherLevels": "Ogni livello di slot oltre il 1° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Mage Armor": {
+    "name": "Armatura magica",
+    "description": "Per 8 ore, una creatura consenziente senza armatura che tocchi ha una CA base di 13 più il suo modificatore di Destrezza. Indossare un'armatura termina l'incantesimo.",
+    "material": "un pezzo di cuoio conciato",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "8 ore"
+  },
+  "Magic Missile": {
+    "name": "Dardo incantato",
+    "description": "Tre dardi di forza colpiscono automaticamente le creature visibili che scegli, infliggendo ciascuno 1d4 + 1 danni da forza. Colpiscono tutti contemporaneamente; gli slot superiori creano un dardo aggiuntivo per livello.",
+    "higherLevels": "Crei un dardo aggiuntivo per ogni livello di slot oltre il 1°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Istantanea"
+  },
+  "Protection from Evil and Good": {
+    "name": "Protezione dal bene e dal male",
+    "description": "Per un massimo di 10 minuti, una creatura consenziente è protetta da aberrazioni, celestiali, elementali, folletti, immondi e non morti: i loro attacchi hanno svantaggio e non possono possederla, affascinarla o spaventarla.",
+    "material": "una fiala di acqua santa del valore di almeno 25 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione fino a 10 minuti"
+  },
+  "Purify Food and Drink": {
+    "name": "Purificare cibo e bevande",
+    "description": "Elimini veleni e deterioramento da cibi e bevande non magici in una sfera di raggio 5 piedi entro 10 piedi.",
+    "castingTime": "Azione o Rituale",
+    "range": "10 piedi",
+    "duration": "Istantanea"
+  },
+  "Ray of Sickness": {
+    "name": "Raggio di infermità",
+    "description": "Effettui un attacco con incantesimo a distanza. Se colpisce, infligge 2d8 danni da veleno e avvelena il bersaglio fino alla fine del tuo turno successivo; gli slot superiori aggiungono 1d8 danni.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d8.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Sanctuary": {
+    "name": "Santuario",
+    "description": "Proteggi una creatura per 1 minuto. Chi la attacca o lancia un incantesimo che la bersaglia deve superare un tiro salvezza su Saggezza oppure scegliere un altro bersaglio o perdere il tentativo. La protezione termina se la creatura attacca, lancia un incantesimo o infligge danni.",
+    "material": "una scheggia di vetro di uno specchio",
+    "castingTime": "Azione bonus",
+    "range": "30 piedi",
+    "duration": "1 minuto"
+  },
+  "Searing Smite": {
+    "name": "Punizione ardente",
+    "description": "Subito dopo aver colpito con un'arma da mischia o un colpo senz'armi, infliggi 1d6 danni da fuoco extra. Il bersaglio subisce poi 1d6 danni da fuoco all'inizio di ogni suo turno finché non supera un tiro salvezza su Costituzione; gli slot superiori aumentano entrambi i danni.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d6 a ogni tiro di danno.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito un bersaglio con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "1 minuto"
+  },
+  "Shield": {
+    "name": "Scudo",
+    "description": "Reagisci a un attacco che ti colpisce o a Dardo incantato per ottenere +5 alla CA fino all'inizio del tuo turno successivo, anche contro l'attacco scatenante, e non subisci danni da Dardo incantato.",
+    "castingTime": "Reazione, da compiere quando un attacco ti colpisce o l'incantesimo Dardo incantato ti bersaglia",
+    "range": "Personale",
+    "duration": "1 round"
+  },
+  "Shield of Faith": {
+    "name": "Scudo della fede",
+    "description": "Una creatura entro 60 piedi ottiene +2 alla CA per un massimo di 10 minuti mentre mantieni la concentrazione.",
+    "material": "una pergamena di preghiera",
+    "castingTime": "Azione bonus",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Silent Image": {
+    "name": "Immagine silenziosa",
+    "description": "Crei un'immagine puramente visiva grande fino a un cubo di 15 piedi per un massimo di 10 minuti. Puoi muoverla con un'azione Magia; l'interazione fisica rivela l'illusione.",
+    "material": "un po' di vello",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Sleep": {
+    "name": "Sonno",
+    "description": "Le creature scelte in una sfera di raggio 5 piedi effettuano tiri salvezza su Saggezza. Chi fallisce è incapacitato fino alla fine del suo turno successivo; un secondo tiro fallito lo rende incosciente per un massimo di 1 minuto. Subire danni o essere scosso termina l'effetto; le creature che non dormono superano automaticamente il tiro.",
+    "material": "un pizzico di sabbia o petali di rosa",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Speak with Animals": {
+    "name": "Parla con gli animali",
+    "description": "Per 10 minuti comprendi e parli con le bestie, puoi usare Influenzare con loro e chiedere informazioni sui luoghi o sulle creature vicine.",
+    "castingTime": "Azione o Rituale",
+    "range": "Personale",
+    "duration": "10 minuti"
+  },
+  "Thunderwave": {
+    "name": "Onda tonante",
+    "description": "Un cubo di tuono di 15 piedi esplode da te. Le creature effettuano tiri salvezza su Costituzione, subendo 2d8 danni da tuono e venendo spinte di 10 piedi se falliscono, o la metà dei danni se riescono. Gli slot superiori aggiungono 1d8 danni.",
+    "higherLevels": "Ogni livello di slot oltre il 1° aggiunge 1d8.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Unseen Servant": {
+    "name": "Servo invisibile",
+    "description": "Crei una forza invisibile e priva di mente per 1 ora. Non può attaccare, ma può svolgere compiti semplici che le ordini con un'azione bonus.",
+    "material": "un po' di spago e legno",
+    "castingTime": "Azione o Rituale",
+    "range": "60 piedi",
+    "duration": "1 ora"
+  },
+  "Acid Arrow": {
+    "name": "Freccia acida",
+    "description": "Effettui un attacco con incantesimo a distanza contro un bersaglio. Se colpisce, infligge subito 4d4 danni da acido e altri 2d4 alla fine del turno successivo del bersaglio; se manca, infligge solo metà dei danni iniziali. Gli slot superiori aggiungono 1d4 a entrambi i tiri di danno.",
+    "material": "foglia di rabarbaro in polvere",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d4 a entrambi i tiri di danno.",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Istantanea"
+  },
+  "Aid": {
+    "name": "Aiuto",
+    "description": "Fino a tre creature entro 30 piedi aumentano di 5 i punti ferita attuali e massimi per 8 ore. Ogni livello di slot oltre il 2° aggiunge altri 5 punti ferita.",
+    "material": "una striscia di stoffa bianca",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 5 ai punti ferita attuali e massimi.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "8 ore"
+  },
+  "Alter Self": {
+    "name": "Alterare Sé",
+    "description": "Per un massimo di 1 ora scegli adattamento acquatico (respirazione sott'acqua e velocità di nuoto), aspetto modificato senza cambiare le statistiche o armi naturali che infliggono 1d6 danni usando la tua caratteristica da incantatore. Puoi cambiare opzione con un'azione Magia.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Animal Messenger": {
+    "name": "Messaggero animale",
+    "description": "Una bestia Minuscola con GS 0 che fallisce un tiro salvezza su Carisma porta un messaggio di massimo 25 parole verso un luogo che hai visitato. Viaggia per circa 25 miglia al giorno, o 50 se vola, per 24 ore; gli slot superiori aggiungono 48 ore ciascuno.",
+    "material": "un boccone di cibo",
+    "higherLevels": "Ogni livello di slot oltre il 2° prolunga la durata di 48 ore.",
+    "castingTime": "Azione o Rituale",
+    "range": "30 piedi",
+    "duration": "24 ore"
+  },
+  "Arcane Lock": {
+    "name": "Serratura arcana",
+    "description": "Chiudi magicamente a chiave una porta, finestra, cancello, contenitore o botola chiusi fino a dissoluzione. Le creature designate o chi pronuncia la tua parola d'ordine possono aprirli; il lancio consuma polvere d'oro del valore di almeno 25 mo.",
+    "material": "polvere d'oro del valore di almeno 25 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione"
+  },
+  "Arcanist's Magic Aura": {
+    "name": "Aura magica dell'arcanista",
+    "description": "Applichi una falsa aura magica a un oggetto o mascheri il tipo apparente di una creatura consenziente per 24 ore. Ripetere l'incantesimo sullo stesso bersaglio ogni giorno per 30 giorni rende l'illusione permanente fino a dissoluzione.",
+    "material": "un quadratino di seta",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "24 ore"
+  },
+  "Augury": {
+    "name": "Augurio",
+    "description": "Scopri se un'azione prevista nei prossimi 30 minuti avrà probabilmente esito positivo, negativo, misto o neutro. Ogni lancio successivo al primo prima di un riposo lungo ha una probabilità cumulativa del 25 % di non dare risposta.",
+    "material": "bastoncini, ossa, carte o altri oggetti divinatori marcati appositamente, del valore di almeno 25 mo",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Barkskin": {
+    "name": "Pelle di corteccia",
+    "description": "Una creatura consenziente che tocchi ha CA 17 ogni volta che la sua CA normale sarebbe inferiore, per 1 ora.",
+    "material": "una manciata di corteccia",
+    "castingTime": "Azione bonus",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Blindness/Deafness": {
+    "name": "Cecità/Sordità",
+    "description": "Una creatura visibile effettua un tiro salvezza su Costituzione o diventa accecata o assordata per 1 minuto. Ripete il tiro alla fine di ogni suo turno; gli slot superiori aggiungono un bersaglio per livello.",
+    "higherLevels": "Ogni livello di slot oltre il 2° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "1 minuto"
+  },
+  "Blur": {
+    "name": "Sfocatura",
+    "description": "Per un massimo di 1 minuto, gli attaccanti hanno svantaggio ai tiri per colpire contro di te, a meno che ti percepiscano con vista cieca o vista pura.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Calm Emotions": {
+    "name": "Calmare emozioni",
+    "description": "Gli umanoidi in una sfera di raggio 20 piedi effettuano tiri salvezza su Carisma. Se falliscono, puoi sopprimere le loro condizioni Affascinato o Spaventato oppure renderli indifferenti verso creature a cui erano ostili per un massimo di 1 minuto.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Continual Flame": {
+    "name": "Fiamma continua",
+    "description": "Crei su un oggetto una fiamma fredda che non richiede combustibile ed emette luce intensa entro 20 piedi e luce fioca per altri 20 piedi, fino a dissoluzione. Il lancio consuma polvere di rubino del valore di almeno 50 mo.",
+    "material": "polvere di rubino del valore di almeno 50 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione"
+  },
+  "Darkness": {
+    "name": "Oscurità",
+    "description": "Crei una sfera di oscurità magica di raggio 15 piedi per un massimo di 10 minuti, oppure la centri su un oggetto incustodito. La luce ordinaria non la illumina e la scurovisione non la penetra.",
+    "material": "pelliccia di pipistrello e un pezzo di carbone",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Darkvision": {
+    "name": "Scurovisione",
+    "description": "Una creatura consenziente che tocchi ottiene scurovisione fino a 150 piedi per 8 ore.",
+    "material": "una carota essiccata",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "8 ore"
+  },
+  "Detect Thoughts": {
+    "name": "Individuazione dei pensieri",
+    "description": "Per un massimo di 1 minuto percepisci le creature pensanti vicine o leggi i pensieri superficiali di una creatura visibile. Un'azione Magia cambia effetto; sondare più a fondo richiede un tiro salvezza su Saggezza e avvisa il bersaglio.",
+    "material": "1 moneta di rame",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Dragon's Breath": {
+    "name": "Soffio del drago",
+    "description": "Una creatura consenziente che tocchi può usare un'azione Magia per soffiare un cono di 15 piedi di acido, freddo, fuoco, fulmine o veleno. Le creature al suo interno effettuano tiri salvezza su Destrezza contro 3d6 danni, dimezzati in caso di successo; gli slot superiori aggiungono 1d6.",
+    "material": "un peperoncino piccante",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d6 danni.",
+    "castingTime": "Azione bonus",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Enhance Ability": {
+    "name": "Potenziamento delle caratteristiche",
+    "description": "Una creatura toccata ha vantaggio alle prove di caratteristica che usano una caratteristica scelta diversa da Costituzione per un massimo di 1 ora. Gli slot superiori aggiungono bersagli.",
+    "material": "pelliccia o una piuma",
+    "higherLevels": "Ogni livello di slot oltre il 2° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Enlarge/Reduce": {
+    "name": "Ingrandire/Ridurre",
+    "description": "Ingrandisci o rimpicciolisci una creatura o un oggetto incustodito per un massimo di 1 minuto; una creatura non consenziente può resistere con un tiro salvezza su Costituzione. Taglia, peso e danni delle armi cambiano di conseguenza.",
+    "material": "un pizzico di ferro in polvere",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Enthrall": {
+    "name": "Affascinare",
+    "description": "Le creature visibili con cui non stai combattendo effettuano tiri salvezza su Saggezza o subiscono una penalità di -10 alle prove di Percezione e alla Percezione passiva per un massimo di 1 minuto.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Find Steed": {
+    "name": "Trova cavalcatura",
+    "description": "Evochi una cavalcatura fedele ultraterrena in uno spazio entro 30 piedi. Usa il blocco delle statistiche di Cavalcatura ultraterrena e può assumere forma celestiale, fatata o immonda.",
+    "higherLevels": "Usi il livello dello slot per le statistiche della cavalcatura.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Istantanea"
+  },
+  "Find Traps": {
+    "name": "Individuazione delle trappole",
+    "description": "Individui se una trappola creata intenzionalmente si trova entro 120 piedi e nella tua linea di visuale, e ne apprendi il pericolo generale, ma non la posizione esatta.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Istantanea"
+  },
+  "Flame Blade": {
+    "name": "Lama di fiamma",
+    "description": "Evochi una lama di fuoco per un massimo di 10 minuti. Con un'azione Magia effettui un attacco con incantesimo in mischia che infligge 3d6 danni da fuoco più il tuo modificatore di caratteristica da incantatore se colpisce; gli slot superiori aumentano i danni.",
+    "material": "una foglia di sommacco",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d6 danni.",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Flaming Sphere": {
+    "name": "Sfera fiammeggiante",
+    "description": "Crei una sfera di fuoco di 5 piedi per un massimo di 1 minuto. Le creature vicine effettuano tiri salvezza su Destrezza contro 2d6 danni da fuoco, dimezzati in caso di successo; un'azione bonus muove la sfera e può richiedere un altro tiro.",
+    "material": "una pallina di cera",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d6 danni.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Gentle Repose": {
+    "name": "Dolce riposo",
+    "description": "Preservi un cadavere o dei resti per 10 giorni, impedendo decomposizione e non morte. Il tempo trascorso protetto non conta ai fini dei limiti di resurrezione; l'incantesimo consuma due monete di rame.",
+    "material": "2 monete di rame, consumate dall'incantesimo",
+    "castingTime": "Azione o Rituale",
+    "range": "Contatto",
+    "duration": "10 giorni"
+  },
+  "Gust of Wind": {
+    "name": "Folata di vento",
+    "description": "Una linea di vento lunga 60 piedi e larga 10 piedi spinge di 15 piedi le creature che falliscono un tiro salvezza su Forza e ostacola il movimento verso di te per un massimo di 1 minuto.",
+    "material": "un seme di legume",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Heat Metal": {
+    "name": "Riscaldare il metallo",
+    "description": "Riscaldi un oggetto metallico lavorato visibile per un massimo di 1 minuto. Una creatura che lo tocca subisce 2d8 danni da fuoco subito e nuovamente quando usi un'azione bonus nei turni successivi.",
+    "material": "un pezzo di ferro e una fiamma",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d8 danni.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Hold Person": {
+    "name": "Blocca persone",
+    "description": "Un umanoide visibile effettua un tiro salvezza su Saggezza o è paralizzato per un massimo di 1 minuto, ripetendo il tiro alla fine di ogni suo turno. Gli slot superiori aggiungono un umanoide per livello.",
+    "material": "un pezzo di ferro diritto",
+    "higherLevels": "Ogni livello di slot oltre il 2° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Invisibility": {
+    "name": "Invisibilità",
+    "description": "Una creatura toccata diventa invisibile per un massimo di 1 ora. Attaccare, infliggere danni o lanciare un incantesimo termina l'effetto prima; gli slot superiori aggiungono bersagli.",
+    "material": "una ciglia nella gomma arabica",
+    "higherLevels": "Ogni livello di slot oltre il 2° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Knock": {
+    "name": "Scassinare",
+    "description": "Apri una serratura o rimuovi una sbarra da un oggetto visibile entro 60 piedi, anche da una serratura magica, che viene temporaneamente soppressa. L'apertura produce un forte colpo udibile nelle vicinanze.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Lesser Restoration": {
+    "name": "Ristorare inferiore",
+    "description": "Con un tocco poni fine a una condizione su una creatura: Accecato, Assordato, Paralizzato o Avvelenato.",
+    "castingTime": "Azione bonus",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Levitate": {
+    "name": "Levitare",
+    "description": "Solleva una creatura visibile o un oggetto non fissato fino a 20 piedi per un massimo di 10 minuti. Una creatura non consenziente può resistere con un tiro salvezza su Costituzione; per muoversi deve spingersi contro una superficie.",
+    "material": "una molla di metallo",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Locate Animals or Plants": {
+    "name": "Individua animali o piante",
+    "description": "Nomini un tipo di bestia, creatura vegetale o pianta non magica e scopri direzione e distanza dell'esemplare più vicino entro 5 miglia.",
+    "material": "pelliccia di segugio",
+    "castingTime": "Azione o Rituale",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Locate Object": {
+    "name": "Localizzare oggetto",
+    "description": "Per un massimo di 10 minuti percepisci la direzione di un oggetto familiare entro 1.000 piedi, compresi i suoi spostamenti. Spesse barriere di piombo bloccano l'effetto.",
+    "material": "un ramoscello biforcuto",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Magic Mouth": {
+    "name": "Bocca magica",
+    "description": "Colloghi in un oggetto un messaggio parlato di massimo 25 parole. Lo pronuncia quando si verifica una condizione osservabile che hai scelto e dura fino a dissoluzione; il lancio consuma polvere di giada del valore di almeno 10 mo.",
+    "material": "polvere di giada del valore di almeno 10 mo, consumata dall'incantesimo",
+    "castingTime": "1 minuto o Rituale",
+    "range": "30 piedi",
+    "duration": "Fino a dissoluzione"
+  },
+  "Magic Weapon": {
+    "name": "Arma magica",
+    "description": "Un'arma non magica che tocchi diventa magica e ottiene +1 ai tiri per colpire e ai danni per 1 ora. Uno slot di livello 3-5 porta il bonus a +2; uno di livello 6 o superiore lo porta a +3.",
+    "higherLevels": "Il bonus diventa +2 con uno slot di livello 3-5 e +3 con uno di livello 6 o superiore.",
+    "castingTime": "Azione bonus",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Mind Spike": {
+    "name": "Aculeo mentale",
+    "description": "Una creatura visibile effettua un tiro salvezza su Saggezza, subendo 3d8 danni psichici se fallisce o la metà se riesce. Se fallisce, conosci la sua posizione sullo stesso piano per un massimo di 1 ora.",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d8 danni.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 ora",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Mirror Image": {
+    "name": "Immagine speculare",
+    "description": "Tre duplicati illusori compaiono per 1 minuto. Quando un attacco ti colpisce, tiri per i duplicati rimasti; se il tiro riesce, uno di essi viene colpito al posto tuo.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "1 minuto"
+  },
+  "Misty Step": {
+    "name": "Passo nebbioso",
+    "description": "Con un'azione bonus ti teletrasporti fino a 30 piedi in uno spazio libero che puoi vedere.",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Moonbeam": {
+    "name": "Raggio di luna",
+    "description": "Un raggio di 5 piedi di raggio e 40 piedi d'altezza dura per un massimo di 1 minuto e può essere spostato di 60 piedi con un'azione Magia. Le creature che vi entrano o vi terminano un turno effettuano tiri salvezza su Costituzione contro 2d10 danni radianti, dimezzati in caso di successo; un tiro fallito termina anche la metamorfosi.",
+    "material": "una foglia di seme lunare",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d10 danni.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Pass without Trace": {
+    "name": "Passare senza tracce",
+    "description": "Per un massimo di 1 ora, le creature scelte entro la tua aura di 30 piedi ottengono +10 alle prove di Furtività e non lasciano tracce.",
+    "material": "cenere di vischio bruciato",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Phantasmal Force": {
+    "name": "Forza fantasmagorica",
+    "description": "Una creatura che fallisce un tiro salvezza su Intelligenza percepisce un'illusione privata grande fino a un cubo di 10 piedi per un massimo di 1 minuto. Può usare l'azione Studiare per riconoscerla; un fantasma pericoloso può infliggerle 2d8 danni psichici in ciascuno dei tuoi turni.",
+    "material": "un po' di vello",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Prayer of Healing": {
+    "name": "Preghiera di guarigione",
+    "description": "Dopo un lancio di 10 minuti, fino a cinque creature entro gittata ottengono i benefici di un riposo breve e recuperano 2d8 punti ferita. Ciascuna può beneficiarne solo una volta per riposo lungo; gli slot superiori aggiungono 1d8 punti ferita.",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d8 punti ferita recuperati.",
+    "castingTime": "10 minuti",
+    "range": "30 piedi",
+    "duration": "Istantanea"
+  },
+  "Protection from Poison": {
+    "name": "Protezione dal veleno",
+    "description": "Termini la condizione Avvelenato su una creatura toccata. Per 1 ora ha resistenza ai danni da veleno e vantaggio ai tiri salvezza per evitare di diventare o restare avvelenata.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Ray of Enfeeblement": {
+    "name": "Raggio di indebolimento",
+    "description": "Una creatura effettua un tiro salvezza su Costituzione. Se riesce, il suo prossimo tiro per colpire ha svantaggio fino al tuo turno successivo. Se fallisce, ha svantaggio ai test D20 basati su Forza e sottrae 1d8 ai tiri di danno per un massimo di 1 minuto, ripetendo il tiro salvezza a ogni turno.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Rope Trick": {
+    "name": "Trucco della corda",
+    "description": "Tocchi una corda per aprire uno spazio extradimensionale invisibile alla sua estremità superiore per 1 ora. Fino a otto creature di taglia Media o inferiore possono nascondersi all'interno.",
+    "material": "un pezzo di corda",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Scorching Ray": {
+    "name": "Raggio rovente",
+    "description": "Scagli tre raggi, ognuno dei quali richiede un attacco con incantesimo a distanza e infligge 2d6 danni da fuoco se colpisce. Gli slot superiori creano un raggio aggiuntivo per livello.",
+    "higherLevels": "Crei un raggio aggiuntivo per ogni livello di slot oltre il 2°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Istantanea"
+  },
+  "See Invisibility": {
+    "name": "Vedere invisibilità",
+    "description": "Per 1 ora vedi normalmente creature e oggetti invisibili e percepisci il piano Etereo.",
+    "material": "un pizzico di talco",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "1 ora"
+  },
+  "Shatter": {
+    "name": "Frantumare",
+    "description": "Le creature in una sfera di raggio 10 piedi effettuano tiri salvezza su Costituzione, subendo 3d8 danni da tuono se falliscono o la metà se riescono; i costrutti tirano con svantaggio. Gli slot superiori aggiungono 1d8.",
+    "material": "una scaglia di mica",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d8 danni.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Shining Smite": {
+    "name": "Punizione splendente",
+    "description": "Subito dopo aver colpito con un'arma da mischia o un colpo senz'armi, infliggi 2d6 danni radianti extra. Per un massimo di 1 minuto il bersaglio brilla, non può beneficiare dell'Invisibilità e gli attacchi contro di lui hanno vantaggio.",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d6 danni.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito una creatura con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Silence": {
+    "name": "Silenzio",
+    "description": "Crei una sfera di raggio 20 piedi in cui nessun suono può passare per un massimo di 10 minuti. Le creature interamente al suo interno sono assordate, immuni ai danni da tuono e non possono lanciare incantesimi con componenti verbali.",
+    "castingTime": "Azione o Rituale",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Spider Climb": {
+    "name": "Movimenti del ragno",
+    "description": "Una creatura consenziente che tocchi ottiene una velocità di scalata pari alla propria velocità e può percorrere pareti e soffitti senza usare le mani per un massimo di 1 ora. Gli slot superiori aggiungono bersagli.",
+    "material": "una goccia di bitume e un ragno",
+    "higherLevels": "Ogni livello di slot oltre il 2° consente un bersaglio aggiuntivo.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Spike Growth": {
+    "name": "Crescita di spine",
+    "description": "Un'area di raggio 20 piedi diventa terreno difficile mimetizzato per un massimo di 10 minuti. Una creatura che lo attraversa subisce 2d4 danni perforanti per ogni 5 piedi percorsi.",
+    "material": "sette spine",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Spiritual Weapon": {
+    "name": "Arma spirituale",
+    "description": "Crei un'arma di forza fluttuante per un massimo di 1 minuto. Effettui un attacco con incantesimo in mischia alla sua comparsa e nei turni successivi con un'azione bonus; se colpisce, infligge 1d8 danni da forza più il tuo modificatore di caratteristica da incantatore.",
+    "higherLevels": "Ogni livello di slot oltre il 2° aggiunge 1d8 danni.",
+    "castingTime": "Azione bonus",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Suggestion": {
+    "name": "Suggerimento",
+    "description": "Una creatura che sente e comprende una proposta plausibile e non dannosa di massimo 25 parole effettua un tiro salvezza su Saggezza. Se fallisce, è affascinata e segue l'attività per un massimo di 8 ore, terminando prima se viene ferita o dopo averla completata.",
+    "material": "una goccia di miele",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 8 ore"
+  },
+  "Warding Bond": {
+    "name": "Vincolo di interdizione",
+    "description": "Ti leghi a una creatura consenziente che indossa uno degli anelli di platino richiesti. Finché resta entro 60 piedi, ottiene +1 alla CA e ai tiri salvezza e resistenza a tutti i danni, ma tu subisci gli stessi danni che subisce lei.",
+    "material": "una coppia di anelli di platino del valore di almeno 50 mo ciascuno, che tu e il bersaglio dovete indossare per tutta la durata",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Web": {
+    "name": "Ragnatela",
+    "description": "Ragnatele appiccicose riempiono un cubo di 20 piedi per un massimo di 1 ora, rendendolo terreno difficile e leggermente oscurato. Una creatura che vi entra o vi inizia il turno effettua un tiro salvezza su Destrezza o diventa trattenuta; può liberarsi con un'azione e una prova di Forza (Atletica). Le ragnatele incendiate infliggono 2d4 danni da fuoco.",
+    "material": "un po' di ragnatela",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Zone of Truth": {
+    "name": "Zona di verità",
+    "description": "Crei una sfera di raggio 15 piedi per 10 minuti. Le creature che vi entrano o vi iniziano il turno effettuano tiri salvezza su Carisma; quelle che falliscono non possono mentire deliberatamente e tu sai se ciascuna ha superato il tiro.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "10 minuti"
+  },
+  "Animate Dead": {
+    "name": "Animare morti",
+    "description": "Animi il cadavere di un umanoide Medio o Piccolo come zombi o delle ossa come scheletro. Con un'azione bonus impartisci ordini ai tuoi non morti entro 60 piedi; il controllo dura 24 ore e può essere rinnovato prima della scadenza.",
+    "material": "una goccia di sangue, un pezzo di carne e un pizzico di polvere d'ossa",
+    "higherLevels": "Uno slot oltre il livello 3 anima o riafferma il controllo su due non morti aggiuntivi per ogni livello di slot extra.",
+    "castingTime": "1 minuto",
+    "range": "10 piedi",
+    "duration": "Istantanea"
+  },
+  "Beacon of Hope": {
+    "name": "Faro di speranza",
+    "description": "Scegli un qualsiasi numero di creature entro 30 piedi. Per un massimo di 1 minuto hanno vantaggio ai tiri salvezza su Saggezza e contro morte e recuperano il massimo possibile di punti ferita quando vengono curate.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Bestow Curse": {
+    "name": "Conferisci maledizione",
+    "description": "Una creatura che tocchi effettua un tiro salvezza su Saggezza. Se fallisce, scegli una maledizione: svantaggio alle prove e ai tiri salvezza con una caratteristica; svantaggio agli attacchi contro di te; un tiro salvezza su Saggezza ogni turno oppure deve Schivare; o 1d8 danni necrotici extra quando la danneggi con un attacco o incantesimo.",
+    "higherLevels": "Uno slot di livello 4 prolunga la concentrazione a 10 minuti; di livello 5-6 elimina la concentrazione e dura 8 ore, di livello 7-8 dura 24 ore, e di livello 9 dura fino a dissoluzione.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Blink": {
+    "name": "Intermittenza",
+    "description": "Per 1 minuto tira 1d6 alla fine di ogni tuo turno. Con 4-6 passi sul piano Etereo fino all'inizio del tuo turno successivo, poi riappari in uno spazio libero entro 10 piedi da quello da cui sei partito.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "1 minuto"
+  },
+  "Call Lightning": {
+    "name": "Invocare il fulmine",
+    "description": "Crei una nube temporalesca sopra di te. Al lancio e con un'azione Magia nei turni successivi richiami un fulmine su un punto sotto la nube; le creature entro 5 piedi effettuano un tiro salvezza su Destrezza contro 3d10 danni da fulmine, dimezzati in caso di successo. Una tempesta già esistente aggiunge 1d10.",
+    "higherLevels": "I danni aumentano di 1d10 per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Clairvoyance": {
+    "name": "Chiaroveggenza",
+    "description": "Colloghi un punto sensoriale invisibile e immobile in un luogo familiare o evidente entro 1 miglio. Per un massimo di 10 minuti vedi o senti da quel punto; puoi cambiare senso con un'azione bonus.",
+    "material": "un focus del valore di almeno 100 mo, un corno ingioiellato per sentire oppure un occhio di vetro per vedere",
+    "castingTime": "10 minuti",
+    "range": "1 miglio",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Conjure Animals": {
+    "name": "Evocare animali",
+    "description": "Evochi un grande branco intangibile di spiriti animali per un massimo di 10 minuti. Può muoversi di 30 piedi con te, concede vantaggio ai tiri salvezza su Forza quando sei entro 5 piedi e può costringere le creature entro 10 piedi a effettuare un tiro salvezza su Destrezza o subire 3d10 danni taglienti, una volta per turno.",
+    "higherLevels": "I danni aumentano di 1d10 per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Counterspell": {
+    "name": "Controincantesimo",
+    "description": "Reagisci quando vedi una creatura entro 60 piedi lanciare un incantesimo con componenti. L'incantatore effettua un tiro salvezza su Costituzione; se fallisce, l'incantesimo non ha effetto e l'azione usata per lanciarlo va persa, ma lo slot non viene consumato.",
+    "castingTime": "Reazione, da compiere quando vedi una creatura entro 60 piedi lanciare un incantesimo con componenti verbali, somatiche o materiali",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Create Food and Water": {
+    "name": "Creare cibo e acqua",
+    "description": "Crei 45 libbre di cibo nutriente e 30 galloni d'acqua pulita entro 30 piedi. Il cibo si deteriora dopo 24 ore.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Istantanea"
+  },
+  "Daylight": {
+    "name": "Luce del giorno",
+    "description": "Riempi una sfera di raggio 60 piedi di luce solare, con altri 60 piedi di luce fioca, per 1 ora; puoi anche centrarla su un oggetto incustodito. L'oscurità magica sovrapposta prodotta da un incantesimo di livello 3 o inferiore viene dissolta.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "1 ora"
+  },
+  "Dispel Magic": {
+    "name": "Dissolvi magie",
+    "description": "Termini tutti gli incantesimi di livello 3 o inferiore su una creatura, un oggetto o un effetto magico entro 120 piedi. Per ogni incantesimo di livello superiore, effettui una prova della tua caratteristica da incantatore contro CD 10 più il suo livello.",
+    "higherLevels": "Usare uno slot superiore termina automaticamente sul bersaglio gli incantesimi di livello non superiore a quello dello slot.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Istantanea"
+  },
+  "Fear": {
+    "name": "Paura",
+    "description": "Le creature in un cono di 30 piedi effettuano un tiro salvezza su Saggezza o lasciano cadere gli oggetti impugnati e diventano spaventate per un massimo di 1 minuto. Devono usare Scatto per allontanarsi quando possono; possono ripetere il tiro alla fine di un turno in cui non hanno linea di vista verso di te.",
+    "material": "una piuma bianca",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Fireball": {
+    "name": "Palla di fuoco",
+    "description": "Un punto entro 150 piedi esplode in una sfera di raggio 20 piedi. Le creature effettuano un tiro salvezza su Destrezza, subendo 8d6 danni da fuoco se falliscono o la metà se riescono. Gli oggetti infiammabili incustoditi prendono fuoco.",
+    "material": "una pallina di guano di pipistrello e zolfo",
+    "higherLevels": "I danni aumentano di 1d6 per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Fly": {
+    "name": "Volare",
+    "description": "Una creatura consenziente che tocchi ottiene una velocità di volo di 60 piedi e può restare sospesa per un massimo di 10 minuti. Cade quando l'incantesimo termina, a meno che possa evitare la caduta.",
+    "material": "una piuma",
+    "higherLevels": "Bersagli una creatura aggiuntiva per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Gaseous Form": {
+    "name": "Forma gassosa",
+    "description": "Una creatura consenziente che tocchi diventa nebbia per un massimo di 1 ora. Vola a 10 piedi, può attraversare aperture strette, resiste ai danni contundenti, perforanti e taglienti e non può attaccare, lanciare incantesimi, parlare o manipolare oggetti.",
+    "material": "un po' di garza",
+    "higherLevels": "Bersagli una creatura aggiuntiva per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Glyph of Warding": {
+    "name": "Glifo della protezione",
+    "description": "Tracci un glifo nascosto su una superficie o un oggetto richiudibile. Un innesco scelto provoca un'esplosione che infligge 5d8 danni da acido, freddo, fuoco, fulmine o tuono in una sfera di raggio 20 piedi (tiro salvezza su Destrezza per dimezzare) oppure libera un incantesimo immagazzinato. Spostarlo per più di 10 piedi lo annulla.",
+    "material": "diamante in polvere del valore di almeno 200 mo, consumato dall'incantesimo",
+    "higherLevels": "I danni dell'esplosione aumentano di 1d8 per livello di slot oltre il 3°; un incantesimo immagazzinato può avere livello non superiore a quello dello slot usato per il glifo.",
+    "castingTime": "1 ora",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione o attivazione"
+  },
+  "Haste": {
+    "name": "Velocità",
+    "description": "Una creatura consenziente ottiene velocità raddoppiata, +2 alla CA, vantaggio ai tiri salvezza su Destrezza e un'azione aggiuntiva limitata ogni turno per un massimo di 1 minuto. Quando l'effetto termina, diventa incapacitata con velocità 0 fino alla fine del suo turno successivo.",
+    "material": "una scaglia di radice di liquirizia",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Hypnotic Pattern": {
+    "name": "Trama ipnotica",
+    "description": "Le creature che vedono un disegno in un cubo di 30 piedi effettuano tiri salvezza su Saggezza o diventano affascinate, incapacitate e incapaci di muoversi per un massimo di 1 minuto. Subire danni o essere scosse dall'azione di un'altra creatura termina l'effetto su un bersaglio.",
+    "material": "un pizzico di coriandoli",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Lightning Bolt": {
+    "name": "Fulmine",
+    "description": "Una linea di fulmine lunga 100 piedi e larga 5 piedi scaturisce da te. Le creature al suo interno effettuano tiri salvezza su Destrezza, subendo 8d6 danni da fulmine se falliscono o la metà se riescono.",
+    "material": "un po' di pelliccia e una bacchetta di cristallo",
+    "higherLevels": "I danni aumentano di 1d6 per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Magic Circle": {
+    "name": "Cerchio magico",
+    "description": "Crei per 1 ora un cilindro di raggio 10 piedi e alto 20 piedi. I celestiali, elementali, folletti, immondi e non morti scelti di norma non possono entrarvi, hanno svantaggio agli attacchi verso l'interno e non possono affascinare, spaventare o possedere le creature al suo interno. La barriera può invece trattenerli.",
+    "material": "sale e argento in polvere del valore di almeno 100 mo, consumati dall'incantesimo",
+    "higherLevels": "La durata aumenta di 1 ora per livello di slot oltre il 3°.",
+    "castingTime": "1 minuto",
+    "range": "10 piedi",
+    "duration": "1 ora"
+  },
+  "Major Image": {
+    "name": "Immagine maggiore",
+    "description": "Crei per un massimo di 10 minuti immagini, suoni, odori e temperature convincenti di qualcosa grande al massimo quanto un cubo di 20 piedi. Non può infliggere danni o condizioni; l'interazione fisica rivela l'illusione. Puoi muoverla e modificarla con un'azione Magia.",
+    "material": "un po' di vello",
+    "higherLevels": "Con uno slot di livello 4 o superiore l'illusione dura fino a dissoluzione e non richiede concentrazione.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Mass Healing Word": {
+    "name": "Parola guaritrice di massa",
+    "description": "Con un'azione bonus, fino a sei creature visibili entro 60 piedi recuperano ciascuna un numero di punti ferita pari a 2d4 più il tuo modificatore di caratteristica da incantatore.",
+    "higherLevels": "I punti ferita recuperati aumentano di 1d4 per livello di slot oltre il 3°.",
+    "castingTime": "Azione bonus",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Meld into Stone": {
+    "name": "Fondersi nella pietra",
+    "description": "Ti fondi insieme al tuo equipaggiamento in un oggetto di pietra sufficientemente grande per un massimo di 8 ore. Puoi uscirne spendendo 5 piedi di movimento; i danni o la distruzione della pietra possono espellerti e ferirti.",
+    "castingTime": "Azione o Rituale",
+    "range": "Contatto",
+    "duration": "8 ore"
+  },
+  "Nondetection": {
+    "name": "Anti-individuazione",
+    "description": "Per 8 ore, una creatura consenziente, un luogo o un oggetto grande al massimo 10 piedi non può essere bersagliato da incantesimi di Divinazione né percepito tramite sensori magici di scrutamento.",
+    "material": "un pizzico di polvere di diamante del valore di almeno 25 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "8 ore"
+  },
+  "Phantom Steed": {
+    "name": "Cavalcatura fantomatica",
+    "description": "Crei per 1 ora un cavallo da sella quasi reale. Ha una velocità di 100 piedi e può percorrere 13 miglia in un'ora; svanisce nell'arco di 1 minuto alla fine dell'incantesimo e sparisce prima se subisce danni.",
+    "castingTime": "1 minuto o Rituale",
+    "range": "30 piedi",
+    "duration": "1 ora"
+  },
+  "Plant Growth": {
+    "name": "Crescita delle piante",
+    "description": "Scegli Crescita rigogliosa per far sì che le piante normali in una sfera di raggio 100 piedi richiedano 4 piedi di movimento per ogni piede percorso, eccetto nelle aree da te scelte. In alternativa, impieghi 8 ore per arricchire le piante in un raggio di mezzo miglio, raddoppiando il raccolto per 365 giorni.",
+    "castingTime": "Azione (Crescita rigogliosa) o 8 ore (Arricchimento)",
+    "range": "150 piedi",
+    "duration": "Istantanea"
+  },
+  "Protection from Energy": {
+    "name": "Protezione dall'energia",
+    "description": "Una creatura consenziente che tocchi ha resistenza ai danni da acido, freddo, fuoco, fulmine o tuono (a tua scelta) per un massimo di 1 ora.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Remove Curse": {
+    "name": "Rimuovi maledizione",
+    "description": "Termini tutte le maledizioni che influenzano una creatura o un oggetto toccato. Su un oggetto magico maledetto interrompi la sintonia del proprietario, permettendo di rimuoverlo, ma la maledizione dell'oggetto rimane.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Revivify": {
+    "name": "Rianimare",
+    "description": "Tocchi una creatura morta nell'ultimo minuto. Torna in vita con 1 punto ferita. L'incantesimo non può ripristinare parti del corpo mancanti né riportare in vita chi è morto di vecchiaia.",
+    "material": "un diamante del valore di almeno 300 mo, consumato dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Sending": {
+    "name": "Messaggio a distanza",
+    "description": "Invii fino a 25 parole a una creatura che hai incontrato o che ti è stata descritta da qualcuno che l'ha incontrata. Può rispondere immediatamente. Su altri piani c'è una probabilità del 5 % che il messaggio non arrivi; il destinatario può bloccarti per 8 ore.",
+    "material": "un filo di rame",
+    "castingTime": "Azione",
+    "range": "Illimitata",
+    "duration": "Istantanea"
+  },
+  "Sleet Storm": {
+    "name": "Tempesta di nevischio",
+    "description": "Un cilindro di raggio 20 piedi e alto 40 piedi diventa fortemente oscurato e terreno difficile per un massimo di 1 minuto. Le creature che vi entrano o vi iniziano il turno effettuano un tiro salvezza su Destrezza o cadono prone e perdono la concentrazione.",
+    "material": "un ombrello in miniatura",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Slow": {
+    "name": "Lentezza",
+    "description": "Fino a sei creature in un cubo di 40 piedi effettuano tiri salvezza su Saggezza. Chi fallisce ha velocità dimezzata, -2 alla CA e ai tiri salvezza su Destrezza, nessuna reazione, al massimo un attacco e un'azione o un'azione bonus per turno; gli incantesimi con componenti somatiche hanno il 25 % di probabilità di fallire. Ripetono il tiro a ogni turno.",
+    "material": "una goccia di melassa",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Speak with Dead": {
+    "name": "Parla con i morti",
+    "description": "Fai fino a cinque domande in 10 minuti a un cadavere dotato di bocca. Sa solo ciò che sapeva in vita e non è obbligato a rispondere sinceramente; un cadavere bersagliato negli ultimi 10 giorni non può essere interrogato di nuovo.",
+    "material": "incenso acceso",
+    "castingTime": "Azione",
+    "range": "10 piedi",
+    "duration": "10 minuti"
+  },
+  "Speak with Plants": {
+    "name": "Parla con le piante",
+    "description": "Le piante in un'emanazione di 30 piedi possono riferire ciò che è accaduto nell'ultimo giorno e seguire ordini semplici per 10 minuti. Puoi rendere il terreno coperto di piante difficile o normale e comunicare con le creature vegetali.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "10 minuti"
+  },
+  "Spirit Guardians": {
+    "name": "Guardiani spirituali",
+    "description": "Gli spiriti riempiono un'emanazione di 15 piedi intorno a te per un massimo di 10 minuti. Scegli le creature da risparmiare. Le altre hanno velocità dimezzata e fanno un tiro salvezza su Saggezza quando l'emanazione entra nel loro spazio, o quando vi entrano o vi terminano un turno; subiscono 3d8 danni radianti o necrotici se falliscono, o la metà se riescono, una volta per turno.",
+    "material": "una pergamena di preghiera",
+    "higherLevels": "I danni aumentano di 1d8 per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Stinking Cloud": {
+    "name": "Nube nauseabonda",
+    "description": "Crei una sfera di gas di raggio 20 piedi che oscura fortemente la visuale per un massimo di 1 minuto. Una creatura che vi inizia il turno effettua un tiro salvezza su Costituzione o diventa avvelenata e non può compiere azioni o azioni bonus quel turno. Un vento forte disperde la nube.",
+    "material": "un uovo marcio",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Tiny Hut": {
+    "name": "Capanna minuscola",
+    "description": "Crei un rifugio immobile in un'emanazione di 10 piedi per 8 ore. Le creature e gli oggetti presenti al lancio possono attraversarlo, gli altri no. Gli incantesimi di livello 3 o inferiore non possono attraversarlo. Termina se esci o lo lanci di nuovo.",
+    "material": "una perla di cristallo",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Personale",
+    "duration": "8 ore"
+  },
+  "Tongues": {
+    "name": "Linguaggi",
+    "description": "Una creatura toccata comprende qualsiasi lingua parlata o segnata per 1 ora. Qualsiasi creatura che conosca una lingua comprende le sue parole o i suoi segni.",
+    "material": "una ziggurat in miniatura",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Vampiric Touch": {
+    "name": "Tocco vampirico",
+    "description": "Effettui un attacco con incantesimo in mischia che infligge 3d6 danni necrotici se colpisce e recuperi punti ferita pari alla metà dei danni necrotici inflitti. Puoi ripetere l'attacco con un'azione Magia a ogni turno per un massimo di 1 minuto.",
+    "higherLevels": "I danni aumentano di 1d6 per livello di slot oltre il 3°.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Water Breathing": {
+    "name": "Respirazione in acqua",
+    "description": "Fino a dieci creature consenzienti entro 30 piedi possono respirare sott'acqua per 24 ore, conservando anche la normale respirazione.",
+    "material": "una canna corta",
+    "castingTime": "Azione o Rituale",
+    "range": "30 piedi",
+    "duration": "24 ore"
+  },
+  "Water Walk": {
+    "name": "Camminare sull'acqua",
+    "description": "Fino a dieci creature consenzienti entro 30 piedi possono camminare sulle superfici liquide come sul terreno solido per 1 ora. Possono usare un'azione bonus per passare dalla superficie al liquido sottostante e viceversa.",
+    "material": "un pezzo di sughero",
+    "castingTime": "Azione o Rituale",
+    "range": "30 piedi",
+    "duration": "1 ora"
+  },
+  "Wind Wall": {
+    "name": "Muro di vento",
+    "description": "Crei per un massimo di 1 minuto un muro di vento lungo fino a 50 piedi, alto 15 piedi e spesso 1 piede. Le creature nel suo spazio effettuano un tiro salvezza su Forza contro 4d8 danni contundenti, dimezzati in caso di successo. Blocca gas, piccole creature volanti e proiettili ordinari.",
+    "material": "un ventaglio e una piuma",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Arcane Eye": {
+    "name": "Occhio arcano",
+    "description": "Crei per un massimo di 1 ora un occhio fluttuante invisibile e invulnerabile. Vedi attraverso di esso in ogni direzione, anche con scurovisione entro 30 piedi; lo muovi di 30 piedi con un'azione bonus, anche attraverso aperture larghe almeno 1 pollice.",
+    "material": "un po' di pelliccia di pipistrello",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Aura of Life": {
+    "name": "Aura di vita",
+    "description": "Per un massimo di 10 minuti, un'emanazione di 30 piedi intorno a te concede a te e ai tuoi alleati resistenza ai danni necrotici e impedisce la riduzione del massimo dei punti ferita. Un alleato che vi inizia il turno con 0 punti ferita ne recupera 1.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Banishment": {
+    "name": "Esilio",
+    "description": "Una creatura visibile effettua un tiro salvezza su Carisma o viene inviata in un innocuo semipiano, incapacitata, per un massimo di 1 minuto. Torna alla fine dell'incantesimo, tranne un'aberrazione, celestiale, elementale, folletto o immondo, che resta lontano se trascorre l'intero minuto.",
+    "material": "un pentacolo",
+    "higherLevels": "Bersagli una creatura aggiuntiva per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Black Tentacles": {
+    "name": "Tentacoli neri",
+    "description": "Un'area quadrata di 20 piedi diventa terreno difficile per un massimo di 1 minuto. Le creature presenti effettuano un tiro salvezza su Forza o subiscono 3d6 danni contundenti e diventano trattenute; il tiro si ripete quando entrano o terminano un turno nell'area, una volta per turno. Un bersaglio trattenuto può liberarsi con un'azione e una prova di Atletica.",
+    "material": "un tentacolo",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Blight": {
+    "name": "Avvizzire",
+    "description": "Una creatura visibile entro 30 piedi effettua un tiro salvezza su Costituzione, subendo 8d8 danni necrotici se fallisce o la metà se riesce. Le piante falliscono automaticamente; una pianta non magica incustodita invece appassisce e muore.",
+    "higherLevels": "I danni aumentano di 1d8 per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Charm Monster": {
+    "name": "Charme su mostri",
+    "description": "Una creatura visibile effettua un tiro salvezza su Saggezza, con vantaggio se tu o un alleato la state combattendo. Se fallisce, è affascinata e amichevole per 1 ora; l'effetto termina prima se tu o un alleato la ferite. Al termine sa di essere stata affascinata da te.",
+    "higherLevels": "Bersagli una creatura aggiuntiva per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "1 ora"
+  },
+  "Compulsion": {
+    "name": "Costrizione",
+    "description": "Le creature visibili scelte entro 30 piedi effettuano tiri salvezza su Saggezza o sono affascinate per un massimo di 1 minuto. Con un'azione bonus indichi una direzione orizzontale; nei loro turni successivi si muovono in quella direzione lungo il percorso più sicuro, poi ripetono il tiro.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Confusion": {
+    "name": "Confusione",
+    "description": "Le creature in una sfera di raggio 10 piedi effettuano tiri salvezza su Saggezza. Chi fallisce non può usare azioni bonus o reazioni e tira 1d10 ogni turno per stabilire se si muove casualmente, non fa nulla, attacca una creatura vicina casuale o agisce normalmente. Ripete il tiro salvezza a ogni turno.",
+    "material": "tre gusci di noce",
+    "higherLevels": "Il raggio della sfera aumenta di 5 piedi per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Conjure Minor Elementals": {
+    "name": "Evocare elementali minori",
+    "description": "Per un massimo di 10 minuti, gli spiriti riempiono un'emanazione di 15 piedi intorno a te. Per i nemici il terreno è difficile e i tuoi attacchi che colpiscono una creatura al suo interno infliggono 2d8 danni extra da acido, freddo, fuoco o fulmine.",
+    "higherLevels": "I danni extra aumentano di 1d8 per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Conjure Woodland Beings": {
+    "name": "Evocare creature boschive",
+    "description": "Gli spiriti della natura riempiono un'emanazione di 10 piedi intorno a te per un massimo di 10 minuti. Puoi costringere le creature che vi entrano, vi terminano un turno o vengono raggiunte dall'emanazione a effettuare un tiro salvezza su Saggezza contro 5d8 danni da forza, dimezzati in caso di successo, una volta per turno. Puoi usare Disimpegno come azione bonus.",
+    "higherLevels": "I danni aumentano di 1d8 per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Control Water": {
+    "name": "Controllare l'acqua",
+    "description": "Controlli l'acqua in un cubo grande fino a 100 piedi per lato per un massimo di 10 minuti. Inondazione alza l'acqua o genera un'onda, Dividere le acque apre un passaggio, Deviare il flusso ne cambia il corso e Vortice trascina le creature verso il centro e può infliggere 2d8 danni contundenti.",
+    "material": "una miscela di acqua e polvere",
+    "castingTime": "Azione",
+    "range": "300 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Death Ward": {
+    "name": "Interdizione alla morte",
+    "description": "Per 8 ore, la prima volta che una creatura toccata scenderebbe a 0 punti ferita, scende invece a 1. Se un effetto la ucciderebbe istantaneamente senza infliggere danni, l'effetto viene negato. L'incantesimo poi termina.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "8 ore"
+  },
+  "Dimension Door": {
+    "name": "Porta dimensionale",
+    "description": "Ti teletrasporti in un punto specificato entro 500 piedi, portando facoltativamente con te una creatura consenziente entro 5 piedi. Se la destinazione è occupata o piena, il teletrasporto fallisce e ogni viaggiatore subisce 4d6 danni da forza.",
+    "castingTime": "Azione",
+    "range": "500 piedi",
+    "duration": "Istantanea"
+  },
+  "Divination": {
+    "name": "Divinazione",
+    "description": "Chiedi a una divinità o ai suoi servitori una domanda su un evento o obiettivo dei prossimi 7 giorni e ricevi una risposta veritiera, forse enigmatica. Ogni ulteriore lancio prima di un riposo lungo ha una probabilità cumulativa del 25 % di non dare risposta.",
+    "material": "incenso del valore di almeno 25 mo, consumato dall'incantesimo",
+    "castingTime": "Azione o Rituale",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Dominate Beast": {
+    "name": "Dominare bestie",
+    "description": "Una bestia visibile effettua un tiro salvezza su Saggezza o è affascinata per un massimo di 1 minuto. Puoi impartirle ordini telepatici senza usare un'azione; ripete il tiro ogni volta che subisce danni. Ha vantaggio al tiro iniziale se la stai combattendo.",
+    "higherLevels": "Uno slot di livello 5 prolunga la concentrazione a 10 minuti, di livello 6 a 1 ora e di livello 7 o superiore a 8 ore.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Fabricate": {
+    "name": "Fabbricare",
+    "description": "Trasformi materie prime in un oggetto di taglia Grande o inferiore, oppure Media o inferiore se di metallo, pietra o altro minerale. Per oggetti raffinati come armi o armature devi padroneggiare gli strumenti da artigiano appropriati; non puoi creare creature o oggetti magici.",
+    "castingTime": "10 minuti",
+    "range": "120 piedi",
+    "duration": "Istantanea"
+  },
+  "Faithful Hound": {
+    "name": "Segugio fedele",
+    "description": "Evochi per 8 ore un cane da guardia invisibile e invulnerabile. Abbaia quando una creatura non autorizzata si avvicina entro 30 piedi, ha vista pura entro 30 piedi e, all'inizio di ciascuno dei tuoi turni, morde un nemico entro 5 piedi infliggendogli 4d8 danni da forza se fallisce un tiro salvezza su Destrezza.",
+    "material": "un fischietto d'argento",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "8 ore",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Fire Shield": {
+    "name": "Scudo di fuoco",
+    "description": "Uno scudo caldo o freddo ti circonda per 10 minuti. Quello caldo concede resistenza al freddo e infligge 2d8 danni da fuoco a una creatura vicina che ti colpisce in mischia; quello freddo concede resistenza al fuoco e infligge 2d8 danni da freddo.",
+    "material": "un po' di fosforo o una lucciola",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "10 minuti"
+  },
+  "Freedom of Movement": {
+    "name": "Libertà di movimento",
+    "description": "Una creatura consenziente che tocchi ignora il terreno difficile e gli effetti magici che riducono la velocità o provocano Paralizzato o Trattenuto per 1 ora. Ottiene una velocità di nuoto pari alla propria velocità e può spendere 5 piedi di movimento per liberarsi da impedimenti non magici.",
+    "material": "una cinghia di cuoio",
+    "higherLevels": "Bersagli una creatura aggiuntiva per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Giant Insect": {
+    "name": "Insetto gigante",
+    "description": "Evochi una scolopendra, un ragno o una vespa gigante in uno spazio entro 60 piedi per un massimo di 10 minuti. Agisce subito dopo il tuo turno, obbedisce agli ordini verbali e usa il blocco delle statistiche dell'Insetto gigante; la forma ne cambia le capacità.",
+    "higherLevels": "Usi il livello dello slot per il livello dell'incantesimo dell'insetto evocato e le sue statistiche variabili.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Greater Invisibility": {
+    "name": "Invisibilità superiore",
+    "description": "Una creatura che tocchi ha la condizione Invisibile per un massimo di 1 minuto, anche mentre attacca o lancia incantesimi.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Guardian of Faith": {
+    "name": "Guardiano della fede",
+    "description": "Evochi un guardiano invulnerabile di taglia Grande per un massimo di 8 ore. I nemici che entrano o iniziano un turno entro 10 piedi effettuano un tiro salvezza su Destrezza, subendo 20 danni radianti se falliscono o la metà se riescono. Scompare dopo aver inflitto 60 danni complessivi.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "8 ore"
+  },
+  "Hallucinatory Terrain": {
+    "name": "Terreno allucinatorio",
+    "description": "Fai apparire, risuonare e odorare un cubo di terreno naturale di 150 piedi come un diverso terreno naturale per 24 ore. Strutture, equipaggiamento e creature rimangono invariati; il contatto o una prova di Investigazione riuscita possono svelare l'illusione.",
+    "material": "un fungo",
+    "castingTime": "10 minuti",
+    "range": "300 piedi",
+    "duration": "24 ore"
+  },
+  "Ice Storm": {
+    "name": "Tempesta di ghiaccio",
+    "description": "La grandine colpisce un cilindro di raggio 20 piedi e alto 40 piedi. Le creature effettuano tiri salvezza su Destrezza contro 2d10 danni contundenti più 4d6 danni da freddo, dimezzati in caso di successo. Il terreno diventa difficile fino alla fine del tuo turno successivo.",
+    "material": "una muffola",
+    "higherLevels": "I danni contundenti aumentano di 1d10 per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "300 piedi",
+    "duration": "Istantanea"
+  },
+  "Locate Creature": {
+    "name": "Localizzare creatura",
+    "description": "Per un massimo di 1 ora percepisci la direzione di una creatura conosciuta e nominata entro 1.000 piedi, o della creatura più vicina di un tipo che hai visto da vicino. Una forma cambiata o una barriera di piombo bloccano l'effetto.",
+    "material": "pelliccia di segugio",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Phantasmal Killer": {
+    "name": "Assassino fantasmagorico",
+    "description": "Una creatura visibile effettua un tiro salvezza su Saggezza contro la sua paura peggiore. Se fallisce, subisce 4d10 danni psichici e ha svantaggio alle prove e agli attacchi; se riesce, subisce la metà e l'incantesimo termina. Ripete il tiro a ogni turno, subendo di nuovo 4d10 danni se fallisce.",
+    "higherLevels": "I danni aumentano di 1d10 per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Polymorph": {
+    "name": "Metamorfosi",
+    "description": "Una creatura che vedi effettua un tiro salvezza su Saggezza o diventa una bestia con GS non superiore al proprio GS o livello per un massimo di 1 ora. Usa le statistiche della bestia ma conserva i propri punti ferita e dadi vita e ottiene punti ferita temporanei pari ai punti ferita della bestia; l'incantesimo termina quando questi si esauriscono.",
+    "material": "un bozzolo di bruco",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Private Sanctum": {
+    "name": "Santuario privato",
+    "description": "Proteggi un cubo da 5 a 100 piedi per lato per 24 ore. Scegli barriere contro suoni o vista, sensori e bersagliamento di Divinazione, teletrasporto o viaggi planari. Lanciare l'incantesimo ogni giorno nello stesso luogo per 365 giorni rende l'effetto permanente.",
+    "material": "una lamina sottile di piombo",
+    "higherLevels": "La dimensione massima del cubo aumenta di 100 piedi per livello di slot oltre il 4°.",
+    "castingTime": "10 minuti",
+    "range": "120 piedi",
+    "duration": "24 ore"
+  },
+  "Resilient Sphere": {
+    "name": "Sfera resiliente",
+    "description": "Rinchiudi una creatura o un oggetto di taglia Grande o inferiore in una sfera invulnerabile per un massimo di 1 minuto; una creatura non consenziente effettua un tiro salvezza su Destrezza. Nulla può attraversarla, benché chi è all'interno possa respirare; la sfera può rotolare o essere spostata.",
+    "material": "una sfera di vetro",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Secret Chest": {
+    "name": "Forziere segreto",
+    "description": "Nascondi sul piano Etereo un forziere costruito appositamente, di 3 per 2 per 2 piedi, con fino a 12 piedi cubi di contenuto. Tocchi la sua replica minuscola con un'azione Magia per richiamarlo o rimandarlo indietro. Dopo 60 giorni, ogni giorno ha una probabilità cumulativa del 5 % di terminare l'incantesimo.",
+    "material": "un forziere di 3 piedi per 2 per 2, costruito con materiali rari del valore di almeno 5.000 mo, e una replica Minuscola dello stesso materiale del valore di almeno 50 mo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione"
+  },
+  "Stone Shape": {
+    "name": "Modellare pietra",
+    "description": "Modelli un oggetto di pietra di taglia Media o inferiore, o una sezione di pietra larga non più di 5 piedi, nella forma che scegli. Può creare una semplice apertura, porta o contenitore, ma non un macchinario raffinato.",
+    "material": "argilla morbida",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Stoneskin": {
+    "name": "Pelle di pietra",
+    "description": "Una creatura consenziente che tocchi ha resistenza ai danni contundenti, perforanti e taglienti per un massimo di 1 ora.",
+    "material": "polvere di diamante del valore di almeno 100 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Vitriolic Sphere": {
+    "name": "Sfera vetriolica",
+    "description": "Una sfera di acido di raggio 20 piedi esplode entro 150 piedi. Le creature effettuano tiri salvezza su Destrezza; un fallimento infligge subito 10d4 danni da acido e 5d4 alla fine del loro turno successivo, mentre un successo dimezza soltanto i danni iniziali.",
+    "material": "una goccia di bile",
+    "higherLevels": "I danni iniziali aumentano di 2d4 per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Istantanea"
+  },
+  "Wall of Fire": {
+    "name": "Muro di fuoco",
+    "description": "Crei un muro di fuoco lungo fino a 60 piedi e alto 20 piedi, oppure un anello largo fino a 20 piedi, per un massimo di 1 minuto. Le creature nel suo spazio effettuano tiri salvezza su Destrezza contro 5d8 danni da fuoco, dimezzati in caso di successo. Un lato scelto infligge anche 5d8 danni alle creature che entrano nel muro o terminano il turno entro 10 piedi.",
+    "material": "un pezzo di carbone di legna",
+    "higherLevels": "I danni aumentano di 1d8 per livello di slot oltre il 4°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Animate Objects": {
+    "name": "Animare oggetti",
+    "description": "Animi oggetti non magici incustoditi fino a un numero pari al tuo modificatore di caratteristica da incantatore; quelli Medi o inferiori contano uno, quelli Grandi due e quelli Enormi tre. Ognuno diventa un costrutto alleato (CA 15; PF 10/20/40 secondo la taglia), agisce dopo di te e obbedisce agli ordini impartiti con un'azione bonus entro 500 piedi. Il suo Colpo in mischia usa il tuo bonus di attacco con incantesimo e infligge 1d4+3 danni da forza (Medio o inferiore), 2d6+3+il tuo modificatore da incantatore (Grande) o 2d12+3+il tuo modificatore (Enorme).",
+    "higherLevels": "Ogni livello di slot oltre il 5° aggiunge 1d4 ai danni da Colpo degli oggetti Medi o inferiori, 1d6 per quelli Grandi o 1d12 per quelli Enormi.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Antilife Shell": {
+    "name": "Barriera antivita",
+    "description": "Un'emanazione di 10 piedi intorno a te impedisce alle creature diverse da costrutti e non morti di attraversarla o di raggiungere il suo interno per un massimo di 1 ora. Possono comunque lanciare incantesimi o attaccare attraverso di essa con armi a distanza o con portata. Costringerne una ad attraversare la barriera termina l'incantesimo.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Arcane Hand": {
+    "name": "Mano arcana",
+    "description": "Crei una grande mano magica (CA 20, punti ferita pari ai tuoi) per un massimo di 1 minuto. La sposti fino a 60 piedi al lancio e poi con un'azione bonus, scegliendo un effetto: un attacco con incantesimo in mischia che infligge 5d8 danni da forza, una spinta, una lotta e schiacciamento che infligge 4d6 più il tuo modificatore da incantatore, oppure una copertura parziale.",
+    "material": "un guscio d'uovo e un guanto",
+    "higherLevels": "Ogni livello di slot oltre il 5° aggiunge 2d8 ai danni del Pugno serrato e 2d6 a quelli della Mano afferrante.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Awaken": {
+    "name": "Risveglio",
+    "description": "Dopo 8 ore, conferisci Intelligenza 10 e una lingua che conosci a una bestia o creatura vegetale con Intelligenza 3 o inferiore, oppure a una pianta naturale. Una pianta naturale diventa una creatura vegetale mobile. Il bersaglio è affascinato da te per 30 giorni o finché tu o un alleato non lo ferite.",
+    "material": "un'agata del valore di almeno 1.000 mo, consumata dall'incantesimo",
+    "castingTime": "8 ore",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Cloudkill": {
+    "name": "Nube mortale",
+    "description": "Crei una sfera di nebbia di raggio 20 piedi che oscura fortemente la visuale per un massimo di 10 minuti; si allontana da te di 10 piedi a ogni turno. Le creature al suo interno effettuano un tiro salvezza su Costituzione contro 5d8 danni da veleno, dimezzati in caso di successo, quando compare, le raggiunge o vi entrano o vi terminano un turno, una volta per turno.",
+    "higherLevels": "I danni aumentano di 1d8 per livello di slot oltre il 5°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Commune": {
+    "name": "Comunione",
+    "description": "Poni a una divinità o a un suo rappresentante fino a tre domande a cui si può rispondere sì o no entro 1 minuto e ricevi risposte veritiere, talvolta «incerto». Ogni ulteriore lancio prima di un riposo lungo aggiunge una probabilità cumulativa del 25 % di non ricevere risposta.",
+    "material": "incenso",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Personale",
+    "duration": "1 minuto"
+  },
+  "Commune with Nature": {
+    "name": "Comunione con la natura",
+    "description": "Apprendi tre fatti sulla zona naturale circostante: insediamenti, portali planari, una significativa creatura ultraterrena, piante, minerali o bestie predominanti, oppure corpi d'acqua. Il raggio è di 3 miglia all'aperto o di 300 piedi sottoterra; l'incantesimo fallisce nelle aree costruite.",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Cone of Cold": {
+    "name": "Cono di freddo",
+    "description": "Un cono di freddo di 60 piedi impone tiri salvezza su Costituzione. Le creature subiscono 8d8 danni da freddo se falliscono o la metà se riescono; quelle uccise dall'incantesimo si congelano fino a scongelarsi.",
+    "material": "un piccolo cono di cristallo o vetro",
+    "higherLevels": "I danni aumentano di 1d8 per livello di slot oltre il 5°.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Conjure Elemental": {
+    "name": "Evocare elementale",
+    "description": "Evochi un grande spirito intangibile per un massimo di 10 minuti. Scegli aria (fulmine), terra (tuono), fuoco (fuoco) o acqua (freddo). Può trattenere una creatura vicina o al suo interno dopo un tiro salvezza su Destrezza; un fallimento infligge 8d8 danni, poi 4d8 ai successivi tiri falliti finché resta trattenuta.",
+    "higherLevels": "I danni iniziali aumentano di 1d8 per livello di slot oltre il 5°.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Contact Other Plane": {
+    "name": "Contattare altri piani",
+    "description": "Effettui un tiro salvezza su Intelligenza con CD 15 per contattare un'intelligenza extraplanare. Se riesci, poni fino a cinque domande entro 1 minuto; le risposte sono brevi. Se fallisci, subisci 6d6 danni psichici e diventi incapacitato fino a un riposo lungo o a Ristorare superiore.",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Personale",
+    "duration": "1 minuto"
+  },
+  "Contagion": {
+    "name": "Contagio",
+    "description": "Una creatura che tocchi effettua un tiro salvezza su Costituzione. Se fallisce, subisce 11d8 danni necrotici ed è avvelenata, con svantaggio ai tiri salvezza che usano una caratteristica scelta. Ripete il tiro a ogni turno finché tre successi terminano l'incantesimo o tre fallimenti lo fanno durare 7 giorni.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "7 giorni",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Creation": {
+    "name": "Creazione",
+    "description": "Crei da materia d'ombra che hai visto un oggetto grande fino a un cubo di 5 piedi. Il materiale vegetale dura 24 ore, pietra o cristallo 12 ore, metallo prezioso 1 ora, gemme 10 minuti, adamantio o mithral 1 minuto. L'oggetto non può fungere da componente materiale per un altro incantesimo.",
+    "material": "un pennello",
+    "higherLevels": "Il cubo massimo aumenta di 5 piedi per livello di slot oltre il 5°.",
+    "castingTime": "1 minuto",
+    "range": "30 piedi",
+    "duration": "Speciale"
+  },
+  "Dispel Evil and Good": {
+    "name": "Dissolvi il bene e il male",
+    "description": "Per un massimo di 1 minuto, celestiali, elementali, folletti, immondi e non morti hanno svantaggio agli attacchi contro di te. Termini l'incantesimo per liberare una creatura toccata dalla loro possessione, dal loro fascino o dalla loro paura, oppure per costringerne una entro 5 piedi a effettuare un tiro salvezza su Carisma o tornare al piano d'origine.",
+    "material": "argento e ferro in polvere",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Dominate Person": {
+    "name": "Dominare la persona",
+    "description": "Un umanoide visibile effettua un tiro salvezza su Saggezza o è affascinato per un massimo di 1 minuto. Gli impartisci ordini tramite un legame telepatico senza usare un'azione; ripete il tiro quando subisce danni. Ha vantaggio al tiro iniziale se lo stai combattendo.",
+    "higherLevels": "La concentrazione può durare 10 minuti con uno slot di livello 6, 1 ora con uno di livello 7 o 8 ore con uno di livello 8 o superiore.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Dream": {
+    "name": "Sogno",
+    "description": "Un messaggero consenziente entra nei sogni di una creatura conosciuta sullo stesso piano e le parla mentre dorme. Una versione terrificante trasmette fino a dieci parole; il bersaglio effettua un tiro salvezza su Saggezza o non ottiene benefici dal riposo e subisce 3d6 danni psichici al risveglio.",
+    "material": "una manciata di sabbia",
+    "castingTime": "1 minuto",
+    "range": "Speciale",
+    "duration": "8 ore"
+  },
+  "Flame Strike": {
+    "name": "Colonna di fuoco",
+    "description": "Un cilindro di raggio 10 piedi e alto 40 piedi impone tiri salvezza su Destrezza. Le creature subiscono 5d6 danni da fuoco più 5d6 danni radianti se falliscono, o metà di ciascuno se riescono.",
+    "material": "un pizzico di zolfo",
+    "higherLevels": "I danni da fuoco e quelli radianti aumentano entrambi di 1d6 per livello di slot oltre il 5°.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "fire_damage": {
+        "label": "Danni"
+      },
+      "radiant_damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Geas": {
+    "name": "Geas",
+    "description": "Una creatura che comprende il tuo ordine effettua un tiro salvezza su Saggezza o è affascinata per 30 giorni. Agire direttamente contro l'ordine infligge 5d10 danni psichici, al massimo una volta al giorno. Gli ordini suicidi terminano l'incantesimo.",
+    "higherLevels": "Uno slot di livello 7 o 8 dura 365 giorni; uno di livello 9 dura finché non viene terminato da Rimuovi maledizione, Ristorare superiore o Desiderio.",
+    "castingTime": "1 minuto",
+    "range": "60 piedi",
+    "duration": "30 giorni"
+  },
+  "Greater Restoration": {
+    "name": "Ristorare superiore",
+    "description": "Tocchi una creatura per rimuovere un livello di affaticamento, la condizione Affascinato o Pietrificato, una maledizione o la sintonia con un oggetto maledetto, una riduzione di una caratteristica o del massimo dei punti ferita.",
+    "material": "polvere di diamante del valore di almeno 100 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Hallow": {
+    "name": "Consacrare",
+    "description": "Proteggi un'area di raggio fino a 60 piedi fino a dissoluzione. Aberrazioni, celestiali, elementali, folletti, immondi o non morti scelti non possono entrarvi volontariamente, e i loro effetti di possessione, fascino o paura vi sono soppressi. Scegli un effetto aggiuntivo, come luce, oscurità, silenzio, resistenza, vulnerabilità, coraggio, paura, lingue o blocco del teletrasporto.",
+    "material": "incenso del valore di almeno 1.000 mo, consumato dall'incantesimo",
+    "castingTime": "24 ore",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione"
+  },
+  "Hold Monster": {
+    "name": "Blocca mostri",
+    "description": "Una creatura visibile effettua un tiro salvezza su Saggezza o è paralizzata per un massimo di 1 minuto, ripetendo il tiro alla fine di ogni suo turno.",
+    "material": "un pezzo di ferro diritto",
+    "higherLevels": "Bersagli una creatura aggiuntiva per livello di slot oltre il 5°.",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Insect Plague": {
+    "name": "Peste degli insetti",
+    "description": "Le locuste riempiono una sfera di raggio 20 piedi per un massimo di 10 minuti, rendendola leggermente oscurata e terreno difficile. Le creature effettuano tiri salvezza su Costituzione contro 4d10 danni perforanti, dimezzati in caso di successo, quando compare o vi entrano o vi terminano un turno, una volta per turno.",
+    "material": "una locusta",
+    "higherLevels": "I danni aumentano di 1d10 per livello di slot oltre il 5°.",
+    "castingTime": "Azione",
+    "range": "300 piedi",
+    "duration": "Concentrazione, fino a 10 minuti",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Legend Lore": {
+    "name": "Conoscenza delle leggende",
+    "description": "Ottieni un resoconto veritiero, forse figurato, di importanti conoscenze su una persona, un luogo o un oggetto famoso. Più conosci il soggetto, più dettagli ricevi; l'incantesimo fallisce se non è famoso.",
+    "material": "incenso del valore di almeno 250 mo, consumato dall'incantesimo, e quattro strisce d'avorio del valore di almeno 50 mo ciascuna",
+    "castingTime": "10 minuti",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Mass Cure Wounds": {
+    "name": "Cura ferite di massa",
+    "description": "Scegli fino a sei creature in una sfera di raggio 30 piedi intorno a un punto visibile entro 60 piedi. Ciascuna recupera un numero di punti ferita pari a 5d8 più il tuo modificatore di caratteristica da incantatore.",
+    "higherLevels": "I punti ferita recuperati aumentano di 1d8 per livello di slot oltre il 5°.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Mislead": {
+    "name": "Fuorviare",
+    "description": "Diventi invisibile e crei un doppio illusorio nella tua posizione per un massimo di 1 ora. L'invisibilità termina se attacchi, infliggi danni o lanci un incantesimo. Muovi il doppio intangibile con un'azione Magia e vedi e senti attraverso di esso.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Modify Memory": {
+    "name": "Modifica memoria",
+    "description": "Una creatura visibile effettua un tiro salvezza su Saggezza (con vantaggio se ti sta combattendo) o diventa affascinata e incapacitata. Descrivi un ricordo modificato di un evento delle ultime 24 ore, durato non più di 10 minuti; subire danni o un altro incantesimo termina l'effetto senza modificare il ricordo.",
+    "higherLevels": "Uno slot di livello 6 raggiunge 7 giorni nel passato, di livello 7 arriva a 30 giorni, di livello 8 a 365 giorni e di livello 9 a qualsiasi momento.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Passwall": {
+    "name": "Passapareti",
+    "description": "Apri per 1 ora un passaggio nel legno, nell'intonaco o nella pietra entro 30 piedi, largo fino a 5 piedi, alto 8 piedi e profondo 20 piedi. Quando si chiude, gli occupanti vengono espulsi senza danni.",
+    "material": "un pizzico di semi di sesamo",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "1 ora"
+  },
+  "Planar Binding": {
+    "name": "Legame planare",
+    "description": "Leghi un celestiale, un elementale, un folletto o un immondo che rimane entro 60 piedi durante il lancio di 1 ora. Effettua un tiro salvezza su Carisma o ti serve per 24 ore; la durata di un incantesimo di evocazione si estende fino a quella del vincolo.",
+    "material": "una gemma del valore di almeno 1.000 mo, consumata dall'incantesimo",
+    "higherLevels": "La durata diventa 10 giorni con uno slot di livello 6, 30 giorni con uno di livello 7, 180 giorni con uno di livello 8 o 366 giorni con uno di livello 9.",
+    "castingTime": "1 ora",
+    "range": "60 piedi",
+    "duration": "24 ore"
+  },
+  "Raise Dead": {
+    "name": "Rianimare morti",
+    "description": "Rianimi una creatura morta da non più di 10 giorni, tranne una morta come non morto. Torna con 1 punto ferita e una penalità di -4 ai test D20, ridotta di 1 dopo ogni riposo lungo. L'incantesimo fallisce se mancano parti vitali del corpo.",
+    "material": "un diamante del valore di almeno 500 mo, consumato dall'incantesimo",
+    "castingTime": "1 ora",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Reincarnate": {
+    "name": "Reincarnazione",
+    "description": "Riporti in vita un umanoide morto da non più di 10 giorni in un corpo appena formato. Determini una nuova specie giocabile con la tabella dell'incantesimo o per scelta del DM; la creatura conserva ricordi e altre capacità ma sostituisce i tratti della specie precedente.",
+    "material": "oli rari del valore di almeno 1.000 mo, consumati dall'incantesimo",
+    "castingTime": "1 ora",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Scrying": {
+    "name": "Scrutare",
+    "description": "Per un massimo di 10 minuti vedi e senti una creatura sul tuo piano tramite un sensore invisibile mobile se fallisce un tiro salvezza su Saggezza. Il modificatore del tiro è +5 se la conosci indirettamente, +0 se l'hai incontrata o -5 se la conosci bene, poi -2 per un'immagine, -4 per un suo oggetto o -10 per una parte del corpo. Se riesce, non puoi bersagliarla con Scrutare per 24 ore. Puoi invece collocare un sensore immobile in un luogo che hai visto.",
+    "material": "un focus del valore di almeno 1.000 mo, come una sfera di cristallo, uno specchio o una vasca piena d'acqua",
+    "castingTime": "10 minuti",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Seeming": {
+    "name": "Camuffamento di massa",
+    "description": "Dai a ogni creatura scelta che vedi entro 30 piedi un aspetto illusorio per 8 ore. I bersagli non consenzienti possono effettuare tiri salvezza su Carisma. Un'ispezione fisica o una prova di Investigazione riuscita contro la CD dei tuoi incantesimi rivela il travestimento.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "8 ore"
+  },
+  "Summon Dragon": {
+    "name": "Evocare drago",
+    "description": "Evochi uno spirito draconico per un massimo di 1 ora. Ha CA 14 più il livello dello slot, PF 50 più 10 per ogni livello di slot oltre il 5°, velocità di volo di 60 piedi e agisce subito dopo di te. Effettua un numero di attacchi con Artiglio pari alla parte intera del livello dello slot diviso per 2, usando il tuo bonus di attacco con incantesimo; ciascun colpo infligge 1d6+4+livello dello slot danni perforanti. Il suo soffio in un cono di 30 piedi infligge 2d6 danni da acido, freddo, fuoco, fulmine o veleno (tiro salvezza su Destrezza per dimezzare). Scegli una delle sue resistenze da condividere per la durata.",
+    "material": "un oggetto con l'immagine di un drago incisa, del valore di almeno 500 mo",
+    "higherLevels": "Usi il livello dello slot per determinare CA, punti ferita e altre statistiche variabili dello spirito.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Telekinesis": {
+    "name": "Telecinesi",
+    "description": "Per un massimo di 10 minuti usi un'azione Magia a ogni turno per muovere o manipolare una creatura o un oggetto Enorme o inferiore entro 60 piedi. Una creatura effettua un tiro salvezza su Forza o viene spostata fino a 30 piedi e trattenuta fino alla fine del tuo turno successivo.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Telepathic Bond": {
+    "name": "Legame telepatico",
+    "description": "Colleghi fino a otto creature consenzienti entro 30 piedi per 1 ora. Comunicano telepaticamente a qualsiasi distanza sullo stesso piano, anche senza conoscere lingue comuni.",
+    "material": "due uova",
+    "castingTime": "Azione o Rituale",
+    "range": "30 piedi",
+    "duration": "1 ora"
+  },
+  "Teleportation Circle": {
+    "name": "Cerchio di teletrasporto",
+    "description": "Tracci un portale temporaneo di raggio 5 piedi che conduce a un cerchio permanente sullo stesso piano di cui conosci i sigilli. Resta aperto fino alla fine del tuo turno successivo. Lanciare l'incantesimo nello stesso luogo ogni giorno per 365 giorni crea un cerchio permanente.",
+    "material": "inchiostri rari del valore di almeno 50 mo, consumati dall'incantesimo",
+    "castingTime": "1 minuto",
+    "range": "10 piedi",
+    "duration": "1 round"
+  },
+  "Tree Stride": {
+    "name": "Camminare negli alberi",
+    "description": "Per un massimo di 1 minuto entri in un albero vivente ed esci da un altro albero vivente della stessa specie entro 500 piedi, spendendo 5 piedi di movimento per entrare e altri 5 per uscire. Puoi viaggiare così una volta per turno e devi terminare ogni turno fuori da un albero.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Wall of Force": {
+    "name": "Muro di forza",
+    "description": "Crei per un massimo di 10 minuti un muro invisibile e invulnerabile formato da dieci pannelli contigui di 10 piedi o una cupola/sfera di raggio fino a 10 piedi. Nulla di fisico lo attraversa; Dissolvi magie non lo termina, ma Disintegrazione lo distrugge.",
+    "material": "una scheggia di vetro",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Wall of Stone": {
+    "name": "Muro di pietra",
+    "description": "Crei dieci pannelli di pietra contigui, ognuno di 10 piedi per lato e spesso 6 pollici, oppure pannelli di 10 per 20 piedi spessi 3 pollici. Una creatura circondata può effettuare un tiro salvezza su Destrezza per allontanarsi. Ogni pannello ha CA 15 e 30 punti ferita per pollice di spessore; mantenere la concentrazione per tutti i 10 minuti rende il muro permanente.",
+    "material": "un cubo di granito",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Blade Barrier": {
+    "name": "Barriera di lame",
+    "description": "Crei per un massimo di 10 minuti un muro di lame magiche lungo fino a 100 piedi e alto 20 piedi, oppure un anello di diametro 60 piedi. Il suo spazio è terreno difficile e concede copertura per tre quarti. Le creature al suo interno effettuano tiri salvezza su Destrezza contro 6d10 danni da forza, dimezzati in caso di successo, quando compare o vi entrano o vi terminano un turno, una volta per turno.",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 10 minuti",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Chain Lightning": {
+    "name": "Catena di fulmini",
+    "description": "Un fulmine colpisce un bersaglio visibile entro 150 piedi e salta a un massimo di altri tre entro 30 piedi dal primo. Ogni bersaglio effettua un tiro salvezza su Destrezza contro 10d8 danni da fulmine, dimezzati in caso di successo; nessuno viene colpito due volte.",
+    "material": "tre spilli d'argento",
+    "higherLevels": "Un fulmine aggiuntivo salta a un nuovo bersaglio per ogni livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Circle of Death": {
+    "name": "Cerchio della morte",
+    "description": "Una sfera di energia negativa di raggio 60 piedi impone tiri salvezza su Costituzione, infliggendo 8d8 danni necrotici se falliti o la metà se superati.",
+    "material": "la polvere di una perla nera frantumata del valore di almeno 500 mo",
+    "higherLevels": "I danni aumentano di 2d8 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Conjure Fey": {
+    "name": "Evocare folletto",
+    "description": "Evochi uno spirito fatato Medio per un massimo di 10 minuti. Alla sua comparsa effettui un attacco con incantesimo in mischia dal suo spazio; se colpisce, infligge 3d12 danni psichici più il tuo modificatore di caratteristica da incantatore e spaventa il bersaglio fino al tuo turno successivo. In seguito puoi teletrasportare lo spirito di 30 piedi e ripetere l'attacco con un'azione bonus.",
+    "higherLevels": "I danni aumentano di 1d12 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Contingency": {
+    "name": "Contingenza",
+    "description": "Lanci questo incantesimo e un incantesimo preparato di livello 5 o inferiore che richiede un'azione e può bersagliarti, spendendo entrambi gli slot. Il secondo incantesimo attende fino a 10 giorni l'innesco scelto, poi influenza solo te. Può essere attiva una sola Contingenza; perderne la statuetta richiesta la termina.",
+    "material": "una tua statuetta incrostata di gemme del valore di almeno 1.500 mo",
+    "castingTime": "10 minuti",
+    "range": "Personale",
+    "duration": "10 giorni"
+  },
+  "Create Undead": {
+    "name": "Crea non morti",
+    "description": "Solo di notte animi fino a tre cadaveri di umanoidi Medi o Piccoli come ghoul, usando per ciascuno un'onice nera del valore di almeno 150 mo. Impartisci ordini entro 120 piedi con un'azione bonus. Il controllo dura 24 ore e deve essere rinnovato prima della scadenza.",
+    "material": "un'onice nera del valore di almeno 150 mo per ogni cadavere",
+    "higherLevels": "Uno slot di livello 7 controlla quattro ghoul; di livello 8 cinque ghoul o due ghast/wight; di livello 9 sei ghoul, tre ghast/wight o due mummie.",
+    "castingTime": "1 minuto",
+    "range": "10 piedi",
+    "duration": "Istantanea"
+  },
+  "Disintegrate": {
+    "name": "Disintegrazione",
+    "description": "Una creatura visibile effettua un tiro salvezza su Destrezza o subisce 10d6 + 40 danni da forza. Una creatura ridotta a 0 punti ferita viene disintegrata; un oggetto non magico Grande o inferiore o una creazione di forza magica viene disintegrata automaticamente.",
+    "material": "una calamita e della polvere",
+    "higherLevels": "I danni aumentano di 3d6 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Eyebite": {
+    "name": "Sguardo penetrante",
+    "description": "Per un massimo di 1 minuto costringi una creatura visibile entro 60 piedi a effettuare un tiro salvezza su Saggezza, poi scegli Sonno (incosciente), Panico (spaventata e costretta a fuggire) o Malattia (avvelenata). Nei turni successivi puoi bersagliare con un'azione Magia un'altra creatura che non ha superato il tiro contro questo lancio.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Find the Path": {
+    "name": "Trova il percorso",
+    "description": "Per un massimo di 1 giorno percepisci il percorso fisico più diretto verso un luogo fisso e familiare sul tuo piano attuale. Ne conosci direzione e distanza mentre viaggi; l'incantesimo fallisce per destinazioni vaghe o mobili.",
+    "material": "un insieme di strumenti divinatori, come carte o rune, del valore di almeno 100 mo",
+    "castingTime": "1 minuto",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 giorno"
+  },
+  "Flesh to Stone": {
+    "name": "Dalla carne alla pietra",
+    "description": "Una creatura visibile effettua un tiro salvezza su Costituzione. Se fallisce diventa trattenuta; se riesce la sua velocità è 0 fino al tuo turno successivo. Un bersaglio trattenuto ripete il tiro a ogni turno: tre successi terminano l'incantesimo, tre fallimenti lo pietrificano. Mantenere la concentrazione per l'intero minuto rende permanente la pietrificazione.",
+    "material": "una piuma di coccatrice",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Forbiddance": {
+    "name": "Interdizione",
+    "description": "Proteggi fino a 40.000 piedi quadrati di pavimento e 30 piedi sopra di esso dal teletrasporto e dai viaggi planari per 1 giorno. Aberrazioni, celestiali, elementali, folletti, immondi o non morti scelti subiscono 5d10 danni radianti o necrotici quando entrano o terminano un turno nell'area, a meno che pronuncino la tua parola d'ordine. Lanciare l'incantesimo ogni giorno per 30 giorni lo rende permanente e consuma la polvere di rubino all'ultimo lancio.",
+    "material": "polvere di rubino del valore di almeno 1.000 mo",
+    "castingTime": "10 minuti o Rituale",
+    "range": "Contatto",
+    "duration": "1 giorno"
+  },
+  "Freezing Sphere": {
+    "name": "Sfera congelante",
+    "description": "Una sfera di raggio 60 piedi impone tiri salvezza su Costituzione contro 10d6 danni da freddo, dimezzati in caso di successo. L'acqua colpita si congela e può trattenere i nuotatori in superficie. Puoi invece tenere il globo per un massimo di 1 minuto e lanciarlo successivamente prima che esploda.",
+    "material": "una sfera di cristallo in miniatura",
+    "higherLevels": "I danni aumentano di 1d6 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "300 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Globe of Invulnerability": {
+    "name": "Globo di invulnerabilità",
+    "description": "Un'emanazione immobile di 10 piedi intorno a te impedisce agli incantesimi di livello 5 o inferiore lanciati dall'esterno di influenzare ciò che si trova all'interno per un massimo di 1 minuto.",
+    "material": "una perla di vetro",
+    "higherLevels": "Il livello massimo degli incantesimi bloccati aumenta di 1 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Guards and Wards": {
+    "name": "Guardie e interdizioni",
+    "description": "Proteggi fino a 2.500 piedi quadrati, alti 20 piedi, per 24 ore. Scegli creature esenti e una parola d'ordine. I corridoi si riempiono di nebbia che oscura e può sviare i viaggiatori; le porte ricevono Serratura arcana, fino a dieci porte sembrano muri e le scale si riempiono di Ragnatele che ricrescono. Puoi collocare anche Luci danzanti, Bocca magica, Nube nauseabonda, Folata di vento o Suggestione in luoghi specifici. Lanciare l'incantesimo ogni giorno per 365 giorni rende permanente la protezione.",
+    "material": "una bacchetta d'argento del valore di almeno 10 mo",
+    "castingTime": "1 ora",
+    "range": "Contatto",
+    "duration": "24 ore"
+  },
+  "Harm": {
+    "name": "Ferire",
+    "description": "Una creatura visibile effettua un tiro salvezza su Costituzione. Se fallisce, subisce 14d6 danni necrotici e il massimo dei suoi punti ferita diminuisce dei danni subiti, ma non sotto 1. Se riesce, subisce metà danni senza riduzione del massimo.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Heal": {
+    "name": "Guarigione",
+    "description": "Una creatura visibile entro 60 piedi recupera 70 punti ferita e non è più accecata, assordata o avvelenata.",
+    "higherLevels": "I punti ferita recuperati aumentano di 10 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Heroes' Feast": {
+    "name": "Banchetto degli eroi",
+    "description": "Evochi un banchetto che fino a dodici creature consumano in 1 ora. Per le 24 ore successive ogni commensale ha resistenza ai danni da veleno, immunità alle condizioni Spaventato e Avvelenato e aumenta di 2d10 i punti ferita attuali e massimi.",
+    "material": "una ciotola incrostata di gemme del valore di almeno 1.000 mo, consumata dall'incantesimo",
+    "castingTime": "10 minuti",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Instant Summons": {
+    "name": "Evocazione istantanea",
+    "description": "Marchi con uno zaffiro del valore di almeno 1.000 mo un oggetto che pesa fino a 10 libbre ed è lungo al massimo 6 piedi. In seguito frantumi lo zaffiro con un'azione Magia per evocare l'oggetto nella tua mano da qualsiasi distanza o piano. Se lo tiene un'altra creatura, scopri invece chi è e dove si trova.",
+    "material": "uno zaffiro del valore di almeno 1.000 mo",
+    "castingTime": "1 minuto o Rituale",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione"
+  },
+  "Irresistible Dance": {
+    "name": "Danza irresistibile",
+    "description": "Una creatura visibile effettua un tiro salvezza su Saggezza. Anche se riesce deve usare tutto il movimento per danzare fino alla fine del suo turno successivo. Se fallisce, è anche affascinata, ha svantaggio ai tiri salvezza su Destrezza e agli attacchi e concede vantaggio agli attacchi contro di sé; può ripetere il tiro usando un'azione.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Magic Jar": {
+    "name": "Giara magica",
+    "description": "Riponi la tua anima in un contenitore del valore di almeno 500 mo, lasciando il corpo catatonico. Da lì tenti di possedere un umanoide visibile entro 100 piedi; effettua un tiro salvezza su Carisma. Se fallisce controlli il suo corpo mentre la sua anima resta imprigionata nel contenitore. Perdere il tuo corpo o il contenitore nel momento sbagliato può uccidere te o l'ospite.",
+    "material": "una gemma, un cristallo o un reliquiario del valore di almeno 500 mo",
+    "castingTime": "1 minuto",
+    "range": "Personale",
+    "duration": "Fino a dissoluzione"
+  },
+  "Mass Suggestion": {
+    "name": "Suggestione di massa",
+    "description": "Dai istruzioni plausibili e non dannose di massimo 25 parole a non più di dodici creature entro 60 piedi che ti comprendono. Ognuna effettua un tiro salvezza su Saggezza o è affascinata e le segue per un massimo di 24 ore, terminando prima se le completa o se tu o un alleato la ferite.",
+    "material": "una lingua di serpente",
+    "higherLevels": "La durata diventa 10 giorni con uno slot di livello 7, 30 giorni con uno di livello 8 o 366 giorni con uno di livello 9.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "24 ore"
+  },
+  "Move Earth": {
+    "name": "Muovere la terra",
+    "description": "Rimodelli un'area di terra, sabbia o argilla larga al massimo 40 piedi per lato. Ogni modifica richiede 10 minuti e può alzare o abbassare il terreno, scavare o riempire trincee o costruire muri e pilastri alti fino a metà della dimensione maggiore dell'area. Puoi scegliere una nuova area ogni 10 minuti per un massimo di 2 ore.",
+    "material": "una pala in miniatura",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 2 ore"
+  },
+  "Planar Ally": {
+    "name": "Alleato planare",
+    "description": "Chiedi un celestiale, un elementale o un immondo a un potere ultraterreno. Compare entro 60 piedi ma non è obbligato ad aiutarti; negozi un servizio che in genere costa circa 100 mo al minuto, 1.000 mo all'ora o 10.000 mo al giorno, a discrezione del DM.",
+    "castingTime": "10 minuti",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Programmed Illusion": {
+    "name": "Illusione programmata",
+    "description": "Crei un'illusione nascosta grande al massimo quanto un cubo di 30 piedi. Un innesco visivo o sonoro entro 30 piedi attiva una scena con suoni programmati che dura fino a 5 minuti. Dopo 10 minuti di inattività può attivarsi di nuovo fino a dissoluzione.",
+    "material": "polvere di giada del valore di almeno 25 mo",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Fino a dissoluzione"
+  },
+  "Sunbeam": {
+    "name": "Raggio di sole",
+    "description": "Proietti da te una linea di luce solare lunga 60 piedi e larga 5 piedi. Le creature effettuano tiri salvezza su Costituzione contro 6d8 danni radianti e la condizione Accecato fino al tuo turno successivo; un successo dimezza i danni ed evita la condizione. Puoi emettere un altro raggio a ogni turno con un'azione Magia per un massimo di 1 minuto.",
+    "material": "una lente d'ingrandimento",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Transport via Plants": {
+    "name": "Trasporto tramite piante",
+    "description": "Colleghi una pianta inanimata Grande o superiore entro 10 piedi a una pianta che hai visto o toccato sullo stesso piano, a qualsiasi distanza. Per 1 minuto le creature possono spendere 5 piedi di movimento per entrare nella prima e uscire dalla seconda.",
+    "castingTime": "Azione",
+    "range": "10 piedi",
+    "duration": "1 minuto"
+  },
+  "True Seeing": {
+    "name": "Vista pura",
+    "description": "Una creatura consenziente che tocchi ottiene vista pura entro 120 piedi per 1 ora.",
+    "material": "polvere di fungo del valore di almeno 25 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Wall of Ice": {
+    "name": "Muro di ghiaccio",
+    "description": "Crei per un massimo di 10 minuti una cupola/sfera di ghiaccio spessa 1 piede e di raggio fino a 10 piedi oppure dieci pannelli contigui di 10 piedi. Una creatura spostata dalla sua comparsa effettua un tiro salvezza su Destrezza contro 10d6 danni da freddo. I pannelli distrutti lasciano aria gelida che infligge 5d6 danni da freddo se si fallisce un tiro salvezza su Costituzione attraversandola.",
+    "material": "un pezzo di quarzo",
+    "higherLevels": "I danni alla comparsa aumentano di 2d6 e quelli dell'aria gelida di 1d6 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Wall of Thorns": {
+    "name": "Muro di spine",
+    "description": "Crei per un massimo di 10 minuti un muro di spine lungo fino a 60 piedi e alto 10 piedi, oppure un anello di diametro 20 piedi. Le creature nel suo spazio effettuano tiri salvezza su Destrezza contro 7d8 danni perforanti quando compare. Attraversarlo costa 4 piedi di movimento per piede percorso; entrarvi o terminarvi un turno infligge 7d8 danni taglienti se si fallisce un tiro salvezza su Destrezza, una volta per turno.",
+    "material": "una manciata di spine",
+    "higherLevels": "Entrambi i tipi di danno aumentano di 1d8 per livello di slot oltre il 6°.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Wind Walk": {
+    "name": "Camminare nel vento",
+    "description": "Tu e fino a dieci creature consenzienti diventate nuvole per 8 ore, con velocità di volo di 300 piedi, capacità di restare sospesi, immunità alla condizione Prono e resistenza ai danni contundenti, perforanti e taglienti. In forma di nuvola si può solo usare Scatto o iniziare a tornare alla forma normale per 1 minuto, durante il quale si è storditi.",
+    "material": "una candela",
+    "castingTime": "1 minuto",
+    "range": "30 piedi",
+    "duration": "8 ore"
+  },
+  "Word of Recall": {
+    "name": "Parola del ritorno",
+    "description": "Teletrasporti te stesso e fino a cinque creature consenzienti entro 5 piedi al santuario designato in precedenza lanciando lì questo incantesimo. Senza un santuario preparato, non ha effetto.",
+    "castingTime": "Azione",
+    "range": "5 piedi",
+    "duration": "Istantanea"
+  },
+  "Arcane Sword": {
+    "name": "Spada arcana",
+    "description": "Crei una spada di forza fluttuante per un massimo di 1 minuto. Effettui un attacco con incantesimo in mischia contro un bersaglio entro 5 piedi da essa; se colpisce, infligge 4d12 danni da forza più il tuo modificatore di caratteristica da incantatore. Nei turni successivi puoi spostarla fino a 30 piedi e attaccare di nuovo con un'azione bonus.",
+    "material": "una spada in miniatura del valore di almeno 250 mo",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Conjure Celestial": {
+    "name": "Evoca Celestiale",
+    "description": "Una presenza celestiale riempie un cilindro di raggio 10 piedi e alto 40 piedi per un massimo di 10 minuti. Ogni creatura visibile all'interno può recuperare 4d12 punti ferita più il tuo modificatore di caratteristica da incantatore oppure effettuare un tiro salvezza su Destrezza contro 6d12 danni radianti (dimezzati in caso di successo). Quando ti muovi nel tuo turno, il cilindro può spostarsi fino a 30 piedi. Le creature che vi entrano o vi terminano un turno possono essere influenzate, ciascuna una sola volta per turno.",
+    "higherLevels": "I punti ferita recuperati aumentano di 1d12 e i danni di 1d12 per livello di slot oltre il 7°.",
+    "castingTime": "Azione",
+    "range": "90 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Delayed Blast Fireball": {
+    "name": "Palla di fuoco a esplosione ritardata",
+    "description": "Una perla luminosa resta in un punto entro 150 piedi per un massimo di 1 minuto. Quando la concentrazione termina, le creature in una sfera di raggio 20 piedi effettuano un tiro salvezza su Destrezza contro 12d6 danni da fuoco, dimezzati in caso di successo. I danni aumentano di 1d6 alla fine di ogni tuo turno di concentrazione. Una creatura può raccogliere o lanciare la perla con un tiro salvezza su Destrezza; un fallimento la fa esplodere.",
+    "material": "una pallina di guano di pipistrello e zolfo",
+    "higherLevels": "I danni iniziali aumentano di 1d6 per livello di slot oltre il 7°.",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Divine Word": {
+    "name": "Parola divina",
+    "description": "Scegli creature visibili entro 30 piedi; ognuna effettua un tiro salvezza su Carisma. Chi fallisce e ha 20 punti ferita o meno muore; con 21-30 punti ferita è accecato, assordato e stordito per 1 ora; con 31-40 è accecato e assordato per 10 minuti; con 41-50 è assordato per 1 minuto. Un celestiale, elementale, folletto o immondo che fallisce è anche bandito sul suo piano d'origine per almeno 24 ore.",
+    "castingTime": "Azione bonus",
+    "range": "30 piedi",
+    "duration": "Istantanea"
+  },
+  "Etherealness": {
+    "name": "Etereità",
+    "description": "Entri nell'Etereo di Confine per un massimo di 8 ore. Puoi attraversare creature e oggetti sul piano Materiale ma non influenzarli. Quando l'incantesimo termina torni nello spazio libero più vicino; puoi terminarlo prima.",
+    "higherLevels": "Per ogni livello di slot oltre il 7° puoi portare altre tre creature consenzienti entro 10 piedi.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Fino a 8 ore"
+  },
+  "Finger of Death": {
+    "name": "Dito della morte",
+    "description": "Una creatura visibile entro 60 piedi effettua un tiro salvezza su Costituzione contro 7d8 + 30 danni necrotici, dimezzati in caso di successo. Un umanoide ucciso dall'incantesimo si rialza come zombi all'inizio del tuo turno successivo e segue i tuoi ordini verbali.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Fire Storm": {
+    "name": "Tempesta di fuoco",
+    "description": "Crei fino a dieci cubi di fiamme contigui di 10 piedi entro 150 piedi. Le creature al loro interno effettuano un tiro salvezza su Destrezza contro 7d10 danni da fuoco, dimezzati in caso di successo. Puoi risparmiare le piante scelte.",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Forcecage": {
+    "name": "Gabbia di forza",
+    "description": "Per un massimo di 1 ora di concentrazione imprigioni creature in una gabbia di forza grande fino a 20 piedi per lato o in una scatola solida di 10 piedi per lato. Una creatura intrappolata non può uscire con mezzi non magici; teletrasportarsi o viaggiare tra i piani richiede un tiro salvezza su Carisma riuscito. Dissolvi magie non termina la gabbia.",
+    "material": "polvere di rubino del valore di almeno 1.500 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "100 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Magnificent Mansion": {
+    "name": "Dimora magnifica",
+    "description": "Crei una dimora extradimensionale per 24 ore, con una porta entro 300 piedi. Contiene fino a cinquanta cubi di 10 piedi, cibo per 100 ospiti e fino a 100 servitori; possono entrare solo le creature da te designate.",
+    "material": "una porta in miniatura del valore di almeno 15 mo",
+    "castingTime": "1 minuto",
+    "range": "300 piedi",
+    "duration": "24 ore"
+  },
+  "Mirage Arcane": {
+    "name": "Miraggio Arcano",
+    "description": "Per 10 giorni cambi aspetto, suoni, odori e sensazioni tattili del terreno in un'area fino a 1 miglio quadrato. Puoi aggiungere o modificare strutture e rendere il terreno più o meno difficile da attraversare, ma non creare o camuffare creature. La vista pura svela il terreno originale senza eliminare gli effetti fisici dell'illusione.",
+    "castingTime": "10 minuti",
+    "range": "Vista",
+    "duration": "10 giorni"
+  },
+  "Plane Shift": {
+    "name": "Spostamento planare",
+    "description": "Trasporti te stesso e fino a otto creature consenzienti che si tengono per mano su un altro piano con una verga metallica biforcuta sintonizzata. Indichi una destinazione generale e arrivi lì o nelle vicinanze a discrezione del DM, oppure viaggi a un cerchio di teletrasporto su quel piano di cui conosci la sequenza di sigilli.",
+    "material": "una verga metallica biforcuta del valore di almeno 250 mo e sintonizzata con un piano di esistenza",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Prismatic Spray": {
+    "name": "Spruzzo prismatico",
+    "description": "Le creature in un cono di 60 piedi effettuano tiri salvezza su Destrezza; tiri 1d8 separatamente per ogni bersaglio. I risultati 1-5 infliggono 12d6 danni da fuoco, acido, fulmine, veleno o freddo (metà se il tiro riesce); il 6 trattiene e tre tiri salvezza su Costituzione falliti pietrificano; il 7 acceca e può bandire dopo un tiro su Saggezza; l'8 colpisce con due raggi differenti.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Project Image": {
+    "name": "Proiezione d'immagine",
+    "description": "Crei una copia illusoria di te stesso fino a 500 miglia di distanza per un massimo di 1 giorno di concentrazione. Ha il tuo aspetto e la tua voce; puoi vedere e sentire attraverso di essa e muoverla fino a 60 piedi con un'azione Magia. L'interazione fisica o una prova di Investigazione riuscita può rivelare l'illusione.",
+    "material": "una tua statuetta del valore di almeno 5 mo",
+    "castingTime": "Azione",
+    "range": "500 miglia",
+    "duration": "Concentrazione, fino a 1 giorno"
+  },
+  "Regenerate": {
+    "name": "Rigenerazione",
+    "description": "Una creatura che tocchi recupera subito 4d8 + 15 punti ferita e poi 1 punto ferita all'inizio di ogni suo turno per 1 ora. Le parti del corpo recise ricrescono dopo 2 minuti.",
+    "material": "una ruota di preghiera",
+    "castingTime": "1 minuto",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Resurrection": {
+    "name": "Risurrezione",
+    "description": "Riporti in vita con tutti i punti ferita una creatura morta da non più di 100 anni. Non può essere morta di vecchiaia o come non morto; veleni e parti del corpo mancanti vengono ripristinati. Subisce una penalità di -4 ai test D20, ridotta di 1 dopo ogni riposo lungo. Se è morta da almeno 365 giorni, non puoi lanciare incantesimi e hai svantaggio ai test D20 fino al tuo prossimo riposo lungo.",
+    "material": "un diamante del valore di almeno 1.000 mo, consumato dall'incantesimo",
+    "castingTime": "1 ora",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Reverse Gravity": {
+    "name": "Gravità inversa",
+    "description": "Inverti la gravità in un cilindro di raggio 50 piedi e alto 100 piedi per un massimo di 1 minuto. Creature e oggetti cadono verso l'alto, a meno che una creatura superi un tiro salvezza su Destrezza per afferrarsi a qualcosa di fisso; cadono di nuovo quando l'incantesimo termina.",
+    "material": "una calamita e limatura di ferro",
+    "castingTime": "Azione",
+    "range": "100 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Sequester": {
+    "name": "Occultamento",
+    "description": "Rendi una creatura consenziente o un oggetto invisibile e impossibile da individuare con la magia finché una condizione stabilita da te non termina l'incantesimo o il bersaglio subisce danni. Una creatura influenzata è incosciente, non invecchia e non ha bisogno di cibo, acqua o aria.",
+    "material": "polvere di gemme del valore di almeno 5.000 mo, consumata dall'incantesimo",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione"
+  },
+  "Simulacrum": {
+    "name": "Simulacro",
+    "description": "Dopo 12 ore crei da neve o ghiaccio un duplicato costrutto di una bestia o un umanoide. Ha metà del massimo dei punti ferita dell'originale, non può guadagnare livelli né recuperare capacità spese riposando e non può lanciare Simulacro. Ripararlo durante un riposo lungo costa 100 mo di materiali per punto ferita ripristinato. Puoi avere un solo simulacro attivo.",
+    "material": "rubino in polvere del valore di almeno 1.500 mo, consumato dall'incantesimo",
+    "castingTime": "12 ore",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione"
+  },
+  "Symbol": {
+    "name": "Simbolo",
+    "description": "Tracci un glifo quasi invisibile con un innesco che stabilisci. Quando si attiva, influenza le creature in una sfera di raggio 60 piedi per 10 minuti con un effetto scelto: Morte (tiro salvezza su Costituzione, 10d10 danni necrotici, dimezzati in caso di successo), Discordia, Paura, Dolore, Sonno o Stordimento, ognuno con il proprio tiro ed effetto. Una creatura viene influenzata al massimo una volta per turno.",
+    "material": "diamante in polvere del valore di almeno 1.000 mo, consumato dall'incantesimo",
+    "castingTime": "1 minuto",
+    "range": "Contatto",
+    "duration": "Fino a dissoluzione o attivazione"
+  },
+  "Teleport": {
+    "name": "Teletrasporto",
+    "description": "Teletrasporti te stesso e fino a otto creature consenzienti entro 10 piedi, o un oggetto Grande o inferiore, in un luogo conosciuto sullo stesso piano. Il DM tira d100 secondo la tua familiarità: un cerchio permanente o un oggetto recentemente associato arrivano sempre a destinazione; le altre mete possono causare un incidente (3d10 danni da forza e nuovo tiro), una zona simile o un arrivo fuori bersaglio.",
+    "castingTime": "Azione",
+    "range": "10 piedi",
+    "duration": "Istantanea"
+  },
+  "Animal Shapes": {
+    "name": "Forme animali",
+    "description": "Un qualsiasi numero di creature consenzienti che vedi entro 30 piedi diventano bestie Grandi o inferiori con GS 4 o meno per 24 ore. Ognuna conserva punti ferita, dadi vita, caratteristiche mentali, comunicazione e tipo di creatura, ma non può lanciare incantesimi o usare l'equipaggiamento fuso. Ognuna ottiene punti ferita temporanei pari ai punti ferita della prima forma. Puoi cambiarne di nuovo la forma con un'azione Magia; un bersaglio può terminare la propria forma con un'azione bonus.",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "24 ore"
+  },
+  "Antimagic Field": {
+    "name": "Campo antimagia",
+    "description": "Un'emanazione di 10 piedi centrata su di te sopprime incantesimi e altri effetti magici per un massimo di 1 ora di concentrazione. Impedisce di lanciare incantesimi e di viaggiare magicamente verso o all'interno dell'area, sopprime gli oggetti magici e blocca la maggior parte delle aree magiche e delle creature evocate, ma non la magia di artefatti o divinità.",
+    "material": "limatura di ferro",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Antipathy/Sympathy": {
+    "name": "Antipatia/simpatia",
+    "description": "Per 10 giorni fai sì che una creatura o un oggetto respinga o attragga un tipo di creatura da te specificato. Una creatura di quel tipo entro 120 piedi effettua un tiro salvezza su Saggezza: Antipatia la spaventa e la allontana, mentre Simpatia la affascina e la attira. Tiri ripetuti possono terminare l'effetto su una creatura.",
+    "material": "una miscela di aceto e miele",
+    "castingTime": "1 ora",
+    "range": "60 piedi",
+    "duration": "10 giorni"
+  },
+  "Befuddlement": {
+    "name": "Confusione mentale",
+    "description": "Una creatura entro 150 piedi effettua un tiro salvezza su Intelligenza contro 10d12 danni psichici, dimezzati in caso di successo. Se fallisce, non può inoltre lanciare incantesimi né usare l'azione Magia. Ripete il tiro ogni 30 giorni; Ristorare superiore, Guarigione o Desiderio possono terminare l'effetto.",
+    "material": "un portachiavi senza chiavi",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Clone": {
+    "name": "Clone",
+    "description": "Fai crescere da un pezzo di carne un duplicato inerte di una creatura vivente. Dopo 120 giorni, se l'originale muore e la sua anima è consenziente e libera, entra nel clone, che può essere più giovane. Richiede un diamante del valore di 1.000 mo consumato dall'incantesimo e un contenitore sigillabile del valore di almeno 2.000 mo.",
+    "material": "un diamante del valore di almeno 1.000 mo, consumato dall'incantesimo, e un contenitore sigillabile del valore di almeno 2.000 mo, abbastanza grande da contenere la creatura clonata",
+    "castingTime": "1 ora",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Control Weather": {
+    "name": "Controllare il tempo atmosferico",
+    "description": "Per un massimo di 8 ore di concentrazione all'aperto controlli il tempo atmosferico entro 5 miglia. Puoi modificare precipitazioni, temperatura e vento di un grado alla volta; ogni modifica richiede 1d4 x 10 minuti per avere effetto.",
+    "material": "incenso acceso",
+    "castingTime": "10 minuti",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 8 ore"
+  },
+  "Demiplane": {
+    "name": "Semipiano",
+    "description": "Apri per 1 ora una porta d'ombra verso una stanza extradimensionale cubica di 30 piedi per lato. Puoi collegarla a un nuovo semipiano, a uno che hai creato in precedenza o a un altro semipiano di cui conosci natura e contenuto.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "1 ora"
+  },
+  "Dominate Monster": {
+    "name": "Domina il mostro",
+    "description": "Una creatura entro 60 piedi effettua un tiro salvezza su Saggezza o è affascinata e controllata telepaticamente per un massimo di 1 ora di concentrazione. Puoi impartirle ordini e controllarla direttamente; i danni le consentono un altro tiro per terminare l'incantesimo.",
+    "higherLevels": "Con uno slot di livello 9 la concentrazione può durare fino a 8 ore.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Earthquake": {
+    "name": "Terremoto",
+    "description": "Per un massimo di 1 minuto le scosse rendono terreno difficile il suolo in un cerchio di raggio 100 piedi. Le creature presenti effettuano tiri salvezza su Destrezza al lancio e a ogni turno, altrimenti cadono prone e perdono la concentrazione. L'incantesimo apre 1d6 crepacci e infligge 50 danni contundenti alle strutture a ogni turno; il crollo di una struttura può infliggere 12d6 danni contundenti (tiro salvezza su Destrezza per dimezzare).",
+    "material": "una pietra fratturata",
+    "castingTime": "Azione",
+    "range": "500 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Glibness": {
+    "name": "Disinvoltura",
+    "description": "Per 1 ora consideri ogni risultato di 14 o meno sul dado di una prova di Carisma come 15. La magia che verifica se dici la verità considera veritiere le tue parole.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "1 ora"
+  },
+  "Holy Aura": {
+    "name": "Aura sacra",
+    "description": "Per un massimo di 1 minuto le creature scelte in un'emanazione di 30 piedi intorno a te hanno vantaggio a tutti i tiri salvezza, mentre le altre creature hanno svantaggio agli attacchi contro di loro. Un immondo o non morto che colpisce in mischia una creatura protetta deve superare un tiro salvezza su Costituzione o diventa accecato.",
+    "material": "un reliquiario del valore di almeno 1.000 mo",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Incendiary Cloud": {
+    "name": "Nube incendiaria",
+    "description": "Una sfera di fumo di raggio 20 piedi che oscura fortemente la visuale compare entro 150 piedi e si allontana da te di 10 piedi a ogni turno. Le creature presenti quando compare, quelle che raggiunge o che vi entrano o vi terminano un turno effettuano un tiro salvezza su Destrezza contro 10d8 danni da fuoco, dimezzati in caso di successo; ciascuna lo effettua solo una volta per turno. La nube dura per un massimo di 1 minuto di concentrazione.",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Maze": {
+    "name": "Labirinto",
+    "description": "Bandisci una creatura entro 60 piedi in un labirinto per un massimo di 10 minuti di concentrazione; non c'è un tiro salvezza iniziale. Può usare l'azione Studiare per uscire con una prova di Intelligenza (Investigazione) con CD 20; altrimenti torna quando l'incantesimo termina.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Mind Blank": {
+    "name": "Vuoto mentale",
+    "description": "Per 24 ore rendi una creatura immune ai danni psichici, alla condizione Affascinato, alla lettura dei pensieri, alla manipolazione mentale e alla Divinazione che la influenzerebbe o raccoglierebbe informazioni su di lei. La protezione contrasta anche Desiderio usato a questi scopi.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "24 ore"
+  },
+  "Power Word Stun": {
+    "name": "Parola del potere: stordire",
+    "description": "Una creatura che vedi entro 60 piedi è stordita se ha 150 punti ferita o meno; altrimenti la sua velocità diventa 0 fino all'inizio del tuo turno successivo. Un bersaglio stordito ripete un tiro salvezza su Costituzione alla fine di ogni suo turno per terminare l'effetto.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Sunburst": {
+    "name": "Esplosione solare",
+    "description": "La luce solare esplode in una sfera di raggio 60 piedi entro 150 piedi. Le creature effettuano un tiro salvezza su Costituzione contro 12d6 danni radianti, dimezzati in caso di successo; quelle che falliscono sono anche accecate per 1 minuto e possono ripetere il tiro alla fine di ogni turno. La luce dissolve l'oscurità magica nell'area.",
+    "material": "un pezzo di pietra del sole",
+    "castingTime": "Azione",
+    "range": "150 piedi",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Tsunami": {
+    "name": "Tsunami",
+    "description": "Sollevi per un massimo di sei round un muro d'acqua lungo e alto fino a 300 piedi e spesso 50 piedi. Le creature nell'area effettuano un tiro salvezza su Forza contro 6d10 danni contundenti, dimezzati in caso di successo. Ogni round avanza di 50 piedi; le creature Enormi o inferiori travolte affrontano un altro tiro su Forza contro 5d10 danni contundenti. Altezza e danni successivi diminuiscono a ogni round.",
+    "castingTime": "1 minuto",
+    "range": "1 miglio",
+    "duration": "Concentrazione, fino a 6 round"
+  },
+  "Astral Projection": {
+    "name": "Proiezione astrale",
+    "description": "Proietti te stesso e fino a otto creature consenzienti sul piano Astrale, lasciando indietro corpi incoscienti che non invecchiano. Ogni forma astrale ha un cordone d'argento; reciderlo uccide il bersaglio. Lasciare il piano Astrale trascina il corpo sul nuovo piano. L'incantesimo termina per un bersaglio se il suo corpo o la forma astrale scende a 0 punti ferita, o se lo congedi. Ogni bersaglio richiede un giacinto del valore di 1.000 mo e un lingotto d'argento da 100 mo, entrambi consumati.",
+    "material": "per ogni bersaglio dell'incantesimo, un giacinto del valore di almeno 1.000 mo e un lingotto d'argento del valore di almeno 100 mo, tutti consumati dall'incantesimo",
+    "castingTime": "1 ora",
+    "range": "10 piedi",
+    "duration": "Fino a dissoluzione"
+  },
+  "Foresight": {
+    "name": "Preveggenza",
+    "description": "Per 8 ore una creatura consenziente che tocchi ha vantaggio ai test D20 e i tiri per colpire contro di lei hanno svantaggio. L'incantesimo termina se lo lanci di nuovo.",
+    "material": "una piuma di colibrì",
+    "castingTime": "1 minuto",
+    "range": "Contatto",
+    "duration": "8 ore"
+  },
+  "Gate": {
+    "name": "Portale",
+    "description": "Apri per un massimo di 1 minuto un portale di diametro da 5 a 20 piedi verso un luogo preciso su un altro piano. Le creature possono attraversarne la parte anteriore da entrambi i piani. Aprendolo puoi nominare una creatura particolare su un altro piano per trasportarla subito accanto a te; non ottieni alcun controllo su di lei.",
+    "material": "un diamante del valore di almeno 5.000 mo",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Imprisonment": {
+    "name": "Imprigionamento",
+    "description": "Una creatura entro 30 piedi effettua un tiro salvezza su Saggezza o viene imprigionata fino a dissoluzione o al verificarsi di una condizione da te stabilita. Scegli Sepoltura, Catene, Prigione delimitata, Contenimento minimo o Sonno. Non invecchia né necessita di nutrimento, non può teletrasportarsi né essere localizzata con la Divinazione. Un successo la rende immune a questo incantesimo per 24 ore; solo Dissolvi magie di livello 9 può terminarlo prima.",
+    "material": "una statuetta del bersaglio del valore di almeno 5.000 mo",
+    "castingTime": "1 minuto",
+    "range": "30 piedi",
+    "duration": "Fino a dissoluzione"
+  },
+  "Mass Heal": {
+    "name": "Guarigione di massa",
+    "description": "Distribuisci fino a 700 punti ferita di guarigione tra le creature visibili che scegli entro 60 piedi. Ogni creatura curata viene anche liberata dalle condizioni Accecato, Assordato e Avvelenato.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Meteor Swarm": {
+    "name": "Sciame di meteore",
+    "description": "Quattro meteore colpiscono punti distinti entro 1 miglio. Ognuna crea una sfera di raggio 40 piedi; le creature al suo interno effettuano un tiro salvezza su Destrezza contro 20d6 danni da fuoco più 20d6 danni contundenti, dimezzati in caso di successo. Le aree sovrapposte danneggiano una creatura una sola volta.",
+    "castingTime": "Azione",
+    "range": "1 miglio",
+    "duration": "Istantanea"
+  },
+  "Power Word Heal": {
+    "name": "Parola del potere: guarire",
+    "description": "Una creatura entro 60 piedi recupera tutti i suoi punti ferita e non è più affascinata, spaventata, paralizzata, avvelenata o stordita. Un bersaglio prono può usare la sua reazione per rialzarsi.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Power Word Kill": {
+    "name": "Parola del potere: uccidere",
+    "description": "Una creatura entro 60 piedi muore se ha 100 punti ferita o meno. Se ne ha più di 100, subisce invece 12d12 danni psichici; nessun tiro salvezza.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "Istantanea"
+  },
+  "Prismatic Wall": {
+    "name": "Muro prismatico",
+    "description": "Crei per 10 minuti un muro di sette strati grande fino a 90 per 30 piedi o una sfera di diametro massimo 30 piedi. Le creature non protette nelle vicinanze possono essere accecate; attraversare ogni strato richiede un tiro salvezza su Destrezza. I primi cinque infliggono ciascuno 12d6 danni da fuoco, acido, fulmine, veleno o freddo (dimezzati in caso di successo); il sesto può pietrificare e il settimo bandire. Ogni strato ha una propria contromisura; Campo antimagia non può sopprimere il muro.",
+    "castingTime": "Azione",
+    "range": "60 piedi",
+    "duration": "10 minuti"
+  },
+  "Shapechange": {
+    "name": "Trasformazione",
+    "description": "Per un massimo di 1 ora diventi una creatura che hai visto con GS non superiore al tuo livello o GS, esclusi costrutti e non morti. Ottieni punti ferita temporanei pari ai punti ferita della prima forma e usi le sue statistiche, ma conservi punti ferita, dadi vita, caratteristiche mentali, competenze, tipo di creatura, comunicazione e capacità di Incantesimi. Un'azione Magia ti trasforma in un'altra forma idonea.",
+    "material": "un cerchietto di giada del valore di almeno 1.500 mo",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Storm of Vengeance": {
+    "name": "Tempesta di vendetta",
+    "description": "Una tempesta di raggio 300 piedi dura per un massimo di 1 minuto. All'inizio, le creature sotto di essa effettuano un tiro salvezza su Costituzione o subiscono 2d6 danni da tuono e diventano assordate. Al turno 2 infligge 4d6 danni da acido; al turno 3 richiama sei fulmini da 10d6 danni da fulmine ciascuno (tiro salvezza su Destrezza per dimezzare); al turno 4 infligge 2d6 danni contundenti; nei turni 5-10 infligge 1d6 danni da freddo per turno e rende l'area fortemente oscurata e difficile da attraversare.",
+    "castingTime": "Azione",
+    "range": "1 miglio",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Time Stop": {
+    "name": "Fermare il tempo",
+    "description": "Effettui 1d4 + 1 turni aggiuntivi mentre il tempo è fermo per le altre creature. L'effetto termina prima se influenzi un'altra creatura o qualcosa che indossa o trasporta, oppure se ti allontani di oltre 1.000 piedi dal punto in cui hai lanciato l'incantesimo.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "True Polymorph": {
+    "name": "Metamorfosi pura",
+    "description": "Trasformi una creatura in un'altra creatura o in un oggetto non magico, oppure un oggetto non magico non indossato in una creatura. Una creatura non consenziente può resistere con un tiro salvezza su Saggezza. La nuova creatura ha GS non superiore al livello o GS dell'originale; un oggetto può diventare una creatura con GS 9 o inferiore. Mantenere la concentrazione per tutta l'ora fa durare il cambiamento fino a dissoluzione.",
+    "material": "una goccia di mercurio, una noce di gomma arabica e un filo di fumo",
+    "castingTime": "Azione",
+    "range": "30 piedi",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "True Resurrection": {
+    "name": "Resurrezione pura",
+    "description": "Riporti in vita con tutti i punti ferita una creatura morta da non più di 200 anni, tranne chi è morto di vecchiaia. Ripristini organi e arti perduti, elimini veleno, contagi e maledizioni e riporti i non morti alla loro forma originale. Se il corpo non esiste più, pronunciarne il nome ne crea uno nuovo. L'incantesimo consuma diamanti del valore di 25.000 mo.",
+    "material": "diamanti del valore di almeno 25.000 mo, consumati dall'incantesimo",
+    "castingTime": "1 ora",
+    "range": "Contatto",
+    "duration": "Istantanea"
+  },
+  "Weird": {
+    "name": "Incubo",
+    "description": "Le creature da te scelte in una sfera di raggio 30 piedi effettuano un tiro salvezza su Saggezza contro 10d10 danni psichici, dimezzati in caso di successo. Una creatura che fallisce è anche spaventata per un massimo di 1 minuto e ripete il tiro alla fine di ogni suo turno: un fallimento infligge 5d10 danni psichici, un successo termina l'incantesimo su di lei.",
+    "castingTime": "Azione",
+    "range": "120 piedi",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Wish": {
+    "name": "Desiderio",
+    "description": "Riproduci qualsiasi incantesimo di livello 8 o inferiore senza rispettarne i requisiti di lancio. Altri usi includono creare un oggetto non magico del valore massimo di 25.000 mo, riportare fino a venti creature alla piena salute, concedere resistenza permanente a un tipo di danno o immunità temporanea a un incantesimo, sostituire un talento idoneo o ritirare un dado dell'ultimo round. Desideri più grandi dipendono dal DM. Ogni uso diverso dalla duplicazione causa stress magico: danni quando lanci incantesimi fino a un riposo lungo, Forza 3 per 2d4 giorni e probabilità del 33 % di non poter più lanciare Desiderio.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea"
+  }
+}

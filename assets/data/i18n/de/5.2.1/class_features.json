@@ -1,0 +1,718 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Kampfrausch",
+      "description": "Als Bonusaktion verfällst du in Kampfrausch, sofern du keine schwere Rüstung trägst. Im Kampfrausch hast du Resistenz gegen Wucht-, Stich- und Hiebschaden, Vorteil auf Stärkeproben und -rettungswürfe und addierst deinen Kampfrauschschaden zum Schaden stärkebasierter Waffenangriffe oder waffenloser Angriffe (+2 auf den Stufen 1-8, +3 auf 9-15, +4 auf 16-20). Du kannst weder Zauber wirken noch dich konzentrieren. Der Kampfrausch dauert bis zum Ende deines nächsten Zuges und kann in jeder Runde durch einen Angriff, einen erzwungenen gegnerischen Rettungswurf oder eine Bonusaktion verlängert werden, höchstens jedoch 10 Minuten lang. Anwendungen: 2 auf den Stufen 1-2, 3 auf 3-5, 4 auf 6-11, 5 auf 12-16 und 6 ab Stufe 17. Nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle."
+    },
+    "Unarmored Defense": {
+      "name": "Rüstungslose Verteidigung",
+      "description": "Ohne Rüstung beträgt deine Grund-Rüstungsklasse 10 + dein Geschicklichkeitsmodifikator + dein Konstitutionsmodifikator. Du kannst dennoch einen Schild verwenden."
+    },
+    "Weapon Mastery": {
+      "name": "Waffenmeisterschaft",
+      "description": "Wähle zwei Arten einfacher oder Kriegsnahkampfwaffen, deren Meisterschaftseigenschaften du nutzen kannst. Ersetze nach einer Langen Rast eine Wahl. Auf Stufe 4 wählst du drei Arten und auf Stufe 10 vier."
+    },
+    "Danger Sense": {
+      "name": "Gefahrengespür",
+      "description": "Du hast Vorteil auf Geschicklichkeitsrettungswürfe, sofern du nicht Handlungsunfähig bist."
+    },
+    "Reckless Attack": {
+      "name": "Rücksichtsloser Angriff",
+      "description": "Bei deinem ersten Angriffswurf in einem Zug kannst du rücksichtslos angreifen. Stärke-basierte Angriffswürfe haben bis zu deinem nächsten Zug Vorteil; Angriffe gegen dich ebenfalls."
+    },
+    "Barbarian Subclass": {
+      "name": "Barbarenunterklasse",
+      "description": "Wähle eine Barbarenunterklasse; du erhältst ihre Merkmale auf den angegebenen Barbarenstufen."
+    },
+    "Primal Knowledge": {
+      "name": "Ursprüngliches Wissen",
+      "description": "Du erhältst eine weitere Fertigkeitsübung aus der Barbarenliste für Stufe 1. Im Kampfrausch kannst du Stärke für Proben auf Akrobatik, Einschüchtern, Wahrnehmung, Heimlichkeit oder Überlebenskunst verwenden."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Barbarenstufen 8, 12 und 16 erneut."
+    },
+    "Extra Attack": {
+      "name": "Zusätzlicher Angriff",
+      "description": "Wenn du die Angriffsaktion ausführst, greifst du zweimal an."
+    },
+    "Fast Movement": {
+      "name": "Schnelle Bewegung",
+      "description": "Deine Bewegungsrate erhöht sich um 10 Fuß, solange du keine schwere Rüstung trägst."
+    },
+    "Feral Instinct": {
+      "name": "Wilder Instinkt",
+      "description": "Du hast Vorteil auf Initiativewürfe."
+    },
+    "Instinctive Pounce": {
+      "name": "Instinktiver Sprung",
+      "description": "Als Teil der Bonusaktion, mit der du in Kampfrausch verfällst, kannst du dich bis zur Hälfte deiner Bewegungsrate bewegen."
+    },
+    "Brutal Strike": {
+      "name": "Brutaler Schlag",
+      "description": "Wenn du Rücksichtsloser Angriff einsetzt, verzichte bei einem stärkebasierten Angriff ohne Nachteil auf den dadurch gewährten Vorteil. Triffst du, verursachst du zusätzlich 1d10 Schaden der Schadensart des Angriffs und wählst einen Effekt von Brutaler Schlag: Wuchtiger Schlag stößt das Ziel 15 Fuß weg und erlaubt dir, ihm bis zur Hälfte deiner Bewegungsrate ohne Gelegenheitsangriffe zu folgen; Sehnenschlag verringert seine Bewegungsrate bis zu deinem nächsten Zug um 15 Fuß."
+    },
+    "Relentless Rage": {
+      "name": "Unaufhaltsamer Kampfrausch",
+      "description": "Wenn du im Kampfrausch auf 0 Trefferpunkte fallen würdest, ohne sofort zu sterben, lege einen Konstitutionsrettungswurf gegen SG 10 ab. Bei Erfolg entsprechen deine Trefferpunkte dem Doppelten deiner Barbarenstufe. Der SG erhöht sich nach jeder Anwendung um 5 und wird nach einer Kurzen oder Langen Rast zurückgesetzt."
+    },
+    "Improved Brutal Strike": {
+      "name": "Verbesserter brutaler Schlag",
+      "description": "Du erhältst zwei weitere Effekte von Brutaler Schlag: Taumelschlag gibt dem Ziel Nachteil auf seinen nächsten Rettungswurf und verhindert Gelegenheitsangriffe bis zu deinem nächsten Zug; Spaltender Schlag gewährt der nächsten anderen Kreatur, die es vor deinem nächsten Zug angreift, +5 auf den Angriffswurf. Auf Stufe 17 steigt der Zusatzschaden von Brutaler Schlag auf 2d10, und du kannst zwei verschiedene Effekte auf denselben Treffer anwenden."
+    },
+    "Persistent Rage": {
+      "name": "Anhaltender Kampfrausch",
+      "description": "Einmal pro Langer Rast erhältst du beim Initiativewurf alle verbrauchten Anwendungen von Kampfrausch zurück. Zum Verlängern des Kampfrauschs sind keine Aktionen mehr nötig; er hält bis zu 10 Minuten an und endet vorher nur, wenn du Bewusstlos wirst oder schwere Rüstung trägst."
+    },
+    "Indomitable Might": {
+      "name": "Unbezwingbare Stärke",
+      "description": "Wenn das Ergebnis einer Stärkeprobe oder eines Stärkerettungswurfs unter deinem Stärkewert liegt, verwendest du stattdessen deinen Stärkewert."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Primal Champion": {
+      "name": "Ursprünglicher Champion",
+      "description": "Erhöhe Stärke und Konstitution um jeweils 4; ihr Höchstwert beträgt nun 25."
+    }
+  },
+  "Bard": {
+    "Bardic Inspiration": {
+      "name": "Bardische Inspiration",
+      "description": "Als Bonusaktion gibst du einer Kreatur innerhalb von 60 Fuß, die dich sehen oder hören kann, einen Würfel Bardischer Inspiration. Scheitert sie innerhalb von 1 Stunde bei einem W20-Test, kann sie den Würfel werfen und zum Ergebnis addieren. Eine Kreatur kann nur einen solchen Würfel besitzen. Du hast Anwendungen in Höhe deines Charismamodifikators (mindestens 1), die nach einer Langen Rast zurückkehren. Würfelgröße: d6 auf den Stufen 1-4, d8 auf 5-9, d10 auf 10-14 und d12 ab Stufe 15."
+    },
+    "Spellcasting": {
+      "name": "Zauberwirken",
+      "description": "Charisma ist dein Zauberattribut als Barde; ein Musikinstrument kann dein Zauberfokus sein. Auf Stufe 1 kennst du zwei Barden-Zaubertricks, auf den Stufen 4 und 10 jeweils einen weiteren. Auf Stufe 1 bereitest du vier Bardenzauber des 1. Grades vor; die Zahl vorbereiteter Zauber und deine Zauberplätze steigen mit deiner Bardenstufe. Wenn du eine Bardenstufe erhältst, kannst du einen vorbereiteten Zauber und einen Zaubertrick durch geeignete Bardenzauber ersetzen. Durch andere Merkmale stets vorbereitete Zauber zählen nicht zur Grenze."
+    },
+    "Expertise": {
+      "name": "Expertise",
+      "description": "Du erhältst Expertise in zwei Fertigkeiten, die du beherrschst, und auf Bardenstufe 9 in zwei weiteren."
+    },
+    "Jack of All Trades": {
+      "name": "Alleskönner",
+      "description": "Addiere die Hälfte deines Übungsbonus, abgerundet, zu einer fertigkeitsbasierten Attributsprobe, bei der dein Übungsbonus nicht anderweitig gilt, sofern du die Fertigkeit nicht beherrschst."
+    },
+    "Bard Subclass": {
+      "name": "Bardenunterklasse",
+      "description": "Wähle eine Bardenunterklasse; du erhältst ihre Merkmale auf den angegebenen Bardenstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Bardenstufen 8, 12 und 16 erneut."
+    },
+    "Font of Inspiration": {
+      "name": "Quelle der Inspiration",
+      "description": "Nach einer Kurzen oder Langen Rast erhältst du alle Anwendungen Bardischer Inspiration zurück. Du kannst ohne Aktion einen Zauberplatz verbrauchen, um eine Anwendung zurückzuerhalten."
+    },
+    "Countercharm": {
+      "name": "Gegenbezauberung",
+      "description": "Als Reaktion, wenn du oder eine Kreatur innerhalb von 30 Fuß einen Rettungswurf gegen Bezaubert oder Verängstigt nicht besteht, lässt du diesen Wurf mit Vorteil wiederholen."
+    },
+    "Magical Secrets": {
+      "name": "Magische Geheimnisse",
+      "description": "Wenn sich deine Höchstzahl vorbereiteter Zauber erhöht, dürfen neue Zauber aus den Listen von Barde, Kleriker, Druide oder Magier stammen und gelten als Bardenzauber. Du kannst auch einen vorbereiteten Bardenzauber durch einen Zauber dieser Listen ersetzen."
+    },
+    "Superior Inspiration": {
+      "name": "Überlegene Inspiration",
+      "description": "Wenn du Initiative würfelst und weniger als zwei Anwendungen Bardischer Inspiration übrig hast, erhältst du genug zurück, um zwei zu haben."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Words of Creation": {
+      "name": "Worte der Schöpfung",
+      "description": "Machtwort Heilung und Machtwort Tod sind stets vorbereitet. Wenn du einen dieser Zauber wirkst, kannst du eine zweite Kreatur innerhalb von 10 Fuß um das erste Ziel wählen."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Zauberwirken",
+      "description": "Weisheit ist dein Zauberattribut als Kleriker; ein heiliges Symbol kann dein Zauberfokus sein. Auf Stufe 1 kennst du drei Kleriker-Zaubertricks, auf den Stufen 4 und 10 jeweils einen weiteren. Auf Stufe 1 bereitest du vier Klerikerzauber des 1. Grades vor; die Vorbereitungsgrenze und deine Zauberplätze steigen mit deiner Klerikerstufe. Nach jeder Langen Rast kannst du beliebige vorbereitete Klerikerzauber durch Zauber von Graden ersetzen, die du wirken kannst. Stets vorbereitete Zauber zählen nicht zur Grenze."
+    },
+    "Divine Order": {
+      "name": "Göttliche Ordnung",
+      "description": "Wähle Beschützer für den Umgang mit Kriegswaffen und Ausbildung in schwerer Rüstung oder Thaumaturg für einen weiteren Kleriker-Zaubertrick sowie einen Bonus auf Arkane-Kunde- oder Religionsproben in Höhe deines Weisheitsmodifikators (mindestens +1)."
+    },
+    "Channel Divinity": {
+      "name": "Göttliche Macht fokussieren",
+      "description": "Du erhältst die Optionen Göttlicher Funke und Untote vertreiben sowie die Optionen deiner Unterklasse. Du kannst Göttliche Macht fokussieren auf Stufe 2 zweimal, auf Stufe 6 dreimal und auf Stufe 18 viermal einsetzen; nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle. Als Magieaktion heilt Göttlicher Funke eine andere sichtbare Kreatur innerhalb von 30 Fuß um 1d8 + deinen Weisheitsmodifikator oder fügt ihr bei einem gescheiterten Konstitutionsrettungswurf dieselbe Menge nekrotischen oder gleißenden Schaden zu (bei Erfolg die Hälfte); die Würfel steigen auf 2d8 auf Stufe 7, 3d8 auf Stufe 13 und 4d8 auf Stufe 18. Als Magieaktion zwingt Untote vertreiben ausgewählte Untote innerhalb von 30 Fuß zu Weisheitsrettungswürfen; bei Misserfolg sind sie 1 Minute lang Verängstigt und Handlungsunfähig. Sie versuchen sich zu entfernen; der Effekt endet, wenn sie Schaden erleiden oder du Handlungsunfähig wirst oder stirbst."
+    },
+    "Cleric Subclass": {
+      "name": "Klerikerunterklasse",
+      "description": "Wähle eine Klerikerunterklasse; du erhältst ihre Merkmale auf den angegebenen Klerikerstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Klerikerstufen 8, 12 und 16 erneut."
+    },
+    "Sear Undead": {
+      "name": "Untote versengen",
+      "description": "Wenn du Untote vertreiben einsetzt, erleidet jeder Untote, der den Rettungswurf nicht besteht, zusätzlich gleißenden Schaden in Höhe eines Wurfs mit so vielen d8 wie dein Weisheitsmodifikator (mindestens 1d8)."
+    },
+    "Blessed Strikes": {
+      "name": "Gesegnete Schläge",
+      "description": "Wähle Göttlicher Schlag, der einmal in jedem deiner Züge einem Waffentreffer zusätzlich 1d8 nekrotischen oder gleißenden Schaden verleiht, oder Mächtige Zauberei, die deinen Weisheitsmodifikator zum Schaden deiner Kleriker-Zaubertricks addiert."
+    },
+    "Divine Intervention": {
+      "name": "Göttliches Eingreifen",
+      "description": "Einmal pro Langer Rast kannst du als Magieaktion einen Klerikerzauber des 5. Grades oder niedriger, der keine Reaktion erfordert, ohne Zauberplatz oder Materialkomponenten wirken."
+    },
+    "Improved Blessed Strikes": {
+      "name": "Verbesserte gesegnete Schläge",
+      "description": "Der Zusatzschaden von Göttlicher Schlag steigt auf 2d8. Hast du stattdessen Mächtige Zauberei gewählt, kannst du durch Schaden mit einem Kleriker-Zaubertrick dir oder einem Verbündeten innerhalb von 60 Fuß temporäre Trefferpunkte in Höhe des Doppelten deines Weisheitsmodifikators gewähren."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Greater Divine Intervention": {
+      "name": "Mächtigeres göttliches Eingreifen",
+      "description": "Mit Göttlichem Eingreifen kannst du Wunsch wirken. Wählst du Wunsch, kannst du Göttliches Eingreifen erst nach 2d4 Langen Rasten wieder einsetzen."
+    }
+  },
+  "Druid": {
+    "Spellcasting": {
+      "name": "Zauberwirken",
+      "description": "Weisheit ist dein Zauberattribut als Druide; ein druidischer Fokus kann dein Zauberfokus sein. Auf Stufe 1 kennst du zwei Druiden-Zaubertricks, auf den Stufen 4 und 10 jeweils einen weiteren. Auf Stufe 1 bereitest du vier Druidenzauber des 1. Grades vor; die Vorbereitungsgrenze und deine Zauberplätze steigen mit deiner Druidenstufe. Nach jeder Langen Rast kannst du vorbereitete Druidenzauber durch andere Zauber von Graden ersetzen, die du wirken kannst. Stets vorbereitete Zauber zählen nicht zur Grenze."
+    },
+    "Druidic": {
+      "name": "Druidisch",
+      "description": "Du kennst die geheime druidische Sprache und hast Mit Tieren sprechen stets vorbereitet. Du kannst versteckte druidische Nachrichten hinterlassen; andere Druiden bemerken sie automatisch, während andere Kreaturen zum Entdecken eine Ermitteln-Probe gegen SG 15 benötigen, sie aber ohne Magie nicht entziffern können."
+    },
+    "Primal Order": {
+      "name": "Ursprüngliche Ordnung",
+      "description": "Wähle Magier für einen weiteren Druiden-Zaubertrick und einen Bonus auf Arkane-Kunde- oder Naturkundeproben in Höhe deines Weisheitsmodifikators (mindestens +1), oder Wächter für den Umgang mit Kriegswaffen und Ausbildung in mittelschwerer Rüstung."
+    },
+    "Wild Shape": {
+      "name": "Tiergestalt",
+      "description": "Als Bonusaktion nimmst du eine deiner bekannten Tiergestalten für eine Anzahl Stunden in Höhe deiner halben Druidenstufe an. Du beginnst mit vier Gestalten mit HG 1/4 oder niedriger und ohne Flugbewegungsrate; auf Stufe 4 kennst du sechs Gestalten bis HG 1/2 und auf Stufe 8 acht Gestalten bis HG 1, nun auch mit Flugbewegungsrate. Nach einer Langen Rast kannst du eine bekannte Gestalt ersetzen. Du behältst Trefferpunkte, Trefferwürfel, geistige Attribute, Klassenmerkmale, Sprachen und Übungen; du erhältst temporäre Trefferpunkte in Höhe deiner Druidenstufe. In Tiergestalt kannst du keine Zauber wirken, aber deine Konzentration aufrechterhalten. Du beginnst mit zwei Anwendungen; eine erhältst du nach einer Kurzen Rast zurück, alle nach einer Langen Rast. Auf Stufe 6 steigen die Anwendungen auf drei, auf Stufe 17 auf vier."
+    },
+    "Wild Companion": {
+      "name": "Wilder Gefährte",
+      "description": "Verbrauche als Magieaktion einen Zauberplatz oder eine Anwendung von Tiergestalt, um Vertrauten finden ohne Materialkomponenten zu wirken. Der Vertraute ist ein Feenwesen und verschwindet nach deiner nächsten Langen Rast."
+    },
+    "Druid Subclass": {
+      "name": "Druidenunterklasse",
+      "description": "Wähle eine Druidenunterklasse; du erhältst ihre Merkmale auf den angegebenen Druidenstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Druidenstufen 8, 12 und 16 erneut."
+    },
+    "Wild Resurgence": {
+      "name": "Wilde Erneuerung",
+      "description": "Einmal pro Zug kannst du, wenn du keine Anwendung von Tiergestalt mehr hast, einen Zauberplatz ausgeben, um eine Anwendung zurückzuerhalten. Einmal pro Langer Rast kannst du eine Anwendung von Tiergestalt ausgeben, um einen Zauberplatz des 1. Grades zurückzuerhalten."
+    },
+    "Elemental Fury": {
+      "name": "Elementare Wut",
+      "description": "Wähle Mächtige Zauberei, um deinen Weisheitsmodifikator zum Schaden deiner Druiden-Zaubertricks zu addieren, oder Ursprünglicher Schlag, um einmal pro Zug einem Waffen- oder Tiergestalt-Treffer zusätzlich 1d8 Kälte-, Feuer-, Blitz- oder Schallschaden hinzuzufügen."
+    },
+    "Improved Elemental Fury": {
+      "name": "Verbesserte elementare Wut",
+      "description": "Mächtige Zauberei erhöht die Reichweite eines Druiden-Zaubertricks um 300 Fuß, sofern seine normale Reichweite mindestens 10 Fuß beträgt. Der Zusatzschaden von Ursprünglicher Schlag steigt auf 2d8."
+    },
+    "Beast Spells": {
+      "name": "Zauber in Tiergestalt",
+      "description": "Du kannst in Tiergestalt Zauber wirken, außer Zauber mit einer Materialkomponente, die einen Preis hat oder verbraucht wird."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Archdruid": {
+      "name": "Erzdruide",
+      "description": "Wenn du Initiative würfelst und keine Anwendung von Tiergestalt mehr hast, erhältst du eine zurück. Einmal pro Langer Rast kannst du ungenutzte Anwendungen von Tiergestalt in einen einzigen Zauberplatz umwandeln, mit zwei Zaubergraden pro Anwendung. Außerdem alterst du nur ein Jahr pro zehn vergehende Jahre."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Kampfstil",
+      "description": "Du erhältst ein Kampfstil-Talent deiner Wahl. Wenn du eine Kämpferstufe erhältst, kannst du es durch ein anderes Kampfstil-Talent ersetzen."
+    },
+    "Second Wind": {
+      "name": "Zweiter Atem",
+      "description": "Als Bonusaktion erhältst du 1d10 + deine Kämpferstufe Trefferpunkte zurück. Du beginnst mit zwei Anwendungen, erhältst auf Stufe 4 eine dritte und auf Stufe 10 eine vierte. Nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle."
+    },
+    "Weapon Mastery": {
+      "name": "Waffenmeisterschaft",
+      "description": "Wähle drei Arten einfacher Waffen oder Kriegswaffen, deren Meisterschaftseigenschaften du nutzen kannst. Nach einer Langen Rast kannst du eine Wahl ändern. Auf Stufe 4 sind es vier Arten, auf Stufe 10 fünf und auf Stufe 16 sechs."
+    },
+    "Action Surge": {
+      "name": "Tatendrang",
+      "description": "In deinem Zug kannst du eine zusätzliche Aktion ausführen, die keine Magieaktion ist. Nach einer Kurzen oder Langen Rast erhältst du die Anwendung zurück. Ab Stufe 17 hast du zwei Anwendungen pro Rast, kannst dieses Merkmal aber nur einmal pro Zug einsetzen."
+    },
+    "Tactical Mind": {
+      "name": "Taktischer Verstand",
+      "description": "Nachdem du bei einer Attributsprobe gescheitert bist, verbrauche eine Anwendung von Zweiter Atem, um 1d10 zum Ergebnis zu addieren. Scheitert die Probe weiterhin, wird die Anwendung nicht verbraucht."
+    },
+    "Fighter Subclass": {
+      "name": "Kämpferunterklasse",
+      "description": "Wähle eine Kämpferunterklasse; du erhältst ihre Merkmale auf den angegebenen Kämpferstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Kämpferstufen 6, 8, 12, 14 und 16 erneut."
+    },
+    "Extra Attack": {
+      "name": "Zusätzlicher Angriff",
+      "description": "Wenn du die Angriffsaktion ausführst, greifst du zweimal an. Auf den Kämpferstufen 11 und 20 verbessert sich dieses Merkmal."
+    },
+    "Tactical Shift": {
+      "name": "Taktische Bewegung",
+      "description": "Wenn du Zweiter Atem als Bonusaktion einsetzt, kannst du dich bis zur Hälfte deiner Bewegungsrate bewegen, ohne Gelegenheitsangriffe auszulösen."
+    },
+    "Indomitable": {
+      "name": "Unbeugsam",
+      "description": "Nachdem du einen Rettungswurf nicht bestanden hast, wiederhole ihn mit einem Bonus in Höhe deiner Kämpferstufe; verwende das neue Ergebnis. Eine Anwendung pro Langer Rast auf Stufe 9, zwei auf Stufe 13 und drei auf Stufe 17."
+    },
+    "Tactical Master": {
+      "name": "Taktischer Meister",
+      "description": "Wenn du mit einer Waffe angreifst, deren Meisterschaft du nutzen kannst, ersetze ihre Meisterschaftseigenschaft für diesen Angriff durch Stoßen, Schwächen oder Verlangsamen."
+    },
+    "Two Extra Attacks": {
+      "name": "Zwei zusätzliche Angriffe",
+      "description": "Wenn du die Angriffsaktion ausführst, greifst du dreimal statt einmal an."
+    },
+    "Studied Attacks": {
+      "name": "Einstudierte Angriffe",
+      "description": "Nachdem du eine Kreatur mit einem Angriffswurf verfehlt hast, hast du bis zum Ende deines nächsten Zuges Vorteil auf deinen nächsten Angriffswurf gegen sie."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Three Extra Attacks": {
+      "name": "Drei zusätzliche Angriffe",
+      "description": "Wenn du die Angriffsaktion ausführst, greifst du viermal statt einmal an."
+    }
+  },
+  "Monk": {
+    "Martial Arts": {
+      "name": "Kampfkunst",
+      "description": "Solange du weder Rüstung noch Schild trägst und unbewaffnet bist oder nur Mönchswaffen führst (einfache Nahkampfwaffen oder leichte Kriegsnahkampfwaffen), kannst du als Bonusaktion einen waffenlosen Angriff ausführen, Geschicklichkeit für dessen Angriffs- und Schadenswürfe sowie für den Rettungswurf-SG deiner Ring- und Stoßversuche verwenden und den üblichen Schaden durch deinen Kampfkunstwürfel ersetzen. Der Würfel ist d6 auf den Stufen 1-4, d8 auf 5-10, d10 auf 11-16 und d12 ab Stufe 17."
+    },
+    "Unarmored Defense": {
+      "name": "Rüstungslose Verteidigung",
+      "description": "Ohne Rüstung oder Schild beträgt deine Grund-Rüstungsklasse 10 + dein Geschicklichkeitsmodifikator + dein Weisheitsmodifikator."
+    },
+    "Monk's Focus": {
+      "name": "Mönchsfokus",
+      "description": "Du hast Fokuspunkte in Höhe deiner Mönchsstufe und erhältst sie nach einer Kurzen oder Langen Rast zurück; dein Fokus-Rettungswurf-SG ist 8 + dein Weisheitsmodifikator + dein Übungsbonus. Verbrauche 1 Punkt für Schlaghagel (zwei waffenlose Angriffe als Bonusaktion) oder führe Rückzug oder Spurt als Bonusaktion kostenlos aus. Verbrauche 1 Punkt, um Rückzug mit Ausweichen (Geduldige Verteidigung) oder Spurt mit verdoppelter Sprungweite (Schritt des Windes) als Bonusaktion zu verbinden."
+    },
+    "Unarmored Movement": {
+      "name": "Bewegung ohne Rüstung",
+      "description": "Ohne Rüstung oder Schild steigt deine Bewegungsrate auf den Stufen 2-5 um 10 Fuß, auf 6-9 um 15 Fuß, auf 10-13 um 20 Fuß, auf 14-17 um 25 Fuß und ab Stufe 18 um 30 Fuß."
+    },
+    "Uncanny Metabolism": {
+      "name": "Außergewöhnlicher Stoffwechsel",
+      "description": "Einmal pro Langer Rast erhältst du beim Initiativewurf alle Fokuspunkte zurück und regenerierst Trefferpunkte in Höhe deiner Mönchsstufe + dem Ergebnis eines Kampfkunstwürfels."
+    },
+    "Deflect Attacks": {
+      "name": "Angriffe ablenken",
+      "description": "Als Reaktion, wenn dich ein Angriff trifft, der Wucht-, Stich- oder Hiebschaden verursacht, verringerst du den Gesamtschaden um 1d10 + deinen Geschicklichkeitsmodifikator + deine Mönchsstufe. Sinkt er dadurch auf 0, kannst du 1 Fokuspunkt ausgeben, um ihn zurückzulenken: Eine sichtbare Kreatur innerhalb von 5 Fuß bei einem Nahkampfangriff oder innerhalb von 60 Fuß ohne vollständige Deckung bei einem Fernkampfangriff legt einen Geschicklichkeitsrettungswurf ab. Bei Misserfolg erleidet sie Schaden der Angriffsart in Höhe von zwei Kampfkunstwürfeln + deinem Geschicklichkeitsmodifikator."
+    },
+    "Monk Subclass": {
+      "name": "Mönchsunterklasse",
+      "description": "Wähle eine Mönchsunterklasse; du erhältst ihre Merkmale auf den angegebenen Mönchsstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Mönchsstufen 8, 12 und 16 erneut."
+    },
+    "Slow Fall": {
+      "name": "Sanfter Fall",
+      "description": "Als Reaktion beim Fallen verringerst du den Fallschaden um das Fünffache deiner Mönchsstufe."
+    },
+    "Extra Attack": {
+      "name": "Zusätzlicher Angriff",
+      "description": "Wenn du die Angriffsaktion ausführst, greifst du zweimal an."
+    },
+    "Stunning Strike": {
+      "name": "Betäubender Schlag",
+      "description": "Einmal pro Zug kannst du nach einem Treffer mit einer Mönchswaffe oder einem waffenlosen Angriff 1 Fokuspunkt verbrauchen. Das Ziel legt einen Konstitutionsrettungswurf ab: Bei Misserfolg ist es bis zum Beginn deines nächsten Zuges Betäubt; bei Erfolg wird seine Bewegungsrate halbiert und der nächste Angriff gegen es hat bis dahin Vorteil."
+    },
+    "Empowered Strikes": {
+      "name": "Verstärkte Schläge",
+      "description": "Dein waffenloser Angriff kann Energieschaden statt seiner üblichen Schadensart verursachen."
+    },
+    "Evasion": {
+      "name": "Entrinnen",
+      "description": "Bei einem Geschicklichkeitsrettungswurf, der Schaden halbiert, erleidest du bei Erfolg keinen und bei Misserfolg halben Schaden, sofern du nicht Handlungsunfähig bist."
+    },
+    "Acrobatic Movement": {
+      "name": "Akrobatische Bewegung",
+      "description": "Ohne Rüstung oder Schild kannst du dich in deinem Zug über senkrechte Flächen und Flüssigkeiten bewegen, ohne während dieser Bewegung zu fallen."
+    },
+    "Heightened Focus": {
+      "name": "Verstärkter Fokus",
+      "description": "Für 1 Fokuspunkt ermöglicht Schlaghagel drei waffenlose Angriffe; Geduldige Verteidigung gewährt zusätzlich temporäre Trefferpunkte in Höhe von zwei Kampfkunstwürfeln; Schritt des Windes kann eine bereitwillige große oder kleinere Kreatur innerhalb von 5 Fuß mitnehmen, ohne Gelegenheitsangriffe auszulösen."
+    },
+    "Self-Restoration": {
+      "name": "Selbstheilung",
+      "description": "Am Ende jedes deiner Züge beendest du bei dir Bezaubert, Verängstigt oder Vergiftet. Fehlende Nahrung oder Wasser verursachen bei dir keine Erschöpfung mehr."
+    },
+    "Deflect Energy": {
+      "name": "Energie ablenken",
+      "description": "Angriffe ablenken funktioniert nun gegen Angriffe jeder Schadensart."
+    },
+    "Disciplined Survivor": {
+      "name": "Disziplinierter Überlebender",
+      "description": "Du erhältst Übung in allen Rettungswürfen. Wenn du einen nicht bestehst, verbrauche 1 Fokuspunkt, um ihn zu wiederholen, und verwende das neue Ergebnis."
+    },
+    "Perfect Focus": {
+      "name": "Vollkommener Fokus",
+      "description": "Wenn du Initiative würfelst, ohne Außergewöhnlicher Stoffwechsel einzusetzen, erhältst du bei höchstens drei Fokuspunkten genug zurück, um vier zu haben."
+    },
+    "Superior Defense": {
+      "name": "Überlegene Verteidigung",
+      "description": "Zu Beginn deines Zuges kannst du 3 Fokuspunkte verbrauchen, um für 1 Minute oder bis du Handlungsunfähig wirst Resistenz gegen alle Schadensarten außer Energieschaden zu erhalten."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Body and Mind": {
+      "name": "Körper und Geist",
+      "description": "Erhöhe Geschicklichkeit und Weisheit um jeweils 4; ihr Höchstwert beträgt nun 25."
+    }
+  },
+  "Paladin": {
+    "Lay On Hands": {
+      "name": "Handauflegen",
+      "description": "Ein Heilungsvorrat in Höhe des 5-Fachen deiner Paladinstufe füllt sich nach einer Langen Rast auf. Als Bonusaktion berührst du eine Kreatur, auch dich selbst, und stellst Trefferpunkte aus dem Vorrat wieder her; stattdessen kannst du 5 Vorratspunkte ausgeben, um Vergiftet zu beenden."
+    },
+    "Spellcasting": {
+      "name": "Zauberwirken",
+      "description": "Charisma ist dein Zauberattribut als Paladin; ein heiliges Symbol kann dein Zauberfokus sein. Auf Stufe 1 bereitest du zwei Paladinzauber des 1. Grades vor; die Vorbereitungsgrenze und deine Zauberplätze steigen mit deiner Paladinstufe. Nach einer Langen Rast kannst du einen vorbereiteten Paladinzauber durch einen anderen Zauber eines Grades ersetzen, den du wirken kannst. Stets vorbereitete Zauber zählen nicht zur Grenze."
+    },
+    "Weapon Mastery": {
+      "name": "Waffenmeisterschaft",
+      "description": "Wähle zwei Waffenarten, die du beherrschst und deren Meisterschaftseigenschaften du nutzen kannst. Nach einer Langen Rast kannst du beide Wahlen ändern."
+    },
+    "Fighting Style": {
+      "name": "Kampfstil",
+      "description": "Du erhältst ein Kampfstil-Talent oder wählst Gesegneter Krieger, um zwei Kleriker-Zaubertricks zu lernen, die als Paladinzauber gelten und Charisma verwenden. Wenn du eine Paladinstufe erhältst, kannst du einen Zaubertrick von Gesegneter Krieger ersetzen."
+    },
+    "Paladin's Smite": {
+      "name": "Niederstrecken des Paladins",
+      "description": "Göttliches Niederstrecken ist stets vorbereitet und kann einmal pro Langer Rast ohne Zauberplatz gewirkt werden."
+    },
+    "Channel Divinity": {
+      "name": "Göttliche Macht fokussieren",
+      "description": "Du erhältst die Fähigkeit Göttlicher Sinn sowie die Optionen deiner Unterklasse für Göttliche Macht fokussieren. Du beginnst mit zwei Anwendungen; auf Paladinstufe 11 sind es drei. Nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle. Göttlicher Sinn ist eine Bonusaktion, die 10 Minuten lang Himmlische, Unholde, Untote und geweihte oder entweihte Orte oder Gegenstände innerhalb von 60 Fuß offenbart, bis du Handlungsunfähig wirst."
+    },
+    "Paladin Subclass": {
+      "name": "Paladinunterklasse",
+      "description": "Wähle eine Paladinunterklasse; du erhältst ihre Merkmale auf den angegebenen Paladinstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Paladinstufen 8, 12 und 16 erneut."
+    },
+    "Extra Attack": {
+      "name": "Zusätzlicher Angriff",
+      "description": "Wenn du die Angriffsaktion ausführst, greifst du zweimal an."
+    },
+    "Faithful Steed": {
+      "name": "Treues Reittier",
+      "description": "Reittier finden ist stets vorbereitet. Wirke den Zauber einmal pro Langer Rast ohne Zauberplatz."
+    },
+    "Aura of Protection": {
+      "name": "Aura des Schutzes",
+      "description": "Du und Verbündete innerhalb deiner Aura mit 10 Fuß Reichweite erhalten einen Bonus auf Rettungswürfe in Höhe deines Charismamodifikators (mindestens +1), solange du nicht Handlungsunfähig bist. Eine Kreatur profitiert nur von einer Aura des Schutzes eines Paladins gleichzeitig."
+    },
+    "Abjure Foes": {
+      "name": "Feinde bannen",
+      "description": "Als Magieaktion verbrauchst du eine Anwendung von Göttliche Macht fokussieren, um bis zu so viele Kreaturen wie deinen Charismamodifikator (mindestens eine) innerhalb von 60 Fuß zu wählen. Jede legt einen Weisheitsrettungswurf ab; bei Misserfolg ist sie 1 Minute lang oder bis sie Schaden erleidet Verängstigt. In jedem ihrer Züge kann sie sich bewegen, eine Aktion oder eine Bonusaktion ausführen, aber nur eines davon."
+    },
+    "Aura of Courage": {
+      "name": "Aura des Mutes",
+      "description": "Du und Verbündete in deiner Aura des Schutzes sind gegen Verängstigt immun; bei betroffenen Verbündeten wird der Zustand unterdrückt, solange sie darin sind."
+    },
+    "Radiant Strikes": {
+      "name": "Gleißende Schläge",
+      "description": "Jeder Treffer mit einer Nahkampfwaffe oder einem waffenlosen Angriff verursacht zusätzlich 1d8 gleißenden Schaden."
+    },
+    "Restoring Touch": {
+      "name": "Heilende Berührung",
+      "description": "Wenn du Handauflegen einsetzt, verbrauche für jeden beendeten Zustand 5 Punkte des Heilungsvorrats: Blind, Bezaubert, Taub, Verängstigt, Gelähmt oder Betäubt. Diese Punkte heilen nicht zugleich."
+    },
+    "Aura Expansion": {
+      "name": "Erweiterte Aura",
+      "description": "Deine Aura des Schutzes erstreckt sich auf 30 Fuß."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    }
+  },
+  "Ranger": {
+    "Spellcasting": {
+      "name": "Zauberwirken",
+      "description": "Weisheit ist dein Zauberattribut als Waldläufer; ein druidischer Fokus kann dein Zauberfokus sein. Auf Stufe 1 bereitest du zwei Waldläuferzauber des 1. Grades vor; die Vorbereitungsgrenze und deine Zauberplätze steigen mit deiner Waldläuferstufe. Nach einer Langen Rast kannst du einen vorbereiteten Waldläuferzauber durch einen anderen Zauber eines Grades ersetzen, den du wirken kannst. Stets vorbereitete Zauber zählen nicht zur Grenze."
+    },
+    "Favored Enemy": {
+      "name": "Erzfeind",
+      "description": "Mal des Jägers ist stets vorbereitet. Wirke es ohne Zauberplatz zweimal auf den Stufen 1-4, dreimal auf 5-8, viermal auf 9-12, fünfmal auf 13-16 und sechsmal ab Stufe 17. Nach einer Langen Rast erhältst du alle kostenlosen Anwendungen zurück."
+    },
+    "Weapon Mastery": {
+      "name": "Waffenmeisterschaft",
+      "description": "Wähle zwei Waffenarten, die du beherrschst und deren Meisterschaftseigenschaften du nutzen kannst. Nach einer Langen Rast kannst du beide Wahlen ändern."
+    },
+    "Deft Explorer": {
+      "name": "Geschickter Entdecker",
+      "description": "Du erhältst Expertise in einer Fertigkeit, die du beherrschst und in der du sie noch nicht hast, und lernst zwei Sprachen deiner Wahl."
+    },
+    "Fighting Style": {
+      "name": "Kampfstil",
+      "description": "Du erhältst ein Kampfstil-Talent oder wählst Druidischer Krieger, um zwei Druiden-Zaubertricks zu lernen, die als Waldläuferzauber gelten und Weisheit verwenden. Wenn du eine Waldläuferstufe erhältst, kannst du einen Zaubertrick von Druidischer Krieger ersetzen."
+    },
+    "Ranger Subclass": {
+      "name": "Waldläuferunterklasse",
+      "description": "Wähle eine Waldläuferunterklasse; du erhältst ihre Merkmale auf den angegebenen Waldläuferstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Waldläuferstufen 8, 12 und 16 erneut."
+    },
+    "Extra Attack": {
+      "name": "Zusätzlicher Angriff",
+      "description": "Wenn du die Angriffsaktion ausführst, greifst du zweimal an."
+    },
+    "Roving": {
+      "name": "Umherstreifen",
+      "description": "Deine Bewegungsrate erhöht sich um 10 Fuß, solange du keine schwere Rüstung trägst. Du erhältst eine Kletter- und eine Schwimmbewegungsrate in Höhe deiner Bewegungsrate."
+    },
+    "Expertise": {
+      "name": "Expertise",
+      "description": "Du erhältst Expertise in zwei weiteren Fertigkeiten, die du beherrschst und in denen du sie noch nicht hast."
+    },
+    "Tireless": {
+      "name": "Unermüdlich",
+      "description": "Als Magieaktion erhältst du 1d8 + deinen Weisheitsmodifikator temporäre Trefferpunkte (mindestens 1), und zwar so oft wie dein Weisheitsmodifikator (mindestens einmal) pro Langer Rast. Eine Kurze Rast verringert außerdem deine Erschöpfungsstufe um eins."
+    },
+    "Relentless Hunter": {
+      "name": "Unerbittlicher Jäger",
+      "description": "Schaden kann deine Konzentration auf Mal des Jägers nicht unterbrechen."
+    },
+    "Nature's Veil": {
+      "name": "Schleier der Natur",
+      "description": "Als Bonusaktion wirst du bis zum Ende deines nächsten Zuges Unsichtbar. Du kannst dies so oft wie deinen Weisheitsmodifikator (mindestens einmal) pro Langer Rast einsetzen."
+    },
+    "Precise Hunter": {
+      "name": "Präziser Jäger",
+      "description": "Du hast Vorteil auf Angriffe gegen die Kreatur, die von deinem Mal des Jägers markiert ist."
+    },
+    "Feral Senses": {
+      "name": "Wilde Sinne",
+      "description": "Du erhältst Blindsicht mit einer Reichweite von 30 Fuß."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Foe Slayer": {
+      "name": "Feindbezwinger",
+      "description": "Der Schadenswürfel von Mal des Jägers ist nun ein d10 statt eines d6."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Expertise",
+      "description": "Du erhältst Expertise in zwei Fertigkeiten, die du beherrschst; auf Schurkenstufe 6 erhältst du Expertise in zwei weiteren."
+    },
+    "Sneak Attack": {
+      "name": "Hinterhältiger Angriff",
+      "description": "Einmal pro Zug verursachst du mit einem Angriff einer Finesse- oder Fernkampfwaffe zusätzlichen Schaden, wenn der Angriff Vorteil hat. Vorteil ist nicht nötig, wenn ein Verbündeter innerhalb von 5 Fuß um das Ziel steht, nicht Handlungsunfähig ist und dein Wurf keinen Nachteil hat. Der Zusatzschaden beträgt 1d6 auf Stufe 1 und steigt auf jeder ungeraden Schurkenstufe um 1d6 bis zu 10d6 auf Stufe 19."
+    },
+    "Thieves' Cant": {
+      "name": "Diebessprache",
+      "description": "Du kennst die Diebessprache und eine weitere Sprache deiner Wahl."
+    },
+    "Weapon Mastery": {
+      "name": "Waffenmeisterschaft",
+      "description": "Wähle zwei Waffenarten, die du beherrschst und deren Meisterschaftseigenschaften du nutzen kannst. Nach einer Langen Rast kannst du beide Wahlen ändern."
+    },
+    "Cunning Action": {
+      "name": "Gerissene Aktion",
+      "description": "In deinem Zug kannst du Spurt, Rückzug oder Verstecken als Bonusaktion ausführen."
+    },
+    "Rogue Subclass": {
+      "name": "Schurkenunterklasse",
+      "description": "Wähle eine Schurkenunterklasse; du erhältst ihre Merkmale auf den angegebenen Schurkenstufen."
+    },
+    "Steady Aim": {
+      "name": "Ruhiges Zielen",
+      "description": "Als Bonusaktion, bevor du dich bewegst, erhältst du Vorteil auf deinen nächsten Angriffswurf in diesem Zug; anschließend beträgt deine Bewegungsrate für den Rest des Zuges 0."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Schurkenstufen 8, 10, 12 und 16 erneut."
+    },
+    "Cunning Strike": {
+      "name": "Gerissener Schlag",
+      "description": "Wenn du Schaden durch Hinterhältigen Angriff verursachst, verzichte auf 1d6, um nach dem Schaden einen Effekt hinzuzufügen: Vergiften (du musst ein Giftmischer-Set bei dir tragen; Konstitutionsrettungswurf, sonst 1 Minute lang Vergiftet, mit erneutem Rettungswurf am Ende jedes Zuges), Niederwerfen (Geschicklichkeitsrettungswurf, sonst liegt ein großes oder kleineres Ziel am Boden) oder Rückzug (bewege dich bis zur Hälfte deiner Bewegungsrate ohne Gelegenheitsangriffe). Der Rettungswurf-SG beträgt 8 + dein Geschicklichkeitsmodifikator + dein Übungsbonus."
+    },
+    "Uncanny Dodge": {
+      "name": "Unheimliches Ausweichen",
+      "description": "Als Reaktion, wenn ein sichtbarer Angreifer dich mit einem Angriffswurf trifft, halbiere den Schaden dieses Angriffs gegen dich, abgerundet."
+    },
+    "Evasion": {
+      "name": "Entrinnen",
+      "description": "Bei einem Geschicklichkeitsrettungswurf, der Schaden halbiert, erleidest du bei Erfolg keinen und bei Misserfolg halben Schaden, sofern du nicht Handlungsunfähig bist."
+    },
+    "Reliable Talent": {
+      "name": "Verlässliches Talent",
+      "description": "Wenn eine Attributsprobe deine Übung in einer Fertigkeit oder einem Werkzeug verwendet, behandelst du einen W20-Wurf von 9 oder weniger als 10."
+    },
+    "Improved Cunning Strike": {
+      "name": "Verbesserter gerissener Schlag",
+      "description": "Wende bei einem Hinterhältigen Angriff bis zu zwei Effekte von Gerissener Schlag an und bezahle für jeden die Würfelkosten."
+    },
+    "Devious Strikes": {
+      "name": "Hinterlistige Schläge",
+      "description": "Du erhältst weitere Optionen für Gerissener Schlag: Benommen machen kostet 2d6 (Konstitutionsrettungswurf, sonst darf das Ziel im nächsten Zug nur sich bewegen, eine Aktion oder eine Bonusaktion ausführen); K. o. schlagen kostet 6d6 (Konstitutionsrettungswurf, sonst bis zu 1 Minute lang Bewusstlos); Blenden kostet 3d6 (Geschicklichkeitsrettungswurf, sonst bis zum Ende seines nächsten Zuges Blind)."
+    },
+    "Slippery Mind": {
+      "name": "Entschlüpfriger Geist",
+      "description": "Du erhältst Übung in Weisheits- und Charismarettungswürfen."
+    },
+    "Elusive": {
+      "name": "Unfassbar",
+      "description": "Angriffswürfe gegen dich können keinen Vorteil haben, sofern du nicht Handlungsunfähig bist."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Stroke of Luck": {
+      "name": "Glückstreffer",
+      "description": "Einmal pro Kurzer oder Langer Rast kannst du einen misslungenen W20-Test in einen Wurf von 20 verwandeln."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Zauberwirken",
+      "description": "Charisma ist dein Zauberattribut als Hexenblütiger; ein arkaner Fokus kann dein Zauberfokus sein. Auf Stufe 1 kennst du vier Zaubertricks des Hexenblütigen und lernst auf den Stufen 4 und 10 je einen weiteren. Auf Stufe 1 bereitest du zwei Zauber des Hexenblütigen vom 1. Grad vor; Vorbereitungsgrenze und Zauberplätze steigen mit deiner Stufe als Hexenblütiger. Wenn du eine solche Stufe erhältst, kannst du einen vorbereiteten Zauber und einen Zaubertrick durch geeignete Zauber des Hexenblütigen ersetzen."
+    },
+    "Innate Sorcery": {
+      "name": "Angeborene Zauberei",
+      "description": "Als Bonusaktion entfesselst du für 1 Minute deine angeborene Magie: Der Rettungswurf-SG deiner Zauber des Hexenblütigen steigt um 1 und du hast Vorteil auf Zauberangriffswürfe mit ihnen. Zwei Anwendungen pro Langer Rast."
+    },
+    "Font of Magic": {
+      "name": "Quelle der Magie",
+      "description": "Du erhältst Zaubereipunkte in Höhe deiner Stufe als Hexenblütiger und bekommst sie nach einer Langen Rast zurück. Wandle ohne Aktion einen Zauberplatz in Punkte in Höhe seines Grades um oder verbrauche als Bonusaktion Punkte, um einen Zauberplatz bis zum 5. Grad zu schaffen. Kosten: 1. Grad 2 Punkte, 2. Grad 3, 3. Grad 5, 4. Grad 6 und 5. Grad 7; geschaffene Plätze verschwinden nach einer Langen Rast. Du musst die Mindeststufe als Hexenblütiger für den geschaffenen Platz erreicht haben."
+    },
+    "Metamagic": {
+      "name": "Metamagie",
+      "description": "Wähle zwei Metamagie-Optionen und verbrauche Zaubereipunkte, um Zauber zu verändern. Normalerweise kann nur eine Option einen Zauber beeinflussen. Bei jedem Stufenaufstieg als Hexenblütiger kannst du eine Option ersetzen. Auf Stufe 10 lernst du zwei weitere und auf Stufe 17 nochmals zwei."
+    },
+    "Sorcerer Subclass": {
+      "name": "Unterklasse des Hexenblütigen",
+      "description": "Wähle eine Unterklasse für Hexenblütige; du erhältst ihre Merkmale auf den angegebenen Stufen als Hexenblütiger."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Stufen 8, 12 und 16 als Hexenblütiger erneut."
+    },
+    "Sorcerous Restoration": {
+      "name": "Magische Erholung",
+      "description": "Einmal pro Langer Rast erhältst du nach einer Kurzen Rast verbrauchte Zaubereipunkte bis zur Hälfte deiner Stufe als Hexenblütiger zurück, abgerundet."
+    },
+    "Sorcery Incarnate": {
+      "name": "Verkörperte Zauberei",
+      "description": "Hast du keine Anwendungen von Angeborene Zauberei übrig, verbrauche beim Aktivieren 2 Zaubereipunkte. Während Angeborene Zauberei aktiv ist, kannst du auf jeden Zauber bis zu zwei Metamagie-Optionen anwenden."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Arcane Apotheosis": {
+      "name": "Arkane Apotheose",
+      "description": "Während Angeborene Zauberei aktiv ist, kostet eine Metamagie-Option in jedem deiner Züge keine Zaubereipunkte."
+    }
+  },
+  "Warlock": {
+    "Eldritch Invocations": {
+      "name": "Andersweltliche Anrufungen",
+      "description": "Auf Stufe 1 lernst du eine Andersweltliche Anrufung, deren Voraussetzungen du erfüllst. Bei jedem Stufenaufstieg als Hexenmeister kannst du eine Anrufung ersetzen, sofern dadurch nicht die Voraussetzung für eine andere entfällt. Die Zahl bekannter Anrufungen steigt mit deiner Hexenmeisterstufe und erreicht auf Stufe 18 zehn; dieselbe Anrufung kannst du nur mehrfach wählen, wenn sie es erlaubt."
+    },
+    "Pact Magic": {
+      "name": "Paktmagie",
+      "description": "Charisma ist dein Zauberattribut als Hexenmeister; ein arkaner Fokus kann dein Zauberfokus sein. Auf Stufe 1 kennst du zwei Hexenmeister-Zaubertricks und lernst auf den Stufen 4 und 10 je einen weiteren. Auf Stufe 1 bereitest du zwei Hexenmeisterzauber des 1. Grades vor; Vorbereitungsgrenze und der einheitliche Grad deiner Paktmagie-Zauberplätze steigen mit deiner Hexenmeisterstufe. Nach einer Kurzen oder Langen Rast erhältst du Paktmagie-Zauberplätze zurück. Bei einem Stufenaufstieg als Hexenmeister kannst du einen vorbereiteten Zauber und einen Zaubertrick ersetzen."
+    },
+    "Magical Cunning": {
+      "name": "Magische List",
+      "description": "Einmal pro Langer Rast führst du einen Ritus von 1 Minute aus, um verbrauchte Paktmagie-Zauberplätze bis zur Hälfte deiner Höchstzahl zurückzuerhalten, aufgerundet."
+    },
+    "Warlock Subclass": {
+      "name": "Hexenmeisterunterklasse",
+      "description": "Wähle eine Hexenmeisterunterklasse; du erhältst ihre Merkmale auf den angegebenen Hexenmeisterstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Hexenmeisterstufen 8, 12 und 16 erneut."
+    },
+    "Contact Patron": {
+      "name": "Schutzherrn kontaktieren",
+      "description": "Kontakt zu einer anderen Ebene ist stets vorbereitet. Einmal pro Langer Rast kannst du den Zauber ohne Zauberplatz wirken, um deinen Schutzherrn zu kontaktieren, und bestehst seinen Rettungswurf automatisch."
+    },
+    "Mystic Arcanum": {
+      "name": "Mystisches Arkanum",
+      "description": "Wähle einen Hexenmeisterzauber des 6. Grades, den du einmal pro Langer Rast ohne Zauberplatz wirken kannst. Auf Hexenmeisterstufe 13 erhältst du ein eigenes Arkanum des 7. Grades, auf Stufe 15 eines des 8. und auf Stufe 17 eines des 9. Grades, jeweils mit einer eigenen kostenlosen Anwendung. Bei einem Stufenaufstieg als Hexenmeister kannst du ein Arkanum durch einen anderen geeigneten Hexenmeisterzauber desselben Grades ersetzen."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Eldritch Master": {
+      "name": "Andersweltlicher Meister",
+      "description": "Magische List stellt nun alle verbrauchten Paktmagie-Zauberplätze wieder her."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Zauberwirken",
+      "description": "Intelligenz ist dein Zauberattribut als Magier; ein arkaner Fokus oder dein Zauberbuch kann dein Zauberfokus sein. Auf Stufe 1 kennst du drei Magier-Zaubertricks und lernst auf den Stufen 4 und 10 je einen weiteren; nach einer Langen Rast kannst du einen ersetzen. Dein Zauberbuch enthält anfangs sechs Magierzauber des 1. Grades und erhält auf jeder Magierstufe zwei geeignete Magierzauber. Auf Stufe 1 bereitest du vier Zauber aus dem Buch vor; Grenze und Zauberplätze steigen mit deiner Stufe. Nach einer Langen Rast kannst du beliebige vorbereitete Zauber durch geeignete Zauber aus deinem Buch ersetzen."
+    },
+    "Ritual Adept": {
+      "name": "Ritualkundiger",
+      "description": "Du kannst einen Magierzauber aus deinem Zauberbuch mit dem Merkmal Ritual als Ritual wirken, ohne ihn vorzubereiten, während du aus dem Buch liest."
+    },
+    "Arcane Recovery": {
+      "name": "Arkane Erholung",
+      "description": "Einmal pro Langer Rast erhältst du nach einer Kurzen Rast Zauberplätze zurück, deren Grade zusammen höchstens deiner halben Magierstufe entsprechen, aufgerundet; kein zurückerhaltener Platz darf dem 6. Grad oder höher angehören."
+    },
+    "Scholar": {
+      "name": "Gelehrter",
+      "description": "Du erhältst Expertise in einer Fertigkeit, die du beherrschst und aus Arkane Kunde, Geschichte, Ermitteln, Heilkunde, Naturkunde oder Religion wählst."
+    },
+    "Wizard Subclass": {
+      "name": "Magierunterklasse",
+      "description": "Wähle eine Magierunterklasse; du erhältst ihre Merkmale auf den angegebenen Magierstufen."
+    },
+    "Ability Score Improvement": {
+      "name": "Attributswertverbesserung",
+      "description": "Du erhältst das Talent Attributswertverbesserung oder ein anderes Talent, dessen Voraussetzungen du erfüllst. Dieses Merkmal erhältst du auf den Magierstufen 8, 12 und 16 erneut."
+    },
+    "Memorize Spell": {
+      "name": "Zauber einprägen",
+      "description": "Nach einer Kurzen Rast ersetzt du einen vorbereiteten Magierzauber des 1. Grades oder höher durch einen anderen Zauber des 1. Grades oder höher aus deinem Zauberbuch."
+    },
+    "Spell Mastery": {
+      "name": "Zaubermeisterschaft",
+      "description": "Wähle aus deinem Zauberbuch einen Zauber des 1. und einen des 2. Grades, die jeweils mit einer Aktion gewirkt werden. Beide sind stets vorbereitet und können auf ihrem niedrigsten Grad ohne Zauberplatz gewirkt werden. Nach einer Langen Rast kannst du eine Wahl durch einen anderen geeigneten Zauber desselben Grades ersetzen."
+    },
+    "Epic Boon": {
+      "name": "Epische Gabe",
+      "description": "Du erhältst ein episches Talent oder ein anderes Talent, dessen Voraussetzungen du erfüllst."
+    },
+    "Signature Spells": {
+      "name": "Signaturzauber",
+      "description": "Wähle zwei Zauber des 3. Grades aus deinem Zauberbuch. Sie sind stets vorbereitet und können jeweils einmal pro Kurzer oder Langer Rast auf Grad 3 ohne Zauberplatz gewirkt werden."
+    }
+  }
+}

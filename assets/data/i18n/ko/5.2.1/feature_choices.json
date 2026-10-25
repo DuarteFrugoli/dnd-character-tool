@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "클레릭",
+        "description": "클레릭 소마법 2개와 1레벨 클레릭 주문 1개를 선택합니다."
+      },
+      "druid": {
+        "name": "드루이드",
+        "description": "드루이드 소마법 2개와 1레벨 드루이드 주문 1개를 선택합니다."
+      },
+      "wizard": {
+        "name": "위저드",
+        "description": "위저드 소마법 2개와 1레벨 위저드 주문 1개를 선택합니다."
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "지능",
+        "description": "이 주문들의 주문시전 능력치로 지능을 사용합니다."
+      },
+      "wisdom": {
+        "name": "지혜",
+        "description": "이 주문들의 주문시전 능력치로 지혜를 사용합니다."
+      },
+      "charisma": {
+        "name": "매력",
+        "description": "이 주문들의 주문시전 능력치로 매력을 사용합니다."
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "궁술",
+        "description": "원거리 무기를 사용하는 명중 굴림에 +2 보너스를 얻습니다."
+      },
+      "defense": {
+        "name": "방어",
+        "description": "경갑, 평갑 또는 중갑을 착용한 동안 AC에 +1 보너스를 얻습니다."
+      },
+      "great_weapon_fighting": {
+        "name": "대형 무기 전투",
+        "description": "양손으로 잡은 양손 또는 다용도 근접 무기의 피해 주사위 결과가 1이나 2라면 3으로 취급합니다."
+      },
+      "two_weapon_fighting": {
+        "name": "쌍수 전투",
+        "description": "경량 특성을 사용할 때 추가 공격의 피해에 능력 수정치를 더합니다."
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "궁술",
+        "description": "원거리 무기를 사용하는 명중 굴림에 +2 보너스를 얻습니다."
+      },
+      "defense": {
+        "name": "방어",
+        "description": "경갑, 평갑 또는 중갑을 착용한 동안 AC에 +1 보너스를 얻습니다."
+      },
+      "great_weapon_fighting": {
+        "name": "대형 무기 전투",
+        "description": "양손으로 잡은 양손 또는 다용도 근접 무기의 피해 주사위 결과가 1이나 2라면 3으로 취급합니다."
+      },
+      "two_weapon_fighting": {
+        "name": "쌍수 전투",
+        "description": "경량 특성을 사용할 때 추가 공격의 피해에 능력 수정치를 더합니다."
+      },
+      "blessed_warrior": {
+        "name": "축복받은 전사",
+        "description": "자신에게 팔라딘 주문으로 간주되는 클레릭 소마법 2개를 배웁니다."
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "궁술",
+        "description": "원거리 무기를 사용하는 명중 굴림에 +2 보너스를 얻습니다."
+      },
+      "defense": {
+        "name": "방어",
+        "description": "경갑, 평갑 또는 중갑을 착용한 동안 AC에 +1 보너스를 얻습니다."
+      },
+      "great_weapon_fighting": {
+        "name": "대형 무기 전투",
+        "description": "양손으로 잡은 양손 또는 다용도 근접 무기의 피해 주사위 결과가 1이나 2라면 3으로 취급합니다."
+      },
+      "two_weapon_fighting": {
+        "name": "쌍수 전투",
+        "description": "경량 특성을 사용할 때 추가 공격의 피해에 능력 수정치를 더합니다."
+      },
+      "druidic_warrior": {
+        "name": "드루이드 전사",
+        "description": "자신에게 레인저 주문으로 간주되는 드루이드 소마법 2개를 배웁니다."
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "수호자",
+        "description": "군용 무기에 숙련되고 중갑 훈련을 받습니다."
+      },
+      "thaumaturge": {
+        "name": "기적술사",
+        "description": "클레릭 소마법을 1개 더 배우고 비전학 또는 종교학 판정에 지혜 수정치(최소 +1)를 더합니다."
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "마법사",
+        "description": "드루이드 소마법을 1개 더 배우고 비전학 또는 자연학 판정에 지혜 수정치(최소 +1)를 더합니다."
+      },
+      "warden": {
+        "name": "감시자",
+        "description": "군용 무기에 숙련되고 평갑 훈련을 받습니다."
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "신성한 일격",
+        "description": "턴마다 1번 무기 명중에 광휘 또는 사령 피해 1d8을 추가합니다. 클레릭 레벨 14부터 2d8입니다."
+      },
+      "potent_spellcasting": {
+        "name": "강력한 주문시전",
+        "description": "클레릭 소마법 피해에 지혜 수정치를 더합니다. 레벨 14부터 피해를 주는 소마법은 임시 HP도 부여할 수 있습니다."
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "강력한 주문시전",
+        "description": "드루이드 소마법 피해에 지혜 수정치를 더합니다. 드루이드 레벨 15에 소마법의 사거리가 늘어납니다."
+      },
+      "primal_strike": {
+        "name": "원시의 일격",
+        "description": "턴마다 1번 무기 또는 야수 형태의 공격 명중에 냉기, 화염, 번개 또는 천둥 피해 1d8을 추가합니다. 레벨 15부터 2d8입니다."
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "동물 조련"
+      },
+      "athletics": {
+        "name": "운동"
+      },
+      "intimidation": {
+        "name": "위협"
+      },
+      "nature": {
+        "name": "자연"
+      },
+      "perception": {
+        "name": "지각"
+      },
+      "survival": {
+        "name": "생존"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "비전학"
+      },
+      "history": {
+        "name": "역사"
+      },
+      "investigation": {
+        "name": "조사"
+      },
+      "medicine": {
+        "name": "의학"
+      },
+      "nature": {
+        "name": "자연"
+      },
+      "religion": {
+        "name": "종교"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "신중한 주문",
+        "description": "마법 점수 1점을 소비합니다. 매력 수정치만큼의 크리처(최소 1체)를 선택합니다. 이들은 해당 주문에 대한 내성 굴림에 자동 성공하며, 성공 시 피해가 절반이 되는 경우에도 피해를 받지 않습니다."
+      },
+      "distant_spell": {
+        "name": "원거리 주문",
+        "description": "마법 점수 1점을 소비하여 사거리가 최소 5피트인 주문의 사거리를 2배로 늘리거나 접촉 주문의 사거리를 30피트로 만듭니다."
+      },
+      "empowered_spell": {
+        "name": "강화된 주문",
+        "description": "마법 점수 1점을 소비하여 매력 수정치만큼의 피해 주사위(최소 1개)를 다시 굴리고 새 결과를 사용합니다. 다른 메타매직과 함께 사용할 수 있습니다."
+      },
+      "extended_spell": {
+        "name": "연장된 주문",
+        "description": "마법 점수 1점을 소비하여 지속시간을 최대 24시간까지 2배로 늘리고 해당 주문의 집중 유지 내성 굴림에 이점을 얻습니다."
+      },
+      "heightened_spell": {
+        "name": "고조된 주문",
+        "description": "마법 점수 2점을 소비하여 한 대상이 해당 주문에 대해 하는 내성 굴림에 불리점을 줍니다."
+      },
+      "quickened_spell": {
+        "name": "신속한 주문",
+        "description": "마법 점수 2점을 소비하여 행동으로 시전하는 주문을 추가 행동으로 시전합니다. 같은 턴에 1레벨 이상 주문을 이미 시전했거나 이후 시전할 경우 사용할 수 없습니다."
+      },
+      "seeking_spell": {
+        "name": "추적하는 주문",
+        "description": "마법 점수 1점을 소비하여 빗나간 주문 공격을 다시 굴리고 새 결과를 사용합니다. 다른 메타매직과 함께 사용할 수 있습니다."
+      },
+      "subtle_spell": {
+        "name": "은밀한 주문",
+        "description": "마법 점수 1점을 소비하여 언어, 동작, 비용이 없고 소비되지 않는 물질 구성요소 없이 시전합니다."
+      },
+      "transmuted_spell": {
+        "name": "변환된 주문",
+        "description": "마법 점수 1점을 소비하여 주문의 산성, 냉기, 화염, 번개, 독 또는 천둥 피해를 이 목록의 다른 유형으로 바꿉니다."
+      },
+      "twinned_spell": {
+        "name": "쌍둥이 주문",
+        "description": "마법 점수 1점을 소비하여 상위 레벨로 시전할 때 다른 크리처를 대상으로 삼을 수 있는 주문의 유효 레벨을 1 높입니다."
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "건조 지대"
+      },
+      "polar": {
+        "name": "극지"
+      },
+      "temperate": {
+        "name": "온대"
+      },
+      "tropical": {
+        "name": "열대"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "거상 살해자",
+        "description": "턴마다 1번, HP가 최대치보다 낮은 크리처에게 무기 공격이 명중하면 피해 +1d8을 줍니다."
+      },
+      "horde_breaker": {
+        "name": "무리 파괴자",
+        "description": "자신의 턴에 1번, 근처의 다른 크리처를 무기로 공격합니다."
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "무리에서 벗어나기",
+        "description": "자신을 향한 기회 공격에 불리점이 적용됩니다."
+      },
+      "multiattack_defense": {
+        "name": "다중 공격 방어",
+        "description": "크리처가 자신을 명중시킨 뒤, 그 턴에 그 크리처가 자신에게 하는 다른 공격 굴림에는 불리점이 적용됩니다."
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "산"
+      },
+      "cold": {
+        "name": "냉기"
+      },
+      "fire": {
+        "name": "화염"
+      },
+      "lightning": {
+        "name": "번개"
+      },
+      "poison": {
+        "name": "독"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "산"
+      },
+      "bludgeoning": {
+        "name": "타격"
+      },
+      "cold": {
+        "name": "냉기"
+      },
+      "fire": {
+        "name": "화염"
+      },
+      "lightning": {
+        "name": "번개"
+      },
+      "necrotic": {
+        "name": "사령"
+      },
+      "piercing": {
+        "name": "관통"
+      },
+      "poison": {
+        "name": "독"
+      },
+      "psychic": {
+        "name": "정신"
+      },
+      "radiant": {
+        "name": "광휘"
+      },
+      "slashing": {
+        "name": "참격"
+      },
+      "thunder": {
+        "name": "천둥"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "검은색",
+        "description": "산성"
+      },
+      "blue": {
+        "name": "파란색",
+        "description": "번개"
+      },
+      "brass": {
+        "name": "황동색",
+        "description": "화염"
+      },
+      "bronze": {
+        "name": "청동색",
+        "description": "번개"
+      },
+      "copper": {
+        "name": "구리색",
+        "description": "산성"
+      },
+      "gold": {
+        "name": "금색",
+        "description": "화염"
+      },
+      "green": {
+        "name": "초록색",
+        "description": "독"
+      },
+      "red": {
+        "name": "빨간색",
+        "description": "화염"
+      },
+      "silver": {
+        "name": "은색",
+        "description": "냉기"
+      },
+      "white": {
+        "name": "흰색",
+        "description": "냉기"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "드로우",
+        "description": "댄싱 라이트. 레벨 3에 페어리 파이어, 레벨 5에 다크니스."
+      },
+      "high_elf": {
+        "name": "하이 엘프",
+        "description": "프레스티디지테이션. 레벨 3에 디텍트 매직, 레벨 5에 미스티 스텝."
+      },
+      "wood_elf": {
+        "name": "우드 엘프",
+        "description": "이동속도 증가와 드루이드크래프트. 레벨 3에 롱스트라이더, 레벨 5에 패스 위드아웃 트레이스."
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "숲 노움",
+        "description": "마이너 일루전과 스피크 위드 애니멀스."
+      },
+      "rock_gnome": {
+        "name": "바위 노움",
+        "description": "멘딩, 프레스티디지테이션 및 시계장치."
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "구름 도약",
+        "description": "추가 행동으로 최대 30피트를 순간이동합니다."
+      },
+      "fire": {
+        "name": "불꽃 화상",
+        "description": "명중 시 화염 피해 1d10을 추가합니다."
+      },
+      "frost": {
+        "name": "서리 냉기",
+        "description": "명중 시 냉기 피해 1d6을 추가하고 이동속도를 감소시킵니다."
+      },
+      "hill": {
+        "name": "언덕 넘어뜨리기",
+        "description": "명중 시 대형 이하의 대상을 엎드림 상태로 만듭니다."
+      },
+      "stone": {
+        "name": "돌의 인내",
+        "description": "반응행동으로 받는 피해를 1d12 + 건강 수정치만큼 감소시킵니다."
+      },
+      "storm": {
+        "name": "폭풍 천둥",
+        "description": "자신에게 피해를 준 크리처에게 천둥 피해 1d8을 줍니다."
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "심연어",
+        "description": "독 피해 저항과 포이즌 스프레이. 레벨 3에 레이 오브 시크니스, 레벨 5에 홀드 퍼슨."
+      },
+      "chthonic": {
+        "name": "지하계",
+        "description": "사령 피해 저항과 칠 터치. 레벨 3에 폴스 라이프, 레벨 5에 레이 오브 인피블먼트."
+      },
+      "infernal": {
+        "name": "지옥어",
+        "description": "화염 피해 저항과 파이어 볼트. 레벨 3에 헬리시 리뷰크, 레벨 5에 다크니스."
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "통찰"
+      },
+      "perception": {
+        "name": "지각"
+      },
+      "survival": {
+        "name": "생존"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "곤봉",
+        "description": "단순 근접 무기. 감속 마스터리."
+      },
+      "dagger": {
+        "name": "단검",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "greatclub": {
+        "name": "대형 곤봉",
+        "description": "단순 근접 무기. 밀어내기 마스터리."
+      },
+      "handaxe": {
+        "name": "손도끼",
+        "description": "단순 근접 무기. 교란 마스터리."
+      },
+      "javelin": {
+        "name": "투창",
+        "description": "단순 근접 무기. 감속 마스터리."
+      },
+      "light_hammer": {
+        "name": "경량 망치",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "mace": {
+        "name": "철퇴",
+        "description": "단순 근접 무기. 약화 마스터리."
+      },
+      "quarterstaff": {
+        "name": "육척봉",
+        "description": "단순 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "sickle": {
+        "name": "낫",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "spear": {
+        "name": "창",
+        "description": "단순 근접 무기. 약화 마스터리."
+      },
+      "battleaxe": {
+        "name": "전투도끼",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "flail": {
+        "name": "도리깨",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "glaive": {
+        "name": "글레이브",
+        "description": "군용 근접 무기. 스침 마스터리."
+      },
+      "greataxe": {
+        "name": "대형 도끼",
+        "description": "군용 근접 무기. 휩쓸기 마스터리."
+      },
+      "greatsword": {
+        "name": "대검",
+        "description": "군용 근접 무기. 스침 마스터리."
+      },
+      "halberd": {
+        "name": "할버드",
+        "description": "군용 근접 무기. 휩쓸기 마스터리."
+      },
+      "lance": {
+        "name": "기병창",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "longsword": {
+        "name": "장검",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "maul": {
+        "name": "대형 망치",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "morningstar": {
+        "name": "모닝스타",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "pike": {
+        "name": "장창",
+        "description": "군용 근접 무기. 밀어내기 마스터리."
+      },
+      "rapier": {
+        "name": "레이피어",
+        "description": "군용 근접 무기. 교란 마스터리."
+      },
+      "scimitar": {
+        "name": "시미터",
+        "description": "군용 근접 무기. 빠른 공격 마스터리."
+      },
+      "shortsword": {
+        "name": "소검",
+        "description": "군용 근접 무기. 교란 마스터리."
+      },
+      "trident": {
+        "name": "삼지창",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "warhammer": {
+        "name": "전투망치",
+        "description": "군용 근접 무기. 밀어내기 마스터리."
+      },
+      "war_pick": {
+        "name": "전투곡괭이",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "whip": {
+        "name": "채찍",
+        "description": "군용 근접 무기. 감속 마스터리."
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "곤봉",
+        "description": "단순 근접 무기. 감속 마스터리."
+      },
+      "dagger": {
+        "name": "단검",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "greatclub": {
+        "name": "대형 곤봉",
+        "description": "단순 근접 무기. 밀어내기 마스터리."
+      },
+      "handaxe": {
+        "name": "손도끼",
+        "description": "단순 근접 무기. 교란 마스터리."
+      },
+      "javelin": {
+        "name": "투창",
+        "description": "단순 근접 무기. 감속 마스터리."
+      },
+      "light_hammer": {
+        "name": "경량 망치",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "mace": {
+        "name": "철퇴",
+        "description": "단순 근접 무기. 약화 마스터리."
+      },
+      "quarterstaff": {
+        "name": "육척봉",
+        "description": "단순 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "sickle": {
+        "name": "낫",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "spear": {
+        "name": "창",
+        "description": "단순 근접 무기. 약화 마스터리."
+      },
+      "dart": {
+        "name": "다트",
+        "description": "단순 원거리 무기. 교란 마스터리."
+      },
+      "light_crossbow": {
+        "name": "경량 쇠뇌",
+        "description": "단순 원거리 무기. 감속 마스터리."
+      },
+      "shortbow": {
+        "name": "단궁",
+        "description": "단순 원거리 무기. 교란 마스터리."
+      },
+      "sling": {
+        "name": "투석구",
+        "description": "단순 원거리 무기. 감속 마스터리."
+      },
+      "battleaxe": {
+        "name": "전투도끼",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "flail": {
+        "name": "도리깨",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "glaive": {
+        "name": "글레이브",
+        "description": "군용 근접 무기. 스침 마스터리."
+      },
+      "greataxe": {
+        "name": "대형 도끼",
+        "description": "군용 근접 무기. 휩쓸기 마스터리."
+      },
+      "greatsword": {
+        "name": "대검",
+        "description": "군용 근접 무기. 스침 마스터리."
+      },
+      "halberd": {
+        "name": "할버드",
+        "description": "군용 근접 무기. 휩쓸기 마스터리."
+      },
+      "lance": {
+        "name": "기병창",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "longsword": {
+        "name": "장검",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "maul": {
+        "name": "대형 망치",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "morningstar": {
+        "name": "모닝스타",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "pike": {
+        "name": "장창",
+        "description": "군용 근접 무기. 밀어내기 마스터리."
+      },
+      "rapier": {
+        "name": "레이피어",
+        "description": "군용 근접 무기. 교란 마스터리."
+      },
+      "scimitar": {
+        "name": "시미터",
+        "description": "군용 근접 무기. 빠른 공격 마스터리."
+      },
+      "shortsword": {
+        "name": "소검",
+        "description": "군용 근접 무기. 교란 마스터리."
+      },
+      "trident": {
+        "name": "삼지창",
+        "description": "군용 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "warhammer": {
+        "name": "전투망치",
+        "description": "군용 근접 무기. 밀어내기 마스터리."
+      },
+      "war_pick": {
+        "name": "전투곡괭이",
+        "description": "군용 근접 무기. 약화 마스터리."
+      },
+      "whip": {
+        "name": "채찍",
+        "description": "군용 근접 무기. 감속 마스터리."
+      },
+      "blowgun": {
+        "name": "취관",
+        "description": "군용 원거리 무기. 교란 마스터리."
+      },
+      "hand_crossbow": {
+        "name": "손쇠뇌",
+        "description": "군용 원거리 무기. 교란 마스터리."
+      },
+      "heavy_crossbow": {
+        "name": "중쇠뇌",
+        "description": "군용 원거리 무기. 밀어내기 마스터리."
+      },
+      "longbow": {
+        "name": "장궁",
+        "description": "군용 원거리 무기. 감속 마스터리."
+      },
+      "musket": {
+        "name": "머스킷",
+        "description": "군용 원거리 무기. 감속 마스터리."
+      },
+      "pistol": {
+        "name": "권총",
+        "description": "군용 원거리 무기. 교란 마스터리."
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "곤봉",
+        "description": "단순 근접 무기. 감속 마스터리."
+      },
+      "dagger": {
+        "name": "단검",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "greatclub": {
+        "name": "대형 곤봉",
+        "description": "단순 근접 무기. 밀어내기 마스터리."
+      },
+      "handaxe": {
+        "name": "손도끼",
+        "description": "단순 근접 무기. 교란 마스터리."
+      },
+      "javelin": {
+        "name": "투창",
+        "description": "단순 근접 무기. 감속 마스터리."
+      },
+      "light_hammer": {
+        "name": "경량 망치",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "mace": {
+        "name": "철퇴",
+        "description": "단순 근접 무기. 약화 마스터리."
+      },
+      "quarterstaff": {
+        "name": "육척봉",
+        "description": "단순 근접 무기. 넘어뜨리기 마스터리."
+      },
+      "sickle": {
+        "name": "낫",
+        "description": "단순 근접 무기. 빠른 공격 마스터리."
+      },
+      "spear": {
+        "name": "창",
+        "description": "단순 근접 무기. 약화 마스터리."
+      },
+      "dart": {
+        "name": "다트",
+        "description": "단순 원거리 무기. 교란 마스터리."
+      },
+      "light_crossbow": {
+        "name": "경량 쇠뇌",
+        "description": "단순 원거리 무기. 감속 마스터리."
+      },
+      "shortbow": {
+        "name": "단궁",
+        "description": "단순 원거리 무기. 교란 마스터리."
+      },
+      "sling": {
+        "name": "투석구",
+        "description": "단순 원거리 무기. 감속 마스터리."
+      },
+      "rapier": {
+        "name": "레이피어",
+        "description": "군용 근접 무기. 교란 마스터리."
+      },
+      "scimitar": {
+        "name": "시미터",
+        "description": "군용 근접 무기. 빠른 공격 마스터리."
+      },
+      "shortsword": {
+        "name": "소검",
+        "description": "군용 근접 무기. 교란 마스터리."
+      },
+      "whip": {
+        "name": "채찍",
+        "description": "군용 근접 무기. 감속 마스터리."
+      },
+      "hand_crossbow": {
+        "name": "손쇠뇌",
+        "description": "군용 원거리 무기. 교란 마스터리."
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "고통의 폭발",
+        "description": "자신이 아는 워락 소마법 중 피해를 주는 것 1개를 선택합니다. 그 주문의 피해 굴림에 매력 수정치를 더할 수 있습니다."
+      },
+      "armor_of_shadows": {
+        "name": "그림자의 갑옷",
+        "description": "주문 슬롯을 소비하지 않고 자신에게 메이지 아머를 시전할 수 있습니다."
+      },
+      "ascendant_step": {
+        "name": "상승의 걸음",
+        "description": "주문 슬롯을 소비하지 않고 자신에게 레비테이트를 시전할 수 있습니다."
+      },
+      "devils_sight": {
+        "name": "악마의 시야",
+        "description": "자신으로부터 120피트 이내에서 마법적·비마법적 약한 빛과 어둠 속을 정상적으로 볼 수 있습니다."
+      },
+      "devouring_blade": {
+        "name": "포식하는 칼날",
+        "description": "목마른 칼날 기원의 추가 공격은 공격을 1회가 아닌 2회 더 부여합니다."
+      },
+      "eldritch_mind": {
+        "name": "비전의 정신",
+        "description": "집중 유지를 위한 건강 내성 굴림에 이점을 얻습니다."
+      },
+      "eldritch_smite": {
+        "name": "비전의 강타",
+        "description": "턴마다 1번 계약 무기로 크리처를 명중시키면 계약 마법 주문 슬롯을 소비하여 대상에게 역장 피해 1d8을 추가하고, 슬롯 레벨마다 1d8을 더 추가할 수 있습니다. 대상이 초대형 이하라면 엎드림 상태로 만들 수도 있습니다."
+      },
+      "eldritch_spear": {
+        "name": "비전의 창",
+        "description": "자신이 아는 워락 소마법 중 피해를 주고 사거리가 최소 10피트인 것 1개를 선택합니다. 그 주문을 시전할 때 사거리가 워락 레벨의 30배 피트만큼 증가합니다."
+      },
+      "fiendish_vigor": {
+        "name": "악마의 활력",
+        "description": "주문 슬롯을 소비하지 않고 자신에게 폴스 라이프를 시전할 수 있습니다. 이 특징으로 시전하면 임시 HP 주사위를 굴리지 않고 최대 결과를 얻습니다."
+      },
+      "gaze_of_two_minds": {
+        "name": "두 정신의 시선",
+        "description": "추가 행동으로 동의하는 크리처를 만져 다음 자신의 턴 종료 시까지 그 감각으로 인식할 수 있습니다. 같은 차원에 있는 동안 후속 턴에 추가 행동으로 연결을 유지하여 다음 자신의 턴 종료 시까지 연장할 수 있습니다. 유지하지 않으면 연결이 끝납니다.\n\n다른 크리처의 감각을 사용하는 동안 그 크리처의 특수 감각을 이용할 수 있습니다. 서로 60피트 이내에 있다면 자신의 공간 또는 그 크리처의 공간에서 주문을 시전하는 것으로 간주할 수 있습니다."
+      },
+      "gift_of_the_depths": {
+        "name": "심해의 선물",
+        "description": "물속에서 숨 쉴 수 있고 자신의 이동속도와 같은 수영 이동속도를 얻습니다.\n\n또한 주문 슬롯을 소비하지 않고 워터 브리딩을 1회 시전할 수 있습니다. 대휴식을 마치면 이 능력을 다시 사용할 수 있습니다."
+      },
+      "gift_of_the_protectors": {
+        "name": "수호자의 선물",
+        "description": "그림자의 책을 소환할 때 새 페이지가 나타납니다. 크리처는 당신의 허락을 받아 행동으로 그 페이지에 자신의 이름을 쓸 수 있습니다. 이름은 매력 수정치만큼(최소 1개) 기록할 수 있습니다.\n\n페이지에 이름이 있는 크리처의 HP가 0이 되지만 즉사하지 않는다면, 대신 마법적으로 HP 1이 됩니다. 이 효과가 발동하면 대휴식을 마칠 때까지 누구도 다시 혜택을 받을 수 없습니다.\n\n마법 행동으로 페이지를 만져 이름을 지울 수 있습니다."
+      },
+      "investment_of_the_chain_master": {
+        "name": "사슬 주인의 강화",
+        "description": "파인드 패밀리어를 시전하면 소환된 사역마에게 비전의 힘을 주어 다음 혜택을 부여합니다.\n\n비행 또는 수중: 사역마가 비행 또는 수영 이동속도 40피트를 얻습니다.\n\n빠른 공격: 추가 행동으로 사역마에게 공격 행동을 명령할 수 있습니다.\n\n사령 또는 광휘 피해: 사역마의 타격, 관통, 참격 피해를 사령 또는 광휘 피해로 바꿀 수 있습니다.\n\n주문 내성 난이도: 사역마가 강요하는 내성 굴림에는 당신의 주문 내성 난이도를 사용합니다.\n\n저항: 사역마가 피해를 받을 때 반응행동으로 그 피해에 대한 저항을 부여할 수 있습니다."
+      },
+      "lessons_of_the_first_ones": {
+        "name": "최초 존재들의 가르침",
+        "description": "다중우주의 고대 존재에게서 지식을 받아 원하는 기원 특기 1개를 얻습니다(‘특기’ 참조)."
+      },
+      "lifedrinker": {
+        "name": "생명 흡수자",
+        "description": "턴마다 1번 계약 무기로 크리처를 명중시키면 원하는 사령, 정신 또는 광휘 피해 1d6을 추가할 수 있습니다. 또한 자신의 HP 주사위 1개를 소비해 굴리고, 그 결과에 건강 수정치를 더한 만큼(최소 HP 1) HP를 회복할 수 있습니다."
+      },
+      "mask_of_many_faces": {
+        "name": "수많은 얼굴의 가면",
+        "description": "주문 슬롯을 소비하지 않고 디스가이즈 셀프를 시전할 수 있습니다."
+      },
+      "master_of_myriad_forms": {
+        "name": "무수한 형태의 지배자",
+        "description": "주문 슬롯을 소비하지 않고 얼터 셀프를 시전할 수 있습니다."
+      },
+      "misty_visions": {
+        "name": "안개 낀 환영",
+        "description": "주문 슬롯을 소비하지 않고 사일런트 이미지를 시전할 수 있습니다."
+      },
+      "one_with_shadows": {
+        "name": "그림자와 하나",
+        "description": "약한 빛이나 어둠 지역에 있는 동안 주문 슬롯을 소비하지 않고 자신에게 인비저빌리티를 시전할 수 있습니다."
+      },
+      "otherworldly_leap": {
+        "name": "이계의 도약",
+        "description": "주문 슬롯을 소비하지 않고 자신에게 점프를 시전할 수 있습니다."
+      },
+      "pact_of_the_blade": {
+        "name": "칼날의 계약",
+        "description": "추가 행동으로 손에 계약 무기를 소환하거나, 접촉한 마법 무기와 유대를 맺습니다. 계약 무기는 자신이 선택한 단순 또는 군용 근접 무기입니다. 다른 이가 해당 마법 무기에 조율했거나 다른 워락이 유대를 맺었다면 유대를 맺을 수 없습니다. 유대가 유지되는 동안 그 무기에 숙련되고 주문시전 초점으로 사용할 수 있습니다.\n\n유대 무기로 공격할 때 힘이나 민첩 대신 매력 수정치를 명중 및 피해 굴림에 사용할 수 있습니다. 또한 무기의 피해를 사령, 정신, 광휘 또는 원래 유형으로 바꿀 수 있습니다.\n\n이 특징의 추가 행동을 다시 사용하거나, 무기가 5피트보다 멀리 떨어진 상태가 1분 이상 지속되거나, 자신이 죽으면 유대가 끝납니다. 소환한 무기는 유대가 끝나면 사라집니다."
+      },
+      "pact_of_the_chain": {
+        "name": "사슬의 계약",
+        "description": "파인드 패밀리어 주문을 배우고, 주문 슬롯 없이 마법 행동으로 시전할 수 있습니다.\n\n시전할 때 사역마의 일반 형태 또는 임프, 슈도드래곤, 콰짓, 스켈레톤, 경이의 스핑크스, 스프라이트, 독사 중 특수 형태 하나를 선택합니다(능력치는 ‘몬스터’ 참조).\n\n또한 공격 행동을 할 때 자신의 공격 1회를 포기하여 사역마가 반응행동으로 공격 1회를 하게 할 수 있습니다."
+      },
+      "pact_of_the_tome": {
+        "name": "고서의 계약",
+        "description": "그림자 가닥을 엮어 소휴식 또는 대휴식이 끝날 때 손에 책을 소환합니다. 외형을 정하는 이 그림자의 책에는 자신만 사용할 수 있는 비전 마법이 담겨 있습니다. 이 특징으로 다른 책을 소환하거나 자신이 죽으면 책이 사라집니다.\n\n소마법과 의식: 책이 나타날 때 소마법 3개와 의식 태그가 있는 1레벨 주문 2개를 선택합니다. 어느 클래스의 주문 목록에서든 선택할 수 있지만 이미 준비한 주문은 고를 수 없습니다. 책을 지닌 동안 선택한 주문이 준비되며 워락 주문으로 취급됩니다.\n\n주문시전 초점: 책을 주문시전 초점으로 사용할 수 있습니다."
+      },
+      "repelling_blast": {
+        "name": "밀어내는 폭발",
+        "description": "자신이 아는 워락 소마법 중 공격 굴림이 필요한 것 1개를 선택합니다. 그 소마법으로 대형 이하 크리처를 명중시키면 자신에게서 똑바로 최대 10피트 밀어낼 수 있습니다."
+      },
+      "thirsting_blade": {
+        "name": "목마른 칼날",
+        "description": "계약 무기에 한정하여 추가 공격 특징을 얻습니다. 자신의 턴에 공격 행동을 할 때 그 무기로 1회 대신 2회 공격할 수 있습니다."
+      },
+      "visions_of_distant_realms": {
+        "name": "먼 영역의 환영",
+        "description": "주문 슬롯을 소비하지 않고 아케인 아이를 시전할 수 있습니다."
+      },
+      "whispers_of_the_grave": {
+        "name": "무덤의 속삭임",
+        "description": "주문 슬롯을 소비하지 않고 스피크 위드 데드를 시전할 수 있습니다."
+      },
+      "witch_sight": {
+        "name": "마녀의 시야",
+        "description": "30피트 범위의 진시야를 얻습니다."
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "힘"
+            },
+            "dexterity": {
+              "name": "민첩"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "힘"
+            },
+            "dexterity": {
+              "name": "민첩"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "지능"
+            },
+            "wisdom": {
+              "name": "지혜"
+            },
+            "charisma": {
+              "name": "매력"
+            }
+          }
+        }
+      }
+    }
+  }
+}

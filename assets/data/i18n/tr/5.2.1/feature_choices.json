@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "Rahip",
+        "description": "İki Rahip büyü numarası ve 1. seviye bir Rahip büyüsü seçin."
+      },
+      "druid": {
+        "name": "Druid",
+        "description": "İki Druid büyü numarası ve 1. seviye bir Druid büyüsü seçin."
+      },
+      "wizard": {
+        "name": "Büyücü",
+        "description": "İki Büyücü büyü numarası ve 1. seviye bir Büyücü büyüsü seçin."
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "Zekâ",
+        "description": "Bu büyülerin büyü yapma niteliği olarak Zekâyı kullanın."
+      },
+      "wisdom": {
+        "name": "Bilgelik",
+        "description": "Bu büyülerin büyü yapma niteliği olarak Bilgeliği kullanın."
+      },
+      "charisma": {
+        "name": "Karizma",
+        "description": "Bu büyülerin büyü yapma niteliği olarak Karizmayı kullanın."
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "Okçuluk",
+        "description": "Menzilli silahlarla saldırı zarlarına +2 bonus kazanın."
+      },
+      "defense": {
+        "name": "Savunma",
+        "description": "Hafif, orta veya ağır zırh giyerken AC değerine +1 kazanın."
+      },
+      "great_weapon_fighting": {
+        "name": "Büyük Silah Dövüşü",
+        "description": "İki elle tutulan Çift Elli veya Çok Yönlü bir yakın dövüş silahının hasar zarında 1 veya 2 sonucunu 3 sayın."
+      },
+      "two_weapon_fighting": {
+        "name": "Çift Silah Dövüşü",
+        "description": "Hafif özelliğini kullanırken ek saldırının hasarına nitelik değiştiricinizi ekleyin."
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "Okçuluk",
+        "description": "Menzilli silahlarla saldırı zarlarına +2 bonus kazanın."
+      },
+      "defense": {
+        "name": "Savunma",
+        "description": "Hafif, orta veya ağır zırh giyerken AC değerine +1 kazanın."
+      },
+      "great_weapon_fighting": {
+        "name": "Büyük Silah Dövüşü",
+        "description": "İki elle tutulan Çift Elli veya Çok Yönlü bir yakın dövüş silahının hasar zarında 1 veya 2 sonucunu 3 sayın."
+      },
+      "two_weapon_fighting": {
+        "name": "Çift Silah Dövüşü",
+        "description": "Hafif özelliğini kullanırken ek saldırının hasarına nitelik değiştiricinizi ekleyin."
+      },
+      "blessed_warrior": {
+        "name": "Kutsanmış Savaşçı",
+        "description": "Sizin için Paladin büyüsü sayılan iki Rahip büyü numarası öğrenin."
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "Okçuluk",
+        "description": "Menzilli silahlarla saldırı zarlarına +2 bonus kazanın."
+      },
+      "defense": {
+        "name": "Savunma",
+        "description": "Hafif, orta veya ağır zırh giyerken AC değerine +1 kazanın."
+      },
+      "great_weapon_fighting": {
+        "name": "Büyük Silah Dövüşü",
+        "description": "İki elle tutulan Çift Elli veya Çok Yönlü bir yakın dövüş silahının hasar zarında 1 veya 2 sonucunu 3 sayın."
+      },
+      "two_weapon_fighting": {
+        "name": "Çift Silah Dövüşü",
+        "description": "Hafif özelliğini kullanırken ek saldırının hasarına nitelik değiştiricinizi ekleyin."
+      },
+      "druidic_warrior": {
+        "name": "Druid Savaşçısı",
+        "description": "Sizin için Korucu büyüsü sayılan iki Druid büyü numarası öğrenin."
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "Koruyucu",
+        "description": "Askerî silahlarda yetkinlik ve ağır zırh eğitimi kazanın."
+      },
+      "thaumaturge": {
+        "name": "Mucizeci",
+        "description": "Bir ek Rahip büyü numarası öğrenin; Büyü Bilgisi veya Din kontrollerine Bilgelik değiştiricinizi (en az +1) ekleyin."
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "Sihirbaz",
+        "description": "Bir ek Druid büyü numarası öğrenin; Büyü Bilgisi veya Doğa kontrollerine Bilgelik değiştiricinizi (en az +1) ekleyin."
+      },
+      "warden": {
+        "name": "Muhafız",
+        "description": "Askerî silahlarda yetkinlik ve orta zırh eğitimi kazanın."
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "İlahi Darbe",
+        "description": "Tur başına bir kez bir silah isabetine 1d8 Işıma veya Nekrotik hasar ekleyin; Rahip seviyesi 14'ten itibaren 2d8."
+      },
+      "potent_spellcasting": {
+        "name": "Güçlü Büyü Yapma",
+        "description": "Rahip büyü numarası hasarına Bilgelik değiştiricinizi ekleyin; seviye 14'ten itibaren hasar veren bir büyü numarası Geçici HP de verebilir."
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "Güçlü Büyü Yapma",
+        "description": "Druid büyü numarası hasarına Bilgelik değiştiricinizi ekleyin; Druid seviyesi 15'te menzil artışı kazanın."
+      },
+      "primal_strike": {
+        "name": "İlkel Darbe",
+        "description": "Tur başına bir kez silah veya Canavar biçimindeki bir isabete 1d8 Soğuk, Ateş, Yıldırım veya Gök Gürültüsü hasarı ekleyin; seviye 15'te 2d8."
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "Hayvan İdaresi"
+      },
+      "athletics": {
+        "name": "Atletizm"
+      },
+      "intimidation": {
+        "name": "Gözdağı"
+      },
+      "nature": {
+        "name": "Doğa"
+      },
+      "perception": {
+        "name": "Algı"
+      },
+      "survival": {
+        "name": "Hayatta Kalma"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "Büyü Bilgisi"
+      },
+      "history": {
+        "name": "Tarih"
+      },
+      "investigation": {
+        "name": "Araştırma"
+      },
+      "medicine": {
+        "name": "Tıp"
+      },
+      "nature": {
+        "name": "Doğa"
+      },
+      "religion": {
+        "name": "Din"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "Dikkatli Büyü",
+        "description": "1 Büyücülük Puanı harcayın. Karizma değiştiriciniz kadar (en az bir) yaratık seçin. Bunlar büyünün kurtarma atışında otomatik başarılı olur; başarı normalde hasarı yarıya indirecekse hiç hasar almazlar."
+      },
+      "distant_spell": {
+        "name": "Uzak Büyü",
+        "description": "1 Büyücülük Puanı harcayarak en az 5 fit menzilli bir büyünün menzilini ikiye katlayın veya Dokunma menzilini 30 fit yapın."
+      },
+      "empowered_spell": {
+        "name": "Güçlendirilmiş Büyü",
+        "description": "1 Büyücülük Puanı harcayarak Karizma değiştiriciniz kadar (en az bir) hasar zarını yeniden atın; yeni sonuçları kullanın. Başka bir Metabüyü ile birleştirilebilir."
+      },
+      "extended_spell": {
+        "name": "Uzatılmış Büyü",
+        "description": "1 Büyücülük Puanı harcayarak süreyi en fazla 24 saate kadar ikiye katlayın ve büyüye Odaklanmayı sürdürme kurtarma atışlarında Avantaj kazanın."
+      },
+      "heightened_spell": {
+        "name": "Yükseltilmiş Büyü",
+        "description": "2 Büyücülük Puanı harcayarak bir hedefin büyüye karşı kurtarma atışlarına Dezavantaj verin."
+      },
+      "quickened_spell": {
+        "name": "Hızlandırılmış Büyü",
+        "description": "2 Büyücülük Puanı harcayarak eylem gerektiren büyüyü bonus eylem olarak yapın. Aynı turda daha önce 1. seviye veya üstü büyü yaptıysanız ya da sonra yapacaksanız bunu kullanamazsınız."
+      },
+      "seeking_spell": {
+        "name": "Arayan Büyü",
+        "description": "1 Büyücülük Puanı harcayarak ıskalayan büyü saldırısını yeniden atın; yeni sonucu kullanın. Başka bir Metabüyü ile birleştirilebilir."
+      },
+      "subtle_spell": {
+        "name": "İnce Büyü",
+        "description": "1 Büyücülük Puanı harcayarak Sözel, Bedensel veya tüketilmeyen, ücretsiz Maddi bileşenlere gerek duymadan büyü yapın."
+      },
+      "transmuted_spell": {
+        "name": "Dönüştürülmüş Büyü",
+        "description": "1 Büyücülük Puanı harcayarak Asit, Soğuk, Ateş, Yıldırım, Zehir veya Gök Gürültüsü büyü hasarını listedeki başka bir türe dönüştürün."
+      },
+      "twinned_spell": {
+        "name": "İkiz Büyü",
+        "description": "1 Büyücülük Puanı harcayarak üst seviyede yapıldığında başka bir yaratığı hedefleyebilen büyünün etkin seviyesini bir artırın."
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "Kurak"
+      },
+      "polar": {
+        "name": "Kutup"
+      },
+      "temperate": {
+        "name": "Ilıman"
+      },
+      "tropical": {
+        "name": "Tropikal"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "Dev Katili",
+        "description": "Tur başına bir kez, HP'si eksik bir yaratığa silahla isabet etmek +1d8 hasar verir."
+      },
+      "horde_breaker": {
+        "name": "Sürü Kıran",
+        "description": "Kendi turunuzda bir kez yakınınızdaki farklı bir yaratığa silahınızla saldırın."
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "Sürüden Kaçış",
+        "description": "Size karşı Fırsat Saldırıları Dezavantajla yapılır."
+      },
+      "multiattack_defense": {
+        "name": "Çoklu Saldırı Savunması",
+        "description": "Bir yaratık size isabet ettikten sonra bu tur size karşı yaptığı diğer saldırı atışlarında Dezavantaj yaşar."
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "Asit"
+      },
+      "cold": {
+        "name": "Soğuk"
+      },
+      "fire": {
+        "name": "Ateş"
+      },
+      "lightning": {
+        "name": "Yıldırım"
+      },
+      "poison": {
+        "name": "Zehir"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "Asit"
+      },
+      "bludgeoning": {
+        "name": "Ezme"
+      },
+      "cold": {
+        "name": "Soğuk"
+      },
+      "fire": {
+        "name": "Ateş"
+      },
+      "lightning": {
+        "name": "Yıldırım"
+      },
+      "necrotic": {
+        "name": "Nekrotik"
+      },
+      "piercing": {
+        "name": "Delme"
+      },
+      "poison": {
+        "name": "Zehir"
+      },
+      "psychic": {
+        "name": "Psişik"
+      },
+      "radiant": {
+        "name": "Işıma"
+      },
+      "slashing": {
+        "name": "Kesme"
+      },
+      "thunder": {
+        "name": "Gök Gürültüsü"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "Siyah",
+        "description": "Asit"
+      },
+      "blue": {
+        "name": "Mavi",
+        "description": "Yıldırım"
+      },
+      "brass": {
+        "name": "Pirinç",
+        "description": "Ateş"
+      },
+      "bronze": {
+        "name": "Bronz",
+        "description": "Yıldırım"
+      },
+      "copper": {
+        "name": "Bakır",
+        "description": "Asit"
+      },
+      "gold": {
+        "name": "Altın",
+        "description": "Ateş"
+      },
+      "green": {
+        "name": "Yeşil",
+        "description": "Zehir"
+      },
+      "red": {
+        "name": "Kırmızı",
+        "description": "Ateş"
+      },
+      "silver": {
+        "name": "Gümüş",
+        "description": "Soğuk"
+      },
+      "white": {
+        "name": "Beyaz",
+        "description": "Soğuk"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "Drow",
+        "description": "Dans Eden Işıklar; seviye 3'te Peri Işığı, seviye 5'te Karanlık."
+      },
+      "high_elf": {
+        "name": "Yüce Elf",
+        "description": "Ufak Hüner; seviye 3'te Büyüyü Algılama, seviye 5'te Sisli Adım."
+      },
+      "wood_elf": {
+        "name": "Orman Elfi",
+        "description": "Hız artışı ve Druid Hüneri; seviye 3'te Uzun Adım, seviye 5'te İz Bırakmadan Geçiş."
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "Orman Cücesi",
+        "description": "Küçük Yanılsama ve Hayvanlarla Konuşma."
+      },
+      "rock_gnome": {
+        "name": "Kaya Cücesi",
+        "description": "Onarım, Ufak Hüner ve saat mekanizmaları."
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "Bulut Sıçrayışı",
+        "description": "Bonus eylem olarak 30 fite kadar ışınlanın."
+      },
+      "fire": {
+        "name": "Ateş Yanığı",
+        "description": "İsabet ettiğinizde 1d10 ek Ateş hasarı verin."
+      },
+      "frost": {
+        "name": "Don Soğuğu",
+        "description": "İsabet ettiğinizde 1d6 ek Soğuk hasarı verin ve Hızı azaltın."
+      },
+      "hill": {
+        "name": "Tepe Devrilmesi",
+        "description": "İsabet ettiğinizde Büyük veya daha küçük hedefi Yere Serilmiş duruma düşürün."
+      },
+      "stone": {
+        "name": "Taş Dayanıklılığı",
+        "description": "Tepki olarak aldığınız hasarı 1d12 + Dayanıklılık değiştiriciniz kadar azaltın."
+      },
+      "storm": {
+        "name": "Fırtına Gök Gürültüsü",
+        "description": "Size hasar veren bir yaratığa 1d8 Gök Gürültüsü hasarı verin."
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "Uçurum Dili",
+        "description": "Zehir direnci ve Zehir Püskürtüsü; seviye 3'te Hastalık Işını, seviye 5'te Kişiyi Durdurma."
+      },
+      "chthonic": {
+        "name": "Yeraltı",
+        "description": "Nekrotik hasar direnci ve Ölümcül Dokunuş; seviye 3'te Sahte Yaşam, seviye 5'te Zayıflatma Işını."
+      },
+      "infernal": {
+        "name": "Cehennem Dili",
+        "description": "Ateş direnci ve Ateş Oku; seviye 3'te Cehennem Azarı, seviye 5'te Karanlık."
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "Sezgi"
+      },
+      "perception": {
+        "name": "Algı"
+      },
+      "survival": {
+        "name": "Hayatta Kalma"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "Sopa",
+        "description": "Basit Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "dagger": {
+        "name": "Hançer",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "greatclub": {
+        "name": "Büyük Sopa",
+        "description": "Basit Yakın Dövüş silahı; İtme ustalığı."
+      },
+      "handaxe": {
+        "name": "El Baltası",
+        "description": "Basit Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "javelin": {
+        "name": "Cirit",
+        "description": "Basit Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "light_hammer": {
+        "name": "Hafif Çekiç",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "mace": {
+        "name": "Gürz",
+        "description": "Basit Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "quarterstaff": {
+        "name": "Savaş Asası",
+        "description": "Basit Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "sickle": {
+        "name": "Orak",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "spear": {
+        "name": "Mızrak",
+        "description": "Basit Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "battleaxe": {
+        "name": "Savaş Baltası",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "flail": {
+        "name": "Topuzlu Zincir",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "glaive": {
+        "name": "Glaive",
+        "description": "Askerî Yakın Dövüş silahı; Sıyırma ustalığı."
+      },
+      "greataxe": {
+        "name": "Büyük Balta",
+        "description": "Askerî Yakın Dövüş silahı; Yarma ustalığı."
+      },
+      "greatsword": {
+        "name": "Büyük Kılıç",
+        "description": "Askerî Yakın Dövüş silahı; Sıyırma ustalığı."
+      },
+      "halberd": {
+        "name": "Teber",
+        "description": "Askerî Yakın Dövüş silahı; Yarma ustalığı."
+      },
+      "lance": {
+        "name": "Şövalye Mızrağı",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "longsword": {
+        "name": "Uzun Kılıç",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "maul": {
+        "name": "Büyük Çekiç",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "morningstar": {
+        "name": "Dikenli Gürz",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "pike": {
+        "name": "Kargı",
+        "description": "Askerî Yakın Dövüş silahı; İtme ustalığı."
+      },
+      "rapier": {
+        "name": "Meç",
+        "description": "Askerî Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "scimitar": {
+        "name": "Pala",
+        "description": "Askerî Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "shortsword": {
+        "name": "Kısa Kılıç",
+        "description": "Askerî Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "trident": {
+        "name": "Üç Dişli Mızrak",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "warhammer": {
+        "name": "Savaş Çekici",
+        "description": "Askerî Yakın Dövüş silahı; İtme ustalığı."
+      },
+      "war_pick": {
+        "name": "Savaş Kazması",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "whip": {
+        "name": "Kamçı",
+        "description": "Askerî Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "Sopa",
+        "description": "Basit Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "dagger": {
+        "name": "Hançer",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "greatclub": {
+        "name": "Büyük Sopa",
+        "description": "Basit Yakın Dövüş silahı; İtme ustalığı."
+      },
+      "handaxe": {
+        "name": "El Baltası",
+        "description": "Basit Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "javelin": {
+        "name": "Cirit",
+        "description": "Basit Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "light_hammer": {
+        "name": "Hafif Çekiç",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "mace": {
+        "name": "Gürz",
+        "description": "Basit Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "quarterstaff": {
+        "name": "Savaş Asası",
+        "description": "Basit Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "sickle": {
+        "name": "Orak",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "spear": {
+        "name": "Mızrak",
+        "description": "Basit Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "dart": {
+        "name": "Dart",
+        "description": "Basit Menzilli silah; Şaşırtma ustalığı."
+      },
+      "light_crossbow": {
+        "name": "Hafif Arbalet",
+        "description": "Basit Menzilli silah; Yavaşlatma ustalığı."
+      },
+      "shortbow": {
+        "name": "Kısa Yay",
+        "description": "Basit Menzilli silah; Şaşırtma ustalığı."
+      },
+      "sling": {
+        "name": "Sapan",
+        "description": "Basit Menzilli silah; Yavaşlatma ustalığı."
+      },
+      "battleaxe": {
+        "name": "Savaş Baltası",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "flail": {
+        "name": "Topuzlu Zincir",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "glaive": {
+        "name": "Glaive",
+        "description": "Askerî Yakın Dövüş silahı; Sıyırma ustalığı."
+      },
+      "greataxe": {
+        "name": "Büyük Balta",
+        "description": "Askerî Yakın Dövüş silahı; Yarma ustalığı."
+      },
+      "greatsword": {
+        "name": "Büyük Kılıç",
+        "description": "Askerî Yakın Dövüş silahı; Sıyırma ustalığı."
+      },
+      "halberd": {
+        "name": "Teber",
+        "description": "Askerî Yakın Dövüş silahı; Yarma ustalığı."
+      },
+      "lance": {
+        "name": "Şövalye Mızrağı",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "longsword": {
+        "name": "Uzun Kılıç",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "maul": {
+        "name": "Büyük Çekiç",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "morningstar": {
+        "name": "Dikenli Gürz",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "pike": {
+        "name": "Kargı",
+        "description": "Askerî Yakın Dövüş silahı; İtme ustalığı."
+      },
+      "rapier": {
+        "name": "Meç",
+        "description": "Askerî Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "scimitar": {
+        "name": "Pala",
+        "description": "Askerî Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "shortsword": {
+        "name": "Kısa Kılıç",
+        "description": "Askerî Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "trident": {
+        "name": "Üç Dişli Mızrak",
+        "description": "Askerî Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "warhammer": {
+        "name": "Savaş Çekici",
+        "description": "Askerî Yakın Dövüş silahı; İtme ustalığı."
+      },
+      "war_pick": {
+        "name": "Savaş Kazması",
+        "description": "Askerî Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "whip": {
+        "name": "Kamçı",
+        "description": "Askerî Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "blowgun": {
+        "name": "Üfleme Borusu",
+        "description": "Askerî Menzilli silah; Şaşırtma ustalığı."
+      },
+      "hand_crossbow": {
+        "name": "El Arbaleti",
+        "description": "Askerî Menzilli silah; Şaşırtma ustalığı."
+      },
+      "heavy_crossbow": {
+        "name": "Ağır Arbalet",
+        "description": "Askerî Menzilli silah; İtme ustalığı."
+      },
+      "longbow": {
+        "name": "Uzun Yay",
+        "description": "Askerî Menzilli silah; Yavaşlatma ustalığı."
+      },
+      "musket": {
+        "name": "Tüfek",
+        "description": "Askerî Menzilli silah; Yavaşlatma ustalığı."
+      },
+      "pistol": {
+        "name": "Tabanca",
+        "description": "Askerî Menzilli silah; Şaşırtma ustalığı."
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "Sopa",
+        "description": "Basit Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "dagger": {
+        "name": "Hançer",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "greatclub": {
+        "name": "Büyük Sopa",
+        "description": "Basit Yakın Dövüş silahı; İtme ustalığı."
+      },
+      "handaxe": {
+        "name": "El Baltası",
+        "description": "Basit Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "javelin": {
+        "name": "Cirit",
+        "description": "Basit Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "light_hammer": {
+        "name": "Hafif Çekiç",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "mace": {
+        "name": "Gürz",
+        "description": "Basit Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "quarterstaff": {
+        "name": "Savaş Asası",
+        "description": "Basit Yakın Dövüş silahı; Devirme ustalığı."
+      },
+      "sickle": {
+        "name": "Orak",
+        "description": "Basit Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "spear": {
+        "name": "Mızrak",
+        "description": "Basit Yakın Dövüş silahı; Zayıflatma ustalığı."
+      },
+      "dart": {
+        "name": "Dart",
+        "description": "Basit Menzilli silah; Şaşırtma ustalığı."
+      },
+      "light_crossbow": {
+        "name": "Hafif Arbalet",
+        "description": "Basit Menzilli silah; Yavaşlatma ustalığı."
+      },
+      "shortbow": {
+        "name": "Kısa Yay",
+        "description": "Basit Menzilli silah; Şaşırtma ustalığı."
+      },
+      "sling": {
+        "name": "Sapan",
+        "description": "Basit Menzilli silah; Yavaşlatma ustalığı."
+      },
+      "rapier": {
+        "name": "Meç",
+        "description": "Askerî Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "scimitar": {
+        "name": "Pala",
+        "description": "Askerî Yakın Dövüş silahı; Çentik ustalığı."
+      },
+      "shortsword": {
+        "name": "Kısa Kılıç",
+        "description": "Askerî Yakın Dövüş silahı; Şaşırtma ustalığı."
+      },
+      "whip": {
+        "name": "Kamçı",
+        "description": "Askerî Yakın Dövüş silahı; Yavaşlatma ustalığı."
+      },
+      "hand_crossbow": {
+        "name": "El Arbaleti",
+        "description": "Askerî Menzilli silah; Şaşırtma ustalığı."
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "Istırap Veren Patlama",
+        "description": "Hasar veren, bildiğiniz Pakt Büyücüsü büyü numaralarından birini seçin. Bu büyünün hasar atışlarına Karizma değiştiricinizi ekleyebilirsiniz."
+      },
+      "armor_of_shadows": {
+        "name": "Gölgelerin Zırhı",
+        "description": "Kendinize bir büyü yuvası harcamadan Büyücü Zırhı yapabilirsiniz."
+      },
+      "ascendant_step": {
+        "name": "Yükselen Adım",
+        "description": "Kendinize bir büyü yuvası harcamadan Havaya Kaldırma yapabilirsiniz."
+      },
+      "devils_sight": {
+        "name": "Şeytan Görüşü",
+        "description": "Kendinizden 120 fit içinde büyülü veya büyüsüz Loş Işık ve Karanlıkta normal şekilde görebilirsiniz."
+      },
+      "devouring_blade": {
+        "name": "Yutan Kılıç",
+        "description": "Susamış Kılıç yakarışınızın Ek Saldırısı bir yerine iki ek saldırı sağlar."
+      },
+      "eldritch_mind": {
+        "name": "Esrarengiz Zihin",
+        "description": "Odaklanmayı sürdürmek için yaptığınız Dayanıklılık kurtarma atışlarında Avantaj kazanırsınız."
+      },
+      "eldritch_smite": {
+        "name": "Esrarengiz Darbe",
+        "description": "Tur başına bir kez pakt silahınızla bir yaratığa isabet ettiğinizde Pakt Büyüsü yuvası harcayarak hedefe 1d8 ek Kuvvet hasarı, ayrıca yuvanın her seviyesi için 1d8 daha verebilirsiniz. Hedef Devasa veya daha küçükse onu Yere Serilmiş duruma da düşürebilirsiniz."
+      },
+      "eldritch_spear": {
+        "name": "Esrarengiz Mızrak",
+        "description": "Hasar veren ve en az 10 fit menzilli, bildiğiniz bir Pakt Büyücüsü büyü numarasını seçin. Bu büyüyü yaptığınızda menzili, Pakt Büyücüsü seviyenizin 30 katı fit kadar artar."
+      },
+      "fiendish_vigor": {
+        "name": "Şeytani Dinçlik",
+        "description": "Kendinize bir büyü yuvası harcamadan Sahte Yaşam yapabilirsiniz. Bu özellikle yaptığınızda Geçici HP için zar atmaz, zarın en yüksek sonucunu alırsınız."
+      },
+      "gaze_of_two_minds": {
+        "name": "İki Zihnin Bakışı",
+        "description": "Bonus eylem olarak rızası olan bir yaratığa dokunup bir sonraki turunuzun sonuna kadar onun duyularıyla algılayabilirsiniz. Yaratık sizinle aynı varoluş düzlemindeyken sonraki turlarda bonus eylem kullanarak bağlantıyı bir sonraki turunuzun sonuna kadar uzatabilirsiniz. Böyle sürdürmezseniz bağlantı biter.\n\nDiğer yaratığın duyularıyla algılarken onun özel duyularından yararlanırsınız. Birbirinizden en fazla 60 fit uzaktaysanız büyüleri kendi alanınızdan veya onun alanından yapıyormuş gibi yapabilirsiniz."
+      },
+      "gift_of_the_depths": {
+        "name": "Derinliklerin Armağanı",
+        "description": "Su altında nefes alabilir ve Hızınıza eşit bir Yüzme Hızı kazanırsınız.\n\nAyrıca büyü yuvası harcamadan bir kez Suda Nefes Alma yapabilirsiniz. Uzun Dinlenmeyi tamamlayınca bu şekilde yeniden yapabilirsiniz."
+      },
+      "gift_of_the_protectors": {
+        "name": "Koruyucuların Armağanı",
+        "description": "Gölgeler Kitabınızı çağırdığınızda yeni bir sayfa belirir. İzninizle bir yaratık eylem harcayıp sayfaya adını yazabilir. Sayfa Karizma değiştiriciniz kadar (en az bir) ad tutabilir.\n\nSayfada adı yazılı bir yaratığın HP'si 0'a düşer ancak doğrudan ölmezse bunun yerine büyü sayesinde 1 HP'de kalır. Bu sihir tetiklendiğinde, Uzun Dinlenmeyi bitirene kadar hiçbir yaratık bundan yararlanamaz.\n\nBüyü eylemiyle sayfaya dokunarak bir adı silebilirsiniz."
+      },
+      "investment_of_the_chain_master": {
+        "name": "Zincir Efendisinin Güçlendirmesi",
+        "description": "Tanıdık Bulma büyüsünü yaptığınızda çağrılan familiyere esrarengiz gücünüzü aşılayarak şu faydaları verirsiniz.\n\nHava veya Su: Familiyer seçiminize göre 40 fit Uçuş veya Yüzme Hızı kazanır.\n\nHızlı Saldırı: Bonus eylemle familiyere Saldırı eylemini emredebilirsiniz.\n\nNekrotik veya Işıma Hasarı: Familiyerin verdiği Ezme, Delme veya Kesme hasarını Nekrotik veya Işıma hasarına çevirebilirsiniz.\n\nKurtarma SG'niz: Familiyer bir yaratığı kurtarma atışına zorlarsa sizin büyü kurtarma SG'nizi kullanır.\n\nDirenç: Familiyer hasar aldığında Tepki kullanarak ona bu hasara karşı Direnç verebilirsiniz."
+      },
+      "lessons_of_the_first_ones": {
+        "name": "İlklerin Dersleri",
+        "description": "Çoklu evrenin kadim bir varlığından bilgi edinerek seçtiğiniz bir Köken hünerini kazanırsınız (bkz. \"Hünerler\")."
+      },
+      "lifedrinker": {
+        "name": "Can Emici",
+        "description": "Tur başına bir kez pakt silahınızla bir yaratığa isabet ettiğinizde seçtiğiniz 1d6 ek Nekrotik, Psişik veya Işıma hasarı verebilirsiniz. Ayrıca HP Zarlarınızdan birini harcayıp atarak sonuç + Dayanıklılık değiştiriciniz kadar (en az 1 HP) iyileşebilirsiniz."
+      },
+      "mask_of_many_faces": {
+        "name": "Bin Yüzün Maskesi",
+        "description": "Büyü yuvası harcamadan Kılık Değiştirme yapabilirsiniz."
+      },
+      "master_of_myriad_forms": {
+        "name": "Sayısız Biçimin Ustası",
+        "description": "Büyü yuvası harcamadan Kendini Değiştirme yapabilirsiniz."
+      },
+      "misty_visions": {
+        "name": "Sisli Görüler",
+        "description": "Büyü yuvası harcamadan Sessiz Görüntü yapabilirsiniz."
+      },
+      "one_with_shadows": {
+        "name": "Gölgelerle Bir",
+        "description": "Loş Işık veya Karanlık içindeyken kendinize büyü yuvası harcamadan Görünmezlik yapabilirsiniz."
+      },
+      "otherworldly_leap": {
+        "name": "Öte Dünyasal Sıçrayış",
+        "description": "Kendinize büyü yuvası harcamadan Sıçrama yapabilirsiniz."
+      },
+      "pact_of_the_blade": {
+        "name": "Kılıç Paktı",
+        "description": "Bonus eylemle elinizde seçtiğiniz bir Basit veya Askerî Yakın Dövüş silahını pakt silahı olarak çağırıp ona bağlanabilir ya da dokunduğunuz sihirli silahla bağ kurabilirsiniz. Başka biri o sihirli silaha uyumlandıysa veya başka bir Pakt Büyücüsü ona bağlandıysa bağ kuramazsınız. Bağ sürdükçe silahta yetkinsiniz ve onu Büyü Odağı olarak kullanabilirsiniz.\n\nBağlı silahla saldırırken saldırı ve hasar atışlarında Kuvvet veya Çeviklik yerine Karizma değiştiricinizi kullanabilirsiniz; silahın hasarını Nekrotik, Psişik, Işıma veya normal türü olarak seçebilirsiniz.\n\nBu özelliğin bonus eylemini yeniden kullanırsanız, silah sizden 5 fitten fazla uzakta 1 dakika veya daha uzun kalırsa ya da ölürseniz bağ biter. Çağrılan silah bağ bitince kaybolur."
+      },
+      "pact_of_the_chain": {
+        "name": "Zincir Paktı",
+        "description": "Tanıdık Bulma büyüsünü öğrenir ve büyü yuvası harcamadan Büyü eylemiyle yapabilirsiniz.\n\nBüyüyü yaparken familiyerin normal biçimlerinden veya şu özel biçimlerden birini seçin: İmp, Sahte Ejder, Quasit, İskelet, Harika Sfenks, Peri veya Zehirli Yılan (özellikleri için \"Canavarlar\" bölümüne bakın).\n\nAyrıca Saldırı eylemi yaptığınızda kendi saldırılarınızdan birinden vazgeçerek familiyerinizin Tepkisiyle bir saldırı yapmasını sağlayabilirsiniz."
+      },
+      "pact_of_the_tome": {
+        "name": "Kitap Paktı",
+        "description": "Gölge ipliklerini örerek Kısa veya Uzun Dinlenme sonunda elinizde bir kitap çağırırsınız. Görünümünü sizin belirlediğiniz Gölgeler Kitabı yalnızca sizin erişebildiğiniz esrarengiz büyü içerir ve aşağıdaki faydaları sağlar. Bu özellikle başka kitap çağırırsanız veya ölürseniz kitap kaybolur.\n\nBüyü Numaraları ve Ritüeller: Kitap belirdiğinde üç büyü numarası ve Ritüel etiketli iki 1. seviye büyü seçin. Bunlar herhangi bir sınıfın büyü listesinden olabilir ancak zaten hazırladığınız büyüler olamaz. Kitabı taşıdığınız sürece seçilen büyüler hazırlanmış sayılır ve sizin için Pakt Büyücüsü büyüleridir.\n\nBüyü Odağı: Kitabı Büyü Odağı olarak kullanabilirsiniz."
+      },
+      "repelling_blast": {
+        "name": "İten Patlama",
+        "description": "Saldırı atışı gerektiren, bildiğiniz bir Pakt Büyücüsü büyü numarasını seçin. Bununla Büyük veya daha küçük yaratığa isabet ettiğinizde yaratığı sizden doğrudan uzağa en fazla 10 fit itebilirsiniz."
+      },
+      "thirsting_blade": {
+        "name": "Susamış Kılıç",
+        "description": "Ek Saldırı özelliğini yalnızca pakt silahınız için kazanırsınız. Bu özellikle kendi turunuzda Saldırı eylemi yaptığınızda bu silahla bir yerine iki kez saldırabilirsiniz."
+      },
+      "visions_of_distant_realms": {
+        "name": "Uzak Âlemlerin Görüleri",
+        "description": "Büyü yuvası harcamadan Gizemli Göz yapabilirsiniz."
+      },
+      "whispers_of_the_grave": {
+        "name": "Mezarın Fısıltıları",
+        "description": "Büyü yuvası harcamadan Ölülerle Konuşma yapabilirsiniz."
+      },
+      "witch_sight": {
+        "name": "Cadı Görüşü",
+        "description": "30 fit menzilli Gerçek Görüş kazanırsınız."
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Kuvvet"
+            },
+            "dexterity": {
+              "name": "Çeviklik"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Kuvvet"
+            },
+            "dexterity": {
+              "name": "Çeviklik"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "Zekâ"
+            },
+            "wisdom": {
+              "name": "Bilgelik"
+            },
+            "charisma": {
+              "name": "Karizma"
+            }
+          }
+        }
+      }
+    }
+  }
+}

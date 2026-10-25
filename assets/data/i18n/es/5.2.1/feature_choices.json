@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "Clérigo",
+        "description": "Elige dos trucos de clérigo y un conjuro de clérigo de nivel 1."
+      },
+      "druid": {
+        "name": "Druida",
+        "description": "Elige dos trucos de druida y un conjuro de druida de nivel 1."
+      },
+      "wizard": {
+        "name": "Mago",
+        "description": "Elige dos trucos de mago y un conjuro de mago de nivel 1."
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "Inteligencia",
+        "description": "Usa Inteligencia como característica para lanzar estos conjuros."
+      },
+      "wisdom": {
+        "name": "Sabiduría",
+        "description": "Usa Sabiduría como característica para lanzar estos conjuros."
+      },
+      "charisma": {
+        "name": "Carisma",
+        "description": "Usa Carisma como característica para lanzar estos conjuros."
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "Tiro con Arco",
+        "description": "Obtienes un bonificador de +2 a las tiradas de ataque con armas a distancia."
+      },
+      "defense": {
+        "name": "Defensa",
+        "description": "Obtienes +1 a la CA mientras lleves armadura ligera, media o pesada."
+      },
+      "great_weapon_fighting": {
+        "name": "Combate con Armas Grandes",
+        "description": "Considera los resultados de 1 o 2 en los dados de daño como 3 al empuñar con ambas manos un arma cuerpo a cuerpo con la propiedad a dos manos o versátil."
+      },
+      "two_weapon_fighting": {
+        "name": "Combate con Dos Armas",
+        "description": "Añade tu modificador de característica al daño del ataque adicional al usar la propiedad ligera."
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "Tiro con Arco",
+        "description": "Obtienes un bonificador de +2 a las tiradas de ataque con armas a distancia."
+      },
+      "defense": {
+        "name": "Defensa",
+        "description": "Obtienes +1 a la CA mientras lleves armadura ligera, media o pesada."
+      },
+      "great_weapon_fighting": {
+        "name": "Combate con Armas Grandes",
+        "description": "Considera los resultados de 1 o 2 en los dados de daño como 3 al empuñar con ambas manos un arma cuerpo a cuerpo con la propiedad a dos manos o versátil."
+      },
+      "two_weapon_fighting": {
+        "name": "Combate con Dos Armas",
+        "description": "Añade tu modificador de característica al daño del ataque adicional al usar la propiedad ligera."
+      },
+      "blessed_warrior": {
+        "name": "Guerrero bendecido",
+        "description": "Aprendes dos trucos de clérigo que cuentan como conjuros de paladín para ti."
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "Tiro con Arco",
+        "description": "Obtienes un bonificador de +2 a las tiradas de ataque con armas a distancia."
+      },
+      "defense": {
+        "name": "Defensa",
+        "description": "Obtienes +1 a la CA mientras lleves armadura ligera, media o pesada."
+      },
+      "great_weapon_fighting": {
+        "name": "Combate con Armas Grandes",
+        "description": "Considera los resultados de 1 o 2 en los dados de daño como 3 al empuñar con ambas manos un arma cuerpo a cuerpo con la propiedad a dos manos o versátil."
+      },
+      "two_weapon_fighting": {
+        "name": "Combate con Dos Armas",
+        "description": "Añade tu modificador de característica al daño del ataque adicional al usar la propiedad ligera."
+      },
+      "druidic_warrior": {
+        "name": "Guerrero druídico",
+        "description": "Aprendes dos trucos de druida que cuentan como conjuros de explorador para ti."
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "Protector",
+        "description": "Obtienes competencia con armas marciales y entrenamiento con armadura pesada."
+      },
+      "thaumaturge": {
+        "name": "Taumaturgo",
+        "description": "Aprendes un truco de clérigo adicional y sumas tu modificador de Sabiduría (mínimo +1) a las pruebas de Arcanos o Religión."
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "Mago",
+        "description": "Aprendes un truco de druida adicional y sumas tu modificador de Sabiduría (mínimo +1) a las pruebas de Arcanos o Naturaleza."
+      },
+      "warden": {
+        "name": "Guardián",
+        "description": "Obtienes competencia con armas marciales y entrenamiento con armadura media."
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "Golpe divino",
+        "description": "Una vez por turno, añades 1d8 de daño radiante o necrótico a un impacto con arma; 2d8 a partir del nivel 14 de clérigo."
+      },
+      "potent_spellcasting": {
+        "name": "Lanzamiento de conjuros potente",
+        "description": "Añades tu modificador de Sabiduría al daño de los trucos de clérigo; a partir del nivel 14, un truco que cause daño también puede otorgar puntos de golpe temporales."
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "Lanzamiento de conjuros potente",
+        "description": "Añades tu modificador de Sabiduría al daño de los trucos de druida; el alcance de los trucos aumenta en el nivel 15 de druida."
+      },
+      "primal_strike": {
+        "name": "Golpe primigenio",
+        "description": "Una vez por turno, añades 1d8 de daño de frío, fuego, relámpago o trueno a un impacto con arma o en forma de bestia; 2d8 en el nivel 15."
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "Trato con animales"
+      },
+      "athletics": {
+        "name": "Atletismo"
+      },
+      "intimidation": {
+        "name": "Intimidación"
+      },
+      "nature": {
+        "name": "Naturaleza"
+      },
+      "perception": {
+        "name": "Percepción"
+      },
+      "survival": {
+        "name": "Supervivencia"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "Arcanos"
+      },
+      "history": {
+        "name": "Historia"
+      },
+      "investigation": {
+        "name": "Investigación"
+      },
+      "medicine": {
+        "name": "Medicina"
+      },
+      "nature": {
+        "name": "Naturaleza"
+      },
+      "religion": {
+        "name": "Religión"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "Conjuro cuidadoso",
+        "description": "Gastas 1 punto de hechicería. Elige hasta un número de criaturas igual a tu modificador de Carisma (mínimo una); superan automáticamente la tirada de salvación del conjuro y no reciben daño si un éxito normalmente reduciría el daño a la mitad."
+      },
+      "distant_spell": {
+        "name": "Conjuro distante",
+        "description": "Gastas 1 punto de hechicería para duplicar el alcance de un conjuro de al menos 5 pies, o para convertir su alcance de toque en 30 pies."
+      },
+      "empowered_spell": {
+        "name": "Conjuro potenciado",
+        "description": "Gastas 1 punto de hechicería para volver a tirar un número de dados de daño de hasta tu modificador de Carisma (mínimo uno); debes usar los nuevos resultados. Se puede combinar con otra opción de Metamagia."
+      },
+      "extended_spell": {
+        "name": "Conjuro prolongado",
+        "description": "Gastas 1 punto de hechicería para duplicar la duración hasta un máximo de 24 horas y obtener ventaja en las tiradas de salvación para mantener la concentración en el conjuro."
+      },
+      "heightened_spell": {
+        "name": "Conjuro intensificado",
+        "description": "Gastas 2 puntos de hechicería para imponer desventaja a un objetivo en sus tiradas de salvación contra el conjuro."
+      },
+      "quickened_spell": {
+        "name": "Conjuro acelerado",
+        "description": "Gastas 2 puntos de hechicería para lanzar como acción adicional un conjuro que normalmente requiere una acción. No puedes hacerlo después de lanzar un conjuro de nivel 1 o superior en el mismo turno ni lanzar uno después."
+      },
+      "seeking_spell": {
+        "name": "Conjuro certero",
+        "description": "Gastas 1 punto de hechicería para repetir una tirada de ataque de conjuro fallida; debes usar el nuevo resultado. Se puede combinar con otra opción de Metamagia."
+      },
+      "subtle_spell": {
+        "name": "Conjuro sutil",
+        "description": "Gastas 1 punto de hechicería para lanzar un conjuro sin componentes verbales, somáticos ni materiales que no se consuman y no tengan coste."
+      },
+      "transmuted_spell": {
+        "name": "Conjuro transmutado",
+        "description": "Gastas 1 punto de hechicería para cambiar el daño de ácido, frío, fuego, relámpago, veneno o trueno de un conjuro a otro tipo de esa lista."
+      },
+      "twinned_spell": {
+        "name": "Conjuro gemelo",
+        "description": "Gastas 1 punto de hechicería para aumentar en uno el nivel efectivo de un conjuro que pueda elegir otra criatura como objetivo cuando se lanza con un espacio de nivel superior."
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "Árido"
+      },
+      "polar": {
+        "name": "Polar"
+      },
+      "temperate": {
+        "name": "Templado"
+      },
+      "tropical": {
+        "name": "Tropical"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "Asesino de colosos",
+        "description": "Una vez por turno, un impacto con arma contra una criatura que no tenga todos sus puntos de golpe inflige +1d8 de daño."
+      },
+      "horde_breaker": {
+        "name": "Destructor de hordas",
+        "description": "Una vez en tu turno, atacas con tu arma a otra criatura cercana."
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "Escapar de la horda",
+        "description": "Los ataques de oportunidad contra ti tienen desventaja."
+      },
+      "multiattack_defense": {
+        "name": "Defensa contra ataques múltiples",
+        "description": "Después de que una criatura te golpee, sus demás tiradas de ataque contra ti durante este turno tienen desventaja."
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "Ácido"
+      },
+      "cold": {
+        "name": "Frío"
+      },
+      "fire": {
+        "name": "Fuego"
+      },
+      "lightning": {
+        "name": "Relámpago"
+      },
+      "poison": {
+        "name": "Veneno"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "Ácido"
+      },
+      "bludgeoning": {
+        "name": "Contundente"
+      },
+      "cold": {
+        "name": "Frío"
+      },
+      "fire": {
+        "name": "Fuego"
+      },
+      "lightning": {
+        "name": "Relámpago"
+      },
+      "necrotic": {
+        "name": "Necrótico"
+      },
+      "piercing": {
+        "name": "Perforante"
+      },
+      "poison": {
+        "name": "Veneno"
+      },
+      "psychic": {
+        "name": "Psíquico"
+      },
+      "radiant": {
+        "name": "Radiante"
+      },
+      "slashing": {
+        "name": "Cortante"
+      },
+      "thunder": {
+        "name": "Trueno"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "Negro",
+        "description": "Ácido"
+      },
+      "blue": {
+        "name": "Azul",
+        "description": "Relámpago"
+      },
+      "brass": {
+        "name": "Latón",
+        "description": "Fuego"
+      },
+      "bronze": {
+        "name": "Bronce",
+        "description": "Relámpago"
+      },
+      "copper": {
+        "name": "Cobre",
+        "description": "Ácido"
+      },
+      "gold": {
+        "name": "Oro",
+        "description": "Fuego"
+      },
+      "green": {
+        "name": "Verde",
+        "description": "Veneno"
+      },
+      "red": {
+        "name": "Rojo",
+        "description": "Fuego"
+      },
+      "silver": {
+        "name": "Plata",
+        "description": "Frío"
+      },
+      "white": {
+        "name": "Blanco",
+        "description": "Frío"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "Drow",
+        "description": "Luces danzantes; Fuego feérico en el nivel 3 y Oscuridad en el nivel 5."
+      },
+      "high_elf": {
+        "name": "Elfo alto",
+        "description": "Prestidigitación; Detectar magia en el nivel 3 y Paso brumoso en el nivel 5."
+      },
+      "wood_elf": {
+        "name": "Elfo de los bosques",
+        "description": "Aumento de velocidad y Druidismo; Zancada prodigiosa en el nivel 3 y Pasar sin rastro en el nivel 5."
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "Gnomo de los bosques",
+        "description": "Ilusión menor y Hablar con los animales."
+      },
+      "rock_gnome": {
+        "name": "Gnomo de las rocas",
+        "description": "Remendar, Prestidigitación y dispositivos de relojería."
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "Salto de las nubes",
+        "description": "Te teletransportas hasta 30 pies como acción adicional."
+      },
+      "fire": {
+        "name": "Ardor del fuego",
+        "description": "Infliges 1d10 de daño de fuego adicional al impactar."
+      },
+      "frost": {
+        "name": "Frío de la escarcha",
+        "description": "Infliges 1d6 de daño de frío adicional y reduces la velocidad del objetivo al impactar."
+      },
+      "hill": {
+        "name": "Tropiezo de las colinas",
+        "description": "Derribas a un objetivo Grande o más pequeño al impactar."
+      },
+      "stone": {
+        "name": "Resistencia de la piedra",
+        "description": "Como reacción, reduces el daño que recibes en 1d12 + tu modificador de Constitución."
+      },
+      "storm": {
+        "name": "Trueno de la tormenta",
+        "description": "Infliges 1d8 de daño de trueno a una criatura que te haga daño."
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "Abisal",
+        "description": "Resistencia al veneno y Rociada venenosa; Rayo de enfermedad en el nivel 3 e Inmovilizar persona en el nivel 5."
+      },
+      "chthonic": {
+        "name": "Ctónico",
+        "description": "Resistencia al daño necrótico y Toque helado; Falsa vida en el nivel 3 y Rayo debilitador en el nivel 5."
+      },
+      "infernal": {
+        "name": "Infernal",
+        "description": "Resistencia al fuego y Descarga de fuego; Reprensión infernal en el nivel 3 y Oscuridad en el nivel 5."
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "Perspicacia"
+      },
+      "perception": {
+        "name": "Percepción"
+      },
+      "survival": {
+        "name": "Supervivencia"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "Garrote",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Ralentizar."
+      },
+      "dagger": {
+        "name": "Daga",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "greatclub": {
+        "name": "Gran garrote",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Empujar."
+      },
+      "handaxe": {
+        "name": "Hacha de mano",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Acosar."
+      },
+      "javelin": {
+        "name": "Jabalina",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Ralentizar."
+      },
+      "light_hammer": {
+        "name": "Martillo ligero",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "mace": {
+        "name": "Maza",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Debilitar."
+      },
+      "quarterstaff": {
+        "name": "Bastón",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Derribar."
+      },
+      "sickle": {
+        "name": "Hoz",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "spear": {
+        "name": "Lanza",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Debilitar."
+      },
+      "battleaxe": {
+        "name": "Hacha de batalla",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "flail": {
+        "name": "Mayal",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "glaive": {
+        "name": "Guja",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Rozar."
+      },
+      "greataxe": {
+        "name": "Gran hacha",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Tajo."
+      },
+      "greatsword": {
+        "name": "Espadón",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Rozar."
+      },
+      "halberd": {
+        "name": "Alabarda",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Tajo."
+      },
+      "lance": {
+        "name": "Lanza de caballería",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "longsword": {
+        "name": "Espada larga",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "maul": {
+        "name": "Gran martillo",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "morningstar": {
+        "name": "Estrella de la mañana",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "pike": {
+        "name": "Pica",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Empujar."
+      },
+      "rapier": {
+        "name": "Estoque",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Acosar."
+      },
+      "scimitar": {
+        "name": "Cimitarra",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Muesca."
+      },
+      "shortsword": {
+        "name": "Espada corta",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Acosar."
+      },
+      "trident": {
+        "name": "Tridente",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "warhammer": {
+        "name": "Martillo de guerra",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Empujar."
+      },
+      "war_pick": {
+        "name": "Pico de guerra",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "whip": {
+        "name": "Látigo",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Ralentizar."
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "Garrote",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Ralentizar."
+      },
+      "dagger": {
+        "name": "Daga",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "greatclub": {
+        "name": "Gran garrote",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Empujar."
+      },
+      "handaxe": {
+        "name": "Hacha de mano",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Acosar."
+      },
+      "javelin": {
+        "name": "Jabalina",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Ralentizar."
+      },
+      "light_hammer": {
+        "name": "Martillo ligero",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "mace": {
+        "name": "Maza",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Debilitar."
+      },
+      "quarterstaff": {
+        "name": "Bastón",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Derribar."
+      },
+      "sickle": {
+        "name": "Hoz",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "spear": {
+        "name": "Lanza",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Debilitar."
+      },
+      "dart": {
+        "name": "Dardo",
+        "description": "Arma a distancia sencilla; maestría Acosar."
+      },
+      "light_crossbow": {
+        "name": "Ballesta ligera",
+        "description": "Arma a distancia sencilla; maestría Ralentizar."
+      },
+      "shortbow": {
+        "name": "Arco corto",
+        "description": "Arma a distancia sencilla; maestría Acosar."
+      },
+      "sling": {
+        "name": "Honda",
+        "description": "Arma a distancia sencilla; maestría Ralentizar."
+      },
+      "battleaxe": {
+        "name": "Hacha de batalla",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "flail": {
+        "name": "Mayal",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "glaive": {
+        "name": "Guja",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Rozar."
+      },
+      "greataxe": {
+        "name": "Gran hacha",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Tajo."
+      },
+      "greatsword": {
+        "name": "Espadón",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Rozar."
+      },
+      "halberd": {
+        "name": "Alabarda",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Tajo."
+      },
+      "lance": {
+        "name": "Lanza de caballería",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "longsword": {
+        "name": "Espada larga",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "maul": {
+        "name": "Gran martillo",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "morningstar": {
+        "name": "Estrella de la mañana",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "pike": {
+        "name": "Pica",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Empujar."
+      },
+      "rapier": {
+        "name": "Estoque",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Acosar."
+      },
+      "scimitar": {
+        "name": "Cimitarra",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Muesca."
+      },
+      "shortsword": {
+        "name": "Espada corta",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Acosar."
+      },
+      "trident": {
+        "name": "Tridente",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Derribar."
+      },
+      "warhammer": {
+        "name": "Martillo de guerra",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Empujar."
+      },
+      "war_pick": {
+        "name": "Pico de guerra",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Debilitar."
+      },
+      "whip": {
+        "name": "Látigo",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Ralentizar."
+      },
+      "blowgun": {
+        "name": "Cerbatana",
+        "description": "Arma a distancia marcial; maestría Acosar."
+      },
+      "hand_crossbow": {
+        "name": "Ballesta de mano",
+        "description": "Arma a distancia marcial; maestría Acosar."
+      },
+      "heavy_crossbow": {
+        "name": "Ballesta pesada",
+        "description": "Arma a distancia marcial; maestría Empujar."
+      },
+      "longbow": {
+        "name": "Arco largo",
+        "description": "Arma a distancia marcial; maestría Ralentizar."
+      },
+      "musket": {
+        "name": "Mosquete",
+        "description": "Arma a distancia marcial; maestría Ralentizar."
+      },
+      "pistol": {
+        "name": "Pistola",
+        "description": "Arma a distancia marcial; maestría Acosar."
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "Garrote",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Ralentizar."
+      },
+      "dagger": {
+        "name": "Daga",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "greatclub": {
+        "name": "Gran garrote",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Empujar."
+      },
+      "handaxe": {
+        "name": "Hacha de mano",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Acosar."
+      },
+      "javelin": {
+        "name": "Jabalina",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Ralentizar."
+      },
+      "light_hammer": {
+        "name": "Martillo ligero",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "mace": {
+        "name": "Maza",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Debilitar."
+      },
+      "quarterstaff": {
+        "name": "Bastón",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Derribar."
+      },
+      "sickle": {
+        "name": "Hoz",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Muesca."
+      },
+      "spear": {
+        "name": "Lanza",
+        "description": "Arma cuerpo a cuerpo sencilla; maestría Debilitar."
+      },
+      "dart": {
+        "name": "Dardo",
+        "description": "Arma a distancia sencilla; maestría Acosar."
+      },
+      "light_crossbow": {
+        "name": "Ballesta ligera",
+        "description": "Arma a distancia sencilla; maestría Ralentizar."
+      },
+      "shortbow": {
+        "name": "Arco corto",
+        "description": "Arma a distancia sencilla; maestría Acosar."
+      },
+      "sling": {
+        "name": "Honda",
+        "description": "Arma a distancia sencilla; maestría Ralentizar."
+      },
+      "rapier": {
+        "name": "Estoque",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Acosar."
+      },
+      "scimitar": {
+        "name": "Cimitarra",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Muesca."
+      },
+      "shortsword": {
+        "name": "Espada corta",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Acosar."
+      },
+      "whip": {
+        "name": "Látigo",
+        "description": "Arma cuerpo a cuerpo marcial; maestría Ralentizar."
+      },
+      "hand_crossbow": {
+        "name": "Ballesta de mano",
+        "description": "Arma a distancia marcial; maestría Acosar."
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "Descarga agonizante",
+        "description": "Elige un truco de brujo que conozcas y que cause daño. Puedes añadir tu modificador de Carisma a las tiradas de daño de ese conjuro."
+      },
+      "armor_of_shadows": {
+        "name": "Armadura de sombras",
+        "description": "Puedes lanzar Armadura de mago sobre ti sin gastar un espacio de conjuro."
+      },
+      "ascendant_step": {
+        "name": "Paso ascendente",
+        "description": "Puedes lanzar Levitar sobre ti sin gastar un espacio de conjuro."
+      },
+      "devils_sight": {
+        "name": "Vista del diablo",
+        "description": "Puedes ver con normalidad en luz tenue y oscuridad, tanto mágica como no mágica, a una distancia de hasta 120 pies de ti."
+      },
+      "devouring_blade": {
+        "name": "Hoja devoradora",
+        "description": "El Ataque Extra de tu invocación Hoja Sedienta te concede dos ataques adicionales en lugar de uno."
+      },
+      "eldritch_mind": {
+        "name": "Mente sobrenatural",
+        "description": "Tienes ventaja en las tiradas de salvación de Constitución para mantener la concentración."
+      },
+      "eldritch_smite": {
+        "name": "Castigo sobrenatural",
+        "description": "Una vez por turno, cuando impactas a una criatura con tu arma de pacto, puedes gastar un espacio de Magia de Pacto para infligir 1d8 de daño de fuerza adicional al objetivo, más 1d8 por nivel del espacio de conjuro; también puedes derribar al objetivo si es Enorme o más pequeño."
+      },
+      "eldritch_spear": {
+        "name": "Lanza sobrenatural",
+        "description": "Elige un truco de brujo que conozcas, que cause daño y tenga un alcance de al menos 10 pies. Cuando lanzas ese conjuro, su alcance aumenta tantos pies como 30 veces tu nivel de brujo."
+      },
+      "fiendish_vigor": {
+        "name": "Vigor infernal",
+        "description": "Puedes lanzar Falsa vida sobre ti sin gastar un espacio de conjuro. Al lanzarla con esta característica, no tiras el dado para calcular los puntos de golpe temporales: obtienes automáticamente el resultado máximo."
+      },
+      "gaze_of_two_minds": {
+        "name": "Mirada de dos mentes",
+        "description": "Puedes usar una acción adicional para tocar a una criatura voluntaria y percibir a través de sus sentidos hasta el final de tu siguiente turno. Mientras la criatura esté en tu mismo plano de existencia, puedes usar una acción adicional en turnos posteriores para mantener la conexión y prolongarla hasta el final de tu siguiente turno. La conexión termina si no la mantienes de este modo.\n\nMientras percibes a través de sus sentidos, te beneficias de sus sentidos especiales y puedes lanzar conjuros como si estuvieras en tu espacio o en el suyo, siempre que ambos estéis a no más de 60 pies el uno del otro."
+      },
+      "gift_of_the_depths": {
+        "name": "Don de las profundidades",
+        "description": "Puedes respirar bajo el agua y obtienes una velocidad de nado igual a tu velocidad.\n\nTambién puedes lanzar Respirar bajo el agua una vez sin gastar un espacio de conjuro. Recuperas esta capacidad al terminar un descanso largo."
+      },
+      "gift_of_the_protectors": {
+        "name": "Don de los protectores",
+        "description": "Cuando conjuras tu Libro de las Sombras, aparece una página nueva. Con tu permiso, una criatura puede usar una acción para escribir su nombre en ella. La página admite tantos nombres como tu modificador de Carisma (mínimo uno).\n\nCuando una criatura cuyo nombre figura en la página queda reducida a 0 puntos de golpe sin morir de inmediato, pasa mágicamente a tener 1 punto de golpe. Una vez que se activa esta magia, ninguna criatura puede beneficiarse de ella hasta que termines un descanso largo.\n\nComo acción mágica, puedes borrar un nombre de la página al tocarla."
+      },
+      "investment_of_the_chain_master": {
+        "name": "Poder del amo de la cadena",
+        "description": "Cuando lanzas Encontrar familiar, imbuyes al familiar invocado con parte de tu poder sobrenatural y le concedes los siguientes beneficios.\n\nAéreo o acuático. El familiar obtiene una velocidad de vuelo o de nado (a tu elección) de 40 pies.\n\nAtaque rápido. Como acción adicional, puedes ordenar al familiar que realice la acción Atacar.\n\nDaño necrótico o radiante. Cuando el familiar inflige daño contundente, perforante o cortante, puedes hacer que inflija daño necrótico o radiante en su lugar.\n\nTu CD de salvación. Si el familiar obliga a una criatura a hacer una tirada de salvación, utiliza la CD de salvación de tus conjuros.\n\nResistencia. Cuando el familiar recibe daño, puedes usar una reacción para otorgarle resistencia a ese daño."
+      },
+      "lessons_of_the_first_ones": {
+        "name": "Lecciones de los Primeros",
+        "description": "Has recibido conocimientos de una entidad ancestral del multiverso, por lo que obtienes un talento de origen a tu elección (consulta «Talentos»)."
+      },
+      "lifedrinker": {
+        "name": "Bebedor de vida",
+        "description": "Una vez por turno, cuando impactas a una criatura con tu arma de pacto, puedes infligirle 1d6 de daño necrótico, psíquico o radiante adicional (a tu elección). También puedes gastar uno de tus dados de puntos de golpe, tirarlo y recuperar tantos puntos de golpe como el resultado más tu modificador de Constitución (mínimo 1 punto de golpe)."
+      },
+      "mask_of_many_faces": {
+        "name": "Máscara de muchos rostros",
+        "description": "Puedes lanzar Disfrazarse sin gastar un espacio de conjuro."
+      },
+      "master_of_myriad_forms": {
+        "name": "Maestro de las innumerables formas",
+        "description": "Puedes lanzar Alterar el propio aspecto sin gastar un espacio de conjuro."
+      },
+      "misty_visions": {
+        "name": "Visiones brumosas",
+        "description": "Puedes lanzar Imagen silenciosa sin gastar un espacio de conjuro."
+      },
+      "one_with_shadows": {
+        "name": "Uno con las sombras",
+        "description": "Mientras estés en una zona de luz tenue u oscuridad, puedes lanzar Invisibilidad sobre ti sin gastar un espacio de conjuro."
+      },
+      "otherworldly_leap": {
+        "name": "Salto de otro mundo",
+        "description": "Puedes lanzar Saltar sobre ti sin gastar un espacio de conjuro."
+      },
+      "pact_of_the_blade": {
+        "name": "Pacto de la hoja",
+        "description": "Como acción adicional, puedes conjurar en tu mano un arma de pacto, un arma cuerpo a cuerpo sencilla o marcial a tu elección con la que estableces un vínculo, o vincularte a un arma mágica que toques. No puedes vincularte a un arma mágica si otra persona está sintonizada con ella o si otro brujo está vinculado a ella. Hasta que termine el vínculo, tienes competencia con el arma y puedes usarla como canalizador mágico.\n\nAl atacar con el arma vinculada, puedes usar tu modificador de Carisma para las tiradas de ataque y daño en lugar de Fuerza o Destreza, y puedes hacer que el arma inflija daño necrótico, psíquico o radiante en vez de su tipo de daño habitual.\n\nEl vínculo termina si vuelves a usar la acción adicional de esta característica, si el arma permanece a más de 5 pies de ti durante 1 minuto o más, o si mueres. Un arma conjurada desaparece cuando termina el vínculo."
+      },
+      "pact_of_the_chain": {
+        "name": "Pacto de la cadena",
+        "description": "Aprendes el conjuro Encontrar familiar y puedes lanzarlo como acción mágica sin gastar un espacio de conjuro.\n\nAl lanzarlo, eliges una de las formas normales de familiar o una de estas formas especiales: diablillo, pseudodragón, quasit, esqueleto, esfinge de la maravilla, duende o serpiente venenosa (consulta «Monstruos» para ver su perfil).\n\nAdemás, cuando realizas la acción Atacar, puedes renunciar a uno de tus ataques para permitir que tu familiar haga un ataque con su reacción."
+      },
+      "pact_of_the_tome": {
+        "name": "Pacto del tomo",
+        "description": "Al final de un descanso corto o largo, tejes sombras y conjuras un libro en tu mano. Este Libro de las Sombras, cuyo aspecto decides tú, contiene magia sobrenatural a la que solo tú puedes acceder y te concede los siguientes beneficios. Desaparece si conjuras otro libro con esta característica o si mueres.\n\nTrucos y rituales. Cuando aparece el libro, elige tres trucos y dos conjuros de nivel 1 con la etiqueta Ritual. Pueden pertenecer a la lista de conjuros de cualquier clase, pero no deben estar ya preparados por ti. Mientras lleves el libro contigo, tienes preparados los conjuros elegidos y cuentan como conjuros de brujo para ti.\n\nCanalizador mágico. Puedes usar el libro como canalizador mágico."
+      },
+      "repelling_blast": {
+        "name": "Descarga repelente",
+        "description": "Elige un truco de brujo que conozcas y que requiera una tirada de ataque. Cuando impactas con él a una criatura Grande o más pequeña, puedes empujarla hasta 10 pies en línea recta alejándola de ti."
+      },
+      "thirsting_blade": {
+        "name": "Hoja sedienta",
+        "description": "Obtienes la característica Ataque Extra únicamente para tu arma de pacto. Con ella, puedes atacar dos veces con el arma, en lugar de una, cuando realizas la acción Atacar en tu turno."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visiones de reinos lejanos",
+        "description": "Puedes lanzar Ojo arcano sin gastar un espacio de conjuro."
+      },
+      "whispers_of_the_grave": {
+        "name": "Susurros de la tumba",
+        "description": "Puedes lanzar Hablar con los muertos sin gastar un espacio de conjuro."
+      },
+      "witch_sight": {
+        "name": "Vista de bruja",
+        "description": "Obtienes visión verdadera con un alcance de 30 pies."
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Fuerza"
+            },
+            "dexterity": {
+              "name": "Destreza"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Fuerza"
+            },
+            "dexterity": {
+              "name": "Destreza"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "Inteligencia"
+            },
+            "wisdom": {
+              "name": "Sabiduría"
+            },
+            "charisma": {
+              "name": "Carisma"
+            }
+          }
+        }
+      }
+    }
+  }
+}

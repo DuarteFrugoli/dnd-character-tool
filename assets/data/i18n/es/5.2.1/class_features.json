@@ -1,0 +1,718 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Furia",
+      "description": "Entra en Furia como acción adicional sin llevar armadura pesada. Mientras estés en Furia, tienes resistencia al daño contundente, perforante y cortante; ventaja en las pruebas y tiradas de salvación de Fuerza; y sumas tu daño de Furia al daño de armas o golpes sin armas basados en Fuerza (+2 en los niveles 1-8, +3 en los niveles 9-15 y +4 en los niveles 16-20). No puedes lanzar conjuros ni mantener la concentración. La Furia dura hasta el final de tu siguiente turno y puede prolongarse cada asalto al atacar, obligar a un enemigo a hacer una tirada de salvación o usar una acción adicional, hasta un máximo de 10 minutos. Usos: 2 en los niveles 1-2, 3 en los niveles 3-5, 4 en los niveles 6-11, 5 en los niveles 12-16 y 6 a partir del nivel 17. Recuperas un uso tras un descanso corto y todos tras uno largo."
+    },
+    "Unarmored Defense": {
+      "name": "Defensa sin armadura",
+      "description": "Sin armadura, tu CA base es 10 + tu modificador de Destreza + tu modificador de Constitución. Puedes seguir usando un escudo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestría con armas",
+      "description": "Elige dos tipos de armas cuerpo a cuerpo sencillas o marciales cuyas propiedades de maestría puedas usar. Sustituye una elección tras un descanso largo. El número de tipos elegidos aumenta a tres en el nivel 4 y a cuatro en el nivel 10."
+    },
+    "Danger Sense": {
+      "name": "Sentido del peligro",
+      "description": "Tienes ventaja en las tiradas de salvación de Destreza, a menos que estés incapacitado."
+    },
+    "Reckless Attack": {
+      "name": "Ataque temerario",
+      "description": "En tu primera tirada de ataque de un turno, puedes decidir atacar temerariamente. Tus tiradas de ataque basadas en Fuerza tienen ventaja hasta tu siguiente turno, pero los ataques contra ti también tienen ventaja."
+    },
+    "Barbarian Subclass": {
+      "name": "Subclase de bárbaro",
+      "description": "Elige una subclase de bárbaro; obtienes sus rasgos en los niveles de bárbaro indicados."
+    },
+    "Primal Knowledge": {
+      "name": "Conocimiento primigenio",
+      "description": "Obtienes competencia en otra habilidad de la lista de bárbaro de nivel 1. Mientras estés en Furia, puedes usar Fuerza en las pruebas de Acrobacias, Intimidación, Percepción, Sigilo o Supervivencia."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de bárbaro."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Atacas dos veces al realizar la acción Atacar."
+    },
+    "Fast Movement": {
+      "name": "Movimiento rápido",
+      "description": "Tu velocidad aumenta 10 pies mientras no lleves armadura pesada."
+    },
+    "Feral Instinct": {
+      "name": "Instinto salvaje",
+      "description": "Tienes ventaja en las tiradas de iniciativa."
+    },
+    "Instinctive Pounce": {
+      "name": "Salto instintivo",
+      "description": "Como parte de la acción adicional que usas para entrar en Furia, te mueves hasta la mitad de tu velocidad."
+    },
+    "Brutal Strike": {
+      "name": "Golpe brutal",
+      "description": "Al usar Ataque temerario, renuncia a la ventaja que te concede en un ataque basado en Fuerza que no tenga desventaja. Si impactas, añades 1d10 de daño del tipo del ataque y eliges un efecto de Golpe brutal: Golpe contundente empuja al objetivo 15 pies y te permite seguirlo hasta la mitad de tu velocidad sin provocar ataques de oportunidad; Golpe a los tendones reduce su velocidad 15 pies hasta tu siguiente turno."
+    },
+    "Relentless Rage": {
+      "name": "Furia implacable",
+      "description": "Si estás en Furia y fueras a quedar con 0 puntos de golpe sin morir de inmediato, haz una tirada de salvación de Constitución de CD 10. Si tienes éxito, tus puntos de golpe pasan a ser el doble de tu nivel de bárbaro. La CD aumenta en 5 tras cada uso y se restablece después de un descanso corto o largo."
+    },
+    "Improved Brutal Strike": {
+      "name": "Golpe brutal mejorado",
+      "description": "Obtienes otros dos efectos de Golpe brutal: Golpe tambaleante impone desventaja en la próxima tirada de salvación del objetivo e impide que haga ataques de oportunidad hasta tu siguiente turno; Golpe devastador concede +5 a la tirada de ataque de la siguiente criatura distinta de ti que lo ataque antes de tu siguiente turno. En el nivel 17, el daño adicional de Golpe brutal pasa a ser 2d10 y puedes aplicar dos efectos diferentes al mismo impacto."
+    },
+    "Persistent Rage": {
+      "name": "Furia persistente",
+      "description": "Una vez por descanso largo, cuando tiras iniciativa, recuperas todos los usos gastados de Furia. Ya no necesitas acciones para prolongarla; dura hasta 10 minutos y solo termina antes si quedas inconsciente o llevas armadura pesada."
+    },
+    "Indomitable Might": {
+      "name": "Poder indomable",
+      "description": "Si el resultado total de una prueba o tirada de salvación de Fuerza es inferior a tu puntuación de Fuerza, usa dicha puntuación en su lugar."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Primal Champion": {
+      "name": "Campeón primigenio",
+      "description": "Aumentas Fuerza y Constitución en 4 cada una; el máximo de ambas pasa a 25."
+    }
+  },
+  "Bard": {
+    "Bardic Inspiration": {
+      "name": "Inspiración bárdica",
+      "description": "Como acción adicional, das un dado de Inspiración bárdica a una criatura a 60 pies o menos que pueda verte u oírte. Durante 1 hora, después de fallar una prueba de d20, puede tirar el dado y sumarlo a la prueba. Una criatura solo puede tener uno de estos dados. Tienes tantos usos como tu modificador de Carisma (mínimo 1), recuperados tras un descanso largo. Tamaño del dado: d6 en los niveles 1-4, d8 en los niveles 5-9, d10 en los niveles 10-14 y d12 a partir del nivel 15."
+    },
+    "Spellcasting": {
+      "name": "Lanzamiento de conjuros",
+      "description": "Carisma es tu característica para lanzar conjuros de bardo; puedes usar un instrumento musical como canalizador. En el nivel 1 conoces dos trucos de bardo y aprendes otro en los niveles 4 y 10. En el nivel 1 preparas cuatro conjuros de bardo de nivel 1; el límite de conjuros preparados y los espacios de conjuro aumentan con tu nivel de bardo. Al ganar un nivel de bardo, puedes sustituir un conjuro preparado y un truco por conjuros de bardo válidos. Los conjuros siempre preparados por otros rasgos no cuentan para el límite."
+    },
+    "Expertise": {
+      "name": "Pericia",
+      "description": "Obtienes Pericia en dos habilidades en las que tengas competencia y en otras dos en el nivel 9 de bardo."
+    },
+    "Jack of All Trades": {
+      "name": "Aprendiz de todo",
+      "description": "Añade la mitad de tu bonificador por competencia, redondeada hacia abajo, a una prueba de característica basada en una habilidad en la que no tengas competencia y que no use de otro modo tu bonificador por competencia."
+    },
+    "Bard Subclass": {
+      "name": "Subclase de bardo",
+      "description": "Elige una subclase de bardo; obtienes sus rasgos en los niveles de bardo indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de bardo."
+    },
+    "Font of Inspiration": {
+      "name": "Fuente de inspiración",
+      "description": "Recuperas todos los usos de Inspiración bárdica tras un descanso corto o largo. Puedes gastar un espacio de conjuro, sin emplear acción, para recuperar un uso."
+    },
+    "Countercharm": {
+      "name": "Contraencantamiento",
+      "description": "Como reacción cuando tú o una criatura a 30 pies o menos falléis una tirada de salvación contra el estado hechizado o asustado, haces que se repita con ventaja."
+    },
+    "Magical Secrets": {
+      "name": "Secretos mágicos",
+      "description": "Cuando aumente tu límite de conjuros preparados, los nuevos conjuros pueden proceder de las listas de bardo, clérigo, druida o mago y cuentan como conjuros de bardo. También puedes sustituir un conjuro de bardo preparado por otro de esas listas."
+    },
+    "Superior Inspiration": {
+      "name": "Inspiración superior",
+      "description": "Cuando tiras iniciativa con menos de dos usos de Inspiración bárdica disponibles, recuperas los necesarios para tener dos."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Words of Creation": {
+      "name": "Palabras de creación",
+      "description": "Palabra de poder sanadora y Palabra de poder mortal están siempre preparados. Al lanzar cualquiera de los dos, puedes elegir un segundo objetivo a 10 pies o menos del primero."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Lanzamiento de conjuros",
+      "description": "Sabiduría es tu característica para lanzar conjuros de clérigo; puedes usar un símbolo sagrado como canalizador. En el nivel 1 conoces tres trucos de clérigo y aprendes otro en los niveles 4 y 10. En el nivel 1 preparas cuatro conjuros de clérigo de nivel 1; el límite de preparación y los espacios de conjuro aumentan con tu nivel de clérigo. Después de cada descanso largo, puedes sustituir cualquier conjuro de clérigo preparado por otro de un nivel que puedas lanzar. Los conjuros siempre preparados no cuentan para el límite."
+    },
+    "Divine Order": {
+      "name": "Orden divino",
+      "description": "Elige Protector para obtener competencia con armas marciales y entrenamiento con armadura pesada, o Taumaturgo para aprender otro truco de clérigo y sumar tu modificador de Sabiduría (mínimo +1) a las pruebas de Arcanos o Religión."
+    },
+    "Channel Divinity": {
+      "name": "Canalizar divinidad",
+      "description": "Obtienes Chispa divina y Expulsar muertos vivientes, además de las opciones de tu subclase. Puedes usar Canalizar divinidad dos veces en el nivel 2, tres veces en el nivel 6 y cuatro veces en el nivel 18; recuperas un uso tras un descanso corto y todos tras un descanso largo. Como acción mágica, Chispa divina cura a otra criatura que puedas ver a 30 pies o menos por 1d8 + tu modificador de Sabiduría, o le inflige esa cantidad de daño necrótico o radiante si falla una tirada de salvación de Constitución (la mitad si tiene éxito); los dados aumentan a 2d8 en el nivel 7, 3d8 en el 13 y 4d8 en el 18. Como acción mágica, Expulsar muertos vivientes obliga a los muertos vivientes elegidos a 30 pies o menos a hacer tiradas de salvación de Sabiduría o quedar asustados e incapacitados durante 1 minuto; intentan alejarse y el efecto termina si reciben daño o si quedas incapacitado o mueres."
+    },
+    "Cleric Subclass": {
+      "name": "Subclase de clérigo",
+      "description": "Elige una subclase de clérigo; obtienes sus rasgos en los niveles de clérigo indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de clérigo."
+    },
+    "Sear Undead": {
+      "name": "Abrasar muertos vivientes",
+      "description": "Al usar Expulsar muertos vivientes, cada muerto viviente que falle su tirada de salvación también recibe daño radiante igual a una tirada de tantos d8 como tu modificador de Sabiduría (mínimo 1d8)."
+    },
+    "Blessed Strikes": {
+      "name": "Golpes benditos",
+      "description": "Elige Golpe divino, que añade 1d8 de daño necrótico o radiante a un impacto con arma en cada uno de tus turnos, o Lanzamiento de conjuros potente, que añade tu modificador de Sabiduría al daño de los trucos de clérigo."
+    },
+    "Divine Intervention": {
+      "name": "Intervención divina",
+      "description": "Una vez por descanso largo, realiza una acción mágica para lanzar sin espacio de conjuro ni componentes materiales un conjuro de clérigo de nivel 5 o inferior que no requiera una reacción."
+    },
+    "Improved Blessed Strikes": {
+      "name": "Golpes benditos mejorados",
+      "description": "El daño adicional de Golpe divino pasa a ser 2d8. Si elegiste Lanzamiento de conjuros potente, cuando causes daño a una criatura con un truco de clérigo podrás otorgar a ti o a un aliado a 60 pies o menos puntos de golpe temporales iguales al doble de tu modificador de Sabiduría."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Greater Divine Intervention": {
+      "name": "Intervención divina mayor",
+      "description": "Intervención divina puede lanzar Deseo. Si eliges Deseo, no podrás volver a usar Intervención divina hasta terminar 2d4 descansos largos."
+    }
+  },
+  "Druid": {
+    "Spellcasting": {
+      "name": "Lanzamiento de conjuros",
+      "description": "Sabiduría es tu característica para lanzar conjuros de druida; puedes usar un canalizador druídico. En el nivel 1 conoces dos trucos de druida y aprendes otro en los niveles 4 y 10. En el nivel 1 preparas cuatro conjuros de druida de nivel 1; el límite de preparación y los espacios de conjuro aumentan con tu nivel de druida. Después de cada descanso largo, puedes sustituir conjuros de druida preparados por otros de niveles que puedas lanzar. Los conjuros siempre preparados no cuentan para el límite."
+    },
+    "Druidic": {
+      "name": "Druídico",
+      "description": "Conoces el idioma secreto druídico y siempre tienes preparado Hablar con los animales. Puedes dejar mensajes ocultos en druídico; otros druidas los detectan automáticamente, mientras que los demás necesitan una prueba de Investigación de CD 15 para descubrirlos, pero no pueden descifrarlos sin magia."
+    },
+    "Primal Order": {
+      "name": "Orden primigenio",
+      "description": "Elige Mago para aprender otro truco de druida y sumar tu modificador de Sabiduría (mínimo +1) a las pruebas de Arcanos o Naturaleza, o Guardián para obtener competencia con armas marciales y entrenamiento con armadura media."
+    },
+    "Wild Shape": {
+      "name": "Forma salvaje",
+      "description": "Como acción adicional, adoptas una de tus formas de bestia conocidas durante tantas horas como la mitad de tu nivel de druida. Comienzas con cuatro formas de VD 1/4 o inferior y sin velocidad de vuelo; en el nivel 4 conoces seis formas de hasta VD 1/2, y en el nivel 8 conoces ocho formas de hasta VD 1 y puedes elegir formas con velocidad de vuelo. Sustituye una forma conocida tras un descanso largo. Conservas tus puntos de golpe, dados de golpe, características mentales, rasgos de clase, idiomas y competencias; obtienes puntos de golpe temporales iguales a tu nivel de druida. No puedes lanzar conjuros en forma de bestia, pero sí mantener la concentración. Comienzas con dos usos; recuperas uno tras un descanso corto y todos tras uno largo. Los usos aumentan a tres en el nivel 6 y a cuatro en el nivel 17."
+    },
+    "Wild Companion": {
+      "name": "Compañero salvaje",
+      "description": "Gasta un espacio de conjuro o un uso de Forma salvaje como acción mágica para lanzar Encontrar familiar sin componentes materiales. El familiar es feérico y desaparece después de tu siguiente descanso largo."
+    },
+    "Druid Subclass": {
+      "name": "Subclase de druida",
+      "description": "Elige una subclase de druida; obtienes sus rasgos en los niveles de druida indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de druida."
+    },
+    "Wild Resurgence": {
+      "name": "Resurgimiento salvaje",
+      "description": "Una vez por turno, cuando no te queden usos de Forma salvaje, gasta un espacio de conjuro para recuperar un uso. Una vez por descanso largo, gasta un uso de Forma salvaje para recuperar un espacio de conjuro de nivel 1."
+    },
+    "Elemental Fury": {
+      "name": "Furia elemental",
+      "description": "Elige Lanzamiento de conjuros potente para añadir tu modificador de Sabiduría al daño de los trucos de druida, o Golpe primigenio para añadir 1d8 de daño de frío, fuego, relámpago o trueno a un impacto con arma o de bestia en Forma salvaje en cada uno de tus turnos."
+    },
+    "Improved Elemental Fury": {
+      "name": "Furia elemental mejorada",
+      "description": "Lanzamiento de conjuros potente añade 300 pies al alcance de un truco de druida que normalmente tenga un alcance de al menos 10 pies. El daño adicional de Golpe primigenio pasa a ser 2d8."
+    },
+    "Beast Spells": {
+      "name": "Conjuros en forma de bestia",
+      "description": "Puedes lanzar conjuros mientras estés en Forma salvaje, excepto aquellos con un componente material que tenga precio o que el conjuro consuma."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Archdruid": {
+      "name": "Archidruida",
+      "description": "Cuando tiras iniciativa sin usos de Forma salvaje, recuperas uno. Una vez por descanso largo, convierte los usos de Forma salvaje que no hayas gastado en un único espacio de conjuro, a razón de dos niveles de conjuro por uso. Además, solo envejeces un año por cada diez años transcurridos."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Estilo de combate",
+      "description": "Obtienes un talento de Estilo de combate a tu elección. Cada vez que ganas un nivel de guerrero, puedes sustituirlo por otro talento de Estilo de combate."
+    },
+    "Second Wind": {
+      "name": "Tomar aliento",
+      "description": "Como acción adicional, recuperas 1d10 + tu nivel de guerrero puntos de golpe. Comienzas con dos usos; obtienes un tercero en el nivel 4 y un cuarto en el nivel 10. Recuperas un uso tras un descanso corto y todos tras un descanso largo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestría con armas",
+      "description": "Elige tres tipos de armas sencillas o marciales cuyas propiedades de maestría puedas usar. Cambia una elección tras un descanso largo. El número aumenta a cuatro en el nivel 4, cinco en el nivel 10 y seis en el nivel 16."
+    },
+    "Action Surge": {
+      "name": "Oleada de acción",
+      "description": "En tu turno, realizas una acción adicional que no sea una acción mágica. Recuperas su uso tras un descanso corto o largo. En el nivel 17 tienes dos usos por descanso, pero solo puedes usarlo una vez por turno."
+    },
+    "Tactical Mind": {
+      "name": "Mente táctica",
+      "description": "Después de fallar una prueba de característica, gasta un uso de Tomar aliento para añadir 1d10 a la prueba. Si aún fallas, no gastas el uso."
+    },
+    "Fighter Subclass": {
+      "name": "Subclase de guerrero",
+      "description": "Elige una subclase de guerrero; obtienes sus rasgos en los niveles de guerrero indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 6, 8, 12, 14 y 16 de guerrero."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Atacas dos veces al realizar la acción Atacar. Este rasgo mejora en los niveles 11 y 20 de guerrero."
+    },
+    "Tactical Shift": {
+      "name": "Desplazamiento táctico",
+      "description": "Cuando activas Tomar aliento como acción adicional, te mueves hasta la mitad de tu velocidad sin provocar ataques de oportunidad."
+    },
+    "Indomitable": {
+      "name": "Indomable",
+      "description": "Tras fallar una tirada de salvación, repítela con un bonificador igual a tu nivel de guerrero; debes usar el nuevo resultado. Un uso por descanso largo en el nivel 9, dos en el 13 y tres en el 17."
+    },
+    "Tactical Master": {
+      "name": "Maestro táctico",
+      "description": "Al atacar con un arma cuya maestría puedas usar, sustituye su propiedad de maestría para ese ataque por Empujar, Debilitar o Ralentizar."
+    },
+    "Two Extra Attacks": {
+      "name": "Dos ataques adicionales",
+      "description": "Atacas tres veces, en lugar de una, siempre que realizas la acción Atacar."
+    },
+    "Studied Attacks": {
+      "name": "Ataques estudiados",
+      "description": "Después de fallar un ataque contra una criatura, tienes ventaja en tu siguiente tirada de ataque contra ella antes del final de tu siguiente turno."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Three Extra Attacks": {
+      "name": "Tres ataques adicionales",
+      "description": "Atacas cuatro veces, en lugar de una, siempre que realizas la acción Atacar."
+    }
+  },
+  "Monk": {
+    "Martial Arts": {
+      "name": "Artes marciales",
+      "description": "Mientras no lleves armadura ni escudo y estés desarmado o empuñes solo armas de monje (armas cuerpo a cuerpo sencillas o armas cuerpo a cuerpo marciales ligeras), puedes hacer un golpe sin armas como acción adicional, usar Destreza para sus tiradas de ataque y daño y para la CD de salvación de tus agarres y empujones, y sustituir su daño normal por tu dado de Artes marciales. El dado es d6 en los niveles 1-4, d8 en los niveles 5-10, d10 en los niveles 11-16 y d12 a partir del nivel 17."
+    },
+    "Unarmored Defense": {
+      "name": "Defensa sin armadura",
+      "description": "Sin armadura ni escudo, tu CA base es 10 + tu modificador de Destreza + tu modificador de Sabiduría."
+    },
+    "Monk's Focus": {
+      "name": "Enfoque del monje",
+      "description": "Tienes tantos puntos de Enfoque como tu nivel de monje y los recuperas tras un descanso corto o largo; la CD de salvación del Enfoque es 8 + tu modificador de Sabiduría + tu bonificador por competencia. Gasta 1 punto para usar Ráfaga de golpes (dos golpes sin armas como acción adicional), o usa Destrabarse o Correr como acción adicional sin coste. Gasta 1 punto para combinar Destrabarse con Esquivar (Defensa paciente) o Correr (Paso del viento, que también duplica la distancia de salto) como acción adicional."
+    },
+    "Unarmored Movement": {
+      "name": "Movimiento sin armadura",
+      "description": "Sin armadura ni escudo, tu velocidad aumenta 10 pies en los niveles 2-5, 15 pies en los niveles 6-9, 20 pies en los niveles 10-13, 25 pies en los niveles 14-17 y 30 pies a partir del nivel 18."
+    },
+    "Uncanny Metabolism": {
+      "name": "Metabolismo extraordinario",
+      "description": "Una vez por descanso largo, cuando tiras iniciativa, recuperas todos tus puntos de Enfoque y recuperas puntos de golpe iguales a tu nivel de monje + el resultado de un dado de Artes marciales."
+    },
+    "Deflect Attacks": {
+      "name": "Desviar ataques",
+      "description": "Como reacción cuando te impacta un ataque que incluye daño contundente, perforante o cortante, reduces el daño total en 1d10 + tu modificador de Destreza + tu nivel de monje. Si lo reduces a 0, gasta 1 punto de Enfoque para redirigirlo: una criatura visible a 5 pies o menos si el ataque era cuerpo a cuerpo, o a 60 pies o menos y que no esté tras cobertura total si era a distancia, hace una tirada de salvación de Destreza o recibe daño del tipo del ataque igual a dos dados de Artes marciales + tu modificador de Destreza."
+    },
+    "Monk Subclass": {
+      "name": "Subclase de monje",
+      "description": "Elige una subclase de monje; obtienes sus rasgos en los niveles de monje indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de monje."
+    },
+    "Slow Fall": {
+      "name": "Caída lenta",
+      "description": "Como reacción al caer, reduces el daño de caída en cinco veces tu nivel de monje."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Atacas dos veces siempre que realizas la acción Atacar."
+    },
+    "Stunning Strike": {
+      "name": "Golpe aturdidor",
+      "description": "Una vez por turno, después de impactar con un arma de monje o un golpe sin armas, gasta 1 punto de Enfoque. El objetivo hace una tirada de salvación de Constitución: si falla, queda aturdido hasta el inicio de tu siguiente turno; si tiene éxito, su velocidad se reduce a la mitad y el siguiente ataque contra él tiene ventaja hasta entonces."
+    },
+    "Empowered Strikes": {
+      "name": "Golpes potenciados",
+      "description": "Tu golpe sin armas puede infligir daño de fuerza en lugar de su tipo de daño normal."
+    },
+    "Evasion": {
+      "name": "Evasión",
+      "description": "En una tirada de salvación de Destreza para reducir el daño a la mitad, no recibes daño si tienes éxito y recibes la mitad si fallas, a menos que estés incapacitado."
+    },
+    "Acrobatic Movement": {
+      "name": "Movimiento acrobático",
+      "description": "Sin armadura ni escudo, puedes moverte por superficies verticales y líquidos durante tu turno sin caer mientras te mueves."
+    },
+    "Heightened Focus": {
+      "name": "Enfoque mejorado",
+      "description": "Por 1 punto de Enfoque, Ráfaga de golpes permite hacer tres golpes sin armas; Defensa paciente también te concede puntos de golpe temporales iguales a dos dados de Artes marciales; Paso del viento te permite transportar a una criatura voluntaria Grande o más pequeña que esté a 5 pies o menos sin provocar ataques de oportunidad."
+    },
+    "Self-Restoration": {
+      "name": "Autorestauración",
+      "description": "Al final de cada turno, terminas los estados hechizado, asustado o envenenado que te afecten. Ya no obtienes agotamiento por pasar tiempo sin comida ni bebida."
+    },
+    "Deflect Energy": {
+      "name": "Desviar energía",
+      "description": "Desviar ataques ahora funciona contra ataques de cualquier tipo de daño."
+    },
+    "Disciplined Survivor": {
+      "name": "Superviviente disciplinado",
+      "description": "Obtienes competencia en todas las tiradas de salvación. Cuando fallas una, gasta 1 punto de Enfoque para repetirla y usa el nuevo resultado."
+    },
+    "Perfect Focus": {
+      "name": "Enfoque perfecto",
+      "description": "Al tirar iniciativa sin usar Metabolismo extraordinario, recuperas puntos de Enfoque hasta tener cuatro si tenías tres o menos."
+    },
+    "Superior Defense": {
+      "name": "Defensa superior",
+      "description": "Al comienzo de tu turno, gasta 3 puntos de Enfoque para obtener resistencia a todo el daño excepto fuerza durante 1 minuto o hasta que quedes incapacitado."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Body and Mind": {
+      "name": "Cuerpo y mente",
+      "description": "Aumentas Destreza y Sabiduría en 4 cada una; el máximo de ambas pasa a 25."
+    }
+  },
+  "Paladin": {
+    "Lay On Hands": {
+      "name": "Imposición de manos",
+      "description": "Una reserva de curación igual a 5 veces tu nivel de paladín se recupera tras un descanso largo. Como acción adicional, toca a una criatura, incluido tú, para devolverle puntos de golpe de la reserva; en lugar de eso, gasta 5 puntos de la reserva para eliminar el estado envenenado."
+    },
+    "Spellcasting": {
+      "name": "Lanzamiento de conjuros",
+      "description": "Carisma es tu característica para lanzar conjuros de paladín; puedes usar un símbolo sagrado como canalizador. En el nivel 1 preparas dos conjuros de paladín de nivel 1; el límite de preparación y los espacios de conjuro aumentan con tu nivel de paladín. Tras un descanso largo, puedes sustituir un conjuro de paladín preparado por otro de un nivel que puedas lanzar. Los conjuros siempre preparados no cuentan para el límite."
+    },
+    "Weapon Mastery": {
+      "name": "Maestría con armas",
+      "description": "Elige dos tipos de armas con las que tengas competencia cuyas propiedades de maestría puedas usar. Puedes cambiar ambas elecciones tras un descanso largo."
+    },
+    "Fighting Style": {
+      "name": "Estilo de combate",
+      "description": "Obtienes un talento de Estilo de combate o eliges Guerrero bendecido para aprender dos trucos de clérigo, que cuentan como conjuros de paladín y usan Carisma. Puedes sustituir un truco de Guerrero bendecido al ganar un nivel de paladín."
+    },
+    "Paladin's Smite": {
+      "name": "Castigo del paladín",
+      "description": "Castigo divino está siempre preparado, y puedes lanzarlo una vez sin gastar un espacio de conjuro por descanso largo."
+    },
+    "Channel Divinity": {
+      "name": "Canalizar divinidad",
+      "description": "Obtienes Sentido divino y las opciones de Canalizar divinidad de tu subclase. Comienzas con dos usos, que aumentan a tres en el nivel 11 de paladín; recuperas uno tras un descanso corto y todos tras uno largo. Sentido divino es una acción adicional que revela celestiales, infernales, muertos vivientes y lugares u objetos consagrados o profanados a 60 pies o menos durante 10 minutos, hasta que quedes incapacitado."
+    },
+    "Paladin Subclass": {
+      "name": "Subclase de paladín",
+      "description": "Elige una subclase de paladín; obtienes sus rasgos en los niveles de paladín indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de paladín."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Atacas dos veces siempre que realizas la acción Atacar."
+    },
+    "Faithful Steed": {
+      "name": "Corcel fiel",
+      "description": "Encontrar corcel está siempre preparado. Lánzalo una vez sin gastar un espacio de conjuro por descanso largo."
+    },
+    "Aura of Protection": {
+      "name": "Aura de protección",
+      "description": "Tú y tus aliados dentro de tu emanación de 10 pies obtenéis un bonificador a las tiradas de salvación igual a tu modificador de Carisma (mínimo +1) mientras no estés incapacitado. Una criatura solo se beneficia del Aura de protección de un paladín a la vez."
+    },
+    "Abjure Foes": {
+      "name": "Abjurar enemigos",
+      "description": "Como acción mágica, gasta un uso de Canalizar divinidad para elegir hasta tantas criaturas como tu modificador de Carisma (mínimo una) a 60 pies o menos. Cada una hace una tirada de salvación de Sabiduría o queda asustada durante 1 minuto o hasta recibir daño; en cada turno puede moverse, realizar una acción o una acción adicional, pero solo una de esas opciones."
+    },
+    "Aura of Courage": {
+      "name": "Aura de valor",
+      "description": "Tú y tus aliados dentro de tu Aura de protección sois inmunes al estado asustado; si un aliado ya lo sufría, queda suprimido mientras permanezca en el aura."
+    },
+    "Radiant Strikes": {
+      "name": "Golpes radiantes",
+      "description": "Cada impacto con un arma cuerpo a cuerpo o un golpe sin armas inflige 1d8 de daño radiante adicional."
+    },
+    "Restoring Touch": {
+      "name": "Toque restaurador",
+      "description": "Al usar Imposición de manos, gasta 5 puntos de la reserva de curación por cada estado eliminado: cegado, hechizado, ensordecido, asustado, paralizado o aturdido. Esos puntos no devuelven puntos de golpe."
+    },
+    "Aura Expansion": {
+      "name": "Expansión del aura",
+      "description": "Tu Aura de protección se extiende a una emanación de 30 pies."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    }
+  },
+  "Ranger": {
+    "Spellcasting": {
+      "name": "Lanzamiento de conjuros",
+      "description": "Sabiduría es tu característica para lanzar conjuros de explorador; puedes usar un canalizador druídico. En el nivel 1 preparas dos conjuros de explorador de nivel 1; el límite de preparación y los espacios de conjuro aumentan con tu nivel de explorador. Tras un descanso largo, puedes sustituir un conjuro de explorador preparado por otro de un nivel que puedas lanzar. Los conjuros siempre preparados no cuentan para el límite."
+    },
+    "Favored Enemy": {
+      "name": "Enemigo predilecto",
+      "description": "Marca del cazador está siempre preparado. Puedes lanzarlo sin gastar un espacio de conjuro dos veces en los niveles 1-4, tres en los niveles 5-8, cuatro en los niveles 9-12, cinco en los niveles 13-16 y seis a partir del nivel 17. Recuperas los usos gratuitos tras un descanso largo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestría con armas",
+      "description": "Elige dos tipos de armas con las que tengas competencia cuyas propiedades de maestría puedas usar. Puedes cambiar ambas elecciones tras un descanso largo."
+    },
+    "Deft Explorer": {
+      "name": "Explorador hábil",
+      "description": "Obtienes Pericia en una habilidad en la que tengas competencia y aún no tengas Pericia, y aprendes dos idiomas a tu elección."
+    },
+    "Fighting Style": {
+      "name": "Estilo de combate",
+      "description": "Obtienes un talento de Estilo de combate o eliges Guerrero druídico para aprender dos trucos de druida, que cuentan como conjuros de explorador y usan Sabiduría. Puedes sustituir un truco de Guerrero druídico al ganar un nivel de explorador."
+    },
+    "Ranger Subclass": {
+      "name": "Subclase de explorador",
+      "description": "Elige una subclase de explorador; obtienes sus rasgos en los niveles de explorador indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de explorador."
+    },
+    "Extra Attack": {
+      "name": "Ataque Extra",
+      "description": "Atacas dos veces siempre que realizas la acción Atacar."
+    },
+    "Roving": {
+      "name": "Andariego",
+      "description": "Tu velocidad aumenta 10 pies mientras no lleves armadura pesada. Obtienes velocidades de trepar y nadar iguales a tu velocidad."
+    },
+    "Expertise": {
+      "name": "Pericia",
+      "description": "Obtienes Pericia en otras dos habilidades en las que tengas competencia y aún no tengas Pericia."
+    },
+    "Tireless": {
+      "name": "Incansable",
+      "description": "Como acción mágica, obtienes puntos de golpe temporales iguales a 1d8 + tu modificador de Sabiduría (mínimo 1), tantas veces como tu modificador de Sabiduría (mínimo una) por descanso largo. Un descanso corto también reduce tu nivel de agotamiento en uno."
+    },
+    "Relentless Hunter": {
+      "name": "Cazador implacable",
+      "description": "Recibir daño no puede interrumpir tu concentración en Marca del cazador."
+    },
+    "Nature's Veil": {
+      "name": "Velo de la naturaleza",
+      "description": "Como acción adicional, te vuelves invisible hasta el final de tu siguiente turno. Puedes usar este rasgo tantas veces como tu modificador de Sabiduría (mínimo una) por descanso largo."
+    },
+    "Precise Hunter": {
+      "name": "Cazador preciso",
+      "description": "Tienes ventaja en los ataques contra la criatura marcada por tu Marca del cazador."
+    },
+    "Feral Senses": {
+      "name": "Sentidos salvajes",
+      "description": "Obtienes visión ciega con un alcance de 30 pies."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Foe Slayer": {
+      "name": "Azote de enemigos",
+      "description": "El dado de daño de Marca del cazador pasa a ser un d10 en lugar de un d6."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Pericia",
+      "description": "Obtienes Pericia en dos habilidades en las que tengas competencia; obtienes Pericia en otras dos en el nivel 6 de pícaro."
+    },
+    "Sneak Attack": {
+      "name": "Ataque furtivo",
+      "description": "Una vez por turno, infliges daño adicional con un ataque de arma sutil o a distancia cuando tienes ventaja en el ataque. No necesitas ventaja si un aliado está a 5 pies o menos del objetivo, no está incapacitado y tu tirada no tiene desventaja. El daño adicional es 1d6 en el nivel 1 y aumenta en 1d6 en cada nivel impar de pícaro, hasta llegar a 10d6 en el nivel 19."
+    },
+    "Thieves' Cant": {
+      "name": "Jerga de ladrones",
+      "description": "Conoces la jerga de ladrones y otro idioma a tu elección."
+    },
+    "Weapon Mastery": {
+      "name": "Maestría con armas",
+      "description": "Elige dos tipos de armas con las que tengas competencia cuyas propiedades de maestría puedas usar. Puedes cambiar ambas elecciones tras un descanso largo."
+    },
+    "Cunning Action": {
+      "name": "Acción astuta",
+      "description": "En tu turno puedes realizar Correr, Destrabarse o Esconderse como acción adicional."
+    },
+    "Rogue Subclass": {
+      "name": "Subclase de pícaro",
+      "description": "Elige una subclase de pícaro; obtienes sus rasgos en los niveles de pícaro indicados."
+    },
+    "Steady Aim": {
+      "name": "Puntería firme",
+      "description": "Como acción adicional antes de moverte, obtienes ventaja en la siguiente tirada de ataque que hagas en este turno; tu velocidad pasa a ser 0 durante el resto del turno."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 10, 12 y 16 de pícaro."
+    },
+    "Cunning Strike": {
+      "name": "Golpe astuto",
+      "description": "Al infligir daño de Ataque furtivo, renuncia a 1d6 para añadir un efecto después del daño: Envenenar (debes llevar un equipo de envenenador; tirada de salvación de Constitución o el objetivo queda envenenado durante 1 minuto y repite la tirada al final de cada turno), Derribar (tirada de salvación de Destreza o un objetivo Grande o más pequeño queda derribado) o Retirarse (muévete hasta la mitad de tu velocidad sin provocar ataques de oportunidad). La CD de la tirada de salvación es 8 + tu modificador de Destreza + tu bonificador por competencia."
+    },
+    "Uncanny Dodge": {
+      "name": "Esquiva asombrosa",
+      "description": "Como reacción cuando un atacante al que puedas ver te impacta con una tirada de ataque, reduces a la mitad el daño que te inflige ese ataque, redondeando hacia abajo."
+    },
+    "Evasion": {
+      "name": "Evasión",
+      "description": "En una tirada de salvación de Destreza para reducir el daño a la mitad, no recibes daño si tienes éxito y recibes la mitad si fallas, a menos que estés incapacitado."
+    },
+    "Reliable Talent": {
+      "name": "Talento fiable",
+      "description": "Cuando una prueba de característica use tu competencia en una habilidad o herramienta, considera una tirada de d20 de 9 o menos como un 10."
+    },
+    "Improved Cunning Strike": {
+      "name": "Golpe astuto mejorado",
+      "description": "Aplica hasta dos efectos de Golpe astuto a un mismo Ataque furtivo y paga el coste en dados de cada efecto."
+    },
+    "Devious Strikes": {
+      "name": "Golpes retorcidos",
+      "description": "Obtienes más opciones de Golpe astuto: Aturdir cuesta 2d6 (tirada de salvación de Constitución o el objetivo solo puede moverse, realizar una acción o una acción adicional en su siguiente turno); Noquear cuesta 6d6 (tirada de salvación de Constitución o queda inconsciente durante hasta 1 minuto); Cegar cuesta 3d6 (tirada de salvación de Destreza o queda cegado hasta el final de su siguiente turno)."
+    },
+    "Slippery Mind": {
+      "name": "Mente escurridiza",
+      "description": "Obtienes competencia en las tiradas de salvación de Sabiduría y Carisma."
+    },
+    "Elusive": {
+      "name": "Elusivo",
+      "description": "Las tiradas de ataque contra ti no pueden tener ventaja, a menos que estés incapacitado."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Stroke of Luck": {
+      "name": "Golpe de suerte",
+      "description": "Una vez por descanso corto o largo, conviertes una prueba de d20 fallida en una tirada de 20."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Lanzamiento de conjuros",
+      "description": "Carisma es tu característica para lanzar conjuros de hechicero; puedes usar un canalizador arcano. En el nivel 1 conoces cuatro trucos de hechicero y aprendes otro en los niveles 4 y 10. En el nivel 1 preparas dos conjuros de hechicero de nivel 1; el límite de preparación y los espacios de conjuro aumentan con tu nivel de hechicero. Al ganar un nivel de hechicero, puedes sustituir un conjuro preparado y un truco por conjuros de hechicero válidos."
+    },
+    "Innate Sorcery": {
+      "name": "Hechicería innata",
+      "description": "Como acción adicional, liberas tu magia innata durante 1 minuto: la CD de salvación de tus conjuros de hechicero aumenta en 1 y tienes ventaja en las tiradas de ataque con ellos. Dos usos por descanso largo."
+    },
+    "Font of Magic": {
+      "name": "Fuente de magia",
+      "description": "Obtienes tantos puntos de hechicería como tu nivel de hechicero y los recuperas tras un descanso largo. Intercambia un espacio de conjuro por tantos puntos como el nivel del espacio sin gastar una acción, o gasta puntos como acción adicional para crear un espacio de hasta nivel 5. Costes: un espacio de nivel 1 cuesta 2 puntos; de nivel 2, 3; de nivel 3, 5; de nivel 4, 6; y de nivel 5, 7. Los espacios creados desaparecen tras un descanso largo. Debes tener el nivel mínimo de hechicero exigido para el espacio que creas."
+    },
+    "Metamagic": {
+      "name": "Metamagia",
+      "description": "Elige dos opciones de Metamagia y gasta puntos de hechicería para modificar conjuros. Normalmente solo una opción puede afectar a un conjuro. Sustituye una opción siempre que ganes un nivel de hechicero. Aprendes otras dos en el nivel 10 y otras dos en el nivel 17."
+    },
+    "Sorcerer Subclass": {
+      "name": "Subclase de hechicero",
+      "description": "Elige una subclase de hechicero; obtienes sus rasgos en los niveles de hechicero indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de hechicero."
+    },
+    "Sorcerous Restoration": {
+      "name": "Restauración mágica",
+      "description": "Una vez por descanso largo, después de terminar un descanso corto, recuperas puntos de hechicería gastados hasta un máximo igual a la mitad de tu nivel de hechicero, redondeada hacia abajo."
+    },
+    "Sorcery Incarnate": {
+      "name": "Hechicería encarnada",
+      "description": "Si no te quedan usos de Hechicería innata, gasta 2 puntos de hechicería al activarla. Mientras esté activa, puedes aplicar hasta dos opciones de Metamagia a cada conjuro."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Arcane Apotheosis": {
+      "name": "Apoteosis arcana",
+      "description": "Mientras Hechicería innata esté activa, una opción de Metamagia en cada uno de tus turnos no cuesta puntos de hechicería."
+    }
+  },
+  "Warlock": {
+    "Eldritch Invocations": {
+      "name": "Invocaciones sobrenaturales",
+      "description": "Aprendes una Invocación sobrenatural para la que cumplas los requisitos en el nivel 1. Cada vez que ganas un nivel de brujo, puedes sustituir una invocación siempre que no dejes de cumplir los requisitos de otra. El número conocido aumenta con tu nivel de brujo y llega a diez en el nivel 18; no puedes elegir la misma invocación dos veces, a menos que lo permita."
+    },
+    "Pact Magic": {
+      "name": "Magia de pacto",
+      "description": "Carisma es tu característica para lanzar conjuros de brujo; puedes usar un canalizador arcano. En el nivel 1 conoces dos trucos de brujo y aprendes otro en los niveles 4 y 10. En el nivel 1 preparas dos conjuros de brujo de nivel 1; el límite de preparación y el nivel uniforme de los espacios de Magia de pacto aumentan con tu nivel de brujo. Recuperas los espacios de Magia de pacto tras un descanso corto o largo. Al ganar un nivel de brujo, puedes sustituir un conjuro preparado y un truco."
+    },
+    "Magical Cunning": {
+      "name": "Astucia mágica",
+      "description": "Una vez por descanso largo, realiza un rito de 1 minuto para recuperar espacios de Magia de pacto gastados, hasta la mitad de tu número máximo, redondeada hacia arriba."
+    },
+    "Warlock Subclass": {
+      "name": "Subclase de brujo",
+      "description": "Elige una subclase de brujo; obtienes sus rasgos en los niveles de brujo indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de brujo."
+    },
+    "Contact Patron": {
+      "name": "Contactar con el patrón",
+      "description": "Contactar con otro plano está siempre preparado. Una vez por descanso largo, lánzalo sin gastar un espacio de conjuro para contactar con tu patrón y superar automáticamente su tirada de salvación."
+    },
+    "Mystic Arcanum": {
+      "name": "Arcanum místico",
+      "description": "Elige un conjuro de brujo de nivel 6 que puedas lanzar una vez por descanso largo sin gastar un espacio de conjuro. Obtienes un arcanum distinto de nivel 7 en el nivel 13 de brujo, otro de nivel 8 en el 15 y otro de nivel 9 en el 17, cada uno con su propio lanzamiento gratuito. Al ganar un nivel de brujo, puedes sustituir un arcanum por otro conjuro de brujo válido del mismo nivel."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Eldritch Master": {
+      "name": "Maestro sobrenatural",
+      "description": "Astucia mágica ahora restaura todos tus espacios de Magia de pacto gastados."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Lanzamiento de conjuros",
+      "description": "Inteligencia es tu característica para lanzar conjuros de mago; puedes usar un canalizador arcano o tu libro de conjuros. En el nivel 1 conoces tres trucos de mago y aprendes otro en los niveles 4 y 10; puedes sustituir uno tras un descanso largo. Tu libro comienza con seis conjuros de mago de nivel 1 y recibe dos conjuros de mago válidos en cada nivel de mago. En el nivel 1 preparas cuatro conjuros del libro; el límite y los espacios de conjuro aumentan con el nivel. Tras un descanso largo, puedes sustituir cualquier conjuro preparado por otro válido de tu libro."
+    },
+    "Ritual Adept": {
+      "name": "Adepto en rituales",
+      "description": "Lanza como ritual un conjuro de mago con la etiqueta Ritual de tu libro sin tenerlo preparado, mientras lees el libro."
+    },
+    "Arcane Recovery": {
+      "name": "Recuperación arcana",
+      "description": "Una vez por descanso largo, después de un descanso corto, recuperas espacios de conjuro cuyos niveles sumados no superen la mitad de tu nivel de mago, redondeada hacia arriba; ningún espacio recuperado puede ser de nivel 6 o superior."
+    },
+    "Scholar": {
+      "name": "Erudito",
+      "description": "Obtienes Pericia en una habilidad en la que tengas competencia a tu elección entre Arcanos, Historia, Investigación, Medicina, Naturaleza o Religión."
+    },
+    "Wizard Subclass": {
+      "name": "Subclase de mago",
+      "description": "Elige una subclase de mago; obtienes sus rasgos en los niveles de mago indicados."
+    },
+    "Ability Score Improvement": {
+      "name": "Mejora de característica",
+      "description": "Obtienes el talento Mejora de característica u otro talento para el que cumplas los requisitos. Vuelves a obtener este rasgo en los niveles 8, 12 y 16 de mago."
+    },
+    "Memorize Spell": {
+      "name": "Memorizar conjuro",
+      "description": "Tras un descanso corto, sustituye un conjuro de mago preparado de nivel 1 o superior por otro de nivel 1 o superior de tu libro de conjuros."
+    },
+    "Spell Mastery": {
+      "name": "Maestría con conjuros",
+      "description": "Elige en tu libro un conjuro de nivel 1 y otro de nivel 2 que se lancen con una acción. Están siempre preparados y puedes lanzar cada uno en su nivel mínimo sin gastar un espacio de conjuro. Tras un descanso largo, puedes sustituir una elección por otro conjuro válido del mismo nivel."
+    },
+    "Epic Boon": {
+      "name": "Don épico",
+      "description": "Obtienes un talento de don épico u otro talento para el que cumplas los requisitos."
+    },
+    "Signature Spells": {
+      "name": "Conjuros característicos",
+      "description": "Elige dos conjuros de nivel 3 de tu libro. Están siempre preparados y puedes lanzar cada uno una vez en el nivel 3 sin gastar un espacio de conjuro por descanso corto o largo."
+    }
+  }
+}

@@ -1,24 +1,24 @@
 {
   "Barbarian": {
     "name": "Barbaro",
-    "subclassFeatureName": "Sentiero Primordiale",
+    "subclassFeatureName": "Cammino Primordiale",
     "weaponProficiencies": [
       "semplice",
       "marziale"
     ],
     "startingEquipment": {
       "fixed": [
-        "Pacchetto dell'esploratore",
+        "Dotazione da esploratore",
         "4 giavellotti"
       ],
       "choices": [
         {
           "options": [
             [
-              "Grande ascia"
+              "Ascia bipenne"
             ],
             [
-              "qualsiasi arma da mischia marziale"
+              "una qualsiasi arma da mischia marziale"
             ]
           ]
         },
@@ -38,7 +38,7 @@
   },
   "Bard": {
     "name": "Bardo",
-    "subclassFeatureName": "Collegio Bardo",
+    "subclassFeatureName": "Collegio Bardico",
     "weaponProficiencies": [
       "semplice",
       "balestra a mano",
@@ -68,10 +68,10 @@
         {
           "options": [
             [
-              "Pacchetto del diplomatico"
+              "Dotazione da diplomatico"
             ],
             [
-              "Pacchetto dell'intrattenitore"
+              "Dotazione da intrattenitore"
             ]
           ]
         },
@@ -113,7 +113,7 @@
         {
           "options": [
             [
-              "Posta in scala"
+              "Corazza a scaglie"
             ],
             [
               "Armatura di cuoio"
@@ -127,7 +127,7 @@
           "options": [
             [
               "Balestra leggera",
-              "20 bulloni"
+              "20 quadrelli"
             ],
             [
               "qualsiasi arma semplice"
@@ -137,10 +137,10 @@
         {
           "options": [
             [
-              "Pacchetto del prete"
+              "Dotazione da sacerdote"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }
@@ -148,8 +148,8 @@
     }
   },
   "Druid": {
-    "name": "druido",
-    "subclassFeatureName": "Circolo dei Druidi",
+    "name": "Druido",
+    "subclassFeatureName": "Circolo Druidico",
     "weaponProficiencies": [
       "randelli",
       "pugnali",
@@ -165,7 +165,7 @@
     "startingEquipment": {
       "fixed": [
         "Armatura di cuoio",
-        "Pacchetto dell'esploratore",
+        "Dotazione da esploratore",
         "Focus druidico"
       ],
       "choices": [
@@ -193,7 +193,7 @@
     }
   },
   "Fighter": {
-    "name": "Combattente",
+    "name": "Guerriero",
     "subclassFeatureName": "Archetipo marziale",
     "weaponProficiencies": [
       "semplice",
@@ -217,12 +217,12 @@
         {
           "options": [
             [
-              "qualsiasi arma da guerra",
+              "una qualsiasi arma marziale",
               "Scudo"
             ],
             [
-              "qualsiasi arma da guerra",
-              "qualsiasi arma da guerra"
+              "una qualsiasi arma marziale",
+              "una qualsiasi arma marziale"
             ]
           ]
         },
@@ -230,7 +230,7 @@
           "options": [
             [
               "Balestra leggera",
-              "20 bulloni"
+              "20 quadrelli"
             ],
             [
               "Ascia",
@@ -241,10 +241,10 @@
         {
           "options": [
             [
-              "Pacchetto del Dungeoneer"
+              "Dotazione da speleologo"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }
@@ -276,10 +276,10 @@
         {
           "options": [
             [
-              "Pacchetto del Dungeoneer"
+              "Dotazione da speleologo"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }
@@ -302,12 +302,12 @@
         {
           "options": [
             [
-              "qualsiasi arma da guerra",
+              "una qualsiasi arma marziale",
               "Scudo"
             ],
             [
-              "qualsiasi arma da guerra",
-              "qualsiasi arma da guerra"
+              "una qualsiasi arma marziale",
+              "una qualsiasi arma marziale"
             ]
           ]
         },
@@ -324,10 +324,10 @@
         {
           "options": [
             [
-              "Pacchetto del prete"
+              "Dotazione da sacerdote"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }
@@ -350,7 +350,7 @@
         {
           "options": [
             [
-              "Posta in scala"
+              "Corazza a scaglie"
             ],
             [
               "Armatura di cuoio"
@@ -372,10 +372,10 @@
         {
           "options": [
             [
-              "Pacchetto del Dungeoneer"
+              "Dotazione da speleologo"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }
@@ -383,8 +383,8 @@
     }
   },
   "Rogue": {
-    "name": "Briccone",
-    "subclassFeatureName": "Archetipo Ladro",
+    "name": "Ladro",
+    "subclassFeatureName": "Archetipo Ladresco",
     "weaponProficiencies": [
       "armi semplici",
       "balestre a mano",
@@ -424,13 +424,13 @@
         {
           "options": [
             [
-              "Pacchetto da ladro"
+              "Dotazione da scassinatore"
             ],
             [
-              "Pacchetto del Dungeoneer"
+              "Dotazione da speleologo"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }
@@ -443,8 +443,8 @@
     "weaponProficiencies": [
       "pugnali",
       "freccette",
-      "imbracature",
-      "quarti",
+      "fionde",
+      "bastoni ferrati",
       "balestre leggere"
     ],
     "startingEquipment": {
@@ -457,7 +457,7 @@
           "options": [
             [
               "Balestra leggera",
-              "20 bulloni"
+              "20 quadrelli"
             ],
             [
               "qualsiasi arma semplice"
@@ -477,10 +477,10 @@
         {
           "options": [
             [
-              "Pacchetto del Dungeoneer"
+              "Dotazione da speleologo"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }
@@ -488,7 +488,7 @@
     }
   },
   "Warlock": {
-    "name": "Stregone",
+    "name": "Warlock",
     "subclassFeatureName": "Patrono ultraterreno",
     "weaponProficiencies": [
       "semplice"
@@ -504,7 +504,7 @@
           "options": [
             [
               "Balestra leggera",
-              "20 bulloni"
+              "20 quadrelli"
             ],
             [
               "qualsiasi arma semplice"
@@ -524,10 +524,10 @@
         {
           "options": [
             [
-              "Pacchetto da studioso"
+              "Dotazione da studioso"
             ],
             [
-              "Pacchetto del Dungeoneer"
+              "Dotazione da speleologo"
             ]
           ]
         },
@@ -542,13 +542,13 @@
     }
   },
   "Wizard": {
-    "name": "Procedura guidata",
+    "name": "Mago",
     "subclassFeatureName": "Tradizione Arcana",
     "weaponProficiencies": [
       "pugnali",
       "freccette",
-      "imbracature",
-      "quarti",
+      "fionde",
+      "bastoni ferrati",
       "balestre leggere"
     ],
     "startingEquipment": {
@@ -579,10 +579,10 @@
         {
           "options": [
             [
-              "Pacchetto da studioso"
+              "Dotazione da studioso"
             ],
             [
-              "Pacchetto dell'esploratore"
+              "Dotazione da esploratore"
             ]
           ]
         }

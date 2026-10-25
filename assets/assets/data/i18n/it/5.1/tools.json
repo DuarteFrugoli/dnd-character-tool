@@ -1,39 +1,39 @@
 {
   "Alchemist's supplies": {
-    "name": "Strumenti da alchimista"
+    "name": "Scorte da alchimista"
   },
   "Brewer's supplies": {
-    "name": "Forniture del birraio"
+    "name": "Scorte da birraio"
   },
   "Calligrapher's supplies": {
-    "name": "Forniture per calligrafo"
+    "name": "Scorte da calligrafo"
   },
   "Carpenter's tools": {
-    "name": "Strumenti del falegname"
+    "name": "Strumenti da falegname"
   },
   "Cartographer's tools": {
-    "name": "Gli strumenti del cartografo"
+    "name": "Strumenti da cartografo"
   },
   "Cobbler's tools": {
-    "name": "Gli strumenti del calzolaio"
+    "name": "Strumenti da calzolaio"
   },
   "Cook's utensils": {
-    "name": "Utensili da cucina"
+    "name": "Utensili da cuoco"
   },
   "Glassblower's tools": {
-    "name": "Gli strumenti del soffiatore di vetro"
+    "name": "Strumenti da soffiatore"
   },
   "Jeweler's tools": {
-    "name": "Strumenti del gioielliere"
+    "name": "Strumenti da gioielliere"
   },
   "Leatherworker's tools": {
-    "name": "Strumenti del conciatore"
+    "name": "Strumenti da conciatore"
   },
   "Mason's tools": {
-    "name": "Gli strumenti del muratore"
+    "name": "Strumenti da muratore"
   },
   "Painter's supplies": {
-    "name": "Forniture per pittori"
+    "name": "Strumenti da pittore"
   },
   "Potter's tools": {
     "name": "Strumenti da vasaio"
@@ -42,28 +42,28 @@
     "name": "Strumenti da fabbro"
   },
   "Tinker's tools": {
-    "name": "Strumenti da stagnino"
+    "name": "Strumenti da inventore"
   },
   "Weaver's tools": {
-    "name": "Gli strumenti del tessitore"
+    "name": "Strumenti da tessitore"
   },
   "Woodcarver's tools": {
-    "name": "Gli strumenti dell'intagliatore"
+    "name": "Strumenti da intagliatore"
   },
   "Dice set": {
-    "name": "Insieme dei dadi"
+    "name": "Dadi"
   },
   "Dragonchess set": {
-    "name": "Set di scacchi del drago"
+    "name": "Scacchi dei draghi"
   },
   "Playing card set": {
-    "name": "Set di carte da gioco"
+    "name": "Mazzo di carte"
   },
   "Three-Dragon Ante set": {
-    "name": "Set Ante a tre draghi"
+    "name": "Tre Draghi al Buio"
   },
   "Bagpipes": {
-    "name": "Cornamuse"
+    "name": "Cornamusa"
   },
   "Drum": {
     "name": "Tamburo"
@@ -87,33 +87,33 @@
     "name": "Flauto di Pan"
   },
   "Shawm": {
-    "name": "Shawm"
+    "name": "Ciaramella"
   },
   "Viol": {
     "name": "Viola"
   },
   "Disguise kit": {
-    "name": "Kit di travestimento"
+    "name": "Trucchi per il camuffamento"
   },
   "Forgery kit": {
-    "name": "Kit di falsificazione"
+    "name": "Arnesi da falsario"
   },
   "Thieves' tools": {
-    "name": "Strumenti da ladro"
+    "name": "Arnesi da scasso"
   },
   "Herbalism kit": {
-    "name": "Kit di erboristeria"
+    "name": "Borsa da erborista"
   },
   "Navigator's tools": {
-    "name": "Strumenti del navigatore"
+    "name": "Strumenti da navigatore"
   },
   "Poisoner's kit": {
-    "name": "Kit dell'avvelenatore"
+    "name": "Sostanze da avvelenatore"
   },
   "Vehicles (land)": {
     "name": "Veicoli (terrestri)"
   },
   "Vehicles (water)": {
-    "name": "Veicoli (acqua)"
+    "name": "Veicoli (acquatici)"
   }
 }

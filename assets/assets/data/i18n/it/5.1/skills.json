@@ -1,12 +1,12 @@
 {
   "Acrobatics": {
-    "name": "Acrobazie"
+    "name": "Acrobazia"
   },
   "Animal Handling": {
-    "name": "Gestione degli animali"
+    "name": "Addestrare animali"
   },
   "Arcana": {
-    "name": "Arcani"
+    "name": "Arcano"
   },
   "Athletics": {
     "name": "Atletica"
@@ -21,13 +21,13 @@
     "name": "Intuizione"
   },
   "Intimidation": {
-    "name": "Intimidazione"
+    "name": "Intimidire"
   },
   "Investigation": {
-    "name": "Investigazione"
+    "name": "Indagare"
   },
   "Medicine": {
-    "name": "Medicinale"
+    "name": "Medicina"
   },
   "Nature": {
     "name": "Natura"
@@ -36,7 +36,7 @@
     "name": "Percezione"
   },
   "Performance": {
-    "name": "Prestazione"
+    "name": "Intrattenere"
   },
   "Persuasion": {
     "name": "Persuasione"
@@ -45,7 +45,7 @@
     "name": "Religione"
   },
   "Sleight of Hand": {
-    "name": "Gioco di prestigio"
+    "name": "Rapidità di mano"
   },
   "Stealth": {
     "name": "Furtività"

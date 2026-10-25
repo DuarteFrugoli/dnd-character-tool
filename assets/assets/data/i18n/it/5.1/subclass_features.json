@@ -3,10 +3,10 @@
     "Path of the Berserker": {
       "Frenzy": {
         "name": "Frenesia",
-        "description": "A partire da quando scegli questo percorso al 3° livello, puoi entrare in frenesia quando sei in preda all'ira. Se lo fai, per la durata della tua ira puoi effettuare un singolo attacco con arma da mischia come azione bonus in ciascuno dei tuoi turni successivi a questo. Quando la tua rabbia termina, soffri di un livello di esaurimento."
+        "description": "Dal 3° livello, quando entri in ira puoi scegliere di entrare in frenesia. Per tutta la durata dell'ira puoi effettuare un attacco con arma da mischia come azione bonus in ciascuno dei turni successivi. Al termine dell'ira subisci un livello di indebolimento."
       },
       "Mindless Rage": {
-        "name": "Rabbia senza senso",
+        "name": "Ira insensata",
         "description": "A partire dal 6° livello, non puoi essere affascinato o spaventato mentre sei in ira. Se si è affascinati o spaventati quando si entra in ira, l'effetto è sospeso per la durata dell'ira."
       },
       "Intimidating Presence": {
@@ -83,14 +83,14 @@
     "Knowledge Domain": {
       "Blessings of Knowledge": {
         "name": "Benedizioni della Conoscenza",
-        "description": "Al 1° livello impari due lingue a tua scelta. Inoltre diventi esperto in due delle seguenti abilità: Arcani, Storia, Natura o Religione. Il tuo bonus di competenza viene raddoppiato per qualsiasi prova di caratteristica effettuata che utilizzi una di queste abilità."
+        "description": "Al 1° livello impari due lingue a tua scelta. Inoltre ottieni competenza in due delle seguenti abilità: Arcano, Storia, Natura o Religione. Il tuo bonus di competenza raddoppia per le prove di caratteristica che utilizzano quelle abilità."
       },
       "Channel Divinity: Knowledge of the Ages": {
-        "name": "Divinità del Canale: Conoscenza delle Ere",
+        "name": "Incanalare Divinità: Conoscenza delle Ere",
         "description": "A partire dal 2° livello, puoi usare Incanalare Divinità per attingere a un pozzo divino di conoscenza. Come azione, scegli un'abilità o uno strumento. Per 10 minuti, hai competenza con l'abilità o lo strumento scelto."
       },
       "Channel Divinity: Read Thoughts": {
-        "name": "Canalizzare Divinità: Leggi i Pensieri",
+        "name": "Incanalare Divinità: Leggere i Pensieri",
         "description": "Al 6° livello, puoi usare Incanalare Divinità per leggere i pensieri di una creatura. Si lancia Individuazione dei Pensieri (la CD del tiro salvezza è pari alla CD del tiro salvezza degli incantesimi da chierico) senza slot incantesimo o componenti richiesti. Il bersaglio che fallisce il tiro salvezza viene affascinato da te per 1 minuto o finché non gli infliggi danni."
       },
       "Potent Spellcasting": {
@@ -112,7 +112,7 @@
         "description": "Inoltre, a partire dal 1° livello, i tuoi incantesimi di guarigione sono più efficaci. Ogni volta che si usa un incantesimo di 1° livello o superiore per ripristinare punti ferita su una creatura, la creatura recupera punti ferita aggiuntivi pari a 2 + il livello dell'incantesimo."
       },
       "Channel Divinity: Preserve Life": {
-        "name": "Incanalare la divinità: preservare la vita",
+        "name": "Incanalare Divinità: Preservare la Vita",
         "description": "A partire dal 2° livello, come azione, presenti il ​​tuo simbolo sacro ed evochi energia curativa che può ripristinare un numero di punti ferita pari a cinque volte il tuo livello da chierico. Scegli qualsiasi creatura entro 9 metri da te e dividi quei punti ferita tra loro. Questa caratteristica può riportare una creatura a non più della metà dei suoi punti ferita massimi."
       },
       "Blessed Healer": {
@@ -134,7 +134,7 @@
         "description": "Quando scegli questo dominio al 1° livello, ottieni il trucchetto Luce se non lo conosci già."
       },
       "Warding Flare": {
-        "name": "Bagliore protettivo",
+        "name": "Lampo di interdizione",
         "description": "Inoltre al 1° livello, quando vieni attaccato da una creatura entro 9 metri da te e che puoi vedere, puoi usare la tua reazione per imporre svantaggio al tiro per colpire, provocando un bagliore di luce davanti all'attaccante. È possibile utilizzare questo privilegio un numero di volte pari al proprio modificatore di Saggezza (minimo una volta) e riacquistare tutti gli usi con un riposo lungo."
       },
       "Channel Divinity: Radiance of the Dawn": {
@@ -157,7 +157,7 @@
     "Nature Domain": {
       "Acolyte of Nature": {
         "name": "Accolito della Natura",
-        "description": "Al 1° livello, apprendi un trucchetto da druido a tua scelta. Ottieni anche competenza in una delle seguenti abilità: Gestione degli animali, Natura o Sopravvivenza."
+        "description": "Al 1° livello apprendi un trucchetto da druido a tua scelta. Ottieni anche competenza in una delle seguenti abilità: Addestrare animali, Natura o Sopravvivenza."
       },
       "Bonus Proficiency": {
         "name": "Competenza bonus",
@@ -186,7 +186,7 @@
         "description": "Al 1° livello, ottieni competenza nelle armi da guerra e nelle armature pesanti."
       },
       "Wrath of the Storm": {
-        "name": "L'ira della tempesta",
+        "name": "Collera della tempesta",
         "description": "Inoltre, al 1° livello, quando una creatura entro 1,5 metri da te e che puoi vedere ti colpisce con un attacco, puoi usare la tua reazione per far sì che la creatura effettui un tiro salvezza su Destrezza. Se fallisce il tiro salvezza, subisce 2d8 danni da fulmine o tuono (a tua scelta), o la metà se lo supera. È possibile utilizzare questo privilegio un numero di volte pari al proprio modificatore di Saggezza (minimo una volta) e riacquistare tutti gli usi con un riposo lungo."
       },
       "Channel Divinity: Destructive Wrath": {
@@ -216,7 +216,7 @@
         "description": "A partire dal 2° livello, come azione, crei un perfetto duplicato illusorio di te stesso che dura 1 minuto. L'illusione appare in uno spazio non occupato che puoi vedere entro 9 metri da te. Come azione bonus nel tuo turno, puoi spostare l'illusione fino a 9 metri. Puoi lanciare incantesimi come se fossi nello spazio dell'illusione, ma devi usare i tuoi sensi."
       },
       "Channel Divinity: Cloak of Shadows": {
-        "name": "Divinità Incanalata: Mantello delle Ombre",
+        "name": "Incanalare Divinità: Mantello delle Ombre",
         "description": "A partire dal 6° livello, come azione, diventi invisibile fino alla fine del tuo turno successivo. Diventi visibile se attacchi o lanci un incantesimo."
       },
       "Divine Strike": {
@@ -349,7 +349,7 @@
     "Eldritch Knight": {
       "Spellcasting": {
         "name": "Incantesimi",
-        "description": "Quando raggiungi il 3° livello, aumenti la tua abilità marziale con la capacità di lanciare incantesimi. L'intelligenza è la tua abilità da incantatore per gli incantesimi da mago. Conosci due trucchetti da mago e tre incantesimi da mago di 1° livello, almeno due dei quali devono provenire dalle scuole di abiurazione o di invocazione."
+        "description": "Al 3° livello affianchi la magia alla tua abilità marziale. Intelligenza è la tua caratteristica da incantatore per gli incantesimi da mago. Conosci due trucchetti da mago e tre incantesimi da mago di 1° livello, almeno due dei quali devono appartenere alle scuole di Abiurazione o Invocazione."
       },
       "Weapon Bond": {
         "name": "Legame d'arma",
@@ -424,8 +424,8 @@
   "Paladin": {
     "Oath of Devotion": {
       "Channel Divinity: Sacred Weapon": {
-        "name": "Divinità Incanalata: Arma Sacra",
-        "description": "Con un'azione, puoi infondere energia positiva in un'arma che impugni, utilizzando Incanalare Divinità. Per 1 minuto, aggiungi il tuo modificatore di Carisma ai tiri per colpire effettuati con quell'arma (minimo +1). L'arma emette anche luce intensa in un raggio di 6 metri e luce fioca 20 piedi oltre. Se l'arma non è già magica, diventa magica per la durata."
+        "name": "Incanalare Divinità: Arma Sacra",
+        "description": "Con un'azione, puoi infondere energia positiva in un'arma che impugni, utilizzando Incanalare Divinità. Per 1 minuto, aggiungi il tuo modificatore di Carisma ai tiri per colpire effettuati con quell'arma (minimo +1). L'arma emette anche luce intensa in un raggio di 6 metri e luce fioca per altri 6 metri oltre. Se l'arma non è già magica, diventa magica per la durata."
       },
       "Channel Divinity: Turn the Unholy": {
         "name": "Incanalare Divinità: Trasforma gli Empi",
@@ -458,11 +458,11 @@
         "description": "A partire dal 7° livello, la magia antica grava così pesantemente su di te da formare una protezione mistica. Tu e le creature amiche entro 3 metri da te avete resistenza ai danni degli incantesimi. Al 18° livello, la portata di quest'aura aumenta a 9 metri."
       },
       "Undying Sentinel": {
-        "name": "Sentinella immortale",
+        "name": "Sentinella imperitura",
         "description": "A partire dal 15° livello, quando sei ridotto a 0 punti ferita e non vieni ucciso sul colpo, puoi invece scegliere di scendere a 1 punto ferita. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo lungo. Inoltre, non soffri di nessuno degli svantaggi della vecchiaia e non puoi invecchiare magicamente."
       },
       "Elder Champion": {
-        "name": "Campione anziano",
+        "name": "Campione degli Antichi",
         "description": "Al 20° livello, come azione, assumi la forma di un'antica forza della natura per 1 minuto. Ottieni i seguenti benefici: all'inizio di ciascuno dei tuoi turni, recuperi 10 punti ferita; ogni volta che lanci un incantesimo da paladino con un tempo di lancio pari a 1 azione, puoi invece lanciarlo utilizzando un'azione bonus; le creature nemiche entro 3 metri da te hanno svantaggio ai tiri salvezza contro i tuoi incantesimi da paladino e le opzioni di Incanalare Divinità."
       }
     },
@@ -575,7 +575,7 @@
     "Arcane Trickster": {
       "Spellcasting": {
         "name": "Incantesimi",
-        "description": "Quando raggiungi il 3° livello, aumenti le tue abilità furfanti con abilità magiche. L'intelligenza è la tua abilità da incantatore per gli incantesimi da mago. Conosci tre trucchetti da mago (mano magica più altri due a tua scelta) e tre incantesimi da mago di 1° livello, almeno due dei quali devono provenire dalle scuole di Ammaliamento e Illusione."
+        "description": "Al 3° livello affianchi la magia alle tue abilità da ladro. Intelligenza è la tua caratteristica da incantatore per gli incantesimi da mago. Conosci tre trucchetti da mago (Mano Magica e altri due a tua scelta) e tre incantesimi da mago di 1° livello, almeno due dei quali devono appartenere alle scuole di Ammaliamento o Illusione."
       },
       "Mage Hand Legerdemain": {
         "name": "Prestidigitazione della mano magica",
@@ -653,7 +653,7 @@
       },
       "Beguiling Defenses": {
         "name": "Difese ingannevoli",
-        "description": "A partire dal 10° livello, sei immune all'essere affascinato. Quando un'altra creatura tenta di affascinarti, puoi usare la tua reazione per tentare di riportare l'incantesimo su quella creatura. La creatura deve riuscire un tiro salvezza su Saggezza contro la CD del tiro salvezza del tuo incantesimo da stregone o essere affascinata da te per 1 minuto o finché la creatura non subisce danni."
+        "description": "Dal 10° livello sei immune alla condizione di affascinato. Quando un'altra creatura cerca di affascinarti, puoi usare la tua reazione per rivolgere l'effetto contro di lei. La creatura deve superare un tiro salvezza su Saggezza contro la CD dei tuoi incantesimi da warlock, altrimenti è affascinata da te per 1 minuto o finché non subisce danni."
       },
       "Dark Delirium": {
         "name": "Delirio Oscuro",
@@ -663,10 +663,10 @@
     "The Fiend": {
       "Dark One's Blessing": {
         "name": "La benedizione dell'Oscuro",
-        "description": "A partire dal 1° livello, quando riduci una creatura ostile a 0 punti ferita, guadagni punti ferita temporanei pari al tuo modificatore di Carisma + il tuo livello da Stregone (minimo 1)."
+        "description": "Dal 1° livello, quando riduci una creatura ostile a 0 punti ferita, ottieni punti ferita temporanei pari al tuo modificatore di Carisma + il tuo livello da warlock (minimo 1)."
       },
       "Dark One's Own Luck": {
-        "name": "La fortuna dell'Oscuro",
+        "name": "Fortuna dell'Oscuro",
         "description": "A partire dal 6° livello, quando effettui una prova di caratteristica o un tiro salvezza, puoi usare questa capacità per aggiungere un d10 al tuo tiro. Puoi farlo dopo aver visto il tiro iniziale ma prima che si verifichi qualsiasi effetto del tiro. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
       },
       "Fiendish Resilience": {
@@ -674,7 +674,7 @@
         "description": "A partire dal 10° livello, puoi scegliere un tipo di danno quando termini un riposo breve o lungo. Ottieni resistenza a quel tipo di danno finché non ne scegli uno diverso con questa capacità. I danni provocati dalle armi magiche o dalle armi d'argento ignorano questa resistenza."
       },
       "Hurl Through Hell": {
-        "name": "Lanciati attraverso l'inferno",
+        "name": "Scagliare all'inferno",
         "description": "A partire dal 14° livello, quando colpisci una creatura con un attacco, puoi usare questa capacità per trasportare istantaneamente il bersaglio attraverso i piani inferiori. La creatura scompare e sfreccia attraverso un paesaggio da incubo. Alla fine del tuo turno successivo, il bersaglio ritorna nello spazio precedentemente occupato o nello spazio non occupato più vicino. Se il bersaglio non è un demone, subisce 10d10 danni psichici mentre si riprende dalla sua orribile esperienza. Una volta utilizzata questa capacità, non potrai utilizzarla nuovamente finché non avrai terminato un riposo lungo."
       }
     },
@@ -684,7 +684,7 @@
         "description": "A partire dal 1° livello, la tua conoscenza aliena ti dà la capacità di toccare le menti di altre creature. Puoi comunicare telepaticamente con qualsiasi creatura che puoi vedere entro 9 metri da te. Non è necessario condividere un linguaggio con la creatura affinché possa comprendere le tue espressioni telepatiche, ma la creatura deve essere in grado di comprendere almeno un linguaggio."
       },
       "Entropic Ward": {
-        "name": "Reparto entropico",
+        "name": "Interdizione entropica",
         "description": "Al 6° livello, quando una creatura effettua un tiro per colpire contro di te, puoi usare la tua reazione per imporre uno svantaggio a quel tiro. Se l'attacco ti manca, il tuo prossimo tiro per colpire contro la creatura ha vantaggio se lo effettui prima della fine del tuo turno successivo. Una volta utilizzata questa capacità, non è possibile utilizzarla nuovamente finché non si termina un riposo breve o lungo."
       },
       "Thought Shield": {
@@ -788,20 +788,20 @@
     },
     "School of Evocation": {
       "Evocation Savant": {
-        "name": "Evocazione Savant",
-        "description": "A partire da quando selezioni questa scuola al 2° livello, l'oro e il tempo che devi spendere per copiare un incantesimo di evocazione nel tuo libro degli incantesimi vengono dimezzati."
+        "name": "Invocatore Sapiente",
+        "description": "Dal 2° livello, l'oro e il tempo necessari per copiare un incantesimo di Invocazione nel tuo libro degli incantesimi sono dimezzati."
       },
       "Sculpt Spells": {
-        "name": "Scolpisci incantesimi",
-        "description": "A partire dal 2° livello, quando lanci un incantesimo di evocazione che influenza altre creature che puoi vedere, puoi sceglierne un numero pari a 1 + il livello dell'incantesimo. Le creature scelte superano automaticamente i loro tiri salvezza contro l'incantesimo e non subiscono danni se normalmente subirebbero la metà dei danni in caso di tiro salvezza riuscito."
+        "name": "Plasmare Incantesimi",
+        "description": "Dal 2° livello, quando lanci un incantesimo di Invocazione che influenza altre creature che puoi vedere, puoi sceglierne un numero pari a 1 + il livello dell'incantesimo. Le creature scelte superano automaticamente i loro tiri salvezza contro l'incantesimo e non subiscono danni se normalmente subirebbero metà dei danni con un tiro salvezza riuscito."
       },
       "Potent Cantrip": {
         "name": "Trucchetto potente",
         "description": "A partire dal 6° livello, quando una creatura supera un tiro salvezza contro il trucchetto, la creatura subisce la metà dei danni del trucchetto (se presenti) ma non subisce alcun effetto aggiuntivo dal trucchetto."
       },
       "Empowered Evocation": {
-        "name": "Evocazione Potenziata",
-        "description": "A partire dal 10° livello, puoi aggiungere il tuo modificatore di Intelligenza a un tiro per i danni di qualsiasi incantesimo di evocazione da mago che lanci."
+        "name": "Invocazione Potente",
+        "description": "Dal 10° livello, puoi aggiungere il tuo modificatore di Intelligenza a un tiro per i danni di qualsiasi incantesimo di Invocazione da mago che lanci."
       },
       "Overchannel": {
         "name": "Canalizzazione eccessiva",

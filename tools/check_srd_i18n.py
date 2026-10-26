@@ -31,6 +31,12 @@ def missing_paths(source, overlay, path=()):
             yield path
 
 
+def unexpected_top_level_keys(source, overlay):
+    if not isinstance(source, dict) or not isinstance(overlay, dict):
+        return []
+    return sorted(overlay.keys() - source.keys())
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("locales", nargs="*", choices=tuple(translation.LOCALE_LANG))
@@ -41,6 +47,7 @@ def main() -> int:
     files = args.file or sorted(translation.EXTRACTORS)
     locales = args.locales or list(translation.LOCALE_LANG)
     missing_total = 0
+    unexpected_total = 0
     for filename in files:
         expected = translation.EXTRACTORS[filename]()
         for locale in locales:
@@ -50,12 +57,22 @@ def main() -> int:
             except (OSError, UnicodeError, ValueError):
                 overlay = {}
             missing = list(missing_paths(expected, overlay))
+            unexpected = unexpected_top_level_keys(expected, overlay)
             missing_total += len(missing)
-            print(f"{args.pack} {locale} {filename}: {len(missing)} missing text fields")
+            unexpected_total += len(unexpected)
+            print(
+                f"{args.pack} {locale} {filename}: {len(missing)} missing text fields, "
+                f"{len(unexpected)} unexpected top-level keys"
+            )
             for parts in missing[:5]:
                 print("  " + "/".join(parts))
-    print(f"Total missing text fields: {missing_total}")
-    return int(missing_total > 0)
+            for key in unexpected[:5]:
+                print(f"  unexpected: {key}")
+    print(
+        f"Total missing text fields: {missing_total}; "
+        f"unexpected top-level keys: {unexpected_total}"
+    )
+    return int(missing_total > 0 or unexpected_total > 0)
 
 
 if __name__ == "__main__":

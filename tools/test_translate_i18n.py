@@ -9,7 +9,7 @@ from unittest.mock import patch
 from urllib.error import HTTPError, URLError
 
 import translate_i18n as translation
-from check_srd_i18n import missing_paths
+from check_srd_i18n import missing_paths, unexpected_top_level_keys
 
 
 class TranslationToolTests(unittest.TestCase):
@@ -119,6 +119,11 @@ class TranslationToolTests(unittest.TestCase):
         source = {"item": {"name": "Sword", "description": "A blade"}}
         overlay = {"item": {"name": "Espada"}}
         self.assertEqual(list(missing_paths(source, overlay)), [("item", "description")])
+
+    def test_coverage_check_reports_unexpected_top_level_keys(self):
+        source = {"item": {"name": "Sword"}}
+        overlay = {"item": {"name": "Espada"}, "orphan": {"name": "Orphan"}}
+        self.assertEqual(unexpected_top_level_keys(source, overlay), ["orphan"])
 
     def test_technical_fields_are_not_translated_or_counted(self):
         source = {"choice": {

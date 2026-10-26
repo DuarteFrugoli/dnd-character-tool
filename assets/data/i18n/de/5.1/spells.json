@@ -955,7 +955,7 @@
     "material": "ein Tropfen Wasser und eine Prise Staub"
   },
   "Death Ward": {
-    "name": "Todesstation",
+    "name": "Schutz vor dem Tod",
     "description": "Sie berühren eine Kreatur und gewähren ihr einen gewissen Schutz vor dem Tod. Wenn das Ziel zum ersten Mal aufgrund des erlittenen Schadens auf 0 Trefferpunkte sinkt, sinkt das Ziel stattdessen auf 1 Trefferpunkt und der Zauber endet. Wenn der Zauber noch wirksam ist, wenn das Ziel einem Effekt ausgesetzt ist, der es sofort töten würde, ohne Schaden zuzufügen, wird dieser Effekt stattdessen beim Ziel annulliert und der Zauber endet.",
     "higherLevels": null
   },

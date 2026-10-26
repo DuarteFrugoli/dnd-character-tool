@@ -20,11 +20,11 @@
     "description": "Une créature effrayée est désavantagée aux tests de caractéristiques et aux jets d'attaque tant que la source de sa peur est dans sa ligne de vue. La créature ne peut pas volontairement se rapprocher de la source de sa peur."
   },
   "Grappled": {
-    "name": "Aux prises",
+    "name": "Agrippé",
     "description": "La vitesse d'une créature agrippée devient 0 et elle ne peut bénéficier d'aucun bonus à sa vitesse. La condition prend fin si le grappler est frappé d'incapacité. La condition prend également fin si un effet retire la créature agrippée de la portée du grappin ou de l'effet de grappin."
   },
   "Incapacitated": {
-    "name": "Incapable",
+    "name": "Incapable d'agir",
     "description": "Une créature frappée d'incapacité ne peut pas entreprendre d'actions ou de réactions."
   },
   "Invisible": {
@@ -44,11 +44,11 @@
     "description": "Une créature empoisonnée a un désavantage aux jets d'attaque et aux tests de caractéristiques."
   },
   "Prone": {
-    "name": "Sujet",
+    "name": "À terre",
     "description": "La seule option de mouvement d'une créature couchée est de ramper, à moins qu'elle ne se relève et mette ainsi fin à son état. La créature est désavantagée aux jets d'attaque. Un jet d'attaque contre la créature a un avantage si l'attaquant se trouve à moins de 1,50 mètre de la créature. Sinon, le jet d’attaque est désavantageux."
   },
   "Restrained": {
-    "name": "Restreint",
+    "name": "Entravé",
     "description": "La vitesse d'une créature restreinte devient 0 et elle ne peut bénéficier d'aucun bonus à sa vitesse. Les jets d'attaque contre la créature ont un avantage, et les jets d'attaque de la créature ont un désavantage. La créature a un désavantage aux jets de sauvegarde de Dextérité."
   },
   "Stunned": {

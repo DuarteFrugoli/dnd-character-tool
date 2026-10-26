@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Furia",
-      "description": "En la batalla, luchas con una ferocidad primordial. En tu turno, puedes entrar en ira como acción adicional. Mientras estás furioso, tienes ventaja en las pruebas de Fuerza y ​​tiros de salvación, obtienes una bonificación a las tiradas de daño cuerpo a cuerpo usando Fuerza (+2 en los niveles de bárbaro 1-8, +3 en los niveles 9-15 y +4 en los niveles 16-20) y tienes resistencia al daño contundente, perforante y cortante. Tu rabia dura 1 minuto. Termina antes si quedas inconsciente o si tu turno termina y no has atacado a una criatura hostil desde tu último turno ni has recibido daño desde entonces."
+      "description": "En combate luchas con ferocidad primordial. Durante tu turno, puedes entrar en furia como acción adicional. Mientras estás en furia, tienes ventaja en las pruebas y tiradas de salvación de Fuerza, recibes un bonificador a las tiradas de daño de ataques cuerpo a cuerpo que usan Fuerza (+2 en los niveles de bárbaro 1-8, +3 en los niveles 9-15 y +4 en los niveles 16-20) y tienes resistencia al daño contundente, perforante y cortante. Tu furia dura 1 minuto. Termina antes si quedas inconsciente o si termina tu turno sin que hayas atacado a una criatura hostil ni recibido daño desde tu turno anterior."
     },
     "Unarmored Defense": {
       "name": "Defensa sin armadura",
@@ -18,11 +18,11 @@
     },
     "Primal Path": {
       "name": "Camino primordial",
-      "description": "Eliges un camino que da forma a la naturaleza de tu ira."
+      "description": "Eliges un camino que moldea la naturaleza de tu furia."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Extra Attack": {
       "name": "Ataque extra",
@@ -34,19 +34,19 @@
     },
     "Feral Instinct": {
       "name": "Instinto salvaje",
-      "description": "Tus instintos están tan afinados que tienes ventaja en las tiradas de iniciativa. Además, si te sorprenden al comienzo del combate y no estás incapacitado, puedes actuar normalmente en tu primer turno, pero solo si entras en ira antes de hacer cualquier otra cosa en ese turno."
+      "description": "Tus instintos están tan afinados que tienes ventaja en las tiradas de iniciativa. Si te sorprenden al inicio del combate y no estás incapacitado, puedes actuar normalmente durante tu primer turno, pero solo si entras en furia antes de hacer cualquier otra cosa en ese turno."
     },
     "Brutal Critical": {
       "name": "Crítico brutal",
       "description": "Puedes tirar un dado de daño de arma adicional al determinar el daño adicional por un golpe crítico con un ataque cuerpo a cuerpo. Esto aumenta a dos dados adicionales en el nivel 13 y tres dados adicionales en el nivel 17."
     },
     "Relentless Rage": {
-      "name": "Rabia implacable",
-      "description": "Tu rabia puede hacerte seguir luchando a pesar de las graves heridas. Si bajas a 0 puntos de vida mientras estás furioso y no mueres inmediatamente, puedes realizar una tirada de salvación de Constitución CD 10. Si tienes éxito, caerás a 1 punto de vida. Cada vez que usas esta función después de la primera, la CD aumenta en 5. Cuando terminas un descanso corto o largo, la CD se restablece a 10."
+      "name": "Furia implacable",
+      "description": "Tu furia te permite seguir luchando pese a las heridas graves. Si tus puntos de vida se reducen a 0 mientras estás en furia y no mueres en el acto, puedes hacer una tirada de salvación de Constitución de CD 10. Si tienes éxito, tus puntos de vida se reducen a 1 en lugar de 0. Cada vez que uses esta habilidad después de la primera, la CD aumenta en 5. Al completar un descanso corto o largo, la CD vuelve a 10."
     },
     "Persistent Rage": {
-      "name": "Rabia persistente",
-      "description": "Tu ira es tan feroz que termina antes de tiempo sólo si caes inconsciente o si eliges ponerle fin."
+      "name": "Furia persistente",
+      "description": "Tu furia solo termina antes de tiempo si caes inconsciente o decides terminarla."
     },
     "Indomitable Might": {
       "name": "Poder indomable",
@@ -83,12 +83,12 @@
       "description": "Elija dos de sus habilidades. Tu bonificación de competencia se duplica por cualquier prueba de habilidad que realices que utilice cualquiera de las competencias elegidas."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Font of Inspiration": {
       "name": "Fuente de inspiración",
-      "description": "Recuperas todos los usos gastados de Bardic Inspiration cuando terminas un descanso corto o largo."
+      "description": "Recuperas todos los usos gastados de Inspiración bárdica cuando terminas un descanso corto o largo."
     },
     "Countercharm": {
       "name": "Contraencanto",
@@ -100,7 +100,7 @@
     },
     "Superior Inspiration": {
       "name": "Inspiración superior",
-      "description": "Cuando tiras iniciativa y no te quedan usos de Bardic Inspiration, recuperas un uso."
+      "description": "Cuando tiras iniciativa y no te quedan usos de Inspiración bárdica, recuperas un uso."
     }
   },
   "Cleric": {
@@ -117,8 +117,8 @@
       "description": "Obtienes la capacidad de canalizar energía divina directamente desde tu deidad, usando esa energía para alimentar efectos mágicos. Comienzas con dos de esos efectos: convertir a los no muertos y un efecto determinado por tu dominio. Cuando usas tu Canalizar Divinidad, eliges qué efecto crear."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Destroy Undead": {
       "name": "Destruir no-muertos",
@@ -147,8 +147,8 @@
       "description": "Eliges identificarte con un círculo de druidas."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Timeless Body": {
       "name": "Cuerpo atemporal",
@@ -156,11 +156,11 @@
     },
     "Beast Spells": {
       "name": "Hechizos de bestias",
-      "description": "Puedes lanzar muchos de tus hechizos de druida en cualquier forma que asumas usando Wild Shape. Puedes realizar los componentes somáticos y verbales de un hechizo de druida mientras estás en forma de bestia, pero no puedes proporcionar componentes materiales."
+      "description": "Puedes lanzar muchos de tus hechizos de druida en cualquier forma que asumas usando Forma salvaje. Puedes realizar los componentes somáticos y verbales de un hechizo de druida mientras estás en forma de bestia, pero no puedes proporcionar componentes materiales."
     },
     "Archdruid": {
       "name": "Archidruida",
-      "description": "Puedes usar tu Wild Shape un número ilimitado de veces. Además, puedes ignorar los componentes verbales y somáticos de tus hechizos de druida, así como cualquier componente material que carezca de costo y no sea consumido por un hechizo."
+      "description": "Puedes usar tu Forma salvaje un número ilimitado de veces. Además, puedes ignorar los componentes verbales y somáticos de tus hechizos de druida, así como cualquier componente material que carezca de costo y no sea consumido por un hechizo."
     }
   },
   "Fighter": {
@@ -181,8 +181,8 @@
       "description": "Eliges un arquetipo que te esfuerzas por emular en tus estilos y técnicas de combate."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Extra Attack": {
       "name": "Ataque extra",
@@ -219,8 +219,8 @@
       "description": "Puedes usar tu reacción para desviar o atrapar el misil cuando seas alcanzado por un ataque con arma a distancia. Cuando lo haces, el daño que recibes del ataque se reduce en 1d10 + tu modificador de Destreza + tu nivel de monje."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Slow Fall": {
       "name": "caída lenta",
@@ -281,8 +281,8 @@
       "description": "Tu juramento te permite canalizar energía divina para alimentar efectos mágicos. Cuando usas tu Canalizar Divinidad, eliges qué opción usar. Recuperas los usos gastados cuando terminas un descanso corto o largo."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Extra Attack": {
       "name": "Ataque extra",
@@ -327,8 +327,8 @@
       "description": "Puedes usar tu acción y gastar un espacio de hechizo de guardabosques para centrar tu atención en la región que te rodea. Durante 1 minuto por nivel del espacio de hechizo que gastas, puedes sentir si hay aberraciones, celestiales, dragones, elementales, hadas, demonios o muertos vivientes en un radio de 1 milla de ti."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Extra Attack": {
       "name": "Ataque extra",
@@ -377,8 +377,8 @@
       "description": "Eliges un arquetipo que emulas en el ejercicio de tus habilidades de pícaro."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Uncanny Dodge": {
       "name": "Esquiva asombrosa",
@@ -427,8 +427,8 @@
       "description": "Obtienes la capacidad de modificar tus hechizos para adaptarlos a tus necesidades. Obtienes dos opciones metamágicas de tu elección: Hechizo cuidadoso, Hechizo distante, Hechizo potenciado, Hechizo extendido, Hechizo intensificado, Hechizo acelerado, Hechizo sutil, Hechizo gemelo."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Sorcerous Restoration": {
       "name": "Restauración hechicera",
@@ -453,8 +453,8 @@
       "description": "Tu patrón sobrenatural te otorga un regalo por tu leal servicio. Obtienes una de las siguientes características de tu elección: Pacto de la Cadena, Pacto de la Espada o Pacto del Tomo."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Mystic Arcanum": {
       "name": "Arcano místico",
@@ -462,7 +462,7 @@
     },
     "Eldritch Master": {
       "name": "Maestro sobrenatural",
-      "description": "Puedes recurrir a tu reserva interior de poder místico mientras suplicas a tu patrón que recupere los espacios para hechizos gastados. Puedes pasar 1 minuto pidiéndole ayuda a tu patrón para recuperar todos los espacios para hechizos gastados de tu función Pact Magic. Una vez que recuperes espacios para hechizos con esta característica, debes terminar un descanso prolongado antes de poder hacerlo nuevamente."
+      "description": "Puedes recurrir a tu reserva interior de poder místico mientras suplicas a tu patrón que recupere los espacios para hechizos gastados. Puedes pasar 1 minuto pidiéndole ayuda a tu patrón para recuperar todos los espacios para hechizos gastados de tu función Pacto mágico. Una vez que recuperes espacios para hechizos con esta característica, debes terminar un descanso prolongado antes de poder hacerlo nuevamente."
     }
   },
   "Wizard": {
@@ -479,8 +479,8 @@
       "description": "Eliges una tradición arcana y moldeas tu práctica de la magia a través de una de las siguientes escuelas: Abjuración, Conjuración, Adivinación, Encantamiento, Evocación, Ilusión, Nigromancia o Transmutación."
     },
     "Ability Score Improvement": {
-      "name": "Mejora de la puntuación de habilidad",
-      "description": "Aumenta una puntuación de habilidad en 2 o dos puntuaciones de habilidad en 1. No puede exceder 20."
+      "name": "Mejora de característica",
+      "description": "Aumenta en 2 la puntuación de una característica o en 1 la de dos características. Ninguna puede superar 20."
     },
     "Spell Mastery": {
       "name": "Dominio de hechizos",

@@ -18,10 +18,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [2.1.2] - 2026-10-25
 
 ### Fixed
-- **Italiano no SRD 5.1**: corrigidos nomes e descricoes de classes, habilidades e magias, alem de termos da interface e de outros catalogos usados na ficha e na criacao de personagens.
+- **Traducoes da interface e do SRD 5.1**: revisados termos e descricoes em varios idiomas, incluindo classes, habilidades, magias, condicoes e ferramentas. A revisao do italiano tambem abrange textos da ficha e da criacao de personagens.
 
 ### Internal
-- **Versionamento**: versao do app atualizada para `2.1.2+33`.
+- **Versionamento**: versao do app atualizada para `2.1.2+34`.
 
 ---
 

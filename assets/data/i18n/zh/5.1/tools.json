@@ -69,25 +69,25 @@
     "name": "鼓"
   },
   "Dulcimer": {
-    "name": "洋琴"
+    "name": "扬琴"
   },
   "Flute": {
     "name": "长笛"
   },
   "Lute": {
-    "name": "琵琶"
+    "name": "鲁特琴"
   },
   "Lyre": {
-    "name": "七弦琴"
+    "name": "里拉琴"
   },
   "Horn": {
-    "name": "喇叭"
+    "name": "号角"
   },
   "Pan flute": {
     "name": "排笛"
   },
   "Shawm": {
-    "name": "肖姆"
+    "name": "肖姆管"
   },
   "Viol": {
     "name": "维奥尔"
@@ -105,10 +105,10 @@
     "name": "草药学套件"
   },
   "Navigator's tools": {
-    "name": "导航器的工具"
+    "name": "航海工具"
   },
   "Poisoner's kit": {
-    "name": "投毒者的装备"
+    "name": "制毒工具包"
   },
   "Vehicles (land)": {
     "name": "车辆（陆地）"

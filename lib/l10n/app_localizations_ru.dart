@@ -583,7 +583,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get sectionAbilityScores => 'Показатели способностей';
 
   @override
-  String get sectionSavingThrows => 'Сохранение навыков броска';
+  String get sectionSavingThrows => 'Владение спасбросками';
 
   @override
   String get labelName => 'Имя';
@@ -731,23 +731,24 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get levelUpSpellRestrictedSection => 'School requirement';
+  String get levelUpSpellRestrictedSection => 'Обязательные школы';
 
   @override
-  String get levelUpSpellFreeSection => 'Free choice';
+  String get levelUpSpellFreeSection => 'Свободный выбор';
 
   @override
   String levelUpSpellRestrictedInstruction(int count, String schools) {
-    return 'Choose $count spell(s) from $schools.';
+    return 'Заклинаний для выбора: $count. Доступные школы: $schools.';
   }
 
   @override
   String levelUpSpellFreeInstruction(int count) {
-    return 'Choose $count spell(s) from any school.';
+    return 'Заклинаний для выбора: $count. Можно выбрать любую школу.';
   }
 
   @override
-  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
+  String get levelUpSpellFreeLocked =>
+      'Сначала завершите выбор из обязательных школ.';
 
   @override
   String levelUpCantripsToLearn(int n) {
@@ -1367,7 +1368,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get inventoryTypeConsumable => 'Расходный материал';
 
   @override
-  String get inventoryTypeGear => 'Механизм';
+  String get inventoryTypeGear => 'Снаряжение';
 
   @override
   String get inventoryTypeEquippable => 'Можно экипировать';
@@ -1600,7 +1601,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String stepRaceBonus(int n) {
-    return '+ раса $n';
+    return 'Расовый бонус +$n';
   }
 
   @override
@@ -1621,7 +1622,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get stepSelectTool => 'Выберите инструмент…';
 
   @override
-  String get statAC => 'переменного тока';
+  String get statAC => 'КД';
 
   @override
   String get statArmor => 'Броня';
@@ -1645,7 +1646,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get statProfBonus => 'Проф Бонус';
 
   @override
-  String get statPassivePerc => 'Пассивный процент';
+  String get statPassivePerc => 'Пасс. восприятие';
 
   @override
   String get statInspiration => 'Вдохновение';
@@ -1710,22 +1711,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String get tooltipChangeTempHp => 'Изменить температуру HP';
 
   @override
-  String get abilityStr => 'СТР';
+  String get abilityStr => 'СИЛ';
 
   @override
-  String get abilityDex => 'Декс';
+  String get abilityDex => 'ЛОВ';
 
   @override
-  String get abilityCon => 'КОН';
+  String get abilityCon => 'ТЕЛ';
 
   @override
-  String get abilityInt => 'ИНТ.';
+  String get abilityInt => 'ИНТ';
 
   @override
-  String get abilityWis => 'ИСВ';
+  String get abilityWis => 'МДР';
 
   @override
-  String get abilityCha => 'ЦДХ';
+  String get abilityCha => 'ХАР';
 
   @override
   String featuresSectionRacialTraits(String name) {
@@ -2141,10 +2142,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reviewRowSubclass => 'Подкласс';
 
   @override
-  String get reviewRowHitDie => 'Хит умереть';
+  String get reviewRowHitDie => 'Кость хитов';
 
   @override
-  String get reviewRowSavingThrows => 'Спасительные броски';
+  String get reviewRowSavingThrows => 'Спасброски';
 
   @override
   String get reviewRowSubrace => 'Подраса';
@@ -2168,11 +2169,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get reviewRowMaxHp => 'Макс. HP';
 
   @override
-  String get reviewRowAcUnarmored => 'AC (небронированный)';
+  String get reviewRowAcUnarmored => 'КД (без доспеха)';
 
   @override
   String reviewRowAcWith(String name) {
-    return 'переменного тока с $name';
+    return 'КД с $name';
   }
 
   @override
@@ -2246,16 +2247,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get stepNamePlayerLabel => 'Имя игрока (необязательно)';
 
   @override
-  String get stepHitDieLabel => 'Хит умереть';
+  String get stepHitDieLabel => 'Кость хитов';
 
   @override
-  String get stepSavesLabel => 'Сохранения';
+  String get stepSavesLabel => 'Спасброски';
 
   @override
-  String get stepSpellcastingLabel => 'Колдовство';
+  String get stepSpellcastingLabel => 'Использование заклинаний';
 
   @override
-  String get stepOptionsLabel => 'параметры';
+  String get stepOptionsLabel => 'варианты';
 
   @override
   String stepChooseSubclassPrompt(String feature, int level) {
@@ -2266,7 +2267,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get stepRaceSpeedLabel => 'Скорость';
 
   @override
-  String get stepRaceASILabel => 'АСИ';
+  String get stepRaceASILabel => 'Бонус к характеристикам';
 
   @override
   String stepRaceSubracesAvailable(int count) {
@@ -2285,7 +2286,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get abilityDexterity => 'Ловкость';
 
   @override
-  String get abilityConstitution => 'Конституция';
+  String get abilityConstitution => 'Телосложение';
 
   @override
   String get abilityIntelligence => 'Интеллект';
@@ -2298,17 +2299,17 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String stepFreeAsiRemaining(int remaining) {
-    return 'Свободно распределяйте расовые очки ASI (осталось $remaining):';
+    return 'Распределите расовые бонусы к характеристикам (осталось очков: $remaining):';
   }
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return 'Свободный от расы ASI: присвойте +1 к $total атрибутам (осталось $remaining):';
+    return 'Назначьте +1 к $total характеристикам (осталось выборов: $remaining):';
   }
 
   @override
   String get stepFreePicksNoStack =>
-      'Невозможно назначить атрибутам, уже получающим расовый бонус.';
+      'Нельзя выбирать характеристики, уже получившие расовый бонус.';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -2499,21 +2500,21 @@ class AppLocalizationsRu extends AppLocalizations {
   String get detailSheetAvailableSubraces => 'Подрасы';
 
   @override
-  String get xpTrackingLabel => 'Track XP';
+  String get xpTrackingLabel => 'Учитывать опыт';
 
   @override
-  String get xpReadyToLevelUp => 'Ready to level up!';
+  String get xpReadyToLevelUp => 'Можно повысить уровень!';
 
   @override
-  String get xpLevelUpNowTitle => 'Level Up?';
+  String get xpLevelUpNowTitle => 'Повысить уровень?';
 
   @override
   String xpLevelUpNowMessage(int level) {
-    return 'You have enough XP to reach Level $level. Level up now?';
+    return 'У вас достаточно опыта для достижения уровня $level. Повысить уровень сейчас?';
   }
 
   @override
-  String get xpLevelUpLater => 'Later';
+  String get xpLevelUpLater => 'Позже';
 
   @override
   String get settingsSectionUnits => 'Единицы';

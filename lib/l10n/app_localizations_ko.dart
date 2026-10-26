@@ -570,7 +570,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sectionAbilityScores => '능력 점수';
 
   @override
-  String get sectionSavingThrows => '던지기 숙련도 저장';
+  String get sectionSavingThrows => '내성 굴림 숙련';
 
   @override
   String get labelName => '이름';
@@ -716,23 +716,23 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get levelUpSpellRestrictedSection => 'School requirement';
+  String get levelUpSpellRestrictedSection => '지정된 마법 학파';
 
   @override
-  String get levelUpSpellFreeSection => 'Free choice';
+  String get levelUpSpellFreeSection => '자유 선택';
 
   @override
   String levelUpSpellRestrictedInstruction(int count, String schools) {
-    return 'Choose $count spell(s) from $schools.';
+    return '선택할 주문: $count개. 허용된 학파: $schools.';
   }
 
   @override
   String levelUpSpellFreeInstruction(int count) {
-    return 'Choose $count spell(s) from any school.';
+    return '선택할 주문: $count개. 어떤 학파에서든 선택할 수 있습니다.';
   }
 
   @override
-  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
+  String get levelUpSpellFreeLocked => '먼저 지정된 학파의 주문을 선택하세요.';
 
   @override
   String levelUpCantripsToLearn(int n) {
@@ -1329,7 +1329,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get inventoryTypeConsumable => '소모품';
 
   @override
-  String get inventoryTypeGear => '기어';
+  String get inventoryTypeGear => '장비';
 
   @override
   String get inventoryTypeEquippable => '장착 가능';
@@ -1561,7 +1561,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String stepRaceBonus(int n) {
-    return '+ $n 경주';
+    return '종족 보너스 +$n';
   }
 
   @override
@@ -1582,7 +1582,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get stepSelectTool => '도구를 선택하세요…';
 
   @override
-  String get statAC => '교류';
+  String get statAC => 'AC';
 
   @override
   String get statArmor => '갑옷';
@@ -1606,7 +1606,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get statProfBonus => '교수 보너스';
 
   @override
-  String get statPassivePerc => '패시브 퍼크';
+  String get statPassivePerc => '수동 감지';
 
   @override
   String get statInspiration => '영감';
@@ -1671,22 +1671,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tooltipChangeTempHp => '임시 HP 변경';
 
   @override
-  String get abilityStr => 'STR';
+  String get abilityStr => '근력';
 
   @override
-  String get abilityDex => '덱스';
+  String get abilityDex => '민첩';
 
   @override
-  String get abilityCon => '범죄자';
+  String get abilityCon => '건강';
 
   @override
-  String get abilityInt => '정수';
+  String get abilityInt => '지능';
 
   @override
-  String get abilityWis => '위스';
+  String get abilityWis => '지혜';
 
   @override
-  String get abilityCha => '차';
+  String get abilityCha => '매력';
 
   @override
   String featuresSectionRacialTraits(String name) {
@@ -2099,7 +2099,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reviewRowHitDie => '히트 다이';
 
   @override
-  String get reviewRowSavingThrows => '던지기 저장';
+  String get reviewRowSavingThrows => '내성 굴림';
 
   @override
   String get reviewRowSubrace => '서브레이스';
@@ -2127,7 +2127,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String reviewRowAcWith(String name) {
-    return '$name를 갖춘 AC';
+    return '$name 착용 시 AC';
   }
 
   @override
@@ -2196,10 +2196,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get stepNamePlayerLabel => '플레이어 이름(선택사항)';
 
   @override
-  String get stepHitDieLabel => '죽어라';
+  String get stepHitDieLabel => '히트 다이스';
 
   @override
-  String get stepSavesLabel => '저장';
+  String get stepSavesLabel => '내성 굴림';
 
   @override
   String get stepSpellcastingLabel => '주문 시전';
@@ -2216,26 +2216,26 @@ class AppLocalizationsKo extends AppLocalizations {
   String get stepRaceSpeedLabel => '속도';
 
   @override
-  String get stepRaceASILabel => 'ASI';
+  String get stepRaceASILabel => '종족 능력치 보너스';
 
   @override
   String stepRaceSubracesAvailable(int count) {
-    return '$count개의 하위 경주 사용 가능';
+    return '선택 가능한 하위 종족: $count개';
   }
 
   @override
   String stepChooseSkillsHint(int count) {
-    return '클래스 목록에서 $count개의 기술을 선택하세요.';
+    return '직업 목록에서 기술을 $count개 선택하세요.';
   }
 
   @override
-  String get abilityStrength => '힘';
+  String get abilityStrength => '근력';
 
   @override
-  String get abilityDexterity => '재치';
+  String get abilityDexterity => '민첩';
 
   @override
-  String get abilityConstitution => '헌법';
+  String get abilityConstitution => '건강';
 
   @override
   String get abilityIntelligence => '지능';
@@ -2244,20 +2244,20 @@ class AppLocalizationsKo extends AppLocalizations {
   String get abilityWisdom => '지혜';
 
   @override
-  String get abilityCharisma => '카리스마';
+  String get abilityCharisma => '매력';
 
   @override
   String stepFreeAsiRemaining(int remaining) {
-    return '인종별 ASI 포인트를 자유롭게 배포하세요($remaining 남음):';
+    return '종족 능력치 보너스를 자유롭게 분배하세요(남은 점수: $remaining):';
   }
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return '인종 자유 ASI: $total 속성에 +1 할당($remaining 남음):';
+    return '능력치 $total개에 각각 +1을 배정하세요(남은 선택: $remaining):';
   }
 
   @override
-  String get stepFreePicksNoStack => '이미 인종 보너스를 받고 있는 속성에는 할당할 수 없습니다.';
+  String get stepFreePicksNoStack => '이미 종족 보너스를 받은 능력치에는 배정할 수 없습니다.';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -2445,21 +2445,21 @@ class AppLocalizationsKo extends AppLocalizations {
   String get detailSheetAvailableSubraces => '하위 종족';
 
   @override
-  String get xpTrackingLabel => 'Track XP';
+  String get xpTrackingLabel => '경험치 기록';
 
   @override
-  String get xpReadyToLevelUp => 'Ready to level up!';
+  String get xpReadyToLevelUp => '레벨을 올릴 수 있습니다!';
 
   @override
-  String get xpLevelUpNowTitle => 'Level Up?';
+  String get xpLevelUpNowTitle => '레벨을 올릴까요?';
 
   @override
   String xpLevelUpNowMessage(int level) {
-    return 'You have enough XP to reach Level $level. Level up now?';
+    return '레벨 $level에 필요한 경험치를 얻었습니다. 지금 레벨을 올릴까요?';
   }
 
   @override
-  String get xpLevelUpLater => 'Later';
+  String get xpLevelUpLater => '나중에';
 
   @override
   String get settingsSectionUnits => '단위';

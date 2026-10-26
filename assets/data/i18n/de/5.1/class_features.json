@@ -1,8 +1,8 @@
 {
   "Barbarian": {
     "Rage": {
-      "name": "Wut",
-      "description": "Im Kampf kämpfst du mit ursprünglicher Wildheit. Wenn du an der Reihe bist, kannst du als Bonusaktion eine Wut einsetzen. Während du tobst, hast du Vorteile bei Stärkewürfen und Rettungswürfen, erhältst einen Bonus auf Nahkampfschadenswürfe mit Stärke (+2 auf den Barbarenstufen 1–8, +3 auf den Stufen 9–15 und +4 auf den Stufen 16–20) und bist resistent gegen Schlag-, Stich- und Hiebschaden. Deine Wut hält 1 Minute an. Es endet vorzeitig, wenn Sie bewusstlos geschlagen werden oder wenn Ihr Zug endet und Sie seit Ihrem letzten Zug keine feindliche Kreatur angegriffen oder seitdem Schaden erlitten haben."
+      "name": "Kampfrausch",
+      "description": "Im Kampf kämpfst du mit ursprünglicher Wildheit. In deinem Zug kannst du als Bonusaktion in Kampfrausch verfallen. Während des Kampfrauschs hast du Vorteil bei Stärkeproben und Stärkerettungswürfen, erhältst einen Bonus auf Schadenswürfe von Nahkampfangriffen mit Stärke (+2 auf Barbarenstufen 1–8, +3 auf Stufen 9–15 und +4 auf Stufen 16–20) und bist gegen Wucht-, Stich- und Hiebschaden resistent. Dein Kampfrausch hält 1 Minute an. Er endet vorzeitig, wenn du bewusstlos wirst oder wenn dein Zug endet, ohne dass du seit deinem letzten Zug eine feindliche Kreatur angegriffen oder Schaden erlitten hast."
     },
     "Unarmored Defense": {
       "name": "Ungepanzerte Verteidigung",
@@ -18,11 +18,11 @@
     },
     "Primal Path": {
       "name": "Urpfad",
-      "description": "Sie wählen einen Weg, der die Natur Ihrer Wut prägt."
+      "description": "Du wählst einen Pfad, der die Natur deines Kampfrauschs prägt."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
@@ -34,19 +34,19 @@
     },
     "Feral Instinct": {
       "name": "Wilder Instinkt",
-      "description": "Ihre Instinkte sind so ausgeprägt, dass Sie bei Initiativewürfen im Vorteil sind. Wenn Sie außerdem zu Beginn des Kampfes überrascht werden und nicht handlungsunfähig sind, können Sie in Ihrem ersten Zug normal handeln, aber nur, wenn Sie Ihre Wut einsetzen, bevor Sie in diesem Zug etwas anderes tun."
+      "description": "Deine Instinkte sind so geschärft, dass du bei Initiativewürfen Vorteil hast. Wenn du zu Beginn eines Kampfes überrascht wirst und nicht kampfunfähig bist, kannst du in deinem ersten Zug normal handeln, sofern du vor jeder anderen Handlung in diesem Zug in Kampfrausch verfällst."
     },
     "Brutal Critical": {
-      "name": "Brutaler Kritiker",
+      "name": "Brutaler kritischer Treffer",
       "description": "Sie können einen zusätzlichen Waffenschadenswürfel werfen, wenn Sie den zusätzlichen Schaden für einen kritischen Treffer bei einem Nahkampfangriff bestimmen. Dies erhöht sich auf zwei zusätzliche Würfel auf der 13. Stufe und auf drei zusätzliche Würfel auf der 17. Stufe."
     },
     "Relentless Rage": {
-      "name": "Unerbittliche Wut",
-      "description": "Deine Wut kann dich trotz schwerer Wunden weiterkämpfen lassen. Wenn deine Trefferpunkte während des Tobens auf 0 sinken und du nicht sofort stirbst, kannst du einen Konstitutionsrettungswurf gegen SG 10 durchführen. Wenn Sie Erfolg haben, sinken Sie stattdessen auf 1 Trefferpunkt. Jedes Mal, wenn Sie diese Funktion nach dem ersten nutzen, erhöht sich der DC um 5. Wenn Sie eine kurze oder lange Pause beenden, wird der DC auf 10 zurückgesetzt."
+      "name": "Unaufhaltsamer Kampfrausch",
+      "description": "Dein Kampfrausch lässt dich trotz schwerer Wunden weiterkämpfen. Wenn deine Trefferpunkte während des Kampfrauschs auf 0 sinken und du nicht sofort stirbst, kannst du einen Konstitutionsrettungswurf gegen SG 10 ablegen. Bei Erfolg sinken deine Trefferpunkte stattdessen auf 1. Jedes weitere Mal nach dem ersten erhöht sich der SG um 5. Nach einer kurzen oder langen Rast wird der SG wieder auf 10 zurückgesetzt."
     },
     "Persistent Rage": {
-      "name": "Anhaltende Wut",
-      "description": "Ihre Wut ist so heftig, dass sie nur dann vorzeitig endet, wenn Sie bewusstlos werden oder sich dafür entscheiden, sie zu beenden."
+      "name": "Anhaltender Kampfrausch",
+      "description": "Dein Kampfrausch ist so heftig, dass er nur dann vorzeitig endet, wenn du bewusstlos wirst oder dich entscheidest, ihn zu beenden."
     },
     "Indomitable Might": {
       "name": "Unbezwingbare Macht",
@@ -83,11 +83,11 @@
       "description": "Wählen Sie zwei Ihrer Kompetenzkompetenzen aus. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine der ausgewählten Fähigkeiten zum Einsatz kommt."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Font of Inspiration": {
-      "name": "Schriftart der Inspiration",
+      "name": "Quelle der Inspiration",
       "description": "Sobald Sie eine kurze oder lange Pause beendet haben, erhalten Sie die gesamte verbrauchte Bardeninspiration zurück."
     },
     "Countercharm": {
@@ -100,7 +100,7 @@
     },
     "Superior Inspiration": {
       "name": "Überlegene Inspiration",
-      "description": "Wenn du die Initiative würfelst und Bardic Inspiration nicht mehr nutzen kannst, erhältst du einen Einsatz zurück."
+      "description": "Wenn du die Initiative würfelst und Bardische Inspiration nicht mehr nutzen kannst, erhältst du einen Einsatz zurück."
     }
   },
   "Cleric": {
@@ -117,8 +117,8 @@
       "description": "Sie erhalten die Fähigkeit, göttliche Energie direkt von Ihrer Gottheit zu kanalisieren und diese Energie zu nutzen, um magische Effekte zu erzielen. Sie beginnen mit zwei solchen Effekten: „Untote verwandeln“ und einem Effekt, der von Ihrer Domäne bestimmt wird. Wenn Sie Ihren Göttliche Macht fokussieren verwenden, entscheiden Sie, welchen Effekt Sie erzeugen möchten."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Destroy Undead": {
       "name": "Vernichte Untote",
@@ -147,8 +147,8 @@
       "description": "Du identifizierst dich mit einem Kreis von Druiden."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Timeless Body": {
       "name": "Zeitloser Körper",
@@ -156,11 +156,11 @@
     },
     "Beast Spells": {
       "name": "Tierzauber",
-      "description": "Mit Wild Shape können Sie viele Ihrer Druidenzauber in jeder beliebigen Form wirken. Du kannst die somatischen und verbalen Komponenten eines Druidenzaubers ausführen, während du in einer Bestiengestalt bist, aber du bist nicht in der Lage, materielle Komponenten bereitzustellen."
+      "description": "Mit Wilde Form können Sie viele Ihrer Druidenzauber in jeder beliebigen Form wirken. Du kannst die somatischen und verbalen Komponenten eines Druidenzaubers ausführen, während du in einer Bestiengestalt bist, aber du bist nicht in der Lage, materielle Komponenten bereitzustellen."
     },
     "Archdruid": {
       "name": "Erzdruide",
-      "description": "Sie können Ihren Wild Shape unbegrenzt oft verwenden. Darüber hinaus können Sie die verbalen und somatischen Komponenten Ihrer Druidenzauber sowie alle materiellen Komponenten ignorieren, für die keine Kosten anfallen und die nicht von einem Zauber verbraucht werden."
+      "description": "Sie können Ihren Wilde Form unbegrenzt oft verwenden. Darüber hinaus können Sie die verbalen und somatischen Komponenten Ihrer Druidenzauber sowie alle materiellen Komponenten ignorieren, für die keine Kosten anfallen und die nicht von einem Zauber verbraucht werden."
     }
   },
   "Fighter": {
@@ -169,7 +169,7 @@
       "description": "Sie machen sich einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie einen Kampfstil: Bogenschießen, Verteidigung, Duell, Großwaffenkampf, Schutz oder Kampf mit zwei Waffen."
     },
     "Second Wind": {
-      "name": "Zweiter Wind",
+      "name": "Zweiter Atem",
       "description": "Sie verfügen nur über eine begrenzte Ausdauer, auf die Sie zurückgreifen können, um sich vor Schaden zu schützen. Wenn Sie an der Reihe sind, können Sie eine Bonusaktion nutzen, um Trefferpunkte in Höhe von 1W10 + Ihrer Kämpferstufe zurückzugewinnen."
     },
     "Action Surge": {
@@ -181,8 +181,8 @@
       "description": "Sie wählen einen Archetyp, den Sie in Ihren Kampfstilen und -techniken nachahmen möchten."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
@@ -219,8 +219,8 @@
       "description": "Sie können Ihre Reaktion nutzen, um die Rakete abzuwehren oder abzufangen, wenn Sie von einem Fernkampfwaffenangriff getroffen werden. Wenn Sie dies tun, wird der Schaden, den Sie durch den Angriff erleiden, um 1W10 + Ihren Geschicklichkeitsmodifikator + Ihre Mönchsstufe verringert."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Slow Fall": {
       "name": "Langsamer Fall",
@@ -281,8 +281,8 @@
       "description": "Ihr Eid ermöglicht es Ihnen, göttliche Energie zu kanalisieren, um magische Effekte zu erzielen. Wenn Sie Ihren Göttliche Macht fokussieren nutzen, entscheiden Sie, welche Option Sie nutzen möchten. Nach einer kurzen oder langen Pause erhalten Sie verbrauchte Energie zurück."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
@@ -327,8 +327,8 @@
       "description": "Du kannst deine Aktion nutzen und einen Ranger-Zauberslot ausgeben, um deine Aufmerksamkeit auf die Region um dich herum zu richten. Für 1 Minute pro Stufe des Zauberplatzes, den Sie aufwenden, können Sie spüren, ob sich im Umkreis von 1 Meile um Sie herum Aberrationen, Himmlische, Drachen, Elementare, Feenwesen, Unholde oder Untote befinden."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
@@ -361,7 +361,7 @@
       "description": "Wählen Sie zwei Ihrer Fähigkeitskompetenzen oder eine Ihrer Fähigkeitskompetenzen und Ihre Kenntnisse im Umgang mit Diebeswerkzeugen. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine der ausgewählten Fähigkeiten zum Einsatz kommt."
     },
     "Sneak Attack": {
-      "name": "Hinterlistiger Angriff",
+      "name": "Hinterhältiger Angriff",
       "description": "Sie wissen, wie man subtil zuschlägt und die Ablenkung eines Gegners ausnutzt. Einmal pro Spielzug kannst du einer Kreatur, die du mit einem Angriff triffst, zusätzlichen Schaden zufügen, wenn du beim Angriffswurf im Vorteil bist. Der Angriff muss mit einer Finesse- oder einer Fernkampfwaffe erfolgen. Sie benötigen keinen Vorteil, wenn sich ein anderer Feind im Umkreis von 5 Fuß um das Ziel befindet, dieser Feind nicht außer Gefecht gesetzt ist und Sie keinen Nachteil haben. Der zusätzliche Schaden beträgt 1W6 auf den Schurkenstufen 1–2 und erhöht sich dann alle zwei Schurkenstufen um 1W6: 2W6 auf Stufe 3, 3W6 auf Stufe 5, 4W6 auf Stufe 7, 5W6 auf Stufe 9, 6W6 auf Stufe 11, 7W6 auf Stufe 13, 8W6 auf Stufe 15, 9W6 auf Stufe 17 und 10W6 auf Stufe 19."
     },
     "Thieves' Cant": {
@@ -377,8 +377,8 @@
       "description": "Sie wählen einen Archetyp, den Sie bei der Ausübung Ihrer Schurkenfähigkeiten nachahmen."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Uncanny Dodge": {
       "name": "Unheimliches Ausweichen",
@@ -427,8 +427,8 @@
       "description": "Du erhältst die Fähigkeit, deine Zaubersprüche an deine Bedürfnisse anzupassen. Sie erhalten zwei metamagische Optionen Ihrer Wahl: Vorsichtiger Zauber, Fernzauber, Ermächtigter Zauber, Erweiterter Zauber, Erhöhter Zauber, Beschleunigter Zauber, Subtiler Zauber, Zwillingszauber."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Sorcerous Restoration": {
       "name": "Zauberhafte Wiederherstellung",
@@ -453,8 +453,8 @@
       "description": "Ihr jenseitiger Gönner macht Ihnen für Ihren treuen Dienst ein Geschenk. Sie erhalten eine der folgenden Eigenschaften Ihrer Wahl: Pakt der Kette, Pakt der Klinge oder Pakt des Wälzers."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Mystic Arcanum": {
       "name": "Mystisches Arkanum",
@@ -479,8 +479,8 @@
       "description": "Sie entscheiden sich für eine arkane Tradition und gestalten Ihre magische Praxis durch eine der folgenden Schulen: Abschwörung, Beschwörung, Wahrsagerei, Verzauberung, Evokation, Illusion, Nekromantie oder Transmutation."
     },
     "Ability Score Improvement": {
-      "name": "Verbesserung der Fähigkeitsbewertung",
-      "description": "Erhöhen Sie einen Fähigkeitswert um 2 oder zwei Fähigkeitswertwerte um 1. Darf 20 nicht überschreiten."
+      "name": "Attributswertverbesserung",
+      "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Spell Mastery": {
       "name": "Zauberbeherrschung",

@@ -1,12 +1,12 @@
 {
   "Alchemist's supplies": {
-    "name": "Scorte da alchimista"
+    "name": "Strumenti da alchimista"
   },
   "Brewer's supplies": {
-    "name": "Scorte da birraio"
+    "name": "Forniture del birraio"
   },
   "Calligrapher's supplies": {
-    "name": "Scorte da calligrafo"
+    "name": "Forniture per calligrafo"
   },
   "Carpenter's tools": {
     "name": "Strumenti da falegname"
@@ -33,7 +33,7 @@
     "name": "Strumenti da muratore"
   },
   "Painter's supplies": {
-    "name": "Strumenti da pittore"
+    "name": "Forniture da pittore"
   },
   "Potter's tools": {
     "name": "Strumenti da vasaio"
@@ -42,7 +42,7 @@
     "name": "Strumenti da fabbro"
   },
   "Tinker's tools": {
-    "name": "Strumenti da inventore"
+    "name": "Strumenti da stagnino"
   },
   "Weaver's tools": {
     "name": "Strumenti da tessitore"
@@ -60,7 +60,7 @@
     "name": "Mazzo di carte"
   },
   "Three-Dragon Ante set": {
-    "name": "Tre Draghi al Buio"
+    "name": "Set di Ante dei Tre Draghi"
   },
   "Bagpipes": {
     "name": "Cornamusa"
@@ -93,7 +93,7 @@
     "name": "Viola"
   },
   "Disguise kit": {
-    "name": "Trucchi per il camuffamento"
+    "name": "Kit di travestimento"
   },
   "Forgery kit": {
     "name": "Arnesi da falsario"
@@ -108,7 +108,7 @@
     "name": "Strumenti da navigatore"
   },
   "Poisoner's kit": {
-    "name": "Sostanze da avvelenatore"
+    "name": "Kit dell'avvelenatore"
   },
   "Vehicles (land)": {
     "name": "Veicoli (terrestri)"

@@ -534,7 +534,7 @@
     "material": "Se coloca una pizca de sal y un trozo de cobre en cada uno de los ojos del cadáver, que deben permanecer allí mientras dure"
   },
   "Gust of Wind": {
-    "name": "Racha",
+    "name": "Ráfaga de viento",
     "description": "Una línea de fuerte viento de 60 pies de largo y 10 pies de ancho sopla desde ti en la dirección que elijas durante la duración del hechizo. Cada criatura que comienza su turno en la línea debe superar una tirada de salvación de Fuerza o ser empujada a 15 pies de distancia de ti en la dirección que sigue la línea. Cualquier criatura en la línea debe gastar 2 pies de movimiento por cada 1 pie que se mueva cuando se acerque a ti.",
     "higherLevels": null,
     "material": "una semilla de leguminosa"

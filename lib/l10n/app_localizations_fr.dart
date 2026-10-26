@@ -588,8 +588,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get sectionAbilityScores => 'Scores de capacité';
 
   @override
-  String get sectionSavingThrows =>
-      'Compétences en matière de jet de sauvegarde';
+  String get sectionSavingThrows => 'Maîtrises des jets de sauvegarde';
 
   @override
   String get labelName => 'Nom';
@@ -737,23 +736,24 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get levelUpSpellRestrictedSection => 'School requirement';
+  String get levelUpSpellRestrictedSection => 'Écoles requises';
 
   @override
-  String get levelUpSpellFreeSection => 'Free choice';
+  String get levelUpSpellFreeSection => 'Choix libre';
 
   @override
   String levelUpSpellRestrictedInstruction(int count, String schools) {
-    return 'Choose $count spell(s) from $schools.';
+    return 'Nombre de sorts à choisir : $count. Écoles autorisées : $schools.';
   }
 
   @override
   String levelUpSpellFreeInstruction(int count) {
-    return 'Choose $count spell(s) from any school.';
+    return 'Nombre de sorts à choisir : $count. Toutes les écoles sont autorisées.';
   }
 
   @override
-  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
+  String get levelUpSpellFreeLocked =>
+      'Terminez d\'abord le choix des écoles requises.';
 
   @override
   String levelUpCantripsToLearn(int n) {
@@ -1055,7 +1055,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get featuresTabClass => 'Classe';
 
   @override
-  String get featuresTabRacial => 'Racial';
+  String get featuresTabRacial => 'Raciaux';
 
   @override
   String get featuresTabCustom => 'Personnalisé';
@@ -1368,7 +1368,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get inventoryTypeConsumable => 'Consommable';
 
   @override
-  String get inventoryTypeGear => 'Engrenage';
+  String get inventoryTypeGear => 'Équipement';
 
   @override
   String get inventoryTypeEquippable => 'Équipable';
@@ -1603,7 +1603,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String stepRaceBonus(int n) {
-    return '+ Course $n';
+    return 'Bonus racial : +$n';
   }
 
   @override
@@ -1648,7 +1648,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statProfBonus => 'Bonus Prof';
 
   @override
-  String get statPassivePerc => 'Perc. passif';
+  String get statPassivePerc => 'Perception passive';
 
   @override
   String get statInspiration => 'Inspiration';
@@ -1713,19 +1713,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tooltipChangeTempHp => 'Changer la température HP';
 
   @override
-  String get abilityStr => 'STR';
+  String get abilityStr => 'FOR';
 
   @override
   String get abilityDex => 'DEX';
 
   @override
-  String get abilityCon => 'ESCROQUER';
+  String get abilityCon => 'CON';
 
   @override
   String get abilityInt => 'INT';
 
   @override
-  String get abilityWis => 'SIE';
+  String get abilityWis => 'SAG';
 
   @override
   String get abilityCha => 'CHA';
@@ -1779,7 +1779,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get spellsSaveDC => 'Enregistrer DC';
 
   @override
-  String get spellsCantrips => 'Cantrips';
+  String get spellsCantrips => 'Tours de magie';
 
   @override
   String get spellsPrepared => 'Préparé';
@@ -2044,7 +2044,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get armorStealthDisadvantage => 'Désavantage furtif';
 
   @override
-  String get spellDetailCastingTime => 'Temps de coulée';
+  String get spellDetailCastingTime => 'Temps d\'incantation';
 
   @override
   String get spellDetailRange => 'Gamme';
@@ -2146,7 +2146,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get reviewRowSubclass => 'Sous-classe';
 
   @override
-  String get reviewRowHitDie => 'Toucher le dé';
+  String get reviewRowHitDie => 'Dé de vie';
 
   @override
   String get reviewRowSavingThrows => 'Jets de sauvegarde';
@@ -2173,7 +2173,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get reviewRowMaxHp => 'PV maximum';
 
   @override
-  String get reviewRowAcUnarmored => 'AC (sans armure)';
+  String get reviewRowAcUnarmored => 'CA (sans armure)';
 
   @override
   String reviewRowAcWith(String name) {
@@ -2239,55 +2239,55 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stepPrimaryAbilities => 'capacités principales :';
 
   @override
-  String get stepNameTitle => 'Give your character a name.';
+  String get stepNameTitle => 'Donnez un nom à votre personnage.';
 
   @override
-  String get stepNameHint => 'You can always change this later.';
+  String get stepNameHint => 'Vous pourrez toujours le modifier plus tard.';
 
   @override
-  String get stepNameCharLabel => 'Character name';
+  String get stepNameCharLabel => 'Nom du personnage';
 
   @override
-  String get stepNamePlayerLabel => 'Player name (optional)';
+  String get stepNamePlayerLabel => 'Nom du joueur (facultatif)';
 
   @override
-  String get stepHitDieLabel => 'Hit die';
+  String get stepHitDieLabel => 'Dé de vie';
 
   @override
-  String get stepSavesLabel => 'Saves';
+  String get stepSavesLabel => 'Jets de sauvegarde';
 
   @override
-  String get stepSpellcastingLabel => 'Spellcasting';
+  String get stepSpellcastingLabel => 'Lancement de sorts';
 
   @override
   String get stepOptionsLabel => 'options';
 
   @override
   String stepChooseSubclassPrompt(String feature, int level) {
-    return 'Choose a $feature (Lv $level):';
+    return 'Choisissez $feature (niveau $level) :';
   }
 
   @override
-  String get stepRaceSpeedLabel => 'Speed';
+  String get stepRaceSpeedLabel => 'Vitesse';
 
   @override
-  String get stepRaceASILabel => 'ASI';
+  String get stepRaceASILabel => 'Amélioration de caractéristique';
 
   @override
   String stepRaceSubracesAvailable(int count) {
-    return '$count subraces available';
+    return 'Sous-races disponibles : $count';
   }
 
   @override
   String stepChooseSkillsHint(int count) {
-    return 'Choose $count skills from your class list.';
+    return 'Choisissez $count compétences dans la liste de votre classe.';
   }
 
   @override
-  String get abilityStrength => 'Strength';
+  String get abilityStrength => 'Force';
 
   @override
-  String get abilityDexterity => 'Dexterity';
+  String get abilityDexterity => 'Dextérité';
 
   @override
   String get abilityConstitution => 'Constitution';
@@ -2296,24 +2296,24 @@ class AppLocalizationsFr extends AppLocalizations {
   String get abilityIntelligence => 'Intelligence';
 
   @override
-  String get abilityWisdom => 'Wisdom';
+  String get abilityWisdom => 'Sagesse';
 
   @override
-  String get abilityCharisma => 'Charisma';
+  String get abilityCharisma => 'Charisme';
 
   @override
   String stepFreeAsiRemaining(int remaining) {
-    return 'Distribute racial ASI points freely ($remaining remaining):';
+    return 'Répartissez librement les points d\'amélioration raciale (restants : $remaining) :';
   }
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return 'Racial free ASI: assign +1 to $total attributes ($remaining remaining):';
+    return 'Attribuez +1 à $total caractéristiques (restantes : $remaining) :';
   }
 
   @override
   String get stepFreePicksNoStack =>
-      'Cannot assign to attributes already receiving a racial bonus.';
+      'Vous ne pouvez pas choisir une caractéristique bénéficiant déjà d\'un bonus racial.';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -2504,21 +2504,21 @@ class AppLocalizationsFr extends AppLocalizations {
   String get detailSheetAvailableSubraces => 'Sous-races';
 
   @override
-  String get xpTrackingLabel => 'Track XP';
+  String get xpTrackingLabel => 'Suivre l\'expérience';
 
   @override
-  String get xpReadyToLevelUp => 'Ready to level up!';
+  String get xpReadyToLevelUp => 'Prêt à passer au niveau supérieur !';
 
   @override
-  String get xpLevelUpNowTitle => 'Level Up?';
+  String get xpLevelUpNowTitle => 'Passer au niveau supérieur ?';
 
   @override
   String xpLevelUpNowMessage(int level) {
-    return 'You have enough XP to reach Level $level. Level up now?';
+    return 'Vous avez assez d\'expérience pour atteindre le niveau $level. Voulez-vous passer au niveau supérieur maintenant ?';
   }
 
   @override
-  String get xpLevelUpLater => 'Later';
+  String get xpLevelUpLater => 'Plus tard';
 
   @override
   String get settingsSectionUnits => 'Unités';

@@ -2,7 +2,7 @@
   "Barbarian": {
     "Rage": {
       "name": "Rage",
-      "description": "Au combat, vous combattez avec une férocité primordiale. À votre tour, vous pouvez entrer en colère comme une action bonus. Lorsque vous êtes en rage, vous avez un avantage aux tests de Force et aux jets de sauvegarde, bénéficiez d'un bonus aux jets de dégâts en mêlée en utilisant la Force (+2 aux niveaux barbares 1 à 8, +3 aux niveaux 9 à 15 et +4 aux niveaux 16 à 20) et avez une résistance aux dégâts contondants, perçants et tranchants. Votre rage dure 1 minute. Il se termine plus tôt si vous perdez connaissance ou si votre tour se termine et que vous n'avez pas attaqué de créature hostile depuis votre dernier tour ni subi de dégâts depuis lors."
+      "description": "Au combat, vous vous battez avec une férocité primordiale. À votre tour, vous pouvez entrer en rage par une action bonus. Tant que vous êtes en rage, vous avez l'avantage aux tests et aux jets de sauvegarde de Force, vous gagnez un bonus aux jets de dégâts des attaques de corps à corps utilisant la Force (+2 aux niveaux de barbare 1 à 8, +3 aux niveaux 9 à 15 et +4 aux niveaux 16 à 20) et vous résistez aux dégâts contondants, perforants et tranchants. Votre rage dure 1 minute. Elle prend fin prématurément si vous perdez connaissance ou si votre tour se termine sans que vous ayez attaqué une créature hostile ni subi de dégâts depuis votre tour précédent."
     },
     "Unarmored Defense": {
       "name": "Défense sans armure",
@@ -21,8 +21,8 @@
       "description": "Vous choisissez un chemin qui façonne la nature de votre rage."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Extra Attack": {
       "name": "Attaque supplémentaire",
@@ -41,11 +41,11 @@
       "description": "Vous pouvez lancer un dé de dégâts d'arme supplémentaire pour déterminer les dégâts supplémentaires d'un coup critique avec une attaque de mêlée. Cela passe à deux dés supplémentaires au niveau 13 et à trois dés supplémentaires au niveau 17."
     },
     "Relentless Rage": {
-      "name": "Colère implacable",
-      "description": "Votre rage peut vous pousser à vous battre malgré de graves blessures. Si vous tombez à 0 point de vie alors que vous êtes en rage et que vous ne mourez pas sur le coup, vous pouvez effectuer un jet de sauvegarde de Constitution DD 10. Si vous réussissez, vous perdez 1 point de vie. Chaque fois que vous utilisez cette fonctionnalité après la première, le DC augmente de 5. Lorsque vous terminez un repos court ou long, le DC se réinitialise à 10."
+      "name": "Rage implacable",
+      "description": "Votre rage vous permet de continuer à combattre malgré de graves blessures. Si vos points de vie tombent à 0 pendant que vous êtes en rage et que vous ne mourez pas sur le coup, vous pouvez effectuer un jet de sauvegarde de Constitution DD 10. En cas de réussite, vos points de vie tombent à 1 au lieu de 0. Chaque utilisation ultérieure de ce privilège augmente le DD de 5. Après un repos court ou long, le DD revient à 10."
     },
     "Persistent Rage": {
-      "name": "Colère persistante",
+      "name": "Rage persistante",
       "description": "Votre rage est si féroce qu’elle ne se termine prématurément que si vous perdez connaissance ou si vous choisissez d’y mettre fin."
     },
     "Indomitable Might": {
@@ -83,8 +83,8 @@
       "description": "Choisissez deux de vos compétences. Votre bonus de maîtrise est doublé pour tout test de capacité que vous effectuez et qui utilise l'une ou l'autre des compétences choisies."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Font of Inspiration": {
       "name": "Source d’inspiration",
@@ -117,8 +117,8 @@
       "description": "Vous obtenez la capacité de canaliser l’énergie divine directement depuis votre divinité, en utilisant cette énergie pour alimenter des effets magiques. Vous commencez avec deux de ces effets : Turn Undead et un effet déterminé par votre domaine. Lorsque vous utilisez votre Canalisation divine, vous choisissez l'effet à créer."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Destroy Undead": {
       "name": "Détruire les morts-vivants",
@@ -147,8 +147,8 @@
       "description": "Vous choisissez de vous identifier à un cercle de druides."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Timeless Body": {
       "name": "Corps intemporel",
@@ -156,11 +156,11 @@
     },
     "Beast Spells": {
       "name": "Sorts de bête",
-      "description": "Vous pouvez lancer plusieurs de vos sorts de druide sous n’importe quelle forme que vous prenez en utilisant Wild Shape. Vous pouvez exécuter les composantes somatiques et verbales d'un sort de druide sous forme de bête, mais vous n'êtes pas en mesure de fournir des composantes matérielles."
+      "description": "Vous pouvez lancer plusieurs de vos sorts de druide sous n’importe quelle forme que vous prenez en utilisant Forme sauvage. Vous pouvez exécuter les composantes somatiques et verbales d'un sort de druide sous forme de bête, mais vous n'êtes pas en mesure de fournir des composantes matérielles."
     },
     "Archdruid": {
       "name": "Archidruide",
-      "description": "Vous pouvez utiliser votre Wild Shape un nombre illimité de fois. De plus, vous pouvez ignorer les composantes verbales et somatiques de vos sorts de druide, ainsi que toutes les composantes matérielles qui n'ont pas de coût et ne sont pas consommées par un sort."
+      "description": "Vous pouvez utiliser votre Forme sauvage un nombre illimité de fois. De plus, vous pouvez ignorer les composantes verbales et somatiques de vos sorts de druide, ainsi que toutes les composantes matérielles qui n'ont pas de coût et ne sont pas consommées par un sort."
     }
   },
   "Fighter": {
@@ -181,8 +181,8 @@
       "description": "Vous choisissez un archétype que vous vous efforcez d’imiter dans vos styles et techniques de combat."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Extra Attack": {
       "name": "Attaque supplémentaire",
@@ -219,8 +219,8 @@
       "description": "Vous pouvez utiliser votre réaction pour dévier ou attraper le missile lorsque vous êtes touché par une attaque avec une arme à distance. Lorsque vous faites cela, les dégâts que vous subissez de l'attaque sont réduits de 1d10 + votre modificateur de Dextérité + votre niveau de moine."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Slow Fall": {
       "name": "Chute lente",
@@ -281,8 +281,8 @@
       "description": "Votre serment vous permet de canaliser l'énergie divine pour alimenter des effets magiques. Lorsque vous utilisez votre Canalisation divine, vous choisissez quelle option utiliser. Vous récupérez les utilisations dépensées lorsque vous terminez un repos court ou long."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Extra Attack": {
       "name": "Attaque supplémentaire",
@@ -327,8 +327,8 @@
       "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez sentir si des aberrations, des célestes, des dragons, des élémentaires, des fées, des démons ou des morts-vivants sont présents à moins de 1,6 km de vous."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Extra Attack": {
       "name": "Attaque supplémentaire",
@@ -377,8 +377,8 @@
       "description": "Vous choisissez un archétype que vous émulez dans l’exercice de vos capacités de voleur."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Uncanny Dodge": {
       "name": "Esquive étrange",
@@ -427,8 +427,8 @@
       "description": "Vous obtenez la possibilité de modifier vos sorts en fonction de vos besoins. Vous obtenez deux options de métamagie de votre choix parmi : Sort prudent, Sort distant, Sort surpuissant, Sort étendu, Sort intensifié, Sort accéléré, Sort subtil, Sort jumelé."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Sorcerous Restoration": {
       "name": "Restauration sorcière",
@@ -453,8 +453,8 @@
       "description": "Votre patron d’un autre monde vous offre un cadeau pour vos loyaux services. Vous gagnez l'une des fonctionnalités suivantes de votre choix : Pacte de la Chaîne, Pacte de la Lame ou Pacte du Tome."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Mystic Arcanum": {
       "name": "Arcane mystique",
@@ -462,7 +462,7 @@
     },
     "Eldritch Master": {
       "name": "Maître surnaturel",
-      "description": "Vous pouvez puiser dans votre réserve intérieure de pouvoir mystique tout en suppliant votre patron de récupérer les emplacements de sorts dépensés. Vous pouvez passer 1 minute à demander de l'aide à votre patron pour récupérer tous vos emplacements de sorts dépensés grâce à votre fonction Pact Magic. Une fois que vous avez récupéré des emplacements de sorts avec cette fonctionnalité, vous devez terminer un long repos avant de pouvoir le faire à nouveau."
+      "description": "Vous pouvez puiser dans votre réserve intérieure de pouvoir mystique tout en suppliant votre patron de récupérer les emplacements de sorts dépensés. Vous pouvez passer 1 minute à demander de l'aide à votre patron pour récupérer tous vos emplacements de sorts dépensés grâce à votre fonction Magie du Pacte. Une fois que vous avez récupéré des emplacements de sorts avec cette fonctionnalité, vous devez terminer un long repos avant de pouvoir le faire à nouveau."
     }
   },
   "Wizard": {
@@ -479,8 +479,8 @@
       "description": "Vous choisissez une tradition arcanique et façonnez votre pratique de la magie à travers l'une des écoles suivantes : Abjuration, Conjuration, Divination, Enchantement, Évocation, Illusion, Nécromancie ou Transmutation."
     },
     "Ability Score Improvement": {
-      "name": "Amélioration du score de capacité",
-      "description": "Augmentez une valeur de capacité de 2 ou deux valeurs de capacité de 1. Ne peut pas dépasser 20."
+      "name": "Amélioration de caractéristique",
+      "description": "Augmentez une caractéristique de 2 ou deux caractéristiques de 1. Aucune ne peut dépasser 20."
     },
     "Spell Mastery": {
       "name": "Maîtrise des sorts",

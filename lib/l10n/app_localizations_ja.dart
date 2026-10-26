@@ -568,7 +568,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sectionAbilityScores => '能力値';
 
   @override
-  String get sectionSavingThrows => '投げの熟練度を保存する';
+  String get sectionSavingThrows => 'セーヴ習熟';
 
   @override
   String get labelName => '名前';
@@ -714,23 +714,23 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get levelUpSpellRestrictedSection => 'School requirement';
+  String get levelUpSpellRestrictedSection => '指定された学派';
 
   @override
-  String get levelUpSpellFreeSection => 'Free choice';
+  String get levelUpSpellFreeSection => '自由選択';
 
   @override
   String levelUpSpellRestrictedInstruction(int count, String schools) {
-    return 'Choose $count spell(s) from $schools.';
+    return '選ぶ呪文: $count個。対象の学派: $schools。';
   }
 
   @override
   String levelUpSpellFreeInstruction(int count) {
-    return 'Choose $count spell(s) from any school.';
+    return '選ぶ呪文: $count個。どの学派からでも選べます。';
   }
 
   @override
-  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
+  String get levelUpSpellFreeLocked => '先に指定された学派からの選択を完了してください。';
 
   @override
   String levelUpCantripsToLearn(int n) {
@@ -1327,7 +1327,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get inventoryTypeConsumable => '消耗品';
 
   @override
-  String get inventoryTypeGear => 'ギヤ';
+  String get inventoryTypeGear => '装備品';
 
   @override
   String get inventoryTypeEquippable => '装備可能';
@@ -1559,7 +1559,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String stepRaceBonus(int n) {
-    return '+$nレース';
+    return '種族ボーナス +$n';
   }
 
   @override
@@ -1580,7 +1580,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get stepSelectTool => 'ツールを選択してください…';
 
   @override
-  String get statAC => '交流';
+  String get statAC => 'AC';
 
   @override
   String get statArmor => '鎧';
@@ -1604,7 +1604,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get statProfBonus => '教授ボーナス';
 
   @override
-  String get statPassivePerc => 'パッシブパーク';
+  String get statPassivePerc => '受動知覚';
 
   @override
   String get statInspiration => 'ヒラメキ';
@@ -1669,22 +1669,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tooltipChangeTempHp => '温度HP変更';
 
   @override
-  String get abilityStr => 'STR';
+  String get abilityStr => '筋';
 
   @override
-  String get abilityDex => 'デックス';
+  String get abilityDex => '敏';
 
   @override
-  String get abilityCon => 'CON';
+  String get abilityCon => '耐';
 
   @override
-  String get abilityInt => 'INT';
+  String get abilityInt => '知';
 
   @override
-  String get abilityWis => 'ウィスコンシン州';
+  String get abilityWis => '判';
 
   @override
-  String get abilityCha => 'チャ';
+  String get abilityCha => '魅';
 
   @override
   String featuresSectionRacialTraits(String name) {
@@ -2125,7 +2125,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String reviewRowAcWith(String name) {
-    return '$nameを搭載したAC';
+    return '$name装備時のAC';
   }
 
   @override
@@ -2197,7 +2197,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get stepHitDieLabel => 'ヒットダイ';
 
   @override
-  String get stepSavesLabel => '保存';
+  String get stepSavesLabel => 'セーヴィング・スロー';
 
   @override
   String get stepSpellcastingLabel => '呪文詠唱';
@@ -2211,51 +2211,51 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get stepRaceSpeedLabel => 'スピード';
+  String get stepRaceSpeedLabel => '移動速度';
 
   @override
-  String get stepRaceASILabel => 'ASI';
+  String get stepRaceASILabel => '種族の能力値ボーナス';
 
   @override
   String stepRaceSubracesAvailable(int count) {
-    return '$count 個のサブレースが利用可能';
+    return '選択可能な亜種族: $count';
   }
 
   @override
   String stepChooseSkillsHint(int count) {
-    return 'クラスリストから $count 個のスキルを選択してください。';
+    return 'クラスの一覧から技能を$count個選んでください。';
   }
 
   @override
-  String get abilityStrength => '強さ';
+  String get abilityStrength => '筋力';
 
   @override
-  String get abilityDexterity => '器用さ';
+  String get abilityDexterity => '敏捷力';
 
   @override
-  String get abilityConstitution => '憲法';
+  String get abilityConstitution => '耐久力';
 
   @override
-  String get abilityIntelligence => '知能';
+  String get abilityIntelligence => '知力';
 
   @override
-  String get abilityWisdom => '知恵';
+  String get abilityWisdom => '判断力';
 
   @override
-  String get abilityCharisma => 'カリスマ';
+  String get abilityCharisma => '魅力';
 
   @override
   String stepFreeAsiRemaining(int remaining) {
-    return '人種 ASI ポイントを自由に分配します (残り $remaining):';
+    return '種族による能力値ボーナスを自由に割り振ってください（残り$remainingポイント）：';
   }
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return '人種フリー ASI: $total 属性に +1 を割り当てます (残り $remaining):';
+    return '$total種類の能力値にそれぞれ+1を割り振ってください（残り$remaining）：';
   }
 
   @override
-  String get stepFreePicksNoStack => 'すでに種族ボーナスを受けている属性には割り当てることができません。';
+  String get stepFreePicksNoStack => 'すでに種族ボーナスを受けている能力値には割り振れません。';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -2443,21 +2443,21 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detailSheetAvailableSubraces => 'サブ種族';
 
   @override
-  String get xpTrackingLabel => 'Track XP';
+  String get xpTrackingLabel => '経験点を記録する';
 
   @override
-  String get xpReadyToLevelUp => 'Ready to level up!';
+  String get xpReadyToLevelUp => 'レベルアップできます！';
 
   @override
-  String get xpLevelUpNowTitle => 'Level Up?';
+  String get xpLevelUpNowTitle => 'レベルアップしますか？';
 
   @override
   String xpLevelUpNowMessage(int level) {
-    return 'You have enough XP to reach Level $level. Level up now?';
+    return 'レベル$levelに必要な経験点に達しました。今レベルアップしますか？';
   }
 
   @override
-  String get xpLevelUpLater => 'Later';
+  String get xpLevelUpLater => '後で';
 
   @override
   String get settingsSectionUnits => '単位';

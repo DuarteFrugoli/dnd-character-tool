@@ -558,7 +558,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sectionAbilityScores => '能力分数';
 
   @override
-  String get sectionSavingThrows => '豁免能力';
+  String get sectionSavingThrows => '豁免熟练项';
 
   @override
   String get labelName => '姓名';
@@ -703,23 +703,23 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get levelUpSpellRestrictedSection => 'School requirement';
+  String get levelUpSpellRestrictedSection => '指定学派';
 
   @override
-  String get levelUpSpellFreeSection => 'Free choice';
+  String get levelUpSpellFreeSection => '自由选择';
 
   @override
   String levelUpSpellRestrictedInstruction(int count, String schools) {
-    return 'Choose $count spell(s) from $schools.';
+    return '需选择 $count 个法术。可选学派：$schools。';
   }
 
   @override
   String levelUpSpellFreeInstruction(int count) {
-    return 'Choose $count spell(s) from any school.';
+    return '需选择 $count 个法术，可从任意学派选择。';
   }
 
   @override
-  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
+  String get levelUpSpellFreeLocked => '请先完成指定学派的法术选择。';
 
   @override
   String levelUpCantripsToLearn(int n) {
@@ -1314,7 +1314,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get inventoryTypeConsumable => '消耗品';
 
   @override
-  String get inventoryTypeGear => '齿轮';
+  String get inventoryTypeGear => '装备';
 
   @override
   String get inventoryTypeEquippable => '可装备';
@@ -1546,7 +1546,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String stepRaceBonus(int n) {
-    return '+ $n 竞赛';
+    return '种族加值 +$n';
   }
 
   @override
@@ -1567,7 +1567,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get stepSelectTool => '选择一个工具...';
 
   @override
-  String get statAC => '交流电';
+  String get statAC => 'AC';
 
   @override
   String get statArmor => '盔甲';
@@ -1591,7 +1591,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get statProfBonus => '教授奖金';
 
   @override
-  String get statPassivePerc => '被动全氯乙烯';
+  String get statPassivePerc => '被动察觉';
 
   @override
   String get statInspiration => '灵感';
@@ -1656,22 +1656,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tooltipChangeTempHp => '改变温度 HP';
 
   @override
-  String get abilityStr => 'STR';
+  String get abilityStr => '力量';
 
   @override
-  String get abilityDex => '去中心化交易所';
+  String get abilityDex => '敏捷';
 
   @override
-  String get abilityCon => '康';
+  String get abilityCon => '体质';
 
   @override
-  String get abilityInt => 'INT';
+  String get abilityInt => '智力';
 
   @override
-  String get abilityWis => '气象信息系统';
+  String get abilityWis => '感知';
 
   @override
-  String get abilityCha => '查安';
+  String get abilityCha => '魅力';
 
   @override
   String featuresSectionRacialTraits(String name) {
@@ -2081,7 +2081,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reviewRowSubclass => '子类';
 
   @override
-  String get reviewRowHitDie => '击中骰子';
+  String get reviewRowHitDie => '生命骰';
 
   @override
   String get reviewRowSavingThrows => '豁免检定';
@@ -2108,11 +2108,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reviewRowMaxHp => '最大生命值';
 
   @override
-  String get reviewRowAcUnarmored => '交流（非装甲）';
+  String get reviewRowAcUnarmored => 'AC（未穿护甲）';
 
   @override
   String reviewRowAcWith(String name) {
-    return '与 $name 的交流';
+    return '装备$name时的AC';
   }
 
   @override
@@ -2169,10 +2169,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get stepPrimaryAbilities => '主要能力：';
 
   @override
-  String get stepNameTitle => '给你的角色起一个名字。';
+  String get stepNameTitle => '为你的角色取个名字。';
 
   @override
-  String get stepNameHint => '您以后可以随时更改此设置。';
+  String get stepNameHint => '之后随时可以修改。';
 
   @override
   String get stepNameCharLabel => '角色名称';
@@ -2181,10 +2181,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get stepNamePlayerLabel => '玩家姓名（可选）';
 
   @override
-  String get stepHitDieLabel => '命中死亡';
+  String get stepHitDieLabel => '生命骰';
 
   @override
-  String get stepSavesLabel => '保存';
+  String get stepSavesLabel => '豁免检定';
 
   @override
   String get stepSpellcastingLabel => '施法';
@@ -2194,55 +2194,55 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String stepChooseSubclassPrompt(String feature, int level) {
-    return '选择一个$feature（Lv $level）：';
+    return '选择$feature（等级 $level）：';
   }
 
   @override
   String get stepRaceSpeedLabel => '速度';
 
   @override
-  String get stepRaceASILabel => '亚洲SI';
+  String get stepRaceASILabel => '种族属性加值';
 
   @override
   String stepRaceSubracesAvailable(int count) {
-    return '$count 个子比赛可用';
+    return '可选亚种族：$count';
   }
 
   @override
   String stepChooseSkillsHint(int count) {
-    return '从您的班级列表中选择 $count 项技能。';
+    return '从你的职业技能列表中选择 $count 项技能。';
   }
 
   @override
   String get abilityStrength => '力量';
 
   @override
-  String get abilityDexterity => '灵巧';
+  String get abilityDexterity => '敏捷';
 
   @override
-  String get abilityConstitution => '宪法';
+  String get abilityConstitution => '体质';
 
   @override
   String get abilityIntelligence => '智力';
 
   @override
-  String get abilityWisdom => '智慧';
+  String get abilityWisdom => '感知';
 
   @override
   String get abilityCharisma => '魅力';
 
   @override
   String stepFreeAsiRemaining(int remaining) {
-    return '自由分配种族ASI积分（剩余$remaining）：';
+    return '自由分配种族属性加值（剩余 $remaining 点）：';
   }
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return '无种族 ASI：为 $total 属性指定 +1（剩余 $remaining）：';
+    return '为 $total 项属性各分配 +1（剩余 $remaining 项）：';
   }
 
   @override
-  String get stepFreePicksNoStack => '无法分配给已经获得种族加值的属性。';
+  String get stepFreePicksNoStack => '不能选择已经获得种族加值的属性。';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -2430,21 +2430,21 @@ class AppLocalizationsZh extends AppLocalizations {
   String get detailSheetAvailableSubraces => '亚种';
 
   @override
-  String get xpTrackingLabel => 'Track XP';
+  String get xpTrackingLabel => '记录经验值';
 
   @override
-  String get xpReadyToLevelUp => 'Ready to level up!';
+  String get xpReadyToLevelUp => '可以升级了！';
 
   @override
-  String get xpLevelUpNowTitle => 'Level Up?';
+  String get xpLevelUpNowTitle => '现在升级？';
 
   @override
   String xpLevelUpNowMessage(int level) {
-    return 'You have enough XP to reach Level $level. Level up now?';
+    return '经验值足以达到 $level 级。现在升级吗？';
   }
 
   @override
-  String get xpLevelUpLater => 'Later';
+  String get xpLevelUpLater => '稍后';
 
   @override
   String get settingsSectionUnits => '单位';

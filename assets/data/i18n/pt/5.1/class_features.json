@@ -21,8 +21,8 @@
       "description": "Você escolhe um caminho que molda a natureza da sua fúria."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -83,8 +83,8 @@
       "description": "Escolha duas de suas proficiências em perícias. Seu bônus de proficiência é dobrado em qualquer teste de habilidade que use uma das proficiências escolhidas."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Font of Inspiration": {
       "name": "Fonte de Inspiração",
@@ -117,8 +117,8 @@
       "description": "Você ganha a habilidade de canalizar energia divina diretamente de sua divindade, usando essa energia para alimentar efeitos mágicos. Você começa com dois desses efeitos: Expulsar Mortos-Vivos e um efeito determinado pelo seu domínio. Quando usa Canalizar Divindade, você escolhe qual efeito criar."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Destroy Undead": {
       "name": "Destruir Mortos-Vivos",
@@ -147,8 +147,8 @@
       "description": "Você escolhe se identificar com um círculo de druidas."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Timeless Body": {
       "name": "Corpo Atemporal",
@@ -181,8 +181,8 @@
       "description": "Você escolhe um arquétipo que busca imitar em seus estilos e técnicas de combate."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -219,8 +219,8 @@
       "description": "Você pode usar sua reação para desviar ou agarrar o projétil quando for atingido por um ataque à distância com arma. Quando faz isso, o dano sofrido pelo ataque é reduzido em 1d10 + seu modificador de Destreza + seu nível de monge."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Slow Fall": {
       "name": "Queda Lenta",
@@ -281,8 +281,8 @@
       "description": "Seu juramento permite que você canalize energia divina para alimentar efeitos mágicos. Ao usar Canalizar Divindade, você escolhe qual opção usar. Você recupera os usos gastos ao terminar um descanso curto ou longo."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -327,8 +327,8 @@
       "description": "Você pode usar sua ação e gastar um espaço de magia de patrulheiro para focar sua percepção na região ao seu redor. Por 1 minuto por nível do espaço de magia gasto, você pode sentir se aberrações, celestiais, dragões, elementais, fadas, ínferos ou mortos-vivos estão presentes a até 1,5 quilômetro de você."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -377,8 +377,8 @@
       "description": "Você escolhe um arquétipo que imita no exercício de suas habilidades de ladino."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Uncanny Dodge": {
       "name": "Esquiva Sobrenatural",
@@ -427,8 +427,8 @@
       "description": "Você ganha a habilidade de moldar suas magias para atender às suas necessidades. Você ganha duas opções de Metamagia à sua escolha entre: Magia Cuidadosa, Magia Distante, Magia Potencializada, Magia Estendida, Magia Elevada, Magia Acelerada, Magia Sutil e Magia Duplicada."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Sorcerous Restoration": {
       "name": "Restauração Feiticeira",
@@ -453,8 +453,8 @@
       "description": "Seu patrono transcendental concede a você um presente por seu serviço leal. Você ganha uma das seguintes características à sua escolha: Pacto da Corrente, Pacto da Lâmina ou Pacto do Tomo."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Mystic Arcanum": {
       "name": "Arcano Místico",
@@ -479,8 +479,8 @@
       "description": "Você escolhe uma tradição arcana, moldando sua prática de magia por meio de uma das seguintes escolas: Abjuração, Conjuração, Adivinhação, Encantamento, Evocação, Ilusão, Necromancia ou Transmutação."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Habilidade",
-      "description": "Aumente um valor de habilidade em 2, ou dois valores de habilidade em 1. Não pode exceder 20."
+      "name": "Melhoria de Atributo",
+      "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos. Nenhum valor pode ultrapassar 20."
     },
     "Spell Mastery": {
       "name": "Maestria em Magias",

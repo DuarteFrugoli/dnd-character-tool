@@ -583,7 +583,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get sectionAbilityScores => 'Puntuaciones de habilidad';
 
   @override
-  String get sectionSavingThrows => 'Competencias en tiros de salvación';
+  String get sectionSavingThrows => 'Competencias en tiradas de salvación';
 
   @override
   String get labelName => 'Nombre';
@@ -731,23 +731,24 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get levelUpSpellRestrictedSection => 'School requirement';
+  String get levelUpSpellRestrictedSection => 'Escuelas obligatorias';
 
   @override
-  String get levelUpSpellFreeSection => 'Free choice';
+  String get levelUpSpellFreeSection => 'Elección libre';
 
   @override
   String levelUpSpellRestrictedInstruction(int count, String schools) {
-    return 'Choose $count spell(s) from $schools.';
+    return 'Conjuros por elegir: $count. Escuelas permitidas: $schools.';
   }
 
   @override
   String levelUpSpellFreeInstruction(int count) {
-    return 'Choose $count spell(s) from any school.';
+    return 'Conjuros por elegir: $count. Puedes elegir de cualquier escuela.';
   }
 
   @override
-  String get levelUpSpellFreeLocked => 'Complete the school requirement first.';
+  String get levelUpSpellFreeLocked =>
+      'Completa primero la elección de las escuelas obligatorias.';
 
   @override
   String levelUpCantripsToLearn(int n) {
@@ -1362,7 +1363,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get inventoryTypeConsumable => 'Consumible';
 
   @override
-  String get inventoryTypeGear => 'Engranaje';
+  String get inventoryTypeGear => 'Equipo';
 
   @override
   String get inventoryTypeEquippable => 'Equipable';
@@ -1598,7 +1599,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String stepRaceBonus(int n) {
-    return '+ carrera $n';
+    return 'Bonificación racial +$n';
   }
 
   @override
@@ -1643,7 +1644,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get statProfBonus => 'Bono de profesor';
 
   @override
-  String get statPassivePerc => 'Perc Pasivo';
+  String get statPassivePerc => 'Percepción pasiva';
 
   @override
   String get statInspiration => 'Inspiración';
@@ -1711,19 +1712,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get abilityStr => 'FUE';
 
   @override
-  String get abilityDex => 'DEX';
+  String get abilityDex => 'DES';
 
   @override
-  String get abilityCon => 'ESTAFA';
+  String get abilityCon => 'CON';
 
   @override
-  String get abilityInt => 'ENT';
+  String get abilityInt => 'INT';
 
   @override
-  String get abilityWis => 'SIO';
+  String get abilityWis => 'SAB';
 
   @override
-  String get abilityCha => 'CHA';
+  String get abilityCha => 'CAR';
 
   @override
   String featuresSectionRacialTraits(String name) {
@@ -2139,10 +2140,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get reviewRowSubclass => 'Subclase';
 
   @override
-  String get reviewRowHitDie => 'Golpear morir';
+  String get reviewRowHitDie => 'Dado de Golpe';
 
   @override
-  String get reviewRowSavingThrows => 'Tiros de salvación';
+  String get reviewRowSavingThrows => 'Tiradas de salvación';
 
   @override
   String get reviewRowSubrace => 'Subraza';
@@ -2232,81 +2233,81 @@ class AppLocalizationsEs extends AppLocalizations {
   String get stepPrimaryAbilities => 'habilidades primarias:';
 
   @override
-  String get stepNameTitle => 'Give your character a name.';
+  String get stepNameTitle => 'Ponle nombre a tu personaje.';
 
   @override
-  String get stepNameHint => 'You can always change this later.';
+  String get stepNameHint => 'Puedes cambiarlo más adelante.';
 
   @override
-  String get stepNameCharLabel => 'Character name';
+  String get stepNameCharLabel => 'Nombre del personaje';
 
   @override
-  String get stepNamePlayerLabel => 'Player name (optional)';
+  String get stepNamePlayerLabel => 'Nombre del jugador (opcional)';
 
   @override
-  String get stepHitDieLabel => 'Hit die';
+  String get stepHitDieLabel => 'Dado de Golpe';
 
   @override
-  String get stepSavesLabel => 'Saves';
+  String get stepSavesLabel => 'Tiradas de salvación';
 
   @override
-  String get stepSpellcastingLabel => 'Spellcasting';
+  String get stepSpellcastingLabel => 'Lanzamiento de conjuros';
 
   @override
-  String get stepOptionsLabel => 'options';
+  String get stepOptionsLabel => 'opciones';
 
   @override
   String stepChooseSubclassPrompt(String feature, int level) {
-    return 'Choose a $feature (Lv $level):';
+    return 'Elige $feature (nivel $level):';
   }
 
   @override
-  String get stepRaceSpeedLabel => 'Speed';
+  String get stepRaceSpeedLabel => 'Velocidad';
 
   @override
-  String get stepRaceASILabel => 'ASI';
+  String get stepRaceASILabel => 'Mejora de característica';
 
   @override
   String stepRaceSubracesAvailable(int count) {
-    return '$count subraces available';
+    return 'Subrazas disponibles: $count';
   }
 
   @override
   String stepChooseSkillsHint(int count) {
-    return 'Choose $count skills from your class list.';
+    return 'Elige $count habilidades de la lista de tu clase.';
   }
 
   @override
-  String get abilityStrength => 'Strength';
+  String get abilityStrength => 'Fuerza';
 
   @override
-  String get abilityDexterity => 'Dexterity';
+  String get abilityDexterity => 'Destreza';
 
   @override
-  String get abilityConstitution => 'Constitution';
+  String get abilityConstitution => 'Constitución';
 
   @override
-  String get abilityIntelligence => 'Intelligence';
+  String get abilityIntelligence => 'Inteligencia';
 
   @override
-  String get abilityWisdom => 'Wisdom';
+  String get abilityWisdom => 'Sabiduría';
 
   @override
-  String get abilityCharisma => 'Charisma';
+  String get abilityCharisma => 'Carisma';
 
   @override
   String stepFreeAsiRemaining(int remaining) {
-    return 'Distribute racial ASI points freely ($remaining remaining):';
+    return 'Distribuye libremente los puntos de mejora racial (quedan $remaining):';
   }
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return 'Racial free ASI: assign +1 to $total attributes ($remaining remaining):';
+    return 'Asigna +1 a $total características (quedan $remaining):';
   }
 
   @override
   String get stepFreePicksNoStack =>
-      'Cannot assign to attributes already receiving a racial bonus.';
+      'No puedes elegir características que ya tengan una bonificación racial.';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -2497,21 +2498,21 @@ class AppLocalizationsEs extends AppLocalizations {
   String get detailSheetAvailableSubraces => 'Subrazas';
 
   @override
-  String get xpTrackingLabel => 'Track XP';
+  String get xpTrackingLabel => 'Registrar experiencia';
 
   @override
-  String get xpReadyToLevelUp => 'Ready to level up!';
+  String get xpReadyToLevelUp => '¡Ya puedes subir de nivel!';
 
   @override
-  String get xpLevelUpNowTitle => 'Level Up?';
+  String get xpLevelUpNowTitle => '¿Subir de nivel?';
 
   @override
   String xpLevelUpNowMessage(int level) {
-    return 'You have enough XP to reach Level $level. Level up now?';
+    return 'Tienes suficiente experiencia para alcanzar el nivel $level. ¿Quieres subir ahora?';
   }
 
   @override
-  String get xpLevelUpLater => 'Later';
+  String get xpLevelUpLater => 'Más tarde';
 
   @override
   String get settingsSectionUnits => 'Unidades';
@@ -2520,7 +2521,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get settingsUnitSystem => 'Sistema de unidades';
 
   @override
-  String get settingsUnitImperial => 'Imperial (ft / lb)';
+  String get settingsUnitImperial => 'Imperial (pies / lb)';
 
   @override
   String get settingsUnitMetric => 'Métrico (m / kg)';

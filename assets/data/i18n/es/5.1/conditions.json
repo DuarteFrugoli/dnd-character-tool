@@ -20,7 +20,7 @@
     "description": "Una criatura asustada tiene desventaja en las pruebas de característica y tiradas de ataque mientras la fuente de su miedo esté dentro de su línea de visión. La criatura no puede acercarse voluntariamente a la fuente de su miedo."
   },
   "Grappled": {
-    "name": "luchado",
+    "name": "Agarrado",
     "description": "La velocidad de una criatura apresada se vuelve 0 y no puede beneficiarse de ninguna bonificación a su velocidad. La condición termina si el luchador queda incapacitado. La condición también termina si un efecto elimina a la criatura apresada del alcance del luchador o del efecto de agarre."
   },
   "Incapacitated": {
@@ -44,11 +44,11 @@
     "description": "Una criatura envenenada tiene desventaja en las tiradas de ataque y pruebas de habilidad."
   },
   "Prone": {
-    "name": "Propenso",
+    "name": "Derribado",
     "description": "La única opción de movimiento de una criatura boca abajo es gatear, a menos que se ponga de pie y así termine la condición. La criatura tiene desventaja en las tiradas de ataque. Una tirada de ataque contra la criatura tiene ventaja si el atacante está a 5 pies de la criatura. De lo contrario, la tirada de ataque tiene desventaja."
   },
   "Restrained": {
-    "name": "Contenido",
+    "name": "Apresado",
     "description": "La velocidad de una criatura restringida se vuelve 0 y no puede beneficiarse de ninguna bonificación a su velocidad. Las tiradas de ataque contra la criatura tienen ventaja y las tiradas de ataque de la criatura tienen desventaja. La criatura tiene desventaja en las tiradas de salvación de Destreza."
   },
   "Stunned": {

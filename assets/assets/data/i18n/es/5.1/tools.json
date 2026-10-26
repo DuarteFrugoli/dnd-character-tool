@@ -27,7 +27,7 @@
     "name": "Herramientas de joyero"
   },
   "Leatherworker's tools": {
-    "name": "Herramientas de peletero"
+    "name": "Herramientas de curtidor"
   },
   "Mason's tools": {
     "name": "Herramientas de albañil"
@@ -54,13 +54,13 @@
     "name": "Juego de dados"
   },
   "Dragonchess set": {
-    "name": "Conjunto de dragones"
+    "name": "Juego de ajedrez dracónico"
   },
   "Playing card set": {
-    "name": "juego de naipes"
+    "name": "Juego de naipes"
   },
   "Three-Dragon Ante set": {
-    "name": "Conjunto Ante de tres dragones"
+    "name": "Juego de Ante de los Tres Dragones"
   },
   "Bagpipes": {
     "name": "Gaita"
@@ -69,7 +69,7 @@
     "name": "Tambor"
   },
   "Dulcimer": {
-    "name": "Dulcimer"
+    "name": "Dulcémele"
   },
   "Flute": {
     "name": "Flauta"
@@ -81,16 +81,16 @@
     "name": "Lira"
   },
   "Horn": {
-    "name": "Bocina"
+    "name": "Trompa"
   },
   "Pan flute": {
-    "name": "flauta de pan"
+    "name": "Flauta de pan"
   },
   "Shawm": {
     "name": "Caramillo"
   },
   "Viol": {
-    "name": "viola"
+    "name": "Viola"
   },
   "Disguise kit": {
     "name": "Kit de disfraz"
@@ -102,13 +102,13 @@
     "name": "Herramientas de ladrón"
   },
   "Herbalism kit": {
-    "name": "kit de herboristería"
+    "name": "Kit de herboristería"
   },
   "Navigator's tools": {
-    "name": "herramientas del navegador"
+    "name": "Herramientas de navegante"
   },
   "Poisoner's kit": {
-    "name": "kit de envenenador"
+    "name": "Kit de envenenador"
   },
   "Vehicles (land)": {
     "name": "Vehículos (terrestres)"

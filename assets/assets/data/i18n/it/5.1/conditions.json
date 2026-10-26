@@ -13,7 +13,7 @@
     "description": "Una creatura assordata non può sentire e fallisce automaticamente qualsiasi prova di caratteristica che richieda l'uso dell'udito."
   },
   "Exhaustion": {
-    "name": "Indebolimento",
+    "name": "Esaurimento",
     "description": "L'indebolimento è suddiviso in sei livelli, i cui effetti sono cumulativi. Livello 1: svantaggio alle prove di caratteristica. Livello 2: velocità dimezzata. Livello 3: svantaggio ai tiri per colpire e ai tiri salvezza. Livello 4: punti ferita massimi dimezzati. Livello 5: velocità ridotta a 0. Livello 6: morte. Completare un riposo lungo riduce il livello di indebolimento di 1, purché la creatura abbia anche mangiato e bevuto."
   },
   "Frightened": {

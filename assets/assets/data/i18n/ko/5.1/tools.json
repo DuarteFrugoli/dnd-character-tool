@@ -1,6 +1,6 @@
 {
   "Alchemist's supplies": {
-    "name": "연금술사의 보급품"
+    "name": "연금술 도구"
   },
   "Brewer's supplies": {
     "name": "양조가의 도구"
@@ -54,13 +54,13 @@
     "name": "주사위 세트"
   },
   "Dragonchess set": {
-    "name": "용체 세트"
+    "name": "드래곤 체스 세트"
   },
   "Playing card set": {
     "name": "트럼프패 세트"
   },
   "Three-Dragon Ante set": {
-    "name": "삼룡안티 세트"
+    "name": "쓰리 드래곤 앤티 세트"
   },
   "Bagpipes": {
     "name": "백파이프"
@@ -78,7 +78,7 @@
     "name": "류트"
   },
   "Lyre": {
-    "name": "거문고"
+    "name": "리라"
   },
   "Horn": {
     "name": "뿔"
@@ -105,15 +105,15 @@
     "name": "약초학 키트"
   },
   "Navigator's tools": {
-    "name": "네비게이터 도구"
+    "name": "항해 도구"
   },
   "Poisoner's kit": {
     "name": "독살자 키트"
   },
   "Vehicles (land)": {
-    "name": "차량(육상)"
+    "name": "육상 운송수단"
   },
   "Vehicles (water)": {
-    "name": "차량(물)"
+    "name": "수상 운송수단"
   }
 }

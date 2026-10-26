@@ -54,13 +54,13 @@
     "name": "Jeu de dés"
   },
   "Dragonchess set": {
-    "name": "Jeu d'échecs dragon"
+    "name": "Jeu d'échecs draconiques"
   },
   "Playing card set": {
     "name": "Jeu de cartes à jouer"
   },
   "Three-Dragon Ante set": {
-    "name": "Ensemble Ante à trois dragons"
+    "name": "Jeu de Three-Dragon Ante"
   },
   "Bagpipes": {
     "name": "Cornemuse"
@@ -87,7 +87,7 @@
     "name": "Flûte de Pan"
   },
   "Shawm": {
-    "name": "Shawm"
+    "name": "Chalemie"
   },
   "Viol": {
     "name": "Viole"
@@ -105,7 +105,7 @@
     "name": "Kit d'herboristerie"
   },
   "Navigator's tools": {
-    "name": "Les outils du navigateur"
+    "name": "Outils de navigation"
   },
   "Poisoner's kit": {
     "name": "Kit d'empoisonneur"

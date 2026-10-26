@@ -953,7 +953,7 @@
   },
   "Confusion": {
     "name": "Confusão",
-    "description": "Esta magia ataca e distorce a mente das criaturas, gerando delírios e provocando ações descontroladas. Cada criatura em uma esfera de 3 m de raio centrada em um ponto à sua escolha dentro do alcance deve ser bem-sucedida em um teste de resistência de Sabedoria ou será afetada. Uma criatura afetada não pode realizar reações e deve rolar em uma tabela no início de cada um de seus turnos para determinar seu comportamento naquele turno.",
+    "description": "Esta magia ataca e distorce a mente das criaturas, gerando delírios e provocando ações descontroladas. Cada criatura em uma esfera de 3 m de raio centrada em um ponto à sua escolha dentro do alcance deve ser bem-sucedida em um teste de resistência de Sabedoria ou será afetada. Uma criatura afetada não pode realizar reações e deve rolar 1d10 na tabela no início de cada um de seus turnos para determinar seu comportamento naquele turno.",
     "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 5º nível ou superior, o raio da esfera aumenta em 1,5 m para cada nível do espaço acima do 4º.",
     "material": "três cascas de nozes"
   },

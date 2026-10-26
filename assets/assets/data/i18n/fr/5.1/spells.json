@@ -558,7 +558,7 @@
     "material": "un cil recouvert de gomme arabique"
   },
   "Knock": {
-    "name": "Frappe",
+    "name": "Déblocage",
     "description": "Choisissez un objet que vous pouvez voir à portée. L'objet peut être une porte verrouillée, une boîte, un coffre, un jeu de menottes, un cadenas ou tout autre objet contenant un moyen banal ou magique empêchant l'accès. Une cible qui est maintenue fermée par un verrou banal ou qui est bloquée ou barrée devient déverrouillée, décollée ou non barrée. Lorsque vous lancez le sort, un coup fort, audible jusqu'à 300 pieds, émane de l'objet cible.",
     "higherLevels": null
   },
@@ -955,7 +955,7 @@
     "material": "une goutte d'eau et une pincée de poussière"
   },
   "Death Ward": {
-    "name": "Quartier de la mort",
+    "name": "Protection contre la mort",
     "description": "Vous touchez une créature et lui accordez une mesure de protection contre la mort. La première fois que la cible tombe à 0 point de vie après avoir subi des dégâts, la cible tombe à 1 point de vie et le sort prend fin. Si le sort est toujours en vigueur lorsque la cible est soumise à un effet qui la tuerait instantanément sans infliger de dégâts, cet effet est annulé contre la cible et le sort prend fin.",
     "higherLevels": null
   },

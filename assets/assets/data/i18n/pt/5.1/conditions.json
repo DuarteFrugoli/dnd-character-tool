@@ -16,7 +16,7 @@
     "description": "A exaustão é medida em seis níveis. Nível 1: Desvantagem em testes de habilidade. Nível 2: Velocidade reduzida pela metade. Nível 3: Desvantagem em jogadas de ataque e testes de resistência. Nível 4: Ponto de vida máximo reduzido pela metade. Nível 5: Velocidade reduzida a 0. Nível 6: Morte. Terminar um descanso longo reduz o nível de exaustão em 1, desde que a criatura também tenha ingerido alguma comida e bebida."
   },
   "Frightened": {
-    "name": "Com medo",
+    "name": "Amedrontado",
     "description": "Uma criatura assustada tem desvantagem em testes de habilidade e jogadas de ataque enquanto a fonte de seu medo estiver dentro de sua linha de visão. A criatura não pode se aproximar voluntariamente da fonte de seu medo."
   },
   "Grappled": {

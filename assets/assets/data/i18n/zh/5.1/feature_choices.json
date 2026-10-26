@@ -282,7 +282,7 @@
         "description": "选择敏捷可以增加该功能的能力、熟练程度或节省 DC。"
       },
       "constitution": {
-        "name": "宪法",
+        "name": "体质",
         "description": "选择体质可以增加此功能的能力、熟练度或节省 DC。"
       },
       "intelligence": {

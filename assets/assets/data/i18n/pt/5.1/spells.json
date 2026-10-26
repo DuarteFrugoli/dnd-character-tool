@@ -352,11 +352,6 @@
     "higherLevels": null,
     "material": "água benta ou prata e ferro em pó, que a magia consome"
   },
-  "Purify Food and Drink": {
-    "name": "Purificar Alimentos e Bebidas",
-    "description": "Toda comida e bebida não mágica dentro de uma esfera de 1,5 m de raio centrada em um ponto à sua escolha dentro do alcance é purificada e fica livre de veneno e doença.",
-    "higherLevels": null
-  },
   "Sanctuary": {
     "name": "Santuário",
     "description": "Você protege uma criatura dentro do alcance contra ataques. Até a magia terminar, qualquer criatura que escolha a criatura protegida como alvo de um ataque ou magia prejudicial deve primeiro fazer um teste de resistência de Sabedoria. Em uma falha, a criatura deve escolher um novo alvo ou perder o ataque ou magia. Esta magia não protege a criatura protegida contra efeitos de área.",
@@ -389,21 +384,6 @@
   "Speak with Animals": {
     "name": "Falar com Animais",
     "description": "Você ganha a capacidade de compreender e se comunicar verbalmente com bestas pela duração. O conhecimento e a consciência de muitas bestas são limitados pela inteligência delas, mas, no mínimo, elas podem dar informações sobre locais e monstros próximos, incluindo o que puderem perceber ou tenham percebido no último dia. Você pode tentar persuadir uma besta a lhe fazer um pequeno favor, a critério do Mestre.",
-    "higherLevels": null
-  },
-  "Tasha's Hideous Laughter": {
-    "name": "Riso Histérico de Tasha",
-    "description": "Uma criatura à sua escolha que você possa ver dentro do alcance percebe tudo como hilariamente engraçado e cai em uma crise de riso se esta magia a afetar. O alvo deve ser bem-sucedido em um teste de resistência de Sabedoria ou cairá no chão, ficando incapacitado e incapaz de se levantar pela duração. Uma criatura com Inteligência 4 ou menor não é afetada. Ao final de cada um dos turnos dela, e sempre que sofrer dano, o alvo pode fazer outro teste de resistência de Sabedoria. Em um sucesso, a magia termina.",
-    "higherLevels": null
-  },
-  "Tenser's Floating Disk": {
-    "name": "Disco Flutuante de Tenser",
-    "description": "Esta magia cria um plano circular horizontal de força, com 90 cm de diâmetro e 2,5 cm de espessura, que flutua a 90 cm do chão em um espaço desocupado à sua escolha dentro do alcance. O disco permanece pela duração e pode carregar até 250 kg. Se mais peso for colocado sobre ele, a magia termina e tudo que estava sobre o disco cai no chão.",
-    "higherLevels": null
-  },
-  "Thunderous Smite": {
-    "name": "Destruição Trovejante",
-    "description": "Na primeira vez que você acertar com um ataque corpo a corpo com arma durante a duração desta magia, sua arma ressoa como um trovão audível a até 90 m de distância, e o ataque causa 2d6 de dano trovejante extra ao alvo. Além disso, se o alvo for uma criatura, ele deve ser bem-sucedido em um teste de resistência de Força ou será empurrado 3 m para longe de você e cairá no chão.",
     "higherLevels": null
   },
   "Thunderwave": {
@@ -1407,11 +1387,6 @@
     "description": "Escolha uma área de terreno de até 12 m de lado dentro do alcance. Você pode remodelar terra, areia ou argila na área da maneira que desejar pela duração. Pode elevar ou abaixar a elevação da área, criar ou preencher uma vala, erguer ou achatar uma parede ou formar um pilar. A extensão dessas mudanças não pode exceder metade da maior dimensão da área. Esta magia não pode manipular pedra natural ou construções de pedra.",
     "higherLevels": null,
     "material": "uma lâmina de ferro e um pequeno saco contendo uma mistura de solos - argila, argila e areia"
-  },
-  "Otiluke's Freezing Sphere": {
-    "name": "Esfera Congelante de Otiluke",
-    "description": "Um globo frígido de energia fria dispara das pontas dos seus dedos até um ponto à sua escolha dentro do alcance, onde explode em uma esfera de 18 m de raio. Cada criatura dentro da área deve fazer um teste de resistência de Constituição. Em uma falha, sofre 10d6 de dano de frio, ou metade desse dano em um sucesso. Se o globo atingir um corpo de água ou líquido composto principalmente de água, ele congela o líquido até uma profundidade de 15 cm em uma área de 9 m quadrados.",
-    "higherLevels": "Quando você conjura esta magia usando um espaço de magia de 7º nível ou superior, o dano aumenta em 1d6 para cada nível do espaço acima do 6º."
   },
   "Irresistible Dance": {
     "name": "Dança Irresistível",

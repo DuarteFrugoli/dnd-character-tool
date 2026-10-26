@@ -90,7 +90,6 @@
   "Clothes, traveler's": { "name": "Yolcu giysileri", "description": "Yolculuk için yapılmış dayanıklı giysiler." },
   "Component Pouch": { "name": "Bileşen kesesi", "description": "Belirli bir maliyeti olanlar dışında büyülerinin tüm maddi bileşenlerini taşımak için bölmeleri bulunan küçük, su geçirmez bir kese." },
   "Crowbar": { "name": "Levye", "description": "Kaldıraç gücünün kullanılabildiği Kuvvet kontrollerine avantaj sağlar." },
-  "Disguise kit": { "name": "Kılık değiştirme seti" },
   "Druidic Focus": { "name": "Druid odağı", "description": "Ökse otu dalı, totem, ahşap asa veya porsuk ağacından değnek; druidler için büyü yapma odağı olarak kullanılır." },
   "Flask or tankard": { "name": "Matara veya kupa", "description": "1 pint sıvı alır." },
   "Grappling Hook": { "name": "Kancalı halat ucu", "description": "Bir halatı yüzeye sabitlemek için fırlatılabilir." },

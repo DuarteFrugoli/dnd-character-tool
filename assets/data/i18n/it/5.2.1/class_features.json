@@ -29,8 +29,8 @@
       "description": "Ottieni competenza in un'altra abilità della lista del barbaro di livello 1. Durante l'Ira puoi usare Forza per le prove di Acrobazie, Intimidazione, Percezione, Furtività o Sopravvivenza."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da barbaro."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da barbaro."
     },
     "Extra Attack": {
       "name": "Attacco Extra",
@@ -99,8 +99,8 @@
       "description": "Scegli una sottoclasse del bardo; ottieni i suoi privilegi ai livelli da bardo indicati."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da bardo."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da bardo."
     },
     "Font of Inspiration": {
       "name": "Fonte di Ispirazione",
@@ -145,8 +145,8 @@
       "description": "Scegli una sottoclasse del chierico; ottieni i suoi privilegi ai livelli da chierico indicati."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da chierico."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da chierico."
     },
     "Sear Undead": {
       "name": "Bruciare i Non Morti",
@@ -199,8 +199,8 @@
       "description": "Scegli una sottoclasse del druido; ottieni i suoi privilegi ai livelli da druido indicati."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da druido."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da druido."
     },
     "Wild Resurgence": {
       "name": "Rinascita Selvatica",
@@ -253,8 +253,8 @@
       "description": "Scegli una sottoclasse del guerriero; ottieni i suoi privilegi ai livelli da guerriero indicati."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 6, 8, 12, 14 e 16 da guerriero."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 6, 8, 12, 14 e 16 da guerriero."
     },
     "Extra Attack": {
       "name": "Attacco Extra",
@@ -319,8 +319,8 @@
       "description": "Scegli una sottoclasse del monaco; ottieni i suoi privilegi ai livelli da monaco indicati."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da monaco."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da monaco."
     },
     "Slow Fall": {
       "name": "Caduta Lenta",
@@ -409,8 +409,8 @@
       "description": "Scegli una sottoclasse del paladino; ottieni i suoi privilegi ai livelli da paladino indicati."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da paladino."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da paladino."
     },
     "Extra Attack": {
       "name": "Attacco Extra",
@@ -475,8 +475,8 @@
       "description": "Scegli una sottoclasse del ranger; ottieni i suoi privilegi ai livelli da ranger indicati."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da ranger."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da ranger."
     },
     "Extra Attack": {
       "name": "Attacco Extra",
@@ -549,8 +549,8 @@
       "description": "Come Azione Bonus prima di muoverti, ottieni Vantaggio al prossimo tiro per colpire in questo turno; poi la tua Velocità diventa 0 per il resto del turno."
     },
     "Ability Score Improvement": {
-      "name": "Aumento dei Punteggi di Caratteristica",
-      "description": "Ottieni il talento Aumento dei Punteggi di Caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 10, 12 e 16 da ladro."
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 10, 12 e 16 da ladro."
     },
     "Cunning Strike": {
       "name": "Colpo Astuto",

@@ -29,8 +29,8 @@
       "description": "Receba proficiência em mais uma perícia da lista de nível 1 do Bárbaro. Durante a Fúria, você pode usar Força em testes de Acrobacia, Intimidação, Percepção, Furtividade ou Sobrevivência."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Bárbaro."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Bárbaro."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -99,8 +99,8 @@
       "description": "Escolha uma subclasse de Bardo; receba as habilidades dela nos níveis de Bardo indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Bardo."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Bardo."
     },
     "Font of Inspiration": {
       "name": "Fonte de Inspiração",
@@ -145,8 +145,8 @@
       "description": "Escolha uma subclasse de Clérigo; receba as habilidades dela nos níveis de Clérigo indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Clérigo."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Clérigo."
     },
     "Sear Undead": {
       "name": "Queimar Mortos-Vivos",
@@ -199,8 +199,8 @@
       "description": "Escolha uma subclasse de Druida; receba as habilidades dela nos níveis de Druida indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Druida."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Druida."
     },
     "Wild Resurgence": {
       "name": "Ressurgimento Selvagem",
@@ -253,8 +253,8 @@
       "description": "Escolha uma subclasse de Guerreiro; receba as habilidades dela nos níveis de Guerreiro indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 6, 8, 12, 14 e 16 de Guerreiro."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 6, 8, 12, 14 e 16 de Guerreiro."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -319,8 +319,8 @@
       "description": "Escolha uma subclasse de Monge; receba as habilidades dela nos níveis de Monge indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Monge."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta habilidade novamente nos níveis 8, 12 e 16 de Monge."
     },
     "Slow Fall": {
       "name": "Queda Lenta",
@@ -409,8 +409,8 @@
       "description": "Escolha uma subclasse de paladino; receba suas características nos níveis de paladino indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de paladino."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de paladino."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -475,8 +475,8 @@
       "description": "Escolha uma subclasse de patrulheiro; receba suas características nos níveis de patrulheiro indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de patrulheiro."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de patrulheiro."
     },
     "Extra Attack": {
       "name": "Ataque Extra",
@@ -549,8 +549,8 @@
       "description": "Como Ação Bônus antes de se mover, receba Vantagem na próxima jogada de ataque que fizer neste turno; seu Deslocamento passa a ser 0 pelo restante do turno."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 10, 12 e 16 de ladino."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 10, 12 e 16 de ladino."
     },
     "Cunning Strike": {
       "name": "Golpe Ardiloso",
@@ -615,8 +615,8 @@
       "description": "Escolha uma subclasse de feiticeiro; receba suas características nos níveis de feiticeiro indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de feiticeiro."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de feiticeiro."
     },
     "Sorcerous Restoration": {
       "name": "Restauração Mágica",
@@ -653,8 +653,8 @@
       "description": "Escolha uma subclasse de bruxo; receba suas características nos níveis de bruxo indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de bruxo."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de bruxo."
     },
     "Contact Patron": {
       "name": "Contatar Patrono",
@@ -695,8 +695,8 @@
       "description": "Escolha uma subclasse de mago; receba suas características nos níveis de mago indicados."
     },
     "Ability Score Improvement": {
-      "name": "Aumento no Valor de Atributo",
-      "description": "Receba o talento Aumento no Valor de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de mago."
+      "name": "Melhoria de Atributo",
+      "description": "Receba o talento Melhoria de Atributo ou outro talento para o qual cumpra os pré-requisitos. Receba esta característica novamente nos níveis 8, 12 e 16 de mago."
     },
     "Memorize Spell": {
       "name": "Memorizar Magia",

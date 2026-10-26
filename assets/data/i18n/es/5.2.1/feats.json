@@ -16,7 +16,7 @@
     "description": "Obtén competencia en tres habilidades, herramientas o una combinación de ambas. Puedes elegir este talento más de una vez."
   },
   "Ability Score Improvement": {
-    "name": "Mejora de Característica",
+    "name": "Mejora de característica",
     "description": "Aumenta una puntuación de característica en 2 o dos puntuaciones en 1 cada una, hasta un máximo de 20. Puedes elegir este talento más de una vez."
   },
   "Grappler": {

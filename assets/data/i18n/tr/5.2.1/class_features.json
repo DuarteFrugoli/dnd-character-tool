@@ -29,8 +29,8 @@
       "description": "Barbar seviye 1 listesinden bir ek beceri yetkinliği kazanın. Öfkeliyken Akrobasi, Gözdağı, Algı, Gizlilik veya Hayatta Kalma kontrollerinde Kuvvet kullanabilirsiniz."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Barbar seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Barbar seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Extra Attack": {
       "name": "Ek Saldırı",
@@ -99,8 +99,8 @@
       "description": "Bir Ozan alt sınıfı seçin; özelliklerini belirtilen Ozan seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Ozan seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Ozan seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Font of Inspiration": {
       "name": "İlham Kaynağı",
@@ -145,8 +145,8 @@
       "description": "Bir Rahip alt sınıfı seçin; özelliklerini belirtilen Rahip seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Rahip seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Rahip seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Sear Undead": {
       "name": "Hortlakları Kavur",
@@ -199,8 +199,8 @@
       "description": "Bir Druid alt sınıfı seçin; özelliklerini belirtilen Druid seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Druid seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Druid seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Wild Resurgence": {
       "name": "Vahşi Diriliş",
@@ -253,8 +253,8 @@
       "description": "Bir Savaşçı alt sınıfı seçin; özelliklerini belirtilen Savaşçı seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Savaşçı seviyeleri 6, 8, 12, 14 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Savaşçı seviyeleri 6, 8, 12, 14 ve 16'da yeniden kazanın."
     },
     "Extra Attack": {
       "name": "Ek Saldırı",
@@ -319,8 +319,8 @@
       "description": "Bir Keşiş alt sınıfı seçin; özelliklerini belirtilen Keşiş seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Keşiş seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Keşiş seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Slow Fall": {
       "name": "Yavaş Düşüş",
@@ -409,8 +409,8 @@
       "description": "Bir Paladin alt sınıfı seçin; özelliklerini belirtilen Paladin seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Paladin seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Paladin seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Extra Attack": {
       "name": "Ek Saldırı",
@@ -475,8 +475,8 @@
       "description": "Bir Korucu alt sınıfı seçin; özelliklerini belirtilen Korucu seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Korucu seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Korucu seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Extra Attack": {
       "name": "Ek Saldırı",
@@ -549,8 +549,8 @@
       "description": "Hareket etmeden önce bonus eylemle bu tur yapacağınız sonraki saldırı atışında Avantaj kazanın; sonrasında turun geri kalanında Hızınız 0 olur."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Haydut seviyeleri 8, 10, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Haydut seviyeleri 8, 10, 12 ve 16'da yeniden kazanın."
     },
     "Cunning Strike": {
       "name": "Kurnaz Darbe",
@@ -615,8 +615,8 @@
       "description": "Bir Doğuştan Büyücü alt sınıfı seçin; özelliklerini belirtilen sınıf seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Doğuştan Büyücü seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Doğuştan Büyücü seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Sorcerous Restoration": {
       "name": "Büyücü Yenilenmesi",
@@ -653,8 +653,8 @@
       "description": "Bir Pakt Büyücüsü alt sınıfı seçin; özelliklerini belirtilen sınıf seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Pakt Büyücüsü seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Pakt Büyücüsü seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Contact Patron": {
       "name": "Patronla İletişim",
@@ -695,8 +695,8 @@
       "description": "Bir Büyücü alt sınıfı seçin; özelliklerini belirtilen Büyücü seviyelerinde kazanın."
     },
     "Ability Score Improvement": {
-      "name": "Nitelik Puanı Gelişimi",
-      "description": "Nitelik Puanı Gelişimi hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Büyücü seviyeleri 8, 12 ve 16'da yeniden kazanın."
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Büyücü seviyeleri 8, 12 ve 16'da yeniden kazanın."
     },
     "Memorize Spell": {
       "name": "Büyü Ezberleme",

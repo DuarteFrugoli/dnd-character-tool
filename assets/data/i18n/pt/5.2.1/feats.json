@@ -16,8 +16,8 @@
     "description": "Ganhe proficiência em três perícias, ferramentas ou uma combinação delas. Você pode escolher este talento mais de uma vez."
   },
   "Ability Score Improvement": {
-    "name": "Aumento no Valor de Habilidade",
-    "description": "Aumente um valor de habilidade em 2 ou dois valores de habilidade em 1 cada, até o máximo de 20. Você pode escolher este talento mais de uma vez."
+    "name": "Melhoria de Atributo",
+    "description": "Aumente em 2 o valor de um atributo, ou em 1 o valor de dois atributos, até o máximo de 20. Você pode escolher este talento mais de uma vez."
   },
   "Grappler": {
     "name": "Agarrador",

@@ -71,6 +71,28 @@ ContextualRollRequest? _build({
 
 void main() {
   group('ContextualSpellRollBuilder', () {
+    test('accepts a 2024 spell attack bonus without the 2014 engine', () {
+      final request = ContextualSpellRollBuilder.build(
+        character: _character(),
+        spell: _spell(
+          name: 'Fire Bolt',
+          level: 0,
+          rolls: const [
+            SrdSpellRoll(id: 'attack', label: 'Attack', kind: 'spell_attack'),
+          ],
+        ),
+        displayName: 'Fire Bolt',
+        attackLabel: 'Attack',
+        damageLabel: 'Damage',
+        spellSlotChoiceLabel: 'Spell slots',
+        slotLevelLabel: (level) => 'Lvl $level',
+        damageTypeLabel: (type) => type,
+        spellAttackBonus: 5,
+      )!;
+
+      expect((request.parts.single as ContextualD20RollPart).d20Modifier, 5);
+    });
+
     test('uses spellcasting attack bonus and cantrip level scaling', () {
       final character = _character(level: 5, proficiencyBonus: 3);
       final engine = SpellcastingEngine.forClass(

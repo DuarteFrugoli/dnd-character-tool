@@ -1,4 +1,6 @@
 import '../character_detail_dependencies.dart';
+import '../../../data/rulesets/ruleset_ids.dart';
+import '../../../data/rulesets/srd_content_pack.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
 import '../../../data/json_helpers.dart';
 import '../../../shared/utils/character_display.dart';
@@ -370,9 +372,10 @@ class _StatsTabState extends ConsumerState<StatsTab>
   Widget build(BuildContext context) {
     super.build(context);
     final l10n = AppLocalizations.of(context)!;
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final character = widget.character;
+    final packId = character.contentPackId;
+    final i18n = ref.watch(srdI18nForPackProvider(packId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(packId));
     final hp = character.hitPoints;
     final isDead = hp.isDead;
     final isFull = hp.current >= hp.maximum;
@@ -594,7 +597,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
                     i18n: i18n,
                     onToggle: notifier.toggleCondition,
                     allConditions:
-                        ref.watch(srdConditionsProvider).valueOrNull ??
+                        ref.watch(srdConditionsForPackProvider(packId)).valueOrNull ??
                         const [],
                   ),
                   const SizedBox(height: 12),
@@ -844,7 +847,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
                   const SizedBox(height: 12),
 
                   // ── Progression ──────────────────────────────────────────
-                  DetailSection(
+                  if (character.rulesetId == RulesetId.dnd2014) DetailSection(
                     title: l10n.sectionProgression,
                     icon: Icons.trending_up,
                     accentColor: scheme.secondary,

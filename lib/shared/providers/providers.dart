@@ -28,10 +28,15 @@ final srd2024SpeciesProvider = FutureProvider<List<Creation2024Species>>(
   (ref) => Creation2024Catalog.loadSpecies(),
 );
 
+final srd2024ClassesProvider = FutureProvider<List<Creation2024Class>>(
+  (ref) => Creation2024Catalog.loadClasses(),
+);
+
 final srd2024CreationCatalogProvider = FutureProvider<Creation2024Catalog>(
   (ref) async => Creation2024Catalog.load(
     source: ref.watch(srdDataSourceForPackProvider(ContentPackId.srd521)),
     species: await ref.watch(srd2024SpeciesProvider.future),
+    classes: await ref.watch(srd2024ClassesProvider.future),
   ),
 );
 

@@ -4,6 +4,8 @@ import '../widgets/inventory/container_contents_sheet.dart';
 import '../widgets/inventory/inventory_display_helpers.dart';
 import '../widgets/inventory/inventory_item_tile.dart';
 import '../widgets/inventory/item_detail_sheet.dart';
+import '../../../data/rulesets/ruleset_ids.dart';
+import '../../../data/rulesets/srd_content_pack.dart';
 
 // ── Inventory Tab ─────────────────────────────────────────────────────────────
 
@@ -91,9 +93,17 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
     final inventory = widget.inventory;
     final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
-    final srdClasses = ref.watch(srdClassesProvider).valueOrNull;
+    final packId = character.contentPackId;
+    final i18n = ref.watch(srdI18nForPackProvider(packId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(packId));
+    final srdClasses = character.rulesetId == RulesetId.dnd2014
+        ? ref.watch(srdClassesProvider).valueOrNull
+        : null;
+    final weaponProficiencies = character.rulesetId == RulesetId.dnd2024
+        ? ref.watch(srd2024ClassesProvider).valueOrNull
+            ?.where((entry) => entry.name == character.primaryClassName)
+            .firstOrNull?.weaponProficiencies
+        : null;
     final coinLabels = {
       'cp': l10n.coinCopper,
       'sp': l10n.coinSilver,
@@ -269,6 +279,7 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                   characterId: widget.characterId,
                   character: character,
                   srdClasses: srdClasses,
+                  weaponProficiencies: weaponProficiencies,
                   reorderIndex: reorderIndex,
                 ),
               ),
@@ -316,6 +327,7 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                   characterId: widget.characterId,
                   character: character,
                   srdClasses: srdClasses,
+                  weaponProficiencies: weaponProficiencies,
                   reorderIndex: reorderIndex,
                 ),
               ),
@@ -377,6 +389,7 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
                     characterId: widget.characterId,
                     character: character,
                     srdClasses: srdClasses,
+                    weaponProficiencies: weaponProficiencies,
                     reorderIndex: reorderIndex,
                   ),
                 ),
@@ -468,7 +481,7 @@ class _AmmunitionItemTile extends ConsumerWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: () =>
-              showItemDetailsSheet(context, ref, item, displayName, meta),
+              showItemDetailsSheet(context, ref, item, displayName, meta, characterId: characterId),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
             decoration: BoxDecoration(
@@ -764,6 +777,7 @@ class _ContainersSection extends ConsumerWidget {
                       container,
                       displayName,
                       meta,
+                      characterId: characterId,
                     ),
                   ),
                   if (hasStoredItems)

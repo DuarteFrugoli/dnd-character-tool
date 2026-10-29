@@ -31,6 +31,14 @@ void main() {
     expect(catalog.species, hasLength(9));
     expect(catalog.backgrounds, hasLength(4));
     expect(catalog.classes.every((entry) => entry.levelOne['level'] == 1), isTrue);
+    expect(
+      catalog.classes.firstWhere((entry) => entry.name == 'Fighter').weaponProficiencies,
+      containsAll(['simple', 'martial']),
+    );
+    expect(
+      catalog.classes.firstWhere((entry) => entry.name == 'Wizard').spellcastingAbility,
+      'intelligence',
+    );
   });
 
   test('background grants only its three eligible ability increases', () {

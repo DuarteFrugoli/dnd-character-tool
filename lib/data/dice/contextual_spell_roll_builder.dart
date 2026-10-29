@@ -16,6 +16,7 @@ class ContextualSpellRollBuilder {
     required String Function(int level) slotLevelLabel,
     required String Function(String damageType) damageTypeLabel,
     SpellcastingEngine? spellcastingEngine,
+    int? spellAttackBonus,
     Set<int>? availableSlotLevels,
     String? subtitle,
   }) {
@@ -25,7 +26,7 @@ class ContextualSpellRollBuilder {
     for (final roll in spell.rolls) {
       switch (roll.kind) {
         case 'spell_attack':
-          final attackBonus = spellcastingEngine?.spellAttack;
+          final attackBonus = spellAttackBonus ?? spellcastingEngine?.spellAttack;
           if (attackBonus == null) break;
           parts.add(
             ContextualRollPart.d20(

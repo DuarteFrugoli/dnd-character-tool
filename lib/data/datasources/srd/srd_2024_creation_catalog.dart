@@ -55,12 +55,14 @@ class Creation2024Equipment {
 }
 
 class Creation2024Class {
-  const Creation2024Class({required this.name, required this.hitDie, required this.savingThrows, required this.skillChoices, required this.toolProficiencies, required this.toolChoice, required this.equipmentChoices, required this.levelOne});
+  const Creation2024Class({required this.name, required this.hitDie, required this.savingThrows, required this.skillChoices, required this.weaponProficiencies, required this.toolProficiencies, required this.toolChoice, required this.equipmentChoices, required this.levelOne, this.spellcastingAbility});
 
   final String name;
   final int hitDie;
   final List<String> savingThrows;
   final SrdSkillChoice skillChoices;
+  final List<String> weaponProficiencies;
+  final String? spellcastingAbility;
   final List<String> toolProficiencies;
   final Creation2024ToolChoice? toolChoice;
   final List<Creation2024Equipment> equipmentChoices;
@@ -71,6 +73,8 @@ class Creation2024Class {
     hitDie: json['hitDie'] as int,
     savingThrows: List<String>.from(json['savingThrows'] as List),
     skillChoices: SrdSkillChoice.fromJson(json['skillChoices'] as Map<String, dynamic>),
+    weaponProficiencies: List<String>.from(json['weaponProficiencies'] as List),
+    spellcastingAbility: json['spellcastingAbility'] as String?,
     toolProficiencies: List<String>.from(json['toolProficiencies'] as List),
     toolChoice: (json['toolProficiencyChoices'] as List<dynamic>? ?? const []).isEmpty
         ? null
@@ -143,6 +147,15 @@ class Creation2024Catalog {
   final SrdFeatureChoiceCatalog choices;
   final Map<String, SrdItemData> items;
 
+  static Future<List<Creation2024Class>> loadClasses() async {
+    final raw = await rootBundle.loadString(
+      SrdContentPackRegistry.srd521.srdAsset('classes'),
+    );
+    return (jsonDecode(raw) as List<dynamic>)
+        .map((entry) => Creation2024Class.fromJson(entry as Map<String, dynamic>))
+        .toList();
+  }
+
   static Future<List<Creation2024Species>> loadSpecies() async {
     final raw = await rootBundle.loadString(
       SrdContentPackRegistry.srd521.srdAsset('races'),
@@ -155,6 +168,7 @@ class Creation2024Catalog {
   static Future<Creation2024Catalog> load({
     SrdDataSource? source,
     List<Creation2024Species>? species,
+    List<Creation2024Class>? classes,
   }) async {
     final srd = source ?? SrdDataSource.forPack(SrdContentPackRegistry.srd521);
     if (srd.pack.id != SrdContentPackRegistry.srd521.id) {
@@ -164,12 +178,11 @@ class Creation2024Catalog {
       final raw = await rootBundle.loadString(srd.pack.srdAsset(name));
       return (jsonDecode(raw) as List<dynamic>).cast<Map<String, dynamic>>();
     }
-    final raw = await Future.wait([read('classes'), read('backgrounds')]);
-    final classes = raw[0].map(Creation2024Class.fromJson).toList();
+    final backgrounds = await read('backgrounds');
     return Creation2024Catalog(
-      classes: classes,
+      classes: classes ?? await loadClasses(),
       species: species ?? await loadSpecies(),
-      backgrounds: raw[1].map(Creation2024Background.fromJson).toList(),
+      backgrounds: backgrounds.map(Creation2024Background.fromJson).toList(),
       skills: await srd.getSkills(),
       languages: await srd.getLanguages(),
       tools: await srd.getTools(),

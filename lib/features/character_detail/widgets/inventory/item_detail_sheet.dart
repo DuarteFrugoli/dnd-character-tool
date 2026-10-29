@@ -1,4 +1,6 @@
 import '../../character_detail_dependencies.dart';
+import '../../../../data/rulesets/srd_content_pack.dart';
+import '../../../../data/rulesets/ruleset_ids.dart';
 import 'inventory_display_helpers.dart';
 
 class _ItemDetailSection extends StatelessWidget {
@@ -34,9 +36,13 @@ List<SrdPackContent> _itemDetailContents(
   WidgetRef ref,
   EquipmentItem item,
   List<SrdPackContent> explicitContents,
+  String? characterId,
 ) {
   if (explicitContents.isNotEmpty) return explicitContents;
-  final itemsByName = ref.read(srdItemsProvider).valueOrNull;
+  if (characterId == null) return const [];
+  final character = ref.read(characterDetailProvider(characterId)).valueOrNull;
+  if (character == null) return const [];
+  final itemsByName = ref.read(srdItemsForPackProvider(character.contentPackId)).valueOrNull;
   if (itemsByName == null) return const [];
   return itemsByName[item.name.trim().toLowerCase()]?.contents ?? const [];
 }
@@ -47,16 +53,24 @@ void showItemDetailsSheet(
   EquipmentItem item,
   String displayName,
   String? meta, {
+  String? characterId,
+  ContentPackId contentPackId = ContentPackId.srd51,
   List<SrdPackContent> contents = const [],
 }) {
   final scheme = Theme.of(context).colorScheme;
   final unitSystem = ref.read(unitSystemProvider);
-  final i18n = ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+  final character = characterId == null
+      ? null
+      : ref.read(characterDetailProvider(characterId)).valueOrNull;
+  if (characterId != null && character == null) return;
+  final packId = character?.contentPackId ?? contentPackId;
+  final i18n = ref.read(srdI18nForPackProvider(packId)).valueOrNull ??
+      SrdI18nService.englishForPack(SrdContentPackRegistry.forId(packId));
   final l10n = AppLocalizations.of(context)!;
   final baseRows = itemBaseDetailRows(item, unitSystem, l10n, i18n);
   final propertyRows = itemPropertyDetailRows(item, unitSystem, i18n, l10n);
   final description = item.description?.trim();
-  final detailContents = _itemDetailContents(ref, item, contents);
+  final detailContents = _itemDetailContents(ref, item, contents, characterId);
 
   showModalBottomSheet(
     context: context,

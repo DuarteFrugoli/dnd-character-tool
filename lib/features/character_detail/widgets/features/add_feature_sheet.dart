@@ -3,8 +3,9 @@ import 'feature_detail_sheet.dart';
 import 'feature_support.dart';
 
 class AddFeatureSheet extends ConsumerStatefulWidget {
-  const AddFeatureSheet({super.key, required this.characterId});
+  const AddFeatureSheet({super.key, required this.characterId, this.customOnly = false});
   final String characterId;
+  final bool customOnly;
 
   @override
   ConsumerState<AddFeatureSheet> createState() => _AddFeatureSheetState();
@@ -21,6 +22,7 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
 
   List<String> _getTabLabels(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    if (widget.customOnly) return [l10n.featuresTabCustom];
     return [
       l10n.featuresTabFeats,
       l10n.featuresTabClass,
@@ -59,7 +61,7 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 7, vsync: this);
+    _tabs = TabController(length: widget.customOnly ? 1 : 7, vsync: this);
     _tabs.addListener(() {
       if (!_tabs.indexIsChanging) {
         _search.clear();
@@ -67,7 +69,7 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
       }
     });
     _search.addListener(() => setState(() {}));
-    _loadData();
+    if (!widget.customOnly) _loadData();
   }
 
   @override
@@ -174,7 +176,7 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
             ),
           ),
           // Search field (hidden on Custom tab, index 6)
-          if (_tabs.index != 6)
+          if (!widget.customOnly && _tabs.index != 6)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: TextField(
@@ -213,6 +215,7 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
                 : TabBarView(
                     controller: _tabs,
                     children: [
+                      if (!widget.customOnly) ...[
                       _buildFeatsList(existingKeys, notifier, scheme, i18n),
                       _buildClassList(existingKeys, notifier, scheme, i18n),
                       _buildSubclassList(existingKeys, notifier, scheme, i18n),
@@ -229,6 +232,7 @@ class _AddFeatureSheetState extends ConsumerState<AddFeatureSheet>
                         scheme,
                         i18n,
                       ),
+                      ],
                       _buildCustomForm(notifier, scheme, scrollCtrl),
                     ],
                   ),

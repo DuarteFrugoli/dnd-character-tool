@@ -1,5 +1,7 @@
 import '../character_detail_dependencies.dart';
 import '../../../shared/utils/character_display.dart';
+import '../../../data/rulesets/ruleset_ids.dart';
+import '../../../data/rulesets/srd_content_pack.dart';
 
 // ── Identity Tab ──────────────────────────────────────────────────────────────
 
@@ -481,9 +483,9 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
   Widget build(BuildContext context) {
     super.build(context);
     final l10n = AppLocalizations.of(context)!;
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final character = widget.character;
+    final i18n = ref.watch(srdI18nForPackProvider(character.contentPackId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(character.contentPackId));
     final primaryClass = character.primaryClass;
     final scheme = Theme.of(context).colorScheme;
     final notifier = _notifier;
@@ -537,6 +539,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
                                     ).textTheme.bodyMedium,
                                   ),
                                 ),
+                                if (character.rulesetId == RulesetId.dnd2014)
                                 OutlinedButton.icon(
                                   icon: const Icon(Icons.swap_horiz, size: 16),
                                   label: Text(l10n.labelChange),
@@ -622,6 +625,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
                                     ).textTheme.bodyMedium,
                                   ),
                                 ),
+                                if (character.rulesetId == RulesetId.dnd2014)
                                 OutlinedButton.icon(
                                   icon: const Icon(Icons.swap_horiz, size: 16),
                                   label: Text(

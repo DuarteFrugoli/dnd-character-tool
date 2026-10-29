@@ -2,6 +2,8 @@ import '../character_detail_dependencies.dart';
 import '../widgets/features/add_feature_sheet.dart';
 import '../widgets/features/feature_sections.dart';
 import '../widgets/features/feature_support.dart';
+import '../../../data/rulesets/ruleset_ids.dart';
+import '../../../data/rulesets/srd_content_pack.dart';
 
 final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
   (ref, characterId) {
@@ -11,35 +13,39 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
       error: (error, stackTrace) => AsyncError(error, stackTrace),
       data: (vm) {
         final character = vm.character;
+        final packId = character.contentPackId;
+        final is2024 = character.rulesetId == RulesetId.dnd2024;
         final classEntries = character.classEntries;
         final classFeatureStates = {
           for (final entry in classEntries)
-            entry.id: ref.watch(srdClassFeaturesProvider(entry.className)),
+            entry.id: ref.watch(srdClassFeaturesForPackProvider((packId, entry.className))),
         };
         final allSubclassFeaturesState = ref.watch(
-          srdAllSubclassFeaturesProvider,
+          srdAllSubclassFeaturesForPackProvider(packId),
         );
-        final racesState = ref.watch(srdRacesProvider);
-        final backgroundsState = ref.watch(srdBackgroundsProvider);
-        final traitDescriptionsState = ref.watch(srdRaceTraitsProvider);
+        final racesState = is2024 ? null : ref.watch(srdRacesProvider);
+        final speciesState = is2024 ? ref.watch(srd2024SpeciesProvider) : null;
+        final backgroundsState = is2024 ? null : ref.watch(srdBackgroundsProvider);
+        final traitDescriptionsState = ref.watch(srdRaceTraitsForPackProvider(packId));
         final featureChoiceCatalogState = ref.watch(
-          srdFeatureChoiceCatalogProvider,
+          srdFeatureChoicesForPackProvider(packId),
         );
         final featureUsageCatalogState = ref.watch(
-          srdFeatureUsageCatalogProvider,
+          srdFeatureUsagesForPackProvider(packId),
         );
-        final skillsState = ref.watch(srdSkillsProvider);
-        final toolsState = ref.watch(srdToolsProvider);
-        final spellsState = ref.watch(srdSpellsProvider);
-        final languagesState = ref.watch(srdLanguagesProvider);
-        final weaponsState = ref.watch(srdWeaponsProvider);
-        final featsState = ref.watch(srdFeatsProvider);
+        final skillsState = ref.watch(srdSkillsForPackProvider(packId));
+        final toolsState = ref.watch(srdToolsForPackProvider(packId));
+        final spellsState = ref.watch(srdSpellsForPackProvider(packId));
+        final languagesState = ref.watch(srdLanguagesForPackProvider(packId));
+        final weaponsState = ref.watch(srdWeaponsForPackProvider(packId));
+        final featsState = ref.watch(srdFeatsForPackProvider(packId));
 
         final pendingState = _featuresDataPendingState([
           ...classFeatureStates.values,
           allSubclassFeaturesState,
-          racesState,
-          backgroundsState,
+          ?racesState,
+          ?speciesState,
+          ?backgroundsState,
           traitDescriptionsState,
           featureChoiceCatalogState,
           featureUsageCatalogState,
@@ -53,8 +59,9 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
         if (pendingState != null) return pendingState;
 
         final allSubclassFeatures = allSubclassFeaturesState.valueOrNull!;
-        final races = racesState.valueOrNull!;
-        final backgrounds = backgroundsState.valueOrNull!;
+        final races = racesState?.valueOrNull;
+        final species = speciesState?.valueOrNull;
+        final backgrounds = backgroundsState?.valueOrNull;
         final traitDescriptions = traitDescriptionsState.valueOrNull!;
         final featureChoiceCatalog = featureChoiceCatalogState.valueOrNull!;
         final featureUsageCatalog = featureUsageCatalogState.valueOrNull!;
@@ -65,13 +72,12 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
         final weapons = weaponsState.valueOrNull!;
         final srdFeats = featsState.valueOrNull!;
 
-        final race = races.where((r) => r.name == character.race).firstOrNull;
+        final race = races?.where((r) => r.name == character.race).firstOrNull;
+        final speciesEntry = species?.where((r) => r.name == character.race).firstOrNull;
         final subrace = race?.subraces
             .where((s) => s.name == character.subrace)
             .firstOrNull;
-        final bg = backgrounds
-            .where((b) => b.name == character.background)
-            .firstOrNull;
+        final bg = backgrounds?.where((b) => b.name == character.background).firstOrNull;
 
         List<SrdClassFeature> subclassFeaturesFor(CharacterClassEntry entry) {
           final subclassName = entry.subclassName;
@@ -96,7 +102,7 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
                   subclassFeatures: subclassFeaturesFor(entry),
                 ),
             ],
-            raceTraits: race?.traits ?? [],
+            raceTraits: speciesEntry?.traits ?? race?.traits ?? [],
             subraceTraits: subrace?.traits ?? [],
             traitDescriptions: traitDescriptions,
             backgroundFeatureName: bg?.feature.name,
@@ -150,7 +156,10 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
-      builder: (_) => AddFeatureSheet(characterId: widget.characterId),
+      builder: (_) => AddFeatureSheet(
+        characterId: widget.characterId,
+        customOnly: widget.character.rulesetId == RulesetId.dnd2024,
+      ),
     );
   }
 
@@ -167,8 +176,9 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
     final classExtras = extraFeatures
         .where((f) => f.sourceClass != 'Feat')
         .toList();
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final packId = widget.character.contentPackId;
+    final i18n = ref.watch(srdI18nForPackProvider(packId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(packId));
     final dataState = ref.watch(_featuresDataProvider(widget.characterId));
 
     return dataState.when(

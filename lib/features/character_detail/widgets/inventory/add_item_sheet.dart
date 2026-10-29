@@ -1,4 +1,5 @@
 import '../../character_detail_dependencies.dart';
+import '../../../../data/rulesets/srd_content_pack.dart';
 import 'inventory_display_helpers.dart';
 
 class AddItemSheet extends ConsumerStatefulWidget {
@@ -514,7 +515,8 @@ class _AddItemSheetState extends ConsumerState<AddItemSheet>
 
   Future<void> _loadData() async {
     try {
-      final srd = ref.read(srdDataSourceProvider);
+      final character = await ref.read(characterDetailProvider(widget.characterId).future);
+      final srd = ref.read(srdDataSourceForPackProvider(character.contentPackId));
       final results = await Future.wait([
         srd.getWeapons(),
         srd.getArmors(),
@@ -1047,8 +1049,11 @@ class _AddItemSheetState extends ConsumerState<AddItemSheet>
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final character = ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
+    if (character == null) return const Center(child: CircularProgressIndicator());
+    final packId = character.contentPackId;
+    final i18n = ref.watch(srdI18nForPackProvider(packId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(packId));
     final isCustomTab = _tabs.index == 5;
     final isSearchingSrd = !isCustomTab && _search.text.trim().isNotEmpty;
 

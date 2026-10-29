@@ -2,6 +2,7 @@ import 'dart:async';
 
 import '../character_detail_dependencies.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
+import '../../../data/rulesets/srd_content_pack.dart';
 
 // ── Skills Tab ────────────────────────────────────────────────────────────────
 
@@ -92,8 +93,11 @@ class _SkillsTabState extends ConsumerState<SkillsTab>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final character = ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
+    if (character == null) return const Center(child: CircularProgressIndicator());
+    final packId = character.contentPackId;
+    final i18n = ref.watch(srdI18nForPackProvider(packId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(packId));
     final l10n = AppLocalizations.of(context)!;
     final preferences = widget.preferences;
     final rows = widget.skillRows;

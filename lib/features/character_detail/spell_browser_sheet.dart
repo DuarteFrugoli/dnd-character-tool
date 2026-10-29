@@ -7,6 +7,8 @@ import '../../shared/providers/providers.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/models/spell.dart';
+import '../../data/rulesets/ruleset_ids.dart';
+import '../../data/rulesets/srd_content_pack.dart';
 import '../../core/units/unit_formatter.dart';
 import '../../core/units/unit_system_provider.dart';
 
@@ -903,9 +905,11 @@ class SpellDetailSheet extends ConsumerWidget {
     this.onRemove,
     this.onTogglePrepared,
     this.onRoll,
+    this.contentPackId = ContentPackId.srd51,
   });
 
   final SrdSpell spell;
+  final ContentPackId contentPackId;
   final bool isKnown;
 
   /// True when this spell is already in the class list (prepare-all class).
@@ -1005,7 +1009,8 @@ class SpellDetailSheet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+        ref.watch(srdI18nForPackProvider(contentPackId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(contentPackId));
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final roll = onRoll;

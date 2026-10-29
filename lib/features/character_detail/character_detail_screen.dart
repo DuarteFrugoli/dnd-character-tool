@@ -26,9 +26,9 @@ import 'tabs/inventory_tab.dart';
 import 'tabs/notes_tab.dart';
 import 'tabs/skills_tab.dart';
 import 'tabs/spells_tab.dart';
+import 'tabs/spells_2024_tab.dart';
 import 'tabs/stats_tab.dart';
 import 'widgets/character_detail_shell.dart';
-import 'widgets/character_2024_read_only_tab.dart';
 import 'widgets/dice/dice_roller_sheet.dart';
 import 'widgets/detail_edit_guard.dart';
 import 'widgets/detail_tab_host.dart';
@@ -112,7 +112,20 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     if (character == null) return;
     if (character.rulesetId == RulesetId.dnd2024) {
       switch (tabIndex) {
+        case 0:
+          ref.read(identityTabVmProvider(widget.characterId));
+          ref.read(srdI18nForPackProvider(character.contentPackId));
+          return;
+        case 1:
+          ref.read(statsTabVmProvider(widget.characterId));
+          ref.read(srdConditionsForPackProvider(character.contentPackId));
+          return;
+        case 2:
+          ref.read(skillsTabVmProvider(widget.characterId));
+          ref.read(srdI18nForPackProvider(character.contentPackId));
+          return;
         case 3:
+          ref.read(featuresTabVmProvider(widget.characterId));
           ref.read(srd2024SpeciesProvider);
           ref.read(srdRaceTraitsForPackProvider(character.contentPackId));
           ref.read(srdAllSubclassFeaturesForPackProvider(character.contentPackId));
@@ -124,6 +137,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           ref.read(srdSpellsForPackProvider(character.contentPackId));
           return;
         case 5:
+          ref.read(inventoryTabVmProvider(widget.characterId));
           ref.read(srdItemsForPackProvider(character.contentPackId));
           return;
         case 6:
@@ -398,8 +412,47 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           onRest: null,
           onImageChanged: (path) => ref.read(characterDetailProvider(widget.characterId).notifier).updateImage(path),
           children: [
-            for (var index = 0; index < 6; index++)
-              Character2024ReadOnlyTab(character: character, tabIndex: index, i18n: i18n),
+            CharacterTabHost<IdentityTabVm>(
+              provider: identityTabVmProvider(widget.characterId),
+              builder: (context, vm) => IdentityTab(
+                character: vm.character,
+                characterId: widget.characterId,
+                editGuard: _editGuard,
+              ),
+            ),
+            CharacterTabHost<StatsTabVm>(
+              provider: statsTabVmProvider(widget.characterId),
+              builder: (context, vm) => StatsTab(
+                character: vm.character,
+                characterId: widget.characterId,
+                editGuard: _editGuard,
+              ),
+            ),
+            CharacterTabHost<SkillsTabVm>(
+              provider: skillsTabVmProvider(widget.characterId),
+              builder: (context, vm) => SkillsTab(
+                skillRows: vm.rows,
+                preferences: vm.preferences,
+                characterId: widget.characterId,
+              ),
+            ),
+            CharacterTabHost<FeaturesTabVm>(
+              provider: featuresTabVmProvider(widget.characterId),
+              builder: (context, vm) => FeaturesTab(
+                character: vm.character,
+                characterId: widget.characterId,
+              ),
+            ),
+            Spells2024Tab(characterId: widget.characterId),
+            CharacterTabHost<InventoryTabVm>(
+              provider: inventoryTabVmProvider(widget.characterId),
+              builder: (context, vm) => InventoryTab(
+                character: vm.character,
+                inventory: vm.snapshot,
+                strengthScore: vm.strengthScore,
+                characterId: widget.characterId,
+              ),
+            ),
             CharacterTabHost<NotesTabVm>(
               provider: notesTabVmProvider(widget.characterId),
               builder: (context, vm) => NotesTab(notes: vm.notes, characterId: widget.characterId),

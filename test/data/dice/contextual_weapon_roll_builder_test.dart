@@ -1,6 +1,7 @@
 import 'package:dnd_character_tool/data/datasources/srd/srd_models.dart';
 import 'package:dnd_character_tool/data/dice/dice.dart';
 import 'package:dnd_character_tool/data/models/models.dart';
+import 'package:dnd_character_tool/data/rulesets/ruleset_ids.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 SrdClass _srdClass(String name, List<String> weaponProficiencies) {
@@ -75,6 +76,27 @@ ContextualRollRequest? _build(
 
 void main() {
   group('ContextualWeaponRollBuilder', () {
+    test('uses 2024 class weapon proficiencies without a 2014 class catalog', () {
+      final character = _character().copyWith(
+        rulesetId: RulesetId.dnd2024,
+        contentPackId: ContentPackId.srd521,
+      );
+      final request = ContextualWeaponRollBuilder.build(
+        character: character,
+        item: _weapon(),
+        displayName: 'Longsword',
+        attackLabel: 'Attack',
+        damageLabel: 'Damage',
+        extraDamageLabel: 'Extra damage',
+        versatileGripLabel: 'Grip',
+        versatileOneHandedLabel: 'One-handed',
+        versatileTwoHandedLabel: 'Two-handed',
+        weaponProficiencies: const ['simple', 'martial'],
+      )!;
+
+      expect((request.parts.first as ContextualD20RollPart).d20Modifier, 5);
+    });
+
     test('uses ability and proficiency for a proficient starting class weapon', () {
       final request = _build(
         _character(),

@@ -339,6 +339,7 @@ class ItemTile extends ConsumerWidget {
     required this.characterId,
     required this.character,
     required this.srdClasses,
+    this.weaponProficiencies,
     this.reorderIndex,
   });
 
@@ -348,6 +349,7 @@ class ItemTile extends ConsumerWidget {
   final String characterId;
   final Character character;
   final List<SrdClass>? srdClasses;
+  final List<String>? weaponProficiencies;
   final int? reorderIndex;
 
   Future<void> _confirmRemoveItem(
@@ -506,7 +508,7 @@ class ItemTile extends ConsumerWidget {
     final meta = itemMeta(item, i18n, l10n);
     final displayName = itemDisplayName(item, i18n);
     final classes = srdClasses;
-    final rollRequest = classes == null
+    final rollRequest = classes == null && weaponProficiencies == null
         ? null
         : ContextualWeaponRollBuilder.build(
             character: character,
@@ -519,6 +521,7 @@ class ItemTile extends ConsumerWidget {
             versatileOneHandedLabel: l10n.contextualRollVersatileOneHanded,
             versatileTwoHandedLabel: l10n.contextualRollVersatileTwoHanded,
             classes: classes,
+            weaponProficiencies: weaponProficiencies,
             subtitle: meta,
           );
     final widgetsL10n = WidgetsLocalizations.of(context);
@@ -566,7 +569,7 @@ class ItemTile extends ConsumerWidget {
         onTap: () {
           final request = rollRequest;
           if (request == null) {
-            showItemDetailsSheet(context, ref, item, displayName, meta);
+            showItemDetailsSheet(context, ref, item, displayName, meta, characterId: characterId);
             return;
           }
           openContextualRollSheet(
@@ -655,7 +658,7 @@ class ItemTile extends ConsumerWidget {
               onSelected: (action) {
                 switch (action) {
                   case InventoryItemAction.details:
-                    showItemDetailsSheet(context, ref, item, displayName, meta);
+                    showItemDetailsSheet(context, ref, item, displayName, meta, characterId: characterId);
                     break;
                   case InventoryItemAction.move:
                     showMoveItemSheet(

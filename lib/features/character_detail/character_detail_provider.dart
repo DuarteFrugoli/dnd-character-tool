@@ -14,6 +14,7 @@ import '../../data/datasources/srd/srd_models.dart';
 import '../../data/inventory/inventory_operations.dart' as inventory_ops;
 import '../../data/models/models.dart';
 import '../../data/rulesets/character_rules_context.dart';
+import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
 import '../character_list/character_list_provider.dart';
 
@@ -265,7 +266,6 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> adjustFeatureResource(String resourceId, int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Feature resource');
     final binding = await _activeFeatureUsageBinding(c, resourceId);
     if (binding == null) return;
     final resource = binding.resource;
@@ -347,8 +347,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<List<FeatureUsageBinding>> _activeFeatureUsageBindings(
     Character c,
   ) async {
-    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Feature usage');
-    final srd = ref.read(srdDataSourceProvider);
+    final rules = CharacterRulesContext.fromCharacter(c);
+    final srd = ref.read(srdDataSourceForPackProvider(rules.contentPackId));
     final catalog = await srd.getFeatureUsageCatalog();
     final classFeatureSets = <FeatureUsageFeatureSet>[];
     for (final classEntry in c.classEntries) {
@@ -370,12 +370,18 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         ),
       );
     }
-    final races = await srd.getRaces();
-    final race = races.where((r) => r.name == c.race).firstOrNull;
-    final subrace = race?.subraces
-        .where((s) => s.name == c.subrace)
-        .firstOrNull;
-    final traits = <String>[...?race?.traits, ...?subrace?.traits];
+    final List<String> traits;
+    if (c.rulesetId == RulesetId.dnd2024) {
+      final species = await ref.read(srd2024SpeciesProvider.future);
+      traits = species.where((entry) => entry.name == c.race).firstOrNull?.traits ?? const [];
+    } else {
+      final races = await srd.getRaces();
+      final race = races.where((r) => r.name == c.race).firstOrNull;
+      final subrace = race?.subraces
+          .where((s) => s.name == c.subrace)
+          .firstOrNull;
+      traits = <String>[...?race?.traits, ...?subrace?.traits];
+    }
     return FeatureUsageEngine.activeResourceBindings(
       character: c,
       catalog: catalog,

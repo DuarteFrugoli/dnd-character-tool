@@ -1,5 +1,6 @@
 import '../datasources/srd/srd_models.dart';
 import '../models/models.dart';
+import '../rulesets/ruleset_ids.dart';
 import 'contextual_roll.dart';
 
 class ContextualWeaponRollBuilder {
@@ -15,10 +16,15 @@ class ContextualWeaponRollBuilder {
     required String versatileGripLabel,
     required String versatileOneHandedLabel,
     required String versatileTwoHandedLabel,
-    required List<SrdClass> classes,
+    List<SrdClass>? classes,
+    List<String>? weaponProficiencies,
     String? subtitle,
   }) {
     if (item.itemType != ItemType.weapon) return null;
+    if (character.rulesetId == RulesetId.dnd2014 && classes == null ||
+        character.rulesetId == RulesetId.dnd2024 && weaponProficiencies == null) {
+      throw StateError('Weapon proficiencies must come from the character ruleset.');
+    }
 
     final damageDice = _propertyText(item, 'damageDice') ??
         _propertyText(item, 'damage');
@@ -29,7 +35,7 @@ class ContextualWeaponRollBuilder {
     final attackBonus =
         abilityModifier +
         magicBonus +
-        (_isProficientWithWeapon(character, item, classes)
+        (_isProficientWithWeapon(character, item, classes, weaponProficiencies)
             ? character.proficiencyBonus
             : 0);
 
@@ -118,9 +124,17 @@ class ContextualWeaponRollBuilder {
   static bool _isProficientWithWeapon(
     Character character,
     EquipmentItem item,
-    List<SrdClass> classes,
+    List<SrdClass>? classes,
+    List<String>? weaponProficiencies,
   ) {
-    final proficiencies = _weaponProficiencies(character, classes);
+    final proficiencies = weaponProficiencies == null
+        ? _weaponProficiencies(character, classes!)
+        : {
+            ...weaponProficiencies.map(_normalizeWeaponProficiency),
+            for (final feature in character.features)
+              if (feature.toLowerCase().startsWith('weapon proficiency:'))
+                _normalizeWeaponProficiency(feature.substring('weapon proficiency:'.length)),
+          };
     final group = _weaponCategoryGroup(item.category);
     if (group != null && proficiencies.contains(group)) return true;
 

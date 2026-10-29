@@ -2,6 +2,8 @@ import '../../character_detail_dependencies.dart';
 import 'inventory_display_helpers.dart';
 import 'inventory_item_tile.dart';
 import 'item_detail_sheet.dart';
+import '../../../../data/rulesets/ruleset_ids.dart';
+import '../../../../data/rulesets/srd_content_pack.dart';
 
 class ContainerContentsSheet extends ConsumerWidget {
   const ContainerContentsSheet({
@@ -16,9 +18,19 @@ class ContainerContentsSheet extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(inventoryTabVmProvider(characterId));
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
-    final srdClasses = ref.watch(srdClassesProvider).valueOrNull;
+    final character = ref.watch(characterDetailProvider(characterId)).valueOrNull;
+    if (character == null) return const Center(child: CircularProgressIndicator());
+    final packId = character.contentPackId;
+    final i18n = ref.watch(srdI18nForPackProvider(packId)).valueOrNull ??
+        SrdI18nService.englishForPack(SrdContentPackRegistry.forId(packId));
+    final srdClasses = character.rulesetId == RulesetId.dnd2014
+        ? ref.watch(srdClassesProvider).valueOrNull
+        : null;
+    final weaponProficiencies = character.rulesetId == RulesetId.dnd2024
+        ? ref.watch(srd2024ClassesProvider).valueOrNull
+            ?.where((entry) => entry.name == character.primaryClassName)
+            .firstOrNull?.weaponProficiencies
+        : null;
     final unitSystem = ref.watch(unitSystemProvider);
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
@@ -94,6 +106,7 @@ class ContainerContentsSheet extends ConsumerWidget {
                             container,
                             displayName,
                             meta,
+                            characterId: characterId,
                           ),
                         ),
                       ),
@@ -124,6 +137,7 @@ class ContainerContentsSheet extends ConsumerWidget {
                         characterId: characterId,
                         character: vm.character,
                         srdClasses: srdClasses,
+                        weaponProficiencies: weaponProficiencies,
                         reorderIndex: reorderIndex,
                       ),
                     ),

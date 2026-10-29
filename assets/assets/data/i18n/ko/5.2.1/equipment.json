@@ -1,0 +1,569 @@
+{
+  "Club": {
+    "name": "곤봉"
+  },
+  "Dagger": {
+    "name": "단검"
+  },
+  "Greatclub": {
+    "name": "대형 곤봉"
+  },
+  "Handaxe": {
+    "name": "손도끼"
+  },
+  "Javelin": {
+    "name": "투창"
+  },
+  "Light Hammer": {
+    "name": "경량 망치"
+  },
+  "Mace": {
+    "name": "철퇴"
+  },
+  "Quarterstaff": {
+    "name": "육척봉"
+  },
+  "Sickle": {
+    "name": "낫"
+  },
+  "Spear": {
+    "name": "창"
+  },
+  "Dart": {
+    "name": "다트"
+  },
+  "Light Crossbow": {
+    "name": "경량 쇠뇌"
+  },
+  "Shortbow": {
+    "name": "단궁"
+  },
+  "Sling": {
+    "name": "투석구"
+  },
+  "Battleaxe": {
+    "name": "전투도끼"
+  },
+  "Flail": {
+    "name": "도리깨"
+  },
+  "Glaive": {
+    "name": "글레이브"
+  },
+  "Greataxe": {
+    "name": "대형 도끼"
+  },
+  "Greatsword": {
+    "name": "대검"
+  },
+  "Halberd": {
+    "name": "할버드"
+  },
+  "Lance": {
+    "name": "기병창"
+  },
+  "Longsword": {
+    "name": "장검"
+  },
+  "Maul": {
+    "name": "대형 망치"
+  },
+  "Morningstar": {
+    "name": "모닝스타"
+  },
+  "Pike": {
+    "name": "장창"
+  },
+  "Rapier": {
+    "name": "레이피어"
+  },
+  "Scimitar": {
+    "name": "시미터"
+  },
+  "Shortsword": {
+    "name": "소검"
+  },
+  "Trident": {
+    "name": "삼지창"
+  },
+  "Warhammer": {
+    "name": "전투망치"
+  },
+  "War Pick": {
+    "name": "전투곡괭이"
+  },
+  "Whip": {
+    "name": "채찍"
+  },
+  "Blowgun": {
+    "name": "취관"
+  },
+  "Hand Crossbow": {
+    "name": "손쇠뇌"
+  },
+  "Heavy Crossbow": {
+    "name": "중쇠뇌"
+  },
+  "Longbow": {
+    "name": "장궁"
+  },
+  "Musket": {
+    "name": "머스킷"
+  },
+  "Pistol": {
+    "name": "권총"
+  },
+  "Padded Armor": {
+    "name": "솜누비 갑옷"
+  },
+  "Leather Armor": {
+    "name": "가죽 갑옷"
+  },
+  "Studded Leather Armor": {
+    "name": "징 박힌 가죽 갑옷"
+  },
+  "Hide Armor": {
+    "name": "가죽옷 갑옷"
+  },
+  "Chain Shirt": {
+    "name": "사슬 셔츠"
+  },
+  "Scale Mail": {
+    "name": "미늘 갑옷"
+  },
+  "Breastplate": {
+    "name": "흉갑"
+  },
+  "Half Plate Armor": {
+    "name": "반신 판금 갑옷"
+  },
+  "Ring Mail": {
+    "name": "고리 갑옷"
+  },
+  "Chain Mail": {
+    "name": "사슬 갑옷"
+  },
+  "Splint Armor": {
+    "name": "띠 갑옷"
+  },
+  "Plate Armor": {
+    "name": "판금 갑옷"
+  },
+  "Shield": {
+    "name": "방패"
+  },
+  "Arrow": {
+    "name": "화살",
+    "description": "활 탄약이며 스무 개 묶음으로 판매합니다. 공격마다 화살 하나를 사용하며, 전투 후 1분 동안 사용한 탄약의 절반을 회수할 수 있습니다."
+  },
+  "Bolt": {
+    "name": "쇠뇌살",
+    "description": "쇠뇌 탄약이며 스무 개 묶음으로 판매합니다."
+  },
+  "Bullet": {
+    "name": "탄환",
+    "description": "화기 탄약이며 열 개 묶음으로 판매합니다."
+  },
+  "Sling Bullet": {
+    "name": "투석구 탄환",
+    "description": "투석구 탄약이며 스무 개 묶음으로 판매합니다."
+  },
+  "Needle": {
+    "name": "취관 바늘",
+    "description": "취관 탄약이며 쉰 개 묶음으로 판매합니다."
+  },
+  "Acid": {
+    "name": "산",
+    "description": "공격 한 번을 대신해 20피트 이내의 대상에게 병을 던집니다. 대상이 민첩 내성 굴림(DC 8 + 민첩 수정치 + 숙련 보너스)에 실패하면 2d6 산 피해를 받습니다."
+  },
+  "Alchemist's Fire": {
+    "name": "연금술사의 불",
+    "description": "공격 한 번을 대신해 20피트 이내의 대상에게 플라스크를 던집니다. 대상이 민첩 내성 굴림(DC 8 + 민첩 수정치 + 숙련 보너스)에 실패하면 1d4 화염 피해를 받고 불타기 시작합니다."
+  },
+  "Antitoxin": {
+    "name": "해독제",
+    "description": "추가 행동으로 마시면 1시간 동안 중독 상태를 피하거나 끝내는 내성 굴림에 이점을 얻습니다."
+  },
+  "Arcane Focus": {
+    "name": "비전 매개체",
+    "description": "소서러, 워락 또는 위저드의 주문 매개체입니다. 수정, 구슬, 막대, 지팡이 또는 마법봉을 선택합니다."
+  },
+  "Arcane Focus, Crystal": {
+    "name": "비전 매개체, 수정",
+    "description": "비전 주문 매개체로 쓰는 수정."
+  },
+  "Arcane Focus, Orb": {
+    "name": "비전 매개체, 구슬",
+    "description": "비전 주문 매개체로 쓰는 구슬."
+  },
+  "Arcane Focus, Rod": {
+    "name": "비전 매개체, 막대",
+    "description": "비전 주문 매개체로 쓰는 막대."
+  },
+  "Arcane Focus, Staff": {
+    "name": "비전 매개체, 지팡이",
+    "description": "육척봉으로도 사용할 수 있는 비전 주문 매개체."
+  },
+  "Arcane Focus, Wand": {
+    "name": "비전 매개체, 마법봉",
+    "description": "비전 주문 매개체로 쓰는 마법봉."
+  },
+  "Backpack": {
+    "name": "배낭",
+    "description": "1입방피트에 최대 30파운드를 담으며 안장 주머니로도 사용할 수 있습니다."
+  },
+  "Ball Bearings": {
+    "name": "금속 구슬",
+    "description": "활용 행동으로 10피트 이내의 평평한 가로세로 10피트 영역에 뿌립니다. 들어가는 크리처가 DC 10 민첩 내성 굴림에 실패하면 넘어진 상태가 됩니다. 회수에는 10분이 걸립니다."
+  },
+  "Barrel": {
+    "name": "통",
+    "description": "액체 최대 40갤런 또는 마른 물건 4입방피트를 담습니다."
+  },
+  "Basket": {
+    "name": "바구니",
+    "description": "2입방피트에 최대 40파운드를 담습니다."
+  },
+  "Bedroll": {
+    "name": "침낭",
+    "description": "소형 또는 중형 크리처 하나가 잘 수 있습니다. 안에 있는 동안 극한 추위에 대한 내성 굴림에 자동 성공합니다."
+  },
+  "Bell": {
+    "name": "종",
+    "description": "활용 행동으로 울리면 60피트까지 들리는 소리가 납니다."
+  },
+  "Blanket": {
+    "name": "담요",
+    "description": "몸을 감싸면 극한 추위에 대한 내성 굴림에 이점을 얻습니다."
+  },
+  "Block and Tackle": {
+    "name": "도르래 장치",
+    "description": "평소 들 수 있는 무게의 네 배를 들어 올릴 수 있습니다."
+  },
+  "Book": {
+    "name": "책",
+    "description": "정확한 정보가 있는 비소설 책을 참고하면 그 주제에 관한 지능(비전학, 역사, 자연 또는 종교) 판정에 +5를 얻습니다."
+  },
+  "Bottle, Glass": {
+    "name": "유리병",
+    "description": "최대 1.5파인트를 담습니다."
+  },
+  "Bucket": {
+    "name": "양동이",
+    "description": "최대 0.5입방피트를 담습니다."
+  },
+  "Burglar's Pack": {
+    "name": "도둑 꾸러미",
+    "description": "잠입에 필요한 물품 모음입니다."
+  },
+  "Caltrops": {
+    "name": "마름쇠",
+    "description": "활용 행동으로 가로세로 5피트 영역에 뿌립니다. 들어가는 크리처가 DC 15 민첩 내성 굴림에 실패하면 1 관통 피해를 받고 다음 턴까지 속도가 0이 됩니다. 회수에는 10분이 걸립니다."
+  },
+  "Candle": {
+    "name": "양초",
+    "description": "1시간 타며 5피트는 밝은 빛, 추가 5피트는 희미한 빛을 비춥니다."
+  },
+  "Case, Crossbow Bolt": {
+    "name": "쇠뇌살 통",
+    "description": "쇠뇌살 최대 20개를 담습니다."
+  },
+  "Case, Map or Scroll": {
+    "name": "지도 또는 두루마리 통",
+    "description": "종이 최대 10장 또는 양피지 5장을 담습니다."
+  },
+  "Chain": {
+    "name": "사슬",
+    "description": "근력(운동) DC 13 판정으로 붙잡힘, 행동불능 또는 구속 상태의 크리처를 묶을 수 있습니다. 탈출은 민첩(곡예) DC 18, 끊기는 근력(운동) DC 20이 필요합니다."
+  },
+  "Chest": {
+    "name": "궤짝",
+    "description": "최대 12입방피트를 담습니다."
+  },
+  "Climber's Kit": {
+    "name": "등반 도구",
+    "description": "장화 끝, 장갑, 피톤과 안전띠를 포함합니다. 활용 행동으로 고정하면 낙하가 25피트, 고정점에서의 이동이 25피트로 제한됩니다."
+  },
+  "Clothes, Fine": {
+    "name": "고급 의복",
+    "description": "공식 행사와 장소에 어울리는 값비싼 의복입니다."
+  },
+  "Clothes, Traveler's": {
+    "name": "여행자 의복",
+    "description": "여러 환경의 여행에 적합한 튼튼한 의복입니다."
+  },
+  "Component Pouch": {
+    "name": "구성 요소 주머니",
+    "description": "주문의 무료 물질 구성 요소를 담는 칸막이 있는 방수 주머니입니다."
+  },
+  "Costume": {
+    "name": "의상",
+    "description": "착용하면 나타내는 인물이나 역할을 사칭하는 능력치 판정에 이점을 얻습니다."
+  },
+  "Crowbar": {
+    "name": "쇠지레",
+    "description": "지렛대 효과를 사용할 수 있을 때 근력 판정에 이점을 줍니다."
+  },
+  "Diplomat's Pack": {
+    "name": "외교관 꾸러미",
+    "description": "공식 여행과 편지에 필요한 물품입니다."
+  },
+  "Druidic Focus": {
+    "name": "드루이드 매개체",
+    "description": "드루이드 또는 레인저의 주문 매개체입니다. 겨우살이, 나무 지팡이 또는 주목나무 마법봉을 선택합니다."
+  },
+  "Druidic Focus, Sprig of Mistletoe": {
+    "name": "드루이드 매개체, 겨우살이 가지",
+    "description": "원초 주문 매개체로 쓰는 겨우살이 가지."
+  },
+  "Druidic Focus, Wooden Staff": {
+    "name": "드루이드 매개체, 나무 지팡이",
+    "description": "육척봉으로도 쓸 수 있는 원초 주문 매개체."
+  },
+  "Druidic Focus, Yew Wand": {
+    "name": "드루이드 매개체, 주목나무 마법봉",
+    "description": "원초 주문 매개체로 쓰는 주목나무 마법봉."
+  },
+  "Dungeoneer's Pack": {
+    "name": "던전 탐험가 꾸러미",
+    "description": "던전 탐험에 필요한 물품입니다."
+  },
+  "Entertainer's Pack": {
+    "name": "연예인 꾸러미",
+    "description": "순회 공연자에게 필요한 물품입니다."
+  },
+  "Explorer's Pack": {
+    "name": "탐험가 꾸러미",
+    "description": "야외 탐험에 필요한 물품입니다."
+  },
+  "Flask": {
+    "name": "플라스크",
+    "description": "최대 1파인트를 담습니다."
+  },
+  "Grappling Hook": {
+    "name": "갈고리",
+    "description": "활용 행동으로 50피트 이내의 걸리는 지점에 던집니다. 민첩(곡예) DC 13 판정으로 고정할 수 있고, 이어서 묶인 밧줄을 오를 수 있습니다."
+  },
+  "Healer's Kit": {
+    "name": "치료사 도구",
+    "description": "열 번의 사용 중 한 번을 활용 행동으로 소모해 의학 판정 없이 생명력 0의 의식불명 크리처를 안정화합니다."
+  },
+  "Holy Symbol": {
+    "name": "성표",
+    "description": "클레릭 또는 팔라딘의 주문 매개체입니다. 부적, 문장 또는 성유물함을 선택합니다."
+  },
+  "Holy Symbol, Amulet": {
+    "name": "성표, 부적",
+    "description": "착용하거나 손에 쥘 수 있는 신성 주문 매개체입니다."
+  },
+  "Holy Symbol, Emblem": {
+    "name": "성표, 문장",
+    "description": "천이나 방패에 부착하는 신성 주문 매개체입니다."
+  },
+  "Holy Symbol, Reliquary": {
+    "name": "성표, 성유물함",
+    "description": "손에 쥐어야 하는 신성 주문 매개체입니다."
+  },
+  "Holy Water": {
+    "name": "성수",
+    "description": "공격 한 번을 대신해 20피트 이내의 크리처에게 플라스크를 던집니다. 마귀 또는 언데드가 민첩 내성 굴림(DC 8 + 민첩 수정치 + 숙련 보너스)에 실패하면 2d8 광휘 피해를 받습니다."
+  },
+  "Hunting Trap": {
+    "name": "사냥 덫",
+    "description": "설치된 덫을 밟은 크리처가 DC 13 민첩 내성 굴림에 실패하면 1d4 관통 피해를 받고 다음 턴까지 속도가 0이 됩니다. 풀어주려면 근력(운동) DC 13이 필요합니다."
+  },
+  "Ink": {
+    "name": "잉크",
+    "description": "1온스 병에는 약 500쪽에 쓸 잉크가 들어 있습니다."
+  },
+  "Ink Pen": {
+    "name": "잉크 펜",
+    "description": "글을 쓰거나 그림을 그릴 때 잉크와 함께 씁니다."
+  },
+  "Jug": {
+    "name": "물병",
+    "description": "최대 1갤런을 담습니다."
+  },
+  "Ladder": {
+    "name": "사다리",
+    "description": "길이 10피트의 사다리입니다."
+  },
+  "Lamp": {
+    "name": "등잔",
+    "description": "기름을 태워 15피트는 밝은 빛, 추가 30피트는 희미한 빛을 냅니다."
+  },
+  "Lantern, Bullseye": {
+    "name": "집광 랜턴",
+    "description": "기름을 태워 60피트 원뿔에 밝은 빛, 추가 60피트에 희미한 빛을 냅니다."
+  },
+  "Lantern, Hooded": {
+    "name": "덮개 랜턴",
+    "description": "기름을 태워 30피트는 밝은 빛, 추가 30피트는 희미한 빛을 냅니다. 덮개를 내리면 5피트 희미한 빛만 냅니다."
+  },
+  "Lock": {
+    "name": "자물쇠",
+    "description": "열쇠가 포함됩니다. 열쇠 없이 열려면 도둑 도구와 민첩(손재주) DC 15 판정이 필요합니다."
+  },
+  "Magnifying Glass": {
+    "name": "돋보기",
+    "description": "값이나 미세한 부분을 평가하는 판정에 이점을 줍니다. 햇빛 아래 약 5분이면 불을 붙일 수도 있습니다."
+  },
+  "Manacles": {
+    "name": "수갑",
+    "description": "민첩(손재주) DC 13 판정으로 붙잡힘, 행동불능 또는 구속 상태의 소형 또는 중형 크리처를 묶을 수 있습니다. 탈출은 DC 20, 끊기는 근력(운동) DC 25가 필요합니다."
+  },
+  "Map": {
+    "name": "지도",
+    "description": "정확한 지도는 표시된 지역을 탐색하는 지혜(생존) 판정에 +5를 줍니다."
+  },
+  "Mirror": {
+    "name": "거울",
+    "description": "모퉁이 너머를 보거나 반사광으로 신호를 보낼 때 쓰는 휴대용 강철 거울입니다."
+  },
+  "Net": {
+    "name": "그물",
+    "description": "공격 한 번을 대신해 15피트 이내의 크리처에게 던집니다. 민첩 내성 굴림(DC 8 + 민첩 수정치 + 숙련 보너스)에 실패하면 구속됩니다. 초대형 이상은 자동 성공합니다. 탈출은 근력(운동) DC 10이 필요합니다."
+  },
+  "Oil": {
+    "name": "기름",
+    "description": "한 병으로 등잔이나 랜턴을 6시간 밝힙니다. 젖은 크리처나 물체는 1분 안에 다음 화염 피해를 받을 때 추가로 5 피해를 받을 수 있습니다. 땅에서 타는 기름은 5 화염 피해를 줍니다."
+  },
+  "Paper": {
+    "name": "종이",
+    "description": "한 장에 손글씨 약 250단어를 쓸 수 있습니다."
+  },
+  "Parchment": {
+    "name": "양피지",
+    "description": "한 장에 손글씨 약 250단어를 쓸 수 있습니다."
+  },
+  "Perfume": {
+    "name": "향수",
+    "description": "4온스 병입니다. 바른 뒤 1시간 동안 5피트 이내의 무관심한 인간형을 설득하는 매력(설득) 판정에 이점을 얻습니다."
+  },
+  "Poison, Basic": {
+    "name": "기본 독",
+    "description": "추가 행동으로 무기 하나 또는 탄약 최대 세 개에 바릅니다. 이들의 관통 또는 참격 피해는 1분 이내 또는 피해를 줄 때까지 추가로 1d4 독 피해를 줍니다."
+  },
+  "Pole": {
+    "name": "장대",
+    "description": "길이 10피트의 장대입니다. 이를 이용해 뛰면 높이뛰기나 멀리뛰기 근력(운동) 판정에 이점을 얻습니다."
+  },
+  "Pot, Iron": {
+    "name": "쇠솥",
+    "description": "최대 1갤런을 담습니다."
+  },
+  "Pouch": {
+    "name": "주머니",
+    "description": "0.2입방피트에 최대 6파운드를 담습니다."
+  },
+  "Priest's Pack": {
+    "name": "사제 꾸러미",
+    "description": "여행과 종교 활동에 필요한 물품입니다."
+  },
+  "Quiver": {
+    "name": "화살통",
+    "description": "화살 최대 20개를 담습니다."
+  },
+  "Ram, Portable": {
+    "name": "휴대용 공성추",
+    "description": "문을 부수는 근력 판정에 +4를 줍니다. 다른 캐릭터가 도와 이점을 줄 수 있습니다."
+  },
+  "Rations": {
+    "name": "식량",
+    "description": "건과일, 육포, 딱딱한 비스킷, 견과류 등 여행용 하루치 식량입니다."
+  },
+  "Robe": {
+    "name": "예복",
+    "description": "직업 또는 의식상 의미가 있는 의복입니다."
+  },
+  "Rope": {
+    "name": "밧줄",
+    "description": "매듭은 민첩(손재주) DC 10, 밧줄을 끊으려면 근력(운동) DC 20이 필요합니다. 묶인 크리처는 민첩(곡예) DC 15로 탈출할 수 있습니다."
+  },
+  "Sack": {
+    "name": "자루",
+    "description": "1입방피트에 최대 30파운드를 담습니다."
+  },
+  "Scholar's Pack": {
+    "name": "학자 꾸러미",
+    "description": "학습과 필기에 필요한 물품입니다."
+  },
+  "Shovel": {
+    "name": "삽",
+    "description": "흙이나 비슷한 물질을 한 시간 파면 각 변이 5피트인 정육면체 공간을 만듭니다."
+  },
+  "Signal Whistle": {
+    "name": "신호 호루라기",
+    "description": "활용 행동으로 불면 600피트까지 들리는 소리가 납니다."
+  },
+  "Spellbook": {
+    "name": "주문서",
+    "description": "위저드가 1레벨 이상 주문을 기록하는 고유한 100쪽 책입니다. 소유자나 식별 주문을 시전한 사람만 읽을 수 있으며, 위저드 주문 매개체로도 쓸 수 있습니다."
+  },
+  "Spikes, Iron": {
+    "name": "쇠못",
+    "description": "문을 고정하거나 밧줄 또는 사슬을 묶는 데 쓰는 쇠못 열 개 묶음입니다."
+  },
+  "Spyglass": {
+    "name": "망원경",
+    "description": "보는 물체를 두 배 크기로 확대합니다."
+  },
+  "String": {
+    "name": "끈",
+    "description": "길이 10피트의 끈입니다. 매듭짓기는 활용 행동입니다."
+  },
+  "Tent": {
+    "name": "천막",
+    "description": "소형 또는 중형 크리처 최대 둘이 잘 수 있습니다."
+  },
+  "Tinderbox": {
+    "name": "부싯깃 상자",
+    "description": "부싯돌, 부시와 부싯깃입니다. 드러난 연료에 불을 붙이는 데 추가 행동, 다른 불을 붙이는 데 1분이 걸립니다."
+  },
+  "Torch": {
+    "name": "횃불",
+    "description": "1시간 타며 20피트는 밝은 빛, 추가 20피트는 희미한 빛을 냅니다. 명중 시 1 화염 피해를 주는 단순 근접 무기로 사용할 수 있습니다."
+  },
+  "Vial": {
+    "name": "작은 병",
+    "description": "최대 4온스를 담습니다."
+  },
+  "Waterskin": {
+    "name": "물가죽",
+    "description": "물 최대 4파인트를 담습니다. 표시된 무게는 가득 찼을 때입니다."
+  },
+  "weaponMasteries": {
+    "cleave": {
+      "name": "베기",
+      "description": "턴마다 한 번 근접 공격 명중 후 같은 무기로 첫 대상에서 5피트 이내이며 자신의 사정거리 안에 있는 다른 크리처를 공격합니다. 명중하면 양의 능력 수정치를 더하지 않고 무기 피해를 줍니다."
+    },
+    "graze": {
+      "name": "스치기",
+      "description": "빗나가면 공격에 사용한 능력 수정치와 같은 무기 유형의 피해를 줍니다. 이 수정치의 증가만 피해를 높일 수 있습니다."
+    },
+    "nick": {
+      "name": "날쌘 공격",
+      "description": "턴마다 한 번 경량 속성의 추가 공격을 추가 행동 대신 공격 행동의 일부로 합니다."
+    },
+    "push": {
+      "name": "밀치기",
+      "description": "명중하면 대형 이하의 크리처를 자신에게서 직선으로 최대 10피트 밀어냅니다."
+    },
+    "sap": {
+      "name": "약화",
+      "description": "명중하면 대상은 다음 자신의 턴 시작 전까지 다음 공격 굴림에 불리점을 받습니다."
+    },
+    "slow": {
+      "name": "감속",
+      "description": "피해를 주며 명중하면 다음 자신의 턴 시작까지 대상의 속도가 10피트 감소합니다. 여러 번 명중해도 감소량은 쌓이지 않습니다."
+    },
+    "topple": {
+      "name": "넘어뜨리기",
+      "description": "명중하면 대상은 DC 8 + 공격의 능력 수정치 + 자신의 숙련 보너스에 대한 건강 내성 굴림을 합니다. 실패하면 넘어진 상태가 됩니다."
+    },
+    "vex": {
+      "name": "교란",
+      "description": "피해를 주며 명중하면 다음 자신의 턴이 끝나기 전 그 크리처를 상대로 하는 다음 공격 굴림에 이점을 얻습니다."
+    }
+  }
+}

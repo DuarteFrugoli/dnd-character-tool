@@ -1,0 +1,62 @@
+{
+  "Blinded": {
+    "name": "Cego",
+    "description": "Você não pode ver e falha automaticamente em testes de habilidade que exigem visão. Ataques contra você têm Vantagem, e seus ataques têm Desvantagem."
+  },
+  "Charmed": {
+    "name": "Enfeitiçado",
+    "description": "Você não pode atacar quem o enfeitiçou nem escolher essa criatura como alvo de habilidades que causam dano ou efeitos mágicos. Ela tem vantagem nos testes de habilidade para interagir socialmente com você."
+  },
+  "Deafened": {
+    "name": "Surdo",
+    "description": "Você não pode ouvir e falha automaticamente nos testes de habilidade que exigem audição."
+  },
+  "Exhaustion": {
+    "name": "Exaustão",
+    "description": "A exaustão é cumulativa. Cada nível impõe uma penalidade de -2 aos seus testes de D20 e reduz seu deslocamento em 1,5 metro. Você morre no nível 6. Concluir um descanso longo remove um nível; a condição termina no nível 0."
+  },
+  "Frightened": {
+    "name": "Amedrontado",
+    "description": "Você tem desvantagem nos testes de habilidade e nas jogadas de ataque enquanto puder ver a fonte do medo e não pode se aproximar dela voluntariamente."
+  },
+  "Grappled": {
+    "name": "Agarrado",
+    "description": "Seu deslocamento é 0 e não pode aumentar. Suas jogadas de ataque contra alvos que não sejam a criatura que o agarrou têm desvantagem. Essa criatura pode movê-lo, mas cada 30 cm percorridos custam outros 30 cm de movimento, a menos que você seja Minúsculo ou pelo menos duas categorias de tamanho menor que ela."
+  },
+  "Incapacitated": {
+    "name": "Incapacitado",
+    "description": "Você não pode realizar ações, ações bônus ou reações, manter a concentração nem falar. Se estiver incapacitado ao fazer a jogada de iniciativa, você terá desvantagem nessa jogada."
+  },
+  "Invisible": {
+    "name": "Invisível",
+    "description": "Você tem vantagem nas jogadas de iniciativa. Efeitos que exigem um alvo visível não podem afetá-lo, a menos que quem os criou possa vê-lo; o equipamento que você veste ou carrega também fica oculto. Jogadas de ataque contra você têm desvantagem, e suas jogadas de ataque têm vantagem, exceto contra uma criatura que possa vê-lo."
+  },
+  "Paralyzed": {
+    "name": "Paralisado",
+    "description": "Você está incapacitado e seu deslocamento é 0. Você falha automaticamente nos testes de resistência de Força e Destreza. Jogadas de ataque contra você têm vantagem; um acerto é crítico se o atacante estiver a até 1,5 metro de você."
+  },
+  "Petrified": {
+    "name": "Petrificado",
+    "description": "Você e os objetos não mágicos que veste ou carrega se transformam em material sólido e inanimado. Seu peso é multiplicado por dez e você deixa de envelhecer. Você está incapacitado, seu deslocamento é 0, jogadas de ataque contra você têm vantagem e você falha automaticamente nos testes de resistência de Força e Destreza. Você tem resistência a todo dano e imunidade à condição envenenado."
+  },
+  "Poisoned": {
+    "name": "Envenenado",
+    "description": "Você tem desvantagem nas jogadas de ataque e nos testes de habilidade."
+  },
+  "Prone": {
+    "name": "Prostrado",
+    "description": "Você pode rastejar ou gastar movimento igual à metade do seu deslocamento para se levantar e encerrar a condição; não pode se levantar se seu deslocamento for 0. Suas jogadas de ataque têm desvantagem. Jogadas de ataque contra você têm vantagem se o atacante estiver a até 1,5 metro e desvantagem se estiver mais longe."
+  },
+  "Restrained": {
+    "name": "Contido",
+    "description": "Seu deslocamento é 0 e não pode aumentar. Jogadas de ataque contra você têm vantagem, suas jogadas de ataque têm desvantagem e você tem desvantagem nos testes de resistência de Destreza."
+  },
+  "Stunned": {
+    "name": "Atordoado",
+    "description": "Você está incapacitado, falha automaticamente nos testes de resistência de Força e Destreza e jogadas de ataque contra você têm vantagem."
+  },
+  "Unconscious": {
+    "name": "Inconsciente",
+    "description": "Você está incapacitado e prostrado, larga o que estiver segurando e não percebe o que acontece ao seu redor. Seu deslocamento é 0, jogadas de ataque contra você têm vantagem e você falha automaticamente nos testes de resistência de Força e Destreza. Um acerto é crítico se o atacante estiver a até 1,5 metro de você. Você permanece prostrado depois que esta condição termina."
+  }
+}

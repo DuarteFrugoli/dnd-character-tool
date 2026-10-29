@@ -1,0 +1,59 @@
+{
+  "Common": {
+    "name": "共通語"
+  },
+  "Common Sign Language": {
+    "name": "共通手話"
+  },
+  "Draconic": {
+    "name": "竜語"
+  },
+  "Dwarvish": {
+    "name": "ドワーフ語"
+  },
+  "Elvish": {
+    "name": "エルフ語"
+  },
+  "Giant": {
+    "name": "巨人語"
+  },
+  "Gnomish": {
+    "name": "ノーム語"
+  },
+  "Goblin": {
+    "name": "ゴブリン語"
+  },
+  "Halfling": {
+    "name": "ハーフリング語"
+  },
+  "Orc": {
+    "name": "オーク語"
+  },
+  "Abyssal": {
+    "name": "アビサル"
+  },
+  "Celestial": {
+    "name": "天上語"
+  },
+  "Deep Speech": {
+    "name": "深淵語"
+  },
+  "Druidic": {
+    "name": "ドルイド語"
+  },
+  "Infernal": {
+    "name": "地獄語"
+  },
+  "Primordial": {
+    "name": "始原語"
+  },
+  "Sylvan": {
+    "name": "森語"
+  },
+  "Thieves' Cant": {
+    "name": "盗賊の符牒"
+  },
+  "Undercommon": {
+    "name": "地下共通語"
+  }
+}

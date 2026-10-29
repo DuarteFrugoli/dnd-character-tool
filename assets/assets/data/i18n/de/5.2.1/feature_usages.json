@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "Kampfrausch"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "Erholung des anhaltenden Kampfrauschs"
+    },
+    "2024_bardic_inspiration": {
+      "name": "Bardische Inspiration"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "Göttliche Macht fokussieren"
+    },
+    "2024_divine_intervention": {
+      "name": "Göttliches Eingreifen"
+    },
+    "2024_wild_shape": {
+      "name": "Tiergestalt"
+    },
+    "2024_wild_resurgence": {
+      "name": "Zauberplatz durch Wilde Erneuerung"
+    },
+    "2024_archdruid": {
+      "name": "Zauberplatz des Erzdruiden"
+    },
+    "2024_second_wind": {
+      "name": "Zweiter Atem"
+    },
+    "2024_action_surge": {
+      "name": "Tatendrang"
+    },
+    "2024_indomitable": {
+      "name": "Unbeugsam"
+    },
+    "2024_focus_points": {
+      "name": "Fokuspunkte"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "Unheimlicher Stoffwechsel"
+    },
+    "2024_lay_on_hands": {
+      "name": "Handauflegen"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "Göttliche Macht fokussieren"
+    },
+    "2024_paladins_smite": {
+      "name": "Göttlicher Schlag (kostenloses Wirken)"
+    },
+    "2024_faithful_steed": {
+      "name": "Reittier finden (kostenloses Wirken)"
+    },
+    "2024_hunters_mark": {
+      "name": "Mal des Jägers (kostenloses Wirken)"
+    },
+    "2024_tireless": {
+      "name": "Unermüdlich"
+    },
+    "2024_natures_veil": {
+      "name": "Schleier der Natur"
+    },
+    "2024_stroke_of_luck": {
+      "name": "Glücksgriff"
+    },
+    "2024_innate_sorcery": {
+      "name": "Angeborene Zauberei"
+    },
+    "2024_sorcery_points": {
+      "name": "Zaubereipunkte"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "Zauberische Erholung"
+    },
+    "2024_magical_cunning": {
+      "name": "Magische Gewandtheit"
+    },
+    "2024_contact_patron": {
+      "name": "Kontakt zum Patron (kostenloses Wirken)"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "Mystisches Arkanum (Stufe 6)"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "Mystisches Arkanum (Stufe 7)"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "Mystisches Arkanum (Stufe 8)"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "Mystisches Arkanum (Stufe 9)"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "Wasseratmung (kostenloses Wirken)"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "Gabe der Beschützer"
+    },
+    "2024_arcane_recovery": {
+      "name": "Arkane Erholung"
+    },
+    "2024_signature_spell_1": {
+      "name": "Signaturzauber 1 (kostenloses Wirken)"
+    },
+    "2024_signature_spell_2": {
+      "name": "Signaturzauber 2 (kostenloses Wirken)"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "Zirkelzauber (kostenloses Wirken)"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "Natürliche Erholung (Zauberplätze)"
+    },
+    "2024_wholeness_of_body": {
+      "name": "Unversehrtheit des Körpers"
+    },
+    "2024_intimidating_presence": {
+      "name": "Einschüchternde Präsenz (kostenlose Anwendung)"
+    },
+    "2024_holy_nimbus": {
+      "name": "Heiliger Nimbus (kostenlose Anwendung)"
+    },
+    "2024_dragon_wings": {
+      "name": "Drachenflügel (kostenlose Anwendung)"
+    },
+    "2024_dragon_companion": {
+      "name": "Drachengefährte (kostenloses Wirken)"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "Glück des Dunklen"
+    },
+    "2024_hurl_through_hell": {
+      "name": "Durch die Hölle schleudern (kostenlose Anwendung)"
+    },
+    "2024_safe_overchannel": {
+      "name": "Überkanalisieren (sichere Anwendung)"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "Zauber des Magieinitiierten (kostenloses Wirken)"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "Odemwaffe"
+    },
+    "2024_draconic_flight": {
+      "name": "Drakonischer Flug"
+    },
+    "2024_stonecunning": {
+      "name": "Steinkunde"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "Mit Tieren sprechen"
+    },
+    "2024_giant_ancestry": {
+      "name": "Riesenerbe"
+    },
+    "2024_large_form": {
+      "name": "Große Gestalt"
+    },
+    "2024_adrenaline_rush": {
+      "name": "Adrenalinschub"
+    },
+    "2024_relentless_endurance": {
+      "name": "Unerbittliche Ausdauer"
+    },
+    "2024_boon_of_fate": {
+      "name": "Gabe des Schicksals"
+    },
+    "2024_elven_lineage_3": {
+      "name": "Elfische Abstammung (Zauber ab Charakterstufe 3)"
+    },
+    "2024_elven_lineage_5": {
+      "name": "Elfische Abstammung (Zauber ab Charakterstufe 5)"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "Teuflisches Erbe (Zauber ab Charakterstufe 3)"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "Teuflisches Erbe (Zauber ab Charakterstufe 5)"
+    }
+  }
+}

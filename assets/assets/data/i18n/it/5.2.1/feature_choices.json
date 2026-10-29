@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "Chierico",
+        "description": "Scegli due trucchetti da chierico e un incantesimo da chierico di livello 1."
+      },
+      "druid": {
+        "name": "Druido",
+        "description": "Scegli due trucchetti da druido e un incantesimo da druido di livello 1."
+      },
+      "wizard": {
+        "name": "Mago",
+        "description": "Scegli due trucchetti da mago e un incantesimo da mago di livello 1."
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "Intelligenza",
+        "description": "Usa Intelligenza come caratteristica da incantatore per questi incantesimi."
+      },
+      "wisdom": {
+        "name": "Saggezza",
+        "description": "Usa Saggezza come caratteristica da incantatore per questi incantesimi."
+      },
+      "charisma": {
+        "name": "Carisma",
+        "description": "Usa Carisma come caratteristica da incantatore per questi incantesimi."
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "Tiro con l'Arco",
+        "description": "Ottieni un bonus di +2 ai tiri per colpire con armi a distanza."
+      },
+      "defense": {
+        "name": "Difesa",
+        "description": "Ottieni +1 alla CA mentre indossi un'armatura leggera, media o pesante."
+      },
+      "great_weapon_fighting": {
+        "name": "Combattere con Armi Possenti",
+        "description": "Considera pari a 3 i risultati di 1 o 2 sui dadi dei danni di un'arma da mischia a due mani o versatile impugnata con entrambe le mani."
+      },
+      "two_weapon_fighting": {
+        "name": "Combattere con Due Armi",
+        "description": "Aggiungi il tuo modificatore di caratteristica ai danni dell'attacco extra quando usi la proprietà Leggera."
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "Tiro con l'Arco",
+        "description": "Ottieni un bonus di +2 ai tiri per colpire con armi a distanza."
+      },
+      "defense": {
+        "name": "Difesa",
+        "description": "Ottieni +1 alla CA mentre indossi un'armatura leggera, media o pesante."
+      },
+      "great_weapon_fighting": {
+        "name": "Combattere con Armi Possenti",
+        "description": "Considera pari a 3 i risultati di 1 o 2 sui dadi dei danni di un'arma da mischia a due mani o versatile impugnata con entrambe le mani."
+      },
+      "two_weapon_fighting": {
+        "name": "Combattere con Due Armi",
+        "description": "Aggiungi il tuo modificatore di caratteristica ai danni dell'attacco extra quando usi la proprietà Leggera."
+      },
+      "blessed_warrior": {
+        "name": "Guerriero benedetto",
+        "description": "Impari due trucchetti da chierico che per te contano come incantesimi da paladino."
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "Tiro con l'Arco",
+        "description": "Ottieni un bonus di +2 ai tiri per colpire con armi a distanza."
+      },
+      "defense": {
+        "name": "Difesa",
+        "description": "Ottieni +1 alla CA mentre indossi un'armatura leggera, media o pesante."
+      },
+      "great_weapon_fighting": {
+        "name": "Combattere con Armi Possenti",
+        "description": "Considera pari a 3 i risultati di 1 o 2 sui dadi dei danni di un'arma da mischia a due mani o versatile impugnata con entrambe le mani."
+      },
+      "two_weapon_fighting": {
+        "name": "Combattere con Due Armi",
+        "description": "Aggiungi il tuo modificatore di caratteristica ai danni dell'attacco extra quando usi la proprietà Leggera."
+      },
+      "druidic_warrior": {
+        "name": "Guerriero druidico",
+        "description": "Impari due trucchetti da druido che per te contano come incantesimi da ranger."
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "Protettore",
+        "description": "Ottieni competenza nelle armi da guerra e addestramento nelle armature pesanti."
+      },
+      "thaumaturge": {
+        "name": "Taumaturgo",
+        "description": "Impari un ulteriore trucchetto da chierico e aggiungi il tuo modificatore di Saggezza (minimo +1) alle prove di Arcani o Religione."
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "Mago",
+        "description": "Impari un ulteriore trucchetto da druido e aggiungi il tuo modificatore di Saggezza (minimo +1) alle prove di Arcani o Natura."
+      },
+      "warden": {
+        "name": "Custode",
+        "description": "Ottieni competenza nelle armi da guerra e addestramento nelle armature medie."
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "Colpo divino",
+        "description": "Una volta per turno, aggiungi 1d8 danni radiosi o necrotici a un colpo con un'arma; 2d8 dal livello 14 da chierico."
+      },
+      "potent_spellcasting": {
+        "name": "Incantesimi potenti",
+        "description": "Aggiungi il tuo modificatore di Saggezza ai danni dei trucchetti da chierico; dal livello 14, un trucchetto che infligge danni può anche conferire punti ferita temporanei."
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "Incantesimi potenti",
+        "description": "Aggiungi il tuo modificatore di Saggezza ai danni dei trucchetti da druido; la gittata dei trucchetti aumenta al livello 15 da druido."
+      },
+      "primal_strike": {
+        "name": "Colpo primordiale",
+        "description": "Una volta per turno, aggiungi 1d8 danni da freddo, fuoco, fulmine o tuono a un colpo con un'arma o in forma di bestia; 2d8 al livello 15."
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "Addestrare Animali"
+      },
+      "athletics": {
+        "name": "Atletica"
+      },
+      "intimidation": {
+        "name": "Intimidazione"
+      },
+      "nature": {
+        "name": "Natura"
+      },
+      "perception": {
+        "name": "Percezione"
+      },
+      "survival": {
+        "name": "Sopravvivenza"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "Arcani"
+      },
+      "history": {
+        "name": "Storia"
+      },
+      "investigation": {
+        "name": "Investigazione"
+      },
+      "medicine": {
+        "name": "Medicina"
+      },
+      "nature": {
+        "name": "Natura"
+      },
+      "religion": {
+        "name": "Religione"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "Incantesimo accurato",
+        "description": "Spendi 1 punto stregoneria. Scegli fino a un numero di creature pari al tuo modificatore di Carisma (minimo una); superano automaticamente il tiro salvezza dell'incantesimo e non subiscono danni se normalmente il successo dimezzerebbe i danni."
+      },
+      "distant_spell": {
+        "name": "Incantesimo distante",
+        "description": "Spendi 1 punto stregoneria per raddoppiare la gittata di un incantesimo di almeno 5 piedi, oppure portare a 30 piedi la gittata a contatto."
+      },
+      "empowered_spell": {
+        "name": "Incantesimo potenziato",
+        "description": "Spendi 1 punto stregoneria per ritirare un numero di dadi dei danni fino al tuo modificatore di Carisma (minimo uno); usa i nuovi risultati. Puoi combinarlo con un'altra Metamagia."
+      },
+      "extended_spell": {
+        "name": "Incantesimo esteso",
+        "description": "Spendi 1 punto stregoneria per raddoppiare la durata fino a un massimo di 24 ore e ottenere Vantaggio ai tiri salvezza per mantenere la Concentrazione sull'incantesimo."
+      },
+      "heightened_spell": {
+        "name": "Incantesimo intensificato",
+        "description": "Spendi 2 punti stregoneria per imporre Svantaggio al bersaglio nei tiri salvezza contro l'incantesimo."
+      },
+      "quickened_spell": {
+        "name": "Incantesimo rapido",
+        "description": "Spendi 2 punti stregoneria per lanciare come Azione Bonus un incantesimo che richiede un'azione. Non puoi farlo dopo aver lanciato un incantesimo di livello 1 o superiore nello stesso turno, né lanciarne uno dopo."
+      },
+      "seeking_spell": {
+        "name": "Incantesimo inseguitore",
+        "description": "Spendi 1 punto stregoneria per ripetere un tiro per colpire con un incantesimo mancato; usa il nuovo risultato. Puoi combinarlo con un'altra Metamagia."
+      },
+      "subtle_spell": {
+        "name": "Incantesimo sottile",
+        "description": "Spendi 1 punto stregoneria per lanciare l'incantesimo senza componenti verbali, somatiche o materiali prive di costo e non consumate."
+      },
+      "transmuted_spell": {
+        "name": "Incantesimo trasmutato",
+        "description": "Spendi 1 punto stregoneria per cambiare i danni da acido, freddo, fuoco, fulmine, veleno o tuono di un incantesimo in un altro tipo di questa lista."
+      },
+      "twinned_spell": {
+        "name": "Incantesimo gemellato",
+        "description": "Spendi 1 punto stregoneria per aumentare di uno il livello effettivo di un incantesimo che può bersagliare un'altra creatura se lanciato a un livello superiore."
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "Arido"
+      },
+      "polar": {
+        "name": "Polare"
+      },
+      "temperate": {
+        "name": "Temperato"
+      },
+      "tropical": {
+        "name": "Tropicale"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "Uccisore di colossi",
+        "description": "Una volta per turno, un colpo con un'arma contro una creatura a cui mancano punti ferita infligge +1d8 danni."
+      },
+      "horde_breaker": {
+        "name": "Spezzatore di orde",
+        "description": "Una volta durante il tuo turno, attacchi con la tua arma un'altra creatura vicina."
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "Sfuggire all'orda",
+        "description": "Gli attacchi di opportunità contro di te hanno Svantaggio."
+      },
+      "multiattack_defense": {
+        "name": "Difesa contro attacchi multipli",
+        "description": "Dopo che una creatura ti colpisce, i suoi altri tiri per colpire contro di te in questo turno hanno Svantaggio."
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "Acido"
+      },
+      "cold": {
+        "name": "Freddo"
+      },
+      "fire": {
+        "name": "Fuoco"
+      },
+      "lightning": {
+        "name": "Fulmine"
+      },
+      "poison": {
+        "name": "Veleno"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "Acido"
+      },
+      "bludgeoning": {
+        "name": "Contundente"
+      },
+      "cold": {
+        "name": "Freddo"
+      },
+      "fire": {
+        "name": "Fuoco"
+      },
+      "lightning": {
+        "name": "Fulmine"
+      },
+      "necrotic": {
+        "name": "Necrotico"
+      },
+      "piercing": {
+        "name": "Perforante"
+      },
+      "poison": {
+        "name": "Veleno"
+      },
+      "psychic": {
+        "name": "Psichico"
+      },
+      "radiant": {
+        "name": "Radiante"
+      },
+      "slashing": {
+        "name": "Tagliente"
+      },
+      "thunder": {
+        "name": "Tuono"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "Nero",
+        "description": "Acido"
+      },
+      "blue": {
+        "name": "Blu",
+        "description": "Fulmine"
+      },
+      "brass": {
+        "name": "Ottone",
+        "description": "Fuoco"
+      },
+      "bronze": {
+        "name": "Bronzo",
+        "description": "Fulmine"
+      },
+      "copper": {
+        "name": "Rame",
+        "description": "Acido"
+      },
+      "gold": {
+        "name": "Oro",
+        "description": "Fuoco"
+      },
+      "green": {
+        "name": "Verde",
+        "description": "Veleno"
+      },
+      "red": {
+        "name": "Rosso",
+        "description": "Fuoco"
+      },
+      "silver": {
+        "name": "Argento",
+        "description": "Freddo"
+      },
+      "white": {
+        "name": "Bianco",
+        "description": "Freddo"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "Drow",
+        "description": "Luci danzanti; Luminescenza al livello 3 e Oscurità al livello 5."
+      },
+      "high_elf": {
+        "name": "Elfo alto",
+        "description": "Prestidigitazione; Individuazione del magico al livello 3 e Passo velato al livello 5."
+      },
+      "wood_elf": {
+        "name": "Elfo dei boschi",
+        "description": "Aumento della velocità e Artificio druidico; Passo veloce al livello 3 e Passare senza tracce al livello 5."
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "Gnomo delle foreste",
+        "description": "Illusione minore e Parlare con gli animali."
+      },
+      "rock_gnome": {
+        "name": "Gnomo delle rocce",
+        "description": "Riparare, Prestidigitazione e dispositivi a orologeria."
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "Passo delle nuvole",
+        "description": "Ti teletrasporti fino a 30 piedi come Azione Bonus."
+      },
+      "fire": {
+        "name": "Ardore del fuoco",
+        "description": "Infliggi 1d10 danni da fuoco extra quando colpisci."
+      },
+      "frost": {
+        "name": "Gelo della brina",
+        "description": "Infliggi 1d6 danni da freddo extra e riduci la Velocità del bersaglio quando colpisci."
+      },
+      "hill": {
+        "name": "Ruzzolare delle colline",
+        "description": "Quando colpisci, fai cadere Prono un bersaglio di taglia Grande o inferiore."
+      },
+      "stone": {
+        "name": "Resistenza della pietra",
+        "description": "Come Reazione, riduci i danni subiti di 1d12 + il tuo modificatore di Costituzione."
+      },
+      "storm": {
+        "name": "Tuono della tempesta",
+        "description": "Infliggi 1d8 danni da tuono a una creatura che ti danneggia."
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "Abissale",
+        "description": "Resistenza al veleno e Spruzzo velenoso; Raggio di infermità al livello 3 e Blocca persone al livello 5."
+      },
+      "chthonic": {
+        "name": "Ctonio",
+        "description": "Resistenza ai danni necrotici e Tocco gelido; Vita falsata al livello 3 e Raggio di indebolimento al livello 5."
+      },
+      "infernal": {
+        "name": "Infernale",
+        "description": "Resistenza al fuoco e Dardo di fuoco; Rimprovero infernale al livello 3 e Oscurità al livello 5."
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "Intuizione"
+      },
+      "perception": {
+        "name": "Percezione"
+      },
+      "survival": {
+        "name": "Sopravvivenza"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "Randello",
+        "description": "Arma semplice da mischia; maestria Rallentare."
+      },
+      "dagger": {
+        "name": "Pugnale",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "greatclub": {
+        "name": "Randello Pesante",
+        "description": "Arma semplice da mischia; maestria Spingere."
+      },
+      "handaxe": {
+        "name": "Accetta",
+        "description": "Arma semplice da mischia; maestria Incalzare."
+      },
+      "javelin": {
+        "name": "Giavellotto",
+        "description": "Arma semplice da mischia; maestria Rallentare."
+      },
+      "light_hammer": {
+        "name": "Martello Leggero",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "mace": {
+        "name": "Mazza",
+        "description": "Arma semplice da mischia; maestria Indebolire."
+      },
+      "quarterstaff": {
+        "name": "Bastone Ferrato",
+        "description": "Arma semplice da mischia; maestria Atterrare."
+      },
+      "sickle": {
+        "name": "Falcetto",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "spear": {
+        "name": "Lancia",
+        "description": "Arma semplice da mischia; maestria Indebolire."
+      },
+      "battleaxe": {
+        "name": "Ascia da Battaglia",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "flail": {
+        "name": "Mazzafrusto",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "glaive": {
+        "name": "Falcione",
+        "description": "Arma da guerra da mischia; maestria Sfiorare."
+      },
+      "greataxe": {
+        "name": "Ascia Bipenne",
+        "description": "Arma da guerra da mischia; maestria Fendere."
+      },
+      "greatsword": {
+        "name": "Spadone",
+        "description": "Arma da guerra da mischia; maestria Sfiorare."
+      },
+      "halberd": {
+        "name": "Alabarda",
+        "description": "Arma da guerra da mischia; maestria Fendere."
+      },
+      "lance": {
+        "name": "Lancia da Cavaliere",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "longsword": {
+        "name": "Spada Lunga",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "maul": {
+        "name": "Maglio",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "morningstar": {
+        "name": "Morningstar",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "pike": {
+        "name": "Picca",
+        "description": "Arma da guerra da mischia; maestria Spingere."
+      },
+      "rapier": {
+        "name": "Stocco",
+        "description": "Arma da guerra da mischia; maestria Incalzare."
+      },
+      "scimitar": {
+        "name": "Scimitarra",
+        "description": "Arma da guerra da mischia; maestria Rapido."
+      },
+      "shortsword": {
+        "name": "Spada Corta",
+        "description": "Arma da guerra da mischia; maestria Incalzare."
+      },
+      "trident": {
+        "name": "Tridente",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "warhammer": {
+        "name": "Martello da Guerra",
+        "description": "Arma da guerra da mischia; maestria Spingere."
+      },
+      "war_pick": {
+        "name": "Piccone da Guerra",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "whip": {
+        "name": "Frusta",
+        "description": "Arma da guerra da mischia; maestria Rallentare."
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "Randello",
+        "description": "Arma semplice da mischia; maestria Rallentare."
+      },
+      "dagger": {
+        "name": "Pugnale",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "greatclub": {
+        "name": "Randello Pesante",
+        "description": "Arma semplice da mischia; maestria Spingere."
+      },
+      "handaxe": {
+        "name": "Accetta",
+        "description": "Arma semplice da mischia; maestria Incalzare."
+      },
+      "javelin": {
+        "name": "Giavellotto",
+        "description": "Arma semplice da mischia; maestria Rallentare."
+      },
+      "light_hammer": {
+        "name": "Martello Leggero",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "mace": {
+        "name": "Mazza",
+        "description": "Arma semplice da mischia; maestria Indebolire."
+      },
+      "quarterstaff": {
+        "name": "Bastone Ferrato",
+        "description": "Arma semplice da mischia; maestria Atterrare."
+      },
+      "sickle": {
+        "name": "Falcetto",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "spear": {
+        "name": "Lancia",
+        "description": "Arma semplice da mischia; maestria Indebolire."
+      },
+      "dart": {
+        "name": "Dardo",
+        "description": "Arma semplice a distanza; maestria Incalzare."
+      },
+      "light_crossbow": {
+        "name": "Balestra Leggera",
+        "description": "Arma semplice a distanza; maestria Rallentare."
+      },
+      "shortbow": {
+        "name": "Arco Corto",
+        "description": "Arma semplice a distanza; maestria Incalzare."
+      },
+      "sling": {
+        "name": "Fionda",
+        "description": "Arma semplice a distanza; maestria Rallentare."
+      },
+      "battleaxe": {
+        "name": "Ascia da Battaglia",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "flail": {
+        "name": "Mazzafrusto",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "glaive": {
+        "name": "Falcione",
+        "description": "Arma da guerra da mischia; maestria Sfiorare."
+      },
+      "greataxe": {
+        "name": "Ascia Bipenne",
+        "description": "Arma da guerra da mischia; maestria Fendere."
+      },
+      "greatsword": {
+        "name": "Spadone",
+        "description": "Arma da guerra da mischia; maestria Sfiorare."
+      },
+      "halberd": {
+        "name": "Alabarda",
+        "description": "Arma da guerra da mischia; maestria Fendere."
+      },
+      "lance": {
+        "name": "Lancia da Cavaliere",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "longsword": {
+        "name": "Spada Lunga",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "maul": {
+        "name": "Maglio",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "morningstar": {
+        "name": "Morningstar",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "pike": {
+        "name": "Picca",
+        "description": "Arma da guerra da mischia; maestria Spingere."
+      },
+      "rapier": {
+        "name": "Stocco",
+        "description": "Arma da guerra da mischia; maestria Incalzare."
+      },
+      "scimitar": {
+        "name": "Scimitarra",
+        "description": "Arma da guerra da mischia; maestria Rapido."
+      },
+      "shortsword": {
+        "name": "Spada Corta",
+        "description": "Arma da guerra da mischia; maestria Incalzare."
+      },
+      "trident": {
+        "name": "Tridente",
+        "description": "Arma da guerra da mischia; maestria Atterrare."
+      },
+      "warhammer": {
+        "name": "Martello da Guerra",
+        "description": "Arma da guerra da mischia; maestria Spingere."
+      },
+      "war_pick": {
+        "name": "Piccone da Guerra",
+        "description": "Arma da guerra da mischia; maestria Indebolire."
+      },
+      "whip": {
+        "name": "Frusta",
+        "description": "Arma da guerra da mischia; maestria Rallentare."
+      },
+      "blowgun": {
+        "name": "Cerbottana",
+        "description": "Arma da guerra a distanza; maestria Incalzare."
+      },
+      "hand_crossbow": {
+        "name": "Balestra a Mano",
+        "description": "Arma da guerra a distanza; maestria Incalzare."
+      },
+      "heavy_crossbow": {
+        "name": "Balestra Pesante",
+        "description": "Arma da guerra a distanza; maestria Spingere."
+      },
+      "longbow": {
+        "name": "Arco Lungo",
+        "description": "Arma da guerra a distanza; maestria Rallentare."
+      },
+      "musket": {
+        "name": "Moschetto",
+        "description": "Arma da guerra a distanza; maestria Rallentare."
+      },
+      "pistol": {
+        "name": "Pistola",
+        "description": "Arma da guerra a distanza; maestria Incalzare."
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "Randello",
+        "description": "Arma semplice da mischia; maestria Rallentare."
+      },
+      "dagger": {
+        "name": "Pugnale",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "greatclub": {
+        "name": "Randello Pesante",
+        "description": "Arma semplice da mischia; maestria Spingere."
+      },
+      "handaxe": {
+        "name": "Accetta",
+        "description": "Arma semplice da mischia; maestria Incalzare."
+      },
+      "javelin": {
+        "name": "Giavellotto",
+        "description": "Arma semplice da mischia; maestria Rallentare."
+      },
+      "light_hammer": {
+        "name": "Martello Leggero",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "mace": {
+        "name": "Mazza",
+        "description": "Arma semplice da mischia; maestria Indebolire."
+      },
+      "quarterstaff": {
+        "name": "Bastone Ferrato",
+        "description": "Arma semplice da mischia; maestria Atterrare."
+      },
+      "sickle": {
+        "name": "Falcetto",
+        "description": "Arma semplice da mischia; maestria Rapido."
+      },
+      "spear": {
+        "name": "Lancia",
+        "description": "Arma semplice da mischia; maestria Indebolire."
+      },
+      "dart": {
+        "name": "Dardo",
+        "description": "Arma semplice a distanza; maestria Incalzare."
+      },
+      "light_crossbow": {
+        "name": "Balestra Leggera",
+        "description": "Arma semplice a distanza; maestria Rallentare."
+      },
+      "shortbow": {
+        "name": "Arco Corto",
+        "description": "Arma semplice a distanza; maestria Incalzare."
+      },
+      "sling": {
+        "name": "Fionda",
+        "description": "Arma semplice a distanza; maestria Rallentare."
+      },
+      "rapier": {
+        "name": "Stocco",
+        "description": "Arma da guerra da mischia; maestria Incalzare."
+      },
+      "scimitar": {
+        "name": "Scimitarra",
+        "description": "Arma da guerra da mischia; maestria Rapido."
+      },
+      "shortsword": {
+        "name": "Spada Corta",
+        "description": "Arma da guerra da mischia; maestria Incalzare."
+      },
+      "whip": {
+        "name": "Frusta",
+        "description": "Arma da guerra da mischia; maestria Rallentare."
+      },
+      "hand_crossbow": {
+        "name": "Balestra a Mano",
+        "description": "Arma da guerra a distanza; maestria Incalzare."
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "Deflagrazione agonizzante",
+        "description": "Scegli un trucchetto da warlock che conosci e che infligge danni. Puoi aggiungere il tuo modificatore di Carisma ai tiri dei danni di quell'incantesimo."
+      },
+      "armor_of_shadows": {
+        "name": "Armatura delle ombre",
+        "description": "Puoi lanciare Armatura magica su te stesso senza spendere uno slot incantesimo."
+      },
+      "ascendant_step": {
+        "name": "Passo ascendente",
+        "description": "Puoi lanciare Levitazione su te stesso senza spendere uno slot incantesimo."
+      },
+      "devils_sight": {
+        "name": "Vista del diavolo",
+        "description": "Vedi normalmente nella luce fioca e nell'oscurità, magica o non magica, entro 120 piedi da te."
+      },
+      "devouring_blade": {
+        "name": "Lama divoratrice",
+        "description": "L'Attacco Extra della tua supplica Lama assetata concede due attacchi aggiuntivi anziché uno."
+      },
+      "eldritch_mind": {
+        "name": "Mente mistica",
+        "description": "Hai Vantaggio ai tiri salvezza su Costituzione per mantenere la Concentrazione."
+      },
+      "eldritch_smite": {
+        "name": "Punizione mistica",
+        "description": "Una volta per turno, quando colpisci una creatura con la tua arma del patto, puoi spendere uno slot di Magia del Patto per infliggerle 1d8 danni da forza extra, più 1d8 per livello dello slot; puoi anche far cadere Prono il bersaglio se è di taglia Enorme o inferiore."
+      },
+      "eldritch_spear": {
+        "name": "Lancia mistica",
+        "description": "Scegli un trucchetto da warlock che conosci, che infligge danni e ha una gittata di almeno 10 piedi. Quando lo lanci, la gittata aumenta di un numero di piedi pari a 30 volte il tuo livello da warlock."
+      },
+      "fiendish_vigor": {
+        "name": "Vigore immondo",
+        "description": "Puoi lanciare Vita falsata su te stesso senza spendere uno slot incantesimo. Quando la lanci con questo privilegio, non tiri il dado per i punti ferita temporanei: ottieni automaticamente il suo risultato massimo."
+      },
+      "gaze_of_two_minds": {
+        "name": "Sguardo di due menti",
+        "description": "Come Azione Bonus, puoi toccare una creatura consenziente e percepire attraverso i suoi sensi fino alla fine del tuo turno successivo. Finché si trova sul tuo stesso piano di esistenza, puoi usare un'Azione Bonus nei turni seguenti per mantenere il collegamento, prolungandolo fino alla fine del turno successivo. Il collegamento termina se non lo mantieni in questo modo.\n\nMentre percepisci attraverso i sensi dell'altra creatura, benefici dei suoi sensi speciali e puoi lanciare incantesimi come se ti trovassi nel tuo spazio o nel suo, purché siate entro 60 piedi l'uno dall'altra."
+      },
+      "gift_of_the_depths": {
+        "name": "Dono delle profondità",
+        "description": "Puoi respirare sott'acqua e ottieni una Velocità di Nuoto pari alla tua Velocità.\n\nPuoi anche lanciare Respirare sott'acqua una volta senza spendere uno slot incantesimo. Recuperi questa capacità al termine di un Riposo Lungo."
+      },
+      "gift_of_the_protectors": {
+        "name": "Dono dei protettori",
+        "description": "Quando evochi il tuo Libro delle Ombre, appare una nuova pagina. Con il tuo permesso, una creatura può usare un'azione per scrivere il proprio nome sulla pagina, che può contenere un numero di nomi pari al tuo modificatore di Carisma (minimo uno).\n\nQuando una creatura il cui nome è sulla pagina scende a 0 punti ferita senza morire sul colpo, scende invece magicamente a 1 punto ferita. Una volta attivata questa magia, nessuna creatura può beneficiarne finché non completi un Riposo Lungo.\n\nCome azione Magica, puoi cancellare un nome toccando la pagina."
+      },
+      "investment_of_the_chain_master": {
+        "name": "Potere del signore della catena",
+        "description": "Quando lanci Trova Famiglio, infondi nel famiglio evocato parte del tuo potere occulto, conferendogli i seguenti benefici.\n\nAereo o acquatico. Il famiglio ottiene una Velocità di Volo o di Nuoto (a tua scelta) di 40 piedi.\n\nAttacco rapido. Come Azione Bonus, puoi ordinare al famiglio di compiere l'azione Attaccare.\n\nDanni necrotici o radiosi. Quando il famiglio infligge danni contundenti, perforanti o taglienti, puoi fargli infliggere invece danni necrotici o radiosi.\n\nLa tua CD del tiro salvezza. Se il famiglio obbliga una creatura a effettuare un tiro salvezza, usa la CD dei tuoi incantesimi.\n\nResistenza. Quando il famiglio subisce danni, puoi usare una Reazione per conferirgli Resistenza a quei danni."
+      },
+      "lessons_of_the_first_ones": {
+        "name": "Lezioni dei Primi",
+        "description": "Hai ricevuto conoscenze da un'antica entità del multiverso, ottenendo un talento di Origine a tua scelta (vedi «Talenti»)."
+      },
+      "lifedrinker": {
+        "name": "Prosciugavita",
+        "description": "Una volta per turno, quando colpisci una creatura con la tua arma del patto, puoi infliggerle 1d6 danni necrotici, psichici o radiosi extra (a tua scelta). Puoi anche spendere uno dei tuoi Dadi Vita, tirarlo e recuperare un numero di punti ferita pari al risultato più il tuo modificatore di Costituzione (minimo 1 punto ferita)."
+      },
+      "mask_of_many_faces": {
+        "name": "Maschera dei molti volti",
+        "description": "Puoi lanciare Camuffare Se Stesso senza spendere uno slot incantesimo."
+      },
+      "master_of_myriad_forms": {
+        "name": "Signore delle miriadi di forme",
+        "description": "Puoi lanciare Alterare Se Stesso senza spendere uno slot incantesimo."
+      },
+      "misty_visions": {
+        "name": "Visioni nebbiose",
+        "description": "Puoi lanciare Immagine Silenziosa senza spendere uno slot incantesimo."
+      },
+      "one_with_shadows": {
+        "name": "Unito alle ombre",
+        "description": "Mentre sei in un'area di luce fioca o oscurità, puoi lanciare Invisibilità su te stesso senza spendere uno slot incantesimo."
+      },
+      "otherworldly_leap": {
+        "name": "Balzo ultraterreno",
+        "description": "Puoi lanciare Saltare su te stesso senza spendere uno slot incantesimo."
+      },
+      "pact_of_the_blade": {
+        "name": "Patto della lama",
+        "description": "Come Azione Bonus, puoi evocare nella tua mano un'arma del patto, un'arma semplice o da guerra da mischia a tua scelta con cui stringi un legame, oppure legarti a un'arma magica che tocchi. Non puoi legarti a un'arma magica se qualcun altro è in sintonia con essa o se un altro warlock vi è legato. Finché il legame dura, hai competenza nell'arma e puoi usarla come Focus da Incantatore.\n\nQuando attacchi con l'arma legata, puoi usare il tuo modificatore di Carisma ai tiri per colpire e per i danni invece di Forza o Destrezza; puoi inoltre farle infliggere danni necrotici, psichici o radiosi invece del suo normale tipo di danno.\n\nIl legame termina se usi di nuovo l'Azione Bonus di questo privilegio, se l'arma resta a più di 5 piedi da te per 1 minuto o più, oppure se muori. Un'arma evocata scompare quando termina il legame."
+      },
+      "pact_of_the_chain": {
+        "name": "Patto della catena",
+        "description": "Impari Trova Famiglio e puoi lanciarlo come azione Magica senza spendere uno slot incantesimo.\n\nQuando lo lanci, scegli una delle forme normali del famiglio oppure una delle seguenti forme speciali: imp, pseudodrago, quasit, scheletro, sfinge delle meraviglie, spiritello o serpente velenoso (vedi il blocco statistiche in «Mostri»).\n\nInoltre, quando compi l'azione Attaccare, puoi rinunciare a uno dei tuoi attacchi per consentire al famiglio di compiere un proprio attacco usando la sua Reazione."
+      },
+      "pact_of_the_tome": {
+        "name": "Patto del tomo",
+        "description": "Intrecciando fili d'ombra, evochi un libro nella tua mano al termine di un Riposo Breve o Lungo. Questo Libro delle Ombre, di cui scegli l'aspetto, contiene magia occulta accessibile soltanto a te e ti conferisce i benefici seguenti. Scompare se evochi un altro libro con questo privilegio o se muori.\n\nTrucchetti e rituali. Quando il libro appare, scegli tre trucchetti e due incantesimi di livello 1 con la dicitura Rituale. Possono provenire dalla lista di qualsiasi classe, ma non devono essere incantesimi che hai già preparato. Finché porti con te il libro, hai preparato gli incantesimi scelti ed essi funzionano per te come incantesimi da warlock.\n\nFocus da Incantatore. Puoi usare il libro come Focus da Incantatore."
+      },
+      "repelling_blast": {
+        "name": "Deflagrazione respingente",
+        "description": "Scegli un trucchetto da warlock che conosci e che richiede un tiro per colpire. Quando colpisci una creatura di taglia Grande o inferiore con quel trucchetto, puoi spingerla direttamente lontano da te fino a 10 piedi."
+      },
+      "thirsting_blade": {
+        "name": "Lama assetata",
+        "description": "Ottieni Attacco Extra soltanto per la tua arma del patto. Con questo privilegio puoi attaccare due volte con l'arma, anziché una, quando compi l'azione Attaccare nel tuo turno."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visioni di regni lontani",
+        "description": "Puoi lanciare Occhio Arcano senza spendere uno slot incantesimo."
+      },
+      "whispers_of_the_grave": {
+        "name": "Sussurri della tomba",
+        "description": "Puoi lanciare Parlare con i Morti senza spendere uno slot incantesimo."
+      },
+      "witch_sight": {
+        "name": "Vista stregonesca",
+        "description": "Ottieni Vista Pura entro 30 piedi."
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Forza"
+            },
+            "dexterity": {
+              "name": "Destrezza"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Forza"
+            },
+            "dexterity": {
+              "name": "Destrezza"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "Intelligenza"
+            },
+            "wisdom": {
+              "name": "Saggezza"
+            },
+            "charisma": {
+              "name": "Carisma"
+            }
+          }
+        }
+      }
+    }
+  }
+}

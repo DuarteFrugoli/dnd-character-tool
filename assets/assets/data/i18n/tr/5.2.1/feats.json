@@ -1,0 +1,70 @@
+{
+  "Alert": {
+    "name": "Tetikte",
+    "description": "İnisiyatif atışlarına Yeterlilik Bonusunu ekle. İnisiyatif attıktan hemen sonra, aynı çatışmadaki istekli bir müttefikinle sonuçlarını değiştirebilirsin; ikinizden biri Etkisiz durumdaysa bunu yapamazsın."
+  },
+  "Magic Initiate": {
+    "name": "Büyüye Giriş",
+    "description": "Rahip, Druid veya Büyücü büyü listesini seç. Bu listeden iki basit büyü öğren ve 1. seviye bir büyü hazırla. Bu büyüler için Zekâ, Bilgelik veya Karizma seç. 1. seviye büyüyü her Uzun Dinlenme için bir kez büyü yuvası harcamadan ya da bir yuva kullanarak yapabilirsin. Seviye kazandığında seçtiğin bir büyüyü aynı listeden aynı seviyede başka bir büyüyle değiştirebilirsin. Bu yeteneği her yeniden seçişinde farklı bir liste kullanmalısın."
+  },
+  "Savage Attacker": {
+    "name": "Vahşi Saldırgan",
+    "description": "Her turda bir kez, bir silahla isabet ettirdiğinde silahın hasar zarlarını iki kez at ve sonuçlardan birini kullan."
+  },
+  "Skilled": {
+    "name": "Yetenekli",
+    "description": "Üç beceride, alette veya bunların bir birleşiminde yeterlilik kazan. Bu yeteneği birden fazla kez seçebilirsin."
+  },
+  "Ability Score Improvement": {
+    "name": "Nitelik Puanı Artışı",
+    "description": "Bir nitelik puanını 2 veya iki nitelik puanını ayrı ayrı 1 artır; en yüksek değer 20'dir. Bu yeteneği birden fazla kez seçebilirsin."
+  },
+  "Grappler": {
+    "name": "Güreşçi",
+    "description": "Güç veya Çevikliği 1 artır; en yüksek değer 20'dir. Her turda bir kez, Saldırı eyleminin parçası olan bir Silahsız Vuruş hem hasar verebilir hem de hedefi yakalayabilir. Yakaladığın yaratıklara karşı saldırılarda Avantajın vardır; kendi boyutunda veya daha küçük yakalanmış bir yaratığı hareket ettirmek ek hareket gerektirmez."
+  },
+  "Archery": {
+    "name": "Okçuluk",
+    "description": "Menzilli silahlarla yapılan saldırı atışlarına +2 bonus kazan."
+  },
+  "Defense": {
+    "name": "Savunma",
+    "description": "Hafif, Orta veya Ağır zırh giyerken Zırh Sınıfına +1 kazan."
+  },
+  "Great Weapon Fighting": {
+    "name": "Büyük Silah Dövüşü",
+    "description": "İki Elli veya Çok Yönlü bir yakın dövüş silahını iki elinle tutarak yaptığın saldırının hasarını atarken, her hasar zarındaki 1 veya 2 sonucunu 3 kabul et."
+  },
+  "Two-Weapon Fighting": {
+    "name": "Çift Silah Dövüşü",
+    "description": "Hafif özelliği ek saldırı sağladığında, henüz eklenmemişse nitelik değiştiricini bu saldırının hasarına ekle."
+  },
+  "Boon of Combat Prowess": {
+    "name": "Savaş Ustalığı Lütfu",
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Bir saldırı atışı ıskaladığında onu isabetli hale getirebilirsin; bu faydayı bir sonraki turunun başında geri kazanırsın."
+  },
+  "Boon of Dimensional Travel": {
+    "name": "Boyutlar Arası Yolculuk Lütfu",
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Saldırı veya Büyü eylemini tamamladıktan hemen sonra, görebildiğin boş bir alana 30 fit kadar ışınlanabilirsin."
+  },
+  "Boon of Fate": {
+    "name": "Kader Lütfu",
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Sen veya 60 fit içindeki bir yaratık bir D20 Testinde başarılı ya da başarısız olduğunda 2d4 at ve toplamı o atışa bonus veya ceza olarak uygula. İnisiyatif attığında veya Kısa ya da Uzun Dinlenmeyi bitirdiğinde kullanım hakkın yenilenir."
+  },
+  "Boon of Irresistible Offense": {
+    "name": "Karşı Konulmaz Saldırı Lütfu",
+    "description": "Güç veya Çevikliği 1 artır; en yüksek değer 30'dur. Darbe, delici ve kesici hasarın Direnci yok sayar. Saldırı atışında doğal 20 geldiğinde, bu yeteneğin artırdığı nitelik puanı kadar ve saldırıyla aynı türde ek hasar ver."
+  },
+  "Boon of Spell Recall": {
+    "name": "Büyü Geri Çağırma Lütfu",
+    "description": "Zekâ, Bilgelik veya Karizmayı 1 artır; en yüksek değer 30'dur. 1–4. seviye bir büyü yuvasıyla büyü yaptığında 1d4 at; sonuç yuvanın seviyesine eşitse yuva harcanmaz."
+  },
+  "Boon of the Night Spirit": {
+    "name": "Gece Ruhu Lütfu",
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Loş Işıkta veya Karanlıkta, bir Bonus Eylemle Görünmez olabilirsin; bir eylem, Bonus Eylem veya Tepki yaptığında bu sona erer. Bu ışık koşullarında psişik ve ışınsal hasar dışındaki tüm hasarlara karşı Direncin vardır."
+  },
+  "Boon of Truesight": {
+    "name": "Gerçek Görüş Lütfu",
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. 60 fit menzilli Gerçek Görüş kazan."
+  }
+}

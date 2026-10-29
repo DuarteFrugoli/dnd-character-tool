@@ -1,0 +1,113 @@
+{
+  "Alchemist's Supplies": {
+    "name": "Принадлежности алхимика"
+  },
+  "Brewer's Supplies": {
+    "name": "Принадлежности пивовара"
+  },
+  "Calligrapher's Supplies": {
+    "name": "Принадлежности каллиграфа"
+  },
+  "Carpenter's Tools": {
+    "name": "Инструменты плотника"
+  },
+  "Cartographer's Tools": {
+    "name": "Инструменты картографа"
+  },
+  "Cobbler's Tools": {
+    "name": "Инструменты сапожника"
+  },
+  "Cook's Utensils": {
+    "name": "Поварская посуда"
+  },
+  "Glassblower's Tools": {
+    "name": "Инструменты стеклодува"
+  },
+  "Jeweler's Tools": {
+    "name": "Инструменты ювелира"
+  },
+  "Leatherworker's Tools": {
+    "name": "Инструменты кожевника"
+  },
+  "Mason's Tools": {
+    "name": "Инструменты каменщика"
+  },
+  "Painter's Supplies": {
+    "name": "Принадлежности художника"
+  },
+  "Potter's Tools": {
+    "name": "Инструменты гончара"
+  },
+  "Smith's Tools": {
+    "name": "Инструменты кузнеца"
+  },
+  "Tinker's Tools": {
+    "name": "Инструменты лудильщика"
+  },
+  "Weaver's Tools": {
+    "name": "Инструменты ткача"
+  },
+  "Woodcarver's Tools": {
+    "name": "Инструменты резчика по дереву"
+  },
+  "Disguise Kit": {
+    "name": "Набор для маскировки"
+  },
+  "Forgery Kit": {
+    "name": "Набор для подделки"
+  },
+  "Dice": {
+    "name": "Кости"
+  },
+  "Dragonchess": {
+    "name": "Драконьи шахматы"
+  },
+  "Playing Cards": {
+    "name": "Игральные карты"
+  },
+  "Three-Dragon Ante": {
+    "name": "Анте трёх драконов"
+  },
+  "Herbalism Kit": {
+    "name": "Набор травника"
+  },
+  "Bagpipes": {
+    "name": "Волынки"
+  },
+  "Drum": {
+    "name": "Барабан"
+  },
+  "Dulcimer": {
+    "name": "Цимбалы"
+  },
+  "Flute": {
+    "name": "Флейта"
+  },
+  "Horn": {
+    "name": "Рог"
+  },
+  "Lute": {
+    "name": "Лютня"
+  },
+  "Lyre": {
+    "name": "Лира"
+  },
+  "Pan Flute": {
+    "name": "Пан-флейта"
+  },
+  "Shawm": {
+    "name": "Шаум"
+  },
+  "Viol": {
+    "name": "Виола"
+  },
+  "Navigator's Tools": {
+    "name": "Инструменты штурмана"
+  },
+  "Poisoner's Kit": {
+    "name": "Набор отравителя"
+  },
+  "Thieves' Tools": {
+    "name": "Воровские инструменты"
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "Club": {
+    "name": "Gourdin"
+  },
+  "Dagger": {
+    "name": "Dague"
+  },
+  "Greatclub": {
+    "name": "Massue"
+  },
+  "Handaxe": {
+    "name": "Hachette"
+  },
+  "Javelin": {
+    "name": "Javeline"
+  },
+  "Light Hammer": {
+    "name": "Marteau léger"
+  },
+  "Mace": {
+    "name": "Masse d'armes"
+  },
+  "Quarterstaff": {
+    "name": "Bâton"
+  },
+  "Sickle": {
+    "name": "Faucille"
+  },
+  "Spear": {
+    "name": "Lance"
+  },
+  "Dart": {
+    "name": "Fléchette"
+  },
+  "Light Crossbow": {
+    "name": "Arbalète légère"
+  },
+  "Shortbow": {
+    "name": "Arc court"
+  },
+  "Sling": {
+    "name": "Fronde"
+  },
+  "Battleaxe": {
+    "name": "Hache de guerre"
+  },
+  "Flail": {
+    "name": "Fléau"
+  },
+  "Glaive": {
+    "name": "Glaive"
+  },
+  "Greataxe": {
+    "name": "Hache à deux mains"
+  },
+  "Greatsword": {
+    "name": "Épée à deux mains"
+  },
+  "Halberd": {
+    "name": "Hallebarde"
+  },
+  "Lance": {
+    "name": "Lance de cavalerie"
+  },
+  "Longsword": {
+    "name": "Épée longue"
+  },
+  "Maul": {
+    "name": "Maillet"
+  },
+  "Morningstar": {
+    "name": "Étoile du matin"
+  },
+  "Pike": {
+    "name": "Pique"
+  },
+  "Rapier": {
+    "name": "Rapière"
+  },
+  "Scimitar": {
+    "name": "Cimeterre"
+  },
+  "Shortsword": {
+    "name": "Épée courte"
+  },
+  "Trident": {
+    "name": "Trident"
+  },
+  "Warhammer": {
+    "name": "Marteau de guerre"
+  },
+  "War Pick": {
+    "name": "Pic de guerre"
+  },
+  "Whip": {
+    "name": "Fouet"
+  },
+  "Blowgun": {
+    "name": "Sarbacane"
+  },
+  "Hand Crossbow": {
+    "name": "Arbalète de poing"
+  },
+  "Heavy Crossbow": {
+    "name": "Arbalète lourde"
+  },
+  "Longbow": {
+    "name": "Arc long"
+  },
+  "Musket": {
+    "name": "Mousquet"
+  },
+  "Pistol": {
+    "name": "Pistolet"
+  },
+  "Padded Armor": {
+    "name": "Armure matelassée"
+  },
+  "Leather Armor": {
+    "name": "Armure de cuir"
+  },
+  "Studded Leather Armor": {
+    "name": "Armure de cuir clouté"
+  },
+  "Hide Armor": {
+    "name": "Armure de peaux"
+  },
+  "Chain Shirt": {
+    "name": "Chemise de mailles"
+  },
+  "Scale Mail": {
+    "name": "Armure d'écailles"
+  },
+  "Breastplate": {
+    "name": "Cuirasse"
+  },
+  "Half Plate Armor": {
+    "name": "Demi-plate"
+  },
+  "Ring Mail": {
+    "name": "Cotte d'anneaux"
+  },
+  "Chain Mail": {
+    "name": "Cotte de mailles"
+  },
+  "Splint Armor": {
+    "name": "Clibanion"
+  },
+  "Plate Armor": {
+    "name": "Harnois"
+  },
+  "Shield": {
+    "name": "Bouclier"
+  },
+  "Arrow": {
+    "name": "Flèche",
+    "description": "Munition pour arc, vendue par lots de vingt. Chaque attaque utilise une flèche ; après un combat, la moitié des munitions dépensées peut être récupérée en 1 minute."
+  },
+  "Bolt": {
+    "name": "Carreau",
+    "description": "Munition pour arbalète, vendue par lots de vingt."
+  },
+  "Bullet": {
+    "name": "Balle",
+    "description": "Munition pour arme à feu, vendue par lots de dix."
+  },
+  "Sling Bullet": {
+    "name": "Bille de fronde",
+    "description": "Munition pour fronde, vendue par lots de vingt."
+  },
+  "Needle": {
+    "name": "Aiguille",
+    "description": "Munition pour sarbacane, vendue par lots de cinquante."
+  },
+  "Acid": {
+    "name": "Acide",
+    "description": "Remplacez une attaque en lançant une fiole sur une cible à 20 pieds ou moins. Si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise), elle subit 2d6 dégâts d'Acide."
+  },
+  "Alchemist's Fire": {
+    "name": "Feu grégeois",
+    "description": "Remplacez une attaque en lançant une flasque sur une cible à 20 pieds ou moins. Si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise), elle subit 1d4 dégâts de Feu et s'enflamme."
+  },
+  "Antitoxin": {
+    "name": "Antitoxine",
+    "description": "Buvez-la par une Action bonus pour gagner l'Avantage aux sauvegardes visant à éviter ou terminer l'état Empoisonné pendant 1 heure."
+  },
+  "Arcane Focus": {
+    "name": "Focaliseur arcanique",
+    "description": "Focaliseur d'incantation pour Ensorceleur, Occultiste ou Magicien. Choisissez cristal, orbe, baguette, bâton ou baguette magique."
+  },
+  "Arcane Focus, Crystal": {
+    "name": "Focaliseur arcanique, cristal",
+    "description": "Un cristal servant de focaliseur arcanique."
+  },
+  "Arcane Focus, Orb": {
+    "name": "Focaliseur arcanique, orbe",
+    "description": "Un orbe servant de focaliseur arcanique."
+  },
+  "Arcane Focus, Rod": {
+    "name": "Focaliseur arcanique, baguette",
+    "description": "Une baguette servant de focaliseur arcanique."
+  },
+  "Arcane Focus, Staff": {
+    "name": "Focaliseur arcanique, bâton",
+    "description": "Un focaliseur arcanique utilisable aussi comme Bâton."
+  },
+  "Arcane Focus, Wand": {
+    "name": "Focaliseur arcanique, baguette magique",
+    "description": "Une baguette magique servant de focaliseur arcanique."
+  },
+  "Backpack": {
+    "name": "Sac à dos",
+    "description": "Contient jusqu'à 30 livres dans 1 pied cube ; peut aussi servir de sacoche de selle."
+  },
+  "Ball Bearings": {
+    "name": "Billes",
+    "description": "Répandez-les sur un carré plat de 10 pieds à 10 pieds ou moins avec l'action Utiliser. Les créatures qui y entrent doivent réussir une sauvegarde de Dextérité DD 10 ou tomber À terre. Les récupérer prend 10 minutes."
+  },
+  "Barrel": {
+    "name": "Tonneau",
+    "description": "Contient jusqu'à 40 gallons de liquide ou 4 pieds cubes de denrées sèches."
+  },
+  "Basket": {
+    "name": "Panier",
+    "description": "Contient jusqu'à 40 livres dans 2 pieds cubes."
+  },
+  "Bedroll": {
+    "name": "Sac de couchage",
+    "description": "Permet de faire dormir une créature de taille P ou M ; à l'intérieur, vous réussissez automatiquement les sauvegardes contre le froid extrême."
+  },
+  "Bell": {
+    "name": "Cloche",
+    "description": "La faire sonner avec l'action Utiliser produit un bruit audible jusqu'à 60 pieds."
+  },
+  "Blanket": {
+    "name": "Couverture",
+    "description": "Enveloppé dedans, vous avez l'Avantage aux sauvegardes contre le froid extrême."
+  },
+  "Block and Tackle": {
+    "name": "Palan",
+    "description": "Permet de soulever quatre fois le poids que vous pouvez normalement lever."
+  },
+  "Book": {
+    "name": "Livre",
+    "description": "Consulter un ouvrage documentaire exact accorde +5 aux tests d'Intelligence (Arcanes, Histoire, Nature ou Religion) liés à son sujet."
+  },
+  "Bottle, Glass": {
+    "name": "Bouteille en verre",
+    "description": "Contient jusqu'à 1,5 pinte."
+  },
+  "Bucket": {
+    "name": "Seau",
+    "description": "Contient jusqu'à un demi-pied cube."
+  },
+  "Burglar's Pack": {
+    "name": "Paquet de cambrioleur",
+    "description": "Ensemble de fournitures d'infiltration."
+  },
+  "Caltrops": {
+    "name": "Chausse-trappes",
+    "description": "Répandez-les sur un carré de 5 pieds avec l'action Utiliser. Une créature qui y entre doit réussir une sauvegarde de Dextérité DD 15 ou subir 1 dégât Perforant et voir sa Vitesse réduite à 0 jusqu'à son prochain tour. Les récupérer prend 10 minutes."
+  },
+  "Candle": {
+    "name": "Bougie",
+    "description": "Brûle pendant 1 heure et produit une Lumière vive sur 5 pieds et une Lumière faible sur 5 pieds supplémentaires."
+  },
+  "Case, Crossbow Bolt": {
+    "name": "Étui à carreaux",
+    "description": "Contient jusqu'à 20 carreaux."
+  },
+  "Case, Map or Scroll": {
+    "name": "Étui à cartes ou parchemins",
+    "description": "Contient jusqu'à 10 feuilles de Papier ou 5 feuilles de Parchemin."
+  },
+  "Chain": {
+    "name": "Chaîne",
+    "description": "Permet d'attacher une créature Agrippée, Neutralisée ou Entravée avec un test de Force (Athlétisme) DD 13. S'évader demande Dextérité (Acrobaties) DD 18 ; briser la chaîne demande Force (Athlétisme) DD 20."
+  },
+  "Chest": {
+    "name": "Coffre",
+    "description": "Contient jusqu'à 12 pieds cubes."
+  },
+  "Climber's Kit": {
+    "name": "Matériel d'escalade",
+    "description": "Comprend pointes de bottes, gants, pitons et harnais. S'ancrer avec l'action Utiliser limite une chute à 25 pieds et le déplacement à 25 pieds de l'ancrage."
+  },
+  "Clothes, Fine": {
+    "name": "Habits élégants",
+    "description": "Vêtements coûteux adaptés aux événements et lieux officiels."
+  },
+  "Clothes, Traveler's": {
+    "name": "Habits de voyage",
+    "description": "Vêtements résistants adaptés aux voyages dans divers environnements."
+  },
+  "Component Pouch": {
+    "name": "Sacoche à composantes",
+    "description": "Sacoche étanche à compartiments pour les composantes Matérielles gratuites de vos sorts."
+  },
+  "Costume": {
+    "name": "Déguisement",
+    "description": "En le portant, vous avez l'Avantage aux tests de caractéristique pour vous faire passer pour la personne ou le rôle représenté."
+  },
+  "Crowbar": {
+    "name": "Pied-de-biche",
+    "description": "Accorde l'Avantage aux tests de Force quand son effet de levier peut s'appliquer."
+  },
+  "Diplomat's Pack": {
+    "name": "Paquet de diplomate",
+    "description": "Fournitures de voyage officiel et de correspondance."
+  },
+  "Druidic Focus": {
+    "name": "Focaliseur druidique",
+    "description": "Focaliseur d'incantation pour Druide ou Rôdeur. Choisissez gui, bâton de bois ou baguette d'if."
+  },
+  "Druidic Focus, Sprig of Mistletoe": {
+    "name": "Focaliseur druidique, brin de gui",
+    "description": "Brin de gui servant de focaliseur primordial."
+  },
+  "Druidic Focus, Wooden Staff": {
+    "name": "Focaliseur druidique, bâton de bois",
+    "description": "Focaliseur primordial utilisable aussi comme Bâton."
+  },
+  "Druidic Focus, Yew Wand": {
+    "name": "Focaliseur druidique, baguette d'if",
+    "description": "Baguette d'if servant de focaliseur primordial."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Paquet d'explorateur de donjon",
+    "description": "Fournitures pour explorer les donjons."
+  },
+  "Entertainer's Pack": {
+    "name": "Paquet d'artiste",
+    "description": "Fournitures d'artiste itinérant."
+  },
+  "Explorer's Pack": {
+    "name": "Paquet d'explorateur",
+    "description": "Fournitures pour voyager dans les étendues sauvages."
+  },
+  "Flask": {
+    "name": "Flasque",
+    "description": "Contient jusqu'à 1 pinte."
+  },
+  "Grappling Hook": {
+    "name": "Grappin",
+    "description": "Lancez-le sur un point d'accroche à 50 pieds ou moins avec l'action Utiliser. Un test de Dextérité (Acrobaties) DD 13 le fixe ; on peut alors escalader une Corde attachée."
+  },
+  "Healer's Kit": {
+    "name": "Trousse de soins",
+    "description": "Dépensez l'une des dix utilisations avec l'action Utiliser pour stabiliser une créature Inconsciente à 0 point de vie sans test de Médecine."
+  },
+  "Holy Symbol": {
+    "name": "Symbole sacré",
+    "description": "Focaliseur d'incantation pour Clerc ou Paladin. Choisissez amulette, emblème ou reliquaire."
+  },
+  "Holy Symbol, Amulet": {
+    "name": "Symbole sacré, amulette",
+    "description": "Focaliseur divin pouvant être porté ou tenu."
+  },
+  "Holy Symbol, Emblem": {
+    "name": "Symbole sacré, emblème",
+    "description": "Focaliseur divin porté sur du tissu ou un Bouclier."
+  },
+  "Holy Symbol, Reliquary": {
+    "name": "Symbole sacré, reliquaire",
+    "description": "Focaliseur divin qui doit être tenu."
+  },
+  "Holy Water": {
+    "name": "Eau bénite",
+    "description": "Remplacez une attaque en lançant une flasque sur une créature à 20 pieds ou moins. Un Fiélon ou Mort-vivant ratant une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise) subit 2d8 dégâts Radiants."
+  },
+  "Hunting Trap": {
+    "name": "Piège de chasse",
+    "description": "Une créature marchant sur le piège tendu doit réussir une sauvegarde de Dextérité DD 13 ou subir 1d4 dégâts Perforants et voir sa Vitesse réduite à 0 jusqu'à son prochain tour. La libérer demande Force (Athlétisme) DD 13."
+  },
+  "Ink": {
+    "name": "Encre",
+    "description": "Une bouteille de 1 once contient assez d'encre pour environ 500 pages."
+  },
+  "Ink Pen": {
+    "name": "Plume",
+    "description": "S'utilise avec de l'Encre pour écrire ou dessiner."
+  },
+  "Jug": {
+    "name": "Cruche",
+    "description": "Contient jusqu'à 1 gallon."
+  },
+  "Ladder": {
+    "name": "Échelle",
+    "description": "Une échelle de 10 pieds."
+  },
+  "Lamp": {
+    "name": "Lampe",
+    "description": "Brûle de l'Huile et produit une Lumière vive sur 15 pieds et une Lumière faible sur 30 pieds supplémentaires."
+  },
+  "Lantern, Bullseye": {
+    "name": "Lanterne à œil-de-bœuf",
+    "description": "Brûle de l'Huile et produit une Lumière vive dans un Cône de 60 pieds et une Lumière faible sur 60 pieds supplémentaires."
+  },
+  "Lantern, Hooded": {
+    "name": "Lanterne sourde",
+    "description": "Brûle de l'Huile et produit une Lumière vive sur 30 pieds et une Lumière faible sur 30 pieds supplémentaires. Abaisser le capot limite la Lumière faible à 5 pieds."
+  },
+  "Lock": {
+    "name": "Serrure",
+    "description": "Livrée avec une clé. Sans elle, la crocheter requiert des Outils de voleur et Dextérité (Escamotage) DD 15."
+  },
+  "Magnifying Glass": {
+    "name": "Loupe",
+    "description": "Accorde l'Avantage aux tests pour estimer ou examiner des détails fins ; peut aussi allumer un feu au soleil en environ 5 minutes."
+  },
+  "Manacles": {
+    "name": "Menottes",
+    "description": "Permettent d'attacher une créature de taille P ou M Agrippée, Neutralisée ou Entravée avec Dextérité (Escamotage) DD 13. S'évader demande DD 20 ; les briser demande Force (Athlétisme) DD 25."
+  },
+  "Map": {
+    "name": "Carte",
+    "description": "Une carte exacte accorde +5 aux tests de Sagesse (Survie) pour naviguer dans la zone représentée."
+  },
+  "Mirror": {
+    "name": "Miroir",
+    "description": "Petit miroir d'acier permettant de voir autour des angles ou de signaler avec la lumière réfléchie."
+  },
+  "Net": {
+    "name": "Filet",
+    "description": "Remplacez une attaque en le lançant sur une créature à 15 pieds ou moins. Elle est Entravée si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise) ; les créatures de taille TG ou plus réussissent automatiquement. S'évader demande Force (Athlétisme) DD 10."
+  },
+  "Oil": {
+    "name": "Huile",
+    "description": "Une flasque alimente une Lampe ou Lanterne pendant 6 heures. Asperger une créature ou un objet peut infliger 5 dégâts de Feu supplémentaires lors du prochain dégât de Feu reçu dans un délai de 1 minute ; l'huile brûlant au sol inflige 5 dégâts de Feu."
+  },
+  "Paper": {
+    "name": "Papier",
+    "description": "Une feuille contient environ 250 mots manuscrits."
+  },
+  "Parchment": {
+    "name": "Parchemin",
+    "description": "Une feuille contient environ 250 mots manuscrits."
+  },
+  "Perfume": {
+    "name": "Parfum",
+    "description": "Fiole de 4 onces. Pendant 1 heure après application, gagnez l'Avantage aux tests de Charisme (Persuasion) pour influencer un Humanoïde Indifférent à 5 pieds ou moins."
+  },
+  "Poison, Basic": {
+    "name": "Poison de base",
+    "description": "Par une Action bonus, enduisez une arme ou trois munitions au maximum. Les dégâts Perforants ou Tranchants qu'elles infligent ajoutent 1d4 dégâts de Poison pendant 1 minute ou jusqu'à ce que les dégâts soient infligés."
+  },
+  "Pole": {
+    "name": "Perche",
+    "description": "Perche de 10 pieds. S'en servir pour prendre appui donne l'Avantage à un test de Force (Athlétisme) pour un saut en hauteur ou en longueur."
+  },
+  "Pot, Iron": {
+    "name": "Marmite en fer",
+    "description": "Contient jusqu'à 1 gallon."
+  },
+  "Pouch": {
+    "name": "Bourse",
+    "description": "Contient jusqu'à 6 livres dans un cinquième de pied cube."
+  },
+  "Priest's Pack": {
+    "name": "Paquet de prêtre",
+    "description": "Fournitures de voyage et de culte."
+  },
+  "Quiver": {
+    "name": "Carquois",
+    "description": "Contient jusqu'à 20 flèches."
+  },
+  "Ram, Portable": {
+    "name": "Bélier portatif",
+    "description": "Accorde +4 aux tests de Force pour enfoncer une porte ; un autre personnage peut aider pour donner l'Avantage."
+  },
+  "Rations": {
+    "name": "Rations",
+    "description": "Un jour de nourriture de voyage, comme fruits secs, viande séchée, biscuits de mer et noix."
+  },
+  "Robe": {
+    "name": "Robe",
+    "description": "Vêtement ayant une signification professionnelle ou cérémonielle."
+  },
+  "Rope": {
+    "name": "Corde",
+    "description": "Faire un nœud demande Dextérité (Escamotage) DD 10 ; rompre la corde demande Force (Athlétisme) DD 20. Une créature ligotée peut s'échapper avec Dextérité (Acrobaties) DD 15."
+  },
+  "Sack": {
+    "name": "Sac",
+    "description": "Contient jusqu'à 30 livres dans 1 pied cube."
+  },
+  "Scholar's Pack": {
+    "name": "Paquet d'érudit",
+    "description": "Fournitures d'étude et d'écriture."
+  },
+  "Shovel": {
+    "name": "Pelle",
+    "description": "Une heure à creuser la terre ou une matière semblable crée un cube vide de 5 pieds de côté."
+  },
+  "Signal Whistle": {
+    "name": "Sifflet",
+    "description": "Souffler dedans avec l'action Utiliser produit un son audible jusqu'à 600 pieds."
+  },
+  "Spellbook": {
+    "name": "Grimoire",
+    "description": "Livre unique de 100 pages d'un Magicien pour les sorts de niveau 1 ou supérieur. Seuls son propriétaire ou quelqu'un lançant Identification peuvent le lire ; il peut aussi servir de focaliseur pour Magicien."
+  },
+  "Spikes, Iron": {
+    "name": "Pointes de fer",
+    "description": "Lot de dix pointes de fer pour bloquer une porte ou ancrer une Corde ou Chaîne."
+  },
+  "Spyglass": {
+    "name": "Longue-vue",
+    "description": "Grossit les objets observés jusqu'au double de leur taille."
+  },
+  "String": {
+    "name": "Ficelle",
+    "description": "Ficelle de 10 pieds ; faire un nœud est une action Utiliser."
+  },
+  "Tent": {
+    "name": "Tente",
+    "description": "Permet à deux créatures de taille P ou M de dormir."
+  },
+  "Tinderbox": {
+    "name": "Amadou",
+    "description": "Silex, briquet et amadou. Allumer du combustible exposé prend une Action bonus ; allumer un autre feu prend 1 minute."
+  },
+  "Torch": {
+    "name": "Torche",
+    "description": "Brûle pendant 1 heure et produit une Lumière vive sur 20 pieds et une Lumière faible sur 20 pieds supplémentaires. Peut servir d'arme de Corps à corps simple infligeant 1 dégât de Feu en touchant."
+  },
+  "Vial": {
+    "name": "Fiole",
+    "description": "Contient jusqu'à 4 onces."
+  },
+  "Waterskin": {
+    "name": "Outre",
+    "description": "Contient jusqu'à 4 pintes d'eau ; le poids indiqué correspond à l'outre pleine."
+  },
+  "weaponMasteries": {
+    "cleave": {
+      "name": "Tailler",
+      "description": "Une fois par tour après avoir touché avec une attaque de corps à corps, attaquez avec la même arme une autre créature à 5 pieds ou moins de la première et à votre portée. En touchant, infligez les dégâts de l'arme sans modificateur positif de caractéristique."
+    },
+    "graze": {
+      "name": "Érafler",
+      "description": "En ratant, infligez des dégâts du type de l'arme égaux au modificateur de caractéristique utilisé pour l'attaque. Seule une augmentation de ce modificateur peut accroître ces dégâts."
+    },
+    "nick": {
+      "name": "Filer",
+      "description": "Une fois par tour, effectuez l'attaque supplémentaire de la propriété Légère dans l'action Attaquer plutôt qu'avec une Action bonus."
+    },
+    "push": {
+      "name": "Repousser",
+      "description": "En touchant, repoussez une créature de taille G ou inférieure jusqu'à 10 pieds directement loin de vous."
+    },
+    "sap": {
+      "name": "Affaiblir",
+      "description": "En touchant, la cible a le Désavantage sur son prochain jet d'attaque avant le début de votre prochain tour."
+    },
+    "slow": {
+      "name": "Ralentir",
+      "description": "En touchant et infligeant des dégâts, réduisez la Vitesse de la cible de 10 pieds jusqu'au début de votre prochain tour. Plusieurs touches ne cumulent pas cette réduction."
+    },
+    "topple": {
+      "name": "Renverser",
+      "description": "En touchant, la cible effectue une sauvegarde de Constitution contre DD 8 + modificateur de caractéristique de l'attaque + votre bonus de maîtrise ; en cas d'échec, elle tombe À terre."
+    },
+    "vex": {
+      "name": "Harceler",
+      "description": "En touchant et infligeant des dégâts, vous avez l'Avantage sur votre prochain jet d'attaque contre cette créature avant la fin de votre prochain tour."
+    }
+  }
+}

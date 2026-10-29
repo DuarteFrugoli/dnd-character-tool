@@ -1,0 +1,569 @@
+{
+  "Club": {
+    "name": "短棍"
+  },
+  "Dagger": {
+    "name": "匕首"
+  },
+  "Greatclub": {
+    "name": "巨棒"
+  },
+  "Handaxe": {
+    "name": "手斧"
+  },
+  "Javelin": {
+    "name": "标枪"
+  },
+  "Light Hammer": {
+    "name": "轻锤"
+  },
+  "Mace": {
+    "name": "硬头锤"
+  },
+  "Quarterstaff": {
+    "name": "长棍"
+  },
+  "Sickle": {
+    "name": "镰刀"
+  },
+  "Spear": {
+    "name": "矛"
+  },
+  "Dart": {
+    "name": "飞镖"
+  },
+  "Light Crossbow": {
+    "name": "轻弩"
+  },
+  "Shortbow": {
+    "name": "短弓"
+  },
+  "Sling": {
+    "name": "投石索"
+  },
+  "Battleaxe": {
+    "name": "战斧"
+  },
+  "Flail": {
+    "name": "连枷"
+  },
+  "Glaive": {
+    "name": "长柄刀"
+  },
+  "Greataxe": {
+    "name": "巨斧"
+  },
+  "Greatsword": {
+    "name": "巨剑"
+  },
+  "Halberd": {
+    "name": "戟"
+  },
+  "Lance": {
+    "name": "骑枪"
+  },
+  "Longsword": {
+    "name": "长剑"
+  },
+  "Maul": {
+    "name": "大槌"
+  },
+  "Morningstar": {
+    "name": "钉头锤"
+  },
+  "Pike": {
+    "name": "长枪"
+  },
+  "Rapier": {
+    "name": "细剑"
+  },
+  "Scimitar": {
+    "name": "弯刀"
+  },
+  "Shortsword": {
+    "name": "短剑"
+  },
+  "Trident": {
+    "name": "三叉戟"
+  },
+  "Warhammer": {
+    "name": "战锤"
+  },
+  "War Pick": {
+    "name": "战镐"
+  },
+  "Whip": {
+    "name": "鞭子"
+  },
+  "Blowgun": {
+    "name": "吹箭筒"
+  },
+  "Hand Crossbow": {
+    "name": "手弩"
+  },
+  "Heavy Crossbow": {
+    "name": "重弩"
+  },
+  "Longbow": {
+    "name": "长弓"
+  },
+  "Musket": {
+    "name": "火枪"
+  },
+  "Pistol": {
+    "name": "手枪"
+  },
+  "Padded Armor": {
+    "name": "衬垫甲"
+  },
+  "Leather Armor": {
+    "name": "皮甲"
+  },
+  "Studded Leather Armor": {
+    "name": "镶钉皮甲"
+  },
+  "Hide Armor": {
+    "name": "兽皮甲"
+  },
+  "Chain Shirt": {
+    "name": "链甲衫"
+  },
+  "Scale Mail": {
+    "name": "鳞甲"
+  },
+  "Breastplate": {
+    "name": "胸甲"
+  },
+  "Half Plate Armor": {
+    "name": "半身板甲"
+  },
+  "Ring Mail": {
+    "name": "环甲"
+  },
+  "Chain Mail": {
+    "name": "锁子甲"
+  },
+  "Splint Armor": {
+    "name": "条板甲"
+  },
+  "Plate Armor": {
+    "name": "全身板甲"
+  },
+  "Shield": {
+    "name": "盾牌"
+  },
+  "Arrow": {
+    "name": "箭",
+    "description": "弓用弹药，以二十支一束出售。每次攻击消耗一支箭；战斗后可花1分钟回收所耗弹药的一半。"
+  },
+  "Bolt": {
+    "name": "弩矢",
+    "description": "弩用弹药，以二十支一束出售。"
+  },
+  "Bullet": {
+    "name": "子弹",
+    "description": "火器弹药，以十发一束出售。"
+  },
+  "Sling Bullet": {
+    "name": "投石索弹丸",
+    "description": "投石索弹药，以二十颗一束出售。"
+  },
+  "Needle": {
+    "name": "吹箭",
+    "description": "吹箭筒弹药，以五十支一束出售。"
+  },
+  "Acid": {
+    "name": "强酸",
+    "description": "以向20尺内目标投掷一瓶强酸代替一次攻击。目标若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到2d6强酸伤害。"
+  },
+  "Alchemist's Fire": {
+    "name": "炼金之火",
+    "description": "以向20尺内目标投掷一瓶炼金之火代替一次攻击。目标若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到1d4火焰伤害并开始燃烧。"
+  },
+  "Antitoxin": {
+    "name": "抗毒剂",
+    "description": "用附赠动作饮用，接下来1小时内，在避免或终止中毒状态的豁免中具有优势。"
+  },
+  "Arcane Focus": {
+    "name": "奥术法器",
+    "description": "术士、邪术师或法师的施法法器。选择水晶、宝珠、短杖、长杖或魔杖。"
+  },
+  "Arcane Focus, Crystal": {
+    "name": "奥术法器：水晶",
+    "description": "作为奥术施法法器的水晶。"
+  },
+  "Arcane Focus, Orb": {
+    "name": "奥术法器：宝珠",
+    "description": "作为奥术施法法器的宝珠。"
+  },
+  "Arcane Focus, Rod": {
+    "name": "奥术法器：短杖",
+    "description": "作为奥术施法法器的短杖。"
+  },
+  "Arcane Focus, Staff": {
+    "name": "奥术法器：长杖",
+    "description": "也可作为长棍使用的奥术施法法器。"
+  },
+  "Arcane Focus, Wand": {
+    "name": "奥术法器：魔杖",
+    "description": "作为奥术施法法器的魔杖。"
+  },
+  "Backpack": {
+    "name": "背包",
+    "description": "可在1立方尺空间内容纳最多30磅，也可用作马鞍袋。"
+  },
+  "Ball Bearings": {
+    "name": "金属滚珠",
+    "description": "用使用动作在10尺内平坦的10尺见方区域撒开。进入的生物须通过DC 10敏捷豁免，否则倒地。回收需要10分钟。"
+  },
+  "Barrel": {
+    "name": "木桶",
+    "description": "可容纳最多40加仑液体或4立方尺干货。"
+  },
+  "Basket": {
+    "name": "篮子",
+    "description": "可在2立方尺空间内容纳最多40磅。"
+  },
+  "Bedroll": {
+    "name": "铺盖",
+    "description": "供一名小型或中型生物睡眠；身处其中时，你自动通过抵抗极寒的豁免。"
+  },
+  "Bell": {
+    "name": "铃铛",
+    "description": "用使用动作敲响，声音在60尺内可听见。"
+  },
+  "Blanket": {
+    "name": "毛毯",
+    "description": "裹住身体时，你在抵抗极寒的豁免中具有优势。"
+  },
+  "Block and Tackle": {
+    "name": "滑轮组",
+    "description": "让你举起平时能举重量的四倍。"
+  },
+  "Book": {
+    "name": "书",
+    "description": "查阅内容准确的非虚构书籍，对其主题进行智力（奥秘、历史、自然或宗教）检定时获得+5。"
+  },
+  "Bottle, Glass": {
+    "name": "玻璃瓶",
+    "description": "可容纳最多1.5品脱。"
+  },
+  "Bucket": {
+    "name": "水桶",
+    "description": "可容纳最多半立方尺。"
+  },
+  "Burglar's Pack": {
+    "name": "盗贼背包",
+    "description": "一套用于潜入的用品。"
+  },
+  "Caltrops": {
+    "name": "铁蒺藜",
+    "description": "用使用动作撒在5尺见方区域。进入的生物须通过DC 15敏捷豁免，否则受到1点穿刺伤害，且速度变为0直至其下回合。回收需要10分钟。"
+  },
+  "Candle": {
+    "name": "蜡烛",
+    "description": "燃烧1小时，向5尺内提供明亮光照，额外5尺提供微光。"
+  },
+  "Case, Crossbow Bolt": {
+    "name": "弩矢盒",
+    "description": "可容纳最多20支弩矢。"
+  },
+  "Case, Map or Scroll": {
+    "name": "地图或卷轴筒",
+    "description": "可容纳最多10张纸或5张羊皮纸。"
+  },
+  "Chain": {
+    "name": "铁链",
+    "description": "可用一次DC 13力量（运动）检定捆住被擒抱、失能或受束缚的生物。逃脱需DC 18敏捷（特技）；扯断需DC 20力量（运动）。"
+  },
+  "Chest": {
+    "name": "箱子",
+    "description": "可容纳最多12立方尺物品。"
+  },
+  "Climber's Kit": {
+    "name": "攀爬工具组",
+    "description": "包括鞋尖、手套、岩钉和安全带。以使用动作系住后，坠落距离和离锚点的移动距离均被限制为25尺。"
+  },
+  "Clothes, Fine": {
+    "name": "华服",
+    "description": "适合正式活动及场所的昂贵服装。"
+  },
+  "Clothes, Traveler's": {
+    "name": "旅行服",
+    "description": "适合在多种环境旅行的耐用服装。"
+  },
+  "Component Pouch": {
+    "name": "材料包",
+    "description": "有隔层的防水袋，存放法术中无需付费的材料成分。"
+  },
+  "Costume": {
+    "name": "戏服",
+    "description": "穿着时，冒充所代表的人物或身份所做的属性检定具有优势。"
+  },
+  "Crowbar": {
+    "name": "撬棍",
+    "description": "可发挥杠杆作用时，力量检定具有优势。"
+  },
+  "Diplomat's Pack": {
+    "name": "外交官背包",
+    "description": "用于正式旅途和通信的用品。"
+  },
+  "Druidic Focus": {
+    "name": "德鲁伊法器",
+    "description": "德鲁伊或游侠的施法法器。选择槲寄生、木杖或紫杉木魔杖。"
+  },
+  "Druidic Focus, Sprig of Mistletoe": {
+    "name": "德鲁伊法器：槲寄生枝",
+    "description": "作为原初施法法器的槲寄生枝。"
+  },
+  "Druidic Focus, Wooden Staff": {
+    "name": "德鲁伊法器：木杖",
+    "description": "也可作为长棍使用的原初施法法器。"
+  },
+  "Druidic Focus, Yew Wand": {
+    "name": "德鲁伊法器：紫杉木魔杖",
+    "description": "作为原初施法法器的紫杉木魔杖。"
+  },
+  "Dungeoneer's Pack": {
+    "name": "地城探险背包",
+    "description": "用于探索地城的用品。"
+  },
+  "Entertainer's Pack": {
+    "name": "艺人背包",
+    "description": "巡演艺人的用品。"
+  },
+  "Explorer's Pack": {
+    "name": "探险家背包",
+    "description": "用于野外探索的用品。"
+  },
+  "Flask": {
+    "name": "扁瓶",
+    "description": "可容纳最多1品脱。"
+  },
+  "Grappling Hook": {
+    "name": "抓钩",
+    "description": "以使用动作将其掷向50尺内的挂点。通过DC 13敏捷（特技）检定可固定，然后可攀爬系上的绳索。"
+  },
+  "Healer's Kit": {
+    "name": "医药包",
+    "description": "以使用动作消耗十次使用机会之一，无须医药检定即可稳定一名生命值为0的昏迷生物。"
+  },
+  "Holy Symbol": {
+    "name": "圣徽",
+    "description": "牧师或圣武士的施法法器。选择护符、徽章或圣物匣。"
+  },
+  "Holy Symbol, Amulet": {
+    "name": "圣徽：护符",
+    "description": "可佩戴或持握的神圣施法法器。"
+  },
+  "Holy Symbol, Emblem": {
+    "name": "圣徽：徽章",
+    "description": "装饰在织物或盾牌上的神圣施法法器。"
+  },
+  "Holy Symbol, Reliquary": {
+    "name": "圣徽：圣物匣",
+    "description": "必须持握的神圣施法法器。"
+  },
+  "Holy Water": {
+    "name": "圣水",
+    "description": "以向20尺内生物投掷一瓶圣水代替一次攻击。邪魔或亡灵若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到2d8光耀伤害。"
+  },
+  "Hunting Trap": {
+    "name": "捕兽夹",
+    "description": "踩中已设置陷阱的生物须通过DC 13敏捷豁免，否则受到1d4穿刺伤害，速度变为0直至其下回合。解救需DC 13力量（运动）检定。"
+  },
+  "Ink": {
+    "name": "墨水",
+    "description": "一瓶1盎司的墨水足够书写约500页。"
+  },
+  "Ink Pen": {
+    "name": "墨水笔",
+    "description": "与墨水配合用于书写或绘画。"
+  },
+  "Jug": {
+    "name": "水壶",
+    "description": "可容纳最多1加仑。"
+  },
+  "Ladder": {
+    "name": "梯子",
+    "description": "一架10尺长的梯子。"
+  },
+  "Lamp": {
+    "name": "油灯",
+    "description": "燃烧油，向15尺内提供明亮光照，额外30尺提供微光。"
+  },
+  "Lantern, Bullseye": {
+    "name": "牛眼提灯",
+    "description": "燃烧油，在60尺锥形内提供明亮光照，额外60尺提供微光。"
+  },
+  "Lantern, Hooded": {
+    "name": "罩灯",
+    "description": "燃烧油，向30尺内提供明亮光照，额外30尺提供微光。放下罩盖后仅在5尺内提供微光。"
+  },
+  "Lock": {
+    "name": "锁",
+    "description": "附带钥匙。无钥匙开锁需要盗贼工具和DC 15敏捷（巧手）检定。"
+  },
+  "Magnifying Glass": {
+    "name": "放大镜",
+    "description": "鉴定或检查细微之处的检定具有优势；在阳光下约5分钟还能点火。"
+  },
+  "Manacles": {
+    "name": "镣铐",
+    "description": "可用DC 13敏捷（巧手）检定铐住一名小型或中型的被擒抱、失能或受束缚生物。逃脱需DC 20；扯断需DC 25力量（运动）。"
+  },
+  "Map": {
+    "name": "地图",
+    "description": "准确的地图使你在所示区域导航的感知（求生）检定获得+5。"
+  },
+  "Mirror": {
+    "name": "镜子",
+    "description": "便携钢镜，可用于窥探拐角或反射光线发信号。"
+  },
+  "Net": {
+    "name": "网",
+    "description": "以向15尺内的生物投网代替一次攻击。若其在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，则陷入受束缚状态；巨型或更大生物自动成功。逃脱需DC 10力量（运动）。"
+  },
+  "Oil": {
+    "name": "油",
+    "description": "一瓶油可供油灯或提灯燃烧6小时。被浇油的生物或物体若在1分钟内下次受到火焰伤害，可能额外受到5点；地上燃烧的油造成5点火焰伤害。"
+  },
+  "Paper": {
+    "name": "纸",
+    "description": "一张纸约可写250个手写单词。"
+  },
+  "Parchment": {
+    "name": "羊皮纸",
+    "description": "一张羊皮纸约可写250个手写单词。"
+  },
+  "Perfume": {
+    "name": "香水",
+    "description": "4盎司一瓶。涂抹后1小时内，说服5尺内态度冷淡的人形生物的魅力（游说）检定具有优势。"
+  },
+  "Poison, Basic": {
+    "name": "基础毒药",
+    "description": "用附赠动作给一件武器或最多三枚弹药涂毒。在1分钟内或造成伤害前，其穿刺或挥砍伤害额外造成1d4毒素伤害。"
+  },
+  "Pole": {
+    "name": "长杆",
+    "description": "10尺长杆。用它撑杆跳时，进行跳高或跳远的力量（运动）检定具有优势。"
+  },
+  "Pot, Iron": {
+    "name": "铁锅",
+    "description": "可容纳最多1加仑。"
+  },
+  "Pouch": {
+    "name": "小袋",
+    "description": "可在五分之一立方尺内容纳最多6磅。"
+  },
+  "Priest's Pack": {
+    "name": "祭司背包",
+    "description": "旅行与宗教用品。"
+  },
+  "Quiver": {
+    "name": "箭袋",
+    "description": "可容纳最多20支箭。"
+  },
+  "Ram, Portable": {
+    "name": "便携式攻城槌",
+    "description": "破门的力量检定获得+4；另一角色可以协助以获得优势。"
+  },
+  "Rations": {
+    "name": "口粮",
+    "description": "供一日旅行食用的食品，如果干、肉干、硬饼和坚果。"
+  },
+  "Robe": {
+    "name": "长袍",
+    "description": "具有职业或仪式意义的衣物。"
+  },
+  "Rope": {
+    "name": "绳索",
+    "description": "打结需DC 10敏捷（巧手）检定；扯断绳索需DC 20力量（运动）。被绑生物可通过DC 15敏捷（特技）检定逃脱。"
+  },
+  "Sack": {
+    "name": "麻袋",
+    "description": "可在1立方尺内容纳最多30磅。"
+  },
+  "Scholar's Pack": {
+    "name": "学者背包",
+    "description": "用于学习和写作的用品。"
+  },
+  "Shovel": {
+    "name": "铲子",
+    "description": "在泥土或类似材料中挖掘1小时，可挖出边长5尺的立方空间。"
+  },
+  "Signal Whistle": {
+    "name": "信号哨",
+    "description": "用使用动作吹响，声音在600尺内可听见。"
+  },
+  "Spellbook": {
+    "name": "法术书",
+    "description": "法师独有的100页书册，用于记录1环及更高环阶法术。只有主人或施放鉴定术的人可以阅读；也可作为法师施法法器。"
+  },
+  "Spikes, Iron": {
+    "name": "铁钉",
+    "description": "十根铁钉一束，用于卡门或固定绳索、铁链。"
+  },
+  "Spyglass": {
+    "name": "望远镜",
+    "description": "使观察到的物体看起来放大一倍。"
+  },
+  "String": {
+    "name": "细绳",
+    "description": "10尺长细绳；打结需要使用动作。"
+  },
+  "Tent": {
+    "name": "帐篷",
+    "description": "可供最多两名小型或中型生物睡眠。"
+  },
+  "Tinderbox": {
+    "name": "引火盒",
+    "description": "燧石、打火钢和引火物。点燃裸露燃料需附赠动作；点燃其他火焰需1分钟。"
+  },
+  "Torch": {
+    "name": "火把",
+    "description": "燃烧1小时，向20尺内提供明亮光照，额外20尺提供微光。也可作为简易近战武器，命中造成1点火焰伤害。"
+  },
+  "Vial": {
+    "name": "小瓶",
+    "description": "可容纳最多4盎司。"
+  },
+  "Waterskin": {
+    "name": "水囊",
+    "description": "可容纳最多4品脱水；所列重量为装满时。"
+  },
+  "weaponMasteries": {
+    "cleave": {
+      "name": "顺势斩",
+      "description": "每回合一次，以近战攻击命中后，可用同一武器攻击距首名目标5尺内且在你触及范围内的另一生物。命中时造成武器伤害，但不加入正值属性调整值。"
+    },
+    "graze": {
+      "name": "擦击",
+      "description": "攻击未命中时，造成等于本次攻击所用属性调整值的武器类型伤害。只有该调整值提高才能提高此伤害。"
+    },
+    "nick": {
+      "name": "迅击",
+      "description": "每回合一次，将轻型属性给予的额外攻击作为攻击动作的一部分，而非附赠动作。"
+    },
+    "push": {
+      "name": "推击",
+      "description": "命中时，将一名大型或更小的生物沿远离你的直线推开最多10尺。"
+    },
+    "sap": {
+      "name": "削弱",
+      "description": "命中时，目标在你下回合开始前的下一次攻击检定中具有劣势。"
+    },
+    "slow": {
+      "name": "缓速",
+      "description": "造成伤害的命中使目标速度降低10尺，直至你下回合开始。多次命中不会叠加减速。"
+    },
+    "topple": {
+      "name": "绊倒",
+      "description": "命中时，目标进行体质豁免，DC为8＋攻击所用属性调整值＋你的熟练加值；失败则倒地。"
+    },
+    "vex": {
+      "name": "扰乱",
+      "description": "造成伤害的命中使你在下回合结束前对该生物的下一次攻击检定具有优势。"
+    }
+  }
+}

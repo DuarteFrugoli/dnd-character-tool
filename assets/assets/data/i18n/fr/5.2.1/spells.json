@@ -1,0 +1,2993 @@
+{
+  "Acid Splash": {
+    "name": "Éclaboussure d'acide",
+    "description": "De l'acide éclate dans une sphère de 5 pieds de rayon à 60 pieds. Les créatures dans la zone effectuent un jet de sauvegarde de Dextérité ou subissent 1d6 dégâts d'acide. Les dégâts passent à 2d6, 3d6 et 4d6 aux niveaux de personnage 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Chill Touch": {
+    "name": "Toucher froid",
+    "description": "Effectuez une attaque de sort au corps à corps. Si elle touche, elle inflige 1d10 dégâts nécrotiques et empêche la cible de regagner des points de vie jusqu'à la fin de votre prochain tour. Les dégâts passent à 2d10, 3d10 et 4d10 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Dancing Lights": {
+    "name": "Lumières dansantes",
+    "description": "Créez jusqu'à quatre lumières tamisées flottantes, chacune éclairant un rayon de 10 pieds, ou réunissez-les en une silhouette humanoïde de taille Moyenne. Par une action bonus, déplacez-les de 60 pieds au maximum en les maintenant à 20 pieds les unes des autres.",
+    "material": "un peu de phosphore",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Druidcraft": {
+    "name": "Druidisme",
+    "description": "Produisez un petit effet naturel : prévoyez la météo locale du lendemain, faites fleurir une plante, créez un effet sensoriel inoffensif ou allumez ou éteignez une bougie, une torche ou un feu de camp.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Instantanée"
+  },
+  "Eldritch Blast": {
+    "name": "Décharge occulte",
+    "description": "Effectuez une attaque de sort à distance pour chaque rayon. Chaque touche inflige 1d10 dégâts de force. Créez deux rayons au niveau 5, trois au niveau 11 et quatre au niveau 17 ; choisissez les cibles et lancez chaque attaque séparément.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Elementalism": {
+    "name": "Élémentalisme",
+    "description": "Créez un effet élémentaire mineur à 30 pieds : agitez l'air ou la poussière, faites apparaître un mot dans le sable, produisez une fumée ou des braises inoffensives, ou façonnez, colorez ou déplacez brièvement de l'eau.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Instantanée"
+  },
+  "Fire Bolt": {
+    "name": "Trait de feu",
+    "description": "Effectuez une attaque de sort à distance contre une créature ou un objet. Si elle touche, elle inflige 1d10 dégâts de feu et enflamme les objets inflammables non portés. Les dégâts passent à 2d10, 3d10 et 4d10 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Guidance": {
+    "name": "Assistance",
+    "description": "Touchez une créature consentante et choisissez une compétence. Pendant 1 minute au maximum, elle ajoute 1d4 à ses tests de caractéristique utilisant cette compétence.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Light": {
+    "name": "Lumière",
+    "description": "Touchez un objet non porté de taille Grande ou inférieure. Pendant 1 heure, il émet une lumière vive sur 20 pieds et une lumière faible sur 20 pieds supplémentaires ; un écran opaque la bloque.",
+    "material": "une luciole ou de la mousse phosphorescente",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Mage Hand": {
+    "name": "Main de mage",
+    "description": "Créez une main spectrale pendant 1 minute. Elle peut manipuler des objets, ouvrir des portes ou contenants non verrouillés et porter jusqu'à 10 livres, mais ne peut ni attaquer ni activer d'objets magiques.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "1 minute"
+  },
+  "Mending": {
+    "name": "Raccommodage",
+    "description": "Réparez une seule cassure ou déchirure d'au plus 1 pied sur un objet touché. Le sort peut réparer physiquement un objet magique, mais pas restaurer sa magie.",
+    "material": "deux magnétites",
+    "castingTime": "1 minute",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Message": {
+    "name": "Message",
+    "description": "Chuchotez à une créature à 120 pieds ; elle seule vous entend et peut répondre en chuchotant. Si vous connaissez la cible, le message traverse les obstacles, mais le silence magique, une épaisseur suffisante de matière solide ou le plomb le bloquent.",
+    "material": "un fil de cuivre",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "1 round"
+  },
+  "Minor Illusion": {
+    "name": "Illusion mineure",
+    "description": "Créez un son ou l'image d'un objet tenant dans un cube de 5 pieds pendant 1 minute. L'image ne produit ni son, ni lumière, ni odeur, ni effet physique ; une créature peut percer l'illusion avec l'action Étudier et un test d'Investigation contre le DD de sauvegarde de vos sorts.",
+    "material": "un peu de toison",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "1 minute"
+  },
+  "Poison Spray": {
+    "name": "Jet de poison",
+    "description": "Effectuez une attaque de sort à distance contre une créature à 30 pieds. Si elle touche, elle inflige 1d12 dégâts de poison, puis 2d12, 3d12 et 4d12 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Prestidigitation": {
+    "name": "Prestidigitation",
+    "description": "Créez à 10 pieds un effet magique mineur : un effet sensoriel inoffensif, allumez ou éteignez une petite flamme, nettoyez ou salissez un petit objet, changez sa température ou son goût, laissez une marque ou créez une babiole minuscule. Trois effets durables au maximum peuvent coexister.",
+    "castingTime": "Action",
+    "range": "10 pieds",
+    "duration": "Jusqu'à 1 heure"
+  },
+  "Produce Flame": {
+    "name": "Produire une flamme",
+    "description": "Par une action bonus, créez pour 10 minutes une flamme qui émet une lumière vive sur 20 pieds et faible sur 20 pieds supplémentaires. Pendant ce temps, vous pouvez la lancer à 60 pieds avec une action Magie ; une attaque de sort à distance inflige 1d8 dégâts de feu si elle touche, davantage aux niveaux 5, 11 et 17.",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "10 minutes",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Ray of Frost": {
+    "name": "Rayon de givre",
+    "description": "Effectuez une attaque de sort à distance. Si elle touche, elle inflige 1d8 dégâts de froid et réduit la Vitesse de la cible de 10 pieds jusqu'au début de votre prochain tour. Les dégâts passent à 2d8, 3d8 et 4d8 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Resistance": {
+    "name": "Résistance",
+    "description": "Touchez une créature consentante et choisissez acide, contondant, froid, feu, foudre, nécrotique, perforant, poison, radiant, tranchant ou tonnerre. Une fois par tour, elle réduit de 1d4 les dégâts de ce type pendant 1 minute au maximum.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Sacred Flame": {
+    "name": "Flamme sacrée",
+    "description": "Une créature visible à 60 pieds effectue un jet de sauvegarde de Dextérité ou subit 1d8 dégâts radiants ; l'abri partiel ou aux trois quarts ne l'aide pas. Les dégâts passent à 2d8, 3d8 et 4d8 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Shillelagh": {
+    "name": "Gourdin magique",
+    "description": "Renforcez une massue ou un bâton tenu pendant 1 minute. Utilisez votre caractéristique d'incantation pour ses attaques et dégâts au corps à corps ; son dé de dégâts devient d8 et les dégâts peuvent être de force plutôt que du type normal. Le dé passe à d10 au niveau 5, d12 au niveau 11 et 2d6 au niveau 17.",
+    "material": "du gui",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "1 minute"
+  },
+  "Shocking Grasp": {
+    "name": "Poigne électrique",
+    "description": "Effectuez une attaque de sort au corps à corps. Si elle touche, elle inflige 1d8 dégâts de foudre et empêche la cible d'effectuer des attaques d'opportunité jusqu'au début de son prochain tour. Les dégâts passent à 2d8, 3d8 et 4d8 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Sorcerous Burst": {
+    "name": "Explosion de sorcellerie",
+    "description": "Effectuez une attaque de sort à distance contre une créature ou un objet. Si elle touche, elle inflige 1d8 dégâts d'acide, de froid, de feu, de foudre, de poison, psychiques ou de tonnerre. Chaque dé de dégâts indiquant 8 peut ajouter un autre d8, jusqu'à un maximum de dés supplémentaires égal à votre modificateur d'incantation. Les dés de base passent à 2d8, 3d8 et 4d8 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Instantanée"
+  },
+  "Spare the Dying": {
+    "name": "Stabilisation",
+    "description": "Une créature à 0 point de vie qui n'est pas morte devient Stable. La portée est de 15 pieds et double aux niveaux 5, 11 et 17 pour atteindre 30, 60 et 120 pieds.",
+    "castingTime": "Action",
+    "range": "15 pieds",
+    "duration": "Instantanée"
+  },
+  "Starry Wisp": {
+    "name": "Lueur stellaire",
+    "description": "Effectuez une attaque de sort à distance. Si elle touche, elle inflige 1d8 dégâts radiants ; jusqu'à la fin de votre prochain tour, la cible émet une lumière faible sur 10 pieds et ne profite pas de l'état Invisible. Les dégâts passent à 2d8, 3d8 et 4d8 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Thaumaturgy": {
+    "name": "Thaumaturgie",
+    "description": "Créez une petite merveille à 30 pieds, comme des yeux transformés, une voix retentissante qui donne l'Avantage aux tests d'Intimidation, des flammes modifiées, une porte qui s'ouvre ou se ferme, un son fantomatique ou une secousse. Trois effets durables au maximum peuvent coexister.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Jusqu'à 1 minute"
+  },
+  "True Strike": {
+    "name": "Coup au but",
+    "description": "Effectuez une attaque avec une arme que vous maîtrisez et qui vaut au moins 1 PC, en utilisant votre caractéristique d'incantation pour l'attaque et les dégâts. Les dégâts peuvent être radiants ou du type normal de l'arme, plus 1d6, 2d6 ou 3d6 dégâts radiants aux niveaux 5, 11 ou 17.",
+    "material": "une arme que vous maîtrisez valant au moins 1 PC",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Vicious Mockery": {
+    "name": "Moquerie cruelle",
+    "description": "Une créature que vous voyez ou entendez à 60 pieds effectue un jet de sauvegarde de Sagesse ou subit 1d6 dégâts psychiques et a le Désavantage à sa prochaine attaque avant la fin de son prochain tour. Les dégâts passent à 2d6, 3d6 et 4d6 aux niveaux 5, 11 et 17.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Alarm": {
+    "name": "Alarme",
+    "description": "Protégez une porte, une fenêtre ou une zone tenant dans un cube de 20 pieds pendant 8 heures. Choisissez les créatures qui ne déclenchent pas l'alarme et si une intrusion provoque une alerte mentale ou une sonnerie audible.",
+    "material": "une clochette et un fil d'argent",
+    "castingTime": "1 minute ou rituel",
+    "range": "30 pieds",
+    "duration": "8 heures"
+  },
+  "Animal Friendship": {
+    "name": "Amitié avec les animaux",
+    "description": "Une bête visible effectue un jet de sauvegarde de Sagesse. Si elle échoue, elle est Charmée par vous pendant 24 heures ; l'effet prend fin si vous ou un allié lui infligez des dégâts. Un emplacement de niveau supérieur ajoute une bête par niveau.",
+    "material": "un morceau de nourriture",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "24 heures"
+  },
+  "Bane": {
+    "name": "Fléau",
+    "description": "Jusqu'à trois créatures visibles effectuent un jet de sauvegarde de Charisme. Celles qui échouent retranchent 1d4 de leurs jets d'attaque et de sauvegarde pendant 1 minute au maximum. Chaque niveau d'emplacement au-delà du 1er ajoute une cible.",
+    "material": "une goutte de sang",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Bless": {
+    "name": "Bénir",
+    "description": "Jusqu'à trois créatures ajoutent 1d4 à leurs jets d'attaque et de sauvegarde pendant 1 minute au maximum. Chaque niveau d'emplacement au-delà du 1er ajoute une cible.",
+    "material": "un symbole sacré valant au moins 5 PO",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Burning Hands": {
+    "name": "Mains brûlantes",
+    "description": "Un cône de feu de 15 pieds jaillit de vous. Les créatures effectuent un jet de sauvegarde de Dextérité, subissant 3d6 dégâts de feu en cas d'échec ou la moitié en cas de réussite. Les objets inflammables non portés prennent feu ; les emplacements supérieurs ajoutent 1d6 dégâts par niveau.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Charm Person": {
+    "name": "Charmer une personne",
+    "description": "Un humanoïde visible effectue un jet de sauvegarde de Sagesse avec l'Avantage si vous ou vos alliés le combattez. S'il échoue, il est Charmé et Amical pendant 1 heure ; l'effet cesse plus tôt si vous ou un allié le blessez. Il sait ensuite que vous l'avez charmé.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "1 heure"
+  },
+  "Chromatic Orb": {
+    "name": "Orbe chromatique",
+    "description": "Effectuez une attaque de sort à distance infligeant 3d8 dégâts d'acide, de froid, de feu, de foudre, de poison ou de tonnerre. Si des dés de dégâts affichent le même résultat, l'orbe peut rebondir vers une autre cible à 30 pieds. Un emplacement supérieur ajoute 1d8 dégâts et permet autant de rebonds que son niveau. Aucune cible ne peut être touchée deux fois.",
+    "material": "un diamant valant au moins 50 PO",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d8.",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Color Spray": {
+    "name": "Vaporisation de couleurs",
+    "description": "Les créatures dans un cône de 15 pieds effectuent un jet de sauvegarde de Constitution. Celles qui échouent sont Aveuglées jusqu'à la fin de votre prochain tour.",
+    "material": "une pincée de sable coloré",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Command": {
+    "name": "Injonction",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse contre un ordre d'un mot. Si elle échoue, elle s'approche de vous, lâche ce qu'elle tient, fuit, tombe À terre ou s'arrête à son prochain tour, selon l'ordre choisi. Les emplacements supérieurs ajoutent des cibles.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Comprehend Languages": {
+    "name": "Comprendre les langues",
+    "description": "Pendant 1 heure, comprenez le sens littéral des langues parlées ou signées et des textes que vous touchez. Lire une page prend environ une minute ; les messages codés demeurent indéchiffrables.",
+    "material": "une pincée de suie et de sel",
+    "castingTime": "Action ou rituel",
+    "range": "Personnel",
+    "duration": "1 heure"
+  },
+  "Create or Destroy Water": {
+    "name": "Créer ou détruire de l'eau",
+    "description": "Créez ou détruisez jusqu'à 10 gallons d'eau dans un récipient ouvert, ou provoquez de la pluie ou dissipez du brouillard dans un cube de 30 pieds. Les emplacements supérieurs ajoutent 10 gallons ou agrandissent le cube.",
+    "material": "un mélange d'eau et de sable",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 10 gallons ou augmente le côté du cube de 5 pieds.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Instantanée"
+  },
+  "Cure Wounds": {
+    "name": "Soin des blessures",
+    "description": "Une créature touchée regagne un nombre de points de vie égal à 2d8 plus votre modificateur de caractéristique d'incantation. Chaque niveau d'emplacement au-delà du 1er ajoute 2d8 points de vie rendus.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 2d8.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Detect Evil and Good": {
+    "name": "Détecter le mal et le bien",
+    "description": "Pendant 10 minutes au maximum, détectez les aberrations, célestes, élémentaires, fées, fiélons et morts-vivants à 30 pieds, ainsi que tout effet de Sanctification actif dans cette zone. Des obstacles épais bloquent cette perception.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Detect Magic": {
+    "name": "Détecter la magie",
+    "description": "Pendant 10 minutes au maximum, percevez les effets magiques à 30 pieds. Une action Magie révèle les auras magiques visibles et l'école d'un sort ; des obstacles suffisamment épais empêchent la détection.",
+    "castingTime": "Action ou rituel",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Detect Poison and Disease": {
+    "name": "Détecter le poison et la maladie",
+    "description": "Pendant 10 minutes au maximum, percevez l'emplacement et la nature des poisons, des créatures venimeuses ou toxiques et des contagions magiques à 30 pieds. Des obstacles épais empêchent la détection.",
+    "material": "une feuille d'if",
+    "castingTime": "Action ou rituel",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Disguise Self": {
+    "name": "Se déguiser",
+    "description": "Modifiez pendant 1 heure l'apparence de votre corps et de votre équipement porté, sans trop changer votre silhouette. L'illusion ne résiste pas à une inspection physique.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "1 heure"
+  },
+  "Dissonant Whispers": {
+    "name": "Murmures dissonants",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse. En cas d'échec, elle subit 3d6 dégâts psychiques et utilise sa Réaction, si disponible, pour fuir sans danger ; une réussite réduit les dégâts de moitié. Les emplacements supérieurs ajoutent 1d6.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Divine Favor": {
+    "name": "Faveur divine",
+    "description": "Pendant 1 minute, chaque attaque d'arme qui touche inflige 1d4 dégâts radiants supplémentaires.",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "1 minute"
+  },
+  "Divine Smite": {
+    "name": "Châtiment divin",
+    "description": "Immédiatement après avoir touché avec une arme de corps à corps ou une Frappe à mains nues, utilisez une action bonus pour infliger 2d8 dégâts radiants supplémentaires ; ajoutez 1d8 contre un fiélon ou mort-vivant et 1d8 par niveau d'emplacement au-delà du 1er.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d8.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une cible avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Ensnaring Strike": {
+    "name": "Frappe entravante",
+    "description": "Immédiatement après avoir touché avec une arme, des lianes obligent la cible à effectuer un jet de sauvegarde de Force. En cas d'échec, elle est Entravée pendant 1 minute au maximum et subit 1d6 dégâts perforants au début de chacun de ses tours jusqu'à ce qu'elle s'échappe ou que le sort prenne fin.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une créature avec une arme",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Entangle": {
+    "name": "Emmêler",
+    "description": "Des plantes remplissent un carré de 20 pieds et en font un terrain difficile pendant 1 minute au maximum. Les créatures présentes lors de l'incantation effectuent un jet de sauvegarde de Force ou sont Entravées ; elles peuvent utiliser une action pour se libérer.",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Expeditious Retreat": {
+    "name": "Retraite accélérée",
+    "description": "Utilisez Foncer lorsque vous lancez ce sort ; pendant 10 minutes au maximum, vous pouvez de nouveau Foncer par une action bonus lors des tours suivants.",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Faerie Fire": {
+    "name": "Feu féerique",
+    "description": "Les créatures dans un cube de 20 pieds qui ratent un jet de sauvegarde de Dextérité brillent pendant 1 minute au maximum. Elles ne profitent pas de l'Invisibilité et les attaquants capables de les voir ont l'Avantage contre elles.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "False Life": {
+    "name": "Simulacre de vie",
+    "description": "Vous gagnez 2d4 + 4 points de vie temporaires. Chaque niveau d'emplacement au-delà du 1er accorde 5 points de vie temporaires supplémentaires.",
+    "material": "une goutte d'alcool",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 5 points de vie temporaires.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Feather Fall": {
+    "name": "Chute de plume",
+    "description": "Lorsque des créatures tombent, utilisez une Réaction pour ralentir la chute de cinq d'entre elles au maximum à 60 pieds par round pendant 1 minute. Elles ne subissent aucun dégât de chute si elles atterrissent avant la fin du sort.",
+    "material": "une petite plume ou un morceau de duvet",
+    "castingTime": "Réaction, à entreprendre lorsque vous ou une créature que vous voyez à 60 pieds de vous tombez",
+    "range": "60 pieds",
+    "duration": "1 minute"
+  },
+  "Find Familiar": {
+    "name": "Appel de familier",
+    "description": "Invoquez un esprit céleste, féerique ou fiélon sous la forme d'une bête de FP 0. Il agit de manière autonome et ne peut attaquer. À 100 pieds, vous pouvez communiquer avec lui par télépathie, utiliser ses sens ou lui faire transmettre un sort de contact par sa Réaction. Vous pouvez le renvoyer et le rappeler.",
+    "material": "de l'encens brûlant valant au moins 10 PO, consumé par le sort",
+    "castingTime": "1 heure ou rituel",
+    "range": "10 pieds",
+    "duration": "Instantanée"
+  },
+  "Floating Disk": {
+    "name": "Disque flottant",
+    "description": "Créez un disque flottant de 3 pieds capable de porter jusqu'à 500 livres pendant 1 heure. Il vous suit lorsque vous vous éloignez de plus de 20 pieds.",
+    "material": "une goutte de mercure",
+    "castingTime": "Action ou rituel",
+    "range": "30 pieds",
+    "duration": "1 heure"
+  },
+  "Fog Cloud": {
+    "name": "Nuage de brouillard",
+    "description": "Créez une sphère de brouillard de 20 pieds de rayon fortement obscurcie pendant 1 heure au maximum. Un vent fort la disperse ; chaque niveau d'emplacement au-delà du 1er augmente son rayon de 20 pieds.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er augmente le rayon du brouillard de 20 pieds.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Goodberry": {
+    "name": "Baies nourricières",
+    "description": "Créez dix baies magiques qui durent 24 heures. En manger une par une action bonus rend 1 point de vie et nourrit pour une journée.",
+    "material": "un brin de gui",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "24 heures"
+  },
+  "Grease": {
+    "name": "Graisse",
+    "description": "Recouvrez un carré de 10 pieds de graisse ininflammable pendant 1 minute, en faisant un terrain difficile. Les créatures présentes à son apparition, ou qui y entrent ou y terminent un tour, effectuent un jet de sauvegarde de Dextérité ou tombent À terre.",
+    "material": "un peu de couenne de porc ou de beurre",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "1 minute"
+  },
+  "Guiding Bolt": {
+    "name": "Trait traçant",
+    "description": "Effectuez une attaque de sort à distance. Si elle touche, elle inflige 4d6 dégâts radiants et donne l'Avantage à la prochaine attaque contre la cible avant la fin de votre prochain tour. Les emplacements supérieurs ajoutent 1d6.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "1 round",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Healing Word": {
+    "name": "Mot de guérison",
+    "description": "Une créature visible à 60 pieds regagne un nombre de points de vie égal à 2d4 plus votre modificateur de caractéristique d'incantation. Chaque niveau d'emplacement au-delà du 1er ajoute 2d4 points de vie rendus.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 2d4.",
+    "castingTime": "Action bonus",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Hellish Rebuke": {
+    "name": "Réprimande infernale",
+    "description": "Utilisez votre Réaction après qu'une créature visible à 60 pieds vous inflige des dégâts. Elle effectue un jet de sauvegarde de Dextérité, subissant 2d10 dégâts de feu en cas d'échec ou la moitié en cas de réussite ; les emplacements supérieurs ajoutent 1d10.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d10.",
+    "castingTime": "Réaction, à entreprendre après avoir subi des dégâts d'une créature que vous voyez à 60 pieds de vous",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Heroism": {
+    "name": "Héroïsme",
+    "description": "Une créature consentante touchée est immunisée contre l'état Effrayé et gagne au début de chacun de ses tours des points de vie temporaires égaux à votre modificateur de caractéristique d'incantation pendant 1 minute au maximum. Les emplacements supérieurs ajoutent des cibles.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Hex": {
+    "name": "Maléfice",
+    "description": "Maudissez une créature visible pendant 1 heure au maximum. Vos attaques qui la touchent lui infligent 1d6 dégâts nécrotiques supplémentaires et elle a le Désavantage aux tests d'une caractéristique choisie. Une action bonus permet de déplacer la malédiction lorsqu'elle tombe à 0 point de vie.",
+    "material": "l'œil pétrifié d'un triton",
+    "higherLevels": "Un emplacement de niveau 2 permet de se concentrer jusqu'à 4 heures, de niveau 3 ou 4 jusqu'à 8 heures et de niveau 5 ou plus jusqu'à 24 heures.",
+    "castingTime": "Action bonus",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Hideous Laughter": {
+    "name": "Rire hideux",
+    "description": "Une créature visible qui rate un jet de sauvegarde de Sagesse tombe À terre et devient Incapable d'agir pendant 1 minute au maximum. Elle retente le jet après avoir subi des dégâts et à la fin de chacun de ses tours.",
+    "material": "une tartelette et une plume",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Hunter's Mark": {
+    "name": "Marque du chasseur",
+    "description": "Marquez une créature visible pendant 1 heure au maximum. Vos attaques qui la touchent lui infligent 1d6 dégâts de force supplémentaires et vous avez l'Avantage aux tests de Perception ou de Survie pour la retrouver. Une action bonus permet de déplacer la marque lorsqu'elle tombe à 0 point de vie.",
+    "higherLevels": "Un emplacement de niveau 3 ou 4 permet de se concentrer jusqu'à 8 heures, et de niveau 5 ou plus jusqu'à 24 heures.",
+    "castingTime": "Action bonus",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Ice Knife": {
+    "name": "Couteau de glace",
+    "description": "Effectuez une attaque de sort à distance contre une créature, infligeant 1d10 dégâts perforants si elle touche. Que l'attaque touche ou non, l'éclat explose : la cible et les créatures à 5 pieds effectuent un jet de sauvegarde de Dextérité ou subissent 2d6 dégâts de froid. Les emplacements supérieurs augmentent les dégâts de froid.",
+    "material": "une goutte d'eau ou un morceau de glace",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6 dégâts de froid.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "piercing": {
+        "label": "Dégâts perforants"
+      },
+      "burst": {
+        "label": "Dégâts de l'explosion"
+      }
+    }
+  },
+  "Identify": {
+    "name": "Identifier",
+    "description": "Touchez un objet pendant l'incantation pour connaître ses propriétés magiques, son harmonisation, ses charges et les sorts actifs, ou touchez une créature pour connaître les sorts qui l'affectent. Nécessite une perle d'une valeur d'au moins 100 PO.",
+    "material": "une perle valant au moins 100 PO",
+    "castingTime": "1 minute ou rituel",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Illusory Script": {
+    "name": "Écriture illusoire",
+    "description": "Écrivez un message que les lecteurs désignés voient normalement, tandis que les autres voient un texte incompréhensible ou trompeur pendant 10 jours. L'encre d'une valeur d'au moins 10 PO est consommée.",
+    "material": "de l'encre valant au moins 10 PO, consumée par le sort",
+    "castingTime": "1 minute ou rituel",
+    "range": "Contact",
+    "duration": "10 jours"
+  },
+  "Inflict Wounds": {
+    "name": "Infliger des blessures",
+    "description": "Une créature touchée effectue un jet de sauvegarde de Constitution, subissant 2d10 dégâts nécrotiques en cas d'échec ou la moitié en cas de réussite. Chaque niveau d'emplacement au-delà du 1er ajoute 1d10.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d10.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Jump": {
+    "name": "Saut",
+    "description": "Une créature consentante touchée peut sauter de 30 pieds une fois par tour en dépensant 10 pieds de déplacement pendant 1 minute. Les emplacements supérieurs ajoutent une cible par niveau.",
+    "material": "une patte arrière de sauterelle",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action bonus",
+    "range": "Contact",
+    "duration": "1 minute"
+  },
+  "Longstrider": {
+    "name": "Grand pas",
+    "description": "Une créature touchée gagne 10 pieds de Vitesse pendant 1 heure. Chaque niveau d'emplacement au-delà du 1er ajoute une cible.",
+    "material": "une pincée de terre",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Mage Armor": {
+    "name": "Armure du mage",
+    "description": "Pendant 8 heures, une créature consentante sans armure que vous touchez a une CA de base de 13 plus son modificateur de Dextérité. Revêtir une armure met fin au sort.",
+    "material": "un morceau de cuir tanné",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "8 heures"
+  },
+  "Magic Missile": {
+    "name": "Projectiles magiques",
+    "description": "Trois projectiles de force touchent automatiquement les créatures visibles de votre choix, infligeant chacun 1d4 + 1 dégâts de force. Ils touchent tous simultanément ; les emplacements supérieurs créent un projectile supplémentaire par niveau.",
+    "higherLevels": "Créez une fléchette supplémentaire par niveau d'emplacement au-delà du 1er.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Instantanée"
+  },
+  "Protection from Evil and Good": {
+    "name": "Protection contre le mal et le bien",
+    "description": "Pendant 10 minutes au maximum, une créature consentante est protégée contre les aberrations, célestes, élémentaires, fées, fiélons et morts-vivants : leurs attaques ont le Désavantage et ils ne peuvent ni la posséder, ni la Charmer, ni l'Effrayer.",
+    "material": "une fiole d'eau bénite valant au moins 25 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration jusqu'à 10 minutes"
+  },
+  "Purify Food and Drink": {
+    "name": "Purification de la nourriture et de l'eau",
+    "description": "Éliminez le poison et la pourriture des aliments et boissons non magiques dans une sphère de 5 pieds de rayon à 10 pieds.",
+    "castingTime": "Action ou rituel",
+    "range": "10 pieds",
+    "duration": "Instantanée"
+  },
+  "Ray of Sickness": {
+    "name": "Rayon de maladie",
+    "description": "Effectuez une attaque de sort à distance. Si elle touche, elle inflige 2d8 dégâts de poison et Empoisonne la cible jusqu'à la fin de votre prochain tour ; les emplacements supérieurs ajoutent 1d8 dégâts.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d8.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Sanctuary": {
+    "name": "Sanctuaire",
+    "description": "Protégez une créature pendant 1 minute. Un attaquant ou lanceur de sorts qui la cible doit réussir un jet de sauvegarde de Sagesse ou choisir une autre cible, sous peine de perdre sa tentative. La protection prend fin si la créature protégée attaque, lance un sort ou inflige des dégâts.",
+    "material": "un éclat de miroir",
+    "castingTime": "Action bonus",
+    "range": "30 pieds",
+    "duration": "1 minute"
+  },
+  "Searing Smite": {
+    "name": "Châtiment brûlant",
+    "description": "Immédiatement après avoir touché avec une arme de corps à corps ou une Frappe à mains nues, infligez 1d6 dégâts de feu supplémentaires. La cible subit ensuite 1d6 dégâts de feu au début de chaque tour jusqu'à réussir un jet de sauvegarde de Constitution ; les emplacements supérieurs augmentent les deux dégâts.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6 à chaque jet de dégâts.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une cible avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "1 minute"
+  },
+  "Shield": {
+    "name": "Bouclier",
+    "description": "Utilisez votre Réaction lorsque vous êtes touché ou ciblé par Projectiles magiques pour gagner +5 à la CA jusqu'au début de votre prochain tour, y compris contre l'attaque déclenchante, et ne subir aucun dégât de Projectiles magiques.",
+    "castingTime": "Réaction, à entreprendre lorsqu'une attaque vous touche ou que vous êtes ciblé par le sort Projectiles magiques",
+    "range": "Personnel",
+    "duration": "1 round"
+  },
+  "Shield of Faith": {
+    "name": "Bouclier de foi",
+    "description": "Une créature à 60 pieds gagne +2 à la CA pendant 10 minutes au maximum tant que vous maintenez votre Concentration.",
+    "material": "un parchemin de prière",
+    "castingTime": "Action bonus",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Silent Image": {
+    "name": "Image silencieuse",
+    "description": "Créez une image purement visuelle tenant dans un cube de 15 pieds pendant 10 minutes au maximum. Vous pouvez la déplacer par une action Magie ; le contact physique révèle l'illusion.",
+    "material": "un peu de toison",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Sleep": {
+    "name": "Dormir",
+    "description": "Les créatures choisies dans une sphère de 5 pieds de rayon effectuent un jet de sauvegarde de Sagesse. Un échec les rend Incapables d'agir jusqu'à la fin de leur prochain tour ; un second échec les rend Inconscientes pendant 1 minute au maximum. Des dégâts ou le fait d'être secouées mettent fin à l'effet ; les créatures qui ne dorment pas réussissent automatiquement.",
+    "material": "une pincée de sable ou de pétales de rose",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Speak with Animals": {
+    "name": "Communication avec les animaux",
+    "description": "Pendant 10 minutes, comprenez et parlez avec les bêtes. Vous pouvez notamment utiliser l'action Influencer avec elles et poser des questions sur les lieux ou créatures proches.",
+    "castingTime": "Action ou rituel",
+    "range": "Personnel",
+    "duration": "10 minutes"
+  },
+  "Thunderwave": {
+    "name": "Onde d'orage",
+    "description": "Un cube de tonnerre de 15 pieds jaillit de vous. Les créatures effectuent un jet de sauvegarde de Constitution, subissant 2d8 dégâts de tonnerre et étant repoussées de 10 pieds en cas d'échec ou la moitié des dégâts en cas de réussite. Les emplacements supérieurs ajoutent 1d8 dégâts.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d8.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Unseen Servant": {
+    "name": "Serviteur invisible",
+    "description": "Créez une force invisible dépourvue d'esprit pendant 1 heure. Elle ne peut attaquer, mais peut accomplir les tâches simples que vous lui ordonnez par une action bonus.",
+    "material": "un bout de ficelle et de bois",
+    "castingTime": "Action ou rituel",
+    "range": "60 pieds",
+    "duration": "1 heure"
+  },
+  "Acid Arrow": {
+    "name": "Flèche acide",
+    "description": "Effectuez une attaque de sort à distance contre une cible. Si elle touche, elle inflige immédiatement 4d4 dégâts d'acide, puis 2d4 à la fin du prochain tour de la cible ; si elle rate, elle inflige seulement la moitié des dégâts initiaux. Les emplacements supérieurs ajoutent 1d4 aux deux jets de dégâts.",
+    "material": "de la poudre de feuille de rhubarbe",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d4 aux deux jets de dégâts.",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Instantanée"
+  },
+  "Aid": {
+    "name": "Aide",
+    "description": "Jusqu'à trois créatures à 30 pieds gagnent 5 points de vie actuels et maximaux pendant 8 heures. Chaque niveau d'emplacement au-delà du 2e ajoute 5 points de vie.",
+    "material": "une bande de tissu blanc",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 5 aux points de vie actuels et maximaux.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "8 heures"
+  },
+  "Alter Self": {
+    "name": "Modification d'apparence",
+    "description": "Pendant 1 heure au maximum, choisissez l'adaptation aquatique (respiration sous l'eau et Vitesse de nage), une apparence modifiée sans changer vos statistiques ou des armes naturelles infligeant 1d6 dégâts avec votre caractéristique d'incantation. Une action Magie permet de changer d'option.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Animal Messenger": {
+    "name": "Messager des animaux",
+    "description": "Une bête de taille Très Petite et de FP 0 qui rate un jet de sauvegarde de Charisme porte un message de 25 mots au maximum vers un lieu déjà visité. Elle parcourt environ 25 milles par jour, ou 50 si elle vole, pendant 24 heures ; les emplacements supérieurs ajoutent chacun 48 heures.",
+    "material": "un morceau de nourriture",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e prolonge la durée de 48 heures.",
+    "castingTime": "Action ou rituel",
+    "range": "30 pieds",
+    "duration": "24 heures"
+  },
+  "Arcane Lock": {
+    "name": "Verrou arcanique",
+    "description": "Verrouillez magiquement une porte, fenêtre, grille, boîte ou trappe fermée jusqu'à dissipation. Les créatures désignées ou quiconque prononce votre mot de passe peuvent l'ouvrir ; l'incantation consomme de la poudre d'or valant au moins 25 PO.",
+    "material": "de la poussière d'or valant au moins 25 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Arcanist's Magic Aura": {
+    "name": "Aura magique de l'arcaniste",
+    "description": "Placez une fausse aura magique sur un objet ou masquez le type apparent d'une créature consentante pendant 24 heures. Lancer le sort chaque jour sur la même cible pendant 30 jours fait durer l'illusion jusqu'à dissipation.",
+    "material": "un petit carré de soie",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "24 heures"
+  },
+  "Augury": {
+    "name": "Augure",
+    "description": "Découvrez si une action envisagée dans les 30 prochaines minutes aura probablement des conséquences bonnes, mauvaises, mitigées ou neutres. Chaque incantation après la première avant un Repos long a une chance cumulative de 25 % de ne donner aucune réponse.",
+    "material": "des baguettes, osselets, cartes ou autres objets divinatoires spécialement marqués, valant au moins 25 PO",
+    "castingTime": "1 minute ou rituel",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Barkskin": {
+    "name": "Peau d'écorce",
+    "description": "Une créature consentante touchée a une CA de 17 lorsque sa CA normale serait inférieure, pendant 1 heure.",
+    "material": "une poignée d'écorce",
+    "castingTime": "Action bonus",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Blindness/Deafness": {
+    "name": "Cécité/Surdité",
+    "description": "Une créature visible effectue un jet de sauvegarde de Constitution ou est Aveuglée ou Assourdie pendant 1 minute. Elle retente le jet à la fin de chaque tour ; les emplacements supérieurs ajoutent une cible par niveau.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "1 minute"
+  },
+  "Blur": {
+    "name": "Flou",
+    "description": "Pendant 1 minute au maximum, les attaquants ont le Désavantage à leurs jets d'attaque contre vous, sauf s'ils vous perçoivent par Vision aveugle ou Vision véritable.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Calm Emotions": {
+    "name": "Calmer les émotions",
+    "description": "Les humanoïdes dans une sphère de 20 pieds de rayon effectuent un jet de sauvegarde de Charisme. En cas d'échec, vous pouvez supprimer leur état Charmé ou Effrayé ou les rendre Indifférents aux créatures envers lesquelles ils étaient hostiles pendant 1 minute au maximum.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Continual Flame": {
+    "name": "Flamme Continue",
+    "description": "Créez sur un objet une flamme froide sans combustible émettant une lumière vive sur 20 pieds et faible sur 20 pieds supplémentaires jusqu'à dissipation. L'incantation consomme de la poudre de rubis valant au moins 50 PO.",
+    "material": "de la poussière de rubis valant au moins 50 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Darkness": {
+    "name": "Obscurité",
+    "description": "Créez une sphère de 15 pieds de rayon d'Obscurité magique pendant 10 minutes au maximum ou centrez-la sur un objet non porté. La lumière ordinaire ne peut l'éclairer et la vision dans le noir ne permet pas de voir au travers.",
+    "material": "de la fourrure de chauve-souris et un morceau de charbon",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Darkvision": {
+    "name": "Vision dans le noir",
+    "description": "Une créature consentante touchée gagne la vision dans le noir sur 150 pieds pendant 8 heures.",
+    "material": "une carotte séchée",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "8 heures"
+  },
+  "Detect Thoughts": {
+    "name": "Détecter les pensées",
+    "description": "Pendant 1 minute au maximum, détectez les créatures pensantes proches ou lisez les pensées superficielles d'une créature visible. Une action Magie permet de changer d'effet ; sonder davantage exige un jet de sauvegarde de Sagesse et alerte la cible.",
+    "material": "1 pièce de cuivre",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Dragon's Breath": {
+    "name": "Souffle du dragon",
+    "description": "Une créature consentante touchée peut utiliser une action Magie pour souffler un cône de 15 pieds d'acide, de froid, de feu, de foudre ou de poison. Les créatures dans la zone effectuent un jet de sauvegarde de Dextérité contre 3d6 dégâts, réduits de moitié en cas de réussite ; les emplacements supérieurs ajoutent 1d6.",
+    "material": "un piment",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d6 dégâts.",
+    "castingTime": "Action bonus",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Enhance Ability": {
+    "name": "Amélioration de caractéristique",
+    "description": "Une créature touchée a l'Avantage aux tests utilisant une caractéristique choisie autre que la Constitution pendant 1 heure au maximum. Les emplacements supérieurs ajoutent des cibles.",
+    "material": "de la fourrure ou une plume",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Enlarge/Reduce": {
+    "name": "Agrandir/Réduire",
+    "description": "Agrandissez ou réduisez une créature ou un objet non porté pendant 1 minute au maximum ; une créature non consentante peut résister avec un jet de sauvegarde de Constitution. La taille, le poids et les dégâts des armes changent en conséquence.",
+    "material": "une pincée de fer en poudre",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Enthrall": {
+    "name": "Fascination",
+    "description": "Les créatures visibles avec lesquelles vous ne combattez pas effectuent un jet de sauvegarde de Sagesse ou subissent un malus de -10 aux tests de Perception et à la Perception passive pendant 1 minute au maximum.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Find Steed": {
+    "name": "Appel de destrier",
+    "description": "Invoquez un destrier loyal d'un autre monde dans un espace à 30 pieds. Il utilise le profil du Destrier extraplanaire et peut adopter une forme céleste, féerique ou fiélonne.",
+    "higherLevels": "Utilisez le niveau de l'emplacement pour déterminer les statistiques de la monture.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Instantanée"
+  },
+  "Find Traps": {
+    "name": "Détection des pièges",
+    "description": "Détectez si un piège créé délibérément se trouve à 120 pieds et dans votre ligne de vue, et découvrez son danger général, mais pas son emplacement exact.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Instantanée"
+  },
+  "Flame Blade": {
+    "name": "Lame de feu",
+    "description": "Conjurez une lame enflammée pendant 10 minutes au maximum. Par une action Magie, effectuez avec elle une attaque de sort au corps à corps infligeant 3d6 dégâts de feu plus votre modificateur de caractéristique d'incantation si elle touche ; les emplacements supérieurs augmentent les dégâts.",
+    "material": "une feuille de sumac",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d6 dégâts.",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Flaming Sphere": {
+    "name": "Sphère enflammée",
+    "description": "Créez une sphère de feu de 5 pieds pendant 1 minute au maximum. Les créatures proches effectuent un jet de sauvegarde de Dextérité contre 2d6 dégâts de feu, réduits de moitié en cas de réussite ; une action bonus déplace la sphère et peut imposer un autre jet.",
+    "material": "une boule de cire",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d6 dégâts.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Gentle Repose": {
+    "name": "Préservation des morts",
+    "description": "Préservez un cadavre ou des restes pendant 10 jours, empêchant leur décomposition et leur transformation en mort-vivant. Le temps protégé ne compte pas dans les limites de résurrection ; le sort consomme deux pièces de cuivre.",
+    "material": "2 pièces de cuivre, consumées par le sort",
+    "castingTime": "Action ou rituel",
+    "range": "Contact",
+    "duration": "10 jours"
+  },
+  "Gust of Wind": {
+    "name": "Bourrasque",
+    "description": "Une ligne de vent longue de 60 pieds et large de 10 pieds repousse de 15 pieds les créatures qui ratent leur jet de sauvegarde de Force et gêne leur déplacement vers vous pendant 1 minute au maximum.",
+    "material": "une graine de légumineuse",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Heat Metal": {
+    "name": "Chauffer le métal",
+    "description": "Chauffez un objet manufacturé en métal visible pendant 1 minute au maximum. Une créature qui le touche subit immédiatement 2d8 dégâts de feu, puis de nouveau quand vous utilisez une action bonus lors des tours suivants.",
+    "material": "un morceau de fer et une flamme",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d8 dégâts.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Hold Person": {
+    "name": "Immobilisation de personne",
+    "description": "Un humanoïde visible effectue un jet de sauvegarde de Sagesse ou est Paralysé pendant 1 minute au maximum ; il retente le jet à la fin de chaque tour. Les emplacements supérieurs ajoutent un humanoïde par niveau.",
+    "material": "un morceau de fer droit",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Invisibility": {
+    "name": "Invisibilité",
+    "description": "Une créature touchée devient Invisible pendant 1 heure au maximum. Attaquer, infliger des dégâts ou lancer un sort met fin à l'effet prématurément ; les emplacements supérieurs ajoutent des cibles.",
+    "material": "un cil dans de la gomme arabique",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Knock": {
+    "name": "Déblocage",
+    "description": "Déverrouillez ou ôtez la barre d'un objet visible à 60 pieds, même s'il s'agit d'une serrure magique, qui est brièvement neutralisée. L'ouverture produit un bruit fort audible aux alentours.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Lesser Restoration": {
+    "name": "Restauration partielle",
+    "description": "D'un contact, mettez fin à un état sur une créature : Aveuglé, Assourdi, Paralysé ou Empoisonné.",
+    "castingTime": "Action bonus",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Levitate": {
+    "name": "Léviter",
+    "description": "Élevez une créature visible ou un objet non fixé jusqu'à 20 pieds pendant 10 minutes au maximum. Une créature non consentante peut résister avec un jet de sauvegarde de Constitution ; pour se déplacer, elle doit se tirer contre une surface.",
+    "material": "un ressort métallique",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Locate Animals or Plants": {
+    "name": "Localiser des animaux ou des plantes",
+    "description": "Nommez une espèce de bête, une créature végétale ou une plante non magique et apprenez la direction et la distance de la plus proche dans un rayon de 5 milles.",
+    "material": "de la fourrure de limier",
+    "castingTime": "Action ou rituel",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Locate Object": {
+    "name": "Localiser un objet",
+    "description": "Pendant 10 minutes au maximum, percevez la direction d'un objet familier à 1 000 pieds, y compris ses déplacements. D'épais obstacles de plomb bloquent l'effet.",
+    "material": "une brindille fourchue",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Magic Mouth": {
+    "name": "Bouche Magique",
+    "description": "Placez dans un objet un message parlé de 25 mots au maximum. Il le prononce quand survient le déclencheur observable choisi, jusqu'à dissipation ; l'incantation consomme de la poudre de jade valant au moins 10 PO.",
+    "material": "de la poussière de jade valant au moins 10 PO, consumée par le sort",
+    "castingTime": "1 minute ou rituel",
+    "range": "30 pieds",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Magic Weapon": {
+    "name": "Arme magique",
+    "description": "Une arme non magique touchée devient magique et gagne +1 aux jets d'attaque et de dégâts pendant 1 heure. Un emplacement de niveau 3 à 5 porte le bonus à +2 ; de niveau 6 ou supérieur, à +3.",
+    "higherLevels": "Le bonus passe à +2 avec un emplacement de niveau 3 à 5 et à +3 avec un emplacement de niveau 6 ou plus.",
+    "castingTime": "Action bonus",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Mind Spike": {
+    "name": "Pointe mentale",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse, subissant 3d8 dégâts psychiques en cas d'échec ou la moitié en cas de réussite. Si elle échoue, vous connaissez son emplacement sur le même plan pendant 1 heure au maximum.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d8 dégâts.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 heure",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Mirror Image": {
+    "name": "Image miroir",
+    "description": "Trois doubles illusoires apparaissent pendant 1 minute. Quand une attaque vous touche, lancez les dés pour les doubles restants ; un résultat favorable fait recevoir l'attaque à l'un d'eux à votre place.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "1 minute"
+  },
+  "Misty Step": {
+    "name": "Pas brumeux",
+    "description": "Par une action bonus, téléportez-vous de 30 pieds au maximum vers un espace libre visible.",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Moonbeam": {
+    "name": "Rayon de lune",
+    "description": "Un rayon de 5 pieds de rayon et 40 pieds de haut dure 1 minute au maximum et peut être déplacé de 60 pieds par une action Magie. Les créatures qui y entrent ou y terminent un tour effectuent un jet de sauvegarde de Constitution contre 2d10 dégâts radiants, réduits de moitié en cas de réussite ; un échec met aussi fin à leur changement de forme.",
+    "material": "une feuille de graine de lune",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d10 dégâts.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Pass without Trace": {
+    "name": "Passer sans laisser de trace",
+    "description": "Pendant 1 heure au maximum, les créatures choisies dans votre aura de 30 pieds gagnent +10 aux tests de Discrétion et ne laissent aucune trace.",
+    "material": "des cendres de gui brûlé",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Phantasmal Force": {
+    "name": "Force fantasmagorique",
+    "description": "Une créature qui rate un jet de sauvegarde d'Intelligence perçoit une illusion personnelle tenant dans un cube de 10 pieds pendant 1 minute au maximum. Elle peut employer l'action Étudier pour ne plus y croire ; un fantasme dangereux peut lui infliger 2d8 dégâts psychiques à chacun de vos tours.",
+    "material": "un peu de toison",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Prayer of Healing": {
+    "name": "Prière de guérison",
+    "description": "Après une incantation de 10 minutes, jusqu'à cinq créatures à portée reçoivent les bienfaits d'un Repos court et regagnent 2d8 points de vie. Chacune ne peut en bénéficier qu'une fois par Repos long ; les emplacements supérieurs ajoutent 1d8 points de vie rendus.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d8 points de vie soignés.",
+    "castingTime": "10 minutes",
+    "range": "30 pieds",
+    "duration": "Instantanée"
+  },
+  "Protection from Poison": {
+    "name": "Protection contre le poison",
+    "description": "Mettez fin à l'état Empoisonné d'une créature touchée. Pendant 1 heure, elle résiste aux dégâts de poison et a l'Avantage aux jets de sauvegarde pour éviter de devenir ou de rester Empoisonnée.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Ray of Enfeeblement": {
+    "name": "Rayon d'affaiblissement",
+    "description": "Une créature effectue un jet de sauvegarde de Constitution. En cas de réussite, sa prochaine attaque a le Désavantage jusqu'à votre prochain tour. En cas d'échec, elle a le Désavantage aux tests de D20 basés sur la Force et retranche 1d8 de ses jets de dégâts pendant 1 minute au maximum, en retentant le jet de sauvegarde à chaque tour.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Rope Trick": {
+    "name": "Corde enchantée",
+    "description": "Touchez une corde pour ouvrir à son extrémité supérieure un espace extradimensionnel invisible pendant 1 heure. Jusqu'à huit créatures de taille Moyenne ou inférieure peuvent s'y cacher.",
+    "material": "un morceau de corde",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Scorching Ray": {
+    "name": "Rayon brûlant",
+    "description": "Lancez trois rayons, chacun nécessitant une attaque de sort à distance et infligeant 2d6 dégâts de feu s'il touche. Les emplacements supérieurs créent un rayon supplémentaire par niveau.",
+    "higherLevels": "Créez un rayon supplémentaire par niveau d'emplacement au-delà du 2e.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Instantanée"
+  },
+  "See Invisibility": {
+    "name": "Voir l'invisibilité",
+    "description": "Pendant 1 heure, voyez normalement les créatures et objets Invisibles et percevez le Plan Éthéré.",
+    "material": "une pincée de talc",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "1 heure"
+  },
+  "Shatter": {
+    "name": "Fracas",
+    "description": "Les créatures dans une sphère de 10 pieds de rayon effectuent un jet de sauvegarde de Constitution, subissant 3d8 dégâts de tonnerre en cas d'échec ou la moitié en cas de réussite ; les artificiels font le jet avec le Désavantage. Les emplacements supérieurs ajoutent 1d8.",
+    "material": "un éclat de mica",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d8 dégâts.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Shining Smite": {
+    "name": "Châtiment éclatant",
+    "description": "Immédiatement après avoir touché avec une arme de corps à corps ou une Frappe à mains nues, infligez 2d6 dégâts radiants supplémentaires. Pendant 1 minute au maximum, la cible brille, ne profite pas de l'Invisibilité et les attaques contre elle ont l'Avantage.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d6 dégâts.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une créature avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Silence": {
+    "name": "Silence",
+    "description": "Créez une sphère de 20 pieds de rayon où aucun son ne passe pendant 10 minutes au maximum. Les créatures entièrement à l'intérieur sont Assourdies, immunisées contre les dégâts de tonnerre et incapables de lancer des sorts à composante verbale.",
+    "castingTime": "Action ou rituel",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Spider Climb": {
+    "name": "Escalade d'araignée",
+    "description": "Une créature consentante touchée gagne une Vitesse d'escalade égale à sa Vitesse et peut parcourir murs et plafonds sans les mains pendant 1 heure au maximum. Les emplacements supérieurs ajoutent des cibles.",
+    "material": "une goutte de bitume et une araignée",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e permet de cibler une créature supplémentaire.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Spike Growth": {
+    "name": "Croissance d'épines",
+    "description": "Une zone de 20 pieds de rayon devient un terrain difficile camouflé pendant 10 minutes au maximum. Une créature qui s'y déplace subit 2d4 dégâts perforants par tranche de 5 pieds parcourus.",
+    "material": "sept épines",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Spiritual Weapon": {
+    "name": "Arme spirituelle",
+    "description": "Créez une arme flottante de force pendant 1 minute au maximum. Effectuez une attaque de sort au corps à corps quand elle apparaît, puis à vos tours suivants par une action bonus ; si elle touche, elle inflige 1d8 dégâts de force plus votre modificateur de caractéristique d'incantation.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e ajoute 1d8 dégâts.",
+    "castingTime": "Action bonus",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Suggestion": {
+    "name": "Suggestion",
+    "description": "Une créature qui entend et comprend une suggestion plausible et non dangereuse de 25 mots au maximum effectue un jet de sauvegarde de Sagesse. Si elle échoue, elle est Charmée et suit l'activité pendant 8 heures au maximum, jusqu'à ce qu'elle soit blessée ou l'ait achevée.",
+    "material": "une goutte de miel",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 8 heures"
+  },
+  "Warding Bond": {
+    "name": "Lien protecteur",
+    "description": "Liez-vous à une créature consentante portant l'un des anneaux de platine requis. Tant que vous êtes à 60 pieds ou moins, elle gagne +1 à la CA et aux sauvegardes et résiste à tous les dégâts, mais vous subissez les mêmes dégâts qu'elle.",
+    "material": "une paire d'anneaux de platine valant chacun au moins 50 PO, que vous et la cible devez porter pendant toute la durée",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Web": {
+    "name": "Toile d'araignée",
+    "description": "Des toiles collantes remplissent un cube de 20 pieds pendant 1 heure au maximum, créant un terrain difficile et une zone légèrement obscurcie. Une créature qui y entre ou y commence son tour effectue un jet de sauvegarde de Dextérité ou est Entravée ; elle peut se libérer avec une action de Force (Athlétisme). Les toiles en feu infligent 2d4 dégâts de feu.",
+    "material": "un peu de toile d'araignée",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Zone of Truth": {
+    "name": "Zone de vérité",
+    "description": "Créez une sphère de 15 pieds de rayon pendant 10 minutes. Les créatures qui y entrent ou y commencent leur tour effectuent un jet de sauvegarde de Charisme ; celles qui échouent ne peuvent mentir délibérément et vous savez si chacune a réussi.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "10 minutes"
+  },
+  "Animate Dead": {
+    "name": "Animer les morts",
+    "description": "Animez le cadavre d'un humanoïde de taille Moyenne ou Petite en zombie, ou ses os en squelette. Commandez vos morts-vivants à 60 pieds par une action bonus ; le contrôle dure 24 heures et peut être renouvelé avant son expiration.",
+    "material": "une goutte de sang, un morceau de chair et une pincée de poudre d'os",
+    "higherLevels": "Un emplacement de niveau supérieur au 3e anime ou rétablit votre contrôle sur deux morts-vivants supplémentaires par niveau d'emplacement supplémentaire.",
+    "castingTime": "1 minute",
+    "range": "10 pieds",
+    "duration": "Instantanée"
+  },
+  "Beacon of Hope": {
+    "name": "Lueur d'espoir",
+    "description": "Choisissez autant de créatures que souhaité à 30 pieds. Pendant 1 minute au maximum, elles ont l'Avantage aux jets de sauvegarde de Sagesse et contre la mort et regagnent le maximum de points de vie possible lorsqu'elles sont soignées.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Bestow Curse": {
+    "name": "Malédiction",
+    "description": "Une créature touchée effectue un jet de sauvegarde de Sagesse. En cas d'échec, choisissez une malédiction : Désavantage aux tests et sauvegardes d'une caractéristique ; Désavantage aux attaques contre vous ; jet de sauvegarde de Sagesse à chaque tour ou obligation d'Esquiver ; ou 1d8 dégâts nécrotiques supplémentaires lorsque vous la blessez avec une attaque ou un sort.",
+    "higherLevels": "Un emplacement de niveau 4 prolonge la concentration à 10 minutes ; au niveau 5 ou 6, la concentration n'est plus requise et le sort dure 8 heures ; au niveau 7 ou 8, il dure 24 heures ; au niveau 9, il dure jusqu'à dissipation.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Blink": {
+    "name": "Clignotement",
+    "description": "Pendant 1 minute, lancez 1d6 à la fin de chaque tour. Sur 4 à 6, vous passez dans le Plan Éthéré jusqu'au début de votre prochain tour, puis revenez dans un espace libre à 10 pieds de votre point de départ.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "1 minute"
+  },
+  "Call Lightning": {
+    "name": "Appel de la foudre",
+    "description": "Créez un nuage d'orage au-dessus de vous. À l'incantation et, aux tours suivants, par une action Magie, faites tomber la foudre sur un point en dessous ; les créatures à 5 pieds effectuent un jet de sauvegarde de Dextérité contre 3d10 dégâts de foudre, réduits de moitié en cas de réussite. Un orage préexistant ajoute 1d10.",
+    "higherLevels": "Les dégâts augmentent de 1d10 par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Clairvoyance": {
+    "name": "Voyance",
+    "description": "Placez un point sensoriel invisible et immobile dans un lieu familier ou évident à 1 mille. Voyez ou entendez depuis ce point pendant 10 minutes au maximum ; changez de sens par une action bonus.",
+    "material": "un focaliseur valant au moins 100 PO, soit une corne ornée de joyaux pour entendre, soit un œil de verre pour voir",
+    "castingTime": "10 minutes",
+    "range": "1 mille",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Conjure Animals": {
+    "name": "Invocation d'animaux",
+    "description": "Invoquez une meute intangible de taille Grande d'esprits animaux pendant 10 minutes au maximum. Elle peut se déplacer de 30 pieds avec vous, vous donne l'Avantage aux sauvegardes de Force à 5 pieds et peut obliger des créatures à 10 pieds à effectuer un jet de sauvegarde de Dextérité sous peine de subir 3d10 dégâts tranchants, une fois par tour.",
+    "higherLevels": "Les dégâts augmentent de 1d10 par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Counterspell": {
+    "name": "Contresort",
+    "description": "Utilisez votre Réaction lorsque vous voyez une créature à 60 pieds lancer un sort à composantes. Le lanceur effectue un jet de sauvegarde de Constitution ; en cas d'échec, son sort n'a aucun effet et l'action d'incantation est perdue, mais son emplacement de sort n'est pas dépensé.",
+    "castingTime": "Réaction, à entreprendre lorsque vous voyez une créature à 60 pieds de vous lancer un sort avec des composantes verbales, somatiques ou matérielles",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Create Food and Water": {
+    "name": "Créer de la nourriture et de l'eau",
+    "description": "Créez 45 livres de nourriture nutritive et 30 gallons d'eau potable à 30 pieds. La nourriture se gâte après 24 heures.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Instantanée"
+  },
+  "Daylight": {
+    "name": "Lumière du jour",
+    "description": "Remplissez une sphère de 60 pieds de rayon de lumière solaire et éclairez de lumière faible 60 pieds supplémentaires pendant 1 heure, ou centrez-la sur un objet non porté. Les Ténèbres magiques superposées issues d'un sort de niveau 3 ou inférieur sont dissipées.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "1 heure"
+  },
+  "Dispel Magic": {
+    "name": "Dissiper la magie",
+    "description": "Mettez fin à tous les sorts de niveau 3 ou inférieur sur une créature, un objet ou un effet magique à 120 pieds. Pour chaque sort de niveau supérieur, effectuez un test de caractéristique d'incantation contre un DD égal à 10 plus son niveau.",
+    "higherLevels": "Utiliser un emplacement de niveau supérieur met automatiquement fin aux sorts affectant la cible dont le niveau ne dépasse pas celui de l'emplacement.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Instantanée"
+  },
+  "Fear": {
+    "name": "Peur",
+    "description": "Les créatures dans un cône de 30 pieds effectuent un jet de sauvegarde de Sagesse ou lâchent leurs objets tenus et sont Effrayées pendant 1 minute au maximum. Elles doivent Foncer pour s'éloigner tant qu'elles le peuvent ; elles peuvent retenter le jet à la fin d'un tour sans ligne de vue vers vous.",
+    "material": "une plume blanche",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Fireball": {
+    "name": "Boule de feu",
+    "description": "Un point à 150 pieds éclate en une sphère de 20 pieds de rayon. Les créatures effectuent un jet de sauvegarde de Dextérité, subissant 8d6 dégâts de feu en cas d'échec ou la moitié en cas de réussite. Les objets inflammables non portés s'enflamment.",
+    "material": "une boule de guano de chauve-souris et du soufre",
+    "higherLevels": "Les dégâts augmentent de 1d6 par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Fly": {
+    "name": "Voler",
+    "description": "Une créature consentante touchée gagne une Vitesse de vol de 60 pieds et peut rester en vol stationnaire pendant 10 minutes au maximum. Elle tombe à la fin du sort si elle ne peut empêcher sa chute.",
+    "material": "une plume",
+    "higherLevels": "Ciblez une créature supplémentaire par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Gaseous Form": {
+    "name": "Forme gazeuse",
+    "description": "Une créature consentante touchée se change en brume pendant 1 heure au maximum. Elle vole à 10 pieds, traverse les ouvertures étroites, résiste aux dégâts contondants, perforants et tranchants et ne peut ni attaquer, ni lancer de sorts, ni parler, ni manipuler d'objets.",
+    "material": "un peu de gaze",
+    "higherLevels": "Ciblez une créature supplémentaire par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Glyph of Warding": {
+    "name": "Glyphe de protection",
+    "description": "Inscrivez un glyphe caché sur une surface ou un objet refermable. Le déclencheur choisi le fait exploser pour 5d8 dégâts d'acide, de froid, de feu, de foudre ou de tonnerre dans une sphère de 20 pieds de rayon (sauvegarde de Dextérité pour réduire de moitié) ou libère un sort stocké. Le déplacer de plus de 10 pieds brise le glyphe.",
+    "material": "du diamant en poudre valant au moins 200 PO, consumé par le sort",
+    "higherLevels": "Les dégâts de l'explosion augmentent de 1d8 par niveau d'emplacement au-delà du 3e ; le niveau d'un sort stocké peut atteindre celui de l'emplacement utilisé pour le glyphe.",
+    "castingTime": "1 heure",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation ou déclenchement"
+  },
+  "Haste": {
+    "name": "Hâte",
+    "description": "Une créature consentante double sa Vitesse, gagne +2 à la CA, l'Avantage aux sauvegardes de Dextérité et une action supplémentaire limitée par tour pendant 1 minute au maximum. À la fin, la cible est Incapable d'agir et sa Vitesse est de 0 jusqu'à la fin de son prochain tour.",
+    "material": "un copeau de racine de réglisse",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Hypnotic Pattern": {
+    "name": "Motif hypnotique",
+    "description": "Les créatures qui voient un motif dans un cube de 30 pieds effectuent un jet de sauvegarde de Sagesse ou sont Charmées, Incapables d'agir et immobiles pendant 1 minute au maximum. Des dégâts ou l'action d'une autre créature pour secouer une cible mettent fin à l'effet sur elle.",
+    "material": "une pincée de confettis",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Lightning Bolt": {
+    "name": "Éclair",
+    "description": "Une ligne de foudre longue de 100 pieds et large de 5 pieds jaillit de vous. Les créatures dans la zone effectuent un jet de sauvegarde de Dextérité, subissant 8d6 dégâts de foudre en cas d'échec ou la moitié en cas de réussite.",
+    "material": "un peu de fourrure et une baguette de cristal",
+    "higherLevels": "Les dégâts augmentent de 1d6 par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Magic Circle": {
+    "name": "Cercle magique",
+    "description": "Créez un cylindre de 10 pieds de rayon et 20 pieds de haut pendant 1 heure. Les célestes, élémentaires, fées, fiélons et morts-vivants choisis ne peuvent normalement y entrer, ont le Désavantage aux attaques vers l'intérieur et ne peuvent Charmer, Effrayer ou posséder les créatures à l'intérieur. La barrière peut aussi les emprisonner.",
+    "material": "du sel et de l'argent en poudre valant au moins 100 PO, consumés par le sort",
+    "higherLevels": "La durée augmente de 1 heure par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "1 minute",
+    "range": "10 pieds",
+    "duration": "1 heure"
+  },
+  "Major Image": {
+    "name": "Image majeure",
+    "description": "Créez une illusion convaincante d'apparence, de son, d'odeur et de température tenant dans un cube de 20 pieds pendant 10 minutes au maximum. Elle ne peut infliger ni dégâts ni états ; le contact physique la révèle. Une action Magie permet de la déplacer et la modifier.",
+    "material": "un peu de toison",
+    "higherLevels": "Avec un emplacement de niveau 4 ou supérieur, l'illusion dure jusqu'à dissipation et ne demande aucune concentration.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Mass Healing Word": {
+    "name": "Mot de guérison de groupe",
+    "description": "Par une action bonus, jusqu'à six créatures visibles à 60 pieds regagnent chacune un nombre de points de vie égal à 2d4 plus votre modificateur de caractéristique d'incantation.",
+    "higherLevels": "Les soins augmentent de 1d4 par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action bonus",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Meld into Stone": {
+    "name": "Se fondre dans la pierre",
+    "description": "Fondez-vous avec votre équipement dans un objet de pierre assez grand pendant 8 heures au maximum. Vous pouvez sortir en dépensant 5 pieds de déplacement ; si la pierre est abîmée ou détruite, vous risquez d'être expulsé et blessé.",
+    "castingTime": "Action ou rituel",
+    "range": "Contact",
+    "duration": "8 heures"
+  },
+  "Nondetection": {
+    "name": "Antidétection",
+    "description": "Pendant 8 heures, une créature consentante, un lieu ou un objet d'au plus 10 pieds ne peut être ciblé par des sorts de Divination ni perçu par des capteurs magiques de scrutation.",
+    "material": "une pincée de poussière de diamant valant au moins 25 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "8 heures"
+  },
+  "Phantom Steed": {
+    "name": "Destrier fantomatique",
+    "description": "Créez un cheval de selle quasi réel pendant 1 heure. Sa Vitesse est de 100 pieds et il peut parcourir 13 milles en une heure ; il disparaît en 1 minute à la fin du sort ou prématurément s'il subit des dégâts.",
+    "castingTime": "1 minute ou rituel",
+    "range": "30 pieds",
+    "duration": "1 heure"
+  },
+  "Plant Growth": {
+    "name": "Croissance des plantes",
+    "description": "Choisissez Croissance luxuriante pour que les plantes ordinaires dans une sphère de 100 pieds de rayon coûtent 4 pieds de déplacement par pied parcouru, hors des zones choisies. Ou consacrez 8 heures à enrichir les plantes dans un rayon d'un demi-mille pour doubler la récolte pendant 365 jours.",
+    "castingTime": "Action (croissance luxuriante) ou 8 heures (enrichissement)",
+    "range": "150 pieds",
+    "duration": "Instantanée"
+  },
+  "Protection from Energy": {
+    "name": "Protection contre une énergie",
+    "description": "Une créature consentante touchée résiste aux dégâts d'acide, de froid, de feu, de foudre ou de tonnerre, selon votre choix, pendant 1 heure au maximum.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Remove Curse": {
+    "name": "Délivrance des malédictions",
+    "description": "Mettez fin à toutes les malédictions affectant une créature ou un objet touché. Pour un objet magique maudit, rompez l'Harmonisation de son propriétaire afin de pouvoir le retirer, mais la malédiction de l'objet demeure.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Revivify": {
+    "name": "Revivifier",
+    "description": "Touchez une créature morte depuis moins d'une minute. Elle revient avec 1 point de vie. Le sort ne restaure pas les parties du corps manquantes et ne ramène pas à la vie une créature morte de vieillesse.",
+    "material": "un diamant valant au moins 300 PO, consumé par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Sending": {
+    "name": "Envoi",
+    "description": "Envoyez jusqu'à 25 mots à une créature déjà rencontrée ou décrite par quelqu'un qui l'a rencontrée. Elle peut répondre aussitôt. Il y a 5 % de risque que le message ne parvienne pas dans un autre plan ; le destinataire peut vous bloquer pendant 8 heures.",
+    "material": "un fil de cuivre",
+    "castingTime": "Action",
+    "range": "Illimitée",
+    "duration": "Instantanée"
+  },
+  "Sleet Storm": {
+    "name": "Tempête de grésil",
+    "description": "Un cylindre de 20 pieds de rayon et 40 pieds de haut devient fortement obscurci et terrain difficile pendant 1 minute au maximum. Les créatures qui y entrent ou y commencent leur tour effectuent un jet de sauvegarde de Dextérité ou tombent À terre et perdent leur Concentration.",
+    "material": "un parapluie miniature",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Slow": {
+    "name": "Lenteur",
+    "description": "Jusqu'à six créatures dans un cube de 40 pieds effectuent un jet de sauvegarde de Sagesse. Celles qui échouent voient leur Vitesse réduite de moitié, subissent -2 à la CA et aux sauvegardes de Dextérité, n'ont pas de Réaction, ne peuvent faire qu'une attaque et doivent choisir entre action et action bonus par tour ; les sorts à composante somatique ont 25 % de chance d'échouer. Elles retentent le jet à chaque tour.",
+    "material": "une goutte de mélasse",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Speak with Dead": {
+    "name": "Parler avec les morts",
+    "description": "Posez jusqu'à cinq questions en 10 minutes à un cadavre doté d'une bouche. Il ne sait que ce qu'il savait de son vivant et n'est pas obligé de répondre sincèrement ; un cadavre ciblé dans les 10 derniers jours ne peut être interrogé à nouveau.",
+    "material": "de l'encens brûlant",
+    "castingTime": "Action",
+    "range": "10 pieds",
+    "duration": "10 minutes"
+  },
+  "Speak with Plants": {
+    "name": "Parler avec les plantes",
+    "description": "Les plantes dans une Émanation de 30 pieds peuvent raconter les événements du dernier jour et suivre des ordres simples pendant 10 minutes. Vous pouvez transformer un sol couvert de plantes en terrain difficile ou non et communiquer avec des créatures végétales.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "10 minutes"
+  },
+  "Spirit Guardians": {
+    "name": "Gardiens spirituels",
+    "description": "Des esprits remplissent une Émanation de 15 pieds autour de vous pendant 10 minutes au maximum. Choisissez les créatures épargnées. Les autres y ont leur Vitesse réduite de moitié et effectuent un jet de sauvegarde de Sagesse lorsque l'Émanation atteint leur espace ou lorsqu'elles y entrent ou y terminent un tour : elles subissent 3d8 dégâts radiants ou nécrotiques en cas d'échec ou la moitié en cas de réussite, une fois par tour.",
+    "material": "un parchemin de prière",
+    "higherLevels": "Les dégâts augmentent de 1d8 par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Stinking Cloud": {
+    "name": "Nuage puant",
+    "description": "Créez une sphère de gaz fortement obscurcie de 20 pieds de rayon pendant 1 minute au maximum. Une créature qui y commence son tour effectue un jet de sauvegarde de Constitution ou devient Empoisonnée et ne peut entreprendre ni action ni action bonus ce tour. Un vent fort disperse le nuage.",
+    "material": "un œuf pourri",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Tiny Hut": {
+    "name": "Petite hutte",
+    "description": "Créez un abri immobile sous la forme d'une Émanation de 10 pieds pendant 8 heures. Les créatures et objets présents à l'incantation peuvent le traverser ; les autres non. Les sorts de niveau 3 ou inférieur ne peuvent le traverser. Il disparaît si vous partez ou relancez le sort.",
+    "material": "une perle de cristal",
+    "castingTime": "1 minute ou rituel",
+    "range": "Personnel",
+    "duration": "8 heures"
+  },
+  "Tongues": {
+    "name": "Don des langues",
+    "description": "Une créature touchée comprend pendant 1 heure toute langue parlée ou signée. Toute créature connaissant une langue peut comprendre sa parole ou ses signes.",
+    "material": "une ziggourat miniature",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Vampiric Touch": {
+    "name": "Toucher vampirique",
+    "description": "Effectuez une attaque de sort au corps à corps infligeant 3d6 dégâts nécrotiques si elle touche et regagnez la moitié des dégâts nécrotiques infligés en points de vie. Répétez l'attaque par une action Magie à chaque tour pendant 1 minute au maximum.",
+    "higherLevels": "Les dégâts augmentent de 1d6 par niveau d'emplacement au-delà du 3e.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Water Breathing": {
+    "name": "Respiration aquatique",
+    "description": "Jusqu'à dix créatures consentantes à 30 pieds peuvent respirer sous l'eau pendant 24 heures tout en conservant leur respiration habituelle.",
+    "material": "un roseau court",
+    "castingTime": "Action ou rituel",
+    "range": "30 pieds",
+    "duration": "24 heures"
+  },
+  "Water Walk": {
+    "name": "Marche sur l'eau",
+    "description": "Jusqu'à dix créatures consentantes à 30 pieds peuvent marcher sur les surfaces liquides comme sur un sol solide pendant 1 heure. Elles peuvent employer une action bonus pour passer de la surface au liquide en dessous et inversement.",
+    "material": "un morceau de liège",
+    "castingTime": "Action ou rituel",
+    "range": "30 pieds",
+    "duration": "1 heure"
+  },
+  "Wind Wall": {
+    "name": "Mur de vent",
+    "description": "Créez un mur de vent long de 50 pieds, haut de 15 pieds et épais de 1 pied pendant 1 minute au maximum. Les créatures dans son espace effectuent un jet de sauvegarde de Force contre 4d8 dégâts contondants, réduits de moitié en cas de réussite. Il bloque les gaz, les petites créatures volantes et les projectiles ordinaires.",
+    "material": "un éventail et une plume",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Arcane Eye": {
+    "name": "Œil arcanique",
+    "description": "Créez un œil flottant invisible et invulnérable pendant 1 heure au maximum. Voyez par lui dans toutes les directions, avec une vision dans le noir sur 30 pieds ; déplacez-le de 30 pieds par une action bonus, même par une ouverture d'au moins 1 pouce.",
+    "material": "un peu de fourrure de chauve-souris",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Aura of Life": {
+    "name": "Aura de vie",
+    "description": "Pendant 10 minutes au maximum, une Émanation de 30 pieds autour de vous vous accorde, ainsi qu'à vos alliés, la Résistance aux dégâts nécrotiques et empêche la réduction du maximum de points de vie. Un allié qui y commence un tour à 0 point de vie regagne 1 point de vie.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Banishment": {
+    "name": "Bannissement",
+    "description": "Une créature visible effectue un jet de sauvegarde de Charisme ou est envoyée dans un demi-plan inoffensif, Incapable d'agir, pendant 1 minute au maximum. Elle revient à la fin du sort, sauf si c'est une aberration, un céleste, un élémentaire, une fée ou un fiélon et que la minute entière s'écoule.",
+    "material": "un pentacle",
+    "higherLevels": "Ciblez une créature supplémentaire par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Black Tentacles": {
+    "name": "Tentacules noirs",
+    "description": "Un carré de 20 pieds devient un terrain difficile pendant 1 minute au maximum. Les créatures présentes effectuent un jet de sauvegarde de Force ou subissent 3d6 dégâts contondants et sont Entravées ; elles retentent le jet en entrant dans la zone ou en y terminant un tour, une fois par tour. Une cible Entravée peut se libérer par une action d'Athlétisme.",
+    "material": "un tentacule",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Blight": {
+    "name": "Flétrissement",
+    "description": "Une créature visible à 30 pieds effectue un jet de sauvegarde de Constitution, subissant 8d8 dégâts nécrotiques en cas d'échec ou la moitié en cas de réussite. Les plantes échouent automatiquement ; une plante non magique non portée se flétrit et meurt à la place.",
+    "higherLevels": "Les dégâts augmentent de 1d8 par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Charm Monster": {
+    "name": "Charmer un monstre",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse avec l'Avantage si vous ou un allié la combattez. Si elle échoue, elle est Charmée et Amicale pendant 1 heure ; l'effet cesse plus tôt si vous ou un allié la blessez. Elle sait ensuite que vous l'avez charmée.",
+    "higherLevels": "Ciblez une créature supplémentaire par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "1 heure"
+  },
+  "Compulsion": {
+    "name": "Compulsion",
+    "description": "Les créatures visibles choisies à 30 pieds effectuent un jet de sauvegarde de Sagesse ou sont Charmées pendant 1 minute au maximum. Par une action bonus, indiquez une direction horizontale ; les créatures affectées s'y déplacent par le chemin le plus sûr à leur prochain tour, puis retentent le jet.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Confusion": {
+    "name": "Confusion",
+    "description": "Les créatures dans une sphère de 10 pieds de rayon effectuent un jet de sauvegarde de Sagesse. Celles qui échouent ne peuvent utiliser ni action bonus ni Réaction et lancent 1d10 chaque tour pour déterminer si elles se déplacent au hasard, ne font rien, attaquent une créature proche au hasard ou agissent normalement. Elles retentent le jet chaque tour.",
+    "material": "trois coquilles de noix",
+    "higherLevels": "Le rayon de la sphère augmente de 5 pieds par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Conjure Minor Elementals": {
+    "name": "Invocation d'élémentaires mineurs",
+    "description": "Pendant 10 minutes au maximum, des esprits remplissent une Émanation de 15 pieds autour de vous. Les ennemis y traitent le sol comme terrain difficile et vos attaques qui touchent une créature dans la zone infligent 2d8 dégâts supplémentaires d'acide, de froid, de feu ou de foudre.",
+    "higherLevels": "Les dégâts supplémentaires augmentent de 1d8 par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Conjure Woodland Beings": {
+    "name": "Invoquer des êtres des bois",
+    "description": "Des esprits de la nature remplissent une Émanation de 10 pieds autour de vous pendant 10 minutes au maximum. Les créatures qui y entrent ou y terminent un tour, ou dont l'espace est atteint par l'Émanation, peuvent être obligées d'effectuer un jet de sauvegarde de Sagesse contre 5d8 dégâts de force, réduits de moitié en cas de réussite, une fois par tour. Vous pouvez utiliser l'action Se désengager par une action bonus.",
+    "higherLevels": "Les dégâts augmentent de 1d8 par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Control Water": {
+    "name": "Contrôler l'eau",
+    "description": "Contrôlez l'eau dans un cube de 100 pieds de côté au maximum pendant 10 minutes. Inondation fait monter l'eau ou produit une vague, Séparation des eaux ouvre un passage, Redirection du courant change son cours et Tourbillon attire les créatures vers le centre et peut infliger 2d8 dégâts contondants.",
+    "material": "un mélange d'eau et de poussière",
+    "castingTime": "Action",
+    "range": "300 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Death Ward": {
+    "name": "Protection contre la mort",
+    "description": "Pendant 8 heures, la première fois qu'une créature touchée devrait tomber à 0 point de vie, elle tombe à 1 à la place. Si un effet devait la tuer immédiatement sans dégâts, cet effet est annulé. Le sort prend alors fin.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "8 heures"
+  },
+  "Dimension Door": {
+    "name": "Porte dimensionnelle",
+    "description": "Téléportez-vous vers un point désigné à 500 pieds, en emmenant éventuellement une créature consentante à 5 pieds. Si la destination est occupée ou pleine, la téléportation échoue et chaque voyageur subit 4d6 dégâts de force.",
+    "castingTime": "Action",
+    "range": "500 pieds",
+    "duration": "Instantanée"
+  },
+  "Divination": {
+    "name": "Divination",
+    "description": "Posez à une divinité ou à ses serviteurs une question sur un événement ou objectif des 7 prochains jours et recevez une réponse véridique, parfois énigmatique. Chaque incantation supplémentaire avant un Repos long a une chance cumulative de 25 % de ne donner aucune réponse.",
+    "material": "de l'encens valant au moins 25 PO, consumé par le sort",
+    "castingTime": "Action ou rituel",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Dominate Beast": {
+    "name": "Domination de bête",
+    "description": "Une bête visible effectue un jet de sauvegarde de Sagesse ou est Charmée pendant 1 minute au maximum. Vous pouvez la commander par télépathie sans action ; elle retente le jet chaque fois qu'elle subit des dégâts. Elle a l'Avantage au premier jet si vous la combattez.",
+    "higherLevels": "Un emplacement de niveau 5 prolonge la concentration à 10 minutes, de niveau 6 à 1 heure et de niveau 7 ou plus à 8 heures.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Fabricate": {
+    "name": "Fabriquer",
+    "description": "Transformez des matières premières en un objet de taille Grande ou inférieure, ou Moyenne ou inférieure s'il est en métal, pierre ou autre minéral. Il vous faut la maîtrise des outils d'artisan appropriés pour les objets de fabrication soignée tels qu'armes ou armures ; le sort ne crée ni créatures ni objets magiques.",
+    "castingTime": "10 minutes",
+    "range": "120 pieds",
+    "duration": "Instantanée"
+  },
+  "Faithful Hound": {
+    "name": "Chien fidèle",
+    "description": "Conjurez un chien de garde invisible et invulnérable pendant 8 heures. Il aboie si une créature non autorisée arrive à 30 pieds, possède la Vision véritable sur 30 pieds et, au début de chacun de vos tours, mord un ennemi à 5 pieds pour 4d8 dégâts de force si celui-ci rate un jet de sauvegarde de Dextérité.",
+    "material": "un sifflet en argent",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "8 heures",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Fire Shield": {
+    "name": "Bouclier de feu",
+    "description": "Un bouclier chaud ou froid vous entoure pendant 10 minutes. Le chaud confère la Résistance au froid et riposte pour 2d8 dégâts de feu lorsqu'une créature proche vous touche au corps à corps ; le froid confère la Résistance au feu et riposte pour 2d8 dégâts de froid.",
+    "material": "un peu de phosphore ou une luciole",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "10 minutes"
+  },
+  "Freedom of Movement": {
+    "name": "Liberté de mouvement",
+    "description": "Une créature consentante touchée ignore le terrain difficile et les effets magiques réduisant sa Vitesse ou la rendant Paralysée ou Entravée pendant 1 heure. Elle gagne une Vitesse de nage égale à sa Vitesse et peut dépenser 5 pieds de déplacement pour se libérer d'entraves non magiques.",
+    "material": "une lanière de cuir",
+    "higherLevels": "Ciblez une créature supplémentaire par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Giant Insect": {
+    "name": "Insecte géant",
+    "description": "Invoquez un mille-pattes, une araignée ou une guêpe géante dans un espace à 60 pieds pendant 10 minutes au maximum. L'insecte agit juste après votre tour, suit les ordres verbaux et utilise le profil d'Insecte géant ; sa forme modifie ses capacités.",
+    "higherLevels": "Utilisez le niveau de l'emplacement pour le niveau du sort de l'insecte invoqué et ses statistiques évolutives.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Greater Invisibility": {
+    "name": "Invisibilité supérieure",
+    "description": "Une créature touchée est Invisible pendant 1 minute au maximum, y compris lorsqu'elle attaque ou lance des sorts.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Guardian of Faith": {
+    "name": "Gardien de la foi",
+    "description": "Invoquez un gardien invulnérable de taille Grande pendant 8 heures au maximum. Les ennemis qui entrent ou commencent un tour à 10 pieds effectuent un jet de sauvegarde de Dextérité, subissant 20 dégâts radiants en cas d'échec ou la moitié en cas de réussite. Il disparaît après avoir infligé 60 dégâts au total.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "8 heures"
+  },
+  "Hallucinatory Terrain": {
+    "name": "Terrain hallucinatoire",
+    "description": "Faites apparaître, sonner et sentir un cube de 150 pieds de terrain naturel comme un autre terrain naturel pendant 24 heures. Structures, équipement et créatures ne changent pas ; le contact ou un test d'Investigation réussi peut révéler l'illusion.",
+    "material": "un champignon",
+    "castingTime": "10 minutes",
+    "range": "300 pieds",
+    "duration": "24 heures"
+  },
+  "Ice Storm": {
+    "name": "Tempête de grêle",
+    "description": "La grêle frappe un cylindre de 20 pieds de rayon et 40 pieds de haut. Les créatures effectuent un jet de sauvegarde de Dextérité contre 2d10 dégâts contondants plus 4d6 dégâts de froid, réduits de moitié en cas de réussite. Le sol devient un terrain difficile jusqu'à la fin de votre prochain tour.",
+    "material": "une moufle",
+    "higherLevels": "Les dégâts contondants augmentent de 1d10 par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "300 pieds",
+    "duration": "Instantanée"
+  },
+  "Locate Creature": {
+    "name": "Localiser la créature",
+    "description": "Pendant 1 heure au maximum, percevez la direction d'une créature connue par son nom à 1 000 pieds, ou de la créature la plus proche d'une espèce que vous avez vue de près. Une forme modifiée ou une barrière de plomb bloque l'effet.",
+    "material": "de la fourrure de limier",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Phantasmal Killer": {
+    "name": "Tueur fantasmatique",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse contre sa pire peur. En cas d'échec, elle subit 4d10 dégâts psychiques et a le Désavantage aux tests et attaques ; en cas de réussite, elle subit la moitié et le sort cesse. Elle retente le jet chaque tour, subissant encore 4d10 en cas d'échec.",
+    "higherLevels": "Les dégâts augmentent de 1d10 par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Polymorph": {
+    "name": "Métamorphose",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse ou devient une bête dont le FP n'excède pas le sien ou son niveau pendant 1 heure au maximum. Elle utilise les statistiques de la bête mais conserve ses points et dés de vie et gagne des points de vie temporaires égaux aux points de vie de la bête ; le sort cesse quand ces points temporaires sont épuisés.",
+    "material": "un cocon de chenille",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Private Sanctum": {
+    "name": "Sanctuaire privé",
+    "description": "Protégez un cube de 5 à 100 pieds de côté pendant 24 heures. Choisissez des protections contre le son ou la vue, les capteurs et cibles de Divination, la téléportation ou le voyage planaire. Lancer le sort chaque jour au même endroit pendant 365 jours le rend permanent.",
+    "material": "une mince feuille de plomb",
+    "higherLevels": "La taille maximale du cube augmente de 100 pieds par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "10 minutes",
+    "range": "120 pieds",
+    "duration": "24 heures"
+  },
+  "Resilient Sphere": {
+    "name": "Sphère résistante",
+    "description": "Enfermez une créature ou un objet de taille Grande ou inférieure dans une sphère invulnérable pendant 1 minute au maximum ; une créature non consentante effectue un jet de sauvegarde de Dextérité. Rien ne peut la traverser, mais ceux à l'intérieur respirent ; la sphère peut rouler ou être déplacée.",
+    "material": "une sphère de verre",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Secret Chest": {
+    "name": "Coffre secret",
+    "description": "Cachez sur le Plan Éthéré un coffre spécialement fabriqué de 3 pieds sur 2 sur 2 et jusqu'à 12 pieds cubes de contenu. Touchez sa réplique minuscule par une action Magie pour le rappeler ou le renvoyer. Après 60 jours, chaque jour a une chance cumulative de 5 % de mettre fin au sort.",
+    "material": "un coffre de 3 pieds sur 2 pieds sur 2 pieds fabriqué avec des matériaux rares valant au moins 5 000 PO, et une réplique de taille TP du coffre faite des mêmes matériaux valant au moins 50 PO",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Stone Shape": {
+    "name": "Façonnage de la pierre",
+    "description": "Remodelez un objet de pierre de taille Moyenne ou inférieure, ou une section de pierre de 5 pieds de large au maximum, dans la forme souhaitée. Vous pouvez créer une simple ouverture, porte ou contenant, mais pas de mécanisme complexe.",
+    "material": "de l'argile molle",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Stoneskin": {
+    "name": "Peau de pierre",
+    "description": "Une créature consentante touchée résiste aux dégâts contondants, perforants et tranchants pendant 1 heure au maximum.",
+    "material": "de la poussière de diamant valant au moins 100 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Vitriolic Sphere": {
+    "name": "Sphère vitriolique",
+    "description": "Une sphère d'acide de 20 pieds de rayon éclate à 150 pieds. Les créatures effectuent un jet de sauvegarde de Dextérité ; en cas d'échec, elles subissent immédiatement 10d4 dégâts d'acide, puis 5d4 à la fin de leur prochain tour ; en cas de réussite, seuls les dégâts initiaux sont réduits de moitié.",
+    "material": "une goutte de bile",
+    "higherLevels": "Les dégâts initiaux augmentent de 2d4 par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Instantanée"
+  },
+  "Wall of Fire": {
+    "name": "Mur de feu",
+    "description": "Créez un mur de feu long de 60 pieds et haut de 20 pieds au maximum ou un anneau de 20 pieds de diamètre pendant 1 minute au maximum. Les créatures dans son espace effectuent un jet de sauvegarde de Dextérité contre 5d8 dégâts de feu, réduits de moitié en cas de réussite. Le côté choisi inflige aussi 5d8 aux créatures qui entrent dans le mur ou terminent leur tour à 10 pieds.",
+    "material": "un morceau de charbon de bois",
+    "higherLevels": "Les dégâts augmentent de 1d8 par niveau d'emplacement au-delà du 4e.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Animate Objects": {
+    "name": "Animer des objets",
+    "description": "Animez des objets non magiques sans surveillance, jusqu'à un nombre égal à votre modificateur de caractéristique d'incantation ; un objet de taille M ou inférieure compte pour un, un objet de taille G pour deux et un objet de taille TG pour trois. Chaque objet devient un artificiel allié (CA 15 ; 10/20/40 points de vie selon sa taille), agit après vous et obéit aux ordres que vous lui donnez par une action bonus à 500 pieds ou moins. Son coup de mêlée utilise votre bonus d'attaque de sort et inflige 1d4+3 dégâts de force (taille M ou inférieure), 2d6+3+votre modificateur d'incantation (G) ou 2d12+3+votre modificateur (TG).",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 5e ajoute 1d4 aux dégâts du coup des objets de taille M ou inférieure, 1d6 pour la taille G ou 1d12 pour la taille TG.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Antilife Shell": {
+    "name": "Barrière de vie",
+    "description": "Une émanation de 10 pieds autour de vous empêche les créatures autres que les artificiels et les morts-vivants de la traverser ou de porter des attaques à travers elle pendant 1 heure au maximum. Ces créatures peuvent toujours lancer des sorts ou attaquer au travers avec des armes à distance ou à allonge. Forcer une créature à traverser la barrière met fin au sort.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Arcane Hand": {
+    "name": "Main arcanique",
+    "description": "Créez une grande main magique (CA 20, points de vie égaux aux vôtres) pendant 1 minute au maximum. Déplacez-la de 60 pieds au plus lors de l'incantation puis par une action bonus, avant de choisir un effet : une attaque de sort au corps à corps infligeant 5d8 dégâts de force, une poussée, une lutte avec écrasement infligeant 4d6 plus votre modificateur d'incantation, ou un abri partiel.",
+    "material": "une coquille d'œuf et un gant",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 5e ajoute 2d8 aux dégâts du Poing serré et 2d6 à ceux de la Main agrippeuse.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Awaken": {
+    "name": "Éveil",
+    "description": "Au bout de 8 heures, donnez une Intelligence de 10 et une langue que vous connaissez à une bête ou une plante dotée d'une Intelligence de 3 ou moins, ou à une plante naturelle. Une plante naturelle devient une créature végétale mobile. La cible est charmée par vous pendant 30 jours, ou jusqu'à ce que vous ou un allié la blessiez.",
+    "material": "une agate valant au moins 1 000 PO, consumée par le sort",
+    "castingTime": "8 heures",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Cloudkill": {
+    "name": "Nuage mortel",
+    "description": "Créez une sphère de brouillard de 20 pieds de rayon qui masque fortement la visibilité pendant 10 minutes au maximum ; elle s'éloigne de vous de 10 pieds à chaque tour. Les créatures qui s'y trouvent effectuent un jet de sauvegarde de Constitution contre 5d8 dégâts de poison, réduits de moitié en cas de réussite, quand le brouillard apparaît, les traverse, ou quand elles y entrent ou y terminent un tour, une fois par tour.",
+    "higherLevels": "Les dégâts augmentent de 1d8 par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Commune": {
+    "name": "Communion",
+    "description": "Posez jusqu'à trois questions auxquelles on peut répondre par oui ou non à une divinité ou à son représentant en 1 minute, et recevez des réponses véridiques, parfois « incertain ». Chaque incantation supplémentaire avant un repos long ajoute une probabilité cumulative de 25 % de ne recevoir aucune réponse.",
+    "material": "de l'encens",
+    "castingTime": "1 minute ou rituel",
+    "range": "Personnel",
+    "duration": "1 minute"
+  },
+  "Commune with Nature": {
+    "name": "Communier avec la nature",
+    "description": "Apprenez trois faits concernant la zone naturelle environnante : établissements, portails planaires, créature surnaturelle notable, plantes, minéraux ou bêtes prédominants, ou étendues d'eau. Le rayon est de 3 milles en extérieur ou de 300 pieds sous terre ; le sort échoue dans les zones bâties.",
+    "castingTime": "1 minute ou rituel",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Cone of Cold": {
+    "name": "Cône de froid",
+    "description": "Un cône de froid de 60 pieds impose des jets de sauvegarde de Constitution. Les créatures subissent 8d8 dégâts de froid en cas d'échec, ou la moitié en cas de réussite ; celles tuées par le sort gèlent jusqu'à leur dégel.",
+    "material": "un petit cône de cristal ou de verre",
+    "higherLevels": "Les dégâts augmentent de 1d8 par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Conjure Elemental": {
+    "name": "Invocation d'élémentaire",
+    "description": "Invoquez un grand esprit intangible pendant 10 minutes au maximum. Choisissez l'air (foudre), la terre (tonnerre), le feu (feu) ou l'eau (froid). Il peut entraver une créature près de lui ou en son sein après un jet de sauvegarde de Dextérité ; un échec inflige 8d8 dégâts, puis 4d8 lors des échecs suivants tant que la créature est entravée.",
+    "higherLevels": "Les dégâts initiaux augmentent de 1d8 par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Contact Other Plane": {
+    "name": "Contact avec un autre plan",
+    "description": "Effectuez un jet de sauvegarde d'Intelligence DD 15 pour contacter une intelligence extraplanaire. En cas de réussite, posez jusqu'à cinq questions en 1 minute ; les réponses sont brèves. En cas d'échec, subissez 6d6 dégâts psychiques et devenez incapable d'agir jusqu'à un repos long ou une Restauration suprême.",
+    "castingTime": "1 minute ou rituel",
+    "range": "Personnel",
+    "duration": "1 minute"
+  },
+  "Contagion": {
+    "name": "Contagion",
+    "description": "Une créature que vous touchez effectue un jet de sauvegarde de Constitution. En cas d'échec, elle subit 11d8 dégâts nécrotiques et est empoisonnée, avec un désavantage aux jets de sauvegarde utilisant une caractéristique de votre choix. Elle refait ce jet à chaque tour jusqu'à ce que trois réussites mettent fin au sort ou que trois échecs prolongent l'effet pendant 7 jours.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "7 jours",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Creation": {
+    "name": "Création",
+    "description": "Créez à partir de matière d'ombre un objet que vous avez vu, occupant un cube de 5 pieds au maximum. La matière végétale dure 24 heures, la pierre ou le cristal 12 heures, le métal précieux 1 heure, les gemmes 10 minutes et l'adamantium ou le mithral 1 minute. L'objet ne peut servir de composante matérielle pour un autre sort.",
+    "material": "un pinceau",
+    "higherLevels": "Le cube maximal augmente de 5 pieds par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "1 minute",
+    "range": "30 pieds",
+    "duration": "Spéciale"
+  },
+  "Dispel Evil and Good": {
+    "name": "Dissiper le mal et le bien",
+    "description": "Pendant 1 minute au maximum, les célestes, élémentaires, fées, fiélons et morts-vivants ont un désavantage aux attaques contre vous. Mettez fin au sort pour libérer une créature touchée de leur possession, de leur charme ou de leur peur, ou pour forcer l'une de ces créatures à 5 pieds ou moins à réussir un jet de sauvegarde de Charisme sous peine de retourner sur son plan d'origine.",
+    "material": "de l'argent et du fer en poudre",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Dominate Person": {
+    "name": "Domination de personne",
+    "description": "Un humanoïde visible effectue un jet de sauvegarde de Sagesse ou est charmé pendant 1 minute au maximum. Donnez-lui des ordres par lien télépathique sans dépenser d'action ; il refait le jet lorsqu'il subit des dégâts. Il a l'avantage à son premier jet si vous le combattez.",
+    "higherLevels": "La concentration peut durer 10 minutes avec un emplacement de niveau 6, 1 heure au niveau 7 ou 8 heures au niveau 8 ou plus.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Dream": {
+    "name": "Rêve",
+    "description": "Un messager consentant entre dans les rêves d'une créature connue sur le même plan et lui parle pendant son sommeil. Une version terrifiante transmet jusqu'à dix mots ; la cible effectue un jet de sauvegarde de Sagesse ou ne tire aucun bénéfice de son repos et subit 3d6 dégâts psychiques à son réveil.",
+    "material": "une poignée de sable",
+    "castingTime": "1 minute",
+    "range": "Spéciale",
+    "duration": "8 heures"
+  },
+  "Flame Strike": {
+    "name": "Frappe de flamme",
+    "description": "Un cylindre de 10 pieds de rayon et de 40 pieds de haut impose des jets de sauvegarde de Dextérité. Les créatures subissent 5d6 dégâts de feu et 5d6 dégâts radiants en cas d'échec, ou la moitié de chaque en cas de réussite.",
+    "material": "une pincée de soufre",
+    "higherLevels": "Les dégâts de feu et les dégâts radiants augmentent chacun de 1d6 par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "fire_damage": {
+        "label": "Dégâts"
+      },
+      "radiant_damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Geas": {
+    "name": "Geas",
+    "description": "Une créature qui comprend votre ordre effectue un jet de sauvegarde de Sagesse ou est charmée pendant 30 jours. Agir directement contre l'ordre lui inflige 5d10 dégâts psychiques, une fois par jour au maximum. Un ordre suicidaire met fin au sort.",
+    "higherLevels": "Un emplacement de niveau 7 ou 8 dure 365 jours ; un emplacement de niveau 9 dure jusqu'à la fin de l'effet par Délivrance des malédictions, Restauration suprême ou Souhait.",
+    "castingTime": "1 minute",
+    "range": "60 pieds",
+    "duration": "30 jours"
+  },
+  "Greater Restoration": {
+    "name": "Restauration suprême",
+    "description": "Touchez une créature pour supprimer un niveau d'épuisement, l'état charmé ou pétrifié, une malédiction ou l'harmonisation à un objet maudit, une réduction de valeur de caractéristique ou une réduction de son maximum de points de vie.",
+    "material": "de la poussière de diamant valant au moins 100 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Hallow": {
+    "name": "Sanctification",
+    "description": "Sanctifiez une zone de 60 pieds de rayon au maximum jusqu'à dissipation. Les aberrations, célestes, élémentaires, fées, fiélons ou morts-vivants désignés ne peuvent y entrer volontairement, et leurs effets de possession, de charme ou de peur y sont supprimés. Choisissez un effet supplémentaire parmi la lumière, l'obscurité, le silence, la résistance, la vulnérabilité, le courage, la peur, les langues ou l'interdiction de téléportation.",
+    "material": "de l'encens valant au moins 1 000 PO, consumé par le sort",
+    "castingTime": "24 heures",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Hold Monster": {
+    "name": "Immobilisation de monstre",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse ou est paralysée pendant 1 minute au maximum ; elle refait le jet à la fin de chacun de ses tours.",
+    "material": "un morceau de fer droit",
+    "higherLevels": "Ciblez une créature supplémentaire par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Insect Plague": {
+    "name": "Peste d'insectes",
+    "description": "Des sauterelles remplissent une sphère de 20 pieds de rayon pendant 10 minutes au maximum, la rendant légèrement obscurcie et difficile d'accès. Les créatures effectuent un jet de sauvegarde de Constitution contre 4d10 dégâts perforants, réduits de moitié en cas de réussite, quand la sphère apparaît ou lorsqu'elles y entrent ou y terminent un tour, une fois par tour.",
+    "material": "une sauterelle",
+    "higherLevels": "Les dégâts augmentent de 1d10 par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "Action",
+    "range": "300 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Legend Lore": {
+    "name": "Connaissance des légendes",
+    "description": "Obtenez un résumé véridique, éventuellement figuré, d'informations importantes sur une personne, un lieu ou un objet célèbre. Plus vous connaissez le sujet, plus vous recevez de détails ; le sort échoue si le sujet n'est pas célèbre.",
+    "material": "de l'encens valant au moins 250 PO, consumé par le sort, et quatre bandes d'ivoire valant chacune au moins 50 PO",
+    "castingTime": "10 minutes",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Mass Cure Wounds": {
+    "name": "Soin des blessures de groupe",
+    "description": "Choisissez jusqu'à six créatures dans une sphère de 30 pieds de rayon centrée sur un point visible à 60 pieds ou moins. Chacune récupère 5d8 plus votre modificateur de caractéristique d'incantation points de vie.",
+    "higherLevels": "Les soins augmentent de 1d8 par niveau d'emplacement au-delà du 5e.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Mislead": {
+    "name": "Tromper",
+    "description": "Devenez invisible et créez un double illusoire à votre emplacement pendant 1 heure au maximum. Votre invisibilité prend fin si vous attaquez, infligez des dégâts ou lancez un sort. Déplacez le double intangible par une action magique et voyez et entendez par son intermédiaire.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Modify Memory": {
+    "name": "Modifier la mémoire",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse (avec avantage si elle vous combat) ou devient charmée et incapable d'agir. Décrivez un souvenir modifié d'un événement datant des dernières 24 heures et durant au plus 10 minutes ; des dégâts ou un autre sort mettent fin à l'effet sans altérer le souvenir.",
+    "higherLevels": "Un emplacement de niveau 6 remonte à 7 jours dans le passé, de niveau 7 à 30 jours, de niveau 8 à 365 jours et de niveau 9 à n'importe quelle époque.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Passwall": {
+    "name": "Passe-muraille",
+    "description": "Ouvrez pendant 1 heure un passage dans le bois, le plâtre ou la pierre à 30 pieds ou moins, mesurant jusqu'à 5 pieds de large, 8 pieds de haut et 20 pieds de profondeur. Quand il se referme, les occupants sont expulsés sans danger.",
+    "material": "une pincée de graines de sésame",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "1 heure"
+  },
+  "Planar Binding": {
+    "name": "Liaison planaire",
+    "description": "Liez un céleste, un élémentaire, une fée ou un fiélon qui reste à 60 pieds ou moins pendant l'incantation d'une heure. Il effectue un jet de sauvegarde de Charisme ou vous sert pendant 24 heures ; la durée d'un sort d'invocation est prolongée pour correspondre à celle du lien.",
+    "material": "un joyau valant au moins 1 000 PO, consumé par le sort",
+    "higherLevels": "La durée passe à 10 jours avec un emplacement de niveau 6, 30 jours au niveau 7, 180 jours au niveau 8 ou 366 jours au niveau 9.",
+    "castingTime": "1 heure",
+    "range": "60 pieds",
+    "duration": "24 heures"
+  },
+  "Raise Dead": {
+    "name": "Ressusciter les morts",
+    "description": "Ramenez à la vie une créature morte depuis 10 jours au plus, sauf si elle est morte en tant que mort-vivant. Elle revient avec 1 point de vie et un malus de -4 aux tests D20, réduit de 1 après chaque repos long. Le sort échoue s'il manque des parties vitales de son corps.",
+    "material": "un diamant valant au moins 500 PO, consumé par le sort",
+    "castingTime": "1 heure",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Reincarnate": {
+    "name": "Réincarner",
+    "description": "Ramenez à la vie un humanoïde mort depuis 10 jours au plus dans un corps nouvellement formé. Déterminez sa nouvelle espèce jouable à l'aide de la table du sort ou selon le choix du MJ ; la créature conserve ses souvenirs et ses autres capacités, mais ses traits d'espèce précédents sont remplacés.",
+    "material": "des huiles rares valant au moins 1 000 PO, consumées par le sort",
+    "castingTime": "1 heure",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Scrying": {
+    "name": "Scrutation",
+    "description": "Voyez et entendez pendant 10 minutes au maximum une créature sur votre plan grâce à un capteur invisible mobile si elle rate un jet de sauvegarde de Sagesse. Le modificateur au jet est de +5 si vous la connaissez indirectement, +0 si vous l'avez rencontrée ou -5 si vous la connaissez bien, puis de -2 pour une représentation, -4 pour un objet lui appartenant ou -10 pour une partie de son corps. En cas de réussite, vos Scrutations ne peuvent plus la cibler pendant 24 heures. Vous pouvez aussi placer un capteur immobile en un lieu que vous avez vu.",
+    "material": "un focaliseur valant au moins 1 000 PO, comme une boule de cristal, un miroir ou une vasque remplie d'eau",
+    "castingTime": "10 minutes",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Seeming": {
+    "name": "Apparence trompeuse",
+    "description": "Donnez à chaque créature choisie que vous voyez à 30 pieds ou moins une apparence illusoire pendant 8 heures. Les cibles non consentantes peuvent effectuer un jet de sauvegarde de Charisme. Un examen physique ou un test d'Investigation réussi contre le DD de sauvegarde de vos sorts révèle le déguisement.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "8 heures"
+  },
+  "Summon Dragon": {
+    "name": "Invocation de dragon",
+    "description": "Invoquez un esprit draconique pendant 1 heure au maximum. Il possède une CA de 14 plus le niveau de l'emplacement, 50 points de vie plus 10 par niveau d'emplacement au-delà du 5e, une vitesse de vol de 60 pieds et agit immédiatement après vous. Il effectue un nombre d'attaques de déchirure égal à la partie entière du niveau de l'emplacement divisé par 2 avec votre bonus d'attaque de sort ; chaque touche inflige 1d6+4+le niveau de l'emplacement dégâts perforants. Son souffle en cône de 30 pieds inflige 2d6 dégâts d'acide, de froid, de feu, de foudre ou de poison (jet de sauvegarde de Dextérité pour réduire de moitié). Choisissez l'une de ses résistances pour en bénéficier pendant la durée du sort.",
+    "material": "un objet gravé d'une image de dragon valant au moins 500 PO",
+    "higherLevels": "Utilisez le niveau de l'emplacement pour déterminer la CA, les points de vie et les autres statistiques évolutives de l'esprit.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Telekinesis": {
+    "name": "Télékinésie",
+    "description": "Pendant 10 minutes au maximum, utilisez une action magique à chaque tour pour déplacer ou manipuler une créature ou un objet de taille TG ou inférieure à 60 pieds ou moins. Une créature effectue un jet de sauvegarde de Force ou est déplacée de 30 pieds au maximum et entravée jusqu'à la fin de votre prochain tour.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Telepathic Bond": {
+    "name": "Lien télépathique",
+    "description": "Liez jusqu'à huit créatures consentantes à 30 pieds ou moins pendant 1 heure. Elles communiquent par télépathie à n'importe quelle distance sur le même plan, même sans langue commune.",
+    "material": "deux œufs",
+    "castingTime": "Action ou rituel",
+    "range": "30 pieds",
+    "duration": "1 heure"
+  },
+  "Teleportation Circle": {
+    "name": "Cercle de téléportation",
+    "description": "Dessinez un portail temporaire de 5 pieds de rayon menant à un cercle permanent sur le même plan dont vous connaissez les sigilles. Il reste ouvert jusqu'à la fin de votre prochain tour. Lancer ce sort au même endroit chaque jour pendant 365 jours crée un cercle permanent.",
+    "material": "des encres rares valant au moins 50 PO, consumées par le sort",
+    "castingTime": "1 minute",
+    "range": "10 pieds",
+    "duration": "1 round"
+  },
+  "Tree Stride": {
+    "name": "Foulée des arbres",
+    "description": "Pendant 1 minute au maximum, entrez dans un arbre vivant et ressortez d'un autre arbre vivant de la même espèce à 500 pieds ou moins, en dépensant 5 pieds de déplacement à l'entrée et 5 à la sortie. Utilisez ce mode de déplacement une fois par tour et terminez chaque tour hors d'un arbre.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Wall of Force": {
+    "name": "Mur de force",
+    "description": "Créez pendant 10 minutes au maximum un mur invisible et invulnérable composé de dix panneaux contigus de 10 pieds, ou un dôme ou globe de 10 pieds de rayon au maximum. Rien de physique ne le traverse ; Dissipation de la magie ne peut y mettre fin, mais Désintégration le détruit.",
+    "material": "un éclat de verre",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Wall of Stone": {
+    "name": "Mur de pierre",
+    "description": "Créez dix panneaux de pierre contigus de 10 pieds de côté et de 6 pouces d'épaisseur, ou des panneaux de 10 pieds sur 20 pieds et de 3 pouces d'épaisseur. Une créature encerclée peut effectuer un jet de sauvegarde de Dextérité pour s'éloigner. Chaque panneau a une CA de 15 et 30 points de vie par pouce d'épaisseur ; maintenir la concentration pendant les 10 minutes complètes rend le mur permanent.",
+    "material": "un cube de granit",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Blade Barrier": {
+    "name": "Barrière de lames",
+    "description": "Créez pendant 10 minutes au maximum un mur de lames magiques de 100 pieds de long et 20 pieds de haut au plus, ou un anneau de 60 pieds de diamètre. Son espace est un terrain difficile qui procure un abri aux trois quarts. Les créatures qui s'y trouvent effectuent un jet de sauvegarde de Dextérité contre 6d10 dégâts de force, réduits de moitié en cas de réussite, quand le mur apparaît ou lorsqu'elles y entrent ou y terminent un tour, une fois par tour.",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Chain Lightning": {
+    "name": "Chaîne d'éclairs",
+    "description": "La foudre frappe une cible visible à 150 pieds ou moins puis se propage vers trois autres cibles au maximum à 30 pieds ou moins de celle-ci. Chaque cible effectue un jet de sauvegarde de Dextérité contre 10d8 dégâts de foudre, réduits de moitié en cas de réussite ; aucune cible n'est touchée deux fois.",
+    "material": "trois épingles d'argent",
+    "higherLevels": "Un éclair supplémentaire bondit vers une nouvelle cible par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Circle of Death": {
+    "name": "Cercle de la mort",
+    "description": "Une sphère d'énergie négative de 60 pieds de rayon impose des jets de sauvegarde de Constitution et inflige 8d8 dégâts nécrotiques en cas d'échec, ou la moitié en cas de réussite.",
+    "material": "la poudre d'une perle noire broyée valant au moins 500 PO",
+    "higherLevels": "Les dégâts augmentent de 2d8 par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Conjure Fey": {
+    "name": "Invocation de fée",
+    "description": "Invoquez un esprit féerique de taille M pendant 10 minutes au maximum. À son apparition, effectuez une attaque de sort au corps à corps depuis son emplacement ; si elle touche, elle inflige 3d12 plus votre modificateur de caractéristique d'incantation dégâts psychiques et effraie la cible jusqu'à votre prochain tour. Ensuite, une action bonus permet de téléporter l'esprit de 30 pieds et de répéter l'attaque.",
+    "higherLevels": "Les dégâts augmentent de 1d12 par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Contingency": {
+    "name": "Contingence",
+    "description": "Lancez ce sort et un sort préparé de niveau 5 ou inférieur prenant une action et pouvant vous cibler, en dépensant les deux emplacements. Le second sort attend jusqu'à 10 jours le déclencheur que vous avez choisi, puis ne vous affecte que vous. Une seule Contingence peut être active ; perdre la statuette requise y met fin.",
+    "material": "une statuette de vous incrustée de gemmes valant au moins 1 500 PO",
+    "castingTime": "10 minutes",
+    "range": "Personnel",
+    "duration": "10 jours"
+  },
+  "Create Undead": {
+    "name": "Créer des morts-vivants",
+    "description": "De nuit uniquement, animez jusqu'à trois cadavres d'humanoïdes de taille M ou P en goules, en utilisant une onyx noire d'une valeur d'au moins 150 PO par cadavre. Donnez-leur des ordres à 120 pieds ou moins par une action bonus. Votre contrôle dure 24 heures et doit être renouvelé avant son expiration.",
+    "material": "une onyx noire valant au moins 150 PO par cadavre",
+    "higherLevels": "Un emplacement de niveau 7 contrôle quatre goules ; au niveau 8, cinq goules ou deux blêmes/nécrophages ; au niveau 9, six goules, trois blêmes/nécrophages ou deux momies.",
+    "castingTime": "1 minute",
+    "range": "10 pieds",
+    "duration": "Instantanée"
+  },
+  "Disintegrate": {
+    "name": "Désintégrer",
+    "description": "Une créature visible effectue un jet de sauvegarde de Dextérité ou subit 10d6 + 40 dégâts de force. Une créature réduite à 0 point de vie est désintégrée ; un objet non magique de taille G ou inférieure ou une création de force magique est désintégré automatiquement.",
+    "material": "une magnétite et de la poussière",
+    "higherLevels": "Les dégâts augmentent de 3d6 par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Eyebite": {
+    "name": "Regard perçant",
+    "description": "Pendant 1 minute au maximum, forcez une créature visible à 60 pieds ou moins à effectuer un jet de sauvegarde de Sagesse, puis choisissez Sommeil (inconsciente), Panique (effrayée et forcée de fuir) ou Maladie (empoisonnée). Aux tours suivants, une action magique peut cibler une autre créature n'ayant pas réussi de jet contre cette incantation.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Find the Path": {
+    "name": "Trouver le chemin",
+    "description": "Pendant 1 jour au maximum, percevez l'itinéraire physique le plus direct vers un lieu fixe et familier sur votre plan actuel. Vous connaissez sa direction et sa distance pendant votre trajet ; le sort échoue pour une destination vague ou mobile.",
+    "material": "un ensemble d'outils divinatoires, tels que des cartes ou des runes, valant au moins 100 PO",
+    "castingTime": "1 minute",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 jour"
+  },
+  "Flesh to Stone": {
+    "name": "De la chair à la pierre",
+    "description": "Une créature visible effectue un jet de sauvegarde de Constitution. Un échec l'entrave ; une réussite réduit sa vitesse à 0 jusqu'à votre prochain tour. Une cible entravée refait un jet à chaque tour : trois réussites mettent fin au sort, trois échecs la pétrifient. Maintenir la concentration pendant toute la minute rend la pétrification persistante.",
+    "material": "une plume de cocatrix",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Forbiddance": {
+    "name": "Interdiction",
+    "description": "Protégez jusqu'à 40 000 pieds carrés de sol et 30 pieds au-dessus contre la téléportation et les voyages planaires pendant 1 jour. Les aberrations, célestes, élémentaires, fées, fiélons ou morts-vivants désignés subissent 5d10 dégâts radiants ou nécrotiques en entrant dans la zone ou en y terminant un tour, sauf s'ils prononcent votre mot de passe. Lancer le sort chaque jour pendant 30 jours le rend permanent et consume la poussière de rubis à la dernière incantation.",
+    "material": "de la poussière de rubis valant au moins 1 000 PO",
+    "castingTime": "10 minutes ou rituel",
+    "range": "Contact",
+    "duration": "1 jour"
+  },
+  "Freezing Sphere": {
+    "name": "Sphère glaciale",
+    "description": "Une sphère de 60 pieds de rayon impose des jets de sauvegarde de Constitution contre 10d6 dégâts de froid, réduits de moitié en cas de réussite. L'eau touchée gèle et peut entraver les nageurs en surface. Vous pouvez au contraire conserver le globe pendant 1 minute au maximum, puis le lancer avant qu'il n'explose.",
+    "material": "une sphère de cristal miniature",
+    "higherLevels": "Les dégâts augmentent de 1d6 par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "300 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Globe of Invulnerability": {
+    "name": "Globe d'invulnérabilité",
+    "description": "Une émanation immobile de 10 pieds autour de vous empêche les sorts de niveau 5 ou inférieur lancés depuis l'extérieur d'affecter ce qui se trouve à l'intérieur pendant 1 minute au maximum.",
+    "material": "une perle de verre",
+    "higherLevels": "Le niveau maximal des sorts bloqués augmente de 1 par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Guards and Wards": {
+    "name": "Gardes et protections",
+    "description": "Protégez jusqu'à 2 500 pieds carrés sur une hauteur de 20 pieds pendant 24 heures. Choisissez des créatures exemptées et un mot de passe. Les couloirs se remplissent d'un brouillard obscurcissant et peuvent égarer les voyageurs ; les portes reçoivent Verrou magique, jusqu'à dix portes semblent être des murs, et les escaliers se remplissent de Toiles d'araignée qui repoussent. Placez aussi Lumières dansantes, Bouche magique, Nuage nauséabond, Bourrasque ou Suggestion à des endroits précis. Lancer le sort chaque jour pendant 365 jours rend la protection permanente.",
+    "material": "une baguette d'argent valant au moins 10 PO",
+    "castingTime": "1 heure",
+    "range": "Contact",
+    "duration": "24 heures"
+  },
+  "Harm": {
+    "name": "Nuire",
+    "description": "Une créature visible effectue un jet de sauvegarde de Constitution. Un échec lui inflige 14d6 dégâts nécrotiques et réduit son maximum de points de vie du montant des dégâts subis, sans descendre sous 1. Une réussite réduit les dégâts de moitié et ne réduit pas le maximum.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Heal": {
+    "name": "Guérir",
+    "description": "Une créature visible à 60 pieds ou moins récupère 70 points de vie et n'est plus aveuglée, assourdie ni empoisonnée.",
+    "higherLevels": "Les soins augmentent de 10 points de vie par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Heroes' Feast": {
+    "name": "Festin des héros",
+    "description": "Faites apparaître un festin destiné à douze créatures au maximum, à consommer en 1 heure. Pendant les 24 heures suivantes, chaque convive a la résistance aux dégâts de poison, est immunisé contre les états effrayé et empoisonné, et augmente son maximum et ses points de vie actuels de 2d10.",
+    "material": "un bol incrusté de gemmes valant au moins 1 000 PO, consumé par le sort",
+    "castingTime": "10 minutes",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Instant Summons": {
+    "name": "Invocation instantanée",
+    "description": "Marquez un objet pesant au plus 10 livres et mesurant au plus 6 pieds avec un saphir d'une valeur d'au moins 1 000 PO. Plus tard, écrasez le saphir par une action magique pour faire apparaître l'objet dans votre main depuis n'importe quelle distance ou n'importe quel plan. Si une autre créature le tient, vous apprenez plutôt qui elle est et où elle se trouve.",
+    "material": "un saphir valant au moins 1 000 PO",
+    "castingTime": "1 minute ou rituel",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Irresistible Dance": {
+    "name": "Danse irrésistible",
+    "description": "Une créature visible effectue un jet de sauvegarde de Sagesse. Même en cas de réussite, elle doit dépenser tout son déplacement à danser jusqu'à la fin de son prochain tour. En cas d'échec, elle est aussi charmée, subit un désavantage aux jets de sauvegarde de Dextérité et aux attaques, et confère un avantage aux attaques contre elle ; elle peut utiliser une action pour refaire le jet.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Magic Jar": {
+    "name": "Réceptacle magique",
+    "description": "Placez votre âme dans un réceptacle d'une valeur d'au moins 500 PO, laissant votre corps catatonique. Depuis celui-ci, tentez de posséder un humanoïde visible à 100 pieds ou moins ; il effectue un jet de sauvegarde de Charisme. En cas d'échec, vous contrôlez son corps tandis que son âme reste prisonnière du réceptacle. La perte de votre corps ou du réceptacle au mauvais moment peut vous tuer, vous ou votre hôte.",
+    "material": "une gemme, un cristal ou un reliquaire valant au moins 500 PO",
+    "castingTime": "1 minute",
+    "range": "Personnel",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Mass Suggestion": {
+    "name": "Suggestion de groupe",
+    "description": "Donnez des instructions plausibles et non nuisibles, en 25 mots au maximum, à douze créatures au plus situées à 60 pieds ou moins qui vous comprennent. Chacune effectue un jet de sauvegarde de Sagesse ou est charmée et suit ces instructions pendant 24 heures au maximum, jusqu'à leur accomplissement ou jusqu'à ce que vous ou un allié la blessiez.",
+    "material": "une langue de serpent",
+    "higherLevels": "La durée passe à 10 jours avec un emplacement de niveau 7, 30 jours au niveau 8 ou 366 jours au niveau 9.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "24 heures"
+  },
+  "Move Earth": {
+    "name": "Façonnage de la terre",
+    "description": "Remodelez une zone de terre, de sable ou d'argile mesurant jusqu'à 40 pieds de côté. Chaque modification prend 10 minutes et permet de surélever ou d'abaisser le terrain, de creuser ou combler des tranchées, ou de créer des murs et piliers atteignant la moitié de la plus grande dimension de la zone. Vous pouvez choisir une nouvelle zone toutes les 10 minutes pendant 2 heures au maximum.",
+    "material": "une pelle miniature",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 2 heures"
+  },
+  "Planar Ally": {
+    "name": "Allié planaire",
+    "description": "Demandez un céleste, un élémentaire ou un fiélon à une puissance surnaturelle. Il apparaît à 60 pieds ou moins sans être tenu de vous aider ; négociez un service, généralement facturé environ 100 PO par minute, 1 000 PO par heure ou 10 000 PO par jour, selon le MJ.",
+    "castingTime": "10 minutes",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Programmed Illusion": {
+    "name": "Illusion programmée",
+    "description": "Créez une illusion cachée occupant au plus un cube de 30 pieds. Un déclencheur visuel ou sonore à 30 pieds ou moins active une scène et des sons programmés durant jusqu'à 5 minutes. Après 10 minutes d'inactivité, elle peut se déclencher à nouveau jusqu'à dissipation.",
+    "material": "de la poussière de jade valant au moins 25 PO",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Sunbeam": {
+    "name": "Rayon de soleil",
+    "description": "Projetez depuis vous une ligne de soleil de 60 pieds de long et 5 pieds de large. Les créatures effectuent un jet de sauvegarde de Constitution contre 6d8 dégâts radiants et l'état aveuglé jusqu'à votre prochain tour ; une réussite réduit les dégâts de moitié et évite l'état. Une action magique permet d'émettre un autre rayon à chaque tour pendant 1 minute au maximum.",
+    "material": "une loupe",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Transport via Plants": {
+    "name": "Transport via les plantes",
+    "description": "Reliez une plante inanimée de taille G ou supérieure à 10 pieds ou moins à une plante que vous avez vue ou touchée sur le même plan, à n'importe quelle distance. Pendant 1 minute, les créatures peuvent dépenser 5 pieds de déplacement pour entrer dans la première et sortir de la seconde.",
+    "castingTime": "Action",
+    "range": "10 pieds",
+    "duration": "1 minute"
+  },
+  "True Seeing": {
+    "name": "Vision véritable",
+    "description": "Une créature consentante que vous touchez bénéficie d'une vision véritable sur 120 pieds pendant 1 heure.",
+    "material": "de la poudre de champignon valant au moins 25 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Wall of Ice": {
+    "name": "Mur de glace",
+    "description": "Créez un dôme ou un globe de glace d'un pied d'épaisseur et de 10 pieds de rayon au maximum, ou dix panneaux contigus de 10 pieds, pendant 10 minutes au maximum. Une créature déplacée par son apparition effectue un jet de sauvegarde de Dextérité contre 10d6 dégâts de froid. Les panneaux détruits laissent un air glacial qui inflige 5d6 dégâts de froid en cas d'échec à un jet de sauvegarde de Constitution lorsqu'on le traverse.",
+    "material": "un morceau de quartz",
+    "higherLevels": "Les dégâts à l'apparition augmentent de 2d6 et les dégâts de l'air glacial de 1d6 par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Wall of Thorns": {
+    "name": "Mur d'épines",
+    "description": "Créez pendant 10 minutes au maximum un mur d'épines de 60 pieds de long et 10 pieds de haut au plus, ou un anneau de 20 pieds de diamètre. Les créatures dans son espace effectuent un jet de sauvegarde de Dextérité contre 7d8 dégâts perforants quand il apparaît. Le traverser coûte 4 pieds de déplacement par pied parcouru ; y entrer ou y terminer un tour inflige 7d8 dégâts tranchants en cas d'échec à un jet de sauvegarde de Dextérité, une fois par tour.",
+    "material": "une poignée d'épines",
+    "higherLevels": "Les deux types de dégâts augmentent de 1d8 par niveau d'emplacement au-delà du 6e.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Wind Walk": {
+    "name": "Marche sur le vent",
+    "description": "Vous et jusqu'à dix créatures consentantes devenez des nuages pendant 8 heures, avec une vitesse de vol de 300 pieds, le vol stationnaire, l'immunité à l'état à terre et la résistance aux dégâts contondants, perforants et tranchants. Sous forme de nuage, une créature peut uniquement Foncer ou commencer à reprendre sa forme normale pendant 1 minute, durant laquelle elle est étourdie.",
+    "material": "une bougie",
+    "castingTime": "1 minute",
+    "range": "30 pieds",
+    "duration": "8 heures"
+  },
+  "Word of Recall": {
+    "name": "Mot de rappel",
+    "description": "Téléportez-vous avec jusqu'à cinq créatures consentantes à 5 pieds ou moins vers le sanctuaire que vous avez désigné en y lançant préalablement ce sort. Sans sanctuaire préparé, le sort est sans effet.",
+    "castingTime": "Action",
+    "range": "5 pieds",
+    "duration": "Instantanée"
+  },
+  "Arcane Sword": {
+    "name": "Épée arcanique",
+    "description": "Créez une épée de force flottante pendant 1 minute au maximum. Effectuez une attaque de sort au corps à corps contre une cible à 5 pieds ou moins de l'épée ; si elle touche, elle inflige 4d12 + votre modificateur de caractéristique d'incantation dégâts de force. Aux tours suivants, déplacez l'épée de 30 pieds au maximum et attaquez de nouveau par une action bonus.",
+    "material": "une épée miniature valant au moins 250 PO",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Conjure Celestial": {
+    "name": "Invocation céleste",
+    "description": "Une présence céleste remplit un cylindre de 10 pieds de rayon et de 40 pieds de haut pendant 10 minutes au maximum. Chaque créature visible à l'intérieur peut récupérer 4d12 + votre modificateur de caractéristique d'incantation points de vie ou effectuer un jet de sauvegarde de Dextérité contre 6d12 dégâts radiants (moitié en cas de réussite). Quand vous vous déplacez pendant votre tour, le cylindre peut se déplacer de 30 pieds au maximum. Les créatures qui y entrent ou y terminent un tour peuvent être affectées ; chacune ne l'est qu'une fois par tour.",
+    "higherLevels": "Les soins augmentent de 1d12 et les dégâts de 1d12 par niveau d'emplacement au-delà du 7e.",
+    "castingTime": "Action",
+    "range": "90 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Delayed Blast Fireball": {
+    "name": "Boule de feu à explosion retardée",
+    "description": "Une perle lumineuse attend en un point à 150 pieds ou moins pendant 1 minute au maximum. Quand votre concentration cesse, les créatures dans une sphère de 20 pieds de rayon effectuent un jet de sauvegarde de Dextérité contre 12d6 dégâts de feu, réduits de moitié en cas de réussite. Les dégâts augmentent de 1d6 à la fin de chacun de vos tours tant que vous vous concentrez. Une créature peut ramasser ou lancer la perle avec un jet de sauvegarde de Dextérité ; un échec la fait exploser.",
+    "material": "une boule de guano de chauve-souris et du soufre",
+    "higherLevels": "Les dégâts initiaux augmentent de 1d6 par niveau d'emplacement au-delà du 7e.",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Divine Word": {
+    "name": "Parole divine",
+    "description": "Choisissez des créatures visibles à 30 pieds ou moins ; chacune effectue un jet de sauvegarde de Charisme. Une créature qui échoue et a 20 points de vie ou moins meurt ; avec 21 à 30 points de vie, elle est aveuglée, assourdie et étourdie pendant 1 heure ; avec 31 à 40, aveuglée et assourdie pendant 10 minutes ; avec 41 à 50, assourdie pendant 1 minute. Un céleste, élémentaire, fée ou fiélon qui échoue est aussi banni vers son plan d'origine pendant au moins 24 heures.",
+    "castingTime": "Action bonus",
+    "range": "30 pieds",
+    "duration": "Instantanée"
+  },
+  "Etherealness": {
+    "name": "Passage éthéré",
+    "description": "Entrez dans l'Éthéré frontalier pendant 8 heures au maximum. Vous pouvez traverser les créatures et objets du plan Matériel, sans pouvoir les affecter. À la fin du sort, vous réapparaissez dans l'espace libre le plus proche ; vous pouvez y mettre fin plus tôt.",
+    "higherLevels": "Pour chaque niveau d'emplacement au-delà du 7e, vous pouvez emmener trois créatures consentantes supplémentaires à 10 pieds ou moins.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Jusqu'à 8 heures"
+  },
+  "Finger of Death": {
+    "name": "Doigt de la mort",
+    "description": "Une créature visible à 60 pieds ou moins effectue un jet de sauvegarde de Constitution contre 7d8 + 30 dégâts nécrotiques, réduits de moitié en cas de réussite. Un humanoïde tué par ce sort se relève en zombie au début de votre prochain tour et suit vos ordres verbaux.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Fire Storm": {
+    "name": "Tempête de feu",
+    "description": "Créez jusqu'à dix cubes de feu contigus de 10 pieds de côté à 150 pieds ou moins. Les créatures qui s'y trouvent effectuent un jet de sauvegarde de Dextérité contre 7d10 dégâts de feu, réduits de moitié en cas de réussite. Vous pouvez épargner les plantes de votre choix.",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Forcecage": {
+    "name": "Cage de force",
+    "description": "Pendant 1 heure de concentration au maximum, emprisonnez des créatures dans une cage de force de 20 pieds de côté au plus ou une boîte pleine de 10 pieds de côté au plus. Une créature piégée ne peut sortir par des moyens non magiques ; la téléportation ou le voyage planaire exige un jet de sauvegarde de Charisme réussi. Dissipation de la magie ne peut mettre fin à la cage.",
+    "material": "de la poussière de rubis valant au moins 1 500 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "100 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Magnificent Mansion": {
+    "name": "Manoir magnifique",
+    "description": "Créez pendant 24 heures une demeure extradimensionnelle dotée d'une porte à 300 pieds ou moins. Elle contient jusqu'à cinquante cubes de 10 pieds, de la nourriture pour 100 invités et jusqu'à 100 serviteurs ; seules les créatures que vous désignez peuvent y entrer.",
+    "material": "une porte miniature valant au moins 15 PO",
+    "castingTime": "1 minute",
+    "range": "300 pieds",
+    "duration": "24 heures"
+  },
+  "Mirage Arcane": {
+    "name": "Mirage arcanique",
+    "description": "Pendant 10 jours, modifiez l'aspect, les sons, les odeurs et les sensations tactiles du terrain dans une zone d'un mille carré au maximum. Vous pouvez ajouter ou modifier des structures et rendre le terrain plus ou moins difficile à parcourir, mais pas créer ou déguiser des créatures. La vision véritable révèle le terrain d'origine sans supprimer les effets physiques de l'illusion.",
+    "castingTime": "10 minutes",
+    "range": "Vue",
+    "duration": "10 jours"
+  },
+  "Plane Shift": {
+    "name": "Changement de plan",
+    "description": "Transportez-vous avec jusqu'à huit créatures consentantes vous tenant par la main vers un autre plan à l'aide d'une baguette métallique fourchue harmonisée. Désignez une destination générale et arrivez à proximité selon le MJ, ou voyagez vers un cercle de téléportation de ce plan dont vous connaissez la séquence de sigilles.",
+    "material": "une baguette métallique fourchue valant au moins 250 PO et harmonisée à un plan d'existence",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Prismatic Spray": {
+    "name": "Rayon prismatique",
+    "description": "Les créatures dans un cône de 60 pieds effectuent un jet de sauvegarde de Dextérité ; lancez 1d8 séparément pour chaque cible. Les résultats 1 à 5 infligent 12d6 dégâts de feu, d'acide, de foudre, de poison ou de froid (moitié en cas de réussite) ; 6 entrave et trois échecs aux jets de Constitution pétrifient ; 7 aveugle et peut bannir après un jet de Sagesse ; 8 frappe avec deux rayons différents.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Project Image": {
+    "name": "Projection d'image",
+    "description": "Créez une copie illusoire de vous-même à 500 milles au maximum pendant 1 jour de concentration au plus. Elle a votre aspect et votre voix ; vous pouvez voir et entendre par son intermédiaire et la déplacer de 60 pieds au maximum par une action magique. Un contact physique ou un test d'Investigation réussi peut révéler l'illusion.",
+    "material": "une statuette de vous valant au moins 5 PO",
+    "castingTime": "Action",
+    "range": "500 milles",
+    "duration": "Concentration, jusqu'à 1 jour"
+  },
+  "Regenerate": {
+    "name": "Régénérer",
+    "description": "Une créature que vous touchez récupère immédiatement 4d8 + 15 points de vie, puis 1 point de vie au début de chacun de ses tours pendant 1 heure. Les parties du corps sectionnées repoussent après 2 minutes.",
+    "material": "un moulin à prières",
+    "castingTime": "1 minute",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Resurrection": {
+    "name": "Résurrection",
+    "description": "Ramenez à la vie avec tous ses points de vie une créature morte depuis 100 ans au plus. Elle ne doit pas être morte de vieillesse ni en tant que mort-vivant ; les poisons et parties manquantes du corps sont restaurés. Elle subit un malus de -4 aux tests D20, réduit de 1 après chaque repos long. Si elle est morte depuis au moins 365 jours, vous ne pouvez lancer de sorts et subissez un désavantage aux tests D20 jusqu'à votre prochain repos long.",
+    "material": "un diamant valant au moins 1 000 PO, consumé par le sort",
+    "castingTime": "1 heure",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Reverse Gravity": {
+    "name": "Gravité inversée",
+    "description": "Inversez la gravité dans un cylindre de 50 pieds de rayon et de 100 pieds de haut pendant 1 minute au maximum. Les créatures et objets tombent vers le haut, sauf si une créature réussit un jet de sauvegarde de Dextérité pour s'agripper à un objet fixe ; ils retombent à la fin du sort.",
+    "material": "une magnétite et de la limaille de fer",
+    "castingTime": "Action",
+    "range": "100 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Sequester": {
+    "name": "Séquestration",
+    "description": "Rendez une créature consentante ou un objet invisible et indétectable par magie jusqu'à ce qu'une condition que vous définissez mette fin au sort ou que la cible subisse des dégâts. Une créature affectée est inconsciente, ne vieillit pas et n'a besoin ni de nourriture, ni d'eau, ni d'air.",
+    "material": "de la poussière de gemmes valant au moins 5 000 PO, consumée par le sort",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Simulacrum": {
+    "name": "Simulacre",
+    "description": "Après 12 heures, créez dans la neige ou la glace un double artificiel d'une bête ou d'un humanoïde. Il possède la moitié du maximum de points de vie de l'original, ne peut gagner de niveaux ni récupérer des capacités dépensées par le repos, et ne peut lancer Simulacre. Le réparer pendant un repos long coûte 100 PO de matériaux par point de vie restauré. Vous ne pouvez avoir qu'un seul simulacre actif.",
+    "material": "du rubis en poudre valant au moins 1 500 PO, consumé par le sort",
+    "castingTime": "12 heures",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Symbol": {
+    "name": "Symbole",
+    "description": "Inscrivez un glyphe presque invisible avec un déclencheur que vous définissez. Lorsqu'il se déclenche, il affecte pendant 10 minutes les créatures dans une sphère de 60 pieds de rayon avec un effet choisi : Mort (jet de Constitution, 10d10 dégâts nécrotiques, moitié en cas de réussite), Discorde, Peur, Douleur, Sommeil ou Étourdissement, chacun ayant son jet et son état propres. Une créature n'est affectée qu'une fois par tour.",
+    "material": "du diamant en poudre valant au moins 1 000 PO, consumé par le sort",
+    "castingTime": "1 minute",
+    "range": "Contact",
+    "duration": "Jusqu'à dissipation ou déclenchement"
+  },
+  "Teleport": {
+    "name": "Téléportation",
+    "description": "Téléportez-vous avec jusqu'à huit créatures consentantes à 10 pieds ou moins, ou un objet de taille G ou inférieure, vers un lieu connu sur le même plan. Le MJ lance d100 selon votre familiarité : un cercle permanent ou un objet associé récemment y arrive toujours ; les autres destinations peuvent provoquer un incident (3d10 dégâts de force et nouveau jet), une arrivée dans une zone semblable ou à côté de la cible.",
+    "castingTime": "Action",
+    "range": "10 pieds",
+    "duration": "Instantanée"
+  },
+  "Animal Shapes": {
+    "name": "Formes animales",
+    "description": "Un nombre quelconque de créatures consentantes visibles à 30 pieds ou moins deviennent des bêtes de taille G ou inférieure et de FP 4 ou moins pendant 24 heures. Chacune conserve ses points de vie, dés de vie, valeurs de caractéristiques mentales, capacités de communication et type de créature, mais ne peut lancer de sorts ni utiliser l'équipement fusionné. Chacune reçoit des points de vie temporaires égaux aux points de vie de sa première forme. Vous pouvez changer à nouveau leurs formes par une action magique ; une cible peut mettre fin à sa forme par une action bonus.",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "24 heures"
+  },
+  "Antimagic Field": {
+    "name": "Champ antimagique",
+    "description": "Une émanation de 10 pieds centrée sur vous supprime les sorts et autres effets magiques pendant 1 heure de concentration au maximum. Elle empêche de lancer des sorts et de voyager magiquement vers ou dans la zone, neutralise les objets magiques et bloque la plupart des zones magiques et créatures invoquées, mais pas la magie des artefacts ou des divinités.",
+    "material": "de la limaille de fer",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Antipathy/Sympathy": {
+    "name": "Antipathie/Sympathie",
+    "description": "Pendant 10 jours, faites en sorte qu'une créature ou un objet repousse ou attire une catégorie de créatures de votre choix. Une créature de cette catégorie à 120 pieds ou moins effectue un jet de sauvegarde de Sagesse : l'antipathie l'effraie et l'éloigne, tandis que la sympathie la charme et l'attire. Des jets répétés peuvent mettre fin à l'effet pour cette créature.",
+    "material": "un mélange de vinaigre et de miel",
+    "castingTime": "1 heure",
+    "range": "60 pieds",
+    "duration": "10 jours"
+  },
+  "Befuddlement": {
+    "name": "Confusion mentale",
+    "description": "Une créature à 150 pieds ou moins effectue un jet de sauvegarde d'Intelligence contre 10d12 dégâts psychiques, réduits de moitié en cas de réussite. En cas d'échec, elle ne peut également ni lancer de sorts ni utiliser l'action magique. Elle refait le jet tous les 30 jours ; Restauration suprême, Guérison ou Souhait peuvent mettre fin à l'effet.",
+    "material": "un anneau porte-clés vide",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Clone": {
+    "name": "Cloner",
+    "description": "Faites croître un double inerte d'une créature vivante à partir d'un morceau de sa chair. Après 120 jours, si l'original meurt et que son âme est consentante et libre, elle entre dans le clone, qui peut être plus jeune. Le sort exige un diamant de 1 000 PO consumé et un réceptacle hermétique valant au moins 2 000 PO.",
+    "material": "un diamant valant au moins 1 000 PO, consumé par le sort, et un réceptacle hermétique valant au moins 2 000 PO, assez grand pour contenir la créature clonée",
+    "castingTime": "1 heure",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Control Weather": {
+    "name": "Contrôler la météo",
+    "description": "Pendant 8 heures de concentration au maximum en extérieur, contrôlez le temps dans un rayon de 5 milles. Vous pouvez modifier les précipitations, la température et le vent d'un degré à la fois ; chaque modification prend 1d4 x 10 minutes pour produire son effet.",
+    "material": "de l'encens brûlant",
+    "castingTime": "10 minutes",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 8 heures"
+  },
+  "Demiplane": {
+    "name": "Demi-plan",
+    "description": "Ouvrez pendant 1 heure une porte d'ombre vers une pièce extradimensionnelle cubique de 30 pieds de côté. Vous pouvez la relier à un nouveau demi-plan, à un demi-plan que vous avez déjà créé ou à un autre demi-plan dont vous connaissez la nature et le contenu.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "1 heure"
+  },
+  "Dominate Monster": {
+    "name": "Dominer le monstre",
+    "description": "Une créature à 60 pieds ou moins effectue un jet de sauvegarde de Sagesse ou est charmée et contrôlée par télépathie pendant 1 heure de concentration au maximum. Vous pouvez lui donner des ordres et la contrôler directement ; subir des dégâts lui permet de refaire le jet pour mettre fin au sort.",
+    "higherLevels": "Avec un emplacement de niveau 9, la concentration peut durer jusqu'à 8 heures.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Earthquake": {
+    "name": "Tremblement de terre",
+    "description": "Pendant 1 minute au maximum, des secousses rendent le sol difficile d'accès dans un cercle de 100 pieds de rayon. Les créatures présentes effectuent un jet de sauvegarde de Dextérité lors de l'incantation et à chaque tour, sous peine de tomber à terre et de perdre leur concentration. Le sort ouvre 1d6 crevasses et inflige 50 dégâts contondants aux structures à chaque tour ; l'effondrement d'une structure peut infliger 12d6 dégâts contondants (jet de Dextérité pour réduire de moitié).",
+    "material": "un morceau de roche fracturée",
+    "castingTime": "Action",
+    "range": "500 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Glibness": {
+    "name": "Bagou",
+    "description": "Pendant 1 heure, considérez tout résultat de 14 ou moins sur le dé d'un test de Charisme comme un 15. La magie qui vérifie si vous dites la vérité considère vos paroles comme véridiques.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "1 heure"
+  },
+  "Holy Aura": {
+    "name": "Aura sacrée",
+    "description": "Pendant 1 minute au maximum, les créatures choisies dans une émanation de 30 pieds autour de vous ont l'avantage à tous leurs jets de sauvegarde, tandis que les autres créatures subissent un désavantage aux attaques contre elles. Un fiélon ou mort-vivant qui touche au corps à corps une créature protégée doit réussir un jet de sauvegarde de Constitution sous peine d'être aveuglé.",
+    "material": "un reliquaire valant au moins 1 000 PO",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Incendiary Cloud": {
+    "name": "Nuage incendiaire",
+    "description": "Une sphère de fumée de 20 pieds de rayon masquant fortement la visibilité apparaît à 150 pieds ou moins et s'éloigne de vous de 10 pieds à chaque tour. Les créatures qui s'y trouvent à son apparition, celles qu'elle atteint et celles qui y entrent ou y terminent un tour effectuent un jet de sauvegarde de Dextérité contre 10d8 dégâts de feu, réduits de moitié en cas de réussite ; chacune ne fait qu'un jet par tour. Le nuage dure 1 minute de concentration au maximum.",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Maze": {
+    "name": "Labyrinthe",
+    "description": "Bannissez une créature à 60 pieds ou moins dans un labyrinthe pendant 10 minutes de concentration au maximum ; aucun jet de sauvegarde initial n'est requis. Elle peut utiliser l'action Étudier pour s'échapper avec un test d'Intelligence (Investigation) DD 20 ; sinon, elle revient à la fin du sort.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Mind Blank": {
+    "name": "Esprit vide",
+    "description": "Pendant 24 heures, rendez une créature immunisée contre les dégâts psychiques, l'état charmé, la lecture de pensées, la manipulation de l'esprit et la divination qui l'affecterait ou recueillerait des informations sur elle. Cette protection contrecarre aussi Souhait utilisé à ces fins.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "24 heures"
+  },
+  "Power Word Stun": {
+    "name": "Mot de pouvoir : étourdissement",
+    "description": "Une créature visible à 60 pieds ou moins est étourdie si elle a 150 points de vie ou moins ; sinon, sa vitesse devient 0 jusqu'au début de votre prochain tour. Une cible étourdie refait un jet de sauvegarde de Constitution à la fin de chacun de ses tours pour mettre fin à l'effet.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Sunburst": {
+    "name": "Explosion solaire",
+    "description": "La lumière du soleil explose dans une sphère de 60 pieds de rayon à 150 pieds ou moins. Les créatures effectuent un jet de sauvegarde de Constitution contre 12d6 dégâts radiants, réduits de moitié en cas de réussite ; celles qui échouent sont également aveuglées pendant 1 minute et peuvent refaire le jet à la fin de chaque tour. La lumière dissipe les Ténèbres magiques dans la zone.",
+    "material": "un morceau de pierre de soleil",
+    "castingTime": "Action",
+    "range": "150 pieds",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Tsunami": {
+    "name": "Tsunami",
+    "description": "Élevez pendant six rounds au maximum un mur d'eau mesurant jusqu'à 300 pieds de long et de haut et 50 pieds d'épaisseur. Les créatures dans sa zone effectuent un jet de sauvegarde de Force contre 6d10 dégâts contondants, réduits de moitié en cas de réussite. À chaque round, il avance de 50 pieds ; les créatures de taille TG ou inférieure qu'il emporte effectuent un autre jet de Force contre 5d10 dégâts contondants. Sa hauteur et ses dégâts ultérieurs diminuent à chaque round.",
+    "castingTime": "1 minute",
+    "range": "1 mille",
+    "duration": "Concentration, jusqu'à 6 rounds"
+  },
+  "Astral Projection": {
+    "name": "Projection astrale",
+    "description": "Projetez-vous avec jusqu'à huit créatures consentantes sur le plan Astral, en laissant vos corps inconscients et sans vieillissement. Chaque forme astrale possède un cordon d'argent ; le sectionner tue sa cible. Quitter le plan Astral attire le corps sur le nouveau plan. Le sort prend fin pour une cible si son corps ou sa forme astrale tombe à 0 point de vie, ou si vous y mettez fin. Chaque cible requiert une jacinthe de 1 000 PO et un lingot d'argent de 100 PO, tous deux consumés.",
+    "material": "pour chaque cible du sort, une jacinthe valant au moins 1 000 PO et un lingot d'argent valant au moins 100 PO, tous consumés par le sort",
+    "castingTime": "1 heure",
+    "range": "10 pieds",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Foresight": {
+    "name": "Prémonition",
+    "description": "Pendant 8 heures, une créature consentante que vous touchez a l'avantage aux tests D20, et les jets d'attaque contre elle subissent un désavantage. Le sort prend fin si vous le lancez à nouveau.",
+    "material": "une plume de colibri",
+    "castingTime": "1 minute",
+    "range": "Contact",
+    "duration": "8 heures"
+  },
+  "Gate": {
+    "name": "Portail",
+    "description": "Ouvrez pendant 1 minute au maximum un portail de 5 à 20 pieds de diamètre vers un lieu précis d'un autre plan. Les créatures peuvent traverser la face avant du portail depuis l'un ou l'autre plan. À l'ouverture, vous pouvez nommer une créature particulière sur un autre plan pour la transporter immédiatement près de vous ; vous n'exercez aucun contrôle sur elle.",
+    "material": "un diamant valant au moins 5 000 PO",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Imprisonment": {
+    "name": "Emprisonnement",
+    "description": "Une créature à 30 pieds ou moins effectue un jet de sauvegarde de Sagesse ou est enfermée jusqu'à dissipation du sort ou réalisation d'un déclencheur que vous avez défini. Choisissez Enterrement, Enchaînement, Prison délimitée, Réduction ou Sommeil. Elle ne vieillit pas et n'a pas besoin de nourriture, ne peut se téléporter et ne peut être localisée par divination. Une réussite la rend immunisée contre ce sort pendant 24 heures ; seule une Dissipation de la magie de niveau 9 peut y mettre fin prématurément.",
+    "material": "une statuette de la cible valant au moins 5 000 PO",
+    "castingTime": "1 minute",
+    "range": "30 pieds",
+    "duration": "Jusqu'à dissipation"
+  },
+  "Mass Heal": {
+    "name": "Guérison de masse",
+    "description": "Répartissez jusqu'à 700 points de vie de soins entre les créatures visibles de votre choix à 60 pieds ou moins. Chaque créature soignée est aussi libérée des états aveuglé, assourdi et empoisonné.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Meteor Swarm": {
+    "name": "Pluie de météores",
+    "description": "Quatre météores frappent des points distincts à 1 mille ou moins. Chacun crée une sphère de 40 pieds de rayon ; les créatures qui s'y trouvent effectuent un jet de sauvegarde de Dextérité contre 20d6 dégâts de feu plus 20d6 dégâts contondants, réduits de moitié en cas de réussite. Les zones qui se chevauchent n'infligent des dégâts qu'une fois par créature.",
+    "castingTime": "Action",
+    "range": "1 mille",
+    "duration": "Instantanée"
+  },
+  "Power Word Heal": {
+    "name": "Mot de pouvoir : guérison",
+    "description": "Une créature à 60 pieds ou moins récupère tous ses points de vie et n'est plus charmée, effrayée, paralysée, empoisonnée ni étourdie. Une cible à terre peut utiliser sa réaction pour se relever.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Power Word Kill": {
+    "name": "Mot de pouvoir : mort",
+    "description": "Une créature à 60 pieds ou moins meurt si elle a 100 points de vie ou moins. Si elle en a davantage, elle subit plutôt 12d12 dégâts psychiques ; aucun jet de sauvegarde.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "Instantanée"
+  },
+  "Prismatic Wall": {
+    "name": "Mur prismatique",
+    "description": "Créez pendant 10 minutes un mur de sept couches mesurant jusqu'à 90 pieds sur 30, ou un globe de 30 pieds de diamètre au maximum. Les créatures non protégées à proximité peuvent être aveuglées ; traverser chaque couche demande un jet de sauvegarde de Dextérité. Les cinq premières infligent chacune 12d6 dégâts de feu, d'acide, de foudre, de poison ou de froid (moitié en cas de réussite) ; la sixième peut pétrifier et la septième bannir. Chaque couche a son propre moyen d'être détruite ; Champ antimagique ne peut supprimer le mur.",
+    "castingTime": "Action",
+    "range": "60 pieds",
+    "duration": "10 minutes"
+  },
+  "Shapechange": {
+    "name": "Changement de forme",
+    "description": "Pendant 1 heure au maximum, devenez une créature que vous avez vue et dont le FP ne dépasse pas votre niveau ou votre FP, à l'exception d'un artificiel ou d'un mort-vivant. Recevez des points de vie temporaires égaux aux points de vie de votre première forme et utilisez ses statistiques, mais conservez vos points de vie, dés de vie, caractéristiques mentales, maîtrises, type de créature, communication et aptitude Incantation. Une action magique vous transforme en une autre forme admissible.",
+    "material": "un cercle de jade valant au moins 1 500 PO",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Storm of Vengeance": {
+    "name": "Tempête de vengeance",
+    "description": "Une tempête de 300 pieds de rayon dure 1 minute au maximum. D'abord, les créatures sous elle effectuent un jet de sauvegarde de Constitution ou subissent 2d6 dégâts de tonnerre et deviennent assourdies. Au tour 2, elle inflige 4d6 dégâts d'acide ; au tour 3, six éclairs infligent chacun 10d6 dégâts de foudre (jet de Dextérité pour réduire de moitié) ; au tour 4, elle inflige 2d6 dégâts contondants ; aux tours 5 à 10, elle inflige 1d6 dégâts de froid par tour et rend la zone fortement obscurcie et difficile à traverser.",
+    "castingTime": "Action",
+    "range": "1 mille",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Time Stop": {
+    "name": "Arrêt du temps",
+    "description": "Effectuez 1d4 + 1 tours supplémentaires tandis que le temps s'arrête pour les autres créatures. L'effet prend fin prématurément si vous affectez une autre créature ou un objet qu'elle porte ou transporte, ou si vous vous éloignez de plus de 1 000 pieds du lieu de l'incantation.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "True Polymorph": {
+    "name": "Métamorphose suprême",
+    "description": "Transformez une créature en une autre créature ou en objet non magique, ou un objet non magique non porté en créature. Une créature non consentante peut résister par un jet de sauvegarde de Sagesse. La nouvelle créature a un FP inférieur ou égal au niveau ou FP de l'original ; un objet peut devenir une créature de FP 9 ou moins. Maintenir la concentration pendant l'heure complète rend le changement durable jusqu'à dissipation.",
+    "material": "une goutte de mercure, une noix de gomme arabique et un filet de fumée",
+    "castingTime": "Action",
+    "range": "30 pieds",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "True Resurrection": {
+    "name": "Résurrection véritable",
+    "description": "Ramenez à la vie avec tous ses points de vie une créature morte depuis 200 ans au plus, sauf si elle est morte de vieillesse. Restaurez ses organes et membres perdus, supprimez poisons, maladies et malédictions, et redonnez aux morts-vivants leur forme d'origine. Si son corps n'existe plus, prononcer son nom en crée un nouveau. Le sort consume pour 25 000 PO de diamants.",
+    "material": "des diamants valant au moins 25 000 PO, consumés par le sort",
+    "castingTime": "1 heure",
+    "range": "Contact",
+    "duration": "Instantanée"
+  },
+  "Weird": {
+    "name": "Terreurs nocturnes",
+    "description": "Les créatures de votre choix dans une sphère de 30 pieds de rayon effectuent un jet de sauvegarde de Sagesse contre 10d10 dégâts psychiques, réduits de moitié en cas de réussite. Une créature qui échoue est également effrayée pendant 1 minute au maximum et refait le jet à la fin de chaque tour : un échec inflige 5d10 dégâts psychiques, une réussite met fin au sort pour elle.",
+    "castingTime": "Action",
+    "range": "120 pieds",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Wish": {
+    "name": "Souhait",
+    "description": "Reproduisez n'importe quel sort de niveau 8 ou inférieur sans remplir ses conditions d'incantation. Les autres usages comprennent la création d'un objet non magique valant jusqu'à 25 000 PO, la guérison complète de vingt créatures au maximum, l'octroi d'une résistance permanente à un type de dégâts ou d'une immunité temporaire à un sort, le remplacement d'un don admissible ou la relance d'un dé du round précédent. Les souhaits plus ambitieux dépendent du MJ. Tout usage autre que la reproduction d'un sort provoque un contrecoup magique : dégâts lorsque vous lancez des sorts jusqu'à un repos long, Force de 3 pendant 2d4 jours et 33 % de risque de ne plus jamais pouvoir lancer Souhait.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  }
+}

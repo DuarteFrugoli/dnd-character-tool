@@ -1,0 +1,113 @@
+{
+  "Alchemist's Supplies": {
+    "name": "炼金术士的用品"
+  },
+  "Brewer's Supplies": {
+    "name": "酿酒工具"
+  },
+  "Calligrapher's Supplies": {
+    "name": "书法家用品"
+  },
+  "Carpenter's Tools": {
+    "name": "木匠的工具"
+  },
+  "Cartographer's Tools": {
+    "name": "制图师的工具"
+  },
+  "Cobbler's Tools": {
+    "name": "补鞋匠的工具"
+  },
+  "Cook's Utensils": {
+    "name": "厨师的用具"
+  },
+  "Glassblower's Tools": {
+    "name": "玻璃吹制工的工具"
+  },
+  "Jeweler's Tools": {
+    "name": "珠宝商的工具"
+  },
+  "Leatherworker's Tools": {
+    "name": "制革工具"
+  },
+  "Mason's Tools": {
+    "name": "石匠工具"
+  },
+  "Painter's Supplies": {
+    "name": "画家用品"
+  },
+  "Potter's Tools": {
+    "name": "陶工工具"
+  },
+  "Smith's Tools": {
+    "name": "铁匠工具"
+  },
+  "Tinker's Tools": {
+    "name": "修补匠工具"
+  },
+  "Weaver's Tools": {
+    "name": "织工的工具"
+  },
+  "Woodcarver's Tools": {
+    "name": "木雕师的工具"
+  },
+  "Disguise Kit": {
+    "name": "伪装套件"
+  },
+  "Forgery Kit": {
+    "name": "伪造工具"
+  },
+  "Dice": {
+    "name": "骰子"
+  },
+  "Dragonchess": {
+    "name": "龙棋"
+  },
+  "Playing Cards": {
+    "name": "扑克牌"
+  },
+  "Three-Dragon Ante": {
+    "name": "三龙赌注"
+  },
+  "Herbalism Kit": {
+    "name": "草药学套件"
+  },
+  "Bagpipes": {
+    "name": "风笛"
+  },
+  "Drum": {
+    "name": "鼓"
+  },
+  "Dulcimer": {
+    "name": "扬琴"
+  },
+  "Flute": {
+    "name": "长笛"
+  },
+  "Horn": {
+    "name": "号角"
+  },
+  "Lute": {
+    "name": "鲁特琴"
+  },
+  "Lyre": {
+    "name": "里拉琴"
+  },
+  "Pan Flute": {
+    "name": "排笛"
+  },
+  "Shawm": {
+    "name": "肖姆管"
+  },
+  "Viol": {
+    "name": "维奥尔"
+  },
+  "Navigator's Tools": {
+    "name": "航海工具"
+  },
+  "Poisoner's Kit": {
+    "name": "制毒工具包"
+  },
+  "Thieves' Tools": {
+    "name": "盗贼的工具"
+  }
+}

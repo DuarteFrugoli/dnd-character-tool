@@ -1,0 +1,70 @@
+{
+  "Alert": {
+    "name": "Wachsam",
+    "description": "Addiere deinen Übungsbonus zu Initiativewürfen. Unmittelbar nach dem Initiativewurf kannst du dein Ergebnis mit dem eines bereitwilligen Verbündeten im selben Kampf tauschen, sofern keiner von euch kampfunfähig ist."
+  },
+  "Magic Initiate": {
+    "name": "Magieinitiierter",
+    "description": "Wähle die Zauberliste des Klerikers, Druiden oder Magiers. Lerne zwei Zaubertricks und bereite einen Zauber des 1. Grades aus dieser Liste vor. Wähle Intelligenz, Weisheit oder Charisma für diese Zauber. Du kannst den Zauber des 1. Grades einmal pro Langer Rast ohne Zauberplatz oder mit einem Zauberplatz wirken. Wenn du eine Stufe aufsteigst, kannst du einen gewählten Zauber durch einen anderen desselben Grades aus derselben Liste ersetzen. Jede erneute Wahl dieses Talents muss eine andere Liste nutzen."
+  },
+  "Savage Attacker": {
+    "name": "Wilder Angreifer",
+    "description": "Einmal pro Zug kannst du, wenn du mit einer Waffe triffst, ihre Schadenswürfel zweimal würfeln und eines der Ergebnisse verwenden."
+  },
+  "Skilled": {
+    "name": "Geschickt",
+    "description": "Du erhältst Übung in drei Fertigkeiten, Werkzeugen oder einer Mischung aus beidem. Du kannst dieses Talent mehrfach wählen."
+  },
+  "Ability Score Improvement": {
+    "name": "Attributswertverbesserung",
+    "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1, bis zu einem Maximum von 20. Du kannst dieses Talent mehrfach wählen."
+  },
+  "Grappler": {
+    "name": "Ringer",
+    "description": "Erhöhe Stärke oder Geschicklichkeit um 1, bis zu einem Maximum von 20. Einmal pro Zug kann ein waffenloser Schlag als Teil der Angriffsaktion sowohl Schaden verursachen als auch ein Ziel packen. Du hast Vorteil auf Angriffe gegen Kreaturen, die du gepackt hast, und das Bewegen einer gepackten Kreatur deiner Größe oder kleiner kostet keine zusätzliche Bewegung."
+  },
+  "Archery": {
+    "name": "Bogenschießen",
+    "description": "Du erhältst einen Bonus von +2 auf Angriffswürfe mit Fernkampfwaffen."
+  },
+  "Defense": {
+    "name": "Verteidigung",
+    "description": "Du erhältst +1 auf deine Rüstungsklasse, solange du leichte, mittelschwere oder schwere Rüstung trägst."
+  },
+  "Great Weapon Fighting": {
+    "name": "Kampf mit großen Waffen",
+    "description": "Wenn du den Schaden eines Nahkampfwaffenangriffs würfelst, während du eine zweihändige oder vielseitige Waffe mit beiden Händen hältst, behandelst du jedes Ergebnis von 1 oder 2 auf einem Schadenswürfel als 3."
+  },
+  "Two-Weapon Fighting": {
+    "name": "Kampf mit zwei Waffen",
+    "description": "Wenn dir die Eigenschaft Leicht einen zusätzlichen Angriff gewährt, addierst du deinen Attributsmodifikator zum Schaden dieses Angriffs, falls er nicht bereits enthalten ist."
+  },
+  "Boon of Combat Prowess": {
+    "name": "Segen der Kampfkünste",
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Wenn ein Angriffswurf verfehlt, kannst du ihn stattdessen treffen lassen; du erhältst diesen Vorteil zu Beginn deines nächsten Zuges zurück."
+  },
+  "Boon of Dimensional Travel": {
+    "name": "Segen der Dimensionsreise",
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Unmittelbar nach der Aktion Angreifen oder Magie kannst du dich bis zu 30 Fuß weit an einen freien Ort teleportieren, den du sehen kannst."
+  },
+  "Boon of Fate": {
+    "name": "Segen des Schicksals",
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Wenn du oder eine Kreatur innerhalb von 60 Fuß bei einer W20-Probe Erfolg hat oder scheitert, würfle 2W4 und wende die Summe als Bonus oder Malus auf den Wurf an. Du erhältst die Nutzung zurück, wenn du Initiative würfelst oder eine Kurze oder Lange Rast beendest."
+  },
+  "Boon of Irresistible Offense": {
+    "name": "Segen des unwiderstehlichen Angriffs",
+    "description": "Erhöhe Stärke oder Geschicklichkeit um 1, bis zu einem Maximum von 30. Dein Wucht-, Stich- und Hiebschaden ignoriert Resistenz. Bei einer natürlichen 20 auf einen Angriffswurf verursachst du zusätzlichen Schaden vom Typ des Angriffs in Höhe des Attributswerts, den dieses Talent erhöht hat."
+  },
+  "Boon of Spell Recall": {
+    "name": "Segen der Zauberrückgewinnung",
+    "description": "Erhöhe Intelligenz, Weisheit oder Charisma um 1, bis zu einem Maximum von 30. Immer wenn du einen Zauber mit einem Zauberplatz des 1. bis 4. Grades wirkst, würfle 1W4; entspricht das Ergebnis dem Grad des Platzes, wird er nicht verbraucht."
+  },
+  "Boon of the Night Spirit": {
+    "name": "Segen des Nachtgeists",
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. In dämmrigem Licht oder Dunkelheit kannst du als Bonusaktion unsichtbar werden, bis du eine Aktion, Bonusaktion oder Reaktion ausführst. Unter diesen Lichtverhältnissen hast du Resistenz gegen allen Schaden außer psychischen und gleißenden Schaden."
+  },
+  "Boon of Truesight": {
+    "name": "Segen der wahren Sicht",
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Du erhältst Wahre Sicht mit einer Reichweite von 60 Fuß."
+  }
+}

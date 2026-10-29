@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "クレリック",
+        "description": "クレリックの初級呪文を2つと、1レベルのクレリック呪文を1つ選ぶ。"
+      },
+      "druid": {
+        "name": "ドルイド",
+        "description": "ドルイドの初級呪文を2つと、1レベルのドルイド呪文を1つ選ぶ。"
+      },
+      "wizard": {
+        "name": "ウィザード",
+        "description": "ウィザードの初級呪文を2つと、1レベルのウィザード呪文を1つ選ぶ。"
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "知力",
+        "description": "これらの呪文の呪文発動能力値には知力を用いる。"
+      },
+      "wisdom": {
+        "name": "判断力",
+        "description": "これらの呪文の呪文発動能力値には判断力を用いる。"
+      },
+      "charisma": {
+        "name": "魅力",
+        "description": "これらの呪文の呪文発動能力値には魅力を用いる。"
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "弓術",
+        "description": "遠隔武器による攻撃ロールに+2のボーナスを得る。"
+      },
+      "defense": {
+        "name": "防御",
+        "description": "軽装鎧、中装鎧、重装鎧のいずれかを着用している間、ACに+1を得る。"
+      },
+      "great_weapon_fighting": {
+        "name": "大武器戦闘",
+        "description": "両手で持った「両手用」または「両用」の近接武器のダメージ・ダイスで1または2が出たら、3として扱う。"
+      },
+      "two_weapon_fighting": {
+        "name": "二刀流戦闘",
+        "description": "「軽武器」の特性による追加攻撃のダメージに、能力値修正値を加える。"
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "弓術",
+        "description": "遠隔武器による攻撃ロールに+2のボーナスを得る。"
+      },
+      "defense": {
+        "name": "防御",
+        "description": "軽装鎧、中装鎧、重装鎧のいずれかを着用している間、ACに+1を得る。"
+      },
+      "great_weapon_fighting": {
+        "name": "大武器戦闘",
+        "description": "両手で持った「両手用」または「両用」の近接武器のダメージ・ダイスで1または2が出たら、3として扱う。"
+      },
+      "two_weapon_fighting": {
+        "name": "二刀流戦闘",
+        "description": "「軽武器」の特性による追加攻撃のダメージに、能力値修正値を加える。"
+      },
+      "blessed_warrior": {
+        "name": "祝福された戦士",
+        "description": "クレリックの初級呪文を2つ学ぶ。それらは君にとってパラディン呪文として扱う。"
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "弓術",
+        "description": "遠隔武器による攻撃ロールに+2のボーナスを得る。"
+      },
+      "defense": {
+        "name": "防御",
+        "description": "軽装鎧、中装鎧、重装鎧のいずれかを着用している間、ACに+1を得る。"
+      },
+      "great_weapon_fighting": {
+        "name": "大武器戦闘",
+        "description": "両手で持った「両手用」または「両用」の近接武器のダメージ・ダイスで1または2が出たら、3として扱う。"
+      },
+      "two_weapon_fighting": {
+        "name": "二刀流戦闘",
+        "description": "「軽武器」の特性による追加攻撃のダメージに、能力値修正値を加える。"
+      },
+      "druidic_warrior": {
+        "name": "ドルイドの戦士",
+        "description": "ドルイドの初級呪文を2つ学ぶ。それらは君にとってレンジャー呪文として扱う。"
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "守護者",
+        "description": "軍用武器への習熟と重装鎧の訓練を得る。"
+      },
+      "thaumaturge": {
+        "name": "奇跡術師",
+        "description": "クレリックの初級呪文をさらに1つ学び、〈魔法学〉または〈宗教〉の能力値判定に判断力修正値（最低+1）を加える。"
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "魔術師",
+        "description": "ドルイドの初級呪文をさらに1つ学び、〈魔法学〉または〈自然〉の能力値判定に判断力修正値（最低+1）を加える。"
+      },
+      "warden": {
+        "name": "番人",
+        "description": "軍用武器への習熟と中装鎧の訓練を得る。"
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "神聖なる一撃",
+        "description": "各ターンに1回、武器攻撃の命中に1d8の光輝または死霊ダメージを加える。クレリック14レベル以降は2d8になる。"
+      },
+      "potent_spellcasting": {
+        "name": "強力な呪文発動",
+        "description": "クレリックの初級呪文のダメージに判断力修正値を加える。14レベル以降、ダメージを与える初級呪文で一時的ヒット・ポイントを与えることもできる。"
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "強力な呪文発動",
+        "description": "ドルイドの初級呪文のダメージに判断力修正値を加える。ドルイド15レベルで初級呪文の射程が延びる。"
+      },
+      "primal_strike": {
+        "name": "原始の一撃",
+        "description": "各ターンに1回、武器または野獣形態の攻撃の命中に1d8の冷気、火、電撃、雷鳴ダメージを加える。15レベルでは2d8になる。"
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "動物使い"
+      },
+      "athletics": {
+        "name": "運動"
+      },
+      "intimidation": {
+        "name": "威圧"
+      },
+      "nature": {
+        "name": "自然"
+      },
+      "perception": {
+        "name": "知覚"
+      },
+      "survival": {
+        "name": "生存"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "魔法学"
+      },
+      "history": {
+        "name": "歴史"
+      },
+      "investigation": {
+        "name": "捜査"
+      },
+      "medicine": {
+        "name": "医術"
+      },
+      "nature": {
+        "name": "自然"
+      },
+      "religion": {
+        "name": "宗教"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "呪文精密化",
+        "description": "魔力点を1点消費する。魅力修正値までの数のクリーチャー（最低1体）を選ぶ。そのクリーチャーはこの呪文に対するセーヴに自動成功し、成功時に通常はダメージが半減する場合もダメージを受けない。"
+      },
+      "distant_spell": {
+        "name": "呪文遠隔化",
+        "description": "魔力点を1点消費し、射程が5フィート以上の呪文の射程を2倍にするか、射程「接触」を30フィートにする。"
+      },
+      "empowered_spell": {
+        "name": "呪文強化",
+        "description": "魔力点を1点消費し、魅力修正値までの数のダメージ・ダイス（最低1個）を振り直す。新しい出目を用いる。他の呪文修正と併用できる。"
+      },
+      "extended_spell": {
+        "name": "呪文延長",
+        "description": "魔力点を1点消費し、呪文の持続時間を最大24時間まで2倍にし、その呪文への精神集中を維持するセーヴに有利を得る。"
+      },
+      "heightened_spell": {
+        "name": "呪文高度化",
+        "description": "魔力点を2点消費し、目標がその呪文に対して行うセーヴに不利を課す。"
+      },
+      "quickened_spell": {
+        "name": "呪文高速化",
+        "description": "魔力点を2点消費し、アクションで発動する呪文をボーナス・アクションで発動する。同じターンにすでに1レベル以上の呪文を発動していた場合は使えず、使用後にそのような呪文を発動することもできない。"
+      },
+      "seeking_spell": {
+        "name": "呪文追尾化",
+        "description": "魔力点を1点消費し、外れた呪文攻撃を振り直して新しい出目を用いる。他の呪文修正と併用できる。"
+      },
+      "subtle_spell": {
+        "name": "呪文静音化",
+        "description": "魔力点を1点消費し、音声、動作、および消費されず価格もない物質要素なしで呪文を発動する。"
+      },
+      "transmuted_spell": {
+        "name": "呪文変質化",
+        "description": "魔力点を1点消費し、呪文の酸、冷気、火、電撃、毒、雷鳴ダメージを、その一覧の別の種類に変更する。"
+      },
+      "twinned_spell": {
+        "name": "呪文二重化",
+        "description": "魔力点を1点消費し、より高いレベルで発動すると追加のクリーチャーを目標にできる呪文の有効レベルを1上げる。"
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "乾燥地"
+      },
+      "polar": {
+        "name": "極地"
+      },
+      "temperate": {
+        "name": "温帯"
+      },
+      "tropical": {
+        "name": "熱帯"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "巨人殺し",
+        "description": "各ターンに1回、ヒット・ポイントが最大値より少ないクリーチャーへの武器攻撃が命中すると、追加で1d8ダメージを与える。"
+      },
+      "horde_breaker": {
+        "name": "群れ崩し",
+        "description": "君のターンに1回、近くの別のクリーチャーを自分の武器で攻撃する。"
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "群れからの脱出",
+        "description": "君に対する機会攻撃は不利を受ける。"
+      },
+      "multiattack_defense": {
+        "name": "連続攻撃への防御",
+        "description": "あるクリーチャーが君に命中した後、そのターン中に同じクリーチャーが君に行う他の攻撃ロールは不利を受ける。"
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "酸"
+      },
+      "cold": {
+        "name": "冷気"
+      },
+      "fire": {
+        "name": "火"
+      },
+      "lightning": {
+        "name": "電撃"
+      },
+      "poison": {
+        "name": "毒"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "酸"
+      },
+      "bludgeoning": {
+        "name": "殴打"
+      },
+      "cold": {
+        "name": "冷気"
+      },
+      "fire": {
+        "name": "火"
+      },
+      "lightning": {
+        "name": "電撃"
+      },
+      "necrotic": {
+        "name": "死霊"
+      },
+      "piercing": {
+        "name": "刺突"
+      },
+      "poison": {
+        "name": "毒"
+      },
+      "psychic": {
+        "name": "精神"
+      },
+      "radiant": {
+        "name": "光輝"
+      },
+      "slashing": {
+        "name": "斬撃"
+      },
+      "thunder": {
+        "name": "雷鳴"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "黒",
+        "description": "酸"
+      },
+      "blue": {
+        "name": "青",
+        "description": "電撃"
+      },
+      "brass": {
+        "name": "真鍮",
+        "description": "火"
+      },
+      "bronze": {
+        "name": "青銅",
+        "description": "電撃"
+      },
+      "copper": {
+        "name": "銅",
+        "description": "酸"
+      },
+      "gold": {
+        "name": "金",
+        "description": "火"
+      },
+      "green": {
+        "name": "緑",
+        "description": "毒"
+      },
+      "red": {
+        "name": "赤",
+        "description": "火"
+      },
+      "silver": {
+        "name": "銀",
+        "description": "冷気"
+      },
+      "white": {
+        "name": "白",
+        "description": "冷気"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "ドラウ",
+        "description": "ダンシング・ライツ。3レベルでフェアリー・ファイアー、5レベルでダークネス。"
+      },
+      "high_elf": {
+        "name": "ハイ・エルフ",
+        "description": "プレスティディジテイション。3レベルでディテクト・マジック、5レベルでミスティ・ステップ。"
+      },
+      "wood_elf": {
+        "name": "ウッド・エルフ",
+        "description": "移動速度の上昇とドルイドクラフト。3レベルでロングストライダー、5レベルでパス・ウィズアウト・トレイス。"
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "フォレスト・ノーム",
+        "description": "マイナー・イリュージョンとスピーク・ウィズ・アニマルズ。"
+      },
+      "rock_gnome": {
+        "name": "ロック・ノーム",
+        "description": "メンディング、プレスティディジテイション、および時計仕掛けの装置。"
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "雲の跳躍",
+        "description": "ボーナス・アクションとして最大30フィート瞬間移動する。"
+      },
+      "fire": {
+        "name": "炎の灼熱",
+        "description": "命中時に追加で1d10の火ダメージを与える。"
+      },
+      "frost": {
+        "name": "霜の冷気",
+        "description": "命中時に追加で1d6の冷気ダメージを与え、目標の移動速度を下げる。"
+      },
+      "hill": {
+        "name": "丘の転倒",
+        "description": "命中時に大型以下の目標を伏せ状態にする。"
+      },
+      "stone": {
+        "name": "石の忍耐",
+        "description": "リアクションとして、受けるダメージを1d12+耐久力修正値だけ減らす。"
+      },
+      "storm": {
+        "name": "嵐の雷鳴",
+        "description": "君にダメージを与えたクリーチャーに1d8の雷鳴ダメージを与える。"
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "アビサル",
+        "description": "毒への抵抗とポイズン・スプレー。3レベルでレイ・オヴ・シックネス、5レベルでホールド・パースン。"
+      },
+      "chthonic": {
+        "name": "地下の血統",
+        "description": "死霊ダメージへの抵抗とチル・タッチ。3レベルでフォールス・ライフ、5レベルでレイ・オヴ・エンフィーブルメント。"
+      },
+      "infernal": {
+        "name": "地獄語",
+        "description": "火ダメージへの抵抗とファイアー・ボルト。3レベルでヘリッシュ・リビューク、5レベルでダークネス。"
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "看破"
+      },
+      "perception": {
+        "name": "知覚"
+      },
+      "survival": {
+        "name": "生存"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "クラブ",
+        "description": "単純近接武器。武器マスタリーは減速。"
+      },
+      "dagger": {
+        "name": "ダガー",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "greatclub": {
+        "name": "グレートクラブ",
+        "description": "単純近接武器。武器マスタリーは押し出し。"
+      },
+      "handaxe": {
+        "name": "ハンドアックス",
+        "description": "単純近接武器。武器マスタリーは翻弄。"
+      },
+      "javelin": {
+        "name": "ジャヴェリン",
+        "description": "単純近接武器。武器マスタリーは減速。"
+      },
+      "light_hammer": {
+        "name": "ライト・ハンマー",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "mace": {
+        "name": "メイス",
+        "description": "単純近接武器。武器マスタリーは弱体化。"
+      },
+      "quarterstaff": {
+        "name": "クォータースタッフ",
+        "description": "単純近接武器。武器マスタリーは転倒。"
+      },
+      "sickle": {
+        "name": "シックル",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "spear": {
+        "name": "スピア",
+        "description": "単純近接武器。武器マスタリーは弱体化。"
+      },
+      "battleaxe": {
+        "name": "バトルアックス",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "flail": {
+        "name": "フレイル",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "glaive": {
+        "name": "グレイヴ",
+        "description": "軍用近接武器。武器マスタリーはかすり傷。"
+      },
+      "greataxe": {
+        "name": "グレートアックス",
+        "description": "軍用近接武器。武器マスタリーは薙ぎ払い。"
+      },
+      "greatsword": {
+        "name": "グレートソード",
+        "description": "軍用近接武器。武器マスタリーはかすり傷。"
+      },
+      "halberd": {
+        "name": "ハルバード",
+        "description": "軍用近接武器。武器マスタリーは薙ぎ払い。"
+      },
+      "lance": {
+        "name": "ランス",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "longsword": {
+        "name": "ロングソード",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "maul": {
+        "name": "モール",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "morningstar": {
+        "name": "モーニングスター",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "pike": {
+        "name": "パイク",
+        "description": "軍用近接武器。武器マスタリーは押し出し。"
+      },
+      "rapier": {
+        "name": "レイピア",
+        "description": "軍用近接武器。武器マスタリーは翻弄。"
+      },
+      "scimitar": {
+        "name": "シミター",
+        "description": "軍用近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "shortsword": {
+        "name": "ショートソード",
+        "description": "軍用近接武器。武器マスタリーは翻弄。"
+      },
+      "trident": {
+        "name": "トライデント",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "warhammer": {
+        "name": "ウォーハンマー",
+        "description": "軍用近接武器。武器マスタリーは押し出し。"
+      },
+      "war_pick": {
+        "name": "ウォー・ピック",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "whip": {
+        "name": "ウィップ",
+        "description": "軍用近接武器。武器マスタリーは減速。"
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "クラブ",
+        "description": "単純近接武器。武器マスタリーは減速。"
+      },
+      "dagger": {
+        "name": "ダガー",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "greatclub": {
+        "name": "グレートクラブ",
+        "description": "単純近接武器。武器マスタリーは押し出し。"
+      },
+      "handaxe": {
+        "name": "ハンドアックス",
+        "description": "単純近接武器。武器マスタリーは翻弄。"
+      },
+      "javelin": {
+        "name": "ジャヴェリン",
+        "description": "単純近接武器。武器マスタリーは減速。"
+      },
+      "light_hammer": {
+        "name": "ライト・ハンマー",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "mace": {
+        "name": "メイス",
+        "description": "単純近接武器。武器マスタリーは弱体化。"
+      },
+      "quarterstaff": {
+        "name": "クォータースタッフ",
+        "description": "単純近接武器。武器マスタリーは転倒。"
+      },
+      "sickle": {
+        "name": "シックル",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "spear": {
+        "name": "スピア",
+        "description": "単純近接武器。武器マスタリーは弱体化。"
+      },
+      "dart": {
+        "name": "ダート",
+        "description": "単純遠隔武器。武器マスタリーは翻弄。"
+      },
+      "light_crossbow": {
+        "name": "ライト・クロスボウ",
+        "description": "単純遠隔武器。武器マスタリーは減速。"
+      },
+      "shortbow": {
+        "name": "ショートボウ",
+        "description": "単純遠隔武器。武器マスタリーは翻弄。"
+      },
+      "sling": {
+        "name": "スリング",
+        "description": "単純遠隔武器。武器マスタリーは減速。"
+      },
+      "battleaxe": {
+        "name": "バトルアックス",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "flail": {
+        "name": "フレイル",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "glaive": {
+        "name": "グレイヴ",
+        "description": "軍用近接武器。武器マスタリーはかすり傷。"
+      },
+      "greataxe": {
+        "name": "グレートアックス",
+        "description": "軍用近接武器。武器マスタリーは薙ぎ払い。"
+      },
+      "greatsword": {
+        "name": "グレートソード",
+        "description": "軍用近接武器。武器マスタリーはかすり傷。"
+      },
+      "halberd": {
+        "name": "ハルバード",
+        "description": "軍用近接武器。武器マスタリーは薙ぎ払い。"
+      },
+      "lance": {
+        "name": "ランス",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "longsword": {
+        "name": "ロングソード",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "maul": {
+        "name": "モール",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "morningstar": {
+        "name": "モーニングスター",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "pike": {
+        "name": "パイク",
+        "description": "軍用近接武器。武器マスタリーは押し出し。"
+      },
+      "rapier": {
+        "name": "レイピア",
+        "description": "軍用近接武器。武器マスタリーは翻弄。"
+      },
+      "scimitar": {
+        "name": "シミター",
+        "description": "軍用近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "shortsword": {
+        "name": "ショートソード",
+        "description": "軍用近接武器。武器マスタリーは翻弄。"
+      },
+      "trident": {
+        "name": "トライデント",
+        "description": "軍用近接武器。武器マスタリーは転倒。"
+      },
+      "warhammer": {
+        "name": "ウォーハンマー",
+        "description": "軍用近接武器。武器マスタリーは押し出し。"
+      },
+      "war_pick": {
+        "name": "ウォー・ピック",
+        "description": "軍用近接武器。武器マスタリーは弱体化。"
+      },
+      "whip": {
+        "name": "ウィップ",
+        "description": "軍用近接武器。武器マスタリーは減速。"
+      },
+      "blowgun": {
+        "name": "ブロウガン",
+        "description": "軍用遠隔武器。武器マスタリーは翻弄。"
+      },
+      "hand_crossbow": {
+        "name": "ハンド・クロスボウ",
+        "description": "軍用遠隔武器。武器マスタリーは翻弄。"
+      },
+      "heavy_crossbow": {
+        "name": "ヘヴィ・クロスボウ",
+        "description": "軍用遠隔武器。武器マスタリーは押し出し。"
+      },
+      "longbow": {
+        "name": "ロングボウ",
+        "description": "軍用遠隔武器。武器マスタリーは減速。"
+      },
+      "musket": {
+        "name": "マスケット",
+        "description": "軍用遠隔武器。武器マスタリーは減速。"
+      },
+      "pistol": {
+        "name": "ピストル",
+        "description": "軍用遠隔武器。武器マスタリーは翻弄。"
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "クラブ",
+        "description": "単純近接武器。武器マスタリーは減速。"
+      },
+      "dagger": {
+        "name": "ダガー",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "greatclub": {
+        "name": "グレートクラブ",
+        "description": "単純近接武器。武器マスタリーは押し出し。"
+      },
+      "handaxe": {
+        "name": "ハンドアックス",
+        "description": "単純近接武器。武器マスタリーは翻弄。"
+      },
+      "javelin": {
+        "name": "ジャヴェリン",
+        "description": "単純近接武器。武器マスタリーは減速。"
+      },
+      "light_hammer": {
+        "name": "ライト・ハンマー",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "mace": {
+        "name": "メイス",
+        "description": "単純近接武器。武器マスタリーは弱体化。"
+      },
+      "quarterstaff": {
+        "name": "クォータースタッフ",
+        "description": "単純近接武器。武器マスタリーは転倒。"
+      },
+      "sickle": {
+        "name": "シックル",
+        "description": "単純近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "spear": {
+        "name": "スピア",
+        "description": "単純近接武器。武器マスタリーは弱体化。"
+      },
+      "dart": {
+        "name": "ダート",
+        "description": "単純遠隔武器。武器マスタリーは翻弄。"
+      },
+      "light_crossbow": {
+        "name": "ライト・クロスボウ",
+        "description": "単純遠隔武器。武器マスタリーは減速。"
+      },
+      "shortbow": {
+        "name": "ショートボウ",
+        "description": "単純遠隔武器。武器マスタリーは翻弄。"
+      },
+      "sling": {
+        "name": "スリング",
+        "description": "単純遠隔武器。武器マスタリーは減速。"
+      },
+      "rapier": {
+        "name": "レイピア",
+        "description": "軍用近接武器。武器マスタリーは翻弄。"
+      },
+      "scimitar": {
+        "name": "シミター",
+        "description": "軍用近接武器。武器マスタリーは素早い攻撃。"
+      },
+      "shortsword": {
+        "name": "ショートソード",
+        "description": "軍用近接武器。武器マスタリーは翻弄。"
+      },
+      "whip": {
+        "name": "ウィップ",
+        "description": "軍用近接武器。武器マスタリーは減速。"
+      },
+      "hand_crossbow": {
+        "name": "ハンド・クロスボウ",
+        "description": "軍用遠隔武器。武器マスタリーは翻弄。"
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "苦悶の怪光線",
+        "description": "ダメージを与える、君が修得しているウォーロックの初級呪文を1つ選ぶ。その呪文のダメージ・ロールに魅力修正値を加えられる。"
+      },
+      "armor_of_shadows": {
+        "name": "影の鎧",
+        "description": "呪文スロットを消費せずに、自分自身を目標としてメイジ・アーマーを発動できる。"
+      },
+      "ascendant_step": {
+        "name": "昇天の歩み",
+        "description": "呪文スロットを消費せずに、自分自身を目標としてレヴィテートを発動できる。"
+      },
+      "devils_sight": {
+        "name": "悪魔の視力",
+        "description": "君から120フィート以内では、薄暗い光と暗闇の中を、魔法によるものかどうかにかかわらず普通に見通せる。"
+      },
+      "devouring_blade": {
+        "name": "貪りの刃",
+        "description": "君の「渇きの刃」の妖術による追加攻撃は、1回ではなく2回の追加攻撃を与える。"
+      },
+      "eldritch_mind": {
+        "name": "妖術の精神",
+        "description": "精神集中を維持するための耐久力セーヴに有利を得る。"
+      },
+      "eldritch_smite": {
+        "name": "妖術の一撃",
+        "description": "各ターンに1回、契約武器でクリーチャーに命中したとき、契約魔法の呪文スロットを消費して目標に追加の1d8の力場ダメージを与えられる。さらにスロットのレベルごとに1d8を加える。目標が超大型以下なら伏せ状態にもできる。"
+      },
+      "eldritch_spear": {
+        "name": "妖術の槍",
+        "description": "ダメージを与え、射程が10フィート以上の、君が修得しているウォーロックの初級呪文を1つ選ぶ。その呪文を発動するとき、射程がウォーロック・レベル×30フィート延びる。"
+      },
+      "fiendish_vigor": {
+        "name": "魔物の活力",
+        "description": "呪文スロットを消費せずに、自分自身を目標としてフォールス・ライフを発動できる。この特徴で発動した場合、一時的ヒット・ポイントのダイスは振らず、そのダイスの最大値を得る。"
+      },
+      "gaze_of_two_minds": {
+        "name": "二つの精神の視線",
+        "description": "ボーナス・アクションとして同意するクリーチャーに触れ、君の次のターンの終了時までその感覚を通して知覚できる。そのクリーチャーが君と同じ存在界にいる限り、以降のターンにもボーナス・アクションを使って接続を維持し、次のターンの終了時まで延長できる。この方法で維持しなければ接続は終わる。\n\n他のクリーチャーの感覚を通して知覚している間、君はその特別な感覚の恩恵を受ける。また、互いの距離が60フィート以内なら、自分の位置または相手の位置にいるかのように呪文を発動できる。"
+      },
+      "gift_of_the_depths": {
+        "name": "深みの贈り物",
+        "description": "君は水中で呼吸でき、君の移動速度と等しい水泳移動速度を得る。\n\n呪文スロットを消費せずにウォーター・ブリージングを1回発動することもできる。この方法で再び発動できるようになるのは、大休憩を終えた後である。"
+      },
+      "gift_of_the_protectors": {
+        "name": "守護者の贈り物",
+        "description": "影の書を召喚すると、新しいページが現れる。君の許可を得たクリーチャーは、アクションを使ってそのページに自分の名前を書ける。記せる名前の数は君の魅力修正値に等しい（最低1つ）。\n\nそのページに名前のあるクリーチャーが、即死することなくヒット・ポイント0になったとき、代わりに魔法によってヒット・ポイント1になる。この魔法が一度発動すると、君が大休憩を終えるまで、どのクリーチャーもこの恩恵を受けられない。\n\n魔法アクションとして、ページに触れて名前を消すことができる。"
+      },
+      "investment_of_the_chain_master": {
+        "name": "鎖の主の加護",
+        "description": "ファインド・ファミリアーを発動すると、召喚した使い魔に君の異界の力を注ぎ、次の利益を与える。\n\n空または水。使い魔は飛行移動速度または水泳移動速度（君が選ぶ）40フィートを得る。\n\n素早い攻撃。ボーナス・アクションとして使い魔に攻撃アクションを命じられる。\n\n死霊または光輝ダメージ。使い魔が殴打、刺突、斬撃ダメージを与えるとき、代わりに死霊または光輝ダメージを与えられる。\n\n君のセーヴ難易度。使い魔がクリーチャーにセーヴを強いるなら、君の呪文セーヴ難易度を用いる。\n\n抵抗力。使い魔がダメージを受けるとき、リアクションを使ってそのダメージに対する抵抗を与えられる。"
+      },
+      "lessons_of_the_first_ones": {
+        "name": "始祖の教え",
+        "description": "君は多元宇宙の古き存在から知識を授かり、好きな出自特技を1つ得る（「特技」を参照）。"
+      },
+      "lifedrinker": {
+        "name": "生命吸収",
+        "description": "各ターンに1回、契約武器でクリーチャーに命中したとき、追加で1d6の死霊、精神、光輝ダメージ（君が選ぶ）を与えられる。また、君のヒット・ダイスを1つ消費して振り、その出目+耐久力修正値に等しいヒット・ポイント（最低1ヒット・ポイント）を回復できる。"
+      },
+      "mask_of_many_faces": {
+        "name": "千の顔の仮面",
+        "description": "呪文スロットを消費せずにディスガイズ・セルフを発動できる。"
+      },
+      "master_of_myriad_forms": {
+        "name": "万象の姿の達人",
+        "description": "呪文スロットを消費せずにオルター・セルフを発動できる。"
+      },
+      "misty_visions": {
+        "name": "霧の幻視",
+        "description": "呪文スロットを消費せずにサイレント・イメージを発動できる。"
+      },
+      "one_with_shadows": {
+        "name": "影との一体化",
+        "description": "薄暗い光または暗闇の中にいる間、呪文スロットを消費せずに自分自身を目標としてインヴィジビリティを発動できる。"
+      },
+      "otherworldly_leap": {
+        "name": "異界の跳躍",
+        "description": "呪文スロットを消費せずに自分自身を目標としてジャンプを発動できる。"
+      },
+      "pact_of_the_blade": {
+        "name": "刃の契約",
+        "description": "ボーナス・アクションとして、君の手に好きな単純または軍用近接武器を契約武器として召喚し、その武器と絆を結べる。または、触れている魔法の武器と絆を結べる。ただし、他者が同調している武器や、他のウォーロックが絆を結んでいる武器とは絆を結べない。絆が続く間、君はその武器に習熟し、呪文発動焦点具として使用できる。\n\n絆を結んだ武器で攻撃するとき、攻撃ロールとダメージ・ロールに筋力や敏捷力の代わりに魅力修正値を使える。また、通常のダメージ種別の代わりに死霊、精神、光輝ダメージを与えられる。\n\nこの特徴のボーナス・アクションを再び使ったとき、武器が君から5フィートを超えて1分以上離れたとき、または君が死んだとき、絆は終わる。召喚武器は絆が終わると消える。"
+      },
+      "pact_of_the_chain": {
+        "name": "鎖の契約",
+        "description": "君はファインド・ファミリアーを学び、呪文スロットを消費せず魔法アクションとして発動できる。\n\n発動時、通常の使い魔の形態、またはインプ、疑似ドラゴン、クアジット、スケルトン、驚異のスフィンクス、スプライト、毒蛇の特別な形態から選ぶ（データは「モンスター」を参照）。\n\nさらに、攻撃アクションを行う際に自分の攻撃を1回放棄し、使い魔にリアクションで攻撃を1回行わせられる。"
+      },
+      "pact_of_the_tome": {
+        "name": "書の契約",
+        "description": "小休憩または大休憩の終わりに、影を紡いで手の中に本を召喚する。この影の書の外見は君が決める。本には君だけが使える異界の魔法が宿り、以下の利益を与える。この特徴で別の本を召喚するか君が死ぬと、本は消える。\n\n初級呪文と儀式。本が現れるとき、初級呪文を3つと、「儀式」のタグを持つ1レベル呪文を2つ選ぶ。どのクラスの呪文リストから選んでもよいが、すでに準備している呪文は選べない。本を所持している間、選んだ呪文を準備したものとし、君にとってウォーロック呪文として機能する。\n\n呪文発動焦点具。本を呪文発動焦点具として使える。"
+      },
+      "repelling_blast": {
+        "name": "反発の怪光線",
+        "description": "攻撃ロールを要する、君が修得しているウォーロックの初級呪文を1つ選ぶ。その呪文で大型以下のクリーチャーに命中したとき、君から真っすぐ遠ざかる方向へ最大10フィート押し出せる。"
+      },
+      "thirsting_blade": {
+        "name": "渇きの刃",
+        "description": "君は契約武器に限って追加攻撃の特徴を得る。自分のターンに攻撃アクションを行うとき、その武器で1回ではなく2回攻撃できる。"
+      },
+      "visions_of_distant_realms": {
+        "name": "遠方の領域の幻視",
+        "description": "呪文スロットを消費せずにアーケイン・アイを発動できる。"
+      },
+      "whispers_of_the_grave": {
+        "name": "墓場のささやき",
+        "description": "呪文スロットを消費せずにスピーク・ウィズ・デッドを発動できる。"
+      },
+      "witch_sight": {
+        "name": "魔女の視力",
+        "description": "君は30フィートの射程を持つ真視を得る。"
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "筋力"
+            },
+            "dexterity": {
+              "name": "敏捷力"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "筋力"
+            },
+            "dexterity": {
+              "name": "敏捷力"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "知力"
+            },
+            "wisdom": {
+              "name": "判断力"
+            },
+            "charisma": {
+              "name": "魅力"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "Rage"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "Récupération de rage persistante"
+    },
+    "2024_bardic_inspiration": {
+      "name": "Inspiration bardique"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "Canalisation divine"
+    },
+    "2024_divine_intervention": {
+      "name": "Intervention divine"
+    },
+    "2024_wild_shape": {
+      "name": "Forme sauvage"
+    },
+    "2024_wild_resurgence": {
+      "name": "Emplacement de sort de résurgence sauvage"
+    },
+    "2024_archdruid": {
+      "name": "Emplacement de sort d'archidruide"
+    },
+    "2024_second_wind": {
+      "name": "Second souffle"
+    },
+    "2024_action_surge": {
+      "name": "Sursaut d’action"
+    },
+    "2024_indomitable": {
+      "name": "Indomptable"
+    },
+    "2024_focus_points": {
+      "name": "Points de focalisation"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "Métabolisme surnaturel"
+    },
+    "2024_lay_on_hands": {
+      "name": "Imposition des mains"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "Canalisation divine"
+    },
+    "2024_paladins_smite": {
+      "name": "Châtiment divin (incantation gratuite)"
+    },
+    "2024_faithful_steed": {
+      "name": "Trouver une monture (incantation gratuite)"
+    },
+    "2024_hunters_mark": {
+      "name": "Marque du chasseur (incantations gratuites)"
+    },
+    "2024_tireless": {
+      "name": "Infatigable"
+    },
+    "2024_natures_veil": {
+      "name": "Voile de la nature"
+    },
+    "2024_stroke_of_luck": {
+      "name": "Coup de chance"
+    },
+    "2024_innate_sorcery": {
+      "name": "Sorcellerie innée"
+    },
+    "2024_sorcery_points": {
+      "name": "Points de sorcellerie"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "Restauration ensorceleuse"
+    },
+    "2024_magical_cunning": {
+      "name": "Ruse magique"
+    },
+    "2024_contact_patron": {
+      "name": "Contacter le patron (incantation gratuite)"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "Arcanum mystique (niveau 6)"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "Arcanum mystique (niveau 7)"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "Arcanum mystique (niveau 8)"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "Arcanum mystique (niveau 9)"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "Respiration aquatique (incantation gratuite)"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "Don des protecteurs"
+    },
+    "2024_arcane_recovery": {
+      "name": "Récupération arcanique"
+    },
+    "2024_signature_spell_1": {
+      "name": "Sort signature 1 (incantation gratuite)"
+    },
+    "2024_signature_spell_2": {
+      "name": "Sort signature 2 (incantation gratuite)"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "Sort du cercle (incantation gratuite)"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "Récupération naturelle (emplacements de sort)"
+    },
+    "2024_wholeness_of_body": {
+      "name": "Intégrité corporelle"
+    },
+    "2024_intimidating_presence": {
+      "name": "Présence intimidante (utilisation gratuite)"
+    },
+    "2024_holy_nimbus": {
+      "name": "Nimbus sacré (utilisation gratuite)"
+    },
+    "2024_dragon_wings": {
+      "name": "Ailes de dragon (utilisation gratuite)"
+    },
+    "2024_dragon_companion": {
+      "name": "Compagnon draconique (incantation gratuite)"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "Chance du Ténébreux"
+    },
+    "2024_hurl_through_hell": {
+      "name": "Projection en enfer (utilisation gratuite)"
+    },
+    "2024_safe_overchannel": {
+      "name": "Surcanalisation (utilisation sans risque)"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "Sort d'initié à la magie (incantation gratuite)"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "Souffle draconique"
+    },
+    "2024_draconic_flight": {
+      "name": "Vol draconique"
+    },
+    "2024_stonecunning": {
+      "name": "Connaissance de la pierre"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "Parler avec les animaux"
+    },
+    "2024_giant_ancestry": {
+      "name": "Ascendance géante"
+    },
+    "2024_large_form": {
+      "name": "Grande forme"
+    },
+    "2024_adrenaline_rush": {
+      "name": "Poussée d'adrénaline"
+    },
+    "2024_relentless_endurance": {
+      "name": "Endurance implacable"
+    },
+    "2024_boon_of_fate": {
+      "name": "Don du destin"
+    },
+    "2024_elven_lineage_3": {
+      "name": "Lignée elfique (sort au niveau 3 du personnage)"
+    },
+    "2024_elven_lineage_5": {
+      "name": "Lignée elfique (sort au niveau 5 du personnage)"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "Héritage infernal (sort au niveau 3 du personnage)"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "Héritage infernal (sort au niveau 5 du personnage)"
+    }
+  }
+}

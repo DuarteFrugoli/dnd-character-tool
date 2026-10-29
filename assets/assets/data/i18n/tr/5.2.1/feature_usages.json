@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "Öfke"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "Kalıcı Öfke Yenilenmesi"
+    },
+    "2024_bardic_inspiration": {
+      "name": "Ozan İlhamı"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "İlahi Gücü Yönlendirme"
+    },
+    "2024_divine_intervention": {
+      "name": "İlahi Müdahale"
+    },
+    "2024_wild_shape": {
+      "name": "Vahşi Biçim"
+    },
+    "2024_wild_resurgence": {
+      "name": "Vahşi Diriliş Büyü Yuvası"
+    },
+    "2024_archdruid": {
+      "name": "Başdruid Büyü Yuvası"
+    },
+    "2024_second_wind": {
+      "name": "İkinci Nefes"
+    },
+    "2024_action_surge": {
+      "name": "Eylem Patlaması"
+    },
+    "2024_indomitable": {
+      "name": "Yılmazlık"
+    },
+    "2024_focus_points": {
+      "name": "Odak Puanları"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "Olağanüstü Metabolizma"
+    },
+    "2024_lay_on_hands": {
+      "name": "Şifa Veren Eller"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "İlahi Gücü Yönlendirme"
+    },
+    "2024_paladins_smite": {
+      "name": "İlahi Darbe (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_faithful_steed": {
+      "name": "Binek Bul (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_hunters_mark": {
+      "name": "Avcı İşareti (Ücretsiz Büyü Kullanımları)"
+    },
+    "2024_tireless": {
+      "name": "Yorulmak Bilmez"
+    },
+    "2024_natures_veil": {
+      "name": "Doğanın Peçesi"
+    },
+    "2024_stroke_of_luck": {
+      "name": "Şanslı Hamle"
+    },
+    "2024_innate_sorcery": {
+      "name": "Doğuştan Büyücülük"
+    },
+    "2024_sorcery_points": {
+      "name": "Büyücülük Puanları"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "Büyücü Yenilenmesi"
+    },
+    "2024_magical_cunning": {
+      "name": "Büyüsel Kurnazlık"
+    },
+    "2024_contact_patron": {
+      "name": "Patronla İletişim (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "Mistik Arkanum (6. Seviye)"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "Mistik Arkanum (7. Seviye)"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "Mistik Arkanum (8. Seviye)"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "Mistik Arkanum (9. Seviye)"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "Suda Soluma (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "Koruyucuların Armağanı"
+    },
+    "2024_arcane_recovery": {
+      "name": "Arkan Yenilenme"
+    },
+    "2024_signature_spell_1": {
+      "name": "İmza Büyü 1 (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_signature_spell_2": {
+      "name": "İmza Büyü 2 (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "Çember Büyüsü (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "Doğal Yenilenme (Büyü Yuvaları)"
+    },
+    "2024_wholeness_of_body": {
+      "name": "Beden Bütünlüğü"
+    },
+    "2024_intimidating_presence": {
+      "name": "Korkutucu Varlık (Ücretsiz Kullanım)"
+    },
+    "2024_holy_nimbus": {
+      "name": "Kutsal Işıltı (Ücretsiz Kullanım)"
+    },
+    "2024_dragon_wings": {
+      "name": "Ejder Kanatları (Ücretsiz Kullanım)"
+    },
+    "2024_dragon_companion": {
+      "name": "Ejder Yoldaş (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "Karanlık Olan'ın Şansı"
+    },
+    "2024_hurl_through_hell": {
+      "name": "Cehenneme Savurma (Ücretsiz Kullanım)"
+    },
+    "2024_safe_overchannel": {
+      "name": "Aşırı Büyü Yönlendirme (Güvenli Kullanım)"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "Büyüye Giriş Büyüsü (Ücretsiz Büyü Kullanımı)"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "Nefes Silahı"
+    },
+    "2024_draconic_flight": {
+      "name": "Ejder Uçuşu"
+    },
+    "2024_stonecunning": {
+      "name": "Taş Bilgisi"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "Hayvanlarla Konuşma"
+    },
+    "2024_giant_ancestry": {
+      "name": "Dev Soyu"
+    },
+    "2024_large_form": {
+      "name": "Büyük Biçim"
+    },
+    "2024_adrenaline_rush": {
+      "name": "Adrenalin Atılımı"
+    },
+    "2024_relentless_endurance": {
+      "name": "Amansız Dayanıklılık"
+    },
+    "2024_boon_of_fate": {
+      "name": "Kader Lütfu"
+    },
+    "2024_elven_lineage_3": {
+      "name": "Elf Soyu (Karakter 3. Seviyede Kazanılan Büyü)"
+    },
+    "2024_elven_lineage_5": {
+      "name": "Elf Soyu (Karakter 5. Seviyede Kazanılan Büyü)"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "Şeytani Miras (Karakter 3. Seviyede Kazanılan Büyü)"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "Şeytani Miras (Karakter 5. Seviyede Kazanılan Büyü)"
+    }
+  }
+}

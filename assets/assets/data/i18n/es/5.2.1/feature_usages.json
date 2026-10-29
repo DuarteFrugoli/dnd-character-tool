@@ -1,0 +1,181 @@
+{
+  "resources": {
+    "2024_rage": {
+      "name": "Furia"
+    },
+    "2024_persistent_rage_recovery": {
+      "name": "Recuperación de furia persistente"
+    },
+    "2024_bardic_inspiration": {
+      "name": "Inspiración bárdica"
+    },
+    "2024_cleric_channel_divinity": {
+      "name": "Canalizar Divinidad"
+    },
+    "2024_divine_intervention": {
+      "name": "Intervención divina"
+    },
+    "2024_wild_shape": {
+      "name": "Forma salvaje"
+    },
+    "2024_wild_resurgence": {
+      "name": "Espacio de conjuro de Resurgimiento salvaje"
+    },
+    "2024_archdruid": {
+      "name": "Espacio de conjuro del Archidruida"
+    },
+    "2024_second_wind": {
+      "name": "Segundo aliento"
+    },
+    "2024_action_surge": {
+      "name": "Acción súbita"
+    },
+    "2024_indomitable": {
+      "name": "Indomable"
+    },
+    "2024_focus_points": {
+      "name": "Puntos de enfoque"
+    },
+    "2024_uncanny_metabolism": {
+      "name": "Metabolismo sobrenatural"
+    },
+    "2024_lay_on_hands": {
+      "name": "Imposición de manos"
+    },
+    "2024_paladin_channel_divinity": {
+      "name": "Canalizar Divinidad"
+    },
+    "2024_paladins_smite": {
+      "name": "Castigo divino (lanzamiento gratuito)"
+    },
+    "2024_faithful_steed": {
+      "name": "Encontrar corcel (lanzamiento gratuito)"
+    },
+    "2024_hunters_mark": {
+      "name": "Marca del cazador (lanzamientos gratuitos)"
+    },
+    "2024_tireless": {
+      "name": "Incansable"
+    },
+    "2024_natures_veil": {
+      "name": "Velo de la naturaleza"
+    },
+    "2024_stroke_of_luck": {
+      "name": "Golpe de suerte"
+    },
+    "2024_innate_sorcery": {
+      "name": "Hechicería innata"
+    },
+    "2024_sorcery_points": {
+      "name": "Puntos de hechicería"
+    },
+    "2024_sorcerous_restoration": {
+      "name": "Restauración hechicera"
+    },
+    "2024_magical_cunning": {
+      "name": "Astucia mágica"
+    },
+    "2024_contact_patron": {
+      "name": "Contactar con el patrón (lanzamiento gratuito)"
+    },
+    "2024_mystic_arcanum_6": {
+      "name": "Arcano místico (nivel 6)"
+    },
+    "2024_mystic_arcanum_7": {
+      "name": "Arcano místico (nivel 7)"
+    },
+    "2024_mystic_arcanum_8": {
+      "name": "Arcano místico (nivel 8)"
+    },
+    "2024_mystic_arcanum_9": {
+      "name": "Arcano místico (nivel 9)"
+    },
+    "2024_gift_of_the_depths": {
+      "name": "Respirar bajo el agua (lanzamiento gratuito)"
+    },
+    "2024_gift_of_the_protectors": {
+      "name": "Don de los protectores"
+    },
+    "2024_arcane_recovery": {
+      "name": "Recuperación arcana"
+    },
+    "2024_signature_spell_1": {
+      "name": "Conjuro distintivo 1 (lanzamiento gratuito)"
+    },
+    "2024_signature_spell_2": {
+      "name": "Conjuro distintivo 2 (lanzamiento gratuito)"
+    },
+    "2024_natural_recovery_cast": {
+      "name": "Conjuro del círculo (lanzamiento gratuito)"
+    },
+    "2024_natural_recovery_slots": {
+      "name": "Recuperación natural (espacios de conjuro)"
+    },
+    "2024_wholeness_of_body": {
+      "name": "Integridad corporal"
+    },
+    "2024_intimidating_presence": {
+      "name": "Presencia intimidante (uso gratuito)"
+    },
+    "2024_holy_nimbus": {
+      "name": "Halo sagrado (uso gratuito)"
+    },
+    "2024_dragon_wings": {
+      "name": "Alas de dragón (uso gratuito)"
+    },
+    "2024_dragon_companion": {
+      "name": "Compañero dragón (lanzamiento gratuito)"
+    },
+    "2024_dark_ones_own_luck": {
+      "name": "Suerte del Oscuro"
+    },
+    "2024_hurl_through_hell": {
+      "name": "Arrojar al infierno (uso gratuito)"
+    },
+    "2024_safe_overchannel": {
+      "name": "Sobrecarga mágica (uso seguro)"
+    },
+    "2024_magic_initiate_spell": {
+      "name": "Conjuro de Iniciado en la Magia (lanzamiento gratuito)"
+    },
+    "2024_dragonborn_breath_weapon": {
+      "name": "Arma de aliento"
+    },
+    "2024_draconic_flight": {
+      "name": "Vuelo dracónico"
+    },
+    "2024_stonecunning": {
+      "name": "Saber de la piedra"
+    },
+    "2024_forest_gnome_speak_with_animals": {
+      "name": "Hablar con los animales"
+    },
+    "2024_giant_ancestry": {
+      "name": "Ascendencia gigante"
+    },
+    "2024_large_form": {
+      "name": "Forma grande"
+    },
+    "2024_adrenaline_rush": {
+      "name": "Subidón de adrenalina"
+    },
+    "2024_relentless_endurance": {
+      "name": "Resistencia implacable"
+    },
+    "2024_boon_of_fate": {
+      "name": "Don del destino"
+    },
+    "2024_elven_lineage_3": {
+      "name": "Linaje élfico (conjuro al nivel 3 del personaje)"
+    },
+    "2024_elven_lineage_5": {
+      "name": "Linaje élfico (conjuro al nivel 5 del personaje)"
+    },
+    "2024_fiendish_legacy_3": {
+      "name": "Legado infernal (conjuro al nivel 3 del personaje)"
+    },
+    "2024_fiendish_legacy_5": {
+      "name": "Legado infernal (conjuro al nivel 5 del personaje)"
+    }
+  }
+}

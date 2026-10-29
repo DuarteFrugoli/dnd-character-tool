@@ -1,0 +1,29 @@
+{
+  "Dragonborn": {
+    "name": "Draconato"
+  },
+  "Dwarf": {
+    "name": "Anão"
+  },
+  "Elf": {
+    "name": "Elfo"
+  },
+  "Gnome": {
+    "name": "Gnomo"
+  },
+  "Goliath": {
+    "name": "Golias"
+  },
+  "Halfling": {
+    "name": "Halfling"
+  },
+  "Human": {
+    "name": "Humano"
+  },
+  "Orc": {
+    "name": "Orc"
+  },
+  "Tiefling": {
+    "name": "Tiefling"
+  }
+}

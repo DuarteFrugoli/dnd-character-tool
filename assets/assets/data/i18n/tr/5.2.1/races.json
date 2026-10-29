@@ -1,0 +1,29 @@
+{
+  "Dragonborn": {
+    "name": "Ejderdoğan"
+  },
+  "Dwarf": {
+    "name": "Cüce"
+  },
+  "Elf": {
+    "name": "Elf"
+  },
+  "Gnome": {
+    "name": "Gnom"
+  },
+  "Goliath": {
+    "name": "Golyat"
+  },
+  "Halfling": {
+    "name": "Buçukluk"
+  },
+  "Human": {
+    "name": "İnsan"
+  },
+  "Orc": {
+    "name": "Ork"
+  },
+  "Tiefling": {
+    "name": "Tiefling"
+  }
+}

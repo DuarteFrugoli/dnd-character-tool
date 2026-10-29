@@ -1,0 +1,718 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Ira",
+      "description": "Entri in Ira come Azione Bonus senza indossare armatura pesante. Durante l'Ira hai Resistenza ai danni contundenti, perforanti e taglienti, Vantaggio alle prove e ai tiri salvezza su Forza e aggiungi i Danni dell'Ira ai danni di armi o Colpi Senz'Armi basati su Forza (+2 ai livelli 1-8, +3 ai livelli 9-15, +4 ai livelli 16-20). Non puoi lanciare incantesimi né mantenere la Concentrazione. L'Ira dura fino alla fine del tuo turno successivo e può essere prolungata ogni round attaccando, costringendo un nemico a un tiro salvezza o usando un'Azione Bonus, fino a 10 minuti. Usi: 2 ai livelli 1-2, 3 ai livelli 3-5, 4 ai livelli 6-11, 5 ai livelli 12-16 e 6 dal livello 17. Recuperi un uso dopo un Riposo Breve e tutti dopo un Riposo Lungo."
+    },
+    "Unarmored Defense": {
+      "name": "Difesa Senza Armatura",
+      "description": "Senza armatura, la tua CA base è 10 + il modificatore di Destrezza + il modificatore di Costituzione. Puoi comunque usare uno Scudo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria nelle Armi",
+      "description": "Scegli due tipi di armi semplici o da guerra da mischia di cui puoi usare le proprietà di maestria. Cambia una scelta dopo un Riposo Lungo. I tipi scelti diventano tre al livello 4 e quattro al livello 10."
+    },
+    "Danger Sense": {
+      "name": "Senso del Pericolo",
+      "description": "Hai Vantaggio ai tiri salvezza su Destrezza, a meno che tu sia Incapacitato."
+    },
+    "Reckless Attack": {
+      "name": "Attacco Irruento",
+      "description": "Al primo tiro per colpire del turno puoi scegliere di attaccare irruentemente. I tuoi tiri per colpire basati su Forza hanno Vantaggio fino al tuo turno successivo, ma anche gli attacchi contro di te hanno Vantaggio."
+    },
+    "Barbarian Subclass": {
+      "name": "Sottoclasse del Barbaro",
+      "description": "Scegli una sottoclasse del barbaro; ottieni i suoi privilegi ai livelli da barbaro indicati."
+    },
+    "Primal Knowledge": {
+      "name": "Conoscenza Primordiale",
+      "description": "Ottieni competenza in un'altra abilità della lista del barbaro di livello 1. Durante l'Ira puoi usare Forza per le prove di Acrobazie, Intimidazione, Percezione, Furtività o Sopravvivenza."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da barbaro."
+    },
+    "Extra Attack": {
+      "name": "Attacco Extra",
+      "description": "Quando compi l'azione Attaccare, attacchi due volte."
+    },
+    "Fast Movement": {
+      "name": "Movimento Veloce",
+      "description": "La tua Velocità aumenta di 10 piedi mentre non indossi armatura pesante."
+    },
+    "Feral Instinct": {
+      "name": "Istinto Ferino",
+      "description": "Hai Vantaggio ai tiri di Iniziativa."
+    },
+    "Instinctive Pounce": {
+      "name": "Balzo Istintivo",
+      "description": "Come parte dell'Azione Bonus usata per entrare in Ira, puoi muoverti fino a metà della tua Velocità."
+    },
+    "Brutal Strike": {
+      "name": "Colpo Brutale",
+      "description": "Quando usi Attacco Irruento, rinuncia al suo Vantaggio su un attacco basato su Forza che non abbia Svantaggio. Se colpisci, aggiungi 1d10 danni dello stesso tipo dell'attacco e scegli un effetto di Colpo Brutale: Colpo Possente spinge il bersaglio di 15 piedi e ti permette di seguirlo fino a metà della tua Velocità senza provocare attacchi di opportunità; Colpo ai Tendini riduce la sua Velocità di 15 piedi fino al tuo turno successivo."
+    },
+    "Relentless Rage": {
+      "name": "Ira Implacabile",
+      "description": "Se sei in Ira e scenderesti a 0 punti ferita senza morire all'istante, effettua un tiro salvezza su Costituzione con CD 10. Se riesci, i tuoi punti ferita diventano il doppio del tuo livello da barbaro. La CD aumenta di 5 dopo ogni uso e si azzera dopo un Riposo Breve o Lungo."
+    },
+    "Improved Brutal Strike": {
+      "name": "Colpo Brutale Migliorato",
+      "description": "Ottieni altri due effetti di Colpo Brutale: Colpo Sconcertante impone Svantaggio al prossimo tiro salvezza del bersaglio e gli impedisce gli attacchi di opportunità fino al tuo turno successivo; Colpo Lacerante concede +5 al tiro per colpire della prossima altra creatura che lo attacchi prima del tuo turno successivo. Al livello 17, i danni extra di Colpo Brutale diventano 2d10 e puoi applicare due effetti diversi allo stesso colpo."
+    },
+    "Persistent Rage": {
+      "name": "Ira Persistente",
+      "description": "Una volta per Riposo Lungo, quando tiri l'Iniziativa, recuperi tutti gli usi spesi di Ira. L'Ira non richiede più azioni per essere prolungata; dura fino a 10 minuti e termina prima soltanto se diventi Privo di Sensi o indossi armatura pesante."
+    },
+    "Indomitable Might": {
+      "name": "Potenza Indomabile",
+      "description": "Se il totale di una prova di Forza o di un tiro salvezza su Forza è inferiore al tuo punteggio di Forza, usa quest'ultimo."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Primal Champion": {
+      "name": "Campione Primordiale",
+      "description": "Aumenta Forza e Costituzione di 4 ciascuna; il massimo di entrambe diventa 25."
+    }
+  },
+  "Bard": {
+    "Bardic Inspiration": {
+      "name": "Ispirazione bardica",
+      "description": "Come Azione Bonus, dai un dado di Ispirazione bardica a una creatura entro 60 piedi che possa vederti o sentirti. Entro 1 ora, dopo aver fallito una Prova di d20, può tirare il dado e aggiungerlo alla prova. Una creatura può possedere solo un dado del genere. Hai usi pari al tuo modificatore di Carisma (minimo 1), recuperati dopo un Riposo Lungo. Dado: d6 ai livelli 1-4, d8 ai livelli 5-9, d10 ai livelli 10-14, d12 dal livello 15."
+    },
+    "Spellcasting": {
+      "name": "Lancio di Incantesimi",
+      "description": "Carisma è la tua caratteristica da incantatore per gli incantesimi da bardo; puoi usare uno Strumento Musicale come focus. Al livello 1 conosci due trucchetti da bardo, più uno ai livelli 4 e 10. Al livello 1 prepari quattro incantesimi da bardo di livello 1; il limite di preparazione e gli slot aumentano con il livello da bardo. Quando ottieni un livello da bardo, puoi sostituire un incantesimo preparato e un trucchetto con incantesimi da bardo validi. Gli incantesimi sempre preparati da altri privilegi non contano nel limite."
+    },
+    "Expertise": {
+      "name": "Maestria",
+      "description": "Ottieni Maestria in due abilità in cui hai competenza e in altre due al livello 9 da bardo."
+    },
+    "Jack of All Trades": {
+      "name": "Tuttofare",
+      "description": "Aggiungi metà del tuo Bonus di Competenza, arrotondata per difetto, a una prova di caratteristica basata su un'abilità in cui non hai competenza e che non usa altrimenti il tuo Bonus di Competenza."
+    },
+    "Bard Subclass": {
+      "name": "Sottoclasse del Bardo",
+      "description": "Scegli una sottoclasse del bardo; ottieni i suoi privilegi ai livelli da bardo indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da bardo."
+    },
+    "Font of Inspiration": {
+      "name": "Fonte di Ispirazione",
+      "description": "Recuperi tutti gli usi di Ispirazione bardica dopo un Riposo Breve o Lungo. Puoi spendere uno slot incantesimo, senza usare un'azione, per recuperarne uno."
+    },
+    "Countercharm": {
+      "name": "Controfascino",
+      "description": "Come Reazione, quando tu o una creatura entro 30 piedi fallite un tiro salvezza contro Affascinato o Spaventato, puoi far ripetere quel tiro con Vantaggio."
+    },
+    "Magical Secrets": {
+      "name": "Segreti Magici",
+      "description": "Quando aumenta il tuo limite di incantesimi preparati, i nuovi incantesimi possono provenire dalle liste di bardo, chierico, druido o mago e contano come incantesimi da bardo. Puoi anche sostituire un incantesimo da bardo preparato con uno di quelle liste."
+    },
+    "Superior Inspiration": {
+      "name": "Ispirazione Superiore",
+      "description": "Quando tiri l'Iniziativa con meno di due usi di Ispirazione bardica rimasti, ne recuperi quanti bastano per averne due."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Words of Creation": {
+      "name": "Parole della Creazione",
+      "description": "Parola del Potere Guarire e Parola del Potere Uccidere sono sempre preparati. Quando lanci uno dei due, puoi bersagliare una seconda creatura entro 10 piedi dalla prima."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Lancio di Incantesimi",
+      "description": "Saggezza è la tua caratteristica da incantatore per gli incantesimi da chierico; un Simbolo Sacro può essere il tuo focus. Al livello 1 conosci tre trucchetti da chierico, più uno ai livelli 4 e 10. Al livello 1 prepari quattro incantesimi da chierico di livello 1; il limite di preparazione e gli slot aumentano con il livello da chierico. Dopo ogni Riposo Lungo puoi cambiare qualsiasi incantesimo da chierico preparato con un altro di livello che puoi lanciare. Gli incantesimi sempre preparati non contano nel limite."
+    },
+    "Divine Order": {
+      "name": "Ordine Divino",
+      "description": "Scegli Protettore per ottenere competenza nelle armi da guerra e addestramento nelle armature pesanti, oppure Taumaturgo per imparare un ulteriore trucchetto da chierico e aggiungere il tuo modificatore di Saggezza (minimo +1) alle prove di Arcani o Religione."
+    },
+    "Channel Divinity": {
+      "name": "Incanalare Divinità",
+      "description": "Ottieni Scintilla Divina e Scacciare i Non Morti, oltre alle opzioni della tua sottoclasse. Puoi usare Incanalare Divinità due volte al livello 2, tre al livello 6 e quattro al livello 18; recuperi un uso dopo un Riposo Breve e tutti dopo un Riposo Lungo. Come azione Magica, Scintilla Divina cura un'altra creatura visibile entro 30 piedi di 1d8 + il tuo modificatore di Saggezza, oppure infligge la stessa quantità di danni necrotici o radiosi se fallisce un tiro salvezza su Costituzione (metà se riesce); i dadi aumentano a 2d8 al livello 7, 3d8 al livello 13 e 4d8 al livello 18. Come azione Magica, Scacciare i Non Morti costringe i non morti scelti entro 30 piedi a un tiro salvezza su Saggezza; se falliscono diventano Spaventati e Incapacitati per 1 minuto, cercano di allontanarsi e l'effetto termina se subiscono danni oppure se diventi Incapacitato o muori."
+    },
+    "Cleric Subclass": {
+      "name": "Sottoclasse del Chierico",
+      "description": "Scegli una sottoclasse del chierico; ottieni i suoi privilegi ai livelli da chierico indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da chierico."
+    },
+    "Sear Undead": {
+      "name": "Bruciare i Non Morti",
+      "description": "Quando usi Scacciare i Non Morti, ogni non morto che fallisce il tiro salvezza subisce anche danni radiosi pari al risultato di un numero di d8 uguale al tuo modificatore di Saggezza (minimo 1d8)."
+    },
+    "Blessed Strikes": {
+      "name": "Colpi Benedetti",
+      "description": "Scegli Colpo Divino, che aggiunge 1d8 danni necrotici o radiosi a un colpo con arma in ciascuno dei tuoi turni, oppure Incantesimi Potenti, che aggiunge il tuo modificatore di Saggezza ai danni dei trucchetti da chierico."
+    },
+    "Divine Intervention": {
+      "name": "Intervento Divino",
+      "description": "Una volta per Riposo Lungo, usa un'azione Magica per lanciare un incantesimo da chierico di livello 5 o inferiore che non richiede una Reazione, senza slot o componenti materiali."
+    },
+    "Improved Blessed Strikes": {
+      "name": "Colpi Benedetti Migliorati",
+      "description": "I danni extra di Colpo Divino diventano 2d8. Se invece hai scelto Incantesimi Potenti, infliggere danni a una creatura con un trucchetto da chierico può conferire a te o a un alleato entro 60 piedi punti ferita temporanei pari al doppio del tuo modificatore di Saggezza."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Greater Divine Intervention": {
+      "name": "Intervento Divino Superiore",
+      "description": "Intervento Divino può lanciare Desiderio. Se scegli Desiderio, non puoi usare di nuovo Intervento Divino finché non completi 2d4 Riposi Lunghi."
+    }
+  },
+  "Druid": {
+    "Spellcasting": {
+      "name": "Lancio di Incantesimi",
+      "description": "Saggezza è la tua caratteristica da incantatore per gli incantesimi da druido; un Focus Druidico può essere il tuo focus. Al livello 1 conosci due trucchetti da druido, più uno ai livelli 4 e 10. Al livello 1 prepari quattro incantesimi da druido di livello 1; il limite di preparazione e gli slot aumentano con il livello da druido. Dopo ogni Riposo Lungo puoi sostituire incantesimi da druido preparati con altri di livelli che puoi lanciare. Gli incantesimi sempre preparati non contano nel limite."
+    },
+    "Druidic": {
+      "name": "Druidico",
+      "description": "Conosci la lingua segreta dei druidi e hai sempre preparato Parlare con gli Animali. Puoi lasciare messaggi nascosti in druidico; gli altri druidi li notano automaticamente, mentre gli altri devono superare una prova di Investigazione con CD 15 per trovarli, ma non possono decifrarli senza magia."
+    },
+    "Primal Order": {
+      "name": "Ordine Primordiale",
+      "description": "Scegli Mago per imparare un ulteriore trucchetto da druido e aggiungere il tuo modificatore di Saggezza (minimo +1) alle prove di Arcani o Natura, oppure Custode per ottenere competenza nelle armi da guerra e addestramento nelle armature medie."
+    },
+    "Wild Shape": {
+      "name": "Forma selvatica",
+      "description": "Come Azione Bonus, assumi una delle tue forme di bestia conosciute per un numero di ore pari a metà del tuo livello da druido. Parti con quattro forme di GS 1/4 o inferiore senza Velocità di Volo; al livello 4 conosci sei forme fino a GS 1/2 e al livello 8 otto forme fino a GS 1, potendo scegliere anche forme con Velocità di Volo. Dopo un Riposo Lungo puoi sostituire una forma conosciuta. Mantieni punti ferita, Dadi Vita, caratteristiche mentali, privilegi di classe, lingue e competenze; ottieni punti ferita temporanei pari al tuo livello da druido. In forma di bestia non puoi lanciare incantesimi, ma puoi mantenere la Concentrazione. Parti con due usi; ne recuperi uno dopo un Riposo Breve e tutti dopo un Riposo Lungo. Gli usi diventano tre al livello 6 e quattro al livello 17."
+    },
+    "Wild Companion": {
+      "name": "Compagno Selvatico",
+      "description": "Spendi uno slot incantesimo o un uso di Forma selvatica come azione Magica per lanciare Trova Famiglio senza componenti materiali. Il famiglio è un Folletto e scompare dopo il tuo prossimo Riposo Lungo."
+    },
+    "Druid Subclass": {
+      "name": "Sottoclasse del Druido",
+      "description": "Scegli una sottoclasse del druido; ottieni i suoi privilegi ai livelli da druido indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da druido."
+    },
+    "Wild Resurgence": {
+      "name": "Rinascita Selvatica",
+      "description": "Una volta per turno, quando non hai più usi di Forma selvatica, spendi uno slot incantesimo per recuperarne uno. Una volta per Riposo Lungo, spendi un uso di Forma selvatica per recuperare uno slot incantesimo di livello 1."
+    },
+    "Elemental Fury": {
+      "name": "Furia Elementale",
+      "description": "Scegli Incantesimi Potenti per aggiungere il tuo modificatore di Saggezza ai danni dei trucchetti da druido, oppure Colpo Primordiale per aggiungere 1d8 danni da freddo, fuoco, fulmine o tuono a un colpo con un'arma o in Forma selvatica in ciascuno dei tuoi turni."
+    },
+    "Improved Elemental Fury": {
+      "name": "Furia Elementale Migliorata",
+      "description": "Incantesimi Potenti aggiunge 300 piedi alla gittata di un trucchetto da druido che normalmente raggiunge almeno 10 piedi. I danni extra di Colpo Primordiale diventano 2d8."
+    },
+    "Beast Spells": {
+      "name": "Incantesimi in Forma di Bestia",
+      "description": "Puoi lanciare incantesimi in Forma selvatica, tranne quelli con componenti materiali dal costo indicato o che vengono consumate."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Archdruid": {
+      "name": "Arcidruido",
+      "description": "Quando tiri l'Iniziativa senza usi di Forma selvatica rimasti, ne recuperi uno. Una volta per Riposo Lungo puoi convertire usi non spesi di Forma selvatica in un singolo slot incantesimo, ottenendo due livelli di slot per ogni uso. Inoltre invecchi di un solo anno ogni dieci anni trascorsi."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Stile di Combattimento",
+      "description": "Ottieni un talento di Stile di Combattimento a tua scelta. Ogni volta che ottieni un livello da guerriero puoi sostituirlo con un altro talento di Stile di Combattimento."
+    },
+    "Second Wind": {
+      "name": "Recuperare energie",
+      "description": "Come Azione Bonus, recuperi 1d10 + il tuo livello da guerriero punti ferita. Parti con due usi; ne ottieni un terzo al livello 4 e un quarto al livello 10. Recuperi un uso dopo un Riposo Breve e tutti dopo un Riposo Lungo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria nelle Armi",
+      "description": "Scegli tre tipi di armi semplici o da guerra di cui puoi usare le proprietà di maestria. Cambia una scelta dopo un Riposo Lungo. I tipi aumentano a quattro al livello 4, cinque al livello 10 e sei al livello 16."
+    },
+    "Action Surge": {
+      "name": "Azione impetuosa",
+      "description": "Nel tuo turno compi un'azione aggiuntiva che non sia un'azione Magica. Recuperi l'uso dopo un Riposo Breve o Lungo. Al livello 17 hai due usi per riposo, ma puoi usarne solo uno per turno."
+    },
+    "Tactical Mind": {
+      "name": "Mente Tattica",
+      "description": "Dopo aver fallito una prova di caratteristica, spendi un uso di Recuperare energie per aggiungere 1d10 alla prova. Se fallisci comunque, l'uso non viene speso."
+    },
+    "Fighter Subclass": {
+      "name": "Sottoclasse del Guerriero",
+      "description": "Scegli una sottoclasse del guerriero; ottieni i suoi privilegi ai livelli da guerriero indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 6, 8, 12, 14 e 16 da guerriero."
+    },
+    "Extra Attack": {
+      "name": "Attacco Extra",
+      "description": "Attacchi due volte quando compi l'azione Attaccare. Il privilegio migliora ai livelli 11 e 20 da guerriero."
+    },
+    "Tactical Shift": {
+      "name": "Spostamento Tattico",
+      "description": "Quando attivi Recuperare energie come Azione Bonus, ti muovi fino a metà della tua Velocità senza provocare attacchi di opportunità."
+    },
+    "Indomitable": {
+      "name": "Indomabile",
+      "description": "Dopo aver fallito un tiro salvezza, ripetilo con un bonus pari al tuo livello da guerriero; usa il nuovo risultato. Un uso per Riposo Lungo al livello 9, due al 13 e tre al 17."
+    },
+    "Tactical Master": {
+      "name": "Maestro Tattico",
+      "description": "Quando attacchi con un'arma di cui puoi usare la maestria, sostituisci la sua proprietà di maestria per quell'attacco con Spingere, Indebolire o Rallentare."
+    },
+    "Two Extra Attacks": {
+      "name": "Due Attacchi Extra",
+      "description": "Attacchi tre volte anziché una quando compi l'azione Attaccare."
+    },
+    "Studied Attacks": {
+      "name": "Attacchi Studiati",
+      "description": "Dopo aver mancato una creatura con un tiro per colpire, hai Vantaggio al tuo prossimo tiro per colpire contro di essa entro la fine del tuo turno successivo."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Three Extra Attacks": {
+      "name": "Tre Attacchi Extra",
+      "description": "Attacchi quattro volte anziché una quando compi l'azione Attaccare."
+    }
+  },
+  "Monk": {
+    "Martial Arts": {
+      "name": "Arti Marziali",
+      "description": "Mentre non indossi armatura né Scudo e sei disarmato o impugni soltanto armi da monaco (armi semplici da mischia o armi da guerra da mischia Leggere), puoi compiere un Colpo Senz'Armi come Azione Bonus, usare Destrezza per i relativi tiri per colpire e danni e per la CD dei tuoi tentativi di Afferrare o Spingere, e sostituire i danni normali con il tuo dado di Arti Marziali. Il dado è d6 ai livelli 1-4, d8 ai livelli 5-10, d10 ai livelli 11-16 e d12 dal livello 17."
+    },
+    "Unarmored Defense": {
+      "name": "Difesa Senza Armatura",
+      "description": "Senza armatura né Scudo, la CA base è 10 + il tuo modificatore di Destrezza + il tuo modificatore di Saggezza."
+    },
+    "Monk's Focus": {
+      "name": "Focalizzazione del Monaco",
+      "description": "Hai Punti focalizzazione pari al tuo livello da monaco, recuperati dopo un Riposo Breve o Lungo; la CD dei tuoi effetti di Focalizzazione è 8 + il tuo modificatore di Saggezza + il Bonus di Competenza. Spendi 1 punto per Raffica di Colpi (due Colpi Senz'Armi come Azione Bonus), oppure compi Disimpegnarsi o Scattare come Azione Bonus gratuitamente. Spendi 1 punto per combinare Disimpegnarsi con Schivare (Difesa Paziente) o Scattare con il raddoppio della distanza di salto (Passo del Vento) come Azione Bonus."
+    },
+    "Unarmored Movement": {
+      "name": "Movimento Senza Armatura",
+      "description": "Senza armatura né Scudo, la tua Velocità aumenta di 10 piedi ai livelli 2-5, 15 ai livelli 6-9, 20 ai livelli 10-13, 25 ai livelli 14-17 e 30 dal livello 18."
+    },
+    "Uncanny Metabolism": {
+      "name": "Metabolismo Straordinario",
+      "description": "Una volta per Riposo Lungo, quando tiri l'Iniziativa, recuperi tutti i Punti focalizzazione e punti ferita pari al tuo livello da monaco + il risultato di un dado di Arti Marziali."
+    },
+    "Deflect Attacks": {
+      "name": "Deviare gli Attacchi",
+      "description": "Come Reazione, quando un attacco ti colpisce e include danni contundenti, perforanti o taglienti, riduci i danni totali di 1d10 + il tuo modificatore di Destrezza + il tuo livello da monaco. Se li riduci a 0, spendi 1 Punto focalizzazione per deviarli: una creatura visibile entro 5 piedi per un attacco da mischia, oppure entro 60 piedi e non dietro Copertura Totale per un attacco a distanza, effettua un tiro salvezza su Destrezza; se fallisce subisce danni del tipo dell'attacco pari a due dadi di Arti Marziali + il tuo modificatore di Destrezza."
+    },
+    "Monk Subclass": {
+      "name": "Sottoclasse del Monaco",
+      "description": "Scegli una sottoclasse del monaco; ottieni i suoi privilegi ai livelli da monaco indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da monaco."
+    },
+    "Slow Fall": {
+      "name": "Caduta Lenta",
+      "description": "Come Reazione mentre cadi, riduci i danni da caduta di cinque volte il tuo livello da monaco."
+    },
+    "Extra Attack": {
+      "name": "Attacco Extra",
+      "description": "Attacchi due volte quando compi l'azione Attaccare."
+    },
+    "Stunning Strike": {
+      "name": "Colpo Stordente",
+      "description": "Una volta per turno, dopo aver colpito con un'arma da monaco o un Colpo Senz'Armi, spendi 1 Punto focalizzazione. Il bersaglio effettua un tiro salvezza su Costituzione: se fallisce è Stordito fino all'inizio del tuo turno successivo; se riesce la sua Velocità si dimezza e il prossimo attacco contro di lui ha Vantaggio fino ad allora."
+    },
+    "Empowered Strikes": {
+      "name": "Colpi Potenziati",
+      "description": "Il tuo Colpo Senz'Armi può infliggere danni da forza invece del tipo normale."
+    },
+    "Evasion": {
+      "name": "Elusione",
+      "description": "Quando un tiro salvezza su Destrezza dimezza i danni, non subisci danni se riesci e ne subisci metà se fallisci, a meno che tu sia Incapacitato."
+    },
+    "Acrobatic Movement": {
+      "name": "Movimento Acrobatico",
+      "description": "Senza armatura né Scudo puoi muoverti su superfici verticali e liquidi durante il tuo turno senza cadere mentre ti muovi."
+    },
+    "Heightened Focus": {
+      "name": "Focalizzazione Migliorata",
+      "description": "Per 1 Punto focalizzazione, Raffica di Colpi consente tre Colpi Senz'Armi; Difesa Paziente conferisce anche punti ferita temporanei pari a due dadi di Arti Marziali; Passo del Vento può trasportare una creatura consenziente di taglia Grande o inferiore entro 5 piedi senza provocare attacchi di opportunità."
+    },
+    "Self-Restoration": {
+      "name": "Autoguarigione",
+      "description": "Alla fine di ogni tuo turno, poni fine su te stesso alle condizioni Affascinato, Spaventato o Avvelenato. Non ottieni più Esaurimento per mancanza di cibo o acqua."
+    },
+    "Deflect Energy": {
+      "name": "Deviare l'Energia",
+      "description": "Deviare gli Attacchi ora funziona contro attacchi di qualsiasi tipo di danno."
+    },
+    "Disciplined Survivor": {
+      "name": "Sopravvissuto Disciplinato",
+      "description": "Ottieni competenza in tutti i tiri salvezza. Quando ne fallisci uno, spendi 1 Punto focalizzazione per ripeterlo e usa il nuovo risultato."
+    },
+    "Perfect Focus": {
+      "name": "Focalizzazione Perfetta",
+      "description": "Quando tiri l'Iniziativa senza usare Metabolismo Straordinario, se hai tre o meno Punti focalizzazione ne recuperi fino ad averne quattro."
+    },
+    "Superior Defense": {
+      "name": "Difesa Superiore",
+      "description": "All'inizio del tuo turno spendi 3 Punti focalizzazione per ottenere Resistenza a tutti i danni eccetto quelli da forza per 1 minuto o finché non diventi Incapacitato."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Body and Mind": {
+      "name": "Corpo e Mente",
+      "description": "Aumenta Destrezza e Saggezza di 4 ciascuna; il massimo di entrambe diventa 25."
+    }
+  },
+  "Paladin": {
+    "Lay On Hands": {
+      "name": "Imposizione delle mani",
+      "description": "Una riserva di guarigione pari a 5 volte il tuo livello da paladino si ripristina dopo un Riposo Lungo. Come Azione Bonus, tocchi una creatura, anche te stesso, per restituirle punti ferita dalla riserva; in alternativa spendi 5 punti della riserva per rimuovere Avvelenato."
+    },
+    "Spellcasting": {
+      "name": "Lancio di Incantesimi",
+      "description": "Carisma è la tua caratteristica da incantatore per gli incantesimi da paladino; un Simbolo Sacro può essere il tuo focus. Al livello 1 prepari due incantesimi da paladino di livello 1; il limite di preparazione e gli slot aumentano con il livello da paladino. Dopo un Riposo Lungo puoi sostituire un incantesimo da paladino preparato con un altro di un livello che puoi lanciare. Gli incantesimi sempre preparati non contano nel limite."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria nelle Armi",
+      "description": "Scegli due tipi di armi in cui hai competenza e di cui puoi usare le proprietà di maestria. Puoi cambiare entrambe le scelte dopo un Riposo Lungo."
+    },
+    "Fighting Style": {
+      "name": "Stile di Combattimento",
+      "description": "Ottieni un talento di Stile di Combattimento oppure scegli Guerriero benedetto per imparare due trucchetti da chierico che contano come incantesimi da paladino e usano Carisma. Puoi sostituire un trucchetto di Guerriero benedetto quando ottieni un livello da paladino."
+    },
+    "Paladin's Smite": {
+      "name": "Punizione del Paladino",
+      "description": "Punizione Divina è sempre preparato e puoi lanciarlo una volta senza spendere uno slot incantesimo per Riposo Lungo."
+    },
+    "Channel Divinity": {
+      "name": "Incanalare Divinità",
+      "description": "Ottieni Senso Divino e le opzioni di Incanalare Divinità della tua sottoclasse. Parti con due usi, che diventano tre al livello 11 da paladino; ne recuperi uno dopo un Riposo Breve e tutti dopo un Riposo Lungo. Senso Divino è un'Azione Bonus che per 10 minuti rivela Celestiali, Immondi, Non Morti e luoghi o oggetti consacrati o profanati entro 60 piedi, finché non diventi Incapacitato."
+    },
+    "Paladin Subclass": {
+      "name": "Sottoclasse del Paladino",
+      "description": "Scegli una sottoclasse del paladino; ottieni i suoi privilegi ai livelli da paladino indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da paladino."
+    },
+    "Extra Attack": {
+      "name": "Attacco Extra",
+      "description": "Attacchi due volte ogni volta che compi l'azione Attaccare."
+    },
+    "Faithful Steed": {
+      "name": "Destriero Fedele",
+      "description": "Trova Destriero è sempre preparato. Lancialo una volta senza spendere uno slot incantesimo per Riposo Lungo."
+    },
+    "Aura of Protection": {
+      "name": "Aura di Protezione",
+      "description": "Tu e gli alleati nella tua emanazione di 10 piedi ottenete un bonus ai tiri salvezza pari al tuo modificatore di Carisma (minimo +1) mentre non sei Incapacitato. Una creatura beneficia di una sola Aura di Protezione da paladino alla volta."
+    },
+    "Abjure Foes": {
+      "name": "Abiurare i Nemici",
+      "description": "Come azione Magica, spendi un uso di Incanalare Divinità per bersagliare un numero di creature fino al tuo modificatore di Carisma (minimo una) entro 60 piedi. Ognuna effettua un tiro salvezza su Saggezza; se fallisce diventa Spaventata per 1 minuto o finché subisce danni. Nei propri turni può muoversi, compiere un'azione o un'Azione Bonus, ma soltanto una di queste cose."
+    },
+    "Aura of Courage": {
+      "name": "Aura di Coraggio",
+      "description": "Tu e gli alleati nella tua Aura di Protezione siete immuni a Spaventato; la condizione è sospesa per un alleato che ne era affetto finché resta nell'aura."
+    },
+    "Radiant Strikes": {
+      "name": "Colpi Radiosi",
+      "description": "Ogni colpo con un'arma da mischia o un Colpo Senz'Armi infligge 1d8 danni radiosi extra."
+    },
+    "Restoring Touch": {
+      "name": "Tocco Ristoratore",
+      "description": "Quando usi Imposizione delle mani, spendi 5 punti della riserva di guarigione per ogni condizione rimossa: Accecato, Affascinato, Assordato, Spaventato, Paralizzato o Stordito. Questi punti non curano."
+    },
+    "Aura Expansion": {
+      "name": "Espansione dell'Aura",
+      "description": "La tua Aura di Protezione si estende a un'emanazione di 30 piedi."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    }
+  },
+  "Ranger": {
+    "Spellcasting": {
+      "name": "Lancio di Incantesimi",
+      "description": "Saggezza è la tua caratteristica da incantatore per gli incantesimi da ranger; un Focus Druidico può essere il tuo focus. Al livello 1 prepari due incantesimi da ranger di livello 1; il limite di preparazione e gli slot aumentano con il livello da ranger. Dopo un Riposo Lungo puoi sostituire un incantesimo da ranger preparato con un altro di un livello che puoi lanciare. Gli incantesimi sempre preparati non contano nel limite."
+    },
+    "Favored Enemy": {
+      "name": "Nemico Prescelto",
+      "description": "Marchio del Cacciatore è sempre preparato. Puoi lanciarlo senza spendere uno slot incantesimo due volte ai livelli 1-4, tre ai livelli 5-8, quattro ai livelli 9-12, cinque ai livelli 13-16 e sei dal livello 17. Recuperi gli usi gratuiti dopo un Riposo Lungo."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria nelle Armi",
+      "description": "Scegli due tipi di armi in cui hai competenza e di cui puoi usare le proprietà di maestria. Cambia entrambe le scelte dopo un Riposo Lungo."
+    },
+    "Deft Explorer": {
+      "name": "Esploratore Esperto",
+      "description": "Ottieni Maestria in un'abilità in cui hai competenza e non possiedi già Maestria, e impari due lingue a tua scelta."
+    },
+    "Fighting Style": {
+      "name": "Stile di Combattimento",
+      "description": "Ottieni un talento di Stile di Combattimento oppure scegli Guerriero druidico per imparare due trucchetti da druido che contano come incantesimi da ranger e usano Saggezza. Puoi sostituire un trucchetto di Guerriero druidico quando ottieni un livello da ranger."
+    },
+    "Ranger Subclass": {
+      "name": "Sottoclasse del Ranger",
+      "description": "Scegli una sottoclasse del ranger; ottieni i suoi privilegi ai livelli da ranger indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 12 e 16 da ranger."
+    },
+    "Extra Attack": {
+      "name": "Attacco Extra",
+      "description": "Attacchi due volte ogni volta che compi l'azione Attaccare."
+    },
+    "Roving": {
+      "name": "Vagabondo",
+      "description": "La tua Velocità aumenta di 10 piedi mentre non indossi armatura pesante. Ottieni Velocità di Scalata e Nuoto pari alla tua Velocità."
+    },
+    "Expertise": {
+      "name": "Maestria",
+      "description": "Ottieni Maestria in altre due abilità in cui hai competenza e non possiedi già Maestria."
+    },
+    "Tireless": {
+      "name": "Instancabile",
+      "description": "Come azione Magica, ottieni punti ferita temporanei pari a 1d8 + il tuo modificatore di Saggezza (minimo 1), un numero di volte pari al tuo modificatore di Saggezza (minimo una) per Riposo Lungo. Un Riposo Breve riduce anche di uno il tuo livello di Esaurimento."
+    },
+    "Relentless Hunter": {
+      "name": "Cacciatore Implacabile",
+      "description": "Subire danni non può interrompere la tua Concentrazione su Marchio del Cacciatore."
+    },
+    "Nature's Veil": {
+      "name": "Velo della Natura",
+      "description": "Come Azione Bonus diventi Invisibile fino alla fine del tuo turno successivo. Puoi usare questo privilegio un numero di volte pari al tuo modificatore di Saggezza (minimo una) per Riposo Lungo."
+    },
+    "Precise Hunter": {
+      "name": "Cacciatore Preciso",
+      "description": "Hai Vantaggio agli attacchi contro la creatura marchiata dal tuo Marchio del Cacciatore."
+    },
+    "Feral Senses": {
+      "name": "Sensi Ferini",
+      "description": "Ottieni Vista Cieca entro 30 piedi."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Foe Slayer": {
+      "name": "Sterminatore di Nemici",
+      "description": "Il dado dei danni di Marchio del Cacciatore diventa un d10 invece di un d6."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Maestria",
+      "description": "Ottieni Maestria in due abilità in cui hai competenza; ottieni Maestria in altre due al livello 6 da ladro."
+    },
+    "Sneak Attack": {
+      "name": "Attacco Furtivo",
+      "description": "Una volta per turno infliggi danni extra con un attacco di arma Accurata o a distanza se l'attacco ha Vantaggio. Non serve Vantaggio se un alleato è entro 5 piedi dal bersaglio, non è Incapacitato e il tuo tiro non ha Svantaggio. I danni extra sono 1d6 al livello 1 e aumentano di 1d6 a ogni livello dispari da ladro, fino a 10d6 al livello 19."
+    },
+    "Thieves' Cant": {
+      "name": "Gergo dei Ladri",
+      "description": "Conosci il Gergo dei Ladri e un'altra lingua a tua scelta."
+    },
+    "Weapon Mastery": {
+      "name": "Maestria nelle Armi",
+      "description": "Scegli due tipi di armi in cui hai competenza e di cui puoi usare le proprietà di maestria. Cambia entrambe le scelte dopo un Riposo Lungo."
+    },
+    "Cunning Action": {
+      "name": "Azione Scaltra",
+      "description": "Nel tuo turno puoi compiere Scattare, Disimpegnarsi o Nascondersi come Azione Bonus."
+    },
+    "Rogue Subclass": {
+      "name": "Sottoclasse del Ladro",
+      "description": "Scegli una sottoclasse del ladro; ottieni i suoi privilegi ai livelli da ladro indicati."
+    },
+    "Steady Aim": {
+      "name": "Mira Salda",
+      "description": "Come Azione Bonus prima di muoverti, ottieni Vantaggio al prossimo tiro per colpire in questo turno; poi la tua Velocità diventa 0 per il resto del turno."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni nuovamente questo privilegio ai livelli 8, 10, 12 e 16 da ladro."
+    },
+    "Cunning Strike": {
+      "name": "Colpo Astuto",
+      "description": "Quando infliggi danni di Attacco Furtivo, rinuncia a 1d6 per aggiungere un effetto dopo i danni: Avvelenare (richiede che tu abbia con te una Borsa da Avvelenatore; tiro salvezza su Costituzione o Avvelenato per 1 minuto, ripetendo il tiro alla fine di ogni turno), Atterrare (tiro salvezza su Destrezza o un bersaglio di taglia Grande o inferiore diventa Prono), oppure Ritirarsi (muoviti fino a metà della tua Velocità senza provocare attacchi di opportunità). La CD è 8 + il tuo modificatore di Destrezza + il Bonus di Competenza."
+    },
+    "Uncanny Dodge": {
+      "name": "Schivata Prodigiosa",
+      "description": "Come Reazione, quando un attaccante visibile ti colpisce con un tiro per colpire, dimezza i danni di quell'attacco contro di te, arrotondando per difetto."
+    },
+    "Evasion": {
+      "name": "Elusione",
+      "description": "Quando un tiro salvezza su Destrezza dimezza i danni, non subisci danni se riesci e ne subisci metà se fallisci, a meno che tu sia Incapacitato."
+    },
+    "Reliable Talent": {
+      "name": "Talento Affidabile",
+      "description": "Quando una prova di caratteristica usa la tua competenza in un'abilità o uno strumento, considera un risultato di 9 o meno sul d20 come 10."
+    },
+    "Improved Cunning Strike": {
+      "name": "Colpo Astuto Migliorato",
+      "description": "Applica fino a due effetti di Colpo Astuto a un singolo Attacco Furtivo, pagando il costo in dadi di ogni effetto."
+    },
+    "Devious Strikes": {
+      "name": "Colpi Subdoli",
+      "description": "Ottieni altre opzioni di Colpo Astuto: Stordire costa 2d6 (tiro salvezza su Costituzione o il bersaglio nel turno successivo può soltanto muoversi, compiere un'azione o un'Azione Bonus); Mettere K.O. costa 6d6 (tiro salvezza su Costituzione o Privo di Sensi per un massimo di 1 minuto); Accecare costa 3d6 (tiro salvezza su Destrezza o Accecato fino alla fine del suo turno successivo)."
+    },
+    "Slippery Mind": {
+      "name": "Mente Sfuggente",
+      "description": "Ottieni competenza nei tiri salvezza su Saggezza e Carisma."
+    },
+    "Elusive": {
+      "name": "Inafferrabile",
+      "description": "I tiri per colpire contro di te non possono avere Vantaggio, a meno che tu sia Incapacitato."
+    },
+    "Epic Boon": {
+      "name": "Dono Epico",
+      "description": "Ottieni un talento Dono Epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Stroke of Luck": {
+      "name": "Colpo di Fortuna",
+      "description": "Una volta per Riposo Breve o Lungo puoi trasformare una Prova di d20 fallita in un tiro di 20."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Carisma è la tua caratteristica da incantatore per gli incantesimi da stregone; puoi usare un focus arcano. Conosci quattro trucchetti da stregone al livello 1 e ne impari un altro ai livelli 4 e 10. Prepari due incantesimi da stregone di livello 1 al livello 1; il limite di preparazione e gli slot aumentano con il tuo livello da stregone. Quando ottieni un livello da stregone, puoi sostituire un incantesimo preparato e un trucchetto con incantesimi da stregone idonei."
+    },
+    "Innate Sorcery": {
+      "name": "Stregoneria innata",
+      "description": "Con un'Azione Bonus, sprigioni la magia innata per 1 minuto: la CD dei tiri salvezza dei tuoi incantesimi da stregone aumenta di 1 e hai Vantaggio ai tiri per colpire con essi. Due utilizzi per Riposo Lungo."
+    },
+    "Font of Magic": {
+      "name": "Fonte di magia",
+      "description": "Ottieni Punti Stregoneria pari al tuo livello da stregone, che recuperi con un Riposo Lungo. Puoi scambiare uno slot incantesimo con punti pari al suo livello senza usare un'azione, oppure spendere punti con un'Azione Bonus per creare uno slot fino al livello 5. Costi: livello 1, 2 punti; livello 2, 3; livello 3, 5; livello 4, 6; livello 5, 7. Gli slot creati svaniscono dopo un Riposo Lungo. Devi avere il livello minimo da stregone richiesto per lo slot creato."
+    },
+    "Metamagic": {
+      "name": "Metamagia",
+      "description": "Scegli due opzioni di Metamagia e spendi Punti Stregoneria per modificare gli incantesimi. Di norma puoi applicare una sola opzione a un incantesimo. Puoi sostituire un'opzione ogni volta che ottieni un livello da stregone. Impari altre due opzioni al livello 10 e altre due al livello 17."
+    },
+    "Sorcerer Subclass": {
+      "name": "Sottoclasse dello stregone",
+      "description": "Scegli una sottoclasse dello stregone; ottieni i suoi privilegi ai livelli da stregone indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni di nuovo questo privilegio ai livelli da stregone 8, 12 e 16."
+    },
+    "Sorcerous Restoration": {
+      "name": "Ripristino stregonesco",
+      "description": "Una volta per Riposo Lungo, dopo aver terminato un Riposo Breve, recuperi Punti Stregoneria spesi fino a metà del tuo livello da stregone, arrotondata per difetto."
+    },
+    "Sorcery Incarnate": {
+      "name": "Stregoneria incarnata",
+      "description": "Se non hai più utilizzi di Stregoneria innata, puoi spendere 2 Punti Stregoneria quando la attivi. Mentre è attiva, puoi applicare fino a due opzioni di Metamagia a ogni incantesimo."
+    },
+    "Epic Boon": {
+      "name": "Dono epico",
+      "description": "Ottieni un talento Dono epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Arcane Apotheosis": {
+      "name": "Apoteosi arcana",
+      "description": "Mentre Stregoneria innata è attiva, un'opzione di Metamagia per ciascuno dei tuoi turni non costa Punti Stregoneria."
+    }
+  },
+  "Warlock": {
+    "Eldritch Invocations": {
+      "name": "Invocazioni occulte",
+      "description": "Impari un'Invocazione occulta di cui soddisfi i prerequisiti al livello 1. Ogni volta che ottieni un livello da warlock, puoi sostituire un'invocazione se ciò non invalida i prerequisiti di un'altra. Il numero di invocazioni conosciute aumenta con il livello da warlock fino a dieci al livello 18; non puoi scegliere due volte la stessa invocazione, a meno che non lo permetta."
+    },
+    "Pact Magic": {
+      "name": "Magia del Patto",
+      "description": "Carisma è la tua caratteristica da incantatore per gli incantesimi da warlock; puoi usare un focus arcano. Conosci due trucchetti da warlock al livello 1 e ne impari un altro ai livelli 4 e 10. Prepari due incantesimi da warlock di livello 1 al livello 1; il limite di preparazione e il livello uniforme degli slot di Magia del Patto aumentano con il livello da warlock. Recuperi gli slot di Magia del Patto con un Riposo Breve o Lungo. Quando ottieni un livello da warlock, puoi sostituire un incantesimo preparato e un trucchetto."
+    },
+    "Magical Cunning": {
+      "name": "Astuzia magica",
+      "description": "Una volta per Riposo Lungo, esegui un rito di 1 minuto per recuperare slot di Magia del Patto spesi, fino a metà del loro numero massimo arrotondata per eccesso."
+    },
+    "Warlock Subclass": {
+      "name": "Sottoclasse del warlock",
+      "description": "Scegli una sottoclasse del warlock; ottieni i suoi privilegi ai livelli da warlock indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni di nuovo questo privilegio ai livelli da warlock 8, 12 e 16."
+    },
+    "Contact Patron": {
+      "name": "Contattare il patrono",
+      "description": "Contattare altri piani è sempre preparato. Una volta per Riposo Lungo puoi lanciarlo senza spendere uno slot incantesimo per contattare il tuo patrono e superi automaticamente il relativo tiro salvezza."
+    },
+    "Mystic Arcanum": {
+      "name": "Arcanum mistico",
+      "description": "Scegli un incantesimo da warlock di livello 6, che puoi lanciare una volta per Riposo Lungo senza spendere uno slot. Ottieni un arcanum separato di livello 7 al livello da warlock 13, di livello 8 al 15 e di livello 9 al 17, ciascuno con un lancio gratuito. Quando ottieni un livello da warlock, puoi sostituire un arcanum con un altro incantesimo da warlock idoneo dello stesso livello."
+    },
+    "Epic Boon": {
+      "name": "Dono epico",
+      "description": "Ottieni un talento Dono epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Eldritch Master": {
+      "name": "Maestro occulto",
+      "description": "Astuzia magica ora recupera tutti i tuoi slot di Magia del Patto spesi."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Incantesimi",
+      "description": "Intelligenza è la tua caratteristica da incantatore per gli incantesimi da mago; puoi usare un focus arcano o il tuo libro degli incantesimi. Conosci tre trucchetti da mago al livello 1 e ne impari un altro ai livelli 4 e 10; puoi sostituirne uno dopo un Riposo Lungo. Il tuo libro inizia con sei incantesimi da mago di livello 1 e acquisisce due incantesimi da mago idonei per ogni livello da mago. Prepari quattro incantesimi dal libro al livello 1; il limite e gli slot aumentano con il livello. Dopo un Riposo Lungo, puoi sostituire qualsiasi incantesimo preparato con uno idoneo del tuo libro."
+    },
+    "Ritual Adept": {
+      "name": "Esperto dei rituali",
+      "description": "Puoi lanciare come rituale un incantesimo da mago con il tag Rituale presente nel tuo libro, senza prepararlo, mentre lo leggi dal libro."
+    },
+    "Arcane Recovery": {
+      "name": "Recupero arcano",
+      "description": "Una volta per Riposo Lungo, dopo un Riposo Breve, recuperi slot incantesimo i cui livelli complessivi non superano metà del tuo livello da mago arrotondata per eccesso; nessuno slot recuperato può essere di livello 6 o superiore."
+    },
+    "Scholar": {
+      "name": "Studioso",
+      "description": "Ottieni Maestria in un'abilità in cui sei competente, a tua scelta tra Arcano, Storia, Indagare, Medicina, Natura e Religione."
+    },
+    "Wizard Subclass": {
+      "name": "Sottoclasse del mago",
+      "description": "Scegli una sottoclasse del mago; ottieni i suoi privilegi ai livelli da mago indicati."
+    },
+    "Ability Score Improvement": {
+      "name": "Aumento dei punteggi di caratteristica",
+      "description": "Ottieni il talento Aumento dei punteggi di caratteristica o un altro talento di cui soddisfi i prerequisiti. Ottieni di nuovo questo privilegio ai livelli da mago 8, 12 e 16."
+    },
+    "Memorize Spell": {
+      "name": "Memorizzare incantesimo",
+      "description": "Dopo un Riposo Breve, sostituisci un incantesimo da mago preparato di livello 1 o superiore con un altro incantesimo di livello 1 o superiore presente nel tuo libro."
+    },
+    "Spell Mastery": {
+      "name": "Padronanza degli incantesimi",
+      "description": "Scegli dal tuo libro un incantesimo di livello 1 e uno di livello 2 che richiedano un'azione per essere lanciati. Sono sempre preparati e puoi lanciarli entrambi al loro livello minimo senza spendere slot. Dopo un Riposo Lungo, puoi sostituire una scelta con un altro incantesimo idoneo dello stesso livello."
+    },
+    "Epic Boon": {
+      "name": "Dono epico",
+      "description": "Ottieni un talento Dono epico o un altro talento di cui soddisfi i prerequisiti."
+    },
+    "Signature Spells": {
+      "name": "Incantesimi distintivi",
+      "description": "Scegli due incantesimi di livello 3 presenti nel tuo libro. Sono sempre preparati e puoi lanciarli ciascuno una volta al livello 3 senza spendere uno slot per Riposo Breve o Lungo."
+    }
+  }
+}

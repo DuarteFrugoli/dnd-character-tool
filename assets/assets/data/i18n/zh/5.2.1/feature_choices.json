@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "牧师",
+        "description": "选择两个牧师戏法和一个1环牧师法术。"
+      },
+      "druid": {
+        "name": "德鲁伊",
+        "description": "选择两个德鲁伊戏法和一个1环德鲁伊法术。"
+      },
+      "wizard": {
+        "name": "法师",
+        "description": "选择两个法师戏法和一个1环法师法术。"
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "智力",
+        "description": "使用智力作为这些法术的施法属性。"
+      },
+      "wisdom": {
+        "name": "感知",
+        "description": "使用感知作为这些法术的施法属性。"
+      },
+      "charisma": {
+        "name": "魅力",
+        "description": "使用魅力作为这些法术的施法属性。"
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "箭术",
+        "description": "使用远程武器进行攻击检定时获得+2加值。"
+      },
+      "defense": {
+        "name": "防御",
+        "description": "穿戴轻甲、中甲或重甲时，AC获得+1加值。"
+      },
+      "great_weapon_fighting": {
+        "name": "巨武器战斗",
+        "description": "双手持用双手或两用近战武器时，伤害骰掷出1或2均视为3。"
+      },
+      "two_weapon_fighting": {
+        "name": "双武器战斗",
+        "description": "使用轻型属性进行额外攻击时，将属性调整值加入该次攻击的伤害。"
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "箭术",
+        "description": "使用远程武器进行攻击检定时获得+2加值。"
+      },
+      "defense": {
+        "name": "防御",
+        "description": "穿戴轻甲、中甲或重甲时，AC获得+1加值。"
+      },
+      "great_weapon_fighting": {
+        "name": "巨武器战斗",
+        "description": "双手持用双手或两用近战武器时，伤害骰掷出1或2均视为3。"
+      },
+      "two_weapon_fighting": {
+        "name": "双武器战斗",
+        "description": "使用轻型属性进行额外攻击时，将属性调整值加入该次攻击的伤害。"
+      },
+      "blessed_warrior": {
+        "name": "受祝战士",
+        "description": "学会两个牧师戏法，它们对你视为圣骑士法术。"
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "箭术",
+        "description": "使用远程武器进行攻击检定时获得+2加值。"
+      },
+      "defense": {
+        "name": "防御",
+        "description": "穿戴轻甲、中甲或重甲时，AC获得+1加值。"
+      },
+      "great_weapon_fighting": {
+        "name": "巨武器战斗",
+        "description": "双手持用双手或两用近战武器时，伤害骰掷出1或2均视为3。"
+      },
+      "two_weapon_fighting": {
+        "name": "双武器战斗",
+        "description": "使用轻型属性进行额外攻击时，将属性调整值加入该次攻击的伤害。"
+      },
+      "druidic_warrior": {
+        "name": "德鲁伊战士",
+        "description": "学会两个德鲁伊戏法，它们对你视为游侠法术。"
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "守护者",
+        "description": "获得军用武器熟练和重甲训练。"
+      },
+      "thaumaturge": {
+        "name": "奇迹师",
+        "description": "额外学会一个牧师戏法，并将感知调整值（最低+1）加入奥秘或宗教检定。"
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "施法者",
+        "description": "额外学会一个德鲁伊戏法，并将感知调整值（最低+1）加入奥秘或自然检定。"
+      },
+      "warden": {
+        "name": "卫士",
+        "description": "获得军用武器熟练和中甲训练。"
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "神圣打击",
+        "description": "每回合一次，武器命中时额外造成1d8光耀或黯蚀伤害；牧师达到14级后变为2d8。"
+      },
+      "potent_spellcasting": {
+        "name": "强效施法",
+        "description": "将感知调整值加入牧师戏法伤害；达到14级后，造成伤害的戏法还能提供临时生命值。"
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "强效施法",
+        "description": "将感知调整值加入德鲁伊戏法伤害；德鲁伊达到15级后，戏法射程延长。"
+      },
+      "primal_strike": {
+        "name": "原初打击",
+        "description": "每回合一次，武器或野兽形态攻击命中时额外造成1d8寒冷、火焰、闪电或雷鸣伤害；达到15级后变为2d8。"
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "驯兽"
+      },
+      "athletics": {
+        "name": "运动"
+      },
+      "intimidation": {
+        "name": "威吓"
+      },
+      "nature": {
+        "name": "自然"
+      },
+      "perception": {
+        "name": "察觉"
+      },
+      "survival": {
+        "name": "求生"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "奥秘"
+      },
+      "history": {
+        "name": "历史"
+      },
+      "investigation": {
+        "name": "调查"
+      },
+      "medicine": {
+        "name": "医药"
+      },
+      "nature": {
+        "name": "自然"
+      },
+      "religion": {
+        "name": "宗教"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "谨慎法术",
+        "description": "消耗1点术法点。选择不超过魅力调整值数量的生物（至少一个）；它们自动通过该法术的豁免，且如果成功原本会受到半数伤害，则改为不受伤害。"
+      },
+      "distant_spell": {
+        "name": "远程法术",
+        "description": "消耗1点术法点，将射程至少5尺的法术射程加倍，或将触及射程改为30尺。"
+      },
+      "empowered_spell": {
+        "name": "强化法术",
+        "description": "消耗1点术法点，重掷数量不超过魅力调整值的伤害骰（至少一枚），并使用新结果。可以与另一项超魔法结合。"
+      },
+      "extended_spell": {
+        "name": "延长法术",
+        "description": "消耗1点术法点，将持续时间加倍，但不超过24小时，并在维持该法术专注的豁免中获得优势。"
+      },
+      "heightened_spell": {
+        "name": "升阶法术",
+        "description": "消耗2点术法点，使一个目标对该法术的豁免具有劣势。"
+      },
+      "quickened_spell": {
+        "name": "瞬发法术",
+        "description": "消耗2点术法点，将以动作施放的法术改为以附赠动作施放。若本回合已施放1环或更高环法术，或之后还要施放此类法术，则不能使用。"
+      },
+      "seeking_spell": {
+        "name": "追寻法术",
+        "description": "消耗1点术法点，重掷一次未命中的法术攻击并使用新结果。可以与另一项超魔法结合。"
+      },
+      "subtle_spell": {
+        "name": "默发法术",
+        "description": "消耗1点术法点，施法时无需言语、姿势和无价格且不消耗的材料成分。"
+      },
+      "transmuted_spell": {
+        "name": "转化法术",
+        "description": "消耗1点术法点，将法术的强酸、寒冷、火焰、闪电、毒素或雷鸣伤害改为此列表中的另一种。"
+      },
+      "twinned_spell": {
+        "name": "孪生法术",
+        "description": "消耗1点术法点，将升环施放时可额外指定一个生物的法术的有效环阶提高1环。"
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "干旱"
+      },
+      "polar": {
+        "name": "极地"
+      },
+      "temperate": {
+        "name": "温带"
+      },
+      "tropical": {
+        "name": "热带"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "巨像杀手",
+        "description": "每回合一次，武器命中生命值不满的生物时额外造成+1d8伤害。"
+      },
+      "horde_breaker": {
+        "name": "破群者",
+        "description": "在自己的回合中一次，用武器攻击附近另一个生物。"
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "逃离群敌",
+        "description": "针对你的借机攻击具有劣势。"
+      },
+      "multiattack_defense": {
+        "name": "多重攻击防御",
+        "description": "一个生物命中你后，它在本回合对你的其他攻击检定具有劣势。"
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "强酸"
+      },
+      "cold": {
+        "name": "寒冷"
+      },
+      "fire": {
+        "name": "火焰"
+      },
+      "lightning": {
+        "name": "闪电"
+      },
+      "poison": {
+        "name": "毒素"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "强酸"
+      },
+      "bludgeoning": {
+        "name": "钝击"
+      },
+      "cold": {
+        "name": "寒冷"
+      },
+      "fire": {
+        "name": "火焰"
+      },
+      "lightning": {
+        "name": "闪电"
+      },
+      "necrotic": {
+        "name": "黯蚀"
+      },
+      "piercing": {
+        "name": "穿刺"
+      },
+      "poison": {
+        "name": "毒素"
+      },
+      "psychic": {
+        "name": "心灵"
+      },
+      "radiant": {
+        "name": "光耀"
+      },
+      "slashing": {
+        "name": "挥砍"
+      },
+      "thunder": {
+        "name": "雷鸣"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "黑色",
+        "description": "强酸"
+      },
+      "blue": {
+        "name": "蓝色",
+        "description": "闪电"
+      },
+      "brass": {
+        "name": "黄铜色",
+        "description": "火焰"
+      },
+      "bronze": {
+        "name": "青铜色",
+        "description": "闪电"
+      },
+      "copper": {
+        "name": "铜色",
+        "description": "强酸"
+      },
+      "gold": {
+        "name": "金色",
+        "description": "火焰"
+      },
+      "green": {
+        "name": "绿色",
+        "description": "毒素"
+      },
+      "red": {
+        "name": "红色",
+        "description": "火焰"
+      },
+      "silver": {
+        "name": "银色",
+        "description": "寒冷"
+      },
+      "white": {
+        "name": "白色",
+        "description": "寒冷"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "卓尔",
+        "description": "舞光术；3级获得妖火，5级获得黑暗术。"
+      },
+      "high_elf": {
+        "name": "高等精灵",
+        "description": "魔法伎俩；3级获得侦测魔法，5级获得迷踪步。"
+      },
+      "wood_elf": {
+        "name": "木精灵",
+        "description": "速度提高并获得德鲁伊伎俩；3级获得大步奔行，5级获得行踪无迹。"
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "森林侏儒",
+        "description": "次级幻影和动物交谈。"
+      },
+      "rock_gnome": {
+        "name": "岩石侏儒",
+        "description": "修复术、魔法伎俩以及发条装置。"
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "云之跃迁",
+        "description": "以附赠动作传送至多30尺。"
+      },
+      "fire": {
+        "name": "火之灼烧",
+        "description": "命中时额外造成1d10火焰伤害。"
+      },
+      "frost": {
+        "name": "霜之寒意",
+        "description": "命中时额外造成1d6寒冷伤害，并降低目标速度。"
+      },
+      "hill": {
+        "name": "丘之倾倒",
+        "description": "命中时使大型或更小的目标倒地。"
+      },
+      "stone": {
+        "name": "石之坚忍",
+        "description": "以反应将所受伤害降低1d12+体质调整值。"
+      },
+      "storm": {
+        "name": "风暴雷鸣",
+        "description": "对伤害你的生物造成1d8雷鸣伤害。"
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "深渊语",
+        "description": "毒素伤害抗性和毒液喷溅；3级获得疾病射线，5级获得人类定身术。"
+      },
+      "chthonic": {
+        "name": "冥界",
+        "description": "黯蚀伤害抗性和冻寒之触；3级获得虚假生命，5级获得衰弱射线。"
+      },
+      "infernal": {
+        "name": "炼狱语",
+        "description": "火焰伤害抗性和火焰箭；3级获得炼狱叱喝，5级获得黑暗术。"
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "洞悉"
+      },
+      "perception": {
+        "name": "察觉"
+      },
+      "survival": {
+        "name": "求生"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "短棍",
+        "description": "简易近战武器；缓速精通。"
+      },
+      "dagger": {
+        "name": "匕首",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "greatclub": {
+        "name": "巨棒",
+        "description": "简易近战武器；推击精通。"
+      },
+      "handaxe": {
+        "name": "手斧",
+        "description": "简易近战武器；扰乱精通。"
+      },
+      "javelin": {
+        "name": "标枪",
+        "description": "简易近战武器；缓速精通。"
+      },
+      "light_hammer": {
+        "name": "轻锤",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "mace": {
+        "name": "硬头锤",
+        "description": "简易近战武器；削弱精通。"
+      },
+      "quarterstaff": {
+        "name": "长棍",
+        "description": "简易近战武器；击倒精通。"
+      },
+      "sickle": {
+        "name": "镰刀",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "spear": {
+        "name": "矛",
+        "description": "简易近战武器；削弱精通。"
+      },
+      "battleaxe": {
+        "name": "战斧",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "flail": {
+        "name": "连枷",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "glaive": {
+        "name": "长柄刀",
+        "description": "军用近战武器；擦伤精通。"
+      },
+      "greataxe": {
+        "name": "巨斧",
+        "description": "军用近战武器；顺势斩精通。"
+      },
+      "greatsword": {
+        "name": "巨剑",
+        "description": "军用近战武器；擦伤精通。"
+      },
+      "halberd": {
+        "name": "戟",
+        "description": "军用近战武器；顺势斩精通。"
+      },
+      "lance": {
+        "name": "骑枪",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "longsword": {
+        "name": "长剑",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "maul": {
+        "name": "大槌",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "morningstar": {
+        "name": "钉头锤",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "pike": {
+        "name": "长枪",
+        "description": "军用近战武器；推击精通。"
+      },
+      "rapier": {
+        "name": "细剑",
+        "description": "军用近战武器；扰乱精通。"
+      },
+      "scimitar": {
+        "name": "弯刀",
+        "description": "军用近战武器；迅捷精通。"
+      },
+      "shortsword": {
+        "name": "短剑",
+        "description": "军用近战武器；扰乱精通。"
+      },
+      "trident": {
+        "name": "三叉戟",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "warhammer": {
+        "name": "战锤",
+        "description": "军用近战武器；推击精通。"
+      },
+      "war_pick": {
+        "name": "战镐",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "whip": {
+        "name": "鞭子",
+        "description": "军用近战武器；缓速精通。"
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "短棍",
+        "description": "简易近战武器；缓速精通。"
+      },
+      "dagger": {
+        "name": "匕首",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "greatclub": {
+        "name": "巨棒",
+        "description": "简易近战武器；推击精通。"
+      },
+      "handaxe": {
+        "name": "手斧",
+        "description": "简易近战武器；扰乱精通。"
+      },
+      "javelin": {
+        "name": "标枪",
+        "description": "简易近战武器；缓速精通。"
+      },
+      "light_hammer": {
+        "name": "轻锤",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "mace": {
+        "name": "硬头锤",
+        "description": "简易近战武器；削弱精通。"
+      },
+      "quarterstaff": {
+        "name": "长棍",
+        "description": "简易近战武器；击倒精通。"
+      },
+      "sickle": {
+        "name": "镰刀",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "spear": {
+        "name": "矛",
+        "description": "简易近战武器；削弱精通。"
+      },
+      "dart": {
+        "name": "飞镖",
+        "description": "简易远程武器；扰乱精通。"
+      },
+      "light_crossbow": {
+        "name": "轻弩",
+        "description": "简易远程武器；缓速精通。"
+      },
+      "shortbow": {
+        "name": "短弓",
+        "description": "简易远程武器；扰乱精通。"
+      },
+      "sling": {
+        "name": "投石索",
+        "description": "简易远程武器；缓速精通。"
+      },
+      "battleaxe": {
+        "name": "战斧",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "flail": {
+        "name": "连枷",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "glaive": {
+        "name": "长柄刀",
+        "description": "军用近战武器；擦伤精通。"
+      },
+      "greataxe": {
+        "name": "巨斧",
+        "description": "军用近战武器；顺势斩精通。"
+      },
+      "greatsword": {
+        "name": "巨剑",
+        "description": "军用近战武器；擦伤精通。"
+      },
+      "halberd": {
+        "name": "戟",
+        "description": "军用近战武器；顺势斩精通。"
+      },
+      "lance": {
+        "name": "骑枪",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "longsword": {
+        "name": "长剑",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "maul": {
+        "name": "大槌",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "morningstar": {
+        "name": "钉头锤",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "pike": {
+        "name": "长枪",
+        "description": "军用近战武器；推击精通。"
+      },
+      "rapier": {
+        "name": "细剑",
+        "description": "军用近战武器；扰乱精通。"
+      },
+      "scimitar": {
+        "name": "弯刀",
+        "description": "军用近战武器；迅捷精通。"
+      },
+      "shortsword": {
+        "name": "短剑",
+        "description": "军用近战武器；扰乱精通。"
+      },
+      "trident": {
+        "name": "三叉戟",
+        "description": "军用近战武器；击倒精通。"
+      },
+      "warhammer": {
+        "name": "战锤",
+        "description": "军用近战武器；推击精通。"
+      },
+      "war_pick": {
+        "name": "战镐",
+        "description": "军用近战武器；削弱精通。"
+      },
+      "whip": {
+        "name": "鞭子",
+        "description": "军用近战武器；缓速精通。"
+      },
+      "blowgun": {
+        "name": "吹箭筒",
+        "description": "军用远程武器；扰乱精通。"
+      },
+      "hand_crossbow": {
+        "name": "手弩",
+        "description": "军用远程武器；扰乱精通。"
+      },
+      "heavy_crossbow": {
+        "name": "重弩",
+        "description": "军用远程武器；推击精通。"
+      },
+      "longbow": {
+        "name": "长弓",
+        "description": "军用远程武器；缓速精通。"
+      },
+      "musket": {
+        "name": "火枪",
+        "description": "军用远程武器；缓速精通。"
+      },
+      "pistol": {
+        "name": "手枪",
+        "description": "军用远程武器；扰乱精通。"
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "短棍",
+        "description": "简易近战武器；缓速精通。"
+      },
+      "dagger": {
+        "name": "匕首",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "greatclub": {
+        "name": "巨棒",
+        "description": "简易近战武器；推击精通。"
+      },
+      "handaxe": {
+        "name": "手斧",
+        "description": "简易近战武器；扰乱精通。"
+      },
+      "javelin": {
+        "name": "标枪",
+        "description": "简易近战武器；缓速精通。"
+      },
+      "light_hammer": {
+        "name": "轻锤",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "mace": {
+        "name": "硬头锤",
+        "description": "简易近战武器；削弱精通。"
+      },
+      "quarterstaff": {
+        "name": "长棍",
+        "description": "简易近战武器；击倒精通。"
+      },
+      "sickle": {
+        "name": "镰刀",
+        "description": "简易近战武器；迅捷精通。"
+      },
+      "spear": {
+        "name": "矛",
+        "description": "简易近战武器；削弱精通。"
+      },
+      "dart": {
+        "name": "飞镖",
+        "description": "简易远程武器；扰乱精通。"
+      },
+      "light_crossbow": {
+        "name": "轻弩",
+        "description": "简易远程武器；缓速精通。"
+      },
+      "shortbow": {
+        "name": "短弓",
+        "description": "简易远程武器；扰乱精通。"
+      },
+      "sling": {
+        "name": "投石索",
+        "description": "简易远程武器；缓速精通。"
+      },
+      "rapier": {
+        "name": "细剑",
+        "description": "军用近战武器；扰乱精通。"
+      },
+      "scimitar": {
+        "name": "弯刀",
+        "description": "军用近战武器；迅捷精通。"
+      },
+      "shortsword": {
+        "name": "短剑",
+        "description": "军用近战武器；扰乱精通。"
+      },
+      "whip": {
+        "name": "鞭子",
+        "description": "军用近战武器；缓速精通。"
+      },
+      "hand_crossbow": {
+        "name": "手弩",
+        "description": "军用远程武器；扰乱精通。"
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "苦痛魔爆",
+        "description": "选择一个你已知且能造成伤害的邪术师戏法。你可以将魅力调整值加入该法术的伤害掷骰。"
+      },
+      "armor_of_shadows": {
+        "name": "暗影护甲",
+        "description": "你可以不消耗法术位，对自己施放法师护甲。"
+      },
+      "ascendant_step": {
+        "name": "升腾之步",
+        "description": "你可以不消耗法术位，对自己施放浮空术。"
+      },
+      "devils_sight": {
+        "name": "魔鬼视界",
+        "description": "在自身120尺内，你能在微光及魔法或非魔法黑暗中正常视物。"
+      },
+      "devouring_blade": {
+        "name": "吞噬之刃",
+        "description": "你的嗜血之刃祈唤所赋予的额外攻击从一次增加为两次。"
+      },
+      "eldritch_mind": {
+        "name": "邪术心智",
+        "description": "你为维持专注进行的体质豁免具有优势。"
+      },
+      "eldritch_smite": {
+        "name": "邪能重击",
+        "description": "每回合一次，使用契约武器命中生物时，你可以消耗一个契约魔法法术位，对目标额外造成1d8力场伤害，且法术位每高一环再增加1d8。若目标为超巨型或更小，你还可以使其倒地。"
+      },
+      "eldritch_spear": {
+        "name": "邪能长枪",
+        "description": "选择一个你已知、能造成伤害且射程至少10尺的邪术师戏法。施放时，该戏法射程增加等于邪术师等级乘以30尺的距离。"
+      },
+      "fiendish_vigor": {
+        "name": "恶魔活力",
+        "description": "你可以不消耗法术位，对自己施放虚假生命。通过此特性施放时，临时生命值的骰子不需掷骰，直接取最大值。"
+      },
+      "gaze_of_two_minds": {
+        "name": "双心之视",
+        "description": "你可以用附赠动作触碰一个自愿的生物，直到你下个回合结束，通过它的感官感知。只要它与你处于同一位面，你便可在后续回合用附赠动作维持联结，使之延长至下个回合结束。若不维持，联结即告结束。\n\n通过该生物的感官感知期间，你也能使用它具有的特殊感官。若你们相距不超过60尺，可以如同身处自己或该生物的空间施放法术。"
+      },
+      "gift_of_the_depths": {
+        "name": "深海之礼",
+        "description": "你可以在水下呼吸，并获得与你速度相等的游泳速度。\n\n你还可以不消耗法术位施放一次水下呼吸。完成长休后恢复这种施法能力。"
+      },
+      "gift_of_the_protectors": {
+        "name": "守护者之礼",
+        "description": "召唤影之书时，书中会出现新的一页。在你的许可下，生物可以用一个动作在该页写下自己的名字；页面可记录的名字数量等于你的魅力调整值（至少一个）。\n\n若名字写在页面上的生物生命值降至0，但没有立即死亡，则改为通过魔法保留1点生命值。这项魔法触发后，任何生物都无法再次从中受益，直到你完成长休。\n\n你可以用魔法动作触碰页面，抹去一个名字。"
+      },
+      "investment_of_the_chain_master": {
+        "name": "链主强化",
+        "description": "施放寻找魔宠时，你向召唤的魔宠注入一部分邪术力量，使其获得以下益处。\n\n空中或水中：魔宠获得40尺飞行或游泳速度，由你选择。\n\n迅捷攻击：你可以用附赠动作命令魔宠执行攻击动作。\n\n黯蚀或光耀伤害：魔宠造成钝击、穿刺或挥砍伤害时，你可以将其改为黯蚀或光耀伤害。\n\n你的豁免难度：魔宠迫使生物进行豁免时，使用你的法术豁免难度。\n\n抗性：魔宠受到伤害时，你可以用反应使它对该次伤害获得抗性。"
+      },
+      "lessons_of_the_first_ones": {
+        "name": "始祖教诲",
+        "description": "你从多元宇宙中的古老存在处获得知识，因此得到一项自选的起源专长（见“专长”）。"
+      },
+      "lifedrinker": {
+        "name": "饮命者",
+        "description": "每回合一次，使用契约武器命中生物时，你可以额外造成1d6黯蚀、心灵或光耀伤害，由你选择。你还可以消耗一枚生命骰并掷骰，恢复等于掷骰结果加体质调整值的生命值（至少1点）。"
+      },
+      "mask_of_many_faces": {
+        "name": "千面面具",
+        "description": "你可以不消耗法术位施放易容术。"
+      },
+      "master_of_myriad_forms": {
+        "name": "万形大师",
+        "description": "你可以不消耗法术位施放变身术。"
+      },
+      "misty_visions": {
+        "name": "迷雾幻象",
+        "description": "你可以不消耗法术位施放无声幻影。"
+      },
+      "one_with_shadows": {
+        "name": "与影合一",
+        "description": "身处微光或黑暗区域时，你可以不消耗法术位，对自己施放隐形术。"
+      },
+      "otherworldly_leap": {
+        "name": "异界跳跃",
+        "description": "你可以不消耗法术位，对自己施放跳跃术。"
+      },
+      "pact_of_the_blade": {
+        "name": "刃之契约",
+        "description": "你可以用附赠动作在手中召唤一把与你缔结契约的武器（自选一把简易或军用近战武器），或与你触碰的魔法武器缔结契约。若其他人已与该魔法武器同调，或另一名邪术师已与之缔约，你不能与之缔约。契约持续期间，你熟练使用该武器，且可将其作为施法法器。\n\n使用契约武器攻击时，你可以在攻击和伤害掷骰中使用魅力调整值，而非力量或敏捷调整值；还可以让武器造成黯蚀、心灵、光耀或其通常类型的伤害。\n\n若再次使用此特性的附赠动作，武器离你超过5尺持续至少1分钟，或你死亡，契约便结束。召唤武器在契约结束时消失。"
+      },
+      "pact_of_the_chain": {
+        "name": "链之契约",
+        "description": "你学会寻找魔宠，并可用魔法动作且不消耗法术位施放。\n\n施放时，从魔宠的普通形态或以下特殊形态中选择：小魔鬼、伪龙、夸塞魔、骷髅、奇迹斯芬克斯、妖精或毒蛇（魔宠数据见“怪物”）。\n\n此外，当你执行攻击动作时，可以放弃自己的一次攻击，让魔宠以其反应进行一次攻击。"
+      },
+      "pact_of_the_tome": {
+        "name": "书之契约",
+        "description": "你在短休或长休结束时编织暗影，在手中召唤一本书。影之书的外观由你决定，内含只有你能使用的邪术魔法，并提供以下益处。若再次以此特性召唤书本或你死亡，它便消失。\n\n戏法与仪式：书出现时，选择三个戏法及两个具有仪式标签的1环法术。它们可以来自任何职业的法术列表，但不能是你已准备的法术。持有书本期间，这些法术视为已准备，且对你视为邪术师法术。\n\n施法法器：你可以将书本作为施法法器。"
+      },
+      "repelling_blast": {
+        "name": "斥力魔爆",
+        "description": "选择一个你已知且需要攻击检定的邪术师戏法。该戏法命中大型或更小的生物时，你可以将其沿远离你的直线推动至多10尺。"
+      },
+      "thirsting_blade": {
+        "name": "嗜血之刃",
+        "description": "你仅对契约武器获得额外攻击特性。在自己的回合执行攻击动作时，你可以用该武器攻击两次而非一次。"
+      },
+      "visions_of_distant_realms": {
+        "name": "远界幻象",
+        "description": "你可以不消耗法术位施放秘法眼。"
+      },
+      "whispers_of_the_grave": {
+        "name": "墓中低语",
+        "description": "你可以不消耗法术位施放死者交谈。"
+      },
+      "witch_sight": {
+        "name": "巫眼",
+        "description": "你获得30尺范围的真实视觉。"
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "力量"
+            },
+            "dexterity": {
+              "name": "敏捷"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "力量"
+            },
+            "dexterity": {
+              "name": "敏捷"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "智力"
+            },
+            "wisdom": {
+              "name": "感知"
+            },
+            "charisma": {
+              "name": "魅力"
+            }
+          }
+        }
+      }
+    }
+  }
+}

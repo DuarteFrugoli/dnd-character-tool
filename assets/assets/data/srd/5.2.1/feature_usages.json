@@ -1,0 +1,192 @@
+{
+  "resources": {
+    "2024_rage": {"name":"Rage","max":"2","maxByLevel":{"1":2,"3":3,"6":4,"12":5,"17":6},"recharge":"short_rest_one"},
+    "2024_persistent_rage_recovery": {"name":"Persistent Rage Recovery","max":"1","recharge":"long_rest"},
+    "2024_bardic_inspiration": {"name":"Bardic Inspiration","max":"charisma_modifier_min_1","recharge":"bardic_inspiration_recharge","onInitiative":{"minClassLevel":18,"minimumRemaining":2}},
+    "2024_cleric_channel_divinity": {"name":"Channel Divinity","max":"2","maxByLevel":{"2":2,"6":3,"18":4},"recharge":"short_rest_one"},
+    "2024_divine_intervention": {"name":"Divine Intervention","max":"1","recharge":"long_rest","cooldownOnWish":{"minClassLevel":20,"longRests":"2d4"}},
+    "2024_wild_shape": {"name":"Wild Shape","max":"2","maxByLevel":{"2":2,"6":3,"17":4},"recharge":"short_rest_one","onInitiative":{"minClassLevel":20,"minimumRemaining":1}},
+    "2024_wild_resurgence": {"name":"Wild Resurgence Spell Slot","max":"1","recharge":"long_rest"},
+    "2024_archdruid": {"name":"Archdruid Spell Slot","max":"1","recharge":"long_rest"},
+    "2024_second_wind": {"name":"Second Wind","max":"2","maxByLevel":{"1":2,"4":3,"10":4},"recharge":"short_rest_one"},
+    "2024_action_surge": {"name":"Action Surge","max":"fighter_action_surge_uses","recharge":"short_rest"},
+    "2024_indomitable": {"name":"Indomitable","max":"fighter_indomitable_uses","recharge":"long_rest"},
+    "2024_focus_points": {"name":"Focus Points","max":"monk_level","recharge":"short_rest","onInitiative":{"minClassLevel":15,"minimumRemaining":4,"onlyWithoutUncannyMetabolism":true}},
+    "2024_uncanny_metabolism": {"name":"Uncanny Metabolism","max":"1","recharge":"long_rest"},
+    "2024_lay_on_hands": {"name":"Lay on Hands","max":"paladin_level_x5","recharge":"long_rest"},
+    "2024_paladin_channel_divinity": {"name":"Channel Divinity","max":"2","maxByLevel":{"3":2,"11":3},"recharge":"short_rest_one"},
+    "2024_paladins_smite": {"name":"Divine Smite (Free Cast)","max":"1","recharge":"long_rest"},
+    "2024_faithful_steed": {"name":"Find Steed (Free Cast)","max":"1","recharge":"long_rest"},
+    "2024_hunters_mark": {"name":"Hunter's Mark (Free Casts)","max":"2","maxByLevel":{"1":2,"5":3,"9":4,"13":5,"17":6},"recharge":"long_rest"},
+    "2024_tireless": {"name":"Tireless","max":"wisdom_modifier_min_1","recharge":"long_rest"},
+    "2024_natures_veil": {"name":"Nature's Veil","max":"wisdom_modifier_min_1","recharge":"long_rest"},
+    "2024_stroke_of_luck": {"name":"Stroke of Luck","max":"1","recharge":"short_rest"},
+    "2024_innate_sorcery": {"name":"Innate Sorcery","max":"2","recharge":"long_rest"},
+    "2024_sorcery_points": {"name":"Sorcery Points","max":"sorcerer_level","recharge":"long_rest"},
+    "2024_sorcerous_restoration": {"name":"Sorcerous Restoration","max":"1","recharge":"long_rest"},
+    "2024_magical_cunning": {"name":"Magical Cunning","max":"1","recharge":"long_rest"},
+    "2024_contact_patron": {"name":"Contact Patron (Free Cast)","max":"1","recharge":"long_rest"},
+    "2024_mystic_arcanum_6": {"name":"Mystic Arcanum (Level 6)","max":"1","recharge":"long_rest"},
+    "2024_mystic_arcanum_7": {"name":"Mystic Arcanum (Level 7)","max":"1","recharge":"long_rest"},
+    "2024_mystic_arcanum_8": {"name":"Mystic Arcanum (Level 8)","max":"1","recharge":"long_rest"},
+    "2024_mystic_arcanum_9": {"name":"Mystic Arcanum (Level 9)","max":"1","recharge":"long_rest"},
+    "2024_gift_of_the_depths": {"name":"Water Breathing (Free Cast)","max":"1","recharge":"long_rest"},
+    "2024_gift_of_the_protectors": {"name":"Gift of the Protectors","max":"1","recharge":"long_rest"},
+    "2024_arcane_recovery": {"name":"Arcane Recovery","max":"1","recharge":"long_rest"},
+    "2024_signature_spell_1": {"name":"Signature Spell 1 (Free Cast)","max":"1","recharge":"short_rest"},
+    "2024_signature_spell_2": {"name":"Signature Spell 2 (Free Cast)","max":"1","recharge":"short_rest"},
+    "2024_natural_recovery_cast": {"name":"Circle Spell (Free Cast)","max":"1","recharge":"long_rest"},
+    "2024_natural_recovery_slots": {"name":"Natural Recovery (Spell Slots)","max":"1","recharge":"long_rest"},
+    "2024_wholeness_of_body": {"name":"Wholeness of Body","max":"wisdom_modifier_min_1","recharge":"long_rest"},
+    "2024_intimidating_presence": {"name":"Intimidating Presence (Free Use)","max":"1","recharge":"long_rest"},
+    "2024_holy_nimbus": {"name":"Holy Nimbus (Free Use)","max":"1","recharge":"long_rest"},
+    "2024_dragon_wings": {"name":"Dragon Wings (Free Use)","max":"1","recharge":"long_rest"},
+    "2024_dragon_companion": {"name":"Dragon Companion (Free Cast)","max":"1","recharge":"long_rest"},
+    "2024_dark_ones_own_luck": {"name":"Dark One's Own Luck","max":"charisma_modifier_min_1","recharge":"long_rest"},
+    "2024_hurl_through_hell": {"name":"Hurl Through Hell (Free Use)","max":"1","recharge":"long_rest"},
+    "2024_safe_overchannel": {"name":"Overchannel (Safe Use)","max":"1","recharge":"long_rest"},
+    "2024_magic_initiate_spell": {"name":"Magic Initiate Spell (Free Cast)","max":"1","recharge":"long_rest"},
+    "2024_dragonborn_breath_weapon": {"name":"Breath Weapon","max":"proficiency_bonus","recharge":"long_rest"},
+    "2024_draconic_flight": {"name":"Draconic Flight","max":"1","recharge":"long_rest"},
+    "2024_stonecunning": {"name":"Stonecunning","max":"proficiency_bonus","recharge":"long_rest"},
+    "2024_forest_gnome_speak_with_animals": {"name":"Speak with Animals","max":"proficiency_bonus","recharge":"long_rest"},
+    "2024_giant_ancestry": {"name":"Giant Ancestry","max":"proficiency_bonus","recharge":"long_rest"},
+    "2024_large_form": {"name":"Large Form","max":"1","recharge":"long_rest"},
+    "2024_adrenaline_rush": {"name":"Adrenaline Rush","max":"proficiency_bonus","recharge":"short_or_long_rest"},
+    "2024_relentless_endurance": {"name":"Relentless Endurance","max":"1","recharge":"long_rest"},
+    "2024_boon_of_fate": {"name":"Boon of Fate","max":"1","recharge":"short_or_long_rest","onInitiative":{"minimumRemaining":1}},
+    "2024_elven_lineage_3": {"name":"Elven Lineage (Level 3 Spell)","max":"1","recharge":"long_rest"},
+    "2024_elven_lineage_5": {"name":"Elven Lineage (Level 5 Spell)","max":"1","recharge":"long_rest"},
+    "2024_fiendish_legacy_3": {"name":"Fiendish Legacy (Level 3 Spell)","max":"1","recharge":"long_rest"},
+    "2024_fiendish_legacy_5": {"name":"Fiendish Legacy (Level 5 Spell)","max":"1","recharge":"long_rest"}
+  },
+  "classFeatures": {
+    "Barbarian": {
+      "Rage": {"resourceId":"2024_rage"},
+      "Persistent Rage": {"resourceId":"2024_persistent_rage_recovery"}
+    },
+    "Bard": {"Bardic Inspiration":{"resourceId":"2024_bardic_inspiration"}},
+    "Cleric": {
+      "Channel Divinity":{"resourceId":"2024_cleric_channel_divinity"},
+      "Divine Intervention":{"resourceId":"2024_divine_intervention"}
+    },
+    "Druid": {
+      "Wild Shape":{"resourceId":"2024_wild_shape"},
+      "Wild Companion":{"resourceId":"2024_wild_shape"},
+      "Wild Resurgence":{"resourceId":"2024_wild_resurgence"},
+      "Archdruid":{"resourceId":"2024_archdruid"}
+    },
+    "Fighter": {
+      "Second Wind":{"resourceId":"2024_second_wind"},
+      "Tactical Mind":{"resourceId":"2024_second_wind"},
+      "Action Surge":{"resourceId":"2024_action_surge"},
+      "Indomitable":{"resourceId":"2024_indomitable"}
+    },
+    "Monk": {
+      "Monk's Focus":{"resourceId":"2024_focus_points"},
+      "Uncanny Metabolism":{"resourceId":"2024_uncanny_metabolism"},
+      "Deflect Attacks":{"resourceId":"2024_focus_points"},
+      "Stunning Strike":{"resourceId":"2024_focus_points"},
+      "Disciplined Survivor":{"resourceId":"2024_focus_points"},
+      "Superior Defense":{"resourceId":"2024_focus_points","spend":3}
+    },
+    "Paladin": {
+      "Lay On Hands":{"resourceId":"2024_lay_on_hands"},
+      "Paladin's Smite":{"resourceId":"2024_paladins_smite"},
+      "Faithful Steed":{"resourceId":"2024_faithful_steed"},
+      "Channel Divinity":{"resourceId":"2024_paladin_channel_divinity"},
+      "Abjure Foes":{"resourceId":"2024_paladin_channel_divinity"},
+      "Restoring Touch":{"resourceId":"2024_lay_on_hands","spend":5}
+    },
+    "Ranger": {
+      "Favored Enemy":{"resourceId":"2024_hunters_mark"},
+      "Tireless":{"resourceId":"2024_tireless"},
+      "Nature's Veil":{"resourceId":"2024_natures_veil"}
+    },
+    "Rogue": {"Stroke of Luck":{"resourceId":"2024_stroke_of_luck"}},
+    "Sorcerer": {
+      "Innate Sorcery":{"resourceId":"2024_innate_sorcery"},
+      "Font of Magic":{"resourceId":"2024_sorcery_points"},
+      "Sorcerous Restoration":{"resourceId":"2024_sorcerous_restoration"}
+    },
+    "Warlock": {
+      "Magical Cunning":{"resourceId":"2024_magical_cunning"},
+      "Contact Patron":{"resourceId":"2024_contact_patron"},
+      "Mystic Arcanum":{"resourceId":"2024_mystic_arcanum_6","minClassLevel":11,"additionalResources":[
+        {"resourceId":"2024_mystic_arcanum_7","minClassLevel":13},
+        {"resourceId":"2024_mystic_arcanum_8","minClassLevel":15},
+        {"resourceId":"2024_mystic_arcanum_9","minClassLevel":17}
+      ]}
+    },
+    "Wizard": {
+      "Arcane Recovery":{"resourceId":"2024_arcane_recovery"},
+      "Signature Spells":{"resourceId":"2024_signature_spell_1","minClassLevel":20,"additionalResources":[
+        {"resourceId":"2024_signature_spell_2","minClassLevel":20}
+      ]}
+    }
+  },
+  "subclassFeatures": {
+    "Barbarian": {"Path of the Berserker": {
+      "Intimidating Presence":{"resourceId":"2024_intimidating_presence"}
+    }},
+    "Bard": {"College of Lore": {
+      "Cutting Words":{"resourceId":"2024_bardic_inspiration"},
+      "Peerless Skill":{"resourceId":"2024_bardic_inspiration"}
+    }},
+    "Cleric": {"Life Domain": {
+      "Preserve Life":{"resourceId":"2024_cleric_channel_divinity"}
+    }},
+    "Druid": {"Circle of the Land": {
+      "Land's Aid":{"resourceId":"2024_wild_shape"},
+      "Natural Recovery":{"resourceId":"2024_natural_recovery_cast","minClassLevel":6,"additionalResources":[
+        {"resourceId":"2024_natural_recovery_slots","minClassLevel":6}
+      ]},
+      "Nature's Sanctuary":{"resourceId":"2024_wild_shape"}
+    }},
+    "Monk": {"Warrior of the Open Hand": {
+      "Wholeness of Body":{"resourceId":"2024_wholeness_of_body"},
+      "Quivering Palm":{"resourceId":"2024_focus_points","spend":4}
+    }},
+    "Paladin": {"Oath of Devotion": {
+      "Sacred Weapon":{"resourceId":"2024_paladin_channel_divinity"},
+      "Holy Nimbus":{"resourceId":"2024_holy_nimbus"}
+    }},
+    "Sorcerer": {"Draconic Sorcery": {
+      "Dragon Wings":{"resourceId":"2024_dragon_wings"},
+      "Dragon Companion":{"resourceId":"2024_dragon_companion"}
+    }},
+    "Warlock": {"Fiend Patron": {
+      "Dark One's Own Luck":{"resourceId":"2024_dark_ones_own_luck"},
+      "Hurl Through Hell":{"resourceId":"2024_hurl_through_hell"}
+    }},
+    "Wizard": {"Evoker": {
+      "Overchannel":{"resourceId":"2024_safe_overchannel"}
+    }}
+  },
+  "choiceOptions": {
+    "Warlock": {"Eldritch Invocations": {
+      "gift_of_the_depths":{"resourceId":"2024_gift_of_the_depths"},
+      "gift_of_the_protectors":{"resourceId":"2024_gift_of_the_protectors"}
+    }}
+  },
+  "raceTraits": {
+    "Breath Weapon":{"resourceId":"2024_dragonborn_breath_weapon"},
+    "Draconic Flight":{"resourceId":"2024_draconic_flight"},
+    "Stonecunning":{"resourceId":"2024_stonecunning"},
+    "Forest Gnome Speak with Animals":{"resourceId":"2024_forest_gnome_speak_with_animals"},
+    "Giant Ancestry":{"resourceId":"2024_giant_ancestry"},
+    "Large Form":{"resourceId":"2024_large_form"},
+    "Adrenaline Rush":{"resourceId":"2024_adrenaline_rush"},
+    "Relentless Endurance":{"resourceId":"2024_relentless_endurance"},
+    "Elven Lineage":{"resourceId":"2024_elven_lineage_3","minCharacterLevel":3,"additionalResources":[
+      {"resourceId":"2024_elven_lineage_5","minCharacterLevel":5}
+    ]},
+    "Fiendish Legacy":{"resourceId":"2024_fiendish_legacy_3","minCharacterLevel":3,"additionalResources":[
+      {"resourceId":"2024_fiendish_legacy_5","minCharacterLevel":5}
+    ]}
+  },
+  "feats": {
+    "Magic Initiate":{"resourceId":"2024_magic_initiate_spell","instanceKeyFromChoice":"spell_class"},
+    "Boon of Fate":{"resourceId":"2024_boon_of_fate"}
+  }
+}

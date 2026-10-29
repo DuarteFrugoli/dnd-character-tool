@@ -1,0 +1,113 @@
+{
+  "Alchemist's Supplies": {
+    "name": "Alchemistenbedarf"
+  },
+  "Brewer's Supplies": {
+    "name": "Brauerbedarf"
+  },
+  "Calligrapher's Supplies": {
+    "name": "Kalligraphenbedarf"
+  },
+  "Carpenter's Tools": {
+    "name": "Zimmermannswerkzeuge"
+  },
+  "Cartographer's Tools": {
+    "name": "Kartographenwerkzeug"
+  },
+  "Cobbler's Tools": {
+    "name": "Schusterwerkzeuge"
+  },
+  "Cook's Utensils": {
+    "name": "Kochutensilien"
+  },
+  "Glassblower's Tools": {
+    "name": "Glasbläserwerkzeug"
+  },
+  "Jeweler's Tools": {
+    "name": "Juwelierwerkzeuge"
+  },
+  "Leatherworker's Tools": {
+    "name": "Lederverarbeiterwerkzeug"
+  },
+  "Mason's Tools": {
+    "name": "Maurerwerkzeuge"
+  },
+  "Painter's Supplies": {
+    "name": "Malerbedarf"
+  },
+  "Potter's Tools": {
+    "name": "Töpferwerkzeug"
+  },
+  "Smith's Tools": {
+    "name": "Schmiedewerkzeug"
+  },
+  "Tinker's Tools": {
+    "name": "Tüftlerwerkzeug"
+  },
+  "Weaver's Tools": {
+    "name": "Weberwerkzeuge"
+  },
+  "Woodcarver's Tools": {
+    "name": "Werkzeuge des Holzschnitzers"
+  },
+  "Disguise Kit": {
+    "name": "Verkleidungsset"
+  },
+  "Forgery Kit": {
+    "name": "Fälschungsset"
+  },
+  "Dice": {
+    "name": "Würfel"
+  },
+  "Dragonchess": {
+    "name": "Drachenschach"
+  },
+  "Playing Cards": {
+    "name": "Spielkarten"
+  },
+  "Three-Dragon Ante": {
+    "name": "Drei-Drachen-Ante"
+  },
+  "Herbalism Kit": {
+    "name": "Kräuterkunde-Set"
+  },
+  "Bagpipes": {
+    "name": "Dudelsack"
+  },
+  "Drum": {
+    "name": "Trommel"
+  },
+  "Dulcimer": {
+    "name": "Hackbrett"
+  },
+  "Flute": {
+    "name": "Flöte"
+  },
+  "Horn": {
+    "name": "Horn"
+  },
+  "Lute": {
+    "name": "Laute"
+  },
+  "Lyre": {
+    "name": "Leier"
+  },
+  "Pan Flute": {
+    "name": "Panflöte"
+  },
+  "Shawm": {
+    "name": "Schalmei"
+  },
+  "Viol": {
+    "name": "Gambe"
+  },
+  "Navigator's Tools": {
+    "name": "Navigationswerkzeug"
+  },
+  "Poisoner's Kit": {
+    "name": "Vergiftungsausrüstung"
+  },
+  "Thieves' Tools": {
+    "name": "Diebeswerkzeug"
+  }
+}

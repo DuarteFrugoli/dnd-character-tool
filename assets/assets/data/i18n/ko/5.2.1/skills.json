@@ -1,0 +1,56 @@
+{
+  "Acrobatics": {
+    "name": "곡예"
+  },
+  "Animal Handling": {
+    "name": "동물 조련"
+  },
+  "Arcana": {
+    "name": "비전학"
+  },
+  "Athletics": {
+    "name": "운동"
+  },
+  "Deception": {
+    "name": "기만"
+  },
+  "History": {
+    "name": "역사"
+  },
+  "Insight": {
+    "name": "통찰"
+  },
+  "Intimidation": {
+    "name": "위협"
+  },
+  "Investigation": {
+    "name": "조사"
+  },
+  "Medicine": {
+    "name": "의학"
+  },
+  "Nature": {
+    "name": "자연"
+  },
+  "Perception": {
+    "name": "지각"
+  },
+  "Performance": {
+    "name": "공연"
+  },
+  "Persuasion": {
+    "name": "설득"
+  },
+  "Religion": {
+    "name": "종교"
+  },
+  "Sleight of Hand": {
+    "name": "손놀림"
+  },
+  "Stealth": {
+    "name": "은신"
+  },
+  "Survival": {
+    "name": "생존"
+  }
+}

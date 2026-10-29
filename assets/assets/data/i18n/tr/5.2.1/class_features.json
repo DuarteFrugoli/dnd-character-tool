@@ -1,0 +1,718 @@
+{
+  "Barbarian": {
+    "Rage": {
+      "name": "Öfke",
+      "description": "Ağır zırh giymiyorsanız bonus eylemle Öfkeye girin. Öfkeliyken Ezme, Delme ve Kesme hasarına Direnç, Kuvvet kontrolleri ve kurtarma atışlarında Avantaj kazanır; Kuvvet kullanan silah veya Silahsız Darbe hasarına Öfke Hasarı eklersiniz (seviye 1-8'de +2, 9-15'te +3, 16-20'de +4). Büyü yapamaz veya Odaklanamazsınız. Öfke bir sonraki turunuzun sonuna kadar sürer; saldırarak, bir düşmana kurtarma atışı yaptırarak veya bonus eylemle her tur uzatılabilir, en fazla 10 dakika. Kullanım: seviye 1-2'de 2, 3-5'te 3, 6-11'de 4, 12-16'da 5, 17 ve sonrasında 6. Kısa Dinlenmede bir, Uzun Dinlenmede tüm kullanımlar yenilenir."
+    },
+    "Unarmored Defense": {
+      "name": "Zırhsız Savunma",
+      "description": "Zırh giymediğinizde temel AC'niz 10 + Çeviklik değiştiricisi + Dayanıklılık değiştiricisidir. Kalkan kullanabilirsiniz."
+    },
+    "Weapon Mastery": {
+      "name": "Silah Ustalığı",
+      "description": "Ustalık özelliklerini kullanabileceğiniz iki Basit veya Askerî Yakın Dövüş silahı türü seçin. Uzun Dinlenmeden sonra birini değiştirebilirsiniz. Seçim sayısı seviye 4'te üçe, 10'da dörde çıkar."
+    },
+    "Danger Sense": {
+      "name": "Tehlike Sezisi",
+      "description": "Etkisiz durumda değilseniz Çeviklik kurtarma atışlarında Avantaj kazanırsınız."
+    },
+    "Reckless Attack": {
+      "name": "Gözü Kara Saldırı",
+      "description": "Turunuzdaki ilk saldırı atışında gözü kara saldırmayı seçebilirsiniz. Bir sonraki turunuza kadar Kuvvet temelli saldırı atışlarınız Avantajlıdır ancak size karşı saldırılar da Avantajlıdır."
+    },
+    "Barbarian Subclass": {
+      "name": "Barbar Alt Sınıfı",
+      "description": "Bir Barbar alt sınıfı seçin; özelliklerini belirtilen Barbar seviyelerinde kazanın."
+    },
+    "Primal Knowledge": {
+      "name": "İlkel Bilgi",
+      "description": "Barbar seviye 1 listesinden bir ek beceri yetkinliği kazanın. Öfkeliyken Akrobasi, Gözdağı, Algı, Gizlilik veya Hayatta Kalma kontrollerinde Kuvvet kullanabilirsiniz."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Barbar seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Extra Attack": {
+      "name": "Ek Saldırı",
+      "description": "Saldırı eylemi yaptığınızda iki kez saldırın."
+    },
+    "Fast Movement": {
+      "name": "Hızlı Hareket",
+      "description": "Ağır zırh giymiyorken Hızınız 10 fit artar."
+    },
+    "Feral Instinct": {
+      "name": "Vahşi İçgüdü",
+      "description": "Girişim atışlarında Avantaj kazanırsınız."
+    },
+    "Instinctive Pounce": {
+      "name": "İçgüdüsel Atılım",
+      "description": "Öfkeye girmek için kullandığınız bonus eylemin parçası olarak Hızınızın yarısına kadar hareket edin."
+    },
+    "Brutal Strike": {
+      "name": "Acımasız Darbe",
+      "description": "Gözü Kara Saldırı kullanırken Dezavantajı olmayan Kuvvet temelli bir saldırının Avantajından vazgeçin. İsabet ederse saldırı türünde 1d10 hasar ekleyin ve bir Acımasız Darbe etkisi seçin: Kuvvetli Darbe hedefi 15 fit iter ve Fırsat Saldırıları tetiklemeden Hızınızın yarısına kadar peşinden gitmenizi sağlar; Sakatlayıcı Darbe hedefin Hızını sonraki turunuza kadar 15 fit azaltır."
+    },
+    "Relentless Rage": {
+      "name": "Yılmaz Öfke",
+      "description": "Öfkeliyken doğrudan ölmeden HP'niz 0'a düşecekse SG 10 Dayanıklılık kurtarma atışı yapın. Başarılı olursanız HP'niz Barbar seviyenizin iki katı olur. SG her kullanımdan sonra 5 artar, Kısa veya Uzun Dinlenmede sıfırlanır."
+    },
+    "Improved Brutal Strike": {
+      "name": "Geliştirilmiş Acımasız Darbe",
+      "description": "İki yeni Acımasız Darbe etkisi kazanın: Sarsıcı Darbe hedefin sonraki kurtarma atışına Dezavantaj verir ve sonraki turunuza kadar Fırsat Saldırılarını engeller; Yarıcı Darbe sonraki turunuzdan önce hedefe saldıran sizden başka ilk yaratığa +5 saldırı bonusu verir. Seviye 17'de ek hasar 2d10 olur ve isabete iki farklı Acımasız Darbe etkisi uygulayabilirsiniz."
+    },
+    "Persistent Rage": {
+      "name": "Kalıcı Öfke",
+      "description": "Uzun Dinlenme başına bir kez Girişim attığınızda harcanan tüm Öfke kullanımlarını yenileyin. Öfkeyi uzatmak için eylem gerekmez; 10 dakikaya kadar sürer ve yalnızca Bilinçsiz kalır veya ağır zırh giyerseniz erken biter."
+    },
+    "Indomitable Might": {
+      "name": "Yenilmez Kudret",
+      "description": "Kuvvet kontrolü veya kurtarma atışınızın toplamı Kuvvet puanınızdan düşükse bunun yerine Kuvvet puanınızı kullanın."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Primal Champion": {
+      "name": "İlkel Şampiyon",
+      "description": "Kuvvet ve Dayanıklılığı ayrı ayrı 4 artırın; her birinin üst sınırı 25 olur."
+    }
+  },
+  "Bard": {
+    "Bardic Inspiration": {
+      "name": "Ozan İlhamı",
+      "description": "Bonus eylemle sizi görebilen veya duyabilen 60 fit içindeki bir yaratığa Ozan İlhamı zarı verin. Yaratık 1 saat içinde bir D20 Testini başarısız geçerse zarı atıp sonuca ekleyebilir. Bir yaratık aynı anda yalnızca bir böyle zar taşıyabilir. Kullanım sayısı Karizma değiştiriciniz kadardır (en az 1) ve Uzun Dinlenmede yenilenir. Zar boyutu: seviye 1-4'te d6, 5-9'da d8, 10-14'te d10, 15 ve sonrasında d12."
+    },
+    "Spellcasting": {
+      "name": "Büyü Yapma",
+      "description": "Karizma Ozan büyülerinizin büyü yapma niteliğidir; bir Müzik Aleti odağınız olabilir. Seviye 1'de iki Ozan büyü numarası öğrenir, seviye 4 ve 10'da birer tane daha kazanırsınız. Seviye 1'de dört 1. seviye Ozan büyüsü hazırlayın; hazırlama sınırı ve büyü yuvaları Ozan seviyesiyle artar. Ozan seviyesi kazandığınızda hazırlanmış bir büyüyü ve bir büyü numarasını uygun Ozan büyüleriyle değiştirebilirsiniz. Başka özelliklerden gelen her zaman hazırlanmış büyüler sınıra girmez."
+    },
+    "Expertise": {
+      "name": "Uzmanlık",
+      "description": "Yetkin olduğunuz iki beceride Uzmanlık kazanın; Ozan seviyesi 9'da iki beceride daha kazanın."
+    },
+    "Jack of All Trades": {
+      "name": "Her İşin Ustası",
+      "description": "Yetkin olmadığınız bir beceriye dayalı nitelik kontrolüne başka biçimde Yetkinlik Bonusunuz eklenmiyorsa, bonusun yarısını (aşağı yuvarlanmış) ekleyin."
+    },
+    "Bard Subclass": {
+      "name": "Ozan Alt Sınıfı",
+      "description": "Bir Ozan alt sınıfı seçin; özelliklerini belirtilen Ozan seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Ozan seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Font of Inspiration": {
+      "name": "İlham Kaynağı",
+      "description": "Kısa veya Uzun Dinlenmede tüm Ozan İlhamı kullanımlarını geri kazanın. Eylem harcamadan bir büyü yuvası tüketip bir kullanım da yenileyebilirsiniz."
+    },
+    "Countercharm": {
+      "name": "Karşı Ezgi",
+      "description": "Siz veya 30 fit içindeki bir yaratık Büyülenmiş ya da Korkmuş durumuna karşı kurtarma atışında başarısız olursa Tepki olarak o atışı Avantajla yeniden yaptırın."
+    },
+    "Magical Secrets": {
+      "name": "Büyüsel Sırlar",
+      "description": "Hazırlayabildiğiniz büyü sayısı arttığında yeni büyüleri Ozan, Rahip, Druid veya Büyücü listelerinden seçebilirsiniz; bunlar Ozan büyüsü sayılır. Hazırlanmış bir Ozan büyüsünü bu listelerden bir büyüyle de değiştirebilirsiniz."
+    },
+    "Superior Inspiration": {
+      "name": "Üstün İlham",
+      "description": "İki kullanımdan az Ozan İlhamınız varken Girişim atarsanız sayıyı ikiye tamamlayacak kadar kullanım geri kazanın."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Words of Creation": {
+      "name": "Yaratılış Sözleri",
+      "description": "Güç Sözü: Şifa ve Güç Sözü: Ölüm her zaman hazırlanmıştır. Bunlardan birini yaptığınızda ilk hedeften 10 fit içindeki ikinci bir yaratığı da hedefleyebilirsiniz."
+    }
+  },
+  "Cleric": {
+    "Spellcasting": {
+      "name": "Büyü Yapma",
+      "description": "Bilgelik Rahip büyülerinizin büyü yapma niteliğidir; bir Kutsal Sembol odağınız olabilir. Seviye 1'de üç Rahip büyü numarası öğrenir, seviye 4 ve 10'da birer tane daha kazanırsınız. Seviye 1'de dört 1. seviye Rahip büyüsü hazırlayın; hazırlama sınırı ve yuvalar Rahip seviyesiyle artar. Her Uzun Dinlenmeden sonra hazırlanmış Rahip büyülerini yapabildiğiniz seviyedeki büyülerle değiştirebilirsiniz. Her zaman hazırlanmış büyüler sınıra girmez."
+    },
+    "Divine Order": {
+      "name": "İlahi Düzen",
+      "description": "Askerî silah yetkinliği ve ağır zırh eğitimi için Koruyucuyu seçin veya bir ek Rahip büyü numarası ile Büyü Bilgisi ya da Din kontrollerine Bilgelik değiştiricisi (en az +1) bonusu için Mucizeciyi seçin."
+    },
+    "Channel Divinity": {
+      "name": "İlahi Gücü Yönlendirme",
+      "description": "İlahi Kıvılcım, Hortlakları Kov ve alt sınıf seçeneklerini kazanın. İlahi Gücü Yönlendirme kullanım sayısı: seviye 2'de iki, 6'da üç, 18'de dört; Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir. İlahi Kıvılcım Büyü eylemiyle 30 fit içindeki görebildiğiniz başka bir yaratığı 1d8 + Bilgelik değiştiricisi kadar iyileştirir ya da başarısız Dayanıklılık kurtarma atışında bu kadar Nekrotik veya Işıma hasarı verir (başarıda yarısı). Zar seviye 7'de 2d8, 13'te 3d8, 18'de 4d8 olur. Hortlakları Kov Büyü eylemiyle 30 fit içindeki seçtiğiniz hortlaklara Bilgelik kurtarma atışı yaptırır; başarısız olanlar 1 dakika Korkmuş ve Etkisiz olur, uzaklaşmaya çalışır. Hasar alırlarsa veya siz Etkisiz olur ya da ölürseniz etki biter."
+    },
+    "Cleric Subclass": {
+      "name": "Rahip Alt Sınıfı",
+      "description": "Bir Rahip alt sınıfı seçin; özelliklerini belirtilen Rahip seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Rahip seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Sear Undead": {
+      "name": "Hortlakları Kavur",
+      "description": "Hortlakları Kov kullandığınızda kurtarma atışında başarısız olan her hortlak Bilgelik değiştiriciniz kadar d8 (en az 1d8) atılarak belirlenen Işıma hasarını da alır."
+    },
+    "Blessed Strikes": {
+      "name": "Kutsanmış Darbeler",
+      "description": "Her turunuzda bir silah isabetine 1d8 Nekrotik veya Işıma hasarı ekleyen İlahi Darbeyi ya da Rahip büyü numarası hasarına Bilgelik değiştiricinizi ekleyen Güçlü Büyü Yapmayı seçin."
+    },
+    "Divine Intervention": {
+      "name": "İlahi Müdahale",
+      "description": "Uzun Dinlenme başına bir kez Büyü eylemiyle Tepki gerektirmeyen, 5. seviye veya altı bir Rahip büyüsünü yuva ya da Maddi bileşen olmadan yapın."
+    },
+    "Improved Blessed Strikes": {
+      "name": "Geliştirilmiş Kutsanmış Darbeler",
+      "description": "İlahi Darbenin ek hasarı 2d8 olur. Güçlü Büyü Yapmayı seçtiyseniz Rahip büyü numarasıyla bir yaratığa hasar verdiğinizde kendinize veya 60 fit içindeki bir müttefiğe Bilgelik değiştiricinizin iki katı Geçici HP verebilirsiniz."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Greater Divine Intervention": {
+      "name": "Yüce İlahi Müdahale",
+      "description": "İlahi Müdahale Dilek büyüsünü yapabilir. Dileği seçerseniz 2d4 Uzun Dinlenme tamamlayana kadar İlahi Müdahaleyi yeniden kullanamazsınız."
+    }
+  },
+  "Druid": {
+    "Spellcasting": {
+      "name": "Büyü Yapma",
+      "description": "Bilgelik Druid büyülerinizin büyü yapma niteliğidir; Druid odağı kullanabilirsiniz. Seviye 1'de iki Druid büyü numarası öğrenir, seviye 4 ve 10'da birer tane daha kazanırsınız. Seviye 1'de dört 1. seviye Druid büyüsü hazırlayın; hazırlama sınırı ve yuvalar Druid seviyesiyle artar. Her Uzun Dinlenmeden sonra hazırlanmış Druid büyülerini yapabildiğiniz seviyedeki başka büyülerle değiştirebilirsiniz. Her zaman hazırlanmış büyüler sınıra girmez."
+    },
+    "Druidic": {
+      "name": "Druid Dili",
+      "description": "Gizli Druid dilini bilirsiniz ve Hayvanlarla Konuşma her zaman hazırlanmıştır. Gizli Druidçe mesajlar bırakabilirsiniz; diğer Druidler bunları otomatik fark eder. Diğerleri görmek için SG 15 Araştırma kontrolü yapmalı, büyü olmadan okuyamaz."
+    },
+    "Primal Order": {
+      "name": "İlkel Düzen",
+      "description": "Bir ek Druid büyü numarası ve Büyü Bilgisi veya Doğa kontrollerine Bilgelik değiştiricisi (en az +1) bonusu için Sihirbazı; Askerî silah yetkinliği ve orta zırh eğitimi için Muhafızı seçin."
+    },
+    "Wild Shape": {
+      "name": "Vahşi Biçim",
+      "description": "Bonus eylemle bildiğiniz Canavar biçimlerinden birine Druid seviyenizin yarısı kadar saat dönüşün. Başlangıçta Uçuş Hızı olmayan, Tehlike Derecesi 1/4 veya altı dört biçim bilirsiniz; seviye 4'te en çok 1/2 olan altı, seviye 8'de en çok 1 olan sekiz biçim bilirsiniz ve Uçuş Hızı seçilebilir. Uzun Dinlenmeden sonra bildiğiniz bir biçimi değiştirebilirsiniz. HP, Can Zarı, zihinsel nitelikler, sınıf özellikleri, diller ve yetkinlikler korunur; Druid seviyeniz kadar Geçici HP kazanın. Canavar biçiminde büyü yapamaz ama Odaklanmayı sürdürebilirsiniz. İki kullanımla başlarsınız; Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir. Kullanım sayısı seviye 6'da üçe, 17'de dörde çıkar."
+    },
+    "Wild Companion": {
+      "name": "Vahşi Yoldaş",
+      "description": "Büyü eylemiyle bir büyü yuvası veya bir Vahşi Biçim kullanımı harcayarak Maddi bileşensiz Tanıdık Bulma yapın. Familiyer Feydir ve sonraki Uzun Dinlenmeden sonra kaybolur."
+    },
+    "Druid Subclass": {
+      "name": "Druid Alt Sınıfı",
+      "description": "Bir Druid alt sınıfı seçin; özelliklerini belirtilen Druid seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Druid seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Wild Resurgence": {
+      "name": "Vahşi Diriliş",
+      "description": "Tur başına bir kez Vahşi Biçim kullanımınız kalmadığında bir büyü yuvası harcayıp bir kullanım geri kazanın. Uzun Dinlenme başına bir kez bir Vahşi Biçim kullanımı harcayarak bir 1. seviye büyü yuvası geri kazanın."
+    },
+    "Elemental Fury": {
+      "name": "Elemental Hiddet",
+      "description": "Druid büyü numarası hasarına Bilgelik değiştiricinizi eklemek için Güçlü Büyü Yapmayı veya her turunuzda silah ya da Vahşi Biçimdeki Canavar saldırısı isabetine 1d8 Soğuk, Ateş, Yıldırım veya Gök Gürültüsü hasarı eklemek için İlkel Darbeyi seçin."
+    },
+    "Improved Elemental Fury": {
+      "name": "Geliştirilmiş Elemental Hiddet",
+      "description": "Güçlü Büyü Yapma, normalde en az 10 fit ulaşan Druid büyü numarasının menzilini 300 fit artırır. İlkel Darbenin ek hasarı 2d8 olur."
+    },
+    "Beast Spells": {
+      "name": "Canavar Büyüleri",
+      "description": "Vahşi Biçimdeyken büyü yapabilirsiniz; fiyatı olan veya büyü tarafından tüketilen Maddi bileşen gerektirenler hariç."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Archdruid": {
+      "name": "Başdruid",
+      "description": "Hiç Vahşi Biçim kullanımınız yokken Girişim atarsanız bir kullanım yenileyin. Uzun Dinlenme başına bir kez kullanılmamış Vahşi Biçim kullanımlarını kullanım başına iki büyü seviyesi sayarak tek bir büyü yuvasına dönüştürün. Ayrıca geçen her on yılda yalnızca bir yıl yaşlanırsınız."
+    }
+  },
+  "Fighter": {
+    "Fighting Style": {
+      "name": "Dövüş Tarzı",
+      "description": "Seçtiğiniz bir Dövüş Tarzı hünerini kazanın. Her Savaşçı seviyesi kazandığınızda bunu başka bir Dövüş Tarzı hüneriyle değiştirebilirsiniz."
+    },
+    "Second Wind": {
+      "name": "İkinci Nefes",
+      "description": "Bonus eylemle 1d10 + Savaşçı seviyeniz kadar HP yenileyin. İki kullanımla başlarsınız; seviye 4'te üçüncü, 10'da dördüncü kullanımı kazanırsınız. Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir."
+    },
+    "Weapon Mastery": {
+      "name": "Silah Ustalığı",
+      "description": "Ustalık özelliklerini kullanabileceğiniz üç Basit veya Askerî silah türü seçin. Uzun Dinlenmeden sonra birini değiştirin. Sayı seviye 4'te dörde, 10'da beşe, 16'da altıya çıkar."
+    },
+    "Action Surge": {
+      "name": "Eylem Patlaması",
+      "description": "Turunuzda Büyü eylemi dışında bir ek eylem gerçekleştirin. Kısa veya Uzun Dinlenmede yenilenir. Seviye 17'de dinlenme başına iki kullanımınız olur, ancak tur başına yalnızca bir kez kullanabilirsiniz."
+    },
+    "Tactical Mind": {
+      "name": "Taktiksel Zihin",
+      "description": "Bir nitelik kontrolünde başarısız olduktan sonra İkinci Nefes kullanımı harcayıp kontrole 1d10 ekleyin. Hâlâ başarısızsa kullanım harcanmaz."
+    },
+    "Fighter Subclass": {
+      "name": "Savaşçı Alt Sınıfı",
+      "description": "Bir Savaşçı alt sınıfı seçin; özelliklerini belirtilen Savaşçı seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Savaşçı seviyeleri 6, 8, 12, 14 ve 16'da yeniden kazanın."
+    },
+    "Extra Attack": {
+      "name": "Ek Saldırı",
+      "description": "Saldırı eylemi yaptığınızda iki kez saldırın. Bu özellik Savaşçı seviyeleri 11 ve 20'de gelişir."
+    },
+    "Tactical Shift": {
+      "name": "Taktiksel Kayma",
+      "description": "Bonus eylemle İkinci Nefes kullandığınızda Fırsat Saldırıları tetiklemeden Hızınızın yarısına kadar hareket edin."
+    },
+    "Indomitable": {
+      "name": "Yılmazlık",
+      "description": "Kurtarma atışında başarısız olduktan sonra Savaşçı seviyeniz kadar bonusla yeniden atın; yeni sonucu kullanın. Uzun Dinlenme başına kullanım sayısı seviye 9'da bir, 13'te iki, 17'de üçtür."
+    },
+    "Tactical Master": {
+      "name": "Taktik Ustası",
+      "description": "Ustalığını kullanabildiğiniz silahla saldırırken o saldırıda ustalık özelliğini İtme, Zayıflatma veya Yavaşlatma ile değiştirin."
+    },
+    "Two Extra Attacks": {
+      "name": "İki Ek Saldırı",
+      "description": "Saldırı eyleminde bir yerine üç kez saldırın."
+    },
+    "Studied Attacks": {
+      "name": "İncelenmiş Saldırılar",
+      "description": "Bir yaratığa karşı saldırı atışınız ıskalarsa sonraki turunuzun sonuna kadar o yaratığa karşı yapacağınız sonraki saldırı atışında Avantaj kazanın."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Three Extra Attacks": {
+      "name": "Üç Ek Saldırı",
+      "description": "Saldırı eyleminde bir yerine dört kez saldırın."
+    }
+  },
+  "Monk": {
+    "Martial Arts": {
+      "name": "Dövüş Sanatları",
+      "description": "Zırhsız, Kalkansız ve silahsızken veya yalnızca Keşiş silahları (Basit Yakın Dövüş veya Hafif Askerî Yakın Dövüş silahları) taşırken bonus eylemle Silahsız Darbe yapabilir; bunların saldırı ve hasar atışları ile Yakalama/İtme kurtarma SG'sinde Çeviklik kullanabilir ve normal hasarı Dövüş Sanatları zarıyla değiştirebilirsiniz. Zar seviye 1-4'te d6, 5-10'da d8, 11-16'da d10, 17 ve sonrasında d12'dir."
+    },
+    "Unarmored Defense": {
+      "name": "Zırhsız Savunma",
+      "description": "Zırh veya Kalkan olmadan temel AC 10 + Çeviklik değiştiricisi + Bilgelik değiştiricisi olur."
+    },
+    "Monk's Focus": {
+      "name": "Keşiş Odağı",
+      "description": "Keşiş seviyeniz kadar Odak Puanı kazanırsınız; Kısa veya Uzun Dinlenmede yenilenir. Odak kurtarma SG'si 8 + Bilgelik değiştiricisi + Yetkinlik Bonusudur. 1 puan harcayarak Darbe Yağmuru (bonus eylemle iki Silahsız Darbe) yapın; bonus eylemle ücretsiz Sıyrılma veya Atılma da yapabilirsiniz. 1 puan harcayıp Sıyrılmayı Sakınmayla (Sabırlı Savunma) veya Atılmayı atlama mesafesini ikiye katlayan Rüzgâr Adımıyla bonus eylem olarak birleştirin."
+    },
+    "Unarmored Movement": {
+      "name": "Zırhsız Hareket",
+      "description": "Zırh veya Kalkan olmadan Hızınız seviye 2-5'te 10 fit, 6-9'da 15 fit, 10-13'te 20 fit, 14-17'de 25 fit, 18 ve sonrasında 30 fit artar."
+    },
+    "Uncanny Metabolism": {
+      "name": "Olağanüstü Metabolizma",
+      "description": "Uzun Dinlenme başına bir kez Girişim atarken tüm Odak Puanlarını yenileyin ve Keşiş seviyesi + bir Dövüş Sanatları zarı sonucu kadar HP iyileştirin."
+    },
+    "Deflect Attacks": {
+      "name": "Saldırı Savuşturma",
+      "description": "Ezme, Delme veya Kesme hasarı içeren bir saldırı isabet ettiğinde Tepki olarak toplam hasarı 1d10 + Çeviklik değiştiricisi + Keşiş seviyesi kadar azaltın. Hasar 0'a inerse 1 Odak Puanı harcayıp yönünü değiştirebilirsiniz: yakın dövüş saldırısında 5 fit içindeki, menzilli saldırıda 60 fit içinde olup Tam Siper arkasında olmayan görünür bir yaratık Çeviklik kurtarma atışı yapar; başarısızsa saldırının türünde iki Dövüş Sanatları zarı + Çeviklik değiştiricisi kadar hasar alır."
+    },
+    "Monk Subclass": {
+      "name": "Keşiş Alt Sınıfı",
+      "description": "Bir Keşiş alt sınıfı seçin; özelliklerini belirtilen Keşiş seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Keşiş seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Slow Fall": {
+      "name": "Yavaş Düşüş",
+      "description": "Düşerken Tepki olarak düşme hasarını Keşiş seviyenizin beş katı kadar azaltın."
+    },
+    "Extra Attack": {
+      "name": "Ek Saldırı",
+      "description": "Saldırı eylemi yaptığınızda iki kez saldırın."
+    },
+    "Stunning Strike": {
+      "name": "Sersemletici Darbe",
+      "description": "Tur başına bir kez Keşiş silahı veya Silahsız Darbeyle isabet ettikten sonra 1 Odak Puanı harcayın. Hedef Dayanıklılık kurtarma atışı yapar: başarısızsa sonraki turunuzun başına kadar Sersemlemiş olur; başarılıysa Hızı yarıya iner ve o zamana kadar kendisine yapılan sonraki saldırı Avantaj kazanır."
+    },
+    "Empowered Strikes": {
+      "name": "Güçlendirilmiş Darbeler",
+      "description": "Silahsız Darbeleriniz normal hasar türü yerine Kuvvet hasarı verebilir."
+    },
+    "Evasion": {
+      "name": "Sakınma",
+      "description": "Yarı hasar için Çeviklik kurtarma atışında, Etkisiz değilseniz başarıda hasar almaz, başarısızlıkta yarısını alırsınız."
+    },
+    "Acrobatic Movement": {
+      "name": "Akrobatik Hareket",
+      "description": "Zırh veya Kalkan olmadan turunuzda dik yüzeyler ve sıvılar üzerinde hareket sırasında düşmeden ilerleyebilirsiniz."
+    },
+    "Heightened Focus": {
+      "name": "Yükseltilmiş Odak",
+      "description": "1 Odak Puanı ile Darbe Yağmuru üç Silahsız Darbe yapar; Sabırlı Savunma ayrıca iki Dövüş Sanatları zarı kadar Geçici HP verir; Rüzgâr Adımı, 5 fit içindeki rızası olan Büyük veya daha küçük bir yaratığı Fırsat Saldırıları tetiklemeden taşıyabilir."
+    },
+    "Self-Restoration": {
+      "name": "Kendini İyileştirme",
+      "description": "Her turunuzun sonunda üzerinizdeki Büyülenmiş, Korkmuş veya Zehirlenmiş durumunu bitirin. Yiyecek veya içecek eksikliğinden artık Bitkinlik kazanmazsınız."
+    },
+    "Deflect Energy": {
+      "name": "Enerji Savuşturma",
+      "description": "Saldırı Savuşturma artık her hasar türünden saldırılara karşı çalışır."
+    },
+    "Disciplined Survivor": {
+      "name": "Disiplinli Sağ Kalan",
+      "description": "Tüm kurtarma atışlarında yetkinlik kazanın. Bir kurtarma atışında başarısız olursanız 1 Odak Puanı harcayıp yeniden atın ve yeni sonucu kullanın."
+    },
+    "Perfect Focus": {
+      "name": "Kusursuz Odak",
+      "description": "Olağanüstü Metabolizmayı kullanmadan Girişim attığınızda üç veya daha az Odak Puanınız varsa dört olana kadar yenileyin."
+    },
+    "Superior Defense": {
+      "name": "Üstün Savunma",
+      "description": "Turunuzun başında 3 Odak Puanı harcayarak 1 dakika veya Etkisiz kalana kadar Kuvvet dışındaki tüm hasara Direnç kazanın."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Body and Mind": {
+      "name": "Beden ve Zihin",
+      "description": "Çeviklik ve Bilgeliği ayrı ayrı 4 artırın; üst sınırları 25 olur."
+    }
+  },
+  "Paladin": {
+    "Lay On Hands": {
+      "name": "Şifa Veren Eller",
+      "description": "Paladin seviyenizin 5 katına eşit iyileştirme havuzunuz Uzun Dinlenmede yenilenir. Bonus eylemle kendiniz dâhil bir yaratığa dokunarak havuzdan HP yenileyin; bunun yerine 5 puan harcayıp Zehirlenmiş durumunu kaldırabilirsiniz."
+    },
+    "Spellcasting": {
+      "name": "Büyü Yapma",
+      "description": "Karizma Paladin büyülerinizin büyü yapma niteliğidir; Kutsal Sembol odağınız olabilir. Seviye 1'de iki 1. seviye Paladin büyüsü hazırlayın; hazırlama sınırı ve yuvalar Paladin seviyesiyle artar. Uzun Dinlenmeden sonra hazırlanmış bir Paladin büyüsünü yapabildiğiniz seviyede başka biriyle değiştirebilirsiniz. Her zaman hazırlanmış büyüler sınıra girmez."
+    },
+    "Weapon Mastery": {
+      "name": "Silah Ustalığı",
+      "description": "Yetkin olduğunuz silah türlerinden, ustalık özelliklerini kullanacağınız ikisini seçin. Uzun Dinlenmeden sonra her iki seçimi değiştirebilirsiniz."
+    },
+    "Fighting Style": {
+      "name": "Dövüş Tarzı",
+      "description": "Bir Dövüş Tarzı hüneri kazanın veya Karizmayla kullanılan ve sizin için Paladin büyüsü sayılan iki Rahip büyü numarası öğrenmek için Kutsanmış Savaşçıyı seçin. Paladin seviyesi kazandığınızda bu büyü numaralarından birini değiştirebilirsiniz."
+    },
+    "Paladin's Smite": {
+      "name": "Paladinin Darbesi",
+      "description": "İlahi Darbe her zaman hazırlanmıştır ve Uzun Dinlenme başına bir kez büyü yuvası harcamadan yapabilirsiniz."
+    },
+    "Channel Divinity": {
+      "name": "İlahi Gücü Yönlendirme",
+      "description": "İlahi Sezi ve alt sınıfın İlahi Gücü Yönlendirme seçeneklerini kazanın. İki kullanımla başlarsınız, Paladin seviyesi 11'de üçe çıkar; Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir. İlahi Sezi bonus eylemle 60 fit içindeki Göksel, İfrit ve Hortlakları, kutsanmış ya da lanetlenmiş yer ve nesneleri 10 dakika boyunca veya Etkisiz olana kadar açığa çıkarır."
+    },
+    "Paladin Subclass": {
+      "name": "Paladin Alt Sınıfı",
+      "description": "Bir Paladin alt sınıfı seçin; özelliklerini belirtilen Paladin seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Paladin seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Extra Attack": {
+      "name": "Ek Saldırı",
+      "description": "Saldırı eylemi yaptığınızda iki kez saldırın."
+    },
+    "Faithful Steed": {
+      "name": "Sadık Binek",
+      "description": "Binek Bulma her zaman hazırlanmıştır. Uzun Dinlenme başına bir kez büyü yuvası harcamadan yapın."
+    },
+    "Aura of Protection": {
+      "name": "Koruma Aurası",
+      "description": "Etkisiz olmadığınız sürece siz ve 10 fitlik auranızdaki müttefikler, kurtarma atışlarına Karizma değiştiriciniz kadar (en az +1) bonus kazanır. Bir yaratık aynı anda yalnızca bir Paladinin Koruma Aurasından faydalanabilir."
+    },
+    "Abjure Foes": {
+      "name": "Düşmanları Kov",
+      "description": "Büyü eylemiyle İlahi Gücü Yönlendirme harcayıp 60 fit içindeki Karizma değiştiriciniz kadar (en az bir) yaratığı hedefleyin. Her biri Bilgelik kurtarma atışı yapar; başarısızsa 1 dakika veya hasar alana kadar Korkmuş olur. Kendi turunda hareket, eylem veya bonus eylemden yalnızca birini yapabilir."
+    },
+    "Aura of Courage": {
+      "name": "Cesaret Aurası",
+      "description": "Siz ve Koruma Auranızdaki müttefikler Korkmuş durumuna bağışıksınız; içeri giren bir müttefikte mevcut durum aura içinde bastırılır."
+    },
+    "Radiant Strikes": {
+      "name": "Işıyan Darbeler",
+      "description": "Yakın Dövüş silahı veya Silahsız Darbenin her isabeti 1d8 ek Işıma hasarı verir."
+    },
+    "Restoring Touch": {
+      "name": "İyileştiren Dokunuş",
+      "description": "Şifa Veren Elleri kullanırken kaldırdığınız her durum için iyileştirme havuzundan 5 puan harcayın: Kör, Büyülenmiş, Sağır, Korkmuş, Felçli veya Sersemlemiş. Bu puanlar ayrıca iyileştirme yapmaz."
+    },
+    "Aura Expansion": {
+      "name": "Aura Genişlemesi",
+      "description": "Koruma Aurası 30 fitlik alana genişler."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    }
+  },
+  "Ranger": {
+    "Spellcasting": {
+      "name": "Büyü Yapma",
+      "description": "Bilgelik Korucu büyülerinizin büyü yapma niteliğidir; Druid odağını kullanabilirsiniz. Seviye 1'de iki 1. seviye Korucu büyüsü hazırlayın; hazırlama sınırı ve yuvalar Korucu seviyesiyle artar. Uzun Dinlenmeden sonra hazırlanmış bir Korucu büyüsünü yapabildiğiniz seviyede başka biriyle değiştirebilirsiniz. Her zaman hazırlanmış büyüler sınıra girmez."
+    },
+    "Favored Enemy": {
+      "name": "Ezeli Düşman",
+      "description": "Avcı İşareti her zaman hazırlanmıştır. Büyü yuvası olmadan seviye 1-4'te iki, 5-8'de üç, 9-12'de dört, 13-16'da beş, 17 ve sonrasında altı kez yapabilirsiniz. Ücretsiz kullanımlar Uzun Dinlenmede yenilenir."
+    },
+    "Weapon Mastery": {
+      "name": "Silah Ustalığı",
+      "description": "Yetkin olduğunuz silah türlerinden, ustalık özelliklerini kullanacağınız ikisini seçin. Uzun Dinlenmeden sonra her iki seçimi değiştirebilirsiniz."
+    },
+    "Deft Explorer": {
+      "name": "Usta Kâşif",
+      "description": "Henüz Uzmanlığınız olmayan yetkin bir beceride Uzmanlık kazanın ve seçtiğiniz iki dili öğrenin."
+    },
+    "Fighting Style": {
+      "name": "Dövüş Tarzı",
+      "description": "Bir Dövüş Tarzı hüneri kazanın veya Bilgelikle kullanılan ve sizin için Korucu büyüsü sayılan iki Druid büyü numarası öğrenmek için Druid Savaşçısını seçin. Korucu seviyesi kazandığınızda bu büyü numaralarından birini değiştirebilirsiniz."
+    },
+    "Ranger Subclass": {
+      "name": "Korucu Alt Sınıfı",
+      "description": "Bir Korucu alt sınıfı seçin; özelliklerini belirtilen Korucu seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Korucu seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Extra Attack": {
+      "name": "Ek Saldırı",
+      "description": "Saldırı eylemi yaptığınızda iki kez saldırın."
+    },
+    "Roving": {
+      "name": "Gezgin",
+      "description": "Ağır zırh giymiyorken Hızınız 10 fit artar. Hızınıza eşit Tırmanma ve Yüzme Hızları kazanın."
+    },
+    "Expertise": {
+      "name": "Uzmanlık",
+      "description": "Henüz Uzmanlığınız olmayan yetkin iki beceride daha Uzmanlık kazanın."
+    },
+    "Tireless": {
+      "name": "Yorulmak Bilmez",
+      "description": "Büyü eylemiyle kendinize 1d8 + Bilgelik değiştiricisi kadar (en az 1) Geçici HP verin. Uzun Dinlenme başına Bilgelik değiştiriciniz kadar (en az bir) kullanabilirsiniz. Kısa Dinlenme ayrıca Bitkinlik seviyenizi bir azaltır."
+    },
+    "Relentless Hunter": {
+      "name": "Amansız Avcı",
+      "description": "Hasar almak Avcı İşaretine Odaklanmanızı bozamaz."
+    },
+    "Nature's Veil": {
+      "name": "Doğanın Peçesi",
+      "description": "Bonus eylemle bir sonraki turunuzun sonuna kadar Görünmez olun. Uzun Dinlenme başına Bilgelik değiştiriciniz kadar (en az bir) kullanım."
+    },
+    "Precise Hunter": {
+      "name": "Keskin Avcı",
+      "description": "Avcı İşareti ile işaretlediğiniz yaratığa saldırılarda Avantaj kazanırsınız."
+    },
+    "Feral Senses": {
+      "name": "Vahşi Duyular",
+      "description": "30 fit menzilli Kör Görüş kazanırsınız."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Foe Slayer": {
+      "name": "Düşman Avcısı",
+      "description": "Avcı İşaretinin hasar zarı d6 yerine d10 olur."
+    }
+  },
+  "Rogue": {
+    "Expertise": {
+      "name": "Uzmanlık",
+      "description": "Yetkin olduğunuz iki beceride Uzmanlık kazanın; Haydut seviyesi 6'da iki beceride daha kazanın."
+    },
+    "Sneak Attack": {
+      "name": "Sinsi Saldırı",
+      "description": "Tur başına bir kez Avantajlı bir İnce veya Menzilli silah saldırısında ek hasar verin. Hedefin 5 fit içinde Etkisiz olmayan bir müttefik bulunuyor ve atışınızda Dezavantaj yoksa Avantaj gerekmez. Ek hasar seviye 1'de 1d6'dır; her tek Haydut seviyesinde 1d6 artarak seviye 19'da 10d6 olur."
+    },
+    "Thieves' Cant": {
+      "name": "Hırsız Argosu",
+      "description": "Hırsız Argosunu ve seçtiğiniz başka bir dili bilin."
+    },
+    "Weapon Mastery": {
+      "name": "Silah Ustalığı",
+      "description": "Yetkin olduğunuz silah türlerinden, ustalık özelliklerini kullanacağınız ikisini seçin. Uzun Dinlenmeden sonra her iki seçimi değiştirebilirsiniz."
+    },
+    "Cunning Action": {
+      "name": "Kurnaz Eylem",
+      "description": "Kendi turunuzda bonus eylem olarak Atılma, Sıyrılma veya Saklanma yapın."
+    },
+    "Rogue Subclass": {
+      "name": "Haydut Alt Sınıfı",
+      "description": "Bir Haydut alt sınıfı seçin; özelliklerini belirtilen Haydut seviyelerinde kazanın."
+    },
+    "Steady Aim": {
+      "name": "Sabit Nişan",
+      "description": "Hareket etmeden önce bonus eylemle bu tur yapacağınız sonraki saldırı atışında Avantaj kazanın; sonrasında turun geri kalanında Hızınız 0 olur."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Haydut seviyeleri 8, 10, 12 ve 16'da yeniden kazanın."
+    },
+    "Cunning Strike": {
+      "name": "Kurnaz Darbe",
+      "description": "Sinsi Saldırı hasarı verirken 1d6'dan vazgeçip hasardan sonra bir etki ekleyin: Zehir (üzerinizde Zehirci Seti gerekir; Dayanıklılık kurtarma atışı başarısızsa 1 dakika Zehirlenmiş, her tur sonunda yeniden kurtarma); Çelme (Çeviklik kurtarma atışı başarısızsa Büyük veya daha küçük hedef Yere Serilmiş); Geri Çekilme (Fırsat Saldırıları tetiklemeden Hızınızın yarısına kadar hareket). Kurtarma SG'si 8 + Çeviklik değiştiricisi + Yetkinlik Bonusudur."
+    },
+    "Uncanny Dodge": {
+      "name": "Olağanüstü Kaçınma",
+      "description": "Görünür bir saldırgan size saldırı atışıyla isabet ettiğinde Tepki olarak bu saldırının size verdiği hasarı yarıya (aşağı yuvarlanmış) indirin."
+    },
+    "Evasion": {
+      "name": "Sakınma",
+      "description": "Yarı hasar için Çeviklik kurtarma atışında Etkisiz değilseniz başarıda hasar almaz, başarısızlıkta yarısını alırsınız."
+    },
+    "Reliable Talent": {
+      "name": "Güvenilir Yetenek",
+      "description": "Bir beceri veya araç yetkinliği kullanan nitelik kontrolünde d20 sonucunu 9 veya altındaysa 10 sayın."
+    },
+    "Improved Cunning Strike": {
+      "name": "Geliştirilmiş Kurnaz Darbe",
+      "description": "Her etkinin zar bedelini ödeyerek bir Sinsi Saldırıya en fazla iki Kurnaz Darbe etkisi uygulayın."
+    },
+    "Devious Strikes": {
+      "name": "Sinsi Darbeler",
+      "description": "Yeni Kurnaz Darbe seçenekleri kazanın: Sersemletme 2d6 tutar (Dayanıklılık kurtarma atışı başarısızsa sonraki tur yalnızca hareket, eylem veya bonus eylemden biri); Bayıltma 6d6 tutar (Dayanıklılık kurtarma atışı başarısızsa en fazla 1 dakika Bilinçsiz); Körleştirme 3d6 tutar (Çeviklik kurtarma atışı başarısızsa hedefin sonraki turunun sonuna kadar Kör)."
+    },
+    "Slippery Mind": {
+      "name": "Kaygan Zihin",
+      "description": "Bilgelik ve Karizma kurtarma atışlarında yetkinlik kazanın."
+    },
+    "Elusive": {
+      "name": "Ele Avuca Sığmaz",
+      "description": "Etkisiz değilseniz size karşı saldırı atışları Avantaj kazanamaz."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Stroke of Luck": {
+      "name": "Şanslı Hamle",
+      "description": "Kısa veya Uzun Dinlenme başına bir kez başarısız D20 Testini 20 sonucuna dönüştürün."
+    }
+  },
+  "Sorcerer": {
+    "Spellcasting": {
+      "name": "Büyü Yapma",
+      "description": "Karizma Doğuştan Büyücü büyülerinizin büyü yapma niteliğidir; Arkan Odağı kullanabilirsiniz. Seviye 1'de dört büyü numarası öğrenir, seviye 4 ve 10'da birer tane daha kazanırsınız. Seviye 1'de iki 1. seviye Doğuştan Büyücü büyüsü hazırlayın; hazırlama sınırı ve yuvalar sınıf seviyenizle artar. Doğuştan Büyücü seviyesi kazandığınızda hazırlanmış bir büyüyü ve bir büyü numarasını uygun sınıf büyüleriyle değiştirebilirsiniz."
+    },
+    "Innate Sorcery": {
+      "name": "Doğuştan Büyücülük",
+      "description": "Bonus eylemle doğuştan gelen büyüyü 1 dakika serbest bırakın: Doğuştan Büyücü büyülerinizin kurtarma SG'si 1 artar ve bu büyülerin saldırı atışlarında Avantaj kazanırsınız. Uzun Dinlenme başına iki kullanım."
+    },
+    "Font of Magic": {
+      "name": "Büyü Kaynağı",
+      "description": "Doğuştan Büyücü seviyeniz kadar Büyücülük Puanı kazanırsınız; Uzun Dinlenmede yenilenir. Eylem harcamadan bir büyü yuvasını seviyesi kadar puana çevirebilir veya bonus eylemle puan harcayarak en fazla 5. seviye yuva oluşturabilirsiniz. Maliyet: seviye 1 için 2, seviye 2 için 3, seviye 3 için 5, seviye 4 için 6, seviye 5 için 7 puan. Oluşan yuvalar Uzun Dinlenmeden sonra kaybolur. Oluşturulan yuva için asgari Doğuştan Büyücü seviyesini karşılamalısınız."
+    },
+    "Metamagic": {
+      "name": "Metabüyü",
+      "description": "İki Metabüyü seçeneği seçip Büyücülük Puanı harcayarak büyüleri değiştirin. Normalde bir büyüye yalnızca bir seçenek uygulanır. Doğuştan Büyücü seviyesi kazandığınızda bir seçeneği değiştirebilirsiniz. Seviye 10'da iki, 17'de iki seçenek daha öğrenirsiniz."
+    },
+    "Sorcerer Subclass": {
+      "name": "Doğuştan Büyücü Alt Sınıfı",
+      "description": "Bir Doğuştan Büyücü alt sınıfı seçin; özelliklerini belirtilen sınıf seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Doğuştan Büyücü seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Sorcerous Restoration": {
+      "name": "Büyücü Yenilenmesi",
+      "description": "Uzun Dinlenme başına bir kez Kısa Dinlenmeden sonra harcanan Büyücülük Puanlarını, Doğuştan Büyücü seviyenizin yarısına kadar (aşağı yuvarlanmış) yenileyin."
+    },
+    "Sorcery Incarnate": {
+      "name": "Büyücülüğün Vücut Bulması",
+      "description": "Doğuştan Büyücülük kullanımınız kalmadıysa etkinleştirirken 2 Büyücülük Puanı harcayın. Etkinken her büyüye en fazla iki Metabüyü seçeneği uygulayın."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Arcane Apotheosis": {
+      "name": "Arkan Doruk",
+      "description": "Doğuştan Büyücülük etkinken her turunuzda bir Metabüyü seçeneği Büyücülük Puanı harcamaz."
+    }
+  },
+  "Warlock": {
+    "Eldritch Invocations": {
+      "name": "Esrarengiz Yakarışlar",
+      "description": "Seviye 1'de koşullarını karşıladığınız bir Esrarengiz Yakarış öğrenin. Pakt Büyücüsü seviyesi kazandığınızda başka bir yakarışın ön koşulunu geçersiz kılmayacaksa birini değiştirebilirsiniz. Bilinen yakarış sayısı sınıf seviyesiyle artarak seviye 18'de ona ulaşır; izin verilmiyorsa aynı yakarışı iki kez seçemezsiniz."
+    },
+    "Pact Magic": {
+      "name": "Pakt Büyüsü",
+      "description": "Karizma Pakt Büyücüsü büyülerinizin büyü yapma niteliğidir; Arkan Odağı kullanabilirsiniz. Seviye 1'de iki büyü numarası öğrenir, seviye 4 ve 10'da birer tane daha kazanırsınız. Seviye 1'de iki 1. seviye Pakt Büyücüsü büyüsü hazırlayın; hazırlama sınırı ve Pakt Büyüsü yuvalarının ortak seviyesi sınıf seviyesiyle artar. Pakt Büyüsü yuvaları Kısa veya Uzun Dinlenmede yenilenir. Pakt Büyücüsü seviyesi kazandığınızda hazırlanmış bir büyüyü ve bir büyü numarasını değiştirebilirsiniz."
+    },
+    "Magical Cunning": {
+      "name": "Büyüsel Kurnazlık",
+      "description": "Uzun Dinlenme başına bir kez, 1 dakikalık ayinle harcanan Pakt Büyüsü yuvalarını azami sayılarının yarısına kadar (yukarı yuvarlanmış) yenileyin."
+    },
+    "Warlock Subclass": {
+      "name": "Pakt Büyücüsü Alt Sınıfı",
+      "description": "Bir Pakt Büyücüsü alt sınıfı seçin; özelliklerini belirtilen sınıf seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Pakt Büyücüsü seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Contact Patron": {
+      "name": "Patronla İletişim",
+      "description": "Başka Düzlemle Temas her zaman hazırlanmıştır. Uzun Dinlenme başına bir kez yuva harcamadan patronunuzla iletişim için yapın ve büyünün kurtarma atışında otomatik başarılı olun."
+    },
+    "Mystic Arcanum": {
+      "name": "Mistik Arkanum",
+      "description": "Uzun Dinlenme başına bir kez yuvasız yapacağınız bir 6. seviye Pakt Büyücüsü büyüsü seçin. Sınıf seviyesi 13'te ayrı bir 7. seviye, 15'te 8. seviye, 17'de 9. seviye arkanum kazanın; her birinin ayrı ücretsiz kullanımı vardır. Pakt Büyücüsü seviyesi kazandığınızda bir arkanumu aynı seviyedeki uygun başka bir sınıf büyüsüyle değiştirebilirsiniz."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Eldritch Master": {
+      "name": "Esrarengiz Üstat",
+      "description": "Büyüsel Kurnazlık artık harcadığınız tüm Pakt Büyüsü yuvalarını yeniler."
+    }
+  },
+  "Wizard": {
+    "Spellcasting": {
+      "name": "Büyü Yapma",
+      "description": "Zekâ Büyücü büyülerinizin büyü yapma niteliğidir; Arkan Odağı veya büyü kitabı kullanabilirsiniz. Seviye 1'de üç Büyücü büyü numarası öğrenir, seviye 4 ve 10'da birer tane daha kazanırsınız; Uzun Dinlenmeden sonra birini değiştirebilirsiniz. Büyü kitabınız başlangıçta altı 1. seviye Büyücü büyüsü içerir ve her Büyücü seviyesinde iki uygun büyü daha kazanır. Seviye 1'de kitaptan dört büyü hazırlayın; sınır ve yuvalar seviyeyle artar. Uzun Dinlenmeden sonra hazırlanmış büyüleri kitaptaki uygun büyülerle değiştirebilirsiniz."
+    },
+    "Ritual Adept": {
+      "name": "Ritüel Üstadı",
+      "description": "Büyü kitabınızdan okurken Ritüel etiketli bir Büyücü büyüsünü hazırlamadan Ritüel olarak yapabilirsiniz."
+    },
+    "Arcane Recovery": {
+      "name": "Arkan Yenilenme",
+      "description": "Uzun Dinlenme başına bir kez Kısa Dinlenmeden sonra toplam seviyeleri Büyücü seviyenizin yarısını (yukarı yuvarlanmış) aşmayan büyü yuvaları yenileyin; 6. seviye veya daha yüksek yuva yenilenemez."
+    },
+    "Scholar": {
+      "name": "Âlim",
+      "description": "Yetkin olduğunuz Büyü Bilgisi, Tarih, Araştırma, Tıp, Doğa veya Din becerilerinden seçtiğiniz birinde Uzmanlık kazanın."
+    },
+    "Wizard Subclass": {
+      "name": "Büyücü Alt Sınıfı",
+      "description": "Bir Büyücü alt sınıfı seçin; özelliklerini belirtilen Büyücü seviyelerinde kazanın."
+    },
+    "Ability Score Improvement": {
+      "name": "Nitelik Puanı Artışı",
+      "description": "Nitelik Puanı Artışı hünerini veya koşullarını karşıladığınız başka bir hüneri kazanın. Bu özelliği Büyücü seviyeleri 8, 12 ve 16'da yeniden kazanın."
+    },
+    "Memorize Spell": {
+      "name": "Büyü Ezberleme",
+      "description": "Kısa Dinlenmeden sonra hazırlanmış 1. seviye veya üstü bir Büyücü büyüsünü kitabınızdaki 1. seviye veya üstü başka bir büyüyle değiştirin."
+    },
+    "Spell Mastery": {
+      "name": "Büyü Ustalığı",
+      "description": "Kitabınızdan eylemle yapılan bir 1. seviye ve bir 2. seviye büyü seçin. Bunlar her zaman hazırlanmıştır ve en düşük seviyelerinde yuvasız yapılabilir. Uzun Dinlenmeden sonra bir seçimi aynı seviyedeki uygun başka bir büyüyle değiştirebilirsiniz."
+    },
+    "Epic Boon": {
+      "name": "Destansı Lütuf",
+      "description": "Destansı Lütuf hüneri veya koşullarını karşıladığınız başka bir hüner kazanın."
+    },
+    "Signature Spells": {
+      "name": "İmza Büyüleri",
+      "description": "Kitabınızdan iki 3. seviye büyü seçin. Her zaman hazırlanmışlardır; her biri Kısa veya Uzun Dinlenme başına bir kez, yuva harcamadan 3. seviyede yapılabilir."
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Raserei",
+        "description": "Solange du in Wut bist und Rücksichtsloser Angriff verwendest, erleidet das erste Ziel, das du in deinem Zug mit einem stärkebasierten Angriff triffst, zusätzlichen Schaden: so viele W6, wie dein Wutschadensbonus beträgt. Die Schadensart entspricht dem Angriff."
+      },
+      "Mindless Rage": {
+        "name": "Gedankenlose Wut",
+        "description": "Während deiner Wut bist du immun gegen Bezaubert und Verängstigt. Wenn du in Wut verfällst, endet jeder dieser Zustände bei dir."
+      },
+      "Retaliation": {
+        "name": "Vergeltung",
+        "description": "Wenn eine Kreatur innerhalb von 5 Fuß dir Schaden zufügt, kannst du als Reaktion einen Nahkampfangriff mit einer Waffe oder einem Waffenlosen Schlag gegen sie ausführen."
+      },
+      "Intimidating Presence": {
+        "name": "Einschüchternde Präsenz",
+        "description": "Als Bonusaktion legen von dir gewählte Kreaturen in einer Ausstrahlung von 30 Fuß einen Weisheitsrettungswurf ab (SG 8 + Stärkemodifikator + Übungsbonus) oder werden 1 Minute Verängstigt; am Ende jedes Zuges wiederholen sie den Wurf. Einmal pro Langer Rast, oder verbrauche eine Wutnutzung, um das Merkmal wiederherzustellen."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Zusätzliche Fertigkeiten",
+        "description": "Erhalte Übung in drei Fertigkeiten deiner Wahl."
+      },
+      "Cutting Words": {
+        "name": "Schneidende Worte",
+        "description": "Wenn eine sichtbare Kreatur innerhalb von 60 Fuß Schaden würfelt oder bei einer Attributsprobe oder einem Angriffswurf Erfolg hat, verwende deine Reaktion und eine Bardische Inspiration. Ziehe einen Wurf deines Inspirationswürfels vom Ergebnis ab; dadurch kann ein Erfolg scheitern."
+      },
+      "Magical Discoveries": {
+        "name": "Magische Entdeckungen",
+        "description": "Wähle zwei Zaubertricks oder Zauber aus den Listen von Kleriker, Druide oder Magier, deren Grade du wirken kannst. Sie sind immer vorbereitet. Bei jedem Bardenstufenaufstieg kannst du einen durch einen anderen zulässigen Zauber ersetzen."
+      },
+      "Peerless Skill": {
+        "name": "Unvergleichliches Können",
+        "description": "Wenn eine Attributsprobe oder ein Angriffswurf misslingt, verbrauche Bardische Inspiration und addiere ihren Würfel zum W20; vielleicht gelingt der Wurf. Misslingt er dennoch, wird die Inspiration nicht verbraucht."
+      }
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "Disciple of Life": {
+        "name": "Jünger des Lebens",
+        "description": "Wenn ein mit Zauberplatz gewirkter Zauber Trefferpunkte wiederherstellt, erhält das Ziel im Wirkungszug zusätzlich 2 + Grad des Platzes Trefferpunkte."
+      },
+      "Life Domain Spells": {
+        "name": "Zauber der Lebensdomäne",
+        "description": "Immer vorbereitet: Stufe 3 Hilfe, Segnen, Wunden heilen, Schwache Genesung; Stufe 5 Massenheilendes Wort, Wiederbeleben; Stufe 7 Aura des Lebens, Todesschutz; Stufe 9 Mächtige Genesung, Massenwunden heilen."
+      },
+      "Preserve Life": {
+        "name": "Leben bewahren",
+        "description": "Verbrauche als Aktion Magie Göttliche Macht und verteile Trefferpunkte in Höhe des Fünffachen deiner Klerikerstufe auf Blutende Kreaturen innerhalb von 30 Fuß, dich eingeschlossen. Damit kann niemand über die Hälfte seines Trefferpunktemaximums geheilt werden."
+      },
+      "Blessed Healer": {
+        "name": "Gesegneter Heiler",
+        "description": "Nachdem du einen Zauber mit Zauberplatz gewirkt hast, der jemand anderen heilt, erhältst du 2 + Grad des Platzes Trefferpunkte zurück."
+      },
+      "Supreme Healing": {
+        "name": "Höchste Heilung",
+        "description": "Wenn ein Zauber oder Göttliche Macht Würfel zur Heilung würfeln würde, verwende stattdessen das Höchstergebnis jedes Heilungswürfels."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Circle of the Land Spells": {
+        "name": "Zauber des Landzirkels",
+        "description": "Wähle nach jeder Langen Rast Ödland, Polarland, gemäßigtes oder tropisches Land; seine Zauber für deine Stufe und darunter sind immer vorbereitet. Ödland: Stufe 3 Verschwimmen, Brennende Hände, Feuerpfeil; 5 Feuerball; 7 Verdorren; 9 Steinwand. Polar: 3 Nebelwolke, Person festhalten, Kältestrahl; 5 Schneesturm; 7 Eissturm; 9 Kältekegel. Gemäßigt: 3 Nebelschritt, Schockgriff, Schlaf; 5 Blitz; 7 Bewegungsfreiheit; 9 Hölzerner Weg. Tropisch: 3 Säurespritzer, Strahl der Übelkeit, Spinnennetz; 5 Stinkende Wolke; 7 Verwandlung; 9 Insektenplage."
+      },
+      "Land's Aid": {
+        "name": "Hilfe des Landes",
+        "description": "Verbrauche als Aktion Magie Tiergestalt, um eine Kugel mit 10 Fuß Radius innerhalb von 60 Fuß zu erschaffen. Gewählte Kreaturen darin legen einen Konstitutionsrettungswurf ab: 2W6 nekrotischer Schaden bei Misserfolg, halb so viel bei Erfolg; eine Kreatur darin heilt außerdem 2W6. Beide steigen auf 3W6 auf Druidenstufe 10 und 4W6 auf Stufe 14."
+      },
+      "Natural Recovery": {
+        "name": "Natürliche Erholung",
+        "description": "Einmal pro Langer Rast kannst du einen vorbereiteten Zirkelzauber ab Grad 1 ohne Zauberplatz wirken. Ebenfalls einmal pro Langer Rast kannst du nach einer Kurzen Rast verbrauchte Plätze zurückerhalten, deren Grade zusammen höchstens die Hälfte deiner Druidenstufe (aufgerundet) betragen; keiner darf Grad 6 oder höher sein."
+      },
+      "Nature's Ward": {
+        "name": "Schutz der Natur",
+        "description": "Du bist immun gegen Vergiftet und hast je nach aktuellem Land Resistenz: Ödland Feuer, Polar Kälte, gemäßigt Blitz, tropisch Gift."
+      },
+      "Nature's Sanctuary": {
+        "name": "Zuflucht der Natur",
+        "description": "Verbrauche als Aktion Magie Tiergestalt, um für 1 Minute einen Würfel von 15 Fuß auf dem Boden innerhalb von 120 Fuß zu erschaffen. Er endet, wenn du kampfunfähig wirst oder stirbst. Du und Verbündete darin haben Halbe Deckung; Verbündete erhalten auch deine Resistenz durch Schutz der Natur. Als Bonusaktion bewege den Würfel bis zu 60 Fuß zu Boden innerhalb von 120 Fuß."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Verbesserter kritischer Treffer",
+        "description": "Angriffswürfe mit Waffen und Waffenlosen Schlägen erzielen bei 19 oder 20 auf dem W20 einen kritischen Treffer."
+      },
+      "Remarkable Athlete": {
+        "name": "Bemerkenswerter Athlet",
+        "description": "Du hast Vorteil auf Initiativewürfe und Stärkeproben (Athletik). Nach einem kritischen Treffer kannst du dich bis zu deiner halben Bewegungsrate bewegen, ohne Gelegenheitsangriffe auszulösen."
+      },
+      "Additional Fighting Style": {
+        "name": "Zusätzlicher Kampfstil",
+        "description": "Erhalte ein weiteres Kampfstiltalent deiner Wahl."
+      },
+      "Heroic Warrior": {
+        "name": "Heroischer Krieger",
+        "description": "Wenn du im Kampf einen Zug ohne Heldenhafte Inspiration beginnst, kannst du sie dir selbst geben."
+      },
+      "Superior Critical": {
+        "name": "Überlegener kritischer Treffer",
+        "description": "Waffenangriffe und Waffenlose Schläge erzielen nun bei 18 bis 20 auf dem W20 einen kritischen Treffer."
+      },
+      "Survivor": {
+        "name": "Überlebender",
+        "description": "Du hast Vorteil auf Todesrettungswürfe; 18 bis 20 gelten als 20. Zu Beginn deines Zuges, wenn du Blutend bist und mindestens 1 Trefferpunkt hast, erhältst du 5 + Konstitutionsmodifikator Trefferpunkte zurück."
+      }
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Technik der offenen Hand",
+        "description": "Trifft ein Angriff deines Schlaghagels, wähle: Das Ziel kann bis zu seinem nächsten Zug keine Gelegenheitsangriffe machen; ein misslungener Stärkerettungswurf stößt es bis zu 15 Fuß weg; oder ein misslungener Geschicklichkeitsrettungswurf wirft es Liegend."
+      },
+      "Wholeness of Body": {
+        "name": "Ganzheit des Körpers",
+        "description": "Als Bonusaktion heile Trefferpunkte in Höhe eines Kampfkunstwürfels + Weisheitsmodifikator (mindestens 1). Nutzungen in Höhe deines Weisheitsmodifikators (mindestens einmal) pro Langer Rast."
+      },
+      "Fleet Step": {
+        "name": "Schneller Schritt",
+        "description": "Wenn du eine Bonusaktion außer Schritt des Windes ausführst, kannst du unmittelbar danach auch Schritt des Windes nutzen."
+      },
+      "Quivering Palm": {
+        "name": "Zitternde Handfläche",
+        "description": "Trifft ein Waffenloser Schlag, verbrauche 4 Fokuspunkte, um Schwingungen für Tage in Höhe deiner Mönchsstufe einzusetzen. Mit einer Aktion oder statt eines Angriffs der Angriffsaktion kannst du sie auf derselben Ebene beenden; das Ziel legt einen Konstitutionsrettungswurf ab und erleidet 10W12 Energieschaden bei Misserfolg, halb so viel bei Erfolg. Nur ein Ziel zugleich."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Oath of Devotion Spells": {
+        "name": "Zauber des Hingabeschwurs",
+        "description": "Immer vorbereitet: Stufe 3 Schutz vor Gut und Böse, Schild des Glaubens; Stufe 5 Hilfe, Zone der Wahrheit; Stufe 9 Hoffnungsschimmer, Magie bannen; Stufe 13 Bewegungsfreiheit, Wächter des Glaubens; Stufe 17 Verbindung, Flammenschlag."
+      },
+      "Sacred Weapon": {
+        "name": "Heilige Waffe",
+        "description": "Bei der Angriffsaktion verbrauche Göttliche Macht, um eine gehaltene Nahkampfwaffe 10 Minuten zu stärken. Addiere deinen Charismamodifikator (mindestens +1) zu Angriffswürfen; jeder Treffer kann normalen oder gleißenden Schaden verursachen. Sie spendet 20 Fuß helles und weitere 20 Fuß dämmriges Licht; der Effekt endet, wenn du sie nicht mehr trägst."
+      },
+      "Aura of Devotion": {
+        "name": "Aura der Hingabe",
+        "description": "Du und Verbündete in deiner Schutzaura sind immun gegen Bezaubert; ein bereits bezauberter Verbündeter wird in der Aura nicht davon betroffen."
+      },
+      "Smite of Protection": {
+        "name": "Schützender Göttlicher Schlag",
+        "description": "Wenn du Göttlichen Schlag wirkst, erhalten du und Verbündete in deiner Schutzaura bis zum Beginn deines nächsten Zuges Halbe Deckung."
+      },
+      "Holy Nimbus": {
+        "name": "Heiliger Nimbus",
+        "description": "Als Bonusaktion stärke deine Schutzaura für 10 Minuten. Du hast Vorteil auf Rettungswürfe durch Unholde oder Untote; Feinde, die ihren Zug in der Aura beginnen, erleiden gleißenden Schaden in Höhe von Charismamodifikator + Übungsbonus; ihr helles Licht ist Sonnenlicht. Einmal pro Langer Rast oder verbrauche einen Zauberplatz des 5. Grades zur Wiederherstellung."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Lore": {
+        "name": "Wissen des Jägers",
+        "description": "Solange eine Kreatur durch dein Mal des Jägers markiert ist, erfährst du, ob und welche Schadensimmunitäten, Resistenzen oder Anfälligkeiten sie hat."
+      },
+      "Hunter's Prey": {
+        "name": "Beute des Jägers",
+        "description": "Wähle eine Option, nach Kurzer oder Langer Rast änderbar. Kolosstöter: Einmal pro Zug verursacht ein Waffentreffer gegen eine Kreatur mit verlorenen Trefferpunkten +1W8 Schaden. Hordenbrecher: Einmal in deinem Zug bei einem Waffenangriff greife eine andere Kreatur innerhalb von 5 Fuß vom ersten Ziel, in Reichweite und bisher in diesem Zug nicht angegriffen, an."
+      },
+      "Defensive Tactics": {
+        "name": "Verteidigungstaktiken",
+        "description": "Wähle eine Option, nach Kurzer oder Langer Rast änderbar. Der Horde entkommen: Gelegenheitsangriffe gegen dich haben Nachteil. Mehrfachangriffsverteidigung: Nachdem eine Kreatur dich trifft, haben ihre übrigen Angriffswürfe gegen dich in diesem Zug Nachteil."
+      },
+      "Superior Hunter's Prey": {
+        "name": "Überlegene Beute des Jägers",
+        "description": "Einmal pro Zug, wenn du einer mit Mal des Jägers markierten Kreatur Schaden zufügst, füge einer anderen sichtbaren Kreatur innerhalb von 30 Fuß vom markierten Ziel den zusätzlichen Zauberschaden zu."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Überlegene Verteidigung des Jägers",
+        "description": "Wenn du Schaden erleidest, verwende deine Reaktion, um bis zum Ende des aktuellen Zuges Resistenz gegen diesen und anderen Schaden derselben Art zu erhalten."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Schnelle Hände",
+        "description": "Als Bonusaktion: Geschicklichkeit (Fingerfertigkeit), um mit Diebeswerkzeug ein Schloss zu knacken oder eine Falle zu entschärfen oder eine Tasche zu leeren; die Aktion Benutzen; oder die Aktion Magie, um einen entsprechenden magischen Gegenstand zu verwenden."
+      },
+      "Second-Story Work": {
+        "name": "Arbeit im zweiten Stock",
+        "description": "Deine Kletterbewegungsrate entspricht deiner Bewegungsrate, und du kannst die Sprungweite mit Geschicklichkeit statt Stärke bestimmen."
+      },
+      "Supreme Sneak": {
+        "name": "Höchste Heimlichkeit",
+        "description": "Erhalte Heimlicher Angriff als Listiger-Schlag-Option (Kosten 1W6). Wenn du aus dem Versteck heraus unsichtbar angreifst, bleibst du unsichtbar, falls du den Zug hinter Dreivierteldeckung oder Vollständiger Deckung beendest."
+      },
+      "Use Magic Device": {
+        "name": "Magische Geräte verwenden",
+        "description": "Du kannst dich auf vier magische Gegenstände einstimmen. Beim Verbrauch von Ladungen würfle 1W6; bei 6 wird keine verbraucht. Du kannst jede Zauberschriftrolle mit Intelligenz als Zauberattribut verwenden; bei Zaubern über Grad 1 musst du zuerst Intelligenz (Arkane Kunde) SG 10 + Zaubergrad bestehen, sonst zerfällt die Schriftrolle."
+      },
+      "Thief's Reflexes": {
+        "name": "Diebesreflexe",
+        "description": "Du hast zwei Züge in der ersten Kampfrunde: bei deiner normalen Initiative und bei Initiative minus 10."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "Draconic Resilience": {
+        "name": "Drachenhafte Widerstandskraft",
+        "description": "Dein Trefferpunktemaximum steigt auf Zaubererstufe 3 um 3 und auf jeder weiteren Zaubererstufe um 1. Ohne Rüstung beträgt deine Grundrüstungsklasse 10 + Geschicklichkeitsmodifikator + Charismamodifikator."
+      },
+      "Draconic Spells": {
+        "name": "Drachenzauber",
+        "description": "Immer vorbereitet: Stufe 3 Selbstverwandlung, Chromatische Kugel, Befehl, Drachenodem; Stufe 5 Furcht, Fliegen; Stufe 7 Arkanes Auge, Monster bezaubern; Stufe 9 Legendäre Kunde, Drachen beschwören."
+      },
+      "Elemental Affinity": {
+        "name": "Elementare Affinität",
+        "description": "Wähle Säure, Kälte, Feuer, Blitz oder Gift. Du bist gegen diese Schadensart resistent und kannst deinen Charismamodifikator zu einem Schadenswurf eines entsprechenden Zaubers addieren."
+      },
+      "Dragon Wings": {
+        "name": "Drachenflügel",
+        "description": "Als Bonusaktion erhalte Flügel und eine Flugbewegungsrate von 60 Fuß für 1 Stunde oder bis du sie auflöst. Einmal pro Langer Rast, oder verbrauche 3 Zaubereipunkte zur Wiederherstellung."
+      },
+      "Dragon Companion": {
+        "name": "Drachengefährte",
+        "description": "Wirke Drachen beschwören ohne materielle Komponente und einmal ohne Zauberplatz pro Langer Rast. Beim Wirken kannst du die Konzentration entfernen; dieser Zauber hält dann 1 Minute."
+      }
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "Dark One's Blessing": {
+        "name": "Segen des Dunklen",
+        "description": "Wenn du einen Feind auf 0 Trefferpunkte bringst, erhältst du temporäre Trefferpunkte in Höhe von Charismamodifikator + Hexenmeisterstufe (mindestens 1). Du erhältst sie auch, wenn jemand anderes einen Feind innerhalb von 10 Fuß von dir auf 0 bringt."
+      },
+      "Fiend Spells": {
+        "name": "Zauber des Unholds",
+        "description": "Immer vorbereitet: Stufe 3 Brennende Hände, Befehl, Sengender Strahl, Einflüsterung; Stufe 5 Feuerball, Stinkende Wolke; Stufe 7 Feuerschild, Feuerwand; Stufe 9 Geas, Insektenplage."
+      },
+      "Dark One's Own Luck": {
+        "name": "Glück des Dunklen",
+        "description": "Nachdem du eine Attributsprobe oder einen Rettungswurf gesehen hast, aber vor dessen Folgen, addiere 1W10. Nutzungen in Höhe deines Charismamodifikators (mindestens einmal) pro Langer Rast, höchstens einmal je Wurf."
+      },
+      "Fiendish Resilience": {
+        "name": "Unhold-Widerstandskraft",
+        "description": "Wähle nach einer Kurzen oder Langen Rast eine Schadensart außer Energie. Du bist dagegen resistent, bis du mit diesem Merkmal eine andere Art wählst."
+      },
+      "Hurl Through Hell": {
+        "name": "Durch die Hölle schleudern",
+        "description": "Einmal pro Zug nach einem Treffer durch einen Angriffswurf legt das Ziel einen Charismarettungswurf gegen deinen Zauber-SG ab. Bei Misserfolg verschwindet es, ist bis zum Ende deines nächsten Zuges kampfunfähig und kehrt an seinen Ort oder den nächsten freien zurück; ist es kein Unhold, erleidet es 8W10 psychischen Schaden. Einmal pro Langer Rast oder verbrauche einen Paktmagieplatz zur Wiederherstellung."
+      }
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "Evocation Savant": {
+        "name": "Evokationsgelehrter",
+        "description": "Füge deinem Zauberbuch kostenlos zwei Evokationszauber für Magier des 1. oder 2. Grades hinzu. Wann immer du in dieser Klasse Zugang zu einem neuen Zauberplatzgrad erhältst, füge kostenlos einen wirkbaren Evokationszauber für Magier hinzu."
+      },
+      "Potent Cantrip": {
+        "name": "Mächtiger Zaubertrick",
+        "description": "Wenn dein schädigender Zaubertrick verfehlt oder das Ziel den Rettungswurf besteht, erleidet es dennoch die Hälfte des Zauberschadens, aber keine anderen Wirkungen."
+      },
+      "Sculpt Spells": {
+        "name": "Zauber formen",
+        "description": "Wenn du einen Evokationszauber auf sichtbare Kreaturen wirkst, wähle bis zu 1 + Zaubergrad Ziele. Sie bestehen automatisch ihre Rettungswürfe und erleiden keinen Schaden, falls Erfolg ihn normalerweise halbieren würde."
+      },
+      "Empowered Evocation": {
+        "name": "Verstärkte Evokation",
+        "description": "Addiere deinen Intelligenzmodifikator zu einem Schadenswurf eines von dir gewirkten Evokationszaubers für Magier."
+      },
+      "Overchannel": {
+        "name": "Überkanalisieren",
+        "description": "Bei einem schädigenden Magierzauber mit Zauberplatz Grad 1 bis 5 maximierst du den Schaden im Wirkungszug. Die erste Nutzung nach einer Langen Rast ist sicher; weitere verursachen 2W12 nekrotischen Schaden pro Platzgrad an dir, für jede zusätzliche Nutzung vor der nächsten Langen Rast steigend um 1W12 pro Grad. Dieser Schaden ignoriert Resistenz und Immunität."
+      }
+    }
+  }
+}

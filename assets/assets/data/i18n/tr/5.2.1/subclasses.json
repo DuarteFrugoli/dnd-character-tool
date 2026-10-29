@@ -1,0 +1,74 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "Vahşi Savaşçının Yolu",
+      "description": "Öfkeni amansız bir saldırıya dönüştür. Gözü kara saldırılar Çılgınlık hasarı ekleyebilir; sonraki özellikler kararlılığını güçlendirir, karşılık vermeni ve düşmanları dehşete düşürmeni sağlar."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "Bilgi Koleji",
+      "description": "Birçok gelenekten bilgi topla. Ek beceriler kazan, Keskin Sözler ile düşmanları engelle ve Ozan listesinin dışındaki büyüleri keşfet."
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "name": "Yaşam Alanı",
+      "description": "Hayatı korumak ve iyileştirmek için ilahi gücü yönlendir. Alanın iyileştirme büyüleri sağlar, iyileştirmeyi güçlendirir ve tehlikedeki müttefiklerin hayatını korumaya yardımcı olur."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Toprak Çemberi",
+      "description": "Seçtiğin bir coğrafyadan büyü gücü çek. Uzun Dinlenme sonrasında toprağını değiştirerek o çemberin büyülerini kazan; daha sonra doğaya dayalı koruma ve sığınak elde et."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Şampiyon",
+      "description": "Savaşta fiziksel mükemmelliğin peşinden git. Kritik vuruş aralığını genişlet; atletizmini, Dövüş Tarzı seçeneklerini ve dayanıklılığını geliştir."
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "name": "Açık El Savaşçısı",
+      "description": "Silahsız dövüşte ustalaş. Darbe Sağanağın düşmanları bozabilir; sonraki özellikler iyileşmeni, hareketliliğini ve isabetli vuruşlarını geliştirir."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Bağlılık Yemini",
+      "description": "Adaleti savun ve savunmasızları koru. Kutsal Güç Aktarma ile bir silahı güçlendir; yemin büyüleri ve koruyucu bir aura kazan."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Avcı",
+      "description": "İşaretlenmiş avları incele ve av teknikleri seç. Hedefin savunmasını öğren, saldırı ve savunmanı uyarla ve işaretli düşmanlara karşı saldırılarını geliştir."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Hırsız",
+      "description": "Sızma, keşif ve hazineleri kullanma konusunda üstün ol. Nesnelerle hızlı etkileşim ve hareketlilik kazan; daha sonra büyülü eşyaları daha etkili kullanmayı öğren."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "name": "Ejderha Büyücülüğü",
+      "description": "Ejderhalarla bağlantılı büyüler ortaya çıkar. Ejderha dayanıklılığı ve büyüler kazan; ardından daha büyük elemental güç ve ejderha yetenekleri geliştir."
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "name": "İfrit Hamisi",
+      "description": "Alt Düzlemlerden güçlü bir ifritten güç al. Hami büyüleri, geçici canlılık, koruma ve başka cehennemi armağanlar kazan."
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "name": "Çağırma Büyücüsü",
+      "description": "Çağırma okulunun büyülerinde uzmanlaş. Yıkıcı büyüleri müttefiklerinden uzak tutacak şekilde biçimlendir ve bu büyülerin hasarını artır."
+    }
+  }
+}

@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "Clerc",
+        "description": "Choisissez deux tours de magie de clerc et un sort de clerc de niveau 1."
+      },
+      "druid": {
+        "name": "Druide",
+        "description": "Choisissez deux tours de magie de druide et un sort de druide de niveau 1."
+      },
+      "wizard": {
+        "name": "Magicien",
+        "description": "Choisissez deux tours de magie de magicien et un sort de magicien de niveau 1."
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "Intelligence",
+        "description": "Utilisez l'Intelligence comme caractéristique d'incantation pour ces sorts."
+      },
+      "wisdom": {
+        "name": "Sagesse",
+        "description": "Utilisez la Sagesse comme caractéristique d'incantation pour ces sorts."
+      },
+      "charisma": {
+        "name": "Charisme",
+        "description": "Utilisez le Charisme comme caractéristique d'incantation pour ces sorts."
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "Tir à l'arc",
+        "description": "Vous gagnez un bonus de +2 aux jets d'attaque avec des armes à distance."
+      },
+      "defense": {
+        "name": "Défense",
+        "description": "Vous gagnez +1 à la CA tant que vous portez une armure légère, intermédiaire ou lourde."
+      },
+      "great_weapon_fighting": {
+        "name": "Combat à l'arme lourde",
+        "description": "Considérez les résultats de 1 ou 2 sur les dés de dégâts comme des 3 quand vous maniez à deux mains une arme de corps à corps à deux mains ou polyvalente."
+      },
+      "two_weapon_fighting": {
+        "name": "Combat à deux armes",
+        "description": "Ajoutez votre modificateur de caractéristique aux dégâts de l'attaque supplémentaire de la propriété Légère."
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "Tir à l'arc",
+        "description": "Vous gagnez un bonus de +2 aux jets d'attaque avec des armes à distance."
+      },
+      "defense": {
+        "name": "Défense",
+        "description": "Vous gagnez +1 à la CA tant que vous portez une armure légère, intermédiaire ou lourde."
+      },
+      "great_weapon_fighting": {
+        "name": "Combat à l'arme lourde",
+        "description": "Considérez les résultats de 1 ou 2 sur les dés de dégâts comme des 3 quand vous maniez à deux mains une arme de corps à corps à deux mains ou polyvalente."
+      },
+      "two_weapon_fighting": {
+        "name": "Combat à deux armes",
+        "description": "Ajoutez votre modificateur de caractéristique aux dégâts de l'attaque supplémentaire de la propriété Légère."
+      },
+      "blessed_warrior": {
+        "name": "Guerrier béni",
+        "description": "Vous apprenez deux tours de magie de clerc qui comptent pour vous comme des sorts de paladin."
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "Tir à l'arc",
+        "description": "Vous gagnez un bonus de +2 aux jets d'attaque avec des armes à distance."
+      },
+      "defense": {
+        "name": "Défense",
+        "description": "Vous gagnez +1 à la CA tant que vous portez une armure légère, intermédiaire ou lourde."
+      },
+      "great_weapon_fighting": {
+        "name": "Combat à l'arme lourde",
+        "description": "Considérez les résultats de 1 ou 2 sur les dés de dégâts comme des 3 quand vous maniez à deux mains une arme de corps à corps à deux mains ou polyvalente."
+      },
+      "two_weapon_fighting": {
+        "name": "Combat à deux armes",
+        "description": "Ajoutez votre modificateur de caractéristique aux dégâts de l'attaque supplémentaire de la propriété Légère."
+      },
+      "druidic_warrior": {
+        "name": "Guerrier druidique",
+        "description": "Vous apprenez deux tours de magie de druide qui comptent pour vous comme des sorts de rôdeur."
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "Protecteur",
+        "description": "Vous gagnez la maîtrise des armes de guerre et la formation aux armures lourdes."
+      },
+      "thaumaturge": {
+        "name": "Thaumaturge",
+        "description": "Vous apprenez un tour de magie de clerc supplémentaire et ajoutez votre modificateur de Sagesse (minimum +1) aux tests d'Arcanes ou de Religion."
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "Magicien",
+        "description": "Vous apprenez un tour de magie de druide supplémentaire et ajoutez votre modificateur de Sagesse (minimum +1) aux tests d'Arcanes ou de Nature."
+      },
+      "warden": {
+        "name": "Gardien",
+        "description": "Vous gagnez la maîtrise des armes de guerre et la formation aux armures intermédiaires."
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "Frappe divine",
+        "description": "Une fois par tour, ajoutez 1d8 dégâts radiants ou nécrotiques à une attaque d'arme qui touche ; 2d8 à partir du niveau 14 de clerc."
+      },
+      "potent_spellcasting": {
+        "name": "Incantation puissante",
+        "description": "Ajoutez votre modificateur de Sagesse aux dégâts des tours de magie de clerc ; à partir du niveau 14, un tour de magie qui inflige des dégâts peut aussi accorder des points de vie temporaires."
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "Incantation puissante",
+        "description": "Ajoutez votre modificateur de Sagesse aux dégâts des tours de magie de druide ; leur portée augmente au niveau 15 de druide."
+      },
+      "primal_strike": {
+        "name": "Frappe primordiale",
+        "description": "Une fois par tour, ajoutez 1d8 dégâts de froid, de feu, de foudre ou de tonnerre à une attaque d'arme ou sous forme de bête qui touche ; 2d8 au niveau 15."
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "Dressage"
+      },
+      "athletics": {
+        "name": "Athlétisme"
+      },
+      "intimidation": {
+        "name": "Intimidation"
+      },
+      "nature": {
+        "name": "Nature"
+      },
+      "perception": {
+        "name": "Perception"
+      },
+      "survival": {
+        "name": "Survie"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "Arcanes"
+      },
+      "history": {
+        "name": "Histoire"
+      },
+      "investigation": {
+        "name": "Enquête"
+      },
+      "medicine": {
+        "name": "Médecine"
+      },
+      "nature": {
+        "name": "Nature"
+      },
+      "religion": {
+        "name": "Religion"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "Sort prudent",
+        "description": "Dépensez 1 point de sorcellerie. Choisissez au plus un nombre de créatures égal à votre modificateur de Charisme (minimum une) : elles réussissent automatiquement leur jet de sauvegarde contre le sort et ne subissent aucun dégât si une réussite devrait normalement réduire les dégâts de moitié."
+      },
+      "distant_spell": {
+        "name": "Sort distant",
+        "description": "Dépensez 1 point de sorcellerie pour doubler la portée d'un sort d'au moins 5 pieds, ou porter sa portée de contact à 30 pieds."
+      },
+      "empowered_spell": {
+        "name": "Sort renforcé",
+        "description": "Dépensez 1 point de sorcellerie pour relancer autant de dés de dégâts que votre modificateur de Charisme au maximum (minimum un) ; utilisez les nouveaux résultats. Cette option peut être combinée à une autre option de Métamagie."
+      },
+      "extended_spell": {
+        "name": "Sort prolongé",
+        "description": "Dépensez 1 point de sorcellerie pour doubler la durée d'un sort, jusqu'à 24 heures, et obtenir l'Avantage aux jets de sauvegarde destinés à maintenir votre Concentration sur ce sort."
+      },
+      "heightened_spell": {
+        "name": "Sort intensifié",
+        "description": "Dépensez 2 points de sorcellerie pour imposer le Désavantage à une cible sur ses jets de sauvegarde contre le sort."
+      },
+      "quickened_spell": {
+        "name": "Sort accéléré",
+        "description": "Dépensez 2 points de sorcellerie pour lancer par une Action bonus un sort qui exige normalement une action. Vous ne pouvez pas le faire après avoir lancé un sort de niveau 1 ou plus pendant ce tour, ni lancer un tel sort ensuite."
+      },
+      "seeking_spell": {
+        "name": "Sort précis",
+        "description": "Dépensez 1 point de sorcellerie pour relancer une attaque de sort ratée ; utilisez le nouveau résultat. Cette option peut être combinée à une autre option de Métamagie."
+      },
+      "subtle_spell": {
+        "name": "Sort subtil",
+        "description": "Dépensez 1 point de sorcellerie pour lancer le sort sans composantes verbales, gestuelles ou matérielles non consommées et sans coût."
+      },
+      "transmuted_spell": {
+        "name": "Sort transmuté",
+        "description": "Dépensez 1 point de sorcellerie pour remplacer les dégâts d'acide, de froid, de feu, de foudre, de poison ou de tonnerre d'un sort par un autre type de cette liste."
+      },
+      "twinned_spell": {
+        "name": "Sort jumelé",
+        "description": "Dépensez 1 point de sorcellerie pour augmenter de un le niveau effectif d'un sort pouvant cibler une autre créature quand il est lancé à un niveau supérieur."
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "Aride"
+      },
+      "polar": {
+        "name": "Polaire"
+      },
+      "temperate": {
+        "name": "Tempéré"
+      },
+      "tropical": {
+        "name": "Tropical"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "Tueur de colosses",
+        "description": "Une fois par tour, une attaque d'arme qui touche une créature à laquelle il manque des points de vie inflige +1d8 dégâts."
+      },
+      "horde_breaker": {
+        "name": "Briseur de hordes",
+        "description": "Une fois pendant votre tour, attaquez avec votre arme une autre créature proche."
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "Échapper à la horde",
+        "description": "Les attaques d'opportunité contre vous ont le Désavantage."
+      },
+      "multiattack_defense": {
+        "name": "Défense contre les attaques multiples",
+        "description": "Après qu'une créature vous a touché, ses autres jets d'attaque contre vous pendant ce tour ont le Désavantage."
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "Acide"
+      },
+      "cold": {
+        "name": "Froid"
+      },
+      "fire": {
+        "name": "Feu"
+      },
+      "lightning": {
+        "name": "Foudre"
+      },
+      "poison": {
+        "name": "Poison"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "Acide"
+      },
+      "bludgeoning": {
+        "name": "Contondant"
+      },
+      "cold": {
+        "name": "Froid"
+      },
+      "fire": {
+        "name": "Feu"
+      },
+      "lightning": {
+        "name": "Foudre"
+      },
+      "necrotic": {
+        "name": "Nécrotique"
+      },
+      "piercing": {
+        "name": "Perforant"
+      },
+      "poison": {
+        "name": "Poison"
+      },
+      "psychic": {
+        "name": "Psychique"
+      },
+      "radiant": {
+        "name": "Radiant"
+      },
+      "slashing": {
+        "name": "Tranchant"
+      },
+      "thunder": {
+        "name": "Tonnerre"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "Noir",
+        "description": "Acide"
+      },
+      "blue": {
+        "name": "Bleu",
+        "description": "Foudre"
+      },
+      "brass": {
+        "name": "Laiton",
+        "description": "Feu"
+      },
+      "bronze": {
+        "name": "Bronze",
+        "description": "Foudre"
+      },
+      "copper": {
+        "name": "Cuivre",
+        "description": "Acide"
+      },
+      "gold": {
+        "name": "Or",
+        "description": "Feu"
+      },
+      "green": {
+        "name": "Vert",
+        "description": "Poison"
+      },
+      "red": {
+        "name": "Rouge",
+        "description": "Feu"
+      },
+      "silver": {
+        "name": "Argent",
+        "description": "Froid"
+      },
+      "white": {
+        "name": "Blanc",
+        "description": "Froid"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "Drow",
+        "description": "Lumières dansantes ; Lueurs féeriques au niveau 3 et Ténèbres au niveau 5."
+      },
+      "high_elf": {
+        "name": "Haut elfe",
+        "description": "Prestidigitation ; Détection de la magie au niveau 3 et Pas brumeux au niveau 5."
+      },
+      "wood_elf": {
+        "name": "Elfe des bois",
+        "description": "Augmentation de vitesse et Druidisme ; Grande foulée au niveau 3 et Passage sans trace au niveau 5."
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "Gnome des forêts",
+        "description": "Illusion mineure et Communication avec les animaux."
+      },
+      "rock_gnome": {
+        "name": "Gnome des roches",
+        "description": "Réparation, Prestidigitation et mécanismes d'horlogerie."
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "Pas des nuages",
+        "description": "Téléportez-vous jusqu'à 30 pieds par une Action bonus."
+      },
+      "fire": {
+        "name": "Brûlure du feu",
+        "description": "Infligez 1d10 dégâts de feu supplémentaires lorsque vous touchez."
+      },
+      "frost": {
+        "name": "Froid du givre",
+        "description": "Infligez 1d6 dégâts de froid supplémentaires et réduisez la Vitesse de la cible lorsque vous touchez."
+      },
+      "hill": {
+        "name": "Chute des collines",
+        "description": "Renversez une cible de taille G ou inférieure lorsque vous la touchez."
+      },
+      "stone": {
+        "name": "Endurance de la pierre",
+        "description": "Par une Réaction, réduisez les dégâts que vous subissez de 1d12 + votre modificateur de Constitution."
+      },
+      "storm": {
+        "name": "Tonnerre de la tempête",
+        "description": "Infligez 1d8 dégâts de tonnerre à une créature qui vous inflige des dégâts."
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "Abyssal",
+        "description": "Résistance au poison et Bouffée de poison ; Rayon empoisonné au niveau 3 et Immobilisation de personne au niveau 5."
+      },
+      "chthonic": {
+        "name": "Chthonien",
+        "description": "Résistance aux dégâts nécrotiques et Contact glacial ; Simulacre de vie au niveau 3 et Rayon affaiblissant au niveau 5."
+      },
+      "infernal": {
+        "name": "Infernal",
+        "description": "Résistance au feu et Trait de feu ; Représailles infernales au niveau 3 et Ténèbres au niveau 5."
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "Intuition"
+      },
+      "perception": {
+        "name": "Perception"
+      },
+      "survival": {
+        "name": "Survie"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "Gourdin",
+        "description": "Arme courante de corps à corps ; maîtrise Ralentir."
+      },
+      "dagger": {
+        "name": "Dague",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "greatclub": {
+        "name": "Massue",
+        "description": "Arme courante de corps à corps ; maîtrise Repousser."
+      },
+      "handaxe": {
+        "name": "Hachette",
+        "description": "Arme courante de corps à corps ; maîtrise Harceler."
+      },
+      "javelin": {
+        "name": "Javeline",
+        "description": "Arme courante de corps à corps ; maîtrise Ralentir."
+      },
+      "light_hammer": {
+        "name": "Marteau léger",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "mace": {
+        "name": "Masse d'armes",
+        "description": "Arme courante de corps à corps ; maîtrise Affaiblir."
+      },
+      "quarterstaff": {
+        "name": "Bâton",
+        "description": "Arme courante de corps à corps ; maîtrise Renverser."
+      },
+      "sickle": {
+        "name": "Faucille",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "spear": {
+        "name": "Lance",
+        "description": "Arme courante de corps à corps ; maîtrise Affaiblir."
+      },
+      "battleaxe": {
+        "name": "Hache de guerre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "flail": {
+        "name": "Fléau",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "glaive": {
+        "name": "Glaive",
+        "description": "Arme de guerre de corps à corps ; maîtrise Érafler."
+      },
+      "greataxe": {
+        "name": "Hache à deux mains",
+        "description": "Arme de guerre de corps à corps ; maîtrise Tailler."
+      },
+      "greatsword": {
+        "name": "Épée à deux mains",
+        "description": "Arme de guerre de corps à corps ; maîtrise Érafler."
+      },
+      "halberd": {
+        "name": "Hallebarde",
+        "description": "Arme de guerre de corps à corps ; maîtrise Tailler."
+      },
+      "lance": {
+        "name": "Lance de cavalerie",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "longsword": {
+        "name": "Épée longue",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "maul": {
+        "name": "Maillet",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "morningstar": {
+        "name": "Étoile du matin",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "pike": {
+        "name": "Pique",
+        "description": "Arme de guerre de corps à corps ; maîtrise Repousser."
+      },
+      "rapier": {
+        "name": "Rapière",
+        "description": "Arme de guerre de corps à corps ; maîtrise Harceler."
+      },
+      "scimitar": {
+        "name": "Cimeterre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Filer."
+      },
+      "shortsword": {
+        "name": "Épée courte",
+        "description": "Arme de guerre de corps à corps ; maîtrise Harceler."
+      },
+      "trident": {
+        "name": "Trident",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "warhammer": {
+        "name": "Marteau de guerre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Repousser."
+      },
+      "war_pick": {
+        "name": "Pic de guerre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "whip": {
+        "name": "Fouet",
+        "description": "Arme de guerre de corps à corps ; maîtrise Ralentir."
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "Gourdin",
+        "description": "Arme courante de corps à corps ; maîtrise Ralentir."
+      },
+      "dagger": {
+        "name": "Dague",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "greatclub": {
+        "name": "Massue",
+        "description": "Arme courante de corps à corps ; maîtrise Repousser."
+      },
+      "handaxe": {
+        "name": "Hachette",
+        "description": "Arme courante de corps à corps ; maîtrise Harceler."
+      },
+      "javelin": {
+        "name": "Javeline",
+        "description": "Arme courante de corps à corps ; maîtrise Ralentir."
+      },
+      "light_hammer": {
+        "name": "Marteau léger",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "mace": {
+        "name": "Masse d'armes",
+        "description": "Arme courante de corps à corps ; maîtrise Affaiblir."
+      },
+      "quarterstaff": {
+        "name": "Bâton",
+        "description": "Arme courante de corps à corps ; maîtrise Renverser."
+      },
+      "sickle": {
+        "name": "Faucille",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "spear": {
+        "name": "Lance",
+        "description": "Arme courante de corps à corps ; maîtrise Affaiblir."
+      },
+      "dart": {
+        "name": "Fléchette",
+        "description": "Arme courante à distance ; maîtrise Harceler."
+      },
+      "light_crossbow": {
+        "name": "Arbalète légère",
+        "description": "Arme courante à distance ; maîtrise Ralentir."
+      },
+      "shortbow": {
+        "name": "Arc court",
+        "description": "Arme courante à distance ; maîtrise Harceler."
+      },
+      "sling": {
+        "name": "Fronde",
+        "description": "Arme courante à distance ; maîtrise Ralentir."
+      },
+      "battleaxe": {
+        "name": "Hache de guerre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "flail": {
+        "name": "Fléau",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "glaive": {
+        "name": "Glaive",
+        "description": "Arme de guerre de corps à corps ; maîtrise Érafler."
+      },
+      "greataxe": {
+        "name": "Hache à deux mains",
+        "description": "Arme de guerre de corps à corps ; maîtrise Tailler."
+      },
+      "greatsword": {
+        "name": "Épée à deux mains",
+        "description": "Arme de guerre de corps à corps ; maîtrise Érafler."
+      },
+      "halberd": {
+        "name": "Hallebarde",
+        "description": "Arme de guerre de corps à corps ; maîtrise Tailler."
+      },
+      "lance": {
+        "name": "Lance de cavalerie",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "longsword": {
+        "name": "Épée longue",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "maul": {
+        "name": "Maillet",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "morningstar": {
+        "name": "Étoile du matin",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "pike": {
+        "name": "Pique",
+        "description": "Arme de guerre de corps à corps ; maîtrise Repousser."
+      },
+      "rapier": {
+        "name": "Rapière",
+        "description": "Arme de guerre de corps à corps ; maîtrise Harceler."
+      },
+      "scimitar": {
+        "name": "Cimeterre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Filer."
+      },
+      "shortsword": {
+        "name": "Épée courte",
+        "description": "Arme de guerre de corps à corps ; maîtrise Harceler."
+      },
+      "trident": {
+        "name": "Trident",
+        "description": "Arme de guerre de corps à corps ; maîtrise Renverser."
+      },
+      "warhammer": {
+        "name": "Marteau de guerre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Repousser."
+      },
+      "war_pick": {
+        "name": "Pic de guerre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Affaiblir."
+      },
+      "whip": {
+        "name": "Fouet",
+        "description": "Arme de guerre de corps à corps ; maîtrise Ralentir."
+      },
+      "blowgun": {
+        "name": "Sarbacane",
+        "description": "Arme de guerre à distance ; maîtrise Harceler."
+      },
+      "hand_crossbow": {
+        "name": "Arbalète de poing",
+        "description": "Arme de guerre à distance ; maîtrise Harceler."
+      },
+      "heavy_crossbow": {
+        "name": "Arbalète lourde",
+        "description": "Arme de guerre à distance ; maîtrise Repousser."
+      },
+      "longbow": {
+        "name": "Arc long",
+        "description": "Arme de guerre à distance ; maîtrise Ralentir."
+      },
+      "musket": {
+        "name": "Mousquet",
+        "description": "Arme de guerre à distance ; maîtrise Ralentir."
+      },
+      "pistol": {
+        "name": "Pistolet",
+        "description": "Arme de guerre à distance ; maîtrise Harceler."
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "Gourdin",
+        "description": "Arme courante de corps à corps ; maîtrise Ralentir."
+      },
+      "dagger": {
+        "name": "Dague",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "greatclub": {
+        "name": "Massue",
+        "description": "Arme courante de corps à corps ; maîtrise Repousser."
+      },
+      "handaxe": {
+        "name": "Hachette",
+        "description": "Arme courante de corps à corps ; maîtrise Harceler."
+      },
+      "javelin": {
+        "name": "Javeline",
+        "description": "Arme courante de corps à corps ; maîtrise Ralentir."
+      },
+      "light_hammer": {
+        "name": "Marteau léger",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "mace": {
+        "name": "Masse d'armes",
+        "description": "Arme courante de corps à corps ; maîtrise Affaiblir."
+      },
+      "quarterstaff": {
+        "name": "Bâton",
+        "description": "Arme courante de corps à corps ; maîtrise Renverser."
+      },
+      "sickle": {
+        "name": "Faucille",
+        "description": "Arme courante de corps à corps ; maîtrise Filer."
+      },
+      "spear": {
+        "name": "Lance",
+        "description": "Arme courante de corps à corps ; maîtrise Affaiblir."
+      },
+      "dart": {
+        "name": "Fléchette",
+        "description": "Arme courante à distance ; maîtrise Harceler."
+      },
+      "light_crossbow": {
+        "name": "Arbalète légère",
+        "description": "Arme courante à distance ; maîtrise Ralentir."
+      },
+      "shortbow": {
+        "name": "Arc court",
+        "description": "Arme courante à distance ; maîtrise Harceler."
+      },
+      "sling": {
+        "name": "Fronde",
+        "description": "Arme courante à distance ; maîtrise Ralentir."
+      },
+      "rapier": {
+        "name": "Rapière",
+        "description": "Arme de guerre de corps à corps ; maîtrise Harceler."
+      },
+      "scimitar": {
+        "name": "Cimeterre",
+        "description": "Arme de guerre de corps à corps ; maîtrise Filer."
+      },
+      "shortsword": {
+        "name": "Épée courte",
+        "description": "Arme de guerre de corps à corps ; maîtrise Harceler."
+      },
+      "whip": {
+        "name": "Fouet",
+        "description": "Arme de guerre de corps à corps ; maîtrise Ralentir."
+      },
+      "hand_crossbow": {
+        "name": "Arbalète de poing",
+        "description": "Arme de guerre à distance ; maîtrise Harceler."
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "Décharge agonisante",
+        "description": "Choisissez un de vos tours de magie d'occultiste connus qui inflige des dégâts. Vous pouvez ajouter votre modificateur de Charisme à ses jets de dégâts."
+      },
+      "armor_of_shadows": {
+        "name": "Armure des ombres",
+        "description": "Vous pouvez lancer Armure du mage sur vous-même sans dépenser d'emplacement de sort."
+      },
+      "ascendant_step": {
+        "name": "Pas ascendant",
+        "description": "Vous pouvez lancer Lévitation sur vous-même sans dépenser d'emplacement de sort."
+      },
+      "devils_sight": {
+        "name": "Vision du diable",
+        "description": "Vous voyez normalement dans la lumière faible et les ténèbres, magiques ou non, à une distance de 120 pieds de vous."
+      },
+      "devouring_blade": {
+        "name": "Lame dévorante",
+        "description": "L'Attaque supplémentaire de votre invocation Lame assoiffée vous accorde deux attaques supplémentaires au lieu d'une."
+      },
+      "eldritch_mind": {
+        "name": "Esprit occulte",
+        "description": "Vous avez l'Avantage aux jets de sauvegarde de Constitution effectués pour maintenir votre Concentration."
+      },
+      "eldritch_smite": {
+        "name": "Châtiment occulte",
+        "description": "Une fois par tour, quand vous touchez une créature avec votre arme de pacte, vous pouvez dépenser un emplacement de Magie de pacte pour lui infliger 1d8 dégâts de force supplémentaires, plus 1d8 par niveau de l'emplacement ; vous pouvez aussi la mettre À terre si elle est de taille TG ou inférieure."
+      },
+      "eldritch_spear": {
+        "name": "Lance occulte",
+        "description": "Choisissez un de vos tours de magie d'occultiste connus qui inflige des dégâts et dont la portée est d'au moins 10 pieds. Quand vous le lancez, sa portée augmente d'un nombre de pieds égal à 30 fois votre niveau d'occultiste."
+      },
+      "fiendish_vigor": {
+        "name": "Vigueur fiélonne",
+        "description": "Vous pouvez lancer Simulacre de vie sur vous-même sans dépenser d'emplacement de sort. Quand vous le lancez grâce à cette aptitude, vous ne lancez pas le dé des points de vie temporaires : vous obtenez automatiquement son résultat maximal."
+      },
+      "gaze_of_two_minds": {
+        "name": "Regard des deux esprits",
+        "description": "Par une Action bonus, vous pouvez toucher une créature consentante et percevoir le monde par ses sens jusqu'à la fin de votre prochain tour. Tant qu'elle se trouve sur le même plan d'existence que vous, vous pouvez utiliser une Action bonus lors des tours suivants pour maintenir ce lien jusqu'à la fin de votre prochain tour. Le lien prend fin si vous ne le maintenez pas ainsi.\n\nLorsque vous percevez par les sens de l'autre créature, vous bénéficiez de ses sens spéciaux et pouvez lancer des sorts comme si vous étiez dans votre espace ou dans le sien, à condition d'être à 60 pieds ou moins l'un de l'autre."
+      },
+      "gift_of_the_depths": {
+        "name": "Don des profondeurs",
+        "description": "Vous pouvez respirer sous l'eau et gagnez une Vitesse de nage égale à votre Vitesse.\n\nVous pouvez également lancer Respiration aquatique une fois sans dépenser d'emplacement de sort. Vous retrouvez cette capacité après un Repos long."
+      },
+      "gift_of_the_protectors": {
+        "name": "Don des protecteurs",
+        "description": "Une nouvelle page apparaît dans votre Livre des Ombres lorsque vous le conjurez. Avec votre permission, une créature peut consacrer une action à y écrire son nom. Cette page peut contenir autant de noms que votre modificateur de Charisme (minimum un).\n\nQuand une créature dont le nom figure sur cette page tombe à 0 point de vie sans mourir immédiatement, elle passe magiquement à 1 point de vie. Une fois cette magie déclenchée, aucune créature ne peut en bénéficier avant que vous ayez terminé un Repos long.\n\nPar une action de Magie, vous pouvez effacer un nom en touchant la page."
+      },
+      "investment_of_the_chain_master": {
+        "name": "Investiture du maître de la chaîne",
+        "description": "Lorsque vous lancez Appel de familier, vous insufflez une partie de votre puissance occulte au familier invoqué et lui accordez les avantages suivants.\n\nAérien ou aquatique. Le familier gagne une Vitesse de vol ou de nage (à votre choix) de 40 pieds.\n\nAttaque rapide. Par une Action bonus, vous pouvez ordonner au familier d'effectuer l'action Attaquer.\n\nDégâts nécrotiques ou radiants. Chaque fois que le familier inflige des dégâts contondants, perforants ou tranchants, vous pouvez les remplacer par des dégâts nécrotiques ou radiants.\n\nVotre DD de sauvegarde. Si le familier oblige une créature à effectuer un jet de sauvegarde, il utilise le DD de sauvegarde de vos sorts.\n\nRésistance. Lorsque le familier subit des dégâts, vous pouvez utiliser une Réaction pour lui accorder la Résistance à ces dégâts."
+      },
+      "lessons_of_the_first_ones": {
+        "name": "Leçons des Premiers",
+        "description": "Vous avez reçu les connaissances d'une ancienne entité du multivers, ce qui vous permet de gagner un don d'origine de votre choix (voir « Dons »)."
+      },
+      "lifedrinker": {
+        "name": "Buveur de vie",
+        "description": "Une fois par tour, quand vous touchez une créature avec votre arme de pacte, vous pouvez lui infliger 1d6 dégâts nécrotiques, psychiques ou radiants supplémentaires (à votre choix). Vous pouvez également dépenser un de vos dés de vie, le lancer et récupérer un nombre de points de vie égal au résultat + votre modificateur de Constitution (minimum 1 point de vie)."
+      },
+      "mask_of_many_faces": {
+        "name": "Masque aux mille visages",
+        "description": "Vous pouvez lancer Déguisement sans dépenser d'emplacement de sort."
+      },
+      "master_of_myriad_forms": {
+        "name": "Maître des formes innombrables",
+        "description": "Vous pouvez lancer Modification d'apparence sans dépenser d'emplacement de sort."
+      },
+      "misty_visions": {
+        "name": "Visions brumeuses",
+        "description": "Vous pouvez lancer Image silencieuse sans dépenser d'emplacement de sort."
+      },
+      "one_with_shadows": {
+        "name": "Un avec les ombres",
+        "description": "Tant que vous vous trouvez dans une zone de lumière faible ou de ténèbres, vous pouvez lancer Invisibilité sur vous-même sans dépenser d'emplacement de sort."
+      },
+      "otherworldly_leap": {
+        "name": "Bond d'outre-monde",
+        "description": "Vous pouvez lancer Saut sur vous-même sans dépenser d'emplacement de sort."
+      },
+      "pact_of_the_blade": {
+        "name": "Pacte de la lame",
+        "description": "Par une Action bonus, vous pouvez conjurer dans votre main une arme de pacte — une arme courante ou de guerre de corps à corps de votre choix avec laquelle vous vous liez — ou vous lier à une arme magique que vous touchez. Vous ne pouvez pas vous lier à une arme magique si quelqu'un d'autre y est harmonisé ou si un autre occultiste lui est lié. Tant que le lien persiste, vous maîtrisez l'arme et pouvez l'utiliser comme focaliseur de sort.\n\nQuand vous attaquez avec l'arme liée, vous pouvez utiliser votre modificateur de Charisme pour les jets d'attaque et de dégâts à la place de la Force ou de la Dextérité. Vous pouvez aussi lui faire infliger des dégâts nécrotiques, psychiques ou radiants à la place de son type de dégâts habituel.\n\nLe lien prend fin si vous utilisez de nouveau l'Action bonus de cette aptitude, si l'arme reste à plus de 5 pieds de vous pendant 1 minute ou davantage, ou si vous mourez. Une arme conjurée disparaît lorsque le lien prend fin."
+      },
+      "pact_of_the_chain": {
+        "name": "Pacte de la chaîne",
+        "description": "Vous apprenez le sort Appel de familier et pouvez le lancer par une action de Magie sans dépenser d'emplacement de sort.\n\nLorsque vous lancez ce sort, choisissez une forme normale de familier ou l'une des formes spéciales suivantes : diablotin, pseudodragon, quasit, squelette, sphinx merveilleux, esprit follet ou serpent venimeux (voir son profil dans « Monstres »).\n\nDe plus, lorsque vous effectuez l'action Attaquer, vous pouvez renoncer à l'une de vos attaques pour permettre à votre familier d'en faire une avec sa Réaction."
+      },
+      "pact_of_the_tome": {
+        "name": "Pacte du grimoire",
+        "description": "En assemblant des fils d'ombre, vous conjurez un livre dans votre main à la fin d'un Repos court ou long. Ce Livre des Ombres, dont vous déterminez l'apparence, renferme une magie occulte à laquelle vous seul pouvez accéder et vous accorde les avantages ci-dessous. Le livre disparaît si vous en conjurez un autre grâce à cette aptitude ou si vous mourez.\n\nTours de magie et rituels. Quand le livre apparaît, choisissez trois tours de magie et deux sorts de niveau 1 portant l'étiquette Rituel. Ils peuvent provenir de la liste de sorts de n'importe quelle classe, mais vous ne devez pas déjà les avoir préparés. Tant que vous portez le livre, les sorts choisis sont préparés et comptent pour vous comme des sorts d'occultiste.\n\nFocaliseur de sort. Vous pouvez utiliser le livre comme focaliseur de sort."
+      },
+      "repelling_blast": {
+        "name": "Décharge repoussante",
+        "description": "Choisissez un de vos tours de magie d'occultiste connus qui nécessite un jet d'attaque. Quand vous touchez avec lui une créature de taille G ou inférieure, vous pouvez la repousser jusqu'à 10 pieds directement loin de vous."
+      },
+      "thirsting_blade": {
+        "name": "Lame assoiffée",
+        "description": "Vous gagnez l'aptitude Attaque supplémentaire pour votre arme de pacte uniquement. Grâce à elle, vous pouvez attaquer deux fois avec cette arme au lieu d'une lorsque vous effectuez l'action Attaquer à votre tour."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visions des royaumes lointains",
+        "description": "Vous pouvez lancer Œil magique sans dépenser d'emplacement de sort."
+      },
+      "whispers_of_the_grave": {
+        "name": "Murmures de la tombe",
+        "description": "Vous pouvez lancer Communication avec les morts sans dépenser d'emplacement de sort."
+      },
+      "witch_sight": {
+        "name": "Vue de sorcière",
+        "description": "Vous disposez de la Vision véritable dans un rayon de 30 pieds."
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Force"
+            },
+            "dexterity": {
+              "name": "Dextérité"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Force"
+            },
+            "dexterity": {
+              "name": "Dextérité"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "Intelligence"
+            },
+            "wisdom": {
+              "name": "Sagesse"
+            },
+            "charisma": {
+              "name": "Charisme"
+            }
+          }
+        }
+      }
+    }
+  }
+}

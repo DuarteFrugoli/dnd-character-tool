@@ -1,0 +1,74 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "Cammino del Berserker",
+      "description": "Trasforma l'Ira in un'offensiva implacabile. Gli attacchi avventati possono aggiungere danni da Frenesia; i privilegi successivi rafforzano la tua determinazione, ti permettono di contrattaccare e terrorizzare i nemici."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "Collegio della Sapienza",
+      "description": "Raccogli conoscenze da molte tradizioni. Ottieni competenze aggiuntive, ostacola i nemici con Parole Taglienti e scopri incantesimi al di fuori della lista del Bardo."
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "name": "Dominio della Vita",
+      "description": "Incanala il potere divino per proteggere e ripristinare la vita. Il dominio fornisce incantesimi curativi, migliora le cure e aiuta a preservare gli alleati in pericolo."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Circolo della Terra",
+      "description": "Attingi magia da un paesaggio scelto. Cambia la tua terra dopo un Riposo Lungo per ottenere gli incantesimi del relativo circolo; in seguito ottieni protezione e rifugio legati alla natura."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Campione",
+      "description": "Persegui l'eccellenza fisica in combattimento. Amplia la probabilità di colpo critico e migliora le tue capacità atletiche, le opzioni di Stile di Combattimento e la resistenza."
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "name": "Guerriero della Mano Aperta",
+      "description": "Padroneggia il combattimento senz'armi. La tua Raffica di Colpi può ostacolare i nemici; i privilegi successivi migliorano recupero, mobilità e colpi mirati."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Giuramento di Devozione",
+      "description": "Difendi la giustizia e proteggi i vulnerabili. Potenzia un'arma con Incanalare Divinità e ottieni incantesimi del giuramento e un'aura protettiva."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Cacciatore",
+      "description": "Studia le prede marchiate e scegli tecniche di caccia. Scopri le difese di un bersaglio, adatta attacco e difesa e migliora i tuoi attacchi contro i nemici marchiati."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Ladro",
+      "description": "Eccelli nell'infiltrazione, nell'esplorazione e nell'uso dei tesori. Ottieni interazioni rapide con gli oggetti e maggiore mobilità; in seguito impari a sfruttare meglio gli oggetti magici."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "name": "Stregoneria Draconica",
+      "description": "Manifesta magia legata ai draghi. Ottieni resilienza draconica e incantesimi; in seguito sviluppi maggiore potere elementale e capacità draconiche."
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "name": "Patrono Immondo",
+      "description": "Attingi potere da un potente immondo dei Piani Inferiori. Ottieni incantesimi del patrono, vitalità temporanea, protezione e altri doni infernali."
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "name": "Invocatore",
+      "description": "Specializzati nella magia di invocazione. Modella gli incantesimi distruttivi per risparmiare gli alleati e aumenta i danni delle tue invocazioni."
+    }
+  }
+}

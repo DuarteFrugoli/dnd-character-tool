@@ -1,0 +1,56 @@
+{
+  "Acrobatics": {
+    "name": "杂技"
+  },
+  "Animal Handling": {
+    "name": "驯兽"
+  },
+  "Arcana": {
+    "name": "奥秘"
+  },
+  "Athletics": {
+    "name": "运动"
+  },
+  "Deception": {
+    "name": "欺瞒"
+  },
+  "History": {
+    "name": "历史"
+  },
+  "Insight": {
+    "name": "洞悉"
+  },
+  "Intimidation": {
+    "name": "威吓"
+  },
+  "Investigation": {
+    "name": "调查"
+  },
+  "Medicine": {
+    "name": "医药"
+  },
+  "Nature": {
+    "name": "自然"
+  },
+  "Perception": {
+    "name": "察觉"
+  },
+  "Performance": {
+    "name": "表演"
+  },
+  "Persuasion": {
+    "name": "游说"
+  },
+  "Religion": {
+    "name": "宗教"
+  },
+  "Sleight of Hand": {
+    "name": "巧手"
+  },
+  "Stealth": {
+    "name": "隐匿"
+  },
+  "Survival": {
+    "name": "求生"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "Acolyte": {
+    "name": "수습 사제"
+  },
+  "Criminal": {
+    "name": "범죄자"
+  },
+  "Sage": {
+    "name": "현자"
+  },
+  "Soldier": {
+    "name": "군인"
+  }
+}

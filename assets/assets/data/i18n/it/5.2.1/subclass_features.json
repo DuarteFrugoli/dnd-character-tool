@@ -1,0 +1,282 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "Frenzy": {
+        "name": "Frenesia",
+        "description": "Durante l'Ira, se usi Attacco Irruento, il primo bersaglio colpito nel tuo turno con un attacco basato su Forza subisce danni extra pari a un numero di d6 uguale al tuo bonus ai danni da Ira. Il tipo è quello dell'attacco."
+      },
+      "Mindless Rage": {
+        "name": "Ira Inconsapevole",
+        "description": "Durante l'Ira sei immune ad Affascinato e Spaventato. Entrare in Ira termina entrambe queste condizioni su di te."
+      },
+      "Retaliation": {
+        "name": "Ritorsione",
+        "description": "Quando una creatura entro 5 piedi ti infligge danni, puoi usare la Reazione per effettuare contro di essa un attacco da mischia con un'arma o un Colpo Senz'Armi."
+      },
+      "Intimidating Presence": {
+        "name": "Presenza Intimidatoria",
+        "description": "Con un'Azione Bonus, le creature scelte da te in un'Emanazione di 30 piedi effettuano un tiro salvezza su Saggezza (CD 8 + modificatore di Forza + Bonus di Competenza) o sono Spaventate per 1 minuto; ripetono il tiro alla fine di ogni turno. Una volta per Riposo Lungo, oppure spendi un uso di Ira per recuperare il privilegio."
+      }
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "Bonus Proficiencies": {
+        "name": "Competenze Aggiuntive",
+        "description": "Ottieni competenza in tre abilità a tua scelta."
+      },
+      "Cutting Words": {
+        "name": "Parole Taglienti",
+        "description": "Quando una creatura visibile entro 60 piedi tira danni o supera una prova di caratteristica o un tiro per colpire, usa la Reazione e un'Ispirazione Bardica. Sottrai il risultato del tuo dado di Ispirazione Bardica dal tiro, potendo trasformare un successo in fallimento."
+      },
+      "Magical Discoveries": {
+        "name": "Scoperte Magiche",
+        "description": "Scegli due trucchetti o incantesimi dalle liste di Chierico, Druido o Mago, di livelli che puoi lanciare. Sono sempre preparati. Ogni volta che ottieni un livello da Bardo puoi sostituirne uno con un altro idoneo."
+      },
+      "Peerless Skill": {
+        "name": "Abilità Ineguagliabile",
+        "description": "Quando fallisci una prova di caratteristica o un tiro per colpire, spendi Ispirazione Bardica e aggiungi il dado al d20, potenzialmente riuscendo. Se fallisci comunque, l'uso non viene consumato."
+      }
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "Disciple of Life": {
+        "name": "Discepolo della Vita",
+        "description": "Quando un incantesimo lanciato usando uno slot ripristina Punti Ferita, il bersaglio recupera 2 + livello dello slot Punti Ferita aggiuntivi nel turno del lancio."
+      },
+      "Life Domain Spells": {
+        "name": "Incantesimi del Dominio della Vita",
+        "description": "Sempre preparati: livello 3 Aiuto, Benedizione, Cura Ferite, Ristorare Inferiore; livello 5 Parola Guaritrice di Massa, Rinascita; livello 7 Aura di Vita, Interdizione alla Morte; livello 9 Ristorare Superiore, Cura Ferite di Massa."
+      },
+      "Preserve Life": {
+        "name": "Preservare la Vita",
+        "description": "Con l'azione Magia, spendi Incanalare Divinità per ripristinare Punti Ferita totali pari a 5 volte il tuo livello da Chierico, divisi tra creature Ferite entro 30 piedi (incluso te). Nessuna può essere curata oltre metà dei suoi Punti Ferita massimi in questo modo."
+      },
+      "Blessed Healer": {
+        "name": "Guaritore Benedetto",
+        "description": "Dopo aver lanciato con uno slot un incantesimo che ripristina Punti Ferita a un'altra creatura, recuperi 2 + livello dello slot Punti Ferita."
+      },
+      "Supreme Healing": {
+        "name": "Guarigione Suprema",
+        "description": "Quando un incantesimo o Incanalare Divinità richiederebbe tiri di dadi per guarire, usa il risultato massimo per ogni dado."
+      }
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "Circle of the Land Spells": {
+        "name": "Incantesimi del Circolo della Terra",
+        "description": "Dopo ogni Riposo Lungo scegli terra Arida, Polare, Temperata o Tropicale; i suoi incantesimi del tuo livello o inferiore sono sempre preparati. Arida: livello 3 Sfocatura, Mani Brucianti, Dardo di Fuoco; 5 Palla di Fuoco; 7 Inaridire; 9 Muro di Pietra. Polare: 3 Nube di Nebbia, Blocca Persone, Raggio di Gelo; 5 Tempesta di Nevischio; 7 Tempesta di Ghiaccio; 9 Cono di Freddo. Temperata: 3 Passo Velato, Stretta Folgorante, Sonno; 5 Fulmine; 7 Libertà di Movimento; 9 Trasporto Vegetale. Tropicale: 3 Spruzzo Acido, Raggio di Infermità, Ragnatela; 5 Nube Maleodorante; 7 Metamorfosi; 9 Piaga degli Insetti."
+      },
+      "Land's Aid": {
+        "name": "Aiuto della Terra",
+        "description": "Con l'azione Magia, spendi Forma Selvatica per creare una Sfera di raggio 10 piedi entro 60 piedi. Le creature scelte lì effettuano un tiro salvezza su Costituzione: subiscono 2d6 danni Necrotici se falliscono o metà se riescono; una creatura lì recupera anche 2d6 Punti Ferita. Entrambi aumentano a 3d6 al livello 10 da Druido e 4d6 al 14."
+      },
+      "Natural Recovery": {
+        "name": "Recupero Naturale",
+        "description": "Una volta per Riposo Lungo lancia senza slot un incantesimo del Circolo preparato di livello 1 o superiore. Inoltre una volta per Riposo Lungo, dopo un Riposo Breve, recupera slot spesi i cui livelli sommati non superano metà del tuo livello da Druido (arrotondato per eccesso); nessuno può essere di livello 6 o superiore."
+      },
+      "Nature's Ward": {
+        "name": "Protezione della Natura",
+        "description": "Sei immune alla condizione Avvelenato e hai Resistenza a un tipo di danno in base alla terra attuale: Arida Fuoco, Polare Freddo, Temperata Fulmine, Tropicale Veleno."
+      },
+      "Nature's Sanctuary": {
+        "name": "Santuario della Natura",
+        "description": "Con l'azione Magia, spendi Forma Selvatica per creare a terra un Cubo di 15 piedi entro 120 piedi per 1 minuto; termina se diventi Incapacitato o muori. Tu e gli alleati al suo interno avete Mezza Copertura; gli alleati ottengono anche la Resistenza di Protezione della Natura. Con un'Azione Bonus muovi il Cubo fino a 60 piedi su terreno entro 120 piedi."
+      }
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "Improved Critical": {
+        "name": "Critico Migliorato",
+        "description": "I tiri per colpire con armi e Colpi Senz'Armi ottengono un colpo critico con 19 o 20 sul d20."
+      },
+      "Remarkable Athlete": {
+        "name": "Atleta Straordinario",
+        "description": "Hai Vantaggio ai tiri di Iniziativa e alle prove di Forza (Atletica). Dopo un colpo critico puoi muoverti fino a metà della tua Velocità senza provocare attacchi di opportunità."
+      },
+      "Additional Fighting Style": {
+        "name": "Stile di Combattimento Aggiuntivo",
+        "description": "Ottieni un altro talento di Stile di Combattimento a tua scelta."
+      },
+      "Heroic Warrior": {
+        "name": "Guerriero Eroico",
+        "description": "In combattimento, se inizi il tuo turno senza Ispirazione Eroica, puoi concedertela."
+      },
+      "Superior Critical": {
+        "name": "Critico Superiore",
+        "description": "I tuoi attacchi con armi e Colpi Senz'Armi ottengono ora un colpo critico con 18-20 sul d20."
+      },
+      "Survivor": {
+        "name": "Sopravvissuto",
+        "description": "Hai Vantaggio ai tiri salvezza contro morte; 18-20 conta come 20. All'inizio del tuo turno, se sei Ferito e hai almeno 1 Punto Ferita, recuperi 5 + modificatore di Costituzione Punti Ferita."
+      }
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "Open Hand Technique": {
+        "name": "Tecnica della Mano Aperta",
+        "description": "Quando un attacco di Raffica di Colpi colpisce, scegli: impedire al bersaglio attacchi di opportunità fino al suo prossimo turno; spingerlo fino a 15 piedi se fallisce un tiro salvezza su Forza; oppure farlo cadere Prono se fallisce uno su Destrezza."
+      },
+      "Wholeness of Body": {
+        "name": "Integrità del Corpo",
+        "description": "Con un'Azione Bonus recuperi Punti Ferita pari a un tiro del dado di Arti Marziali + modificatore di Saggezza (minimo 1). Usi pari al tuo modificatore di Saggezza (minimo uno) per Riposo Lungo."
+      },
+      "Fleet Step": {
+        "name": "Passo Rapido",
+        "description": "Quando usi un'Azione Bonus diversa da Passo del Vento puoi usare anche Passo del Vento subito dopo."
+      },
+      "Quivering Palm": {
+        "name": "Palmo Tremante",
+        "description": "Quando un Colpo Senz'Armi colpisce, spendi 4 Punti Focus per imporre vibrazioni che durano giorni pari al tuo livello da Monaco. Usa un'azione o rinuncia a un attacco dell'azione Attaccare per terminarle sullo stesso piano; il bersaglio effettua un tiro salvezza su Costituzione, subendo 10d12 danni da Forza se fallisce o metà se riesce. Un solo bersaglio alla volta."
+      }
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "Oath of Devotion Spells": {
+        "name": "Incantesimi del Giuramento di Devozione",
+        "description": "Sempre preparati: livello 3 Protezione dal Bene e dal Male, Scudo della Fede; livello 5 Aiuto, Zona di Verità; livello 9 Faro di Speranza, Dissolvi Magie; livello 13 Libertà di Movimento, Guardiano della Fede; livello 17 Comunione, Colpo Infuocato."
+      },
+      "Sacred Weapon": {
+        "name": "Arma Sacra",
+        "description": "Quando esegui l'azione Attaccare, spendi Incanalare Divinità per potenziare per 10 minuti un'arma da mischia che impugni. Aggiungi il tuo modificatore di Carisma (minimo +1) ai tiri per colpire; ogni colpo può infliggere danni normali o Radiosi. Diffonde Luce Intensa per 20 piedi e Luce Fioca per altri 20; termina se smetti di portarla."
+      },
+      "Aura of Devotion": {
+        "name": "Aura di Devozione",
+        "description": "Tu e gli alleati nella tua Aura di Protezione siete immuni ad Affascinato; la condizione non influenza un alleato già Affascinato finché resta nell'aura."
+      },
+      "Smite of Protection": {
+        "name": "Punizione Protettiva",
+        "description": "Ogni volta che lanci Punizione Divina, tu e gli alleati nella tua Aura di Protezione ottenete Mezza Copertura fino all'inizio del tuo prossimo turno."
+      },
+      "Holy Nimbus": {
+        "name": "Nimbo Sacro",
+        "description": "Con un'Azione Bonus potenzia l'Aura di Protezione per 10 minuti. Hai Vantaggio ai tiri salvezza imposti da Immondi o Non Morti; i nemici che iniziano il turno nell'aura subiscono danni Radiosi pari a modificatore di Carisma + Bonus di Competenza; la Luce Intensa è luce solare. Una volta per Riposo Lungo o spendi uno slot di livello 5 per recuperare l'uso."
+      }
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "Hunter's Lore": {
+        "name": "Sapienza del Cacciatore",
+        "description": "Finché una creatura è marchiata dal tuo Marchio del Cacciatore, sai se ha Immunità, Resistenze o Vulnerabilità ai danni e quali siano."
+      },
+      "Hunter's Prey": {
+        "name": "Preda del Cacciatore",
+        "description": "Scegli un'opzione modificabile dopo Riposo Breve o Lungo. Uccisore di Colossi: una volta per turno, un colpo con arma contro una creatura che ha perso Punti Ferita infligge +1d8 danni. Spezzaorde: una volta nel tuo turno quando attacchi con arma, attacca una diversa creatura entro 5 piedi dal bersaglio originale, a portata e non ancora attaccata in quel turno."
+      },
+      "Defensive Tactics": {
+        "name": "Tattiche Difensive",
+        "description": "Scegli un'opzione modificabile dopo Riposo Breve o Lungo. Sfuggire all'Orda: gli attacchi di opportunità contro di te hanno Svantaggio. Difesa da Attacchi Multipli: dopo che una creatura ti colpisce, i suoi altri tiri per colpire contro di te nel turno hanno Svantaggio."
+      },
+      "Superior Hunter's Prey": {
+        "name": "Preda Superiore del Cacciatore",
+        "description": "Una volta per turno quando danneggi una creatura marchiata da Marchio del Cacciatore, infliggi i danni extra dell'incantesimo a un'altra creatura visibile entro 30 piedi da quella marchiata."
+      },
+      "Superior Hunter's Defense": {
+        "name": "Difesa Superiore del Cacciatore",
+        "description": "Quando subisci danni, usa la Reazione per ottenere Resistenza a questi e altri danni dello stesso tipo fino alla fine del turno attuale."
+      }
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "Fast Hands": {
+        "name": "Mani Veloci",
+        "description": "Con un'Azione Bonus effettua Destrezza (Rapidità di Mano) per scassinare una serratura o disinnescare una trappola con Arnesi da Scasso oppure borseggiare; usa l'azione Utilizzare; o l'azione Magia per attivare un oggetto magico che la richiede."
+      },
+      "Second-Story Work": {
+        "name": "Lavoro al Secondo Piano",
+        "description": "La tua Velocità di Scalare è pari alla tua Velocità e puoi usare Destrezza invece di Forza per la distanza di salto."
+      },
+      "Supreme Sneak": {
+        "name": "Furtività Suprema",
+        "description": "Ottieni Attacco Furtivo come opzione di Colpo Astuto (costo 1d6). Quando attacchi mentre sei Invisibile grazie a Nascondersi, resti tale se termini il turno dietro Copertura per Tre Quarti o Totale."
+      },
+      "Use Magic Device": {
+        "name": "Usare Oggetti Magici",
+        "description": "Puoi entrare in sintonia con quattro oggetti magici. Se spendi cariche, tira 1d6: con 6 non ne spendi. Puoi usare qualsiasi Pergamena Magica con Intelligenza come caratteristica da incantatore; per un incantesimo oltre livello 1, supera prima Intelligenza (Arcano) CD 10 + livello dell'incantesimo, altrimenti la pergamena si disintegra."
+      },
+      "Thief's Reflexes": {
+        "name": "Riflessi del Ladro",
+        "description": "Agisci due volte nel primo round di combattimento, alla tua normale Iniziativa e alla tua Iniziativa meno 10."
+      }
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "Draconic Resilience": {
+        "name": "Resilienza Draconica",
+        "description": "Il tuo massimo di Punti Ferita aumenta di 3 al livello 3 da Stregone e di 1 a ogni livello successivo da Stregone. Senza armatura, la tua Classe Armatura base è 10 + modificatore di Destrezza + modificatore di Carisma."
+      },
+      "Draconic Spells": {
+        "name": "Incantesimi Draconici",
+        "description": "Sempre preparati: livello 3 Alterare Sé Stessi, Globo Cromatico, Comando, Soffio del Drago; livello 5 Paura, Volare; livello 7 Occhio Arcano, Charme sui Mostri; livello 9 Conoscenza delle Leggende, Evoca Drago."
+      },
+      "Elemental Affinity": {
+        "name": "Affinità Elementale",
+        "description": "Scegli Acido, Freddo, Fuoco, Fulmine o Veleno. Hai Resistenza a quel tipo di danno e puoi aggiungere il tuo modificatore di Carisma a un tiro di danno di un incantesimo di quel tipo."
+      },
+      "Dragon Wings": {
+        "name": "Ali di Drago",
+        "description": "Con un'Azione Bonus ottieni ali e Velocità di Volare di 60 piedi per 1 ora o finché non le congedi. Una volta per Riposo Lungo, o spendi 3 Punti Stregoneria per recuperare l'uso."
+      },
+      "Dragon Companion": {
+        "name": "Compagno Drago",
+        "description": "Lancia Evoca Drago senza componente Materiale e una volta senza slot per Riposo Lungo. Quando lo lanci puoi eliminare la Concentrazione; quel lancio dura 1 minuto."
+      }
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "Dark One's Blessing": {
+        "name": "Benedizione dell'Oscuro",
+        "description": "Quando riduci un nemico a 0 Punti Ferita ottieni Punti Ferita Temporanei pari a modificatore di Carisma + livello da Warlock (minimo 1). Li ottieni anche se qualcun altro porta a 0 un nemico entro 10 piedi da te."
+      },
+      "Fiend Spells": {
+        "name": "Incantesimi dell'Immondo",
+        "description": "Sempre preparati: livello 3 Mani Brucianti, Comando, Raggio Rovente, Suggestione; livello 5 Palla di Fuoco, Nube Maleodorante; livello 7 Scudo di Fuoco, Muro di Fuoco; livello 9 Costrizione, Piaga degli Insetti."
+      },
+      "Dark One's Own Luck": {
+        "name": "Fortuna dell'Oscuro",
+        "description": "Dopo aver visto una prova di caratteristica o un tiro salvezza, ma prima dei suoi effetti, aggiungi 1d10. Usi pari al modificatore di Carisma (minimo uno) per Riposo Lungo, non più di una volta per tiro."
+      },
+      "Fiendish Resilience": {
+        "name": "Resilienza Immondiaca",
+        "description": "Dopo un Riposo Breve o Lungo scegli un tipo di danno tranne Forza. Hai Resistenza a esso finché non ne scegli un altro con questo privilegio."
+      },
+      "Hurl Through Hell": {
+        "name": "Scagliare all'Inferno",
+        "description": "Una volta per turno, dopo aver colpito una creatura con un tiro per colpire, essa effettua un tiro salvezza su Carisma contro la CD dei tuoi incantesimi. Se fallisce, sparisce, è Incapacitata fino alla fine del tuo prossimo turno e torna nello spazio originario o libero più vicino; se non è un Immondo subisce 8d10 danni Psichici. Una volta per Riposo Lungo o spendi uno slot di Magia del Patto per recuperare l'uso."
+      }
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "Evocation Savant": {
+        "name": "Sapiente di Invocazione",
+        "description": "Aggiungi gratis al libro degli incantesimi due incantesimi di Invocazione da Mago di livello 1 o 2. Ogni volta che ottieni accesso a un nuovo livello di slot in questa classe, aggiungi gratis un incantesimo di Invocazione da Mago di livello che puoi lanciare."
+      },
+      "Potent Cantrip": {
+        "name": "Trucchetto Potente",
+        "description": "Quando un tuo trucchetto dannoso manca il tiro per colpire o il bersaglio supera il tiro salvezza, subisce comunque metà dei danni del trucchetto ma nessun altro effetto."
+      },
+      "Sculpt Spells": {
+        "name": "Scolpire Incantesimi",
+        "description": "Quando lanci un incantesimo di Invocazione che influenza creature visibili, scegli fino a 1 + livello dell'incantesimo tra loro. Superano automaticamente i tiri salvezza e non subiscono danni se normalmente il successo dimezzerebbe i danni."
+      },
+      "Empowered Evocation": {
+        "name": "Invocazione Potenziata",
+        "description": "Aggiungi il tuo modificatore di Intelligenza a un tiro di danno di un incantesimo di Invocazione da Mago che lanci."
+      },
+      "Overchannel": {
+        "name": "Incanalare il Potere",
+        "description": "Quando lanci un incantesimo dannoso da Mago con uno slot di livello 1-5, massimizzi i danni nel turno del lancio. Il primo uso dopo Riposo Lungo è sicuro; gli altri ti infliggono 2d12 danni Necrotici per livello dello slot, aumentando di 1d12 per livello per ogni ulteriore uso prima del prossimo Riposo Lungo. Questi danni ignorano Resistenza e Immunità."
+      }
+    }
+  }
+}

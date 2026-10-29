@@ -1,0 +1,114 @@
+[
+  {
+    "id": "dragonborn",
+    "name": "Dragonborn",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Medium"],
+    "speed": 30,
+    "traits": ["Draconic Ancestry", "Breath Weapon", "Damage Resistance", "Darkvision", "Draconic Flight"],
+    "ancestryOptions": [
+      {"id": "black", "damageType": "acid"},
+      {"id": "blue", "damageType": "lightning"},
+      {"id": "brass", "damageType": "fire"},
+      {"id": "bronze", "damageType": "lightning"},
+      {"id": "copper", "damageType": "acid"},
+      {"id": "gold", "damageType": "fire"},
+      {"id": "green", "damageType": "poison"},
+      {"id": "red", "damageType": "fire"},
+      {"id": "silver", "damageType": "cold"},
+      {"id": "white", "damageType": "cold"}
+    ]
+  },
+  {
+    "id": "dwarf",
+    "name": "Dwarf",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Medium"],
+    "speed": 30,
+    "traits": ["Darkvision", "Dwarven Resilience", "Dwarven Toughness", "Stonecunning"]
+  },
+  {
+    "id": "elf",
+    "name": "Elf",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Medium"],
+    "speed": 30,
+    "traits": ["Darkvision", "Elven Lineage", "Fey Ancestry", "Keen Senses", "Trance"],
+    "lineages": [
+      {"id": "drow", "name": "Drow", "darkvision": 120, "cantrip": "Dancing Lights", "spellsByCharacterLevel": {"3": "Faerie Fire", "5": "Darkness"}},
+      {"id": "high_elf", "name": "High Elf", "cantrip": "Prestidigitation", "cantripReplacement": "wizard_cantrip_on_long_rest", "spellsByCharacterLevel": {"3": "Detect Magic", "5": "Misty Step"}},
+      {"id": "wood_elf", "name": "Wood Elf", "speed": 35, "cantrip": "Druidcraft", "spellsByCharacterLevel": {"3": "Longstrider", "5": "Pass without Trace"}}
+    ],
+    "skillChoice": ["Insight", "Perception", "Survival"],
+    "lineageSpellcastingAbilityOptions": ["intelligence", "wisdom", "charisma"]
+  },
+  {
+    "id": "gnome",
+    "name": "Gnome",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Small"],
+    "speed": 30,
+    "traits": ["Darkvision", "Gnomish Cunning", "Gnomish Lineage"],
+    "lineages": [
+      {"id": "forest_gnome", "name": "Forest Gnome", "cantrips": ["Minor Illusion"], "preparedSpells": ["Speak with Animals"], "trait": "Forest Gnome Speak with Animals"},
+      {"id": "rock_gnome", "name": "Rock Gnome", "cantrips": ["Mending", "Prestidigitation"], "trait": "Clockwork Device"}
+    ],
+    "lineageSpellcastingAbilityOptions": ["intelligence", "wisdom", "charisma"]
+  },
+  {
+    "id": "goliath",
+    "name": "Goliath",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Medium"],
+    "speed": 35,
+    "traits": ["Giant Ancestry", "Large Form", "Powerful Build"],
+    "ancestryOptions": [
+      {"id": "cloud", "name": "Cloud's Jaunt"},
+      {"id": "fire", "name": "Fire's Burn"},
+      {"id": "frost", "name": "Frost's Chill"},
+      {"id": "hill", "name": "Hill's Tumble"},
+      {"id": "stone", "name": "Stone's Endurance"},
+      {"id": "storm", "name": "Storm's Thunder"}
+    ]
+  },
+  {
+    "id": "halfling",
+    "name": "Halfling",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Small"],
+    "speed": 30,
+    "traits": ["Brave", "Halfling Nimbleness", "Luck", "Naturally Stealthy"]
+  },
+  {
+    "id": "human",
+    "name": "Human",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Small", "Medium"],
+    "speed": 30,
+    "traits": ["Resourceful", "Skillful", "Versatile"],
+    "skillChoices": 1,
+    "originFeatChoices": 1
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Medium"],
+    "speed": 30,
+    "traits": ["Adrenaline Rush", "Darkvision", "Relentless Endurance"]
+  },
+  {
+    "id": "tiefling",
+    "name": "Tiefling",
+    "creatureType": "Humanoid",
+    "sizeOptions": ["Small", "Medium"],
+    "speed": 30,
+    "traits": ["Darkvision", "Fiendish Legacy", "Otherworldly Presence"],
+    "lineages": [
+      {"id": "abyssal", "name": "Abyssal", "resistance": "poison", "cantrip": "Poison Spray", "spellsByCharacterLevel": {"3": "Ray of Sickness", "5": "Hold Person"}},
+      {"id": "chthonic", "name": "Chthonic", "resistance": "necrotic", "cantrip": "Chill Touch", "spellsByCharacterLevel": {"3": "False Life", "5": "Ray of Enfeeblement"}},
+      {"id": "infernal", "name": "Infernal", "resistance": "fire", "cantrip": "Fire Bolt", "spellsByCharacterLevel": {"3": "Hellish Rebuke", "5": "Darkness"}}
+    ],
+    "lineageSpellcastingAbilityOptions": ["intelligence", "wisdom", "charisma"]
+  }
+]

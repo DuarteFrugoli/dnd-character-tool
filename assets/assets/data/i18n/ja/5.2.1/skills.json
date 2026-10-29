@@ -1,0 +1,56 @@
+{
+  "Acrobatics": {
+    "name": "軽業"
+  },
+  "Animal Handling": {
+    "name": "動物使い"
+  },
+  "Arcana": {
+    "name": "魔法学"
+  },
+  "Athletics": {
+    "name": "運動"
+  },
+  "Deception": {
+    "name": "ペテン"
+  },
+  "History": {
+    "name": "歴史"
+  },
+  "Insight": {
+    "name": "看破"
+  },
+  "Intimidation": {
+    "name": "威圧"
+  },
+  "Investigation": {
+    "name": "捜査"
+  },
+  "Medicine": {
+    "name": "医術"
+  },
+  "Nature": {
+    "name": "自然"
+  },
+  "Perception": {
+    "name": "知覚"
+  },
+  "Performance": {
+    "name": "芸能"
+  },
+  "Persuasion": {
+    "name": "説得"
+  },
+  "Religion": {
+    "name": "宗教"
+  },
+  "Sleight of Hand": {
+    "name": "手先の早業"
+  },
+  "Stealth": {
+    "name": "隠密"
+  },
+  "Survival": {
+    "name": "生存"
+  }
+}

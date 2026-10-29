@@ -1,0 +1,929 @@
+{
+  "optionSources": {
+    "magic_initiate_spell_lists": {
+      "cleric": {
+        "name": "Kleriker",
+        "description": "Wähle zwei Kleriker-Zaubertricks und einen Klerikerzauber des 1. Grades."
+      },
+      "druid": {
+        "name": "Druide",
+        "description": "Wähle zwei Druiden-Zaubertricks und einen Druidenzauber des 1. Grades."
+      },
+      "wizard": {
+        "name": "Magier",
+        "description": "Wähle zwei Magier-Zaubertricks und einen Magierzauber des 1. Grades."
+      }
+    },
+    "magic_initiate_abilities": {
+      "intelligence": {
+        "name": "Intelligenz",
+        "description": "Verwende Intelligenz als Zauberattribut für diese Zauber."
+      },
+      "wisdom": {
+        "name": "Weisheit",
+        "description": "Verwende Weisheit als Zauberattribut für diese Zauber."
+      },
+      "charisma": {
+        "name": "Charisma",
+        "description": "Verwende Charisma als Zauberattribut für diese Zauber."
+      }
+    },
+    "fighting_styles_2024": {
+      "archery": {
+        "name": "Bogenschießen",
+        "description": "Du erhältst einen Bonus von +2 auf Angriffswürfe mit Fernkampfwaffen."
+      },
+      "defense": {
+        "name": "Verteidigung",
+        "description": "Du erhältst +1 auf deine Rüstungsklasse, solange du leichte, mittelschwere oder schwere Rüstung trägst."
+      },
+      "great_weapon_fighting": {
+        "name": "Kampf mit großen Waffen",
+        "description": "Behandle Ergebnisse von 1 oder 2 auf Schadenswürfeln als 3, wenn du eine zweihändige oder vielseitige Nahkampfwaffe mit beiden Händen führst."
+      },
+      "two_weapon_fighting": {
+        "name": "Kampf mit zwei Waffen",
+        "description": "Addiere deinen Attributsmodifikator zum Schaden des zusätzlichen Angriffs durch die Eigenschaft Leicht."
+      }
+    },
+    "paladin_fighting_styles_2024": {
+      "archery": {
+        "name": "Bogenschießen",
+        "description": "Du erhältst einen Bonus von +2 auf Angriffswürfe mit Fernkampfwaffen."
+      },
+      "defense": {
+        "name": "Verteidigung",
+        "description": "Du erhältst +1 auf deine Rüstungsklasse, solange du leichte, mittelschwere oder schwere Rüstung trägst."
+      },
+      "great_weapon_fighting": {
+        "name": "Kampf mit großen Waffen",
+        "description": "Behandle Ergebnisse von 1 oder 2 auf Schadenswürfeln als 3, wenn du eine zweihändige oder vielseitige Nahkampfwaffe mit beiden Händen führst."
+      },
+      "two_weapon_fighting": {
+        "name": "Kampf mit zwei Waffen",
+        "description": "Addiere deinen Attributsmodifikator zum Schaden des zusätzlichen Angriffs durch die Eigenschaft Leicht."
+      },
+      "blessed_warrior": {
+        "name": "Gesegneter Krieger",
+        "description": "Du lernst zwei Kleriker-Zaubertricks, die für dich als Paladinzauber gelten."
+      }
+    },
+    "ranger_fighting_styles_2024": {
+      "archery": {
+        "name": "Bogenschießen",
+        "description": "Du erhältst einen Bonus von +2 auf Angriffswürfe mit Fernkampfwaffen."
+      },
+      "defense": {
+        "name": "Verteidigung",
+        "description": "Du erhältst +1 auf deine Rüstungsklasse, solange du leichte, mittelschwere oder schwere Rüstung trägst."
+      },
+      "great_weapon_fighting": {
+        "name": "Kampf mit großen Waffen",
+        "description": "Behandle Ergebnisse von 1 oder 2 auf Schadenswürfeln als 3, wenn du eine zweihändige oder vielseitige Nahkampfwaffe mit beiden Händen führst."
+      },
+      "two_weapon_fighting": {
+        "name": "Kampf mit zwei Waffen",
+        "description": "Addiere deinen Attributsmodifikator zum Schaden des zusätzlichen Angriffs durch die Eigenschaft Leicht."
+      },
+      "druidic_warrior": {
+        "name": "Druidischer Krieger",
+        "description": "Du lernst zwei Druiden-Zaubertricks, die für dich als Waldläuferzauber gelten."
+      }
+    },
+    "divine_orders": {
+      "protector": {
+        "name": "Beschützer",
+        "description": "Du erhältst Umgang mit Kriegswaffen und Ausbildung in schwerer Rüstung."
+      },
+      "thaumaturge": {
+        "name": "Thaumaturg",
+        "description": "Du lernst einen weiteren Kleriker-Zaubertrick und addierst deinen Weisheitsmodifikator (mindestens +1) zu Würfen auf Arkane Kunde oder Religion."
+      }
+    },
+    "primal_orders": {
+      "magician": {
+        "name": "Magier",
+        "description": "Du lernst einen weiteren Druiden-Zaubertrick und addierst deinen Weisheitsmodifikator (mindestens +1) zu Würfen auf Arkane Kunde oder Naturkunde."
+      },
+      "warden": {
+        "name": "Wächter",
+        "description": "Du erhältst Umgang mit Kriegswaffen und Ausbildung in mittelschwerer Rüstung."
+      }
+    },
+    "cleric_blessed_strikes": {
+      "divine_strike": {
+        "name": "Göttlicher Schlag",
+        "description": "Einmal pro Zug verursachst du mit einem Waffentreffer zusätzlich 1d8 gleißenden oder nekrotischen Schaden; ab Klerikerstufe 14 sind es 2d8."
+      },
+      "potent_spellcasting": {
+        "name": "Mächtige Zauberei",
+        "description": "Addiere deinen Weisheitsmodifikator zum Schaden deiner Kleriker-Zaubertricks; ab Stufe 14 kann ein schadenverursachender Zaubertrick außerdem temporäre Trefferpunkte gewähren."
+      }
+    },
+    "druid_elemental_fury": {
+      "potent_spellcasting": {
+        "name": "Mächtige Zauberei",
+        "description": "Addiere deinen Weisheitsmodifikator zum Schaden deiner Druiden-Zaubertricks; auf Druidenstufe 15 erhöht sich ihre Reichweite."
+      },
+      "primal_strike": {
+        "name": "Ursprünglicher Schlag",
+        "description": "Einmal pro Zug verursachst du mit einem Waffen- oder Tiergestalt-Treffer zusätzlich 1d8 Kälte-, Feuer-, Blitz- oder Schallschaden; auf Stufe 15 sind es 2d8."
+      }
+    },
+    "barbarian_primal_skills": {
+      "animal_handling": {
+        "name": "Mit Tieren umgehen"
+      },
+      "athletics": {
+        "name": "Athletik"
+      },
+      "intimidation": {
+        "name": "Einschüchterung"
+      },
+      "nature": {
+        "name": "Natur"
+      },
+      "perception": {
+        "name": "Wahrnehmung"
+      },
+      "survival": {
+        "name": "Überleben"
+      }
+    },
+    "wizard_scholar_skills": {
+      "arcana": {
+        "name": "Arkane Kunde"
+      },
+      "history": {
+        "name": "Geschichte"
+      },
+      "investigation": {
+        "name": "Nachforschungen"
+      },
+      "medicine": {
+        "name": "Medizin"
+      },
+      "nature": {
+        "name": "Natur"
+      },
+      "religion": {
+        "name": "Religion"
+      }
+    },
+    "metamagic_2024": {
+      "careful_spell": {
+        "name": "Vorsichtiger Zauber",
+        "description": "Verbrauche 1 Zaubereipunkt. Wähle bis zu so viele Kreaturen wie dein Charismamodifikator (mindestens eine); sie bestehen ihren Rettungswurf gegen den Zauber automatisch und erleiden keinen Schaden, falls ein Erfolg den Schaden normalerweise halbieren würde."
+      },
+      "distant_spell": {
+        "name": "Fernzauber",
+        "description": "Verbrauche 1 Zaubereipunkt, um die Reichweite eines Zaubers von mindestens 5 Fuß zu verdoppeln oder seine Berührungsreichweite auf 30 Fuß zu erhöhen."
+      },
+      "empowered_spell": {
+        "name": "Verstärkter Zauber",
+        "description": "Verbrauche 1 Zaubereipunkt, um bis zu so viele Schadenswürfel wie dein Charismamodifikator (mindestens einen) erneut zu würfeln; verwende die neuen Ergebnisse. Dies lässt sich mit einer weiteren Metamagie kombinieren."
+      },
+      "extended_spell": {
+        "name": "Verlängerter Zauber",
+        "description": "Verbrauche 1 Zaubereipunkt, um die Dauer eines Zaubers auf höchstens 24 Stunden zu verdoppeln und Vorteil auf Rettungswürfe zur Aufrechterhaltung deiner Konzentration auf ihn zu erhalten."
+      },
+      "heightened_spell": {
+        "name": "Erschwerter Zauber",
+        "description": "Verbrauche 2 Zaubereipunkte, damit ein Ziel Nachteil auf Rettungswürfe gegen den Zauber hat."
+      },
+      "quickened_spell": {
+        "name": "Beschleunigter Zauber",
+        "description": "Verbrauche 2 Zaubereipunkte, um einen Zauber mit einer Aktion als Bonusaktion zu wirken. Das ist nicht möglich, wenn du in diesem Zug bereits einen Zauber des 1. Grades oder höher gewirkt hast; danach kannst du ebenfalls keinen solchen Zauber wirken."
+      },
+      "seeking_spell": {
+        "name": "Zielsuchender Zauber",
+        "description": "Verbrauche 1 Zaubereipunkt, um einen fehlgeschlagenen Zauberangriff erneut zu würfeln; verwende das neue Ergebnis. Dies lässt sich mit einer weiteren Metamagie kombinieren."
+      },
+      "subtle_spell": {
+        "name": "Subtiler Zauber",
+        "description": "Verbrauche 1 Zaubereipunkt, um den Zauber ohne verbale, somatische oder nicht verbrauchte, kostenlose Materialkomponenten zu wirken."
+      },
+      "transmuted_spell": {
+        "name": "Transmutierter Zauber",
+        "description": "Verbrauche 1 Zaubereipunkt, um den Säure-, Kälte-, Feuer-, Blitz-, Gift- oder Schallschaden eines Zaubers in eine andere Schadensart dieser Liste umzuwandeln."
+      },
+      "twinned_spell": {
+        "name": "Zwillingszauber",
+        "description": "Verbrauche 1 Zaubereipunkt, um die effektive Stufe eines Zaubers, der beim Wirken auf höherem Grad eine weitere Kreatur als Ziel wählen kann, um eins zu erhöhen."
+      }
+    },
+    "land_terrains": {
+      "arid": {
+        "name": "Trocken"
+      },
+      "polar": {
+        "name": "Polar"
+      },
+      "temperate": {
+        "name": "Gemäßigt"
+      },
+      "tropical": {
+        "name": "Tropisch"
+      }
+    },
+    "hunter_prey": {
+      "colossus_slayer": {
+        "name": "Kolossjäger",
+        "description": "Einmal pro Zug verursacht ein Waffentreffer gegen eine Kreatur, der Trefferpunkte fehlen, zusätzlich 1d8 Schaden."
+      },
+      "horde_breaker": {
+        "name": "Hordenbrecher",
+        "description": "Einmal in deinem Zug greifst du mit deiner Waffe eine andere Kreatur in der Nähe an."
+      }
+    },
+    "hunter_defensive_tactics": {
+      "escape_the_horde": {
+        "name": "Der Horde entkommen",
+        "description": "Gelegenheitsangriffe gegen dich haben Nachteil."
+      },
+      "multiattack_defense": {
+        "name": "Verteidigung gegen Mehrfachangriffe",
+        "description": "Nachdem eine Kreatur dich getroffen hat, haben ihre übrigen Angriffswürfe gegen dich in diesem Zug Nachteil."
+      }
+    },
+    "draconic_damage_types": {
+      "acid": {
+        "name": "Säure"
+      },
+      "cold": {
+        "name": "Kälte"
+      },
+      "fire": {
+        "name": "Feuer"
+      },
+      "lightning": {
+        "name": "Blitz"
+      },
+      "poison": {
+        "name": "Gift"
+      }
+    },
+    "fiend_resistances": {
+      "acid": {
+        "name": "Säure"
+      },
+      "bludgeoning": {
+        "name": "Wucht"
+      },
+      "cold": {
+        "name": "Kälte"
+      },
+      "fire": {
+        "name": "Feuer"
+      },
+      "lightning": {
+        "name": "Blitz"
+      },
+      "necrotic": {
+        "name": "Nekrotisch"
+      },
+      "piercing": {
+        "name": "Stich"
+      },
+      "poison": {
+        "name": "Gift"
+      },
+      "psychic": {
+        "name": "Psychisch"
+      },
+      "radiant": {
+        "name": "Gleißend"
+      },
+      "slashing": {
+        "name": "Hieb"
+      },
+      "thunder": {
+        "name": "Schall"
+      }
+    },
+    "dragonborn_ancestries": {
+      "black": {
+        "name": "Schwarz",
+        "description": "Säure"
+      },
+      "blue": {
+        "name": "Blau",
+        "description": "Blitz"
+      },
+      "brass": {
+        "name": "Messing",
+        "description": "Feuer"
+      },
+      "bronze": {
+        "name": "Bronze",
+        "description": "Blitz"
+      },
+      "copper": {
+        "name": "Kupfer",
+        "description": "Säure"
+      },
+      "gold": {
+        "name": "Gold",
+        "description": "Feuer"
+      },
+      "green": {
+        "name": "Grün",
+        "description": "Gift"
+      },
+      "red": {
+        "name": "Rot",
+        "description": "Feuer"
+      },
+      "silver": {
+        "name": "Silber",
+        "description": "Kälte"
+      },
+      "white": {
+        "name": "Weiß",
+        "description": "Kälte"
+      }
+    },
+    "elven_lineages": {
+      "drow": {
+        "name": "Drow",
+        "description": "Tanzende Lichter; Feenfeuer auf Stufe 3 und Dunkelheit auf Stufe 5."
+      },
+      "high_elf": {
+        "name": "Hochelf",
+        "description": "Fingerfertigkeit; Magie entdecken auf Stufe 3 und Nebelschritt auf Stufe 5."
+      },
+      "wood_elf": {
+        "name": "Waldelf",
+        "description": "Erhöhte Bewegungsrate und Druidenkunst; Lange Schritte auf Stufe 3 und Spurloses Gehen auf Stufe 5."
+      }
+    },
+    "gnomish_lineages": {
+      "forest_gnome": {
+        "name": "Waldgnom",
+        "description": "Schwaches Trugbild und Mit Tieren sprechen."
+      },
+      "rock_gnome": {
+        "name": "Felsengnom",
+        "description": "Ausbessern, Fingerfertigkeit und Uhrwerkgeräte."
+      }
+    },
+    "giant_ancestries": {
+      "cloud": {
+        "name": "Wolkenschritt",
+        "description": "Teleportiere dich als Bonusaktion bis zu 30 Fuß weit."
+      },
+      "fire": {
+        "name": "Feuerbrand",
+        "description": "Bei einem Treffer verursachst du zusätzlich 1d10 Feuerschaden."
+      },
+      "frost": {
+        "name": "Frostkälte",
+        "description": "Bei einem Treffer verursachst du zusätzlich 1d6 Kälteschaden und verringerst die Bewegungsrate des Ziels."
+      },
+      "hill": {
+        "name": "Hügelsturz",
+        "description": "Bei einem Treffer wirfst du ein großes oder kleineres Ziel zu Boden."
+      },
+      "stone": {
+        "name": "Steinausdauer",
+        "description": "Als Reaktion verringerst du erlittenen Schaden um 1d12 + deinen Konstitutionsmodifikator."
+      },
+      "storm": {
+        "name": "Sturmdonner",
+        "description": "Eine Kreatur, die dir Schaden zufügt, erleidet 1d8 Schallschaden."
+      }
+    },
+    "tiefling_legacies": {
+      "abyssal": {
+        "name": "Abgründig",
+        "description": "Giftresistenz und Giftspritzer; Strahl der Übelkeit auf Stufe 3 und Person festhalten auf Stufe 5."
+      },
+      "chthonic": {
+        "name": "Chthonisch",
+        "description": "Resistenz gegen nekrotischen Schaden und Kalte Hand; Falsches Leben auf Stufe 3 und Schwächestrahl auf Stufe 5."
+      },
+      "infernal": {
+        "name": "Höllisch",
+        "description": "Feuerresistenz und Feuerpfeil; Höllischer Tadel auf Stufe 3 und Dunkelheit auf Stufe 5."
+      }
+    },
+    "keen_senses_skills": {
+      "insight": {
+        "name": "Motiv erkennen"
+      },
+      "perception": {
+        "name": "Wahrnehmung"
+      },
+      "survival": {
+        "name": "Überleben"
+      }
+    },
+    "weapon_mastery_melee_2024": {
+      "club": {
+        "name": "Knüppel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "dagger": {
+        "name": "Dolch",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "greatclub": {
+        "name": "Großer Knüppel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Stoßen."
+      },
+      "handaxe": {
+        "name": "Handaxt",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "javelin": {
+        "name": "Wurfspeer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "light_hammer": {
+        "name": "Leichter Hammer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "mace": {
+        "name": "Streitkolben",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "quarterstaff": {
+        "name": "Kampfstab",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "sickle": {
+        "name": "Sichel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "spear": {
+        "name": "Speer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "battleaxe": {
+        "name": "Streitaxt",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "flail": {
+        "name": "Flegel",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "glaive": {
+        "name": "Gleve",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Streifen."
+      },
+      "greataxe": {
+        "name": "Zweihandaxt",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Spalten."
+      },
+      "greatsword": {
+        "name": "Zweihandschwert",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Streifen."
+      },
+      "halberd": {
+        "name": "Hellebarde",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Spalten."
+      },
+      "lance": {
+        "name": "Lanze",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "longsword": {
+        "name": "Langschwert",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "maul": {
+        "name": "Kriegshammer",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "morningstar": {
+        "name": "Morgenstern",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "pike": {
+        "name": "Pike",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Stoßen."
+      },
+      "rapier": {
+        "name": "Rapier",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "scimitar": {
+        "name": "Krummsäbel",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Flott."
+      },
+      "shortsword": {
+        "name": "Kurzschwert",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "trident": {
+        "name": "Dreizack",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "warhammer": {
+        "name": "Kriegshammer",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Stoßen."
+      },
+      "war_pick": {
+        "name": "Kriegspicke",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "whip": {
+        "name": "Peitsche",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Verlangsamen."
+      }
+    },
+    "weapon_mastery_proficient_2024": {
+      "club": {
+        "name": "Knüppel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "dagger": {
+        "name": "Dolch",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "greatclub": {
+        "name": "Großer Knüppel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Stoßen."
+      },
+      "handaxe": {
+        "name": "Handaxt",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "javelin": {
+        "name": "Wurfspeer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "light_hammer": {
+        "name": "Leichter Hammer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "mace": {
+        "name": "Streitkolben",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "quarterstaff": {
+        "name": "Kampfstab",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "sickle": {
+        "name": "Sichel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "spear": {
+        "name": "Speer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "dart": {
+        "name": "Wurfpfeil",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "light_crossbow": {
+        "name": "Leichte Armbrust",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "shortbow": {
+        "name": "Kurzbogen",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "sling": {
+        "name": "Schleuder",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "battleaxe": {
+        "name": "Streitaxt",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "flail": {
+        "name": "Flegel",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "glaive": {
+        "name": "Gleve",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Streifen."
+      },
+      "greataxe": {
+        "name": "Zweihandaxt",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Spalten."
+      },
+      "greatsword": {
+        "name": "Zweihandschwert",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Streifen."
+      },
+      "halberd": {
+        "name": "Hellebarde",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Spalten."
+      },
+      "lance": {
+        "name": "Lanze",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "longsword": {
+        "name": "Langschwert",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "maul": {
+        "name": "Kriegshammer",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "morningstar": {
+        "name": "Morgenstern",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "pike": {
+        "name": "Pike",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Stoßen."
+      },
+      "rapier": {
+        "name": "Rapier",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "scimitar": {
+        "name": "Krummsäbel",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Flott."
+      },
+      "shortsword": {
+        "name": "Kurzschwert",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "trident": {
+        "name": "Dreizack",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "warhammer": {
+        "name": "Kriegshammer",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Stoßen."
+      },
+      "war_pick": {
+        "name": "Kriegspicke",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "whip": {
+        "name": "Peitsche",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "blowgun": {
+        "name": "Blasrohr",
+        "description": "Kriegsfernkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "hand_crossbow": {
+        "name": "Handarmbrust",
+        "description": "Kriegsfernkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "heavy_crossbow": {
+        "name": "Schwere Armbrust",
+        "description": "Kriegsfernkampfwaffe; Meisterschaft Stoßen."
+      },
+      "longbow": {
+        "name": "Langbogen",
+        "description": "Kriegsfernkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "musket": {
+        "name": "Muskete",
+        "description": "Kriegsfernkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "pistol": {
+        "name": "Pistole",
+        "description": "Kriegsfernkampfwaffe; Meisterschaft Bedrängen."
+      }
+    },
+    "weapon_mastery_rogue_2024": {
+      "club": {
+        "name": "Knüppel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "dagger": {
+        "name": "Dolch",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "greatclub": {
+        "name": "Großer Knüppel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Stoßen."
+      },
+      "handaxe": {
+        "name": "Handaxt",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "javelin": {
+        "name": "Wurfspeer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "light_hammer": {
+        "name": "Leichter Hammer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "mace": {
+        "name": "Streitkolben",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "quarterstaff": {
+        "name": "Kampfstab",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Niederwerfen."
+      },
+      "sickle": {
+        "name": "Sichel",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Flott."
+      },
+      "spear": {
+        "name": "Speer",
+        "description": "Einfache Nahkampfwaffe; Meisterschaft Schwächen."
+      },
+      "dart": {
+        "name": "Wurfpfeil",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "light_crossbow": {
+        "name": "Leichte Armbrust",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "shortbow": {
+        "name": "Kurzbogen",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "sling": {
+        "name": "Schleuder",
+        "description": "Einfache Fernkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "rapier": {
+        "name": "Rapier",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "scimitar": {
+        "name": "Krummsäbel",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Flott."
+      },
+      "shortsword": {
+        "name": "Kurzschwert",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Bedrängen."
+      },
+      "whip": {
+        "name": "Peitsche",
+        "description": "Kriegsnahkampfwaffe; Meisterschaft Verlangsamen."
+      },
+      "hand_crossbow": {
+        "name": "Handarmbrust",
+        "description": "Kriegsfernkampfwaffe; Meisterschaft Bedrängen."
+      }
+    },
+    "eldritch_invocations_2024": {
+      "agonizing_blast": {
+        "name": "Qualvoller Strahl",
+        "description": "Wähle einen deiner bekannten Hexenmeister-Zaubertricks, der Schaden verursacht. Du kannst deinen Charismamodifikator zu den Schadenswürfen dieses Zaubers addieren."
+      },
+      "armor_of_shadows": {
+        "name": "Rüstung der Schatten",
+        "description": "Du kannst Magierrüstung auf dich selbst wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "ascendant_step": {
+        "name": "Aufsteigender Schritt",
+        "description": "Du kannst Schweben auf dich selbst wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "devils_sight": {
+        "name": "Teufelssicht",
+        "description": "Du kannst innerhalb von 120 Fuß um dich in dämmrigem Licht und Dunkelheit, ob magisch oder gewöhnlich, normal sehen."
+      },
+      "devouring_blade": {
+        "name": "Verschlingende Klinge",
+        "description": "Der Zusätzliche Angriff deiner Anrufung Durstige Klinge gewährt dir zwei zusätzliche Angriffe statt einem."
+      },
+      "eldritch_mind": {
+        "name": "Andersweltlicher Geist",
+        "description": "Du hast Vorteil auf Konstitutionsrettungswürfe zum Aufrechterhalten deiner Konzentration."
+      },
+      "eldritch_smite": {
+        "name": "Andersweltlicher Schlag",
+        "description": "Einmal pro Zug, wenn du eine Kreatur mit deiner Paktwaffe triffst, kannst du einen Paktmagie-Zauberplatz verbrauchen, um ihr zusätzlich 1d8 Energieschaden zuzufügen, plus weitere 1d8 pro Grad des Zauberplatzes. Ist sie riesig oder kleiner, kannst du sie außerdem zu Boden werfen."
+      },
+      "eldritch_spear": {
+        "name": "Andersweltlicher Speer",
+        "description": "Wähle einen deiner bekannten Hexenmeister-Zaubertricks, der Schaden verursacht und eine Reichweite von mindestens 10 Fuß hat. Wenn du ihn wirkst, erhöht sich seine Reichweite um eine Anzahl Fuß in Höhe des 30-Fachen deiner Hexenmeisterstufe."
+      },
+      "fiendish_vigor": {
+        "name": "Teuflische Lebenskraft",
+        "description": "Du kannst Falsches Leben auf dich selbst wirken, ohne einen Zauberplatz zu verbrauchen. Wenn du den Zauber mit diesem Merkmal wirkst, würfelst du nicht für die temporären Trefferpunkte, sondern erhältst automatisch das höchstmögliche Würfelergebnis."
+      },
+      "gaze_of_two_minds": {
+        "name": "Blick zweier Geister",
+        "description": "Als Bonusaktion kannst du eine bereitwillige Kreatur berühren und bis zum Ende deines nächsten Zuges durch ihre Sinne wahrnehmen. Solange sie sich auf derselben Existenzebene wie du befindet, kannst du in folgenden Zügen jeweils eine Bonusaktion verwenden, um die Verbindung bis zum Ende deines nächsten Zuges aufrechtzuerhalten. Ohne diese Erneuerung endet sie.\n\nWährend du durch die Sinne der anderen Kreatur wahrnimmst, profitierst du von ihren besonderen Sinnen. Du kannst Zauber so wirken, als befändest du dich an deinem oder ihrem Platz, sofern ihr höchstens 60 Fuß voneinander entfernt seid."
+      },
+      "gift_of_the_depths": {
+        "name": "Gabe der Tiefen",
+        "description": "Du kannst unter Wasser atmen und erhältst eine Schwimmbewegungsrate in Höhe deiner Bewegungsrate.\n\nDu kannst außerdem einmal Wasser atmen wirken, ohne einen Zauberplatz zu verbrauchen. Nach einer Langen Rast kannst du dies erneut tun."
+      },
+      "gift_of_the_protectors": {
+        "name": "Gabe der Beschützer",
+        "description": "Wenn du dein Buch der Schatten beschwörst, erscheint darin eine neue Seite. Mit deiner Erlaubnis kann eine Kreatur eine Aktion verwenden, um ihren Namen auf diese Seite zu schreiben. Sie bietet Platz für eine Anzahl Namen in Höhe deines Charismamodifikators (mindestens einen).\n\nWird eine Kreatur, deren Name auf der Seite steht, auf 0 Trefferpunkte reduziert, ohne sofort getötet zu werden, hat sie stattdessen auf magische Weise 1 Trefferpunkt. Sobald diese Magie ausgelöst wurde, kann bis zum Ende deiner nächsten Langen Rast keine Kreatur davon profitieren.\n\nAls Magieaktion kannst du einen Namen löschen, indem du die Seite berührst."
+      },
+      "investment_of_the_chain_master": {
+        "name": "Macht des Kettenmeisters",
+        "description": "Wenn du Vertrauten finden wirkst, stärkst du den beschworenen Vertrauten mit deiner andersweltlichen Macht und gewährst ihm folgende Vorzüge.\n\nLuft oder Wasser. Der Vertraute erhält eine Flug- oder Schwimmbewegungsrate (deine Wahl) von 40 Fuß.\n\nSchneller Angriff. Als Bonusaktion kannst du dem Vertrauten befehlen, die Angriffsaktion auszuführen.\n\nNekrotischer oder gleißender Schaden. Wenn der Vertraute Wucht-, Stich- oder Hiebschaden verursacht, kannst du stattdessen nekrotischen oder gleißenden Schaden verursachen lassen.\n\nDein Rettungswurf-SG. Wenn der Vertraute eine Kreatur zu einem Rettungswurf zwingt, verwendet er deinen Zauberrettungswurf-SG.\n\nResistenz. Erleidet der Vertraute Schaden, kannst du ihm als Reaktion Resistenz gegen diesen Schaden verleihen."
+      },
+      "lessons_of_the_first_ones": {
+        "name": "Lehren der Ersten",
+        "description": "Du hast Wissen von einem uralten Wesen des Multiversums erhalten und bekommst ein Herkunftstalent deiner Wahl (siehe „Talente“)."
+      },
+      "lifedrinker": {
+        "name": "Lebenszehrer",
+        "description": "Einmal pro Zug, wenn du eine Kreatur mit deiner Paktwaffe triffst, kannst du ihr zusätzlich 1d6 nekrotischen, psychischen oder gleißenden Schaden (deine Wahl) zufügen. Du kannst außerdem einen deiner Trefferwürfel ausgeben, ihn würfeln und Trefferpunkte in Höhe des Ergebnisses plus deinem Konstitutionsmodifikator zurückerhalten (mindestens 1 Trefferpunkt)."
+      },
+      "mask_of_many_faces": {
+        "name": "Maske der vielen Gesichter",
+        "description": "Du kannst Selbstverkleidung wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "master_of_myriad_forms": {
+        "name": "Meister zahlloser Gestalten",
+        "description": "Du kannst Gestalt verändern wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "misty_visions": {
+        "name": "Nebelvisionen",
+        "description": "Du kannst Lautloses Trugbild wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "one_with_shadows": {
+        "name": "Eins mit den Schatten",
+        "description": "Solange du dich in dämmrigem Licht oder Dunkelheit aufhältst, kannst du Unsichtbarkeit auf dich selbst wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "otherworldly_leap": {
+        "name": "Andersweltlicher Sprung",
+        "description": "Du kannst Springen auf dich selbst wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "pact_of_the_blade": {
+        "name": "Pakt der Klinge",
+        "description": "Als Bonusaktion kannst du eine Paktwaffe in deiner Hand beschwören – eine einfache oder Kriegsnahkampfwaffe deiner Wahl, mit der du einen Bund eingehst – oder dich mit einer berührten magischen Waffe verbinden. Du kannst dich nicht mit einer magischen Waffe verbinden, wenn eine andere Person auf sie eingestimmt oder ein anderer Hexenmeister mit ihr verbunden ist. Solange die Verbindung besteht, beherrschst du die Waffe und kannst sie als Zauberfokus verwenden.\n\nBei Angriffen mit der verbundenen Waffe kannst du deinen Charismamodifikator statt Stärke oder Geschicklichkeit für Angriffs- und Schadenswürfe verwenden. Du kannst die Waffe außerdem nekrotischen, psychischen oder gleißenden Schaden statt ihrer üblichen Schadensart verursachen lassen.\n\nDie Verbindung endet, wenn du die Bonusaktion dieses Merkmals erneut verwendest, wenn die Waffe mehr als 5 Fuß von dir entfernt bleibt, und zwar mindestens 1 Minute lang oder wenn du stirbst. Eine beschworene Waffe verschwindet mit dem Ende der Verbindung."
+      },
+      "pact_of_the_chain": {
+        "name": "Pakt der Kette",
+        "description": "Du lernst den Zauber Vertrauten finden und kannst ihn als Magieaktion wirken, ohne einen Zauberplatz zu verbrauchen.\n\nBeim Wirken wählst du eine der gewöhnlichen Gestalten für deinen Vertrauten oder eine dieser besonderen Gestalten: Imp, Pseudodrache, Quasit, Skelett, Wundersphinx, Sprite oder Giftschlange (den Spielwertblock findest du unter „Monster“).\n\nWenn du die Angriffsaktion ausführst, kannst du außerdem auf einen deiner Angriffe verzichten, damit dein Vertrauter einen eigenen Angriff als Reaktion ausführt."
+      },
+      "pact_of_the_tome": {
+        "name": "Pakt des Buches",
+        "description": "Am Ende einer Kurzen oder Langen Rast webst du Schattenfäden zusammen und beschwörst ein Buch in deiner Hand. Dieses Buch der Schatten, dessen Aussehen du bestimmst, enthält andersweltliche Magie, auf die nur du zugreifen kannst, und gewährt dir die folgenden Vorzüge. Es verschwindet, wenn du mit diesem Merkmal ein anderes Buch beschwörst oder stirbst.\n\nZaubertricks und Rituale. Wenn das Buch erscheint, wähle drei Zaubertricks und zwei Zauber des 1. Grades mit dem Merkmal Ritual. Die Zauber dürfen aus der Zauberliste einer beliebigen Klasse stammen, dürfen aber noch nicht von dir vorbereitet sein. Solange du das Buch bei dir trägst, gelten die gewählten Zauber als vorbereitet und für dich als Hexenmeisterzauber.\n\nZauberfokus. Du kannst das Buch als Zauberfokus verwenden."
+      },
+      "repelling_blast": {
+        "name": "Abstoßender Strahl",
+        "description": "Wähle einen deiner bekannten Hexenmeister-Zaubertricks, der einen Angriffswurf erfordert. Wenn du damit eine große oder kleinere Kreatur triffst, kannst du sie bis zu 10 Fuß gerade von dir wegstoßen."
+      },
+      "thirsting_blade": {
+        "name": "Durstige Klinge",
+        "description": "Du erhältst das Merkmal Zusätzlicher Angriff ausschließlich für deine Paktwaffe. Damit kannst du mit dieser Waffe zweimal statt einmal angreifen, wenn du in deinem Zug die Angriffsaktion ausführst."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visionen ferner Reiche",
+        "description": "Du kannst Arkanes Auge wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "whispers_of_the_grave": {
+        "name": "Flüstern des Grabes",
+        "description": "Du kannst Mit Toten sprechen wirken, ohne einen Zauberplatz zu verbrauchen."
+      },
+      "witch_sight": {
+        "name": "Hexensicht",
+        "description": "Du erhältst Wahre Sicht mit einer Reichweite von 30 Fuß."
+      }
+    }
+  },
+  "feats": {
+    "Grappler": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Stärke"
+            },
+            "dexterity": {
+              "name": "Geschicklichkeit"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Irresistible Offense": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "strength": {
+              "name": "Stärke"
+            },
+            "dexterity": {
+              "name": "Geschicklichkeit"
+            }
+          }
+        }
+      }
+    },
+    "Boon of Spell Recall": {
+      "choices": {
+        "ability_increase": {
+          "options": {
+            "intelligence": {
+              "name": "Intelligenz"
+            },
+            "wisdom": {
+              "name": "Weisheit"
+            },
+            "charisma": {
+              "name": "Charisma"
+            }
+          }
+        }
+      }
+    }
+  }
+}

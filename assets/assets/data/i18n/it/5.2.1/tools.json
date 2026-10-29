@@ -1,0 +1,113 @@
+{
+  "Alchemist's Supplies": {
+    "name": "Strumenti da alchimista"
+  },
+  "Brewer's Supplies": {
+    "name": "Forniture del birraio"
+  },
+  "Calligrapher's Supplies": {
+    "name": "Forniture per calligrafo"
+  },
+  "Carpenter's Tools": {
+    "name": "Strumenti del falegname"
+  },
+  "Cartographer's Tools": {
+    "name": "Gli strumenti del cartografo"
+  },
+  "Cobbler's Tools": {
+    "name": "Gli strumenti del calzolaio"
+  },
+  "Cook's Utensils": {
+    "name": "Utensili da cucina"
+  },
+  "Glassblower's Tools": {
+    "name": "Gli strumenti del soffiatore di vetro"
+  },
+  "Jeweler's Tools": {
+    "name": "Strumenti del gioielliere"
+  },
+  "Leatherworker's Tools": {
+    "name": "Strumenti del conciatore"
+  },
+  "Mason's Tools": {
+    "name": "Gli strumenti del muratore"
+  },
+  "Painter's Supplies": {
+    "name": "Forniture per pittori"
+  },
+  "Potter's Tools": {
+    "name": "Strumenti da vasaio"
+  },
+  "Smith's Tools": {
+    "name": "Strumenti da fabbro"
+  },
+  "Tinker's Tools": {
+    "name": "Strumenti da stagnino"
+  },
+  "Weaver's Tools": {
+    "name": "Gli strumenti del tessitore"
+  },
+  "Woodcarver's Tools": {
+    "name": "Gli strumenti dell'intagliatore"
+  },
+  "Disguise Kit": {
+    "name": "Kit di travestimento"
+  },
+  "Forgery Kit": {
+    "name": "Kit di falsificazione"
+  },
+  "Dice": {
+    "name": "Dadi"
+  },
+  "Dragonchess": {
+    "name": "Scacchi dei draghi"
+  },
+  "Playing Cards": {
+    "name": "Carte da gioco"
+  },
+  "Three-Dragon Ante": {
+    "name": "Ante dei Tre Draghi"
+  },
+  "Herbalism Kit": {
+    "name": "Kit di erboristeria"
+  },
+  "Bagpipes": {
+    "name": "Cornamuse"
+  },
+  "Drum": {
+    "name": "Tamburo"
+  },
+  "Dulcimer": {
+    "name": "Dulcimer"
+  },
+  "Flute": {
+    "name": "Flauto"
+  },
+  "Horn": {
+    "name": "Corno"
+  },
+  "Lute": {
+    "name": "Liuto"
+  },
+  "Lyre": {
+    "name": "Lira"
+  },
+  "Pan Flute": {
+    "name": "Flauto di Pan"
+  },
+  "Shawm": {
+    "name": "Ciaramella"
+  },
+  "Viol": {
+    "name": "Viola"
+  },
+  "Navigator's Tools": {
+    "name": "Strumenti del navigatore"
+  },
+  "Poisoner's Kit": {
+    "name": "Kit dell'avvelenatore"
+  },
+  "Thieves' Tools": {
+    "name": "Strumenti da ladro"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "Barbarian": {
+    "Path of the Berserker": {
+      "name": "Voie du Berserker",
+      "description": "Transformez votre Rage en offensive implacable. Les attaques téméraires peuvent ajouter des dégâts de Frénésie ; les aptitudes ultérieures renforcent votre résolution, vous permettent de riposter et terrifient vos ennemis."
+    }
+  },
+  "Bard": {
+    "College of Lore": {
+      "name": "Collège du Savoir",
+      "description": "Recueillez les connaissances de nombreuses traditions. Gagnez des compétences supplémentaires, gênez vos ennemis avec les Mots cinglants et découvrez des sorts hors de la liste du Barde."
+    }
+  },
+  "Cleric": {
+    "Life Domain": {
+      "name": "Domaine de la Vie",
+      "description": "Canalisez la puissance divine pour protéger et restaurer la vie. Votre domaine accorde des sorts de soin, améliore les soins et aide à préserver vos alliés en danger."
+    }
+  },
+  "Druid": {
+    "Circle of the Land": {
+      "name": "Cercle de la Terre",
+      "description": "Puisez la magie dans un paysage choisi. Changez de terre après un Repos long pour obtenir ses sorts de cercle ; plus tard, gagnez une protection et un sanctuaire liés à la nature."
+    }
+  },
+  "Fighter": {
+    "Champion": {
+      "name": "Champion",
+      "description": "Recherchez l'excellence physique au combat. Élargissez votre plage de coups critiques et améliorez vos capacités athlétiques, vos options de Style de combat et votre résilience."
+    }
+  },
+  "Monk": {
+    "Warrior of the Open Hand": {
+      "name": "Guerrier de la Main ouverte",
+      "description": "Maîtrisez le combat à mains nues. Votre Déluge de coups peut perturber vos ennemis ; vos aptitudes ultérieures améliorent récupération, mobilité et frappes précises."
+    }
+  },
+  "Paladin": {
+    "Oath of Devotion": {
+      "name": "Serment de Dévotion",
+      "description": "Défendez la justice et protégez les plus vulnérables. Renforcez une arme grâce à la Canalisation d'énergie divine et obtenez des sorts de serment ainsi qu'une aura protectrice."
+    }
+  },
+  "Ranger": {
+    "Hunter": {
+      "name": "Chasseur",
+      "description": "Étudiez les proies marquées et choisissez des techniques de chasse. Découvrez les défenses d'une cible, adaptez votre attaque et votre défense, puis améliorez vos attaques contre les ennemis marqués."
+    }
+  },
+  "Rogue": {
+    "Thief": {
+      "name": "Voleur",
+      "description": "Excellez dans l'infiltration, l'exploration et l'utilisation des trésors. Gagnez des interactions rapides avec les objets et de la mobilité ; apprenez ensuite à mieux exploiter les objets magiques."
+    }
+  },
+  "Sorcerer": {
+    "Draconic Sorcery": {
+      "name": "Sorcellerie draconique",
+      "description": "Manifestez une magie liée aux dragons. Gagnez une résilience draconique et des sorts, puis développez une puissance élémentaire et des capacités draconiques accrues."
+    }
+  },
+  "Warlock": {
+    "Fiend Patron": {
+      "name": "Fiélon comme protecteur",
+      "description": "Puisez votre pouvoir auprès d'un puissant fiélon des Plans inférieurs. Gagnez des sorts de protecteur, une vitalité temporaire, une protection et d'autres dons infernaux."
+    }
+  },
+  "Wizard": {
+    "Evoker": {
+      "name": "Évocateur",
+      "description": "Spécialisez-vous dans la magie d'évocation. Façonnez les sorts destructeurs pour épargner vos alliés et augmentez les dégâts de vos évocations."
+    }
+  }
+}

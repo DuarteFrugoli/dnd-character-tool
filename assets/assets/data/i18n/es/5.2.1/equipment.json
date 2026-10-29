@@ -1,0 +1,569 @@
+{
+  "Club": {
+    "name": "Garrote"
+  },
+  "Dagger": {
+    "name": "Daga"
+  },
+  "Greatclub": {
+    "name": "Gran garrote"
+  },
+  "Handaxe": {
+    "name": "Hacha de mano"
+  },
+  "Javelin": {
+    "name": "Jabalina"
+  },
+  "Light Hammer": {
+    "name": "Martillo ligero"
+  },
+  "Mace": {
+    "name": "Maza"
+  },
+  "Quarterstaff": {
+    "name": "Bastón"
+  },
+  "Sickle": {
+    "name": "Hoz"
+  },
+  "Spear": {
+    "name": "Lanza"
+  },
+  "Dart": {
+    "name": "Dardo"
+  },
+  "Light Crossbow": {
+    "name": "Ballesta ligera"
+  },
+  "Shortbow": {
+    "name": "Arco corto"
+  },
+  "Sling": {
+    "name": "Honda"
+  },
+  "Battleaxe": {
+    "name": "Hacha de batalla"
+  },
+  "Flail": {
+    "name": "Mayal"
+  },
+  "Glaive": {
+    "name": "Guja"
+  },
+  "Greataxe": {
+    "name": "Gran hacha"
+  },
+  "Greatsword": {
+    "name": "Espadón"
+  },
+  "Halberd": {
+    "name": "Alabarda"
+  },
+  "Lance": {
+    "name": "Lanza de caballería"
+  },
+  "Longsword": {
+    "name": "Espada larga"
+  },
+  "Maul": {
+    "name": "Gran martillo"
+  },
+  "Morningstar": {
+    "name": "Estrella de la mañana"
+  },
+  "Pike": {
+    "name": "Pica"
+  },
+  "Rapier": {
+    "name": "Estoque"
+  },
+  "Scimitar": {
+    "name": "Cimitarra"
+  },
+  "Shortsword": {
+    "name": "Espada corta"
+  },
+  "Trident": {
+    "name": "Tridente"
+  },
+  "Warhammer": {
+    "name": "Martillo de guerra"
+  },
+  "War Pick": {
+    "name": "Pico de guerra"
+  },
+  "Whip": {
+    "name": "Látigo"
+  },
+  "Blowgun": {
+    "name": "Cerbatana"
+  },
+  "Hand Crossbow": {
+    "name": "Ballesta de mano"
+  },
+  "Heavy Crossbow": {
+    "name": "Ballesta pesada"
+  },
+  "Longbow": {
+    "name": "Arco largo"
+  },
+  "Musket": {
+    "name": "Mosquete"
+  },
+  "Pistol": {
+    "name": "Pistola"
+  },
+  "Padded Armor": {
+    "name": "Armadura acolchada"
+  },
+  "Leather Armor": {
+    "name": "Armadura de cuero"
+  },
+  "Studded Leather Armor": {
+    "name": "Armadura de cuero tachonado"
+  },
+  "Hide Armor": {
+    "name": "Armadura de pieles"
+  },
+  "Chain Shirt": {
+    "name": "Camisote de malla"
+  },
+  "Scale Mail": {
+    "name": "Cota de escamas"
+  },
+  "Breastplate": {
+    "name": "Coraza"
+  },
+  "Half Plate Armor": {
+    "name": "Media armadura"
+  },
+  "Ring Mail": {
+    "name": "Cota de anillas"
+  },
+  "Chain Mail": {
+    "name": "Cota de malla"
+  },
+  "Splint Armor": {
+    "name": "Armadura de bandas"
+  },
+  "Plate Armor": {
+    "name": "Armadura de placas"
+  },
+  "Shield": {
+    "name": "Escudo"
+  },
+  "Arrow": {
+    "name": "Flecha",
+    "description": "Munición para arcos, vendida en haces de veinte. Cada ataque usa una flecha; tras un combate, se puede recuperar la mitad de la munición gastada en 1 minuto."
+  },
+  "Bolt": {
+    "name": "Virote",
+    "description": "Munición para ballestas, vendida en haces de veinte."
+  },
+  "Bullet": {
+    "name": "Bala",
+    "description": "Munición para armas de fuego, vendida en haces de diez."
+  },
+  "Sling Bullet": {
+    "name": "Bala de honda",
+    "description": "Munición para hondas, vendida en haces de veinte."
+  },
+  "Needle": {
+    "name": "Aguja",
+    "description": "Munición para cerbatanas, vendida en haces de cincuenta."
+  },
+  "Acid": {
+    "name": "Ácido",
+    "description": "Sustituye un ataque lanzando un vial contra un objetivo a 20 pies o menos. Si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia), sufre 2d6 de daño de Ácido."
+  },
+  "Alchemist's Fire": {
+    "name": "Fuego de alquimista",
+    "description": "Sustituye un ataque lanzando un frasco contra un objetivo a 20 pies o menos. Si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia), sufre 1d4 de daño de Fuego y comienza a arder."
+  },
+  "Antitoxin": {
+    "name": "Antitoxina",
+    "description": "Bébela como Acción Adicional para obtener Ventaja en salvaciones para evitar o terminar el estado Envenenado durante 1 hora."
+  },
+  "Arcane Focus": {
+    "name": "Foco arcano",
+    "description": "Foco de lanzamiento para Hechicero, Brujo o Mago. Elige un cristal, orbe, vara, bastón o varita."
+  },
+  "Arcane Focus, Crystal": {
+    "name": "Foco arcano, cristal",
+    "description": "Un cristal usado como foco arcano."
+  },
+  "Arcane Focus, Orb": {
+    "name": "Foco arcano, orbe",
+    "description": "Un orbe usado como foco arcano."
+  },
+  "Arcane Focus, Rod": {
+    "name": "Foco arcano, vara",
+    "description": "Una vara usada como foco arcano."
+  },
+  "Arcane Focus, Staff": {
+    "name": "Foco arcano, bastón",
+    "description": "Un foco arcano que también puede usarse como Bastón."
+  },
+  "Arcane Focus, Wand": {
+    "name": "Foco arcano, varita",
+    "description": "Una varita usada como foco arcano."
+  },
+  "Backpack": {
+    "name": "Mochila",
+    "description": "Contiene hasta 30 libras en 1 pie cúbico; también puede servir como alforja."
+  },
+  "Ball Bearings": {
+    "name": "Canicas",
+    "description": "Espárcelas por un cuadrado llano de 10 pies a 10 pies o menos con la acción Utilizar. Las criaturas que entren deben superar una salvación de Destreza CD 10 o caer Derribadas. Recuperarlas lleva 10 minutos."
+  },
+  "Barrel": {
+    "name": "Barril",
+    "description": "Contiene hasta 40 galones de líquido o 4 pies cúbicos de productos secos."
+  },
+  "Basket": {
+    "name": "Cesta",
+    "description": "Contiene hasta 40 libras en 2 pies cúbicos."
+  },
+  "Bedroll": {
+    "name": "Saco de dormir",
+    "description": "Permite dormir a una criatura Pequeña o Mediana; mientras estás dentro, superas automáticamente las salvaciones contra el frío extremo."
+  },
+  "Bell": {
+    "name": "Campana",
+    "description": "Hacerla sonar con la acción Utilizar produce un sonido audible hasta a 60 pies."
+  },
+  "Blanket": {
+    "name": "Manta",
+    "description": "Cuando te envuelves en ella, tienes Ventaja en salvaciones contra el frío extremo."
+  },
+  "Block and Tackle": {
+    "name": "Aparejo de poleas",
+    "description": "Permite izar cuatro veces el peso que normalmente puedes levantar."
+  },
+  "Book": {
+    "name": "Libro",
+    "description": "Consultar un libro fiable de no ficción concede +5 a pruebas de Inteligencia (Arcanos, Historia, Naturaleza o Religión) sobre su tema."
+  },
+  "Bottle, Glass": {
+    "name": "Botella de vidrio",
+    "description": "Contiene hasta 1,5 pintas."
+  },
+  "Bucket": {
+    "name": "Cubo",
+    "description": "Contiene hasta medio pie cúbico."
+  },
+  "Burglar's Pack": {
+    "name": "Equipo de ladrón",
+    "description": "Conjunto de suministros para la infiltración."
+  },
+  "Caltrops": {
+    "name": "Abrojos",
+    "description": "Espárcelos en un cuadrado de 5 pies con la acción Utilizar. Una criatura que entre debe superar una salvación de Destreza CD 15 o sufrir 1 de daño Perforante y tener Velocidad 0 hasta su siguiente turno. Recuperarlos lleva 10 minutos."
+  },
+  "Candle": {
+    "name": "Vela",
+    "description": "Arde durante 1 hora e ilumina con Luz Brillante 5 pies y Luz Tenue otros 5 pies."
+  },
+  "Case, Crossbow Bolt": {
+    "name": "Estuche de virotes",
+    "description": "Contiene hasta 20 virotes."
+  },
+  "Case, Map or Scroll": {
+    "name": "Estuche de mapas o pergaminos",
+    "description": "Contiene hasta 10 hojas de Papel o 5 de Pergamino."
+  },
+  "Chain": {
+    "name": "Cadena",
+    "description": "Puede sujetar a una criatura Agarrada, Incapacitada o Apresada con una prueba de Fuerza (Atletismo) CD 13. Escapar requiere Destreza (Acrobacias) CD 18; romperla requiere Fuerza (Atletismo) CD 20."
+  },
+  "Chest": {
+    "name": "Cofre",
+    "description": "Contiene hasta 12 pies cúbicos."
+  },
+  "Climber's Kit": {
+    "name": "Equipo de escalada",
+    "description": "Incluye puntas para botas, guantes, pitones y arnés. Anclarte con la acción Utilizar limita la caída a 25 pies y el movimiento a 25 pies del anclaje."
+  },
+  "Clothes, Fine": {
+    "name": "Ropa elegante",
+    "description": "Ropa cara adecuada para actos y lugares formales."
+  },
+  "Clothes, Traveler's": {
+    "name": "Ropa de viajero",
+    "description": "Ropa resistente para viajar por entornos variados."
+  },
+  "Component Pouch": {
+    "name": "Bolsa de componentes",
+    "description": "Bolsa impermeable con compartimentos para componentes Materiales gratuitos de tus conjuros."
+  },
+  "Costume": {
+    "name": "Disfraz",
+    "description": "Al llevarlo puesto, tienes Ventaja en pruebas de característica para hacerte pasar por la persona o el papel representado."
+  },
+  "Crowbar": {
+    "name": "Palanca",
+    "description": "Concede Ventaja en pruebas de Fuerza cuando pueda aprovecharse como palanca."
+  },
+  "Diplomat's Pack": {
+    "name": "Equipo de diplomático",
+    "description": "Suministros para viajes formales y correspondencia."
+  },
+  "Druidic Focus": {
+    "name": "Foco druídico",
+    "description": "Foco de lanzamiento para Druida o Explorador. Elige muérdago, un bastón de madera o una varita de tejo."
+  },
+  "Druidic Focus, Sprig of Mistletoe": {
+    "name": "Foco druídico, ramita de muérdago",
+    "description": "Ramita de muérdago usada como foco primigenio."
+  },
+  "Druidic Focus, Wooden Staff": {
+    "name": "Foco druídico, bastón de madera",
+    "description": "Foco primigenio que también puede usarse como Bastón."
+  },
+  "Druidic Focus, Yew Wand": {
+    "name": "Foco druídico, varita de tejo",
+    "description": "Varita de tejo usada como foco primigenio."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Equipo de explorador de mazmorras",
+    "description": "Suministros para explorar mazmorras."
+  },
+  "Entertainer's Pack": {
+    "name": "Equipo de artista",
+    "description": "Suministros para un artista ambulante."
+  },
+  "Explorer's Pack": {
+    "name": "Equipo de explorador",
+    "description": "Suministros para explorar tierras salvajes."
+  },
+  "Flask": {
+    "name": "Frasco",
+    "description": "Contiene hasta 1 pinta."
+  },
+  "Grappling Hook": {
+    "name": "Garfio",
+    "description": "Lánzalo a un punto de sujeción a 50 pies o menos con la acción Utilizar. Una prueba de Destreza (Acrobacias) CD 13 lo asegura; después puede treparse por una Cuerda atada."
+  },
+  "Healer's Kit": {
+    "name": "Botiquín",
+    "description": "Gasta uno de sus diez usos con la acción Utilizar para estabilizar a una criatura Inconsciente con 0 Puntos de Golpe sin prueba de Medicina."
+  },
+  "Holy Symbol": {
+    "name": "Símbolo sagrado",
+    "description": "Foco de lanzamiento para Clérigo o Paladín. Elige amuleto, emblema o relicario."
+  },
+  "Holy Symbol, Amulet": {
+    "name": "Símbolo sagrado, amuleto",
+    "description": "Foco divino que puede llevarse puesto o sujetarse."
+  },
+  "Holy Symbol, Emblem": {
+    "name": "Símbolo sagrado, emblema",
+    "description": "Foco divino llevado en tela o Escudo."
+  },
+  "Holy Symbol, Reliquary": {
+    "name": "Símbolo sagrado, relicario",
+    "description": "Foco divino que debe sujetarse."
+  },
+  "Holy Water": {
+    "name": "Agua bendita",
+    "description": "Sustituye un ataque lanzando un frasco contra una criatura a 20 pies o menos. Un Infernal o No Muerto que falle una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia) sufre 2d8 de daño Radiante."
+  },
+  "Hunting Trap": {
+    "name": "Trampa de caza",
+    "description": "Una criatura que pise la trampa preparada debe superar una salvación de Destreza CD 13 o sufrir 1d4 de daño Perforante y tener Velocidad 0 hasta su siguiente turno. Liberarla requiere Fuerza (Atletismo) CD 13."
+  },
+  "Ink": {
+    "name": "Tinta",
+    "description": "Un frasco de 1 onza contiene tinta para unas 500 páginas."
+  },
+  "Ink Pen": {
+    "name": "Pluma",
+    "description": "Se usa con Tinta para escribir o dibujar."
+  },
+  "Jug": {
+    "name": "Jarra",
+    "description": "Contiene hasta 1 galón."
+  },
+  "Ladder": {
+    "name": "Escalera",
+    "description": "Una escalera de 10 pies."
+  },
+  "Lamp": {
+    "name": "Lámpara",
+    "description": "Quema Aceite y emite Luz Brillante 15 pies y Luz Tenue otros 30 pies."
+  },
+  "Lantern, Bullseye": {
+    "name": "Farol de ojo de buey",
+    "description": "Quema Aceite y emite Luz Brillante en un Cono de 60 pies y Luz Tenue otros 60 pies."
+  },
+  "Lantern, Hooded": {
+    "name": "Farol con capucha",
+    "description": "Quema Aceite y emite Luz Brillante 30 pies y Luz Tenue otros 30 pies. Bajando la capucha solo emite Luz Tenue 5 pies."
+  },
+  "Lock": {
+    "name": "Cerradura",
+    "description": "Viene con llave. Sin ella, abrirla requiere Herramientas de Ladrón y Destreza (Juego de Manos) CD 15."
+  },
+  "Magnifying Glass": {
+    "name": "Lupa",
+    "description": "Concede Ventaja en pruebas para tasar o examinar detalles finos; también puede encender fuego bajo el sol después de unos 5 minutos."
+  },
+  "Manacles": {
+    "name": "Grilletes",
+    "description": "Puede sujetar a una criatura Pequeña o Mediana Agarrada, Incapacitada o Apresada con Destreza (Juego de Manos) CD 13. Escapar requiere CD 20; romperlos requiere Fuerza (Atletismo) CD 25."
+  },
+  "Map": {
+    "name": "Mapa",
+    "description": "Un mapa exacto concede +5 a pruebas de Sabiduría (Supervivencia) para orientarse en la zona representada."
+  },
+  "Mirror": {
+    "name": "Espejo",
+    "description": "Espejo de acero de mano útil para mirar tras esquinas o hacer señales reflejando luz."
+  },
+  "Net": {
+    "name": "Red",
+    "description": "Sustituye un ataque lanzándola contra una criatura a 15 pies o menos. Queda Apresada si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia); las criaturas Enormes o mayores superan automáticamente. Escapar requiere Fuerza (Atletismo) CD 10."
+  },
+  "Oil": {
+    "name": "Aceite",
+    "description": "Un frasco alimenta una Lámpara o Farol durante 6 horas. Empapar a una criatura u objeto puede causar 5 de daño de Fuego extra la próxima vez que sufra daño de Fuego en 1 minuto; aceite ardiendo en el suelo causa 5 de daño de Fuego."
+  },
+  "Paper": {
+    "name": "Papel",
+    "description": "Una hoja contiene unas 250 palabras manuscritas."
+  },
+  "Parchment": {
+    "name": "Pergamino",
+    "description": "Una hoja contiene unas 250 palabras manuscritas."
+  },
+  "Perfume": {
+    "name": "Perfume",
+    "description": "Frasco de 4 onzas. Durante 1 hora tras aplicarlo, obtienes Ventaja en pruebas de Carisma (Persuasión) para influir en un Humanoide Indiferente a 5 pies o menos."
+  },
+  "Poison, Basic": {
+    "name": "Veneno básico",
+    "description": "Como Acción Adicional, cubre un arma o hasta tres piezas de munición. El daño Perforante o Cortante de ellas inflige 1d4 de daño de Veneno extra durante 1 minuto o hasta que se inflija el daño."
+  },
+  "Pole": {
+    "name": "Pértiga",
+    "description": "Pértiga de 10 pies. Usarla para impulsarte concede Ventaja en una prueba de Fuerza (Atletismo) para Salto de Altura o Longitud."
+  },
+  "Pot, Iron": {
+    "name": "Olla de hierro",
+    "description": "Contiene hasta 1 galón."
+  },
+  "Pouch": {
+    "name": "Bolsa",
+    "description": "Contiene hasta 6 libras en una quinta parte de pie cúbico."
+  },
+  "Priest's Pack": {
+    "name": "Equipo de sacerdote",
+    "description": "Suministros religiosos y de viaje."
+  },
+  "Quiver": {
+    "name": "Carcaj",
+    "description": "Contiene hasta 20 flechas."
+  },
+  "Ram, Portable": {
+    "name": "Ariete portátil",
+    "description": "Concede +4 a pruebas de Fuerza para derribar puertas; otro personaje puede ayudar para conceder Ventaja."
+  },
+  "Rations": {
+    "name": "Raciones",
+    "description": "Comida lista para un día de viaje, como fruta seca, cecina, galletas duras y frutos secos."
+  },
+  "Robe": {
+    "name": "Túnica",
+    "description": "Prenda con significado profesional o ceremonial."
+  },
+  "Rope": {
+    "name": "Cuerda",
+    "description": "Atar un nudo requiere Destreza (Juego de Manos) CD 10; romper la cuerda requiere Fuerza (Atletismo) CD 20. Una criatura atada puede escapar con Destreza (Acrobacias) CD 15."
+  },
+  "Sack": {
+    "name": "Saco",
+    "description": "Contiene hasta 30 libras en 1 pie cúbico."
+  },
+  "Scholar's Pack": {
+    "name": "Equipo de erudito",
+    "description": "Suministros para el estudio y la escritura."
+  },
+  "Shovel": {
+    "name": "Pala",
+    "description": "Una hora cavando tierra o material similar crea un cubo de espacio de 5 pies de lado."
+  },
+  "Signal Whistle": {
+    "name": "Silbato de señales",
+    "description": "Soplarlo con la acción Utilizar produce un sonido audible hasta a 600 pies."
+  },
+  "Spellbook": {
+    "name": "Libro de conjuros",
+    "description": "Libro singular de 100 páginas de un Mago para conjuros de nivel 1 o mayor. Solo su dueño o alguien que lance Identificar puede leerlo; también puede servir de foco de lanzamiento para Mago."
+  },
+  "Spikes, Iron": {
+    "name": "Clavos de hierro",
+    "description": "Haz de diez clavos de hierro para bloquear una puerta o anclar una Cuerda o Cadena."
+  },
+  "Spyglass": {
+    "name": "Catalejo",
+    "description": "Aumenta los objetos observados al doble de su tamaño."
+  },
+  "String": {
+    "name": "Cordel",
+    "description": "Un cordel de 10 pies; hacer un nudo es una acción Utilizar."
+  },
+  "Tent": {
+    "name": "Tienda",
+    "description": "Permite dormir hasta a dos criaturas Pequeñas o Medianas."
+  },
+  "Tinderbox": {
+    "name": "Yesquero",
+    "description": "Pedernal, eslabón y yesca. Encender combustible expuesto requiere una Acción Adicional; encender otro fuego lleva 1 minuto."
+  },
+  "Torch": {
+    "name": "Antorcha",
+    "description": "Arde durante 1 hora e ilumina con Luz Brillante 20 pies y Luz Tenue otros 20 pies. Puede usarse como arma Cuerpo a Cuerpo Simple que inflige 1 de daño de Fuego al impactar."
+  },
+  "Vial": {
+    "name": "Vial",
+    "description": "Contiene hasta 4 onzas."
+  },
+  "Waterskin": {
+    "name": "Odre",
+    "description": "Contiene hasta 4 pintas de agua; el peso indicado corresponde a cuando está lleno."
+  },
+  "weaponMasteries": {
+    "cleave": {
+      "name": "Tajo",
+      "description": "Una vez por turno, tras impactar con un ataque cuerpo a cuerpo, ataca con la misma arma a otra criatura a 5 pies o menos de la primera y dentro de tu alcance. Si impactas, inflige el daño del arma sin modificador de característica positivo."
+    },
+    "graze": {
+      "name": "Rozar",
+      "description": "Si fallas, inflige daño del tipo del arma igual al modificador de característica usado para el ataque. Solo un aumento de ese modificador puede aumentar este daño."
+    },
+    "nick": {
+      "name": "Muesca",
+      "description": "Una vez por turno, realiza el ataque adicional de la propiedad Ligera como parte de la acción Atacar, en vez de una Acción Adicional."
+    },
+    "push": {
+      "name": "Empujar",
+      "description": "Si impactas, empuja a una criatura Grande o menor hasta 10 pies directamente alejándola de ti."
+    },
+    "sap": {
+      "name": "Debilitar",
+      "description": "Si impactas, el objetivo tiene Desventaja en su próxima tirada de ataque antes del inicio de tu siguiente turno."
+    },
+    "slow": {
+      "name": "Ralentizar",
+      "description": "Si impactas e infliges daño, reduce la Velocidad del objetivo 10 pies hasta el inicio de tu siguiente turno. Varios impactos con Ralentizar no aumentan la reducción."
+    },
+    "topple": {
+      "name": "Derribar",
+      "description": "Si impactas, el objetivo realiza una salvación de Constitución contra CD 8 + modificador de característica del ataque + tu Bonificador por Competencia; si falla, queda Derribado."
+    },
+    "vex": {
+      "name": "Acosar",
+      "description": "Si impactas e infliges daño, tienes Ventaja en tu próxima tirada de ataque contra esa criatura antes del final de tu siguiente turno."
+    }
+  }
+}

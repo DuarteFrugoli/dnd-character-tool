@@ -1,0 +1,146 @@
+{
+  "Darkvision": {
+    "name": "Vision dans le noir",
+    "description": "Vous voyez dans la Lumière faible à portée de ce trait comme s'il s'agissait de Lumière vive, et dans l'Obscurité comme s'il s'agissait de Lumière faible, mais seulement en nuances de gris. La portée est de 120 pieds pour les Nains, les Orques et les Elfes drows, et de 60 pieds pour les autres espèces indiquées."
+  },
+  "Draconic Ancestry": {
+    "name": "Ascendance draconique",
+    "description": "Choisissez un ancêtre dragon. Son type de dégâts détermine ceux de votre Souffle et votre Résistance aux dégâts."
+  },
+  "Breath Weapon": {
+    "name": "Souffle",
+    "description": "Lors de l'action Attaquer, remplacez une attaque par un Cône de 15 pieds ou une Ligne de 30 pieds sur 5 pieds. Les créatures dans la zone effectuent un jet de sauvegarde de Dextérité contre un DD de 8 + votre modificateur de Constitution + bonus de maîtrise. Elles subissent des dégâts du type de votre ascendance en cas d'échec, ou la moitié en cas de réussite. Les dégâts sont de 1d10, puis de 2d10 au niveau 5 du personnage, 3d10 au niveau 11 et 4d10 au niveau 17. Utilisations égales à votre bonus de maîtrise par Repos long."
+  },
+  "Damage Resistance": {
+    "name": "Résistance aux dégâts",
+    "description": "Vous avez la Résistance au type de dégâts accordé par votre Ascendance draconique."
+  },
+  "Draconic Flight": {
+    "name": "Vol draconique",
+    "description": "À partir du niveau 5 du personnage, utilisez une Action bonus pour obtenir des ailes spectrales et une Vitesse de vol égale à votre Vitesse pendant 10 minutes. Elles disparaissent plus tôt si vous les révoquez ou êtes Neutralisé. Une fois par Repos long."
+  },
+  "Dwarven Resilience": {
+    "name": "Résilience naine",
+    "description": "Vous avez la Résistance aux dégâts de Poison et l'Avantage aux sauvegardes pour éviter ou terminer l'état Empoisonné."
+  },
+  "Dwarven Toughness": {
+    "name": "Robustesse naine",
+    "description": "Votre maximum de points de vie augmente de 1 maintenant, puis de 1 chaque fois que vous gagnez un niveau."
+  },
+  "Stonecunning": {
+    "name": "Connaissance de la pierre",
+    "description": "En touchant une pierre ou en vous tenant dessus, utilisez une Action bonus pour obtenir la perception des vibrations sur 60 pieds pendant 10 minutes. Utilisations égales à votre bonus de maîtrise par Repos long."
+  },
+  "Elven Lineage": {
+    "name": "Lignée elfique",
+    "description": "Choisissez Drow, Haut-Elfe ou Elfe des bois. Recevez son avantage initial et ses sorts indiqués aux niveaux 3 et 5 du personnage. Chaque sort de niveau est toujours préparé et peut être lancé une fois sans emplacement par Repos long ou avec un emplacement adapté. Choisissez Intelligence, Sagesse ou Charisme comme caractéristique d'incantation."
+  },
+  "Fey Ancestry": {
+    "name": "Ascendance féerique",
+    "description": "Vous avez l'Avantage aux sauvegardes pour éviter ou terminer l'état Charmé."
+  },
+  "Keen Senses": {
+    "name": "Sens aiguisés",
+    "description": "Gagnez la maîtrise d'Intuition, de Perception ou de Survie."
+  },
+  "Trance": {
+    "name": "Transe",
+    "description": "Vous n'avez pas besoin de dormir et la magie ne peut vous endormir. Une transe consciente de 4 heures peut achever votre Repos long."
+  },
+  "Gnomish Cunning": {
+    "name": "Ruse gnome",
+    "description": "Vous avez l'Avantage aux jets de sauvegarde d'Intelligence, de Sagesse et de Charisme."
+  },
+  "Gnomish Lineage": {
+    "name": "Lignée gnome",
+    "description": "Choisissez Gnome des forêts ou Gnome des roches, et Intelligence, Sagesse ou Charisme comme caractéristique d'incantation des sorts de ce trait. Les Gnomes des forêts connaissent Illusion mineure et préparent toujours Communication avec les animaux, lançable sans emplacement autant de fois que leur bonus de maîtrise par Repos long. Les Gnomes des roches connaissent Réparation et Prestidigitation et peuvent créer des dispositifs mécaniques."
+  },
+  "Forest Gnome Speak with Animals": {
+    "name": "Communication avec les animaux du Gnome des forêts",
+    "description": "Vous avez toujours Communication avec les animaux préparé. Lancez-le sans emplacement autant de fois que votre bonus de maîtrise par Repos long, ou avec un emplacement de sort."
+  },
+  "Clockwork Device": {
+    "name": "Dispositif mécanique",
+    "description": "Passez 10 minutes à lancer Prestidigitation pour créer un dispositif de taille TP, CA 5 et 1 PV, produisant un effet choisi de ce sort lorsqu'on l'active au toucher avec une Action bonus. Vous pouvez en avoir jusqu'à trois ; chacun dure 8 heures ou jusqu'à son démontage au toucher par l'action Utiliser."
+  },
+  "Giant Ancestry": {
+    "name": "Ascendance des géants",
+    "description": "Choisissez un don de géant. Ses utilisations sont égales à votre bonus de maîtrise par Repos long."
+  },
+  "Cloud's Jaunt": {
+    "name": "Pas des nuages",
+    "description": "Par une Action bonus, téléportez-vous jusqu'à 30 pieds vers un espace inoccupé que vous voyez."
+  },
+  "Fire's Burn": {
+    "name": "Brûlure du feu",
+    "description": "Quand un jet d'attaque touche et inflige des dégâts, infligez 1d10 dégâts de Feu supplémentaires."
+  },
+  "Frost's Chill": {
+    "name": "Froid du givre",
+    "description": "Quand un jet d'attaque touche et inflige des dégâts, infligez 1d6 dégâts de Froid supplémentaires et réduisez la Vitesse de la cible de 10 pieds jusqu'au début de votre prochain tour."
+  },
+  "Hill's Tumble": {
+    "name": "Chute des collines",
+    "description": "Quand un jet d'attaque touche et blesse une créature de taille G ou inférieure, elle se retrouve À terre."
+  },
+  "Stone's Endurance": {
+    "name": "Endurance de la pierre",
+    "description": "Lorsque vous subissez des dégâts, utilisez une Réaction pour les réduire de 1d12 plus votre modificateur de Constitution."
+  },
+  "Storm's Thunder": {
+    "name": "Tonnerre de la tempête",
+    "description": "Lorsqu'une créature à 60 pieds ou moins vous blesse, utilisez une Réaction pour lui infliger 1d8 dégâts de Tonnerre."
+  },
+  "Large Form": {
+    "name": "Grande forme",
+    "description": "À partir du niveau 5 du personnage, utilisez une Action bonus pour devenir de taille G pendant 10 minutes au maximum si l'espace le permet. Vous avez l'Avantage aux tests de Force et votre Vitesse augmente de 10 pieds. Une fois par Repos long."
+  },
+  "Powerful Build": {
+    "name": "Carrure puissante",
+    "description": "Vous avez l'Avantage aux tests pour mettre fin à l'état Agrippé et comptez comme une catégorie de taille supérieure pour la capacité de charge."
+  },
+  "Brave": {
+    "name": "Bravoure",
+    "description": "Vous avez l'Avantage aux sauvegardes pour éviter ou terminer l'état Effrayé."
+  },
+  "Halfling Nimbleness": {
+    "name": "Agilité halfeline",
+    "description": "Vous pouvez traverser l'espace d'une créature plus grande que vous, mais pas vous y arrêter."
+  },
+  "Luck": {
+    "name": "Chance",
+    "description": "Si vous obtenez 1 sur le d20 d'un Test de D20, relancez-le et utilisez le nouveau résultat."
+  },
+  "Naturally Stealthy": {
+    "name": "Discrétion naturelle",
+    "description": "Vous pouvez entreprendre l'action Se cacher lorsque seule une créature d'au moins une catégorie de taille supérieure à vous vous masque."
+  },
+  "Resourceful": {
+    "name": "Débrouillard",
+    "description": "Gagnez l'Inspiration héroïque chaque fois que vous terminez un Repos long."
+  },
+  "Skillful": {
+    "name": "Talentueux",
+    "description": "Gagnez la maîtrise d'une compétence de votre choix."
+  },
+  "Versatile": {
+    "name": "Polyvalent",
+    "description": "Gagnez un don d'Origine de votre choix."
+  },
+  "Adrenaline Rush": {
+    "name": "Poussée d'adrénaline",
+    "description": "Entreprenez l'action Foncer par une Action bonus et gagnez des points de vie temporaires égaux à votre bonus de maîtrise. Utilisations égales à votre bonus de maîtrise, récupérées après un Repos court ou long."
+  },
+  "Relentless Endurance": {
+    "name": "Endurance implacable",
+    "description": "Lorsque vos points de vie tombent à 0 sans vous tuer sur le coup, ils tombent à 1 à la place. Une fois par Repos long."
+  },
+  "Fiendish Legacy": {
+    "name": "Héritage fiélon",
+    "description": "Choisissez Abyssal, Chthonien ou Infernal. Recevez sa Résistance et son sort mineur de niveau 1 ainsi que ses sorts indiqués aux niveaux 3 et 5 du personnage. Chaque sort de niveau est toujours préparé et peut être lancé une fois sans emplacement par Repos long ou avec un emplacement adapté. Choisissez Intelligence, Sagesse ou Charisme comme caractéristique d'incantation."
+  },
+  "Otherworldly Presence": {
+    "name": "Présence d'outre-monde",
+    "description": "Vous connaissez le sort mineur Thaumaturgie et utilisez la caractéristique d'incantation choisie pour Héritage fiélon."
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "Club": {
+    "name": "Sopa"
+  },
+  "Dagger": {
+    "name": "Hançer"
+  },
+  "Greatclub": {
+    "name": "Büyük Sopa"
+  },
+  "Handaxe": {
+    "name": "El Baltası"
+  },
+  "Javelin": {
+    "name": "Cirit"
+  },
+  "Light Hammer": {
+    "name": "Hafif Çekiç"
+  },
+  "Mace": {
+    "name": "Gürz"
+  },
+  "Quarterstaff": {
+    "name": "Savaş Asası"
+  },
+  "Sickle": {
+    "name": "Orak"
+  },
+  "Spear": {
+    "name": "Mızrak"
+  },
+  "Dart": {
+    "name": "Dart"
+  },
+  "Light Crossbow": {
+    "name": "Hafif Arbalet"
+  },
+  "Shortbow": {
+    "name": "Kısa Yay"
+  },
+  "Sling": {
+    "name": "Sapan"
+  },
+  "Battleaxe": {
+    "name": "Savaş Baltası"
+  },
+  "Flail": {
+    "name": "Topuzlu Zincir"
+  },
+  "Glaive": {
+    "name": "Glaive"
+  },
+  "Greataxe": {
+    "name": "Büyük Balta"
+  },
+  "Greatsword": {
+    "name": "Büyük Kılıç"
+  },
+  "Halberd": {
+    "name": "Teber"
+  },
+  "Lance": {
+    "name": "Şövalye Mızrağı"
+  },
+  "Longsword": {
+    "name": "Uzun Kılıç"
+  },
+  "Maul": {
+    "name": "Büyük Çekiç"
+  },
+  "Morningstar": {
+    "name": "Dikenli Gürz"
+  },
+  "Pike": {
+    "name": "Kargı"
+  },
+  "Rapier": {
+    "name": "Meç"
+  },
+  "Scimitar": {
+    "name": "Pala"
+  },
+  "Shortsword": {
+    "name": "Kısa Kılıç"
+  },
+  "Trident": {
+    "name": "Üç Dişli Mızrak"
+  },
+  "Warhammer": {
+    "name": "Savaş Çekici"
+  },
+  "War Pick": {
+    "name": "Savaş Kazması"
+  },
+  "Whip": {
+    "name": "Kamçı"
+  },
+  "Blowgun": {
+    "name": "Üfleme Borusu"
+  },
+  "Hand Crossbow": {
+    "name": "El Arbaleti"
+  },
+  "Heavy Crossbow": {
+    "name": "Ağır Arbalet"
+  },
+  "Longbow": {
+    "name": "Uzun Yay"
+  },
+  "Musket": {
+    "name": "Tüfek"
+  },
+  "Pistol": {
+    "name": "Tabanca"
+  },
+  "Padded Armor": {
+    "name": "Dolgulu Zırh"
+  },
+  "Leather Armor": {
+    "name": "Deri Zırh"
+  },
+  "Studded Leather Armor": {
+    "name": "Çivili Deri Zırh"
+  },
+  "Hide Armor": {
+    "name": "Post Zırh"
+  },
+  "Chain Shirt": {
+    "name": "Zincir Gömlek"
+  },
+  "Scale Mail": {
+    "name": "Pullu Zırh"
+  },
+  "Breastplate": {
+    "name": "Göğüs Zırhı"
+  },
+  "Half Plate Armor": {
+    "name": "Yarım Plaka Zırh"
+  },
+  "Ring Mail": {
+    "name": "Halkalı Zırh"
+  },
+  "Chain Mail": {
+    "name": "Zincir Zırh"
+  },
+  "Splint Armor": {
+    "name": "Şerit Zırh"
+  },
+  "Plate Armor": {
+    "name": "Plaka Zırh"
+  },
+  "Shield": {
+    "name": "Kalkan"
+  },
+  "Arrow": {
+    "name": "Ok",
+    "description": "Yay mühimmatı; yirmilik demetler halinde satılır. Her saldırı bir ok harcar; çatışmadan sonra harcanan mühimmatın yarısı 1 dakikada geri alınabilir."
+  },
+  "Bolt": {
+    "name": "Arbalet Oku",
+    "description": "Arbalet mühimmatı; yirmilik demetler halinde satılır."
+  },
+  "Bullet": {
+    "name": "Mermi",
+    "description": "Ateşli silah mühimmatı; onluk demetler halinde satılır."
+  },
+  "Sling Bullet": {
+    "name": "Sapan Taşı",
+    "description": "Sapan mühimmatı; yirmilik demetler halinde satılır."
+  },
+  "Needle": {
+    "name": "İğne",
+    "description": "Üfleme borusu mühimmatı; ellilik demetler halinde satılır."
+  },
+  "Acid": {
+    "name": "Asit",
+    "description": "Bir saldırının yerine 20 fit içindeki hedefe bir şişe fırlat. Hedef Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 2d6 Asit hasarı alır."
+  },
+  "Alchemist's Fire": {
+    "name": "Simyacı Ateşi",
+    "description": "Bir saldırının yerine 20 fit içindeki hedefe bir matara fırlat. Hedef Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 1d4 Ateş hasarı alır ve yanmaya başlar."
+  },
+  "Antitoxin": {
+    "name": "Antitoksin",
+    "description": "Bonus Eylemle içerek 1 saat boyunca Zehirlenmiş durumundan kaçınma veya onu bitirme kurtarma atışlarında Avantaj kazan."
+  },
+  "Arcane Focus": {
+    "name": "Gizemli Odak",
+    "description": "Büyücü, Warlock veya Sihirbaz için büyü odağı. Kristal, küre, çubuk, asa veya değnek seç."
+  },
+  "Arcane Focus, Crystal": {
+    "name": "Gizemli Odak, Kristal",
+    "description": "Büyü odağı olarak kullanılan kristal."
+  },
+  "Arcane Focus, Orb": {
+    "name": "Gizemli Odak, Küre",
+    "description": "Büyü odağı olarak kullanılan küre."
+  },
+  "Arcane Focus, Rod": {
+    "name": "Gizemli Odak, Çubuk",
+    "description": "Büyü odağı olarak kullanılan çubuk."
+  },
+  "Arcane Focus, Staff": {
+    "name": "Gizemli Odak, Asa",
+    "description": "Savaş Asası olarak da kullanılabilen büyü odağı."
+  },
+  "Arcane Focus, Wand": {
+    "name": "Gizemli Odak, Değnek",
+    "description": "Büyü odağı olarak kullanılan değnek."
+  },
+  "Backpack": {
+    "name": "Sırt Çantası",
+    "description": "1 fit küpte 30 libreye kadar taşır; heybe olarak da kullanılabilir."
+  },
+  "Ball Bearings": {
+    "name": "Metal Bilyeler",
+    "description": "Kullan eylemiyle 10 fit içinde düz bir 10 fitlik kareye saç. İçeri giren yaratıklar SG 10 Çeviklik kurtarma atışında başarısız olursa Yere Düşmüş olur. Toplamak 10 dakika sürer."
+  },
+  "Barrel": {
+    "name": "Fıçı",
+    "description": "40 galona kadar sıvı veya 4 fit küp kuru malzeme alır."
+  },
+  "Basket": {
+    "name": "Sepet",
+    "description": "2 fit küpte 40 libreye kadar taşır."
+  },
+  "Bedroll": {
+    "name": "Uyku Tulumu",
+    "description": "Bir Küçük veya Orta yaratık uyuyabilir; içindeyken aşırı soğuğa karşı kurtarma atışlarında otomatik olarak başarılı olursun."
+  },
+  "Bell": {
+    "name": "Çan",
+    "description": "Kullan eylemiyle çalındığında 60 fite kadar duyulan ses çıkarır."
+  },
+  "Blanket": {
+    "name": "Battaniye",
+    "description": "İçine sarıldığında aşırı soğuğa karşı kurtarma atışlarında Avantajın olur."
+  },
+  "Block and Tackle": {
+    "name": "Makara Takımı",
+    "description": "Normalde kaldırabildiğin ağırlığın dört katını kaldırmanı sağlar."
+  },
+  "Book": {
+    "name": "Kitap",
+    "description": "Doğru bilgiler içeren kurgu dışı bir kitaba başvurmak, konusuyla ilgili Zekâ (Gizem, Tarih, Doğa veya Din) kontrollerine +5 verir."
+  },
+  "Bottle, Glass": {
+    "name": "Cam Şişe",
+    "description": "1,5 pintaya kadar alır."
+  },
+  "Bucket": {
+    "name": "Kova",
+    "description": "Yarım fit küpe kadar alır."
+  },
+  "Burglar's Pack": {
+    "name": "Hırsız Çantası",
+    "description": "Sızma için malzeme koleksiyonu."
+  },
+  "Caltrops": {
+    "name": "Dikenli Tuzaklar",
+    "description": "Kullan eylemiyle 5 fitlik kareye saç. İçine giren yaratık SG 15 Çeviklik kurtarma atışında başarısız olursa 1 Delici hasar alır ve sonraki turuna kadar Hızı 0 olur. Toplamak 10 dakika sürer."
+  },
+  "Candle": {
+    "name": "Mum",
+    "description": "1 saat yanar; 5 fit Parlak Işık ve ek 5 fit Loş Işık verir."
+  },
+  "Case, Crossbow Bolt": {
+    "name": "Arbalet Oku Kutusu",
+    "description": "20 Arbalet Okuna kadar taşır."
+  },
+  "Case, Map or Scroll": {
+    "name": "Harita veya Tomar Kutusu",
+    "description": "10 Kâğıt veya 5 Parşömen yaprağı alır."
+  },
+  "Chain": {
+    "name": "Zincir",
+    "description": "Yakalanmış, Etkisiz veya Kısıtlanmış yaratığı SG 13 Güç (Atletizm) kontrolüyle bağlayabilir. Kurtulmak SG 18 Çeviklik (Akrobasi), kırmak SG 20 Güç (Atletizm) gerektirir."
+  },
+  "Chest": {
+    "name": "Sandık",
+    "description": "12 fit küpe kadar alır."
+  },
+  "Climber's Kit": {
+    "name": "Tırmanış Takımı",
+    "description": "Bot uçları, eldiven, kazık ve koşum içerir. Kullan eylemiyle kendini sabitlemek düşüşünü 25 fitle, sabitleme noktasından uzaklaşmanı 25 fitle sınırlar."
+  },
+  "Clothes, Fine": {
+    "name": "Şık Giysi",
+    "description": "Resmî etkinlik ve mekânlara uygun pahalı giysi."
+  },
+  "Clothes, Traveler's": {
+    "name": "Yolcu Giysisi",
+    "description": "Çeşitli ortamlarda seyahate uygun dayanıklı giysi."
+  },
+  "Component Pouch": {
+    "name": "Bileşen Kesesi",
+    "description": "Büyülerinin ücretsiz Maddi bileşenleri için bölmeli su geçirmez kese."
+  },
+  "Costume": {
+    "name": "Kostüm",
+    "description": "Giyerken temsil ettiği kişi veya rolü taklit etme nitelik kontrollerinde Avantajın olur."
+  },
+  "Crowbar": {
+    "name": "Levye",
+    "description": "Kaldıraç olarak kullanılabiliyorsa Güç kontrollerinde Avantaj sağlar."
+  },
+  "Diplomat's Pack": {
+    "name": "Diplomat Çantası",
+    "description": "Resmî yolculuk ve yazışma malzemeleri."
+  },
+  "Druidic Focus": {
+    "name": "Druid Odağı",
+    "description": "Druid veya Korucu için büyü odağı. Ökseotu, ahşap asa veya porsuk değneği seç."
+  },
+  "Druidic Focus, Sprig of Mistletoe": {
+    "name": "Druid Odağı, Ökseotu Dalı",
+    "description": "İlksel büyü odağı olarak kullanılan ökseotu dalı."
+  },
+  "Druidic Focus, Wooden Staff": {
+    "name": "Druid Odağı, Ahşap Asa",
+    "description": "Savaş Asası olarak da kullanılabilen ilksel büyü odağı."
+  },
+  "Druidic Focus, Yew Wand": {
+    "name": "Druid Odağı, Porsuk Değneği",
+    "description": "İlksel büyü odağı olarak kullanılan porsuk değneği."
+  },
+  "Dungeoneer's Pack": {
+    "name": "Zindan Gezgini Çantası",
+    "description": "Zindan keşfi malzemeleri."
+  },
+  "Entertainer's Pack": {
+    "name": "Eğlendirici Çantası",
+    "description": "Gezgin sanatçı malzemeleri."
+  },
+  "Explorer's Pack": {
+    "name": "Kaşif Çantası",
+    "description": "Kara yolculuğu malzemeleri."
+  },
+  "Flask": {
+    "name": "Matara",
+    "description": "1 pintaya kadar alır."
+  },
+  "Grappling Hook": {
+    "name": "Kancalı Halat",
+    "description": "Kullan eylemiyle 50 fit içindeki tutunma noktasına at. SG 13 Çeviklik (Akrobasi) kontrolüyle sabitlenir; bağlanan Halat ardından tırmanılabilir."
+  },
+  "Healer's Kit": {
+    "name": "Şifacı Çantası",
+    "description": "On kullanımından birini Kullan eylemiyle harcayarak 0 Can Puanındaki Bilinçsiz yaratığı Tıp kontrolü olmadan stabilize et."
+  },
+  "Holy Symbol": {
+    "name": "Kutsal Sembol",
+    "description": "Rahip veya Paladin için büyü odağı. Muska, amblem veya kutsal emanet seç."
+  },
+  "Holy Symbol, Amulet": {
+    "name": "Kutsal Sembol, Muska",
+    "description": "Takılabilen veya tutulabilen ilahi büyü odağı."
+  },
+  "Holy Symbol, Emblem": {
+    "name": "Kutsal Sembol, Amblem",
+    "description": "Kumaşta veya Kalkanda taşınan ilahi büyü odağı."
+  },
+  "Holy Symbol, Reliquary": {
+    "name": "Kutsal Sembol, Kutsal Emanet",
+    "description": "Elde tutulması gereken ilahi büyü odağı."
+  },
+  "Holy Water": {
+    "name": "Kutsal Su",
+    "description": "Bir saldırının yerine 20 fit içindeki yaratığa matara fırlat. Bir İfrit veya Hortlak Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 2d8 Işınsal hasar alır."
+  },
+  "Hunting Trap": {
+    "name": "Av Tuzağı",
+    "description": "Kurulu tuzağa basan yaratık SG 13 Çeviklik kurtarma atışında başarısız olursa 1d4 Delici hasar alır ve sonraki turuna kadar Hızı 0 olur. Kurtarmak SG 13 Güç (Atletizm) gerektirir."
+  },
+  "Ink": {
+    "name": "Mürekkep",
+    "description": "1 onsluk şişe yaklaşık 500 sayfaya yetecek mürekkep içerir."
+  },
+  "Ink Pen": {
+    "name": "Mürekkep Kalemi",
+    "description": "Yazmak veya çizmek için Mürekkeple kullanılır."
+  },
+  "Jug": {
+    "name": "Sürahi",
+    "description": "1 galona kadar alır."
+  },
+  "Ladder": {
+    "name": "Merdiven",
+    "description": "10 fitlik merdiven."
+  },
+  "Lamp": {
+    "name": "Lamba",
+    "description": "Yağ yakar; 15 fit Parlak Işık ve ek 30 fit Loş Işık verir."
+  },
+  "Lantern, Bullseye": {
+    "name": "Yönlü Fener",
+    "description": "Yağ yakar; 60 fitlik Konide Parlak Işık ve ek 60 fit Loş Işık verir."
+  },
+  "Lantern, Hooded": {
+    "name": "Kapaklı Fener",
+    "description": "Yağ yakar; 30 fit Parlak Işık ve ek 30 fit Loş Işık verir. Kapağı indirmek ışığı 5 fit Loş Işıkla sınırlar."
+  },
+  "Lock": {
+    "name": "Kilit",
+    "description": "Anahtarıyla gelir. Anahtar yoksa açmak için Hırsız Aletleri ve SG 15 Çeviklik (El Çabukluğu) kontrolü gerekir."
+  },
+  "Magnifying Glass": {
+    "name": "Büyüteç",
+    "description": "İnce ayrıntıları değerlendirme veya inceleme kontrollerinde Avantaj sağlar; güneş ışığında yaklaşık 5 dakikada ateş de yakabilir."
+  },
+  "Manacles": {
+    "name": "Kelepçe",
+    "description": "Yakalanmış, Etkisiz veya Kısıtlanmış Küçük veya Orta yaratığı SG 13 Çeviklik (El Çabukluğu) kontrolüyle bağlar. Kurtulmak SG 20, kırmak SG 25 Güç (Atletizm) gerektirir."
+  },
+  "Map": {
+    "name": "Harita",
+    "description": "Doğru bir harita, gösterilen alanda yol bulmak için Bilgelik (Hayatta Kalma) kontrollerine +5 verir."
+  },
+  "Mirror": {
+    "name": "Ayna",
+    "description": "Köşelerin arkasına bakmak veya yansıtılmış ışıkla işaret vermek için el tipi çelik ayna."
+  },
+  "Net": {
+    "name": "Ağ",
+    "description": "Bir saldırının yerine 15 fit içindeki yaratığa fırlat. Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa Kısıtlanmış olur; Devasa veya daha büyük yaratıklar otomatik başarılıdır. Kurtulmak SG 10 Güç (Atletizm) gerektirir."
+  },
+  "Oil": {
+    "name": "Yağ",
+    "description": "Bir matara Lamba veya Feneri 6 saat besler. Bir yaratığı veya nesneyi ıslatmak, 1 dakika içinde sonraki Ateş hasarına 5 ek hasar katabilir; yerde yanan yağ 5 Ateş hasarı verir."
+  },
+  "Paper": {
+    "name": "Kâğıt",
+    "description": "Bir yaprak yaklaşık 250 el yazısı kelime alır."
+  },
+  "Parchment": {
+    "name": "Parşömen",
+    "description": "Bir yaprak yaklaşık 250 el yazısı kelime alır."
+  },
+  "Perfume": {
+    "name": "Parfüm",
+    "description": "4 onsluk şişe. Sürdükten sonra 1 saat boyunca 5 fit içindeki İlgisiz bir İnsansıyı etkilemeye yönelik Karizma (İkna) kontrollerinde Avantaj kazan."
+  },
+  "Poison, Basic": {
+    "name": "Temel Zehir",
+    "description": "Bonus Eylemle bir silahı veya en fazla üç mühimmatı kapla. Bunların Delici veya Kesici hasarı, 1 dakika içinde veya hasar verilene kadar ek 1d4 Zehir hasarı verir."
+  },
+  "Pole": {
+    "name": "Sırık",
+    "description": "10 fitlik sırık. Onunla sıçramak, Yüksek veya Uzun Atlamada Güç (Atletizm) kontrolüne Avantaj verir."
+  },
+  "Pot, Iron": {
+    "name": "Demir Tencere",
+    "description": "1 galona kadar alır."
+  },
+  "Pouch": {
+    "name": "Kese",
+    "description": "Fit küpün beşte birinde 6 libreye kadar taşır."
+  },
+  "Priest's Pack": {
+    "name": "Rahip Çantası",
+    "description": "Yolculuk ve dinî malzemeler."
+  },
+  "Quiver": {
+    "name": "Sadak",
+    "description": "20 oka kadar taşır."
+  },
+  "Ram, Portable": {
+    "name": "Taşınabilir Koçbaşı",
+    "description": "Kapıları kırmaya yönelik Güç kontrollerine +4 verir; başka bir karakter yardım ederek Avantaj sağlayabilir."
+  },
+  "Rations": {
+    "name": "Erzak",
+    "description": "Kuruyemiş, kurutulmuş et, sert bisküvi gibi bir günlük yolculuk yiyeceği."
+  },
+  "Robe": {
+    "name": "Cübbe",
+    "description": "Mesleki veya törensel anlamı olan giysi."
+  },
+  "Rope": {
+    "name": "Halat",
+    "description": "Düğüm atmak SG 10 Çeviklik (El Çabukluğu), halatı koparmak SG 20 Güç (Atletizm) gerektirir. Bağlı yaratık SG 15 Çeviklik (Akrobasi) ile kurtulabilir."
+  },
+  "Sack": {
+    "name": "Çuval",
+    "description": "1 fit küpte 30 libreye kadar taşır."
+  },
+  "Scholar's Pack": {
+    "name": "Bilgin Çantası",
+    "description": "Çalışma ve yazı malzemeleri."
+  },
+  "Shovel": {
+    "name": "Kürek",
+    "description": "Toprağı veya benzer malzemeyi bir saat kazmak, kenarı 5 fit olan küp kadar alan açar."
+  },
+  "Signal Whistle": {
+    "name": "İşaret Düdüğü",
+    "description": "Kullan eylemiyle üflendiğinde 600 fite kadar duyulan ses çıkarır."
+  },
+  "Spellbook": {
+    "name": "Büyü Kitabı",
+    "description": "Büyücünün 1. seviye ve üstü büyüler için 100 sayfalık benzersiz kitabı. Yalnızca sahibi veya Tanımla büyüsünü yapan biri okuyabilir; Büyücü odağı da olabilir."
+  },
+  "Spikes, Iron": {
+    "name": "Demir Çiviler",
+    "description": "Kapıyı sıkıştırmak veya Halat ya da Zinciri sabitlemek için on demir çividen oluşan demet."
+  },
+  "Spyglass": {
+    "name": "Dürbün",
+    "description": "Görülen nesneleri iki katı büyüklükte gösterir."
+  },
+  "String": {
+    "name": "İp",
+    "description": "10 fitlik ip; düğüm atmak Kullan eylemidir."
+  },
+  "Tent": {
+    "name": "Çadır",
+    "description": "En fazla iki Küçük veya Orta yaratık uyuyabilir."
+  },
+  "Tinderbox": {
+    "name": "Çakmak Takımı",
+    "description": "Çakmak taşı, çelik ve kav. Açıkta duran yakıtı yakmak Bonus Eylem, başka ateş yakmak 1 dakika sürer."
+  },
+  "Torch": {
+    "name": "Meşale",
+    "description": "1 saat yanar; 20 fit Parlak Işık ve ek 20 fit Loş Işık verir. İsabette 1 Ateş hasarı veren Basit Yakın Dövüş silahı olarak kullanılabilir."
+  },
+  "Vial": {
+    "name": "Küçük Şişe",
+    "description": "4 onsa kadar alır."
+  },
+  "Waterskin": {
+    "name": "Su Tulumu",
+    "description": "4 pinta suya kadar alır; verilen ağırlık doluyken geçerlidir."
+  },
+  "weaponMasteries": {
+    "cleave": {
+      "name": "Yarma",
+      "description": "Tur başına bir kez yakın dövüş saldırısıyla isabet ettikten sonra aynı silahla ilk hedefin 5 fit içindeki ve erişimindeki başka yaratığa saldır. İsabette pozitif nitelik değiştiricisi olmadan silah hasarı ver."
+    },
+    "graze": {
+      "name": "Sıyırma",
+      "description": "Iskaladığında saldırıda kullanılan nitelik değiştiricisine eşit, silahın türünde hasar ver. Yalnızca bu değiştiricinin artması hasarı artırabilir."
+    },
+    "nick": {
+      "name": "Seri",
+      "description": "Tur başına bir kez Hafif özelliğinin ek saldırısını Bonus Eylem yerine Saldırı eyleminin parçası olarak yap."
+    },
+    "push": {
+      "name": "İtme",
+      "description": "İsabette Büyük veya daha küçük yaratığı senden doğrudan uzağa 10 fite kadar it."
+    },
+    "sap": {
+      "name": "Sersemletme",
+      "description": "İsabette hedefin sonraki turunun başına kadarki bir sonraki saldırı atışında Dezavantajı vardır."
+    },
+    "slow": {
+      "name": "Yavaşlatma",
+      "description": "Hasar veren isabette hedefin Hızını sonraki turunun başına kadar 10 fit azalt. Birden çok isabet azaltmayı artırmaz."
+    },
+    "topple": {
+      "name": "Devirme",
+      "description": "İsabette hedef SG 8 + saldırının nitelik değiştiricisi + Yeterlilik Bonusuna karşı Dayanıklılık kurtarma atışı yapar; başarısız olursa Yere Düşmüş olur."
+    },
+    "vex": {
+      "name": "Zor Duruma Sokma",
+      "description": "Hasar veren isabette sonraki turunun bitimine kadar o yaratığa karşı bir sonraki saldırı atışında Avantajın olur."
+    }
+  }
+}

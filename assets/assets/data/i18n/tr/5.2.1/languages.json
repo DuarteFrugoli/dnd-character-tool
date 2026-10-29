@@ -1,0 +1,59 @@
+{
+  "Common": {
+    "name": "Ortak Dil"
+  },
+  "Common Sign Language": {
+    "name": "Ortak İşaret Dili"
+  },
+  "Draconic": {
+    "name": "Ejder Dili"
+  },
+  "Dwarvish": {
+    "name": "Cüce Dili"
+  },
+  "Elvish": {
+    "name": "Elfçe"
+  },
+  "Giant": {
+    "name": "Dev Dili"
+  },
+  "Gnomish": {
+    "name": "Gnom Dili"
+  },
+  "Goblin": {
+    "name": "Goblin Dili"
+  },
+  "Halfling": {
+    "name": "Buçukluk Dili"
+  },
+  "Orc": {
+    "name": "Ork Dili"
+  },
+  "Abyssal": {
+    "name": "Uçurum Dili"
+  },
+  "Celestial": {
+    "name": "Göksel Dil"
+  },
+  "Deep Speech": {
+    "name": "Derin Konuşma"
+  },
+  "Druidic": {
+    "name": "Druid Dili"
+  },
+  "Infernal": {
+    "name": "Cehennem Dili"
+  },
+  "Primordial": {
+    "name": "İlkel Dil"
+  },
+  "Sylvan": {
+    "name": "Peri Dili"
+  },
+  "Thieves' Cant": {
+    "name": "Hırsız Argosu"
+  },
+  "Undercommon": {
+    "name": "Yeraltı Ortak Dili"
+  }
+}

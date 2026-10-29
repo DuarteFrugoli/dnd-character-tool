@@ -1,0 +1,59 @@
+{
+  "Common": {
+    "name": "Gemeinsprache"
+  },
+  "Common Sign Language": {
+    "name": "Gemeinsame Gebärdensprache"
+  },
+  "Draconic": {
+    "name": "Drakonisch"
+  },
+  "Dwarvish": {
+    "name": "Zwergisch"
+  },
+  "Elvish": {
+    "name": "Elbisch"
+  },
+  "Giant": {
+    "name": "Riesisch"
+  },
+  "Gnomish": {
+    "name": "Gnomisch"
+  },
+  "Goblin": {
+    "name": "Goblinisch"
+  },
+  "Halfling": {
+    "name": "Halblingisch"
+  },
+  "Orc": {
+    "name": "Orkisch"
+  },
+  "Abyssal": {
+    "name": "Abgründig"
+  },
+  "Celestial": {
+    "name": "Himmlisch"
+  },
+  "Deep Speech": {
+    "name": "Tiefe Sprache"
+  },
+  "Druidic": {
+    "name": "Druidisch"
+  },
+  "Infernal": {
+    "name": "Höllisch"
+  },
+  "Primordial": {
+    "name": "Primordial"
+  },
+  "Sylvan": {
+    "name": "Sylvanisch"
+  },
+  "Thieves' Cant": {
+    "name": "Diebessprache"
+  },
+  "Undercommon": {
+    "name": "Untergemeinsprache"
+  }
+}

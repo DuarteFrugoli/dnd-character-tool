@@ -1,0 +1,50 @@
+{
+  "Barbarian": {
+    "name": "Варвар",
+    "subclassFeatureName": "Подкласс: Варвар"
+  },
+  "Bard": {
+    "name": "Бард",
+    "subclassFeatureName": "Подкласс: Бард"
+  },
+  "Cleric": {
+    "name": "Жрец",
+    "subclassFeatureName": "Подкласс: Жрец"
+  },
+  "Druid": {
+    "name": "Друид",
+    "subclassFeatureName": "Подкласс: Друид"
+  },
+  "Fighter": {
+    "name": "Воин",
+    "subclassFeatureName": "Подкласс: Воин"
+  },
+  "Monk": {
+    "name": "Монах",
+    "subclassFeatureName": "Подкласс: Монах"
+  },
+  "Paladin": {
+    "name": "Паладин",
+    "subclassFeatureName": "Подкласс: Паладин"
+  },
+  "Ranger": {
+    "name": "Следопыт",
+    "subclassFeatureName": "Подкласс: Следопыт"
+  },
+  "Rogue": {
+    "name": "Плут",
+    "subclassFeatureName": "Подкласс: Плут"
+  },
+  "Sorcerer": {
+    "name": "Чародей",
+    "subclassFeatureName": "Подкласс: Чародей"
+  },
+  "Warlock": {
+    "name": "Колдун",
+    "subclassFeatureName": "Подкласс: Колдун"
+  },
+  "Wizard": {
+    "name": "Волшебник",
+    "subclassFeatureName": "Подкласс: Волшебник"
+  }
+}

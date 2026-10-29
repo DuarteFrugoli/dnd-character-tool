@@ -1,0 +1,95 @@
+[
+  {
+    "id": "acolyte",
+    "name": "Acolyte",
+    "abilityScoreOptions": ["intelligence", "wisdom", "charisma"],
+    "originFeatRef": "srd_5_2_1/feat/magic_initiate",
+    "originFeatChoices": {"spell_class": "cleric"},
+    "skillProficiencies": ["insight", "religion"],
+    "toolProficiencies": ["Calligrapher's Supplies"],
+    "equipmentChoices": [
+      {
+        "id": "a",
+        "items": [
+          {"name": "Calligrapher's Supplies", "quantity": 1},
+          {"name": "Book", "variant": "prayers", "quantity": 1},
+          {"name": "Holy Symbol", "quantity": 1},
+          {"name": "Parchment", "quantity": 10},
+          {"name": "Robe", "quantity": 1}
+        ],
+        "gp": 8
+      },
+      {"id": "b", "items": [], "gp": 50}
+    ]
+  },
+  {
+    "id": "criminal",
+    "name": "Criminal",
+    "abilityScoreOptions": ["dexterity", "constitution", "intelligence"],
+    "originFeatRef": "srd_5_2_1/feat/alert",
+    "skillProficiencies": ["sleight of hand", "stealth"],
+    "toolProficiencies": ["Thieves' Tools"],
+    "equipmentChoices": [
+      {
+        "id": "a",
+        "items": [
+          {"name": "Dagger", "quantity": 2},
+          {"name": "Thieves' Tools", "quantity": 1},
+          {"name": "Crowbar", "quantity": 1},
+          {"name": "Pouch", "quantity": 2},
+          {"name": "Clothes, Traveler's", "quantity": 1}
+        ],
+        "gp": 16
+      },
+      {"id": "b", "items": [], "gp": 50}
+    ]
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "abilityScoreOptions": ["constitution", "intelligence", "wisdom"],
+    "originFeatRef": "srd_5_2_1/feat/magic_initiate",
+    "originFeatChoices": {"spell_class": "wizard"},
+    "skillProficiencies": ["arcana", "history"],
+    "toolProficiencies": ["Calligrapher's Supplies"],
+    "equipmentChoices": [
+      {
+        "id": "a",
+        "items": [
+          {"name": "Quarterstaff", "quantity": 1},
+          {"name": "Calligrapher's Supplies", "quantity": 1},
+          {"name": "Book", "variant": "history", "quantity": 1},
+          {"name": "Parchment", "quantity": 8},
+          {"name": "Robe", "quantity": 1}
+        ],
+        "gp": 8
+      },
+      {"id": "b", "items": [], "gp": 50}
+    ]
+  },
+  {
+    "id": "soldier",
+    "name": "Soldier",
+    "abilityScoreOptions": ["strength", "dexterity", "constitution"],
+    "originFeatRef": "srd_5_2_1/feat/savage_attacker",
+    "skillProficiencies": ["athletics", "intimidation"],
+    "toolProficiencies": [],
+    "toolProficiencyChoices": [{"category": "gaming_sets", "count": 1}],
+    "equipmentChoices": [
+      {
+        "id": "a",
+        "items": [
+          {"name": "Spear", "quantity": 1},
+          {"name": "Shortbow", "quantity": 1},
+          {"name": "Arrow", "quantity": 20},
+          {"name": "Gaming Set", "choiceFrom": "toolProficiencyChoices", "quantity": 1},
+          {"name": "Healer's Kit", "quantity": 1},
+          {"name": "Quiver", "quantity": 1},
+          {"name": "Clothes, Traveler's", "quantity": 1}
+        ],
+        "gp": 14
+      },
+      {"id": "b", "items": [], "gp": 50}
+    ]
+  }
+]

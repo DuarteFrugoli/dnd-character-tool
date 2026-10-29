@@ -13,6 +13,7 @@ import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/inventory/inventory_operations.dart' as inventory_ops;
 import '../../data/models/models.dart';
+import '../../data/rest/rest_policy.dart';
 import '../../data/rulesets/character_rules_context.dart';
 import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
@@ -190,32 +191,17 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> longRest() async {
     final c = state.valueOrNull;
     if (c == null) return;
-    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Long rest');
-    // Recover ceil(level / 2) hit dice on a long rest (PHB rules)
-    final hdRecovered = (c.totalLevel / 2).ceil();
-    final newHdUsed = (c.totalHitDiceUsed - hdRecovered)
-        .clamp(0, c.totalHitDice)
-        .toInt();
-    final newHitDicePools = _recoverHitDicePools(c.hitDicePools, hdRecovered);
+    final policy = RestPolicy.forCharacter(c);
     final featureResources = await _featureResourcesAfterRest(
       c,
       FeatureUsageRest.longRest,
+      policy,
     );
     await _save(
-      c.copyWith(
-        hitPoints: c.hitPoints.copyWith(
-          current: c.hitPoints.maximum,
-          temporary: 0,
-          hitDiceUsed: newHdUsed,
-        ),
-        hitDicePools: newHitDicePools,
-        spellSlots: c.spellSlots.copyWith(used: List.filled(9, 0)),
-        pactMagicSlots: c.pactMagicSlots.copyWith(used: List.filled(9, 0)),
-        innateSpells: c.innateSpells
-            .map((s) => s.copyWith(usedToday: 0))
-            .toList(),
+      policy.applyLongRest(
+        c,
         featureResources: featureResources,
-        concentrationSpell: null,
+        raceTraits: await _raceTraits(c),
       ),
     );
   }
@@ -232,33 +218,16 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   }) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Short rest');
-    final clampedHp = hpGained
-        .clamp(0, c.hitPoints.maximum - c.hitPoints.current)
-        .toInt();
-    final newHitDicePools = _spendHitDicePoolsByIndex(
-      c.hitDicePools,
-      hitDiceSpentByPool,
+    final policy = RestPolicy.forCharacter(c);
+    final rested = policy.applyShortRest(
+      c,
+      hitDiceSpentByPool: hitDiceSpentByPool,
+      hpGained: hpGained,
     );
-    final hdSpent = _hitDiceSpent(c.hitDicePools, hitDiceSpentByPool);
-    final newHdUsed = newHitDicePools.isEmpty
-        ? (c.totalHitDiceUsed + hdSpent).clamp(0, c.totalHitDice).toInt()
-        : newHitDicePools.fold<int>(0, (sum, pool) => sum + pool.used);
-    var rested = c.copyWith(
-      hitPoints: c.hitPoints.copyWith(
-        current: c.hitPoints.current + clampedHp,
-        hitDiceUsed: newHdUsed,
-      ),
-      hitDicePools: newHitDicePools,
-    );
-    rested = CharacterProgressionEngine.syncSpellcastingSlotsFor(rested)
-        .copyWith(
-          pactMagicSlots:
-              CharacterProgressionEngine.pactMagicSlotsAfterShortRest(rested),
-        );
     final featureResources = await _featureResourcesAfterRest(
       rested,
       FeatureUsageRest.shortRest,
+      policy,
     );
     await _save(rested.copyWith(featureResources: featureResources));
   }
@@ -286,6 +255,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<Map<String, int>> _featureResourcesAfterRest(
     Character c,
     FeatureUsageRest rest,
+    RestPolicy policy,
   ) async {
     final result = Map<String, int>.from(c.featureResources);
     final bindings = await _activeFeatureUsageBindings(c);
@@ -318,13 +288,17 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         );
         continue;
       }
-      if (rest == FeatureUsageRest.shortRest &&
-          resource.id == 'sorcery_points' &&
-          binding.usageContext.sourceClass?.toLowerCase() == 'sorcerer' &&
-          binding.usageContext.effectiveClassLevel >= 20) {
-        final current = FeatureUsageEngine.currentFor(c, resource, max) ?? max;
-        result[resource.id] = (current + 4).clamp(0, max).toInt();
-        continue;
+      if (rest == FeatureUsageRest.shortRest) {
+        final recovered = policy.shortRestBonusRecovery(
+          resource: resource,
+          usageContext: binding.usageContext,
+          current: FeatureUsageEngine.currentFor(c, resource, max) ?? max,
+          max: max,
+        );
+        if (recovered != null) {
+          result[resource.id] = recovered;
+          continue;
+        }
       }
       final current = result[resource.id];
       if (current != null) {
@@ -370,24 +344,29 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
         ),
       );
     }
-    final List<String> traits;
-    if (c.rulesetId == RulesetId.dnd2024) {
-      final species = await ref.read(srd2024SpeciesProvider.future);
-      traits = species.where((entry) => entry.name == c.race).firstOrNull?.traits ?? const [];
-    } else {
-      final races = await srd.getRaces();
-      final race = races.where((r) => r.name == c.race).firstOrNull;
-      final subrace = race?.subraces
-          .where((s) => s.name == c.subrace)
-          .firstOrNull;
-      traits = <String>[...?race?.traits, ...?subrace?.traits];
-    }
     return FeatureUsageEngine.activeResourceBindings(
       character: c,
       catalog: catalog,
       classFeatureSets: classFeatureSets,
-      raceTraits: traits,
+      raceTraits: await _raceTraits(c),
     ).toList();
+  }
+
+  /// Race/species trait names from the character's own content pack.
+  Future<List<String>> _raceTraits(Character c) async {
+    if (c.rulesetId == RulesetId.dnd2024) {
+      final species = await ref.read(srd2024SpeciesProvider.future);
+      return species.where((entry) => entry.name == c.race).firstOrNull?.traits ?? const [];
+    }
+    final rules = CharacterRulesContext.fromCharacter(c);
+    final races = await ref
+        .read(srdDataSourceForPackProvider(rules.contentPackId))
+        .getRaces();
+    final race = races.where((r) => r.name == c.race).firstOrNull;
+    final subrace = race?.subraces
+        .where((s) => s.name == c.subrace)
+        .firstOrNull;
+    return <String>[...?race?.traits, ...?subrace?.traits];
   }
 
   /// Auto-populates [innateSpells] from the SRD race data if the character has
@@ -635,52 +614,6 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     };
     final newC = c.copyWith(abilityScores: updated);
     await _save(newC.copyWith(armorClass: calcArmorClass(newC)));
-  }
-
-  int _hitDiceSpent(List<CharacterHitDiePool> pools, List<int> spendByPool) {
-    if (spendByPool.isEmpty) return 0;
-    if (pools.isEmpty) {
-      return spendByPool.fold<int>(
-        0,
-        (sum, count) => sum + count.clamp(0, 20).toInt(),
-      );
-    }
-    var spent = 0;
-    for (var i = 0; i < pools.length; i++) {
-      final requested = i < spendByPool.length ? spendByPool[i] : 0;
-      spent += requested.clamp(0, pools[i].remaining).toInt();
-    }
-    return spent;
-  }
-
-  List<CharacterHitDiePool> _spendHitDicePoolsByIndex(
-    List<CharacterHitDiePool> pools,
-    List<int> spendByPool,
-  ) {
-    if (pools.isEmpty || spendByPool.isEmpty) return pools;
-    final updated = <CharacterHitDiePool>[];
-    for (var i = 0; i < pools.length; i++) {
-      final pool = pools[i];
-      final requested = i < spendByPool.length ? spendByPool[i] : 0;
-      final spend = requested.clamp(0, pool.remaining).toInt();
-      updated.add(pool.copyWith(used: pool.used + spend));
-    }
-    return updated;
-  }
-
-  List<CharacterHitDiePool> _recoverHitDicePools(
-    List<CharacterHitDiePool> pools,
-    int count,
-  ) {
-    if (pools.isEmpty || count <= 0) return pools;
-    var remaining = count;
-    final updated = <CharacterHitDiePool>[];
-    for (final pool in pools) {
-      final recovered = remaining < pool.used ? remaining : pool.used;
-      updated.add(pool.copyWith(used: pool.used - recovered));
-      remaining -= recovered;
-    }
-    return updated;
   }
 
   // ── Extra Features (multiclasse / manual) ──────────────────────────────────

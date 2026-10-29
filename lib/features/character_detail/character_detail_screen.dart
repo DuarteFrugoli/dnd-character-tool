@@ -8,8 +8,8 @@ import 'package:go_router/go_router.dart';
 import '../../core/display/keep_screen_on_provider.dart';
 import '../../core/platform/keep_screen_on.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
-import '../../data/constants/level_up_rules.dart';
 import '../../data/models/models.dart';
+import '../../data/rest/rest_policy.dart';
 import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
@@ -409,7 +409,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           onRollDice: () => openDiceRollerSheet(context, characterId: widget.characterId),
           onLevelUp: null,
           onResetLevels: null,
-          onRest: null,
+          onRest: _showRestPickerForCurrentCharacter,
           onImageChanged: (path) => ref.read(characterDetailProvider(widget.characterId).notifier).updateImage(path),
           children: [
             CharacterTabHost<IdentityTabVm>(
@@ -573,19 +573,12 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       characterDetailProvider(widget.characterId).notifier,
     );
 
-    final hitDicePools = character.hitDicePools.isNotEmpty
-        ? character.hitDicePools
-        : [
-            CharacterHitDiePool(
-              dieSize: levelUpHitDie(character.primaryClassName),
-              total: character.totalLevel,
-              used: character.hitPoints.hitDiceUsed,
-              sourceClass: character.primaryClassName,
-              sourceClassEntryId: character.primaryClass.id,
-            ),
-          ];
+    final hitDicePools = RestPolicy.forCharacter(
+      character,
+    ).hitDicePoolsFor(character);
     final i18n =
-        ref.read(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+        ref.read(srdI18nForPackProvider(character.contentPackId)).valueOrNull ??
+        SrdI18nService.english;
     final poolRows = [
       for (var i = 0; i < hitDicePools.length; i++)
         _ShortRestHitDiePool(

@@ -609,7 +609,14 @@ level.
 Remaining uses are stored in `Character.featureResources`. Missing entries are
 treated as full, which keeps old characters readable and avoids saving noise.
 Short and long rests call `CharacterDetailNotifier._featureResourcesAfterRest`
-to restore resources whose recharge rules apply. Manual adjustments go through
+to restore resources whose recharge rules apply.
+
+The rest of the rest math lives in `data/rest/rest_policy.dart`, selected by
+`RestPolicy.forCharacter()`. `Rest2014Policy` keeps the SRD 5.1 behavior
+(half the hit dice on a long rest, slot resync and Sorcerous Restoration on a
+short rest). `Rest2024Policy` follows the SRD 5.2.1 glossary: a long rest
+recovers every hit die and grants Heroic Inspiration through `Resourceful`;
+a short rest recovers Pact Magic slots without recalculating saved totals. Manual adjustments go through
 `CharacterDetailNotifier.adjustFeatureResource()`.
 
 The Features tab renders usage controls next to any feature/trait/feat that has
@@ -1051,6 +1058,7 @@ the affected files before committing.
 | Spellcasting slots/known/prepared/cantrips | `data/spellcasting_engine.dart` |
 | Dice parser/roller | `data/dice/`, `features/character_detail/widgets/dice/dice_roller_sheet.dart` |
 | Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/5.1/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
+| Short/long rest rules | `data/rest/rest_policy.dart`, `CharacterDetailNotifier.shortRest()` / `longRest()` |
 | Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/5.1/feature_usages.json`, `features/character_detail/widgets/features/feature_sections.dart` |
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |
 | Backup export/import | `CharacterRepository`, `CharacterLocalDataSource`, `features/home/settings_screen.dart`, `core/utils/file_exporter.dart` |

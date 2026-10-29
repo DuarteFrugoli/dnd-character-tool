@@ -101,20 +101,60 @@ Future<({ProviderContainer container, _CountingBackend backend})> _setup(
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('2024 rests fail before reading 2014 resources or writing state', () async {
-    final (:container, :backend) = await _setup(
-      _baseCharacter().copyWith(
-        rulesetId: RulesetId.dnd2024,
-        contentPackId: ContentPackId.srd521,
-      ),
+  group('2024 rests', () {
+    Character fighter2024({
+      int secondWind = 0,
+      bool inspiration = false,
+    }) => _baseCharacter(hpMax: 12, hpCurrent: 2).copyWith(
+      rulesetId: RulesetId.dnd2024,
+      contentPackId: ContentPackId.srd521,
+      classes: [
+        const CharacterClassEntry(
+          id: 'primary',
+          className: 'Fighter',
+          level: 1,
+          isStartingClass: true,
+        ),
+      ],
+      hitDicePools: const [
+        CharacterHitDiePool(
+          dieSize: 10,
+          total: 1,
+          used: 1,
+          sourceClass: 'Fighter',
+          sourceClassEntryId: 'primary',
+        ),
+      ],
+      featureResources: {'2024_second_wind': secondWind},
+      inspiration: inspiration,
     );
-    final notifier = container.read(characterDetailProvider(_id).notifier);
-    await expectLater(notifier.longRest(), throwsUnsupportedError);
-    await expectLater(
-      notifier.shortRest(hitDiceSpentByPool: const [], hpGained: 0),
-      throwsUnsupportedError,
-    );
-    expect(backend.writeCount, 0);
+
+    test('short rest recovers one 2024 Second Wind use', () async {
+      final (:container, :backend) = await _setup(fighter2024());
+      final notifier = container.read(characterDetailProvider(_id).notifier);
+
+      await notifier.shortRest(hitDiceSpentByPool: const [0], hpGained: 0);
+
+      final saved = container.read(characterDetailProvider(_id)).value!;
+      expect(saved.featureResources['2024_second_wind'], 1);
+      expect(saved.hitDicePools.single.used, 1);
+      expect(backend.writeCount, 1);
+    });
+
+    test('long rest restores 2024 resources, hit dice and Heroic Inspiration', () async {
+      final (:container, :backend) = await _setup(fighter2024());
+      final notifier = container.read(characterDetailProvider(_id).notifier);
+
+      await notifier.longRest();
+
+      final saved = container.read(characterDetailProvider(_id)).value!;
+      expect(saved.featureResources['2024_second_wind'], 2);
+      expect(saved.hitDicePools.single.used, 0);
+      expect(saved.hitPoints.current, 12);
+      expect(saved.inspiration, isTrue);
+      expect(saved.rulesetId, RulesetId.dnd2024);
+      expect(backend.writeCount, 1);
+    });
   });
 
   // ── saveStatsEdit: HP clamping ────────────────────────────────────────────

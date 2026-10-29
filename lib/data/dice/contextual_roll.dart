@@ -9,11 +9,15 @@ class ContextualRollOptions {
     this.d20Mode = ContextualD20Mode.normal,
     this.criticalMode = ContextualCriticalMode.none,
     this.expressionChoices = const {},
+    this.d20SituationalModifier = 0,
   });
 
   final ContextualD20Mode d20Mode;
   final ContextualCriticalMode criticalMode;
   final Map<String, String> expressionChoices;
+
+  /// Added to every d20 part, e.g. the 2024 Exhaustion penalty.
+  final int d20SituationalModifier;
 }
 
 class ContextualRollRequest {

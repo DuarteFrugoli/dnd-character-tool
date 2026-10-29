@@ -10,6 +10,7 @@ import '../../core/platform/keep_screen_on.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/models/models.dart';
 import '../../data/rest/rest_policy.dart';
+import '../../data/rest/short_rest_recovery.dart';
 import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
@@ -591,6 +592,16 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
         ),
     ];
     final conMod = (character.abilityScores.constitution - 10) ~/ 2;
+    final recoveryRows = [
+      for (final option in await notifier.shortRestRecoveryOptions())
+        _ShortRestRecoveryRow(
+          option: option,
+          label: i18n.featureUsageResourceName(
+            option.resourceId,
+            option.resourceName,
+          ),
+        ),
+    ];
 
     if (!mounted) return;
     await showDialog(
@@ -598,13 +609,15 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       builder: (ctx) => _ShortRestDialog(
         l10n: l10n,
         pools: poolRows,
+        recoveries: recoveryRows,
         conMod: conMod,
         maxHp: character.hitPoints.maximum,
         currentHp: character.hitPoints.current,
-        onConfirm: (hitDiceSpentByPool, hpGained) async {
+        onConfirm: (hitDiceSpentByPool, hpGained, recoveries) async {
           await notifier.shortRest(
             hitDiceSpentByPool: hitDiceSpentByPool,
             hpGained: hpGained,
+            recoveries: recoveries,
           );
         },
       ),
@@ -644,15 +657,21 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
 class _ShortRestDialog extends StatefulWidget {
   final AppLocalizations l10n;
   final List<_ShortRestHitDiePool> pools;
+  final List<_ShortRestRecoveryRow> recoveries;
   final int conMod;
   final int maxHp;
   final int currentHp;
-  final Future<void> Function(List<int> hitDiceSpentByPool, int hpGained)
+  final Future<void> Function(
+    List<int> hitDiceSpentByPool,
+    int hpGained,
+    List<ShortRestRecoverySelection> recoveries,
+  )
   onConfirm;
 
   const _ShortRestDialog({
     required this.l10n,
     required this.pools,
+    required this.recoveries,
     required this.conMod,
     required this.maxHp,
     required this.currentHp,
@@ -665,6 +684,8 @@ class _ShortRestDialog extends StatefulWidget {
 
 class _ShortRestDialogState extends State<_ShortRestDialog> {
   late final List<int> _diceToSpend;
+  late final Map<String, List<int>> _slotSelections;
+  late final Map<String, int> _pointSelections;
   int _rolledHp = 0;
   bool _hasRolled = false;
 
@@ -682,6 +703,19 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
       (pool) => pool.remaining > 0,
     );
     if (firstAvailable >= 0) _diceToSpend[firstAvailable] = 1;
+    _slotSelections = {
+      for (final row in widget.recoveries)
+        if (row.option.rule.kind == ShortRestRecoveryKind.spellSlots)
+          row.option.resourceId: List.filled(
+            row.option.recoverableSlots.length,
+            0,
+          ),
+    };
+    _pointSelections = {
+      for (final row in widget.recoveries)
+        if (row.option.rule.kind == ShortRestRecoveryKind.resourcePoints)
+          row.option.resourceId: 0,
+    };
   }
 
   void _setPoolSpend(int index, int value) {
@@ -690,6 +724,14 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
       _diceToSpend[index] = value.clamp(0, pool.remaining).toInt();
       _hasRolled = false;
     });
+  }
+
+  int _combinedLevels(List<int> slots) {
+    var total = 0;
+    for (var i = 0; i < slots.length; i++) {
+      total += slots[i] * (i + 1);
+    }
+    return total;
   }
 
   void _roll() {
@@ -709,96 +751,165 @@ class _ShortRestDialogState extends State<_ShortRestDialog> {
     });
   }
 
+  List<ShortRestRecoverySelection> get _selections => [
+    for (final entry in _slotSelections.entries)
+      ShortRestRecoverySelection.slots(entry.key, entry.value),
+    for (final entry in _pointSelections.entries)
+      ShortRestRecoverySelection.points(entry.key, entry.value),
+  ];
+
+  Widget _counter({
+    required String label,
+    required int value,
+    required bool canDecrement,
+    required bool canIncrement,
+    required ValueChanged<int> onChanged,
+  }) {
+    return Row(
+      children: [
+        Expanded(child: Text(label)),
+        IconButton(
+          icon: const Icon(Icons.remove),
+          onPressed: canDecrement ? () => onChanged(value - 1) : null,
+        ),
+        Text('$value', style: Theme.of(context).textTheme.titleMedium),
+        IconButton(
+          icon: const Icon(Icons.add),
+          onPressed: canIncrement ? () => onChanged(value + 1) : null,
+        ),
+      ],
+    );
+  }
+
+  List<Widget> _recoveryRows(_ShortRestRecoveryRow row) {
+    final l10n = widget.l10n;
+    final option = row.option;
+    final textTheme = Theme.of(context).textTheme;
+    final header = [
+      const SizedBox(height: 8),
+      Text(row.label, style: textTheme.titleSmall),
+    ];
+    if (option.rule.kind == ShortRestRecoveryKind.resourcePoints) {
+      final points = _pointSelections[option.resourceId] ?? 0;
+      return [
+        ...header,
+        Text(l10n.shortRestRecoveryPointsHint(option.recoverablePoints)),
+        _counter(
+          label: row.label,
+          value: points,
+          canDecrement: points > 0,
+          canIncrement: points < option.recoverablePoints,
+          onChanged: (value) =>
+              setState(() => _pointSelections[option.resourceId] = value),
+        ),
+      ];
+    }
+    final slots = _slotSelections[option.resourceId]!;
+    final usedLevels = _combinedLevels(slots);
+    return [
+      ...header,
+      Text(l10n.shortRestRecoverySlotsHint(option.budget)),
+      for (var i = 0; i < slots.length; i++)
+        if (option.recoverableSlots[i] > 0)
+          _counter(
+            label: l10n.charCardLevel(i + 1),
+            value: slots[i],
+            canDecrement: slots[i] > 0,
+            canIncrement:
+                slots[i] < option.recoverableSlots[i] &&
+                usedLevels + i + 1 <= option.budget,
+            onChanged: (value) => setState(() => slots[i] = value),
+          ),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = widget.l10n;
     final scheme = Theme.of(context).colorScheme;
     final noDice = _totalAvailable <= 0;
+    final needsRoll = !noDice && _totalToSpend > 0 && !_hasRolled;
 
     return AlertDialog(
       title: Text(l10n.shortRestTitle),
-      content: noDice
-          ? Text(l10n.shortRestNoDice)
-          : SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${l10n.shortRestAvailableDice}'
-                    '${widget.conMod >= 0 ? ' (+${widget.conMod} CON)' : ' (${widget.conMod} CON)'}',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                  const SizedBox(height: 16),
-                  for (final pool in widget.pools)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              '${pool.label}: ${pool.remaining} d${pool.dieSize}',
-                            ),
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.remove),
-                            onPressed: _diceToSpend[pool.index] > 0
-                                ? () => _setPoolSpend(
-                                    pool.index,
-                                    _diceToSpend[pool.index] - 1,
-                                  )
-                                : null,
-                          ),
-                          Text(
-                            '${_diceToSpend[pool.index]}',
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.add),
-                            onPressed: _diceToSpend[pool.index] < pool.remaining
-                                ? () => _setPoolSpend(
-                                    pool.index,
-                                    _diceToSpend[pool.index] + 1,
-                                  )
-                                : null,
-                          ),
-                        ],
-                      ),
-                    ),
-                  if (_hasRolled) ...[
-                    const SizedBox(height: 8),
-                    Text(
-                      '${l10n.shortRestRolled}: +$_rolledHp HP',
-                      style: Theme.of(
-                        context,
-                      ).textTheme.titleMedium?.copyWith(color: scheme.primary),
-                    ),
-                  ],
-                ],
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (noDice)
+              Text(l10n.shortRestNoDice)
+            else ...[
+              Text(
+                '${l10n.shortRestAvailableDice}'
+                '${widget.conMod >= 0 ? ' (+${widget.conMod} CON)' : ' (${widget.conMod} CON)'}',
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
-            ),
+              const SizedBox(height: 16),
+              for (final pool in widget.pools)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: _counter(
+                    label: '${pool.label}: ${pool.remaining} d${pool.dieSize}',
+                    value: _diceToSpend[pool.index],
+                    canDecrement: _diceToSpend[pool.index] > 0,
+                    canIncrement: _diceToSpend[pool.index] < pool.remaining,
+                    onChanged: (value) => _setPoolSpend(pool.index, value),
+                  ),
+                ),
+              if (_hasRolled) ...[
+                const SizedBox(height: 8),
+                Text(
+                  '${l10n.shortRestRolled}: +$_rolledHp HP',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleMedium?.copyWith(color: scheme.primary),
+                ),
+              ],
+            ],
+            if (widget.recoveries.isNotEmpty) ...[
+              const Divider(height: 24),
+              Text(
+                l10n.shortRestRecoveryTitle,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              for (final row in widget.recoveries) ..._recoveryRows(row),
+            ],
+          ],
+        ),
+      ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
           style: neutralDialogTextButtonStyle(context),
           child: Text(l10n.dialogCancel),
         ),
-        if (!noDice && !_hasRolled)
-          FilledButton(
-            onPressed: _totalToSpend > 0 ? _roll : null,
-            child: Text(l10n.shortRestRollButton),
-          ),
-        if (!noDice && _hasRolled)
+        if (needsRoll)
+          FilledButton(onPressed: _roll, child: Text(l10n.shortRestRollButton))
+        else
           FilledButton(
             onPressed: () async {
               Navigator.pop(context);
-              await widget.onConfirm(_diceToSpend, _rolledHp);
+              await widget.onConfirm(
+                noDice || !_hasRolled
+                    ? List.filled(widget.pools.length, 0)
+                    : _diceToSpend,
+                _hasRolled ? _rolledHp : 0,
+                _selections,
+              );
             },
             child: Text(l10n.shortRestButton),
           ),
       ],
     );
   }
+}
+
+class _ShortRestRecoveryRow {
+  const _ShortRestRecoveryRow({required this.option, required this.label});
+
+  final ShortRestRecoveryOption option;
+  final String label;
 }
 
 class _ShortRestHitDiePool {

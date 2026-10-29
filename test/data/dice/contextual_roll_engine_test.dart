@@ -30,6 +30,18 @@ void main() {
       expect(part.result.total, 17);
     });
 
+    test('adds situational modifiers such as 2024 Exhaustion to d20 parts', () {
+      final engine = ContextualRollEngine(roller: _rollerWith([12]));
+
+      final result = engine.roll(
+        _skillRequest(modifier: 3),
+        options: const ContextualRollOptions(d20SituationalModifier: -4),
+      );
+
+      expect(result.parts.single.result.expression.normalized, '1d20-1');
+      expect(result.parts.single.result.total, 11);
+    });
+
     test('rolls advantage by keeping the highest d20', () {
       final engine = ContextualRollEngine(roller: _rollerWith([8, 19]));
 

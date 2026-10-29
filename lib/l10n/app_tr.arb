@@ -697,6 +697,13 @@
     "description": "Short rest confirm button."
   },
   "shortRestNoDice": "Can Zarı kalmadı",
+  "shortRestRecoveryTitle": "İyileşme özellikleri",
+  "shortRestRecoverySlotsHint": "Toplamı en fazla {levels} seviye olan harcanmış büyü yuvalarını geri kazan (5. seviyenin üstü olamaz).",
+  "shortRestRecoveryPointsHint": "En fazla {points} puan geri kazan.",
+  "exhaustionLevelTitle": "Bitkinlik seviyesi",
+  "exhaustionEffects": "D20 Testlerinde {penalty} · Hız −{distance}",
+  "exhaustionLethal": "6. seviyede karakter ölür.",
+  "rollExhaustionApplied": "Bitkinlik {modifier} d20'ye uygulandı.",
   "@shortRestNoDice": {
     "description": "Short rest: no HD available message."
   },

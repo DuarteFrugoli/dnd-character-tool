@@ -1,4 +1,5 @@
 import '../character_detail_dependencies.dart';
+import '../../../data/conditions/exhaustion_rules.dart';
 import '../../../data/rulesets/ruleset_ids.dart';
 import '../../../data/rulesets/srd_content_pack.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
@@ -382,6 +383,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
     final scheme = Theme.of(context).colorScheme;
     final notifier = _notifier;
     final unitSystem = ref.watch(unitSystemProvider);
+    final exhaustion = ExhaustionRules.forCharacter(character);
     final equippedArmor = character.equipment
         .where((e) => e.itemType == ItemType.armor && e.isEquipped)
         .toList();
@@ -599,6 +601,11 @@ class _StatsTabState extends ConsumerState<StatsTab>
                     allConditions:
                         ref.watch(srdConditionsForPackProvider(packId)).valueOrNull ??
                         const [],
+                    exhaustionLevel: exhaustion.tracksLevels
+                        ? exhaustion.levelFor(character)
+                        : null,
+                    onExhaustionChanged: notifier.setExhaustionLevel,
+                    formatDistance: (feet) => formatDistance(feet, unitSystem),
                   ),
                   const SizedBox(height: 12),
 
@@ -688,7 +695,10 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               ),
                               DetailStatChip(
                                 l10n.statSpeed,
-                                formatDistance(character.speed, unitSystem),
+                                formatDistance(
+                                  exhaustion.speedFor(character),
+                                  unitSystem,
+                                ),
                                 icon: Icons.directions_run,
                                 accentColor: scheme.tertiary,
                               ),
@@ -1184,12 +1194,28 @@ class _ConditionsSection extends StatelessWidget {
     required this.i18n,
     required this.onToggle,
     required this.allConditions,
+    required this.exhaustionLevel,
+    required this.onExhaustionChanged,
+    required this.formatDistance,
   });
 
   final List<String> activeConditions;
   final SrdI18nService i18n;
   final void Function(String name) onToggle;
   final List<({String name, String description})> allConditions;
+
+  /// Exhaustion level when the ruleset tracks levels (2024), otherwise null.
+  final int? exhaustionLevel;
+  final ValueChanged<int> onExhaustionChanged;
+  final String Function(int feet) formatDistance;
+
+  bool get _tracksExhaustion => exhaustionLevel != null;
+
+  List<String> get _visibleConditions => _tracksExhaustion
+      ? activeConditions
+            .where((name) => name != ExhaustionRules.conditionName)
+            .toList()
+      : activeConditions;
 
   void _showPicker(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -1201,9 +1227,11 @@ class _ConditionsSection extends StatelessWidget {
       ),
       builder: (ctx) => _ConditionPickerSheet(
         allConditions: allConditions,
-        activeConditions: activeConditions,
+        activeConditions: _visibleConditions,
         i18n: i18n,
         onToggle: onToggle,
+        exhaustionLevel: exhaustionLevel,
+        onExhaustionChanged: onExhaustionChanged,
         title: l10n.conditionsPickTitle,
       ),
     );
@@ -1269,10 +1297,123 @@ class _ConditionsSection extends StatelessWidget {
     );
   }
 
+  void _showExhaustionDetail(BuildContext context, String enDescription) {
+    final l10n = AppLocalizations.of(context)!;
+    const name = ExhaustionRules.conditionName;
+    final description = i18n.conditionDescription(name) ?? enDescription;
+    var level = exhaustionLevel ?? 0;
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setSheetState) {
+          final scheme = Theme.of(ctx).colorScheme;
+          void setLevel(int value) {
+            setSheetState(() => level = value);
+            onExhaustionChanged(value);
+          }
+
+          return SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          i18n.conditionName(name),
+                          style: Theme.of(ctx).textTheme.titleLarge?.copyWith(
+                            color: scheme.error,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.close),
+                        onPressed: () => Navigator.pop(ctx),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Text(description),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          l10n.exhaustionLevelTitle,
+                          style: Theme.of(ctx).textTheme.titleMedium,
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.remove),
+                        onPressed: level > 0 ? () => setLevel(level - 1) : null,
+                      ),
+                      Text(
+                        '$level',
+                        style: Theme.of(ctx).textTheme.titleMedium,
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.add),
+                        onPressed: level < ExhaustionRules.maxLevel
+                            ? () => setLevel(level + 1)
+                            : null,
+                      ),
+                    ],
+                  ),
+                  if (level > 0)
+                    Text(
+                      l10n.exhaustionEffects(
+                        '-${2 * level}',
+                        formatDistance(5 * level),
+                      ),
+                      style: TextStyle(color: scheme.error),
+                    ),
+                  if (level >= ExhaustionRules.maxLevel) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      l10n.exhaustionLethal,
+                      style: TextStyle(
+                        color: scheme.error,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      icon: const Icon(Icons.remove_circle_outline, size: 16),
+                      label: Text(l10n.conditionsRemove),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: scheme.error,
+                      ),
+                      onPressed: () {
+                        onExhaustionChanged(0);
+                        Navigator.pop(ctx);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
+    final visible = _visibleConditions;
+    final exhaustion = exhaustionLevel ?? 0;
 
     // Build a lookup for English descriptions
     final descMap = {for (final c in allConditions) c.name: c.description};
@@ -1287,7 +1428,7 @@ class _ConditionsSection extends StatelessWidget {
         visualDensity: VisualDensity.compact,
         onPressed: () => _showPicker(context),
       ),
-      child: activeConditions.isEmpty
+      child: visible.isEmpty && exhaustion == 0
           ? Text(
               l10n.conditionsNone,
               style: Theme.of(
@@ -1297,17 +1438,32 @@ class _ConditionsSection extends StatelessWidget {
           : Wrap(
               spacing: 8,
               runSpacing: 4,
-              children: activeConditions.map((name) {
-                return InputChip(
-                  label: Text(i18n.conditionName(name)),
-                  backgroundColor: scheme.errorContainer,
-                  labelStyle: TextStyle(color: scheme.onErrorContainer),
-                  deleteIconColor: scheme.onErrorContainer,
-                  onPressed: () =>
-                      _showDetail(context, name, descMap[name] ?? ''),
-                  onDeleted: () => onToggle(name),
-                );
-              }).toList(),
+              children: [
+                if (exhaustion > 0)
+                  InputChip(
+                    label: Text(
+                      '${i18n.conditionName(ExhaustionRules.conditionName)} $exhaustion',
+                    ),
+                    backgroundColor: scheme.errorContainer,
+                    labelStyle: TextStyle(color: scheme.onErrorContainer),
+                    deleteIconColor: scheme.onErrorContainer,
+                    onPressed: () => _showExhaustionDetail(
+                      context,
+                      descMap[ExhaustionRules.conditionName] ?? '',
+                    ),
+                    onDeleted: () => onExhaustionChanged(0),
+                  ),
+                for (final name in visible)
+                  InputChip(
+                    label: Text(i18n.conditionName(name)),
+                    backgroundColor: scheme.errorContainer,
+                    labelStyle: TextStyle(color: scheme.onErrorContainer),
+                    deleteIconColor: scheme.onErrorContainer,
+                    onPressed: () =>
+                        _showDetail(context, name, descMap[name] ?? ''),
+                    onDeleted: () => onToggle(name),
+                  ),
+              ],
             ),
     );
   }
@@ -1319,6 +1475,8 @@ class _ConditionPickerSheet extends StatefulWidget {
     required this.activeConditions,
     required this.i18n,
     required this.onToggle,
+    required this.exhaustionLevel,
+    required this.onExhaustionChanged,
     required this.title,
   });
 
@@ -1326,6 +1484,8 @@ class _ConditionPickerSheet extends StatefulWidget {
   final List<String> activeConditions;
   final SrdI18nService i18n;
   final void Function(String name) onToggle;
+  final int? exhaustionLevel;
+  final ValueChanged<int> onExhaustionChanged;
   final String title;
 
   @override
@@ -1334,12 +1494,17 @@ class _ConditionPickerSheet extends StatefulWidget {
 
 class _ConditionPickerSheetState extends State<_ConditionPickerSheet> {
   late final Set<String> _active;
+  late int? _exhaustionLevel;
 
   @override
   void initState() {
     super.initState();
     _active = Set.from(widget.activeConditions);
+    _exhaustionLevel = widget.exhaustionLevel;
   }
+
+  bool _isLeveledExhaustion(String name) =>
+      _exhaustionLevel != null && name == ExhaustionRules.conditionName;
 
   @override
   Widget build(BuildContext context) {
@@ -1357,9 +1522,15 @@ class _ConditionPickerSheetState extends State<_ConditionPickerSheet> {
               spacing: 8,
               runSpacing: 8,
               children: widget.allConditions.map((c) {
-                final isActive = _active.contains(c.name);
+                final leveled = _isLeveledExhaustion(c.name);
+                final isActive = leveled
+                    ? _exhaustionLevel! > 0
+                    : _active.contains(c.name);
+                final label = widget.i18n.conditionName(c.name);
                 return FilterChip(
-                  label: Text(widget.i18n.conditionName(c.name)),
+                  label: Text(
+                    leveled && isActive ? '$label $_exhaustionLevel' : label,
+                  ),
                   selected: isActive,
                   selectedColor: scheme.errorContainer,
                   checkmarkColor: scheme.onErrorContainer,
@@ -1369,6 +1540,12 @@ class _ConditionPickerSheetState extends State<_ConditionPickerSheet> {
                         : scheme.onSurface,
                   ),
                   onSelected: (_) {
+                    if (leveled) {
+                      final next = isActive ? 0 : 1;
+                      setState(() => _exhaustionLevel = next);
+                      widget.onExhaustionChanged(next);
+                      return;
+                    }
                     setState(() {
                       if (isActive) {
                         _active.remove(c.name);

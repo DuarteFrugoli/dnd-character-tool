@@ -608,6 +608,35 @@ class AppLocalizationsDe extends AppLocalizations {
   String get shortRestNoDice => 'Keine Trefferwürfel übrig';
 
   @override
+  String get shortRestRecoveryTitle => 'Erholungsmerkmale';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Stelle verbrauchte Zauberplätze mit insgesamt bis zu $levels Graden wieder her (keiner über Grad 5).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'Erhalte bis zu $points Punkte zurück.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Erschöpfungsstufe';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return '$penalty auf W20-Tests · Bewegungsrate −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'Auf Stufe 6 stirbt der Charakter.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Erschöpfung $modifier auf den W20 angewendet.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Konzentration auf:';
 
   @override

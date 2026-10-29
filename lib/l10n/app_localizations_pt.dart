@@ -607,6 +607,35 @@ class AppLocalizationsPt extends AppLocalizations {
   String get shortRestNoDice => 'Sem Dados de Vida restantes';
 
   @override
+  String get shortRestRecoveryTitle => 'Recuperações';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Recupere espaços gastos que somem até $levels níveis (nenhum acima do nível 5).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'Recupere até $points pontos.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Nível de exaustão';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return '$penalty em Testes de D20 · Deslocamento −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'No nível 6, o personagem morre.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Exaustão $modifier aplicada ao d20.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Concentrado em:';
 
   @override

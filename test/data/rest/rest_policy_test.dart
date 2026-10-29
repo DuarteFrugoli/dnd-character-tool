@@ -16,6 +16,7 @@ Character _character({
   SpellSlots pactMagicSlots = const SpellSlots(),
   List<InnateSpell> innateSpells = const [],
   bool inspiration = false,
+  int exhaustionLevel = 0,
   String? concentrationSpell,
 }) {
   return Character(
@@ -53,6 +54,7 @@ Character _character({
     pactMagicSlots: pactMagicSlots,
     innateSpells: innateSpells,
     inspiration: inspiration,
+    exhaustionLevel: exhaustionLevel,
     concentrationSpell: concentrationSpell,
     createdAt: _now,
     updatedAt: _now,
@@ -77,7 +79,7 @@ void main() {
   });
 
   group('2014 long rest', () {
-    test('recovers half of the hit dice and resets innate spells', () {
+    test('recovers half of the hit dice rounded down and resets innate spells', () {
       final rested = const Rest2014Policy().applyLongRest(
         _character(
           level: 5,
@@ -97,11 +99,29 @@ void main() {
 
       expect(rested.hitPoints.current, 40);
       expect(rested.hitPoints.temporary, 0);
-      expect(rested.hitDicePools.single.used, 2);
+      expect(rested.hitDicePools.single.used, 3);
       expect(rested.innateSpells.single.usedToday, 0);
       expect(rested.concentrationSpell, isNull);
       expect(rested.featureResources, {'action_surge': 1});
       expect(rested.inspiration, isFalse);
+    });
+
+    test('recovers at least one hit die', () {
+      final rested = const Rest2014Policy().applyLongRest(
+        _character(level: 1),
+        featureResources: const {},
+      );
+
+      expect(rested.hitDicePools.single.used, 0);
+    });
+
+    test('leaves the 2024 exhaustion level untouched', () {
+      final rested = const Rest2014Policy().applyLongRest(
+        _character(exhaustionLevel: 2),
+        featureResources: const {},
+      );
+
+      expect(rested.exhaustionLevel, 2);
     });
 
     test('does not grant inspiration from a 2024 species trait name', () {
@@ -176,6 +196,18 @@ void main() {
 
       expect(rested.hitPoints.deathSaveSuccesses, 0);
       expect(rested.hitPoints.deathSaveFailures, 0);
+    });
+
+    test('removes one Exhaustion level', () {
+      final policy = const Rest2024Policy();
+      Character rest(int level) => policy.applyLongRest(
+        _character(rulesetId: RulesetId.dnd2024, exhaustionLevel: level),
+        featureResources: const {},
+      );
+
+      expect(rest(3).exhaustionLevel, 2);
+      expect(rest(1).exhaustionLevel, 0);
+      expect(rest(0).exhaustionLevel, 0);
     });
 
     test('Resourceful grants Heroic Inspiration', () {

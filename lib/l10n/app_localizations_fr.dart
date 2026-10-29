@@ -612,6 +612,35 @@ class AppLocalizationsFr extends AppLocalizations {
   String get shortRestNoDice => 'Plus de dés de vie disponibles';
 
   @override
+  String get shortRestRecoveryTitle => 'Capacités de récupération';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Récupérez des emplacements dépensés totalisant jusqu\'à $levels niveaux (aucun au-dessus du niveau 5).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'Récupérez jusqu\'à $points points.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Niveau d\'épuisement';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return '$penalty aux tests de d20 · Vitesse −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'Au niveau 6, le personnage meurt.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Épuisement $modifier appliqué au d20.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Concentration sur :';
 
   @override

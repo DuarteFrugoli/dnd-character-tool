@@ -603,6 +603,35 @@ class AppLocalizationsTr extends AppLocalizations {
   String get shortRestNoDice => 'Can Zarı kalmadı';
 
   @override
+  String get shortRestRecoveryTitle => 'İyileşme özellikleri';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Toplamı en fazla $levels seviye olan harcanmış büyü yuvalarını geri kazan (5. seviyenin üstü olamaz).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'En fazla $points puan geri kazan.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Bitkinlik seviyesi';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return 'D20 Testlerinde $penalty · Hız −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => '6. seviyede karakter ölür.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Bitkinlik $modifier d20\'ye uygulandı.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Konsantre olunan:';
 
   @override

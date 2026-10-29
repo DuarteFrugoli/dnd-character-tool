@@ -28,6 +28,9 @@ Map<String, dynamic> _characterSheetPreferencesToJson(
   CharacterSheetPreferences value,
 ) => value.toJson();
 
+int _exhaustionLevelFromJson(Object? json) =>
+    json is num ? json.toInt().clamp(0, 6).toInt() : 0;
+
 enum CreationMode { random, semiRandom, guided, manual }
 
 @JsonSerializable(explicitToJson: true)
@@ -112,6 +115,11 @@ class Character {
   @JsonKey(fromJson: readBool)
   final bool weightTrackingEnabled;
   final List<String> activeConditions;
+
+  /// 2024 Exhaustion level (0-6). 2014 sheets keep Exhaustion as a plain
+  /// entry in [activeConditions].
+  @JsonKey(fromJson: _exhaustionLevelFromJson)
+  final int exhaustionLevel;
   final String? concentrationSpell;
 
   const Character({
@@ -167,6 +175,7 @@ class Character {
     this.xpTrackingEnabled = false,
     this.weightTrackingEnabled = false,
     this.activeConditions = const [],
+    this.exhaustionLevel = 0,
     this.concentrationSpell,
   });
 
@@ -320,6 +329,7 @@ class Character {
     bool? xpTrackingEnabled,
     bool? weightTrackingEnabled,
     List<String>? activeConditions,
+    int? exhaustionLevel,
     Object? concentrationSpell = _keep,
   }) {
     return Character(
@@ -377,6 +387,7 @@ class Character {
       weightTrackingEnabled:
           weightTrackingEnabled ?? this.weightTrackingEnabled,
       activeConditions: activeConditions ?? this.activeConditions,
+      exhaustionLevel: exhaustionLevel ?? this.exhaustionLevel,
       concentrationSpell: concentrationSpell == _keep
           ? this.concentrationSpell
           : concentrationSpell as String?,

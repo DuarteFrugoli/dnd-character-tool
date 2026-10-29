@@ -13,7 +13,9 @@ import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/inventory/inventory_operations.dart' as inventory_ops;
 import '../../data/models/models.dart';
+import '../../data/conditions/exhaustion_rules.dart';
 import '../../data/rest/rest_policy.dart';
+import '../../data/rest/short_rest_recovery.dart';
 import '../../data/rulesets/character_rules_context.dart';
 import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
@@ -215,6 +217,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> shortRest({
     required List<int> hitDiceSpentByPool,
     required int hpGained,
+    List<ShortRestRecoverySelection> recoveries = const [],
   }) async {
     final c = state.valueOrNull;
     if (c == null) return;
@@ -229,7 +232,34 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
       FeatureUsageRest.shortRest,
       policy,
     );
-    await _save(rested.copyWith(featureResources: featureResources));
+    var updated = rested.copyWith(featureResources: featureResources);
+    if (recoveries.any((selection) => !selection.isEmpty)) {
+      updated = ShortRestRecoveryEngine.apply(
+        updated,
+        options: await _shortRestRecoveryOptions(updated, policy),
+        selections: recoveries,
+      );
+    }
+    await _save(updated);
+  }
+
+  /// Arcane Recovery and similar features usable when finishing a short rest.
+  Future<List<ShortRestRecoveryOption>> shortRestRecoveryOptions() async {
+    final c = state.valueOrNull;
+    if (c == null) return const [];
+    return _shortRestRecoveryOptions(c, RestPolicy.forCharacter(c));
+  }
+
+  Future<List<ShortRestRecoveryOption>> _shortRestRecoveryOptions(
+    Character c,
+    RestPolicy policy,
+  ) async {
+    if (policy.shortRestRecoveryRules.isEmpty) return const [];
+    return ShortRestRecoveryEngine.optionsFor(
+      character: c,
+      rules: policy.shortRestRecoveryRules,
+      bindings: await _activeFeatureUsageBindings(c),
+    );
   }
 
   Future<void> adjustFeatureResource(String resourceId, int delta) async {
@@ -1067,6 +1097,22 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(c.copyWith(inspiration: !c.inspiration));
+  }
+
+  Future<void> setExhaustionLevel(int level) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    if (!ExhaustionRules.forCharacter(c).tracksLevels) return;
+    await _save(
+      c.copyWith(
+        exhaustionLevel: level.clamp(0, ExhaustionRules.maxLevel).toInt(),
+        // The level replaces any plain Exhaustion entry saved before 2024
+        // sheets tracked levels.
+        activeConditions: c.activeConditions
+            .where((name) => name != ExhaustionRules.conditionName)
+            .toList(),
+      ),
+    );
   }
 
   Future<void> toggleCondition(String name) async {

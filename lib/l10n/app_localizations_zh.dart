@@ -578,6 +578,35 @@ class AppLocalizationsZh extends AppLocalizations {
   String get shortRestNoDice => '没有剩余生命骰';
 
   @override
+  String get shortRestRecoveryTitle => '恢复能力';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return '恢复已消耗的法术位，总环阶不超过$levels环（不能高于5环）。';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return '最多恢复$points点。';
+  }
+
+  @override
+  String get exhaustionLevelTitle => '力竭等级';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return 'd20检定$penalty · 速度 −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => '达到6级时，角色死亡。';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return '已对d20应用力竭$modifier。';
+  }
+
+  @override
   String get concentrationBannerLabel => '正在专注于：';
 
   @override

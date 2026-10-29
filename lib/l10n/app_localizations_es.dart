@@ -606,6 +606,35 @@ class AppLocalizationsEs extends AppLocalizations {
   String get shortRestNoDice => 'Sin Dados de Golpe restantes';
 
   @override
+  String get shortRestRecoveryTitle => 'Rasgos de recuperación';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Recupera espacios gastados que sumen hasta $levels niveles (ninguno por encima del nivel 5).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'Recupera hasta $points puntos.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Nivel de agotamiento';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return '$penalty a las pruebas de d20 · Velocidad −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'En el nivel 6, el personaje muere.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Agotamiento $modifier aplicado al d20.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Concentrado en:';
 
   @override

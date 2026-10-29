@@ -607,6 +607,35 @@ class AppLocalizationsIt extends AppLocalizations {
   String get shortRestNoDice => 'Nessun Dado Vita rimasto';
 
   @override
+  String get shortRestRecoveryTitle => 'Capacità di recupero';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Recupera slot spesi per un totale massimo di $levels livelli (nessuno oltre il 5° livello).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'Recupera fino a $points punti.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Livello di indebolimento';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return '$penalty alle prove di d20 · Velocità −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'Al livello 6, il personaggio muore.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Indebolimento $modifier applicato al d20.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Concentrazione su:';
 
   @override

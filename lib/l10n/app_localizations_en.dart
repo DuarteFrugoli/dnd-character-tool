@@ -600,6 +600,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shortRestNoDice => 'No Hit Dice remaining';
 
   @override
+  String get shortRestRecoveryTitle => 'Recovery features';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Recover expended slots totaling up to $levels levels (no slot above level 5).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'Regain up to $points points.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Exhaustion level';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return '$penalty on D20 Tests · Speed −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'At level 6, the character dies.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Exhaustion $modifier applied to the d20.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Concentrating on:';
 
   @override

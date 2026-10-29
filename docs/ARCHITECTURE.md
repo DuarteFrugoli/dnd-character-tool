@@ -613,10 +613,22 @@ to restore resources whose recharge rules apply.
 
 The rest of the rest math lives in `data/rest/rest_policy.dart`, selected by
 `RestPolicy.forCharacter()`. `Rest2014Policy` keeps the SRD 5.1 behavior
-(half the hit dice on a long rest, slot resync and Sorcerous Restoration on a
-short rest). `Rest2024Policy` follows the SRD 5.2.1 glossary: a long rest
-recovers every hit die and grants Heroic Inspiration through `Resourceful`;
-a short rest recovers Pact Magic slots without recalculating saved totals. Manual adjustments go through
+(half the hit dice, rounded down with a minimum of one, on a long rest; slot
+resync and Sorcerous Restoration on a short rest). `Rest2024Policy` follows the
+SRD 5.2.1 glossary: a long rest recovers every hit die, removes one Exhaustion
+level and grants Heroic Inspiration through `Resourceful`; a short rest
+recovers Pact Magic slots without recalculating saved totals.
+
+Each policy also lists its once-per-long-rest short-rest recoveries (Arcane
+Recovery, Natural Recovery and, in 2024, Sorcerous Restoration).
+`data/rest/short_rest_recovery.dart` turns them into options for the short
+rest dialog and validates the chosen slots or points before applying them.
+
+`data/conditions/exhaustion_rules.dart` owns Exhaustion. 2024 sheets persist
+`Character.exhaustionLevel` (0-6): every contextual d20 roll receives
+`ContextualRollOptions.d20SituationalModifier` of -2 per level, and the Stats
+tab shows Speed reduced by 5 feet per level. 2014 sheets keep Exhaustion as a
+plain entry in `activeConditions`. Manual adjustments go through
 `CharacterDetailNotifier.adjustFeatureResource()`.
 
 The Features tab renders usage controls next to any feature/trait/feat that has
@@ -1058,7 +1070,8 @@ the affected files before committing.
 | Spellcasting slots/known/prepared/cantrips | `data/spellcasting_engine.dart` |
 | Dice parser/roller | `data/dice/`, `features/character_detail/widgets/dice/dice_roller_sheet.dart` |
 | Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/5.1/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
-| Short/long rest rules | `data/rest/rest_policy.dart`, `CharacterDetailNotifier.shortRest()` / `longRest()` |
+| Short/long rest rules | `data/rest/rest_policy.dart`, `data/rest/short_rest_recovery.dart`, `CharacterDetailNotifier.shortRest()` / `longRest()` |
+| Exhaustion levels | `data/conditions/exhaustion_rules.dart`, `features/character_detail/tabs/stats_tab.dart`, `widgets/dice/contextual_roll_sheet.dart` |
 | Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/5.1/feature_usages.json`, `features/character_detail/widgets/features/feature_sections.dart` |
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |
 | Backup export/import | `CharacterRepository`, `CharacterLocalDataSource`, `features/home/settings_screen.dart`, `core/utils/file_exporter.dart` |

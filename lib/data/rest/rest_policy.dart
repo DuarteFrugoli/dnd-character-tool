@@ -1,8 +1,10 @@
 import '../character_progression/character_progression.dart';
+import '../conditions/exhaustion_rules.dart';
 import '../constants/level_up_rules.dart';
 import '../feature_usage_engine.dart';
 import '../models/models.dart';
 import '../rulesets/ruleset_ids.dart';
+import 'short_rest_recovery.dart';
 
 /// Rest rules that differ between rulesets.
 ///
@@ -22,6 +24,10 @@ abstract class RestPolicy {
 
   /// Hit die pools offered by the short rest dialog.
   List<CharacterHitDiePool> hitDicePoolsFor(Character character);
+
+  /// Once-per-long-rest features the player may use when finishing a short
+  /// rest. Only resources active on the character are offered.
+  List<ShortRestRecoveryRule> get shortRestRecoveryRules;
 
   /// Applies the long rest. [featureResources] must already be restored for
   /// [FeatureUsageRest.longRest]; [raceTraits] are the active species/race
@@ -68,13 +74,26 @@ class Rest2014Policy extends RestPolicy {
   }
 
   @override
+  List<ShortRestRecoveryRule> get shortRestRecoveryRules => const [
+    ShortRestRecoveryRule.spellSlots(
+      resourceId: 'arcane_recovery',
+      featureName: 'Arcane Recovery',
+    ),
+    ShortRestRecoveryRule.spellSlots(
+      resourceId: 'natural_recovery',
+      featureName: 'Natural Recovery',
+    ),
+  ];
+
+  @override
   Character applyLongRest(
     Character character, {
     required Map<String, int> featureResources,
     Iterable<String> raceTraits = const [],
   }) {
-    // Recover ceil(level / 2) hit dice on a long rest (PHB rules)
-    final hdRecovered = (character.totalLevel / 2).ceil();
+    // Recover half of the total hit dice, rounded down, minimum 1 (SRD 5.1).
+    final halfHitDice = character.totalHitDice ~/ 2;
+    final hdRecovered = halfHitDice < 1 ? 1 : halfHitDice;
     final newHdUsed = (character.totalHitDiceUsed - hdRecovered)
         .clamp(0, character.totalHitDice)
         .toInt();
@@ -144,6 +163,23 @@ class Rest2024Policy extends RestPolicy {
       character.hitDicePools;
 
   @override
+  List<ShortRestRecoveryRule> get shortRestRecoveryRules => const [
+    ShortRestRecoveryRule.spellSlots(
+      resourceId: '2024_arcane_recovery',
+      featureName: 'Arcane Recovery',
+    ),
+    ShortRestRecoveryRule.spellSlots(
+      resourceId: '2024_natural_recovery_slots',
+      featureName: 'Natural Recovery',
+    ),
+    ShortRestRecoveryRule.resourcePoints(
+      resourceId: '2024_sorcerous_restoration',
+      featureName: 'Sorcerous Restoration',
+      targetResourceId: '2024_sorcery_points',
+    ),
+  ];
+
+  @override
   Character applyLongRest(
     Character character, {
     required Map<String, int> featureResources,
@@ -170,6 +206,9 @@ class Rest2024Policy extends RestPolicy {
       ),
       featureResources: featureResources,
       inspiration: grantsHeroicInspiration ? true : null,
+      exhaustionLevel: const Exhaustion2024Rules().levelAfterLongRest(
+        character.exhaustionLevel,
+      ),
       concentrationSpell: null,
     );
   }

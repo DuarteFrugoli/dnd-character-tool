@@ -588,6 +588,35 @@ class AppLocalizationsJa extends AppLocalizations {
   String get shortRestNoDice => 'ヒットダイスが残っていません';
 
   @override
+  String get shortRestRecoveryTitle => '回復能力';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return '合計$levelsレベルまでの消費した呪文スロットを回復します（6レベル以上は不可）。';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return '最大$pointsポイントを回復します。';
+  }
+
+  @override
+  String get exhaustionLevelTitle => '消耗レベル';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return 'd20テストに$penalty・移動速度 −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'レベル6でキャラクターは死亡します。';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return '消耗$modifierをd20に適用しました。';
+  }
+
+  @override
   String get concentrationBannerLabel => '集中中の魔法：';
 
   @override

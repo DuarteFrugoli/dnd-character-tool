@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/dice/contextual_roll_preferences_provider.dart';
+import '../../../../data/conditions/exhaustion_rules.dart';
 import '../../../../data/dice/dice.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../character_detail_provider.dart';
 import 'dice_result_formatting.dart';
 
 class ContextualRollHistoryKey {
@@ -100,6 +102,15 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
     return selectedChoices;
   }
 
+  /// Rule penalties on every D20 Test, such as 2024 Exhaustion.
+  int _d20SituationalModifier() {
+    final character = ref
+        .read(characterDetailProvider(widget.characterId))
+        .valueOrNull;
+    if (character == null || !widget.request.supportsD20Mode) return 0;
+    return ExhaustionRules.forCharacter(character).d20TestModifier(character);
+  }
+
   void _roll() {
     final preferences = ref.read(contextualRollPreferencesProvider);
     final result = _engine.roll(
@@ -108,6 +119,7 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
         d20Mode: _d20Mode,
         criticalMode: preferences.criticalMode,
         expressionChoices: _expressionChoices,
+        d20SituationalModifier: _d20SituationalModifier(),
       ),
     );
     final history = ref.read(contextualRollHistoryProvider(_historyKey));
@@ -130,6 +142,7 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
         .toList();
     final showExpressionChoices =
         showOptions && expressionChoiceParts.isNotEmpty;
+    final situationalModifier = _d20SituationalModifier();
     final double initialChildSize;
     if (latest != null) {
       initialChildSize = 0.66;
@@ -206,6 +219,15 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
               onSelectionChanged: (selection) {
                 setState(() => _d20Mode = selection.single);
               },
+            ),
+          ],
+          if (situationalModifier != 0) ...[
+            const SizedBox(height: 12),
+            Text(
+              l10n.rollExhaustionApplied('$situationalModifier'),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: scheme.error),
             ),
           ],
           if (showExpressionChoices)

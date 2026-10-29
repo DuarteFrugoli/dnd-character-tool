@@ -1208,6 +1208,48 @@ abstract class AppLocalizations {
   /// **'No Hit Dice remaining'**
   String get shortRestNoDice;
 
+  /// Short rest: optional recovery features section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Recovery features'**
+  String get shortRestRecoveryTitle;
+
+  /// Short rest: slot recovery budget (Arcane Recovery, Natural Recovery).
+  ///
+  /// In en, this message translates to:
+  /// **'Recover expended slots totaling up to {levels} levels (no slot above level 5).'**
+  String shortRestRecoverySlotsHint(int levels);
+
+  /// Short rest: point recovery budget (Sorcerous Restoration).
+  ///
+  /// In en, this message translates to:
+  /// **'Regain up to {points} points.'**
+  String shortRestRecoveryPointsHint(int points);
+
+  /// 2024 Exhaustion level stepper label.
+  ///
+  /// In en, this message translates to:
+  /// **'Exhaustion level'**
+  String get exhaustionLevelTitle;
+
+  /// 2024 Exhaustion effects summary.
+  ///
+  /// In en, this message translates to:
+  /// **'{penalty} on D20 Tests · Speed −{distance}'**
+  String exhaustionEffects(String penalty, String distance);
+
+  /// 2024 Exhaustion level 6 warning.
+  ///
+  /// In en, this message translates to:
+  /// **'At level 6, the character dies.'**
+  String get exhaustionLethal;
+
+  /// Contextual roll note when Exhaustion modifies the d20.
+  ///
+  /// In en, this message translates to:
+  /// **'Exhaustion {modifier} applied to the d20.'**
+  String rollExhaustionApplied(String modifier);
+
   /// Concentration banner prefix label.
   ///
   /// In en, this message translates to:

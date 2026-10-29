@@ -71,7 +71,7 @@ class ContextualRollEngine {
           ContextualD20Mode.normal => '1d20',
           ContextualD20Mode.advantage => '2d20kh1',
         },
-        d20Modifier,
+        d20Modifier + options.d20SituationalModifier,
       ),
     };
   }

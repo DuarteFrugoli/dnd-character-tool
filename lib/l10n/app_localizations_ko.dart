@@ -591,6 +591,35 @@ class AppLocalizationsKo extends AppLocalizations {
   String get shortRestNoDice => '남은 히트 다이스 없음';
 
   @override
+  String get shortRestRecoveryTitle => '회복 능력';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return '소모한 주문 슬롯을 합계 $levels레벨까지 회복합니다(6레벨 이상 불가).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return '최대 $points포인트를 회복합니다.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => '탈진 단계';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return 'd20 판정 $penalty · 이동속도 −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => '6단계에서 캐릭터가 사망합니다.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return '탈진 $modifier이(가) d20에 적용되었습니다.';
+  }
+
+  @override
   String get concentrationBannerLabel => '집중 중:';
 
   @override

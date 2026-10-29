@@ -5,6 +5,8 @@ import 'package:dnd_character_tool/data/models/character.dart';
 import 'package:dnd_character_tool/data/models/character_class_entry.dart';
 import 'package:dnd_character_tool/data/models/character_hit_die_pool.dart';
 import 'package:dnd_character_tool/data/models/hit_points.dart';
+import 'package:dnd_character_tool/data/models/spell.dart';
+import 'package:dnd_character_tool/data/rest/short_rest_recovery.dart';
 import 'package:dnd_character_tool/data/repositories/character_repository.dart';
 import 'package:dnd_character_tool/data/rulesets/ruleset_ids.dart';
 import 'package:dnd_character_tool/features/character_detail/character_detail_provider.dart';
@@ -139,6 +141,52 @@ void main() {
       expect(saved.featureResources['2024_second_wind'], 1);
       expect(saved.hitDicePools.single.used, 1);
       expect(backend.writeCount, 1);
+    });
+
+    test('short rest applies 2024 Arcane Recovery from the real catalog', () async {
+      final wizard = fighter2024().copyWith(
+        characterClass: 'Wizard',
+        classes: [
+          const CharacterClassEntry(
+            id: 'primary',
+            className: 'Wizard',
+            level: 1,
+            isStartingClass: true,
+          ),
+        ],
+        spellSlots: const SpellSlots(total: [2, 0, 0, 0, 0, 0, 0, 0, 0], used: [2, 0, 0, 0, 0, 0, 0, 0, 0]),
+        featureResources: const {},
+      );
+      final (:container, :backend) = await _setup(wizard);
+      final notifier = container.read(characterDetailProvider(_id).notifier);
+
+      final options = await notifier.shortRestRecoveryOptions();
+      expect(options.single.resourceId, '2024_arcane_recovery');
+      expect(options.single.budget, 1);
+
+      await notifier.shortRest(
+        hitDiceSpentByPool: const [0],
+        hpGained: 0,
+        recoveries: const [
+          ShortRestRecoverySelection.slots('2024_arcane_recovery', [1]),
+        ],
+      );
+
+      final saved = container.read(characterDetailProvider(_id)).value!;
+      expect(saved.spellSlots.used.first, 1);
+      expect(saved.featureResources['2024_arcane_recovery'], 0);
+      expect(await notifier.shortRestRecoveryOptions(), isEmpty);
+      expect(backend.writeCount, 1);
+    });
+
+    test('Exhaustion levels are tracked on 2024 sheets only', () async {
+      final (:container, backend: _) = await _setup(fighter2024());
+      final notifier = container.read(characterDetailProvider(_id).notifier);
+      await notifier.setExhaustionLevel(9);
+      expect(container.read(characterDetailProvider(_id)).value!.exhaustionLevel, 6);
+
+      await notifier.longRest();
+      expect(container.read(characterDetailProvider(_id)).value!.exhaustionLevel, 5);
     });
 
     test('long rest restores 2024 resources, hit dice and Heroic Inspiration', () async {

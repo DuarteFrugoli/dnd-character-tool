@@ -606,6 +606,35 @@ class AppLocalizationsRu extends AppLocalizations {
   String get shortRestNoDice => 'Костей хитов не осталось';
 
   @override
+  String get shortRestRecoveryTitle => 'Восстанавливающие умения';
+
+  @override
+  String shortRestRecoverySlotsHint(int levels) {
+    return 'Восстановите потраченные ячейки суммарно до $levels уровней (не выше 5-го).';
+  }
+
+  @override
+  String shortRestRecoveryPointsHint(int points) {
+    return 'Восстановите до $points очков.';
+  }
+
+  @override
+  String get exhaustionLevelTitle => 'Уровень истощения';
+
+  @override
+  String exhaustionEffects(String penalty, String distance) {
+    return '$penalty к проверкам d20 · Скорость −$distance';
+  }
+
+  @override
+  String get exhaustionLethal => 'На 6-м уровне персонаж умирает.';
+
+  @override
+  String rollExhaustionApplied(String modifier) {
+    return 'Истощение $modifier применено к d20.';
+  }
+
+  @override
   String get concentrationBannerLabel => 'Концентрация на:';
 
   @override

@@ -9,6 +9,65 @@ class AppLocalizationsDe extends AppLocalizations {
   AppLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
+  String get creationRulesetTitle => 'Regelwerk wählen';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => 'Spezies';
+
+  @override
+  String get creation2024Size => 'Größe';
+
+  @override
+  String get creation2024SizeSmall => 'Klein';
+
+  @override
+  String get creation2024SizeMedium => 'Mittelgroß';
+
+  @override
+  String get creation2024OriginFeat => 'Herkunftstalent';
+
+  @override
+  String get creation2024StandardArray =>
+      'Verteile 15, 14, 13, 12, 10 und 8; verwende jeden Wert einmal.';
+
+  @override
+  String get creation2024OriginBonuses =>
+      'Attributserhöhungen des Hintergrunds';
+
+  @override
+  String get creation2024BonusTwoOne => '+2 und +1';
+
+  @override
+  String get creation2024BonusThree => '+1 auf alle drei';
+
+  @override
+  String get creation2024Languages =>
+      'Wähle zwei Sprachen zusätzlich zu Gemeinsprache';
+
+  @override
+  String get creation2024ClassEquipment => 'Klassenausrüstung';
+
+  @override
+  String get creation2024BackgroundEquipment => 'Hintergrundausrüstung';
+
+  @override
+  String get creation2024SpecificTool => 'Werkzeug wählen';
+
+  @override
+  String get creation2024PrepareSpells =>
+      'Bereite vier Zauber aus deinem Zauberbuch vor';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      'Der Charakterbogen für 2024 wird noch integriert. Vorerst kannst du ihn ansehen und Notizen, Porträt und einfache Würfelwürfe nutzen.';
+
+  @override
   String get appTitle => 'DnD-Charakter-Tool';
 
   @override

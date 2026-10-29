@@ -34,7 +34,7 @@ class ModeSelectionScreen extends ConsumerWidget {
             icon: Icons.menu_book,
             title: l10n.modeGuidedTitle,
             subtitle: l10n.modeGuidedSubtitle,
-            onTap: () => context.push('/create/guided'),
+            onTap: () => context.push('/create'),
           ),
           const SizedBox(height: 12),
           _ModeCard(

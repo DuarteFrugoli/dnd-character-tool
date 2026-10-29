@@ -4,6 +4,7 @@ import '../constants/level_up_rules.dart';
 import '../datasources/srd/srd_models.dart';
 import '../feature_choice_engine.dart';
 import '../models/models.dart';
+import '../rulesets/character_rules_context.dart';
 
 class CharacterProgressionEngine {
   const CharacterProgressionEngine._();
@@ -17,6 +18,7 @@ class CharacterProgressionEngine {
   }
 
   static Character applyLevelUp(Character character, LevelUpResult result) {
+    CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Level up');
     final targetSubclass = _targetSubclassAfterLevelUp(character, result);
     final classes = classEntriesAfterLevelUp(
       character: character,
@@ -210,6 +212,7 @@ class CharacterProgressionEngine {
   }
 
   static Character syncSpellcastingSlotsFor(Character character) {
+    CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Spell slot progression');
     final summary = CharacterSpellcastingSummary.fromCharacter(character);
     if (!summary.hasSpellcasting) return character;
     return character.copyWith(
@@ -219,6 +222,7 @@ class CharacterProgressionEngine {
   }
 
   static SpellSlots pactMagicSlotsAfterShortRest(Character character) {
+    CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Pact Magic recovery');
     final summary = CharacterSpellcastingSummary.fromCharacter(character);
     final pactSlots = summary.pactMagicSlots;
     if (!pactSlots.total.any((total) => total > 0)) {

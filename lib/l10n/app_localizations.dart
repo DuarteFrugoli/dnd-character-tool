@@ -116,6 +116,114 @@ abstract class AppLocalizations {
     Locale('zh'),
   ];
 
+  /// Title before guided character creation ruleset selection.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose ruleset'**
+  String get creationRulesetTitle;
+
+  /// Guided character creation option for 2014 rules.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D 5e (2014)'**
+  String get creationRuleset2014;
+
+  /// Guided character creation option for 2024 rules.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D 5.5e (2024)'**
+  String get creationRuleset2024;
+
+  /// Species step and review label in 2024 creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Species'**
+  String get creation2024Species;
+
+  /// Species size choice in 2024 creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Size'**
+  String get creation2024Size;
+
+  /// Small species size option.
+  ///
+  /// In en, this message translates to:
+  /// **'Small'**
+  String get creation2024SizeSmall;
+
+  /// Medium species size option.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get creation2024SizeMedium;
+
+  /// Background origin feat label in 2024 creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Origin feat'**
+  String get creation2024OriginFeat;
+
+  /// Standard array instructions in 2024 creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign 15, 14, 13, 12, 10, and 8, using each score once.'**
+  String get creation2024StandardArray;
+
+  /// Background ability score increases in 2024 creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Background ability increases'**
+  String get creation2024OriginBonuses;
+
+  /// 2024 background two-ability increase pattern.
+  ///
+  /// In en, this message translates to:
+  /// **'+2 and +1'**
+  String get creation2024BonusTwoOne;
+
+  /// 2024 background three-ability increase pattern.
+  ///
+  /// In en, this message translates to:
+  /// **'+1 to all three'**
+  String get creation2024BonusThree;
+
+  /// Language choice prompt in 2024 creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose two languages besides Common'**
+  String get creation2024Languages;
+
+  /// 2024 class equipment choice title.
+  ///
+  /// In en, this message translates to:
+  /// **'Class equipment'**
+  String get creation2024ClassEquipment;
+
+  /// 2024 background equipment choice title.
+  ///
+  /// In en, this message translates to:
+  /// **'Background equipment'**
+  String get creation2024BackgroundEquipment;
+
+  /// Specific tool selection in 2024 starting equipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a tool'**
+  String get creation2024SpecificTool;
+
+  /// Wizard level-one spell preparation prompt in 2024 creation.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare four spells from your spellbook'**
+  String get creation2024PrepareSpells;
+
+  /// Notice on the limited 2024 sheet while edition-specific actions are being implemented.
+  ///
+  /// In en, this message translates to:
+  /// **'The 2024 sheet is still being integrated. For now, you can view it and use notes, your portrait, and basic dice rolls.'**
+  String get character2024ReadOnlyNotice;
+
   /// The application title.
   ///
   /// In en, this message translates to:

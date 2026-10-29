@@ -1,4 +1,5 @@
 import 'models/models.dart';
+import 'rulesets/character_rules_context.dart';
 import 'spellcasting_engine.dart';
 
 class CharacterSpellcastingOrigin {
@@ -41,6 +42,7 @@ class CharacterSpellcastingSummary {
   SpellcastingEngine? get primaryEngine => primaryOrigin?.engine;
 
   factory CharacterSpellcastingSummary.fromCharacter(Character character) {
+    CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Spellcasting summary');
     final origins = <CharacterSpellcastingOrigin>[];
     final assignedSpellIndexes = <int>{};
 

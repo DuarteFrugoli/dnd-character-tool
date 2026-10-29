@@ -80,13 +80,24 @@ flutter:
 
   assets:
     - assets/data/srd/5.1/
+    - assets/data/srd/5.2.1/
     - assets/data/i18n/de/5.1/
+    - assets/data/i18n/de/5.2.1/
     - assets/data/i18n/es/5.1/
+    - assets/data/i18n/es/5.2.1/
     - assets/data/i18n/fr/5.1/
+    - assets/data/i18n/fr/5.2.1/
     - assets/data/i18n/it/5.1/
+    - assets/data/i18n/it/5.2.1/
     - assets/data/i18n/ja/5.1/
+    - assets/data/i18n/ja/5.2.1/
     - assets/data/i18n/ko/5.1/
+    - assets/data/i18n/ko/5.2.1/
     - assets/data/i18n/pt/5.1/
+    - assets/data/i18n/pt/5.2.1/
     - assets/data/i18n/ru/5.1/
+    - assets/data/i18n/ru/5.2.1/
     - assets/data/i18n/tr/5.1/
+    - assets/data/i18n/tr/5.2.1/
     - assets/data/i18n/zh/5.1/
+    - assets/data/i18n/zh/5.2.1/

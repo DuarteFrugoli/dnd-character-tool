@@ -9,6 +9,61 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
+  String get creationRulesetTitle => 'ルールを選択';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => '種族';
+
+  @override
+  String get creation2024Size => 'サイズ';
+
+  @override
+  String get creation2024SizeSmall => '小型';
+
+  @override
+  String get creation2024SizeMedium => '中型';
+
+  @override
+  String get creation2024OriginFeat => '出自特技';
+
+  @override
+  String get creation2024StandardArray => '15、14、13、12、10、8をそれぞれ1回ずつ割り振ってください。';
+
+  @override
+  String get creation2024OriginBonuses => '背景による能力値上昇';
+
+  @override
+  String get creation2024BonusTwoOne => '+2と+1';
+
+  @override
+  String get creation2024BonusThree => '3つとも+1';
+
+  @override
+  String get creation2024Languages => '共通語に加えて言語を2つ選択';
+
+  @override
+  String get creation2024ClassEquipment => 'クラスの装備';
+
+  @override
+  String get creation2024BackgroundEquipment => '背景の装備';
+
+  @override
+  String get creation2024SpecificTool => '道具を選択';
+
+  @override
+  String get creation2024PrepareSpells => '呪文書から呪文を4つ準備する';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      '2024年版のキャラクターシートは対応作業中です。現在は閲覧と、メモ、肖像、基本的なダイスロールを利用できます。';
+
+  @override
   String get appTitle => 'DnD キャラクターツール';
 
   @override

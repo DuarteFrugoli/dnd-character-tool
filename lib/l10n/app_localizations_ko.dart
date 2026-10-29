@@ -9,6 +9,62 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
+  String get creationRulesetTitle => '규칙 선택';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => '종족';
+
+  @override
+  String get creation2024Size => '크기';
+
+  @override
+  String get creation2024SizeSmall => '소형';
+
+  @override
+  String get creation2024SizeMedium => '중형';
+
+  @override
+  String get creation2024OriginFeat => '출신 특기';
+
+  @override
+  String get creation2024StandardArray =>
+      '15, 14, 13, 12, 10, 8을 각각 한 번씩 배분하세요.';
+
+  @override
+  String get creation2024OriginBonuses => '배경 능력치 증가';
+
+  @override
+  String get creation2024BonusTwoOne => '+2와 +1';
+
+  @override
+  String get creation2024BonusThree => '세 능력치에 +1';
+
+  @override
+  String get creation2024Languages => '공용어 외에 언어 두 개 선택';
+
+  @override
+  String get creation2024ClassEquipment => '직업 장비';
+
+  @override
+  String get creation2024BackgroundEquipment => '배경 장비';
+
+  @override
+  String get creation2024SpecificTool => '도구 선택';
+
+  @override
+  String get creation2024PrepareSpells => '주문책에서 주문 네 개 준비';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      '2024년 캐릭터 시트는 아직 통합 중입니다. 현재는 시트 조회와 메모, 초상화, 기본 주사위 굴림을 사용할 수 있습니다.';
+
+  @override
   String get appTitle => 'DnD 캐릭터 도구';
 
   @override

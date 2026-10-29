@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/models/models.dart';
+import '../../../data/rulesets/ruleset_ids.dart';
 import '../character_detail_provider.dart';
 import 'vm_reference_utils.dart';
 
@@ -16,6 +17,8 @@ final characterHeaderVmProvider =
 class CharacterHeaderVm {
   const CharacterHeaderVm({
     required this.dataVersion,
+    required this.rulesetId,
+    required this.contentPackId,
     required this.id,
     required this.name,
     required this.imagePath,
@@ -29,6 +32,8 @@ class CharacterHeaderVm {
   factory CharacterHeaderVm.fromCharacter(Character character) {
     return CharacterHeaderVm(
       dataVersion: character.dataVersion,
+      rulesetId: character.rulesetId,
+      contentPackId: character.contentPackId,
       id: character.id,
       name: character.name,
       imagePath: character.imagePath,
@@ -41,6 +46,8 @@ class CharacterHeaderVm {
   }
 
   final int dataVersion;
+  final RulesetId rulesetId;
+  final ContentPackId contentPackId;
   final String id;
   final String name;
   final String? imagePath;
@@ -56,6 +63,8 @@ class CharacterHeaderVm {
   bool operator ==(Object other) {
     return other is CharacterHeaderVm &&
         dataVersion == other.dataVersion &&
+        rulesetId == other.rulesetId &&
+        contentPackId == other.contentPackId &&
         id == other.id &&
         name == other.name &&
         imagePath == other.imagePath &&
@@ -69,6 +78,8 @@ class CharacterHeaderVm {
   @override
   int get hashCode => Object.hash(
     dataVersion,
+    rulesetId,
+    contentPackId,
     id,
     name,
     imagePath,

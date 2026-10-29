@@ -9,6 +9,62 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
+  String get creationRulesetTitle => 'Kural setini seç';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => 'Tür';
+
+  @override
+  String get creation2024Size => 'Boyut';
+
+  @override
+  String get creation2024SizeSmall => 'Küçük';
+
+  @override
+  String get creation2024SizeMedium => 'Orta';
+
+  @override
+  String get creation2024OriginFeat => 'Köken hüneri';
+
+  @override
+  String get creation2024StandardArray =>
+      '15, 14, 13, 12, 10 ve 8 değerlerini birer kez dağıt.';
+
+  @override
+  String get creation2024OriginBonuses => 'Geçmişten gelen nitelik artışları';
+
+  @override
+  String get creation2024BonusTwoOne => '+2 ve +1';
+
+  @override
+  String get creation2024BonusThree => 'Üçüne de +1';
+
+  @override
+  String get creation2024Languages => 'Ortak Dil dışında iki dil seç';
+
+  @override
+  String get creation2024ClassEquipment => 'Sınıf ekipmanı';
+
+  @override
+  String get creation2024BackgroundEquipment => 'Geçmiş ekipmanı';
+
+  @override
+  String get creation2024SpecificTool => 'Bir alet seç';
+
+  @override
+  String get creation2024PrepareSpells => 'Büyü kitabından dört büyü hazırla';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      '2024 karakter sayfasının entegrasyonu sürüyor. Şimdilik sayfayı görüntüleyebilir; notları, portreyi ve temel zar atışlarını kullanabilirsiniz.';
+
+  @override
   String get appTitle => 'DnD Character Tool';
 
   @override

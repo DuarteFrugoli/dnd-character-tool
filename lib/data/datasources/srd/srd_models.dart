@@ -91,11 +91,15 @@ class SrdSkill {
 
 class SrdLanguage {
   final String name;
+  final String? category;
 
-  const SrdLanguage({required this.name});
+  const SrdLanguage({required this.name, this.category});
 
   factory SrdLanguage.fromJson(Map<String, dynamic> json) =>
-      SrdLanguage(name: json['name'] as String? ?? '');
+      SrdLanguage(
+        name: json['name'] as String? ?? '',
+        category: json['category'] as String?,
+      );
 }
 
 class SrdSubrace {
@@ -796,19 +800,29 @@ class SrdMagicItem {
 class SrdFeat {
   final String name;
   final String? prerequisite;
+  final Map<String, dynamic>? structuredPrerequisite;
+  final bool repeatable;
   final String description;
   final String category;
 
   const SrdFeat({
     required this.name,
     this.prerequisite,
+    this.structuredPrerequisite,
+    this.repeatable = false,
     required this.description,
     this.category = 'general',
   });
 
   factory SrdFeat.fromJson(Map<String, dynamic> json) => SrdFeat(
     name: json['name'] as String,
-    prerequisite: json['prerequisite'] as String?,
+    prerequisite: json['prerequisite'] is String
+        ? json['prerequisite'] as String
+        : null,
+    structuredPrerequisite: json['prerequisite'] is Map<String, dynamic>
+        ? json['prerequisite'] as Map<String, dynamic>
+        : null,
+    repeatable: readBool(json['repeatable']),
     description: json['description'] as String,
     category: json['category'] as String? ?? 'general',
   );

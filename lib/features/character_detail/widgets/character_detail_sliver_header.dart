@@ -26,9 +26,9 @@ class CharacterDetailSliverHeader extends StatelessWidget {
   final bool innerBoxIsScrolled;
   final VoidCallback onBack;
   final VoidCallback onRollDice;
-  final VoidCallback onLevelUp;
-  final VoidCallback onResetLevels;
-  final VoidCallback onRest;
+  final VoidCallback? onLevelUp;
+  final VoidCallback? onResetLevels;
+  final VoidCallback? onRest;
   final ValueChanged<String?> onImageChanged;
 
   @override
@@ -75,9 +75,9 @@ class _CharacterDetailFlexibleHeader extends StatelessWidget {
   final String subtitle;
   final VoidCallback onBack;
   final VoidCallback onRollDice;
-  final VoidCallback onLevelUp;
-  final VoidCallback onResetLevels;
-  final VoidCallback onRest;
+  final VoidCallback? onLevelUp;
+  final VoidCallback? onResetLevels;
+  final VoidCallback? onRest;
   final ValueChanged<String?> onImageChanged;
 
   @override
@@ -191,9 +191,9 @@ class _ExpandedHeaderContent extends StatelessWidget {
   final String subtitle;
   final VoidCallback onBack;
   final VoidCallback onRollDice;
-  final VoidCallback onLevelUp;
-  final VoidCallback onResetLevels;
-  final VoidCallback onRest;
+  final VoidCallback? onLevelUp;
+  final VoidCallback? onResetLevels;
+  final VoidCallback? onRest;
   final ValueChanged<String?> onImageChanged;
 
   @override
@@ -325,9 +325,9 @@ class _CharacterActionMenu extends StatelessWidget {
 
   final bool xpTrackingEnabled;
   final VoidCallback onRollDice;
-  final VoidCallback onLevelUp;
-  final VoidCallback onResetLevels;
-  final VoidCallback onRest;
+  final VoidCallback? onLevelUp;
+  final VoidCallback? onResetLevels;
+  final VoidCallback? onRest;
 
   @override
   Widget build(BuildContext context) {
@@ -352,13 +352,13 @@ class _CharacterActionMenu extends StatelessWidget {
             onRollDice();
             return;
           case _CharacterHeaderAction.levelUp:
-            onLevelUp();
+            onLevelUp?.call();
             return;
           case _CharacterHeaderAction.resetLevels:
-            onResetLevels();
+            onResetLevels?.call();
             return;
           case _CharacterHeaderAction.rest:
-            onRest();
+            onRest?.call();
             return;
         }
       },
@@ -370,8 +370,9 @@ class _CharacterActionMenu extends StatelessWidget {
             label: l10n.characterActionRollDice,
           ),
         ),
-        const PopupMenuDivider(),
-        if (!xpTrackingEnabled)
+        if (onLevelUp != null || onRest != null || onResetLevels != null)
+          const PopupMenuDivider(),
+        if (onLevelUp != null && !xpTrackingEnabled)
           PopupMenuItem(
             value: _CharacterHeaderAction.levelUp,
             child: _CharacterActionMenuItem(
@@ -379,21 +380,23 @@ class _CharacterActionMenu extends StatelessWidget {
               label: l10n.tooltipLevelUp,
             ),
           ),
-        PopupMenuItem(
-          value: _CharacterHeaderAction.rest,
-          child: _CharacterActionMenuItem(
-            icon: Icons.hotel_outlined,
-            label: l10n.restPickerTitle,
+        if (onRest != null)
+          PopupMenuItem(
+            value: _CharacterHeaderAction.rest,
+            child: _CharacterActionMenuItem(
+              icon: Icons.hotel_outlined,
+              label: l10n.restPickerTitle,
+            ),
           ),
-        ),
-        const PopupMenuDivider(),
-        PopupMenuItem(
-          value: _CharacterHeaderAction.resetLevels,
-          child: _CharacterActionMenuItem(
-            icon: Icons.restart_alt,
-            label: l10n.characterActionResetLevels,
+        if (onResetLevels != null) const PopupMenuDivider(),
+        if (onResetLevels != null)
+          PopupMenuItem(
+            value: _CharacterHeaderAction.resetLevels,
+            child: _CharacterActionMenuItem(
+              icon: Icons.restart_alt,
+              label: l10n.characterActionResetLevels,
+            ),
           ),
-        ),
       ],
     );
   }

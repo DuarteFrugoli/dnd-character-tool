@@ -9,6 +9,65 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
+  String get creationRulesetTitle => 'Choisir les règles';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => 'Espèce';
+
+  @override
+  String get creation2024Size => 'Taille';
+
+  @override
+  String get creation2024SizeSmall => 'Petite';
+
+  @override
+  String get creation2024SizeMedium => 'Moyenne';
+
+  @override
+  String get creation2024OriginFeat => 'Don d\'origine';
+
+  @override
+  String get creation2024StandardArray =>
+      'Répartissez 15, 14, 13, 12, 10 et 8, une seule fois chacun.';
+
+  @override
+  String get creation2024OriginBonuses =>
+      'Augmentations de caractéristique de l\'historique';
+
+  @override
+  String get creation2024BonusTwoOne => '+2 et +1';
+
+  @override
+  String get creation2024BonusThree => '+1 aux trois';
+
+  @override
+  String get creation2024Languages =>
+      'Choisissez deux langues en plus du commun';
+
+  @override
+  String get creation2024ClassEquipment => 'Équipement de classe';
+
+  @override
+  String get creation2024BackgroundEquipment => 'Équipement de l\'historique';
+
+  @override
+  String get creation2024SpecificTool => 'Choisissez un outil';
+
+  @override
+  String get creation2024PrepareSpells =>
+      'Préparez quatre sorts de votre grimoire';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      'La fiche 2024 est encore en cours d\'intégration. Pour l\'instant, vous pouvez la consulter et utiliser les notes, le portrait et les jets de dés simples.';
+
+  @override
   String get appTitle => 'Outil de personnage DnD';
 
   @override

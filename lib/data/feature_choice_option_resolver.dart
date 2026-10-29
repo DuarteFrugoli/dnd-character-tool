@@ -72,7 +72,12 @@ class FeatureChoiceOptionResolver {
       case 'tool':
         return _toolOptions();
       case 'language':
+        final known = character?.languages.map((name) => name.toLowerCase()).toSet() ?? const <String>{};
+        final selected = request.findIn(choices)?.values.toSet() ?? const <String>{};
         return languages
+            .where((language) =>
+                !known.contains(language.name.toLowerCase()) ||
+                selected.contains(idFromName(language.name)))
             .map(
               (language) => SrdFeatureChoiceOption(
                 id: idFromName(language.name),
@@ -187,7 +192,13 @@ class FeatureChoiceOptionResolver {
         ? skills.where(
             (skill) => proficiencies.contains(skill.name.toLowerCase()),
           )
-        : skills;
+        : skills.where((skill) {
+            final id = prefix
+                ? 'skill:${idFromName(skill.name)}'
+                : idFromName(skill.name);
+            return !proficiencies.contains(skill.name.toLowerCase()) ||
+                (request.findIn(choices)?.values.contains(id) ?? false);
+          });
     return skillList
         .map(
           (skill) => SrdFeatureChoiceOption(
@@ -295,13 +306,26 @@ class FeatureChoiceOptionResolver {
   String? _selectedChoiceValue(String? choiceId) {
     if (choiceId == null || choiceId.isEmpty) return null;
     for (final related in relatedRequests) {
-      if (related.choiceId != choiceId) continue;
+      if (related.choiceId != choiceId ||
+          related.sourceType != request.sourceType ||
+          related.sourceClass != request.sourceClass ||
+          related.sourceClassEntryId != request.sourceClassEntryId ||
+          related.sourceSubclass != request.sourceSubclass ||
+          related.sourceName != request.sourceName ||
+          related.featureName != request.featureName) {
+        continue;
+      }
       final values = related.findIn(choices)?.values;
       if (values != null && values.isNotEmpty) return values.first;
     }
-    final direct = choices.firstWhereOrNull(
-      (choice) => choice.choiceId == choiceId,
-    );
+    final direct = choices.firstWhereOrNull((choice) =>
+        choice.choiceId == choiceId &&
+        choice.sourceType == request.sourceType &&
+        choice.sourceClass == request.sourceClass &&
+        choice.sourceClassEntryId == request.sourceClassEntryId &&
+        choice.sourceSubclass == request.sourceSubclass &&
+        choice.sourceName == request.sourceName &&
+        choice.featureName == request.featureName);
     return direct?.values.firstOrNull;
   }
 

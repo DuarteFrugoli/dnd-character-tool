@@ -9,6 +9,65 @@ class AppLocalizationsIt extends AppLocalizations {
   AppLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
+  String get creationRulesetTitle => 'Scegli le regole';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => 'Specie';
+
+  @override
+  String get creation2024Size => 'Taglia';
+
+  @override
+  String get creation2024SizeSmall => 'Piccola';
+
+  @override
+  String get creation2024SizeMedium => 'Media';
+
+  @override
+  String get creation2024OriginFeat => 'Talento di origine';
+
+  @override
+  String get creation2024StandardArray =>
+      'Assegna 15, 14, 13, 12, 10 e 8, usando ogni valore una sola volta.';
+
+  @override
+  String get creation2024OriginBonuses =>
+      'Incrementi di caratteristica del background';
+
+  @override
+  String get creation2024BonusTwoOne => '+2 e +1';
+
+  @override
+  String get creation2024BonusThree => '+1 a tutte e tre';
+
+  @override
+  String get creation2024Languages => 'Scegli due lingue oltre al Comune';
+
+  @override
+  String get creation2024ClassEquipment => 'Equipaggiamento di classe';
+
+  @override
+  String get creation2024BackgroundEquipment =>
+      'Equipaggiamento del background';
+
+  @override
+  String get creation2024SpecificTool => 'Scegli uno strumento';
+
+  @override
+  String get creation2024PrepareSpells =>
+      'Prepara quattro incantesimi dal tuo libro degli incantesimi';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      'La scheda 2024 è ancora in fase di integrazione. Per ora puoi consultarla e usare note, ritratto e tiri di dado semplici.';
+
+  @override
   String get appTitle => 'Strumento per i personaggi di DnD';
 
   @override

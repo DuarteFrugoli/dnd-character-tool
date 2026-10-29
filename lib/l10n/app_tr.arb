@@ -1,5 +1,23 @@
 {
   "@@locale": "tr",
+  "creationRulesetTitle": "Kural setini seç",
+  "creationRuleset2014": "D&D 5e (2014)",
+  "creationRuleset2024": "D&D 5.5e (2024)",
+  "creation2024Species": "Tür",
+  "creation2024Size": "Boyut",
+  "creation2024SizeSmall": "Küçük",
+  "creation2024SizeMedium": "Orta",
+  "creation2024OriginFeat": "Köken hüneri",
+  "creation2024StandardArray": "15, 14, 13, 12, 10 ve 8 değerlerini birer kez dağıt.",
+  "creation2024OriginBonuses": "Geçmişten gelen nitelik artışları",
+  "creation2024BonusTwoOne": "+2 ve +1",
+  "creation2024BonusThree": "Üçüne de +1",
+  "creation2024Languages": "Ortak Dil dışında iki dil seç",
+  "creation2024ClassEquipment": "Sınıf ekipmanı",
+  "creation2024BackgroundEquipment": "Geçmiş ekipmanı",
+  "creation2024SpecificTool": "Bir alet seç",
+  "creation2024PrepareSpells": "Büyü kitabından dört büyü hazırla",
+  "character2024ReadOnlyNotice": "2024 karakter sayfasının entegrasyonu sürüyor. Şimdilik sayfayı görüntüleyebilir; notları, portreyi ve temel zar atışlarını kullanabilirsiniz.",
   "appTitle": "DnD Character Tool",
   "@appTitle": {
     "description": "The application title."

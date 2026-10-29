@@ -9,6 +9,64 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
+  String get creationRulesetTitle => 'Выберите правила';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => 'Вид';
+
+  @override
+  String get creation2024Size => 'Размер';
+
+  @override
+  String get creation2024SizeSmall => 'Маленький';
+
+  @override
+  String get creation2024SizeMedium => 'Средний';
+
+  @override
+  String get creation2024OriginFeat => 'Черта происхождения';
+
+  @override
+  String get creation2024StandardArray =>
+      'Распределите 15, 14, 13, 12, 10 и 8, используя каждое значение один раз.';
+
+  @override
+  String get creation2024OriginBonuses =>
+      'Повышения характеристик от предыстории';
+
+  @override
+  String get creation2024BonusTwoOne => '+2 и +1';
+
+  @override
+  String get creation2024BonusThree => '+1 ко всем трём';
+
+  @override
+  String get creation2024Languages => 'Выберите два языка помимо Общего';
+
+  @override
+  String get creation2024ClassEquipment => 'Снаряжение класса';
+
+  @override
+  String get creation2024BackgroundEquipment => 'Снаряжение предыстории';
+
+  @override
+  String get creation2024SpecificTool => 'Выберите инструмент';
+
+  @override
+  String get creation2024PrepareSpells =>
+      'Подготовьте четыре заклинания из книги заклинаний';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      'Лист персонажа 2024 года ещё интегрируется. Пока можно просматривать его и пользоваться заметками, портретом и простыми бросками костей.';
+
+  @override
   String get appTitle => 'Инструмент создания персонажей DnD';
 
   @override

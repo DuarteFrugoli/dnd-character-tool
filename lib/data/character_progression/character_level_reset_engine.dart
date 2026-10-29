@@ -1,6 +1,7 @@
 import '../constants/armor_class.dart';
 import '../feature_choice_engine.dart';
 import '../models/models.dart';
+import '../rulesets/character_rules_context.dart';
 import 'character_progression_engine.dart';
 
 class CharacterLevelResetResult {
@@ -34,6 +35,7 @@ class CharacterLevelResetEngine {
     Character character,
     CharacterLevelResetResult result,
   ) {
+    CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Level reset');
     const primaryClassEntryId = 'primary';
     final className = result.className.trim();
     if (className.isEmpty) {

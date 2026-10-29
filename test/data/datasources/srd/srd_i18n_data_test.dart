@@ -195,9 +195,13 @@ void main() {
           final localized = _readJsonMap(
             'assets/data/i18n/$locale/5.1/$fileName.json',
           );
+          final localizedTools = fileName == 'equipment'
+              ? _readJsonMap('assets/data/i18n/$locale/5.1/tools.json')
+              : const <String, dynamic>{};
           final missing = _collectNamedEntries(srd).where((name) {
             final entry = _asMap(localized[name]);
-            final translatedName = entry?['name'];
+            final translatedName = entry?['name'] ??
+                _asMap(localizedTools[name])?['name'];
             return translatedName is! String || translatedName.trim().isEmpty;
           }).toList();
 

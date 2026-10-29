@@ -5,6 +5,7 @@ import '../datasources/srd/srd_data_source.dart';
 import '../migrations/character_migration.dart';
 import '../migrations/character_migration_runner.dart';
 import '../models/models.dart';
+import '../rulesets/character_rules_context.dart';
 
 /// Ponto central de acesso a personagens no app.
 /// Isola as features do datasource concreto — facilitando testes e futura
@@ -36,6 +37,7 @@ class CharacterRepository {
 
   /// Cria ou atualiza um personagem.
   Future<Character> save(Character character) async {
+    CharacterRulesContext.fromCharacter(character);
     final updated = character.copyWith(updatedAt: DateTime.now());
     await _local.save(updated);
     return updated;
@@ -53,6 +55,7 @@ class CharacterRepository {
     required bool isPinned,
     required int sortOrder,
   }) async {
+    CharacterRulesContext.fromCharacter(source);
     final id = _generateId();
     final copiedImagePath = await _local.copyImageForCharacter(
       source,
@@ -80,6 +83,7 @@ class CharacterRepository {
 
   /// Salva a imagem e retorna o personagem atualizado com o novo imagePath.
   Future<Character> saveImage(Character character, String sourcePath) async {
+    CharacterRulesContext.fromCharacter(character);
     final fileName = await _local.saveImage(character.id, sourcePath);
     if (fileName == null) return character;
 
@@ -96,6 +100,7 @@ class CharacterRepository {
 
   /// Remove a imagem do personagem e retorna o personagem atualizado sem imagePath.
   Future<Character> removeImage(Character character) async {
+    CharacterRulesContext.fromCharacter(character);
     await _local.deleteImage(character.imagePath);
     final updated = character.copyWith(
       clearImagePath: true,

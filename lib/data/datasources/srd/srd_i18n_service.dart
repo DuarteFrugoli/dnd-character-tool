@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import '../../rulesets/ruleset_ids.dart';
 import '../../rulesets/srd_content_pack.dart';
 
 /// Provides translated SRD strings for a given locale.
@@ -38,6 +39,20 @@ class SrdI18nService {
     const {},
   );
 
+  static final SrdI18nService _english2024 = SrdI18nService._(
+    'en',
+    SrdContentPackRegistry.srd521,
+    const {},
+    const {},
+    const {},
+  );
+
+  static SrdI18nService englishForPack(SrdContentPack pack) =>
+      switch (pack.id) {
+        ContentPackId.srd51 => english,
+        ContentPackId.srd521 => _english2024,
+      };
+
   static const _files = [
     'backgrounds',
     'classes',
@@ -65,9 +80,7 @@ class SrdI18nService {
     SrdContentPack pack = SrdContentPackRegistry.srd51,
   }) async {
     if (locale == 'en') {
-      return pack.id == SrdContentPackRegistry.srd51.id
-          ? english
-          : SrdI18nService._('en', pack, const {}, const {}, const {});
+      return englishForPack(pack);
     }
     final data = <String, Map<String, dynamic>>{};
     for (final file in _files) {
@@ -395,6 +408,8 @@ class SrdI18nService {
   String equipmentName(String en) {
     final direct = _str('equipment', en, 'name');
     if (direct != null) return direct;
+    final tool = _str('tools', en, 'name');
+    if (tool != null) return tool;
     // Armor items stored as e.g. "Leather armor" may only have a key "Leather"
     // in the i18n file (matching the SRD equipment.json canonical name).
     // Strip common armor/mail suffixes and retry.

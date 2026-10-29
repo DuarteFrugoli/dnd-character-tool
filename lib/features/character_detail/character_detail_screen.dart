@@ -10,6 +10,7 @@ import '../../core/platform/keep_screen_on.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/models/models.dart';
+import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
@@ -27,6 +28,7 @@ import 'tabs/skills_tab.dart';
 import 'tabs/spells_tab.dart';
 import 'tabs/stats_tab.dart';
 import 'widgets/character_detail_shell.dart';
+import 'widgets/character_2024_read_only_tab.dart';
 import 'widgets/dice/dice_roller_sheet.dart';
 import 'widgets/detail_edit_guard.dart';
 import 'widgets/detail_tab_host.dart';
@@ -91,6 +93,8 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   }
 
   void _warmTabsAround(int centerIndex) {
+    final character = _currentCharacter();
+    if (character == null || character.needsDataUpdate) return;
     if (_lastWarmedTabIndex == centerIndex) return;
     _lastWarmedTabIndex = centerIndex;
     for (final tabIndex in <int>{
@@ -104,6 +108,30 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
   }
 
   void _warmTabData(int tabIndex) {
+    final character = _currentCharacter();
+    if (character == null) return;
+    if (character.rulesetId == RulesetId.dnd2024) {
+      switch (tabIndex) {
+        case 3:
+          ref.read(srd2024SpeciesProvider);
+          ref.read(srdRaceTraitsForPackProvider(character.contentPackId));
+          ref.read(srdAllSubclassFeaturesForPackProvider(character.contentPackId));
+          for (final entry in character.classEntries) {
+            ref.read(srdClassFeaturesForPackProvider((character.contentPackId, entry.className)));
+          }
+          return;
+        case 4:
+          ref.read(srdSpellsForPackProvider(character.contentPackId));
+          return;
+        case 5:
+          ref.read(srdItemsForPackProvider(character.contentPackId));
+          return;
+        case 6:
+          ref.read(notesTabVmProvider(widget.characterId));
+          return;
+      }
+      return;
+    }
     switch (tabIndex) {
       case 0:
         ref.read(identityTabVmProvider(widget.characterId));
@@ -247,6 +275,15 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       return _buildMaintenanceRequired(header);
     }
 
+    if (_lastWarmedTabIndex != _tabs.index) {
+      _scheduleTabWarmup(_tabs.index);
+    }
+
+    final rules = ref.watch(characterRulesContextProvider((header.rulesetId, header.contentPackId)));
+    if (!rules.supportsLegacySheet) {
+      return _build2024Loaded(header);
+    }
+
     final i18n =
         ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
     final l10n = AppLocalizations.of(context)!;
@@ -335,6 +372,41 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
               NotesTab(notes: vm.notes, characterId: widget.characterId),
         ),
       ],
+    );
+  }
+
+  Widget _build2024Loaded(CharacterHeaderVm header) {
+    final character = _currentCharacter();
+    if (character == null) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+    final i18nState = ref.watch(srdI18nForPackProvider(header.contentPackId));
+    return i18nState.when(
+      loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
+      error: (error, _) => Scaffold(body: Center(child: Text(error.toString()))),
+      data: (i18n) {
+        final l10n = AppLocalizations.of(context)!;
+        final subtitle = '${l10n.charCardLevel(header.level)} | ${i18n.className(character.primaryClassName)} | ${i18n.raceName(header.race)}';
+        return CharacterDetailShell(
+          header: header,
+          subtitle: subtitle,
+          tabs: _tabs,
+          onBack: _handleBack,
+          onRollDice: () => openDiceRollerSheet(context, characterId: widget.characterId),
+          onLevelUp: null,
+          onResetLevels: null,
+          onRest: null,
+          onImageChanged: (path) => ref.read(characterDetailProvider(widget.characterId).notifier).updateImage(path),
+          children: [
+            for (var index = 0; index < 6; index++)
+              Character2024ReadOnlyTab(character: character, tabIndex: index, i18n: i18n),
+            CharacterTabHost<NotesTabVm>(
+              provider: notesTabVmProvider(widget.characterId),
+              builder: (context, vm) => NotesTab(notes: vm.notes, characterId: widget.characterId),
+            ),
+          ],
+        );
+      },
     );
   }
 

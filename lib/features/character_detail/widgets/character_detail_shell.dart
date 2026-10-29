@@ -25,9 +25,9 @@ class CharacterDetailShell extends StatelessWidget {
   final List<Widget> children;
   final VoidCallback onBack;
   final VoidCallback onRollDice;
-  final VoidCallback onLevelUp;
-  final VoidCallback onResetLevels;
-  final VoidCallback onRest;
+  final VoidCallback? onLevelUp;
+  final VoidCallback? onResetLevels;
+  final VoidCallback? onRest;
   final ValueChanged<String?> onImageChanged;
 
   @override

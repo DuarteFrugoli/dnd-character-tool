@@ -6,6 +6,7 @@ import 'package:dnd_character_tool/data/models/character_class_entry.dart';
 import 'package:dnd_character_tool/data/models/character_hit_die_pool.dart';
 import 'package:dnd_character_tool/data/models/hit_points.dart';
 import 'package:dnd_character_tool/data/repositories/character_repository.dart';
+import 'package:dnd_character_tool/data/rulesets/ruleset_ids.dart';
 import 'package:dnd_character_tool/features/character_detail/character_detail_provider.dart';
 import 'package:dnd_character_tool/shared/providers/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -99,6 +100,22 @@ Future<({ProviderContainer container, _CountingBackend backend})> _setup(
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  test('2024 rests fail before reading 2014 resources or writing state', () async {
+    final (:container, :backend) = await _setup(
+      _baseCharacter().copyWith(
+        rulesetId: RulesetId.dnd2024,
+        contentPackId: ContentPackId.srd521,
+      ),
+    );
+    final notifier = container.read(characterDetailProvider(_id).notifier);
+    await expectLater(notifier.longRest(), throwsUnsupportedError);
+    await expectLater(
+      notifier.shortRest(hitDiceSpentByPool: const [], hpGained: 0),
+      throwsUnsupportedError,
+    );
+    expect(backend.writeCount, 0);
+  });
 
   // ── saveStatsEdit: HP clamping ────────────────────────────────────────────
   group('saveStatsEdit – HP clamping', () {

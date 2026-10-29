@@ -9,6 +9,63 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get creationRulesetTitle => 'Choose ruleset';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => 'Species';
+
+  @override
+  String get creation2024Size => 'Size';
+
+  @override
+  String get creation2024SizeSmall => 'Small';
+
+  @override
+  String get creation2024SizeMedium => 'Medium';
+
+  @override
+  String get creation2024OriginFeat => 'Origin feat';
+
+  @override
+  String get creation2024StandardArray =>
+      'Assign 15, 14, 13, 12, 10, and 8, using each score once.';
+
+  @override
+  String get creation2024OriginBonuses => 'Background ability increases';
+
+  @override
+  String get creation2024BonusTwoOne => '+2 and +1';
+
+  @override
+  String get creation2024BonusThree => '+1 to all three';
+
+  @override
+  String get creation2024Languages => 'Choose two languages besides Common';
+
+  @override
+  String get creation2024ClassEquipment => 'Class equipment';
+
+  @override
+  String get creation2024BackgroundEquipment => 'Background equipment';
+
+  @override
+  String get creation2024SpecificTool => 'Choose a tool';
+
+  @override
+  String get creation2024PrepareSpells =>
+      'Prepare four spells from your spellbook';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      'The 2024 sheet is still being integrated. For now, you can view it and use notes, your portrait, and basic dice rolls.';
+
+  @override
   String get appTitle => 'DnD Character Tool';
 
   @override

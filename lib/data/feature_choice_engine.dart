@@ -2,6 +2,8 @@ import 'datasources/srd/srd_models.dart';
 import 'models/models.dart';
 
 class FeatureChoiceSourceType {
+  static const origin = 'origin';
+  static const background = 'background';
   static const classFeature = 'classFeature';
   static const subclassFeature = 'subclassFeature';
   static const raceTrait = 'raceTrait';

@@ -1,8 +1,11 @@
 import 'package:dnd_character_tool/data/datasources/srd/srd_models.dart';
+import 'package:dnd_character_tool/data/character_spellcasting_summary.dart';
+import 'package:dnd_character_tool/data/character_progression/character_progression_engine.dart';
 import 'package:dnd_character_tool/data/migrations/character_migration.dart';
 import 'package:dnd_character_tool/data/migrations/character_migration_runner.dart';
 import 'package:dnd_character_tool/data/models/models.dart';
 import 'package:dnd_character_tool/data/rulesets/ruleset_ids.dart';
+import 'package:dnd_character_tool/data/rulesets/character_rules_context.dart';
 import 'package:dnd_character_tool/data/rulesets/srd_content_pack.dart';
 import 'package:dnd_character_tool/data/rulesets/srd_content_ref.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -75,7 +78,7 @@ void main() {
     );
   });
 
-  test('pack registry resolves only bundled content', () {
+  test('pack registry resolves both bundled rulesets', () {
     expect(
       SrdContentPackRegistry.forCharacter(_character()).srdAsset('spells'),
       'assets/data/srd/5.1/spells.json',
@@ -85,7 +88,38 @@ void main() {
       'assets/data/i18n/pt/5.1/spells.json',
     );
     expect(
-      () => SrdContentPackRegistry.forId(ContentPackId.srd521),
+      SrdContentPackRegistry.forId(ContentPackId.srd521).srdAsset('spells'),
+      'assets/data/srd/5.2.1/spells.json',
+    );
+  });
+
+  test('character rules context rejects a cross-edition content pack', () {
+    expect(
+      () => CharacterRulesContext.forIds(RulesetId.dnd2024, ContentPackId.srd51),
+      throwsStateError,
+    );
+    expect(
+      () => CharacterRulesContext.forIds(RulesetId.dnd2014, ContentPackId.srd521),
+      throwsStateError,
+    );
+    final legacy = CharacterRulesContext.fromCharacter(_character());
+    final current = CharacterRulesContext.forIds(RulesetId.dnd2024, ContentPackId.srd521);
+    expect(legacy.supportsLegacySheet, isTrue);
+    expect(current.supportsLegacySheet, isFalse);
+    expect(() => current.requireLegacyOperation('Level up'), throwsUnsupportedError);
+  });
+
+  test('2014 spellcasting calculations reject a 2024 character', () {
+    final current = _character().copyWith(
+      rulesetId: RulesetId.dnd2024,
+      contentPackId: ContentPackId.srd521,
+    );
+    expect(
+      () => CharacterSpellcastingSummary.fromCharacter(current),
+      throwsUnsupportedError,
+    );
+    expect(
+      () => CharacterProgressionEngine.syncSpellcastingSlotsFor(current),
       throwsUnsupportedError,
     );
   });

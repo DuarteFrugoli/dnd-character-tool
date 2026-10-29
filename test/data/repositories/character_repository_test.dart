@@ -5,6 +5,7 @@ import 'package:dnd_character_tool/data/datasources/local/character_local_data_s
 import 'package:dnd_character_tool/data/datasources/local/storage_backend_stub.dart';
 import 'package:dnd_character_tool/data/models/models.dart';
 import 'package:dnd_character_tool/data/repositories/character_repository.dart';
+import 'package:dnd_character_tool/data/rulesets/ruleset_ids.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // ── Minimal fake storage backend ──────────────────────────────────────────────
@@ -123,6 +124,15 @@ void main() {
     backend = _InMemoryBackend();
     final ds = CharacterLocalDataSource.fromBackend(backend);
     repo = CharacterRepository(dataSource: ds);
+  });
+
+  test('rejects mismatched rules and pack before writing a character', () async {
+    final invalid = _makeCharacter().copyWith(
+      rulesetId: RulesetId.dnd2024,
+      contentPackId: ContentPackId.srd51,
+    );
+    await expectLater(repo.save(invalid), throwsStateError);
+    expect(backend._chars, isEmpty);
   });
 
   tearDown(() {

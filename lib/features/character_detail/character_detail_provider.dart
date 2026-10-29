@@ -13,6 +13,7 @@ import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/inventory/inventory_operations.dart' as inventory_ops;
 import '../../data/models/models.dart';
+import '../../data/rulesets/character_rules_context.dart';
 import '../../shared/providers/providers.dart';
 import '../character_list/character_list_provider.dart';
 
@@ -188,6 +189,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> longRest() async {
     final c = state.valueOrNull;
     if (c == null) return;
+    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Long rest');
     // Recover ceil(level / 2) hit dice on a long rest (PHB rules)
     final hdRecovered = (c.totalLevel / 2).ceil();
     final newHdUsed = (c.totalHitDiceUsed - hdRecovered)
@@ -229,6 +231,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   }) async {
     final c = state.valueOrNull;
     if (c == null) return;
+    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Short rest');
     final clampedHp = hpGained
         .clamp(0, c.hitPoints.maximum - c.hitPoints.current)
         .toInt();
@@ -262,6 +265,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> adjustFeatureResource(String resourceId, int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
+    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Feature resource');
     final binding = await _activeFeatureUsageBinding(c, resourceId);
     if (binding == null) return;
     final resource = binding.resource;
@@ -343,6 +347,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<List<FeatureUsageBinding>> _activeFeatureUsageBindings(
     Character c,
   ) async {
+    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Feature usage');
     final srd = ref.read(srdDataSourceProvider);
     final catalog = await srd.getFeatureUsageCatalog();
     final classFeatureSets = <FeatureUsageFeatureSet>[];
@@ -384,6 +389,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> syncInnateSpells() async {
     final c = state.valueOrNull;
     if (c == null) return;
+    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Innate spells');
     if (c.innateSpells.isNotEmpty) return;
     final races = await ref.read(srdDataSourceProvider).getRaces();
     // Check main race
@@ -432,6 +438,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> levelUp(LevelUpResult result) async {
     final c = state.valueOrNull;
     if (c == null) return;
+    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Level up');
 
     var updated = CharacterProgressionEngine.applyLevelUp(c, result);
 
@@ -461,6 +468,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> resetLevels(CharacterLevelResetResult result) async {
     final c = state.valueOrNull;
     if (c == null) return;
+    CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Level reset');
     await _save(CharacterLevelResetEngine.resetToLevelOne(c, result));
   }
 
@@ -469,6 +477,7 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     Character character, {
     bool syncInnateSpellsAfterSave = false,
   }) async {
+    CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Level rebuild');
     await _save(character);
     if (syncInnateSpellsAfterSave) {
       await syncInnateSpells();

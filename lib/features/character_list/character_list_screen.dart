@@ -433,8 +433,9 @@ class _CharacterCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    final i18n =
-        ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
+    final rules = ref.watch(characterRulesContextProvider((character.rulesetId, character.contentPackId)));
+    final i18n = ref.watch(srdI18nForPackProvider(rules.contentPackId)).valueOrNull ??
+        SrdI18nService.englishForPack(rules.pack);
     Future<void> openCharacter() async {
       if (character.needsDataUpdate) {
         final updated = await showCharacterUpdateDialog(context);

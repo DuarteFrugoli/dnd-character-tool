@@ -2,6 +2,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/character_list/character_list_screen.dart';
 import '../../features/character_creation/character_creation_screen.dart';
+import '../../features/character_creation/creation_2024_screen.dart';
+import '../../features/character_creation/ruleset_selection_screen.dart';
 import '../../features/character_detail/character_detail_screen.dart';
 import '../../features/home/settings_screen.dart';
 
@@ -26,7 +28,15 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/create',
+      builder: (context, state) => const RulesetSelectionScreen(),
+    ),
+    GoRoute(
+      path: '/create/2014',
       builder: (context, state) => const CharacterCreationScreen(),
+    ),
+    GoRoute(
+      path: '/create/2024',
+      builder: (context, state) => const Creation2024Screen(),
     ),
     GoRoute(
       path: '/settings',

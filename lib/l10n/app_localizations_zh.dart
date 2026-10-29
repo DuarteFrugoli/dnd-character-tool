@@ -9,6 +9,61 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
+  String get creationRulesetTitle => '选择规则版本';
+
+  @override
+  String get creationRuleset2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String get creation2024Species => '物种';
+
+  @override
+  String get creation2024Size => '体型';
+
+  @override
+  String get creation2024SizeSmall => '小型';
+
+  @override
+  String get creation2024SizeMedium => '中型';
+
+  @override
+  String get creation2024OriginFeat => '起源专长';
+
+  @override
+  String get creation2024StandardArray => '将15、14、13、12、10和8各分配一次。';
+
+  @override
+  String get creation2024OriginBonuses => '背景属性提升';
+
+  @override
+  String get creation2024BonusTwoOne => '+2和+1';
+
+  @override
+  String get creation2024BonusThree => '三项各+1';
+
+  @override
+  String get creation2024Languages => '除通用语外选择两种语言';
+
+  @override
+  String get creation2024ClassEquipment => '职业装备';
+
+  @override
+  String get creation2024BackgroundEquipment => '背景装备';
+
+  @override
+  String get creation2024SpecificTool => '选择一种工具';
+
+  @override
+  String get creation2024PrepareSpells => '从法术书中准备四个法术';
+
+  @override
+  String get character2024ReadOnlyNotice =>
+      '2024版角色卡仍在整合中。目前可以查看角色卡，并使用笔记、头像和基础掷骰功能。';
+
+  @override
   String get appTitle => 'DnD 角色工具';
 
   @override

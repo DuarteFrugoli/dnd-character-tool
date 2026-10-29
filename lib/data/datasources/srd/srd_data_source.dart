@@ -24,6 +24,14 @@ class SrdDataSource {
 
   String _asset(String fileName) => pack.srdAsset(fileName);
 
+  void _requireLegacyOriginSchema() {
+    if (pack.id != ContentPackId.srd51) {
+      throw UnsupportedError(
+        'The 2014 class, race, and background parsers cannot read ${pack.id.value}.',
+      );
+    }
+  }
+
   List<SrdSkill>? _skills;
   List<SrdRace>? _races;
   List<SrdClass>? _classes;
@@ -58,11 +66,13 @@ class SrdDataSource {
   }
 
   Future<List<SrdRace>> getRaces() async {
+    _requireLegacyOriginSchema();
     _races ??= await _loadList(_asset('races'), SrdRace.fromJson);
     return _races!;
   }
 
   Future<List<SrdClass>> getClasses() async {
+    _requireLegacyOriginSchema();
     if (_classes == null) {
       final classes = await _loadList(
         _asset('classes'),
@@ -99,6 +109,7 @@ class SrdDataSource {
   }
 
   Future<List<SrdBackground>> getBackgrounds() async {
+    _requireLegacyOriginSchema();
     _backgrounds ??= await _loadList(
       _asset('backgrounds'),
       SrdBackground.fromJson,
@@ -225,6 +236,7 @@ class SrdDataSource {
         final props = <String, dynamic>{
           'damageDice': w['damage'],
           'damageType': w['damageType'],
+          if (w['mastery'] != null) 'mastery': w['mastery'],
           if (w['properties'] != null) 'weaponProperties': w['properties'],
           if (w['range'] != null) 'range': w['range'],
           if (w['versatileDamage'] != null)
